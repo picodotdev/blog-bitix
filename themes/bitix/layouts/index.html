@@ -1,0 +1,73 @@
+{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+
+{{ partial "html-head.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "head.html" . }}
+        <div class="row">
+          <div class="col-sm-12 col-md-8">
+            <ul class="list-unstyled">
+              {{ range $paginator.Pages }}
+              <li>
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+                  {{ if isset .Params "language" }}
+                  <meta itemprop="inLanguage" content="{{ .Params.language }}">
+                  {{ else }}
+                  <meta itemprop="inLanguage" content="{{ .Site.LanguageCode }}">
+                  {{ end }}
+                  <h1 itemprop="name"><a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a></h1>
+                  <span class="information">
+                    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+                    {{ if isset .Params "tags" }}
+                      {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
+                      <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
+                    {{ end }}
+                  </span>
+                  <p>
+                    {{ if isset .Params "summary" }}
+                      {{ .Params.summary | markdownify }}
+                    {{ else }}
+                      {{ .Summary }}
+                    {{ end }}
+                    <br>
+                    <a href="{{ .RelPermalink }}" itemprop="url">Continuar leyendo...</a>
+                  </p>
+                </article>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          <div class="col-md-4">
+            {{ partial "sidebar.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            {{ partial "paginator.html" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr class="separator">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "adsense/leaderboard.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+</body>
+</html>

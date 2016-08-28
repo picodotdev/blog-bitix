@@ -1,0 +1,77 @@
+{{ partial "html-head.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      {{ partial "head.html" . }}
+      <div class="col-sm-12 col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <article itemscope itemtype="http://schema.org/BlogPosting">
+              {{ if isset .Params "language" }}
+              <meta itemprop="inLanguage" content="{{ .Params.language }}">
+              {{ else }}
+              <meta itemprop="inLanguage" content="{{ .Site.LanguageCode }}">
+              {{ end }}
+              {{ if isset .Params "tags" }}
+                <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
+              {{ end }}
+              {{ if .Params.image }}
+              <img src="{{ .Params.image }}" class="header">
+              {{ end }}
+              <h1 itemprop="name">{{ .Title }}</h1>
+              <p class="information">
+                Publicado por <span itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span></span> el <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time itemprop="dateModified" datetime="{{ dateFormat "2006-01-02" .Params.updated }}">{{ dateFormat "02/01/2006" .Params.updated }}</time>.
+                {{ else }}.{{ end }}
+                {{ if isset .Params "tags" }}
+                  <br>
+                  {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
+                {{ end }}
+                <br>
+                <a href="{{ .RelPermalink }}" itemprop="url">Enlace permanente</a>
+                {{ if isset .Params "comments" }}
+                  <a href="{{ .RelPermalink }}#comments">Comentarios</a>
+                {{ end }}
+              </p>
+
+              {{ if isset .Params "summary" }}
+                <p class="summary" itemprop="about">{{ .Params.summary | markdownify }}</p>
+              {{ end }}
+              {{ if isset .Params "note" }}
+                <div class="alert alert-warning">{{ .Params.note | markdownify }}</div>
+              {{ end }}
+
+              {{ partial "adsense/leaderboard.html" . }}
+
+              <div class="content" itemprop="articleBody">
+                <meta itemprop="wordCount" content="{{ .WordCount }}">
+                {{ partial "share-this-begin.html" . }}
+                {{ .Content }}
+              </div>
+            </article>
+          </div>
+        </div>
+        {{ partial "series.html" . }}
+        {{ partial "share-this.html" . }}
+        <div class="row">
+          <div class="col-md-12">
+            {{ partial "adsense/leaderboard.html" . }}
+          </div>
+        </div>
+        {{ partial "disqus.html" . }}
+      </div>
+      <div class="col-md-4">
+        {{ partial "sidebar.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "image-gallery.html" . }}
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+</body>
+</html>

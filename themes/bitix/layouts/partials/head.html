@@ -1,0 +1,32 @@
+<header>
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+      <h2 class="links">
+        {{ if .Site.Params.links.feed }}
+          <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/custom/rss.png"></a>
+        {{ end }}
+        {{ if .Site.Params.links.twitter }}
+          <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}"><img src="assets/images/custom/twitter.png"></a>
+        {{ end }}
+        {{ if .Site.Params.links.googleplus }}
+          <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}"><img src="assets/images/custom/google-plus.png"></a>
+        {{ end }}
+        {{ if .Site.Params.links.github }}
+          <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}"><img src="assets/images/custom/github.png"></a>
+        {{ end }}
+        {{ if .Site.Params.links.facebook }}
+          <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}"><img src="assets/images/custom/facebook.png"></a>
+        {{ end }}
+        {{ if .Site.Params.links.linkedin }}
+          <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}"><img src="assets/images/custom/linkedin.png"></a>
+        {{ end }}
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ partial "menu.html" . }}
+    </div>
+  </div>
+</header>

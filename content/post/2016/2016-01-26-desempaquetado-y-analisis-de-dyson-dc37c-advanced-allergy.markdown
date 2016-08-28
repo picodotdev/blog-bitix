@@ -1,0 +1,171 @@
+---
+pid: 122
+title: "Desempaquetado y análisis de aspiradora Dyson DC37c Advanced Allergy"
+url: "/2016/01/desempaquetado-y-analisis-de-aspiradora-dyson-dc37c-advanced-allergy/"
+aliases: ["/2016/01/desempaquetado-y-analisis-de-dyson-dc37c-advanced-allergy/"]
+date: 2016-01-26T20:00:00+01:00
+updated: 2016-08-22T23:30:00+01:00
+sharing: true
+comments: true
+language: "es"
+tags: ["blog-stack", "desempaquetado"]
+series: ["desempaquetado"]
+summary: "Hacer una compra informada no es fácil cualquiera que sea el producto. Al igual que otros en el caso de las aspiradoras hay multitud de modelos: con bolsa, sin bolsa, de trineo, verticales, robots barredores o aspiradores, ... En este artículo comentaré dos modelos de aspiradoras, Rowenta Compacteo Ergo 4359EA y Dyson DC37c Advanced Allergy, de diferentes categorías y precios que seleccione, decantándome finalmente por el segundo. Incluiré el desempaquetado o _unboxing_ junto con un reportaje gráfico bastante completo."
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image="dyson.png" title="Dyson" >}}
+
+Desde hace un tiempo tenía la necesidad un aspirador. De aspiradoras sabía lo básico por lo que como con cualquier otra compra es conveniente informarse ya que hay muchas opciones y precios diferentes, el ámbito de las aspiradoras es un pequeño mundo y también cuesta decidirse si la intención es realizar una buena compra. Empecé mirando en varias tiendas a través de internet como [Amazon](http://www.amazon.es/), [Media Markt](http://www.mediamarkt.es/) y [El corte inglés](http://www.elcorteingles.es/). Lo que sabía era que había aspiradoras con bolsa, sin bolsa, de trineo, verticales y más recientemente han empezado a aparecer robots autónomos todas en un rango de precios de entre 80€ y 550€.
+
+No quería que después de comprar la aspiradora tener que comprar ningún tipo de recambio como por ejemplo bolsas porque a la larga compensa y por pereza de buscar un sitio donde las vendan compatibles, por lo que estas quedaban descartadas, tampoco quería uno de los modernos robots aspiradores ya que no me convencen. Los robots por muy autónomos que sean no mueven los muebles y hay sitios a los que por su tamaño y forma no pueden acceder, si tenía que mover un sillón o sillas para que el robot hiciese un buen trabajo me era indiferente comprar una aspiradora manual, además son sensiblemente más caros que otras aspiradoras y hay [alguna opinión de que no son muy efectivos](http://es.gizmodo.com/he-probado-4-robots-aspiradora-y-ahora-solo-quiero-barr-1694536566), algunos se denominan aspiradores cuando realmente son solo barredores. El precio no me importaba mucho, lógicamente que fuese lo menos posible pero tenía un presupuesto amplio sobre los 350€.
+
+### Rowenta Compacteo Ergo 4359EA
+
+De los primeros aspiradores que vi interesantes uno fue el <a rel="nofollow" href="http://www.amazon.es/gp/product/B00TOHS3JA/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00TOHS3JA&linkCode=as2&tag=blobit-21">Rowenta Compacteo Ergo 4359EA</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00TOHS3JA" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, me gustó que era pequeño, sin bolsa, barato y podría guardarlo en el mismo armario junto con la escoba. El precio era similar tanto en Amazon, Media Markt y El corte inglés. Pudiendo, prefiero comprar en una tienda física, el bulto iba a ser grande con lo que no quería enviármelo al trabajo y por si quería hacer alguna devolución es más fácil en una tienda física como finalmente me ocurrió, además quería ver físicamente el producto. En El corte inglés no tenían disponibilidad, fui a comprarlo a Media Markt por poco menos de 80€. Amablemente un par de personas del personal de Media Markt me atendieron resolviendo varias dudas que tenía. Me llevé este modelo a casa.
+
+<div class="media-amazon" style="text-align: center;">
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00TOHS3JA&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</div>
+
+Ya en casa leyendo el manual de instrucciones me percaté de que aunque muchas aspiradoras son sin bolsa y por tanto no hay que cambiarla porque no tienen en vez de eso hay que cambiar el filtro HEPA y el filtro premotor que recogen las partículas más diminutas de polvo, según el fabricante cada año. Además, como es habitual cada fabricante usa sus propios recambios incompatibles con otras marcas y como en este caso es difícil encontrarlos y si es así a un precio de entre 15€ y 30€. Por lo que solicité hacer la devolución, dentro del plazo dispuesto a tal efecto hay que decir que la persona que me atendió Media Markt no me puso ningún tipo de objeción aún habiendo abierto el paquete que por supuesto volví a embalar como originalmente y en perfecto estado.
+
+No quiere decir que sea mala, por su precio está muy bien pero yo simplemente quería otra cosa. Por el buen trato recibido por los empleados y servicio de atención al cliente de Media Markt me siento un poco en deuda con ellos, finalmente elegí otro modelo y lo compré en otra tienda pero muy posiblemente compraré alguna otra cosa en un futuro, tiene buenos precios y una gama amplia de modelos de diferentes aparatos electrónicos.
+
+### Dyson DC37c Advanced Allergy
+
+¿Todas las aspiradoras sin bolsa necesitan recambios? Afortunadamente buscando un poco más detalladamente encontré que los modelos [Dyson](https://www.dyson.es/), tienen filtros lavables con agua bajo el grifo, en algunos modelos ni siquiera hay que lavar los filtros y son permanentes durante toda su vida útil de modo que no hay que sustituirlos. Lo que buscaba. Por el precio más elevado inicialmente las pasé por alto. Sin embargo, a la larga el no tener que realizar recambios ni incurrir en gastos adicionales junto que son más eficientes recogiendo el polvo, la Rowenta tenía una eficiencia D y muchos modelos Dyson una A, el precio está justificado.
+
+Además se alinearon los astros y justo al día siguiente de que hiciese la devolución de la Rowenta, El corte inglés hizo un descuento en muchos de sus productos anunciado como el equivalente al IVA. Que de forma efectiva sería del 17,36%, porque descuentan el IVA y posteriormente sobre ese precio lo vuelven a aplicar, ningún producto se puede vender sin IVA, la publicidad es engañosa pero aún así sigue siendo un buen descuento.
+
+[Dyson tiene varios modelos de aspirador sin bolsa de trineo](http://www.dyson.es/aspiradoras/de-trineo.aspx) en varios rangos de precios, 200 €, 300 € o 400€. Dos de los modelos en los que me fijé eran el <a rel="nofollow" href="http://www.amazon.es/gp/product/B00M8YTI6I/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00M8YTI6I&linkCode=as2&tag=blobit-21">Dyson DC37c Total Allergy</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00M8YTI6I" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, el <a rel="nofollow" href="http://www.amazon.es/gp/product/B00M8YTIEU/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00M8YTIEU&linkCode=as2&tag=blobit-21">Dyson DC52 Allergy</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00M8YTIEU" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, <a rel="nofollow" href="http://www.amazon.es/gp/product/B00MOIDB0C/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00MOIDB0C&linkCode=as2&tag=blobit-21">Dyson DC63 Allergy</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00MOIDB0C" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> y <a rel="nofollow" href="http://www.amazon.es/gp/product/B00M8YTI3G/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00M8YTI3G&linkCode=as2&tag=blobit-21">Dyson DC33c Origin</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00M8YTI3G" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> dependiendo de los accesorios hay varios submodelos Advanced Allergy, Total Allergy, ....
+
+El [modelo Dyson DC37c](http://shop.dyson.es/aspiradoras/de-trineo/dc37c-allergy-205541-01) tiene un filtro lavable permanente, el polvo es fácilmente desechable y su cubo fácilmente limpiable, una cosa a tener en cuenta ya que en los aspiradores sin bolsa en mayor o menor medida a lo hora de tirar el polvo recogido a la basura podemos entrar en contacto con él. El [modelo Dyson DC52c](http://www.dyson.es/aspiradoras/de-trineo/cinetic.aspx) tiene más ciclones siendo más eficiente aún, la tecnología por la cual estas aspiradoras son tan eficientes y separan el aire del polvo aprovechando la fuerza centrífuga, y ni siquiera es necesario limpiar el filtro durante su vida útil, ¡sorprendente!, el [modelo Dyson DC63](http://shop.dyson.es/aspiradoras/de-trineo/dc63) es más compacta por lo que ocupa menos espacio al guardarla y el [modelo DC33c](http://shop.dyson.es/aspiradoras/de-trineo/dc33c-mattress-205736-01) es algo más barata.
+
+<div class="media-amazon" style="text-align: center;">
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00M8YTI6I&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00M8YTI3G&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00M8YTIEU&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00MOIDB0C&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+</div>
+
+Finalmente, me decanté por la DC37c, era un poco más barata que la DC52c y como igualmente hay que limpiar el cubo no me importa tener que limpiar también al mismo tiempo el filtro de vez en cuando. Con el descuento de El corte inglés finalmente la compré al precio de unos 271€ cuando normalmente está a 329€ y [Dyson en su web la vende a 359€](http://shop.dyson.es/aspiradoras/de-trineo/dc37c), si tenemos claro que queremos este modelo normalmente el mejor precio está en Amazon o Media Markt y El corte ingles tiene fama de una buena garantía en caso de devolución resumido en «si no queda satisfecho, le delvemos su dinero».
+
+Una cosa importante que no pasa en modelos más baratos es el soporte del fabricante, Dyson en su web vende repuestos y más accesorios. Aunque los filtros son permanente si necesitásemos un recambio podemos comprarlo en su web, si por lo que sea se nos cae el cubo al suelo y con mala suerte de romperse no hace falta tirar la aspiradora basta con que compremos otro cubo, y lo mismo para el resto de elementos como la manguera de aspiración. Estos detalles junto con otros que comentaré más adelante hace que uno después de comprar uno se quede realmente a gusto con la compra.
+
+Parece increíble pero los compradores de productos solemos hacer análisis de los productos mejores que los propios fabricantes que deberían ser los más interesados, y como usuarios al comprar los buscamos para informarnos detalladamente. Por eso son tan populares los desempaquetados o _unboxing_ en [YouTube][youtube]. A continuación pondré el mío con un reportaje gráfico bastante amplio de cada parte de la aspiradora <a rel="nofollow" href="http://www.amazon.es/gp/product/B00M8YTI6I/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00M8YTI6I&linkCode=as2&tag=blobit-21">Dyson DC37c Total Allergy</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00M8YTI6I" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
+
+En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la aspiradora con el tubo conectado a la manguera pueden girar, recoge todo el polvo con su buena succión regulable desde la empuñadura del tubo, la manguera, tubo, el cubo y ciclón son fáciles de desmontar y limpiar y el filtro no hace falta lavarlo después de cada uso ya que se mantiene bastante limpio después de haber limpiado un par de habitaciones, como indica del fabricante una vez al mes es suficiente.
+
+### Caja y desempaquetado
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091246.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091246-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091312.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091312-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091321.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091321-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091343.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091343-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091404.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091404-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091417.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091417-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091433.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091433-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091653.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091653-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091708.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091708-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091738.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091738-thumb.jpg"></a>
+</div>
+
+### Cuerpo principal
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092450.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092450-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092459.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092459-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092509.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092509-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092519.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092519-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092558.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092558-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092613.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092613-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093036.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093036-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093045.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093045-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093058.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093058-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093105.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093105-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093110.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093110-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093134.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093134-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093201.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093201-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093941.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093941-thumb.jpg"></a>
+</div>
+
+### Componentes y accesorios
+
+En la caja no viene pero se proporcionan más accesorios de los indicados además de para suelos duros y tarima o parquet y el de antibloqueo _tangle-free_ para hebras.
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092358.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092358-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092412.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092412-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092422.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092422-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092431.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092431-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111125.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111125-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111137.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111137-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111155.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111155-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093500.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093500-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093514.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093514-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093523.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093523-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093542.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093542-thumb.jpg"></a>
+</div>
+
+Estos son los accesorios adicionales no indicados en la caja, está el de esquinas y otros que parecen para sofás o similares junto con un soporte porta accesorios que se coloca en el tubo cerca de la empuñadura.
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092405.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092405-thumb.jpg"></a>
+</div>
+
+### Filtro y ciclón
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100811.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100811-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100821.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100821-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100716.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100716-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100733.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100733-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100628.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100628-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100649.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100649-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100702.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100702-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_102301.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_102301-thumb.jpg"></a>
+</div>
+
+### Manual de usuario
+
+El manual de usuario está en perfecto español sin ninguna falta de ortografía, otros múltiples idiomas y cumple con su función de mostrar el montaje, las normas y precauciones básicas de uso.
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094541.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094541-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094550.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094550-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094602.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094602-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094643.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094643-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094234.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094234-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094349.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094349-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094428.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094428-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094431.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094431-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094457.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094457-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094529.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094529-thumb.jpg"></a>
+</div>
+
+### Otros detalles
+
+<div class="media" style="text-align: center;">
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100832.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100832-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100348.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100348-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100403.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100403-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094018.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094018-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094037.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094037-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094052.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094052-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094223.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094223-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092439.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092439-thumb.jpg"></a>
+    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093952.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093952-thumb.jpg"></a>
+</div>
+
+Por poner algún defecto después de usarla diré que no se puede guardar de forma vertical por su forma de cuerpo y bola, sus dimensiones son de unos 51cm de ancho x 31cm de alto x 26cm fondo mirada desde un lateral algo más grande que otras aspiradoras como la Rowenta que comentaba anteriormente. El gatillo es muy cómodo pero en caso de querer tenerlo constantemente abierto para disminuir la succión en el accesorio puede ser cansino, no tiene una posición para dejarlo abierto sin usar el gatillo de la manguera. Este modelo realmente incorpora más accesorios que los indicados en la caja por lo que realmente no debería ser un defecto, en las fotos se ve uno multifunción para esquinas embalados en una bolsa. Usando el accesorio de suelos duros y parquet se une al tubo usando un mecanismo que me queda justo a la altura de una tabla de una cama con lo que al aspirar por debajo de ella si no tengo cuidado choca con el mecanismo de liberación y el accesorio se desengancha, el mecanismo podría estar colocado en un lateral o en la parte de atrás y esto se evitaría. Aún con esto para mí estas cosas no hacen desmerecer la aspiradora.
+
+El cable tiene una longitud de unos 7 metros con una marca roja para saber cuando se ha extraído completamente y el alcance con la manguera puede llegar unos 9-10 metros.
+
+Uno se da cuenta que las aspiradoras Dyson y supongo que otros de los muchos productos que fabrican están hechas empleando tecnología, I+D+i, sostenibilidad e ideales. Cada detalle está cuidado y [en su web se nota que ponen pasión y "amor" en sus productos](http://www.dyson.es/acerca-de-dyson/ingenieria-sostenible.aspx), incluido algo tan banal como una aspiradora. ¡Gracias [James Dyson](https://en.wikipedia.org/wiki/James_Dyson) y todo el equipo de Dyson por este gran producto de la ingeniería!.
+
+{{% /post %}}

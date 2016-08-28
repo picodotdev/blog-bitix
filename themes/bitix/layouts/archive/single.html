@@ -1,0 +1,69 @@
+{{ partial "html-head.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "head.html" . }}
+        <div class="row">
+          <div class="col-md-12 text-center">
+            {{ partial "adsense/leaderboard.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h1>{{ .Title }}</h1>
+            <h3>Hemerotecas</h3>
+            {{ range where .Site.Pages "Params.library" "true" }}
+              <ul>
+                <li>
+                  <article itemscope itemtype="http://schema.org/BlogPosting">
+                    <a href="{{ .Permalink }}" itemprop="name url">{{ .Title }}</a>
+                    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+                  </article>
+                </li>
+            </ul>
+            {{ end }}
+            <h3>Etiquetas</h3>
+            <ul class="list-inline">
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+              <li><a href="tags/{{ $name | urlize }}">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
+            {{ end }}
+            </ul>
+            <h3>Series</h3>
+            <ul class="list-inline">
+            {{ range $name, $taxonomy := .Site.Taxonomies.series }}
+              <li><a href="series/{{ $name | urlize }}">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
+            {{ end }}
+            </ul>
+            {{ range (where .Site.Pages "Section" "post").GroupByDate "2006" "desc" }}
+              <h3>{{ .Key }}</h3>
+              <ul>
+              {{ range .Pages }}
+                <li>
+                  <article class="h-entry">
+                    <a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a>
+                  </article>
+                </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        {{ partial "adsense/leaderboard.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+</body>
+</html>

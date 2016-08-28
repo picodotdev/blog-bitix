@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Buscar en Blog Bitix</h3>
+    {{ partial "adsense/search.html" . }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{ partial "adsense/large-skycraper.html" . }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Artículos recientes</h3>
+    <ul class="list-unstyled recents">
+      {{ range first 10 (where .Site.Pages ".Type" "post") }}
+        <li><a href="{{ .RelPermalink }}" class="p-name u-url">{{ .Title }}</a><hr></li>
+      {{ end }}
+      <li><span class="glyphicon glyphicon-hand-right"></span> <a href="archive/">Más artículos en el archivo y hemeroteca</a></li>
+    </ul>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-12">
+    {{ partial "adsense/large-rectangle.html" . }}
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-12">
+    <ul class="list-inline">
+      <li>
+        <div class="featured">
+          <img src="assets/images/custom/fijo-tapestry.png">
+          <a href="http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html">Documentación<br/> y artículos</a>
+        </div>
+      </li>
+      <li>
+        <div class="featured">
+          <img src="assets/images/custom/fijo-tapestry.png">
+          <a href="http://goo.gl/Vx8icI">Libro<br/> PlugIn Tapestry</a>
+        </div>
+      </li>
+      <li>
+        <div class="featured">
+          <img src="assets/images/custom/fijo-arch-linux.png">
+          <a href="https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/">Anexo <br/>a la guía de<br/> instalación de<br/>Arch Linux</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-12">
+    <a href="https://picodotdev.github.io/blog-bitix/2015/12/yo-apoyo-al-software-libre-tu-tambien/"><img src="//static.fsf.org/nosvn/images/badges/badges_es/i-support-fs_red-bg-es.png" alt="Yo apoyo al software libre"></a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="col-md-12">
+    {{ partial "adsense/auto-text.html" . }}
+  </div>
+</div>

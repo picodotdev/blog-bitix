@@ -1,0 +1,19 @@
+{{ if .Params.series }}
+  <div class="row serie">
+    <div class="col-md-12">
+      {{ range $serie := .Params.series }}
+        <p>
+          This is a post in the <b>{{ $serie }}</b> series:
+        </p>
+        {{ $articles := index $.Site.Taxonomies.series $serie }}
+        <ul class="serie-articles">
+          {{ range $articles.Pages.Reverse }}
+            <li>
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+  </div>
+{{end}}

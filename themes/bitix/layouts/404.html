@@ -1,0 +1,30 @@
+{{ partial "html-head.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ partial "head.html" . }}
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <h1>Page not found</h1>
+            <h3>Error 404</h3>
+            <p>The requested page dont exists or has changed her location. You can go to the <a href="{{ .Site.BaseURL }}">home page</a> to find other content.</p></p>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.html" . }}
+  </div>
+  {{ partial "html-footer.html" . }}
+  {{ partial "html-footer-custom.html" . }}
+  <script type="text/javascript">
+    $(document).ready(function() {
+        ga('send', 'event', 'error', '404', window.location.pathname);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+---
+pid: 140
+title: "Extraer elementos de una cadena con una expresión regular"
+url: "/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/"
+date: 2016-05-06T18:00:00+02:00
+sharing: true
+comments: true
+language: "es"
+tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="java.png" title1="Java" >}}
+
+Las expresiones regulares son muy útiles para comprobar si una cadena de texto o un subconjunto de ella cumple un determinado patrón. Un uso común de las expresiones regulares es para validar cadenas de texto pero también pueden usarse para obtener coincidencias de la cadena, esto se hace con los grupos de captura.
+
+Por ejemplo, supongamos que tenemos un código de un producto formateado de la siguiente forma _123-123456&#47;1_, usando guiones y una barra para separar tres grupos de números. Y ahora aparte de validar el formato correcto del código del producto nos interesa obtener los tres grupos de números. En vez de separar la cadena con un [split](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#split-java.lang.String-) por el caracter guión y barra de una forma que sería más laboriosa y difícil de mantener si hay algún cambio, vamos a usar los grupos de captura para obtener los tres grupos de números que forman el código.
+
+Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la expresión regular. En el caso del código usaremos la siguiente expresión regular:
+
+{{% gist id="fa0408b7ffbddc8cd3c93725db845cf6" file="regex.txt" %}}
+
+En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) y [Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) podemos hacer las validaciones y obtener los grupos de captura de la usando el método [group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#group-int-) de la clase Matcher:
+
+{{% gist id="fa0408b7ffbddc8cd3c93725db845cf6" file="Main.java" %}}
+
+<div class="media" style="text-align: center;">
+    {{< figure pid="140" image1="java-regex.png" thumb1="java-regex-thumb.png" title1="Extracción de valores de una cadena usando una expresión regular" caption="Extracción de valores de una cadena usando una expresión regular" >}}
+</div>
+
+Esto simplifica el extraer los valores de un cadena, de una manera menos frágil y más fácil de leer posteriormente el código fuente que usar la función _split_ por uno o varios determinados caracteres, esta es una cadena bastante sencilla si el patrón es más complejo el código usando _split_ puede complicarse notablemente.
+
+La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos [start](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#start-int-) y [end](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#end-int-) nos es posible conocer la posición inicial y final de cada grupo de captura. En el caso del código de este ejemplo ya los conocemos de antemano pero usando alguna expresión que capture un número varible de caracteres como «X+», «X*», «X{n,}» o «{X{n,m}}» nos permitirá conocer las posiciones inicial y final.
+
+{{% code git="blog-ejemplos/tree/master/JavaRegex" command="./gradlew run" %}}
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Using Regular Expressions to Extract a Value in Java](http://stackoverflow.com/questions/237061/using-regular-expressions-to-extract-a-value-in-java)
+{{% /reference %}}
+
+{{% /post %}}

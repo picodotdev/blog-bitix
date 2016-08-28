@@ -1,0 +1,78 @@
+title: "Blog Bitix"
+baseurl: "https://picodotdev.github.io/blog-bitix/"
+languageCode: "es"
+paginate: 15
+metadataformat: "yaml"
+
+author:
+  name: "pico.dev"
+copyright: https://creativecommons.org/licenses/by-sa/4.0/
+
+permalinks:
+  post: "/:year/:month/:title/"
+
+taxonomies:
+  tag: "tags"
+  series: "series"
+
+menu:
+  main:
+    - Name: "Java"
+      Identifier: "aa"
+      URL: "/tags/java/"
+      Weight: 1
+    - Name: "GNU/Linux"
+      URL: "/tags/gnu-linux/"
+      Weight: 2
+    - Name: "JavaScript"
+      URL: "/tags/javascript/"
+      Weight: 3
+    - Name: "Tapestry"
+      URL: "/tags/tapestry/"
+      Weight: 4
+    - Name: "Archivo y hemeroteca"
+      URL: "/archive/"
+      Weight: 5
+    - Name: "Enlaces"
+      URL: "/pages/enlaces-a-otros-blogs-y-webs/"
+      Weight: 6
+    - Name: "Acerca de..."
+      URL: "/pages/acerca-de/"
+      Weight: 7
+
+params:
+  context: '/blog-bitix'
+  description: "Blog dedicado a la distribución GNU/Linux que uso habitualmente, Arch Linux, a mis andanzas alrededor del software libre, la programación y a otros temas relacionados con la tecnología y la informática."
+  keywords: "java, programacion, tapestry, linux, gnu, gnu/linux, arch, arch linux, software, software libre, html, css, javascript"
+  analytics:
+    trackingid: "UA-12874075-4"
+    domain: "picodotdev.github.io"
+  links:
+    feed:
+      url: "index.xml"
+      title: "¡Suscríbete a Blog Bitix!"
+    github:
+      url: "https://github.com/picodotdev/blog-ejemplos/"
+      title: "¡Obtén el código fuente de los ejemplos!"
+    twitter:
+      url: "https://twitter.com/picodotdev/"
+      title: "¡Sígueme en twitter!"
+    googleplus:
+      url: "https://plus.google.com/114317443908384387611/posts"
+      title: "¡Sigue a Blog Bitix en Google+!"
+#    facebook:
+#      url: ""
+#      title: ""
+#    linkedin:
+#      url: ""
+#      title: ""
+  github:
+    user: "picodotdev"
+  adsense:
+    adclient: "ca-pub-3533636310991304"
+    adslot: "9933840986"
+  sharethis:
+    publisher: "ur-a2d4b156-3d22-5ffc-2477-6c0f8a809173"
+    twitteruser: "picodotdev"
+  disqus:
+    shortname: "blog-bitix"

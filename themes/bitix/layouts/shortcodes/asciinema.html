@@ -1,0 +1,9 @@
+<div class="media" style="text-align: center;">
+    <figure>
+        <script type="text/javascript" src="https://asciinema.org/a/{{ .Params.id }}.js" id="asciicast-{{ .Params.id }}" async></script>
+        <noscript><a href="https://asciinema.org/a/{{ .Params.id }}" target="_blank"><img src="https://asciinema.org/a/{{ .Params.id }}.png" width="734"/></a></noscript>
+        {{ if .Params.caption }}
+        <figcaption>{{ .Params.caption }}</figcaption>
+        {{ end }}
+    </figure>
+</div>

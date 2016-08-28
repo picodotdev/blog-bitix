@@ -1,0 +1,20 @@
+{{ if .Params.image }}
+<div class="logotypes" style="float: right;">
+    <img src="assets/images/custom/logotipos/{{ .Params.image }}" class="right" alt="{{ .Params.title }}" title="{{ .Params.title }}"/>
+</div>
+{{ end }}
+{{ if .Params.image1 }}
+<div class="logotypes" style="float: right;">
+    <img src="assets/images/custom/logotipos/{{ .Params.image1 }}" class="right" alt="{{ .Params.title1 }}" title="{{ .Params.title1 }}"/>
+</div>
+{{ end }}
+{{ if .Params.image2 }}
+<div class="logotypes" style="float: right; clear: right;">
+    <img src="assets/images/custom/logotipos/{{ .Params.image2 }}" class="right" alt="{{ .Params.title2 }}" title="{{ .Params.title2 }}"/>
+</div>
+{{ end }}
+{{ if .Params.image3 }}
+<div class="logotypes" style="float: right; clear: right;">
+    <img src="assets/images/custom/logotipos/{{ .Params.image3 }}" class="right" alt="{{ .Params.title3 }}" title="{{ .Params.title3 }}"/>
+</div>
+{{ end }}

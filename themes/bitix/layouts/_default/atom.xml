@@ -1,0 +1,32 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>{{ .Permalink }}</id>
+    <title type="text">{{ .Site.Title }}</title>
+    <subtitle>Recent content on {{ .Site.Title }}</subtitle>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+    <author>{{ with .Site.Author.name }}<name>{{.}}</name>{{end}}</author>
+    <generator>Hugo</generator>
+    <icon>{{ .Site.BaseURL }}/assets/images/custom/logotipos/hugo.png</icon>
+    <logo>{{ .Site.BaseURL }}/assets/images/custom/logotipos/hugo.png</logo>
+    {{ with .Site.Copyright }}<rights>{{.}}</rights>{{end}}
+    {{ range first 15 .Data.Pages }}
+    <entry>
+        <id>{{ .Permalink }}</id>
+        <title>{{ .Title }}</title>
+        <updated>{{ if isset .Params "updated" }}{{ .Params.updated | safeHTML }}{{ else }}{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}{{ end }}</updated>
+        <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+        <link rel="alternate" href="{{ .Permalink }}"/>
+        <author>{{ with .Site.Author.name }}<name>{{.}}</name>{{end}}</author>
+        <content type="html">
+        {{ if isset .Params "summary" }}
+          &lt;p&gt;&lt;strong&gt;{{ .Params.summary | markdownify | html }}&lt;/strong&gt;&lt;/p&gt;
+        {{ end }}
+        {{ .Content | html }}
+        </content>
+        {{ if isset .Params "tags" }}
+            {{ range .Params.tags }}
+                <category term="{{ . }}"/>
+            {{ end }}
+        {{ end }}
+    </entry>
+    {{ end }}
+</feed>
