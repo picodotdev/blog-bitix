@@ -3,6 +3,7 @@ pid: 174
 title: "Cómo configurar una impresora HP en red en Arch Linux"
 url: "/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/"
 date: 2016-08-28T10:00:00+02:00
+updated: 2016-08-28T15:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -18,7 +19,7 @@ summary: "Después de mucho tiempo sin tener configurada una impresora en red de
 
 Uso [Arch Linux][archlinux] desde hace ya más de un lustro, en mi equipo personal e incluso en el equipo del trabajo. Hasta hace poco cuando necesitaba imprimir llevaba el documento en formato PDF en una memoria USB a una copistería y allí los imprimía dado que no tenía configurado mi equipo para usar la impresora en red, más que nada porque no le había dedicado de tiempo para hacerlo. Por último, encontré un momento y realice la configuración de un impresora en red _Hewlett Packard Color LaserJet MFP M476dw_ con <abbr title="Common Unix Printing System">[CUPS][cups]</abbr> en Arch Linux no sin encontrarme con algunos algunos problemas que finalmente conseguí resolver.
 
-La [wiki de Arch Linux][archlinux-wiki] es una de la mejores documentaciones que hay en GNU/Linux pero en el caso de [CUPS la versión en inglés](https://wiki.archlinux.org/index.php/CUPS) tiene bastantes secciones desactualizadas, la [versión en español de CUPS](https://wiki.archlinux.org/index.php/CUPS_(Espa%C3%B1ol)) está mejor pero aún así siguiendolas no conseguí instalar la impresora. Tuve que hacer varias búsquedas en foros.
+La [wiki de Arch Linux][archlinux-wiki] es una de la mejores documentaciones que hay en GNU/Linux pero en el caso de la [versión en inglés de CUPS](https://wiki.archlinux.org/index.php/CUPS) tiene bastantes secciones desactualizadas, la [versión en español de CUPS](https://wiki.archlinux.org/index.php/CUPS_(Espa%C3%B1ol)) está mejor pero aún así siguiendolas no conseguí instalar la impresora. Tuve que hacer varias búsquedas en foros.
 
 Lo primero necesario a instalar es el paquete de CUPS y el controlador de la impresora en este caso HP, posteriormente iniciar como superusuarios el servicio de CUPS con systemd y avahi para el descubrimiento de impresoras y activarlos con el inicio del sistema si así lo deseamos:
 
@@ -69,7 +70,7 @@ Para otras marcas y modelos de impresoras deberemos instalar otro controlador, e
 {{< postslinks >}}
 * [CUPS][cups]
 * [CUPS](https://es.wikipedia.org/wiki/Common_Unix_Printing_System) (wikipedia)
-* [Documentación CUPS](https://www.cups.org/documentation.html)
+* [Documentación de CUPS](https://www.cups.org/documentation.html)
 {{% /reference %}}
 
 {{% /post %}}
