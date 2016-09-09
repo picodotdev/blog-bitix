@@ -3,6 +3,7 @@ pid: 177
 title: "Artículo #2 de Yo apoyo al software libre"
 url: "/2016/09/articulo-2-de-yo-apoyo-al-software-libre/"
 date: 2016-09-09T13:00:00+02:00
+updated: 2016-09-09T23:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -42,7 +43,7 @@ Estas son las pruebas fehacientes que muestran las donaciones que he hecho a los
 
 Probablemente dentro de alrededor de otros 8 meses cuando reciba nuevas transferencias de Google y Amazon haré una nueva donación a otra serie de proyectos que uso quizá en ese caso a [LibreOffice][libreoffice], [VLC][vlc], [GNOME][gnome], [GIMP][gimp], ... o lo intente de nuevo con Arch Linux. Y estos serán proyectos muy conocidos que no necesiten tanta colaboración económica seguro que hay muchos proyectos menos conocidos pero muy importantes que también necesitan financiación.
 
-Puede que ni siquiera uses GNU/Linux o software libre pero al visitar esta bitácora puedes considerar que tú también has colaborado con el software libre ;). Si lo hicieses, ¿a que proyectos harías tú una donación?
+Puede que ni siquiera uses GNU/Linux o software libre pero al visitar esta bitácora puedes considerar que tú también has colaborado con el software libre ;) y simplemente usarlo o promocionarlo ya es una buena forma de apoyarlo. Si lo hicieses, ¿a que proyectos harías tú una donación?
 
 [Yo apoyo al software libre](http://www.gnu.org/)
 
