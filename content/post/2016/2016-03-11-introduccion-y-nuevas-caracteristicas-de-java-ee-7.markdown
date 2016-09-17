@@ -3,6 +3,7 @@ pid: 131
 title: "Introducción y nuevas características de Java EE 7"
 url: "/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/"
 date: 2016-03-11T17:00:00+01:00
+updated: 2016-09-17T12:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -133,6 +134,7 @@ Por cierto, como nota para técnicos, reclutadores, empresas y páginas de emple
 {{< links >}}
 {{< postslinks >}}
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
+* [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)
 * [Java EE 7 Tutorial](https://docs.oracle.com/javaee/7/tutorial/)
 * [Java EE 7 Technologies](http://www.oracle.com/technetwork/java/javaee/tech/index.html)

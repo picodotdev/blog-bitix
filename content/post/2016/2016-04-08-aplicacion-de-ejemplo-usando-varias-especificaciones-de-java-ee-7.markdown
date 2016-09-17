@@ -3,7 +3,7 @@ pid: 136
 title: "Aplicación de ejemplo usando varias especificaciones de Java EE 7"
 url: "/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/"
 date: 2016-04-08T17:00:00+02:00
-updated: 2016-04-10T12:00:00+02:00
+updated: 2016-09-17T12:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -84,6 +84,7 @@ En el futuro Java EE 8 está planificado un _framework_ basado en acciones en ve
 {{< links >}}
 {{< postslinks >}}
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
+* [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Tutorial Java EE 7](https://docs.oracle.com/javaee/7/tutorial/)
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [10 razones para seguir usando Java][blogbitix-81]
