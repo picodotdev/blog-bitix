@@ -3,6 +3,7 @@ pid: 179
 title: "Monitorizar con eventos de Google Analytics una página web"
 url: "/2016/09/monitorizar-con-eventos-de-google-analytics-una-pagina-web/"
 date: 2016-09-18T12:00:00+02:00
+updated: 2016-09-19T23:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -18,7 +19,7 @@ summary: "Conociendo cómo usar los eventos de Analytics podemos conocer informa
 
 No se mucho de [Google Analytics][google-analytics] únicamente lo que he aprendido aplicándolo en mi propia bitácora. Cuando [cambié de herramienta para generar de forma estática la bitácora][blogbitix-0] pude personalizar en mucha mayor medida que lo que podía primeramente con [Blogger][blogger] y después tenía con [Octopress][octopress].
 
-Google Analytics además de proporcionarnos diversa información interesante sobre las visitas que recibimos en una página web puede servirnos para analizar el comportamiento de los usuarios, como interaccionan con la página y qué acciones realizan. La forma con la que podemos agregar información propia de la aplicación o página web es mediante los eventos de Analytics. Después de [instalar el _script_ de Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) podemos enviar eventos simplemente con la siguiente linea de código JavaScript.
+Google Analytics además de proporcionarnos diversa información interesante sobre las visitas que recibimos en una página web puede servirnos para analizar el comportamiento de los usuarios, como interaccionan con la página, qué acciones realizan o que funcionalidades son usadas. La forma con la que podemos agregar información propia de la aplicación o página web es mediante los eventos de Analytics. Después de [instalar el _script_ de Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) podemos enviar eventos simplemente con la siguiente linea de código JavaScript.
 
 {{% gist id="c66532a6eaab846b579ff55b902e874f" file="ad-enter.js" %}}
 
