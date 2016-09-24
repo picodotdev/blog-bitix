@@ -3,7 +3,7 @@ pid: 178
 title: "Ejemplo de API REST en Java con JAX-RS y Spring Boot"
 url: "/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/"
 date: 2016-09-17T12:00:00+02:00
-update: 2016-09-18T02:00:00+02:00
+update: 2016-09-24T10:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -46,6 +46,8 @@ Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1449358063&linkId=e0cd589f357dfc1c77cfb004e6668fa5&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596805829&linkId=3b1ee2b6ff595b6b3c2fd7c70eb35cc7&internal=1"></iframe>
 </div>
+
+Una vez que disponemos del servicio REST podemos [añadir autenticación y autorización con Keycloak como proveedor de OAuth][blogbitix-180].
 
 {{% code git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" %}}
 

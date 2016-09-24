@@ -3,7 +3,7 @@ pid: 6
 title: "Iniciar la Raspberry Pi desde un disco o memoria USB"
 url: "/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/"
 date: 2014-01-10T12:41:33+01:00
-updated: 2015-05-25T23:00:00+02:00
+updated: 2016-09-23T18:30:00+01:00
 sharing: true
 comments: true
 tags: ["planeta-linux", "planeta-arch-linux", "hardware", "software", "software-libre"]
@@ -45,6 +45,14 @@ El paso final que deberemos hacer es cambiar en la partición de arranque que si
 A partir de este punto con la tarjeta SD insertada en la Raspberry Pi y el dispositivo USB conectado a uno de los puertos se iniciará la Pi desde la partición del sistema del dispositivo USB en vez de la tarjeta SD. Enseguida se nota un aumento de rendimiento considerable en el tiempo de inicio y las perdidas de respuesta porque se está leyendo o escribiendo serán mucho menores o nulos con la mayor tasa de transferencia de los dispositivos USB.
 
 Aunque la tarjeta SD es suficiente para usarla como [Media Center en la Raspberry Pi][blogbitix-5] al navegar por los menús notaremos que se atasca y el tiempo de arranque es notable. Con la partición del sistema instalada en una memoria o disco duro externo siguiendo el método descrito en esta entrada notaremos un menor tiempo de arranque de [GeeXboX](http://www.geexbox.org/) y evitaremos los atascos en los menus de [XBMC](http://xbmc.org/).
+
+Los elementos básicos para usar este miniordenador son la [placa de la Raspberry Pi](http://amzn.to/2cN0d6L), una [cargador de 3A](http://amzn.to/2dfFJT7) junto con una [tarjeta SD](http://amzn.to/2cN0SFi).
+
+<div class="media-amazon" style="text-align: center;">
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1"></iframe>
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01566WOAG&linkId=1a779c49b1d7df6206e1c1428af645e7&internal=1"></iframe>
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J2BU7WO&linkId=f3093eebc185e207e98f6b5c53cd2c3a&internal=1"></iframe>
+</div>
 
 {{% reference %}}
 {{< links >}}

@@ -3,7 +3,7 @@ pid: 5
 title: "Raspberry Pi como Media Center con GeeXboX"
 url: "/2014/01/raspberry-pi-como-media-center-con-geexbox/"
 date: 2014-01-03T20:00:00+01:00
-updated: 2015-05-28T20:00:00+01:00
+updated: 2016-09-23T19:00:00+01:00
 sharing: true
 comments: true
 tags: ["planeta-linux", "planeta-arch-linux", "hardware", "software", "software-libre"]
@@ -55,7 +55,17 @@ A pesar de lo interesante de la Raspberry Pi esta tiene algunas incomodidades. U
 
 Usando la [Raspberry Pi con un disco duro externo o memoria USB][blogbitix-6] hará que GeeXboX se inicie mucho más rápido, evitaremos los atascos en la navegación de los menús y el copiar las películas al disco USB nos llevará menos tiempo que copiarlas a la tarjeta SD. Pero tampoco es una solución exenta de sus pequeños inconvenientes ya que los puertos USB de la Raspberry Pi son incapaces de proporcionar suficiente energía a un disco duro externo de 2.5" para hacerlo funcionar por lo que necesitaremos un concentrador de puertos USB alimentado, son unos cuantos cables más que necesitaremos si pretendemos tener las películas almacenadas de esta forma. Si queremos usar la Raspberry Pi usando un disco duro externo USB podemos seguir las instrucciones de otra entrada que escribiré sobre como Usar la Raspberry Pi con un disco duro externo USB.
 
-Otro inconveniente de la Raspberry Pi es que no dispone de WiFi y algunas funcionalidades de GeeXboX se proporcionan cuando la Pi está conectada a internet con lo que perderemos esas funcionalidades o deberemos tener la suerte de tener el router cerca para conectar el cable ethernet, también útil si pretendemos controlar XMBC con nuestro teléfono en vez de con un ratón. Aunque esas opciones proporcionadas al estar conectados a internet tampoco son indispensables. ¡A disfrutar!
+Otro inconveniente de la Raspberry Pi es que no dispone de WiFi (si la tercera versión de esta placa) y algunas funcionalidades de GeeXboX se proporcionan cuando la Pi está conectada a internet con lo que perderemos esas funcionalidades o deberemos tener la suerte de tener el router cerca para conectar el cable ethernet, también útil si pretendemos controlar XMBC con nuestro teléfono en vez de con un ratón. Aunque esas opciones proporcionadas al estar conectados a internet tampoco son indispensables.
+
+Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](http://amzn.to/2cN0d6L), una [cargador de 3A](http://amzn.to/2dfFJT7) junto con una [tarjeta SD](http://amzn.to/2cN0SFi).
+
+<div class="media-amazon" style="text-align: center;">
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1"></iframe>
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01566WOAG&linkId=1a779c49b1d7df6206e1c1428af645e7&internal=1"></iframe>
+		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J2BU7WO&linkId=f3093eebc185e207e98f6b5c53cd2c3a&internal=1"></iframe>
+</div>
+
+¡A disfrutar!
 
 {{% reference %}}
 {{< links >}}
