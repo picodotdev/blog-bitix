@@ -7,7 +7,7 @@ updated: 2016-09-02T23:30:00+02:00
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "opinion","planeta-codigo", "planeta-linux"]
+tags: ["apple", "blog-stack", "opinion","planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
