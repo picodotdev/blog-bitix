@@ -49,7 +49,7 @@ En la sección de programación están las novedades de Java 8 que recoge las in
 * [Logging usando marcadores con slf4j y logback][blogbitix-9]
 * [Ejemplo del patrón de diseño No Operation][blogbitix-8]
 
-Respecto a gnu/linux he actualizado la guía de instalación de [Arch Linux](http://archlinux.org/), he analizado un disco de estado sólido (SSD) que aumentan notablemente el rendimiento de un equipo, algún artículo sobre la [Raspberry Pi](http://www.raspberrypi.org/), otras sobre como configurar SSL en los servidores web y de aplicaciones más populares, los últimos artículos de esta lista son comentado mi experiencia con [Octopress](http://octopress.org/) como sistema de blogging y que empecé a usar a principios de diciembre.
+Respecto a gnu/linux he actualizado la guía de instalación de [Arch Linux](http://archlinux.org/), he analizado un disco de estado sólido (SSD) que aumentan notablemente el rendimiento de un equipo, algún artículo sobre la [Raspberry Pi](http://www.raspberrypi.org/), otras sobre como configurar SSL en los servidores web y de aplicaciones más populares, los últimos artículos de esta lista son comentado mi experiencia con [Octopress](http://octopress.org/) como sistema de _blogging_ y que empecé a usar a principios de diciembre.
 
 * [Anexo a la guía de instalación y del principiante de Arch Linux][blogbitix-22]
 * [Desempaquetado y análisis Samsung SSD 840 EVO 250 GB][blogbitix-18]

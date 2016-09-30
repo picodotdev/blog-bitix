@@ -49,7 +49,7 @@ Si estás a punto de iniciar un blog personal deberás encontrar tu ritmo de pub
 
 A lo largo de varios años hay épocas en los que surgen más ideas sobre las que escribir y momentos sobre los que uno tiene más ganas de escribir y otros momentos en los que menos. Para evitar no publicar nada cuando no tengo ganas de dedicarle tiempo al blog o para cuando quiero tomarme una semana de descanso suelo tener varias entradas escritas y casi preparadas para publicar, es decir, cada semana no escribo y lo publico inmediatamente. La semana que no publico la compenso con otras semanas en las que escribo varias entradas. Lo que publico normalmente lo he tenido esperando a publicarse unas cuantas semanas, como no publico sobre temas de noticias de actualidad no tengo el problema de que la entrada se quede obsoleta.
 
-Y esto son algunos detalles de mi experiencia como blogger que tal vez le sirvan a alguien más. ¡Feliz blogging!
+Y esto son algunos detalles de mi experiencia como blogger que tal vez le sirvan a alguien más. ¡Feliz _blogging_!
 
 {{% reference %}}
 {{< links >}}
