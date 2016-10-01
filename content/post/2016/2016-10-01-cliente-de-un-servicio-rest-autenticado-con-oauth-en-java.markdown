@@ -1,7 +1,8 @@
 ---
 pid: 183
-title: "Cliente de un servicio REST autenticado con OAuth2 en Java"
-url: "/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/"
+title: "Cliente de un servicio REST autenticado con OAuth en Java"
+url: "/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/"
+aliases: ["/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/"]
 date: 2016-10-01T11:00:00+02:00
 sharing: true
 comments: true
