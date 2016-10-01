@@ -1,0 +1,45 @@
+---
+pid: 183
+title: "Cliente de un servicio REST autenticado con OAuth2 en Java"
+url: "/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/"
+date: 2016-10-01T11:00:00+02:00
+sharing: true
+comments: true
+language: "es"
+tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+summary: "Teniendo un servicio REST securizado con OAuth2 al invocarlo deberemos realizar el flujo necesario para obtener un _access token_ y posteriormente enviarlo al servicio REST como forma de autenticación y autorización. Usando un cliente programado en el lenguaje Java y usando la librería HttpClient podemos hacer las peticiones HTTP necesarias para la invocación del servicio."
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="java.png" title1="Java" >}}
+
+Explicaba como llamar a un servicio REST autenticado con OAuth2 en el artículo [autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]. Para ello usaba la utilidad _curl_ para hacer las peticiones HTTP _get_ y _post_ necesarias tanto para obtener el _access token_ usando el flujo _client\_credentials_ como para una vez obtenido el _access token_ llamar al servicio REST. En una aplicación usaremos un lenguaje de programación para llmar al servicio, en este ejemplo mostraré como llamarlo usando un cliente programado en lenguaje Java que hará las mismas peticiones _get_ y _post_ pero usando la librería [HttComponents][apache-httpcomponents] en vez de _curl_.
+
+Primero añadiremos como dependencia del proyecto la librería HttComponents. Como en las diferentes llamadas el intercambio de datos se realiza mediante el [formato JSON][json] añadiremos otro par dependencias para procesar los datos en este formato, en este caso usando la API de [JSON-P][json-p] y una implementación.
+
+{{% gist id="b174463a576223ab9986e3b32ac9b7be" file="build.gradle" %}}
+
+Este sencillo cliente realiza varias peticiones _get_ y _post_. Una para obtener la configuración de los _endpoints_, el que nos interesa es el de obtener un _access token_, otra petición para obtener el _access token_ y finalmente con el _access token_ invocar al servicio mediante otra petición.
+
+{{% gist id="b174463a576223ab9986e3b32ac9b7be" file="ClientMain.java" %}}
+
+Iniciado [Keycloak][keycloak] con [Docker][docker], configurado el _realm_ y creado un cliente junto con un rol e iniciado el servicio REST podemos ejecutar el cliente que invoque al servicio. El resultado de las trazas que obtendremos en la terminal será el siguiente.
+
+{{% gist id="b174463a576223ab9986e3b32ac9b7be" file="System.out" %}}
+
+En las trazas vemos el _endpoint_ para obtener _access token_, el _access token_ obtenido, _refresh token_ y tiempos de expiración de los mismos, finalmente los datos devueltos por el servicio. Como se observa los _access token_ son una cadena opaca bastante larga de caracteres, y es que está cifrada, firmada digitalmente y contiene información como el rol y tiempos de expiración. Enviado el _access token_ al servicio REST el [adaptador de Keycloak para Spring Boot](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/oidc/java/java-adapters.html) validará la firma digital del _token_, descifrará la información, validará su tiempo de expiración y se comprobará si tiene el rol necesario para acceder al _endpoint_ del servicio REST. Notar que con la información incluida en el token y el hecho de que está firmado digitalmente no es necesario que el servicio REST se comunique con el proveedor de OAuth para hacer la validación.
+
+El cliente no tiene más salvo que usando la clase [HttpClient](https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/client/HttpClient.html) y haciendo una petición HTTPS con un certificado autofirmado en el servidor deberemos ignorar las comprobaciones de seguridad. Para ello se usan un [SSLConnectionSocketFactory](https://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/org/apache/http/conn/ssl/SSLConnectionSocketFactory.html) que las ignore.
+
+Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](http://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1"></iframe>
+</div>
+
+{{% code git="blog-ejemplos/tree/master/SpringBootJaxrsOauth" %}}
+
+{{% /post %}}

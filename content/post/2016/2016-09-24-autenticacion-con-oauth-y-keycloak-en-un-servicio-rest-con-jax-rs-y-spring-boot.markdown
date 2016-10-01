@@ -3,7 +3,7 @@ pid: 180
 title: "Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot"
 url: "/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/"
 date: 2016-09-24T12:00:00+02:00
-updated: 2016-09-24T21:00:00+02:00
+updated: 2016-10-01T10:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -85,7 +85,7 @@ Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](http://amzn.to/
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1"></iframe>
 </div>
 
-En el siguiente artículo mostraré un cliente en Java del servicio REST autenticado con OAuth que haga las mismas llamadas que con _curl_ pero usando código Java mediante la librería [HttpClient][http-components].
+En el siguiente artículo mostraré un [cliente del servicio REST autenticado con OAuth en Java][blogbitix-183] que haga las mismas llamadas que con _curl_ pero usando código Java mediante la librería [HttpComponents][http-components].
 
 {{% code git="blog-ejemplos/tree/master/SpringBootJaxrsOauth" command="./gradle run" %}}
 
