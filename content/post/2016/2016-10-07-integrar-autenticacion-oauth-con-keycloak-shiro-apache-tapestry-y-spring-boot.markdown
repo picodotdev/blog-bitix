@@ -3,6 +3,7 @@ pid: 185
 title: "Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot"
 url: "/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/"
 date: 2016-10-07T10:00:00+02:00
+updated: 2016-10-08T00:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -20,11 +21,19 @@ El protocolo [OAuth][oauth] permite a una aplicación cliente acceder a los recu
 
 En el protocolo OAuth se diferencia las aplicaciones cliente que son capaces de mantener seguras sus credenciales como es el caso de una aplicación web ejecutada en el servidor o las aplicaciones que no son capaces de mantener sus credenciales seguras como es el caso de una aplicación cliente ejecutada en el navegador o en algunos casos nativa en el móvil. Independientemente de la aplicación cliente o de los [varios flujos de autenticación](https://tools.ietf.org/html/rfc6749#page-8) el acceso a los recursos del usuario se hace mediante la obtención de un _token_ que es una cadena de caracteres opaca de cierta longitud pero que descifrada contiene información del usuario autenticado también está firmada digitalmente por el servidor de OAuth para evitar alteraciones. El protocolo define varios flujos para obtener un _token_, obtenido el _token_ con cualquiera de ellos el acceso a los recursos es indiferente del flujo que haya sido empleado.
 
-En una aplicación segura con el _grant_ de tipo _authorization code_ se redirige al usuario al servidor de OAuth, el usuario introduce sus credenciales en una página de inicio de sesión, normalmente un usuario y contraseña y el servidor OAuth envía al navegador una redirección de nuevo a la aplicación proporcionado un código de autorización en la URL que puede intercambiarse por un _token_. El navegador con la redirección envía el código de autorización al servidor, el servidor valida que el _token_ firmado digitalmente sea válido y lo usa para obtener un _token_ del servidor OAuth. Obtenido el _token_ con los permisos adecuados la aplicación ya puede acceder a los recursos. Para obtener el _token_ el servidor mantiene seguras sus credenciales como cliente OAuth. Nótese también que con el token el servidor (cliente OAuth) no necesita comunicarse con el servidor OAuth para validar el token ya que está firmado digitalmente y cifrado.
+En una aplicación segura con el _grant_ de tipo _authorization code_ los pasos que se siguen son los siguientes:
+
+* El servidor redirige al usuario al servidor de OAuth cuando intenta acceder a una URL protegida.
+* El usuario introduce sus credenciales en una página de inicio de sesión proporcionada por el servidor OAuth, normalmente un usuario y contraseña.
+* El servidor OAuth envía al navegador una redirección hacia la aplicación proporcionado un código de autorización en la URL que puede intercambiarse por un _token_.
+* El navegador con la redirección envía el código de autorización al servidor, el servidor obtiene de la URL, obtiene el código de autorización y lo usa para intercambiarlo por un _token_ del servidor OAuth proporcionado además las credenciales del cliente.
+* Obtenido el _token_ con los permisos adecuados la aplicación ya puede permitir acceso o acceder a los recursos.
+
+Para obtener el _token_ el servidor mantiene seguras sus credenciales como cliente OAuth. Nótese también que con el _token_ el servidor (cliente OAuth) no necesita comunicarse con el servidor OAuth para validar el _token_ ya que está firmado digitalmente, cifrado y tiene concecido un periodo de validadez.
 
 Un cliente se considera inseguro si la aplicación cliente no puede mantener seguras sus credenciales, si las credenciales de la aplicación están en el navegador o en una aplicación nativa del móvil se considera que las credenciales podrían obtenerse. En una aplicación web en un servidor las credenciales de la aplicación se mantienen seguras en el servidor.
 
-El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAuth una aplicación Java que usa Shiro para la autorización, Spring Boot y el _framework_ web Apache Tapestry. OAuth y Keycloak también puede usarse para [securizar con OAuth un servicio REST con JAX-RS][blogbitix-180] y crear un [cliente Java para acceder al servicio REST securizado con OAuth][blogbitix-183] emplenado el flujo _client credentials_.
+El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAuth una aplicación Java que usa Shiro para la autorización, Spring Boot y el _framework_ web Apache Tapestry. OAuth y Keycloak también puede usarse para [securizar con OAuth un servicio REST con JAX-RS][blogbitix-180] y crear un [cliente Java para acceder al servicio REST securizado con OAuth][blogbitix-183] emplenado el flujo _client credentials_. Lo mostrado en este artículo solo es una pequeña parte de las opciones y posibilidades que ofrece Keycloak, en las capturas de pantalla mostradas hay muchas pestañas, opciones y campos con funcionalidades adicionales.
 
 Iniciar el servidor OAuth de Keycloak usando [Docker][docker] es muy sencillo con el siguiente comando y archivo de [Docker Compose][docker-compose], en el primer acceso se nos solicitará una clave y contraseña de administración:
 
