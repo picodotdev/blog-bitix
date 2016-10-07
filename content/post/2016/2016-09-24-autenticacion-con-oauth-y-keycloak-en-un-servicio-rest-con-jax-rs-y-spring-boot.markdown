@@ -3,7 +3,7 @@ pid: 180
 title: "Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot"
 url: "/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/"
 date: 2016-09-24T12:00:00+02:00
-updated: 2016-10-01T10:30:00+02:00
+updated: 2016-10-07T09:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -93,6 +93,7 @@ En el siguiente artículo mostraré un [cliente del servicio REST autenticado co
 {{< links >}}
 {{< postslinks >}}
 * [Servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-178]
+* [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot"][blogbitix-185]
 * [Securing RESTful Web Services with OAuth2](https://blog.pivotal.io/pivotal-cloud-foundry/products/securing-restful-web-services-with-oauth2)
 * [Implementing the client credentials grant type](http://docs.apigee.com/api-services/content/oauth-20-client-credentials-grant-type)
 * [What are Keycloak's OAuth2 / OpenID Connect endpoints?](http://stackoverflow.com/questions/28658735/what-are-keycloaks-oauth2-openid-connect-endpoints)

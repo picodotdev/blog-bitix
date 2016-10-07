@@ -3,7 +3,7 @@ pid: 184
 title: "Generación de código en tiempo de ejecución con Byte Buddy"
 url: "/2016/10/generacion-de-codigo-en-tiempo-de-ejecucion-con-byte-buddy/"
 date: 2016-10-02T12:00:00+02:00
-updated: 2016-10-02T23:00:00+02:00
+updated: 2016-10-07T09:15:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -24,7 +24,7 @@ Para acceder a propiedades e invocar métodos de tipos desconocidos en tiempo de
 * Es lenta: más que la invocación directa de un método. La API de introspección usa <abbr title="Java Native Interface">JNI</abbr> y requiere hacer un análisis del objeto costosa para invocar el método del objeto.
 * Inutiliza el tipado seguro: la API de introspección no es _type-safe_. La comprobación de los tipos de los argumentos en la invocación de un método es retrasada hasta el momento de ejecución.
 
-Usando la  API de introspección perdemos una de las grandes características de Java, el tipado seguro, adicionalmente el rendimiento será menor. Conocidas estas limitaciones hay varias librerías que las palían generando código en tiempo de ejecución, algunas de las más conocidas son [Java Paroxy](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Proxy.html) que está incluida en el propio JDK, [cglib][cglib], [Javassists][javassist] o [ASM][asm].
+Usando la  API de introspección perdemos una de las grandes características de Java, el tipado seguro, adicionalmente el rendimiento será menor. Conocidas estas limitaciones hay varias librerías que las palían generando código en tiempo de ejecución, algunas de las más conocidas son [Java Proxy](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Proxy.html) que está incluida en el propio JDK, [cglib][cglib], [Javassists][javassist] o [ASM][asm].
 
 Leyendo uno de los artículos de la publicación gratuita [Java Magazine][java-magazine] de [Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015#&pageSet=0&page=0) conocí otra alternativa llamada [Byte Buddy][bytebuddy] con la que al contrario de otras posibilidades no estamos limitados a generar clases que implementen interfaces conocidas (como en Java proxies), tiene un mantenimiento activo y soporta las nuevas características de las últimas versiones del lenguaje (al contrario de cglib), no está tan limitada (como Javassists) y no hay que tener conocimientos de _byte code_ (como con ASM).
 
