@@ -3,7 +3,7 @@
     <div class="col-md-12">
       {{ range $serie := .Params.series }}
         <p>
-          This is a post in the <b>{{ $serie }}</b> series:
+          {{ i18n "post_serie" . }}:
         </p>
         {{ $articles := index $.Site.Taxonomies.series $serie }}
         <ul class="serie-articles">

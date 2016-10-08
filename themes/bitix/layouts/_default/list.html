@@ -32,7 +32,7 @@
                           {{ .Summary }}
                         {{ end }}
                         <br>
-                        <a href="{{ .RelPermalink }}" itemprop="url">Continuar leyendo...</a>
+                        <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "cotinue_reading" }}</a>
                       </p>
                     </article>
                   </li>
@@ -43,6 +43,11 @@
             <div class="row">
               <div class="col-md-12">
                 {{ partial "paginator.html" . }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <hr class="separator">
               </div>
             </div>
             <div class="row">

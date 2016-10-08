@@ -6,9 +6,10 @@
         {{ partial "head.html" . }}
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <h1>Page not found</h1>
-            <h3>Error 404</h3>
-            <p>The requested page dont exists or has changed her location. You can go to the <a href="{{ .Site.BaseURL }}">home page</a> to find other content.</p></p>
+            <h1>{{ i18n "page_not_found" }}</h1>
+            <h3>{{ i18n "error_404" }}</h3>
+            <p>{{ i18n "error_404_description" }}</p>
+
           </div>
         </div>
     </div>
