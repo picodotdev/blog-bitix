@@ -24,9 +24,9 @@ Para obtener las trazas específicas que queremos y que pueden estar dispersas e
 
 Por ejemplo, para la siguientes clases nos podría interesar obtener las trazas asociadas a la funcionalidad de importación pero si indicamos que queremos la trazas del logger Importador y de nivel INFO obtendríamos todas la trazas de la clase incluidas las trazas de persistencia.
 
-{{% gist id="8735932" file="Main.java" %}}
-{{% gist id="8735932" file="Importador.java" %}}
-{{% gist id="8735932" file="Utils.java" %}}
+{{< gist picodotdev 8735932 "Main.java" >}}
+{{< gist picodotdev 8735932 "Importador.java" >}}
+{{< gist picodotdev 8735932 "Utils.java" >}}
 
 Este sería el resultado:
 
@@ -44,11 +44,11 @@ En ambos resultados puede verse el nombre del marcador (IMP de importación, PER
 
 Utilizando la combinación slf4j y logback, la configuración para de logback y usando un filtro para obtener las trazas con el marcador asociado que deseamos es la siguiente:
 
-{{% gist id="8735932" file="logback.xml" %}}
+{{< gist picodotdev 8735932 "logback.xml" >}}
 
 Este sería el código del filtro que nos permitiría obtener las trazas de una determinada funcionalidad, en el caso del ejemplo las trazas relativas a la funcionalidad de importación.
 
-{{% gist id="8735932" file="ImportacionFilter.java" %}}
+{{< gist picodotdev 8735932 "ImportacionFilter.java" >}}
 
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/MarcadoresSLF4J) de su repositorio de GitHub y probarlo en tu equipo.
 

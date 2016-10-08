@@ -23,19 +23,19 @@ Antes de empezar con la guía propiamente hay que tener en cuenta que otra de la
 
 Primeramente deberemos instalar el paquete de docker, en el caso de [Arch Linux][archlinux] con el siguiente comando:
 
-{{% gist id="85b091f62b462deee318" file="docker-1.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-1.sh" >}}
 
 Para poder usar docker sin emplear el comando sudo deberemos crear y añadir nuestro usuario al grupo docker:
 
-{{% gist id="85b091f62b462deee318" file="docker-2.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-2.sh" >}}
 
 Una vez instalado el paquete y añadido nuestro usuario al grupo docker podemos iniciar el servicio de docker, en Arch Linux con systemd:
 
-{{% gist id="85b091f62b462deee318" file="docker-3.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-3.sh" >}}
 
 Con el comando «docker images», «docker ps», «docker ps -a» podemos respectivamente ver las imágenes de docker disponibles en nuestro sistema, las instancias de los contenedores iniciadas y las instancias de los contenedores incluyendo las no iniciadas.
 
-{{% gist id="85b091f62b462deee318" file="docker-4.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-4.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/50/docker-images.png" title="docker-images" data-gallery><img src="assets/images/custom/posts/50/docker-images-thumb.png"></a>
@@ -47,7 +47,7 @@ Una vez conocemos los comandos básicos para gestionar las imágenes y contenedo
 
 Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el usuario que creó la imagen, el nombre de la imagen y el tag. En el siguiente enlace en la pestaña tags podemos ver las [imágenes para docker de Debian y sus tag](https://registry.hub.docker.com/_/debian/):
 
-{{% gist id="85b091f62b462deee318" file="docker-5.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-5.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/50/docker-pull.png" title="docker-pull" data-gallery><img src="assets/images/custom/posts/50/docker-pull-thumb.png"></a>
@@ -55,7 +55,7 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 
 Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:
 
-{{% gist id="85b091f62b462deee318" file="docker-6.sh" %}}
+{{< gist picodotdev 85b091f62b462deee318 "docker-6.sh" >}}
 
 En la terminal que se inicia podemos usar cualquier comando que usaríamos en un sistema [debian][debian] como apt-get.
 

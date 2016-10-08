@@ -25,12 +25,12 @@ Para conseguir esta trazabilidad haremos dos modificaciones al archivo de constr
 
 El nombre del artefacto se modifica con una clase cuyo método _toString()_ proporciona la versión que podemos asignar a la propiedad _version_ de la clase [Project](https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html) definida con el archivo de construcción Gradle. Para proporcionar la información de la versión en la aplicación se incluye un archivo al construir el artefacto modificando la tarea _jar_ y generando el archivo con la tarea _createBuildInfoFile_. Este es el archivo de construcción de Gradle y la clase que contiene la información de la versión que se coloca en el directorio _buildSrc_.
 
-{{% gist id="32f538f675ec91a88dac1178ab20c402" file="build.gradle" %}}
-{{% gist id="32f538f675ec91a88dac1178ab20c402" file="ProjectVersion.groovy" %}}
+{{< gist picodotdev 32f538f675ec91a88dac1178ab20c402 "build.gradle" >}}
+{{< gist picodotdev 32f538f675ec91a88dac1178ab20c402 "ProjectVersion.groovy" >}}
 
 En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1.0.b42.fea4d2f.jar_. Ejecutando el _jar_ con <code>java -jar build/libs/GradleVersion-1.0.b42.77c083e.jar</code> cuya clase con el método _main_ informa de la versión leyendo el archivo _properties_ incluído en el _jar_ obtenemos la siguiente salida en la terminal.
 
-{{% gist id="32f538f675ec91a88dac1178ab20c402" file="Main.java" %}}
+{{< gist picodotdev 32f538f675ec91a88dac1178ab20c402 "Main.java" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="145" image1="gradle-version.png" thumb1="gradle-version-thumb.png" title1="Artefacto distribuible con información de versión" >}}

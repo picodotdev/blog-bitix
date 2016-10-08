@@ -45,20 +45,20 @@ Sin embargo, como el contenido de los diálogos depende del producto o productos
 
 Definida la necesidad y unas pocas notas voy a poner el código de como con Apache Tapestry implementar la solución. La página del listado será la siguiente. En el _checkbox_ de selección se añade el atributo _data-product-actions_ con las acciones posibles que se obtienen del servicio _AppService_ con el método _getAvaliableActions_. El componente de Tapestry _actions_ generará el código de los botones tanto para los individuales en su uso _\<t:actions\>_ con el parámetro _product_ como múltiples en su uso con el parámetro _type_.
 
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="Index.java" %}}
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="Index.tml" %}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "Index.java" >}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "Index.tml" >}}
 
 El código para mostrar las acciones con botones para un determinado producto o para los productos es el siguiente. El mismo componente se encargará de realizar en el servidor la acción habilitar que no necesita modal. Con un poco de [JavaScript][javascript], [jQuery][jquery] y [Underscore][underscorejs] se habilitarán o deshabilitarán los botones y se mostrará el diálogo para la acción deshabilitar.
 
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="Actions.java" %}}
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="Actions.tml" %}}
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="actions.js" %}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "Actions.java" >}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "Actions.tml" >}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "actions.js" >}}
 
 El código del modal para deshabilitar sería el siguiente. En el método _show_ recibe los _ids_ de los productos a deshabilitar y recupera del servidor el contenido de diálogo con una petición AJAX. El componente del modal se encargará de hacer el deshabilitado de los productos y la recarga de la página si finaliza correctamente o de mostar los errores de validación que se produzcan si no se ha introducido el motivo.
 
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="DisableProductsModal.java" %}}
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="DisableProductsModal.tml" %}}
-{{% gist id="11715e0799339d0335a30ce30a17ee58" file="modals.js" %}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "DisableProductsModal.java" >}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "DisableProductsModal.tml" >}}
+{{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "modals.js" >}}
 
 {{% code git="blog-ejemplos/tree/master/TapestryMultipleActions" command="./gradlew run" %}}
 

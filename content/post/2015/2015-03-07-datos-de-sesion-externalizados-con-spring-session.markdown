@@ -26,13 +26,13 @@ Las soluciones más comentadas son:
 
 Usando [Spring Session][spring-session] podemos externalizar los datos de la sesión en un servidor Redis usándolo como caché externa. Para demostrar y enseñar el código necesario he creado una pequeña aplicación web con [Spring MCV][spring-framework]. El controlador no tiene nada especial, obtiene la sesión y guarda los datos que necesita. Usando la anotación _@EnableRedisHttpSession_ activamos la infraestructura necesaria en el contenedor de Spring para guardar los datos de la sesión en Redis. Por supuesto deberemos añadir las dependencias que necesitemos en la herramienta de construcción que usemos.
 
-{{% gist id="69e8c57980f6c9d0f1b8" file="SessionController.java" %}}
-{{% gist id="69e8c57980f6c9d0f1b8" file="Initializer.java" %}}
-{{% gist id="69e8c57980f6c9d0f1b8" file="Config.java" %}}
+{{< gist picodotdev 69e8c57980f6c9d0f1b8 "SessionController.java" >}}
+{{< gist picodotdev 69e8c57980f6c9d0f1b8 "Initializer.java" >}}
+{{< gist picodotdev 69e8c57980f6c9d0f1b8 "Config.java" >}}
 
 Descargado el [código fuente de la aplicación de ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringSession) se puede iniciar con:
 
-{{% gist id="69e8c57980f6c9d0f1b8" file="gradlew.sh" %}}
+{{< gist picodotdev 69e8c57980f6c9d0f1b8 "gradlew.sh" >}}
 
 Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Podemos detener el servidor y volverlo a iniciar y comprobaremos que los datos de la sesión no se han perdido al estar persistidos en redis.
 

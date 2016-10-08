@@ -22,8 +22,8 @@ Uno de los componentes más complejos pero al mismo tiempo muy simple de usar of
 
 Aunque el componente tiene un buen número de parámetros para personalizar según queramos su comportamiento basta que hagamos uso únicamente del parámetro _source_ que es la fuente de datos del _Grid_, puede ser un objeto de tipo [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html) o un [GridDataSource](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/grid/GridDataSource.html) que proporciona métodos para hacer la paginación y ordenación eficientemente recuperando de la base de datos o fuente de datos únicamente los registros a mostrar realizando paginación.
 
-{{% gist id="cddb3bbca6ad09c4d602b7b252ef0e35" file="ProductoAdmin.tml" %}}
-{{% gist id="cddb3bbca6ad09c4d602b7b252ef0e35" file="ProductoAdmin.java" %}}
+{{< gist picodotdev cddb3bbca6ad09c4d602b7b252ef0e35 "ProductoAdmin.tml" >}}
+{{< gist picodotdev cddb3bbca6ad09c4d602b7b252ef0e35 "ProductoAdmin.java" >}}
 <div class="media" style="text-align: center;">
     {{< figure pid="139" image1="grid.png" thumb1="grid-thumb.png" title1="Componente Grid de Tapestry" caption="Componente Grid de Tapestry" >}}
 </div>

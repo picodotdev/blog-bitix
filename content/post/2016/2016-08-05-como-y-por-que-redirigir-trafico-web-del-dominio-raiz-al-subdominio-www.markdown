@@ -30,8 +30,8 @@ Dependiendo del servidor web que utilicemos la configuración a añadir para hac
 
 Usando Docker y el archivo de configuración completo podemos probar que funciona en local sin necesidad de instalar o cambiar la configuración de Nginx si tenemos instalado su paquete.
 
-{{% gist id="82d3c361c947d57a25b346b386bdf3a9" file="docker-run-nginx.sh" %}}
-{{% gist id="82d3c361c947d57a25b346b386bdf3a9" file="nginx.conf" %}}
+{{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "docker-run-nginx.sh" >}}
+{{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "nginx.conf" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="166"
@@ -42,8 +42,8 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 
 ### Apache
 
-{{% gist id="82d3c361c947d57a25b346b386bdf3a9" file="docker-run-httpd.sh" %}}
-{{% gist id="82d3c361c947d57a25b346b386bdf3a9" file="httpd.conf" %}}
+{{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "docker-run-httpd.sh" >}}
+{{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "httpd.conf" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="166"

@@ -37,8 +37,8 @@ Todo esto es algo que se comenta en el <a href="http://www.amazon.es/gp/product/
 
 Esta es la teoría, veamos el código del ejemplo de configuración en Java con recarga dinámica. La mayor parte del código está en la clase ConfiguracionManager. Esta tiene dos métodos que son usados en la clase Main de la aplicación, el método load carga la clase y la compila, y el método monitor que monitoriza el archivo en busca de cambios y llama al método load cuando los detecte.
 
-{{% gist id="03199502551aa8038fcd" file="Main.java" %}}
-{{% gist id="03199502551aa8038fcd" file="ConfiguracionManager.java" %}}
+{{< gist picodotdev 03199502551aa8038fcd "Main.java" >}}
+{{< gist picodotdev 03199502551aa8038fcd "ConfiguracionManager.java" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/43/main.png" title="Salida programa Main.java" data-gallery><img src="assets/images/custom/posts/43/main.png"></a>

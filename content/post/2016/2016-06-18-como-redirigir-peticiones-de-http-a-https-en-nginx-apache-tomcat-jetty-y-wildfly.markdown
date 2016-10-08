@@ -28,8 +28,8 @@ Usando [Docker][docker] nos resultará más sencillo hacer la prueba que teniend
 
 En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el pueto HTTPS (443) accitva el uso de TLS/SSL usando varias directivas y sirve los documentos de _/usr/share/nginx/html_ en la ruta _/_.
 
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="nginx.conf" %}}
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="docker-nginx.sh" %}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "nginx.conf" >}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "docker-nginx.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="151" image1="nginx-https.png" thumb1="nginx-https-thumb.png" title1="Redirección de HTTP a HTTPS en Nginx" caption="Redirección de HTTP a HTTPS en Nginx" >}}
@@ -38,8 +38,8 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 ### Apache HTTPD
 La configuración para Apache HTTPD es similar simplemente cambian las directivas según su propia configuración. Se activan los módulos para usar TLS/SSL y el que permite hacer reescrituras de las URL.
 
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="httpd.conf" %}}
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="docker-httpd.sh" %}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "httpd.conf" >}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "docker-httpd.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="151" image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" title1="Redirección de HTTP a HTTPS en Apache HTTPD" caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
@@ -50,12 +50,12 @@ Es muy habitual que los servidores de aplicaciones como Tomcat, Jetty o WildFly 
 
 Para el caso de Tomcat, Jetty y WildFly habiendo configurado la posibilidad de usar el protocolo seguro la configuración para hacer la redirección es la misma para los tres, habría que añadir al archivo descriptor _web.xml_ de la aplicación el siguiente fragmento XML. Esto hace que el servidor fuerce la conexión segura para los recursos indicados, en este caso todos al usar el patrón _/*_.
 
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="web.xml" %}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "web.xml" >}}
 
 ### Redirección a nivel de aplicación
 Con algún mecanismo propio que empleemos al programar la aplicación (en Java por ejemplo con un filtro) o el _framework_ web que usemos para desarrollar la aplicación web quizá nos ofrezca algún mecanismo para redirigir las peticiones al puerto seguro cuando sea accedida por el puerto inseguro, por ejemplo, para que la redirección la haga la aplicación en vez del servidor con el _framework_ Apache Tapestry basta añadir la siguiente configuración en el módulo de la aplicación.
 
-{{% gist id="505856d7e0a9574541c303d09fd63be1" file="AppModule.java" %}}
+{{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "AppModule.java" >}}
 
 {{% code git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" %}}
 

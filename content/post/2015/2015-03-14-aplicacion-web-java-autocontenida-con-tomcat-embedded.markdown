@@ -23,15 +23,15 @@ Para hacer cualquier aplicación autocontenida sin necesidad de instalar el serv
 
 Para la demostración usaré la aplicación con los ejemplos que hice para el [libro PulgIn Tapestry][blogbitix-12] que trataba del el framework de desarrollo [Apache Tapestry][tapestry]. Primeramente deberemos añadir al proyecto la dependencia de tomcat-embedded de forma que podamos importar las clases y paquetes de Tomcat a usar en la clase que iniciará la aplicación.
 
-{{% gist id="57d411ed0cc804a75bf6" file="build.gradle" %}}
+{{< gist picodotdev 57d411ed0cc804a75bf6 "build.gradle" >}}
 
 Posteriormente crearemos una clase Java con su método main que inicie el servidor de aplicaciones embebido con la aplicación web desplegada en él, podemos indicar el puerto que queremos que escuche y las configuraciones que necesitemos tal como si lo configurásemos el archivo _server.xml_ o _context.xml_ pero usando código Java, usaremos la API ofrecida por las clases incluidas en las dependencias anteriores (_org.apache.catalina.startup.Tomcat_).
 
-{{% gist id="57d411ed0cc804a75bf6" file="Main.java" %}}
+{{< gist picodotdev 57d411ed0cc804a75bf6 "Main.java" >}}
 
 Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos la aplicación con la clase que contiene el método main con [Gradle][gradle] o desde la linea de comandos con java, necesitaremos descargar las librerías de Tomcat Embedded y en este ejemplo copiarlas al directorio _lib/_ junto con la librería _TomcatEmbedded-0.1.jar_ que contiene la clase _Main_ construida con el comando _gradlew build_:
 
-{{% gist id="57d411ed0cc804a75bf6" file="startup.sh" %}}
+{{< gist picodotdev 57d411ed0cc804a75bf6 "startup.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/71/tomcat-embedded-comando.png" title="Iniciando TomcatEmbedded" data-gallery><img src="assets/images/custom/posts/71/tomcat-embedded-comando-thumb.png"></a>

@@ -19,7 +19,7 @@ Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura 
 
 Para crear el esqueleto de una aplicación rápidamente en [Apache Tapestry](http://tapestry.apache.org/) hay disponible un arquetipo de [Maven](http://maven.apache.org/) que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.
 
-{{% gist id="287ac7c4c6ac53bc1893" file="mvn.sh" %}}
+{{< gist picodotdev 287ac7c4c6ac53bc1893 "mvn.sh" >}}
 
 El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, org.apache.tapestry:quickstart. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo io.github.picodotdev.bitix y como nombre de artefacto iniciorapido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.
 
@@ -37,7 +37,7 @@ Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos
 
 Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jetty](http://www.eclipse.org/jetty/) con la aplicación desplegada en él ya usando [Gradle](http://www.gradle.org/):
 
-{{% gist id="287ac7c4c6ac53bc1893" file="build.gradle" %}}
+{{< gist picodotdev 287ac7c4c6ac53bc1893 "build.gradle" >}}
 
 Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.
 

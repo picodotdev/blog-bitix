@@ -18,18 +18,18 @@ En el anterior artículo explicaba como [crear un _listener_ que reciba eventos 
 
 Para hacer la integración de los _listeners_ con Spring debemos sustituir el _Interceptor_ por un servicio que haga lo mismo pero al inicio del contenedor de Spring con la anotación _@PostConstruct_. Para ello creamos una clase con el siguiente contenido:
 
-{{% gist id="a1e629011771cb34ea05" file="HibernateConfigurer.java" %}}
+{{< gist picodotdev a1e629011771cb34ea05 "HibernateConfigurer.java" >}}
 
 Configurando Spring con anotaciones y código Java, como es recomendable en vez de xml, la configuración del ejemplo es la siguiente y un archivo xml casi testimonial de Spring. En esta configuraicón vemos el servicio _ProductoEventAdapter_ que usaremos para recibir los eventos y el servicio _DummyService_ que se inyectará en el anterior:
 
-{{% gist id="a1e629011771cb34ea05" file="AppConfiguration.java" %}}
-{{% gist id="a1e629011771cb34ea05" file="applicationContext.xml" %}}
+{{< gist picodotdev a1e629011771cb34ea05 "AppConfiguration.java" >}}
+{{< gist picodotdev a1e629011771cb34ea05 "applicationContext.xml" >}}
 
 En el _listener_ haremos uso de un servicio de Spring que podemos inyectar usando la anotación _@Autorwire_ tal y como hacemos normalmente usando el contenedor de depednecias de Spring. La implementación con respecto a usar un _listener_ con solo Hibernate varía ligeramente para adaptarse a los cambios de usar un servicio.
 
-{{% gist id="a1e629011771cb34ea05" file="HibernateEventAdapter.java" %}}
-{{% gist id="a1e629011771cb34ea05" file="ProductoEventAdapter.java" %}}
-{{% gist id="a1e629011771cb34ea05" file="DummyService.java" %}}
+{{< gist picodotdev a1e629011771cb34ea05 "HibernateEventAdapter.java" >}}
+{{< gist picodotdev a1e629011771cb34ea05 "ProductoEventAdapter.java" >}}
+{{< gist picodotdev a1e629011771cb34ea05 "DummyService.java" >}}
 
 En este ejemplo el resultado que veríamos en la consola sería el siguiente con las trazas _Action: preInsert, Id: null_ y _Action: postInsert, Id: 1_ antes y después de ejecutarse la sentencia SQL:
 

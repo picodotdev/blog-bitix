@@ -34,8 +34,8 @@ En el javadoc de las clases hay una descripción más amplia de cada una de ella
 
 En el siguiente código suponiendo que disponemos en la variable source de un código Java a compilar y de la que crearemos mas tarde una instancia de la clase que define podemos hacerlo de la forma indicada continuación. Antes de mostrar el código código la clase a compilar y a cargar de forma dinámica en este ejemplo debe cumplir el contrato definido en una determinada interfaz de modo que una vez compilada y cargada sepamos que métodos podemos invocar de esa clase. En este caso el código fuente de la clase a compilar está hardcodeada en un String en el propio programa pero perfectamente podría haber obtenido su contenido de un archivo del disco duro o de una base de datos.
 
-{{% gist id="bb8fafe477c926a26986" file="Main1.java" %}}
-{{% gist id="bb8fafe477c926a26986" file="Configuracion.java" %}}
+{{< gist picodotdev bb8fafe477c926a26986 "Main1.java" >}}
+{{< gist picodotdev bb8fafe477c926a26986 "Configuracion.java" >}}
 
 Con este ejemplo puede intuirse el ejemplo práctico que comentaré que no es más que utilizar código Java para definir la configuración de una aplicación, esto tiene varias ventajas sobre utilizar un xml u otro tipo de formato de archivo de configuración de la aplicación (una de ellas que utilizando un IDE el compilador nos informará de errores y nos ofrecerá asistencia al escribir código). Esta idea junto con la posibilidad de monitorizar un archivo para ver si se han producido cambios en él (también con la API de Java) y recargarlo puede darnos como resultado una funcionalidad en la que la configuración se basa en código Java y que la configuración pueda recargarse de forma dinámica, si la aplicación se utiliza en un servidor de aplicaciones podríamos cambiar la configuración sin tener que reiniciar la aplicación.
 
@@ -45,9 +45,9 @@ Con este ejemplo puede intuirse el ejemplo práctico que comentaré que no es m�
 
 Casi para terminar las clases de utilidad:
 
-{{% gist id="bb8fafe477c926a26986" file="ClassFileManager.java" %}}
-{{% gist id="bb8fafe477c926a26986" file="CharSequenceJavaFileObject.java" %}}
-{{% gist id="bb8fafe477c926a26986" file="JavaClassObject.java" %}}
+{{< gist picodotdev bb8fafe477c926a26986 "ClassFileManager.java" >}}
+{{< gist picodotdev bb8fafe477c926a26986 "CharSequenceJavaFileObject.java" >}}
+{{< gist picodotdev bb8fafe477c926a26986 "JavaClassObject.java" >}}
 
 El código fuente completo puede encontrarse en el [siguiente repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos/tree/master/ConfiguracionJava).
 

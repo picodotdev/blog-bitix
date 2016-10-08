@@ -21,7 +21,7 @@ En esta entrada voy a comentar como firmar digitalmente documentos en cualquier 
 
 Primeramente deberemos descargar la última versión de [Sinadura](http://www.sinadura.net/es/) según la arquitectura de nuestro procesador, de 32 bits o de 64 bits y la plataforma linux o windows. El archivo descargado es un instalador que deberemos ejecutarlo, como es un programa Java deberemos tener instalado previamente un entorno de ejecución de Java como el [OpenJDK](http://openjdk.java.net/). Lo ejecutamos con:
 
-{{% gist id="8067882" file="instalar-sunadura.sh" %}}
+{{< gist picodotdev 8067882 "instalar-sunadura.sh" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/3/instalador-sinadura.png" title="Instalador Sinadura" data-gallery><img src="assets/images/custom/posts/3/instalador-sinadura-thumb.png" alt="Instalador Sinadura" title="Instalador Sinadura"></a>
@@ -29,7 +29,7 @@ Primeramente deberemos descargar la última versión de [Sinadura](http://www.si
 
 Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:
 
-{{% gist id="8067882" file="iniciar-sinadura.sh" %}}
+{{< gist picodotdev 8067882 "iniciar-sinadura.sh" >}}
 
 Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.
 
@@ -59,12 +59,12 @@ Una vez firmados los archivos podemos enviarlos por correo electrónico y la per
 
 Si queremos firmar muchos archivos a la vez usar la interfaz gráfica nos va a resultar lento y un trabajo repetitivo. En caso de querer hacer firmas masivas de archivos es mejor usar la linea de comandos o un proceso sh que nos haga la tarea. Sinadura también proporciona una utilidad basada en la linea de comandos que debemos usar de la siguiente forma:
 
-{{% gist id="8067882" file="sinadura-console-pdf.sh" %}}
-{{% gist id="8067882" file="sinadura-console-xades.sh" %}}
+{{< gist picodotdev 8067882 "sinadura-console-pdf.sh" >}}
+{{< gist picodotdev 8067882 "sinadura-console-xades.sh" >}}
 
 Con el siguiente archivo de preferencias:
 
-{{% gist id="8067882" file="preferences-console.properties" %}}
+{{< gist picodotdev 8067882 "preferences-console.properties" >}}
 
 La linea de comandos producirá el mismo resultado que el uso con la interfaz gráfica. Realmente los ejemplos de firma por consola no me han funcionado, en ambos casos me da una excepción NullPointerException que no es muy aclarativa de lo que está sucediendo, probablemente sea que falta algo en el archivo de preferencias.
 

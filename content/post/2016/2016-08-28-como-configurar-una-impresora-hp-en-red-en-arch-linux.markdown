@@ -23,7 +23,7 @@ La [wiki de Arch Linux][archlinux-wiki] es una de la mejores documentaciones que
 
 Lo primero necesario a instalar es el paquete de CUPS y el controlador de la impresora en este caso HP, posteriormente iniciar como superusuarios el servicio de CUPS con systemd y avahi para el descubrimiento de impresoras y activarlos con el inicio del sistema si así lo deseamos:
 
-{{% gist id="749c13e14296f931a0329628afcf8e49" file="install.sh" %}}
+{{< gist picodotdev 749c13e14296f931a0329628afcf8e49 "install.sh" >}}
 
 CUPS posee un panel de administración accesible con el navegador en la dirección _http://localhost:631/admin_. Pulsando el botón _Añadir impresora_ en el panel de administración de CUPS iniciamos el asistente para añadir la impresora en el que avahi nos detectará la impresora en red y deberemos seleccionar la marca junto con el modelo específico. Al añadir la impresora se nos preguntará por un usuario y contraseña, como nombre usuario deberemos introducir _root_ y como contraseña la que hayamos establecido en el sistema para el superusuario. Desde el panel de impresoras de [GNOME][gnome] se debería poder añadir la impresora, sin embargo, a mi me daba algún tipo de error de modo que lo hice desde CUPS.
 
@@ -50,11 +50,11 @@ Finalizado el asistente en la sección _Impresoras_ examinado los detalles de la
 
 Si la página de prueba no funciona en el archivo _/var/log/cups/error\_log_ encontraremos mensajes de error con pistas que nos ayudarán a saber que está fallando. Algunos de los mensajes de error que me encontré al realizar la configuración fué el siguiente.
 
-{{% gist id="749c13e14296f931a0329628afcf8e49" file="error_log" %}}
+{{< gist picodotdev 749c13e14296f931a0329628afcf8e49 "error_log" >}}
 
 A raíz de este mensaje tuve que añadir en el archivo _/etc/hosts_ el _host_ _HP.local_ con la dirección IP de la impresora en red que averigüé usando la pantalla táctil que ofrece este modelo de impresora (las mayúsculas y minúsculas son importantes).
 
-{{% gist id="749c13e14296f931a0329628afcf8e49" file="hosts" %}}
+{{< gist picodotdev 749c13e14296f931a0329628afcf8e49 "hosts" >}}
 
 Con todo configurado la prueba de impresión realizable tanto desde la página de administración de CUPS como de GNOME se realizó correctamente y este es el resultado. Una vez que esta prueba es satisfactoria podemos imprimir documentos desde las aplicaciones usando el diálogo de impresión donde aparecerá la impresora en red configurada. Además podremos cambiar algunas opciones como imprimir a dos caras o solo a una, imprimir en blanco y negro o a color o usar un perfil de impresión para ahorro de tinta.
 

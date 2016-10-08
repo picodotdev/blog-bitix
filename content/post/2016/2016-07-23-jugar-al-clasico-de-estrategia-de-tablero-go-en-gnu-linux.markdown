@@ -19,7 +19,7 @@ summary: "En esta serie de artículos sobre juegos vamos a ver que en GNU/Linux 
 
 Otro de los juegos clásicos junto con el ajedrez también para dos personas que requiere pensar y evaluar gran cantidad de posibles movimientos es el juego de origen chino Go. En [GNU][gnu]/[Linux][linux] e instalado el paquete [gnugo](https://www.archlinux.org/packages/extra/x86_64/gnugo/) podremos jugar a este antiguo juego de estrategia tan o más complicado que el propio ajedrez por las diferentes estrategias que se pueden desarrollar.
 
-{{% gist id="8c078a5ff56706bdc066311218935b76" file="pacman.sh" %}}
+{{< gist picodotdev 8c078a5ff56706bdc066311218935b76 "pacman.sh" >}}
 
 Dado que en esta versión para computadora el juego Go se basa en modo texto podremos jugarlo en cualquier sistema GNU/Linux dados su bajos requerimientos que son despreciables para cualquier computadora actual, incluso para una [Raspberry Pi][raspberrypi] u otros sistemas como la familia [BSD][bsd] e incluso [Minix][minix].
 
@@ -38,11 +38,11 @@ En la wikipedia está documentado de forma bastante extensa las [reglas del jueg
 
 Como una partida puede durar una buena cantidad de tiempo podemos salvar una partida a medias y cargarla de nuevo con los siguientes comandos:
 
-{{% gist id="8c078a5ff56706bdc066311218935b76" file="save-commands.txt" %}}
+{{< gist picodotdev 8c078a5ff56706bdc066311218935b76 "save-commands.txt" >}}
 
 Con el comando <code>help</code> obtendremos una lista completa de los comandos a nuestra disposición como volver un movimiento hacia atrás si nos hemos equivocado al introducir el siguiente movimiento.
 
-{{% gist id="8c078a5ff56706bdc066311218935b76" file="help.out" %}}
+{{< gist picodotdev 8c078a5ff56706bdc066311218935b76 "help.out" >}}
 
 En Amazon hay algunos libros como [El Go, un juego oriental milenario](http://amzn.to/2anENOU) y [GO para principiantes](http://amzn.to/29ULTWQ), en la librería libre también hay algunos como [Manual del Juego del Go](https://openlibra.com/es/book/manual-del-juego-del-go) y [GO: Utilizando las 36 estrategias chinas](https://openlibra.com/es/book/go-utilizando-las-36-estrategias-chinas).
 

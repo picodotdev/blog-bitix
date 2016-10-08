@@ -27,20 +27,20 @@ La clase _ThreadLocal_ es bastante simple tiene un método para establecer el da
 
 Veamos un ejemplo en el que crearemos un filtro que detecte el dominio por el que se accede a la aplicación y lo deje disponible en una variable _ThreadLocal_ de modo que la aplicación lo tenga disponible desde cualquier capa de la aplicación. Primero crearemos una clase con variables estáticas globales que contendrá la referencia a la instancia _ThreadLocal_.
 
-{{% gist id="c8af01d1fb19ee3b266c01e0256ff3bc" file="Globals.java" %}}
+{{< gist picodotdev c8af01d1fb19ee3b266c01e0256ff3bc "Globals.java" >}}
 
 A continuación el filtro que obtiene el dominio de la _request_ y lo deja en el _ThreadLocal_ de forma global. Al usar una clase _ThreadLocal_ es importante limpiar el dato correctamente, en este caso usando un bloque _try_ con su _finally_ para que aunque se produzca una excepción el dato acabe desasociado del _thread_ al finalizar la petición, de lo contrario tendremos una fuga de memoria.
 
-{{% gist id="c8af01d1fb19ee3b266c01e0256ff3bc" file="AppFilter.java" %}}
+{{< gist picodotdev c8af01d1fb19ee3b266c01e0256ff3bc "AppFilter.java" >}}
 
 Finalmente, podemos acceder al dato desde cualquier punto de la aplicación, en este caso desde la capa de presentación en la página _Index_ de una aplicación usando [Apache Tapestry][tapestry] y desde la capa de lógica de negocio o servicios que es independiente de la capa de presentación.
 
-{{% gist id="c8af01d1fb19ee3b266c01e0256ff3bc" file="Index.java" %}}
-{{% gist id="c8af01d1fb19ee3b266c01e0256ff3bc" file="DefaultJooqProductoDAO.java" %}}
+{{< gist picodotdev c8af01d1fb19ee3b266c01e0256ff3bc "Index.java" >}}
+{{< gist picodotdev c8af01d1fb19ee3b266c01e0256ff3bc "DefaultJooqProductoDAO.java" >}}
 
 Con el filtro y las anteriores clases en la consola se imprimirán los mensajes con el dominio por el que ha sido accedida la aplicación, en este caso _localhost_.
 
-{{% gist id="c8af01d1fb19ee3b266c01e0256ff3bc" file="System.out" %}}
+{{< gist picodotdev c8af01d1fb19ee3b266c01e0256ff3bc "System.out" >}}
 
 En definitiva, en ciertos casos el uso selectivo de _ThreadLocal_ simplifica el código evitando incluir un parámetro en multitud de métodos y si el dato ha de recuperarse de la base de datos evita realizar la misma consulta varias veces haciendo el programa más eficiente.
 

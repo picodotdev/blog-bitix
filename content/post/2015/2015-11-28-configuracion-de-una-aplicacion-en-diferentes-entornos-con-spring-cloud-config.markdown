@@ -27,16 +27,16 @@ Para el ejemplo me basaré en varios artículos que he escrito anteriormente com
 
 Para la parte servidor deberemos incluir como dependencia en el archivo _build.gradle_ la propia del servidor de Spring Cloud Config, _org.springframework.cloud:spring-cloud-config-server_, y dos archivos de configuración, _application.yml_ y _bootstrap.yml_ donde indicaremos el puerto donde escuchará la aplicación y la ruta del sistema de ficheros del repositorio de configuraciones. En la clase que inicia el servidor con [Spring Boot][spring-boot] usaremos la anotación <code>@EnableConfigServer</code>.
 
-{{% gist id="8f1cb4de86c56e21edb9" file="Main-server.java" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="build-server.gradle" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="application.yml" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="bootstrap-server.yml" %}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "Main-server.java" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "build-server.gradle" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "application.yml" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "bootstrap-server.yml" >}}
 
 En el repositorio de configuraciones cada combinación de aplicación y entorno de ejecución tendrá su propio archivo de configuración. En el caso de una aplicación de nombre _springcloudclient_ que se ejecuta en los entornos _dev_, _test_ y _prod_ los archivos serían los siguientes. Cada archivo tiene similares propiedades de configuración pero posiblemente variando los valores de cada una de ellas. Los archivos pueden definirse en varios formatos, en este caso usando <abbr title="YAML Ain't Another Markup Language">YAML</abbr>.
 
-{{% gist id="8f1cb4de86c56e21edb9" file="springcloudclient-dev.yml" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="springcloudclient-test.yml" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="springcloudclient-prod.yml" %}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "springcloudclient-dev.yml" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "springcloudclient-test.yml" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "springcloudclient-prod.yml" >}}
 
 En la búsqueda de las ubicaciones de los archivos de configuración se siguen los siguientes patrones, en el caso del ejemplo he usado la segunda opción, el primero que se encuentre es el que se usa:
 
@@ -58,9 +58,9 @@ Este sería el inicio del servidor de configuración y el documento JSON que dev
 
 La aplicación cliente cuando se inicie solicitará su configuración al servidor Spring Cloud Config mediante una petición HTTP en función del entorno para el que se inicie. Deberemos usar la dependencia _org.springframework.cloud:spring-cloud-starter-config_. Para obtener los valores de las propiedades de configuración podemos usar la anotación <code>@Value</code>. En los archivos _application.yml_ y _bootstrap.yml_ indicamos el perfil para el cual se activará la aplicación y podemos especificar la <abbr title="Uniform Resource Locator">URL</abbr> con la localización del servidor de configuración.
 
-{{% gist id="8f1cb4de86c56e21edb9" file="Main-client.java" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="build-client.gradle" %}}
-{{% gist id="8f1cb4de86c56e21edb9" file="bootstrap-client.yml" %}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "Main-client.java" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "build-client.gradle" >}}
+{{< gist picodotdev 8f1cb4de86c56e21edb9 "bootstrap-client.yml" >}}
 
 Si no queremos obtener las propiedades con la anotación <code>@Value</code> podemos usar el _bean_ [Environment](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html) que define Spring y sus métodos _getProperty_ con el que además podremos averiguar los perfiles activos de la aplicación. Por otra parte las mismas propiedades de configuración del cliente podemos especificarlos mediante parámetros, propiedades de sistema, propiedades de entorno y algunas formas más como se explica en como [externalizar la configuración en las aplicaciones Spring](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html). De cualquiera de estas formas podemos indicar o sobreescribir los valores como puede ser el perfil activo de la aplicación.
 

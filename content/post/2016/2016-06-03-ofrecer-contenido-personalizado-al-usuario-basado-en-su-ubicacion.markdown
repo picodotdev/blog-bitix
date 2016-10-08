@@ -23,9 +23,9 @@ En [Arch Linux][archlinux] al igual que en muchas otras distribuciones [GNU][gnu
 
 Instalados los paquetes con las bases de datos de geoposicionamiento en la distribución GNU/Linux su uso desde la línea de comandos es el siguiente, indicando la dirección IP o nombre de dominio de la que queramos conocer su ubicación:
 
-{{% gist id="c521d486dd5740b5c9fa6144bde3bbc4" file="geoiplookup-85.84.77.93.sh" %}}
-{{% gist id="c521d486dd5740b5c9fa6144bde3bbc4" file="geoiplookup-8.8.8.8.sh" %}}
-{{% gist id="c521d486dd5740b5c9fa6144bde3bbc4" file="geoiplookup-marca.es.sh" %}}
+{{< gist picodotdev c521d486dd5740b5c9fa6144bde3bbc4 "geoiplookup-85.84.77.93.sh" >}}
+{{< gist picodotdev c521d486dd5740b5c9fa6144bde3bbc4 "geoiplookup-8.8.8.8.sh" >}}
+{{< gist picodotdev c521d486dd5740b5c9fa6144bde3bbc4 "geoiplookup-marca.es.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="147" image1="geoiplookup.png" thumb1="geoiplookup-thumb.png" title1="Comando para obtener información de geoposicionamiento en base a la dirección IP" caption="Comando para obtener información de geoposicionamiento en base a la dirección IP" >}}
@@ -37,8 +37,8 @@ Este sería el código para obtener la información de forma más sencilla que l
 
 En el siguiente ejemplo no incluyo la base de datos en el código fuente del proyecto ya que ocupa casi 65MiB. Descargada, descomprimida y ubicada en el directorio _src/main/resources_ la aplicación se iniciar con el comando <code>./gradlew run</code>.
 
-{{% gist id="74bd3f93225874e9fa35918515f5ec06" file="Main.java" %}}
-{{% gist id="74bd3f93225874e9fa35918515f5ec06" file="build.gradle" %}}
+{{< gist picodotdev 74bd3f93225874e9fa35918515f5ec06 "Main.java" >}}
+{{< gist picodotdev 74bd3f93225874e9fa35918515f5ec06 "build.gradle" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="147" image1="geolite2.png" thumb1="geolite2-thumb.png" title1="Información de geoposicionamiento en base a la dirección IP con GeoLite2" caption="Información de geoposicionamiento en base a la dirección IP con GeoLite2" >}}

@@ -33,10 +33,10 @@ Implementar el patrón no es muy complicado basta con extender de una clase (_Ob
 Supongamos que tenemos una clase _Producto_ con un precio y queremos emitir un mensaje en la terminal cuando un producto cambie de precio. Para implementar este patrón _Producto_ debería extender de _Observable_ y otra clase hacer que implemente la interfaz _Observer_, sin embargo, si no queremos o no podemos hacer que nuestra clase extienda de _Observable_ para no limitarnos en nuestra jerarquía de clases o porque ya extiende de otra podemos usar composición, por otro lado, si no queremos registrar el observador en cada instancia de _Producto_  sino observar cualquier instancia que se cree podemos implementar el _Observer_ de forma estática en la clase _Producto_. El observable _ProductoObservable_ amplia la visibilidad del método _setChanged_ para poder hacer uso de él usando composición, deberemos invocarlo para que los observadores sean notificados. A continuación pondré el código usando composición e implementándolo de forma estática.
 
 
-{{% gist id="5bcd853a957c4b97655e" file="Producto.java" %}}
-{{% gist id="5bcd853a957c4b97655e" file="ProductoObserver.java" %}}
-{{% gist id="5bcd853a957c4b97655e" file="Main.java" %}}
-{{% gist id="5bcd853a957c4b97655e" file="System.out" %}}
+{{< gist picodotdev 5bcd853a957c4b97655e "Producto.java" >}}
+{{< gist picodotdev 5bcd853a957c4b97655e "ProductoObserver.java" >}}
+{{< gist picodotdev 5bcd853a957c4b97655e "Main.java" >}}
+{{< gist picodotdev 5bcd853a957c4b97655e "System.out" >}}
 
 Conocer los patrones de diseño, conocer sus beneficios y desventajas y saber cuando aplicarlos probablemente nos sea de provecho en los casos reales que nos encontremos. En el libro <a href="http://www.amazon.es/gp/product/0596007124/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0596007124&linkCode=as2&tag=blobit-21">Head First Design Patterns</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596007124" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> explican bastante bien este y otros patrones, este libro lo considero como lectura recomendada junto a otros [8+ libros para mejorar como programadores][blogbitix-55].
 

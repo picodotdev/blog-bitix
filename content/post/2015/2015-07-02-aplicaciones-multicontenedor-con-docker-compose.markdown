@@ -38,18 +38,18 @@ El archivo descriptor nos puede servir no solo como forma de iniciar los contene
 
 Tenemos varias formas de instalar Docker Compose. La que más me gusta y la que recomiendo por ser sencilla es [descargar el binario de docker compose](https://github.com/docker/compose/releases) según nuestra plataforma GNU/Linux o Mac.  Descargando el binario de Docker Compose deberemos darle permisos de ejecución y si nos interesa colocarlo en la variable de entorno _PATH_ del sistema:
 
-{{% gist id="1c2c875cc730b825647f" file="permisos.sh" %}}
-{{% gist id="1c2c875cc730b825647f" file=".bashrc" %}}
+{{< gist picodotdev 1c2c875cc730b825647f "permisos.sh" >}}
+{{< gist picodotdev 1c2c875cc730b825647f ".bashrc" >}}
 
 Con el siguiente comando veremos que Docker Compose funciona correctamente y la versión del mismo.
 
-{{% gist id="1c2c875cc730b825647f" file="docker-compose-version.sh" %}}
+{{< gist picodotdev 1c2c875cc730b825647f "docker-compose-version.sh" >}}
 
 ### El descriptor de contenedores
 
 El descriptor de los contenedores a usar con Docker Compose es un archivo de texto con [formato yaml][yaml] en la que especificamos los diferentes contenedores y sus propiedades, básicamente podemos indicar las mismas propiedades que indicamos arrancando los contenedores individualmente con el comando _docker run_. En el siguiente ejemplo vemos varios contenedores, dos contenedores de datos para redis y postgresql, los contenedores de redis y postgresql y un contenedor para la aplicación usando tomcat enlazado con los contenedores de redis y postgresql definidos previamente.
 
-{{% gist id="1c2c875cc730b825647f" file="docker-compose.yml" %}}
+{{< gist picodotdev 1c2c875cc730b825647f "docker-compose.yml" >}}
 
 La imagen de los contenedores se indica con la propiedad _image_, los contenedores de datos, _redisdb_ y _posgresqldb_, usan la propiedad _volumes_ con los datos que guardarán y la imagen de _busybox_ (se suele usar esta para los contenedores de datos porque es muy pequeña), con la propiedad _hostname_ podemos indicar el nombre de la máquina que al usar la propiedad _link_ docker hará visible al contenedor que los usen, con _volumes\_from_ podemos usar volúmenes, con _links_ enlazar contenedores y con _ports_ asociar puertos entre los contenedores y la propia máquina anfitrión, en el ejemplo he usado los puertos por defecto de cada uno de los servicios.
 
@@ -59,7 +59,7 @@ La [descripción completa del formato del archivo de Docker Compose](https://doc
 
 Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemos iniciar los contenedores con el comando _docker-compose up_ estando en el mismo directorio de trabajo donde esté ubicado del archivo yml (y previamente habiendo iniciado el servicio de docker). Con _docker-compose ps_ podremos ver el estado de los contenedores y de cuales está compuesta la aplicación. Con la opción _--help_ podemos ver la lista completa de comandos que podemos usar.
 
-{{% gist id="1c2c875cc730b825647f" file="docker-compose-up.yml" %}}
+{{< gist picodotdev 1c2c875cc730b825647f "docker-compose-up.yml" >}}
 
 <div class="media" style="text-align: center;">
     <figure>

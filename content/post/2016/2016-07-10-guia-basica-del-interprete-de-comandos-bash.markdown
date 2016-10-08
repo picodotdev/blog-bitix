@@ -28,7 +28,7 @@ Una de las cosas buenas de Bash es que está presente por defecto en la mayoría
 
 Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obtener 3 ganadores de forma aleatoria con la combinación de los siguientes comandos. El comando <code>grep</code> permite aplicar una expresión regular a cada línea de un fichero que si la cumple es enviada a la salida, <code>shuf</code> reordena las líneas de forma aleatoria y con la opción <code>-n 3</code> emite las 3 primeras. Los comandos proporcionados por GNU en los sistemas Linux proporcionan multitud de comandos como estos muy útiles, combinándolos conseguimos tareas más capaces que lo que son los comandos individualmente.
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="sorteo-1.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "sorteo-1.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="158"
@@ -38,16 +38,16 @@ Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obt
 
 Por defecto la salida estándar de un comando es la terminal pero podemos redirigirla a un fichero con la opción <code>></code>.
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="sorteo-2.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "sorteo-2.sh" >}}
 
 Además de la salida estándar los programas tienen la salida de errores que podemos redirigir con <code>2></code>, si queremos redirigir la salida estándar y la de error podemos usar la redirección <code>&></code>. Tanto la opción <code>></code> y <code>2></code> crean un fichero con la salida redirigida, si en vez de sobreescribir el contenido del archivo queremos añadirlo al final podemos hacer la redirección con <code>>></code>.
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="sorteo-3.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "sorteo-3.sh" >}}
 
 ### Múltiples comandos
 Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma línea en vez de individualmente, ejecutar un comando si el anterior se ha ejecutado correctamente con <code>&&</code> o al contrario ejecutar un comando si el anterior ha fallado con <code>||</code>. Si en la ubicación de trabajo que estamos existe un directorio no se podrá crear otro con el mismo nombre, dependiendo de las opciones de encadenamiento según el resultado del comando anterior se ejecutará o no el siguiente comando.
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="multiples-comandos.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "multiples-comandos.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="158"
@@ -58,11 +58,11 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
 ### Variables e interpolación de cadenas
 Podemos definir variables locales en el _script_ o exportarlas para que estén accesibles en otros procesos e incluso interpolarlas en cadenas de la siguiente forma:
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="variables-1.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "variables-1.sh" >}}
 
 También podemos interpolar la salida de un comando dentro de una cadena:
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="variables-2.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "variables-2.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="158"
@@ -84,11 +84,11 @@ Hay más [formas de ejecutar comandos del historial](http://www.softpanorama.org
 ### Scripts
 Los _scritps_ son archivos de texto con permisos de ejecución interpretados por Bash u otro intérprete que ejecuta los comandos del _script_, es la forma de automatizar varios comandos. Al inicio de los _scripts_ se suele incluir el [shebang](https://es.wikipedia.org/wiki/Shebang) donde se indica el programa encargado de interpretar el _script_, puede ser Bash o un programa escrito en un lenguaje de programación como [Python][python]. Se puede indicar de varias formas pero las preferidas son las siguientes:
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="scripts-1.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "scripts-1.sh" >}}
 
 Una vez escrito el _script_ antes de ejecutarlo debemos darle permisos de ejecución con el comando <code>chmod</code>:
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="scripts-2.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "scripts-2.sh" >}}
 
 ### Argumentos
 
@@ -103,7 +103,7 @@ Al igual que los comandos pueden recibir opciones y argumentos los _scripts_ tam
 ### Funciones, _for_, _switch_, _if_, comparaciones
 En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _script_. Pueden incluir argumentos.
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="funciones-1.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "funciones-1.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="158"
@@ -111,7 +111,7 @@ En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _scr
         caption="Opciones de un script" >}}
 </div>
 
-{{% gist id="428d17cec6b14283ca7cf48174d41ad2" file="funciones-2.sh" %}}
+{{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "funciones-2.sh" >}}
 
 Los _scripts_ de Bash suelen manejar ficheros y disponemos de una buena cantidad de opciones para comparar:
 

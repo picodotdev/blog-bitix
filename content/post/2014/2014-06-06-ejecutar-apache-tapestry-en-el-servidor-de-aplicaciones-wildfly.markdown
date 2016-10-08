@@ -21,19 +21,19 @@ Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar 
 
 Con la clase que permite funcionar las aplicaciones Tapestry en JBoss/WildFly junto con un poco de configuración para el contenedor de dependencias definido en un módulo será suficiente. La clase es la siguiente:
 
-{{% gist id="5f3a8aa3e2dc8b7f86e4" file="WildFlyClasspathURLConverter.java" %}}
+{{< gist picodotdev 5f3a8aa3e2dc8b7f86e4 "WildFlyClasspathURLConverter.java" >}}
 
 La configuración adicional para el contenedor de dependencias es para que Tapestry use esta nueva clase:
 
-{{% gist id="5f3a8aa3e2dc8b7f86e4" file="AppModule.java" %}}
+{{< gist picodotdev 5f3a8aa3e2dc8b7f86e4 "AppModule.java" >}}
 
 El ContextListener que nos permite acceder al ServletContext es el siguiente:
 
-{{% gist id="5f3a8aa3e2dc8b7f86e4" file="ContextListener.java" %}}
+{{< gist picodotdev 5f3a8aa3e2dc8b7f86e4 "ContextListener.java" >}}
 
 Además hemos de incluir en el proyecto un par de librerías y usar al menos la versión 16 de guava si se incluye como dependencia en el war:
 
-{{% gist id="5f3a8aa3e2dc8b7f86e4" file="build.gradle" %}}
+{{< gist picodotdev 5f3a8aa3e2dc8b7f86e4 "build.gradle" >}}
 
 En la [aplicación de ejemplo](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) también deberemos actualizar la versión de guava al menos a la versión 16. Y esta clase y configuración es suficiente para que "mágicamente" se solucionen los problemas de las aplicaciones Tapestry con el servidor de aplicaciones JBoss/WildFly. Si no usamos lo indicado en este artículo al acceder al acceder a la aplicación fallaría con una excepción.
 

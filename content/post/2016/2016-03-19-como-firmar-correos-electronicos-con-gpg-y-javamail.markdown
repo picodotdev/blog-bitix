@@ -24,14 +24,14 @@ Con [GPG][gnupg] y [JavaMail][javamail] podemos firmar los mensajes electrónico
 
 Además de cómo firmar un correo electrónico el siguiente ejemplo muestra [cómo ejecutar un proceso del sistema en Java][blogbitix-132] que nos proporciona acceso a todas las utilidades GNU, scripts de [Python][python] u otros comandos que tenga instalados, también muestra [cómo enviar un correo electrónico en un programa Java][elblogdepicodev-50] que ya comenté pero ahora con un ejemplo ejecutable y enviando un archivo adjunto.
 
-{{% gist id="c4ce75423a67e4ee6b38" file="Main.java" %}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "Main.java" >}}
 
 En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firma el asunto, fecha, otros adjuntos y destinatarios del mensaje pero podría utilizarse lo mismo para firmar estos otros datos. Enviado el correo electrónico podemos verificar la firma con el siguiente comando de GPG.
 
-{{% gist id="c4ce75423a67e4ee6b38" file="gpg-verify.sh" %}}
-{{% gist id="c4ce75423a67e4ee6b38" file="email.txt" %}}
-{{% gist id="c4ce75423a67e4ee6b38" file="signature.asc.txt" %}}
-{{% gist id="c4ce75423a67e4ee6b38" file="email-original.txt" %}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "gpg-verify.sh" >}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "email.txt" >}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "signature.asc.txt" >}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "email-original.txt" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="133" image1="gpg-verify.png" thumb1="gpg-verify.png" title1="Verificación de la firma GPG del correo electrónico" caption="Verificación de la firma GPG del correo electrónico" >}}
@@ -43,7 +43,7 @@ En el anillo de claves de GPG la clave que usemos para firmar no ha de tener _pa
 
 Las suplantaciones mediante correo electrónico son y seguirán siendo habituales si no son detectadas como _spam_. Después de escribir este artículo usar [<abbr title="DomainKeys Identified Mail">DKIM</abbr>](https://es.wikipedia.org/wiki/DomainKeys_Identified_Mail) parece ser la forma adecuada de firmar y cifrar los correos electrónicos y viendo el mensaje original de los que envían [Google][google] y [Amazon][amazon] es lo que utilizan ellos que algo sabrán de esto. Usar DKIM en los correos electrónicos será tema para otro posible artículo, la [nube de Amazon ofrece soporte para DKIM](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
 
-{{% gist id="c4ce75423a67e4ee6b38" file="email-dkim.txt" %}}
+{{< gist picodotdev c4ce75423a67e4ee6b38 "email-dkim.txt" >}}
 
 {{% reference %}}
 {{< links >}}

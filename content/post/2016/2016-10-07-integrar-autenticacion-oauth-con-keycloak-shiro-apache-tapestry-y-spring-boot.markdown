@@ -37,8 +37,8 @@ El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAut
 
 Iniciar el servidor OAuth de Keycloak usando [Docker][docker] es muy sencillo con el siguiente comando y archivo de [Docker Compose][docker-compose], en el primer acceso se nos solicitará una clave y contraseña de administración:
 
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="docker-compose.yml" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="docker-compose.sh" %}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "docker-compose.yml" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "docker-compose.sh" >}}
 
 Para el ejemplo crearé un nuevo _realm_ que contendrá los usuarios y en el que registraremos la aplicación cliente.
 
@@ -56,21 +56,21 @@ Para el ejemplo crearé un nuevo _realm_ que contendrá los usuarios y en el que
 
 Usando uno de los [adaptadores proporcionados por Keycloak](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/overview/supported-platforms.html) para la integración en servidores y aplicaciones su uso no es complicado, en este caso usaré el adaptador para Spring Boot. Usándolo básicamente deberemos proporcionar en la configuración las credenciales de la aplicación cliente que hemos registrado previamente en Keycloak. Además indicaremos que URLs de la aplicación requiere autenticación y que roles han de poseer los usuarios autenticados. Al acceder a estas URLs el adaptador de Keycloak redirigirá al servidor para que el usuario se autentique, una vez autenticado se redirigirá a la aplicación de nuevo.
 
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="application.yml" %}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "application.yml" >}}
 
 Autenticado el usuario podemos obtener la instancia de [AccessToken](http://www.keycloak.org/docs/javadocs/org/keycloak/representations/AccessToken.html) que representa el _token_ de OAuth, para la autorización podemos usar Apache Shiro y para ellos deberemos implementar un Realm de tipo [AuthorizingRealm](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html). Tiene dos métodos que deberemos implementar [doGetAuthenticationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthenticatingRealm.html#doGetAuthenticationInfo-org.apache.shiro.authc.AuthenticationToken-) y [doGetAuthorizationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html#doGetAuthorizationInfo-org.apache.shiro.subject.PrincipalCollection-), el primero lo usaremos para autenticar al usuario que en este caso teniendo el _AccessToken_ ya estará autenticado con Keycloak y el segundo método nos permitirá obtener los roles y permisos asociados al usuario que podríamos obtenerlos de una base de datos relacional, en el ejemplo los roles también se obtienen del token. Con un filtro realizaremos el inicio de sesión de forma programática del usuario representado por el _AccessToken_ cuando esté presente en la petición.
 
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="KeycloakFilter.java" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="AppRealm.java" %}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "KeycloakFilter.java" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "AppRealm.java" >}}
 
 Con Apache Tapestry el filtro se registra en el módulo de la aplicación y con Shiro podemos realizar la autorización necesaria en las páginas u acciones de la aplicación usando anotaciones. En este caso una página pública que no requiere estar autenticado, una página accesible por un usuario autenticado y con rol _user_ y finalmente una página de administración que requiere rol _admin_.
 
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="Index.java" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="User.java" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="Admin.java" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="Index.tml" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="User.tml" %}}
-{{% gist id="091f6edb2dc3eb3a825e8d76f7cdf4cc" file="Admin.tml" %}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "Index.java" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "User.java" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "Admin.java" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "Index.tml" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "User.tml" >}}
+{{< gist picodotdev 091f6edb2dc3eb3a825e8d76f7cdf4cc "Admin.tml" >}}
 
 Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.
 

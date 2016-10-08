@@ -24,8 +24,8 @@ Otro aspecto que debemos tener en cuenta en una aplicación es en que huso horar
 
 Podemos convertir la fecha de un huso horario a otro ya sea usando JodaTime, Java 7 o Java 8, por ejemplo ¿si en Madrid (España) son las 12:00 que hora sería en ese momento en Buenos Aires (Argentina)? El código que podemos emplear en Java para cambiar de zona horaria y averiguarlo es el siguiente:
 
-{{% gist id="d496b20ddb45510694f4" file="Main.java" %}}
-{{% gist id="d496b20ddb45510694f4" file="output.txt" %}}
+{{< gist picodotdev d496b20ddb45510694f4 "Main.java" >}}
+{{< gist picodotdev d496b20ddb45510694f4 "output.txt" >}}
 
 Java 7 requiere unas pocas líneas de código fuente más y en este caso se hace usando un SimpleDateFormat, en el caso de JodaTime y Java 8 el código es bastante similar.
 

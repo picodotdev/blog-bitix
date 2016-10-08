@@ -22,7 +22,7 @@ Usar GPG es incómodo si necesitamos cifrar múltiples archivos como sería el c
 
 Deberemos formatear la unidad por lo que previamente deberemos hacer una copia de seguridad de su contenido para no perderlo, en teoría desde Nautilus se puede hacer pero en mis pruebas me indicaba un error que usando la aplicación Discos no se produce.
 
-{{% gist id="030be90a417d74e44477" file="error.txt" %}}
+{{< gist picodotdev 030be90a417d74e44477 "error.txt" >}}
 
 Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!"·$%&/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con [herramientas de recuperación de archivos como Foremost][blogbitix-125] alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es [eliminar ciertos o todos los archivos de forma segura][blogbitix-130]. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando [Foremost](https://wiki.archlinux.org/index.php/Foremost) de los que en algún momento estuvieron.
 

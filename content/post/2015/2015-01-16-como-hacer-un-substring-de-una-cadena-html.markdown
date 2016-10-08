@@ -18,18 +18,18 @@ Una de las cosas que he tenido que resolver en [Blog Stack][blogstack] es como c
 
 Por ejemplo, si tenemos la siguiente cadena y la cortamos en un mal punto y luego insertamos en una página html ese contenido lo que ocurrirá es que todo el texto a continuación de él aparecerá en negrita.
 
-{{% gist id="22c4114197036349dce9" file="text-1.html" %}}
-{{% gist id="22c4114197036349dce9" file="text-2.html" %}}
+{{< gist picodotdev 22c4114197036349dce9 "text-1.html" >}}
+{{< gist picodotdev 22c4114197036349dce9 "text-2.html" >}}
 
 Usar una expresión regular tampoco es solución, con alguna puede parecer que en algún caso funciona pero posiblemente para cada expresión regular podamos encontrar un html para el que no sirva. La expresión regular puede ser complicada.
 
 Para dar solución a este problema podemos emplear jsoup. [Jsoup][jsoup] es una librería Java que nos permite manipular el html, desde extraer en forma de texto plano el contenido hasta modificar el html empleando una API. Empleando esta librería podemos ir extrayendo el contenido para contar cuantos caracteres de texto contiene el html y a la vez crear un extracto del documento html.
 
-{{% gist id="22c4114197036349dce9" file="AppPostRecord.java" %}}
+{{< gist picodotdev 22c4114197036349dce9 "AppPostRecord.java" >}}
 
 Empleando esta librería la cadena del ejemplo anterior podría quedar:
 
-{{% gist id="22c4114197036349dce9" file="text-3.html" %}}
+{{< gist picodotdev 22c4114197036349dce9 "text-3.html" >}}
 
 El resultado aplicando está solución puede verse en el [feed de la portada de Blog Stack][blogbitix-feed] donde se muestra una entradilla o extracto del inicio del contenido de cada uno de los artículos.
 

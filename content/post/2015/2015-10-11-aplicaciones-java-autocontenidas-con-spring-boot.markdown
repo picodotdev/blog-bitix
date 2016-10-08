@@ -31,31 +31,31 @@ Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring
 
 Spring Boot proporciona un _plugin_, _spring-boot_, para [Gradle][gradle] que deberemos añadir al archivo _build.gradle_, a partir de este momento dispondremos algunas tareas adicionales en el proyecto como _bootRun_ para ejecutar la aplicación desde Gradle (similar a la opción _run_ y el parámetro _mainClassName_ que añade el _plugin application_) y _bootRepackage_ para poder ejecutar la aplicación con el comando <code>java -jar</code>.
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="build.gradle" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "build.gradle" >}}
 
 El punto de inicio de una aplicación de Spring Boot es una clase Java con su tradicional método _main_, en el ejemplo la clase _Main_. Bastan tres lineas para iniciar la aplicación y una anotación. Anotando con [<code>@SpringBootApplication</code>](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/SpringBootApplication.html) la clase que contiene el método _main_ activaremos Spring Boot y el procesado de las anotaciones de Spring. En el método _main_ estableciendo la clase contexto de la aplicación variaremos el tipo de aplicación [AnnotationConfigApplicationContext](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html) para una aplicación de linea de comandos o de escritorio y [AnnotationConfigWebApplicationContext](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/support/AnnotationConfigWebApplicationContext.html) para las aplicaciones web que inicializará el servidor de aplicaciones embebido. Implementando la interfaz [CommandLineRunner](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/CommandLineRunner.html) en la clase que contiene la anotación _SpringBootApplication_  y su método _run_ será el punto de entrada de la aplicación, en el método recibiremos los parámetros de la linea de comandos. Implementar esta interfaz es opcional en las aplicaciones web.
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="Main.java" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "Main.java" >}}
 
 La clase _AppConfiguration_ contiene la definición de _beans_ propios del contenedor de inversión de control de las aplicaciones que serán inyectados en las clases donde se indiquen. Pero además definiendo algunos _beans_ podremos configurar el servidor de aplicaciones embebido y la aplicación. Con el _bean_ [ServletContextInitializer](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/SpringServletContainerInitializer.html) podemos definir parámetros de inicialización, filtros, servlets, listeners, propiedades de _cookies_ y obtener información del entorno. Con el _bean_ [EmbeddedServletContainerCustomizer](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/EmbeddedServletContainerCustomizer.html) podemos añadir páginas de error para estados como 404 o 500, configurar el puerto de servicio, establecer la dirección IP, el contexto de la aplicación, directorio raíz de archivos del servidor web, SSL/TLS y tiempo de vida de las sesiones. Con el _bean_ [TomcatConnectorCustomizer](http://docs.spring.io/autorepo/docs/spring-boot/current/api/org/springframework/boot/context/embedded/tomcat/TomcatConnectorCustomizer.html) se pueden personalizar diferentes parámetros del conector y con el _bean_ [TomcatContextCustomizer](http://docs.spring.io/autorepo/docs/spring-boot/current/api/org/springframework/boot/context/embedded/tomcat/TomcatContextCustomizer.html) varios parámetros del contexto que en un Tomcat instalado como paquete de software configuraríamos mediante el archivo de configuración _server.xml_ o _context.xml_. Para que las peticiones se procesen por el _framework_ web Tapestry se define su filtro en el ejemplo o si fuese el caso un servlet. Toda esta configuración es similar a lo que definimos en el archivo _web.xml_, pero en código Java al ser validado por el compilador es menos propenso a errores que los archivos de texto xml.
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="AppConfiguration.java" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "AppConfiguration.java" >}}
 
 No será muy común pero si queremos configurar algunas propiedades internas como las [válvulas de Tomcat](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html) que funcionalmente es similar a un filtro de una aplicación web Java podemos definir un _bean_ del tipo [TomcatEmbeddedServletContainerFactory](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/tomcat/TomcatEmbeddedServletContainerFactory.html), con esta factoría además podremos configurar muchas de las propiedades que podemos configurar con ServletContextInitializer y EmbeddedServletContainerCustomizer pero salvo por las válvulas que es específico de Tomcat la forma preferida hacer la configuración es con estas últimas clases.
 
 Si en vez de usar Tomcat queremos usar Jetty o Undertow debemos cambiar las dependencias de la aplicación, excluimos la dependencia transitiva Tomcat y por defecto de _spring-boot-starter-web_ e incluimos la propia del servidor que deseemos.
 [spring-boot-starter-jetty](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-jetty-instead-of-tomcat) para Jetty y [spring-boot-starter-undertow](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-undertow-instead-of-tomcat) para Undertow. En el siguiente código la configuración a modificar en el archivo _build.gradle_ para ambas.
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="build-jetty.gradle" %}}
-{{% gist id="3819a18dcdde7cbeeb6c" file="build-undertow.gradle" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "build-jetty.gradle" >}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "build-undertow.gradle" >}}
 
 El resto de esta aplicación de ejemplo es propio de [jOOQ][jooq] y de [Apache Tapestry][tapestry]. Para inicializar la base de datos H2 antes de ejecutar la aplicación debemos ejecutar la tarea de Gradle _updataDatabase_ que creará las base de datos, esquema y tablas con la herramienta [Liquibase][liquibase].
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="update-database.sh" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "update-database.sh" >}}
 
 El [código fuente del ejemplo completo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot) puedes encontrarlo en el repositorio de ejemplos de Blog Bitix, arrancarlo y acceder con el navegador a la dirección [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
 
-{{% gist id="3819a18dcdde7cbeeb6c" file="run.sh" %}}
+{{< gist picodotdev 3819a18dcdde7cbeeb6c "run.sh" >}}
 
 En el siguiente vídeo puede verse como es la salida en la terminal cuando la aplicación se arranca con Gradle y con el comando <code>java -jar</code>.
 

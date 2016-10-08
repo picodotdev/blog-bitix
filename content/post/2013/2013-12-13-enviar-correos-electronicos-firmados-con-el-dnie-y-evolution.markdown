@@ -19,7 +19,7 @@ Otra forma de la que podemos sacar partido al DNI electrónico además de para [
 
 En esta entrada explicaré como usar el DNI electrónico para firmar digitalmente correos usando el cliente de correo [Evolution](https://projects.gnome.org/evolution/). Primeramente necesitaremos hacer una configuración adicional a la que hemos necesitado para poder usar el lector de tarjetas inteligentes y el DNIe en Linux. Y es usar el siguiente comando tal y como está comentado en [esta página](https://forja.cenatic.es/plugins/mediawiki/wiki/opendnie/index.php/Documentacion_Aplicaciones_Evolution#Configuraci.C3.B3n_del_DNIe_en_el_cliente_de_correo_Evolution) cambiando el directorio home del usuario por el que corresponda:
 
-{{% gist id="7946347" file="comando-opensc-dnie.sh" %}}
+{{< gist picodotdev 7946347 "comando-opensc-dnie.sh" >}}
 
 A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando modutil cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.
 

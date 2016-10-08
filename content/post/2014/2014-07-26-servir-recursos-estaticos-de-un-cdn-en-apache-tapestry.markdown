@@ -32,19 +32,19 @@ Para que el contenido estático se sirva del CDN debemos hacer que las URL de la
 
 Una de las cosas muy interesantes de Tapestry es que podemos modificar prácticamente cualquier comportamiento del mismo, esto es debido a que la mayor parte de sus funcionalidades son ofrecidas mediante servicios que podemos sobreescribir con los que nosotros proporcionemos, el contenedor de dependencias (IoC) de tapestry lo hace muy fácil. Para modificar las URL de los recursos estáticos que son generados en Tapestry deberemos implementar la clase [AssetPathConverter](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/services/AssetPathConverter.html). Una implementación podría ser la siguiente:
 
-{{% gist id="98c02dadff9c239ff777" file="CDNAssetPathConverterImpl.java" %}}
+{{< gist picodotdev 98c02dadff9c239ff777 "CDNAssetPathConverterImpl.java" >}}
 
 También deberemos añadir un poco de configuración al módulo de la aplicación para que se use esta nueva implementación. Esto se hace en el método serviceOverride de la clase AppModule.java, donde también en el método contributeApplicationDefaults configuramos los símbolos que se usarán al generar las URLs entre ellos el dominio del CDN.
 
-{{% gist id="98c02dadff9c239ff777" file="AppModule.java" %}}
+{{< gist picodotdev 98c02dadff9c239ff777 "AppModule.java" >}}
 
 Estas serían las URLs por defecto:
 
-{{% gist id="98c02dadff9c239ff777" file="urls-sin-cdn.txt" %}}
+{{< gist picodotdev 98c02dadff9c239ff777 "urls-sin-cdn.txt" >}}
 
 Y estas las nuevas nuevas URL haciendo uso de la implementación del _AssetPathConverter_ que como se aprecia incorporan un dominio de Amazon y siendo uno del servicio CloudFront en caso de no tener cacheado el recurso lo pedirá a la aplicación y lo cacheará para posteriores peticiones:
 
-{{% gist id="98c02dadff9c239ff777" file="urls-con-cdn.txt" %}}
+{{< gist picodotdev 98c02dadff9c239ff777 "urls-con-cdn.txt" >}}
 
 Así de simple podemos cambiar el comportamiento de Tapestry y en este caso emplear un CDN, esta implementación es sencilla y suficiente pero perfectamente pordríamos implementarla con cualquier otra necesidad que tuviesemos. El cambio está localizado en una clase, son poco más que 46 líneas de código pero lo mejor es que es transparente para el código del resto de la aplicación, ¿que más se puede pedir?
 

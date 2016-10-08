@@ -21,13 +21,13 @@ No es habitual que esto ocurra pero puede darse el caso y antes de hacer una des
 
 El proceso de _downgrade_ no tiene mucha complicación, basta con lanzar el comando, la dificultad está en conocer si también hay que desactaulizar alguna dependencia (libnm-gtk y libnm-glib):
 
-{{% gist id="f6fd427da4ad64fb6a2b" file="pacman.sh" %}}
+{{< gist picodotdev f6fd427da4ad64fb6a2b "pacman.sh" >}}
 
 Para hacer una desactualización deberemos tener la versión del paquete a la que queramos hacer un _downgrade_, si no hemos hecho una limpieza de la caché de los paquetes no usados (con _pacman -Sc_) lo tendremos en en el directorio _/var/cache/pacman/pkg/_. Si hemos hecho la limpieza de la caché y no dispones del paquete hay que buscar en algún _mirror_ menos actualizado la versión del paquete desactualizado, también podemos usar [Arch Rollback Machine](https://wiki.archlinux.org/index.php/Arch_Rollback_Machine) (ARM) que va almacenando instantáneas de los repositorios durante un tiempo, usando los varios enlaces de ARM podemos encontrar la versión desactualizada del paquete que queramos como el [caso de networkmanager](http://seblu.net/a/arm/packages/n/networkmanager/). Para evitar tener que buscar y descargar manualmente los paquetes de ARM lo que hago es mantener hasta la siguiente actualización los paquetes instalados en la caché cuando ya he comprobado que después de una actualización todo funciona.
 
 Si no queremos que un paquete sea actualizado en la siguiente actualización del sistema que hagamos deberemos añadirlo a la lista _IgnorePkg_ del archivo _/etc/pacman.conf_.
 
-{{% gist id="f6fd427da4ad64fb6a2b" file="pacman.conf" %}}
+{{< gist picodotdev f6fd427da4ad64fb6a2b "pacman.conf" >}}
 
 No es recomendable mantener muchos paquetes desactualizados y en la lista de _IgnorePkg_ ya que estos pueden tener dependencias sobre paquetes también desactualizados, solo debe ser empleado para casos puntuales.
 

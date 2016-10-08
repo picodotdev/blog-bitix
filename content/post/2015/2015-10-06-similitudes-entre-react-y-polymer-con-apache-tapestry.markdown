@@ -24,15 +24,15 @@ El concepto de componente de estos _frameworks_ JavaScript o el utilizado en Tap
 
 Un componente React y otro de Polymer tienen el siguiente aspecto en código.
 
-{{% gist id="f7e6a08f94ae9f203cc2" file="react.js" %}}
-{{% gist id="f7e6a08f94ae9f203cc2" file="polymer.html" %}}
+{{< gist picodotdev f7e6a08f94ae9f203cc2 "react.js" >}}
+{{< gist picodotdev f7e6a08f94ae9f203cc2 "polymer.html" >}}
 
 Uno de los [motivos que comentaba para elegir Tapestry][elblogdepicodev-71] era precisamente este de componente. En Tapestry un componente está formado por una clase Java que contiene la lógica del componente tanto para obtener los datos que necesite la plantilla como para manejar los eventos que se produzcan en el navegador como clics o envío de formularios con datos, también puede tener asociada una plantilla que generará el <abbr title="HyperText Markup Language">HTML</abbr> que se enviará al navegador web del cliente y que usará la clase Java para [obtener los datos que necesite de forma _pull_ en vez de _push_][blogbitix-31] (el modelo _push_ es el habitual en los _frameworks_ basados en acciones), puede necesitar algunos archivos JavaScript para añadir algún comportamiento en el cliente y finalmente archivos de estilos CSS. El componente define los archivos JavaScript y de estilos que necesita y Tapestry se encarga de incluirlos en la página cuando se genera. Solo se incluyen los necesarios según los componentes que se hayan usado para generar la página, no haciendo falta incluir archivos de forma global.
 
 Para usar un componente en Tapestry basta con conocer sus parámetros y los eventos que puede lanzar, estos forman su interfaz que nos abstraen de su funcionamiento interno. Por supuesto su pueden crear componentes más complejos a partir de otros más simples como si de piezas lego se tratase.
 
-{{% gist id="f7e6a08f94ae9f203cc2" file="NumeroProductos.java" %}}
-{{% gist id="f7e6a08f94ae9f203cc2" file="NumeroProductos.tml" %}}
+{{< gist picodotdev f7e6a08f94ae9f203cc2 "NumeroProductos.java" >}}
+{{< gist picodotdev f7e6a08f94ae9f203cc2 "NumeroProductos.tml" >}}
 
 Según lo que comenta la gente parece bastante entusiasmada cuando prueban React o Polymer y considero que si les gusta el concepto de componentes en el lado del cliente creo que también les gustaría el concepto de componentes en el servidor que proporciona Apache Tapestry (entre otras muchas cosas que proporciona) si lo conociesen y probasen. Y son herramientas totalmente compatibles porque perfectamente se puede usar Tapestry en el lado del servidor y React o Polymer en el lado del cliente.
 

@@ -21,11 +21,11 @@ Por ejemplo, supongamos que tenemos un código de un producto formateado de la s
 
 Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la expresión regular. En el caso del código usaremos la siguiente expresión regular:
 
-{{% gist id="fa0408b7ffbddc8cd3c93725db845cf6" file="regex.txt" %}}
+{{< gist picodotdev fa0408b7ffbddc8cd3c93725db845cf6 "regex.txt" >}}
 
 En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) y [Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) podemos hacer las validaciones y obtener los grupos de captura de la usando el método [group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#group-int-) de la clase Matcher:
 
-{{% gist id="fa0408b7ffbddc8cd3c93725db845cf6" file="Main.java" %}}
+{{< gist picodotdev fa0408b7ffbddc8cd3c93725db845cf6 "Main.java" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="140" image1="java-regex.png" thumb1="java-regex-thumb.png" title1="Extracción de valores de una cadena usando una expresión regular" caption="Extracción de valores de una cadena usando una expresión regular" >}}

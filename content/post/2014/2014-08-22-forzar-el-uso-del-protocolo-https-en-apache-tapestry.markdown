@@ -21,19 +21,19 @@ Es casi obligatorio forzar a que ciertas páginas de una aplicación o página w
 
 En [Apache Tapestry][tapestry] hay varias formas de forzar a que una determinada página use el protocolo seguro de modo que si se accede por el [protocolo no seguro http](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol) la aplicación obligue a usar https haciendo una redirección. Una de ellas es utilizar la anotación [@Secure](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/annotations/Secure.html) en las páginas que queramos obligar a usar https. Basta con anotar las clases de las páginas con @Secure y Tapestry automáticamente hará la redirección al protocolo https cuando se acceda con http a la página.
 
-{{% gist id="6c28ea0e096d90c6aa9f" file="Login.java" %}}
+{{< gist picodotdev 6c28ea0e096d90c6aa9f "Login.java" >}}
 
 Probablemente nos interese configurar el puerto y el host que usará Tapestry al hacer la redirección para que coincidan con el usado en el servidor al que accede el usuario, sobre todo si en la aplicación usamos un servidor web proxy como [Apache][apache], [Lighttpd][lighttpd] o [Nginx][nginx] delante del servidor de aplicaciones donde realmente se ejecuta la aplicación web. El puerto seguro del protocolo https predeterminado es 443 pero en el servidor de aplicaciones tomcat por defecto es 8443. Esto en tapestry lo indicamos configurando con ciertos símbolos.
 
-{{% gist id="6c28ea0e096d90c6aa9f" file="AppModule-1.java" %}}
+{{< gist picodotdev 6c28ea0e096d90c6aa9f "AppModule-1.java" >}}
 
 Para probar mientras desarrollamos, al menos en nuestro equipo, que la redirección se hace correctamente empleando el plugin de gradle para tomcat podemos hacer que el servidor de desarrollo se inicie con el puerto https disponible. [Para usar https se necesita un certificado digital][blogbitix-13] que el [plugin de gradle para tomcat](https://github.com/bmuschko/gradle-tomcat-plugin) se encarga de generar al iniciar la aplicación, aunque sea autofirmado y el navegador alerte que no lo reconoce como firmado un una autoridad en la que confíe, si lo aceptamos podemos acceder a la aplicación sin más problema. Usando gradle la configuración que podemos emplear es:
 
-{{% gist id="6c28ea0e096d90c6aa9f" file="build.gradle" %}}
+{{< gist picodotdev 6c28ea0e096d90c6aa9f "build.gradle" >}}
 
 La anotación @Secure en Tapestry es suficiente pero podemos hacer lo mismo empleando [Shiro][shiro]. [Integrando Shiro con Tapestry nos permite realizar autenticación y autorización][elblogdepicodev-seguridad-en-aplicacion-web-con-apache], pero además empleando Shiro también podemos obligar a usar el protocolo https del mismo modo que lo hacemos con la anotación Secure. Cualquiera de las dos formas es perfectamente válida y depende más de cual prefiramos. Con la anotación @Secure deberemos anotar cada página, con Shiro podemos tener centralizado en un único punto en que páginas requerimos https. Con Shiro la configuración se hace con una contribución al servicio SecurityConfiguration y usando el método contributeSecurityConfiguration del módulo y la clase SecurityFilterChainFactory y su método ssl(). Un ejemplo es el siguiente:
 
-{{% gist id="6c28ea0e096d90c6aa9f" file="AppModule-2.java" %}}
+{{< gist picodotdev 6c28ea0e096d90c6aa9f "AppModule-2.java" >}}
 
 En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https en la página de login:
 

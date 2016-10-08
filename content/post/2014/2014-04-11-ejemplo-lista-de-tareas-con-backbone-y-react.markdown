@@ -26,7 +26,7 @@ React es una librería que en algunos casos se está usando en aplicaciones junt
 
 Los componentes de React reemplazan a las vistas de Backbone y vistas, controladores y layouts de Marionette. En el nuevo ejemplo los cambios principales se encuentran en el archivo tareas.js que contiene el código de la aplicación de lista de tareas.
 
-{{% gist id="10477127" file="tareas.js" %}}
+{{< gist picodotdev 10477127 "tareas.js" >}}
 
 El resultado es el siguiente:
 
@@ -38,25 +38,25 @@ Los elementos de las vistas se recomienda definirlas con los elementos que propo
 
 Para probar el código podemos hacerlo abriendo el archivo test/javascript/SpecRunner.html, sin embargo, deberemos hacerlo con Chrome o Chromium y lanzándolo con un parámetro opcional para permitir la carga de los archivos.
 
-{{% gist id="10477127" file="chromium" %}}
+{{< gist picodotdev 10477127 "chromium" >}}
 
 También podríamos probarlo usando gradle con:
 
-{{% gist id="10477127" file="gradlew" %}}
+{{< gist picodotdev 10477127 "gradlew" >}}
 
 Sin embargo, [PhantomJS](http://phantomjs.org/) que es lo que se utiliza para simular el navegador en las pruebas con jasmine y grunt, no soporta la función bind produciéndose la siguiente excepción al usarse en la librería de React.
 
-{{% gist id="10477127" file="error-bind.txt" %}}
+{{< gist picodotdev 10477127 "error-bind.txt" >}}
 
 Para evitarlo debemos añadir un _polyfill_. Deberemos añadir los polyfills de [cujojs/poly](https://github.com/cujojs/poly), podemos hacer uso de ellos con RequireJS basta como añadirlo como dependencia:
 
-{{% gist id="10477127" file="main-specs.js" %}}
+{{< gist picodotdev 10477127 "main-specs.js" >}}
 
 Este problema de la función _bind_ ya esta incluido como [peticion en PhantomJS](https://code.google.com/p/phantomjs/issues/detail?id=522) y probablemente se resuelva en la versión 2.0.
 
 El ejemplo con el [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/BackboneReact) está en [mi repositorio de GitHub](https://github.com/picodotdev), puedes probarlo en tu equipo con el siguiente comando:
 
-{{% gist id="10477127" file="gradle-tomcatRun.sh" %}}
+{{< gist picodotdev 10477127 "gradle-tomcatRun.sh" >}}
 
 {{% reference %}}
 {{< links >}}

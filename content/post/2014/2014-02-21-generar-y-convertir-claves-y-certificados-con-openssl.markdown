@@ -31,23 +31,23 @@ Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar 
 
 Podemos generar un par de claves RSA que nos permitan tanto cifrar como realizar firmas, con OpenSSL usando el siguiente comando:
 
-{{% gist id="9138093" file="script-1.sh" %}}
+{{< gist picodotdev 9138093 "script-1.sh" >}}
 
 #### Exportar la clave pública
 
 El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
 
-{{% gist id="9138093" file="script-9.sh" %}}
+{{< gist picodotdev 9138093 "script-9.sh" >}}
 
 #### Crear un certificado
 
 Un certificado contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:
 
-{{% gist id="9138093" file="script-2.sh" %}}
+{{< gist picodotdev 9138093 "script-2.sh" >}}
 
 Si no queremos tratar con una autoridad de certificado, ya que cobran por la firma, podemos crear un certificado autofirmado que puede ser suficiente para un entorno de pruebas. El comando para generar el certificado autofirmado es:
 
-{{% gist id="9138093" file="script-3.sh" %}}
+{{< gist picodotdev 9138093 "script-3.sh" >}}
 
 ### Convertir un certificado a otros formatos
 
@@ -55,23 +55,23 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 
 #### Convertir un certificado en formato DER (.crt .cer .der) a PEM
 
-{{% gist id="9138093" file="script-4.sh" %}}
+{{< gist picodotdev 9138093 "script-4.sh" >}}
 
 #### Convertir un certificado en formato PEM a DER
 
-{{% gist id="9138093" file="script-5.sh" %}}
+{{< gist picodotdev 9138093 "script-5.sh" >}}
 
 #### Convertir un certificado en formato PEM y una clave privada a PKCS#12 (.pfx .p12)
 
-{{% gist id="9138093" file="script-6.sh" %}}
+{{< gist picodotdev 9138093 "script-6.sh" >}}
 
 #### Convertir un archivo en formato PKCS#12 (.pfx .p12) que contiene una clave privada y certificado a PEM
 
-{{% gist id="9138093" file="script-7.sh" %}}
+{{< gist picodotdev 9138093 "script-7.sh" >}}
 
 #### Convertir PKCS#12 a keystore JKS
 
-{{% gist id="9138093" file="script-8.sh" %}}
+{{< gist picodotdev 9138093 "script-8.sh" >}}
 
 Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. Pero eso será tema para la entrada [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14].
 

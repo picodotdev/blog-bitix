@@ -25,27 +25,27 @@ El problema está en que el ORM lanza las consultas de forma automática según 
 
 Para evitar el problema N+1 hemos de recuperar todos los datos haciendo una única consulta, haciendo una join entre las tablas autor y libro. En [Hibernate](http://hibernate.org/) podemos resolverlo con una consulta HQL como la siguiente:
 
-{{% gist id="87ae5e7c184c5b51844d" file="hql.txt" %}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "hql.txt" >}}
 
 O con una criteria en Grails:
 
-{{% gist id="87ae5e7c184c5b51844d" file="Criteria.groovy" %}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "Criteria.groovy" >}}
 
 Pero para saber en que sitios de nuestro código debemos establecer los métodos de búsqueda EAGER necesitamos detectar los problemas N+1, con la experiencia conoceremos donde se pueden producir, otros casos se nos pueden pasar por alto y necesitaremos detectarlos. Para detectar estos problemas N+1 o para determinar si una página es muy lenta porque hace muchas consultas a la base de datos Hibernate dispone de unas estadísticas mediante las cuales podemos conocer cuantas consultas select, update, insert, conexiones, y más datos por entidad y relación... se han lanzado por haber accedido a una página. Podemos acceder a las estadísticas de Hibernate mediante el objeto [SessionFactory](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/SessionFactory.html) y el método [getStatistics](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/SessionFactory.html#getStatistics%28%29), con ese objeto y método podemos obtener estadísticas globales y para cada una de las entidades persistidas por Hibernate.
 
 En Grails podemos hacer un controlador y gsp que nos muestre esa información que podrían ser de la siguiente forma:
 
-{{% gist id="87ae5e7c184c5b51844d" file="HibernateController.groovy" %}}
-{{% gist id="87ae5e7c184c5b51844d" file="index.gsp" %}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "HibernateController.groovy" >}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "index.gsp" >}}
 
 Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo Config.goovy y añadir la siguiente configuración en el apartado log4j:
 
-{{% gist id="87ae5e7c184c5b51844d" file="Config.groovy" %}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "Config.groovy" >}}
 
 La implementación de appender para capturar las HQL que lanza grails es la siguiente:
 
-{{% gist id="87ae5e7c184c5b51844d" file="HibernateAppender.java" %}}
-{{% gist id="87ae5e7c184c5b51844d" file="HibernateLogger.java" %}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "HibernateAppender.java" >}}
+{{< gist picodotdev 87ae5e7c184c5b51844d "HibernateLogger.java" >}}
 
 El resultado es el siguiente:
 

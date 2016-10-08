@@ -41,9 +41,9 @@ Supongamos que tenemos la fecha 30 de octubre a las 02:30 CEST y la guardamos en
 
 Esto puede probarse con el siguiente ejemplo de código de un programa Java que guarda y recupera de una base de datos [PostgreSQL][postgresql] una fecha que está en el intervalo de cambio horario. En el ejemplo utilizaré [Docker][blogbitix-serie-docker].
 
-{{% gist id="795512b5f0cb61bf88b16dfff519f4e7" file="Main.java" %}}
-{{% gist id="795512b5f0cb61bf88b16dfff519f4e7" file="System.out" %}}
-{{% gist id="795512b5f0cb61bf88b16dfff519f4e7" file="docker-compose.yml" %}}
+{{< gist picodotdev 795512b5f0cb61bf88b16dfff519f4e7 "Main.java" >}}
+{{< gist picodotdev 795512b5f0cb61bf88b16dfff519f4e7 "System.out" >}}
+{{< gist picodotdev 795512b5f0cb61bf88b16dfff519f4e7 "docker-compose.yml" >}}
 
 Tabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones sobre las fechas que son incorrectas](http://infiniteundo.com/post/25509354022/more-falsehoods-programmers-believe-about-time) en las aplicaciones.
 

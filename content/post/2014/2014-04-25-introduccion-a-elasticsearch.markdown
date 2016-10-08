@@ -22,7 +22,7 @@ Como comentaba en [el artículo anterior de búsquedas sobre entidades de domini
 
 La instalación de ES es muy sencilla, basta con [descargar el zip de su distribución](http://www.elasticsearch.org/overview/elkdownloads/), descomprimirlo e iniciarlo con el siguiente comando:
 
-{{% gist id="11294261" file="script-1.sh" %}}
+{{< gist picodotdev 11294261 "script-1.sh" >}}
 
 Después de unos segundos deberemos ver algo como lo siguiente.
 
@@ -36,35 +36,35 @@ La documentación de Elasticsearch es un documentación de referencia probableme
 
 Veamos como crear y borrar un índice, para ello utilizaremos la herramienta curl:
 
-{{% gist id="11294261" file="script-2.sh" %}}
+{{< gist picodotdev 11294261 "script-2.sh" >}}
 
 Aunque Elasticsearch es orientado a documentos y estos no tienen que adherirse a un esquema como en una base de datos relacional, podemos instruir a Elasticsearch como queremos que haga las búsquedas sobre los campos del documento. Para ello definimos la correspondencia (mapping). A continuación pondré el caso hipotético de un tipo libro que tiene las propiedades de nombre y descripción en varios idiomas, una serie de etiquetas para catalogarlo y una cantidad.
 
-{{% gist id="11294261" file="script-3.sh" %}}
+{{< gist picodotdev 11294261 "script-3.sh" >}}
 
 Con la siguiente petición podemos ver el mapeo de un tipo.
 
-{{% gist id="11294261" file="script-4.sh" %}}
+{{< gist picodotdev 11294261 "script-4.sh" >}}
 
 El mapeo no es necesario definirlo previamente pero es aconsejable para ciertas propiedades sino queremos que ES tome valores por defecto o haga suposiciones, a continuación insertamos los documentos. Cada documento tiene un identificativo que deberemos asignarle y para indexarlo básicamente proporcionamos un JSON con las propiedades del documento. Elasticsearch se encargará de indexarlo para que una búsqueda posterior se ejecute rápidamente.
 
-{{% gist id="11294261" file="script-5.sh" %}}
+{{< gist picodotdev 11294261 "script-5.sh" >}}
 
 Con las anteriores peticiones hemos indexado 3 documentos, podemos ver los datos de cada uno de ellos con:
 
-{{% gist id="11294261" file="script-6.sh" %}}
+{{< gist picodotdev 11294261 "script-6.sh" >}}
 
 Una vez tenemos unos cuantos documentos indexados en ES podemos empezar a hacer búsquedas. Elasticsearch para hacer las búsquedas usa su propio lenguaje de DSL, no es sencillo y la documentación de ES no es muy útil para aprender a como usarla. Pondré algunos ejemplos simples, probablemente no reales y no representativos de todo el potencial que puede ofrecer ES. El primero es una búsqueda por una determinada palabra.
 
-{{% gist id="11294261" file="script-7.sh" %}}
+{{< gist picodotdev 11294261 "script-7.sh" >}}
 
 Una búsqueda similar a la anterior pero con más condiciones, exigiendo que no tenga unas palabras en concreto y algunas que deberían tener haciendo que ES valore más los documentos que las tengan.
 
-{{% gist id="11294261" file="script-8.sh" %}}
+{{< gist picodotdev 11294261 "script-8.sh" >}}
 
 Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas con las que podemos obtener un sumatorio de los resultados. En la siguiente consulta buscamos los documentos con una determinada palabra y además le pedimos a ES que nos devuelva cuantos documentos hay que cumplan ese criterio en cada etiqueta. Esto probablemente es lo que usen en la tienda de Amazon cuando muestran cuantos elementos hay en las diferentes categorizaciones. Aunque en Amazon solo muestran las categorías de los elementos buscados probablemente podrían mostrar cuantos elementos hay en cada una de esas categorías.
 
-{{% gist id="11294261" file="script-9.sh" %}}
+{{< gist picodotdev 11294261 "script-9.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/21/categorias-amazon.png" title="Categorías de productos (facets) en Amazon" data-gallery><img src="assets/images/custom/posts/21/categorias-amazon-thumb.png"></a>
@@ -72,11 +72,11 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 
 Otra de las funcionalizades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palablas que tienen fallos de escritura.
 
-{{% gist id="11294261" file="script-10.sh" %}}
+{{< gist picodotdev 11294261 "script-10.sh" >}}
 
 Finalmente, otra cosa que nos puede interesar es que ES nos resalte las palabras de determinados campos para destacar las coincidencias de los resultados de forma visual que se han encontrado. Esto necesita { store: "yes" } en la correspondencia de la propiedad.
 
-{{% gist id="11294261" file="script-11.sh" %}}
+{{< gist picodotdev 11294261 "script-11.sh" >}}
 
 Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas más que leyendo solo la documentación de referencia es difícil descubrir. Unos buenos libros que explican muchas de las posibilidades y opciones de forma más didáctica son <a href="http://www.amazon.es/gp/product/1449358543/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1449358543&linkCode=as2&tag=blobit-21">Elasticsearch: The Definitive Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1449358543" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> y/o <a href="http://www.amazon.es/gp/product/B00JXLF7AK/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00JXLF7AK&linkCode=as2&tag=blobit-21">Elasticsearch Server</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00JXLF7AK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">, en algunos casos la documentación propia del proyecto es suficiente pero en el caso de Elasticsearch algunos libros como estos son casi necesarios para dominarlo.
 

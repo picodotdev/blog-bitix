@@ -25,8 +25,8 @@ Si no hay ninguna que se adapte totalmente a nuestras necesidades, no nos gusta 
 
 Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker para mysql, lo paso a explicar después.
 
-{{% gist id="6dc90582ce925f19ffcb" file="Dockerfile-base" %}}
-{{% gist id="6dc90582ce925f19ffcb" file="Dockerfile-mysql" %}}
+{{< gist picodotdev 6dc90582ce925f19ffcb "Dockerfile-base" >}}
+{{< gist picodotdev 6dc90582ce925f19ffcb "Dockerfile-mysql" >}}
 
 
 Los Dockerfile tienen algunas instrucciones:
@@ -48,7 +48,7 @@ Con las instrucciones RUN y ADD instalamos el paquete de mysql y el cliente de m
 
 Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los comandos ADD contruimos la imagen con:
 
-{{% gist id="6dc90582ce925f19ffcb" file="docker-build.sh" %}}
+{{< gist picodotdev 6dc90582ce925f19ffcb "docker-build.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/51/docker-mysql.png" title="docker-mysql" data-gallery><img src="assets/images/custom/posts/51/docker-mysql-thumb.png"></a>
@@ -56,11 +56,11 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 
 Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:
 
-{{% gist id="6dc90582ce925f19ffcb" file="docker-run-1.sh" %}}
+{{< gist picodotdev 6dc90582ce925f19ffcb "docker-run-1.sh" >}}
 
 Posteriormente podemos iniciar y parar el contenedor de msql con:
 
-{{% gist id="6dc90582ce925f19ffcb" file="docker-run-2.sh" %}}
+{{< gist picodotdev 6dc90582ce925f19ffcb "docker-run-2.sh" >}}
 
 En los siguientes artículos comentaré la herramienta de automatización [ansible][ansible] y como sacarle provecho para iniciar los contenedores en una máquina de desarrollo (devbox). También en algún otro artículo comentaré la opción de [bitnami][bitnami] que dentro de poco ofrecerá soporte para docker y como con esta opción podemos usar un servicio «out-of-the-box» si tener que crear ni siquiera un Dockerfile o tener que documentarnos para instalar un servicio (que en algunos casos pueden tener cierta complejidad) aunque sea usando virtualización con [virtualbox][virtualbox] o computación en la nube.
 

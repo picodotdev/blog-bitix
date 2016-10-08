@@ -21,7 +21,7 @@ No se mucho de [Google Analytics][google-analytics] únicamente lo que he aprend
 
 Google Analytics además de proporcionarnos diversa información interesante sobre las visitas que recibimos en una página web puede servirnos para analizar el comportamiento de los usuarios, como interaccionan con la página, qué acciones realizan o que funcionalidades son usadas. La forma con la que podemos agregar información propia de la aplicación o página web es mediante los eventos de Analytics. Después de [instalar el _script_ de Analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/) podemos enviar eventos simplemente con la siguiente linea de código JavaScript.
 
-{{% gist id="c66532a6eaab846b579ff55b902e874f" file="ad-enter.js" %}}
+{{< gist picodotdev c66532a6eaab846b579ff55b902e874f "ad-enter.js" >}}
 
 La información del evento de compone de categoría (_category_), acción (_action_), etiqueta (_opt\_label_), valor  (_opt\_value_) y si no supone interacción (_opt\_noninteraction_). Deberemos proporcionar valores según queramos estructurar los eventos obligatoriamente para categoría y acción siendo el resto opcionales. En mi bitácora uso Analytics para además de visualizar la información que proporciona sobre visitas, ubicación de los usuarios, idioma, plataforma y navegador que usan, páginas más visitadas, origen de las visitas para lanzar unos cuantos eventos que me proporcionen información sobre las pulsaciones que se realizan en el menú de categorías y en los enlaces de redes sociales, en la lista de artículos recientes, artículos destacados y en el _widget_ de ShareThis y si se hace en el del inicio del artículo o en el del final. En la sección _Comportamiento > Eventos_ se agrega toda la información de los eventos, además podremos monitorizar en tiempo real los eventos que se estén produciendo en la sección _Tiempo real > Eventos_.
 
@@ -29,7 +29,7 @@ El parámetro _opt_noninteraction_ afecta al porcentaje de rebote, un evento int
 
 Podemos medir cualquier cosa que deseemos incluso podemos conocer cuantos usuarios usan un bloqueador de anuncios como [AdBlock][adblockplus]. Este es el código JavaScript que uso para conocer cuantos usuarios lo tiene activado o no.
 
-{{% gist id="c66532a6eaab846b579ff55b902e874f" file="ad-block.js" %}}
+{{< gist picodotdev c66532a6eaab846b579ff55b902e874f "ad-block.js" >}}
 
 En la sección [Seguimiento de eventos](https://developers.google.com/analytics/devguides/collection/analyticsjs/events) de la documetación de Google Analytics y en el resto de secciónes hay más detalles sobre esta herramienta. Para cualquier cosa que podamos reaccionar mediente un evento con JavaScript podemos medirla con Analytics, sirviéndonos para extraer información valiosa sobre los usuarios que nos permitan medir, entender y luego mejorar la experiencia de usuario de nuestra propia página web.
 

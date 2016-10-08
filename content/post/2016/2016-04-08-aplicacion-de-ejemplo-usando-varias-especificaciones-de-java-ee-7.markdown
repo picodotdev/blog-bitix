@@ -31,33 +31,33 @@ Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas
 
 Veamos primero la página inicial índice con el listado de productos generada con JSF. Obtiene el listado de productos y genera el HTML del mismo, además carga los JavaScripts necesarios para que la aplicación funcione en el navegador del cliente.
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="index.html" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="template.html" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="IndexBean.java" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "index.html" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "template.html" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "IndexBean.java" >}}
 
 El JavaScript añade la lógica en el cliente para ir realizando la lista de la compra usando poco más que [jQuery][jquery] y [Require JS][requirejs], además, inicializa el WebSocket para recibir los mensajes desde el servidor con la actualizaciones del stock de los productos. Realizada la lista de productos se enviará un petición REST al servidor para formalizar la compra.
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="main-index.js" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "main-index.js" >}}
 
 Las peticiones de compras en el servidor se procesarán por un _endpoint_ de una interfaz REST que usando un EJB con la lógica de negocio para persistir la compra en una base de datos relacional y actualizar los _stocks_. Actualizados los _stocks_ y persistida la compra se genera un evento CDI con el hecho de que se ha producido una compra.
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="PurchasesResource.java" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="ApplicationConfig.java" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="NoStockExceptionHandler.java" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "PurchasesResource.java" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "ApplicationConfig.java" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "NoStockExceptionHandler.java" >}}
 
 La aplicación irá registrando los usuarios conectados a la aplicación con el objetivo de enviarles las actualizaciones de _stock_ de los productos y con un evento CDI con la notificación de que se ha producido una compra que ha actualizado el _stock_ de algunos productos enviará los nuevos _stocks_ a los clientes con la tecnología WebSocket en un mensaje con datos en JSON que soportan los navegadores y Java EE.
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="Supermarket.java" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="SupermarketLocal.java" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "Supermarket.java" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "SupermarketLocal.java" >}}
 
 Usando la API de seguridad de Java EE autenticaremos al comprador o vendedor, la página se personalizará según el rol del usuario y en el servidor con la anotación [RolesAllowed](https://docs.oracle.com/javaee/7/api/javax/annotation/security/RolesAllowed.html) y métodos _post_, _get_, _list_ se limitarán las acciones que pueden realizar según sus roles, su uso se puede ver en los listados de código anteriores. Con la página de inicio de sesión se autenticará al usuario de forma programática usando <code>request.login(username, password);</code>. Esta acción es recomendable hacerla usando el [protocolo seguro HTTPS con TLS a configurar en el servidor][blogbitix-14] para que la contraseña se transmita cifrada entre el cliente y el servidor.
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="login.html" %}}
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="LoginBean.java" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "login.html" >}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "LoginBean.java" >}}
 
 La aplicación está dividida en varios módulos construidos con la [herramienta de automatización Gradle][elblogdepicodev-98] siendo una aplicación <abbr title="Enterprise ARchive">EAR</abbr> estándar estando constituida por un módulo para los EJB, otro para la aplicación web con un <abbr title="Web  ARchive">WAR</abbr>. Un cliente podría conectarse directamente a la aplicación sin mediación de un navegador web, esto último sería lo que emplearíamos si fuese una [aplicación de escritorio empleando Java FX][blogbitix-100].
 
-{{% gist id="cf3678d2eaa7006290c24bba68b513fa" file="SupermarketClient.java" %}}
+{{< gist picodotdev cf3678d2eaa7006290c24bba68b513fa "SupermarketClient.java" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="136" image1="aplicacion-cliente.png" thumb1="aplicacion-cliente-thumb.png" title1="Aplicación cliente Supermarket" caption="Aplicación cliente Supermarket" >}}

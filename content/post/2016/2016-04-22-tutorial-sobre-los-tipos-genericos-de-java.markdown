@@ -27,9 +27,9 @@ Los _generics_ permiten usar tipos para parametrizar las clases, interfaces y m�
 
 Un tipo usando _generics_ tiene el siguiente aspecto, por ejemplo usando una clase _Box_ contenedor de una referencia a un tipo no determinado en la definición de la clase pero que lo será en su uso. Una clase genérica puede tener múltiples argumentos de tipos y los argumentos pueden ser a su vez tipos genéricos. Después del nombre de la clase se puede indicar la lista de parámetros de tipos con el formato <code>\<T1, T2, T3, ...\></code>.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Box.java" %}}
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Pair.java" %}}
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="OrderedPair.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Box.java" >}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Pair.java" >}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "OrderedPair.java" >}}
 
 Según las convenciones los nombres de los parámetros de tipo usados comúnmente son los siguientes:
 
@@ -42,35 +42,35 @@ Según las convenciones los nombres de los parámetros de tipo usados comúnment
 
 En el momento de la instanciación de un tipo genérico indicaremos el argumento para el tipo, en este caso _Box_ contendrá una referencia a un tipo _Integer_. Con Java 7 se puede usar el operador _diamond_ y el compilador inferirá el tipo según su definición para mayor claridad en el código. Podemos usar cualquiera de esta dos maneras prefiriendo usar el operador _diamond_ por ser más clara.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Instantation.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Instantation.java" >}}
 
 Para mantener la compatibilidad con versiones anteriores a Java 5 los tipos genéricos que al usarse no indican argumentos de tipo se denominan _raw_. El compilador indicará una advertencia como un uso potencialmente peligroso ya que no podrá validar los tipos.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Raw.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Raw.java" >}}
 
 Además de las clases los métodos también pueden tener su propia definición de tipos genéricos.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Method.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Method.java" >}}
 
 La sintaxis completa de uso sería:
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="MethodUsage.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "MethodUsage.java" >}}
 
 Aunque puede abreviarse ya que el compilador puede inferir los tipos:
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="MethodUsageInference.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "MethodUsageInference.java" >}}
 
 A veces querremos limitar los tipos que pueden ser usados empleando lo que se denomina _bounded type_. Con <code>\<U extends Number\></code> el tipo _U_ debe extender la clase _Number_.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="BoxBounds.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "BoxBounds.java" >}}
 
 Una clase puede tener múltiples limitaciones, si una es una clase debe ser la primera y el resto de argumentos interfaces.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="Bounds.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "Bounds.java" >}}
 
 En Java un tipo puede ser asignado a otro mientras el primero sea compatible con el segundo, es decir tengan una «relación es un». Una referencia de _Object_ puede referenciar una instancia de _Integer_ (un _Integer_ es un _Object_).
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="IsA.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "IsA.java" >}}
 
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
@@ -84,7 +84,7 @@ Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie e
     {{< figure pid="138" image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" >}}
 </div>
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="PayloadList.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "PayloadList.java" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="138" image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" >}}
@@ -92,7 +92,7 @@ Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie e
 
 En los _generics_ un parámetro para un tipo _?_ se denomina _wildcard_ siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de _List\<Integer\>_, _List\<Double\>_ y _List\<Number\>_. El término _List\<Number\>_ es más restrictivo que _List\<? extends Number\>_ porque el primero solo acepta una lista de _Number_ y el segundo una lista de _Number_ o de sus subtipos. _List\<? extends Number\>_ es un _upper bounded wildcard_.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="BoundedWildcard.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "BoundedWildcard.java" >}}
 
 Se puede definir una lista de un tipo desconocido, _List\<?\>_, en casos en los que:
 
@@ -103,7 +103,7 @@ Digamos que queremos definir un método que inserte objetos _Integer_ en un _Lis
 
 Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pero usando _wildcads_ podemos crearlas.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="WildcardList.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "WildcardList.java" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="138" image1="generics-listParent.gif" thumb1="generics-listParent.gif" image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" >}}
@@ -124,7 +124,7 @@ Los _generics_ son un mecanismo para proporcionar comprobaciones en tiempo de co
 
 Un tipo _non reifiable_ son aquellos cuya información de tipo ha sido eliminada en tiempo de compilación por el _type erasure_, para la JVM no hay ninguna diferencia en tiempo de ejecución entre _List\<String\>_ y _List\<Number\>_. No se crean nuevas clases para los tipos parametrizados de modo que no hay ninguna penalización en tiempo de ejecución. Una clase genérica al compilarla se transforma aplicando _type erasure_:
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="TypeErasure.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "TypeErasure.java" >}}
 
 Los _generics_ tiene algunas restricciones:
 
@@ -150,7 +150,7 @@ Para profundizar más en este importante tema de genéricos de Java tenemos a nu
 
 A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca exepciones [ClassCastException](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
 
-{{% gist id="c5360a2d848a594c4dba518d6f1cfd62" file="HeapPollution.java" %}}
+{{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "HeapPollution.java" >}}
 
 En resumen, los genéricos en Java son un añadido muy útil al lenguaje.
 

@@ -31,7 +31,7 @@ Con Java y un IDE podremos detectar los errores de compilación que en un lengua
 	<a href="assets/images/custom/posts/73/producto.png" title="Edición de un producto" data-gallery><img src="assets/images/custom/posts/73/producto.png"></a>
 </div>
 
-{{% gist id="4d203a47590ea87ac99e" file="ProductoAdmin.tml" %}}
+{{< gist picodotdev 4d203a47590ea87ac99e "ProductoAdmin.tml" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/73/error.png" title="Error de compilación al acceder a la página" data-gallery><img src="assets/images/custom/posts/73/error.png"></a>

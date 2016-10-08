@@ -31,20 +31,20 @@ La documentación de i18next no es muy extensa pero es suficiente, las funcional
 
 Para mostrar su uso me basaré en el ejemplo [Lista de tareas con Backbone y React][blogbitix-20] al que le añadiré el soporte de internacionalización con i18next. Como en el ejemplo uso RequireJS usaré la versión de i18next con soporte para AMD. Una vez descargada y colocada en el directorio de los módulos de RequireJS deberemos añadir la dependencia a los módulos donde la usemos, en el caso del ejemplo en tareas.js. En el ejemplo los textos que se necesitan internacionalizar son el título, el texto que aparece en el input antes de introducir el nombre de una tarea, el número de tareas completadas y el texto del botón limpiar, para mostrar estos textos usaremos la función t de i18next que nos devolverá dada la clave del texto que queremos el valor adecuado según los archivos de literales y el idioma de la aplicación. Todo esto lo hacemos de la siguiente forma:
 
-{{% gist id="13d6970120da352a6f05" file="tareas-1.js" %}}
+{{< gist picodotdev 13d6970120da352a6f05 "tareas-1.js" >}}
 
 Los archivos de literales son poco más que una relación de claves valor similar a los archivos properties de Java aunque en el caso de i18next se definen en archivos con formato json. En este ejemplo la localización (l10n) que proporcionaré será para español (translation-dev.json, idioma por defecto) y para inglés (translation-en.json). Por cada idioma localizado necesitamos crea un archivo con los literales:
 
-{{% gist id="13d6970120da352a6f05" file="translation-dev.json" %}}
-{{% gist id="13d6970120da352a6f05" file="translation-en.json" %}}
+{{< gist picodotdev 13d6970120da352a6f05 "translation-dev.json" >}}
+{{< gist picodotdev 13d6970120da352a6f05 "translation-en.json" >}}
 
 Los lenguajes tienen diferentes formas plurales, por ejemplo, en español hay dos formas plurales (1 y más de uno) pero dependiendo del número de elementos a los que hagamos referencia y el lenguaje puede variar el [número de formas plurales](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html?id=l10n/pluralforms). Si en una aplicación ves las típicas eses entre paréntesis, (s), es porque esa aplicación aunque esté internacionalizada no soporta las múltiples formas plurales de los lenguajes, para un usuario ver esos (s) crea confusión y dificulta la lectura del texto. Si nos encontramos con este caso el literal de la forma plural lo definiríamos y lo obtendríamos de la siguiente forma en el caso del español, el parámetro _count_ se utiliza para determinada la forma plural a utilizar (en el caso de español, singular o plural) y los parámetros _completadas_ y _total_ como parématros del literal usando sus valores en la interpolación en la cadena:
 
-{{% gist id="13d6970120da352a6f05" file="tareas-2.js" %}}
+{{< gist picodotdev 13d6970120da352a6f05 "tareas-2.js" >}}
 
 Para completar el ejemplo debemos inicializar la librería i18next con la configuración que queramos por lo menos para definir el locale  y la disposición de los archivos de literales. Esta configuración en el ejemplo está antes de inicializar el componente de la lista de tareas:
 
-{{% gist id="13d6970120da352a6f05" file="main.js" %}}
+{{< gist picodotdev 13d6970120da352a6f05 "main.js" >}}
 
 Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:
 
@@ -87,7 +87,7 @@ Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podría
 
 El [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/BackboneReact) está en [mi repositorio de GitHub](https://github.com/picodotdev), una vez descargado el código puedes probarlo en tu equipo con el siguiente comando:
 
-{{% gist id="13d6970120da352a6f05" file="gradle-tomcatRun.sh" %}}
+{{< gist picodotdev 13d6970120da352a6f05 "gradle-tomcatRun.sh" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -26,11 +26,11 @@ Teniendo instalado en la tarjeta SD tanto la partición de arranque como la part
 	<a href="assets/images/custom/posts/6/lsbk.png" title="Dispositivos del sistema" data-gallery><img src="assets/images/custom/posts/6/lsbk-thumb.png"></a>
 </div>
 
-{{% gist id="8350659" file="leer-particion.sh" %}}
+{{< gist picodotdev 8350659 "leer-particion.sh" >}}
 
 El comando dd creará un archivo en nuestro ordenador con la imagen de la partición del sistema de la Raspberry Pi. A continuación deberemos escribir esa imagen de la partición en el dispositivo USB también usando el comando dd. Hay que tener en cuenta que al escribir la imagen perderemos todos los datos que tengamos en el dispositivo destino. En el ejemplo, el dispositivo /dev/sdb1 se corresponde con la partición del dispositivo USB en el que copiaremos la partición del sistema de la Raspberry Pi.
 
-{{% gist id="8350659" file="escribir-particion.sh" %}}
+{{< gist picodotdev 8350659 "escribir-particion.sh" >}}
 
 Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos /dev/sdb1, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
 
@@ -40,7 +40,7 @@ Una vez escrita la imagen muy probablemente deberemos redimensionar la partició
 
 El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea /dev/sda1, con este valor modificamos el archivo cmdline.txt y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:
 
-{{% gist id="8350659" file="cmdline.txt" %}}
+{{< gist picodotdev 8350659 "cmdline.txt" >}}
 
 A partir de este punto con la tarjeta SD insertada en la Raspberry Pi y el dispositivo USB conectado a uno de los puertos se iniciará la Pi desde la partición del sistema del dispositivo USB en vez de la tarjeta SD. Enseguida se nota un aumento de rendimiento considerable en el tiempo de inicio y las perdidas de respuesta porque se está leyendo o escribiendo serán mucho menores o nulos con la mayor tasa de transferencia de los dispositivos USB.
 

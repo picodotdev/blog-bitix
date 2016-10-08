@@ -25,12 +25,12 @@ No son de [las novedades destacables de Java 8][blogbitix-17] pero desde esta ve
 
 Con esto nos es posible hacer cualquier cosa que el sistema pueda hacer según los comandos que tenga instalados o puedan instalarse y esto significa que está al alcance de Java en un sistema GNU/Linux el poder de su linea de comandos. Por ejemplo, supongamos que queremos saber en un programa Java el tiempo que lleva iniciado un sistema que nos sería útil si queremos implementar algún tipo de [métricas de monitorización con Spring Boot Actuator][blogbitix-113]. Java no tiene en su API un método que proporcione esta información, sin embargo, en GNU/Linux podemos saber este dato usando el sistema de archivos virtual accesible en _/proc_, concretamente en el archivo _/proc/uptime_. Este archivo contiene dos números el primero es el que nos interesaría siendo el número de segundos transcurridos desde que el sistema se inició y el segundo el tiempo que ha permanecido en reposo. El segundo número en un sistema con un procesador con varios núcleos físicos o lógicos es probable que se más alto que el primero.
 
-{{% gist id="1a52d86c43ead0cbeb09" file="uptime.sh" %}}
+{{< gist picodotdev 1a52d86c43ead0cbeb09 "uptime.sh" >}}
 
 Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lleva arrancado. Primero se crea el proceso, se espera a que termine y se obtiene su código de salida, se obtiene la salida del proceso (entrada para el programa), se procesa el resultado y se imprimen los segudos que lleva el sistema iniciado.
 
-{{% gist id="1a52d86c43ead0cbeb09" file="Main.java" %}}
-{{% gist id="1a52d86c43ead0cbeb09" file="Main.out" %}}
+{{< gist picodotdev 1a52d86c43ead0cbeb09 "Main.java" >}}
+{{< gist picodotdev 1a52d86c43ead0cbeb09 "Main.out" >}}
 
 Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades aunque si podemos es mejor tener disponible un API para invocar la funcionalidad que queremos en vez de una integración más frágil leyendo y escribiendo en la salida, de error y entrada del proceso. En el siguiente artículo basándome es esto comentaré [cómo enviar un correo electrónico en Java firmado digitalmente con GPG][blogbitix-133], aplicando esto mismo podemos [obtener el país y ciudad en base a la dirección IP][blogbitix-147] en una aplicación web.
 

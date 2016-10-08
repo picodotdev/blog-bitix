@@ -30,7 +30,7 @@ Sin más, comencemos con la guía. Lo primero que deberemos hacer es [descargar 
 
 Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/sdx por el dispositivo de la memoria USB en la que queramos grabar el medio cosa que en linux podemos conocer usando el comando lsblk:
 
-{{% gist id="00b3b985453f75696831" file="script-0.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-0.sh" >}}
 
 Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.
 
@@ -41,57 +41,57 @@ Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La
 
 Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:
 
-{{% gist id="00b3b985453f75696831" file="script-1.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-1.sh" >}}
 
 Modificamos también el archivo locale.gen y descomentamos el dato es_ES.UTF-8 UTF-8, finalmente lo exportamos para el shell:
 
-{{% gist id="00b3b985453f75696831" file="script-2.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-2.sh" >}}
 
 ### 1.1 Particionar el disco
 
 El siguiente paso es particionar el disco duro y antes de hacerlo deberemos asegurarnos de que hemos hecho una copia de seguridad de los datos ya que en el siguiente paso se perderá el contenido del disco duro o SSD. Usaremos el siguiente comando para hacer el [particionado usando GPT](https://wiki.archlinux.org/index.php/GUID_Partition_Table). En función de si nuestro sistema tiene BIOS o EFI las particiones son distintas, si es un ordenador de unos dos años o menos o venía con Windows 8 preinstalador probablemente tenga EFI.
 
-{{% gist id="00b3b985453f75696831" file="script-3.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-3.sh" >}}
 
 #### 1.1.1 Para un sistema con BIOS
 
 En un sistema BIOS usando GPT el esquema de particiones será el siguiente:
 
-{{% gist id="00b3b985453f75696831" file="script-42.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-42.txt" >}}
 
 #### 1.1.2 Para un sistema con EFI
 
 En un sistema EFI las particiones deberán ser las siguientes:
 
-{{% gist id="00b3b985453f75696831" file="script-43.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-43.txt" >}}
 
 Si tenemos un sistema con 8 GiB o más de memoria probablemente podamos prescindir de la partición de swap. Sino podemos crear una tal que:
 
-{{% gist id="00b3b985453f75696831" file="script-44.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-44.txt" >}}
 
 ### 1.2 Formatear las particiones
 
 Una vez tenemos las particiones creados deberemos formatearlas, sustituimos sdaX por lo que corresponda según el orden en que hemos creado las particiones:
 
-{{% gist id="00b3b985453f75696831" file="script-4.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-4.sh" >}}
 
 Y si tenemos partición de swap:
 
-{{% gist id="00b3b985453f75696831" file="script-5.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-5.sh" >}}
 
 ### 1.3 Montar las particiones
 
 Lo siguiente que haremos es montar las particiones para empezar a usarlas, primero la partición root (/), que en esta guía es sda2 y luego la partición boot (/boot):
 
-{{% gist id="00b3b985453f75696831" file="script-6.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-6.sh" >}}
 
 Si nuestro sistema tiene EFI hacemos:
 
-{{% gist id="00b3b985453f75696831" file="script-7.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-7.sh" >}}
 
 Si tenemos un disco SSD montamos las particiones usando las opciones de montaje adecuados para que se use TRIM:
 
-{{% gist id="00b3b985453f75696831" file="script-8.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-8.sh" >}}
 
 ### 1.4 Establecer el mirror
 
@@ -99,19 +99,19 @@ Debemos seleccionar un espejo del que se descargarán los paquetes del sistema b
 
 Server = http\://mirrors.kernel.org/archlinux/$repo/os/$arch
 
-{{% gist id="00b3b985453f75696831" file="script-9.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-9.sh" >}}
 
 ### 1.5 Instalar paquetes del sistema base
 
 Lo siguiente será instalar los archivos del sistema base el siguiente comando que descargará del espejo de paquetes que hayamos elegido los paquetes del sistema base:
 
-{{% gist id="00b3b985453f75696831" file="script-10.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-10.sh" >}}
 
 ### 1.6 Generar de fstab
 
 Generamos el archivo fstab que contendrá las características de nuestras particiones y opciones de montaje:
 
-{{% gist id="00b3b985453f75696831" file="script-11.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-11.sh" >}}
 
 Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las opciones noatime y discard.
 
@@ -119,39 +119,39 @@ Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las op
 
 Hacemos un chroot para cambiar el directorio root que estamos usando para configurar nuestro sistema.
 
-{{% gist id="00b3b985453f75696831" file="script-12.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-12.sh" >}}
 
 Editamos /etc/locale.gen, lo generamos y exportamos las variables:
 
-{{% gist id="00b3b985453f75696831" file="script-13.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-13.sh" >}}
 
 Editamos el archivo /etc/vconsole.conf para cambiar el mapa de teclas de las terminales TTY:
 
-{{% gist id="00b3b985453f75696831" file="script-14.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-14.sh" >}}
 
 Introducimos el siguiente contenido:
 
-{{% gist id="00b3b985453f75696831" file="script-15.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-15.txt" >}}
 
 ### 1.8 Establecer la zona horaria
 
 Establecemos la zona horaria de nuestro sistema:
 
-{{% gist id="00b3b985453f75696831" file="script-16.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-16.sh" >}}
 
 ### 1.9 Modificar el nombre de nuesta máquina
 
-{{% gist id="00b3b985453f75696831" file="script-17.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-17.sh" >}}
 
 ### 1.10 Instalar el gestor de redes
 
 NetworkManager puede servirnos, lo instalamos con el gestor de paquetes de arch pacman y activamos el servicio:
 
-{{% gist id="00b3b985453f75696831" file="script-18.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-18.sh" >}}
 
 ### 1.11 Cambiar la contraseña de root
 
-{{% gist id="00b3b985453f75696831" file="script-19.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-19.sh" >}}
 
 ### 1.12 Instalar el gestor de arranque
 
@@ -159,47 +159,47 @@ Este es el punto más delicado y que más problemas puede dar, ya que si no lo h
 
 Para un sistema con BIOS:
 
-{{% gist id="00b3b985453f75696831" file="script-20.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-20.sh" >}}
 
 Para un sistema con EFI:
 
 En mi equipo que es un Sony Vaio SVE con EFI aún no he conseguido que GRUB me arranque correctamente (al inicial parece que se queda con la pantalla en negro y aparentemente bloqueado aunque puedo reiniciarlo con ctrl-alt-supr) y he tenido que usar [rEFInd](https://wiki.archlinux.org/index.php/REFInd). Aún así también tengo instalado Grub que iniciandolo a través de rEFInd si funciona bien.
 
-{{% gist id="00b3b985453f75696831" file="script-21.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-21.sh" >}}
 
 Posteriormente instalo rEFInd:
 
-{{% gist id="00b3b985453f75696831" file="script-22.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-22.sh" >}}
 
 Edito el archivo /boot/efi/EFI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:
 
-{{% gist id="00b3b985453f75696831" file="script-23.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-23.txt" >}}
 
 También debemos modificar el archivo /boot/refind_linux.conf
 
-{{% gist id="00b3b985453f75696831" file="script-24.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-24.sh" >}}
 
 En el archivo sustituiremos los PARTUUID por los que correspondan en nuestro sistema, con el comando blkid los habremos añadido al final del archivo, el contenido debe quedarnos algo como:
 
-{{% gist id="00b3b985453f75696831" file="script-25.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-25.txt" >}}
 
 Además, con rEFInd hemos de crear el gestor de arranque con el comando efobootmgr. Pero en mi caso para que funcione primero he de borrar todos los que ya existen sino parece que en mi caso se recrea y usa el gestor de arranque EFI de Windows y al inicial el sistema me sale el mensaje «Operating System Not Found», podemos ver los gestores de arranque con:
 
-{{% gist id="00b3b985453f75696831" file="script-26.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-26.sh" >}}
 
 Los borramos con el siguiente comando, donde xxxx se corresponde con el número de gestor de arranque:
 
-{{% gist id="00b3b985453f75696831" file="script-27.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-27.sh" >}}
 
 Finalmente, creamos el gestor de arranque para rEFInd:
 
-{{% gist id="00b3b985453f75696831" file="script-28.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-28.sh" >}}
 
 ### 1.13 Finalizar la instalación
 
 Finalmente, salimos del entorno enjaulado, desmontamos las particiones y reiniciamos el sistema:
 
-{{% gist id="00b3b985453f75696831" file="script-29.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-29.sh" >}}
 
 ## 2. Post instalación base
 
@@ -209,49 +209,49 @@ Ya tenemos el sistema base pero para usarlo seguramente queramos un entorno grá
 
 Creamos un usuario para no usar el usuario root, sustituimos picodotdev por el nuestro:
 
-{{% gist id="00b3b985453f75696831" file="script-30.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-30.sh" >}}
 
 Permitirmos a los usuarios del grupo wheel usar el comando sudo:
 
-{{% gist id="00b3b985453f75696831" file="script-31.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-31.sh" >}}
 
 Descomentamos la siguiente linea:
 
-{{% gist id="00b3b985453f75696831" file="script-32.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-32.txt" >}}
 
 Editamos el archivo pacman.conf según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.
 
-{{% gist id="00b3b985453f75696831" file="script-33.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-33.sh" >}}
 
 ### 2.2 Instalar el entorno gráfico
 
 Instalamos los paquetes básicos del entorno gráfico, en este caso los controladores para una tarjeta gráfica intel:
 
-{{% gist id="00b3b985453f75696831" file="script-34.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-34.sh" >}}
 
 ### 2.3 Instalar el entorno de escritorio
 
 Instalamos el entorno de escritorio según nuestras preferencias, en mi caso GNOME:
 
-{{% gist id="00b3b985453f75696831" file="script-35.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-35.sh" >}}
 
 Habilitamos el servicio del gestor de escritorio GDM:
 
-{{% gist id="00b3b985453f75696831" file="script-36.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-36.sh" >}}
 
 ### 2.4 Instalación de yaourt
 
 Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) deberemos instalar la herramienta yaourt:
 
-{{% gist id="00b3b985453f75696831" file="script-37.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-37.sh" >}}
 
 Añadimos su repositorio:
 
-{{% gist id="00b3b985453f75696831" file="script-38.txt" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-38.txt" >}}
 
 Lo instalamos con:
 
-{{% gist id="00b3b985453f75696831" file="script-39.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-39.sh" >}}
 
 A partir de este momento podemos usar el comando yaourt en vez de pacman.
 
@@ -259,13 +259,13 @@ A partir de este momento podemos usar el comando yaourt en vez de pacman.
 
 Los programas que instalaremos cambiarán según nuestras preferencias, estos son casi todos los que suelo utilizar:
 
-{{% gist id="00b3b985453f75696831" file="script-40.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-40.sh" >}}
 
 ### 2.6 Activar el servicio de sincronización de hora
 
 Para mantener la hora de nuestro sistema correctamente podemos usar un servicio que se encargue de mantenerla con un servicio a través de la red.
 
-{{% gist id="00b3b985453f75696831" file="script-41.sh" %}}
+{{< gist picodotdev 00b3b985453f75696831 "script-41.sh" >}}
 
 El resultado de la instalación y usando GNOME es el siguiente:
 

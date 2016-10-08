@@ -20,7 +20,7 @@ Para ofrecer esta funcionalidad y a partir de Java 7 hay disponibles unas pocas 
 
 Para monitorizar los archivos y recibir notificaciones cuando se produzcan cambios en ellos deberemos emplear las clases [Path](http://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html) y [WatchService](http://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html). Empleando estas dos clases el código para monitorizar cambios en los archivos de un directorio sería: registrar el servicio de monitorización obtenido de la clase [FileSystems](http://docs.oracle.com/javase/7/docs/api/java/nio/file/FileSystems.html), escuchar los eventos cuando se produzcan y procesarlos de forma secuencial en un bucle. En el ejemplo se monitoriza el archivo [fuente de una clase Java que es compilado en memoria e instanciada][blogbitix-42] como explicaba en el anterior artículo:
 
-{{% gist id="841924ef8ff4a108d84f" file="ConfiguracionManager.java" %}}
+{{< gist picodotdev 841924ef8ff4a108d84f "ConfiguracionManager.java" >}}
 
 En este ejemplo solo se monitorizan los cambios de los archivos pero usando otras propiedades se pueden monitorizar la eliminación y creación, en la clase [StandardWatchEventKinds](http://docs.oracle.com/javase/7/docs/api/java/nio/file/StandardWatchEventKinds.html) pueden verse estas propiedades. Una cosa a tener en cuenta es que se pueden monitorizar directorios no archivos en concreto, pero como en el ejemplo una vez que recibimos las notificaciones de monitorización es algo que podemos hacer nosotros. Ejecutando el programa una salida del su funcionamiento podría ser la siguiente en el que la clase se recarga cuando se detectan cambios en ella variando los valores que se emiten en la consola.
 

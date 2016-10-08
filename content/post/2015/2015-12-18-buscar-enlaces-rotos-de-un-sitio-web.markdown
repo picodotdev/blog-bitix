@@ -37,7 +37,7 @@ Después de introducir la dirección del sitio web, que con estas herramientas h
 
 Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando _wget_ para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
 
-{{% gist id="5c2d560c7f2b1b16dda1" file="wget.sh" %}}
+{{< gist picodotdev 5c2d560c7f2b1b16dda1 "wget.sh" >}}
 
 <div class="media" style="text-align: center;">
     <figure>
@@ -48,7 +48,7 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 
 Lo anterior nos sirve para detectar los enlaces rotos que tenemos en nuestro sitio hacia otros, seguramente también nos interesará conocer los enlaces rotos que tienen otros sitios hacia el nuestro. Podemos saber a que páginas no encontradas están accediendo los usuarios de nuestro sitio web lanzando un evento personalizado de [Google Analytics][google-analytics] en la página para el error 404 que mostremos. Dado que los enlaces hacia nuestro sitio incluidos en otros no podemos modificarlos si se tratase de alguno especialmente importante al menos podremos hacer una redirección para que los usuarios lleguen al contenido más apropiado en vez de a una página no encontrada:
 
-{{% gist id="5c2d560c7f2b1b16dda1" file="analytics.js" %}}
+{{< gist picodotdev 5c2d560c7f2b1b16dda1 "analytics.js" >}}
 
 Al mismo tiempo [validar el HTML](https://validator.w3.org/) y [validar los estilos CSS](http://jigsaw.w3.org/css-validator/) respecto a su especificación también mejorarán el código del sitio web.
 

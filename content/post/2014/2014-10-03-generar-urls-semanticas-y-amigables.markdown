@@ -19,37 +19,37 @@ En algunas web las urls incluyen el identificativo del objeto de la base de dato
 
 Lo primero que debemos conseguir es que las direcciones urls sean únicas para cualquier página de la web, por tanto, en la url deberemos incluir tanta información como sea necesaria pero al mismo tiempo la mínima para hacerlas únicas, sean cortas y que nos permitan identificar de forma unequívoca el contenido a mostrar o el objeto que nos permite obtener la información a visualizar en la página, esta información formará el denominado _slug_. En el caso de Blog Stack las direcciones «bonitas» se emplean en este momento en dos sitios, para los artículos y para las etiquetas. La información mínima para un artículo es el nombre de la fuente, el año, el mes y el título, para las etiquetas es simplemente el nombre de la etiqueta. Este es un desglose de las partes que forman una dirección url.
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="url.txt" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "url.txt" >}}
 
 Pero eso no es todo además quizá queramos transliterar los caracteres de forma que las urls no tengan ciertos caracteres propios de cada idioma. La solución simple pero poco efectiva es hacer una serie de sustituciones como por ejemplo reemplazar á por a, ñ por n, etc... Esta solución aparte de tener que hacerla nosotros probablemente no seamos ni siquiera conscientes que deberíamos haber reemplazado algún carácter más, se complica más si hemos de hacer lo mismo con el resto de codificaciones de la que ni siquiera conocemos los caracteres. Una solución mejor es utilizar el comando iconv disponible en linux que hace precisamente lo que buscamos:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="iconv.sh" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "iconv.sh" >}}
 
 Para que la url sea más fácilmente legible es recomendable convertir las mayúsculas a minúsculas y sustituir los caracteres de espacio por un guión (-). En Blog Stack suponiendo un [artículo][blogbitix-0] de la fuente blogbitix publicado en diciembre de 2013 y de título «¡Hola nuevo mundo!» partiríamos de la siguiente url previamente a aplicar la transliteración de caracteres:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="paso-1.txt" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "paso-1.txt" >}}
 
 Convertida a minúsculas:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="paso-2.txt" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "paso-2.txt" >}}
 
 Transliterada con iconv a ASCII:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="paso-3.txt" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "paso-3.txt" >}}
 
 Y finalmente sustituidos cualquier carácter que no esté entre en la siguiente expresión regular [^a-z1-9-] para eliminar por ejemplo signos de puntuación, múltiples guiones seguidos y si el resultado empieza o acaba por guión eliminándolo, al final tenemos el _slug_ o parte de la [url final][blogbitix-0] a la que deberíamos añadir el protocolo y el dominio:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="paso-4.txt" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "paso-4.txt" >}}
 
 Todo esto en código java se traduce en:
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="Utils-urlize.java" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "Utils-urlize.java" >}}
 
 Pero ¿si el identificativo del artículo no está en la url como lo asociamos con el artículo? Nos queda proporcionar una solución a esta necesidad de como identificar esa dirección url semántica y más amigable con el objeto del artículo guardado en la base de datos para mostrarlo al visualizar la página solicitada.
 
 La idea para asociar la url con un objeto de base de datos es crear un hash de la url y tenerlo precalculado en la base de datos, con el hash que generamos a partir de la url y su _slug_ cuando recibimos la petición buscamos el objeto que en la base de datos tenga ese hash. ¿Por qué guardar el hash y no el _slug_? Un motivo es porque el hash tiene una longitud constante, probablemente mas corto que el _slug_ además de mayor dispersión en el valor del dato que usando un índice de base de datos es beneficioso en la búsqueda. Si la url es única podemos suponer que el hash será único. Si en un futuro cambiásemos la información del _slug_ para calcular el hash lógicamente deberíamos recalcular todos los hashs. Para calcular el hash podemos usar la función MD5 o SHA con el siguiente código en java.
 
-{{% gist id="2ec35a1faf5cf2e8cfe8" file="Utils-hash.java" %}}
+{{< gist picodotdev 2ec35a1faf5cf2e8cfe8 "Utils-hash.java" >}}
 
 Esta solo es una forma de crear las urls pero suficiente para el propósito de Blog Stack. Quizá en otro caso podríamos querer generar direcciones con caracteres que no solo sean ASCII o incluyan los propios de otra codificación como por ejemplo caracteres cirílicos, chinos o japoneses. También en vez de incluir en la url la referencia a un solo objeto con el _slug_ incluir los _slugs_ de varios objetos, sin esta solución deberíamos incluir un segundo identificativo de la base de datos y las direcciones serán aún más feas, menos amigables y peores en cuanto a SEO.
 

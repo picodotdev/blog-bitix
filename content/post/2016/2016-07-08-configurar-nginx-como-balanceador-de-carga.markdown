@@ -32,23 +32,23 @@ Hay tres estrategias para balancear o distribuir la carga:
 
 Esta es la configuración básica con la estrategia _round-robin_. Los servidores balanceados se definen con la directiva _upstream_ a los que se hace de _proxy_ inverso con la directiva _proxy\_pass_.
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="nginx.conf" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "nginx.conf" >}}
 
 Para usar la estrategia _least-coneccted_ hay que indicar la directiva _least\_conn_ en la directiva _upstream_.
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="nginx-least_conn.conf" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "nginx-least_conn.conf" >}}
 
 Hay que tener en cuenta que en las estrategias _round-robin_ y _least-conected_ cada petición probablemente sea atendida por un servidor diferente de modo que si los servidores no comparten las sesiones se producirán comportamientos erráticos. Usando la estrategia _ip\_hash_ se usará la dirección IP para redirigir todas las peticiones al mismo servidor que se conoce como _sticky session_.
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="nginx-ip_hash.conf" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "nginx-ip_hash.conf" >}}
 
 Para que los servidores compartan la sesión y evitar usar _sticky session_ podemos [usar Redis como sistema de información para guardar las sesiones de los servidores][blogbitix-70], si un servidor de aplicaciones deja de funcionar las sesiones que mantuviese no se perderán y las peticiones podrán ser atendida por cualquier servidor. Si hay un servidor que queremos procese más peticiones porque tiene más capacidad podemos dar más peso a este. En esta configuración de cada 5 peticiones 3 serán atendidas por el servidor _app1_, 1 por el _app2_ y otra por _app3_.
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="nginx-weight.conf" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "nginx-weight.conf" >}}
 
 Cuando un servidor falla al servir una petición Nginx lo marca como en estado erróneo y deja de enviarle peticiones, los chequeos de salud se hacen de forma pasiva según el resultado de las peticiones que se envían. Con _max\_fails_ se establece el máximo número de fallos antes de considerar un servidor con estado erróneo, tiene un valor por defecto de 1. Con _fail\_timeout_ se establece el tiempo que un servidor se considera que está en estado erróneo antes de enviar una nueva petición, si enviada una nueva petición responde correctamente se vuelve a considerar en estado correcto. Con la directiva _health\_check_ se puede configurar las comprobaciones de estado que hace Nginx para determinar si el servidor de aplicaciones está funcionando correctamente.
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="nginx-misc.conf" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "nginx-misc.conf" >}}
 
 Si queremos que el cliente conozca que servidor atendió la petición podemos añadir la [directiva _add\_header_](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header) usando una de las [variables añadidas por el módulo  _ngx\_http\_upstream_](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#variables), nos servirá para depurar la aplicación en tiempo de desarrollo.
 
@@ -63,7 +63,7 @@ Si queremos que el cliente conozca que servidor atendió la petición podemos a�
 
 En el ejemplo de configuración usaré [Docker][docker] para crear un servidor web Nginx que haga de balanceador de carga entre tres servidores de aplicaciones Tomcat. Con Docker hacer esta prueba es mucho más sencilla que instalar tres Tomcats y un servidor Nginx a travbés de los paquetes del sistema o descargando binarios, puedes leer los [artículos de la serie Docker][blogbitix-serie-docker] que he escrito para conocer como usarlo y que ofrece esta útil herramienta. El archivo de _docker-compose.yml_ completo es el siguiente:
 
-{{% gist id="c202119fe96523b3bc6db4a742fda55b" file="docker-compose.yml" %}}
+{{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "docker-compose.yml" >}}
 
 {{% code git="blog-ejemplos/tree/master/NginxLoadBalancer" command="docker-compose up" %}}
 

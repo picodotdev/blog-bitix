@@ -27,10 +27,10 @@ Teniendo en cuenta estos aspectos una de las opciones de la plataforma JVM es [V
 
 En el código del siguiente ejemplo emplearé Java por [mis preferencias y motivos para seguir usándolo][blogbitix-81] pero sería similar empleando cualquiera de los otros si prefirieses uno de ellos. El ejemplo _Main.java_ es una aplicación que devuelve un mensaje en la URL http://localhost:8080, el ejemplo _Server.java_ devuelve una cabecera y usa un [Verticle](http://vertx.io/docs/vertx-core/java/#_verticles) y el tercero _Web.java_ acepta un parámetro y usa una plantilla de [Thymeleaf][thymeleaf], finalmente el archivo _build.gradle_ contiene las dependencias necesarias para los tres ejemplos y la construcción del proyecto con [Gradle][gradle].
 
-{{% gist id="9099b254b757e8a5b7ce" file="build.gradle" %}}
-{{% gist id="9099b254b757e8a5b7ce" file="Main.java" %}}
-{{% gist id="9099b254b757e8a5b7ce" file="Server.java" %}}
-{{% gist id="9099b254b757e8a5b7ce" file="Web.java" %}}
+{{< gist picodotdev 9099b254b757e8a5b7ce "build.gradle" >}}
+{{< gist picodotdev 9099b254b757e8a5b7ce "Main.java" >}}
+{{< gist picodotdev 9099b254b757e8a5b7ce "Server.java" >}}
+{{< gist picodotdev 9099b254b757e8a5b7ce "Web.java" >}}
 
 La documentación de cada módulo de Vert.x está bastante bien y explicada en los diferentes lenguajes que soporta. Si la documentación no nos es suficiente en el [repositorio de ejemplos](https://github.com/vert-x3/vertx-examples) veremos el código fuente completo de diversas funcionalidades.
 

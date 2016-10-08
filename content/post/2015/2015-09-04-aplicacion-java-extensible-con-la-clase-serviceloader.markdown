@@ -20,29 +20,29 @@ Puede que al desarrollar una aplicación necesitamos que esta sea extensible, es
 
 A través de la clase _ServiceLoader_ y con su método estático [load](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html#load-java.lang.Class-) cargamos los servicios que implementen una determinada interfaz, en el parámetro de tipo _Class_ indicamos la interfaz del servicio. Por ejemplo, supongamos que tenemos la siguiente definición de servicio:
 
-{{% gist id="726d96812b3f5128e8cd" file="Saludador.java" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "Saludador.java" >}}
 
 En el momento de desarrollar esta aplicación podemos definir unos cuantos servicios que implementen la interfaz _Saludador_ pero deseamos que en futuro podamos o un tercero pueda añadir más servicios para otros _locales_. La implementación de estos servicios en Español, Inglés y Euskera sería:
 
-{{% gist id="726d96812b3f5128e8cd" file="EspanolSaludador.java" %}}
-{{% gist id="726d96812b3f5128e8cd" file="InglesSaludador.java" %}}
-{{% gist id="726d96812b3f5128e8cd" file="EuskeraSaludador.java" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "EspanolSaludador.java" >}}
+{{< gist picodotdev 726d96812b3f5128e8cd "InglesSaludador.java" >}}
+{{< gist picodotdev 726d96812b3f5128e8cd "EuskeraSaludador.java" >}}
 
 Iniciando la aplicación podemos obtener los servicios disponibles para ser usados con el siguiente código:
 
-{{% gist id="726d96812b3f5128e8cd" file="Main1.java" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "Main1.java" >}}
 
 Para obtener el mensaje de saludo en el idioma que deseemos basta con obtenerlo de la lista si está disponible y usarlo:
 
-{{% gist id="726d96812b3f5128e8cd" file="Main2.java" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "Main2.java" >}}
 
 La clase _ServiceLoader_ busca los servicios en los archivos _META-INF/services/[interfaz]_ que haya disponibles en cualquiera de las librerías jar incluidas en el _classpath_, en el caso de este ejemplo el archivo sería _META-INF/services/io.github.picodotdev.serviceloader.Saludador_ y este su contenido con las tres implementaciones de servicios incluidas en el ejemplo:
 
-{{% gist id="726d96812b3f5128e8cd" file="io.github.picodotdev.serviceloader.Saludador" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "io.github.picodotdev.serviceloader.Saludador" >}}
 
 La salida para el programa _Main1.java_ y _Main2.java_ respectivamente es:
 
-{{% gist id="726d96812b3f5128e8cd" file="System.out" %}}
+{{< gist picodotdev 726d96812b3f5128e8cd "System.out" >}}
 
 Esta es una forma interesante de hacer extensible o ampliable una aplicación en un futuro. Destacar que simplemente incluyendo en el _classpath_ una librería que incluya en el directorio _META-INF/services_ un archivo con el nombre de la interfaz con su nombre cualificado, _io.github.picodotdev.serviceloader.Saludador_, las nuevas implementaciones de servicios se devolverán usando el método _Service.load(Saludador.class)_ que se encargará de buscar los archivos en las librerías jar que los tengan.
 

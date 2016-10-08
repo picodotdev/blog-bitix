@@ -33,16 +33,16 @@ Algunas de las características notables de JavaFX son:
 
 A continuación mostraré los requerimientos y entorno que deberemos tener para realizar el ejemplo _Hola Mundo_ que consistirá en una aplicación con una ventana que mostrará un botón. Si usamos el JDK 8 de Oracle, JavaFX ya está incorporporado y podremos usarlo sin más requerimientos además de las [otras muchas novedades incorporadas en Java 8][blogbitix-17]. En el caso de [Linux][linux] y más concretamente en [Arch Linux][archlinux], aunque será similar otros sistemas operativos, usando el paquete _openjdk_ deberemos instalar además el paquete _java-openjfx_. En Arch Linux si no tenemos instalado el paquete _java-openjfx_ obtendremos en la terminal un mensaje no muy descriptivo similar a:
 
-{{% gist id="3f72381acc9973f25ff2" file="no-java-openjfx.txt" %}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "no-java-openjfx.txt" >}}
 
 En el [repositorio de GitHub del ejemplo de JavaFX](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJavaFX) está el código fuente. Usando [Gradle][gradle] como herramienta automatizada de construcción y descargado el código podemos lanzar la aplicación de ejemplo con el comando de _run.sh_.
 
-{{% gist id="3f72381acc9973f25ff2" file="build.gradle" %}}
-{{% gist id="3f72381acc9973f25ff2" file="run.sh" %}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "build.gradle" >}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "run.sh" >}}
 
 La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/HolaMundoJavaFX/src/main/java/io/github/picodotdev/javafx/HelloWorld.java) extiende de [Application](https://docs.oracle.com/javafx/2/api/javafx/application/Application.html) y en el método _start_ definimos los controles de lo que será la escena (la ventana), principalmente un botón con un manejador de evento a ejecutar al ser pulsado.
 
-{{% gist id="3f72381acc9973f25ff2" file="HelloWorld.java" %}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "HelloWorld.java" >}}
 
 Esta es la captura de pantalla de la aplicación y el mensaje emitido en la consola cuando se hace clic en el botón.
 
@@ -54,11 +54,11 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
 </div>
 
 
-{{% gist id="3f72381acc9973f25ff2" file="System.out" %}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "System.out" >}}
 
 En las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) hay unos cuantos referentes a JavaFX bastante completos. Iniciando la aplicación contenida en _Ensemble.jar_ podemos ver numerosas funcionalidades (animación, efectos visuales, gráficas, controles, gráficos 2D, gráficos 3D, lenguaje, disposición, multimedia, ...), también con la aplicación _Modena.jar_ podemos ver como son visualmente por defecto los diferentes elementos gráficos de JavaFX.
 
-{{% gist id="3f72381acc9973f25ff2" file="examples.sh" %}}
+{{< gist picodotdev 3f72381acc9973f25ff2 "examples.sh" >}}
 
 <div class="media" style="text-align: center;">
     <figure>

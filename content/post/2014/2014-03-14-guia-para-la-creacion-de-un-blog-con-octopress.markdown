@@ -21,53 +21,53 @@ En esta entrada quiero escribir una guía con los pasos necesarios para crear un
 
 Antes de empezar supondré que ya tenemos en nuestro sistema [ruby](https://www.archlinux.org/packages/extra/x86_64/ruby/) y [git](https://www.archlinux.org/packages/extra/x86_64/git/) instalados. En Linux basta con buscar el paquete correspondiente para nuestra distribución e instalarlo con el gestor de paquetes. Con [Arch Linux](https://www.archlinux.org) tan simple como:
 
-{{% gist id="9552847" file="script-1.sh" %}}
+{{< gist picodotdev 9552847 "script-1.sh" >}}
 
 Empezamos clonando con git el repositorio de Octopress y la configuración inicial, sustituyendo blog-bitix por el nombre del repositorio del blog en GitHub que habremos creado previamente:
 
-{{% gist id="9552847" file="script-2.sh" %}}
+{{< gist picodotdev 9552847 "script-2.sh" >}}
 
 En esta guía voy a comentar como alojar el blog empleando [GitHub Pages](http://pages.github.com/) que nos ofrece alojamiento gratuito tanto para el blog como para el repositorio git de código fuente, la URL será del estilo _http\://[usuario].github.io/[nombre-blog]_. Para ello, primero en la página de GitHub crearemos el repositorio para alojar el código y el blog, después ejecutaremos el siguiente comando que nos pedirá la dirección de nuestro repositorio en mi caso git@github.com:picodotdev/blog-bitix.git:
 
-{{% gist id="9552847" file="script-3.sh" %}}
+{{< gist picodotdev 9552847 "script-3.sh" >}}
 
 Configuramos git para que conozca nuestro usuario al hacer commits:
 
-{{% gist id="9552847" file="script-4.sh" %}}
+{{< gist picodotdev 9552847 "script-4.sh" >}}
 
 Hacemos lo mismo en el repositorio git de la carpeta \_deploy. Octopress usa dos repositorios git, uno para el código fuente del repositorio y otro para lo que ven los usuarios del blog. Octopress configura git de tal forma que los dos repositorios sean dos ramas del mismo repositorio en GitHub:
 
-{{% gist id="9552847" file="script-5.sh" %}}
+{{< gist picodotdev 9552847 "script-5.sh" >}}
 
 Cambiamos el origen de la rama master a la de nuestro GitHub en vez del origen de Octopress:
 
-{{% gist id="9552847" file="script-6.sh" %}}
+{{< gist picodotdev 9552847 "script-6.sh" >}}
 
 Podemos previsualizar el estado actual del blog en el navegador introduciendo en él la dirección [http://localhost:4000/blog-bitix/](http://localhost:4000/blog-bitix/):
 
-{{% gist id="9552847" file="script-7.sh" %}}
+{{< gist picodotdev 9552847 "script-7.sh" >}}
 
 Haciendo el primer deploy del blog (deberemos [configurar SSH](https://help.github.com/articles/generating-ssh-keys)) dispondremos del blog en la siguiente dirección [http://picodotdev.github.io/blog-bitix/](http://picodotdev.github.io/blog-bitix/). Puede que el blog tarde unos minutos en estar disponible y deberemos hacerlo cada vez queramos que los cambios se apliquen al blog.
 
-{{% gist id="9552847" file="script-8.sh" %}}
+{{< gist picodotdev 9552847 "script-8.sh" >}}
 
 Ya estamos listos para empezar a hacer cambios en el blog y crear entradas:
 
-{{% gist id="9552847" file="script-9.sh" %}}
+{{< gist picodotdev 9552847 "script-9.sh" >}}
 
 Subimos los cambios al repositorio de GitHub con:
 
-{{% gist id="9552847" file="script-10.sh" %}}
+{{< gist picodotdev 9552847 "script-10.sh" >}}
 
 Si queremos que el blog tenga un dominio propio en vez de un subdominio de GitHub deberemos crear un archivo CNAME con el nombre del dominio, subirlo al repositorio y hacer el deploy aparte de la [configuración que debamos hacer en los registros DNS de dominio](https://help.github.com/articles/setting-up-a-custom-domain-with-pages):
 
-{{% gist id="9552847" file="script-11.sh" %}}
+{{< gist picodotdev 9552847 "script-11.sh" >}}
 
 Probablemente lo siguiente que deberemos empezar a hacer es [configurar ciertas propiedades](http://octopress.org/docs/configuring/) que afectan al blog, como las urls, nombre del blog, número de post por página, cambiar estilos, etc...
 
 En un futuro quizá necesitemos obtener el repositorio del blog y la forma de disponer de él es diferente que crearlo desde cero con los pasos anteriores. Como comentaba en realidad los blogs con Octopress son dos repositorios de git y por tanto deberemos hacer un clone para cada uno de ellos, los comandos para clonar los repositorios son:
 
-{{% gist id="9552847" file="script-12.sh" %}}
+{{< gist picodotdev 9552847 "script-12.sh" >}}
 
 Hay algunas cosas adicionales que he tenido que hacer para disponer de un blog completamente funcional como deseaba:
 

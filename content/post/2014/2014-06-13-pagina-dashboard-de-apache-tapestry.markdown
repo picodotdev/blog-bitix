@@ -44,7 +44,7 @@ Finalmente, en la sección HibernateStatistics podemos obtener un montón de dat
 
 Para que hibernate genere estadísticas es necesario indica en el archivo hibernate.cfg.xml la propiedad hibernate.generate_statistics:
 
-{{% gist id="1d8d618b4442d0df5888" file="hibernate.cfg.xml" %}}
+{{< gist picodotdev 1d8d618b4442d0df5888 "hibernate.cfg.xml" >}}
 
 Y para activar la cache de segundo nivel añadir la propiedad del proveedor de cache (hibernate.cache.provider_class) y usar en las entidades la anotación @Cache, como se indica en la [documentación de hibernate](https://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html/ch06.html).
 

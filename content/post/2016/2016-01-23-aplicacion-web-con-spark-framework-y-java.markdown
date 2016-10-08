@@ -23,8 +23,8 @@ Con la aparición de los dispositivos móviles algunas aplicaciones están cambi
 
 En Java podemos desarrollar una [interfaz REST usando RESTEasy][elblogdepicodev-142] pero también tenemos otras opciones, una Spark. En este artículo comentaré cómo hacer un ejemplo hola mundo usando Spark como opción si no necesitamos todas las funcionalidades que ofrecen otros _frameworks_ más complejos y de mayor tamaño.
 
-{{% gist id="3894e83348210dff422b" file="HolaMundoSpark.java" %}}
-{{% gist id="3894e83348210dff422b" file="build.gradle" %}}
+{{< gist picodotdev 3894e83348210dff422b "HolaMundoSpark.java" >}}
+{{< gist picodotdev 3894e83348210dff422b "build.gradle" >}}
 
 Spark ofrece un marco de trabajo en el que podemos crear rutas con las que asociar URLs con las acciones necesarias para devolver el resultado y las funcionalidades básicas de la parte de la interfaz web como acceso a la [Request](http://sparkjava.com/documentation.html#request) y [Response](http://sparkjava.com/documentation.html#response), [Cookies](http://sparkjava.com/documentation.html#cookies), [Sessiones](http://sparkjava.com/documentation.html#sessions), [Filtros](http://sparkjava.com/documentation.html#filters), [Redirecciones](http://sparkjava.com/documentation.html#redirects), [manejo de excepciones](http://sparkjava.com/documentation.html#exception-mapping) o servir [recursos estáticos](http://sparkjava.com/documentation.html#static-files) y algunas integraciones para generar HTML con algunas librerías de plantillado como [Thymeleaf][thymeleaf], [Freemarker][freemarker] o [Mustache][mustache] entre otras, la [documentación](http://sparkjava.com/documentation.html) en unas pocas horas se lee completamente.
 

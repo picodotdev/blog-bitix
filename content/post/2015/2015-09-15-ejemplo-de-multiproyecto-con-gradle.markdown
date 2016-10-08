@@ -23,43 +23,43 @@ Tener varios proyectos con dependencias entre ellos exige de la herramienta de c
 
 Necesitaremos 4 proyectos para los módulos y 5 proyectos Gradle, uno para cada módulo y otro que los englobe a todos. La estructura de directorios y archivos relativos a Gradle será la siguiente:
 
-{{% gist id="633316d67575461a0f29" file="estructura.txt" %}}
+{{< gist picodotdev 633316d67575461a0f29 "estructura.txt" >}}
 
 En el archivo _build.gradle_ global podemos incluir las cosas comunes a todos los proyectos como dependencias o _plugins_, en el archivo _settings.gradle_ definimos de que componentes está formado el proyecto. Las cosas comunes a todos los proyectos será el uso del _plugin java_ y [_eclipse_][eclipse], el repositorio de dependencias de _mavenCentral_, algunas dependencias y una tarea para instalar el _wrapper_ de Gradle que nos servirá para usarlo sin necesidad de instalar nada (se descargarán sus binarios automáticamente).
 
-{{% gist id="633316d67575461a0f29" file="build.gradle" %}}
-{{% gist id="633316d67575461a0f29" file="settings.gradle" %}}
+{{< gist picodotdev 633316d67575461a0f29 "build.gradle" >}}
+{{< gist picodotdev 633316d67575461a0f29 "settings.gradle" >}}
 
 Podemos ver los módulos (o proyectos como los llama Gradle) de los que se compone la aplicación y las tareas que podemos ejecutar con:
 
-{{% gist id="633316d67575461a0f29" file="gradle-info.sh" %}}
+{{< gist picodotdev 633316d67575461a0f29 "gradle-info.sh" >}}
 {{% asciinema id="26292" caption="Comandos básicos de Gradle" %}}
 
 En los proyectos web incluiremos como dependencias las propias de Apache Tapestry, el proyecto _library_ y _core_, también aplicaremos el _plugin_ de [Tomcat][tomcat] para poder iniciar los proyectos con Gradle configurándolos para que cada uno se inicie en un puerto distinto 8080/8443 para web y 9080/9443 para back.
 
-{{% gist id="633316d67575461a0f29" file="build-web.gradle" %}}
-{{% gist id="633316d67575461a0f29" file="build-back.gradle" %}}
+{{< gist picodotdev 633316d67575461a0f29 "build-web.gradle" >}}
+{{< gist picodotdev 633316d67575461a0f29 "build-back.gradle" >}}
 
 En el proyecto _library_ incluiremos los componentes que podemos reutilizar en cualquiera de los proyectos, será una librería de componentes de Apache Tapestry. Esta librería de componentes no es más que un archivo jar, cada proyecto que necesite utilizarlos basta con que lo incluya como una dependencia.
 
-{{% gist id="633316d67575461a0f29" file="build-library.gradle" %}}
+{{< gist picodotdev 633316d67575461a0f29 "build-library.gradle" >}}
 
 En el último proyecto _core_ incluiremos una clase de utilidad con los típicos métodos estáticos, incluiremos un [servicio que nos facilitará la persistencia](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/src/main/java/io/github/picodotdev/gradle/core/services/ItemDAOImpl.java) y una [clase de modelo a persistir](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/src/main/java/io/github/picodotdev/gradle/core/models/tables/records/ItemRecord.java) en una base de datos [PostgreSQL][postgresql] generada con [jOOQ como alternativa a Hibernate][blogbitix-82], añadiendo o eliminando instancias persistidas son visualizadas desde el proyecto _web_ y _back_.
 
-{{% gist id="633316d67575461a0f29" file="build-core.gradle" %}}
+{{< gist picodotdev 633316d67575461a0f29 "build-core.gradle" >}}
 
 Para arrancar los proyectos web deberemos inicializar la base de datos. Con [docker-compose][docker-compose] y el [archivo descriptor de Docker](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/misc/postgres/docker-compose.yml)) iniciamos el contenedor de [Docker][docker] con la base de datos PostgreSQL. La base de datos deberemos crearla manualmente pero el esquema donde se guardarán los datos los crearemos con [Liquibase que nos permite hacer modificaciones a una BBDD][elblogdepicodev-155], deberemos tenerlo instalado y su comando incluido en el _PATH_ del sistema para este ejemplo.
 
-{{% gist id="633316d67575461a0f29" file="database.sh" %}}
+{{< gist picodotdev 633316d67575461a0f29 "database.sh" >}}
 
 Una vez tenemos en cada directorio los archivos _build.gradle_ y el resto de archivos que necesite cada proyecto (archivos .java, .tml, ...) podemos construir los módulos a la vez o de forma individual. Podemos iniciar los proyectos web y acceder a ellos con el navegador con:
 
-{{% gist id="633316d67575461a0f29" file="back-run.sh" %}}
+{{< gist picodotdev 633316d67575461a0f29 "back-run.sh" >}}
 {{% asciinema id="26293" caption="Iniciando aplicación backoffice" %}}
 
 Creando un producto desde la consola de PostgreSQL y refrescando la página en el proyecto de _web_ o _back_ veremos que se visualizan sus datos.
 
-{{% gist id="633316d67575461a0f29" file="insert.sql" %}}
+{{< gist picodotdev 633316d67575461a0f29 "insert.sql" >}}
 
 <div class="media" style="text-align: center;">
     <figure>

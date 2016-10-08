@@ -25,8 +25,8 @@ Teniendo un [servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-
 
 Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accedemos al panel de administración con el navegador, en mi caso en _http://localhost:9080_ con el usuario _admin_ y contraseña _admin_ según lo indicado en el archivo _docker-compose.yml_.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="docker-compose.yml" %}}
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="docker-compose-up.sh" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "docker-compose.yml" >}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "docker-compose-up.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid="180"
@@ -47,12 +47,12 @@ Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos
 
 Indicaremos también el rol que deberá poseer el cliente para acceder al servicio REST junto que URLs del servicio estarán autenticadas por OAuth. Añadida la configuración al archivo _application.yml_ el servicio REST es totalmente inconsciente de la autenticación que se realizará con OAuth y Keycloak.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="application.yml" %}}
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="MessageResource.java" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "application.yml" >}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "MessageResource.java" >}}
 
 Iniciado Keycloak y el servicio REST con el comando <code>./gradlew run</code> podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="curl-token.sh" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-token.sh" >}}
 <div class="media" style="text-align: center;">
     {{< figure pid="180"
         image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
@@ -60,7 +60,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>./gradlew run</code> p
 
 Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un [código de estado HTTP 401][wikipedia-http-status-codes] indicando que se necesitan proporcionar las credenciales que con OAuth es un _token_.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="curl-401.sh" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-401.sh" >}}
 <div class="media" style="text-align: center;">
     {{< figure pid="180"
         image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
@@ -68,7 +68,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 
 Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el _token_ no es válido obtendremos un error HTTP 401.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="curl.sh" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl.sh" >}}
 <div class="media" style="text-align: center;">
     {{< figure pid="180"
         image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
@@ -77,7 +77,7 @@ Proporcionando el token mediante una cabecera de la petición el servicio nos de
 
 Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir algunas dependencias al proyecto que usando [Gradle][gradle] como herramienta de construcción serían las siguientes.
 
-{{% gist id="d3cd61c429b60c83531b624245f77bd4" file="build.gradle" %}}
+{{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "build.gradle" >}}
 
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](http://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 

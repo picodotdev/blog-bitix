@@ -68,17 +68,17 @@ En este artículo explicaré como implementar un _listener_ de ejemplo que recib
 
 Como se ve en la clase [EventType](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/event/spi/EventType.html) cada evento tiene un _listener_ distinto, para evitar crear una clase diferente por cada _listener_ podemos emplear el [patrón de diseño _Adapter_](https://es.wikipedia.org/wiki/Adapter_%28patr%C3%B3n_de_dise%C3%B1o%29) de forma que implemente las diferentes interfaces en las que estamos interesados. La implementación de la clase _Adapter_ y una implementación de esta clase _Adapter_ si nos interesasen los eventos PRE_INSERT, PRE_UPDATE, PRE_DELETE, POST_INSERT, POST_UPDATE, POST_DELETE sería la siguiente:
 
-{{% gist id="42e2a576a30c9b03b9f4" file="HibernateEventAdapter.java" %}}
-{{% gist id="42e2a576a30c9b03b9f4" file="ProductoEventAdapter.java" %}}
+{{< gist picodotdev 42e2a576a30c9b03b9f4 "HibernateEventAdapter.java" >}}
+{{< gist picodotdev 42e2a576a30c9b03b9f4 "ProductoEventAdapter.java" >}}
 
 Una vez que tenemos la clase que va a recibir los eventos para que Hibernate la use debemos crear un [Integrator](http://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/integrator/spi/Integrator.html) que lo instanciará y la dará a conocer a Hibernate. En el siguiente código puede verse una implementación de un Integrator de Hibernate, en el se instancia el _listener_ y se asocia a los diferentes eventos. En este caso solo se crea un _listener_ pero perfectamente podríamos asociar varios _listeners_ al mismo evento:
 
-{{% gist id="42e2a576a30c9b03b9f4" file="HibernateIntegrator.java" %}}
-{{% gist id="42e2a576a30c9b03b9f4" file="DummyService.java" %}}
+{{< gist picodotdev 42e2a576a30c9b03b9f4 "HibernateIntegrator.java" >}}
+{{< gist picodotdev 42e2a576a30c9b03b9f4 "DummyService.java" >}}
 
 Finalmente, para que Hibernate conozca la existencia de este Integrator debemos crear un archivo que contenga el nombre completo de la clase _Integrator_. El archivo ha de estar en de un librería .jar en la ubicación _/META-INF/services/org.hibernate.integrator.spi.Integrator_ y disponible en el classpath. El contenido de este archivo para el ejemplo es:
 
-{{% gist id="42e2a576a30c9b03b9f4" file="Integrator" %}}
+{{< gist picodotdev 42e2a576a30c9b03b9f4 "Integrator" >}}
 
 Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en la consola los mensajes cuando se inserte, actualice o elimine una fila de base de datos. En las capturas de imagen se muestran las trazas de una inserción, una traza para la preinseción _Action: preInsert, Id: null_ donde se ve que la entidad no tienen identificativo asignado y otra traza después de la inserción _Action: postInsert, Id: 1_ donde la entidad ya tiene identificativo asignado y la sentencia SQL se ha ejecutado, como se ve en la captura los mensajes salen antes y después de ejecutarse la sentencia SQL que se envía a la base de datos.
 

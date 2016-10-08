@@ -26,7 +26,7 @@ series: ["juegos"]
 
 Un juego clásico es el ajedrez y en GNU/Linux y con el entorno de escritorio [GNOME][gnome] podemos jugar contra un oponente humano o la propia computadora que en el nivel fácil ya nos pondrá en muchas dificultades si es que conseguimos ganarla. Para instalar el juego de ajedrez deberemos instalar el [paquete gnome-chess](https://www.archlinux.org/packages/extra/x86_64/gnome-chess/) y si queremos que el oponente sea la computadora instalar el [paquete gnuchess](https://www.archlinux.org/packages/community/x86_64/gnuchess/). Usando [Arch Linux][archlinux] y su gestor de paquetes los instalamos de la siguiente forma:
 
-{{% gist id="3f805cfbd1c41a3e8d3680d8b5b66864" file="pacman.sh" %}}
+{{< gist picodotdev 3f805cfbd1c41a3e8d3680d8b5b66864 "pacman.sh" >}}
 
 Iniciado el juego veremos el tablero de 8 por 8 casillas con las fichas posicionadas en las casillas de inicio.
 

@@ -33,7 +33,7 @@ Continuando la serie de artículos sobre [Spring Boot][spring-boot] y [Spring Cl
 
 Salvo _health_ e _info_ los demás _endpoints_ contienen información sensible y no son accesibles pudiendo requerir un usuario/contraseña según como se configure el permiso para su acceso. Con las propiedades de configuración booleanas <code>endpoints.[endpoint].sensitive</code> y <code>endpoints.[endpoint].enabled</code> se puede cambiar si el servicio se considera sensible y si está activado respectivamente. Para permitir el acceso sin restricciones a las métricas y habilitar el _endpoint_ para detener la aplicación necesitaríamos establecer las siguientes propiedades de configuración:
 
-{{% gist id="69b393c6a00fdd4f3ca3" file="application.yml" %}}
+{{< gist picodotdev 69b393c6a00fdd4f3ca3 "application.yml" >}}
 
 El _endpoint_ _info_ mostrará todas las propiedades con el patrón <code>info.\*</code> y con el _plugin_ de [Gradle][gradle] _com.gorylenko.gradle-git-properties_ también podremos conocer el _commit_ y rama del código fuente del archivo _.jar_ en ejecución. Se pueden implementar nuevos indicadores de salud escribiendo un componente de Spring que implemente la interfaz [HealthIndicator](http://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/actuate/health/HealthIndicator.html). Con la propiedad de configuración <code>management.context-path</code> se puede cambiar el _path_ usado para todos los _endpoint_ de forma que no colisione con los propios de la aplicación. También se puede cambiar el puerto y dirección <abbr title="Internet Protocol">IP</abbr> de la aplicación en el que se ofrecen los _endpoints_ con las propiedad de configuración <code>management.port</code> y <code>management.address</code> y protegerlos con un cortafuegos. Dependiendo de la combinación de seguridad requerida y consideración de sensibilidad se muestra más información o solo información de estado.
 
@@ -41,7 +41,7 @@ Las métricas ofrecidas en el _endpoint_ _metrics_ por Spring Boot Actuator mues
 
 En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator en el archivo _build.gradle_ del proyecto podemos acceder a los _endpoints_ comentados en las <abbr title="Uniform Resource Locator">URL</abbr> según el puerto y contexto de la interfaz de administración.
 
-{{% gist id="69b393c6a00fdd4f3ca3" file="build.gradle" %}}
+{{< gist picodotdev 69b393c6a00fdd4f3ca3 "build.gradle" >}}
 
 <div class="media" style="text-align: center;">
     <figure>

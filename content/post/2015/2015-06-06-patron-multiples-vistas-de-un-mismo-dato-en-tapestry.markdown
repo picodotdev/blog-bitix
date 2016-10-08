@@ -27,11 +27,11 @@ En Tapestry en una vista se pueden tener múltiples [componentes Block](http://t
 
 En la siguiente vista de un artículo usada en el [agregador de bitácoras Blog Stack][blogstack] se ve que en el archivo _tml_ de la vista hay varios componentes _Block_ y un componente _Delegate_ tal y como he comentado que se puede hacer. El componente bloque _excerptBlock_ es muy similar al componente _fullBlock_ diferenciándose en que el primero emite un extracto del contenido del artículo con _${contentExcerpt} [...]_ y el segundo el artículo completo con _\<t:outputraw value="content"/\>_.
 
-{{% gist id="223fda8826b16f0eb22f" file="PostComponent.tml" %}}
+{{< gist picodotdev 223fda8826b16f0eb22f "PostComponent.tml" >}}
 
 En la clase Java asociada al componente está el método _getBlock_ que determina el bloque a mostrar. En este caso la lógica es muy sencilla, en base a un parámetro que recibe el componente (_mode_) indicando la vista del dato que se quiere se devuelve el componente _Block_ adecuado. Las referencias a los componentes _Block_ presentes en la vista se puede inyectar usando la anotación _@Inject_ junto con _@Component_ usando el mismo identificativo en la vista y en el nombre de la propiedad para la referencia del componente.
 
-{{% gist id="223fda8826b16f0eb22f" file="PostComponent.java" %}}
+{{< gist picodotdev 223fda8826b16f0eb22f "PostComponent.java" >}}
 
 {{< plugintapestry >}}
 

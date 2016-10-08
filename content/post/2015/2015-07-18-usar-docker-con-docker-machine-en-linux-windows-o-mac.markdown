@@ -26,24 +26,24 @@ Si has usado [Vagrant][vagrant] te resultará Docker Machine muy similar ya que 
 
 Para usar Docker Machine debemos [descargar el binario](https://github.com/docker/machine/releases), darle permisos de ejecución y si queremos añadirlo a la variable _PATH_ del sistema.
 
-{{% gist id="691729e2d27cade948ea" file="docker-machine-version.sh" %}}
+{{< gist picodotdev 691729e2d27cade948ea "docker-machine-version.sh" >}}
 
 Con los siguientes comandos podemos crear una máquina virtual para los contenedores docker, listar las máquinas virtuales creadas, hacer SSH a ella, ejecutar un contenedor en ella, parala y eliminar una máquina virtual además de obtener la _IP_ asignada.
 
-{{% gist id="691729e2d27cade948ea" file="docker-machine-create.sh" %}}
+{{< gist picodotdev 691729e2d27cade948ea "docker-machine-create.sh" >}}
 
 Estableciendo las variables de entorno de la máquina virtual podemos usar el comando docker como si de la máquina anfitrión fuera, todos los comandos de docker que lancemos se ejecutarán contra el contenedor docker de la máquina virtual. En el siguiente caso se ejecuta el contenedor de _busybox_ en la máquina virtual _dev_. Con _--unset_ podemos reiniciar la configuración a la máquina anfitrión.
 
-{{% gist id="691729e2d27cade948ea" file="docker-machine-run.sh" %}}
+{{< gist picodotdev 691729e2d27cade948ea "docker-machine-run.sh" >}}
 
 Podemos detener, volver a iniciar, hacer SSH y eliminar la máquina virtual con:
 
-{{% gist id="691729e2d27cade948ea" file="docker-machine-manage.sh" %}}
+{{< gist picodotdev 691729e2d27cade948ea "docker-machine-manage.sh" >}}
 {{% asciinema id="23600" caption="Comandos y uso de Docker Machine en una máquina virtual" %}}
 
 El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es _~/.docker/machine_, si queremos cambiarlo podemos utilizar el parámetro _--storage-path_ en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:
 
-{{% gist id="691729e2d27cade948ea" file="docker-machine-storage-path.sh" %}}
+{{< gist picodotdev 691729e2d27cade948ea "docker-machine-storage-path.sh" >}}
 
 En el administrador de VirtualBox veremos que se ha creado la máquina virtual _dev_ además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.
 

@@ -23,8 +23,8 @@ Para trabajar con archivos _xls_ de Excel debemos usar las clases [HSSFWorkbook]
 
 El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a las cabeceras y una fórmula con el total de los precios de una lista de productos, al final escribe el excel en un archivo. En el archivo de construcción, en este caso de [Gradle][gradle], debemos incluir la dependencia de la librería de Apache POI.
 
-{{% gist id="f9e91dfa722118ccff134d97273ba64e" file="Main.java" %}}
-{{% gist id="f9e91dfa722118ccff134d97273ba64e" file="build.gradle" %}}
+{{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "Main.java" >}}
+{{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "build.gradle" >}}
 
 [LibreOffice][libreoffice] tiene la capacidad de abrir documentos excel, en la siguiente imagen se ve el documento abierto con LibreOffice Calc creado en el ejemplo.
 

@@ -22,16 +22,16 @@ Para disponer del proveedor de ratios usable para Java Money deberemos implement
 
 Internamente la implementación de referencia de Java Money usa la clase [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html). En el archivo _META-INF/services/javax.money.convert.ExchangeRateProvider_ incluimos el nombre cualificado completo de la clase de la implementación de AbstractRateProvider, en este caso _io.github.picodotdev.javamoney.OpenExchangeRatesRateProvider_.
 
-{{% gist id="dcb5782e4133f5ec106a" file="javax.money.convert.ExchangeRateProvider" %}}
-{{% gist id="dcb5782e4133f5ec106a" file="AbstractRateProvider.java" %}}
+{{< gist picodotdev dcb5782e4133f5ec106a "javax.money.convert.ExchangeRateProvider" >}}
+{{< gist picodotdev dcb5782e4133f5ec106a "AbstractRateProvider.java" >}}
 
 También deberemos sobreescribir la propiedad _conversion.default-chain_ en el archivo _javamoney.properties_,  junto con algunas otras propiedades necesarias para que cargue los datos a partir de una URL del servicio que proporciona los ratios. La URL será la del servicio Open Exchange Rates que devolverá un resultado en formato JSON, lo procesaremos y construiremos los ExchangeRates a partir de los datos que nos son proporcionados en la clase _AbstractRateProvider_ con el método _newDataLoaded_ en forma de _InputStream_. En el archivo _javamoney.properties_ el número entre llaves ({}) indica la prioridad de la propiedad cuando haya varios archivos _javamoney.properties_ en diferentes archivos jar, deberemos indicar 0 o más ya que la prioridad por defecto es -1.
 
-{{% gist id="dcb5782e4133f5ec106a" file="javamoney.properties" %}}
+{{< gist picodotdev dcb5782e4133f5ec106a "javamoney.properties" >}}
 
 Implementado el servicio de ratios personalizado de Open Exhcnage Rates y configurado podemos usarlo con las siguientes líneas de código tal y como hacíamos con el servicio del Banco Central Europeo (ECB) proporcionado en la implementación de referencia de la librería de Java Money.
 
-{{% gist id="dcb5782e4133f5ec106a" file="Main.java" %}}
+{{< gist picodotdev dcb5782e4133f5ec106a "Main.java" >}}
 
 La API de Java Money ofrece más posibilidades como obtener datos históricos de los ratios de conversión, Open Exchange Rates también ofrece datos históricos en un _endpoint_ tal que _/api/historical/2011-10-18.json_. Sin embargo, cómo  hacer esto será tarea para el lector o tema para otro futuro artículo.
 

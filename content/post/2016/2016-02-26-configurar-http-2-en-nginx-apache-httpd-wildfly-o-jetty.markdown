@@ -25,7 +25,7 @@ Para usar HTTP/2 los navegadores Mozilla Firefox, Google Chrome y Microsoft Edge
 
 En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _default.conf_ para que quede de forma similar a la siguiente.
 
-{{% gist id="25084c9128028d2896d6" file="default.conf" %}}
+{{< gist picodotdev 25084c9128028d2896d6 "default.conf" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/129/http2-nginx.png" title="HTTP/2 en Nginx" data-gallery><img src="assets/images/custom/posts/129/http2-nginx-thumb.png"></a>
@@ -35,7 +35,7 @@ En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _de
 
 En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.org/packages/extra/x86_64/nghttp2/) de nuestra distribución. y usar el módulo _mod\_http2.so_ junto con _mod\_ssl.so_ para el cifrado.
 
-{{% gist id="25084c9128028d2896d6" file="httpd-default.conf" %}}
+{{< gist picodotdev 25084c9128028d2896d6 "httpd-default.conf" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/129/http2-httpd.png" title="HTTP/2 en Apache HTTPD" data-gallery><img src="assets/images/custom/posts/129/http2-httpd-thumb.png"></a>
@@ -46,11 +46,11 @@ En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.or
 El WildFly deberemos descargar un archivo jar que ofrece el soporte para la negociación de protocolo,
 <abbr title="Application-Layer Protocol Negotiation">ALPN</abbr>, según la versión del JDK que usemos de [Maven Central](http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/). Modificamos el archivo de configuración _bin/standalone.conf_.
 
-{{% gist id="25084c9128028d2896d6" file="standalone.conf" %}}
+{{< gist picodotdev 25084c9128028d2896d6 "standalone.conf" >}}
 
 Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listener para el subsistema de [undertow][undertow] con HTTP/2 habilitado y un Realm asociado para usar TLS/SSL.
 
-{{% gist id="25084c9128028d2896d6" file="standalone.xml" %}}
+{{< gist picodotdev 25084c9128028d2896d6 "standalone.xml" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/129/http2-wildfly.png" title="HTTP/2 en WildFly" data-gallery><img src="assets/images/custom/posts/129/http2-wildfly-thumb.png"></a>
@@ -60,8 +60,8 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
 
 Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el momento de escribir este artículo con la versión 1.8.0_74 del [OpenJDK][openjdk], _modules/alpn-impl/alpn-1.8.0\_74.mod_.
 
-{{% gist id="25084c9128028d2896d6" file="alpn-1.8.0_74.mod" %}}
-{{% gist id="25084c9128028d2896d6" file="jetty.sh" %}}
+{{< gist picodotdev 25084c9128028d2896d6 "alpn-1.8.0_74.mod" >}}
+{{< gist picodotdev 25084c9128028d2896d6 "jetty.sh" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/129/http2-jetty.png" title="HTTP/2 en Jetty" data-gallery><img src="assets/images/custom/posts/129/http2-jetty-thumb.png"></a>

@@ -34,24 +34,24 @@ Apache Thrift es un _framework_ para desarrollar servicios eficientes e interope
 
 Primeramente, para usar Apache Thrift debemos instalar el paquete en la distribución que usemos. En Arch Linux con:
 
-{{% gist id="9bd3ec4b8378855d8986" file="pacman.sh" %}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "pacman.sh" >}}
 
 A continuación deberemos definir la interfaz del servicio, supongamos que queremos hacer un servicio que nos ofrezca un mensaje de ping, la hora del servidor y la suma de dos números. La interfaz de este servicio usando el DSL es:
 
-{{% gist id="9bd3ec4b8378855d8986" file="Service.thrift" %}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "Service.thrift" >}}
 
 Podemos elegir cualesquiera lenguajes deseemos de la amplia lista soportada anterior, en este caso usaré Java tanto para el servidor como para el cliente. Usando el comando _thrift_ e indicando el lenguaje y la interfaz generamos los artefactos:
 
-{{% gist id="9bd3ec4b8378855d8986" file="gradlew.sh" %}}
-{{% gist id="9bd3ec4b8378855d8986" file="build.gradle" %}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "gradlew.sh" >}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "build.gradle" >}}
 
 Esto nos genera unas clases en Java y una interfaz que implementaremos para proporcionar la funcionalidad del servicio, en el caso del ejemplo la interfaz es _Service.Iface_. Para que los clientes puedan consumir este servicio debemos iniciar el servidor que no será más que un programa Java que escucha las peticiones de los clientes en un puerto.
 
-{{% gist id="9bd3ec4b8378855d8986" file="Server.java" %}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "Server.java" >}}
 
 Una vez están los servicios disponibles podemos consumirlos con las siguientes siguientes líneas de código de una implementación de cliente, basta hacer uso de las clase _Service.Client_ generada a partir de la interfaz del servicio.
 
-{{% gist id="9bd3ec4b8378855d8986" file="Client.java" %}}
+{{< gist picodotdev 9bd3ec4b8378855d8986 "Client.java" >}}
 
 Ejecutando el cliente y llamando a los métodos de la interfaz del servicio veremos en la terminal la siguiente salida:
 

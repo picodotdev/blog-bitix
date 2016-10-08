@@ -21,11 +21,11 @@ La página de error de [Grails](http://grails.org/) por defecto da poca informac
 
 En este artículo crearé una página de excepción para Grails con los parámetros de la petición y sesión, cabeceras HTTP y las cookies enviadas además de la traza de la excepción. Los parámetros, las cookies y cabeceras HTTP se pueden obtener de la request y los atributos de la sesión del objeto session. El código del ejemplo de página de excepción es el siguiente.
 
-{{% gist id="f5cab0c3b1affe5bb213" file="exception.gsp" %}}
+{{< gist picodotdev f5cab0c3b1affe5bb213 "exception.gsp" >}}
 
 Para hacer uso de la página de excepción deberemos configurar el archivo UrlMappings para que Grails use esta página de excepción.
 
-{{% gist id="f5cab0c3b1affe5bb213" file="UrlMappings.groovy" %}}
+{{< gist picodotdev f5cab0c3b1affe5bb213 "UrlMappings.groovy" >}}
 
 El resultado se puede ver en la siguiente captura de pantalla.
 

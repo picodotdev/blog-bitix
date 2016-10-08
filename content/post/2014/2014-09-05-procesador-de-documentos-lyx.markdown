@@ -41,7 +41,7 @@ Entre las mismas opciones podemos seleccionar las tipografías, el diseño de la
 	<a href="assets/images/custom/posts/41/lyx-preambulo-latex.png" title="Configuración documento, LyX" data-gallery><img src="assets/images/custom/posts/41/lyx-preambulo-latex-thumb.png"></a>
 </div>
 
-{{% gist id="ba7ab60851eb904ee8ac" file="preamble.tex" %}}
+{{< gist picodotdev ba7ab60851eb904ee8ac "preamble.tex" >}}
 
 
 Otras opciones deberemos incluirlas como código Tex al principio (Insertar> Código Tex) del documento, para establecer cuál es la palabra a emplear para nombrar los capítulos, figuras y listados que por defecto aparecerán en inglés en vez de español (Chapter 1 en vez de Capítulo 1). Este es el primer recuadro en rojo de la imagen LyX.

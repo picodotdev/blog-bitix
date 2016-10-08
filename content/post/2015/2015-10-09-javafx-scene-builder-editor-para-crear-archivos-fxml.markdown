@@ -30,11 +30,11 @@ Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplic
 
 Y el FXML que genera del mismo ejemplo.
 
-{{% gist id="ac5ee53b16fed38df676" file="HelloWorld.fxml" %}}
+{{< gist picodotdev ac5ee53b16fed38df676 "HelloWorld.fxml" >}}
 
 Que podemos usar en una aplicación con el siguiente código. Comparándolo con el [código del ejemplo sin FXML](https://github.com/picodotdev/blog-ejemplos/blob/master/HolaMundoJavaFX/src/main/java/io/github/picodotdev/javafx/HelloWorld.java) vemos que el número de líneas necesarias son unas cuantas menos que se notará más cuanto más compleja sea la interfaz gráfica.
 
-{{% gist id="ac5ee53b16fed38df676" file="HelloWorldFXML.java" %}}
+{{< gist picodotdev ac5ee53b16fed38df676 "HelloWorldFXML.java" >}}
 
 En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de controles que podemos usar arrastrando y soltando para construir la interfaz, botones, _checkbox_, _radio buttons_, paneles, rejillas, menús, contenedores, miscelánea, formas, 3D, ...
 
@@ -47,7 +47,7 @@ En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de contro
 
 Si con los archivos FXML construimos la interfaz queda como enlazar los elementos visuales con su comportamiento mediante eventos. Una forma es inyectar en propiedades con una anotación los elementos visuales y añadirles el código de comportamiento, otra es indicar en el propio archivo FXML la clase controlador que se encargará del manejo de los eventos del evento visual y otra es incluir el código manejador de evento en el propio archivo FXML.
 
-{{% gist id="ac5ee53b16fed38df676" file="HelloWorldFXMLController.java" %}}
+{{< gist picodotdev ac5ee53b16fed38df676 "HelloWorldFXMLController.java" >}}
 
 La clase manejador de eventos se indica en el panel _Controller_ y es una clase con métodos que posteriormente se indican en el editor con una almohadilla (<code>#</code>) delante en el panel _Code_. Por ejemplo, si el manejador de un botón se llama _onClick_ en la clase controlador _HelloWorldFXMLController_ deberemos tener ese método con el parámetro adecuado en este caso un [_ActionEvent_](https://docs.oracle.com/javase/8/javafx/api/javafx/event/ActionEvent.html).
 

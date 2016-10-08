@@ -22,7 +22,7 @@ Las aplicaciones de comercio electrónico o que realizan operaciones financieras
 
 Aunque la especificación no es parte de Java aún el grupo de trabajo encargado ha generado una dependencia que podemos usar. En el [repositorio de GitHub](https://github.com/JavaMoney/) podemos encontrar el código de la librería. Incluyéndola como dependencia de un proyecto podemos usarla, usando [Gradle][gradle] con:
 
-{{% gist id="6d22d043d7ca6f6146cb" file="build.gradle" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "build.gradle" >}}
 
 La librería hace uso de lambdas, una de las [novedades que introdujo de Java 8 en el lenguaje][blogbitix-17], y nos facilita varias funcionalidades. También permite usar _streams_. Veamos algunas de las posibilidades.
 
@@ -30,25 +30,25 @@ La librería hace uso de lambdas, una de las [novedades que introdujo de Java 8 
 
 Las divisas se representan con [CurrencyUnit](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/CurrencyUnit.java) y los  importes se representan usando la clase [MoneyAmount](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryAmount.java), tenemos varias formas de crear instancias de estas clases.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-1.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-1.java" >}}
 
 La API ofrece varios métodos para extraer los valores numéricos, la parte entera y decimal, que una instancia de MoneyAmount contiene así como obtener los valores en un tipo de datos más básico como BigDecimal.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-2.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-2.java" >}}
 
 ### Operaciones aritméticas, de comparación y operaciones personalizadas
 
 Podemos hacer operaciones aritméticas (suma, resta, multiplicación y división) entre dos importes.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-3.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-3.java" >}}
 
 También podremos hacer comparaciones:
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-4.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-4.java" >}}
 
 ### Redondear importes
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-9.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-9.java" >}}
 
 E incluso implementar operaciones más complejas y habituales personalizadas con la clase [MonetaryOperator](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryOperator.java) que se puede aplicar usando el método _with_ de MonerayAmount.
 
@@ -56,17 +56,17 @@ E incluso implementar operaciones más complejas y habituales personalizadas con
 
 Dependiendo de país o la moneda los importes se representan de forma diferente, por ejemplo, en Estados Unidos se usa «,» como separador de millares y «.» como separador de los decimales, en España es diferente, se usa «.» para los millares y «,» para los decimales. También hay monedas que no tienen decimales como el Yen japonés. Disponemos de métodos y clases para formatear correctamente el importe.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-5.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-5.java" >}}
 
 Podemos hacer la operación contraria _parseando_ o analizando la cadena, obtener un objeto MoneyAmount desde su representación en String.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-6.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-6.java" >}}
 
 ### Ratios de conversión, conversiones entre divisas
 
 Si necesitamos convertir el importe de una moneda a otra necesitaremos el ratio de conversión entre las monedas, es decir, por cada dólar estadounidense cuántos euros son si queremos hacer una conversión de USD a euro. Se puede obtener el ratio de conversión o hacer la conversión directamente entre las dos monedas. En el siguiente código se muestra cuántos euros son 10 USD con la cotización entre las divisas en el momento de escribir el artículo.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-7.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-7.java" >}}
 
 La librería incluye varias fuentes para las cotizaciones de cada moneda, una de ellas es el Banco Central Europeo pero también podemos crear la implementación de una nueva fuente que por ejemplo use Open Exchange Rates.
 
@@ -74,7 +74,7 @@ La librería incluye varias fuentes para las cotizaciones de cada moneda, una de
 
 Por si todo esto fuera poco podemos usar las características de programación funcional de Java 8 ya que la librería ofrece soporte para streams para ejemplo filtrar o para agrupar.
 
-{{% gist id="6d22d043d7ca6f6146cb" file="Main-8.java" %}}
+{{< gist picodotdev 6d22d043d7ca6f6146cb "Main-8.java" >}}
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMoney) está en uno de mis repositorios de GitHub.
 

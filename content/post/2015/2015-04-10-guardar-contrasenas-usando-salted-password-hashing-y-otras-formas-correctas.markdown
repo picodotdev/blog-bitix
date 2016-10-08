@@ -32,15 +32,15 @@ Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque 
 ### Ejemplo de _Salted Password Hashing_ usando Apache Shiro
 Antes de comentar alguna opción más que dificulte los ataques de fuerza bruta o de diccionario veamos como implementar _Salted Password Hashing_ empleando Apache Shiro como librería de autenticación y autorización para los usuarios. El ejemplo será simple sin guardar los datos en una base de datos pero suficiente para mostrar que se debe añadir al proyecto para que Shiro compruebe las contraseñas usando una función de _hash_ y un _salt_. Partiré de un ejemplo que hice para el [libro PlugIn Tapestry][blogbitix-12] sobre el desarrollo de aplicaciones web con el _framework_ [Apache Tapestry][tapestry]. Básicamente deberemos crear un nuevo _Realm_ que devuelva los datos del usuario, el _hash_ y el _salt_. Una implementación suficiente para el ejemplo sería la siguiente, la parte importante está en el método _doGetAuthenticationInfo_ y en la inicialización _static_ de la clase:
 
-{{% gist id="c718273bc1a5ec76831b" file="Realm.java" %}}
+{{< gist picodotdev c718273bc1a5ec76831b "Realm.java" >}}
 
 Las contraseñas _hasheadas_ tendrán la siguiente forma, podemos guardarlas codificadas en formato hexadecimal o en formato Base64:
 
-{{% gist id="c718273bc1a5ec76831b" file="hashed-password.txt" %}}
+{{< gist picodotdev c718273bc1a5ec76831b "hashed-password.txt" >}}
 
 En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe modificar la configuración para que se utilice el nuevo _Realm_ el antiguo guardaba las contraseñas en texto plano (_shiro-users.properties_).
 
-{{% gist id="c718273bc1a5ec76831b" file="AppModule.java" %}}
+{{< gist picodotdev c718273bc1a5ec76831b "AppModule.java" >}}
 
 El cambio de _Realm_ para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con _root_ como usuario y _password_ como contraseña.
 
@@ -60,7 +60,7 @@ Para implementar la segunda opción deberemos proporcionar implementaciones prop
 ### Código fuente del ejemplo
 El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado en un repositorio de GitHub, es completamente funcional y puedes probarlo en tu equipo. Una vez descargado el siguiente comando e introduciendo en el navegador http\://localhost:8080/PlugInTapestry, en la página que se muestra hay un botón para iniciar sesión:
 
-{{% gist id="c718273bc1a5ec76831b" file="gradlew.sh" %}}
+{{< gist picodotdev c718273bc1a5ec76831b "gradlew.sh" >}}
 
 <div class="media" style="text-align: center;">
     <a href="assets/images/custom/posts/75/iniciar-sesion.png" title="Botón de inicio de sesión" data-gallery><img src="assets/images/custom/posts/75/iniciar-sesion.png"></a>

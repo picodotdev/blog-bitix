@@ -22,8 +22,8 @@ El primero de los ejercicios propuestos en CodeKata es [Kata01: Supermarket Pric
 
 Intentando implementar en código una posible solución aplicando el patrón Strategy, usando BigDecimal para los precios (en vez de double y float que no pueden representar correctamente algunos valores decimales), este ejemplo muestra como calcular el precio de un producto dada su cantidad y su tipo de precio.
 
-{{% gist id="0ec7ceb33a4a78ef1bc2" file="Main.java" %}}
-{{% gist id="0ec7ceb33a4a78ef1bc2" file="MainTest.java" %}}
+{{< gist picodotdev 0ec7ceb33a4a78ef1bc2 "Main.java" >}}
+{{< gist picodotdev 0ec7ceb33a4a78ef1bc2 "MainTest.java" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/56/teses-junit.png" title="Ejecución de teses" data-gallery><img src="assets/images/custom/posts/56/teses-junit.png"></a>

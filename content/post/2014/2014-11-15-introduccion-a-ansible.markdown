@@ -27,11 +27,11 @@ Hay que destacar que Ansible no necesita instalar un agente (al contrario de Che
 
 Para trabajar con Ansible necesitaremos inventariar las máquinas y probablemente definir algunas variables. Podría ser de la siguiente forma en el caso de una máquina para desarrollar.
 
-{{% gist id="b2f77fc1b2f1987c8aef" file="hosts" %}}
+{{< gist picodotdev b2f77fc1b2f1987c8aef "hosts" >}}
 
 En el inventario descrito como un archivo en formato INI se asignan los nombres del host o sus direcciones IP, también se pueden hacer agrupaciones de máquinas por ejemplo en base al rol (base de datos, servidor web, ...). Una vez que disponemos del inventario podemos empezar a usar Ansible, por ejemplo haciendo un ping a todas las máquinas o instalando un determinado paquete:
 
-{{% gist id="b2f77fc1b2f1987c8aef" file="ansible.sh" %}}
+{{< gist picodotdev b2f77fc1b2f1987c8aef "ansible.sh" >}}
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/52/ansible.png" title="Ansible" data-gallery><img src="assets/images/custom/posts/52/ansible-thumb.png"></a>
@@ -41,11 +41,11 @@ El parámetro -m indica el módulo de Ansible que usamos y a continuación indic
 
 Pero en vez de usar Ansible mediante comandos podemos emplear recetas contenidas en [playbooks](http://docs.ansible.com/playbooks.html) descritos en formato YAML en las que definimos varias tareas y podemos usar las variables del inventario. Con el siguiente playbook instalamos varios paquetes en una máquina Arch Linux y hacemos un checkout de dos proyectos de subversion, para ello usamos en la primera tarea el módulo para gestionar paquetes con pacman, hay módulos para los gestores de paquetes de otras distribuciones (apt, yum, ...) y en la segunda tarea hacemos un checkout de dos proyectos usando el módulo del sistema de control de versiones subversion. Los módulos son idempotentes de forma que una vez que el sistema está en el estado deseado no se realiza la operación, esto hace que el mismo playbook pueda ser ejecutado tantas veces como se desee evitando efectos colaterales por reejecuciones, lo importante es el estado que se quiere conseguir, Ansible se encarga de realizar las acciones necesarias para llegar a él desde el estado actual del sistema.
 
-{{% gist id="b2f77fc1b2f1987c8aef" file="install.yml" %}}
+{{< gist picodotdev b2f77fc1b2f1987c8aef "install.yml" >}}
 
 Para ejecutar un playbook usamos el comando ansible-playbook en vez de simplemente el comando ansible.
 
-{{% gist id="b2f77fc1b2f1987c8aef" file="ansible-playbook-install.sh" %}}
+{{< gist picodotdev b2f77fc1b2f1987c8aef "ansible-playbook-install.sh" >}}
 
 En los playbooks podemos usar tareas, grupos de máquinas, variables, variables de grupos, asignar valores a variables, usar condicionales, bucles, hechos (facts, información obtenida por ansible), notificaciones y realizar acciones en base a ellas, aplicar etiquetas a tareas, hacer includes, plantillas (para los archivos de configuración de los servicios, por ejemplo de apache o mysql), esperar a condiciones, cifrar archivos que contengan información sensible y que podamos incluir en una herramienta de control de versiones sin riesgo a comprometer la información, usar roles que aplican todas estas cosas según la función que queramos que tenga una máquina.
 

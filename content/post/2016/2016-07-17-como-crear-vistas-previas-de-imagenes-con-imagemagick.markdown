@@ -23,7 +23,7 @@ Si tenemos unas pocas imágenes y no es algo que hagamos a menudo podemos usar u
 
 Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepicodev-129] o [añadir marcas de agua a imágenes][elblogdepicodev-58] de forma automatizada con [Image Magick][imagemagick] podemos escalar imágenes para generar vistas previas o _thumbnails_ más pequeñas para que ocupen menos. El comando para escalar todas las imágenes de una extensión _jpg_ en este caso a un tamaño original de 1600 de ancho y 1067 de alto en pixeles conservando la proporción de la imagen es el siguiente:
 
-{{% gist id="e09f72974e4fe881019837fdd3be2836" file="convert.sh" %}}
+{{< gist picodotdev e09f72974e4fe881019837fdd3be2836 "convert.sh" >}}
 
 El primero de los comandos sirve para haceer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las vistas previas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
 

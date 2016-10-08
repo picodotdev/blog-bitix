@@ -22,13 +22,13 @@ Hace un par de años cambié [de usar Blogger a usar Octopress][blogbitix-0] y d
 
 Para no incluir en las páginas o artículos las mismas URLs una y otra vez tengo un archivo de referencias a enlaces en el que en formato [markdown][markdown] a cada URL le doy un identificativo. Posteriormente hago uso de una facilidad que proporciona Hugo que son los [shortcodes](https://gohugo.io/extras/shortcodes/) similares a pequeños contenidos que pueden ser incluídos en los archivos de contenido u otras plantillas, este sería un trozo de un archivo de enlaces:
 
-{{% gist id="133181ba1d0df5c82369026ad1f9e350" file="links.html" %}}
+{{< gist picodotdev 133181ba1d0df5c82369026ad1f9e350 "links.html" >}}
 
 El día que un enlace cambie basta con que lo modifique en el archivo enlaces sin tener que revisar, buscar, reemplazar y editar los archivos de contenido.
 
 Esto para los enlaces externos hacia otras páginas pero de forma similar lo aplico a los enlaces internos hacia otras páginas de la bitácora. A cada artículo le asigno un número secuencial según los voy escribiendo y publicando, con esa secuencia creo un identificativo para el artículo y le asocio su URL.
 
-{{% gist id="133181ba1d0df5c82369026ad1f9e350" file="postlinks.html" %}}
+{{< gist picodotdev 133181ba1d0df5c82369026ad1f9e350 "postlinks.html" >}}
 
 Con estos archivos usando la [sintaxis de markdown](https://daringfireball.net/projects/markdown/syntax#link) con <code>\[texto enlace\]\[identificativo-enlace\]</code>, por ejemplo <code>\[¡Hola nuevo mundo!\]\[blogbitix-0\]</code>, puedo hacer referencia a los enlaces con su identificativo y al generar el contenido estas referencias será sustituidas por los enlaces referenciados.
 

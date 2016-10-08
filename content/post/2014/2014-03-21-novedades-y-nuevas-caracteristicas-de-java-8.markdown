@@ -50,13 +50,13 @@ Los streams no son un nuevo tipo de colección son una nueva forma de recorrer l
 
 Tradicionalmente en la API de colecciones la iteración sobre los elementos debíamos proporcionarla de forma externa. Con Java 8 podemos expresarla de forma interna, de la siguiente manera.
 
-{{% gist id="9689477" file="Stream.java" %}}
+{{< gist picodotdev 9689477 "Stream.java" >}}
 
 ### Lambda
 
 Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como [Groovy](http://groovy.codehaus.org/) o [Python](https://www.python.org/). Las expresiones lambda son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:
 
-{{% gist id="9689477" file="Lambda.java" %}}
+{{< gist picodotdev 9689477 "Lambda.java" >}}
 
 El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones lambda de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.
 
@@ -69,17 +69,17 @@ Todo el código desarrollado previamente a Java 8 no hace uso de las lambdas, pe
 * A un método de instancia de una instancia arbitraria de un tipo
 * A un constructor
 
-{{% gist id="9689477" file="ReferenciaMetodos.java" %}}
+{{< gist picodotdev 9689477 "ReferenciaMetodos.java" >}}
 
 ### Interfaces funcionales
 
 Una interfaz funcional es aquella que solo tiene un método abstracto (sin implementación). Algunos ejemplos de interfaces funcionales son [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html), [ActionListener](https://docs.oracle.com/javase/8/docs/api/java/awt/event/ActionListener.html), [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) y [Callable](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html). Para definir una interfaz funcional se puede usar la anotación [@FunctionalInterface](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) y pueden representarse con una expresión lambda. En el siguiente ejemplo puede apreciarse que con las interfaces funcionales y las lambdas podemos hacer lo mismo de forma más clara, menos verbosa y con código más legible.
 
-{{% gist id="9689477" file="InterfazFuncional-1.java" %}}
+{{< gist picodotdev 9689477 "InterfazFuncional-1.java" >}}
 
 En Java 8 podemos hacer:
 
-{{% gist id="9689477" file="InterfazFuncional-2.java" %}}
+{{< gist picodotdev 9689477 "InterfazFuncional-2.java" >}}
 
 Java 8 icorpora varias interfaces funcionales que puede ser usadas en expresiones lambda, entre ellas están:
 
@@ -92,13 +92,13 @@ Java 8 icorpora varias interfaces funcionales que puede ser usadas en expresione
 
 Hasta ahora las interfaces en Java solo podían definir métodos pero no sus implementaciones. El problema con las interfaces es que cuando se modifican se rompen todas las clases que las usan. Esto se ha resuelto de tal forma que se puedan añadir nuevos métodos con implementación a las interfaces y ha sido necesario para incorporar las lambdas a interfaces existentes como List. En Java 8 las interfaces podrán incorporar implementaciones para algunos de sus métodos, teniendo así algo parecido a herencia múltiple.
 
-{{% gist id="9689477" file="MetodosDefault.java" %}}
+{{< gist picodotdev 9689477 "MetodosDefault.java" >}}
 
 ### Métodos estáticos en interfaces
 
 Además de definir métodos por defecto en las interfaces a partir de ahora podemos definir métodos estáticos. Definiendo métodos estáticos en las interfaces evitaremos tener que crear clases de utilidad. Podremos incluir en un mismo tipo (la interfaz) todos los métodos relacionados.
 
-{{% gist id="9689477" file="MetodosStatic.java" %}}
+{{< gist picodotdev 9689477 "MetodosStatic.java" >}}
 
 ### Mejoras en la programación asíncrona
 

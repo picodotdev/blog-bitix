@@ -32,7 +32,7 @@ A continuación explicaré como crear un repositorio en Docker Hub que obtenga l
 
 Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario determinará el nombre de las imágenes, siendo mi nombre de usuario _picodotdev_ al usar las imágenes debería usar:
 
-{{% gist id="b8ce1632e34bf0a20f59" file="docker-run.sh" %}}
+{{< gist picodotdev b8ce1632e34bf0a20f59 "docker-run.sh" >}}
 
 <div class="media" style="text-align: center;">
     <figure>

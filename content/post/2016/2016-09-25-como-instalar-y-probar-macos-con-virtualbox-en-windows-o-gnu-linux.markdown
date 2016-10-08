@@ -32,11 +32,11 @@ Los pasos para instalar macOS en una máquina virtual con VirtualBox son los sig
 
 Si usamos Windows deberemos ejecutar los siguientes comandos en modo administrador, sustituyendo _macOS Sierra 10.12_ por el nombre que le hayamos dado a la máquina virtual al crearla:
 
-{{% gist id="588b2cd99be69d340c79cafb55f9b334" file="windows.cmd" %}}
+{{< gist picodotdev 588b2cd99be69d340c79cafb55f9b334 "windows.cmd" >}}
 
 En el caso de Linux el archivo de comandos es similar e igualmente sustituiremos _macOS Sierra 10.12_ por el nombre que le hayamos dado a la máquina virtual al crearla:
 
-{{% gist id="588b2cd99be69d340c79cafb55f9b334" file="linux.sh" %}}
+{{< gist picodotdev 588b2cd99be69d340c79cafb55f9b334 "linux.sh" >}}
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos que empiezan a salir unos cuantos mensajes hasta que se inicia el sistema gráfico con la instalación y su asistente que constará de varios pasos.
 
