@@ -99,6 +99,8 @@ Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, en
 
 {{% code git="blog-ejemplos/tree/master/Keycloak" command="./gradle run" %}}
 
+{{< plugintapestry >}}
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
