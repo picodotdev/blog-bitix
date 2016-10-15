@@ -13,7 +13,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "tapestry", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
 
 Después 38 betas (han sido tantas porque era barato hacerlas) y una única candidata a publicación, 4 años desde la anterior versión mayor (5.3) y varias versiones menores de esta, la versión final de [Apache Tapestry][tapestry] 5.4 ha sido publicada. Esta nueva versión incorpora más de 300 correcciones de errores, casi 200 mejoras y varias novedades destacadas  centradas en la integración con JavaScript siguiendo la evolución actual de las aplicaciones web con un peso mayor en el lado del cliente. De esta manera el JavaScript se basa en el uso de [RequireJS][requirejs] proporcionando a las aplicaciones todas las bondades que los módulos proporcionan como organizar mejor el JavaScript de las aplicaciones, no polucionar el ámbito global evitando conflictos entre librerías y carga de dependencias de forma dinámica. También se proporciona soporte _built-in_ para [CofeeScript][coffeescript] y [LESS][less].
 
