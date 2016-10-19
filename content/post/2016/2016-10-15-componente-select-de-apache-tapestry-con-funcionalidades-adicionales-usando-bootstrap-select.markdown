@@ -3,7 +3,7 @@ pid: 187
 title: "Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select"
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00
-updated: 2016-10-15T23:00:00+02:00
+updated: 2016-10-19T23:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -18,7 +18,7 @@ tags: ["blog-stack", "java", "javascript", "planeta-codigo", "programacion", "so
 
 El selector de opciones implementado en los navegadores es muy simple pudiendo seleccionar un elemento de una lista, mostrar los elementos agrupados por categorías o seleccionar múltiples elementos pero mostrándolos en formato de una lista en vez de como un desplegable. [bootstrap-select](https://silviomoreto.github.io/bootstrap-select/) es una librería que utiliza los estilos de [Bootstrap][bootstrap] y que añade algunas funcionalidades más a los componentes de selección de opciones de los formularios de una página web.
 
-Algunas de estas funcionalidades adicionales está explicadas más detalladamente en los [ejemplos]((https://silviomoreto.github.io/bootstrap-select/examples/)), que son:
+Algunas de estas funcionalidades adicionales está explicadas más detalladamente en los [ejemplos](https://silviomoreto.github.io/bootstrap-select/examples/), que son:
 
 * Cuadro de búsqueda
 * Búsqueda por palabras clave
