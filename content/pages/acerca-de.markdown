@@ -21,8 +21,8 @@ Estoy titulado como Ingeniero en Informática y he trabajado en varias consultor
 Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electrónico que es <a href="mailto:pico.dev@gmail.com">pico.dev@gmail.com</a>, estaré encantado de escuchar:
 
 * Ofertas de trabajo. Estoy interesado en [JBoss][jboss], [WildFly][wildfly], [Tomcat][tomcat], [Apache Tapestry][tapestry], [jOOQ][jooq], [jQuery][jquery], [Backbone.js][backbone], [React][react], [PostgreSQL][postgresql], [GNU][gnu]/[Linux][linux] y software libre.
-* Consultas o preguntas.
 * Propuestas de colaboración con artículos patrocinados, análisis de productos, _banners_ u otras formas de publicidad principalmente relacionada con la temática de este blog.
+* Consultas o preguntas.
 * Sugerencias de artículos.
 * Opiniones.
 * Correcciones de errores.
