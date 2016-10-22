@@ -30,7 +30,7 @@ draft: true
     <iframe src="&internal=1"></iframe>
 </div>
 
-{{< gist picodotdev [id] "[file]" >}}
+{{< gist picodotdev id "file" >}}
 
 {{% code git="blog-ejemplos/tree/master/" command="" %}}
 

@@ -3,7 +3,7 @@ pid: 187
 title: "Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select"
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00
-updated: 2016-10-19T23:00:00+02:00
+updated: 2016-10-22T08:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -41,7 +41,7 @@ Algunas de estas funcionalidades adicionales está explicadas más detalladament
 * Posición desplegable
 * Deshabilitar _select_, opción o grupo de opciones
 
-Todas estas capacidades de personalización se consiguen bien añadiendo atributos a las etiquetas HTML _select_ o a las etiquetas _option_ y _optgroup_ con lo que usar el componente _bootstrap-select_ consiste básicamente generar el marcado HTML adecuado. Con JavaScript se puede construir el componente donde podemos indicar las mismas [opciones adicionales](https://silviomoreto.github.io/bootstrap-select/options/) que con los atributos _data-_, también tiene [métodos](https://silviomoreto.github.io/bootstrap-select/methods/) para manipular su comportamiento de forma programática como por ejemplo recibir eventos cuando cambia la selección.
+Todas estas capacidades de personalización se consiguen bien añadiendo atributos a las etiquetas <abbr title="HyperText Markup Language">HTML</abbr> _select_ o a las etiquetas _option_ y _optgroup_ con lo que usar el componente _bootstrap-select_ consiste básicamente generar el marcado HTML adecuado. Con JavaScript se puede construir el componente donde podemos indicar las mismas [opciones adicionales](https://silviomoreto.github.io/bootstrap-select/options/) que con los atributos _data-_, también tiene [métodos](https://silviomoreto.github.io/bootstrap-select/methods/) para manipular su comportamiento de forma programática como por ejemplo recibir eventos cuando cambia la selección.
 
 Usando [Apache Tapestry][tapestry] con su concepto de parámetros informales añadiremos las atributos necesarios en la etiqueta _select_ y con el modelo de datos proporcionado en [SelectModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/SelectModel.html), [OptionGroupModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/OptionGroupModel.html) y [OptionModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/OptionModel.html) podremos proporcionar los atributos adicionales para las etiquetas de los _option_ y _optgroup_. El modelo de datos de una etiqueta _select_ es una lista de opciones y grupos de opciones, cada opción tiene una etiqueta que se le mostrará al usuario, si está habilitada o no, el valor que se enviará al servidor cuando esté seleccionada y un mapa de atributos a añadir en la etiqueta de la opción.
 
@@ -65,6 +65,8 @@ En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript n
 
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "PlugInStack.java" >}}
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "index.js" >}}
+
+En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario.
 
 {{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
 
