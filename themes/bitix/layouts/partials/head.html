@@ -1,8 +1,8 @@
 <header>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4 col-md-offset-4">
       <h2 class="title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
-      <h2 class="links">
+      <div class="links">
         {{ if .Site.Params.links.feed }}
           <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/custom/rss.png"></a>
         {{ end }}
@@ -21,7 +21,10 @@
         {{ if .Site.Params.links.linkedin }}
           <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}"><img src="assets/images/custom/linkedin.png"></a>
         {{ end }}
-      </h2>
+      </div>
+    </div>
+    <div class="col-md-4 text-center">
+      <iframe src="https://duckduckgo.com/search.html?width=275&site=https://picodotdev.github.io/blog-bitix/&prefill=Buscar en Blog Bitix" style="overflow:hidden;margin:0;margin-top:20px;padding:0;width:350px;height:60px;" frameborder="0"></iframe>
     </div>
   </div>
   <div class="row">

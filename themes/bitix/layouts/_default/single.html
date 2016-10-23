@@ -27,9 +27,13 @@
                   {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
                 {{ end }}
                 <br>
-                <a href="{{ .RelPermalink }}" itemprop="url">Enlace permanente</a>
+                <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "permanent_link" }}</a>
                 {{ if isset .Params "comments" }}
-                  <a href="{{ .RelPermalink }}#comments">Comentarios</a>
+                  <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
+                {{ end }}
+                {{ if isset .Params "promoted" }}
+                  <br>
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" }}
                 {{ end }}
               </p>
 

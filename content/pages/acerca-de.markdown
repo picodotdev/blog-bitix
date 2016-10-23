@@ -26,7 +26,7 @@ Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electr
 * Sugerencias de artículos.
 * Opiniones.
 * Correcciones de errores.
-* Cualquier otra coas que quieras comentarme.
+* Cualquier otra cosa que quieras comentarme.
 
 <div class="media" style="text-align: center;">
     <a href="mailto:pico.dev@gmail.com"><img src="assets/images/custom/pd-email.png" alt="pico.dev@gmail.com" title="pico.dev@gmail.com"></a>

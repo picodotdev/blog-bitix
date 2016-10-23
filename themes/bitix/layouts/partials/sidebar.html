@@ -1,27 +1,10 @@
 <div class="row">
-  <div class="col-md-12">
-    <h3>Buscar en Blog Bitix</h3>
-    {{ partial "adsense/search.html" . }}
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12 text-center">
     {{ partial "adsense/large-skycraper.html" . }}
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    <h3>{{ i18n "recent_articles" }}</h3>
-    <ul class="list-unstyled recents">
-      {{ range first 10 (where .Site.Pages ".Type" "post") }}
-        <li><a href="{{ .RelPermalink }}" class="p-name u-url">{{ .Title }}</a><hr></li>
-      {{ end }}
-      <li><span class="glyphicon glyphicon-hand-right"></span> <a href="archive/">{{ i18n "more_articles_in_archve" }}</a></li>
-    </ul>
-  </div>
-</div>
-<div class="row text-center">
-  <div class="col-md-12">
+  <div class="col-md-12 text-center">
     {{ partial "adsense/large-rectangle.html" . }}
   </div>
 </div>
@@ -31,8 +14,10 @@
     <hr>
   </div>
 </div>
-<div class="row text-center">
+<div class="row">
   <div class="col-md-12">
-    {{ partial "adsense/auto-text.html" . }}
+    <ul class="list-unstyled recents">
+      <li><span class="glyphicon glyphicon-hand-right"></span> <a href="archive/">{{ i18n "articles_in_archve" }}</a></li>
+    </ul>
   </div>
 </div>
