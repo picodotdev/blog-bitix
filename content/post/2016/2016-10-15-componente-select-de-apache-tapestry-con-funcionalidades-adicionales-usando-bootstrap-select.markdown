@@ -3,7 +3,7 @@ pid: 187
 title: "Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select"
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00
-updated: 2016-10-22T08:00:00+02:00
+updated: 2016-10-24T00:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -43,9 +43,9 @@ Algunas de estas funcionalidades adicionales está explicadas más detalladament
 
 Todas estas capacidades de personalización se consiguen bien añadiendo atributos a las etiquetas <abbr title="HyperText Markup Language">HTML</abbr> _select_ o a las etiquetas _option_ y _optgroup_ con lo que usar el componente _bootstrap-select_ consiste básicamente generar el marcado HTML adecuado. Con JavaScript se puede construir el componente donde podemos indicar las mismas [opciones adicionales](https://silviomoreto.github.io/bootstrap-select/options/) que con los atributos _data-_, también tiene [métodos](https://silviomoreto.github.io/bootstrap-select/methods/) para manipular su comportamiento de forma programática como por ejemplo recibir eventos cuando cambia la selección.
 
-Usando [Apache Tapestry][tapestry] con su concepto de parámetros informales añadiremos las atributos necesarios en la etiqueta _select_ y con el modelo de datos proporcionado en [SelectModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/SelectModel.html), [OptionGroupModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/OptionGroupModel.html) y [OptionModel](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/OptionModel.html) podremos proporcionar los atributos adicionales para las etiquetas de los _option_ y _optgroup_. El modelo de datos de una etiqueta _select_ es una lista de opciones y grupos de opciones, cada opción tiene una etiqueta que se le mostrará al usuario, si está habilitada o no, el valor que se enviará al servidor cuando esté seleccionada y un mapa de atributos a añadir en la etiqueta de la opción.
+Usando [Apache Tapestry][tapestry] con su concepto de parámetros informales añadiremos las atributos necesarios en la etiqueta _select_ y con el modelo de datos proporcionado en [SelectModel](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/SelectModel.html), [OptionGroupModel](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/OptionGroupModel.html) y [OptionModel](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/OptionModel.html) podremos proporcionar los atributos adicionales para las etiquetas de los _option_ y _optgroup_. El modelo de datos de una etiqueta _select_ es una lista de opciones y grupos de opciones, cada opción tiene una etiqueta que se le mostrará al usuario, si está habilitada o no, el valor que se enviará al servidor cuando esté seleccionada y un mapa de atributos a añadir en la etiqueta de la opción.
 
-Este sería el código para crear una instancia de _SelectModel_ para un componente [Select](https://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/components/Select.html) de Tapestry para un ficticio selector de país. En el ejemplo en vez de usar un mapa vacío con _Collections.EMPTY\_MAP_ se podría sustituir por un mapa con atributos que se añadirían a la opción para usar alguna otra funcionalidad de _bootstrap-select_.
+Este sería el código para crear una instancia de _SelectModel_ para un componente [Select](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html) de Tapestry para un ficticio selector de país. En el ejemplo en vez de usar un mapa vacío con _Collections.EMPTY\_MAP_ se podría sustituir por un mapa con atributos que se añadirían a la opción para usar alguna otra funcionalidad de _bootstrap-select_.
 
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "Index.java" >}}
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "Index.tml" >}}

@@ -1,6 +1,8 @@
 ---
 pid: p1
 title: "Enlaces a otros blogs y webs"
+url: "/pages/links/"
+aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
 updated: 2015-09-22T19:00:00+01:00
 comments: true
