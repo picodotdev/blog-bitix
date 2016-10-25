@@ -3,6 +3,7 @@ pid: 189
 title: "Añadir botones selectores de opciones a select múltiple de bootsrap-select"
 url: "/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/"
 date: 2016-10-25T15:30:00+02:00
+updated: 2016-10-25T22:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -32,7 +33,7 @@ A pesar de todas las opciones adicionales que añade _bootstrap-select_ incluida
 
 Un atributo que usa _bootstrap-select_ para la opción de filtrado es el atributo _data-tokens_, si el valor introducido en el filtro coincide con este atributo la opción se muestra y en las que no coincide se oculta. Para no añadir más atributos usaré este atributo para asociar a la opción a los grupos que pertenecen o los _tokens_ que tiene asociados. Dada una serie de _tokens_ para los que queremos botón de filtrado en el atributo _data-tokens-selectors_.
 
-Este sería un ejemplo de código JavaScript que podríamos emplear para añadir al componente selector este comportamiento de selección de grupos de opciones que básicamente añade de forma dinámica un pequeño trozo de HTML similar al que el componente utiliza para mostrar los botones de todos y ninguno. Cuando se haga clic en un botón de selección se buscan las opciones que contiene el _token_ asociado al botón y se seleccionan teniendo en cuenta también las opciones que estén deshabilitadas.
+Este sería un ejemplo de código JavaScript junto con el uso del componente de Tapestry en la aplicación que podríamos emplear para añadir al elemento selector este comportamiento de selección de grupos de opciones que básicamente añade de forma dinámica un pequeño trozo de HTML similar al que el componente utiliza para mostrar los botones de todos y ninguno. Cuando se haga clic en un botón de selección con el evento _loaded.bs.select_ se buscan las opciones que contiene el _token_ asociado al botón y se seleccionan teniendo en cuenta también las opciones que estén deshabilitadas. Además, cuando todas las opciones de un botón selector están seleccionadas queda como pulsado como indicativo, lógica que se realiza en el evento _change_.
 
 {{< gist picodotdev 97ab5029147f0bf58bb741775af69e1a "Index.tml" >}}
 {{< gist picodotdev 97ab5029147f0bf58bb741775af69e1a "multiselect.js" >}}
@@ -47,7 +48,7 @@ Y este sería el aspecto de componente en el navegador.
         caption="Multiselect con opciones Europa, America y Asia" >}}
 </div>
 
-Bastaría incluir este JavaScript en la página web que contuviera este componente de selección. Si usásemos el [componente de selección múltiple con Apache Tapetstry con bootstrap-select][blogbitix-188] sería el propio componente _MultiSelect_ el que se encargaría de incluir el JavaScript en la página cuando en ella se usase lo que nos evita incluir el JavaScript de forma global en la aplicación y en todas las páginas cuando realmente no se usa.
+Si usásemos el [componente de selección múltiple con Apache Tapetstry y bootstrap-select][blogbitix-188] sería el propio componente _MultiSelect_ el que se encargaría de incluir el JavaScript en la página cuando en ella se usase lo que nos evita incluir el JavaScript de forma global en la aplicación y en todas las páginas cuando realmente no se usa.
 
 {{< gist picodotdev 97ab5029147f0bf58bb741775af69e1a "MultiSelect.java" >}}
 
