@@ -3,7 +3,7 @@ pid: 187
 title: "Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select"
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00
-updated: 2016-10-24T00:30:00+02:00
+updated: 2016-10-25T12:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -66,7 +66,7 @@ En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript n
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "PlugInStack.java" >}}
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "index.js" >}}
 
-En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario.
+En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario y en [añadir botones selectores de opciones][blogbitix-189] como incluir selectores adicionales además de Todos y Ninguno.
 
 {{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
 
