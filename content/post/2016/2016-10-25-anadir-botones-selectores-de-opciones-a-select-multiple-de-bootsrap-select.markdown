@@ -2,7 +2,7 @@
 pid: 189
 title: "Añadir botones selectores de opciones a select múltiple de bootsrap-select"
 url: "/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/"
-date: 2016-10-25T15:00:00+02:00
+date: 2016-10-25T15:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -28,9 +28,9 @@ Este es el aspecto de un elemento de selección con los botones de seleccionar t
         caption="Multiselect con opciones Todos y Ninguno" >}}
 </div>
 
-A pesar de todas las opciones adicionales que añade _bootstrap-select_ incluidas los botones de seleccionar todas las opciones y ninguna aún quizá queramos personalizar más el comportamiento, por ejemplo, permitir seleccionar con botones adicionales un grupo de opciones relacionadas. Supongamos que tenemos un componente de selección múltiple de países y queremos seleccionar los países de Europa, América o Asía además de las opciones que _bootstrap-select_ de todos y ninguno.
+A pesar de todas las opciones adicionales que añade _bootstrap-select_ incluidas los botones de seleccionar todas las opciones y ninguna aún quizá queramos personalizar más el comportamiento, por ejemplo, permitir seleccionar con botones adicionales un grupo de opciones relacionadas. Supongamos que tenemos un componente de selección múltiple de países y queremos seleccionar los países de Europa, América o Asia además de las opciones que _bootstrap-select_ de todos y ninguno.
 
-Un atributo que usa _bootstrap-select_ para la opción de filtrado es el atributo _data-tokens_, si el valor introducido en el filtro coincide con este atributo la opción se muestra y en las que no coincide se oculta. Para no añadir más atributos usaré este atributo para asociar a la opción a los grupos que pertenecen o los _tokens_ que tiene asociados. Dada una serie de _tokens_ para los que queremos botón de filtrado en el atributo _data-actions-tokens_.
+Un atributo que usa _bootstrap-select_ para la opción de filtrado es el atributo _data-tokens_, si el valor introducido en el filtro coincide con este atributo la opción se muestra y en las que no coincide se oculta. Para no añadir más atributos usaré este atributo para asociar a la opción a los grupos que pertenecen o los _tokens_ que tiene asociados. Dada una serie de _tokens_ para los que queremos botón de filtrado en el atributo _data-tokens-selectors_.
 
 Este sería un ejemplo de código JavaScript que podríamos emplear para añadir al componente selector este comportamiento de selección de grupos de opciones que básicamente añade de forma dinámica un pequeño trozo de HTML similar al que el componente utiliza para mostrar los botones de todos y ninguno. Cuando se haga clic en un botón de selección se buscan las opciones que contiene el _token_ asociado al botón y se seleccionan teniendo en cuenta también las opciones que estén deshabilitadas.
 
