@@ -3,7 +3,7 @@ pid: 189
 title: "Añadir botones selectores de opciones a select múltiple de bootsrap-select"
 url: "/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/"
 date: 2016-10-25T15:30:00+02:00
-updated: 2016-10-25T22:30:00+02:00
+updated: 2016-10-26T14:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -26,7 +26,7 @@ Este es el aspecto de un elemento de selección con los botones de seleccionar t
     {{< figure pid="189"
         image1="multiselect-todos.png" thumb1="multiselect-todos-thumb.png" title1="Multiselect con opciones Todos y Ninguno"
         image2="multiselect.png" thumb2="multiselect-thumb.png" title2="Opciones seleccionadas de Multiselect"
-        caption="Multiselect con opciones Todos y Ninguno" >}}
+        caption="MultiSelect con opciones Todos y Ninguno" >}}
 </div>
 
 A pesar de todas las opciones adicionales que añade _bootstrap-select_ incluidas los botones de seleccionar todas las opciones y ninguna aún quizá queramos personalizar más el comportamiento, por ejemplo, permitir seleccionar con botones adicionales un grupo de opciones relacionadas. Supongamos que tenemos un componente de selección múltiple de países y queremos seleccionar los países de Europa, América o Asia además de las opciones que _bootstrap-select_ de todos y ninguno.
@@ -45,7 +45,7 @@ Y este sería el aspecto de componente en el navegador.
     {{< figure pid="189"
         image1="multiselect-europa.png" thumb1="multiselect-europa-thumb.png" title1="Multiselect con opciones Europa"
         image2="multiselect-asia.png" thumb2="multiselect-asia-thumb.png" title2="Multiselect con opciones Asia"
-        caption="Multiselect con opciones Europa, America y Asia" >}}
+        caption="MultiSelect con opciones Europa, America y Asia" >}}
 </div>
 
 Si usásemos el [componente de selección múltiple con Apache Tapetstry y bootstrap-select][blogbitix-188] sería el propio componente _MultiSelect_ el que se encargaría de incluir el JavaScript en la página cuando en ella se usase lo que nos evita incluir el JavaScript de forma global en la aplicación y en todas las páginas cuando realmente no se usa.
