@@ -6,7 +6,7 @@ date: 2014-05-02T19:09:56+02:00
 updated: 2015-05-25T23:00:00+02:00
 sharing: true
 comments: true
-tags: ["blog-stack", "gnu-linux", "planeta-linux", "planeta-codigo", "planeta-arch-linux", "software", "software-libre"]
+tags: ["blog-stack", "gnu-linux", "planeta-linux", "planeta-codigo", "software", "software-libre"]
 summary: "Arch Linux es una distribución que deja al usuario decidir en gran medida los componentes que quiere usar. Desde el sistema de arranque, el entorno de escritorio hasta los programas. Para ello no proporciona un instalador ni en modo texto ni con interfaz gráfica que guíe al usuario en diferentes pasos en la instalación de la distribución, en vez de eso proporciona una guía con la información relevante que el usuario necesita conocer para el mismo mediante comandos instale y configure el sistema con los componentes que desee. Este anexo complementa y reune los comandos que sigo para instalar Arch Linux desde la imagen de instalación hasta el entorno de escritorio GNOME."
 ---
 

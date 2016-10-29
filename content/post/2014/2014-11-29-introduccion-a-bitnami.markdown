@@ -6,7 +6,7 @@ date: 2014-11-29T10:45:45+01:00
 updated: 2015-11-10T19:00:00+01:00
 sharing: true
 comments: true
-tags: ["blog-stack", "hardware", "gnu-linux", "planeta-arch-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["blog-stack", "hardware", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
 ---
 
 {{% post %}}

@@ -6,7 +6,7 @@ date: 2014-03-28T18:22:41+01:00
 updated: 2015-11-10T19:00:00+01:00
 sharing: true
 comments: true
-tags: ["hardware", "planeta-linux", "planeta-arch-linux", "planeta-codigo"]
+tags: ["hardware", "planeta-linux", "planeta-codigo"]
 series: ["desempaquetado"]
 ---
 

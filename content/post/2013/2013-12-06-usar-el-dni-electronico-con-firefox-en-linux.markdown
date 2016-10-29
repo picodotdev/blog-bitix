@@ -6,7 +6,7 @@ date: 2013-12-06T14:07:58+01:00
 updated: 2015-04-10T20:00:00+02:00
 sharing: true
 comments: true
-tags: ["planeta-linux", "planeta-arch-linux", "planeta-codigo", "software-libre", "hardware", "software"]
+tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "software"]
 ---
 
 {{% post %}}

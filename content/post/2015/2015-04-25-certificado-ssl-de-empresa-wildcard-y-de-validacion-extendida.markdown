@@ -6,7 +6,7 @@ date: 2015-04-25T10:07:04+02:00
 updated: 2015-04-25T12:00:00+02:00
 sharing: true
 comments: true
-tags: ["programacion", "seguridad", "blog-stack", "planeta-arch-linux", "planeta-linux", "planeta-codigo"]
+tags: ["programacion", "seguridad", "blog-stack", "planeta-linux", "planeta-codigo"]
 series: ["web"]
 ---
 

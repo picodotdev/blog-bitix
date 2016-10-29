@@ -6,7 +6,7 @@ date: 2014-11-22T10:28:52+01:00
 updated: 2014-12-29T19:00:00+01:00
 sharing: true
 comments: true
-tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "planeta-arch-linux", "blog-stack"]
+tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]
 series: ["docker"]
 ---
 

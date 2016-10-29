@@ -7,7 +7,7 @@ date: 2013-12-24T18:28:48+01:00
 updated: 2015-05-30T00:00:00+02:00
 sharing: true
 comments: true
-tags: ["blog", "hemeroteca", "planeta-linux", "planeta-arch-linux", "planeta-codigo"]
+tags: ["blog", "hemeroteca", "planeta-linux", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
 ---

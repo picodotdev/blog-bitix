@@ -6,7 +6,7 @@ date: 2014-02-28T16:58:17+01:00
 updated: 2016-03-05T12:00:00+01:00
 sharing: true
 comments: true
-tags: ["seguridad", "software", "software-libre", "planeta-linux", "planeta-arch-linux", "planeta-codigo"]
+tags: ["seguridad", "software", "software-libre", "planeta-linux", "planeta-codigo"]
 series: ["web"]
 summary: "Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares."
 ---

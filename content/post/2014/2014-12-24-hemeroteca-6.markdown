@@ -7,7 +7,7 @@ date: 2014-12-24T16:02:04+01:00
 updated: 2014-12-24T18:00:00+02:00
 sharing: true
 comments: true
-tags: ["blog-stack", "hemeroteca", "gnu-linux", "planeta-arch-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["blog-stack", "hemeroteca", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
 series: ["hemeroteca"]
 library: "true"
 ---

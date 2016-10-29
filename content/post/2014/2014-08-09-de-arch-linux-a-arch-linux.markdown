@@ -6,7 +6,7 @@ date: 2014-08-09T00:07:58+02:00
 updated: 2015-04-10T20:00:00+02:00
 sharing: true
 comments: true
-tags: ["blog-stack", "gnu-linux", "opinion", "planeta-linux", "planeta-arch-linux", "software", "software-libre"]
+tags: ["blog-stack", "gnu-linux", "opinion", "planeta-linux", "software", "software-libre"]
 ---
 
 {{% post %}}

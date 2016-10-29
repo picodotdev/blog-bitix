@@ -7,7 +7,7 @@ updated: 2015-11-11T19:00:00+02:00
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-arch-linux", "planeta-codigo", "planeta-linux"]
+tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]
 summary: "Asciinema es una herramienta que nos permite grabar un vídeo de texto con la salida de la terminal. El vídeo de texto es mucho mejor que una foto estática de la salida en un determinado punto o un vídeo de imágenes del que no podemos seleccionar y copiar su texto."
 ---
 

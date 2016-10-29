@@ -6,7 +6,7 @@ date: 2015-02-06T16:16:16+01:00
 updated: 2015-02-06T23:00:00+01:00
 sharing: true
 comments: true
-tags: ["blog-stack", "planeta-arch-linux", "planeta-codigo", "planeta-linux"]
+tags: ["blog-stack", "planeta-codigo", "planeta-linux"]
 series: ["aniversario"]
 ---
 

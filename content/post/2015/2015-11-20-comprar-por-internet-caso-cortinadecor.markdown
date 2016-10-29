@@ -7,7 +7,7 @@ updated: 2015-11-21T22:00:00+01:00
 sharing: true
 comments: true
 language: "es"
-tags: ["internet"]
+series: ["desempaquetado"]
 summary: "Este artículo es un poco fuera de tema de lo que suelo escribir en el _blog_, aunque como está relacionado con tiendas y compras por internet tiene algunos consejos a tener en las tiendas que se aventuren a vender y usuarios a comprar por internet."
 ---
 
@@ -73,7 +73,7 @@ Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso bá
     </figure>
 </div>
 
-La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _CortinaDecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, <a rel="nofollow" href="http://www.amazon.es/gp/product/B00CZ6VQZ0/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00CZ6VQZ0&linkCode=as2&tag=blobit-21">Película adhesiva para ventanas (67,5 x 200 cm)</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00CZ6VQZ0" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz. 
+La calidad del producto, igual de importante el buen servicio de atención al cliente, las opciones de personalización y amplia gama de tejidos y colores hace que recomiende _CortinaDecor_ aún con las cosas mejorables que comentaba. He quedado satisfecho con el producto y la experiencia de compra por internet con esta tienda me ha resultado satisfactoria. También compré un vinilo adhesivo translúcido, <a rel="nofollow" href="http://www.amazon.es/gp/product/B00CZ6VQZ0/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00CZ6VQZ0&linkCode=as2&tag=blobit-21">Película adhesiva para ventanas (67,5 x 200 cm)</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00CZ6VQZ0" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, para los cristales inferiores del salón ya que los estores para salvar las manillas no cubrirían totalmente esos cristales. Además de dar más privacidad dejan pasar una buena cantidad de luz.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00CZ6VQZ0&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>

@@ -5,7 +5,7 @@ url: "/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practic
 date: 2014-12-13T12:06:06+01:00
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "software-libre", "planeta-codigo", "planeta-arch-linux", "planeta-linux", "programacion"]
+tags: ["blog-stack", "java", "software-libre", "planeta-codigo", "planeta-linux", "programacion"]
 ---
 
 {{% post %}}

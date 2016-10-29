@@ -6,7 +6,7 @@ date: 2013-12-02T13:00:00+01:00
 updated: 2015-05-28T20:00:00+02:00
 sharing: true
 comments: true
-tags: ["blog", "planeta-linux", "planeta-arch-linux", "planeta-codigo"]
+tags: ["blog", "planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}

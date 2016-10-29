@@ -6,7 +6,7 @@ date: 2015-02-07T11:05:24+01:00
 updated: 2015-04-10T20:00:00+02:00
 sharing: true
 comments: true
-tags: ["gnu-linux", "blog-stack", "planeta-arch-linux", "planeta-linux"]
+tags: ["gnu-linux", "blog-stack", "planeta-linux"]
 ---
 
 {{% post %}}

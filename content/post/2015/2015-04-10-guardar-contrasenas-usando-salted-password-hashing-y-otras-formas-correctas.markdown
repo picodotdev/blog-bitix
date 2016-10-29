@@ -6,7 +6,7 @@ date: 2015-04-10T18:55:04+02:00
 updated: 2015-04-14T21:00:00+02:00
 sharing: true
 comments: true
-tags: ["java", "programacion", "seguridad", "tapestry", "blog-stack", "planeta-arch-linux", "planeta-linux", "planeta-codigo"]
+tags: ["java", "programacion", "seguridad", "tapestry", "blog-stack", "planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}

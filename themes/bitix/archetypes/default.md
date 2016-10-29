@@ -7,6 +7,7 @@ date: 2016-01-01T00:00:00+02:00
 sharing: true
 comments: true
 language: "es"
+promoted: false
 tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
 series: [""]
 summary: ""

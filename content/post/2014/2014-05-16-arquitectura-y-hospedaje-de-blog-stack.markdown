@@ -6,7 +6,7 @@ date: 2014-05-16T17:21:55+02:00
 updated: 2015-11-10T19:00:00+01:00
 sharing: true
 comments: true
-tags: ["software", "software-libre", "java", "programacion", "planeta-linux", "planeta-codigo", "planeta-arch-linux", "blog-stack"]
+tags: ["software", "software-libre", "java", "programacion", "planeta-linux", "planeta-codigo", "blog-stack"]
 ---
 
 {{% post %}}

@@ -3,7 +3,7 @@ pid: 119
 title: "Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre"
 url: "/2016/01/windows-10-y-office-2016-tan-faciles-de-usar-sin-licencia-como-siempre/"
 date: 2016-01-08T17:00:00+01:00
-updated: 2016-06-04T15:00:00+02:00
+updated: 2016-10-29T11:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -52,6 +52,6 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
     </figure>
 </div>
 
-Si puedes usa un software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows como [GNU][gnu]/[Linux][linux] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades.
+Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows [eligiendo una distribución GNU/Linux][blogbitix-180] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades.
 
 {{% /post %}}

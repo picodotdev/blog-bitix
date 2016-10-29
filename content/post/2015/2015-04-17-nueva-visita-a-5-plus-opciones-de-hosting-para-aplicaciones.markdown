@@ -6,7 +6,7 @@ date: 2015-04-17T19:56:10+02:00
 updated: 2015-11-10T19:00:00+01:00
 sharing: true
 comments: true
-tags: ["programacion", "blog-stack", "planeta-arch-linux", "planeta-linux", "planeta-codigo"]
+tags: ["programacion", "blog-stack", "planeta-linux", "planeta-codigo"]
 summary: "En esta nueva revisión de las opciones de alojamiento que disponemos incluyo algunas nuevas que en su momento no conocía. Dependiendo de las necesidades y del presupuesto que tengamos podemos optar por un servidor propio, un proveedor de _hosting_, usar alguna de las nubes más utilizadas o algún otro PaaS o IaaS."
 ---
 

@@ -5,7 +5,7 @@ url: "/2014/01/mi-experiencia-y-consejos-para-un-blog/"
 date: 2014-01-17T15:44:23+01:00
 sharing: true
 comments: true
-tags: ["blog", "planeta-linux", "planeta-arch-linux"]
+tags: ["blog", "planeta-linux"]
 ---
 
 {{% post %}}

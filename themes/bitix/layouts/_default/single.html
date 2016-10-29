@@ -33,7 +33,7 @@
                 {{ end }}
                 {{ if isset .Params "promoted" }}
                   <br>
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" }}
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}
                 {{ end }}
               </p>
 

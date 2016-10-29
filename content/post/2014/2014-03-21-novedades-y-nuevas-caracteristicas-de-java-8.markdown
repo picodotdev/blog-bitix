@@ -6,7 +6,7 @@ date: 2014-03-21T16:03:27+01:00
 updated: 2016-03-12T12:00:00+01:00
 sharing: true
 comments: true
-tags: ["java", "programacion", "software", "planeta-linux", "planeta-arch-linux", "planeta-codigo"]
+tags: ["java", "programacion", "software", "planeta-linux", "planeta-codigo"]
 summary: "La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas."
 ---
 

@@ -6,7 +6,7 @@ date: 2014-11-01T09:47:51+01:00
 updated: 2015-05-26T20:00:00+01:00
 sharing: true
 comments: true
-tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "planeta-arch-linux", "blog-stack"]
+tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]
 series: ["docker"]
 summary: "La tecnología de contenedores nos ofrece múltiples ventajas para nuestras aplicaciones. Docker es una de las más nombradas y que está creciendo muy rápidamente. Es muy sencillo empezarla a usar como mostraré en unos pocos comandos a continuación."
 ---
