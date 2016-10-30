@@ -3,7 +3,7 @@ pid: 190
 title: "Elegir una distribución GNU/Linux según el usuario, uso o equipo"
 url: "/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/"
 date: 2016-10-29T12:00:00+02:00
-updated: 2016-10-29T23:30:00+02:00
+updated: 2016-10-30T01:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -32,7 +32,7 @@ Dado que en GNU/Linux hay muchas distribuciones un nuevo usuario puede sentirse 
     <img src="assets/images/custom/logotipos/fedora.png" alt="Fedora" title="Fedora">
     <img src="assets/images/custom/logotipos/elementary.png" alt="Elementary OS" title="Elementary OS">
     <img src="assets/images/custom/logotipos/trisquel.png" alt="Trisquel" title="Trisquel">
-    <figcaption>Logotipos de varias de las distribuciones más importantes y usadas GNU/Linux</figcaption>
+    <figcaption>Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas</figcaption>
   </figure>
 </div>
 
@@ -65,6 +65,12 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 </div>
 <div class="media" style="text-align: center;">
     {{< figure pid="190"
+        image1="opensuse-installer.png" thumb1="opensuse-installer-thumb.png" title1="Instalador de openSUSE"
+        image2="opensuse.png" thumb2="opensuse-thumb.png" title2="openSUSE con KDE"
+        caption="openSUSE con KDE" >}}
+</div>
+<div class="media" style="text-align: center;">
+    {{< figure pid="190"
         image1="debian-installer-1.png" thumb1="debian-installer-1-thumb.png" title1="Instalador de Debian (1)"
         image2="debian-installer-2.png" thumb2="debian-installer-2-thumb.png" title2="Instalador de Debian (2)"
         caption="Instalador de Debian" >}}
@@ -89,7 +95,7 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
     {{< figure pid="190"
         image1="arch-anywhere-installer-1.png" thumb1="arch-anywhere-installer-1-thumb.png" title1="Instalador de arch-anywhere (1)"
         image2="arch-anywhere-installer-2.png" thumb2="arch-anywhere-installer-2-thumb.png" title2="Instalador de arch-anywhere (2)"
-        caption="arch-anywhere" >}}
+        caption="Instalador de arch-anywhere" >}}
 </div>
 <div class="media" style="text-align: center;">
     {{< figure pid="190"
