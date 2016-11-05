@@ -1,7 +1,8 @@
 ---
 pid: 191
-title: "Histórico de datos y diferencias con Javers en Java"
-url: "/2016/11/historico-de-datos-y-diferencias-con-javers-en-java/"
+title: "Histórico de datos y diferencias entre objetos con Javers en Java"
+url: "/2016/11/historico-de-datos-y-diferencias-entre-objetos-con-javers-en-java/"
+aliases: ["/2016/11/historico-de-datos-y-diferencias-con-javers-en-java/"]
 date: 2016-11-05T11:00:00+01:00
 sharing: true
 comments: true
