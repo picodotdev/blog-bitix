@@ -4,9 +4,9 @@ title: ""
 url: "/2016/01/xxx/"
 aliases: [""]
 date: 2016-01-01T00:00:00+01:00
+language: "es"
 sharing: true
 comments: true
-language: "es"
 promoted: false
 tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
 series: [""]

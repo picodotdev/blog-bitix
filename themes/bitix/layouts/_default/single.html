@@ -28,10 +28,10 @@
                 {{ end }}
                 <br>
                 <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "permanent_link" }}</a>
-                {{ if isset .Params "comments" }}
+                {{ if .Params.comments }}
                   <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
                 {{ end }}
-                {{ if isset .Params "promoted" }}
+                {{ if .Params.promoted }}
                   <br>
                   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}
                 {{ end }}
