@@ -3,10 +3,11 @@ pid: 193
 title: "Mi primer Mac, yo usuario de GNU/Linux"
 url: "/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"
 date: 2016-11-12T10:00:00+01:00
+updated: 2016-11-12T13:00:00+01:00
 language: "es"
 sharing: true
 comments: true
-tags: ["blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["apple", "blog-stack", "planeta-codigo", "planeta-linux"]
 summary: "Hace ya más de un lustro pase de usar Windows a usar GNU/Linux incluso en el trabajo, ahora por motivos laborales no me queda opción que usar un Mac, el primer Mac que usaré. En casa a nivel personal seguiré usando la distribución Arch Linux y antes de empezar a usar un Mac seguirá siendo así, ¿usar un Mac me hará cambiar de opinión y usaré un producto de Apple incluido a nivel personal en un futuro?"
 ---
 
@@ -22,13 +23,13 @@ Usar un Mac por primera vez es algo relevante desde el punto de vista tecnológi
 
 Nunca he usado un producto de Apple salvo tocarlos un poco en las tiendas y es que convencido del software libre y el alto precio que tienen nunca he estado atraído por la marca de la manzana mordida, así que empiezo completamente desde cero empezando por tener que aprender de nuevo muchos de los atajos de teclado. Simplemente por curiosidad conseguí [usar macOS en una máquina virtual con VirtualBox][blogbitix-181] que es posible tanto en Windows como en GNU/Linux.
 
-Una de las cosas que me gustaba de Arch Linux es su modelo _rolling release_ de modo que en cada actualización del sistema con <code>pacman -Syu</code> tenía las últimas versiones de cada programa y paquete, esto hace que no necesite reinstalar cada nueva versión ni tuviese que preocuparme de las versiones de los programas, lo único que sabía es que siempre tenía la última versión. Hasta ahora iba por 3 años desde que instalé Arch Linux por última vez. Por lo poco que me he informado en los Mac existe [Homebrew][homebrew] y [Homebrew Cask][homebrew-cask] que es un gestor de paquetes similar a la forma de distribuir software con los gestores de paquetes de las distribuciones GNU/Linux. Casi todo el software que he necesitado está disponible en Homebrew incluyendo Java, Java 7, Firefox, Google Chrome, MySQL, Docker, VirtualBox, Git, atom incluidos programas como gimp, cmus o meld.
+Una de las cosas que me gustaba de Arch Linux es su modelo _rolling release_ de modo que en cada actualización del sistema con <code>pacman -Syu</code> tenía las últimas versiones de cada programa y paquete, esto hace que no necesite reinstalar cada nueva versión ni tuviese que preocuparme de las versiones de los programas, lo único que sabía es que siempre tenía la última versión. Hasta ahora iba por 3 años desde que instalé Arch Linux por última vez. Por lo poco que me he informado en los Mac existe [Homebrew][homebrew] y [Homebrew Cask][homebrew-cask] que es un gestor de paquetes similar a la forma de distribuir software con los gestores de paquetes de las distribuciones GNU/Linux. Casi todo el software que he necesitado está disponible en Homebrew incluyendo Java 8, Java 7, Firefox, Google Chrome, MySQL, Docker, VirtualBox, Git o atom incluidos programas como gimp, cmus o meld.
 
 El Mac que usaré no es de los últimos con panel táctil en la parte superior del teclado ese que ha eliminado una tecla física tan importante también para los desarrolladores como la tecla escape. El precio del modelo de Mac que usaré estará valorado en unos $2000, tiene buenas especificaciones con sobre todo SSD y  pantalla. Aún así por ese precio uno adquiere varios portátiles como los [Slimbook][slimbook] y el último pasados unos años tendrá mejores especificaciones en varios aspectos que cualquier Mac actual.
 
-En mis primeras horas de uso de un Mac destacaré la pantalla retina, su gran resolución de 2560x1600 hace que el texto y las imágenes se vean muy bien sin notar los píxeles, aún así esto es a costa de que la resolución equivalente en un PC aproximadamente de 1280x800 haciendo que parezca que entran pocas cosas en la pantalla. La interfaz de escritorio de macOS y de GNOME es similar en muchos aspectos con la barra superior, el lanzador de aplicaciones Launchpad y la vista de ventanas Dashboard y la vista de actividades de GNOME.
+En mis primeras horas de uso de un Mac destacaré la pantalla retina, su gran resolución de 2560x1600 hace que el texto y las imágenes se vean muy bien sin notar los píxeles, aún así esto es a costa de que la resolución equivalente en un PC sea aproximadamente de 1280x800 haciendo que parezca que entran pocas cosas en la pantalla. La interfaz de escritorio de macOS y de GNOME es similar en muchos aspectos con la barra superior, el lanzador de aplicaciones Launchpad y la vista de ventanas Dashboard y la vista de actividades de GNOME.
 
-Yo futuro, ¿habrás caído en la tentación? ¡Resiste! No olvides y piensa [por que empezaste a usar GNU/Linux][elblogdepicodev-15] y [por que seguiste usando Arch Linux][blogbitix-36]... por aprender, por el software libre, por la privacidad, por no pagar licencias o usar _cracks_, por no tener software espía, por ser el dueño del equipo y no la marca cuando decida dejar de darle soporte...
+Yo futuro, ¿habrás caído en la tentación? ¡Resiste! No olvides y piensa [por que empezaste a usar GNU/Linux][elblogdepicodev-15] y [por que seguiste usando Arch Linux][blogbitix-36]... por aprender, por el software libre, por la privacidad, por no pagar licencias o usar _cracks_, por no tener software espía, por ser el dueño del equipo y no de la marca cuando decida dejar de darle soporte...
 
 Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sobre Apple, macOS y sus productos.
 
