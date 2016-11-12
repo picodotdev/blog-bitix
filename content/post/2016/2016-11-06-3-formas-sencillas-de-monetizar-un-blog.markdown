@@ -2,7 +2,7 @@
 pid: 192
 title: "3 formas sencillas de monetizar un blog"
 url: "/2016/11/3-formas-sencillas-de-monetizar-un-blog/"
-date: 2016-11-06T11:00:00+01:00
+date: 2016-11-06T14:00:00+01:00
 sharing: true
 comments: true
 language: "es"
@@ -28,7 +28,7 @@ Llegar a tener una cifra respetable de visitas no es fácil, cuesta mucho tiempo
 
 ### Artículos patrocinados
 
-Otra forma son la de aceptar artículos patrocinados por los que se suele pagar entre 50€ y 150€ aproximadamente por artículo con unas 300 y 500 palabras de contenido, dependiendo de las visitas de nuestro blog, posicionamiento en los buscadores y de lo que valoremos nuestro tiempo para redactar y publicar el artículo.
+Otra forma son la de aceptar artículos patrocinados por los que se suele pagar entre 50€ y 150€ aproximadamente por artículo con al menos unas 300 y 500 palabras de contenido, dependiendo de las visitas de nuestro blog, posicionamiento en los buscadores y de lo que valoremos nuestro tiempo para redactar y publicar el artículo.
 
 Dos de las plataformas que ponen en contacto anunciantes y editores para recibir propuestas de artículos patrocinados son [Publisuites][publisuites-afiliado] y [Coobis][coobis]. Es recomendable que el artículo lo escribamos nosotros para que los buscadores no lo detecten como contenido duplicado y nos penalicen a nivel de <abbr title="Search Engine Optimization">SEO</abbr>. En cualquier caso cuando recibimos una propuesta no tenemos la obligación de escribir el artículo si su temática no corresponde con la linea editorial de nuestro blog o por cualquier otro motivo si por ejemplo en ese momento no tenemos tiempo, aunque si deberemos dar una respuesta en un plazo de unos días aunque sea negativa.
 
@@ -36,6 +36,6 @@ La forma de pago es a través de [PayPal][paypal] o transferencia bancaria y los
 
 Por otra parte tampoco conviene abusar de la publicidad o artículos patrocinados, no ha de ser excesiva con muchos _banners_ de publicidad, tampoco molesta con ventanas emergentes ni que impidan leer correctamente el contenido de la página y los artículos patrocinados deberían ser de interés para el lector según la temática del blog y para ser honestos con un aviso de que el artículo está patrocinado aunque la opinión sea propia y sincera.
 
-Estas no son las únicas formas de monetizar un blog pero son 3 de las más sencillas y la de AdSense y enlaces de afiliado de Amazon son ingresos pasivos y más constantes.
+Estas no son las únicas formas de monetizar un blog pero son 3 de las más sencillas y las de AdSense y enlaces de afiliado de Amazon son ingresos pasivos y más constantes.
 
 {{% /post %}}
