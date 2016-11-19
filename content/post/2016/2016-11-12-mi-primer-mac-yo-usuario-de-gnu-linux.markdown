@@ -3,7 +3,7 @@ pid: 193
 title: "Mi primer Mac, yo usuario de GNU/Linux"
 url: "/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"
 date: 2016-11-12T10:00:00+01:00
-updated: 2016-11-12T22:00:00+01:00
+updated: 2016-11-19T11:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -27,11 +27,11 @@ Una de las cosas que me gustaba de Arch Linux es su modelo _rolling release_ de 
 
 El Mac que usaré no es de los últimos con panel táctil en la parte superior del teclado ese que ha eliminado una tecla física tan importante también para los desarrolladores como la tecla escape. El precio del modelo de principios de 2015 está valorado en unos $2000 junto con otros $120 en adaptadores y periféricos, tiene buenas especificaciones siendo un producto de gama alta con sobre todo SSD, pantalla y _touchpad_ y aunque 16 GiB son suficientes es extraño que en ningún modelo de [MacBook Pro](http://www.apple.com/es/macbook-pro/) aún no haya opción de instalar 32 GiB para los usuarios más exigentes. Aún así por ese precio uno adquiere varios portátiles como los [Slimbook][slimbook] y el último pasados unos años tendrá mejores especificaciones en varios aspectos que cualquier Mac actual.
 
-En mis primeras horas de uso de un Mac destacaré la pantalla retina, su gran resolución de 2560x1600 hace que el texto y las imágenes se vean muy bien sin notar los píxeles, teniendo un monitor de 23" con resolución 1920x1080 o una pantalla de portátil de 14" de resolución 1600x900 las diferencias son claras. Aún así esto es a costa de que la resolución equivalente en un PC sea aproximadamente de 1280x800 en la configuración poe defecto haciendo que parezca que entran pocas cosas en la pantalla. El _touchpad_ también parece ser otra característica diferenciadora y destacable aunque aún no conozco muchos de los gestos que permite. La interfaz de escritorio de macOS y de GNOME es similar en muchos aspectos con la barra superior, el lanzador de aplicaciones _Launchpad_, la vista de ventanas _Dashboard_ y la vista de actividades de GNOME.
+En mis primeras horas de uso de un Mac destacaré la pantalla retina, su gran resolución de 2560x1600 hace que el texto y las imágenes se vean muy bien sin notar los píxeles, teniendo un monitor de 23" con resolución 1920x1080 o una pantalla de portátil de 14" de resolución 1600x900 las diferencias son claras. Aún así esto es a costa de que la resolución equivalente en un PC sea aproximadamente de 1280x800 en la configuración por defecto haciendo que parezca que entran pocas cosas en la pantalla, otras resoluciones equivalentes seleccionables son 1680x1050, 1440x900, 1280x800 y 1024x640. El _touchpad_ también parece ser otra característica diferenciadora y destacable aunque aún no conozco muchos de los gestos que permite. La interfaz de escritorio de macOS y de GNOME es similar en muchos aspectos con la barra superior, el lanzador de aplicaciones _Launchpad_, la vista de ventanas _Dashboard_ y la vista de actividades de GNOME.
 
 Yo futuro, ¿habrás caído en la tentación? ¡Resiste! No olvides y piensa [por que empezaste a usar GNU/Linux][elblogdepicodev-15] y [por que seguiste usando Arch Linux][blogbitix-36]... por aprender, por el software libre, por la privacidad, por no pagar costosas licencias de software privativo o usar _cracks_, por no tener software espía, por ser el dueño del equipo y no de la marca cuando decida dejar de darle soporte...
 
-Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sobre Apple y sus productos, como macOS, los MacBook, los adaptadores y periféricos como el [Magic Mouse](http://www.apple.com/es/shop/product/MLA02ZM/A/magic-mouse-2).
+Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sobre Apple y sus productos, como macOS, los MacBook, los adaptadores y periféricos como el [Magic Mouse](http://www.apple.com/es/shop/product/MLA02ZM/A/magic-mouse-2). El siguiente paso es [cómo instalar software en macOS con Homebrew][blogbitix-195].
 
 <div class="media" style="text-align: center;">
     {{< figure pid="193"
