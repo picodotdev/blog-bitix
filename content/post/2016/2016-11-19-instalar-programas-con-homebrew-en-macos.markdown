@@ -3,6 +3,7 @@ pid: 195
 title: "Instalar programas con Homebrew en macOS"
 url: "/2016/11/instalar-programas-con-homebrew-en-macos/"
 date: 2016-11-19T12:00:00+01:00
+updated: 2016-11-25T22:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -22,7 +23,7 @@ En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, [Ho
 
 <div class="media" style="text-align: center;">
     {{< figure pid="195"
-        image1="homebrew.png" thumb1="homebrew.png" title1="Homebrew" >}}
+        image1="homebrew.png" thumb1="homebrew-thumb.png" title1="Homebrew" >}}
 </div>
 
 Para instalar Hombrew ejecutamos el siguiente comando en la terminal:
@@ -76,5 +77,11 @@ Y para desinstalar paquetes:
 La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como [iTerm2](http://iterm2.com/). iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar [oh-my-zsh](http://ohmyz.sh/) que permite gestionar la configuración del intérprete de comandos [zsh][zsh] pudiendo añadir temas para modificar el _prompt_ del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.
 
 {{< gist picodotdev 75e99b8f3dd26a446b1b0ec19cd81ee0 "oh-my-zsh.sh" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figure pid="195"
+        image1="iterm2.png" thumb1="iterm2-thumb.png" title1="iTerm2"
+        caption="Terminal iTerm2" >}}
+</div>
 
 {{% /post %}}

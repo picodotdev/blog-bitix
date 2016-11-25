@@ -51,6 +51,6 @@ Casi para terminar las clases de utilidad:
 
 El código fuente completo puede encontrarse en el [siguiente repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos/tree/master/ConfiguracionJava).
 
-En el siguiente artículo comentaré como [monitorizar un archivo con código fuente Java][blogbitix-43] para ver si se han producido cambios en él. Y basándome en estos dos artículos comentaré como disponer de un archivo de configuración que se recargue al detectase cambios en él.
+En el siguiente artículo comentaré como [monitorizar un archivo con código fuente Java][blogbitix-43] para ver si se han producido cambios en él. Y basándome en estos dos artículos comentaré como disponer de [un archivo de configuración que se recargue al detectase cambios en él][blogbitix-43].
 
 {{% /post %}}

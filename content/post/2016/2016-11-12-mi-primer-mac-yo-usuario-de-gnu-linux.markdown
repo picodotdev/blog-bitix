@@ -3,7 +3,7 @@ pid: 193
 title: "Mi primer Mac, yo usuario de GNU/Linux"
 url: "/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"
 date: 2016-11-12T10:00:00+01:00
-updated: 2016-11-19T11:00:00+01:00
+updated: 2016-11-25T22:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -36,7 +36,8 @@ Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sob
 <div class="media" style="text-align: center;">
     {{< figure pid="193"
         image1="macos.png" thumb1="macos-thumb.png" title1="Información del sistema macOS"
-        caption="Información del sistema macOS" >}}
+        image2="macos-sierra-desktop.jpg" thumb2="macos-sierra-desktop-thumb.jpg" title2="Escritorio de macOS"
+        caption="Información del sistema y escritorio de macOS" >}}
 </div>
 
 {{% /post %}}
