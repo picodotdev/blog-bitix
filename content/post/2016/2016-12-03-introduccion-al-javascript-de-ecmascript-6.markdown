@@ -1,7 +1,8 @@
 ---
 pid: 198
-title: "Introducción a JavaScript de ECMAScript 6"
-url: "/2016/12/introduccion-a-javascript-de-ecmascript-6/"
+title: "Introducción al JavaScript de ECMAScript 6"
+url: "/2016/12/introduccion-al-javascript-de-ecmascript-6/"
+aliases: ["/2016/12/introduccion-a-javascript-de-ecmascript-6/"]
 date: 2016-12-03T12:00:00+01:00
 updated: 2016-12-03T23:30:00+01:00
 language: "es"
