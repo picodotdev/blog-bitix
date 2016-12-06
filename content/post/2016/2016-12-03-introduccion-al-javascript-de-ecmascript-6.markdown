@@ -4,7 +4,7 @@ title: "Introducción al JavaScript de ECMAScript 6"
 url: "/2016/12/introduccion-al-javascript-de-ecmascript-6/"
 aliases: ["/2016/12/introduccion-a-javascript-de-ecmascript-6/"]
 date: 2016-12-03T12:00:00+01:00
-updated: 2016-12-03T23:30:00+01:00
+updated: 2016-12-04T13:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -20,7 +20,7 @@ summary: "Con ECMAScript 6 se han incorporado al lenguaje varias novedades como 
 
 Hasta ahora como desarrollador web durante prácticamente toda mi vida laboral no había dedicado tiempo a conocer en más detalle el lenguaje de programación [JavaScript][javascript] usado en los navegadores web. Mucho de lo que necesitaba me era suficiente con librerías como [jQuery][jquery] o [underscore][underscorejs]. Ahora algunas páginas web tienen un peso importante en el lado cliente y ante esta necesidad el lenguaje JavaScript está evolucionando e incorporando nuevas características como las definidas en sus especificaciones de [ECMAScript][ecmascript].
 
-Para aprender en mucho más en detalle lo poco que conocía de JavaScript he leído el libro [Learning JavaScript](http://amzn.to/2g3TV52) que cubre las novedades de JavaScript 2015 también conocido como ECMAScript 6. Después de leerlo diré que es un libro que me ha gustado mucho y considero que es adecuado tanto para alguien que pueda estar aprendiendo a programar como para alguien que ya conoce otros lenguajes de programación explicando los conceptos sin complicaciones.
+Para aprender en mucho más en detalle lo poco que conocía de JavaScript he leído el libro [Learning JavaScript](http://amzn.to/2g3TV52) que cubre las novedades de ECMAScript 2015 también conocido como ECMAScript 6 (ES6). Después de leerlo diré que es un libro que me ha gustado mucho y considero que es adecuado tanto para alguien que pueda estar aprendiendo a programar como para alguien que ya conoce otros lenguajes de programación explicando los conceptos sin complicaciones.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=3ea3a8ae787fc5f9cdd9ca6934c7d635&internal=1"></iframe>
@@ -96,11 +96,11 @@ Con [instanceof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 
 ### Excepciones
 
-JavaScript soporta gestionar ciertas circunstancias de error con excepciones y con la construcción [try catch finally](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) similar a la existente a lenguajes como Java.
+JavaScript soporta gestionar ciertas circunstancias de error con excepciones y con la construcción [try catch finally](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) similar a la existente en lenguajes como Java.
 
 ### _Callback_ y _Promise_
 
-Algunas tareas las manejamos usando [funciones _callback_](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks), funciones que se pasan como argumento y que son llamadas en algún momento. La programación con _callback_ se hace complicada en la programación asíncrona cuando se anidan varias funciones _callback_. Con los [objetos Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) el código de la programación asíncrona es más legible.
+Algunas tareas las manejamos usando [funciones _callback_](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks), funciones que se pasan como argumento y que son llamadas en algún momento. La programación con _callback_ se hace complicada en la programación asíncrona cuando se anidan varias funciones. Con los [objetos Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) el código de la programación asíncrona es más legible.
 
 {{< gist picodotdev e2d39c688ee437367ff2c2e89b791ed2  "callback-promise.js" >}}
 
@@ -132,12 +132,13 @@ Eventos como el _click_ en algunos elementos tienen definido un comportamiento p
 
 Los manejadores de eventos se van recorriendo primero en modo captura desde la raíz hasta el nodo del árbol DOM donde se ha producido el evento y posteriormente en modo burbuja desde el nodo donde se ha producido el evento hasta la raíz. Con _stopPropagation_ se puede cancelar la propagación del evento, realmente la propagación se sigue realizando pero el evento se marca como cancelado. Con _stopImmediatePropagation_ se puede parar la propagación completamente, parando incluso la propagación con el evento cancelado.
 
-Todos estos ejemplos funcionan en los navegadores Firefox y Chrome pudiendo probarlos en la consola JavaScript que incorporan para los desarrolladores.
+Todos estos ejemplos funcionan en los navegadores Firefox y Chrome pudiendo probarlos en la consola JavaScript que incorporan para los desarrolladores. En la página [es6-features](http://es6-features.org/) hay una lista completa de todas las nuevas características de ECMAScript 6.
 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
 * [Mozilla Developer Network][mozilla-mdn]
+* [es6-features](http://es6-features.org/)
 {{% /reference %}}
 
 {{% /post %}}
