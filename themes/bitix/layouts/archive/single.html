@@ -26,13 +26,13 @@
             <h3>Etiquetas</h3>
             <ul class="list-inline">
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-              <li><a href="tags/{{ $name | urlize }}">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
+              <li><a href="tags/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
             {{ end }}
             </ul>
             <h3>Series</h3>
             <ul class="list-inline">
             {{ range $name, $taxonomy := .Site.Taxonomies.series }}
-              <li><a href="series/{{ $name | urlize }}">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
+              <li><a href="series/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
             {{ end }}
             </ul>
             {{ range (where .Site.Pages "Section" "post").GroupByDate "2006" "desc" }}
