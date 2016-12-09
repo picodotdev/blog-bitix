@@ -3,6 +3,7 @@ pid: 199
 title: "Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java"
 url: "/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/"
 date: 2016-12-07T11:00:00+01:00
+updated: 2016-12-07T14:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -46,7 +47,7 @@ Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/a
 
 {{< gist picodotdev 906be34ee509940d9025c689fa50bb20 "PhoneNumber-equals-commons-lang.java" >}}
 
-### Como implementar el método _hasCode_
+### Como implementar el método _hashCode_
 
 La implementación del [método hashCode](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--) se debe realizar según los siguientes pasos:
 

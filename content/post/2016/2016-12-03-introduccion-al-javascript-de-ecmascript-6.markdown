@@ -4,7 +4,7 @@ title: "Introducción al JavaScript de ECMAScript 6"
 url: "/2016/12/introduccion-al-javascript-de-ecmascript-6/"
 aliases: ["/2016/12/introduccion-a-javascript-de-ecmascript-6/"]
 date: 2016-12-03T12:00:00+01:00
-updated: 2016-12-04T13:30:00+01:00
+updated: 2016-12-09T13:50:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -26,7 +26,7 @@ Para aprender en mucho más en detalle lo poco que conocía de JavaScript he le�
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=3ea3a8ae787fc5f9cdd9ca6934c7d635&internal=1"></iframe>
 </div>
 
-Las últimas versiones de los navegadores [Chrome][google-chrome] y [Firefox][firefox] ya soportan todo lo que describo a continuación y que está más detalladamente explicado en el libro. Para los navegadores que aún no soportan todo como en los dispositivos móviles hay compiladores o _transpilers_ que traducen ECMAScript 6 a ECMAScript 5. En un entorno en el que sepamos se usa solo Chrome o Firefox como en una intranet o una aplicación de uso interno en una organización podemos utilizar estas novedades y si es una aplicación accesible por cualquier usuario desde internet podemos hacer la conversión de ECMAScript 6 a ECMAScript 5 con [gulp][gulpjs] o [grunt][grunt].
+Las últimas versiones de los navegadores [Chrome][google-chrome] y [Firefox][firefox] ya soportan todo lo que describo a continuación y que está más detalladamente explicado en el libro. Para los navegadores que aún no soportan todo como en los dispositivos móviles hay compiladores o _transpilers_ para [traducir de ECMAScript 6 a ECMAScript 5][blogbitix-200]. En un entorno en el que sepamos se usa solo Chrome o Firefox como en una intranet o una aplicación de uso interno en una organización podemos utilizar estas novedades y si es una aplicación accesible por cualquier usuario desde internet podemos hacer la conversión de ECMAScript 6 a ECMAScript 5 con [gulp][gulpjs] o [grunt][grunt].
 
 Estas son gran parte de las novedades que he anotado al leer el libro Learning JavaScript. Para profundizar sobre JavaScript la documentación de [Mozilla Developer Network][mozilla-mdn] está muy bien como manual de referencia donde hay más ejemplos y comentarios más extensos de los que hago en cada sección.
 
