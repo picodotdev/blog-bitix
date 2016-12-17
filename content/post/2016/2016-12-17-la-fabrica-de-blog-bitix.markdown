@@ -3,19 +3,19 @@ pid: 201
 title: "La fábrica de Blog Bitix"
 url: "/2016/12/la-fabrica-de-blog-bitix/"
 date: 2016-12-17T11:00:00+01:00
-updated: 2016-12-17T13:10:00+01:00
+updated: 2016-12-17T23:30:00+01:00
 language: "es"
 sharing: true
 comments: true
 tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
-summary: "Los artículos y log blogs personales no se escriben solos, cada artículo está fabricado artesanalmente letra a letra por alguna persona en algún lugar. Hace unos meses Victorchk inició una cadena de artículos que algunos blogueros han continuado donde compartían el lugar donde crean sus artículos."
+summary: "Los artículos y log blogs personales no se escriben solos, cada artículo está fabricado artesanalmente letra a letra por alguna persona en algún lugar. Hace unos meses Victorhck inició una cadena de artículos que algunos blogueros han continuado donde compartían el lugar donde crean sus artículos."
 ---
 
 {{% post %}}
 {{< links >}}
 {{< postslinks >}}
 
-A iniciativa de [Victorchk en su blog](https://victorhckinthefreeworld.com) se inició hace ya unos meses una cadena con un artículo para que los blogueros sobre software libre y GNU/Linux escribiesen un artículo para mostrar ese lugar donde se escriben, editan y publican los artículos y el lugar de trabajo en una aleación seguramente con diversión. Hace unos días ví en [Twitter][twitter] que en [Jvare Blog](https://jvare.com) y unos días más tarde en [Poesía Binaria](http://totaki.com/poesiabinaria/) aparecían otros. Así que esta semana me he decidido a publicar el mío.
+A iniciativa de [Victorhck en su blog](https://victorhckinthefreeworld.com) se inició hace ya unos meses una cadena con un artículo para que los blogueros sobre software libre y GNU/Linux escribiesen un artículo para mostrar ese lugar donde se escriben, editan y publican los artículos y el lugar de trabajo en una aleación seguramente con diversión. Hace unos días ví en [Twitter][twitter] que en [Jvare Blog](https://jvare.com) y unos días más tarde en [Poesía Binaria](http://totaki.com/poesiabinaria/) aparecían otros. Así que esta semana me he decidido a publicar el mío.
 
 Aunque en buena parte mi blog no es solo de software libre y GNU/Linux de vez en cuando escribo algún artículo sobre estos temas, tampoco es un blog de solo programación más bien es una mezcla de ambas cosas, algo no muy definido. Me pareció curioso conocer un poco el lugar de trabajo que hay detrás de cada blog.
 
@@ -41,7 +41,7 @@ Por otro lado se ve una [Raspberry Pi][raspberrypi] de los primeros modelos, la 
         image2="4.jpg" thumb2="4-thumb.jpg" title2="Altavoces, Raspberry Pi, Tux y amigos de papel" >}}
 </div>
 
-También se ven ahí unos altavoces con _subwofer_ que utilizo para escuchar mi propia música o alguna radio de [Jamendo][jamendo], los tengo arrinconados en una esquina para que ocupen muy poco espacio en la mesa sobre todo los cables. Junto a los altavoces tengo a [tux hecho con papel](assets/custom/tux.pdf) al igual que un [cubo cheatsheet](assets/custom/arch-linux-cheat-cube.zip) y un dodecaedro con el [calendario del año 2012](assets/custom/arch-linux-calendar-2012.zip) que no he ido actualizando, muy _archeros_ ellos que decoran un poco la mesa. Y unos bidones de agua que a veces utilizo.
+También se ven ahí unos altavoces con _subwoofer_ que utilizo para escuchar mi propia música o alguna radio de [Jamendo][jamendo], los tengo arrinconados en una esquina para que ocupen muy poco espacio en la mesa sobre todo los cables. Junto a los altavoces tengo a [Tux hecho con papel](assets/custom/tux.pdf) al igual que un [cubo cheatsheet](assets/custom/arch-linux-cheat-cube.zip) y un dodecaedro con el [calendario del año 2012](assets/custom/arch-linux-calendar-2012.zip) que no he ido actualizando, muy _archeros_ ellos que decoran un poco la mesa. Y unos bidones de agua que a veces utilizo.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="201"
@@ -51,7 +51,7 @@ También se ven ahí unos altavoces con _subwofer_ que utilizo para escuchar mi 
         image1="arch-linux-cheat-cube.png" thumb1="arch-linux-cheat-cube-thumb.png" title1="Arch Linux cheat cube" >}}
 </div>
 
-Tengo un par de discos duros externos USB que utilizo para hacer copias de seguridad [cifrados con LUKS y dm-crypt][blogbitix-128] uno de ellos era el original de 500 GiB del portátil que sustituí por el SSD.
+Tengo un par de discos duros externos USB que utilizo para hacer copias de seguridad [cifrados con LUKS y dm-crypt][blogbitix-128], uno de ellos era el original de 500 GiB del portátil que sustituí por el SSD.
 
 Finalmente, en cuanto a software uso [Arch Linux][archlinux] instalado en el 2014 que actualizo cada unas dos semanas, [GNOME][gnome] muy poco retocado prácticamente solo el fondo del escritorio que cambio cada mes con una nueva imagen de [Unsplash](https://unsplash.com/), [Atom][atom] para editar los artículos y [Hugo][hugo] para generar el blog estático entre otra buena cantidad de software libre para tareas específicas.
 
