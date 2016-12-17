@@ -3,6 +3,7 @@ pid: 201
 title: "La fábrica de Blog Bitix"
 url: "/2016/12/la-fabrica-de-blog-bitix/"
 date: 2016-12-17T11:00:00+01:00
+updated: 2016-12-17T13:10:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -32,7 +33,7 @@ En un futuro si tuviese que cambiar de equipo probablemente elegiría un [Slimbo
 
 La mesa y la silla son de [Ofiprix](http://www.ofiprix.com/), la mesa aunque es bastante grande echo de menos que sea regulable en altura, gran parte está llena de cables, por una parte la regleta de 8 enchufes con protección de picos de tensiones, el _router_ WIFI del [proveedor de internet Pepephone][blogbitix-169] que al ser ADSL solo me alcanza los 9 MiB de bajada y 1 MiB de subida pero que es más que suficiente para mis necesidades incluso para descargas de libros, series y películas mediante P2P vía torrent. No tengo ninguna estantería con libros técnicos ya que la mayoría los tengo en PDF que además no me ocupan lugar, no tengo ese querer coleccionar los libros en formato físico ya que los leo una vez bastante cómodamente en la pantalla del portátil donde además puedo probar cosas y consultar algo en internet al mismo tiempo, una vez leídos ya no les doy más uso salvo algún repaso. El único libro técnico físico que tengo es [Linux. Guia Para Administradores De Redes](http://amzn.to/2hQe8Nw) que compré cuando aún no tenía banda ancha.
 
-Por otro lado se ve una [Raspberry Pi][raspberrypi] de los primeros modelos, la 1 y la versión B, con únicamente 256 MiB de memoria más que suficiente para realizar descargas a la máxima velocidad que permite mi conexión a internet, no hay nada de lo que echo que en una noche no sea capaz de descargar. Por supuesto, en mi caso usando la distribución [Arch Linux ARM][archlinuxarm] en ella y con un disco externo de 120 GiB que [utilizo como disco duro desde el que arrancarla vía USB][blogbitix-6] que es mucho más rápido que la tarjeta SD, seguro que tiene más de un lustro y estará más cerca de la década aún así aguanta y me presta gran utilidad.
+Por otro lado se ve una [Raspberry Pi][raspberrypi] de los primeros modelos, la 1 y la versión B, con únicamente 256 MiB de memoria más que suficiente para realizar descargas a la máxima velocidad que permite mi conexión a internet, no hay nada que le eche que en una noche no sea capaz de descargar. Por supuesto, en mi caso usando la distribución [Arch Linux ARM][archlinuxarm] en ella y con un disco externo de 120 GiB que [utilizo como disco duro desde el que arrancarla vía USB][blogbitix-6] que es mucho más rápido que la tarjeta SD, seguro que tiene más de un lustro y estará más cerca de la década aún así aguanta y me presta gran utilidad.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="201"
@@ -40,7 +41,7 @@ Por otro lado se ve una [Raspberry Pi][raspberrypi] de los primeros modelos, la 
         image2="4.jpg" thumb2="4-thumb.jpg" title2="Altavoces, Raspberry Pi, Tux y amigos de papel" >}}
 </div>
 
-También se ven ahí nos altavoces con _subwofer_ que utilizo para escuchar mi propia música o alguna radio de [Jamendo][jamendo], los tengo arrinconados en una esquina para que ocupen muy poco espacio en la mesa sobre todo los cables. Junto a los altavoces tengo a [tux hecho con papel](assets/custom/tux.pdf) al igual que un [cubo cheatsheet](assets/custom/arch-linux-cheat-cube.zip) y un dodecaedro con el [calendario de 2012](assets/custom/arch-linux-calendar-2012.zip) que no he ido actualizando, muy _archeros_ ellos que decoran un poco la mesa. Y unos bidones de agua que a veces utilizo.
+También se ven ahí unos altavoces con _subwofer_ que utilizo para escuchar mi propia música o alguna radio de [Jamendo][jamendo], los tengo arrinconados en una esquina para que ocupen muy poco espacio en la mesa sobre todo los cables. Junto a los altavoces tengo a [tux hecho con papel](assets/custom/tux.pdf) al igual que un [cubo cheatsheet](assets/custom/arch-linux-cheat-cube.zip) y un dodecaedro con el [calendario del año 2012](assets/custom/arch-linux-calendar-2012.zip) que no he ido actualizando, muy _archeros_ ellos que decoran un poco la mesa. Y unos bidones de agua que a veces utilizo.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="201"
