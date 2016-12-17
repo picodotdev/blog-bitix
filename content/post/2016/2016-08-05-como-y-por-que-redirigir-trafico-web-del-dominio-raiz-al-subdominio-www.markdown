@@ -54,7 +54,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 
 Si prefieriesemos hacer la redirección al revés, del subdominio www al dominio, variaríamos los valores de los nombres del servidor y los valores de las directivas de redirección. En los enlaces de referencia se incluye un ejemplo de esta configuración.
 
-{{% code git="blog-ejemplos/tree/master/RedirigirSubdiminio" %}}
+{{% code git="blog-ejemplos/tree/master/RedirigirSubdominio" %}}
 
 Referencia:
 {{% reference %}}

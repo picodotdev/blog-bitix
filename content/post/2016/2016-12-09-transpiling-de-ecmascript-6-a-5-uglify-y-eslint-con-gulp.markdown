@@ -3,7 +3,7 @@ pid: 200
 title: "Transpiling de ECMAScript 6 a 5, Uglify y ESLint con Gulp"
 url: "/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/"
 date: 2016-12-09T12:00:00+01:00
-updated: 2016-12-11T01:30:00+01:00
+updated: 2016-12-11T01:35:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -62,7 +62,7 @@ Transformado con Uglify queda algo ilegible pero con el archivo _.map_ podremos 
 
 {{% code git="blog-ejemplos/tree/master/ECMAScript6" command="npm install && gulp && node ./build/dist/main.js" %}}
 
-El resultado son los siguientes mensajes en la terminal tanto para la ejecución del archivo ECMAScript 6 original <code>node src/main/js/main.js</code> como para el _transpilado_ con <code>node ./build/dist/main.js</code>.
+El resultado son los siguientes mensajes en la terminal tanto para la ejecución del archivo ECMAScript 6 original con <code>node src/main/js/main.js</code> como para el _transpilado_ con <code>node ./build/dist/main.js</code>.
 
 {{< gist picodotdev 0cf6306cf3a7770953946e94618578b8 "System.out" >}}
 
