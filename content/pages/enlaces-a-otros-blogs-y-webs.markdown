@@ -22,7 +22,7 @@ En esta página quiero poner la selección de páginas web y blogs personales o 
 que publican artículos interesantes y lo siguen haciendo actualmente con cierta regularidad acerca de la programación, el desarrollo de aplicaciones, la tecnología o la
 informática. Estos enlaces son parte de los que he ido recopilando a lo largo de mucho tiempo y que creo que al que tenga interés en estos temas a su vez les resulten interesantes.
 
-<a href="http://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de_blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](http://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
+<a href="http://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](http://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
 
 ## Arch Linux
 
@@ -31,7 +31,7 @@ Si usas la distribución Arch Linux estos son algunos enlaces que no debes perde
 * [Arch Linux](https://www.archlinux.org/): cuando para actualizar esta distribución se necesita intervención del usuario se suele publicar una nota para saber
 lo que hay que hacer, no suele ser lo habitual pero de vez en cuando puede ser necesario. No leerla y hacer algo de la forma que no indica puede dejar tu Arch Linux inservible, estás avisado.
 * [Wiki Arch Linux](https://wiki.archlinux.org/): una gran fuente de información sobre Arch Linux pero que le puede servir a cualquier usuario del sistema del pingüino. Aquí está una documentación más oficial que la que se puede encontrar en los foros.
-* [Arch Linux - Package Database](https://www.archlinux.org/packages/): al ser Arch Linux una distribución rolling release los paquetes se actualizan constantemente.
+* [Arch Linux - Package Database](https://www.archlinux.org/packages/): al ser Arch Linux una distribución _rolling release_ los paquetes se actualizan constantemente.
 Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el
 kernel de linux, los controlador gráfico, etc...
 * [Repositorio AUR](https://aur.archlinux.org/): lo mismo que lo anterior pero para los paquetes del repositorio de AUR.
@@ -42,20 +42,20 @@ la solución este ya comentada por otro usuario.
 
 ## Noticias
 
-* [Phoronix](http://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de feeds, suele publicar un montón de información interesante sobre varias distribuciones linux,
+* [Phoronix](http://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux,
 avances en el kernel, drivers, programas y análisis de rendimiento.
-* [D'Oh](http://diegocg.blogspot.com.es/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo
-en mi lector de feeds, cada artículo suele ser una perla.
 * [DistroWatch](http://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades,
 además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
+* [Parcela Digital](http://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
+* [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
+* [Xataka](http://xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
+* [Linwind](http://www.dacostabalboa.com/): página también con noticias de sistemas operativos, software y hardware.
+* [ADSLZone](http://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
+* [D'Oh](http://diegocg.blogspot.com.es/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
 * [Foro Noticias 3D](http://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Barrapunto](http://barrapunto.com/): una web donde tan importante como la noticia son los comentarios de sus usuarios.
-* [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
-* [Xataka](http://xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los gadgets.
-* [Linwind](http://www.dacostabalboa.com/): página también con noticias de sistemas operativos, software y hardware.
-* [ADSLZone](http://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
 
 ## Software libre y Linux
 
@@ -108,6 +108,7 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Laboro](http://laboro-spain.blogspot.com/): este es posiblemente el menos relacionado sobre todos los anteriores pero si trabajas en España es muy útil para conocer algunos de tus derechos laborales.
 * [Bonilista](http://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
 * [Justifica tu respuesta](http://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
+* [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.  
 
 Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses...
 pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de feeds del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.
