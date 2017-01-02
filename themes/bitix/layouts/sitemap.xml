@@ -1,12 +1,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {{ range .Data.Pages }}
-    {{ if or (not (isset .Params "_sitemap")) (eq .Params._sitemap true) }}
+  {{ range .Data.Pages }}{{ if .IsPage }}
     <url>
         <loc>{{ .Permalink }}</loc>
-        <lastmod>{{ safeHTML ( .Date.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ with .Sitemap.ChangeFreq }}
-        <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
-        <priority>{{ .Sitemap.Priority }}</priority>{{ end }}
+        {{ if ne (.Date.Format "0001-01-01T00:00:00+00:00") "0001-01-01T00:00:00+00:00" }}<lastmod>{{ safeHTML ( .Date.Format "0001-01-01T00:00:00+00:00") }}</lastmod>{{ end }}
     </url>
-    {{ end }}
-  {{ end }}
+  {{ end }}{{ end }}
 </urlset>
