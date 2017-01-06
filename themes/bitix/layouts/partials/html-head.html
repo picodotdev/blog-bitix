@@ -38,7 +38,6 @@
       google_ad_client: '{{ .Site.Params.adsense.adclient }}',
       enable_page_level_ads: true
     });
-    var sharethisPublisher = '{{ .Site.Params.sharethis.publisher }}';
   </script>
   <script type="text/javascript" async>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -50,6 +49,10 @@
     ga('send', 'pageview');
   </script>
   <script type="text/javascript" src="assets/libs/require.min.js" data-main="assets/js/main" async></script>
+
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" id="st_insights_js" src="//ws.sharethis.com/button/buttons.js?publisher={{ .Site.Params.sharethis.publisher }}"></script>
+  <script type="text/javascript">stLight.options({publisher: "{{ .Site.Params.sharethis.publisher }}", doNotHash: true, doNotCopy: true, hashAddressBar: false, onhover: false});</script>
 
   {{ partial "html-head-custom-css.html" . }}
   {{ partial "html-head-custom-js.html" . }}
