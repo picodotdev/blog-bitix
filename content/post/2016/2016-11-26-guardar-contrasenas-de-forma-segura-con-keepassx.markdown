@@ -7,7 +7,7 @@ updated: 2016-11-26T22:00:00+01:00
 language: "es"
 sharing: true
 comments: true
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planet-libre", "planeta-linux"]
+tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
