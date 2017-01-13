@@ -56,9 +56,9 @@ Basándome en _arch-anywhere_ y dedicando un poco de tiempo he creado un _script
 * Instalación de controlador gráfico (intel, nvidia, amd)
 * Cargador de arranque con [GRUB](https://wiki.archlinux.org/index.php/GRUB)
 
-La forma aconsejada de instalar Arch Linux es aprendiendo cuales son los comandos a ejecutar y que hace cada uno de ellos, primero lee la guía oficial de instalación de Arch Linux y comprende que hacen los comandos del _script_. Este _script_ no es oficial y por ello en el [foro de Arch Linux en español][archlinux-forums-es] o [en inglés][archlinux-forums] no podrán darte soporte aunque yo en los comentarios de este artículo te ayudaré si preguntas. Ten en cuenta que de momento solo lo he probado en [VirtualBox][virtualbox] no en un sistema real. Si lo pruebas deja un comentario al final de artículo.
+La forma aconsejada de instalar Arch Linux es aprendiendo cuales son los comandos a ejecutar y que hace cada uno de ellos, primero lee la guía oficial de instalación de Arch Linux y comprende que hacen los comandos del _script_. Este _script_ no es oficial y por ello en el [foro de Arch Linux en español][archlinux-forums-es] o [en inglés][archlinux-forums] no podrán darte soporte aunque yo en los comentarios de este artículo te ayudaré si preguntas. Ten en cuenta que de momento solo lo he probado en [VirtualBox][virtualbox] no en un sistema real y que este _script_ elimina toda la información del dispositivo de instalación. Si lo pruebas deja un comentario al final de artículo.
 
-Iniciado el instalador de la imagen ISO de Arch Linux, hay que descargar el _script_, editar algunas variables de entorno y darle permisos de ejecución. Los comandos y varialbes a editar según el sistema a instalar son los siguientes:
+Iniciado el instalador de la imagen ISO de Arch Linux, hay que descargar el _script_, editar algunas variables de entorno y darle permisos de ejecución. Los comandos y variables a editar según el sistema a instalar son los siguientes:
 
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis-install.sh" >}}
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.conf" >}}
@@ -77,7 +77,7 @@ Estas son algunas capturas de pantalla con diferentes entornos de escritorio que
     {{< figure pid="204"
         image1="archlinux-xfce.jpg" thumb1="archlinux-xfce-thumb.jpg" title1="XFCE"
         image2="archlinux-cinnamon.jpg" thumb2="archlinux-cinnamon-thumb.jpg" title2="Cinnamon"
-        caption="Entornos de escritorio XFCE y Cinnamon" >}}
+        caption="Entornos de escritorio Xfce y Cinnamon" >}}
     {{< figure pid="204"
         image1="archlinux-lxde.jpg" thumb1="archlinux-lxde-thumb.jpg" title1="LXDE"
         image2="archlinux-mate.jpg" thumb2="archlinux-mate-thumb.jpg" title2="Mate"
