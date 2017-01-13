@@ -1,7 +1,7 @@
 ---
 pid: 204
 title: "Script de instalación de Arch Linux desatendido, automatizado y personalizable"
-url: "/2017/01/script-de-instacion-de-arch-linux-desatendido-automatizado-y-personalizable/"
+url: "/2017/01/script-de-instalacion-de-arch-linux-desatendido-automatizado-y-personalizable/"
 date: 2017-01-13T00:00:00+01:00
 language: "es"
 sharing: true
