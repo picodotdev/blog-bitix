@@ -55,4 +55,6 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
     </figure>
 </div>
 
+{{< donations >}}
+
 {{% /post %}}

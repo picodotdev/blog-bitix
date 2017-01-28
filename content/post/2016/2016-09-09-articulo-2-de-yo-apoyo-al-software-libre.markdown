@@ -47,6 +47,8 @@ Puede que ni siquiera uses GNU/Linux o software libre pero al visitar esta bitá
 
 [Yo apoyo al software libre](http://www.gnu.org/)
 
+{{< donations >}}
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}

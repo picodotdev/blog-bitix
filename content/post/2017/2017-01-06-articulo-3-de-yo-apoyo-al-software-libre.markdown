@@ -63,4 +63,8 @@ Otros proyectos que me planteo hacer una donación en el futuro son a algún pro
 
 Hay muchas formas de colaborar con el software libre, donar dinero solo es una de ellas.
 
+[Yo apoyo al software libre](http://www.gnu.org/)
+
+{{< donations >}}
+
 {{% /post %}}
