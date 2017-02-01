@@ -71,7 +71,7 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
         </tr>
         <tr>
             <td style="vertical-align: top;">9:00</td>
-            <td>Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Todora Bozheva</em></td>
+            <td>Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em></td>
         </tr>
         <tr>
             <td>9:55</td>
@@ -103,7 +103,7 @@ Dentro de unos días se publicarán las presentaciones y no se si los vídeos co
 
 <hr>
 
-### Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Todora Bozheva</em>
+### Los equipos ¿nacen o se hacen? (Y si no nacen, ¿cómo se hacen?) <em>por Teodora Bozheva</em>
 
 Comenzamos viendo el caso de una empresa Armenia, [Armsoft](http://www.armsoft.am/?p=home&lang=en), dedicada al desarrollo de _software_ bancario. En una zona recientemente en conflicto se empieza de poco a construir una organización sin estructuras y sin procesos, todo el mundo sabe de todo. Buscan la excelencia programando. Para contratar, hacen un curso gratuito, dan formación y a los que seleccionan los contratan pero aún así si contratado finalmente no encaja se va (o supongo lo echan). Son buenos técnicamente pero le dan más importancia al trabajo en equipo que a los conocimientos técnicos.
 
