@@ -109,7 +109,7 @@ Comenzamos viendo el caso de una empresa Armenia, [Armsoft](http://www.armsoft.a
 
 Los equipos están autoorganizados tomando sus propias decisiones con un objetivo común claro y compartido, estando las personas que lo forman enganchados a lo que están haciendo que con sus diferencias se complementan. Un equipo autoorganizado no significa caos o falta de dirección. La autoorganización es algo natural para los equipos. Sustituir el controlar por confiar es un desafío en muchas organizaciones. Un despacho y repartir el trabajo no une, el control se ejerce por desconfianza.
 
-¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, _karts o _paintball_.
+¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, _karts_ o _paintball_.
 
 <div class="media" style="text-align: center;">
     <iframe src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

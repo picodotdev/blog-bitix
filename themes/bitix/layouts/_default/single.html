@@ -32,8 +32,9 @@
                   <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
                 {{ end }}
                 {{ if .Params.promoted }}
-                  <br>
-                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}
+                  <div class="alert alert-info" role="alert">
+                    <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}</small>
+                  </div>
                 {{ end }}
               </p>
 
