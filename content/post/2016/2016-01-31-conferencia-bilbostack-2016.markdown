@@ -26,7 +26,7 @@ Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilb
 
 Al igual que en anteriores entregas las presentaciones se han dividido en dos _tracks_ con duración de 45 minutos ofrecidas en una única mañana. Este año estando el _track_ 1 orientado a temas de programación o código y el _track_ 2 con una temática más diversa desde equipos a productos y servicios.
 
-<table>
+<table class="table table-condensed">
     <thead>
         <th width="140px">Hora</th>
         <th>Track 1</th>
@@ -59,7 +59,7 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
     </tbody>
 </table>
 
-<table>
+<table class="table table-condensed">
     <thead>
         <th width="140px">Hora</th>
         <th>Track 2</th>

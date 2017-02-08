@@ -24,7 +24,7 @@ Un año más una de las primeras conferencias del año se ha celebrado en Bilbao
 
 Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minutos en dos tracks simultáneos en horario únicamente de mañana y durante un día, siendo la agenda de este 2015 la siguiente:
 
-<table>
+<table class="table table-condensed">
 	<thead>
 		<th width="140px">Hora</th>
 		<th>Track 1</th>
@@ -53,7 +53,7 @@ Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minut
 	</tbody>
 </table>
 
-<table>
+<table class="table table-condensed">
 	<thead>
 		<th width="140px">Hora</th>
 		<th>Track 2</th>
@@ -105,9 +105,9 @@ Después de la presentación me planteo aprender algo de .NET porque siendo prag
 
 ### Google es ciego <em>por Oihana Alberdi</em>
 
-El título de la presentación viene motivado porque Google procesa el contenido no como lo vemos nosotros en el navegador sino por ejemplo sin estilos, de modo que dando importancia como está definido el contenido en el html de una página y haciendo que sea accesible mejoraremos como es indexada la página por Google y por tanto su posicionamiento en el buscador, pero también mejorando la accesibilidad de una página ayudaremos a que las personas con algún tipo de impedimento pueda acceder el contenido de forma más cómoda. 
+El título de la presentación viene motivado porque Google procesa el contenido no como lo vemos nosotros en el navegador sino por ejemplo sin estilos, de modo que dando importancia como está definido el contenido en el html de una página y haciendo que sea accesible mejoraremos como es indexada la página por Google y por tanto su posicionamiento en el buscador, pero también mejorando la accesibilidad de una página ayudaremos a que las personas con algún tipo de impedimento pueda acceder el contenido de forma más cómoda.
 
-En la mejora de la accesibilidad de una página intervienen tanto diseñadores (tipografía, colores, estilos externalizados) como desarrolladores (código html limpio, javascript no intrusivo) y pueden ayudarse de herramientas como [validadores de HTML](http://validator.w3.org/), [validadores de CSS](http://jigsaw.w3.org/css-validator/), [validadores de accesibilidad](http://www.tawdis.net/). También podemos comprobar como se ve una página sin estilos (como es accedida por google), con javascript deshabilitado, añadiendo atributos alt (como a imágenes), añadiendo teclas de acceso, ... algunas de estas cosas pueden probarse rápidamente con el [plugin web developer de Firefox](https://addons.mozilla.org/es/firefox/addon/web-developer/). 
+En la mejora de la accesibilidad de una página intervienen tanto diseñadores (tipografía, colores, estilos externalizados) como desarrolladores (código html limpio, javascript no intrusivo) y pueden ayudarse de herramientas como [validadores de HTML](http://validator.w3.org/), [validadores de CSS](http://jigsaw.w3.org/css-validator/), [validadores de accesibilidad](http://www.tawdis.net/). También podemos comprobar como se ve una página sin estilos (como es accedida por google), con javascript deshabilitado, añadiendo atributos alt (como a imágenes), añadiendo teclas de acceso, ... algunas de estas cosas pueden probarse rápidamente con el [plugin web developer de Firefox](https://addons.mozilla.org/es/firefox/addon/web-developer/).
 
 <div class="media" style="text-align: center;">
 	<a href="assets/images/custom/posts/62/google-es-ciego.jpg" title="Google es ciego" data-gallery><img src="assets/images/custom/posts/62/google-es-ciego-thumb.jpg"></a>
