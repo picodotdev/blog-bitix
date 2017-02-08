@@ -3,7 +3,7 @@ pid: 208
 title: "Conferencia BilboStack 2017"
 url: "/2017/02/conferencia-bilbostack-2017/"
 date: 2017-02-05T00:00:00+01:00
-updated: 2017-02-06T22:00:00+01:00
+updated: 2017-02-08T21:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -51,7 +51,7 @@ Este era el programa completo con su horario, temas muy distintos y variados com
         </tr>
         <tr>
             <td>11:50-12:40</td>
-            <td>Java ha muerto! Larga vida a Java (moderno) <em>por Catalina Oyaneder</em></td>
+            <td>Lights, Camera, Node! <em>por Catalina Oyaneder</em></td>
         </tr>
         <tr>
             <td>12:50-13:40</td>
