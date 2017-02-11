@@ -58,7 +58,7 @@ Aún así como comento este ejemplo de _Salted Password Hashing_ aunque dificult
 Para implementar la segunda opción deberemos proporcionar implementaciones propias de [CredentialsMatcher]( https://shiro.apache.org/static/1.2.3/apidocs/org/apache/shiro/authc/credential/CredentialsMatcher.html) y de [SimpleHash](https://shiro.apache.org/static/1.2.3/apidocs/org/apache/shiro/crypto/hash/SimpleHash.html), quizá esto sea tema para otro artículo.
 
 ### Código fuente del ejemplo
-El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado en un repositorio de GitHub, es completamente funcional y puedes probarlo en tu equipo. Una vez descargado el siguiente comando e introduciendo en el navegador http\://localhost:8080/PlugInTapestry, en la página que se muestra hay un botón para iniciar sesión:
+El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado en un repositorio de GitHub, es completamente funcional y puedes probarlo en tu equipo. Una vez descargado el siguiente comando e introduciendo en el navegador _http\://localhost:8080/PlugInTapestry_, en la página que se muestra hay un botón para iniciar sesión:
 
 {{< gist picodotdev c718273bc1a5ec76831b "gradlew.sh" >}}
 
