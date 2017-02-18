@@ -15,7 +15,7 @@ footer: true
 {{< postslinks >}}
 
 <div class="logotypes" style="float: right; text-align: right;">
-    <img src="assets/images/custom/logotipos/hugo.png" alt="Hugo" title="Hugo"/>
+    <img src="assets/images/logotipos/hugo.png" alt="Hugo" title="Hugo"/>
 </div>
 
 En esta página quiero poner la selección de páginas web y blogs personales o compartidos por varios usuarios que tengo añadidas en mi lector de feeds y que considero

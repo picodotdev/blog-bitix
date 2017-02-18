@@ -20,9 +20,9 @@ Una vez hemos conseguido [instalar el DNIe en Linux][blogbitix-1] correctamente 
 En esta entrada explicaré como usar el DNIe electrónico con la combinación del navegador [Firefox][firefox] y [Linux][linux]. Para ello primeramente debemos hacer que Firefox detecte el lector de tarjetas inteligentes, desde el menú de Firefox vamos a «Preferencias> Avanzado> Certificados> Dispositivos de seguridad».
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/1/preferencias-firefox.png" title="Preferencias de Firefox" data-gallery><img src="assets/images/custom/posts/1/preferencias-firefox-thumb.png" alt="Preferencias de Firefox" title="Preferencias de Firefox">
-    <a href="assets/images/custom/posts/1/administrador-dispositivos-1.png" title="Administrador de dispositivos (1)" data-gallery><img src="assets/images/custom/posts/1/administrador-dispositivos-1-thumb.png" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"></a>
-    <a href="assets/images/custom/posts/1/administrador-dispositivos-2.png" title="Administrador de dispositivos (2)" data-gallery><img src="assets/images/custom/posts/1/administrador-dispositivos-2-thumb.png" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"></a>
+    <a href="assets/images/posts/1/preferencias-firefox.png" title="Preferencias de Firefox" data-gallery><img src="assets/images/posts/1/preferencias-firefox-thumb.png" alt="Preferencias de Firefox" title="Preferencias de Firefox">
+    <a href="assets/images/posts/1/administrador-dispositivos-1.png" title="Administrador de dispositivos (1)" data-gallery><img src="assets/images/posts/1/administrador-dispositivos-1-thumb.png" alt="Administrador de dispositivos (1)" title="Administrador de dispositivos (1)"></a>
+    <a href="assets/images/posts/1/administrador-dispositivos-2.png" title="Administrador de dispositivos (2)" data-gallery><img src="assets/images/posts/1/administrador-dispositivos-2-thumb.png" alt="Administrador de dispositivos (2)" title="Administrador de dispositivos (2)"></a>
 </div>
 
 En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes datos:
@@ -33,8 +33,8 @@ En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes dat
 Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconoza el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/1/lector-dnie.jpg" title="Lector de tarjetas inteligentes y DNIe" data-gallery><img src="assets/images/custom/posts/1/lector-dnie-thumb.jpg" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"></a>
-    <a href="assets/images/custom/posts/1/dnie.jpg" title="DNI electrónico" data-gallery><img src="assets/images/custom/posts/1/dnie-thumb.jpg" alt="DNI electrónico" title="DNI electrónico"></a>
+    <a href="assets/images/posts/1/lector-dnie.jpg" title="Lector de tarjetas inteligentes y DNIe" data-gallery><img src="assets/images/posts/1/lector-dnie-thumb.jpg" alt="Lector de tarjetas inteligentes y DNIe" title="Lector de tarjetas inteligentes y DNIe"></a>
+    <a href="assets/images/posts/1/dnie.jpg" title="DNI electrónico" data-gallery><img src="assets/images/posts/1/dnie-thumb.jpg" alt="DNI electrónico" title="DNI electrónico"></a>
 </div>
 
 Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de utilizarlo podemos usar la [página preparada para probar el DNI](http://www.dnielectronico.es/como_utilizar_el_dnie/verificar.html). Al final de la misma hay un enlace «Comprobación de certificados» que deberemos pulsar, se nos pedirá el PIN y si todo es correcto veremos una página con diversa información de nuestro DNI.
@@ -42,8 +42,8 @@ Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de
 Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o consultas, por ejemplo, muchos bancos ofrecen medios para acceder de forma electrónica, online y mediante un navegador la consulta del saldo de nuestras cuentas y operaciones que se han realizado o para hacer transferencias. Alguno de los que he visto que soportan el DNIe como medio de autenticación son [BBK](https://portal.bbk.es), [Santander](https://www.bancosantander.es) y el infame [Bankia](http://www.bankia.com/es/), seguro que hay unos cuantos más. También otro tipo de consulta que podemos hacer es consultar los puntos de carnet de conducir que poseemos.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/1/bbk-dnie.png" title="Autenticación BBK con DNIe" data-gallery><img src="assets/images/custom/posts/1/bbk-dnie-thumb.png" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"></a>
-    <a href="assets/images/custom/posts/1/dgt-puntos-carnet.jpg" title="Consultar puntos cárnet DGT" data-gallery><img src="assets/images/custom/posts/1/dgt-puntos-carnet-thumb.jpg" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"></a>
+    <a href="assets/images/posts/1/bbk-dnie.png" title="Autenticación BBK con DNIe" data-gallery><img src="assets/images/posts/1/bbk-dnie-thumb.png" alt="Autenticación BBK con DNIe" title="Autenticación BBK con DNIe"></a>
+    <a href="assets/images/posts/1/dgt-puntos-carnet.jpg" title="Consultar puntos cárnet DGT" data-gallery><img src="assets/images/posts/1/dgt-puntos-carnet-thumb.jpg" alt="Consultar puntos cárnet DGT" title="Consultar puntos cárnet DGT"></a>
 </div>
 
 Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio pcscd, manualmente o con el inicio del sistema ([consultar la guía de instalación del DNIe en Linux][elblogdepicodev-183]).
@@ -51,14 +51,14 @@ Independientemente del trámite que hagamos el proceso es el mismo si se permite
 En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/1/pin.png" title="Diálogo de solicitud de PIN con el DNIe" data-gallery><img src="assets/images/custom/posts/1/pin-thumb.png" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"></a>
+    <a href="assets/images/posts/1/pin.png" title="Diálogo de solicitud de PIN con el DNIe" data-gallery><img src="assets/images/posts/1/pin-thumb.png" alt="Diálogo de solicitud de PIN con el DNIe" title="Diálogo de solicitud de PIN con el DNIe"></a>
 </div>
 
 El PIN secreto de nuestro DNI se facilita en el momento de solicitar o renovar el documento nacional de identidad, es proporcionado en un documento como el siguiente.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/1/documento-pin-dnie-1.jpg" title="Documento con el PIN del DNIe (1)" data-gallery><img src="assets/images/custom/posts/1/documento-pin-dnie-1-thumb.jpg" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"></a>
-    <a href="assets/images/custom/posts/1/documento-pin-dnie-2.jpg" title="Documento con el PIN del DNIe (2)" data-gallery><img src="assets/images/custom/posts/1/documento-pin-dnie-2-thumb.jpg" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"></a>
+    <a href="assets/images/posts/1/documento-pin-dnie-1.jpg" title="Documento con el PIN del DNIe (1)" data-gallery><img src="assets/images/posts/1/documento-pin-dnie-1-thumb.jpg" alt="Documento con el PIN del DNIe (1)" title="Documento con el PIN del DNIe (1)"></a>
+    <a href="assets/images/posts/1/documento-pin-dnie-2.jpg" title="Documento con el PIN del DNIe (2)" data-gallery><img src="assets/images/posts/1/documento-pin-dnie-2-thumb.jpg" alt="Documento con el PIN del DNIe (2)" title="Documento con el PIN del DNIe (2)"></a>
 </div>
 
 Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos números, letras y caracteres especiales que hay que teclear correctamente. Disponemos varios intentos para introducirlos correctamente, al tercero fallido el DNIe se bloqueará y tendremos que acudir a la oficina de expedición de nuestra ciudad para desbloquearlo, también podremos acudir a él para cambiar el PIN. Una vez introducido correctamente podremos continuar con nuestra consulta o trámite.

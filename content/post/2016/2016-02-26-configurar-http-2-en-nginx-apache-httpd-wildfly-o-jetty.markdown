@@ -28,7 +28,7 @@ En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _de
 {{< gist picodotdev 25084c9128028d2896d6 "default.conf" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/129/http2-nginx.png" title="HTTP/2 en Nginx" data-gallery><img src="assets/images/custom/posts/129/http2-nginx-thumb.png"></a>
+    <a href="assets/images/posts/129/http2-nginx.png" title="HTTP/2 en Nginx" data-gallery><img src="assets/images/posts/129/http2-nginx-thumb.png"></a>
 </div>
 
 ### Apache HTTPD
@@ -38,7 +38,7 @@ En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.or
 {{< gist picodotdev 25084c9128028d2896d6 "httpd-default.conf" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/129/http2-httpd.png" title="HTTP/2 en Apache HTTPD" data-gallery><img src="assets/images/custom/posts/129/http2-httpd-thumb.png"></a>
+    <a href="assets/images/posts/129/http2-httpd.png" title="HTTP/2 en Apache HTTPD" data-gallery><img src="assets/images/posts/129/http2-httpd-thumb.png"></a>
 </div>
 
 ### WildFly
@@ -53,7 +53,7 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
 {{< gist picodotdev 25084c9128028d2896d6 "standalone.xml" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/129/http2-wildfly.png" title="HTTP/2 en WildFly" data-gallery><img src="assets/images/custom/posts/129/http2-wildfly-thumb.png"></a>
+    <a href="assets/images/posts/129/http2-wildfly.png" title="HTTP/2 en WildFly" data-gallery><img src="assets/images/posts/129/http2-wildfly-thumb.png"></a>
 </div>
 
 ### Jetty
@@ -64,7 +64,7 @@ Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el mom
 {{< gist picodotdev 25084c9128028d2896d6 "jetty.sh" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/129/http2-jetty.png" title="HTTP/2 en Jetty" data-gallery><img src="assets/images/custom/posts/129/http2-jetty-thumb.png"></a>
+    <a href="assets/images/posts/129/http2-jetty.png" title="HTTP/2 en Jetty" data-gallery><img src="assets/images/posts/129/http2-jetty-thumb.png"></a>
 </div>
 
 {{% reference %}}

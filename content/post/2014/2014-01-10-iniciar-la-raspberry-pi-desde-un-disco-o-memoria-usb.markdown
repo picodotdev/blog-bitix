@@ -23,7 +23,7 @@ En la guía de [Instalación de la Raspberry Pi](http://elblogdepicodev.blogspot
 Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando lsblk:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/6/lsbk.png" title="Dispositivos del sistema" data-gallery><img src="assets/images/custom/posts/6/lsbk-thumb.png"></a>
+	<a href="assets/images/posts/6/lsbk.png" title="Dispositivos del sistema" data-gallery><img src="assets/images/posts/6/lsbk-thumb.png"></a>
 </div>
 
 {{< gist picodotdev 8350659 "leer-particion.sh" >}}
@@ -35,7 +35,7 @@ El comando dd creará un archivo en nuestro ordenador con la imagen de la partic
 Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos /dev/sdb1, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/6/gparted.png" title="Redimiensionado de patición con GParted" data-gallery><img src="assets/images/custom/posts/6/gparted-thumb.png"></a>
+	<a href="assets/images/posts/6/gparted.png" title="Redimiensionado de patición con GParted" data-gallery><img src="assets/images/posts/6/gparted-thumb.png"></a>
 </div>
 
 El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea /dev/sda1, con este valor modificamos el archivo cmdline.txt y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:

@@ -27,18 +27,18 @@ Deberemos formatear la unidad por lo que previamente deberemos hacer una copia d
 Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!"·$%&/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con [herramientas de recuperación de archivos como Foremost][blogbitix-125] alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es [eliminar ciertos o todos los archivos de forma segura][blogbitix-130]. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando [Foremost](https://wiki.archlinux.org/index.php/Foremost) de los que en algún momento estuvieron.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/128/discos.png" title="Aplicación Discos de GNOME" data-gallery><img src="assets/images/custom/posts/128/discos-thumb.png"></a>
-    <a href="assets/images/custom/posts/128/opciones-formato.png" title="Opciones formateo unidad" data-gallery><img src="assets/images/custom/posts/128/opciones-formato-thumb.png"></a>
+    <a href="assets/images/posts/128/discos.png" title="Aplicación Discos de GNOME" data-gallery><img src="assets/images/posts/128/discos-thumb.png"></a>
+    <a href="assets/images/posts/128/opciones-formato.png" title="Opciones formateo unidad" data-gallery><img src="assets/images/posts/128/opciones-formato-thumb.png"></a>
 </div>
 
 Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/128/contrasena.png" title="Diálogo solicitud contraseña" data-gallery><img src="assets/images/custom/posts/128/contrasena-thumb.png"></a>
+    <a href="assets/images/posts/128/contrasena.png" title="Diálogo solicitud contraseña" data-gallery><img src="assets/images/posts/128/contrasena-thumb.png"></a>
 </div>
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/128/unidad-cifrada.png" title="Unidad cifrada en Nautilus" data-gallery><img src="assets/images/custom/posts/128/unidad-cifrada.png"></a>
-    <a href="assets/images/custom/posts/128/unidad-descifrada.png" title="Unidad BMOVE ROJO descifrada en Nautilus" data-gallery><img src="assets/images/custom/posts/128/unidad-descifrada.png"></a>
+    <a href="assets/images/posts/128/unidad-cifrada.png" title="Unidad cifrada en Nautilus" data-gallery><img src="assets/images/posts/128/unidad-cifrada.png"></a>
+    <a href="assets/images/posts/128/unidad-descifrada.png" title="Unidad BMOVE ROJO descifrada en Nautilus" data-gallery><img src="assets/images/posts/128/unidad-descifrada.png"></a>
 </div>
 
 Introducida la contraseña veremos los archivos originales y podremos trabajar con ellos con normalidad como si no estuviesen cifrados. En la [wiki de Arch Linux][archlinux-wiki] hay varios artículos explicando en que consiste dm-crypt y los comandos que deberíamos usar desde la terminal, los artículos en el apartado de referencia del final de este artículo. Cifrar la unidad completamente con cm-crypt y LUKS+Ext4 es perfectamente compatible con usar EncFS, es decir, podemos usar dm-crypt en la unidad y en ella que ya está cifrada [almacenar un sistema de archivos también cifrado con EncFS][blogbitix-126].

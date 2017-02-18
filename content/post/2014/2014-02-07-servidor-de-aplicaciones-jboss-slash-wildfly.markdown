@@ -43,9 +43,9 @@ De entre los servidores de aplicaciones mencionados anteriormente JBoss o WildFl
 A continuación unas pocas capturas de pantalla de la página de inicio de WildFly y de la consola de administración:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/10/wildfly.png" title="Pantalla de bienvenida de WildFly" data-gallery><img src="assets/images/custom/posts/10/wildfly-thumb.png"></a>
-	<a href="assets/images/custom/posts/10/wildfly-admin-1.png" title="Consola de administración" data-gallery><img src="assets/images/custom/posts/10/wildfly-admin-1-thumb.png"></a>
-	<a href="assets/images/custom/posts/10/wildfly-admin-2.png" title="Consola de administración" data-gallery><img src="assets/images/custom/posts/10/wildfly-admin-2-thumb.png"></a>
+	<a href="assets/images/posts/10/wildfly.png" title="Pantalla de bienvenida de WildFly" data-gallery><img src="assets/images/posts/10/wildfly-thumb.png"></a>
+	<a href="assets/images/posts/10/wildfly-admin-1.png" title="Consola de administración" data-gallery><img src="assets/images/posts/10/wildfly-admin-1-thumb.png"></a>
+	<a href="assets/images/posts/10/wildfly-admin-2.png" title="Consola de administración" data-gallery><img src="assets/images/posts/10/wildfly-admin-2-thumb.png"></a>
 </div>
 
 En las [notas de publicación de WildFly 8](http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/) pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente [vídeo](http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/) se explican muchos de los detalles que incorpora.

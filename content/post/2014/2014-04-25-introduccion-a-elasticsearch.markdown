@@ -27,7 +27,7 @@ La instalación de ES es muy sencilla, basta con [descargar el zip de su distrib
 Después de unos segundos deberemos ver algo como lo siguiente.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/21/elasticsearch.png" title="Mensajes de inicio del servidor Elasticsearch" data-gallery><img src="assets/images/custom/posts/21/elasticsearch-thumb.png"></a>
+	<a href="assets/images/posts/21/elasticsearch.png" title="Mensajes de inicio del servidor Elasticsearch" data-gallery><img src="assets/images/posts/21/elasticsearch-thumb.png"></a>
 </div>
 
 Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.
@@ -67,7 +67,7 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 {{< gist picodotdev 11294261 "script-9.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/21/categorias-amazon.png" title="Categorías de productos (facets) en Amazon" data-gallery><img src="assets/images/custom/posts/21/categorias-amazon-thumb.png"></a>
+	<a href="assets/images/posts/21/categorias-amazon.png" title="Categorías de productos (facets) en Amazon" data-gallery><img src="assets/images/posts/21/categorias-amazon-thumb.png"></a>
 </div>
 
 Otra de las funcionalizades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palablas que tienen fallos de escritura.

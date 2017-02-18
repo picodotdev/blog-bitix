@@ -31,7 +31,7 @@ Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electr
 * Cualquier otra cosa que quieras comentarme.
 
 <div class="media" style="text-align: center;">
-    <a href="mailto:pico.dev@gmail.com"><img src="assets/images/custom/pd-email.png" alt="pico.dev@gmail.com" title="pico.dev@gmail.com"></a>
+    <a href="mailto:pico.dev@gmail.com"><img src="assets/images/pd-email.png" alt="pico.dev@gmail.com" title="pico.dev@gmail.com"></a>
 </div>
 
 [Blog Bitix][blogbitix] es la continuación a partir de diciembre de 2013 de [El blog de pico.dev][elblogdepicodev] pero empleando [Octopress][octopress] después de esa fecha y con [Hugo][hugo] a partir de mayo de 2015. Octopress [tiene varias ventajas][blogbitix-0] y por estas ventajas el cambio de plataforma en un primer momento, con Hugo he podido personalizar completamente la apariencia y la instalación y actualización me ha resultado más simple. El contenido que publiqué en El blog de pico.dev sigue estando accesible y no lo he migrado, pero a partir de su abandono el nuevo contenido lo crearé ya en este blog hasta que surja otra herramienta que supere a Hugo y decida hacer otro cambio.

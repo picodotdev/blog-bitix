@@ -41,7 +41,7 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 {{< gist picodotdev 9416544 "Topic.java" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/15/topic.png" title="Resultado de Topic.java" data-gallery><img src="assets/images/custom/posts/15/topic-thumb.png" alt="Resultado de Topic.java" title="Resultado de Topic.java"></a>
+	<a href="assets/images/posts/15/topic.png" title="Resultado de Topic.java" data-gallery><img src="assets/images/posts/15/topic-thumb.png" alt="Resultado de Topic.java" title="Resultado de Topic.java"></a>
 </div>
 
 A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:
@@ -49,7 +49,7 @@ A continuación el código de utilizando un modelo punto a punto en el que vuelv
 {{< gist picodotdev 9416544 "Queue.java" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/15/queue.png" title="Resultado de Queue.java" data-gallery><img src="assets/images/custom/posts/15/queue-thumb.png" alt="Resultado de Queue.java" title="Resultado de Queue.java"></a>
+	<a href="assets/images/posts/15/queue.png" title="Resultado de Queue.java" data-gallery><img src="assets/images/posts/15/queue-thumb.png" alt="Resultado de Queue.java" title="Resultado de Queue.java"></a>
 </div>
 
 Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.

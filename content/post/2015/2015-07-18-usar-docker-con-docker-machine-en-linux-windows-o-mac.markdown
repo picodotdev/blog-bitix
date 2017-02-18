@@ -49,7 +49,7 @@ En el administrador de VirtualBox veremos que se ha creado la máquina virtual _
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/89/virtualbox.png" title="Máquina de Docker Machine ne VirtualBox" data-gallery><img src="assets/images/custom/posts/89/virtualbox-thumb.png"></a>
+        <a href="assets/images/posts/89/virtualbox.png" title="Máquina de Docker Machine ne VirtualBox" data-gallery><img src="assets/images/posts/89/virtualbox-thumb.png"></a>
         <figcaption>Máquina de Docker Machine en VirtualBox</figcaption>
     </figure>
 </div>

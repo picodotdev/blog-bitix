@@ -25,7 +25,7 @@ Para monitorizar los archivos y recibir notificaciones cuando se produzcan cambi
 En este ejemplo solo se monitorizan los cambios de los archivos pero usando otras propiedades se pueden monitorizar la eliminación y creación, en la clase [StandardWatchEventKinds](http://docs.oracle.com/javase/7/docs/api/java/nio/file/StandardWatchEventKinds.html) pueden verse estas propiedades. Una cosa a tener en cuenta es que se pueden monitorizar directorios no archivos en concreto, pero como en el ejemplo una vez que recibimos las notificaciones de monitorización es algo que podemos hacer nosotros. Ejecutando el programa una salida del su funcionamiento podría ser la siguiente en el que la clase se recarga cuando se detectan cambios en ella variando los valores que se emiten en la consola.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/43/main.png" title="Salida programa Main.java" data-gallery><img src="assets/images/custom/posts/43/main.png"></a>
+	<a href="assets/images/posts/43/main.png" title="Salida programa Main.java" data-gallery><img src="assets/images/posts/43/main.png"></a>
 </div>
 
 Esta funcionalidad de monitorización de cambios de archivos junto con la [compilación y carga dinámica de archivos con código fuente Java][blogbitix-42] puede utilizarse para hacer que la configuración de una aplicación esté definida en código Java y se cargue dinámicamente sin tener que reiniciar la aplicación. Y esto es lo que mostraré en la siguiente entrada y explicaré con más detalles que ventajas tienen esta idea.

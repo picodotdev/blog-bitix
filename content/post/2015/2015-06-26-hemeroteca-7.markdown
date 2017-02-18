@@ -59,7 +59,7 @@ Cada mes sigo aumentando ligeramente o manteniendo el número de visitas del mes
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/86/analytics.png" title="Visitas semanales de Blog Bitix" data-gallery><img src="assets/images/custom/posts/86/analytics-thumb.png"></a>
+        <a href="assets/images/posts/86/analytics.png" title="Visitas semanales de Blog Bitix" data-gallery><img src="assets/images/posts/86/analytics-thumb.png"></a>
         <figcaption>Evolución de sesiones semanales en Blog Bitix</figcaption>
     </figure>
 </div>

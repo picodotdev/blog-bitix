@@ -38,7 +38,7 @@ La anotación @Secure en Tapestry es suficiente pero podemos hacer lo mismo empl
 En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https en la página de login:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/38/plugin-tapestry-https.png" title="PlugIn Tapestry con https" data-gallery><img src="assets/images/custom/posts/38/plugin-tapestry-https-thumb.png"></a>
+	<a href="assets/images/posts/38/plugin-tapestry-https.png" title="PlugIn Tapestry con https" data-gallery><img src="assets/images/posts/38/plugin-tapestry-https-thumb.png"></a>
 </div>
 
 {{< plugintapestry >}}

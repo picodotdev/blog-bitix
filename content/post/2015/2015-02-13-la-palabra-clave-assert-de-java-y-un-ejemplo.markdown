@@ -38,14 +38,14 @@ Un pequeño ejemplo de los _asserts_ podría ser el siguiente en la que en el m�
 Un _assert_ cuya expresión se evalúa como falso produce una excepción del tipo [java.lang.AssertionError](http://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html) pero para ello se han de habilitar en tiempo de ejecución como el parámetro _-ea_ de la máquina virtual. En [eclipse][eclipse] podemos cambiarlo en la configuración de ejecución del programa en la pestaña _Arguments_ y _VM arguments_ tal como se ven en la siguiente captura de pantalla:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/67/activacion-assert-java.png" title="Activación asserts en eclipse" data-gallery><img src="assets/images/custom/posts/67/activacion-assert-java-thumb.png"></a>
+	<a href="assets/images/posts/67/activacion-assert-java.png" title="Activación asserts en eclipse" data-gallery><img src="assets/images/posts/67/activacion-assert-java-thumb.png"></a>
 </div>
 
 En la primera de las siguentes capturas de pantalla puede verse como el programa se ejecuta sin producir una excepción a pesar de no cumplirse el _assert_ del método _nextNumber_ ya que los _asserts_ no fueron activados, en la segunda captura activando los _assert_ se lanza una excepción al no cumplirse la postcondición.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/67/no-excepcion.png" title="Ejecución sin excepción" data-gallery><img src="assets/images/custom/posts/67/no-excepcion-thumb.png"></a>
-	<a href="assets/images/custom/posts/67/excepcion-assert.png" title="Ejecución con excepción" data-gallery><img src="assets/images/custom/posts/67/excepcion-assert-thumb.png"></a>
+	<a href="assets/images/posts/67/no-excepcion.png" title="Ejecución sin excepción" data-gallery><img src="assets/images/posts/67/no-excepcion-thumb.png"></a>
+	<a href="assets/images/posts/67/excepcion-assert.png" title="Ejecución con excepción" data-gallery><img src="assets/images/posts/67/excepcion-assert-thumb.png"></a>
 </div>
 
 En el recomendable artículo [_Programming With Assertions_](http://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) se comenta de forma más detallada y amplia el funcionamiento y uso adecuado de la palabra clave _assert_ de Java.

@@ -63,35 +63,35 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 ### Caja y desempaquetado
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091246.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091246-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091312.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091312-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091321.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091321-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091343.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091343-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091404.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091404-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091417.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091417-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091433.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091433-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091653.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091653-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091708.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091708-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_091738.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_091738-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091246.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091246-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091312.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091312-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091321.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091321-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091343.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091343-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091404.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091404-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091417.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091417-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091433.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091433-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091653.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091653-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091708.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091708-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_091738.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_091738-thumb.jpg"></a>
 </div>
 
 ### Cuerpo principal
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092450.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092450-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092459.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092459-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092509.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092509-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092519.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092519-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092558.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092558-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092613.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092613-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093036.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093036-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093045.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093045-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093058.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093058-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093105.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093105-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093110.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093110-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093134.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093134-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093201.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093201-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093941.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093941-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092450.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092450-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092459.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092459-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092509.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092509-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092519.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092519-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092558.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092558-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092613.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092613-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093036.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093036-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093045.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093045-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093058.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093058-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093105.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093105-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093110.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093110-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093134.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093134-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093201.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093201-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093941.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093941-thumb.jpg"></a>
 </div>
 
 ### Componentes y accesorios
@@ -99,36 +99,36 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 En la caja no viene pero se proporcionan más accesorios de los indicados además de para suelos duros y tarima o parquet y el de antibloqueo _tangle-free_ para hebras.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092358.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092358-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092412.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092412-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092422.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092422-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092431.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092431-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111125.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111125-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111137.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111137-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_111155.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_111155-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093500.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093500-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093514.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093514-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093523.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093523-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093542.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093542-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092358.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092358-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092412.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092412-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092422.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092422-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092431.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092431-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_111125.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_111125-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_111137.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_111137-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_111155.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_111155-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093500.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093500-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093514.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093514-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093523.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093523-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093542.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093542-thumb.jpg"></a>
 </div>
 
 Estos son los accesorios adicionales no indicados en la caja, está el de esquinas y otros que parecen para sofás o similares junto con un soporte porta accesorios que se coloca en el tubo cerca de la empuñadura.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092405.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092405-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092405.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092405-thumb.jpg"></a>
 </div>
 
 ### Filtro y ciclón
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100811.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100811-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100821.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100821-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100716.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100716-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100733.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100733-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100628.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100628-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100649.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100649-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100702.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100702-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_102301.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_102301-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100811.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100811-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100821.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100821-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100716.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100716-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100733.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100733-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100628.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100628-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100649.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100649-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100702.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100702-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_102301.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_102301-thumb.jpg"></a>
 </div>
 
 ### Manual de usuario
@@ -136,30 +136,30 @@ Estos son los accesorios adicionales no indicados en la caja, está el de esquin
 El manual de usuario está en perfecto español sin ninguna falta de ortografía, otros múltiples idiomas y cumple con su función de mostrar el montaje, las normas y precauciones básicas de uso.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094541.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094541-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094550.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094550-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094602.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094602-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094643.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094643-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094234.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094234-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094349.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094349-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094428.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094428-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094431.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094431-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094457.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094457-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094529.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094529-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094541.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094541-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094550.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094550-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094602.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094602-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094643.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094643-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094234.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094234-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094349.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094349-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094428.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094428-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094431.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094431-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094457.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094457-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094529.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094529-thumb.jpg"></a>
 </div>
 
 ### Otros detalles
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100832.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100832-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100348.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100348-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_100403.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_100403-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094018.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094018-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094037.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094037-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094052.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094052-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_094223.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_094223-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_092439.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_092439-thumb.jpg"></a>
-    <a href="assets/images/custom/posts/122/Dyson_DC37c_20160124_093952.jpg" data-gallery><img src="assets/images/custom/posts/122/Dyson_DC37c_20160124_093952-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100832.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100832-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100348.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100348-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_100403.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_100403-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094018.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094018-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094037.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094037-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094052.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094052-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_094223.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_094223-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_092439.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_092439-thumb.jpg"></a>
+    <a href="assets/images/posts/122/Dyson_DC37c_20160124_093952.jpg" data-gallery><img src="assets/images/posts/122/Dyson_DC37c_20160124_093952-thumb.jpg"></a>
 </div>
 
 Por poner algún defecto después de usarla diré que no se puede guardar de forma vertical por su forma de cuerpo y bola, sus dimensiones son de unos 51cm de ancho x 31cm de alto x 26cm fondo mirada desde un lateral algo más grande que otras aspiradoras como la Rowenta que comentaba anteriormente. El gatillo es muy cómodo pero en caso de querer tenerlo constantemente abierto para disminuir la succión en el accesorio puede ser cansino, no tiene una posición para dejarlo abierto sin usar el gatillo de la manguera. Este modelo realmente incorpora más accesorios que los indicados en la caja por lo que realmente no debería ser un defecto, en las fotos se ve uno multifunción para esquinas embalados en una bolsa. Usando el accesorio de suelos duros y parquet se une al tubo usando un mecanismo que me queda justo a la altura de una tabla de una cama con lo que al aspirar por debajo de ella si no tengo cuidado choca con el mecanismo de liberación y el accesorio se desengancha, el mecanismo podría estar colocado en un lateral o en la parte de atrás y esto se evitaría. Aún con esto para mí estas cosas no hacen desmerecer la aspiradora.

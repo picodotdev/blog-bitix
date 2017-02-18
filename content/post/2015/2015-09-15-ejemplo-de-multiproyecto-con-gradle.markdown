@@ -63,7 +63,7 @@ Creando un producto desde la consola de PostgreSQL y refrescando la página en e
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/96/back.png" title="Backoffice" data-gallery><img src="assets/images/custom/posts/96/back.png"></a>
+        <a href="assets/images/posts/96/back.png" title="Backoffice" data-gallery><img src="assets/images/posts/96/back.png"></a>
         <figcaption>Aplicación backoffice</figcaption>
     </figure>
 </div>

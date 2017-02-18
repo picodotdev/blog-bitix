@@ -63,7 +63,7 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/87/docker-compose.png" title="Docker Compose" data-gallery><img src="assets/images/custom/posts/87/docker-compose-thumb.png"></a>
+        <a href="assets/images/posts/87/docker-compose.png" title="Docker Compose" data-gallery><img src="assets/images/posts/87/docker-compose-thumb.png"></a>
         <figcaption>Docker Compose</figcaption>
     </figure>
 </div>

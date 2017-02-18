@@ -49,28 +49,28 @@ Para completar el ejemplo debemos inicializar la librería i18next con la config
 Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/63/lista-tareas-es.png" title="Aplicación en español" data-gallery><img src="assets/images/custom/posts/63/lista-tareas-es-thumb.png"></a>
-	<a href="assets/images/custom/posts/63/lista-tareas-en.png" title="Aplicación en inglés" data-gallery><img src="assets/images/custom/posts/63/lista-tareas-en-thumb.png"></a>
+	<a href="assets/images/posts/63/lista-tareas-es.png" title="Aplicación en español" data-gallery><img src="assets/images/posts/63/lista-tareas-es-thumb.png"></a>
+	<a href="assets/images/posts/63/lista-tareas-en.png" title="Aplicación en inglés" data-gallery><img src="assets/images/posts/63/lista-tareas-en-thumb.png"></a>
 </div>
 
 El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/63/una-tarea-completada.png" title="Una tarea completada" data-gallery><img src="assets/images/custom/posts/63/una-tarea-completada-thumb.png"></a>
-	<a href="assets/images/custom/posts/63/dos-tareas-completadas.png" title="Dos tareas completadas" data-gallery><img src="assets/images/custom/posts/63/dos-tareas-completadas-thumb.png"></a>
+	<a href="assets/images/posts/63/una-tarea-completada.png" title="Una tarea completada" data-gallery><img src="assets/images/posts/63/una-tarea-completada-thumb.png"></a>
+	<a href="assets/images/posts/63/dos-tareas-completadas.png" title="Dos tareas completadas" data-gallery><img src="assets/images/posts/63/dos-tareas-completadas-thumb.png"></a>
 </div>
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/63/peticiones-locales-es-ES.png" title="Búsqueda de traducciones" data-gallery><img src="assets/images/custom/posts/63/peticiones-locales-es-ES-thumb.png"></a>
-	<a href="assets/images/custom/posts/63/peticiones-locales-dev.png" title="Búsqueda de traducciones" data-gallery><img src="assets/images/custom/posts/63/peticiones-locales-dev-thumb.png"></a>
+	<a href="assets/images/posts/63/peticiones-locales-es-ES.png" title="Búsqueda de traducciones" data-gallery><img src="assets/images/posts/63/peticiones-locales-es-ES-thumb.png"></a>
+	<a href="assets/images/posts/63/peticiones-locales-dev.png" title="Búsqueda de traducciones" data-gallery><img src="assets/images/posts/63/peticiones-locales-dev-thumb.png"></a>
 </div>
 
 Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/63/teses.png" title="Pruebas unitarias" data-gallery><img src="assets/images/custom/posts/63/teses-thumb.png"></a>
+	<a href="assets/images/posts/63/teses.png" title="Pruebas unitarias" data-gallery><img src="assets/images/posts/63/teses-thumb.png"></a>
 </div>
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.

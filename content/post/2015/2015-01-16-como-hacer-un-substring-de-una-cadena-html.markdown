@@ -34,7 +34,7 @@ Empleando esta librería la cadena del ejemplo anterior podría quedar:
 El resultado aplicando está solución puede verse en el [feed de la portada de Blog Stack][blogbitix-feed] donde se muestra una entradilla o extracto del inicio del contenido de cada uno de los artículos.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/61/blogstack.png" title="Portada Blog Stack" data-gallery><img src="assets/images/custom/posts/61/blogstack-thumb.png"></a>
+	<a href="assets/images/posts/61/blogstack.png" title="Portada Blog Stack" data-gallery><img src="assets/images/posts/61/blogstack-thumb.png"></a>
 </div>
 
 El código fuente de Blog Stack está disponible en un [repositorio de GitHub](https://github.com/picodotdev/blog-stack/tree/master) donde puede verse el código completo.

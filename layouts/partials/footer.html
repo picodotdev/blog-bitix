@@ -13,31 +13,31 @@
     </div>
     <div class="col-md-4 text-center links">
       {{ if .Site.Params.links.feed }}
-        <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/custom/rss.png"></a>
+        <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/rss.png" class="icon"></a>
       {{ end }}
       {{ if .Site.Params.links.twitter }}
-        <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}"><img src="assets/images/custom/twitter.png"></a>
+        <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}"><img src="assets/images/twitter.svg" class="icon"></a>
       {{ end }}
       {{ if .Site.Params.links.googleplus }}
-        <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}"><img src="assets/images/custom/google-plus.png"></a>
+        <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}"><img src="assets/images/google-plus.svg" class="icon"></a>
       {{ end }}
       {{ if .Site.Params.links.github }}
-        <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}"><img src="assets/images/custom/github.png"></a>
+        <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}"><img src="assets/images/github.svg" class="icon"></a>
       {{ end }}
       {{ if .Site.Params.links.facebook }}
-        <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}"><img src="assets/images/custom/facebook.png"></a>
+        <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}"><img src="assets/images/facebook.svg" class="icon"></a>
       {{ end }}
       {{ if .Site.Params.links.linkedin }}
-        <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}"><img src="assets/images/custom/linkedin.png"></a>
+        <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}"><img src="assets/images/linkedin.svg" class="icon"></a>
       {{ end }}
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       Copyleft <span class="copyleft">&copy;</span> {{ .Now.Format "2006" }} - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia de Creative Commons" title="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" class="licencia"/></a><br />
-      <a href="https://twitter.com/blogstackinfo"><img src="{{ .Site.BaseURL }}assets/images/custom/blog-stack.png" alt="Blog Stack" title="Blog Stack"></a>
-      <a href="http://planetalinux.org/es/"><img src="{{ .Site.BaseURL }}assets/images/custom/planeta-linux.png" alt="Planeta Linux" title="Planeta Linux"></a>
-      <a href="http://www.planetacodigo.com/"><img src="{{ .Site.BaseURL }}assets/images/custom/planeta-codigo.png" alt="Planeta código" title="Planeta código"></a>
+      <a href="https://twitter.com/blogstackinfo"><img src="{{ .Site.BaseURL }}assets/images/blog-stack.png" alt="Blog Stack" title="Blog Stack"></a>
+      <a href="http://planetalinux.org/es/"><img src="{{ .Site.BaseURL }}assets/images/planeta-linux.png" alt="Planeta Linux" title="Planeta Linux"></a>
+      <a href="http://www.planetacodigo.com/"><img src="{{ .Site.BaseURL }}assets/images/planeta-codigo.png" alt="Planeta código" title="Planeta código"></a>
       <br/>
       <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a href="{{ .Site.BaseURL }}">Blog Bitix</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="{{ .Site.BaseURL }}" property="cc:attributionName" rel="cc:attributionURL">pico.dev</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
       <br/>

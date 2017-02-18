@@ -25,7 +25,7 @@ Uno de los usos para los que nos puede servir es para albergar con [ownCluod][ow
 Con esta opción tendremos un control total del _software_ instalado sin ninguna limitación, sin embargo, si necesitamos escalar la aplicación tendremos más dificultades si necesitamos comprar _hardware_ nuevo.
 
 <div class="media" style="text-align: center;">
-	<img src="assets/images/custom/logotipos/raspberrypi.jpg" alt="Raspberry Pi" title="Raspberry Pi">
+	<img src="assets/images/logotipos/raspberrypi.jpg" alt="Raspberry Pi" title="Raspberry Pi">
 </div>
 
 ### Proveedor de _hosting_
@@ -45,9 +45,9 @@ En estas opciones IaaS tenemos libertad de elegir el lenguaje de programación q
 En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia _t1.small_ con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00€ por reservar la instancia durante ese periodo y unos 2€ adicionales al mes, a esto deberemos sumar el coste del dominio. En la [calculadora de Amazon EC2](http://calculator.s3.amazonaws.com/index.html) podemos estimar el coste según los recursos que necesitemos.
 
 <div class="media" style="text-align: center;">
-	<img src="assets/images/custom/logotipos/amazon-web-services.png" alt="Amazon Web Services" title="Amazon Web Services">
-	<img src="assets/images/custom/logotipos/microsoft-azure.png" alt="Microsoft Azure" title="Microsoft Azure">
-	<img src="assets/images/custom/logotipos/google-cloud.png" alt="Google Cloud" title="Google Cloud">
+	<img src="assets/images/logotipos/amazon-web-services.png" alt="Amazon Web Services" title="Amazon Web Services">
+	<img src="assets/images/logotipos/microsoft-azure.png" alt="Microsoft Azure" title="Microsoft Azure">
+	<img src="assets/images/logotipos/google-cloud.png" alt="Google Cloud" title="Google Cloud">
 </div>
 
 ### Linode, Digital Ocean
@@ -57,8 +57,8 @@ Algunas opciones totalmente válidas para muchos casos que también nos proporci
 Estas opciones son totalmente válidas tanto para proyectos personales como un blog con WordPress como para proyectos profesionales. La nube de Amazon ofrece multitud de servicios que en algunos casos son útiles pero si no nos son necesarios las opciones comentadas en este apartado serán suficientes y algo más baratas.
 
 <div class="media" style="text-align: center;">
-	<img src="assets/images/custom/logotipos/linode.png" alt="Linode" title="Linode">
-	<img src="assets/images/custom/logotipos/digital-ocean.png" alt="Digital Ocean" title="Digital Ocean">
+	<img src="assets/images/logotipos/linode.png" alt="Linode" title="Linode">
+	<img src="assets/images/logotipos/digital-ocean.png" alt="Digital Ocean" title="Digital Ocean">
 </div>
 
 ### Otras

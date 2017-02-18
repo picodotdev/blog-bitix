@@ -20,7 +20,7 @@ Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes ca
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/114/uptime-robot.png" title="Uptime Robot" data-gallery><img src="assets/images/custom/posts/114/uptime-robot-thumb.png"></a>
+        <a href="assets/images/posts/114/uptime-robot.png" title="Uptime Robot" data-gallery><img src="assets/images/posts/114/uptime-robot-thumb.png"></a>
         <figcaption>Uptime Robot</figcaption>
     </figure>
 </div>
@@ -34,7 +34,7 @@ Una vez registrados y con acceso al panel de control podemos crear un _monitor_.
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/114/nuevo-monitor.png" title="Nuevo monitor HTTP" data-gallery><img src="assets/images/custom/posts/114/nuevo-monitor-thumb.png"></a>
+        <a href="assets/images/posts/114/nuevo-monitor.png" title="Nuevo monitor HTTP" data-gallery><img src="assets/images/posts/114/nuevo-monitor-thumb.png"></a>
         <figcaption>Nuevo monitor HTTP</figcaption>
     </figure>
 </div>
@@ -43,11 +43,11 @@ En el momento que un monitor detecte una caída de servicio podemos establecer q
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/114/dashboard.png" title="Dashboard" data-gallery><img src="assets/images/custom/posts/114/dashboard-thumb.png"></a>
+        <a href="assets/images/posts/114/dashboard.png" title="Dashboard" data-gallery><img src="assets/images/posts/114/dashboard-thumb.png"></a>
         <figcaption>Dashboard</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/114/blogstack.png" title="Monitor Blog Stack" data-gallery><img src="assets/images/custom/posts/114/blogstack-thumb.png"></a>
+        <a href="assets/images/posts/114/blogstack.png" title="Monitor Blog Stack" data-gallery><img src="assets/images/posts/114/blogstack-thumb.png"></a>
         <figcaption>Monitor Blog Stack</figcaption>
     </figure>
 </div>

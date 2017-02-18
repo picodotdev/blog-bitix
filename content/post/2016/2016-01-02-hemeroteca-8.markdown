@@ -83,11 +83,11 @@ El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo t
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/118/analytics-2015.png" title="Analytics 2015 de Blog Bitix" data-gallery><img src="assets/images/custom/posts/118/analytics-2015-thumb.png"></a>
+        <a href="assets/images/posts/118/analytics-2015.png" title="Analytics 2015 de Blog Bitix" data-gallery><img src="assets/images/posts/118/analytics-2015-thumb.png"></a>
         <figcaption>Analytics 2015 de Blog Bitix</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/118/adsense-2015.png" title="AdSense 2015 de Blog Bitix" data-gallery><img src="assets/images/custom/posts/118/adsense-2015-thumb.png"></a>
+        <a href="assets/images/posts/118/adsense-2015.png" title="AdSense 2015 de Blog Bitix" data-gallery><img src="assets/images/posts/118/adsense-2015-thumb.png"></a>
         <figcaption>AdSense 2015 de Blog Bitix</figcaption>
     </figure>
 </div>

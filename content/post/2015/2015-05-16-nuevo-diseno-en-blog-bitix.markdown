@@ -30,8 +30,8 @@ Entre las cosas de diseño que quería cambiar estaba la cabecera intentando que
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/80/blog-bitix-hugo.jpg" title="Diseño nuevo" data-gallery><img src="assets/images/custom/posts/80/blog-bitix-hugo-thumb.jpg"></a>
-        <a href="assets/images/custom/posts/80/blog-bitix-octopress.jpg" title="Diseño anterior" data-gallery><img src="assets/images/custom/posts/80/blog-bitix-octopress-thumb.jpg"></a>
+        <a href="assets/images/posts/80/blog-bitix-hugo.jpg" title="Diseño nuevo" data-gallery><img src="assets/images/posts/80/blog-bitix-hugo-thumb.jpg"></a>
+        <a href="assets/images/posts/80/blog-bitix-octopress.jpg" title="Diseño anterior" data-gallery><img src="assets/images/posts/80/blog-bitix-octopress-thumb.jpg"></a>
         <figcaption>Diseño de Blog Bitix ahora con Hugo y antes con Octopress</figcaption>
     </figure>
 </div>

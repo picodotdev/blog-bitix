@@ -18,7 +18,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion", "tapestry"]
 Hace ya unos años comentaba [varios motivos para elegir Apache Tapestry][elblogdepicodev-motivos-para-elegir-apache-tapestry] como _framework_ para desarrollar una aplicación o página web. Entre las varias razones comentaba la productividad como característica destacada. Uno de los motivos de esta productividad era por la alta reutilización de código que se puede conseguir al usar los componentes múltiples veces en un mismo proyecto o en diferentes proyectos creando una librería de componentes como comento más detalladamente en el [libro PugIn Tapestry][blogbitix-12]. Otra parte de la productividad que comentaba más ligeramente era poder detectar de forma rápida errores de compilación no solo en el código Java a través del IDE sino porque con [Tapestry][tapestry] es posible detectar errores de compilación en todas las plantillas tml que generan el html fácil y rápidamente con un botón sin tener que probar manualmente toda la funcionalidad. El tema de este artículo es mostrar más en detalle como detectar los errores de compilación en las vistas con este _framework_.
 
 <div class="logotypes" style="float: right; text-align: right;">
-	<img src="assets/images/custom/logotipos/java.png" class="right" alt="Java" title="Java">
+	<img src="assets/images/logotipos/java.png" class="right" alt="Java" title="Java">
 </div>
 
 Por «errores de compilación» me refiero a ese tipo de erorres que hace el código ni siquiera pueda ser interpretado correctamente por el computador, puede ser porque falta un _import_, un nombre de variable, propiedad o método mal puesto y que no existe... Poder detectar errores de compilación fácilmente en toda la aplicación es tremendamente útil y evitará que lleguen a producción con las consiguientes molestias para los usuarios y que posteriormente tengamos que dedicar tiempo a corregirlos cuando hemos perdido el contexto de las modificaciones hechas. También tendremos más seguridad de que no introducimos errores al hacer _refactorizaciones_ importantes en el código. Los errores de compilación suelen ser fáciles y rápidos de corregir pero igualmente pueden impedir totalmente el uso de la aplicación. Cuando antes detectemos los errores más fácilmente los corregiremos y más productivos seremos ya que evitaremos corregirlos en un momento posterior en que costará más tiempo y esfuerzo, además de tener que realizar un nuevo despliegue con los cambios corregidos que dependiendo del tiempo que nos lleve puede suponer otro problema.
@@ -28,20 +28,20 @@ La errores de compilación no depende de escribir pocas lineas de código o ahor
 Con Java y un IDE podremos detectar los errores de compilación que en un lenguaje dinámico solo observaremos en tiempo de ejecución. En Tapestry además podemos detectar los errores de compilación en las plantillas tml que generan el contenido html con un botón en la [página Dashboard][blogbitix-28] que ofrece incorporada Tapestry. Usando como ejemplo la aplicación que hice para el [libro PlugIn Tapestry][blogbitix-12] vamos a ver como detectar estos errores. De forma intencionada introduciré un error en la página que muestra el detalle de un producto en el mantenimiento CRUD del ejemplo. En vez de _producto.nombre_ introduciré el error de compilación poniendo _producto.nombra_, _nombra_ es una propiedad que no existe en la clase _Producto_, error que solo detectaremos después de crear un producto en otros frameworks al ejercitar el código pero que en Tapestry detectaremos también desde la página Dashboard. Por otra parte dado que en Tapestry las plantillas tml son xml válido si una etiqueta está mal balanceada también nos avisará.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/73/producto.png" title="Edición de un producto" data-gallery><img src="assets/images/custom/posts/73/producto.png"></a>
+	<a href="assets/images/posts/73/producto.png" title="Edición de un producto" data-gallery><img src="assets/images/posts/73/producto.png"></a>
 </div>
 
 {{< gist picodotdev 4d203a47590ea87ac99e "ProductoAdmin.tml" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/73/error.png" title="Error de compilación al acceder a la página" data-gallery><img src="assets/images/custom/posts/73/error.png"></a>
+	<a href="assets/images/posts/73/error.png" title="Error de compilación al acceder a la página" data-gallery><img src="assets/images/posts/73/error.png"></a>
 </div>
 
 Entrando a la [página Dashboard][blogbitix-28] y pulsando el botón _Load all pages_ detectaremos el error sin necesidad de crear un producto. El error es el siguiente que nos indicará claramente en que página o componente se ha producido el error y una descripción bastante clara de la causa del problema.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/73/dashboard.png" title="Página dashboard" data-gallery><img src="assets/images/custom/posts/73/dashboard.png"></a>
-	<a href="assets/images/custom/posts/73/error-dashboard.png" title="Página dashboard" data-gallery><img src="assets/images/custom/posts/73/error-dashboard.png"></a>
+	<a href="assets/images/posts/73/dashboard.png" title="Página dashboard" data-gallery><img src="assets/images/posts/73/dashboard.png"></a>
+	<a href="assets/images/posts/73/error-dashboard.png" title="Página dashboard" data-gallery><img src="assets/images/posts/73/error-dashboard.png"></a>
 </div>
 
 En la imagen con el mensaje del error se puede ver de forma muy detallada cual es la causa, nos indica que el error está en la página _admin/Producto_ y que la clase _es.com.blogspot.elblogdepicodev.plugintapestry.Producto_ no tiene una propiedad llamada _nombra_, con este mensaje rápidamente nos damos cuenta del error de escritura que hemos cometido, corregirlo basta con sustituir _nombra_ por _nombre_ y pulsando de nuevo el botón _Load all pages_ comprobamos que no hay más errores en esa misma página o ninguna otra de la aplicación.

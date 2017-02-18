@@ -30,7 +30,7 @@ Después de introducir la dirección del sitio web, que con estas herramientas h
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/115/w3c-linkchecker.png" title="W3C Link Checker" data-gallery><img src="assets/images/custom/posts/115/w3c-linkchecker-thumb.png"></a>
+        <a href="assets/images/posts/115/w3c-linkchecker.png" title="W3C Link Checker" data-gallery><img src="assets/images/posts/115/w3c-linkchecker-thumb.png"></a>
         <figcaption>W3C Link Checker</figcaption>
     </figure>
 </div>
@@ -41,7 +41,7 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/115/wget.png" title="Comprobación de enlaces con wget" data-gallery><img src="assets/images/custom/posts/115/wget-thumb.png"></a>
+        <a href="assets/images/posts/115/wget.png" title="Comprobación de enlaces con wget" data-gallery><img src="assets/images/posts/115/wget-thumb.png"></a>
         <figcaption>Comprobación de enlaces con wget</figcaption>
     </figure>
 </div>

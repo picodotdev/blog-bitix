@@ -48,7 +48,7 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/100/helloworld.png" title="Aplicación ¡Hola Mundo!" data-gallery><img src="assets/images/custom/posts/100/helloworld-thumb.png"></a>
+        <a href="assets/images/posts/100/helloworld.png" title="Aplicación ¡Hola Mundo!" data-gallery><img src="assets/images/posts/100/helloworld-thumb.png"></a>
         <figcaption>Aplicación ¡Hola Mundo! con JavaFX</figcaption>
     </figure>
 </div>
@@ -62,11 +62,11 @@ En las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/j
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/100/ensemble.png" title="Aplicación Ensemble" data-gallery><img src="assets/images/custom/posts/100/ensemble-thumb.png"></a>
+        <a href="assets/images/posts/100/ensemble.png" title="Aplicación Ensemble" data-gallery><img src="assets/images/posts/100/ensemble-thumb.png"></a>
         <figcaption>Aplicación Ensemble</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/100/modena.png" title="Aplicación Modena" data-gallery><img src="assets/images/custom/posts/100/modena-thumb.png"></a>
+        <a href="assets/images/posts/100/modena.png" title="Aplicación Modena" data-gallery><img src="assets/images/posts/100/modena-thumb.png"></a>
         <figcaption>Aplicación Modena</figcaption>
     </figure>
 </div>

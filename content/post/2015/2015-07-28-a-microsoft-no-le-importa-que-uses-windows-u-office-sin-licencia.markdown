@@ -23,7 +23,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/92/windows-10.png" title="Windows 10" data-gallery><img src="assets/images/custom/posts/92/windows-10.png"></a>
+        <a href="assets/images/posts/92/windows-10.png" title="Windows 10" data-gallery><img src="assets/images/posts/92/windows-10.png"></a>
     </figure>
 </div>
 
@@ -31,7 +31,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/92/linux-gnu-ditributions.png" title="Linux, GNU, distribuciones" data-gallery><img src="assets/images/custom/posts/92/linux-gnu-ditributions.png"></a>
+        <a href="assets/images/posts/92/linux-gnu-ditributions.png" title="Linux, GNU, distribuciones" data-gallery><img src="assets/images/posts/92/linux-gnu-ditributions.png"></a>
     </figure>
 </div>
 
@@ -41,7 +41,7 @@ Solo hay que ver las millonadas obscenas que se adjudican en [contratos para la 
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/92/windows-genuine.jpg" title="Windows Genuine" data-gallery><img src="assets/images/custom/posts/92/windows-genuine.jpg"></a>
+        <a href="assets/images/posts/92/windows-genuine.jpg" title="Windows Genuine" data-gallery><img src="assets/images/posts/92/windows-genuine.jpg"></a>
     </figure>
 </div>
 

@@ -18,7 +18,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 Hace un poco más de una año publiqué el [libro PlugIn Tapestry][blogbitix-12] que como su nombre ya adelanta versa sobre el framework [Apache Tapestry][tapestry] para el desarrollo de aplicaciones y páginas web con Java. Casi 300 páginas de documentación que describen este framework, como usarlo y va más allá explicando como realizar algunas de las tareas comunes que es necesario hacer en casi todas las aplicaciones web independientemente del framework que elijamos pero en este caso visto desde el punto de vista de Tapestry.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/12/portada-PugInTapestry.png" title="Libro sobre Apache Tapestry" data-gallery><img src="assets/images/custom/posts/12/portada-PugInTapestry-thumb.png"></a>
+	<a href="assets/images/posts/12/portada-PugInTapestry.png" title="Libro sobre Apache Tapestry" data-gallery><img src="assets/images/posts/12/portada-PugInTapestry-thumb.png"></a>
 </div>
 
 En esta actualización he revisado capítulos como el Inicio rápido para empezar a desarrollar en unos pocos minutos, la sección que trata sobre Plantillas para dar a las páginas un aspecto común, la sección que trata sobre unas Convenciones para los archivos de literales, ampliada la sección de Principios en la que se detalla cuales son las ideas y objetivos por los que se rige el framework, también reescrita la sección de Integración con Spring, una de las librerías más usadas y que facilita el desarrollo enormemente. 
@@ -40,9 +40,9 @@ Pero además he incluido nuevo contenido que he publicado en diferentes artícul
 	<h3>¡Y luego compártelo!</h3>
 
 	<span class="st_twitter_vcount" st_title="He descargado el libro sobre desarrollo de apps web con Apache Tapestry. ¡Obtén tu copia! #PlugIn"st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="prop:getAbsoluteURL('context:img/tapestry5.png')" st_via="picodotdev"></span>
-	<span class="st_facebook_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/custom/logotipos/apache-tapestry.png"></span>
-	<span class="st_googleplus_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/custom/logotipos/apache-tapestry.png"></span>
-	<span class="st_linkedin_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/custom/logotipos/apache-tapestry.png"></span>
+	<span class="st_facebook_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/logotipos/apache-tapestry.png"></span>
+	<span class="st_googleplus_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/logotipos/apache-tapestry.png"></span>
+	<span class="st_linkedin_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="http://picodotdev.github.io/blog-bitix/images/logotipos/apache-tapestry.png"></span>
 </div>
 
 {{% /post %}}

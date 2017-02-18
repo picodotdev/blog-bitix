@@ -51,7 +51,7 @@ Este sería el inicio del servidor de configuración y el documento JSON que dev
 {{% asciinema id="30811" caption="Inicio del servidor Spring Cloud Config" %}}
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/112/spring-cloud-client-prod.png" title="Configuración de la aplicación para el entorno de producción" data-gallery><img src="assets/images/custom/posts/112/spring-cloud-client-prod-thumb.png"></a>
+        <a href="assets/images/posts/112/spring-cloud-client-prod.png" title="Configuración de la aplicación para el entorno de producción" data-gallery><img src="assets/images/posts/112/spring-cloud-client-prod-thumb.png"></a>
         <figcaption>Configuración de la aplicación para el entorno de producción</figcaption>
     </figure>
 </div>

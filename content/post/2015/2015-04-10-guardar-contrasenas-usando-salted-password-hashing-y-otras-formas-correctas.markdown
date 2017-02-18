@@ -20,7 +20,7 @@ Para cada servicio deberíamos emplear una contraseña de una longitud de al men
 ### Algo de teoría y algunas explicaciones
 
 <div class="logotypes" style="float: right; text-align: right;">
-	<img src="assets/images/custom/logotipos/java.png" class="right" alt="Java" title="Java">
+	<img src="assets/images/logotipos/java.png" class="right" alt="Java" title="Java">
 </div>
 
 Aunque guardemos las contraseñas con MD5 o alguna variante de SHA hoy en día no es suficiente para que en caso de que alguien obtenga los _hashes_ de las contraseñas de la base de datos pueda averiguarlas o dar con una que genere el mismo _hash_, usando estas funciones se pueden encontrar colisiones en un tiempo razonable y por tanto ya no se consideran seguras. Dada la computación actual de los procesadores y las tarjetas gráficas una contraseña débil puede romperse usando un [ataque de fuerza bruta](https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta) y quizá antes con un [ataque de diccionario](https://es.wikipedia.org/wiki/Ataque_de_diccionario) que pruebe las más comunes. Muchos usuarios no tienen contraseñas largas ni utilizan letras en minúscula, mayúscula, números y símbolos, muchos usuarios utilizan contraseñas sencillas para ser recordadas más fácilmente, y aún _hasheando_ las contraseñas pueden ser averiguadas. También se pueden usar [tablas arcoiris](https://es.wikipedia.org/wiki/Tabla_arco%C3%ADris) o _rainbow tables_ con los _hashes_ precalculados de las contraseñas de un diccionario con lo que el tiempo empleado para romper una puede requerir poco tiempo de computación.
@@ -45,7 +45,7 @@ En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe 
 El cambio de _Realm_ para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con _root_ como usuario y _password_ como contraseña.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/75/formulario-inicio-sesion.png" title="Formulario de inicio de sesión" data-gallery><img src="assets/images/custom/posts/75/formulario-inicio-sesion.png"></a>
+    <a href="assets/images/posts/75/formulario-inicio-sesion.png" title="Formulario de inicio de sesión" data-gallery><img src="assets/images/posts/75/formulario-inicio-sesion.png"></a>
 </div>
 
 Este es todo el código que necesitamos para la implementación de contraseñas codificadas con una función de _hashing_, en este caso SHA-512, y un _salt_, no es mucho y además es bastante simple la implementación con Shiro y en este caso en una aplicación usando el _framework_ Apache Tapestry. Estas pocas líneas de código pueden aumentar notablemente la seguridad de las contraseñas que guardamos en la base de datos. En el caso de que la base de datos se vea comprometida será más difícil para alguien con malas intenciones obtener las contraseñas originales.
@@ -63,7 +63,7 @@ El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado 
 {{< gist picodotdev c718273bc1a5ec76831b "gradlew.sh" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/custom/posts/75/iniciar-sesion.png" title="Botón de inicio de sesión" data-gallery><img src="assets/images/custom/posts/75/iniciar-sesion.png"></a>
+    <a href="assets/images/posts/75/iniciar-sesion.png" title="Botón de inicio de sesión" data-gallery><img src="assets/images/posts/75/iniciar-sesion.png"></a>
 </div>
 
 ### Nota final

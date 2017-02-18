@@ -26,7 +26,7 @@ Intentando implementar en código una posible solución aplicando el patrón Str
 {{< gist picodotdev 0ec7ceb33a4a78ef1bc2 "MainTest.java" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/56/teses-junit.png" title="Ejecución de teses" data-gallery><img src="assets/images/custom/posts/56/teses-junit.png"></a>
+	<a href="assets/images/posts/56/teses-junit.png" title="Ejecución de teses" data-gallery><img src="assets/images/posts/56/teses-junit.png"></a>
 </div>
 
 Aun practicando estas katas no va a hacer que luego nuestro código en un proyecto real sea perfecto ni siquiera algo cercano a ello más bien hará que sea un poquito mejor, estos ejercicios son bastante simples que no tienen las complejidades de algunos casos reales, aún así siguen mereciendo realizarlos. También hay que tener en cuenta que no son realmente para aprender a programar aunque si pueden servir para aprender un nuevo lenguaje sobre todo si se hacen con otra persona que ya lo conoce y mientras se realiza la kata podemos preguntarle y nos resuelva las dudas que nos vayan surgiendo de la sintaxis, API o herramientas de ese lenguaje.

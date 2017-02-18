@@ -23,7 +23,7 @@ Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplic
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/102/javafx-scene-builder.png" title="JavaFX Scene Builder con la aplicación ¡Hola Mundo!" data-gallery><img src="assets/images/custom/posts/102/javafx-scene-builder-thumb.png"></a>
+        <a href="assets/images/posts/102/javafx-scene-builder.png" title="JavaFX Scene Builder con la aplicación ¡Hola Mundo!" data-gallery><img src="assets/images/posts/102/javafx-scene-builder-thumb.png"></a>
         <figcaption>JavaFX Scene Builder con la aplicación ¡Hola Mundo!</figcaption>
     </figure>
 </div>
@@ -40,7 +40,7 @@ En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de contro
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/102/controles-javafx-scene-builder.png" title="Controles de JavaFX" data-gallery><img src="assets/images/custom/posts/102/controles-javafx-scene-builder-thumb.png"></a>
+        <a href="assets/images/posts/102/controles-javafx-scene-builder.png" title="Controles de JavaFX" data-gallery><img src="assets/images/posts/102/controles-javafx-scene-builder-thumb.png"></a>
         <figcaption>Controles de JavaFX</figcaption>
     </figure>
 </div>
@@ -53,7 +53,7 @@ La clase manejador de eventos se indica en el panel _Controller_ y es una clase 
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/102/javafx-scene-builder-controller.png" title="Añadiendo comportamiento a aplicación JavaFX" data-gallery><img src="assets/images/custom/posts/102/javafx-scene-builder-controller-thumb.png"></a>
+        <a href="assets/images/posts/102/javafx-scene-builder-controller.png" title="Añadiendo comportamiento a aplicación JavaFX" data-gallery><img src="assets/images/posts/102/javafx-scene-builder-controller-thumb.png"></a>
         <figcaption>Añadiendo comportamiento a aplicación JavaFX</figcaption>
     </figure>
 </div>
@@ -62,7 +62,7 @@ Además de poder enlazar los componente visuales con el código para añadirles 
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/102/propiedades-javafx-scene-builder.png" title="Propiedades de los controles JavaFX" data-gallery><img src="assets/images/custom/posts/102/propiedades-javafx-scene-builder-thumb.png"></a>
+        <a href="assets/images/posts/102/propiedades-javafx-scene-builder.png" title="Propiedades de los controles JavaFX" data-gallery><img src="assets/images/posts/102/propiedades-javafx-scene-builder-thumb.png"></a>
         <figcaption>Propiedades de los controles JavaFX, en este caso de un botón</figcaption>
     </figure>
 </div>
@@ -71,11 +71,11 @@ Entre las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwor
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/102/modena.png" title="Aplicación Modena" data-gallery><img src="assets/images/custom/posts/102/modena-thumb.png"></a>
+        <a href="assets/images/posts/102/modena.png" title="Aplicación Modena" data-gallery><img src="assets/images/posts/102/modena-thumb.png"></a>
         <figcaption>Aplicación Modena</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/102/ensemble.png" title="Aplicación Ensemble" data-gallery><img src="assets/images/custom/posts/102/ensemble-thumb.png"></a>
+        <a href="assets/images/posts/102/ensemble.png" title="Aplicación Ensemble" data-gallery><img src="assets/images/posts/102/ensemble-thumb.png"></a>
         <figcaption>Aplicación Ensemble</figcaption>
     </figure>
 </div>

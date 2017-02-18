@@ -25,13 +25,13 @@ Dado que en GNU/Linux hay muchas distribuciones un nuevo usuario puede sentirse 
 
 <div class="media" style="text-align: center;">
   <figure>
-    <img src="assets/images/custom/logotipos/ubuntu.png" alt="Ubuntu" title="Ubuntu">
-    <img src="assets/images/custom/logotipos/opensuse.png" alt="openSUSE" title="openSUSE">
-    <img src="assets/images/custom/logotipos/debian.png" alt="Debian" title="Debian">
-    <img src="assets/images/custom/logotipos/archlinux-arch.png" alt="Arch Linux" title="Arch Linux">
-    <img src="assets/images/custom/logotipos/fedora.png" alt="Fedora" title="Fedora">
-    <img src="assets/images/custom/logotipos/elementary.png" alt="Elementary OS" title="Elementary OS">
-    <img src="assets/images/custom/logotipos/trisquel.png" alt="Trisquel" title="Trisquel">
+    <img src="assets/images/logotipos/ubuntu.png" alt="Ubuntu" title="Ubuntu">
+    <img src="assets/images/logotipos/opensuse.png" alt="openSUSE" title="openSUSE">
+    <img src="assets/images/logotipos/debian.png" alt="Debian" title="Debian">
+    <img src="assets/images/logotipos/archlinux-arch.png" alt="Arch Linux" title="Arch Linux">
+    <img src="assets/images/logotipos/fedora.png" alt="Fedora" title="Fedora">
+    <img src="assets/images/logotipos/elementary.png" alt="Elementary OS" title="Elementary OS">
+    <img src="assets/images/logotipos/trisquel.png" alt="Trisquel" title="Trisquel">
     <figcaption>Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas</figcaption>
   </figure>
 </div>

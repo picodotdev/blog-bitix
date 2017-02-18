@@ -36,7 +36,7 @@ Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos e
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/91/docker-root.png" title="Directorio raíz de docker" data-gallery><img src="assets/images/custom/posts/91/docker-root.png"></a>
+        <a href="assets/images/posts/91/docker-root.png" title="Directorio raíz de docker" data-gallery><img src="assets/images/posts/91/docker-root.png"></a>
         <figcaption>Directorio raíz de docker</figcaption>
     </figure>
 </div>

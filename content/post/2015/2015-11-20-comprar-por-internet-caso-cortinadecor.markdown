@@ -23,15 +23,15 @@ Desde hace un tiempo quería comprar unos estores tanto para la habitación como
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/111/soportes.jpg" title="Soportes" data-gallery><img src="assets/images/custom/posts/111/soportes-thumb.jpg"></a>
+        <a href="assets/images/posts/111/soportes.jpg" title="Soportes" data-gallery><img src="assets/images/posts/111/soportes-thumb.jpg"></a>
         <figcaption>Soportes</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/111/soportes-montados.jpg" title="Soportes montados" data-gallery><img src="assets/images/custom/posts/111/soportes-montados-thumb.jpg"></a>
+        <a href="assets/images/posts/111/soportes-montados.jpg" title="Soportes montados" data-gallery><img src="assets/images/posts/111/soportes-montados-thumb.jpg"></a>
         <figcaption>Soportes montados</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/111/elementos.jpg" title="Elementos" data-gallery><img src="assets/images/custom/posts/111/elementos-thumb.jpg"></a>
+        <a href="assets/images/posts/111/elementos.jpg" title="Elementos" data-gallery><img src="assets/images/posts/111/elementos-thumb.jpg"></a>
         <figcaption>Elementos</figcaption>
     </figure>
 </div>
@@ -40,11 +40,11 @@ Tratando de buscar unos estores en más medidas y con la posibilidad de elegir l
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/111/personalizacion-1.png" title="Opciones personalización 1-5" data-gallery><img src="assets/images/custom/posts/111/personalizacion-1-thumb.png"></a>
+        <a href="assets/images/posts/111/personalizacion-1.png" title="Opciones personalización 1-5" data-gallery><img src="assets/images/posts/111/personalizacion-1-thumb.png"></a>
         <figcaption>Opciones personalización 1-5</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/111/personalizacion-2.png" title="Opciones personalización 6-10" data-gallery><img src="assets/images/custom/posts/111/personalizacion-2-thumb.png"></a>
+        <a href="assets/images/posts/111/personalizacion-2.png" title="Opciones personalización 6-10" data-gallery><img src="assets/images/posts/111/personalizacion-2-thumb.png"></a>
         <figcaption>Opciones personalización 6-10</figcaption>
     </figure>
 </div>
@@ -53,7 +53,7 @@ Siguiendo con la compra de los estores tenía dudas sobre como serían los tejid
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/111/muestras.jpg" title="Muestras tejido translúcido, 1% apertura y 5% apertura" data-gallery><img src="assets/images/custom/posts/111/muestras-thumb.jpg"></a>
+        <a href="assets/images/posts/111/muestras.jpg" title="Muestras tejido translúcido, 1% apertura y 5% apertura" data-gallery><img src="assets/images/posts/111/muestras-thumb.jpg"></a>
         <figcaption>Muestras tejido translúcido, 1% apertura y 5% apertura</figcaption>
     </figure>
 </div>
@@ -64,11 +64,11 @@ Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso bá
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/111/cajas.jpg" title="Cajas embalaje" data-gallery><img src="assets/images/custom/posts/111/cajas-thumb.jpg"></a>
+        <a href="assets/images/posts/111/cajas.jpg" title="Cajas embalaje" data-gallery><img src="assets/images/posts/111/cajas-thumb.jpg"></a>
         <figcaption>Cajas embalaje</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/111/detelle-logotipo.jpg" title="Detalle logotipo" data-gallery><img src="assets/images/custom/posts/111/detelle-logotipo-thumb.jpg"></a>
+        <a href="assets/images/posts/111/detelle-logotipo.jpg" title="Detalle logotipo" data-gallery><img src="assets/images/posts/111/detelle-logotipo-thumb.jpg"></a>
         <figcaption>Detalle logotipo</figcaption>
     </figure>
 </div>
@@ -81,11 +81,11 @@ La calidad del producto, igual de importante el buen servicio de atención al cl
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/111/estores-colocados.jpg" title="Estores colocados" data-gallery><img src="assets/images/custom/posts/111/estores-colocados-thumb.jpg"></a>
+        <a href="assets/images/posts/111/estores-colocados.jpg" title="Estores colocados" data-gallery><img src="assets/images/posts/111/estores-colocados-thumb.jpg"></a>
         <figcaption>Estores colocados</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/111/pelicula-adhesiva-cristal.jpg" title="Película adhesiva cristal" data-gallery><img src="assets/images/custom/posts/111/pelicula-adhesiva-cristal-thumb.jpg"></a>
+        <a href="assets/images/posts/111/pelicula-adhesiva-cristal.jpg" title="Película adhesiva cristal" data-gallery><img src="assets/images/posts/111/pelicula-adhesiva-cristal-thumb.jpg"></a>
         <figcaption>Película adhesiva cristal</figcaption>
     </figure>
 </div>

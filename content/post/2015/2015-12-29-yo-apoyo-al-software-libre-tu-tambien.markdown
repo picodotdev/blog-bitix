@@ -35,7 +35,7 @@ Finalmente como tenía intención, hice una donación a la [organización Europe
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/117/fsfe-t-shirts.jpg" title="Camisetas FSFE" data-gallery><img src="assets/images/custom/posts/117/fsfe-t-shirts-thumb.jpg"></a>
+        <a href="assets/images/posts/117/fsfe-t-shirts.jpg" title="Camisetas FSFE" data-gallery><img src="assets/images/posts/117/fsfe-t-shirts-thumb.jpg"></a>
         <figcaption>Camisetas FSFE</figcaption>
     </figure>
 </div>
@@ -50,7 +50,7 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/117/fsfe-t-shirts.png" title="Pago PayPal" data-gallery><img src="assets/images/custom/posts/117/fsfe-t-shirts-thumb.png"></a>
+        <a href="assets/images/posts/117/fsfe-t-shirts.png" title="Pago PayPal" data-gallery><img src="assets/images/posts/117/fsfe-t-shirts-thumb.png"></a>
         <figcaption>Pago PayPal</figcaption>
     </figure>
 </div>

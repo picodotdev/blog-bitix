@@ -43,11 +43,11 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/119/windows-10.png" title="Windows 10" data-gallery><img src="assets/images/custom/posts/119/windows-10-thumb.png"></a>
+        <a href="assets/images/posts/119/windows-10.png" title="Windows 10" data-gallery><img src="assets/images/posts/119/windows-10-thumb.png"></a>
         <figcaption>Windows 10</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/119/microsoft-word-2016.png" title="Microsoft Word 2016" data-gallery><img src="assets/images/custom/posts/119/microsoft-word-2016-thumb.png"></a>
+        <a href="assets/images/posts/119/microsoft-word-2016.png" title="Microsoft Word 2016" data-gallery><img src="assets/images/posts/119/microsoft-word-2016-thumb.png"></a>
         <figcaption>Microsoft Word 2016</figcaption>
     </figure>
 </div>

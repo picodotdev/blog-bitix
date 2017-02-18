@@ -49,7 +49,7 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/106/basededatos.png" title="Base de datos con varios esquemas" data-gallery><img src="assets/images/custom/posts/106/basededatos.png"></a>
+        <a href="assets/images/posts/106/basededatos.png" title="Base de datos con varios esquemas" data-gallery><img src="assets/images/posts/106/basededatos.png"></a>
         <figcaption>Base de datos con varios esquemas, <i>inventory</i> y <i>purchases</i></figcaption>
     </figure>
 </div>

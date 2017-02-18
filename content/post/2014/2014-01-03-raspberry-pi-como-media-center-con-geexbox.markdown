@@ -41,12 +41,12 @@ Lo primero que haremos es [descargar la última versión de GeeXboX](http://www.
 Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar [GParted](http://gparted.org/). Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/5/geexbox-inicio.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-inicio-thumb.jpg"></a>
-	<a href="assets/images/custom/posts/5/geexbox-ajustes.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-ajustes-thumb.jpg"></a>
-	<a href="assets/images/custom/posts/5/geexbox-ajustes-video.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-ajustes-video-thumb.jpg"></a>
-	<a href="assets/images/custom/posts/5/geexbox-apariencia-ajustes.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-apariencia-ajustes-thumb.jpg"></a>
-	<a href="assets/images/custom/posts/5/geexbox-servicios.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-servicios-thumb.jpg"></a>
-	<a href="assets/images/custom/posts/5/geexbox-reproduccion.jpg" data-gallery><img src="assets/images/custom/posts/5/geexbox-reproduccion-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-inicio.jpg" data-gallery><img src="assets/images/posts/5/geexbox-inicio-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-ajustes.jpg" data-gallery><img src="assets/images/posts/5/geexbox-ajustes-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-ajustes-video.jpg" data-gallery><img src="assets/images/posts/5/geexbox-ajustes-video-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-apariencia-ajustes.jpg" data-gallery><img src="assets/images/posts/5/geexbox-apariencia-ajustes-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-servicios.jpg" data-gallery><img src="assets/images/posts/5/geexbox-servicios-thumb.jpg"></a>
+	<a href="assets/images/posts/5/geexbox-reproduccion.jpg" data-gallery><img src="assets/images/posts/5/geexbox-reproduccion-thumb.jpg"></a>
 </div>
 
 Como apunte a tener en cuenta es que para reproducir películas en formato imagen de DVD (iso) *intuyo* que se necesita adquirir la licencia MPEG-2 en la [tienda de la propia página de Raspberry Pi](http://www.raspberrypi.com/license-keys/). Para otros formatos como DivX (avi) o Matroska (mkv) no tendremos ningún problema en reproducir las películas y van totalmente fluídas. Otras opciones son bastante más potentes pero Pi ya tiene capacidad suficiente para reproducir películas a 1080p.

@@ -37,14 +37,14 @@ Descargado el [código fuente de la aplicación de ejemplo](https://github.com/p
 Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Podemos detener el servidor y volverlo a iniciar y comprobaremos que los datos de la sesión no se han perdido al estar persistidos en redis.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/70/dato-en-sesion.png" title="Dato en sesión" data-gallery><img src="assets/images/custom/posts/70/dato-en-sesion-thumb.png"></a>
-	<a href="assets/images/custom/posts/70/cookie-navegador.png" title="Cookie de sesión en el navegador" data-gallery><img src="assets/images/custom/posts/70/cookie-navegador-thumb.png"></a>
+	<a href="assets/images/posts/70/dato-en-sesion.png" title="Dato en sesión" data-gallery><img src="assets/images/posts/70/dato-en-sesion-thumb.png"></a>
+	<a href="assets/images/posts/70/cookie-navegador.png" title="Cookie de sesión en el navegador" data-gallery><img src="assets/images/posts/70/cookie-navegador-thumb.png"></a>
 </div>
 
 Examinando los datos en redis podemos ver que se ha creado una clave con el mismo identificativo de la cookie _SESSION_, en la clave están guardados los valores serializados entre ellos el nombre del atributo y su valor y otros datos como la fecha de creación, el último acceso y el intervalo máximo de inactividad antes de la expiración.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/70/contenido-sesion-redis.png" title="Contenido sesión en redis" data-gallery><img src="assets/images/custom/posts/70/contenido-sesion-redis-thumb.png"></a>
+	<a href="assets/images/posts/70/contenido-sesion-redis.png" title="Contenido sesión en redis" data-gallery><img src="assets/images/posts/70/contenido-sesion-redis-thumb.png"></a>
 </div>
 
 En el momento de escribir este artículo Spring Session es un proyecto reciente y solo soporta la opción de Redis como caché externa pero seguramente con nuevas versiones soporte otras opciones como memcached, guardar la sesión en una _cookie_ o en una base de datos relacional. La solución propuesta por Spring Session es válida para cualquier servidor de aplicaciones ya que se basa en crear un filtro en la aplicación que proporciona una versión modificada de [HttpSession](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) mediante el cual se guardan los datos de forma externa.

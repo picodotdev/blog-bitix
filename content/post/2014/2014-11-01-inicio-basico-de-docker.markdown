@@ -38,7 +38,7 @@ Con el comando «docker images», «docker ps», «docker ps -a» podemos respec
 {{< gist picodotdev 85b091f62b462deee318 "docker-4.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/50/docker-images.png" title="docker-images" data-gallery><img src="assets/images/custom/posts/50/docker-images-thumb.png"></a>
+	<a href="assets/images/posts/50/docker-images.png" title="docker-images" data-gallery><img src="assets/images/posts/50/docker-images-thumb.png"></a>
 </div>
 
 Con los comandos _docker rm [contenedor]_ y _docker rmi [imagen]_ podemos eliminar las instancias de contenedores y las imágenes que no estén siendo usadas por ningún contenedor, si están siendo usadas deberemos eliminar primero el contenedor.
@@ -50,7 +50,7 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 {{< gist picodotdev 85b091f62b462deee318 "docker-5.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/50/docker-pull.png" title="docker-pull" data-gallery><img src="assets/images/custom/posts/50/docker-pull-thumb.png"></a>
+	<a href="assets/images/posts/50/docker-pull.png" title="docker-pull" data-gallery><img src="assets/images/posts/50/docker-pull-thumb.png"></a>
 </div>
 
 Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:
@@ -64,7 +64,7 @@ Este es el momento para explicar otra de las peculiaridades de los contenedores 
 Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores docker en esencia no son más que procesos dentro del sistema.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/50/docker-run.png" title="docker-run" data-gallery><img src="assets/images/custom/posts/50/docker-run-thumb.png"></a>
+	<a href="assets/images/posts/50/docker-run.png" title="docker-run" data-gallery><img src="assets/images/posts/50/docker-run-thumb.png"></a>
 </div>
 
 Continuando esta serie de artículos sobre docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.

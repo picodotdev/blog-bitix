@@ -45,15 +45,15 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 
 <div class="media" style="text-align: center;">
     <figure>
-        <a href="assets/images/custom/posts/113/spring-boot-actuator-health.png" title="Spring Boot Actuator endpoint Health" data-gallery><img src="assets/images/custom/posts/113/spring-boot-actuator-health-thumb.png"></a>
+        <a href="assets/images/posts/113/spring-boot-actuator-health.png" title="Spring Boot Actuator endpoint Health" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-health-thumb.png"></a>
         <figcaption>Spring Boot Actuator endpoint Health</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/113/spring-boot-actuator-env.png" title="Spring Boot Actuator endpoint Env" data-gallery><img src="assets/images/custom/posts/113/spring-boot-actuator-env-thumb.png"></a>
+        <a href="assets/images/posts/113/spring-boot-actuator-env.png" title="Spring Boot Actuator endpoint Env" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-env-thumb.png"></a>
         <figcaption>Spring Boot Actuator endpoint Env</figcaption>
     </figure>
     <figure>
-        <a href="assets/images/custom/posts/113/spring-boot-actuator-metrics.png" title="Spring Boot Actuator endpoint Metrics" data-gallery><img src="assets/images/custom/posts/113/spring-boot-actuator-metrics-thumb.png"></a>
+        <a href="assets/images/posts/113/spring-boot-actuator-metrics.png" title="Spring Boot Actuator endpoint Metrics" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-metrics-thumb.png"></a>
         <figcaption>Spring Boot Actuator endpoint Metrics</figcaption>
     </figure>
 </div>

@@ -50,7 +50,7 @@ La implementación de appender para capturar las HQL que lanza grails es la sigu
 El resultado es el siguiente:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/custom/posts/26/grails-hibernate-statistics.png" title="Estadísticas de Hibernate en Grails"><img src="assets/images/custom/posts/26/grails-hibernate-statistics.png"></a>
+	<a href="assets/images/posts/26/grails-hibernate-statistics.png" title="Estadísticas de Hibernate en Grails"><img src="assets/images/posts/26/grails-hibernate-statistics.png"></a>
 </div>
 
 En la imagen se puede apreciar las consultas lanzadas y que parámetros se han empleado. El método doTest del controlador HibernateController cada vez que es ejecutado persiste una entidad de dominio Autor y posteriormente la borra lanzando una sentencia insert y otra delete, cada vez que es ejecutado las estadísticas cambian acordemente.

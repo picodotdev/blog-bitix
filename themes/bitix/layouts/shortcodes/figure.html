@@ -1,9 +1,9 @@
 <figure>
   {{ if .Params.image1 }}
-  <a href="assets/images/custom/posts/{{ .Page.Params.pid }}/{{ .Params.image1 }}" title="{{ .Params.title1 }}" data-gallery><img src="assets/images/custom/posts/{{ .Page.Params.pid }}/{{ .Params.thumb1 }}"/></a>
+  <a href="assets/images/posts/{{ .Page.Params.pid }}/{{ .Params.image1 }}" title="{{ .Params.title1 }}" data-gallery><img src="assets/images/posts/{{ .Page.Params.pid }}/{{ .Params.thumb1 }}"/></a>
   {{ end }}
   {{ if .Params.image2 }}
-  <a href="assets/images/custom/posts/{{ .Page.Params.pid }}/{{ .Params.image2 }}" title="{{ .Params.title2 }}" data-gallery><img src="assets/images/custom/posts/{{ .Page.Params.pid }}/{{ .Params.thumb2 }}"/></a>
+  <a href="assets/images/posts/{{ .Page.Params.pid }}/{{ .Params.image2 }}" title="{{ .Params.title2 }}" data-gallery><img src="assets/images/posts/{{ .Page.Params.pid }}/{{ .Params.thumb2 }}"/></a>
   {{ end }}
   <figcaption>{{ .Params.caption }}</figcaption>
 </figure>
