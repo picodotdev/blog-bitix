@@ -3,6 +3,7 @@ pid: 212
 title: "Desempaquetado del kit de iniciación a la electrónica para la Raspberry Pi"
 url: "/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/"
 date: 2017-02-25T11:00:00+01:00
+updated: 2017-02-25T23:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -29,7 +30,7 @@ En el año 2012 compré una de las primeras Raspberry Pi que estuvieron disponib
 * Salida de audio
 * Salida de vídeo
 
-Después de unos años se han lanzado versiones notablemente mejoradas, hasta la fecha la última es la [Raspberry Pi 3](http://amzn.to/2mmu6Os) de esta placa que multiplica por 4 la cantidad de memoria RAM hasta 1 GiB y con una CPU de 4 núcleos a una frecuencia de 1.2 Ghz basados en los procesadores ARM Cortex-A53 de 64 bits, incluyendo WIFI N y Bluetooth 4.1, 4 conectores USB, lector microSD y 26 pines GPIO. Aunque la finalidad original de este computador es el aprendizaje de programación y electrónica el uso principal que le he dado hasta ahora ha sido para hacer descargas P2P via torrent. Esta placa es muy popular debido a su bajo coste, tan solo de unos 35€ aunque hay que sumarle posteriormente el precio de una tarjeta microSD y el cargador para proporcionarle energía.
+Después de unos años se han lanzado versiones notablemente mejoradas, hasta la fecha la última es la [Raspberry Pi 3](http://amzn.to/2mmu6Os) de esta placa que multiplica por 4 la cantidad de memoria RAM hasta 1 GiB y con una CPU de 4 núcleos a una frecuencia de 1.2 Ghz basados en los procesadores ARM Cortex-A53 de 64 bits, incluyendo WIFI N y Bluetooth 4.1, 4 conectores USB, lector microSD y 26 pines GPIO. Aunque la finalidad original de este computador es el aprendizaje de programación y electrónica el uso principal que le he dado hasta ahora ha sido para hacer descargas P2P via torrent. Esta placa es muy popular debido a su bajo coste aunque hay que sumarle posteriormente el precio de una tarjeta microSD y el cargador para proporcionarle energía, su éxito no solo es debido a su coste ya que hay opciones aún más potentes en algunos aspectos a precio similar que no son tan populares, el valor diferenciador de la Raspberry Pi es el apoyo y soporte de la comunidad.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="212"
@@ -99,7 +100,7 @@ La matriz de conexiones o _breadboard_ es una forma cómoda de hacer pruebas sin
 
 Mi intención para este _kit_ es hacer unos pequeños ejemplos usando en cada uno de ellos uno o varios elementos y con el lenguaje de programación Java y la librería [Diozero][diozero]. Entre los ejemplos estará encender y apagar un LED, usar el _display_ de 16x2 caracteres, el sensor de temperatura y humedad, el sensor de infrarrojos, el motor, los pulsadores, el sensor de movimiento, los detectores de luz, el detector de golpes, etc...
 
-En la página del fabricante o distribuidor [Osoyoo](http://osoyoo.com/) mayorista hay colgados varios ejemplos usando varios de estos elementos. También deberemos hacernos con las referencias de los pines para saber las conexiones que debemos hacer con los cables junto con la tabla de referencia de colores de las resistencias. Para usar las tablas de referencia debemos saber que hay varias formas de numerar los pines está la del _header_ del 1 al 26 o del 1 al 40 secuencialmente según la disposición en el _header_, la que utiliza la librería [wiringPi][wiringpi] y [Pi4J][pi4j] para numerar los pines GPIO y la de Broadcom que utiliza la librería Diozero.
+En la página del fabricante o distribuidor mayorista [Osoyoo](http://osoyoo.com/) hay colgados varios ejemplos usando varios de estos elementos. También deberemos hacernos con las referencias de los pines para saber las conexiones que debemos hacer con los cables junto con la tabla de referencia de colores de las resistencias. Para usar las tablas de referencia debemos saber que hay varias formas de numerar los pines. Está la del _header_ del 1 al 26 o del 1 al 40 secuencialmente según la disposición en el _header_, la que utiliza la librería [wiringPi][wiringpi] y [Pi4J][pi4j] para numerar los pines GPIO y la de Broadcom que utiliza la librería Diozero. Estas tablas de referencia de nomenclatura son importantes porque cada una numera los pines de forma diferente, por ejemplo, según la numeración de wiringPi el pin número 3 corresponde al GPIO 8 cuando según la nomenclatura de Broadcom corresponde al GPIO 0 en el modelo RPi 1 modelo B rev1 y al GPIO 2 en la RPi 3.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="212"
@@ -115,7 +116,7 @@ En la página del fabricante o distribuidor [Osoyoo](http://osoyoo.com/) mayoris
         caption="Código de colores de las resistencias" >}}
 </div>
 
-Un ejemplo básico sin necesidad de programar nada es encender un diodo LED. Los elementos a usar son el diodo LED, una resistencia, los cables macho-macho, el cable de extensión y la matriz de puntos. Para ello conectamos el cable de extensión a la matriz de puntos donde con los cables macho-macho haremos las conexiones en los agujeros de la matriz de puntos. Usaremos la conexión de voltaje de 3.3V y una resistencia de 200 ohmios para que el LED no reciba demasiada intensidad.
+Un ejemplo básico sin necesidad de programar nada es encender un diodo LED. Los elementos a usar son el diodo LED, una resistencia, los cables macho-macho, el cable de extensión y la matriz de puntos. Para ello conectamos el cable de extensión a la matriz de puntos donde con los cables macho-macho haremos las conexiones en los agujeros de la matriz de puntos. Usaremos la conexión de voltaje de 3.3V y una resistencia de 200 ohmios para que el LED no reciba demasiada intensidad. Los diodos LED tienen dos patitas, una más corta que la otra que indican la polaridad, la corta es el polo negativo y se conecta a tierra, la larga es el polo positivo que se conecta a uno de los extremos de la resistencia y el otro extremo de esta la voltaje de 3.3V.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="212"
@@ -132,7 +133,7 @@ Con el programa [Fritzing](http://fritzing.org/home/) podremos prototipar y docu
         caption="Fritzing" >}}
 </div>
 
-En el siguiente artículo explicaré como crear un programa Java para encender y apagar varias veces un diodo LED. Además explicaré como con [Gradle][gradle], [SSH][ssh] y [Ansible][ansible] hacerlo de forma cómoda desde nuestra máquina de desarrollo y no directamente desde la más lenta Raspberry Pi.
+En el siguiente artículo explicaré como crear un programa Java para encender y apagar varias veces un diodo LED con la librería Doizero. Además explicaré como con [Gradle][gradle], [SSH][ssh] y [Ansible][ansible] hacerlo de forma cómoda desde nuestra máquina de desarrollo y no directamente desde la más lenta Raspberry Pi.
 
 _Software. Hardware. Complete._
 
