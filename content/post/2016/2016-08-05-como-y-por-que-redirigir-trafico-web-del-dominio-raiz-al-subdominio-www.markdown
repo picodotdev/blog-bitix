@@ -24,7 +24,7 @@ En el caso del tráfico web debemos evitar que el servidor y la página o aplica
 
 Esta es una de las cosas básicas que debemos realizar cuando instalemos un servidor web, otras cosas recomendadas para mejorar el SEO y la seguridad de los usuarios es [configurar el servidor web para usar el protocolo seguro HTTPS][blogbitix-129] y [configurar el servidor web para forzar el uso de HTTPS][blogbitix-151] también haciendo una redirección cuando la petición use el protocolo no cifrado HTTP entre otras cosas que indico en la [serie web][blogbitix-serie-web].
 
-Dependiendo del servidor web que utilicemos la configuración a añadir para hacer la redirección será distinta, a continuación indicaré como hacerlo en dos de los servidores web más populares como son [Nginx][nginx] y [Apache HTTPD][apache].
+Dependiendo del servidor web que utilicemos la configuración a añadir para hacer la redirección será distinta, a continuación indicaré como hacerlo en dos de los servidores web más populares como son [Nginx][nginx] y [Apache HTTPD][apache-httpd].
 
 ### Nginx
 

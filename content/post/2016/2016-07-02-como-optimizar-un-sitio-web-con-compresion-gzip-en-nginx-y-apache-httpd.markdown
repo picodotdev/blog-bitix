@@ -19,7 +19,7 @@ summary: "Comprimir el contenido es de utilidad para aquellos usuarios a los que
 
 Con las velocidades de transferencia que proporciona la fibra, el ADSL incluso el 4G o 3G de los móviles transmitir el contenido de una web desde el servidor al cliente ya no es el factor más determinante en el tiempo de carga de una página, lo es más la latencia de la red y el establecimiento de múltiples conexiones. Aún así hay usuarios que por una red de baja calidad o que esté saturada pueden tener tasas de transferencia bajas o puede que al usuario se le facture por la cantidad de datos que transmite. Por estos motivos aún hoy es buena idea activar en el servidor la compresión GZIP para que los datos transmitidos se compriman y reduzcan de forma significativa. La compresión GZIP es una optimización que podemos realizar para cualquier página web. Para mejorar la latencia en el establecimiento de conexiones es aconsejable [configurar HTTP/2 en el servidor web][blogbitix-129] para mejorar la velocidad de carga de la página.
 
-Dependiendo del servidor web la configuración que deberemos añadir será diferente, en este artículo mostraré la configuración a usar para dos de los servidores web más populares en internet, que son [Nginx][nginx] y [Apache HTTPD][apache].
+Dependiendo del servidor web la configuración que deberemos añadir será diferente, en este artículo mostraré la configuración a usar para dos de los servidores web más populares en internet, que son [Nginx][nginx] y [Apache HTTPD][apache-httpd].
 
 ### Nginx
 

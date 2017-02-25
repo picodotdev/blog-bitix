@@ -23,7 +23,7 @@ En [Apache Tapestry][tapestry] hay varias formas de forzar a que una determinada
 
 {{< gist picodotdev 6c28ea0e096d90c6aa9f "Login.java" >}}
 
-Probablemente nos interese configurar el puerto y el host que usará Tapestry al hacer la redirección para que coincidan con el usado en el servidor al que accede el usuario, sobre todo si en la aplicación usamos un servidor web proxy como [Apache][apache], [Lighttpd][lighttpd] o [Nginx][nginx] delante del servidor de aplicaciones donde realmente se ejecuta la aplicación web. El puerto seguro del protocolo https predeterminado es 443 pero en el servidor de aplicaciones tomcat por defecto es 8443. Esto en tapestry lo indicamos configurando con ciertos símbolos.
+Probablemente nos interese configurar el puerto y el host que usará Tapestry al hacer la redirección para que coincidan con el usado en el servidor al que accede el usuario, sobre todo si en la aplicación usamos un servidor web proxy como [Apache][apache-httpd], [Lighttpd][lighttpd] o [Nginx][nginx] delante del servidor de aplicaciones donde realmente se ejecuta la aplicación web. El puerto seguro del protocolo https predeterminado es 443 pero en el servidor de aplicaciones tomcat por defecto es 8443. Esto en tapestry lo indicamos configurando con ciertos símbolos.
 
 {{< gist picodotdev 6c28ea0e096d90c6aa9f "AppModule-1.java" >}}
 
