@@ -8,7 +8,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "programacion"]
-series: ["electronica"]
+series: ["electronica", "desempaquetado"]
 ---
 
 {{% post %}}
