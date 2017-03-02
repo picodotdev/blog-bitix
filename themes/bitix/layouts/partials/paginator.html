@@ -5,7 +5,7 @@
   <ul class="list-inline">
     <li class="col-md-4">
     {{ if $paginator.HasNext }}
-      <a href="{{ if $paginator.HasNext }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">&laquo;</span> {{ i18n "older" }}</a>
+      <a href="{{ if $paginator.HasNext }}{{ .Site.Params.context }}{{ $paginator.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">&laquo;</span> {{ i18n "older" }}</a>
     {{ end }}
     </li>
     <li class="col-md-4 text-center">
@@ -13,7 +13,7 @@
     </li>
     <li class="col-md-4 text-right">
     {{ if $paginator.HasPrev }}
-      <a href="{{ if $paginator.HasPrev }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous">{{ i18n "newer" }} <span aria-hidden="true">&raquo;</span></a>
+      <a href="{{ if $paginator.HasPrev }}{{ .Site.Params.context }}{{ $paginator.Prev.URL }}{{ end }}" aria-label="Previous">{{ i18n "newer" }} <span aria-hidden="true">&raquo;</span></a>
     {{ end }}
     </li>
   </ul>
