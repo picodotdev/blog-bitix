@@ -3,11 +3,12 @@ pid: 213
 title: "Ejemplo Hello World con Java en la Raspberry Pi"
 url: "/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/"
 date: 2017-03-04T11:00:00+01:00
+updated: 2017-03-04T23:00:00+01:00
 language: "es"
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["blog-stack", "gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
 series: ["electronica"]
 ---
 
@@ -17,7 +18,7 @@ series: ["electronica"]
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
-Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212]. Antes de empezar a cacharrear con los sensores y dipositivos de entrada y salida, con los pines GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la [Raspberry Pi][raspberrypi] usando [SSH][ssh], [rsync][rsync] para copiar los artefactos del equipo de desarrollo a la RPi y [Ansible][ansible] usándolo desde [Gradle][gradle] para lanzar comandos y ejecutar los ejemplos de forma remota.
+Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212]. Antes de empezar a cacharrear con los sensores y dipositivos de entrada y salida, con los pines GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la [Raspberry Pi][raspberrypi] usando [SSH][ssh], [rsync][rsync] para copiar los artefactos del equipo de desarrollo a la RPi y [Ansible][ansible] usándolo desde [Gradle][gradle] para lanzar comandos y ejecutar los ejemplos de forma remota aunque si no se quiere usar Ansible se pueden lanzar los comandos mediante SSH.
 
 En la Raspberry Pi deberemos instalar por supuesto [Java][java] (es posible usar Java 8) junto con SSH y rsync, configurar el servidor SSH en la RPi modificando el archivo _/etc/ssh/sshd\_config_, habilitar el servidor SSH, copiar nuestra [clave pública ssh generada previamente][blogbitix-13] al archivo _~/.ssh/authorized\_keys_ del usuario e instalar [Python][python] como requerimiento de Ansible. Los programas Java los escribiremos en un equipo más potente que la Raspberry Pi ya sea un portátil o un equipo de sobremesa con un IDE ya sea [IntelliJ][intellij], [eclipse][eclipse] u otro, también deberemos instalar Gradle, Ansible y rsync. En Arch Linux con los siguientes comandos del gestor de paquetes:
 
@@ -25,10 +26,11 @@ En la Raspberry Pi deberemos instalar por supuesto [Java][java] (es posible usar
 {{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "authorized_keys" >}}
 {{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "pacman.sh" >}}
 
-Con la ayuda de unas tareas para la herramienta de construcción Gradle haremos el despliegue y la ejecución de la librería _jar_ del proyecto de los ejemplos y de las dependencias que necesiten. El archivo de construcción de Gradle sería el siguiente en el que la tarea _copyDependencies_ copia las dependencias al directorio _build/libs_. La tarea _upload_ ejecutan el comando _rsync_ para subir el archivo _jar_ y las dependencias del proyecto a la Raspberry Pi. Finalmente, una tarea como _executeHelloWorld_ ejecutará el comando en la Raspberry Pi para lanzar el programa Java.
+Con la ayuda de unas tareas para la herramienta de construcción Gradle haremos el despliegue y la ejecución de la librería _jar_ del proyecto de los ejemplos y de las dependencias que necesiten. El archivo de construcción de Gradle sería el siguiente en el que la tarea _copyDependencies_ copia las dependencias al directorio _build/libs_. La tarea _upload_ ejecutan el comando _rsync_ para subir el archivo _jar_ y las dependencias del proyecto a la Raspberry Pi. Finalmente, una tarea como _executeHelloWorld_ ejecutará el comando en la Raspberry Pi para lanzar el programa Java. Con SSH también se puede lanzar el comando de forma remota cambiando la dirección IP de la Raspberry Pi por la que tenga asignada.
 
 {{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "build.gradle" >}}
-{{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "build.sh" >}}
+{{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "executeSSH.sh" >}}
+{{< gist picodotdev 2a2fb6ccb095ddaee5a1df0a5ebb0cae "executeGradle.sh" >}}
 
 El programa de ejemplo es universal gracias a la idea _«Write once, run anywhere»_ posibilitado por la máquina virtual o <abbr title="Java Virtual Machine">[JVM][jvm]</abbr> y el _bytecode_, está compilado en un sistema con arquitectura x64 (el de mi equipo) y ejecutado en un sistema con arquitectura arm (el de la RPi). No se diferencia en nada al que usaríamos para lo mismo en cualquier otro sistema distinto de la Raspberry Pi.
 
