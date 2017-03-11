@@ -2,7 +2,7 @@
 pid: 214
 title: "Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java"
 url: "/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/"
-alias: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"]
+aliases: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"]
 date: 2017-03-11T10:00:00+01:00
 updated: 2017-03-11T23:30:00+01:00
 language: "es"
@@ -73,6 +73,6 @@ El programa Java para hacer parpadear el diodo LED con la librería Diozero con 
 
 En un artículo anterior comento [como disponer de un entorno para desarrollar, desplegar las librerías _jar_ en la Raspberry Pi][blogbitix-213] y como ejecutar los ejemplos desde la línea de comandos usando una combinación de herramientas de [SSH][ssh], [rsync][rsync] y [Ansible][ansible].
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeBlink" %}}
+{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executePinBlink" %}}
 
 {{% /post %}}
