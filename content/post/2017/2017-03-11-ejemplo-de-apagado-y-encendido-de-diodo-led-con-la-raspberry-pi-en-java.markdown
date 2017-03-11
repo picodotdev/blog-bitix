@@ -4,7 +4,7 @@ title: "Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java"
 url: "/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/"
 aliases: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"]
 date: 2017-03-11T10:00:00+01:00
-updated: 2017-03-11T23:30:00+01:00
+updated: 2017-03-12T00:15:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -40,6 +40,9 @@ Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspber
         image1="breadboard-cableado.jpg" thumb1="breadboard-cableado-thumb.jpg" title1="Breadboard y placa extesión GPIO wiringPi de 26 pines"
         image2="gpio-extension-40-pines-board.jpg" thumb2="gpio-extension-40-pines-board-thumb.jpg" title2="Placa extesión GPIO de 40 pines"
         caption="Breadboard y placa extesión GPIO wiringPi de 26 pines y 40 pines" >}}
+    {{< figure pid="214"
+        image1="esquema-cableado.png" thumb1="esquema-cableado-thumb.png" title1="Esquema del cableado"
+        caption="Esquema del cableado" >}}
 </div>
 
 Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspberry Pi a otra placa para hacer pruebas sin soldadura también conocidas como _breadboard_  resultará que en el programa Java al usar Diozero uso la nomenclatura Broadcom para identificar los pines pero al conectar los cables en la placa de pruebas uso la nomenclatura de wiringPi.
