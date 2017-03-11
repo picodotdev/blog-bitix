@@ -38,7 +38,7 @@
             {{ range (where .Site.Pages "Section" "post").GroupByDate "2006" "desc" }}
               <h3>{{ .Key }}</h3>
               <ul>
-              {{ range .Pages }}
+              {{ range where .Pages "Title" "not in" (slice "Posts") }}
                 <li>
                   <article class="h-entry">
                     <a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a>
