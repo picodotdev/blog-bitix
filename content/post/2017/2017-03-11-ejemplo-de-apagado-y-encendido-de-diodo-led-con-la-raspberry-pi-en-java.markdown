@@ -1,8 +1,10 @@
 ---
 pid: 214
-title: "Ejemplo de apagado y encendido de diodo LED con la Raspberry Pi en Java"
-url: "/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"
+title: "Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java"
+url: "/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/"
+alias: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"]
 date: 2017-03-11T10:00:00+01:00
+updated: 2017-03-11T23:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -61,9 +63,9 @@ Las resistencias poseen cuatro bandas de colores que indican el valor en ohmios 
 
 El programa Java para hacer parpadear el diodo LED con la librería Diozero con el proveedor [pigpio](http://abyz.co.uk/rpi/pigpio/). El ejemplo consiste en activar y apagar el _pin_ sucesivamente en un bucle y usar el método [Thread.sleep](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep-long-) para que pase unos segundos entre uno y otro y nos de tiempo a ver el encendido y apagado. El nada complejo programa Java para controlar el diodo y un vídeo de su funcionamiento están a continuación.
 
-{{< gist picodotdev 96109f7f9631942d4ae20643e04d17cd "PinBlink.java" >}}
-{{< gist picodotdev 96109f7f9631942d4ae20643e04d17cd "executeSSH.sh" >}}
-{{< gist picodotdev 96109f7f9631942d4ae20643e04d17cd "executeGradle.sh" >}}
+{{< gist picodotdev 1fda899b7fbbc19a82bb397d525927f2 "PinBlink.java" >}}
+{{< gist picodotdev 1fda899b7fbbc19a82bb397d525927f2 "executeSSH.sh" >}}
+{{< gist picodotdev 1fda899b7fbbc19a82bb397d525927f2 "executeGradle.sh" >}}
 
 <div class="video-post" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/NX5tBxWuzFA" frameborder="0" allowfullscreen></iframe>
