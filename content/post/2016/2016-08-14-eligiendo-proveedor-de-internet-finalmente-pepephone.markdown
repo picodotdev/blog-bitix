@@ -3,7 +3,7 @@ pid: 169
 title: "Eligiendo proveedor de internet, finalmente Pepephone"
 url: "/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/"
 date: 2016-08-14T12:00:00+02:00
-updated: 2016-08-14T22:30:00+02:00
+updated: 2017-03-14T22:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -55,7 +55,7 @@ Artículos analizándo el _router_ ASUS DSL-N14U:
 * [ASUS DSL-N14U: Manual de configuración del nuevo _router_ de Pepephone](http://www.redeszone.net/pepephone/asus-dsl-n14u-manual-configuracion/)
 * [ASUS DSL-N14U: Manual de configuración del servidor VPN PPTP](http://www.redeszone.net/pepephone/asus-dsl-n14u-manual-servidor-vpn-pptp/)
 
-Solicitada la instalación en unos días un técnico de Movistar me instaló la línea nueva (linea que realmente es de Vodafone) y el _router_ me llegó por mensajero al día siguiente, en una semana ya disponía de internet sin complicaciones en la instalación. La velocidad bruta no es la misma que tenía con el cable de Euskaltel y será menor que la fibra pero para navegar no hay mucha diferencia y si en el precio. Como dice Pepephone el ADSL es algo más feo que la fibra y tiene razón de que hay mucha tontería con los megas, para navegar no noto apenas diferencia. Lo noto cuando actualizo [Arch Linux][archlinux] o cuando pongo la [Raspberry Pi][raspberrypi] a descargar por P2P. Aún llegando solo a 630 KiB/s en la descarga cuando con Euskaltel llegaba a 2 MiB/s me es más que suficiente, la RPi la dejo el tiempo que haga falta y en unas horas no hay película que no pueda descargar y la actualización de Arch lleva algo más de tiempo en la descarga pero no algo excesivo.
+Solicitada la instalación en unos días un técnico de Movistar me instaló la línea nueva (linea que realmente es de Vodafone) y el _router_ me llegó por mensajero al día siguiente, en una semana ya disponía de internet sin complicaciones en la instalación. La velocidad bruta no es la misma que tenía con el cable de Euskaltel y será menor que la fibra pero para navegar no hay mucha diferencia y si en el precio. Como dice Pepephone el ADSL es algo más feo que la fibra y tiene razón de que [hay mucha tontería con los megas y otros mitos del ADSL](http://blog.pepephone.com/index.php/5-verdades-muy-largas-sobre-el-adsl/), para navegar no noto apenas diferencia. Lo noto cuando actualizo [Arch Linux][archlinux] o cuando pongo la [Raspberry Pi][raspberrypi] a descargar por P2P. Aún llegando solo a 630 KiB/s en la descarga cuando con Euskaltel llegaba a 2 MiB/s me es más que suficiente, la RPi la dejo el tiempo que haga falta y en unas horas no hay película que no pueda descargar y la actualización de Arch lleva algo más de tiempo en la descarga pero no algo excesivo.
 
 <div class="media" style="text-align: center;">
     {{< figure pid="169"
