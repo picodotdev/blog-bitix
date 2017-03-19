@@ -4,6 +4,7 @@ title: "Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y J
 url: "/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/"
 aliases: ["/2017/03/controlar-un-display-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/"]
 date: 2017-03-18T10:00:00+01:00
+updated: 2017-03-19T02:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -62,7 +63,8 @@ En mi caso con la Raspberry Pi 1 he tenido que utilizar la versión 0.9 de la li
 
 {{< gist picodotdev 1ab3b748f7e9cc0c60cbc7c21531f21f "java.lang.UnsupportedOperationException" >}}
 
-En el ejemplo mostraré un texto en cada una de las lineas del _display_ y usaré una de las funciones del _display_ para mostrar caracteres personalizados con los que es posible crear _emojis_ o caracteres nuevos. El controlador de diozero ya contiene una buena colección de caracteres personalizados que definen el patrón de 5x8 puntos que siguen, los nombres de estos caracteres personalizados están en la clase interna _Characters_ de _HD44780Lcd_ aunque también podemos definir nuevos. El ejemplo es el siguiente.
+En el ejemplo mostraré un texto en cada una de las lineas del _display_ y usaré una de las funciones del para mostrar caracteres personalizados con los que es posible crear _emojis_ o caracteres nuevos. El controlador de diozero ya contiene una buena colección de caracteres personalizados que definen el patrón de 5x8 puntos que siguen, los nombres de estos caracteres personalizados están en la clase interna _Characters_ de [HD44780Lcd](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html) aunque también podemos definir nuevos. El ejemplo es el siguiente donde se muestra el uso de los métodos [setText](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#setText-int-java.lang.String-) y [setCharacter](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#setCharacter-int-int-char-), también el constructor donde hay que indicar la dirección asignada al dispositivo en el bus I2C que siendo la 27 corresponde con el valor definido en una constante. Pero también hay otros métodos como [clear](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#clear--), [cursorOff](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#cursorOff--) y [cursorOn](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#cursorOn--) para apagar y encender el cursor, [displayOff](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#displayOff--)
+[displayOn](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#displayOn--) para apgar y encender el _display_ y [createChar](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#createChar-int-byte:A-) para crear nuevos caracteres definidos como una _array_ de 8 posiciones donde cada _byte_ indica los pixeles encendidos de cada fila del caracter de 5x8 y con [setCharacter](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#setCharacter-int-int-char-) para emitir uno de los 8 posibles que se pueden usar al mismo tiempo. Además de estos también hay otros pocos métodos más relacionados con el cursor.
 
 {{< gist picodotdev 1ab3b748f7e9cc0c60cbc7c21531f21f "Lcd.java" >}}
 {{< gist picodotdev 1ab3b748f7e9cc0c60cbc7c21531f21f "build.gradle" >}}
