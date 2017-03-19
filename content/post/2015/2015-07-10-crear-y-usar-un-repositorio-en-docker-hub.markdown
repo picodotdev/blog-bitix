@@ -16,7 +16,7 @@ summary: "¿Por qué se habla tanto de Docker y despierta tanto interes si la te
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="docker.png" title="Docker" >}}
+{{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 Probablemente uno de los éxitos de Docker más que la propia tecnología de contenedores sea [Docker Hub][docker-hub] que permite a los usuarios compartir las imágenes construidas, se podría decir que es el [GitHub][github] de los contenedores docker y quizá por ello el paralelismo en el nombre entre ambos. Docker Hub permite subir imágenes o usar las imágenes oficiales de [postgresql][postgresql], [redis][redis], [mysql][mysql], [ubuntu][ubuntu], [rabbitmq][rabbitmq], ... y otra [multitud de proyectos](https://registry.hub.docker.com/).
 

@@ -18,7 +18,7 @@ draft: true
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="" title1="" image2="" title2="" >}}
+{{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200">}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid=""
@@ -32,6 +32,8 @@ draft: true
 </div>
 
 {{< gist picodotdev id "file" >}}
+
+{{% asciinema id="" caption="" %}}
 
 {{% code git="blog-ejemplos/tree/master/" command="" %}}
 

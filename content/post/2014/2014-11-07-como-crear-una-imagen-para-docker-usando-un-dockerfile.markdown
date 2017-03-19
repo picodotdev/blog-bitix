@@ -15,7 +15,7 @@ summary: "Podemos usar los contenedores disponibles en Docker Hub, donde están 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="docker.png" title="Docker" >}}
+{{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 Las imágenes de [docker] son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las [características de docker][blogbitix-49] y estamos decididos a usarlo y ya sabemos [como administrar de forma básica los contendores][blogbitix-50] si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.
 

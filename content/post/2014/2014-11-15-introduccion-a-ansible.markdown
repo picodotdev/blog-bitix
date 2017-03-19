@@ -13,7 +13,7 @@ tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="ansible.png" title="Ansible" >}}
+{{< logotype image="ansible.svg" title="Ansible" width="200" >}}
 
 Siempre que nos sea posible deberíamos automatizar las tareas que realizamos. Automatizar tareas hará sencillo realizarlas permitiéndonos hacer todos los despliegues de una aplicación que queramos con menos posibilidades de cometer errores manuales o nos permitirá disponer de una nueva máquina aprovisionada exactamente como pueda estar la máquina de producción en mucho menos tiempo. En el ámbito del aprovisionamiento de máquinas y administración de la infraestructura IT hay varias opciones, entre ellas están [Chef][chef], [Puppet][puppet] y [Ansible][ansible].
 

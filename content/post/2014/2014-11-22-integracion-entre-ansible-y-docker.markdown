@@ -14,7 +14,7 @@ series: ["docker"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="ansible.png" title1="Ansible" image2="docker.png" title2="Docker" >}}
+{{< logotype image1="ansible.svg" title1="Ansible" width1="200" image2="docker.svg" title2="Docker" width2="200">}}
 
 En la [introducción de Docker][blogbitix-49] y [inicio básico de docker][blogbitix-50] explicaba como usar Docker y en la [introducción a Ansible][blogbitix-52] explicaba las características de Ansible y como usarlo. Podemos usar [Docker][docker] y [Ansible][ansible] de forma separada pero también podemos combinarlas para beneficiarnos de las propiedades de cada una. En Ansible disponemos de dos módulos que nos permite manejar las imágenes y los contenedores de Docker, estos son [docker](http://docs.ansible.com/docker_module.html) y [docker_image](http://docs.ansible.com/docker_image_module.html).
 

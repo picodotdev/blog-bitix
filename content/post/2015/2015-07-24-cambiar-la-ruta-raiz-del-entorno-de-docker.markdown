@@ -16,7 +16,7 @@ summary: "Cambiando la ruta raíz del entorno de ejecución de docker, dónde gu
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="docker.png" title="Docker" >}}
+{{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de [Docker][docker] es _/var/lib/docker_. En mi caso hace un tiempo me compre un [disco de estado sólido Samsung 840 EVO de 250 GiB][blogbitix-18] y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, [construyendo imágenes propias con archivos Dockerfile][blogbitix-51] y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un pendrive o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.
 

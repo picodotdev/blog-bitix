@@ -16,7 +16,7 @@ summary: "Continuando la serie de artículos sobre Docker, otra de las herramien
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="docker.png" title="Docker" >}}
+{{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la [introducción a docker][blogbitix-49], conocemos [como empezar a usar docker][blogbitix-50] y sabemos [cómo crear nuestras propias imágenes de docker][blogbitix-51] para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:
 

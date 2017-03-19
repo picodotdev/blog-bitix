@@ -15,7 +15,7 @@ summary: "Los contenedores no son una tecnología nueva pero Docker ha reunido l
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="docker.png" title="Docker" >}}
+{{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 [Docker][docker] es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que [cambian la forma de desarrollar aplicaciones](http://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html). Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.
 
