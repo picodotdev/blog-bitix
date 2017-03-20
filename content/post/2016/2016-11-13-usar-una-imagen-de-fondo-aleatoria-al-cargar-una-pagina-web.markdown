@@ -3,6 +3,7 @@ pid: 194
 title: "Usar una imagen de fondo aleatoria al cargar una página web"
 url: "/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"
 date: 2016-11-13T12:00:00+01:00
+updated: 2017-03-20T21:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -13,7 +14,7 @@ tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de [Subtle Patterns](http://subtlepatterns.com/). Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la [licencia Creative Commons - Reconocimiento - Compartir igual](https://creativecommons.org/licenses/by-sa/3.0/). Podemos encontrar texturas en las siguientes categorías y motivos:
+Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/). Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la [licencia Creative Commons - Reconocimiento - Compartir igual](https://creativecommons.org/licenses/by-sa/3.0/). Podemos encontrar texturas en las siguientes categorías y motivos:
 
 * [Light](http://subtlepatterns.com/tag/light/)
 * [Dark](http://subtlepatterns.com/tag/dark/)
