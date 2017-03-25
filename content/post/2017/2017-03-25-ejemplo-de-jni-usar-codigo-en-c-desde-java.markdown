@@ -3,6 +3,7 @@ pid: 217
 title: "Ejemplo de JNI, usar código en C desde Java"
 url: "/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/"
 date: 2017-03-25T10:00:00+01:00
+updated: 2017-03-25T10:05:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -22,7 +23,7 @@ Nunca hasta ahora había tenido necesidad de crear un programa que no estuviese 
 
 Sin embargo, en casos que se necesita un alto rendimiento para tareas muy específicas o evitar las imposiciones de la máquina virtual como las paradas que realiza para el recolector de basura una solución es escribir esa funcionalidad crítica en lenguaje C, C++ e incluso en [Go][go]. El caso de necesidad que me he encontrado es acceder a un sensor de temperatura DHT11 del [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212] para leer de él la temperatura y humedad. La forma que tiene el sensor DHT11 de proporcionar los datos tiene restricciones de tiempo, cuando se le requieren los valores envía 80 bits de datos donde un pulso de 27μs significa un 0 y un pulso de más de ese tiempo hasta 70μs significa un 1. Estas restricciones de tiempo del sensor y el hecho de que es en una modesta en potencia [Raspberry Pi][raspberrypi] 1 donde lo usaré hace que Java no sea capaz de leer correctamente los valores del sensor.
 
-Acceder desde Java a código nativo en C requiere usar [<abbr title="Java Native Interface">JNI</abbr>](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html). Lo primero que hay que realizar es crear una clase que declare los métodos que serán implementados de forma nativa declarando estos métodos usando la palabra reservada _native_ y que serán enlazados por la JVM cargando una librería compartida con [System.loadLibrary()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#loadLibrary-java.lang.String-). Creada la clase Java se ha de generar el archivo de cabecera _.h_ propia del lenguaje C con el programa de utilidad del JDK _javah_. Con el archivo de cabecera se implementa la función y se crea una librería compartida en [GNU][gnu]/[Linux][linux] usando el [compilador gcc][gcc]. Con la librería compartida se puede iniciar el programa Java. Si la biblioteca compartida no se encuentra se lanzará una excepción del tipo [UnsatisfiedLinkError](https://docs.oracle.com/javase/8/docs/api/java/lang/UnsatisfiedLinkError.html).
+Acceder desde Java a código nativo en C requiere usar [Java Native Interface o por sus siglas JNI](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html). Lo primero que hay que realizar es crear una clase que declare los métodos que serán implementados de forma nativa declarando estos métodos usando la palabra reservada _native_ y que serán enlazados por la JVM cargando una librería compartida con [System.loadLibrary()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#loadLibrary-java.lang.String-). Creada la clase Java se ha de generar el archivo de cabecera _.h_ propia del lenguaje C con el programa de utilidad del JDK _javah_. Con el archivo de cabecera se implementa la función y se crea una librería compartida en [GNU][gnu]/[Linux][linux] usando el [compilador gcc][gcc]. Con la librería compartida se puede iniciar el programa Java. Si la biblioteca compartida no se encuentra se lanzará una excepción del tipo [UnsatisfiedLinkError](https://docs.oracle.com/javase/8/docs/api/java/lang/UnsatisfiedLinkError.html).
 
 <div class="media" style="text-align: center;">
     {{< figure pid="217"
@@ -76,6 +77,7 @@ Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la l
 {{< links >}}
 {{< postslinks >}}
 * [GO: Call me maybe, Java!](https://blog.dogan.io/2015/08/15/java-jni-jnr-go/)
+* [Java Native Interface Specification](http://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html)
 * [Java Programming Tutorial, Java Native Interface (JNI)](http://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
 {{% /reference %}}
 
