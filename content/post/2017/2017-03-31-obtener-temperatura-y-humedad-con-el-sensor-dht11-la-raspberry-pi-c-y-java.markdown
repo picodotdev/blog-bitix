@@ -1,8 +1,10 @@
 ---
 pid: 219
-title: "Obtener temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java"
-url: "/2017/03/obtener-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"
+title: "Obtener la temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java"
+url: "/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"
+aliases: ["/2017/03/obtener-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"]
 date: 2017-03-31T19:00:00+01:00
+updated: 2017-03-31T19:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -79,7 +81,7 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 
 {{< gist picodotdev c77e19703a53924171a6a4144a1b46a7 "execute.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeDht11" %}}
+{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" %}}
 
 {{% reference %}}
 {{< links >}}
