@@ -52,7 +52,7 @@ La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://e
 
 Si nos gusta más la interfaz _ribbon_ sin menús con multitud de opciones y que esté más cuidada en cuanto a diseño que LibreOffice similar a la usada en Microsoft Office, [WPS Office](https://www.wps.com/?lang=es) es una opción muy a tener en cuenta, también puede activarse en modo clásico con menús y barras de herramientas soportando editar varios documentos en tabuladores. Ofrece únicamente los programas básicos de una suite ofimática: editor de textos, hojas de cálculo y presentaciones. Para un uso personal es gratuita con algunas limitaciones al imprimir y exportar documentos a formato PDF pero más que suficiente aún sin todas las opciones solo disponibles en la opción de pago.
 
-Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste mucho más razonable que el de Microft Office, 45€ para una licencia de un año y 80€ para la licencia de por vida por usuario.
+Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste mucho más razonable que el de Microsoft Office, 45€ para una licencia de un año y 80€ para la licencia de por vida por usuario.
 
 Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para los que ni Microsoft Office ya ofrece soporte, Linux, Android e iOS. Su instalador ocupa únicamente unos 80 MiB contra los más de 3 GiB de Office.
 
