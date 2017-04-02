@@ -3,8 +3,8 @@ pid: 219
 title: "Obtener la temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java"
 url: "/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"
 aliases: ["/2017/03/obtener-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"]
-date: 2017-03-31T19:00:00+01:00
-updated: 2017-03-31T19:30:00+01:00
+date: 2017-03-31T19:00:00+02:00
+updated: 2017-04-02T10:15:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -55,7 +55,7 @@ La clase Java del ejemplo que hace uso del sensor realiza una lectura cada 3 seg
 
 {{< gist picodotdev c77e19703a53924171a6a4144a1b46a7 "TemperatureHumidity.java" >}}
 
-Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del _pin_ GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del _header_ de la Raspberry Pi. Para ver el cableado del _display_ 1602 más detalladamente consulta el artículo [Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java][blogbitix-215].
+Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del _pin_ GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del _header_ de la Raspberry Pi. Para ver el cableado del _display_ 1602 más detalladamente y la activación del bus de comunicación I2C que necesita consulta el artículo [Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java][blogbitix-215].
 
 <div class="media" style="text-align: center;">
     {{< figure pid="219"
