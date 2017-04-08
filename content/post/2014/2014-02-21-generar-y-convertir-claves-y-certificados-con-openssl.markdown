@@ -3,7 +3,7 @@ pid: 13
 title: "Generar y convertir claves y certificados con OpenSSL"
 url: "/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/"
 date: 2014-02-21T17:36:21+01:00
-updated: 2015-05-25T21:00:00+02:00
+updated: 2017-04-08T23:00:00+02:00
 sharing: true
 comments: true
 tags: ["programacion", "seguridad", "software", "software-libre", "planeta-linux"]
@@ -29,15 +29,45 @@ Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar 
 
 #### Crear una clave privada y pública
 
-Podemos generar un par de claves RSA que nos permitan tanto cifrar como realizar firmas, con OpenSSL usando el siguiente comando:
+Para generar un par de claves RSA que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:
 
 {{< gist picodotdev 9138093 "script-1.sh" >}}
+
+Para cifrar la clave generada con el algoritmo _aes256_ y protegerla por una contraseña se puede emplear el siguiente comando, en realidad al generar la clave indicando la misma opción _-aes256_ en el comando anterior la clave se generará cifrada y protegida por una contraseña. Para cambiar la contraseña es el mismo comando y el segundo comando elimina la contraseña y la descifra:
+
+{{< gist picodotdev 9138093 "script-12.sh" >}}
+
+El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto.
+
+{{< gist picodotdev 9138093 "localhost.key" >}}
 
 #### Exportar la clave pública
 
 El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
 
 {{< gist picodotdev 9138093 "script-9.sh" >}}
+
+También se puede obtener la clave pública en formato [OpenSSH][openssh] y una representación gráfica de la huella digital.
+
+{{< gist picodotdev 9138093 "script-10.sh" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figure pid="13"
+        image1="openssh-fingerprint.png" thumb1="openssh-fingerprint-thumb.png" title1="Huella digital de una clave pública OpenSSH"
+        caption="Huella digital de una clave pública OpenSSH" >}}
+</div>
+
+#### Obtener la huella digital de la clave pública
+
+La huella digital de una clave pública sirve para comprobar que la clave es la esperada. Son una cadena de números y letras pudiendo estar cada pareja de caracteres separados por _:_.
+
+{{< gist picodotdev 9138093 "script-11.sh" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figure pid="13"
+        image1="openssl-dgst.png" thumb1="openssl-dgst-thumb.png" title1="Huella digital de una clave pública"
+        caption="Huella digital de una clave pública" >}}
+</div>
 
 #### Crear un certificado
 
