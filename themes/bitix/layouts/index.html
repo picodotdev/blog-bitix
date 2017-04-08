@@ -17,7 +17,7 @@
                       {{ if isset .Params "language" }}
                       <meta itemprop="inLanguage" content="{{ .Params.language }}">
                       {{ else }}
-                      <meta itemprop="inLanguage" content="{{ .Site.LanguageCode }}">
+                      <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
                       {{ end }}
                       <h1 itemprop="name"><a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a></h1>
                       <span class="information">

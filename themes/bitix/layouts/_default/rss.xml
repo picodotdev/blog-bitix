@@ -3,7 +3,7 @@
     <title>{{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
     <description>Recent content on {{ .Site.Title }}</description>
-    <generator>Hugo</generator>{{ with .Site.LanguageCode }}
+    <generator>Hugo</generator>{{ with .Site.Language.Lang }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.name }}
     <author>{{.}}</author>{{end}}{{ with .Site.Copyright }}
     <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
