@@ -37,7 +37,7 @@ Para cifrar la clave generada con el algoritmo _aes256_ y protegerla por una con
 
 {{< gist picodotdev 9138093 "script-12.sh" >}}
 
-El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto.
+El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto (los tres puntos son líneas de contenido omitidas).
 
 {{< gist picodotdev 9138093 "localhost.key" >}}
 
