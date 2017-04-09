@@ -2,7 +2,7 @@
 pid: 221
 title: "Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java"
 url: "/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/"
-date: 2017-04-08T12:00:00+02:00
+date: 2017-04-09T12:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -22,9 +22,9 @@ En artículos anteriores ya he comentado [como hacer parpadear un diodo LED][blo
 
 El ejemplo consistirá en que cuando se presione el pulsador se encienda el diodo LED y el zumbador se active emitiendo un zumbido audible. Cada uno de estos elementos requiere usar un _pin_ <abbr title="General Purpose Input Output">GPIO</abbr> de los 17 que hay disponibles en la Raspberry Pi 1 que es el modelo que tengo yo o de los 26 _pines_ que poseen versiones posteriores de la Raspberry Pi como la B+, 2 y 3.
 
-Este sería el esquema de conexionado de los elementos. El diodo LED tiene una polaridad de modo que la patita larga que es la parte positiva se conectará al _pin_ GPIO 1 según la nomenclatura de wiringPi o el 18 según la de Broadcom con una resistencia de 200 ohmios entre el _pin_ GIPO y la patita de diodo para que la intensidad que atraviesa el diodo sea menor y no se desgaste. El zumbador también tiene una polaridad que en el caso del _kit_ que he usado viene serigrafiado y con una etiqueta, la parte positiva se conectará a otro _pin_ GPIO y usaré el _pin_ GPIO 2. Para que el pulsador haga contacto bien en la placa de conexiones para hacer pruebas sin soldadura hay que presionar sin forzar pero hasta que quede bien enjadado y sin fijo, usaré el _pin_ GPIO 3.
+Este sería el esquema de conexionado de los elementos. El diodo LED tiene una polaridad de modo que la patita larga que es la parte positiva se conectará al _pin_ GPIO 1 según la nomenclatura de wiringPi o el 18 según la de Broadcom con una resistencia de 200 ohmios entre el _pin_ GIPO y la patita de diodo para que la intensidad que atraviesa el diodo sea menor y no se desgaste. El zumbador también tiene una polaridad que en el caso del _kit_ que he usado viene serigrafiado y con una etiqueta, la parte positiva se conectará a otro _pin_ GPIO y usaré el _pin_ GPIO 2. Para que el pulsador haga contacto bien en la placa de conexiones para hacer pruebas sin soldadura hay que presionar sin forzar pero hasta que quede bien encadado y sin fijo, usaré el _pin_ GPIO 3.
 
-Para el pulsador usaré el método _PULL UP_ (el otro es _PULL DOWN_) donde conectaré una patita del pulsador a tierra y la adyacente al _pin_ GPIO, en [algunas páginas](https://grantwinney.com/using-pullup-and-pulldown-resistors-on-the-raspberry-pi/) se explica haciendo uso de resistencias, sin embargo, el uso de resistencias en la Raspberry Pi no es necesario ya que los _pines_ ya [las tinen incorporadas internamente](https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/).
+Para el pulsador usaré el método _PULL UP_ (el otro es _PULL DOWN_) donde conectaré una patita del pulsador a tierra y la adyacente al _pin_ GPIO, en [algunas páginas](https://grantwinney.com/using-pullup-and-pulldown-resistors-on-the-raspberry-pi/) se explica haciendo uso de resistencias, sin embargo, el uso de resistencias en la Raspberry Pi no es necesario ya que los _pines_ ya [las tienen incorporadas internamente](https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/).
 
 <div class="media" style="text-align: center;">
     {{< figure pid="221"
