@@ -15,7 +15,7 @@ summary: "Office es la suite ofimática de Microsoft con un margen de diferencia
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="microsoft.png" title1="Microsoft" image2="libreoffice.png" title2="LibreOffice" >}}
+{{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
 En el primer artículo de este 2016 comentaba que [Windows y Office aún siguen siendo fáciles de usar sin licencia][blogbitix-119]. Licencia que cuesta nada más ni nada menos que unos 125€ para el [hogar y estudiantes](http://amzn.to/2bg4CR2) y unos 250€ para [hogar y negocios](http://amzn.to/2bNf5Bx), por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.
 
