@@ -3,10 +3,11 @@ pid: 222
 title: "Windows 10 and Office 2016 as easy to use without license as always"
 url: "/2017/04/windows-10-and-office-2016-as-easy-to-use-without-license-as-always/"
 date: 2017-04-08T11:00:00+02:00
+updated: 2017-04-08T12:30:00+02:00
 sharing: true
 comments: true
 language: "en"
-tags: ["blog-stack", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["blog-stack", "microsoft", "opinion"]
 summary: "I commented in an article that it is surprising that Microsoft with the capacity that it has and being the devices connected to Internet mostly is not able to avoid using its software without license. I'm about to see if with Windows 10 and Office 2016 it's still as easy to use as always. I will also have a sample of the unfair fame of Windows but that allows Microsoft for the bloatware that the device manufacturers pre-installs with its operating system."
 ---
 
@@ -51,6 +52,6 @@ It is the beginning of 2016 and I have not made one but three installations of W
     </figure>
 </div>
 
-If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-143] that suits your needs.
+If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-225] that suits your needs.
 
 {{% /post %}}
