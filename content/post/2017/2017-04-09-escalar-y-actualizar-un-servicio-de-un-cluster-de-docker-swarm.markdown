@@ -3,6 +3,7 @@ pid: 223
 title: "Escalar y actualizar un servicio de un cluster de Docker Swarm"
 url: "/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/"
 date: 2017-04-09T11:00:00+02:00
+updated: 2017-04-16T13:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -58,7 +59,7 @@ Docker Swarm realiza el proceso de actualización siguiendo los siguientes pasos
 
 Por defecto, el planificador actualiza las tareas o contenedores del servicio de uno en uno. Con la opción _--update-parallelism_ se especifica el número de tareas del servicio que se actualizan simultáneamente. La opción _--update-delay_ especifica el tiempo de espera desde que se actualiza la tarea de un servicio y la siguiente. Se puede describir como una combinación de segundos, minutos o horas, de modo que 1m30s indica una espera de 1 minuto y 30 segundos.
 
-En los [archivos en formato YAML de los _stacks_ de Docker Compose](https://docs.docker.com/compose/compose-file/) hay una sección en cada servicio en el que se indica el número de contenedores que se desea que esté formado el servicio así como las opciones de paralelismo y tiempo de espera entre actualización.
+En los [archivos en formato YAML de los _stacks_ de Docker Compose](https://docs.docker.com/compose/compose-file/) hay una sección en cada servicio en el que se indica el número de contenedores que se desea que esté formado el servicio así como las opciones de paralelismo y tiempo de espera entre actualización. Para actualizar el _stack_ basta con hacer de nuevo el _deploy_, ya sea la imagen usada, el número de réplicas u otros parámetros.
 
 {{< gist picodotdev 1a9862e63c242949ee04cd313e82f3ec "docker-compose-stack-app.yml" >}}
 
