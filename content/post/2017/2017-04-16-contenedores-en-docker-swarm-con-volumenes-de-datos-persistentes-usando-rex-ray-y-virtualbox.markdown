@@ -55,7 +55,7 @@ En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el c
         caption="Deploy del stack de postgres" >}}
 </div>
 
-En el _stack_ el volumen de datos postgres está declarado y creado de forma externa. Usando VirtualBox con REX-Ray en el _host_ o anfitrión se crea un archivo que contiene los datos del volumen. Al listar los volúmenes de datos además de los creados _postgres_ y _app_ están los de los discos duros de cada uno de los nodos identificados como _disk.vmdk_.
+En el _stack_ el volumen de datos postgres está declarado y creado de forma externa. Usando VirtualBox con REX-Ray en el _host_ o anfitrión se crea un archivo que contiene los datos del volumen. Al listar los volúmenes de datos además de los creados _postgres_ y _app_ están los de los discos duros de cada uno de los nodos identificados como _disk.vmdk_. El parámetro _opt=size=5_ indica que el volumen de datos es de una tamaño de 5GiB.
 
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "06-create-volumes.sh" >}}
 
