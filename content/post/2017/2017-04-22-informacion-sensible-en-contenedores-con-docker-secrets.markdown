@@ -49,6 +49,12 @@ Por otra parte la aplicación Java con Spring Boot lista el contenido de los sec
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "HostInfoContributor.java" >}}
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "info.json" >}}
 
+<div class="media" style="text-align: center;">
+    {{< figure pid="227"
+        image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
+        caption="Contenido del archivo message.txt" >}}
+</div>
+
 Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa es la siguiente:
 
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "run.sh" >}}
