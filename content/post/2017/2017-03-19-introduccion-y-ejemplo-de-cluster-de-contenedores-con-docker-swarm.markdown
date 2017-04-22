@@ -26,11 +26,11 @@ En el siguiente ejemplo para crear el _cluster_ de nodos Docker usaré Docker Ma
 
 El siguiente _script_ crea primeramente varios nodos cada uno en una máquina virtual, luego establece el nodo 01 como _manager_ y los nodos 02 y 03 como _workers_ usando un _token_ para unirlos al _cluster_ según su rol. Los nodos _manager_ se encargan de mantener el estado del _cluster_ y los que a través de ellos los comandos de los servicios deben ser lanzados, en un entorno de producción posiblemente tendríamos 3 nodos _manager_ para soportar tolerancia a fallos. Finalmente, se obtiene lista los nodos del _cluster_. El comando _docker-machine env node-01_ permite establecer el entorno contra el que el comando _docker_ lanzará las operaciones como si de la máquina local se tratase.
 
-{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "cluster-create.sh" >}}
+{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "01-cluster-create.sh" >}}
 
 Una vez creado los nodos es cuando podemos empezar a crear servicios en el _cluster_. Los servicios son una definición de los contenedores de Docker que queremos que el _cluster_ ejecute. En el ejemplo definiré el servicio de un servidor web [nginx][nginx], primeramente crearé una red por software en el _cluster_ a la que los servicios pueden conectarse que en el ejemplo (aunque para este no es necesario) utilizaré para hacer una consulta DNS con la herramienta [drill](https://linux.die.net/man/1/drill) para ver el nombre de dominio y dirección IP que asigna Docker Swarm al servicio del servidor web. Con _docker service create_ se crean los servicios, algunos de los parámetros del comando son el nombre del servicio que queremos asignarle, los puertos que expone en este caso el 80 y 443 en el _host_ para que sea accesible desde fuera del _cluster_, la redes a las que está conectado y finalmente la imagen del contenedor del servicio que en este caso será la versión de [nginx con Alpine para Docker](https://hub.docker.com/_/nginx/). Se pueden listar los servicios que contiene el _cluster_ con _docker service ls_ y los procesos de cada nodo donde podemos ver en que nodos se está ejecutando los contenedores con _docker ps_.
 
-{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "nginx-create.sh" >}}
+{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "06-nginx-create.sh" >}}
 
 Una de las propiedades interesantes del _networking_ de Docker Swarm es que ofrece incorporado balanceo de carga, esto es, si el servicio de nginx del ejemplo estuviese formado por dos instancias las peticiones se distribuirían entre las instancias usando el método _round-robin_. Otra característica interesante si se observa el ejemplo con detalle es que da igual el nodo al que hagamos la petición que la respuesta se obtendrá igualmente, esto es, aunque la petición se haga al nodo 01 y realmente el contenedor del servidor nginx se esté ejecutando en el nodo 02 la petición se realizará correctamente gracias al _routing mesh_ del _neworking_ de Docker Swarm, esto es gracias a que cada servicio tiene asignada una dirección IP, como se ha visto anteriormente en la salida del comando _drill_.
 
@@ -62,7 +62,7 @@ Finalmente, quizás si estás usando GNU/Linux y VirtualBox como yo al crear los
 
 La solución que he encontrado para que funcione es asignar una dirección IP al adaptador puente solo-anfitrión y levantar la interfaz que usa Docker para comunicarse con las máquinas virtuales previamente a crear el nodo. En [Arch Linux][archlinux] con los siguientes comandos.
 
-{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "vboxnet0-configure.sh" >}}
+{{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "01-vboxnet0-configure.sh" >}}
 
 Se puede definir un conjunto de servicios como una unidad en un archivo en _stacks_ de forma similar a como es posible hacer con Docker Compose cosa que mostraré en otro artículo.
 

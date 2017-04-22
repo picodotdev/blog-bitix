@@ -3,6 +3,7 @@ pid: 226
 title: "Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox"
 url: "/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/"
 date: 2017-04-16T12:00:00+02:00
+updated: 2017-04-16T23:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -70,7 +71,7 @@ Para crear algunos datos en la base de datos hay que conectarse al contenedor y 
 
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "postgres.sh" >}}
 
-Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm iniciará el contenedor en otro nodo del _cluster_ pero los datos seguirán estando presentes en la base de datos postgres, se puede comprobar iniciando una nueva sesión bash en el nuevo contenedor, iniciando el cliente de psql y lanzando la consulta _select_ de SQL o con el comando _\dt_ para obtener las tablas de la base de datos y _\d+ company_ para obtener una descripción de la tabla.
+Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm iniciará el contenedor en otro nodo del _cluster_ pero los datos seguirán estando presentes en la base de datos postgres, se puede comprobar iniciando una nueva sesión bash en el nuevo contenedor, iniciando el cliente de psql y lanzando la consulta _select_ de SQL o con el comando _\dt_ para obtener las tablas de la base de datos, _\d+ company_ para obtener una descripción de la tabla y la consulta SQL _SELECT * FROM company;_.
 
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "docker-compose-stack-remove-postgres.sh" >}}
 
