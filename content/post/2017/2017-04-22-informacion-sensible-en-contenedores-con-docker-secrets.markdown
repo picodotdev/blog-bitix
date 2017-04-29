@@ -45,7 +45,7 @@ Al servicio de [nginx][nginx] la clave privada y certificado para configurar el 
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "docker-compose-stack-app.yml" >}}
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "nginx.conf" >}}
 
-Por otra parte la aplicación Java con Spring Boot lista el contenido de los secretos incorporados en el contenedor cuando se solicita en la URL _https://192.168.99.100/system/info/_, esto no se debe hacer porque se pierde la seguridad que proporcionan los secretos pero sirve a modo de muestra en el ejemplo.
+Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el contenido de los secretos incorporados en el contenedor cuando se solicita en la URL _https\://192.168.99.100/system/info/_, esto no se debe hacer porque se pierde la seguridad que proporcionan los secretos pero sirve a modo de muestra en el ejemplo.
 
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "HostInfoContributor.java" >}}
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "info.json" >}}
