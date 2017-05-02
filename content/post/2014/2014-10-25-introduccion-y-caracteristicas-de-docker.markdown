@@ -3,7 +3,7 @@ pid: 49
 title: "Introducción y características de Docker"
 url: "/2014/10/introduccion-y-caracteristicas-de-docker/"
 date: 2014-10-25T10:52:34+02:00
-updated: 2015-05-27T20:00:00+01:00
+updated: 2017-05-02T23:00:00+02:00
 sharing: true
 comments: true
 tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]
@@ -44,11 +44,7 @@ Para los administradores de sistemas tiene las siguientes ventajas:
 * Es posible desplegar un contenedor en cualquier infraestructura Linux.
 * La creación de los contenedores puede ponerse bajo un sistema de control de versiones.
 
-En el siguiente vídeo y presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.
-
-<div class="video-post" style="text-align: center;">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/ZzQfxoMFH0U" frameborder="0" allowfullscreen></iframe>
-</div>
+En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.
 
 <div class="media" style="text-align: center;">
 	{{< speakerdeck c02e6030ee52013165c72a37516b560d >}}
