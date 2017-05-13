@@ -18,7 +18,7 @@ draft: true
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200">}}
+{{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure pid=""

@@ -3,6 +3,7 @@ pid: 230
 title: "Controlar un servomotor con la Raspberry Pi y Java"
 url: "/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/"
 date: 2017-05-07T11:00:00+02:00
+updated: 2017-05-13T11:40:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -17,7 +18,7 @@ series: ["electronica"]
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
-Otro de los elementos que incluye el [kit de iniciación a la Raspberry Pi][blogbitix-212] es un servomotor, en concreto uno del modelo SG90. En la [especificación del servomotor SG90](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf) está detallado cual es el código de colores de los cables. Rojo para la corriente de 5V, marrón para tierra y naranja para el _pin_ <abbr title="Pulse Width Modulated">PWM</abbr> con el que se controlará el servo motor, el diodo led es simplemente para saber que cuando se enciende el programa Java se ha iniciado. La Raspberry Pi tiene algunos pines con soporte hardware para realizar PWM.
+Otro de los elementos que incluye el [kit de iniciación a la Raspberry Pi][blogbitix-212] es un [servomotor](https://es.wikipedia.org/wiki/Servomotor), en concreto uno del modelo SG90. En la [especificación del servomotor SG90](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf) está detallado cual es el código de colores de los cables. Rojo para la corriente de 5V, marrón para tierra y naranja para el _pin_ <abbr title="Pulse Width Modulated">PWM</abbr> con el que se controlará el servo motor, el diodo led es simplemente para saber que cuando se enciende el programa Java se ha iniciado. La Raspberry Pi tiene algunos pines con soporte hardware para realizar PWM.
 
 Un servomotor es un elemento distinto de un motor, un motor usa dos cables uno para mover el motor hacia adelante y otro cable para mover el motor hacia atrás. Los servomotores además de utilizar un único cable para controlarlo su funcionalidad es distinta usándose para posicionar el motor en un determinado ángulo que en el caso del SG90 tiene un ángulo de funcionamiento de 180º. Además el servomotor es más complejo, como se explica en el siguiente artículo de título [¿Cual es la diferencia entre un motor DC y servo motor?](http://handyboard.com/hb/faq/hardware-faqs/dc-vs-servo/) el servomotor se compone de varios elementos empaquetados como una pieza. Se compone de un motor DC normal, una unidad de reducción, un sensor de posicionamiento y un circuito de control.
 
@@ -50,6 +51,7 @@ En otros artículos de la serie puedes consultar cómo usar otros [elementos de 
 {{< links >}}
 {{< postslinks >}}
 * [Especificación SG90 servomotor](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf)
+* [Servomotor](https://es.wikipedia.org/wiki/Servomotor)
 {{% /reference %}}
 
 {{% /post %}}

@@ -3,11 +3,12 @@ pid: 231
 title: "Descargar e instalar Windows 10 paso a paso desde cero"
 url: "/2017/05/descargar-e-instalar-windows-10-paso-a-paso-desde-cero/"
 date: 2017-05-09T22:30:00+02:00
+updated: 2017-05-13T11:35:00+02:00
 language: "es"
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "microsoft", "planeta-codigo"]
+tags: ["blog-stack", "microsoft", "planeta-codigo", "software"]
 summary: "Un virus, el _bloatware_ preinstalado en muchos portátiles o tras instalar y desinstalar programas en Windows puede ocasionar que el equipo sea lento, se muestren mensajes de error o un virus cifre los archivos personales. En estos casos una solución habitual sencilla, rápida y fiable de volver a usar con normalidad el equipo es reinstalar Windows 10 desde cero. No es complicado pero para un usuario con pocos conocimientos de informática no es una tarea sencilla. En este artículo explicaré como instalar paso a paso y desde cero el sistema operativo Windows 10."
 ---
 
@@ -178,7 +179,7 @@ Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al ca
 
 ### Alternativa a Windows con distribuciones GNU/Linux
 
-Debes conocer que Windows no es la única opción de sistema operativo que puedes instalar, si quieres puedes probar alguna de las distribuciones [GNU][gnu]/[Linux][linux] como alternativa a Windows y descubrir el mundo del software libre que respeta tus derechos y no te los quita como el software privativo, puedes leer el artículo [Elegir una distribución GNU/Linux según el usuario o equipo][blogbitix-190].
+Debes conocer que Windows no es la única opción de sistema operativo que puedes instalar, si quieres puedes probar alguna de las distribuciones [GNU][gnu]/[Linux][linux] como alternativa a Windows y descubrir el mundo del software libre que respeta tus derechos y no te los quita como el software privativo, puedes leer el artículo [Elegir una distribución GNU/Linux según el usuario o equipo][blogbitix-190] e [instalar Ubuntu paso a paso desde cero][blogbitix-232].
 
 Las siguientes son unas capturas de pantalla de varias de las distribuciones GNU/Linux más famosas.
 

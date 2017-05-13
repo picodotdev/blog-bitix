@@ -3,7 +3,7 @@ pid: 190
 title: "Elegir una distribución GNU/Linux según el usuario, uso o equipo"
 url: "/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/"
 date: 2016-10-29T12:00:00+02:00
-updated: 2016-10-30T01:30:00+02:00
+updated: 2017-05-13T11:30:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -143,5 +143,7 @@ Estas son solo algunas de las distribuciones más populares y usadas de GNU/Linu
 [Windows es fácil usarlo sin licencia][blogbitix-119] y es muy común con el consentimiento de la compañía estadounidense, [a Microsoft no le importa que Windows sea usado sin licencia][blogbitix-92], pero como muestro en este artículo hay opciones que en muchos casos no tienen nada que envidiar a los sistemas operativos privativos y en otros aspectos son mucho mejores ya que son software libre generalmente gratuito, no incluyen _bloatware_, software espía y con un soporte durante mayor tiempo que el que ofrecen [Microsoft][microsoft] o [Apple][apple] en sus equipos.
 
 Descarga una distribución GNU/Linux que consideres adecuada para ti o según tus preferencias de escritorio gráfico y pruébalas sin compromiso en una máquina virtual con [VirtualBox][virtualbox] aunque ten en cuenta que la experiencia de uso no será la misma que la instalación sobre el hardware te servirá para comprobar si te gusta. En GNU/Linux encontrarás software, numerosa documentación en la web, gente dispuesta a ayudarte ante cualquier problema o duda que tengas como yo (así que puedes preguntarme :) y varias opciones para cualquier tarea que realices como edición gráfica o de vídeo, programación, música, fotos, compartición P2P, correo electrónico, navegadores web, reproductores de vídeos e incluso numerosos juegos con los que pasar ratos como los [juegos casuales proporcionados por GNOME][blogbitix-167], una [colección de 22 buenos juegos de diferentes géneros][blogbitix-172], [juegos clásicos y míticos de arcade con Mame][blogbitix-170] o [juegos de culto con ScummVM][blogbitix-173].
+
+Lee el artículo [Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero][blogbitix-232] para conocer cuales son los pasos para instalar Ubuntu, en sus derivadas es similar.
 
 {{% /post %}}
