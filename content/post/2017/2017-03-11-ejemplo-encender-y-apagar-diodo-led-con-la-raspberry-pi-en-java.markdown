@@ -70,7 +70,7 @@ El programa Java para hacer parpadear el diodo LED con la librería Diozero con 
 {{< gist picodotdev 1fda899b7fbbc19a82bb397d525927f2 "executeSSH.sh" >}}
 {{< gist picodotdev 1fda899b7fbbc19a82bb397d525927f2 "executeGradle.sh" >}}
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/NX5tBxWuzFA" frameborder="0" allowfullscreen></iframe>
 </div>
 

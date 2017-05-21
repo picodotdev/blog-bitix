@@ -41,7 +41,7 @@ Usando la librería [diozero][diozero] para controlar los _pines_ GPIO desde un 
 
 En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" allowfullscreen></iframe>
 </div>
 

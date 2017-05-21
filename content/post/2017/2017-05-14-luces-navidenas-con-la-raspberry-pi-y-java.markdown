@@ -44,7 +44,7 @@ Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros s
 
 Esta aplicación para la Raspberry Pi queda bastante vistosa y no es muy complicado de realizar a pesar del del lío de cables que resulta. Este es un vídeo de su funcionamiento.
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/F2BChbcyr5g" frameborder="0" allowfullscreen></iframe>
 </div>
 

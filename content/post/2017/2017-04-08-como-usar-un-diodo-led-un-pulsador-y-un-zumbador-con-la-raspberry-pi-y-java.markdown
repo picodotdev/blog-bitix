@@ -52,7 +52,7 @@ Usando la librería diozero el código Java para realizar el ejemplo no necesita
 
 Este es un pequeño vídeo en el que muestro su funcionamiento.
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/jaqMi53pjf0" frameborder="0" allowfullscreen></iframe>
 </div>
 

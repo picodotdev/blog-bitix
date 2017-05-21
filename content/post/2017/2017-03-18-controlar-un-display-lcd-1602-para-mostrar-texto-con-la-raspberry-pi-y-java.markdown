@@ -72,11 +72,11 @@ En el ejemplo mostrarÃ© un texto en cada una de las lineas del _display_ y usarÃ
 {{< gist picodotdev 1ab3b748f7e9cc0c60cbc7c21531f21f "executeGradle.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="214"
+    {{< figure pid="215"
         image1="mensaje-lcd-1602.jpg" thumb1="mensaje-lcd-1602-thumb.jpg" title1="Mensaje en LCD 1602"
         caption="Mensaje en LCD 1602" >}}
 </div>
-<div class="video-post" style="text-align: center;">
+<div class="media media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/V6msjQNDPuU" frameborder="0" allowfullscreen></iframe>
 </div>
 

@@ -168,7 +168,7 @@ Más en [Java 5 New Features and Enhancements](http://docs.oracle.com/javase/1.5
 
 Finalmente, una presentación muy interesante en forma de [vídeo de Youtube](https://www.youtube.com/watch?v=FTfAP29TjUk) en español y la [presentación de la que se habla en formato pdf](http://www.javahispano.org/storage/documentacion/2013-JUG-Madrid.pdf) que fue publicada en [JavaHispano](http://www.javahispano.org/portada/2014/3/10/video-y-presentacion-de-la-charla-sobre-java-8.html), en él se habla de muchas de las novedades y de algunas futuras en Java 9.
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/FTfAP29TjUk?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 

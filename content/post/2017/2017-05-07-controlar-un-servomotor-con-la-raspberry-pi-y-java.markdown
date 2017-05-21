@@ -37,7 +37,7 @@ El siguiente programa Java cambia en un bucle la posición del servo desde la po
 
 {{< gist picodotdev 92cd41d20e45e50a7657e219789c0e81 "Servomotor.java" >}}
 
-<div class="video-post" style="text-align: center;">
+<div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" allowfullscreen></iframe>
 </div>
 
