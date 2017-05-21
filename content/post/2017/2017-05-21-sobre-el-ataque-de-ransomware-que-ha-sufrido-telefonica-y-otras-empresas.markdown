@@ -3,6 +3,7 @@ pid: 235
 title: "Sobre el ataque de ransomware que ha sufrido Telefonica y otras empresas"
 url: "/2017/05/sobre-el-ataque-de-ransomware-que-ha-sufrido-telefonica-y-otras-empresas/"
 date: 2017-05-21T11:00:00+02:00
+updated: 2017-05-21T11:45:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -52,6 +53,8 @@ Son numerosos los medios que se han hecho eco del acontecimiento tecnológico de
 </div>
 
 Quizá alguien piense que un sistema con [GNU][gnu]/[Linux][linux] hubiese sido distinto pero no, un sistema GNU/Linux desactualizado es igual de vulnerable, por el hecho de ser GNU/Linux no es más seguro. Lo que hay que implementar son procedimientos y aplicar medidas para evitar estos fallos de seguridad y para minimizar las vulnerabilidades de los sistemas cualquiera que sea el sistema utilizado. A pesar de lo anterior una muestra de la seguridad que ofrece GNU/Linux que hay que destacar es que es un sistema utilizado en una gran mayoría de servidores importantes de los que ofrecen servicios en internet u otros servicios críticos, correctamente configurados y mantenidos funcionando de forma segura.
+
+En unas empresas y sociedad cada vez más dependientes de la tecnología un ataque como este puede causar importantes daños como ha sido en el caso del sistema de salud británico, en empresas como en el mismo caso de Telefónica ha obligado a apagar sistemas para evitar la propagación y preventivamente males mayores impidiendo trabajar con normalidad a un importante número de empleados de la empresa. El ataque de _WannaCry_ es una advertencia de lo que puede provocar un caso peor en el futuro, y este ransomware cuando actúa es evidente que se está sufriendo, otros ataques menos notorios pueden pasar inadvertidos.
 
 <div class="media-twitter">
     <blockquote class="twitter-tweet" data-cards="hidden" data-lang="es"><p lang="en" dir="ltr">Windows XP was released in 2001, every Linux kernel before 2013 is out of support, more CVEs reported for Linux in 2016, 2017 than Windows <a href="https://t.co/QzTPSFp0Pr">pic.twitter.com/QzTPSFp0Pr</a></p>&mdash; Ben Adams (@ben_a_adams) <a href="https://twitter.com/ben_a_adams/status/863563517898747904">14 de mayo de 2017</a></blockquote>
