@@ -1,13 +1,7 @@
 {{ if .Params.sharing }}
 <div class="row">
   <div class="col-md-12">
-    <div class="share-this share-this-end">
-      <span class="st_twitter_vcount" displayText="Tweet" st_via="{{ .Site.Params.sharethis.twitteruser }}"></span>
-      <span class="st_facebook_vcount" displayText="Facebook"></span>
-      <span class="st_googleplus_vcount" displayText="Google +"></span>
-      <span class="st_linkedin_vcount" displayText="LinkedIn"></span>
-      <span class="st_sharethis_vcount" displayText="ShareThis"></span>
-    </div>
+    <div class="sharethis-inline-share-buttons"></div>
   </div>
 </div>
 {{ end }}
