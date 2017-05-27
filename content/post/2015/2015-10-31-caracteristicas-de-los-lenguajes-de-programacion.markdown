@@ -75,7 +75,7 @@ Cuando invocamos un método con argumentos, los argumentos se asignan a los par�
 La asignación desestructurada permite extraer datos de _arrays_ y objetos usando una sintaxis réplica de la construcción de _arrays_ y literales de objetos. [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 ### Tuples
-Las tuplas son una estructura de datos formada por varios tipos, en Java 8 puede usarse la librería [Javaslang][javaslang] que añade esto y otras funcionalidades interesantes. En algunos lenguajes puede combinarse con la asignación desestructurada. [Ceylon Tuples](http://ceylon-lang.org/documentation/1.2/tour/sequences/#tuples).
+Las tuplas son una estructura de datos formada por varios tipos, en Java 8 puede usarse la librería [vavr][vavr] que añade esto y otras funcionalidades interesantes. En algunos lenguajes puede combinarse con la asignación desestructurada. [Ceylon Tuples](http://ceylon-lang.org/documentation/1.2/tour/sequences/#tuples).
 
 {{% reference %}}
 {{< links >}}
