@@ -3,6 +3,7 @@ pid: 236
 title: "Introducción a la base de datos relacional PostgreSQL"
 url: "/2017/05/introduccion-a-la-base-de-datos-relacional-postgresql/"
 date: 2017-05-27T12:00:00+02:00
+updated: 2017-05-28T12:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -181,12 +182,21 @@ Con PL/pgSQL se puede crear un bloque de computación y una serie de sentencias 
 
 Otros elementos que soporta la base de datos PostgreSQL en el lenguaje SQL son _Grouping Sets_, _ROLLUP_, _CUBE_, [Set Returning Functions](https://www.postgresql.org/docs/current/static/functions-srf.html), [tablefunc](https://www.postgresql.org/docs/current/static/tablefunc.html), [búsquedas a texto completo](https://www.postgresql.org/docs/current/static/textsearch.html) que para casos sencillos no hace falta recurrir a soluciones más especializadas como [Elasticsearch][elasticsearch], selección y bloqueo de filas con la [clásula _FOR UPDATE_](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-FOR-UPDATE-SHARE), [vistas](https://www.postgresql.org/docs/current/static/sql-createview.html) y [vistas materializadas](https://www.postgresql.org/docs/current/static/sql-creatematerializedview.html) entre seguro otras muchas cosas de las que me olvido o desconozco.
 
-Por todas estas características se considera a PostgreSQL una de las bases de datos relacionales más avanzadas existentes.
+Por todas estas características se considera a PostgreSQL una de las bases de datos relacionales más avanzadas existentes. Hay mucha literatura sobre las bases de datos relacionales desde el lenguage SQL en general, libros específicos sobre PostgreSQL o como evitar errores diseño al estructurar la información en tablas y columnas.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=988840668X&linkId=9ba19b63e64c7454bc8051f394643d06"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783989181&linkId=debb8456d091330663a1c10f654fd5b8"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1934356557&linkId=2f3d39f7290758074e90a66beda9e253"></iframe>
+</div>
+
+En caso de optar por una base de datos NoSQL para persistir la información [la base de datos NoSQL MongoDB][blogbitix-237] permite guardar los datos en forma de documentos y conseguir la escalabilidad que las bases de datos relacionales con sus propiedades ACID es difícil.
 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
 * [Documentación PostgreSQL](https://www.postgresql.org/docs/current/static/index.html)
+* [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 {{% /reference %}}
 
 {{% /post %}}
