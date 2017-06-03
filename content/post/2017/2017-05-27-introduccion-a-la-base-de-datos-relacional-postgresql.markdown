@@ -154,7 +154,7 @@ Un índice puede ser definido sobre más de una columna de una tabla. Son apropi
 
 * [Multicolumn Indexes](https://www.postgresql.org/docs/current/static/indexes-multicolumn.html)
 
-### Restricciones (Constarints)
+### Restricciones, _Constraints_
 
 Los tipos de datos son una forma de limitar los tipos de datos que pueden ser almacenados en una tabla. Para muchas aplicaciones las restricciones que proporcionan son demasiado simples. Por ejemplo, una columna que contenga el precio de un producto debería aceptar solo valores positivos. Pero no hay un tipo de datos que acepte solo números positivos. Otro problema es que quizá deseemos restringir el dato de una columna respecto a otras columnas o filas. Por ejemplo, en una tabla que contenga información de un producto el número del producto debería ser único.
 
