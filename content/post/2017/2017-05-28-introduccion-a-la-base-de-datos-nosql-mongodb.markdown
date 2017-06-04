@@ -3,6 +3,7 @@ pid: 237
 title: "Introducción a la base de datos NoSQL MongoDB"
 url: "/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/"
 date: 2017-05-28T12:30:00+02:00
+updated: 2017-06-04T12:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -43,6 +44,8 @@ Estas son las [operaciones CRUD][crud] ejecutadas desde la _shell_ de MongoDB en
 {{< gist picodotdev 1347cb475ad47d14f1941e76567b007a "update.json" >}}
 {{< gist picodotdev 1347cb475ad47d14f1941e76567b007a "delete.json" >}}
 
+MongoDB proporciona controladores para acceder a la base de datos desde los lenguejes de programación más populares como muestro en el artículo [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239].
+
 El libro [MongoDB in Action](http://amzn.to/2qvYqqU) es un buen material de referencia para dominar esta base de datos NoSQL con consejos prácticos de como guardar la información y como administrar la base de datos para replicar los datos en un _cluster_, escalar y otros temas administrativos como crear copias de seguridad, rendimiento, seguridad o monitorización.
 
 <div class="media-amazon" style="text-align: center;">
@@ -55,6 +58,7 @@ El libro [MongoDB in Action](http://amzn.to/2qvYqqU) es un buen material de refe
 {{< links >}}
 {{< postslinks >}}
 * [Documentación MongoDB](https://docs.mongodb.com/)
+* [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 {{% /reference %}}
 
