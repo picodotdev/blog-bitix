@@ -58,8 +58,10 @@ El libro [MongoDB in Action](http://amzn.to/2qvYqqU) es un buen material de refe
 {{< links >}}
 {{< postslinks >}}
 * [Documentación MongoDB](https://docs.mongodb.com/)
-* [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
+* [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
+* [Introducción a la base de datos NoSQL Redis][blogbitix-240]
+* [Serie de artículos sobre Docker][blogbitix-serie-docker]
 {{% /reference %}}
 
 {{% /post %}}
