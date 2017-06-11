@@ -8,7 +8,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "programacion"]
-summary: "Redis es una de las bases de datos NoSQL en este caso de tipo clave-valor. Los valores pueden ser de diferentes tipos y tienen una amplia colección de operaciones disponibles para usar según el tipo de datos asociado a la clave."
+summary: "Redis es una de las bases de datos NoSQL en este caso de tipo clave-valor. Los valores pueden ser de diferentes tipos y tiene una amplia colección de operaciones disponibles para usar según el tipo de datos asociado a la clave."
 ---
 
 {{% post %}}
@@ -17,9 +17,9 @@ summary: "Redis es una de las bases de datos NoSQL en este caso de tipo clave-va
 
 {{< logotype image1="redis.svg" title1="Redis" width1="200" >}}
 
-[Redis][redis] es una de las bases de datos para almacenar información de los conocidas como [NoSQL][nosql]. Almacena los datos en memoria por lo que es muy rápido y es usada como base de datos, como cache o _broker_ de mensajes. Los datos no se almacenan en tablas como en los sistemas relacionales tradiciones [<abbr title="Relational Database Management System">RDBMS</abbr>][rdbms] como [PostgreSQL][postgresql] o [MySQL][mysql] sino en estructuras de datos como cadenas, _hashes_, listas, conjuntos, conjuntos ordenado con rangos, _bitmaps_, _hyperloglogs_ e índices geoespaciales. Incorpora replicación, _scripting_ con LUA, deshalojo <abbr title="Least Recently Used">LRU</abbr>, transacciones, diferentes niveles de persistencia en disco y alta disponibilidad con [Redis Sentinel](https://redis.io/topics/sentinel) y paticionamiento con [Redis Cluster](https://redis.io/topics/cluster-tutorial).
+[Redis][redis] es una de las bases de datos para almacenar información de los conocidas como [NoSQL][nosql]. Almacena los datos en memoria por lo que es muy rápido y es usada como base de datos, como cache o _broker_ de mensajes. Los datos no se almacenan en tablas como en los sistemas relacionales tradiciones [<abbr title="Relational Database Management System">RDBMS</abbr>][rdbms] como [PostgreSQL][postgresql] o [MySQL][mysql] sino en estructuras de datos como cadenas, _hashes_, listas, conjuntos, conjuntos ordenado con rangos, _bitmaps_, _hyperloglogs_ e índices geoespaciales. Incorpora replicación, _scripting_ con LUA, desalojo <abbr title="Least Recently Used">LRU</abbr>, transacciones, diferentes niveles de persistencia en disco y alta disponibilidad con [Redis Sentinel](https://redis.io/topics/sentinel) y paticionamiento con [Redis Cluster](https://redis.io/topics/cluster-tutorial).
 
-El punto más crítico en el rendimiento en una aplicación suele estar en la base de datos relacional, dado que han de garantizar las propiedades ACID y almacenan grandes cantidades de datos en disco son lentas además de presentar dificultades para escalar horizontalmente. Redis almacena los datos en memoria por lo que es significativamente más rápida que una base de datos relacional aunque con la limitación de no poder almacenar las grandes cantidades de datos medidos hoy en día en terabytes o TiB (1024 GiB) que podría almacenar una base de datos relacional. Para la necesidad de acceder datos de forma rápida, de cachear datos a los que acceder rápido, datos a los que se acceden frecuentemente, datos precalculados, hay grandes cantidades de escrituras o necesidad de escalar Redis es una opción a tener en cuenta.
+El punto más crítico en el rendimiento en una aplicación suele estar en la base de datos relacional, dado que han de garantizar las propiedades ACID y almacenan grandes cantidades de datos en disco son lentas (comparativamente) además de presentar dificultades para escalar horizontalmente. Redis almacena los datos en memoria por lo que es significativamente más rápida que una base de datos relacional aunque con la limitación de no poder almacenar las grandes cantidades de datos medidos hoy en día en terabytes o TiB (1024 GiB) que podría almacenar una base de datos relacional. Para la necesidad de acceder datos de forma rápida, de cachear datos a los que acceder rápido, datos a los que se acceden frecuentemente, datos precalculados, hay grandes cantidades de escrituras o necesidad de escalar Redis es una opción a tener en cuenta.
 
 Redis es un sistema de datos clave-valor en el que cada clave tiene asociado un tipo de datos y unos datos que almacena. Según el tipo de datos de la clave se pueden realizar diferentes [operaciones o comandos de consulta](https://redis.io/commands).
 
@@ -30,12 +30,12 @@ Redis es un sistema de datos clave-valor en el que cada clave tiene asociado un 
 * [Operaciones con hashes](https://redis.io/commands#hash)
 * [Operaciones genéricas con keys](https://redis.io/commands#generic)
 
-Usando [Docker][docker] se puede iniciar una instancia de Redis con el siguiente comando, iniciada la instancia se puede conectar a ella y empezar a lanzar los comandos deseados.
+Usando [Docker][docker] se puede iniciar una instancia de Redis con un archivo descriptor del contenedor en formato _yml_ y el comando _docker-compose up_. Redis al igual que otras bases de datos posee un _shell_ de linea de comandos, _redis-cli_. Iniciada la instancia del contenedor y el servicio de Redis se puede iniciar una sesión de _sh_ y con ella el _shell_.
 
 {{< gist picodotdev 01c52ee107f41dc4c13b84c5c28ab612 "docker-compose.sh" >}}
 {{< gist picodotdev 01c52ee107f41dc4c13b84c5c28ab612 "docker-compose.yml" >}}
 
-Hay multitud de [clientes para los lenguajes de programación](https://redis.io/clients) más populares y otros menos usados, en Java uno de los clientes más conocidos es [Jedis](https://github.com/xetorthio/jedis). En el siguiente ejemplo un cliente Java se conecta a la instancia de Redis y lanza los varios comandos para almacenar cadenas, un _set_, _set_ ordenados, lista, _hash_ y algunas operaciones sobre claves.
+Hay multitud de [clientes para los lenguajes de programación](https://redis.io/clients) más populares y otros menos usados, en Java uno de los clientes más conocidos es [Jedis](https://github.com/xetorthio/jedis). En el siguiente ejemplo un cliente Java se conecta a la instancia de Redis y lanza los varios comandos para almacenar cadenas, un _set_, _set_ ordenados, lista, _hash_ y algunas operaciones sobre claves. Este ejemplo desde Java realiza las mismas operaciones que las realizadas en el _shell_ de Redis anterior.
 
 {{< gist picodotdev 01c52ee107f41dc4c13b84c5c28ab612 "Main.java" >}}
 {{< gist picodotdev 01c52ee107f41dc4c13b84c5c28ab612 "build.gradle" >}}
