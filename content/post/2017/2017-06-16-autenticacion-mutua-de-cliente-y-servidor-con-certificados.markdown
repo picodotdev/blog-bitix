@@ -2,7 +2,8 @@
 pid: 241
 title: "Autenticación mutua de cliente y servidor con certificados"
 url: "/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/"
-date: 2017-06-17T13:00:00+02:00
+date: 2017-06-17T02:45:00+02:00
+updated: 2017-06-17T02:49:00+02:00
 language: "es"
 sharing: true
 comments: true
