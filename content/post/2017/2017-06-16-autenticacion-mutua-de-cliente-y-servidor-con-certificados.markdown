@@ -70,6 +70,8 @@ En caso de que al usar un _keytore_ con un certificado de una autoridad que no v
 
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "groovy-unknown.sh" >}}
 
+{{% code git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up && groovy MutualCertAuth.groovy" %}}
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
