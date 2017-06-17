@@ -24,7 +24,6 @@ Para el ejemplo usaré un servidor web [nginx][nginx] ejecutado como un contened
 
 Inicialmente deberemos generar tres parejas de claves privadas y públicas, una para nuestra propia autoridad de certificación, una clave para el servidor y otra para el cliente. Al mismo tiempo generaré otras tres parejas de claves privadas y públicas para comprobar que cuando se proporciona un certificado incorrecto la autenticación falla.
 
-
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "openssl-genrsa.sh" >}}
 
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "ca.crt" >}}
