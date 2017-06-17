@@ -15,7 +15,7 @@ summary: "Usando los comandos expuestos en este artículo y con OpenSSL podemos 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="openssl.png" title="OpenSSL" >}}
+{{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
 Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar [GnuPG](http://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html) es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.
 
