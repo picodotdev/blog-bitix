@@ -3,7 +3,7 @@ pid: 241
 title: "Autenticación mutua de cliente y servidor con certificados"
 url: "/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/"
 date: 2017-06-17T02:45:00+02:00
-updated: 2017-06-17T02:49:00+02:00
+updated: 2017-06-18T23:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -65,9 +65,25 @@ El siguiente _script_ escrito en lenguaje [Groovy][groovy] muestra como desde un
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "MutualCertAuth.groovy" >}}
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "groovy.sh" >}}
 
-En caso de que al usar un _keytore_ con un certificado de una autoridad que no valida el certificado del servidor se producirán un error, también cuando el certificado del cliente no sea válido para el servidor.
+En caso de que al usar un _keystore_ con un certificado de una autoridad que no valida el certificado del servidor se producirán un error, también cuando el certificado del cliente no sea válido para el servidor.
 
 {{< gist picodotdev 16c98598bc1a2e63509f9c70960419b3 "groovy-unknown.sh" >}}
+
+Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Java, en el caso de querer realizar autenticación mutua con un navegador web como [Firefox][firefox] hay que instalar el certificado del cliente y si es necesario el certificado de la autoridad de certificación para que el candado indicativo de la seguridad del protocolo HTTPS se muestre en verde y no indique ningún problema de seguridad en la autenticación del servidor. En Firefox los certificados se añaden en el menú _Preferencias > Avanzado > Ver certficados_. En la pestaña _Sus certificados_ hay que importar el certificado del cliente en formato _PKCS12_ y en la pestaña _Autoridades_ el certificado de la autoridad que haya firmado el certificado del servidor, con el botón _Importar_ se selecciona el archivo _crt_ de la autoridad. Al introducir la URL y realizar la petición Firefox solicita mediante un diálogo seleccionar el certificado a usar para realizar la autenticación en el servidor.
+
+<div class="media" style="text-align: center;">
+    {{< figure pid="241"
+        image1="firefox-bad-request.png" thumb1="firefox-bad-request-thumb.png" title1="Autenticación mutua fallida"
+        image2="firefox-mutual-authorized.png" thumb2="firefox-mutual-authorized-thumb.png" title2="Autenticación mutua correcta"
+        image3="firefox-server-cert.png" thumb3="firefox-server-cert-thumb.png" title3="Certificado del servidor validado por la CA" >}}
+    {{< figure pid="241"
+        image1="firefox-certs.png" thumb1="firefox-certs-thumb.png" title1="Certificados de cliente"
+        image2="firefox-cas.png" thumb2="firefox-cas-thumb.png" title2="Certificados de la autoridades de certificación"
+        image3="firefox-ca.png" thumb3="firefox-ca-thumb.png" title3="Añadir certificado de CA" >}}
+    {{< figure pid="241"
+        image1="firefox-select-cert.png" thumb1="firefox-select-cert-thumb.png" title1="Selección de certificado de cliente"
+        caption="Autenticación mutua de cliente y servidor con el navegador web Firefox" >}}
+</div>
 
 {{% code git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up && groovy MutualCertAuth.groovy" %}}
 
