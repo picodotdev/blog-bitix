@@ -44,17 +44,15 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 {{< gist picodotdev 69b393c6a00fdd4f3ca3 "build.gradle" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/113/spring-boot-actuator-health.png" title="Spring Boot Actuator endpoint Health" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-health-thumb.png"></a>
-        <figcaption>Spring Boot Actuator endpoint Health</figcaption>
-    </figure>
-    <figure>
-        <a href="assets/images/posts/113/spring-boot-actuator-env.png" title="Spring Boot Actuator endpoint Env" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-env-thumb.png"></a>
-        <figcaption>Spring Boot Actuator endpoint Env</figcaption>
-    </figure>
-    <figure>
-        <a href="assets/images/posts/113/spring-boot-actuator-metrics.png" title="Spring Boot Actuator endpoint Metrics" data-gallery><img src="assets/images/posts/113/spring-boot-actuator-metrics-thumb.png"></a>
-        <figcaption>Spring Boot Actuator endpoint Metrics</figcaption>
+    {{< figure year="2015" pid="113"  
+        image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png"
+        caption="Spring Boot Actuator endpoint Health" >}}
+    {{< figure year="2015" pid="113"  
+        image1="spring-boot-actuator-env.png" thumb1="spring-boot-actuator-env-thumb.png"
+        caption="Spring Boot Actuator endpoint Env" >}}
+    {{< figure year="2015" pid="113"  
+        image1="spring-boot-actuator-metrics.png" thumb1="spring-boot-actuator-metrics-thumb.png"
+        caption="Spring Boot Actuator endpoint Metrics" >}}
     </figure>
 </div>
 

@@ -29,7 +29,9 @@ El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a 
 [LibreOffice][libreoffice] tiene la capacidad de abrir documentos excel, en la siguiente imagen se ve el documento abierto con LibreOffice Calc creado en el ejemplo.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="146" image1="libreoffice.png" thumb1="libreoffice-thumb.png" title1="Excel generado con Apache POI abierto con LibreOffice" caption="Excel generado con Apache POI abierto con LibreOffice" >}}
+    {{< figure year="2016" pid="146"
+        image1="libreoffice.png" thumb1="libreoffice-thumb.png" title1="Excel generado con Apache POI abierto con LibreOffice"
+        caption="Excel generado con Apache POI abierto con LibreOffice" >}}
 </div>
 
 En la [guía de iniciación a las características de los documentos HSSF y XSSF](http://poi.apache.org/spreadsheet/quick-guide.html) hay ejemplos pequeños sobre varias de las funcionalidades más comunes que necesitaremos al generar documentos.

@@ -31,7 +31,8 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 {{< gist picodotdev e17bd9a8c38d32d70c85 "Main.java" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/78/multiplewriter-consola.png" title="Salida en la consola" data-gallery><img src="assets/images/posts/78/multiplewriter-consola.png"></a>
+    {{< figure year="2015" pid="78"  
+        image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" >}}
 </div>
 
 Con [Groovy][groovy] además de las closures no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.

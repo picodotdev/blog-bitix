@@ -36,8 +36,9 @@ Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/
 Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/22/instalacion-archlinux.png" title="Menú instalación Arch Linux" data-gallery><img src="assets/images/posts/22/instalacion-arch-linux-thumb.png"></a>
-	<a href="assets/images/posts/22/instalacion-arch-linux-prompt.png" title="Inicio instalación Arch Linux" data-gallery><img src="assets/images/posts/22/instalacion-arch-linux-prompt-thumb.png"></a>
+	{{< figure year="2014" pid="22"  
+      image1="instalacion-archlinux.png" thumb1="instalacion-arch-linux-thumb.png" title1="Menú instalación Arch Linux"
+      image2="instalacion-arch-linux-prompt.png" thumb2="instalacion-arch-linux-prompt-thumb.png" title2="Inicio instalación Arch Linux" >}}
 </div>
 
 Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:
@@ -271,7 +272,8 @@ Para mantener la hora de nuestro sistema correctamente podemos usar un servicio 
 El resultado de la instalación y usando GNOME es el siguiente:
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/22/escritorio-gnome.jpg" title="Escritorio GNOME" data-gallery><img src="assets/images/posts/22/escritorio-gnome-thumb.jpg"></a>
+	{{< figure year="2014" pid="22"  
+    	image1="escritorio-gnome.jpg" thumb1="escritorio-gnome-thumb.jpg" >}}
 </div>
 
 {{% /post %}}

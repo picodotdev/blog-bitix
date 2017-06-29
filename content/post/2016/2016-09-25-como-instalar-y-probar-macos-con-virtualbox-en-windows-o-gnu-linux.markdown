@@ -24,7 +24,7 @@ Es política de Apple que su sistema operativo solo pueda ser ejecutado en sus e
 Los pasos para instalar macOS en una máquina virtual con VirtualBox son los siguientes, hay que descargar un [archivo con la imagen del disco duro de macOS](https://drive.google.com/drive/folders/0B1zbCptv-EMWc0ZfeUFLaldvUm8) y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Deberemos descomprimir la imagen del disco duro para obtener el archivo de extensión _vmdk_ y proceder a crear la máquina virtual. Elegimos crear una máquina virtual de tipo macOS, cambiaremos algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionaremos el disco duro con la imagen _vmdk_ descomprimida y cambiaremos la memoria asignada a la pantalla.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="configuracion-virtualbox-macos-vm.png" thumb1="configuracion-virtualbox-macos-vm-thumb.png" title1="Configuración máquina virtual macOS"
         image2="configuracion-virtualbox-macos-pantalla.png" thumb2="configuracion-virtualbox-macos-pantalla-thumb.png" title2="Configuración pantalla VirtualBox"
         caption="Configuración de la máquina virtual" >}}
@@ -41,22 +41,22 @@ En el caso de Linux el archivo de comandos es similar e igualmente sustituiremos
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos que empiezan a salir unos cuantos mensajes hasta que se inicia el sistema gráfico con la instalación y su asistente que constará de varios pasos.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="1-instalacion-inicio.png" thumb1="1-instalacion-inicio-thumb.png" title1="Inicio instalación macOS"
         image2="2-instalacion-welcome.png" thumb2="2-instalacion-welcome-thumb.png" title2="Asistente instalación macOS" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="3-instalacion-keyboard.png" thumb1="3-instalacion-keyboard-thumb.png" title1="Teclado"
         image2="4-instalacion-location.png" thumb2="4-instalacion-location-thumb.png" title2="Localización" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="5-instalacion-transfer.png" thumb1="5-instalacion-transfer-thumb.png" title1="Transferencia"
         image2="6-instalacion-apple-id.png" thumb2="6-instalacion-apple-id-thumb.png" title2="Apple ID" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="7-instalacion-terms-conditions.png" thumb1="7-instalacion-terms-conditions-thumb.png" title1="Términos y condiciones"
         image2="8-instalacion-account.png" thumb2="8-instalacion-account-thumb.png" title2="Cuenta" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="9-instacion-timezone.png" thumb1="9-instacion-timezone-thumb.png" title1="Zona horaria"
         image2="10-instalacion-diagnostics.png" thumb2="10-instalacion-diagnostics-thumb.png" title2="Diagnósticos" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="11-instalacion-siri.png" thumb1="11-instalacion-siri-thumb.png" title1="Siri"
         image2="12-instalacion-setting-up.png" thumb2="12-instalacion-setting-up-thumb.png" title2="Configurando" >}}
 </div>
@@ -64,13 +64,13 @@ Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos qu
 Terminada la instalación entramos en el escritorio con el aspecto clásico y fondo de pantalla de macOS y las aplicaciones incorporadas en el propio sistema por defecto.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="13-macos-start.png" thumb1="13-macos-start-thumb.png" title1="Inicio"
         image2="14-macos-help.png" thumb2="14-macos-help-thumb.png" title2="Ayuda" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="15-macos-overview.png" thumb1="15-macos-overview-thumb.png" title1="Resumen"
         image2="16-macos-finder.png" thumb2="16-macos-finder-thumb.png" title2="Finder" >}}
-    {{< figure pid="181"
+    {{< figure year="2016" pid="181"
         image1="17-macos-photos.png" thumb1="17-macos-photos-thumb.png" title1="Fotos"
         image2="18-macos-preferences.png" thumb2="18-macos-preferences-thumb.png" title2="Preferencias" >}}
 </div>

@@ -38,7 +38,7 @@ Con el _cluster_ creado debemos instalar y configurar REX-Ray en cada uno de los
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "03-rex-ray-install.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="226"
+    {{< figure year="2017" pid="226"
         image1="instalacion-rex-ray.png" thumb1="instalacion-rex-ray-thumb.png" title1="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox"
         caption="Instalación de REX-Ray en nodos de Docker Swarm con VirtualBox" >}}
 </div>
@@ -51,7 +51,7 @@ Para probar la persistencia de datos usaré un _stack_ iniciado de la misma form
 En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el contenedor de postgres y que identificativo se le ha asignado.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="226"
+    {{< figure year="2017" pid="226"
         image1="stack-deploy-postgres.png" thumb1="stack-deploy-postgres-thumb.png" title1="Deploy del stack de postgres"
         caption="Deploy del stack de postgres" >}}
 </div>
@@ -61,7 +61,7 @@ En el _stack_ el volumen de datos postgres está declarado y creado de forma ext
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "06-create-volumes.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="226"
+    {{< figure year="2017" pid="226"
         image1="volumes.png" thumb1="volumes-thumb.png" title1="Volúmenes de datos"
         image2="volumes-nautilus.png" thumb2="volumes-nautilus-thumb.png" title2="Archivos de volúmenes en el sistema de archivos del host"
         caption="Volúmenes de datos" >}}

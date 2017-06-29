@@ -42,10 +42,10 @@ Inicio la tercera instalación de nuevo en el portátil y realizo la activación
 Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office, más que días del año. Y sigo teniendo razón, usarlos sin licencia sigue siendo tan fácil como siempre una vez encontrados los enlaces adecuados en Google, ¿un martes de parches se instalará alguna actualización de Windows que descubra el _crack_ aplicado al Office? Me enteraré.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="119"
+    {{< figure year="2016" pid="119"
         image1="windows-10.png" thumb1="windows-10-thumb.png" title1="Windows 10"
         caption="Windows 10" >}}
-    {{< figure pid="119"
+    {{< figure year="2016" pid="119"
         image1="microsoft-word-2016.png" thumb1="microsoft-word-2016-thumb.png" title1="Microsoft Word 2016"
         caption="Microsoft Word 2016" >}}
 </div>

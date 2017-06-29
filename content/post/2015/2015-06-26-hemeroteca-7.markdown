@@ -58,10 +58,9 @@ El resto de artículos son los siguientes, también interesantes:
 Cada mes sigo aumentando ligeramente o manteniendo el número de visitas del mes anterior, la mayoría procedentes del buscador Google. En enero andaba en unas 1125 sesiones y 1400 páginas vistas semanales, hoy en unas 1450 sesiones y 2000 páginas vistas, siguen siendo pocas comparadas con algunos otras bitácoras de temática similar. De vez en cuando tengo algún nuevo seguidor en twitter y son pocos los comentarios que recibo probablemente esté haciendo algo que podría hacer mejor. Los artículos que publico suelen ser para un público de nivel medio y uno a la semana, [recomiendan escribir artículos de un nivel básico](http://www.marketingguerrilla.es) y probablemente si siguiese esta recomendación recibiría más visitas o más comentarios pero me suele gustar escribir de algo que incluso yo aprenda algo y que no esté ya en un millardo de sitios y sea medianamente fácil de encontrar con una búsqueda sencilla, aunque igual me planteo de vez en cuando seguir esta recomendación.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/86/analytics.png" title="Visitas semanales de Blog Bitix" data-gallery><img src="assets/images/posts/86/analytics-thumb.png"></a>
-        <figcaption>Evolución de sesiones semanales en Blog Bitix</figcaption>
-    </figure>
+    {{< figure year="2015" pid="86"  
+        image1="analytics.png" thumb1="analytics-thumb.png"
+        caption="Evolución de sesiones semanales en Blog Bitix" >}}
 </div>
 
 

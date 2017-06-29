@@ -21,7 +21,7 @@ draft: true
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid=""
+    {{< figure year="2017" pid=""
         image1="" thumb1="-thumb.png" title1=""
         image2="" thumb2="-thumb.png" title2=""
         caption="" >}}

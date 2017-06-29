@@ -28,11 +28,11 @@ En la documentación de [Docker][docker] están detallados y comentados los [com
 Al igual que cuando se crea un contenedor para un servicio en el _cluster_ [Docker Swarm][docker-swarm] si no se indica alguna restricción decidirá en qué nodos se crean las nuevas instancias o contenedores del servicio.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="223"
+    {{< figure year="2017" pid="223"
         image1="nginx-service-1.png" thumb1="nginx-service-1-thumb.png" title1="Servicio de nginx con una réplica"
         image2="nginx-service-4.png" thumb2="nginx-service-4-thumb.png" title2="Servicio de nginx escalado a cuatro réplicas"
         caption="Servicio de nginx antes y después de escalarlo" >}}
-    {{< figure pid="223"
+    {{< figure year="2017" pid="223"
         image1="nginx-service-scale.png" thumb1="nginx-service-scale-thumb.png" title1="Escalado del servicio de nginx"
         caption="Escalado del servicio de nginx" >}}
 </div>
@@ -44,7 +44,7 @@ En el ejemplo al crear el _cluster_ se usa la última imagen de docker para ngin
 {{< gist picodotdev 1a9862e63c242949ee04cd313e82f3ec "06-nginx-update.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="223"
+    {{< figure year="2017" pid="223"
         image1="nginx-service-update.png" thumb1="nginx-service-update-thumb.png" title1="Actualización de la imagen del servicio de nginx"
         caption="Actualización de la imagen del servicio de nginx" >}}
 </div>

@@ -23,7 +23,7 @@ Una de las opciones que añade es poniendo en la etiqueta _select_ el atributo _
 Este es el aspecto de un elemento de selección con los botones de seleccionar todas las opciones y ninguna que son muy útiles para el usuario evitándose seleccionar una a una cada una de las opciones.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="189"
+    {{< figure year="2016" pid="189"
         image1="multiselect-todos.png" thumb1="multiselect-todos-thumb.png" title1="Multiselect con opciones Todos y Ninguno"
         image2="multiselect.png" thumb2="multiselect-thumb.png" title2="Opciones seleccionadas de Multiselect"
         caption="MultiSelect con opciones Todos y Ninguno" >}}
@@ -42,7 +42,7 @@ Este sería un ejemplo de código JavaScript junto con el uso del componente de 
 Y este sería el aspecto de componente en el navegador.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="189"
+    {{< figure year="2016" pid="189"
         image1="multiselect-europa.png" thumb1="multiselect-europa-thumb.png" title1="Multiselect con opciones Europa"
         image2="multiselect-asia.png" thumb2="multiselect-asia-thumb.png" title2="Multiselect con opciones Asia"
         caption="MultiSelect con opciones Europa, America y Asia" >}}

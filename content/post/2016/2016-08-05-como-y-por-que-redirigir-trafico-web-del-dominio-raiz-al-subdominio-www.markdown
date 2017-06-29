@@ -34,7 +34,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "nginx.conf" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="166"
+    {{< figure year="2016" pid="166"
         image1="nginx.png" thumb1="nginx-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="nginx-www.png" thumb2="nginx-www-thumb.png" title2="Dominio después de acceder al sitio"
         caption="Dominio antes y después de acceder al sitio con Nginx" >}}
@@ -46,7 +46,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< gist picodotdev 82d3c361c947d57a25b346b386bdf3a9 "httpd.conf" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="166"
+    {{< figure year="2016" pid="166"
         image1="httpd.png" thumb1="httpd-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="httpd-www.png" thumb2="httpd-www-thumb.png" title2="Dominio después de acceder al sitio"
         caption="Dominio antes y después de acceder al sitio con Apache HTTPD" >}}

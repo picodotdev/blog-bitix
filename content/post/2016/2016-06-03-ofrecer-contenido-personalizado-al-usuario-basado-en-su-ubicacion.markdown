@@ -28,7 +28,9 @@ Instalados los paquetes con las bases de datos de geoposicionamiento en la distr
 {{< gist picodotdev c521d486dd5740b5c9fa6144bde3bbc4 "geoiplookup-marca.es.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="147" image1="geoiplookup.png" thumb1="geoiplookup-thumb.png" title1="Comando para obtener información de geoposicionamiento en base a la dirección IP" caption="Comando para obtener información de geoposicionamiento en base a la dirección IP" >}}
+    {{< figure year="2016" pid="147"
+        image1="geoiplookup.png" thumb1="geoiplookup-thumb.png" title1="Comando para obtener información de geoposicionamiento en base a la dirección IP"
+        caption="Comando para obtener información de geoposicionamiento en base a la dirección IP" >}}
 </div>
 
 Otra opción es usar otra base de datos de geolocalización para direcciones IP, en vez de instalar un paquete en el sistema y usar el comando _geoiplookup_ y procesar su salida con las bases de datos de [MaxMind GeoLite2 para paises](http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz) y [ciudades](http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz) dispondremos de una API accessible desde el lenguaje de programación que prefiramos. En este ejemplo usaré Java pero hay _bindings_ para los lenguajes más populares.
@@ -41,7 +43,9 @@ En el siguiente ejemplo no incluyo la base de datos en el código fuente del pro
 {{< gist picodotdev 74bd3f93225874e9fa35918515f5ec06 "build.gradle" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="147" image1="geolite2.png" thumb1="geolite2-thumb.png" title1="Información de geoposicionamiento en base a la dirección IP con GeoLite2" caption="Información de geoposicionamiento en base a la dirección IP con GeoLite2" >}}
+    {{< figure year="2016" pid="147"
+        image1="geolite2.png" thumb1="geolite2-thumb.png" title1="Información de geoposicionamiento en base a la dirección IP con GeoLite2"
+        caption="Información de geoposicionamiento en base a la dirección IP con GeoLite2" >}}
 </div>
 
 GeoLite2 tiene una [licencia Creative Commons Attribution-ShareAlike](http://creativecommons.org/licenses/by-sa/4.0/) y no tiene coste, MaxMind proporciona además otras bases de datos más completas pero con un coste, 50$ para la base de datos de paises más 24$ para las actualizaciones y 370$ para la base de datos de ciudades más 100$ para las actualizaciones.

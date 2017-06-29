@@ -28,7 +28,6 @@ Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear
 {{< gist picodotdev 6dc90582ce925f19ffcb "Dockerfile-base" >}}
 {{< gist picodotdev 6dc90582ce925f19ffcb "Dockerfile-mysql" >}}
 
-
 Los Dockerfile tienen algunas instrucciones:
 
 * FROM: indica la imagen base a partir de la cual crearemos la imagen que construirá el Dockerfile.
@@ -51,7 +50,8 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 {{< gist picodotdev 6dc90582ce925f19ffcb "docker-build.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/51/docker-mysql.png" title="docker-mysql" data-gallery><img src="assets/images/posts/51/docker-mysql-thumb.png"></a>
+	{{< figure year="2014" pid="51"  
+    	image1="docker-mysql.png" thumb1="docker-mysql-thumb.png" title1="docker-mysql" >}}
 </div>
 
 Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:

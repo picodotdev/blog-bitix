@@ -34,10 +34,9 @@ Usar el software libre ya es una buena forma de apoyarlo pero también requiere 
 Finalmente como tenía intención, hice una donación a la [organización Europea de la Free Software Foundation][fsfe] comprando unas camisetas reivindicativas en su [tienda](https://fsfe.org/order/order.es.html) que además usaré alegremente a modo de promoción, hay más modelos incluidos para mujer y otra serie de artículos como tazas, llaveros, bolígrafos y pins. Estas son las camisetas.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/117/fsfe-t-shirts.jpg" title="Camisetas FSFE" data-gallery><img src="assets/images/posts/117/fsfe-t-shirts-thumb.jpg"></a>
-        <figcaption>Camisetas FSFE</figcaption>
-    </figure>
+    {{< figure year="2015" pid="117"  
+        image1="fsfe-t-shirts.jpg" thumb1="fsfe-t-shirts-thumb.jpg"
+        caption="Camisetas FSFE" >}}
 </div>
 
 La económica solo es una forma de colaborar con el software libre, usarlo es una buena iniciativa y contribuir con él de alguna manera es algo que está al alcance de todos. No tiene por que ser haciendo donaciones económicas puede ser difundiendo su uso instalando alguna distribución [GNU][gnu]/[Linux][linux] a alguien que te pide que le reinstales el sistema operativo, dando una charla, realizando traducciones al español como en mi caso a dos programa que uso como son el [Reproductor multimedia VLC][vlc] y [VirtualBox][virtualbox], escribiendo artículos en una bitácora como podría ser esta e incluso un libro gratuito sobre el _framework_ web de desarrollo para aplicaciones Java, [PlugIn Tapestry][blogbitix-12].
@@ -49,10 +48,9 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
 [Yo apoyo al software libre](http://www.gnu.org/)
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/117/fsfe-t-shirts.png" title="Pago PayPal" data-gallery><img src="assets/images/posts/117/fsfe-t-shirts-thumb.png"></a>
-        <figcaption>Pago PayPal</figcaption>
-    </figure>
+    {{< figure year="2015" pid="117"  
+        image1="fsfe-t-shirts.png" thumb1="fsfe-t-shirts-thumb.png"
+        caption="Pago PayPal" >}}
 </div>
 
 {{< donations >}}

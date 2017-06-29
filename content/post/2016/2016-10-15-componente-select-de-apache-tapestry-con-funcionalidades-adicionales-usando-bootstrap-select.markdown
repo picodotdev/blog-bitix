@@ -53,7 +53,7 @@ Este sería el código para crear una instancia de _SelectModel_ para un compone
 {{< gist picodotdev 128dcbc596aeeb6f40d89d95542925ce "AppOptionModel.java" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="187"
+    {{< figure year="2016" pid="187"
         image1="select-1.png" thumb1="select-1-thumb.png" title1="Componente selector con bootstrap-select"
         image2="select-2.png" thumb2="select-2-thumb.png" title1="Componente selector con bootstrap-select"
         caption="Componente selector con bootstrap-select" >}}

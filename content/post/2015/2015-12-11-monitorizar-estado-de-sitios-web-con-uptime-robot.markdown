@@ -19,10 +19,9 @@ tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion"]
 Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes causas pueden dejar de funcionar ya sea porque se ha perdido la conexión con la base de datos, se ha llenado el disco de la máquina impidiendo su normal funcionamiento u otras causas. En algunos tipos de servicio como páginas de presencia en internet puede dar una mala imagen pero en los sitios de comercio electrónico la pérdida del servicio es especialmente importante ya que además implica perder ventas o clientes. Para conocer de la forma más inmediata posible el mal funcionamiento y poder restaurar el servicio podemos usar alguna herramienta que monitorice su estado. Para monitorizar el funcionamiento de sitios web una de ellas muy sencilla es [Uptime Robot][uptimerobot].
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/114/uptime-robot.png" title="Uptime Robot" data-gallery><img src="assets/images/posts/114/uptime-robot-thumb.png"></a>
-        <figcaption>Uptime Robot</figcaption>
-    </figure>
+    {{< figure year="2015" pid="114"  
+        image1="uptime-robot.png" thumb1="uptime-robot-thumb.png"
+        caption="Uptime Robot" >}}
 </div>
 
 Una vez registrados y con acceso al panel de control podemos crear un _monitor_. Tenemos la posibilidad de crear diferentes tipos:
@@ -33,23 +32,20 @@ Una vez registrados y con acceso al panel de control podemos crear un _monitor_.
 * _port_: comprueba que un determinado puerto esté accesible. En la [página de preguntas frecuentes](https://uptimerobot.com/faq) están comentados los diferentes tipos de monitores.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/114/nuevo-monitor.png" title="Nuevo monitor HTTP" data-gallery><img src="assets/images/posts/114/nuevo-monitor-thumb.png"></a>
-        <figcaption>Nuevo monitor HTTP</figcaption>
-    </figure>
+    {{< figure year="2015" pid="114"  
+        image1="nuevo-monitor.png" thumb1="nuevo-monitor-thumb.png"
+        caption="Nuevo monitor HTTP" >}}
 </div>
 
 En el momento que un monitor detecte una caída de servicio podemos establecer que nos notifique por correo electrónico, [Twitter][twitter], _web-hook_, [Slack][slack], <abbr title="Short Message Service">SMS</abbr> o alguna más de forma que nos enteremos de la circunstancia inmediatamente. También podemos establecer el intervalo de tiempo de la monitorización desde como mínimo cada 5 minutos. En el panel de control podemos ver algunas estadísticas de cada monitor y de la cuenta, también se pueden reiniciar las estadísticas de cada monitor.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/114/dashboard.png" title="Dashboard" data-gallery><img src="assets/images/posts/114/dashboard-thumb.png"></a>
-        <figcaption>Dashboard</figcaption>
-    </figure>
-    <figure>
-        <a href="assets/images/posts/114/blogstack.png" title="Monitor Blog Stack" data-gallery><img src="assets/images/posts/114/blogstack-thumb.png"></a>
-        <figcaption>Monitor Blog Stack</figcaption>
-    </figure>
+    {{< figure year="2015" pid="114"  
+        image1="dashboard.png" thumb1="dashboard-thumb.png"
+        caption="Dashboard" >}}
+    {{< figure year="2015" pid="114"  
+        image1="blogstack.png" thumb1="blogstack-thumb.png"
+        caption="Monitor Blog Stack" >}}
 </div>
 
 En el plan gratuito de Uptime Robot podemos crear 50 monitores, en el [plan de pago](http://uptimerobot.com/pricing) se pueden establecer tiempos de monitorización a partir de 1 minuto en vez de 5 y crear más monitores.

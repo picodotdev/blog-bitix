@@ -23,7 +23,8 @@ Después de pasado todos estos años los motivos por los que lo empecé los sigo
 Durante este tiempo en ambos blogs he tenido unas 450K páginas vistas, en realidad no son muchas (por no decir pocas) comparadas con las conseguidas por otras bitácoras personales de temática similar. Actualmente según feedly Blog Bitix tiene aproximadamente 70 suscriptores, seguramente haya algunos más que feedly no contabilice, tampoco son muchos. El mayor tráfico proviene del buscador Google, vistas que llegan como "paracaidistas" buscando información desde un enlace en la página de resultados con sus búsquedas y las palabras clave. A medida que cada semana publico más contenido un mes tras otro Blog Bitix tiene unas cuantas visitas más pero el crecimiento es lento.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/65/analytics.png" title="Visitas semanales de Blog Bitix" data-gallery><img src="assets/images/posts/65/analytics-thumb.png"></a>
+	{{< figure year="2015" pid="65"  
+    	image1="analytics.png" thumb1="analytics-thumb.png" >}}
 </div>
 
 En estos cinco años he recibido tres ingresos de Google por la publicidad AdSense que han sido aproximadamente unos 210€ en total, esta cantidad no compensa el tiempo dedicado pero recibir uno de vez en cuando es algo que no está mal. Hace algunos meses también he incluido algunos enlaces usando el [programa de afiliados de Amazon][amazon-afiliados] por ejemplo en el [disco SSD que compré][blogbitix-18] y una [colección de libros recomendables leer para cualquier programador][blogbitix-55], aún no se superado la cantidad mínima (25€) para que Amazon me haga el ingreso pero no me queda mucho. Para alguien que publique análisis de productos más a menudo el 5% de comisión y el 10% para libros que ofrece Amazon por compra realizada puede ser otra fuente para rentabilizar cómodamente una bitácora.

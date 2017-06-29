@@ -43,13 +43,13 @@ Iniciar el servidor OAuth de Keycloak usando [Docker][docker] es muy sencillo co
 Para el ejemplo crearé un nuevo _realm_ que contendrá los usuarios y en el que registraremos la aplicación cliente.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="keycloak-realm.png" thumb1="keycloak-realm-thumb.png" title1="Keycloak realm"
         image2="keycloak-client.png" thumb2="keycloak-client-thumb.png" title2="Keycloak client" >}}
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="keycloak-client-roles.png" thumb1="keycloak-client-roles-thumb.png" title1="Keycloak client roles"
         image2="keycloak-roles.png" thumb2="keycloak-roles-thumb.png" title2="Keycloak roles" >}}
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="keycloak-users.png" thumb1="keycloak-users-thumb.png" title1="Keycloak users"
         image2="keycloak-users-role-mappings.png" thumb2="keycloak-users-role-mappings-thumb.png" title2="Keycloak users role mappings" >}}
 </div>
@@ -75,17 +75,17 @@ Con Apache Tapestry el filtro se registra en el módulo de la aplicación y con 
 Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="tapestry-index.png" thumb1="tapestry-index-thumb.png" title1="Index"
         image2="tapestry-keycloak-login.png" thumb2="tapestry-keycloak-login-thumb.png" title2="Login" >}}
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="tapestry-user.png" thumb1="tapestry-user-thumb.png" title1="User" >}}
 </div>
 
 Si intentamos acceder a la página de usuario o administrador sin estar autenticados se nos mostrará la página de error 403 y al acceder a la página de administración con un usuario sin rol _admin_ se nos mostrará la página de error 401.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="185"
+    {{< figure year="2016" pid="185"
         image1="tapestry-error403.png" thumb1="tapestry-error403-thumb.png" title1="Error 403" >}}
 </div>
 

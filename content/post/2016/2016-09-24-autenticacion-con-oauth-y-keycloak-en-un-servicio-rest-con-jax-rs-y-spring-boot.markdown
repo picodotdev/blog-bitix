@@ -29,17 +29,17 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "docker-compose-up.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="keycloak-login.png" thumb1="keycloak-login-thumb.png" title1="Inicio de sesión de Keycloak" >}}
 </div>
 
 Creamos un _realm_, en el ejemplo llamado _springbootjaxrs_ y un cliente con id _client_, además crearemos un rol _api_ y se lo asignaremos al cliente.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="keycloak-add-client.png" thumb1="keycloak-add-client-thumb.png" title1="Registro del cliente"
         image2="keycloak-add-role.png" thumb2="keycloak-add-role-thumb.png" title2="Creación de rol" >}}
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="keycloak-service-account-roles.png" thumb1="keycloak-service-account-roles-thumb.png" title1="Asignación de roles al cliente" >}}
 </div>
 
@@ -54,7 +54,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>./gradlew run</code> p
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-token.sh" >}}
 <div class="media" style="text-align: center;">
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
 </div>
 
@@ -62,7 +62,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-401.sh" >}}
 <div class="media" style="text-align: center;">
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
 </div>
 
@@ -70,7 +70,7 @@ Proporcionando el token mediante una cabecera de la petición el servicio nos de
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl.sh" >}}
 <div class="media" style="text-align: center;">
-    {{< figure pid="180"
+    {{< figure year="2016" pid="180"
         image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
         image2="client-token-tampered.png" thumb2="client-token-tampered-thumb.png" title2="Llamada al servicio REST con token inválido" >}}
 </div>

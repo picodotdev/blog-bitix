@@ -48,13 +48,13 @@ Por un problema con el medio de pago que usa Arch Linux, [Software in the Public
 ### Comprobantes de las donaciones
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="229"
+    {{< figure year="2017" pid="229"
         image1="donacion-gnome.png" thumb1="donacion-gnome-thumb.png" title1="Donación GNOME"
         caption="Donación GNOME" >}}
-    {{< figure pid="229"
+    {{< figure year="2017" pid="229"
         image1="donacion-videolan.png" thumb1="donacion-videolan-thumb.png" title1="Donación VideoLAN (VLC)"
         caption="Donación VideoLAN (VLC)" >}}
-    {{< figure pid="229"
+    {{< figure year="2017" pid="229"
         image1="donacion-archlinux-1.png" thumb1="donacion-archlinux-1-thumb.png" title1="Donación Arch Linux"
         image2="donacion-archlinux-2.png" thumb2="donacion-archlinux-2-thumb.png" title2="Donación Arch Linux"
         caption="Donación Arch Linux" >}}

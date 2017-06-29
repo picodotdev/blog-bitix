@@ -40,14 +40,14 @@ En [Amazon][amazon] hay una amplia gama de bombillas LED variando en tipo de cas
 </div>
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="197"
+    {{< figure year="2016" pid="197"
         image1="bombilla-led-philips-1.jpg" thumb1="bombilla-led-philips-1-thumb.jpg" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
         image2="bombilla-led-philips-2.jpg" thumb2="bombilla-led-philips-2-thumb.jpg" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K" >}}
-    {{< figure pid="197"
+    {{< figure year="2016" pid="197"
         image1="bombilla-led-philips-3.jpg" thumb1="bombilla-led-philips-3-thumb.jpg" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
         image2="bombilla-led-philips-4.jpg" thumb2="bombilla-led-philips-4-thumb.jpg" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
         caption="Bombilla LED PHILIPS 100W E27 13.5W 2700K" >}}
-    {{< figure pid="197"
+    {{< figure year="2016" pid="197"
         image1="lampara-brilliant.jpg" thumb1="lampara-brilliant-thumb.jpg" title1="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K"
         caption="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K" >}}
 </div>

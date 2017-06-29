@@ -25,7 +25,7 @@ Instalado el [paquete de KeePassX](https://www.archlinux.org/packages/community/
 {{< gist picodotdev 1e0bc79d0f7260e6243c744207cb19ff "pacman.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="196"
+    {{< figure year="2016" pid="196"
         image1="keepassx-1.png" thumb1="keepassx-1-thumb.png" title1="KeePassX"
         image2="keepassx-4.png" thumb2="keepassx-4-thumb.png" title2="KeePassX" >}}
 </div>
@@ -33,14 +33,14 @@ Instalado el [paquete de KeePassX](https://www.archlinux.org/packages/community/
 Lo siguiente será crear una entrada con el usuario y contraseña de un servicio.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="196"
+    {{< figure year="2016" pid="196"
         image1="keepassx-2.png" thumb1="keepassx-2-thumb.png" title1="KeePassX" >}}
 </div>
 
 Una vez almacenada la credencial podemos copiar al portapapeles el usuario y contraseña de esa credencial para usarla en el servicio. También podremos ver la contraseña no protegida con asteriscos sino los caracteres originales.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="196"
+    {{< figure year="2016" pid="196"
         image1="keepassx-2.png" thumb1="keepassx-2-thumb.png" title1="Nueva entrada"
         image1="keepassx-3.png" thumb1="keepassx-3-thumb.png" title1="Contraseñas guardadas" >}}
 </div>

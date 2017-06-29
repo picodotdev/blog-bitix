@@ -50,10 +50,9 @@ Este sería el inicio del servidor de configuración y el documento JSON que dev
 
 {{% asciinema id="30811" caption="Inicio del servidor Spring Cloud Config" %}}
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/112/spring-cloud-client-prod.png" title="Configuración de la aplicación para el entorno de producción" data-gallery><img src="assets/images/posts/112/spring-cloud-client-prod-thumb.png"></a>
-        <figcaption>Configuración de la aplicación para el entorno de producción</figcaption>
-    </figure>
+    {{< figure year="2015" pid="112"  
+        image1="spring-cloud-client-prod.png" thumb1="spring-cloud-client-prod-thumb.png" title1="Configuración de la aplicación para el entorno de producción"
+        caption="Configuración de la aplicación para el entorno de producción" >}}
 </div>
 
 La aplicación cliente cuando se inicie solicitará su configuración al servidor Spring Cloud Config mediante una petición HTTP en función del entorno para el que se inicie. Deberemos usar la dependencia _org.springframework.cloud:spring-cloud-starter-config_. Para obtener los valores de las propiedades de configuración podemos usar la anotación <code>@Value</code>. En los archivos _application.yml_ y _bootstrap.yml_ indicamos el perfil para el cual se activará la aplicación y podemos especificar la <abbr title="Uniform Resource Locator">URL</abbr> con la localización del servidor de configuración.

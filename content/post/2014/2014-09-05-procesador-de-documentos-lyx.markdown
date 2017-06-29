@@ -22,7 +22,8 @@ Hace unos días publiqué una [nueva edición del libro PlugIn Tapestry][blogbit
 Empecé evaluando la herramienta más adecuada para escribir el libro, en un principio empecé con [Google Docs][google-docs], también con [LibreOffice][libreoffice], sin embargo, al final descubrí [LyX][lyx] y fué el que empleé. ¿Por que LyX? Porque al contrario de Google Docs y LibreOffice que son procesadores de textos LyX es un procesador de documentos ¿que significa esto? Que con LyX te centras casi exclusivamente en escribir el contenido del libro no de estar formateándolo. Como procesador de documentos hace que no tengas tanto control sobre los estilos pero a la vez hace que todo el libro tenga un formato homogéneo y no tengas que «microgestionar» el estilo de cada elemento, en un documento grande de más de 250 páginas es muy útil y te evita casi todo el trabajo de mantener la coherencia en los estilos, ahorrándole a uno mucho tiempo.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/lyx-plugin.png" title="LyX" data-gallery><img src="assets/images/posts/41/lyx-plugin-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="lyx-plugin.png" thumb1="lyx-plugin-thumb.png" >}}
 </div>
 
 ## LyX
@@ -32,17 +33,18 @@ LyX es una herramienta que funciona excelentemente, mucho mejor que LibreOffice 
 Una de las primeras cosas que deberemos hacer es indicarle a LyX la clase de documento que pretendemos escribir a partir del cual se establecerán los estilos y opciones que LyX nos ofrecerá, también las secciones que dispondremos. Con la clase de documento book tendremos secciones numeradas y no numeradas, la diferencia es que además de unas tener numeración y otras no es que las numeradas aparecerán en el índice y las no numeradas no. Para ello seleccionamos Documento> Configuración.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/lyx-configuracion-documento.png" title="Configuración documento, LyX" data-gallery><img src="assets/images/posts/41/lyx-configuracion-documento-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="lyx-configuracion-documento.png" thumb1="lyx-configuracion-documento-thumb.png" title1="Configuración documento, LyX" >}}
 </div>
 
 Entre las mismas opciones podemos seleccionar las tipografías, el diseño de la página (A4, A5, ...), los márgenes y una parte importe donde podremos modificar varios aspectos del documento, el preámbulo LaTeX, lo difícil de esta sección es saber cuales son las opciones podemos escribir en él pero si necesitamos modificar algo probablemente debamos insertarlo en esta sección. Un posible contenido es el siguiente donde defino y modifico el color de los hiperenlaces del libro y las opciones por defecto de los listados.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/lyx-preambulo-latex.png" title="Configuración documento, LyX" data-gallery><img src="assets/images/posts/41/lyx-preambulo-latex-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="lyx-preambulo-latex.png" thumb1="lyx-preambulo-latex-thumb.png" title1="Configuración documento, LyX" >}}
 </div>
 
 {{< gist picodotdev ba7ab60851eb904ee8ac "preamble.tex" >}}
-
 
 Otras opciones deberemos incluirlas como código Tex al principio (Insertar> Código Tex) del documento, para establecer cuál es la palabra a emplear para nombrar los capítulos, figuras y listados que por defecto aparecerán en inglés en vez de español (Chapter 1 en vez de Capítulo 1). Este es el primer recuadro en rojo de la imagen LyX.
 
@@ -53,7 +55,8 @@ Con LyX si necesitamos reorganizar los capítulos o secciones es muy simple, par
 Podemos modificar la fuente del documento en Documento> Configuración> Tipografías. La fuente del elemento Romana será la que se use para la mayoría de elementos del documento.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/lyx-tipografias.png" title="Tipografías, LyX" data-gallery><img src="assets/images/posts/41/lyx-tipografias-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="lyx-tipografias.png" thumb1="lyx-tipografias-thumb.png" title1="Tipografías, LyX" >}}
 </div>
 
 ## Encabezados y pies de página
@@ -61,7 +64,8 @@ Podemos modificar la fuente del documento en Documento> Configuración> Tipograf
 En Documento> Configuración> Diseño de página podemos establecer si queremos encabezados y pies de página en los que se incluye el número de página. Tenemos a nuestra disposición de varios tipos.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/lyx-diseno-pagina.png" title="Tipografías, LyX" data-gallery><img src="assets/images/posts/41/lyx-diseno-pagina-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    image1="lyx-diseno-pagina.png" thumb1="lyx-diseno-pagina-thumb.png" title1="Tipografías, LyX" >}}
 </div>
 
 ## Referencias
@@ -77,7 +81,8 @@ Si el libro versa sobre un téma técnico y queremos mostrar listados de código
 Para insertar un listado de código como documento externo debemos usar la opción Insertar> Archivo> Documento hijo, seleccionamos el archivo, en tipo de inclusión seleccionamos Listado de código y con el parámetro language=Java podemos hacer que LyX proporcione resaltado de sintaxis según el lenguaje del listado, en este caso Java.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/listado-codigo.png" title="Listados de código" data-gallery><img src="assets/images/posts/41/listado-codigo-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="listado-codigo.png" thumb1="listado-codigo-thumb.png" title1="Listados de código" >}}
 </div>
 
 ## Portada
@@ -85,7 +90,8 @@ Para insertar un listado de código como documento externo debemos usar la opci�
 Con LyX no podremos crear una portada atractiva dado lo limitado que estamos para modificar los estilos. Sin embargo, podemos incluir las páginas de un pdf externo a nuestro ducmento LyX. Este pdf externo lo podemos crear con la herramienta que queramos LibreOffice o Inskape. Con la opción Insertar> Archivo> Material externo podemos insertar todas las páginas del documento o solo las que queramos.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/41/libreoffice-plugin.png" title="Tipografías, LyX" data-gallery><img src="assets/images/posts/41/libreoffice-plugin-thumb.png"></a>
+	{{< figure year="2014" pid="41"  
+    	image1="libreoffice-plugin.png" thumb1="libreoffice-plugin-thumb.png" title1="Tipografías, LyX" >}}
 </div>
 
 ## Corrector ortográfico

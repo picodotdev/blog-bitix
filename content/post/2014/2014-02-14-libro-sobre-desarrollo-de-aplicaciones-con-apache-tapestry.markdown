@@ -22,7 +22,8 @@ Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrol
 Apache Tapestry es un framework orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como [Spring](http://projects.spring.io/spring-framework/), [Grails](http://grails.org/) y [Play!](http://www.playframework.com/) y también de los muchos otros en los que la principal diferencia es el lenguaje como [Django](https://www.djangoproject.com/) (Python), [Symfony](http://symfony.com/) (PHP), [ASP.NET MVC](http://www.asp.net/mvc) (C#) o [Ruby On Rails](http://rubyonrails.org/) (Ruby).
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/12/portada-PugInTapestry.png" title="Libro sobre Apache Tapestry" data-gallery><img src="assets/images/posts/12/portada-PugInTapestry-thumb.png"></a>
+    {{< figure year="2014" pid="12"  
+        image1="portada-PugInTapestry.png" thumb1="portada-PugInTapestry-thumb.png" >}}
 </div>
 
 Incluyendo la descripción de las características del framework el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:

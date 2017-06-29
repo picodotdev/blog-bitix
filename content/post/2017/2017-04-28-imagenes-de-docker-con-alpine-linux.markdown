@@ -22,7 +22,7 @@ En el repositorio de imágenes [Docker Hub][docker-hub] de [Docker][docker] hay 
 Por ejemplo, la [imagen de Docker que contiene en JDK](https://hub.docker.com/_/openjdk/) de Java basada en Debian ocupa 643 MiB y la imagen de Java basada en Alpine Linux ocupa 101 MiB, una diferencia significativa de casi 500 MiB. Con la capacidad de los discos duros actuales no es tanto por lo que ocupan en disco sino por el tiempo que las imágenes tardan en descargarse desde el repositorio e iniciarse los contenedores como es el caso en un [cluster de contenedores Docker][blogbitix-216].
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="228"
+    {{< figure year="2017" pid="228"
         image1="imagenes-docker.png" thumb1="imagenes-docker-thumb.png" title1="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine. Linux"
         caption="Imágenes de Docker con su tamaño. Ver imágenes openjdk, Ubuntu y Alpine Linux." >}}
 </div>

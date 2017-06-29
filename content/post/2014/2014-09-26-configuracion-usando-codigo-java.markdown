@@ -29,7 +29,7 @@ Una de las razones de la existencia de los archivos de configuración es tener e
 
 Todo esto es algo que se comenta en el <a href="http://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">libro The Pragmatic Programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> con las siguientes lineas:
 
-> Many programs will scan such things only at startup, which is unfortunate. If you need to change the configuration, this forces you to 
+> Many programs will scan such things only at startup, which is unfortunate. If you need to change the configuration, this forces you to
 > restart the application. A more flexible approach is to write programs that can reload their
 > configuration while they’re running. This flexibility comes at a cost: it
 > is more complex to implement. If it is a long-running server process, you will want to provide some way to reread and apply
@@ -41,7 +41,8 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
 {{< gist picodotdev 03199502551aa8038fcd "ConfiguracionManager.java" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/43/main.png" title="Salida programa Main.java" data-gallery><img src="assets/images/posts/43/main.png"></a>
+	{{< figure year="2014" pid="44"  
+    	image1="main.png" thumb1="main.png" title1="Salida programa Main.java" >}}
 </div>
 
 Esta idea de no utilizar archivos de configuración sino emplear código como la mejor forma y más breve de definirla es algo que hace [gradle][gradle] con los archivos de configuración del proyecto y [apache tapestry][tapestry] para definir los módulos y la configuración del contenedor de inversión de control, parece una tendencia por el hecho de tener las propiedades y ventajas comentadas sobre otro tipo de archivos ya sean xml o sus sustitutos más recientes como yaml, json, ... que son más compactos y legibles que xml pero que siguen adoleciendo de algunos de los mismos defectos.

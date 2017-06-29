@@ -62,10 +62,9 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 {{< gist picodotdev 1c2c875cc730b825647f "docker-compose-up.yml" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/87/docker-compose.png" title="Docker Compose" data-gallery><img src="assets/images/posts/87/docker-compose-thumb.png"></a>
-        <figcaption>Docker Compose</figcaption>
-    </figure>
+    {{< figure year="2015" pid="87"  
+        image1="docker-compose.png" thumb1="docker-compose-thumb.png"
+        caption="Docker Compose" >}}
 </div>
 
 docker-compose inicia los contenedores en el orden que hemos indicado en el archivo de definición, las trazas emitidas de los servicios de los contenedores aparecerán en la terminal si iniciamos los contenedores en primer plano y con _Ctrl+C_ se pararán los contenedores. Indicando la opción _-d_ los contenedores se iniciarán en segundo plano, con _docker-compose stop_ podremos pararlos, con _docker-compose restart_ reiniciarlos, _docker-compose rm_ para eliminar completamente los contenedores y con _docker-compose logs_ veremos las trazas emitidas por los servicios que nos serán de utilizar si iniciamos los contenedores en segundo plano.

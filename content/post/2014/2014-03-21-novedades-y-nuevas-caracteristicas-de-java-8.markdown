@@ -115,7 +115,8 @@ Con la introducción de anotaciones en Java 5 podemos usar anotaciones en la dec
 Trabajar con fechas, horas y diferentes zonas horarias en Java tradicionalmente ha sido molesto, para tratar de mejorar la situación podíamos usar la librería JodaTime. Finalmente, después de mucho tiempo esperando a que se hiciera se va a proporcionar una mejor [API en el JDK 8 para trabajar con fechas, horas y zonas horarias](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/17/componentes-jpse8.png" title="Componentes Java Platform Standard Edition 8" data-gallery><img src="assets/images/posts/17/componentes-jpse8-thumb.png"></a>
+	{{< figure year="2014" pid="17"  
+      image1="componentes-jpse8.png" thumb1="componentes-jpse8-thumb.png" >}}
 </div>
 
 ### Futuro Java 9

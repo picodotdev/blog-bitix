@@ -23,16 +23,16 @@ A día de hoy hay una buena colección de juegos que ya tiene varias décadas pe
 Con ScummVM podemos jugar a esos juegos del estilo _point-and-click_ en los que se trata de probar diferentes acciones algunas lógicas otras no tanto con los objetos que tenemos o el escenario de la pantalla. Para los días de hoy gráficamente no son muy avanzados aunque sigue siendo notable su arte pixelado, pero lo principal de estos juegos no son los gráficos sino la historia que se desarrolla en los mismos. Historia que incluye bastante humor que ha hecho que perduren en el recuerdo de sus jugadores. Algunas de estas aventuras gráficas más conocidas son Monkey Island, Maniac Mansion, El día del tentáculo o Indiana Jones entre los que yo conocí.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="the-secret-of-monkey-island.jpg" thumb1="the-secret-of-monkey-island-thumb.jpg" title1="The Secret of Monkey Island"
         image2="lechuck-revenge.jpg" thumb2="lechuck-revenge-thumb.jpg" title2="LeChuck's Revenge" >}}
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="the-curse-of-monkey-island.jpg" thumb1="the-curse-of-monkey-island-thumb.jpg" title1="The Curse of Monkey Island"
         image2="escape-from-monkey-island.jpg" thumb2="escape-from-monkey-island-thumb.jpg" title2="Escape from Monkey Island" >}}
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="tales-of-monkey-island.jpg" thumb1="tales-of-monkey-island-thumb.jpg" title1="Tales of Monkey Island"
         image2="indiana-jones-fate-of-atlantis.jpg" thumb2="indiana-jones-fate-of-atlantis-thumb.jpg" title2="Indiana Jones and the Fate of Atlantis" >}}
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="maniac-mansion.jpg" thumb1="maniac-mansion-thumb.jpg" title1="Maniac Mansion"
         image2="day-of-the-tentacle.jpg" thumb2="day-of-the-tentacle-thumb.jpg" title2="Maniac Mansion 2: Day of the Tentacle" >}}
 </div>
@@ -42,7 +42,7 @@ En GNU/Linux podemos seguir jugando a estos juegos, para ello debemos instalar e
 {{< gist picodotdev 36d208fc3c9aac01c0a5265634bf4e92 "pacman.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="scummvm.png" thumb1="scummvm-thumb.png" title1="ScummVM" >}}
 </div>
 
@@ -51,13 +51,13 @@ Son juegos en los que se desarrollan diálogos y hay que leer texto por lo que s
 Instalado ScummVM y con las ROMs descomprimidas iniciamos el emulador, seleccionamos _Add game..._ y buscamos el directorio descomprimido del juego usando el botón _Go up_ en caso de ser necesario para navegar el árbol de directorios. Añadido los juegos los iniciamos con el botón _Start_ y a partir de este momento ya podemos empezar a jugar. Algunos juegos originalmente tenían una protección anticopia que en las ROMs y ScummVM queda desactivada. En el [manual de usuario de ScummVM](https://raw.githubusercontent.com/scummvm/scummvm/v1.8.1/README) tenemos el listado de juegos soportados así como las teclas usables y sus funciones. Como son juegos que deberemos continuar en múltiples partidas deberemos guardar el estado del juego con <kbd>Alt 0-9</kbd> y cargar para continuar con <kbd>Ctrl 0-9</kbd>.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="the-secret-of-monkey-island-game.jpg" thumb1="the-secret-of-monkey-island-game-thumb.jpg" title1="The Secret of Monkey Island"
         image2="lechuck-revenge-game.jpg" thumb2="lechuck-revenge-game-thumb.jpg" title2="LeChuck's Revenge" >}}
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="the-curse-of-monkey-island-game.jpg" thumb1="the-curse-of-monkey-island-game-thumb.jpg" title1="The Curse of Monkey Island"
         image2="indiana-jones-fate-of-atlantis-game.jpg" thumb2="indiana-jones-fate-of-atlantis-game-thumb.jpg" title2="Indiana Jones and the Fate of Atlantis" >}}
-    {{< figure pid="173"
+    {{< figure year="2016" pid="173"
         image1="maniac-mansion-game.jpg" thumb1="maniac-mansion-game-thumb.jpg" title1="Maniac Mansion"
         image2="day-of-the-tentacle-game.jpg" thumb2="day-of-the-tentacle-game-thumb.jpg" title2="Maniac Mansion 2: Day of the Tentacle" >}}
 </div>

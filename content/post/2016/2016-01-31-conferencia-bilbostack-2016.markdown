@@ -20,8 +20,9 @@ series: ["bilbostack"]
 Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilbao en la localización de la [Universidad de Deusto](http://www.deusto.es), este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/123/universidad-de-deusto-1.jpg" title="Universidad de Deusto" data-gallery><img src="assets/images/posts/123/universidad-de-deusto-1-thumb.jpg"></a>
-    <a href="assets/images/posts/123/universidad-de-deusto-2.jpg" title="Universidad de Deusto" data-gallery><img src="assets/images/posts/123/universidad-de-deusto-2-thumb.jpg"></a>
+    {{< figure year="2016" pid="123"
+        image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg"
+        image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" >}}
 </div>
 
 Al igual que en anteriores entregas las presentaciones se han dividido en dos _tracks_ con duración de 45 minutos ofrecidas en una única mañana. Este año estando el _track_ 1 orientado a temas de programación o código y el _track_ 2 con una temática más diversa desde equipos a productos y servicios.
@@ -93,8 +94,9 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
 </table>
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/123/track1.jpg" title="Sala track 1" data-gallery><img src="assets/images/posts/123/track1-thumb.jpg"></a>
-    <a href="assets/images/posts/123/track2.jpg" title="Sala track 2" data-gallery><img src="assets/images/posts/123/track2-thumb.jpg"></a>
+    {{< figure year="2016" pid="123"
+        image1="track1.jpg" thumb1="track1-thumb.jpg"
+        image2="track2.jpg" thumb2="track2-thumb.jpg" >}}
 </div>
 
 No podía faltar la cuota para el popular lenguaje [JavaScript][javascript] este año con las dos primeras presentaciones del _track_ 1 y si el año pasado comentaba que no había habido ninguna de [Java][java] en ya cuatro entregas, este finalmente ha tenido presencia. Aún siendo solo dos _tracks_ me ha costado algo decidirme por la presentaciones a las que asistir. En resumen, he preferido ir salvo a la de Java a las presentaciones del _track_ 2. [React][react] ya lo conozco al escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20], en [Angular][angular] 2 habrán mejorado las cosas pero se me hace redundante. En general creo que me podría enriquecer más del _track_ 2 que del 1 ya que en mayor o menor medida las del primero ya me iban ser bastante familiares siendo programador.
@@ -129,8 +131,7 @@ Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comu
 
 ### Your code as a crime scene <em>por Vicenç García</em>
 
-Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="http://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-.
+Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="http://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
 
 <div class="media" style="text-align: center;">
     <iframe src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -156,7 +157,8 @@ Hay que tener en cuenta:
 Es importante tener datos para evaluar pero hay que tener cuidado con las métricas ya que son maleables.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/123/crime-scene.jpg" title="Your code as a crime scene" data-gallery><img src="assets/images/posts/123/crime-scene-thumb.jpg"></a>
+    {{< figure year="2016" pid="123"
+        image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" >}}
 </div>
 
 <div class="media" style="text-align: center;">
@@ -185,7 +187,8 @@ Su futuro es bueno [Sun][sunmicrosystems] en su momento lo hizo de código abier
 En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está [jOOQ][jooq] para demostrar que los ORM no son siempre la mejor solución.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/123/java-moderno.jpg" title="Java ha muerto! Larga vida a Java (moderno)" data-gallery><img src="assets/images/posts/123/java-moderno-thumb.jpg"></a>
+    {{< figure year="2016" pid="123"
+        image1="java-moderno.jpg" thumb1="java-moderno-thumb.jpg" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
 </div>
 
 La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes, plataforma y ecosistema con el que desarrollar aplicaciones, han sido todo argumentos. Si alguien lo quiere ver en la práctica puede revisar varios de los artículos que he escrito en esta bitácora:

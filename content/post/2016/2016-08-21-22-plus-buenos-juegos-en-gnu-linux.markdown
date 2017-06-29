@@ -30,7 +30,7 @@ Todos estos juegos los encontraremos entre los paquetes para nuestra distribuci�
 Acción y aventura. Astromenace es un juego de naves con la adición que permite mejorar las armas de la nave. Tiene un aspecto gráfico en tres dimensiones con efectos especiales de gran calidad. [Sitio web](http://www.viewizard.com/astromenace/index_linux.php).
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="astromenace-1.jpg" thumb1="astromenace-1-thumb.jpg"
         image2="astromenace-2.jpg" thumb2="astromenace-2-thumb.jpg" >}}
 </div>
@@ -39,7 +39,7 @@ Acción y aventura. Astromenace es un juego de naves con la adición que permite
 Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y con diferentes modos de juego como todos contra todos, equipo contra equipo y capturar la bandera. [Sitio web](https://www.teeworlds.com/).
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="teeworlds-1.jpg" thumb1="teeworlds-1-thumb.jpg"
         image2="teeworlds-2.jpg" thumb2="teeworlds-2-thumb.jpg" >}}
 </div>
@@ -48,7 +48,7 @@ Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y
 Educación. Es una colección de juegos educativos con numerosas actividades para niños de entre dos y 10 años. Algunas actividades están orientadas al juego no obstante orientadas a la educación. [Sitio web](http://gcompris.net/index-es.html).
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="gcompris-1.jpg" thumb1="gcompris-1-thumb.jpg"
         image2="gcompris-2.jpg" thumb2="gcompris-2-thumb.jpg" >}}
 </div>
@@ -57,7 +57,7 @@ Educación. Es una colección de juegos educativos con numerosas actividades par
 Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio web](http://torcs.sourceforge.net/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="torcs-1.jpg" thumb1="torcs-1-thumb.jpg"
         image2="torcs-2.jpg" thumb2="torcs-2-thumb.jpg" >}}
 </div>
@@ -80,7 +80,7 @@ Carreras. Similar al [Mario Kart](https://es.wikipedia.org/wiki/Super_Mario_Kart
 Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controlar dos ejércitos de diferentes acciones, Tech que se compone de guerreros y dispositivos mecánicos y Magic que prefieren magos y criaturas invocadas. [Sitio web](http://glest.org/es/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="glest-1.jpg" thumb1="glest-1-thumb.jpg"
         image2="glest-2.jpg" thumb2="glest-2-thumb.jpg" >}}
 </div>
@@ -89,7 +89,7 @@ Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controla
 Estrategia. Un juego similar a [Age of Empires](https://www.ageofempires.com/) que no tiene nada que envidiarle. Podremos controlar varias de las civilizaciones más conocidas de la antigüedad. [Sitio web](https://play0ad.com/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="0ad-1.jpg" thumb1="0ad-1-thumb.jpg"
         image2="0ad-2.jpg" thumb2="0ad-2-thumb.jpg" >}}
 </div>
@@ -100,7 +100,7 @@ Estrategia. Está basado en turnos con una ambientación de fantasía. Deberás 
 Wesnoth tiene varias campañas, 200 tipos de unidades, 60 razas, 6 facciones y cientos de años de historia. El mundo de Wesnoth es muy grande. [Sitio web](https://www.wesnoth.org/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="wesnoth-1.jpg" thumb1="wesnoth-1-thumb.jpg"
         image2="wesnoth-2.jpg" thumb2="wesnoth-2-thumb.jpg" >}}
 </div>
@@ -109,7 +109,7 @@ Wesnoth tiene varias campañas, 200 tipos de unidades, 60 razas, 6 facciones y c
 Estrategia. Un juego de estrategia basado en turnos. Formarás un grupo de resistencia para luchar contra la invasión alien. Crearás una base y equiparán a un grupo de combatientes. Está basado en el conocido juego [X-COM](https://es.wikipedia.org/wiki/X-COM). [Sitio web](http://ufoai.org/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="ufo-ai-1.jpg" thumb1="ufo-ai-1-thumb.jpg"
         image2="ufo-ai-2.jpg" thumb2="ufo-ai-2-thumb.jpg" >}}
 </div>
@@ -125,7 +125,7 @@ Estrategia. Es un juego de estrategia y táctica en tiempo real donde comandará
 Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wiki/The_Settlers_II) pero con una significante más variedad. Deberás recolectar diferentes tipos de materias y productos para hacer crecer a tu pueblo. [Sitio web](https://wl.widelands.org/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="widelands-1.jpg" thumb1="widelands-1-thumb.jpg"
         image2="widelands-2.jpg" thumb2="widelands-2-thumb.jpg" >}}
 </div>
@@ -134,7 +134,7 @@ Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wi
 Estrategia. Es un juego de estrategia de simulación en tiempo real en 2D con énfasis en la economía y la construcción de ciudades. Expande tu pequeño establecimiento para forma una colonia poderosa, recolecta impuestos y proporciona a tus habitantes bienes valiosos. Incrementa tu poder con una economía bien balanceada y con comercio estratégico y diplomacia. [Sitio web](http://www.unknown-horizons.org/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="unkonown-horizons-1.jpg" thumb1="unkonown-horizons-1-thumb.jpg"
         image2="unkonown-horizons-2.jpg" thumb2="unkonown-horizons-2-thumb.jpg" >}}
 </div>
@@ -146,7 +146,7 @@ _Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugad
 _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. [Sitio web](http://www.nethack.org/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="nethack-1.png" thumb1="nethack-1-thumb.png"
         image2="nethack-2.png" thumb2="nethack-2-thumb.png" >}}
 </div>
@@ -165,7 +165,7 @@ Disparos. Juegos similares a [Quake](https://es.wikipedia.org/wiki/Quake).
 Disparos. Juego similar a [Counter Strike](https://es.wikipedia.org/wiki/Counter-Strike) que es la referencia de este estilo. Posee diferentes modos de juego. Ambientado en la actualidad. [Sitio web](http://www.urbanterror.info/home/)
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="172"
+    {{< figure year="2016" pid="172"
         image1="urban-terror-1.jpg" thumb1="urban-terror-1-thumb.jpg"
         image2="urban-terror-2.jpg" thumb2="urban-terror-2-thumb.jpg" >}}
 </div>

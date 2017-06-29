@@ -35,10 +35,10 @@ In this article I will focus on alternatives to Office that are also several. By
 Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/home) has a cost of 8.80€ per user and according to the plan that includes more or fewer applications.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="microsoftoffice-word.png" thumb1="microsoftoffice-word-thumb.png" title1="Microsoft Office Word"
         image2="microsoftoffice-excel.png" thumb2="microsoftoffice-excel-thumb.png" title2="Microsoft Office Excel" >}}
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="microsoftoffice-powerpoint.png" thumb1="microsoftoffice-powerpoint-thumb.png" title1="Microsoft Office Powerpoint" >}}
 </div>
 
@@ -47,10 +47,10 @@ Microsoft Office includes Word as word processor, Powerpoint for presentations, 
 The free and libre alternative of Office is [LibreOffice](https://es.libreoffice.org/). It includes a text editor with Writing, spreadsheets with Calc, presentations with Impress, Drawing to create graphs and Base for simple databases. However, the interface is similar to the Office in the previous editions incorporated with an aesthetic and without the feeling of being taken care of. The menus are long and find a choice among the many is not easy, opening a menu option can be feel intimidated by the length of it and somewhat more difficult to quickly find the desired option among all shown. There will be users who prefer the menu interface and toolbars, I am the ones who like ribbon. It is available for Windows, Linux and Mac.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="libreoffice-writer.png" thumb1="libreoffice-writer-thumb.png" title1="LibreOffice Writer"
         image2="libreoffice-calc.png" thumb2="libreoffice-calc-thumb.png" title2="LibreOffice Calc" >}}
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="libreoffice-impress.png" thumb1="libreoffice-impress-thumb.png" title1="LibreOffice Impress" >}}
 </div>
 
@@ -63,10 +63,10 @@ For the business environments with all its options its license has a much more r
 It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Microsoft Office does not already offer support, Linux, Android and iOS. Its installer occupies only 80 MB against more than 3 gigas of Office.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="wpsoffice-writer.png" thumb1="wpsoffice-writer-thumb.png" title1="WPS Writer"
         image2="wpsoffice-spreadsheets.png" thumb2="wpsoffice-spreadsheets-thumb.png" title2="WPS Spreadsheets" >}}
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="wpsoffice-presentation.png" thumb1="wpsoffice-presentation-thumb.png" title1="WPS Office Presentation" >}}
 </div>
 
@@ -77,10 +77,10 @@ Another alternative to Office is [Google Docs](https://www.google.es/intl/es/doc
 For companies it is offered at the price of 4€ per user per month which includes the Gmail email client, calendars, video calls and 30GB of storage. There will be 8€ with more storage options and message retention.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="googledocs-documento.png" thumb1="googledocs-documento-thumb.png" title1="Documento Google Docs"
         image2="googledocs-hoja-de-calculo.png" thumb2="googledocs-hoja-de-calculo-thumb.png" title2="Hoja de cálculo Google Docs" >}}
-    {{< figure pid="143"
+    {{< figure year="2017" pid="143"
         image1="googledocs-presentacion.png" thumb1="googledocs-presentacion-thumb.png" title1="Presentación Google Docs" >}}
 </div>
 

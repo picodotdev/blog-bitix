@@ -27,7 +27,7 @@ Definiendo más la necesidad hasta ahora cada fila del listado tiene un conjunto
 Esta sería una imagen del prototipo de los botones para hacer acciones múltiples, seleccionar compras y el diálogo modal para introducir información adicional.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="164"
+    {{< figure year="2016" pid="164"
         image1="listado.png" thumb1="listado-thumb.png" title1="Listado de productos"
         image2="modal.png" thumb2="modal-thumb.png" title2="Modal solicitando información adicional"
         caption="Listado y modal de la necesidad expuesta" >}}
@@ -79,7 +79,7 @@ Los componentes de Tapestry usan el [modelo pull en vez del modelo push][blogbit
 Para volver a la misma página en [Spring MVC][spring], [Struts][struts] o [Grails][grails] posiblemente deberíamos recibir además información para retornar a la misma página en la que estabamos cosa que es innecesaria en Tapestry por su [concepto de contexto de activación de página](http://tapestry.apache.org/page-navigation.html) y el patrón _Redirect-After-Post_ hará que al recargar la página por código con <code>window.localtion.reload();</code> después de una petición POST el navegador no muestre un diálogo modal informando al usuario de que se reenviarán datos.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="164"
+    {{< figure year="2016" pid="164"
         image1="dialogo-recargar.png" thumb1="dialogo-recargar-thumb.png" title1="Diálogo recargar después de petición POST en Firefox"
         caption="Diálogo recargar después de petición POST en Firefox" >}}
 </div>

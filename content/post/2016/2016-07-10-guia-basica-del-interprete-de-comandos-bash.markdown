@@ -31,7 +31,7 @@ Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obt
 {{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "sorteo-1.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="sorteo.png" thumb1="sorteo-thumb.png" title1="Sorteo implementado con dos comandos de GNU/Linux"
         caption="Sorteo implementado con dos comandos de GNU/Linux" >}}
 </div>
@@ -50,7 +50,7 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
 {{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "multiples-comandos.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="multiples-comandos.png" thumb1="multiples-comandos-thumb.png" title1="Múltiples comandos en la misma línea"
         caption="Múltiples comandos en la misma línea" >}}
 </div>
@@ -65,7 +65,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 {{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "variables-2.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="variables.png" thumb1="variables-thumb.png" title1="Interpolación en cadenas de variables y comandos"
         caption="Interpolación en cadenas de variables y comandos" >}}
 </div>
@@ -74,7 +74,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 Con el comando _history_ podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="history.png" thumb1="history-thumb.png" title1="Historial de comandos"
         caption="Historial de comandos" >}}
 </div>
@@ -106,7 +106,7 @@ En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _scr
 {{< gist picodotdev 428d17cec6b14283ca7cf48174d41ad2 "funciones-1.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="opciones.png" thumb1="opciones-thumb.png" title1="Opciones de un script"
         caption="Opciones de un script" >}}
 </div>
@@ -166,7 +166,7 @@ Las expresiones anteriores se pueden combinar:
 El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecutando junto con su identificador y estado, con la combinación de teclas <kbd>Ctrl+z</kbd> dejamos el proceso actual detenido y en segundo plano, con <code>fg</code> lo devolvemos a primer plano y si estaba detenido se continua su ejecución, con <code>bg</code> si estaba detenido continua su ejecución en segundo plano.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="158"
+    {{< figure year="2016" pid="158"
         image1="trabajos.png" thumb1="trabajos-thumb.png" title1="Trabajos en primer y segundo plano"
         caption="Trabajos en primer y segundo plano" >}}
 </div>

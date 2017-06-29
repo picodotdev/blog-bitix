@@ -34,7 +34,9 @@ En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firm
 {{< gist picodotdev c4ce75423a67e4ee6b38 "email-original.txt" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="133" image1="gpg-verify.png" thumb1="gpg-verify.png" title1="Verificación de la firma GPG del correo electrónico" caption="Verificación de la firma GPG del correo electrónico" >}}
+    {{< figure year="2016" pid="133"
+        image1="gpg-verify.png" thumb1="gpg-verify.png" title1="Verificación de la firma GPG del correo electrónico"
+        caption="Verificación de la firma GPG del correo electrónico" >}}
 </div>
 
 En el anillo de claves de GPG la clave que usemos para firmar no ha de tener _passphrase_ de lo contrario cuando se ejecute el comando GPG la solicitará en una ventana emergente. Aunque con las opciones <code>--passphrase</code> y <code>--batch</code> no debería solicitarla no he conseguido evitarlo.

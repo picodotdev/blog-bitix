@@ -34,9 +34,11 @@ Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos 
 {{< gist picodotdev 57d411ed0cc804a75bf6 "startup.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/71/tomcat-embedded-comando.png" title="Iniciando TomcatEmbedded" data-gallery><img src="assets/images/posts/71/tomcat-embedded-comando-thumb.png"></a>
-	<a href="assets/images/posts/71/tomcat-embedded-app.png" title="TomcatEmbedded iniciado" data-gallery><img src="assets/images/posts/71/tomcat-embedded-app-thumb.png"></a>
-	<a href="assets/images/posts/71/app.png" title="Aplicación web en TomcatEmbedded" data-gallery><img src="assets/images/posts/71/app-thumb.png"></a>
+	{{< figure year="2015" pid="71"  
+    	image1="tomcat-embedded-comando.png" thumb1="tomcat-embedded-comando-thumb.png"
+    	image2="tomcat-embedded-app.png" thumb2="tomcat-embedded-app-thumb.png" >}}
+	{{< figure year="2015" pid="71"  
+    	image1="app.png" title="Aplicación web en TomcatEmbedded" thumb1="app-thumb.png" >}}
 </div>
 
 La tendencia actual es que las aplicaciones evolucionen hacia microservicios por varias características deseables que ofrecen como al ser más pequeñas las funcionalidades sean más manejables, sean reemplazables, posibilidad de usar la tecnología más adecuada según el servicio desde lenguaje de programación al sistema de persistencia (relacional o noSQL), facilidad de despliegue, .... Si te interesan los microservicios un libro muy interesante y recomendable es <a href="http://www.amazon.es/gp/product/1491950358/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1491950358&linkCode=as2&tag=blobit-21">Building Microservices</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1491950358" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">. Proporciona una visión detallada de los diferentes aspectos que deben tratar las aplicaciones construidas según esta arquitectura.

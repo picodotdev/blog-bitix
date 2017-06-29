@@ -36,7 +36,7 @@ La forma de iniciar y eliminar un _stack_ en un _cluster_ de nodos Docker Swarm 
 {{< gist picodotdev 7fccfe93a0e297cd8cb3df83a3b9d967 "docker-compose-stack-remove-nginx.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="220"
+    {{< figure year="2017" pid="220"
         image1="nginx-service.png" thumb1="nginx-service-thumb.png" title1=""
         caption="Cluster de nodos de Docker Swarm con servicio de nginx replicado con 2 instancias" >}}
 </div>

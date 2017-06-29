@@ -29,10 +29,9 @@ Por enlaces o referencias consideramos tanto a páginas como a recursos de imág
 Después de introducir la dirección del sitio web, que con estas herramientas ha de estar accesible en internet, cada una de ellas nos informará de los enlaces rotos que encuentre indicándonos el enlace roto, el texto del enlace y en qué página está. Con esta información podemos corregir esos enlaces del sitio web, bitácora o aplicación. Después de usarlas hubiera dicho que no tenía tantos en está bitácora, me sirvieron para corregirlos.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/115/w3c-linkchecker.png" title="W3C Link Checker" data-gallery><img src="assets/images/posts/115/w3c-linkchecker-thumb.png"></a>
-        <figcaption>W3C Link Checker</figcaption>
-    </figure>
+    {{< figure year="2015" pid="115"  
+        image1="w3c-linkchecker.png" thumb1="w3c-linkchecker-thumb.png"
+        caption="W3C Link Checker" >}}
 </div>
 
 Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando _wget_ para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
@@ -40,10 +39,9 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 {{< gist picodotdev 5c2d560c7f2b1b16dda1 "wget.sh" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/115/wget.png" title="Comprobación de enlaces con wget" data-gallery><img src="assets/images/posts/115/wget-thumb.png"></a>
-        <figcaption>Comprobación de enlaces con wget</figcaption>
-    </figure>
+    {{< figure year="2015" pid="115"  
+        image1="wget.png" thumb1="wget-thumb.png" title1="Comprobación de enlaces con wget"
+        caption="Comprobación de enlaces con wget" >}}
 </div>
 
 Lo anterior nos sirve para detectar los enlaces rotos que tenemos en nuestro sitio hacia otros, seguramente también nos interesará conocer los enlaces rotos que tienen otros sitios hacia el nuestro. Podemos saber a que páginas no encontradas están accediendo los usuarios de nuestro sitio web lanzando un evento personalizado de [Google Analytics][google-analytics] en la página para el error 404 que mostremos. Dado que los enlaces hacia nuestro sitio incluidos en otros no podemos modificarlos si se tratase de alguno especialmente importante al menos podremos hacer una redirección para que los usuarios lleguen al contenido más apropiado en vez de a una página no encontrada:

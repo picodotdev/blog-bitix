@@ -59,24 +59,33 @@ Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/79/4089.jpg" title="4089: Ghost Within" data-gallery><img src="assets/images/posts/79/4089-thumb.jpg"></a>
-	<a href="assets/images/posts/79/rising-world.jpg" title="Rising World" data-gallery><img src="assets/images/posts/79/rising-world-thumb.jpg"></a>
-	<a href="assets/images/posts/79/seizon.jpg" title="Seizon" data-gallery><img src="assets/images/posts/79/seizon-thumb.jpg"></a>
-	<a href="assets/images/posts/79/copod.png" title="Copod" data-gallery><img src="assets/images/posts/79/copod-thumb.png"></a>
-	<a href="assets/images/posts/79/drohtin-tales-of-old-kingdom.png" title="Drohtin – Tales of an Old Kingdom" data-gallery><img src="assets/images/posts/79/drohtin-tales-of-old-kingdom-thumb.png"></a>
-	<a href="assets/images/posts/79/chaos_in-the-darkness.jpg" title="CHAOS: In the Darkness" data-gallery><img src="assets/images/posts/79/chaos_in-the-darkness-thumb.jpg"></a>
-	<a href="assets/images/posts/79/just-tactics.jpg" title="Just Tactics" data-gallery><img src="assets/images/posts/79/just-tactics-thumb.jpg"></a>
-	<a href="assets/images/posts/79/spermination.png" title="Spermination" data-gallery><img src="assets/images/posts/79/spermination-thumb.png"></a>
-	<a href="assets/images/posts/79/makers-tale.jpg" title="Maker’s Tale" data-gallery><img src="assets/images/posts/79/makers-tale-thumb.jpg"></a>
-	<a href="assets/images/posts/79/piratehell.jpg" title="PirateHell" data-gallery><img src="assets/images/posts/79/piratehell-thumb.jpg"></a>
-	<a href="assets/images/posts/79/hostile-sector.jpg" title="Hostile Sector" data-gallery><img src="assets/images/posts/79/hostile-sector-thumb.jpg"></a>
-	<a href="assets/images/posts/79/3079.png" title="3079" data-gallery><img src="assets/images/posts/79/3079-thumb.png"></a>
-	<a href="assets/images/posts/79/urban-galaxy.jpg" title="Urban Galaxy" data-gallery><img src="assets/images/posts/79/urban-galaxy-thumb.jpg"></a>
-	<a href="assets/images/posts/79/grapplinghook.jpg" title="Grappling Hook" data-gallery><img src="assets/images/posts/79/grapplinghook-thumb.jpg"></a>
-	<a href="assets/images/posts/79/mad-skills-motocross.jpg" title="Mad Skills Motocross" data-gallery><img src="assets/images/posts/79/mad-skills-motocross-thumb.jpg"></a>
-	<a href="assets/images/posts/79/pets-vs-monsters.jpg" title="Pets vs Monsters" data-gallery><img src="assets/images/posts/79/pets-vs-monsters-thumb.jpg"></a>
-	<a href="assets/images/posts/79/bang-howdy.jpg" title="Bang! Howdy" data-gallery><img src="assets/images/posts/79/bang-howdy-thumb.jpg"></a>
-	<a href="assets/images/posts/79/imperii.jpg" title="Imperii" data-gallery><img src="assets/images/posts/79/imperii-thumb.jpg"></a>
+	{{< figure year="2015" pid="79"  
+    	image1="4089.jpg" title="4089: Ghost Within" thumb1="4089-thumb.jpg"
+    	image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="seizon.jpg" thumb1="seizon-thumb.jpg"
+    	image2="copod.png" thumb2="copod-thumb.png" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" title1="Drohtin – Tales of an Old Kingdom"
+    	image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" title2="CHAOS: In the Darkness" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg"
+    	image2="spermination.png" thumb2="spermination-thumb.png" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" title1="Maker’s Tale"
+    	image2="piratehell.jpg" thumb22="piratehell-thumb.jpg" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg"
+    	image2="3079.png" thumb2="3079-thumb.png" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg"
+    	image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg"
+    	image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" title1="Bang! Howdy"
+    	image2="imperii.jpg" thumb2="imperii-thumb.jpg" >}}
 </div>
 
 Todos estos juegos están programados utilizando el lenguaje de programación Java y la librería [jMonkeyEngine][jmonkeyengine] que facilita las tareas de programación de videojuegos proporcionando programación gráfica en 3D usando [OpenGL][opengl], manejo de eventos de entrada como teclado o ratón, manejo de sonido, pantallas de menús o red. Usando jMonkeyEngine se pueden hacer cosas muy interesantes como se ve en los ejemplos. En el siguiente enlace se pueden encontrar el [código fuente de varios ejemplos](https://github.com/jMonkeyEngine/BookSamples/tree/master/src) que podemos probar.
@@ -89,10 +98,12 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/79/cubo.png" title="¡Hola mundo!" data-gallery><img src="assets/images/posts/79/cubo-thumb.png"></a>
-	<a href="assets/images/posts/79/cubos.png" title="Texturas y materiales" data-gallery><img src="assets/images/posts/79/cubos-thumb.png"></a>
-	<a href="assets/images/posts/79/particulas-fuego.png" title="Sistemas de partículas, fuego" data-gallery><img src="assets/images/posts/79/particulas-fuego-thumb.png"></a>
-	<a href="assets/images/posts/79/agua.png" title="Agua" data-gallery><img src="assets/images/posts/79/agua-thumb.png"></a>
+	{{< figure year="2015" pid="79"  
+    	image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
+    	image2="cubos.png" thumb2="cubos-thumb.png" >}}
+	{{< figure year="2015" pid="79"  
+    	image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" title1="Sistemas de partículas, fuego"
+    	image2="agua.png" thumb2="agua-thumb.png" >}}
 </div>
 
 Un videojuego se compone de múltiples recursos como imágenes, modelos 3D, música, _sprites_, texturas, fuentes de texto, sonidos, iconos... en la página [Open Game Art](http://opengameart.org) podemos encontrar todo este tipo de material sin necesidad de tener que crearlo desde la nada.

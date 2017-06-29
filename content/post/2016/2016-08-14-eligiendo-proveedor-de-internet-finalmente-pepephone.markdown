@@ -58,7 +58,7 @@ Artículos analizándo el _router_ ASUS DSL-N14U:
 Solicitada la instalación en unos días un técnico de Movistar me instaló la línea nueva (linea que realmente es de Vodafone) y el _router_ me llegó por mensajero al día siguiente, en una semana ya disponía de internet sin complicaciones en la instalación. La velocidad bruta no es la misma que tenía con el cable de Euskaltel y será menor que la fibra pero para navegar no hay mucha diferencia y si en el precio. Como dice Pepephone el ADSL es algo más feo que la fibra y tiene razón de que [hay mucha tontería con los megas y otros mitos del ADSL](http://blog.pepephone.com/index.php/5-verdades-muy-largas-sobre-el-adsl/), para navegar no noto apenas diferencia. Lo noto cuando actualizo [Arch Linux][archlinux] o cuando pongo la [Raspberry Pi][raspberrypi] a descargar por P2P. Aún llegando solo a 630 KiB/s en la descarga cuando con Euskaltel llegaba a 2 MiB/s me es más que suficiente, la RPi la dejo el tiempo que haga falta y en unas horas no hay película que no pueda descargar y la actualización de Arch lleva algo más de tiempo en la descarga pero no algo excesivo.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="169"
+    {{< figure year="2016" pid="169"
         image1="57b048f847e0d91df7ed6dcc.png" thumb1="57b048f847e0d91df7ed6dcc.png" title1="Test de velocidad de ADSL Pepephone"
         caption="Test de velocidad de ADSL Pepephone" >}}
 </div>
@@ -66,7 +66,7 @@ Solicitada la instalación en unos días un técnico de Movistar me instaló la 
 Estos 9 MiB de bajada y 400 KiB de subida son algo menos de la mitad teórica del ADSL y en algunas [pruebas de velocidad](http://www.testdevelocidad.es/) que he hecho me ha dado resultados de 4 MiB / 200 KiB pero aún en el peor de los casos en la navegación no es perceptible. Respecto a la estabilidad de la linea sin ningún problema, en las pruebas de _ping_ que he hecho no se pierden paquetes. Esta menor velocidad que la teórica es algo que no era una sorpresa para mí que ya me lo esperaba aunque pensaba que sería algo mejor y como he comentado la velocidad no es a lo que más importancia le he dado, si al precio.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="169"
+    {{< figure year="2016" pid="169"
         image1="pepephone.jpg" thumb1="pepephone-thumb.jpg" title1="Router ADSL de Pepephone"
         caption="Router ADSL de Pepephone" >}}
 </div>

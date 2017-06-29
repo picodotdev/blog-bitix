@@ -25,10 +25,10 @@ Una de las ventajas de comprar en [Amazon][amazon] es que casi siempre hay una c
 En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo AA, que son las tradicionales, y AAA que son similares pero algo más pequeñas y con algo menos de capacidad. También quería que diese algo de información al menos para saber si estaba completamente cargada. Después de ver casi todos los modelos que hay disponibles en Amazon me decidí por un modelo de [HXK-H2](http://amzn.to/2ng7pwd) con capacidad para cargar dos pilas simultáneamente e independientemente. Me gustó que no es muy caro uno 20€, cumple con las necesidades básicas que tenía y además de los tipos de pilas AA y AAA Ni-MH y Ni-CD admite otros tipos de pilas como Li-ion, LiFePO. También que admite pilas de diferentes tamaños ya que el cargador se ajusta al maño de la pila. También me gusto que se puede seleccionar si se quieren cargar las pilas con 1000mA o con 500mA que hace la carga más lenta pero hace que las pilas duren más. Tiene un _display_ que muestra un indicador aproximado de la carga de la batería actual, el tipo de batería que detecta automáticamente, el voltaje de carga, el tiempo de carga y la intensidad de la carga seleccionada. Este modelo de cargador posee varias versiones yo elegí la de dos pilas ya que muchos aparatos no necesitan más pero también hay un [modelo cargar hasta 4 pilas de forma simultánea](http://amzn.to/2nR9Zw7) con un precio algo mayor o de 1 si es suficiente según la necesidad más algo más barato. La única función que no tiene es la de descargar las pilas antes de cargarlas pero para la mayoría de usuarios es más que suficiente. El material y construcción del cargador da una sensación de buena calidad.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="cargador-1.jpg" thumb1="cargador-1-thumb.jpg"
         image2="cargador-2.jpg" thumb2="cargador-2-thumb.jpg" >}}
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="cargador-3.jpg" thumb1="cargador-3-thumb.jpg"
         image2="cargador-4.jpg" thumb2="cargador-4-thumb.jpg" >}}
 </div>
@@ -54,10 +54,10 @@ También compré un reloj para poner en el salón y ver en todo momento la hora 
 Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas de BestFire](http://amzn.to/2ogaRq5) con un acabado de madera que le da un aspecto bastante noble y solo necesita una pila AA. Tiene la función de despertador y luz nocturna pero para mi caso no era necesario, no tiene indicador de la temperatura como tienen los digitales pero puedo prescindir de ello ya que lo imprescindible es que marque la hora. Tiene un precio de 20€ con lo que no me parece barato pero tampoco es muy caro, mucho menos que algunos de los digitales. Si se usa la función de despertador seguramente vendrá bien la luz que tiene para ver la hora a oscuras y la manecilla del segundero no hace el ruido del _tick-tack_ que si se tiene sensibilidad al ruido al dormir no impedirá conciliar el sueño.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="reloj-1.jpg" thumb1="reloj-1-thumb.jpg"
         image2="reloj-2.jpg" thumb2="reloj-2-thumb.jpg" >}}
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="reloj-3.jpg" thumb1="reloj-3-thumb.jpg" >}}
 </div>
 
@@ -79,10 +79,10 @@ Otros modelos de relojes digitales de pared y mesa que ví son los siguientes, c
 Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](http://amzn.to/2nxr4tP), la marca blanca de Amazon, para no estar comprando pilas cada cierto tiempo y no generar residuos que son muy contaminantes si no se depositan en lo puntos de recogida de residuos habilitados. Con las pilas y el cargador en teoría no tendré que comprar más en bastante tiempo. Hay varios modelos de pilas y en _packs_ de 8, también hay de los [tipos AAA](http://amzn.to/2nRgS0d), las que compré yo están anunciadas como que duran 1000 ciclos de cargas y descarga con una capacidad aproximada de 2000mAh.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="pila-1.jpg" thumb1="pila-1-thumb.jpg"
         image2="pila-2.jpg" thumb2="pila-2-thumb.jpg" >}}
-    {{< figure pid="218"
+    {{< figure year="2017" pid="218"
         image1="pila-3.jpg" thumb1="pila-3-thumb.jpg"
         image2="pila-4.jpg" thumb2="pila-4-thumb.jpg" >}}
 </div>

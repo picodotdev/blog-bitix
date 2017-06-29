@@ -30,7 +30,7 @@ Siguiendo el ejemplo de la empresa expuesta tendríamos dos bases de datos: _inv
 {{< gist picodotdev 247d4c1189e851d89d85 "PurchasesService.java" >}}
 {{< gist picodotdev 247d4c1189e851d89d85 "DefaultPurchasesService.java" >}}
 
-Al realizarse una compra a través del servicio _PurchasesService_ se ha de modificar el inventario del producto cosa que no se hace en el propio servicio de compras sino que se llama al servicio _InventoryService_ para que haga lo que deba, en el ejemplo modificar el inventario pero en un futuro podría ser enviar además una notificación o correo electrónico indicando que el _stock_ es bajo si cae por debajo de determinado número, el servicio de compras no debe conocer nada de esto ya que el inventario no forma parte de su nicho de información. En el ejemplo es una llamada usando un método de una clase pero podría ser una llamada a una <abbr title="Application Programming Interface">API</abbr> <abbr title="Representational State Transfer">REST</abbr> o <abbr title="Remote Procedure Call">RPC</abbr> si realmente fueran microservicios. 
+Al realizarse una compra a través del servicio _PurchasesService_ se ha de modificar el inventario del producto cosa que no se hace en el propio servicio de compras sino que se llama al servicio _InventoryService_ para que haga lo que deba, en el ejemplo modificar el inventario pero en un futuro podría ser enviar además una notificación o correo electrónico indicando que el _stock_ es bajo si cae por debajo de determinado número, el servicio de compras no debe conocer nada de esto ya que el inventario no forma parte de su nicho de información. En el ejemplo es una llamada usando un método de una clase pero podría ser una llamada a una <abbr title="Application Programming Interface">API</abbr> <abbr title="Representational State Transfer">REST</abbr> o <abbr title="Remote Procedure Call">RPC</abbr> si realmente fueran microservicios.
 
 Las sencillas clases _Item_ y _Purchase_ generadas con jOOQ implementan las siguientes interfaces:
 
@@ -48,10 +48,9 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 {{< gist picodotdev 247d4c1189e851d89d85 "purchases-changelog.xml" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/106/basededatos.png" title="Base de datos con varios esquemas" data-gallery><img src="assets/images/posts/106/basededatos.png"></a>
-        <figcaption>Base de datos con varios esquemas, <i>inventory</i> y <i>purchases</i></figcaption>
-    </figure>
+    {{< figure year="2015" pid="106"  
+        image1="basededatos.png" thumb1="basededatos.png"
+        caption="Base de datos con varios esquemas, inventory y purchases" >}}
 </div>
 
 Como en jOOQ la fuente de la verdad es la base de datos los modelos se generan a partir de ella usando otra tarea de Gradle, generará las clases con las que trabajaremos en la aplicación con el comando <code>./gradlew generateModels</code>. Las clases son las del paquete [io.github.picodotdev.blogbitix.multidatabase.jooq](https://github.com/picodotdev/blog-ejemplos/tree/master/Multidatabase/src/main/java/io/github/picodotdev/blogbitix/multidatabase/jooq).

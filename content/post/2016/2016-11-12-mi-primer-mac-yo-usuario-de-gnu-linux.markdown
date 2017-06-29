@@ -34,7 +34,7 @@ Yo futuro, ¿habrás caído en la tentación? ¡Resiste! No olvides y piensa [po
 Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sobre Apple y sus productos, como macOS, los MacBook, los adaptadores y periféricos como el [Magic Mouse](http://www.apple.com/es/shop/product/MLA02ZM/A/magic-mouse-2). El siguiente paso es [cómo instalar software en macOS con Homebrew][blogbitix-195].
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="193"
+    {{< figure year="2016" pid="193"
         image1="macos.png" thumb1="macos-thumb.png" title1="Información del sistema macOS"
         image2="macos-sierra-desktop.jpg" thumb2="macos-sierra-desktop-thumb.jpg" title2="Escritorio de macOS"
         caption="Información del sistema y escritorio de macOS" >}}

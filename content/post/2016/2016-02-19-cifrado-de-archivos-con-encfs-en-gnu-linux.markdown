@@ -36,7 +36,8 @@ Instalado el paquete y con el comando _encfs_ indicamos el directorio donde se a
 Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/126/sistema-archivos-descifrados.png" title="Sistema de archivos montado y descifrado" data-gallery><img src="assets/images/posts/126/sistema-archivos-descifrados-thumb.png"></a>
+    {{< figure year="2016" pid="126"
+        image1="sistema-archivos-descifrados.png" thumb1="sistema-archivos-descifrados-thumb.png" >}}
 </div>
 
 La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con _Ctrl-C_ momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:
@@ -46,14 +47,16 @@ La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta form
 Montado el sistema de archivos en primer o segundo plano podremos trabajar con los archivos normalmente y EncFS irá cifrando su contenido y nombres de archivos de forma transparente en el directorio de archivos cifrados. Añadiendo algún archivo este podría ser el contenido del directorio de archivos cifrados.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/126/sistema-archivos-cifrados.png" title="Sistema de archivos cifrado" data-gallery><img src="assets/images/posts/126/sistema-archivos-cifrados-thumb.png"></a>
+    {{< figure year="2016" pid="126"
+        image1="sistema-archivos-cifrados.png" thumb1="sistema-archivos-cifrados-thumb.png" >}}
 </div>
 
 Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/126/contenido-archivo-descifrado.png" title="Contenido de un archivo de texto" data-gallery><img src="assets/images/posts/126/contenido-archivo-descifrado-thumb.png"></a>
-    <a href="assets/images/posts/126/contenido-archivo-cifrado.png" title="Contenido del archivo de texto cifrado" data-gallery><img src="assets/images/posts/126/contenido-archivo-cifrado-thumb.png"></a>
+    {{< figure year="2016" pid="126"
+        image1="contenido-archivo-descifrado.png" thumb1="contenido-archivo-descifrado-thumb.png"
+        image2="contenido-archivo-cifrado.png" thumb2="contenido-archivo-cifrado-thumb.png" >}}
 </div>
 
 En el [artículo de EncFS de la wiki de Arch Linux](https://wiki.archlinux.org/index.php/EncFS) está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.

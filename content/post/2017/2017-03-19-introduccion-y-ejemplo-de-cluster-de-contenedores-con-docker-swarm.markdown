@@ -39,7 +39,7 @@ En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anter
 {{% asciinema id="107868" caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" %}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="216"
+    {{< figure year="2017" pid="216"
         image1="maquinas-virtuales-cluster.png" thumb1="maquinas-virtuales-cluster-thumb.png" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
         caption="Máquinas virtuales de los nodos del cluster de Docker Swarm" >}}
 </div>

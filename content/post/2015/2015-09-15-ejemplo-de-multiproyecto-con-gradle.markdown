@@ -62,10 +62,9 @@ Creando un producto desde la consola de PostgreSQL y refrescando la página en e
 {{< gist picodotdev 633316d67575461a0f29 "insert.sql" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/96/back.png" title="Backoffice" data-gallery><img src="assets/images/posts/96/back.png"></a>
-        <figcaption>Aplicación backoffice</figcaption>
-    </figure>
+    {{< figure year="2015" pid="96"  
+        image1="back.png" thumb1="back.png"
+        caption="Aplicación backoffice" >}}
 </div>
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/MultiprojectGradle) puedes verlo y descargarlo desde su repositorio de GitHub.

@@ -34,7 +34,8 @@ En el inventario descrito como un archivo en formato INI se asignan los nombres 
 {{< gist picodotdev b2f77fc1b2f1987c8aef "ansible.sh" >}}
 
 <div class="media" style="text-align: center;">
-	<a href="assets/images/posts/52/ansible.png" title="Ansible" data-gallery><img src="assets/images/posts/52/ansible-thumb.png"></a>
+	{{< figure year="2014" pid="52"  
+    	image1="ansible.png" thumb1="ansible-thumb.png" >}}
 </div>
 
 El parámetro -m indica el módulo de Ansible que usamos y a continuación indicamos los parámetros. Ansible dispone de una amplia [colección de módulos](http://docs.ansible.com/list_of_all_modules.html) que nos permiten hacer cantidad de tareas.

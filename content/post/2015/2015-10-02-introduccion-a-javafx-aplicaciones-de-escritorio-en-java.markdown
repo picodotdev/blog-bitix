@@ -47,12 +47,10 @@ La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/Ho
 Esta es la captura de pantalla de la aplicación y el mensaje emitido en la consola cuando se hace clic en el botón.
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/100/helloworld.png" title="Aplicación ¡Hola Mundo!" data-gallery><img src="assets/images/posts/100/helloworld-thumb.png"></a>
-        <figcaption>Aplicación ¡Hola Mundo! con JavaFX</figcaption>
-    </figure>
+    {{< figure year="2015" pid="100"  
+        image1="helloworld.png" thumb1="helloworld-thumb.png" title1="Aplicación ¡Hola Mundo!"
+        caption="Aplicación ¡Hola Mundo! con JavaFX" >}}
 </div>
-
 
 {{< gist picodotdev 3f72381acc9973f25ff2 "System.out" >}}
 
@@ -61,14 +59,12 @@ En las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/j
 {{< gist picodotdev 3f72381acc9973f25ff2 "examples.sh" >}}
 
 <div class="media" style="text-align: center;">
-    <figure>
-        <a href="assets/images/posts/100/ensemble.png" title="Aplicación Ensemble" data-gallery><img src="assets/images/posts/100/ensemble-thumb.png"></a>
-        <figcaption>Aplicación Ensemble</figcaption>
-    </figure>
-    <figure>
-        <a href="assets/images/posts/100/modena.png" title="Aplicación Modena" data-gallery><img src="assets/images/posts/100/modena-thumb.png"></a>
-        <figcaption>Aplicación Modena</figcaption>
-    </figure>
+    {{< figure year="2015" pid="100"  
+        image1="ensemble.png" thumb1="ensemble-thumb.png" title1="Aplicación Ensemble"
+        caption="Aplicación Ensemble" >}}
+    {{< figure year="2015" pid="100"  
+        image1="modena.png" thumb1="modena-thumb.png" title1="Aplicación Modena"
+        caption="Aplicación Modena" >}}
 </div>
 
 El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro <a href="http://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.

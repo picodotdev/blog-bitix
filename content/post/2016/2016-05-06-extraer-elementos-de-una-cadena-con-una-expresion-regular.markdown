@@ -28,7 +28,9 @@ En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/ut
 {{< gist picodotdev fa0408b7ffbddc8cd3c93725db845cf6 "Main.java" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="140" image1="java-regex.png" thumb1="java-regex-thumb.png" title1="Extracción de valores de una cadena usando una expresión regular" caption="Extracción de valores de una cadena usando una expresión regular" >}}
+    {{< figure year="2016" pid="140"
+        image1="java-regex.png" thumb1="java-regex-thumb.png" title1="Extracción de valores de una cadena usando una expresión regular"
+        caption="Extracción de valores de una cadena usando una expresión regular" >}}
 </div>
 
 Esto simplifica el extraer los valores de un cadena, de una manera menos frágil y más fácil de leer posteriormente el código fuente que usar la función _split_ por uno o varios determinados caracteres, esta es una cadena bastante sencilla si el patrón es más complejo el código usando _split_ puede complicarse notablemente.

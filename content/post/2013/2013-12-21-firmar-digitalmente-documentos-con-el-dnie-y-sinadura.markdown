@@ -24,7 +24,8 @@ Primeramente deberemos descargar la última versión de [Sinadura](http://www.si
 {{< gist picodotdev 8067882 "instalar-sunadura.sh" >}}
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/3/instalador-sinadura.png" title="Instalador Sinadura" data-gallery><img src="assets/images/posts/3/instalador-sinadura-thumb.png" alt="Instalador Sinadura" title="Instalador Sinadura"></a>
+    {{< figure year="2013" pid="3"
+        image1="instalador-sinadura.png" thumb1="instalador-sinadura-thumb.png" title1="Instalador Sinadura" >}}
 </div>
 
 Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:
@@ -34,25 +35,29 @@ Una vez instalado sinadura y también teniendo instalado el lector de tarjetas i
 Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/3/sinadura.png" title="Sinadura" data-gallery><img src="assets/images/posts/3/sinadura-thumb.png" alt="Sinadura" title="Sinadura"></a>
+    {{< figure year="2013" pid="3"
+        image1="sinadura.png" thumb1="sinadura-thumb.png" title1="Sinadura" >}}
 </div>
 
 Con Sinadura y el DNI podemos firmar digitalmente cualquier tipo de archivo pero entre los archivos de tipo pdf y el resto hay diferencias. En el caso de los pdf la firma se incrusta en el propio documento y en resto se crea un nuevo archivo con la firma y el documento original, el archivo nuevo creado tiene la extensión .sar. Para firmar un documento deberemos añadirlo a la vista con el botón «Añadir documento» y posteriormente firmarlo con el botón «Firmar». Para realizar la firma se nos pedirá que introduzcamos el PIN secreto que nos proporcionaron al emitirnos el DNI en la oficina de expedición.
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/3/pin.png" title="Preferencias de Sinadura" data-gallery><img src="assets/images/posts/3/pin-thumb.png" alt="Administrador de dispositivos (1)" title="Preferencias de Sinadura"></a>
+    {{< figure year="2013" pid="3"
+        image1="pin.png" thumb1="pin-thumb.png" title1="Preferencias de Sinadura" >}}
 </div>
 
 En el caso de los archivos pdf Sinadura por defecto incrusta además de la firma una marca de agua en la primera página aunque se pueden cambiar algunas preferencias en «Archivo> Preferencias»:
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/3/preferencias-sinadura.png" title="Preferencias de Sinadura" data-gallery><img src="assets/images/posts/3/preferencias-sinadura-thumb.png" alt="Preferencias de Sinadura" title="Preferencias de Sinadura"></a>
+    {{< figure year="2013" pid="3"
+        image1="preferencias-sinadura.png" thumb1="preferencias-sinadura-thumb.png" title1="Preferencias de Sinadura" >}}
 </div>
 
 Los archivos .sar creados para archivos que no son pdf tienen el siguiente contenido, además del archivo original una serie de archivos .xml que contendrán la firma (son archivos zip con extensión .sar):
 
 <div class="media" style="text-align: center;">
-    <a href="assets/images/posts/3/sinadura-documento-firmado.png" title="Documento firmado con Sinadura" data-gallery><img src="assets/images/posts/3/sinadura-documento-firmado-thumb.png" alt="Documento firmado con Sinadura" title="Documento firmado con Sinadura"></a>
+    {{< figure year="2013" pid="3"
+        image1="sinadura-documento-firmado.png" thumb1="sinadura-documento-firmado-thumb.png" title1="Documento firmado con Sinadura" >}}
 </div>
 
 Una vez firmados los archivos podemos enviarlos por correo electrónico y la persona que los reciba podrá validarlos también con Sinadura. Para ello se debe añadir el archivo y pulsar el botón «Validar».
