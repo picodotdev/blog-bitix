@@ -31,7 +31,7 @@ Los componentes de React reemplazan a las vistas de Backbone y vistas, controlad
 El resultado es el siguiente:
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="20"  
+	{{< figure year="2014" pid="20"
     	image1="backbone-react.png" thumb1="backbone-react-thumb.png" >}}
 </div>
 

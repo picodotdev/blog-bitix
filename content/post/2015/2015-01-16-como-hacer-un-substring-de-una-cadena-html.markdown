@@ -34,7 +34,7 @@ Empleando esta librería la cadena del ejemplo anterior podría quedar:
 El resultado aplicando está solución puede verse en el [feed de la portada de Blog Stack][blogbitix-feed] donde se muestra una entradilla o extracto del inicio del contenido de cada uno de los artículos.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="61"  
+	{{< figure year="2015" pid="61"
     	image1="blogstack.png" thumb1="blogstack-thumb.png" >}}
 </div>
 

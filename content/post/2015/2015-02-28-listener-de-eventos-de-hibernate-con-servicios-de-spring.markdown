@@ -34,7 +34,7 @@ En el _listener_ haremos uso de un servicio de Spring que podemos inyectar usand
 En este ejemplo el resultado que veríamos en la consola sería el siguiente con las trazas _Action: preInsert, Id: null_ y _Action: postInsert, Id: 1_ antes y después de ejecutarse la sentencia SQL:
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="69"  
+	{{< figure year="2015" pid="69"
     	image1="consola.png" thumb1="consola-thumb.png" title1="Trazas de ejecución del listener con servicios de Spring" >}}
 </div>
 

@@ -19,7 +19,7 @@ series: ["bilbostack"]
 Un año más una de las primeras conferencias del año se ha celebrado en Bilbao, la [BilboStack][bilbostack] 2015. Esta edición del 2015 ha sido la cuarta entrega donde varios profesionales del sector de las tecnologías han hablado de diversos temas, desde programación hasta metodologías de desarrollo y algunas otras cosas relacionadas con la tecnología y el desarrollo. Cada año la BilboStack acoge a más asistentes en la [Universidad de Deusto](http://www.deusto.es) dando lugar este año a un cambio de ubicación dentro de la propia universidad para poder dar cabida a todos de forma más cómoda. Como en ediciones anteriores este año ha seguido manteniéndose gratuita, lo único necesario ha sido el registro para adquirir la entrada.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="universidad.jpg" thumb1="universidad-thumb.jpg" >}}
 </div>
 
@@ -84,9 +84,9 @@ Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minut
 </table>
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     image1="track1.jpg" thumb1="track1-thumb.jpg" >}}
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     image1="track2.jpg" thumb1="track2-thumb.jpg" >}}
 </div>
 
@@ -103,7 +103,7 @@ La nueva plataforma de .NET comentada en la presentación aparte de ser agnósti
 Después de la presentación me planteo aprender algo de .NET porque siendo pragmático hay una buena cantidad de ofertas de trabajo solicitando conocimientos en esta plataforma y algunas aparentemente interesantes.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="dotnet.jpg" thumb1="dotnet-thumb.jpg" title1="Desarrollo de aplicaciones web con .NET en MAC o Linux" >}}
 </div>
 
@@ -114,7 +114,7 @@ El título de la presentación viene motivado porque Google procesa el contenido
 En la mejora de la accesibilidad de una página intervienen tanto diseñadores (tipografía, colores, estilos externalizados) como desarrolladores (código html limpio, javascript no intrusivo) y pueden ayudarse de herramientas como [validadores de HTML](http://validator.w3.org/), [validadores de CSS](http://jigsaw.w3.org/css-validator/), [validadores de accesibilidad](http://www.tawdis.net/). También podemos comprobar como se ve una página sin estilos (como es accedida por google), con javascript deshabilitado, añadiendo atributos alt (como a imágenes), añadiendo teclas de acceso, ... algunas de estas cosas pueden probarse rápidamente con el [plugin web developer de Firefox](https://addons.mozilla.org/es/firefox/addon/web-developer/).
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="google-es-ciego.jpg" thumb1="google-es-ciego-thumb.jpg" >}}
 </div>
 
@@ -129,7 +129,7 @@ BLE es distinto de NFC, BLE es una comunicación de 1:N, consume batería y el u
 Los _beacons_ y BLE puede ser un nuevo campo tecnológico, veremos si realmente se convierte en útil y se implanta su uso o si finalmente desaparece y posteriormente resurge como un nuevo concepto basado en el anterior que finalmente sea usado.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="beacons.jpg" thumb1="beacons-thumb.jpg" >}}
 </div>
 
@@ -142,7 +142,7 @@ El número de estos dispositivos aumentará rápidamente en los próximos años 
 Otro nuevo área tecnológico en el que descubrir aplicaciones útiles y con gran potencial.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="iot.jpg" thumb1="iot-thumb.jpg" title1="Internet de las cosas (IoT)" >}}
 </div>
 
@@ -157,7 +157,7 @@ En [Biko](http://www.biko2.com/) siguen tres ideas para mantener estos fuegos co
 3. Mantener equilibrio constante. En el momento que aparece un fuego hay que tomar medidas para apagarlo evitando así perder el control del proyecto.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="62"  
+	{{< figure year="2015" pid="62"
     	image1="bomberos-piromanos.jpg" thumb1="bomberos-piromanos-thumb.jpg" title1="Bombero pirómano" >}}
 </div>
 

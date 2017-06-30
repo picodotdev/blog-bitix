@@ -22,7 +22,7 @@ Por lo poco que he visto JavaFX es una gran evolución sobre <abbr title="Abstra
 Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplicaciones gráficas es mucho más sencillo y más fácilmente mantenible. Proporciona un editor que sigue el principio lo que ves es lo que obtienes (<abbr title="What You See Is What You Get">_WYSIWYG_</abbr>) y que permite generar los archivos FXML que posteriormente se pueden utilizar en la aplicación Java de escritorio para crear la interfaz visual. Podemos [descargar la aplicación JavaFX Scene Builder](http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html) desde su página de descargas. En la siguiente imagen se puede ver la interfaz con el ejemplo _Hola Mundo_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="javafx-scene-builder.png" thumb1="javafx-scene-builder-thumb.png" title1="JavaFX Scene Builder con la aplicación ¡Hola Mundo!"
         caption="JavaFX Scene Builder con la aplicación ¡Hola Mundo!" >}}
 </div>
@@ -38,7 +38,7 @@ Que podemos usar en una aplicación con el siguiente código. Comparándolo con 
 En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de controles que podemos usar arrastrando y soltando para construir la interfaz, botones, _checkbox_, _radio buttons_, paneles, rejillas, menús, contenedores, miscelánea, formas, 3D, ...
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="controles-javafx-scene-builder.png" thumb1="controles-javafx-scene-builder-thumb.png"
         caption="Controles de JavaFX" >}}
 </div>
@@ -50,7 +50,7 @@ Si con los archivos FXML construimos la interfaz queda como enlazar los elemento
 La clase manejador de eventos se indica en el panel _Controller_ y es una clase con métodos que posteriormente se indican en el editor con una almohadilla (<code>#</code>) delante en el panel _Code_. Por ejemplo, si el manejador de un botón se llama _onClick_ en la clase controlador _HelloWorldFXMLController_ deberemos tener ese método con el parámetro adecuado en este caso un [_ActionEvent_](https://docs.oracle.com/javase/8/javafx/api/javafx/event/ActionEvent.html).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="javafx-scene-builder-controller.png" thumb1="javafx-scene-builder-controller-thumb.png" title1="Añadiendo comportamiento a aplicación JavaFX"
         caption="Añadiendo comportamiento a aplicación JavaFX" >}}
 </div>
@@ -58,7 +58,7 @@ La clase manejador de eventos se indica en el panel _Controller_ y es una clase 
 Además de poder enlazar los componente visuales con el código para añadirles funcionalidad se pueden modificar las propiedades visuales como el texto, fuente y tamaño, alineación, opacidad, visibilidad, altura, anchura, margen, margen interior, rotación, escalado, ... . Algunas propiedades son aplicables a varios componentes otras son específicas según el componente.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="propiedades-javafx-scene-builder.png" thumb1="propiedades-javafx-scene-builder-thumb.png"
         caption="Propiedades de los controles JavaFX, en este caso de un botón" >}}
 </div>
@@ -66,10 +66,10 @@ Además de poder enlazar los componente visuales con el código para añadirles 
 Entre las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) está la aplicación _Modena_ con la que podemos ver el aspecto visual de los componentes, en la aplicación _Ensemble_ hay más ejemplos junto con código de muchos controles.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="modena.png" thumb1="modena-thumb.png" title1="Aplicación Modena"
         caption="Aplicación Modena" >}}
-    {{< figure year="2015" pid="102"  
+    {{< figure year="2015" pid="102"
         image1="ensemble.png" thumb1="ensemble-thumb.png" title1="Aplicación Ensemble"
         caption="Aplicación Ensemble" >}}
 </div>

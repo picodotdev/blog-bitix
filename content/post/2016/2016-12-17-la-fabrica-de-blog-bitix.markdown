@@ -47,7 +47,7 @@ También se ven ahí unos altavoces con _subwoofer_ que utilizo para escuchar mi
     {{< figure year="2016" pid="201"
         image1="tux.png" thumb1="tux-thumb.png" title1="Tux"
         image2="arch-linux-calendar-2012.png" thumb2="arch-linux-calendar-2012-thumb.png" title1="Arch Linux calendar" >}}
-    {{< figure year="2016" pid="201"    
+    {{< figure year="2016" pid="201"
         image1="arch-linux-cheat-cube.png" thumb1="arch-linux-cheat-cube-thumb.png" title1="Arch Linux cheat cube" >}}
 </div>
 

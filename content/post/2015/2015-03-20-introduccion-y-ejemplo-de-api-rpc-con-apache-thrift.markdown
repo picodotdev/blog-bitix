@@ -56,7 +56,7 @@ Una vez están los servicios disponibles podemos consumirlos con las siguientes 
 Ejecutando el cliente y llamando a los métodos de la interfaz del servicio veremos en la terminal la siguiente salida:
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="72"  
+	{{< figure year="2015" pid="72"
     	image1="cliente.png" thumb1="cliente.png"
     	image2="servidor.png" thumb2="servidor.png" >}}
 </div>

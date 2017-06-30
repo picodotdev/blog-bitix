@@ -25,7 +25,7 @@ Para monitorizar los archivos y recibir notificaciones cuando se produzcan cambi
 En este ejemplo solo se monitorizan los cambios de los archivos pero usando otras propiedades se pueden monitorizar la eliminación y creación, en la clase [StandardWatchEventKinds](http://docs.oracle.com/javase/7/docs/api/java/nio/file/StandardWatchEventKinds.html) pueden verse estas propiedades. Una cosa a tener en cuenta es que se pueden monitorizar directorios no archivos en concreto, pero como en el ejemplo una vez que recibimos las notificaciones de monitorización es algo que podemos hacer nosotros. Ejecutando el programa una salida del su funcionamiento podría ser la siguiente en el que la clase se recarga cuando se detectan cambios en ella variando los valores que se emiten en la consola.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="43"  
+	{{< figure year="2014" pid="43"
     	image1="main.png" thumb1="main.png" title1="Salida programa Main.java" >}}
 </div>
 

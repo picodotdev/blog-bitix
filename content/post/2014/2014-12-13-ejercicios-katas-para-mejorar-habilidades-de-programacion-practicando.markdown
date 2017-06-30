@@ -26,7 +26,7 @@ Intentando implementar en código una posible solución aplicando el patrón Str
 {{< gist picodotdev 0ec7ceb33a4a78ef1bc2 "MainTest.java" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="56"  
+	{{< figure year="2014" pid="56"
     	image1="teses-junit.png" thumb1="teses-junit.png" title1="Ejecución de teses" >}}
 </div>
 

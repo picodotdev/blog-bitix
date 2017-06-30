@@ -62,7 +62,7 @@ Creando un producto desde la consola de PostgreSQL y refrescando la página en e
 {{< gist picodotdev 633316d67575461a0f29 "insert.sql" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="96"  
+    {{< figure year="2015" pid="96"
         image1="back.png" thumb1="back.png"
         caption="Aplicación backoffice" >}}
 </div>

@@ -20,7 +20,7 @@ En la mayoría de frameworks de desarrollo de aplicaciones o páginas web para p
 * Push: este es el modelo comentado. El controlador recupera de antemano todos los datos que necesita la vista, el controlador también determina la vista o plantilla que se usar. Combinando los datos y la plantilla se produce el resultado.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="31"  
+	{{< figure year="2014" pid="31"
     	image1="modelo-push.png" thumb1="modelo-push.png" >}}
 </div>
 
@@ -38,7 +38,7 @@ Los pasos que se siguen en este modelo son:
 * Pull: en este modelo el controlador no conoce los datos que usará la vista y es esta la que los solicita según necesita. La vista tira del controlador, el controlador solo debe ofrecer el soporte par que la vista pueda recuperar los datos que necesite.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="31"  
+	{{< figure year="2014" pid="31"
     	image1="modelo-pull.png" thumb1="modelo-pull.png" >}}
 </div>
 

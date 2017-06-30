@@ -19,18 +19,18 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
 Los navegadores suelen indicar que se está usando una comunicación segura cuando en la barra de direcciones se muestra un candado y se está usando el protocolo https. Además, haciendo clic en el candado se pueden ver los detalles del certificado usado por el servidor para la comunicación cifrada.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="77"  
+    {{< figure year="2015" pid="77"
         image1="certificado-validacion-dominio.png" thumb1="certificado-validacion-dominio.png" title1="Certificado SSL con validación de dominio" >}}
 </div>
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="77"  
+    {{< figure year="2015" pid="77"
         image1="certificado.png" thumb1="certificado-thumb.png" >}}
 </div>
 
 Sin embargo, para proporcionar más seguridad y garantía de que como usuarios nos estamos comunicando con el servidor que creemos sin examinar el certificado algunos certificados permiten mostrar también en la barra de direcciones un recuadro verde con el nombre de la entidad, el recuadro verde que solemos ver también en la barra de direcciones al acceder a algunos dominios y que es proporcionado por certificados de validación extendida.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="77"  
+    {{< figure year="2015" pid="77"
         image1="certificado-validacion-extendida.png" thumb1="certificado-validacion-extendida.png" title1="Certificado SSL con validación extendida" >}}
 </div>
 
@@ -41,7 +41,7 @@ Los certificados _wildcard_ y que muestran el recuadro verde son más caros pero
 ¿Cómo obtener un certificado SSL firmado por una entidad raíz de certificación? Las entidades de registro de dominios aparte de dominios, _hosting_ virtual o privado algunos permiten comprar certificados SSL. Uno de los que conozco que permite comprar certificados SSL, de empresa, con recuadro verde o _wildcard_ es [DonDominio](http://www.dondominio.com/products/ssl/), otro es [Arsys](http://www.arsys.es/certificados-seguridad-ssl).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="77"  
+    {{< figure year="2015" pid="77"
         image1="certificados-dondominio.png" thumb1="certificados-dondominio-thumb.png" >}}
 </div>
 

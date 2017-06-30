@@ -48,7 +48,7 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 {{< gist picodotdev 247d4c1189e851d89d85 "purchases-changelog.xml" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="106"  
+    {{< figure year="2015" pid="106"
         image1="basededatos.png" thumb1="basededatos.png"
         caption="Base de datos con varios esquemas, inventory y purchases" >}}
 </div>

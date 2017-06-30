@@ -20,7 +20,7 @@ Con la versión 5.4 de Tapestry las [páginas PageCatalog, ServiceStatus e Hiber
 La página [T5Dashboard](http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html) está incluida en el propio core de [Apache Tapestry](http://tapestry.apache.org/) y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="28"  
+	{{< figure year="2014" pid="28"
     	image1="tapestry-dashboard-1.png" thumb1="tapestry-dashboard-1.png" title1="Estado de la aplicación Tapestry" >}}
 </div>
 
@@ -34,14 +34,14 @@ En otra sección también podemos ver el estado de los servicios que puede ser:
 * Real: El servicio se ha hecho efectivo: se ha instanciado, las dependencias han sido inyectadas, se ha decorado con interceptores y el totalmente operacional.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="28"  
+	{{< figure year="2014" pid="28"
     image1="tapestry-dashboard-2.png" thumb1="tapestry-dashboard-2.png" >}}
 </div>
 
 Finalmente, en la sección HibernateStatistics podemos obtener un montón de datos que nos pueden servir para detectar situaciones anómalas en la aplicación como un gran número de sql que se lanzan en una página como podría ser en un problema de carga N+1 en una relación entre dos entidades, el estado de la cache de segundo nivel que nos permitirá optimizar las caches, la cache de queries, número de transacciones realizadas y otra gran cantidad de información.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="28"  
+	{{< figure year="2014" pid="28"
     	image1="tapestry-dashboard-3.png" thumb1="tapestry-dashboard-3.png" title1="Estadísticas de Hibernate en Tapestry" >}}
 </div>
 

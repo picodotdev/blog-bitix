@@ -35,7 +35,7 @@ Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario deter
 {{< gist picodotdev b8ce1632e34bf0a20f59 "docker-run.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="88"  
+    {{< figure year="2015" pid="88"
         image1="dockerhub.png" thumb1="dockerhub-thumb.png"
         caption="Docker Hub" >}}
 </div>
@@ -51,7 +51,7 @@ Una vez que tenemos el repositorio de GitHub subimos un [Dockerfile para el ejem
 En la creación del repositorio en Docker Hub con _build_ automatizada seleccionamos el repositorio de GitHub que contiene los repositorios y el archivo DockerFile para el que queremos hacer la build automatizada. Le asignamos un nombre al repositorio y un _tag_ a la _build_ que podremos usar al hacer el _pull_ de la imagen.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="88"  
+    {{< figure year="2015" pid="88"
         image1="dockerhub-automated-build.png" thumb1="dockerhub-automated-build-thumb.png"
         caption="Build automatizada de Docker Hub" >}}
 </div>

@@ -38,7 +38,7 @@ Con el comando «docker images», «docker ps», «docker ps -a» podemos respec
 {{< gist picodotdev 85b091f62b462deee318 "docker-4.sh" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="50"  
+	{{< figure year="2014" pid="50"
     	image1="docker-images.png" thumb1="docker-images-thumb.png" title1="docker-images" >}}
 </div>
 
@@ -51,7 +51,7 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 {{< gist picodotdev 85b091f62b462deee318 "docker-5.sh" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="50"  
+	{{< figure year="2014" pid="50"
     	image1="docker-pull.png" thumb1="docker-pull-thumb.png" title1="docker-pull" >}}
 </div>
 
@@ -66,7 +66,7 @@ Este es el momento para explicar otra de las peculiaridades de los contenedores 
 Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores docker en esencia no son más que procesos dentro del sistema.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="50"  
+	{{< figure year="2014" pid="50"
     	image1="docker-run.png" thumb1="docker-run-thumb.png" title1="docker-run" >}}
 </div>
 

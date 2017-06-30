@@ -31,7 +31,7 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 {{< gist picodotdev e17bd9a8c38d32d70c85 "Main.java" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="78"  
+    {{< figure year="2015" pid="78"
         image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" >}}
 </div>
 

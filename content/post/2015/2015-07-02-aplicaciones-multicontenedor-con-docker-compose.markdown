@@ -62,7 +62,7 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 {{< gist picodotdev 1c2c875cc730b825647f "docker-compose-up.yml" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="87"  
+    {{< figure year="2015" pid="87"
         image1="docker-compose.png" thumb1="docker-compose-thumb.png"
         caption="Docker Compose" >}}
 </div>

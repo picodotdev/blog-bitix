@@ -44,13 +44,13 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 {{< gist picodotdev 69b393c6a00fdd4f3ca3 "build.gradle" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="113"  
+    {{< figure year="2015" pid="113"
         image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png"
         caption="Spring Boot Actuator endpoint Health" >}}
-    {{< figure year="2015" pid="113"  
+    {{< figure year="2015" pid="113"
         image1="spring-boot-actuator-env.png" thumb1="spring-boot-actuator-env-thumb.png"
         caption="Spring Boot Actuator endpoint Env" >}}
-    {{< figure year="2015" pid="113"  
+    {{< figure year="2015" pid="113"
         image1="spring-boot-actuator-metrics.png" thumb1="spring-boot-actuator-metrics-thumb.png"
         caption="Spring Boot Actuator endpoint Metrics" >}}
     </figure>

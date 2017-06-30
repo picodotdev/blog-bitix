@@ -34,10 +34,10 @@ Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos 
 {{< gist picodotdev 57d411ed0cc804a75bf6 "startup.sh" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="71"  
+	{{< figure year="2015" pid="71"
     	image1="tomcat-embedded-comando.png" thumb1="tomcat-embedded-comando-thumb.png"
     	image2="tomcat-embedded-app.png" thumb2="tomcat-embedded-app-thumb.png" >}}
-	{{< figure year="2015" pid="71"  
+	{{< figure year="2015" pid="71"
     	image1="app.png" title="Aplicación web en TomcatEmbedded" thumb1="app-thumb.png" >}}
 </div>
 

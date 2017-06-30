@@ -22,13 +22,13 @@ Desde hace un tiempo quería comprar unos estores tanto para la habitación como
 </div>
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="soportes.jpg" thumb1="soportes-thumb.jpg"
         caption="Soportes" >}}
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="soportes-montados.jpg" thumb1="soportes-montados-thumb.jpg"
         caption="Soportes montados" >}}
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="elementos.jpg" thumb1="elementos-thumb.jpg"
         caption="Elementos" >}}
 </div>
@@ -36,10 +36,10 @@ Desde hace un tiempo quería comprar unos estores tanto para la habitación como
 Tratando de buscar unos estores en más medidas y con la posibilidad de elegir la posición de la cadena (izquierda o derecha) llegue a las páginas de varias tiendas que ofrecían estores fabricados a medida, dos de ellas fueron [estoresbaratos.com](http://www.estoresbaratos.com/) y [cortinadecor.com](http://www.cortinadecor.com/). Revisando sus páginas me interesó que se pudiesen personalizar sus características por supuesto medidas pero también tejido, color, caída (pegado o cascada), posición mecanismo (cadena), accionamiento (cadena o motor), terminación superior e inferior, tipo de soporte y el color de la cadena. Cualquiera de estas dos páginas ofrecía muchas más opciones de las que encontré en Ikea, El Corte Inglés o Amazon, por lo que ni siquiera llegué a ir a las tiendas físicas de las dos primeras para ver si en ellas tenían más opciones que las que ofrecían en sus webs. Las tiendas aunque sean físicas deben preocuparse por tener presencia en internet, básico teléfono, dirección y horario y si es posible un catálogo de productos lo más completo posible incluyendo fotos que permitan mostrar el producto lo más fielmente posible, sino como en mi caso puede que ni siquiera lleguemos a acudir a ellas, internet es ya un producto de masas y diría que mucha gente ya lo usa para consultar las opciones y el catálogo de las tiendas en ese primer paso para comprar un producto.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="personalizacion-1.png" thumb1="personalizacion-1-thumb.png" title1="Opciones personalización 1-5"
         caption="Opciones personalización 1-5" >}}
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="personalizacion-2.png" thumb1="personalizacion-2-thumb.png" title1="Opciones personalización 6-10"
         caption="Opciones personalización 6-10" >}}
 </div>
@@ -47,7 +47,7 @@ Tratando de buscar unos estores en más medidas y con la posibilidad de elegir l
 Siguiendo con la compra de los estores tenía dudas sobre como serían los tejidos y su opacidad, afortunadamente tanto _estoresbaratos.com_ y _cortinadecor.com_ ofrecían envío de muestras gratuitas de los tejidos al domicilio a través de correo postal ordinario, entre estas dos tiendas me gusto un poco más _cortinadecor.com_ por los [vídeos sobre como medir y colocar estores](https://www.youtube.com/user/cortinadecor) bastante bien realizados protagonizados por una cara conocida como [Yolanda Alzola](https://es.wikipedia.org/wiki/Yolanda_Alzola), solicite muestras en _cortinadecor.com_ de un tejido translúcido, me los enviaron en una semana, no me convencieron porque me resultaron un tejido muy simple y solicite nuevamente otras muestras de tejidos _screen_ con una apertura del 5% y otros de 1% (ambos _nano screen_). El tejido _nano screen_ del 1% me pareció casi opaco sin apenas visibilidad hacia el exterior e interior pero los tejidos del 5% si que me gustaron más. En las pequeñas muestras que envían no es fácil hacerse una idea de la opacidad del estore completo pero sirven para palpar el tejido. Una de las pegas que tiene comprar por internet es que en productos que no son estándares venda quien te los venda, como por ejemplo una PlayStation, modelo de televisión o cámara de fotos, como es el caso de los tejidos y estores que los vendedores ofrezcan la posibilidad de enviar muestras es un acierto para que al comprador tenga menos dudas y se incline a comprar. Revisa todos los tipos de tejido y pide todas las muestras que te interesen ya que las envían juntas en una sola carta.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="muestras.jpg" thumb1="muestras-thumb.jpg" title1="Muestras tejido translúcido, 1% apertura y 5% apertura"
         caption="Muestras tejido translúcido, 1% apertura y 5% apertura" >}}
 </div>
@@ -57,10 +57,10 @@ Habiendo visto las muestras y todavía con algunas dudas de como quedaría el te
 Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso básicamente el embalaje fue una caja de cartón en forma de triángulo, nada que objetar si no fuera por los corchos laterales que dan una sensación de precariedad al paquete, pueden moverse si la cinta de embalaje no se coloca presionando la caja, los estores estaban bien protegidos con el típico plástico de burbujas. También al recibir los estores rectificados uno de ellos vino sin el logotipo de detalle con su marca, quizá porque al reducir las medidas tuvieron que quitarlo pero se olvidaron de colocarlo de nuevo. En el segundo pedido de estores para el salón no incluían este pequeño detalle. Finalmente, el tubo y la terminación no están perfectamente ajustadas a la anchura de la tela hay algún milímetro de holgura, algo puede ser necesario en mi caso da la sensación de ser excesivo. Nada de esto es catastrófico pero hace que no sea completamente perfecto a pesar de la buena calidad del producto. También podrían ofrecer como producto los soportes que compré en Amazon para no taladrar la ventana, ofrecen una colocación mucho más sencilla y con la posibilidad de hacer rectificaciones y ajustes.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="cajas.jpg" thumb1="cajas-thumb.jpg"
         caption="Cajas embalaje" >}}
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="detelle-logotipo.jpg" thumb1="detelle-logotipo-thumb.jpg"
         caption="Detalle logotipo" >}}
 </div>
@@ -72,10 +72,10 @@ La calidad del producto, igual de importante el buen servicio de atención al cl
 </div>
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="estores-colocados.jpg" thumb1="estores-colocados-thumb.jpg"
         caption="Estores colocados" >}}
-    {{< figure year="2015" pid="111"  
+    {{< figure year="2015" pid="111"
         image1="pelicula-adhesiva-cristal.jpg" thumb1="pelicula-adhesiva-cristal-thumb.jpg" title1="Película adhesiva cristal"
         caption="Película adhesiva cristal" >}}
 </div>

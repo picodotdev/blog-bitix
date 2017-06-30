@@ -20,7 +20,7 @@ Una página web está formada por un conjunto de páginas enlazadas entre ellas.
 En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como framework web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de [Blog Stack](http://www.blogstack.info) las páginas se componen de las siguientes partes.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="32"  
+	{{< figure year="2014" pid="32"
     	image1="plantilla-blog-stack.png" thumb1="plantilla-blog-stack-thumb.png" >}}
 </div>
 

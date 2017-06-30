@@ -41,7 +41,7 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
 {{< gist picodotdev 03199502551aa8038fcd "ConfiguracionManager.java" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="44"  
+	{{< figure year="2014" pid="44"
     	image1="main.png" thumb1="main.png" title1="Salida programa Main.java" >}}
 </div>
 

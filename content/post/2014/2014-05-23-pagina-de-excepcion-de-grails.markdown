@@ -30,8 +30,8 @@ Para hacer uso de la página de excepción deberemos configurar el archivo UrlMa
 El resultado se puede ver en la siguiente captura de pantalla.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="25"  
-      image1="pagina-excepcion-grails-por-defecto.png" thumb1="pagina-excepcion-grails-por-defecto-thumb.png" title1="Página de error por defecto de Grails"
+	{{< figure year="2014" pid="25"
+        image1="pagina-excepcion-grails-por-defecto.png" thumb1="pagina-excepcion-grails-por-defecto-thumb.png" title1="Página de error por defecto de Grails"
     	image2="pagina-excepcion-grails-personalizada.png" thumb2="pagina-excepcion-grails-personalizada-thumb.png" title2="Página de error personalizada de Grails" >}}
 </div>
 

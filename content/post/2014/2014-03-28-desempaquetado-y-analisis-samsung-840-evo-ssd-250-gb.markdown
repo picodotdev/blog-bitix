@@ -30,12 +30,12 @@ En cualquier caso el SSD para mi tampoco ha sido una necesidad real sino más bi
 El disco Samsung 840 EVO SSD de 250 GB lo compré en [Amazon](http://amzn.to/2kdYOJe), en algunos productos como este suelen tener los mejores precios y una abundante cantidad de modelos donde elegir. En las ocasiones que he comprado en ellos el proceso de compra y el envío ha sido perfecto, en tres días laborables tenía los productos en la dirección de entrega y en todo momento he estado informado tanto del estado del pedido como del envío del producto. Amazon es un buen modelo a seguir en cuanto a comercio electrónico. Si bien es cierto que si hubiese tenido oportunidad y los precios hubiesen sido similares o un poco superiores lo hubiese preferido comprar en un tienda local, [IzarMicro](http://www.izarmicro.net/) me era una buena opción pero en el momento que hice el pedido el precio era algo superior.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="18"  
-      image1="samsung-840-evo-ssd-1.jpg" thumb1="samsung-840-evo-ssd-1-thumb.jpg"
-      image2="samsung-840-evo-ssd-2.jpg" thumb2="samsung-840-evo-ssd-2-thumb.jpg" >}}
-	{{< figure year="2014" pid="18"  
-      image1="samsung-840-evo-ssd-3.jpg" thumb1="samsung-840-evo-ssd-3-thumb.jpg"
-      image2="samsung-840-evo-ssd-4.jpg" thumb2="samsung-840-evo-ssd-4-thumb.jpg" >}}
+	{{< figure year="2014" pid="18"
+        image1="samsung-840-evo-ssd-1.jpg" thumb1="samsung-840-evo-ssd-1-thumb.jpg"
+        image2="samsung-840-evo-ssd-2.jpg" thumb2="samsung-840-evo-ssd-2-thumb.jpg" >}}
+	{{< figure year="2014" pid="18"
+        image1="samsung-840-evo-ssd-3.jpg" thumb1="samsung-840-evo-ssd-3-thumb.jpg"
+        image2="samsung-840-evo-ssd-4.jpg" thumb2="samsung-840-evo-ssd-4-thumb.jpg" >}}
 </div>
 
 Como se aprecia en las imágenes de desempaquetado el disco viene en una caja del tamaño de un CD conteniendo:
@@ -55,9 +55,9 @@ Las especificaciones técnicas de la serie de discos SSD de Samsung 840 EVO SSD 
 El disco es muy ligero pesando solo unos pocos gramos, tiene un tamaño de 7 milímetros de altura y la dimensiones son de 2.5 pulgadas, el tamaño más ampliamente usando en los discos para los portátiles no muy viejos. El disco se nota que en su mayor parte está vacío, he visto en [alguna foto](http://www.xbitlabs.com/articles/storage/display/samsung-840-evo_3.html) que en realidad el disco solo ocupa una fracción del tamaño total de 2.5 pulgadas, por lo que los SSD todavía tienen margen para aumentar su capacidad, un punto donde aún les ganan los discos mecánicos. El ruido que hace es ninguno por lo que ya no oiremos "rascar" al disco cuando se escriba de forma intensiva en él. Aunque en la etiqueta se indica que el disco tiene una capacidad de 250 GB en realidad usables son unos 232 GiB una vez formateado.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="18"  
-      image1="samsung-840-evo-ssd-5.jpg" thumb1="samsung-840-evo-ssd-5-thumb.jpg"
-      image2="samsung-840-evo-ssd-6.jpg" thumb2="samsung-840-evo-ssd-6-thumb.jpg" >}}
+	{{< figure year="2014" pid="18"
+        image1="samsung-840-evo-ssd-5.jpg" thumb1="samsung-840-evo-ssd-5-thumb.jpg"
+        image2="samsung-840-evo-ssd-6.jpg" thumb2="samsung-840-evo-ssd-6-thumb.jpg" >}}
 </div>
 
 Los SSD aún tienen margen de mejora, seguirán bajando de precio, aumentarán de capacidad y no tardarán mucho en masificarse para dejar de ser un producto a comprar para los que buscan una mejora de rendimiento. Como muestra no hace ni una semana de que lo compre y ya ha bajado de 125 € a 120 €. Un punto donde todavía puede haber dudas es cuanto a la durabilidad, si realizamos tareas que escriban muchos datos en el disco puede que prefiramos usarlo junto con un disco mecánico. En teoría los discos TLC como el [Samsung 850 EVO de 250 GB](http://amzn.to/2kdQsRO) tiene una esperanza de vida de 1000 escrituras por celda, a unos 10 GiB de datos escritos por día la esperanza de vida estimada es de 11.7 años para el modelo de 120 GB y 23.4 para el modelo de 250 GB. Los 10 GiB de escritura por día me parece una estimación escasa para un día de trabajo, en mi trabajo suelo estar entre 20 GiB y 40 GiB de escritura, principalmente porque uso una base de datos MySql que por cada importación escribe al disco unos 14 GiB. También es cierto que los 1000 ciclos de escritura quizá sean algo bajos y las celdas aguanten algo más, probablemente y salvo que le demos mucho uso al disco antes de que falle cambiaremos de equipo.

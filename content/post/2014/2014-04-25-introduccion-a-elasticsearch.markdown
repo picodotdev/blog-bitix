@@ -27,7 +27,7 @@ La instalación de ES es muy sencilla, basta con [descargar el zip de su distrib
 Después de unos segundos deberemos ver algo como lo siguiente.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="21"  
+	{{< figure year="2014" pid="21"
     	image1="elasticsearch.png" thumb1="elasticsearch-thumb.png" >}}
 </div>
 
@@ -68,7 +68,7 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 {{< gist picodotdev 11294261 "script-9.sh" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="21"  
+	{{< figure year="2014" pid="21"
     image1="categorias-amazon.png" thumb1="categorias-amazon-thumb.png" title1="Categorías de productos (facets) en Amazon" >}}
 </div>
 

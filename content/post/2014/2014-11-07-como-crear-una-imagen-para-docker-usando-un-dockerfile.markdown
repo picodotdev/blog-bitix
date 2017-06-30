@@ -50,7 +50,7 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 {{< gist picodotdev 6dc90582ce925f19ffcb "docker-build.sh" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="51"  
+	{{< figure year="2014" pid="51"
     	image1="docker-mysql.png" thumb1="docker-mysql-thumb.png" title1="docker-mysql" >}}
 </div>
 

@@ -59,31 +59,31 @@ Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="4089.jpg" title="4089: Ghost Within" thumb1="4089-thumb.jpg"
     	image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="seizon.jpg" thumb1="seizon-thumb.jpg"
     	image2="copod.png" thumb2="copod-thumb.png" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" title1="Drohtin – Tales of an Old Kingdom"
     	image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" title2="CHAOS: In the Darkness" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg"
     	image2="spermination.png" thumb2="spermination-thumb.png" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" title1="Maker’s Tale"
     	image2="piratehell.jpg" thumb22="piratehell-thumb.jpg" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg"
     	image2="3079.png" thumb2="3079-thumb.png" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg"
     	image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg"
     	image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" title1="Bang! Howdy"
     	image2="imperii.jpg" thumb2="imperii-thumb.jpg" >}}
 </div>
@@ -98,10 +98,10 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
     	image2="cubos.png" thumb2="cubos-thumb.png" >}}
-	{{< figure year="2015" pid="79"  
+	{{< figure year="2015" pid="79"
     	image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" title1="Sistemas de partículas, fuego"
     	image2="agua.png" thumb2="agua-thumb.png" >}}
 </div>
