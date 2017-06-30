@@ -50,6 +50,6 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
         caption="Microsoft Word 2016" >}}
 </div>
 
-Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows [eligiendo una distribución GNU/Linux][blogbitix-180] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades.
+Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows [eligiendo una distribución GNU/Linux][blogbitix-190] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades.
 
 {{% /post %}}

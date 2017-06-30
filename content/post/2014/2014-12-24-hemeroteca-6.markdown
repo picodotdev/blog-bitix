@@ -60,7 +60,7 @@ Si no quieres perderte ninguno de los nuevos artículos que escriba puede suscri
 Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mosteiro), [Jose Luís Sáchez](https://twitter.com/josetesan), [Joaquín Bravo](https://twitter.com/jbravo), [Marcos Bello](https://twitter.com/mbmerayo) y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)
 
 <div class="media" style="text-align: center;">
-	<img src="assets/images/posts/58/christmastux2014.jpg" alt="Christmastux 2014" title="Christmastux 2014">
+	<img src="assets/images/posts/2014/58/christmastux2014.jpg" alt="Christmastux 2014" title="Christmastux 2014">
 </div>
 
 {{% reference %}}

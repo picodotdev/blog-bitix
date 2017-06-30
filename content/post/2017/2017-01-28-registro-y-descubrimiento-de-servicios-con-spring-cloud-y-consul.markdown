@@ -28,7 +28,7 @@ En este artículo explicaré como usar la parte de descubrimiento de servicios d
 Consul además de descubrimiento de servicios proporciona otras funcionalidades como detección de fallos o caídas para prevenir enviar peticiones a máquinas fuera de servicio y almacenamiento básico clave/valor para configuración dinámica o activación de características. Dispone de una aplicación web en la que podemos ver el estado de los servicios, una [API REST](https://www.consul.io/docs/agent/http.html) con la que comunicarse con Consul en una aplicación o en cada microservicio y un servidor de nombres <abbr>DNS</abbr>, podemos usar cualquiera de las dos interfaces de consulta, la basada en la <abbr>API</abbr> <abbr>REST</abbr> o la basada en DNS para obtener las direcciones IP con la ubicación de los servicios.
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/206/consul.png" alt="Consul" title="Consul"/>
+    <img src="assets/images/posts/2017/206/consul.png" alt="Consul" title="Consul"/>
 </div>
 
 Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección http://localhost:8500 con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
