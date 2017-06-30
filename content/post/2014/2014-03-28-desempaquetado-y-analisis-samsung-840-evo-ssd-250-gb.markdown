@@ -31,11 +31,11 @@ El disco Samsung 840 EVO SSD de 250 GB lo compré en [Amazon](http://amzn.to/2kd
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="18"
-        image1="samsung-840-evo-ssd-1.jpg" thumb1="samsung-840-evo-ssd-1-thumb.jpg"
-        image2="samsung-840-evo-ssd-2.jpg" thumb2="samsung-840-evo-ssd-2-thumb.jpg" >}}
+        image1="samsung-840-evo-ssd-1.jpg" thumb1="samsung-840-evo-ssd-1-thumb.jpg" title1="Samsung SSD 840 EVO 250 GB"
+        image2="samsung-840-evo-ssd-2.jpg" thumb2="samsung-840-evo-ssd-2-thumb.jpg" title=2"Samsung SSD 840 EVO 250 GB" >}}
 	{{< figure year="2014" pid="18"
-        image1="samsung-840-evo-ssd-3.jpg" thumb1="samsung-840-evo-ssd-3-thumb.jpg"
-        image2="samsung-840-evo-ssd-4.jpg" thumb2="samsung-840-evo-ssd-4-thumb.jpg" >}}
+        image1="samsung-840-evo-ssd-3.jpg" thumb1="samsung-840-evo-ssd-3-thumb.jpg" title1="Samsung SSD 840 EVO 250 GB"
+        image2="samsung-840-evo-ssd-4.jpg" thumb2="samsung-840-evo-ssd-4-thumb.jpg" title2="Samsung SSD 840 EVO 250 GB" >}}
 </div>
 
 Como se aprecia en las imágenes de desempaquetado el disco viene en una caja del tamaño de un CD conteniendo:

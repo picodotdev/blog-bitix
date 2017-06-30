@@ -20,7 +20,7 @@ Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes ca
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="114"
-        image1="uptime-robot.png" thumb1="uptime-robot-thumb.png"
+        image1="uptime-robot.png" thumb1="uptime-robot-thumb.png" title1="Uptime Robot"
         caption="Uptime Robot" >}}
 </div>
 
@@ -33,7 +33,7 @@ Una vez registrados y con acceso al panel de control podemos crear un _monitor_.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="114"
-        image1="nuevo-monitor.png" thumb1="nuevo-monitor-thumb.png"
+        image1="nuevo-monitor.png" thumb1="nuevo-monitor-thumb.png" title1="Nuevo monitor HTTP"
         caption="Nuevo monitor HTTP" >}}
 </div>
 
@@ -41,10 +41,10 @@ En el momento que un monitor detecte una caída de servicio podemos establecer q
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="114"
-        image1="dashboard.png" thumb1="dashboard-thumb.png"
+        image1="dashboard.png" thumb1="dashboard-thumb.png" title1="Dashboard"
         caption="Dashboard" >}}
     {{< figure year="2015" pid="114"
-        image1="blogstack.png" thumb1="blogstack-thumb.png"
+        image1="blogstack.png" thumb1="blogstack-thumb.png" title1="Monitor Blog Stack"
         caption="Monitor Blog Stack" >}}
 </div>
 

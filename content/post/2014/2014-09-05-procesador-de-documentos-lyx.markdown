@@ -23,7 +23,7 @@ Empecé evaluando la herramienta más adecuada para escribir el libro, en un pri
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="41"
-    	image1="lyx-plugin.png" thumb1="lyx-plugin-thumb.png" >}}
+    	image1="lyx-plugin.png" thumb1="lyx-plugin-thumb.png" title1="LyX" >}}
 </div>
 
 ## LyX

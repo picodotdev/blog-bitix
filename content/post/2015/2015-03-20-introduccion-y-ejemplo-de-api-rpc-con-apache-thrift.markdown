@@ -57,8 +57,8 @@ Ejecutando el cliente y llamando a los métodos de la interfaz del servicio vere
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="72"
-    	image1="cliente.png" thumb1="cliente.png"
-    	image2="servidor.png" thumb2="servidor.png" >}}
+    	image1="cliente.png" thumb1="cliente.png" title1="Salida de consola del cliente"
+    	image2="servidor.png" thumb2="servidor.png" title2="Salida de consola del servidor" >}}
 </div>
 
 Si te interesan las arquitecturas de aplicaciones con microservicios ya sea con API RPC o REST un libro muy interesante y recomendable es <a href="http://www.amazon.es/gp/product/1491950358/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1491950358&linkCode=as2&tag=blobit-21">Building Microservices</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1491950358" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">. Proporciona una visión detallada de los diferentes aspectos que deben tratar este tipo de aplicaciones.

@@ -30,7 +30,7 @@ Después de introducir la dirección del sitio web, que con estas herramientas h
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="115"
-        image1="w3c-linkchecker.png" thumb1="w3c-linkchecker-thumb.png"
+        image1="w3c-linkchecker.png" thumb1="w3c-linkchecker-thumb.png" title1="W3C Link Checker"
         caption="W3C Link Checker" >}}
 </div>
 

@@ -39,7 +39,7 @@ Un _assert_ cuya expresión se evalúa como falso produce una excepción del tip
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="67"
-    image1="activacion-assert-java.png" title="Activación asserts en eclipse" thumb1="activacion-assert-java-thumb.png" >}}
+    image1="activacion-assert-java.png" thumb1="activacion-assert-java-thumb.png" title1="Activación asserts en eclipse" >}}
 </div>
 
 En la primera de las siguentes capturas de pantalla puede verse como el programa se ejecuta sin producir una excepción a pesar de no cumplirse el _assert_ del método _nextNumber_ ya que los _asserts_ no fueron activados, en la segunda captura activando los _assert_ se lanza una excepción al no cumplirse la postcondición.

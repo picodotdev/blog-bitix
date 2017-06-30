@@ -21,8 +21,8 @@ Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilb
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="123"
-        image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg"
-        image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" >}}
+        image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
+        image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto" >}}
 </div>
 
 Al igual que en anteriores entregas las presentaciones se han dividido en dos _tracks_ con duración de 45 minutos ofrecidas en una única mañana. Este año estando el _track_ 1 orientado a temas de programación o código y el _track_ 2 con una temática más diversa desde equipos a productos y servicios.
@@ -95,8 +95,8 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="123"
-        image1="track1.jpg" thumb1="track1-thumb.jpg"
-        image2="track2.jpg" thumb2="track2-thumb.jpg" >}}
+        image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1"
+        image2="track2.jpg" thumb2="track2-thumb.jpg" title2="Sala track 2" >}}
 </div>
 
 No podía faltar la cuota para el popular lenguaje [JavaScript][javascript] este año con las dos primeras presentaciones del _track_ 1 y si el año pasado comentaba que no había habido ninguna de [Java][java] en ya cuatro entregas, este finalmente ha tenido presencia. Aún siendo solo dos _tracks_ me ha costado algo decidirme por la presentaciones a las que asistir. En resumen, he preferido ir salvo a la de Java a las presentaciones del _track_ 2. [React][react] ya lo conozco al escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20], en [Angular][angular] 2 habrán mejorado las cosas pero se me hace redundante. En general creo que me podría enriquecer más del _track_ 2 que del 1 ya que en mayor o menor medida las del primero ya me iban ser bastante familiares siendo programador.
@@ -158,7 +158,7 @@ Es importante tener datos para evaluar pero hay que tener cuidado con las métri
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="123"
-        image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" >}}
+        image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" title1="Your code as a crime scene" >}}
 </div>
 
 <div class="media" style="text-align: center;">

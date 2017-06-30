@@ -35,7 +35,7 @@ Finalmente como tenía intención, hice una donación a la [organización Europe
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="117"
-        image1="fsfe-t-shirts.jpg" thumb1="fsfe-t-shirts-thumb.jpg"
+        image1="fsfe-t-shirts.jpg" thumb1="fsfe-t-shirts-thumb.jpg" title1="Camisetas FSFE"
         caption="Camisetas FSFE" >}}
 </div>
 
@@ -49,7 +49,7 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="117"
-        image1="fsfe-t-shirts.png" thumb1="fsfe-t-shirts-thumb.png"
+        image1="fsfe-t-shirts.png" thumb1="fsfe-t-shirts-thumb.png" title1="Pago PayPal"
         caption="Pago PayPal" >}}
 </div>
 

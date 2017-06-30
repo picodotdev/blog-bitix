@@ -37,7 +37,7 @@ Montado el sistema de archivos veremos que en el explorador de archivos se ha mo
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="126"
-        image1="sistema-archivos-descifrados.png" thumb1="sistema-archivos-descifrados-thumb.png" >}}
+        image1="sistema-archivos-descifrados.png" thumb1="sistema-archivos-descifrados-thumb.png" title1="Sistema de archivos montado y descifrado" >}}
 </div>
 
 La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con _Ctrl-C_ momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:
@@ -48,15 +48,15 @@ Montado el sistema de archivos en primer o segundo plano podremos trabajar con l
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="126"
-        image1="sistema-archivos-cifrados.png" thumb1="sistema-archivos-cifrados-thumb.png" >}}
+        image1="sistema-archivos-cifrados.png" thumb1="sistema-archivos-cifrados-thumb.png" title1="Sistema de archivos cifrado" >}}
 </div>
 
 Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="126"
-        image1="contenido-archivo-descifrado.png" thumb1="contenido-archivo-descifrado-thumb.png"
-        image2="contenido-archivo-cifrado.png" thumb2="contenido-archivo-cifrado-thumb.png" >}}
+        image1="contenido-archivo-descifrado.png" thumb1="contenido-archivo-descifrado-thumb.png" title1="Contenido de un archivo de texto"
+        image2="contenido-archivo-cifrado.png" thumb2="contenido-archivo-cifrado-thumb.png" title2="Contenido del archivo de texto cifrado" >}}
 </div>
 
 En el [artículo de EncFS de la wiki de Arch Linux](https://wiki.archlinux.org/index.php/EncFS) está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.

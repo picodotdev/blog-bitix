@@ -44,7 +44,7 @@ Entrando a la [página Dashboard][blogbitix-28] y pulsando el botón _Load all p
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="73"
     	image1="dashboard.png" thumb1="dashboard.png" title1="Página dashboard"
-    	image2="error-dashboard.png" thumb1="error-dashboard.png" title2="Página dashboard" >}}
+    	image2="error-dashboard.png" thumb2="error-dashboard.png" title2="Página dashboard" >}}
 </div>
 
 En la imagen con el mensaje del error se puede ver de forma muy detallada cual es la causa, nos indica que el error está en la página _admin/Producto_ y que la clase _es.com.blogspot.elblogdepicodev.plugintapestry.Producto_ no tiene una propiedad llamada _nombra_, con este mensaje rápidamente nos damos cuenta del error de escritura que hemos cometido, corregirlo basta con sustituir _nombra_ por _nombre_ y pulsando de nuevo el botón _Load all pages_ comprobamos que no hay más errores en esa misma página o ninguna otra de la aplicación.

@@ -58,8 +58,8 @@ El texto que indica cuantas tareas están completadas usa las diferentes formas 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="63"
-    	image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png"
-    	image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" >}}
+    	image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png" title1="Una tarea completada"
+    	image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" title2="Dos tareas completadas" >}}
 </div>
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
@@ -74,7 +74,7 @@ Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javasc
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="63"
-    	image1="teses.png" thumb1="teses-thumb.png" >}}
+    	image1="teses.png" thumb1="teses-thumb.png" title1="Pruebas unitarias" >}}
 </div>
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.

@@ -83,10 +83,10 @@ El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo t
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="118"
-        image1="analytics-2015.png" thumb1="analytics-2015-thumb.png"
+        image1="analytics-2015.png" thumb1="analytics-2015-thumb.png" title1="Analytics 2015 de Blog Bitix"
         caption="Analytics 2015 de Blog Bitix" >}}
     {{< figure year="2016" pid="118"
-        image1="adsense-2015.png" thumb1="adsense-2015-thumb.png"
+        image1="adsense-2015.png" thumb1="adsense-2015-thumb.png" title1="AdSense 2015 de Blog Bitix"
         caption="AdSense 2015 de Blog Bitix" >}}
 </div>
 

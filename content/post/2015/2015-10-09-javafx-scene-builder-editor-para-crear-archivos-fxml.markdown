@@ -39,7 +39,7 @@ En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de contro
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="102"
-        image1="controles-javafx-scene-builder.png" thumb1="controles-javafx-scene-builder-thumb.png"
+        image1="controles-javafx-scene-builder.png" thumb1="controles-javafx-scene-builder-thumb.png" title1="Controles de JavaFX"
         caption="Controles de JavaFX" >}}
 </div>
 
@@ -59,7 +59,7 @@ Además de poder enlazar los componente visuales con el código para añadirles 
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="102"
-        image1="propiedades-javafx-scene-builder.png" thumb1="propiedades-javafx-scene-builder-thumb.png"
+        image1="propiedades-javafx-scene-builder.png" thumb1="propiedades-javafx-scene-builder-thumb.png" title1="Propiedades de los controles JavaFX"
         caption="Propiedades de los controles JavaFX, en este caso de un botón" >}}
 </div>
 

@@ -84,7 +84,7 @@ Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="68"
-    	image1="aplicacion.png" thumb1="aplicacion-thumb.png"
+    	image1="aplicacion.png" thumb1="aplicacion-thumb.png" title1="Creando un registro en la base de datos"
     	image2="consola.png" thumb2="consola-thumb.png" title2="Trazas de ejecución del listener" >}}
 </div>
 

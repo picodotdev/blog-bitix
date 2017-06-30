@@ -23,7 +23,7 @@ Drupal como decía está desarrollado sobre PHP pero solo necesitaremos conocer 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="60"
-    	image1="inicio.png" thumb1="inicio-thumb.png"
+    	image1="inicio.png" thumb1="inicio-thumb.png" title1="Inicio Drupal"
     	image2="inicio-administracion.png" thumb2="inicio-administracion-thumb.png" title2="Inicio Drupal (Administración)" >}}
 </div>
 
@@ -34,16 +34,16 @@ Por defecto Drupal ofrece dos tipos de contenido páginas y artículos que posee
     	image1="crear-pagina.png" thumb1="crear-pagina-thumb.png" title1="Crear página"
     	image2="crear-articulo.png" thumb2="crear-articulo-thumb.png" title2="Crear artículo" >}}
 	{{< figure year="2015" pid="60"
-    	image1="tipos-contenido.png" thumb1="tipos-contenido-thumb.png"
+    	image1="tipos-contenido.png" thumb1="tipos-contenido-thumb.png" title1="Tipos de contenido"
     	image2="taxonomia.png" thumb2="taxonomia-thumb.png" title2="Taxonomía" >}}
 	{{< figure year="2015" pid="60"
     	image1="taxonomia-etiquetas.png" thumb1="taxonomia-etiquetas-thumb.png" title1="Etiquetas taxonomía"
-    	image2="bloques.png" thumb2="bloques-thumb.png" >}}
+    	image2="bloques.png" thumb2="bloques-thumb.png" title2="Bloques" >}}
 	{{< figure year="2015" pid="60"
-    	image1="personas.png" thumb1="personas-thumb.png"
-    	image2="personas-permisos.png" thumb2="personas-permisos-thumb.png" >}}
+    	image1="personas.png" thumb1="personas-thumb.png" title1="Personas"
+    	image2="personas-permisos.png" thumb2="personas-permisos-thumb.png" title2="Permisos personas" >}}
 	{{< figure year="2015" pid="60"
-    	image1="personas-roles.png" thumb1="personas-roles-thumb.png" >}}
+    	image1="personas-roles.png" thumb1="personas-roles-thumb.png" title1="Roles personas" >}}
 </div>
 
 Drupal es ampliamente [extensible mediante módulos](https://www.drupal.org/project/project_module) permitiendo agregarle funcionalidades de diferentes categorías (contenido, administración, integración con terceros, comercio electrónico, ...) si las incorporadas por defecto no nos son suficientes. Algunos de  los módulos más empleados son [Panels](https://www.drupal.org/project/panels) que permite definir contenedores (barra izquierda, región contenido, barra derecha, pie, cabecera, ...) en una página y asignar el contenido que queremos que aparezca en cada uno de ellos, [Content Construction Kit (CCK)](https://www.drupal.org/project/cck), [Views](https://www.drupal.org/project/views) para definir vistas de una colección de elementos, [Pathauto](https://www.drupal.org/project/pathauto) para hacer las URLs amigables al usuario y buscadores mejorando el SEO del sitio, [Webform](https://www.drupal.org/project/webform) para crear formularios y recoger información y otros muchos más para infinidad de cosas. Sin embargo, conviene usar los más populares que están ampliamente probados y hayan demostrado su utilidad, los que tenga buen soporte y un mantenimiento activo, estas cosas las podemos seleccionar con el filtro en el formulario de búsqueda de módulos.

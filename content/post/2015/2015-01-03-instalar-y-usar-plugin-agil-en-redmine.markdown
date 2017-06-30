@@ -21,7 +21,7 @@ En el modelo de metodología ágil podemos usar un panel kanban donde ver de un 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="58"
-    	image1="panel-kanban.png" thumb1="panel-kanban-thumb.png" >}}
+    	image1="panel-kanban.png" thumb1="panel-kanban-thumb.png" title1="Panel Kanban de Redmine" >}}
 </div>
 
 También para la gestión de las tareas de los proyectos se suele usar algún tipo de herramienta que permita recoger y gestionar las peticiones adaptada a la metodología que usemos, una de estas herramientas puede ser [Redmine][redmine]. En la [introducción sobre Redmine][blogbitix-57] comentaba que es lo nos puede ofrecer para gestionar el proyecto.
@@ -38,15 +38,15 @@ Finalmente, debemos activar el plugin agile en el proyecto usando la opción Adm
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="58"
-    	image1="configuración.png" title="Activación panel Kanban" thumb1="configuración-thumb.png" >}}
+    	image1="configuración.png" thumb1="configuración-thumb.png" title1="Activación panel Kanban" >}}
 </div>
 
 Una vez activado ya podemos ver el panel kanban mostrado en la primera captura en la pestaña ágil. Por defecto en Redmine solo veremos las columnas New, In progress, Resolved y Feedback pero podemos modificar el flujo de las peticiones adaptándolo a nuestra metodología u organización, podemos hacer esto desde Administración> Estados de peticiones para crear nuevos estados y Administración> Flujo de trabajo para establecer el grafo de estados determinando a que estados puede cambiar una petición desde su estado actual.
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="58"
-    	image1="estados-peticiones.png" thumb1="estados-peticiones-thumb.png"
-    	image2="flujo-de-trabajo.png" thumb2="flujo-de-trabajo-thumb.png" >}}
+    	image1="estados-peticiones.png" thumb1="estados-peticiones-thumb.png" title1="Estados de peticiones"
+    	image2="flujo-de-trabajo.png" thumb2="flujo-de-trabajo-thumb.png" title2="Flujo de trabajo" >}}
 </div>
 
 {{% reference %}}

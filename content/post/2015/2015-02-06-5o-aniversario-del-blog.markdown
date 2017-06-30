@@ -24,7 +24,7 @@ Durante este tiempo en ambos blogs he tenido unas 450K páginas vistas, en reali
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="65"
-    	image1="analytics.png" thumb1="analytics-thumb.png" >}}
+    	image1="analytics.png" thumb1="analytics-thumb.png" title1="Visitas semanales de Blog Bitix" >}}
 </div>
 
 En estos cinco años he recibido tres ingresos de Google por la publicidad AdSense que han sido aproximadamente unos 210€ en total, esta cantidad no compensa el tiempo dedicado pero recibir uno de vez en cuando es algo que no está mal. Hace algunos meses también he incluido algunos enlaces usando el [programa de afiliados de Amazon][amazon-afiliados] por ejemplo en el [disco SSD que compré][blogbitix-18] y una [colección de libros recomendables leer para cualquier programador][blogbitix-55], aún no se superado la cantidad mínima (25€) para que Amazon me haga el ingreso pero no me queda mucho. Para alguien que publique análisis de productos más a menudo el 5% de comisión y el 10% para libros que ofrece Amazon por compra realizada puede ser otra fuente para rentabilizar cómodamente una bitácora.

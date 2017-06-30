@@ -44,7 +44,9 @@ La configuración para Apache HTTPD es similar simplemente cambian las directiva
 {{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "docker-httpd.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="151" image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" title1="Redirección de HTTP a HTTPS en Apache HTTPD" caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
+    {{< figure year="2016" pid="151"
+        image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
+        caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
 </div>
 
 ### Tomcat, Jetty y WildFly

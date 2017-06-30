@@ -19,7 +19,7 @@ Con este artículo quiero presentar un nuevo proyecto, Blog Stack. [Blog Stack](
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="23"
-        image1="blogstack-portada.png" thumb1="blogstack-portada-thumb.png" >}}
+        image1="blogstack-portada.png" thumb1="blogstack-portada-thumb.png" title1="Portada de Blog Stack" >}}
 </div>
 
 Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, ...) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas. BS aún está en desarrollo y posiblemente vaya incorporando nuevas ideas que me surjan o se me propongan pero en el estado actual ya cumple con la función básica de agregador.

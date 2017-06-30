@@ -21,7 +21,7 @@ En la mayoría de frameworks de desarrollo de aplicaciones o páginas web para p
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="31"
-    	image1="modelo-push.png" thumb1="modelo-push.png" >}}
+    	image1="modelo-push.png" thumb1="modelo-push.png" title1="Modelo push" >}}
 </div>
 
 Los pasos que se siguen en este modelo son:
@@ -39,7 +39,7 @@ Los pasos que se siguen en este modelo son:
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="31"
-    	image1="modelo-pull.png" thumb1="modelo-pull.png" >}}
+    	image1="modelo-pull.png" thumb1="modelo-pull.png" title1="Modelo pull" >}}
 </div>
 
 Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:

@@ -45,13 +45,13 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="113"
-        image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png"
+        image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png" title1="Spring Boot Actuator endpoint Health"
         caption="Spring Boot Actuator endpoint Health" >}}
     {{< figure year="2015" pid="113"
-        image1="spring-boot-actuator-env.png" thumb1="spring-boot-actuator-env-thumb.png"
+        image1="spring-boot-actuator-env.png" thumb1="spring-boot-actuator-env-thumb.png" title1="Spring Boot Actuator endpoint Env"
         caption="Spring Boot Actuator endpoint Env" >}}
     {{< figure year="2015" pid="113"
-        image1="spring-boot-actuator-metrics.png" thumb1="spring-boot-actuator-metrics-thumb.png"
+        image1="spring-boot-actuator-metrics.png" thumb1="spring-boot-actuator-metrics-thumb.png" title1="Spring Boot Actuator endpoint Metrics"
         caption="Spring Boot Actuator endpoint Metrics" >}}
     </figure>
 </div>

@@ -21,7 +21,7 @@ En este artículo voy a explicar como crear un componente que nos de a todas las
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="32"
-    	image1="plantilla-blog-stack.png" thumb1="plantilla-blog-stack-thumb.png" >}}
+    	image1="plantilla-blog-stack.png" thumb1="plantilla-blog-stack-thumb.png" title1="Plantilla de Blog Stack" >}}
 </div>
 
 El esquema de la plantilla será una cabecera, una barra de navegación con enlaces a diferentes secciones de la web, un menú lateral con contenido variable según la página, el contenido que variará según la página y un pie de página. Como todo componente de [Apache Tapestry](http://tapestry.apache.org/) está formado de una clase Java y una plantilla. El componente puede tener diferentes parámetros, y en el caso del de la plantilla muchos para poder variar el contenido por defecto de las diferentes secciones de la página, estos son aside1, aside2, aside3, aside4.

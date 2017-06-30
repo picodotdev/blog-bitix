@@ -23,13 +23,13 @@ Desde hace un tiempo quería comprar unos estores tanto para la habitación como
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="111"
-        image1="soportes.jpg" thumb1="soportes-thumb.jpg"
+        image1="soportes.jpg" thumb1="soportes-thumb.jpg" title1="Soportes"
         caption="Soportes" >}}
     {{< figure year="2015" pid="111"
-        image1="soportes-montados.jpg" thumb1="soportes-montados-thumb.jpg"
+        image1="soportes-montados.jpg" thumb1="soportes-montados-thumb.jpg" title2="Soportes montados"
         caption="Soportes montados" >}}
     {{< figure year="2015" pid="111"
-        image1="elementos.jpg" thumb1="elementos-thumb.jpg"
+        image1="elementos.jpg" thumb1="elementos-thumb.jpg" title1="Elementos"
         caption="Elementos" >}}
 </div>
 
@@ -58,10 +58,10 @@ Quedo contento con los estores pero hay algunas cosas mejorables. En mi caso bá
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="111"
-        image1="cajas.jpg" thumb1="cajas-thumb.jpg"
+        image1="cajas.jpg" thumb1="cajas-thumb.jpg" title1="Cajas embalaje"
         caption="Cajas embalaje" >}}
     {{< figure year="2015" pid="111"
-        image1="detelle-logotipo.jpg" thumb1="detelle-logotipo-thumb.jpg"
+        image1="detelle-logotipo.jpg" thumb1="detelle-logotipo-thumb.jpg" title1="Detalle logotipo"
         caption="Detalle logotipo" >}}
 </div>
 
@@ -73,7 +73,7 @@ La calidad del producto, igual de importante el buen servicio de atención al cl
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="111"
-        image1="estores-colocados.jpg" thumb1="estores-colocados-thumb.jpg"
+        image1="estores-colocados.jpg" thumb1="estores-colocados-thumb.jpg" title1="Estores colocados"
         caption="Estores colocados" >}}
     {{< figure year="2015" pid="111"
         image1="pelicula-adhesiva-cristal.jpg" thumb1="pelicula-adhesiva-cristal-thumb.jpg" title1="Película adhesiva cristal"

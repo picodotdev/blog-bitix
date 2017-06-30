@@ -23,7 +23,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="92"
-        image1="windows-10.png" thumb1="windows-10.png" >}}
+        image1="windows-10.png" thumb1="windows-10.png" title1="Windows 10" >}}
 </div>
 
 ¿Por qué digo que no le importa que no pagues la licencia? Porque versión tras versión la medidas incluidas en Windows u Office para protegerlos de un uso sin licencia son evitadas sin aparentemente muchas dificultades y al cabo de muy poco tiempo aparecen en las páginas de descargas las imágenes junto con las instrucciones a seguir para instalarlo sin ningún tipo de problema. Y en Windows 10 será igual. ¿Por que las medidas de validación incluidas no evitan el uso sin licencia? Porque le conviene a Microsoft no ser muy restrictivos. Si lo fueran algunos pagarían la licencia pero otros muchos dirían _¡¿que? ¿que la licencia cuesta 119 € (o 199, o 50 según lo que se consigue con devolución en un equipo nuevo)? ¿un tercio (aprox.) de lo que me costó el ordenador?!_, y eso solo Windows, si además le sumamos Office y otros programas el coste de las licencias podría superar con creces el precio del equipo. Peor aún, cantidad a desembolsar cada unos pocos años por la obsolescencia y nuevas versiones. ¿Y qué harían esos  que no pudiesen usar Windows u Office? Buscar alternativas y... ¿cuál creéis que eligirían? La también cara competencia de [Apple][apple] con sus [Mac][mac] o alguna distribución GNU/Linux como [Ubuntu][ubuntu], [Linux Mint][linuxmint], [Debian][debian], [Fedora][fedora], [openSUSE][opensuse], etc... Que la gente supiese y pagase el coste de las licencias de software probablemente sería una de las mejores formas de fomentar el uso del software libre y GNU/Linux.
@@ -39,7 +39,7 @@ Solo hay que ver las millonadas obscenas que se adjudican en [contratos para la 
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="92"
-        image1="windows-genuine.jpg" thumb1="windows-genuine.jpg" >}}
+        image1="windows-genuine.jpg" thumb1="windows-genuine.jpg" title1="Windows Genuine" >}}
 </div>
 
 Microsoft sabe que estás usando su software sin la correspondiente licencia y te lo dice mostrándote un mensaje cada cierto tiempo o te quita el fondo de pantalla, incordia un poco pero que no impide su uso. Voluntariamente o negligentemente los sistemas de validación incorporados en Windows u Office consienten que muchos usuarios usen la versión la versión _Pirated_, usuarios que no están dispuestos a pagar el considerable coste de la licencia. Aunque preferirá que los usuarios compren la licencia Microsoft permite en cierta medida el uso de su software sin ella, la alternativa sería perder la posibilidad de convencer a algunos a usar el software legalmente aparte de perder couta de uso a favor de otras alternativas, quizá le es más provechosa una situación donde se use su software ilegalmente que una alternativa. Microsoft también comete las injusticias que la ley le deja o nadie le exige, preinstalado su sistema indeseable por algunos que no lo queremos al mismo tiempo que no proporciona información clara y el proceso sea sencillo para conseguir su devolución junto con el reembolso de su coste y en los [impuestos que usando ingeniería fiscal Microsoft junto con otras empresas se llevan a donde menos pagan](http://economia.elpais.com/economia/2014/01/18/actualidad/1390071860_568641.html).

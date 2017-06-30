@@ -35,7 +35,7 @@ El resultado aplicando está solución puede verse en el [feed de la portada de 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="61"
-    	image1="blogstack.png" thumb1="blogstack-thumb.png" >}}
+    	image1="blogstack.png" thumb1="blogstack-thumb.png" title1="Portada Blog Stack" >}}
 </div>
 
 El código fuente de Blog Stack está disponible en un [repositorio de GitHub](https://github.com/picodotdev/blog-stack/tree/master) donde puede verse el código completo.

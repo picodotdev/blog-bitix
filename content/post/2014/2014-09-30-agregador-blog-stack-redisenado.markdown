@@ -21,7 +21,7 @@ En este tiempo que he podido dedicarle he mejorado el diseño y aspecto visual d
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="45"
-    	image1="blogstack.jpg" thumb1="blogstack-thumb.jpg" >}}
+    	image1="blogstack.jpg" thumb1="blogstack-thumb.jpg" title1="Blog Stack" >}}
 </div>
 
 Si tienes una bitácora de la temática de BS con pocos "offtopics" y quisieras agregarla en un [apartado de las preguntas frecuentes](http://www.blogstack.info/faq#aggregate) tienes las instrucciones, basta con un correo electrónico o una petición en GitHub y una información básica sobre tu bitácora. Blog Stack tiene algunas características que otros agregadores o planetas carecen para los editores, por ejemplo, agregar de forma segura los gist de GitHub, vídeos de youtube o vimeo, presentaciones de SpeakerDeck o publicidad de Amazon de modo que el contenido agregado se presente de forma muy parecida que en la bitácora original. Además, BS es capaz de mostrar publicidad de la bitácora agregada si usa [AdSense](https://www.google.com/adsense/) o los comentarios de las entradas si usa [Disqus](https://disqus.com/). En el caso de los  lectores pueden suscribirse únicamente a determinadas etiquetas de Blog Stack si solo están interesados en determinados temas.

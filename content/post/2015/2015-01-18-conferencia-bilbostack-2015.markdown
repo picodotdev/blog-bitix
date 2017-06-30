@@ -20,7 +20,7 @@ Un año más una de las primeras conferencias del año se ha celebrado en Bilbao
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="62"
-    	image1="universidad.jpg" thumb1="universidad-thumb.jpg" >}}
+    	image1="universidad.jpg" thumb1="universidad-thumb.jpg" title1="Universidad de Deusto" >}}
 </div>
 
 Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minutos en dos tracks simultáneos en horario únicamente de mañana y durante un día, siendo la agenda de este 2015 la siguiente:
@@ -85,9 +85,9 @@ Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minut
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="62"
-    image1="track1.jpg" thumb1="track1-thumb.jpg" >}}
+    image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1" >}}
 	{{< figure year="2015" pid="62"
-    image1="track2.jpg" thumb1="track2-thumb.jpg" >}}
+    image1="track2.jpg" thumb1="track2-thumb.jpg" title1="Sala track 2" >}}
 </div>
 
 Como cada año no puede faltar alguna presentación del ubicuo JavaScript y en [las presentaciones de años anteriores](https://www.youtube.com/user/elComiteOrg/playlists) ha habido de PHP, Python, Groovy y .NET pero aún no ha habido ninguna de Java (a pesar de que será uno de los más usados por los asistentes). Después de revisar la agenda de este año he asistido únicamente y a todas a las presentaciones del track 1. Del track 2 me llamaban la atención la de ReactJS, pero es una herramienta que ya conozco y que me parece de lo mejor para su propósito aún así intuía que iba a conocer poco nuevo después de escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20] y usarlo en el ejemplo simple pero ilustrativo mostrado. También me llamaba la atención Wordpress al límite y Arquitectura frontend de CartoDB. A continuación un resumen breve de cada una de las presentaciones a las que he asistido.
@@ -115,7 +115,7 @@ En la mejora de la accesibilidad de una página intervienen tanto diseñadores (
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="62"
-    	image1="google-es-ciego.jpg" thumb1="google-es-ciego-thumb.jpg" >}}
+    	image1="google-es-ciego.jpg" thumb1="google-es-ciego-thumb.jpg" title1="Google es ciego" >}}
 </div>
 
 ### Descubriendo los Beacons <em>por Borja Reinares</em>
@@ -130,7 +130,7 @@ Los _beacons_ y BLE puede ser un nuevo campo tecnológico, veremos si realmente 
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="62"
-    	image1="beacons.jpg" thumb1="beacons-thumb.jpg" >}}
+    	image1="beacons.jpg" thumb1="beacons-thumb.jpg" title1="Descubriendo los Beacons" >}}
 </div>
 
 ### ¿Qué es eso de IoT? <em>por Quique Martinez</em>

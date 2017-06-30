@@ -36,7 +36,7 @@ Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario deter
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="88"
-        image1="dockerhub.png" thumb1="dockerhub-thumb.png"
+        image1="dockerhub.png" thumb1="dockerhub-thumb.png" title1="Docker Hub"
         caption="Docker Hub" >}}
 </div>
 
@@ -52,7 +52,7 @@ En la creación del repositorio en Docker Hub con _build_ automatizada seleccion
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="88"
-        image1="dockerhub-automated-build.png" thumb1="dockerhub-automated-build-thumb.png"
+        image1="dockerhub-automated-build.png" thumb1="dockerhub-automated-build-thumb.png" title1="Docker Hub"
         caption="Build automatizada de Docker Hub" >}}
 </div>
 

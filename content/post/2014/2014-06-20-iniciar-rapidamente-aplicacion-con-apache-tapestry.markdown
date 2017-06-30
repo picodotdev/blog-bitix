@@ -47,7 +47,7 @@ Y accediendo con el navegador a la URL que nos indica Tapestry al final de las t
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="29"
     	image1="inicio-aplicacion-terminal.png" thumb1="inicio-aplicacion-terminal-thumb.png" title1="Terminal al iniciar la aplicación"
-    	image2="inicio-aplicacion-navegador.png" thumb1="inicio-aplicacion-navegador-thumb.png" title2="Aplicación en el navegador" >}}
+    	image2="inicio-aplicacion-navegador.png" thumb2="inicio-aplicacion-navegador-thumb.png" title2="Aplicación en el navegador" >}}
 </div>
 
 Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](http://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un framework fullstack y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.

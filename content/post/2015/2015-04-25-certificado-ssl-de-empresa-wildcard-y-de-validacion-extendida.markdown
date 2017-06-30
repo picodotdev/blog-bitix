@@ -21,10 +21,8 @@ Los navegadores suelen indicar que se está usando una comunicación segura cuan
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="77"
         image1="certificado-validacion-dominio.png" thumb1="certificado-validacion-dominio.png" title1="Certificado SSL con validación de dominio" >}}
-</div>
-<div class="media" style="text-align: center;">
     {{< figure year="2015" pid="77"
-        image1="certificado.png" thumb1="certificado-thumb.png" >}}
+        image1="certificado.png" thumb1="certificado-thumb.png" title1="Datos de certificado de GitHub" >}}
 </div>
 
 Sin embargo, para proporcionar más seguridad y garantía de que como usuarios nos estamos comunicando con el servidor que creemos sin examinar el certificado algunos certificados permiten mostrar también en la barra de direcciones un recuadro verde con el nombre de la entidad, el recuadro verde que solemos ver también en la barra de direcciones al acceder a algunos dominios y que es proporcionado por certificados de validación extendida.
@@ -42,7 +40,7 @@ Los certificados _wildcard_ y que muestran el recuadro verde son más caros pero
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="77"
-        image1="certificados-dondominio.png" thumb1="certificados-dondominio-thumb.png" >}}
+        image1="certificados-dondominio.png" thumb1="certificados-dondominio-thumb.png" title1="Certificados DonDominio" >}}
 </div>
 
 En el caso de DonDominio dependiendo de la entidad emisora del certficado que deseemos variará el precio, también si queremos que tenga validación extendida o sea _wildcard_. En el caso de un certificado SSL simple que valide solo el dominio es de unos 5 €, de validación de empresa unos 28 €, un certificado de validación extendida con recuadro verde desde unos 126 € y un _certificado wildcard_ de desde unos 75 €. Estos son precios desde, diferentes opciones pueden salir bastante más caras y hay que tener en cuenta que son para una validez de una año, al igual que los dominios hay que renovar su uso.

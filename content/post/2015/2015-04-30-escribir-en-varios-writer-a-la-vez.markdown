@@ -32,10 +32,10 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="78"
-        image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" >}}
+        image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" title1="Salida en la consola" >}}
 </div>
 
-Con [Groovy][groovy] además de las closures no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.
+Con [Groovy][groovy] además de las _closures_ no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.
 
 {{% reference %}}
 {{< links >}}

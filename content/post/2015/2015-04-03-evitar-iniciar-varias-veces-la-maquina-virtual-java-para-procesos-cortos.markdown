@@ -18,7 +18,7 @@ Si en una aplicación o proyecto tenemos necesidad de ejecutar uno o varios proc
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="74"
-        image1="tiempo-inicio-jvm.png" thumb1="tiempo-inicio-jvm.png" >}}
+        image1="tiempo-inicio-jvm.png" thumb1="tiempo-inicio-jvm.png" title1="Tiempo de inicio de la JVM" >}}
 </div>
 
 Por ejemplo, supongamos que tenemos unos procesos que tienen que ejecutarse de forma regular cada cierto tiempo variando los parámetros que se indica en cada uno de ellos. La ejecución de los procesos podría ser:

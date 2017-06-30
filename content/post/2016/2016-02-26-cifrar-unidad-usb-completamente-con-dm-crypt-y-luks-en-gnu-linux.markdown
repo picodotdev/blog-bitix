@@ -29,7 +29,7 @@ Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que q
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="128"
         image1="discos.png" thumb1="discos-thumb.png" title1="Aplicación Discos de GNOME"
-        image2="opciones-formato.png" thumb2="opciones-formato-thumb.png" >}}
+        image2="opciones-formato.png" thumb2="opciones-formato-thumb.png" title2="Opciones formateo unidad" >}}
 </div>
 
 Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.
@@ -40,8 +40,8 @@ Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno
 </div>
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="128"
-        image1="unidad-cifrada.png" thumb1="unidad-cifrada.png"
-        image2="unidad-descifrada.png" thumb2="unidad-descifrada.png" >}}
+        image1="unidad-cifrada.png" thumb1="unidad-cifrada.png" title1="Unidad cifrada en Nautilus"
+        image2="unidad-descifrada.png" thumb2="unidad-descifrada.png" title2="Unidad BMOVE ROJO descifrada en Nautilus" >}}
 </div>
 
 Introducida la contraseña veremos los archivos originales y podremos trabajar con ellos con normalidad como si no estuviesen cifrados. En la [wiki de Arch Linux][archlinux-wiki] hay varios artículos explicando en que consiste dm-crypt y los comandos que deberíamos usar desde la terminal, los artículos en el apartado de referencia del final de este artículo. Cifrar la unidad completamente con cm-crypt y LUKS+Ext4 es perfectamente compatible con usar EncFS, es decir, podemos usar dm-crypt en la unidad y en ella que ya está cifrada [almacenar un sistema de archivos también cifrado con EncFS][blogbitix-126].
