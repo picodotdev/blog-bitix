@@ -93,9 +93,9 @@ La próxima vez que me pidan reinstalar Windows u Office en vez de instalar la s
 * [A Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92]
 * [Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre][blogbitix-119]
 * [El impuesto Windows][elblogdepicodev-57]
-* [LibreOffice](https://es.libreoffice.org/)
-* [WPS Office](https://www.wps.com/?lang=es)
-* [Google Docs](https://www.google.es/intl/es/docs/about/)
+* [LibreOffice][libreoffice]
+* [WPS Office][wps-office]
+* [Google Docs][google-docs]
 {{% /reference %}}
 
 {{% /post %}}

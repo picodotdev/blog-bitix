@@ -23,7 +23,7 @@ En este artículo haré una breve introducción de Ansible que principalmente se
 * Gestionar la configuración de los servicios de esas máquinas.
 * Realizar despliegues y orquestar los servicios.
 
-Hay que destacar que Ansible no necesita instalar un agente (al contrario de Chef o Puppet) en cada una de las máquinas del inventario que queramos administrar lo que lo hace fácil de emplear, usa un modelo «push» en el que la máquina donde se ejecuta Ansible envía por ssh los comandos necesarios a aplicar en vez de ser cada una de las máquinas las que obtienen de un repositorio las recetas a usar. En los artículos [Application Deployment](http://www.ansible.com/application-deployment), [Configuration Management](http://www.ansible.com/configuration-management) y [Continous Delivery](http://www.ansible.com/continuous-delivery) nos describen algunos casos de uso y sus ventajas empleando Ansible.
+Hay que destacar que Ansible no necesita instalar un agente (al contrario de Chef o Puppet) en cada una de las máquinas del inventario que queramos administrar lo que lo hace fácil de emplear, usa un modelo «push» en el que la máquina donde se ejecuta Ansible envía por ssh los comandos necesarios a aplicar en vez de ser cada una de las máquinas las que obtienen de un repositorio las recetas a usar. En los artículos [Application Deployment](https://www.ansible.com/application-deployment), [Configuration Management](https://www.ansible.com/configuration-management) y [Continous Delivery](https://www.ansible.com/continuous-delivery) nos describen algunos casos de uso y sus ventajas empleando Ansible.
 
 Para trabajar con Ansible necesitaremos inventariar las máquinas y probablemente definir algunas variables. Podría ser de la siguiente forma en el caso de una máquina para desarrollar.
 
@@ -50,7 +50,7 @@ Para ejecutar un playbook usamos el comando ansible-playbook en vez de simplemen
 
 En los playbooks podemos usar tareas, grupos de máquinas, variables, variables de grupos, asignar valores a variables, usar condicionales, bucles, hechos (facts, información obtenida por ansible), notificaciones y realizar acciones en base a ellas, aplicar etiquetas a tareas, hacer includes, plantillas (para los archivos de configuración de los servicios, por ejemplo de apache o mysql), esperar a condiciones, cifrar archivos que contengan información sensible y que podamos incluir en una herramienta de control de versiones sin riesgo a comprometer la información, usar roles que aplican todas estas cosas según la función que queramos que tenga una máquina.
 
-El libro [Ansible Up & Running](http://www.ansible.com/ansible-book) es un buen punto de partida que explica los aspectos básicos ya en su versión de vista previa, por supuesto la propia [documentación del proyecto](http://docs.ansible.com/index.html) y los [recursos de evangelización](http://www.ansible.com/resources) están bastante bien. En la siguiente buena y completa presentación se explican con un poco más detalle más cosas:
+El libro [Ansible Up & Running](https://www.ansible.com/ansible-book) es un buen punto de partida que explica los aspectos básicos ya en su versión de vista previa, por supuesto la propia [documentación del proyecto](http://docs.ansible.com/index.html) y los [recursos de evangelización](https://www.ansible.com/resources) están bastante bien. En la siguiente buena y completa presentación se explican con un poco más detalle más cosas:
 
 <div class="media" style="text-align: center;">
 	{{< speakerdeck e02a4f70ee4d01312be742839f79c6f5 >}}

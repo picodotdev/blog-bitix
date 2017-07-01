@@ -86,7 +86,7 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Java programming with JNI](http://www.ibm.com/developerworks/java/tutorials/j-jni/j-jni.html)
+* [Java programming with JNI](https://www.ibm.com/developerworks/java/tutorials/j-jni/j-jni.html)
 * [Accessing 1-wire Protocol Devices from Java](http://hirt.se/blog/?p=493)
 * [How to Set Up the DHT11 Humidity Sensor on the Raspberry Pi](http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)
 * [Sensores de temperatura DHT11](http://www.prometec.net/sensores-dht11/)

@@ -35,23 +35,23 @@ lo que hay que hacer, no suele ser lo habitual pero de vez en cuando puede ser n
 Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el
 kernel de linux, los controlador gráfico, etc...
 * [Repositorio AUR](https://aur.archlinux.org/): lo mismo que lo anterior pero para los paquetes del repositorio de AUR.
-* [Arch Linux en Español](http://foros.archlinux-es.org/): el foro de usuarios de Arch Linux de habla hispana. Gente que está dispuesta a ayudarte en los
+* [Arch Linux en Español][archlinux-forums-es]: el foro de usuarios de Arch Linux de habla hispana. Gente que está dispuesta a ayudarte en los
 problemas que tengas en tu sistema aunque procura buscar antes la solución no seas un vampiro de ayuda.
 * [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o
 la solución este ya comentada por otro usuario.
 
 ## Noticias
 
-* [Phoronix](http://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux,
+* [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux,
 avances en el kernel, drivers, programas y análisis de rendimiento.
 * [DistroWatch](http://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades,
 además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
 * [Parcela Digital](http://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
 * [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
-* [Xataka](http://xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
-* [Linwind](http://www.dacostabalboa.com/): página también con noticias de sistemas operativos, software y hardware.
-* [ADSLZone](http://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
+* [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
+* [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
+* [ADSLZone](https://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
 * [D'Oh](http://diegocg.blogspot.com.es/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
 * [Foro Noticias 3D](http://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
@@ -66,22 +66,22 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [ESLE](http://www.esle.eu/blog/)
 * [Software Libre Deusto](http://softwarelibre.deusto.es/)
 * [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
-* [DesdeLinux](http://blog.desdelinux.net/)
+* [DesdeLinux](https://blog.desdelinux.net/)
 * [/etc/cron.d](http://www.etccrond.es/)
 * [El blog de abr4xas](http://blog.abr4xas.org/)
 * [SYSADMIT](http://www.sysadmit.com/): contiene artículos de Linux, Microsoft, VMware y más temas relacionados con la administración de sistemas informáticos.
 * [LiGNUx](https://lignux.com/)
 * [Linuxito](https://www.linuxito.com/)
-* [Linux Adictos](http://www.linuxadictos.com/)
-* [La sombra del helicóptero](http://lasombradelhelicoptero.com/)
-* [Victorhck in the free world](https://victorhckinthefreeworld.wordpress.com/)
+* [Linux Adictos](https://www.linuxadictos.com/)
+* [La sombra del helicóptero](https://lasombradelhelicoptero.com/)
+* [Victorhck in the free world](https://victorhckinthefreeworld.com/)
 
 ## Desarrollo y programación
 
 Varios blogs relacionados con la programación y el desarrollo, principalmente de java, javascript, desarrollo web, ...
 
 * [Javarevisited](http://javarevisited.blogspot.com.es/): uno de los blogs sobre java bastante reconocido, numerosos artículos explicando detalles que incluso un programador con muchos años de experiencia puede desconocer en profundidad.
-* [JAXenter](http://jaxenter.com/): una web con artículos relacionados con la tecnología, programación, java, ...
+* [JAXenter](https://jaxenter.com/): una web con artículos relacionados con la tecnología, programación, java, ...
 * [InfoQ](http://www.infoq.com/): otra web con artículos relacionados con la tecnología, programación, ...
 * [JavaWorld](http://www.javaworld.com/): al igual que las dos anteriores otra web con artículos de todo tipo y también sobre la plataforma Java.
 * [Java Code Geeks](https://www.javacodegeeks.com/): otro de los mejores blogs sobre las tecnologías Java.
@@ -89,16 +89,16 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [Takipi Blog](http://blog.takipi.com/): un blog de buena calidad sobre Java, Scala y cualquier cosa relacionada.
 * [Java, SQL and jOOQ](https://blog.jooq.org/): contiene artículos relacionados con las bases de datos relacionales y el lenguaje SQL pero también sobre Java.
 * [JavaHispano](http://www.javahispano.org): la página de la comunidad java hispana, noticias, novedades e información.
-* [Planeta Código](http://www.planetacodigo.com): un agregador de bitácoras personales relacionadas con la programación.
-* [etnassoft](http://www.etnassoft.com): su [biblioteca](http://www.etnassoft.com/biblioteca/) contiene cantidad de libros que pueden descargarse totalmente gratis sobre muchos temas relacionados con la tecnología entre otros como la programación y las metodologías ágiles. Una invaluable recopilación de documentación.    
+* [Planeta Código](https://www.planetacodigo.com/): un agregador de bitácoras personales relacionadas con la programación.
+* [OpenLibra](https://openlibra.com/es/collection): su biblioteca contiene cantidad de libros que pueden descargarse totalmente gratis sobre muchos temas relacionados con la tecnología entre otros como la programación y las metodologías ágiles. Una invaluable recopilación de documentación.    
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
-* [Arquitectura Java](http://www.arquitecturajava.com/blog): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
-* [Adictos al trabajo](http://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](http://autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
+* [Arquitectura Java](http://www.arquitecturajava.com/blog/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
+* [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
 * [Apuntes de Java](http://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
 * [Diario de Programación](http://blog.chuidiang.com)
 * [fernetjs](http://fernetjs.com/)
-* [El baúl del programador](http://www.elbauldelprogramador.com/)
-* [Android Studio FAQs](http://androidstudiofaqs.com/)
+* [El baúl del programador](https://www.elbauldelprogramador.com/)
+* [Android Studio FAQs](https://androidstudiofaqs.com/)
 
 ## Otros
 
