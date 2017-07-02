@@ -3,6 +3,7 @@ pid: 243
 title: "Portales con Liferay y ejemplo de portlet"
 url: "/2017/07/portales-con-liferay-y-ejemplo-de-portlet/"
 date: 2017-07-01T12:00:00+02:00
+updated: 2017-07-02T23:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -94,10 +95,11 @@ Usando como herramienta de construcción del proyecto [Gradle][gradle] el archiv
         image2="preferencias-usuario.png" thumb2="preferencias-usuario-thumb.png" title2="Portlet HolaMundo con preferencias" >}}
 </div>
 
-Aunque el libro [Liferay in Action](http://amzn.to/2sc1tWN) no está actualizado a la última versión de Liferay sirve para conocer los conceptos básicos de su funcionamiento, explica la teoría e incluye ejemplos de código de como crear un _portlet_.
+Aunque el libro [Liferay in Action](http://amzn.to/2sc1tWN) o [Portlets in Action](http://amzn.to/2tzpbjL) no están actualizados a la última versión de Liferay sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=193518282X&linkId=a4fdbe9a2a0c68685cfc8119f253125b"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
 </div>
 
 {{% code git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" %}}
