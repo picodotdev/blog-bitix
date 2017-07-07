@@ -46,7 +46,7 @@ La documentación de cada módulo de Vert.x está bastante bien y explicada en l
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
-* [Aplicación web con Spark Framework y Java][blogbitix-121]
+* [Aplicación web con Spark _framework_ y Java][blogbitix-121]
 {{% /reference %}}
 
 {{% /post %}}

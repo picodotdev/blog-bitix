@@ -20,7 +20,7 @@ library: "true"
 
 Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de [El blog de pico.dev][elblogdepicodev]. Otro año que finaliza y toca hacer recapitulación de los que he escrito durante este tiempo, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.
 
-Aunque aún no puedo usar profesionalmente el framework web [Apache Tapestry][tapestry] con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los framework basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al [libro PlugIn Tapestry][blogbitix-12] y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, ...
+Aunque aún no puedo usar profesionalmente el _framework_ web [Apache Tapestry][tapestry] con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los _framework_ basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al [libro PlugIn Tapestry][blogbitix-12] y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, ...
 
 * [Actualización del libro PlugIn Tapestry][blogbitix-40]
 * [Doble barra de botones con Apache Tapestry][blogbitix-39]
@@ -29,7 +29,7 @@ Aunque aún no puedo usar profesionalmente el framework web [Apache Tapestry][ta
 * [Servir recursos estáticos desde un CDN en Apache Tapestry][blogbitix-34]
 * [Anotación Cached de Apache Tapestry][blogbitix-33]
 * [Plantillas en Apache Tapestry][blogbitix-32]
-* [Modelo «push» contra modelo «pull» en frameworks web][blogbitix-31]
+* [Modelo «push» contra modelo «pull» en _frameworks_ web][blogbitix-31]
 
 Respecto a artículos sobre programación también he escrito unos cuantos relativos a Java, me parece que cada uno de estos son interesantes mostrando algunos aspectos avanzados y útiles. Por supuesto, también tengo pendientes por escribir más artículos sobre Java, como generics, palabra reservada assert, los métodos equals y hashCode y como implementarlos...
 

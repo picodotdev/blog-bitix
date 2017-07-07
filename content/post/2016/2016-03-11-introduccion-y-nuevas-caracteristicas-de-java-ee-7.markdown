@@ -25,7 +25,7 @@ El modelo clásico de capas en la arquitectura de las aplicaciones Java EE se di
 
 * Cliente: normalmente se trata de un navegador pero puede ser un teléfono inteligente o una computadora de escritorio, incluso otra aplicación. Es la que presenta la información al usuario.
 * Capa web: se comunica con el cliente y la capa de negocio. Obtiene los datos y los transforman al formato adecuado al cliente generalmente <abbr title="HyperText Markup Language">HTML</abbr> o <abbr title="JavaScript Object Notation">JSON</abbr>.
-* Capa de negocio: proporciona y persiste los datos de la capa cliente y contiene la lógica de negocio de la aplicación. Se ejecuta en un servidor de aplicaciones o contenedor de servlets.
+* Capa de negocio: proporciona y persiste los datos de la capa cliente y contiene la lógica de negocio de la aplicación. Se ejecuta en un servidor de aplicaciones o contenedor de _servlets_.
 * Sistemas de información: donde se persisten los datos de la aplicación, puede ser una base de datos relacional como [Oracle][oracle], [MySQL][mysql] o [PostgreSQL][postgresql] o una base de datos NoSQL como [Redis][redis] o [MongoDB][mongodb] u otros sistemas como [Elasticsearch][elasticsearch].
 
 <div class="media" style="text-align: center;">
@@ -86,7 +86,7 @@ Especificaciones relacionadas con Java EE en Java SE (bases de datos, XML, gesti
 * Java Database Connectivity (JDBC) 4.0
 * Java Architecture for XML Binding (JAXB) 2.2
 * Java Management Extensions (JMX) 2.0
-* JavaBeans Activation Framework (JAF) 1.1
+* JavaBeans Activation _framework_ (JAF) 1.1
 * Java API for XML Processing (JAXP) 1.3
 * Streaming API for XML (StAX) 1.0
 
@@ -99,7 +99,7 @@ Además de incorporar nuevas especificaciones y las existentes recibir mejoras e
 * En JAX-RS se añade una API cliente para invocar _enpoints_ REST, se añade soporte para E/S asíncrona tanto para el cliente como para el servidor y _hypermedia linking_.
 * Bean Validation permite validación a nivel de método con mejor integración en el resto de la plataforma Java EE.
 
-Los servidores de aplicaciones Java pueden implementar todas las especificaciones denominándose _full-profile_ como JBoss/WildFly, WebLogic o WebSphere. Sin embargo, algunas aplicaciones no necesitan todas las funcionalidades definidas en Java EE por lo que algunos servidores como [TomEE][tomee] también WildFly pueden implementar únicamente un subconjunto para la generación de contenido web, denominándose así _web-profile_. Otros servidores como [Tomcat][tomcat] y [Jetty][jetty] son contenedores de servlets que soportan un grupo más reducido de especificaciones de las tecnologías web (únicamente Servlet, JSP, EL y WebSocket) pero que siguen siendo suficientes para algunas aplicaciones o usando algunas equivalentes proporcionadas por Spring.
+Los servidores de aplicaciones Java pueden implementar todas las especificaciones denominándose _full-profile_ como JBoss/WildFly, WebLogic o WebSphere. Sin embargo, algunas aplicaciones no necesitan todas las funcionalidades definidas en Java EE por lo que algunos servidores como [TomEE][tomee] también WildFly pueden implementar únicamente un subconjunto para la generación de contenido web, denominándose así _web-profile_. Otros servidores como [Tomcat][tomcat] y [Jetty][jetty] son contenedores de _servlets_ que soportan un grupo más reducido de especificaciones de las tecnologías web (únicamente _servlet_, JSP, EL y WebSocket) pero que siguen siendo suficientes para algunas aplicaciones o usando algunas equivalentes proporcionadas por Spring.
 
 Tecnologías _web-profile_
 

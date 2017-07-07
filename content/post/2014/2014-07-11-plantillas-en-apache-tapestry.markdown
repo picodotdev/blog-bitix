@@ -13,11 +13,11 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
 Una página web está formada por un conjunto de páginas enlazadas entre ellas. Cada página está formado por un html diferente pero normalmente todas las páginas de una misma web comparten el mismo aspecto variando solo una sección donde está el contenido propio de la página. La cabecera de la página, el pie de la página o los menús de navegación suelen estar presentes en todas las páginas de la web y suelen ser los mismos.
 
-En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como framework web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de [Blog Stack](http://www.blogstack.info) las páginas se componen de las siguientes partes.
+En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como _framework_ web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de [Blog Stack](http://www.blogstack.info) las páginas se componen de las siguientes partes.
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="32"

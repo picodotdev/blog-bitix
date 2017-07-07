@@ -25,7 +25,7 @@ Los temas de los artículos han sido los habituales programación, GNU/Linux, Ja
 En la categoría de programación están los siguientes:
 
 * [Introducción y ejemplo básico sobre Vert.x][blogbitix-120]
-* [Aplicación web con Spark Framework y Java][blogbitix-121]
+* [Aplicación web con Spark _framework_ y Java][blogbitix-121]
 * [Introducción al protocolo HTTP/2][blogbitix-127]
 * [Configurar HTTP/2 en nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
@@ -60,7 +60,7 @@ Un trío de artículos de opinión:
 
 * [Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre][blogbitix-119]
 * [La siguiente disrupción tecnológica, la convergencia][blogbitix-149]
-* [El lenguaje de programación, framework y librerías importan][blogbitix-153]
+* [El lenguaje de programación, _framework_ y librerías importan][blogbitix-153]
 
 Finalmente, un desempaquetado de una aspiradora que compré, un resumen de las presentaciones a las que asistí de la conferencia BilboStack y el sexto aniversario desde que empecé la bitácora:
 

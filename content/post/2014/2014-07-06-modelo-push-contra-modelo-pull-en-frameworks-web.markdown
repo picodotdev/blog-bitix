@@ -13,9 +13,9 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
-En la mayoría de frameworks de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas ([thymeleaf](http://www.thymeleaf.org/), [mustache](http://mustache.github.io/), ...). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:
+En la mayoría de _frameworks_ de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas ([thymeleaf](http://www.thymeleaf.org/), [mustache](http://mustache.github.io/), ...). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:
 
 * Push: este es el modelo comentado. El controlador recupera de antemano todos los datos que necesita la vista, el controlador también determina la vista o plantilla que se usar. Combinando los datos y la plantilla se produce el resultado.
 
@@ -53,11 +53,11 @@ Los pasos que se siguen en este modelo varían ligeramente del modelo push pero 
 <li>La vista genera el contenido y se envía al cliente</li>
 </ol>
 
-El modelo push es empleado en muchos de los frameworks web más usados, algunos ejemplos son [Symfony](http://symfony.com/), [Django](https://www.djangoproject.com/), [Grails](http://grails.org/) o [ASP.NET MVC](http://www.asp.net/mvc). En la categoría de frameworks que usan un modelo pull está [Apache Tapestry](http://tapestry.apache.org/).
+El modelo push es empleado en muchos de los _frameworks_ web más usados, algunos ejemplos son [Symfony](http://symfony.com/), [Django](https://www.djangoproject.com/), [Grails](http://grails.org/) o [ASP.NET MVC](http://www.asp.net/mvc). En la categoría de _frameworks_ que usan un modelo pull está [Apache Tapestry](http://tapestry.apache.org/).
 
 Al modelo push le encuentro algunos problemas. Un problema es que el controlador debe conocer que datos necesita la vista y si la vista tiene cierta lógica esta la tendremos duplicada tanto en en controlador como en la vista. Supongamos que en una aplicación tenemos un usuario y dirección con una relación de 1 a 1 entre ambos y que debemos mostrar en una página el usuario y su dirección solo si solo si es un usuario VIP. En el controlador tendremos que recuperar el usuario, comprobar si es VIP y si lo es recuperar su dirección. El problema está que en la vista deberemos hacer también una comprobación si el cliente es VIP o al menos si a la vista se le ha proporcionado una dirección, como resultado la comprobación la tendremos duplicada tanto en el controlador como en la vista, como sabemos la duplicación de código y lógica habitualmente no es buena idea ya que a la larga dificulta el mantenimiento de la aplicación.
 
-En Grails (pero podría ser cualquier otro framework o motor de plantillas push) podríamos visualizar el usuario y su dirección si es VIP de la siguiente forma:
+En Grails (pero podría ser cualquier otro _framework_ o motor de plantillas push) podríamos visualizar el usuario y su dirección si es VIP de la siguiente forma:
 
 {{< gist picodotdev aa41c0fdfaeb4662ca0a "push.txt" >}}
 
@@ -69,7 +69,7 @@ En el modelo pull el controlador no debe conocer que datos necesita la vista y s
 
 {{< gist picodotdev aa41c0fdfaeb4662ca0a "pull.txt" >}}
 
-¿Podemos emplear un modelo pull en un framework que normalmente se suele usar un modelo push? Sí, basta que en el modelo de la vista pasemos un objeto que le permita recuperar los datos que necesite. En Grails empleando un modelo pull el código podría quedarnos de la siguiente forma:
+¿Podemos emplear un modelo pull en un _framework_ que normalmente se suele usar un modelo push? Sí, basta que en el modelo de la vista pasemos un objeto que le permita recuperar los datos que necesite. En Grails empleando un modelo pull el código podría quedarnos de la siguiente forma:
 
 {{< gist picodotdev aa41c0fdfaeb4662ca0a "pull-in-push.txt" >}}
 

@@ -13,20 +13,20 @@ tags: ["java", "programacion", "tapestry", "software", "planeta-codigo"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
-Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el framework [Apache Tapestry](http://tapestry.apache.org/).
+Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el _framework_ [Apache Tapestry](http://tapestry.apache.org/).
 
 ## PlugIn Tapestry
 
-Apache Tapestry es un framework orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como [Spring](http://projects.spring.io/spring-framework/), [Grails](http://grails.org/) y [Play!](http://www.playframework.com/) y también de los muchos otros en los que la principal diferencia es el lenguaje como [Django](https://www.djangoproject.com/) (Python), [Symfony](http://symfony.com/) (PHP), [ASP.NET MVC](http://www.asp.net/mvc) (C#) o [Ruby On Rails](http://rubyonrails.org/) (Ruby).
+Apache Tapestry es un _framework_ orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como [Spring](http://projects.spring.io/spring-framework/), [Grails](http://grails.org/) y [Play!](http://www.playframework.com/) y también de los muchos otros en los que la principal diferencia es el lenguaje como [Django](https://www.djangoproject.com/) (Python), [Symfony](http://symfony.com/) (PHP), [ASP.NET MVC](http://www.asp.net/mvc) (C#) o [Ruby On Rails](http://rubyonrails.org/) (Ruby).
 
 <div class="media" style="text-align: center;">
     {{< figure year="2014" pid="12"
         image1="portada-PugInTapestry.png" thumb1="portada-PugInTapestry-thumb.png" >}}
 </div>
 
-Incluyendo la descripción de las características del framework el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:
+Incluyendo la descripción de las características del _framework_ el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:
 
 * Introducción, principios y características
 * Inicio rápido
@@ -45,7 +45,7 @@ Incluyendo la descripción de las características del framework el libro trata 
 
 El libro está basado en la siguiente versión de Tapestry, la 5.4, que actualmente está en estado beta (aunque la mayoría servirá para la versión final y para la versión 5.3 actual). Esta nueva versión tiene como principal novedad la parte cliente de las aplicaciones con la inclusión de RequireJS y la definición de los archivos Javascript mediante módulos. También incorpora una capa de abstracción que permite usar cualquier librería como apoyo a la funcionalidad que necesita proporcionar ya sea Prototype, jQuery o cualquier otra que prefiramos o nueva que se desarrolle en un futuro.
 
-Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este framework. Además en [mi blog](http://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](http://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
+Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este _framework_. Además en [mi blog](http://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](http://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
 
 Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00€ impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico que prefieras ya sea PDF, EPUB, MOBI o HTML. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.
 
@@ -83,7 +83,7 @@ Si prefieres puedes utilizar Groovy, Scala o cualquier otro lenguaje soportado p
 La recarga de clases en caliente evitará que tengas que reiniciar el servidor para ver tus cambios aplicados. Simplemente actualiza el navegador.
 
 ### Rápido
-El framework está programado en Java sin hacer uso de reflection. Incorpora varias optimizaciones que harán tu aplicación más eficiente sin trabajo por tu parte como compresión gzip, minificación y agregación css/javascript, cacheo agresivo en el cliente de assets, supresión de espacios en blanco innecesarios, ...
+El _framework_ está programado en Java sin hacer uso de reflection. Incorpora varias optimizaciones que harán tu aplicación más eficiente sin trabajo por tu parte como compresión gzip, minificación y agregación css/javascript, cacheo agresivo en el cliente de assets, supresión de espacios en blanco innecesarios, ...
 
 ### Basado en componentes
 Los componentes son piezas autónomas y resusables de código. Para usar uno simplemente necesitarás conocer sus parámetros todo lo demás como archivos javascript, hojas de estilo y mensajes localizados son proporcionados por el componente. Los componentes pueden lanzar eventos y diferentes contenedores comportarse de diferente forma ante el mismo evento.
@@ -92,10 +92,10 @@ Los componentes son piezas autónomas y resusables de código. Para usar uno sim
 El informe te proporciona mucha más información que simplemente la traza de la excepción, verás que se estaba haciendo, que fué mal y como coregirlo. Con toda esta información solucionar las excepciones será mucho más rápido y fácil. El informe de error también es presentado en caso de errores en las peticiones AJAX.
 
 ### Testable
-Puedes probar los componentes de forma unitaria, el html generado o hacer pruebas de integración y funcionales. Los componentes son POJOs que no necesitan heredar ni implementar ninguna clase del framework. Podrás utilizar la herramienta que desees JUnit/Mockito, Spock, Geb, ...
+Puedes probar los componentes de forma unitaria, el html generado o hacer pruebas de integración y funcionales. Los componentes son POJOs que no necesitan heredar ni implementar ninguna clase del _framework_. Podrás utilizar la herramienta que desees JUnit/Mockito, Spock, Geb, ...
 
 ### Extensible, adaptable y modular
-Gracias al contenedor de dependencias y a que los servicios están programados en base a interfaces puedes definir una nueva implementación que modifique el comportamiento del framework. Todo servicio en el contenedor de dependencias puede ser redefinido, la mayoría de las cosas son servicios. Exiten módulos para Hibernate, Apache Shiro, Quartz, ... y si no existe puedes usar cualquier librería como RESTEasy, JasperReports, EHCache, JFreeChart, RestFB...
+Gracias al contenedor de dependencias y a que los servicios están programados en base a interfaces puedes definir una nueva implementación que modifique el comportamiento del _framework_. Todo servicio en el contenedor de dependencias puede ser redefinido, la mayoría de las cosas son servicios. Exiten módulos para Hibernate, Apache Shiro, Quartz, ... y si no existe puedes usar cualquier librería como RESTEasy, JasperReports, EHCache, JFreeChart, RestFB...
 
 ### i18n y l10n
 Puedes tener catálogos de mensajes por componente o de manera global en la aplicación. Los assets (imágenes, css, ...) tanbién son localizables y tener una plantilla con un contenido totalmente diferente según el idioma del usuario.
@@ -106,7 +106,7 @@ Las convenciones permiten evitar la configuración y los posibles errores que po
 ### Librerías de componentes
 Los componentes comunes a varios proyectos pueden ser agregados en una librería de componentes (no es más que un archivo jar) para ser reutilizados. Nuevamente para usar los componentes solo tendrás que preocuparte de los parámetros, todos los recursos que necesiten serán extraídos de la librería. No necesitarás copiar y pegar archivos de un proyecto a otro, solo agregar una dependencia o jar a tu proyecto.
 
-Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java Champion en 2010 [[1]](https://java.net/website/java-champions/bios.html#Ship) y Duke's Choice Award por el framework [[2]](https://www.java.net/dukeschoice/2006) en la categoría open source), y modestia aparte, piensa que Tapestry ha sido un líder desde una perspectiva puramente tecnológica. Estas son algunas cosas que cree que hizo primero y todavía piensa que lo hace mejor que nadie:
+Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java Champion en 2010 [[1]](https://java.net/website/java-champions/bios.html#Ship) y Duke's Choice Award por el _framework_ [[2]](https://www.java.net/dukeschoice/2006) en la categoría _open source_), y modestia aparte, piensa que Tapestry ha sido un líder desde una perspectiva puramente tecnológica. Estas son algunas cosas que cree que hizo primero y todavía piensa que lo hace mejor que nadie:
 
 * Componentes reusables (2001)
 * Informe de excepción detallado y útil (2001)

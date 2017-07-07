@@ -1,6 +1,6 @@
 ---
 pid: 121
-title: "Aplicación web con Spark Framework y Java"
+title: "Aplicación web con Spark framework y Java"
 url: "/2016/01/aplicacion-web-con-spark-framework-y-java/"
 date: 2016-01-23T16:00:00+01:00
 updated: 2016-01-24T12:00:00+01:00
@@ -8,7 +8,7 @@ sharing: true
 comments: true
 language: "es"
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
-summary: "Spark Framework es un _microframework_ web para Java que además hace uso de las novedades introducidas en la versión 8 del lenguaje. Para una aplicación no compleja o de un tamaño reducido permite desarrollar con su sencillez la funcionalidad de la aplicación inmediatamente y una arquitectura liviana."
+summary: "Spark _framework_ es un _microframework_ web para Java que además hace uso de las novedades introducidas en la versión 8 del lenguaje. Para una aplicación no compleja o de un tamaño reducido permite desarrollar con su sencillez la funcionalidad de la aplicación inmediatamente y una arquitectura liviana."
 ---
 
 {{% post %}}

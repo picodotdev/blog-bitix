@@ -56,7 +56,7 @@ El resultado es el siguiente:
 
 En la imagen se puede apreciar las consultas lanzadas y que parámetros se han empleado. El método doTest del controlador HibernateController cada vez que es ejecutado persiste una entidad de dominio Autor y posteriormente la borra lanzando una sentencia insert y otra delete, cada vez que es ejecutado las estadísticas cambian acordemente.
 
-Obtener información de lo que sucede en la aplicación es importante y el framework debería ayudar, también podemos [mejorar lo que ofrece Grails con una página de excepción más informativa][blogbitix-25]. En [Tapestry](http://tapestry.apache.org/) es más sencillo aún ya que incluyendo la dependencia de tapestry-hibernate ya se añade a la [página Dashboard y un apartado con estas estadísticas][blogbitix-28], pero esto último será tema para otro artículo.
+Obtener información de lo que sucede en la aplicación es importante y el _framework_ debería ayudar, también podemos [mejorar lo que ofrece Grails con una página de excepción más informativa][blogbitix-25]. En [Tapestry](http://tapestry.apache.org/) es más sencillo aún ya que incluyendo la dependencia de tapestry-hibernate ya se añade a la [página Dashboard y un apartado con estas estadísticas][blogbitix-28], pero esto último será tema para otro artículo.
 
 {{% reference %}}
 {{< links >}}

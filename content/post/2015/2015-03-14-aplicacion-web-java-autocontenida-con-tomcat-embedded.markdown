@@ -21,7 +21,7 @@ Los microservicios pueden ser autocontenidos de tal forma que incluyen todo lo n
 
 Para hacer cualquier aplicación autocontenida sin necesidad de instalar el servidor de aplicaciones como entorno en el que desplegar la aplicación podemos usar Tomcat Embedded o mejor y con el mismo efecto [usar Spring Boot con la posibilidad de usar Tomcat, Jetty o Undertow][blogbitix-103], realmente Spring Boot usa las versiones embebibles del servidor que se use y además se encarga de inicializar el contenedor IoC de [Spring][spring]. En este caso usando Tomcat Embedded directamente disponiendo del archivo _.war_ típico de una aplicación web en Java podemos desplegarlo en el servidor embebido, el inicio de la aplicación será como cualquier otra aplicación Java, con su método _public static void main_(String[] args), usando la API ofrecida por Tomcat podemos iniciar el servidor de forma programática y realizar el despliegue de la aplicación _.war_.
 
-Para la demostración usaré la aplicación con los ejemplos que hice para el [libro PulgIn Tapestry][blogbitix-12] que trataba del el framework de desarrollo [Apache Tapestry][tapestry]. Primeramente deberemos añadir al proyecto la dependencia de tomcat-embedded de forma que podamos importar las clases y paquetes de Tomcat a usar en la clase que iniciará la aplicación.
+Para la demostración usaré la aplicación con los ejemplos que hice para el [libro PulgIn Tapestry][blogbitix-12] que trataba del el _framework_ de desarrollo [Apache Tapestry][tapestry]. Primeramente deberemos añadir al proyecto la dependencia de tomcat-embedded de forma que podamos importar las clases y paquetes de Tomcat a usar en la clase que iniciará la aplicación.
 
 {{< gist picodotdev 57d411ed0cc804a75bf6 "build.gradle" >}}
 

@@ -176,7 +176,7 @@ Hay gente que considera que Java es una mierda y es el nuevo Cobol. Se alegan al
 * Hola mundo de 7 líneas, con parámetros y verboso.
 * Hay que declarar los _beans_ y _DTO_, hay _inner classes_.
 
-Con todo esto si es una mierda, pero si lo usas así tu proyecto es una mierda no Java. A partir de 1990 aparecen nuevos lenguajes, cerca de 1995: [Python][python], Java, [PHP][php], [JavaScript][javascript], 2001: [C#][csharp]. Anteriormente no había un _stack_ con lógica de negocio no acoplado a la base de datos (existía Oracle, SAP o Access, Visual FoxPro). En 1997 se añade JDBC y Servlets, en 1999 Java EE con un montón de especificaciones. Java como lenguaje ha cambiado poco, más en las versiones 5 y 8, mayoriamente ha cambiado la máquina virtual, en las primeras versiones era lenta, ya no. [En Java 8 se añaden varias novedades][blogbitix-17] como propiedades básicas pero muy útiles de programación funcional, _lamdas_, _defaults methods_ con las que lo que antes eran 5 líneas ahora es 1.
+Con todo esto si es una mierda, pero si lo usas así tu proyecto es una mierda no Java. A partir de 1990 aparecen nuevos lenguajes, cerca de 1995: [Python][python], Java, [PHP][php], [JavaScript][javascript], 2001: [C#][csharp]. Anteriormente no había un _stack_ con lógica de negocio no acoplado a la base de datos (existía Oracle, SAP o Access, Visual FoxPro). En 1997 se añade JDBC y _servlets_, en 1999 Java EE con un montón de especificaciones. Java como lenguaje ha cambiado poco, más en las versiones 5 y 8, mayoriamente ha cambiado la máquina virtual, en las primeras versiones era lenta, ya no. [En Java 8 se añaden varias novedades][blogbitix-17] como propiedades básicas pero muy útiles de programación funcional, _lamdas_, _defaults methods_ con las que lo que antes eran 5 líneas ahora es 1.
 
 Aparece [Gradle] como herramienta de construcción alternativa a Maven y Ant, con las ventajas de ambos sin sus defectos. Si la herramienta no sirve cámbiala. Antes un servidor de aplicaciones ejecutaba varias aplicaciones, ahora la aplicación ejecuta de forma embebida su propio servidor de aplicaciones que se inicia como una aplicación tradicional con _java -jar app.jar_ de forma que se ha simplificado el despliegue. Se han puesto de moda los _microframeworks_ [Spark][sparkjava], [Spring Boot][spring-boot], [Vert.x][vertx], [Play][playframework], ... que arrancan la aplicación en muy pocos segundos. El ecosistema Java sigue evolucionando adaptándose a las nuevas tendencias (en su momento el XML era una de ellas, ya no).
 
@@ -204,7 +204,7 @@ La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes,
 * [Información y métricas de la aplicación con Spring Boot Actuator][blogbitix-113]
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
 * [Introducción y ejemplo básico sobre Vert.x][blogbitix-120]
-* [Aplicación web con Spark Framework y Java][blogbitix-121]
+* [Aplicación web con Spark _framework_ y Java][blogbitix-121]
 * [Introducción a JavaFX, aplicaciones de escritorio en Java][blogbitix-100]
 * [Programación de juegos y 3D en Java con jMonkeyEngine][blogbitix-79]
 * [Java para tareas de «scripting»][blogbitix-108]

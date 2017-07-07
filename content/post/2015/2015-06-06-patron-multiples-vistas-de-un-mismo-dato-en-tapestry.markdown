@@ -15,7 +15,7 @@ summary: "Un proyecto grande contendrá muchos archivos de código fuente, posee
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
 Al desarrollar una aplicación web puede que necesitemos mostrar un mismo dato de diferentes formas. Una posibilidad es crear una vista por cada forma diferente que se haya de mostrar el dato. Sin embargo, de esta forma tendremos que crear un archivo diferente por cada forma a visualizar, si esto mismo nos ocurre en múltiples datos nos encontraremos en la situación de que el número de archivos del proyecto crecerá suponiendo una pequeña molestia tener que trabajar con tantos, también y peor aún es que múltiples archivos relacionados no lo estarán salvo que les demos una nomenclatura similar para mantenerlos ordenados por nombre y sean fáciles de encontrar si queremos abrir varios.
 

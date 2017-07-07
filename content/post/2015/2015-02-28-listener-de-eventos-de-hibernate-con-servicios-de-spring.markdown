@@ -38,7 +38,7 @@ En este ejemplo el resultado que veríamos en la consola sería el siguiente con
     	image1="consola.png" thumb1="consola-thumb.png" title1="Trazas de ejecución del listener con servicios de Spring" >}}
 </div>
 
-Usando los _listeners_ de Hibernate con Spring no necesitamos el archivo que creábamos antes en _/META-INF/services/org.hibernate.integrator.spi.Integrator_. Esto es un ejemplo de prueba de concepto pero perfectamente podría ser aplicado a una necesidad real. En el ejemplo [PlugIn Tapestry][ejemplo-plugin-tapestry] que hice para un [libro sobre el framework de desarrollo web Apache Tapestry][blogbitix-12] puede verse el código completo y funcional de esta implementación.
+Usando los _listeners_ de Hibernate con Spring no necesitamos el archivo que creábamos antes en _/META-INF/services/org.hibernate.integrator.spi.Integrator_. Esto es un ejemplo de prueba de concepto pero perfectamente podría ser aplicado a una necesidad real. En el ejemplo [PlugIn Tapestry][ejemplo-plugin-tapestry] que hice para un [libro sobre el _framework_ de desarrollo web Apache Tapestry][blogbitix-12] puede verse el código completo y funcional de esta implementación.
 
 {{% reference %}}
 {{< links >}}

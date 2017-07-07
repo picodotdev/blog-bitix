@@ -25,7 +25,7 @@ A destacar durante este semestre ha sido que he publicado un proyecto personal, 
 * [Presentación de Blog Stack][blogbitix-23]
 * [Arquitectura y hospedaje de Blog Stack][blogbitix-24]
 
-En las últimas semanas del semestre he publicado unos cuantos artículos obre el framework de desarrollo de aplicaciones web [Apache Tapestry](http://tapestry.apache.org/). Con estas entradas y otras cuantas que tengo preparadas actualizaré y revisaré el libro [PlugIn Tapestry][blogbitix-12] y seguirá siendo totalmente gratuito.
+En las últimas semanas del semestre he publicado unos cuantos artículos obre el _framework_ de desarrollo de aplicaciones web [Apache Tapestry](http://tapestry.apache.org/). Con estas entradas y otras cuantas que tengo preparadas actualizaré y revisaré el libro [PlugIn Tapestry][blogbitix-12] y seguirá siendo totalmente gratuito.
 
 * [Iniciar rápidamente aplicación con Apache Tapestry][blogbitix-29]
 * [Página Dashboard de Apache Tapestry][blogbitix-28]

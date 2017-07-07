@@ -14,7 +14,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
 Un [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_network) (CDN) no es más que un servidor, servidores o servicio dedicado a servir el contenido estático o actuar de cache para los clientes. Alguno de los motivos por los que podríamos querer usar un CDN en una aplicación son:
 
@@ -22,7 +22,7 @@ Un [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_net
 * Descargar la tarea de servir al menos parte del contenido de la aplicación al CDN hará que no nos tengamos que preocupar de tener la capacidad para servirlo. Cuando se cargar una página se hacen varias peticiones al servidor para obtener el contenido como el html, imágenes, estilos, ... haciendo que los contenidos estáticos sean servidos por el CDN hará que el servidor tenga menos carga, dependiendo del número de usuarios de la aplicación o los picos de tráfico notaremos una mejoría.
 * La alta fiabilidad de servicio que ofrecen.
 
-[Amazon ClodFront](http://aws.amazon.com/es/cloudfront/) es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el framework de desarrollo de aplicaciones web en la plataforma Java [Apache Tapestry](http://tapestry.apache.org/).
+[Amazon ClodFront](http://aws.amazon.com/es/cloudfront/) es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el _framework_ de desarrollo de aplicaciones web en la plataforma Java [Apache Tapestry](http://tapestry.apache.org/).
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="34"

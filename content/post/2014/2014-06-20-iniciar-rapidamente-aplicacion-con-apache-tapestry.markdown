@@ -13,9 +13,9 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.png" title="Apache Tapestry" >}}
+{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
 
-Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del framework web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.
+Un proyecto web en Java requiere de unos cuantos archivos con cierta estructura que nos puede llevar un tiempo en crearlos. Normalmente cuando empezamos un nuevo proyecto solemos basarnos en otro existente  copiando y pegando contenido de él. Pero ademas de tiempo podemos cometer errores o no seguir algunas convenciones propias de Java o del _framework_ web que usemos. Para un proyecto grande esa dedicación al inicio del proyecto no nos importará pero para un proyecto pequeño o para hacer una prueba puede que queramos tener algo más rápido y con menos esfuerzo para estar en disposición de empezar a desarrollar en muy poco tiempo.
 
 Para crear el esqueleto de una aplicación rápidamente en [Apache Tapestry](http://tapestry.apache.org/) hay disponible un arquetipo de [Maven](http://maven.apache.org/) que puede generar una aplicación en unos pocos minutos. Para usarlo deberemos instalar maven previamente. Una vez instalado Maven basta con que usemos el siguiente comando.
 
@@ -50,7 +50,7 @@ Y accediendo con el navegador a la URL que nos indica Tapestry al final de las t
     	image2="inicio-aplicacion-navegador.png" thumb2="inicio-aplicacion-navegador-thumb.png" title2="Aplicación en el navegador" >}}
 </div>
 
-Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](http://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un framework fullstack y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
+Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](http://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un _framework_ _fullstack_ y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
 
 {{< plugintapestry >}}
 

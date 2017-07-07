@@ -14,7 +14,7 @@ summary: "Alguna vez que he dado una presentación sobre Apache Tapestry despué
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="apache-tapestry.png" title1="Apache Tapestry" image2="java.png" title2="Java" >}}
+{{< logotype image1="apache-tapestry.svg" title1="Apache Tapestry" width1="400" image2="java.png" title2="Java" >}}
 
 Viendo el panel [Kanban](https://es.wikipedia.org/wiki/Kanban_(desarrollo)) de la herramienta de peticiones [JIRA][jira] que usamos para registrar y priorizar las siguiente tareas en la empresa que trabajo hay unas cuantas que consisten en dado un listado de compras poder realizar operaciones sobre múltiples filas sin salir de la pantalla del listado. La necesidad es evitar que los usuarios de la aplicación hagan las acciones de forma individual de forma repetitiva, evitarles esto harán que sean más productivos y podrán desarrollar su trabajo mejor y más rápido. Así de sencillo, aparentemente.
 
@@ -86,7 +86,7 @@ Para volver a la misma página en [Spring MVC][spring], [Struts][struts] o [Grai
 
 [React][react] y [Polymer][polymer] son tecnologías de cliente en algunos aspectos similares a los componentes de Apache Tapestry pero con la diferencia de que unos son para el navegador del cliente y otros para el servidor, nada nos impide en la misma aplicación usar en el cliente React y Polymer y en el servidor Apache Tapestry. Nótese en el código del caso anterior que Tapestry ofrece integración con JavaScript de un modo que no existe ni en Spring MVC, Struts o Grails e incorpora de serie [RequireJS][requirejs], Undercore y jQuery, un componente de Tapestry puede requerir la cargar de un recurso de JavaScript y desde el componente es posible pasar datos al JavaScript usando el servicio [JavaScriptSupport](http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html).
 
-Esto es solo un pequeño ejemplo de las posibilidades de Apache Tapestry me dejo muchas otras como los eventos, _translators_, _encoders_, _coerces_, librerías de componentes, _inversion of control_, AJAX, validaciones de formularios, ... En un proyecto las herrramientas no son lo más importante pero [el lenguaje de programación, framework y librerías importan][blogbitix-153], hay [10 razones para seguir usando Java][blogbitix-81] y varios [motivos para elegir Apache Tapestry][elblogdepicodev-71].
+Esto es solo un pequeño ejemplo de las posibilidades de Apache Tapestry me dejo muchas otras como los eventos, _translators_, _encoders_, _coerces_, librerías de componentes, _inversion of control_, AJAX, validaciones de formularios, ... En un proyecto las herrramientas no son lo más importante pero [el lenguaje de programación, _framework_ y librerías importan][blogbitix-153], hay [10 razones para seguir usando Java][blogbitix-81] y varios [motivos para elegir Apache Tapestry][elblogdepicodev-71].
 
 ### Finalizando
 
