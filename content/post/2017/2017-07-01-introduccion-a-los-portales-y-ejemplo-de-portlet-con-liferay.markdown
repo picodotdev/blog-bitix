@@ -4,7 +4,7 @@ title: "Introducción a los portales y ejemplo de portlet con Liferay"
 url: "/2017/07/introduccion-a-los-portales-y-ejemplo-de-portlet-con-liferay/"
 aliases: ["/2017/07/portales-con-liferay-y-ejemplo-de-portlet/"]
 date: 2017-07-01T12:00:00+02:00
-updated: 2017-07-03T22:00:00+02:00
+updated: 2017-07-03T22:15:00+02:00
 language: "es"
 sharing: true
 comments: true
