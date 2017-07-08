@@ -32,7 +32,7 @@ Otra pregunta interesante que surgió fue que parte de lo que comenté sobre Tap
 
 Y otra pero no menos interesante pregunta es por que tapestry se llama tapestry o por que el logo de tapestry es un unicornio, anteriormente fue similar a una T en la versión 3, para el nombre no tengo respuesta. Leyendo un [hilo en la lista de destribución](http://mail-archives.apache.org/mod_mbox/tapestry-users/200605.mbox/%3Cop.s9k7abmko3wyor@liigo%3E) en la que se discutía el asunto se da algunas ideas pero no me ha quedado una clara.
 
-A continuación la [presentación completa de la charla](https://speakerdeck.com/picodotdev/plugin-tapestry) que dí y que contiene de forma más explícita todo lo que está incluido en el libro [PlugIn Tapestry](http://goo.gl/Vx8icI).
+A continuación la [presentación completa de la charla](https://speakerdeck.com/picodotdev/plugin-tapestry) que dí y que contiene de forma más explícita todo lo que está incluido en el libro [PlugIn Tapestry](https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/).
 
 <div class="media" style="text-align: center;">
 		{{< speakerdeck 94de4cc06da70131c6665e5071095c76 >}}

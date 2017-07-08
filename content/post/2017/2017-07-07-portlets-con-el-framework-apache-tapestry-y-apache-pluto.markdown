@@ -3,6 +3,7 @@ pid: 244
 title: "Portlets con el framework Apache Tapestry y Apache Pluto"
 url: "/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/"
 date: 2017-07-07T23:30:00+02:00
+updated: 2017-07-08T13:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -15,7 +16,7 @@ summary: "Los portales ofrecen una solución para los casos de uso de integraci�
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="apache-pluto.png" title2="Apache Pluto" width2="300" image3="java.svg" title3="Java" width3="200"  >}}
 
 La API ofrecida de los _portlets_ se puede considerar de bajo nivel y para facilitar la tarea de su programación es posible emplear un _framework_ al igual que ocurre al programar una aplicación web con los _servlets_ utilizando el lenguaje Java. Aún así es importante conocer los conceptos subyacentes de los _portlets_ que están explicados de forma didáctica en el libro [Portlets in Action](http://amzn.to/2tzpbjL).
 

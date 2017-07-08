@@ -50,23 +50,23 @@ Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemp
 Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00€ impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico que prefieras ya sea PDF, EPUB, MOBI o HTML. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.
 
 <div class="buttons">
-    <a href="http://goo.gl/dfySZ1" class="btn btn-lg btn-success">Descargar el libro (PDF)</a>
-    <a href="http://goo.gl/bs7Rtu" class="btn btn-lg btn-success">EPUB</a>
-    <a href="http://goo.gl/lxOZMT" class="btn btn-lg btn-success">MOBI</a>
-    <a href="http://goo.gl/MJJiPV" class="btn btn-lg btn-success">HTML</a>
+    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">Descargar el libro (PDF)</a>
+    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.epub" class="btn btn-lg btn-success">EPUB</a>
+    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.mobi" class="btn btn-lg btn-success">MOBI</a>
+    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.zip" class="btn btn-lg btn-success">HTML</a>
 </div>
 
 <div class="buttons">
-    <a href="https://goo.gl/EPw49k" class="btn btn-lg btn-success">Obtener código fuente ejemplos</a>
+    <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Obtener código fuente ejemplos</a>
 </div>
 
 <div class="share-this" style="text-align: center; margin-bottom: 20px">
     <h3>¡Y luego compártelo!</h3>
 
-    <span class="st_twitter_vcount" st_title="He descargado el libro sobre desarrollo de apps web con Apache Tapestry. ¡Obtén tu copia! #PlugIn"st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="prop:getAbsoluteURL('context:img/tapestry5.png')" st_via="picodotdev"></span>
-    <span class="st_facebook_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
-    <span class="st_googleplus_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
-    <span class="st_linkedin_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="http://goo.gl/Vx8icI" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
+    <span class="st_twitter_vcount" st_title="He descargado el libro sobre desarrollo de apps web con Apache Tapestry. ¡Obtén tu copia! #PlugIn"st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="prop:getAbsoluteURL('context:img/tapestry5.png')" st_via="picodotdev"></span>
+    <span class="st_facebook_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
+    <span class="st_googleplus_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
+    <span class="st_linkedin_vcount" st_title="Libro PlugIn Tapestry" st_summary="Desarrollo de aplicaciones y páginas web con Apache Tapestry" st_url="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/" st_image="https://picodotdev.github.io/blog-bitixassets/images/logotipos/apache-tapestry-5.png"></span>
 </div>
 
 ## Apache Tapestry
@@ -119,7 +119,7 @@ Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java 
 
 ¿Te ha parecido poco? [¡Descubre alguna más en una presentación!][blogbitix-11].
 
-¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](http://goo.gl/dfySZ1)
+¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf)
 
 <div class="alert alert-warning">
 Inicialmente creé una página específica para alojar el libro con una aplicación de <a href="https://www.appfog.com/">AppFog</a> pero con esta entrada lo haré un mi propio blog ya que en el plan free han reducido considerablemente de 2 GiB a 512 MiB el tamaño de memoria del que disponen las aplicaciones. Hasta tal punto que una aplicación web java con solo jsps no se inicia correctamente.
