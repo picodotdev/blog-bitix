@@ -1,0 +1,94 @@
+---
+pid: 244
+title: "Portlets con el framework Apache Tapestry y Apache Pluto"
+url: "/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/"
+date: 2017-07-07T23:30:00+02:00
+language: "es"
+sharing: true
+comments: true
+promoted: false
+tags: ["blog-stack", "java", "planeta-codigo", "programacion", "tapestry"]
+summary: "Los portales ofrecen una solución para los casos de uso de integración de aplicaciones, edición de contenido a modo de CMS, agregación de blogs, foros, colaboración entre personas, red social entre otros. La pieza fundamental de un portal en Java es un _portlet_. Desarrollar un _portlet_ usando la API directamente no es simple, algunos _frameworks_ que usaríamos para desarrollar aplicaciones y páginas web son usables para desarrollar _portlets_, Apache Tapestry es uno de ellos como muestro con un ejemplo en este artículo."
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
+
+La API ofrecida de los _portlets_ se puede considerar de bajo nivel y para facilitar la tarea de su programación es posible emplear un _framework_ al igual que ocurre al programar una aplicación web con los _servlets_ utilizando el lenguaje Java. Aún así es importante conocer los conceptos subyacentes de los _portlets_ que están explicados de forma didáctica en el libro [Portlets in Action](http://amzn.to/2tzpbjL).
+
+Explicado como [crear un _portlet_ directamente con su API][blogbitix-243] usaré el mismo ejemplo pero usando el _framework_ [Apache Tapestry][tapestry] que también es usable para realizar aplicaciones web pero para el que existe un [módulo para desarrollar _portlets_](https://github.com/got5/tapestry5-portlet) y una pequeña [documentación](http://got5.github.io/tapestry5-portlet/).
+
+[Liferay][liferay] 7 debe usar algún mecanismo especial para cargar las clases no compatible con Tapestry por ello en este ejemplo usaré el contenedor de _portlets_ [Apache Pluto][apache-pluto]. Apache Pluto es la implementación de referencia para la API de los _portlets_, inicia el servidor significativamente más rápido que Liferay aunque no incorpora tantos _portlets_ listos para usar.
+
+El libro [Portlets in Action](http://amzn.to/2tzpbjL) define portal de la siguiente manera traducida al español:
+
+> Un portal es una colección de miniaplicaciones web llamadas _portlets_. Un portal soporta características como personalización, agregación de contenido o autenticación. Los _portlets_ actúan como aplicaciones web dentro del portal mostradas en ventanas donde cada ventana en una página del portal representa un _portlet_. El portal agrega la información y proporciona una vista consolidada al usuario.
+
+El ejemplo consiste en un mensaje de saludo que incluye un nombre el cual se introduce con un formulario desde el mismo _portlet_. Los _portlets_ usando Apache Tapestry son muy similares a una aplicación web, con lo que gran parte del conocimiento es el mismo, pero en los que están a disposición varios servicios adicionales de la API de los _portlets_ como [PortletRequestGlobals](https://github.com/got5/tapestry5-portlet/blob/master/src/main/java/org/apache/tapestry5/portlet/services/PortletRequestGlobals.java) donde están agregados varios objetos relativos las peticiones y respuestas como [PortletRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletRequest.html) para la petición con [ActionRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionRequest.html), [EventRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventRequest.html),  [RenderRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderRequest.html) y [ResourceRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceRequest.html), y  [PortletResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletResponse.html) para la respuesta con [ActionResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionResponse.html), [EventResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventResponse.html), [RenderResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderResponse.html), [ResourceResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceResponse.html), ... y la amplia colección de componentes reusables de toda aplicación con uno específico para enlazar páginas en un _portlet_, [PortletPageLink](https://github.com/got5/tapestry5-portlet/blob/master/src/main/java/org/apache/tapestry5/corelib/components/PortletPageLink.java). Apache Tapestry permite abstraerse en gran medida de la API subyacente de los _portlets_ y las diferencias con una aplicación web no serán muy significativas. Todos los conceptos conocidos para desarrollar aplicaciones y páginas web sirven prácticamente en su totalidad para desarrollar _portlets_.
+
+Los [componentes usables](http://tapestry.apache.org/component-reference.html) en las plantillas de las páginas, salvo alguno adicional son los mismos que en una aplicación web. Unos 57 componentes listos para usar además de los propios y específicos de la aplicación.
+
+Al igual que en el _framework_ están incluidos múltiples componentes el contenedor de dependencias que tiene integrado Tapestry ofrece muchos servicios que es posible inyectar en las páginas y en componentes nuevos y propios, también desarrollar nuevos servicios que necesiten los _portlets_.
+
+Para hacer el ejemplo _Hola Mundo_ hay que definir dos páginas, una para mostrar el mensaje y otra para obtener un nombre, cada página se compone de una clase Java y una plantilla asociada que genera el HTML, ambos elementos son muy simples. El _portlet_ hará uso del mecanismo de preferencias proporcionado por el portal con la clase [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) y que se encarga de persistir en su propia base de datos para obtener y guardar valores en este caso el nombre usado en el mensaje. El _portlet_ usa un formulario que envía el nombre donde se utilizan los componentes [Form](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Form.html), [Label](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html) y [TextField](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextField.html).
+
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "Index.java" >}}
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "Index.tml" >}}
+
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "preferences-Index.java" >}}
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "preferences-Index.tml" >}}
+
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "AppPortletModule.java" >}}
+
+El resto son varios archivos descriptores necesarios entre los que está el típico _web.xml_ de las aplicaciones web Java y el descriptor específico de los _portlets_ _portlet.xml_.
+
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "portlet.xml" >}}
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "web.xml" >}}
+
+Con Apache Tapestry están a nuestra disposición todas las facilidades de un _framework_ de más alto nivel que la API de los _portlets_, con la API de los _portlets_ accesible si es necesaria, altamente productivo y con el que reutilizaremos en otros _portlets_ o proyectos los componentes desarrollados con una librería de componentes.
+
+Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despliega copiando el archivo _war_ al directorio de despliegue de los _portlets_ de Apache Pluto, en _webapps_. Una vez desplegado accediendo a la página de administración se configuran los _portlets_ que incluye cada página. El usuario y contraseña para iniciar sesión en Apache Pluto es _pluto_ para el usuario y _pluto_ para la contraseña.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="244"
+        image1="pluto-admin.png" thumb1="pluto-admin-thumb.png" title1="Página de administración de portlets de Apache Pluto"
+        image2="pluto-login.png" thumb2="pluto-login-thumb.png" title2="Inicio de sesión de Apache Pluto"
+        caption="Páginas de administración y sesión de Apache Pluto" >}}
+</div>
+
+Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra el mensaje que emite y seleccionando la opción _edit_ acceder a la página de preferencias acceder a la página que muestra el formulario y permite cambiar el mensaje. Este es el resultado del _portlet_ desplegado en Apache Pluto.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="244"
+        image1="tapestry-portlet.png" thumb1="tapestry-portlet-thumb.png" title1="Porlet con Apache Tapestry en Apache Pluto"
+        image2="tapestry-portlet-preferences.png" thumb2="tapestry-portlet-preferences-thumb.png" title2="Página de preferencias del portlet" >}}
+    {{< figure year="2017" pid="244"
+        image3="tapestry-portlet-name.png" thumb3="tapestry-portlet-name-thumb.png" title3="Portlet usando un dato almacenado en las preferencias"
+        caption="Porlet con Apache Tapestry en Apache Pluto" >}}
+</div>
+
+Para conocer más sobre los _portlets_ el libro [Portlets in Action](http://amzn.to/2tzpbjL) es una buena fuente de documentación.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
+</div>
+
+Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.org/pluto/download.html) para inicia con el comando _script_ _startup.sh_. Apache Pluto es en realidad un servidor [Apache Tomcat][tomcat] con las adiciones para proporcionarle la funcionalidad de portal.
+
+{{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "build.gradle" >}}
+
+{{% code git="blog-ejemplos/tree/master/TapestryPortlet" command="./pluto-3.0.0/bin && ./gradlew build" %}}
+
+{{< plugintapestry >}}
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Apache Tapestry Portlet](https://github.com/got5/tapestry5-portlet)
+* [Documentación Apache Tapestry Portlet](http://got5.github.io/tapestry5-portlet/)
+{{% /reference %}}
+
+{{% /post %}}

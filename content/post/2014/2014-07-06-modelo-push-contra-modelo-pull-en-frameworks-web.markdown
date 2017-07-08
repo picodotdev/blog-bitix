@@ -13,7 +13,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
+{{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
 En la mayoría de _frameworks_ de desarrollo de aplicaciones o páginas web para producir el contenido HTML que se envía al cliente se emplea un modelo en el que el controlador proporciona los datos que combinados con una plantilla producen el HTML. Este modelo también es el empleado habitualmente en muchos motores de plantillas ([thymeleaf](http://www.thymeleaf.org/), [mustache](http://mustache.github.io/), ...). Sin embargo, hay dos modelos que se pueden seguir para producir un texto como resultado dada una plantilla y datos:
 

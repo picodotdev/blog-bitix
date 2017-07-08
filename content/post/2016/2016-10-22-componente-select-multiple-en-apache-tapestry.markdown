@@ -13,7 +13,7 @@ tags: ["blog-stack", "java", "javascript", "planeta-codigo", "programacion", "so
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="apache-tapestry.svg" title1="Apache Tapestry" width1="400" image2="java.png" title2="Java" >}}
+{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.png" title2="Java" >}}
 
 El _framework_ basado en componentes Apache Tapestry incorpora una amplia [colección de componentes](http://tapestry.apache.org/component-reference.html) que nos bastarán en la mayoría de casos que necesitemos. Para los casos en que deseemos un componente con un comportamiento específico podemos construir uno completamente nuevo basado en otros existentes incluyendo los propios nuestros, de una librería o incluidos en Tapestry.
 

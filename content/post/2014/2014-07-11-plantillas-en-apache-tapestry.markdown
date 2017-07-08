@@ -13,7 +13,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry.svg" title="Apache Tapestry" width="400" >}}
+{{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
 Una página web está formada por un conjunto de páginas enlazadas entre ellas. Cada página está formado por un html diferente pero normalmente todas las páginas de una misma web comparten el mismo aspecto variando solo una sección donde está el contenido propio de la página. La cabecera de la página, el pie de la página o los menús de navegación suelen estar presentes en todas las páginas de la web y suelen ser los mismos.
 
