@@ -4,7 +4,7 @@ title: "Introducción a los portales y ejemplo de portlet con Liferay"
 url: "/2017/07/introduccion-a-los-portales-y-ejemplo-de-portlet-con-liferay/"
 aliases: ["/2017/07/portales-con-liferay-y-ejemplo-de-portlet/"]
 date: 2017-07-01T12:00:00+02:00
-updated: 2017-07-03T22:15:00+02:00
+updated: 2017-07-08T23:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -112,6 +112,8 @@ Usando como herramienta de construcción del proyecto [Gradle][gradle] el archiv
         image1="preferencias.png" thumb1="preferencias-thumb.png" title1="Preferencias del portlet"
         image2="preferencias-usuario.png" thumb2="preferencias-usuario-thumb.png" title2="Portlet HolaMundo con preferencias" >}}
 </div>
+
+Desarrollar un _portlet_ con su API directamente es una tarea costosa si la funcionalidad o complejidad del _portlet_ es mucha. Al igual que en Java no se suele utilizar la API de los _servlets_ directamente, aunque es la API subyacente, y se suele utilizar alguno de los muchos _frameworks_ disponibles para los _portlets_ también hay varios _frameworks_ entre los que elegir. En el artículo [_Portlets_ con el framework Apache Tapestry y Apache Pluto][blogbitix-244] muestro un ejemplo usando un _framework_ de alto nivel, orientado a componentes y altamente productivo.
 
 Aunque el libro [Liferay in Action](http://amzn.to/2sc1tWN) o [Portlets in Action](http://amzn.to/2tzpbjL) no están actualizados a la última versión sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
 
