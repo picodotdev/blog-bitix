@@ -29,7 +29,7 @@ Posteriormente crearemos una clase Java con su método main que inicie el servid
 
 {{< gist picodotdev 57d411ed0cc804a75bf6 "Main.java" >}}
 
-Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos la aplicación con la clase que contiene el método main con [Gradle][gradle] o desde la linea de comandos con java, necesitaremos descargar las librerías de Tomcat Embedded y en este ejemplo copiarlas al directorio _lib/_ junto con la librería _TomcatEmbedded-0.1.jar_ que contiene la clase _Main_ construida con el comando _gradlew build_:
+Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos la aplicación con la clase que contiene el método main con [Gradle][gradle] o desde la linea de comandos con java, necesitaremos descargar las librerías de Tomcat Embedded y en este ejemplo copiarlas al directorio _lib/_ junto con la librería _TomcatEmbedded-0.1.jar_ que contiene la clase _Main_ construida con el comando <code>gradlew build</code>:
 
 {{< gist picodotdev 57d411ed0cc804a75bf6 "startup.sh" >}}
 

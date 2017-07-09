@@ -24,7 +24,7 @@ El error en concreto al montarlo en mi sistema [Arch Linux][archlinux] era el si
 
 {{< gist picodotdev d8197f30979b1d2fb75e "error.log" >}}
 
-Podemos extraer una imagen de una unidad con el comando _dd_, el parámetro _if_ será la unidad de entrada y el parámetro _of_ la imagen que se creará en un archivo:
+Podemos extraer una imagen de una unidad con el comando <code>dd</code>, el parámetro _if_ será la unidad de entrada y el parámetro _of_ la imagen que se creará en un archivo:
 
 {{< gist picodotdev d8197f30979b1d2fb75e "dd.sh" >}}
 
@@ -38,7 +38,7 @@ Una vez que recuperé los archivos y viendo que pude extraer una imagen de la un
 
 Esto mismo es aplicable a una unidad que funcione correctamente, un archivo y su contenido es recuperable aún después de ser eliminado incluido de la papelera, con más probabilidad si la unidad no tiene muchas escrituras o una buena cantidad de espacio libre ya que por defecto únicamente se elimina de las estructuras del sistema de archivos y el contenido sigue estando presente simplemente no referenciado.
 
-Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado seguro de un archivo con el comando _wipe_ o de una unidad con _dd_][blogbitix-130] que consiste en sobreescribir el contenido del archivo con datos aleatorios, otra alternativa es [cifrar el sistema de archivos][blogbitix-128]. Es recomendable hacerlo cuando sustituyamos y nos deshagamos un disco duro o unidad de almacenamiento porque muchos de los archivos son recuperables incluido después de un formateo rápido de la unidad.
+Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado seguro de un archivo con el comando <code>wipe</code> o de una unidad con <code>dd</code>][blogbitix-130] que consiste en sobreescribir el contenido del archivo con datos aleatorios, otra alternativa es [cifrar el sistema de archivos][blogbitix-128]. Es recomendable hacerlo cuando sustituyamos y nos deshagamos un disco duro o unidad de almacenamiento porque muchos de los archivos son recuperables incluido después de un formateo rápido de la unidad.
 
 Te sorprenderá la cantidad de archivos que son recuperados por Foremost: documentos, imágenes, archivos de texto, ...
 

@@ -32,7 +32,7 @@ Teniendo 3 pequeños _scripts_ de ejemplo el archivo _build.gradle_ que necesita
 {{< gist picodotdev c2502db92bf72d445ed0 "build.gradle" >}}
 {{< gist picodotdev c2502db92bf72d445ed0 "Script1.java" >}}
 
-Si necesitamos ejecutar los _scripts_ cada cierto tiempo en _cron_ podemos programar el comando que queremos ejecutar regularmente, en vez de usar el comando _gradlew_ que comprueba si ha cambiado el código fuente y necesita compilarse de nuevo tardando un poco más en iniciarse, con una tarea de tipo [CreateStartScripts](https://docs.gradle.org/current/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) podemos generar el _script_ bash tanto para sistemas de la familia Unix como Windows que realmente lanzará los _scripts_ Java. La tarea de Gradle _createStartScripts_ genera todos los _scripts_ de inicio del proyecto.
+Si necesitamos ejecutar los _scripts_ cada cierto tiempo en _cron_ podemos programar el comando que queremos ejecutar regularmente, en vez de usar el comando <code>gradlew</code> que comprueba si ha cambiado el código fuente y necesita compilarse de nuevo tardando un poco más en iniciarse, con una tarea de tipo [CreateStartScripts](https://docs.gradle.org/current/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) podemos generar el _script_ bash tanto para sistemas de la familia Unix como Windows que realmente lanzará los _scripts_ Java. La tarea de Gradle _createStartScripts_ genera todos los _scripts_ de inicio del proyecto.
 
 {{< gist picodotdev c2502db92bf72d445ed0 "gradle-build.sh" >}}
 

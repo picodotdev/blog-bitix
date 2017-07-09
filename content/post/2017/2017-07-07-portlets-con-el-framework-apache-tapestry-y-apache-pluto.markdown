@@ -77,7 +77,7 @@ Para conocer más sobre los _portlets_ el libro [Portlets in Action](http://amzn
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
 </div>
 
-Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.org/pluto/download.html) para inicia con el comando _script_ _startup.sh_. Apache Pluto es en realidad un servidor [Apache Tomcat][tomcat] con las adiciones para proporcionarle la funcionalidad de portal en la dirección _http\://localhost:8080/pluto_.
+Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.org/pluto/download.html) para inicia con el comando <code>startup.sh</code>. Apache Pluto es en realidad un servidor [Apache Tomcat][tomcat] con las adiciones para proporcionarle la funcionalidad de portal en la dirección _http\://localhost:8080/pluto_.
 
 {{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "build.gradle" >}}
 

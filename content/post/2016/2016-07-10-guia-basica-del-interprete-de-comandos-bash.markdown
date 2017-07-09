@@ -71,7 +71,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 </div>
 
 ### Invocaciones de comandos anteriores
-Con el comando _history_ podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.
+Con el comando <code>history</code> podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="158"

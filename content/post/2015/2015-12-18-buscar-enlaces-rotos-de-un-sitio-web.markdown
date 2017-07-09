@@ -34,7 +34,7 @@ Después de introducir la dirección del sitio web, que con estas herramientas h
         caption="W3C Link Checker" >}}
 </div>
 
-Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando _wget_ para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
+Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando <code>wget</code> para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
 
 {{< gist picodotdev 5c2d560c7f2b1b16dda1 "wget.sh" >}}
 

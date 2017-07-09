@@ -29,11 +29,11 @@ Con la referencia a una colección se realizan las operaciones de inserción de 
 {{< gist picodotdev 9c814d5b0e24a5b371de64d9e4f647f1 "Main.java" >}}
 {{< gist picodotdev 9c814d5b0e24a5b371de64d9e4f647f1 "build.gradle" >}}
 
-La instancia del servidor de MongDB la inicio usando Docker con un archivo de [Docker Compose][docker-compose] y el comando _docker-compose up_. En la  [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí puedes aprender como empezar a usar Docker y adquirir un conocimiento hasta un nivel intermedio.
+La instancia del servidor de MongDB la inicio usando Docker con un archivo de [Docker Compose][docker-compose] y el comando <code>docker-compose up</code>. En la  [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí puedes aprender como empezar a usar Docker y adquirir un conocimiento hasta un nivel intermedio.
 
 {{< gist picodotdev 9c814d5b0e24a5b371de64d9e4f647f1 "docker-compose.yml" >}}
 
-El resultado en la terimnal de ejecutar el ejemplo con el comando _gradlew run_ es el siguiente donde se muestran las bases de datos, la colección _users_ creada en el ejemplo, los usuarios de la colección y una búsqueda de un usuario, el resultado de actualizar la propiedad de un documento y finalmente el número de documentos en la colección.
+El resultado en la terimnal de ejecutar el ejemplo con el comando <code>gradlew run</code> es el siguiente donde se muestran las bases de datos, la colección _users_ creada en el ejemplo, los usuarios de la colección y una búsqueda de un usuario, el resultado de actualizar la propiedad de un documento y finalmente el número de documentos en la colección.
 
 {{< gist picodotdev 9c814d5b0e24a5b371de64d9e4f647f1 "System.out" >}}
 

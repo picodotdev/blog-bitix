@@ -24,7 +24,7 @@ Una de las características es el _networking_ que hace trasnparente la comunica
 
 En el siguiente ejemplo para crear el _cluster_ de nodos Docker usaré Docker Machine para crear las máquinas de los nodos en máquinas virtuales de [VirtualBox][virtualbox] aunque su funcionamiento es similar si usásemos la nube de [Amazon EC2][amazon-ec2], [Digital Ocean][digital-ocean] u otros.
 
-El siguiente _script_ crea primeramente varios nodos cada uno en una máquina virtual, luego establece el nodo 01 como _manager_ y los nodos 02 y 03 como _workers_ usando un _token_ para unirlos al _cluster_ según su rol. Los nodos _manager_ se encargan de mantener el estado del _cluster_ y los que a través de ellos los comandos de los servicios deben ser lanzados, en un entorno de producción posiblemente tendríamos 3 nodos _manager_ para soportar tolerancia a fallos. Finalmente, se obtiene lista los nodos del _cluster_. El comando _docker-machine env node-01_ permite establecer el entorno contra el que el comando _docker_ lanzará las operaciones como si de la máquina local se tratase.
+El siguiente _script_ crea primeramente varios nodos cada uno en una máquina virtual, luego establece el nodo 01 como _manager_ y los nodos 02 y 03 como _workers_ usando un _token_ para unirlos al _cluster_ según su rol. Los nodos _manager_ se encargan de mantener el estado del _cluster_ y los que a través de ellos los comandos de los servicios deben ser lanzados, en un entorno de producción posiblemente tendríamos 3 nodos _manager_ para soportar tolerancia a fallos. Finalmente, se obtiene lista los nodos del _cluster_. El comando <code>docker-machine env node-01</code> permite establecer el entorno contra el que el comando <code>docker</code> lanzará las operaciones como si de la máquina local se tratase.
 
 {{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "01-cluster-create.sh" >}}
 
@@ -32,7 +32,7 @@ Una vez creado los nodos es cuando podemos empezar a crear servicios en el _clus
 
 {{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "06-nginx-create.sh" >}}
 
-Una de las propiedades interesantes del _networking_ de Docker Swarm es que ofrece incorporado balanceo de carga, esto es, si el servicio de nginx del ejemplo estuviese formado por dos instancias las peticiones se distribuirían entre las instancias usando el método _round-robin_. Otra característica interesante si se observa el ejemplo con detalle es que da igual el nodo al que hagamos la petición que la respuesta se obtendrá igualmente, esto es, aunque la petición se haga al nodo 01 y realmente el contenedor del servidor nginx se esté ejecutando en el nodo 02 la petición se realizará correctamente gracias al _routing mesh_ del _neworking_ de Docker Swarm, esto es gracias a que cada servicio tiene asignada una dirección IP, como se ha visto anteriormente en la salida del comando _drill_.
+Una de las propiedades interesantes del _networking_ de Docker Swarm es que ofrece incorporado balanceo de carga, esto es, si el servicio de nginx del ejemplo estuviese formado por dos instancias las peticiones se distribuirían entre las instancias usando el método _round-robin_. Otra característica interesante si se observa el ejemplo con detalle es que da igual el nodo al que hagamos la petición que la respuesta se obtendrá igualmente, esto es, aunque la petición se haga al nodo 01 y realmente el contenedor del servidor nginx se esté ejecutando en el nodo 02 la petición se realizará correctamente gracias al _routing mesh_ del _neworking_ de Docker Swarm, esto es gracias a que cada servicio tiene asignada una dirección IP, como se ha visto anteriormente en la salida del comando <code>drill</code>.
 
 En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anteriores comandos. Y en la aplicación de VirtualBox estarán las máquinas virtuales de cada uno de los nodos que crea el ejemplo. En el vídeo se aprecia que el servicio de nginx se está ejecutando en el nodo 02 cuando se listan los procesos de Docker de cada nodo con _docker ps_, nótese sin embargo que al hacer un petición HTTP a cualquiera de los nodos se devuelve la página de inicio de nginx ya que gracias al _routing mesh_ de Docker Swarm la petición se redirige de forma transparente para el cliente y el servicio al nodo donde realmente se está ejecutando el contenedor de nginx.
 
@@ -56,7 +56,7 @@ Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [Th
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=2101ae950cfcfe9e69b6cc1210e4bf2c"></iframe>
 </div>
 
-Finalmente, quizás si estás usando GNU/Linux y VirtualBox como yo al crear los nodos con el comando _docker-machine_ te produzca el siguiente error (quizá se corrija en futuras versiones de Docker o VirtualBox).
+Finalmente, quizás si estás usando GNU/Linux y VirtualBox como yo al crear los nodos con el comando <code>docker-machine</code> te produzca el siguiente error (quizá se corrija en futuras versiones de Docker o VirtualBox).
 
 {{< gist picodotdev f9b48124e3bf0cde0cd88a198bda90e8 "vboxnet0-error.out" >}}
 

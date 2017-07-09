@@ -14,7 +14,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="java.png" title1="Java" image2="spring.png" title2="Spring Framework" >}}
+{{< logotype image1="java.svg" title1="Java" witdh1="200" image2="spring.svg" title2="Spring Framework" witdh1="200" >}}
 
 En Java a través de JAX-RS, una de entre las varias [especificaciones de JavaEE][blogbitix-131], podemos desarrollar servicios web basados en [<abbr title="Representational State Transfer">REST</abbr>][rest] y [<abbr title="JavaScript Object Notation">JSON</abbr>][json]. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como [cacheo][blogbitix-165], [protocolo seguro][blogbitix-151], [HTTP/2][blogbitix-127], [compresión][blogbitix-155] o autenticación. Usando [Spring Boot][spring-boot] podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.
 

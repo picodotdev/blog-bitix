@@ -30,7 +30,7 @@ Para una fácil instalación de una instancia de la base de datos PostgreSQL usa
 
 ### Instalación PostgreSQL con Docker
 
-Una vez instalado Docker e iniciado su servicio y con el comando _docker-compose_ y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando _docker-compose up_. El comando _docker ps_ lista los contenedores en ejecución y con el comando _docker exec_ iniciamos un proceso bash en el contenedor indicado con su identificativo.
+Una vez instalado Docker e iniciado su servicio y con el comando <code>docker-compose</code> y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando <code>docker-compose up</code>. El comando <code>docker ps</code> lista los contenedores en ejecución y con el comando <code>docker exec</code> iniciamos un proceso bash en el contenedor indicado con su identificativo.
 
 {{< gist picodotdev 1429fa08e7a3c7c6b52beb92a4069112 "docker-compose.yml" >}}
 {{< gist picodotdev 1429fa08e7a3c7c6b52beb92a4069112 "docker-compose.sh" >}}
@@ -49,7 +49,7 @@ El _shell_ de psql usa varios comandos precedidos por una contrabarra para inter
 
 ### Importación base de datos de ejemplo
 
-Antes de lanzar sentencias SQL hay que crear una base de datos con varias tablas y datos, en este caso usando una base de datos de ejemplo que se descarga con el comando _wget_, se descomprime, se crea un nuevo esquema y se importan las tablas y datos, finalmente se listas las definiciones de las tablas.
+Antes de lanzar sentencias SQL hay que crear una base de datos con varias tablas y datos, en este caso usando una base de datos de ejemplo que se descarga con el comando <code>wget</code>, se descomprime, se crea un nuevo esquema y se importan las tablas y datos, finalmente se listas las definiciones de las tablas.
 
 {{< gist picodotdev 1429fa08e7a3c7c6b52beb92a4069112 "database-world.sh" >}}
 

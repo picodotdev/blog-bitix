@@ -66,7 +66,7 @@ Para hacer la eliminación de las pistas usamos el siguiente comando donde los p
 
 {{< gist picodotdev 539df8e2597a120febfe144ba78fd8df "ffmpeg-map.sh" >}}
 
-Si no tenemos instalado un reproductor de vídeo con el comando _ffplay_ podemos reproducirlo, quizá en algún caso nos sirva aunque esté destinado principalmente para pruebas ya que no ofrece controles para pausar o detener la reproducción.
+Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</code> podemos reproducirlo, quizá en algún caso nos sirva aunque esté destinado principalmente para pruebas ya que no ofrece controles para pausar o detener la reproducción.
 
 {{< gist picodotdev 539df8e2597a120febfe144ba78fd8df "ffplay.sh" >}}
 

@@ -50,7 +50,7 @@ Indicaremos también el rol que deberá poseer el cliente para acceder al servic
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "application.yml" >}}
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "MessageResource.java" >}}
 
-Iniciado Keycloak y el servicio REST con el comando <code>./gradlew run</code> podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
+Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-token.sh" >}}
 <div class="media" style="text-align: center;">
