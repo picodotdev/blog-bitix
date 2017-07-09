@@ -14,9 +14,11 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="gradle.svg" title1="Gradle" width1="200" image2="spring.svg" title2="Spring" width2="200" image3="java.svg" title3="Java" width3="200" >}}
 
-Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto. En un proyecto de duración de varios meses o años el tiempo dedicado a esta infraestructura básica es poco y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso.
+Cuando se empieza un proyecto nuevo desde cero se debe disponer de una herramienta de construcción, una estructura de directorios que siga las convenciones de la herramienta de construcción, añadir las dependencias que vayamos a utilizar y alguna clase que muestre algo al ejecutarlo para comprobar que disponemos de la infraestructura básica de compilación, teses, generación de artefactos e inicio de proyecto.
+
+Dado que las clases Java hay que compilarlas para facilitar la tarea están las herramientas de construcción y estas siguen una serie de convenciones en la estructura de directorios además de requerir algunos archivos. En un proyecto de duración de varios meses o años el tiempo dedicado a crear esta infraestructura básica es despreciable y no complicado si nos basamos en un proyecto similar del que copiar, sin embargo, para hacer alguna prueba rápida es costoso. 
 
 En [Maven][maven] existen los arquetipos que construyen el esqueleto básico del proyecto en base a unas plantillas. En [Gradle][gradle] el equivalente es el [_plugin_ init ](https://docs.gradle.org/current/userguide/build_init_plugin.html) pudiendo elegir crear la estructura de una librería o aplicación Java, [Groovy][groovy] o [Scala][scala] ejecutable. También se puede elegir el _framework_ para hacer las pruebas automatizadas unitarias, de integración o funcionales.
 
