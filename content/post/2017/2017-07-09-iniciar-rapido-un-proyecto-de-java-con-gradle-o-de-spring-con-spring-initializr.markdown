@@ -1,7 +1,7 @@
 ---
 pid: 245
-title: "Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initialzr"
-url: "/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initialzr/"
+title: "Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr"
+url: "/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/"
 date: 2017-07-09T13:00:00+02:00
 language: "es"
 sharing: true
