@@ -53,9 +53,9 @@ En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acu
 {{< gist picodotdev b18f1c1e32d73b4ef03d4ae3670f80b6 "Barber.java" >}}
 {{< gist picodotdev b18f1c1e32d73b4ef03d4ae3670f80b6 "Client.java" >}}
 
-{{% asciinema id="uej4sdDRO03kAcROgu4RAc27z" caption="Ejemplo de concurrencia del barbero (1 barbero)" %}}
+{{% asciinema id="BeA6bcKy5yoSGfByRUfE1HfYD" caption="Ejemplo de concurrencia del barbero (1 barbero)" %}}
 
-{{% asciinema id="etiWqKLzR4BI3HpOLawuzSwuo" caption="Ejemplo de concurrencia del barbero (2 barberos)" %}}
+{{% asciinema id="K7Ug6RT60mjWRbNcwRGapw7V6" caption="Ejemplo de concurrencia del barbero (2 barberos)" %}}
 
 {{% code git="blog-ejemplos/tree/master/JavaconCurrency" command="./gradlew run" %}}
 
