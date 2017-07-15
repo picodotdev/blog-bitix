@@ -1,7 +1,8 @@
 ---
 pid: 246
-title: "Tutorial sobre programación concurrente en Java"
-url: "/2017/07/tutorial-sobre-programacion-concurrente-en-java/"
+title: "Iniciación a la programación concurrente en Java"
+url: "/2017/07/iniciacion-a-la-programacion-concurrente-en-java/"
+aliases: ["/2017/07/tutorial-sobre-programacion-concurrente-en-java/"]
 date: 2017-07-15T00:00:00+02:00
 language: "es"
 sharing: true
