@@ -16,15 +16,16 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
-Hasta Java 5 para hacer un bucle desde 0 a N elementos había que usar una variable para mantener un contador, hacer una comparación para comprobar si se había llegado al límite e incrementar la variable en la siguiente ejecución. El código era bastante verboso y dado que los bucles son una construcción básica de cualquier lenguaje de programación es empleada numerosas veces en cualquier algoritmo. Antes de Java 5 un bucle _for_ de 0 a 5 se realizaba de la siguiente manera:
+Hasta Java 5 para hacer un bucle desde 0 a N elementos había que usar una variable para mantener un contador, hacer una comparación para comprobar si se había llegado al límite e incrementar la variable en la siguiente ejecución. El código era bastante verboso y dado que los bucles son una construcción básica de cualquier lenguaje de programación es empleada numerosas veces en cualquier algoritmo. Antes de Java 5 un bucle _for_ de 0 a 5 y de una colección se realizaba de la siguiente manera:
 
 {{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "For.java" >}}
+{{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "Iterator.java" >}}
 
-En Java 5 el bucle _for_ se enriqueció notablemente, con el _foreach_ se puede recorrer una colección y cualquier objeto que implemente la interfaz [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html). Con el bucle _foreach_ una [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html) se recorre de la siguiente manera mucho menos verbosa que en el bucle _for_ anterior.
+En Java 5 el bucle _for_ se enriqueció notablemente, con el _foreach_ se puede recorrer una colección y cualquier objeto que implemente la interfaz [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html). Con el bucle _foreach_ una [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html) se recorre de la siguiente manera.
 
-{{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "Iterable.java" >}}
+{{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "Foreach.java" >}}
 
-Pero esto es para las colecciones si se quiere hacer un bucle un número fijo de veces como en el primer caso de 0 a 5 conociendo que para usar el _foreach_ basta que le indiquemos un objeto que implemente la interfaz _Iterable_ podemos usar la siguiente expresión y su implementación que tiene la ventaja de no tener que incluir la expresión de comparación y el incremento de la variable, la clase _Counter_ implementa la interfaz _Iterable_ y devuelve un _Iterator_ con los valores del rango indicado:
+Pero esto es para las colecciones si se quiere hacer un bucle un número fijo de veces como en el primer caso de 0 a 5 conociendo que para usar el _foreach_ basta que le indiquemos un objeto que implemente la interfaz _Iterable_ podemos usar la siguiente expresión y su implementación que tiene la ventaja de no tener que incluir la expresión de comparación y el incremento de la variable, la clase _Counter_ implementa la interfaz _Iterable_ y devuelve un _Iterator_ sobre los valores del rango indicado:
 
 {{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "CounterIterable.java" >}}
 {{< gist picodotdev 1c1ec809be02caae060a9055bcab2cf3 "Counter.java" >}}
