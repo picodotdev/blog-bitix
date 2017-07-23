@@ -3,6 +3,7 @@ pid: 247
 title: "4 formas de hacer un bucle for en Java"
 url: "/2017/07/4-formas-de-hacer-un-bucle-for-en-java/"
 date: 2017-07-16T12:30:00+02:00
+updated: 2017-07-19T22:30:00+02:00
 language: "es"
 sharing: true
 comments: true
