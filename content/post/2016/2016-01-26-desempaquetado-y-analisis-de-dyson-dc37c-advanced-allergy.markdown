@@ -8,7 +8,7 @@ updated: 2017-01-31T22:30:00+01:00
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack"]
+tags: [""]
 series: ["desempaquetado"]
 summary: "Hacer una compra informada no es fácil cualquiera que sea el producto. Al igual que otros en el caso de las aspiradoras hay multitud de modelos: con bolsa, sin bolsa, de trineo, verticales, robots barredores o aspiradores, ... En este artículo comentaré dos modelos de aspiradoras, Rowenta Compacteo Ergo 4359EA y Dyson DC37c Advanced Allergy, de diferentes categorías y precios que seleccione, decantándome finalmente por el segundo. Incluiré el desempaquetado o _unboxing_ junto con un reportaje gráfico bastante completo."
 ---
