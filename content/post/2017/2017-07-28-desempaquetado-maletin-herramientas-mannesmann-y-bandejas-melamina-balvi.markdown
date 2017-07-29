@@ -3,7 +3,7 @@ pid: 249
 title: "Desempaquetado maletín herramientas Mannesmann y bandejas melamina Balvi"
 url: "/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/"
 date: 2017-07-28T18:00:00+02:00
-updated: 2017-07-28T23:00:00+02:00
+updated: 2017-07-29T11:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -55,8 +55,8 @@ Las puntas para atornillar se usan con un adaptador y las llaves de vaso se pued
         image1="maletin-herramientas-mannesmann-12.jpg" thumb1="maletin-herramientas-mannesmann-12-thumb.jpg" title1="Nivel y metro"
         image2="maletin-herramientas-mannesmann-13.jpg" thumb2="maletin-herramientas-mannesmann-13-thumb.jpg" title2="Nivel y metro" >}}
     {{< figure year="2017" pid="249"
-        image1="maletin-herramientas-mannesmann-15.jpg" thumb1="maletin-herramientas-mannesmann-15-thumb.jpg" title1="Llave de carraca"
-        image2="maletin-herramientas-mannesmann-14.jpg" thumb2="maletin-herramientas-mannesmann-14-thumb.jpg" title2="Llave de carraca, acoplador y punta destornillador"
+        image1="maletin-herramientas-mannesmann-14.jpg" thumb1="maletin-herramientas-mannesmann-14-thumb.jpg" title1="Llave de carraca"
+        image2="maletin-herramientas-mannesmann-15.jpg" thumb2="maletin-herramientas-mannesmann-15-thumb.jpg" title2="Llave de carraca, acoplador y punta destornillador"
         caption="Acoplador, puntas para el acoplador, nivel, metro y llave de carraca" >}}
 </div>
 
@@ -66,7 +66,7 @@ Las puntas para atornillar se usan con un adaptador y las llaves de vaso se pued
 
 ### Bandejas melamina Balvi
 
-También necesitaba unas bandejas para llevar platos, cubiertos, vaso, pan o el postre de la cocina al salón y viceversa, de las varias que busqué me gustaron especialmente estas [bandejas de melamina](http://amzn.to/2vestKF). Su diseño, tamaño y ya viéndolas y palpándolas una vez las he recibido aún más. Están fabricadas en melamina que es un material plástico duro, rígido y de aspecto resistente si se las trata adecuadamente aguantan los golpes que no sean fuertes, también son resistentes al calor y no se deforman o comban cosa que ocurre en otros materiales plásticos y la parte trasera tiene unas lineas de refuerzo para dar mayor consistencia a la bandeja. Tienen un tamaño de 45,8 centímetros de ancho por 32,5 cm de alto y unos 2,5 cm sobre la mesa. Otro aspecto importante es que son fáciles de limpiar y son apilables. Tiene 4 diseños diferentes y en varios colores.
+También necesitaba unas bandejas para llevar platos, cubiertos, vaso, pan o el postre de la cocina al salón y viceversa, de las varias que busqué me gustaron especialmente estas [bandejas de melamina](http://amzn.to/2vestKF). Su diseño, tamaño y ya viéndolas y palpándolas una vez las he recibido aún más. Están fabricadas en melamina que es un material plástico duro, rígido y de aspecto resistente si se las trata adecuadamente aguantan los golpes que no sean fuertes, también son resistentes al calor y no se deforman o comban cosa que ocurre en otros materiales plásticos y la parte trasera tiene unas lineas de refuerzo para dar mayor consistencia a la bandeja. Tienen un tamaño de 45,8 centímetros de ancho por 32,5 cm de alto y unos 2,5 cm sobre la mesa. Otro aspecto importante es que son fáciles de limpiar y son apilables. Tiene 4 diseños diferentes y en varios colores, las fotos que he sacado no le hacen justicia a los colores de las bandejas, en la realidad los colores son más intensos y más parecidos a las fotos de los artículos en Amazon.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="249"
