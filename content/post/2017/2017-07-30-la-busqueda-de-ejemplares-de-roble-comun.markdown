@@ -38,7 +38,7 @@ Aprovechando el típico paseo andando del fin de semana me he ido fijando y yend
     {{< figure year="2017" pid="250"
         image1="roble-sarriko-1.jpg" thumb1="roble-sarriko-1-thumb.jpg" title1="Roble en Universidad de Sarriko"
         image2="roble-sarriko-2.jpg" thumb2="roble-sarriko-2-thumb.jpg" title2="Roble en Universidad de Sarriko"
-        caption="Roble en Universidad de Sarriko" >}}
+        caption="Roble en la Universidad de Sarriko" >}}
 </div>
 
 También he encontrado un grupo de ellos en una zona ajardinada de un parque en Deusto pegado a la ría. Unos cinco juntos aunque un par de ellos no se si están en el mejor estado. También tenían algunas bellotas en las ramas y algunas en el césped.
@@ -46,7 +46,7 @@ También he encontrado un grupo de ellos en una zona ajardinada de un parque en 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="250"
         image1="roble-deusto.jpg" thumb1="roble-deusto-thumb.jpg" title1="Roble en parque de Deusto"
-        caption="Roble en parque de Deusto" >}}
+        caption="Roble en el parque de Deusto" >}}
 </div>
 
 Pasado el museo Guggenheim enfrente de la nueva biblioteca de la Universidad de Deusto en otra zona ajardinada hay otro grupo de robles comunes con muy buen aspecto de salud. No son tan grandes como el de la Universidad de Sarriko pero al estar en una zona ajardinada están mejor cuidados y se nota que están bien sanos.
