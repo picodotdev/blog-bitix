@@ -8,7 +8,7 @@ language: "es"
 sharing: true
 comments: true
 promoted: false
-tags: [""]
+tags: []
 series: ["desempaquetado"]
 ---
 
