@@ -3,6 +3,7 @@ pid: 251
 title: "Sustituir caldera de gas por un termo eléctrico Fleck Duo 7 50"
 url: "/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/"
 date: 2017-08-04T18:00:00+02:00
+updated: 2017-08-05T18:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -92,9 +93,16 @@ El termo Fleck Duo 7 50 consume como máximo 1500W, yo tengo una potencia contra
         caption="Caja Fleck Duo 7 50" >}}
 </div>
 
-En el manual de Fleck Duo 7 50 se explican mejor las funciones que posee, una de ellas es que aprende los hábitos de consumo y se adecua a ellos para ahorrar energía. También posee una configuración manual con la que se establece la temperatura deseada y el termo la mantiene a esa temperatura. El termo es bastante eficiente por sus dos depósitos independientes y a lo largo de día manteniendo el agua a una temperatura de unos 45º el termo se enciende no más de tres veces al día y solo durante unos minutos.
+En el manual de Fleck Duo 7 50 se explican mejor las funciones que posee, una de ellas es que aprende los hábitos de consumo y se adecua a ellos para ahorrar energía. También posee una configuración manual con la que se establece la temperatura deseada y el termo la mantiene a esa temperatura. El termo es bastante eficiente por sus dos depósitos independientes y a lo largo del día manteniendo el agua a una temperatura de unos 45º el termo se enciende no más de tres veces al día y solo durante unos minutos.
 
-Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de diámetro. Los tacos incluidos en la caja no son muy buenos y cuando los puse los anclajes quedaban algo separados de la pared. Al final en vez de usar los tacos incluidos use un taco químico y unas varillas roscadas de 10mm para anclar los soportes y colgar el termo. Con las varillas, taco químico, roscas y arandelas el termo queda mejor asegurado. Al ser el termo bastante plano la carga que ejerce sobre la pared es más vertical.
+Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de diámetro y una plantilla de montaje que tiene el tamaño real del termo para calcular la posición deseada antes de taladrar la pared. Los tacos incluidos en la caja no son muy buenos y cuando los puse los anclajes quedaban algo separados de la pared. Al final en vez de usar los tacos incluidos use un taco químico y unas varillas roscadas de 10mm para anclar los soportes y colgar el termo. Con las varillas, taco químico, roscas y arandelas el termo queda mejor asegurado. Al ser el termo bastante plano la carga que ejerce sobre la pared es más vertical.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="251"
+        image1="tacos-casquillo-electroliticos.jpg" thumb1="tacos-casquillo-electroliticos-thumb.jpg" title1="Válvula de seguridad por presión, tacos, tornillos y casquillos electrolíticos"
+        image2="plantilla-montaje.jpg" thumb2="plantilla-montaje-thumb.jpg" title2="Plantilla montaje"
+        caption="Válvula de seguridad por presión, tacos, tornillos, casquillos electrolíticos y plantilla montaje" >}}
+</div>
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="251"
@@ -109,9 +117,9 @@ Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de
 
 ### Instalación termo eléctrico
 
-Antes de empezar la instalación del termo solicite la baja del suministro del gas, en unas dos semanas mi compañía me notificó que ya me lo habían dado de baja y comprobé ya que la caldera no encendía por falta de gas. La baja de gas implica la eliminación del contador, una posterior solicitud de alta conlleva unos 60€ por el concepto de enganche. En cualquier caso no hay manipular la instalación del gas hasta que llega a la ventana, en todo caso cerrar las llaves de paso y colocar un tapón en el tubo del gas de la caldera que queda sin uso para que no le entre suciedad. La instalación del termo se puede realizar en el mismo lugar en el que estuviese la caldera aunque para evitar pérdidas de calor se recomienda que esté los más cerca de la ducha. Como en mi caso la caldera proporcionaba agua caliente también para la calefacción los tubos del circuito cerrado de la calefacción quedarán sin uso, he vaciado el circuito y para que no les entre suciedad los he tapado con un tapón de metal. La entrada del agua y la salida del agua caliente que usa el termo son las mismas que usaba la caldera aunque para las conexiones hay que utilizar alguna llave de paso para cortar si es necesario la entrada del agua o vaciar el termo y unos latiguillos de 30cm para unir el termo con los tubos del agua.
+Antes de empezar la instalación del termo solicite la baja del suministro del gas, en unas dos semanas mi compañía me notificó que ya me lo habían dado de baja y comprobé ya que la caldera no encendía por falta de gas. La baja de gas implica la eliminación del contador, una posterior solicitud de alta conlleva unos 60€ por el concepto de enganche. En cualquier caso no hay que manipular la instalación del gas hasta que llega a la ventana, en todo caso cerrar las llaves de paso y colocar un tapón en el tubo del gas de la caldera que queda sin uso para que no le entre suciedad. La instalación del termo se puede realizar en el mismo lugar en el que estuviese la caldera aunque para evitar pérdidas de calor se recomienda que esté los más cerca de la ducha. Como en mi caso la caldera proporcionaba agua caliente también para la calefacción los tubos del circuito cerrado de la calefacción quedarán sin uso, he vaciado el circuito y para que no les entre suciedad los he tapado con un tapón de metal. La entrada del agua y la salida del agua caliente que usa el termo son las mismas que usaba la caldera aunque para las conexiones hay que utilizar alguna llave de paso para cortar si es necesario la entrada del agua o vaciar el termo, unos codos de fontanería apropiados según las anchuras de los latiguillos y entrada de agua y unos latiguillos de 30cm para unir el termo con los tubos del agua.
 
-También tuve que adaptar los cables de electricidad ya que a la caldera le llegaban directamente los cables y poner un enchufe de tipo _schuko_ de superficie, todavía me queda poner una canaleta para los cables. Con un poco de yeso a las salidas de los tubos para embellecer la pared que ahora se ve más.
+También he tenido que adaptar la conexión eléctrica ya que de construción a la caldera le llegaban directamente los cables. He puesto un enchufe de tipo _schuko_ de superficie, todavía me queda poner una canaleta para los cables. Con un poco de yeso a las salidas de los tubos para embellecer la pared que ahora se ve más.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="251"
@@ -127,9 +135,9 @@ También tuve que adaptar los cables de electricidad ya que a la caldera le lleg
         caption="Instalación termo eléctrico" >}}
 </div>
 
-El termo Fleck me costó 315€ comprándolo en [Bricomart](https://www.bricomart.es/), si lo hubiese comprador en internet ya sea en [Amazon][amazon] o enla tienda de [Droitek](https://www.droitek.com/) me podría haber salido por uno 50€ más barato, unos 265€ con gastos de envío incluido. Desde luego no lo compraría en [El Corte Inglés][elcorteingles] ya que el modelo Fleck en concreto costaba unos 400€ lo que es significativamente superior. Al final por no tener que esperar a que llegase y estar presente en caso para recogerlo lo compré en Bricomart. En [Amazon][amazon] algunos vendedores ofrecen algo mejor precio.
+El termo Fleck me costó 315€ comprándolo en [Bricomart](https://www.bricomart.es/), si lo hubiese comprador en internet ya sea en [Amazon][amazon] o en la tienda de [Droitek](https://www.droitek.com/) me podría haber salido por unos 50€ más barato, unos 265€ con gastos de envío incluido. Desde luego no lo compraría en [El Corte Inglés][elcorteingles] ya que el modelo Fleck en concreto costaba unos 400€ lo que es significativamente superior. Al final por no tener que esperar a que llegase y estar presente en casa para recogerlo lo compré en Bricomart. En [Amazon][amazon] algunos vendedores ofrecen algo mejor precio.
 
-Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos térmicos que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
+Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos termoestático que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="251"
