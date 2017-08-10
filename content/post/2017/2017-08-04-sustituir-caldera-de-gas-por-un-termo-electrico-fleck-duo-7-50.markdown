@@ -137,7 +137,7 @@ También he tenido que adaptar la conexión eléctrica ya que de construción a 
 
 El termo Fleck me costó 315€ comprándolo en [Bricomart](https://www.bricomart.es/), si lo hubiese comprador en internet ya sea en [Amazon][amazon] o en la tienda de [Droitek](https://www.droitek.com/) me podría haber salido por unos 50€ más barato, unos 265€ con gastos de envío incluido. Desde luego no lo compraría en [El Corte Inglés][elcorteingles] ya que el modelo Fleck en concreto costaba unos 400€ lo que es significativamente superior. Al final por no tener que esperar a que llegase y estar presente en casa para recogerlo lo compré en Bricomart. En [Amazon][amazon] algunos vendedores ofrecen algo mejor precio.
 
-Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos termoestático que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
+Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos termoestáticos que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="251"
