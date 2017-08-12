@@ -57,7 +57,7 @@ La siguiente configuración del servidor web nginx redirige todo el tráfico usa
 
 {{< gist picodotdev 386fb0fd31e420b5928ffaf444048c12 "nginx.conf" >}}
 
-Y este es el resultado al acceder con el navegador al sitio web:
+Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una [Rasbperry Pi][raspberrypi] accesible desde internet con un dominio de [FreeDNS][freedns]:
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="252"
