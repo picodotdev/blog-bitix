@@ -132,6 +132,7 @@ También he tenido que adaptar la conexión eléctrica ya que de construción a 
         image3="instalacion-termo-06.jpg" thumb3="instalacion-termo-06-thumb.jpg" title3="Instalación termo eléctrico" >}}
     {{< figure year="2017" pid="251"
         image1="instalacion-termo-07.jpg" thumb1="instalacion-termo-07-thumb.jpg" title1="Instalación termo eléctrico"
+        image2="instalacion-termo-08.jpg" thumb2="instalacion-termo-08-thumb.jpg" title2="Instalación termo eléctrico"
         caption="Instalación termo eléctrico" >}}
 </div>
 

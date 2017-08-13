@@ -52,7 +52,7 @@ También se puede obtener la clave pública en formato [OpenSSH][openssh] y una 
 {{< gist picodotdev 9138093 "script-10.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="13"
+    {{< figure year="2014" pid="13"
         image1="openssh-fingerprint.png" thumb1="openssh-fingerprint-thumb.png" title1="Huella digital de una clave pública OpenSSH"
         caption="Huella digital de una clave pública OpenSSH" >}}
 </div>
@@ -64,7 +64,7 @@ La huella digital de una clave pública sirve para comprobar que la clave es la 
 {{< gist picodotdev 9138093 "script-11.sh" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="13"
+    {{< figure year="2014" pid="13"
         image1="openssl-dgst.png" thumb1="openssl-dgst-thumb.png" title1="Huella digital de una clave pública"
         caption="Huella digital de una clave pública" >}}
 </div>

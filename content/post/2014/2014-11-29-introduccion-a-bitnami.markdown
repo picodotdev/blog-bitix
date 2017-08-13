@@ -30,7 +30,7 @@ A continuación explicaré la opción de usar Bitnami con VirtualBox, para el ej
 Teniendo instalado previamente VirtualBox, primeramente necesitaremos descargar la imagen del disco que contiene la [aplicación de Bitnami para GitLab](https://bitnami.com/stack/gitlab). Accedida a la sección [_Local Install_](https://bitnami.com/stack/gitlab/virtual-machine) pulsamos el botón _Download_ según la versión del sistema operativo que prefiramos, en este caso usaré la basada en [Debian][debian]. A continuación hay que crear una máquina virtual en VirtualBox mediante la opción _Importar servicio virtualizado..._ del menú _Archivo_ donde hay que seleccionar el archivo de extensión _ova_ y cambiaremos la memoria asignada a la máquina virtual al menos 2048 MiB.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="54"
+    {{< figure year="2014" pid="54"
         image1="virtualbox-importar-servicio-virtualizado.png" thumb1="virtualbox-importar-servicio-virtualizado-thumb.png" title1="Importación de servicio virtualizado en VirtualBox"
         image2="virtualbox-gitlab.png" thumb2="virtualbox-gitlab-thumb.png" title2="Máquina virtual de GitLab"
 				caption="Importación de servicio virtualizado de Bitnami en VirtualBox" >}}
@@ -41,7 +41,7 @@ Una vez importado el servicio y creada la máquina virtual la tratamos como cual
 Accediendo con el navegador a la dirección _https\://192.168.1.3_ se accede a la aplicación de GitLab que pide un usuario y contraseña para iniciar sesión, el usuario y contraseña están indicados en la página de descarga de la imagen del servicio.
 
 <div class="media" style="text-align: center;">
-    {{< figure pid="54"
+    {{< figure year="2014" pid="54"
         image1="gitlab-inicio-sesion.png" thumb1="gitlab-inicio-sesion-thumb.png" title1="Inicio de sesión de GitLab"
         image2="gitlab.png" thumb2="gitlab-thumb.png" title2="GitLab"
 				caption="Servicio de GitLab" >}}
