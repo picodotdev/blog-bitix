@@ -1,7 +1,8 @@
 ---
 pid: 253
-title: "El antipatrón de inicialización de variables con dobles corchetes en Java"
-url: "/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-corchetes-en-java/"
+title: "El antipatrón de inicialización de variables con dobles llaves en Java"
+url: "/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/"
+aliases: ["/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-corchetes-en-java/"]
 date: 2017-08-14T11:00:00+02:00
 language: "es"
 sharing: true
@@ -20,7 +21,7 @@ Java es un lenguaje más verboso y con menos azúcar sintáctico (o veneno para 
 
 Con el objetivo de reducir la verbosidad quizá en algún sitio se pueda ver que usando la técnica de doble llave se puede inicializar un _Map_ o _List_ de una forma más reducida, tal que:
 
-{{< gist picodotdev 093fa885f8d9a40901938951fb8e8cd9 "AntipatronCorchetes.java" >}}
+{{< gist picodotdev 093fa885f8d9a40901938951fb8e8cd9 "AntipatronLlaves.java" >}}
 
 Sin embargo, no es recomendable usar este _hack_ del lenguaje porque presenta sus inconvenientes, por ello está desaconsejado y se considera un antipatrón. En el pozo de sabiduría para el programador de [StackOverflow][stackoverflow] se indican [varios inconvenientes](http://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java#27521360):
 
@@ -29,7 +30,7 @@ Sin embargo, no es recomendable usar este _hack_ del lenguaje porque presenta su
 
 En [otros hilos de StackOverflow](http://stackoverflow.com/questions/1005073/initialization-of-an-arraylist-in-one-line#1005083) algunas respuestas muy votadas se propone usar dobles llaves para la inicialización, pero por los puntos comentados anteriormente mejor no usarla por mucho que esté en StackOverflow y haya sido esta una respuesta muy votada.
 
-Las alternativas en Java 8 en el caso del _Map_ si queremos reducir la verbosidad al inicializar estos tipos de datos usados profusamente podemos usar lo siguiente, , en el caso de _List_ o _Set_ disponemos desde hace más tiempo del método _Arrays.asList_:
+Las alternativas en Java 8 en el caso del _Map_ si queremos reducir la verbosidad al inicializar estos tipos de datos usados profusamente podemos usar lo siguiente, en el caso de _List_ o _Set_ disponemos desde hace más tiempo del método _Arrays.asList_:
 
 {{< gist picodotdev 093fa885f8d9a40901938951fb8e8cd9 "MapListSetJava8.java" >}}
 
