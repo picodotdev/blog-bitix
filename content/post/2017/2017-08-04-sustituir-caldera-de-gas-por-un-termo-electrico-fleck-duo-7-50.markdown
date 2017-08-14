@@ -99,9 +99,10 @@ Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="251"
-        image1="tacos-casquillo-electroliticos.jpg" thumb1="tacos-casquillo-electroliticos-thumb.jpg" title1="Válvula de seguridad por presión, tacos, tornillos y casquillos electrolíticos"
+        image1="tacos-casquillo-electroliticos.jpg" thumb1="tacos-casquillo-electroliticos-thumb.jpg" title1="Válvula de seguridad por presión, tacos, tornillos y  casquillos electrolíticos"
         image2="plantilla-montaje.jpg" thumb2="plantilla-montaje-thumb.jpg" title2="Plantilla montaje"
-        caption="Válvula de seguridad por presión, tacos, tornillos, casquillos electrolíticos y plantilla montaje" >}}
+        image3="etiqueta-calificacion-energetica.jpg" thumb3="etiqueta-calificacion-energetica-thumb.jpg" title3="Etiqueta calificación energética"
+        caption="Válvula de seguridad por presión, tacos, tornillos, casquillos electrolíticos, plantilla montaje y etiqueta de calificación energética" >}}
 </div>
 
 <div class="media" style="text-align: center;">
@@ -129,11 +130,12 @@ También he tenido que adaptar la conexión eléctrica ya que de construción a 
     {{< figure year="2017" pid="251"
         image1="instalacion-termo-04.jpg" thumb1="instalacion-termo-04-thumb.jpg" title1="Instalación termo eléctrico"
         image2="instalacion-termo-05.jpg" thumb2="instalacion-termo-05-thumb.jpg" title2="Instalación termo eléctrico"
-        image3="instalacion-termo-06.jpg" thumb3="instalacion-termo-06-thumb.jpg" title3="Instalación termo eléctrico" >}}
+        image3="instalacion-termo-06.jpg" thumb3="instalacion-termo-06-thumb.jpg" title3="Instalación termo eléctrico"
+        caption="Instalación termo eléctrico" >}}
     {{< figure year="2017" pid="251"
         image1="instalacion-termo-07.jpg" thumb1="instalacion-termo-07-thumb.jpg" title1="Instalación termo eléctrico"
         image2="instalacion-termo-08.jpg" thumb2="instalacion-termo-08-thumb.jpg" title2="Instalación termo eléctrico"
-        caption="Instalación termo eléctrico" >}}
+        caption="Pantalla táctil y digital en modo mantenimiento de temperatura y calentando agua" >}}
 </div>
 
 El termo Fleck me costó 315€ comprándolo en [Bricomart](https://www.bricomart.es/), si lo hubiese comprador en internet ya sea en [Amazon][amazon] o en la tienda de [Droitek](https://www.droitek.com/) me podría haber salido por unos 50€ más barato, unos 265€ con gastos de envío incluido. Desde luego no lo compraría en [El Corte Inglés][elcorteingles] ya que el modelo Fleck en concreto costaba unos 400€ lo que es significativamente superior. Al final por no tener que esperar a que llegase y estar presente en casa para recogerlo lo compré en Bricomart. En [Amazon][amazon] algunos vendedores ofrecen algo mejor precio.
