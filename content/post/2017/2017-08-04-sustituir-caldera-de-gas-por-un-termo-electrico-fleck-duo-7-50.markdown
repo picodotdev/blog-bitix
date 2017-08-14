@@ -3,7 +3,7 @@ pid: 251
 title: "Sustituir caldera de gas por un termo eléctrico Fleck Duo 7 50"
 url: "/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/"
 date: 2017-08-04T18:00:00+02:00
-updated: 2017-08-05T18:00:00+02:00
+updated: 2017-08-14T10:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -101,7 +101,7 @@ Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de
     {{< figure year="2017" pid="251"
         image1="tacos-casquillo-electroliticos.jpg" thumb1="tacos-casquillo-electroliticos-thumb.jpg" title1="Válvula de seguridad por presión, tacos, tornillos y  casquillos electrolíticos"
         image2="plantilla-montaje.jpg" thumb2="plantilla-montaje-thumb.jpg" title2="Plantilla montaje"
-        image3="etiqueta-calificacion-energetica.jpg" thumb3="etiqueta-calificacion-energetica-thumb.jpg" title3="Etiqueta calificación energética"
+        image3="etiqueta-calificacion-energetica.jpg" thumb3="etiqueta-calificacion-energetica-thumb.jpg" title3="Etiqueta de calificación energética"
         caption="Válvula de seguridad por presión, tacos, tornillos, casquillos electrolíticos, plantilla montaje y etiqueta de calificación energética" >}}
 </div>
 
