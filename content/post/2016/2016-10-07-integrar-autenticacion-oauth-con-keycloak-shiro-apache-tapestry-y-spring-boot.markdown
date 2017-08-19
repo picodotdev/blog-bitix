@@ -89,7 +89,7 @@ Si intentamos acceder a la página de usuario o administrador sin estar autentic
         image1="tapestry-error403.png" thumb1="tapestry-error403-thumb.png" title1="Error 403" >}}
 </div>
 
-Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](http://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
+Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1"></iframe>

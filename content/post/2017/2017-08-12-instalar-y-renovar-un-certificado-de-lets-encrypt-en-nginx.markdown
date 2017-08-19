@@ -3,6 +3,7 @@ pid: 252
 title: "Instalar y renovar un certificado de Let's Encrypt en Nginx"
 url: "/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/"
 date: 2017-08-12T11:00:00+02:00
+updated: 2017-08-18T17:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -57,7 +58,7 @@ La siguiente configuración del servidor web nginx redirige todo el tráfico usa
 
 {{< gist picodotdev 386fb0fd31e420b5928ffaf444048c12 "nginx.conf" >}}
 
-Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una [Rasbperry Pi][raspberrypi] accesible desde internet con un dominio de [FreeDNS][freedns]:
+Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una [Raspberry Pi][raspberrypi] accesible desde internet con un dominio de [FreeDNS][freedns]:
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="252"

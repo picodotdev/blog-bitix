@@ -43,7 +43,7 @@ Hay multitud de [clientes para los lenguajes de programación](https://redis.io/
 
 Cada comando de Redis tiene una complejidad de tiempo ejecución, para obtener el mejor rendimiento hay que analizar los datos para almacenarlos en la estructura de datos adecuada de las que ofrece Redis junto con los comandos que son utilizados y su complejidad indicada en la documentación del comando en [notación Big O](https://en.wikipedia.org/wiki/Big_O_notation). Redis solo es uno de los sistemas NoSQL, hay otros conocidos con [MongoDB][mongodb] orientado a documentos o [Cassandra][cassandra] híbrido entre clave-valor y tabular.
 
-Para un conocimiento mucho más detallado de las posibilidades de esta base de datos el libro [Mastering Redis](http://amzn.to/2s9CYfJ) o [Redis in Action](http://amzn.to/2rio3vH) son un buen inicio.
+Para un conocimiento mucho más detallado de las posibilidades de esta base de datos el libro [Mastering Redis](https://amzn.to/2s9CYfJ) o [Redis in Action](https://amzn.to/2rio3vH) son un buen inicio.
 
 <div class="media-amazon" style="text-align: center;">
   <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783988185&linkId=8459459236559fee49442452db7fb5b2"></iframe>

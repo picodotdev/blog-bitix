@@ -171,7 +171,7 @@ El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecut
         caption="Trabajos en primer y segundo plano" >}}
 </div>
 
-Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, [UNIX and Linux System Administration Handbook](http://amzn.to/29vctVP). Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html) y
+Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, [UNIX and Linux System Administration Handbook](https://amzn.to/29vctVP). Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html) y
 el siguiente [manual de Bash](http://bash.cyberciti.biz/guide/Main_Page).
 
 <div class="media-amazon" style="text-align: center;">

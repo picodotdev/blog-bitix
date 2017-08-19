@@ -33,7 +33,7 @@ Podemos medir cualquier cosa que deseemos incluso podemos conocer cuantos usuari
 
 En la sección [Seguimiento de eventos](https://developers.google.com/analytics/devguides/collection/analyticsjs/events) de la documetación de Google Analytics y en el resto de secciónes hay más detalles sobre esta herramienta. Para cualquier cosa que podamos reaccionar mediente un evento con JavaScript podemos medirla con Analytics, sirviéndonos para extraer información valiosa sobre los usuarios que nos permitan medir, entender y luego mejorar la experiencia de usuario de nuestra propia página web.
 
-Como para cualquier otra cosa en la que queramos profundizar una buena forma es con algunos libros específicos dedicados al tema. Los siguientes son dos libros de los [muchos libros sobre Google Analytics](http://amzn.to/2cH8SXR) disponibles en [Amazon][amazon].
+Como para cualquier otra cosa en la que queramos profundizar una buena forma es con algunos libros específicos dedicados al tema. Los siguientes son dos libros de los [muchos libros sobre Google Analytics](https://amzn.to/2cH8SXR) disponibles en [Amazon][amazon].
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596158009&linkId=4babfb60d80236251c0ef398bc3ab757&internal=1"></iframe>

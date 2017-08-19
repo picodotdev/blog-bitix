@@ -60,7 +60,7 @@ Usando la [Raspberry Pi con un disco duro externo o memoria USB][blogbitix-6] ha
 
 Otro inconveniente de la Raspberry Pi es que no dispone de WiFi (si la tercera versión de esta placa) y algunas funcionalidades de GeeXboX se proporcionan cuando la Pi está conectada a internet con lo que perderemos esas funcionalidades o deberemos tener la suerte de tener el router cerca para conectar el cable ethernet, también útil si pretendemos controlar XMBC con nuestro teléfono en vez de con un ratón. Aunque esas opciones proporcionadas al estar conectados a internet tampoco son indispensables.
 
-Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](http://amzn.to/2cN0d6L), una [cargador de 3A](http://amzn.to/2dfFJT7) junto con una [tarjeta SD](http://amzn.to/2cN0SFi).
+Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](https://amzn.to/2cN0d6L), una [cargador de 3A](https://amzn.to/2dfFJT7) junto con una [tarjeta SD](https://amzn.to/2cN0SFi).
 
 <div class="media-amazon" style="text-align: center;">
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1"></iframe>

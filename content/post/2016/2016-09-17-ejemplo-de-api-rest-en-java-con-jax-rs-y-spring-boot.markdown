@@ -40,7 +40,7 @@ Iniciada la aplicación con <code>./gradlew run</code> y con la siguiente comand
 {{< gist picodotdev 76862386194b211fc775b5fb36732bc9 "curl.sh" >}}
 {{< gist picodotdev 76862386194b211fc775b5fb36732bc9 "out.txt" >}}
 
-Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](http://amzn.to/2cxWMRo) y [REST in Practice](http://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
+Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1449358063&linkId=e0cd589f357dfc1c77cfb004e6668fa5&internal=1"></iframe>

@@ -16,7 +16,7 @@ series: ["desempaquetado"]
 {{< links >}}
 {{< postslinks >}}
 
-Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone [Amazon][amazon] en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de [Mannesmann modelo M29085](http://amzn.to/2w6YVem). También necesitaba unas bandejas para la cocina y salón.
+Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone [Amazon][amazon] en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de [Mannesmann modelo M29085](https://amzn.to/2w6YVem). También necesitaba unas bandejas para la cocina y salón.
 
 ### Maletín herramientas Mannesmann M29085
 
@@ -66,7 +66,7 @@ Las puntas para atornillar se usan con un adaptador y las llaves de vaso se pued
 
 ### Bandejas melamina Balvi
 
-También necesitaba unas bandejas para llevar platos, cubiertos, vaso, pan o el postre de la cocina al salón y viceversa, de las varias que busqué me gustaron especialmente estas [bandejas de melamina](http://amzn.to/2vestKF). Su diseño, tamaño y ya viéndolas y palpándolas una vez las he recibido aún más. Están fabricadas en melamina que es un material plástico duro, rígido y de aspecto resistente si se las trata adecuadamente aguantan los golpes que no sean fuertes, también son resistentes al calor y no se deforman o comban cosa que ocurre en otros materiales plásticos y la parte trasera tiene unas lineas de refuerzo para dar mayor consistencia a la bandeja. Tienen un tamaño de 45,8 centímetros de ancho por 32,5 cm de alto y unos 2,5 cm sobre la mesa. Otro aspecto importante es que son fáciles de limpiar y son apilables. Tiene 4 diseños diferentes y en varios colores, las fotos que he sacado no le hacen justicia a los colores de las bandejas, en la realidad los colores son más intensos y más parecidos a las fotos de los artículos en Amazon.
+También necesitaba unas bandejas para llevar platos, cubiertos, vaso, pan o el postre de la cocina al salón y viceversa, de las varias que busqué me gustaron especialmente estas [bandejas de melamina](https://amzn.to/2vestKF). Su diseño, tamaño y ya viéndolas y palpándolas una vez las he recibido aún más. Están fabricadas en melamina que es un material plástico duro, rígido y de aspecto resistente si se las trata adecuadamente aguantan los golpes que no sean fuertes, también son resistentes al calor y no se deforman o comban cosa que ocurre en otros materiales plásticos y la parte trasera tiene unas lineas de refuerzo para dar mayor consistencia a la bandeja. Tienen un tamaño de 45,8 centímetros de ancho por 32,5 cm de alto y unos 2,5 cm sobre la mesa. Otro aspecto importante es que son fáciles de limpiar y son apilables. Tiene 4 diseños diferentes y en varios colores, las fotos que he sacado no le hacen justicia a los colores de las bandejas, en la realidad los colores son más intensos y más parecidos a las fotos de los artículos en Amazon.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="249"

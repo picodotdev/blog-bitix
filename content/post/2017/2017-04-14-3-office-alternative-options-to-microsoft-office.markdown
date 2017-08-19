@@ -17,7 +17,7 @@ summary: "Microsoft Office is the office suite with a great margin of difference
 
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
-In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125€ for [home and students](http://amzn.to/2bg4CR2) and about 250€ for [home and business](http://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
+In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125€ for [home and students](https://amzn.to/2bg4CR2) and about 250€ for [home and business](https://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HC6QQQM&linkId=762b16ff0b7f340317343dc4a24097ab&internal=1"></iframe>

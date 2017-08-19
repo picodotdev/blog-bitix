@@ -18,13 +18,13 @@ summary: "Los portales ofrecen una solución para los casos de uso de integraci�
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="apache-pluto.png" title2="Apache Pluto" width2="300" image3="java.svg" title3="Java" width3="200"  >}}
 
-La API ofrecida de los _portlets_ se puede considerar de bajo nivel y para facilitar la tarea de su programación es posible emplear un _framework_ al igual que ocurre al programar una aplicación web con los _servlets_ utilizando el lenguaje Java. Aún así es importante conocer los conceptos subyacentes de los _portlets_ que están explicados de forma didáctica en el libro [Portlets in Action](http://amzn.to/2tzpbjL).
+La API ofrecida de los _portlets_ se puede considerar de bajo nivel y para facilitar la tarea de su programación es posible emplear un _framework_ al igual que ocurre al programar una aplicación web con los _servlets_ utilizando el lenguaje Java. Aún así es importante conocer los conceptos subyacentes de los _portlets_ que están explicados de forma didáctica en el libro [Portlets in Action](https://amzn.to/2tzpbjL).
 
 Explicado como [crear un _portlet_ directamente con su API][blogbitix-243] usaré el mismo ejemplo pero usando el _framework_ [Apache Tapestry][tapestry] que también es usable para realizar aplicaciones web pero para el que existe un [módulo para desarrollar _portlets_](https://github.com/got5/tapestry5-portlet) y una pequeña [documentación](http://got5.github.io/tapestry5-portlet/).
 
 [Liferay][liferay] 7 debe usar algún mecanismo especial para cargar las clases no compatible con Tapestry por ello en este ejemplo usaré el contenedor de _portlets_ [Apache Pluto][apache-pluto]. Apache Pluto es la implementación de referencia para la API de los _portlets_, inicia el servidor significativamente más rápido que Liferay aunque no incorpora tantos _portlets_ listos para usar.
 
-El libro [Portlets in Action](http://amzn.to/2tzpbjL) define portal de la siguiente manera traducida al español:
+El libro [Portlets in Action](https://amzn.to/2tzpbjL) define portal de la siguiente manera traducida al español:
 
 > Un portal es una colección de miniaplicaciones web llamadas _portlets_. Un portal soporta características como personalización, agregación de contenido o autenticación. Los _portlets_ actúan como aplicaciones web dentro del portal mostradas en ventanas donde cada ventana en una página del portal representa un _portlet_. El portal agrega la información y proporciona una vista consolidada al usuario.
 
@@ -71,7 +71,7 @@ Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra e
         caption="Porlet con Apache Tapestry en Apache Pluto" >}}
 </div>
 
-Para conocer más sobre los _portlets_ el libro [Portlets in Action](http://amzn.to/2tzpbjL) es una buena fuente de documentación.
+Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amzn.to/2tzpbjL) es una buena fuente de documentación.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
