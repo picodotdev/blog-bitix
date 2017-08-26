@@ -24,13 +24,13 @@
             </ul>
             {{ end }}
             <h3>Etiquetas</h3>
-            <ul class="list-inline">
+            <ul class="tags">
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
               <li><a href="tags/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
             {{ end }}
             </ul>
             <h3>Series</h3>
-            <ul class="list-inline">
+            <ul class="tags">
             {{ range $name, $taxonomy := .Site.Taxonomies.series }}
               <li><a href="series/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
             {{ end }}

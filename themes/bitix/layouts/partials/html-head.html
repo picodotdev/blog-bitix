@@ -21,13 +21,10 @@
   <!-- CSS -->
   <!-- Fonts -->
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Serif:400,700italic,700,400italic">
-  <!-- AdSense Search -->
-  <link rel="stylesheet" type="text/css" href="//www.google.com/cse/api/branding.css">
   <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-  <!-- Bootstrap Image Gallery -->
-  <link rel="stylesheet" href="assets/libs/Gallery-2.17.0/css/blueimp-gallery.min.css">
-  <link rel="stylesheet" href="assets/libs/Bootstrap-Image-Gallery-3.3.6/css/bootstrap-image-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-4.0.0-beta/css/bootstrap.min.css">
+  <!-- Gallery -->
+  <link rel="stylesheet" href="assets/libs/Gallery-2.25.2/css/blueimp-gallery.min.css">
   <!-- Theme -->
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
@@ -47,8 +44,10 @@
 
     ga('create', '{{ .Site.Params.analytics.trackingid }}', '{{ .Site.Params.analytics.domain }}');
     ga('send', 'pageview');
-  </script>
-  <script type="text/javascript" src="assets/libs/require.min.js" data-main="assets/js/main" async></script>
+  </script>  
+  <script type="text/javascript" src="assets/js/vendor.bundle.js" async></script>
+  <script type="text/javascript" src="assets/js/app-theme.bundle.js" async></script>
+  <script type="text/javascript" src="assets/js/app.bundle.js" async></script>
 
   <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5920c4ce1bd0670011e06acd&product=inline-share-buttons" async="async"></script>
   <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5920c4ce1bd0670011e06acd&product=custom-share-buttons" async="async"></script>

@@ -7,6 +7,6 @@ mkdir deploy
 cd deploy
 git clone -b gh-pages git@github.com:picotdev/blog-bitix.git
 mv blog-bitix/* .
-git config --global user.email "pico.dev@gmail.com"
-git config --global user.name "pico.dev"
+git config --local user.email "pico.dev@gmail.com"
+git config --local user.name "pico.dev"
 cd ..

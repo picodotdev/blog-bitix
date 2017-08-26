@@ -1,7 +1,5 @@
-<nav>
-  <ul class="nav nav-pills">
-    {{ range .Site.Menus.header }}
-      <li role="presentation"><a href="{{ .URL }}">{{ .Name }}</a></li>
-    {{end}}
-  </ul>
+<nav class="nav nav-pills nav-fill">
+  {{ range .Site.Menus.header }}
+    <a href="{{ .URL }}" class="nav-item nav-link">{{ .Name }}</a>
+  {{end}}
 </nav>

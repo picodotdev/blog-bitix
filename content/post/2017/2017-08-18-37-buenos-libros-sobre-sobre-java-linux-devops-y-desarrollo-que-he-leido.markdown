@@ -44,7 +44,7 @@ Estos son los que me ha parecido que están bastante bien, algunos he leído de 
 
 ### Java 9 Modularity
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491954167&linkId=a4ac0f67b92d5e64b2f115dec0ed246c"></iframe>
 </div>
 
@@ -56,7 +56,7 @@ Java 9 será publicado en septiembre y ya tengo ideados unos cuantos artículos 
 
 ### Java Generics and Collections
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596527756&linkId=7392be28d1ec52d1dca41e10fc216fc1"></iframe>
 </div>
 
@@ -68,7 +68,7 @@ El concepto no es difícil pero dominar las declaraciones de los _generics_ no l
 
 ### Cloud Native Java
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B074R4B7LY&linkId=cb4b120dd4eac60796de0ec4796fbf8e"></iframe>
 </div>
 
@@ -78,7 +78,7 @@ Algunas librerías como [Spring Boot][spring-boot] proporciona a las aplicacione
 
 ### Java The Good Parts
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596803737&linkId=c8d9a7967ea7439451a570b1f2659e9d"></iframe>
 </div>
 
@@ -88,7 +88,7 @@ Todas estas características se comentan detalladamente en [Java The Good Parts]
 
 ### Building Maintainable Software Java Edition
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491953527&linkId=6a378c8faf06d2e362cdeb9226b925cf"></iframe>
 </div>
 
@@ -96,7 +96,7 @@ Hay conocimiento que es independiente del lenguaje que se utilice como tratar de
 
 ### The Well-Grounded Java Developer
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290068&linkId=1b305765190419f6de43b75335e43746"></iframe>
 </div>
 
@@ -104,7 +104,7 @@ Hay conocimiento que es independiente del lenguaje que se utilice como tratar de
 
 ### Spring Boot in Action
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=990ac035faf92b423b7edd4e70377b89"></iframe>
 </div>
 
@@ -118,7 +118,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 
 ### Gradle in Action
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291307&linkId=86af7295a55368699341bfbe2ae7040e"></iframe>
 </div>
 
@@ -132,7 +132,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 
 ### Java Testing with Spock
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=ac77f9a86125173cda19c2c4949ce0a3"></iframe>
 </div>
 
@@ -140,7 +140,7 @@ Las pruebas automatizadas son indispensables para escribir código con menos err
 
 ### Portlets in Action
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=e954596f73982d6fc4c7338ffb4225b7"></iframe>
 </div>
 
@@ -153,7 +153,7 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 
 ### Learning JavaScript
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=380952682c6e61c533807cd32a6dd038"></iframe>
 </div>
 
@@ -163,7 +163,7 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 
 ### The Book of CSS3
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275803&linkId=74be128029bfbd8f789af03a1b673aba"></iframe>
 </div>
 
@@ -171,7 +171,7 @@ Al igual que JavaScript el denostado CSS también a veces lo es por el mismo mot
 
 ### Learning RabbitMQ y Mastering RabbitMQ
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783984562&linkId=bffff9170b71717eb95f6be0a95274db"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783981520&linkId=4cce33b79c609e875e6fb2a8b3b9ded2"></iframe>
 </div>
@@ -182,7 +182,7 @@ Los libros [Learning RabbitMQ](https://amzn.to/2xbdSN2) y [Mastering RabbitMQ](h
 
 ### MongoDB in Action
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=497acae6ed525c559c046c38d3ed28c0"></iframe>
 </div>
 
@@ -193,7 +193,7 @@ La misión de las bases de datos es almacenar información para una posterior co
 
 ### SQL Antipatterns
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1934356557&linkId=f6f8cc4cba1c24fdec9a4a47503e738d"></iframe>
 </div>
 
@@ -201,7 +201,7 @@ Aún con la popularización de las bases de datos NoSQL las bases de datos relac
 
 ### Beginning SQL Queries y Learning PostgreSQL
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484219546&linkId=6c88c8326d867c036266f6483f41477d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783989181&linkId=0b62f915f94acd860485c75946fa0392"></iframe>
 </div>
@@ -212,7 +212,7 @@ Los libros [Beginning SQL Queries](https://amzn.to/2xbh62O) y [Learning PostgreS
 
 ### CORS in Action
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=161729182X&linkId=a1fec0248175841014bd8986c63eb82e"></iframe>
 </div>
 
@@ -220,7 +220,7 @@ _Cross-Origin Resource Sharing_ permite a sitios distintos del origen de la pág
 
 ### Microservice Architecture
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491956259&linkId=57e9f172013ca12309e2ca2b5fa19fc2"></iframe>
 </div>
 
@@ -228,7 +228,7 @@ El ámbito _cloud_ y una nueva forma de arquitectura para las aplicaciones han o
 
 ### Learning HTTP/2
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491962445&linkId=1a89f93cde97f31c639b38ca79811040"></iframe>
 </div>
 
@@ -238,7 +238,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 
 ### Mastering OAuth 2.0
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=c62cfbc31fdea33038fa6650c9bf9686"></iframe>
 </div>
 
@@ -251,7 +251,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 
 ### Git: Mastering Version Control
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MXIFY5E&linkId=f6eea55958b2783765b4bda371dd3e04"></iframe>
 </div>
 
@@ -259,7 +259,7 @@ He leído varios libros sobre [Git][git], muchos empiezan explicando como es la 
 
 ### GitLab Cookbook
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783986840&linkId=153454430c956fe5335fe123ab829a40"></iframe>
 </div>
 
@@ -267,7 +267,7 @@ Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una vers
 
 ### Docker in Action y The DevOps 2.1 Toolkit
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=f257277b2f9112d7cd77aa1147bafd1d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=f250891fe3d29d340f3fd3f82af96671"></iframe>
 </div>
@@ -278,7 +278,7 @@ Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una vers
 
 ### Ansible Up and Running y Implementing DevOps with Ansible 2
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491979801&linkId=35c25b05f8577bf1bf72e0797ca47367"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1787120538&linkId=2e83b442739bb1c91a6637a6f3d50a6c"></iframe>
 </div>
@@ -291,7 +291,7 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 ### UNIX and Linux System Administration Handbook, Linux Administration A Beginner’s Guide y How Linux Works
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0134277554&linkId=7c91fcafae6964872c27d9bf3f68a9f1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0071845364&linkId=a7a84bf9b3f731a5b2e4cffba08c00b4"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275676&linkId=09f1c68e67a12909a5af564fc43cf8d3"></iframe>
@@ -301,7 +301,7 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 ### Amazon Web Services in Action y Amazon Web Services For Dummies
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292885&linkId=88093372487f3f14280848b9bec59ef8"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1118571835&linkId=03661313e03334c617b0ec833c2e2eb3"></iframe>
 </div>
@@ -322,7 +322,7 @@ Aun es la [edición del 2015](https://dzone.com/guides/the-java-ecosystem-2015-e
 
 ### The daemon, the GNU and the penguin
 
-<div class="media-amazon pull-right">
+<div class="media-amazon float-right">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=097903423X&linkId=cf2cd5a87906b63405d49e3f74dc59a3"></iframe>
 </div>
 
