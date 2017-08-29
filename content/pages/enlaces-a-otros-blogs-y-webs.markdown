@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2015-09-22T19:00:00+01:00
+updated: 2017-08-27T12:00:00+02:00
 comments: true
 sharing: true
 footer: true
@@ -109,7 +109,8 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Bonilista](http://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
 * [Justifica tu respuesta](http://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
 * [Ciencia de sofá](http://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
-* [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.  
+* [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
+* [La huerta de Toni](http://www.lahuertinadetoni.es/): ¿te gustan las plantas? ¿tienes huerto? ¿quieres plantar un árbol? Este blog trata sobre la jardinería y agricultura con artículos y vídeos muy interesantes incluye consejos y explicaciones sobre estos temas.
 
 Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses...
 pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de feeds del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.
