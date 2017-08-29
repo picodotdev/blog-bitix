@@ -8,8 +8,8 @@ module.exports = {
 		'app': './static/assets/js/app.js'
 	},
     output: {
-        path: __dirname,
-        filename: 'static/assets/js/[name].bundle.js'
+        path: path.resolve(__dirname, 'static/assets/js/bundle/'),
+        filename: '[name].bundle.js'
     },
     resolve: {
 		extensions: ['.js'],
