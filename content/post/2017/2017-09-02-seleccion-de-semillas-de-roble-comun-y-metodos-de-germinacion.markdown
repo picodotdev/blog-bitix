@@ -3,6 +3,7 @@ pid: 256
 title: "Selección de semillas de roble común y métodos de germinación"
 url: "/2017/09/seleccion-de-semillas-de-roble-comun-y-metodos-de-germinacion/"
 date: 2017-09-02T11:00:00+02:00
+updated: 2017-09-02T12:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -40,6 +41,8 @@ Para obtener una mayor tasa de éxito en la germinación hay que averiguar cuale
 </div>
 
 Si la semilla todavía tiene alguna parte de color verde en unos días adquiere el color pardo. Las semillas que tiene un color marrón ya claro se trata de una de la temporada anterior, hay que recolectar las semillas de la temporada actual ya que las de la temporada anterior pierden de su poder de germinación. Tiene que estar sin agujeros que estén causados por algún bicho o grietas para que no estén podridas.
+
+En la foto de comparación de bellotas la de la izquierda es una bellota de gran calibre y las más adecuadas para seleccionar, la del centro es más pequeña pero también es posible hacerla germinar, la de la derecha es de una temporada anterior que se puede apreciar por su color marrón claro y no es adecuada.
 
 La época que los robles comunes generan las semillas son a finales de septiembre o principios de octubre para ejemplares jóvenes aunque si se trata de un ejemplar grande y desarrollado como el de la foto anterior las produce a mediados de agosto y a finales de este mes ya empiezan a caer al suelo. Un ejemplar grande genera una gran cantidad de semillas y de buen tamaño y buen calibre, muchas más de las que podamos necesitar para plantar una buena cantidad de robles, las semillas más grandes son las más adecuadas ya que tienen más energía para desarrollar el plantón inicial. Esta muestra de bellotas que he recogido no son ni posiblemente el 10% de las bellotas del ejemplar de roble anterior.
 
