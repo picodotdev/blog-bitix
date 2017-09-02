@@ -31,6 +31,10 @@ draft: true
     <iframe src="&internal=1"></iframe>
 </div>
 
+<div class="media media-video" style="text-align: center;">
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/FTfAP29TjUk?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+
 {{< gist picodotdev id "file" >}}
 
 {{% asciinema id="" caption="" %}}
