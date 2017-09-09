@@ -3,7 +3,7 @@ pid: 256
 title: "Selección de semillas de roble común y métodos de germinación"
 url: "/2017/09/seleccion-de-semillas-de-roble-comun-y-metodos-de-germinacion/"
 date: 2017-09-02T11:00:00+02:00
-updated: 2017-09-02T12:00:00+02:00
+updated: 2017-09-03T00:20:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -56,7 +56,7 @@ La época que los robles comunes generan las semillas son a finales de septiembr
 
 ### Germinación
 
-Para forzar la germinación he leído varios métodos comentado en algunas páginas de internet. Uno de ellos consiste en envolver las semillas con un papel de cocina y dejarlas humedecidas de forma constante (no sumergidas) durante unos 10-15 días en un vaso. Otro método similar es en vez de usar papel de cocina usar algodón. El tercero es usar una bolsa de plástico también manteniéndola humedecida de forma constante.
+Para forzar la germinación he leído varios métodos comentado en algunas páginas de internet. Uno de ellos consiste en envolver las semillas con un papel de cocina y dejarlas humedecidas de forma constante (no sumergidas) durante unos 10-15 días en un vaso. Otro método similar es en vez de usar papel de cocina usar algodón. El tercero es usar una bolsa de plástico cerrada también manteniéndola humedecida de forma constante. En los tres casos proporcionado oscuridad a las semillas.
 
 El método que mejor me ha resultado a mí ha sido el de la bolsa de plástico, con mayor tasa de éxito de germinación. Además, me parece el más práctico para intentar hacer germinar a más de media docena de bellotas. Para muchas bellotas se gasta mucho papel de cocina o algodón.
 
@@ -97,7 +97,7 @@ Una vez plantadas no hace falta regarlas mucho una vez a la semana sin demasiada
 </div>
 -->
 
-No soy experto en este tema, lo que comento aquí espero que sea lo adecuado para que los robles que plante crezcan y sobrevivan al primer año de vida y posteriores. Si también vas a plantar árboles elige con preferencia aquellas especies que en tu zona sean autóctonas.
+En realidad se muy poco sobre en este tema, lo que comento aquí espero que sea lo adecuado para que los robles que plante crezcan y sobrevivan al primer año de vida y posteriores. Si también vas a plantar árboles elige con preferencia aquellas especies que en tu zona sean autóctonas.
 
 También hay que vigilar los plantones para que no les crezcan hongos o se generen bichos en su tierra pero sobre todo... tener paciencia ya que su desarrollo y crecimiento es lento.
 
