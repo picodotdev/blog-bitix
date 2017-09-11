@@ -1,8 +1,10 @@
 ---
 pid: 258
-title: "Los tipos de referencias débiles soft, weak y phantom a objetos en Java"
-url: "/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-a-objetos-en-java/"
+title: "Los tipos de referencias débiles soft, weak y phantom en Java"
+url: "/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/"
+aliases: ["/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-a-objetos-en-java/"]
 date: 2017-09-10T11:00:00+02:00
+updated: 2017-09-11T01:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -20,19 +22,26 @@ Cuando un objeto ya no es alcanzable a través de ninguna referencia directa o c
 
 En Java en realidad hay 4 tipos de referencias a objetos, además de las fuertes hay otras 3 más débiles que no impiden al recolector de basura reclamar el objeto referenciado. Es raro tener la necesidad de usar otra que no sean las fuertes o _strong_ pero es interesante conocerlas por si en algún caso nos resultase de utilidad. Los otros 3 tipos de referencias denominadas débiles son [SoftReference](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/SoftReference.html), [WeakReference](http://docs.oracle.com/javase/8/docs/api/java/lang/ref/WeakReference.html) y [PhantomReference](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/PhantomReference.html) que extienden de [Reference](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/Reference.html). Usar una de estas otras 3 referencias es muy simple basta usar el constructor de cada tipo de referencia.
 
+Después de la llamada de varias veces al recolector de basura en este caso de forma explícita con el método [System.gc()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--) las referencias son encoladas.
+
 {{< gist picodotdev 890cbf18d9db8ce7c086648e3ee8a5f8 "Main.java" >}}
+{{< gist picodotdev 890cbf18d9db8ce7c086648e3ee8a5f8 "System.out" >}}
 
 El objeto de una referencia _soft_ es recolectable a discreción del recolector de basura ante necesidades de memoria, el objeto de una referencias _weak_ es recolectable si solo es alcanzable por referencias _weak_ y las referencias _phantom_ son una mejor y más flexible alternativa al mecanismo de finalización de los objetos.
 
+Algunos usos prácticos de las referencias _soft_ y _weak_ son como caches de datos posiblemente usando la clase [WeakHashMap](http://docs.oracle.com/javase/8/docs/api/java/util/WeakHashMap.html), en el caso de las referencias _phantom_ como mecanismo alternativo a la finalización de objetos incorporada en los objetos desde la versión inicial de Java.
+
 El mecanismo de finalización de los objetos Java con el método [finalize](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#finalize--) que puede ser implementado por cualquier clase presenta los siguientes problemas:
 
-* La llamada al método _finalize_ es impredecible ya que depende del recolector de basura.
+* La llamada al método _finalize_ es impredecible ya que depende de cuando del recolector de basura reclame el objeto.
 * No hay garantía de que el método _finalize_ sea llamado ya que puede perdurar durante toda la vida de la JVM.
 * Una referencia fuerte al objeto puede ser revivida en el método _finalize_ si se implementa de forma inadecuada.
 
-En los constructores de las referencias débiles se puede indicar un [ReferenceQueue](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/ReferenceQueue.html) en el que se encolará la referencia cuando el objeto al referencia cambia su alcanzabilidad. Este mecanismo de notificación es utilizado con las referencias _phantom_ para proporcionar el mecanismo de finalización alternativo. En la [documentación javadoc](https://docs.oracle.com/javase/8/docs/) con la descripción del paquete de las referencias se comenta este [proceso de notificación](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/package-summary.html). Las referencias son encoladas cuando el recolector de basura determina que son solo alcanzables por referencias _soft_, _weak_ o _phantom_. 
+En los constructores de las referencias débiles se puede indicar un [ReferenceQueue](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/ReferenceQueue.html) en el que se encolará la referencia cuando el objeto al que referencia cambia su alcanzabilidad. Este mecanismo de notificación es utilizado con las referencias _phantom_ para proporcionar el mecanismo de finalización alternativo. En la [documentación javadoc](https://docs.oracle.com/javase/8/docs/) con la descripción del paquete de las referencias se comenta este [proceso de notificación](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/package-summary.html). Las referencias son encoladas cuando el recolector de basura determina que son solo alcanzables por referencias _soft_, _weak_ o _phantom_. 
 
-En el artículo [Replacing Finalizers With Phantom References](http://resources.ej-technologies.com/jprofiler/help/doc/index.html) se explica junto con su código como implementar el mecanismo alternativo al método _finalize_.
+En el artículo [Replacing Finalizers With Phantom References](http://resources.ej-technologies.com/jprofiler/help/doc/helptopics/cpu/finalizers.html) se explica junto con su código como implementar el mecanismo alternativo al método _finalize_. La librería [Guava] proporciona las clases [FinalizablePhantomReference](https://google.github.io/guava/releases/23.0/api/docs/com/google/common/base/FinalizablePhantomReference.html) y [FinalizableReferenceQueue](https://google.github.io/guava/releases/23.0/api/docs/com/google/common/base/FinalizableReferenceQueue.html) con una forma un poco más sencilla de usar las referencias _phantom_, en esa documentación también hay un ejemplo de código con su uso para liberar un recurso (_ServerSocket_) asociado a un objeto (_MyServer_).
+
+{{< gist picodotdev 890cbf18d9db8ce7c086648e3ee8a5f8 "MyServer.java" >}}
 
 Las referencias débiles añaden una indirección a la referencia que contienen, usando el método [get()](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/Reference.html#get--) se accede al objeto referenciado pero hay que tener en en cuenta que el método _get_ puede devolver un _null_ ya que no impiden al recolector de basura reclamar el objeto referenciado, en el caso de las _PhantomReferences_ el método _get_ siempre devuelve _null_ para evitar que la referencia a un objeto sea revivida.
 
