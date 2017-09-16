@@ -1,0 +1,49 @@
+---
+pid: 261
+title: "Crear anotaciones de Javadoc personalizadas con taglets"
+url: "/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/"
+date: 2017-09-16T10:00:00+02:00
+language: "es"
+sharing: true
+comments: true
+promoted: false
+tags: ["blog-stack", "java", planeta-codigo", "programacion"]
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+
+[La herramienta de documentación es Javadoc de Java][blogbitix-259] permite a partir del código fuente de un programa o librería generar un conjunto de documentos en formato HTML enlazados entre si consultables con un navegador web y accesibles desde internet si son accesibles con un servidor web. La documentación se genera a partir de las clases y métodos del código fuente y también a partir de los comentarios de las clases y métodos.
+
+En los comentarios se pueden incluir anotaciones que enriquecen la documentación, por ejemplo, para indicar el autor o en qué versión se incluyó una clase o método, incluir enlaces, ... en el propio JDK ya se incluye un amplio [conjunto completo de anotaciones](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#javadoctags). Pero además de usar las anotaciones ya incorporados por defecto en la herramienta también es posible añadir nuevos propios, escribiendo un _taglet_. Con la [API de los _taglets_](https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/taglet/overview.html) basta implementar una clase que implemente la interfaz [Taglet](https://docs.oracle.com/javase/8/docs/jdk/api/javadoc/taglet/com/sun/tools/doclets/Taglet.html).
+
+La clase tiene varios métodos uno que indica el nombre único del _taglet_ que identificará la anotación en los comentarios de Javadoc, varios métodos para indicar en que localizaciones es usable y dos métodos que generan el contenido a incluir en el HTML resultante. Las clases [Tag](https://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/com/sun/javadoc/Tag.html) que recibe el método [Taglet.toString()](http://docs.oracle.com/javase/8/docs/jdk/api/javadoc/taglet/com/sun/tools/doclets/Taglet.html#toString-com.sun.javadoc.Tag-) o [ParamTag](https://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/com/sun/javadoc/ParamTag.html) permite obtener diversa información utilizable para generar el contenido apropiado.
+
+Los _taglets_ pueden ser de tipo bloque con su propia entidad o ser embebidos en linea en un comentario del _javadoc_. En ejemplo de _taglet_ de bloque siguiente consiste en permitir incluir elementos que quedan por hacer en el código, una anotación _todo_. Con esta anotación el desarrollador incluye un comentario descriptivo de cuales son las cosas pendientes para un futuro. El código del _taglet_ sería el siguiente.
+
+{{< gist picodotdev 6a669ccc50047e8e9394d593f079ac9d "TodoTaglet.java" >}}
+{{< gist picodotdev 6a669ccc50047e8e9394d593f079ac9d "Main.java" >}}}
+
+Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su ubicación al generar la documentación con la herramienta _javadoc_. Hay que indicar varias opciones (_tagletPath_ y _taglets_) que también se usarían como parámetros empleando directamente la herramienta _javadoc_, los comandos serían los siguientes usando [Gradle][gradle]. También hay que incluir de forma explícita como dependencia la librería _tools.jar_ ubicado en el JDK.
+
+{{< gist picodotdev 6a669ccc50047e8e9394d593f079ac9d "build.gradle" >}}}
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="261"
+        image1="javadoc-taglet.png" thumb1="javadoc-taglet-thumb.png" title1="Contenido del taglet todo en el javadoc"
+        caption="Contenido del taglet todo en el javadoc" >}}
+</div>
+
+{{% code git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" %}}
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Javadoc Technology](http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html)
+* [Taglet Overview](http://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/taglet/overview.html)
+{{% /reference %}}
+
+{{% /post %}}
