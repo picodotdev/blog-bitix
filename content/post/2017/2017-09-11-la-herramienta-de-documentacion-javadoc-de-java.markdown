@@ -28,7 +28,7 @@ Se genera a partir del propio código fuente de las clases con los comentarios i
         caption="Documentación Javadoc del JDK" >}}
 </div>
 
-La documentación en el código fuente se incluye en comentarios que preceden una clase o método, además, con anotaciones se pueden documentar los parámetros y el valor de retorno. Se pueden incluir etiquetas HTML junto con algunas de las anotaciones o _doclets_/_taglets_, algunas [anotaciones Javadoc incluidas en el JDK](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#javadoctags) son las siguientes pero también se pueden desarrollar _doclets_/_taglets_ propios.
+La documentación en el código fuente se incluye en comentarios que preceden una clase o método, además, con anotaciones se pueden documentar los parámetros y el valor de retorno. Se pueden incluir etiquetas HTML junto con algunas de las anotaciones o _doclets_/_taglets_, algunas [anotaciones Javadoc incluidas en el JDK](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#javadoctags) son las siguientes pero también se pueden [desarrollar _doclets_/_taglets_ propios][blogbitix-261] o [personalizar los estilos de la documentación][blogbitix-262] para cambiar el contenido, información incluida o adaptar los estilos a unos según los colores de la organización.
 
 * _@author_: indica el autor de la clase o método.
 * _{@code}_: incluye en el comentario un trozo de código que se formatea de forma especial.
