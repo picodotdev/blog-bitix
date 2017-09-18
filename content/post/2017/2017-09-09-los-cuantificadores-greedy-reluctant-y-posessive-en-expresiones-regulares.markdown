@@ -1,8 +1,8 @@
 ---
 pid: 257
 title: "Los cuantificadores greedy, reluctant y possessive en expresiones regulares"
-url: "/2017/09/los-cuantificadores-greedy-reluctant-y-posessive-en-expresiones-regulares/"
-alias: ["/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/"]
+url: "/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/"
+alias: ["/2017/09/los-cuantificadores-greedy-reluctant-y-posessive-en-expresiones-regulares/"]
 date: 2017-09-09T11:30:00+02:00
 language: "es"
 sharing: true
