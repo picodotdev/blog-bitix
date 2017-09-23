@@ -77,7 +77,7 @@ Los módulos permiten definir a cada librería los paquetes de clases que export
 
 {{< gist picodotdev 9f69c721f4186e3eb005a6cfebdf6dfd "java-list-modules.sh" >}}
 
-La definición de un módulo se realiza con un nuevo archivo de código fuente de nombre _module-info.java_. Con la palabra reservada _requires_ y una línea por paquete se definen qué paquetes requiere el módulo, con la palabra reservada _exports_ se define que paquetes del módulo se exportan y son visibles por algún otro módulo que lo requiera. También se han añadido las palabras reservadas _provides_ y _uses_ para proporcionar y usar definiciones de servicios que con anterioridad se realizaba en el archivo _XXX_ como muestro en el ejemplo [artículo service loader][blogbitix-94]. También se puede hacer que la directiva _requires_ sea de forma transitiva para que el módulo que lo use pueda usar ese paquete sin requerirlo de forma explícita, la directiva _opens_ permite hacer uso de reflectividad usando el método [setAccesible](https://docs.oracle.com/javase/9/docs/api/java/lang/reflect/AccessibleObject.html).
+La definición de un módulo se realiza con un nuevo archivo de código fuente de nombre _module-info.java_. Con la palabra reservada _requires_ y una línea por paquete se definen qué paquetes requiere el módulo, con la palabra reservada _exports_ se define que paquetes del módulo se exportan y son visibles por algún otro módulo que lo requiera. También se han añadido las palabras reservadas _provides_ y _uses_ para proporcionar y usar definiciones de servicios que con anterioridad se realizaba en archivos ubicados en _META-INF/services_ como muestro en el ejemplo [Aplicación Java extensible con la clase ServiceLoader][blogbitix-94]. También se puede hacer que la directiva _requires_ sea de forma transitiva para que el módulo que lo use pueda usar ese paquete sin requerirlo de forma explícita, la directiva _opens_ permite hacer uso de reflectividad usando el método [setAccesible](https://docs.oracle.com/javase/9/docs/api/java/lang/reflect/AccessibleObject.html).
 
 Dado que la transición hacia el uso de los módulos puede generar problemas de compatibilidad con aplicaciones existentes se han añadido algunos parámetros para la máquina virtual en el comando _java_ e incluso en el caso más grave desactivar completamente el sistema de módulos, aunque lógicamente esto está desaconsejado. En la [guía de migración a Java 9](http://docs.oracle.com/javase/9/migrate/toc.htm) están detallados los aspectos a tener en cuenta en la migración de una versión anterior a Java 9.
 
@@ -91,6 +91,15 @@ Este es el típico ejemplo _Hola Mundo_ con Java 9 en que que muestro como compi
     {{< figure year="2017" pid="263"
         image1="java-9-helloworld.png" thumb1="java-9-helloworld-thumb.png" title1="Hola Mundo con Java 9"
         caption="Hola Mundo con Java 9" >}}
+</div>
+
+El comando _jdeps_ muestra las dependencias de los módulos muy útil para tareas de análisis o depuración.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="263"
+        image1="jdeps.png" thumb1="jdeps-thumb.png" title1="Dependencias del ejemplo Hola Mundo con Java 9"
+        image2="jdeps-java-sql.png" thumb2="jdeps-java-sql-thumb.png" title2="Dependencias del módulo java.sql"
+        caption="Análisis de dependencais con jdeps" >}}
 </div>
 
 {{% code git="blog-ejemplos/tree/master/Java9" command="./java.sh" %}}
