@@ -1,0 +1,106 @@
+---
+pid: 263
+title: "Novedades y nuevas características de Java 9, los módulos"
+url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
+date: 2017-09-23T12:00:00+02:00
+language: "es"
+sharing: true
+comments: true
+promoted: false
+tags: ["blog-stack", "java","planeta-codigo", "programacion"]
+series: ["java-platform"]
+summary: "Si en Java 8 la característica más destacada fue la incorporación al lenguaje de las _lambdas_ y los _streams_ en Java 9 la característica que más destaca es la definición de los módulos que proporciona varios importantes beneficios."
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+
+Después de unos cuantos aplazamientos de fechas finalmente ha sido publicado el 21 de septiembre de 2017 la [versión 9 del lenguaje y plataforma Java](http://www.oracle.com/technetwork/java/javase/downloads/index.html), tres años después de las también importantes [novedades y nuevas características de Java 8][blogbitix-17]. Al mismo tiempo se ha publicado versión de [Java EE 8](http://www.oracle.com/technetwork/java/javaee/downloads/index.html).
+
+La incorporación de los módulos a la plataforma con Java 9 es una de las modificaciones más importantes en esta versión mayor del lenguaje. Aún siendo una de las características más destacadas y que ha eclipsado a otras modificaciones más allá de los módulos también importantes.
+
+* [What’s New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm)
+
+Los módulos van a mejorar una de las deficiencias existentes en la visibilidad de las clases entre paquetes. Los módulos de Java proporcionan una mayor encapsulación de las clases contenidas en un paquete y las librerías. Esta encapsulación evita que una aplicación u otra librería haga uso y dependa de clases y paquetes de los que no debería lo que mejora la compatibilidad con versiones futuras. Los desarrolladores de una librería con los módulos ahora tienen un mayor control de los paquetes que expone una librería y que forma parte de su API pública. Con lo que se evita casos que se han dado hasta ahora como que librerías y programas dependan de clases internas en la API de Java como _sun.misc.BASE64Encoder_ o la famosa _sun.misc.Unsafe_, para la primera en Java se añadió un reemplazo con [java.util.Base64](https://docs.oracle.com/javase/9/docs/api/java/util/Base64.html), para la segunda con Java 9 para parte de su funcionalidad se ha añadido algunas nuevas clases.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="263"
+        image1="java-version.png" thumb1="java-version-thumb.png" title1="Java 9"
+        image2="jshell.png" thumb2="jshell-thumb.png" title2="JShell"
+        caption="Java 9 y JShell" >}}
+</div>
+
+Los módulos proporcionan:
+
+* Encapsulación fuerte: se diferencia entre que es la API pública y usable y la parte privada a la que impide su uso accidental y acoplamiento indeseado entre módulos. La parte privada está encapsulado y de esta forma puede modificarse libremente con la seguridad de no afectar a los usuarios del módulo.
+* Interfaces bien definidas: el código no encapsulado forma parte de la API del módulo, dado que otros módulos pueden usar esta API pública hay que tener especial cuidado al modificarlo al introducir cambios que sean incompatibles. Los módulos deben exportar una API bien definida y estable.
+* Dependencias explícitas: los módulos necesitan a menudo otros módulos, estas dependencias son parte de la definición del módulo. Las dependencias explícitas forman un grafo que es importante conocer para entender las necesidades de una aplicación y para ejecutarla con todas sus dependencias.
+
+Los beneficios son:
+
+* Configuración confiable: el sistema de módulos comprueba si una combinación de módulos satisface todas las dependencias antes de compilar o ejecutar una aplicación.
+* Encapsulación fuerte: se evitan dependencias sobre detalles internos de implementación.
+* Desarrollo escalable: se crean límites entre el equipo que desarrolla un módulo y el que lo usa.
+* Optimización: dado que el sistema de módulos sabe que módulos necesita cada uno solo se consideran los necesarios mejorándose tiempos de inicio y memoria consumida.
+* Seguridad: la encapsulación y optimización limita la superficie de ataque.
+
+La modularización afecta al diseño, compilación, empaquetado y despliegue es mucho más que una nueva característica del lenguaje. Los módulos son artefactos con su propia entidad que contienen código y metadados para describir el módulo y como se relaciona con otros módulos.
+
+Hasta ahora se seguía una convención de poner clases en paquetes de nombre _.impl_ o _.internal_ pero realmente la gente seguía usando esas clases porque simplemente se podía. No había ninguna forma de ocultar las implementaciones de esos paquetes más allá del los modificadores de accesibilidad _protected_ y _private_ que no son satisfactorios para ocultar las implementaciones.
+
+Java desde sus inicios ha hecho un buen trabajo en la definición de interfaces usando la palabra reservada _interface_. En el apartado de dependencias es donde había deficiencias. Sí, hay sentencias _import_ explícitas pero desafortunadamente son únicamente para el tiempo de compilación.
+
+En tiempo ejecución no hay ninguna noción de archivos JAR o agrupación lógica. En el _classpath_ todas las clases son puestas en una lista plana. Cuando la JVM carga una clase la encuentra recorriendo esa lista en orden secuencial, tan pronto como la clase es encontrada la búsqueda finaliza y la clase es cargada. Si la clase no se encuentra se obtiene una excepción en tiempo de ejecución y dado que las clases son cargadas bajo demanda en el momento de uso esa excepción potencialmente puede ser lanzada en un momento posterior de haber iniciado la aplicación. La JVM no puede verificar eficientemente la corrección del _classpath_ en el inicio o si se debería añadir otra librería _jar_. Otros problemas insidiosos suceden cuando hay clases duplicadas en el _classpath_ por versiones diferentes de una misma librería.
+
+Antes del sistema de módulos de Java la librería de tiempo de ejecución consistía en un gran archivo _rt.jar_ con un tamaño de más de 60 MiB. Este archivo contiene la mayor parte de clases de la plataforma en forma de monolito. Para conseguir mayor flexibilidad y ser una plataforma de futuro se decidió modularizar el JDK.
+
+Eliminar algunas tecnologías en desuso del JDK no era una opción viable. La compatibilidad hacia atrás es uno de los principios más importantes para Java que guían su desarrollo. Eliminar estas APIs rompería esta compatibilidad hacia atrás, a pesar de que afectaría a un pequeño porcentaje de usuarios todavía hay una buena cantidad de gente usando tecnologías como CORBA.
+
+Descomponer el JDK en módulos ha sido un trabajo inmenso. Con más de 20 años de código heredado acumulados separar una enmarañada y grande base de código conteniendo cientos de clases en módulos bien definidos con límites claros mientras se mantiene la compatibilidad hacia atrás. Esto toma tiempo siendo el motivo de tomar tanto tiempo el incorporar un sistema de módulos en Java. Pero en el futuro este esfuerzo será recompensado en términos de velocidad de desarrollo y aumento de flexibilidad para el JDK.
+
+Con el tiempo las dependencias entre los propios paquetes y clases de la API de Java estaba enmarañada, con Java 9 las dependencias entre paquetes se ha simplificado en gran medida.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="263"
+        image1="java-8-modules.jpg" thumb1="java-8-modules-thumb.jpg" title1="Módulos de Java 8"
+        image2="java-9-modules.jpg" thumb2="java-9-modules-thumb.jpg" title2="Módulos de Java 9"
+        caption="Módulos de Java 8 y Java 9" >}}
+</div>
+
+
+El entorno de ejecución de Java y el compilador conocen exactamente ahora que módulo resolver al buscar los tipos para un paquete dado. Previamente la única forma de obtener un tipo arbitrario era hacer una búsqueda en todo el _classpath_. Por ejemplo, dos módulos con el mismo nombre producen un error en inicio de la aplicación, en vez de en tiempo de ejecución.
+
+Los módulos permiten definir a cada librería los paquetes de clases que exporta como su API accesible por otra librería o programa que la requiera. Además, cada librería debe al mismo tiempo definir qué paquetes requiere. Las exportaciones y requerimientos permiten ahora detectar al iniciar la máquina virtual si el grafo de dependencias está completo cosa que antes se producía en un mayor número de casos en tiempo de ejecución posiblemente con la excepción [NoClassDefFound](https://docs.oracle.com/javase/9/docs/api/java/lang/NoClassDefFoundError.html). Una de los efectos que se mejoran en Java y que ya es una característica a la que se le da mucha importancia es la compatibilidad hacia atrás y también la encapsulación ya que los desarrolladores de las librerías tienen mayor control de que paquetes se permite su uso evitando dependencias no deseadas que impidan en un futuro que aplicaciones que hipotéticamente las usasen dejasen de ser compatibles con nuevas versiones.
+
+{{< gist picodotdev 9f69c721f4186e3eb005a6cfebdf6dfd "java-list-modules.sh" >}}
+
+La definición de un módulo se realiza con un nuevo archivo de código fuente de nombre _module-info.java_. Con la palabra reservada _requires_ y una línea por paquete se definen qué paquetes requiere el módulo, con la palabra reservada _exports_ se define que paquetes del módulo se exportan y son visibles por algún otro módulo que lo requiera. También se han añadido las palabras reservadas _provides_ y _uses_ para proporcionar y usar definiciones de servicios que con anterioridad se realizaba en el archivo _XXX_ como muestro en el ejemplo [artículo service loader][blogbitix-94]. También se puede hacer que la directiva _requires_ sea de forma transitiva para que el módulo que lo use pueda usar ese paquete sin requerirlo de forma explícita, la directiva _opens_ permite hacer uso de reflectividad usando el método [setAccesible](https://docs.oracle.com/javase/9/docs/api/java/lang/reflect/AccessibleObject.html).
+
+Dado que la transición hacia el uso de los módulos puede generar problemas de compatibilidad con aplicaciones existentes se han añadido algunos parámetros para la máquina virtual en el comando _java_ e incluso en el caso más grave desactivar completamente el sistema de módulos, aunque lógicamente esto está desaconsejado. En la [guía de migración a Java 9](http://docs.oracle.com/javase/9/migrate/toc.htm) están detallados los aspectos a tener en cuenta en la migración de una versión anterior a Java 9.
+
+Este es el típico ejemplo _Hola Mundo_ con Java 9 en que que muestro como compilar un programa usando los módulos y como ejecutarlo directamente desde la linea de comandos. En el código de la clase _Main_ no hay ningún cambio respecto al que sería con una versión anterior de Java sin embargo se añade el nuevo archivo de código fuente _module-info.java_ donde se definen sus dependencias que este programa no tiene salvo la implícita sobre el módulo _java.base_. Los comandos para compilar y ejecutar el ejemplo directamente con los comandos _javac_ y _java_ si cambian, ahora se usa en vez de _classpath_ la opción _module-path_ y se indica la clase del módulo que contiene el método _main_ del programa.
+
+{{< gist picodotdev 9f69c721f4186e3eb005a6cfebdf6dfd "Main.java" >}}
+{{< gist picodotdev 9f69c721f4186e3eb005a6cfebdf6dfd "module-info.java" >}}
+{{< gist picodotdev 9f69c721f4186e3eb005a6cfebdf6dfd "java.sh" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2017" pid="263"
+        image1="java-9-helloworld.png" thumb1="java-9-helloworld-thumb.png" title1="Hola Mundo con Java 9"
+        caption="Hola Mundo con Java 9" >}}
+</div>
+
+{{% code git="blog-ejemplos/tree/master/Java9" command="./java.sh" %}}
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Java 9: It's Heeeere](https://dzone.com/articles/java-9-its-heeeere)
+* [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](http://docs.oracle.com/javase/9/migrate/toc.htm)
+* [Java 9 modules – JPMS basics](https://jaxenter.com/java-9-modules-jpms-basics-135885.html)
+{{% /reference %}}
+
+{{% /post %}}

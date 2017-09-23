@@ -7,6 +7,7 @@ updated: 2016-03-12T12:00:00+01:00
 sharing: true
 comments: true
 tags: ["java", "programacion", "software", "planeta-linux", "planeta-codigo"]
+series: ["java-platform"]
 summary: "La octava versión de Java añade numerosas novedades importantes al lenguaje. Algunas de las más destacadas son las expresiones lambdas y los streams que dotan al lenguaje de características de programación funcional pero también lo hacen en muchas construcciones de código comunes más expresivo, menos extenso y más legible. Pero hay otras novedades relevantes que detallo en el artículo como los métodos por defecto en interfaces o la nueva API para fechas."
 ---
 
@@ -190,7 +191,6 @@ Java es usado ampliamente en entornos empresariales ya sean públicos o privados
 * [Java 8 revealed, lambdas, default methods and bulk data operations](http://zeroturnaround.com/rebellabs/java-8-revealed-lambdas-default-methods-and-bulk-data-operations/)
 * [Lambdas coming to a Java 8 near you](http://www.javacodegeeks.com/2013/07/lambdas-coming-to-a-java-8-near-you.html)
 * [Java 8 default methods](http://viralpatel.net/blogs/java-8-default-methods-tutorial/)
-* [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Novedades relevantes Java 8](http://unpocodejava.wordpress.com/2014/01/22/novedades-relevantes-java-8/)
 * [The optional type API](http://www.javacodegeeks.com/2014/03/the-optional-type-api.html)
 * [Everything about Java 8](http://www.techempower.com/blog/2013/03/26/everything-about-java-8/)

@@ -59,7 +59,7 @@ El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Documentacion Javadoc del JDK][javadoc]
+* [Documentacion Javadoc del JDK][javadoc-8]
 {{% /reference %}}
 
 {{% /post %}}
