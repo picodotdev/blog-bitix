@@ -3,6 +3,7 @@ pid: 263
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00
+updated: 2017-09-23T20:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -23,6 +24,12 @@ Después de unos cuantos aplazamientos de fechas finalmente ha sido publicado el
 La incorporación de los módulos a la plataforma con Java 9 es una de las modificaciones más importantes en esta versión mayor del lenguaje. Aún siendo una de las características más destacadas y que ha eclipsado a otras modificaciones más allá de los módulos también importantes.
 
 * [What’s New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm)
+* [Guías descargables con documentación del JDK 9](https://docs.oracle.com/javase/9/javase-docs.htm)
+* [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
+
+<div class="media" style="text-align: center;">
+    <img src="assets/images/posts/2017/263/duke-java-9.png" width="300" alt="Duke Java 9" title="Duke Java 9">
+</div>
 
 Los módulos van a mejorar una de las deficiencias existentes en la visibilidad de las clases entre paquetes. Los módulos de Java proporcionan una mayor encapsulación de las clases contenidas en un paquete y las librerías. Esta encapsulación evita que una aplicación u otra librería haga uso y dependa de clases y paquetes de los que no debería lo que mejora la compatibilidad con versiones futuras. Los desarrolladores de una librería con los módulos ahora tienen un mayor control de los paquetes que expone una librería y que forma parte de su API pública. Con lo que se evita casos que se han dado hasta ahora como que librerías y programas dependan de clases internas en la API de Java como _sun.misc.BASE64Encoder_ o la famosa _sun.misc.Unsafe_, para la primera en Java se añadió un reemplazo con [java.util.Base64](https://docs.oracle.com/javase/9/docs/api/java/util/Base64.html), para la segunda con Java 9 para parte de su funcionalidad se ha añadido algunas nuevas clases.
 
@@ -100,6 +107,12 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
         image1="jdeps.png" thumb1="jdeps-thumb.png" title1="Dependencias del ejemplo Hola Mundo con Java 9"
         image2="jdeps-java-sql.png" thumb2="jdeps-java-sql-thumb.png" title2="Dependencias del módulo java.sql"
         caption="Análisis de dependencais con jdeps" >}}
+</div>
+
+Para finalizar este artículo incluyo el vídeo sobre los módulos de los [varios vídeos sobre las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html).
+
+<div class="media media-video" style="text-align: center;">
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429007001" allowfullscreen "frameborder=0"></iframe>
 </div>
 
 {{% code git="blog-ejemplos/tree/master/Java9" command="./java.sh" %}}
