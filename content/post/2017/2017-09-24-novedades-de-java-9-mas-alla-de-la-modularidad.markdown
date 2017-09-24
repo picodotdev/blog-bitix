@@ -3,6 +3,7 @@ pid: 264
 title: "Novedades de Java 9, más allá de la modularidad"
 url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00
+updated: 2017-09-24T19:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -71,6 +72,18 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen "frameborder=0"></iframe>
 </div>
 
+### jlink para generar _runtimes_ mínimos
+
+Java 8 proporciona varios _runtimes_ reducidos con los _compact profiles_ que contienen algunas clases menos de las que incluye el JDK completo. Sin embargo, estos _runtimes_ están preconfigurados y las aplicaciones deben optar por el que ofrezca todas las clases que necesita.
+
+En Java 9 se proporciona [jlink](http://openjdk.java.net/jeps/282) que un sustituto más capaz que los _compact profiles_. Permite generar _runtimes_ aprovechando la nueva modularidad del JDK con únicamente los módulos que necesite la aplicación.
+
+Esto es especialmente útil para los contenedores de [Docker][docker] y los entornos _cloud_ ya que permite generar imágenes de contenedores con un tamaño significativamente menor. Por ejemplo, una imagen de Docker basada en la distribución [Alpine Linux][alpine-linux] con el JDK completo ocupa unos 360 MiB, con _jlink_ si una aplicación solo necesita del módulo _java.base_ se puede generar un _runtime_ con únicamente ese módulo, con este _runtime_ adaptado la imagen del contenedor tiene un tamaño mucho menor, en este caso de únicamente de unos 40 MiB.
+
+<div class="media media-video" style="text-align: center;">
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen "frameborder=0"></iframe>
+</div>
+
 ### Concurrencia
 
 Se añade un _framework_ con un conjunto de clases para programación reactiva de publicación-subscripción con las clases [Flow](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.html), [Flow.Processor](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Processor.html), [Flow.Subscriber](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Subscriber.html), [Flow.Publisher](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Processor.html) y [Flow.Subscription](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Processor.html). La clase _Subsription_ posee dos métodos: [cancel()](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Subscription.html#cancel--) y [request()](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Subscription.html#request-long-) para dejar de recibir mensajes y solicitar recibir _n_ mensajes en la siguientes llamadas de [onNext​()](https://docs.oracle.com/javase/9/docs/api/java/util/concurrent/Flow.Subscriber.html#onNext-T-).
@@ -83,7 +96,7 @@ Una de las justificaciones de la modularidad es el uso que hasta ahora se le ha 
 
 Para la mayoría de los programadores esto no les afectará directamente pero sí será una mejora para los desarrolladores de librerías importantes muy populares que si usan la clase _Unsafe_ y deberían aprovechar estas nuevas capacidades para dejar de usar la clase interna del JDK en la medida de lo posible.
 
-### Actualizaciones en la API para procesos (JEP 102)
+### Actualizaciones en la API para procesos
 
 Ahora es posible obtener el identificador del proceso o _pid_ con el método [pid()](https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#pid--) y los procesos hijos y descendientes con los métodos [children​()](https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#children--) y [descendants​()](https://docs.oracle.com/javase/9/docs/api/java/lang/Process.html#descendants--) respectivamente.
 
