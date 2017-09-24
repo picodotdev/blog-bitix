@@ -3,7 +3,7 @@ pid: 263
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00
-updated: 2017-09-23T20:00:00+02:00
+updated: 2017-09-23T20:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -23,6 +23,7 @@ Después de unos cuantos aplazamientos de fechas finalmente ha sido publicado el
 
 La incorporación de los módulos a la plataforma con Java 9 es una de las modificaciones más importantes en esta versión mayor del lenguaje. Aún siendo una de las características más destacadas y que ha eclipsado a otras modificaciones más allá de los módulos también importantes.
 
+* [Oracle JDK 9 Documentation](https://docs.oracle.com/javase/9/index.html)
 * [What’s New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm)
 * [Guías descargables con documentación del JDK 9](https://docs.oracle.com/javase/9/javase-docs.htm)
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
@@ -109,7 +110,7 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
         caption="Análisis de dependencais con jdeps" >}}
 </div>
 
-Para finalizar este artículo incluyo el vídeo sobre los módulos de los [varios vídeos sobre las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html).
+Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta los aspectos más destacados. Hay [otros vídeos sobre las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html) de no más de 15 minutos cada uno.
 
 <div class="media media-video" style="text-align: center;">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429007001" allowfullscreen "frameborder=0"></iframe>
