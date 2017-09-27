@@ -3,7 +3,7 @@ pid: 264
 title: "Novedades de Java 9, más allá de la modularidad"
 url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00
-updated: 2017-09-24T19:00:00+02:00
+updated: 2017-09-27T23:40:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -29,6 +29,7 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 * [What’s New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm)
 * [Guías descargables con documentación del JDK 9](https://docs.oracle.com/javase/9/javase-docs.htm)
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
+* [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017)
 
 <div class="media" style="text-align: center;">
     <img src="assets/images/posts/2017/264/duke-java-9.png" width="300" alt="Duke Java 9" title="Duke Java 9">
