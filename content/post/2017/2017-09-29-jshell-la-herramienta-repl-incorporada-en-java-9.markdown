@@ -3,6 +3,7 @@ pid: 265
 title: "JShell la herramienta REPL incorporada en Java 9"
 url: "/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/"
 date: 2017-09-29T21:00:00+02:00
+updated: 2017-09-29T22:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -50,7 +51,7 @@ Para diferenciar las expresiones de código de los comandos estos últimos son p
 
 Para los _snippets_ multilínea o algo complejos puede utilizarse un editor externo con el comando <code>/edit</code>. El editor de nuestra preferencia se establece con el comando <code>/set</code>.
 
-También se pueden usar módulos o librerías ya existentes con el comando <code>/env</code> y las opciones <code>--add-modules</code>  <code>--module-path</code> y <code>--class-path</code>. Los _snippets_ creados en una sesión pueden guardarse en un archivo con el comando <code>/save</code> y ser cargados al inicio de JShell o con el comando <code>/open</code>.
+También se pueden [añadir módulos o librerías](https://docs.oracle.com/javase/9/jshell/external-code.htm) para usar las clases y tipos que contengan con el comando <code>/env</code> y las opciones <code>--add-modules</code>  <code>--module-path</code> y <code>--class-path</code>. Los _snippets_ creados en una sesión pueden guardarse en un archivo con el comando <code>/save</code> y ser cargados al inicio de JShell o con el comando <code>/open</code>.
 
 En la [guía oficial de JShell](https://docs.oracle.com/javase/9/jshell/toc.htm) se comenta algunas opciones más de esta nueva herramienta.
 
