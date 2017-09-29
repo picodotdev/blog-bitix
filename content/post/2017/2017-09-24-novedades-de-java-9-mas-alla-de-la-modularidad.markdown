@@ -3,7 +3,7 @@ pid: 264
 title: "Novedades de Java 9, más allá de la modularidad"
 url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00
-updated: 2017-09-27T23:40:00+02:00
+updated: 2017-09-29T20:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -44,7 +44,7 @@ Aparte de definir este tipo de colecciones de una forma mucho más sencilla que 
 {{< gist picodotdev 543bdd4dad7311efbc80a298db328b73 "Collections.java" >}}
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen "frameborder=0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 ### Mejoras en la clase _Optional_
@@ -57,7 +57,7 @@ Los nuevos métodos de los _streams_ [dropWhile()](https://docs.oracle.com/javas
 
 ### REPL con jshell
 
-Otra de las características destacables es la incorporación de una herramienta para evaluar código siguiendo el patrón _Read-Evaluate-Print-Loop_ o REPL para hacer pruebas de código sin la necesidad de un IDE, una herramienta de construcción o toda la infraestructura de un proyecto. Esta herramienta es el comando _jshell_.
+Otra de las características destacables es la incorporación de [la herramienta JShell][blogbitix-265] para evaluar código siguiendo el patrón _Read-Evaluate-Print-Loop_ o REPL para hacer pruebas de código sin la necesidad de un IDE, una herramienta de construcción o toda la infraestructura de un proyecto. Esta herramienta es el comando _jshell_.
 
 Se pueden introducir expresiones que son evaluadas y comandos precedidos por el caracter _/_. Soporta asistencia de código con la tecla tabulador.
 
@@ -70,7 +70,7 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 </div>
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen "frameborder=0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 ### jlink para generar _runtimes_ mínimos
@@ -82,7 +82,7 @@ En Java 9 se proporciona [jlink](http://openjdk.java.net/jeps/282) que un sustit
 Esto es especialmente útil para los contenedores de [Docker][docker] y los entornos _cloud_ ya que permite generar imágenes de contenedores con un tamaño significativamente menor. Por ejemplo, una imagen de Docker basada en la distribución [Alpine Linux][alpine-linux] con el JDK completo ocupa unos 360 MiB, con _jlink_ si una aplicación solo necesita del módulo _java.base_ se puede generar un _runtime_ con únicamente ese módulo, con este _runtime_ adaptado la imagen del contenedor tiene un tamaño mucho menor, en este caso de únicamente de unos 40 MiB.
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen "frameborder=0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 ### Concurrencia
@@ -125,7 +125,7 @@ Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para un
 * [Case for Defaulting to G1 Garbage Collector in Java 9](https://www.infoq.com/articles/Make-G1-Default-Garbage-Collector-in-Java-9)
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen "frameborder=0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 ### Identificador para variables _
@@ -171,7 +171,7 @@ A partir de la publicación de Java 9 se cambia el modelo de publicación de nue
 Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][openjdk] y [licencia GPL][gpl] para satisfacer las necesidades de los desarrolladores y una versión con soporte de largo plazo cada tres años para satisfacer las necesidades de tiempo de soporte prolongado de las empresas, _Oracle JDK_.
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src='//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001' allowfullscreen frameborder=0></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 Para finalizar un estupendo vídeo de David Gómez (@dgomezg) sobre las nuevas características de Java 9 en español y otro en inglés.
@@ -191,6 +191,7 @@ Para finalizar un estupendo vídeo de David Gómez (@dgomezg) sobre las nuevas c
 * [Revista Java Magazine Jul/Aug 2017](http://www.javamagazine.mozaicreader.com/JulyAug2017)
 * [Java 9 and IntelliJ IDEA](https://dzone.com/articles/java-9-and-intellij-idea)
 * [Java 9 más allá de la modularidad](https://www.autentia.com/2017/09/13/java-9-mas-alla-de-la-modularidad/)
+* [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]
 {{% /reference %}}
 
 {{% /post %}}

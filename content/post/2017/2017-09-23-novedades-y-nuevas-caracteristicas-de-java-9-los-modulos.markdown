@@ -3,7 +3,7 @@ pid: 263
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00
-updated: 2017-09-27T23:30:00+02:00
+updated: 2017-09-29T19:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -114,7 +114,7 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
 Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta los aspectos más destacados. Hay [otros vídeos sobre las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html) de no más de 15 minutos cada uno.
 
 <div class="media media-video" style="text-align: center;">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429007001" allowfullscreen "frameborder=0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429007001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 {{% code git="blog-ejemplos/tree/master/HolaMundoJava9" command="./java.sh" %}}
@@ -125,6 +125,7 @@ Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta l
 * [Java 9: It's Heeeere](https://dzone.com/articles/java-9-its-heeeere)
 * [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](http://docs.oracle.com/javase/9/migrate/toc.htm)
 * [Java 9 modules – JPMS basics](https://jaxenter.com/java-9-modules-jpms-basics-135885.html)
+* [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]
 {{% /reference %}}
 
 {{% /post %}}
