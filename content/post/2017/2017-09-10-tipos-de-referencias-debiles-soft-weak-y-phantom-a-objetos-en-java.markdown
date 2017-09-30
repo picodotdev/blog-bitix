@@ -4,7 +4,7 @@ title: "Los tipos de referencias débiles soft, weak y phantom en Java"
 url: "/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/"
 aliases: ["/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-a-objetos-en-java/"]
 date: 2017-09-10T11:00:00+02:00
-updated: 2017-09-11T01:00:00+02:00
+updated: 2017-09-30T10:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -45,11 +45,14 @@ En el artículo [Replacing Finalizers With Phantom References](http://resources.
 
 Las referencias débiles añaden una indirección a la referencia que contienen, usando el método [get()](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/Reference.html#get--) se accede al objeto referenciado pero hay que tener en en cuenta que el método _get_ puede devolver un _null_ ya que no impiden al recolector de basura reclamar el objeto referenciado, en el caso de las _PhantomReferences_ el método _get_ siempre devuelve _null_ para evitar que la referencia a un objeto sea revivida.
 
+Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter), explica el concepto de estas referencias con un símil más fácil de comprender de un restaurante y sus clientes que dependiendo de su comportamiento se asemeja a estas referencias y el por que de los recolectores de basura, que no es algo novedoso de Java sino que ya fué utilizado en 1959 con el lenguaje Lisp.
+
 {{% code git="blog-ejemplos/tree/master/JavaReference" command="./gradlew run" %}}
 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter)
 * [Tipos de referencias en Java](http://www.guajava.net/tipos-de-referencias-en-java/)
 * [Difference between WeakReference vs SoftReference vs PhantomReference vs Strong reference in Java](https://javarevisited.blogspot.com.es/2014/03/difference-between-weakreference-vs-softreference-phantom-strong-reference-java.html)
 * [Understanding Weak References](https://community.oracle.com/blogs/enicholas/2006/05/04/understanding-weak-references)
