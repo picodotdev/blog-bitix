@@ -4,7 +4,7 @@ title: "La triste realidad de Java, versiones antiguas"
 url: "/2017/10/la-triste-realidad-de-java-versiones-antiguas/"
 aliases: ["/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"]
 date: 2017-10-01T11:30:00+02:00
-updated: 2017-10-01T19:00:00+02:00
+updated: 2017-10-01T19:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -18,7 +18,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "opinion",]
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
-Algunas desarrolladores que utilizan el lenguaje de programación Java desearían que el tiempo que pasa entre publicación de una nueva versión y la siguiente fuese menor. Las nuevas versiones incorporan modificaciones en el lenguaje y en la API que facilitan el trabajo de los desarrolladores haciendo que escriban menos líneas de código, haciendo que el código fuente sea más legible que al final redunda en software con menos _bugs_, con más funcionalidades, un tiempo de desarrollo menor y con menos costes.
+Algunos desarrolladores que utilizan el lenguaje de programación Java desearían que el tiempo que pasa entre publicación de una nueva versión y la siguiente fuese menor. Las nuevas versiones incorporan modificaciones en el lenguaje y en la API que facilitan el trabajo de los desarrolladores haciendo que escriban menos líneas de código, haciendo que el código fuente sea más legible que al final redunda en software con menos _bugs_, con más funcionalidades, un tiempo de desarrollo menor y con menos costes.
 
 La versión de Java 9 fue publicada en septiembre de 2017 con algunos aplazamientos hasta estar todas las [novedades de Java 9][blogbitix-263] listas, principalmente la nueva modularidad. La versión de [Java 8 también con importantes novedades][blogbitix-17] fue publicada con tres años de anterioridad, en marzo de 2014. En las últimas versiones entre cada una han pasado algunos años.
 
