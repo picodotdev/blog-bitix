@@ -1,9 +1,10 @@
 ---
 pid: 266
-title: "La triste realidad de Java de versiones antiguas"
-url: "/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"
+title: "La triste realidad de Java, versiones antiguas"
+url: "/2017/10/la-triste-realidad-de-java-versiones-antiguas/"
+aliases: ["/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"]
 date: 2017-10-01T11:30:00+02:00
-updated: 2017-10-01T12:00:00+02:00
+updated: 2017-10-01T14:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -53,7 +54,7 @@ Y de otros de los populares _frameworks_ para programación de aplicaciones web 
 
 En Java 9 el calendario de publicaciones va a cambiar optando por un modelo basado en fechas fijas cada seis meses y cada tres años para las versiones con soporte de largo plazo. Cada una de estas nuevas versiones incorporará las características que estén listas para ser publicadas lo que evitará que si una novedad se retrasa no retrase al resto de novedades que ya estén listas, simplemente se publicará en la siguiente versión al cabo de unos meses. Esto va a hacer que el número de versiones aumente significativamente a lo que hasta ahora ha ocurrido.
 
-Sin embargo, y a pesar de que algunos desarrolladores se han quejado de el tiempo que pasa entre versión y versión y que ahora con el nuevo calendario se le dará solución, ¿en algunos entornos va a cambiar algo? Si resulta que algunas organizaciones ya sean entes públicos o empresas privadas siguen utilizando versiones de Java como la 6 e incluso la 5 que fueron publicadas hace ya más de una década. Una década en el ámbito tecnológico es una eternidad. O de Spring como la 3 del 2009 o incluso de Struts como la 1 en el mejor de los casos del 2008 que ya incluso ni siquiera tiene soporte ni se siguen desarrollando lo que implica falta de soporte de seguridad.
+Sin embargo, y a pesar de que algunos desarrolladores se han quejado de el tiempo que pasa entre versión y versión y que ahora con el nuevo calendario se le dará solución, ¿en algunos entornos va a cambiar algo? Si resulta que algunas organizaciones ya sean entes públicos o empresas privadas siguen utilizando versiones de Java como la 6 e incluso la 5 que fueron publicadas hace ya más de una década. Una década en el ámbito tecnológico es una eternidad. O de Spring como la 3 del 2009 o incluso de Struts como la 1 en el mejor de los casos del 2008 que ya incluso ni siquiera tiene soporte ni se siguen desarrollando lo que implica falta de soporte de seguridad. Y no es por que cada nueva versión de Java sea incompatible con la anterior, precisamente lo contrario y la compatibilidad hacia atrás es una de las cosas que siempre se le da una gran importancia en la plataforma a veces incluso por encima de nuevas características, tanto que aún código compilado a _bytecode_ en las versiones 1.0, 1.1 y 1.2 funcionaría perfectamente con la JVM de Java 9.
 
 Algunas de estas organizaciones pueden tener necesidad de utilizar versiones durante un periodo de tiempo largo ya sea por el número y tamaño de las aplicaciones que manejan pudiendo ser de un servicio crítico o por el coste que supone reemplazarlas o adaptarlas a tiempos más modernos. Pero usar software de hace una década parece algo excesivo para las aplicaciones nuevas que se desarrollan hoy, aún así si siguen usando versiones antiguas seguro que tendrán motivos. Versiones antiguas de librerías y sin posibilidad de usar las que no estén homologadas en la organización que por desgracia la lista es muy limitada. Generar gráficas con [JFreeChart][jfreechart], PDF con [JasperReports][jasperreports] o [PDFBox][apache-pdfbox], Excel con [Apache POI][apache-poi] son solo algunas de las necesidades habituales pero para otras es raro no encontrar alguna librería que lo facilite en gran medida.
 
@@ -63,8 +64,8 @@ El resultado es que aún celebrando la publicación de una nueva versión de Jav
 
 Algunas empresas se quejan de que faltan trabajadores para cubrir puestos técnicos pero para completar el asunto digamos también que faltan salarios, condiciones laborales dignas, menos subcontratación o externalización u _outsourcing_ y proyectos interesantes en algún aspecto como podría ser el tecnológico que a uno le motive a postular a un puesto de trabajo. Yo al menos aparte del sueldo también valoro en buena medida la tecnología que se vaya a usar en el proyecto buscando que no esté obsoleta y que me permita seguir aprendiendo, al menos con la posibilidad de elegir trabajo.
 
-Y como escuché en cierta charla en una de las [BilboStack][blogbitix-123], luego dirán que Java es una mierda, ya, una mierda, ¿del 2006?, ¿hablamos de Java 9, [jOOQ][jooq], [Gradle][gradle], [Spock][spock], [Lombok][lombok], [Vavr][vavr], [Spring 5][spring], [Java EE 8][java-ee], _frameworks_ de servidor basados en componentes desde hace años de los que ahora a la gente se le hace el culo pepsi-cola en JavaScript con [React][react] y [Vue][vuejs]?... por mencionar algunas pocas.
+Y como escuché en cierta charla en [una de las BilboStack][blogbitix-123], luego dirán que Java es una mierda, ya, una mierda, ¿del 2006?, ¿hablamos de Java 9, [jOOQ][jooq], [Gradle][gradle], [Spock][spock], [Lombok][lombok], [Byte Buddy][bytebuddy] [Vavr][vavr], [Spring 5][spring], [Java EE 8][java-ee], _frameworks_ de servidor basados en componentes desde hace años de los que ahora a la gente se le hace el culo pepsi-cola en JavaScript con [React][react] y [Vue][vuejs]?... por mencionar algunas pocas.
 
-Quizá en la capital del reino de súbditos o en la capital de la nación que quiere votar sí o no a su independencia haya más posibilidades de encontrar un trabajo más interesante tecnológicamente pero en el páramo de periferia no hay tantas posibilidades o de incluso crearlas... quizá algún día.
+Quizá en la capital del reino de súbditos o en la capital de la nación que quiere votar sí o no a su independencia haya más posibilidades de encontrar un trabajo más interesante tecnológicamente pero en el páramo de la periferia no hay tantas posibilidades o de incluso crearlas... quizá algún día.
 
 {{% /post %}}
