@@ -4,7 +4,7 @@ title: "La triste realidad de Java, versiones antiguas"
 url: "/2017/10/la-triste-realidad-de-java-versiones-antiguas/"
 aliases: ["/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"]
 date: 2017-10-01T11:30:00+02:00
-updated: 2017-10-01T19:30:00+02:00
+updated: 2017-10-04T19:30:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -64,7 +64,7 @@ El resultado es que aún celebrando la publicación de una nueva versión de Jav
 
 Algunas empresas se quejan de que faltan trabajadores para cubrir puestos técnicos pero para completar el asunto digamos también que faltan salarios, condiciones laborales dignas, menos subcontratación o externalización u _outsourcing_ y proyectos interesantes en algún aspecto como podría ser el tecnológico que a uno le motive a postular a un puesto de trabajo. Yo al menos aparte del sueldo también valoro en buena medida la tecnología que se vaya a usar en el proyecto buscando que no esté obsoleta y que me permita seguir aprendiendo, al menos con la posibilidad de elegir trabajo.
 
-Y como escuché en cierta charla en [una de las BilboStack][blogbitix-123], luego dirán que Java es una mierda, ya, una mierda, ¿del 2006?, ¿hablamos de Java 9, [jOOQ][jooq], [Gradle][gradle], [Spock][spock], [Lombok][lombok], [Byte Buddy][bytebuddy], [Vavr][vavr], [Spring 5][spring], [Java EE 8][java-ee], [Spring Boot][spring-boot], [WildFly][wildfly] _frameworks_ de servidor basados en componentes desde hace años con similitudes con los que ahora a la gente se le hace el culo pepsi-cola en JavaScript con [React][react] y [Vue][vuejs]?... por mencionar algunas pocas.
+Y como escuché en cierta charla en [una de las BilboStack][blogbitix-123], luego dirán que Java es una mierda, ya, una mierda, ¿del 2006?, ¿hablamos de Java 9, [jOOQ][jooq], [Gradle][gradle], [Spock][spock], [Lombok][lombok], [Byte Buddy][bytebuddy], [Vavr][vavr], [Spring 5][spring], [Java EE 8][java-ee], [Spring Boot][spring-boot], [WildFly][wildfly], _frameworks_ de servidor basados en componentes desde hace años con similitudes con los que ahora a la gente se le _hace el culo pepsi-cola_ en JavaScript con [React][react] y [Vue][vuejs]?... por mencionar algunas pocas.
 
 Quizá en la capital del reino de súbditos o en la capital de la nación que quiere votar sí o no a su independencia haya más posibilidades de encontrar un trabajo más interesante tecnológicamente pero en el páramo de la periferia no hay tantas posibilidades o de incluso crearlas... quizá algún día.
 

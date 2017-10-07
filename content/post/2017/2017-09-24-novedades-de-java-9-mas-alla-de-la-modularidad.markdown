@@ -3,7 +3,7 @@ pid: 264
 title: "Novedades de Java 9, más allá de la modularidad"
 url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00
-updated: 2017-09-29T20:00:00+02:00
+updated: 2017-10-07T12:15:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -174,7 +174,14 @@ Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][op
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0"></iframe>
 </div>
 
-Para finalizar un estupendo vídeo de David Gómez (@dgomezg) sobre las nuevas características de Java 9 en español y otro en inglés.
+Para finalizar un par de libros, [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT) que explican detalladamente las novedades de la modularidad, las novedades incluídas en este artículo y algunas otras más.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a"></iframe>
+</div>
+
+Y unos buenos vídeos sobre las nuevas características de Java 9, uno en español y otro en inglés.
 
 <div class="media media-video" style="text-align: center;">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/CkmB86pCV6A" frameborder="0" allowfullscreen></iframe>
