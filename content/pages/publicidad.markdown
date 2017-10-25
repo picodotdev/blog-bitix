@@ -22,6 +22,6 @@ O si lo prefieres solicitame un [artículo patrocinado a través de la plataform
     <p><a href="https://paysuites.me/website/11383/" rel="nofollow" target="_blank"><img src="assets/images/paysuites-afiliado-500-v3.jpg" alt="Publicidad con Paysuites"></a></p>
 </div>
 
-Mi dirección de correo electrónico es <a href="mailto:pico.dev@gmail.com">pico.dev@gmail.com</a> mediante la cual se me puede contactar sin compromiso, ¡consúltame!.
+Mi dirección de correo electrónico es <a href="mailto:pico.dev@gmail.com">pico.dev@gmail.com</a> mediante la cual me puedes contactar sin compromiso, ¡consúltame!.
 
 {{% /post %}}
