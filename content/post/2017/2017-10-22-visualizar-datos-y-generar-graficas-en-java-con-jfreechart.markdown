@@ -93,7 +93,7 @@ Desde la propia página web de JFreeChart es posible ejecutar una [aplicación J
     {{< figure year="2017" pid="273"
         image1="stacked-xy-bar.png" thumb1="stacked-xy-bar-thumb.png" title1="Gráfica de barras apiladas"
         image2="time-series.png" thumb2="time-series-thumb.png" title2="Gráfica de series"
-        caption="Ejemplos de gŕaficas" >}}
+        caption="Ejemplos de gráficas" >}}
 </div>
 
 Este sería el código fuente de un ejemplo sencillo para una gráfica varias series datos. En el ejemplo primeramente se crear el conjunto de datos, el [Dataset](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/data/general/Dataset.html) de la gráfica, se establecen algunos estilos de visualización con [XYLineAndShapeRenderer](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/renderer/xy/XYLineAndShapeRenderer.html), con la clase factoría [ChartFactory](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/ChartFactory.html) se obtiene la gráfica proporcionándole los datos y finalmente generan un archivo en formato _png_ en un archivo, también se podría generar en un [OutputStream](https://docs.oracle.com/javase/9/docs/api/java/io/OutputStream.html) si fuese el caso de una aplicación web que quisiera enviar la imagen al navegador del cliente o también para incluir la imagen en un archivo PDF.
