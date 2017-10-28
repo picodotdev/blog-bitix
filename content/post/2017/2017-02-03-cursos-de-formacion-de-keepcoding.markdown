@@ -8,7 +8,7 @@ language: "es"
 sharing: true
 comments: true
 promoted: true
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion", "promocion"]
+tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion", "patrocinado"]
 ---
 
 {{% post %}}
