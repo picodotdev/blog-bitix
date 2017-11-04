@@ -3,6 +3,7 @@ pid: 275
 title: "Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java"
 url: "/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"
 date: 2017-11-01T12:00:00+01:00
+updated: 2017-11-01T18:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -46,6 +47,7 @@ Los _mutators_ son los encargados de procesar las peticiones de modificación.
 Usando una aplicación de [Spring Boot][spring-boot] para ofrecer el servicio hay que realizar la contribución adecuada al contenedor de dependencias, en Java GraphQL se define como un [_servlet_](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html) al cual hay que proporcionarle la configuración de los _resolvers_, _mutators_, procesador de contexto que en este caso se utiliza para la autenticación y definición del esquema entre otras posibles cosas.
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "Main.java" >}}
+{{< gist picodotdev 4276fa433729ff8187219939d3218a00 "AuthContext.java" >}}
 
 El lenguaje de consulta GraphQL permite consultar el grafo de objetos y recuperar los datos deseados. En el siguiente ejemplo se obtienen los libros, los autores y los libros con los datos de sus autores de una clase que implementa el patrón _repository_. En el ejemplo los datos del repositorio están definidos en la propia clase de forma estática pero como su función es abstraer de donde se obtienen los datos el cambio sería sencillo para que los obtuviese de una base de datos SQL o NoSQL ya que los cambios estarían encapsulados principalmente en esa clase. Los datos son devueltos en formato JSON.
 
@@ -81,12 +83,12 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 * [GraphQL](http://graphql.org/)
 * [Welcome to graphql-java](http://graphql-java.readthedocs.io/en/v5/)
 * [GraphQL Java implementation](https://github.com/graphql-java/graphql-java)
+* [Queries](https://www.howtographql.com/graphql-java/2-queries/)
 * [A schema-first tool for graphql-java inspired by graphql-tools for JS](https://github.com/graphql-java/graphql-java-tools)
-* [https://www.graph.cool/](http://www.graph.cool)
+* [GraphQL Backend Development Framework](http://www.graph.cool)
 * [¿Por qué deberíamos abandonar REST y empezar a usar GraphQL en nuestras APIs?](https://www.genbetadev.com/desarrollo-aplicaciones-moviles/por-que-deberiamos-abandonar-rest-y-empezar-a-usar-graphql-en-nuestras-apis)
 * [GraphQL: ¡todos para uno y uno para todos!](https://www.paradigmadigital.com/dev/graphql-todos-uno-uno-todos/)
 * [Introducción a GraphQL](https://www.adictosaltrabajo.com/tutoriales/introduccion-a-graphql/)
-* [https://www.howtographql.com/graphql-java/2-queries/](https://www.howtographql.com/graphql-java/2-queries/)
 {{% /reference %}}
 
 {{% /post %}}
