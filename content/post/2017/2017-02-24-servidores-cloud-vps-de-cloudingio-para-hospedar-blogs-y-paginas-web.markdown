@@ -3,6 +3,7 @@ pid: 211
 title: "Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web"
 url: "/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/"
 date: 2017-02-28T22:00:00+01:00
+updated: 2017-11-06T20:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -19,7 +20,7 @@ summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido pro
 
 Toda página web, blog y servicio que está accesible en internet ha de ser hospedado en algún servidor. Por motivos de fiabilidad, también coste y flexibilidad se suele contratar un servicio de hospedaje de los muchos que hay en internet. Desde no hace tanto tiempo ha surgido una modalidad de hospedaje que permite mayor flexibilidad, la llamada [cloud computing][cloud-computing] o computación en la nube, cuya características diferenciadoras son permitir variar de forma elástica, aumentando o reduciendo, los recursos de computación utilizados ya sea de procesador, memoria, almacenamiento o transferencia de datos. Otra característica de la computación en la nube es que es inmediata (en cuestión de minutos) sin necesidad de trámites administrativos o tiempos de espera, los servicios de computación en la nube incluyen paneles de administración para los servidores accesibles a través de un navegador con aplicaciones sencillas o incluso interfaces basadas en linea de comandos de modo que es posible automatizar las tareas de sistemas con [DevOps][devops].
 
-Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es [Clouding.io][cloudingio] que en la opción más básica ofrece un servidor con **1 núcleo de CPU, 1 GiB de memoria, 25 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 10€ + IVA al mes** (unos 12€), precio similar a otras opciones de [servidores en la nube](https://clouding.io/caracteristicas). Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con [Wordpress] utilizando 2 GiB y un precio de 12 € + IVA al mes también debería ser más que suficiente para un tráfico respetable en cantidad. Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. **Desde 1 GiB hasta 32 GiB de memoria, desde 1 hasta 16 cores de CPU y desde 25 GiB hasta 1900 GiB de almacenamiento SSD** por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.
+Hay múltiples opciones de computación en la nube algunas con más servicios y funcionalidades pero también más complejas y no necesarias para proyectos sencillos y no muy grandes. Una de las opciones de computación en la nube sencilla pero suficiente en muchos casos es [Clouding.io][cloudingio] que en la opción más básica ofrece un servidor con **1 núcleo de CPU, 1 GiB de memoria, 25 GiB de almacenamiento persistente de estado sólido o SSD y 2 TiB de datos de transferencia a un precio de 10€ + IVA al mes** (unos 12€), precio similar a otras opciones de servidores en la nube. Para un página web con archivos estáticos de presencia en internet o un blog como Blog Bitix que solo utiliza recursos estáticos (HTML, CSS, JavaScript e imágenes) lo más básico ya sería suficiente y para un blog con [Wordpress] utilizando 2 GiB y un precio de 12 € + IVA al mes también debería ser más que suficiente para un tráfico respetable en cantidad. Una de las ventajas del _cloud computing_ es la elasticidad que permite cambiar en cualquier momento los recursos reservados según las necesidades como la cantidad de memoria, núcleos de procesador o espacio en disco, tanto para reservar más recursos o para disminuir los recursos utilizados y también el coste. En la página de Clouding.io está la simple política de precios según los recursos reservados. **Desde 1 GiB hasta 32 GiB de memoria, desde 1 hasta 16 cores de CPU y desde 25 GiB hasta 1900 GiB de almacenamiento SSD** por servidor cubriendo las necesidades hasta de las aplicaciones más exigentes.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="211"
@@ -27,14 +28,14 @@ Hay múltiples opciones de computación en la nube algunas con más servicios y 
         caption="Página web de Clouding.io" >}}
 </div>
 
-Algunas de las [características de Clouding.io](https://clouding.io/caracteristicas) algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:
+Algunas de las características de Clouding.io algo más detalladas en su página web es que ofrecen soporte en español y discos SSD rápidos para el almacenamiento además de las siguientes:
 
 * Potente: Cores Intel Xeon, Red Cisco 20Gbps, Ceph Storage, OpenStack KVM, Cache Inteligente y Discos SSD.
 * Estable: Triple Réplica, Auto Reparación, Datacenter Tier 4, Calidad Empresarial, Protección de Red, Hosting DNS.
 * Flexible: Cloud Hosting por Horas, Windows Cloud, Linux Cloud, Configuración a medida, Ampliaciones temporales, Activación inmediata.
 * Fácil: Soporte de Calidad, Cloud Pros, Teclado y Monitor Remoto, Como y cuando quieras, DIY: Hazlo tú mismo, Comunidad.
 
-En el [blog de Clouding.io](https://clouding.io/blog/) hay artículos interesantes y tiene una comunidad con una [base de conocimiento](https://clouding.io/kb/) y una sección de [preguntas y respuestas](https://clouding.io/qa/) para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de [Windows][windows] aunque siendo este un blog más afín al software libre recomiendo una de las versiones de [GNU][gnu]/[Linux][linux], una ventaja es que el precio es más barato. De [Ubuntu][ubuntu] hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title=”Long Term Support”>LTS</abbr> o de soporte prolongado:
+En el blog de Clouding.io hay artículos interesantes y tiene una comunidad con una base de conocimiento y una sección de preguntas y respuestas para resolver cualquier duda que nos surja, todo en español. Las imágenes de sistemas operativos que ofrecen son las siguientes en las que se incluyen la opción de [Windows][windows] aunque siendo este un blog más afín al software libre recomiendo una de las versiones de [GNU][gnu]/[Linux][linux], una ventaja es que el precio es más barato. De [Ubuntu][ubuntu] hay múltiples versiones aunque siendo el propósito prestar un servicio durante periodos de tiempo largos lo recomendable es utilizar una versión <abbr title=”Long Term Support”>LTS</abbr> o de soporte prolongado:
 
 * **CentOS 7**, 6, 5
 * **Debian 8**, 7
@@ -133,17 +134,7 @@ Con acceso vía SSH al servidor ya es posible administrarlo con una herramienta 
         caption="Servidor NGINX" >}}
 </div>
 
-Algunos artículos interesantes que he encontrado en su blog y base de conocimiento son los siguientes. Otros artículos de interés son los que escribí en la [serie web][blogbitix-serie-web] en la que comentaba aspectos como HTTP/2, HTTPS, redirecciones o GZIP.
-
-* [Porqué Couding.io es una interesante alternativa a DigitalOcean](https://clouding.io/blog/porque-clouding-io-es-una-interesante-alternativa-a-digitalocean/)
-* [Facturación y Prestaciones de Clouding.io](https://clouding.io/kb/facturacion-y-prestaciones/)
-* [Cómo añadir un registro nuevo en tu zona DNS](https://clouding.io/kb/como-anadir-un-registro-nuevo-en-tu-zona-dns/)
-* [Tipos de registro DNS](https://clouding.io/kb/tipos-de-registro-dns/)
-* [Certificado TSL/SSL de Let's Encrypt: te enseñamos cómo configurarlo]( https://clouding.io/kb/certificado-tslssl-de-lets-encrypt-te-ensenamos-como-configurarlo/)
-* [Cómo añadir un dominio](https://clouding.io/kb/como-anadir-un-dominio/)
-* [Artículos sobre SSH](https://clouding.io/kb/category/ssh/)
-* [Artículos sobre Worpress](https://clouding.io/kb/category/cms/wordpress/)
-* [Artículos sobre bases de datos](https://clouding.io/kb/category/bases-de-datos/)
+He encontrado en su blog algunos artículos interesantes y base de conocimiento. Otros artículos de interés son los que escribí en la [serie web][blogbitix-serie-web] en la que comentaba aspectos como HTTP/2, HTTPS, redirecciones o GZIP.
 
 En definitiva Clouding.io es una opción de computación en la nube sencilla, con una política de precios simple y adecuada para proyectos desde pequeños de páginas web y presencia en internet hasta medianos que requieren una base de datos y tenga un tráfico ya notable, con soporte en español y que se puede probar sin compromiso. Al ser computación en la nube ofrece gran flexibilidad y ajustar el precio a los recursos consumidos, al usar discos SSD el buen rendimiento ya lo he notado al probar su servicio cuando he actualizado los paquetes del servidor e instalado el de nginx. Según las características anunciadas de redundancia la fiabilidad es destacable para que no haya caídas de servicio.
 
