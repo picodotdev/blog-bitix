@@ -61,7 +61,7 @@ Las consultas puede hacerse mediante una petición _GET_ o _POST_ de HTTP.
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "curl-3.sh" >}}
 
-Las peticiones de modificación se envían mediante _POST_. Este es el caso para añadir un libro a la biblioteca y los casos de que el autor del libro no sea válido o que el usuario que añade el libro no tenga permisos. En el ejemplo los errores no son descriptivos de lo que realmente ha sucedido, habría que hacer el tratamiento de errores adecuado para que los mensajes fuesen más descriptivos.
+Las peticiones de modificación se envían mediante _POST_. Este es el caso para añadir un libro a la biblioteca y los casos de que el autor del libro no sea válido o que el usuario que añade el libro no tenga permisos. En el ejemplo los errores no son descriptivos de lo que realmente ha sucedido, habría que hacer el [tratamiento de errores adecuado para que los mensajes fuesen más descriptivos][blogbitix-279].
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "curl-4.sh" >}}
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "PermissionException.java" >}}
