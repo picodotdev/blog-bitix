@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2017-08-27T12:00:00+02:00
+updated: 2017-11-18T02:30:00+01:00
 comments: true
 sharing: true
 footer: true
@@ -44,8 +44,8 @@ la solución este ya comentada por otro usuario.
 
 * [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux,
 avances en el kernel, drivers, programas y análisis de rendimiento.
-* [DistroWatch](http://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades,
-además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones.
+* [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
+* [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
 * [Parcela Digital](http://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
 * [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
@@ -60,7 +60,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 ## Software libre y Linux
 
 * [BSD Magazine](https://bsdmag.org/): publicación mensual relacionada con la distribuciones BSD pero con artículos interesantes. Conocer el punto de vista de BSD enriquece a cualquier persona que use GNU/Linux.
-* [Planet GNOME](http://planet.gnome.org/)
+* [Planet GNOME](https://planet.gnome.org/)
 * [Ubuntu Planet](http://planet.ubuntu.com/)
 * [Planeta Linux](http://planetalinux.org/es/): agregador de varios blogs con una temática sobre Linux o el software libre.
 * [ESLE](http://www.esle.eu/blog/)

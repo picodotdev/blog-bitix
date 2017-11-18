@@ -9,6 +9,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+series: ["graphql"]
 summary: "GraphQL es una alternativa a una interfaz REST con las ventajas de poder realizar varias consultas en una misma petición y devolviendo únicamente los datos que requiera el cliente. Es una especificación y hay una implementación para los lenguajes de programación más populares entre ellos Java. Este artículo es una introducción con un ejemplo completo que muestra cómo se hacen consultas y modificaciones en los datos."
 ---
 
@@ -80,8 +81,8 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [GraphQL](http://graphql.org/)
-* [Welcome to graphql-java](http://graphql-java.readthedocs.io/en/v5/)
+* [GraphQL][graphql]
+* [Welcome to graphql-java](https://graphql-java.readthedocs.io/en/v5/)
 * [GraphQL Java implementation](https://github.com/graphql-java/graphql-java)
 * [Queries](https://www.howtographql.com/graphql-java/2-queries/)
 * [A schema-first tool for graphql-java inspired by graphql-tools for JS](https://github.com/graphql-java/graphql-java-tools)

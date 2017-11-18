@@ -8,6 +8,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+series: ["graphql"]
 ---
 
 {{% post %}}
@@ -48,7 +49,7 @@ La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la desc
 {{< links >}}
 {{< postslinks >}}
 * [Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
-* [Execution](http://graphql-java.readthedocs.io/en/v5/execution.html)
+* [Execution](https://graphql-java.readthedocs.io/en/v5/execution.html)
 * [GraphQLError.java](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java)
 {{% /reference %}}
 
