@@ -17,7 +17,7 @@ series: ["graphql"]
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
-Cuando en una consulta de [GraphQL][graphql] se indican las propiadades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un _resolver_ y en otras implementaciones _data fetcher_. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un _PropertyDataFetcher_ usando en Java la convención de los _java beans_ o la propiedad de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un _resolver_ para devolver esa propiedad en la consulta.
+Cuando en una consulta de [GraphQL][graphql] se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un _resolver_ y en otras implementaciones _data fetcher_. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un _PropertyDataFetcher_ usando en Java la convención de los _java beans_ o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un _resolver_ para devolver esa propiedad en la consulta.
 
 Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libros le añadimos un nuevo dato para el ISBN que está almacenado en un sistema externo, en otro repositorio. La nueva definición del esquema quedaría de la siguiente forma, basta con añadir la nueva propiedad al tipo _Book_ y su tipo que será _String_.
 
@@ -25,8 +25,8 @@ Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libr
 
 Para que una consulta que recupere el ISBN funcione correctamente es necesario implementar un _resolver_ creando una clase que implemente la interfaz _GraphQLResolver\<Book\>_ en la que se incluya un método _get_ por cada propiedad del tipo _Book_ que esté alamcenada en otro repositorio. Estos métodos _get_ reciben como parámetro el objeto _Book_ a partir del cual como contexto es posible tener los datos del libro del que hay que recuperar el ISBN, posiblemente utilizando su identificativo. En el ejemplo simplemente se devuelve un dato aleatorio pero perfectamente en caso necesario se podría usar un repositorio que lo recupere del sistema de información que lo almacena.
 
-{{< gist picodotdev 34760803d8daad87514b967a6de0cf0c "curl.sh" >}}
 {{< gist picodotdev 34760803d8daad87514b967a6de0cf0c "BookResolver.java" >}}
+{{< gist picodotdev 34760803d8daad87514b967a6de0cf0c "curl.sh" >}}
 
 A la hora de definir el servicio de GraphQL hay que proporcionar el _resolver_ personalizado.
 
