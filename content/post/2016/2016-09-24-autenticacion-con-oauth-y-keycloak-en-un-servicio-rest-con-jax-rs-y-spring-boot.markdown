@@ -53,6 +53,7 @@ Indicaremos también el rol que deberá poseer el cliente para acceder al servic
 Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-token.sh" >}}
+
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="180"
         image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
@@ -61,6 +62,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> pod
 Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un [código de estado HTTP 401][wikipedia-http-status-codes] indicando que se necesitan proporcionar las credenciales que con OAuth es un _token_.
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl-401.sh" >}}
+
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="180"
         image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
@@ -69,6 +71,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el _token_ no es válido obtendremos un error HTTP 401.
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "curl.sh" >}}
+
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="180"
         image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
