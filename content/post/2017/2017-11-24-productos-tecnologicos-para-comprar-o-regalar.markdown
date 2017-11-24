@@ -15,6 +15,8 @@ promoted: false
 
 Los productos tecnológicos son de los más codiciados para regalar o comprar en la época previa a navidades que empieza ya en el _Black Friday_ y poco después continua con el _Cyber Monday_. En el siguiente artículo incluyo una selección de productos de diferentes categorías, gamas y precios.
 
+En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un_gadget_ sobre todo con los productos tecnológicos que parece que se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186].
+
 ### Disco SSD
 
 Es la mejor actualización que se le puede hacer a un portátil o equipo que aún tenga un disco mecánico. He visto un ordenador con un Intel Pentium 6100 con 4 GiB de memoria que tardaba en ser usable casi 10 minutos por estar leyendo constantemente del disco duro y revivir una vez instalado un SSD pasando a iniciarse en 10 segundos y ser totalmente operativo.
