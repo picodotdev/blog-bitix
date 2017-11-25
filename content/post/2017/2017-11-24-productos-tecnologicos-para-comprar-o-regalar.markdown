@@ -16,7 +16,7 @@ promoted: false
 
 Los productos tecnológicos son de los más codiciados para regalar o comprar en la época previa a navidades que empieza ya en el _Black Friday_ y poco después continua con el _Cyber Monday_. En el siguiente artículo incluyo una selección de productos de diferentes categorías, gamas y precios.
 
-En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un _gadget_ sobre todo con los productos tecnológicos que parece se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186].
+En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un _gadget_ sobre todo con los productos tecnológicos que parece se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186]. Y aunque aquí pongo enlaces de Amazon compara con otras tiendas ya que no siempre tiene los mejores precios en todos los productos especiamente en aquellos que son vendidos por tercceros en su _marketplace_.
 
 ### Disco SSD
 
