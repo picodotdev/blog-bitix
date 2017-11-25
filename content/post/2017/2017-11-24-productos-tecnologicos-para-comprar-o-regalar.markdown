@@ -3,6 +3,7 @@ pid: 281
 title: "Productos tecnológicos para comprar o regarlar"
 url: "/2017/11/productos-tecnologicos-para-comprar-o-regalar/"
 date: 2017-11-24T23:00:00+01:00
+updated: 2017-11-25T09:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -15,7 +16,7 @@ promoted: false
 
 Los productos tecnológicos son de los más codiciados para regalar o comprar en la época previa a navidades que empieza ya en el _Black Friday_ y poco después continua con el _Cyber Monday_. En el siguiente artículo incluyo una selección de productos de diferentes categorías, gamas y precios.
 
-En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un_gadget_ sobre todo con los productos tecnológicos que parece que se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186].
+En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un _gadget_ sobre todo con los productos tecnológicos que parece se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186].
 
 ### Disco SSD
 
@@ -99,16 +100,24 @@ Las consolas son otro de los regalos más populares, entre ellas están la [Play
 
 ### Televisión
 
-De las [televisiones que he visto](http://amzn.to/2jlOZsn) me gustan más los modelos de Sony ya que estos incorporan el sistema Android para el sistema _smarttv_ lo que les permite tener mayor cantidad de aplicaciones disponibles. Aún así los modelos de Samsung y LG también son buenas opciones. En un futuro aunque todavía tardará unos años pero no muy lejano habrá una nueva reantenización y será necesario que las televisiones dispongan de un decodificacdor DVB-T2 que solo he visto que incorporen las televisiones 4K. Las televisiones 4K ya están empezando a tener unos precios que no son exageradamente superiores a los modelos Full HD.
+De las [televisiones que he visto](http://amzn.to/2jlOZsn) me gustan más los modelos de Sony ya que estos incorporan el sistema [Android TV](https://www.android.com/tv/) para el sistema _smarttv_ lo que les permite tener mayor cantidad de aplicaciones disponibles. Aún así los modelos de Samsung y LG también son buenas opciones. En un futuro aunque todavía tardará unos años pero no muy lejano habrá una nueva reantenización y será necesario que las televisiones dispongan de un decodificacdor DVB-T2 que solo he visto que incorporen las televisiones 4K. Las televisiones 4K ya están empezando a tener unos precios que no son exageradamente superiores a los modelos Full HD.
 
 Algunos modelos que yo también los estoy siguiendo son:
 
-* Samsung 43MU6105
-* Samsung 49MU6405
-* LG 43UJ634V
-* LG 43UH650V
-* Sony KD-43XE7096
-* Sony KD-49XE8096
+* [Samsung 43MU6105](http://amzn.to/2iOGMha)
+* [Samsung 49MU6405](http://amzn.to/2jZATkp)
+* [LG 43UJ634V](http://amzn.to/2i5j42R)
+* [LG 43UH650V](http://amzn.to/2i56QaG)
+* [Sony KD-43XE7096](http://amzn.to/2i4t0da)
+* [Sony KD-49XE8096](http://amzn.to/2i32YXD)
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06ZY25MPR&linkId=4e7d6c773b69bb80d48a3c7246c710e1"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XS17LD8&linkId=ca36b2df6a79990dbf56ebf462ce588e"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B071RCW1KY&linkId=39b6c9233a54b784696c0717e4c44bef"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B071JRMLWW&linkId=ad35b3be1f08abf7603f0f915333acdc"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XF2V8YJ&linkId=8c38b4aef630be8af13d09d9870fa39c"></iframe>
+</div>
 
 ### Otros componentes
 
