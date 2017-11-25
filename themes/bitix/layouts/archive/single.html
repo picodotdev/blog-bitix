@@ -12,18 +12,18 @@
         <div class="row">
           <div class="col-md-12">
             <h1>{{ .Title }}</h1>
-            <h3>Hemerotecas</h3>
+            <h3>{{ i18n "library" }}</h3>
+            <ul class="library">
             {{ range where .Site.Pages "Params.library" "true" }}
-              <ul>
-                <li>
-                  <article itemscope itemtype="http://schema.org/BlogPosting">
-                    <a href="{{ .Permalink }}" itemprop="name url">{{ .Title }}</a>
-                    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
-                  </article>
-                </li>
-            </ul>
+              <li>
+                <article class="h-entry">
+                  <a href="{{ .Permalink }}" itemprop="name url">{{ .Title }}</a>
+                  <small><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time></small>
+                </article>
+              </li>
             {{ end }}
-            <h3>Etiquetas</h3>
+            </ul>
+            <h3>{{ i18n "tags" }}</h3>
             <ul class="tags">
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
               <li><a href="tags/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
