@@ -1,6 +1,6 @@
 ---
 pid: 281
-title: "Productos tecnológicos para comprar o regarlar"
+title: "Productos tecnológicos para comprar o regalar"
 url: "/2017/11/productos-tecnologicos-para-comprar-o-regalar/"
 date: 2017-11-24T23:00:00+01:00
 updated: 2017-11-25T09:00:00+01:00
