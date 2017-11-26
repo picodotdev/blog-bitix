@@ -3,6 +3,7 @@ pid: 283
 title: "Paginación usando cursores en GraphQL y Java"
 url: "/2017/11/paginacion-usando-cursores-en-graphql-y-java/"
 date: 2017-11-26T10:30:00+01:00
+updated: 2017-11-26T14:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -21,11 +22,14 @@ El conjunto de datos de una entidad en algunos casos será grande, miles o cient
 
 Si esta situación es importante se suelen utilizar cursores que utilizan un parámetro para indicar el número de elementos a incluir en la página pero en vez de un _offset_ utilizan el identificativo de un registro a partir del cual devolver registros de modo que aunque se inserten registros el primer elemento de la página no cambiará.
 
-En el caso de la [paginación en GraphQL](http://graphql.org/learn/pagination/) se proponen varias formas de implementar la paginación, una de ellas los cursores. En la documentación se explica la teoría, para implementarla es necesario [crear un _data fetcher_ o _resolver_][blogbitix-280] que reciba los parámetros de _limit_ para indicar el número de elementos a devolver en la página y _after_ para indicar a partir de que elemento devolver elementos. También es necesario modificar el esquema de la API para tener en cuenta la nueva estructura de datos.
+En el caso de la [paginación en GraphQL](http://graphql.org/learn/pagination/) se proponen varias formas de implementar la paginación, una de ellas los cursores. En la documentación se explica la teoría, para implementarla es necesario [crear un _data fetcher_ o _resolver_][blogbitix-280] que reciba los parámetros de _limit_ para indicar el número de elementos a devolver en la página y _after_ para indicar a partir de que elemento devolver elementos. También es necesario modificar el esquema de la API para tener en cuenta las nuevas estructuras de datos en las que se devuelven los resultados.
 
-En este ejemplo de una librería para mostrar la paginación he añadido a los libros una lista de comentarios que será en la que soporte paginación. La definición del esquema queda de la siguiente forma siguiendo la [especificación de Relay]((https://facebook.github.io/relay/graphql/connections.htm#)) para lo cual se definen los tipos _CommentsConnection_, _CommentEdge_ y _PageInfo_. Los cursores son un dato opaco para el cliente pero que decodificado incluye el identificativo del comentario. La propiedad _comments_ utiliza un _resolver_ con parámetros que se usa para realizar la búsqueda y recuperar los elementos solicitados en la consulta.
+En este ejemplo de una librería para mostrar la paginación he añadido a los libros una lista de comentarios que será en la que soporte paginación. La definición del esquema queda de la siguiente forma siguiendo la [especificación de Relay]((https://facebook.github.io/relay/graphql/connections.htm#)) para lo cual se definen los tipos _CommentsConnection_, _CommentEdge_ (usando _generics_ no sería necesario implementar unas de estas clases por cada entidad paginable) y _PageInfo_. Los cursores son un dato opaco para el cliente pero que decodificado incluye el identificativo del comentario. La propiedad _comments_ utiliza un _resolver_ con parámetros que se usa para realizar la búsqueda y recuperar los elementos solicitados en la consulta.
 
 {{< gist picodotdev 27db805fa81666ce6ca248c4e7409021 "library.graphqls" >}}
+{{< gist picodotdev 27db805fa81666ce6ca248c4e7409021 "CommentsConnection.java" >}}
+{{< gist picodotdev 27db805fa81666ce6ca248c4e7409021 "CommentEdge.java" >}}
+{{< gist picodotdev 27db805fa81666ce6ca248c4e7409021 "PageInfo.java" >}}
 
 En el caso del ejemplo los datos se almacenan en unas listas creadas al iniciar la aplicación y la paginación y la obtención de los datos de la página se realiza usando _streams_ y con código Java para implementar la lógica según los parámetros de la paginación en el método _findComments_. Si los datos estuvieran almacenados en una base de datos relacional o NoSQL se usarían las facilidades de sus lenguajes u operaciones de consulta como sería generar la sentencia SQL apropiada.
 
