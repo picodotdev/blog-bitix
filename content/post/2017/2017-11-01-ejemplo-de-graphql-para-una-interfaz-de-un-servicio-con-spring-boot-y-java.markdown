@@ -3,7 +3,7 @@ pid: 275
 title: "Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java"
 url: "/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"
 date: 2017-11-01T12:00:00+01:00
-updated: 2017-11-07T19:00:00+01:00
+updated: 2017-12-02T13:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -30,7 +30,7 @@ Más recientemente ha aparecido otra forma de implementar una interfaz de un ser
 
 En GraphQL se define un [esquema](http://graphql.org/learn/schema/) con la definición de los tipos en la API, se diferencia la obtención de los datos que es realizada por las [_queries_](http://graphql.org/learn/queries/) y de las modificaciones que es realizada por los [_mutators_](http://graphql.org/learn/queries/#mutations), el esquema se puede definir en un archivo de texto como en este ejemplo o de forma programática con código que es necesario para algunas personalizaciones. Otras tareas que pueden ser necesarias en una API son [autenticación](https://www.howtographql.com/graphql-java/5-authentication/) que es posible capturando los datos del contexto provenientes en los datos o como cabeceras de la petición posiblemente en forma de _token_ de [OAuth][oauth] y la autorización en la lógica del servicio en base al sujeto autenticado. Se puede [usar datos propios con _scalar_](http://graphql.org/learn/schema/#scalar-types) para los cuales se ha de proporcionar una clase que realice la transformación implementando una clase GraphQLScalarType. Posee [funcionalidades de introspección](http://graphql.org/learn/introspection/) y también [filtrado](https://www.howtographql.com/graphql-java/9-filtering/), [paginación](https://www.howtographql.com/graphql-java/10-pagination/), [gestión de errores](https://www.howtographql.com/graphql-java/7-error-handling/) y [cacheo](http://graphql.org/learn/caching/) aunque esto último es menos efectivo en GraphQL al depender de los datos a devolver que solicite el cliente.
 
-Para usar GraphQL hay que definir un _schema_ que incluye los tipos, sus propiedades y tipos. También se pueden usar [fragmentos](http://graphql.org/learn/caching/) para reutilizar partes de la definición de los tipos. Cada _type_ representa una entidad que definen las propiedades que posee ya sean datos escalares o referencias a otras entidades formando de esta manera grafos de objetos, los tipos de las variables que poseen una exclamación al final quiere decir que son opcionales, por defecto todos los datos son distinto de nulo. Las listas se definen con corchetes y el tipo entre ellos.
+Para usar GraphQL hay que definir un _schema_ que incluye los tipos, sus propiedades y tipos. También se pueden usar [fragmentos](http://graphql.org/learn/caching/) para reutilizar partes de la definición de los tipos. Cada _type_ representa una entidad que definen las propiedades que posee ya sean datos escalares o referencias a otras entidades formando de esta manera grafos de objetos, los tipos de las variables que poseen una exclamación al final quiere decir que son opcionales, por defecto todos los datos son distinto de nulo. Las listas se definen con corchetes y el tipo entre ellos. Este es el IDL del esquema del ejemplo.
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "library.graphqls" >}}
 
@@ -72,7 +72,7 @@ La forma explicada en las guías de GraphQL para Java es que el _mutator_ reciba
 
 Los artículos [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180] y [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185] pueden servir como base para añadir autenticación OAuth a un servicio GraphQL con Keycloak.
 
-Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las dependencias necesarias.
+Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las dependencias necesarias. [graphql-java](https://github.com/graphql-java/graphql-java) contiene la implementación para Java de GraphQL, [graphql-java-servlet](https://github.com/graphql-java/graphql-java-servlet) la implementación de GraphQL mediante un _servlet_ y [graphql-java-tools](https://github.com/graphql-java/graphql-java-tools) son varias utilidades que facilitan en gran medida el desarrollo de un servicio para GraphQL como la construcción del esquema mediante su definición IDL o crear _resolvers_ fácilmente.
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "build.gradle" >}}
 
