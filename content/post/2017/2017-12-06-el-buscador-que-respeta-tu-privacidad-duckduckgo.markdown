@@ -3,6 +3,7 @@ pid: 286
 title: "El buscador que respeta tu privacidad, DuckDuckGo"
 url: "/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/"
 date: 2017-12-06T12:30:00+01:00
+updated: 2017-12-07T12:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -32,12 +33,13 @@ Uno de los buscadores que está ganando popularidad es [DuckDuckGo][duckduckgo] 
     {{< figure year="2017" pid="286"
         image1="duckduckgo-3.png" thumb1="duckduckgo-3-thumb.png" title1="No rastreamos tu información"
         image2="duckduckgo-4.png" thumb2="duckduckgo-4-thumb.png" title2="Cámbiate a DuckDuckGo"
-        caption="Privacidad de DukcDuckGo" >}}
+        caption="Privacidad de DuckDuckGo" >}}
 </div>
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="286"
         image1="resultados.png" thumb1="resultados-thumb.png" title1="Resultados"
-        image2="resultados-imagenes.png" thumb2="resultados-imagenes-thumb.png" title2="Resultados de imágenes" >}}
+        image2="resultados-imagenes.png" thumb2="resultados-imagenes-thumb.png" title2="Resultados de imágenes"
+        caption="Resultados de DuckDuckGo" >}}
 </div>
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="286"
