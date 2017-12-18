@@ -3,7 +3,7 @@ pid: 178
 title: "Ejemplo de API REST en Java con JAX-RS y Spring Boot"
 url: "/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/"
 date: 2016-09-17T12:00:00+02:00
-update: 2016-09-24T10:00:00+02:00
+update: 2017-12-18T22:00:00+02:00
 sharing: true
 comments: true
 language: "es"
@@ -14,7 +14,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="java.svg" title1="Java" witdh1="200" image2="spring.svg" title2="Spring Framework" witdh1="200" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" image2="spring.svg" title2="Spring Framework" width2="200" >}}
 
 En Java a través de JAX-RS, una de entre las varias [especificaciones de JavaEE][blogbitix-131], podemos desarrollar servicios web basados en [<abbr title="Representational State Transfer">REST</abbr>][rest] y [<abbr title="JavaScript Object Notation">JSON</abbr>][json]. Estos servicios web al usar la infraestructura de la web y el protocolo HTTP podemos hacer uso de facilidades que proporciona como [cacheo][blogbitix-165], [protocolo seguro][blogbitix-151], [HTTP/2][blogbitix-127], [compresión][blogbitix-155] o autenticación. Usando [Spring Boot][spring-boot] podemos desarrollar servicios web autocontenidos al igual que podemos hacer con las aplicaciones web tradicionales.
 
@@ -47,7 +47,9 @@ Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596805829&linkId=3b1ee2b6ff595b6b3c2fd7c70eb35cc7&internal=1"></iframe>
 </div>
 
-Una vez que disponemos del servicio REST podemos [añadir autenticación y autorización con Keycloak como proveedor de OAuth][blogbitix-180].
+Una vez que disponemos del servicio REST podemos [añadir autenticación y autorización con Keycloak como proveedor de OAuth][blogbitix-180]. 
+
+Otra alternativa a una interfaz REST es usar [GraphQL][graphql] que muestro en el artículo [Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
 
 {{% code git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" %}}
 
