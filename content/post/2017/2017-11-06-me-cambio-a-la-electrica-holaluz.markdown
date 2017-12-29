@@ -3,7 +3,7 @@ pid: 278
 title: "Me cambio a la eléctrica Holaluz"
 url: "/2017/11/me-cambio-a-la-electrica-holaluz/"
 date: 2017-11-06T20:00:00+01:00
-updated: 2017-12-03T00:10:00+01:00
+updated: 2017-12-30T00:06:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -37,7 +37,7 @@ En realidad aunque Holaluz indique que la energía que ofrece es 100% renovable 
 * [Luz justa](https://www.holaluz.com/luz-justa/)
 * [Energía verde](https://www.holaluz.com/energia-verde/)
 
-Otra ventaja de Holaluz es que factura mensualmente y no bimensualmente o facturando periodos de tiempo distintos cada vez según a la compañía eléctrica le viene en gana por que el distribuidor haya pasado a leer los contadores. Holaluz con la forma de pago _Sin sorpresas_ permite pagar cada mes lo mismo por la electricidad y al terminar el año ajustar según haya sido el consumo real, si al final del año se ha pagado de más según lo consumido lo devuelve y si se ha pagado de menos se factura la diferencia. Pero si se prefiere disponen del tradicional método de pago _Clásico_ que se paga mensualmente según lo consumido. Con tu dirección puedes conocer el precio aproximado que pagarías con Holaluz ya sea con la tarifa un precio o dos precios según el horario y la forma de pago clásica o sin sorpresas. En el modo sin sorpresas el precio del kWh es algo más barato de 0,123000 € y en el modo clásico de 0,129000 €. En cada factura se puede ver lo facturado, el ajuste de lo estimado una vez conocen el consumo real y solicitar modificar la cuota mensual del modo de pago sin sorpresas. En la zona de usuario es posible cambiar la potencia contratada que ajustándola se puede conseguir un ahorro de unos 3 € al mes por cada tramo de potencia reducido y no necesario.
+Otra ventaja de Holaluz es que factura mensualmente y no bimensualmente o facturando periodos de tiempo distintos cada vez según a la compañía eléctrica le viene en gana porque el distribuidor haya pasado a leer los contadores. Holaluz con la forma de pago _Sin sorpresas_ permite pagar cada mes lo mismo por la electricidad y al terminar el año ajustar según haya sido el consumo real, si al final del año se ha pagado de más según lo consumido lo devuelve y si se ha pagado de menos se factura la diferencia. Pero si se prefiere disponen del tradicional método de pago _Clásico_ que se paga mensualmente según lo consumido. Con tu dirección puedes conocer el precio aproximado que pagarías con Holaluz ya sea con la tarifa un precio o dos precios según el horario y la forma de pago clásica o sin sorpresas. En el modo sin sorpresas el precio del kWh es algo más barato de 0,123000 € y en el modo clásico de 0,129000 €. En cada factura se puede ver lo facturado, el ajuste de lo estimado una vez conocen el consumo real y solicitar modificar la cuota mensual del modo de pago sin sorpresas. En la zona de usuario es posible cambiar la potencia contratada que ajustándola se puede conseguir un ahorro de unos 3 € al mes por cada tramo de potencia reducido y no necesario.
 
 * [Tarifas luz un precio](https://www.holaluz.com/tarifas-luz-un-precio-20/), independiente de la hora de consumo.
 * [Tarifas luz dos precios](https://www.holaluz.com/tarifas-luz-dos-precios-20/), según hora de consumo.

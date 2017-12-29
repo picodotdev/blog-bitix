@@ -3,6 +3,7 @@ pid: 287
 title: "Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre"
 url: "/2017/012/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/"
 date: 2017-12-07T13:00:00+01:00
+updated: 2017-12-30T00:05:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -21,11 +22,11 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Piratas de Silicon Valley](https://www.filmaffinity.com/es/film399662.html)
 * [Trabajo basura (Office Space)](https://www.filmaffinity.com/es/film689614.html)
 * [Juegos de guerra](https://www.filmaffinity.com/es/film553168.html)
+* [La historia de Aaron Swartz. El chico de Internet](https://www.filmaffinity.com/es/film113451.html)
 * [La red social](https://www.filmaffinity.com/es/film577699.html)
 * [Jobs](https://www.filmaffinity.com/es/film601423.html)
 * [Steve Jobs](https://www.filmaffinity.com/es/film480342.html)
-* [TRON](https://www.filmaffinity.com/es/film488334.html)
-* [TRON: Legacy](https://www.filmaffinity.com/es/film589915.html)
+* [TRON](https://www.filmaffinity.com/es/film488334.html), [TRON: Legacy](https://www.filmaffinity.com/es/film589915.html)
 * [Blackhat. Amenaza en la red](https://www.filmaffinity.com/es/film271983.html)
 * [Conspiración en la red, AntiTRUST](https://www.filmaffinity.com/es/film437471.html)
 * [Terminator](https://www.filmaffinity.com/es/film304107.html), [Terminator 2: El juicio final](https://www.filmaffinity.com/es/film576352.html), [Terminator 3: La rebelión de las máquinas](https://www.filmaffinity.com/es/film477986.html), [Terminator Salvation](https://www.filmaffinity.com/es/film517417.html), [Terminator Génesis](https://www.filmaffinity.com/es/film188260.html)

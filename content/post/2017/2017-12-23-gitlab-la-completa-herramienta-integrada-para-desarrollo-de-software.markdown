@@ -48,11 +48,11 @@ Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus clav
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="290"
         image1="new-proyect.png" thumb1="new-proyect-thumb.png" title1="Nuevo proyecto"
-        image2="new-issue.png" thumb2="new-issue-thumb.png" title2="Nueva petición"
-        caption="Nuevo proyecto y petición" >}}
+        caption="Nuevo proyecto" >}}
     {{< figure year="2017" pid="290"
-        image1="issues-board.png" thumb1="issues-board-thumb.png" title1="Panel de peticiones"
-        caption="Panel de peticiones" >}}
+        image1="new-issue.png" thumb1="new-issue-thumb.png" title1="Nueva petición"
+        image2="issues-board.png" thumb2="issues-board-thumb.png" title2="Panel de peticiones"
+        caption="Nueva petición y panel de peticiones" >}}
     {{< figure year="2017" pid="290"
         image1="new-wiki-page.png" thumb1="new-wiki-page-thumb.png" title1="Nueva página wiki"
         image2="wiki-page.png" thumb2="wiki-page-thumb.png" title2="Página wiki"
