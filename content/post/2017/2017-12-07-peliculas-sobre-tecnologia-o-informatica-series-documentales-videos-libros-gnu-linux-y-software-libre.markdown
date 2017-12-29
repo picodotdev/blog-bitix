@@ -22,7 +22,7 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Piratas de Silicon Valley](https://www.filmaffinity.com/es/film399662.html)
 * [Trabajo basura (Office Space)](https://www.filmaffinity.com/es/film689614.html)
 * [Juegos de guerra](https://www.filmaffinity.com/es/film553168.html)
-* [La historia de Aaron Swartz. El chico de Internet](https://www.filmaffinity.com/es/film113451.html)
+* [Blade Runner](https://www.filmaffinity.com/es/film358476.html), [Blade Runner 2049](https://www.filmaffinity.com/es/film236626.html)
 * [La red social](https://www.filmaffinity.com/es/film577699.html)
 * [Jobs](https://www.filmaffinity.com/es/film601423.html)
 * [Steve Jobs](https://www.filmaffinity.com/es/film480342.html)
@@ -65,6 +65,7 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Code Rush](https://www.youtube.com/watch?v=4Q7FTjhvZ7Y)
 * [La revolución virtual](https://www.youtube.com/watch?v=9CghMhaNdZI)
 * [Documental Bill Gates](https://www.youtube.com/watch?v=YtZvtUWo-bw)
+* [La historia de Aaron Swartz. El chico de Internet](https://www.filmaffinity.com/es/film113451.html)
 * [Historia de los primeros videojuegos](https://www.youtube.com/watch?v=uuxoThzFPPw)
 * [La era de los videojuegos](https://www.youtube.com/watch?v=q_ymzSFjQ0A), [II](https://www.youtube.com/watch?v=TFN3SucnNns), [III](https://www.youtube.com/watch?v=9TsPi13AkOo), [IV](https://www.youtube.com/watch?v=6WvCfi7AkG0)
 * [Atari: Game Over](https://www.youtube.com/watch?v=1ao2V4A8Qcc)
@@ -103,11 +104,13 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 ### Libros y novelas
 
-* El circulo de Dave Eggers
-* Microsiervos de Douglas Coupland
-* Cuando los administradores de sistemas gobernaron la tierra de Cory Doctorow
-* Criptonomicon de Neal Stephenson
-* Snow Crash de Neal Stephenson
+* El circulo de _Dave Eggers_
+* Microsiervos de _Douglas Coupland_
+* Cuando los administradores de sistemas gobernaron la tierra de _Cory Doctorow_
+* Criptonomicon de _Neal Stephenson_
+* Snow Crash de _Neal Stephenson_
+* Ready Player One de _Ernest Cline_
+* ¿Sueñan los androides con ovejas eléctricas? de _Philip K. Dick_
 * [Algunas novelas sobre informática y _hackers_](http://www.proyecto-tic.es/algunas-novelas-sobre-informatica-y-hackers/)
 
 <div class="media" style="text-align: center;">
