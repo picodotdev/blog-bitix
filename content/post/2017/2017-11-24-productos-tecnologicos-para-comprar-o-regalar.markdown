@@ -3,7 +3,7 @@ pid: 281
 title: "Productos tecnológicos para comprar o regalar"
 url: "/2017/11/productos-tecnologicos-para-comprar-o-regalar/"
 date: 2017-11-24T23:00:00+01:00
-updated: 2017-11-25T09:00:00+01:00
+updated: 2017-11-30T15:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -35,6 +35,7 @@ Salvo que seas un usuario _gamer_ de PC, un mini PC te será más que suficiente
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N6SG8DP&linkId=1c964ed410a09d5164bd01d8a945a0a7"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MFGYDW9&linkId=c5359e70768c49358abc4f4e14c5c052"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M3Y8TFJ&linkId=913fcdd211650d0d1cae97327c9aefb1"></iframe>
 </div>
 
 En cuanto a portátil optaría sin mucho dudar por un [Slimbook][slimbook]. Son configurables, con los últimos procesadores, hasta 32 GiB de memoria, tiene discos SSD incluso en formato NVMe, pantalla Full HD o QHD, en varios tamaños, ligeros y todo por un precio mucho más barato que en otros portátiles de marcas más grandes y no menos importante con la posibilidad de adquirirlos libres de Windows lo que les hace ideales para los usuarios de GNU/Linux.

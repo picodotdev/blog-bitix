@@ -1,7 +1,7 @@
 ---
 pid: 287
 title: "Películas sobre tecnología o informática, series, documentales, vídeos, libros, GNU/Linux y software libre"
-url: "/2017/012/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/"
+url: "/2017/12/peliculas-sobre-tecnologia-o-informatica-series-documentales-videos-libros-gnu-linux-y-software-libre/"
 date: 2017-12-07T13:00:00+01:00
 updated: 2017-12-30T00:05:00+01:00
 language: "es"
