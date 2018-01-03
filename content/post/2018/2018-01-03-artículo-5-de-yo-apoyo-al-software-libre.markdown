@@ -1,7 +1,7 @@
 ---
 pid: 292
 title: "Artículo #5 de Yo apoyo al software libre"
-url: "/2018/01/artículo-5-de-yo-apoyo-al-software-libre/"
+url: "/2018/01/articulo-5-de-yo-apoyo-al-software-libre/"
 date: 2018-01-03T10:00:00+01:00
 language: "es"
 sharing: true
