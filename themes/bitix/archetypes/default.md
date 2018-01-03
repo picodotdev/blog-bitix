@@ -1,14 +1,14 @@
 ---
 pid: 00
 title: ""
-url: "/2017/01/xxx/"
+url: "/2018/01/xxx/"
 aliases: [""]
-date: 2017-01-01T00:00:00+01:00
+date: 2018-01-01T00:00:00+01:00
 language: "es"
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "blog-stack", "planeta-codigo"]
+tags: ["blog", "planeta-codigo"]
 series: [""]
 summary: ""
 draft: true
@@ -21,7 +21,7 @@ draft: true
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid=""
+    {{< figure year="2018" pid=""
         image1="" thumb1="-thumb.png" title1=""
         image2="" thumb2="-thumb.png" title2=""
         caption="" >}}
