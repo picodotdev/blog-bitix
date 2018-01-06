@@ -3,6 +3,7 @@ pid: 292
 title: "Artículo #5 de Yo apoyo al software libre"
 url: "/2018/01/articulo-5-de-yo-apoyo-al-software-libre/"
 date: 2018-01-03T10:00:00+01:00
+updated: 2018-01-03T13:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -19,7 +20,7 @@ La última donación que hice a algún proyecto de software libre fue en mayo de
 
 También hace unos meses escribí un artículo patrocinado con enlaces de afiliación sobre varios [cursos de formación de KeepCoding][blogbitix-207], la mayoría de usuarios se registran en los cursos gratuitos y ya cuando había perdido las esperanzas de que alguien comprase algún curso pagando un par de usuarios se registraron usando mis códigos de afiliado.
 
-En esta ocasión los proyectos a los que he hecho una donación han sido [Lineage OS][lineageos] y [Replicant][replicant], dos distribuciones de [Android][android] que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android. 
+En esta ocasión los proyectos a los que he hecho una donación han sido [LineageOS][lineageos] y [Replicant][replicant], dos distribuciones de [Android][android] que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android. 
 
 <div class="media" style="text-align: center;">
     <figure>
@@ -28,7 +29,7 @@ En esta ocasión los proyectos a los que he hecho una donación han sido [Lineag
     </figure>
 </div>
 
-Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo giga de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
+Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo _giga_ de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
 
 ### LineageOS
 
@@ -51,7 +52,7 @@ Se ofrece de forma gratuita pero los servidores que son necesarios para el desar
 
 ### Replicant
 
-Es la distribución de Android recomendada por la [FSF][fsf]. Uno de sus objetivos es los teléfonos móviles respeten la privacidad de los usuarios no realizando seguimiento, posicionamiento y no compartiendo datos, e incluyendo en el sistema operativo solo elementos libres. Y es que prácticamente todas las aplicaciones quieren acceder a los contactos, fotos, mensajes SMS, llamadas y otros varios permisos que las aplicaciones solicitan y hay que conceder. Esta distribución de Android es para aquellos le dan gran importancia a la seguridad, privacidad y libertad en estos dispositivos que podrían calificarse de seguimiento y vigilancia. Y por ello esta distribución es importante.
+Es la distribución de Android recomendada por la [FSF][fsf]. Uno de sus objetivos es los teléfonos móviles respeten la privacidad de los usuarios no realizando seguimiento, posicionamiento y no compartiendo datos e incluyendo en el sistema operativo solo elementos libres. Y es que prácticamente todas las aplicaciones quieren acceder a los contactos, fotos, mensajes SMS, llamadas y otros varios permisos que las aplicaciones solicitan y hay que conceder. Esta distribución de Android es para aquellos le dan gran importancia a la seguridad, privacidad y libertad en estos dispositivos que podrían calificarse de seguimiento y vigilancia. Y por ello esta distribución es importante.
 
 Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mantienen la privacidad y proporcionándole sustitutos. No soporta tantos dispositivos como LineageOS aunque están varios que fueron y son muy populares.
 

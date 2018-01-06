@@ -28,7 +28,7 @@ Una vez que disponemos de las imágenes de docker podemos arrancar contenedores 
 
 Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.html) que nos permiten automatizar las tareas:
 
-* [Módulos para manejo de entornos cloud](http://docs.ansible.com/list_of_cloud_modules.html) ([Amazon EC2][amazon-ec2], [Azure][azure], [Digital Ocean][digital-ocean], [OpenStack][openstack], [Rackspace][rackspace])
+* [Módulos para manejo de entornos cloud](http://docs.ansible.com/list_of_cloud_modules.html) ([Amazon EC2][amazon-ec2], [microsoft-azure][microsoft-azure], [Digital Ocean][digital-ocean], [OpenStack][openstack], [Rackspace][rackspace])
 * [Módulos para ejecutar comandos](http://docs.ansible.com/list_of_commands_modules.html)
 * [Módulos para administración de bases de datos](http://docs.ansible.com/list_of_database_modules.html)
 * [Módulos para manejo de archivos](http://docs.ansible.com/modules_by_category.html)
