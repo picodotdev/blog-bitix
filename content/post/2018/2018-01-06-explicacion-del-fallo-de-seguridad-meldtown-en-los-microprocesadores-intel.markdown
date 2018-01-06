@@ -3,6 +3,7 @@ pid: 293
 title: "Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel"
 url: "/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"
 date: 2018-01-06T10:30:00+01:00
+updated: 2018-01-07T00:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -97,9 +98,7 @@ _u_ tiene una dependencia sobre _t_ y _v_ sobre _u_ con lo que el microprocesado
 
 {{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "meltdown-2.py" >}}
 
-El microprocesador lee de el valor de una dirección del _kernel_ de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de _v_ utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que _v_ de cero para que no se produzca la excepción con los valores adecuados de las variables (_a_, _b_, _c_, _d_). 
-
-La ejecución especulativa de `v, y_ = u+d, user_mem[x_]` producirá un acceso a la dirección de memoria _0x000_ o _0x100_ dependiendo del valor del octavo bit que hubiese en la dirección de memoria `kern_mem[address]`. El ataque _side-channel_ se produce determinando el tiempo que tarda una instrucción que utilice estas direcciones, si está o no está en la cache por el tiempo que tarda determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del _kernel_. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del _kernel_ aplicando esta operación millones de veces.
+El microprocesador lee de el valor de una dirección del _kernel_ de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de _v_ utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que _v_ de cero para que no se produzca la excepción con los valores adecuados de las variables (_a_, _b_, _c_, _d_) la ejecución especulativa de `v, y_ = u+d, user_mem[x_]` producirá un acceso a la dirección de memoria _0x000_ o _0x100_ dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria `kern_mem[address]`. El ataque _side-channel_ se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del _kernel_. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del _kernel_ aplicando esta operación millones de veces.
 
 ### Notas finales
 
