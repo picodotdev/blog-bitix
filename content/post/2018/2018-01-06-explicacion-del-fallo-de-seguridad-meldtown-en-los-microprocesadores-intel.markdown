@@ -3,7 +3,7 @@ pid: 293
 title: "Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel"
 url: "/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"
 date: 2018-01-06T10:30:00+01:00
-updated: 2018-01-07T01:00:00+01:00
+updated: 2018-01-07T01:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -110,7 +110,7 @@ La ejecución especulativa hace más rápidos los microprocesadores pero habién
 
 Intel tiene un problema importante, con AMD y sus Ryzen a buen precio, con buen rendimiento y... sin el problema del _Meltdown_. Para corregir el fallo en el diseño de la arquitectura del hardware Intel va a tener que rediseñar en parte su arquitectura y esto le va a llevar meses hasta tener preparados nuevos modelos de microprocesadores sin el error.
 
-En el _kernel_ de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux y esa versión del _kernel_ no he notado ninguna perdida de rendimiento apreciable.
+En el _kernel_ de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux con un Intel Core i5-3210M que posee la característica _pcid_ y esa versión del _kernel_ no he notado ninguna perdida de rendimiento apreciable.
 
 {{% reference %}}
 {{< links >}}
