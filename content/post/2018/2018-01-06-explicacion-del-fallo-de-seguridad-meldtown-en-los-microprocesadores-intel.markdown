@@ -3,7 +3,7 @@ pid: 293
 title: "Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel"
 url: "/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"
 date: 2018-01-06T10:30:00+01:00
-updated: 2018-01-07T00:30:00+01:00
+updated: 2018-01-07T01:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -17,6 +17,8 @@ summary: "Los procesadores Intel se han visto afectados por un grave error de se
 {{< postslinks >}}
 
 El año 2018 ha empezando haciéndose público uno de los peores _bugs_ de seguridad que afecta a absolutamente todos los procesadores [Intel][intel] que esta compañía ha fabricado en la última década, denominado [_Meltdown_ y su variante _Spectre_](https://meltdownattack.com/), el error tiene su propio nombre, logotipo y página web. Un error de diseño en los procesadores que solo se puede corregir reemplazando el microprocesador o modificando los sistemas operativos aunque se especula con una pérdida de rendimiento en ciertas cargas de trabajo, entre un 5% y un 30%. El error es tan grave que permite leer a un programa la memoria del núcleo del sistema operativo que debería estar protegida. En la memoria del _kernel_ residen las claves de acceso a sistemas o datos sensibles que obtenidos y utilizados pueden ocasionar graves problemas de seguridad con consecuencias económicas o de acceso no autorizado a información. Este error es tan grave que deja al viejo conocido [fallo de la división de los Pentium](https://en.wikipedia.org/wiki/Pentium_FDIV_bug) a la altura de chiste. Hace unos meses por si fuera poco se conocía otro error de seguridad en el [Management Engine (ME)](https://en.wikipedia.org/wiki/Intel_Management_Engine) de Intel. 
+
+* [Listado de procesadores Intel afectados por Meltdown y Spectre](https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&languageid=en-fr)
 
 <div class="media" style="text-align: center;">
     <figure>
@@ -54,7 +56,7 @@ En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo
 
 ### Superescalar
 
-En un microprocesador con dos _pipelines_ o superescalares se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable _m_ se realiza al mismo tiempo la segunda operación de _n_, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los [ARM][arm] Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.
+En un microprocesador con dos _pipelines_ o [superescalar][wikipedia-superescalar] se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable _m_ se realiza al mismo tiempo la segunda operación de _n_, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los [ARM][arm] Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.
 
 {{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "superescalar-1.py" >}}
 
@@ -64,13 +66,13 @@ Sin embargo, hacer la suma de _o_ y _x_ al mismo tiempo no es posible ya que ant
 
 ### Fuera de orden
 
-Los microprocesadores fuera de orden reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los _pipelines_ llenos. Cambiando el orden entre las instrucciones _x_ e _y_ se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y [AMD][amd] incluyendo varios ARM Cortex-A9, A15, A17 y A57.
+Los microprocesadores [fuera de orden][wikipedia-out-of-order] reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los _pipelines_ llenos. Cambiando el orden entre las instrucciones _x_ e _y_ se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y [AMD][amd] incluyendo varios ARM Cortex-A9, A15, A17 y A57.
 
 {{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "fuera-de-orden.py" >}}
 
 ### Predicción de salto y ejecución especulativa
 
-Los programas incluyen saltos con sentencias condicionales _if_ o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los _pipelines_ llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan ejecución especulativa de las instrucciones.
+Los programas incluyen saltos con sentencias condicionales _if_ o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los _pipelines_ llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan [ejecución especulativa][wikipedia-speculative-execution] de las instrucciones.
 
 En este otro caso, _v_ depende de _u_ y _u_ depende de _t_ de modo que un microprocesador superescalar sin ejecución especulativa tardará tres ciclos computando _t_, _u_ y _v_ para determinar el valor de _v_ en la sentencia condicional _if_ (en otro ciclo) momento en que pasa otros tres ciclos calculando _w_, _x_ e _y_, en total 4 o 7 ciclos dependiendo de si hay salto en la sentencia condicional.
 
@@ -114,7 +116,9 @@ En el _kernel_ de Linux 4.14.11 ya se han aplicado varios parches al igual que p
 {{< links >}}
 {{< postslinks >}}
 * [Why Raspberry Pi isn’t vulnerable to Spectre or Meltdown](https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/)
+* [An Update on AMD Processor Security](https://www.amd.com/en/corporate/speculative-execution)
 * [x86/cpu, x86/pti: Do not enable PTI on AMD processors](https://lkml.org/lkml/2017/12/27/2)
+* [List of ARM microarchitectures](https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures)
 * [Meltdown y Spectre algunos comentarios](https://geeks.ms/etomas/2018/01/05/meltdown-y-spectre-algunos-comentarios/)
 {{% /reference %}}
 
