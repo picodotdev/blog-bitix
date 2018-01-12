@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
-git clone git@github.com:picodotdev/blog-bitix.git
+git clone -b master git@github.com:picodotdev/blog-bitix.git
 cd blog-bitix
 npm install
 
-mkdir deploy
-cd deploy
-git clone -b gh-pages git@github.com:picotdev/blog-bitix.git
-mv blog-bitix/* .
+git clone -b gh-pages git@github.com:picodotdev/blog-bitix.git deploy/
+
 git config --local user.email "pico.dev@gmail.com"
 git config --local user.name "pico.dev"
-cd ..
+

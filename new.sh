@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./hugo --source="." --theme="bitix" new "$@"
+hugo --source="." --theme="bitix" new "$@"
