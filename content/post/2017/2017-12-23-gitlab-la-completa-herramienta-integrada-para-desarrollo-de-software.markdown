@@ -8,6 +8,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog-stack", "planeta-codigo", "software", "software-libre"]
+series: ["gitlab"]
 summary: "Al desarrollar software una herramienta de control de versiones como Git y otras como un gestor de peticiones, una herramienta de integración continua o despliegue contínuo o una wiki para documentación son necesarias. Hay productos específicos para cada uno de ellos pero GitLab proporciona en una único producto todas estas facilitando su instalación y administración estando integradas en el mismo producto."
 ---
 

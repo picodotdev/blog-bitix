@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2017-11-18T02:30:00+01:00
+updated: 2018-01-13T11:00:00+01:00
 comments: true
 sharing: true
 footer: true
@@ -18,32 +18,26 @@ footer: true
     <img src="assets/images/logotipos/hugo.png" alt="Hugo" title="Hugo"/>
 </div>
 
-En esta página quiero poner la selección de páginas web y blogs personales o compartidos por varios usuarios que tengo añadidas en mi lector de feeds y que considero
-que publican artículos interesantes y lo siguen haciendo actualmente con cierta regularidad acerca de la programación, el desarrollo de aplicaciones, la tecnología o la
-informática. Estos enlaces son parte de los que he ido recopilando a lo largo de mucho tiempo y que creo que al que tenga interés en estos temas a su vez les resulten interesantes.
+En esta página quiero poner la selección de páginas web y blogs personales o compartidos por varios usuarios que tengo añadidas en mi lector de feeds y que considero que publican artículos interesantes y lo siguen haciendo actualmente con cierta regularidad acerca de la programación, el desarrollo de aplicaciones, la tecnología o la informática. Estos enlaces son parte de los que he ido recopilando a lo largo de mucho tiempo y que creo que al que tenga interés en estos temas a su vez les resulten interesantes.
 
-<a href="http://elblogdepicodev.blogspot.com.es">El blog de pico.dev</a> es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](http://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
+[El blog de pico.dev](https://elblogdepicodev.blogspot.com.es) es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](http://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
 
 ## Arch Linux
 
 Si usas la distribución Arch Linux estos son algunos enlaces que no debes perderte para estar informado de las noticias sobre esta distribución.
 
-* [Arch Linux](https://www.archlinux.org/): cuando para actualizar esta distribución se necesita intervención del usuario se suele publicar una nota para saber
-lo que hay que hacer, no suele ser lo habitual pero de vez en cuando puede ser necesario. No leerla y hacer algo de la forma que no indica puede dejar tu Arch Linux inservible, estás avisado.
+* [Arch Linux](https://www.archlinux.org/): cuando para actualizar esta distribución se necesita intervención del usuario se suele publicar una nota para saber lo que hay que hacer, no suele ser lo habitual pero de vez en cuando puede ser necesario. No leerla y hacer algo de la forma que no indica puede dejar tu Arch Linux inservible, estás avisado.
 * [Wiki Arch Linux](https://wiki.archlinux.org/): una gran fuente de información sobre Arch Linux pero que le puede servir a cualquier usuario del sistema del pingüino. Aquí está una documentación más oficial que la que se puede encontrar en los foros.
 * [Arch Linux - Package Database](https://www.archlinux.org/packages/): al ser Arch Linux una distribución _rolling release_ los paquetes se actualizan constantemente.
-Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el
-kernel de linux, los controlador gráfico, etc...
+Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el _kernel_ de linux, los controlador gráfico, etc...
 * [Repositorio AUR](https://aur.archlinux.org/): lo mismo que lo anterior pero para los paquetes del repositorio de AUR.
 * [Arch Linux en Español][archlinux-forums-es]: el foro de usuarios de Arch Linux de habla hispana. Gente que está dispuesta a ayudarte en los
 problemas que tengas en tu sistema aunque procura buscar antes la solución no seas un vampiro de ayuda.
-* [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o
-la solución este ya comentada por otro usuario.
+* [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o la solución este ya comentada por otro usuario.
 
 ## Noticias
 
-* [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux,
-avances en el kernel, drivers, programas y análisis de rendimiento.
+* [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux, avances en el kernel, drivers, programas y análisis de rendimiento.
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
 * [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
@@ -56,6 +50,7 @@ avances en el kernel, drivers, programas y análisis de rendimiento.
 * [Foro Noticias 3D](http://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Barrapunto](http://barrapunto.com/): una web donde tan importante como la noticia son los comentarios de sus usuarios.
+* [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
 
 ## Software libre y Linux
 
@@ -111,13 +106,12 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Ciencia de sofá](http://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
 * [La huertina de Toni](http://www.lahuertinadetoni.es/): ¿te gustan las plantas? ¿tienes huerto? ¿quieres plantar un árbol? Este blog trata sobre la jardinería y agricultura con artículos y vídeos muy ilustrativos.
+* [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
 
-Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses...
-pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de feeds del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.
+Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses... pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de feeds del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.
 
 Prometo verlos todos para comprobar si se ajustan a la temática anteriormente descrita y añadirlo en su caso.
 
-PD: no me gustan los enlaces rotos, si en algún momento un enlace de los listados aquí deja de funcionar avísame con un comentario o correo electrónico para que lo
-quite o lo corrija, las siguientes personas que visiten esta página te lo agradecerán además de yo ;).
+PD: no me gustan los enlaces rotos, si en algún momento un enlace de los listados aquí deja de funcionar avísame con un comentario o correo electrónico para que lo quite o lo corrija, las siguientes personas que visiten esta página te lo agradecerán además de yo ;).
 
 {{% /post %}}
