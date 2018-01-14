@@ -3,6 +3,7 @@ pid: 290
 title: "GitLab, la completa herramienta integrada para desarrollo de software"
 url: "/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/"
 date: 2017-12-23T10:00:00+01:00
+updated: 2018-01-14T02:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -60,10 +61,11 @@ Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus clav
         caption="Página wiki" >}}
 </div>
 
-Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la dirección URL con la que se puede clonar o añadir un repositorio de Git y empezar a subir, modificar y eliminar archivos del repositorio de control de versiones. Hecho algún _commit_ y subido algún archivo desde GitLab se puede ver el contenido del repositorio de Git.
+Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la dirección URL con la que se puede clonar, convertir una carpeta existente en un repositorio o añadir un repositorio existente. Una vez con el repositorio en el sistema de archivos local se puede empezar a subir, modificar y eliminar archivos del repositorio de control de versiones. Hecho algún _commit_ y subido algún archivo desde GitLab se puede ver el contenido del repositorio de Git.
 
-{{< gist picodotdev cedbdd0dc56baf73cb38a410fbd3c4c9 "clone-repository.yml" >}}
-{{< gist picodotdev cedbdd0dc56baf73cb38a410fbd3c4c9 "existing-folder.yml" >}}
+{{< gist picodotdev cedbdd0dc56baf73cb38a410fbd3c4c9 "clone-repository.sh" >}}
+{{< gist picodotdev cedbdd0dc56baf73cb38a410fbd3c4c9 "existing-folder.sh" >}}
+{{< gist picodotdev cedbdd0dc56baf73cb38a410fbd3c4c9 "existing-repository.sh" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="290"
