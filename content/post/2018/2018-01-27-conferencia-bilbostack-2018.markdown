@@ -121,11 +121,11 @@ La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cua
             <td>Networking + Café</td>
         </tr>
         <tr>
-            <td>11:50-12:40</td>
+            <td>12:00-12:50</td>
             <td>Machine Learning, camino a Skynet <em>por Beatriz Martín</em></td>
         </tr>
         <tr>
-            <td>12:50-13:40</td>
+            <td>13:00-13:50</td>
             <td>Aventuras con Agile: retrospectivas <em>por Amalia Hernández</em></td>
         </tr>
         <tr>
@@ -139,7 +139,7 @@ La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cua
 
 En una aplicación con algunos indicadores para el sector de la automoción en la que el _front_ era «una puta chapuza» la replantean para permitir diferentes dispositivos y desacoplar el _frontend_ y _backend_. Usando [Vue][vuejs] las cosas se simplifican al usar sus componentes (componentes... de que me suena...) encapsulando la funcionalidad y utilizando un solo fichero en el que se incluye la plantilla para el HTML, el código JavaScript asociado y los estilos CSS.
 
-Algunas de sus manías o recomendaciones son programar dar nombres a las cosas en inglés (¿evitar el _spanglish_, más compacto que el español?, caracter ñ, ...), conocer las herramientas que hace más simple el trabajo, usar [poka-jokes](https://es.wikipedia.org/wiki/Poka-yoke) al diseñar el código para no poder usarlo mal ni aposta, evitar sentencias _if_ anidadas utilizando _guard-clauses_, utilizar una buena semántica según el área de dominio junto con una buena nomenclatura al asignar nombres o usar alguna herramienta para analizar que el código sigue las buenas prácticas adoptadas.
+Algunas de sus manías o recomendaciones son programar y dar nombres a las cosas en inglés (¿evitar el _spanglish_, más compacto que el español?, caracter ñ, ...), conocer las herramientas que hace más simple el trabajo, usar [poka-jokes](https://es.wikipedia.org/wiki/Poka-yoke) al diseñar el código para no poder usarlo mal ni aposta, evitar sentencias _if_ anidadas utilizando _guard-clauses_, utilizar una buena semántica según el área de dominio junto con una buena nomenclatura al asignar nombres o usar alguna herramienta para analizar que el código sigue las buenas prácticas adoptadas.
 
 En las plantillas de Vue se usan algunas directivas como _v-if_, _v-for_ o _v-model_ para añadirles lógica o para pasar propiedades del componente padre al hijo, con eventos se puede pasar información del hijo al componente padre. Es un _framework_ progresivo en el que se pueden ir usando cosas según se necesitan (vuex, vue-router, vuetify, vue-i18n).
 
@@ -177,7 +177,7 @@ Algunas de las propiedades de CSS Grid son:
 * grid-row: 1/span 2;
 * grid-auto-flow: dense;
 
-Ah! Que recuerdos de aquella época cuando se maquetaban con tablas e incluso tablas dentro de tablas y gifs de un pixel transparentes..., luego vinierns los _divs_ y algunos _floats_, ... las cosas han cambiado con CSS Grid y CSS Flexbox aunque los que no nos dedicamos específicamente al diseño o maquetación sobrevivimos con [Bootstrap][bootstrap].
+Ah! Que recuerdos de aquella época cuando se maquetaban con tablas e incluso tablas dentro de tablas y gifs de un pixel transparentes..., luego vinieron los _divs_ y algunos _floats_, ... las cosas han cambiado con CSS Grid y CSS Flexbox aunque los que no nos dedicamos específicamente al diseño o maquetación sobrevivimos con [Bootstrap][bootstrap].
 
 Referencia:
 
