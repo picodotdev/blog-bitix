@@ -39,7 +39,7 @@ Este era el programa completo con su horario, temas muy distintos y variados com
     <tbody>
         <tr>
             <td>09:30-10:20</td>
-            <td>Xamarin.Forms en el mundo real™ : Verdades y Mitos <em>por Josué Yeray </em></td>
+            <td>Xamarin.Forms en el mundo real™ : Verdades y Mitos <em>por Josué Yeray</em></td>
         </tr>
         <tr>
             <td>10:30-11:20</td>
