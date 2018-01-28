@@ -3,6 +3,7 @@ pid: 296
 title: "Conferencia BilboStack 2018"
 url: "/2018/01/conferencia-bilbostack-2018/"
 date: 2018-01-27T18:00:00+01:00
+updated: 2018-01-28T23:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -15,7 +16,7 @@ series: ["bilbostack"]
 {{< links >}}
 {{< postslinks >}}
 
-A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha tenido lugar en el [Palacio Euskalduna][euskalduna] en vez de la [Universidad de Deusto][universidad-de-deusto] permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que muchos hemos pasado varios años.
+A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha tenido lugar en el [Palacio Euskalduna][euskalduna] en vez de la [Universidad de Deusto][universidad-de-deusto] permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="296"
@@ -48,7 +49,7 @@ Número de asistentes por año:
 * 2015: 340
 * 2016: 332
 * 2017: ¿?
-* 2018: 700
+* 2018: 500
 
 Por supuesto tener a disposición para la conferencia este recinto y los ponente sin que estos se paguen el viaje ha sido más fácil y posible gracias a los patrocinadores que además han ofrecido algunas pegatinas, cuadernillos, folletos a los asistentes e incluso ofertas laborales.
 
