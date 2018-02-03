@@ -1,3 +1,4 @@
+{{ if or .Params.image1 .Params.image2 .Params.image3 }}
 <figure>
   {{ if .Params.image1 }}
   <a href="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.image1 }}" title="{{ .Params.title1 }}" data-gallery><img src="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.thumb1 }}"{{ if .Params.width1 }} width="{{ .Params.width1 }}"{{ end }}/></a>
@@ -10,3 +11,4 @@
   {{ end }}
   <figcaption>{{ .Params.caption }}</figcaption>
 </figure>
+{{ end }}

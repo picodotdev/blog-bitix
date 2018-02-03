@@ -27,6 +27,13 @@ draft: true
         caption="" >}}
 </div>
 
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="" command1="Fit" commandthumb1="Fit" options1="800x800" optionsthumb1="300x300" title1=""
+        image2="" command2="Fit" commandthumb2="Fit" options2="800x800" optionsthumb2="300x300" title2=""
+        image3="" command3="Fit" commandthumb3="Fit" options3="800x800" optionsthumb3="300x300" title3="" >}}
+</div>
+
 <div class="media-amazon" style="text-align: center;">
     <iframe src="&internal=1"></iframe>
 </div>
