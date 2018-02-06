@@ -3,6 +3,7 @@ pid: 297
 title: "Análisis estático de código con PMD y un ejemplo"
 url: "/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/"
 date: 2018-02-03T22:00:00+01:00
+updated: 2018-02-05T17:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -25,7 +26,7 @@ El mantenimiento de un programa es la parte que más tiempo consume en su desarr
 
 En el libro [Building Maintable Software (Java Edidtion)](http://amzn.to/2BSalVR) en varios capítulos repasan varios aspectos y proporciona consejos sobre cómo desarrollar software más fácilmente mantenible. Algunos son tan sencillos como evitar métodos con muchas líneas de código, con muchos parámetros, con muchas bifurcaciones por sentencias condicionales o de retorno. Estos aspectos influyen en la facilidad de realizar teses, la facilidad de reutilizar el código siendo más fácil probar y reutilizar métodos que hacen pocas cosas que otros que hacen muchas o son complejos.
 
-Estos aspectos del código requiere analizar el código. Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como [PMD][pmd] que nos permite automatizar la tarea de análisis. PMD además se puede utilizar para comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.
+Estos aspectos del código requiere analizar el código. Si la base de código del software es grande será tedioso y costoso revisarlo manualmente sin embargo hay herramientas como [PMD][pmd] que nos permite automatizar la tarea de análisis. PMD además se puede utilizar para comprobar que el código sigue las normas de estilo definidas para el proyecto o en una organización además de esos otros aspectos que afectan a la facilidad de mantenimiento del software también útil cuando se incorpora una nueva persona a un proyecto para que siga las normas ya establecidas. Al igual que se deben tener teses unitarios y de integración para comprobar el correcto funcionamiento del software con PMD se obtiene un informe con las violaciones de las reglas que quieran aplicar al analizar el código.
 
 En la documentación del proyecto PMD en la sección _Rule Reference_ están la reglas que se puede aplicar y configurar en el análisis, hay una buena cantidad de ellas que en algunos casos permiten modificar los umbrales u otras propiedades para adaptar la validación a lo deseado. Desde convenciones al formatear el código, uso de llaves, tamaño de código, comentarios, de diseño, bloques de código vacíos en sentencias _try-catch_, _if_, ..., _imports_ duplicados, no usados o del mismo paquete y por tanto innecesarios, usos innecesarios de nombres completamente cualificados, de nomenclatura de variables por ejemplo si son demasiado cortas o largas, optimizaciones, código innecesario o no usado que se puede eliminar.
 
