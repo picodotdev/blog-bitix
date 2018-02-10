@@ -1,7 +1,8 @@
 ---
 pid: 299
-title: "Las 6+2 formas normales de las bases de datos"
-url: "/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos/"
+title: "Las 6+2 formas normales de las bases de datos relacionales"
+url: "/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/"
+aliases: ["/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos/"]
 date: 2018-02-10T13:00:00+01:00
 language: "es"
 sharing: true
