@@ -1,8 +1,10 @@
 ---
 pid: 298
 title: "8º aniversario del blog"
-url: "/2018/01/8o-aniversario-del-blog/"
+url: "/2018/02/8o-aniversario-del-blog/"
+aliases: ["/2018/01/8o-aniversario-del-blog/"]
 date: 2018-02-06T19:00:00+01:00
+updated: 2018-02-07T18:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -17,7 +19,7 @@ series: ["aniversario"]
 
 {{< logotype image="hugo.png" title="Hugo" >}}
 
-Hoy se cumplen 8 años desde que creé y empecé a escribir en un blog, primeramente [El blog de pico.dev][elblogdepicodev] y más tarde en Blog Bitix. Durante este tiempo he escrito 485 artículos entre ambos blogs, en Blog Bitix ya tengo más artículos escritos y publicados de los que he tenido en El blog de pico.dev. Ocho años ya son una cifra considerable y requiere gran constancia, dedicación, motivación y gran cantidad de tiempo. Muchos blogs no llegan a esta cifra.
+Hoy se cumplen 8 años desde que creé y empecé a escribir en un blog, primeramente [El blog de pico.dev][elblogdepicodev] y más tarde en Blog Bitix. Durante este tiempo he escrito 485 artículos entre ambos blogs, en Blog Bitix ya tengo más artículos escritos y publicados de los que he tenido en El blog de pico.dev. Ocho años ya son una cifra considerable y requiere gran constancia, dedicación, motivación, perseverancia y gran cantidad de tiempo. Muchos blogs no llegan a esta cifra.
 
 Trato de compartir el conocimiento que voy aprendiendo según leo libros, uso [GNU][gnu]/[Linux][linux] o me pregunto como se haría tal cosa con el lenguaje que uso principalmente, Java. El tener documentación es vital para un programador o en la tecnología y lo que comparto trato de que para el siguiente que tenga el mismo problema o se pregunte como se hace algo lo tenga más fácil y al mismo tiempo aprenda. Aparte de compartir conocimiento el blog me gustaría que me sirviese en mi vida profesional, ya sea para encontrar un nuevo trabajo o para profundizar aún en algún conocimiento. Por el momento este objetivo no lo considero del todo cumplido ya que a pesar de lo fan que soy de Java realmente trabajo a día de hoy con [Groovy][groovy] y [Grails][grails], son un lenguaje de programación y un framework web de la plataforma Java pero salvo la API del JDK tiene poco que ver y no me permiten seguir aprendiendo todo lo que me gustaría de esta plataforma, en el trabajo con otros aspectos tengo alguna otra compensación. Escribo y leo mucho pero por falta de uso una buena parte al cabo de varios meses voy olvidando.
 
@@ -31,7 +33,7 @@ Cada cierto tiempo reviso y publico los datos de las visitas mensuales que tengo
         caption="Páginas vistas" >}}
 </div>
 
-Un poco menos de la mitad de los usuarios los recibo desde España y la otra mitad de varios países de latinoamérica ya que por compartir el lenguaje los buscadores devuelven referencias a alguno de mis artículos. A parte de España con un 35% entre los países de latinoamérica están México 17%, Argentina 8%, Colombia 8%, Chile 6%, Perú 5,3%, Ecuador 3, Venezuela 2,5%, Estados Unidos 1,76% o Bolivia 1,25%.
+Un poco menos de la mitad de los usuarios los recibo desde España y la otra mitad de varios países de latinoamérica ya que por compartir el lenguaje los buscadores devuelven referencias a alguno de mis artículos. A parte de España con un 35% entre los países de latinoamérica están México 17%, Argentina 8%, Colombia 8%, Chile 6%, Perú 5,3%, Ecuador 3%, Venezuela 2,5%, Estados Unidos 1,76% o Bolivia 1,25%.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="298"

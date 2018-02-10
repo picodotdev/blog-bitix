@@ -5,7 +5,7 @@ cd ..
 
 npm run webpack
 npm run less
-hugo --destination="deploy" --source="." --theme="bitix"
+hugo --destination="deploy" --source="." --theme="bitix" --cleanDestinationDir
 # Renombrado assets en feeds
 find ./deploy -type f -name "index.xml" -exec sed -i '' 's/\&\#34;assets\//\&\#34;https:\/\/picodotdev.github.io\/blog-bitix\/assets\//g' {} +
 # Soporte para compatibilidad de feeds antiguos

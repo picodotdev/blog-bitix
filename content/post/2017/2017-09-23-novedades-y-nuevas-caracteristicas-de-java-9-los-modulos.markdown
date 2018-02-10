@@ -3,7 +3,7 @@ pid: 263
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00
-updated: 2017-10-07T12:10:00+02:00
+updated: 2018-02-10T10:00:00+02:00
 language: "es"
 sharing: true
 comments: true
@@ -138,6 +138,7 @@ Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta l
 * [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](http://docs.oracle.com/javase/9/migrate/toc.htm)
 * [Java 9 modules – JPMS basics](https://jaxenter.com/java-9-modules-jpms-basics-135885.html)
 * [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]
+* [Code First Java 9 Tutorial](https://blog.codefx.org/java/java-9-tutorial/)
 {{% /reference %}}
 
 {{% /post %}}
