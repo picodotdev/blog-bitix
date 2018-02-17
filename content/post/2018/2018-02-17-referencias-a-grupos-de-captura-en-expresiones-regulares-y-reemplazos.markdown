@@ -14,6 +14,8 @@ tags: ["java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+
 Las expresiones regulares definen un patrón que permite encontrar coincidencias en cadenas de caracteres, reemplazar coincidencias o validar que las cadenas de caracteres cumplen el patrón. Las expresiones regulares son potentes expresiones que resultan útiles en muchos casos pero son expresiones que pueden llegar a ser complejas cuyo uso se aprende con la experiencia. Una de las funcionalidades que poseen es hacer referencia a grupos de captura anteriores en la propia expresión regular o en la cadena de reemplazo.
 
 Hacer referencia al grupo de captura en las cadenas de reemplazo es especialmente útil ya que sirve no solo para reemplazar coincidencias por cadenas previamente conocidas sino para transformar las coincidencias encontradas por otras expresiones. El caso de las cuentas de correo a continuación es un ejemplo práctico donde se aprecia este uso.
