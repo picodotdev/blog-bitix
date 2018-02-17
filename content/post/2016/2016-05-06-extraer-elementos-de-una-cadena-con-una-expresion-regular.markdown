@@ -44,6 +44,7 @@ La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos [
 {{< postslinks >}}
 * [Using Regular Expressions to Extract a Value in Java](http://stackoverflow.com/questions/237061/using-regular-expressions-to-extract-a-value-in-java)
 * [Los cuantificadores greedy, reluctant y posessive en expresiones regulares][blogbitix-257]
+* [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]
 {{% /reference %}}
 
 {{% /post %}}
