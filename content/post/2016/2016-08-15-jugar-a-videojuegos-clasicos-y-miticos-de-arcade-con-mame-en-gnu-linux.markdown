@@ -102,7 +102,7 @@ Ya solo nos queda buscar con tu buscador preferido algún artículo que recopile
 Para jugar a los juegos de la NES de Nintendo con QMC2 no he conseguido ejecutarlos, he tenido que introducir el comando <code>sdlmame nes</code> en la terminal buscar la ROM navegando por los directorios, seleccionarla y usar la opción de _reset_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid=""
+    {{< figure year="2016" pid="170"
         image1="sdlmame-nes.png" thumb1="sdlmame-nes-thumb.png" title1="sdlmame NES"
         image2="sdlmame-nes-supermariobros3.png" thumb2="sdlmame-nes-supermariobros3-thumb.png" title2="sdlmame Super Mario Bros 3"
         caption="Ejecución de un juego NES con sdlmame" >}}
