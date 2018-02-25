@@ -3,7 +3,6 @@ cd deploy/
 git pull
 cd ..
 
-npm run webpack
 npm run less
 hugo --destination="deploy" --source="." --theme="bitix" --cleanDestinationDir
 # Renombrado assets en feeds

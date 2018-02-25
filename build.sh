@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-npm run webpack
 npm run less
 hugo --destination="public" --source="." --theme="bitix" --cleanDestinationDir
 # Renombrado assets en feeds
