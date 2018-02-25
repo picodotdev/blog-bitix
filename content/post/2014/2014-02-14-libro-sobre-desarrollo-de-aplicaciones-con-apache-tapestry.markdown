@@ -121,9 +121,11 @@ Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java 
 
 ¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf)
 
-<div class="alert alert-warning">
+{{% warning %}}
+{{< links >}}
+{{< postslinks >}}
 Inicialmente creé una página específica para alojar el libro con una aplicación de <a href="https://www.appfog.com/">AppFog</a> pero con esta entrada lo haré un mi propio blog ya que en el plan free han reducido considerablemente de 2 GiB a 512 MiB el tamaño de memoria del que disponen las aplicaciones. Hasta tal punto que una aplicación web java con solo jsps no se inicia correctamente.
-</div>
+{{% /warning %}}
 
 {{% reference %}}
 {{< links >}}

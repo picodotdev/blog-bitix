@@ -40,9 +40,11 @@ Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos e
         caption="Directorio raíz de docker" >}}
 </div>
 
-<div class="alert alert-warning">
-  Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobreescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.
-</div>
+{{% warning %}}
+{{< links >}}
+{{< postslinks >}}
+Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobreescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.
+{{% /warning %}}
 
 Este artículo es uno de otros que he publicado, en otros artículos he escrito sobre otras cosas relacionadas con docker.
 
