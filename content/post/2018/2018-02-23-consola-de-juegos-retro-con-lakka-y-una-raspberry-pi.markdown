@@ -3,7 +3,7 @@ pid: 301
 title: "Consola de juegos retro con Lakka y una Raspberry Pi"
 url: "/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/"
 date: 2018-02-23T23:00:00+01:00
-updated: 2018-02-24T23:00:00+01:00
+updated: 2018-03-05T19:30:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -65,6 +65,14 @@ Los juegos se distribuyen en archivos denominados ROM y estos se pueden descarga
 * [Los mejores juegos de MAME](http://lopezpino.com/2010/08/24/los-mejores-juegos-de-mame/)
 * [Los Mejores 234 Juegos de Mame Por Mediafire](https://www.taringa.net/comunidades/mame-arcade/4629126/Los-Mejores-234-Juegos-de-Mame-Por-Mediafire.html)
 * [Los 100 juegos míticos de NES](https://www.hobbyconsolas.com/reportajes/100-juegos-miticos-nes-49310)
+
+Algunas de las consolas emuladas son: 
+
+* Nintendo Entertainment System, Super Nintendo Entertainment System, Nintendo 64, Nintendo GameCube, Game Boy
+* Sega Master System, Genesis, Saturn, Dreamcast, Game Gear
+* MSX, MSX 2
+* Atari 2600, 5200, 7800, Lynx, Jaguar
+* Varias más y juegos de máquinas recreativas con FBA Alpha y MAME
 
 En el primer inicio Lakka debe hacer una serie de tareas para inicializar el sistema durante unos minutos, recomiendo no conectar el cable de red  ni ningún mando o teclado en este paso. Una vez se completa este primer inicio el siguiente paso es copiar las ROMs, hay varias formas una de ellas es desde un equipo con GNU/Linux y copiar los archivos al directorio _/storage/ROMs/_ directamente a la tarjeta microSD desde un ordenador. En otros sistemas que no saben como acceder a las particiones _ext4_ de Linux la más sencilla es activando el protocolo SAMBA en Lakka y copiarlos por la red, aunque tarda más. SAMBA se activa desde el menú _Settings > Services > SAMBA Enable_. 
 
@@ -130,6 +138,8 @@ Ya solo queda pasar algunos buenos momentos con estos juegos antiguos pero entre
 {{< postslinks >}}
 * [Raspberry Pi, desempaquetado](https://elblogdepicodev.blogspot.com.es/2012/05/raspberry-pi-desempaquetado-unboxing.html)
 * [Imágenes juegos](http://thumbnailpacks.libretro.com/)
+* [Nintendo video game consoles](https://en.wikipedia.org/wiki/Nintendo_video_game_consoles)
+* [Sega video game consoles](https://en.wikipedia.org/wiki/List_of_Sega_video_game_consoles)
 {{% /reference %}}
 
 {{% /post %}}
