@@ -1,7 +1,7 @@
 ---
 pid: 303
-title: "El problema de concurrencia de los fumadores resuelto en Java"
-url: "/2018/03/el-problema-de-concurrencia-de-los-fumadores-resuelto-en-java/"
+title: "El problema de concurrencia del agente y los fumadores resuelto en Java"
+url: "/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/"
 date: 2018-03-05T19:00:00+01:00
 language: "es"
 sharing: true
