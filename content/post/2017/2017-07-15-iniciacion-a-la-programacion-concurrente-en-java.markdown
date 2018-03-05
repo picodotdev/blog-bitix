@@ -63,6 +63,8 @@ En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acu
 
 {{% asciinema id="K7Ug6RT60mjWRbNcwRGapw7V6" caption="Ejemplo de concurrencia del barbero (2 barberos)" %}}
 
+Estos no son los únicos ejemplos clásicos otro es el del [agente y los fumadores][blogbitix-303].
+
 {{% code git="blog-ejemplos/tree/master/JavaconCurrency" command="./gradlew run" %}}
 
 {{% reference %}}
