@@ -107,6 +107,11 @@ header form.search {
 article h1 {
   font-size: 2.6em;
 }
+@media (max-width: 500px) {
+  article h1 {
+    font-size: 1.8em;
+  }
+}
 article p.information,
 article span.information {
   font-size: 0.9em;
@@ -125,6 +130,11 @@ article div.logotypes {
   text-align: right;
   clear: right;
 }
+@media (max-width: 500px) {
+  article div.logotypes {
+    width: 125px;
+  }
+}
 article div.logotypes img {
   background-color: white;
   border: 0.5em solid white;
@@ -132,6 +142,11 @@ article div.logotypes img {
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   margin-bottom: 1em;
+}
+@media (max-width: 500px) {
+  article div.logotypes img {
+    width: 125px;
+  }
 }
 article div.media {
   display: block;
@@ -211,16 +226,6 @@ footer {
 footer span.copyleft {
   transform: rotate(180deg);
   display: inline-block;
-}
-@media (min-width: 992px) {
-  span.adsense-xs {
-    display: none;
-  }
-}
-@media (max-width: 991px) {
-  span.adsense-md {
-    display: none;
-  }
 }
 div.banner {
   margin-bottom: 10px;
