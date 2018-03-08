@@ -1,18 +1,18 @@
 <footer>
   <div class="row">
-    <div class="col-sm-12 col-md-4">
+    <div class="col-12 col-sm-4">
       <p><strong>{{ .Site.Title }}</strong></p>
       <p>Blog dedicado a la distribución GNU/Linux que uso habitualmente, Arch Linux, a mis andanzas alrededor del software libre, la programación y a otros temas relacionados con la tecnología y la informática.</p>
       <p>Publicando de uno a tres artículos a la semana desde el año 2010.</p>
     </div>
-    <div class="col-sm-12 col-md-4 text-center menu">
+    <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">
         {{ range .Site.Menus.footer }}
           <li><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{end}}
       </ul>
     </div>
-    <div class="col-sm-12 col-md-4 text-center links">
+    <div class="col-12 col-sm-4 text-center links">
       {{ if .Site.Params.links.feed }}
         <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/rss.png" class="icon"></a>
       {{ end }}
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       Copyleft <span class="copyleft">&copy;</span> {{ now.Format "2006" }} - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow" rel="license"><img alt="Licencia de Creative Commons" title="Licencia de Creative Commons" style="border-width:0" src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" class="licencia"/></a><br />
       <a href="https://twitter.com/blogstackinfo" rel="nofollow"><img src="{{ .Site.BaseURL }}assets/images/blog-stack.png" alt="Blog Stack" title="Blog Stack"></a>
       <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="{{ .Site.BaseURL }}assets/images/planeta-codigo.png" alt="Planeta código" title="Planeta código"></a>
