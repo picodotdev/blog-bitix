@@ -3,6 +3,7 @@ pid: 304
 title: "7 computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM"
 url: "/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 date: 2018-03-10T10:00:00+01:00
+date: 2018-03-10T15:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -29,6 +30,10 @@ Ya había placas de tamaño reducido con un computador completo similares a la R
 La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa más capaz ni incluso la más barata, debido a su éxito han surgido numerosas placas similares. La totalidad de estas placas usan alguna distribución de GNU/Linux y procesadores ARM ya sea [Debian][debian], [Ubuntu][ubuntu], [Android][android], [Arch Linux ARM][archlinuxarm], [Armbian][armbian] o algunas distribuciones especializadas como [Lakka][lakka] para consola de juegos retro y [LibreELEC][libreelec] o [Kodi][kodi] para centro multimedia de salón.
 
 El uso que se les puede dar a estas computadores es muy diverso quizá no como para sustituir a un ordenador de escritorio o portátil basado en procesadores [Intel][intel] o [AMD][amd] pero si para otros propósitos como servidor de descargas, centro multimedia, servidor web, cluster de servidores con [Docker][docker], servicio en la nube propio con [OwnCloud][owncloud], servidor de código fuente con [GitLab][gitlab], servidor de integración continua con [Jenkins][jenkins], base de datos [PostgreSQL][postgresql] o los mencionados consola de juegos retro y centro multimedia entre cualesquiera otros usos que queramos mientras el software necesario esté disponible y la cantidad memoria de la computadora sea suficiente.
+
+<div class="media" style="text-align: center;">
+    <img src="assets/images/posts/2018/304/arm-powered.svg" width="300" alt="ARM Powered" title="ARM Powered">
+</div>
 
 ### Raspberry Pi
 
@@ -74,7 +79,7 @@ Aunque no es como los modelos anteriores de placas base este es destacable por s
 
 Aunque los modelos de [SolidRun][solid-run] son significativamente más caros poseen buenas especificaciones como el modelo [CuBox i4x4](https://www.solid-run.com/product/cubox-i4x4/) con un procesador _quad core_ aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y blutooth incluido en un formato de cubo de 2 pugadas. Como decía a un precio mas elevado, $170.
 
-El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-pulse/) incorpora un procesador [NXP i.MX8M](https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES) ya a 64 bits pero con el precio igualmente abultado de 170€ respecto a otras opciones.
+El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-pulse/) incorpora un procesador [NXP i.MX8M](https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES) ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170€.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="304"
@@ -111,13 +116,6 @@ A pesar de que las alternativas de placas bases sean más capaces que la Raspber
 
 Hasta el 2019 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la versión 4 y, sin embargo, cuando salga no creo que sea mucho más potente ni tenga más memoria que la que ya hoy tiene la Rock64.
 
-<div class="media" style="text-align: center;">
-    {{< figureproc
-        image1="" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1=""
-        image2="" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2=""
-        image3="" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="" >}}
-</div>
-
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
@@ -126,8 +124,9 @@ Hasta el 2019 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la ve
 * [GPUs ARM Mali](https://www.arm.com/products/graphics-and-multimedia/mali-gpu)
 * [GPUs ARM Mali (wkipedia)](https://www.arm.com/products/graphics-and-multimedia/mali-gpu)
 * [VideoCore](https://en.wikipedia.org/wiki/VideoCore)
-* [OpenGL ES](https://www.khronos.org/opengles/)
-* [OpenCL](https://www.khronos.org/opencl/)
+* [OpenGL ES][opengles]
+* [OpenCL][opencl]
+* [OpenVG][openvg]
 {{% /reference %}}
 
 {{% /post %}}
