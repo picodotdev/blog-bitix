@@ -4,7 +4,7 @@ title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas e
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]
 date: 2018-03-10T10:00:00+01:00
-date: 2018-03-10T20:00:00+01:00
+date: 2018-03-10T20:15:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -38,7 +38,7 @@ El uso que se les puede dar a estas computadores es muy diverso quizá no como p
 
 ### Raspberry Pi
 
-Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _marketing_ ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo [Raspberry Pi 3](https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/) es una limitación. Su SoC BCM2837 de Broadcom no es el más capaz tanto en CPU (_quad-core_ ARM Cortex-A53) como en GPU (VideoCore IV).
+Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _marketing_ ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo [Raspberry Pi 3](https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/) es una limitación. Su _SoC_ BCM2837 de Broadcom no es el más capaz tanto en CPU (_quad-core_ ARM Cortex-A53) como en GPU (VideoCore IV).
 
 * [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi)
 
@@ -50,7 +50,7 @@ Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _ma
 
 ### Rock64
 
-El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versiones de 1, 2 y 4 GiB de memoria, gigabit ethernet y 1 puerto USB 3.0 a un precio similar al de una Raspberry Pi, lo único que le falta es WiFi para superar en todo a la RPi. También posee un módulo eMMC más rápido que las tarjetas microSD, SPI de 128 MiB para prescincir de tarjeta microSD en el arranque, salida de audio, otros 2 puertos USB 2.0, salida HDMI con soporte para 4K@60fps HDR10, botones dedicados de encendido y reinicio y los 40 pines para usar sensores. El SoC es un [Rockchip RK3328](http://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html) _quad-core_ ARM Cortex-A53 y la GPU [ARM Mali-450MP2](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-450-gpu) con capacidad para OpenGL ES 1.1 / 2.0.
+El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versiones de 1, 2 y 4 GiB de memoria, gigabit ethernet y 1 puerto USB 3.0 a un precio similar al de una Raspberry Pi, lo único que le falta es WiFi para superar en todo a la RPi. También posee un módulo eMMC más rápido que las tarjetas microSD, SPI de 128 MiB para prescincir de tarjeta microSD en el arranque, salida de audio, otros 2 puertos USB 2.0, salida HDMI con soporte para 4K@60fps HDR10, botones dedicados de encendido y reinicio y los 40 pines para usar sensores. El _SoC_ es un [Rockchip RK3328](http://www.rock-chips.com/a/en/products/RK33_Series/2017/0118/829.html) _quad-core_ ARM Cortex-A53 y la GPU [ARM Mali-450MP2](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-450-gpu) con capacidad para OpenGL ES 1.1 / 2.0.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="304"
@@ -60,7 +60,7 @@ El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versio
 
 Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un _splitter_ con _Power Over Ethernet_ o _PoE_ que hace innecesario el alimentador de corriente si poseemos o adquirimos un _switch_ con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.
 
-En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor SoC [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
+En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor _SoC_ [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="304"
@@ -78,7 +78,7 @@ Aunque no es como los modelos anteriores de placas base este es destacable por s
 
 ### ASUS Tinker Board
 
-La [ASUS Tinker Board](https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/overview/) también está basada en un SoC de Rockchip pero en este caso el modelo [RK3288](http://www.rock-chips.com/a/en/products/RK32_Series/2014/0504/484.html) que como CPU tiene el modelo más potente de 32 bits con una ARM Cortex-A17 _quad-core_ e incorporando una GPU Mali-T764 mejor que la Mali de la Rock64. Tiene 2 GiB de memoria e incorpora de serie WiFi N y Bluetooth 4.0.
+La [ASUS Tinker Board](https://www.asus.com/uk/Single-Board-Computer/Tinker-Board/overview/) también está basada en un _SoC_ de Rockchip pero en este caso el modelo [RK3288](http://www.rock-chips.com/a/en/products/RK32_Series/2014/0504/484.html) que como CPU tiene el modelo más potente de 32 bits con una ARM Cortex-A17 _quad-core_ e incorporando una GPU Mali-T764 mejor que la Mali de la Rock64. Tiene 2 GiB de memoria e incorpora de serie WiFi N y Bluetooth 4.0.
 
 Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que la Raspberry Pi, aún así incorpora de serie WiFi y Bluetooth por lo que no sería necesario comprar elementos adicionales.
 
@@ -105,7 +105,7 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
 
 Otro distribuidor importante es [Hardkernel][hardkernel] con sus modelos ODROID de pequeñas computadoras basadas en ARM con varios modelos entre ellos el [ODROID C2](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438) que posee un procesador ARM Cortex-A53 _quad-core_, 2 GiB de memoria, gigabit ethernet, soporta HDMI 2.0 4K@60fps, eMMC, 4 puertos USB 2.0 pero sin WiFi ni bluetooth. A un precio de $46.
 
-Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) tambien basada en el SoC Rockchip RK3399.
+Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) tambien basada en el _SoC_ Rockchip RK3399.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2018" pid="304"
