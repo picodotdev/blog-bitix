@@ -38,7 +38,7 @@ El uso que se les puede dar a estas computadores es muy diverso quizá no como p
 
 ### Raspberry Pi
 
-Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _marketing_ ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo [Raspberry Pi 3](https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/) es una limitación. Su _SoC_ BCM2837 de Broadcom no es el más capaz tanto en CPU (_quad-core_ ARM Cortex-A53) como en GPU (VideoCore IV).
+Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _marketing_ ha sido la que ha alcanzado la mayor popularidad sin ser la más potente. Gracias a su éxito con más de 14 millones de unidades vendidas es la mejor opción por su gran soporte de la comunidad aunque para algunos casos de uso su gigabyte de memoria en el modelo [Raspberry Pi 3](https://www.raspberrypi.org/magpi/raspberry-pi-3-specs-benchmarks/) es una limitación. Su _SoC_ BCM2837 de Broadcom no es el más capaz tanto en CPU (_quad-core_ ARM Cortex-A53 a 1.2 GHz) como en GPU (VideoCore IV) y con solo 10/100 Ethernet compartida con los puertos USB lo que es una limitación importante en las transferencias de datos.
 
 * [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi)
 
