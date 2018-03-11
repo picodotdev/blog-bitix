@@ -4,7 +4,7 @@ title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas e
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]
 date: 2018-03-10T10:00:00+01:00
-date: 2018-03-10T20:15:00+01:00
+date: 2018-03-10T20:23:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -59,6 +59,10 @@ El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versio
 </div>
 
 Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un _splitter_ con _Power Over Ethernet_ o _PoE_ que hace innecesario el alimentador de corriente si poseemos o adquirimos un _switch_ con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.
+
+<div class="media media-video" style="text-align: center;">
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/ZejkWra-Mfc" frameborder="0" allowfullscreen></iframe>
+</div>
 
 En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor _SoC_ [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
 
