@@ -4,7 +4,7 @@ title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas e
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]
 date: 2018-03-10T10:00:00+01:00
-date: 2018-03-17T19:00:00+01:00
+updated: 2018-03-17T19:00:00+01:00
 language: "es"
 sharing: true
 comments: true
