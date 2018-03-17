@@ -18,3 +18,8 @@
     <img src="assets/images/logotipos/{{ .Params.image3 }}" class="right {{ .Params.class3 }}"{{ if .Params.width3 }} width="{{ .Params.width3 }}"{{ end }} alt="{{ .Params.title3 }}" title="{{ .Params.title3 }}"/>
 </div>
 {{ end }}
+{{ if .Params.image4 }}
+<div class="logotypes" style="float: right; clear: right;">
+    <img src="assets/images/logotipos/{{ .Params.image4 }}" class="right {{ .Params.class4 }}"{{ if .Params.width4 }} width="{{ .Params.width4 }}"{{ end }} alt="{{ .Params.title4 }}" title="{{ .Params.title4 }}"/>
+</div>
+{{ end }}
