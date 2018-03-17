@@ -4,7 +4,7 @@ title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas e
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]
 date: 2018-03-10T10:00:00+01:00
-date: 2018-03-14T20:21:00+01:00
+date: 2018-03-17T19:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -103,6 +103,8 @@ En el momento de escribir el artículo están preparando el lanzamiento de la pl
         caption="Rock64Pro" >}}
 </div>
 
+Estas placas de PINE64 son de lo mejor en la relación características hardware y precio, donde adolecen es en el software y es que aún con un tiempo relativamente corto de un año de vida es en el software donde pueden presentar algún problema. Conforme pase el tiempo mejorarán pero quizá no sea el modelo más adecuado para aquellos usuarios que no deseen encontrase problemas en su uso y no estén dispuestos buscar información o a resolver los que se presenten.
+
 Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM a un precio de $90. Pantalla de 11" o 14" con una resolución de 1366x768, 2 GiB de memoria, WiFi, microSD, mini HDMI, 16GB eMMC, dos puertos USB 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y _touchpad_.
 
 <div class="media" style="text-align: center;">
@@ -181,7 +183,7 @@ Estos no son los únicos modelos que existen pero son algunos de los más destac
 
 A pesar de que las alternativas de placas bases sean más capaces que la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.
 
-Hasta el 2019 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la versión 4 y, sin embargo, cuando salga no creo que sea mucho más potente ni tenga más memoria que la que ya hoy tiene la Rock64.
+Hasta el 2019 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la versión 4 y, sin embargo, y ójala me equivoque, cuando salga no creo que sea mucho más potente ni tenga más memoria que la que ya hoy tiene la Rock64, posiblemente el 3.14 del 2019 (día catorce del mes tres, por el día Pi) se comprobará.
 
 {{% reference %}}
 {{< links >}}
