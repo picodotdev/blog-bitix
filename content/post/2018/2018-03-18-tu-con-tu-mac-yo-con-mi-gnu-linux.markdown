@@ -3,7 +3,7 @@ pid: 305
 title: "Tú con tu Mac, yo con mi GNU/Linux"
 url: "/2018/03/tu-con-mac-yo-con-mi-gnu-linux/"
 date: 2018-03-17T14:00:00+01:00
-updated: 2018-03-17T19:20:00+01:00
+updated: 2018-03-18T17:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -23,11 +23,11 @@ Tenía la duda de si esta experiencia me iba a convencer de pasarme al lado oscu
 
 ### Software
 
-Empezando por el software libre y la posibilidad de elegir la distribución o entorno de escritorio que más me guste. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.
+Empezando por el software libre, ¿hace falta que mecione [las cuatro libertades esenciales](https://www.gnu.org/philosophy/free-sw.es.html)? que más allá del software define los principios, la ética y moral en los que uno se basa. O la posibilidad de elegir la distribución o entorno de escritorio que más me guste o mejor se adapte a mis requerimientos. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.
 
 Para cualquier necesidad en Linux seguramente hay una aplicación que realice esa funcionalidad, editor de documentos, reproductor de vídeo, edición fotográfica, navegador, administrador de ebooks, entorno de desarrollo, editor de código, descargas torrent. Las principales aplicaciones están disponibles para ambas plataformas: [LibreOffice][libreoffice], [VLC][vlc], [GIMP][gimp], [Firefox][firefox], [Calibre][calibre], [IntelliJ][intellij], [Visual Studio Code][microsoft-visual-studio-code], [Tranmission][transmissionbt], ...
 
-Sin embargo, para algunas otras necesidades en Mac seguramente hay que sacar otra vez la tarjeta de crédito para compra alguna aplicación que realice la tarea que en GNU/Linux está disponible gratuitamente y es software libre. Por ejemplo, para convertir un vídeo a otro formato, para convertir a MP3 un CD de audio o un simple compresor/descompresor de archivos.
+Sin embargo, para algunas otras necesidades en Mac seguramente hay que sacar otra vez la tarjeta de crédito para compra alguna aplicación que realice la tarea que en GNU/Linux está disponible gratuitamente y es software libre. Por ejemplo, para convertir un vídeo a otro formato, para convertir a MP3 un CD de audio o un simple compresor/descompresor de archivos. Menos mal que en mac también se puede acceder a todo ese catálogo de software libre.
 
 Y [en GNU/Linux también hay juegos de buena calidad][blogbitix-172].
 
@@ -72,7 +72,7 @@ Es Apple quien decide cuando deja de dar soporte a sus equipos, en forma de actu
 
 ### Mi conclusión
 
-La marca Apple tiene un halo de idolatración, de que no hay nada mejor ya sea en el hardware o en el software y si se me permite de elitismo, superioridad, ir a contracorriente, tener algo diferenciativo o exclusividad. Por mi experiencia no creo que GNU/Linux hoy día tenga mucho envidiar, ni sea más difícil de instalar o usar, quizá un buen soporte de hardware desde el día 0 pero eso es consecuencia de la cuota de uso de GNU/Linux en el escritorio, aún así las cosas han mejorado mucho en la última década.
+La marca Apple tiene un halo de idolatración, de que no hay nada mejor ya sea en el hardware o en el software y si se me permite de elitismo, superioridad, ir a contracorriente, tener algo diferenciativo o exclusividad. Por mi experiencia no creo que GNU/Linux hoy día tenga mucho envidiar, ni sea más difícil de instalar o usar, quizá un buen soporte de hardware desde el primer día pero eso es consecuencia de la cuota de uso de GNU/Linux en el escritorio, aún así las cosas han mejorado mucho en la última década.
 
 ¿Quieres un equipo para trabajar sin preocuparte mucho de dedicarle tiempo a mantenerlo? usa una versión con soporte prolongado (LTS) de [Ubuntu][ubuntu], ¿quieres una distribución con el software actualizado? usa Arch Linux o una de sus derivadas, ¿quieres un equipo potente, configurable, ligero y bonito? échale un vistazo a los Slimbook.
 
