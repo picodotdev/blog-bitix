@@ -23,7 +23,7 @@ Tenía la duda de si esta experiencia me iba a convencer de pasarme al lado oscu
 
 ### Software
 
-Empezando por el software libre, ¿hace falta que mecione [las cuatro libertades esenciales](https://www.gnu.org/philosophy/free-sw.es.html)? que más allá del software define los principios, la ética y moral en los que uno se basa. O la posibilidad de elegir la distribución o entorno de escritorio que más me guste o mejor se adapte a mis requerimientos. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.
+Empezando por el software libre, ¿hace falta que mecione [las cuatro libertades esenciales](https://www.gnu.org/philosophy/free-sw.es.html)? o la posibilidad de elegir la distribución o entorno de escritorio que más me guste o mejor se adapte a mis requerimientos. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.
 
 Para cualquier necesidad en Linux seguramente hay una aplicación que realice esa funcionalidad, editor de documentos, reproductor de vídeo, edición fotográfica, navegador, administrador de ebooks, entorno de desarrollo, editor de código, descargas torrent. Las principales aplicaciones están disponibles para ambas plataformas: [LibreOffice][libreoffice], [VLC][vlc], [GIMP][gimp], [Firefox][firefox], [Calibre][calibre], [IntelliJ][intellij], [Visual Studio Code][microsoft-visual-studio-code], [Tranmission][transmissionbt], ...
 
