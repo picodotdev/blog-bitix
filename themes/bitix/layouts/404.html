@@ -2,30 +2,28 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-md-8 col-md-offset-2">
+          <div class="col-12 col-lg-8">
             <h1>{{ i18n "page_not_found" }}</h1>
             <h3>{{ i18n "error_404" }}</h3>
             <p>{{ i18n "error_404_description" }}</p>
-
           </div>
         </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <hr>
+        <div class="row">
+          <div class="col-12">
+            <hr>
+          </div>
+        </div>
+        {{ partial "footer.html" . }}
       </div>
     </div>
-    {{ partial "footer.html" . }}
   </div>
   {{ partial "html-footer.html" . }}
   {{ partial "html-footer-custom.html" . }}
   <script type="text/javascript">
-    $(document).ready(function() {
-        ga('send', 'event', 'error', '404', window.location.pathname);
-    });
+    ga('send', 'event', 'error', '404', window.location.pathname);
   </script>
 </body>
 </html>
