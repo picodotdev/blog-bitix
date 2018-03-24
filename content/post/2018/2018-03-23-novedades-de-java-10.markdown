@@ -3,13 +3,14 @@ pid: 306
 title: "Novedades de Java 10"
 url: "/2018/03/novedades-de-java-10/"
 date: 2018-03-23T20:00:00+01:00
+updated: 2018-03-24T11:00:00+01:00
 language: "es"
 sharing: true
 comments: true
 promoted: false
 tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
-summary: "Oracle y los ingenieros a cargo del desarrollo Java están haciendo en mi opinión un buen trabajo que se han materializado en las versiones Java 8 con las _lambdas_, en Java 9 con los módulos y en Java 10 con la mejora en la inferencia de tipos. Todo ello está haciendo que la plataforma evolucione más rápido y significativamente que lo que hasta hace unos años estábamos acostumbrados."
+summary: "Oracle y los ingenieros a cargo del desarrollo de Java están haciendo en mi opinión un buen trabajo que se han materializado en las versiones Java 8 con las _lambdas_, en Java 9 con los módulos y en Java 10 con la mejora en la inferencia de tipos. Todo ello está haciendo que la plataforma evolucione más rápido y significativamente que lo que hasta hace unos años estábamos acostumbrados."
 ---
 
 {{% post %}}
