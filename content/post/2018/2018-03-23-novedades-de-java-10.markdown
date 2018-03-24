@@ -3,7 +3,7 @@ pid: 306
 title: "Novedades de Java 10"
 url: "/2018/03/novedades-de-java-10/"
 date: 2018-03-23T20:00:00+01:00
-updated: 2018-03-24T11:00:00+01:00
+updated: 2018-03-24T17:00:00+01:00
 language: "es"
 sharing: true
 comments: true
@@ -77,6 +77,8 @@ La palabra reservada _var_ no hace de Java un lenguaje dinámico, sigue siendo e
 La existencia de _var_ no significa que haya de usarse de forma indiscriminada para todas las variables locales sino juiciosamente. En este caso quizá es preferible declarar el tipo por no ser obvio lo que retorna el método _getCities()_.
 
 {{< gist picodotdev d4ff7ac7eecda8504ee0834593d70929 "TypeVsVar.java" >}}
+
+* [Style Guidelines for Local Variable Type Inference in Java](http://openjdk.java.net/projects/amber/LVTIstyle.html)
 
 Los entornos integrados de desarrollo tardarán un tiempo en implementar la inferencia de tipos para variables locales hasta que lancen nuevas versiones.
 
