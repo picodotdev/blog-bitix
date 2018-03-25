@@ -138,6 +138,7 @@ Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta l
 * [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](http://docs.oracle.com/javase/9/migrate/toc.htm)
 * [Java 9 modules – JPMS basics](https://jaxenter.com/java-9-modules-jpms-basics-135885.html)
 * [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]
+* [La herramienta jlink para generar runtimes de Java incluyendo exclusivamente los módulos que usa una aplicación][blogbitix-307]
 * [Code First Java 9 Tutorial](https://blog.codefx.org/java/java-9-tutorial/)
 {{% /reference %}}
 
