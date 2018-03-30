@@ -5,6 +5,7 @@ url: "/2018/01/conferencia-bilbostack-2018/"
 date: 2018-01-27T18:00:00+01:00
 updated: 2018-01-28T23:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -4,6 +4,7 @@ title: "Obtener datos de múltiples tablas con jOOQ"
 url: "/2015/11/obtener-datos-de-multiples-tablas-con-jooq/"
 date: 2015-11-14T19:00:00+01:00
 updated: 2015-11-17T19:20:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

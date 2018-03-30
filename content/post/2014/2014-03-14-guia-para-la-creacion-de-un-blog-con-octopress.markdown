@@ -4,6 +4,7 @@ title: "Guía para la creación de un blog con Octopress"
 url: "/2014/03/guia-para-la-creacion-de-un-blog-con-octopress/"
 date: 2014-03-14T18:19:24+01:00
 updated: 2014-06-07T01:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog", "software", "software-libre", "planeta-linux", "planeta-codigo", "blog-stack"]

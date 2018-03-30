@@ -4,6 +4,7 @@ title: "Página Dashboard de Apache Tapestry"
 url: "/2014/06/pagina-dashboard-de-apache-tapestry/"
 date: 2014-06-13T17:37:24+02:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

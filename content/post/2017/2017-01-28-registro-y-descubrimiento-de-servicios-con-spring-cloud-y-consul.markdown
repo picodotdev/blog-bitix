@@ -4,6 +4,7 @@ title: "Registro y descubrimiento de servicios con Spring Cloud y Consul"
 url: "/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/"
 date: 2017-01-28T11:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

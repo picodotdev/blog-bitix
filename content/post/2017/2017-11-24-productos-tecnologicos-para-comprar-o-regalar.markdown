@@ -5,6 +5,7 @@ url: "/2017/11/productos-tecnologicos-para-comprar-o-regalar/"
 date: 2017-11-24T23:00:00+01:00
 updated: 2017-11-30T15:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

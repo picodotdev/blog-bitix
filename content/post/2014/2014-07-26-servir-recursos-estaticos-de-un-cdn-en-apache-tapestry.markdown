@@ -5,6 +5,7 @@ url: "/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/"
 aliases: "/2014/07/servir-recursos-estaticos-de-un-cdn-en-apache-tapestry/"
 date: 2014-07-26T12:35:50+02:00
 updated: 2015-10-19T19:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

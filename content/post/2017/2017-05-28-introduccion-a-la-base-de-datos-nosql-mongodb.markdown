@@ -5,6 +5,7 @@ url: "/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/"
 date: 2017-05-28T12:30:00+02:00
 updated: 2017-06-04T12:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

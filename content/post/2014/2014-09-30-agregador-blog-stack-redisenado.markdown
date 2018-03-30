@@ -4,6 +4,7 @@ title: "Agregador Blog Stack rediseñado"
 url: "/2014/09/agregador-blog-stack-redisenado/"
 date: 2014-09-30T19:38:46+02:00
 updated: 2014-09-30T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["planeta-linux", "planeta-codigo", "blog-stack"]

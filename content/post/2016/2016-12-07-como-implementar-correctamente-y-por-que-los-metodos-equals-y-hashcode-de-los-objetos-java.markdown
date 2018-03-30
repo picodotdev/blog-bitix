@@ -5,6 +5,7 @@ url: "/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-has
 date: 2016-12-07T11:00:00+01:00
 updated: 2016-12-07T14:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

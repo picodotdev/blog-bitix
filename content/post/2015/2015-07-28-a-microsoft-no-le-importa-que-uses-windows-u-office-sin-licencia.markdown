@@ -4,6 +4,7 @@ title: "A Microsoft no le importa que uses Windows u Office sin licencia"
 url: "/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/"
 date: 2015-07-28T19:30:00+02:00
 updated: 2015-09-30T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

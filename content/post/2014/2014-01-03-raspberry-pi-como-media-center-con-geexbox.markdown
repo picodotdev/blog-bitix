@@ -4,6 +4,7 @@ title: "Raspberry Pi como Media Center con GeeXboX"
 url: "/2014/01/raspberry-pi-como-media-center-con-geexbox/"
 date: 2014-01-03T20:00:00+01:00
 updated: 2016-09-23T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["planeta-linux", "hardware", "software", "software-libre"]

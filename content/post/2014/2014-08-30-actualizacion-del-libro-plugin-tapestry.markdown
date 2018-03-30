@@ -4,6 +4,7 @@ title: "Actualización del libro PlugIn Tapestry"
 url: "/2014/08/actualizacion-del-libro-plugin-tapestry/"
 date: 2014-08-30T00:16:10+02:00
 updated: 2015-10-04T17:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

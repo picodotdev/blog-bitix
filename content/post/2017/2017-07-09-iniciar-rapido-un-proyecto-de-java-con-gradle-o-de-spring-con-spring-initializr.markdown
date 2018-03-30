@@ -4,6 +4,7 @@ title: "Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring In
 url: "/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/"
 date: 2017-07-09T13:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

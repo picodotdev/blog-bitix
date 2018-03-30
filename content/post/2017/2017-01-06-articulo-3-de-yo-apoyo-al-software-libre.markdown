@@ -5,6 +5,7 @@ url: "/2017/01/articulo-3-de-yo-apoyo-al-software-libre/"
 date: 2017-01-06T12:00:00+01:00
 updated: 2017-01-06T22:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "planeta-codigo", "planeta-linux", "software-libre"]

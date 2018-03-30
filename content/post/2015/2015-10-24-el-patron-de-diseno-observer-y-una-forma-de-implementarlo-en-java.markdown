@@ -5,6 +5,7 @@ url: "/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java
 aliases: ["/2015/10/ejemplo-del-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/"]
 date: 2015-10-24T12:00:00+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

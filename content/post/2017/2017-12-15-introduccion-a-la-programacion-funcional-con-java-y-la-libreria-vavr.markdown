@@ -4,6 +4,7 @@ title: "Introducción a la programación funcional con Java y la librería Vavr"
 url: "/2017/12/introduccion-a-la-programacion-funcional-con-java-y-la-libreria-vavr/"
 date: 2017-12-15T23:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

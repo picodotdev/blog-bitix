@@ -4,6 +4,7 @@ title: "Servidor de aplicaciones JBoss/WildFly"
 url: "/2014/02/servidor-de-aplicaciones-jboss-slash-wildfly/"
 date: 2014-02-07T22:35:31+01:00
 updated: 2016-03-14T18:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "software", "planeta-codigo"]

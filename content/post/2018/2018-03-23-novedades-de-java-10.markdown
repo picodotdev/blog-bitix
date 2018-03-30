@@ -5,6 +5,7 @@ url: "/2018/03/novedades-de-java-10/"
 date: 2018-03-23T20:00:00+01:00
 updated: 2018-03-27T17:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

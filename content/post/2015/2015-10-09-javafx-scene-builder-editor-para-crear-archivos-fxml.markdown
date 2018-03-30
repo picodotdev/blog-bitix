@@ -4,6 +4,7 @@ title: "JavaFX Scene Builder, editor para crear archivos FXML"
 url: "/2015/10/javafx-scene-builder-editor-para-crear-archivos-fxml/"
 date: 2015-10-09T00:00:00+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -4,6 +4,7 @@ title: "Las excepciones del lenguaje Java"
 url: "/2017/10/las-excepciones-del-lenguaje-java/"
 date: 2017-10-15T11:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

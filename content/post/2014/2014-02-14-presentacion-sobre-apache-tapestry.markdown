@@ -4,6 +4,7 @@ title: "Presentación sobre Apache Tapestry"
 url: "/2014/02/presentacion-sobre-apache-tapestry/"
 date: 2014-02-14T16:05:53+01:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "tapestry", "software", "planeta-codigo"]

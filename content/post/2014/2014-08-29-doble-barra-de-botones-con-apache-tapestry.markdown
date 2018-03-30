@@ -4,6 +4,7 @@ title: "Doble barra de botones con Apache Tapestry"
 url: "/2014/08/doble-barra-de-botones-con-apache-tapestry/"
 date: 2014-08-29T13:04:52+02:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

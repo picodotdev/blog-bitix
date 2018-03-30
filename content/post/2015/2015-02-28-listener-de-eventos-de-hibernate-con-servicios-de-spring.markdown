@@ -3,6 +3,7 @@ pid: 69
 title: "Listener de eventos de Hibernate con servicios de Spring"
 url: "/2015/02/listener-de-eventos-de-hibernate-con-servicios-de-spring/"
 date: 2015-02-28T10:59:08+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

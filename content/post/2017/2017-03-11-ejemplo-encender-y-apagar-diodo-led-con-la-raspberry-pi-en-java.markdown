@@ -6,6 +6,7 @@ aliases: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry
 date: 2017-03-11T10:00:00+01:00
 updated: 2017-03-12T00:15:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

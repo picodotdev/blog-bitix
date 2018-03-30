@@ -5,6 +5,7 @@ url: "/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/"
 aliases: ["/2016/02/cifrado-de-archivos-con-encfs-en-gnu-linux/"]
 date: 2016-02-19T20:00:00+01:00
 updated: 2016-02-22T21:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

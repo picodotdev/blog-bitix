@@ -4,6 +4,7 @@ title: "Configurar Nginx como balanceador de carga"
 url: "/2016/07/configurar-nginx-como-balanceador-de-carga/"
 date: 2016-07-08T17:00:00+02:00
 updated: 2016-07-09T11:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

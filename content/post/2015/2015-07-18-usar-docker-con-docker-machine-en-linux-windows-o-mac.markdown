@@ -4,6 +4,7 @@ title: "Usar docker con Docker Machine en Linux, Windows o Mac"
 url: "/2015/07/usar-docker-con-docker-machine-en-linux-windows-o-mac/"
 date: 2015-07-18T12:00:00+02:00
 updated: 2015-07-18T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

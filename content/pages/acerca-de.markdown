@@ -6,6 +6,7 @@ aliases: ["/pages/acerca-de/"]
 date: 2013-12-02T13:00:00+10:00
 updated: 2016-10-22T23:00:00+02:00
 comments: true
+rss: true
 sharing: true
 footer: true
 ---

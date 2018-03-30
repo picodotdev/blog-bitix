@@ -6,6 +6,7 @@ aliases: ["/2017/03/controlar-un-display-1602-para-mostrar-texto-con-la-raspberr
 date: 2017-03-18T10:00:00+01:00
 updated: 2017-03-19T02:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

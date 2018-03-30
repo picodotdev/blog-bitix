@@ -4,6 +4,7 @@ title: "Introducción al protocolo HTTP/2"
 url: "/2016/02/introduccion-al-protocolo-http-2/"
 date: 2016-02-20T20:00:00+01:00
 updated: 2016-02-26T21:10:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

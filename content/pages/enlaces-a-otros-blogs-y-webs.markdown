@@ -6,6 +6,7 @@ aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
 updated: 2018-01-13T11:00:00+01:00
 comments: true
+rss: true
 sharing: true
 footer: true
 ---

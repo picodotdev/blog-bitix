@@ -4,6 +4,7 @@ title: "Introducción a la base de datos NoSQL Redis"
 url: "/2017/06/introduccion-a-la-base-de-datos-nosql-redis/"
 date: 2017-06-11T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -5,6 +5,7 @@ url: "/2017/05/introduccion-a-la-base-de-datos-relacional-postgresql/"
 date: 2017-05-27T12:00:00+02:00
 updated: 2017-05-28T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

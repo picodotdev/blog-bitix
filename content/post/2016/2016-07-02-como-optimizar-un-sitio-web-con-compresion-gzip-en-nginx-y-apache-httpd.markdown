@@ -3,6 +3,7 @@ pid: 155
 title: "Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD"
 url: "/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/"
 date: 2016-07-02T12:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

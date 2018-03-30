@@ -5,6 +5,7 @@ url: "/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/"
 date: 2017-07-07T23:30:00+02:00
 updated: 2017-07-08T13:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

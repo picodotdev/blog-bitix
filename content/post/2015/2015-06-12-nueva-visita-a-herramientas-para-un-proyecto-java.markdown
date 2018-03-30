@@ -4,6 +4,7 @@ title: "Nueva visita a Herramientas para un proyecto Java"
 url: "/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/"
 date: 2015-06-12T20:00:00+02:00
 updated: 2015-09-30T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

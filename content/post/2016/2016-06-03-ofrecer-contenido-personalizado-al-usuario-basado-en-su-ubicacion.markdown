@@ -4,6 +4,7 @@ title: "Ofrecer contenido personalizado al usuario basado en su ubicación"
 url: "/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/"
 date: 2016-06-03T19:00:00+02:00
 updated: 2016-06-06T19:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

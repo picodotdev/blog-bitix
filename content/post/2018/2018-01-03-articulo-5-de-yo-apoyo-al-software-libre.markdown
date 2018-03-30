@@ -5,6 +5,7 @@ url: "/2018/01/articulo-5-de-yo-apoyo-al-software-libre/"
 date: 2018-01-03T10:00:00+01:00
 updated: 2018-01-03T13:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -5,6 +5,7 @@ url: "/2017/12/peliculas-sobre-tecnologia-o-informatica-series-documentales-vide
 date: 2017-12-07T13:00:00+01:00
 updated: 2017-12-30T00:05:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

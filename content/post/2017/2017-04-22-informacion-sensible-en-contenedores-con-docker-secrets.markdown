@@ -5,6 +5,7 @@ url: "/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/"
 aliases: ["/2017/04/informacion-sensible-en-contenedores-con-docker-secrets/"]
 date: 2017-04-22T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

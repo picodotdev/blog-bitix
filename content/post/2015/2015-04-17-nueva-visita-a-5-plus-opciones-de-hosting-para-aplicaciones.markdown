@@ -4,6 +4,7 @@ title: "Nueva visita a 5+ opciones de «hosting» para aplicaciones"
 url: "/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/"
 date: 2015-04-17T19:56:10+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["programacion", "blog-stack", "planeta-linux", "planeta-codigo"]

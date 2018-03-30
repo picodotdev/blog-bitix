@@ -4,6 +4,7 @@ title: "Crear anotaciones de Javadoc personalizadas con taglets"
 url: "/2017/09/crear-anotaciones-de-javadoc-personalizadas-con-taglets/"
 date: 2017-09-16T10:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

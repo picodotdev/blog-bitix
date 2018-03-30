@@ -4,6 +4,7 @@ title: "Forzar el uso del protocolo https en Apache Tapestry"
 url: "/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/"
 date: 2014-08-22T11:09:23+02:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

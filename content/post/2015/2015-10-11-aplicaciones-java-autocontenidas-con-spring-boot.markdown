@@ -4,6 +4,7 @@ title: "Aplicación Java autocontenida con Spring Boot"
 url: "/2015/10/aplicacion-java-autocontenida-con-spring-boot/"
 date: 2015-10-13T00:00:00+02:00
 updated: 2015-12-06T12:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

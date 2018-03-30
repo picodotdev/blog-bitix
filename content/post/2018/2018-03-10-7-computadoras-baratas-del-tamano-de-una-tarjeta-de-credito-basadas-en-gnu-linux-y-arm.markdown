@@ -6,6 +6,7 @@ aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-
 date: 2018-03-10T10:00:00+01:00
 updated: 2018-03-17T19:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

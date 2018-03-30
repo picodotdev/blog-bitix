@@ -5,6 +5,7 @@ url: "/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/"
 date: 2017-04-09T11:00:00+02:00
 updated: 2017-04-16T13:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

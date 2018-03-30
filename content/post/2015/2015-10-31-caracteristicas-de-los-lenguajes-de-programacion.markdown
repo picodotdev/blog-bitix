@@ -4,6 +4,7 @@ title: "Características de los lenguajes de programación"
 url: "/2015/10/caracteristicas-de-los-lenguajes-de-programacion/"
 date: 2015-10-31T12:00:00+01:00
 updated: 2015-11-27T20:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -4,6 +4,7 @@ title: "Generar y convertir claves y certificados con OpenSSL"
 url: "/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/"
 date: 2014-02-21T17:36:21+01:00
 updated: 2017-04-08T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["programacion", "seguridad", "software", "software-libre", "planeta-linux"]

@@ -5,6 +5,7 @@ url: "/2017/07/iniciacion-a-la-programacion-concurrente-en-java/"
 aliases: ["/2017/07/tutorial-sobre-programacion-concurrente-en-java/"]
 date: 2017-07-15T00:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

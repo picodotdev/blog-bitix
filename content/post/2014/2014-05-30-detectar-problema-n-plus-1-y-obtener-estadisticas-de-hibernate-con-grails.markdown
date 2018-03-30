@@ -4,6 +4,7 @@ title: "Detectar problema N+1 y obtener estadísticas de Hibernate con Grails"
 url: "/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/"
 date: 2014-05-30T20:30:00+02:00
 updated: 2014-06-13T16:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "planeta-codigo", "blog-stack"]

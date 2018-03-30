@@ -4,6 +4,7 @@ title: "Cómo configurar una impresora HP en red en Arch Linux"
 url: "/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/"
 date: 2016-08-28T10:00:00+02:00
 updated: 2016-08-28T15:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

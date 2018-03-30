@@ -4,6 +4,7 @@ title: "Conferencia BilboStack 2015"
 url: "/2015/01/conferencia-bilbostack-2015/"
 date: 2015-01-18T13:00:00+01:00
 updated: 2016-01-31T10:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "planeta-codigo", "planeta-linux"]

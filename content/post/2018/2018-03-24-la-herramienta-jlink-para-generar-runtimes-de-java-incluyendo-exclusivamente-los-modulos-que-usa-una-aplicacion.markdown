@@ -4,6 +4,8 @@ title: "La herramienta jlink para generar runtimes de Java incluyendo exclusivam
 url: "/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/"
 date: 2018-03-24T23:30:00+01:00
 language: "es"
+rss: true
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -3,6 +3,7 @@ pid: 158
 title: "Guía básica del intérprete de comandos Bash"
 url: "/2016/07/guia-basica-del-interprete-de-comandos-bash/"
 date: 2016-07-10T11:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

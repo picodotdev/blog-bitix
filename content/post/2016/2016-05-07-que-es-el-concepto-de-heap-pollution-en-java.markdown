@@ -4,6 +4,7 @@ title: "Qué es el concepto de Heap Pollution en Java"
 url: "/2016/05/que-es-el-concepto-de-heap-pollution-en-java/"
 date: 2016-05-07T13:00:00+02:00
 updated: 2016-05-14T13:15:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

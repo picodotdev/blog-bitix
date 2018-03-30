@@ -5,6 +5,7 @@ url: "/2017/05/descargar-e-instalar-windows-10-paso-a-paso-desde-cero/"
 date: 2017-05-09T22:30:00+02:00
 updated: 2017-05-13T11:35:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

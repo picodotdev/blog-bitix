@@ -4,6 +4,7 @@ title: "Donaciones"
 url: "/pages/donate/"
 date: 2016-10-24T09:00:00+10:00
 comments: true
+rss: true
 sharing: true
 footer: true
 ---

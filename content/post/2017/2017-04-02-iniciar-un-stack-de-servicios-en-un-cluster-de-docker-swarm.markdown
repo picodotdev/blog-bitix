@@ -4,6 +4,7 @@ title: "Iniciar un stack de servicios en un cluster de Docker Swarm"
 url: "/2017/04/iniciar-un-stack-de-servicios-en-un-cluster-de-docker-swarm/"
 date: 2017-04-02T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

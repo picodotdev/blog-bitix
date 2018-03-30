@@ -5,6 +5,7 @@ url: "/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en
 aliases: ["/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-corchetes-en-java/"]
 date: 2017-08-14T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

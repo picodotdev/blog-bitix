@@ -4,6 +4,7 @@ title: "Configuración de una aplicación en diferentes entornos con Spring Clou
 url: "/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/"
 date: 2015-11-28T11:00:00+01:00
 updated: 2015-12-11T22:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

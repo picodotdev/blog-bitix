@@ -5,6 +5,7 @@ url: "/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"
 date: 2016-11-12T10:00:00+01:00
 updated: 2016-11-25T22:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["apple", "blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]

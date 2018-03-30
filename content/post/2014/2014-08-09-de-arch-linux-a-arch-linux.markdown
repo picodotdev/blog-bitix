@@ -4,6 +4,7 @@ title: "De Arch Linux a Arch Linux"
 url: "/2014/08/de-arch-linux-a-arch-linux/"
 date: 2014-08-09T00:07:58+02:00
 updated: 2015-04-10T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "opinion", "planeta-linux", "software", "software-libre"]

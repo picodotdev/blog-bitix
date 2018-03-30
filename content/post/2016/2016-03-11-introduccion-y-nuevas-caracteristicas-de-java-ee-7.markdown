@@ -4,6 +4,7 @@ title: "Introducción y nuevas características de Java EE 7"
 url: "/2016/03/introduccion-y-nuevas-caracteristicas-de-java-ee-7/"
 date: 2016-03-11T17:00:00+01:00
 updated: 2016-09-17T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

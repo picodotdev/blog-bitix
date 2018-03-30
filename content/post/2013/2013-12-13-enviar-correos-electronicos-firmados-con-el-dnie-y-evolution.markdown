@@ -4,6 +4,7 @@ title: "Enviar correos electrónicos firmados con el DNIe y Evolution"
 url: "/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/"
 date: 2013-12-13T16:39:07+01:00
 updated: 2015-05-28T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "software"]

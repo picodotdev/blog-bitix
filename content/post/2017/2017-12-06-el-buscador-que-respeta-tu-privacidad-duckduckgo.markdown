@@ -5,6 +5,7 @@ url: "/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/"
 date: 2017-12-06T12:30:00+01:00
 updated: 2017-12-07T12:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

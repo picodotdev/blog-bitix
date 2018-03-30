@@ -5,6 +5,7 @@ url: "/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/"
 aliases: ["/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos/"]
 date: 2018-02-10T13:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -4,6 +4,7 @@ title: "Usar Grunt para ejecutar teses unitarios de código Javascript"
 url: "/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/"
 date: 2014-04-04T16:43:23+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "programacion", "javascript", "planeta-codigo"]

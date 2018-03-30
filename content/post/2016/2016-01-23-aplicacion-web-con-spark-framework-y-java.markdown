@@ -4,6 +4,7 @@ title: "Aplicación web con Spark framework y Java"
 url: "/2016/01/aplicacion-web-con-spark-framework-y-java/"
 date: 2016-01-23T16:00:00+01:00
 updated: 2016-01-24T12:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -3,6 +3,7 @@ pid: 188
 title: "Componente select múltiple en Apache Tapestry"
 url: "/2016/10/componente-select-multiple-en-apache-tapestry/"
 date: 2016-10-25T13:45:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -4,6 +4,7 @@ title: "Windows 10 and Office 2016 as easy to use without license as always"
 url: "/2017/04/windows-10-and-office-2016-as-easy-to-use-without-license-as-always/"
 date: 2017-04-08T11:00:00+02:00
 updated: 2017-05-09T23:10:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "en"

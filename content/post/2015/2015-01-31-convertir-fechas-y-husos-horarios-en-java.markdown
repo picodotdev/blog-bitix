@@ -5,6 +5,7 @@ url: "/2015/01/convertir-fechas-y-husos-horarios-en-java/"
 aliases: ["/2015/01/fechas-y-husos-horarios-en-java/", "/2015/01/fechas-y-usos-horarios-en-java/"]
 date: 2015-01-31T11:32:35+01:00
 updated: 2015-08-11T23:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion", "software"]

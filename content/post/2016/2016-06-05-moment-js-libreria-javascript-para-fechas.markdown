@@ -4,6 +4,7 @@ title: "Moment.js, librería JavaScript para fechas"
 url: "/2016/06/moment-js-libreria-javascript-para-fechas/"
 date: 2016-06-05T13:00:00+02:00
 updated: 2016-06-05T17:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

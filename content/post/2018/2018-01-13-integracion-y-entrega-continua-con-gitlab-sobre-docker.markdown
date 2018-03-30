@@ -4,6 +4,7 @@ title: "Integración y entrega continua con GitLab sobre Docker"
 url: "/2018/01/integracion-y-entrega-continua-con-gitlab-sobre-docker/"
 date: 2018-01-13T10:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

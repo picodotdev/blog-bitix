@@ -4,6 +4,7 @@ title: "Usar la base de datos NoSQL MongoDB con Java"
 url: "/2017/06/usar-la-base-de-datos-nosql-mongodb-con-java/"
 date: 2017-06-04T13:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

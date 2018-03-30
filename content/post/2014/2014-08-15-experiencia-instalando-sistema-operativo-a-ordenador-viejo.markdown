@@ -4,6 +4,7 @@ title: "Experiencia instalando sistema operativo a ordenador viejo"
 url: "/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/"
 date: 2014-08-15T09:18:07+02:00
 updated: 2015-04-10T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "opinion", "planeta-linux", "software", "software-libre"]

@@ -5,6 +5,7 @@ url: "/2016/01/hemeroteca-8/"
 aliases: ["/2016/01/hemeroteca-number-8/"]
 date: 2016-01-02T13:00:00+01:00
 updated: 2016-01-04T22:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

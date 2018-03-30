@@ -4,6 +4,7 @@ title: "El lenguaje de programación, framework y librerías importan"
 url: "/2016/06/el-lenguaje-de-programacion-framework-y-librerias-importan/"
 date: 2016-06-25T12:00:00+02:00
 updated: 2016-06-26T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

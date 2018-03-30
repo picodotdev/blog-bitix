@@ -4,6 +4,7 @@ title: "Nuevo diseño en Blog Bitix"
 url: "/2015/05/nuevo-diseno-en-blog-bitix/"
 date: 2015-05-16T12:00:00+02:00
 updated: 2015-05-17T13:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]

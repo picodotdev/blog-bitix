@@ -4,6 +4,7 @@ title: "Ejecutar varias tareas de forma concurrente en Java"
 url: "/2017/07/ejecutar-varias-tareas-de-forma-concurrente-en-java/"
 date: 2017-07-23T13:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

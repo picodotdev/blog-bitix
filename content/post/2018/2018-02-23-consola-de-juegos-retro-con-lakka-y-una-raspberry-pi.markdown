@@ -5,6 +5,7 @@ url: "/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/"
 date: 2018-02-23T23:00:00+01:00
 updated: 2018-03-05T19:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

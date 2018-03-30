@@ -4,6 +4,7 @@ title: "Validar objetos con Spring Validation, ejemplo registros de jOOQ"
 url: "/2015/11/validar-objetos-con-spring-validation-ejemplo-registros-de-jooq/"
 date: 2015-11-17T19:00:00+01:00
 updated: 2015-11-17T19:20:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

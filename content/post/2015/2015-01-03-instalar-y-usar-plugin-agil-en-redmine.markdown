@@ -4,6 +4,7 @@ title: "Instalar y usar un plugin ágil en Redmine"
 url: "/2015/01/instalar-y-usar-plugin-agil-en-redmine/"
 date: 2015-01-03T01:27:56+01:00
 updated: 2015-01-10T12:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]

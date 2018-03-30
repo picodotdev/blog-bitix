@@ -5,6 +5,7 @@ url: "/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/"
 aliases: ["/2015/07/trabajar-con-importes-ratios-y-divisas-en-java/"]
 date: 2015-07-21T20:00:00+02:00
 updated: 2015-07-21T20:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -3,6 +3,7 @@ pid: 95
 title: "Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money"
 url: "/2015/09/ejemplo-practico-de-serviceloader-con-serviceprovider-de-java-money/"
 date: 2015-09-13T11:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

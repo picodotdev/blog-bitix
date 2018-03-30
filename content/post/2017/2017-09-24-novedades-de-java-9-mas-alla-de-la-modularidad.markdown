@@ -5,6 +5,7 @@ url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00
 updated: 2017-10-07T12:15:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

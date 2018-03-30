@@ -5,6 +5,7 @@ url: "/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/"
 aliases: ["/2015/12/como-buscar-enlaces-rotos-de-un-sitio-web/"]
 date: 2015-12-18T18:00:00+01:00
 update: 2015-12-20T14:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

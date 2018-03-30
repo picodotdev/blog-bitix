@@ -4,6 +4,7 @@ title: "Tutorial sobre los tipos genéricos de Java"
 url: "/2016/04/tutorial-sobre-los-tipos-genericos-de-java/"
 date: 2016-04-23T00:00:00+02:00
 updated: 2016-04-24T13:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

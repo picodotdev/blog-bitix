@@ -4,6 +4,7 @@ title: "Desempaquetado y análisis Samsung SSD 840 EVO 250 GB"
 url: "/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/"
 date: 2014-03-28T18:22:41+01:00
 updated: 2017-01-31T22:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["hardware", "planeta-linux", "planeta-codigo"]

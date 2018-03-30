@@ -5,6 +5,7 @@ url: "/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/"
 aliases: ["/2016/03/cambiar-el-formato-de-archivos-de-musica-en-gnu-linux/"]
 date: 2016-03-26T11:00:00+01:00
 updated: 2016-04-03T11:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

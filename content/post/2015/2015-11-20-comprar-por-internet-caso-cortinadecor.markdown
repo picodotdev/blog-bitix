@@ -4,6 +4,7 @@ title: "Comprando por internet, unos estores en CortinaDecor"
 url: "/2015/11/comprando-por-internet-unos-estores-en-cortinadecor/"
 date: 2015-11-20T20:00:00+01:00
 updated: 2015-11-21T22:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

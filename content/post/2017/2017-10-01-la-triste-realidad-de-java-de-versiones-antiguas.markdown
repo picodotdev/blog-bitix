@@ -6,6 +6,7 @@ aliases: ["/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"]
 date: 2017-10-01T11:30:00+02:00
 updated: 2017-10-04T19:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

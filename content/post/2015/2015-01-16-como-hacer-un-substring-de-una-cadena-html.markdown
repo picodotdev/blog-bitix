@@ -3,6 +3,7 @@ pid: 61
 title: "Cómo hacer un substring de una cadena HTML"
 url: "/2015/01/como-hacer-un-substring-de-una-cadena-html/"
 date: 2015-01-16T13:03:52+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "planeta-linux", "programacion", "software"]

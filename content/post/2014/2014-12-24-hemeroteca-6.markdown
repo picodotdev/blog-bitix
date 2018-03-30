@@ -5,6 +5,7 @@ url: "/2014/12/hemeroteca-6/"
 aliases: ["/2014/12/hemeroteca-number-6/"]
 date: 2014-12-24T16:02:04+01:00
 updated: 2014-12-24T18:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "hemeroteca", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]

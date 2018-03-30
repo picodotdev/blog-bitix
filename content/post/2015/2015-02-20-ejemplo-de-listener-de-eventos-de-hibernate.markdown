@@ -4,6 +4,7 @@ title: "Ejemplo de listener de eventos de Hibernate"
 url: "/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/"
 date: 2015-02-20T16:30:44+01:00
 updated: 2015-02-21T23:30:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

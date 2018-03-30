@@ -5,6 +5,7 @@ url: "/2017/09/seleccion-de-semillas-de-roble-comun-y-metodos-de-germinacion/"
 date: 2017-09-02T11:00:00+02:00
 updated: 2017-09-03T00:20:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

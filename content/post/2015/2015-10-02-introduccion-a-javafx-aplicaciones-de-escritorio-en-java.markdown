@@ -4,6 +4,7 @@ title: "Introducción a JavaFX, aplicaciones de escritorio en Java"
 url: "/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/"
 date: 2015-10-02T19:00:00+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

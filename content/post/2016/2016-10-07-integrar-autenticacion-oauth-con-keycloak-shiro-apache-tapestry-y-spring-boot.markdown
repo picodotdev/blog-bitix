@@ -4,6 +4,7 @@ title: "Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spr
 url: "/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/"
 date: 2016-10-07T10:00:00+02:00
 updated: 2016-10-08T00:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

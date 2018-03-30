@@ -4,6 +4,7 @@ title: "Cómo crear una imagen para Docker usando un Dockerfile"
 url: "/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/"
 date: 2014-11-07T19:50:17+01:00
 updated: 2015-05-26T20:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]

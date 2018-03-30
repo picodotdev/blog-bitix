@@ -5,6 +5,7 @@ url: "/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-
 alias: ["/2017/09/los-cuantificadores-greedy-reluctant-y-posessive-en-expresiones-regulares/"]
 date: 2017-09-09T11:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

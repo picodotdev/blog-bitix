@@ -4,6 +4,7 @@ title: "Artículo #4 de Yo apoyo al software libre"
 url: "/2017/05/articulo-4-de-yo-apoyo-al-software-libre/"
 date: 2017-05-06T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

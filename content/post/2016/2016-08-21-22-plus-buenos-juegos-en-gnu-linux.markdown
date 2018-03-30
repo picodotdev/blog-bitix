@@ -4,6 +4,7 @@ title: "22+ buenos juegos en GNU/Linux"
 url: "/2016/08/22-plus-buenos-juegos-en-gnu-linux/"
 date: 2016-08-21T13:00:00+02:00
 updated: 2016-08-22T23:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

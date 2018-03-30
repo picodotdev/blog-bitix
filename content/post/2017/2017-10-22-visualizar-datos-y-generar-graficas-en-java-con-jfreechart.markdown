@@ -4,6 +4,7 @@ title: "Visualizar datos y generar gráficas en Java con JFreeChart"
 url: "/2017/10/visualizar-datos-y-generar-graficas-en-java-con-jfreechart/"
 date: 2017-10-22T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

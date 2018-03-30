@@ -4,6 +4,7 @@ title: "Aplicaciones multicontenedor con Docker Compose"
 url: "/2015/07/aplicaciones-multicontenedor-con-docker-compose/"
 date: 2015-07-03T16:00:00+02:00
 updated: 2015-07-18T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

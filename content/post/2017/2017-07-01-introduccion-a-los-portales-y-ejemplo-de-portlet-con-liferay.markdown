@@ -6,6 +6,7 @@ aliases: ["/2017/07/portales-con-liferay-y-ejemplo-de-portlet/"]
 date: 2017-07-01T12:00:00+02:00
 updated: 2017-07-08T23:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

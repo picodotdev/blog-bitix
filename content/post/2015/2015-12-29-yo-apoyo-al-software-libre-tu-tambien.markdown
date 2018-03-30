@@ -4,6 +4,7 @@ title: "Yo apoyo al software libre, tú también"
 url: "/2015/12/yo-apoyo-al-software-libre-tu-tambien/"
 date: 2015-12-29T21:00:00+01:00
 updated: 2016-01-02T12:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

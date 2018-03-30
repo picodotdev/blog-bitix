@@ -4,6 +4,7 @@ title: "Múltiples esquemas o bases de datos con jOOQ y Spring en Java"
 url: "/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/"
 date: 2015-10-27T19:00:00+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -4,6 +4,7 @@ title: "Qué es y cómo hacer «web scraping» en Java"
 url: "/2014/10/que-es-y-como-hacer-web-scraping-en-java/"
 date: 2014-10-10T21:22:40+02:00
 updated: 2015-05-26T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "planeta-codigo", "blog-stack"]

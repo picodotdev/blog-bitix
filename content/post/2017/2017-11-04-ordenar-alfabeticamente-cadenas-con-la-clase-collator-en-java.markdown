@@ -4,6 +4,7 @@ title: "Ordenar alfabéticamente cadenas con la clase Collator en Java"
 url: "/2017/11/ordenar-alfabeticamente-cadenas-con-la-clase-collator-en-java/"
 date: 2017-11-04T11:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

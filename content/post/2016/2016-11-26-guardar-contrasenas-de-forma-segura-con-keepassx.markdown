@@ -5,6 +5,7 @@ url: "/2016/11/guardar-contrasenas-de-forma-segura-con-keepassx/"
 date: 2016-11-26T11:00:00+01:00
 updated: 2016-11-26T22:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]

@@ -4,6 +4,7 @@ title: "Certificado SSL, de empresa, «wildcard» y de validación extendida"
 url: "/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/"
 date: 2015-04-25T10:07:04+02:00
 updated: 2015-04-25T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["programacion", "seguridad", "blog-stack", "planeta-linux", "planeta-codigo"]

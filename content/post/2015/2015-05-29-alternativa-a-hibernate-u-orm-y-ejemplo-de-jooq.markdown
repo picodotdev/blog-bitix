@@ -4,6 +4,7 @@ title: "Alternativa a Hibernate u ORM y ejemplo de jOOQ"
 url: "/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/"
 date: 2015-05-29T20:00:00+02:00
 updated: 2017-06-18T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

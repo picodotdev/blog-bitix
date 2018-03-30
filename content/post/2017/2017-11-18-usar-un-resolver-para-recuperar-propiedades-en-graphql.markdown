@@ -4,6 +4,7 @@ title: "Usar un resolver para recuperar propiedades en GraphQL"
 url: "/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/"
 date: 2017-11-18T10:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -4,6 +4,7 @@ title: "La clase ThreadLocal de Java y usos prácticos"
 url: "/2016/05/la-clase-threadlocal-de-java-y-usos-practicos/"
 date: 2016-05-13T17:00:00+02:00
 updated: 2016-05-14T13:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

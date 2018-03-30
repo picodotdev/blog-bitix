@@ -4,6 +4,7 @@ title: "Productividad y errores de compilación con Apache Tapestry"
 url: "/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/"
 date: 2015-03-27T19:13:12+01:00
 updated: 2015-12-11T22:30:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion", "tapestry"]

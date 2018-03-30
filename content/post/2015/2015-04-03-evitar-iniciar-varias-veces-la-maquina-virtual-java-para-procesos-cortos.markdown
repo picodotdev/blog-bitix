@@ -3,6 +3,7 @@ pid: 74
 title: "Evitar iniciar varias veces la máquina virtual Java para procesos cortos"
 url: "/2015/04/evitar-iniciar-varias-veces-la-maquina-virtual-java-para-procesos-cortos/"
 date: 2015-04-03T22:22:51+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

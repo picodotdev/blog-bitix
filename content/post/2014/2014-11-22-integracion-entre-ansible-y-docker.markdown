@@ -4,6 +4,7 @@ title: "Integración entre Ansible y Docker"
 url: "/2014/11/integracion-entre-ansible-y-docker/"
 date: 2014-11-22T10:28:52+01:00
 updated: 2014-12-29T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]

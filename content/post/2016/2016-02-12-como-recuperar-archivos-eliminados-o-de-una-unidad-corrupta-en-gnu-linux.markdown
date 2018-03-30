@@ -3,6 +3,7 @@ pid: 125
 title: "Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux"
 url: "/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/"
 date: 2016-02-12T19:30:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

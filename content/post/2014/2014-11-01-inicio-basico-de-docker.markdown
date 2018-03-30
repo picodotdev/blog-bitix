@@ -4,6 +4,7 @@ title: "Inicio básico de Docker"
 url: "/2014/11/inicio-basico-de-docker/"
 date: 2014-11-01T09:47:51+01:00
 updated: 2015-05-26T20:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]

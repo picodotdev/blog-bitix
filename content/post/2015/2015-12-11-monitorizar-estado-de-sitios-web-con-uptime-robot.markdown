@@ -4,6 +4,7 @@ title: "Monitorizar estado de sitios web con Uptime Robot"
 url: "/2015/12/monitorizar-estado-de-sitios-web-con-uptime-robot/"
 date: 2015-12-11T17:00:00+01:00
 updated: 2015-12-15T18:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

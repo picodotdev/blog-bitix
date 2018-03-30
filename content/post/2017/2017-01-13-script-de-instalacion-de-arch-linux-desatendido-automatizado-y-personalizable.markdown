@@ -4,6 +4,7 @@ title: "Script de instalación de Arch Linux desatendido, automatizado y persona
 url: "/2017/01/script-de-instalacion-de-arch-linux-desatendido-automatizado-y-personalizable/"
 date: 2017-01-13T00:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]

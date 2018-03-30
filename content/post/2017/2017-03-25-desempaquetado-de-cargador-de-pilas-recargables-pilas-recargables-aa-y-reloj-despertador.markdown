@@ -4,6 +4,7 @@ title: "Desempaquetado de cargador de pilas recargables, pilas recargables AA y 
 url: "/2017/03/desempaquetado-de-cargador-de-pilas-recargables-pilas-recargables-aa-y-reloj-despertador/"
 date: 2017-03-25T10:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

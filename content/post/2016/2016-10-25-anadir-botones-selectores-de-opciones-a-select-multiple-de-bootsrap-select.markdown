@@ -4,6 +4,7 @@ title: "Añadir botones selectores de opciones a select múltiple de bootsrap-se
 url: "/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/"
 date: 2016-10-25T15:30:00+02:00
 updated: 2016-10-26T14:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

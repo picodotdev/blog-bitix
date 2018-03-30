@@ -5,6 +5,7 @@ url: "/2017/11/paginacion-usando-cursores-en-graphql-y-java/"
 date: 2017-11-26T10:30:00+01:00
 updated: 2017-11-26T14:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

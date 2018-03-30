@@ -4,6 +4,7 @@ title: "8+ libros para mejorar como programadores"
 url: "/2014/12/8-plus-libros-para-mejorar-como-programadores/"
 date: 2014-12-05T17:08:57+01:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "software-libre", "planeta-codigo", "planeta-linux", "programacion"]

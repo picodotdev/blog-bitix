@@ -5,6 +5,7 @@ url: "/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/"
 date: 2018-02-03T22:00:00+01:00
 updated: 2018-02-05T17:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -4,6 +4,7 @@ title: "Anotación Cached de Apache Tapestry"
 url: "/2014/07/anotacion-cached-de-apache-tapestry/"
 date: 2014-07-18T21:30:20+02:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

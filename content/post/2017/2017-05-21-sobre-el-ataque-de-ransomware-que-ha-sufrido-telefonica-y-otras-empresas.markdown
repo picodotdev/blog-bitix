@@ -5,6 +5,7 @@ url: "/2017/05/sobre-el-ataque-de-ransomware-que-ha-sufrido-telefonica-y-otras-e
 date: 2017-05-21T11:00:00+02:00
 updated: 2017-05-21T11:45:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

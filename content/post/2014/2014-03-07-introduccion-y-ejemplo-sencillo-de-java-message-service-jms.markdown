@@ -4,6 +4,7 @@ title: "Introducción y ejemplo sencillo de Java Message Service (JMS)"
 url: "/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/"
 date: 2014-03-07T18:31:22+01:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "software", "planeta-codigo"]

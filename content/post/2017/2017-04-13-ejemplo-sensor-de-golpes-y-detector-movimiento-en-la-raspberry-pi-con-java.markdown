@@ -5,6 +5,7 @@ url: "/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry
 aliases: ["/2017/04/ejemplo-sensor-de-golpes-y-detector-movimiento-en-la-raspberry-pi-con-java/"]
 date: 2017-04-13T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

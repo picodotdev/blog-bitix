@@ -3,6 +3,7 @@ pid: 161
 title: "Cómo crear vistas previas de imágenes con ImageMagick"
 url: "/2016/07/como-crear-vistas-previas-de-imagenes-con-imagemagick/"
 date: 2016-07-17T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

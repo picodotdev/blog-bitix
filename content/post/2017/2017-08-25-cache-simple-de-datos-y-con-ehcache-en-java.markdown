@@ -4,6 +4,7 @@ title: "Cache simple de datos y con Ehcache en Java"
 url: "/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/"
 date: 2017-08-25T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

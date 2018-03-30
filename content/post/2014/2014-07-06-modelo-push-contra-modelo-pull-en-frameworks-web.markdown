@@ -4,6 +4,7 @@ title: "Modelo «push» contra modelo «pull» en frameworks web"
 url: "/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/"
 date: 2014-07-06T10:58:10+02:00
 updated: 2015-06-06T11:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

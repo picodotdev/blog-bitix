@@ -5,6 +5,7 @@ url: "/2017/11/me-cambio-a-la-electrica-holaluz/"
 date: 2017-11-06T20:00:00+01:00
 updated: 2017-12-30T00:06:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

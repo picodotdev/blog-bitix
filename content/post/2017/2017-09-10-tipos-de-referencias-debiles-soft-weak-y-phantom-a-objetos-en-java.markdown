@@ -6,6 +6,7 @@ aliases: ["/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-a-objet
 date: 2017-09-10T11:00:00+02:00
 updated: 2017-09-30T10:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

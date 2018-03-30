@@ -4,6 +4,7 @@ title: "Generar URLs semánticas y amigables"
 url: "/2014/10/generar-urls-semanticas-y-amigables/"
 date: 2014-10-03T20:14:18+02:00
 updated: 2015-01-31T01:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "planeta-codigo", "blog-stack"]

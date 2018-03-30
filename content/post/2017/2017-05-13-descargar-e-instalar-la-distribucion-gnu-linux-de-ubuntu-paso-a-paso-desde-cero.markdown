@@ -4,6 +4,7 @@ title: "Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso de
 url: "/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/"
 date: 2017-05-13T09:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

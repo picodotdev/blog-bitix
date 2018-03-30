@@ -4,6 +4,7 @@ title: "Internacionalización (i18n) en Javascript"
 url: "/2015/01/internacionalizacion-i18n-en-javascript/"
 date: 2015-01-23T10:00:00+01:00
 updated: 2015-01-31T01:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "javascript", "planeta-codigo", "programacion", "software"]

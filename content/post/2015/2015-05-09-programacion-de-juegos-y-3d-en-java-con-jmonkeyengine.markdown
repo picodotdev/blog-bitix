@@ -4,6 +4,7 @@ title: "Programación de juegos y 3D en Java con jMonkeyEngine"
 url: "/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/"
 date: 2015-05-09T10:18:40+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["java", "programacion", "blog-stack", "planeta-codigo", "planeta-linux"]

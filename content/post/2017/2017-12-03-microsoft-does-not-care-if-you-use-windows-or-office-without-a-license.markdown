@@ -4,6 +4,7 @@ title: "Microsoft does not care if you use Windows or Office without a license"
 url: "/2017/12/microsoft-does-not-care-if-you-use-windows-or-office-without-a-license/"
 date: 2017-12-03T12:00:00+01:00
 language: "en"
+rss: true
 sharing: true
 comments: true
 promoted: false

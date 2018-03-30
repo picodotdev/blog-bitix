@@ -5,6 +5,7 @@ url: "/2016/01/desempaquetado-y-analisis-de-aspiradora-dyson-dc37c-advanced-alle
 aliases: ["/2016/01/desempaquetado-y-analisis-de-dyson-dc37c-advanced-allergy/"]
 date: 2016-01-26T20:00:00+01:00
 updated: 2017-01-31T22:30:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

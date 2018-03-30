@@ -4,6 +4,7 @@ title: "Obtener información de la pila de las excepciones"
 url: "/2017/10/obtener-informacion-de-la-pila-de-las-excepciones/"
 date: 2017-10-15T12:15:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

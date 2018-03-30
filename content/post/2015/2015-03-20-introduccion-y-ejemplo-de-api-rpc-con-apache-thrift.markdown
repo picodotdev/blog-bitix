@@ -4,6 +4,7 @@ title: "Introducción y ejemplo de API RPC con Apache Thrift"
 url: "/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/"
 date: 2015-03-20T17:03:18+01:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

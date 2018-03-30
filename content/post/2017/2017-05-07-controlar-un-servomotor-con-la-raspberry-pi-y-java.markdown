@@ -5,6 +5,7 @@ url: "/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/"
 date: 2017-05-07T11:00:00+02:00
 updated: 2017-05-13T11:40:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

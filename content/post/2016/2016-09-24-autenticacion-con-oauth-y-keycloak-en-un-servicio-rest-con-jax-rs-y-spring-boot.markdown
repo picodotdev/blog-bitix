@@ -4,6 +4,7 @@ title: "Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spr
 url: "/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/"
 date: 2016-09-24T12:00:00+02:00
 updated: 2016-10-07T09:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

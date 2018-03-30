@@ -5,6 +5,7 @@ url: "/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-softw
 date: 2017-12-23T10:00:00+01:00
 updated: 2018-01-14T02:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

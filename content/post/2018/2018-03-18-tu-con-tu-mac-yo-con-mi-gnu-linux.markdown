@@ -5,6 +5,7 @@ url: "/2018/03/tu-con-mac-yo-con-mi-gnu-linux/"
 date: 2018-03-17T14:00:00+01:00
 updated: 2018-03-18T17:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

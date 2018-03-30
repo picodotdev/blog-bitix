@@ -4,6 +4,7 @@ title: "Incluir información de la versión en el artefacto distribuible con Gra
 url: "/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/"
 date: 2016-05-27T18:00:00+02:00
 updated: 2016-05-27T21:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

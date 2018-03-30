@@ -5,6 +5,7 @@ url: "/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/"
 date: 2016-12-09T12:00:00+01:00
 updated: 2016-12-11T01:35:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]

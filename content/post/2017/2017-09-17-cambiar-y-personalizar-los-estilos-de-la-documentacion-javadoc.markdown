@@ -4,6 +4,7 @@ title: "Cambiar y personalizar los estilos de la documentación Javadoc"
 url: "/2017/09/cambiar-y-personalizar-los-estilos-de-la-documentacion-javadoc/"
 date: 2017-09-16T22:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

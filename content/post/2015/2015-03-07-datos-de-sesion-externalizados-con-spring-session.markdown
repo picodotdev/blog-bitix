@@ -4,6 +4,7 @@ title: "Datos de sesión externalizados con Spring Session"
 url: "/2015/03/datos-de-sesion-externalizados-con-spring-session/"
 date: 2015-03-07T09:05:06+01:00
 updated: 2015-03-08T03:30:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]

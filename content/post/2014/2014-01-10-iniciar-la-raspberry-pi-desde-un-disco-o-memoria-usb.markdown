@@ -4,6 +4,7 @@ title: "Iniciar la Raspberry Pi desde un disco o memoria USB"
 url: "/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/"
 date: 2014-01-10T12:41:33+01:00
 updated: 2016-09-23T18:30:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["planeta-linux", "hardware", "software", "software-libre"]

@@ -3,6 +3,7 @@ pid: 160
 title: "Jugar al ajedrez en GNU/Linux con GNOME"
 url: "/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/"
 date: 2016-07-16T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

@@ -6,6 +6,7 @@ aliases: ["/2016/12/introduccion-a-javascript-de-ecmascript-6/"]
 date: 2016-12-03T12:00:00+01:00
 updated: 2016-12-09T13:50:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]

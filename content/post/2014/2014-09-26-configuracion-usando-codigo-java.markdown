@@ -4,6 +4,7 @@ title: "Configuración usando código Java"
 url: "/2014/09/configuracion-usando-codigo-java/"
 date: 2014-09-26T19:18:20+02:00
 updated: 2015-11-10T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "programacion", "java", "planeta-codigo", "blog-stack"]

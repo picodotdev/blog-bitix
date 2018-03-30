@@ -4,6 +4,7 @@ title: "Implementar funcionalidades comunes en Java con la librería Lombok"
 url: "/2017/10/implementar-funcionalidades-comunes-en-java-con-la-libreria-lombok/"
 date: 2017-10-21T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

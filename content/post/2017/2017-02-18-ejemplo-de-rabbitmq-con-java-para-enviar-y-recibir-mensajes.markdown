@@ -4,6 +4,7 @@ title: "Ejemplo de RabbitMQ con Java para enviar y recibir mensajes"
 url: "/2017/02/ejemplo-de-rabbitmq-con-java-para-enviar-y-recibir-mensajes/"
 date: 2017-02-18T10:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "planeta-linux", "programacion"]

@@ -4,6 +4,7 @@ title: "Componente select de Apache Tapestry con funcionalidades adicionales usa
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00
 updated: 2016-10-25T12:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

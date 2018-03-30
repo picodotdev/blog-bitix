@@ -4,6 +4,7 @@ title: "Servicio para obtener ratios de conversión entre divisas"
 url: "/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/"
 date: 2015-06-20T10:00:00+02:00
 updated: 2015-07-24T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

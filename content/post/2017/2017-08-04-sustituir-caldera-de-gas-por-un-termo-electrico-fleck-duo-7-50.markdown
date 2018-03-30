@@ -5,6 +5,7 @@ url: "/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/"
 date: 2017-08-04T18:00:00+02:00
 updated: 2017-11-07T19:50:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

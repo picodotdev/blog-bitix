@@ -4,6 +4,7 @@ title: "Usar Apache Tapestry en una aplicación «standalone»"
 url: "/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/"
 date: 2014-07-31T13:06:58+02:00
 updated: 2015-05-30T00:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

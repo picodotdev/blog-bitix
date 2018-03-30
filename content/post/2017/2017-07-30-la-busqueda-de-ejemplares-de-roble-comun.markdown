@@ -5,6 +5,7 @@ url: "/2017/07/la-busqueda-de-ejemplares-de-roble-comun/"
 date: 2017-07-30T11:00:00+02:00
 updated: 2017-07-30T13:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

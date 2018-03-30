@@ -4,6 +4,7 @@ title: "El problema de concurrencia de la cena de los filósofos resuelto con Ja
 url: "/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/"
 date: 2018-02-25T10:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

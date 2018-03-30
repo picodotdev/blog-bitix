@@ -5,6 +5,7 @@ url: "/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamin
 date: 2017-07-28T18:00:00+02:00
 updated: 2017-07-29T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

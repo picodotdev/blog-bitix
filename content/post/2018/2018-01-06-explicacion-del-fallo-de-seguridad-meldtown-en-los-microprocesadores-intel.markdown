@@ -5,6 +5,7 @@ url: "/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-micr
 date: 2018-01-06T10:30:00+01:00
 updated: 2018-01-07T01:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

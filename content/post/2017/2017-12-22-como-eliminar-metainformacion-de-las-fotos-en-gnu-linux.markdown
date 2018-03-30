@@ -4,6 +4,7 @@ title: "Como eliminar metainformación de las fotos en GNU/Linux"
 url: "/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/"
 date: 2017-12-22T18:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

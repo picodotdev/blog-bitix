@@ -3,6 +3,7 @@ pid: 129
 title: "Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty"
 url: "/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/"
 date: 2016-02-26T19:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

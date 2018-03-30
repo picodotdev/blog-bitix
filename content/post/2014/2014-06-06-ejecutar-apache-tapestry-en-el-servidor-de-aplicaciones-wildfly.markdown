@@ -4,6 +4,7 @@ title: "Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly"
 url: "/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/"
 date: 2014-06-06T20:58:25+02:00
 updated: 2015-05-27T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]

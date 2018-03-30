@@ -4,6 +4,7 @@ title: "Procesador de documentos LyX"
 url: "/2014/09/procesador-de-documentos-lyx/"
 date: 2014-09-05T13:12:12+02:00
 updated: 2014-09-07T03:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "software-libre", "planeta-codigo", "planeta-linux", "blog-stack"]

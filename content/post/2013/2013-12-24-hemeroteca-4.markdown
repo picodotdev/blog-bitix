@@ -5,6 +5,7 @@ url: "/2013/12/hemeroteca-4/"
 aliases: ["/2013/12/hemeroteca-number-4/"]
 date: 2013-12-24T18:28:48+01:00
 updated: 2015-05-30T00:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog", "hemeroteca", "planeta-linux", "planeta-codigo"]

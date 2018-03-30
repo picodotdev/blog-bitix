@@ -6,6 +6,7 @@ aliases: ["/2017/03/obtener-temperatura-y-humedad-con-el-sensor-dht11-la-raspber
 date: 2017-03-31T19:00:00+02:00
 updated: 2017-04-02T10:15:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

@@ -3,6 +3,7 @@ pid: 130
 title: "Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux"
 url: "/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/"
 date: 2016-03-05T12:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

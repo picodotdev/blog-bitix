@@ -4,6 +4,7 @@ title: "Página de excepción de Grails"
 url: "/2014/05/pagina-de-excepcion-de-grails/"
 date: 2014-05-23T20:00:19+02:00
 updated: 2014-05-30T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "java", "programacion", "planeta-codigo", "blog-stack"]

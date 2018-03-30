@@ -5,6 +5,7 @@ url: "/2017/11/comparando-la-factura-entre-caldera-de-gas-y-termo-electrico/"
 date: 2017-11-05T09:00:00+01:00
 updated: 2017-11-05T23:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

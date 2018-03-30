@@ -4,6 +4,7 @@ title: "6º aniversario del blog"
 url: "/2016/02/6o-aniversario-del-blog/"
 date: 2016-02-06T12:00:00+01:00
 updated: 2016-02-07T10:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

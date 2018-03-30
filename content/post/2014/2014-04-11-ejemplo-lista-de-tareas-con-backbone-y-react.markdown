@@ -4,6 +4,7 @@ title: "Ejemplo lista de tareas con Backbone y React"
 url: "/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/"
 date: 2014-04-11T16:33:28+02:00
 updated: 2015-10-01T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "programacion", "javascript", "planeta-codigo"]

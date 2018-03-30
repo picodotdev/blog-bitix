@@ -4,6 +4,7 @@ title: "Luces navideñas con la Raspberry Pi y Java"
 url: "/2017/05/luces-navidenas-con-la-raspberry-pi-y-java/"
 date: 2017-05-14T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

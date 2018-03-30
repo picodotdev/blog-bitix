@@ -4,6 +4,7 @@ title: "Elegir una distribución GNU/Linux según el usuario, uso o equipo"
 url: "/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/"
 date: 2016-10-29T12:00:00+02:00
 updated: 2017-05-13T11:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

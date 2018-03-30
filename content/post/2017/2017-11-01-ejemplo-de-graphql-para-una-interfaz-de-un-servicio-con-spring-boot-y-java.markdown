@@ -5,6 +5,7 @@ url: "/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-bo
 date: 2017-11-01T12:00:00+01:00
 updated: 2017-12-02T13:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

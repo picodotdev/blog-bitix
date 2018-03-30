@@ -3,6 +3,7 @@ pid: 43
 title: "Monitorizar archivos con Java"
 url: "/2014/09/monitorizar-archivos-con-java/"
 date: 2014-09-20T09:27:35+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "programacion", "java", "planeta-codigo", "blog-stack"]

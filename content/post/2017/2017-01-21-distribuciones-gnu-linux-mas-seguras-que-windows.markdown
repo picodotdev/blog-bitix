@@ -5,6 +5,7 @@ url: "/2017/01/distribuciones-gnu-linux-mas-seguras-que-windows/"
 date: 2017-01-21T10:00:00+01:00
 updated: 2017-01-21T20:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]

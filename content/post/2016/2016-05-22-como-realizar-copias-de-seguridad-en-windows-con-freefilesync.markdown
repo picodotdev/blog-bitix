@@ -3,6 +3,7 @@ pid: 144
 title: "Cómo realizar copias de seguridad en Windows con FreeFileSync"
 url: "/2016/05/como-realizar-copias-de-seguridad-en-windows-con-freefilesync/"
 date: 2016-05-22T13:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

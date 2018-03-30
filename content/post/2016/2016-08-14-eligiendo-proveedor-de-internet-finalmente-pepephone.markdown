@@ -4,6 +4,7 @@ title: "Eligiendo proveedor de internet, finalmente Pepephone"
 url: "/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/"
 date: 2016-08-14T12:00:00+02:00
 updated: 2017-03-14T22:30:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

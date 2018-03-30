@@ -4,6 +4,7 @@ title: "Consultas con parámetros para filtrar datos en GraphQL"
 url: "/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/"
 date: 2017-11-25T10:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

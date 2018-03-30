@@ -5,6 +5,7 @@ url: "/2017/05/sobre-el-anuncio-de-shuttleworth-de-abandonar-unity-y-mir-y-volve
 date: 2017-05-20T12:00:00+02:00
 updated: 2017-05-20T23:45:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

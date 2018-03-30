@@ -4,6 +4,7 @@ title: "Usar el DNI electrónico con Firefox en Linux"
 url: "/2013/12/usar-el-dni-electronico-con-firefox-en-linux/"
 date: 2013-12-06T14:07:58+01:00
 updated: 2015-04-10T20:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "software"]

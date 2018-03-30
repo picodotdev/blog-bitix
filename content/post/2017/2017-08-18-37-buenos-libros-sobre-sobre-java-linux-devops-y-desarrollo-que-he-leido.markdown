@@ -5,6 +5,7 @@ url: "/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-h
 date: 2017-08-18T23:00:00+02:00
 updated: 2017-08-19T11:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

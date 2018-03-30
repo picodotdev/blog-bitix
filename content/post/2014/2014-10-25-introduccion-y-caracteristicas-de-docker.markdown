@@ -4,6 +4,7 @@ title: "Introducción y características de Docker"
 url: "/2014/10/introduccion-y-caracteristicas-de-docker/"
 date: 2014-10-25T10:52:34+02:00
 updated: 2017-05-02T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]

@@ -4,6 +4,7 @@ title: "Introducción a Bitnami"
 url: "/2014/11/introduccion-a-bitnami/"
 date: 2014-11-29T10:45:45+01:00
 updated: 2017-05-28T01:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "hardware", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]

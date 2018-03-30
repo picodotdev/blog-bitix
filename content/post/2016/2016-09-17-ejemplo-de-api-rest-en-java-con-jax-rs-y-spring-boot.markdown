@@ -4,6 +4,7 @@ title: "Ejemplo de API REST en Java con JAX-RS y Spring Boot"
 url: "/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/"
 date: 2016-09-17T12:00:00+02:00
 update: 2017-12-18T22:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

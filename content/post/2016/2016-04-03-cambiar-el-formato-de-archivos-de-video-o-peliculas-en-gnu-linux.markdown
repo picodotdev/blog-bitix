@@ -3,6 +3,7 @@ pid: 135
 title: "Cambiar el formato de archivos de vídeo o películas en GNU/Linux"
 url: "/2016/04/cambiar-el-formato-de-archivos-de-video-o-peliculas-en-gnu-linux/"
 date: 2016-04-03T12:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

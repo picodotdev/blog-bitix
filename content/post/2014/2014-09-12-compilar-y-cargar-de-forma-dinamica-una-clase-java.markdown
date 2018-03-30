@@ -4,6 +4,7 @@ title: "Compilar y cargar de forma dinámica una clase Java"
 url: "/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/"
 date: 2014-09-12T19:49:55+02:00
 updated: 2015-05-30T00:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["software", "programacion", "java", "planeta-codigo", "blog-stack"]

@@ -5,6 +5,7 @@ url: "/2017/02/cursos-de-formacion-de-keepcoding/"
 date: 2017-02-03T23:00:00+01:00
 updated: 2017-12-02T03:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: true

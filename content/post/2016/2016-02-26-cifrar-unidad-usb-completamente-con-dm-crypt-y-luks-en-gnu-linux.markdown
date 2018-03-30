@@ -3,6 +3,7 @@ pid: 128
 title: "Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux"
 url: "/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/"
 date: 2016-02-26T18:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"

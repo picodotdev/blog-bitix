@@ -4,6 +4,7 @@ title: "Anexo a la guía de instalación y del principiante de Arch Linux"
 url: "/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/"
 date: 2014-05-02T19:09:56+02:00
 updated: 2015-05-25T23:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "planeta-linux", "planeta-codigo", "software", "software-libre"]

@@ -5,6 +5,7 @@ url: "/2014/06/hemeroteca-5/"
 aliases: ["/2014/06/hemeroteca-number-5/"]
 date: 2014-06-27T21:10:29+02:00
 updated: 2014-12-24T17:00:00+02:00
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]

@@ -5,6 +5,7 @@ url: "/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"
 date: 2016-11-13T12:00:00+01:00
 updated: 2017-03-20T21:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]

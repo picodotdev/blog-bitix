@@ -24,7 +24,7 @@
               {{ end }}
               <h1 itemprop="name">{{ .Title }}</h1>
               <p class="information">
-                {{ i18n "publised_by" }} <span itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span></span> el <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time itemprop="dateModified" datetime="{{ dateFormat "2006-01-02" .Params.updated }}">{{ dateFormat "02/01/2006" .Params.updated }}</time>.
+                {{ i18n "writed_by" }} <span itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span></span> el <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time itemprop="dateModified" datetime="{{ dateFormat "2006-01-02" .Params.updated }}">{{ dateFormat "02/01/2006" .Params.updated }}</time>.
                 {{ else }}.{{ end }}
                 {{ if isset .Params "tags" }}
                   <br>
@@ -35,9 +35,13 @@
                 {{ if .Params.comments }}
                   <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
                 {{ end }}
-                {{ if .Params.promoted }}
+                {{ if eq .Params.promoted true }}
                   <div class="alert alert-info" role="alert">
                     <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}</small>
+                  </div>
+                {{ else if eq .Params.promoted "external" }}
+                  <div class="alert alert-info" role="alert">
+                    <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_external_info" | markdownify | htmlUnescape | safeHTML }}</small>
                   </div>
                 {{ end }}
               </p>

@@ -5,6 +5,7 @@ url: "/2016/12/la-fabrica-de-blog-bitix/"
 date: 2016-12-17T11:00:00+01:00
 updated: 2016-12-17T23:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]

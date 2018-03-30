@@ -5,6 +5,7 @@ url: "/2017/02/conferencia-bilbostack-2017/"
 date: 2017-02-05T00:00:00+01:00
 updated: 2017-02-08T21:30:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "planeta-codigo", "planeta-linux"]

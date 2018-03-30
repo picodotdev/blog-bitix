@@ -4,6 +4,7 @@ title: "Cómo crear clases factoría sin usar if-else"
 url: "/2015/10/como-crear-clases-factoria-sin-usar-if-else/"
 date: 2015-10-18T12:00:00+02:00
 updated: 2015-10-19T19:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

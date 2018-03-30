@@ -5,6 +5,7 @@ url: "/2015/06/hemeroteca-7/"
 aliases: ["/2015/06/hemeroteca-number-7/"]
 date: 2015-06-27T10:00:00+02:00
 updated: 2015-06-27T22:00:00+02:00
+rss: true
 sharing: true
 comments: true
 language: "es"

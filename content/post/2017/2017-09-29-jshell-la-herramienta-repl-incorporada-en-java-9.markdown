@@ -5,6 +5,7 @@ url: "/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/"
 date: 2017-09-29T21:00:00+02:00
 updated: 2017-09-29T22:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

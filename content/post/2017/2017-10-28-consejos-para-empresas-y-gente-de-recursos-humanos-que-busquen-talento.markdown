@@ -5,6 +5,7 @@ url: "/2017/10/consejos-para-empresas-y-gente-de-recursos-humanos-que-busquen-ta
 date: 2017-10-28T11:00:00+02:00
 updated: 2017-10-29T14:00:00+01:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

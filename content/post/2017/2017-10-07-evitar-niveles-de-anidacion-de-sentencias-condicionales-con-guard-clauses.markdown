@@ -4,6 +4,7 @@ title: "Evitar niveles de anidación de sentencias condicionales con guard claus
 url: "/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/"
 date: 2017-10-07T12:00:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

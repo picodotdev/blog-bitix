@@ -5,6 +5,7 @@ url: "/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/"
 date: 2017-06-17T02:45:00+02:00
 updated: 2017-06-18T23:30:00+02:00
 language: "es"
+rss: true
 sharing: true
 comments: true
 promoted: false

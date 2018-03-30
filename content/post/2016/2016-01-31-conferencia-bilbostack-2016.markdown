@@ -4,6 +4,7 @@ title: "Conferencia BilboStack 2016"
 url: "/2016/01/conferencia-bilbostack-2016/"
 date: 2016-01-31T00:00:00+01:00
 updated: 2016-02-27T22:00:00+01:00
+rss: true
 sharing: true
 comments: true
 language: "es"
