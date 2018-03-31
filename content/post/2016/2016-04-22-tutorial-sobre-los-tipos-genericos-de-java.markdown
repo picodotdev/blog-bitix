@@ -128,7 +128,7 @@ Los _generics_ son un mecanismo para proporcionar comprobaciones en tiempo de co
 * Insertar _casts_ para preservar el tipado seguro.
 * Generar métodos puente para preservar el polimorfismo en _generics_ en los que son extendidos.
 
-Un tipo _non reifiable_ son aquellos cuya información de tipo ha sido eliminada en tiempo de compilación por el _type erasure_, para la JVM no hay ninguna diferencia en tiempo de ejecución entre _List\<String\>_ y _List\<Number\>_. No se crean nuevas clases para los tipos parametrizados de modo que no hay ninguna penalización en tiempo de ejecución. Una clase genérica al compilarla se transforma aplicando _type erasure_:
+Un tipo _non reifiable_ son aquellos cuya información de tipo ha sido [eliminada en tiempo de compilación por el _type erasure_][blogbitix-308], para la JVM no hay ninguna diferencia en tiempo de ejecución entre _List\<String\>_ y _List\<Number\>_. No se crean nuevas clases para los tipos parametrizados de modo que no hay ninguna penalización en tiempo de ejecución. Una clase genérica al compilarla se transforma aplicando _type erasure_:
 
 {{< gist picodotdev c5360a2d848a594c4dba518d6f1cfd62 "TypeErasure.java" >}}
 
