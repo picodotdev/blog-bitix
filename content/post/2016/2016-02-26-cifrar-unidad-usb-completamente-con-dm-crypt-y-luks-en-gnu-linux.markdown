@@ -15,7 +15,7 @@ summary: "¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="gnu.png" title1="GNU" image2="linux.png" title2="Linux" >}}
+{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" wdth2="200" >}}
 
 Seguro que tienes varias memorias USB o discos duros externos con los que transportar información de un sitio a otro o como copia de seguridad. No sería extraño perder alguna de esas unidades en una biblioteca, universidad, aeropuerto, vía pública, metro, ... con toda la información que contengan como fotos y documentos con información personal accesible por cualquier persona que se encuentre esa unidad. Si queremos evitar este posible caso de que al perder la unidad USB que al final es lo de menos ya que se puede sustituir fácilmente toda la información este accesible podemos cifrar su contenido. Hay varias formas una [cifrando con GPG archivos individuales][elblogdepicodev-181], [cifrando con EncFS ciertas carpetas][blogbitix-126] y varios archivos a la vez o la unidad completa con [dm-crypt](https://wiki.archlinux.org/index.php/Dm-crypt) que será el caso de este artículo.
 

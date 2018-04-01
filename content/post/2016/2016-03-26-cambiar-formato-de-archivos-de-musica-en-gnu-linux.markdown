@@ -16,7 +16,7 @@ tags: ["blog-stack", "gnu-linux", "planeta-linux", "software-libre"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="ffmpeg.png" title1="FFmpeg" image2="linux.png" title2="Linux" >}}
+{{< logotype image1="ffmpeg.png" title1="FFmpeg" image2="linux.svg" title2="Linux" wdth2="200" >}}
 
 En algún momento puede que necesitemos o queramos convertir archivos de audio a otro formato individualmente o de forma masiva. Por ejemplo convertir archivos de audio del formato de música más utilizado [mp3](https://es.wikipedia.org/wiki/MP3) al formato libre de patentes [ogg](https://es.wikipedia.org/wiki/Ogg), o de mp3 a [aac](https://es.wikipedia.org/wiki/Advanced_Audio_Coding) o desde otros formatos y a otros formatos como [wav](https://es.wikipedia.org/wiki/Waveform_Audio_Format) o [ac3](https://es.wikipedia.org/wiki/Dolby_Digital_%28AC-3%29). Algunos formatos ofrecen mejor compresión y ocupan menos espacio con la misma calidad y este puede ser un motivo por que queramos hacer la conversión. Aún así hay que tener en cuenta que las conversiones entre formatos con pérdida como de mp3 a ogg aún ocupando menos (o más) la calidad puede empeorar, aunque para un oído no entrenado será imperceptible, para convertir a un formato con pérdida es mejor partir de un archivo sin pérdida como wav.
 

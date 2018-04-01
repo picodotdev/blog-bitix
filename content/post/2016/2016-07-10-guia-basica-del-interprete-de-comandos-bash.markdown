@@ -16,7 +16,7 @@ summary: "La línea de comandos sigue siendo una poderosa herramienta que aunque
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.png" title1="Linux" image2="gnu.png" title2="GNU" >}}
+{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Automatizar las tareas que realizamos permite ahorrarnos el tiempo de tener que hacerlo manualmente y evita los errores que se puede producir. En [GNU][gnu]/[Linux][linux] el uso de la terminal no es algo extraño y muchas tareas son realizadas más fácil y rápido con un comando que con un programa con interfaz gráfica, además tiene la ventaja de que puede automatizarse creando un _script_ [Bash][bash].
 

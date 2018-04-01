@@ -15,7 +15,7 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="archlinux.png" title1="Arch Linux" image2="linux.png" title2="Linux" image3="gnu.png" title3="GNU" >}}
+{{< logotype image1="archlinux.png" title1="Arch Linux" image2="linux.svg" title2="Linux" wdth2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
 
 Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene más dificultad que instalar un sistema operativo como [Windows][windows], que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las [distribuciones aconsejadas para usuarios que provienen de Windows o macOS][blogbitix-190] o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de una hora. Distribuciones como [Ubuntu][ubuntu], [elementary OS][elementary] o [Linux Mint][linuxmint] hacen que la instalación no requiera muchos conocimientos y sea completada con éxito por cualquier usuario.
 

@@ -15,7 +15,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 En el artículo [cómo crear clases factoría sin usar if-else](http://www.javacodegeeks.com/2014/10/factory-without-if-else.html) se comentan varias formas para conseguirlo. Las soluciones que se proponen son usar:
 

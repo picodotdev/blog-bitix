@@ -14,7 +14,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="java.png" title1="Java" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 La librería [Apache POI][apache-poi] nos permite acceder y crear documentos del producto ofimático [Microsoft Office][microsoft-office] utilizando el lenguaje de programación Java y otros del ecosistema de la <abbr title="Java Virtual Machine">JVM</abbr>. Los archivos que podemos crear y leer son documentos Word, Excel y Powerpoint.
 

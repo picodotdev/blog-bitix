@@ -16,7 +16,7 @@ summary: "En Java existe una clase con la que podemos asociar un dato al hilo o 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="java.png" title1="Java" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 En algunos casos nos encontramos con que un determinado dato lo pasamos como parámetro en sucesivas llamadas a métodos, obligándonos a declararlo en cada uno de ellos. En una aplicación web el dato podría ser el usuario autenticado, el dominio por el que se ha accedido a la aplicación, el dispositivo móvil, el idioma del usuario, su preferencia de divisa o cualquier otra información no relativa al usuario pero que igualmente la aplicación necesita en muchos sitios y usa esta información contextual para variar su funcionalidad. En una aplicación web podemos obtener el dominio por el que es accedido la aplicación con la clase [Request](http://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html), asociando el dato como un atributo de la petición lo tendremos disponible de forma global en la capa de presentación. Sin embargo, este objeto _request_ solo estará disponible en la capa de presentación de la aplicación con la intención de que la capa de lógica de negocio sea independiente de la tecnología o _framework_ web. Para hacer que algún dato global también esté disponible en la capa de lógica de negocio podemos usar la clase [ThreadLocal](http://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html).
 

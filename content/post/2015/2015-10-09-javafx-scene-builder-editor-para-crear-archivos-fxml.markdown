@@ -16,7 +16,7 @@ summary: "Con la aplicación JavaFX Scene Builder podemos construir la interfaz 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 Por lo poco que he visto JavaFX es una gran evolución sobre <abbr title="Abstract Window Toolkit">AWT</abbr> y Swing para desarrollar aplicaciones de escritorio en Java aportando varias mejoras. En el artículo [Introducción a JavaFX][blogbitix-100] comentaba que una de las cosas que me parecía más complicada usando tanto AWT y más tarde usando Swing era la construcción de los elementos visuales mediante código. El código para construir las ventanas, paneles, rejillas, botones, etiquetas, etc era extenso y difícil de comprender la composición leyéndolo. Con JavaFX se ha introducido una nueva herramienta visual llamada [JavaFX Scene Builder][javafx-scene-builder] que permite generar un archivo en formato FXML (declarativo en XML) que contiene la descripción de las ventanas o como llama JavaFX escenas. Este descriptor es similar a la forma de construir interfaces gráficas en la plataforma de Microsoft con los archivos [XAML](https://msdn.microsoft.com/en-us/library/cc295302.aspx).
 

@@ -14,7 +14,7 @@ tags: ["java", "programacion", "software", "planeta-codigo"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 Hasta el momento ya he escrito alguna entrada sobre los [patrones de diseño](http://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.html) en general, sobre algunos casos particulares como el [patrón de diseño Command](http://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.html) relacionado con la programación concurrente y sobre el [patrón de diseño State](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.html) para hacer máquinas de estados. En esta entrada hablaré sobre otro patrón de diseño, el patrón No Operation y de que forma podemos aprovecharlo para resolver algún problema y hacer nuestro código más simple.
 

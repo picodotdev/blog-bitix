@@ -16,7 +16,7 @@ summary: "Java tiene una fuerte presencia en el ámbito de desarrollo para aplic
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 El lenguaje de programación Java es ampliamente usado en el ámbito empresarial destacando la programación de aplicaciones web. Las aplicaciones web se han extendido tanto por su fácil despliegue a los clientes (un navegador basta), un desarrollo no excesivamente complicado, fácil actualización (solo hace falta actualizar la aplicación en el servidor) y su seguridad tanto para el cliente (al ser el navegador el marco que limita las acciones de la aplicación) como para el servidor (al proteger los accesos a la base de datos por ejemplo). Sin embargo, las aplicaciones web también tienen algunas limitaciones a pesar de que mejoran con cada nueva versión de <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, JavaScript así como de los propios navegadores a medida que evolucionan incorporando nuevas APIs como el manejo de vídeo, audio e incluso aceleración 3D. Las aplicaciones web cada vez son más «ricas» pero aún no han llegado a las capacidades de las aplicaciones de escritorio tradicionales y en algún caso puede ser la solución elegida. En Java primeramente teníamos [<abbr title="Abstract Window Toolkit">AWT</abbr>][awt], luego [Swing][swing] y ahora [JavaFX][javafx] con mejoras notables. Las aplicaciones web también tiene el problema de que si el servidor no está disponible o la conexión de red se pierde salvo que la aplicación esté preparada (como Google Docs) para ello será imposible usarla.
 

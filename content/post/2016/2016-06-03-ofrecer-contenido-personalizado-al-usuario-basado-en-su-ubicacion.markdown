@@ -16,7 +16,7 @@ summary: "Cuando navegamos por internet el navegador envía mútiple informació
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.png" title1="Linux" image2="gnu.png" title2="GNU" image3="java.png" title3="Java" >}}
+{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" image3="java.svg" title3="Java" width3="200" >}}
 
 Un usuario cuando navega por internet proporciona diversa información que las páginas web pueden utilizar para personalizar el contenido que le muestran. La información que el usuario proporciona es el navegador que utiliza, sistema operativo y dirección IP. Con las _cookies_ las páginas web pueden almacenar información en su navegador que persista en varias sesiones. Amazon por ejemplo personaliza el contenido que ve el usuario cuando accede a la página de inicio mostrando diferentes categorías de productos en los que puede estar más interesado, por ejemplo, productos visitados en anteriores sesiones, relacionados o similares. Si el usuario ha visitado un producto con anterioridad es muy posible que esté interesado en comprar ese producto con lo que Amazon se lo muestra de nuevo en la siguiente sesión o le envía un correo electrónico al día siguiente como recordatorio. Una página de eventos, viajes, hoteles, restaurantes, museos, el tiempo, ... puede mostrar información basada en la localización, por ejemplo, si alguien está en Madrid quizá esté interesando dependiendo de la búsqueda que haga en eventos, hoteles o museos en esa ciudad.
 

@@ -14,7 +14,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 La palabra clave o reservada _assert_ sirve para aseverar que en un determinado momento del código una determinada condición debe ser cierta. Está disponible en [Java][java] desde la versión 1.4 pero al menos yo con bastantes años de experiencia en programación en este lenguaje aún no he usado de forma amplia y posiblemente le pase a mucha de la gente y aún así hemos sobrevivido durante todo este tiempo.
 

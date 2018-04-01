@@ -17,7 +17,7 @@ summary: "Aún en las aplicaciones monolíticas que comparten una única base de
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 En el libro <a href="http://www.amazon.es/gp/product/1491950358/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1491950358&linkCode=as2&tag=blobit-21">Building Microservices</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1491950358" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> se pone de manifiesto que cada microservicio gira alrededor de un concepto que denomina _seam_, nicho o área de negocio. Este _seam_ es el nicho de información que va a manejar el microservicio. Para hacer que los múltiples microservicios sean independientes y tengan su propio ciclo de vida este nicho de información se guarda en una base de datos o esquema propio de cada uno de modo que un cambio en el sistema en que guarda la información no afecte a otros microservicios como ocurriría si compartiesen la base de datos. Si un microservicio necesita información de otro la solicita mediante una API ya sea [REST][rest], [usando Apache Thift][blogbitix-72], [gRPC][grpc] o de otro tipo evitando el acoplamiento a través de la base de datos y evitando que un microservicio conozca detalles internos de otro.
 

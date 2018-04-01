@@ -17,7 +17,7 @@ summary: "Conociendo los comandos y sus opciones podemos realizar una tarea que 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.png" title1="Linux" image2="gnu.png" title2="GNU" >}}
+{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 El proyecto <abbr title="GNU Is Not Unix">[GNU][gnu]</abbr> promovido por la <abbr title="Free Software Foundation">[FSF][fsf]</abbr> y que se usa en la mayoría de las distribuciones Linux proporciona muchos comandos útiles. Las más modernas interfaces gráficas no superan a la línea de comandos para realizar las tareas de forma rápida, directa y con la posibilidad de automatización. Conociendo las [combinaciones de teclas de nuestro emulador de terminal y del intérprete de comandos][blogbitix-150] dominaremos aún más el uso de la consola, también mejoraremos si conocemos las posibilidades que ofrece un [intérprete de comandos como bash](https://www.gnu.org/software/bash/manual/bashref.html).
 

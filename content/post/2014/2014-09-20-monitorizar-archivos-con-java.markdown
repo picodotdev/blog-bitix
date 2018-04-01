@@ -13,7 +13,7 @@ tags: ["software", "programacion", "java", "planeta-codigo", "blog-stack"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 Java a partir de la versión 7 del JDK ofrece el soporte para recibir notificaciones de cambios en el sistema de archivos sin tener que estar monitorizándolos constantemente en busca de actividad. No tener que estar monitorizando los archivos de [forma «polling»](https://es.wikipedia.org/wiki/Polling) para buscar cambios además de hacer que el código sea más sencillo desde el punto de vista de la programación hace que no se malgasten recursos del sistema si los cambios son esporádicos.
 

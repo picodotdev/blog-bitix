@@ -15,7 +15,7 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion", "software"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes paises y fechas probablemente deberemos tener en cuenta múltiples [husos horarios](https://es.wikipedia.org/wiki/Huso_horario) o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.
 

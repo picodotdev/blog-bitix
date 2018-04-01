@@ -14,7 +14,7 @@ tags: ["software", "programacion", "java", "planeta-codigo", "blog-stack"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 Desde la versión 1.6 del JDK disponemos de una API para acceder al compilador desde un programa Java. En el ejemplo de este artículo utilizaré varias clases de esa API para conseguir compilar un archivo con la definición de una clase Java y posteriormente instanciarla y usarla. En posteriores artículos comentaré un ejemplo práctico y muy útil con el que podemos sacar provecho de esta funcionalidad.
 

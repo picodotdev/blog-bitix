@@ -17,7 +17,7 @@ summary: "Otro de los patrones de diseño que en algún momento nos puede ser ú
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="java.png" title="Java" >}}
+{{< logotype image="java.svg" title="Java" width="200" >}}
 
 En Java este patrón podemos implementarlo usando una clase, la [clase Observable](https://docs.oracle.com/javase/8/docs/api/java/util/Observable.html), y una interfaz, la [interfaz Observer](https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html) proporcionadas en el propio <abbr title="Java Development Kit">JDK</abbr>. La clase que queremos que reciba los eventos deberá implementar la interfaz _Observer_ y el objeto que queremos que produzca los eventos debe extender o contener una propiedad de tipo _Observable_. La interfaz _Observer_ contiene un único método de nombre [_update_](https://docs.oracle.com/javase/8/docs/api/java/util/Observer.html#update-java.util.Observable-java.lang.Object-), que recibe dos parámetros que son la instancia del objeto observable sobre la que se ha producido el evento y un _Object_ a modo de argumento que el objeto observable envía. La clase _Observable_ contiene métodos para añadir y eliminar observadores que queremos que sean notificados, obtener un contador con el número de observadores y unos métodos para conocer y establecer si un objeto ha cambiado con el método [_hasChanged_](https://docs.oracle.com/javase/8/docs/api/java/util/Observable.html#hasChanged--).
 

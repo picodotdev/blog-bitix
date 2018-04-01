@@ -15,7 +15,7 @@ series: ["juegos"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="gnome.png" title1="GNOME" image2="linux.png" title2="Linux" >}}
+{{< logotype image1="gnome.png" title1="GNOME" image2="linux.svg" title2="Linux" wdth2="200" >}}
 
 Además de los clásicos juegos de estrategia y de pensar como son el [ajedrez][blogbitix-160] y [go][blogbitix-163] que disponemos para instalar en [GNU][gnu]/[Linux][linux], en el entorno de escritorio [GNOME][gnome] tenemos otros juegos más casuales la mayoría también de pensar. En todos su mecánica es sencilla y nos servirán como pasatiempo.
 

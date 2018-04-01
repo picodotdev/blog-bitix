@@ -15,7 +15,7 @@ summary: "El correo electrónico es un medio muy utilizado para realizar ataques
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="java.png" title1="Java" image2="gnupg.png" title2="GnuPG" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" image2="gnupg.png" title2="GnuPG" >}}
 
 Los sitios de comercio electrónico y muchas páginas web utilizan el [protocolo seguro HTTPS][https] para cifrar los datos intercambiados entre cliente y servidor impidiendo a una tercera persona conocer qué información se está transmitiendo, además impide que puedan ser alterados sin su conocimiento. Es habitual usar HTTPS y certificados en las páginas de compra en las que hay que introducir datos personales junto con la tarjeta de crédito también en las cuentas de usuario como forma de proporcionar seguridad y proteger la información personal. Generando y usando [certificados TLS/SSL en el servidor][blogbitix-14] el sitio y el usuario evitan caer en un ataque de _phising_ en la que una tercera persona con intenciones maliciosas intenta suplantar la identidad del sitio web.
 

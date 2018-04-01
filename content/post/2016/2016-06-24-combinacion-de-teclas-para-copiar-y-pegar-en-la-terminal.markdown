@@ -15,7 +15,7 @@ series: ["terminal"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.png" title1="Linux" image2="gnu.png" title2="GNU" >}}
+{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Usar una combinación de teclas para realizar alguna acción es más rápido que usar el ratón. Si se trata de una acción que realizamos frecuentemente podemos ahorrar bastante tiempo. Yo trabajo bastante con la terminal de GNOME y hasta ahora no sabía cómo copiar y pegar con una combinación de teclas del teclado.
 
