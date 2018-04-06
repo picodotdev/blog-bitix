@@ -96,7 +96,7 @@
 {{ if or $imagescaled1 $imagescaled3 $imagescaled3 }}
 <figure>
   {{ if $imagescaled1 }}  
-  <a href="{{ $imagescaled1.RelPermalink }}" title="{{ $imagescaled1.Name }}{{ .Params.title1 }}" data-gallery><img src="{{ $imagescaledthumb1.RelPermalink }}" width="{{ $imagescaledthumb1.Width }}" height="{{ $imagescaledthumb1.Height }}"/></a>
+  <a href="{{ $imagescaled1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery><img src="{{ $imagescaledthumb1.RelPermalink }}" width="{{ $imagescaledthumb1.Width }}" height="{{ $imagescaledthumb1.Height }}"/></a>
   {{ end }}
   {{ if $imagescaled2 }}
   <a href="{{ $imagescaled2.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery><img src="{{ $imagescaledthumb2.RelPermalink }}" width="{{ $imagescaledthumb2.Width }}" height="{{ $imagescaledthumb2.Height }}"/></a>
