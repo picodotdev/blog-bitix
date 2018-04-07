@@ -39,6 +39,7 @@ El código fuente completo puede encontrarse en el [siguiente repositorio de Git
 {{< postslinks >}}
 * [Path](http://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html)
 * [WatchService](http://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html)
+* [Introducción a NIO.2, el sistema de entrada/salida de Java][blogbitix-310]
 {{% /reference %}}
 
 {{% /post %}}
