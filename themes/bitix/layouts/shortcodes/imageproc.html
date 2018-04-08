@@ -1,0 +1,24 @@
+{{ if .Params.image }}
+  {{ $image := .Page.Resources.GetMatch (print "images/" .Params.image) }}
+  {{ $imagethumb := .Page.Resources.GetMatch (print "images/" .Params.image) }}
+  {{ $command := .Params.command }}
+  {{ $options := .Params.options }}
+  {{ $commandthumb := .Params.commandthumb }}
+  {{ $optionsthumb := .Params.optionsthumb }}
+
+  {{ if eq $command "Fit"}}
+  {{ $.Scratch.Set "imagescaled" ($image.Fit $options) }}
+  {{ else if eq $command "Resize"}}
+  {{ $.Scratch.Set "imagescaled" ($image.Resize $options) }}
+  {{ else if eq $command "Fill"}}
+  {{ $.Scratch.Set "imagescaled" ($image.Fill $options) }}
+  {{ else }}
+  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+  {{ end }}
+{{ end }}
+
+{{ $imagescaled := $.Scratch.Get "imagescaled" }}
+
+{{ if or $imagescaled }}
+  <img src="{{ $imagescaled.RelPermalink }}" width="{{ $imagescaled.Width }}" height="{{ $imagescaled.Height }}" class="{{ .Params.class }}"/></a>
+{{ end }}

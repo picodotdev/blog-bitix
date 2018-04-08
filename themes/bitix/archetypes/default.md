@@ -10,6 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
+image: ""
 tags: ["blog", "planeta-codigo"]
 series: [""]
 summary: ""
