@@ -3,7 +3,7 @@ pid: 301
 title: "Sobre el Slimbook AIO Curve"
 url: "/2018/04/sobre-el-slimbook-aio-curve/"
 date: 2018-04-08T13:00:00+02:00
-date: 2018-04-08T23:00:00+02:00
+date: 2018-04-09T22:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -26,6 +26,7 @@ Varios medios se hacía eco de la presentación:
 
 * [The Slimbook Curve is a Stunning All-in-One Linux PC](https://www.omgubuntu.co.uk/2018/04/the-slimbook-curve-is-a-stunning-all-in-one-linux-pc)
 * [Slimbook anuncia Curve, su primer All in One](https://www.muylinux.com/2018/04/03/slimbook-curve-aio/)
+* [SlimBook Curve, fantástico All In One con Linux](https://www.gizlogic.com/slimbook-curve-un-fantastico-all-in-one/)
 
 <div class="media" style="text-align: center;">
     {{< figureproc
