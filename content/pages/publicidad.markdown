@@ -17,12 +17,13 @@ En Blog Bitix con alrededor de 45000 páginas vistas y 30000 usuarios mensuales 
 
 Entre las diferentes formas de publicidad, aunque no estoy limitado a ellas, que considero están los **artículos promocionados** escritos por mi, con contenido único, con mi opinión propia, sincera y honesta de una extensión aproximada de entre 400 y 800 palabras con un análisis del servicio o producto. **Inserción de enlaces** en los artículos promocionados u artículos relacionados que ya he escrito que ya están posicionados en los buscadores, como _link building_, promoción o conseguir tráfico. **Banners de publicidad** con enlaces de diferentes tamaños que puedo colocar en las secciones laterales como fondo del blog o en la parte superior durante un periodo de tiempo. Abierto a cualquier otra forma de publicidad.
 
-O si lo prefieres solicitame un [artículo patrocinado a través de la plataforma Paysuites](https://paysuites.me/website/11383/). Estos son algunos artículos patrocinados que he publicado.
+O si lo prefieres solicitame un artículo patrocinado a través de la [plataforma Space Content](https://spacecontent.net/es/?affiliate=5acb9ab4c9a5f) o en la [plataforma Paysuites](https://paysuites.me/website/11383/). Estos son algunos artículos patrocinados que he publicado.
 
 * [Cursos de formación de KeepCoding][blogbitix-207]
 * [Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web][blogbitix-211]
 
 <div class="text-center">
+    <p align="center"><a target="_blank" href="https://spacecontent.net/es/w/web/blogbitix/?affiliate=5acb9ab4c9a5f"> <img src="https://spacecontent.net/uploads/ad/bxt8g3imv.png" alt="Publicidad en Internet"></a></p>
     <p><a href="https://paysuites.me/website/11383/" rel="nofollow" target="_blank"><img src="assets/images/paysuites-afiliado-500-v3.jpg" alt="Publicidad con Paysuites"></a></p>
 </div>
 
