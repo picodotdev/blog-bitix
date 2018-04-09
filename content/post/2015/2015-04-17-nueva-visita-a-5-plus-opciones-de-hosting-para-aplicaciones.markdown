@@ -3,7 +3,7 @@ pid: 76
 title: "Nueva visita a 5+ opciones de «hosting» para aplicaciones"
 url: "/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/"
 date: 2015-04-17T19:56:10+02:00
-updated: 2015-11-10T19:00:00+01:00
+updated: 2018-04-05T19:00:00+02:00
 rss: true
 sharing: true
 comments: true
@@ -36,6 +36,8 @@ La siguiente opción a considerar puede ser un servidor ofrecido por muchos regi
 Mucha gente usa esta opción para albergar su bitácora con [WordPress][wordpress] que incluso para un tráfico considerable es suficiente, por supuesto es válida para las empresas que quieran tener presencia en internet aunque solo sea para incluir su dirección teléfono de contacto y una breve descripción y los productos que ofrece. Para estos usos el coste de esta opción puede estar entre 1€/mes y 20€/mes aparte del coste del dominio.
 
 Hay multitud de proveedores algunos de los más conocidos son [DonDominio][dondominio], [Arsys][arsys], [Piensa Solutions][piensasolutions], ... pero ninguno de estos y en otros casos muy pocos ofrecen _hosting_ para aplicaciones de la plataforma Java. No tendremos libertad en la tecnología que usamos ni siquiera en las versiones de la misma.
+
+Una opción es el [_hosting_ Java](https://www.anw.es/alojamiento-web/alojamiento-hosting-java.html) de [anw](https://www.anw.es) que tiene unas opciones interesantes que no poseen otros a unos precios similares a los que se ofrecen en este tipo de _hosting_, en algunos apartados superiores a la competencia como la RAM o cuota de [MySQL][mysql]. A destacar las opciones de tener una máquina virtual de Java dedicada con una versión específica, incluye el dominio gratis y con una centena de cuentas de correo, posibilidad de certificado SSL con [Let's encrypt][letsencrypt], pudiendo elegir entre varios de los más populares servidores de aplicaciones Java ([Tomcat][tomcat], [Glassfish/Payara][payara] o [WildFly][wildfly]), varias cantidades de memoria RAM según el plan contratado que en picos de carga puntuales pueden ser sobrepasados sin caída de servicio como ocurriría en otras opciones y base de datos MySQL. Poseen un [panel de administración](https://www.youtube.com/watch?v=aZFC_8MyLeM) con el que administrar la versión del JDK, el servidor de aplicaciones y la aplicación. Es una opción sencilla contando con soporte técnico sin necesidad de tener que administrar el servidor como en otras opciones de _hosting_ pero en la que se posee un buen control de la aplicación. En otras opciones ofrecen también alojamiento web con el popular [WordPress][wordpress].
 
 ### Amazon EC2, Azure, Google Cloud
 
