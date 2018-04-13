@@ -1,5 +1,5 @@
 ---
-pid: 301
+pid: 311
 title: "Sobre el Slimbook AIO Curve"
 url: "/2018/04/sobre-el-slimbook-aio-curve/"
 date: 2018-04-08T13:00:00+02:00
