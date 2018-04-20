@@ -23,9 +23,7 @@ El lenguaje Java utiliza un mecanismo de excepciones, las excepciones son objeto
 
 Hay una cierta polémica sobre si las excepciones _checked_ son una buena idea. Entre los motivos que se alegan en contra de su uso están que cambiar la firma de un método añadiendo una nueva excepción como lanzable hace que el código que usase ese método podría ocasionar errores de compilación y que hace necesario el tratarla o declararla en la cadena de métodos hasta que sea tratada. Otro motivo es que a mayor nivel en la jerarquía de llamada en los métodos se necesitarán manejar una lista amplia de excepciones.
 
-En el lado contrario las excepciones se consideran que son buenas porque conocer las condiciones de error o excepción que puede lanzar el método forma parte de la firma del método y es necesario para realizar un correcto manejo de errores. Las excepciones que heredan de _RuntimeException_ no se obliga a controlarlas ya que son errores producidos por un error en la programación.
-
-Las excepciones _checked_ pueden parecer un incordio pero son necesarias para hacer un correcto manejo de errores y evitar que el programa falle por no capturarlas. Por otro lado no deberían silenciarse con un bloque _catch_ vacío sin una buena razón.
+En el lado contrario las excepciones se consideran que son buenas porque conocer las condiciones de error o excepción que puede lanzar el método forma parte del contrato del método y es necesario para realizar un correcto manejo de errores. Las excepciones _checked_ pueden parecer un incordio pero son necesarias para hacer un correcto manejo de errores y evitar que el programa falle por no tratar las condiciones de error de las que advertirían. Por otro lado no deberían silenciarse con un bloque _catch_ vacío sin una buena razón.
 
 En el siguiente código se observa como capturar, lanzar y declarar excepciones en las firmas de los métodos en Java en una construcción _try catch finally_.
 
