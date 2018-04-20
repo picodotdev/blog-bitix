@@ -141,7 +141,7 @@ Estrategia. Es un juego de estrategia de simulación en tiempo real en 2D con é
 </div>
 
 ### Angband
-_Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugador. Está basado en texto. Jugarás con un aventurero en busca de riquezas, lucharás contra monstruos y te prepararás para una batalla final con  Morgoth, el señor de la oscuridad. [Sitio web](http://rephial.org/)
+_Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugador. Está basado en texto. Jugarás con un aventurero en busca de riquezas, lucharás contra monstruos y te prepararás para una batalla final con Morgoth, el señor de la oscuridad. [Sitio web](http://rephial.org/)
 
 ### Nethack
 _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. [Sitio web](http://www.nethack.org/)
@@ -150,6 +150,18 @@ _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. 
     {{< figure year="2016" pid="172"
         image1="nethack-1.png" thumb1="nethack-1-thumb.png"
         image2="nethack-2.png" thumb2="nethack-2-thumb.png" >}}
+</div>
+
+### Shattered Pixel Dungeon
+[Shattered Pixel Dungeon](http://pixeldungeon.wikia.com/wiki/Mod-Shattered_Pixel_Dungeon) es del mismo estilo que _Nethack_, _roguelike_ y RPG, pero en modo gráfico un héroe, a elegir entre cuatro, guerrero, mago, ladrón y cazadora, se adentra en una mazmorra con el objetivo de aniquilar a los monstruos y recuperar el Amuleto de Yandor. La dificultad del juego es bastante elevada y hay que usar de forma adecuada las habilidades del personaje y los objetos (no todos son buenos, algunos están malditos) que se encuentren en la mazmorra para llegar lo más lejos posible. Hay trampas, puertas secretas, nuevas armas, armaduras, posibilidad de fabricar nuevos objetos y niveles que alcanzar ganando experiencia y dos carreras que seguir.
+
+<div class="media" style="text-align: center;">
+    {{< figure year="2016" pid="172"
+        image1="shattered-pixel-dungeon-1.png" thumb1="shattered-pixel-dungeon-1-thumb.png"
+        image2="shattered-pixel-dungeon-2.png" thumb2="shattered-pixel-dungeon-2-thumb.png" >}}
+    {{< figure year="2016" pid="172"
+        image1="shattered-pixel-dungeon-3.png" thumb1="shattered-pixel-dungeon-3-thumb.png"
+        image2="shattered-pixel-dungeon-4.png" thumb2="shattered-pixel-dungeon-4-thumb.png" >}}
 </div>
 
 ### Alien Arena, AssaultCube, Cube 2: Sauerbraten, Nexuiz, Warsow, Xonotic
