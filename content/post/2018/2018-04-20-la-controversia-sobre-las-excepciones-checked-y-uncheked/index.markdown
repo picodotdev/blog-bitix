@@ -32,6 +32,8 @@ En el siguiente código se observa como capturar, lanzar y declarar excepciones 
 {{< gist picodotdev c0fc9936712783e76b22088e5b8f2b2e "Bank.java" >}}
 {{< gist picodotdev c0fc9936712783e76b22088e5b8f2b2e "Main.java" >}}
 
+En el aparatado referncia incluyo unos buenos enlaces que amplian y detallan más apropiadamente la controversia sobre las excepciones _checked_ y _uncheked_.
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
