@@ -43,4 +43,6 @@ Aunque las excepciones son un buen mecanismo para el tratamiento de errores se l
 
 Cuando se produce una excepción la clase [Throwable](https://docs.oracle.com/javase/9/docs/api/java/lang/Throwable.html) posee métodos para emitir en la salida un informe de la pila de llamadas, también se puede personalizar la salida. Esta información es esencial y muy útil para conocer la causa de un error ya que indica entre otras cosas cada uno de los métodos, línea en el código fuente y clases donde se ha producido la excepción.
 
+Hay una cierta [controversia sobre las excepciones _checked_ y _unchecked_][blogbitix-313] ya que mejoran el control de errores pero pueden generar otros problemas. Ambas opciones tienen sus lados positivos y otros negativos. En Java se optó por implementar el mecanismo de excepciones donde las _checked_ es obligatorio tratarlas o lanzarlas a un nivel superior de la pila de llamadas.
+
 {{% /post %}}
