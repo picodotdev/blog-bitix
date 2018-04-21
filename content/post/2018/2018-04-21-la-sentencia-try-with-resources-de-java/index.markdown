@@ -29,7 +29,7 @@ Anteriormente a Java 7 esto se debía hacer de la siguiente manera con unas poca
 
 El código es similar pero no es equivalente. Observesé que require declarar la variable _br_ fuera del ámbito de la sentencia _try-catch-finally_ donde se usa. Además, si se produce una excepción en el bloque _try_ y posteriormente en el bloque _finally_ en Java 6 la excepción del bloque _try_ se enmascara y la que se lanza es la del bloque _finally_. 
 
-La excepción que se lanza es la del bloque _try_ y usando el método [Throwable.addSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)) que se añadió en la API en Java 7 junto con el método [Throwable.getSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#getSuppressed()) se obtienen las excepciones enmascaradas o suprimidas en la sentencia _try-with-resources_. El orden de ejecución de los bloques de una sentencia _try-with-resources_ es el indicado en los números emitidos con el método _println_.
+La excepción que se lanza en el bloque _try_ y usando el método [Throwable.addSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)) que se añadió en la API en Java 7 junto con el método [Throwable.getSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#getSuppressed()) se obtienen las excepciones enmascaradas o suprimidas en la sentencia _try-with-resources_. El orden de ejecución de los bloques de una sentencia _try-with-resources_ es el indicado en los números emitidos con el método _println_.
 
 {{< gist picodotdev 9779dde2d563dcf7e8bb114f44966003 "Main.java" >}}
 {{< gist picodotdev 9779dde2d563dcf7e8bb114f44966003 "System.out" >}}
