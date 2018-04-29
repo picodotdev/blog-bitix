@@ -2,7 +2,7 @@
 pid: 316
 title: "Personalizar el prompt del sistema del intérprete de comandos Bash"
 url: "/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/"
-date: 2018-05-29T10:30:00+02:00
+date: 2018-04-29T10:30:00+02:00
 language: "es"
 rss: true
 sharing: true
