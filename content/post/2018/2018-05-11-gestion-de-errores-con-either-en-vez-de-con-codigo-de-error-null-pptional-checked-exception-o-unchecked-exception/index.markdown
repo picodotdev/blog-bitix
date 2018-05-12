@@ -1,7 +1,8 @@
 ---
 pid: 319
-title: "Gestión de errores con Either en vez de con código de error, null, Optional, checked exception o unchecked exception"
-url: "/2018/05/gestion-de-errores-con-either-en-vez-de-con-codigo-de-error-null-pptional-checked-exception-o-unchecked-exception/"
+title: "Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception"
+url: "/2018/05/gestion-de-errores-con-either-o-try-en-vez-de-con-codigo-de-error-null-pptional-checked-exception-o-unchecked-exception/"
+alisases: ["/2018/05/gestion-de-errores-con-either-en-vez-de-con-codigo-de-error-null-pptional-checked-exception-o-unchecked-exception/"]
 date: 2018-05-11T20:00:00+02:00
 language: "es"
 rss: true
@@ -30,6 +31,8 @@ Para obligar a gestionar adecuadamente las condiciones de error e informar de qu
 En algunos lenguajes con capacidades funcionales se ha propuesto una nueva forma para la gestión de condiciones de error, en Java y con la librería [Vavr][vavr] se proporciona la clase [Either](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Either.html) que es un tipo con la definición de tipo genérico _Either\<L,R\>_. Que un método devuelva _Either<BigDecmal, Exception>_ indica que puede devolver en el caso del ejemplo un _Integer_ en el caso correcto o una excepción en el caso de error. Un potencial fallo de esta opción es que no hay obligación de usar un _try-catch_ pero si se quiere usar el valor devuelto en caso correcto se ha de tener en cuenta el potencial caso de que lo haya es valor derecho. La clase _Either_ proporciona métodos para tratar adecuadamente en caso de que esté presente el valor izquierdo o el valor derecho.
 
 La clase _Either_ tiene múltiples métodos para comprobar si el valor que tiene es un valor del tipo izquierdo, derecho, obtener el valor izquierdo, derecho y múltiples métodos que hereda de [Value](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/Value.html).
+
+En vez de retornar un _Either_ en un método usando Vavr se puede utilizar la clase [Try](https://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Try.html) como otra forma de gestionar las excepciones. Con _Try_ el método no es necesario que devuelva un _Either_ de modo que retorne el valor en el caso correcto y lance una exepción en caso de error. El _Try_ puede convertirse a un _Either_.
 
 {{% code git="blog-ejemplos/tree/master/JavaException" command="./gradlew run" %}}
 
