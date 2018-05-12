@@ -3,6 +3,7 @@ pid: 320
 title: "Sobre el comercio electrónico, El Corte Inglés y Amazon"
 url: "/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/"
 date: 2018-05-12T11:00:00+02:00
+updated: 2018-05-13T13:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -34,13 +35,15 @@ En el ámbito del comercio electrónico muchas compras se basan en opiniones y r
 
 Otra cosas buena de Amazon es la lista de deseos, por un lado permite a los usuarios guardar productos en una lista sin tener que buscarlos con posterioridad y por otro lado permitirá a Amazon hacer análisis así como ofrecer a esos usuarios productos relacionados. En su página de inicio Amazon muestra listas de productos que has visto, relacionados, que te pueden interesar, ... para que al cabo de un tiempo hagas la compra. 
 
-Amazon tiene un gran catálogo de productos y para cubrir esa parte que no tiene permite a vendedores incluir sus propios productos. Amazon es algo más que una tienda, es un _marketplace_ que permite a numerosos vendedores incluir sus productos y aprovecharse incluso de sus centros logísticos, aunque estos no siempre tiene mejores precios que en tiendas físicas. Otro aspecto del comercio electrónico es que no está sujeto a tener grandes centros comerciales dsitribuidos por toda la geografía u horarios de apertura.
+Amazon tiene un gran catálogo de productos y para cubrir esa parte que no tiene permite a vendedores incluir sus propios productos. Amazon es algo más que una tienda, es un _marketplace_ que permite a numerosos vendedores incluir sus productos y aprovecharse incluso de sus centros logísticos, aunque estos no siempre tiene mejores precios que en tiendas físicas.
 
 En mi blog de vez en cuando incluyo enlaces de afiliado, para productos hasta el momento solo de Amazon y con ellos le he generado una facturación de calculo unos 2500€ y he recibido una comisión de unos 125€, y eso en mi «pequeño» blog con únicamente 35K visitas mensuales, otros tendrá cientos de miles. Cuando he intentado hacerme afiliado de El Corte Inglés no lo he conseguido por lo que no estoy incluyendo enlaces a sus productos. Con los comentarios, afiliados, listas de deseos, _marketplace_ entiendo por que Amazon es un problema para El Corte Inglés, y es que lo está haciendo mejor. El Corte Inglés no tiene mala página web pero creo que le faltan varios puntos de los anteriores para adaptarla mejor a la forma de vender en internet.
 
 Aparte de la ropa otro área que por el momento no he hecho compras es el de la alimentación, para productos que sean rápidamente perecederos quizá no pero para productos con varios meses de conservación uno ya puede plantearse hacer la compra en Amazon. Supermercados y tiendas de aliemtación pueden ser los siguientes en verse afectados por la llegada del comercio electrónico si no se adaptan. En un futuro el sector bancario también puede ser absorbido. Y en parte medios de pago como [PayPal][paypal] ya lo es pero cuando haya uno que ofrezca cuentas corrientes, depósitos y tarjetas de crédito el sector bancario tradicional será también al mismo tiempo una empresa de banca una empresa con gran dependencia tecnológica.
 
 En cuanto al sector energético hay empresas comercializadoras como [Holaluz][holaluz] que no tiene oficinas y en la que todos los trámites se pueden hacer mediante internet, correo electrónico o incluso twitter. De hecho hace algún tiempo [me cambié a HolaLuz][blogbitix-278]. El transporte también está siendo afectado con la posibilidad de solicitar un taxi o vehículo con conductor mediante una aplicación en el móvil.
+
+Otro aspecto del comercio electrónico es que no está sujeto a tener grandes centros comerciales distribuidos por toda la geografía u horarios de apertura. También las [multinacionales como Amazon utiliza ingeniería fiscal][blogbitix-175] todo lo legal que la ley diga pero deshonesta para evadir impuestos debido a una falta de regulación o una regulación no adaptada a la nueva realidad económica con internet lo que provoca que muchos comercios que si pagan impuestos compitan aún más con desventaja. En parte también crean unas condiciones laborales en algunos casos muy pobres como la de los repartidores en bicicleta o no trasladándose los beneficios que obtienen esas empresas a los trabajadores con como los empleados de Amazon en los centros de distribución. Esperemos que los políticos en los gobiernos promulguen leyes que que revieran esta situación y regulen esta nueva economía adecuadamente para repartir la riqueza o que los trabajadores se asocien no solo a nivel nacional sino incluso multinacional por el carácter multinacional de las empresas si hace falta para ir a una [huelga global](https://www.xataka.com/empresas-y-economia/los-trabajadores-de-amazon-espana-planean-una-huelga-a-nivel-europeo-en-pleno-prime-day-o-black-friday).
 
 En definitiva internet ha cambiado los canales de distribución y comercio, las empresas que se adapten seguirán compitiendo en mejores condiciones que las que no. Las empresas grandes deben considerar a la tecnología parte importante de su empresa, deben tener un departamento de tecnología con ingenieros informáticos y en mi opinión no considerarlo una parte externalizable de su negocio por la importancia que tiene, tan importante como cualquier otro departamento destinado a ofrecer su servicio. Por la inercia de los hábitos de consumo habrá gente que siga comprando en tiendas físicas pero cada vez más la tendencia será el comercio electrónico.
 
@@ -52,6 +55,8 @@ El comercio electrónico destruirá muchos empleos al mismo tiempo que creará o
 * [El Corte Inglés pisa los talones a Amazon en España](https://cincodias.elpais.com/cincodias/2017/04/10/companias/1491837961_255161.html)
 * [¿Por qué se queja El Corte Inglés de Amazon?](http://www.elmundo.es/economia/empresas/2018/04/18/5ad64286e2704e366b8b4988.html)
 * [El Corte Inglés se planta frente a Amazon: 'No puede ser que nosotros paguemos impuestos y ellos no"](http://www.elmundo.es/economia/empresas/2018/03/06/5a9ec40e468aeb267e8b45de.html)
+* [Huelga en Amazon España: una mayoría de trabajadores se rebela contra la empresa](https://www.elconfidencial.com/tecnologia/2018-03-02/amazon-espana-huelga-trabajadores-san-fernando_1529600/)
+* [Los trabajadores de Amazon España planean una huelga a nivel europeo en pleno Prime Day o Black Friday](https://www.xataka.com/empresas-y-economia/los-trabajadores-de-amazon-espana-planean-una-huelga-a-nivel-europeo-en-pleno-prime-day-o-black-friday)
 {{% /reference %}}
 
 {{% /post %}}
