@@ -30,7 +30,7 @@ Los pequeños comercios locales difícilmente pueden competir con estos gigantes
 
 Una de las dificultades de comprar por internet es la incertidumbre de saber como es el producto sin verlo físicamente, esto dificulta la compra. Para eliminar parte de esa incertidumbre están las descripciones detallatdas del producto junto con fotos pero Amazon también tiene algo tan simple como los comentarios que añaden los usuarios que han comprado con anterioridad ese producto. Aunque haya un comentario negativo esto también es bueno ya que permite a un usuario conocer sus defectos, esto es mejor que que un usuario compre un producto y no le guste, normalmente la mayoría de los comentarios son positivos. Por otro lado Amazon incentiva que los usuarios hagan comentarios envíando un correo electrónicos pasados unos días después de haber recibido el producto para que cuenten sus impresiones.
 
-En el ámbito del comercio electrónico muchas compras se basan en opiniones y recomendaciones de otras personas, ya sean en forma de comentarios o de vídeos en [YouTube] de desempaquetados y análisis de productos.
+En el ámbito del comercio electrónico muchas compras se basan en opiniones y recomendaciones de otras personas, ya sean en forma de comentarios o de vídeos en [YouTube][youtube] de desempaquetados y análisis de productos.
 
 Otra cosas buena de Amazon es la lista de deseos, por un lado permite a los usuarios guardar productos en una lista sin tener que buscarlos con posterioridad y por otro lado permitirá a Amazon hacer análisis así como ofrecer a esos usuarios productos relacionados. En su página de inicio Amazon muestra listas de productos que has visto, relacionados, que te pueden interesar, ... para que al cabo de un tiempo hagas la compra. 
 
