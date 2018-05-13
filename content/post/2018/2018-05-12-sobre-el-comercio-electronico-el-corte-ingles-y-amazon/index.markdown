@@ -29,6 +29,12 @@ El comercio electrónico y la compra de bienes por internet también es ya una r
 
 Los pequeños comercios locales difícilmente pueden competir con estos gigantes e incluso peces gordos como [El Corte Inglés][elcorteingles] se están viendo afectados. Aún ganan en el asesoramiento que uno puede obtener de los dependientes si uno tiene suerte de encontrase uno amable y de poder ver o probar físicamente el producto antes de comprarlo o llevárselo con inmediatez pero en cuanto a catálogo y precio difícilmente.
 
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="the-new-yorker.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Portada The New Yorker"
+        caption="Portada The New Yorker" >}}
+</div>
+
 Una de las dificultades de comprar por internet es la incertidumbre de saber como es el producto sin verlo físicamente, esto dificulta la compra. Para eliminar parte de esa incertidumbre están las descripciones detallatdas del producto junto con fotos pero Amazon también tiene algo tan simple como los comentarios que añaden los usuarios que han comprado con anterioridad ese producto. Aunque haya un comentario negativo esto también es bueno ya que permite a un usuario conocer sus defectos, esto es mejor que que un usuario compre un producto y no le guste, normalmente la mayoría de los comentarios son positivos. Por otro lado Amazon incentiva que los usuarios hagan comentarios envíando un correo electrónicos pasados unos días después de haber recibido el producto para que cuenten sus impresiones.
 
 En el ámbito del comercio electrónico muchas compras se basan en opiniones y recomendaciones de otras personas, ya sean en forma de comentarios o de vídeos en [YouTube][youtube] de desempaquetados y análisis de productos.
