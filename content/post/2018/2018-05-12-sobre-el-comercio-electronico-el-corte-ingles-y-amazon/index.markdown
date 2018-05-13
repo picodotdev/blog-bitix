@@ -3,7 +3,7 @@ pid: 320
 title: "Sobre el comercio electrónico, El Corte Inglés y Amazon"
 url: "/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/"
 date: 2018-05-12T11:00:00+02:00
-updated: 2018-05-13T13:00:00+02:00
+updated: 2018-05-13T13:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -19,7 +19,7 @@ summary: "Internet es la revolución de finales del sigo XX e inicio del siglo X
 
 {{< logotype image1="amazon.svg" title1="Amazon" width1="400" image2="elcorteingles.svg" title2="El Corte Inglés" width2="400" >}}
 
-Inicialmente la _world wide web_ permitía acceder y compartir información de forma instantánea a nivel planetario. Uno de los primeros sectores cambiados por internet fue el de la música que junto con el formato de archivo _mp3_ permitió compartir entre los usuarios toda su colección de música.
+Inicialmente la _world wide web_ permitía acceder y compartir información de forma instantánea a nivel planetario. Uno de los primeros sectores cambiados por internet fue el de la música que junto con el formato de archivo _mp3_ permitió compartir entre los usuarios toda su colección de música. Al igual que la sustitución del correo tradicional por carta por el correo electrónico y la digitalización de documentos con el consiguiente ahorro en papel.
 
 En un primer momento en que la industria no ofrecía y se mostraba contraria a lo que los usuarios obtenían por otras vías estos optaron por acceder a la música a través de programas de compartición de archivos vía [eMule][emule] o [BitTorrent][bittorrent], a día de hoy ya se ofrecen plataformas en internet para acceder a la música sin necesidad de violar los derechos de autor. Aún con las campañas de cierre de web dedicadas a contener archivos para acceder a contenidos mediante torrent y más posibilidades de acceder a contenidos sin violar los derechos de autor siempre existirá un nivel de de lo denominado como _piratería_. [Spotify][spotify], [Apple Music][apple-music] o [Amazon Music][amazon-music] son algunas de las plataformas que permiten adquirir canciones individuales o álbumes completos a precios similares a lo que antes de distribuía mediante disco físicos.
 
@@ -47,7 +47,9 @@ Otro aspecto del comercio electrónico es que no está sujeto a tener grandes ce
 
 En definitiva internet ha cambiado los canales de distribución y comercio, las empresas que se adapten seguirán compitiendo en mejores condiciones que las que no. Las empresas grandes deben considerar a la tecnología parte importante de su empresa, deben tener un departamento de tecnología con ingenieros informáticos y en mi opinión no considerarlo una parte externalizable de su negocio por la importancia que tiene, tan importante como cualquier otro departamento destinado a ofrecer su servicio. Por la inercia de los hábitos de consumo habrá gente que siga comprando en tiendas físicas pero cada vez más la tendencia será el comercio electrónico.
 
-El comercio electrónico destruirá muchos empleos al mismo tiempo que creará otros tantos o más. Nada que no haya pasado con otros avances de la ciencia y la tecnología con anterioridad. Mineros que extraen carbón cada vez serán menos, personas que podrían trabajar en energías renovables solar fotovoltaica o térmica, eólica o marítima podría ser mucha más. No será porque España no tenga sol, costa o viento solo hace falta voluntad política que cree en el sector una legislación estable con condiciones adecuadas para la inversión y el desarrollo, todo lo contrario de tratar de poner [impuestos al sol](https://www.huffingtonpost.es/2015/10/09/impuesto-al-sol-autoconsumo-energetico_n_8267900.html) que perpetúen el oligopolio de unas pocas eléctricas y lastre el desarrollo. El mismo potencial tiene el sector tecnológico.
+El comercio electrónico destruirá muchos empleos al mismo tiempo que creará otros tantos o más. Nada que no haya pasado con otros avances de la ciencia y la tecnología con anterioridad. Habrá menos carteros pero habrá más repartidores de paquetes.
+
+Mineros que extraen carbón cada vez serán menos, personas que podrían trabajar en energías renovables solar fotovoltaica o térmica, eólica o marítima podría ser mucha más. No será porque España no tenga sol, costa o viento solo hace falta voluntad política que cree en el sector una legislación estable con condiciones adecuadas para la inversión y el desarrollo, todo lo contrario de tratar de poner [impuestos al sol](https://www.huffingtonpost.es/2015/10/09/impuesto-al-sol-autoconsumo-energetico_n_8267900.html) que perpetúen el oligopolio de unas pocas eléctricas y lastre el desarrollo. El mismo potencial tiene el sector tecnológico.
 
 {{% reference %}}
 {{< links >}}
