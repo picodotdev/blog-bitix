@@ -15,7 +15,7 @@ tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="javascript.png" title1="JavaScript" >}}
+{{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
 Este artículo es una combinación de varias cosas que forman el actual estado del arte en JavaScript. [Gulp][gulpjs] como ejecutor de tareas, traducción o _transpiling_ de ECMAScript 6 a ECMAcript 5 con [Babel][babeljs], [Uglify][uglifyjs] como minificador y ofuscador de código y [ESLint][eslint] como verificador del código.
 

@@ -15,7 +15,7 @@ tags: ["blog-stack", "javascript", "planeta-codigo", "programacion"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="javascript.png" title1="JavaScript" >}}
+{{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
 Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una [introducción sobre RequireJS][elblogdepicodev-147] hasta un [Ejemplo lista de tareas con Backbone y React][blogbitix-20] pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:
 

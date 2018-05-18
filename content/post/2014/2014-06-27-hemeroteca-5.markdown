@@ -39,11 +39,11 @@ En otro par de artículos he comentado sobre [Grails](http://grails.org/). Ambas
 * [Detectar problema N+1 y obtener estadísticas de Hibernate con Grails][blogbitix-26]
 * [Página de excepción de Grails][blogbitix-25]
 
-En la sección de programación están las novedades de Java 8 que recoge las interesantes novedades de esta nueva versión, también un nuevo artículo en la serie sobre Javascript con la lista de tareas empleando [Backbone](http://backbonejs.org/) y [React](http://facebook.github.io/react/) que empecé algo más de tiempo, una pequeña introducción a [Elasticsearch](http://www.elasticsearch.org/), otro ejemplo práctico de un patrón de diseño en programación en este caso del No Operation y algunos otros temas sobre Java.
+En la sección de programación están las novedades de Java 8 que recoge las interesantes novedades de esta nueva versión, también un nuevo artículo en la serie sobre JavaScript con la lista de tareas empleando [Backbone](http://backbonejs.org/) y [React](http://facebook.github.io/react/) que empecé algo más de tiempo, una pequeña introducción a [Elasticsearch](http://www.elasticsearch.org/), otro ejemplo práctico de un patrón de diseño en programación en este caso del No Operation y algunos otros temas sobre Java.
 
 * [Introducción a Elasticsearch][blogbitix-21]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
-* [Usar Grunt para ejecutar teses unitarios de código Javascript][blogbitix-19]
+* [Usar Grunt para ejecutar teses unitarios de código JavaScript][blogbitix-19]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Introducción y ejemplo sencillo de Java Message Service (JMS)][blogbitix-15]
 * [Servidor de aplicaciones JBoss/WildFly][blogbitix-10]

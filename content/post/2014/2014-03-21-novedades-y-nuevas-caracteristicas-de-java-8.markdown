@@ -22,7 +22,7 @@ El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](h
 
 * Se añaden las expresiones lambda o closures y se adapta la API para usarlas en los sitios que se pueda.
 * Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.
-* Incluido nuevo [motor de Javascript Nashorn](http://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/index.html) que implementa ECMAscript 5.1 y es más rápido que su predecesor Rhino.
+* Incluido nuevo [motor de JavaScript Nashorn](http://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/index.html) que implementa ECMAscript 5.1 y es más rápido que su predecesor Rhino.
 * Eliminación de espacio de memoria Permanent Generation (PermGen) que pasa a llamarse Metaspace. Su tamaño
 será dinámico pero no evitará fugas de memoria.
 * Soporte para la creación de una máquina virtual menor a 3 MB.

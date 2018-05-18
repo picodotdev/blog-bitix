@@ -26,7 +26,7 @@ Como resumen de estas 26 semanas he publicado 27 artículos destacando que he ca
 De los artículos que he escrito destacaré los siguientes, son con los que más a gusto he quedado después de escribirlos y me parece que merecen una lectura, por orden cronológico:
 
 * [Conferencia BilboStack 2015][blogbitix-62]
-* [Internacionalización (i18n) en Javascript][blogbitix-63]
+* [Internacionalización (i18n) en JavaScript][blogbitix-63]
 * [5º aniversario del blog][blogbitix-65]
 * [Listener de eventos de Hibernate con servicios de Spring][blogbitix-69]
 * [Datos de sesión externalizados con Spring Session][blogbitix-70]

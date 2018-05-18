@@ -38,7 +38,7 @@ Para compartir los vídeos solo necesitaremos una cuenta de correo, no necesitar
 
 {{< gist picodotdev 8d6efae03a58b1085cbc "asciinema-auth.sh" >}}
 
-En la [documentación de Asciinema](https://asciinema.org/docs) están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un _blog_. Para esto último deberemos incluir un _script_ de Javascript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la [documentación de las opciones para embeber los vídeos](https://asciinema.org/docs/embedding) podemos ver las opciones completas que podemos emplear:
+En la [documentación de Asciinema](https://asciinema.org/docs) están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un _blog_. Para esto último deberemos incluir un _script_ de JavaScript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la [documentación de las opciones para embeber los vídeos](https://asciinema.org/docs/embedding) podemos ver las opciones completas que podemos emplear:
 
 {{< gist picodotdev 8d6efae03a58b1085cbc "asciinema-embed.html" >}}
 

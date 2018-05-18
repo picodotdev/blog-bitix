@@ -55,7 +55,7 @@ En el lado cliente de una aplicación web usaría la combinación de varias tecn
 * [Introducción y ejemplo de Mustache][elblogdepicodev-148]
 * [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon][elblogdepicodev-154]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
-* [Internacionalización (i18n) en Javascript][blogbitix-63]
+* [Internacionalización (i18n) en JavaScript][blogbitix-63]
 
 ### _Framework_ web
 

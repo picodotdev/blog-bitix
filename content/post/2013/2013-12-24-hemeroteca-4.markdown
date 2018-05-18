@@ -52,7 +52,7 @@ El resto de entradas han sido sobre diversos temas no relacionados como varias s
 * [Trazas en un gsp de Grails][elblogdepicodev-175]
 * [Archivos properties con codificación UTF-8][elblogdepicodev-174]
 * [Guía básica del reproductor de música cmus][elblogdepicodev-173]
-* [Como optimizar módulos de RequireJS y archivos Javascript (II)][elblogdepicodev-172]
+* [Como optimizar módulos de RequireJS y archivos JavaScript (II)][elblogdepicodev-172]
 * [Ejemplo lista de tareas con Marionette][elblogdepicodev-171]
 * [Ejemplo del patrón de diseño State][elblogdepicodev-170]
 * [Pruebas unitarias de código que accede a base de datos][elblogdepicodev-169]

@@ -1,6 +1,6 @@
 ---
 pid: 19
-title: "Usar Grunt para ejecutar teses unitarios de código Javascript"
+title: "Usar Grunt para ejecutar teses unitarios de código JavaScript"
 url: "/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/"
 date: 2014-04-04T16:43:23+02:00
 updated: 2015-11-10T19:00:00+01:00
@@ -18,7 +18,7 @@ tags: ["software", "programacion", "javascript", "planeta-codigo"]
 
 En la [serie de artículos que escribí sobre javascript](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html) hice un ejemplo más o menos complejo y parecido a lo que podría ser una aplicación real usando muchas de las herramientas que ahora se consideran una buena opción para desarrollar aplicaciones javascript como [RequireJS](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html), [Backbone](http://www.genbetadev.com/desarrollo-web/patron-de-diseno-mvc-del-lado-cliente-con-backbonejs), [Marionette](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html), [Jasmine y Sinon](http://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html). En el [ejemplo de la lista de tareas con estas herramientas](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html) hice unas cuantas pruebas unitarias para mostrar en un ejemplo como son y la forma de usar [Jasmine](http://jasmine.github.io/).
 
-Sin embargo, para ejecutar las pruebas unitarias se necesitaba un navegador y hacerlo de forma manual cuando quisiéramos comprobar el estado de las pruebas. Lo ideal tal y como se comenta en el libro <a href="http://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">The Pragmatic programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, es que las pruebas unitarias se ejecuten de forma automatizada con la herramienta de construcción que usemos, esto evitará que se nos olvide ejecutarlas en cada cambio y así descubriremos los errores pronto, también podremos hacer que se ejecuten en un entorno de integración continua como podría ser [Jenkins](http://jenkins-ci.org/). En esta entrada mostraré como ejecutar esas pruebas unitarias de javascript con una tarea de la herramienta [Gradle](http://www.gradle.org/) y usando una herramienta similar a Gradle pero para Javascript llamada [Grunt](http://gruntjs.com/).
+Sin embargo, para ejecutar las pruebas unitarias se necesitaba un navegador y hacerlo de forma manual cuando quisiéramos comprobar el estado de las pruebas. Lo ideal tal y como se comenta en el libro <a href="http://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">The Pragmatic programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />, es que las pruebas unitarias se ejecuten de forma automatizada con la herramienta de construcción que usemos, esto evitará que se nos olvide ejecutarlas en cada cambio y así descubriremos los errores pronto, también podremos hacer que se ejecuten en un entorno de integración continua como podría ser [Jenkins](http://jenkins-ci.org/). En esta entrada mostraré como ejecutar esas pruebas unitarias de javascript con una tarea de la herramienta [Gradle](http://www.gradle.org/) y usando una herramienta similar a Gradle pero para JavaScript llamada [Grunt](http://gruntjs.com/).
 
 Primeramente necesitaremos instalar node.js y el paquete de javascript grunt-cli con de forma global en el sistema:
 
@@ -60,9 +60,9 @@ Aún tengo otra entrada preparada sobre javascript que es el mismo ejemplo de la
 {{< postslinks >}}
 * [Introducción y ejemplo de RequireJS](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
 * [Introducción y ejemplo de Mustache](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
-* [Logging en Javascript con log4javascript](http://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
-* [Capturar errores de Javascript](http://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
-* [Optimizar módulos de RequireJS y archivos Javascript](http://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
+* [Logging en JavaScript con log4javascript](http://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
+* [Capturar errores de JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
+* [Optimizar módulos de RequireJS y archivos JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
 * [Introducción y ejemplo de Backbone.js](http://elblogdepicodev.blogspot.com/2013/04/introduccion-y-ejemplo-de-backbonejs.html)
 * [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon](http://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html)
 * [Ejemplo lista de tareas con Marionette](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html)

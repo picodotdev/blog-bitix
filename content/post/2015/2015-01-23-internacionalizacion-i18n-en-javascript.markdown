@@ -1,6 +1,6 @@
 ---
 pid: 63
-title: "Internacionalización (i18n) en Javascript"
+title: "Internacionalización (i18n) en JavaScript"
 url: "/2015/01/internacionalizacion-i18n-en-javascript/"
 date: 2015-01-23T10:00:00+01:00
 updated: 2015-01-31T01:00:00+01:00
@@ -14,7 +14,7 @@ tags: ["blog-stack", "javascript", "planeta-codigo", "programacion", "software"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="javascript.png" title="Javascript" >}}
+{{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
 Si desarrollamos una aplicación web, que es usada en múltiples idiomas y el lado del cliente tiene cierta complejidad quizá nos encontremos con la necesidad de proporcionar internacionalización (i18n) para los textos o mensajes mediante una librería javascript. Una de la que más me ha gustado de las que he encontrado ha sido [i18next][i18next] pero hay [varias opciones más](http://stackoverflow.com/questions/3084675/internationalization-in-javascript), incluidas dos que merecen ser nombradas que son [polyglot](http://airbnb.github.io/polyglot.js/) y [messageformat](https://github.com/SlexAxton/messageformat.js), estas tres opciones son parecidas pero no tienen exactamente las mismas funcionalidades, deberemos evaluarlas para elegir una según lo que necesitemos.
 
@@ -82,9 +82,9 @@ Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podría
 
 * [Introducción y ejemplo de RequireJS](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
 * [Introducción y ejemplo de Mustache](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
-* [Logging en Javascript con log4javascript](http://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
-* [Capturar errores de Javascript](http://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
-* [Optimizar módulos de RequireJS y archivos Javascript](http://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
+* [Logging en JavaScript con log4javascript](http://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
+* [Capturar errores de JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
+* [Optimizar módulos de RequireJS y archivos JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
 * [Introducción y ejemplo de Backbone.js](http://elblogdepicodev.blogspot.com/2013/04/introduccion-y-ejemplo-de-backbonejs.html)
 * [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon](http://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html)
 * [Ejemplo lista de tareas con Marionette](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html)
@@ -97,7 +97,7 @@ El [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Internationalization in Javascript](http://stackoverflow.com/questions/3084675/internationalization-in-javascript)
+* [Internationalization in JavaScript](http://stackoverflow.com/questions/3084675/internationalization-in-javascript)
 * [Internacionalización a lenguajes con diferentes formas plurales en Java][elblogdepicodev-internacionalizacion-lenguajes-con]
 * [Internacionalización (i18n) de campos con Hibernate][elblogdepicodev-internacionalizacion-i18n-de-campos-con]
 {{% /reference %}}
