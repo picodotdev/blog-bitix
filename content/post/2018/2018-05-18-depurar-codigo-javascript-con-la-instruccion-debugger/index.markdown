@@ -1,8 +1,10 @@
 ---
 pid: 321
-title: "Depuración con la instrucción debugger en JavaScript"
-url: "/2018/05/depuracion-con-la-instruccion-debugger-en-javascript/"
+title: "Depurar código JavaScript con la instrucción debugger"
+url: "/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/"
+aliases: ["/2018/05/depuracion-con-la-instruccion-debugger-en-javascript/"]
 date: 2018-05-18T19:00:00+02:00
+updated: 2018-05-19T12:00:00+02:00
 language: "es"
 rss: true
 sharing: true
