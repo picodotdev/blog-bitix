@@ -15,7 +15,7 @@ summary: "Incluir enlaces a otras web u otras páginas o artículos dentro del m
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="hugo.png" title1="Hugo" >}}
+{{< logotype image1="hugo.png" title1="Hugo" width1="200" >}}
 
 Una de las tareas más comunes en una página web o en una bitácora es incluir enlaces a otras páginas, el enlace es uno de los elementos básicos que forman la web. Es probable que en muchas páginas o artículos incluyamos repetidamente los mismos enlaces y como resultado tendremos en muchas páginas y artículos los mismos enlaces. El día que unos de esos enlaces cambie de alguna forma su dirección URL deberíamos actualizar todas las páginas o artículos para referenciar la nueva URL y no tener enlaces rotos. Puede no ser una tarea sencilla, más si usamos [WordPress][wordpress], [Blogger][blogger] o una herramienta similar. Voy a comentar como he resuelto este posible problema en mi bitácora en la que uso [Hugo][hugo].
 
@@ -43,6 +43,7 @@ Rastreando la página web o bitácora podremos encontrar y posteriormente correg
 * [WordPress][wordpress]
 * [¡Hola nuevo mundo!][blogbitix-0]
 * [Mi experiencia y consejos para un blog][blogbitix-7]
+* [Generador de páginas web estáticas y bitácoras Hugo][blogbitix-323]
 * [Nuevo diseño en Blog Bitix][blogbitix-80]
 * [Cómo buscar los enlaces rotos de un sitio web][blogbitix-115]
 {{% /reference %}}
