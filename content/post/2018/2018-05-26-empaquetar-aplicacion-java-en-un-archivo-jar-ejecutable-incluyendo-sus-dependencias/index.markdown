@@ -1,8 +1,9 @@
 ---
 pid: 324
-title: "Empaquetar aplicación Java en un archivo jar ejecutable incluyendo sus dependencias"
-url: "/2018/05/empaquetar-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/"
+title: "Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias"
+url: "/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/"
 date: 2018-05-26T12:15:00+02:00
+updated: 2018-05-26T18:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -55,6 +56,7 @@ Para hacer la distribución más sencilla hay una posibilidad que usan algunos p
 Con el siguiente comando la ejecución de la aplicación empaquetada como _uberjar_ produce el mismo resultado. Con el _uberjar_ en el archivo de manifiesto no es necesario incluir el atributo _Class-Path_ ya que todas las clases necesarias tanto de la aplicación como de las dependencias ha sido empaquetadas en el _jar_.
 
 {{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "java-jar-uberjar.sh" >}}
+{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "System.out" >}}
 
 Hay un [_plugin_ de Gradle para generar _uberjars_](http://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
 
