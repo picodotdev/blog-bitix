@@ -2,7 +2,7 @@
 pid: 324
 title: "Empaquetar aplicación Java en un archivo jar ejecutable incluyendo sus dependencias"
 url: "/2018/05/empaquetar-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/"
-date: 2018-05-26T00:00:00+02:00
+date: 2018-05-26T12:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -10,7 +10,6 @@ comments: true
 promoted: false
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "Las aplicaciones Java se distribuyen en uno o varios archivos _jar_. Si queremos facilitar la distribución de la aplicación con un único archivo _jar_ existe la posibilidad de reempaquetar el _jar_ de la aplicación y sus dependencias en tiempo de ejecución en un nuevo archivo _jar_ que lo contenga todo, a este nuevo _jar_ se le conoce como _uberjar_ o _fatjar_."
-draft: true
 ---
 
 {{% post %}}
