@@ -26,7 +26,7 @@ Lo primero necesario a instalar es el paquete de CUPS y el controlador de la imp
 
 {{< gist picodotdev 749c13e14296f931a0329628afcf8e49 "install.sh" >}}
 
-CUPS posee un panel de administración accesible con el navegador en la dirección _http://localhost:631/admin_. Pulsando el botón _Añadir impresora_ en el panel de administración de CUPS iniciamos el asistente para añadir la impresora en el que avahi nos detectará la impresora en red y deberemos seleccionar la marca junto con el modelo específico. Al añadir la impresora se nos preguntará por un usuario y contraseña, como nombre usuario deberemos introducir _root_ y como contraseña la que hayamos establecido en el sistema para el superusuario. Desde el panel de impresoras de [GNOME][gnome] se debería poder añadir la impresora, sin embargo, a mi me daba algún tipo de error de modo que lo hice desde CUPS.
+CUPS posee un panel de administración accesible con el navegador en la dirección _http\://localhost:631/admin_. Pulsando el botón _Añadir impresora_ en el panel de administración de CUPS iniciamos el asistente para añadir la impresora en el que avahi nos detectará la impresora en red y deberemos seleccionar la marca junto con el modelo específico. Al añadir la impresora se nos preguntará por un usuario y contraseña, como nombre usuario deberemos introducir _root_ y como contraseña la que hayamos establecido en el sistema para el superusuario. Desde el panel de impresoras de [GNOME][gnome] se debería poder añadir la impresora, sin embargo, a mi me daba algún tipo de error de modo que lo hice desde CUPS.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="174"

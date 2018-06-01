@@ -24,7 +24,7 @@ Sin embargo, presenta otros inconvenientes y es que si al servicio van a acceder
 
 Teniendo un [servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-178] añadirle seguridad con OAuth mediante el proveedor [Keycloak][keycloak] es lo que muestro en este artículo. En el servicio REST bastará que usemos el [adaptador para Spring Boot de Keycloak](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/latest/topics/oidc/java/java-adapters.html) y añadamos en Keycloak cierta configuración que consistirá en un _realm_ y el registro de un cliente. Para acceder al servicio REST usaremos el flujo _client\_credentials_ que nos permitirá obtener un _token_ usando las credenciales del cliente.
 
-Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accedemos al panel de administración con el navegador, en mi caso en _http://localhost:9080_ con el usuario _admin_ y contraseña _admin_ según lo indicado en el archivo _docker-compose.yml_.
+Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accedemos al panel de administración con el navegador, en mi caso en _http\://localhost:9080_ con el usuario _admin_ y contraseña _admin_ según lo indicado en el archivo _docker-compose.yml_.
 
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "docker-compose.yml" >}}
 {{< gist picodotdev d3cd61c429b60c83531b624245f77bd4 "docker-compose-up.sh" >}}

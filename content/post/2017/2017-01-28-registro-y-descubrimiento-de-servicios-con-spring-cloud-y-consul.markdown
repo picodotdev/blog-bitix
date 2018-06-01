@@ -32,7 +32,7 @@ Consul además de descubrimiento de servicios proporciona otras funcionalidades 
     <img src="assets/images/posts/2017/206/consul.png" alt="Consul" title="Consul"/>
 </div>
 
-Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección http://localhost:8500 con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
+Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección _http\://localhost:8500_ con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
 
 {{< gist picodotdev 69ebe9c83419447cdcfc4692988938a2 "consul.sh" >}}
 

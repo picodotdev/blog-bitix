@@ -31,8 +31,8 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="java-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicaión de ejemplo"
-        caption="Aplicaión de ejemplo" >}}
+        image1="java-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo"
+        caption="Aplicación de ejemplo" >}}
 </div>
 
 Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la opción _-jar_ se ignora el parámetro _-cp_ y no se indica la clase _main_ del punto de entrada de la aplicación. En el caso de las aplicaciones distribuidas en un archivo _jar_ tanto la clase _main_ como las dependencias se indican en un archivo de manifiesto incluido en el propio archivo _jar_. El archivo se ubica en _META-INF/MANIFEST.MF_ dentro del _jar_, es un archivo de texto donde se indican varias propiedades en forma de atributo y valor, una en cada linea. Un ejemplo de archivo de manifiesto sería el siguiente:
