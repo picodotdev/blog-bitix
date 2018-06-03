@@ -3,6 +3,7 @@ pid: 325
 title: "Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java"
 url: "/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/"
 date: 2018-06-01T17:00:00+02:00
+updated: 2018-06-01T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -25,7 +26,7 @@ Las librerías más populares de JavaScript o CSS están empaquetadas como _webj
 
 {{< gist picodotdev 6a355258c390e165cebc46871ce54309 "jquery-webjar.out" >}}
 
-En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la [guía de uso](https://www.webjars.org/documentation#tapestry).
+En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la [guía de uso](https://www.webjars.org/documentation#tapestry) con el objetivo que los recursos de los _webjars_ sean servidos.
 
 {{< gist picodotdev 6a355258c390e165cebc46871ce54309 "AppModule.java" >}}
 {{< gist picodotdev 6a355258c390e165cebc46871ce54309 "build.gradle" >}}
