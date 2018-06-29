@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 npm run less
-HUGO_THEME=bitix hugo --destination="public" --source="." --theme="bitix" --cleanDestinationDir
+--destination="public" --source="." --cleanDestinationDir
 # Renombrado assets en feeds
 find ./public -type f -name "index.xml" -exec sed -i 's/\&\#34;assets\//\&\#34;https:\/\/picodotdev.github.io\/blog-bitix\/assets\//g' {} +
 # Soporte para compatibilidad de feeds antiguos
