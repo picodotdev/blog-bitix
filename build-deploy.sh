@@ -2,9 +2,8 @@
 cd deploy/
 git pull
 cd ..
-
 npm run less
-hugo --destination="deploy" --source="." --theme="bitix" --cleanDestinationDir
+HUGO_THEME=bitix hugo --destination="deploy" --source="." --theme="bitix" --cleanDestinationDir
 # Renombrado assets en feeds
 find ./deploy -type f -name "index.xml" -exec sed -i '' 's/\&\#34;assets\//\&\#34;https:\/\/picodotdev.github.io\/blog-bitix\/assets\//g' {} +
 find ./deploy -type f -name "index.xml" -exec sed -i '' 's/\&\#34;https:\/\/picodotdev.github.io\/blog-bitix\/blog-bitix\//\&\#34;https:\/\/picodotdev.github.io\/blog-bitix\//g' {} +

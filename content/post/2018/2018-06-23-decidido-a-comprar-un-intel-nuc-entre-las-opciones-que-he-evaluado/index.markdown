@@ -1,9 +1,10 @@
 ---
 pid: 329
-title: "Decidido a comprar un Intel NUC Bean Canyon entre las opciones que he evaluado"
-url: "/2018/06/decidido-a-comprar-un-intel-nuc-bean-canyon-entre-las-opciones-que-he-evaluado/"
+title: "Decidido a comprar un Intel NUC entre las opciones que he evaluado"
+url: "/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/"
+aliases: ["/2018/06/decidido-a-comprar-un-intel-nuc-bean-canyon-entre-las-opciones-que-he-evaluado/"]
 date: 2018-06-23T22:30:00+02:00
-updated: 2018-06-24T21:30:00+02:00
+updated: 2018-06-29T17:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -38,7 +39,7 @@ A pesar de saber que todos los procesadores Intel de la última década está af
 
 El precio que calculo tendrá el Intel NUC Bean Canyon con procesador [Intel i5 8250U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz) (4 núcleos, 8 hilos, 6 MiB cache) estará en el momento de su salida entre los 350 y 450€ sin incluir la memoria y el SSD, respecto al modelo con el [Intel i3 7100U](https://ark.intel.com/es-es/products/95442/Intel-Core-i3-7100U-Processor-3M-Cache-2_40-GHz) (2 núcleos, 4 hilos, 3 MiB cache) que cuesta unos 250€ se puede dudar si esos dos núcleos adicionales y 3 MiB de caché más en el procesador merecen la pena la diferencia de precio. En mi caso estoy estoy dispuesto a pagarlo queriendo tener algo significativamente con mejor rendimiento teórico que lo que tenía.
 
-He revisado algunos análisis de los NUC y me han gustado, en este por ejemplo se explica cómo instalar la memoria, el SSD, como es la BIOS/UEFI y sus opciones de configuración como por ejemplo el _ring_ que puede mostrar la actividad del SSD y se pueden personalizar los colores, también muestra el rendimiento en algunos juegos. Y en otro la gráfica HD 620 es suficiente para jugar a Diablo 3 a 30 fotogramas por segundo en un resolución de 1080p bajando detalles, esta gráfica integrada equivale a una dedicada NVIDIA 920m o GeForce 730 que no está del todo mal para un jugador ocasional si no importa jugar bajando algunos detalles de calidad. En GNU/Linux es posible jugar a juegos destinados a Windows con [PlayOnLinux](https://www.playonlinux.com/en/).
+He revisado algunos análisis de los NUC y me han gustado, en este por ejemplo se explica cómo instalar la memoria, el SSD, como es la BIOS/UEFI y sus opciones de configuración como por ejemplo el _ring_ que puede mostrar la actividad del SSD y se pueden personalizar los colores, también muestra el rendimiento en algunos juegos. Y en otro la gráfica HD 620 es suficiente para jugar a Diablo 3 a 30 fotogramas por segundo en un resolución de 1080p bajando detalles, esta gráfica integrada equivale a una dedicada NVIDIA GeForcd 920m _laptop_ o GeForce 730 _desktop_ que no está del todo mal para un jugador ocasional si no importa jugar bajando algunos detalles de calidad. En GNU/Linux es posible jugar a juegos destinados a Windows con [PlayOnLinux](https://www.playonlinux.com/en/).
 
 <div class="media media-video" style="text-align: center;">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/GBCI3Xg3b9g" frameborder="0" allowfullscreen></iframe>
@@ -52,6 +53,7 @@ El uso que le daré es el de programación, virtualización, contenedores [Docke
 Los Gigabyte Brix ya hay algunos modelos con los Intel i5 8250U a un precio de unos 440€, sin embargo, no me gusta que no tienen luz indicador de actividad de SSD y creo que su BIOS/UEFI es en modo texto. La luz de actividad de SSD me parece importante para saber si en algún momento el ordenador se queda bloqueado o por algún tipo de problema lee, o peor escribe, constantemente al disco duro cuando no debería. Los Zotac están dotados de una buena cantidad de puertos USB, incluso algunos tiene dos conexiones de red pero son algo caros y la mayoría de sus modelos están orientados a _gamers_, no son fáciles de encontrar ni siquiera en [Amazon][amazon] ni en [PC Componentes][pccomponentes] que es donde compraré finalmente el equipo. De MSI Cubi no hay muchos modelos y aún no he visto ninguno anunciado con un Intel de 4 núcleos. Los Slimbook ONE me gustaban pero los modelos con los Intel de 4 núcleos solo tienen una ranura de memoria, se les pueden instalar 32 GiB... cuando haya módulos de memoria de 32 GiB, ahora me tendría que conformar con 16 GiB.
 
 <div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07DGVT2Q9&linkId=9d60080eaf057ed135f9a7518f1e3e9d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D8ZK6QB&linkId=84f61ad5974ea5bb1b1c0d644818349a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N6SG8DP&linkId=d2208cc6633acfc885c4f2f7ef94c7a0"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CZ6GMRB&linkId=6c7ae73f4dc54a1da316d1b5292ca18d"></iframe>
@@ -86,6 +88,7 @@ Cuando realmente compre el equipo publicaré varios artículos con el _unboxing_
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [The NUC Blog](http://nucblog.net/)
 * [Intel NUC Roadmap 2018 – 2019](https://www.cnx-software.com/2017/09/20/intel-nuc-roadmap-2018-2019-gemini-lake-coffee-lake-and-kaby-lake-h/)
 * [Intel HD Graphics - Nvidia and AMD Equivalents](https://www.pvladov.com/2015/07/intel-hd-graphics-nvidia-and-amd-equivalents.html)
 * [Games Playable on Intel HD Graphics](https://www.pvladov.com/2014/10/games-playable-on-intel-hd-graphics.html)

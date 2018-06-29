@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-hugo server --source="." --theme="bitix" --buildDrafts --buildFuture --watch --disableLiveReload
+HUGO_THEME=bitix hugo server --source="." --theme="bitix" --buildDrafts --buildFuture --watch --disableLiveReload
