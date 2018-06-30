@@ -48,7 +48,7 @@ He revisado algunos análisis de los NUC y me han gustado, en este por ejemplo s
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/su06vU8X1V8" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Investigando más he visto también el [Intel i5 8259U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz), solo cambia el último número pero la diferencia es importante en el apartado gráfico ya que este en vez de una UHD 620 lleva una Iris Pro 655 que es nada más y nada menos el doble potente en teoría con el doble de _execution units_, _shding units_ y memoria dedicada de 128 MiB (que la UHD 620 no tiene). No llegará al nivel de una gráfica dedicada de [NVIDIA][nvidia] o [AMD][amd] pero es suficiente para el jugador ocasional.
+Investigando más he visto también el [Intel i5 8259U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz), solo cambia el último número pero la diferencia es importante en el apartado gráfico ya que este en vez de una UHD 620 lleva una Iris Pro 655 que es nada más y nada menos el doble de potente en teoría gracias a que tiene el doble de _execution units_, _shading units_ y memoria dedicada de 128 MiB (que la UHD 620 no tiene). No llegará al nivel de una gráfica dedicada de [NVIDIA][nvidia] o [AMD][amd] pero es suficiente para el jugador ocasional.
 
 * [Intel NUC: Bean Canyon con Coffee Lake-U y 128 MB eDRAM en detalle](https://www.computerbase.de/2018-06/intel-nuc-bean-canyon-coffee-lake-u-iris-pro/) (en alemán, traducir)
 
