@@ -1,5 +1,5 @@
 ---
-pid: 30
+pid: 330
 title: "Hemeroteca #13"
 url: "/2018/06/hemeroteca-13/"
 date: 2018-06-30T10:00:00+02:00
