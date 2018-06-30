@@ -4,7 +4,7 @@ title: "Decidido a comprar un Intel NUC entre las opciones que he evaluado"
 url: "/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/"
 aliases: ["/2018/06/decidido-a-comprar-un-intel-nuc-bean-canyon-entre-las-opciones-que-he-evaluado/"]
 date: 2018-06-23T22:30:00+02:00
-updated: 2018-06-29T17:30:00+02:00
+updated: 2018-06-30T03:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -82,6 +82,17 @@ Entre otras cosas están el teclado y ratón que me conformo con un modelo bási
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00564GWEI&linkId=e51cd8d969848df3bb23c36529afdc8e"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01HNYV65S&linkId=76bdcf7d3ff1a90eff397bc913a911d7"></iframe>
 </div>
+
+Otras personas no se lo piensan tanto pero en un área del que más o menos entiendo algo me gusta saber con mucho detalle lo que estoy comprando. Una vez que uno comprende las especificaciones técnicas de los productos, que diferencias hay entre cada una de ellas, se entiende las diferencias de precios y se compra con criterio.
+
+No es lo mismo comprar un [NUC7i3BNH](https://ark.intel.com/products/95066/Intel-NUC-Kit-NUC7i3BNH) con un i3-7100 que tiene una gráfica [HD Graphics 620](https://en.wikipedia.org/wiki/Intel_HD_and_Iris_Graphics#Kaby_Lake) con un precio de unos 250€ que un [NUC7i5BNH](https://ark.intel.com/products/95067/Intel-NUC-Kit-NUC7i5BNH) con un [i5-7260U](https://en.wikipedia.org/wiki/List_of_Intel_Core_i5_microprocessors#%22Kaby_Lake-U%22_(dual-core,_14_nm)) que tiene un gráfica [Iris Plus 640](https://en.wikipedia.org/wiki/Intel_HD_and_Iris_Graphics#Kaby_Lake) con un precio de unos 360€.
+
+La diferencia del precio está en que el procesador i5-7260U que tiene 4 MiB de cache por 3 MiB del i3-7100 que le proporciona algo más de rendimiento y la gráfica Iris del primero es el doble de potente con 48 _execution units_, 384 _shading units_, con memoria gráfica dedicada de 64 MiB eDRAM para proporcionar unos 700/800 GFLOPS de rendimiento contra la gráfica HD Graphics 620 que tiene 24 _execution units_, 192 _shading units_, 0 MiB eDRAM (sin memoria dedicada) con unos 400 GFLOPS. Aún siendo ambas gráficas integradas para jugadores ocasionales en todo caso mucho menos capaces que una dedicada con su memoria más veloz, la Iris Plus 640 del i5-7260U es el doble de potente que la HD Graphics 620 del i3-7100. Por este motivo se justifica la diferencia de precio entre los modelos. Dependiendo del uso que se le dé al NUC será preferible un modelo u otro.
+
+En estas dos páginas se pueden conocer muchos detalles de los procesadores y gráficas de Intel.
+
+* [Intel NUC][intel-nuc]
+* [Intel HD, UHD and Iris Graphics](https://en.wikipedia.org/wiki/Intel_HD,_UHD_and_Iris_Graphics)
 
 Cuando realmente compre el equipo publicaré varios artículos con el _unboxing_, instalación, análisis, uso y opinión personal de varios de ellos.
 
