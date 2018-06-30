@@ -50,6 +50,7 @@ He revisado algunos análisis de los NUC y me han gustado, en este por ejemplo s
 
 Investigando más he visto también el [Intel i5 8259U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz), solo cambia el último número pero la diferencia es importante en el apartado gráfico ya que este en vez de una UHD 620 lleva una Iris Pro 655 que es nada más y nada menos el doble de potente en teoría gracias a que tiene el doble de _execution units_, _shading units_ y memoria dedicada de 128 MiB (que la UHD 620 no tiene). No llegará al nivel de una gráfica dedicada de [NVIDIA][nvidia] o [AMD][amd] pero es suficiente para el jugador ocasional.
 
+* [Some More Coffee Lake NUC Details](http://nucblog.net/2018/06/some-more-coffee-lake-nuc-details/)
 * [Intel NUC: Bean Canyon con Coffee Lake-U y 128 MB eDRAM en detalle](https://www.computerbase.de/2018-06/intel-nuc-bean-canyon-coffee-lake-u-iris-pro/) (en alemán, traducir)
 
 El uso que le daré es el de programación, virtualización, contenedores [Docker][docker], navegación, ofimática, leer PDF, tal vez algún juego ocasional, quizá Diablo 3 si pudiese, y usando GNU/Linux con la distribución [Arch Linux][archlinux]. En un futuro lo quiero como equipo servidor dedicado personal con por ejemplo [Nextcloud][nextcloud].
