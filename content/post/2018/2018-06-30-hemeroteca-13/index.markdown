@@ -23,8 +23,9 @@ Dado que desde hace unos cuantos meses no tengo ordenador propio y solo dispongo
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="analytics.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Evolución Analytics"
-        image2="adsense.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="650x450" title2="Evolución AdSense"
+        image1="analytics.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Evolución Analytics" >}}
+    {{< figureproc
+        image1="adsense.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Evolución AdSense"
         caption="Evolución Analytics y AdSense" >}}
 </div>
 
