@@ -27,7 +27,7 @@ Para hacer más sencillos las pruebas se pueden describir las páginas, sus URLs
 
 {{< gist picodotdev 45ecab4ba06336b180f02de4dfd780fb "IndexSpec.groovy" >}}
 
-La automatización de las pruebas además de comprobar que la página devuelva es la esperada, en el caso de estos ejemplo con una propiedad meta o con el título de la página, consiste en realizar las interacciones que un usuario realizaría como introducir datos en formularios, hacer clic en elementos de una página y comprobar la presencia de elementos que valide la prueba.
+La automatización de las pruebas además de comprobar que la página devuelva es la esperada, en el caso de estos ejemplo con una propiedad meta o con el título de la página, consiste en realizar las interacciones que un usuario realizaría como introducir datos en formularios, hacer clic en elementos de una página y comprobar la presencia de elementos que valide la prueba. Con esta herramienta se pueden probar los casos y flujos funcionales más importantes de la aplicación como sería el proceso de compra en una aplicación de comercio electrónico y la búsqueda, alta y modificación de un registro en la aplicación de gestión.
 
 En este ejemplo se realiza una búsqueda en Google y se comprueba el resultado devuelto. Primero se accede a ella con la sentencia _to_, se introduce el texto de búsqueda _Chuck Norris_ y se pulsa el botón de búsqueda. La comprobación consiste en asegurar que la página devuelta es la página de resultados de búsqueda con la sentencia _at_ y que el primer resultado de la búsqueda contiene la palabra _Chuck_, _GoogleHomePage_ define la página de búsqueda, _GoogleResultsPage_ la página de resultados y _GoogleSearchSpec_ contiene la interacción de la prueba.
 
