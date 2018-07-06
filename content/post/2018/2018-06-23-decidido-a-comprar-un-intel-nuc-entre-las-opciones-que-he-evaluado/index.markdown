@@ -54,6 +54,7 @@ Investigando más he visto también el [Intel i5 8259U](https://ark.intel.com/es
 * [First Online Stores Listing Coffee Lake NUCs](https://nucblog.net/2018/07/first-online-stores-listing-coffee-lake-nucs/)
 * [Some More Coffee Lake NUC Details](http://nucblog.net/2018/06/some-more-coffee-lake-nuc-details/)
 * [Intel NUC: Bean Canyon con Coffee Lake-U y 128 MB eDRAM en detalle](https://www.computerbase.de/2018-06/intel-nuc-bean-canyon-coffee-lake-u-iris-pro/) (en alemán, traducir)
+* [Intel prepara Bean Canyon, NUC con GPU Iris Plus Graphics](https://www.tomshw.it/intel-prepara-bean-canyon-nuc-gpu-iris-plus-graphics-95577) (en italiano, traducir)
 
 El uso que le daré es el de programación, virtualización, contenedores [Docker][docker], navegación, ofimática, leer PDF, tal vez algún juego ocasional, quizá Diablo 3 si pudiese, y usando GNU/Linux con la distribución [Arch Linux][archlinux]. En un futuro lo quiero como equipo servidor dedicado personal con por ejemplo [Nextcloud][nextcloud].
 
