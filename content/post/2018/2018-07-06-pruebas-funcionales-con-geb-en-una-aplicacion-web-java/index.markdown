@@ -41,6 +41,14 @@ Usando una [aplicación con Spring Boot][blogbitix-103] para ejecutar los teses 
 
 {{< gist picodotdev 45ecab4ba06336b180f02de4dfd780fb "build-tasks.gradle" >}}
 
+Con Gradle el informe de resultados de las pruebas se genera en _build/reports/tests/integrationTest_ en una colección de páginas HTML con el siguiente aspecto. Si hubiese algún error se mostraría un mensaje descriptivo del fallo ocurrido. La prueba _IndexSpec_ tarda medio minuto ya que previamente ha de iniciar el servidor de aplicaciones.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="geb-test-results.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Informe de pruebas de integración"
+        caption="Informe de pruebas de integración" >}}
+</div>
+
 Algunas otras herramientas que son ampliamente usadas en proyectos Java son las que comentaba en el artículo [Nueva visita a herramientas para un proyecto Java][blogbitix-84].
 
 {{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew integrationTest" %}}
