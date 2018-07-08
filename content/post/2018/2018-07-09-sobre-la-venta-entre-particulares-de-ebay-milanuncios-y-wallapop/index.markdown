@@ -42,8 +42,9 @@ Este era uno de los pocos que me han resultado atractivos otros es que son morra
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="intel-nuc-wallapop.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC con aspecto interesante"
-        caption="Intel NUC morralla" >}}
+        image1="intel-nuc-wallapop-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
+        image1="intel-nuc-wallapop-2.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
+        caption="Ejemplos de morralla" >}}
 </div>
 
 Los vendedores de estas páginas ofrecen algo de descuento sobre nuevo en tienda pero en lo poco que he visto no más de un 20%, si se rastrea está página y coincide el momento adecuado quizá pueda encontrarse alguna ganga pero me quedo con la sensación de que serán excepciones y no la norma. En definitiva me han parecido que en estas páginas si quieres o vas ajustado de presupuesto se puede encontrar algo de descuento si no es prioritario la segunda mano, garantía, confianza en la transacción y tiempo dedicado al filtrado de la morralla.
