@@ -43,7 +43,7 @@ Este era uno de los pocos que me han resultado atractivos otros es que son morra
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="intel-nuc-wallapop-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
-        image1="intel-nuc-wallapop-2.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
+        image2="intel-nuc-wallapop-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Ejemplo morralla"
         caption="Ejemplos de morralla" >}}
 </div>
 
