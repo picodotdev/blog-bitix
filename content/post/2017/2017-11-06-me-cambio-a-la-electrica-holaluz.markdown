@@ -3,7 +3,7 @@ pid: 278
 title: "Me cambio a la eléctrica Holaluz"
 url: "/2017/11/me-cambio-a-la-electrica-holaluz/"
 date: 2017-11-06T20:00:00+01:00
-updated: 2017-12-30T00:06:00+01:00
+updated: 2018-07-13T23:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -47,8 +47,9 @@ Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="278"
-        image1="factura-holaluz.png" thumb1="factura-holaluz-thumb.png" title1="Factura Holaluz"
-        caption="Factura Holaluz" >}}
+        image1="factura-holaluz-1.png" thumb1="factura-holaluz-1-thumb.png" title1="Factura Holaluz"
+        image2="factura-holaluz-2.png" thumb2="factura-holaluz-2-thumb.png" title2="Factura Holaluz"
+        caption="Factura Holaluz después de unos meses con consumo" >}}
 </div>
 
 No hay ninguna diferencia entre la electricidad de cualquier compañía, la diferencia entre las empresas está en el precio, el origen de la electricidad que ofrecen, el servicio de atención al cliente y el trato que ofrecen a sus clientes. Compañías como Holaluz tienen un precio mejor que las grandes tradicionales, ofrecen energía 100% de origen renovable, el servicio de atención al cliente es bueno y el trato significativamente mejor.
