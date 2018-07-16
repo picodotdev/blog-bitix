@@ -1,7 +1,8 @@
 ---
 pid: 334
-title: "La librería log4j2 para emitir trazas en aplicaciones Java"
-url: "/2018/07/la-libreria-log4j2-para-emitir-trazas-en-aplicaciones-java/"
+title: "La librería log4j para emitir trazas en aplicaciones Java"
+url: "/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/"
+aliases: ["/2018/07/la-libreria-log4j2-para-emitir-trazas-en-aplicaciones-java/"]
 date: 2018-07-15T01:00:00+02:00
 language: "es"
 rss: true
@@ -17,7 +18,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
-La librería [log4j2][log4j] es la librería sucesora de _log4j_ y [logback][logback] para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Suele usarse en combinación [slf4j][slf4j] ya que esta permite cambiar de librería de _logging_ subyacente sin hacer ningún cambio en la aplicación.
+La librería [log4j][log4j] es la librería sucesora de _log4j_ y [logback][logback] para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Suele usarse en combinación [slf4j][slf4j] ya que esta permite cambiar de librería de _logging_ subyacente sin hacer ningún cambio en la aplicación.
 
 Algunas de las nuevas características de log4j2 son:
 
@@ -32,7 +33,7 @@ Algunas de las nuevas características de log4j2 son:
 * Niveles de _log_ personalizados fácilmente definibles sin necesidad de realizar subclases.
 * Recolección de basura reducida lo que evita presión al recolector de basura y mejora el rendimiento de las aplicaciones.
 
-Por defecto, la [configuración de log4j2](https://logging.apache.org/log4j/2.x/manual/configuration.html) se describe en un archivo _xml_ aunque también soporta definirlo en un formato menos verboso como _yaml_. La siguiente aplicación de [Spring Boot][spring-boot] al iniciarse emite en la consola varios mensajes usando log4j2.
+Por defecto, la [configuración de log4j](https://logging.apache.org/log4j/2.x/manual/configuration.html) se describe en un archivo _xml_ aunque también soporta definirlo en un formato menos verboso como _yaml_. La siguiente aplicación de [Spring Boot][spring-boot] al iniciarse emite en la consola varios mensajes usando log4j2.
 
 Usando la clase [LogManager](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/LogManager.html) se obtiene una referencia a la clase [Logger](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/Logger.html) con la que se emiten las trazas y que posee diferentes métodos para cada nivel de traza.
 
