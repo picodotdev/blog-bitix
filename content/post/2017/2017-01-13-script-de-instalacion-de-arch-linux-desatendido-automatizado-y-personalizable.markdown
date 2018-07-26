@@ -29,7 +29,8 @@ Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene m�
 
 Otras distribuciones basadas en principios diferentes y usuarios a los que está destinadas con otras necesidades o preferencias puede que requieran algo más de conocimientos a cambio de realizar configuraciones más avanzadas como el particionado del disco, cifrado del disco o software que se instala. Algunas distribuciones como [Arch Linux][archlinux] incluso no proporcionan ningún instalador.
 
-> It is targeted at the proficient GNU/Linux user, or anyone with a do-it-yourself attitude who is willing to read the documentation, and solve their own problems.
+> It is targeted at the proficient GNU/Linux user, or anyone with a do-it-yourself attitude who is
+> willing to read the documentation, and solve their own problems.
 
 En Arch Linux con su [forma de hacer las cosas](https://wiki.archlinux.org/index.php/Arch_Linux) deja al usuario el poder de personalizar el sistema completamente a sus necesidades y preferencias únicamente limitado por su determinación de conseguirlo. Solo proporciona [el medio con el que iniciar la instalación][archlinux-download] que comienza con una terminal y un _prompt_ del sistema, una [guía de instalación][archlinux-install-guide] junto con las [recomendaciones generales][archlinux-general-recomendations] y [una de las mejores fuentes de información en GNU/Linux][archlinux-wiki] además de completa de cada aspecto que necesitemos en la instalación. Después de haber leído las páginas relevantes de la wiki de Arch Linux, seguramente más de una y dos veces, hasta comprenderla en su mayor parte se empieza a realizar la receta que contenga los comandos necesarios hasta completar la instalación.
 
@@ -65,10 +66,12 @@ La forma aconsejada de instalar Arch Linux es aprendiendo cuales son los comando
 
 Iniciado el sistema con la imagen ISO de Arch Linux de instalación, hay que descargar el _script_, editar algunas variables de entorno para la configuración de alis e iniciar el proceso de instalación. Dependiendo del entorno de escritorio preferido, si se desea LVM, el tipo del sistema de archivos, si se desea cifrar el sistema de archivos y paquetes a instalar los valores de las variables variarán según las preferencias que inicialmente tienes unos valores comunes. Dos variables que hay que modificar al menos son _USER\_NAME_ y _USER\_PASSWORD_ con el nombre del usuario y su contraseña que vaya a utilizar el sistema.
 
+El tiempo requerido de instalación varía según el ancho de banda de la conexión y del tipo de almacenamiento, en mi caso con ADSL con una descarga de 1.2 MiB/s y SSD la instalación del sistema base sin entorno de escritorio me tarda aproximandamente 20 minutos. Con una conexión de fibra tardará sensiblemente menos tiempo.
+
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis-install.sh" >}}
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.conf" >}}
 
-Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema[asciinema] con el proceso completo de instalación.
+Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema con el proceso completo de instalación.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="204"
