@@ -3,6 +3,7 @@ pid: 204
 title: "Script de instalación de Arch Linux desatendido, automatizado y personalizable"
 url: "/2017/01/script-de-instalacion-de-arch-linux-desatendido-automatizado-y-personalizable/"
 date: 2017-01-13T00:00:00+01:00
+updated: 2018-07-26T12:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -49,26 +50,25 @@ Basándome en _arch-anywhere_ y dedicando un poco de tiempo he creado un _script
 * Utilidades como invitado de [VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox)
 * [Microcódigo](https://wiki.archlinux.org/index.php/Microcode) para procesadores Intel
 * Creación de usuario
-* Instalación de [yaourt](https://wiki.archlinux.org/index.php/AUR_helpers)
+* Instalación de utilidad para AUR (aurman, yay)
 * Instalación de paquetes
 * Instalación de entorno de escritorio ([GNOME](https://wiki.archlinux.org/index.php/GNOME), [KDE](https://wiki.archlinux.org/index.php/KDE), [Xfce](https://wiki.archlinux.org/index.php/Xfce), [Mate](https://wiki.archlinux.org/index.php/MATE), [Cinnamon](https://wiki.archlinux.org/index.php/Cinnamon), [LXDE](https://wiki.archlinux.org/index.php/LXDE)) y gestor de sesiones ([gdm](https://wiki.archlinux.org/index.php/GDM), [sddm](https://wiki.archlinux.org/index.php/SDDM), [lightdm](https://wiki.archlinux.org/index.php/LightDM), [lxdm](https://wiki.archlinux.org/index.php/LXDM))
 * Instalación base sin entorno de escritorio
 * Instalación de [kernels](https://wiki.archlinux.org/index.php/Kernels) adicionales (linux-lts, linux-grsec, linux-zen)
 * Instalación de controlador gráfico (intel, nvidia, amd)
 * Cargador de arranque con [GRUB](https://wiki.archlinux.org/index.php/GRUB)
+* Grabar la instalación con [asciinema][asciinema] y archivo de _log_
+* Reinicio después de la instalación y posibilidad de abortar el reinicio
+* Script para entrar en modo recuperación
 
 La forma aconsejada de instalar Arch Linux es aprendiendo cuales son los comandos a ejecutar y que hace cada uno de ellos, primero lee la guía oficial de instalación de Arch Linux y comprende que hacen los comandos del _script_. Este _script_ no es oficial y por ello en el [foro de Arch Linux en español][archlinux-forums-es] o [en inglés][archlinux-forums] no podrán darte soporte aunque yo en los comentarios de este artículo te ayudaré si preguntas. Ten en cuenta que de momento solo lo he probado en [VirtualBox][virtualbox] no en un sistema real y que este _script_ elimina toda la información del dispositivo de instalación. Si lo pruebas deja un comentario al final de artículo.
 
-Iniciado el instalador de la imagen ISO de Arch Linux, hay que descargar el _script_, editar algunas variables de entorno y darle permisos de ejecución. Los comandos y variables a editar según el sistema a instalar son los siguientes:
+Iniciado el sistema con la imagen ISO de Arch Linux de instalación, hay que descargar el _script_, editar algunas variables de entorno para la configuración de alis e iniciar el proceso de instalación. Dependiendo del entorno de escritorio preferido, si se desea LVM, el tipo del sistema de archivos, si se desea cifrar el sistema de archivos y paquetes a instalar los valores de las variables variarán según las preferencias que inicialmente tienes unos valores comunes. Dos variables que hay que modificar al menos son _USER\_NAME_ y _USER\_PASSWORD_ con el nombre del usuario y su contraseña que vaya a utilizar el sistema.
 
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis-install.sh" >}}
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.conf" >}}
 
-El código del instalador no es muy complicado y mucho más sencillo que el [código de arch-anywhere](https://github.com/deadhead420/arch-linux-anywhere/blob/master/arch-installer.sh) al no estar mezclado con los mensajes interactivos que hacen preguntas y esperan respuestas. Los comandos que he recopilado de la receta son los que ejecutaríamos uno detrás de otro con únicamente el medio de instalación de Arch Linux. La función _main_ contiene los pasos en los que consiste la instalación, desde el paticionado y cifrado del disco hasta el reinicio una vez completada la instalación, el resto de las funciones los comandos de ese paso de la instalación.
-
-{{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.sh" >}}
-
-Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox.
+Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema[asciinema] con el proceso completo de instalación.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="204"
@@ -87,6 +87,12 @@ Estas son algunas capturas de pantalla con diferentes entornos de escritorio que
         image1="archlinux-root-password.png" thumb1="archlinux-root-password-thumb.png" title1="Solicitud de contraseña para descifrar partición root"
         caption="Solicitud de contraseña para descifrar partición root" >}}
 </div>
+
+{{% asciinema id="192880" caption="Instalación de sistema base de Arch Linux con alis" %}}
+
+El código del instalador no es muy complicado y mucho más sencillo que el [código de arch-anywhere](https://github.com/deadhead420/arch-linux-anywhere/blob/master/arch-installer.sh) al no estar mezclado con los mensajes interactivos que hacen preguntas y esperan respuestas, además despues de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario intruduzca más datos de forma interactiva. Los comandos que he recopilado de la receta son los que ejecutaríamos uno detrás de otro con únicamente el medio de instalación de Arch Linux. La función _main_ contiene los pasos en los que consiste la instalación, desde el paticionado y cifrado del disco hasta el reinicio una vez completada la instalación, el resto de las funciones los comandos de ese paso de la instalación.
+
+{{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.sh" >}}
 
 {{% code git="alis/tree/master/" %}}
 
