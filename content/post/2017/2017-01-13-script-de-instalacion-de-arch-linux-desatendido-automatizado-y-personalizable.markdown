@@ -16,7 +16,7 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="archlinux.png" title1="Arch Linux" image2="linux.svg" title2="Linux" wdth2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
+{{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" image2="linux.svg" title2="Linux" width2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
 
 Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene más dificultad que instalar un sistema operativo como [Windows][windows], que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las [distribuciones aconsejadas para usuarios que provienen de Windows o macOS][blogbitix-190] o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de una hora. Distribuciones como [Ubuntu][ubuntu], [elementary OS][elementary] o [Linux Mint][linuxmint] hacen que la instalación no requiera muchos conocimientos y sea completada con éxito por cualquier usuario.
 
@@ -38,7 +38,7 @@ En multitud de blogs y vídeos de YouTube hay guías que contienen los comandos 
 
 Hace unos meses conocí [arch-anywhere][arch-anywhere] que básicamente es un _script_ de bash, con un instalador guiado y basado en texto que hace menos laboriosa la instalación de Arch Linux de forma similar a las existentes en otras distribuciones más amigables. Sin embargo, hay un dos cosas que no me convencen de _arch-anywhere_, una es que no es desatendido requiriendo contestar a varias preguntas de forma interactiva, esperar a que termine ejecute algún comando según la contestación anterior y contestar a la siguiente pregunta. Por lo demás, ofrece un buen nivel de personalización cubriendo las necesidades más comunes de los usuarios como personalizar el particionado, elegir el sistema de archivos, si se quiere LVM, cifrado, el entorno de escritorio (GNOME, KDE, XFCE, ...), kernel, cargador de arranque (GRUB) y programas a instalar. Otra cosa que no me convence es que usa una imagen ISO propia y no la original de Arch Linux.
 
-Basándome en _arch-anywhere_ y dedicando un poco de tiempo he creado un _script_ en bash para instalar Arch Linux de forma automatizada, desatendida y personalizable hasta cierto punto aunque siendo útil para los casos de configuraciones más comunes. Algunas de las funcionalidades que soporta son:
+Basándome en _arch-anywhere_ y dedicando un poco de tiempo he creado un _script_ en [bash][bash] para instalar Arch Linux de forma automatizada, desatendida y personalizable hasta cierto punto aunque siendo útil para los casos de configuraciones más comunes. Algunas de las funcionalidades que soporta son:
 
 * BIOS con [particionado](https://wiki.archlinux.org/index.php/Partitioning) GPT
 * [UEFI](https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface)
@@ -66,7 +66,7 @@ La forma aconsejada de instalar Arch Linux es aprendiendo cuales son los comando
 
 Iniciado el sistema con la imagen ISO de Arch Linux de instalación, hay que descargar el _script_, editar algunas variables de entorno para la configuración de alis e iniciar el proceso de instalación. Dependiendo del entorno de escritorio preferido, si se desea LVM, el tipo del sistema de archivos, si se desea cifrar el sistema de archivos y paquetes a instalar los valores de las variables variarán según las preferencias que inicialmente tienes unos valores comunes. Dos variables que hay que modificar al menos son _USER\_NAME_ y _USER\_PASSWORD_ con el nombre del usuario y su contraseña que vaya a utilizar el sistema.
 
-El tiempo requerido de instalación varía según el ancho de banda de la conexión y del tipo de almacenamiento, en mi caso con ADSL con una descarga de 1.2 MiB/s y SSD la instalación del sistema base sin entorno de escritorio me tarda aproximandamente 20 minutos. Con una conexión de fibra tardará sensiblemente menos tiempo.
+El tiempo requerido de instalación varía según el ancho de banda de la conexión y del tipo de almacenamiento, en mi caso con ADSL con una descarga de 1.2 MiB/s y SSD la instalación del sistema base sin entorno de escritorio me tarda aproximandamente 20 minutos. Con una conexión de fibra tardará sensiblemente menos tiempo. El _script_ de instalación contiene con los mismos comandos que serían necesarios para realizar la instalación manualmente de forma interactiva.
 
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis-install.sh" >}}
 {{< gist picodotdev 536d786ca788113b1b088957d001d294 "alis.conf" >}}

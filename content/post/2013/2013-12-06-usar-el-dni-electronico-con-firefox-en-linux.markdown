@@ -14,7 +14,7 @@ tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "softwar
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="archlinux.png" title1="Arch Linux" image2="dnie.jpg" title2="DNIe" image3="firefox.png" title3="Firefox" >}}
+{{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" image2="dnie.jpg" title2="DNIe" image3="firefox.png" title3="Firefox" >}}
 
 Una vez hemos conseguido [instalar el DNIe en Linux][blogbitix-1] correctamente podemos empezar a darle alguna utilidad más allá de cuando se nos require para acreditar nuestra identidad. Como veremos en esta entrada podemos usar el DNI electrónico para hacer varios trámites administrativos y consultas con la administración pública, empresas o entidades que en su web soporten el DNIe como medio de autenticación.
 

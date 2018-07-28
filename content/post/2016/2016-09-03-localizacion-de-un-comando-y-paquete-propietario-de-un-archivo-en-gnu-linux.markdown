@@ -14,7 +14,7 @@ tags: ["blog-stack", "gnu-linux", "planeta-linux"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="archlinux.png" title1="Arch Linux" >}}
+{{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
 Usando alguna distribución [GNU][gnu]/[Linux][linux] en algún momento nos interesará saber a qué paquete de los que tenemos instalados pertenece un determinado comando o a qué paquete pertenece un determinado archivo del sistema.
 

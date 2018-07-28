@@ -43,7 +43,7 @@ Finalmente, he donado a [Arch Linux][archlinux] que es la distribución de GNU/L
 Por un problema con el medio de pago que usa Arch Linux, [Software in the Public Interest (SPI)](http://spi-inc.org/), para hacer donaciones directas no he podido pagar con mi tarjeta de crédito, finalmente he optado por comprar unas pegatinas para poner en el portátil, unas de Arch Linux, otras de Linux y otras de GNOME en [unixstickers](http://www.unixstickers.com/).
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/logotipos/archlinux.svg" alt="Arch Linux" title="Arch Linux" width="200"/>
+    <img src="assets/images/logotipos/archlinux.svg" alt="Arch Linux" title="Arch Linux" width="250"/>
 </div>
 
 ### Comprobantes de las donaciones

@@ -14,7 +14,7 @@ tags: ["blog-stack", "gnu-linux", "opinion", "planeta-linux", "software", "softw
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="archlinux.png" title="Arch Linux" >}}
+{{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
 Hace unos meses como suele ser habitual en los informáticos me pidieron que formatease e instalase los programas necesarios en un ordenador portátil, más concretamente en un ordenador que a la velocidad que evoluciona la tecnología podría considerarse obsoleto. El modelo exacto era un Acer Aspire 2000 diseñado para Windows XP con las siguientes características:
 
