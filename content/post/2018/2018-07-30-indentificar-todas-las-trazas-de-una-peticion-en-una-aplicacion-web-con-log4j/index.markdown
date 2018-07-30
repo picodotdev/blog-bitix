@@ -1,7 +1,7 @@
 ---
 pid: 336
-title: "Indentificar todas las trazas de una petición en una aplicación web con log4j"
-url: "/2018/07/indentificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-con-log4j/"
+title: "Identificar todas las trazas de una petición en una aplicación web con log4j"
+url: "/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-con-log4j/"
 date: 2018-07-30T19:45:00+02:00
 language: "es"
 rss: true
