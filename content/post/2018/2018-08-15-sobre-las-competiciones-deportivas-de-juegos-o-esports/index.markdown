@@ -57,7 +57,7 @@ Es plausible que en un futuro estas competiciones se conviertan en eventos depor
 
 Hace unas semanas veía en directo una final del juego para móvil Clash Royale, estaba muy bien organizada con un escenario muy cuidado y locutores en directo retransmitiendo en directo la final. Igual que ver una final de fútbol es entretenido y emocionante ver una final de un juego de ordenador en una competición tiene varios de los mismos ingredientes para ser igual de entretenido. Es difícil pronosticar que lleguen al nivel de una Champions League, mundial o europeo de fútbol pero dentro de unos años los gustos pueden cambiar, en cualquier caso es muy posible que sigan creciendo en popularidad.
 
-Este es un documental sobre lo que rodea a las  competiciones deportivas en equipos y sobre los eSport. El documental se titula «De chico solitario a estrella», aunque el documental se titula así añado que no tiene por que ser ese estereotipo de chico, joven, solitario y poco social ni siquiera chico.
+Este es un documental sobre lo que rodea a las  competiciones deportivas en equipos y sobre los _eSports_. El documental se titula «De chico solitario a estrella», aunque el documental se titula así añado que no tiene por que ser ese estereotipo de chico, joven, solitario y poco social ni siquiera chico.
 
 <div class="media media-video" style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/qul_4hlQBCM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
