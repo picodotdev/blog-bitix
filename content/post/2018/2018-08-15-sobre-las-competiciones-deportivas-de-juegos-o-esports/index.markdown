@@ -25,7 +25,7 @@ El sector de los videojuegos es una industria que mueve miles de millones de eur
         caption="Primeros videojuegos" >}}
 </div>
 
-Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tom Raider.
+Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tomb Raider.
 
 <div class="media media-video" style="text-align: center;">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/D-P-smim5gQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
