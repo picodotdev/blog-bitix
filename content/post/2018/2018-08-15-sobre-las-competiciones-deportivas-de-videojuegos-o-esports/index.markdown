@@ -1,7 +1,8 @@
 ---
 pid: 339
-title: "Sobre las competiciones deportivas de juegos o eSports"
-url: "/2018/08/sobre-las-competiciones-deportivas-de-juegos-o-esports/"
+title: "Sobre las competiciones deportivas de videojuegos o eSports"
+url: "/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/"
+aliases: ["/2018/08/sobre-las-competiciones-deportivas-de-juegos-o-esports/"]
 date: 2018-08-15T10:00:00+02:00
 language: "es"
 rss: true
@@ -39,7 +40,7 @@ La industria de juego sigue creciendo con las nuevas generaciones ya siendo nati
         caption="Estadio de una final de League of legends" >}}
 </div>
 
-Algunos de los juegos actuales en los que se realizan competiciones son [Hearthstone](https://playhearthstone.com/es-es/), [League of legends](https://play.euw.leagueoflegends.com/es_ES), [Clash Royale](https://clashroyale.com/es/), ...
+Algunos de los juegos actuales en los que se realizan competiciones son [Hearthstone](https://playhearthstone.com/es-es/), [League of legends](https://play.euw.leagueoflegends.com/es_ES), [Clash Royale](https://clashroyale.com/es/), ... que han sido diseñados no solo como para el entretenimiento como los juegos de hace unas pocas décadas para competir entre humano e inteligencia artificial más o menos inteligente o automática de la máquina sino para ser jugados de forma competitiva entre humanos principalmente.
 
 <div class="media media-video" style="text-align: center;">
 	<iframe width="560" height="315" src="https://gaming.youtube.com/embed/lBWgRCRH1Gs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
