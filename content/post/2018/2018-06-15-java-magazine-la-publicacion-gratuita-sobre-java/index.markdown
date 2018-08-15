@@ -3,6 +3,7 @@ pid: 328
 title: "Java Magazine, la publicación gratuita sobre Java"
 url: "/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/"
 date: 2018-06-15T23:00:00+02:00
+updated: 2018-08-13T19:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -29,9 +30,9 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
         caption="Java Magazine 2018" >}}
 </div>
 
-* [Mayo/Junio 2018](http://www.javamagazine.mozaicreader.com/MayJun2018)
-* [Marzo/Abril 2018](http://www.javamagazine.mozaicreader.com/MarApr2018)
-* [Enero/Febrero 2018](http://www.javamagazine.mozaicreader.com/JanFeb2018)
+* [Mayo/Junio 2018](http://www.javamagazine.mozaicreader.com/MayJun2018/Twitter)
+* [Marzo/Abril 2018](http://www.javamagazine.mozaicreader.com/MarApr2018/Twitter)
+* [Enero/Febrero 2018](http://www.javamagazine.mozaicreader.com/JanFeb2018/Twitter)
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -45,12 +46,12 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
         caption="Java Magazine 2017" >}}
 </div>
 
-* [Noviembre/Diciembre 2017](http://www.javamagazine.mozaicreader.com/NovDec2017)
-* [Septiembre/Octubre 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017)
-* [Julio/Agosto 2017](http://www.javamagazine.mozaicreader.com/JulyAug2017)
-* [Mayo/Junio 2017](http://www.javamagazine.mozaicreader.com/MayJune2017)
-* [Marzo/Abril 2017](http://www.javamagazine.mozaicreader.com/MarApr2017)
-* [Enero/Febrero 2017](http://www.javamagazine.mozaicreader.com/JanFeb2017)
+* [Noviembre/Diciembre 2017](http://www.javamagazine.mozaicreader.com/NovDec2017/Twitter)
+* [Septiembre/Octubre 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter)
+* [Julio/Agosto 2017](http://www.javamagazine.mozaicreader.com/JulyAug2017/Twitter)
+* [Mayo/Junio 2017](http://www.javamagazine.mozaicreader.com/MayJune2017/Twitter)
+* [Marzo/Abril 2017](http://www.javamagazine.mozaicreader.com/MarApr2017/Twitter)
+* [Enero/Febrero 2017](http://www.javamagazine.mozaicreader.com/JanFeb2017/Twitter)
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -64,12 +65,12 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
         caption="Java Magazine 2016" >}}
 </div>
 
-* [Noviembre/Diciembre 2016](http://www.javamagazine.mozaicreader.com/NovDec2016)
-* [Septiembre/Octubre 2016](http://www.javamagazine.mozaicreader.com/SeptOct2016)
-* [Julio/Agosto 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016)
-* [Mayo/Junio 2016](http://www.javamagazine.mozaicreader.com/MayJune2016)
-* [Marzo/Abril 2016](http://www.javamagazine.mozaicreader.com/MarApr2016)
-* [Enero/Febrero 2016](http://www.javamagazine.mozaicreader.com/JanFeb2016)
+* [Noviembre/Diciembre 2016](http://www.javamagazine.mozaicreader.com/NovDec2016/Twitter)
+* [Septiembre/Octubre 2016](http://www.javamagazine.mozaicreader.com/SeptOct2016/Twitter)
+* [Julio/Agosto 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter)
+* [Mayo/Junio 2016](http://www.javamagazine.mozaicreader.com/MayJune2016/Twitter)
+* [Marzo/Abril 2016](http://www.javamagazine.mozaicreader.com/MarApr2016/Twitter)
+* [Enero/Febrero 2016](http://www.javamagazine.mozaicreader.com/JanFeb2016/Twitter)
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -83,12 +84,12 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
         caption="Java Magazine 2015" >}}
 </div>
 
-* [Noviembre/Diciembre 2015](http://www.javamagazine.mozaicreader.com/NovDec2015)
-* [Septiembre/Octubre 2015](http://www.javamagazine.mozaicreader.com/SeptOct2015)
-* [Julio/Agosto 2015](http://www.javamagazine.mozaicreader.com/JulyAug2015)
-* [Mayo/Junio 2015](http://www.javamagazine.mozaicreader.com/MayJune2015)
-* [Marzo/Abril 2015](http://www.javamagazine.mozaicreader.com/MarApr2015)
-* [Enero/Febrero 2015](http://www.javamagazine.mozaicreader.com/JanFeb2015)
+* [Noviembre/Diciembre 2015](http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter)
+* [Septiembre/Octubre 2015](http://www.javamagazine.mozaicreader.com/SeptOct2015/Twitter)
+* [Julio/Agosto 2015](http://www.javamagazine.mozaicreader.com/JulyAug2015/Twitter)
+* [Mayo/Junio 2015](http://www.javamagazine.mozaicreader.com/MayJune2015/Twitter)
+* [Marzo/Abril 2015](http://www.javamagazine.mozaicreader.com/MarApr2015/Twitter)
+* [Enero/Febrero 2015](http://www.javamagazine.mozaicreader.com/JanFeb2015/Twitter)
 
 La mayoría de artículos que incluyen suelen ser muy interesantes y de muy buena calidad de los que casi siempre se aprende algo, algunos artículos están escritos por personas con muy altos conocimientos sobre Java, algunos han sido galardonados como [Java Champion](https://en.wikipedia.org/wiki/Java_Champions), y en algunos otros casos son los desarrolladores principales de algunas de la librerías más populares en el ecosistema Java.
 
