@@ -4,6 +4,7 @@ title: "Sobre las competiciones deportivas de videojuegos o eSports"
 url: "/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/"
 aliases: ["/2018/08/sobre-las-competiciones-deportivas-de-juegos-o-esports/"]
 date: 2018-08-15T10:00:00+02:00
+updated: 2018-08-15T22:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -56,7 +57,7 @@ Algunos de los juegos actuales en los que se realizan competiciones son [Hearths
 
 Es plausible que en un futuro estas competiciones se conviertan en eventos deportivos con el potencial de ser el equivalente en los _eSports_ como hoy lo son la liga de campeones europea, la copa del mundo de fútbol, la Super Bowl o las finales de la NBA ya sea en modalidades de por equipos o de selecciones por país.
 
-Hace unas semanas veía en directo una final del juego para móvil Clash Royale, estaba muy bien organizada con un escenario muy cuidado y locutores en directo retransmitiendo en directo la final. Igual que ver una final de fútbol es entretenido y emocionante ver una final de un juego de ordenador en una competición tiene varios de los mismos ingredientes para ser igual de entretenido. Es difícil pronosticar que lleguen al nivel de una Champions League, mundial o europeo de fútbol pero dentro de unos años los gustos pueden cambiar, en cualquier caso es muy posible que sigan creciendo en popularidad.
+Hace unas semanas veía en directo una final del juego para móvil Clash Royale, estaba muy bien organizada con un escenario muy cuidado y locutores en directo retransmitiendo en directo la final. Igual que ver una final de fútbol es entretenido y emocionante ver una final de un juego de ordenador en una competición tiene varios de los mismos ingredientes para ser igual de entretenido. Es difícil pronosticar que lleguen al nivel de una Champions League, mundial o europeo de fútbol pero dentro de unos años los gustos pueden cambiar más aún si los señores feudales que dirigen el fútbol tratan de ordeñar a los aficionados con la televisión de pago dejando al margen a muchas personas que no se lo pueden permitir, en cualquier caso es muy posible que los _eSports_ sigan creciendo en popularidad solo está por ver a que ritmo.
 
 Este es un documental sobre lo que rodea a las  competiciones deportivas en equipos y sobre los _eSports_. El documental se titula «De chico solitario a estrella», aunque el documental se titula así añado que no tiene por que ser ese estereotipo de chico, joven, solitario y poco social ni siquiera chico.
 
