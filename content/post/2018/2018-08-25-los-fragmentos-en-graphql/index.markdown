@@ -69,6 +69,7 @@ Para cada entidad hay una clase Java que la representa y un repositorio que cont
 {{< links >}}
 {{< postslinks >}}
 * [Fragments](https://graphql.org/learn/queries/#fragments)
+* [Inline Fragments](https://graphql.org/learn/queries/#inline-fragments)
 * [More GraphQL Concepts](https://www.howtographql.com/advanced/2-more-graphql-concepts/)
 {{% /reference %}}
 
