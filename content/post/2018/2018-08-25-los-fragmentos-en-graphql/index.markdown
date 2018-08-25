@@ -1,0 +1,75 @@
+---
+pid: 342
+title: "Los fragmentos en GraphQL"
+url: "/2018/08/los-fragmentos-en-graphql/"
+date: 2018-08-25T19:00:00+02:00
+language: "es"
+rss: true
+sharing: true
+comments: true
+promoted: false
+tags: ["java", "planeta-codigo", "programacion"]
+series: ["graphql"]
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
+
+Los fragmentos en el contexto de [GraphQL][graphql] pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.
+
+Teniendo dos consultas que recuperan los datos de una colección de libros sin los fragmentos habría que definir los mismos datos a recuperar dos veces en ambas consultas. En estas consultas de ejemplo se recupera una lista de libros y un libro determinado. Si en ambas se recuperan los datos _id_, _title_ y _date_ hay que indicar los campos a recuperar dos veces.
+
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "query-1.graphql" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "query-1.json" >}}
+
+Con un fragmento se definen esos campos comunes a recuperar en las consultas una sola vez. Si posteriormente cambian los datos a recuperar solo es necesario cambiarlo en un único punto. Los fragmentos definidos son una forma de simplificar las consultas y evitar tener que cambiar varias consultas si el grupo de datos cambia en todas ellas. Los datos obtenidos son los mismos que en el caso sin utilizar el fragmento.
+
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "query-1-fragment.graphql" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="query-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consultas sin utilizar un fragmento"
+        image2="query-1-fragment.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Consultas con un fragmento"
+        caption="Consultas sin y con un fragmento" >}}
+</div>
+
+Los fragmentos en línea o _inline_ permiten por otra parte una funcionalidad adicional y es recuperar diferentes datos según el tipo de la entidad. En el ejemplo he añadido una nueva entidad _Magazine_ además de la ya existente _Book_, en el código Java ambas heredan de _Publication_. Las entidades _Book_ y _Magazine_ no comparten las mismas propiedades dado que son entidades diferentes por lo que en la consulta es necesario tener un mecanismo con el cual poder recuperar los datos en función del tipo.
+
+Estas son las definiciones de las entidades resumidas y la consulta _publications_ que devuelve las publicaciones que incluye libros y revistas. Con la definición de una _union_ se establece que una _Publication_ puede ser un _Book_ o _Magazine_.
+
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "library.graphqls" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "fragment-inline.graphql" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "fragment-inline.json" >}}
+
+Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _id_, _title_ y _date_. Para las publicaciones de tipo _Magazine_ se recuperan los campos _id_, _name_ y _pages_. Las publicaciones _Muy interesante_ y _PC Actual_ son dos _Magazine_ y el resto de publicaciones son del tipo _Book_.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="fragment-inline.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
+        caption="Consulta con fragmentos en linea" >}}
+</div>
+
+Si es necesario hay que añadir la clases Java que representan a los tipos de GraphQL a la lista de clases del diccionario en la definición del esquema.
+
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "Main.java" >}}
+
+Para cada entidad hay una clase Java que la representa y un repositorio que contiene la consulta para obtener las publicaciones que no hace más que añadir en una lista el conjunto de libros y revistas en la librería.
+
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "Book.java" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "Magazine.java" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "Publication.java" >}}
+{{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "LibraryRepository.java" >}}
+
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Fragments](https://graphql.org/learn/queries/#fragments)
+* [More GraphQL Concepts](https://www.howtographql.com/advanced/2-more-graphql-concepts/)
+{{% /reference %}}
+
+{{% /post %}}
