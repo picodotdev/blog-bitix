@@ -63,6 +63,6 @@ Con un comando _curl_ se realizan las mismas consultas.
 {{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "curl-2.sh" >}}
 {{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "data-2.json" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
 
 {{% /post %}}

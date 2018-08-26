@@ -63,7 +63,7 @@ Para cada entidad hay una clase Java que la representa y un repositorio que cont
 {{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "Publication.java" >}}
 {{< gist picodotdev fe3ba84b227100bb23b87fbd9af76a95 "LibraryRepository.java" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
 
 {{% reference %}}
 {{< links >}}

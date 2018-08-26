@@ -38,6 +38,6 @@ Añadiendo al tipo _Book_ una fecha de publicación usando este nuevo tipo escal
 
 {{< gist picodotdev ae1583aaa3182006533adad61ee73921 "curl.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
 
 {{% /post %}}

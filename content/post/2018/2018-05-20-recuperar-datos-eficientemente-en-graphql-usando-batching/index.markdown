@@ -37,6 +37,6 @@ La consulta de GraphQL a realizar para recuperar los tres primeros comentarios d
 {{< gist picodotdev fa91df2d0203a0e2137c461ff387719f "curl.sh" >}}
 {{< gist picodotdev fa91df2d0203a0e2137c461ff387719f "System.out" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradew run" %}}
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradew run" note="Requiere Java 9+ o Docker" %}}
 
 {{% /post %}}

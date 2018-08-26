@@ -77,7 +77,7 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 
 {{< gist picodotdev 4276fa433729ff8187219939d3218a00 "build.gradle" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
 
 {{% reference %}}
 {{< links >}}
