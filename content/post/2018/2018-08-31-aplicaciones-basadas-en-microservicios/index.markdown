@@ -59,8 +59,7 @@ Algunos nuevos retos de los microservicios son:
 
 * Añaden complejidad. Son más numerosos y requieren más procesos para su ejecución. Esto obliga a automatizar su gestión para que sea manejable con el menor número de tareas manuales posibles. Forman un sistema distribuido.
 * Difícil integrar cambios si afectan a varios servicios.
-* Cada microservicio al ser responsable de sus propios datos plantea problemas en como compartirlos y dificultando la consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
-* Al formar un sistema distribuido de información se opta por la eventual consistencia en la información.
+* Cada microservicio al ser responsable de sus propios datos y formr un sistama de información distribuido plantea problemas en como compartirlos y dificultando la consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
 * Como centralizar los logs.
 * Como centralizar los accesos.
 * Obtener métricas y monitorización, a nivel de microservicio (cpu, memoria, espacio disco, red, ...) y de negocio (eventos, operaciones, transacciones, ...).
