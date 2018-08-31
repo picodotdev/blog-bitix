@@ -23,7 +23,7 @@ La arquitectura de las aplicaciones está cambiando en lo que era lo habitual ha
 
 A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadío lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de [código espagueti][codigo-espagueti] o más estructurado en el [modelo de tres capas](https://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas) formadas por la presentación, lógica y base de datos.
 
-Más recientemente con las nuevas posibilidades de la virtualización, los contenedores, la computación en nube con la flexibilidad que aporta de reservar recursos de computación bajo demanda en minutos y para evitar varios problemas que presentan los monolitos se evoluciona hacia microservicios.
+Más recientemente con las nuevas posibilidades de la virtualización, los contenedores, la computación en nube con la flexibilidad que aporta de reservar recursos de computación bajo demanda en minutos y para evitar varios problemas que presentan los monolitos se evoluciona hacia microservicios. Esto no quiere decir que los monolitos con este nombre con cierto matiz peyorativo no sigan siendo perfectamente válidos en algunos contextos en los que ahora se usan sin embargo en contexto de la computación en la nube y servicio para un gran número de peticiones, usuarios o aplicación funcionalmente grande los microservicios son una mejor adaptación.
 
 Los problemas que presentan las aplicaciones monolíticas donde toda la lógica está en una aplicación en un servidor son:
 
@@ -48,6 +48,8 @@ Los microservicios surgen como alternativa tratando de resolver los problemas de
 * Al ser más pequeños se pueden escalar más fácilmente horizontalmente si no mantienen estado, basta con escalar el servicio que lo requiera.
 * Arrancan más rápido y son más fáciles de desplegar.
 * Cada microservicio puede estar desarrollado por un equipo diferente centrado en ese servicio.
+
+Pueden ser una aplicación que ofrezca una API para una determinada funcionalidad o una aplicación que consuma otros microservicios y proporcione la interfaz para un navegador web.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
