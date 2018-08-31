@@ -9,6 +9,7 @@ sharing: true
 comments: true
 language: "es"
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+series: ["spring-cloud"]
 summary: "Desarrollar una aplicación no solo implica implementar su funcionalidad, esa aplicación ha de mantenerse funcionando en su entorno de producción. Monitorizar y disponer de información sobre el estado ayuda a mantenerla funcionando sin ninguna caída de servicio u obtener métricas para mejorar su funcionamiento. Entre las numerosas funcionalidades ofrecidas por Spring para las aplicaciones Java está Spring Boot Actuator que precisamente nos proporcionará métricas e información interesantes de serie pudiendo implementar nueva según la necesidades."
 ---
 

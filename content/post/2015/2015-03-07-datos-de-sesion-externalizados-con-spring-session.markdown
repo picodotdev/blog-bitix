@@ -8,6 +8,7 @@ rss: true
 sharing: true
 comments: true
 tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+series: ["spring-cloud"]
 ---
 
 {{% post %}}
