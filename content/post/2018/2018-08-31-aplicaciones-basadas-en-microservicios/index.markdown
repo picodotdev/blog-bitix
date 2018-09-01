@@ -3,6 +3,7 @@ pid: 343
 title: "Aplicaciones basadas en microservicios"
 url: "/2018/08/aplicaciones-basadas-en-microservicios/"
 date: 2018-08-31T18:00:00+02:00
+updated: 2018-09-01T09:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -21,9 +22,9 @@ series: ["spring-cloud"]
 
 La arquitectura de las aplicaciones está cambiando en lo que era lo habitual hace no tanto. Con el desarrollo de las redes de comunicación entre computadoras tanto en una red local con ethernet como en internet con el protocolo TCP/IP se desarrollaron las primeras aplicaciones cliente/servidor como es un servidor web y un navegador o una base de datos y una aplicación.
 
-A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadío lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de [código espagueti][codigo-espagueti] o más estructurado en el [modelo de tres capas](https://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas) formadas por la presentación, lógica y base de datos.
+A las páginas HTML de los servidores web, estáticas hasta entonces, se les añadió lógica de servidor para procesar datos y generar el contenido dinámicamente, se crearon las aplicaciones web ejecutadas en el servidor en un principio en lo que ahora denominamos monolitos en forma de [código espagueti][codigo-espagueti] o más estructurado con los denominados _frameworks_ del lenguaje de programación de turno empleando el [modelo de tres capas](https://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas) formadas por la presentación, lógica y base de datos.
 
-Más recientemente con las nuevas posibilidades de la virtualización, los contenedores, la computación en nube con la flexibilidad que aporta de reservar recursos de computación bajo demanda en minutos y para evitar varios problemas que presentan los monolitos se evoluciona hacia microservicios. Esto no quiere decir que los monolitos con este nombre con cierto matiz peyorativo no sigan siendo perfectamente válidos en algunos contextos en los que ahora se usan sin embargo en contexto de la computación en la nube y servicio para un gran número de peticiones, usuarios o aplicación funcionalmente grande los microservicios son una mejor adaptación.
+Más recientemente con las nuevas posibilidades de la virtualización, los contenedores, la computación en nube con la flexibilidad que aporta de reservar recursos de computación bajo demanda en minutos y para evitar varios problemas que presentan los monolitos se evoluciona hacia microservicios. Esto no quiere decir que los monolitos con este nombre con cierto matiz peyorativo que ha adquirido no sigan siendo perfectamente válidos en algunos contextos en los que ahora se usan sin embargo en el contexto de la computación en la nube y servicio para un gran número de peticiones, usuarios o aplicación funcionalmente grande los microservicios son una mejor adaptación.
 
 Los problemas que presentan las aplicaciones monolíticas donde toda la lógica está en una aplicación en un servidor son:
 
@@ -49,7 +50,7 @@ Los microservicios surgen como alternativa tratando de resolver los problemas de
 * Arrancan más rápido y son más fáciles de desplegar.
 * Cada microservicio puede estar desarrollado por un equipo diferente centrado en ese servicio.
 
-Pueden ser una aplicación que ofrezca una API para una determinada funcionalidad o una aplicación que consuma otros microservicios y proporcione la interfaz para un navegador web.
+Pueden ser una aplicación que ofrezca una API en forma de REST, [GraphQL][graphql] o RPC para una determinada funcionalidad o una aplicación que consuma otros microservicios y proporcione la interfaz para un navegador web.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -61,8 +62,8 @@ Algunos nuevos retos de los microservicios son:
 
 * Añaden complejidad. Son más numerosos y requieren más procesos para su ejecución. Esto obliga a automatizar su gestión para que sea manejable con el menor número de tareas manuales posibles. Forman un sistema distribuido.
 * Difícil integrar cambios si afectan a varios servicios.
-* Cada microservicio al ser responsable de sus propios datos y formr un sistama de información distribuido plantea problemas en como compartirlos y dificultando la consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
-* Como centralizar los logs.
+* Cada microservicio al ser responsable de sus propios datos y formar un sistema de información distribuido plantea problemas en como compartirlos y dificultando la consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
+* Como centralizar los registros de trazas.
 * Como centralizar los accesos.
 * Obtener métricas y monitorización, a nivel de microservicio (cpu, memoria, espacio disco, red, ...) y de negocio (eventos, operaciones, transacciones, ...).
 * Como hacer que los microservicios se descubran entre ellos.
