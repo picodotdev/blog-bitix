@@ -3,7 +3,7 @@ pid: 343
 title: "Aplicaciones basadas en microservicios"
 url: "/2018/08/aplicaciones-basadas-en-microservicios/"
 date: 2018-08-31T18:00:00+02:00
-updated: 2018-09-01T09:00:00+02:00
+updated: 2018-09-02T12:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -62,7 +62,7 @@ Algunos nuevos retos de los microservicios son:
 
 * Añaden complejidad. Son más numerosos y requieren más procesos para su ejecución. Esto obliga a automatizar su gestión para que sea manejable con el menor número de tareas manuales posibles. Forman un sistema distribuido.
 * Difícil integrar cambios si afectan a varios servicios.
-* Cada microservicio al ser responsable de sus propios datos y formar un sistema de información distribuido plantea problemas en como compartirlos y dificultando la consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
+* Cada microservicio al ser responsable de sus propios datos y formar un sistema de información distribuido plantea problemas en como compartirlos y dificultando la transaccionalidad y consistencia del sistema, se suele optar por una eventual consistencia. Al estar los datos distribuidos se plantea la dificultad de elaborar informes, una posibilidad es consolidar los datos en un única base de datos para la tarea mediante exportaciones de las bases de datos origen.
 * Como centralizar los registros de trazas.
 * Como centralizar los accesos.
 * Obtener métricas y monitorización, a nivel de microservicio (cpu, memoria, espacio disco, red, ...) y de negocio (eventos, operaciones, transacciones, ...).
