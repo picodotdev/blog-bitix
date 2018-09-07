@@ -9,7 +9,6 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: ""
 tags: ["planeta-codigo", "programacion"]
 series: ["spring-cloud"]
 ---
