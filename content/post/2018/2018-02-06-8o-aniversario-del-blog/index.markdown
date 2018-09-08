@@ -29,33 +29,33 @@ Tengo bastantes artículos ya escritos pero pendientes publicar, tengo esta rese
 Cada cierto tiempo reviso y publico los datos de las visitas mensuales que tengo, lentamente pero de forma constante van aumentando y comprobando la diferencia de año en año por el momento el aumento es significativo para un blog con una temática bastante especializada. Sin embargo hasta el momento no he dado más detalles de estos datos en grandes números. Después de un crecimiento notable en el mes de mayo de 2017 las visitas han vuelto a los números de los meses anteriores y parece que se han estancado, veré como evolucionan en los siguientes meses, diciembre y enero por las vacaciones y días festivos no son de los mejores meses.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="298"
-        image1="paginas-vistas.png" thumb1="paginas-vistas-thumb.png" title1="Páginas vistas"
+    {{< figureproc
+        image1="paginas-vistas.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Páginas vistas"
         caption="Páginas vistas" >}}
 </div>
 
 Un poco menos de la mitad de los usuarios los recibo desde España y la otra mitad de varios países de latinoamérica ya que por compartir el lenguaje los buscadores devuelven referencias a alguno de mis artículos. A parte de España con un 35% entre los países de latinoamérica están México 17%, Argentina 8%, Colombia 8%, Chile 6%, Perú 5,3%, Ecuador 3%, Venezuela 2,5%, Estados Unidos 1,76% o Bolivia 1,25%.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="298"
-        image1="pais.png" thumb1="pais-thumb.png" title1="Ubicación por país"
+    {{< figureproc
+        image1="pais.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ubicación por país"
         caption="Ubicación por país" >}}
 </div>
 
 En cuanto al navegador usado por los usuarios la mayor cuota de uso es [Chrome][google-chrome] con un 71%, luego [Firefox][firefox] con un 17% y en menores porcentajes Safari con un 3,7% y Edge con un pequeño 2,5% aún con la cuota de mercado de Windows. A pesar de publicar artículos sobre GNU/Linux la mayoría de usuarios usan [Windows][windows] con un 72% pero me sorprende el 10,23% de Android incluso por delante de GNU/Linux con otro 10% y un 4,5% de Macintosh, finalmente está iOS con un 2,76%.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="298"
-        image1="navegador.png" thumb1="navegador-thumb.png" title1="Navegador"
-        image2="sistema-operativo.png" thumb2="sistema-operativo-thumb.png" title2="Sistema operativo"
+    {{< figureproc
+        image1="navegador.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Navegador"
+        image2="sistema-operativo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Sistema operativo"
         caption="Navegador y sistema operativo" >}}
 </div>
 
 En un porcentaje aplastante la mayoría de usuarios proviene del buscador Google con un 91% y un 4,8% para el tráfico directo.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="298"
-        image1="fuente.png" thumb1="fuente-thumb.png" title1="Fuente"
+    {{< figureproc
+        image1="fuente.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Fuente"
         caption="Fuente" >}}
 </div>
 

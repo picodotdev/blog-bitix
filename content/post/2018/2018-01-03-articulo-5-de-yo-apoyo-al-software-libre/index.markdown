@@ -45,9 +45,9 @@ Finalmente, ayer precisamente me decidí a instalar LineageOS 14.1 que incorpora
 Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los [costes de LineageOS](https://wiki.lineageos.org/costs/).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="292"
-        image1="cyanogenmod-10.2.jpg" thumb1="cyanogenmod-10.2-thumb.jpg" title1="CynogenMod 10.2"
-        image2="lineageos-14.1.jpg" thumb2="lineageos-14.1-thumb.jpg" title2="LineageOS 14.1"
+    {{< figureproc
+        image1="cyanogenmod-10.2.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="CynogenMod 10.2"
+        image2="lineageos-14.1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="LineageOS 14.1"
         caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 </div>
 
@@ -63,8 +63,8 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 * [Guías de instalación](https://redmine.replicant.us/projects/replicant/wiki#Replicant-installation)
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="292"
-        image1="replicant-6.png" thumb1="replicant-6-thumb.png" title1="Replicant 6"
+    {{< figureproc
+        image1="replicant-6.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Replicant 6"
         caption="Replicant 6" >}}
 </div>
 
@@ -73,9 +73,9 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 En ambos casos las donaciones que he hecho han sido de 15€.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="292"
-        image1="donacion-lineageos.png" thumb1="donacion-lineageos-thumb.png" title1="Donación LineageOS"
-        image2="donacion-replicant.png" thumb2="donacion-replicant-thumb.png" title2="Donación Replicant"
+    {{< figureproc
+        image1="donacion-lineageos.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Donación LineageOS"
+        image2="donacion-replicant.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Donación Replicant"
         caption="Donación LineageOS y Replicant" >}}
 </div>
 

@@ -47,9 +47,9 @@ El entorno de escritorio en lo personal uso [GNOME][gnome] y en ciertos aspectos
 GNOME puede personalizarse en cierta medida con algunos complementos para por ejemplo hacer que la barra de aplicaciones se muestre siempre. Algunos otros aspectos de GNOME me gustan más como el menú agrupado para varios de los iconos, en Mac cada icono tiene su propio menú de acciones. En la vista de aplicaciones de GNOME estás pueden cerrarse sin tener que seleccionar la aplicación. Tanto GNOME como macOS soportan escritorios virtuales.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="305"
-        image1="gnome-overview.jpg" thumb1="gnome-overview-thumb.jpg" title1="GNOME"
-        image2="macos-overview.jpg" thumb2="macos-overview-thumb.jpg" title2="macOS"
+    {{< figureproc
+        image1="gnome-overview.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="GNOME"
+        image2="macos-overview.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="macOS"
         caption="Comparación entre el entorno de escritotio de GNOME y macOS" >}}
 </div>
 

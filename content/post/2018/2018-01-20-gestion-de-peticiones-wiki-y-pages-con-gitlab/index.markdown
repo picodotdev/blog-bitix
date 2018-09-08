@@ -33,16 +33,16 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
 * [Issue Board](https://about.gitlab.com/features/issueboard/)
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="295"
-        image1="new-issue-1.png" thumb1="new-issue-1-thumb.png" title1="Nueva petición A"
-        image2="new-issue-2.png" thumb2="new-issue-2-thumb.png" title2="Nueva petición B"
+    {{< figureproc
+        image1="new-issue-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Nueva petición A"
+        image2="new-issue-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Nueva petición B"
         caption="Nueva petición" >}}
-    {{< figure year="2018" pid="295"
-        image1="issues.png" thumb1="issues-thumb.png" title1="Lista de peticiones"
-        image2="labels.png" thumb2="labels-thumb.png" title2="Etiquetas"
+    {{< figureproc
+        image1="issues.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Lista de peticiones"
+        image2="labels.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Etiquetas"
         caption="Lista de peticiones y etiquetas" >}}
-    {{< figure year="2018" pid="295"
-        image1="board.png" thumb1="board-thumb.png" title1="Panel Kanban"
+    {{< figureproc
+        image1="board.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Panel Kanban"
         caption="Panel Kanban" >}}
 </div>
 
@@ -55,9 +55,9 @@ Cuando se accede por primera vez a la wiki se crea la página de inicio que se p
 * [GitLab Wiki](https://docs.gitlab.com/ce/user/project/wiki/index.html)
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="295"
-        image1="new-page.png" thumb1="new-page-thumb.png" title1="Nueva página"
-        image2="page.png" thumb2="page-thumb.png" title2="Página"
+    {{< figureproc
+        image1="new-page.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Nueva página"
+        image2="page.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Página"
         caption="Nueva página y página" >}}
 </div>
 

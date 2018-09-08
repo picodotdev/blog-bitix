@@ -59,8 +59,8 @@ Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _ma
 * [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi)
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="raspberrypi3b.jpg" thumb1="raspberrypi3b-thumb.jpg" title1="Raspberry Pi 3"
+    {{< figureproc
+        image1="raspberrypi3b.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Raspberry Pi 3"
         caption="Raspberry Pi 3" >}}
 </div>
 
@@ -85,8 +85,8 @@ El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versio
 * IR Receiver Port
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="rock64.jpg" thumb1="rock64-thumb.jpg" title1="Rock64"
+    {{< figureproc
+        image1="rock64.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Rock64"
         caption="Rock64" >}}
 </div>
 
@@ -99,8 +99,8 @@ Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conecta
 En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor _SoC_ [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="rock64pro.jpg" thumb1="rock64pro-thumb.jpg" title1="Rock64Pro"
+    {{< figureproc
+        image1="rock64pro.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Rock64Pro"
         caption="Rock64Pro" >}}
 </div>
 
@@ -109,8 +109,8 @@ Estas placas de PINE64 son de lo mejor en la relación características hardware
 Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM a un precio de $90. Pantalla de 11" o 14" con una resolución de 1366x768, 2 GiB de memoria, WiFi, microSD, mini HDMI, 16GB eMMC, dos puertos USB 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y _touchpad_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="pinebook-11-inch.jpg" thumb1="pinebook-11-inch-thumb.jpg" title1="PineBook (11 pulgadas)"
+    {{< figureproc
+        image1="pinebook-11-inch.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="PineBook (11 pulgadas)"
         caption="PineBook (11 pulgadas)" >}}
 </div>
 
@@ -131,8 +131,8 @@ Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que
 * GPIO 40-pin header, up to 28 x GPIO pins, up to 2 x SPI bus, up to 2 x I2C bus, up to 4 x UART, up to 2 x PWM, up to 1 x PCM/I2S, 2 x 5V power pins, 2 x 3.3V power pins, 8 x ground pins, 1 x PWM, 1 x S/PDIF, 1 x 15-pin MIPI DSI, 1 x 15-pin MIPI CSI
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="asus-tinker-board.jpg" thumb1="asus-tinker-board-thumb.jpg" title1="ASUS Tinker Board"
+    {{< figureproc
+        image1="asus-tinker-board.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="ASUS Tinker Board"
         caption="ASUS Tinker Board" >}}
 </div>
 
@@ -154,9 +154,9 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
 * PoE sink support
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="cubox.jpg" thumb1="cubox-thumb.jpg" title1="Cubox"
-        image2="cubox-pulse.jpg" thumb2="cubox-pulse-thumb.jpg" title2="Cubox Pulse"
+    {{< figureproc
+        image1="cubox.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Cubox"
+        image2="cubox-pulse.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Cubox Pulse"
         caption="Cubox y Cubox Pulse" >}}
 </div>
 
@@ -167,8 +167,8 @@ Otro distribuidor importante es [Hardkernel][hardkernel] con sus modelos ODROID 
 Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) tambien basada en el _SoC_ Rockchip RK3399.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2018" pid="304"
-        image1="odroid-c2.jpg" thumb1="odroid-c2-thumb.jpg" title1="ODROID C2"
+    {{< figureproc
+        image1="odroid-c2.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="ODROID C2"
         caption="ODROID C2" >}}
 </div>
 
