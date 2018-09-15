@@ -82,7 +82,7 @@ En el ámbito Java el proyecto [Spring][spring] se compone de varios adaptados a
 De varios de estos proyectos ya he escrito varios artículos pero escribiré algunos más para completar varias áreas que aún no he comentado. Algunos de ellos serán:
 
 * Como hacer el [descubrimiento de servicios con Spring Cloud utilizando el servidor Eureka][blogbitix-344] mostrando incluso como crear un _cluster_ de servicios de descubrimiento para mayor disponibilidad y tolerancia a fallos, esto útil al mismo tiempo que de gran importancia ya que este servicio es crítico para el correcto funcionamiento de los microservicios.
-* Como crear un servicio de configuración del cual los microservicios obtengan su configuración por ejemplo según el entorno o para mantenerla centralizada, este servicio también es crítico y requiere de varias instancias de este servicio.
+* Como crear un [servicio de configuración del cual los microservicios obtengan su configuración][blogbitix-346] por ejemplo según el entorno o para mantenerla centralizada, este servicio también es crítico y requiere de varias instancias de este servicio.
 * Como mantener cifrada partes sensibles de la configuración como son las contraseñas, _bearers_ de autenticación, URLs de conexión u otra información especialmente sensible para la seguridad.
 * Como cambiar la configuración de los microservicios sin necesidad de reiniciarlos.
 * Un cliente que realiza balanceo de carga entre múltiples instancias de los servicios utilizando Ribbon.
