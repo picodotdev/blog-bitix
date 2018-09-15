@@ -3,7 +3,7 @@ pid: 346
 title: "Servicio de configuración para microservicios con Spring Cloud Config"
 url: "/2018/09/servicio-de-configuracion-para-microservicios-con-spring-cloud-config/"
 date: 2018-09-15T16:00:00+02:00
-updated: 2018-09-15T16:30:00+02:00
+updated: 2018-09-15T19:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -45,6 +45,8 @@ Un microservicio o aplicación de [Spring][spring] que use un servidor de Spring
 El proceso de configuración de un microservicio está formado por dos pasos, en el primero el servicio se conecta al servicio de registro y descubrimiento obtiene los servicios registrados de configuración y en el segundo paso solicita a uno de ellos su configuración.
 
 {{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "bootstrap-service.yml" >}}
+{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "service.yml" >}}
+{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "client.yml" >}}
 
 El servicio de configuración es accesible mediante una interfaz REST. Para obtener la configuración del servicio _service_ y del servicio _client_ de este ejemplo las URLs para obtenerlas son las siguientes. Estos _endpoints_ devuelven en formato _json_ un documento con los valores de las propiedades principalmente están en el mapa _source_ entre otros datos que Spring al iniciar la aplicación con ellos configura la aplicación.
 
