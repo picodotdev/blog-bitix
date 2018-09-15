@@ -31,4 +31,12 @@ Este _fork bomb_ crea procesos en el sistema de forma exponencial (1, 2, 4, 8, 1
 
 Dado el problema que causa este aparente comando u otro similar una buena recomendación a seguir es no ejecutar ningún comando obtenido de internet que no sepamos lo que hace y de igual modo ningún programa o _script_ de _shell_ no obtenido de una fuente de confianza. En las distribuciones GNU/Linux la fuentes confiables son los repositorios oficiales.
 
+
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Fork Bomb](https://en.wikipedia.org/wiki/Fork_bomb)
+{{% /reference %}}
+
 {{% /post %}}

@@ -58,10 +58,10 @@ En otro artículo relacionado con la configuración de los microservicios coment
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_git_backend
-* http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#vault-backend
-* http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_jdbc_backend
-* https://docs.spring.io/spring-boot/docs/2.0.4.RELEASE/reference/htmlsingle/#boot-features-external-config
+* [Spring Cloud Config, Git](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_git_backend)
+* [Spring Cloud Config, Vault](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#vault-backend)
+* [Spring Cloud Config, JDBC](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_jdbc_backend)
+* [Spring Cloud Config, Externalized Configuration](https://docs.spring.io/spring-boot/docs/2.0.4.RELEASE/reference/htmlsingle/#boot-features-external-config)
 {{% /reference %}}
 
 {{% /post %}}
