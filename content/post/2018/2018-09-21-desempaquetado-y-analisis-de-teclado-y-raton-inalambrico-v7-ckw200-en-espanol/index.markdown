@@ -49,7 +49,7 @@ Supongo que depende del uso, el Magic Mouse 2 que tiene una batería recargable 
 
 En cuanto a usabilidad no noto retraso en las acciones por el hecho de que sean inalámbricos, la respuesta en la acción es instantánea tal como lo es en un teclado y ratón con cable. Es muy cómodo poder mover o levantar el teclado o ratón sin la ataduría  del cable. Habiéndolo probado en un Mac el teclado y ratón son reconocidos sin ningún tipo de problema incluyendo la disposición de teclas de la disposición español y multimedia, en otros sistemas operativos es igual y no requiere ningún tipo de configuración en el sistema, es conectar el adaptador USB y usar.
 
-Según está indicado en la descripción de los huecos para las pilas el teclado y ratón funcionan con pilas de 1,5v pero los estoy usando con las pilas recargables de Amazon Basics que son de 1,2v y están funcionado sin problema.
+ No se por que hay que elegir entre con cable o inalámbrico, ¿no hay todavía un modelo de teclado y ratón que soporte los dos modos de funcionamiento y que sea el usuario el que decida como quiere usarlos? Si con la fiabilidad del cable o con la comodidad del inalámbrico en cada momento.
 
 * [Wired or wireless: which mouse is right for you?](https://www.windowscentral.com/wired-or-wireless-which-mouse-right-you)
 * [Wired or Wireless Mouse?](https://www.lifewire.com/wired-or-wireless-mouse-2640091)
@@ -130,6 +130,8 @@ Llevo usándolo unos días pero se me está haciendo más cómodo el teclado com
 Como defectos están las desconexiones esporádicas que he tenido y que el ratón solo es de tres botones y no de 5, no tiene desplazamiento horizontal que otros ratones tienen moviendo la rueda el ratón hacia los lados. Quizá el ratón estaría mejor que tuviese dos pilas AA en vez de solo una para que la batería le durase más tiempo y hubiese que cambiar las pilas con menor frecuencia. Esto haría que el ratón pesase más pero no creo que fuese un inconveniente grande, con una pila es bastante ligero. Es curioso que el teclado que gasta menos pilas tenga dos AAA (de 750 mAh si son recargables) y el ratón solo una.
 
 Por el motivo de la perdida de conexión no lo recomiendo para los juegos pero ni este modelo ni ningún otro inalámbrico que quizá funcionen más fiablemente pero no serán perfectos en este sentido, para los juegos es más recomendable un teclado y ratón con cable.
+
+Según está indicado en la descripción de los huecos para las pilas el teclado y ratón funcionan con pilas de 1,5v pero los estoy usando con las pilas recargables de Amazon Basics que son de 1,2v y están funcionado sin problema.
 
 ### Alfombrilla para teclado y ratón
 
