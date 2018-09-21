@@ -3,6 +3,7 @@ pid: 348
 title: "Desempaquetado y análisis de teclado y ratón inalámbrico V7 CKW200 en español"
 url: "/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200-en-espanol/"
 date: 2018-09-21T17:00:00+02:00
+updated: 2018-09-21T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -27,7 +28,7 @@ Pero mientras tanto otras cosas que necesito es un monitor 2K de 27 pulgadas que
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M913DVG&linkId=560005b7fb75dd9d22d6549dc3fc3b52"></iframe>
 </div>
 
-Aparte de la memoria, el SSD para el NUC y tras cosas de menor importancia que ya comentaré otras piezas que me faltan son un teclado y un ratón que finalmente ya he adquirido. He visto bastantes modelos con diferentes características entre ellos principalmente los de la marca [Logitech][logitech] por ser una marca de reconocido prestigio en cuanto a periféricos para ordenadores. Tenía pensado adquirir un modelo de teclado y ratón con cable muy básico aunque suficiente para mis usos el [Logitech MK120](https://amzn.to/2xEo4PH) pero finalmente me he decidido por uno muy similar aunque inalámbrico el [Videoseven (V7) modelo CKW200](https://amzn.to/2xqrINW).
+Aparte de la memoria, el SSD para el NUC y tras cosas de menor importancia que ya comentaré otras piezas que me faltan son un teclado y un ratón que finalmente ya he adquirido. He visto bastantes modelos con diferentes características entre ellos principalmente los de la marca [Logitech][logitech] por ser una marca de reconocido prestigio en cuanto a periféricos para ordenadores. Tenía pensado adquirir un modelo de teclado y ratón con cable muy básico aunque suficiente para mis usos el [Logitech MK120](https://amzn.to/2xEo4PH) pero finalmente me he decidido por uno muy similar aunque inalámbrico, el [Videoseven (V7) modelo CKW200](https://amzn.to/2xqrINW) que también está disponible en [formato con cable](https://amzn.to/2NyBaZX).
 
 Pasados unos meses de uso veré si ha sido buena decisión por su fiabilidad y el incordio que supone cambiar de pilas si es muy habitualmente, con las recargables no me supondrá un gasto adicional recurrente que hay que tener en cuenta en el coste del teclado y ratón, también al precio de las pilas no recargables o regarcables si se le suma el del cargador aunque como uso pilas recargables para otro tipo de aparatos electrónicos (relojes, mandos a distancia, ...) este último es un gasto compartido.
 
