@@ -65,7 +65,7 @@ El teclado posee un indicador de batería entre los LED indicadores de estado, s
 
 ### El ratón CKW200
 
-El ratón posee tres botones, izquierdo, derecho y el de la rueda de desplazamiento pero no posee botones de desplazamiento lateral. Dado que V7 es una empresa nueva en el mercado su modelo de teclado es del 2017 más reciente que otros muchos modelos que pueden ser incluso tan viejos como del 2013, 2015 o 2016.
+El ratón posee tres botones, izquierdo, derecho y el de la rueda de desplazamiento pero no posee botones de desplazamiento lateral. Es de tamaño normal no reducido, ergonómico con la palma de la mano y simétrico apto para diestros y zurdos. Dado que V7 es una empresa nueva en el mercado su modelo de teclado es del 2017 más reciente que otros muchos modelos que pueden ser incluso tan viejos como del 2013, 2015 o 2016.
 
 El ratón posee botón de encendido y apagado pero el teclado no. El ratón posee una función de ahorro de energía con la que al cabo de un minuto la luz óptica que detecta el movimiento empieza a parpadear cada medio segundo, al cabo de 8 minutos la luz se paga completamente y el ratón entra en reposo para ahorrar batería y que dure más tiempo. Con solo hacer clic el ratón sale del estado de reposo y el sensor de movimiento se enciende. Por otro lado si el ratón detecta que el ordenador se ha apagado también entra en modo reposo lo que es muy útil para ni siquiera tener que apagar el ratón manualmente con su interruptor.
 
@@ -132,6 +132,12 @@ Por el motivo de la perdida de conexión no lo recomiendo para los juegos pero n
 ### Alfombrilla para teclado y ratón
 
 Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla de 70cm de ancho por 30 cm de alto](https://amzn.to/2Dm7me3) en la que colocar tanto ratón como teclado que está ribeteada con hilo para mayor duración, esto protegerá la mesa del movimiento de ratón que con el tiempo se desgastaría.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
+        caption="Alfombrilla, teclado y ratón" >}}
+</div>
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC4DR1C&linkId=a9e97138ccb3a59af838861eb2156d10"></iframe>
