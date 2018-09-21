@@ -78,47 +78,43 @@ El ratón entre una pila AA y el sensor de movimiento posee un hueco para insert
 
 Una vez más al igual que en otros análisis de productos que hago incluyo fotos mejores que las que proporciona el propio fabricante hechas por mi ya antiguo móvil. Me parece increíble que a estas alturas den tan poca importancia a esto ya que los usuarios utilizan la red para informarse en los productos con comentarios de Ámazon y vídeos de YouTube, fotos del fabricante que debería tener la información más fiable y detallada, incluyendo fotos de gran calidad y numerosas. No indica dimensiones reales del teclado y ratón, solo del paquete.
 
-El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respectivamente, el ratón 7x12 centímetros de ancho y largo. Tanto el teclado como ratón y pilas estaban en la caja protegidos con una bolsa de plástico para evitar rayaduras. El adaptador para que el ordenador reciba la señal de teclado y ratón es muy pequeño y pasa casi despercibido conectado en el puerto USB.
+El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respectivamente, el ratón 7x12 centímetros de ancho y largo. Tanto el teclado como ratón y pilas estaban en la caja protegidos con una bolsa de plástico para evitar rayaduras. El adaptador para que el ordenador reciba la señal de teclado y ratón es muy pequeño y pasa casi despercibido conectado en el puerto USB. Se incluye en la caja una pila AA y dos AAA para poder usar el teclado y ratón desde el primer momento lo cual es de agradecer.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-        image3="3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+        image1="v7-ckw200-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+        image2="v7-ckw200-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+        image3="v7-ckw200-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
     {{< figureproc
-        image1="4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="6.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-        image3="7.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+        image1="v7-ckw200-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+        image2="v7-ckw200-6.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+        image3="v7-ckw200-7.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
     {{< figureproc
-        image1="8.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+        image1="v7-ckw200-8.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+        image2="v7-ckw200-9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
         caption="La caja, manual y pilas incluídas" >}}
 </div>
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="11.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="12.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="13.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
+        image1="v7-ckw200-11.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+        image2="v7-ckw200-15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+        image3="v7-ckw200-16.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
     {{< figureproc
-        image1="14.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="16.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
-    {{< figureproc
-        image1="17.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="18.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="19.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado"
+        image1="v7-ckw200-17.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+        image2="v7-ckw200-18.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+        image3="v7-ckw200-19.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado"
         caption="El teclado" >}}
 </div>
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="20.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-        image2="21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
-        image3="22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
+        image1="v7-ckw200-20.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
+        image2="v7-ckw200-21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
+        image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
     {{< figureproc
-        image1="23.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-        image2="24.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
+        image1="v7-ckw200-23.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
+        image2="v7-ckw200-24.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
         caption="El ratón y el adaptador" >}}
 </div>
 
@@ -140,7 +136,7 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
+        image1="v7-ckw200-10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
         caption="Alfombrilla, teclado y ratón" >}}
 </div>
 
