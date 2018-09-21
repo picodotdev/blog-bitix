@@ -49,6 +49,8 @@ Supongo que depende del uso, el Magic Mouse 2 que tiene una batería recargable 
 
 En cuanto a usabilidad no noto retraso en las acciones por el hecho de que sean inalámbricos, la respuesta en la acción es instantánea tal como lo es en un teclado y ratón con cable. Es muy cómodo poder mover o levantar el teclado o ratón sin la ataduría  del cable. Habiéndolo probado en un Mac el teclado y ratón son reconocidos sin ningún tipo de problema incluyendo la disposición de teclas de la disposición español y multimedia, en otros sistemas operativos es igual y no requiere ningún tipo de configuración en el sistema, es conectar el adaptador USB y usar.
 
+Según está indicado en la descripción de los huecos para las pilas el teclado y ratón funcionan con pilas de 1,5v pero los estoy usando con las pilas recargables de Amazon Basics que son de 1,2v y están funcionado sin problema.
+
 * [Wired or wireless: which mouse is right for you?](https://www.windowscentral.com/wired-or-wireless-which-mouse-right-you)
 * [Wired or Wireless Mouse?](https://www.lifewire.com/wired-or-wireless-mouse-2640091)
 * [How to Choose the Perfect Mouse and Keyboard](https://lifehacker.com/5865351/how-to-choose-the-perfect-mouse-and-keyboard)
