@@ -3,7 +3,7 @@ pid: 349
 title: "Recargar la configuración sin reiniciar una aplicación Spring Boot con Spring Cloud Config"
 url: "/2018/09/recargar-la-configuracion-sin-reiniciar-una-aplicacion-spring-boot-con-spring-cloud-config/"
 date: 2018-09-23T00:15:00+02:00
-updated: 2018-09-23T00:16:00+02:00
+updated: 2018-09-23T00:25:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -21,7 +21,7 @@ series: ["spring-cloud"]
 
 No es raro la necesidad de querer cambiar algunos valores de la configuración de una aplicación sin ningún cambio adicional en el código. Normalmente la configuración se externaliza en un archivo de texto en un determinado formato como _properties_ o _yaml_ que se lee al iniciarse la aplicación pero que al querer hacer cambios y hacerlos efectivos requiere reiniciar la aplicación.
 
-Para evitar la caída de servicio en un reinicio de aplicación requiere tener varias instancias de la aplicación, ir sacando del balanceador las instancias para que no le soliciten nuevas peticiones, reiniciarlas y añadirlas de nuevo al balanceador si se hace blalanceo de carga en el servidor o reiniciar las aplicaciones progresivamente si se hace en el cliente. Y esto con todas las instancias del servicio. [Spring Cloud Config][spring-cloud-config] y [Spring Boot][spring-boot] entre sus funcionalidades de configuración posee una que consiste en recargar la configuración o ciertas partes de la misma. Para ello [Spring Boot Actuator][spring-boot-actuator] ofrece un _endpoint_ con el que disparar la recarga.
+Para evitar la caída de servicio en un reinicio de aplicación requiere tener varias instancias de la aplicación, ir sacando del balanceador las instancias para que no le soliciten nuevas peticiones, reiniciarlas y añadirlas de nuevo al balanceador si se hace balanceo de carga en el servidor o reiniciar las aplicaciones progresivamente si se hace en el cliente. Y esto con todas las instancias del servicio. [Spring Cloud Config][spring-cloud-config] y [Spring Boot][spring-boot] entre sus funcionalidades de configuración posee una que consiste en recargar la configuración o ciertas partes de la misma. Para ello [Spring Boot Actuator][spring-boot-actuator] ofrece un _endpoint_ con el que disparar la recarga.
 
 En el siguiente ejemplo de microservicio que posee una clase de configuración con algunas propiedades. El valor de estas propiedades se utilizan para el resultado de una acción en un _endpoint_ del servicio.
 
@@ -37,7 +37,7 @@ Iniciada la aplicación que requiere iniciar previamente el servicio de registro
 
 En una aplicación orientada microservicios es muy posible que haya múltiples instancias del mismo servicio y para recargar la configuración de cada uno de ellos hay que hacerlo de forma individual con su _endpoint_ de recarga de configuración. Dado el número de microservicios y su ubicación distribuida hacerlo de forma individual es un inconveniente.
 
-Para resolver este inconveniente integrando [Spring Cloud Bus][spring-cloud-bus] en las aplicaciones es posible recargar la configuración de todos los microservicios haciendo una única llamada al _endpoint_ _http\://localhost:8090/monitor_ indicando el servicio a actualizar su configuración lo que es indenpendiente del número de instancias y de su ubicación. Integrar Spring Clud Bus requiere disponer de una instancia de mensajes como [RabbitMQ][rabbitmq] e incluir como dependencia tanto en el servidor de configuración como en el servicio la dependencia _spring-cloud-starter-bus-amqp_. Para esta comunicación de mensajes Spring Cloud Config crea en RabbitMQ una cola de mensajes que empieza por _springCloudBus_. 
+Para resolver este inconveniente integrando [Spring Cloud Bus][spring-cloud-bus] en las aplicaciones es posible recargar la configuración de todos los microservicios haciendo una única llamada al _endpoint_ _http\://localhost:8090/monitor_ indicando el servicio a actualizar su configuración lo que es independiente del número de instancias y de su ubicación. Integrar Spring Clud Bus requiere disponer de una instancia de mensajes como [RabbitMQ][rabbitmq] e incluir como dependencia tanto en el servidor de configuración como en el servicio la dependencia _spring-cloud-starter-bus-amqp_. Para esta comunicación de mensajes Spring Cloud Config crea en RabbitMQ una cola de mensajes que empieza por _springCloudBus_. 
 
 {{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "configserver.gradle" >}}
 {{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "service.gradle" >}}
