@@ -3,6 +3,7 @@ pid: 349
 title: "Recargar la configuración sin reiniciar una aplicación Spring Boot con Spring Cloud Config"
 url: "/2018/09/recargar-la-configuracion-sin-reiniciar-una-aplicacion-spring-boot-con-spring-cloud-config/"
 date: 2018-09-23T00:15:00+02:00
+updated: 2018-09-23T00:16:00+02:00
 language: "es"
 rss: true
 sharing: true
