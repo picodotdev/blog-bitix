@@ -99,11 +99,13 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
     {{< figureproc
         image1="v7-ckw200-11.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
         image2="v7-ckw200-15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="v7-ckw200-16.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
+        image3="v7-ckw200-26.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}        
     {{< figureproc
-        image1="v7-ckw200-17.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="v7-ckw200-18.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="v7-ckw200-19.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado"
+        image1="v7-ckw200-16.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+        image2="v7-ckw200-17.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+        image3="v7-ckw200-18.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
+    {{< figureproc
+        image1="v7-ckw200-19.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
         caption="El teclado" >}}
 </div>
 
@@ -113,7 +115,7 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
         image2="v7-ckw200-21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
         image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
     {{< figureproc
-        image1="v7-ckw200-23.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
+        image1="v7-ckw200-25.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
         image2="v7-ckw200-24.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
         caption="El ratón y el adaptador" >}}
 </div>
