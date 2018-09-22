@@ -4,7 +4,7 @@ title: "Recargar sin reiniciar la configuración de una aplicación Spring Boot 
 url: "/2018/09/recargar-sin-reiniciar-la-configuracion-de-una-aplicacion-spring-boot-con-spring-cloud-config/"
 aliases: ["/2018/09/recargar-la-configuracion-sin-reiniciar-una-aplicacion-spring-boot-con-spring-cloud-config/"]
 date: 2018-09-23T00:15:00+02:00
-updated: 2018-09-23T00:25:00+02:00
+updated: 2018-09-23T00:50:00+02:00
 language: "es"
 rss: true
 sharing: true
