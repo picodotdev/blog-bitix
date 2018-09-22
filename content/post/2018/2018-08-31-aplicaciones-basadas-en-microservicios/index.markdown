@@ -83,8 +83,8 @@ De varios de estos proyectos ya he escrito varios artículos pero escribiré alg
 
 * Como hacer el [descubrimiento de servicios con Spring Cloud utilizando el servidor Eureka][blogbitix-344] mostrando incluso como crear un _cluster_ de servicios de descubrimiento para mayor disponibilidad y tolerancia a fallos, esto útil al mismo tiempo que de gran importancia ya que este servicio es crítico para el correcto funcionamiento de los microservicios.
 * Como crear un [servicio de configuración del cual los microservicios obtengan su configuración][blogbitix-346] por ejemplo según el entorno o para mantenerla centralizada, este servicio también es crítico y requiere de varias instancias de este servicio.
+* Como [cambiar la configuración de los microservicios sin necesidad de reiniciarlos][blogbitix-349].
 * Como mantener cifrada partes sensibles de la configuración como son las contraseñas, _bearers_ de autenticación, URLs de conexión u otra información especialmente sensible para la seguridad.
-* Como cambiar la configuración de los microservicios sin necesidad de reiniciarlos.
 * Un cliente que realiza balanceo de carga entre múltiples instancias de los servicios utilizando Ribbon.
 * Un cliente de microservicio que implementa el patrón _circuit breaker_ con la librería Hystrix y _timeouts_ para ser tolerante a fallos al llamar a otros microservicios.
 
