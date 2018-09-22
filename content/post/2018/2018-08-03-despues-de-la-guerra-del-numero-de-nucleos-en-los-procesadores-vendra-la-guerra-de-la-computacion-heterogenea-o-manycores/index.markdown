@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["hardware", "opnion", "planeta-codigo"]
+tags: ["hardware", "opinion", "planeta-codigo"]
 ---
 
 {{% post %}}
