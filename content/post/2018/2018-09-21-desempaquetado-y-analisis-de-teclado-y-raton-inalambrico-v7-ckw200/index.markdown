@@ -117,8 +117,9 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
         image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
     {{< figureproc
         image1="v7-ckw200-25.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-        image2="v7-ckw200-24.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
-        caption="El ratón y el adaptador" >}}
+        image2="v7-ckw200-27.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El adaptador USB"
+        image3="v7-ckw200-24.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El adaptador USB"
+        caption="El ratón y el adaptador USB" >}}
 </div>
 
 ### Conclusión
