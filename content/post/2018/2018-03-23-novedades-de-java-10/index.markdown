@@ -26,7 +26,7 @@ Lo mejor de este nuevo calendario de publicaciones cada seis meses es que las em
 
 Es un principio no añadir características según lo que está de moda sino pensando en décadas futuras. Java 10 tiene una lista más reducida de cambios que Java 9 pero importantes y significativos. Java es el último en unirse a la fiesta de la inferencia de tipos pero ha sido de forma intencionada ya que el coste de implementarla de forma incorrecta supone un alto coste que hay que mantener en adelante. Otras ideas que ha sido implementadas el lenguajes de programación funcional y están listas para su uso masivo tomarán su propio camino en futuras versiones de Java por ejemplo _pattern matching_ y _value types_.
 
-La lista más relevante de novedades de Java 10 es la siguiente:
+La lista más relevante de [novedades de Java 10](http://openjdk.java.net/projects/jdk/10/) es la siguiente:
 
 * 286: [Local-Variable Type Inference](http://openjdk.java.net/jeps/286)
 * 296: [Consolidate the JDK Forest into a Single Repository](http://openjdk.java.net/jeps/296)
