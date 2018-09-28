@@ -3,6 +3,7 @@ pid: 350
 title: "Novedades y nuevas características de Java 11"
 url: "/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/"
 date: 2018-09-28T21:00:00+02:00
+updated: 2018-09-28T23:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -119,6 +120,8 @@ Se añaden varios métodos a la clase [String](https://docs.oracle.com/en/java/j
 
 Java que tradicionalmente marcaba como _deprecarted_ características pero que las seguía manteniendo por compatibilidad hacia atrás parece que ha empezado a eliminar varias de esas características desaconsejadas de forma más agresiva. No solo se añaden nuevas características, también se eliminan algunas y se desaconseja el uso de otras entre ellas el visor de _applets_, eliminación de _Unsafe.defineClass_, _Thread.destroy()_ y _Thread.stop(Throwable)_, eliminación de las funcionalidades de despliegue de _Java Plugin_ y _Java Web Start_ que se marcaron como desaconsejadas en Java 9 y para eliminación en Java 10 finalmente en Java 11 se han eliminado sin reemplazo.
 
+Oracle ya no ofrece el entorno de ejecución JRE ni versiones de 32 bits para Windows. JavaFX ya no está incluído en el JDK pero seguirá siendo utilizable como librería independiente.
+
 Las anteriores son las funcionalidades que he considerado más destacables para todos los usuarios., También hay otras funcionalidades añadidas, soporte eliminado para funciones específicas o de funcionamiento interno.
 
 {{% reference %}}
@@ -134,6 +137,7 @@ Las anteriores son las funcionalidades que he considerado más destacables para 
 * [Java 11 String API Updates](https://4comprehension.com/java-11-string-api-updates/)
 * [Java 11 removes EE and Corba packages](https://github.com/eclipse/jetty.project/issues/2487)
 * [Java Mission Control - Now serving OpenJDK binaries too!](https://twitter.com/java/status/1044609723012665344)
+* [Oracle JDK 11 Migration Guide](https://docs.oracle.com/en/java/javase/11/migrate/index.html)
 * [Countdown to Java Release Date](http://www.java-countdown.xyz/)
 {{% /reference %}}
 
