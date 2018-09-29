@@ -3,7 +3,7 @@ pid: 350
 title: "Novedades y nuevas características de Java 11"
 url: "/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/"
 date: 2018-09-28T21:00:00+02:00
-updated: 2018-09-28T23:00:00+02:00
+updated: 2018-09-29T14:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -116,7 +116,7 @@ Algunas de las versiones anteriores de TLS ya no se consideran seguras añadir s
 
 Se añaden implementaciones específicas para la arquitectura Aarch64 para un mejor rendimiento en la plataforma [ARM][arm] en algunas funciones. Se añade de forma experimental un nuevo recolector de basura ZGC con pausas para recolectar basura menores capaz de manejar cantidades de memoria pequeñas de megabytes y grandes de terabytes. Al mismo tiempo se añade un recolector de basura Epsilon que no reclama la memoria. Se añade soporte para los algoritmos criptográficos _ChaCha20_ y _Poly1305_ junto con otras funcionalidades criptográficas _RSASSA-PSS_, _AES Encryption with HMAC-SHA2 for Kerberos 5_, ...
 
-Se añaden varios métodos a la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) muy utilizados con los que no será necesario recurrie a librerías de terceros. Estos métodos son [repeat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#repeat(int)), [isBlank](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#isBlank()), [strip](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#strip()), [stripLeading](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripLeading()), [stripTrailing](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripTrailing()), [lines](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#lines()).
+Se añaden varios métodos a la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) muy utilizados con los que no será necesario recurrie a librerías de terceros. Estos métodos son [repeat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#repeat(int)), [isBlank](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#isBlank()), [strip](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#strip()), [stripLeading](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripLeading()), [stripTrailing](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripTrailing()), [lines](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#lines()). En otras clases de la API también se han añadido nuevos métodos.
 
 Java que tradicionalmente marcaba como _deprecarted_ características pero que las seguía manteniendo por compatibilidad hacia atrás parece que ha empezado a eliminar varias de esas características desaconsejadas de forma más agresiva. No solo se añaden nuevas características, también se eliminan algunas y se desaconseja el uso de otras entre ellas el visor de _applets_, eliminación de _Unsafe.defineClass_, _Thread.destroy()_ y _Thread.stop(Throwable)_, eliminación de las funcionalidades de despliegue de _Java Plugin_ y _Java Web Start_ que se marcaron como desaconsejadas en Java 9 y para eliminación en Java 10 finalmente en Java 11 se han eliminado sin reemplazo.
 
@@ -134,6 +134,7 @@ Las anteriores son las funcionalidades que he considerado más destacables para 
 * [Introducing Java SE 11 (blog)](https://blogs.oracle.com/java-platform-group/introducing-java-se-11)
 * [Oracle JDK Releases for Java 11 and Later](https://blogs.oracle.com/java-platform-group/oracle-jdk-releases-for-java-11-and-later)
 * [Java 11 Will Include More Than Just Features](https://blog.takipi.com/java-11-will-include-more-than-just-features/)
+* [90 New Features (and APIs) in JDK 11](https://www.azul.com/90-new-features-and-apis-in-jdk-11/)
 * [Java 11 String API Updates](https://4comprehension.com/java-11-string-api-updates/)
 * [Java 11 removes EE and Corba packages](https://github.com/eclipse/jetty.project/issues/2487)
 * [Java Mission Control - Now serving OpenJDK binaries too!](https://twitter.com/java/status/1044609723012665344)
