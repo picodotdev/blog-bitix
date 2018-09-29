@@ -1,7 +1,7 @@
 ---
 pid: 351
-title: "Almacenar cifrados los valores de configuración en Spring Cloud Config"
-url: "/2018/09/almacenar-cifrados-los-valores-de-configuracion-en-spring-cloud-config/"
+title: "Almacenar cifrados los valores de configuración sensibles en Spring Cloud Config"
+url: "/2018/09/almacenar-cifrados-los-valores-de-configuracion-sensibles-en-spring-cloud-config/"
 date: 2018-09-30T01:30:00+02:00
 language: "es"
 rss: true
