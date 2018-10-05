@@ -72,7 +72,7 @@ En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recib
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Artículo NIO.2, Java Magazine Jul/Ago 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter#&pageSet=0&page=0&contentItem=0)
+* [Artículo NIO.2, Java Magazine Jul/Ago 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter)
 {{% /reference %}}
 
 {{% /post %}}

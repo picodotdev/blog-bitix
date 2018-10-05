@@ -30,7 +30,7 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 * [What’s New in Oracle JDK 9](https://docs.oracle.com/javase/9/whatsnew/toc.htm)
 * [Guías descargables con documentación del JDK 9](https://docs.oracle.com/javase/9/javase-docs.htm)
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
-* [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017)
+* [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter)
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="264"
@@ -202,7 +202,7 @@ Y unos buenos vídeos sobre las nuevas características de Java 9, uno en españ
 * [New Java 9 features at a glance](https://jaxenter.com/new-features-in-java-9-137344.html)
 * [Modern Java Recipes](http://amzn.to/2ylsidI)
 * [Try-With-Resource Enhancements in Java 9](https://dzone.com/articles/try-with-resources-enhancement-in-java-9)
-* [Revista Java Magazine Jul/Aug 2017](http://www.javamagazine.mozaicreader.com/JulyAug2017)
+* [Revista Java Magazine Jul/Aug 2017](http://www.javamagazine.mozaicreader.com/JulyAug2017/Twitter)
 * [Java 9 and IntelliJ IDEA](https://dzone.com/articles/java-9-and-intellij-idea)
 * [Java 9 más allá de la modularidad](https://www.autentia.com/2017/09/13/java-9-mas-alla-de-la-modularidad/)
 * [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]

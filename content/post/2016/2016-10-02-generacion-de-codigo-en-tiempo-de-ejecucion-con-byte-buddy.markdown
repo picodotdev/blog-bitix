@@ -27,7 +27,7 @@ Para acceder a propiedades e invocar métodos de tipos desconocidos en tiempo de
 
 Usando la  API de introspección perdemos una de las grandes características de Java, el tipado seguro, adicionalmente el rendimiento será menor. Conocidas estas limitaciones hay varias librerías que las palían generando código en tiempo de ejecución, algunas de las más conocidas son [Java Proxy](https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Proxy.html) que está incluida en el propio JDK, [cglib][cglib], [Javassists][javassist] o [ASM][asm].
 
-Leyendo uno de los artículos de la publicación gratuita [Java Magazine][java-magazine] de [Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015#&pageSet=0&page=0) conocí otra alternativa llamada [Byte Buddy][bytebuddy] con la que al contrario de otras posibilidades no estamos limitados a generar clases que implementen interfaces conocidas (como en Java proxies), tiene un mantenimiento activo y soporta las nuevas características de las últimas versiones del lenguaje (al contrario de cglib), no está tan limitada (como Javassists) y no hay que tener conocimientos de _byte code_ (como con ASM).
+Leyendo uno de los artículos de la publicación gratuita [Java Magazine][java-magazine] de [Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter) conocí otra alternativa llamada [Byte Buddy][bytebuddy] con la que al contrario de otras posibilidades no estamos limitados a generar clases que implementen interfaces conocidas (como en Java proxies), tiene un mantenimiento activo y soporta las nuevas características de las últimas versiones del lenguaje (al contrario de cglib), no está tan limitada (como Javassists) y no hay que tener conocimientos de _byte code_ (como con ASM).
 
 La generación de código se ha vuelto ubicua en muchas de las librerías más populares de Java y se usa profusamente en [Spring][spring], [Hibernate][hibernate] o [Apache Tapestry][tapestry] para aplicar seguridad, gestión de transacciones, mapeo modelo relacional-objeto o pruebas unitarias o de integración (_mocking_, ...) y de manera similar a lo ofrecido por los [<abbr title="Abstract Syntax Tree">AST</abbr>](http://groovy-lang.org/metaprogramming.html) de [Groovy][groovy]. Permite emular algunas propiedades que solo están accesibles al programar con lenguajes dinámicos sin perder las comprobaciones de tipos. Las clases generadas por Byte Buddy no se distinguen de las clases generadas por el compilador.
 
@@ -73,7 +73,7 @@ En el [tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial) encontraremos m�
 {{< postslinks >}}
 * [Byte Buddy][bytebuddy]
 * [Tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial)
-* [Java Magazine Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015#&pageSet=0&page=0)
+* [Java Magazine Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter)
 {{% /reference %}}
 
 {{% /post %}}
