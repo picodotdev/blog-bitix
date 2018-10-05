@@ -23,7 +23,7 @@ Los microservicios son independientes unos de otros y se comunican mediante oper
 Un patrón o técnica que se suele emplear es el [Circuit Breaker](https://www.martinfowler.com/bliki/CircuitBreaker.html) en Java y con [Spring][spring] se ofrece en el proyecto [Spring Cloud Netflix][spring-cloud-netflix] mediante [Hystrix][netflix-hystrix]. Este patrón soluciona varios problemas cuando un microservicio falla.
 
 * Uno es que cuando un microservicio empieza a fallar es necesario dejar de hacerle peticiones para permitirle recuperarse si está demasiado saturado. Cuando ocurre un fallo es posible realizar una acción en sustitución de la llamada al microservicio y devolver un valor alternativo.
-* Otro problema es que el microservicio aunque no falle tarde demasiado en responder se puede establecer un _timeout_ que si se supera se deja de esperar la respuesta lo que evita que los microservicios que usan uno que tarda demasiado agote sus recursos y empiecen a fallar o tardar demasiado también si tienen muchas llamadas
+* Otro problema es que el microservicio aunque no falle tarde demasiado en responder se puede establecer un _timeout_ que si se supera se deja de esperar la respuesta lo que evita que los microservicios que usan uno que tarda demasiado agote sus recursos y empiecen a fallar o tardar demasiado también si tienen muchas llamadas.
 
 En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo.
 
