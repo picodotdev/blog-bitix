@@ -77,7 +77,7 @@ Para monitorizar el estado del sistema y de los circuitos se puede visualizar en
 * [Circuit Breaker: Hystrix Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.0.1.RELEASE/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients)
 * [Hyxtrix Configuration (1)](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica#configuration)
 * [Hyxtrix Configuration (2)](https://github.com/Netflix/Hystrix/wiki/Configuration)
-* [Java Mgazine Sep/Oct 2018](http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Twitter)
+* [Java Magazine Sep/Oct 2018](http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Twitter)
 {{% /reference %}}
 
 {{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
