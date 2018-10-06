@@ -1,0 +1,15 @@
+{{ if not .Params.series }}
+	{{ $related := .Site.RegularPages.Related . | first 5 }}
+	{{ with $related }}
+	<div class="row related">
+		<div class="col-md-12">
+			<h3>{{ i18n "related_articles" }}:</h3>
+			<ul>
+				{{ range . }}
+				<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+	{{ end }}
+{{ end }}

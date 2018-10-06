@@ -47,9 +47,10 @@ En el ejemplo el cliente en un bucle realiza las llamadas al servicio con un mé
 
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "ClientService.java" >}}
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "Main.java" >}}
+{{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "client.yml" >}}
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "build.gradle" >}}
 
-El circuito se abre cuando el número de llamadas supera un umbral y el porcentaje de fallo se supera, se han de dar las dos condiciones, si el número de llamadas que se realizan no superan el umbral aunque todas fallen el circuito permanece cerrado. Ambos valores son personalizables con las propiedades _circuitBreaker.requestVolumeThreshold_ y _circuitBreaker.errorThresholdPercentage_. El circuito permanece abierto durante el tiempo indicado por _metrics.rollingStats.timeInMilliseconds_. Por otro lado, el tiempo de _timeout_ se puede indicar en la anotación por cada llamada a servicio o en el archivo de configuración de la aplicación en la propiedad _hystrix.command.get.execution.isolation.thread.timeoutInMilliseconds_ donde _get_ es el nombre del comando obtenido por defecto del nombre del método anotado.
+El circuito se abre cuando el número de llamadas supera un umbral y el porcentaje de fallo se supera, se han de dar las dos condiciones, si el número de llamadas que se realizan no superan el umbral aunque todas fallen el circuito permanece cerrado. Ambos valores son personalizables con las propiedades _circuitBreaker.requestVolumeThreshold_ y _circuitBreaker.errorThresholdPercentage_. El circuito permanece abierto durante el tiempo indicado por _metrics.rollingStats.timeInMilliseconds_. Por otro lado, el tiempo de _timeout_ se puede indicar en la anotación por cada llamada a servicio o nivel de clase para todos los métodos del servicio.
 
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "DefaultController.java" >}}
 
@@ -66,7 +67,7 @@ Para monitorizar el estado del sistema y de los circuitos se puede visualizar en
         caption="Estados del circuit breaker" >}}
 </div>
 
-{{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "./gradle-run.sh" >}}
+{{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "gradle-run.sh" >}}
 
 {{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
