@@ -28,7 +28,14 @@ Combinado con [Hystrix][netflix-hystrix] un ejemplo de cliente que hace peticion
 
 Ante el fallo de una instancia para evitar que temporalmente el cliente empiece a fallar cuando le redirige una petición este puede reintentar las peticiones en otra instancia, esta funcionalidad se proporciona con [Spring Retry][spring-retry] o utilizando [Zuul][netflix-zuul] como _proxy_.
 
+El cliente usa la clase _LoadBalancerClient_ que en cada invocación del método _choose()_ devuelve una instancia diferente de servicio realizando balanceo de carga utilizando el método _round-robin_. La clase _ServiceInstance_ proporciona la URL de la instancia del servicio.
+
 {{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "Main.java" >}}
+{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "ClientService.java" >}}
+{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "build.gradle" >}}
+
+La clase del servicio y los comandos para iniciar el servicio de registro y descubrimiento, el servicio de configuración, las instancias del servicio en diferentes puertos y el cliente.
+
 {{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "DefaultController.java" >}}
 {{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "gradle-run.sh" >}}
 
