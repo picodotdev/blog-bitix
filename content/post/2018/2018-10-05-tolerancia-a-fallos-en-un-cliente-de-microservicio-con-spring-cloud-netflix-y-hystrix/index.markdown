@@ -29,7 +29,7 @@ Un patrón o técnica que se suele emplear es el de [Circuit Breaker](https://ww
 En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo.
 
 <div class="media" style="text-align: center;">
-    {{< imageproc image="hystrix.png" command="Fit" commandthumb="Fit" options="650x450" alt="Hystrix" title="Hystrix" >}}
+    {{< imageproc image1="hystrix.png" command1="Fit" options1="650x450" alt1="Hystrix" title1="Hystrix" >}}
 </div>
 
 El patrón _circuit breaker_ se denomina así ya que implementa una lógica similar a un circuito eléctrico. El circuito en su estado normal está cerrado y se realizan las llamadas al microservicio servidor. Si el microservicio servidor empieza a fallar se llama a la acción alternativa con su valor, si se supera un umbral de errores el circuito pasa a estado abierto y se dejan de hacer llamadas al microservicio servidor. Cada cierto tiempo definido se realiza una llamada al servicio servidor para comprobar su estado de forma que si responde correctamente el circuito pasa a estado cerrado nuevamente y las siguientes llamadas se realizan al microservicio servidor dejándose de utilizar la acción alternativa.

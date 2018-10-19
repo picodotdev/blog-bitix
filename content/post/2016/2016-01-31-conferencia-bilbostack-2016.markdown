@@ -183,7 +183,7 @@ Aparece [Gradle] como herramienta de construcción alternativa a Maven y Ant, co
 
 En el [índice Tiobe][tiobe] sigue siendo el más popular y en GitHub ha crecido mucho. Lo usan empresas como Google, LindedIn, Amazon, Netflix. Google incluso ha creado un compilador que traduce código Java a JavaScript. Se usa en proyectos como [Casandra][cassandra], [Hadoop][hadoop], [Spark][spark], [Minecraft][minecraft], [elasticsearch][elasticsearch] o [Android][android]. Es escalable desde tarjetas inteligentes a granjas de servidores, desde una [Raspberry Pi][raspberrypi] a un _mainframe_. Si Java como lenguaje no te es suficiente puedes usar [Scala][scala], [Groovy][groovy], [Ceylon][ceylon] o [Clojure][clojure]. Tiene buenos IDEs que facilitan la escritura de código como [eclipse][eclipse], [IntelliJ IDEA][intellij] o [Netbeans][netbeans].
 
-Su futuro es bueno [Sun][sunmicrosystems] en su momento lo hizo de código abierto y se basa en comites. Están planificadas varias mejoras, Jigsaw para modularizarlo, HTTP2, REPL, soporte JSON y finalmente se eliminará el soporte de los applets.
+Su futuro es bueno [Sun][sun-microsystems] en su momento lo hizo de código abierto y se basa en comites. Están planificadas varias mejoras, Jigsaw para modularizarlo, HTTP2, REPL, soporte JSON y finalmente se eliminará el soporte de los applets.
 
 En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está [jOOQ][jooq] para demostrar que los ORM no son siempre la mejor solución.
 

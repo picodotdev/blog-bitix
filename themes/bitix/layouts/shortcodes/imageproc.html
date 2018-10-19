@@ -1,24 +1,65 @@
-{{ if .Params.image }}
-  {{ $image := .Page.Resources.GetMatch (print "images/" .Params.image) }}
-  {{ $imagethumb := .Page.Resources.GetMatch (print "images/" .Params.image) }}
-  {{ $command := .Params.command }}
-  {{ $options := .Params.options }}
-  {{ $commandthumb := .Params.commandthumb }}
-  {{ $optionsthumb := .Params.optionsthumb }}
+{{ if .Params.image1 }}
+  {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
+  {{ $command1 := .Params.command1 }}
+  {{ $options1 := .Params.options1 }}
 
-  {{ if eq $command "Fit"}}
-  {{ $.Scratch.Set "imagescaled" ($image.Fit $options) }}
-  {{ else if eq $command "Resize"}}
-  {{ $.Scratch.Set "imagescaled" ($image.Resize $options) }}
-  {{ else if eq $command "Fill"}}
-  {{ $.Scratch.Set "imagescaled" ($image.Fill $options) }}
+  {{ if eq $command1 "Fit"}}
+  {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
+  {{ else if eq $command1 "Resize"}}
+  {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
+  {{ else if eq $command1 "Fill"}}
+  {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
   {{ else }}
   {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 {{ end }}
 
-{{ $imagescaled := $.Scratch.Get "imagescaled" }}
+{{ if .Params.image2 }}
+  {{ $image2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
+  {{ $command2 := .Params.command2 }}
+  {{ $options2 := .Params.options2 }}
 
-{{ if or $imagescaled }}
-  <img src="{{ $imagescaled.RelPermalink }}" width="{{ $imagescaled.Width }}" height="{{ $imagescaled.Height }}" class="{{ .Params.class }}"/></a>
+  {{ if eq $command2 "Fit"}}
+  {{ $.Scratch.Set "imagescaled2" ($image2.Fit $options2) }}
+  {{ else if eq $command2 "Resize"}}
+  {{ $.Scratch.Set "imagescaled2" ($image2.Resize $options2) }}
+  {{ else if eq $command2 "Fill"}}
+  {{ $.Scratch.Set "imagescaled2" ($image2.Fill $options2) }}
+  {{ else }}
+  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+  {{ end }}
+{{ end }}
+
+{{ if .Params.image3 }}
+  {{ $image3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
+  {{ $command3 := .Params.command3 }}
+  {{ $options3 := .Params.options3 }}
+
+  {{ if eq $command3 "Fit"}}
+  {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
+  {{ else if eq $command3 "Resize"}}
+  {{ $.Scratch.Set "imagescaled" ($image3.Resize $options3) }}
+  {{ else if eq $command3 "Fill"}}
+  {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
+  {{ else }}
+  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+  {{ end }}
+{{ end }}
+
+{{ $imagescaled1 := $.Scratch.Get "imagescaled1" }}
+{{ $imagescaled2 := $.Scratch.Get "imagescaled2" }}
+{{ $imagescaled3 := $.Scratch.Get "imagescaled3" }}
+
+{{ if or $imagescaled1 $imagescaled3 $imagescaled3 }}
+<figure>
+{{ if or $imagescaled1 }}
+  <img src="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" height="{{ $imagescaled1.Height }}" class="{{ .Params.class1 }}"/></a>
+{{ end }}
+{{ if or $imagescaled2 }}
+  <img src="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" height="{{ $imagescaled2.Height }}" class="{{ .Params.class2 }}"/></a>
+{{ end }}
+{{ if or $imagescaled3 }}
+  <img src="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" height="{{ $imagescaled3.Height }}" class="{{ .Params.class3 }}"/></a>
+{{ end }}
+</figure>
 {{ end }}
