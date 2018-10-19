@@ -1,7 +1,8 @@
 ---
 pid: 355
-title: "Sun Microsystems cae"
-url: "/2018/10/sun-microsystems-cae/"
+title: "Sun Microsystems cae, la adquiere Oracle"
+url: "/2018/10/sun-microsystems-cae-la-adquiere-oracle/"
+aliases: ["/2018/10/sun-microsystems-cae/"]
 date: 2018-10-19T11:00:00+02:00
 language: "es"
 rss: true
