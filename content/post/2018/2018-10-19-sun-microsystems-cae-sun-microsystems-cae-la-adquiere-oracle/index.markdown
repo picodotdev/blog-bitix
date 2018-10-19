@@ -4,6 +4,7 @@ title: "Sun Microsystems cae, la adquiere Oracle"
 url: "/2018/10/sun-microsystems-cae-la-adquiere-oracle/"
 aliases: ["/2018/10/sun-microsystems-cae/"]
 date: 2018-10-19T11:00:00+02:00
+update: 2018-10-19T19:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -18,7 +19,7 @@ tags: ["opinion", "planeta-codigo"]
 
 {{< logotype image1="sun-microsystems.svg" title1="Sun Microsystems" width1="300" image2="oracle.svg" title2="Oracle" width2="300" >}}
 
-Era enero del 2010 y se anunciaba que [Oracle][oracle] adquiría [Sun Microsystems][sun-microsystems] por unos 7400 millones de dólares. Sun Microsystems era asimilada por uno de los grandes entre el mundo empresarial. Fue un hecho importante debido a varias de las tecnologías que había desarrollado Sun y poseía como aún a día de hoy uno de los lenguajes más populares para el desarrollo de software, Java, y otras tecnologías importantes que había adquirido hace no tanto tiempo como la base de datos [MySQL][mysql] competencia de Oracle.
+Era enero del 2010 y se anunciaba que [Oracle][oracle] adquiría [Sun][sun-microsystems] (_Stanford University Network_) por unos 7400 millones de dólares. Sun Microsystems era asimilada por uno de los grandes entre el mundo empresarial. Fue un hecho importante debido a varias de las tecnologías que había desarrollado Sun y poseía como aún a día de hoy uno de los lenguajes más populares para el desarrollo de software, Java, y otras tecnologías importantes que había adquirido hace no tanto tiempo como la base de datos [MySQL][mysql] competencia de Oracle.
 
 Otras tecnologías de Sun relevantes eran el sistema operativo [Solaris][solaris], la tecnologías de depuración [DTraze][dtrace], el avanzado sistema de archivos [ZFS][zfs] utilizando a día de hoy en los sistemas [BSD], el paquete ofimático OpenOffice predecesora de [LibreOffice][libreoffice], la herramienta de automatización de proyectos Hudson también predecesora de [Jenkins][jenkins], el software de virtualización [VirtualBox][virtualbox] o la plataforma de microprocesadores [Sparc][sparc].
 
