@@ -1,65 +1,99 @@
-{{ if .Params.image1 }}
+{{ if and (.Params.image1) (not (findRE "\\.svg$" .Params.image1)) }}
   {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
   {{ $command1 := .Params.command1 }}
   {{ $options1 := .Params.options1 }}
 
   {{ if eq $command1 "Fit"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
   {{ else if eq $command1 "Resize"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
   {{ else if eq $command1 "Fill"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
   {{ else }}
-  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
+{{ else if findRE "\\.svg$" .Params.image1 }}
+  {{ $.Scratch.Set "imagevectorial1" (.Params.image1) }}
 {{ end }}
 
-{{ if .Params.image2 }}
+{{ if and (.Params.image2) (not (findRE "\\.svg$" .Params.image2)) }}
   {{ $image2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
   {{ $command2 := .Params.command2 }}
   {{ $options2 := .Params.options2 }}
 
   {{ if eq $command2 "Fit"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Fit $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Fit $options2) }}
   {{ else if eq $command2 "Resize"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Resize $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Resize $options2) }}
   {{ else if eq $command2 "Fill"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Fill $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Fill $options2) }}
   {{ else }}
-  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
+{{ else if findRE "\\.svg$" .Params.image2 }}
+  {{ $.Scratch.Set "imagevectorial2" (.Params.image2) }}
 {{ end }}
 
-{{ if .Params.image3 }}
+{{ if and (.Params.image3) (not (findRE "\\.svg$" .Params.image3)) }}
   {{ $image3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
   {{ $command3 := .Params.command3 }}
   {{ $options3 := .Params.options3 }}
 
   {{ if eq $command3 "Fit"}}
-  {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
+    {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
   {{ else if eq $command3 "Resize"}}
-  {{ $.Scratch.Set "imagescaled" ($image3.Resize $options3) }}
+    {{ $.Scratch.Set "imagescaled" ($image3.Resize $options3) }}
   {{ else if eq $command3 "Fill"}}
-  {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
+    {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
   {{ else }}
-  {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
+{{ else if findRE "\\.svg$" .Params.image3 }}
+  {{ $.Scratch.Set "imagevectorial3" (.Params.image3) }}
 {{ end }}
 
 {{ $imagescaled1 := $.Scratch.Get "imagescaled1" }}
 {{ $imagescaled2 := $.Scratch.Get "imagescaled2" }}
 {{ $imagescaled3 := $.Scratch.Get "imagescaled3" }}
 
-{{ if or $imagescaled1 $imagescaled3 $imagescaled3 }}
+{{ $imagevectorial1 := $.Scratch.Get "imagevectorial1" }}
+{{ $imagevectorial2 := $.Scratch.Get "imagevectorial2" }}
+{{ $imagevectorial3 := $.Scratch.Get "imagevectorial3" }}
+
+{{ if or $imagescaled1 $imagescaled3 $imagescaled3 $imagevectorial1 $imagevectorial2 $imagevectorial3}}
 <figure>
-{{ if or $imagescaled1 }}
+{{ if $imagescaled1 }}
   <img src="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" height="{{ $imagescaled1.Height }}" class="{{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/></a>
+{{ else if $imagevectorial1 }}
+  {{ if .Params.logotype1 }}
+    {{ $.Scratch.Set "path1" "assets/images/logotipos/" }}
+  {{ else }}
+    {{ $.Scratch.Set "path1" (print .Page.Params.url "images/") }}
+  {{ end }}
+  {{ $path1 := $.Scratch.Get "path1" }}
+  <img src="{{ $path1 }}{{ $imagevectorial1 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options1) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options1) 0 }}px;" class="{{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/></a>
 {{ end }}
-{{ if or $imagescaled2 }}
+{{ if $imagescaled2 }}
   <img src="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" height="{{ $imagescaled2.Height }}" class="{{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/></a>
+{{ else if $imagevectorial2 }}
+  {{ if .Params.logotype2 }}
+    {{ $.Scratch.Set "path2" "assets/images/logotipos/" }}
+  {{ else }}
+    {{ $.Scratch.Set "path2" (print .Page.Params.url "images/") }}
+  {{ end }}
+  {{ $path2 := $.Scratch.Get "path2" }}
+  <img src="{{ $path2 }}{{ $imagevectorial2 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options2) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options2) 0 }}px;" class="{{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/></a>
 {{ end }}
-{{ if or $imagescaled3 }}
+{{ if $imagescaled3 }}
   <img src="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" height="{{ $imagescaled3.Height }}" class="{{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/></a>
+{{ else if $imagevectorial3 }}
+  {{ if .Params.logotype3 }}
+    {{ $.Scratch.Set "path3" "assets/images/logotipos/" }}
+  {{ else }}
+    {{ $.Scratch.Set "path3" (print .Page.Params.url "images/") }}
+  {{ end }}
+  {{ $path3 := $.Scratch.Get "path3" }}
+  <img src="{{ $path3 }}{{ $imagevectorial3 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options3) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options3) 0 }}px;" class="{{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/></a>
 {{ end }}
 </figure>
 {{ end }}

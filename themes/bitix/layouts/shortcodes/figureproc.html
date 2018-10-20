@@ -7,23 +7,23 @@
   {{ $optionsthumb1 := .Params.optionsthumb1 }}
 
   {{ if eq $command1 "Fit"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
   {{ else if eq $command1 "Resize"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
   {{ else if eq $command1 "Fill"}}
-  {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
+    {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
   {{ else }}
-  {{ errorf "Invalid image1 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image1 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 
   {{ if eq $commandthumb1 "Fit" }}
-  {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Fit $optionsthumb1) }}
+    {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Fit $optionsthumb1) }}
   {{ else if eq $commandthumb1 "Resize" }}
-  {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Resize $optionsthumb1) }}
+    {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Resize $optionsthumb1) }}
   {{ else if eq $commandthumb1 "Fill" }}
-  {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Fill $optionsthumb1) }}
+    {{ $.Scratch.Set "imagescaledthumb1" ($imagethumb1.Fill $optionsthumb1) }}
   {{ else }}
-  {{ errorf "Invalid imagethumb1 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid imagethumb1 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 {{ end }}
 
@@ -36,23 +36,23 @@
   {{ $optionsthumb2 := .Params.optionsthumb2 }}
 
   {{ if eq $command2 "Fit"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Fit $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Fit $options2) }}
   {{ else if eq $command2 "Resize"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Resize $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Resize $options2) }}
   {{ else if eq $command2 "Fill"}}
-  {{ $.Scratch.Set "imagescaled2" ($image2.Fill $options2) }}
+    {{ $.Scratch.Set "imagescaled2" ($image2.Fill $options2) }}
   {{ else }}
-  {{ errorf "Invalid image2 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image2 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 
   {{ if eq $commandthumb2 "Fit" }}
-  {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Fit $optionsthumb2) }}
+    {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Fit $optionsthumb2) }}
   {{ else if eq $commandthumb2 "Resize" }}
-  {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Resize $optionsthumb2) }}
+    {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Resize $optionsthumb2) }}
   {{ else if eq $commandthumb2 "Fill" }}
-  {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Fill $optionsthumb2) }}
+    {{ $.Scratch.Set "imagescaledthumb2" ($imagethumb2.Fill $optionsthumb2) }}
   {{ else }}
-  {{ errorf "Invalid imagethumb2 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid imagethumb2 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 {{ end }}
 
@@ -65,23 +65,23 @@
   {{ $optionsthumb3 := .Params.optionsthumb3 }}
 
   {{ if eq $command3 "Fit"}}
-  {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
+    {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
   {{ else if eq $command3 "Resize"}}
-  {{ $.Scratch.Set "imagescaled3" ($image3.Resize $options3) }}
+    {{ $.Scratch.Set "imagescaled3" ($image3.Resize $options3) }}
   {{ else if eq $command3 "Fill"}}
-  {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
+    {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
   {{ else }}
-  {{ errorf "Invalid image3 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid image3 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 
   {{ if eq $commandthumb3 "Fit" }}
-  {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Fit $optionsthumb3) }}
+    {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Fit $optionsthumb3) }}
   {{ else if eq $commandthumb3 "Resize" }}
-  {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Resize $optionsthumb3) }}
+    {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Resize $optionsthumb3) }}
   {{ else if eq $commandthumb3 "Fill" }}
-  {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Fill $optionsthumb3) }}
+    {{ $.Scratch.Set "imagescaledthumb3" ($imagethumb3.Fill $optionsthumb3) }}
   {{ else }}
-  {{ errorf "Invalid imagethumb3 processing command: Must be one of Fit, Fill or Resize."}}
+    {{ errorf "Invalid imagethumb3 processing command: Must be one of Fit, Fill or Resize."}}
   {{ end }}
 {{ end }}
 

@@ -38,13 +38,13 @@ Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar renta
 
 <div class="media" style="text-align: center;">
     {{< imageproc
-        image1="libreoffice.png" command1="Fit" options1="300x200" alt1="LibreOffice" title1="LibreOffice"
-        image2="mysql.png" command2="Fit" options2="150x100" alt2="MySQL" title2="MySQL"
-        image3="virtualbox.png" command3="Fit" options3="300x200" alt3="Virtualbox" title3="Virtualbox" >}}
+        image1="java.svg" logotype1="true" options1="300x200" alt1="Java" title1="Solaris"
+        image2="solaris.svg" logotype2="true" options2="300x200" alt2="Solaris" title2="Solaris"
+        image3="sparc.svg" logotype3="true" options3="300x200" alt3="Sparc" title3="Sparc" >}}
     {{< imageproc
-        image1="java.png" command1="Fit" options1="300x200" alt1="Java" title1="Solaris"
-        image2="solaris.jpg" command2="Fit" options2="300x200" alt2="Solaris" title2="Solaris"
-        image3="sparc.png" command3="Fit" options3="300x200" alt3="Sparc" title3="Sparc" >}}
+        image1="libreoffice.svg" logotype1="true" command1="Fit" options1="300x200" alt1="LibreOffice" title1="LibreOffice"
+        image2="mysql.svg" logotype2="true" command2="Fit" options2="150x100" alt2="MySQL" title2="MySQL"
+        image3="virtualbox.svg" logotype3="true" command3="Fit" options3="300x200" alt3="Virtualbox" title3="Virtualbox" >}}
 </div>
 
 En el artículo [The Java Saga](https://www.wired.com/1995/12/java-saga/) se comentan varios aspectos importantes de Java como que inicialmente este lenguaje estaba orientado a la electrónica donde la fiabilidad es más importante que la rapidez, C++ no era lo suficientemente fiable para lo que Gosling tenía en mente. Diseñaron la primera tableta electrónica, aún así pasa a ser la base de la emergente web para hacerla interactiva. Otro artículo interesante es [The downfall of Sun Microsystems](https://www.networkworld.com/article/2268096/servers/the-downfall-of-sun-microsystems.html) en el que precisamente se comenta la falta de rentabilizar varias de sus tecnologías y la crisis de las punto com.
