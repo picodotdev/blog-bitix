@@ -38,7 +38,7 @@ Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar renta
 
 <div class="media" style="text-align: center;">
     {{< imageproc
-        image1="java.svg" logotype1="true" options1="300x200" alt1="Java" title1="Solaris"
+        image1="java.svg" logotype1="true" options1="300x200" alt1="Java" title1="Java"
         image2="solaris.svg" logotype2="true" options2="300x200" alt2="Solaris" title2="Solaris"
         image3="sparc.svg" logotype3="true" options3="300x200" alt3="Sparc" title3="Sparc" >}}
     {{< imageproc
@@ -55,7 +55,7 @@ En 1997 Microsoft viendose amenazada y haciendo uso de su técnica [adoptar, ext
 
 En los artículos [La historia de Sun Microsystems, 1ª Parte: Network is the computer](https://mailchi.mp/bonillaware/sun-microsystems-1?e=ccf70eee59) y [La historia de Sun Microsystems. 2ª Parte: Write Once. Run Everywhere](https://mailchi.mp/bonillaware/sun-microsystems-2?e=ccf70eee59) se hace un buen repaso de la historia de esta empresa desde sus inicios e hitos más importantes asi como las personas que intervinieron en ellos pasando por los malos momentos hasta la finalmente adquisición por Oracle. Otro artículo y sus comentarios interesante es [Así es como Oracle ha sometido a Sun Microsystems a una muerte larga y agónica](https://www.xataka.com/historia-tecnologica/asi-es-como-oracle-ha-sometido-a-sun-microsystems-a-una-muerte-larga-y-agonica).
 
-Por afinidad hacia el _open source_ con su cultura de empresa la que hubiese preferido que adquiriese Sun es [Red Hat][redhat] una compañía que ha demostrado que con el software libre se puede hacer negocio además de contribuir a la comunidad beneficiandose de ella al mismo tiempo, en el año 2012 alcanzó la cifra de 1000 millones de dólares de facturación y 2000 millones en el 2018. Sin embargo, no hubiese sido posible en ese momento porque Red Hat no era lo suficientemente grande como para hacer hacer una adquisición de tal tamaño para con Sun Microsystems.
+Por afinidad hacia el _open source_ con su cultura de empresa la que hubiese preferido que adquiriese Sun es [Red Hat][redhat] una compañía que ha demostrado que con el software libre se puede hacer negocio además de contribuir a la comunidad beneficiandose de ella al mismo tiempo, en el año 2012 alcanzó la cifra de 1000 millones de dólares de facturación y 2000 millones en el 2018. Sin embargo, no hubiese sido posible en ese momento porque Red Hat no era lo suficientemente grande como para hacer una adquisición de tal tamaño para con Sun Microsystems.
 
 Sun Microsystems dejó una larga herencia que dura aún en día y frases legendarias y visionarias como _«the network is the computer»_ atribuida a [John Gage](https://en.wikipedia.org/wiki/John_Gage) o _«write once, run anywhere»_ de Java.
 
