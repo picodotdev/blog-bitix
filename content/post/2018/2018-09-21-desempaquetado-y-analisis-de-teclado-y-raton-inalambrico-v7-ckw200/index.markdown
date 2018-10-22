@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["hardware", "planeta-codigo"]
-series: ["desempaquetado"]
+series: ["desempaquetado-tecnologia"]
 ---
 
 {{% post %}}

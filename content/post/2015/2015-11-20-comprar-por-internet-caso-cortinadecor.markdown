@@ -8,7 +8,8 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-series: ["desempaquetado"]
+tags: []
+series: ["desempaquetado-otros"]
 summary: "Este artículo es un poco fuera de tema de lo que suelo escribir en el _blog_, aunque como está relacionado con tiendas y compras por internet tiene algunos consejos a tener en las tiendas que se aventuren a vender y usuarios a comprar por internet."
 ---
 

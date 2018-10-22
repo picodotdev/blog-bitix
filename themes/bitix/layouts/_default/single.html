@@ -6,6 +6,13 @@
         {{ partial "head.html" . }}
       </div>
     </div>
+    {{ if .Params.image }}
+    <div class="row page-header">
+      <div class="col-12">
+        <img src="{{ relURL (print .Params.url .Params.image) }}">
+      </div>
+    </div>
+    {{ end }}
     <div class="row">
       <div class="col-12 col-lg-8">
         <div class="row">
@@ -18,9 +25,6 @@
               {{ end }}
               {{ if isset .Params "tags" }}
                 <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
-              {{ end }}
-              {{ if .Params.image }}
-              <img src="{{ .Params.image }}" class="header">
               {{ end }}
               <h1 itemprop="name">{{ .Title }}</h1>
               <p class="information">
