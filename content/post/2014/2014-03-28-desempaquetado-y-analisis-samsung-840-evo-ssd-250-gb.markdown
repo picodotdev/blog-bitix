@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 tags: ["hardware", "planeta-linux", "planeta-codigo"]
-series: ["desempaquetado"]
+series: ["desempaquetado-tecnologia"]
 ---
 
 {{% post %}}

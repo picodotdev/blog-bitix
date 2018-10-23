@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 tags: []
-series: ["desempaquetado"]
+series: ["desempaquetado-otros"]
 ---
 
 {{% post %}}

@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 tags: []
-series: ["desempaquetado"]
+series: ["desempaquetado-otros"]
 summary: "Tener una caldera es cara, bien por el coste fijo del gas tanto por el alquiler del contador como por el precio de la disponibilidad pero también por las revisiones obligatorias que hay que hacerles por motivos de seguridad. Con motivo de que me tocaba hacer la revisión de la caldera me he decidido a hacer la sustitución por un termo eléctrico, finalmente elegí un Fleck Duo 7 de 50 litros."
 ---
 

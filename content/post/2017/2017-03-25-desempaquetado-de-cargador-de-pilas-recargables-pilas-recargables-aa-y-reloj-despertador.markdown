@@ -9,7 +9,7 @@ sharing: true
 comments: true
 promoted: false
 tags: []
-series: ["desempaquetado"]
+series: ["desempaquetado-otros"]
 summary: "Otros productos que he comprado han sido un cargador de pilas recargables que admitiese los tipos AA y AAA, también he comprado unas pilas AA que he incluido en el mismo pedido."
 ---
 
