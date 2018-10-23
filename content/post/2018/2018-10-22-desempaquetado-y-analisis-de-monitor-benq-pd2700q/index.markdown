@@ -258,7 +258,7 @@ Las fugas de luz o _bleeding_ es otro de los posibles problemas de un monitor, p
         caption="Bleeding en ambiente oscuro" >}}
 </div>
 
-En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con resolución retina que supondrá otro salto en la calidad de la imagen. Me va a quedar la duda de si un monitor con resolución UHD de 27 pulgadas bajando la resolución sería una buena opción en cuanto a definición de texto, se suele comentar que no usar una resolución escalada del panel no es lo mismo que en la resolución nativa pero me gustaría experimentarlo, en este Benq de 27" bajando la resolución no aprecio que el texto se vea mucho peor.
+En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con resolución retina que supondrá otro salto en la calidad de la imagen. Me va a quedar la duda de si un monitor con resolución UHD de 27 pulgadas bajando la resolución sería una buena opción en cuanto a definición de texto, se suele comentar que no, usar una resolución escalada del panel no es lo mismo que en la resolución nativa pero me gustaría experimentarlo, en este Benq de 27" bajando la resolución no aprecio que el texto se vea mucho peor.
 
 ### Detección de píxeles muertos o vagos
 
