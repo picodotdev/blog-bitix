@@ -3,6 +3,7 @@ pid: 356
 title: "Desempaquetado y análisis de monitor Benq PD2700Q"
 url: "/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q/"
 date: 2018-10-23T11:00:00+02:00
+updated: 2018-10-23T20:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -80,6 +81,14 @@ En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos co
 * [Entendidos en monitores: 27" 1080/2k consejo compra](https://www.forocoches.com/foro/showthread.php?t=4760432)
 * [Comprar un monitor 4K](https://www.disfrutadelcastigo.com/2014/01/comprar-un-monitor-4k.html)
 * [Comprar monitor ultrapanorámico UWQHD](https://www.disfrutadelcastigo.com/2017/04/comprar-monitor-ultrapanoramico-uwqhd.html)
+
+En [PcComponentes][pccomponentes] los precios no varían tanto pero en Amazon en algunos productos si hay notables diferencias entre pocos días o alguna semana, sobre todo en productos de tecnología. Para conocer si el precio actual de un producto es alto, bajo o está bajando la página [CamelCamelCamel][camelcamelcamel] permite introduciendo la URL del producto de Amazon mostrar una gráfica con la evolución del precio.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="camelcamelcamel-benq-pd2700q.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Evolución del precio del monitor Benq PD2700Q"
+        caption="Evolución del precio del monitor Benq PD2700Q" >}}
+</div>
 
 ### Benq PD2700Q
 
@@ -239,7 +248,7 @@ La primera impresión es que un monitor de 27" es grande pero ya me han comentad
         caption="Imagen en la pantalla" >}}
 </div>
 
-Este monitor tiene los botones de ajustes detrás del monitor marcados con unos indicadores en el frontal para encontrar su posición, en algún sitio se comenta que esto es algo incómodo para acertar a pulsar el botón adecuado. En lo que probado no me ha resultado nada incómodo y los botones me han parecido perfectos.
+Este monitor tiene los botones de ajustes detrás del monitor marcados con unos indicadores en el frontal para encontrar su posición, en algún sitio se comenta que esto es algo incómodo para acertar a pulsar el botón adecuado. En lo que probado no me ha resultado nada incómodo y los botones me han parecido perfectos. Dado que el monitor tiene altavoces se le puede enviar sonido por el mismo cable HDMI que envía la señal de vídeo y luego con un jack de 3.5mm desde el monitor enviarlo a unos altavoces que den mejor calidad de sonido, esto me permite conectar un cable menos al ordenador y que la mesa no quede cubierta de cables. Aunque con esta opción al menos un Mac no permite ajustar el volumen hay que hacerlo desde los altavoces, por fortuna tengo unos altavoces con regulador de volumen.
 
 Las fugas de luz o _bleeding_ es otro de los posibles problemas de un monitor, por la tecnología de retoiluminación led hace que en condiciones oscuras los negros aparezcan como grises y que en los bordes de la pantalla se noten zonas un poco iluminadas al no bloquearse por completo la retoiluminación. Ya era consciente de este problema y no me sorprende que el que me ha llegado a mi tenga, no se si será mucho o poco porque no puedo comparar pero no me ha parecido excesivo. Sin píxeles muertos o vagos sin mucha fuga de luz me doy por contento. Por el momento tampoco he notado retención de imagen.
 
