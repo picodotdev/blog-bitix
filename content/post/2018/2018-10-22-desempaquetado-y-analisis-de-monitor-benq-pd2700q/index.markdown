@@ -3,7 +3,7 @@ pid: 356
 title: "Desempaquetado y análisis de monitor Benq PD2700Q"
 url: "/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q/"
 date: 2018-10-23T11:00:00+02:00
-updated: 2018-10-23T20:00:00+02:00
+updated: 2018-10-24T14:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -110,16 +110,16 @@ Sus [especificaciones](https://www.benq.eu/es-es/monitor/designer/pd2700q/specif
 * Fuente de alimentación, _built-in_
 * Dimensiones (altura × anchura × profundidad, mm) (sin base), 379.5 x 641.0 x 56.5. Con base (posición alta): 547.3 x 641.0 x 239.6. Con base (posición baja): 417.3 x 641.0 x 239.6 
 
-Con 27 pulgadas y una resolución de 2560x1440 su área de visualización, DPI y PPI son:
+Con 27 pulgadas y una resolución de 2560x1440 su área de visualización sus PPI son:
 
-* Display size (27"): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = 2009.68cm²) at 108.79 PPI, 0.2335mm dot pitch, 11834 PPI²
+* Display size (**27", UHD**): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = **2009.68cm²**) at **108.79 PPI**, **0.2335mm dot pitch**, 11834 PPI²
 
 Comprando con un monitor de 23 pulgadas y una resolución de 1920x1080 y con un monitor de 3840x2160 en 27 pulgadas estos números son:
 
-* Display size (23", Full HD): 20.05" × 11.28" = 226.04in² (50.92cm × 28.64cm = 1458.33cm²) at 95.78 PPI, 0.2652mm dot pitch, 9174 PPI²
-* Display size (27", UHD): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = 2009.68cm²) at 163.18 PPI, 0.1557mm dot pitch, 26627 PPI²
+* Display size (**23", Full HD**): 20.05" × 11.28" = 226.04in² (50.92cm × 28.64cm = **1458.33cm²**) at **95.78 PPI**, **0.2652mm dot pitch**, 9174 PPI²
+* Display size (**27", UHD**): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = **2009.68cm²**) at **163.18 PPI**, **0.1557mm dot pitch**, 26627 PPI²
 
-Por 2K en monitor me refiero a QHD (quad hd), que es 4 veces la resolución HD (1280x720), dos en alto y dos en ancho. Lo mismo ocurre con los monitores 4K que en realidad la denominación más acertada es UHD (ultra hd) y son tres veces la resolución HD en cada medida, 3840x2160.
+Hay algo de confusión cuando se menciona 2K en monitores, en realidad el término más apropiado es QHD (quad hd), que es 4 veces la resolución HD (1280x720), dos en alto y dos en ancho. Lo mismo ocurre con los monitores 4K que en realidad la denominación más acertada es UHD (ultra hd) y son tres veces la resolución HD en cada medida, 3840x2160.
 
 En YouTube hay unos cuantos vídeos analizando este mismo monitor u otros parecidos que me han servidor para aclarar dudas.
 
@@ -258,7 +258,17 @@ Las fugas de luz o _bleeding_ es otro de los posibles problemas de un monitor, p
         caption="Bleeding en ambiente oscuro" >}}
 </div>
 
-En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con resolución retina que supondrá otro salto en la calidad de la imagen. Me va a quedar la duda de si un monitor con resolución UHD de 27 pulgadas bajando la resolución sería una buena opción en cuanto a definición de texto, se suele comentar que no, usar una resolución escalada del panel no es lo mismo que en la resolución nativa pero me gustaría experimentarlo, en este Benq de 27" bajando la resolución no aprecio que el texto se vea mucho peor.
+Con una resolución QHD hay más espacio que en una Full HD que agradecen los programadores, diseñadores y gente que pasa mucho tiempo delante de una pantalla trabajando en tareas relacionadas con múltiples documentos o aplicaciones. Por ejemplo, con un IDE es posible visualizar el código fuente de dos archivos o visualizar en primer plano el IDE, navegador y terminal al mismo tiempo. Las personas que trabajan con gráficos pueden visualizar imágenes más grandes ya sea en [Photoshop][adobe-photoshop], [GIMP][gimp], [Inkscape][inkscape], [OpenShot][openshot] y herramientas similares.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="benq-pd2700q-screen-5.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Espacio en resolución QHD"
+        image2="benq-pd2700q-screen-6.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Espacio en resolución QHD"
+        image3="benq-pd2700q-screen-7.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Espacio en resolución QHD"
+        caption="Espacio en resolución QHD" >}}
+</div>
+
+En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con resolución retina que supondrá otro salto en la calidad de la imagen. Me va a quedar la duda de si un monitor con resolución UHD de 27 pulgadas bajando la resolución sería una buena opción en cuanto a definición de texto, se suele comentar que no, usar una resolución escalada del panel no es lo mismo que en la resolución nativa pero me gustaría experimentarlo, en este Benq de 27" bajando la resolución no aprecio que el texto se vea mucho peor. En cualquier caso los monitores UHD por el momento tienen un precio mayor, más del doble o al menos unos cientos de euros más según el modelo comparado, y este Benq PD2700Q es de buena calidad acorde a su precio mayor que algunos otros QHD y que muchos Full HD pero de todas formas asequible para alguien que da buen uso.
 
 ### Detección de píxeles muertos o vagos
 
