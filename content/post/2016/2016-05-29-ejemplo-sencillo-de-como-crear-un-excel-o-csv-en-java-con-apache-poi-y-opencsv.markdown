@@ -1,8 +1,10 @@
 ---
 pid: 146
-title: "Ejemplo sencillo de como crear un excel en Java con Apache POI"
-url: "/2016/05/ejemplo-sencillo-de-como-crear-un-excel-en-java-con-apache-poi/"
+title: "Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV"
+url: "/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/"
+aliases: ["/2016/05/ejemplo-sencillo-de-como-crear-un-excel-en-java-con-apache-poi/"]
 date: 2016-05-29T13:00:00+01:00
+updated: 2018-10-26T13:00:00+02:00
 rss: true
 sharing: true
 comments: true
@@ -24,7 +26,7 @@ Para trabajar con archivos _xls_ de Excel debemos usar las clases [HSSFWorkbook]
 
 El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a las cabeceras y una fórmula con el total de los precios de una lista de productos, al final escribe el excel en un archivo. En el archivo de construcción, en este caso de [Gradle][gradle], debemos incluir la dependencia de la librería de Apache POI.
 
-{{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "Main.java" >}}
+{{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "Main-excel.java" >}}
 {{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "build.gradle" >}}
 
 [LibreOffice][libreoffice] tiene la capacidad de abrir documentos excel, en la siguiente imagen se ve el documento abierto con LibreOffice Calc creado en el ejemplo.
@@ -35,7 +37,11 @@ El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a 
         caption="Excel generado con Apache POI abierto con LibreOffice" >}}
 </div>
 
-En la [guía de iniciación a las características de los documentos HSSF y XSSF](http://poi.apache.org/spreadsheet/quick-guide.html) hay ejemplos pequeños sobre varias de las funcionalidades más comunes que necesitaremos al generar documentos.
+Otro formato de datos muy utilizado es el de columnas separadas por comas o CSV. Con la librería [OpenCSV][opencsv] se pueden escribir archivos bien formados en este formato teniendo en cuenta el caracter separador de las columnas y el entrecomillado de los datos.
+
+{{< gist picodotdev f9e91dfa722118ccff134d97273ba64e "Main-csv.java" >}}
+
+En la [guía de iniciación a las características de los documentos HSSF y XSSF](http://poi.apache.org/spreadsheet/quick-guide.html) hay ejemplos pequeños sobre varias de las funcionalidades más comunes que necesitaremos al generar documentos. Otra funcionalidad relacionada con la escritura en el formato de estos tipos de archivos es la lectura que también es posible con estas mismas librerías, [Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java][blogbitix-357].
 
 {{% code git="blog-ejemplos/tree/master/HolaMundoApachePOI/" command="./gradlew run" %}}
 

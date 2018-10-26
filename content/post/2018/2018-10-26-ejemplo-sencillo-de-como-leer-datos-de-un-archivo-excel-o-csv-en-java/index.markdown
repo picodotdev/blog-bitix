@@ -1,0 +1,42 @@
+---
+pid: 357
+title: "Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java"
+url: "/2018/10/ejemplo-sencillo-de-como-leer-datos-de-un-archivo-excel-o-csv-en-java/"
+date: 2018-10-26T10:00:00+02:00
+language: "es"
+rss: true
+sharing: true
+comments: true
+promoted: false
+tags: ["java", "planeta-codigo", "programacion"]
+---
+
+{{% post %}}
+{{< links >}}
+{{< postslinks >}}
+
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+
+Los formatos de archivo de columnas separadas por comas o CSV y los documentos en formato de hojas de cálculo excel del paquete ofimático [Microsoft Office][microsoft-office] son muy utilizados como formato de archivo para intercambiar datos entre aplicaciones o simplemente como contenedores de datos. Para leer los datos en estos formatos de archivos en Java hay que emplear alguna librería que facilite y entienda estos formatos de los archivos. Para leer los archivos CSV está la librería [OpenCSV][opencsv] y para los archivos excel está la librería [Apache POI][apache-poi].
+
+Con Apache POI para acceder al archivo excel hay que usar unas pocas clases de su API como [HSSFWorkbook](https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFWorkbook.html), [HSSFSheet](https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFSheet.html), [HSSFRow](https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFRow.html), [HSSFCell](https://poi.apache.org/apidocs/org/apache/poi/hssf/usermodel/HSSFCell.html) y utilizar el método adecuado según el tipo de datos a obtener.
+
+{{< gist picodotdev d5beebdcaeecaf7a3750bdebb97ea628 "Main-excel.java" >}}
+
+Para el caso de los CSV hay que utilizar la clase [CSVReader](http://opencsv.sourceforge.net/apidocs/com/opencsv/CSVReader.html) que permite iterar sobre las líneas del archivo teniendo en cuenta el caracter separador de las columnas y las comillas de los datos. Para acceder a los valores de cada una de las columnas hay que convertir al tipo de datos deseado ya que siempre se devuelve un _String_.
+
+{{< gist picodotdev d5beebdcaeecaf7a3750bdebb97ea628 "Main-csv.java" >}}
+
+En ambos casos la salida en la consola al leer los datos de los documentos es la misma.
+
+{{< gist picodotdev d5beebdcaeecaf7a3750bdebb97ea628 "System.out" >}}
+
+Las dependencias a incluir en el proyecto son las siguientes.
+
+{{< gist picodotdev d5beebdcaeecaf7a3750bdebb97ea628 "build.gradle" >}}
+
+También se puede [utilizar Apache POI para crear hojas excel y OpenCSV para crear archivos CSV][blogbitix-146] con las columnas correctamente separadas por comas.
+
+{{% code git="blog-ejemplos/tree/master/HolaMundoApachePOI" command="./gradlew run" %}}
+
+{{% /post %}}
