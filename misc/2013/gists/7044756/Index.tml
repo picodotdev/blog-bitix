@@ -1,0 +1,21 @@
+<h4>Solución al CSRF</h4>
+<p>
+	Cuenta: <t:zone t:id="csrfZone" id="csrfZone" elementName="span">${cuenta}</t:zone>
+
+	<div class="row">
+		<div class="col-md-4">
+			<h5>En formulario</h5>
+			<form t:id="csrfForm" t:type="form" t:zone="csrfZone" t:mixins="csrf">
+				<input t:type="submit" value="Sumar 1"/>
+        		</form>
+        	</div>
+       		<div class="col-md-4">
+			<h5>En enlace</h5>
+			<a t:type="eventlink" t:event="sumar1CuentaCsrf" t:zone="csrfZone" t:mixins="csrf">Sumar 1</a>
+		</div>
+        	<div class="col-md-4">
+			<h5>Fallo seguridad</h5>
+			<a t:type="eventlink" t:event="sumar1CuentaCsrf" t:zone="csrfZone" t:parameters="prop:{'t:sid':'dummy-attack'}">Sumar 1</a>
+		</div>
+        </div>
+</p>

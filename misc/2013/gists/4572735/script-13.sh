@@ -1,0 +1,1 @@
+# echo raspberrypi > /etc/hostname

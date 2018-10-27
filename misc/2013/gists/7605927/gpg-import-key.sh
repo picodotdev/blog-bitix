@@ -1,0 +1,1 @@
+$ gpg --import ~/pubkey.gpg

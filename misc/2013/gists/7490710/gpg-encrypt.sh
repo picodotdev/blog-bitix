@@ -1,0 +1,1 @@
+$ gpg --armor -r "[email]" -e secret.zip

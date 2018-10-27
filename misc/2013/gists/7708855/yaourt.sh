@@ -1,0 +1,1 @@
+$ yaourt -S opensc-opendnie ccid pcsc-tools 

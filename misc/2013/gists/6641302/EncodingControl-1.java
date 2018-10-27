@@ -1,0 +1,1 @@
+bundle = new PropertyResourceBundle(new InputStreamReader(stream, encoding));

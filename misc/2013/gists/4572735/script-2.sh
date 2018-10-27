@@ -1,0 +1,1 @@
+$ sudo dd bs=1M if=~/archlinux-hf-2013-02-11.img of=/dev/mmcblk0
