@@ -3,7 +3,7 @@ pid: 356
 title: "Desempaquetado y análisis de monitor Benq PD2700Q"
 url: "/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q/"
 date: 2018-10-23T11:00:00+02:00
-updated: 2018-10-24T14:00:00+02:00
+updated: 2018-10-28T14:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -65,10 +65,11 @@ Los otros candidatos destacables que he visto han sido alguno en formato panorá
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N2Z7OZT&linkId=9560c7d04ae8f76ee1e3cd4a20abe387"></iframe>
 </div>
 
-Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UDH no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tiene una pantalla retina.
+Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820), el [Benq BL2711U](https://amzn.to/2yBnLq7), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UDH no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tiene una pantalla retina.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07GLR6RQF&linkId=c69a55a9bb5bf63725b1bdffaa567444"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RORBPEW&linkId=b0cf487ca59691649f2507aa3837a2cf"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798RDRMH&linkId=3160f5b6618d07e065b1f81192395611"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798QLW64&linkId=2386c7d19354b2df0dbbe4e5cf268ab4"></iframe>
 </div>
@@ -112,14 +113,14 @@ Sus [especificaciones](https://www.benq.eu/es-es/monitor/designer/pd2700q/specif
 
 Con 27 pulgadas y una resolución de 2560x1440 su área de visualización sus PPI son:
 
-* Display size (**27", UHD**): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = **2009.68cm²**) at **108.79 PPI**, **0.2335mm dot pitch**, 11834 PPI²
+* Display size (**27", QHD**): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = **2009.68cm²**) at **108.79 PPI**, **0.2335mm dot pitch**, 11834 PPI²
 
 Comprando con un monitor de 23 pulgadas y una resolución de 1920x1080 y con un monitor de 3840x2160 en 27 pulgadas estos números son:
 
-* Display size (**23", Full HD**): 20.05" × 11.28" = 226.04in² (50.92cm × 28.64cm = **1458.33cm²**) at **95.78 PPI**, **0.2652mm dot pitch**, 9174 PPI²
+* Display size (**23", FHD**): 20.05" × 11.28" = 226.04in² (50.92cm × 28.64cm = **1458.33cm²**) at **95.78 PPI**, **0.2652mm dot pitch**, 9174 PPI²
 * Display size (**27", UHD**): 23.53" × 13.24" = 311.5in² (59.77cm × 33.62cm = **2009.68cm²**) at **163.18 PPI**, **0.1557mm dot pitch**, 26627 PPI²
 
-Hay algo de confusión cuando se menciona 2K en monitores, en realidad el término más apropiado es QHD (quad hd), que es 4 veces la resolución HD (1280x720), dos en alto y dos en ancho. Lo mismo ocurre con los monitores 4K que en realidad la denominación más acertada es UHD (ultra hd) y son tres veces la resolución HD en cada medida, 3840x2160.
+Hay algo de confusión cuando se menciona 2K en monitores, en realidad el término más apropiado es QHD (quad hd), que es 4 veces la resolución HD (1280x720), dos en alto y dos en ancho. Lo mismo ocurre con los monitores 4K que en realidad la denominación más acertada es UHD (ultra hd) y son cuatro veces la resolución FHD, dos en cada medida, 3840x2160.
 
 En YouTube hay unos cuantos vídeos analizando este mismo monitor u otros parecidos que me han servidor para aclarar dudas.
 
@@ -130,6 +131,7 @@ En YouTube hay unos cuantos vídeos analizando este mismo monitor u otros pareci
 * [Quick review BenQ PD2700Q](https://www.youtube.com/watch?v=zrfogYO_yOQ)
 * [8 bit vs 10 bit Color: What's the Difference?](https://www.youtube.com/watch?v=bKjSox0uwnk)
 * [¿Qué son 8-bit, 10-bit, 12-bit en Video? Todo sobre Bit Depth](https://www.youtube.com/watch?v=9ZXwqIrQE_M)
+* [1440p vs 4K (2160p) Monitor -- What To Look Out For!](https://www.youtube.com/watch?v=0C2DnfPTcmE)
 * [1080p vs 1440p Monitor](https://www.youtube.com/watch?v=lZYLHPleZQQ)
 * [BenQ GW2765HT | 2K IPS 27"](https://www.youtube.com/watch?v=Hr_7-pVypSI)
 * [Unboxing monitor BenQ GW2765HT QHD en español](https://www.youtube.com/watch?v=sdr10y_Ea-Q)
@@ -275,6 +277,14 @@ En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con res
 Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla.
 
 * [Imágenes de prueba para detectar píxeles muertos o vagos](https://jasonfarrell.com/misc/deadpixeltest.php)
+
+### Vídeos de prueba
+
+Para probar la calidad del monitor (o televisor) en cuanto a colores o resolución [en YouTube hay varios](https://www.youtube.com/results?search_query=4k+video+test), uno de ellos de ejemplo es este pudiendo seleccionar la calidad desde 720p (HD), 1080p (FHD, 1K), 1440p (QHD, 2K) y 2160p (UHD, 4K). Lógicamente para apreciar las diferencias de calidad con respecto a una resolución más baja hay que tener un monitor o televisor que soporte la resolución más alta. Esto da una idea de como se ve una película, vídeo o imágenes. Las tareas ofimáticas no es lo mismo que ver vídeos, en UHD y usando escalado el texto gracias a su mayor PPI en el mismo tamaño que un QHD se ve más definido y claro. Sin embargo, el escalado aún presenta problemas ya que no todas las aplicaciones está preparadas.
+
+<div class="media media-video" style="text-align: center;">
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ### Soporte VESA
 
