@@ -2,7 +2,7 @@
 pid: 358
 title: "IBM adquiere RedHat, el gigante de Linux y código abierto"
 url: "/2018/10/ibm-adquiere-redhat-el-gigante-de-linux-y-codigo-abierto/"
-date: 2018-10-29T09:00:00+02:00
+date: 2018-10-29T06:00:00+02:00
 language: "es"
 rss: true
 sharing: true
