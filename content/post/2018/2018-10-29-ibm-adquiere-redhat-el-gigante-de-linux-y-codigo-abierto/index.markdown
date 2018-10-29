@@ -67,6 +67,7 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 * [IBM compra Red Hat](https://jvare.com/2018/10/29/ibm-compra-red-hat/)
 * [IBM compra redhat](https://www.meneame.net/story/ibm-compra-redhat-eng)
 * [In a bombshell deal, IBM acquires open-source pioneer Red Hat for $34B](https://siliconangle.com/2018/10/28/bombshell-deal-ibm-acquires-open-source-pioneer-red-hat-34b/)
+* [IBM to Acquire Red Hat: A Java-Oriented First Look](http://marxsoftware.blogspot.com/2018/10/ibm-to-acquire-red-hat-java.html)
 * [IBM buys Linux giant Red Hat to thrive in the cloud](https://www.engadget.com/2018/10/28/ibm-buys-red-hat/)
 * [IBM and Red Hat?](https://www.reddit.com/r/redhat/comments/9s5rqr/ibm_and_red_hat/)
 * [Linux Ads](https://www.youtube.com/watch?v=2_VFKqw1q2Q&list=PL040C33624F3CBAF9)
