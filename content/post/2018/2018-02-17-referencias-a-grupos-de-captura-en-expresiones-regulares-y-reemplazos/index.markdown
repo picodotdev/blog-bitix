@@ -3,6 +3,7 @@ pid: 300
 title: "Referencias a grupos de captura en expresiones regulares y reemplazos"
 url: "/2018/02/referencias-a-grupos-de-captura-en-expresiones-regulares-y-reemplazos/"
 date: 2018-02-17T17:00:00+01:00
+updated: 2018-11-04T00:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -39,7 +40,7 @@ La salida del ejemplo en la terminal es el siguiente.
 
 A los grupos de captura se les puede dar un nombre y referenciarlos por él en vez de por un número identificador como en el de este ejemplo. A un grupo de captura se le da un nombre con la siguiente expresión _(?\<name\>X)_ donde _name_ es el nombre del grupo de captura de la expresión _X_. Posteriormente con la expresión _${name}_ se hace referencia al grupo de captura, también en la cadena de reemplazo.
 
-En la [documentación Javadoc de la clase Pattern](https://docs.oracle.com/javase/9/docs/api/java/util/regex/Pattern.html) está detallado el soporte en Java para usar expresiones regulares.
+En la [documentación Javadoc de la clase Pattern](https://docs.oracle.com/javase/9/docs/api/java/util/regex/Pattern.html) está detallado el soporte en Java para usar expresiones regulares. Otra aplicación práctica de los grupos de captura es [formatear con colores en la terminal una sentencia SQL o código fuente de un lenguaje][blogbitix-359].
 
 {{% code git="blog-ejemplos/tree/master/JavaRegexpReferenceGroups" command="./gradlew run" %}}
 

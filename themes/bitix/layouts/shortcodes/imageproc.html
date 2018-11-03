@@ -63,7 +63,7 @@
 {{ if or $imagescaled1 $imagescaled3 $imagescaled3 $imagevectorial1 $imagevectorial2 $imagevectorial3}}
 <figure>
 {{ if $imagescaled1 }}
-  <img src="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" height="{{ $imagescaled1.Height }}" class="{{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/></a>
+  <img src="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" class="{{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/></a>
 {{ else if $imagevectorial1 }}
   {{ if .Params.logotype1 }}
     {{ $.Scratch.Set "path1" "assets/images/logotipos/" }}
@@ -74,7 +74,7 @@
   <img src="{{ $path1 }}{{ $imagevectorial1 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options1) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options1) 0 }}px;" class="{{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/></a>
 {{ end }}
 {{ if $imagescaled2 }}
-  <img src="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" height="{{ $imagescaled2.Height }}" class="{{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/></a>
+  <img src="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" class="{{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/></a>
 {{ else if $imagevectorial2 }}
   {{ if .Params.logotype2 }}
     {{ $.Scratch.Set "path2" "assets/images/logotipos/" }}
@@ -85,7 +85,7 @@
   <img src="{{ $path2 }}{{ $imagevectorial2 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options2) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options2) 0 }}px;" class="{{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/></a>
 {{ end }}
 {{ if $imagescaled3 }}
-  <img src="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" height="{{ $imagescaled3.Height }}" class="{{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/></a>
+  <img src="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" class="{{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/></a>
 {{ else if $imagevectorial3 }}
   {{ if .Params.logotype3 }}
     {{ $.Scratch.Set "path3" "assets/images/logotipos/" }}
