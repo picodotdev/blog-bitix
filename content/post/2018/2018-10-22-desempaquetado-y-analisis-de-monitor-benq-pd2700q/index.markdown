@@ -3,7 +3,7 @@ pid: 356
 title: "Desempaquetado y análisis de monitor Benq PD2700Q"
 url: "/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q/"
 date: 2018-10-23T11:00:00+02:00
-updated: 2018-10-28T14:00:00+02:00
+updated: 2018-11-10T22:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -65,7 +65,7 @@ Los otros candidatos destacables que he visto han sido alguno en formato panorá
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N2Z7OZT&linkId=9560c7d04ae8f76ee1e3cd4a20abe387"></iframe>
 </div>
 
-Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820), el [Benq BL2711U](https://amzn.to/2yBnLq7), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UDH no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tiene una pantalla retina.
+Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [Benq BL2711U](https://amzn.to/2yBnLq7), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. 
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07GLR6RQF&linkId=c69a55a9bb5bf63725b1bdffaa567444"></iframe>
@@ -74,7 +74,7 @@ Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798QLW64&linkId=2386c7d19354b2df0dbbe4e5cf268ab4"></iframe>
 </div>
 
-En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos con 1K o _full hd_ es ver píxeles como centollos, más es ver las cosas muy pequeñas a máxima resolución para tareas ofimáticas y hay que escalar a una resolución más baja aunque tenga mayor definición. Estos son unos hilos en foros y dos artículos que me han parecido interesantes y que me han resuelto alguna duda o confirmado lo que ya suponía.
+En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos con 1K o _full hd_ es ver píxeles como centollos, más es ver las cosas pequeñas a máxima resolución para tareas ofimáticas y es habitual tener que escalar a una resolución más baja aunque tenga mayor definición aprovechando la mayor densidad de píxeles o DPI. Estos son unos hilos en foros y dos artículos que me han parecido interesantes y que me han resuelto alguna duda o confirmado lo que ya suponía.
 
 * [Monitor de 27 1440p o 24 1080p para ofimática, office y programas de contabilidad](https://foro.elchapuzasinformatico.com/monitores/81918-monitor-de-27-1440p-24-1080p-para-ofimatica-office-programas-de-contabilidad.html)
 * [Monitor 27" - Usos: Programación, Ofimática y un poco de diseño(Illustrator, Photoshop)](https://foro.elchapuzasinformatico.com/monitores/82088-monitor-27-usos-programacion-ofimatica-un-poco-de-diseno-illustrator-photoshop.html)
@@ -274,7 +274,9 @@ En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con res
 
 ### Detección de píxeles muertos o vagos
 
-Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla.
+Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla. También conviene informarse antes de comprar acerca de la garantía que ofrece cada fabricante respecto a los píxeles muertos, algunos toleran y no aceptan la devolución con cierto número de píxles que permanecen encendidos, apagados o algún subpixel estropeado.
+
+* [BenQ LCD Monitor Pixel Policy](https://www.benq.com/en-us/support/downloads-faq/faq/product/application/dead-pixel-policy.html)
 
 * [Imágenes de prueba para detectar píxeles muertos o vagos](https://jasonfarrell.com/misc/deadpixeltest.php)
 
