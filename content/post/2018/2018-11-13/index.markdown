@@ -1,5 +1,5 @@
 ---
-pid: 361
+pid: xxx
 title: "Desempaquetado Intel NUC NUC8i5BEK (Bean Canyon), memoria RAM y SSD Samsung 970 EVO"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-memoria-ram-y-ssd-samsung-970-evo/"
 date: 2018-11-13T20:00:00+01:00
