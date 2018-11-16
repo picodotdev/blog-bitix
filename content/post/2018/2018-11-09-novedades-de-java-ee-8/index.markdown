@@ -58,6 +58,8 @@ Hay un [tutorial de Java EE 8](https://javaee.github.io/tutorial/) y con el [eje
 * [Java EE Tutorial (Content)](https://javaee.github.io/tutorial/toc.html)
 * [Java EE Tutorial: Your First Cup](https://javaee.github.io/firstcup/toc.html)
 * [From Java EE to Jakarta EE](https://www.infoq.com/news/2018/02/from-javaee-to-jakartaee)
+* [An Overview of CDI Events](https://dzone.com/articles/an-overview-of-cdi-events)
+* [Firing CDI events asynchronously](http://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#firing_events_asynchronously)
 {{% /reference %}}
 
 {{% /post %}}
