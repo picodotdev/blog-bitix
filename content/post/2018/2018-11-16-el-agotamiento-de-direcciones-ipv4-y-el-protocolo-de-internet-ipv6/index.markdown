@@ -30,12 +30,12 @@ El problema de agotamiento de direcciones IPv4 no es nuevo y ya desde hace algun
         caption="Panel de un router para hacer NAT" >}}
 </div>
 
-La solución a largo plazo para la escasez de direcciones IP del protocolo IPv4 es usar una nueva versión de protocolo conocida como [IPv6][wikipedia-ipv6]. En IPv6 las direcciones IP son números de 128 bits dando lugar a 2<sup>128</sup>, aproximadamente 3.4×10<sup>38</sup> o 340,282,366,920,938,463,463,374,607,431,768,211,456 combinaciones teóricas posibles, esto son unas 7.9×10<sup>28</sup> veces más direcciones IP posibles que en IPv4. Las direcciones IPv6 se escriben en ocho grupos de cuatro números hexadecimales, pudiéndose hacer una contracción omitiendo grupos de ceros contiguos con _::_. El enorme número de direcciones de IPv6 hace innecesaria el NAT y CG-NAT y los problemas que estos ocasionan. Estas son unas comparaciones:
+La solución a largo plazo para la escasez de direcciones IP del protocolo IPv4 es usar una nueva versión de protocolo conocida como [IPv6][wikipedia-ipv6]. En IPv6 las direcciones IP son números de 128 bits dando lugar a 2<sup>128</sup>, aproximadamente 3.4×10<sup>38</sup> o 340.282.366.920.938.463.463.374.607.431.768.211.456 combinaciones teóricas posibles, esto son unas 7.9×10<sup>28</sup> veces más direcciones IP posibles que en IPv4. Las direcciones IPv6 se escriben en ocho grupos de cuatro números hexadecimales, pudiéndose hacer una contracción omitiendo grupos de ceros contiguos con _::_. El enorme número de direcciones de IPv6 hace innecesaria el NAT y CG-NAT y los problemas que estos ocasionan. Estas son unas comparaciones:
 
 * La tierra tiene 4500 millones de años, si se asignan direcciones IPv6 al ritmo de 1000 millones por segundo desde que se formó la tierra hast ahora se usado una trillonésima parte del espacio de direcciones.
 * Se puede asignar 4 trillones de direcciones por cada uno de los 510 billones de metros cuadrados de la tierra.
 
-> 11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111<br>
+> 11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111 (no es un error de maquetación, son los 128 bits de una dirección IPv6)<br>
 > FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF<br>
 > ::1 (dirección _loopback_)
 
@@ -66,7 +66,7 @@ Para añadir el soporte de IPv6 en un servidor web hay que usar la siguiente dir
 
 En una máquina con [GNU][gnu]/[Linux][linux] se puede ver la dirección IPv6 asignada a cada interfaz de red con el comando <code>ip -6 addr show</code>.
 
-[Amazon soporta en algunas regiones IPv6](https://aws.amazon.com/es/blogs/aws/elastic-load-balancing-ipv6-zone-apex-support-additional-security/) con lo que si usamos este servicio de computación en la nube se puede usar el nuevo protocolo. Otros actores importantes de la nube también lo soportan como [Digital Ocean][digital-ocean] ([1](https://www.digitalocean.com/community/tutorials/how-to-enable-ipv6-for-digitalocean-droplets)) o [Linode][linode] ([2](https://www.linode.com/docs/networking/native-ipv6-networking/)). En las entidades de registro de dominios basta con añadir un registro AAAA a las zonas DNS.
+[Amazon soporta en algunas regiones IPv6](https://docs.aws.amazon.com/es_es/elasticloadbalancing/latest/classic/elb-internet-facing-load-balancers.html) con lo que si usamos este servicio de computación en la nube se puede usar el nuevo protocolo. Otros actores importantes de la nube también lo soportan como [Digital Ocean][digital-ocean] ([1](https://www.digitalocean.com/community/tutorials/how-to-enable-ipv6-for-digitalocean-droplets)) o [Linode][linode] ([2](https://www.linode.com/docs/networking/native-ipv6-networking/)). En las entidades de registro de dominios basta con añadir un registro AAAA a las zonas DNS.
 
 Los siguientes dos artículos son interesantes, hablan de la evolución de las direcciones de internet y del agotamiento de direcciones, el estado de despliegue y por qué aún no se ha adoptado de forma masiva:
 
