@@ -65,7 +65,7 @@ En la página de [preguntas frecuentes](https://www.flatpak.org/faq/) está el c
 
 Flatpak está más apoyada por [Red Hat][redhat], [Canonical][canonical] tiene su tecnología similar con [snaps][snaps]. Ha ocurrido igual en anteriores casos con [systemd][systemd] y [Upstart][upstart] o [Wayland][wayland] y [Mir][mir] donde las tecnologías más apoyadas por Red Hat han sido las que mayor éxito han tenido y han prevalecido. Si nada cambia en [Red Hat al ser adquirida por parte de IBM][blogbitix-358] puede que se produzca el mismo resultado no tanto por que las tecnologías de Red Hat sean mejores sino porque tiene más peso en la comunidad que Canonical. Por el momento la [adopción para snap contra la de Flatpak](https://kamikazow.wordpress.com/2018/06/08/adoption-of-flatpak-vs-snap-2018-edition/) no produce buenos augurios para la primera donde solo en Ubuntu es buena como no podría ser de otra forma.
 
-Si usas Arch Linux e instalas el entorno de escritorio GNOME con los paquetes gnome y gnome-extra ya tendrás instalado Flatpak ya que se instala como dependencia. Se puede instalar directamente con el gestor de paquetes _pacman_ con cualquiera de estos comandos:
+Si usas Arch Linux e instalas el entorno de escritorio GNOME con los paquetes _gnome_ y _gnome-extra_ ya tendrás instalado Flatpak ya que se instala como dependencia. Se puede instalar directamente con el gestor de paquetes _pacman_ con el siguiente comando:
 
 {{< gist picodotdev 1704d74a3332c024526ee2f4727e1b2e "install.sh" >}}
 
