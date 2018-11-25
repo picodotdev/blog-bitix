@@ -25,7 +25,13 @@ Llevaba unos cuantos meses buscando entre las muchas opciones que hay un nuevo o
 
 Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es darle el que tengo yo y yo comprar uno nuevo, de esta forma al ordenador que entrego le doy una segunda vida para la que es perfectamente útil, así ha sido con los tres ordenadores que he comprado hasta el momento desde el 2002. Mis usos son mucho más exigentes, principalmente los equipos se me han quedado pequeños por la cantidad de memoria RAM. El primer ordenador que compré en el 2004 fue un ordenador de escritorio en formato torre tradicional ATX con un [AMD Athlon][amd-athlon] 1800+ (32 bits), 512 MiB de memoria, 60 GB de disco duro y tarjeta gráfica [NVIDIA GeForce2][nvidia-geforce2] MX 400 creo que con 32 MiB. Viendo que al finalizar su vida útil era algo complicado donar un ordenador ATX por tema de espacio el siguiente equipo que compré en el 2008 fue un portátil Dell XPS 1530 con un [Intel Core 2 Duo 8100T](https://ark.intel.com/es-es/products/33916/Intel-Core2-Duo-Processor-T8100-3M-Cache-2_10-GHz-800-MHz-FSB), 4 GiB de memoria, 320 GB de disco duro y gráfica [NVIDIA 8600GT](https://www.nvidia.es/object/geforce_8600_es.html) con 512 MiB, al poco tiempo de donarlo se estropeó, se quedó completamente muerto sin llegar a hacer ningún atisbo de encenderse, desde entonces no quiero nada que venga de Dell incluidos monitores tampoco me convenció pasado el tiempo de deslumbramiento inicial de su posesión la calidad de esta marca. El tercer equipo que compré a finales del 2012 también fue un portátil con la misma intención de poder donarlo llegado el momento, un Sony VAIO de 14" de resolución 1600x900 en panel TN con un [Intel Core i5 3210M](https://ark.intel.com/es-es/products/67355/Intel-Core-i5-3210M-Processor-3M-Cache-up-to-3_10-GHz-rPGA) (Ivy Bridge, con un [gráfica integrada HD4000](https://en.wikipedia.org/wiki/Intel_Graphics_Technology#Ivy_Bridge)), 8 GB de memoria con la que poder virtualizar más a gusto y un SSD Samsung 840 EVO de 250 GB SATA III (550 MB/s lectura, 500 MB/s escritura) que le puse a posteriori con el que el aumento de rendmiento en acceso a almacenamiento persistente fue una gran mejora respecto a los discos duros, mejor inversión que mejor procesador y más cantidad de memoria. Una pena que Sony haya abandonado el mercado de los portátiles porque con este Sony he estado realmente contento aún con algunos acabados en plástico y su pantalla TN.
 
-> Foto micro y memoria, Procesador Intel Core 2 Duo 8100T y 4 GiB de memoria DDR2 que aún conservo
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="componentes.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="4 GiB DDR2 de memoria RAM, AMD Athlon y Intel Core 2 Duo (T8100)"
+        image2="amd-athlon.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Microprocesador AMD Athlon"
+        image3="intel-core-2-duo.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Microprocesador Intel Core 2 Duo (T8100)"
+        caption="4 GiB DDR2 de memoria RAM, AMD Athlon y Intel Core 2 Duo (T8100)" >}}
+</div>
 
 Empezaba por decidirme que formato de ordenador quería con [Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo][blogbitix-309] y pasado un tiempo ya casi optado por la opción que quería, [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329] pasando por un [análisis del Slimbook Curve][blogbitix-311] que hice. Para el nuevo ordenador pesonal en cualquier opción que eligiese quería monitor externo, al final elegí un [Benq PD2700Q con resolución QHD (2560x1440) e IPS](https://amzn.to/2OFdFi9). Descarté un ATX por tamaño e igualmente un ITX que aún siendo un formato más pequeño seguía siendo grande para mi, a pesar de que con esta opción podría elegir un [AMD Ryzen][amd-ryzen] con mayor cantidad de núcleos. Portátil seguía siendo una opción válida para poder donarlo en un futuro pero ocupa cierto espacio en la mesa y no tengo intención de moverlo por lo que la función que le da nombre no me es necesaria, si eligiese uno sería un [Slimbook Pro2](https://slimbook.es/en/pro-ultrabook-13-aluminium) seguramente. Como opción me quede con algún ordenador en formato Intel NUC, en un futuro cuando ya se me quede no válido para mis usos principales lo utilizaré como ordenador servidor de archivos, de descargas u otros usos personales que pueda darle como [OwnCloud][owncloud] o [GitLab][gitlab], como ocupa poco el espacio no será un problema.
 
@@ -191,40 +197,44 @@ Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/e
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="mac-mini-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Mac mini (2018)"
-        image2="mac-mini-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Mac mini (2018)"
-        image3="mac-mini-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Mac mini (2018)"
+        image1="mac-mini-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Mac mini (2018)"
+        image2="mac-mini-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Mac mini (2018)"
+        image3="mac-mini-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Mac mini (2018)"
         caption="Mac mini (2018)" >}}
 </div>
 
 En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese el mismo precio del NUC ya que prefiero GNU/Linux como detallo en [Tú con tu Mac, yo con mi GNU/Linux][blogbitix-305].
 
-<table cellspacing="10">
-    <tr>
-        <th>Componente</td>
-        <th>Apple Mac mini</td>
-        <th>Intel NUC Bean Canyon</td>
-    </tr>
-    <tr>
-        <td>Ordenador</td>
-        <td style="text-align: right;">900€</td>
-        <td style="text-align: right;">300€ (i3), 400€ (i5), 500€ (i7)</td>
-    </tr>
-    <tr>
-        <td>Memoria 32 GiB</td>
-        <td style="text-align: right;">+720€</td>
-        <td style="text-align: right;">+300€</td>
-    </tr>
-    <tr>
-        <td>SSD 500GB</td>
-        <td style="text-align: right;">+480€</td>
-        <td style="text-align: right;">+120€</td>
-    </tr>
-    <tr>
-        <td>Total</td>
-        <td style="text-align: right;">2100€</td>
-        <td style="text-align: right;">820€ (i5)</td>
-    </tr>
+<table class="table">
+    <thead class="thead-light">
+        <tr class="thead-light">
+            <th>Componente</td>
+            <th>Apple Mac mini</td>
+            <th>Intel NUC Bean Canyon</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Ordenador</td>
+            <td style="text-align: right;">900€</td>
+            <td style="text-align: right;">300€ (i3), 400€ (i5), 500€ (i7)</td>
+        </tr>
+        <tr>
+            <td>Memoria 32 GiB</td>
+            <td style="text-align: right;">+720€</td>
+            <td style="text-align: right;">+300€</td>
+        </tr>
+        <tr>
+            <td>SSD 500GB</td>
+            <td style="text-align: right;">+480€</td>
+            <td style="text-align: right;">+120€</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td style="text-align: right;">2100€</td>
+            <td style="text-align: right;">820€ (i5)</td>
+        </tr>
+    </tbody>
 </table>
 
 ### Slimbook One
@@ -233,9 +243,9 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="slimbook-one-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Slimbook ONE (v2)"
-        image2="slimbook-one-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook ONE (v2)"
-        image3="slimbook-one-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Slimbook ONE (v2)"
+        image1="slimbook-one-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Slimbook ONE (v2)"
+        image2="slimbook-one-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
+        image3="slimbook-one-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
         caption="Slimbook ONE (v2)" >}}
 </div>
 
