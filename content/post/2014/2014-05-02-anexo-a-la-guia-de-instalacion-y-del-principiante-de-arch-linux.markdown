@@ -9,7 +9,7 @@ sharing: true
 comments: true
 tags: ["blog-stack", "gnu-linux", "planeta-linux", "planeta-codigo", "software", "software-libre"]
 summary: "Arch Linux es una distribución que deja al usuario decidir en gran medida los componentes que quiere usar. Desde el sistema de arranque, el entorno de escritorio hasta los programas. Para ello no proporciona un instalador ni en modo texto ni con interfaz gráfica que guíe al usuario en diferentes pasos en la instalación de la distribución, en vez de eso proporciona una guía con la información relevante que el usuario necesita conocer para el mismo mediante comandos instale y configure el sistema con los componentes que desee. Este anexo complementa y reune los comandos que sigo para instalar Arch Linux desde la imagen de instalación hasta el entorno de escritorio GNOME."
-note: "<strong>Nota</strong>: Si quieres [instalar Arch Linux de forma desatendida, automatizada y personalizable](https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/) te recomiendo usar un _script_ en bash que he desarrollado. La instalación que realiza el _script_ no es distinta de la que harías tu introduciendo los comandos uno detrás de otro pero si mucho más fácil, rápida y probada."
+note: "<strong>Nota</strong>: Si quieres [instalar Arch Linux de forma desatendida, automatizada y personalizable](https://picodotdev.github.io/blog-bitix/2017/01/script-de-instalacion-de-arch-linux-desatendido-automatizado-y-personalizable/) te recomiendo usar un _script_ en bash que he desarrollado. La instalación que realiza el _script_ no es distinta de la que harías tu introduciendo los comandos uno detrás de otro pero si mucho más fácil, rápida y probada."
 ---
 
 {{% post %}}
@@ -174,7 +174,7 @@ Posteriormente instalo rEFInd:
 
 {{< gist picodotdev 00b3b985453f75696831 "script-22.sh" >}}
 
-Edito el archivo /boot/efi/EFI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:
+Edito el archivo /boot/FI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:
 
 {{< gist picodotdev 00b3b985453f75696831 "script-23.txt" >}}
 

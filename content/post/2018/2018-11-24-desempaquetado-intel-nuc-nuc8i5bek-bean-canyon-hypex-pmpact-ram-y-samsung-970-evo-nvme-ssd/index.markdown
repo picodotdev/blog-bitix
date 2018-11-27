@@ -270,7 +270,6 @@ Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con
 
 He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto pruebe el [_script_ para instalar Arch Linux de forma automatizada, desatendida y personalizable][blogbitix-204] muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine y PlayOnLinux además de Steam y GOG en algún momento más tarde.
 
-
 [Imágenes antes y después, desde arriba, desde el mismo plano lateral]
 [Foto GNOME]
 
