@@ -3,6 +3,7 @@ pid: 363
 title: "Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/"
 date: 2018-11-30T17:00:00+01:00
+updated: 2018-12-01T00:45:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -417,6 +418,7 @@ Y el que tengo ahora.
 * [Intel NUC8i5BEK/NUC8i5BEH Brief](https://www.intel.es/content/www/es/es/products/docs/boards-kits/nuc/nuc8i5bek-nuc8i5beh-brief.html)
 * [Intel® NUC Kit NUC8i5BEK Compatibility Tool](http://compatibleproducts.intel.com/ProductDetails/ExportPeripheralInfo?moduleName=Intel%C2%AE%20NUC&productType=Kits&productName=Intel%C2%AE%20NUC%20Kit%20NUC8i5BEK)
 * [Intel® NUC Products NUC8i3BE/NUC8i5BE/NUC8i7BE Technical Product Specification ](ttps://www.intel.com/content/dam/support/us/en/documents/mini-pcs/NUC8i3BE_NUC8i5BE_NUC8i7BE_TechProdSpec.pdf)
+* [Intel® NUC Support Community](https://communities.intel.com/community/tech/nuc)
 {{% /reference %}}
 
 {{% /post %}}
