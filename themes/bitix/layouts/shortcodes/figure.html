@@ -9,6 +9,8 @@
   {{ if .Params.image3 }}
   <a href="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.image3 }}" title="{{ .Params.title3 }}" data-gallery><img src="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.thumb3 }}"{{ if .Params.width3 }} width="{{ .Params.width3 }}"{{ end }}/></a>
   {{ end }}
-  <figcaption>{{ .Params.caption }}</figcaption>
+  {{ if .Params.caption }}
+    <figcaption>{{ .Params.caption }}{{ if .Params.source }}. {{ i18n "source" }}: {{ .Params.source }}{{ end }}</figcaption>
+  {{ end }}
 </figure>
 {{ end }}

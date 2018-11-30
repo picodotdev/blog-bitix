@@ -2,7 +2,7 @@
 pid: 363
 title: "Desempaquetado Intel NUC8i5BEK (Bean Canyon), HypexX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hypex-pmpact-ram-y-samsung-970-evo-nvme-ssd/"
-date: 2018-11-24T23:00:00+01:00
+date: 2018-11-30T17:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -43,7 +43,7 @@ Empezaba por decidirme que formato de ordenador quería con [Intentando elegir p
 
 Es una pena que AMD no ofrezca equipos en formato de Intel NUC, muy posiblemente lo hubiese elegido principalmente por [los graves fallos de seguridad Meltdown y Spectre][blogbitix-293] que se hicieron públicos a inicios del 2018 conocidos que afectan más a Intel y que por ser un fallo del hardware solo se pueden no arreglar simplemente mitigar haciendo que sea más difícil explotarlos y con pérdida de rendimiento. Para que en el cambio del equipo fuese una mejora significativa respecto al anterior portátil Sony que tenía quería que tuviese algún núcleo más en esta guerra entre Intel y AMD por ver quien ofrece más núcleos que parece por ahora va ganando AMD con su nueva arquitectura Zen y los problemas que está teniendo Intel para bajar de los 14 nanométros de litografía para el tamaño de los transistores.
 
-Además, tengo intención de intentar jugar algún juego como [Diablo 3][blizzard-diablo3] en GNU/Linux instalando la aplicación [Battle.net][blizzard-battlenet] de [Blizzard][blizzard] ejecutándola con [Wine][wine] y [PlayOnLinux][playonlinux], al menos en una máquina virtual con [VirtualBox][virtualbox] lo conseguí a pesar de que no llegé a jugar pero si a instalar el juego. También intentaré instalar algún juego de [Steam][steam] y de [GOG][gog] sobre los que si lo consigo ublicaré sus respectivos artículos para explicarlo. Al Diablo es casi seguro que jugaré si me funciona en GNU/Linux el resto es más intención de querer tener tiempo para jugar a estos juegos que lo vaya a hacer. Las gráficas integradas de Intel son muy básicas y no está destinadas principalmente a juegos, al menos no triple AAA nuevos, pero son suficientes para un jugador ocasional como yo que tampoco le importa bajar la resolución y detalles gráficos para tener unos FPS razonables para jugar o se conforma con juegos con unos años. Juegos de rol o estrategia principalmente como se aprecia.
+Además, tengo intención de intentar jugar algún juego como [Diablo 3][blizzard-diablo3] en GNU/Linux instalando la aplicación [Battle.net][blizzard-battlenet] de [Blizzard][blizzard] ejecutándola con [Wine][wine], [PlayOnLinux][playonlinux]/[Phoenicis][phoenicis] o [Winepak], al menos en una máquina virtual con [VirtualBox][virtualbox] lo conseguí a pesar de que no llegé a jugar pero si a instalar el juego. También intentaré instalar algún juego de [Steam][steam] y de [GOG][gog] sobre los que si lo consigo publicaré sus respectivos artículos para explicarlo. Al Diablo es casi seguro que jugaré si me funciona en GNU/Linux el resto es más intención de querer tener tiempo para jugar a estos juegos que lo vaya a hacer. Las gráficas integradas de Intel son muy básicas y no está destinadas principalmente a juegos, al menos no triple AAA nuevos, pero son suficientes para un jugador ocasional como yo que tampoco le importa bajar la resolución y detalles gráficos para tener unos FPS razonables para jugar o se conforma con juegos con unos años. Juegos de rol o estrategia principalmente como se aprecia.
 
 * [Diablo 3][blizzard-diablo3]
 * [DirtRally](https://store.steampowered.com/app/310560/DiRT_Rally/)
@@ -62,11 +62,7 @@ Hay varios modelos de Bean Canyon variando el procesador que incorporan, ligeram
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="intel-nuc-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC Bean Canyon (slim)"
-        image2="intel-nuc-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Intel NUC Bean Canyon (slim)" >}}
-    {{< figureproc
-        image1="intel-nuc-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC Bean Canyon (tall)"
-        image2="intel-nuc-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Intel NUC Bean Canyon"
+        image1="intel-nuc8i5-brief.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Intel NUC Bean Canyon (tall)"
         caption="Intel NUC Bean Canyon (slim y tall)" >}}
 </div>
 
@@ -94,7 +90,7 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07J6T8PH6&linkId=866537dd626ab63935971b2c0b3fa830"></iframe>
 </div>
 
-Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB que tenía pensado ponerle además de posiblemente una micro SDXC de 128 GB creo que tendré suficiente espacio, con el disco de 250 GB del portatil Sony no llegaba a los 100GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se abrán abaratado mucho o aumentado su capacidad si continuan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora. El precio en el momento de salida es de unos 400€ no es muy superior respecto a los que costaría un equipo ITX tinedo en cuenta que en estos hay que comprar placa base, fuente de alimentación y caja con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400€, el Ryzen tiene mejor gráfica integrada que la Intel pero el cojunto ocupa sensiblemente muhco más espacio.
+Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB, si necesitase más podría ponerle además una micro SDXC de 128 GB o 256 GB con las que tendré suficiente espacio, con el disco de 250 GB del portatil Sony no llegaba a los 100GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se abrán abaratado mucho o aumentado su capacidad si continuan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora. El precio en el momento de salida es de unos 400€ no es muy superior respecto a los que costaría un equipo ITX tinedo en cuenta que en estos hay que comprar placa base, fuente de alimentación y caja con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400€, el Ryzen tiene mejor gráfica integrada que la Intel pero el cojunto ocupa sensiblemente muhco más espacio.
 
 He esperado todos estos meses hasta ahora que han aparecido a la venta en [Amazon][amazon]. Varios meses antes se han publicado varios artículos analizando en buen detalle estos modelos de NUC asi como antes la [nota de prensa con la presentación oficial de Intel](https://newsroom.intel.com/news/intel-introduces-new-nuc-kits-nuc-mini-pcs-intel-nuc-family/) en el momento de su inicio de comercialización. En mi experiencia con este caso desde que aparecen las primeras noticias en los medios hasta que se empieza a comercializar y más tarde hasta que aparece en las tiendas y llega a tiendas como Amazon y PC Componentes, puede pasar perfectamente más de medio año o un año.
 
@@ -114,7 +110,7 @@ También se puede ver una comparativa del rendimiento entre los modelos de proce
 
 * [NUC7i5BNK vs NUC8i5BEK](https://browser.geekbench.com/v4/cpu/compare/10847596?baseline=10972155)
 
-### Memoria
+### Memoria HyperX Impact
 
 Como desarrollador suelo virtualizar sistemas operativos con [VirtualBox][virtualbox] o iniciar contenedores de [Docker][docker] que demandan en buena medida cantidad de memoria. Todos los equipos principalmente se me quedan pequeños por la cantidad de memoria mucho más incluso que por potencia de procesador o por la velocidad o tamaño del almacenamiento ya habiendo pasado a los SSD, incluso los 8 GiB del portátil Sony se me quedaron pequeños. La memoria DDR4 está muy cara, más incluso que en el momento de su salida (casi el doble) lo que es una anomalía en la tecnología que siempre baja de precio por la presión de los avances, los fabricantes deben estar teniendo unos márgenes de beneficios brutales con la memoria DDR4. Han preferido producir memoria NAND y RAM para teléfonos móviles que memoria RAM para ordenadores. En el 2019 está previsto que baje de precio entre un 10% y 20% por menor demanda.
 
@@ -150,10 +146,11 @@ Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SF8KMG&linkId=30e60238410c4c1f9584f13e067e8cca"></iframe>
 </div>
 
-Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](https://amzn.to/2BvlCy5) como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como caperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
+Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](https://amzn.to/2BHXPeA) o [de 256 GB](https://amzn.to/2Qq04vm) como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como caperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
 
 <div class="media-amazon" style="text-align: center;">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFHQGB9&linkId=fc5906048c0664c183918509fd53f752"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFHQGB9&linkId=69626bf45c9c279219546f122fd33a06"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFS5657&linkId=186319e6ae3e35777b9412d236a46297"></iframe>
 </div>
 
 * [Samsung 970 EVO NVMe M.2 500GB SSD](https://www.samsung.com/es/memory-storage/ssd-970-evo/MZ-V7E500BW/)
@@ -165,14 +162,28 @@ Con estos componentes he realizado el pedido en [Amazon][amazon] ya que es la ti
 
 #### NUC
 
-La caja del NUC es muy pequeña en la que se inlyue el NUC y la fuente de alimentación.
+La caja del NUC es muy pequeña en la que se inluye el NUC y la fuente de alimentación que es mucho más pequeña que el ladrillo de los Hades Canyon.
 
-[Fotos NUC]
-> Caja, exterior, interior
+[Fotos caja]
+[Fotos exterior]
+[Fotos manuales]
+
+En el interior se aprecia el conector SATA aunque para usarlo en la versión _slim_ hay que dejar la tapa inferior sin poder para poder añadir el disco 2.5" y los cables que necesita. La parte interior de la tapa inferior tiene una tira de un material que hace de disipador para el SSD NVMe.
+
+[Foto interior sin componentes puestos]
+
+El ventilador es más grande que en generaciones anteriores.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="nucblog-nuc8i3beh-fan.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Ventilador"
+        image2="nucblog-nuc8i3beh-heatsink.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Disipador"
+        caption="Ventilador y disipador" source="nucblog.net" >}}
+</div>
 
 #### Memoria
 
-El _kit_ de la memoria no tiene nada especial. Cada módulo está empquetado en un _blister_ de plástico.
+El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo está empaquetado en un _blister_ de plástico.
 
 [Fotos memoria]
 
@@ -184,16 +195,46 @@ El _stick_ del SSD también es muy pequeño.
 
 ### Montaje de memoria y SSD
 
-Montar la memoria y el SSD en el NUC es sencillo. Para acceder al interior del NUC hay que quitar los cuatro tornillos de la tapa inferior que da acceso a los _slots_ de memoria y el conector M.2. La memoria se coloca en el _slot_ con cierta inclinación unos 30 grados y posteriormente se empuja hacia abajo con la precaución antes de tocar el módulo desconectar el NUC de la fuente de alimentación y descargar la electricidad estática tocando algo de metal que esté conectado a tierra, no es necesario hacer mucha fuerza ni hace falta forzarlo, como los _slots_ están uno encima del otro primero se coloca el módulo que queda abajo.
+Montar la memoria y el SSD en el NUC es sencillo. Para acceder al interior del NUC hay que quitar los cuatro tornillos de la tapa inferior que da acceso a los _slots_ de memoria y el conector M.2, estos tornillos tienen unos topes de modo que no se puede quitarlos completamente tampoco se perderán.
+
+La memoria se coloca en el _slot_ con cierta inclinación unos 30 grados y posteriormente se empuja hacia abajo con la precaución antes de tocar el módulo desconectar el NUC de la fuente de alimentación y descargar la electricidad estática tocando algo de metal que esté conectado a tierra, no es necesario hacer mucha fuerza ni hace falta forzarlo, como los _slots_ están uno encima del otro primero se coloca el módulo que queda abajo. Aunque no es necesario haer mucha fuerza me ha dado la sensación de que hay que hacer más de la que debería ser necesaria.
 
 [Imágenes desatornillado de la tapa]
 [Imagenes colocación memoria]
 
-El SSD se coloca de forma similar, con cierta inclinación al presentar el SSD en el contector, empujando sin hacer mucha fuerza hacia abajo y con un tornillo que queda al final del _stick_ queda colocado en su posición final para que no se mueva.
+El SSD se coloca de forma similar, con cierta inclinación al presentar el SSD en el contector y empujando hacia los lados alternativmente hasta que quede bien insertado en el conector sin hacer mucha fuerza, finalmente se empuja hacia abajo y con un tornillo situado al final del _stick_ fijado en su posición final para que no se mueva.
 
 [Imágenes colocación SSD]
 
-Una vez colocados ambos elementos se vuelve a colocar la tapa inferior que hace de base en el NUC y ya está listo para el primer encendido para instalarle el sistema operativo o entrar en la BIOS con las teclas ¿¿¿F2, F7 y F10???.
+Una vez colocados ambos elementos se vuelve a colocar la tapa inferior que hace de base en el NUC y ya está listo para el primer encendido para instalarle el sistema operativo o entrar en la BIOS con las tecla F2, F10 para seleccionar la unidad de inicio y F7 para realizar una actualización del firmware y BIOS.
+
+### Análisis
+
+El NUC es realmente pequeño con sus 11x11cm ocupa muy poco espacio, además la versión _slim_ solo tiene 3.6cm de altura. Para instalar el sistema operativo, en mi caso la distribución Arch Linux de GNU/Linux he tenido que deshabilitar el _Secure Boot_ desde la BIOS a la que se accede pulsando la tecla F2 en el momento que se inicia el sistema, con la tecla F10 se puede elegir la unidad de inicio que será una memoria USB formateada con el medio de instalación, la tecla F7 sirve para instalar actualizaciones del firmware y BIOS cuando Intel los publica, el nuevo firmware se ha de guardar en una memoria USB formateada en FAT32. La BIOS es gráfica y se puede manejar con ratón con opciones para XXXXXX. Por el contrario la selección de unidad de inicio y actualización del firmware son basadas en texto.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="nucblog-nuc8i5_bios1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image2="nucblog-nuc8i5_bios2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+        image3="nucblog-nuc8i5_bios3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
+    {{< figureproc
+        image1="nucblog-nuc8i5_bios4.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image2="nucblog-nuc8i5_bios5.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+        image3="nucblog-nuc8i5_bios6.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
+    {{< figureproc
+        image1="nucblog-nuc8i5_bios7.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image2="nucblog-nuc8i5_bios8.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+        image3="nucblog-nuc8i5_bios9.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS"
+        caption="BIOS" source="nucblog.net" >}}
+</div>
+
+Usando el [_script_ para instalar Arch Linux de forma automatizada, desatendida y personalizable][blogbitix-204] conseguí instalarlo a la primera sin nada grave que no halla podido resolver. En GNU/Linux todo el hardware ha sido reconocido correctamente sin necesidad de instalar controladores adicionales. Desde la WIFI, Bluethoot, Thunderbolt, el SSD NVMe, puertos USB, tarjeta gráfica, salida HDMI y por supuesto los 32GiB de memoria. El monitor Benq con su resolución QHD también ha sido reconocido correctamente también en la instalación. Aún tengo que probarlo más pero tengo la sensación de que el texto está mejor definido en GNOME que en macOS.
+
+Comparado con el anterior portátil Sony que tenía el rendimiento se nota algo mejor por el SSD NVMe con el que las aplicaciones se inician más rápido, la memoria DDR4 más veloz y mejor CPU además de ser con 4 núcleos. Aunque el disco es NVMe y ofrece más ancho de banda que SATA y es más rápido se nota algo pero la diferencia no es tan apreciable como pasar de disco mecánico a SSD. En tareas ofimáticas y de navegación el ventilador se enciende a ratos y estando en silencio se oye ligeramente pero no es molesto.
+
+Me está entrando dudas de si mejor hubiese optado por la versión BEH (_tall_) con bahía para disco SATA de 2.5" en vez de usar una tarjeta SDXC para tener más espacio, un SSD y una SDXC tienen práticamente el mismo precio pero el disco SATA es más rápido, aunque es posible que en un futuro los SATA vayan desapareciendo por su limitación de transferencia.
+
+Aún tengo que probarlo más pero estos NUCs se ajusta perfectamente a lo que finalmente estaba buscando en un futuro espero que AMD desarrolle un producto similar. Para treas ofimáticas y de navegación por internet es más que suficiente, los ordenadores ATX e ITX quedan para los que quieren un rendmiento máximo o quieren jugar a las últimas novedades en juegos con grandes detalles y a altas resoluciones.
 
 ### Apple Mac mini
 
@@ -268,11 +309,20 @@ Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=15cb29717d9441d0d13f0720d9731a0d"></iframe>
 </div>
 
-He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto pruebe el [_script_ para instalar Arch Linux de forma automatizada, desatendida y personalizable][blogbitix-204] muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine y PlayOnLinux además de Steam y GOG en algún momento más tarde.
+He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto lo pruebe más a fondo muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine, PlayOnLinux/Phoenicis, Winepak además de Steam y GOG en algún momento más tarde.
 
 [Imágenes antes y después, desde arriba, desde el mismo plano lateral]
 [Foto GNOME]
 
 > Software. Hardware. Complete.
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Intel Download Center](https://downloadcenter.intel.com/)
+* [Intel Download Center - Intel NUC](https://downloadcenter.intel.com/product/98414/Mini-PCs)
+* [Intel NUC8i5BEK/NUC8i5BEH Brief](https://www.intel.es/content/www/es/es/products/docs/boards-kits/nuc/nuc8i5bek-nuc8i5beh-brief.html)
+* [Intel® NUC Kit NUC8i5BEK Compatibility Tool](http://compatibleproducts.intel.com/ProductDetails/ExportPeripheralInfo?moduleName=Intel%C2%AE%20NUC&productType=Kits&productName=Intel%C2%AE%20NUC%20Kit%20NUC8i5BEK)
+{{% /reference %}}
 
 {{% /post %}}

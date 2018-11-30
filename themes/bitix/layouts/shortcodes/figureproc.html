@@ -95,7 +95,7 @@
 
 {{ if or $imagescaled1 $imagescaled3 $imagescaled3 }}
 <figure>
-  {{ if $imagescaled1 }}  
+  {{ if $imagescaled1 }}
   <a href="{{ $imagescaled1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery><img src="{{ $imagescaledthumb1.RelPermalink }}" width="{{ $imagescaledthumb1.Width }}"/></a>
   {{ end }}
   {{ if $imagescaled2 }}
@@ -104,6 +104,8 @@
   {{ if $imagescaled3 }}
   <a href="{{ $imagescaled3.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagescaledthumb3.RelPermalink }}" width="{{ $imagescaledthumb3.Width }}"/></a>
   {{ end }}
-  <figcaption>{{ .Params.caption }}</figcaption>
+  {{ if .Params.caption }}
+    <figcaption>{{ .Params.caption }}{{ if .Params.source }}. {{ i18n "source" }}: {{ .Params.source }}{{ end }}</figcaption>
+  {{ end }}
 </figure>
 {{ end }}
