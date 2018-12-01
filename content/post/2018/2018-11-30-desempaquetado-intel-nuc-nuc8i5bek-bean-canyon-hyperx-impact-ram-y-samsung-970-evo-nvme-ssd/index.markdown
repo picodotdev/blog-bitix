@@ -3,7 +3,7 @@ pid: 363
 title: "Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/"
 date: 2018-11-30T17:00:00+01:00
-updated: 2018-12-01T00:45:00+01:00
+updated: 2018-12-01T20:20:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -313,6 +313,8 @@ Aún tengo que probarlo más pero estos NUCs se ajusta perfectamente a lo que fi
 
 Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/es/mac-mini/). Después de unos años Apple los ha renovado como unos procesadores más recientes, más cantidad de memoria y SSD instalable. Pero a unos precios muy exagerados, tanto que el Mac mini con una configuración similar a la de este artículo del NUC saldría por 2100€, bastante más del doble. Salvo que uno quiera macOS sí o sí y uno esté muy obcecado en querer Apple no es una opción en mi opinión acertada. Paro bueno esto pasa con cualquier producto de Apple no solo es específico de Mac mini aunque como se aprecia es un ejemplo claro y sangrante al compararlo. Por si fuera poco el procesador no soporta HyperThreading o SMT con lo que son 4 núcleos y 4 hilos y la gráfica es una UHD 630 la mitad de potente que la Iris Graphics 655.
 
+Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el NUC me he dado cuenta de dos cosas. Una que al usar el monitor externo Benq PD2700Q con resolución QHD me da la sensación de que el texto se ve mejor al usarlo con el NUC que con el Mac, esto puede ser una sensación pero la segunda cosa de la que me he dado cuenta que no admite interpretación es que cuando se saca el audio junto con el vídeo por el cable HDMI al monitor y de este el audio se conecta a unos altavoces por el jack 3.5mm en macOS el contol de volumen de audio queda desactivado de modo que si no tienes unos altavoces con control de volumen propio es muy incómodo usar los botones del monitor para regularlo, en GNOME se puede controlar el volumen desde el entorno de escritorio que en una configuración ordenador conectado a un monitor externo es lo que un usuario espera y lo más cómodo.
+
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="mac-mini-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Mac mini (2018)"
@@ -390,7 +392,7 @@ He tenido que esperar muchos meses a tener esta configuración, entre elegir que
         caption="Intel NUC8i5BEK con Arch Linux y GNOME" >}}
 </div>
 
-Este es el escritorio que tenía antes, con mucho espacio deshaprovechado por la ubicación del portátil. 
+Este es [el escritorio que tenía antes][blogbitix-201], con mucho espacio deshaprovechado por la ubicación del portátil. 
 
 <div class="media" style="text-align: center;">
     {{< figureproc

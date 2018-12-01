@@ -3,7 +3,7 @@ pid: 201
 title: "La fábrica de Blog Bitix"
 url: "/2016/12/la-fabrica-de-blog-bitix/"
 date: 2016-12-17T11:00:00+01:00
-updated: 2016-12-17T23:30:00+01:00
+updated: 2018-12-01T20:25:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -57,6 +57,8 @@ Tengo un par de discos duros externos USB que utilizo para hacer copias de segur
 Finalmente, en cuanto a software uso [Arch Linux][archlinux] instalado en el 2014 que actualizo cada unas dos semanas, [GNOME][gnome] muy poco retocado prácticamente solo el fondo del escritorio que cambio cada mes con una nueva imagen de [Unsplash](https://unsplash.com/), [Atom][atom] para editar los artículos y [Hugo][hugo] para generar el blog estático entre otra buena cantidad de software libre para tareas específicas.
 
 Y en este pequeño rincón de mi casa es donde paso una buena cantidad de horas y a pesar de ser muchas me sigue divirtiendo seguir aprendiendo y compartiendo. Los otros artículos de la cadena publicados por otros compañeros blogueros son los siguientes puestos en orden cronológico donde se comprueba que detrás de cada blog y artículo hay una persona que dedica parte de su tiempo a crear y compartir contenido.
+
+Cada cierto tiempo toca actualizar equipo para seguir trabajando con comodidad o poder hacer cosas que antes por las limitaciones del equipo en memoria o procesador no se puede. El siguiente equipo que tengo después de este portátil Sony es un [Intel NUC8i5BEK con 32 GiB de memoria y un Samsung 970 EVO NVMe de 500 GB][blogbitix-363] que cabe en la palma de la mano pero que es mucho más potente que el portátil, con el NUC tengo mucho más espacio libre en la mesa y la configuración del escritorio ha cambiado notablemente.
 
 * [Victorhck in the free world - El sitio donde este blog se crea (a veces)](https://victorhckinthefreeworld.com/2016/06/10/el-sitio-donde-este-blog-se-crea-a-veces/)
 * [ochobitshacenunbyte - Mi fábrica de sueños 2016](https://www.ochobitshacenunbyte.com/2016/06/10/fabrica-suenos-2016/)
