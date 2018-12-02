@@ -152,4 +152,11 @@ Al instalar programas en Wine se crean accesos directos en el menú de aplicacio
 
 {{< gist picodotdev 0e0fdeae115b639c16937df626b504d3 "uninstall.sh" >}}
 
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [How to Install Blizzard Battlenet App on Linux](https://linoxide.com/linux-how-to/install-blizzard-battlenet-app-linux/)
+{{% /reference %}}
+
+
 {{% /post %}}
