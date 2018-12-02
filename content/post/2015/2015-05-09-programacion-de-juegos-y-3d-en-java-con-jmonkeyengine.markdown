@@ -18,7 +18,7 @@ tags: ["java", "programacion", "blog-stack", "planeta-codigo", "planeta-linux"]
 
 Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.
 
-Java no suele ser considerado como opción para programar videojuegos triple AAA pero ahí está [Minecraft](https://minecraft.net/) uno de los juegos más populares y un ejemplo de que un juego de buena calidad y rendimiento también se puede hacer en Java. Hay algunos otros ejemplos notables como de variados estilos _RPG_, _Puzzle_, _MOBA_, _Rogue_, _RTS_, _Card MMOG_, _FPS_, _Arcade_, _Platform_ ,...:
+Java no suele ser considerado como opción para programar videojuegos triple A pero ahí está [Minecraft](https://minecraft.net/) uno de los juegos más populares y un ejemplo de que un juego de buena calidad y rendimiento también se puede hacer en Java. Hay algunos otros ejemplos notables como de variados estilos _RPG_, _Puzzle_, _MOBA_, _Rogue_, _RTS_, _Card MMOG_, _FPS_, _Arcade_, _Platform_ ,...:
 
 * [4089: Ghost Within](http://store.steampowered.com/app/329770/)
 * [Rising World](https://www.rising-world.net/)

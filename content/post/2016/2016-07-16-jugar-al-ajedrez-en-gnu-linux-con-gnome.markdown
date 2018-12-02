@@ -17,7 +17,7 @@ series: ["juegos"]
 
 {{< logotype image1="gnome.png" title1="GNOME" >}}
 
-[GNU][gnu]/[Linux][linux] no es la plataforma primaria de los juegos triple A, pero existen multitud de juegos libres y gratuitos que igualmente nos hacen pasar muy buenos ratos. Hoy en día los juegos tienen unos gráficos en tres dimensiones espectaculares cada vez más realistas para lo que hasta hace unos pocos años atrás era posible. Aún así algunos juegos no tan avanzados gráficamente son tan o más adictivos y divertidos que cualquier juego triple AAA y con la ventaja de que no requieren tener la última tarjeta gráfica con al última tecnología, gran cantidad de memoria y se pueden jugar en un portátil sin el riesgo de sobrecalentarlo.
+[GNU][gnu]/[Linux][linux] no es la plataforma primaria de los juegos triple A, pero existen multitud de juegos libres y gratuitos que igualmente nos hacen pasar muy buenos ratos. Hoy en día los juegos tienen unos gráficos en tres dimensiones espectaculares cada vez más realistas para lo que hasta hace unos pocos años atrás era posible. Aún así algunos juegos no tan avanzados gráficamente son tan o más adictivos y divertidos que cualquier juego triple A y con la ventaja de que no requieren tener la última tarjeta gráfica con al última tecnología, gran cantidad de memoria y se pueden jugar en un portátil sin el riesgo de sobrecalentarlo.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="160"
@@ -40,7 +40,7 @@ Iniciado el juego veremos el tablero de 8 por 8 casillas con las fichas posicion
 En la sección de preferencias del juego configuramos si el oponente es otro humano o la computadora, en caso de ser la computadora su nivel de inteligencia o dificultad, si queremos jugar con las fichas blancas o negras si queremos establecer un tiempo límite para la partida para cada jugador y el tipo de reloj para el tiempo límite. En el apartado del aspecto podemos cambiar la apariencia de las fichas, el formato de la última jugada, la orientación del tablero, si queremos numeración y si queremos sugerencias.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid=""
+    {{< figure year="2016" pid="160"
         image1="gnome-chess-preferencias-juego.png" thumb1="gnome-chess-preferencias-juego-thumb.png" title1="Preferencias de juego de ajedrez de GNOME"
         image2="gnome-chess-preferencias-aspecto.png" thumb2="gnome-chess-preferencias-aspecto-thumb.png" title2="Preferencias de aspecto de ajedrez de GNOME"
         caption="Preferencias del juego" >}}
