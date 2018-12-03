@@ -91,11 +91,7 @@ La trama del juego comienza con la caída de una estrella en la antigua catedral
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="diablo-3-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
-        image2="diablo-3-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán"
-        caption="Juego de Diablo 3" >}}
-</div>
-
-<div class="media" style="text-align: center;">
+        image2="diablo-3-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
     {{< figureproc
         image1="diablo-3-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
         image2="diablo-3-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
