@@ -32,7 +32,7 @@ Diablo 2 es uno de los últimos juegos que jugué y lo finalice por completo aun
 
 [Para jugar a Diablo 3 he necesitado instalar Wine][blogbitix-364] y con este la aplicación de [Battle.net][blizzard-battlenet] para Windows e instalar Diablo 3. Blizzard ofrece el primer acto de Diablo 3 antes de comprar el juego. He podido probarlo y ver que funciona correctamente sin tener que comprarlo primero. Una vez probado que funciona es muy posible que lo compre y lo juegue completo (o esa es mi intención).
 
-Wine es una implementación de la API de Windows con la que los programas de Windows pueden ser ejecutados en GNU/Linux y [macOS][macos], incluidos los juegos y su API DirectX.
+Wine es una implementación de la API de Windows con la que los programas de Windows pueden ser ejecutados en GNU/Linux y [macOS][macos], incluidos los juegos y su API DirectX. Y hace posible que tener Windows no sea imprescindible para determinados programas como [Microsoft Office][microsoft-office] o los juegos que son algunos de los motivos por los que algunas personas siguen usando Windows en vez de pasarse definitivamente y de forma completa a GNU/Linux.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
