@@ -99,7 +99,7 @@ La trama del juego comienza con la caída de una estrella en la antigua catedral
         caption="Juego de Diablo 3" >}}
 </div>
 
-El juego se inicia y funciona correctamente, en unas poca horas que he estado jugando, no ha quedado engendro, barril ni tocón en pie >:), no he tenido ningún cierre del juego inesperado ni ningún error, salvo por las cinemáticas irreproducibles de las que se sale con la tecla escape. El NUC en el que lo he ejecutado parece que no se calienta en exceso ni el ventilador hace mucho ruido, con buenos FPS aún a resolución QHD de 2560x1440. .
+El juego se inicia y funciona correctamente, en unas poca horas que he estado jugando, no ha quedado engendro, barril ni tocón en pie >:), no he tenido ningún cierre del juego inesperado ni ningún error, salvo por las cinemáticas irreproducibles de las que se sale con la tecla escape. El NUC en el que lo he ejecutado parece que no se calienta en exceso al tacto, la temperatura de la CPU se mantiene de forma estable a 75ºobservando sus sensores por software, el ventilador funcionando a esta temperatura hace mucho ruido y no se percibe en el fragor del juego, con buenos FPS aún a resolución QHD de 2560x1440. .
 
 El juego permite ajustar la calidad gráfica a la capacidad del equipo para tener buenos fps, la principal es la resolución a menor resolución mejor rendimiento, también calidad de texturas y efectos gráficos. Con estas calidades gráficas estos son los fotogramas por segundo. Los fotogramas por segundo se muestran en la parte inferior derecha pulsando la combinación de teclas _Ctrl+R_. A una resolución de 1920x1080 que no es poco ya se obtienen unos muy aceptables 60 fps.
 
