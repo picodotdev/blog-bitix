@@ -81,6 +81,4 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
 * [Java Magazine Sep/Oct 2018](http://www.javamagazine.mozaicreader.com/SeptemberOctober2018/Twitter)
 {{% /reference %}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
-
 {{% /post %}}
