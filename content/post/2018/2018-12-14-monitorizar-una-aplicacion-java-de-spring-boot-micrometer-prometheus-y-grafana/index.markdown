@@ -1,7 +1,7 @@
 ---
 pid: 366
-title: "Monitorizar una aplicación Java con Spring Boot, Micrometer, Prometheus y Grafana"
-url: "/2018/12/monitorizar-una-aplicacion-java-con-spring-boot-micrometer-prometheus-y-grafana/"
+title: "Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana"
+url: "/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/"
 date: 2018-12-14T20:00:00+01:00
 language: "es"
 rss: true
