@@ -42,6 +42,6 @@ En la salida en al terminal de la [aplicación de ejemplo con Spring Boot][blogb
 {{< gist picodotdev e5d6b0adc0c24eb5dfce "Main.java" >}}
 {{< gist picodotdev e5d6b0adc0c24eb5dfce "System.out" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew updateDatabase && ./gradlew generateModels && ./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew updateDatabase, ./gradlew generateModels, ./gradlew run" %}}
 
 {{% /post %}}

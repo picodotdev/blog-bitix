@@ -48,6 +48,6 @@ La salida en la terminal de esta aplicación al iniciarse es la siguiente:
 
 jOOQ presenta varias cosas interesantes sobre Hibernate, ya es en una alternativa con un enfoque diferente, con ideas interesantes, algunas ventajas y el tiempo dirá si se convierte en el nuevo estándar para la persistencia en las aplicaciones Java. Otra de las cosas comunes que necesitaremos en una aplicación es validar los objetos _Record_, una posibilidad es usando Spring Validation.
 
-{{% code git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew updateDatabase && ./gradlew generateModels && ./gradlew run" %}}
+{{% code git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew updateDatabase, ./gradlew generateModels, ./gradlew run" %}}
 
 {{% /post %}}

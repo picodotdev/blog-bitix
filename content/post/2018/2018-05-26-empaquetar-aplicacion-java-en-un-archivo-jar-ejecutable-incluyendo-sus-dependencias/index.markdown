@@ -64,7 +64,7 @@ Que la aplicación sea un único _jar_ tiene la ventaja que el distribuible es m
 
 Entre la documentación hay unas muy buenas [guías prácticas sobre Java](http://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de apliaciones en archivos _jar_](http://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
 
-{{% code git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble && java -jar build/libs/JavaUberjar-uberjar.jar" %}}
+{{% code git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble, java -jar build/libs/JavaUberjar-uberjar.jar" %}}
 
 {{% reference %}}
 {{< links >}}

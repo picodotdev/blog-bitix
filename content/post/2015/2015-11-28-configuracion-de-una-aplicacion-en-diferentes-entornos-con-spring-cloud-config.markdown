@@ -69,7 +69,7 @@ Si no queremos obtener las propiedades con la anotación <code>@Value</code> pod
 
 Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spring Cloud Config, otras son la posibilidad de [servir archivos de configuración completos](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_serving_plain_text) para por ejemplo [Nginx][nginx], los valores de las propiedades de configuración en el repositorio de configuración pueden ser cifradas y al enviarlas al cliente ser descifradas. Spring Cloud Config solo es una pequeña parte del proyecto Spring Cloud que proporciona más funcionalidades útiles para sistemas distribuidos y microservicios y un complemento adicional interesante para Spring Boot.
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew cloudconfig:run && ./gradlew clouddiscovery:run && ./gradlew service:run && ./gradlew client:run" %}}
+{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew cloudconfig:run, ./gradlew clouddiscovery:run, ./gradlew service:run, ./gradlew client:run" %}}
 
 {{% reference %}}
 {{< links >}}

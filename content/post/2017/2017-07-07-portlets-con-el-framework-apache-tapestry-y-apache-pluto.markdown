@@ -82,7 +82,7 @@ Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.o
 
 {{< gist picodotdev 71e519379b23ab0c4a54d0aed927a3f3 "build.gradle" >}}
 
-{{% code git="blog-ejemplos/tree/master/TapestryPortlet" command="./pluto-3.0.0/bin && ./gradlew build" %}}
+{{% code git="blog-ejemplos/tree/master/TapestryPortlet" command="./pluto-3.0.0/bin, ./gradlew build" %}}
 
 {{< plugintapestry >}}
 

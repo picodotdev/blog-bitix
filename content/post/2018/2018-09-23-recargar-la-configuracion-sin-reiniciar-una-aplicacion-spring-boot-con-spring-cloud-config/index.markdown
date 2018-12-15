@@ -48,7 +48,7 @@ Los pasos para probar estas funcionalidades con Spring Cloud Bus en una o varias
 {{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "gradle-run-2.sh" >}}
 {{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "curl-2.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run-1.sh && ./curl-1.sh" %}}
+{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run-1.sh, ./curl-1.sh" %}}
 
 {{% reference %}}
 {{< links >}}

@@ -49,7 +49,7 @@ La primera petición que se realiza al recurso _cache_ devuelve un [código de e
 
 Hay servidores específicos para realizar tareas de cache como [Varnish][varnish] con más opciones de las que ofrece Nginx. Para los casos no complicados usando Nginx evitamos añadir una nueva pieza a la arquitectura de la aplicación. Entre los productos que ofrece Amazon está [Cloudfront](https://aws.amazon.com/es/cloudfront/) que es una cache para recursos estáticos con el añadido de que de forma automática está distribuida geográficamente de forma que los recursos se sirven por un servidor más cercano al cliente evitando un mal rendimiento por la latencia. En el artículo [servir recursos estáticos de un CDN en Apache Tapestry][blogbitix-34] comento como usar esta red de distribución de contenido ofrecida por Amazon.
 
-{{% code git="blog-ejemplos/tree/master/NginxCache" command="./gradlew build && cd docker && docker-compose up" %}}
+{{% code git="blog-ejemplos/tree/master/NginxCache" command="./gradlew build, cd docker, docker-compose up" %}}
 
 {{% reference %}}
 {{< links >}}
