@@ -77,7 +77,7 @@ Estas opciones se cambian el la sección de configuración de Firefox introducie
 
 Con la configuración por defecto y cambiando estas opciones esta es la diferencia de los procesos de Firefox que causan E/S después de un tiempo de uso. Por defecto se observa que hay un proceso relacionado que debe estar relacionado con la caché a raíz de su nombre que escribe en el almacenamiento y cambiadas las opciones solo los procesos _mozStorage_ escriben, estos procesos están relacionados con las _cookies_ y almacenamiento local o bases de datos que los navegadores ofrecen a las páginas web pero los procesos relacionados con la caché han desaparecido. La cantidad de datos escritos con las opciones por defecto y cambiadas son significativamente menores en el mismo periodo de tiempo.
 
-Dado que la caché ocasiona escrituras en el almacenamiento el proceso de _journaling_ del sistema también realiza escrituras amplificando el problema. Con Firefox optimizado para SSD el proceso _firefox [Cache2 I/O]_ desaparece y al escribir la sesión no cada 15 segundos Firefox deja de escribir de forma regular.
+Dado que la caché ocasiona escrituras en el almacenamiento el proceso de _journaling_ del sistema también realiza escrituras amplificando el problema. Con Firefox optimizado para SSD el proceso _firefox [Cache2 I/O]_ desaparece y al escribir la sesión no cada 15 segundos Firefox deja de escribir de forma regular. [Google Chrome][google-chrome] no ofrece estas opciones de personalización.
 
 <div class="media" style="text-align: center;">
     {{< figureproc

@@ -67,6 +67,8 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
         caption="Estados del circuit breaker" >}}
 </div>
 
+El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propcio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional. 
+
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "gradle-run.sh" >}}
 
 {{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
