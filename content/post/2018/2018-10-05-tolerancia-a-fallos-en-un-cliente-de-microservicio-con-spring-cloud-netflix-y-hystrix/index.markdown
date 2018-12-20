@@ -3,7 +3,7 @@ pid: 352
 title: "Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix"
 url: "/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/"
 date: 2018-10-05T20:30:00+02:00
-updated: 2018-10-06T21:30:00+02:00
+updated: 2018-12-20T13:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -67,7 +67,7 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
         caption="Estados del circuit breaker" >}}
 </div>
 
-El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propcio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional. 
+El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional. 
 
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "gradle-run.sh" >}}
 
