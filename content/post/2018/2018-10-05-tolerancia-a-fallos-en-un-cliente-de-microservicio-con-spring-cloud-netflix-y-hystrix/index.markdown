@@ -3,7 +3,7 @@ pid: 352
 title: "Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix"
 url: "/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/"
 date: 2018-10-05T20:30:00+02:00
-updated: 2018-12-20T13:00:00+01:00
+updated: 2018-12-21T11:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -58,7 +58,7 @@ En la aplicación ejemplo hay un microservicio servidor y un microservicio clien
 
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "System.out" >}}
 
-Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofrece un _dashboard_ en el que visualizan el número de peticiones que se están realizando, las fallidas, el estado de los circuitos, las que fallan por _timeout_ o las que fallan con error. Para tener acceso a esta página hay que incluir la dependencia _org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard_. La página _dashboard_ está disponible en la dirección _http\://localhost:8085/hystrix_.
+Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofrece un _dashboard_ en el que visualizan el número de peticiones que se están realizando, las fallidas, el estado de los circuitos, las que fallan por _timeout_ o las que fallan con error. Para tener acceso a esta página hay que incluir la dependencia _org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard_. La página _dashboard_ está disponible en la dirección _http\://localhost:8085/hystrix_. Este _dahsboard_ que ofrece Hystrix es muy básico y con un diseño mejorable, se pueden [exponer las métricas de Hystrix en Grafana con Prometheus][blogbitix-368] para tener un panel con exactamente la información que se desee en una gráficas muhco más vistosas además de observar los datos exactamente en el periodo de tiempo deseado.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
