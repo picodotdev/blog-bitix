@@ -1,7 +1,8 @@
 ---
 pid: 369
-title: "Impedir o permitir tráfico de red con el firewall UFW en GNU/Linux"
-url: "/2018/12/impedir-o-permitir-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/"
+title: "Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux"
+url: "/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/"
+aliases: ["/2018/12/impedir-o-permitir-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/"]
 date: 2018-12-24T13:00:00+01:00
 language: "es"
 rss: true
@@ -28,7 +29,7 @@ En la [wiki de Arch Linux][archlinux-wiki] hay una buena página explicativa de 
 
 * [Arch Linux Wiki Uncomplicated Firewall](https://wiki.archlinux.org/index.php/Uncomplicated_Firewall)
 
-Instalado y activado hay que definir las reglas de tráfico permitidas. Por ejemplo, con el cortafuegos activado para que un servidor web sea accesible desde otro equipo en la misma red o desde internet hay crear una regla que permita todo el tráfico entrante los puertos por defecto _80_ para _http_ y _443_ para _https_.
+Instalado y activado hay que definir las reglas de tráfico permitidas. Por defecto, se deniega el tŕafico proveniente de un sistema que no sea el local. Por ejemplo, con el cortafuegos activado para que un servidor web sea accesible desde otro equipo en la misma red o desde internet hay crear una regla que permita todo el tráfico entrante los puertos por defecto _80_ para _http_ y _443_ para _https_.
 
 {{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-allow-1.sh" >}}
 
