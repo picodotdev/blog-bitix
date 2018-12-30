@@ -3,7 +3,7 @@ pid: 370
 title: "Hemeroteca #14"
 url: "/2018/12/hemeroteca-14/"
 date: 2018-12-29T13:00:00+01:00
-date: 2018-12-29T20:30:00+01:00
+date: 2018-12-30T19:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -18,7 +18,7 @@ library: "true"
 {{< links >}}
 {{< postslinks >}}
 
-Casi 9 años publicando de forma constante un artículo a la semana, dos artículos algunas semanas. Durante casi está década creo que ha habido pocas semanas en las que no he publicado. Este último años no ha sido distinto, el siguiente espero que sea parecido o mejor ahora que tengo mi propio equipo personal que he estado mucho tiempo esperando hasta que fuese comercializado, un [Intel NUC Bean Canyon][blogbitix-363] del que en este semestre he publicado un artículo con de su desempaquetado junto con otros artículos del [monitor Benq PD2700Q][blogbitix-356] y [teclado ratón][blogbitix-348] pero también comentando las opciones que he barajado.
+Casi 9 años publicando de forma constante un artículo a la semana, dos artículos algunas semanas. Durante casi está década creo que ha habido pocas semanas en las que no he publicado. Este último años no ha sido distinto, el siguiente espero... espero que sea parecido o mejor ahora que tengo mi propio equipo personal que he estado mucho tiempo esperando hasta que fuese comercializado, un [Intel NUC Bean Canyon][blogbitix-363] del que en este semestre he publicado un artículo con de su desempaquetado junto con otros artículos del [monitor Benq PD2700Q][blogbitix-356] y [teclado ratón][blogbitix-348] pero también comentando las opciones que he barajado.
 
 Casi 9 años publicando, para llegar a esta cifra hay que tener constancia para llegar a escribir tanto tiempo, dedicación no empezar una cosa y dejarlo al cabo de poco e incluso de publicar aún cuando el ánimo no es el de los mejores momentos, planificación y organización para saber que publicar, tiempo ya que cuesta escribir los artículos y motivación ya sea tener más visitas, comentarios de algunos usuarios, más ingresos de AdSense, compartir, ... No es fácil, en mi caso sabiendo que mucho de lo que escribo no lo aplico en el trabajo, donde actualmente tengo un Mac por obligación y no trabajo con Java y mis temas principales son GNU/Linux y Java, con lo que a veces tengo la sensación de no serme útil. Al finalizar este 2018 ya van 371 artículos publicados desde finales del 2013 que empecé a hacerlo en Blog Bitix.
 
@@ -104,7 +104,7 @@ Incluyo además algunas métricas que proporciona AdSense de RPM, clics y CPC. E
         caption="Métricas de AdSense" >}}
 </div>
 
-Además, de AdSense incluyo enlaces de Amazon de algunos productos que compro y de los que publico algún artículo. Este año le he hecho facturar a Amazon casi 900 € y he recibido a cambio 50 € en comisiones.
+Además, de AdSense incluyo enlaces de Amazon de algunos productos que compro y de los que publico algún artículo. Este año a través de los enlaces de afiliado de Amazon le he hecho facturar casi 900 € y he recibido a cambio 50 € en comisiones.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -116,7 +116,7 @@ Como siempre mis deseos de que empecéis bien el nuevo año, en este caso el 201
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="christmastux-2018.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="ChristmasTux2018"
-        caption="¡Buen 2019!" >}}
+        caption="¡Buen 2019!" source="www.klowner.com" >}}
 </div>
 
 {{% /post %}}
