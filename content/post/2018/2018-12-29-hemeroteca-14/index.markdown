@@ -100,7 +100,10 @@ Incluyo además algunas métricas que proporciona AdSense de RPM, clics y CPC. E
     {{< figureproc
         image1="gadsense-crt-2018.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2018 de Blog Bitix"
         image2="gadsense-cpc-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2018 de Blog Bitix"
-        image3="gadsense-rpm-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2018 de Blog Bitix"
+        image3="gadsense-rpm-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2018 de Blog Bitix" >}}
+    {{< figureproc
+        image1="gadsense-tipos-de-puja-2018.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2018 de Blog Bitix"
+        image2="gadsense-plataforma-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plataforma 2018 de Blog Bitix"
         caption="Métricas de AdSense" >}}
 </div>
 
