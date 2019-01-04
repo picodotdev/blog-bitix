@@ -1,14 +1,14 @@
 ---
 pid: 371
-title: "Las contraseñas e información sensible en el código fuente de Java no son seguras"
-url: "/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-de-java-no-son-seguras/"
+title: "Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras"
+url: "/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/"
 date: 2019-01-04T19:00:00+01:00
 language: "es"
 rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion", "seguridad"]
 ---
 
 {{% post %}}
