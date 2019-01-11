@@ -52,7 +52,7 @@ Con Gradle el informe de resultados de las pruebas se genera en _build/reports/t
 
 Algunas otras herramientas que son ampliamente usadas en proyectos Java son las que comentaba en el artículo [Nueva visita a herramientas para un proyecto Java][blogbitix-84].
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew integrationTest" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew integrationTest" >}}
 
 {{% reference %}}
 {{< links >}}

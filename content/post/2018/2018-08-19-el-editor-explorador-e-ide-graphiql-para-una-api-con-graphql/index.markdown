@@ -41,6 +41,6 @@ Varias de las mismas consultas que hacía con _curl_ en otros artículos es posi
         caption="El editor GraphiQL para una API con GraphQL" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 
 {{% /post %}}

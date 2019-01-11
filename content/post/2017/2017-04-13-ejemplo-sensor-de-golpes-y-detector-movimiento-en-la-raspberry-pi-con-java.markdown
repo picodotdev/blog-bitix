@@ -64,7 +64,7 @@ Ambos ejemplos pueden usarse con los siguientes comandos cambiando la dirección
 
 El siguiente artículo de la sería será sobre cómo usar un _servo motor_ que es diferente de un motor que gira constantemente.
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" >}}
 
 {{% reference %}}
 {{< links >}}

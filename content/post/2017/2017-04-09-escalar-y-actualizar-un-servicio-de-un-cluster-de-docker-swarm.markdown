@@ -64,6 +64,6 @@ En los [archivos en formato YAML de los _stacks_ de Docker Compose](https://docs
 
 {{< gist picodotdev 1a9862e63c242949ee04cd313e82f3ec "docker-compose-stack-app.yml" >}}
 
-{{% code git="blog-ejemplos/tree/master/DockerSwarm" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% /post %}}

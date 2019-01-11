@@ -31,8 +31,8 @@ Este es el código para ejecutar tareas de forma secuencial y de forma concurren
 
 {{< gist picodotdev 492e1b80c21886c748600784c9f9cfdc "Main.java" >}}
 
-{{% asciinema id="vuoXPba1ks9aOg5Ebm3MTkIbM" caption="Ejemplo de ejecución secuencial y concurrente" %}}
+{{< asciinema id="vuoXPba1ks9aOg5Ebm3MTkIbM" caption="Ejemplo de ejecución secuencial y concurrente" >}}
 
-{{% code git="blog-ejemplos/tree/master/JavaExecutors" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaExecutors" command="./gradlew run" >}}
 
 {{% /post %}}

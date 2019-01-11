@@ -48,7 +48,7 @@ Las referencias débiles añaden una indirección a la referencia que contienen,
 
 Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter), explica el concepto de estas referencias con un símil más fácil de comprender de un restaurante y sus clientes que dependiendo de su comportamiento se asemeja a estas referencias y el por que de los recolectores de basura, que no es algo novedoso de Java sino que ya fué utilizado en 1959 con el lenguaje Lisp.
 
-{{% code git="blog-ejemplos/tree/master/JavaReference" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaReference" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

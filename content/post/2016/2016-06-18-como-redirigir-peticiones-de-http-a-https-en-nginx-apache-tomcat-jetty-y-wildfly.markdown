@@ -62,7 +62,7 @@ Con algún mecanismo propio que empleemos al programar la aplicación (en Java p
 
 {{< gist picodotdev 505856d7e0a9574541c303d09fd63be1 "AppModule.java" >}}
 
-{{% code git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
 {{% reference %}}
 {{< links >}}

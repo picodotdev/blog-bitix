@@ -36,6 +36,6 @@ La información se persistirán en varias tablas en este caso en un base de dato
 
 {{< gist picodotdev 37deac8aa12db051e08a8253695e5fb4 "tables.sql" >}}
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoJavers" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoJavers" command="./gradlew run" >}}
 
 {{% /post %}}

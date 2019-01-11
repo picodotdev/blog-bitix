@@ -59,6 +59,6 @@ Las anotaciones de Lombok permiten escribir menos código repetitivo en _beans_ 
 
 En el momento de escribir este artículo Lombok no es compatible con Java 9 aunque ya se está trabajando en su soporte y en algún momento lo será.
 
-{{% code git="blog-ejemplos/tree/master/Lombok" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Lombok" command="./gradlew run" >}}
 
 {{% /post %}}

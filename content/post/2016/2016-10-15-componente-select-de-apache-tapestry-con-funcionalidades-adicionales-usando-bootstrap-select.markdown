@@ -69,7 +69,7 @@ En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript n
 
 En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario y en [añadir botones selectores de opciones][blogbitix-189] como incluir selectores adicionales además de Todos y Ninguno.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

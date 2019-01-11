@@ -86,7 +86,7 @@ Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Ja
         caption="Autenticación mutua de cliente y servidor con el navegador web Firefox" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" >}}
 
 {{% reference %}}
 {{< links >}}

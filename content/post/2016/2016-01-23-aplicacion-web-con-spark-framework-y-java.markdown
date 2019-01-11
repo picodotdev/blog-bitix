@@ -31,7 +31,7 @@ Spark ofrece un marco de trabajo en el que podemos crear rutas con las que asoci
 
 Aunque en una aplicación REST no será necesario usar vistas con plantillas ya que el resultado más comúnmente empleado para proporcionar los datos es <abbr title="JavaScript Object Notation">JSON</abbr> probablemente sí que necesitemos usar persistencia en una base de datos con [Hibernate][hibernate] o mejor aún con [jOOQ][jooq] o para facilitarnos la vida de programación queramos disponer de _Inversion of Control_ e inyección de dependencias, la opción más común es emplear el contenedor de servicios [Spring][spring] con la que además podremos proporcionar transacciones si nos conectamos a una base de datos relacional, seguridad también con Spring o con [Shiro][shiro], [Spring Boot][spring-boot] como forma de iniciarlizar la aplicación, [Spring Cloud Config][spring-cloud-config] para configuración en múltiples entornos, [Spring Boot Actuator][spring-boot-actuator] para obtener métricas... en definitiva tendremos libertad de elegir las librerías que consideremos adecuada para la tarea aunque la responsabilidad de realizar la integración será nuestra. Al final del artículo incluyo enlaces comentando varias de estas librerías específicamente.
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoSpark" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoSpark" command="./gradlew run" >}}
 
 En la dirección http://127.0.0.1:4567/hola obtendremos el mensaje de este ejemplo.
 

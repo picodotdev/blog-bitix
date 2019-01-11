@@ -52,7 +52,7 @@ Una vez que disponemos del servicio REST podemos [añadir autenticación y autor
 
 Otra alternativa a una interfaz REST es usar [GraphQL][graphql] que muestro en el artículo [Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
 
-{{% code git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

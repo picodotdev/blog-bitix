@@ -82,7 +82,7 @@ Con Java EE 6 y 7 ciertas partes de configuración se pueden realizar con anotac
 
 Ejecutar este ejemplo require instalar previamente el servidor de aplicaciones [WildFly][wildfly] e iniciarlo con <code>./standalone.sh -c standalone-full.xml</code>. Iniciado el servidor y desplegada la aplicación con el siguiente comando de Gradle se puede acceder a ella con el navegador en la dirección _https\://localhost:8443/war/_ teniendo el protocolo seguro configurado.
 
-{{% code git="blog-ejemplos/tree/master/JavaEE7" command="./gradlew build deploy" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaEE7" command="./gradlew build deploy" >}}
 
 En el futuro Java EE 8 está planificado un _framework_ basado en acciones en vez de componentes como en JSF, también el soporte para [el protocolo HTTP/2][blogbitix-127].
 

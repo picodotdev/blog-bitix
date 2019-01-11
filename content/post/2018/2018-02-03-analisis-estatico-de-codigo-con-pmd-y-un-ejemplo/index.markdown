@@ -50,6 +50,6 @@ Para que en el informe aparezcan datos he cambiado la configuración de longitud
         caption="Informe de PMD con violaciones a las reglas" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew check" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew check" >}}
 
 {{% /post %}}

@@ -44,7 +44,7 @@ La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la desc
 
 {{< gist picodotdev 403fbd324011c33f4e53a0b6b4992950 "PermissionException.java" >}}
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -56,7 +56,7 @@ El servicio de configuración es accesible mediante una interfaz REST. Para obte
 
 En otro artículo relacionado con la configuración de los microservicios comentaré [como recargar la configuración de los microservicios sin necesidad de reiniciarlos][blogbitix-349] y _como almacenar datos sensibles de forma cifrada_ para mayor seguridad.
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew run:configserver --args=\"port=8090\"" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew run:configserver --args=\"port=8090\"" >}}
 
 {{% reference %}}
 {{< links >}}

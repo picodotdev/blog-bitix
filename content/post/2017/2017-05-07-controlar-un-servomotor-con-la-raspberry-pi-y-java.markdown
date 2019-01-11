@@ -46,7 +46,7 @@ Aunque he conseguido hacer funcionar el servomotor con este programa no ha sido 
 
 En otros artículos de la serie puedes consultar cómo usar otros [elementos de kit con Java y la Raspberry Pi][blogbitix-212].
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeServomotor" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeServomotor" >}}
 
 {{% reference %}}
 {{< links >}}

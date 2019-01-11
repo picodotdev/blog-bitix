@@ -45,7 +45,7 @@ Con el filtro y las anteriores clases en la consola se imprimirán los mensajes 
 
 En definitiva, en ciertos casos el uso selectivo de _ThreadLocal_ simplifica el código evitando incluir un parámetro en multitud de métodos y si el dato ha de recuperarse de la base de datos evita realizar la misma consulta varias veces haciendo el programa más eficiente.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry/" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry/" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

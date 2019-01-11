@@ -38,7 +38,7 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
         caption="Contenido del taglet todo en el javadoc" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
 {{< links >}}

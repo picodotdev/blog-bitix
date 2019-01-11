@@ -44,7 +44,7 @@ En la [documentación de Asciinema](https://asciinema.org/docs) están las opcio
 
 Y este es el resultado de un vídeo, en este caso el vídeo introductorio de Asciinema:
 
-{{% asciinema id="22124" caption="Vídeo introducción Asciinema" %}}
+{{< asciinema id="22124" caption="Vídeo introducción Asciinema" >}}
 
 {{% reference %}}
 {{< links >}}

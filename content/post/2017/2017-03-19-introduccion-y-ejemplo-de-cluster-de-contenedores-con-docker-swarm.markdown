@@ -37,7 +37,7 @@ Una de las propiedades interesantes del _networking_ de Docker Swarm es que ofre
 
 En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anteriores comandos. Y en la aplicación de VirtualBox estarán las máquinas virtuales de cada uno de los nodos que crea el ejemplo. En el vídeo se aprecia que el servicio de nginx se está ejecutando en el nodo 02 cuando se listan los procesos de Docker de cada nodo con _docker ps_, nótese sin embargo que al hacer un petición HTTP a cualquiera de los nodos se devuelve la página de inicio de nginx ya que gracias al _routing mesh_ de Docker Swarm la petición se redirige de forma transparente para el cliente y el servicio al nodo donde realmente se está ejecutando el contenedor de nginx.
 
-{{% asciinema id="107868" caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" %}}
+{{< asciinema id="107868" caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="216"
@@ -67,6 +67,6 @@ La solución que he encontrado para que funcione es asignar una dirección IP al
 
 Se puede definir un conjunto de servicios como una unidad en un archivo en _stacks_ de forma similar a como es posible hacer con Docker Compose cosa que mostraré en otro artículo.
 
-{{% code git="blog-ejemplos/tree/master/DockerSwarm" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% /post %}}

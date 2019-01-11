@@ -71,6 +71,6 @@ Es posible asignar a los sitios web de _pages_ un dominio propio y añadirles se
 
 En resumen, ya con esta pequeña serie de artículos queda claro que GitLab es una herramienta muy completa y que incluye las funcionalidades de varias que son suficientes para la mayoría de los casos sin tener que recurrir a Jira, Jenkins, MediaWiki o un servidor web. Además, con la muy completa [API de GitLab](https://docs.gitlab.com/ce/api/) es posible hacer desarrollos a medida y según las necesidades que se tengan.
 
-{{% code git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" >}}
 
 {{% /post %}}

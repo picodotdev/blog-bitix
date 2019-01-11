@@ -39,7 +39,7 @@ Con Gradle la documentación Javadoc se genera en el directorio _build/xxx_ y el
         caption="Artefacto generado con la documentación javadoc" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/Javadoc" command="./gradlew build" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew build" >}}
 
 {{% /post %}}
 

@@ -40,11 +40,11 @@ Si necesitamos ejecutar los _scripts_ cada cierto tiempo en _cron_ podemos progr
 La ejecución de cada uno de los _scripts_ con _gradlew_ y usando los _scripts_ lanzadores sería:
 
 {{< gist picodotdev c2502db92bf72d445ed0 "gradle-run.sh" >}}
-{{% asciinema id="29509" caption="Ejecución de <i>scripts</i> en Java" %}}
+{{< asciinema id="29509" caption="Ejecución de <i>scripts</i> en Java" >}}
 
 Para un proyecto de _scripts_ con Java necesitaremos un archivo _build.gradle_ y cierta estructura de directorios pero no es algo suficiente complejo como para descartar Java como lenguaje para este propósito más teniendo en cuenta sus ventajas, a parte de la JVM el proyecto de _scripts_ será autocontenido incluso para las dependencias con lo que su despliegue en un entorno de producción será muy sencillo basta con copiar archivos (<abbr title="File Transfer Protocol">FTP</abbr>, _wget_, ...) o hacer <code>git clone</code> y <code>git pull</code> directamente del repositorio de código fuente para actualizarlo, si se usan los _scripts_ lanzadores después de actualizar el código fuente del proyecto será necesario reconstruirlo con <code>./gradlew build</code>.
 
-{{% code git="blog-ejemplos/tree/master/JavaScripts" command="./gradlew runScript1" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaScripts" command="./gradlew runScript1" >}}
 
 {{% reference %}}
 {{< links >}}

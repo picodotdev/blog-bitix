@@ -91,7 +91,7 @@ Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to
 
 En el siguiente artículo mostraré un [cliente del servicio REST autenticado con OAuth en Java][blogbitix-183] que haga las mismas llamadas que con _curl_ pero usando código Java mediante la librería [HttpComponents][http-components].
 
-{{% code git="blog-ejemplos/tree/master/SpringBootJaxrsOauth" command="./gradle run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrsOauth" command="./gradle run" >}}
 
 {{% reference %}}
 {{< links >}}

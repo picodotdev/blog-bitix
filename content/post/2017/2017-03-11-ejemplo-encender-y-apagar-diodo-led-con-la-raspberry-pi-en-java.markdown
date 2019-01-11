@@ -77,6 +77,6 @@ El programa Java para hacer parpadear el diodo LED con la librería Diozero con 
 
 En un artículo anterior comento [como disponer de un entorno para desarrollar, desplegar las librerías _jar_ en la Raspberry Pi][blogbitix-213] y como ejecutar los ejemplos desde la línea de comandos usando una combinación de herramientas de [SSH][ssh], [rsync][rsync] y [Ansible][ansible].
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executePinBlink" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executePinBlink" >}}
 
 {{% /post %}}

@@ -52,6 +52,6 @@ Para ejecutar el ejemplo usando [Gradle][gradle] y Java 9 hay que añadir un poc
 
 {{< gist picodotdev c3f0bea0d89da4ec3a81235e479d069b "build.gradle" >}}
 
-{{% code git="blog-ejemplos/tree/master/JavaHttp2" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaHttp2" command="./gradlew run" >}}
 
 {{% /post %}}

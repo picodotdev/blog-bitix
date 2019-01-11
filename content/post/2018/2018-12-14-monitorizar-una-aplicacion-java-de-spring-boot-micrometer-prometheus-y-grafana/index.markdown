@@ -100,7 +100,7 @@ Con la información de las métricas se conoce más en detalle cual es el compor
 
 Aún quedan algunas preguntas por responder ¿como agregar los datos de múltiples instancias? ¿si se crean nuevas instancias del servicio como puede conocer Prometheus los nuevos _targets_ que se han creado? En el ejemplo solo hay una instancia del servicio y la configuración de Prometheus es proporcionada por un archivo estático. Aún desconozco las respuestas, no lo he investigado en detalle, hay alguna [pregunta sobre este tema en StackOverflow](https://stackoverflow.com/questions/46910839/is-it-possible-to-setup-prometheus-with-eureka-sd-without-file-sd-configs) y por la respuesta Prometheus no tiene un adaptador para Eureka entre los [varios servicios de descubrimiento que sí soporta en su configuración](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh, docker-compose up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh, docker-compose up" >}}
 
 {{% reference %}}
 {{< links >}}

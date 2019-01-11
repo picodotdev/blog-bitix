@@ -70,7 +70,7 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 
 docker-compose inicia los contenedores en el orden que hemos indicado en el archivo de definición, las trazas emitidas de los servicios de los contenedores aparecerán en la terminal si iniciamos los contenedores en primer plano y con _Ctrl+C_ se pararán los contenedores. Indicando la opción _-d_ los contenedores se iniciarán en segundo plano, con _docker-compose stop_ podremos pararlos, con _docker-compose restart_ reiniciarlos, _docker-compose rm_ para eliminar completamente los contenedores y con _docker-compose logs_ veremos las trazas emitidas por los servicios que nos serán de utilizar si iniciamos los contenedores en segundo plano.
 
-{{% asciinema id="23602" caption="Comandos básicos de Docker Compose" %}}
+{{< asciinema id="23602" caption="Comandos básicos de Docker Compose" >}}
 
 <div class="media-amazon" style="text-align: center;">
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>

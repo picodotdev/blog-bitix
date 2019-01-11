@@ -98,7 +98,7 @@ Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to
 
 Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, entre otras posibilidades que ofrece Keycloak creo que está permitir registrarse a los usuarios o personalizar los estilos y páginas de autenticación.
 
-{{% code git="blog-ejemplos/tree/master/Keycloak" command="./gradle run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Keycloak" command="./gradle run" >}}
 
 {{< plugintapestry >}}
 

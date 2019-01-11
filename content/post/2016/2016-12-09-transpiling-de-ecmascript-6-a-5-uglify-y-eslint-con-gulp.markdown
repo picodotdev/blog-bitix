@@ -61,7 +61,7 @@ Transformado con Uglify queda algo ilegible pero con el archivo _.map_ podremos 
 {{< gist picodotdev 0cf6306cf3a7770953946e94618578b8 "main-uglify.js" >}}
 {{< gist picodotdev 0cf6306cf3a7770953946e94618578b8 "main.js.map" >}}
 
-{{% code git="blog-ejemplos/tree/master/ECMAScript6" command="npm install, gulp, node ./build/dist/main.js" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/ECMAScript6" command="npm install, gulp, node ./build/dist/main.js" >}}
 
 El resultado son los siguientes mensajes en la terminal tanto para la ejecución del archivo ECMAScript 6 original con <code>node src/main/js/main.js</code> como para el _transpilado_ con <code>node ./build/dist/main.js</code>.
 

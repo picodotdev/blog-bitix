@@ -90,7 +90,7 @@ De varios de estos proyectos ya he escrito varios artículos pero escribiré alg
 
 Según vaya escribiendo y publicando los artículos aparecerán en la lista de la serie de artículos. El ejemplo en el que me basaré para estos lo añado a continuación.
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" >}}
 
 {{% reference %}}
 {{< links >}}

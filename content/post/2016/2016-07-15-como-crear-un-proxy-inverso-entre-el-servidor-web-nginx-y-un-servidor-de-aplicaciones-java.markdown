@@ -58,7 +58,7 @@ Arrancado los contenedores con el comando <code>docker-compose up</code> accedie
 
 En la [documentación sobre _reverse proxy_ de Nginx](https://www.nginx.com/resources/admin-guide/reverse-proxy/) se explican algunas directivas más para pasar al servidor Tomcat la dirección IP del usuario usando cabeceras HTTP, en la configuración de Nginx usando _proxy\_set\_header_.
 
-{{% code git="blog-ejemplos/tree/master/NginxReverseProxy" command="docker-compose up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/NginxReverseProxy" command="docker-compose up" >}}
 
 {{% reference %}}
 {{< links >}}

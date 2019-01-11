@@ -55,7 +55,7 @@ El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help
 
 {{< gist picodotdev cd18c123cd34d6eaa266b0354266cd8c "javadoc-help.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -76,7 +76,7 @@ Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm inici
 
 {{< gist picodotdev 07ede1de4295c24af75a1189085d9d77 "docker-compose-stack-remove-postgres.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/DockerSwarm" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% reference %}}
 {{< links >}}

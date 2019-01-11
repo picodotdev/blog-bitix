@@ -48,6 +48,6 @@ El siguiente programa muestra las cuatro opciones, su salida en la consola serí
         caption="4 formas de hacer un bucle en Java" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" >}}
 
 {{% /post %}}

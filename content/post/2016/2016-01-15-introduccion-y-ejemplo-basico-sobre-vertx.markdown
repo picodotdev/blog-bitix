@@ -35,7 +35,7 @@ En el código del siguiente ejemplo emplearé Java por [mis preferencias y motiv
 
 La documentación de cada módulo de Vert.x está bastante bien y explicada en los diferentes lenguajes que soporta. Si la documentación no nos es suficiente en el [repositorio de ejemplos](https://github.com/vert-x3/vertx-examples) veremos el código fuente completo de diversas funcionalidades.
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoVertx" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoVertx" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

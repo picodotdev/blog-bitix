@@ -61,7 +61,7 @@ El [código fuente del ejemplo completo](https://github.com/picodotdev/blog-ejem
 
 En el siguiente vídeo puede verse como es la salida en la terminal cuando la aplicación se arranca con Gradle y con el comando <code>java -jar</code>.
 
-{{% asciinema id="27694" caption="Uso de Spring Boot con Gradle y Java" %}}
+{{< asciinema id="27694" caption="Uso de Spring Boot con Gradle y Java" >}}
 
 Añadiendo la dependencia [Spring Boot Actuator][spring-boot-actuator] podemos [obtener información de estado y métricas en las aplicaciones Spring Boot][blogbitix-113].
 

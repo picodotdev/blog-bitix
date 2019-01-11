@@ -63,7 +63,7 @@ Esta es la salida en la consola listando los servicios disponibles, siendo uno d
 
 {{< gist picodotdev 69ebe9c83419447cdcfc4692988938a2 "System.out" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloudConsul" command="./consul/consul.sh y ./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloudConsul" command="./consul/consul.sh y ./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

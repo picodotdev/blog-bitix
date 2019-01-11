@@ -61,7 +61,7 @@ El código del modal para deshabilitar sería el siguiente. En el método _show_
 {{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "DisableProductsModal.tml" >}}
 {{< gist picodotdev 11715e0799339d0335a30ce30a17ee58 "modals.js" >}}
 
-{{% code git="blog-ejemplos/tree/master/TapestryMultipleActions" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/TapestryMultipleActions" command="./gradlew run" >}}
 
 ### Algunas diferencias con Servlets/JSP y Grails
 

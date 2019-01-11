@@ -63,7 +63,7 @@ De cualquier modo conviene también tener automatizada la monitorización de las
 
 Con Uptime Robot y el _endpoint_ _health_ podemos [monitorizar la aplicación y recibir notificaciones][blogbitix-114] si en algún momento la aplicación deja de responder.
 
-{{% code git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

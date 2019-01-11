@@ -42,7 +42,7 @@ A los grupos de captura se les puede dar un nombre y referenciarlos por él en v
 
 En la [documentación Javadoc de la clase Pattern](https://docs.oracle.com/javase/9/docs/api/java/util/regex/Pattern.html) está detallado el soporte en Java para usar expresiones regulares. Otra aplicación práctica de los grupos de captura es [formatear con colores en la terminal una sentencia SQL o código fuente de un lenguaje][blogbitix-359].
 
-{{% code git="blog-ejemplos/tree/master/JavaRegexpReferenceGroups" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRegexpReferenceGroups" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

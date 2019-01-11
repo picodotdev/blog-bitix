@@ -44,6 +44,6 @@ En la [API de log4j](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/inde
 {{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "build.gradle" >}}
 {{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "log4j2.yaml" >}}
 
-{{% code git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" >}}
 
 {{% /post %}}

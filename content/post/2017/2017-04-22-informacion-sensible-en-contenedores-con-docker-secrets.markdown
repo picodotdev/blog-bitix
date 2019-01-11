@@ -61,6 +61,6 @@ Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa e
 
 {{< gist picodotdev b291cbf1f5a0739c35c70f547fb76d77 "run.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/DockerSwarm" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% /post %}}

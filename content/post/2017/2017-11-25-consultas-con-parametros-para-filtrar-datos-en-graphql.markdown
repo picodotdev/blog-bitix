@@ -41,6 +41,6 @@ Esta petición busca los libros que su título comience por las letras _O_ o _R_
 
 Pero... ¿que ocurre si aún con el filtrado o en una consulta el número de coincidencias son unos cuantos miles? Seguramente sean demasiadas coincidencias para devolver en una única petición y por ello es habitual [realizar paginación en GraphQL][blogbitix-283]. Eso será tema para otro de los siguientes artículos de esta serie sobre GraphQL.
 
-{{% code git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 
 {{% /post %}}

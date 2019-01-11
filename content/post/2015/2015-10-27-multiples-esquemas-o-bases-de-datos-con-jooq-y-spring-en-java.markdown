@@ -62,7 +62,7 @@ Este sería el programa de ejemplo iniciado con [Spring Boot][spring-boot] que u
 
 {{< gist picodotdev 247d4c1189e851d89d85 "Main.java" >}}
 {{< gist picodotdev 247d4c1189e851d89d85 "System.out" >}}
-{{% asciinema id="28856" caption="Ejecución del ejemplo multidatabase" %}}
+{{< asciinema id="28856" caption="Ejecución del ejemplo multidatabase" >}}
 
 Si quieres obtener más información sobre varias de las herramientas como jOOQ, Liquibase, Gradle o Spring Boot que forman en el momento de escribir este artículo el actual estado del arte en Java puedes leer los diferentes artículos que he he escrito sobre ellos de forma específica:
 

@@ -40,7 +40,7 @@ Estableciendo las variables de entorno de la máquina virtual podemos usar el co
 Podemos detener, volver a iniciar, hacer SSH y eliminar la máquina virtual con:
 
 {{< gist picodotdev 691729e2d27cade948ea "docker-machine-manage.sh" >}}
-{{% asciinema id="23600" caption="Comandos y uso de Docker Machine en una máquina virtual" %}}
+{{< asciinema id="23600" caption="Comandos y uso de Docker Machine en una máquina virtual" >}}
 
 El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es _~/.docker/machine_, si queremos cambiarlo podemos utilizar el parámetro _--storage-path_ en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:
 

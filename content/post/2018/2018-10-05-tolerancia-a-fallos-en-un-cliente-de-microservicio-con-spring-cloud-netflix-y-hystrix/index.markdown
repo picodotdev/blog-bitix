@@ -71,7 +71,7 @@ El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.c
 
 {{< gist picodotdev 7d1de9a669612dce06d3a5a35e4831d7 "gradle-run.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 
 {{% reference %}}
 {{< links >}}

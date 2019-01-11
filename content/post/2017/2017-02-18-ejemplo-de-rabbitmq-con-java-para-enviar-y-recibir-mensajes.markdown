@@ -70,7 +70,7 @@ Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos b
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783981520&linkId=e87eebb622314cdf0c2c14fc32940264"></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" >}}
 
 {{% reference %}}
 {{< links >}}

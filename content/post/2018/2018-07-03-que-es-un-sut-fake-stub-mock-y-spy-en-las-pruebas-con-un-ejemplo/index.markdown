@@ -49,7 +49,7 @@ En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda est
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=b57d8e90599c681fc8e794027e17bea3"></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" >}}
 
 {{% reference %}}
 {{< links >}}

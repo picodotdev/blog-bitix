@@ -80,6 +80,6 @@ Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la
 
 Otras formas de usar GitLab es desde la nube de [Amazon EC2][amazon-ec2] o de forma SaaS a un coste de entre 39€ y 199€ por usuario y mes pero si la nube no es una opción una de las ventajas de GitLab es que se puede instalar en algún sistema propio de cualquiera de las formas anteriores y tener proyecto privados. GitLab es otra herramienta que a añadiría a [Herramientas para un proyecto Java][blogbitix-84]. Hay alguna cosa adicional a conocer [como realizar una actualización](https://docs.gitlab.com/ce/update/README.html) cuando se publique una nueva versión o [como hacer copias de seguridad y restaurarlas](https://docs.gitlab.com/ce/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system). Lo que he mostrado aqui son solo una introducción a unas pocas de las muchas posibilidades de GitLab.
 
-{{% code git="blog-ejemplos/tree/master/GitLab" command="docker-compose up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GitLab" command="docker-compose up" >}}
 
 {{% /post %}}

@@ -36,11 +36,11 @@ Para la solución hay que optar por otra estrategia, en el ejemplo de código he
 {{< gist picodotdev bb2b37bba770d2d09d97d92ff82bfd1a "Pusher.java" >}}
 {{< gist picodotdev bb2b37bba770d2d09d97d92ff82bfd1a "Main.java" >}}
 
-{{% asciinema id="167230" caption="Ejemplo de concurrencia del agente y los fumadores" %}}
+{{< asciinema id="167230" caption="Ejemplo de concurrencia del agente y los fumadores" >}}
 
 En el siguiente [documento con varios de los problemas de concurrencia y sincronización](https://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/labnotes/WEEK%205%20-%20SEMAPHORES/mysemaphoreexamplesMOE.pdf) está muy bien explicado la solución a este problema de los fumadores y de los otros casos. En algunos otros sitios este caso lo convierten en un problema de sincronización en vez de uno de concurrencia.
 
-{{% code git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

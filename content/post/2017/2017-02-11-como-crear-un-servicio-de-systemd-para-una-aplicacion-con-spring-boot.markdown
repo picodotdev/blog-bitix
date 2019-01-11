@@ -33,7 +33,7 @@ Usando la aplicación del [Ejemplo de API REST en Java con JAX-RS y Spring Boot]
 {{< gist picodotdev 3c6603987257cde5e0b182bf8066798f "spring-boot-jaxrs-postgres.service" >}}
 {{< gist picodotdev 3c6603987257cde5e0b182bf8066798f "postgres.service" >}}
 
-{{% asciinema id="102785" caption="Servicio de systemd para una aplicación con Spring Boot" %}}
+{{< asciinema id="102785" caption="Servicio de systemd para una aplicación con Spring Boot" >}}
 
 La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.
 
@@ -44,7 +44,7 @@ Los archivos _unit_ propios deben ser ubicados en el directorio _/etc/systemd/sy
 
 En los enlaces de referencia hay documentación más detallada tanto para gestionar los servicios con systemd como también documentación de sus archivos _unit_.
 
-{{% code git="blog-ejemplos/tree/master/SpringBootJaxrs" command="sudo systemctl start spring-boot-jaxrs.service" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="sudo systemctl start spring-boot-jaxrs.service" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -49,7 +49,7 @@ Esta funcionalidad se incorporó en Apache Tapestry 5.2 donde hasta entonces era
 
 Con este soporte es algo más fácil enviar eventos y realizar peticiones _Ajax_ desde el cliente para obtener datos.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

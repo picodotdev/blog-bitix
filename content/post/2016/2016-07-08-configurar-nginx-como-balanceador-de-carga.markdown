@@ -66,7 +66,7 @@ En el ejemplo de configuración usaré [Docker][docker] para crear un servidor w
 
 {{< gist picodotdev c202119fe96523b3bc6db4a742fda55b "docker-compose.yml" >}}
 
-{{% code git="blog-ejemplos/tree/master/NginxLoadBalancer" command="docker-compose up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/NginxLoadBalancer" command="docker-compose up" >}}
 
 {{% reference %}}
 {{< links >}}

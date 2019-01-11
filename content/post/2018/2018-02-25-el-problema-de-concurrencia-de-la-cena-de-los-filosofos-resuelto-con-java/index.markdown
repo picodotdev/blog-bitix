@@ -49,9 +49,9 @@ En esta implementación he optado por hacer que el último filósofo en vez de s
 {{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Fork.java" >}}
 {{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Philosopher.java" >}}
 
-{{% asciinema id="165278" caption="Ejemplo de concurrencia de los filósofos" %}}
+{{< asciinema id="165278" caption="Ejemplo de concurrencia de los filósofos" >}}
 
-{{% code git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

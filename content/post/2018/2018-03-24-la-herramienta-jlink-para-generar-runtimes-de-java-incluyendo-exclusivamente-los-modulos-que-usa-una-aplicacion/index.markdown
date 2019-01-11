@@ -46,6 +46,6 @@ Una vez generado el _runtime_ su uso es el siguiente:
 
 En el vídeo [Java in a World of Containers](https://www.oracle.com/java/java9-screencasts.html?bcid=5582437011001&playerType=single-social&size=events) se comenta otra serie de características y opciones incluidas en Java para hacer de esta plataforma más consciente de las condiciones de ejecución propias de los contenedores.
 
-{{% code git="blog-ejemplos/tree/master/JavaHttp2" command="./gradew jlink" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaHttp2" command="./gradew jlink" >}}
 
 {{% /post %}}

@@ -53,7 +53,7 @@ Si usásemos el [componente de selección múltiple con Apache Tapetstry y boots
 
 {{< gist picodotdev 97ab5029147f0bf58bb741775af69e1a "MultiSelect.java" >}}
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

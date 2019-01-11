@@ -37,6 +37,6 @@ Las dependencias a incluir en el proyecto son las siguientes.
 
 También se puede [utilizar Apache POI para crear hojas excel y OpenCSV para crear archivos CSV][blogbitix-146] con las columnas correctamente separadas por comas. Otra alternativa para leer o escribir archivos en formato CSV es [Apache Commons CSV][apache-commons-csv].
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoApachePOI" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoApachePOI" command="./gradlew run" >}}
 
 {{% /post %}}

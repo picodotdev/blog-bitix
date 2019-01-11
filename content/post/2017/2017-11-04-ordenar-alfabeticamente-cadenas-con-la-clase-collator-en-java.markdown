@@ -37,6 +37,6 @@ Usando la clase _Collator_ y realizando la ordenación de la misma lista anterio
 
 Utilizando el _Collator_ con solo diferencias primarias _Cantabria_ se ordena al final de la lista por tener las letras _a_, _A_ y _Á_ una diferencia primaria con _C_. Con diferencias secundarias las letras _A_ y _a_ se ordenan antes que _Á_ por tener diferencias secundarias. Finalmente, con diferencias terciarias _a_ se ordena antes que _A_. 
 
-{{% code git="blog-ejemplos/tree/master/JavaCollator" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaCollator" command="./gradlew run" >}}
 
 {{% /post %}}

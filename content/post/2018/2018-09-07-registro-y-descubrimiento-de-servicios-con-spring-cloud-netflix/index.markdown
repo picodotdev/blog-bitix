@@ -55,6 +55,6 @@ Una vez iniciados los servidores de descubrimiento en la página _dashboard_ de 
         caption="Servicios y su estado registrados en el servicio de registro y descubrimiento" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew discoveryserver:run --args=\"--spring.profiles.active=ds1\"" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew discoveryserver:run --args=\"--spring.profiles.active=ds1\"" >}}
 
 {{% /post %}}

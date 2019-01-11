@@ -57,7 +57,7 @@ Si queremos seleccionar múltiples opciones usando _checkboxes_ Tapestry ofrece 
 
 En un artículo anterior comenté como [adaptar el componente _Select_ y este _MultiSelect_ para añadirle funcionalidades de la librería bootstrap-select][blogbitix-187] como cuadro de búsqueda, búsqueda por palabras clave, divisores, etc que consiste en añadir a las etiquetas HTML _select_, _optiongrp_ y _option_ ciertos atributos con sus correspondientes valores con una combinación de parámetros informales y personalización de la clase [SelectModel](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/SelectModel.html). En el siguiente artículo comentaré como [añadir botones selectores de opciones][blogbitix-189] además de los que incorpora _bootstrap-select_ de Todos y Ninguno.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

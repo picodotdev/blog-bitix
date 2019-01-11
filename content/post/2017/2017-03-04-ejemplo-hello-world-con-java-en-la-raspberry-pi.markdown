@@ -47,6 +47,6 @@ El resultado de este ejemplo es un mensaje en la terminal que es emitido por un 
 
 En los siguientes artículos de la serie mostraré ya como usar diferentes elementos de salida como diodos LED, zumbador, _display_ LCD 1602 o de entrada como un pulsador.
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeHelloWorld" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeHelloWorld" >}}
 
 {{% /post %}}

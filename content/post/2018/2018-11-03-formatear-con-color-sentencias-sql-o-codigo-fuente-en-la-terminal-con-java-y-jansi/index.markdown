@@ -36,6 +36,6 @@ El resultado en la terminal es el siguiente.
 
 Este ejemplo es una aplicación útil de las expresiones regulares. En este caso he usado Jansi para emitir en la terminal texto con color pero de forma similar esto se puede usar para formatear en una web el mismo texto transformándolo y generando el HTML con las clases CSS adecuadas.
 
-{{% code git="blog-ejemplos/tree/master/JavaRegexFormatter" command="./gradlew installDist, ./build/install/JavaRegexFormatter/bin/JavaRegexFormatter" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRegexFormatter" command="./gradlew installDist, ./build/install/JavaRegexFormatter/bin/JavaRegexFormatter" >}}
 
 {{% /post %}}

@@ -38,6 +38,6 @@ El contenido completo del propio _script_ de recuperación es el siguiente, no e
 
 {{< gist picodotdev 0054af9cd45747c2248b85f32add684b "alis-recovery.sh" >}}
 
-{{% code git="alis/tree/master/" %}}
+{{< sourcecode git="alis/tree/master/" >}}
 
 {{% /post %}}

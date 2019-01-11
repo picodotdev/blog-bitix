@@ -39,6 +39,6 @@ Cachear datos se puede hacer en varios puntos de una aplicación, si se trata de
         image1="java-cache.png" thumb1="java-cache-thumb.png" title1="Ejecución del ejemplo" >}}
 </div>
 
-{{% code git="blog-ejemplos/tree/master/JavaCache" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaCache" command="./gradlew run" >}}
 
 {{% /post %}}

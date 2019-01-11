@@ -43,7 +43,7 @@ Otro formato de datos muy utilizado es el de columnas separadas por comas o CSV.
 
 En la [guía de iniciación a las características de los documentos HSSF y XSSF](http://poi.apache.org/spreadsheet/quick-guide.html) hay ejemplos pequeños sobre varias de las funcionalidades más comunes que necesitaremos al generar documentos. Otra funcionalidad relacionada con la escritura en el formato de estos tipos de archivos es la lectura que también es posible con estas mismas librerías, [Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java][blogbitix-357].
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoApachePOI/" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoApachePOI/" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

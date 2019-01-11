@@ -66,7 +66,7 @@ Ejecutando esta pequeña aplicación obtenemos el siguiente resultado en la term
 
 En el [tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial) encontraremos más información y más detallada de las posibilidades que nos ofrece esta interesante librería en la plataforma <abbr title="Java Virtual Machine">JVM</abbr> para manipular _bytecode_ y tipos con el lenguaje Java en tiempo de ejecución.
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoByteBuddy" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoByteBuddy" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

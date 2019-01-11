@@ -130,7 +130,7 @@ Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta l
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429007001" allowfullscreen frameborder="0"></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoJava9" command="./java.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoJava9" command="./java.sh" >}}
 
 {{% reference %}}
 {{< links >}}

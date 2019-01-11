@@ -34,7 +34,7 @@ La clase _Either_ tiene múltiples métodos para comprobar si el valor que tiene
 
 En vez de retornar un _Either_ en un método usando Vavr se puede utilizar la clase [Try](https://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Try.html) como otra forma de gestionar las excepciones. Con _Try_ el método no es necesario que devuelva un _Either_ de modo que retorne el valor en el caso correcto y lance una exepción en caso de error. El _Try_ puede convertirse a un _Either_.
 
-{{% code git="blog-ejemplos/tree/master/JavaException" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaException" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

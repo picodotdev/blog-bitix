@@ -57,6 +57,6 @@ Este es un pequeño vídeo en el que muestro su funcionamiento.
   <iframe width="640" height="360" src="https://www.youtube.com/embed/jaqMi53pjf0" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeLedButtonBuzzer" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeLedButtonBuzzer" >}}
 
 {{% /post %}}

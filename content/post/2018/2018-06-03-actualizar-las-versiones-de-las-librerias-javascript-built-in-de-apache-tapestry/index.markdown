@@ -38,7 +38,7 @@ Además, en este caso las nuevas versiones las he proporcionado [gestionando las
 
 Al usar una versión más reciente de las librerías es importante asegurarse y revisar que todas las funcionalidades necesarias son compatibles hacia atrás. Al hacer en el caso de jQuery una actualización a una versión mayor hay que probar y leer las notas de publicación de las versiones por si hubiera un problema de compatibilidad en las funcionalidades que requiere de ella el _framework_ Apache Tapestry.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

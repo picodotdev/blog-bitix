@@ -46,7 +46,7 @@ El libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617291307/ref
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291307&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 
 {{% reference %}}
 {{< links >}}

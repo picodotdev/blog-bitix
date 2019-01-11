@@ -2,9 +2,9 @@
 pid: 00
 title: ""
 author: ""
-url: "/2018/01/xxx/"
+url: "/2019/01/xxx/"
 aliases: [""]
-date: 2018-01-01T00:00:00+01:00
+date: 2019-01-01T00:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -48,9 +48,11 @@ draft: true
 
 {{< gist picodotdev id "file" >}}
 
+{{< highlight java "linenos=table" >}}{{< code file="Main.java" >}}{{< / highlight >}}
+
 {{% asciinema id="" caption="" %}}
 
-{{% code git="blog-ejemplos/tree/master/" command="" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/" command="" %}}
 
 {{% reference %}}
 {{< links >}}

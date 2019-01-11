@@ -45,7 +45,7 @@ Exponer las métricas en una aplicación de Spring Boot para Prometheus es muy s
 
 {{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "gradle-run.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 
 {{% reference %}}
 {{< links >}}

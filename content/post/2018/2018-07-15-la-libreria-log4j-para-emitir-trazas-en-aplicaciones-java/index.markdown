@@ -51,6 +51,6 @@ Las trazas son muy importantes por la valiosa información que proporcionan de l
 
 En otro artículo ya he comentado [como usar marcadores con sl4j y logback][blogbitix-9] para relacionar trazas que son emitidas en diferentes clases o módulos de la aplicación, también se puede hacer con log4j. En siguientes artículos comentaré [como transformar un objeto a un mensaje][blogbitix-338] sin necesidad de convertir ese objeto a un String en cada traza de la aplicación donde se use su información y otra forma de relacionar trazas muy útil en aplicaciones web [asignando un indenticador única en cada petición y emitiendolo en todas sus trazas][blogbitix-336], esto permite saber todo lo que ha ocurrido en una petición entre las muchas que se ejecutan concurrentemente por todos los usuarios de la aplicación.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{% /post %}}

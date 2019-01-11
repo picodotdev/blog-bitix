@@ -74,7 +74,7 @@ La propia documentación de las clases del JDK está generada con la herramienta
 
 La documentación Javadoc al ser una colección de archivos HTML y demás recursos estáticos pueden copiarse a cualquier servidor web si es necesario que estén disponibles a través de internet y accesibles con cualquier navegador web.
 
-{{% code git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
 {{< links >}}

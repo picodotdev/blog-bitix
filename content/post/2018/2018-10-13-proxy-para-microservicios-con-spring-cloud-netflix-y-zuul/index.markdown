@@ -60,6 +60,6 @@ Zuul además es capaz de proporciona otras muchas funcionalidades como:
 * Manejo de respuesta estática
 * Gestión de tráfico active/active
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh" >}}
 
 {{% /post %}}

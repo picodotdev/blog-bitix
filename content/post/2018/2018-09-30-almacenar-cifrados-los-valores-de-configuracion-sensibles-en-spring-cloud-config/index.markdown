@@ -49,6 +49,6 @@ Iniciado el servicio de descubrimiento, el de configuración y un servicio que t
 {{< gist picodotdev caccab2d4558ec75babab6ef71808f37 "Main.java" >}}
 {{< gist picodotdev caccab2d4558ec75babab6ef71808f37 "DefaultConfiguration.java" >}}
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh, ./curl-1.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh, ./curl-1.sh" >}}
 
 {{% /post %}}

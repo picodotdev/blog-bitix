@@ -49,6 +49,6 @@ Esta aplicación para la Raspberry Pi queda bastante vistosa y no es muy complic
   <iframe width="640" height="360" src="https://www.youtube.com/embed/F2BChbcyr5g" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/JavaRasberriPi" command="./gradlew executeChristmasTree" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRasberriPi" command="./gradlew executeChristmasTree" >}}
 
 {{% /post %}}

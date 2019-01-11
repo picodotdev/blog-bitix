@@ -43,7 +43,7 @@ En el segundo ejemplo, sin embargo, el cuantificador es reacio o vago de modo qu
 
 En el tercer caso se se hayan coincidencias ya que el cuantificador es posesivo. En este caso, la cadena completa es consuimida por _.*+_ dejando nada que satisfaga el patrón _foo_ al final de la expresión. Dado que no vuelve hacia atrás tiene mejor rendimiento que el cuantoficador _greedy_ en los casos que se quiera encontrar una coincidiencia completa en algo.
 
-{{% code git="blog-ejemplos/tree/master/JavaRegexQuantifiers" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRegexQuantifiers" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

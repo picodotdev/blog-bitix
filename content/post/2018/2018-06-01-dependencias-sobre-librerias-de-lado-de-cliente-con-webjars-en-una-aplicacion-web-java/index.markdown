@@ -41,7 +41,7 @@ Inspeccionando el código fuente de la página devuelta se observa que en el cas
 
 Los _webjars_ muy útiles para gestionar las librerías de lado cliente que hacen innecesario descargar manualmente las dependencias, automatizan la descarga, hacen muy sencillo actualizar a nuevas versiones y es muy fácil de usar al no requerir mucha confiración ni ser invasiva. Además, al estar como una dependencia en el archivo de construcción del proyecto queda indicado de forma explícita que el proyecto utiliza y necesita esa librería. Para mi son una herramienta imprescindible.
 
-{{% code git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 
 {{< plugintapestry >}}
 

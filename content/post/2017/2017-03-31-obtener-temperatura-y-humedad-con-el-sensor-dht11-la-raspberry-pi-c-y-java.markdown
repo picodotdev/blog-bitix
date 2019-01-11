@@ -82,7 +82,7 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 
 {{< gist picodotdev c77e19703a53924171a6a4144a1b46a7 "execute.sh" >}}
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -67,7 +67,7 @@ Si se desea profundizar más en NIO y NIO.2 el libro [The Well-Grounded Java Dev
 
 En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recibir eventos cuando se añade, elimina o modifica algún archivo de los observados usando la clase [WatchService](https://docs.oracle.com/javase/10/docs/api/java/nio/file/WatchService.html).
 
-{{% code git="blog-ejemplos/tree/master/JavaNIO" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaNIO" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

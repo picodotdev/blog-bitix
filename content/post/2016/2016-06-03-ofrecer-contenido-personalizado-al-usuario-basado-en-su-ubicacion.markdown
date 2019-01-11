@@ -55,7 +55,7 @@ En una aplicación web Java en la interfaz [ServletResquest](http://docs.oracle.
 
 Proporcionar contenido personalizado al usuario probablemente ayuda a mejorar la conversión de un sitio de comercio electrónico y la experiencia del usuario ofreciéndole productos o servicios en los que de alguna forma esté interesado ya sea como en este caso basado en su ubicación, pero como en el caso de Amazon según las visitas anteriores y en otros podría ser en base al sistema operativo o navegador como hace Google cuando accedemos a su buscador indicándonos que nos instalemos [Chrome][google-chrome] si usamos [Firefox][firefox].
 
-{{% code git="blog-ejemplos/tree/master/JavaGeolocation/" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaGeolocation/" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -48,6 +48,6 @@ Esta es la salida y funcionamiento del cliente realizando balanceado la carga en
 
 El balanceo de carga que con Ribbon se realiza en el cliente es más sencillo que realizar el balanceo de carga en el servidor ya que no requiere una pieza más en la infraestructura pero requiere que el cliente tenga algo de lógica para hacer el balanceo de carga.
 
-{{% code git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 
 {{% /post %}}

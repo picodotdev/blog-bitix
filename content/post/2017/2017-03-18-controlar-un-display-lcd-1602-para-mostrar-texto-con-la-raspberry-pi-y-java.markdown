@@ -85,6 +85,6 @@ Pudiendo mostrar mensajes en _display_ es posible mostrar cualquier información
 
 El ejemplo parece simple, y el programa Java lo es, pero requiere conocer varias cosas que en internet está dispersas como activar el bus I2C o conocer la librería diozero para controlar el _display_ que simplifica enormemente el código y nos evita comunicarnos a más bajo nivel con el _display_, realizar las conexiones eléctricas también requiere algo de conocimiento. Averiguar todo esto me costó una buena cantidad de tiempo.
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeLcd" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeLcd" >}}
 
 {{% /post %}}

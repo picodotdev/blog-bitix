@@ -72,7 +72,7 @@ La librería compartida para un sistema _amd64_ la he compilado en mi equipo de 
 
 Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la librería con código nativo. [Gradle][gradle] ofrece soporte para [compilar código nativo con su plugin](https://docs.gradle.org/3.4.1/userguide/native_software.html), sin embargo, he preferido usar y conocer los comandos javah y gcc sin usar Gradle. En el siguiente artículo mostraré el ejemplo del sensor DHT11 usando JNI y código nativo en C llamando a métodos de un objeto Java desde código C.
 
-{{% code git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeJniHelloWorldLocal" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeJniHelloWorldLocal" >}}
 
 {{% reference %}}
 {{< links >}}

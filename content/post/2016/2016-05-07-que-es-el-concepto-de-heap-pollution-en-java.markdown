@@ -50,7 +50,7 @@ Relacionados con casos de combinar genéricos y arrays y _ClassCastException_ en
 
 Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos no será muy habitual que nos encontremos _ClassCastException_ por _Heap Pollution_, pero es un concepto interesante conocer, en cualquier caso el compilador nos informará con los _unchecked warnings_.
 
-{{% code git="blog-ejemplos/tree/master/JavaHeapPollution" command="./gradlew test" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaHeapPollution" command="./gradlew test" >}}
 
 {{% reference %}}
 {{< links >}}

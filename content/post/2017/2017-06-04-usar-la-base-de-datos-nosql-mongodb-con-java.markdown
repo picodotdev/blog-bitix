@@ -46,7 +46,7 @@ En el libro [MongDB in Action](https://amzn.to/2qvYqqU) comentan más detalladam
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=53e36564344401d0a3e0f29a4cef1968"></iframe>
 </div>
 
-{{% code git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

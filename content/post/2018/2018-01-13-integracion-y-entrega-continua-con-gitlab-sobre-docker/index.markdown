@@ -55,7 +55,7 @@ El descriptor usando [Docker Compose][docker-compose] que define el servicio de 
 
 En la sección de referencia hay unos buenos enlaces de documentación de GitLab sobre la integración continua, despliegue continuo y entrega continua.
 
-{{% code git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -110,7 +110,7 @@ Este sería el código fuente de un ejemplo sencillo para una gráfica varias se
 
 En JavaScript también hay librerías para generar gráficas pero para casos complejos y con muchos datos probablemente sea mejor idea generar las gráficas en el lado del servidor que enviar todos los datos que necesite la gráfica al cliente. En GNU/Linux disponemos del programa [gnuplot][gnuplot] usable desde la línea de comandos y por tanto desde cualquier lenguaje que tenga la capacidad de ejecutar comandos del sistema, [ejecutar un comando del sistema con Java][blogbitix-132] de gnuplot para que nos generase la gráfica. Hay varias posibilidades para visualizar de forma gráfica la información.
 
-{{% code git="blog-ejemplos/tree/master/JFreeChart" command="./gradlew run" %}}
+{{< sourcecode git="blog-ejemplos/tree/master/JFreeChart" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}
