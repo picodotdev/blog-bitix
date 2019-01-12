@@ -23,11 +23,11 @@ La forma de distribuir el código compilado a _bytecode_ en Java es a través de
 
 Una aplicación distribuida en forma de múltiples archivos archivos _jar_ se ejecuta con una línea de comandos como la siguiente en la que el parámetro _-cp_ indica las ubicaciones donde se buscarán librerías _jar_ y archivos _class_ si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método _main_ que inicia la aplicación. Previamente hay que compilar el proyecto con [Gradle][gradle].
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "gradlew-assemble.sh" >}}
+{{< code file="gradlew-assemble.sh" language="Bash" options="" >}}
 
 En este caso se trata de una aplicación que emite un arte en formato _ascii_ en la terminal donde para cada linea se usa un color diferente mediante la librería [Jansi][jansi] que la aplicación tiene como dependencia.
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "java-cp.sh" >}}
+{{< code file="java-cp.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -37,26 +37,26 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la opción _-jar_ se ignora el parámetro _-cp_ y no se indica la clase _main_ del punto de entrada de la aplicación. En el caso de las aplicaciones distribuidas en un archivo _jar_ tanto la clase _main_ como las dependencias se indican en un archivo de manifiesto incluido en el propio archivo _jar_. El archivo se ubica en _META-INF/MANIFEST.MF_ dentro del _jar_, es un archivo de texto donde se indican varias propiedades en forma de atributo y valor, una en cada linea. Un ejemplo de archivo de manifiesto sería el siguiente:
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "MANIFEST.MF" >}}
+{{< code file="MANIFEST.MF" language="Plaintext" options="" >}}
 
 La propiedad _Manifest-Version_ y _Created-By_ son informativas de la versión del archivo de manifiesto y el autor de la librería _jar_. La propiedad _Main-Class_ indica la clase _main_ de la librería o aplicación y la propiedad _Class-Path_ es una lista separada por espacios de librerías adicionales. Las propiedades _Main-Class_ y _Class-Path_ son los parámetros que indicamos como parámetros en el comando _java_ anterior. Con el archivo _jar_, su manifiesto y las librerías la aplicación Java se inicia de forma un poco más sencilla que antes al no tener que indicar ni la clase _main_ ni el _classpath_.
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "java-jar.sh" >}}
+{{< code file="java-jar.sh" language="Bash" options="" >}}
 
 Como en este caso, si Java no se encuentra la dependencia de Jansi y se produce la siguiente excepción que indica que no se ha encontrado una clase necesaria.
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "Exception.out" >}}
+{{< code file="Exception.out" language="Plaintext" options="" >}}
 
 Sin embargo, para distribuir la aplicación aún hay que distribuir varios archivos _jar_, el de la aplicación y los _jar_ de las librerías que necesite la aplicación. En este caso solo es un _jar_ adicional ya que la aplicación solo tiene una dependencia y esta transitivamente no tiene ninguna otra pero en una aplicación más compleja el número de dependencias puede llegar a la centena.
 
 Para hacer la distribución más sencilla hay una posibilidad que usan algunos programadores de Java que es reempaquetar todas las clases del _jar_ de la aplicación y de las librerías en un nuevo _jar_, a esta opción de reempaquetar las clases se le conoce como _uberjar_ o _fatjar_. En la herramienta de construcción Gradle existe un _plugin_ para realizar esta tarea de creación del _uberjar_ pero también se puede hacer definiendo una tarea sin necesidad del _plugin_. El archivo de Gradle adaptado para producir un _uberjar_ de forma automatizada es el siguiente. La tarea importante en el caso del ejemplo es _uberJar_.
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "build.gradle" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Con el siguiente comando la ejecución de la aplicación empaquetada como _uberjar_ produce el mismo resultado. Con el _uberjar_ en el archivo de manifiesto no es necesario incluir el atributo _Class-Path_ ya que todas las clases necesarias tanto de la aplicación como de las dependencias ha sido empaquetadas en el _jar_.
 
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "java-jar-uberjar.sh" >}}
-{{< gist picodotdev 9f599ab10340e025d87a14bdde97941b "System.out" >}}
+{{< code file="java-jar-uberjar.sh" language="Bash" options="" >}}
+{{< code file="System.out" language="Plaintext" options="" >}}
 
 Hay un [_plugin_ de Gradle para generar _uberjars_](http://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
 

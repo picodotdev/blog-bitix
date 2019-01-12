@@ -24,7 +24,7 @@ Hacer referencia al grupo de captura en las cadenas de reemplazo es especialment
 
 Supongamos que queremos corregir un texto en el que por error hay palabras repetidas de forma seguida y queremos eliminar esos duplicados de palabras. Por ejemplo, tenemos un texto como el siguiente en el algunas palabras como _ipsum_, _eiusmod_, _fugiat_, _sint_ y _proident_ están repetidas:
 
-{{< gist picodotdev dd337be3c01de7b5e3783b34e8ccc274 "lorem-ipsum.txt" >}}
+{{< code file="lorem-ipsum.txt" language="Plaintext" options="" >}}
 
 La expresión regular para encontrar las coincidencias deberá para cada palabra comprobar si la siguiente es la misma. Cada palabra la incluimos en un grupo y posteriormente hacemos referencia a ese grupo con _\\1_ para ver si la siguiente palabra es la misma. Con la siguiente expresión regular y código encontraremos las palabras repetidas una a continuación de la otra.
 
@@ -32,11 +32,11 @@ Para hacer referencia en los grupos de coindiciendia en la cadena de reemplazo h
 
 Un ejemplo más útil de los grupos de referencia en la cadena de reemplazo sería reemplazar en un texto plano las direcciones de correo electrónico por sus enlaces en HTML. Usando una expresión regular para encontrar las direcciones de correo electrónico y sustituirlas por los enlaces HTML haciendo uso de los grupos de captura y referencias a ellos.
 
-{{< gist picodotdev dd337be3c01de7b5e3783b34e8ccc274 "Main.java" >}}
+{{< code file="Main.java" language="Java" options="" >}}
 
 La salida del ejemplo en la terminal es el siguiente.
 
-{{< gist picodotdev dd337be3c01de7b5e3783b34e8ccc274 "system.out" >}}
+{{< code file="system.out" language="Plaintext" options="" >}}
 
 A los grupos de captura se les puede dar un nombre y referenciarlos por él en vez de por un número identificador como en el de este ejemplo. A un grupo de captura se le da un nombre con la siguiente expresión _(?\<name\>X)_ donde _name_ es el nombre del grupo de captura de la expresión _X_. Posteriormente con la expresión _${name}_ se hace referencia al grupo de captura, también en la cadena de reemplazo.
 

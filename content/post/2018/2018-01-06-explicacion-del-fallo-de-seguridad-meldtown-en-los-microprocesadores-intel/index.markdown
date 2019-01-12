@@ -53,23 +53,23 @@ Con la ayuda de unos transistores más pequeños y más espacio se aprovecha par
 
 En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo, en esta secuencia de instrucciones que realizan unas sumas se tardarían 6 ciclos de reloj. A estos microprocesadores que ejecutan una instrucción por ciclo de reloj se les denomina escalares, siendo ejemplos el Intel 486 y el ARM1176 usado en la Raspberry Pi 1. 
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "escalar.py" >}}
+{{< code file="escalar.py" language="Python" options="" >}}
 
 ### Superescalar
 
 En un microprocesador con dos _pipelines_ o [superescalar][wikipedia-superescalar] se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable _m_ se realiza al mismo tiempo la segunda operación de _n_, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los [ARM][arm] Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "superescalar-1.py" >}}
+{{< code file="superescalar-1.py" language="Python" options="" >}}
 
 Sin embargo, hacer la suma de _o_ y _x_ al mismo tiempo no es posible ya que antes de calcular _x_ hay que calcular _o_ debido a que uno de los operandos en la suma de _x_ es _o_, es decir, hay una dependencia en estas instrucciones y se han de ejecutar una después de otra. Con lo que en vez de tres ciclos habría que conformase en ejecutar estas instrucciones en cuatro ciclos.
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "suprescalar-2.py" >}}
+{{< code file="suprescalar-2.py" language="Python" options="" >}}
 
 ### Fuera de orden
 
 Los microprocesadores [fuera de orden][wikipedia-out-of-order] reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los _pipelines_ llenos. Cambiando el orden entre las instrucciones _x_ e _y_ se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y [AMD][amd] incluyendo varios ARM Cortex-A9, A15, A17 y A57.
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "fuera-de-orden.py" >}}
+{{< code file="fuera-de-orden.py" language="Python" options="" >}}
 
 ### Predicción de salto y ejecución especulativa
 
@@ -77,15 +77,15 @@ Los programas incluyen saltos con sentencias condicionales _if_ o de bucle. Los 
 
 En este otro caso, _v_ depende de _u_ y _u_ depende de _t_ de modo que un microprocesador superescalar sin ejecución especulativa tardará tres ciclos computando _t_, _u_ y _v_ para determinar el valor de _v_ en la sentencia condicional _if_ (en otro ciclo) momento en que pasa otros tres ciclos calculando _w_, _x_ e _y_, en total 4 o 7 ciclos dependiendo de si hay salto en la sentencia condicional.
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "ejecucion-especulativa-1.py" >}}
+{{< code file="ejecucion-especulativa-1.py" language="Python" options="" >}}
 
 Si el predictor de salto determina que es probable que la condición sea cierta la ejecución especulativa reordena el programa de la siguiente manera:
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "ejecucion-especulativa-2.py" >}}
+{{< code file="ejecucion-especulativa-2.py" language="Python" options="" >}}
 
 Y con la ejecución superescalar se mantiene los _pipelines_ ocupados de modo que el ejemplo tiene la siguiente equivalencia y tardando aproximadamente 3 ciclos cuando antes se necesitaban 7.
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "ejecucion-especulativa-3.py" >}}
+{{< code file="ejecucion-especulativa-3.py" language="Python" options="" >}}
 
 ### Cache
 
@@ -95,11 +95,11 @@ Los microprocesadores son muy rápidos comparados con la memoria o el acceso al 
 
 La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de [ataque side-channel](https://en.wikipedia.org/wiki/Side-channel_attack). Desde el punto de vista de _Meltdown_ y _Spectre_ y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho). 
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "meltdown-1.py" >}}
+{{< code file="meltdown-1.py" language="Python" options="" >}}
 
 _u_ tiene una dependencia sobre _t_ y _v_ sobre _u_ con lo que el microprocesador usando la superescalabilidad, la ejecución fuera de orden y ejecución especulativa acabaría transformando el programa en la siguiente secuencia de operaciones:
 
-{{< gist picodotdev f4e501b7c94a9695aa784db89591afd7 "meltdown-2.py" >}}
+{{< code file="meltdown-2.py" language="Python" options="" >}}
 
 El microprocesador lee de el valor de una dirección del _kernel_ de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de _v_ utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que _v_ de cero para que no se produzca la excepción con los valores adecuados de las variables (_a_, _b_, _c_, _d_) la ejecución especulativa de `v, y_ = u+d, user_mem[x_]` producirá un acceso a la dirección de memoria _0x000_ o _0x100_ dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria `kern_mem[address]`. El ataque _side-channel_ se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del _kernel_. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del _kernel_ aplicando esta operación millones de veces.
 

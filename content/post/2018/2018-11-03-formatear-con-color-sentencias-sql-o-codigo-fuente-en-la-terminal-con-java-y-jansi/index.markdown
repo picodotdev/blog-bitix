@@ -23,8 +23,8 @@ Una forma sencilla para formatear con colores un archivo de código fuente Java 
 
 Una formateador simple para cada uno de estos casos serían los siguientes donde se utiliza una expresión regular con diferentes grupos de captura con nombre. El primer caso es para formatear con color una sentencia SQL sencilla en el método _printSql()_ y el segundo el programa _Hola mundo_ de Java en el metodo _printJava()_.
 
-{{< gist picodotdev 8ae4fa95b210f181fe152536845793b0 "Main.java" >}}
-{{< gist picodotdev 8ae4fa95b210f181fe152536845793b0 "build.gradle" >}}
+{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 El resultado en la terminal es el siguiente.
 

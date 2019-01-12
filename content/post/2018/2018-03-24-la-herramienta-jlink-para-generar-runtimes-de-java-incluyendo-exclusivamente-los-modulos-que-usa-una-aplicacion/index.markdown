@@ -26,23 +26,23 @@ Con la incorporación de la modularidad a Java 9 se posibilita generar _runtimes
 
 Usando como ejemplo el caso de la [aplicación con el cliente de HTTP/2][blogbitix-268] que tiene como dependencias únicamente el módulo _jdk.incubator.httpclient_ de forma explícita y _java.base_ de forma implícita en su definición de módulo la forma de generar un runtime específico para esta aplicación con _jlink_ es la siguiente que utiliza el archivo con las dependencias de módulos declarados en el archivo _module-info.java_.
 
-{{< gist picodotdev 2e113967c3823da21308e8f2a9adbd4f "module-info.java" >}}
+{{< code file="module-info.java" language="Java" options="" >}}
 
 Usando la linea de comandos o con una tarea de [Gradle][gradle] se genera el _runtime_ para la aplicación con _jlink_. El módulo ha de compilarse previamente. Con la opción _--launcher_ se crea un _script_ para lanzar la aplicación con la clase que contiene el método _main_ indicada como punto de entrada, la opción _--output_ indica donde se genera el contenido del _runtime_.
 
-{{< gist picodotdev 2e113967c3823da21308e8f2a9adbd4f "jlink.sh" >}}
+{{< code file="jlink.sh" language="Bash" options="" >}}
 
 El espacio total del _runtime_ en este caso de es de solo 38 MiB. Comparados con los casi 200 MiB que ocupa el [OpenJDK][openjdk] comprimido que incluye todos los módulos, aproximadamente 500 MiB instalado y alrededor de entre 600 y 900 MiB dependiendo de la imagen base de Docker que se use se aprecia que el ahorro de espacio es considerable lo que redunda en tiempos de transferencia por red menores y un inicio más rápido de las aplicaciones.
 
 El contenido del _runtime_ y de su estructura de directorios es la indicada a continuación. Listando los módulos incluidos en este _runtime_ en vez de todos los del JDK se observa que solo están incluidos los necesarios por la aplicación.
 
-{{< gist picodotdev 2e113967c3823da21308e8f2a9adbd4f "info.sh" >}}
+{{< code file="info.sh" language="Bash" options="" >}}
 
-{{< gist picodotdev 2e113967c3823da21308e8f2a9adbd4f "build.gradle" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Una vez generado el _runtime_ su uso es el siguiente:
 
-{{< gist picodotdev 2e113967c3823da21308e8f2a9adbd4f "run.sh" >}}
+{{< code file="run.sh" language="Bash" options="" >}}
 
 En el vídeo [Java in a World of Containers](https://www.oracle.com/java/java9-screencasts.html?bcid=5582437011001&playerType=single-social&size=events) se comenta otra serie de características y opciones incluidas en Java para hacer de esta plataforma más consciente de las condiciones de ejecución propias de los contenedores.
 

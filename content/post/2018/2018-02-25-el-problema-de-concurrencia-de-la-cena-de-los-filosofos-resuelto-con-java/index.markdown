@@ -44,10 +44,10 @@ Para evitar un bloqueo indefinido una de las siguientes reglas no se ha de cumpl
 
 En esta implementación he optado por hacer que el último filósofo en vez de ser diestro sea zurdo de modo que primero intente coger el tenedor izquierdo y luego el derecho, con este simple cambio la espera circular ya no puede producirse y con ello el bloqueo indefinido.
 
-{{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Main.java" >}}
-{{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Table.java" >}}
-{{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Fork.java" >}}
-{{< gist picodotdev e732e19b68e6f1fd6b0e586dc1a5aaf7 "Philosopher.java" >}}
+{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Table.java" language="Java" options="" >}}
+{{< code file="Fork.java" language="Java" options="" >}}
+{{< code file="Philosopher.java" language="Java" options="" >}}
 
 {{< asciinema id="165278" caption="Ejemplo de concurrencia de los filósofos" >}}
 

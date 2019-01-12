@@ -22,12 +22,12 @@ En [GraphQL][graphql] construyendo la consulta adecuada se recuperan exclusivame
 
 Por ejemplo, si de un libro solo se requieren las propiedades el _id_, _title_ y _date_ de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
 
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "query-1.graphql" >}}
+{{< code file="query-1.graphql" language="Plaintext" options="" >}}
 
 Si se desea recuperar solo el _id_ y _title_ sin el _date_ la consulta debe ser diferente.
 
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "query-2.graphql" >}}
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "library.graphqls" >}}
+{{< code file="query-2.graphql" language="Plaintext" options="" >}}
+{{< code file="library.graphqls" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -42,9 +42,9 @@ Las directivas se definen en el lenguaje de consulta de GraphQL con el caracter 
 
 Esta sería la consulta parametrizada para obtener los datos de los libros omitiendo o incluyendo su fecha en función de una variable utilizando la directiva _include_. Cuando el valor de la variable es _true_ se incluye el dato fecha, cuando el valor de la variable es _false_ no se incluye.
 
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "query-3.graphql" >}}
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "variables-1.graphql" >}}
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "variables-2.graphql" >}}
+{{< code file="query-3.graphql" language="Plaintext" options="" >}}
+{{< code file="variables-1.graphql" language="Plaintext" options="" >}}
+{{< code file="variables-2.graphql" language="Plaintext" options="" >}}
 
 Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consultas de una API de GraphQL se obtienen los resultados.
 
@@ -57,11 +57,11 @@ Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consult
 
 Con un comando _curl_ se realizan las mismas consultas.
 
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "curl-1.sh" >}}
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "data-1.json" >}}
+{{< code file="curl-1.sh" language="Bash" options="" >}}
+{{< code file="data-1.json" language="JSON" options="" >}}
 
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "curl-2.sh" >}}
-{{< gist picodotdev 5a60d7e3d64c62e04fb850e824469257 "data-2.json" >}}
+{{< code file="curl-2.sh" language="Bash" options="" >}}
+{{< code file="data-2.json" language="JSON" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 

@@ -22,15 +22,15 @@ Las plantillas en [Apache Tapestry][tapestry] son XHTML, esto quere decir que al
 
 Supongamos que queremos generar un contenido a tres columnas de una serie de elementos, en cada tercer elemento de la fila tendremos que cerrar la fila anterior y abrir una nueva. El ejemplo de lo que no se puede hacer es el siguiente:
 
-{{< gist picodotdev 72a843db91d1bc57442ed771f835adf0 "template-1.tml" >}}
+{{< code file="template-1.tml" language="HTML" options="" >}}
 
 En este ejemplo las etiquetas _div_ de apertura y cierre hacen que el XML de la plantilla no esté bien balanceado. No se si habrá otra forma mejor pero esta es el rodeo que uso para tener una plantilla bien balanceada y generar el contenido HTML necesario. En el código Java del componente creo un método que devuelve un mapa de trozos de HTML que no podría incluir en la propia plantilla, cada trozo de HTML tiene una clave asociada por la que identificarlo, en este caso _open_ y _close_.
 
-{{< gist picodotdev 72a843db91d1bc57442ed771f835adf0 "Component.java" >}}
+{{< code file="Component.java" language="Java" options="" >}}
 
 Usando estos métodos en la plantilla el código de la plantilla _tml_ ya bien formado quedaría de la siguiente manera, usando el componente [OutputRaw](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/OutputRaw.html) se emite el trozo HTML de apertura o cierre:
 
-{{< gist picodotdev 72a843db91d1bc57442ed771f835adf0 "template-2.tml" >}}
+{{< code file="template-2.tml" language="HTML" options="" >}}
 
 Esta pequeña «ñapa» que no es muy habitual en las plantillas pero que en algún caso puede ser necesario emplear es una forma de hacer las plantillas _tml_ bien formadas en circunstancias donde incluyéndolo en la plantilla no lo sería.
 

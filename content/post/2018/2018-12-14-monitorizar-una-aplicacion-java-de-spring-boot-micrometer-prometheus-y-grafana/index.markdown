@@ -28,7 +28,7 @@ En el artículo [Información y métricas de la aplicación con Spring Boot Actu
 
 Usando Spring Boot 2 exportar los datos para Prometheus es realmente sencillo, basta con incluir la dependencia _io.micrometer:micrometer-registry-prometheus_ mediante la herramienta de construcción, por ejemplo [Gradle][gradle], y automáticamente se expone en el _endpoint_ _/actuator/prometheus_ con la información de las métricas en el formato que espera Prometheus para recolectarla.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "build.gradle" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Micrometer y Prometheus ofrecen varios tipos de métricas:
 
@@ -41,32 +41,32 @@ Utilizando el ejemplo que hice para la [serie de artículos sobre Spring Cloud][
 
 Una clase de una aplicación de Spring Boot que utiliza un _Counter_.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "DefaultController.java" >}}
+{{< code file="DefaultController.java" language="Java" options="" >}}
 
 Las claves de las métricas por defecto exportadas por Spring Boot Actuator.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "actuator-metrics.json" >}}
+{{< code file="actuator-metrics.json" language="JSON" options="" >}}
 
 Los datos de una métrica en el _enpoint_ _/actuator/metrics/service.invocations_.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "actuator-metrics-service-invocations.json" >}}
+{{< code file="actuator-metrics-service-invocations.json" language="JSON" options="" >}}
 
 Y las mismas métricas en el formato que espera Prometheus.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "actuator-metrics-prometheus.txt" >}}
+{{< code file="actuator-metrics-prometheus.txt" language="Plaintext" options="" >}}
 
 Para iniciar el ejemplo de Spring Cloud que consta de un servicio de registro y descubrimiento, un servicio de configuración, un servicio del que se pueden iniciar varias instancias y un cliente que hace peticiones hay que utilizar la siguiente serie de comandos.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "gradlew-run.sh" >}}
+{{< code file="gradlew-run.sh" language="Bash" options="" >}}
 
 Una vez expuestas las métricas en el formato que espera Prometheus este ya puede recolectarlas. Para usar Prometheus y posteriormente Grafana de forma fácil evitando tener que instalar y configurar nada se puede usar [Docker][docker], en este caso con [Docker Compose][docker-compose]. En la [serie de artículos sobre Docker][blogbitix-serie-docker] explico que proporciona Docker y como usar las varias herramientas que ofrece.
 
 El archivo de Docker Compose contiene dos contenedores uno para Prometheus y otro para Grafana, con sus archivos de configuración. En la configuración de Prometheus se crean un _job_ que recolecta las métricas cada pocos segundos del servicio a través del _endpoint_ de métricas. En la configuración de Grafana se añade como una fuente de datos Prometheus, se puede añadir otras varias.
 
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "docker-compose.sh" >}}
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "docker-compose.yml" >}}
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "prometheus.yml" >}}
-{{< gist picodotdev 4e15b5759f6a55f30681fafc449516b5 "grafana-datasources.yml" >}}
+{{< code file="docker-compose.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="prometheus.yml" language="YAML" options="" >}}
+{{< code file="grafana-datasources.yml" language="YAML" options="" >}}
 
 Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas recogidas pero no tiene la habilidad de crear paneles que recogen una colección de gráficas relacionadas o un editor de consultas más avanzado como tiene Grafana.
 

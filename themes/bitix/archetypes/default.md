@@ -48,7 +48,7 @@ draft: true
 
 {{< gist picodotdev id "file" >}}
 
-{{< highlight java "linenos=table" >}}{{< code file="Main.java" >}}{{< / highlight >}}
+{{< code file="Main.java" language="Java" options="" >}}
 
 {{% asciinema id="" caption="" %}}
 

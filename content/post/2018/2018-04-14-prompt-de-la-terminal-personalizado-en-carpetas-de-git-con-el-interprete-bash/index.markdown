@@ -34,11 +34,11 @@ El intérprete [Zsh][zsh] y [Oh-My-Zsh](http://ohmyz.sh/) ofrece mediante sus te
 
 El _script_ necesario para añadir el soporte a repositorios git en Bash es [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh). Una vez descargado su funcionalidad se personaliza con varias variables de entorno tal y como está documentado en el comentario al inicio de este _script_ que se añaden en el archivo de perfil del usuario de inicio _.bashrc_. Añadidas unas variables de entorno que empiezan por _GIT\_PS1_ y hecho el _source_ del script junto con la utilización de la variable _PROMPT\_COMMAND_ en lugar de _PS1_ para posibilitar la información de estado con colores al estar en un directorio git se muestra el _prompt_ del ejemplo anterior.
 
-{{< gist picodotdev 31f86e3c7593a50b012e1296eb458be9 "install.sh" >}}
+{{< code file="install.sh" language="Bash" options="" >}}
 
 Este es el archivo _.bashrc_ completo de la distribución [Arch Linux][archlinux] con el soporte para el _script_ _git-prompt.sh_ y algunas opciones personalizadas.
 
-{{< gist picodotdev 31f86e3c7593a50b012e1296eb458be9 ".bashrc" >}}
+{{< code file="bashrc" language="Plaintext" options="" >}}
 
 La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del _script_.
 

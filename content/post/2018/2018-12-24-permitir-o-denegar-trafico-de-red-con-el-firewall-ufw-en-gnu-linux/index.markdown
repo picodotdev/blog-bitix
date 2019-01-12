@@ -22,8 +22,8 @@ Un cortafuegos o _firewall_ hace que un sistema sea más seguro analizando todo 
 
 En [GNU][gnu]/[Linux][linux] un _firewall_ con el que las reglas de tráfico de red se puede definir de forma sencilla es _Uncomplicated Firewall_ o UFW. En la distribución [Arch Linux][archlinux] hay que instalar su paquete y habilitarlo para que se inicie con el sistema.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "pacman.sh" >}}
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-enable.sh" >}}
+{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="ufw-enable.sh" language="Bash" options="" >}}
 
 En la [wiki de Arch Linux][archlinux-wiki] hay una buena página explicativa de su uso.
 
@@ -31,28 +31,28 @@ En la [wiki de Arch Linux][archlinux-wiki] hay una buena página explicativa de 
 
 Instalado y activado hay que definir las reglas de tráfico permitidas. Por defecto, se deniega el tŕafico proveniente de un sistema que no sea el local. Por ejemplo, con el cortafuegos activado para que un servidor web sea accesible desde otro equipo en la misma red o desde internet hay crear una regla que permita todo el tráfico entrante los puertos por defecto _80_ para _http_ y _443_ para _https_.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-allow-1.sh" >}}
+{{< code file="ufw-allow-1.sh" language="Bash" options="" >}}
 
 Para permitir acceso al servidor web únicamente desde la red local a la que está conectado el equipo hay que indicar la dirección IP de la red, los casos habituales son _192.168.0.0/24_ o _192.168.1.0/24_. En vez de usar la directiva _allow_ se puede emplear la directiva _deny_ para denegar el tráfico.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-allow-2.sh" >}}
+{{< code file="ufw-allow-2.sh" language="Bash" options="" >}}
 
 Definidas algunas reglas se pueden listar y de forma numerada en el caso de querer eliminar alguna.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-status-1.sh" >}}
+{{< code file="ufw-status-1.sh" language="Bash" options="" >}}
 
 Para eliminar reglas hay que hacerlo según su número de la lista anterior.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-delete.sh" >}}
+{{< code file="ufw-delete.sh" language="Bash" options="" >}}
 
 Ciertas aplicaciones usan un puerto conocido como el ejemplo de servidor web en el puerto _443_ o _80_, SSH en el _22_ o descarga y compartición de archivos mediante P2P por Bittorrent que dependiendo de la aplicación se usa uno u otro, en el caso de [Transmission][transmissionbt] es _51413_. Sabiendo la aplicación para la que se quiere permitir el tráfico no es necesario conocer su puerto, ufw ya incorpora varias aplicaciones conocidas que se listan y activan con un comando.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-app-list.sh" >}}
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-app-allow.sh" >}}
+{{< code file="ufw-app-list.sh" language="Bash" options="" >}}
+{{< code file="ufw-app-allow.sh" language="Bash" options="" >}}
 
 En el caso de este ejemplo se permite el tráfico para la aplicación Transmission desde cualquier ordenador y a las aplicaciones de servidor web tanto en el puerto seguro como inseguro y en el puerto _8080_ que usan algunos servidores de aplicaciones limitando su acceso únicamente desde la red local.
 
-{{< gist picodotdev 862e439db9dfe03dd3432a088efa3492 "ufw-status-2.sh" >}}
+{{< code file="ufw-status-2.sh" language="Bash" options="" >}}
 
 Los comandos anteriores aunque cambiando los valores de los puertos o dirección IP son suficientes para hacer un sistema más seguro no permitiendo tráfico de red y evitando que se puedan establecer conexiones desde otro sistema en la misma red de área local a ciertos puertos de red abiertos sin ser conscientes de que los están.
 

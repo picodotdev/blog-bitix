@@ -27,22 +27,22 @@ En log4j implementando una clase de tipo [Message](http://logging.apache.org/log
 
 El método heredado de [getFormattedMessage()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getFormattedMessage()) es el encargado de generar la traza en este caso utilizando como apoyo los métodos también heredados [getFormat()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getFormat()) que contiene el patrón del mensaje y [getParameters()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getParameters()) que devuelve como parámetros para el patrón del mensaje los valores de las propiedades.
 
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "SimpleProductMessage.java" >}}
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "ProductMessage.java" >}}
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "Product.java" >}}
+{{< code file="SimpleProductMessage.java" language="Java" options="" >}}
+{{< code file="ProductMessage.java" language="Java" options="" >}}
+{{< code file="Product.java" language="Java" options="" >}}
 
 En los siguientes casos se utilizan diferentes formas para emitir la traza. En el primer caso se utiliza la forma habitual de proporcionar el patrón y sus parámetros, el segundo caso utiliza el método _toString()_ del objeto. En el tercer y cuarto caso se utilizan las clases que implementan la interfaz _Message_ emitiendo un mensaje diferente cada una de ellas sin tener que proporcionar el patrón ni extraer las propiedades de la clase _Producto_ ya que son estas implementaciones en las que se delega esto.
 
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "Main.java" >}}
+{{< code file="Main.java" language="Java" options="" >}}
 
 En todos estos casos las trazas emitidas son las mismas salvo en el caso de _ProductMessage_ que muestra una traza con más información.
 
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "System.out" >}}
+{{< code file="System.out" language="Plaintext" options="" >}}
 
 En la [API de log4j](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/index.html) hay multitud de clases [Message](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/index.html) ya implementadas, por ejemplo, [MapMessage](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/message/MapMessage.html) para objetos del tipo [Map](https://docs.oracle.com/javase/10/docs/api/java/util/Map.html) entre otros muchos.
 
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "build.gradle" >}}
-{{< gist picodotdev 5bb6211d0e2e9e9dba94bbc1faf6fbde "log4j2.yaml" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="log4j2.yaml" language="YAML" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" >}}
 

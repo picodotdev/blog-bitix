@@ -36,10 +36,10 @@ En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres m
         caption="Sistema de control de temperatura simulado" >}}
 </div>
 
-{{< gist picodotdev 78fa62a7f9489d775de5827469229f83 "Sensor.java" >}}
-{{< gist picodotdev 78fa62a7f9489d775de5827469229f83 "Alarm.java" >}}
-{{< gist picodotdev 78fa62a7f9489d775de5827469229f83 "Monitor.java" >}}
-{{< gist picodotdev 78fa62a7f9489d775de5827469229f83 "MonitorSpec.groovy" >}}
+{{< code file="Sensor.java" language="Java" options="" >}}
+{{< code file="Alarm.java" language="Java" options="" >}}
+{{< code file="Monitor.java" language="Java" options="" >}}
+{{< code file="MonitorSpec.groovy" language="Groovy" options="" >}}
 
 Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temperaturas altas siendo la siguiente baja y posteriormente otra alta la alarma no es disparada.
 

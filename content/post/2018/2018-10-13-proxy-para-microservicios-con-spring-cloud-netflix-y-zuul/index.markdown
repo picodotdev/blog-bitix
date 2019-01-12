@@ -24,28 +24,28 @@ Entre las varias funcionalidades que proporcionar el proyecto [Spring Cloud Netf
 
 En el ejemplo que he utilizado para esta [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] hay un servicio que por defecto se inicia en el puerto _8080_ y ofrece un _endpoint_ _/_ que devuelve un mensaje. Para crear un microservicio _proxy_ con Zuul hay que crear una aplicación [Spring Boot][spring-boot] anotar la clase principal con la anotación _@EnableZuulProxy_ y proporcionar la configuración para la correspondencia de rutas y microservicios, además de las propiedades para hacer reintentos en caso de que un microservicio falle y de _timeouts_ en caso de que se comporte no como se espera en cuanto tiempos de respuesta.
 
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "Main (zuul).java" >}}
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "build.gradle" >}}
+{{< code file="Main (zuul).java" language="Java" options="" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Se puede establecer un tiempo máximo para establecer la conexión, de tiempo de petición, el número de reintentos en la misma instancia si falla o en otro número de instancias, el número máximo de conexiones y el número máximo de conexiones al mismo _host_. Todas ellas definibles en cada servicio de forma individual bajo las propiedades _hystrix.command.service_ y _service.ribbon_ donde _service_ es el identificativo del servicio. Las rutas se indican bajo la propiedad _zuul.routes_ con la relación identificativo del servicio y _path_.
 
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "proxy.yml" >}}
+{{< code file="proxy.yml" language="YAML" options="" >}}
 
 Dado que Zuul es un _proxy_ para múltiples instancias de microservicios a cada microservicio hay que darle una ruta, cuando Zuul realiza la llamada a una instancia del microservicio se encarga de omitirla. En el ejemplo, la ruta en Zuul _/service/**_ está asociada al microservicio _service_ pero el servicio _service_ ofrece su _endpoint_ en _/_, Zuul se encarga de omitir la parte de la ruta para el _proxy_ y hace la llamada a la ruta _/_ como espera el microservicio.
 
 Lógicamente los clientes deben contactar con el _proxy_ en vez de con el microservicio directamente. Arrancado el servicio de descubrimiento y registro Eureka, el servidor de configuración de Spring Cloud, dos instancias del servicio y el _proxy_ con Zuul haciendo las llamadas al _proxy_ se observa que se obtiene el resultado del microservicio. Como en el ejemplo hay varias instancias del servicio Zuul realiza balanceo de carga entre ellas con Ribbon utilizando la política _round-robin_ y el mensaje es diferente en cada una de las respuestas según la instancia invocada. Con Zuul además se consigue balanceo de carga a nivel de servidor que Ribbon solo ofrece a nivel de cliente.
 
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "Main (client).java" >}}
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "ProxyService.java" >}}
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "gradle-run.sh" >}}
+{{< code file="Main (client).java" language="Java" options="" >}}
+{{< code file="ProxyService.java" language="Java" options="" >}}
+{{< code file="gradle-run.sh" language="Bash" options="" >}}
 
 Las URLs del servicio en el microservicio y en el _proxy_ son.
 
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "curl.sh" >}}
+{{< code file="curl.sh" language="Bash" options="" >}}
 
 El cliente de ejemplo realiza peticiones al _proxy_, en la salida se muestra el resultado del balanceo de carga cuando hay varias instancias, cuando se añade una nueva instancia entra a formar parte del balanceo de carga. Otro beneficio de Zuul es que ofrece la funcionalidad de reintentos de modo que si una instancia de un servicio falla la petición se reintenta en otra. En el artículo [Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon][blogbitix-353] usando solo Ribbon se observaba que cuando una instancia falla se le siguen haciendo peticiones hasta que la lista de instancias del servicio en Eureka se actualiza quitando la fallida, con Hystrix se obtiene la respuesta _fallback_ pero no se evita completamente el error. Zuul puede ocultar el error provocado por una instancia que falla reintentado la petición en la misma nuevamente, en otra u otras instancias según se configure. El comportamiento con Zuul cuando una instancia falla se puede comparar con el comportamiento incluido en el [artículo anterior usando en el cliente los microservicios directamente][blogbitix-353].
 
-{{< gist picodotdev 9d29335938851c0bc8c16ed3daa02d97 "System.out" >}}
+{{< code file="System.out" language="Plaintext" options="" >}}
 
 Zuul además es capaz de proporciona otras muchas funcionalidades como:
 

@@ -1,0 +1,9 @@
+{{ $file := print .Page.Dir "code/" .Params.id "/" .Params.file }}
+{{ $content := readFile $file | safeHTML }}
+<div class="code">
+    {{ highlight $content .Params.language .Params.options }}
+    <div class="highlight-meta">
+        <span class="raw"><a href="{{ $file }}" target="_blank">view raw</a></span>
+        <a href="{{ $file }}" target="_blank">{{ .Params.file }}</a>
+    </div>
+</div>

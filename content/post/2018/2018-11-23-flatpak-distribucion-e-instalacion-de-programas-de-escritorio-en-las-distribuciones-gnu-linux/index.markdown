@@ -44,7 +44,7 @@ La tarea que hacen los mantenedores es útil para comprobar que los paquetes de 
 
 La [instalación de Flatpak](https://www.flatpak.org/setup/) y [guía de uso](http://docs.flatpak.org/en/latest/using-flatpak.html) no es más complicado que utilizar el propio gestor de paquetes de cada distribución. Los desarrolladores tienen su [guía para crear paquetes](http://docs.flatpak.org/en/latest/building.html) y [publicar](http://docs.flatpak.org/en/latest/publishing.html) en Flatpak.
 
-{{< gist picodotdev 1704d74a3332c024526ee2f4727e1b2e "flatpak.sh" >}}
+{{< code file="flatpak.sh" language="Bash" options="" >}}
 
 [Flathub](https://flathub.org/home) es un repositorio de las [aplicaciones Flatpak](https://flathub.org/apps) que en el ejemplo se añade con el comando con _flatpak remote-add_. Las que hay se pueden [navegar por categoría](https://flathub.org/apps/category/All) y son algunas de las más populares y que es probable querer instalar en cualquier sistema. A medida que pase el tiempo habrá más disponibles.
 
@@ -67,7 +67,7 @@ Flatpak está más apoyada por [Red Hat][redhat], [Canonical][canonical] tiene s
 
 Si usas Arch Linux e instalas el entorno de escritorio GNOME con los paquetes _gnome_ y _gnome-extra_ ya tendrás instalado Flatpak ya que se instala como dependencia. Se puede instalar directamente con el gestor de paquetes _pacman_ con el siguiente comando:
 
-{{< gist picodotdev 1704d74a3332c024526ee2f4727e1b2e "install.sh" >}}
+{{< code file="install.sh" language="Bash" options="" >}}
 
 {{% reference %}}
 {{< links >}}

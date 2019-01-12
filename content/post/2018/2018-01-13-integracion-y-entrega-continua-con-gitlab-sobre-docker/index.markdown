@@ -26,7 +26,7 @@ Jenkins es una herramienta más especializada que también sirve para realizar i
 
 Para realizar integración y entrega continua hay definir las acciones, tareas y comandos de los que se componen del _pipeline_ específico para el proyecto, la descripción del _pipeline_ se define en un archivo _.gitlab-ci.yml_ que se añade en el directorio raíz del código fuente del proyecto en su repositorio de Git. El _pipeline_ según las necesidades del proyecto consta de varios pasos o _steps_ que se ejecutan de forma secuencial. Si en un mismo paso hay varias acciones estas se ejecutan de forma paralela. En el ejemplo de proyecto _test_ con un programa _Hola Mundo_ con Java y usando la herrramienta de contrucción [Gradle][gradle] el _pipeline_ consta de las acciones de compilación y de ejecución de pruebas unitarias y [creación de documentación _javadoc_][blogbitix-260]. La tarea de Gradle _build_ en un proyecto Java realiza la compilación, ejecución de pruebas unitarias y genera el artefacto resultado el el directorio _build/distributions_ y la librería _jar_ con las clases compiladas en _build/libs_, la tarea _javadoc_ genera la [documentación Javadoc][javadoc-9] de las clases del proyecto.
 
-{{< gist picodotdev ba5f594ceb5a911127f81ab80ec6ce88 ".gitlab-ci.yml" >}}
+{{< code file="gitlab-ci.yml" language="YAML" options="" >}}
 
 Añadido el archivo del _pipeline_ al código fuente del proyecto hay que definir un _runner_ que se encargará de ejecutarlo con cada _commit_ que se envíe al repositorio de código fuente. Hay que registrarlo y se necesita un _token_ que se puede obtener desde el área de administración en _Overview > Runners_.
 
@@ -38,7 +38,7 @@ Añadido el archivo del _pipeline_ al código fuente del proyecto hay que defini
 
 Al registrarlo hay que especificar el tipo de _runner_, hay varios tipos, en este caso se usa el de _docker_ para ejecutar el _pipeline_ dentro de un contenedor de [Docker][docker]. En en archivo de [Docker Compose][docker-compose] es necesario que el _runner_ pueda comunicarse con el servicio de Docker, para ello como punto de montaje del contenedor de _gitlab-runner_ se especificar el archivo _docker.sock_.
 
-{{< gist picodotdev ba5f594ceb5a911127f81ab80ec6ce88 "add-gitlab-runner.sh" >}}
+{{< code file="add-gitlab-runner.sh" language="Bash" options="" >}}
 
 En este ejemplo y con este _pipeline_ el artefacto distribuible de la aplicación y el Javadoc se alamacena en GitLab estando accesible para su descarga desde el panel lateral una vez finalizado el _pipeline_.
 
@@ -51,7 +51,7 @@ En este ejemplo y con este _pipeline_ el artefacto distribuible de la aplicació
 
 El descriptor usando [Docker Compose][docker-compose] que define el servicio de GitLab y otro para GitLab Runner es el siguiente. El nombre de dominio que he utilizado para el servidor es _gitlab_ y ha de añadirse al archivo _/etc/hosts_ para que sea resuelto localmente.
 
-{{< gist picodotdev ba5f594ceb5a911127f81ab80ec6ce88 "docker-compose-all.yml" >}}
+{{< code file="docker-compose-all.yml" language="YAML" options="" >}}
 
 En la sección de referencia hay unos buenos enlaces de documentación de GitLab sobre la integración continua, despliegue continuo y entrega continua.
 

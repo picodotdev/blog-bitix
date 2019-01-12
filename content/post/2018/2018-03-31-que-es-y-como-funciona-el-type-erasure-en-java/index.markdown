@@ -28,8 +28,8 @@ El proceso de eliminar los tipos de los genéricos se realiza eliminando todos l
 
 En Java dos métodos distintos no pueden tener la misma firma, dado que los _generics_ han sido implementados con _type erasure_ también se ha de cumplir que dos métodos no pueden tener la misma firma una vez aplicado el _erasure_. Para no perder las validaciones de tipos el compilador inserta los _cast_ necesarios. El código fuente de una clase genérica sería el siguiente, que el compilador transformaría siguiendo las reglas del _type erasure_.
 
-{{< gist picodotdev fe9adde28f19c10787720a7db6a4a840 "Generic.java" >}}
-{{< gist picodotdev fe9adde28f19c10787720a7db6a4a840 "Erased.java" >}}
+{{< code file="Generic.java" language="Java" options="" >}}
+{{< code file="Erased.java" language="Java" options="" >}}
 
 Al mismo tiempo que el compilador inserta los _cast_ necesarios para mantener la validación de tipos inserta métodos _bridge_ para mantener el polimorfismo en las clases que extienden de tipos genéricos. Si se extiende la clase _Node_ anterior y se aplica _type erasure_ la firma del método _setData_ de _IntegerNode_ no coincide con el de la clase _Node_. Para solventar este problema el compilador inserta un método _bridge_ para el método _setData_ con un parámetro _Object_ que se encarga de hacer de puente y llamar al método _setData_ que recibe un _Integer_ aplicando un _cast_.
 

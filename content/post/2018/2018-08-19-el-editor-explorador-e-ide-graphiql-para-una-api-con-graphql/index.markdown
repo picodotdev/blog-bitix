@@ -28,8 +28,8 @@ En la página de este tutorial se explica cual es el [código HTML necesario par
 
 En el código del archivo _index.html_ del ejemplo he tenido que cambiar estas dos cosas, una de ellas es utilizar un CDN para los recursos de GraphiQL y la otra en la función _graphQLFetcher_ es que en este ejemplo el _endpoint_ es _/library_ en vez de _/graphql_.
 
-{{< gist picodotdev 04cc7e8f50db18023c8938d0fa0f1182 "index-1.html" >}}
-{{< gist picodotdev 04cc7e8f50db18023c8938d0fa0f1182 "index-2.html" >}}
+{{< code file="index-1.html" language="HTML" options="" >}}
+{{< code file="index-2.html" language="HTML" options="" >}}
 
 Varias de las mismas consultas que hacía con _curl_ en otros artículos es posible lanzarlas con GraphiQL. Es posible formatear correctamente una consulta con el botón _prettify_. Con en el enlace de documentación se puede explorar los tipos definidos en la API. Con funciones similares a un IDE ofrece errores de sintaxis, asistencia contextual e historial de consultas, en definitiva es una gran mejora sobre _curl_ y su incorporación a la aplicación es muy sencilla.
 

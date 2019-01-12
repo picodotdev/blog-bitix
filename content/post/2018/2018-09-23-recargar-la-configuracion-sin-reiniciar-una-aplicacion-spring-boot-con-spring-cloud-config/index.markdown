@@ -27,26 +27,26 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
 En el siguiente ejemplo de microservicio que posee una clase de configuración con algunas propiedades. El valor de estas propiedades se utilizan para el resultado de una acción en un _endpoint_ del servicio.
 
 
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "DefaultConfiguration.java" >}}
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "DefaultController.java" >}}
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "service.yml" >}}
+{{< code file="DefaultConfiguration.java" language="Java" options="" >}}
+{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="service.yml" language="YAML" options="" >}}
 
 Iniciada la aplicación que requiere iniciar previamente el servicio de registro y descubrimiento y el servidor de configuración, la aplicación al iniciarse obtiene su configuración del servidor de configuración. Si se cambia la configuración de la variable _config.key_ la aplicación no obtendrá el valor actualizado hasta que se invoque el _endpoint_ _http\://localhost:8080/actuator/refresh_. Para que Spring Boot recargue la configuración es necesario anotar con _@RefreshScope_ la clase de configuración. Invocado el _endpoint_ de recarga de configuración la aplicación toma de nuevo los nuevos valores del servicio de configuración.
 
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "gradle-run-1.sh" >}}
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "curl-1.sh" >}}
+{{< code file="gradle-run-1.sh" language="Bash" options="" >}}
+{{< code file="curl-1.sh" language="Bash" options="" >}}
 
 En una aplicación orientada microservicios es muy posible que haya múltiples instancias del mismo servicio y para recargar la configuración de cada uno de ellos hay que hacerlo de forma individual con su _endpoint_ de recarga de configuración. Dado el número de microservicios y su ubicación distribuida hacerlo de forma individual es un inconveniente.
 
 Para resolver este inconveniente integrando [Spring Cloud Bus][spring-cloud-bus] en las aplicaciones es posible recargar la configuración de todos los microservicios haciendo una única llamada al _endpoint_ _http\://localhost:8090/monitor_ indicando el servicio a actualizar su configuración lo que es independiente del número de instancias y de su ubicación. Integrar Spring Clud Bus requiere disponer de una instancia de mensajes como [RabbitMQ][rabbitmq] e incluir como dependencia tanto en el servidor de configuración como en el servicio la dependencia _spring-cloud-starter-bus-amqp_. Para esta comunicación de mensajes Spring Cloud Config crea en RabbitMQ una cola de mensajes que empieza por _springCloudBus_. 
 
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "configserver.gradle" >}}
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "service.gradle" >}}
+{{< code file="configserver.gradle" language="Groovy" options="" >}}
+{{< code file="service.gradle" language="Groovy" options="" >}}
 
 Los pasos para probar estas funcionalidades con Spring Cloud Bus en una o varias varias instancias son iniciar una instancia o más del servidor de registro y descubrimiento, iniciar una o más instancias del servidor de configuración, iniciar una o varias instancias del servicio todas las instancias en un puerto y terminal diferente, invocar el servicio cuyo valor de respuesta depende de una propiedad de configuración, modificar el valor de la propiedad de configuración, recargar la configuración e invocar de nuevo el servicio para comprobar que el nuevo valor se ha hecho efectivo.
 
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "gradle-run-2.sh" >}}
-{{< gist picodotdev c8304298f6f6a0aa64b69b25ad2f886e "curl-2.sh" >}}
+{{< code file="gradle-run-2.sh" language="Bash" options="" >}}
+{{< code file="curl-2.sh" language="Bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run-1.sh, ./curl-1.sh" >}}
 

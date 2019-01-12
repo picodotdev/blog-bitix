@@ -31,18 +31,18 @@ Ante el fallo de una instancia para evitar que temporalmente el cliente empiece 
 
 El cliente usa la clase _LoadBalancerClient_ que en cada invocación del método _choose()_ devuelve una instancia diferente de servicio realizando balanceo de carga utilizando el método _round-robin_. La clase _ServiceInstance_ proporciona la URL de la instancia del servicio.
 
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "Main.java" >}}
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "ClientService.java" >}}
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "build.gradle" >}}
+{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="ClientService.java" language="Java" options="" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 La clase del servicio y los comandos para iniciar el servicio de registro y descubrimiento, el servicio de configuración, las instancias del servicio en diferentes puertos y el cliente.
 
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "DefaultController.java" >}}
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "gradle-run.sh" >}}
+{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="gradle-run.sh" language="Bash" options="" >}}
 
 Esta es la salida y funcionamiento del cliente realizando balanceado la carga entre las mútiples instancias y que ocurre cuando se añade una nueva o una empieza a fallar y se elimina de la lista.
 
-{{< gist picodotdev 25fdce50a2a025a9c189c36af60dfc7d "System.out" >}}
+{{< code file="System.out" language="Plaintext" options="" >}}
 
 [Ribbon posee numerosas propiedades de configuración](https://github.com/Netflix/ribbon/blob/master/ribbon-core/src/main/java/com/netflix/client/config/CommonClientConfigKey.java) a nivel global para todos los clientes de servicios o de forma específica para cada servicio ya sea con la anotación _@RibbonClient_ o mediante la configuración en archivos externos de Spring Boot. Algunas propiedades de configuración interesantes son las de _timeout_ que permiten que un cliente no agote sus recursos esperando a que a los servicios que llama si tardan en responder y a su vez el cliente actuando de servidor recibe muchas llamadas de sus clientes. En un comando de Hystrix también se puede especificar un _timeout_ de modo que si se realizan reintentos el tiempo total para Hystrix deberá ser superior que el tiempo total de todos los posibles reintentos teniendo en cuenta el _timeout_ del cliente con Ribbon. Unsando el cliente HTTP [Jersey][jersey] como en este caso también pueden establecerse [_timeouts_ para una petición](https://jersey.github.io/apidocs/1.19.1/jersey/com/sun/jersey/api/client/Client.html).
 

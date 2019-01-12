@@ -33,20 +33,20 @@ Compilado el programa y utilizando la herramienta _javap_ se puede obtener el va
 
 El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o decompilado los caracteres de la cadena son fácilmente reconocibles.
 
-{{< gist picodotdev f273b2f5bd210887b89a2eeb5dc97236 "Main.java" >}}
+{{< code file="Main.java" language="Java" options="" >}}
 
 Para compilar este pequeño programa se utiliza el comando _javac_ que genera el archivo de _bytecode_ _Main.class_.
 
-{{< gist picodotdev f273b2f5bd210887b89a2eeb5dc97236 "javac.sh" >}}
+{{< code file="javac.sh" language="Bash" options="" >}}
 
 Para decompilar este pequeño programa se utiliza el comando _javap_, con él se ven las instrucciones interpretadas por la máquina virtual de Java y la cadena con la contraseña.
 
-{{< gist picodotdev f273b2f5bd210887b89a2eeb5dc97236 "javap.sh" >}}
+{{< code file="javap.sh" language="Bash" options="" >}}
 
 Que el contenido de la constante de las cadenas del programa sea incluido en el binario y examinable con un editor hexadecimal no es exclusivo de Java, en otros lenguajes de programación como C y formatos de ejecutables como ELF para Linux se da el mismo caso al examinar el binario como se observa en las imágenes anteriores. Seguramente en la mayoría de lenguajes, como C#, ocurra lo mismo.
 
-{{< gist picodotdev f273b2f5bd210887b89a2eeb5dc97236 "Main.c" >}}
-{{< gist picodotdev f273b2f5bd210887b89a2eeb5dc97236 "gcc.sh" >}}
+{{< code file="Main.c" language="C" options="" >}}
+{{< code file="gcc.sh" language="Bash" options="" >}}
 
 Una solución para evitar este problema de seguridad es [ubicar la contraseña a un archivo de configuración incluso con los valores sensibles cifrados][blogbitix-351] y que sean descifrados únicamente por la aplicación en el momento de iniciarse. En el caso de ubicar este archivo de configuración en un servidor se puede proteger mediante permisos para que solo los administradores o algunos desarrolladores tenga acceso a él y no cualquier usuario que consiga acceso al sistema.
 

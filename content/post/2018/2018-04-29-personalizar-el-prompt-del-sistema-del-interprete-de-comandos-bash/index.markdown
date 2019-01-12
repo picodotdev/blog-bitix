@@ -32,15 +32,15 @@ El siguiente es el que utilizo en mi sistema con colores, el nombre del usuario,
 
 Según se edita el _prompt_ el asistente previsualiza como queda en la sección _Preview_, una vez que el _prompt_ es el que deseamos en la sección _Result_ el asistente ofrece el contenido de la variable de entorno _PS1_ que hay que añadir o cambiar en el archivo _~/.bashrc_.
 
-{{< gist picodotdev d7f2101c07e92766f124b0a12e84f09a ".bashrc" >}}
+{{< code file="bashrc" language="Plaintext" options="" >}}
 
 Si quieres mostrar alguna información que sea el resultado de algún comando también se puede añadir al _prompt_. Por ejemplo, supón que se desea añadir la hora del sistema al _prompt_ útil si se quiere a modo de registro para conocer posteriormente a que hora se lanzó un comando, la información de la hora entre otras posibles cosas relacionadas con la fecha la devuelve el comando _date_. El siguiente _script_ de _Bash_ usando el comando _date_ proporciona la información de la hora a añadir en este caso.
 
-{{< gist picodotdev d7f2101c07e92766f124b0a12e84f09a "date.sh" >}}
+{{< code file="date.sh" language="Bash" options="" >}}
 
 Ahora hay que incluir esta información en el _prompt_ de la siguiente forma.
 
-{{< gist picodotdev d7f2101c07e92766f124b0a12e84f09a ".bashrc-date" >}}
+{{< code file="bashrc-date" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

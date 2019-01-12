@@ -24,12 +24,12 @@ Los _webjars_ son librerías de extensión _jar_ con los recursos de lado del cl
 
 Las librerías más populares de JavaScript o CSS están empaquetadas como _webjars_ en las diferentes versiones y han sido publicadas de forma que es posible añadir la dependencia en la versión concreta que necesite la aplicación. Dado que los _webjars_ se gestionan como una dependencia Java si estos a su vez tiene alguna dependencia sobre otra librería está se incluyen en el proyecto de forma transitiva. El contenido del _webjar_ para _jQuery_ es el siguiente.
 
-{{< gist picodotdev 6a355258c390e165cebc46871ce54309 "jquery-webjar.out" >}}
+{{< code file="jquery-webjar.out" language="Plaintext" options="" >}}
 
 En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la [guía de uso](https://www.webjars.org/documentation#tapestry) con el objetivo que los recursos de los _webjars_ sean servidos.
 
-{{< gist picodotdev 6a355258c390e165cebc46871ce54309 "AppModule.java" >}}
-{{< gist picodotdev 6a355258c390e165cebc46871ce54309 "build.gradle" >}}
+{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Inspeccionando el código fuente de la página devuelta se observa que en el caso de Tapestry la URL generada al solicitar en un _webjar_ es del estilo _https\://localhost:8443/assets/webjars/z941c28a3/requirejs/2.3.5/require.js_.
 

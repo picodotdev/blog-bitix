@@ -36,8 +36,8 @@ Como regla general las excepciones _checked_ se usan cuando el programa es capaz
 
 En el siguiente código se observa como capturar, lanzar y declarar excepciones en las firmas de los métodos en Java en una construcción _try catch finally_.
 
-{{< gist picodotdev c0fc9936712783e76b22088e5b8f2b2e "Bank.java" >}}
-{{< gist picodotdev c0fc9936712783e76b22088e5b8f2b2e "Main.java" >}}
+{{< code file="Bank.java" language="Java" options="" >}}
+{{< code file="Main.java" language="Java" options="" >}}
 
 En el aparatado referncia incluyo unos buenos enlaces que amplian y detallan más apropiadamente la controversia sobre las excepciones _checked_ y _unchecked_.
 

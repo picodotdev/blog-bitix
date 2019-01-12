@@ -28,14 +28,14 @@ Esta es la teoría ya que en el momento de escribir este artículo en la [librer
 
 La firma del método del _resolver_ para recuperar los comentarios de un libro sin usar _batching_ y usando _batching_ son los siguientes respectivamente. Estos al igual que cualquier otro método del _resolver_ puede recibir parámetros con los que implementar la funcionalidad que se desee, en este caso para limitar el número de resultados devueltos y para devolverlos a partir de uno  dado.
 
-{{< gist picodotdev fa91df2d0203a0e2137c461ff387719f "BookResolver.java" >}}
+{{< code file="BookResolver.java" language="Java" options="" >}}
 
 Con la lista completa de libros de la que hay que recuperar los comentarios ya sería posible lanzar una única consulta SQL a una base de datos relacional en vez de una por cada libro. El método que emplea _batching_ ha de estar anotado con la anotación _@Batched_.
 
 La consulta de GraphQL a realizar para recuperar los tres primeros comentarios de cada libro y los resultados que devuelve son los siguientes. La consulta parece un tanto compleja porque la propiedad de los comentarios implementa paginación pero básicamente se recupera de cada libro su título y los comentarios.
 
-{{< gist picodotdev fa91df2d0203a0e2137c461ff387719f "curl.sh" >}}
-{{< gist picodotdev fa91df2d0203a0e2137c461ff387719f "System.out" >}}
+{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="System.out" language="Plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradew run" note="Requiere Java 9+ o Docker" >}}
 

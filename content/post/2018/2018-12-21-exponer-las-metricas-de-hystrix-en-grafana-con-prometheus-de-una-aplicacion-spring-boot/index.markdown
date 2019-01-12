@@ -24,14 +24,14 @@ En el artículo [Tolerancia a fallos en un cliente de microservicio con Spring C
 
 Hystrix ofrece un _dashboard_ algo espartano con los datos de Hystrix de la propia aplicación. Los datos de las métricas de Hystrix por defecto no se exponen en Spring Boot Actuator pero se pueden añadir creando un _bean_ _HystrixMetricsBinder_ en la configuración de Spring.
 
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "Main.java" >}}
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "build.gradle" >}}
+{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="build.gradle" language="Groovy" options="" >}}
 
 Una vez hecho esto Spring en el _endpoint_ _/actuator/metrics_ se exponen las métricas de Hystrix, si además se configura Spring añadiendo la dependencia _io.micrometer:micrometer-registry-prometheus_ para exponer las métricas en el formato para que Prometheus las recolecta también se añaden en el _endpoint_ _/actuator/prometheus_.
 
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "metrics-endpoint.sh" >}}
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "actuator-metrics.json" >}}
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "actuator-prometheus.prometheus" >}}
+{{< code file="metrics-endpoints.sh" language="Bash" options="" >}}
+{{< code file="actuator-metrics.json" language="JSON" options="" >}}
+{{< code file="actuator-prometheus.prometheus" language="Plaintext" options="" >}}
 
 Con estas métricas recolectadas por Prometheus se pueden visualizar en gráficas por Grafana. Hay algunos [paneles de Grafana para Hystrix](https://grafana.com/dashboards?search=hystrix) como el [7145](https://grafana.com/dashboards/7145) pero que necesitan ser adaptados según la nomenclatura de las propiedades expuestas por Spring Boot. En este caso se monitoriza el número de peticiones realizadas, el tiempo de latencia, si los circuitos están abiertos, los fallos, éxitos y _tiemouts_ así como el estado de los _thread pools_ que utiliza Hystrix para realizar las peticiones de un cliente a un servicio.
 
@@ -43,7 +43,7 @@ Con estas métricas recolectadas por Prometheus se pueden visualizar en gráfica
 
 Exponer las métricas en una aplicación de Spring Boot para Prometheus es muy sencillo y con Grafana se puede observar el estado del sistema de forma tan detallada como lo sean las métricas expuestas por la aplicación. Por defecto Spring Boot ya expone una buena cantidad de métricas del estado del servicio como uso de CPU, memoria, hilos o recolector de basura.
 
-{{< gist picodotdev 7d667ecb55a23a3e6e4969941051dae9 "gradle-run.sh" >}}
+{{< code file="gradle-run.sh" language="Bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 

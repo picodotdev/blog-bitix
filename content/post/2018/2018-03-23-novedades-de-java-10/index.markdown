@@ -49,7 +49,7 @@ Java no es el único o primer lenguaje en incluir la inferencia de tipos para va
 
 La inferencia de tipos para variables locales hace que el código no sea tan verboso sin perder en gran medida la legibilidad ya que solo es para las variables locales. El siguiente ejemplo muestra la evolución de la inferencia de tipos desde Java 5 pasando por Java 8 donde se incluyeron algunas mejoras y el que puede utilizarse a partir de Java 10.
 
-{{< gist picodotdev d4ff7ac7eecda8504ee0834593d70929 "JavaTypeInference.java" >}}
+{{< code file="JavaTypeInference.java" language="Java" options="" >}}
 
 Los tipos en la parte izquierda pueden parecer redundantes y obvios. Tradicionalmente la filosofía de Java es declarar de forma estática los tipos para todo incluyendo las expresiones más simples. Ciertamente definir los tipos para propiedades y en las firmas de los métodos impone un contrato que es necesario respetar y esto ayuda en el mantenimiento asi como a su entendimiento. Sin embargo, declarar los tipos para expresiones intermedias puede parecer menos útil e incómodo.
 
@@ -61,13 +61,13 @@ La inferencia de tipos definitivamente reduce la cantidad de tiempo para escribi
 
 No está permitido en retornos, parámetros, propiedades, variables sin inicializar, ni asignar _null_ pero en Java 11 el uso de _var_ se permitirá en los parámetros de una expresión _lambda_ que será útil porque permite un parámetro formal cuyo tipo es inferido pero que además en el que se pueden usar anotaciones.
 
-{{< gist picodotdev d4ff7ac7eecda8504ee0834593d70929 "JavaLambdaVarAnnotation.java" >}}
+{{< code file="JavaLambdaVarAnnotation.java" language="Java" options="" >}}
 
 Con la inferencia de tipos los nombres de las variables cobran mayor importancia dado que _var_ elimina la posibilidad al lector del código adivinar la intención de una variable a partir del tipo. Ya es difícil asignar nombres adecuados ahora supondrá mayor importancia.
 
 El tipo en las variables locales no es tan importante ya que normalmente los nombres de las variables son el del tipo. Con _var_ se evita repetición entre el tipo y el nombre de la variable, la brevedad de _var_ hace destacar el nombre de la variable y proporciona mayor claridad además de tener que escribir menos código repetitivo.
 
-{{< gist picodotdev d4ff7ac7eecda8504ee0834593d70929 "NamesAlign.java" >}}
+{{< code file="NamesAlign.java" language="Java" options="" >}}
 
 Con _var_ se evita la longitud variable de los tipos y la no alineación de los nombres de las variables, permite quitar los nombres largos de algunos tipos que son comunes en las aplicaciones empresariales como cosas como _DefaultListenerFactory_ con vocablos que se van añadiendo uno detras de otro hasta formar un largo nombre.
 
@@ -77,7 +77,7 @@ La palabra reservada _var_ no hace de Java un lenguaje dinámico, sigue siendo e
 
 La existencia de _var_ no significa que haya de usarse de forma indiscriminada para todas las variables locales sino juiciosamente. En este caso quizá es preferible declarar el tipo por no ser obvio lo que retorna el método _getCities()_.
 
-{{< gist picodotdev d4ff7ac7eecda8504ee0834593d70929 "TypeVsVar.java" >}}
+{{< code file="TypeVsVar.java" language="Java" options="" >}}
 
 * [Style Guidelines for Local Variable Type Inference in Java](http://openjdk.java.net/projects/amber/LVTIstyle.html)
 

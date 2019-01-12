@@ -25,7 +25,7 @@ Dado que este servicio de configuración es esencial para que los microservicios
 
 Con el comando <code>./gradlew configserver:run --args="--port=8090"</code> se inicia una instancia de servicio de configuración en el puerto _8090_, cambiando el número de puerto se puede iniciar otra instancia en el puerto especificado. Una vez iniciadas varias instancias en el _dashboard_ del servicio de descubrimiento se observa como se autoregistran y su estado.
 
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "gradlew-run.sh" >}}
+{{< code file="gradlew-run.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -35,8 +35,8 @@ Con el comando <code>./gradlew configserver:run --args="--port=8090"</code> se i
 
 Dado que los servicios de configuración no pueden confiar en obtener su configuración de una instancia de su servicio de configuración ha de establecerse en el propio microservicio los nombres de _host_ de las instancias de registro y descubrimiento en las que registrarse, en la propiedad _eureka.client.serviceUrl.defaultZone_.
 
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "bootstrap.yml" >}}
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "application.yml" >}}
+{{< code file="bootstrap.yml" language="YAML" options="" >}}
+{{< code file="application.yml" language="YAML" options="" >}}
 
 Los archivos de configuración para los microservicios en este ejemplo están en el directorio _misc/config_ donde siguiendo algunas convenciones para asignar el nombre a los archivos se pueden personalizar las configuraciones de los microservicios según el entorno y perfil con el que se active. En este caso se utiliza lo que [Spring Cloud Config][spring-cloud-config] denomina un _filesystem backend_, sin embargo, hay otras disponibles como un repositorio de [git][git] el cual ofrece varias ventajas propias de un repositorio de código como historial, ramas de trabajo y hacer cambios con un _commit_.
 
@@ -44,15 +44,15 @@ Un microservicio o aplicación de [Spring][spring] que use un servidor de Spring
 
 El proceso de configuración de un microservicio está formado por dos pasos, en el primero el servicio se conecta al servicio de registro y descubrimiento obtiene los servicios registrados de configuración y en el segundo paso solicita a uno de ellos su configuración.
 
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "bootstrap-service.yml" >}}
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "service.yml" >}}
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "client.yml" >}}
+{{< code file="bootstrap-service.yml" language="YAML" options="" >}}
+{{< code file="service.yml" language="YAML" options="" >}}
+{{< code file="client.yml" language="YAML" options="" >}}
 
 El servicio de configuración es accesible mediante una interfaz REST. Para obtener la configuración del servicio _service_ y del servicio _client_ de este ejemplo las URLs para obtenerlas son las siguientes. Estos _endpoints_ devuelven en formato _json_ un documento con los valores de las propiedades principalmente están en el mapa _source_ entre otros datos que Spring al iniciar la aplicación con ellos configura la aplicación.
 
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "curl.sh" >}}
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "service-config.json" >}}
-{{< gist picodotdev b7583293e05ad6f1fcf7bb959da3cad1 "client-config.json" >}}
+{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="service-config.json" language="JSON" options="" >}}
+{{< code file="client-config.json" language="JSON" options="" >}}
 
 En otro artículo relacionado con la configuración de los microservicios comentaré [como recargar la configuración de los microservicios sin necesidad de reiniciarlos][blogbitix-349] y _como almacenar datos sensibles de forma cifrada_ para mayor seguridad.
 

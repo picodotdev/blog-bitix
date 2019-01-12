@@ -23,16 +23,16 @@ Algunos _frameworks_ proporcionan cierto soporte para JavaScript y recursos CSS 
 
 Una de estas funcionalidades que proporciona Tapestry es poder lanzar eventos desde el cliente mediante una petición _Ajax_ para que sean procesados en el servidor y obtener la respuesta que se devuelva desde el servidor normalmente en formato _Json_. Hay que definir un manejador de evento en el servidor siguiendo la convención _on[Event]_ y en caso de querer lanzar un evento desde el cliente anotándolo con [@PublishEvent](http://tapestry.apache.org/current/apidocs/index.html?org/apache/tapestry5/ComponentResources.html).
 
-{{< gist picodotdev ce18702bf548f895a1eac4c86d7a135e "Event.java" >}}
-{{< gist picodotdev ce18702bf548f895a1eac4c86d7a135e "Event.tml" >}}
+{{< code file="Event.java" language="Java" options="" >}}
+{{< code file="Event.tml" language="HTML" options="" >}}
 
 El uso del componente en una plantilla de una página.
 
-{{< gist picodotdev ce18702bf548f895a1eac4c86d7a135e "Index.tml" >}}
+{{< code file="Index.tml" language="HTML" options="" >}}
 
 En el código JavaScript asociado a una página o componente hay que hacer uso del módulo que ofrece el soporte para _Ajax_ y los eventos desde el cliente, con [RequireJS][requirejs] se obtiene una referencia a él. Solo es necesario indicar como parámetro el nombre del evento a lanzar, los parámetros si los hubiese y los manejadores de respuesta, tanto en el caso de ser correcta que recibirá los datos devueltos en el servidor como incorrecta. En el archivo [ajax.coffee](https://git1-us-west.apache.org/repos/asf?p=tapestry-5.git;a=blob_plain;f=tapestry-core/src/main/coffeescript/META-INF/modules/t5/core/ajax.coffee;hb=85cc611fbad4a3574664b33ce9adf614b4f0fe07) están documentados todos los parámetros que posee la función _ajax_ del módulo _t5/core/ajax_.
 
-{{< gist picodotdev ce18702bf548f895a1eac4c86d7a135e "event.js" >}}
+{{< code file="event.js" language="JavaScript" options="" >}}
 
 En el primer elemento del HTML se añade un atributo _data-componenent-events_ que contiene la URL necesaria para cada evento que haya sido declarado como lanzable. A partir del elemento indicado en la opción _element_ se busca la URL en el atributo _data-componenent-events_ siguiendo un orden empezando por el propio elemento, en los previos al mismo nivel jerárquicamente empezando por el más cercano desde abajo hacia arriba, en los padres y finalmente en el elemento _body_.
 
@@ -45,7 +45,7 @@ En el primer elemento del HTML se añade un atributo _data-componenent-events_ q
 
 Esta funcionalidad se incorporó en Apache Tapestry 5.2 donde hasta entonces era necesario construir la URL del evento en el servidor con [ComponentResources.createEventLink()](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ComponentResourcesCommon.html#createEventLink-java.lang.String-java.lang.Object...-) y enviarlo al componente haciendo uso de [JavaScriptSupport](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html) como se muestra en el componente _Ajax_ que no hace uso de esta funcionalidad de eventos.
 
-{{< gist picodotdev ce18702bf548f895a1eac4c86d7a135e "Ajax.java" >}}
+{{< code file="Ajax.java" language="Java" options="" >}}
 
 Con este soporte es algo más fácil enviar eventos y realizar peticiones _Ajax_ desde el cliente para obtener datos.
 
