@@ -58,7 +58,8 @@ El enlace al compartir el documento o al editarlo contiene el identificativo de 
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="google-spreadsheet.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Hoja de cálculo de Google"
-        caption="Hoja de cálculo de Google" >}}
+        image2="google-document.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
+        caption="Hoja de cálculo y documento de Google" >}}
 </div>
 
 {{< code file="Main-3.java" language="Java" options="" >}}
