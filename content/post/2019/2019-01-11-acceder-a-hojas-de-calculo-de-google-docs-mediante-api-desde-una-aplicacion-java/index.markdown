@@ -1,7 +1,7 @@
 ---
 pid: 372
-title: "Acceder a hojas de cálculo en Google Docs mediante API desde una aplicación Java"
-url: "/2019/01/acceder-a-hojas-de-calculo-en-google-docs-mediante-api-desde-una-aplicacion-java/"
+title: "Acceder a hojas de cálculo de Google Docs mediante API desde una aplicación Java"
+url: "/2019/01/acceder-a-hojas-de-calculo-de-google-docs-mediante-api-desde-una-aplicacion-java/"
 date: 2019-01-12T18:30:00+01:00
 language: "es"
 rss: true
