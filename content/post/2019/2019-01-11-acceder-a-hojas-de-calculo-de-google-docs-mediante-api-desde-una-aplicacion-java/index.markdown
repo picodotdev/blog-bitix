@@ -63,7 +63,7 @@ El enlace al compartir el documento o al editarlo contiene el identificativo de 
 </div>
 
 {{< code file="Main-3.java" language="Java" options="" >}}
-{{< code file="gradlew-run.sh" language="Bash" options="" >}}
+{{< code file="gradlew-run.sh" language="Bash" options="hl_lines=7-8" >}}
 
 El método de API _key_ obliga a hacer público el documento lo que no es deseable desde el punto de vista de seguridad aunque es un poco más simple que crear una cuenta de servicio. Para no hacer público el documento pero permitir acceder a una aplicación hay que crear una cuenta de servicio en la página [Cuentas de servicio](https://console.developers.google.com/iam-admin/serviceaccounts) seleccionando o creando un proyecto.
 
