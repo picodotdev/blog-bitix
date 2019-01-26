@@ -26,7 +26,7 @@ La novedad más relevante de este año es que por primera vez las entradas han t
         image1="euskalduna-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Palacio Euskalduna"
         image2="euskalduna-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
         image3="bilbostack-logo-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Palacio Euskalduna"
-        caption="Palacio Euskalduna" source="@picodotdev, @BilboStack">}}
+        caption="Palacio Euskalduna" source="@BilboStack">}}
     {{< figureproc
         image1="patrocinadores.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Patrocinadores"
         image2="localizacion.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
@@ -35,6 +35,12 @@ La novedad más relevante de este año es que por primera vez las entradas han t
 </div>
 
 La conferencia comienza con la presentación y la bienvenida de los organizadores junto con unas palabras de un concejal del ayuntamiento de Bilbao comentando la transformación que ha realizado la ciudad en las últimas décadas, urbanística siendo representante el propio palacio Euskalduna de un entorno más industrial a otro más de servicios y la importancia que puede ser la tecnología para convertirse en la nueva industria de la ciudad. Por este motivo la conferencia BilboStack es importante y lo apoyan de forma institucional haciendo hincapié que no es fácil organizar una conferencia con el poder de convocatoria de casi 700 personas un sábado a la mañana y a la que muchos acuden haciendo muchos kilómetros de viaje.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="presentacion.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Presentación"
+        caption="Presentación">}}
+</div>
 
 La agenda comienza a las 9:00 de la mañana del sábado con una presentación y terminaba a las 14:00 aunque por el control de acceso de este año ha sido recomendable llegar un poco antes para evitar alguna pequeña aglomeración en los últimos minutos y encontrar y entrar en las salas con suficiente antelación. Llega el momento de decidir a qué presentación de los dos _tracks_ asistir, dependiendo de los intereses de cada uno a veces no es fácil y uno quisiera haber asistido a las dos.
 
@@ -139,7 +145,7 @@ Comenzaba la mañana posponiendo la alarma del despertador varias veces pero sol
 
 En el [State of JavaScript del 2018](https://stateofjs.com/) se mencionan numerosas herramientas de JavaScript más populares del momento y otras nuevas que están surgiendo como alternativa.
 
-Entre las que se mencionan, no son pocas, están _npm, nvm, node, webpack babel, Parcel, Rollup, Eslint, Prettier, Flow, TypeScript, Reason_.
+Entre las que se mencionan, no son pocas, están [npm][npm], [nvm][nvm], [Node.js][nodejs], [Webpack][webpack], [Babel][babeljs], [Parcel][parceljs], [Rollup][rollupjs], [Eslint][eslint], [Prettier][prettier], [Flow][flowjs], [TypeScript][typescript], [Reason][reasonjs].
 
 Esta presentación junto con la anterior forman la representación de JavaScript que siempre tiene la BilboStack y es que muchos lo utilizamos en mayor o menor medida.
 

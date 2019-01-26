@@ -63,9 +63,9 @@ Por supuesto tener a disposición para la conferencia este recinto y los ponente
 
 La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cuatro presentaciones en cada una de ellas, en formato de una mañana y el posterior postevento para el que desee.
 
-<table class="table table-condensed">
-    <thead>
-        <th width="140px">Hora</th>
+<table class="table">
+    <thead class="thead-light">
+        <th class="thead-light" width="140px">Hora</th>
         <th>Track 1</th>
     </thead>
     <tbody>
@@ -100,9 +100,9 @@ La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cua
     </tbody>
 </table>
 
-<table class="table table-condensed">
-    <thead>
-        <th width="140px">Hora</th>
+<table class="table">
+    <thead class="thead-light">
+        <th class="thead-light" width="140px">Hora</th>
         <th>Track 2</th>
     </thead>
     <tbody>

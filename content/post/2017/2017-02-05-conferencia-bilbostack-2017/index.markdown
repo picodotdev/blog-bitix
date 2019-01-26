@@ -32,9 +32,9 @@ El número de asistentes ha sido numeroso quedando algo de sitio libre en el _tr
 
 Este era el programa completo con su horario, temas muy distintos y variados como Xamarin, _internet of things_, el siempre presente JavaScript con Angular y Node, Lean Analytics y DDD entre algunos otros de la siguiente agenda:
 
-<table class="table table-condensed">
-    <thead>
-        <th width="140px">Hora</th>
+<table class="table">
+    <thead class="thead-light">
+        <th class="thead-light" width="140px">Hora</th>
         <th>Track 1</th>
     </thead>
     <tbody>
@@ -61,9 +61,9 @@ Este era el programa completo con su horario, temas muy distintos y variados com
     </tbody>
 </table>
 
-<table class="table table-condensed">
-    <thead>
-        <th width="140px">Hora</th>
+<table class="table">
+    <thead class="thead-light">
+        <th class="thead-light" width="140px">Hora</th>
         <th>Track 2</th>
     </thead>
     <tbody>
