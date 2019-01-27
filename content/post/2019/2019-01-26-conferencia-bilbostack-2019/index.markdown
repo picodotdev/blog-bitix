@@ -3,6 +3,7 @@ pid: 377
 title: "Conferencia BilboStack 2019"
 url: "/2019/01/conferencia-bilbostack-2019/"
 date: 2019-01-26T17:00:00+01:00
+date: 2019-01-27T12:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -157,6 +158,8 @@ Esta presentación junto con la anterior forman la representación de JavaScript
 </div>
 
 ### Descanso
+
+No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacerse con algunas pegatinas y bagatelas, de las empresas una oportunidad de conocerlas e iniciar algún contacto.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
