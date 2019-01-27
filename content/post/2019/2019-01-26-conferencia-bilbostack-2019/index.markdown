@@ -202,7 +202,7 @@ Hay funcionalidades que no forman parte del núcleo del negocio. Estas funcional
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="heaxagonal-eventsourcing.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Viaje desde Arquitectura Hexagonal al Event Sourcing"
+        image1="hexagonal-eventsourcing.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Viaje desde Arquitectura Hexagonal al Event Sourcing"
         caption="Viaje desde Arquitectura Hexagonal al Event Sourcing" >}}
 </div>
 
