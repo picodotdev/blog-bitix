@@ -3,7 +3,7 @@ pid: 377
 title: "Conferencia BilboStack 2019"
 url: "/2019/01/conferencia-bilbostack-2019/"
 date: 2019-01-26T17:00:00+01:00
-date: 2019-01-27T12:30:00+01:00
+date: 2019-01-27T20:15:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -131,9 +131,9 @@ _Web Components_ permite crear etiquetas propias y ser usadas en los documentos 
 
 Las [especificación es de los _Web Components_](https://developer.mozilla.org/en-US/docs/Web/Web_Components#Specifications) son varias. Una de las cosas que aportan los _web components_ es que el CSS de estos no entren en colisión con cualquier otro CSS de la página o de otros web componentes.
 
-En las _DevTools_ de Firefox se puede inspeccionar el _shadow_ DOM del web componentes. En la documentación de MDN hay varias páginas que detallan los Web Components con [ejemplos](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements).
+En las _DevTools_ de [Firefox][firefox] se puede inspeccionar el _shadow_ DOM del web componentes. En la documentación de MDN hay varias páginas que detallan los Web Components con [ejemplos](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements).
 
-Comenzaba la mañana posponiendo la alarma del despertador varias veces pero solo por esta presentación ya ha merecido el levantarme para acudir a la BilboStack.
+Tenía claro que quería acudir a esta presentación, era una en la que no tenía muchas dudas al elegir por quien la daba [@ladybenko](https://twitter.com/ladybenko) de la que sigo Twitter sus interesantes comentarios que hace, desarrolladora de Firefox, es el nivel que hay en los ponentes de la BilboStack. Comenzaba la mañana posponiendo la alarma del despertador varias veces pero solo por esta presentación ya ha merecido el levantarme para acudir a la BilboStack.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -205,5 +205,12 @@ Hay funcionalidades que no forman parte del núcleo del negocio. Estas funcional
         image1="hexagonal-eventsourcing.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Viaje desde Arquitectura Hexagonal al Event Sourcing"
         caption="Viaje desde Arquitectura Hexagonal al Event Sourcing" >}}
 </div>
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [BilboStack 2019 por _Vicenç García-Altés_](https://medium.com/@vgaltes/bilbostack-2019-78553b19af25)
+* [Bilbostack 2019. Nunca defrauda. por _Azahara Fernández Guizán_](https://medium.com/@azaharafernandezguizan/bilbostack-2019-nunca-defrauda-5b0eb785932e)
+{{% /reference %}}
 
 {{% /post %}}
