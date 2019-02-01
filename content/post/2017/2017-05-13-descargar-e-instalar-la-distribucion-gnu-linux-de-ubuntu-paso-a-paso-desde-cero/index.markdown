@@ -28,7 +28,7 @@ El paso de Windows a GNU/Linux significa usar un nuevo entorno y es algo que muc
 
 Lo primero que debes hacer es [decidir la distribución que quieres instalar][blogbitix-190], según tus preferencias y necesidades. Para los usuarios que van a tener su primer contacto con GNU/Linux algunas de las recomendadas son [Ubuntu][ubuntu] o [elementaryOS][elementary]. En este artículo explicaré como instalar Ubuntu en su versión 16.04 <abbr title="Long Term Support">LTS</abbr>, los pasos son similares para elementaryOS ya que es una distribución que se basa en Ubuntu.
 
-Las versiones LTS de Ubuntu tienen un soporte de largo plazo de 5 años para corrección de errores y fallos de seguridad y se publican cada dos años siendo la siguiente LTS la 18.04 que se publicará en marzo del año 2018. Salvo que estés afectado por _versionitis_ y quieras tener las últimas versiones de los programas la versión LTS es más recomendable.
+Las versiones LTS de Ubuntu tienen un soporte de largo plazo de 5 años para corrección de errores y fallos de seguridad y se publican cada dos años siendo la siguiente LTS la 18.04 que se publicará en marzo del año 2018. Salvo que estés afectado por _versionitis_ y quieras tener las últimas versiones de los programas la versión LTS más reciente es recomendable y suficiente en vez de la última versión no LTS.
 
 ### Requisitos mínimos
 
