@@ -3,6 +3,7 @@ pid: 378
 title: "Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java"
 url: "/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/"
 date: 2019-02-01T17:30:00+01:00
+updated: 2019-02-02T10:15:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -28,7 +29,8 @@ Hay tres librerías distintas populares para hacer este _binding_ entre JSON y o
 Se utilizan los métodos _toJson()_ tanto en JSON-B como en Gson y el método _writeValueAsString()_ en Jackson para convertir a JSON y los métodos _fromJson()_ y _readValue()_ para convertir desde JSON a objetos. Estos métodos devuelven una instancia de la clase raíz indicada y acceder a las propiedades se hace con los correspondientes _getter_.
 
 {{< code file="Main.java" language="Java" options="" >}}
-
+{{< code file="Comprador.java" language="Java" options="" >}}
+{{< code file="Direccion.java" language="Java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 Para añadir tipos de datos que no están entre los básicos de JSON como es una fecha cada librería proporciona interfaces o clases abstractas para hacer la conversión desde el dato a un tipo de JSON y desde JSON al tipo del dato. En este caso para un tipo de dato [LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html).
