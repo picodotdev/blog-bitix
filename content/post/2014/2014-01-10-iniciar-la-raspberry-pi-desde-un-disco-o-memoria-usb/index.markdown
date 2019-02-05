@@ -19,7 +19,7 @@ summary: "La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin
 
 Por defecto la Raspberry Pi se instala en una tarjeta SD y se inicia desde ella, sin embargo, la tarjeta SD es muy lenta tanto en la lectura como en la escritura de datos y cuando tiene que hacerlo de forma intensiva el sistema queda sin responder y aparentemente atascado. Para aumentar muy notablemente el rendimiento de la Raspberry Pi podemos instalar la partición del sistema en una memoria USB o disco duro externo.
 
-En la guía de [Instalación de la Raspberry Pi](http://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html) expliqué como instalar la distribución [Arch Linux ARM][archlinuxarm] en una tarjeta SD, esa guía será el punto de partida para esta entrada. La Raspberry Pi inicia el sistema desde la tarjeta SD por lo que aunque instalemos el sistema en un dispositivo USB seguiremos necesitando la tarjeta SD para que contenga al menos la partición de arranque (boot).
+En la guía de [Instalación de la Raspberry Pi](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html) expliqué como instalar la distribución [Arch Linux ARM][archlinuxarm] en una tarjeta SD, esa guía será el punto de partida para esta entrada. La Raspberry Pi inicia el sistema desde la tarjeta SD por lo que aunque instalemos el sistema en un dispositivo USB seguiremos necesitando la tarjeta SD para que contenga al menos la partición de arranque (boot).
 
 Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando lsblk:
 
@@ -60,8 +60,8 @@ Los elementos básicos para usar este miniordenador son la [placa de la Raspberr
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)](http://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html)
-* [Guía instalación Raspberry Pi con Arch Linux ARM (Parte II, programas) ](http://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch_22.html)
+* [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html)
+* [Guía instalación Raspberry Pi con Arch Linux ARM (Parte II, programas) ](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch_22.html)
 * [Raspberry Pi como Media Center con GeeXboX][blogbitix-5]
 * [RaspBerry en USB](http://www.diverteka.com/?p=580)
 * [HOWTO: Move the filesystem to a USB stick](http://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&t=44177)

@@ -111,7 +111,7 @@ Para jugar a los juegos de la NES de Nintendo con QMC2 no he conseguido ejecutar
 
 Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][windows] como para [Mac OS X][macos] en sus secciones de descarga:
 
-* http://www.mame.net/
+* https://www.mame.net/
 * http://qmc2.batcom-it.net/
 
 Incluso con una [Raspberry Pi 3](https://amzn.to/2bjieY2) podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.

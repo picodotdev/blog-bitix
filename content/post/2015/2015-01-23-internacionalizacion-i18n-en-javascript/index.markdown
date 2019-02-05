@@ -80,14 +80,14 @@ Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javasc
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.
 
-* [Introducción y ejemplo de RequireJS](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
-* [Introducción y ejemplo de Mustache](http://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
-* [Logging en JavaScript con log4javascript](http://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
-* [Capturar errores de JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
-* [Optimizar módulos de RequireJS y archivos JavaScript](http://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
+* [Introducción y ejemplo de RequireJS](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
+* [Introducción y ejemplo de Mustache](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
+* [Logging en JavaScript con log4javascript](https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)
+* [Capturar errores de JavaScript](https://elblogdepicodev.blogspot.com.es/2013/04/capturar-errores-de-javascript.html)
+* [Optimizar módulos de RequireJS y archivos JavaScript](https://elblogdepicodev.blogspot.com.es/2013/04/optimizar-modulos-de-requirejs.html)
 * [Introducción y ejemplo de Backbone.js](http://elblogdepicodev.blogspot.com/2013/04/introduccion-y-ejemplo-de-backbonejs.html)
-* [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon](http://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html)
-* [Ejemplo lista de tareas con Marionette](http://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html)
+* [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon](https://elblogdepicodev.blogspot.com.es/2013/05/ejemplo-de-pruebas-unitarias-en.html)
+* [Ejemplo lista de tareas con Marionette](https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-lista-de-tareas-con-marionette.html)
 * [Lista de tareas con Backbone y React][blogbitix-20]
 
 El [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/BackboneReact) está en [mi repositorio de GitHub](https://github.com/picodotdev), una vez descargado el código puedes probarlo en tu equipo con el siguiente comando:

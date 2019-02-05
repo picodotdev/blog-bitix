@@ -56,7 +56,7 @@ Así de simple podemos cambiar el comportamiento de Tapestry y en este caso empl
 {{< links >}}
 {{< postslinks >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 * [AssetPathConverter](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/AssetPathConverter.html)
 * [CDNAssetPathConverterImpl.java](https://code.google.com/p/corner/source/browse/corner3/trunk/src/main/java/corner/asset/services/impl/CDNAssetPathConverterImpl.java)
 * [Amazon CloudFront](http://aws.amazon.com/es/cloudfront/dynamic-content/)

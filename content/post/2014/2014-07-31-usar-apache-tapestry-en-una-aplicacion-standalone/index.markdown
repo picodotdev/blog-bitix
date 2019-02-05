@@ -26,7 +26,7 @@ Una vez que tenemos la dependencia en el programa deberemos iniciar el contenedo
 
 {{< code file="Main-1.java" language="Java" options="" >}}
 
-En este caso he usado [Spring para la transacionalidad](http://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html) e Hibernate para la persistencia. Después de esto tenemos la referencia al registro de servicios, podemos obtener cualquiera en base a la interfaz que implementa, en este caso el servicio que implementa la interfaz [MainService](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/MainService.java).
+En este caso he usado [Spring para la transacionalidad](https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html) e Hibernate para la persistencia. Después de esto tenemos la referencia al registro de servicios, podemos obtener cualquiera en base a la interfaz que implementa, en este caso el servicio que implementa la interfaz [MainService](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/MainService.java).
 
 {{< code file="Main-2.java" language="Java" options="" >}}
 
@@ -44,7 +44,7 @@ Para generar una página de Tapestry fuera de una petición web y de un servidor
 
 Tengo que decir que al generar la página fuera de una petición web tendremos alguna limitación como solo poder usar assets con el prefijo context. Pero esto por lo menos [como he explicado en el caso de Blog Stack][blogbitix-24] no me ha supuesto ningún problema.
 
-Esto quizá no sea lo habitual pero en [Blog Stack](http://www.blogstack.info/) ambas posibilidades me han resultado de gran utilidad al desarrollar el proyecto. Las posibilidades son muchas por ejemplo podríamos usar alguna combinación de esto mismo con el microframework [Spark][sparkjava] si nuestra aplicación estuviese más orientada a una API aunque también podríamos [usarlo junto con RESTEasy](http://elblogdepicodev.blogspot.com.es/2013/03/integracion-tapestry-con-resteasy.htm.html).
+Esto quizá no sea lo habitual pero en [Blog Stack](http://www.blogstack.info/) ambas posibilidades me han resultado de gran utilidad al desarrollar el proyecto. Las posibilidades son muchas por ejemplo podríamos usar alguna combinación de esto mismo con el microframework [Spark][sparkjava] si nuestra aplicación estuviese más orientada a una API aunque también podríamos [usarlo junto con RESTEasy](https://elblogdepicodev.blogspot.com.es/2013/03/integracion-tapestry-con-resteasy.htm.html).
 
 {{< plugintapestry >}}
 
@@ -52,7 +52,7 @@ Esto quizá no sea lo habitual pero en [Blog Stack](http://www.blogstack.info/) 
 {{< links >}}
 {{< postslinks >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 {{% /reference %}}
 
 {{% /post %}}

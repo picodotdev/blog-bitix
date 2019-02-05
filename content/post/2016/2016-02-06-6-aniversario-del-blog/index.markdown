@@ -1,7 +1,8 @@
 ---
 pid: 124
 title: "6º aniversario del blog"
-url: "/2016/02/6o-aniversario-del-blog/"
+url: "/2016/02/6-aniversario-del-blog/"
+alises: ["/2016/02/6o-aniversario-del-blog/"]
 date: 2016-02-06T12:00:00+01:00
 updated: 2016-02-07T10:00:00+01:00
 rss: true

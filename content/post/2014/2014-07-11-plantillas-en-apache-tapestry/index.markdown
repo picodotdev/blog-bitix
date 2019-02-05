@@ -50,7 +50,7 @@ Por supuesto, podemos crear tantos componentes plantilla como necesitemos en una
 {{< postslinks >}}
 * [Código fuente de Blog Stack](https://github.com/picodotdev/blog-stack)
 * [Libro PlugIn Tapestry][blogbitix-12]
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 {{% /reference %}}
 
 {{% /post %}}

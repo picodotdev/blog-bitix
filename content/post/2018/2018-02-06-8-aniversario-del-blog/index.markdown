@@ -1,7 +1,7 @@
 ---
 pid: 298
 title: "8º aniversario del blog"
-url: "/2018/02/8o-aniversario-del-blog/"
+url: "/2018/02/8-aniversario-del-blog/"
 aliases: ["/2018/01/8o-aniversario-del-blog/"]
 date: 2018-02-06T19:00:00+01:00
 updated: 2018-02-07T18:30:00+01:00

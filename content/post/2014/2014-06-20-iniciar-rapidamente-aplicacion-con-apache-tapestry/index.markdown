@@ -51,7 +51,7 @@ Y accediendo con el navegador a la URL que nos indica Tapestry al final de las t
     	image2="inicio-aplicacion-navegador.png" thumb2="inicio-aplicacion-navegador-thumb.png" title2="Aplicación en el navegador" >}}
 </div>
 
-Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](http://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un _framework_ _fullstack_ y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
+Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un _framework_ _fullstack_ y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
 
 {{< plugintapestry >}}
 
@@ -59,7 +59,7 @@ Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomca
 {{< links >}}
 {{< postslinks >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 {{% /reference %}}
 
 {{% /post %}}

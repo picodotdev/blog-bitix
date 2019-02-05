@@ -46,7 +46,7 @@ Incluyendo la descripción de las características del _framework_ el libro trat
 
 El libro está basado en la siguiente versión de Tapestry, la 5.4, que actualmente está en estado beta (aunque la mayoría servirá para la versión final y para la versión 5.3 actual). Esta nueva versión tiene como principal novedad la parte cliente de las aplicaciones con la inclusión de RequireJS y la definición de los archivos JavaScript mediante módulos. También incorpora una capa de abstracción que permite usar cualquier librería como apoyo a la funcionalidad que necesita proporcionar ya sea Prototype, jQuery o cualquier otra que prefiramos o nueva que se desarrolle en un futuro.
 
-Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este _framework_. Además en [mi blog](http://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](http://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
+Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este _framework_. Además en [mi blog](http://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](https://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
 
 Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00€ impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico que prefieras ya sea PDF, EPUB, MOBI o HTML. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.
 
@@ -131,7 +131,7 @@ Inicialmente creé una página específica para alojar el libro con una aplicaci
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html) (elblogdepicodev)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html) (elblogdepicodev)
 {{% /reference %}}
 
 {{% /post %}}

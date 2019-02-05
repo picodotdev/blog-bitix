@@ -75,7 +75,7 @@ Las opciones son múltiples para hospedar nuestra aplicación. Si se trata de al
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [5 opciones de hosting para aplicaciones Java](http://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.html)
+* [5 opciones de hosting para aplicaciones Java](https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.html)
 * [Arquitectura y hospedaje de Blog Stack][blogbitix-24]
 {{% /reference %}}
 

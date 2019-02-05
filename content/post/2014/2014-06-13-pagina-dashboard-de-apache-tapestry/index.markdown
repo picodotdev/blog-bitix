@@ -16,7 +16,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-s
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
-Con la versión 5.4 de Tapestry las [páginas PageCatalog, ServiceStatus e HibernateStaticstis](http://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html) han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de [informe de error incluso para las peticiones ajax](http://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html), los mensajes de logging y con estás páginas de información de estado.
+Con la versión 5.4 de Tapestry las [páginas PageCatalog, ServiceStatus e HibernateStaticstis](https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html) han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de [informe de error incluso para las peticiones ajax](https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html), los mensajes de logging y con estás páginas de información de estado.
 
 La página [T5Dashboard](http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/corelib/pages/T5Dashboard.html) está incluida en el propio core de [Apache Tapestry](http://tapestry.apache.org/) y disponible en todas las aplicaciones en modo desarrollo y accediendo de forma local al servidor de aplicaciones. Si se incluye en la aplicación la dependencia tapestry-hibernate además en T5Dashboard podremos ver estadísticas de uso de Hibernate. La página T5Dashboard nos puede resultar muy útil ya que nos proporciona mucha información y alguna acción interesante.
 
@@ -60,7 +60,7 @@ Está página de Tapestry es similar a [una que podemos crear en Grails con info
 {{< links >}}
 {{< postslinks >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
-* [Documentación sobre Apache Tapestry](http://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
+* [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 {{% /reference %}}
 
 {{% /post %}}

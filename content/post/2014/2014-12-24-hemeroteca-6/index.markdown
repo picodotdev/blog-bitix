@@ -67,10 +67,10 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Hemeroteca #3](http://elblogdepicodev.blogspot.com.es/2013/06/hemeroteca-3.html)
-* [Hemeroteca #2](http://elblogdepicodev.blogspot.com.es/2012/12/el-blog-de-picodev-te-desea-un-2013.html)
-* [Hemeroteca #1](http://elblogdepicodev.blogspot.com.es/2012/06/hemeroteca-1.html)
-* [Hemeroteca #0](http://elblogdepicodev.blogspot.com.es/2011/12/feliz-navidad-y-prospero-2012.html)
+* [Hemeroteca #3](https://elblogdepicodev.blogspot.com.es/2013/06/hemeroteca-3.html)
+* [Hemeroteca #2](https://elblogdepicodev.blogspot.com.es/2012/12/el-blog-de-picodev-te-desea-un-2013.html)
+* [Hemeroteca #1](https://elblogdepicodev.blogspot.com.es/2012/06/hemeroteca-1.html)
+* [Hemeroteca #0](https://elblogdepicodev.blogspot.com.es/2011/12/feliz-navidad-y-prospero-2012.html)
 * [Christmas Tux](http://www.klowner.com/wallpaper/)
 {{% /reference %}}
 

@@ -55,9 +55,9 @@ La interfaz _Subject_ proporciona las operaciones para que la máquina de estado
 
 Otra posibilidad a las máquinas de estados son las herramientas de [procesos de negocio](https://es.wikipedia.org/wiki/Proceso_de_negocio) o BPM (Business Process Management) pero salvo que tengamos algo muy complejo la máquina de estados de este ejemplo será más que suficiente para la mayoría de situaciones. Hace un tiempo escribir varios artículos sobre [Activiti][activiti] y [Drools][drools]:
 
-* [Conceptos sobre procesos de negocio (BP, BPM, BPMS, ...) ](http://elblogdepicodev.blogspot.com.es/2012/09/conceptos-sobre-procesos-de-negocio-bp.html)
-* [Procesos de negocio con Activiti](http://elblogdepicodev.blogspot.com.es/2012/09/procesos-de-negocio-con-activiti.html)
-* [Reglas de negocio con Drools y Activiti](http://elblogdepicodev.blogspot.com.es/2012/10/reglas-de-negocio-con-drools-y-activiti.html)
+* [Conceptos sobre procesos de negocio (BP, BPM, BPMS, ...) ](https://elblogdepicodev.blogspot.com.es/2012/09/conceptos-sobre-procesos-de-negocio-bp.html)
+* [Procesos de negocio con Activiti](https://elblogdepicodev.blogspot.com.es/2012/09/procesos-de-negocio-con-activiti.html)
+* [Reglas de negocio con Drools y Activiti](https://elblogdepicodev.blogspot.com.es/2012/10/reglas-de-negocio-con-drools-y-activiti.html)
 
 El [código fuente completo](https://github.com/picodotdev/blog-ejemplos/tree/master/Machinarum) está disponible en mi repositorio de ejemplos en GitHub.
 

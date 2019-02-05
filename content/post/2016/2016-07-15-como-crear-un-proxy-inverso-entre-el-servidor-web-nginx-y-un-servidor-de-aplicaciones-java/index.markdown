@@ -64,7 +64,7 @@ En la [documentación sobre _reverse proxy_ de Nginx](https://www.nginx.com/reso
 {{< links >}}
 {{< postslinks >}}
 * [NGINX Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
-* [Unir Apache HTTPD y Tomcat mediante un reverse proxy ](http://elblogdepicodev.blogspot.com.es/2011/02/unir-apache-httpd-y-tomcat-mediante-un.html)
+* [Unir Apache HTTPD y Tomcat mediante un reverse proxy ](https://elblogdepicodev.blogspot.com.es/2011/02/unir-apache-httpd-y-tomcat-mediante-un.html)
 {{% /reference %}}
 
 {{% /post %}}

@@ -60,7 +60,7 @@ Puedes obtener el [código fuente completo del ejemplo](https://github.com/picod
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Librerías de logging para Java (slf4j, log4j, java.util.logging, logback, MentaLog](http://elblogdepicodev.blogspot.com.es/2012/04/librerias-de-logging-para-java-slf4j.html)
+* [Librerías de logging para Java (slf4j, log4j, java.util.logging, logback, MentaLog](https://elblogdepicodev.blogspot.com.es/2012/04/librerias-de-logging-para-java-slf4j.html)
 {{% /reference %}}
 
 {{% /post %}}
