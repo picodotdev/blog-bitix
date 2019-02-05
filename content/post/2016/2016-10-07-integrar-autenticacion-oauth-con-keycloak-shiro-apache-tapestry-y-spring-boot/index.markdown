@@ -59,7 +59,7 @@ Usando uno de los [adaptadores proporcionados por Keycloak](https://keycloak.git
 
 {{< code file="application.yml" language="YAML" options="" >}}
 
-Autenticado el usuario podemos obtener la instancia de [AccessToken](http://www.keycloak.org/docs/javadocs/org/keycloak/representations/AccessToken.html) que representa el _token_ de OAuth, para la autorización podemos usar Apache Shiro y para ellos deberemos implementar un Realm de tipo [AuthorizingRealm](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html). Tiene dos métodos que deberemos implementar [doGetAuthenticationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthenticatingRealm.html#doGetAuthenticationInfo-org.apache.shiro.authc.AuthenticationToken-) y [doGetAuthorizationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html#doGetAuthorizationInfo-org.apache.shiro.subject.PrincipalCollection-), el primero lo usaremos para autenticar al usuario que en este caso teniendo el _AccessToken_ ya estará autenticado con Keycloak y el segundo método nos permitirá obtener los roles y permisos asociados al usuario que podríamos obtenerlos de una base de datos relacional, en el ejemplo los roles también se obtienen del token. Con un filtro realizaremos el inicio de sesión de forma programática del usuario representado por el _AccessToken_ cuando esté presente en la petición.
+Autenticado el usuario podemos obtener la instancia de [AccessToken](https://www.keycloak.org/docs/javadocs/org/keycloak/representations/AccessToken.html) que representa el _token_ de OAuth, para la autorización podemos usar Apache Shiro y para ellos deberemos implementar un Realm de tipo [AuthorizingRealm](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html). Tiene dos métodos que deberemos implementar [doGetAuthenticationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthenticatingRealm.html#doGetAuthenticationInfo-org.apache.shiro.authc.AuthenticationToken-) y [doGetAuthorizationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html#doGetAuthorizationInfo-org.apache.shiro.subject.PrincipalCollection-), el primero lo usaremos para autenticar al usuario que en este caso teniendo el _AccessToken_ ya estará autenticado con Keycloak y el segundo método nos permitirá obtener los roles y permisos asociados al usuario que podríamos obtenerlos de una base de datos relacional, en el ejemplo los roles también se obtienen del token. Con un filtro realizaremos el inicio de sesión de forma programática del usuario representado por el _AccessToken_ cuando esté presente en la petición.
 
 {{< code file="KeycloakFilter.java" language="Java" options="" >}}
 {{< code file="AppRealm.java" language="Java" options="" >}}
@@ -106,7 +106,7 @@ Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, en
 {{< links >}}
 {{< postslinks >}}
 * [OAuth Getting Started](https://oauth.net/getting-started/)
-* [OAuth Documentation](http://oauth.net/documentation/)
+* [OAuth Documentation](https://oauth.net/2/)
 * [Keycloak Basics Tutorial Part 1](https://www.youtube.com/watch?v=z-sUzl9eG6M)
 * [Keycloak Basics Tutorial Part 2](https://www.youtube.com/watch?v=CXDrGJoCVhc)
 * [Keycloak Demo Part 1](https://www.youtube.com/watch?v=B-qIkB9lsLs)

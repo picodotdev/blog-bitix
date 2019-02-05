@@ -44,7 +44,7 @@ En el anillo de claves de GPG la clave que usemos para firmar no ha de tener _pa
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaMailGPG" command="./gradlew --daemon run -Pargs=\"[contraseña de aplicación de cuenta gmail]\"" >}}
 
-Las suplantaciones mediante correo electrónico son y seguirán siendo habituales si no son detectadas como _spam_. Después de escribir este artículo usar [<abbr title="DomainKeys Identified Mail">DKIM</abbr>](https://es.wikipedia.org/wiki/DomainKeys_Identified_Mail) parece ser la forma adecuada de firmar y cifrar los correos electrónicos y viendo el mensaje original de los que envían [Google][google] y [Amazon][amazon] es lo que utilizan ellos que algo sabrán de esto. Usar DKIM en los correos electrónicos será tema para otro posible artículo, la [nube de Amazon ofrece soporte para DKIM](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
+Las suplantaciones mediante correo electrónico son y seguirán siendo habituales si no son detectadas como _spam_. Después de escribir este artículo usar [<abbr title="DomainKeys Identified Mail">DKIM</abbr>](https://es.wikipedia.org/wiki/DomainKeys_Identified_Mail) parece ser la forma adecuada de firmar y cifrar los correos electrónicos y viendo el mensaje original de los que envían [Google][google] y [Amazon][amazon] es lo que utilizan ellos que algo sabrán de esto. Usar DKIM en los correos electrónicos será tema para otro posible artículo, la [nube de Amazon ofrece soporte para DKIM](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html).
 
 {{< code file="email-dkim.txt" language="Plaintext" options="" >}}
 
@@ -55,7 +55,7 @@ Las suplantaciones mediante correo electrónico son y seguirán siendo habituale
 * [Enviar correos electrónicos mediante Java Mail ][elblogdepicodev-50]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 * [Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
-* [Easy DKIM in Amazon SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html)
+* [Easy DKIM in Amazon SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html)
 {{% /reference %}}
 
 {{% /post %}}

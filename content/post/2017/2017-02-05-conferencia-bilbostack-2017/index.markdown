@@ -103,13 +103,13 @@ Al igual que en ediciones previas hago un pequeño resumen de las presentaciones
 
 El <abbr title="Internet of Things">IoT</abbr> o esos pequeños dispositivos que tienen conexión a internet están surgiendo como una forma de ayudarnos en algunas situaciones cotidianas como cambiar la ruta cuando hay un accidente para no llegar a un atasco o encender la calefacción antes de llegar a casa o antes de levantarnos, espejos que proporcionan información como notificaciones o el tiempo o un centro comercial que te posiciona y ofrece ofertas según la localización en la que estas y tus hábitos de consumo. Aparatos como [Amazon Echo](https://www.microsoft.com/cognitive-services/en-us/) son asistentes a través de los cuales mediante comandos de voz podemos realizar acciones como pedir comida a domicilio.
 
-Estos aparatos conectados a internet nos ofrecen una nuevo área posibilidades. Muestra de ellos es la demostración presentada que consistía en base a los mensajes escritos en [Twitter][twitter] iluminar una lámpara [PLAYBULB](https://www.amazon.com/PLAYBULB-Candle-Bluetooth-Flameless-Android/dp/B00O4LHNNS/) con color verde si eran positivos, rojo si eran negativos y azul si eran neutros haciendo uso de [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services/en-us/) y de [algunas de sus APIs](https://www.microsoft.com/cognitive-services/en-us/apis) para evaluar el sentido de los mensajes. Por ejemplo el mensaje _BilboStak is an awesome event!_ se evaluará como positivo y sumará a la media para que la lampara cambie a color verde.
+Estos aparatos conectados a internet nos ofrecen una nuevo área posibilidades. Muestra de ellos es la demostración presentada que consistía en base a los mensajes escritos en [Twitter][twitter] iluminar una lámpara [PLAYBULB](https://www.amazon.com/PLAYBULB-Candle-Bluetooth-Flameless-Android/dp/B00O4LHNNS/) con color verde si eran positivos, rojo si eran negativos y azul si eran neutros haciendo uso de [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services/en-us/) y de [algunas de sus APIs](https://azure.microsoft.com/es-es/services/cognitive-services/) para evaluar el sentido de los mensajes. Por ejemplo el mensaje _BilboStak is an awesome event!_ se evaluará como positivo y sumará a la media para que la lampara cambie a color verde.
 
 El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](https://software.intel.com/es-es/iot/hardware/edison) junto con un servicio en la nube de Azure pero perfectamente podría ser una [Raspberry Pi][raspberrypi] u otra de las numerosas pequeñas placas que están surgiendo en este nuevo mercado. El [código fuente del ejemplo](https://github.com/isabelcabezasm/notwificador) está compartido en un repositorio de GitHub.
 
 {{% reference %}}
 {{< postslinks >}}
-* [Presentación](http://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
+* [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
 {{% /reference %}}
 
 <div class="media" style="text-align: center;">
@@ -134,8 +134,8 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
 
 * [Material Design](https://material.io/) y su [guía](https://material.io/guidelines/material-design/introduction.html)
 * [Lightning Design System](https://www.lightningdesignsystem.com/)
-* [Bootstrap](http://getbootstrap.com/)
-* [Foundation](http://foundation.zurb.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [Foundation](https://foundation.zurb.com/)
 * Y el propio que ha comenzado a desarrollar Naiara, [nakDS](https://github.com/nabaroa/nakDS) que ha compartido en su GitHub
 
 {{% reference %}}
@@ -172,7 +172,7 @@ La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se c
 
 {{% reference %}}
 {{< postslinks >}}
-* [Presentación](http://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
+* [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
 {{% /reference %}}
 
 <div class="media" style="text-align: center;">

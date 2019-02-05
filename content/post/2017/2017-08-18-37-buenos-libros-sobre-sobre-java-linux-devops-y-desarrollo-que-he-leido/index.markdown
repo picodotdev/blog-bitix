@@ -22,7 +22,7 @@ En internet hay cantidad de información que nos permiten aprender sobre cualqui
 Algunas páginas dedicadas a la programación relativa a [Java][java] y [GNU][gnu]/[Linux][linux] a las que estoy suscrito son:
 
 * [JAXenter](https://jaxenter.com/)
-* [JavaWorld](http://www.javaworld.com/)
+* [JavaWorld](https://www.javaworld.com/)
 * [JavaMagazine](http://www.javamagazine.mozaicreader.com/)
 * [VirtualJUG](https://virtualjug.com/)
 * [BSD Magazine](https://bsdmag.org/)

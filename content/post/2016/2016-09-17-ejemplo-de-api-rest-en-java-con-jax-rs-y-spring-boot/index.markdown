@@ -32,7 +32,7 @@ El servicio lo definimos en una interfaz y una clase que la implementa.
 {{< code file="DefaultMessageService.java" language="Java" options="" >}}
 {{< code file="Message.java" language="Java" options="" >}}
 
- Es habitual que los servicios REST produzca como resultado un JSON como formato para devolver los datos. No necesitaremos hacer nada especial para convertir el _Java Bean_ de la clase _Message_ a JSON, de ello se encargará automáticamente JAX-RS. Con anotaciones como [@QueryParam](http://docs.oracle.com/javaee/7/api/javax/ws/rs/QueryParam.html) podemos obtener los parámetros del _query string_, de la URL o cabeceras enviadas.
+ Es habitual que los servicios REST produzca como resultado un JSON como formato para devolver los datos. No necesitaremos hacer nada especial para convertir el _Java Bean_ de la clase _Message_ a JSON, de ello se encargará automáticamente JAX-RS. Con anotaciones como [@QueryParam](https://docs.oracle.com/javaee/7/api/javax/ws/rs/QueryParam.html) podemos obtener los parámetros del _query string_, de la URL o cabeceras enviadas.
 
 {{< code file="MessageResource.java" language="Java" options="" >}}
 
@@ -41,7 +41,7 @@ Iniciada la aplicación con <code>./gradlew run</code> y con la siguiente comand
 {{< code file="curl.sh" language="Bash" options="" >}}
 {{< code file="out.txt" language="Plaintext" options="" >}}
 
-Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
+Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1449358063&linkId=e0cd589f357dfc1c77cfb004e6668fa5&internal=1"></iframe>

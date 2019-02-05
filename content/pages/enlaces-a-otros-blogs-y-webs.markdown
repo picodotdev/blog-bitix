@@ -40,7 +40,7 @@ problemas que tengas en tu sistema aunque procura buscar antes la solución no s
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
 * [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
-* [Parcela Digital](http://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
+* [Parcela Digital](https://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
 * [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
 * [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
@@ -76,10 +76,10 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 
 * [Javarevisited](http://javarevisited.blogspot.com.es/): uno de los blogs sobre java bastante reconocido, numerosos artículos explicando detalles que incluso un programador con muchos años de experiencia puede desconocer en profundidad.
 * [JAXenter](https://jaxenter.com/): una web con artículos relacionados con la tecnología, programación, java, ...
-* [InfoQ](http://www.infoq.com/): otra web con artículos relacionados con la tecnología, programación, ...
-* [JavaWorld](http://www.javaworld.com/): al igual que las dos anteriores otra web con artículos de todo tipo y también sobre la plataforma Java.
+* [InfoQ](https://www.infoq.com/): otra web con artículos relacionados con la tecnología, programación, ...
+* [JavaWorld](https://www.javaworld.com/): al igual que las dos anteriores otra web con artículos de todo tipo y también sobre la plataforma Java.
 * [Java Code Geeks](https://www.javacodegeeks.com/): otro de los mejores blogs sobre las tecnologías Java.
-* [Java Magazine](http://www.oracle.com/technetwork/java/javamagazine/index.html): publicación bimensual con entrevistas, información y más cosas sobre Java. Muy recomendable.
+* [Java Magazine](https://www.oracle.com/technetwork/java/javamagazine/index.html): publicación bimensual con entrevistas, información y más cosas sobre Java. Muy recomendable.
 * [Takipi Blog](http://blog.takipi.com/): un blog de buena calidad sobre Java, Scala y cualquier cosa relacionada.
 * [Java, SQL and jOOQ](https://blog.jooq.org/): contiene artículos relacionados con las bases de datos relacionales y el lenguaje SQL pero también sobre Java.
 * [JavaHispano](http://www.javahispano.org): la página de la comunidad java hispana, noticias, novedades e información.

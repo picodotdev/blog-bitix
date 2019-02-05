@@ -25,16 +25,16 @@ El sábado 23 de mayo de 2015 el lenguaje Java cumple 20 años de historia y aú
 
 En [JavaWorld][javaworld] ha publicado varios artículos para celebrar el aniversario comentando su futuro, su pasado y presente o que notables características reunió en su momento para ser hoy uno de los lenguajes más usados.
 
-* [Java at 20: How it changed programming forever](http://www.javaworld.com/article/2925496/core-java/java-at-20-how-java-changed-programming-forever.html)
-* [Java at 20: The JVM, Java's other big legacy](http://www.javaworld.com/article/2924046/scripting-jvm-languages/java-at-20-jvm-javas-other-big-legacy.html)
-* [Java at 20: Its successes, failures, and future](http://www.javaworld.com/article/2925306/core-java/java-at-20-oracle-ranks-its-successes-failures-and-future.html)
-* [Java at 20: The programming juggernaut rolls on](http://www.javaworld.com/article/2923616/core-java/java-at-20-the-programming-juggernaut-rolls-on.html)
-* [Java's key to success is simplicity](http://www.javaworld.com/article/2925060/java-platform/javas-key-to-success-is-simplicity.html)
-* [Java is a 20-year-old grown-up with bright prospects ahead](http://www.javaworld.com/article/2926345/java-platform/unfinished-business-java-is-a-20-year-old-grown-up-with-bright-prospects-ahead.html)
+* [Java at 20: How it changed programming forever](https://www.javaworld.com/article/2925496/core-java/java-at-20-how-java-changed-programming-forever.html)
+* [Java at 20: The JVM, Java's other big legacy](https://www.javaworld.com/article/2924046/scripting-jvm-languages/java-at-20-jvm-javas-other-big-legacy.html)
+* [Java at 20: Its successes, failures, and future](https://www.javaworld.com/article/2925306/core-java/java-at-20-oracle-ranks-its-successes-failures-and-future.html)
+* [Java at 20: The programming juggernaut rolls on](https://www.javaworld.com/article/2923616/core-java/java-at-20-the-programming-juggernaut-rolls-on.html)
+* [Java's key to success is simplicity](https://www.javaworld.com/article/2925060/java-platform/javas-key-to-success-is-simplicity.html)
+* [Java is a 20-year-old grown-up with bright prospects ahead](https://www.javaworld.com/article/2926345/java-platform/unfinished-business-java-is-a-20-year-old-grown-up-with-bright-prospects-ahead.html)
 
 Algún otros artículos interesantes son:
 
-* [Java Turns 20](http://www.infoq.com/news/2015/05/java-20)
+* [Java Turns 20](https://www.infoq.com/news/2015/05/java-20)
 * [20 años de Java: ¿En qué quedó el sueño de programar una vez, ejecutar en cualquier lugar?](http://www.xataka.com/aplicaciones/20-anos-de-java-celebramos-su-tremenda-influencia-en-el-mundo-del-software-y-la-programacion)
 
 Aunque algunos parecen considerar ya hoy a Java el nuevo [COBOL][cobol] (y este último aún tiene futuro) y no sea lo habitual, en este artículo trataré de exponer algunos argumentos que posee Java para su defensa y por los que en mi caso aún no he tenido necesidad de buscar mayor felicidad programando en otra opción.

@@ -18,7 +18,7 @@ summary: "Los contenedores no son una tecnología nueva pero Docker ha reunido l
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
-[Docker][docker] es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que [cambian la forma de desarrollar aplicaciones](http://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html). Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.
+[Docker][docker] es una de las herramientas de la que se está hablando mucho, esto es así ya que tiene varios aspectos interesantes que [cambian la forma de desarrollar aplicaciones](https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html). Docker es una forma de ejecutar procesos de forma aislada pero también se compone de herramientas para construir imágenes y un repositorio para compartirlas.
 
 Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.
 
@@ -68,7 +68,7 @@ Una vez conocidos los aspectos básicos y en que se diferencia docker de la virt
 * [Integración entre Ansible y Docker][blogbitix-53]
 * [Introducción a Bitnami][blogbitix-54]
 * [Seguridad Docker](https://docs.docker.com/articles/security/)
-* [Four ways Docker fundamentally changes application development](http://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html)
+* [Four ways Docker fundamentally changes application development](https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html)
 * [Docker, qué es y sus principales características](https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/)
 {{% /reference %}}
 

@@ -58,7 +58,7 @@ Podemos proporcionar implementaciones de métodos de la siguiente forma, suponie
 {{< code file="Source.java" language="Java" options="" >}}
 {{< code file="Target.java" language="Java" options="" >}}
 
-Dicho esto, la generación de código en tiempo de ejecución o compilación nos permite nuevas posibilidades que solo ofrecían lenguajes dinámicos o de resolver problemas con [programación orientada a aspectos](https://en.wikipedia.org/wiki/Aspect-oriented_programming). Aún así hay que tener en cuenta que las clases Java son elementos especiales para la la máquina virtual y nunca son recolectadas por el recolector de basura mientras su [ClassLoader](http://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html) este en uso por alguna de las clases que hay cargadas en la aplicación.
+Dicho esto, la generación de código en tiempo de ejecución o compilación nos permite nuevas posibilidades que solo ofrecían lenguajes dinámicos o de resolver problemas con [programación orientada a aspectos](https://en.wikipedia.org/wiki/Aspect-oriented_programming). Aún así hay que tener en cuenta que las clases Java son elementos especiales para la la máquina virtual y nunca son recolectadas por el recolector de basura mientras su [ClassLoader](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html) este en uso por alguna de las clases que hay cargadas en la aplicación.
 
 Ejecutando esta pequeña aplicación obtenemos el siguiente resultado en la terminal.
 

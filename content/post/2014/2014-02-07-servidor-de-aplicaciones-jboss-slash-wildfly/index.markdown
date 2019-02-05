@@ -63,7 +63,7 @@ En posteriores entradas y siguiendo la serie de entradas de seguridad ([I][elblo
 * [Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
 * [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129]
 * [WildFly](http://wildfly.org/)
-* [JBoss](http://www.jboss.org/jbossas)
+* [JBoss](http://jbossas.jboss.org/)
 * http://www.jboss.org/overview/<br>
 * https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition<br>
 * http://www.oracle.com/technetwork/java/javaee/tech/index.html

@@ -26,11 +26,11 @@ Juegos míticos como 1942, 1943, 1944, Ghouls & Ghosts, Double Dragon, Super Mar
 
 Voy a explicar como instalar [Mame][mame] para emular esos sistemas antiguos y con las ROMs de los juegos jugar a ellos en un sistema GNU/Linux. Si nos hacemos con un controlador de consola con la típica cruceta y cuatro o  más botones la experiencia será mejor que con el teclado y más real a la original de la máquina de _arcade_ o consola. El número de  [sistemas soportados por Mame](http://www.progettoemma.net/mess/sysset.php) llega a más de 2000 entre ellos [Amiga](https://en.wikipedia.org/wiki/Amiga), [Amstrad](https://en.wikipedia.org/wiki/Amstrad), [Atari](https://en.wikipedia.org/wiki/Atari), [Commodore](https://en.wikipedia.org/wiki/Commodore_International), [Famicon (NES)](https://es.wikipedia.org/wiki/Nintendo_Entertainment_System), [Master System](https://es.wikipedia.org/wiki/Master_System), [Neo Geo](https://es.wikipedia.org/wiki/Neo-Geo) o [ZX Spectrum](https://es.wikipedia.org/wiki/Sinclair_ZX_Spectrum).
 
-Deberemos instalar el paquete del [emulador Mame](https://www.archlinux.org/packages/community/x86_64/sdlmame/) y un lanzador que en este caso usaré [QMC2](https://www.archlinux.org/packages/community/x86_64/qmc2/) aunque como alternativa también está [RetroArch](https://wiki.archlinux.org/index.php/RetroArch) o [Lakka para una Raspberry Pi][blogbitix-301]. Posteriormente deberemos obtener las ROMs de los juegos de algunas de las muchas páginas que existen en internet. En [Arch Linux][archlinux] los paquetes del emulador Mame y el lanzador QMC2 los instalamos con el siguiente comando:
+Deberemos instalar el paquete del [emulador Mame](https://www.archlinux.org/packages/community/x86_64/mame/) y un lanzador que en este caso usaré [QMC2](https://www.archlinux.org/packages/community/x86_64/qmc2/) aunque como alternativa también está [RetroArch](https://wiki.archlinux.org/index.php/RetroArch) o [Lakka para una Raspberry Pi][blogbitix-301]. Posteriormente deberemos obtener las ROMs de los juegos de algunas de las muchas páginas que existen en internet. En [Arch Linux][archlinux] los paquetes del emulador Mame y el lanzador QMC2 los instalamos con el siguiente comando:
 
 {{< code file="pacman.sh" language="Bash" options="" >}}
 
-Instalados estos paquetes y descargada una ROM de ejemplo como la de [Ghouls & Gosht](http://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs\/Ghouls'n_Ghosts_(World)/13191) de [EMUPARADISE](http://www.emuparadise.me) y colocada en un directorio (no hace falta descomprimir el archivo de la ROM) iniciamos el lanzador QMC2. QMC2 inicialmente nos pedirá donde se encuentra el binario del emulador y el directorio donde están las ROMs. Configurado QMC2 buscaremos el juego por su nombre del que hayamos descargado la ROM.
+Instalados estos paquetes y descargada una ROM de ejemplo como la de [Ghouls & Gosht](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs\/Ghouls'n_Ghosts_(World)/13191) de [EMUPARADISE](http://www.emuparadise.me) y colocada en un directorio (no hace falta descomprimir el archivo de la ROM) iniciamos el lanzador QMC2. QMC2 inicialmente nos pedirá donde se encuentra el binario del emulador y el directorio donde están las ROMs. Configurado QMC2 buscaremos el juego por su nombre del que hayamos descargado la ROM.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="170"
@@ -98,7 +98,7 @@ Esta es una pequeña lista no completa de los juegos míticos que recuerdo de mi
         caption="Wonder Boy y World Rally" >}}
 </div>
 
-Ya solo nos queda buscar con tu buscador preferido algún artículo que recopile las mejores ROMs o aquellas que recuerdes y descargarlas en el directorio de las ROMS. Algunos emuladores deberemos previamente [descargar su ROM de emulador como en el caso de Neo-Geo](http://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs/Neo-Geo/15030) para esta plataforma y colocarla también en el directorio de las ROMs.
+Ya solo nos queda buscar con tu buscador preferido algún artículo que recopile las mejores ROMs o aquellas que recuerdes y descargarlas en el directorio de las ROMS. Algunos emuladores deberemos previamente [descargar su ROM de emulador como en el caso de Neo-Geo](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs/Neo-Geo/15030) para esta plataforma y colocarla también en el directorio de las ROMs.
 
 Para jugar a los juegos de la NES de Nintendo con QMC2 no he conseguido ejecutarlos, he tenido que introducir el comando <code>sdlmame nes</code> en la terminal buscar la ROM navegando por los directorios, seleccionarla y usar la opción de _reset_.
 
@@ -114,7 +114,7 @@ Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][
 * http://www.mame.net/
 * http://qmc2.batcom-it.net/
 
-Incluso con una [Raspberry Pi 3](https://amzn.to/2bjieY2) podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](http://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
+Incluso con una [Raspberry Pi 3](https://amzn.to/2bjieY2) podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1"></iframe>
@@ -128,7 +128,7 @@ Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos,
 {{< postslinks >}}
 * [Emuparadise](http://www.emuparadise.me)
 * [MAME Database](http://www.mamedb.com)
-* [Emuladores, ROMs y el debate entre la nostalgia, el amor a lo retro y la ilegalidad](http://www.xataka.com/videojuegos/emuladores-roms-y-el-debate-entre-la-nostalgia-el-amor-a-lo-retro-y-la-ilegalidad)
+* [Emuladores, ROMs y el debate entre la nostalgia, el amor a lo retro y la ilegalidad](https://www.xataka.com/videojuegos/emuladores-roms-y-el-debate-entre-la-nostalgia-el-amor-a-lo-retro-y-la-ilegalidad)
 {{% /reference %}}
 
 {{% /post %}}
