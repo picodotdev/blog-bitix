@@ -51,7 +51,7 @@ Examinando los datos en redis podemos ver que se ha creado una clave con el mism
     	image1="contenido-sesion-redis.png" thumb1="contenido-sesion-redis-thumb.png" title1="Contenido sesión en redis" >}}
 </div>
 
-En el momento de escribir este artículo Spring Session es un proyecto reciente y solo soporta la opción de Redis como caché externa pero seguramente con nuevas versiones soporte otras opciones como memcached, guardar la sesión en una _cookie_ o en una base de datos relacional. La solución propuesta por Spring Session es válida para cualquier servidor de aplicaciones ya que se basa en crear un filtro en la aplicación que proporciona una versión modificada de [HttpSession](http://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) mediante el cual se guardan los datos de forma externa.
+En el momento de escribir este artículo Spring Session es un proyecto reciente y solo soporta la opción de Redis como caché externa pero seguramente con nuevas versiones soporte otras opciones como memcached, guardar la sesión en una _cookie_ o en una base de datos relacional. La solución propuesta por Spring Session es válida para cualquier servidor de aplicaciones ya que se basa en crear un filtro en la aplicación que proporciona una versión modificada de [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) mediante el cual se guardan los datos de forma externa.
 
 Otras posibilidades ofrecidas por Spring Session son múltiples sesiones en la misma instancia del navegador y soporte para aplicaciones RESTful y WebSocket.
 
@@ -61,7 +61,7 @@ Otra posibilidad similar es usar memcached mediante la librería [memcached-sess
 {{< links >}}
 {{< postslinks >}}
 * [Spring Session][spring-session]
-* [Simple Session-Sharing in Tomcat Cluster Using the Session-in-Cookie](http://blog.shinetech.com/2012/12/18/simple-session-sharing-in-tomcat-cluster-using-the-session-in-cookie-pattern/)
+* [Simple Session-Sharing in Tomcat Cluster Using the Session-in-Cookie](https://shinesolutions.com/2012/12/18/simple-session-sharing-in-tomcat-cluster-using-the-session-in-cookie-pattern/)
 * [Tomcat Cluster](http://tomcat.apache.org/tomcat-8.0-doc/cluster-howto.html)
 * [Memcached Session Manager](https://code.google.com/p/memcached-session-manager/)
 {{% /reference %}}

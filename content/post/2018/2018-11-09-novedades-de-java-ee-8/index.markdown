@@ -52,7 +52,7 @@ Hay un [tutorial de Java EE 8](https://javaee.github.io/tutorial/) y con el [eje
 * [Java Platform, Enterprise Edition 8 SDK - Release Notes](https://www.oracle.com/technetwork/java/javaee/documentation/ee8-release-notes-3894362.html)
 * [What's new in Java EE 8](https://www.ibm.com/developerworks/opensource/library/j-whats-new-in-javaee-8/index.html)
 * [Java EE 8 Overview](https://blogs.oracle.com/java/java-ee-8-overview)
-* [Java™ EE at a Glance](http://www.oracle.com/technetwork/java/javaee/overview/index.html)
+* [Java™ EE at a Glance](https://www.oracle.com/technetwork/java/javaee/overview/index.html)
 * [Java EE (GitHub)](https://javaee.github.io/)
 * [Java EE Tutorial](https://javaee.github.io/tutorial/)
 * [Java EE Tutorial (Content)](https://javaee.github.io/tutorial/toc.html)
