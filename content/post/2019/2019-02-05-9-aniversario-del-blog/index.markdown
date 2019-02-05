@@ -2,7 +2,7 @@
 pid: 380
 title: "9º aniversario del blog"
 url: "/2019/02/9-aniversario-del-blog/"
-date: 2019-02-06T20:00:00+01:00
+date: 2019-02-05T20:00:00+01:00
 language: "es"
 rss: true
 sharing: true
