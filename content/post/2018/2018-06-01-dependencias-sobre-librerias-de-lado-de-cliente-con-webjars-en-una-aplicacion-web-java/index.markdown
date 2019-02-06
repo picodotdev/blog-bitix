@@ -48,7 +48,7 @@ Los _webjars_ muy útiles para gestionar las librerías de lado cliente que hace
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Introduction to WebJars](http://www.baeldung.com/maven-webjars)
+* [Introduction to WebJars](https://www.baeldung.com/maven-webjars)
 {{% /reference %}}
 
 {{% /post %}}

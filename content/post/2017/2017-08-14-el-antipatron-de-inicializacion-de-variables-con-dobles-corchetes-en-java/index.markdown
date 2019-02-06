@@ -24,12 +24,12 @@ Con el objetivo de reducir la verbosidad quizá en algún sitio se pueda ver que
 
 {{< code file="AntipatronLlaves.java" language="Java" options="" >}}
 
-Sin embargo, no es recomendable usar este _hack_ del lenguaje porque presenta sus inconvenientes, por ello está desaconsejado y se considera un antipatrón. En el pozo de sabiduría para el programador de [StackOverflow][stackoverflow] se indican [varios inconvenientes](http://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java#27521360):
+Sin embargo, no es recomendable usar este _hack_ del lenguaje porque presenta sus inconvenientes, por ello está desaconsejado y se considera un antipatrón. En el pozo de sabiduría para el programador de [StackOverflow][stackoverflow] se indican [varios inconvenientes](https://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java#27521360):
 
 * Cada bloque de inicialización con doble llave crea una clase anónima que incrementa el número de clases de la aplicación y que puede penalizar el rendimiento si se usa de forma extensiva en una aplicación.
 * Si se retorna un mapa inicializado de esta forma desde un método el mapa tendrá una referencia al objeto que lo creo, lo que evita que el objeto sea destruido por el recolector de basura hasta que no se recolecte el mapa creando una potencial fuga de memoria.
 
-En [otros hilos de StackOverflow](http://stackoverflow.com/questions/1005073/initialization-of-an-arraylist-in-one-line#1005083) algunas respuestas muy votadas se propone usar dobles llaves para la inicialización, pero por los puntos comentados anteriormente mejor no usarla por mucho que esté en StackOverflow y haya sido esta una respuesta muy votada.
+En [otros hilos de StackOverflow](https://stackoverflow.com/questions/1005073/initialization-of-an-arraylist-in-one-line#1005083) algunas respuestas muy votadas se propone usar dobles llaves para la inicialización, pero por los puntos comentados anteriormente mejor no usarla por mucho que esté en StackOverflow y haya sido esta una respuesta muy votada.
 
 Las alternativas en Java 8 en el caso del _Map_ si queremos reducir la verbosidad al inicializar estos tipos de datos usados profusamente podemos usar lo siguiente, en el caso de _List_ o _Set_ disponemos desde hace más tiempo del método _Arrays.asList_:
 
@@ -46,7 +46,7 @@ En Java 9 aunque aún no se incorporen la definición de literales al lenguaje c
 {{< postslinks >}}
 * [What is Double Brace Initialization in Java? Anti Pattern Example](http://javarevisited.blogspot.com.es/2015/10/what-is-double-brace-initialization-in-java-example-anti-pattern.html)
 * [Double Brace Initialization](http://c2.com/cgi/wiki?DoubleBraceInitialization)
-* [What is Double Brace initialization in Java?](http://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java)
+* [What is Double Brace initialization in Java?](https://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java)
 * [Java 8, Initializing Maps in the Smartest Way](http://minborgsjavapot.blogspot.com.es/2014/12/java-8-initializing-maps-in-smartest-way.html)
 {{% /reference %}}
 

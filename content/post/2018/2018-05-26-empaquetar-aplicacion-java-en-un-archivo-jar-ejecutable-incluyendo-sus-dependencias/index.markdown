@@ -58,7 +58,7 @@ Con el siguiente comando la ejecución de la aplicación empaquetada como _uberj
 {{< code file="java-jar-uberjar.sh" language="Bash" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
-Hay un [_plugin_ de Gradle para generar _uberjars_](http://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
+Hay un [_plugin_ de Gradle para generar _uberjars_](https://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
 
 Que la aplicación sea un único _jar_ tiene la ventaja que el distribuible es más sencillo y facilita desplegarlo en un entorno de producción, en el caso de usar [Docker][docker] también es más adecuado un único archivo.
 
@@ -69,8 +69,8 @@ Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Creating a Fat Jar in Gradle](http://www.baeldung.com/gradle-fat-jar)
-* [Shadow Plugin User Guide & Examples](http://imperceptiblethoughts.com/shadow/)
+* [Creating a Fat Jar in Gradle](https://www.baeldung.com/gradle-fat-jar)
+* [Shadow Plugin User Guide & Examples](https://imperceptiblethoughts.com/shadow/)
 * [Gradle – Create a Jar file with dependencies](http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/)
 * [Packing your Java application as one (or fat) JAR](https://www.javacodegeeks.com/2012/11/packing-your-java-application-as-one-or-fat-jar.html)
 {{% /reference %}}

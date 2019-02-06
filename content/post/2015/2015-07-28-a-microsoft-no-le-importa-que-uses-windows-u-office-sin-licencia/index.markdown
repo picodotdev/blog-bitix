@@ -56,7 +56,7 @@ Una nueva versión de Windows o un nuevo equipo es una ocasión ideal para en ve
 * [De Arch Linux a Arch Linux][blogbitix-36]
 * [Misión cumplida: me han reembolsado la licencia de Windows](http://barrapunto.com/~djworld/journal/23841)
 * [Los usuarios de portátiles no pueden obtener reembolso en caso de elegir un SO distinto a Windows](https://www.meneame.net/story/usuarios-portatiles-no-pueden-obtener-reembolso-caso-elegir-so)
-* [Casado con Windows](http://www.elmundo.es/navegante/2007/05/26/tecnologia/1180175185.html)
+* [Casado con Windows](https://www.elmundo.es/navegante/2007/05/26/tecnologia/1180175185.html)
 * [Concurso millonario para migrar de Windows XP a 8.1 en la Comunidad de Madrid](https://www.meneame.net/m/tecnolog%C3%ADa/concurso-millonario-migrar-windows-xp-8-1-comunidad-madrid)
 * [Devolución del canon Windows](https://www.meneame.net/m/actualidad/devolucion-canon-windows)
 * [¿Cuánto gana Microsoft por cada PC con Windows que se vende?](https://www.meneame.net/story/cuanto-gana-microsoft-cada-pc-windows-vende)

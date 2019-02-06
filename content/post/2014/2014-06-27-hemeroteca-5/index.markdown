@@ -34,12 +34,12 @@ En las últimas semanas del semestre he publicado unos cuantos artículos obre e
 * [Libro sobre desarrollo de aplicaciones con Apache Tapestry][blogbitix-12]
 * [Presentación sobre Apache Tapestry][blogbitix-11]
 
-En otro par de artículos he comentado sobre [Grails](http://grails.org/). Ambas cosas que ofrece ya Tapestry de por si y que son muy útiles en una aplicación disponer de ellas por eso aporté estas dos soluciones a Grails.
+En otro par de artículos he comentado sobre [Grails][grails]. Ambas cosas que ofrece ya Tapestry de por si y que son muy útiles en una aplicación disponer de ellas por eso aporté estas dos soluciones a Grails.
 
 * [Detectar problema N+1 y obtener estadísticas de Hibernate con Grails][blogbitix-26]
 * [Página de excepción de Grails][blogbitix-25]
 
-En la sección de programación están las novedades de Java 8 que recoge las interesantes novedades de esta nueva versión, también un nuevo artículo en la serie sobre JavaScript con la lista de tareas empleando [Backbone](http://backbonejs.org/) y [React](https://reactjs.org/) que empecé algo más de tiempo, una pequeña introducción a [Elasticsearch](http://www.elasticsearch.org/), otro ejemplo práctico de un patrón de diseño en programación en este caso del No Operation y algunos otros temas sobre Java.
+En la sección de programación están las novedades de Java 8 que recoge las interesantes novedades de esta nueva versión, también un nuevo artículo en la serie sobre JavaScript con la lista de tareas empleando [Backbone](http://backbonejs.org/) y [React](https://reactjs.org/) que empecé algo más de tiempo, una pequeña introducción a [Elasticsearch][elasticsearch], otro ejemplo práctico de un patrón de diseño en programación en este caso del No Operation y algunos otros temas sobre Java.
 
 * [Introducción a Elasticsearch][blogbitix-21]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
@@ -50,7 +50,7 @@ En la sección de programación están las novedades de Java 8 que recoge las in
 * [Logging usando marcadores con slf4j y logback][blogbitix-9]
 * [Ejemplo del patrón de diseño No Operation][blogbitix-8]
 
-Respecto a gnu/linux he actualizado la guía de instalación de [Arch Linux](http://archlinux.org/), he analizado un disco de estado sólido (SSD) que aumentan notablemente el rendimiento de un equipo, algún artículo sobre la [Raspberry Pi](http://www.raspberrypi.org/), otras sobre como configurar SSL en los servidores web y de aplicaciones más populares, los últimos artículos de esta lista son comentado mi experiencia con [Octopress](http://octopress.org/) como sistema de _blogging_ y que empecé a usar a principios de diciembre.
+Respecto a gnu/linux he actualizado la guía de instalación de [Arch Linux][archlinux], he analizado un disco de estado sólido (SSD) que aumentan notablemente el rendimiento de un equipo, algún artículo sobre la [Raspberry Pi][raspberrypi], otras sobre como configurar SSL en los servidores web y de aplicaciones más populares, los últimos artículos de esta lista son comentado mi experiencia con [Octopress](http://octopress.org/) como sistema de _blogging_ y que empecé a usar a principios de diciembre.
 
 * [Anexo a la guía de instalación y del principiante de Arch Linux][blogbitix-22]
 * [Desempaquetado y análisis Samsung SSD 840 EVO 250 GB][blogbitix-18]

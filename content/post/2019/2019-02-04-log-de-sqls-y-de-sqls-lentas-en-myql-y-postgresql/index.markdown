@@ -48,9 +48,9 @@ Como los archivos de log de sentencias ejecutadas potencialmente serán grandes 
 {{< postslinks >}}
 * [MySQL Server Logs](https://dev.mysql.com/doc/refman/8.0/en/server-logs.html)
 * [PostgreSQL Error Reporting and Logging](https://www.postgresql.org/docs/current/runtime-config-logging.html)
-* [How to see log files in MySQL?](http://stackoverflow.com/questions/5441972/how-to-see-log-files-in-mysql)
-* [How to enable MySQL Query Log?](http://stackoverflow.com/questions/6479107/how-to-enable-mysql-query-log)
-* [How to log PostgreSQL queries?](http://stackoverflow.com/questions/722221/how-to-log-postgresql-queries)
+* [How to see log files in MySQL?](https://stackoverflow.com/questions/5441972/how-to-see-log-files-in-mysql)
+* [How to enable MySQL Query Log?](https://stackoverflow.com/questions/6479107/how-to-enable-mysql-query-log)
+* [How to log PostgreSQL queries?](https://stackoverflow.com/questions/722221/how-to-log-postgresql-queries)
 * [PostgreSQL: Error Reporting and Logging](http://www.postgresql.org/docs/current/static/runtime-config-logging.html)
 {{% /reference %}}
 

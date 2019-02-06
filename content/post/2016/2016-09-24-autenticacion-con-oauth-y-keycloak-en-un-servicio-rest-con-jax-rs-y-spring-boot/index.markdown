@@ -100,7 +100,7 @@ En el siguiente artículo mostraré un [cliente del servicio REST autenticado co
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot"][blogbitix-185]
 * [Securing RESTful Web Services with OAuth2](https://blog.pivotal.io/pivotal-cloud-foundry/products/securing-restful-web-services-with-oauth2)
 * [Implementing the client credentials grant type](http://docs.apigee.com/api-services/content/oauth-20-client-credentials-grant-type)
-* [What are Keycloak's OAuth2 / OpenID Connect endpoints?](http://stackoverflow.com/questions/28658735/what-are-keycloaks-oauth2-openid-connect-endpoints)
+* [What are Keycloak's OAuth2 / OpenID Connect endpoints?](https://stackoverflow.com/questions/28658735/what-are-keycloaks-oauth2-openid-connect-endpoints)
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 {{% /reference %}}
 

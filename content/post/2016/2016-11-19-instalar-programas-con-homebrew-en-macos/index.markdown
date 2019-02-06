@@ -75,7 +75,7 @@ Y para desinstalar paquetes:
 
 {{< code file="brew-uninstall.sh" language="Bash" options="" >}}
 
-La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como [iTerm2](http://iterm2.com/). iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar [oh-my-zsh](http://ohmyz.sh/) que permite gestionar la configuración del intérprete de comandos [zsh][zsh] pudiendo añadir temas para modificar el _prompt_ del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.
+La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como [iTerm2](http://iterm2.com/). iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar [oh-my-zsh](https://ohmyz.sh/) que permite gestionar la configuración del intérprete de comandos [zsh][zsh] pudiendo añadir temas para modificar el _prompt_ del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.
 
 {{< code file="oh-my-zsh.sh" language="Bash" options="" >}}
 

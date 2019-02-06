@@ -19,7 +19,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 Uno de los sistemas de control de versiones más utilizado es [Git][git]. [Bash][bash] es el intérprete de comandos por defecto en la mayoría de distribuciones [GNU][gnu]/[Linux][linux]. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o _prompt_.
 
-El intérprete [Zsh][zsh] y [Oh-My-Zsh](http://ohmyz.sh/) ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el _stash_ y una comparación entre la rama actual y la del origen o _upstream_.
+El intérprete [Zsh][zsh] y [Oh-My-Zsh](https://ohmyz.sh/) ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el _stash_ y una comparación entre la rama actual y la del origen o _upstream_.
 
 <div class="media" style="text-align: center;">
     {{< figureproc

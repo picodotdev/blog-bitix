@@ -59,9 +59,9 @@ El funcionamiento de los _assert_ en [Groovy][groovy] es distinto. En groovy los
 {{< links >}}
 {{< postslinks >}}
 * [Programming With Assertions](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html)
-* [Correct use Java "assert" keyword](http://stackoverflow.com/questions/18907487/correct-use-java-assert-keyword)
-* [When to use an assertion and when to use an exception](http://stackoverflow.com/questions/1957645/when-to-use-an-assertion-and-when-to-use-an-exception)
-* [Is Groovy's assert a good idea for production code, unlike Java's assert?](http://stackoverflow.com/questions/8077757/is-groovys-assert-a-good-idea-for-production-code-unlike-javas-assert)
+* [Correct use Java "assert" keyword](https://stackoverflow.com/questions/18907487/correct-use-java-assert-keyword)
+* [When to use an assertion and when to use an exception](https://stackoverflow.com/questions/1957645/when-to-use-an-assertion-and-when-to-use-an-exception)
+* [Is Groovy's assert a good idea for production code, unlike Java's assert?](https://stackoverflow.com/questions/8077757/is-groovys-assert-a-good-idea-for-production-code-unlike-javas-assert)
 * [Java: Should I assert or throw AssertionError?](http://www.flowstopper.org/2013/11/java-should-i-assert-or-throw.html)
 {{% /reference %}}
 

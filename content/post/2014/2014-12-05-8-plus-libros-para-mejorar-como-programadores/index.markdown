@@ -64,7 +64,7 @@ Comenzar un proyecto desde el inicio no es lo habitual y aún así pasado un tie
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0201485672&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 
-En una [pregunta y respuesta de stackoveflow](http://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read) sobre los libros a leer por un programador, están recogidos una buena colección de los mejores de ellos.
+En una [pregunta y respuesta de stackoveflow](https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read) sobre los libros a leer por un programador, están recogidos una buena colección de los mejores de ellos.
 
 De la lista de este artículo el que me falta por leer es Code Complete el resto por mi propia experiencia recomiendo leerlos incluso más de una vez dependiendo de lo bien que absorbamos el conocimiento recogido en ellos y más tarde lo tengamos presente mientras trabajamos y programamos. Estos son de los libros más mencionados en artículos similares a este como buena documentación que leer sobre programación, si los leemos y nos quedamos con un porcentaje aunque sea pequeño ya mejoraremos bastante, también es probable que algunas cosas de las comentadas en los libros ya las tengamos presentes con la experiencia que hemos adquirido por nosotros mismos, en estos libros ese conocimiento adquirido y más comprobaremos que está documentado. ¡Feliz lectura!
 

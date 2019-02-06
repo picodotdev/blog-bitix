@@ -61,8 +61,8 @@ Mineros que extraen carbón cada vez serán menos, personas que podrían trabaja
 {{< links >}}
 {{< postslinks >}}
 * [El Corte Inglés pisa los talones a Amazon en España](https://cincodias.elpais.com/cincodias/2017/04/10/companias/1491837961_255161.html)
-* [¿Por qué se queja El Corte Inglés de Amazon?](http://www.elmundo.es/economia/empresas/2018/04/18/5ad64286e2704e366b8b4988.html)
-* [El Corte Inglés se planta frente a Amazon: 'No puede ser que nosotros paguemos impuestos y ellos no"](http://www.elmundo.es/economia/empresas/2018/03/06/5a9ec40e468aeb267e8b45de.html)
+* [¿Por qué se queja El Corte Inglés de Amazon?](https://www.elmundo.es/economia/empresas/2018/04/18/5ad64286e2704e366b8b4988.html)
+* [El Corte Inglés se planta frente a Amazon: 'No puede ser que nosotros paguemos impuestos y ellos no"](https://www.elmundo.es/economia/empresas/2018/03/06/5a9ec40e468aeb267e8b45de.html)
 * [Huelga en Amazon España: una mayoría de trabajadores se rebela contra la empresa](https://www.elconfidencial.com/tecnologia/2018-03-02/amazon-espana-huelga-trabajadores-san-fernando_1529600/)
 * [Los trabajadores de Amazon España planean una huelga a nivel europeo en pleno Prime Day o Black Friday](https://www.xataka.com/empresas-y-economia/los-trabajadores-de-amazon-espana-planean-una-huelga-a-nivel-europeo-en-pleno-prime-day-o-black-friday)
 {{% /reference %}}

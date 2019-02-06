@@ -30,7 +30,7 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
 
 * [Issues Functionalities](https://docs.gitlab.com/ee/user/project/issues/issues_functionalities.html#11-reference)
 * [Crosslinking Issues](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.html)
-* [Issue Board](https://about.gitlab.com/features/issueboard/)
+* [Issue Board](https://about.gitlab.com/product/issueboard/)
 
 <div class="media" style="text-align: center;">
     {{< figureproc

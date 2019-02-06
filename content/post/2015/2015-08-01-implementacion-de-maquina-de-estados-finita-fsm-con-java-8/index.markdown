@@ -66,7 +66,7 @@ El [código fuente completo](https://github.com/picodotdev/blog-ejemplos/tree/ma
 {{< postslinks >}}
 * [Spring Statemachine][spring-statemachine]
 * [Stateless4j](https://github.com/oxo42/stateless4j)
-* [Recommended FSM (Finite State Machine) Library for Java](http://stackoverflow.com/questions/10875317/recommended-fsm-finite-state-machine-library-for-java)
+* [Recommended FSM (Finite State Machine) Library for Java](https://stackoverflow.com/questions/10875317/recommended-fsm-finite-state-machine-library-for-java)
 * [A programmable Finite State Machine ](http://www.java2s.com/Code/Java/Collections-Data-Structure/AprogrammableFiniteStateMachineimplementation.htm)
 {{% /reference %}}
 

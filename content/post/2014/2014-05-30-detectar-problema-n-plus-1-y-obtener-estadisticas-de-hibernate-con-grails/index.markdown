@@ -20,7 +20,7 @@ Una base de datos relacional guarda los datos de forma diferente al modelo orien
 
 Sin embargo, el ORM envía sentencias SQL para recuperar los datos de la base de datos relacional según vamos navegando con los métodos de acceso a otros objetos y sus relaciones. Depende de como el ORM haga las consultas para recuperar los datos de la base de datos relacional puede generar muchas SQL, producir un bajo rendimiento en la aplicación y una carga de trabajo considerable para la base de datos.
 
-En los ORM es conocido el [problema N+1](http://stackoverflow.com/questions/97197/what-is-the-n1-selects-issue). Consiste en lo siguiente, supongamos que tenemos dos tablas relacionadas autores y libros, y que la relación entre estas dos tablas es de 1 a N, de modo que un autor puede tener varios libros y un libro ha sido escrito por un único autor. Para recuperar todos los autores necesitaríamos una consulta y si no hacemos una join con la tabla de libros para recuperar los libros de cada autor tendríamos que hacer otra consulta  con lo que tendríamos el problema N+1 al hacer un bucle sobre los autores (1 consulta para los autores y N para los libros de cada autor).
+En los ORM es conocido el [problema N+1](https://stackoverflow.com/questions/97197/what-is-the-n1-selects-issue). Consiste en lo siguiente, supongamos que tenemos dos tablas relacionadas autores y libros, y que la relación entre estas dos tablas es de 1 a N, de modo que un autor puede tener varios libros y un libro ha sido escrito por un único autor. Para recuperar todos los autores necesitaríamos una consulta y si no hacemos una join con la tabla de libros para recuperar los libros de cada autor tendríamos que hacer otra consulta  con lo que tendríamos el problema N+1 al hacer un bucle sobre los autores (1 consulta para los autores y N para los libros de cada autor).
 
 El problema está en que el ORM lanza las consultas de forma automática según necesita los datos de modo que si para un autor no tiene los libros lanza una SQL para recuperarlos, como programadores llamar a un método para acceder a los libros es muy cómodo y transparente para nosotros (trabajamos solo con objetos) pero hemos de ser conscientes de las consultas que lanza el ORM porque podemos producir una situación de N+1.
 
@@ -63,8 +63,8 @@ Obtener información de lo que sucede en la aplicación es importante y el _fram
 {{< links >}}
 {{< postslinks >}}
 * [Página de excepción de Grails][blogbitix-25]
-* http://stackoverflow.com/questions/11621495/how-can-i-obtain-grails-hibernate-l2-cache-statistics<br>
-* http://stackoverflow.com/questions/2568507/how-to-log-sql-statements-in-grails<br>
+* https://stackoverflow.com/questions/11621495/how-can-i-obtain-grails-hibernate-l2-cache-statistics<br>
+* https://stackoverflow.com/questions/2568507/how-to-log-sql-statements-in-grails<br>
 * https://hibernate.atlassian.net/browse/HHH-3659
 {{% /reference %}}
 

@@ -51,6 +51,6 @@ En el tercer caso se se hayan coincidencias ya que el cuantificador es posesivo.
 * [Extraer elementos de una cadena con una expresión regular][blogbitix-140]
 * [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]
 * [Regular Expression Quantifiers](https://docs.oracle.com/javase/tutorial/essential/regex/quant.html)
-* [Greedy vs. Reluctant vs. Possessive Quantifiers](http://stackoverflow.com/questions/5319840/greedy-vs-reluctant-vs-possessive-quantifiers)
+* [Greedy vs. Reluctant vs. Possessive Quantifiers](https://stackoverflow.com/questions/5319840/greedy-vs-reluctant-vs-possessive-quantifiers)
 * [Regex Quantifier Tutorial: Greedy, Lazy, Possessive](http://www.rexegg.com/regex-quantifiers.html)
 {{% /reference %}}

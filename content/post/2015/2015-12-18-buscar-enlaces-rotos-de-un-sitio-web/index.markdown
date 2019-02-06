@@ -54,7 +54,7 @@ Al mismo tiempo [validar el HTML](https://validator.w3.org/) y [validar los esti
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [How to find broken links on a website](http://stackoverflow.com/questions/65515/how-to-find-broken-links-on-a-website)
+* [How to find broken links on a website](https://stackoverflow.com/questions/65515/how-to-find-broken-links-on-a-website)
 * [Check broken links using wget as a spider](http://www.commandlinefu.com/commands/view/8234/check-broken-links-using-wget-as-a-spider)
 {{% /reference %}}
 

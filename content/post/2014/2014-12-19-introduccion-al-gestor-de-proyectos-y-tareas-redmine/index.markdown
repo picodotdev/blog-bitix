@@ -58,7 +58,7 @@ En el siguiente artículo comentaré como instalar el [plugin agile de Redmine](
 * [Introducción e inicio a Drupal][blogbitix-60]
 * [5 plugins gratuitos para instalar a Redmine](http://www.luisblasco.com/5-plugins-gratuitos-instalar-en-redmine/)
 * [Aplicar y guardar filtros](http://www.redmine.org/projects/redmine/wiki/RedmineIssueList#Applying-and-saving-filters)
-* [Como modificar un filtro](http://stackoverflow.com/questions/9027479/how-do-you-modify-a-filter-in-redmine)
+* [Como modificar un filtro](https://stackoverflow.com/questions/9027479/how-do-you-modify-a-filter-in-redmine)
 * [Blog con varios artículos interesantes sobre Redmine](http://www.luisblasco.com/blog/)
 {{% /reference %}}
 

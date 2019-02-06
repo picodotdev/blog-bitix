@@ -54,7 +54,7 @@ Los pasos que se siguen en este modelo varían ligeramente del modelo push pero 
 <li>La vista genera el contenido y se envía al cliente</li>
 </ol>
 
-El modelo push es empleado en muchos de los _frameworks_ web más usados, algunos ejemplos son [Symfony](http://symfony.com/), [Django](https://www.djangoproject.com/), [Grails](http://grails.org/) o [ASP.NET MVC](http://www.asp.net/mvc). En la categoría de _frameworks_ que usan un modelo pull está [Apache Tapestry](http://tapestry.apache.org/).
+El modelo push es empleado en muchos de los _frameworks_ web más usados, algunos ejemplos son [Symfony](http://symfony.com/), [Django](https://www.djangoproject.com/), [Grails][grails] o [ASP.NET MVC](http://www.asp.net/mvc). En la categoría de _frameworks_ que usan un modelo pull está [Apache Tapestry](http://tapestry.apache.org/).
 
 Al modelo push le encuentro algunos problemas. Un problema es que el controlador debe conocer que datos necesita la vista y si la vista tiene cierta lógica esta la tendremos duplicada tanto en en controlador como en la vista. Supongamos que en una aplicación tenemos un usuario y dirección con una relación de 1 a 1 entre ambos y que debemos mostrar en una página el usuario y su dirección solo si solo si es un usuario VIP. En el controlador tendremos que recuperar el usuario, comprobar si es VIP y si lo es recuperar su dirección. El problema está que en la vista deberemos hacer también una comprobación si el cliente es VIP o al menos si a la vista se le ha proporcionado una dirección, como resultado la comprobación la tendremos duplicada tanto en el controlador como en la vista, como sabemos la duplicación de código y lógica habitualmente no es buena idea ya que a la larga dificulta el mantenimiento de la aplicación.
 

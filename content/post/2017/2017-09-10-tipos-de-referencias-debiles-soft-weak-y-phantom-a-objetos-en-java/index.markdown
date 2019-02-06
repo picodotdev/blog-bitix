@@ -59,7 +59,7 @@ Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Jav
 * [Understanding Weak References](https://community.oracle.com/blogs/enicholas/2006/05/04/understanding-weak-references)
 * [Finalization and Phantom References](https://dzone.com/articles/finalization-and-phantom)
 * [Java Reference Objects](http://www.kdgregory.com/index.php?page=java.refobj)
-* [WeakReference string didn't garbage collected? How?](http://stackoverflow.com/questions/14494875/weakreference-string-didnt-garbage-collected-how)
+* [WeakReference string didn't garbage collected? How?](https://stackoverflow.com/questions/14494875/weakreference-string-didnt-garbage-collected-how)
 * [Understanding Phantom reference vs weak reference with respect to Reference queue](https://stackoverflow.com/questions/26211657/understanding-phantom-reference-vs-weak-reference-with-respect-to-reference-queu)
 {{% /reference %}}
 

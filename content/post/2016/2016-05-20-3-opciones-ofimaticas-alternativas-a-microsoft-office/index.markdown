@@ -33,7 +33,7 @@ En este artículo me centraré más en las alternativas a Office que también so
 
 ### Microsoft Office
 
-Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio y las versiones web para estos y otros sistemas. [Office 365](https://products.office.com/es-es/home) tiene un coste alrededor de 8,80€ por usuario y mes según el plan que incluye más o menos aplicaciones.
+Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio y las versiones web para estos y otros sistemas. [Office 365](https://products.office.com/es-es/) tiene un coste alrededor de 8,80€ por usuario y mes según el plan que incluye más o menos aplicaciones.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2016" pid="143"

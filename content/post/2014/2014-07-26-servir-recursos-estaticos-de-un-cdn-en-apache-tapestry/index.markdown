@@ -61,7 +61,7 @@ Así de simple podemos cambiar el comportamiento de Tapestry y en este caso empl
 * [CDNAssetPathConverterImpl.java](https://code.google.com/p/corner/source/browse/corner3/trunk/src/main/java/corner/asset/services/impl/CDNAssetPathConverterImpl.java)
 * [Amazon CloudFront](http://aws.amazon.com/es/cloudfront/dynamic-content/)
 
-* [Serve images outside web application](http://stackoverflow.com/questions/16914673/serve-images-outside-web-application)
+* [Serve images outside web application](https://stackoverflow.com/questions/16914673/serve-images-outside-web-application)
 * [TAP5-2201](https://issues.apache.org/jira/browse/TAP5-2201)
 * [T5: some automagical way to export versioned assets to CDN](http://apache-tapestry-mailing-list-archives.1045711.n5.nabble.com/T5-some-automagical-way-to-export-versioned-assets-to-CDN-td2399058.html)
 * [General CDN problem that came up with Tree component](http://apache-tapestry-mailing-list-archives.1045711.n5.nabble.com/General-CDN-problem-that-came-up-with-Tree-component-td5671331.html)
