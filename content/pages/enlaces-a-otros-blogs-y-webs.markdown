@@ -57,7 +57,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Planet GNOME](https://planet.gnome.org/)
 * [Ubuntu Planet](http://planet.ubuntu.com/)
 * [Planeta Linux](http://planetalinux.org/es/): agregador de varios blogs con una temática sobre Linux o el software libre.
-* [ESLE](http://www.esle.eu/blog/)
+* [ESLE](http://www.esle.eu/)
 * [Software Libre Deusto](http://softwarelibre.deusto.es/)
 * [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
 * [DesdeLinux](https://blog.desdelinux.net/)
@@ -67,7 +67,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [LiGNUx](https://lignux.com/)
 * [Linuxito](https://www.linuxito.com/)
 * [Linux Adictos](https://www.linuxadictos.com/)
-* [La sombra del helicóptero](https://lasombradelhelicoptero.com/)
+* [La sombra del helicóptero](https://lasombradelhelicoptero.wordpress.com/)
 * [Victorhck in the free world](https://victorhckinthefreeworld.com/)
 
 ## Desarrollo y programación

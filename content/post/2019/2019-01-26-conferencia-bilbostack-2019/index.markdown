@@ -125,7 +125,7 @@ Cómo ocasiones anteriores hago un compendio de las ideas con las que me quedé 
 
 Desde los inicios la web está formada por dos elementos el protocolo HTTP y los documentos HTML con el contenido. Con el paso del tiempo las páginas añadieron CSS y comportamiento con el lenguaje JavaScript. En gran medida las bases iniciales no han cambiado y una página de hace 20 años se verán igualmente en un navegador actual, al contrario que las aplicaciones nativas que pueden dejar de funcionar con actualizaciones de dispositivos móviles en un lustro.
 
-Los [Web Components]((https://developer.mozilla.org/en-US/docs/Web/Web_Components)) son una especificación que están implementando la navegadores y es la alternativa estándar que cubre algunos aspectos de las populares librerías JavaScript como _React_ y _Vue_. Estas aportan estructura al JavaScript y permiten crear componentes que por defecto loa navegadores no ofrecen como un calendario o menús.
+Los [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components) son una especificación que están implementando la navegadores y es la alternativa estándar que cubre algunos aspectos de las populares librerías JavaScript como _React_ y _Vue_. Estas aportan estructura al JavaScript y permiten crear componentes que por defecto loa navegadores no ofrecen como un calendario o menús.
 
 _Web Components_ permite crear etiquetas propias y ser usadas en los documentos HTML como si de cualquier otra etiqueta estándar se tratase. Los web componentes se componen de un nombre, atributos y los eventos que lanza. Con la API de los _Web componentes_ se proporciona el  HTML que genera un componente, el comportamiento con JavaScript y las clases CSS que le aplican.
 

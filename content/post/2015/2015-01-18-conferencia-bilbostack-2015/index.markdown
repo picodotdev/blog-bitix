@@ -91,7 +91,7 @@ Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minut
     image1="track2.jpg" thumb1="track2-thumb.jpg" title1="Sala track 2" >}}
 </div>
 
-Como cada año no puede faltar alguna presentación del ubicuo JavaScript y en [las presentaciones de años anteriores](https://www.youtube.com/user/elComiteOrg/playlists) ha habido de PHP, Python, Groovy y .NET pero aún no ha habido ninguna de Java (a pesar de que será uno de los más usados por los asistentes). Después de revisar la agenda de este año he asistido únicamente y a todas a las presentaciones del track 1. Del track 2 me llamaban la atención la de ReactJS, pero es una herramienta que ya conozco y que me parece de lo mejor para su propósito aún así intuía que iba a conocer poco nuevo después de escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20] y usarlo en el ejemplo simple pero ilustrativo mostrado. También me llamaba la atención Wordpress al límite y Arquitectura frontend de CartoDB. A continuación un resumen breve de cada una de las presentaciones a las que he asistido.
+Como cada año no puede faltar alguna presentación del ubicuo JavaScript y en las presentaciones de años anteriores ha habido de PHP, Python, Groovy y .NET pero aún no ha habido ninguna de Java (a pesar de que será uno de los más usados por los asistentes). Después de revisar la agenda de este año he asistido únicamente y a todas a las presentaciones del track 1. Del track 2 me llamaban la atención la de ReactJS, pero es una herramienta que ya conozco y que me parece de lo mejor para su propósito aún así intuía que iba a conocer poco nuevo después de escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20] y usarlo en el ejemplo simple pero ilustrativo mostrado. También me llamaba la atención Wordpress al límite y Arquitectura frontend de CartoDB. A continuación un resumen breve de cada una de las presentaciones a las que he asistido.
 
 <hr>
 
@@ -167,13 +167,13 @@ En [Biko](http://www.biko2.com/) siguen tres ideas para mantener estos fuegos co
 Por desgracia este año no ha sido posible grabar en vídeo las presentaciones pero pasados unos días seguro que se publican las diapositivas, sin embargo, con únicamente las diapositivas pierde mucho del contenido respecto a la presentación dada en vivo. En algunas presentaciones al menos se ha recogido el audio:
 
 * Desarrollo de aplicaciones web con .NET en MAC: open source, multiplataforma e incluso gratuito _por Ibon Landa_ [Diapositivas](http://www.slideshare.net/ibonilm/open-source-and-cross-platform-net)
-* Errores comunes en la visualización de datos y algunas soluciones _por Pablo Garaizar_ [Diapositivas](http://www.slideshare.net/txipi/bilbostack2015-garaizar) [Audio](http://www.goear.com/listen/b120854/errores-comunes-visualizacion-datos-algunas-soluciones-pgaraizar)
+* Errores comunes en la visualización de datos y algunas soluciones _por Pablo Garaizar_ [Diapositivas](http://www.slideshare.net/txipi/bilbostack2015-garaizar)
 * Creando directivas para AngularJs _por Hugo Biarge_ [Diapositivas y demos](https://onedrive.live.com/?cid=2BFC01CE6CF4BF53&id=2BFC01CE6CF4BF53!14323)
 * ReactJS: un enfoque distinto a la UI en JavaScript _por Eduard Tomás_ [Diapositivas](http://www.slideshare.net/eduardtomas/introduccin-a-reactjs)
-* Wordpress al límite _por Asier Marqués_ [Audio](http://www.goear.com/listen/98b0c09/wordpress-al-limite-asier-marques)
-* Arquitectura de CartoDB _por Javi Santana_ [Audio](http://www.goear.com/listen/f1cd19b/arquitectura-cartodb-javi-santana)
+* Wordpress al límite _por Asier Marqués_
+* Arquitectura de CartoDB _por Javi Santana_
 
-También en una [lista de reproducción](https://www.youtube.com/user/elComiteOrg/playlists) de YouTube de [elComite][elcomite] están disponibles casi todas las presentaciones de las ediciones 2012, 2013 y 2014 con las que saciar tu curiosidad. Para el año que viene si tienes posibilidad de ofrecerte para grabar las presentaciones con una cámara para poder publicarlas más tarde casi seguro que los organizadores estarían agradecidos y dispuestos a darte facilidades para ello.
+Había en una lista de reproducción de YouTube de [elComite][elcomite] están disponibles casi todas las presentaciones de las ediciones 2012, 2013 y 2014 con las que saciar tu curiosidad. Para el año que viene si tienes posibilidad de ofrecerte para grabar las presentaciones con una cámara para poder publicarlas más tarde casi seguro que los organizadores estarían agradecidos y dispuestos a darte facilidades para ello.
 
 Nuevamente esta edición de la BilboStack ha sido excelente gracias a sus organizadores, ponentes, Universidad de Deusto y asistentes, esperemos que en el 2016 continuemos disfrutando de esta gran conferencia.
 

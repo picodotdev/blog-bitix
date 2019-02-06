@@ -247,7 +247,7 @@ Otros ejemplos de productos son:
 
 <hr>
 
-Sigues pudiendo saciar tu curiosidad con la [lista de reproducción](https://www.youtube.com/user/elComiteOrg/playlists) de YouTube de [elComite][elcomite] donde están disponibles casi todas las presentaciones de las ediciones 2012, 2013 y 2014, del 2015 no se hicieron aunque si algunos audios y de este 2016 si que he visto en el _track_ 2 al menos una cámara creo que grabando, de ser así supongo que las encontrarás en el canal del YouTube anterior.
+Sigues pudiendo saciar tu curiosidad con algunos vídeos de YouTube de [elComite][elcomite] donde están disponibles casi todas las presentaciones de las ediciones 2012, 2013 y 2014, del 2015 no se hicieron aunque si algunos audios y de este 2016 si que he visto en el _track_ 2 al menos una cámara creo que grabando, de ser así supongo que las encontrarás en el canal del YouTube anterior.
 
 De nuevo hay que dar las gracias a sus organizadores, ponentes, Universidad de Deusto, asistentes y a la guerrera minoría de asistentas. Hasta el 2017, no te la pierdas.
 
