@@ -19,7 +19,7 @@ footer: true
 
 En esta página quiero poner la selección de páginas web y blogs personales o compartidos por varios usuarios que tengo añadidas en mi lector de feeds y que considero que publican artículos interesantes y lo siguen haciendo actualmente con cierta regularidad acerca de la programación, el desarrollo de aplicaciones, la tecnología o la informática. Estos enlaces son parte de los que he ido recopilando a lo largo de mucho tiempo y que creo que al que tenga interés en estos temas a su vez les resulten interesantes.
 
-[El blog de pico.dev](https://elblogdepicodev.blogspot.com.es) es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](http://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
+[El blog de pico.dev](https://elblogdepicodev.blogspot.com.es) es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](https://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
 
 ## Arch Linux
 
@@ -41,7 +41,7 @@ problemas que tengas en tu sistema aunque procura buscar antes la solución no s
 * [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
 * [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
 * [Parcela Digital](https://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
-* [Genbeta](http://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
+* [Genbeta](https://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
 * [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
 * [ADSLZone](https://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
@@ -62,8 +62,8 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
 * [DesdeLinux](https://blog.desdelinux.net/)
 * [/etc/cron.d](http://www.etccrond.es/)
-* [El blog de abr4xas](http://blog.abr4xas.org/)
-* [SYSADMIT](http://www.sysadmit.com/): contiene artículos de Linux, Microsoft, VMware y más temas relacionados con la administración de sistemas informáticos.
+* [El blog de abr4xas](https://blog.abr4xas.org/)
+* [SYSADMIT](https://www.sysadmit.com/): contiene artículos de Linux, Microsoft, VMware y más temas relacionados con la administración de sistemas informáticos.
 * [LiGNUx](https://lignux.com/)
 * [Linuxito](https://www.linuxito.com/)
 * [Linux Adictos](https://www.linuxadictos.com/)
@@ -88,10 +88,10 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
 * [Arquitectura Java](http://www.arquitecturajava.com/blog/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
 * [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
-* [Apuntes de Java](http://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
+* [Apuntes de Java](https://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
 * [Diario de Programación](http://blog.chuidiang.com): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.
 * [fernetjs](http://fernetjs.com/)
-* [El baúl del programador](https://www.elbauldelprogramador.com/)
+* [El baúl del programador](https://elbauldelprogramador.com/)
 * [Android Studio FAQs](https://androidstudiofaqs.com/)
 
 ## Otros
@@ -101,8 +101,8 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Marketing de Guerrilla en la Web 2.0](http://www.marketingguerrilla.es/): si tienes un blog y quieres sacarle el máximo partido esta web te interesa, tiene un montón de consejos útiles para tu blog.
 * [Laboro](http://laboro-spain.blogspot.com/): este es posiblemente el menos relacionado sobre todos los anteriores pero si trabajas en España es muy útil para conocer algunos de tus derechos laborales.
 * [Bonilista](http://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
-* [Justifica tu respuesta](http://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
-* [Ciencia de sofá](http://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
+* [Justifica tu respuesta](https://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
+* [Ciencia de sofá](https://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
 * [La huertina de Toni](http://www.lahuertinadetoni.es/): ¿te gustan las plantas? ¿tienes huerto? ¿quieres plantar un árbol? Este blog trata sobre la jardinería y agricultura con artículos y vídeos muy ilustrativos.
 * [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.

@@ -62,7 +62,7 @@ Hay un [_plugin_ de Gradle para generar _uberjars_](http://imperceptiblethoughts
 
 Que la aplicación sea un único _jar_ tiene la ventaja que el distribuible es más sencillo y facilita desplegarlo en un entorno de producción, en el caso de usar [Docker][docker] también es más adecuado un único archivo.
 
-Entre la documentación hay unas muy buenas [guías prácticas sobre Java](http://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de apliaciones en archivos _jar_](http://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
+Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de apliaciones en archivos _jar_](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble, java -jar build/libs/JavaUberjar-uberjar.jar" >}}
 
@@ -72,7 +72,7 @@ Entre la documentación hay unas muy buenas [guías prácticas sobre Java](http:
 * [Creating a Fat Jar in Gradle](http://www.baeldung.com/gradle-fat-jar)
 * [Shadow Plugin User Guide & Examples](http://imperceptiblethoughts.com/shadow/)
 * [Gradle – Create a Jar file with dependencies](http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/)
-* [Packing your Java application as one (or fat) JAR](http://www.javacodegeeks.com/2012/11/packing-your-java-application-as-one-or-fat-jar.html)
+* [Packing your Java application as one (or fat) JAR](https://www.javacodegeeks.com/2012/11/packing-your-java-application-as-one-or-fat-jar.html)
 {{% /reference %}}
 
 {{% /post %}}

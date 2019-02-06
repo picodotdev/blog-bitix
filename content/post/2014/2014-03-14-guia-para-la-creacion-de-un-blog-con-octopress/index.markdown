@@ -48,7 +48,7 @@ Podemos previsualizar el estado actual del blog en el navegador introduciendo en
 
 {{< code file="script-7.sh" language="Bash" options="" >}}
 
-Haciendo el primer deploy del blog (deberemos [configurar SSH](https://help.github.com/articles/generating-ssh-keys)) dispondremos del blog en la siguiente dirección [http://picodotdev.github.io/blog-bitix/](http://picodotdev.github.io/blog-bitix/). Puede que el blog tarde unos minutos en estar disponible y deberemos hacerlo cada vez queramos que los cambios se apliquen al blog.
+Haciendo el primer deploy del blog (deberemos [configurar SSH](https://help.github.com/articles/generating-ssh-keys)) dispondremos del blog en la siguiente dirección [https://picodotdev.github.io/blog-bitix/](https://picodotdev.github.io/blog-bitix/). Puede que el blog tarde unos minutos en estar disponible y deberemos hacerlo cada vez queramos que los cambios se apliquen al blog.
 
 {{< code file="script-8.sh" language="Bash" options="" >}}
 

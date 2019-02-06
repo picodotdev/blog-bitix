@@ -53,7 +53,7 @@ Una vez obtenido el certificado debemos instalarlo en el servidor, en el artícu
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Qué es un certificado SSL y por qué debería importarte](http://www.genbeta.com/seguridad/que-es-un-certificado-ssl-y-por-que-deberia-importarte)
+* [Qué es un certificado SSL y por qué debería importarte](https://www.genbeta.com/seguridad/que-es-un-certificado-ssl-y-por-que-deberia-importarte)
 {{% /reference %}}
 
 {{% /post %}}

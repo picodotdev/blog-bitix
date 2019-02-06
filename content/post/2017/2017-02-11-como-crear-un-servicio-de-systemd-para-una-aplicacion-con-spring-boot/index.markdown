@@ -53,6 +53,6 @@ En los enlaces de referencia hay documentación más detallada tanto para gestio
 * [systemd unit](http://www.freedesktop.org/software/systemd/man/systemd.unit.html)
 * [systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)
 * [Docker host integration](https://docs.docker.com/engine/admin/host_integration/)
-* [Installing Spring Boot applications](http://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#deployment-install)
+* [Installing Spring Boot applications](https://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#deployment-install)
 * [Systemd (Arch Linux Wiki)](https://wiki.archlinux.org/index.php/Systemd)
 {{% /reference %}}

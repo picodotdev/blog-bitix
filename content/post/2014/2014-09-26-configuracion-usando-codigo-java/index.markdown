@@ -28,7 +28,7 @@ Algunas ventajas de definir la configuración de la aplicación de esta manera s
 
 Una de las razones de la existencia de los archivos de configuración es tener esa configuración de forma externalizada a la aplicación de tal forma que podamos cambiar la configuración sin tener que modificar la aplicación ni tener que recompilarla. Con la compilación y carga dinámica de la clase Java de la configuración podemos tener estas mismas propiedades de los archivos de configuración. Si a esto le sumamos la recarga dinámica evitamos tener caídas de servicio en la aplicación por modificaciones en el archivo de configuración.
 
-Todo esto es algo que se comenta en el <a href="http://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">libro The Pragmatic Programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> con las siguientes lineas:
+Todo esto es algo que se comenta en el <a href="https://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">libro The Pragmatic Programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> con las siguientes lineas:
 
 > Many programs will scan such things only at startup, which is unfortunate. If you need to change the configuration, this forces you to
 > restart the application. A more flexible approach is to write programs that can reload their

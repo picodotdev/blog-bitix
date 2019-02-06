@@ -93,7 +93,7 @@ Se han añadido varios métodos para crear copias no modificables con [List.copy
 
 Se añade el método [Optional.orElseThrow()](https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#orElseThrow()).
 
-Algunas [otras características ya obsoletas se han eliminado](http://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Removed) y [otras se han marcado como _deprecated_](http://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Deprecated).
+Algunas [otras características ya obsoletas se han eliminado](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Removed) y [otras se han marcado como _deprecated_](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Deprecated).
 
 ### El posible futuro JDK 11+
 
@@ -112,13 +112,13 @@ En la sección final de referencia incluyo varios artículos y vídeos de los qu
 * [Java 10 Local Variable Type Inference](https://developer.oracle.com/java/jdk-10-local-variable-type-inference)
 * [Java 10 Support for Oxygen](https://marketplace.eclipse.org/content/java-10-support-oxygen)
 * [JDK 10 General-Availability Release](http://jdk.java.net/10/)
-* [JDK 10 Release Notes](http://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html)
+* [JDK 10 Release Notes](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html)
 * [Oracle Java SE 10 Release Arrives](https://www.oracle.com/corporate/pressrelease/Java-10-032018.html)
 * [JDK 10: What’s new in Java 10](https://www.infoworld.com/article/3230507/java/java-jdk-10-what-new-features-to-expect-in-the-next-java.html)
 * [What Java 10 And Java's New 6-Month Release Cadence Mean For Developers](https://www.forbes.com/sites/oracle/2018/03/20/what-java-10-and-javas-new-6-month-release-cadence-mean-for-developers/)
 * [Project Loom: Fibers and Continuations for the Java Virtual Machine](http://cr.openjdk.java.net/~rpressler/loom/Loom-Proposal.html)
 * [The Incredible Shrinking Java Platform](https://www.azul.com/the-incredible-shrinking-java-platform/)
-* [Oracle Java SE Support Roadmap](http://www.oracle.com/technetwork/java/eol-135779.html)
+* [Oracle Java SE Support Roadmap](https://www.oracle.com/technetwork/java/eol-135779.html)
 * [Java on Docker will no longer suck: improvements coming in Java 10](https://www.opsian.com/blog/java-on-docker/)
 {{% /reference %}}
 

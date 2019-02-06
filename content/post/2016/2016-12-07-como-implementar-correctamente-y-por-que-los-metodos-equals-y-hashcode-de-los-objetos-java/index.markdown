@@ -22,7 +22,7 @@ En Java los métodos [equals](https://docs.oracle.com/javase/8/docs/api/java/lan
 
 El método _equals_ es usado en las colecciones de tipo _List_, _Set_, y también _Map_ para determinar si un objeto ya está incluida en la colección, el método _hashCode_ es usado en los _Map_ para encontrar el objeto asociado a la clave. Dado que las colecciones son ampliamente usadas en cualquier programa la correcta implementación implementación de los métodos _equals_ y _hashCode_ es fundamental ya que de lo contrario descubriremos errores poco agradables.
 
-Una de las cosas que tenemos que tener cuenta es que siempre que sobreescribamos el método _equals_ también debemos sobreescribir el método _hashCode_. Según el [contrato definido en la clase Object](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html) deberemos saber que:
+Una de las cosas que tenemos que tener cuenta es que siempre que sobreescribamos el método _equals_ también debemos sobreescribir el método _hashCode_. Según el [contrato definido en la clase Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html) deberemos saber que:
 
 * Durante la ejecución del programa el método _hashCode_ debe retornar el mismo valor siempre que no se modifique la información usada en el método _equals_.
 * Si dos objetos son iguales según sus métodos _equals_ entonces el valor devuelto por _hashCode_ en cada uno de los dos objetos debe devolver el mismo valor.
@@ -30,7 +30,7 @@ Una de las cosas que tenemos que tener cuenta es que siempre que sobreescribamos
 
 ### Cómo implementar el método _equals_
 
-Según la [especificación del método equals](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) definido en la clase _Object_ debe tener las siguientes propiedades:
+Según la [especificación del método equals](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) definido en la clase _Object_ debe tener las siguientes propiedades:
 
 * Es reflexiva: para cualquier referencia no nula de x, <code>x.equals(x)</code> debe retornar _true_.
 * Es simétrica: para cualquier referencia no nula de x e y, <code>x.equals(y)</code> debe retornar _true_ si y solo si <code>y.equals(x)</code> retorna _true_.
@@ -44,13 +44,13 @@ Según estas reglas una implementación del método _equals_ tiene la siguiente 
 
 {{< code file="PhoneNumber-equals.java" language="Java" options="" >}}
 
-Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html) de la librería [commons-lang](https://commons.apache.org/proper/commons-lang/) la implementación es aparentemente similar pero en el caso de necesitar hacer comparaciones con datos de tipo _float_, _double_, _arrays_ u objetos hace la implementación un poco más sencilla. En los _float_ y _double_ para hacer la comparación deberíamos usar los métodos [Float.compare](http://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#compare-float-float-) y [Double.commpare](http://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#compare-double-double-) y en los objetos deberemos tener en cuenta si la referencia es posible que se a nula para evitar la excepción [NullPinterException](http://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html) cosas que la clase _EqualsBuilder_ ya tiene en cuenta.
+Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html) de la librería [commons-lang](https://commons.apache.org/proper/commons-lang/) la implementación es aparentemente similar pero en el caso de necesitar hacer comparaciones con datos de tipo _float_, _double_, _arrays_ u objetos hace la implementación un poco más sencilla. En los _float_ y _double_ para hacer la comparación deberíamos usar los métodos [Float.compare](https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#compare-float-float-) y [Double.commpare](https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#compare-double-double-) y en los objetos deberemos tener en cuenta si la referencia es posible que se a nula para evitar la excepción [NullPinterException](https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html) cosas que la clase _EqualsBuilder_ ya tiene en cuenta.
 
 {{< code file="PhoneNumber-equals-commons-lang.java" language="Java" options="" >}}
 
 ### Como implementar el método _hashCode_
 
-La implementación del [método hashCode](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--) se debe realizar según los siguientes pasos:
+La implementación del [método hashCode](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--) se debe realizar según los siguientes pasos:
 
 * Almacenar un valor constante distinto de 0 en una variable int, por ejemplo 17.
 * Por cada campo usado en el método _equals_ se debe obtener un _hash code_ (int) realizando:
@@ -60,7 +60,7 @@ La implementación del [método hashCode](http://docs.oracle.com/javase/8/docs/a
   * Si el campo es un _float_ se debe calcular <code>Float.floatToIntBits(f)</code>.
   * Si el campo es un _double_ se debe calcular <code>Double.doubleToLongBits(f)</code> y calcular el _hash_ del _long_ obtenido en el paso para los tipos _long_.
   * Si el campo es una referencia a un objeto y el método _equals_ de esta clase compara recursivamente invocando el método _equals_ del campo, invocar su método _hashCode_. si el valor de campo es nulo se debe retornar una constante que tradicionalmente es 0.
-  * Si el campo es un _array_ se debe tratar individualmente cada elemento aplicando estas reglas a cada elemento. Si cada elemento del array es significativo se puede usar [Arrays.hashCode](http://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#hashCode-java.lang.Object:A-).
+  * Si el campo es un _array_ se debe tratar individualmente cada elemento aplicando estas reglas a cada elemento. Si cada elemento del array es significativo se puede usar [Arrays.hashCode](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#hashCode-java.lang.Object:A-).
   * Combinar los _hash code_ obtenidos de la siguiente forma, <code>result = 31 * result + c</code>.
 
 {{< code file="PhoneNumber-hashcode.java" language="Java" options="" >}}

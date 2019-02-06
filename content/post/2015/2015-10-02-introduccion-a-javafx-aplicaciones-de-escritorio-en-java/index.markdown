@@ -23,7 +23,7 @@ El lenguaje de programación Java es ampliamente usado en el ámbito empresarial
 Algunas de las características notables de JavaFX son:
 
 * _Java APIs_: las APIs están escritas en código nativo Java compatibles con otros lenguajes soportados por la máquina virtual.
-* _FXML and Scene Builder_: <abbr title="FX Markup Language">FXML</abbr> es un lenguaje de marcado que describe las interfaces de usuario. Se pueden escribir directamente o usar la herramienta [JavaFX Scene Builder](http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html) para crearlos con una interfaz gráfica.
+* _FXML and Scene Builder_: <abbr title="FX Markup Language">FXML</abbr> es un lenguaje de marcado que describe las interfaces de usuario. Se pueden escribir directamente o usar la herramienta [JavaFX Scene Builder](https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html) para crearlos con una interfaz gráfica.
 * _WebView_: permite embeber páginas HTML en las aplicaciones JavaFX. Ofrece soporte para JavaScript.
 * _Built-in UI controls and CSS_: proporciona cantidad de controles para construir aplicaciones completas. El estilo de los controles puede ser modificado con CSS.
 * _Canvas API_: para dibujar directamente en la pantalla.
@@ -55,7 +55,7 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
 
 {{< code file="System.out" language="Plaintext" options="" >}}
 
-En las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) hay unos cuantos referentes a JavaFX bastante completos. Iniciando la aplicación contenida en _Ensemble.jar_ podemos ver numerosas funcionalidades (animación, efectos visuales, gráficas, controles, gráficos 2D, gráficos 3D, lenguaje, disposición, multimedia, ...), también con la aplicación _Modena.jar_ podemos ver como son visualmente por defecto los diferentes elementos gráficos de JavaFX.
+En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) hay unos cuantos referentes a JavaFX bastante completos. Iniciando la aplicación contenida en _Ensemble.jar_ podemos ver numerosas funcionalidades (animación, efectos visuales, gráficas, controles, gráficos 2D, gráficos 3D, lenguaje, disposición, multimedia, ...), también con la aplicación _Modena.jar_ podemos ver como son visualmente por defecto los diferentes elementos gráficos de JavaFX.
 
 {{< code file="examples.sh" language="Bash" options="" >}}
 
@@ -68,7 +68,7 @@ En las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/j
         caption="Aplicación Modena" >}}
 </div>
 
-El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro <a href="http://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.
+El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro <a href="https://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1118385349&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>

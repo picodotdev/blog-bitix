@@ -37,7 +37,7 @@ En un lenguaje de tipado estático las comprobaciones de tipos se realizan en ti
 ### Tipado dinámico
 Por el contrario el tipado dinámico comprueba los tipos en el momento de ejecución del programa (PHP, Python, Groovy, JavaScript). A esos lenguajes se les conoce como lenguajes dinámicos. [Wikipedia](https://es.wikipedia.org/wiki/Sistema_de_tipos#Tipado_est.C3.A1tico).
 
-[The Inconvenient Truth About Dynamic vs. Static Typing](http://blog.jooq.org/2014/12/11/the-inconvenient-truth-about-dynamic-vs-static-typing/)
+[The Inconvenient Truth About Dynamic vs. Static Typing](https://blog.jooq.org/2014/12/11/the-inconvenient-truth-about-dynamic-vs-static-typing/)
 
 ### Fuertemente y débilmente tipado
 En un lenguaje fuertemente tipado un dato con un tipo no puede ser usado como si fuese de otro. Aunque algunos lenguajes como Java se dicen que son fuertemente tipado tienen algunas laxitudes. Por ejemplo, en Java un _float_ puede usarse como si fuese un _double_ y en otros lenguajes con menor grado de tipificación como PHP un _string_ puede ser usado como un dato numérico. [Wikipedia](https://es.wikipedia.org/wiki/Tipado_fuerte)

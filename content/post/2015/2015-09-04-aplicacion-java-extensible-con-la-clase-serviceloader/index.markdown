@@ -54,7 +54,7 @@ El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejem
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [ServiceLoader](http://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
+* [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
 {{% /reference %}}
 
 {{% /post %}}

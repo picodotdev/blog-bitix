@@ -50,7 +50,7 @@ Otra opción usando Java u otros varios lenguajes para los que se ofrece soporte
 * [Obtener datos de múltiples tablas con jOOQ][blogbitix-109]
 * [Configuración de una aplicación en diferentes entornos con Spring Cloud Config][blogbitix-112]
 * [Información y métricas de la aplicación con Spring Boot Actuator][blogbitix-113]
-* [Steps toward the glory of REST](http://martinfowler.com/articles/richardsonMaturityModel.html)
+* [Steps toward the glory of REST](https://martinfowler.com/articles/richardsonMaturityModel.html)
 * [Hypertext Application Language](http://stateless.co/hal_specification.html)
 {{% /reference %}}
 

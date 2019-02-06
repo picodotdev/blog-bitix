@@ -128,7 +128,7 @@ Lo mejor de todo es que esta optimización será transparente para los programad
 
 Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para una balance adecuado entre alto rendimiento y baja latencia. En los siguientes artículos se explica de forma más detallada. Al igual que los _string_ compactos para la mayoría de los programadores será un cambio transparente que no tenga repercusión en la forma de programar las aplicaciones.
 
-* [Getting Started with the G1 Garbage Collector](http://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
+* [Getting Started with the G1 Garbage Collector](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
 * [Case for Defaulting to G1 Garbage Collector in Java 9](https://www.infoq.com/articles/Make-G1-Default-Garbage-Collector-in-Java-9)
 
 <div class="media media-video" style="text-align: center;">

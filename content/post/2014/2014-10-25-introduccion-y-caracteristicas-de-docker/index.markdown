@@ -22,7 +22,7 @@ summary: "Los contenedores no son una tecnología nueva pero Docker ha reunido l
 
 Al contrario de la virtualización Docker no emula o virtualiza una máquina y su sistema operativo con lo que los procesos son mucho más ligeros y hace que el hardware pueda ser aprovechado más al poder aumentar la densidad de los servicios en una misma máquina. Los contenedores y servicios incluidos en ellos inician muy rápidamente, en pocos segundos. Además, no es necesario el sistema de archivos completo del sistema operativo invitado con lo que docker usa una fracción de espacio de almacenamiento necesario en la virtualización.
 
-La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como [OpenVZ][openvz] también en Linux, [FreeBSD Jails](http://www.freebsd.org/doc/handbook/jails.html) o los [contenedores de Solaris](http://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html).
+La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como [OpenVZ][openvz] también en Linux, [FreeBSD Jails](http://www.freebsd.org/doc/handbook/jails.html) o los [contenedores de Solaris](https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html).
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2014" pid="49"

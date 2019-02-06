@@ -20,7 +20,7 @@ summary: "Con la aplicación JavaFX Scene Builder podemos construir la interfaz 
 
 Por lo poco que he visto JavaFX es una gran evolución sobre <abbr title="Abstract Window Toolkit">AWT</abbr> y Swing para desarrollar aplicaciones de escritorio en Java aportando varias mejoras. En el artículo [Introducción a JavaFX][blogbitix-100] comentaba que una de las cosas que me parecía más complicada usando tanto AWT y más tarde usando Swing era la construcción de los elementos visuales mediante código. El código para construir las ventanas, paneles, rejillas, botones, etiquetas, etc era extenso y difícil de comprender la composición leyéndolo. Con JavaFX se ha introducido una nueva herramienta visual llamada [JavaFX Scene Builder][javafx-scene-builder] que permite generar un archivo en formato FXML (declarativo en XML) que contiene la descripción de las ventanas o como llama JavaFX escenas. Este descriptor es similar a la forma de construir interfaces gráficas en la plataforma de Microsoft con los archivos [XAML](https://msdn.microsoft.com/en-us/library/cc295302.aspx).
 
-Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplicaciones gráficas es mucho más sencillo y más fácilmente mantenible. Proporciona un editor que sigue el principio lo que ves es lo que obtienes (<abbr title="What You See Is What You Get">_WYSIWYG_</abbr>) y que permite generar los archivos FXML que posteriormente se pueden utilizar en la aplicación Java de escritorio para crear la interfaz visual. Podemos [descargar la aplicación JavaFX Scene Builder](http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html) desde su página de descargas. En la siguiente imagen se puede ver la interfaz con el ejemplo _Hola Mundo_.
+Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplicaciones gráficas es mucho más sencillo y más fácilmente mantenible. Proporciona un editor que sigue el principio lo que ves es lo que obtienes (<abbr title="What You See Is What You Get">_WYSIWYG_</abbr>) y que permite generar los archivos FXML que posteriormente se pueden utilizar en la aplicación Java de escritorio para crear la interfaz visual. Podemos [descargar la aplicación JavaFX Scene Builder](https://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-1x-archive-2199384.html) desde su página de descargas. En la siguiente imagen se puede ver la interfaz con el ejemplo _Hola Mundo_.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="102"
@@ -64,7 +64,7 @@ Además de poder enlazar los componente visuales con el código para añadirles 
         caption="Propiedades de los controles JavaFX, en este caso de un botón" >}}
 </div>
 
-Entre las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) está la aplicación _Modena_ con la que podemos ver el aspecto visual de los componentes, en la aplicación _Ensemble_ hay más ejemplos junto con código de muchos controles.
+Entre las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) está la aplicación _Modena_ con la que podemos ver el aspecto visual de los componentes, en la aplicación _Ensemble_ hay más ejemplos junto con código de muchos controles.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="102"
@@ -75,7 +75,7 @@ Entre las [demostraciones y ejemplos de Java 8](http://www.oracle.com/technetwor
         caption="Aplicación Ensemble" >}}
 </div>
 
-En la propia página web de JavaFX, en el libro <a href="http://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> y otra documentación se puede encontrar explicado de forma más detallada JavaFX.
+En la propia página web de JavaFX, en el libro <a href="https://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> y otra documentación se puede encontrar explicado de forma más detallada JavaFX.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1118385349&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
@@ -87,10 +87,10 @@ En definitiva con la aplicación JavaFX Scene Builder y los archivos FXML constr
 {{< links >}}
 {{< postslinks >}}
 * [Introducción a JavaFX][blogbitix-100]
-* [FXML Get Started](http://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm)
-* [Introduction to FXML](http://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html)
+* [FXML Get Started](https://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm)
+* [Introduction to FXML](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html)
 * [Connecting SceneBuilder edited FXML to Java code](https://blogs.oracle.com/jmxetc/entry/connecting_scenebuilder_edited_fxml_to)
-* [Building a JavaFX Application Using Scene Builder](http://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/jfxsb-get_started.htm#JSBGS101)
+* [Building a JavaFX Application Using Scene Builder](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/jfxsb-get_started.htm#JSBGS101)
 {{% /reference %}}
 
 {{% /post %}}

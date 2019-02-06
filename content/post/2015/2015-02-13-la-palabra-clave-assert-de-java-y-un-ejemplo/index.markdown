@@ -36,7 +36,7 @@ Un pequeño ejemplo de los _asserts_ podría ser el siguiente en la que en el m�
 
 {{< code file="Main.java" language="Java" options="" >}}
 
-Un _assert_ cuya expresión se evalúa como falso produce una excepción del tipo [java.lang.AssertionError](http://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html) pero para ello se han de habilitar en tiempo de ejecución como el parámetro _-ea_ de la máquina virtual. En [eclipse][eclipse] podemos cambiarlo en la configuración de ejecución del programa en la pestaña _Arguments_ y _VM arguments_ tal como se ven en la siguiente captura de pantalla:
+Un _assert_ cuya expresión se evalúa como falso produce una excepción del tipo [java.lang.AssertionError](https://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html) pero para ello se han de habilitar en tiempo de ejecución como el parámetro _-ea_ de la máquina virtual. En [eclipse][eclipse] podemos cambiarlo en la configuración de ejecución del programa en la pestaña _Arguments_ y _VM arguments_ tal como se ven en la siguiente captura de pantalla:
 
 <div class="media" style="text-align: center;">
 	{{< figure year="2015" pid="67"
@@ -51,14 +51,14 @@ En la primera de las siguentes capturas de pantalla puede verse como el programa
     	image1="excepcion-assert.png" thumb2="excepcion-assert-thumb.png" title2="Ejecución con excepción" >}}
 </div>
 
-En el recomendable artículo [_Programming With Assertions_](http://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) se comenta de forma más detallada y amplia el funcionamiento y uso adecuado de la palabra clave _assert_ de Java.
+En el recomendable artículo [_Programming With Assertions_](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) se comenta de forma más detallada y amplia el funcionamiento y uso adecuado de la palabra clave _assert_ de Java.
 
 El funcionamiento de los _assert_ en [Groovy][groovy] es distinto. En groovy los _assert_ no pueden deshabilitarse, están siempre habilitados y por tanto no hace falta usar el parámetro _-ea_ de la máquina virtual que empleamos en Java, no es un _bug_ es una _feature_. Por el contrario, en Java los _asserts_ se consideran una herramienta en tiempo de desarrollo o depuración y por tanto podemos habilitarlos mientras desarrollamos y no habilitarlos en producción, una de las razones es que los _asserts_ pueden suponer una penalización de rendimiento si las comprobaciones son costosas en tiempo o carga de CPU cosa que no queremos en producción donde el código ya se considera correcto.
 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Programming With Assertions](http://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html)
+* [Programming With Assertions](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html)
 * [Correct use Java "assert" keyword](http://stackoverflow.com/questions/18907487/correct-use-java-assert-keyword)
 * [When to use an assertion and when to use an exception](http://stackoverflow.com/questions/1957645/when-to-use-an-assertion-and-when-to-use-an-exception)
 * [Is Groovy's assert a good idea for production code, unlike Java's assert?](http://stackoverflow.com/questions/8077757/is-groovys-assert-a-good-idea-for-production-code-unlike-javas-assert)

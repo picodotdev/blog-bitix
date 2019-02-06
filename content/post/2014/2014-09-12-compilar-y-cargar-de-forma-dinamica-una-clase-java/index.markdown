@@ -20,15 +20,15 @@ Desde la versión 1.6 del JDK disponemos de una API para acceder al compilador d
 
 Las clases que necesitaremos de esa API son:
 
-* [JavaCompiler](http://docs.oracle.com/javase/7/docs/api/javax/tools/JavaCompiler.html) que es la interfaz para acceder al compilador desde un programa Java.
-* [JavaFileManager](http://docs.oracle.com/javase/7/docs/api/javax/tools/JavaFileManager.html) que es una abstracción para gestionar los archivos fuente y las clases. Usaremos uno propio llamado ClassFileManager.
-* [SimpleJavaFileObject](http://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) clase que contiene el código fuente Java.
+* [JavaCompiler](https://docs.oracle.com/javase/7/docs/api/javax/tools/JavaCompiler.html) que es la interfaz para acceder al compilador desde un programa Java.
+* [JavaFileManager](https://docs.oracle.com/javase/7/docs/api/javax/tools/JavaFileManager.html) que es una abstracción para gestionar los archivos fuente y las clases. Usaremos uno propio llamado ClassFileManager.
+* [SimpleJavaFileObject](https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) clase que contiene el código fuente Java.
 
 Y también necesitaremos redefinir algunas:
 
-* La clase ClassFileManager que extiende [ForwardingJavaFileManager](http://docs.oracle.com/javase/7/docs/api/javax/tools/ForwardingJavaFileManager.html) y se encargará de cargar los objetos JavaClassObject con un ClassLoader.
-* La clase JavaClassObject que extiende [SimpleJavaFileObject](http://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) y contendrá el código bytecode generado en memoria por el compilador.
-* CharSequenceJavaFileObject clase que extiende [SimpleJavaFileObject](http://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) y que contiene el código fuente en un objeto de tipo CharSequence.
+* La clase ClassFileManager que extiende [ForwardingJavaFileManager](https://docs.oracle.com/javase/7/docs/api/javax/tools/ForwardingJavaFileManager.html) y se encargará de cargar los objetos JavaClassObject con un ClassLoader.
+* La clase JavaClassObject que extiende [SimpleJavaFileObject](https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) y contendrá el código bytecode generado en memoria por el compilador.
+* CharSequenceJavaFileObject clase que extiende [SimpleJavaFileObject](https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html) y que contiene el código fuente en un objeto de tipo CharSequence.
 * La interfaz Configuracion es la interfaz que debe cumplir la clase Java que compilaremos, cargaremos de forma dinámica en la aplicación y posteriormente invocaremos sus métodos.
 
 En el javadoc de las clases hay una descripción más amplia de cada una de ellas.

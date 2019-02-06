@@ -62,7 +62,7 @@ Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones 
 {{< code file="standalone.sh" language="Bash" options="" >}}
 {{< code file="standalone-full.xml" language="XML" options="" >}}
 
-Para terminar y conocer más sobre JMS un buen libro es <a href="http://www.amazon.es/gp/product/0596522045/ref=as_li_tf_tl?ie=UTF8&camp=3626&creative=24790&creativeASIN=0596522045&linkCode=as2&tag=blobit-21">Java Message Service</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596522045" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
+Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.amazon.es/gp/product/0596522045/ref=as_li_tf_tl?ie=UTF8&camp=3626&creative=24790&creativeASIN=0596522045&linkCode=as2&tag=blobit-21">Java Message Service</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596522045" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
  de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
 <div class="media-amazon" style="text-align: center;">

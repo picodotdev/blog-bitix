@@ -121,7 +121,7 @@ En la mejora de la accesibilidad de una página intervienen tanto diseñadores (
 
 ### Descubriendo los Beacons <em>por Borja Reinares</em>
 
-La verdad es que no conocía de nada que eran en el mundo tecnológico los _beacons_ salvo por lo poco que puede proporcionar su nombre, en la descripción de la charla no aparecía ningún texto de descripción. Mediante algún [artículo](http://www.20minutos.es/noticia/2052004/0/beacons/mejor-que-gps/geolocalizacion/) he podido conocer algo sobre ellos y por donde podía ir la charla. La alternativa era la presentación de [AngularJS][angular] y personalmente estando más convencido de la opción [Backbone][backbone] y [ReactJS][react] prefería conocer algo de los _beacons_.
+La verdad es que no conocía de nada que eran en el mundo tecnológico los _beacons_ salvo por lo poco que puede proporcionar su nombre, en la descripción de la charla no aparecía ningún texto de descripción. Mediante algún [artículo](https://www.20minutos.es/noticia/2052004/0/beacons/mejor-que-gps/geolocalizacion/) he podido conocer algo sobre ellos y por donde podía ir la charla. La alternativa era la presentación de [AngularJS][angular] y personalmente estando más convencido de la opción [Backbone][backbone] y [ReactJS][react] prefería conocer algo de los _beacons_.
 
 Como su nombre indica un _beacon_ o baliza es un dispositivo que emite una señal identificable, por bluethooth ([Bluethooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_low_energy), BLE). Posteriormente, un dispositivo como un teléfono inteligente (Android, iPhone o Windows Phone) con una aplicación instalada permite procesar esa señal para ofrecer alguna función útil para el usuario en base a la distancia hasta la baliza (0,5 metros, 2m, 30m), estas sol algunas [aplicaciones de los _beacons_ con BLE](https://en.wikipedia.org/wiki/Bluetooth_low_energy#Applications). Algunos usos que se están dando a esta tecnología es en las Apple Store o en algunas tienda de ropa de EEUU.
 
@@ -151,7 +151,7 @@ Otro nuevo área tecnológico en el que descubrir aplicaciones útiles y con gra
 
 Durante el desarrollo de un proyecto de software en algún momento alguien (cliente, usuario, desarrollador, consultor, jefe de proyecto, diseñador, ...) involucrado puede tener la sensación o certeza de que el producto que se está desarrollando no resuelve en alguna medida las necesidades del cliente y los usuarios y/o no es motivo de orgullo de los que lo realizan. El concepto de bombero pirómano trata de identificar estos problemas y hacerlos visibles para todos los involucrados y "prender un  fuego" con ellos como haría un pirómano. Sin embargo, estos fuegos pueden presentar peligros para el proyecto en el momento que no son tomadas medidas para apagarlos o resolverlos como haría un bombero. De esta forma se presenta el concepto de bombero pirómano formado por estos dos opuestos.
 
-En [Biko](http://www.biko2.com/) siguen tres ideas para mantener estos fuegos controlados:
+En [Biko](https://www.biko2.com/) siguen tres ideas para mantener estos fuegos controlados:
 
 1. Quemar cuanto antes. Cuanto antes se prenda el fuego más margen de maniobra habrá en el proyecto haciendo con más garantías de que cumpla su objetivo y evitará malgastar tiempo, dinero y esfuerzo en el desarrollo.
 2. Todo el equipo comparte la misma visión del proyecto. El esfuerzo es compartido por todos los involucrados evitando sorpresas cuando un fuego obliga a cambiar las funcionalidades según las restricciones que presenten los involucrados como prioridades o el mismo proyecto en tiempo o coste.
@@ -166,10 +166,10 @@ En [Biko](http://www.biko2.com/) siguen tres ideas para mantener estos fuegos co
 
 Por desgracia este año no ha sido posible grabar en vídeo las presentaciones pero pasados unos días seguro que se publican las diapositivas, sin embargo, con únicamente las diapositivas pierde mucho del contenido respecto a la presentación dada en vivo. En algunas presentaciones al menos se ha recogido el audio:
 
-* Desarrollo de aplicaciones web con .NET en MAC: open source, multiplataforma e incluso gratuito _por Ibon Landa_ [Diapositivas](http://www.slideshare.net/ibonilm/open-source-and-cross-platform-net)
-* Errores comunes en la visualización de datos y algunas soluciones _por Pablo Garaizar_ [Diapositivas](http://www.slideshare.net/txipi/bilbostack2015-garaizar)
+* Desarrollo de aplicaciones web con .NET en MAC: open source, multiplataforma e incluso gratuito _por Ibon Landa_ [Diapositivas](https://www.slideshare.net/ibonilm/open-source-and-cross-platform-net)
+* Errores comunes en la visualización de datos y algunas soluciones _por Pablo Garaizar_ [Diapositivas](https://www.slideshare.net/txipi/bilbostack2015-garaizar)
 * Creando directivas para AngularJs _por Hugo Biarge_ [Diapositivas y demos](https://onedrive.live.com/?cid=2BFC01CE6CF4BF53&id=2BFC01CE6CF4BF53!14323)
-* ReactJS: un enfoque distinto a la UI en JavaScript _por Eduard Tomás_ [Diapositivas](http://www.slideshare.net/eduardtomas/introduccin-a-reactjs)
+* ReactJS: un enfoque distinto a la UI en JavaScript _por Eduard Tomás_ [Diapositivas](https://www.slideshare.net/eduardtomas/introduccin-a-reactjs)
 * Wordpress al límite _por Asier Marqués_
 * Arquitectura de CartoDB _por Javi Santana_
 

@@ -86,7 +86,7 @@ El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejem
 * [JSR 354 RI](https://github.com/JavaMoney/jsr354-ri)
 * [JSR 354 - Currency and Money](https://java.net/projects/javamoney/pages/Home)
 * [﻿JSR 354 Money and Currency — Specification](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/asciidoc/JavaMoneySpecification.adoc)
-* [Looking into the Java 9 Money and Currency API (JSR 354)](http://java.dzone.com/articles/looking-java-9-money-and)
+* [Looking into the Java 9 Money and Currency API (JSR 354)](https://java.dzone.com/articles/looking-java-9-money-and)
 * [Java 9 is coming with money api](https://weblogs.java.net/blog/otaviojava/archive/2014/08/25/java-9-coming-money-api)
 * [Joda Money](http://www.joda.org/joda-money/)
 * [Adopt JSR 354](http://es.slideshare.net/AnatoleTresch/adopt-jsr-354)

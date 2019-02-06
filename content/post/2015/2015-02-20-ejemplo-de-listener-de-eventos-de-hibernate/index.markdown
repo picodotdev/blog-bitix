@@ -24,7 +24,7 @@ En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cu
 * Al persistir el objeto guardar en un campo el valor calculado resultado de una función.
 * Cualquier otra restricción, cálculos o acciones.
 
-Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser usando _triggers_ de la base de datos disponibles en [Oracle](https://www.oracle.com/database/index.html) y [PostgreSQL][postgresql]. Si usamos [Hibernate][hibernate] como librería ORM de persistencia en una aplicación el equivalente a los _triggers_ de BBDD es mediante un _listener_ que sea llamado al ocurrir ciertos eventos. En la clase [_EventType_](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/event/spi/EventType.html) está la lista completa de los eventos que podemos recibir y la clase _listener_ que debemos implementar para recibir cada uno de los eventos. Esta es la lista de los eventos disponibles según los conceptos que usa Hibernate:
+Para realizar estas operaciones podemos hacerlas de varias formas, una puede ser usando _triggers_ de la base de datos disponibles en [Oracle](https://www.oracle.com/database/) y [PostgreSQL][postgresql]. Si usamos [Hibernate][hibernate] como librería ORM de persistencia en una aplicación el equivalente a los _triggers_ de BBDD es mediante un _listener_ que sea llamado al ocurrir ciertos eventos. En la clase [_EventType_](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/event/spi/EventType.html) está la lista completa de los eventos que podemos recibir y la clase _listener_ que debemos implementar para recibir cada uno de los eventos. Esta es la lista de los eventos disponibles según los conceptos que usa Hibernate:
 
 * AUTO_FLUSH
 * CLEAR

@@ -132,7 +132,7 @@ Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comu
 
 ### Your code as a crime scene <em>por Vicenç García</em>
 
-Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="http://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
+Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
 
 <div class="media" style="text-align: center;">
     <iframe src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -254,8 +254,8 @@ De nuevo hay que dar las gracias a sus organizadores, ponentes, Universidad de D
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Mi primer BilboStack](http://www.ricardofelix.es/mi-primer-bilbostack/)
-* [Mi experiencia en la BilboStack](http://www.genbetadev.com/formacion/mi-experiencia-en-la-bilbostack)
+* [Mi primer BilboStack](https://www.ricardofelix.es/mi-primer-bilbostack/)
+* [Mi experiencia en la BilboStack](https://www.genbetadev.com/formacion/mi-experiencia-en-la-bilbostack)
 {{% /reference %}}
 
 {{% /post %}}

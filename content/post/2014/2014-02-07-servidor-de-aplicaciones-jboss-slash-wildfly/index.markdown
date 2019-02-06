@@ -21,7 +21,7 @@ Para una pequeña (o no tan pequeña) aplicación web desarrollada en la platafo
 Los servidores de aplicaciones se pueden distinguir por la cantidad de especificaciones que implementan, sus versiones, perfiles y la versión de Java EE que cumplen. Por una parte tendríamos los contenedores de _servlets_ y JSP como podrían ser Apache Tomcat y Jetty, estos cumplen con un perfil web e implementan una parte de las especificación que engloba Java EE. Por otra parte están los servidores que cumplen con toda las especificaciones que define Java EE y se les suele denominar _full profile_ o perfil completo. Ejemplos de servidores de aplicaciones full profile son:
 
 * [Glashfish](https://glassfish.java.net/): la implementación de referencia de un servidor de aplicaciones.
-* [Weblogic](http://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/suite/overview/index.html): el servidor de aplicaciones propietario que adquirió Oracle con la compra de la antigua BEA Systems.
+* [Weblogic](https://www.oracle.com/us/products/middleware/cloud-app-foundation/weblogic/suite/overview/index.html): el servidor de aplicaciones propietario que adquirió Oracle con la compra de la antigua BEA Systems.
 * [Apache Geronimo](http://geronimo.apache.org/): servidor de aplicaciones proporcionado por la fundación Apache. Las implementaciones de las especificaciones son proporcionadas por muchos de los proyectos de la propia fundación.
 * [JBoss](https://www.jboss.org/overview/)/[WildFly](http://wildfly.org/): servidor de aplicaciones que adquirió [RedHat](http://www.redhat.com/) de la comunidad JBoss pero al contrario que Oracle y Weblogic con licencia libre de software libre.
 
@@ -66,7 +66,7 @@ En posteriores entradas y siguiendo la serie de entradas de seguridad ([I][elblo
 * [JBoss](http://jbossas.jboss.org/)
 * http://www.jboss.org/overview/<br>
 * https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition<br>
-* http://www.oracle.com/technetwork/java/javaee/tech/index.html
+* https://www.oracle.com/technetwork/java/javaee/tech/index.html
 {{% /reference %}}
 
 {{% /post %}}

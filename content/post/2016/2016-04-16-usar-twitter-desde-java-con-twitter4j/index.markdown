@@ -40,7 +40,7 @@ Teniendo a nuestra disposición la API de Twitter en nuestra aplicación solo no
 {{< links >}}
 {{< postslinks >}}
 * [Twitter4j][twitter4j]
-* [Java Twitter Integration](http://java.dzone.com/articles/java-twitter-integration)
+* [Java Twitter Integration](https://java.dzone.com/articles/java-twitter-integration)
 * [Twitter Apps](https://dev.twitter.com/apps)
 * [Añadir tu número de teléfono a tu cuenta de Twitter](https://support.twitter.com/articles/365327#)
 * [Workaround Twitter application write access mobile number accepted Twitter website](http://meberhard.me/workaround-twitter-application-write-access-mobile-number-accepted-twitter-website/)
