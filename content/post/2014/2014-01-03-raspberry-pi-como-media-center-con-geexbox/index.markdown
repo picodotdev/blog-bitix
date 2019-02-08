@@ -3,7 +3,7 @@ pid: 5
 title: "Raspberry Pi como Media Center con GeeXboX"
 url: "/2014/01/raspberry-pi-como-media-center-con-geexbox/"
 date: 2014-01-03T20:00:00+01:00
-updated: 2016-09-23T19:00:00+01:00
+updated: 2018-02-08T16:30:00+01:00
 rss: true
 sharing: true
 comments: true
@@ -20,9 +20,10 @@ La Raspberry Pi es un computador del tamaño de una tarjeta de crédito que se p
 
 Dada la popularidad que tiene la Raspberry Pi disponemos de varias distribuciones con soporte para usar la Raspberry Pi como centro multimedia de nuestro salón. Las principales son:
 
+* [OpenELEC][openelec]
+* [Kodi][kodi]
 * [GeeXboX][geexbox]
 * [OSMC][osmc]
-* [OpenELEC][openelec]
 
 Las tres opciones tienen la similitud que son muy fácilmente instalables (también para alguien sin muchos conocimientos técnicos) y que se basan en el programa [Kodi][kodi] para ofrecer la funcionalidad de Media Center. La mayor diferencia entre las tres opciones están en los dispositivos soportados, Raspberry Pi al ser muy popular es soportada perfectamente en las tres opciones, RaspMBC está destinada especificamente para la Pi y GeeXboX y OpenELEC soportan algunos otros dispositivos como sistemas i386, x64_86, Cubox 1 / 2 / Pro, Utilite, Cubiboard o incluso Apple TV. Otras diferencias es que RaspBMC está basado en la distribución [Debian][debian] mientras que OpenELEC y GeeXboX no se basan en ninguna y están desarrolladas específicamente para actuar como Media Center. GeeXboX tiene algunas características adicionales como un servidor HTTP, un servidor FTP, SSH, un cliente torrent con una interfaz accesible con el navegador, compatible con NFS, Samba, UPnP y DLNA.
 
@@ -60,6 +61,8 @@ A pesar de lo interesante de la Raspberry Pi esta tiene algunas incomodidades. U
 Usando la [Raspberry Pi con un disco duro externo o memoria USB][blogbitix-6] hará que GeeXboX se inicie mucho más rápido, evitaremos los atascos en la navegación de los menús y el copiar las películas al disco USB nos llevará menos tiempo que copiarlas a la tarjeta SD. Pero tampoco es una solución exenta de sus pequeños inconvenientes ya que los puertos USB de la Raspberry Pi son incapaces de proporcionar suficiente energía a un disco duro externo de 2.5" para hacerlo funcionar por lo que necesitaremos un concentrador de puertos USB alimentado, son unos cuantos cables más que necesitaremos si pretendemos tener las películas almacenadas de esta forma. Si queremos usar la Raspberry Pi usando un disco duro externo USB podemos seguir las instrucciones de otra entrada que escribiré sobre como Usar la Raspberry Pi con un disco duro externo USB.
 
 Otro inconveniente de la Raspberry Pi es que no dispone de WiFi (si la tercera versión de esta placa) y algunas funcionalidades de GeeXboX se proporcionan cuando la Pi está conectada a internet con lo que perderemos esas funcionalidades o deberemos tener la suerte de tener el router cerca para conectar el cable ethernet, también útil si pretendemos controlar XMBC con nuestro teléfono en vez de con un ratón. Aunque esas opciones proporcionadas al estar conectados a internet tampoco son indispensables.
+
+Algunos servicios y contenidos están bloqueados según la ubicación del usuario normalmente basado en la dirección IP, [evitar bloqueo según ubicación con una VPN][blogbitix-381] es una forma de acceder a los contenidos o servicios bloqueados.
 
 Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](https://amzn.to/2cN0d6L), una [cargador de 3A](https://amzn.to/2dfFJT7) junto con una [tarjeta SD](https://amzn.to/2cN0SFi).
 
