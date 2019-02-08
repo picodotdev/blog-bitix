@@ -3,7 +3,7 @@ pid: 377
 title: "Conferencia BilboStack 2019"
 url: "/2019/01/conferencia-bilbostack-2019/"
 date: 2019-01-26T17:00:00+01:00
-date: 2019-02-08T23:15:00+01:00
+updated: 2019-02-08T23:15:00+01:00
 language: "es"
 rss: true
 sharing: true
