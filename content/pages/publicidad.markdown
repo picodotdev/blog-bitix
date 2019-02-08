@@ -21,6 +21,7 @@ O si lo prefieres solicitame un artículo patrocinado a través de la [plataform
 
 * [Cursos de formación de KeepCoding][blogbitix-207]
 * [Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web][blogbitix-211]
+* [Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP][blogbitix-381]
 
 <div class="text-center">
     <p align="center"><a target="_blank" href="https://spacecontent.net/es/w/web/blogbitix/?affiliate=5acb9ab4c9a5f"> <img src="https://spacecontent.net/uploads/ad/bxt8g3imv.png" alt="Publicidad en Internet"></a></p>
