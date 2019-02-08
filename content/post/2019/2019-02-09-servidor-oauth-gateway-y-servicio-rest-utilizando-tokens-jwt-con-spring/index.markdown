@@ -1,7 +1,8 @@
 ---
 pid: 382
-title: "Servidor Oauth, gateway y servicio utilizando tokens JWT con Spring"
-url: "/2019/02/servidor-oauth-gateway-y-servicio-utilizando-tokens-jwt-con-spring/"
+title: "Servidor Oauth, gateway y servicio REST utilizando tokens JWT con Spring"
+url: "/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/"
+aliases: ["/2019/02/servidor-oauth-gateway-y-servicio-utilizando-tokens-jwt-con-spring/"]
 date: 2019-02-08T20:00:00+01:00
 language: "es"
 rss: true
