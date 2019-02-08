@@ -3,7 +3,7 @@ pid: 377
 title: "Conferencia BilboStack 2019"
 url: "/2019/01/conferencia-bilbostack-2019/"
 date: 2019-01-26T17:00:00+01:00
-date: 2019-01-27T20:15:00+01:00
+date: 2019-02-08T23:15:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -44,6 +44,10 @@ La conferencia comienza con la presentación y la bienvenida de los organizadore
 </div>
 
 La agenda comienza a las 9:00 de la mañana del sábado con una presentación y terminaba a las 14:00 aunque por el control de acceso de este año ha sido recomendable llegar un poco antes para evitar alguna pequeña aglomeración en los últimos minutos y encontrar y entrar en las salas con suficiente antelación. Llega el momento de decidir a qué presentación de los dos _tracks_ asistir, dependiendo de los intereses de cada uno a veces no es fácil y uno quisiera haber asistido a las dos.
+
+<div class="media media-video" style="text-align: center;">
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/6qQIs8q2Q9s?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 <table class="table">
     <thead class="thead-light">
