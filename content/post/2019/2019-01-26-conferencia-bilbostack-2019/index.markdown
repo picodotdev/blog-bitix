@@ -35,7 +35,7 @@ La novedad más relevante de este año es que por primera vez las entradas han t
         caption="Patrocinadores, ubicación y paquete de bienvenida" >}}
 </div>
 
-La conferencia comienza con la presentación y la bienvenida de los organizadores junto con unas palabras de un concejal del ayuntamiento de Bilbao comentando la transformación que ha realizado la ciudad en las últimas décadas, urbanística siendo representante el propio palacio Euskalduna de un entorno más industrial a otro más de servicios y la importancia de la tecnología con el potencial para convertirse en la nueva industria de la ciudad. Por este motivo la conferencia BilboStack es importante y lo apoyan de forma institucional haciendo hincapié que no es fácil organizar una conferencia con el poder de convocatoria de casi 700 personas un sábado a la mañana y a la que muchos acuden haciendo muchos kilómetros de viaje.
+La conferencia comienza con la presentación y la bienvenida de los organizadores junto con unas palabras de Xabier Otxandiano concejal de desarrollo económico del ayuntamiento de Bilbao comentando la transformación que ha realizado la ciudad en las últimas décadas, urbanística siendo representante el propio palacio Euskalduna de un entorno más industrial a otro más de servicios y la importancia de la tecnología con el potencial para convertirse en la nueva industria de la ciudad. Por este motivo la conferencia BilboStack es importante y lo apoyan de forma institucional haciendo hincapié que no es fácil organizar una conferencia con el poder de convocatoria de casi 700 personas un sábado a la mañana y a la que muchos acuden haciendo muchos kilómetros de viaje.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
