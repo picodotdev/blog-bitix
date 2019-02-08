@@ -93,7 +93,7 @@ Si no se envía el _token_ JWT se produce un error de autenticación con código
 
 Los _tokens_ JWT además de firmar se pueden cifrar, en el ejemplo se usa una conexión no segura con el protocolo HTTP usando una conexión segura HTTPS ya se proporcionaría confidencialidad para los _tokens_ y es lo recomendado.
 
-{{% sourcecode git="blog-ejemplos/tree/master/springOauth" command="./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/SpringOauth" command="./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run" %}}
 
 {{% reference %}}
 {{< links >}}
