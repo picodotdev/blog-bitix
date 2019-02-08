@@ -31,6 +31,11 @@ draft: true
 </div>
 
 <div class="media" style="text-align: center;">
+    {{< imageproc
+        image1="direccion.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
+</div>
+
+<div class="media" style="text-align: center;">
     {{< figureproc
         image1="" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1=""
         image2="" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2=""
