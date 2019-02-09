@@ -7,7 +7,7 @@ updated: 2015-11-10T19:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["java", "programacion", "software", "planeta-codigo"]
+tags: ["java", "programacion", "planeta-codigo"]
 summary: "JMS es una especificación de Java que define en esta plataforma una forma comunicación entre aplicaciones basada en el intercambio de mensajes. Los mensajes permiten a las aplicaciones no conocerse entre sí y comunicarse de forma asíncrona pudiendo hacer que los mensajes de una cola solo sean consumidos por un único receptor o por varios suscriptores interesados en un determinado tema. En el código de ejemplo muestro tanto la comunicación con colas (queues) como con temas (topics)"
 ---
 

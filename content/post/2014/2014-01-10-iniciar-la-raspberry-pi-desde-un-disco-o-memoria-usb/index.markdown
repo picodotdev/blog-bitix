@@ -7,7 +7,7 @@ updated: 2016-09-23T18:30:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["planeta-linux", "hardware", "software", "software-libre"]
+tags: ["planeta-linux", "hardware", "software-libre"]
 summary: "La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin embargo, dada la lentitud de lectura y escritura de esta es recomendable instalar el sistema en una memoria USB o disco duro externo. No es muy complicado y el aumento de rendimiento es notable."
 ---
 

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["blog-stack", "java", "planeta-codigo", "programacion", "spring"]
 ---
 
 {{% post %}}

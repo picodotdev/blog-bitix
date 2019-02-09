@@ -6,7 +6,7 @@ date: 2014-01-31T17:10:17+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["java", "programacion", "software", "planeta-codigo"]
+tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}

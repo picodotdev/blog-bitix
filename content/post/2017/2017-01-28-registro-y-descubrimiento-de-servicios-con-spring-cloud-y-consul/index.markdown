@@ -7,7 +7,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["blog-stack", "java", "planeta-codigo", "programacion", "spring"]
 series: ["spring-cloud"]
 summary: "Tradicionalmente el conectar un servicio con sus servicios dependientes se ha realizado por configuración, normalmente mediante un nombre de dominio y su puerto. Esta configuración estática es suficiente para unos pocos servicios y que no varían durante su funcionamiento. Con el advenimiento de los microservicios con su estado y número cambiantes en el tiempo han surgido varias herramientas para en vez de usar configuración usar descubrimiento. Una de estas herramientas Consul para la que Spring Cloud proporciona integración."
 ---

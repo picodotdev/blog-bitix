@@ -7,7 +7,7 @@ updated: 2015-05-30T00:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["software", "java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]
+tags: ["java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]
 ---
 
 {{% post %}}

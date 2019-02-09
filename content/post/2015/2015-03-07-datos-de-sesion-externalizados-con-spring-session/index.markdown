@@ -7,7 +7,7 @@ updated: 2015-03-08T03:30:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["blog-stack", "java", "planeta-codigo", "programacion", "spring"]
 series: ["spring-cloud"]
 ---
 
