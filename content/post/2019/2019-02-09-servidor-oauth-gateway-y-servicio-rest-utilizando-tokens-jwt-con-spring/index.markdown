@@ -36,6 +36,11 @@ Spring ha creado su propio proyecto de _gateway_ para sustituir a Zuul, [Spring 
 
 Los servicios los mantengo separados ya que al combinarlos pueden surgir problemas de integración al usar diferentes versiones de librerías de Spring aún cuando todos los proyectos son de Spring. Por ejemplo, Spring Cloud Gateway utiliza Spring WebFlux que puede ser diferente del lo que utilice Spring Security Oauth y la integración puede no estar exenta de problemas.
 
+<div class="media" style="text-align: center;">
+    <img src="assets/images/logotipos/oauth.svg" alt="Oauth" title="Oauth" width="200"/>
+    <img src="assets/images/logotipos/jwt.svg" alt="JWT" title="JWT" width="300"/>
+</div>
+
 ### Servidor Oauth
 
 Empezando por el servidor Oauth y las dependencias que necesita, son _spring-security-oauth2_ y para generar _tokens_ JWT _spring-security-jwt_, el resto son dependencias necesarias de Spring Boot
