@@ -17,7 +17,7 @@
       <div class="col-12 col-lg-8">
         <div class="row">
           <div class="col-12">
-            <article itemscope itemtype="http://schema.org/BlogPosting">
+            <article itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
               {{ if isset .Params "language" }}
               <meta itemprop="inLanguage" content="{{ .Params.language }}">
               {{ else }}
@@ -33,7 +33,7 @@
                 {{ else }}
                   {{ i18n "writed_by" }}
                 {{ end }} 
-                <span itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span></span> el <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time itemprop="dateModified" datetime="{{ dateFormat "2006-01-02" .Params.updated }}">{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span></span> el <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time itemprop="dateModified" datetime="{{ dateFormat "2006-01-02" .Params.updated }}">{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
                 {{ if isset .Params "tags" }}
                   <br>
                   {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
