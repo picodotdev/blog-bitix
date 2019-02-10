@@ -1,7 +1,7 @@
 ---
 pid: 368
 title: "Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot"
-url: "/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicación-spring-boot/"
+url: "/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/"
 date: 2018-12-21T11:30:00+01:00
 language: "es"
 rss: true
