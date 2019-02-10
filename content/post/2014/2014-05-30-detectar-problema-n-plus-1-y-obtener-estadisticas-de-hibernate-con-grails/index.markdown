@@ -39,7 +39,7 @@ En Grails podemos hacer un controlador y gsp que nos muestre esa información qu
 {{< code file="HibernateController.groovy" language="Groovy" options="" >}}
 {{< code file="index.gsp" language="Plaintext" options="" >}}
 
-Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo Config.goovy y añadir la siguiente configuración en el apartado log4j:
+Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo Config.goovy y añadir la siguiente configuración en el apartado Log4j:
 
 {{< code file="Config.groovy" language="Groovy" options="" >}}
 

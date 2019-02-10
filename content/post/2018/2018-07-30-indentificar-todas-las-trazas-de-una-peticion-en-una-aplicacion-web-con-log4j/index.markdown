@@ -1,6 +1,6 @@
 ---
 pid: 336
-title: "Identificar todas las trazas de una petición en una aplicación web Java con log4j"
+title: "Identificar todas las trazas de una petición en una aplicación web Java con Log4j"
 url: "/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/"
 aliases: ["/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-con-log4j/"]
 date: 2018-07-30T19:45:00+02:00
@@ -19,7 +19,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
-En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de _logging_ como [log4j][log4j] las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el [concepto denominado _fish tagging_](https://logging.apache.org/log4j/2.x/manual/thread-context.html).
+En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de _logging_ como [Log4j][log4j] las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el [concepto denominado _fish tagging_](https://logging.apache.org/log4j/2.x/manual/thread-context.html).
 
 En el contexto de una aplicación web para seguir la secuencia de trazas de una petición consiste en asignar variables con información al _thread_ que ejecuta la petición, el contenido de estas variables está disponible para emitirse en la traza. Asignando a cada petición un identificativo aleatorio único cuando se inicia la petición, en una aplicación web Java podría ser en un filtro, las trazas emitidas de cada petición quedarán relacionadas por compartir el mismo identificativo de contexto. Este identificativo significa que encontrada una relevante es posible obtener el resto de las peticiones muy fácilmente con un filtro usando ese identificativo.
 

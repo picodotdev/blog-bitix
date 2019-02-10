@@ -60,9 +60,9 @@ Sobre Java o programación algunos más.
 
 * [Qué es un SUT, fake, Stub, Mock y Spy en las pruebas con un ejemplo][blogbitix-331]
 * [Pruebas funcionales con Geb en una aplicación web Java][blogbitix-332]
-* [La librería log4j para emitir trazas en aplicaciones Java][blogbitix-334]
-* [Identificar todas las trazas de una petición en una aplicación web Java con log4j][blogbitix-336]
-* [Personalizar el mensaje emitido de un objeto en log4j][blogbitix-338]
+* [La librería Log4j para emitir trazas en aplicaciones Java][blogbitix-334]
+* [Identificar todas las trazas de una petición en una aplicación web Java con Log4j][blogbitix-336]
+* [Personalizar el mensaje emitido de un objeto en Log4j][blogbitix-338]
 * [Recargar sin reiniciar la configuración de una aplicación Spring Boot con Spring Cloud Config][blogbitix-349]
 * [Novedades y nuevas características de Java 11][blogbitix-350]
 * [Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java][blogbitix-357]

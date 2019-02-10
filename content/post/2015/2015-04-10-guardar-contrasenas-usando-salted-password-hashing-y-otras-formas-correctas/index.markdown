@@ -31,6 +31,7 @@ También hay que tener en cuenta que muchos usuarios usan la misma contraseña p
 Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque no serían posibles por la entropía añadida por los _salt_. Aún así conociendo el _salt_ y la función de _hash_ empleada seguiría siendo posible un ataque de fuerza bruta y de diccionario. Con _Salted Password Hashing_ se usa en la función de _hash_ y un dato variable denominado _salt_ que añade suficiente entropía y es diferente para cada contraseña, en la base de datos se guarda el resultado de la función de _hash_ junto con el _salt_, esto es, el resultado de SHA-512(contraseña+_salt_) y también el _salt_.
 
 ### Ejemplo de _Salted Password Hashing_ usando Apache Shiro
+
 Antes de comentar alguna opción más que dificulte los ataques de fuerza bruta o de diccionario veamos como implementar _Salted Password Hashing_ empleando Apache Shiro como librería de autenticación y autorización para los usuarios. El ejemplo será simple sin guardar los datos en una base de datos pero suficiente para mostrar que se debe añadir al proyecto para que Shiro compruebe las contraseñas usando una función de _hash_ y un _salt_. Partiré de un ejemplo que hice para el [libro PlugIn Tapestry][blogbitix-12] sobre el desarrollo de aplicaciones web con el _framework_ [Apache Tapestry][tapestry]. Básicamente deberemos crear un nuevo _Realm_ que devuelva los datos del usuario, el _hash_ y el _salt_. Una implementación suficiente para el ejemplo sería la siguiente, la parte importante está en el método _doGetAuthenticationInfo_ y en la inicialización _static_ de la clase:
 
 {{< code file="Realm.java" language="Java" options="" >}}
@@ -55,11 +56,13 @@ Este es todo el código que necesitamos para la implementación de contraseñas 
 El siguiente ejemplo de [_federatedaccounts_](https://github.com/tynamo/tynamo-federatedaccounts/tree/master/tynamo-federatedaccounts-test/src/test/java/org/tynamo/security/federatedaccounts/testapp/services) puede verse como usar está técnica de _hash_ con _salt_ usando una base de datos. Básicamente es lo mismo pero accediendo a base de datos para obtener el _hash_ de la contraseña y el _salt_ con una entidad JPA.
 
 ### Otras opciones que añaden más seguridad
+
 Aún así como comento este ejemplo de _Salted Password Hashing_ aunque dificulta un ataque aún es viable usar fuerza bruta o un diccionario. En el artículo [Password Security Right Way](https://stormpath.com/blog/password-security-right-way/) comentan tres ideas más. Una es usar como función de _hash_ [Bcrypt](http://bcrypt.sourceforge.net/) no porque sea más segura que SHA-512 sino porque es más lenta y esto puede hacer inviable la fuerza bruta o de diccionario, hay [planes de proporcionar Bcrypt en Apache Shiro](https://issues.apache.org/jira/browse/SHIRO-290) en futuras versiones. En el ejemplo como alternativa a bcrypt se usan varios millones de iteraciones de aplicación de la función para añadir tiempo de cálculo al _hash_, este tiempo adicional no es significativo en el cálculo de un _hash_ pero en un ataque de fuerza bruta puede aumentarlo de forma tan significativa que sea inviable. La segunda idea interesante es además de _hashear_ la clave es cifrarla de modo que aún habiendo sido comprometida la base de datos se necesite la clave privada de cifrado que también debería ser comprometida para producir el ataque. La tercera es partir el _hash_ y distribuirlo entre varios sistemas de modo que sea necesario romperlos todos para obtener en _hash_ original, lo que dificulta aún más un ataque.
 
 Para implementar la segunda opción deberemos proporcionar implementaciones propias de [CredentialsMatcher]( https://shiro.apache.org/static/1.2.3/apidocs/org/apache/shiro/authc/credential/CredentialsMatcher.html) y de [SimpleHash](https://shiro.apache.org/static/1.2.3/apidocs/org/apache/shiro/crypto/hash/SimpleHash.html), quizá esto sea tema para otro artículo.
 
 ### Código fuente del ejemplo
+
 El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado en un repositorio de GitHub, es completamente funcional y puedes probarlo en tu equipo. Una vez descargado el siguiente comando e introduciendo en el navegador _http\://localhost:8080/PlugInTapestry_, en la página que se muestra hay un botón para iniciar sesión:
 
 {{< code file="gradlew.sh" language="Bash" options="" >}}
@@ -70,6 +73,7 @@ El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado 
 </div>
 
 ### Nota final
+
 En este artículo recomiendo leer los interesantes enlaces del apartado de referencia del final, de ellos los siguientes dos son bastante completos [Password Security the Right Way](https://stormpath.com/blog/password-security-right-way/) y [The RIGHT Way: How to Hash Properly](https://crackstation.net/hashing-security.htm) aunque todos merecen el tiempo dedicado a una lectura detenida. Para terminar mucho de esto es fútil si se permiten contraseñas sencillas por lo que exigir contraseñas con cierta fortaleza de la forma comentada al principio también es necesario si la seguridad de la aplicación es un requisito importante.
 
 {{% reference %}}
