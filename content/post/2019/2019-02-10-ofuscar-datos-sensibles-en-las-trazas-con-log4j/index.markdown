@@ -26,7 +26,7 @@ En el siguiente ejemplo se hace uso de _lookahead_ como se detalla en la clase [
 {{< code file="Main.java" language="Java" options="" >}}
 {{< code file="SecuredMessage.java" language="Java" options="" >}}
 
-Utilizar una clase que implemente la interfaz [Message](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html)para realizar el reemplazo requiere modificar todos los puntos de la aplicación que emitan información sensible, para evitar posibles omisiones este aspecto de la aplicación se puede delegar en Log4j y ser aplicado de forma global.
+Utilizar una clase que implemente la interfaz [Message](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html) para realizar el reemplazo requiere modificar todos los puntos de la aplicación que emitan información sensible, para evitar posibles omisiones este aspecto de la aplicación se puede delegar en Log4j y ser aplicado de forma global.
 
 Con los parámetros de configuración _replace_, _regex_ y _replacement_ el reemplazo los hace la clase _PatterLayout_ utilizando una expresión similar regular que en el caso de _SecuredMessage_.
 
