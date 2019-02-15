@@ -3,7 +3,7 @@ pid: 278
 title: "Me cambio a la eléctrica Holaluz"
 url: "/2017/11/me-cambio-a-la-electrica-holaluz/"
 date: 2017-11-06T20:00:00+01:00
-updated: 2018-07-13T23:15:00+02:00
+updated: 2019-02-15T19:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -43,7 +43,9 @@ Otra ventaja de Holaluz es que factura mensualmente y no bimensualmente o factur
 * [Tarifas luz un precio](https://www.holaluz.com/tarifas-luz-un-precio-20/), independiente de la hora de consumo.
 * [Tarifas luz dos precios](https://www.holaluz.com/tarifas-luz-dos-precios-20/), según hora de consumo.
 
-Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo real que he realizado actualizaré este artículo para comparar. Aunque con el modo de pago que he elegido, sin sorpresas, tendré todos los meses el mismo importe en la factura veré al menos el importe de precio del kWh que debería ser de 0,123000, comprobaré la diferencia real con el precio de mi anterior compañía.
+Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo real que he realizado actualizaré este artículo para comparar. Aunque con el modo de pago que he elegido, sin sorpresas, tendré todos los meses el mismo importe en la factura veré al menos el importe de precio del kWh que debería ser de 0,123000, comparando mi factura con mi anterior compañia hay diferencia si tengo en cuenta que ahora uso la ducha y nates no y que ahora no tengo que pagar el servicio de gas con sus costes de revisiones y mantenimiento.
+
+Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que estoy seguro que con las subidas de precio en la electridad en este mismo periodo de tiempo sigue siendo un precio menor que otras compañías eléctricas. 
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="278"
@@ -63,7 +65,7 @@ En el blog de Holaluz escriben artículos muy buenos sobre el funcionamiento de 
 * [Blog Holaluz](https://blog.holaluz.com)
 * [Preguntas frecuentes](https://www.holaluz.com/preguntas/)
 
-Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo es **3R9L6I**.
+Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo o código de Holaluz es **3R9L6I**.
 
 <div class="media" style="text-align: center;">
     {{< figure year="2017" pid="278"
