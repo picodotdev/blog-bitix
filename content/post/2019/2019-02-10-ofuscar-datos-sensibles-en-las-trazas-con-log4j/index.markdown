@@ -38,4 +38,10 @@ En la salida del ejemplo la primera traza corresponde al uso de la clase _Securd
 
 {{% sourcecode git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" %}}
 
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Lookahead en expresiones regulares con Java][blogbitix-385]
+{{% /reference %}}
+
 {{% /post %}}
