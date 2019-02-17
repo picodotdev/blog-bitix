@@ -49,6 +49,8 @@ En la [documentación Javadoc de la clase Pattern](https://docs.oracle.com/javas
 {{< postslinks >}}
 * [Extraer elementos de una cadena con una expresión regular][blogbitix-140]
 * [Los cuantificadores greedy, reluctant y possessive en expresiones regulares][blogbitix-257]
+* [Ofuscar datos sensibles en las trazas con Log4j][blogbitix-383]
+* [Lookahead y lookbehind en expresiones regulares con Java][blogbitix-385]
 * [Regex Named Groups in Java](https://stackoverflow.com/questions/415580/regex-named-groups-in-java)
 * [Using a regular expression to validate an email address](https://stackoverflow.com/questions/201323/using-a-regular-expression-to-validate-an-email-address)
 {{% /reference %}}
