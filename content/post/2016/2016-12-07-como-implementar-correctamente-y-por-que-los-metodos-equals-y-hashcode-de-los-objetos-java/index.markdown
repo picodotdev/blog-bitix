@@ -80,6 +80,7 @@ En el libro [Effective Java](https://amzn.to/2g9N1bi) se explican con un poco m√
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [Las colecciones de Java, estructuras de datos para guardar referencias a objetos][blogbitix-386]
 * [HashCode and Equals method in Java object](https://www.javaworld.com/article/2074996/hashcode-and-equals-method-in-java-object---a-pragmatic-concept.html)
 {{% /reference %}}
 
