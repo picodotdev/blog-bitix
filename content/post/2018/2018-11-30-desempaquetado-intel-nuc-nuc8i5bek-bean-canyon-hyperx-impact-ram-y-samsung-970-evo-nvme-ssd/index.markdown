@@ -393,7 +393,7 @@ He tenido que esperar muchos meses a tener esta configuración, entre elegir que
         caption="Intel NUC8i5BEK con Arch Linux y GNOME" >}}
 </div>
 
-Este es [el escritorio que tenía antes][blogbitix-201], con mucho espacio deshaprovechado por la ubicación del portátil. 
+Este es [el escritorio que tenía antes][blogbitix-201], con mucho espacio desaprovechado por la ubicación del portátil. 
 
 <div class="media" style="text-align: center;">
     {{< figureproc
