@@ -1,7 +1,7 @@
 ---
 pid: 388
-title: "Componentes de lado de cliente con Web Components usando JavaScript, HTML y CSS"
-url: "/2019/03/componentes-de-lado-de-cliente-con-web-components-usando-javascript-html-y-css/"
+title: "Componentes en el cliente con Web Components usando JavaScript, HTML y CSS"
+url: "/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/"
 date: 2019-03-08T18:00:00+01:00
 language: "es"
 rss: true
