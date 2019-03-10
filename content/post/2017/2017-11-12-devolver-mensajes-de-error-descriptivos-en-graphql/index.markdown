@@ -32,7 +32,7 @@ Para adaptar las clases excepción hay que cambiar el comportamiento de la clase
 
 {{< code file="Main.java" language="Java" options="" >}}
 
-En el caso de este ejemplo solo un usuario de nombre _admin_ tiene permitido hacer modificaciones en la colección de libros guardados en la clase repositorio _LibraryRepository_. Por otro lado, cuando se añade un libro se hace una validación de los datos comprobando que el autor del libro a añadir exista en la librería. Estos son las peticiones válidas.
+En el caso de este ejemplo solo un usuario de nombre _admin_ tiene permitido hacer modificaciones en la colección de libros guardados en la clase repositorio _LibraryRepository_. Por otro lado, cuando se añade un libro se hace una validación de los datos comprobando que el autor del libro a añadir exista en la librería. Estas son las peticiones válidas.
 
 {{< code file="curl.sh" language="Bash" options="" >}}
 
