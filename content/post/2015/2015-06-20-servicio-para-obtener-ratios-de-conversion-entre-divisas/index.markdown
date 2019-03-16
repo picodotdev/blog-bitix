@@ -29,7 +29,7 @@ En el plan gratuito nos ofrecen los ratios respecto a USD, esto es, una dólar n
 * _currencies.json_: para obtener la lista de divisas y sus descripciones.
 * _time-series.json_: para obtener datos históricos durante un periodo de varios días.
 
-Usando el primero de ellos junto con el _api-key_ que nos han asignado _[https://openexchangerates.org/api/latest.json?app_id=[api-key]](https://openexchangerates.org/api/latest.json?app_id=[api-key])_ obtenemos los ratios en formato JSON, en el dato _base_ está la divisa de referencia, en este caso dólares estadounidenses (USD):
+Usando el primero de ellos junto con el _api-key_ que nos han asignado [https://openexchangerates.org/api/latest.json?app_id=[api-key]](https://openexchangerates.org/api/latest.json?app_id=[api-key]) obtenemos los ratios en formato JSON, en el dato _base_ está la divisa de referencia, en este caso dólares estadounidenses (USD):
 
 {{< code file="latest.json" language="JSON" options="" >}}
 

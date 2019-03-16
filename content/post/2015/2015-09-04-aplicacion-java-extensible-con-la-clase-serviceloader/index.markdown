@@ -47,7 +47,7 @@ La salida para el programa _Main1.java_ y _Main2.java_ respectivamente es:
 
 Esta es una forma interesante de hacer extensible o ampliable una aplicación en un futuro. Destacar que simplemente incluyendo en el _classpath_ una librería que incluya en el directorio _META-INF/services_ un archivo con el nombre de la interfaz con su nombre cualificado, _io.github.picodotdev.serviceloader.Saludador_, las nuevas implementaciones de servicios se devolverán usando el método _Service.load(Saludador.class)_ que se encargará de buscar los archivos en las librerías jar que los tengan.
 
-Este mecanismo es que el se usa para permitir definir nuevos proveedores de ratios entre divisas en la librería de referencia [Java Money](http://javamoney.github.io/) (JSR-354) que proporciona una [API para el trabajo con importes monetarios, ratios y divisas en Java][blogbitix-90]. En otro artículo mostraré [cómo definir un nuevo proveedor de ratios en esta API de Java Money][blogbitix-95].
+Este mecanismo es que el se usa para permitir definir nuevos proveedores de ratios entre divisas en la librería de referencia [Java Money][java-money] (JSR-354) que proporciona una [API para el trabajo con importes monetarios, ratios y divisas en Java][blogbitix-90]. En otro artículo mostraré [cómo definir un nuevo proveedor de ratios en esta API de Java Money][blogbitix-95].
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/ServiceLoader) está en uno de mis repositorios de GitHub.
 
