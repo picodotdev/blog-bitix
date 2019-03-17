@@ -62,6 +62,10 @@ Los métodos [or()](https://docs.oracle.com/javase/9/docs/api/java/util/Optional
 
 Los nuevos métodos de los _streams_ [dropWhile()](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#dropWhile-java.util.function.Predicate-), [takeWhile()](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#takeWhile-java.util.function.Predicate-) permiten descartar o tomar elementos del _stream_ mientras se comprueba una condición. El método [ofNullable()](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#ofNullable-T-) devuelve un _stream_ de un elemento o vacío dependiendo de si el objeto es _null_ o no. Los métodos [iterate()](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#iterate-T-java.util.function.Predicate-java.util.function.UnaryOperator-) permiten generar un secuencia de valores similar a un bucle _for_.
 
+También se añaden varias interfaces para el uso de _reactive streams_.
+
+* [Ejemplo de Reactive Streams en Java][blogbitix-390]
+
 ### REPL con jshell
 
 Otra de las características destacables es la incorporación de [la herramienta JShell][blogbitix-265] para evaluar código siguiendo el patrón _Read-Evaluate-Print-Loop_ o REPL para hacer pruebas de código sin la necesidad de un IDE, una herramienta de construcción o toda la infraestructura de un proyecto. Esta herramienta es el comando _jshell_.
