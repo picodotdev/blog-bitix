@@ -4,7 +4,7 @@ title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas e
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]
 date: 2018-03-10T10:00:00+01:00
-updated: 2018-03-17T19:00:00+01:00
+updated: 2019-03-18T20:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -23,18 +23,20 @@ Una de las tendencias de la tecnología desde sus inicios es que en todo momento
 
 En poco más de dos décadas ha habido un salto de entre dos y tres órdenes de magnitud. Mi primer ordenador en 1996 fué un Intel Pentium a 120 Mhz con 8 MiB de memoria RAM que luego amplié a 32 MiB y un disco duro de 1 GiB que utilicé en mis años de universidad. En el 2002 cambié a un AMD 1800+ con 512 MiB, 60 GiB de disco duro y una gráfica Nvidia GeForce 2 MX creo que con 32 MiB de memoria gráfica con un monitor de 17" de tubo que pesaba más de 10 kilos seguro. En el 2008 dejé el ordenador de escritorio y pase a un portátil Dell, del que no me quiero acordar mucho por lo malo que resultó, con un Intel Core 2 Duo 8100 fabricado un una litografía de 45 nanómetros, 4 GiB de RAM, un disco duro de 320 GiB y una gráfica Nvidia 8600 con 256 MiB de memoria gráfica. Finalmente ya casi en el 2013 a mi siguiente equipo como portátil con un Intel i3-3210 de 2 núcleos y 4 hilos fabricado a 22 nanómetros, 8 GiB de memoria e inicialmente un disco duro de 500 GiB que posteriormente cambié por un SSD de 250 GiB. Y actualmente si cambiase de equipo optaría seguramente por un AMD basado en la arquitectura Zen que han aumentado de forma significativa los núcleos e hilos de los procesadores, iría a por 32 GiB para virtualizar a gusto o 64 GiB si fuese posible y la memoria DDR4 estuviese a precios más asequibles, un monitor 2K o 4K y un disco SSD basado en NVMe que aumenta más la tasa de transferencia incluso sobre la interfaz SATA. Eso en los computadores tradicionales pero ya algunos modelos de móviles de gama alta poseen más memoria que varios portátiles de la gama básica y en el tamaño de 5 pulgadas.
 
+* [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363], finalmente adquirí un Intel NUC
+
 En otro artículo algo comentaba [Sobre el rápido avance de la tecnología][blogbitix-186] y básicamente sacaba dos conclusiones. Una no merece comprar tecnología hasta que realmente es necesario pero tampoco esperar indefinidamente a lo siguiente mejor y como segunda conclusión que no hace falta tener lo último para hacer lo mismo que ya es posible con lo anterior.
 
 Una de las últimas adquisiciones que hice fué en 2012, uno de los primeros modelos de la popular computadora del tamaño de una tarjeta de crédito Raspberry Pi con un procesador ARM con el juego de instrucciones _armv6h_ y 256 MiB que he utilizado mayoritariamente para realizar descargas y compartir archivos _torrent_ o algunas pruebas de [utilización de sensores y dispositivos de entrada y salida con Java][blogbitix-212] o para [usar un certificador de Let's Encrypt en un servidor Nginx][blogbitix-252]. El siguiente uso que le daré es como [consola de juegos retro][blogbitix-301].
 
-Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36€ por los que se puede [comprar ahora en Amazon](http://amzn.to/2EP9mHX) ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria.
+Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36€ por los que se puede [comprar ahora en Amazon](http://amzn.to/2EP9mHX) ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria y ciertas limitaciones en el ancho de banda de red.
 
 La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa más capaz ni incluso la más barata, debido a su éxito han surgido numerosas placas similares. La totalidad de estas placas usan alguna distribución de GNU/Linux y procesadores ARM ya sea [Debian][debian], [Ubuntu][ubuntu], [Android][android], [Arch Linux ARM][archlinuxarm], [Armbian][armbian] o algunas distribuciones especializadas como [Lakka][lakka] para consola de juegos retro y [LibreELEC][libreelec] o [Kodi][kodi] para centro multimedia de salón.
 
 El uso que se les puede dar a estas computadores es muy diverso quizá no como para sustituir a un ordenador de escritorio o portátil basado en procesadores [Intel][intel] o [AMD][amd] pero si para otros propósitos como servidor de descargas, centro multimedia, servidor web, cluster de servidores con [Docker][docker], servicio en la nube propio con [OwnCloud][owncloud], servidor de código fuente con [GitLab][gitlab], servidor de integración continua con [Jenkins][jenkins], base de datos [PostgreSQL][postgresql] o los mencionados consola de juegos retro y centro multimedia entre cualesquiera otros usos que queramos mientras el software necesario esté disponible y la cantidad memoria de la computadora sea suficiente.
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2018/304/arm-powered.svg" width="300" alt="ARM Powered" title="ARM Powered">
+    {{< imageproc image1="arm-powered.png" command1="Fit" options1="300x250" alt1="ARM Powered" title1="ARM Powered" >}}
 </div>
 
 ### Raspberry Pi
@@ -55,8 +57,6 @@ Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _ma
 * Micro SD port for loading your operating system and storing data
 * 5V/2.5A DC power input
 * Power-over-Ethernet (PoE) support (requires separate PoE HAT)
-
-* [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi)
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -112,6 +112,16 @@ Aunque no es como los modelos anteriores de placas base este es destacable por s
     {{< figureproc
         image1="pinebook-11-inch.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="PineBook (11 pulgadas)"
         caption="PineBook (11 pulgadas)" >}}
+</div>
+
+### Rock Pi 4B
+
+Un modelo de placa mas reciente también basada en el mismo _SoC_ de la Rock64Pro el Rockchip RK3399 con algunas características muy completas. Esta [Rock Pi](http://rockpi.org/) no tiene uno de los defectos de la Rock64 y es que tiene WiFi AC y Bluetooth 5.0, su memoria también es de hasta 4 GiB pero LPDDR4, puerto Gigabit Ethernet, tiene dos puertos USB 2.0 y otros dos 3.0, GPIO de 40 pines compatible con la Raspberry Pi, además de conector de 3.5mm para el audio y salida HDMI de hasta 4K, se alimenta mediante conector USB Type-C, tarjeta microSD, tiene _socket_ eMMC pero es que además tiene un conector M.2 lo que le permite tener SSD con esta interfaz y un gran ancho de banda para el almacenamiento.
+
+Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70€ y los 107€ según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.
+
+<div class="media media-video" style="text-align: center;">
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/C4p9EpjA0ZM" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ### ASUS Tinker Board
@@ -180,11 +190,13 @@ Parece que con la costumbre de denominar a estas placas bases el nombre de fruto
 
 ### Conclusión
 
-Estos no son los únicos modelos que existen pero son algunos de los más destacables. Si queremos 4 GiB de memoria la opción preferente es la Rock64 con la posibilidad de añadirle en un puerto USB la conectividad WiFi. Si con 2 GiB es suficiente está la la ODROID C2, si se desea que tenga WiFI sin adaptadores adicionales la opción preferente es la NanoPi K2 o la ASUS Tinker Board.
+Estos no son los únicos modelos que existen pero son algunos de los más destacables. Si queremos 4 GiB de memoria la opción preferente es la Rock64 con la posibilidad de añadirle en un puerto USB la conectividad WiFi o la Rock Pi que ya incorpora WiFi. Si con 2 GiB es suficiente está la la ODROID C2, si se desea que tenga WiFI sin adaptadores adicionales la opción preferente es la NanoPi K2 o la ASUS Tinker Board.
 
 A pesar de que las alternativas de placas bases sean más capaces que la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.
 
-Hasta el 2019 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la versión 4 y, sin embargo, y ójala me equivoque, cuando salga no creo que sea mucho más potente ni tenga más memoria que la que ya hoy tiene la Rock64, posiblemente el 3.14 del 2019 (día catorce del mes tres, por el día Pi) se comprobará.
+Hasta el ~~2019~~ 2020 no se lanzará un nuevo modelo de Rasbperry Pi lo que sería la versión 4 y, sin embargo, y ójala me equivoque, cuando salga no creo que sea mucho más potente ni tenga más memoria que la que ya hoy tiene la Rock64, posiblemente el 3.14 (día catorce del mes tres, por el día Pi) se comprobará.
+
+Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 4 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para [trastear con la electrónica como LEDs, _displays_ y otros actuadores][blogbitix-serie-electronica]. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.
 
 {{% reference %}}
 {{< links >}}
