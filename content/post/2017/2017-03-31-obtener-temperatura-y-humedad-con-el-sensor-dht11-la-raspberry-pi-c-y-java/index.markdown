@@ -34,7 +34,7 @@ Dada las restricciones de tiempo que utiliza el sensor en el ejemplo usaré el l
         caption="Sensor DHT11" >}}
 </div>
 
-Lo primero que deberemos hacer para acceder a la información del sensor desde Java es crear una clase que contenga un método nativo que realizará la lectura de la información en C. Con la utilidad _javah_ obtendremos el archivo de cabecera que implementará el programa en C. Finalmente, siguiendo la especificación se escribe el código C que realice la lectura que en este caso usará la librería [wiringPi][wiringpi] para la interacción con los pines GPIO de la Raspberry Pi.
+Lo primero que deberemos hacer para acceder a la información del sensor desde Java es crear una clase que contenga un método nativo que realizará la lectura de la información en C. Con la utilidad _javah_ obtendremos el archivo de cabecera que implementará el programa en C. Finalmente, siguiendo la especificación se escribe el código C que realice la lectura que en este caso usará la librería [wiringPi][wiringpi] para la interacción con los _pines_ GPIO de la Raspberry Pi.
 
 El código en C invocará el método _setTemperatureHumidity_ pasando como parámetros los datos de temperatura y humedad leídos del sensor, el método nativo _read_ es utilizado por el código Java que controla el sensor para realizar la lectura en el código C.
 

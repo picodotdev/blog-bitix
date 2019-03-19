@@ -40,13 +40,13 @@ Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspber
     {{< figure year="2017" pid="214"
         image1="breadboard-cableado.jpg" thumb1="breadboard-cableado-thumb.jpg" title1="Breadboard y placa extesión GPIO wiringPi de 26 pines"
         image2="gpio-extension-40-pines-board.jpg" thumb2="gpio-extension-40-pines-board-thumb.jpg" title2="Placa extesión GPIO de 40 pines"
-        caption="Breadboard y placa extesión GPIO wiringPi de 26 pines y 40 pines" >}}
+        caption="Breadboard y placa extesión GPIO wiringPi de 26 _pines_ y 40 pines" >}}
     {{< figure year="2017" pid="214"
         image1="esquema-cableado.png" thumb1="esquema-cableado-thumb.png" title1="Esquema del cableado"
         caption="Esquema del cableado" >}}
 </div>
 
-Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspberry Pi a otra placa para hacer pruebas sin soldadura también conocidas como _breadboard_  resultará que en el programa Java al usar Diozero uso la nomenclatura Broadcom para identificar los pines pero al conectar los cables en la placa de pruebas uso la nomenclatura de wiringPi.
+Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspberry Pi a otra placa para hacer pruebas sin soldadura también conocidas como _breadboard_  resultará que en el programa Java al usar Diozero uso la nomenclatura Broadcom para identificar los _pines_ pero al conectar los cables en la placa de pruebas uso la nomenclatura de wiringPi.
 
 Para el ejemplo utilizaré la placa de extensión sin soldadura, una resistencia de 200 ohmios (dadas sus bandas de colores rojo, negro, marrón y dorado) y un diodo LED además de un par de cables macho-macho para realizar las conexiones electrónicas entre el GPIO 18 (según la nomenclatura de la librería Diozero y Broadcom, 12 según la nomenclatura del _header_ y 1 según la de wiringPi) y la resistencia además de entre el diodo y la línea de tierra. Los diodos LED poseen una orientación y hay que conectar la resistencia con el polo positivo del diodo LED, el polo positivo del diodo LED identifica porque es la patita larga y el negativo con tierra es la patita corta. Si realizamos la conexión al revés solo pasará que el diodo no se enciende pero no lo estropeará, la resistencia si es necesaria para no hacer que pase por el diodo una intensidad que lo estropee como se explica en
 [¿Qué resistencia ooner a un LED?](http://www.educachip.com/resistencia-led/).
