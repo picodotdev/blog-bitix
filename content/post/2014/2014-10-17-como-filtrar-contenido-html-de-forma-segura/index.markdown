@@ -35,8 +35,8 @@ El [código fuente completo de BS](https://github.com/picodotdev/blog-stack) jun
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-[Qué es y cómo hacer «web scraping» en Java][blogbitix-47]
-[Cómo hacer un substring de una cadena html][blogbitix-61]
+* [Qué es y cómo hacer «web scraping» en Java][blogbitix-47]
+* [Cómo hacer un substring de una cadena html][blogbitix-61]
 {{% /reference %}}
 
 {{% /post %}}

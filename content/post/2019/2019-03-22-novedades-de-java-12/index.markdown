@@ -43,7 +43,7 @@ Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas
 * [JDK 12: Switch Statements/Expressions in Action](https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action)
 * [Informe de JEP 325 Switch Expressions (Preview)](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8192963)
 
-{{< code file="SwitchExression.java" language="Java" options="" >}}
+{{< code file="SwitchExpression.java" language="Java" options="" >}}
 
 ### Teeing Collectors
 

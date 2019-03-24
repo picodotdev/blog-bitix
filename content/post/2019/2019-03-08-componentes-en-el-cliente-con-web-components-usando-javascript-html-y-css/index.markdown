@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["javascript", "html", "planeta-codigo"]
+tags: ["javascript", "planeta-codigo"]
 ---
 
 {{% post %}}

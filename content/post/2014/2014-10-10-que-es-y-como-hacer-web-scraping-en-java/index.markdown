@@ -23,7 +23,7 @@ En este artículo explicaré como hacer web «scraping» usando la librería [js
 
 Dada la URL, archivo o String con contenido HTML podemos extraer los enlaces de imágenes, enlaces, hojas de estilos, iconos como se muestra en el siguiente ejemplo:
 
-http://jsoup.org/cookbook/extracting-data/example-list-links
+* [Example program: list links](http://jsoup.org/cookbook/extracting-data/example-list-links)
 
 Un ejemplo práctico en el que podríamos hacer «scraping» es por ejemplo para extraer los enlaces torrent de descarga de todos los libros de un determinado autor o determinada serie de la página [epublibre](https://www.epublibre.org/), esto nos ahorraría tener que hacerlo manualmente. Además si usamos transmission a través de su API podríamos automatizar la descarga.
 
