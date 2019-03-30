@@ -62,7 +62,7 @@ Un ataque de XSS también puede producirse en contenidos distintos al HTML como 
 {{< postslinks >}}
 * [OWASP Java Encoder Project](https://www.owasp.org/index.php/OWASP_Java_Encoder_Project)
 * [OWASP Java HTML Sanitizer Project](https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project)
-* [Cross Site Tracing](https://www.owasp.org/index.php/Cross_Site_Tracing)
+* [Cross Site Tracing (XST)](https://www.owasp.org/index.php/Cross_Site_Tracing)
 * [MDN Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 {{% /reference %}}
 
