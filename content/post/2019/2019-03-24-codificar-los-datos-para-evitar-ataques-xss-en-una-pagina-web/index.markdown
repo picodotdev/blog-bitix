@@ -3,6 +3,7 @@ pid: 392
 title: "Codificar los datos para evitar ataques XSS en una página web"
 url: "/2019/03/codificar-los-datos-para-evitar-ataques-xss-en-una-pagina-web/"
 date: 2019-03-24T12:00:00+01:00
+date: 2019-03-29T09:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -37,7 +38,7 @@ En este caso al cargar la página en el navegador se muestra un mensaje _alert_ 
         caption="XSS" >}}
 </div>
 
-Pero ¿como consigue el usuario malicioso inyectar su código mediante parámetros u otros datos emitidos por la página insegura? Una opción sería enviar al usuario un enlace especialmente construido para que se aproveche del fallo de seguridad, el medio de hacerlo llegar puede ser un correo electrónico o un enlace en las redes sociales o páginas de gran tráfico como Facebook. Para que el enlace no sea tan evidente se puede utilizar un acortador de enlaces. Los comentarios son otro vector con el que el usuario malicioso puede insertar enlaces o el propio contenido si no son tratados adecuadamente.
+Pero ¿como consigue el usuario malicioso inyectar su código mediante parámetros u otros datos emitidos por la página insegura? Una opción sería enviar al usuario un enlace especialmente construido para que se aproveche del fallo de seguridad, el medio de hacerlo llegar puede ser un correo electrónico o un enlace en las redes sociales o páginas de gran tráfico como Facebook. Para que el enlace no sea tan evidente se puede utilizar un acortador de enlaces. Los comentarios son otro vector con el que el usuario malicioso puede insertar enlaces o el propio contenido si no son tratados adecuadamente donde sean mostrados como en la página web, de otros médios como correos electrónicos o una aplicación de _backoffice_ de uso interno que incluso puede tener privilegios de realizar acciones especialmente sensibles.
 
 Para evitar los ataques XSS la regla básica es codificar correctamente cualquier dato que se emita como resultado. En el caso de una aplicación web codificar correctamente el dato a emitir depende del contexto donde se incluya el dato para escapar correctamente los caracteres especiales de ese contexto. Los contextos puede ser como HTML, como un atributo de una etiqueta, como contenido HTML, como un bloque de JavaScript o como una variable de JavaScript.
 
@@ -61,6 +62,7 @@ Un ataque de XSS también puede producirse en contenidos distintos al HTML como 
 {{< postslinks >}}
 * [OWASP Java Encoder Project](https://www.owasp.org/index.php/OWASP_Java_Encoder_Project)
 * [OWASP Java HTML Sanitizer Project](https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project)
+* [Cross Site Tracing](https://www.owasp.org/index.php/Cross_Site_Tracing)
 * [MDN Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 {{% /reference %}}
 
