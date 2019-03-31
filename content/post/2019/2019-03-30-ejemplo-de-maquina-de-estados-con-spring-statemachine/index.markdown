@@ -3,7 +3,7 @@ pid: 394
 title: "Ejemplo de máquina de estados con Spring Statemachine"
 url: "/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/"
 date: 2019-03-31T06:30:00+01:00
-updated: 2019-03-31T13:00:00+01:00
+updated: 2019-03-31T23:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -18,7 +18,9 @@ tags: ["java", "planeta-codigo", "spring"]
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
-Hace ya unos años escribí un [ejemplo y un artículo con una implementación propia de una máquina de estado en Java][blogbitix-93], para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de [Spring][spring] útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto [Spring Statemachine][spring-statemachine] que precisamente tiene el mismo objetivo de implementar una máquina de estados poro lógicamente con mucha más funcionalidad que cubre muchos más casos de uso.
+Hace ya unos años escribí un [ejemplo y un artículo con una implementación propia de una máquina de estado en Java][blogbitix-93], para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de [Spring][spring] útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto [Spring Statemachine][spring-statemachine] que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso.
+
+El uso de una máquina de estados permite modelar un proceso con cierta complejidad. Puede ser el ciclo de vida de una compra, un envío, un proceso documental, financiero, ... cualquiera en el que intervengan estados, transiciones entre esos estados y realización de acciones necesarias para proporcionar la funcionalidad deseada.
 
 Una máquina de estados se compone de un conjunto de estados finito, de transiciones en esos estados, de eventos que disparan las transiciones y cambios de estado, de acciones asociadas a los estados, a las transiciones o a la entrada o salida de un estado, _guards_ que permiten decidir que transición se escoge entre varias en los _choices_, _forks_ en las que el flujo sigue por varios caminos en paralelo,     temporizadores que pasado un tiempo disparan una transición, seguridad para proteger la ejecución de eventos, transiciones y acciones con [Spring Security][spring-security], persistencia tanto para la configuración como para el estado en bases de datos relacionales o NoSQL como [Redis][redis] y [MongoDB][mongodb]. Una lista bastante completa de características que cubrirá las necesidades de la mayoría de aplicaciones.
 
