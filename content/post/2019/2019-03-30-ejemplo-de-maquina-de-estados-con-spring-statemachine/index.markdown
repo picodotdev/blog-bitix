@@ -2,7 +2,7 @@
 pid: 394
 title: "Ejemplo de máquina de estados con Spring Statemachine"
 url: "/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/"
-date: 2019-03-31T07:30:00+02:00
+date: 2019-03-31T06:30:00+01:00
 language: "es"
 rss: true
 sharing: true
