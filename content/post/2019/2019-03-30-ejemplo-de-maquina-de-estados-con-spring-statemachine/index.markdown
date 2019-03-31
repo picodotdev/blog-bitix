@@ -68,6 +68,8 @@ Estas son las dependencias necesarias a añadir n la herramienta de construcció
 {{< links >}}
 {{< postslinks >}}
 * [Spring Statemachine Javadoc](https://docs.spring.io/spring-statemachine/docs/current/api/)
+* [A Guide to the Spring State Machine Project](https://www.baeldung.com/spring-state-machine)
+* [Spring State Machine: what is it and do you need it?](https://codeburst.io/spring-state-machine-what-is-it-and-do-you-need-it-e894c78f5d84)
 {{% /reference %}}
 
 {{% /post %}}
