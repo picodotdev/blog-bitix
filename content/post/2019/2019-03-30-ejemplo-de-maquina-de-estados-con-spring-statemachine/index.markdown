@@ -3,6 +3,7 @@ pid: 394
 title: "Ejemplo de máquina de estados con Spring Statemachine"
 url: "/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/"
 date: 2019-03-31T06:30:00+01:00
+updated: 2019-03-31T13:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -21,7 +22,9 @@ Hace ya unos años escribí un [ejemplo y un artículo con una implementación p
 
 Una máquina de estados se compone de un conjunto de estados finito, de transiciones en esos estados, de eventos que disparan las transiciones y cambios de estado, de acciones asociadas a los estados, a las transiciones o a la entrada o salida de un estado, _guards_ que permiten decidir que transición se escoge entre varias en los _choices_, _forks_ en las que el flujo sigue por varios caminos en paralelo,     temporizadores que pasado un tiempo disparan una transición, seguridad para proteger la ejecución de eventos, transiciones y acciones con [Spring Security][spring-security], persistencia tanto para la configuración como para el estado en bases de datos relacionales o NoSQL como [Redis][redis] y [MongoDB][mongodb]. Una lista bastante completa de características que cubrirá las necesidades de la mayoría de aplicaciones.
 
-En el ejemplo he definido el siguente grafo de estados y transiciones que contiene estado inicial, _choice_, _fork_, _join_, jerarquía de estados con en el estado _Tasks_ y un estado final. Una selección completa del conjunto de tipos de estados.
+Aparte de proporcionar una librería para crear máquinas de estados en Java otra ventaja es que el fujo de un proceso queda recogido y documentado en la implementación de la máquina de estados. De que estados, transiciones y eventos se compone en un punto más centralizado lo que en otro caso podría estar repartido por el código de la aplicación utilizando una solución propia codificada expresamente para el caso.  
+
+En el ejemplo he definido el siguente grafo de estados y transiciones que contiene estado inicial, _choice_, _fork_, _join_, jerarquía de estados con en el estado _Tasks_ y un estado final. Una selección completa del conjunto de tipos de estados. En este caso las flechas van únicamente en una dirección pero perfectamente el flujo podría tener transiciones que volviesen a estados anteriores creando ciclos.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -55,6 +58,17 @@ Otro caso de uso posible es en vez de iniciar la máquina de estados desde el in
 {{< code file="Main-3.java" language="Java" options="" >}}
 
 Por defecto el contenedor de dependencias de Spring utiliza el [@Scope](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/beans/factory/config/Scope.html) _singleton_ para los _beans_ de modo que solo existe una única instancia, como las máquinas tiene estado no pueden compartirse, hay que crear una nueva en caso de querer utilizar dos simultáneamente como sería el caso de una aplicación web o un proceso que escucha mensajes de una cola, utilizando el _scope prototype_ se crea una instancia cada vez que se necesite. La creación de más máquina de estado se indica en la documentación que es algo costoso para no tener que crearlas, tener varias instancias y limitado a cierto número se puede utilizar un [_pool_ de máquinas de estado](https://docs.spring.io/spring-statemachine/docs/2.1.1.RELEASE/reference/htmlsingle/#statemachine-examples-eventservice).
+
+En un cambio de estado se produce la siguiente secuencia de eventos y acciones.
+
+* Se notifica del inicio de la transición.
+* Se ejecuta la acción asociada a la transición.
+* Se notifica de la transición, de la salida del estado anterior y de la entrada en el nuevo.
+* Se ejecuta la acción de entrada al estado y del estado.
+* Se notifica del cambio de estado.
+* Se notifica de la finalización de la transición.
+
+{{< code file="System.out-3" language="Plaintext" options="" >}}
 
 Estas son las dependencias necesarias a añadir n la herramienta de construcción y la salida en la terminal de las trazas ejecutando la máquina de estados desde el estado inicial e inicializada desde un estado en concreto.
 
