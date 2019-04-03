@@ -10,6 +10,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["java", "planeta-codigo", "programacion", "software", "spring"]
+series: ["spring-cloud"]
 ---
 
 {{% post %}}
