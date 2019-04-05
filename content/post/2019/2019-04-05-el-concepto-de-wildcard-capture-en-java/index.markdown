@@ -26,7 +26,7 @@ El siguiente código produce un error de compilación con el mensaje _capture of
 
 El método _bar()_ define como parámetro una lista _raw_ y es capaz de extraer un _Object_ ya que todo objeto hereda de él e insetar un _Object_ ya que es una lista _raw_, [el compilador realiza el _type erasure_][blogbitix-308] y la considera como _List\<Object>_ pero el compilador advierte del posible error en tiempo de ejecución con el mensaje _Note: WildcardError.java uses unchecked or unsafe operations_, en este caso la advertencia es innecesaria ya que se inserta un elemento extraído de la propia lista, se puede suprimir anotando el método con _@SuppressWarnings("unchecked")_.
 
-Para establecer una relación entre dos tipos se deben usar _type parameters_, en este caso para el tipo que se extrae de la lista y el tipo insertado en la lista. Para que el código anterior compile hay que escribir un método que capture el tipo del _wildcard_, estos métodos por convención se nombran añadiendo al final la palabra _Helper_.
+Para establecer una relación entre dos tipos se deben usar _type parameters_, en este caso para el tipo que se extrae de la lista y el tipo insertado en la lista. Para que el código anterior compile hay que escribir un método que capture el tipo del _wildcard_, estos métodos por convención se nombran añadiendo al final la palabra _Helper_. En este caso otra alternativa es definir el método como en _bar()_ aunque un _List\<?>_ y un _List\<T>_ no son lo mismo el primero admite más tipos de listas parametrizadas.
 
 {{< code file="Wildcard.java" language="Java" options="" >}}
 
