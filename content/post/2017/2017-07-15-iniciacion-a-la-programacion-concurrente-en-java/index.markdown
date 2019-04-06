@@ -33,7 +33,7 @@ El primer ejemplo que muestro es usando concurrencia ejecutar varias tareas y co
 
 {{< code file="Main.java" language="Java" options="" >}}
 
-{{< asciinema id="GjXM3ACFPPW027eLqKiZlrvMh" caption="Ejecución secuencial y concurrente de tareas" >}}
+{{< asciinema id="129084" caption="Ejecución secuencial y concurrente de tareas" >}}
 
 Dos de los problemas más conocidos en la programación concurrente son el de [La cena de los filósofos](https://es.wikipedia.org/wiki/Problema_de_la_cena_de_los_fil%C3%B3sofos) y el de [El barbero durmiente](https://es.wikipedia.org/wiki/Problema_del_barbero_durmiente). Usando algunas de las primitivas comentadas en este artículo este sería el código para para resolver ambos problemas en Java.
 
@@ -50,7 +50,7 @@ Esta implementación de los filósofos no es del todo correcta debido a que un f
 {{< code file="Fork.java" language="Java" options="" >}}
 {{< code file="Philosopher.java" language="Java" options="" >}}
 
-{{< asciinema id="kxDfAc6SNNZ3EFdR4Zrc1U163" caption="Ejemplo de concurrencia de los filósofos" >}}
+{{< asciinema id="129083" caption="Ejemplo de concurrencia de los filósofos" >}}
 
 En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acumulan ya que estos entran en la tienda a razón de 1 entre 1500 y 3500ms y el barbero tarda afeitar un cliente entre 2000 y 7000ms. Poniendo en la barbería dos barberos los clientes ya no se acumulan en la sala de espera.
 
@@ -60,9 +60,9 @@ En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acu
 {{< code file="Barber.java" language="Java" options="" >}}
 {{< code file="Client.java" language="Java" options="" >}}
 
-{{< asciinema id="BeA6bcKy5yoSGfByRUfE1HfYD" caption="Ejemplo de concurrencia del barbero (1 barbero)" >}}
+{{< asciinema id="129098" caption="Ejemplo de concurrencia del barbero (1 barbero)" >}}
 
-{{< asciinema id="K7Ug6RT60mjWRbNcwRGapw7V6" caption="Ejemplo de concurrencia del barbero (2 barberos)" >}}
+{{< asciinema id="129099" caption="Ejemplo de concurrencia del barbero (2 barberos)" >}}
 
 Estos no son los únicos ejemplos clásicos otro es el del [agente y los fumadores][blogbitix-303].
 
