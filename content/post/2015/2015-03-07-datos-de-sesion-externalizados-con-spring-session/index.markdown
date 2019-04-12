@@ -55,7 +55,7 @@ Examinando los datos en Redis se puede ver que se ha creado una clave con el mis
 
 En el momento de escribir este artículo Spring Session es un proyecto reciente y solo soporta la opción de Redis como caché externa pero seguramente con nuevas versiones soporte otras opciones como _memcached_, guardar la sesión en una _cookie_ o en una base de datos relacional. La solución propuesta por Spring Session es válida para cualquier servidor de aplicaciones ya que se basa en crear un filtro en la aplicación que proporciona una versión modificada de [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) mediante el cual se guardan los datos de forma externa.
 
-Otras posibilidades ofrecidas por Spring Session son múltiples sesiones en la misma instancia del navegador y soporte para aplicaciones RESTful y WebSocket.
+Otras posibilidades ofrecidas por Spring Session son múltiples sesiones en la misma instancia del navegador y soporte para aplicaciones REST y WebSocket. Para aumentar la seguridad se puede [aumentar el tamaño del identificativo de la sesión almacenada en su _cookie_][blogbitix-397].
 
 {{% reference %}}
 {{< links >}}
