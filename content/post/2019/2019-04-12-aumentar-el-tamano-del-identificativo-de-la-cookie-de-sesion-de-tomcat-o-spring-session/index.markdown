@@ -3,7 +3,7 @@ pid: 397
 title: "Aumentar el tamaño del identificativo de la cookie de sesión de Tomcat o Spring Session"
 url: "/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/"
 date: 2019-04-12T17:00:00+02:00
-updated: 2019-04-12T18:00:00+02:00
+updated: 2019-04-12T19:00:00+02:00
 language: "es"
 rss: true
 sharing: true
