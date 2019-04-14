@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["java", "planeta-codigo", "spring"]
+tags: ["java", "planeta-codigo", "seguridad", "spring"]
 ---
 
 {{% post %}}
