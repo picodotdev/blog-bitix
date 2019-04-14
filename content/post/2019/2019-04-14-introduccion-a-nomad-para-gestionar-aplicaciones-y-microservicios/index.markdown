@@ -3,6 +3,7 @@ pid: 398
 title: "Introducción a Nomad para gestionar aplicaciones y microservicios"
 url: "/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/"
 date: 2019-04-14T13:00:00+02:00
+updated: 2019-04-14T20:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -15,7 +16,7 @@ tags: ["planeta-codigo", "programacion", "software"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="nomad.svg" title1="Nomad" width1="300" image2="consul.svg" title2="Consul" width2="300" image3="hashicorp.svg" title3="HashiCorp" width3="200" >}}
+{{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="consul.svg" title2="Consul" width2="200" image3="hashicorp.svg" title3="HashiCorp" width3="200" >}}
 
 En las arquitecturas de aplicaciones basadas en microservicios cada microservicio o simplemente servicio es una aplicación distinta e independiente, son varias aplicaciones que hay que gestionar y desplegar de forma individual o de forma coordinada.
 
@@ -27,7 +28,7 @@ Hay varias tecnologías para gestionar los microservicios y crear _clusters_ de 
 
 _Nomad_ a diferencia _Docker_ no solo puede gestionar contenedores _docker_ sino también tareas del sistema y otras como maquinas virtuales [qemu][qemu] o contenedores con [rkt], a diferencia de _Kubernetes_ es mucho mas sencilla pero conservando funcionalidad suficiente para muchos casos de uso. _Nomad_ requiere de otra de las herramientas de HashiCorp que es [Consul][consul] para el registro y descubrimiento y para la configuración del _cluster_, también se integra con otras de sus herramientas como [Vault][vault] para guardar cifrados datos sensibles como contraseñas y certificados. Con [Connect](https://www.consul.io/docs/connect/platform/nomad.html) es capaz de proporcionar conexión TLS con autenticación mutua de forma transparente para los servicios.
 
-Los _jobs_ son la unidad de trabajo que contienen la definición de los servicios, se definen en un [archivo de configuración](https://www.nomadproject.io/docs/job-specification/index.html) donde los elementos son el nombre, los grupos de tareas, las tareas y en cada tarea el _driver_ que usa dependiendo del cual se proporciona la configuración apropiada. Se pueden configurar variables de entorno, memoria asignada a cada tarea, propiedades de red y CPU.
+Los _jobs_ son la unidad de trabajo que contienen la definición de los servicios, se definen en un [archivo de configuración](https://www.nomadproject.io/docs/job-specification/index.html) donde los elementos son el nombre, los grupos de tareas, las tareas y en cada tarea el _driver_ que usa dependiendo del cual se proporciona la configuración apropiada. El _driver_ determina como es gestionada el tipo de tarea puede ser un conteendor de _docker_, un proceso del sistema, una máquina virtual de _qemu_ o un contenedor _rkt_, a diferencia de _Docker Swarm_ que solo puede gestionar contenedores _docker_. Se pueden configurar variables de entorno, memoria asignada a cada tarea, propiedades de red y CPU.
 
 _Nomad_ y _Consul_ cada uno son un binario ejecutable sin ninguna otra dependencia. Basta con descargarlos e incluirlos en el _path_ del sistema. En este ejemplo hay definido un _job_ compuesto por una tarea de un contenedor _docker_ de [nginx][nginx] configurado en un puerto aleatorio y con 1 GB de memoria para cada una de las dos instancias del servicio. Dado que lo usa es necesario [instalar Docker][blogbitix-50].
 
