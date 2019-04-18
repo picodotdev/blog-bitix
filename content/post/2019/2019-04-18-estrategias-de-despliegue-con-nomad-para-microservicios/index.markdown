@@ -1,8 +1,9 @@
 ---
 pid: 399
-title: "Estrategias de despliegue con Nomad para microservicios"
-url: "/2019/04/estrategias-de-despliegue-con-nomad-para-microservicios/"
+title: "Estrategias de despliegue para microservicios con Nomad"
+url: "/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/"
 date: 2019-04-18T10:00:00+02:00
+updated: 2019-04-18T11:30:00+02:00
 language: "es"
 rss: true
 sharing: true
