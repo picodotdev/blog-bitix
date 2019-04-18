@@ -54,7 +54,7 @@ También poseen una interfaz web integrada en la que consultar la misma informac
         caption="Interfaces web de Consul y Nomad" >}}
 </div>
 
-Nomad permite varias estrategias para actualizar los _jobs_ a una nueva versión de un servicio, basta modificar la configuración del _job_, volverlo a enviar a Nomad y este se encarga de actualizar las instancias siguiendo la estrategia _rolling_, _blue/green_ o _canary_ definida en el _job_, pero eso lo muestro mas detalladamente en otro artículo.
+Nomad permite varias estrategias para actualizar los _jobs_ a una nueva versión de un servicio, basta modificar la configuración del _job_, volverlo a enviar a Nomad y este se encarga de [actualizar las instancias siguiendo la estrategia _rolling_, _blue/green_ o _canary_][blogbitix-399] definida en el _job_, pero eso lo muestro mas detalladamente en otro artículo.
 
 La [documentación de Nomad](https://www.nomadproject.io/docs/index.html), Nomad y otros productos de HashiCorp dedicados a la infraestructura en la nube esta muy bien explicada y detallada, este artículo solo es un resumen de las partes básicas para conocer como empezar a usarlo. En el siguiente vídeo se hace una pequeña explicación y demostración.
 
