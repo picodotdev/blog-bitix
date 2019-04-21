@@ -23,8 +23,8 @@ Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrol
 Apache Tapestry es un _framework_ orientado a componentes para crear aplicaciones web rápidas, dinámicas, robustas y altamente escalables en la plataforma Java. Al basarse en componentes es distinto de los muchos basados en acciones similares en esencia a Struts que podemos encontrar en la plataforma Java como [Spring](http://projects.spring.io/spring-framework/), [Grails][grails] y [Play!](http://www.playframework.com/) y también de los muchos otros en los que la principal diferencia es el lenguaje como [Django](https://www.djangoproject.com/) (Python), [Symfony](http://symfony.com/) (PHP), [ASP.NET MVC](http://www.asp.net/mvc) (C#) o [Ruby On Rails](http://rubyonrails.org/) (Ruby).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2014" pid="12"
-        image1="portada-PugInTapestry.png" thumb1="portada-PugInTapestry-thumb.png" >}}
+    {{< figureproc
+        image1="PugInTapestry (Portada).png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="" >}}
 </div>
 
 Incluyendo la descripción de las características del _framework_ el libro trata la mayoría de aspectos que puede necesitar una aplicación o página web, entre ellos:
@@ -46,18 +46,12 @@ Incluyendo la descripción de las características del _framework_ el libro trat
 
 El libro está basado en la siguiente versión de Tapestry, la 5.4, que actualmente está en estado beta (aunque la mayoría servirá para la versión final y para la versión 5.3 actual). Esta nueva versión tiene como principal novedad la parte cliente de las aplicaciones con la inclusión de RequireJS y la definición de los archivos JavaScript mediante módulos. También incorpora una capa de abstracción que permite usar cualquier librería como apoyo a la funcionalidad que necesita proporcionar ya sea Prototype, jQuery o cualquier otra que prefiramos o nueva que se desarrolle en un futuro.
 
-Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este _framework_. Además en [mi blog](https://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](https://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
+Además del libro he desarrollado una [pequeña aplicación con unos pocos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry) (disponible en mi repositorio de GitHub) que puedes probar en tu equipo sin necesidad de instalar nada previamente, salvo Git y el JDK. Más de 250 páginas de documentación que permitirán al lector descubrir mucha de la magia que puede ofrecer este _framework_. Además en [mi blog](https://picodotdev.github.io/blog-bitix/) (y [elblogdepicodev](https://elblogdepicodev.blogspot.com.es)) puedes encontrar varias entradas sobre muchos de los temas tratados de forma individual y que he utilizado para escribir el libro.
 
-Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00€ impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico que prefieras ya sea PDF, EPUB, MOBI o HTML. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.
+Puedes obtenerlo desde los enlaces que proporciono de forma totalmente libre y al inmejorable precio de 0,00€ impuestos incluidos. Por si fuera poco puedes conseguirlo en el formato electrónico PDF. Tienes mi permiso (es más, animo a ello) para compartirlo, distribuirlo en redes P2P, subirlo a cualquier página web o «piratearlo» cuantas veces quieras, siempre que respetes la licencia Creative Commons bajo la cual lo he publicado.
 
 <div class="buttons">
     <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf" class="btn btn-lg btn-success">Descargar el libro (PDF)</a>
-    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.epub" class="btn btn-lg btn-success">EPUB</a>
-    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.mobi" class="btn btn-lg btn-success">MOBI</a>
-    <a href="https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.zip" class="btn btn-lg btn-success">HTML</a>
-</div>
-
-<div class="buttons">
     <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry" class="btn btn-lg btn-success">Obtener código fuente ejemplos</a>
 </div>
 
@@ -121,12 +115,6 @@ Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java 
 ¿Te ha parecido poco? [¡Descubre alguna más en una presentación!][blogbitix-11].
 
 ¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf)
-
-{{% warning %}}
-{{< links >}}
-{{< postslinks >}}
-Inicialmente creé una página específica para alojar el libro con una aplicación de <a href="https://www.appfog.com/">AppFog</a> pero con esta entrada lo haré un mi propio blog ya que en el plan free han reducido considerablemente de 2 GiB a 512 MiB el tamaño de memoria del que disponen las aplicaciones. Hasta tal punto que una aplicación web java con solo jsps no se inicia correctamente.
-{{% /warning %}}
 
 {{% reference %}}
 {{< links >}}
