@@ -1,8 +1,8 @@
 
 ---
 pid: 400
-title: "Servicios con persistencia en el orquestador Nomad"
-url: "/2019/04/servicios-con-persistencia-en-el-orquestador-nomad/"
+title: "Servicios con persistencia en el orquestador de microservicos Nomad"
+url: "/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicos-nomad/"
 date: 2019-04-26T19:00:00+02:00
 language: "es"
 rss: true
