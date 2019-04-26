@@ -4,6 +4,7 @@ pid: 400
 title: "Servicios con persistencia en el orquestador de microservicos Nomad"
 url: "/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicos-nomad/"
 date: 2019-04-26T19:00:00+02:00
+updated: 2019-04-26T20:00:00+02:00
 language: "es"
 rss: true
 sharing: true
