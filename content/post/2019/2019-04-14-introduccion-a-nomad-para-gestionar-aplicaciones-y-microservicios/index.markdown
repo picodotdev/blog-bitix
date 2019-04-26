@@ -65,6 +65,8 @@ La [documentación de Nomad](https://www.nomadproject.io/docs/index.html), Nomad
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [Estrategias de despliegue para microservicios con Nomad][blogbitix-399]
+* [Servicios con persistencia en el orquestador Nomad][blogbitix-400]
 * [Nomad – Simple deployment and monitoring of applications](http://targetveb.com/nomad-simple-deployment-monitoring-applications.html)
 {{% /reference %}}
 
