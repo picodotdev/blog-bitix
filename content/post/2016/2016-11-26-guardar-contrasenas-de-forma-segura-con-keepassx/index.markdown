@@ -60,6 +60,6 @@ KeePassXC es una herramienta que no tiene más complejidad, podemos asociar algu
 
 Si somos nosotros los que implementamos un servicio con el método de autenticación de usuario y contraseña deberíamos [almacenar las contraseñas de forma segura usando «password salted hasing»][blogbitix-75].
 
-Otras formas de guardar las contraseñas es en un [archivo cifrado con GPG][elblogdepicodev-181] que desciframos cuando queramos usar alguna contraseña o en un [sistema de archivos cifrado como con EncFS][blogbitix-126] que lo montamos para acceder a archivo de texto con las contraseñas. [StrongPassowrdGenerator][strongpasswordgenerator] en una página web con la que podemos generar contraseñas usando estas mismas preferencias desde el navegador.
+Otras formas de guardar las contraseñas es en un [archivo cifrado con GPG][elblogdepicodev-181] que desciframos cuando queramos usar alguna contraseña o en un [sistema de archivos cifrado como con EncFS][blogbitix-126] que lo montamos para acceder a archivo de texto con las contraseñas. [Strong Password Generator][strongpasswordgenerator] en una página web con la que podemos generar contraseñas usando estas mismas preferencias desde el navegador.
 
 {{% /post %}}

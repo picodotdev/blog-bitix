@@ -1,4 +1,4 @@
-{{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
+{{ $paginator := .Paginate (where .Pages "Type" "post") }}
 
 {{ partial "html-head.html" . }}
 <body>
