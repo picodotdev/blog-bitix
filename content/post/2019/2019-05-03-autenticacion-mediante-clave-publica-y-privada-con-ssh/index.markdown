@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["gnu-linux", "planeta-codigo"]
+tags: ["gnu-linux", "planeta-codigo", "seguridad"]
 ---
 
 {{% post %}}
