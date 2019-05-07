@@ -35,17 +35,17 @@ He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.
     {{< figureproc
         image1="motorola-defy.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Motorola Defy"
         image2="samsung-galaxy-s3.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S3"        
-        caption="Móviles" >}}
+        caption="Móviles que he tenido" >}}
 </div>
 
 Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, en modo espera me aguanta un día pero con un uso algo más intensivo la batería baja rápidamente y requiere alguna carga más de una carga al día. Algunas aplicaciones como GMail y Twitter se nota que el procesador Exynos 4412 quad-core que tiene cumple pero no va sobrado para la época actual. En total el S3 habrá tenido 7 años de vida, menos lo que no sería mucho si no lo hubiese dado un segundo uso y un tercero con LineageOS.
 
-Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450€ que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
+Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9 SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450€ que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
 
 * [Especificaciones Samsung Galaxy A50](https://www.gsmarena.com/samsung_galaxy_a50-9554.php)
 * [Especificaciones Samsung Galaxy A70](https://www.gsmarena.com/samsung_galaxy_a70-9646.php)
 * [Especificaciones Xiaomi Mi 9](https://www.gsmarena.com/xiaomi_mi_9-9507.php)
-* [Especificaciones Xiaomi Mi 9SE](https://www.gsmarena.com/xiaomi_mi_9_se-9583.php)
+* [Especificaciones Xiaomi Mi 9 SE](https://www.gsmarena.com/xiaomi_mi_9_se-9583.php)
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07PDZLZ9V&linkId=e6aff6e43c47d613b79a67b98759ef5a"></iframe>

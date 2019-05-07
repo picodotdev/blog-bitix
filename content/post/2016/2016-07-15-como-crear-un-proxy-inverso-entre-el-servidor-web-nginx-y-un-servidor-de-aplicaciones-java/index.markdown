@@ -17,7 +17,7 @@ summary: "Continuando la serie de artículos sobre varios aspectos realizados mu
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="nginx.png" title1="Nginx" image2="tomcat.png" title2="Tomcat" >}}
+{{< logotype image1="nginx.png" title1="Nginx" width1="200" image2="tomcat.svg" title2="Tomcat" width2="200" >}}
 
 Las aplicaciones web dinámicas Java se despliegan en un contenedor de _servlets_ o un [servidor de aplicaciones como WildFly][blogbitix-10] que implementa las [especificaciones de los estándares de Java EE][blogbitix-131] pero es habitual que los usuarios no accedan directamente al contenedor de aplicaciones Java sino que se ponga delante un servidor web como [Apache][apache-httpd] o [Nginx][nginx] con la tarea de que realice algunas tareas. Las tareas que puede realizar un servidor web son varias como:
 
