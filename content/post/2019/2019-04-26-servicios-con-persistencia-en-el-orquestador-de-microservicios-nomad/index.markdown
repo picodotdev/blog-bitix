@@ -11,6 +11,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["planeta-codigo", "programacion", "software"]
+series: ["hashicorp"]
 ---
 
 {{% post %}}
