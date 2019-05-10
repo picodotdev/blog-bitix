@@ -16,7 +16,7 @@ summary: "Los sistemas GNU/Linux pueden ser igual de seguros o inseguros que los
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
+{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Habitualmente se comenta que los sistemas con alguna distribución [GNU][gnu]/[Linux][linux] son más seguros que los sistemas [Windows][windows]. Probablemente bien configurados y debidamente actualizados ambas opciones sean muy seguras. Sin embargo, desde el punto de vista de un usuario es común que Windows se vea infectado con virus o _malware_ aún con un antivirus instalado.
 

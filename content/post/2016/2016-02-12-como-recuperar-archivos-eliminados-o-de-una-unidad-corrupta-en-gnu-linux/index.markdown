@@ -15,7 +15,7 @@ summary: "Muchos archivos y su contenido son recuperables aún después de elimi
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" wdth2="200" >}}
+{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Hace un tiempo me ocurrió que una memoria USB por algún motivo no se montaba bien ni en un sistema Windows ni tampoco en un sistema Linux. El _pendrive_ estaba formateado con el sistema de archivos NTFS y quizá por haberlo desmontado mal se corrompió.
 

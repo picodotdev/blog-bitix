@@ -16,7 +16,7 @@ summary: "En esta serie de artículos sobre juegos vamos a ver que en GNU/Linux 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
+{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Otro de los juegos clásicos junto con el ajedrez también para dos personas que requiere pensar y evaluar gran cantidad de posibles movimientos es el juego de origen chino Go. En [GNU][gnu]/[Linux][linux] e instalado el paquete [gnugo](https://www.archlinux.org/packages/extra/x86_64/gnugo/) podremos jugar a este antiguo juego de estrategia tan o más complicado que el propio ajedrez por las diferentes estrategias que se pueden desarrollar.
 

@@ -18,7 +18,7 @@ summary: "Hacer una compra informada no es fácil cualquiera que sea el producto
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="dyson.png" title="Dyson" >}}
+{{< logotype image="dyson.png" title="Dyson" width="300" >}}
 
 Desde hace un tiempo tenía la necesidad un aspirador. De aspiradoras sabía lo básico por lo que como con cualquier otra compra es conveniente informarse ya que hay muchas opciones y precios diferentes, el ámbito de las aspiradoras es un pequeño mundo y también cuesta decidirse si la intención es realizar una buena compra. Empecé mirando en varias tiendas a través de internet como [Amazon](https://www.amazon.es/), [Media Markt](http://www.mediamarkt.es/) y [El Corte Inglés][elcorteingles]. Lo que sabía era que había aspiradoras con bolsa, sin bolsa, de trineo, verticales y más recientemente han empezado a aparecer robots autónomos todas en un rango de precios de entre 80€ y 550€.
 

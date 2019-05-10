@@ -16,7 +16,7 @@ tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion", "patroci
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="keepcoding.png" title1="KeepCoding" >}}
+{{< logotype image1="keepcoding.png" title1="KeepCoding" width1="300" >}}
 
 En internet hay cantidad de recursos disponibles para aprender de prácticamente cualquier cosas que queramos. También con libros técnicos como los [8 libros que recomiendo para mejorar como programadores][blogbitix-55] de los que es posible aprender de forma profunda sobre un tema en concreto. Estando suscritos a blogs como este también se pueden aprender ciertos detalles sobre un tema o obtener una pequeña introducción con en ocasiones un ejemplo de código funcional.
 

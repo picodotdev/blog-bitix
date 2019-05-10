@@ -16,7 +16,7 @@ summary: "¿Queres comprar un Mac, tienes dudas o deseas probar su sistema opera
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="apple.png" title1="Apple" image2="macos.png" title2="macOS" >}}
+{{< logotype image1="apple.svg" title1="Apple" width1="200" image2="macos.svg" title2="macOS" width2="300" >}}
 
 Estaría leyendo alguna noticia, ahora no me acuerdo que me despertaría la curiosidad pero me pregunté si es posible usar de forma virtualizada [macOS][macos] con [VirtualBox][virtualbox] tanto en [Windows][windows] como en [GNU][gnu]/[Linux][linux]. Usar lo que se conoce como _hackintosh_, esto es _hackear_ el sistema operativo Macinstosh de los equipos de [Apple][apple] para que se ejecute en cualquier un dispositivo no soportado. En la página web [hackintosh](http://www.hackintosh.com/) puede encontrarse información diversa sobre el tema como instrucciones, vídeos, comunidades, ....
 

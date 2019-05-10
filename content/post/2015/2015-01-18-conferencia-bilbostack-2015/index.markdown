@@ -15,7 +15,7 @@ series: ["bilbostack"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="bilbostack.png" title="BilboStack" >}}
+{{< logotype image="bilbostack.png" title="BilboStack" width="300" >}}
 
 Un año más una de las primeras conferencias del año se ha celebrado en Bilbao, la [BilboStack][bilbostack] 2015. Esta edición del 2015 ha sido la cuarta entrega donde varios profesionales del sector de las tecnologías han hablado de diversos temas, desde programación hasta metodologías de desarrollo y algunas otras cosas relacionadas con la tecnología y el desarrollo. Cada año la BilboStack acoge a más asistentes en la [Universidad de Deusto](http://www.deusto.es) dando lugar este año a un cambio de ubicación dentro de la propia universidad para poder dar cabida a todos de forma más cómoda. Como en ediciones anteriores este año ha seguido manteniéndose gratuita, lo único necesario ha sido el registro para adquirir la entrada.
 

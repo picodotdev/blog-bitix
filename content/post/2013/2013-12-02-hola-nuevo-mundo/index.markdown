@@ -14,7 +14,7 @@ tags: ["blog", "planeta-linux", "planeta-codigo"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="octopress.png" title="Octopress" >}}
+{{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 Esta es la última entrada que publicaré en el [elblogdepicodev.blogspot.com.es][elblogdepicodev] o la primera de [picodotdev.github.io/blog-bitix][blogbitix] dependiendo del blog al que hayas accedido, es decir, seguiré teniendo un blog y escribiendo sobre la temática alrededor de la tecnología como hasta ahora pero a partir de este momento todo el nuevo contenido que publique lo haré en el nuevo blog [picodotdev.github.io/blog-bitix][blogbitix], por lo que si estás suscrito al feed de elblogdepicodev te recomiendo que te suscribas al [feed de bitix][blogbitix-feed] para no perderte ninguna de las nuevas entradas que publique.
 

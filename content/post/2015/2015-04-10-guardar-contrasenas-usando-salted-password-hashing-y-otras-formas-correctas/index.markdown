@@ -14,14 +14,14 @@ tags: ["java", "programacion", "seguridad", "tapestry", "blog-stack", "planeta-l
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-shiro.png" title="Apache Shiro" >}}
+{{< logotype image1="apache-shiro.png" title1="Apache Shiro" width1="300">}}
 
 Para cada servicio deberíamos emplear una contraseña de una longitud de al menos 8 caracteres que incluya letras en minúscula, mayúscula, números y símbolos, una herramienta que podemos utilizar para generar contraseñas más seguras con los criterios que indiquemos es [Strong Password Generator](http://strongpasswordgenerator.com/). Sin embargo, recordar cada una de estas contraseñas es muy difícil de modo que es habitual que utilicemos la misma contraseña para varios o todos los servicios y no empleando todos los criterios anteriores. Por otro lado, los desarrolladores no deberíamos guardar en la base de datos las contraseñas que nos entregan los usuarios en texto plano, para evitar guardalas en texto plano hace un tiempo se utilizaba únicamente una función de _hashing_ unidireccional como MD5 o SHA, de este modo si la base de datos fuese comprometida en teoría no podrían conocer la contraseña original. En este artículo comentaré que aún guardando las contraseñas con una función de _hashing_ no es suficiente para hacerlas seguras y comentaré una implementación con [Apache Shiro][shiro] de una de las ideas propuestas.
 
 ### Algo de teoría y algunas explicaciones
 
 <div class="logotypes" style="float: right; text-align: right;">
-	<img src="assets/images/logotipos/java.png" class="right" alt="Java" title="Java">
+	<img src="assets/images/logotipos/java.svg" class="right" alt="Java" title="Java" width="200">
 </div>
 
 Aunque guardemos las contraseñas con MD5 o alguna variante de SHA hoy en día no es suficiente para que en caso de que alguien obtenga los _hashes_ de las contraseñas de la base de datos pueda averiguarlas o dar con una que genere el mismo _hash_, usando estas funciones se pueden encontrar colisiones en un tiempo razonable y por tanto ya no se consideran seguras. Dada la computación actual de los procesadores y las tarjetas gráficas una contraseña débil puede romperse usando un [ataque de fuerza bruta](https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta) y quizá antes con un [ataque de diccionario](https://es.wikipedia.org/wiki/Ataque_de_diccionario) que pruebe las más comunes. Muchos usuarios no tienen contraseñas largas ni utilizan letras en minúscula, mayúscula, números y símbolos, muchos usuarios utilizan contraseñas sencillas para ser recordadas más fácilmente, y aún _hasheando_ las contraseñas pueden ser averiguadas. También se pueden usar [tablas arcoiris](https://es.wikipedia.org/wiki/Tabla_arco%C3%ADris) o _rainbow tables_ con los _hashes_ precalculados de las contraseñas de un diccionario con lo que el tiempo empleado para romper una puede requerir poco tiempo de computación.

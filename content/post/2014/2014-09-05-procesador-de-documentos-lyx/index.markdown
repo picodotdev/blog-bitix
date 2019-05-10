@@ -14,7 +14,7 @@ tags: ["software", "software-libre", "planeta-codigo", "planeta-linux", "blog-st
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="lyx.png" title="LyX" >}}
+{{< logotype image="lyx.png" title="LyX" width="200" >}}
 
 Hace unos días publiqué una [nueva edición del libro PlugIn Tapestry][blogbitix-40], sobre el _framework_ [Apache Tapestry][tapestry] para el desarrollo de páginas y aplicaciones web con Java. En este artículo quiero recoger las herramientas que utilicé para escribirlo y algunas cosas básicas a conocer para tener un libro con un aspecto decente y más prefesional. Son cosas muy básicas pero que a mi me costo un poco poco encontrarlas para conseguir lo que quería, quizá a alguien le sirvan.
 
