@@ -14,7 +14,7 @@ tags: ["blog-stack", "gnu-linux", "planeta-linux", "software-libre"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
+{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 En una página web es útil utilizar imágenes más pequeñas en tamaño que las originales para reducir la cantidad de kilobytes transferidos al acceder a una página consiguiendo además que cargue más rápido en conexiones lentas. Algunas imágenes en alta calidad pueden ocupar varios _megas_, es poco eficiente cargar una imagen que posteriormente en el navegador se visualizará en un tamaño más pequeño, ya que la imagen se descargará en su tamaño original pero posteriormente el navegador al visualizarla la escalará al tamaño en que la muestre.
 

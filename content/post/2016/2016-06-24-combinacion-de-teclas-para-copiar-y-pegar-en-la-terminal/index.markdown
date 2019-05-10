@@ -15,7 +15,7 @@ series: ["terminal"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="linux.svg" title1="Linux" wdth1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
+{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Usar una combinación de teclas para realizar alguna acción es más rápido que usar el ratón. Si se trata de una acción que realizamos frecuentemente podemos ahorrar bastante tiempo. Yo trabajo bastante con la terminal de GNOME y hasta ahora no sabía cómo copiar y pegar con una combinación de teclas del teclado.
 
@@ -24,7 +24,7 @@ La combinación de teclas estandarizada para copiar y pegar en cualquier aplicac
 Con el ratón deberemos seleccionar el texto pero con la combinación de teclas nos evitaremos pulsar el botón derecho del ratón, desplazarnos hasta la opción _Copiar_ del menú y finalmente hacer clic en él, para pegar la acción usaremos el mismo menú pero pulsando en la opción _Pegar_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="151"
+    {{< figure year="2016" pid="152"
         image1="gnome-terminal.png" thumb1="gnome-terminal-thumb.png" title1="Menú para copiar y pegar en la terminal de GNOME"
         caption="Menú para copiar y pegar en la terminal de GNOME" >}}
 </div>

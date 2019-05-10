@@ -16,7 +16,7 @@ series: ["aniversario"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="octopress.png" title="Octopress" >}}
+{{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 Este día 6 cumplo un lustro con las bitácoras [El blog de pico.dev][elblogdepicodev] y desde hace un año con [Blog Bitix][blogbitix]. 5 años como _blogger_ en los que normalmente he escrito un artículo cada semana y he publicado los viernes o sábados. 5 años escribiendo artículos en los que comparto el conocimiento que tengo y voy aprendiendo tratando de que sirvan de alguna forma a alguien que los lea.
 

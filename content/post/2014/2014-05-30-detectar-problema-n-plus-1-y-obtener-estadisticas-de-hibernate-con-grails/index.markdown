@@ -14,7 +14,7 @@ tags: ["java", "programacion", "planeta-codigo", "blog-stack"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="grails.png" title="Grails" >}}
+{{< logotype image="grails.svg" title="Grails" width="200" >}}
 
 Una base de datos relacional guarda los datos de forma diferente al modelo orientado a objetos que utilizamos en lenguajes como [Java](https://www.oracle.com/us/technologies/java/overview/index.html), [C#](https://dotnet.microsoft.com/) o [Python](https://www.python.org/). Los [ORM (Object-relational mapping)](https://en.wikipedia.org/wiki/Object-relational_mapping) tratan de hacer una correspondencia entre los dos modelos, el relacional de las bases de datos y el orientado a objetos de los lenguajes. Una de las ventajas de usar en una aplicación un ORM para acceder a la base de datos es que podemos hacer una correspondencia entre los datos de una base de datos relacional y trabajar con esos datos utilizando el modelo orientado a objetos del lenguaje de programación que usemos.
 

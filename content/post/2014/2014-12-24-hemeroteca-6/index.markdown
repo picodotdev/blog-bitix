@@ -17,7 +17,7 @@ library: "true"
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="octopress.png" title="Octopress" >}}
+{{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de [El blog de pico.dev][elblogdepicodev]. Otro año que finaliza y toca hacer recapitulación de los que he escrito durante este tiempo, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.
 

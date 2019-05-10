@@ -17,7 +17,7 @@ summary: "Hacer copias de seguridad es una buena práctica para evitar perder in
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" wdth2="200" >}}
+{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Nuestros datos es una de las cosas más importantes que podemos perder o nos pueden robar, más que el dispositivo que los contiene ya que este es fácilmente reemplazable no así los datos. La pérdida de datos puede ser porque se nos ha estropeado el disco duro y ha quedado completamente inaccesible, para evitar la pérdida de datos conviene [realizar copias de seguridad][elblogdepicodev-156] regularmente de las que recuperar los datos perdidos en caso de necesidad. También nos puede ocurrir que perdamos una memoria USB o peor aún nos roben en nuestro propio domicilio y nos extraigan entre otras cosas el portátil o un disco duro. Los productos de electrónica son objetivos apreciados por los ladrones por su valor, por su demanda que los hacen fácilmente colocables en el mercado y por su poco volumen.
 

@@ -5,60 +5,62 @@
       <div class="col-md-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-12 col-sm-8">
-            <div class="row">
-              <div class="col-md-12">
-                <ul class="list-unstyled">
-                  {{ range .Paginator.Pages }}
-                  <li>
-                    <article itemscope itemtype="http://schema.org/BlogPosting">
-                      {{ if isset .Params "language" }}
-                      <meta itemprop="inLanguage" content="{{ .Params.language }}">
-                      {{ else }}
-                      <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
-                      {{ end }}
-                      <h1><a href="{{ .RelPermalink }}" itemprop="name url">{{ .Title }}</a></h1>
-                      <span class="information">
-                        <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
-                        {{ if isset .Params "tags" }}
-                          {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
-                          <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
-                        {{ end }}
-                      </span>
-                      <p>
-                        {{ if isset .Params "summary" }}
-                          {{ .Params.summary | markdownify }}
-                        {{ else }}
-                          {{ .Summary }}
-                        {{ end }}
-                        <br>
-                        <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "cotinue_reading" }}</a>
-                      </p>
-                    </article>
-                  </li>
+          <div class="col-12">
+            <div class="ad-sidebar ad-sidebar-left">
+              {{ partial "sidebar-ad.html" . }}
+            </div>
+            <div class="ad-sidebar ad-sidebar-right">
+              {{ partial "sidebar-ad.html" . }}
+            </div>
+            <div class="col-md-12 ad">
+              {{ partial "adsense/billboard.html" . }}
+            </div>
+            <ul class="list-unstyled">
+              {{ range .Paginator.Pages }}
+              <li>
+                <article itemscope itemtype="http://schema.org/BlogPosting">
+                  {{ if isset .Params "language" }}
+                  <meta itemprop="inLanguage" content="{{ .Params.language }}">
+                  {{ else }}
+                  <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
                   {{ end }}
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                {{ partial "paginator.html" . }}
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <hr class="separator">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                {{ partial "adsense/leaderboard.html" . }}
-              </div>
+                  <h1><a href="{{ .RelPermalink }}" itemprop="name url">{{ .Title }}</a></h1>
+                  <span class="information">
+                    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+                    {{ if isset .Params "tags" }}
+                      {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
+                      <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
+                    {{ end }}
+                  </span>
+                  <p>
+                    {{ if isset .Params "summary" }}
+                      {{ .Params.summary | markdownify }}
+                    {{ else }}
+                      {{ .Summary }}
+                    {{ end }}
+                    <br>
+                    <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "cotinue_reading" }}</a>
+                  </p>
+                </article>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              {{ partial "paginator.html" . }}
             </div>
           </div>
-          <div class="col-12 col-sm-4">
-            {{ partial "sidebar.html" . }}
+          <div class="row">
+            <div class="col-md-12">
+              <hr class="separator">
+            </div>
           </div>
+          <div class="row">
+              <div class="col-12">
+                {{ partial "adsense/billboard.html" . }}
+              </div>
+            </div>
         </div>
         <div class="row">
           <div class="col-md-12">

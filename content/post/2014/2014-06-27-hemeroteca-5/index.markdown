@@ -17,7 +17,7 @@ library: "true"
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="octopress.png" title="Octopress" >}}
+{{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 Cada seis meses hago un recopilatorio de los artículos que he publicado durante este periodo de tiempo. En estos seis meses he mantenido mi ritmo de publicación de una entrada a la semana que publico casi siempre los viernes a la tarde, en total han sido 26 nuevos artículos con este. Los temas tratados durante este tiempo han sido en gran medida la programación, un poco de linux y la Raspberry Pi y el análisis de un SSD.
 

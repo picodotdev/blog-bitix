@@ -14,7 +14,7 @@ tags: ["blog", "software", "software-libre", "planeta-linux", "planeta-codigo", 
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="octopress.png" title="Octopress" >}}
+{{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 En la [primera entrada de este blog usando Octopress][blogbitix-0] ya comentaba las razones por las que he pasado de usar [Blogger](http://www.blogger.com) a usar [Octopress](http://octopress.org/). Entre las razones del cambio estaban la posibilidad en Octopress de escribir en markdown, edición desconectado (para textos e imágenes), diseño adaptable y más personalizable, git y control de versiones, alojamiento en cualquier servidor web. Aún sin ser Octpress también tiene cosas mejorables pero desde luego me está resultando mucho mejor que blogger.
 

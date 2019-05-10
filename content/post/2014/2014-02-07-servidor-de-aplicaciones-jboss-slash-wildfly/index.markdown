@@ -14,7 +14,7 @@ tags: ["java", "programacion", "software", "planeta-codigo"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="wildfly.png" title="WildFly" >}}
+{{< logotype image="wildfly.png" title="WildFly" width="300" >}}
 
 Para una pequeña (o no tan pequeña) aplicación web desarrollada en la plataforma Java un servidor como [Tomcat](http://tomcat.apache.org/) o [Jetty](http://www.eclipse.org/jetty/) es suficiente. Pero una aplicación grande o un entorno empresarial probablemente empiece a requerir funcionalidades que Tomcat no proporciona de por si. En algunos casos una librería puede suplir esta carencia, este podría ser el caso de [Hibernate](http://hibernate.org/) para la persistencia o [Apache Shiro](http://shiro.apache.org/) para la seguridad de la aplicación. Sin embargo, cuando sea posible y tenga sentido es buena idea seguir alguna de las especificaciones o APIs que proporciona la plataforma [Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition) ya que de esta manera podremos cambiar de implementación sin necesidad de modificar el código de la aplicación y permite integrar dos sistemas diferentes si ambos siguen una determinada especificación. Un ejemplo podría ser el caso de Hibernate con la especificación JPA que proporciona una funcionalidad equivalente (de hecho esta especificación se basa en Hibernate y se puede usar Hibernate como implementación a través de la API que define JPA) o de integración de sistemas con JMS.
 
