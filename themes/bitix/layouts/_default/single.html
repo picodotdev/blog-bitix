@@ -63,7 +63,7 @@
             <div class="alert alert-warning">{{ .Params.note | markdownify }}</div>
           {{ end }}
 
-          <div class="text-center">
+          <div>
             {{ partial "adsense/billboard.html" . }}
           </div>
 
@@ -77,7 +77,7 @@
         {{ partial "related.html" . }}
         {{ partial "share-this.html" . }}
         <div class="row">
-          <div class="col-12 text-center">
+          <div class="col-12">
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>
