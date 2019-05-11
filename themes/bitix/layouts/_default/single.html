@@ -2,8 +2,13 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-12">
         {{ partial "head.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        {{ partial "adsense/billboard.html" . }}
       </div>
     </div>
     {{ if .Params.image }}
@@ -15,6 +20,11 @@
     {{ end }}
     <div class="row">
       <div class="col-12">
+        {{/*
+        <div class="adblock-sidebar adblock-sidebar-left">
+          {{ partial "sidebar-ad.html" . }}
+        </div>
+        */}}
         <div class="adblock-sidebar adblock-sidebar-right">
           {{ partial "sidebar-ad.html" . }}
         </div>
@@ -63,9 +73,11 @@
             <div class="alert alert-warning">{{ .Params.note | markdownify }}</div>
           {{ end }}
 
+          {{/*
           <div>
-            {{ partial "adsense/billboard.html" . }}
+            {{ partial "adsense/leaderboard.html" . }}
           </div>
+          */}}
 
           <div class="content" itemprop="articleBody">
             <meta itemprop="wordCount" content="{{ .WordCount }}">
@@ -77,7 +89,7 @@
         {{ partial "related.html" . }}
         {{ partial "share-this.html" . }}
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 text-center">
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>

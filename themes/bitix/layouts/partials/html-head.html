@@ -30,6 +30,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
   
   <!-- JavaScript -->
+  <script type="text/javascript" src="assets/js/require-config.js" data-main="js/main" defer></script>
+  <script type="text/javascript" src="assets/libs/require.js" data-main="js/main" defer></script>
+
   <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
   <script type="text/javascript" defer>
     (adsbygoogle = window.adsbygoogle || []).push({
@@ -46,33 +49,6 @@
     ga('create', '{{ .Site.Params.analytics.trackingid }}', '{{ .Site.Params.analytics.domain }}');
     ga('send', 'pageview');
   </script>
-  <script type="text/javascript" defer>
-    var require = {
-        baseUrl: 'assets',
-        paths: {
-            'jquery': 'libs/jquery-3.4.1.slim.min',
-            'bootstrap': 'libs/bootstrap-4.3.1/js/bootstrap.min',
-            'bowser': 'libs/bowser-2.3.0',
-            'blueimp-helper': 'libs/Gallery-2.33.0/js/blueimp-helper',
-            'blueimp-gallery': 'libs/Gallery-2.33.0/js/blueimp-gallery',
-            'blueimp-gallery-indicator': 'libs/Gallery-2.33.0/js/blueimp-gallery-indicator',
-            'blueimp-gallery-video': 'libs/Gallery-2.33.0/js/blueimp-gallery-video',
-            'blueimp-gallery-vimeo': 'libs/Gallery-2.33.0/js/blueimp-gallery-vimeo',
-            'blueimp-gallery-youtube': 'libs/Gallery-2.33.0/js/blueimp-gallery-youtube',
-            'jquery-blueimp-gallery': 'libs/Gallery-2.33.0/js/jquery.blueimp-gallery'
-        },
-        shim: {
-            'jquery': {
-                exports: 'jquery'
-            },
-            'blueimp-gallery': {
-                exports: 'blueimp'
-            }
-        }
-    };
-  </script>
-  <script type="text/javascript" src="assets/libs/require.js" data-main="js/main" defer></script>
-
   <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5920c4ce1bd0670011e06acd&product=inline-share-buttons" defer></script>
 
   {{ partial "html-head-custom-css.html" . }}

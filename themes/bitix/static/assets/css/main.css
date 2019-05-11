@@ -4,7 +4,6 @@ html {
 body {
   color: #222;
   font-family: 'PT Serif', 'Times New Roman', Times, serif;
-  font-display: auto;
   font-size: 1.2em;
   font-weight: 400;
   margin-bottom: 50px;
@@ -71,6 +70,7 @@ div.container {
   border-left: 1px solid #F8F8F8;
   border-right: 1px solid #F8F8F8;
   padding: 0em 1em;
+  max-width: 1080px;
 }
 header {
   text-align: center;
@@ -320,14 +320,78 @@ div.adblock-sidebar {
   overflow: visible;
   width: 336px;
   text-align: center;
+  display: none;
 }
 div.adblock-sidebar-left {
   float: left;
-  transform: translateX(-370px);
+  transform: translateX(-366px);
+  text-align: right;
 }
 div.adblock-sidebar-right {
   float: right;
-  transform: translateX(370px);
+  transform: translateX(366px);
+  text-align: left;
+}
+ins.adblock-sidebar-skycraper {
+  width: 336px;
+  height: 600px;
+  margin-bottom: 10px;
+}
+ins.adblock-sidebar-rectangle {
+  width: 336px;
+  height: 150px;
+}
+@media (min-width: 1366px) {
+  div.adblock-sidebar {
+    width: 120px;
+    display: block;
+  }
+  div.adblock-sidebar-left {
+    transform: translateX(-150px);
+  }
+  div.adblock-sidebar-right {
+    transform: translateX(150px);
+  }
+  ins.adblock-sidebar-skycraper {
+    width: 120px;
+  }
+  ins.adblock-sidebar-rectangle {
+    width: 120px;
+  }
+}
+@media (min-width: 1440px) {
+  div.adblock-sidebar {
+    width: 160px;
+  }
+  div.adblock-sidebar-left {
+    transform: translateX(-190px);
+  }
+  div.adblock-sidebar-right {
+    transform: translateX(190px);
+  }
+  ins.adblock-sidebar-skycraper {
+    width: 160px;
+  }
+  ins.adblock-sidebar-rectangle {
+    width: 160px;
+  }
+}
+@media (min-width: 1800px) {
+  div.adblock-sidebar {
+    width: 336px;
+  }
+  div.adblock-sidebar-left {
+    transform: translateX(-366px);
+  }
+  div.adblock-sidebar-right {
+    transform: translateX(366px);
+  }
+  ins.adblock-sidebar-skycraper {
+    width: 336px;
+  }
+  ins.adblock-sidebar-rectangle {
+    width: 336px;
+  }
 }
 .cc_container ::-moz-selection {
   background-color: #61b135 !important;

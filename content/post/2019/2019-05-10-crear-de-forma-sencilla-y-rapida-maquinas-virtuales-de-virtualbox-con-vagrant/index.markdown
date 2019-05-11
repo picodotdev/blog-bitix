@@ -80,4 +80,6 @@ Posee varias [páginas de documentación](https://www.vagrantup.com/docs/index.h
 * [Providers](https://www.vagrantup.com/docs/providers/)
 * [Synced folders](https://www.vagrantup.com/docs/synced-folders/)
 
+{{% sourcecode git="blog-ejemplos/tree/master/Vagrant" command="vagrant up" %}}
+
 {{% /post %}}
