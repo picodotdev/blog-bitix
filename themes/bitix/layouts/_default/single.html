@@ -73,11 +73,11 @@
             <div class="alert alert-warning">{{ .Params.note | markdownify }}</div>
           {{ end }}
 
-          {{/*
-          <div>
-            {{ partial "adsense/leaderboard.html" . }}
-          </div>
-          */}}
+          {{ if isset .Params "summary" }}
+            <div>
+              {{ partial "adsense/leaderboard.html" . }}
+            </div>
+          {{ end }}
 
           <div class="content" itemprop="articleBody">
             <meta itemprop="wordCount" content="{{ .WordCount }}">
