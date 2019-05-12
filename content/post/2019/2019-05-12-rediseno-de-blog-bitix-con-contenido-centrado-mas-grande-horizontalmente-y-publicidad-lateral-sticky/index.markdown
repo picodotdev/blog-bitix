@@ -35,10 +35,12 @@ Hacer que el contenido estuviese centrado y ocupase más espacio horizontal obli
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="diseno-blogbitix-despues-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diseño de Blog Bitix después de hacer algunos cambios"
-        caption="Diseño de Blog Bitix después de hacer algunos cambios" >}}
+        caption="Primer diseño de Blog Bitix después de hacer algunos cambios" >}}
 </div>
 
 Sin embargo, hacer que el contenido ocupe todo el espacio horizontal de lo que tenía anteriormente y poner la publicidad más a la derecha requiere que los usuarios tengan una pantalla con suficientemente resolución para que quepa todo. Yo [tengo una pantalla de resolución 2560x1440][blogbitix-356] y lo veía todo bien pero [Google Analytics][google-analytics] me indicaba que un porcentaje importante del los usuarios, un 32%, tienen una resolución habitual en los portátiles de 1366x768 píxeles. Con esa resolución los 1140 píxeles requeridos para el contenido más los 300 del _banner_ horizontal en la parte derecha no entraba. También agravado si para algunas páginas deseaba en la parte lateral izquierda otro panel _sticky_ de publicidad.
+
+Mantener la publicidad lateral _sticky_ hace que no entre un _skycraper_ y un _large-rectangle_ verticalmente en una resolución de 768px de alto de modo que he dejado solo un espacio para publicidad. Como idea para el futuro quizá haga que al llegar a cierto desplazamiento vertical se cambier el espacio de publicidad por otro.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
