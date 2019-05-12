@@ -11,6 +11,12 @@
         </div>
         <div class="row">
           <div class="col-md-12">
+            <div class="adblock-sidebar adblock-sidebar-left">
+              {{ partial "sidebar-ad.html" . }}
+            </div>
+            <div class="adblock-sidebar adblock-sidebar-right">
+              {{ partial "sidebar-ad.html" . }}
+            </div>
             <h1>{{ .Title }}</h1>
             <h3>{{ i18n "library" }}</h3>
             <ul class="library">

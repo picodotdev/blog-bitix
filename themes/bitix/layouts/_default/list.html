@@ -5,15 +5,17 @@
       <div class="col-md-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-12">
+          <div class="col-md-12 text-center">
+            {{ partial "adsense/billboard.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
             <div class="adblock-sidebar adblock-sidebar-left">
               {{ partial "sidebar-ad.html" . }}
             </div>
             <div class="adblock-sidebar adblock-sidebar-right">
               {{ partial "sidebar-ad.html" . }}
-            </div>
-            <div class="col-md-12 text-center">
-              {{ partial "adsense/billboard.html" . }}
             </div>
             <ul class="list-unstyled">
               {{ range .Paginator.Pages }}
