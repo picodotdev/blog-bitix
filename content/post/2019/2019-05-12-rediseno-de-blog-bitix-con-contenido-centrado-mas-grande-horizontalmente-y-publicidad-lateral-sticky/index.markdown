@@ -9,7 +9,7 @@ sharing: true
 comments: true
 promoted: false
 tags: ["blog", "planeta-codigo"]
-summary: "He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendmiento de los _banners_ de publicidad lateralessi tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un _billboard_ y publicidad lateral _sticky_ para que permanezca más tiempo visible y quizá mejorar su rendmiento."
+summary: "He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendmiento de los _banners_ de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un _billboard_ y publicidad lateral _sticky_ para que permanezca más tiempo visible y quizá mejorar su rendmiento."
 ---
 
 {{% post %}}
