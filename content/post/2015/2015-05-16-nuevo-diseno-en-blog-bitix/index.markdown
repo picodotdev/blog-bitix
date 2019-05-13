@@ -32,7 +32,7 @@ Entre las cosas de diseño que quería cambiar estaba la cabecera intentando que
 <div class="media" style="text-align: center;">
     {{< figure year="2015" pid="80"
         image1="blog-bitix-hugo.jpg" thumb1="blog-bitix-hugo-thumb.jpg" title1="Diseño nuevo"
-        image2="blog-bitix-octopress.jpg" thumb2="blog-bitix-octopress-thumb.jpg" title2="Diseño anterior" >}}
+        image2="blog-bitix-octopress.jpg" thumb2="blog-bitix-octopress-thumb.jpg" title2="Diseño anterior"
         caption="Diseño de Blog Bitix ahora con Hugo y antes con Octopress" >}}
 </div>
 
@@ -46,6 +46,7 @@ El código fuente completo del tema que he creado y del blog realizado con Hugo 
 {{< links >}}
 {{< postslinks >}}
 * [Hola nuevo mundo][blogbitix-0]
+* [Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky][blogbitix-404]
 {{% /reference %}}
 
 {{% /post %}}
