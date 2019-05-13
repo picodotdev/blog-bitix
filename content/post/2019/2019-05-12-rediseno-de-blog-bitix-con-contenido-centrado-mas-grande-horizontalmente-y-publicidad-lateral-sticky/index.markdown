@@ -19,7 +19,7 @@ summary: "He cambiado ligeramente el diseño del blog con la intención de mejor
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
-En el último cambio de [diseño significativo que hice en el 2015][blogbitix-80] cambié a un tema más claro y también la posición de varios _banners_ de publicidad además de quitar algunas secciones, otros cambios de menor importancia han sido quitar el justificado del texto o la posición del título en la cabecera, además de generar de forma estática el contenido del blog con [Octopress][octopress] a [Hugo][hugo].
+En el último [diseño significativo que hice en el 2015][blogbitix-80] cambié a un tema más claro, la posición de varios _banners_ de publicidad además de quitar algunas secciones, otros cambios de menor importancia han sido quitar el justificado del texto o la posición del título en la cabecera, además de generar de forma estática el contenido del blog con [Hugo][hugo] en vez de [Octopress][octopress].
 
 Hacía tiempo que como mejora para el diseño del blog quería que el contenido de los artículos estuviese centrado en la pantalla y tuviese más espacio horizontal, ambas cosas porque considero que mejoraría un poco la experiencia de lectura de los usuarios. Un panel a la derecha que ocupaba cierto espacio hacía que el contenido del artículo no estuviese centrado y quedase escorado un poco hacia la izquierda, además en ciertos artículos donde incluyo código por el espacio ocupaban requería de una barra de desplazamiento horizontal para ver la parte derecha de los listados.
 
