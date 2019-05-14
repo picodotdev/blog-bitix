@@ -22,7 +22,7 @@ El martes 30 de mayo [Pepephone][pepephone] me enviaba y a todos sus clientes un
 Este es el correo que Pepephone envió para informar a los clientes del ADSL y fibra de la incidencia.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="238"
+    {{< figure
         image1="incidencia-pepephone.png" thumb1="incidencia-pepephone-thumb.png" title1="Correo informativo incidencia Pepephone"
         caption="Correo informativo incidencia Pepephone" >}}
 </div>
@@ -32,7 +32,7 @@ Informaban de la caída del servicio junto con una breve disculpa pero también 
 Y la compensación no ha sido varios meses después sino en la siguiente factura que correspondía emitir unos días más tarde.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="238"
+    {{< figure
         image1="descuento-pepephone.png" thumb1="descuento-pepephone-thumb.png" title1="Descuento en la factura con la compensación"
         caption="Descuento en la factura con la compensación" >}}
 </div>

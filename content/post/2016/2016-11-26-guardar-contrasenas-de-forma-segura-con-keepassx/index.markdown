@@ -31,7 +31,7 @@ Instalado el [paquete de KeePassXC](https://www.archlinux.org/packages/community
 {{< code file="pacman.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="196"
+    {{< figure
         image1="keepassxc-1.png" thumb1="keepassxc-1-thumb.png" title1="KeePassXC"
         image2="keepassxc-2.png" thumb2="keepassxc-2-thumb.png" title2="KeePassXC" >}}
 </div>
@@ -39,7 +39,7 @@ Instalado el [paquete de KeePassXC](https://www.archlinux.org/packages/community
 Lo siguiente será crear una entrada con el usuario y contraseña de un servicio.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="196"
+    {{< figure
         image1="keepassxc-4.png" thumb1="keepassxc-4-thumb.png" title1="KeePassXC"
         image2="keepassxc-3.png" thumb2="keepassxc-3-thumb.png" title2="KeePassXC" >}}
 </div>
@@ -47,14 +47,14 @@ Lo siguiente será crear una entrada con el usuario y contraseña de un servicio
 Una vez almacenada la credencial se puede copiar al portapapeles el usuario y contraseña para usarlas en la página de autenticación del servicio con unos botones en la parte superior a tal efecto. También se puede ver la contraseña no protegida con asteriscos sino los caracteres originales. Otra funcionalidad muy útil es la de realizar autoescritura que automatiza el introducir el usuario y contraseña en la página que solicita autenticación. Normalmente consiste en escribir la contraseña en un campo de entrada, pulsar la tecla tabulador para cambiar al campo de entrada de la contraseña, introducir la contraseña y pulsar la tecla _return_. Con KeePassXC se puede realizar todo esto con un par de pulsaciones de ratón.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="196"
+    {{< figure
         image1="keepassxc-6.png" thumb1="keepassxc-6-thumb.png" title1="Configuración de autoescritura" >}}
 </div>
 
 KeePassXC es una herramienta que no tiene más complejidad, podemos asociar alguna información más a la credencial con atributos adicionales y archivos adjuntos pero no es imprescindible. Por supuesto, tiene un generador de contraseñas muy útil con el que obtener contraseñas únicas para cada servicio con las propiedades de seguridad que se requiera en cuanto a longitud, caracteres especiales, mayúsculas, minúsculas y números.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="196"
+    {{< figure
         image1="keepassxc-5.png" thumb1="keepassxc-5-thumb.png" title1="Nueva contraseña" >}}
 </div>
 

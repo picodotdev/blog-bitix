@@ -31,7 +31,7 @@ El primero de los comandos sirve para haceer cambios de tamaño de forma individ
 En Blog Bitix para mostrar la vista previa uso la librería de JavaScript [Bootstrap Image Gallery](https://blueimp.github.io/Bootstrap-Image-Gallery/). Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducciónd de tamaño considerable.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="161"
+    {{< figure
         image1="201607.jpg" thumb1="201607-thumb (650x450).jpg" title1=""
         image2="201607.jpg" thumb2="201607-thumb (300x200).jpg" title2=""
         caption="Previsualización de imagen en tamaño 650x450 y 300x200 del original 1600x1067" >}}

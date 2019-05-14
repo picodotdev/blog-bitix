@@ -20,7 +20,7 @@ summary: "Cambié una caldera por un termo eléctrico. Haciendo unas estimacione
 Hace unos meses [sustituí la caldera de gas por un termo eléctrico][blogbitix-251] dado que me tocaba hacer la versión de la instalación del gas y de la caldera, dos revisiones independientes que tiene un coste de unos 60€ y 90€ respectivamente que hay que realizar obligatoriamente por normativa cada 5 y 2 años y en las que hay que estar presente para permitir el acceso a la vivienda al técnico para que pueda hacer la inspección. Dado que en invierno no usaba la calefacción, me basta con ponerme más ropa o usar alguna manta, al hacer la sustitución no me importaba perder esa característica. Por otro lado si me tocase sustituir la caldera por otra la salida de humos debería ir a la calle en vez de la chimenea del edificio con lo que habría que picar la fechada para hacer el agujero del tubo para la salida de humos. Además, las calderas de gas son mucho más caras, sobre unos 900€ una de gama baja, mucho más caras que los termos más caros, un termo de gama alta de lo más caro está sobre unos 300€ de 50 litros, casi tres veces menos que una caldera.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="277"
+    {{< figure
         image1="caldera.jpg" thumb1="caldera-thumb.jpg" title1="Caldera de gas"
         image2="termo.jpg" thumb2="termo-thumb.jpg" title2="Termo eléctrico"
         caption="Caldera de gas y termo eléctrico" >}}
@@ -33,7 +33,7 @@ En las factura con la caldera de gas en un periodo de tiempo de 63 días para el
 El gas es más eficiente y más barato que usar electricidad para transformar energía en calor para el agua caliente de agua sanitaria o calefacción pero los costes del servicio hace que si no consumes una cantidad suficiente no sea más barato que un termo eléctrico como es mi caso.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="277"
+    {{< figure
         image1="factura-caldera.png" thumb1="factura-caldera-thumb.png" title1="Factura con caldera de gas"
         image2="factura-termo.png" thumb2="factura-termo-thumb.png" title2="factura con termo eléctrico"
         caption="Factura con caldera de gas y termo eléctrico" >}}

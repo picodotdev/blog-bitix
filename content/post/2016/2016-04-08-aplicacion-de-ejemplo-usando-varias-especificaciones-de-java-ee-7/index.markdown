@@ -28,7 +28,7 @@ Este ejemplo está relacionado con otros artículos que he escrito como [Ejemplo
 Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas librerías JavaScript de forma similar al ejemplo de la [lista de tareas con Backbone y React junto con RequireJS][blogbitix-20]. Seleccionados los productos, la compra se realizará usando una API REST intercambiando los datos con formato JSON, se persistirá en la base de datos con JPA actualizándose en ese momento el _stock_ de los productos de lo que se encargará un EJB para controlar esta pequeña lógica de negocio, si no hay _stock_ suficiente de un producto se producirá una excepción y devolverá un código de estado adecuado en la petición HTTP, al realizar la compra se generará un mensaje evento CDI que desencadenará la actualización del _stock_ de los usuarios conectados usando WebSockets. La página del listado de productos y el formulario de autenticación se generará usando la tecnología de presentación JSF.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="136"
+    {{< figure
         image1="supermarket-java-ee-7.png" thumb1="supermarket-java-ee-7-thumb.png" title1="Supermarket con Java EE 7"
         caption="Supermarket con Java EE 7" >}}
 </div>
@@ -64,7 +64,7 @@ La aplicación está dividida en varios módulos construidos con la [herramienta
 {{< code file="SupermarketClient.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="136"
+    {{< figure
         image1="aplicacion-cliente.png" thumb1="aplicacion-cliente-thumb.png" title1="Aplicación cliente Supermarket"
         caption="Aplicación cliente Supermarket" >}}
 </div>

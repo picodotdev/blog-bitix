@@ -21,7 +21,7 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene más dificultad que instalar un sistema operativo como [Windows][windows], que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las [distribuciones aconsejadas para usuarios que provienen de Windows o macOS][blogbitix-190] o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de una hora. Distribuciones como [Ubuntu][ubuntu], [elementary OS][elementary] o [Linux Mint][linuxmint] hacen que la instalación no requiera muchos conocimientos y sea completada con éxito por cualquier usuario.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="204"
+    {{< figure
         image1="debian-installer-text.png" thumb1="debian-installer-text-thumb.png" title1="Instalador de Debian en modo texto"
         image2="debian-installer-graphics.png" thumb2="debian-installer-graphics-thumb.png" title2="Instalador de Debian en modo gráfico"
         caption="Instalación guíada de Debian basada en texto y gráfica" >}}
@@ -74,19 +74,19 @@ El tiempo requerido de instalación varía según el ancho de banda de la conexi
 Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema con el proceso completo de instalación.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="204"
+    {{< figure
         image1="archlinux-gnome.jpg" thumb1="archlinux-gnome-thumb.jpg" title1="GNOME"
         image2="archlinux-kde.jpg" thumb2="archlinux-kde-thumb.jpg" title2="KDE"
         caption="Entornos de escritorio GNOME y KDE" >}}
-    {{< figure year="2017" pid="204"
+    {{< figure
         image1="archlinux-xfce.jpg" thumb1="archlinux-xfce-thumb.jpg" title1="XFCE"
         image2="archlinux-cinnamon.jpg" thumb2="archlinux-cinnamon-thumb.jpg" title2="Cinnamon"
         caption="Entornos de escritorio Xfce y Cinnamon" >}}
-    {{< figure year="2017" pid="204"
+    {{< figure
         image1="archlinux-lxde.jpg" thumb1="archlinux-lxde-thumb.jpg" title1="LXDE"
         image2="archlinux-mate.jpg" thumb2="archlinux-mate-thumb.jpg" title2="Mate"
         caption="Entornos de escritorio LXDE y Mate" >}}
-    {{< figure year="2017" pid="204"
+    {{< figure
         image1="archlinux-root-password.png" thumb1="archlinux-root-password-thumb.png" title1="Solicitud de contraseña para descifrar partición root"
         caption="Solicitud de contraseña para descifrar partición root" >}}
 </div>

@@ -41,7 +41,7 @@ En el siguiente código suponiendo que disponemos en la variable source de un c�
 Con este ejemplo puede intuirse el ejemplo práctico que comentaré que no es más que utilizar código Java para definir la configuración de una aplicación, esto tiene varias ventajas sobre utilizar un xml u otro tipo de formato de archivo de configuración de la aplicación (una de ellas que utilizando un IDE el compilador nos informará de errores y nos ofrecerá asistencia al escribir código). Esta idea junto con la posibilidad de monitorizar un archivo para ver si se han producido cambios en él (también con la API de Java) y recargarlo puede darnos como resultado una funcionalidad en la que la configuración se basa en código Java y que la configuración pueda recargarse de forma dinámica, si la aplicación se utiliza en un servidor de aplicaciones podríamos cambiar la configuración sin tener que reiniciar la aplicación.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="42"
+	{{< figure
     	image1="main1.png" thumb1="main1.png" title1="Salida programa Main1.java" >}}
 </div>
 

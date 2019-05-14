@@ -42,7 +42,7 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
 {{< code file="ConfiguracionManager.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="44"
+	{{< figure
     	image1="main.png" thumb1="main.png" title1="Salida programa Main.java" >}}
 </div>
 

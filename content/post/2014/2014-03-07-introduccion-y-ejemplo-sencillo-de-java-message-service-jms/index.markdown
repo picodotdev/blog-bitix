@@ -42,7 +42,7 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 {{< code file="Topic.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="15"
+	{{< figure
     	image1="topic.png" thumb1="topic-thumb.png" title1="Resultado de Topic.java" >}}
 </div>
 
@@ -51,7 +51,7 @@ A continuación el código de utilizando un modelo punto a punto en el que vuelv
 {{< code file="Queue.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="15"
+	{{< figure
     	image1="queue.png" thumb1="queue-thumb.png" title1="Resultado de Queue.java" >}}
 </div>
 

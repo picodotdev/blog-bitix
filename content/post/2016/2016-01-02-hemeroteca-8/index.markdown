@@ -83,10 +83,10 @@ Durante este segundo semestre de 2015 he publicado varios artículos entre seman
 El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo tremendo tratando de escribir y publicar artículos con cierta calidad, los ingresos por publicidad AdSense siguen siendo prácticamente los mismos, entre 6 y 11€ al mes, como el alojamiento y el dominio me es gratuito es suficiente para hacer alguna [donación a un proyecto relacionado con el software libre][blogbitix-117] por lo que tú visitando este blog en cierta forma también podrás sentirte contribuidor del software libre ya uses productos [Microsoft][microsoft] o [Apple][apple]. Una de las cosas que dicen para aumentar visitas es casi más importante la cantidad que la calidad pero no puedo dedicar más tiempo a escribir así que opto por que lo que escriba no esté ya en varios otros cientos de sitios para alguien con el mismo interés le resulte aprovechable, además trato de que los artículos incluyan un ejemplo funcional con su código fuente completo que se pueda probar de manera simple descargándolo.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="118"
+    {{< figure
         image1="analytics-2015.png" thumb1="analytics-2015-thumb.png" title1="Analytics 2015 de Blog Bitix"
         caption="Analytics 2015 de Blog Bitix" >}}
-    {{< figure year="2016" pid="118"
+    {{< figure
         image1="gadsense-2015.png" thumb1="gadsense-2015-thumb.png" title1="AdSense 2015 de Blog Bitix"
         caption="AdSense 2015 de Blog Bitix" >}}
 </div>

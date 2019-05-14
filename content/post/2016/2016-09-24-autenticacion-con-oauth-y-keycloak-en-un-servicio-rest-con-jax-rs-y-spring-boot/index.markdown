@@ -30,17 +30,17 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
 {{< code file="docker-compose-up.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="keycloak-login.png" thumb1="keycloak-login-thumb.png" title1="Inicio de sesión de Keycloak" >}}
 </div>
 
 Creamos un _realm_, en el ejemplo llamado _springbootjaxrs_ y un cliente con id _client_, además crearemos un rol _api_ y se lo asignaremos al cliente.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="keycloak-add-client.png" thumb1="keycloak-add-client-thumb.png" title1="Registro del cliente"
         image2="keycloak-add-role.png" thumb2="keycloak-add-role-thumb.png" title2="Creación de rol" >}}
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="keycloak-service-account-roles.png" thumb1="keycloak-service-account-roles-thumb.png" title1="Asignación de roles al cliente" >}}
 </div>
 
@@ -56,7 +56,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> pod
 {{< code file="curl-token.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
 </div>
 
@@ -65,7 +65,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 {{< code file="curl-401.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
 </div>
 
@@ -74,7 +74,7 @@ Proporcionando el token mediante una cabecera de la petición el servicio nos de
 {{< code file="curl.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="180"
+    {{< figure
         image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
         image2="client-token-tampered.png" thumb2="client-token-tampered-thumb.png" title2="Llamada al servicio REST con token inválido" >}}
 </div>

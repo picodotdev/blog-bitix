@@ -24,7 +24,7 @@ La documentación Javadoc es una colección de páginas HTML de todas las clases
 Se genera a partir del propio código fuente de las clases con los comentarios incluidos que siguen cierto formato precediendo la definición de las clases y métodos. Al estar código y documentación en el propio archivo de código fuente es más fácil mantener sincronizados el código y su documentación.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="259"
+    {{< figure
         image1="javadoc-jdk.png" thumb1="javadoc-jdk-thumb.png" title1="Documentación Javadoc del JDK"
         caption="Documentación Javadoc del JDK" >}}
 </div>
@@ -63,11 +63,11 @@ Una vez documentado el código fuente hay que usar la [herramienta Javadoc](http
 La propia documentación de las clases del JDK está generada con la herramienta Javadoc. Este es el aspecto de la documentación de este ejemplo que tiene exactamente el mismo aspecto que la del JDK.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="259"
+    {{< figure
         image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" title1="Documentación Javadoc"
         image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" title2="Documentación Javadoc"
         caption="Documentación Javadoc del ejemplo" >}}
-    {{< figure year="2017" pid="259"
+    {{< figure
         image1="javadoc-archivos.png" thumb1="javadoc-archivos-thumb.png" title1="Archivos de la documentación Javadoc"
         caption="Archivos de la documentación Javadoc" >}}
 </div>

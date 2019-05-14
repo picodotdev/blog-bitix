@@ -31,7 +31,7 @@ El blog es una de las cosas que más me divierte, pero quien quiera tener un blo
 Aún después de estos casi 4 años el blog tiene solamente unas 600 páginas vistas y unas 400 visitas diarias. Poco a poco van aumentando pero han sido necesarios 4 años para llegar estos números y no son muy grandes, quizá podrían ser mejores si usase alguno de los [consejos que se dan por internet](http://www.marketingguerrilla.es/). En la gráfica de analytics desde que empecé el blog se ve que hay una leve tendencia ascendente. Comento esto para que si alguien empieza un blog no tenga falsas expectativas del número de visitas y pierda interés al recibir pocas, si un blog quiere llegar a esos 4 años de vida el interés de seguir manteniéndolo con vida no debe depender del número de visitas que recibe, la motivación debe estar en otra parte, en mi caso es la satisfacción personal y los momentos de diversión que me dá aprendiendo y compartiendo.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="7"
+	{{< figure
 			image1="evolucion-analytics.png" thumb1="evolucion-analytics.png" title1="Evolución vistas según Analytics" >}}
 </div>
 
@@ -39,7 +39,7 @@ Aún después de estos casi 4 años el blog tiene solamente unas 600 páginas vi
 En el blog incluyo unos bloques de publicidad adsense, han sido necesarios casi 3 años para superar los 70 € que exige Google para realizar la transferencia a mi cuenta, en el principio los ingresos mensuales eran de unos pocos céntimos y en estos momentos los ingresos suelen ser de entre 4 y 6 euros algún mes llegan a los 10 euros con unos 40 clics mensuales en los anuncios. También van aumentando mes a mes pero no dan para mucho más que para pagar un dominio propio si lo tuviese y para unas cervezas pagadas a crédito.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="7"
+	{{< figure
 			image1="evolucion-adsense.png" thumb1="evolucion-adsense.png" title1="Evolución publicidad según AdSense" >}}
 </div>
 

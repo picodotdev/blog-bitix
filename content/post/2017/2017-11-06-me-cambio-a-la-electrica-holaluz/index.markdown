@@ -48,7 +48,7 @@ Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo
 Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que estoy seguro que con las subidas de precio en la electridad en este mismo periodo de tiempo sigue siendo un precio menor que otras compañías eléctricas. 
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="278"
+    {{< figure
         image1="factura-holaluz-1.png" thumb1="factura-holaluz-1-thumb.png" title1="Factura Holaluz"
         image2="factura-holaluz-2.png" thumb2="factura-holaluz-2-thumb.png" title2="Factura Holaluz"
         caption="Factura Holaluz después de unos meses con consumo" >}}
@@ -68,7 +68,7 @@ En el blog de Holaluz escriben artículos muy buenos sobre el funcionamiento de 
 Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo o código de Holaluz es **3R9L6I**.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="278"
+    {{< figure
         image1="contratacion-holaluz-paso-1.png" thumb1="contratacion-holaluz-paso-1-thumb.png" title1="Contratación Holaluz"
         caption="Contratación Holaluz" >}}
 </div>

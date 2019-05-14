@@ -43,7 +43,7 @@ Hay webs en las que se ofrecen cursos de formación a distancia que se pueden co
 Los cursos constan de varias horas lectivas con vídeos explicativos narrados en español como si un profesor estuviese dándonos una clase magistral que podrás revisar siempre que desees. Cada vídeo del curso no suele exceder de diez minutos siendo la mayoría de entre tres minutos y cinco minutos de forma que se pueda visionarlos según el tiempo y momento disponible. Creada la cuenta en KeepCoding e inscritos a un curso se puede ver el progreso en el mismo.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="207"
+    {{< figure
         image1="keepcoding-course.png" thumb1="keepcoding-course-thumb.png" title1="Curso online de KeepCoding"
         caption="Curso online de KeepCoding" >}}
 </div>

@@ -1,13 +1,42 @@
-{{ if or .Params.image1 .Params.image2 .Params.image3 }}
+{{ if .Params.image1 }}
+  {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
+  {{ $imagethumb1 := .Page.Resources.GetMatch (print "images/" .Params.thumb1) }}
+  {{ $.Scratch.Set "image1" $image1 }}
+  {{ $.Scratch.Set "imagethumb1" $imagethumb1 }}
+{{ end }}
+
+{{ if .Params.image2 }}
+  {{ $image2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
+  {{ $imagethumb2 := .Page.Resources.GetMatch (print "images/" .Params.thumb2) }}
+  {{ $.Scratch.Set "image2" $image2 }}
+  {{ $.Scratch.Set "imagethumb2" $imagethumb2 }}
+{{ end }}
+
+{{ if .Params.image3 }}
+  {{ $image3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
+  {{ $imagethumb3 := .Page.Resources.GetMatch (print "images/" .Params.thumb3) }}
+  {{ $.Scratch.Set "image3" $image3 }}
+  {{ $.Scratch.Set "imagethumb3" $imagethumb3 }}
+{{ end }}
+
+{{ $image1 := $.Scratch.Get "image1" }}
+{{ $image2 := $.Scratch.Get "image2" }}
+{{ $image3 := $.Scratch.Get "image3" }}
+
+{{ $imagethumb1 := $.Scratch.Get "imagethumb1" }}
+{{ $imagethumb2 := $.Scratch.Get "imagethumb2" }}
+{{ $imagethumb3 := $.Scratch.Get "imagethumb3" }}
+
+{{ if or $image1 $image2 $image3 }}
 <figure>
-  {{ if .Params.image1 }}
-  <a href="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.image1 }}" title="{{ .Params.title1 }}" data-gallery><img src="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.thumb1 }}"{{ if .Params.width1 }} width="{{ .Params.width1 }}"{{ end }}></a>
+  {{ if $image1 }}
+  <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery><img src="{{ $imagethumb1.RelPermalink }}" width="{{ $imagethumb1.Width }}"/></a>
   {{ end }}
-  {{ if .Params.image2 }}
-  <a href="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.image2 }}" title="{{ .Params.title2 }}" data-gallery><img src="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.thumb2 }}"{{ if .Params.width2 }} width="{{ .Params.width2 }}"{{ end }}></a>
+  {{ if $image2 }}
+  <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery><img src="{{ $imagethumb2.RelPermalink }}" width="{{ $imagethumb2.Width }}"/></a>
   {{ end }}
-  {{ if .Params.image3 }}
-  <a href="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.image3 }}" title="{{ .Params.title3 }}" data-gallery><img src="assets/images/posts/{{ .Params.year }}/{{ .Params.pid }}/{{ .Params.thumb3 }}"{{ if .Params.width3 }} width="{{ .Params.width3 }}"{{ end }}></a>
+  {{ if $image3 }}
+  <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagethumb3.RelPermalink }}" width="{{ $imagethumb3.Width }}"/></a>
   {{ end }}
   {{ if .Params.caption }}
     <figcaption>{{ .Params.caption }}{{ if .Params.source }}. {{ i18n "source" }}: {{ .Params.source }}{{ end }}</figcaption>

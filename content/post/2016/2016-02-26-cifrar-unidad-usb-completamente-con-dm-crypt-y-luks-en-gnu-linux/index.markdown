@@ -28,7 +28,7 @@ Deberemos formatear la unidad por lo que previamente deberemos hacer una copia d
 Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que queremos cifrar usando el botón con el icono de una rueda dentada hacemos clic en la opción formatear partición. Se abrirá un diálogo emergente donde podremos seleccionar el sistema de archivos con el que queremos formatear la unidad, seleccionamos LUKS+Ext4, formato lento e introducimos una contraseña con cierta fortaleza que deberemos recordar (de longitud 8 o más que contenga letras en mayúsculas, minúsculas, números y símbolos como «!"·$%&/()=^*,.-;:_»). El formateo lento tardará más o menos tiempo dependiendo de la capacidad de la unidad pero es aconsejable realizarlo para evitar que con [herramientas de recuperación de archivos como Foremost][blogbitix-125] alguien pueda extraer algún tipo de documento usándola a pesar de en teoría haber sido eliminado, otra forma de evitarlo es [eliminar ciertos o todos los archivos de forma segura][blogbitix-130]. En una unidad sin cifrar es sorprendente la cantidad de archivos que se puede recuperar usando [Foremost](https://wiki.archlinux.org/index.php/Foremost) de los que en algún momento estuvieron.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="128"
+    {{< figure
         image1="discos.png" thumb1="discos-thumb.png" title1="Aplicación Discos de GNOME"
         image2="opciones-formato.png" thumb2="opciones-formato-thumb.png" title2="Opciones formateo unidad" >}}
 </div>
@@ -36,11 +36,11 @@ Iniciada la aplicación Discos e identificada y seleccionada la unidad USB que q
 Formateada la unidad con LUKS+Ext4 al conectarla al equipo o montarla el entorno de escritorio nos preguntará por la contraseña con un diálogo.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="128"
+    {{< figure
         image1="contrasena.png" thumb1="contrasena-thumb.png" title1="Diálogo solicitud contraseña" >}}
 </div>
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="128"
+    {{< figure
         image1="unidad-cifrada.png" thumb1="unidad-cifrada.png" title1="Unidad cifrada en Nautilus"
         image2="unidad-descifrada.png" thumb2="unidad-descifrada.png" title2="Unidad BMOVE ROJO descifrada en Nautilus" >}}
 </div>

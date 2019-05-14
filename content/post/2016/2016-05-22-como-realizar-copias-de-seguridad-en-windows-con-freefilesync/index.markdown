@@ -22,7 +22,8 @@ Realizar copias de seguridad es algo imprescindible si no queremos perder los da
 Nuestros datos en forma de documentos, fotos, música o vídeos son más importantes que el equipo estropeado ya que este se se puede reemplazar pero recuperar los datos será mas complicado o imposible dependiendo del fallo si no hemos realizado copias de seguridad. En GNU/Linux hay múltiples programas y formas de hacer las copias de seguridad, incrementales, comprimidas, cifradas, ... pero para un uso personal [hacer una copia de los archivos y mantenerla sincronizada con rsync][elblogdepicodev-156] es más que suficiente. En Windows un programa es [FreeFileSync][freefilesync] equivalente a _rsync_ disponible en GNU/Linux.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="144" image1="freefilesync.png" thumb1="freefilesync-thumb.png" title1="FreeFileSync" >}}
+    {{< figure
+        image1="freefilesync.png" thumb1="freefilesync-thumb.png" title1="FreeFileSync" >}}
 </div>
 
 FreeFileSync tiene una licencia de software libre y está disponible tanto para [Windows][windows], [GNU][gnu]/[Linux][linux] y [Mac OS X][macos]. Ofrece una interfaz gráfica y su uso no es complicado. Primero deberemos seleccionar los directorios de los que hacer copia de seguridad y para cada uno de ellos el directorio destino en el que se guardará la copia de seguridad, FreeFileSync llama al origen y destino izquierdo y derecho ya que los presenta así en la interfaz y con la característica que cualquiera de ellos puede actuar como origen y destino. Habitualmente el directorio origen será uno del disco duro del sistema y el directorio destino un directorio de un disco duro o memoria USB externa. La copia de seguridad debería guardase en un dispositivo diferente al origen.
@@ -59,10 +60,10 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 * [Notas y trucos](https://freefilesync.org/manual.php?topic=tips-and-tricks).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="144"
+    {{< figure
         image1="freefilesync-comparacion.png" thumb1="freefilesync-comparacion-thumb.png" title1="Opciones de comparación de FreeFileSync"
         image2="freefilesync-filtro.png" thumb2="freefilesync-filtro-thumb.png" title2="Opciones de filtrado de FreeFileSync" >}}
-    {{< figure year="2016" pid="144"
+    {{< figure
         image1="freefilesync-sincronizacion.png" thumb1="freefilesync-sincronizacion-thumb.png" title1="Opciones de sincronización de FreeFileSync" >}}
 </div>
 

@@ -28,7 +28,7 @@ Este sería el esquema de conexionado de los elementos. El diodo LED tiene una p
 Para el pulsador usaré el método _PULL UP_ (el otro es _PULL DOWN_) donde conectaré una patita del pulsador a tierra y la adyacente al _pin_ GPIO, en [algunas páginas](https://grantwinney.com/using-pullup-and-pulldown-resistors-on-the-raspberry-pi/) se explica haciendo uso de resistencias, sin embargo, el uso de resistencias en la Raspberry Pi no es necesario ya que los _pines_ ya [las tienen incorporadas internamente](https://projects.drogon.net/raspberry-pi/wiringpi/special-pin-functions/).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="221"
+    {{< figure
         image1="cableado.jpg" thumb1="cableado-thumb.jpg" title1="cableado en la breadboard"
         image2="esquema-cableado.png" thumb2="esquema-cableado-thumb.png" title2="Esquema del cableado"
         caption="Esquema del cableado" >}}
@@ -37,11 +37,11 @@ Para el pulsador usaré el método _PULL UP_ (el otro es _PULL DOWN_) donde cone
 La librería diozeo para identificar los _pines_ usa la nomenclatura de Broadcom, otras son las nomenclaturas del _header_ o de wiringPi. Hay que tener en cuenta la nomenclatura que se use ya que el número del _pin_ variará en cada una de ellas, también hay que tener en cuenta la versión de la Raspberry Pi ya que hay pequeñas variaciones según la versión. Por ejemplo, según la tabla de referencia siguiente, para la Raspberry Pi 1 y según la nomenclatura de Brodacom el _pin_ GPIO 18 corresponde al número 12 de _header_, el GPIO 21 al número 13 y el GPIO 22 al número 15. Según la nomenclatura de wiringPi el GPIO 1 corresponde al número 1, el GPIO 2 al número 2 y el GPIO 3 al número 3.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="221"
+    {{< figure
         image1="raspberrypi1b-header-rev1.png" thumb1="raspberrypi1b-header-rev1-thumb.png" title1="Header de pines Raspberry Pi 1 B"
         image2="raspberrypi3b-header.png" thumb2="raspberrypi3b-header-thumb.png" title2="Header de pines Raspberry Pi 3 B"
         caption="Header de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura wiringPi" >}}
-    {{< figure year="2017" pid="221"
+    {{< figure
         image1="raspberrypi1b-header-rev1-broadcom.png" thumb1="raspberrypi1b-header-rev1-broadcom-thumb.png" title1="Header de pines Raspberry Pi 1 B"
         image2="raspberrypi3b-header-broadcom.png" thumb2="raspberrypi3b-header-broadcom-thumb.png" title2="Header de pines Raspberry Pi 3 B"
         caption="Headers de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura Broadcom" >}}

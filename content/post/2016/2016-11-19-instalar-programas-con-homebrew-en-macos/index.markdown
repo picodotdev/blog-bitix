@@ -23,7 +23,7 @@ Como nuevo usuario de [mi primer mac][blogbitix-193] he tenido que empezar insta
 En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, [Homebrew][homebrew] se define así mismo como el gestor de paquetes que le falta a macOS. Con Homebrew podemos instalar los programas y mantenerlos actualizados sin tener que estar observando cuando se publica una nueva versión de cada programa. Con Homebrew también podremos instalar muchos de los comandos que están disponibles en GNU/Linux como wget, cmus, gimp, ... [Hombrew Cask][homebrew-cask] es un añadido que proporciona los mismo para los binarios de los programas de macOS. Con estas dos herramientas podemos instalar y mantener actualizado la mayor parte del software que utilicemos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="195"
+    {{< figure
         image1="homebrew.png" thumb1="homebrew-thumb.png" title1="Homebrew" >}}
 </div>
 
@@ -80,7 +80,7 @@ La terminal incluida de serie en macOS es muy básica por ello mucha gente suele
 {{< code file="oh-my-zsh.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="195"
+    {{< figure
         image1="iterm2.png" thumb1="iterm2-thumb.png" title1="iTerm2"
         caption="Terminal iTerm2" >}}
 </div>

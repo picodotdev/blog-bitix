@@ -51,7 +51,7 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 {{< code file="docker-build.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="51"
+	{{< figure
     	image1="docker-mysql.png" thumb1="docker-mysql-thumb.png" title1="docker-mysql" >}}
 </div>
 

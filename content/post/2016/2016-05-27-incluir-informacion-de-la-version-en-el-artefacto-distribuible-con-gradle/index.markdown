@@ -34,7 +34,7 @@ En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1
 {{< code file="Main.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="145"
+    {{< figure
         image1="gradle-version.png" thumb1="gradle-version-thumb.png" title1="Artefacto distribuible con información de versión" >}}
 </div>
 

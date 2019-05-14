@@ -29,23 +29,23 @@ Lo primero necesario a instalar es el paquete de CUPS y el controlador de la imp
 CUPS posee un panel de administración accesible con el navegador en la dirección _http\://localhost:631/admin_. Pulsando el botón _Añadir impresora_ en el panel de administración de CUPS iniciamos el asistente para añadir la impresora en el que avahi nos detectará la impresora en red y deberemos seleccionar la marca junto con el modelo específico. Al añadir la impresora se nos preguntará por un usuario y contraseña, como nombre usuario deberemos introducir _root_ y como contraseña la que hayamos establecido en el sistema para el superusuario. Desde el panel de impresoras de [GNOME][gnome] se debería poder añadir la impresora, sin embargo, a mi me daba algún tipo de error de modo que lo hice desde CUPS.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="cups-administracion.png" thumb1="cups-administracion-thumb.png" title1="Administración de CUPS"
         image2="cups-anadir-impresora-1.png" thumb2="cups-anadir-impresora-1-thumb.png" title2="Asistente añadir impresora en CUPS" >}}
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="cups-anadir-impresora-2.png" thumb1="cups-anadir-impresora-2-thumb.png" title1="Asistente añadir impresora en CUPS"
         image2="cups-anadir-impresora-3.png" thumb2="cups-anadir-impresora-3-thumb.png" title2="Asistente añadir impresora en CUPS" >}}
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="cups-anadir-impresora-4.png" thumb1="cups-anadir-impresora-4-thumb.png" title1="Asistente añadir impresora en CUPS" >}}
 </div>
 
 Finalizado el asistente en la sección _Impresoras_ examinado los detalles de la misma podremos ver los documentos imprimidos o en proceso de impresión. En el desplegable _Mantenimiento_ podremos imprimir una página de prueba con la que comprobaremos que funciona correctamente además de otras acciones sobre los trabajos, en el desplegable _Administración_ podemos eliminarla o modificarla.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="cups-impresoras-1.png" thumb1="cups-impresoras-1-thumb.png" title1="Impresoras en CUPS"
         image2="cups-impresoras-2.png" thumb2="cups-impresoras-2-thumb.png" title2="Impresoras en CUPS" >}}
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="gnome-impresoras.png" thumb1="gnome-impresoras-thumb.png" title1="Impresoras en GNOME" >}}
 </div>
 
@@ -60,7 +60,7 @@ A raíz de este mensaje tuve que añadir en el archivo _/etc/hosts_ el _host_ _H
 Con todo configurado la prueba de impresión realizable tanto desde la página de administración de CUPS como de GNOME se realizó correctamente y este es el resultado. Una vez que esta prueba es satisfactoria podemos imprimir documentos desde las aplicaciones usando el diálogo de impresión donde aparecerá la impresora en red configurada. Además podremos cambiar algunas opciones como imprimir a dos caras o solo a una, imprimir en blanco y negro o a color o usar un perfil de impresión para ahorro de tinta.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="174"
+    {{< figure
         image1="prueba-de-impresion-cups.jpg" thumb1="prueba-de-impresion-cups-thumb.jpg" title1="Prueba de impresión con CUPS" >}}
 </div>
 

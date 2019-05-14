@@ -30,7 +30,7 @@ Por enlaces o referencias consideramos tanto a páginas como a recursos de imág
 Después de introducir la dirección del sitio web, que con estas herramientas ha de estar accesible en internet, cada una de ellas nos informará de los enlaces rotos que encuentre indicándonos el enlace roto, el texto del enlace y en qué página está. Con esta información podemos corregir esos enlaces del sitio web, bitácora o aplicación. Después de usarlas hubiera dicho que no tenía tantos en está bitácora, me sirvieron para corregirlos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="115"
+    {{< figure
         image1="w3c-linkchecker.png" thumb1="w3c-linkchecker-thumb.png" title1="W3C Link Checker"
         caption="W3C Link Checker" >}}
 </div>
@@ -40,7 +40,7 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 {{< code file="wget.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="115"
+    {{< figure
         image1="wget.png" thumb1="wget-thumb.png" title1="Comprobación de enlaces con wget"
         caption="Comprobación de enlaces con wget" >}}
 </div>

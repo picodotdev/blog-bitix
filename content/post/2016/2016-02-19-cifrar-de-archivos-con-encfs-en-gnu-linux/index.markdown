@@ -37,7 +37,7 @@ Instalado el paquete y con el comando <code>encfs</code> indicamos el directorio
 Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="126"
+    {{< figure
         image1="sistema-archivos-descifrados.png" thumb1="sistema-archivos-descifrados-thumb.png" title1="Sistema de archivos montado y descifrado" >}}
 </div>
 
@@ -48,14 +48,14 @@ La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta form
 Montado el sistema de archivos en primer o segundo plano podremos trabajar con los archivos normalmente y EncFS irá cifrando su contenido y nombres de archivos de forma transparente en el directorio de archivos cifrados. Añadiendo algún archivo este podría ser el contenido del directorio de archivos cifrados.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="126"
+    {{< figure
         image1="sistema-archivos-cifrados.png" thumb1="sistema-archivos-cifrados-thumb.png" title1="Sistema de archivos cifrado" >}}
 </div>
 
 Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="126"
+    {{< figure
         image1="contenido-archivo-descifrado.png" thumb1="contenido-archivo-descifrado-thumb.png" title1="Contenido de un archivo de texto"
         image2="contenido-archivo-cifrado.png" thumb2="contenido-archivo-cifrado-thumb.png" title2="Contenido del archivo de texto cifrado" >}}
 </div>

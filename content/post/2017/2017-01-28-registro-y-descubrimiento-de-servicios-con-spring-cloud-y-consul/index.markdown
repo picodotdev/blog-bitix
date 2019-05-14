@@ -44,7 +44,7 @@ Una aplicación que use Spring Boot y que quiera hacer pública su disponibilida
 Spring Cloud proporciona además un servicio que podemos usar para conocer los servicios registrados en Consul, con la clase _DiscoveryClient_ podemos conocer los nombres de los servicios, su nombre de máquina y puerto desde una aplicación Java. En el método _run_ de la clase _Main_ se usa en este ejemplo para imprimir en la salida el listado de servicios registrados en Consul. Uno de esos servicios esta aplicación de ejemplo, ya que se registra en Consul cuando se inicia.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="206"
+    {{< figure
         image1="consul-services.png" thumb1="consul-services-thumb.png" title1="Servicios registrados en Consul"
         caption="Servicios registrados en Consul" >}}
 </div>
@@ -54,7 +54,7 @@ Consul para conocer que los servicios siguen en funcionamiento hace una petició
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="206"
+    {{< figure
         image1="service-health.png" thumb1="service-health-thumb.png" title1="Endpoint de estado de servicio"
         caption="Endpoint de estado de servicio" >}}
 </div>

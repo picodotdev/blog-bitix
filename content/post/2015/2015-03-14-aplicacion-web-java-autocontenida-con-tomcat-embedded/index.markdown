@@ -35,10 +35,10 @@ Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos 
 {{< code file="startup.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="71"
+	{{< figure
     	image1="tomcat-embedded-comando.png" thumb1="tomcat-embedded-comando-thumb.png" title1="Iniciando TomcatEmbedded"
     	image2="tomcat-embedded-app.png" thumb2="tomcat-embedded-app-thumb.png" title2="TomcatEmbedded iniciado" >}}
-	{{< figure year="2015" pid="71"
+	{{< figure
     	image1="app.png" title="Aplicación web en TomcatEmbedded" thumb1="app-thumb.png" title1="Aplicación web en TomcatEmbedded" >}}
 </div>
 

@@ -33,7 +33,7 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
 {{< code file="build.gradle" language="Groovy" options="" >}}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="261"
+    {{< figure
         image1="javadoc-taglet.png" thumb1="javadoc-taglet-thumb.png" title1="Contenido del taglet todo en el javadoc"
         caption="Contenido del taglet todo en el javadoc" >}}
 </div>

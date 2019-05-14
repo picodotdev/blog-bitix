@@ -55,7 +55,7 @@ Con Apache Tapestry están a nuestra disposición todas las facilidades de un _f
 Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despliega copiando el archivo _war_ al directorio de despliegue de los _portlets_ de Apache Pluto, en _webapps_. Una vez desplegado accediendo a la página de administración se configuran los _portlets_ que incluye cada página. El usuario y contraseña para iniciar sesión en Apache Pluto es _pluto_ para el usuario y _pluto_ para la contraseña.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="244"
+    {{< figure
         image1="pluto-admin.png" thumb1="pluto-admin-thumb.png" title1="Página de administración de portlets de Apache Pluto"
         image2="pluto-login.png" thumb2="pluto-login-thumb.png" title2="Inicio de sesión de Apache Pluto"
         caption="Páginas de administración y sesión de Apache Pluto" >}}
@@ -64,10 +64,10 @@ Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despli
 Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra el mensaje que emite y seleccionando la opción _edit_ acceder a la página de preferencias acceder a la página que muestra el formulario y permite cambiar el mensaje. Este es el resultado del _portlet_ desplegado en Apache Pluto.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="244"
+    {{< figure
         image1="tapestry-portlet.png" thumb1="tapestry-portlet-thumb.png" title1="Porlet con Apache Tapestry en Apache Pluto"
         image2="tapestry-portlet-preferences.png" thumb2="tapestry-portlet-preferences-thumb.png" title2="Página de preferencias del portlet" >}}
-    {{< figure year="2017" pid="244"
+    {{< figure
         image3="tapestry-portlet-name.png" thumb3="tapestry-portlet-name-thumb.png" title3="Portlet usando un dato almacenado en las preferencias"
         caption="Porlet con Apache Tapestry en Apache Pluto" >}}
 </div>

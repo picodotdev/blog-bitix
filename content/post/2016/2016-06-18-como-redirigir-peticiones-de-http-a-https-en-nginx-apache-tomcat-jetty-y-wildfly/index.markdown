@@ -33,7 +33,7 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 {{< code file="docker-nginx.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="151"
+    {{< figure
         image1="nginx-https.png" thumb1="nginx-https-thumb.png" title1="Redirección de HTTP a HTTPS en Nginx"
         caption="Redirección de HTTP a HTTPS en Nginx" >}}
 </div>
@@ -45,7 +45,7 @@ La configuración para Apache HTTPD es similar simplemente cambian las directiva
 {{< code file="docker-httpd.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="151"
+    {{< figure
         image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
         caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
 </div>

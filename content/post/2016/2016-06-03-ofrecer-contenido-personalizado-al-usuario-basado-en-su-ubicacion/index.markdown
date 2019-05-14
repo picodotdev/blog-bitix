@@ -29,7 +29,7 @@ Instalados los paquetes con las bases de datos de geoposicionamiento en la distr
 {{< code file="geoiplookup-marca.es.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="147"
+    {{< figure
         image1="geoiplookup.png" thumb1="geoiplookup-thumb.png" title1="Comando para obtener información de geoposicionamiento en base a la dirección IP"
         caption="Comando para obtener información de geoposicionamiento en base a la dirección IP" >}}
 </div>
@@ -44,7 +44,7 @@ En el siguiente ejemplo no incluyo la base de datos en el código fuente del pro
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="147"
+    {{< figure
         image1="geolite2.png" thumb1="geolite2-thumb.png" title1="Información de geoposicionamiento en base a la dirección IP con GeoLite2"
         caption="Información de geoposicionamiento en base a la dirección IP con GeoLite2" >}}
 </div>

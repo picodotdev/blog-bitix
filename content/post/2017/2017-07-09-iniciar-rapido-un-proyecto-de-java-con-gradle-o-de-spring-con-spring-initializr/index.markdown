@@ -30,7 +30,7 @@ Al usar el _plugin_ _init_ de Gradle se especifica el tipo de artefacto, aplicac
 Para proyectos que usen [Spring Boot][spring-boot] está disponible la herramienta [Spring Initializr][spring-initializr] que en pocos minutos permite disponer de una aplicación funcional con las propiedades que se seleccionen. Se puede elegir la herramienta de construcción, Maven o Gradle, la versión de Spring Boot, los metadatos de la aplicación para el paquete de las clases y artefacto, las dependencias de otros módulos de Spring y otras librerías populares.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="245"
+    {{< figure
         image1="spring-initalizr.png" thumb1="spring-initalizr-thumb.png" title1="Generador de proyectos Spring Initalizr" >}}
 </div>
 

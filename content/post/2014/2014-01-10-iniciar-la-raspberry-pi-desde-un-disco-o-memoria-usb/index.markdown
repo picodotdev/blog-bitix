@@ -24,7 +24,7 @@ En la guía de [Instalación de la Raspberry Pi](https://elblogdepicodev.blogspo
 Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando lsblk:
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="6"
+	{{< figure
 			image1="lsbk.png" thumb1="lsbk-thumb.png" >}}
 </div>
 
@@ -37,7 +37,7 @@ El comando dd creará un archivo en nuestro ordenador con la imagen de la partic
 Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos /dev/sdb1, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="6"
+	{{< figure
 			image1="gparted.png" thumb1="gparted-thumb.png" title1="Redimiensionado de patición con GParted" >}}
 </div>
 

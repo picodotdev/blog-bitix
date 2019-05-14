@@ -24,7 +24,7 @@ Otro de los elementos que incluye el [kit de iniciación a la Raspberry Pi][blog
 Un servomotor es un elemento distinto de un motor, un motor usa dos cables uno para mover el motor hacia adelante y otro cable para mover el motor hacia atrás. Los servomotores además de utilizar un único cable para controlarlo su funcionalidad es distinta usándose para posicionar el motor en un determinado ángulo que en el caso del SG90 tiene un ángulo de funcionamiento de 180º. Además el servomotor es más complejo, como se explica en el siguiente artículo de título [¿Cual es la diferencia entre un motor DC y servo motor?](http://handyboard.com/hb/faq/hardware-faqs/dc-vs-servo/) el servomotor se compone de varios elementos empaquetados como una pieza. Se compone de un motor DC normal, una unidad de reducción, un sensor de posicionamiento y un circuito de control.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="230"
+    {{< figure
         image1="servomotor.jpg" thumb1="servomotor-thumb.jpg" title1="Servomotor"
         image2="cableado.jpg" thumb2="cableado-thumb.jpg" title2="Cableado en la breadboard"
         caption="Servomotor y cableado" >}}

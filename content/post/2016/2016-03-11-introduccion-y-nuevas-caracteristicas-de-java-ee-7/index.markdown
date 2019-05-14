@@ -31,7 +31,7 @@ El modelo clásico de capas en la arquitectura de las aplicaciones Java EE se di
 * Sistemas de información: donde se persisten los datos de la aplicación, puede ser una base de datos relacional como [Oracle][oracle], [MySQL][mysql] o [PostgreSQL][postgresql] o una base de datos NoSQL como [Redis][redis] o [MongoDB][mongodb] u otros sistemas como [Elasticsearch][elasticsearch].
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="131"
+    {{< figure
         image1="aplicaciones-multicapa-javaee.png" thumb1="aplicaciones-multicapa-javaee.png" title1="Aplicaciones multicapa Java EE"
         caption="Aplicaciones multicapa Java EE" >}}
 </div>

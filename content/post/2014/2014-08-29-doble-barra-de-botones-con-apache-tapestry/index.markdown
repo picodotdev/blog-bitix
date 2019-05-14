@@ -19,7 +19,7 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo", "blog-stack"]
 Por motivos de usabiliad en algunas páginas se incluyen dos barra de botones, una antes de una larga sección y otra después. El motivo de la doble barra de botones inicial es que no sea necesario hacer «scroll» hasta el final de la página para acceder a los botones y realizar la acción que permitan. Por el contrario, inlcuir la barra de botones al final de la página permite que una vez seleccionados los elementos o revisado el contenido de la sección hacer disponibles las acciones que es probable que se quieran realizar.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="39"
+	{{< figure
     	image1="doble-barra-botones.png" thumb1="doble-barra-botones-thumb.png" title1="Doble barra de botones" >}}
 </div>
 

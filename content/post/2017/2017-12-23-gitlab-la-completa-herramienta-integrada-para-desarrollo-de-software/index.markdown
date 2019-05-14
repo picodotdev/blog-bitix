@@ -33,14 +33,14 @@ Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compos
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="change-password.png" thumb1="change-password-thumb.png" title1="Contraseña de root"
         image2="sing-in.png" thumb2="sing-in-thumb.png" title2="Inicio de sesión"
         caption="Contraseña e inicio de sesión" >}}
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="welcome.png" thumb1="welcome-thumb.png" title1="Página de bienvenida"
         caption="Página de bienvenida" >}}
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="profile.png" thumb1="profile-thumb.png" title1="Perfil de usuario"
         image2="admin-area.png" thumb2="admin-area-thumb.png" title2="Área de administración"
         caption="Perfil de usuario y área de administración" >}}
@@ -49,14 +49,14 @@ Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compos
 Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus claves SSH, repositorios de Git pudiendo importar otros existentes, crear nuevos, páginas de una wiki y peticiones, integración y entrega continua y personalizar el panel _kanban_ con el flujo que deseamos que sigan las peticiones en la organización, por ejemplo, _planning_, _ready_, _doing_, _review_, _merged_ y _deployed_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="new-proyect.png" thumb1="new-proyect-thumb.png" title1="Nuevo proyecto"
         caption="Nuevo proyecto" >}}
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="new-issue.png" thumb1="new-issue-thumb.png" title1="Nueva petición"
         image2="issues-board.png" thumb2="issues-board-thumb.png" title2="Panel de peticiones"
         caption="Nueva petición y panel de peticiones" >}}
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="new-wiki-page.png" thumb1="new-wiki-page-thumb.png" title1="Nueva página wiki"
         image2="wiki-page.png" thumb2="wiki-page-thumb.png" title2="Página wiki"
         caption="Página wiki" >}}
@@ -69,11 +69,11 @@ Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la
 {{< code file="existing-repository.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="project-details-1.png" thumb1="project-details-1-thumb.png" title1="Detalles de proyecto"
         image2="project-details-2.png" thumb2="project-details-2-thumb.png" title2="Detalles de proyecto"
         caption="Detalles de proyecto" >}}
-    {{< figure year="2017" pid="290"
+    {{< figure
         image1="source-file.png" thumb1="source-file-thumb.png" title1="Contenido de archivo código fuente"
         caption="Contenido de archivo de código fuente" >}}
 </div>

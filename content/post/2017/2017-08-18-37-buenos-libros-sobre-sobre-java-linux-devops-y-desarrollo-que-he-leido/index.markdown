@@ -32,7 +32,7 @@ Algunas páginas dedicadas a la programación relativa a [Java][java] y [GNU][gn
 En la biblioteca digital [OpenLibra][openlibra] encontramos una gran cantidad de libros de diversos temas cuyas licencias permiten su libre acceso.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="254"
+    {{< figure
         image1="openlibra.png" thumb1="openlibra-thumb.png" title1="OpenLibra"
         caption="Web de OpenLibra" >}}
 </div>

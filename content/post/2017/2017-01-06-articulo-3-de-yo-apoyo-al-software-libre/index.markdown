@@ -49,13 +49,13 @@ El tercer proyecto al que he donado ha sido a Arch Linux ARM ya que lo uso en la
 ### Comprobantes de las donaciones
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="203"
+    {{< figure
         image1="donacion-elementary.png" thumb1="donacion-elementary-thumb.png" title1="Donación Elementary OS"
         caption="Donación Elementary OS" >}}
-    {{< figure year="2017" pid="203"
+    {{< figure
         image1="donacion-thedocumentfoundation.png" thumb1="donacion-thedocumentfoundation-thumb.png" title1="Donación The Document Foundation"
         caption="Donación The Document Foundation" >}}
-    {{< figure year="2017" pid="203"
+    {{< figure
         image1="donacion-archlinuxarm.png" thumb1="donacion-archlinuxarm-thumb.png" title1="Donación Arch Linux ARM"
         caption="Donación Arch Linux ARM" >}}
 </div>

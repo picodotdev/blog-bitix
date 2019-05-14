@@ -25,7 +25,7 @@ Después de pasado todos estos años los motivos por los que lo empecé los sigo
 Durante este tiempo en ambos blogs he tenido unas 450K páginas vistas, en realidad no son muchas (por no decir pocas) comparadas con las conseguidas por otras bitácoras personales de temática similar. Actualmente según feedly Blog Bitix tiene aproximadamente 70 suscriptores, seguramente haya algunos más que feedly no contabilice, tampoco son muchos. El mayor tráfico proviene del buscador Google, vistas que llegan como "paracaidistas" buscando información desde un enlace en la página de resultados con sus búsquedas y las palabras clave. A medida que cada semana publico más contenido un mes tras otro Blog Bitix tiene unas cuantas visitas más pero el crecimiento es lento.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="65"
+	{{< figure
     	image1="analytics.png" thumb1="analytics-thumb.png" title1="Visitas semanales de Blog Bitix" >}}
 </div>
 

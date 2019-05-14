@@ -43,13 +43,13 @@ Lo primero que haremos es [descargar la última versión de GeeXboX](http://www.
 Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar [GParted](http://gparted.org/). Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="5"
+	{{< figure
     	image1="geexbox-inicio.jpg" thumb1="geexbox-inicio-thumb.jpg"
     	image2="geexbox-ajustes.jpg" thumb2="geexbox-ajustes-thumb.jpg" >}}
-	{{< figure year="2014" pid="5"
+	{{< figure
     	image1="geexbox-ajustes-video.jpg" thumb1="geexbox-ajustes-video-thumb.jpg"
     	image2="geexbox-apariencia-ajustes.jpg" thumb2="geexbox-apariencia-ajustes-thumb.jpg" >}}
-	{{< figure year="2014" pid="5"
+	{{< figure
     	image1="geexbox-servicios.jpg" thumb1="geexbox-servicios-thumb.jpg"
     	image2="geexbox-reproduccion.jpg" thumb2="geexbox-reproduccion-thumb.jpg" >}}
 </div>

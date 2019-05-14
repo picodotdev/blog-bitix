@@ -19,7 +19,7 @@ tags: ["java", "programacion", "tapestry", "software", "planeta-codigo"]
 El 10 de febrero tuve la oportunidad de dar una charla, la primera, sobre [Apache Tapestry](http://tapestry.apache.org/) para el equipo de desarrolladores de la empresa en la que trabajo. Que en el equipo de desarrollo tengamos la posibilidad de vez en cuando dedicar un par de horas para juntarnos y compartir conocimiento es una buena iniciativa ya que siendo ya un equipo bastante grande de personas y con un nivel técnico elevado cada uno tiene un conocimiento que los demás pueden estar interesados en conocer al menos a nivel superficial, es motivador tener estas oportunidades.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="11"
+	{{< figure
     	image1="presentacion-apache-tapestry.jpg" thumb1="presentacion-apache-tapestry-thumb.jpg" title1="Presentación sobre Apache Tapestry" >}}
 </div>
 

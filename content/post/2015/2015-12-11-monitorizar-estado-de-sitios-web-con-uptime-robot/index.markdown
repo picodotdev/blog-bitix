@@ -20,7 +20,7 @@ tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion"]
 Los sitios web que ofrecen su servicio de forma ininterrumpida por diferentes causas pueden dejar de funcionar ya sea porque se ha perdido la conexión con la base de datos, se ha llenado el disco de la máquina impidiendo su normal funcionamiento u otras causas. En algunos tipos de servicio como páginas de presencia en internet puede dar una mala imagen pero en los sitios de comercio electrónico la pérdida del servicio es especialmente importante ya que además implica perder ventas o clientes. Para conocer de la forma más inmediata posible el mal funcionamiento y poder restaurar el servicio podemos usar alguna herramienta que monitorice su estado. Para monitorizar el funcionamiento de sitios web una de ellas muy sencilla es [Uptime Robot][uptimerobot].
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="114"
+    {{< figure
         image1="uptime-robot.png" thumb1="uptime-robot-thumb.png" title1="Uptime Robot"
         caption="Uptime Robot" >}}
 </div>
@@ -33,7 +33,7 @@ Una vez registrados y con acceso al panel de control podemos crear un _monitor_.
 * _port_: comprueba que un determinado puerto esté accesible. En la [página de preguntas frecuentes](https://uptimerobot.com/faq) están comentados los diferentes tipos de monitores.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="114"
+    {{< figure
         image1="nuevo-monitor.png" thumb1="nuevo-monitor-thumb.png" title1="Nuevo monitor HTTP"
         caption="Nuevo monitor HTTP" >}}
 </div>
@@ -41,10 +41,10 @@ Una vez registrados y con acceso al panel de control podemos crear un _monitor_.
 En el momento que un monitor detecte una caída de servicio podemos establecer que nos notifique por correo electrónico, [Twitter][twitter], _web-hook_, [Slack][slack], <abbr title="Short Message Service">SMS</abbr> o alguna más de forma que nos enteremos de la circunstancia inmediatamente. También podemos establecer el intervalo de tiempo de la monitorización desde como mínimo cada 5 minutos. En el panel de control podemos ver algunas estadísticas de cada monitor y de la cuenta, también se pueden reiniciar las estadísticas de cada monitor.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="114"
+    {{< figure
         image1="dashboard.png" thumb1="dashboard-thumb.png" title1="Dashboard"
         caption="Dashboard" >}}
-    {{< figure year="2015" pid="114"
+    {{< figure
         image1="blogstack.png" thumb1="blogstack-thumb.png" title1="Monitor Blog Stack"
         caption="Monitor Blog Stack" >}}
 </div>
