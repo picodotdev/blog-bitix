@@ -54,10 +54,10 @@ Cuando un servidor falla al servir una petición Nginx lo marca como en estado e
 Si queremos que el cliente conozca que servidor atendió la petición podemos añadir la [directiva _add\_header_](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header) usando una de las [variables añadidas por el módulo  _ngx\_http\_upstream_](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#variables), nos servirá para depurar la aplicación en tiempo de desarrollo.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="157"
+    {{< figure
         image1="nginx-load-balancer-1.png" thumb1="nginx-load-balancer-1-thumb.png" title1="Servidor balanceado 172.17.0.2:8080"
         image2="nginx-load-balancer-2.png" thumb2="nginx-load-balancer-2-thumb.png" title2="Servidor balanceado 172.17.0.3:8080" >}}
-    {{< figure year="2016" pid="157"
+    {{< figure
         image1="nginx-load-balancer-3.png" thumb1="nginx-load-balancer-3-thumb.png" title1="Servidor balanceado 172.17.0.4:8080"
         caption="Nginx balanceando la carga entre 3 servidores de aplicaciones Tomcat" >}}
 </div>

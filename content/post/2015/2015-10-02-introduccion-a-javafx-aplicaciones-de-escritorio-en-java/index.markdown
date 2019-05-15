@@ -48,7 +48,7 @@ La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/Ho
 Esta es la captura de pantalla de la aplicación y el mensaje emitido en la consola cuando se hace clic en el botón.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="100"
+    {{< figure
         image1="helloworld.png" thumb1="helloworld-thumb.png" title1="Aplicación ¡Hola Mundo!"
         caption="Aplicación ¡Hola Mundo! con JavaFX" >}}
 </div>
@@ -60,10 +60,10 @@ En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/
 {{< code file="examples.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="100"
+    {{< figure
         image1="ensemble.png" thumb1="ensemble-thumb.png" title1="Aplicación Ensemble"
         caption="Aplicación Ensemble" >}}
-    {{< figure year="2015" pid="100"
+    {{< figure
         image1="modena.png" thumb1="modena-thumb.png" title1="Aplicación Modena"
         caption="Aplicación Modena" >}}
 </div>

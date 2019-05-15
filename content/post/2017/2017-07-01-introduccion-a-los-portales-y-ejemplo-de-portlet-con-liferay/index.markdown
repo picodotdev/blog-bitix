@@ -33,7 +33,7 @@ Algunos de sus casos de uso son:
 Uno de los servidores de portales más destacados y usados es [Liferay][liferay] aunque no es el único siendo [Apache Pluto][apache-pluto] el servidor de referencia. En lo poco que los he probado Liferay comparado con Apache Pluto el primero tarda bastante más en iniciarse, se nota más lento y me ha dado problemas al usar el _framework_ [Apache Tapestry][tapestry] para desarrollar un _portlet_, sin embargo, Liferay incorpora más [_portlets_](https://es.wikipedia.org/wiki/Portlet) con multitud de funcionalidades, es más usado y solicitado en ofertas de trabajo. Tanto Liferay como Apache Pluto implementan la [especificación de los _portlets_](https://jcp.org/aboutJava/communityprocess/edr/jsr362/index2.html) de Java que son la pieza básica funcional de un portal.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="inicio.png" thumb1="inicio-thumb.png" title1="Página inicial de Liferay" >}}
 </div>
 
@@ -63,14 +63,14 @@ El contenedor de _portlets_ proporciona funcionalidades como:
 Desde la [página de descargas](https://www.liferay.com/es/downloads) se puede obtener la edición para la comunidad de Liferay además de otros productos eligiendo la versión deseada y en la [red para desarrolladores](https://dev.liferay.com/es/home) obtener documentación y material de referencia. Una vez descargado el archivo de la distribución de Liferay y descomprimido se inicia con el comando ubicado en _tomcat-8.0.32/bin/startup.sh_. En el archivo _tomcat-8.0.32logs/catalina.out_ se emiten las trazas y mensajes del servidor. Iniciado Liferay se presenta una página de configuración, se han de aceptar los términos y condiciones e iniciar sesión con el usuario creado en la primera página de configuración.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="configuracion.png" thumb1="configuracion-thumb.png" title1="Configuración básica de Liferay" >}}
 </div>
 
 Para añadir un _portlet_ propio a Liferay hay que acceder al _Panel de control > Aplicaciones > Gestor de aplicaciones_ y pulsar la opción cargar ubicada en la parte superior derecha de la página. En la salida del servidor aparecerán varias trazas relativas al despliegue del _portlet_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="gestor-de-aplicaciones.png" thumb1="gestor-de-aplicaciones-thumb.png" title1="Gestor de aplicaciones"
         image2="instalar-aplicacion.png" thumb2="instalar-aplicacion-thumb.png" title2="Instalar aplicación" >}}
 </div>
@@ -91,7 +91,7 @@ Un _portlet_ es una clase Java que extiende de [GenericPortlet](https://portals.
 Los _portlets_ con sus diferencias funcionales con los _servlets_ tienen muchas similitudes y una API con clases equivalentes a los _servlets_. Así la clase principal de la que hay que heredar para crear un portlet es GenericPortlet o implementar la interfaz [Portlet](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/Portlet.html). Las peticiones en los _portlets_ siguen una serie de fases que se van ejecutando en el siguiente orden _ActionPhase_, _EventPhase_, _HeaderPhase_ y _RenderPhase_. Para los recursos como imágenes o documentos hay una fase específica _ResourcePhase_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="portlets-phase-model.png" thumb1="portlets-phase-model-thumb.png" title1="Fases del ciclo de vida de una petición de un portlet"
         image2="portlet-lifecycle-methods.png" thumb2="portlet-lifecycle-methods-thumb.png" title2="Métodos de ciclo de vida de un portlet"
         caption="Fases y métodos del ciclo de vida de un portlet" >}}
@@ -106,10 +106,10 @@ La interfaz [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-api
 Usando como herramienta de construcción del proyecto [Gradle][gradle] el archivo _.war_ a desplegar el Liferay se genera con la tarea _build_ en el directorio _build/libs/HolaMundoPortlet-0.1.war_. Esta archivo hay que desplegarlo en Liferay para posteriormente incluirlo en alguna página, se visualice el contenido que genera y se pueda interactuar con él.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="anadir-portlet.png" thumb1="anadir-portlet-thumb.png" title1="Añadir portlet"
         image2="inicio-hola-mundo-portlet.png" thumb2="inicio-hola-mundo-portlet-thumb.png" title2="Portlet HolaMundo" >}}
-    {{< figure year="2017" pid="243"
+    {{< figure
         image1="preferencias.png" thumb1="preferencias-thumb.png" title1="Preferencias del portlet"
         image2="preferencias-usuario.png" thumb2="preferencias-usuario-thumb.png" title2="Portlet HolaMundo con preferencias" >}}
 </div>

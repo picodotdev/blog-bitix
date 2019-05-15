@@ -29,7 +29,7 @@ El tablero clásico se compone de una matriz de 19 por 19 en el que en las inter
 En el juego de computadora el siguiente movimiento se hace introduciendo la coordenada del tablero donde queremos colocar la siguiente piedra que se compone de una letra para la coordenada horizontal y un número para la coordenada vertical.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="163"
+    {{< figure
         image1="tablero-go.jpg" thumb1="tablero-go-thumb.jpg" title1="Tablero tradicional de Go"
         image2="tablero-gnugo.png" thumb2="tablero-gnugo-thumb.png" title2="Tablero de Gnugo"
         caption="Tablero tradicional de juego y tablero de Gnugo" >}}

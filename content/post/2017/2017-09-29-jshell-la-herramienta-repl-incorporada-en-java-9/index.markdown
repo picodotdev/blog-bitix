@@ -23,7 +23,7 @@ Una de las [novedades de Java 9][blogbitix-263] es la incorporación de una herr
 El comando de la herramienta [JShell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm) es _jshell_ que inicia un símbolo del sistema donde empezar a introducir las expresiones, se sale de _jshell_ con el comando <code>/exit</code>.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="265"
+    {{< figure
         image1="jshell.png" thumb1="jshell-thumb.png" title1="JShell"
         caption="JShell" >}}
 </div>
@@ -33,11 +33,11 @@ Se pueden crear variables, crear y modificar definiciones de métodos y clases. 
 Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un [Stream](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html) de la cual se muestran los elementos de la serie menores que el número 100.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="265"
+    {{< figure
         image1="jshell-expressions.png" thumb1="jshell-expressions-thumb.png" title1="Expresiones"
         image2="jshell-completion.png" thumb2="jshell-completion-thumb.png" title2="Asistencia de código"        
         caption="Expresiones y asistencia de código" >}}
-    {{< figure year="2017" pid="265"
+    {{< figure
         image1="jshell-methods.png" thumb1="jshell-methods-thumb.png" title1="Serie de Fibonacci con un Stream en un método"
         caption="Serie de Fibonacci con un Stream en un método" >}}
 </div>
@@ -45,7 +45,7 @@ Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci im
 Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter _/_. Hay varios como los ya citados para listar los _snippets_ de código y salir de _jshell_, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e _imports_ con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="265"
+    {{< figure
         image1="jshell-commands.png" thumb1="jshell-commands-thumb.png" title1="Comandos"
         caption="Comandos" >}}
 </div>

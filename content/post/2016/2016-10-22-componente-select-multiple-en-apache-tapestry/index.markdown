@@ -40,7 +40,7 @@ El código HTML generado por el componente es el siguiente:
 Este sería el aspecto del _select_ múltiple con sus botones para seleccionar todas las opciones y deseleccionar todas, además de personalizados los textos y una pequeña flecha en el desplegable hacia el componente _select_, todo esto configurado principalmente a través de atributos _data_ y clases <abbr title="Cascading Stylesheets">CSS</abbr>.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="188"
+    {{< figure
         image1="multiselect.png" thumb1="multiselect-thumb.png" title1="Aspecto del componente select mútiple"
         image2="multiselect-2.png" thumb2="multiselect-2-thumb.png" title2="Vista con opciones seleccionadas enviadas al servidor"
         caption="Componente MultiSelect con bootstrap-select" >}}
@@ -49,7 +49,7 @@ Este sería el aspecto del _select_ múltiple con sus botones para seleccionar t
 Si queremos seleccionar múltiples opciones usando _checkboxes_ Tapestry ofrece el componente [Checklist](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Checklist.html) y usando _selects_ otra opción es el componente [Palette](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Palette.html) pero seguramente no sea lo que deseamos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="188"
+    {{< figure
         image1="checklist.png" thumb1="checklist-thumb.png" title1="Componente Checklist de Tapestry"
         image2="palette.png" thumb2="palette-thumb.png" title2="Componente Palette de Tapestry"
         caption="Componentes Checklist y Palette" >}}

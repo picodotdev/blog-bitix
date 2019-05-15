@@ -38,7 +38,7 @@ Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio
 {{< code file="ffmpeg-convert.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="ffmpeg-output.png" thumb1="ffmpeg-output-thumb.png" title1="Salida conversión de MKV a MPG" >}}
 </div>
 
@@ -59,7 +59,7 @@ Los vídeos pueden tener múltiples pistas de audio y subtítulos en varios idio
 {{< code file="ffmpeg-i.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="ffmpeg-i.png" thumb1="ffmpeg-i-thumb.png" title1="Información de un vídeo" >}}
 </div>
 
@@ -72,7 +72,8 @@ Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</co
 {{< code file="ffplay.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="135" image1="ffplay.jpg" thumb1="ffplay-thumb.jpg" title1="FFplay" >}}
+    {{< figure
+        image1="ffplay.jpg" thumb1="ffplay-thumb.jpg" title1="FFplay" >}}
 </div>
 
 Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.
@@ -88,15 +89,15 @@ Otras opciones útiles disponibles en los comandos de FFmpeg son:
 Si preferimos realizar la conversión mediante una interfaz gráfica podemos usar VLC que también nos servirá para hacer la conversión tanto en Windows como en Mac OS además de GNU/Linux. Primeramente en el menu _Archivo_ _>_ _Convertir_ añadimos el archivo a convertir a la lista y pulsamos botón _Convertir_. En el siguiente diálogo seleccionaremos el perfil de salida y el nombre del archivo de salida, editando el perfil tendremos opción de modificar la tasa de bits del vídeo y audio, además de la resolución y la posibilidad de aplicar algunos filtros.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="vlc-input.png" thumb1="vlc-input-thumb.png" title1="Selección de archivo"
         image2="vlc-convert-codecs.png" thumb2="vlc-convert-codecs-thumb.png" title2="Selección de códec" >}}
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="vlc-input.png" thumb1="vlc-input-thumb.png" title1="Selección de archivo"
         image2="vlc-convert-container.png" thumb2="vlc-convert-container-thumb.png" title2="Información de contenedor" >}}
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="vlc-convert-resolution.png" thumb1="vlc-convert-resolution-thumb.png" title1="Resolución del vídeo" >}}
-    {{< figure year="2016" pid="135"
+    {{< figure
         image1="vlc-convert-video-codec.png" thumb1="vlc-convert-video-codec-thumb.png" title1="Parámetros del códec de vídeo"
         image2="vlc-convert-audio-codec.png" thumb2="vlc-convert-audio-codec-thumb.png" title2="Parámetros del códec de audio" >}}
 </div>

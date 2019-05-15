@@ -14,13 +14,9 @@ tags: ["blog-stack", "java", "planeta-codigo", "programacion", "tapestry"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
+{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
 
 Hace ya unos años comentaba [varios motivos para elegir Apache Tapestry][elblogdepicodev-motivos-para-elegir-apache-tapestry] como _framework_ para desarrollar una aplicación o página web. Entre las varias razones comentaba la productividad como característica destacada. Uno de los motivos de esta productividad era por la alta reutilización de código que se puede conseguir al usar los componentes múltiples veces en un mismo proyecto o en diferentes proyectos creando una librería de componentes como comento más detalladamente en el [libro PugIn Tapestry][blogbitix-12]. Otra parte de la productividad que comentaba más ligeramente era poder detectar de forma rápida errores de compilación no solo en el código Java a través del IDE sino porque con [Tapestry][tapestry] es posible detectar errores de compilación en todas las plantillas tml que generan el html fácil y rápidamente con un botón sin tener que probar manualmente toda la funcionalidad. El tema de este artículo es mostrar más en detalle como detectar los errores de compilación en las vistas con este _framework_.
-
-<div class="logotypes" style="float: right; text-align: right;">
-	<img src="assets/images/logotipos/java.png" class="right" alt="Java" title="Java">
-</div>
 
 Por «errores de compilación» me refiero a ese tipo de erorres que hace el código ni siquiera pueda ser interpretado correctamente por el computador, puede ser porque falta un _import_, un nombre de variable, propiedad o método mal puesto y que no existe... Poder detectar errores de compilación fácilmente en toda la aplicación es tremendamente útil y evitará que lleguen a producción con las consiguientes molestias para los usuarios y que posteriormente tengamos que dedicar tiempo a corregirlos cuando hemos perdido el contexto de las modificaciones hechas. También tendremos más seguridad de que no introducimos errores al hacer _refactorizaciones_ importantes en el código. Los errores de compilación suelen ser fáciles y rápidos de corregir pero igualmente pueden impedir totalmente el uso de la aplicación. Cuando antes detectemos los errores más fácilmente los corregiremos y más productivos seremos ya que evitaremos corregirlos en un momento posterior en que costará más tiempo y esfuerzo, además de tener que realizar un nuevo despliegue con los cambios corregidos que dependiendo del tiempo que nos lleve puede suponer otro problema.
 
@@ -29,21 +25,21 @@ La errores de compilación no depende de escribir pocas lineas de código o ahor
 Con Java y un IDE podremos detectar los errores de compilación que en un lenguaje dinámico solo observaremos en tiempo de ejecución. En Tapestry además podemos detectar los errores de compilación en las plantillas tml que generan el contenido html con un botón en la [página Dashboard][blogbitix-28] que ofrece incorporada Tapestry. Usando como ejemplo la aplicación que hice para el [libro PlugIn Tapestry][blogbitix-12] vamos a ver como detectar estos errores. De forma intencionada introduciré un error en la página que muestra el detalle de un producto en el mantenimiento CRUD del ejemplo. En vez de _producto.nombre_ introduciré el error de compilación poniendo _producto.nombra_, _nombra_ es una propiedad que no existe en la clase _Producto_, error que solo detectaremos después de crear un producto en otros _frameworks_ al ejercitar el código pero que en Tapestry detectaremos también desde la página Dashboard. Por otra parte dado que en Tapestry las plantillas tml son xml válido si una etiqueta está mal balanceada también nos avisará.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="73"
+	{{< figure
     	image1="producto.png" thumb1="producto.png" title1="Edición de un producto" >}}
 </div>
 
 {{< code file="ProductoAdmin.tml" language="HTML" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="73"
+	{{< figure
     	image1="error.png" thumb1="error.png" title1="Error de compilación al acceder a la página" >}}
 </div>
 
 Entrando a la [página Dashboard][blogbitix-28] y pulsando el botón _Load all pages_ detectaremos el error sin necesidad de crear un producto. El error es el siguiente que nos indicará claramente en que página o componente se ha producido el error y una descripción bastante clara de la causa del problema.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="73"
+	{{< figure
     	image1="dashboard.png" thumb1="dashboard.png" title1="Página dashboard"
     	image2="error-dashboard.png" thumb2="error-dashboard.png" title2="Página dashboard" >}}
 </div>

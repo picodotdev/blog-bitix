@@ -46,7 +46,7 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="113"
+    {{< figure
         image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png" title1="Spring Boot Actuator endpoint Health"
         image2="spring-boot-actuator-env.png" thumb2="spring-boot-actuator-env-thumb.png" title2="Spring Boot Actuator endpoint Env"
         image3="spring-boot-actuator-metrics.png" thumb3="spring-boot-actuator-metrics-thumb.png" title3="Spring Boot Actuator endpoint Metrics"

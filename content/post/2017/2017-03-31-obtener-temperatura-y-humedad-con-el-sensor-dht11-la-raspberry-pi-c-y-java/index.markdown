@@ -28,7 +28,7 @@ En la [especificación del sensor DHT11](http://www.micropik.com/PDF/dht11.pdf) 
 Dada las restricciones de tiempo que utiliza el sensor en el ejemplo usaré el lenguaje C para obtener los valores de temperatura y humedad y <abbr title="Java Native Interface">JNI</abbr> para acceder a ellos desde Java. Aún usando C se producen errores en la obtención de los valores ya que el método usado por el sensor y transmitir los datos basados en tiempo de microsegundos no es muy fiable. Usando Java la situación sería peor por las restricciones que impone la máquina virtual con sus paradas para la recolección de basura por ejemplo. Así que el ejemplo consistirá en una combinación de C y Java con JNI un poco más avanzado que el [Ejemplo de JNI, usar código en C desde Java][blogbitix-217].
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="219"
+    {{< figure
         image1="dht11-1.jpg" thumb1="dht11-1-thumb.jpg" title1="Sensor DHT11"
         image2="dht11-2.jpg" thumb2="dht11-2-thumb.jpg" title2="Sensor DHT11"
         caption="Sensor DHT11" >}}
@@ -59,7 +59,7 @@ La clase Java del ejemplo que hace uso del sensor realiza una lectura cada 3 seg
 Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del _pin_ GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del _header_ de la Raspberry Pi. Para ver el cableado del _display_ 1602 más detalladamente y la activación del bus de comunicación I2C que necesita consulta el artículo [Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java][blogbitix-215].
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="219"
+    {{< figure
         image1="cableado.jpg" thumb1="cableado-thumb.jpg" title1="Cableado sensor DHT11 y display 1602"
         caption="Cableado sensor DHT11 y display 1602" >}}
 </div>
@@ -67,7 +67,7 @@ Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del
 Ejecutando el programa del ejemplo y usando el display 1602 (16 columnas y 2 filas) se muestra la temperatura y humedad obtenida del sensor.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="219"
+    {{< figure
         image1="temperature-humidity.jpg" thumb1="temperature-humidity-thumb.jpg" title1="Cableado ejemplo y funcionando"
         image2="display.jpg" thumb2="display-thumb.jpg" title2="Cableado ejemplo y funcionando"
         caption="Cableado ejemplo y funcionando" >}}

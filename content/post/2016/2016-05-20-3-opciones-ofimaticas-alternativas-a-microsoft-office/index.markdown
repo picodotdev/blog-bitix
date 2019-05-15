@@ -36,10 +36,10 @@ En este artículo me centraré más en las alternativas a Office que también so
 Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio y las versiones web para estos y otros sistemas. [Office 365](https://products.office.com/es-es/) tiene un coste alrededor de 8,80€ por usuario y mes según el plan que incluye más o menos aplicaciones.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="microsoftoffice-word.png" thumb1="microsoftoffice-word-thumb.png" title1="Microsoft Office Word"
         image2="microsoftoffice-excel.png" thumb2="microsoftoffice-excel-thumb.png" title2="Microsoft Office Excel" >}}
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="microsoftoffice-powerpoint.png" thumb1="microsoftoffice-powerpoint-thumb.png" title1="Microsoft Office Powerpoint" >}}
 </div>
 
@@ -48,10 +48,10 @@ Microsoft Office incluye Word como procesador de textos, Powerpoint para present
 La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://es.libreoffice.org/). Incluye un editor de textos con Writer, hojas de cálculo con Calc, presentaciones con Impress, Draw para crear gráficos y Base para bases de datos sencillas. Sin embargo, la interfaz es el similar al de Office en las ediciones anteriores a la incorporación de _ribbon_ con una estética sin la sensación de estar cuidada. Los menús son largos y encontrar un opción entre las muchas disponibles no es sencillo, al abrir una opción de menú uno se puede sentir intimidado por la longitud del mismo y es algo más difícil encontrar rápidamente la opción buscada entre todas las mostradas. Habrá usuarios que prefieran la interfaz de menús y barras de herramientas, yo soy de los que les gusta más _ribbon_. Está disponible para Windows, Linux y Mac.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="libreoffice-writer.png" thumb1="libreoffice-writer-thumb.png" title1="LibreOffice Writer"
         image2="libreoffice-calc.png" thumb2="libreoffice-calc-thumb.png" title2="LibreOffice Calc" >}}
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="libreoffice-impress.png" thumb1="libreoffice-impress-thumb.png" title1="LibreOffice Impress" >}}
 </div>
 
@@ -64,10 +64,10 @@ Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste 
 Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para los que ni Microsoft Office ya ofrece soporte, Linux, Android e iOS. Su instalador ocupa únicamente unos 80 MiB contra los más de 3 GiB de Office.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="wpsoffice-writer.png" thumb1="wpsoffice-writer-thumb.png" title1="WPS Writer"
         image2="wpsoffice-spreadsheets.png" thumb2="wpsoffice-spreadsheets-thumb.png" title2="WPS Spreadsheets" >}}
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="wpsoffice-presentation.png" thumb1="wpsoffice-presentation-thumb.png" title1="WPS Office Presentation" >}}
 </div>
 
@@ -78,9 +78,9 @@ Otra alternativa a Office es [Google Docs](https://www.google.es/intl/es/docs/ab
 Para las empresas se ofrece al precio de 4€ por usuario al mes que incluye el cliente de correo Gmail, calendarios, videollamadas y 30 GB de almacenamiento. Serán 8€ con más opciones de almacenamiento y retención de mensajes.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="googledocs-documento.png" thumb1="googledocs-documento-thumb.png" title1="Documento Google Docs" image2="googledocs-hoja-de-calculo.png" thumb2="googledocs-hoja-de-calculo-thumb.png" title2="Hoja de cálculo Google Docs" >}}
-    {{< figure year="2016" pid="143"
+    {{< figure
         image1="googledocs-presentacion.png" thumb1="googledocs-presentacion-thumb.png" title1="Presentación Google Docs" >}}
 </div>
 

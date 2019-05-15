@@ -63,7 +63,7 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 {{< code file="docker-compose-up.sh" language="YAML" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="87"
+    {{< figure
         image1="docker-compose.png" thumb1="docker-compose-thumb.png" title1="Docker Compose"
         caption="Docker Compose" >}}
 </div>

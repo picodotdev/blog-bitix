@@ -52,7 +52,7 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 {{< code file="info.json" language="JSON" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="227"
+    {{< figure
         image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
         caption="Contenido del archivo message.txt" >}}
 </div>

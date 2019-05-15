@@ -26,13 +26,13 @@ Aunque con muchos más LED el ejemplo no es más complicado que el ejemplo que y
 Esta es la foto del cableado usando múltiples cables macho-macho para conectar los _pines_ con el polo positivo de los diodos pasando por la resistencia y también múltiples cables para conectar el polo negativo del diodo con tierra. Usando una placa _breadboard_ para realizar las conexiones sin soldadura y una placa de extensión wiringPi para conectar la Raspberry Pi con la placa _breadboard_ con un cable de 26 _pines_ en mi caso por el modelo que tengo de RPi este es el aspecto de cableado.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="233"
+    {{< figure
         image1="arbol-navidad-01.jpg" thumb1="arbol-navidad-01-thumb.jpg" title1="Cableado de las luces LED del árbol de navidad"
         image2="arbol-navidad-02.jpg" thumb2="arbol-navidad-02-thumb.jpg" title2="Cableado de las luces LED del árbol de navidad" >}}
-    {{< figure year="2017" pid="233"
+    {{< figure
         image1="arbol-navidad-03.jpg" thumb1="arbol-navidad-03-thumb.jpg" title1="Cableado de las luces LED del árbol de navidad"
         image2="arbol-navidad-04.jpg" thumb2="arbol-navidad-04-thumb.jpg" title2="Cableado de las luces LED del árbol de navidad" >}}
-    {{< figure year="2017" pid="233"
+    {{< figure
         image1="arbol-navidad-05.jpg" thumb1="arbol-navidad-05-thumb.jpg" title1="Cableado de las luces LED del árbol de navidad"
         caption="Cableado de las luces LED del árbol de navidad" >}}
 </div>

@@ -32,7 +32,7 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 {{< code file="Main.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="78"
+    {{< figure
         image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" title1="Salida en la consola" >}}
 </div>
 

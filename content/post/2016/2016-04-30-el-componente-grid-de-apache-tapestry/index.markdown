@@ -15,7 +15,7 @@ summary: "En la mayoría de aplicaciones no solo es habitual sino algo muy usado
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapstry" with1="400" >}}
+{{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapstry" width1="400" >}}
 
 [Apache Tapestry][tapestry] es uno de los muchos _frameworks_ disponibles en Java para el desarrollo de aplicaciones y páginas web. A diferencia de la mayoría se basa en componentes y proporciona una larga lista de ellos listos para usar de serie, pero también se pueden crear componentes nuevos basados en los propios de Tapestry o los que desarrollemos nosotros muy fácilmente. Los componentes son piezas reusables de código que se pueden reutilizar bien directamente o para formar nuevos componentes y es uno de los motivos por los que en Tapestry se consigue una alta productividad además de otros beneficios como la encapsulación.
 
@@ -27,7 +27,7 @@ Aunque el componente tiene un buen número de parámetros para personalizar seg�
 {{< code file="ProductoAdmin.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="139"
+    {{< figure
         image1="grid.png" thumb1="grid-thumb.png" title1="Componente Grid de Tapestry"
         caption="Componente Grid de Tapestry" >}}
 </div>
@@ -56,7 +56,7 @@ Los parámetros informales (denominados así para aquellos que le pasamos al _Gr
 Con el parámetro _empty_ definimos un componente [Block](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/Block.html) que se usará cuando el _Grid_ no tenga filas que mostrar, lo que es útil para mostrar un mensaje indicando que la tabla no tiene filas como cuando no hay elementos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="139"
+    {{< figure
         image1="grid-sin-elementos.png" thumb1="grid-sin-elementos-thumb.png" title1="Mensaje de un Grid sin elementos"
         caption="Mensaje de un Grid sin elementos" >}}
 </div>

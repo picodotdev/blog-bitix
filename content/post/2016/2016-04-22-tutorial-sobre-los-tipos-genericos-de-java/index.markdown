@@ -76,21 +76,21 @@ En Java un tipo puede ser asignado a otro mientras el primero sea compatible con
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="138"
+    {{< figure
         image1="generics-subtypeRelationship.gif" thumb1="generics-subtypeRelationship.gif" >}}
 </div>
 
 Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que _ArrayList\<String\>_ es un subtipo de _List\<String\>_ que a su vez es un subtipo de _Collection\<String\>_.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="138"
+    {{< figure
         image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" >}}
 </div>
 
 {{< code file="PayloadList.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="138"
+    {{< figure
         image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" >}}
 </div>
 
@@ -110,7 +110,7 @@ Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pe
 {{< code file="WildcardList.java" language="Java" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="138"
+    {{< figure
         image1="generics-listParent.gif" thumb1="generics-listParent.gif"
         image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" >}}
 </div>

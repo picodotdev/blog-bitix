@@ -21,7 +21,7 @@ series: ["bilbostack"]
 Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilbao en la localización de la [Universidad de Deusto](http://www.deusto.es), este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="123"
+    {{< figure
         image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
         image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto" >}}
 </div>
@@ -95,7 +95,7 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
 </table>
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="123"
+    {{< figure
         image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1"
         image2="track2.jpg" thumb2="track2-thumb.jpg" title2="Sala track 2" >}}
 </div>
@@ -158,7 +158,7 @@ Hay que tener en cuenta:
 Es importante tener datos para evaluar pero hay que tener cuidado con las métricas ya que son maleables.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="123"
+    {{< figure
         image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" title1="Your code as a crime scene" >}}
 </div>
 
@@ -188,7 +188,7 @@ Su futuro es bueno [Sun][sun-microsystems] en su momento lo hizo de código abie
 En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está [jOOQ][jooq] para demostrar que los ORM no son siempre la mejor solución.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="123"
+    {{< figure
         image1="java-moderno.jpg" thumb1="java-moderno-thumb.jpg" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
 </div>
 

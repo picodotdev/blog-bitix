@@ -17,7 +17,7 @@ summary: "Ya tengamos un sitio web, una bitácora, o una aplicación web es reco
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image="html.svg" title="HTML" width="300" >}}
+{{< logotype image="html.svg" title="HTML" width="200" >}}
 
 La web se basa en un conjunto de páginas donde unas hacen referencia a otras a través de enlaces. Unido a que las páginas que están bajo el control de los sitios referenciados pudiendo desaparecer o cambiar de dirección hace que las referencias puedan dejar de funcionar o necesitar una redirección, el mensaje que nos indicará el navegador es el conocido _Página no encontrada_ o [error 404](https://es.wikipedia.org/wiki/Error_404) para indicar lo mismo. Que un sitio web contenga referencias a páginas ya no existentes hace que el usuario no encuentre lo que busque empeorando su experiencia de usuario y que los buscadores tienen en cuenta en el posicionamiento de los resultados de búsqueda. Por estos motivos es recomendable de vez en cuando rastrear los enlaces de un sitio web para buscar [enlaces rotos](https://en.wikipedia.org/wiki/Link_rot) cambiándolos por otros nuevos o eliminarlos, ya sean enlaces internos (hacia nuestro propio sitio) o enlaces externos (a otros sitios).
 
@@ -30,7 +30,7 @@ Por enlaces o referencias consideramos tanto a páginas como a recursos de imág
 Después de introducir la dirección del sitio web, que con estas herramientas ha de estar accesible en internet, cada una de ellas nos informará de los enlaces rotos que encuentre indicándonos el enlace roto, el texto del enlace y en qué página está. Con esta información podemos corregir esos enlaces del sitio web, bitácora o aplicación. Después de usarlas hubiera dicho que no tenía tantos en está bitácora, me sirvieron para corregirlos.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="115"
+    {{< figure
         image1="w3c-linkchecker.png" thumb1="w3c-linkchecker-thumb.png" title1="W3C Link Checker"
         caption="W3C Link Checker" >}}
 </div>
@@ -40,7 +40,7 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 {{< code file="wget.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2015" pid="115"
+    {{< figure
         image1="wget.png" thumb1="wget-thumb.png" title1="Comprobación de enlaces con wget"
         caption="Comprobación de enlaces con wget" >}}
 </div>

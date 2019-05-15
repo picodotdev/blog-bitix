@@ -25,7 +25,7 @@ Al contrario de la virtualización Docker no emula o virtualiza una máquina y s
 La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como [OpenVZ][openvz] también en Linux, [FreeBSD Jails](http://www.freebsd.org/doc/handbook/jails.html) o los [contenedores de Solaris](https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html).
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="49"
+	{{< figure
     	image1="virtual-machines.png" thumb1="virtual-machines.png" title1="Máquinas virtuales"
     	image2="docker.png" thumb2="docker.png" title2="Docker" >}}
 </div>

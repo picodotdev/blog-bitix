@@ -35,7 +35,7 @@ En el inventario descrito como un archivo en formato INI se asignan los nombres 
 {{< code file="ansible.sh" language="Bash" options="" >}}
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2014" pid="52"
+	{{< figure
     	image1="ansible.png" thumb1="ansible-thumb.png" title1="Ansible" >}}
 </div>
 

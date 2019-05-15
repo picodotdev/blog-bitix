@@ -17,7 +17,7 @@ summary: "La redirección del dominio raíz al subdominio es una de las cosas b�
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="html.svg" title1="HTML" >}}
+{{< logotype image1="html.svg" title1="HTML" width1="200" >}}
 
 El nombre de un dominio está formado por varios subdominios separados por un caracter punto. Están los dominios de nivel superior, los genéricos y más antiguos _.com_, _.org_, _.info_, _.net_, los propios de cada país o territoriales _.es_, _.fr_, _.de_ y más recientemente un montón de [nuevos dominios de nivel superior](https://es.wikipedia.org/wiki/Dominio_de_nivel_superior) (_.futbol_, _.arte_, _.blog_, _.madrid_, ...) aunque significativamente más caros. Después del dominio de nivel superior está el subdominio de la empresa, marca o personal, por ejemplo, _empresa.com_ que es realmente lo que compramos cuando solicitamos registrar un dominio. En nuestro dominio _empresa.com_ podemos administrar múltiples subdominios los clásicos son _www.empresa.com_ para el servidor web, _smpt.empresa.com_ para el correo electrónico, _ftp.empresa.com_ para la transferencia de archivos y otros cualesquiera que deseemos.
 
@@ -35,7 +35,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="nginx.conf" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="166"
+    {{< figure
         image1="nginx.png" thumb1="nginx-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="nginx-www.png" thumb2="nginx-www-thumb.png" title2="Dominio después de acceder al sitio"
         caption="Dominio antes y después de acceder al sitio con Nginx" >}}
@@ -47,7 +47,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="httpd.conf" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="166"
+    {{< figure
         image1="httpd.png" thumb1="httpd-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="httpd-www.png" thumb2="httpd-www-thumb.png" title2="Dominio después de acceder al sitio"
         caption="Dominio antes y después de acceder al sitio con Apache HTTPD" >}}

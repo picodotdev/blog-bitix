@@ -24,7 +24,7 @@ Compartir la foto en redes sociales ya es compartir mucha información y un peli
 Podemos obtener la metainformación guardada en la foto de diferentes formas. Una con la herramienta de visualización de imágenes de nuestro entorno de escritorio, en mi caso con el visor de imágenes de [GNOME][gnome] o con las propiedades de archivo de [Windows][windows] (botón derecho del ratón sobre el archivo > Propiedades). Otra es usando la herramienta ImageMagick.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="289"
+    {{< figure
         image1="visor-imagenes.png" thumb1="visor-imagenes-thumb.png" title1="Visor de imágenes de GNOME"
         image2="propiedades-imagen.png" thumb2="propiedades-imagen-thumb.png" title2="Propiedades de imagen con metadatos"
         caption="Imagen y propiedades con metadatos" >}}
@@ -41,7 +41,7 @@ Si la foto incluye personas algunas redes sociales como [Facebook][facebook] per
 [Twitter elimina los datos EXIF](https://help.twitter.com/es/using-twitter/tweeting-gifs-and-pictures) de las fotos aunque utiliza la ubicación de la foto para realizar sugerencias de ubicaciones. [Facebook][facebook] creo que también elimina los datos EXIF al menos al visualizarlas, también [WhatsApp][whatsapp] y [Telegram][telegram]. Pero al compartir los archivos de fotos de forma directa como correo electrónico o por algún otro medio los metadatos seguirán estando presentes.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="289"
+    {{< figure
         image1="planton-roble.jpg" thumb1="planton-roble-thumb.jpg" title1="Imagen con datos EXIF"
         image2="planton-roble-noexif.jpg" thumb2="planton-roble-noexif-thumb.jpg" title2="Imagen sin datos EXIF"
         caption="Imagen izquierda con datos EXIF, imagen derecha sin datos EXIF" >}}

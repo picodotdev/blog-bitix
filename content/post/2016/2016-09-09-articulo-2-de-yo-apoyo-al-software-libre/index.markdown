@@ -32,11 +32,11 @@ Hubo una época que usaba el sistema operativo de Microsoft sin licencia de Wind
 Estas son las pruebas fehacientes que muestran las donaciones que he hecho a los dos proyectos anteriores.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2016" pid="177"
+    {{< figure
         image1="donacion-mozilla.png" thumb1="donacion-mozilla-thumb.png" title1="Donación Mozilla"
         image2="donacion-mozilla-email.png" thumb2="donacion-mozilla-email-thumb.png" title2="Donación Mozilla"
         caption="Donación Mozilla" >}}
-    {{< figure year="2016" pid="177"
+    {{< figure
         image1="donacion-wikipedia.png" thumb1="donacion-wikipedia-thumb.png" title1="Donación Wikipedia"
         image2="donacion-wikipedia-email.png" thumb2="donacion-wikipedia-email-thumb.png" title2="Donación Wikipedia"
         caption="Donación Wikipedia" >}}

@@ -23,14 +23,14 @@ Microsoft has released for sale and will pre-install the right-of-use (not produ
 There are few but a few options to purchase a laptop without Windows or with some Linux distribution, good quality, good specifications and reasonably priced, one of them are [Slimbook][slimbook] laptops. In the blog of [KDE Blog](https://www.kdeblog.com/) there is an [article about an model of these laptops](https://www.kdeblog.com/slimbook-tu-portatil-linux-de-calidad.html) and [a video with a _unboxing_](https://www.kdeblog.com/unboxing-de-mi-slimbook-con-kubuntu-15-04-y-plasma-5.html).
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="285"
+    {{< figure
         image1="windows-10.png" thumb1="windows-10.png" title1="Windows 10" >}}
 </div>
 
 Why do I say that they do not mind not paying the license? Because version after version the measures included in Windows or Office to protect them from an unlicensed use are avoided without apparently many difficulties and after a very short time appear in the pages of downloads the images along with the instructions to follow to install it without any type of problem. And in Windows 10 it will be the same. Why do not the included validation measures prevent unlicensed use? Because it suits Microsoft not to be too restrictive. If they were, some would pay the license, but many would say, what? Does the license cost 119 € (or 199, or 50 depending on what is returned with a new computer)? A third (aprox.) of what the computer cost me?, and that only Windows, if we add Office and other programs the cost of the licenses could far exceed the price of the equipment. Worse still, amount to be disbursed every few years due to obsolescence and new versions. And what would those who could not use Windows or Office do? Find alternatives and ... what do you think they would choose? The expensive competition of [Apple][apple] with its [Macs][mac] or some distribution GNU/Linux like [Ubuntu][ubuntu], [Linux Mint][linuxmint], [Debian][debian], [Fedora][fedora], [openSUSE][opensuse], etc ... That people knew and paid the cost of the software licenses would probably be one of the best ways to encourage the use of free software and GNU/Linux.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="285"
+    {{< figure
         image1="linux-gnu-ditributions.png" thumb1="linux-gnu-ditributions.png" title1="Linux, GNU, distribuciones" >}}
 </div>
 
@@ -39,7 +39,7 @@ Does anyone believe that a company like Microsoft with the resources and capacit
 One only has to see the obscene millionades that are adjudicated in contracts for the purchase of licenses in the public administration. Money that comes out of your taxes that many politicians and officials responsible for such awards do not understand (or do not want to understand) that this hefty recurring expense is much better invested in local companies that create jobs in the region and in free software of which anyone can benefit instead of a company that little of its development does in each country where it is used. The cost of the free software can be equally obscene, equally bulging or much smaller but the difference among others is that very probably not by the licenses but by the services of consultancy or development that can be offered by local companies and of which depending on the case any could to benefit.
 
 <div class="media" style="text-align: center;">
-    {{< figure year="2017" pid="285"
+    {{< figure
         image1="windows-genuine.jpg" thumb1="windows-genuine.jpg" title1="Windows Genuine" >}}
 </div>
 

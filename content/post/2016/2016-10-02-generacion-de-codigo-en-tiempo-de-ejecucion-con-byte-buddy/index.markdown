@@ -16,7 +16,7 @@ summary: "El tipado seguro y el sistema de tipos es sin duda una de las caracter
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="bytebuddy.png" title1="Byte Buddy" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="bytebuddy.png" title1="Byte Buddy" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Java posee un sistema de tipos estricto con el que detectar errores de compilación y hace que el código sea más legible, con un <abbr title="Integrated Development Environment">IDE</abbr> los errores de compilación los detectaremos inmediatamente según escribimos código. Este sistema de tipos estricto es deseable en aplicaciones de negocio y empresariales ya que ayuda a que las aplicaciones tengan menos errores o errores de compilación pasen inadvertidos y ser descubiertos incluso semanas después de haber sido desplegados en producción. Su sistema de tipos es uno de los responsables del éxito de Java. Sin embargo, el sistema de tipos estricto impone restricciones en otro tipo de ámbitos como en una biblioteca de propósito general ya que no se conocerán los tipos en tiempo de compilación y no podrán por tanto ser referenciados o alternativamente hayan ser definidos como interfaces o clases abstractas que posteriormente son implementadas o extendidas.
 
@@ -31,7 +31,7 @@ Leyendo uno de los artículos de la publicación gratuita [Java Magazine][java-m
 
 La generación de código se ha vuelto ubicua en muchas de las librerías más populares de Java y se usa profusamente en [Spring][spring], [Hibernate][hibernate] o [Apache Tapestry][tapestry] para aplicar seguridad, gestión de transacciones, mapeo modelo relacional-objeto o pruebas unitarias o de integración (_mocking_, ...) y de manera similar a lo ofrecido por los [<abbr title="Abstract Syntax Tree">AST</abbr>](http://groovy-lang.org/metaprogramming.html) de [Groovy][groovy]. Permite emular algunas propiedades que solo están accesibles al programar con lenguajes dinámicos sin perder las comprobaciones de tipos. Las clases generadas por Byte Buddy no se distinguen de las clases generadas por el compilador.
 
-Un ejemplo sencillo de la definición de una nueva clase en tiempo de ejecución con el método [String.toString](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toString--) que devuelve un valor fijo sería la siguiente:
+Un ejemplo sencillo de la definición de una nueva clase en tiempo de ejecución con el método [String.toString()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toString--) que devuelve un valor fijo sería la siguiente:
 
 {{< code file="Main-1.java" language="Java" options="" >}}
 

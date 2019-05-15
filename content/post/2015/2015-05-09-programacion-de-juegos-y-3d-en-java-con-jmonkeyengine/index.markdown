@@ -14,7 +14,7 @@ tags: ["java", "programacion", "blog-stack", "planeta-codigo", "planeta-linux"]
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="jmonkeyengine.png" title1="jMonkeyEngine" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="jmonkeyengine.png" title1="jMonkeyEngine" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.
 
@@ -60,31 +60,31 @@ Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="4089.jpg" thumb1="4089-thumb.jpg" title1="4089: Ghost Within"
     	image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" title2="Rising World" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="seizon.jpg" thumb1="seizon-thumb.jpg" title1="Seizon"
     	image2="copod.png" thumb2="copod-thumb.png" title2="Copod" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" title1="Drohtin – Tales of an Old Kingdom"
     	image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" title2="CHAOS: In the Darkness" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg" title1="Just Tactics"
     	image2="spermination.png" thumb2="spermination-thumb.png" title2="Spermination" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" title1="Maker’s Tale"
     	image2="piratehell.jpg" thumb2="piratehell-thumb.jpg" title2="PirateHell" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg" title1="Hostile Sector"
     	image2="3079.png" thumb2="3079-thumb.png" title2="3079" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg" title1="Urban Galaxy"
     	image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" title2="Grappling Hook" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg" title1="Mad Skills Motocross"
     	image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" title2="Pets vs Monsters" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" title1="Bang! Howdy"
     	image2="imperii.jpg" thumb2="imperii-thumb.jpg" title2="Imperii" >}}
 </div>
@@ -99,10 +99,10 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
 <div class="media" style="text-align: center;">
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
     	image2="cubos.png" thumb2="cubos-thumb.png" title2="Texturas y materiales" >}}
-	{{< figure year="2015" pid="79"
+	{{< figure
     	image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" title1="Sistemas de partículas, fuego"
     	image2="agua.png" thumb2="agua-thumb.png" title2="Agua" >}}
 </div>
