@@ -36,7 +36,7 @@ En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firm
 
 <div class="media" style="text-align: center;">
     {{< figure
-        image1="gpg-verify.png" thumb1="gpg-verify.png" title1="Verificación de la firma GPG del correo electrónico"
+        image1="gpg-verify.png" thumb1="gpg-verify-thumb.png" title1="Verificación de la firma GPG del correo electrónico"
         caption="Verificación de la firma GPG del correo electrónico" >}}
 </div>
 

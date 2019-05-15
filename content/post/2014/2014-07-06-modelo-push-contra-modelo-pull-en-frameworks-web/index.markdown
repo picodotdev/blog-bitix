@@ -22,7 +22,7 @@ En la mayoría de _frameworks_ de desarrollo de aplicaciones o páginas web para
 
 <div class="media" style="text-align: center;">
 	{{< figure
-    	image1="modelo-push.png" thumb1="modelo-push.png" title1="Modelo push" >}}
+    	image1="modelo-push.png" thumb1="modelo-push.png" title1="Modelo push" width1="650" >}}
 </div>
 
 Los pasos que se siguen en este modelo son:
@@ -40,7 +40,7 @@ Los pasos que se siguen en este modelo son:
 
 <div class="media" style="text-align: center;">
 	{{< figure
-    	image1="modelo-pull.png" thumb1="modelo-pull.png" title1="Modelo pull" >}}
+    	image1="modelo-pull.png" thumb1="modelo-pull.png" title1="Modelo pull" width1="650" >}}
 </div>
 
 Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:
