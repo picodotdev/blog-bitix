@@ -22,11 +22,15 @@
       <div class="col-12">
         {{/*
         <div class="adblock-sidebar adblock-sidebar-left">
-          {{ partial "sidebar-ad.html" . }}
+          <div class="adblock-sidebar-container">
+            {{ partial "sidebar-ad.html" . }}
+          </div>
         </div>
         */}}
         <div class="adblock-sidebar adblock-sidebar-right">
-          {{ partial "sidebar-ad.html" . }}
+          <div class="adblock-sidebar-container">
+            {{ partial "sidebar-ad.html" . }}
+          </div>
         </div>
         <article itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
           {{ if isset .Params "language" }}
