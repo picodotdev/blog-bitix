@@ -26,7 +26,7 @@ En el siguiente código el compilador producirá un error de compilación ya que
 {{< code file="Main1.java" language="Java" options="" >}}
 {{< code file="System.out-1" language="Plaintext" options="" >}}
 
-Aunque en Java existen las excepciones _checked_ y estas han de ser declaradas no es una limitación a nivel de la máquina virtual, se puede lanzar una excepción _checked_ aunque no esté declarada. El siguiente código compila sin errores y se ejecutan, lanzándose la excepción aunque el método _main()_ no la declare.
+Aunque en Java existen las excepciones _checked_ y estas han de ser declaradas no es una limitación a nivel de la máquina virtual, se puede lanzar una excepción _checked_ aunque no esté declarada. El siguiente código compila sin errores y se ejecutan, lanzándose la excepción aunque el método _main()_ no la declare. Esto es debido a que en el método _sneakyThrow()_ _T_ es inferido como del tipo _RuntimeException_.
 
 {{< code file="Main2.java" language="Java" options="" >}}
 {{< code file="System.out-2" language="Plaintext" options="" >}}
@@ -49,6 +49,7 @@ La opción más recomendable es crear una clase como _Try_ o usar la de la libre
 * [La controversia sobre las excepciones checked y unchecked][blogbitix-313]
 * [Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception][blogbitix-319]
 * [Is there a way to throw an exception without adding the throws declaration?](https://stackoverflow.com/questions/4519557/is-there-a-way-to-throw-an-exception-without-adding-the-throws-declaration)
+* [Java SneakyThrow of exceptions, type erasure](https://stackoverflow.com/questions/14038649/java-sneakythrow-of-exceptions-type-erasure)
 * [https://stackoverflow.com/questions/41380656/how-java-e-extends-throwable-become-unchecked-exception](https://stackoverflow.com/questions/41380656/how-java-e-extends-throwable-become-unchecked-exception)
 * [A peculiar feature of exception type inference in Java 8](https://stackoverflow.com/questions/31316581/a-peculiar-feature-of-exception-type-inference-in-java-8)
 {{% /reference %}}
