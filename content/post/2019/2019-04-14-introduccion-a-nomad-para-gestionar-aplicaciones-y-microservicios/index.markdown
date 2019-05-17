@@ -11,6 +11,7 @@ comments: true
 promoted: false
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
+summary: "En las aplicaciones basadas en microservicios dado el número de ellos y de instancias tienen han de gestionarse como si fuesen ganado en vez como si fuesen animales de compañía. Nomad es un orquestador de servicios que a diferencia de Docker Swarm permite gestionar servicios con otros sistemas de ejecución además de contenedores docker y a diferencia de Kubernetes es más sencillo."
 ---
 
 {{% post %}}

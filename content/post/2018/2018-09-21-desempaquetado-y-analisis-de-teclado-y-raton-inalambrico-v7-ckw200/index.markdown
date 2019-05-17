@@ -12,6 +12,7 @@ comments: true
 promoted: false
 tags: ["hardware", "planeta-codigo"]
 series: ["desempaquetado-tecnologia"]
+summary: "Los teclados básicos son más que suficientes para la mayoría de usuarios, incluso los inalámbricos solo cuestan unos pocos euros más. Buscaba un teclado inalámbrico y al final opté por el V7 CKW200 por ser barato, tener un diseño atractivo, ser teclado completo, inalámbrico y tener teclas multimedia para subir y bajar el volumen entre otras. Este modelo es un _combo_ de teclado y ratón inalámbrico, el ratón me ha dado problemas de conectividad y agotamiento de las pilas en poco tiempo pero con el teclado estoy contento después de unos meses de uso, ya van casi 6 y aún no le he cambiado las pilas al teclado. El ratón del V7 CKW200 finalmente lo sustituí por uno con cable, un Logitech M90."
 ---
 
 {{% post %}}

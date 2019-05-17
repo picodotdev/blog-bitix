@@ -11,6 +11,7 @@ comments: true
 promoted: false
 tags: ["hardware", "planeta-codigo", "opinion"]
 series: ["desempaquetado-tecnologia"]
+summary: "He estado muy contento con un Samsung Galaxy S3 durante unos 3 o 4 años más al instalarle LineageOS 7.1 y en ningún momento no ha habido nada de lo que he necesitado hacer que no puediera por no tener capacidad, aún teniendo solo 1GB de memoria. Al abrir aplicaciones o alguna opción era un poco lento pero aceptable según mi criterio. Ahora he pasado a un Samsung Galaxy S6 que hoy día es un móvil ya viejo pero para mi suficiente. En los días que llevo usándolo estoy más que satisfecho, la mejora de rendmiento es apreciable respecto al S3. Si con el S3 ya estaba contento y tenía suficiente, con el S6 creo que será otro móvil del que guardaré un grato recuerdo."
 ---
 
 {{% post %}}

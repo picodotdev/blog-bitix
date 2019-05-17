@@ -10,6 +10,8 @@ sharing: true
 comments: true
 promoted: false
 tags: ["planeta-codigo", "programacion", "software"]
+series: ["hashicorp"]
+summary: "Ciertos servicios requieren que al hacer un despliegue el servicio continue funcionando. Para esto no es posible parar todas las instancias de un servicio a la vez, actualizarlar y volverlas a iniciar porque durante este proceso se dejaría de prestar el servicio durante un corto periodo de tiempo en el mejor de los casos. Hay que hacer el despliegue de forma progresiva en las instancias. Algunas estrategias son _Rolling Update_, _Blue/Green_ y _Canary_, el orquestador de servicios Nomad soporta y realiza de forma automatizada los despliegues usando una de estas estrategias."
 ---
 
 {{% post %}}
