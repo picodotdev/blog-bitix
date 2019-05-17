@@ -41,6 +41,8 @@ En Java 9 aunque aún no se incorporen la definición de literales al lenguaje c
 
 {{< code file="MapListSetJava9.java" language="Java" options="" >}}
 
+También es posible [lanzar excepciones checked como si fueran unchecked en Java][blogbitix-405] pero al igual que en este caso no es recomendable.
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
