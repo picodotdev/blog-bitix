@@ -33,10 +33,10 @@
   <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery><img src="{{ $imagethumb1.RelPermalink }}" width="{{ $imagethumb1.Width }}"/></a>
   {{ end }}
   {{ if $image2 }}
-  <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery><img src="{{ $imagethumb2.RelPermalink }}" width="{{ $imagethumb2.Width }}"/></a>
+  <a href="{{ $image2.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery><img src="{{ $imagethumb2.RelPermalink }}" width="{{ $imagethumb2.Width }}"/></a>
   {{ end }}
   {{ if $image3 }}
-  <a href="{{ $image1.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagethumb3.RelPermalink }}" width="{{ $imagethumb3.Width }}"/></a>
+  <a href="{{ $image3.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagethumb3.RelPermalink }}" width="{{ $imagethumb3.Width }}"/></a>
   {{ end }}
   {{ if .Params.caption }}
     <figcaption>{{ .Params.caption }}{{ if .Params.source }}. {{ i18n "source" }}: {{ .Params.source }}{{ end }}</figcaption>
