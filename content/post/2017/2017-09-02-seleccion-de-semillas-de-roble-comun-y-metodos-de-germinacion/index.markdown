@@ -11,6 +11,7 @@ comments: true
 promoted: false
 tags: ["jardineria", "fuera-de-tema"]
 series: ["quercus-robur"]
+summary: "Las semillas de roble son sencillas de hacer germinar, básicamnte lo único que necesitan es humedad durante unas semanas. Puede emplearse algodón u otro material que haga que la bellota permanezca húmeda. En el caso de querer hacer germinar muchas bellotas el algodón en mis pruebas no es lo más adecuado por tener que gastar este elemento y no ofrecer el mejor resultado. No hace falta más que una simple bolsa de plástico cerrada con algo de agua sin que las belletas esten encharcadas pero si húmedas es suficiente y da muy buen resultado."
 ---
 
 {{% post %}}
