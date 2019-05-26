@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 npm run less
 hugo --minify --destination="public" --source="." --cleanDestinationDir
 # Renombrado assets en feeds

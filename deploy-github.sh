@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 cd deploy/
 find . -type f -name '.DS_Store' -delete
 git add .

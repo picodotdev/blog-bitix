@@ -50,7 +50,6 @@ La opción más recomendable es crear una clase como _Try_ o usar la de la libre
 * [Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception][blogbitix-319]
 * [Is there a way to throw an exception without adding the throws declaration?](https://stackoverflow.com/questions/4519557/is-there-a-way-to-throw-an-exception-without-adding-the-throws-declaration)
 * [Java SneakyThrow of exceptions, type erasure](https://stackoverflow.com/questions/14038649/java-sneakythrow-of-exceptions-type-erasure)
-* [https://stackoverflow.com/questions/41380656/how-java-e-extends-throwable-become-unchecked-exception](https://stackoverflow.com/questions/41380656/how-java-e-extends-throwable-become-unchecked-exception)
 * [A peculiar feature of exception type inference in Java 8](https://stackoverflow.com/questions/31316581/a-peculiar-feature-of-exception-type-inference-in-java-8)
 {{% /reference %}}
 

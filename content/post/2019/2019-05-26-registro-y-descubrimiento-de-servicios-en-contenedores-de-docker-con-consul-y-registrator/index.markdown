@@ -42,8 +42,8 @@ Luego se inicia el contenedor Registrator indicando la ubicación con dirección
 Iniciados estos dos servicios en la interfaz de estado de Consul se observa que no hay ningún servicio pero cuando se inicie un nuevo contenedor será registrado en Consul por Registrator. 
 
 <div class="media" style="text-align: center;">
-    {{< imageproc
-        image1="consul.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Dirección" >}}
+    {{< figureproc
+        image1="consul.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Dirección" >}}
 </div>
 
 En este caso se utiliza como servicio una base de datos [PostgreSQL][postgresql]. Dado que el puerto en el que esté disponible el servicio de PostgreSQL es indiferente al utilizar un servicio de registro y descubrimiento se indica el _-p_ sin indicar el puerto del _host_, de este modo Docker le asigna un puerto público aleatorio.
@@ -58,9 +58,9 @@ En la salida del contenedor de Registrator se emite una traza indicando que el s
 Una vez iniciado el servicio de postgres en la consola de Consul se muestra con su dirección y puerto en el que se encuentra, en el contenedor utiliza su puerto por defecto _5432_ pero hacia el exterior en este caso al no haber especificado uno Docker le asigna un puerto aleatorio en este caso el _32777_. Este puerto aleatorio es con el que los clientes acceden a la base de datos.
 
 <div class="media" style="text-align: center;">
-    {{< imageproc
-        image1="consul-postgres-1.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Servicio de postgres registrado en Consul"
-        image2="consul-postgres-2.png" command2="Fit" commandthumb2="Fit" options2="300x250" title2="Servicio de postgres registrado en Consul"
+    {{< figureproc
+        image1="consul-postgres-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Servicio de postgres registrado en Consul"
+        image2="consul-postgres-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Servicio de postgres registrado en Consul"
         caption="Servicio de postgres registrado en Consul por Registrator" >}}
 </div>
 
