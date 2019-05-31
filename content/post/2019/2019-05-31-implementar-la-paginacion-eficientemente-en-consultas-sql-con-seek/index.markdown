@@ -43,6 +43,6 @@ En los siguientes interesantes artículos se comenta detalladamente como impleme
 
 * [Pagination Done the PostgreSQL Way](https://wiki.postgresql.org/images/3/35/Pagination_Done_the_PostgreSQL_Way.pdf)
 * [Why Most Programmers Get Pagination Wrong](https://blog.jooq.org/2016/08/10/why-most-programmers-get-pagination-wrong/)
-* [https://dba.stackexchange.com/questions/73175/pagination-with-postgresql-9-3-counting-number-of-pages](Pagination with PostgreSQL 9.3: counting number of pages)
+* [Pagination with PostgreSQL 9.3: counting number of pages](https://dba.stackexchange.com/questions/73175/pagination-with-postgresql-9-3-counting-number-of-pages)
 
 {{% /post %}}
