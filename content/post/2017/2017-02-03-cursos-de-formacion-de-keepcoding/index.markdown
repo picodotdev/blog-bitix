@@ -77,7 +77,7 @@ Uno sobre [Android][android].
 
 * [Curso Programación Android desde Cero](https://plataforma.keepcoding.io/p/curso-programacion_android_desde_cero?affcode=897_eznkgvrg)
 
-Varios dedicados a la programación en [iOS][ios].
+Varios dedicados a la programación en [iOS][apple-ios].
 
 * [Curso Fundamentos Swift 3.0](https://plataforma.keepcoding.io/p/curso-fundamentos-de-swift-3?affcode=897_eznkgvrg)
 * [Curso TDD en iOS](https://plataforma.keepcoding.io/p/curso-tdd-para-ios?affcode=897_eznkgvrg)
