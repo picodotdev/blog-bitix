@@ -22,10 +22,12 @@ En mis preferencias de herramientas que elegiría para un proyecto basado en la 
 
 El primer motivo de usar Spock sobre la legibilidad del test se puede suplir añadiendo un comentario de línea con la sección. El segundo motivo es que en JUnit también se pueden crear teses parametrizados con varios casos de prueba. Para los teses parametrizados se puede usar la anotación [@ParameterizedTest](https://junit.org/junit5/docs/current/api/org/junit/jupiter/params/ParameterizedTest.html) con una serie de valores que en el test se reciben como un parámetro. 
 
+Aqui se compara el mismo test usando Spock y luego JUnit.
+
 {{< code file="StringLengthCalculatorSpecification.groovy" language="Groovy" options="" >}}
 {{< code file="StringLengthCalculatorTest.java" language="Java" options="" >}}
 
-O si la parametrización es más compleja usando un método que devuelve una lista de parámetros.
+O si la parametrización es más compleja usando un método que devuelve una lista de parámetros en Junit.
 
 {{< code file="CalculatorSpecification.groovy" language="Groovy" options="" >}}
 {{< code file="CalculatorTest.java" language="Java" options="" >}}
