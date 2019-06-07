@@ -10,12 +10,10 @@ public class PhoneNumber {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (o == null)
-            return false;
         if (!(o instanceof PhoneNumber))
             return false;
 
-        PhoneNumber that = (PhoneNumber)o;
+        PhoneNumber that = (PhoneNumber) o;
         return new EqualsBuilder()
             .appendSuper(super.equals(that))
             .append(this.lineNumber, that.lineNumber)
