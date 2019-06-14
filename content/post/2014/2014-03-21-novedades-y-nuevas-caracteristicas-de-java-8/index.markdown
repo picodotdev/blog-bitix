@@ -18,7 +18,7 @@ summary: "La octava versión de Java añade numerosas novedades importantes al l
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
-El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorporará varias novedades siguiendo la tendencia de otros lenguajes como la incorporación de lambdas o closures o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación pondré lo que me ha parecido más destacable:
+El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como _lambdas_ o _closures_ o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación pondré lo que me ha parecido más destacable:
 
 * Se añaden las expresiones lambda o closures y se adapta la API para usarlas en los sitios que se pueda.
 * Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.
