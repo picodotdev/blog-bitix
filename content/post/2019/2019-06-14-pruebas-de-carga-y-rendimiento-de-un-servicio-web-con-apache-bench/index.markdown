@@ -31,6 +31,6 @@ El informe de resultado que ofrece _ab_ al finalizar la prueba incluye el tiempo
 
 {{< code file="ab.out" language="Plaintext" options="" >}}
 
-Esta herramienta puede ser utilizada para par medir el rendimiento de cualquier servicio web. Un blog de [Wordpress][wordpress], una página de una organización. un _endpoint_ de un servicio REST o GraphQL, etc... Es muy sencilla de utilizar y genera un informe corto pero con interesante información sobre el rendimiento. Si se hacen cambios se puede medir el antes y el después y comparar los resultados para observar de que modo han afectado al redimiento si de forma positiva o negativa y en que grado.
+Esta herramienta puede ser utilizada para par medir el rendimiento de cualquier servicio web. Un blog de [Wordpress][wordpress], una página de una organización, un _endpoint_ de un servicio REST o GraphQL, etc... Es muy sencilla de utilizar y genera un informe corto pero con interesante información sobre el rendimiento. Si se hacen cambios se puede medir el antes y el después y comparar los resultados para observar de que modo han afectado al redimiento si de forma positiva o negativa y en que grado.
 
 {{% /post %}}
