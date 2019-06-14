@@ -83,7 +83,7 @@ En Java 8 podemos hacer:
 
 {{< code file="InterfazFuncional-2.java" language="Java" options="" >}}
 
-Java 8 icorpora varias interfaces funcionales que puede ser usadas en expresiones lambda, entre ellas están:
+Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresiones lambda, entre ellas están:
 
 * [Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html): función que retorna un booleano dado un argumento.
 * [Function](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html): función que retorna un valor dado un argumento.
