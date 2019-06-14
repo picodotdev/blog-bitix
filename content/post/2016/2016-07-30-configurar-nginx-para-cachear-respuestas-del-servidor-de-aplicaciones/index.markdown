@@ -17,7 +17,7 @@ summary: "Las caches son un recurso utilizado para aumentar el rendimiento y evi
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="nginx.png" title1="Nginx" >}}
+{{< logotype image1="nginx.svg" title1="Nginx" width1="300" >}}
 
 Los servidores web son muy eficientes devolviendo al cliente archivos estáticos. Tradicionalmente el contenido estático formado por hojas de estilo, archivos JavaScript, imágenes o vídeos de una página o aplicación web han sido devueltos por un servidor web evitando que el servidor de aplicaciones tenga que procesar una gran cantidad de peticiones, aún hoy se sigue haciendo. En caso de que los recursos estáticos estén alojados en el servidor de aplicaciones en vez de en el servidor web, porque los recursos estáticos se empaquetan con la aplicación, el servidor web puede cachearlos evitando que peticiones lleguen al servidor de aplicaciones. En este artículo comentaré cual es la configuración necesaria a añadir en el servidor web [Nginx][nginx] que hace de _proxy_ para que cachee el resultado de las peticiones así indicadas del servidor de aplicaciones, la aplicación genera el contenido y establece las cabeceras de cache indicando como quiere que se cachee el contenido devuelto.
 

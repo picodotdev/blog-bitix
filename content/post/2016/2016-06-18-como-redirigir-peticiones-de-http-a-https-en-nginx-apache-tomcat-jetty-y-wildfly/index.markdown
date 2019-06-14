@@ -16,7 +16,7 @@ summary: "Usar el protocolo seguro HTTPS proporciona confidencialidad en la comu
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="nginx.png" title1="Nginx" image2="apache-httpd.png" title2="Apache HTTPD" >}}
+{{< logotype image1="nginx.svg" title1="Nginx" width1="300" image2="apache.svg" title2="Apache HTTPD" width2="200" >}}
 
 Si tenemos una aplicación o una bitácora que hasta el momento era accedido por el protocolo no cifrado <abbr title="Hypertext Transfer Protocol">HTTP</abbr> ahora que Google tiene en cuenta para el <abbr title="Search engine optimization">SEO</abbr> que usar el protocolo seguro es un parámetro que tiene en cuenta el algoritmo de posicionamiento en el buscador quizá queramos redirigir todo el tráfico de HTTP al protocolo cifrado <abbr title="Hypertext Transfer Protocol Secure">HTTPS</abbr>.
 
