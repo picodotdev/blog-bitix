@@ -3,6 +3,7 @@ pid: 284
 title: "Definir nuevos tipos de datos escalares en GraphQL"
 url: "/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/"
 date: 2017-12-01T10:00:00+01:00
+updated: 2019-06-15T01:20:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -38,6 +39,6 @@ Añadiendo al tipo _Book_ una fecha de publicación usando este nuevo tipo escal
 
 {{< code file="curl.sh" language="Bash" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% /post %}}

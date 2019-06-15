@@ -3,6 +3,7 @@ pid: 282
 title: "Consultas con parámetros para filtrar datos en GraphQL"
 url: "/2017/11/consultas-con-parametros-para-filtrar-datos-en-graphql/"
 date: 2017-11-25T10:00:00+01:00
+updated: 2019-06-15T01:10:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -41,6 +42,6 @@ Esta petición busca los libros que su título comience por las letras _O_ o _R_
 
 Pero... ¿que ocurre si aún con el filtrado o en una consulta el número de coincidencias son unos cuantos miles? Seguramente sean demasiadas coincidencias para devolver en una única petición y por ello es habitual [realizar paginación en GraphQL][blogbitix-283]. Eso será tema para otro de los siguientes artículos de esta serie sobre GraphQL.
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% /post %}}

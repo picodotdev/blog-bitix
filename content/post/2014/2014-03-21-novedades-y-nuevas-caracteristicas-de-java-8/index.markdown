@@ -20,7 +20,7 @@ summary: "La octava versión de Java añade numerosas novedades importantes al l
 
 El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como _lambdas_ o _closures_ o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación pondré lo que me ha parecido más destacable:
 
-* Se añaden las expresiones lambda o closures y se adapta la API para usarlas en los sitios que se pueda.
+* Se añaden las expresiones _lambda_ o closures y se adapta la API para usarlas en los sitios que se pueda.
 * Se definen nuevos perfiles compactos para dispositivos que no necesitan toda la API Java, esto es una alternativa a la modularización. Inicialmente la modularización era una característica que estaba planificada para Java 8 pero finalmente se ha aplazado a posteriores versiones.
 * Incluido nuevo [motor de JavaScript Nashorn](https://docs.oracle.com/javase/8/docs/technotes/guides/scripting/nashorn/index.html) que implementa ECMAscript 5.1 y es más rápido que su predecesor Rhino.
 * Eliminación de espacio de memoria Permanent Generation (PermGen) que pasa a llamarse Metaspace. Su tamaño
@@ -56,11 +56,11 @@ Tradicionalmente en la API de colecciones la iteración sobre los elementos deb�
 
 ### Lambda
 
-Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como [Groovy][groovy] o [Python][python]. Las expresiones lambda son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:
+Esta es una de las principales novedades y que más se estaba echando de menos en Java de otros lenguajes como [Groovy][groovy] o [Python][python]. Las expresiones _lambda_ son funciones que no está asociadas a un determinado nombre y que pueden pasarse como argumento a otras funciones. Tienen el siguiente aspecto:
 
 {{< code file="Lambda.java" language="Java" options="" >}}
 
-El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones lambda de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.
+El uso de expresiones lambdas junto con el stream API proporciona a Java 8 características de programación funcional, pero sobre todo hace el código más sencillo, menos extenso, más expresivo y más legible. En las expresiones _lambda_ de Java podemos seguir aprovechándonos de la compilación estática y del tipado fuerte.
 
 ### Referencias de métodos
 
@@ -83,7 +83,7 @@ En Java 8 podemos hacer:
 
 {{< code file="InterfazFuncional-2.java" language="Java" options="" >}}
 
-Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresiones lambda, entre ellas están:
+Java 8 incorpora varias interfaces funcionales que puede ser usadas en expresiones _lambda_, entre ellas están:
 
 * [Predicate](https://docs.oracle.com/javase/8/docs/api/java/util/function/Predicate.html): función que retorna un booleano dado un argumento.
 * [Function](https://docs.oracle.com/javase/8/docs/api/java/util/function/Function.html): función que retorna un valor dado un argumento.

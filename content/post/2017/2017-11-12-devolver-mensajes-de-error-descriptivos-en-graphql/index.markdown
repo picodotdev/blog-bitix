@@ -3,6 +3,7 @@ pid: 279
 title: "Devolver mensajes de error descriptivos en GraphQL"
 url: "/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/"
 date: 2017-11-12T11:30:00+01:00
+updated: 2019-06-15T01:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -44,7 +45,7 @@ La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la desc
 
 {{< code file="PermissionException.java" language="Java" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

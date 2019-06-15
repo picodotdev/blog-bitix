@@ -3,7 +3,7 @@ pid: 275
 title: "Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java"
 url: "/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"
 date: 2017-11-01T12:00:00+01:00
-updated: 2017-12-02T13:00:00+01:00
+updated: 2019-06-15T00:55:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -75,9 +75,10 @@ Los artículos [Autenticación con OAuth y Keycloak en un servicio REST con JAX-
 
 Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las dependencias necesarias. [graphql-java](https://github.com/graphql-java/graphql-java) contiene la implementación para Java de GraphQL, [graphql-java-servlet](https://github.com/graphql-java/graphql-java-servlet) la implementación de GraphQL mediante un _servlet_ y [graphql-java-tools](https://github.com/graphql-java/graphql-java-tools) son varias utilidades que facilitan en gran medida el desarrollo de un servicio para GraphQL como la construcción del esquema mediante su definición IDL o crear _resolvers_ fácilmente.
 
+{{< code file="application.yml" language="YAML" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

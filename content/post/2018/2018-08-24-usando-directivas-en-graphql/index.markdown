@@ -3,6 +3,7 @@ pid: 341
 title: "Usando directivas en GraphQL"
 url: "/2018/08/usando-directivas-en-graphql/"
 date: 2018-08-24T08:00:00+02:00
+updated: 2019-06-15T01:35:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -63,6 +64,6 @@ Con un comando _curl_ se realizan las mismas consultas.
 {{< code file="curl-2.sh" language="Bash" options="" >}}
 {{< code file="data-2.json" language="JSON" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% /post %}}

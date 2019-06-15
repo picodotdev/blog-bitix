@@ -3,7 +3,7 @@ pid: 283
 title: "Paginación usando cursores en GraphQL y Java"
 url: "/2017/11/paginacion-usando-cursores-en-graphql-y-java/"
 date: 2017-11-26T10:30:00+01:00
-updated: 2017-11-26T14:30:00+01:00
+updated: 2019-06-15T01:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -54,6 +54,6 @@ Los cursores tiene la ventaja de que son opacos por lo que se evita que los clie
 
 Pero... en este ejemplo por cada libro que se devuelve como resultado en la consulta se realiza una búsqueda de los comentarios ya que las propiedades de resultado en la consulta se recuperan una a una. Para la mayoría de propiedades esto no es problema ya que son propiedades que están en un objeto que no realizan consultas a una base de datos pero en el caso de los comentarios sí. Si se devolviesen muchos libros se realizaría una consulta para cada uno de ellos lo que no es eficiente. Si se devolviesen 500 libros y sus comentarios se realizarían 500 consultas para obtener los comentarios de cada libro, usando una base de datos relacional serían 1+500 consultas SQL por cada petición a GraphQL, 1 para obtener los libros y 500 para los comentarios. Como solución a este problema está la funcionalidad de _batching_ de GraphQL que permite obtener todos los comentarios de los libros en una única consulta, será tema para otro de los siguientes artículos de esta serie sobre GraphQL.
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% /post %}}

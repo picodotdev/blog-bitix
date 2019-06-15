@@ -3,6 +3,7 @@ pid: 280
 title: "Usar un resolver para recuperar propiedades en GraphQL"
 url: "/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/"
 date: 2017-11-18T10:00:00+01:00
+updated: 2019-06-15T01:05:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -35,7 +36,7 @@ A la hora de definir el servicio de GraphQL hay que proporcionar el _resolver_ p
 
 Los _resolvers_ permiten almacenar la información en dos bases de datos distintas, una podría ser almacenar una información una base de datos relacional, otra información en una base de datos NoSQL, dos bases de datos relacionales distintas o inlcuso proporcionado por una API distinta. En cualquier caso para el usuario de la API y del servicio es transparente como esté almacenada la información.
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% reference %}}
 {{< links >}}

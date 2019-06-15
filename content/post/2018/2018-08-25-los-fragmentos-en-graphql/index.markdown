@@ -3,6 +3,7 @@ pid: 342
 title: "Los fragmentos en GraphQL"
 url: "/2018/08/los-fragmentos-en-graphql/"
 date: 2018-08-25T19:00:00+02:00
+updated: 2019-06-15T01:40:00+02:00
 language: "es"
 rss: true
 sharing: true
