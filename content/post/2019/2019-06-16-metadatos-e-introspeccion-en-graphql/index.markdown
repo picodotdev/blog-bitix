@@ -1,5 +1,5 @@
 ---
-pid: 411
+pid: 412
 title: "Metadatos e introspección en GraphQL"
 url: "/2019/06/metadatos-e-introspeccion-en-graphql/"
 date: 2019-06-16T00:00:00+02:00
