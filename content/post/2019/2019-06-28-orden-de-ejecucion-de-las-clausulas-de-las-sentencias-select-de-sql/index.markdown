@@ -21,7 +21,7 @@ El lenguaje SQL es un potente lenguaje declarativo usado en las bases de datos r
 
 El lenguaje SQL se compone de diferentes tipos de sentencias según el tipo de operación, lectura de datos con _SELECT_, inserción de datos con _INSERT_, actualización con _UPDATE_ y eliminación con _DELETE_.
 
-Las sentencias _SELECT_ tienen la siguiente [sintaxis en PostgreSQL](https://www.postgresql.org/docs/11/sql-select.html) y [MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html).
+Las sentencias _SELECT_ tienen la siguiente [sintaxis en PostgreSQL](https://www.postgresql.org/docs/11/sql-select.html).
 
 {{< code file="postgres-sql-syntax.sql" language="SQL" options="" >}}
 
@@ -45,6 +45,7 @@ Este es el orden general pero el algoritmo del planificador puede optimizar esto
 {{< postslinks >}}
 * [Logical Processing Order of the SELECT statement](https://msdn.microsoft.com/en-us/library/ms189499.aspx)
 * [Libro Learning PostgreSQL 11](https://amzn.to/2Jai732)
+* [Sintaxis de sentencia SELECT en MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 {{% /reference %}}
 
 {{% /post %}}
