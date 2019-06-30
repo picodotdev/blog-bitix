@@ -35,7 +35,7 @@ Algunos de los juegos más populares son los siguientes: Grand Theft Auto V, Wat
 
 ### Diablo 3
 
-Como tengo el Diablo 3 al que juego de forma muy esporádica y aún no le he exprimido completamente puedo pasar un tiempo jugando a este juego. Si Diablo 3 tiene algo es que está diseñado para ser extremadamente rejugable con varios personajes, niveles de dificultad, variaciones en los escenarios y mejora de objetos y personajes aún habiendo completado la historia principal.
+Como tengo el Diablo 3 al que juego de forma muy esporádica y aún no le he exprimido completamente puedo pasar un tiempo jugando a este juego. Si Diablo 3 tiene algo es que está diseñado para ser extremadamente rejugable con varios personajes, niveles de dificultad, variaciones en los escenarios y mejora de objetos y personajes aún habiendo completado la historia principal. Tambien tengo en la biblioteca de Steam el Company of Heroes 2 que ni siquiera aún he instalado.
 
 Con lo que en mi caso podría esperar al lanzamiento de la PS5 o esperar a ver que ofrece Stadia jugando al Diablo 3.
 
