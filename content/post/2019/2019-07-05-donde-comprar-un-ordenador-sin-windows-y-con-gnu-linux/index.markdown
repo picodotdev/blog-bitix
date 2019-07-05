@@ -2,7 +2,7 @@
 pid: 419
 title: "¿Donde comprar un ordenador sin Windows o con GNU/Linux?"
 url: "/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/"
-date: 2019-07-05T16:30:00+02:00
+date: 2019-07-05T17:30:00+02:00
 language: "es"
 rss: true
 sharing: true
