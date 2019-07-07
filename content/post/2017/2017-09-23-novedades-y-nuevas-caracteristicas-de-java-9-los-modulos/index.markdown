@@ -3,7 +3,7 @@ pid: 263
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00
-updated: 2018-02-10T10:00:00+02:00
+updated: 2019-07-07T12:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -117,7 +117,7 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
         caption="Análisis de dependencais con jdeps" >}}
 </div>
 
-Para profundizar más en los detalles de la modularidad y el resto de novedades de Java 9 están los libros [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT).
+Con el objetivo de mantener la compatibilidad en la mayor medida posible con las librerías existentes y una transición progresiva de un sistema sin módulos a uno con módulos [la platforma de módulos de Java define varios tipos de módulos][blogbitix-420], los módulos con nombre, los automáticos y el módulo anónimo. Para profundizar más en los detalles de la modularidad y el resto de novedades de Java 9 están los libros [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT).
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a"></iframe>
