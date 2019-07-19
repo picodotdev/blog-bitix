@@ -77,6 +77,8 @@ El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blo
 * [WildFly Messaging configuration](https://docs.jboss.org/author/display/WFLY8/Messaging+configuration)
 * [WildFly8Configurations](https://docs.jboss.org/author/display/WFLY8/Getting+Started+Guide#GettingStartedGuide-WildFly8Configurations)
 * [HelloWorldJMSClient.java](https://github.com/wildfly/quickstart/blob/master/helloworld-jms/src/main/java/org/jboss/as/quickstarts/jms/HelloWorldJMSClient.java)
+* [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
+* [Publicación y suscripción de eventos con Guava EventBus en una aplicación Java][blogbitix-422]
 {{% /reference %}}
 
 {{% /post %}}
