@@ -3,7 +3,7 @@ pid: 424
 title: "Administrar secretos y proteger datos sensibles con Vault"
 url: "/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"
 date: 2019-07-27T18:30:00+02:00
-updated: 2019-07-27T22:00:00+02:00
+updated: 2019-07-27T23:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -11,7 +11,7 @@ comments: true
 promoted: false
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
-summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, ...) de ser descifrados y generalmente no está bien protegido dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en Docker suele usarse."
+summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, ...) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse."
 ---
 
 {{% post %}}
@@ -89,5 +89,11 @@ Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Cons
 </div>
 
 Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de [guía](https://learn.hashicorp.com/vault) y en formato de [documentación](https://www.vaultproject.io/docs/). En una aplicación Java el proyecto [Spring][spring] facilita su uso con [Spring Vault][spring-vault] y [Spring Cloud Vault][spring-cloud-vault].
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [An Intro to Vault](https://www.baeldung.com/vault)
+{{% /reference %}}
 
 {{% /post %}}

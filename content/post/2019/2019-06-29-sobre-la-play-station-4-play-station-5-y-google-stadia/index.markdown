@@ -43,7 +43,7 @@ Con lo que en mi caso podría esperar al lanzamiento de la PS5 o esperar a ver q
 
 Entre las noticias que han aparecido sobre la Play Station 5 es que usará nuevamente un procesador y gráfica AMD pero actualizados para ofrecer mucha más potencia. Usará un AMD Ryzen mucho más capaces que los _Jaguar_ de la PS4 y una gráfica _Navi_ ofreciendo una capacidad de cómputo de entre 8 y 10 TFLOPS por los 1,8 de la PS4.
 
-Uno de los problemas de lanzar una nueva consola es que hasta pasado una buena cantidad de tiempo no posee un amplio catálogo de juegos. En el caso de la PS5 al utilizar la misma arquitectura de procesador otra de las características destacadas es la retrocompatibilidad lo que la dotará del mismo catálogo de la PS4 desde mismo momento del lanzamiento, y todos los buenos juegos de la PS4 puedan ser jugados en la PS5.
+Uno de los problemas de lanzar una nueva consola es que hasta pasado una buena cantidad de tiempo no posee un amplio catálogo de juegos y hay que tener en cuenta que los primeros modelos pueden presentar problemas como temperatura y ruido excesivo que hasta pasado un par de años no son en mayor medida resueltos con el modelo _slim_. En el caso de la PS5 al utilizar la misma arquitectura de procesador otra de las características destacadas es la retrocompatibilidad lo que la dotará del mismo catálogo de la PS4 desde mismo momento del lanzamiento, y todos los buenos juegos de la PS4 puedan ser jugados en la PS5.
 
 ### Google Stadia
 
@@ -53,7 +53,13 @@ Ofrecerá una modalidad de suscripción para tener acceso a 4K, 60 FPS, HDR y so
 
 Por lo demás el precio de suscripción de 10€/mes es recurrente pero teniendo en cuenta que una PS5 costará entre 400€ y 500€ en el momento de lanzamiento el precio de suscripción dan para varios años en lo que costaría comprar una PS5. Esta también por ver el precio de los juegos en Stadia si serán similares a los de las consolas tradicionales o algo superiores y el catálogo de juegos que ofrece en el momento de lanzamiento y pasados unos meses o algún año. Sin embargo, la tendencia a futuro parece indicar que el modelo de Stadia sea el que sigan las consolas o plataformas de juego más tarde o temprano.
 
-Si Stadia ofrece un buen catalogo de juegos y la latencia no da problemas, los precios no son desorbitados y como parece se adelanta al lanzamiento de la PS5 puede suponer un cambio en las reglas del mercado de la consolas y ponerle dificultades a la hasta ahora dominante posición de Play Station.
+Si Stadia ofrece un buen catalogo de juegos y la latencia no da problemas, los precios no son desorbitados y como parece se adelanta al lanzamiento de la PS5 puede suponer un cambio en las reglas del mercado de las consolas y ponerle dificultades a la hasta ahora dominante posición de Play Station.
+
+### Evaluando posibilidades
+
+No es tanto el precio de la PS4 que está en 200€ de segunda mano o 290€ en tienda como saber en un año se lanzará un modelo mucho más capaz que lo dejará descatalogado y que además será retrocompatible con él. Stadia requiere una buena conexión de internet y no tendrá los juegos exclusivos de la PS, uno de los motivos para que haya sido la consola vencedora de esta generación, aunque si otros muy buenos presentes en todas las plataformas.
+
+Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción más sensata parece no esperar ya que la PS4 tiene un gran catálogo de juegos que dan para varios años de entretenimiento incluso pasado el tiempo de que aparezca la PS5 _slim_.
 
 ### Switcher HDMI
 
