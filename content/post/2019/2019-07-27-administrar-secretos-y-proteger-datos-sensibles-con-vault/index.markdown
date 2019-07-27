@@ -3,6 +3,7 @@ pid: 424
 title: "Administrar secretos y proteger datos sensibles con Vault"
 url: "/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"
 date: 2019-07-27T18:30:00+02:00
+updated: 2019-07-27T22:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -10,7 +11,7 @@ comments: true
 promoted: false
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
-summary: "Herramientas como Chef, Puppet y Ansible solucionan el problema de forma similar utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, ...) de ser descifrados y generalmente no está bien protegido dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Usar variables de entorno para proporcionar secretos no es seguro como puede emplearse en Docker."
+summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, ...) de ser descifrados y generalmente no está bien protegido dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en Docker suele usarse."
 ---
 
 {{% post %}}
