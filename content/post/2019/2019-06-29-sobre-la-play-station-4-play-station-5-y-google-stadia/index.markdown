@@ -59,7 +59,9 @@ Si Stadia ofrece un buen catalogo de juegos y la latencia no da problemas, los p
 
 No es tanto el precio de la PS4 que está en 200€ de segunda mano o 290€ en tienda como saber en un año se lanzará un modelo mucho más capaz que lo dejará descatalogado y que además será retrocompatible con él. Stadia requiere una buena conexión de internet y no tendrá los juegos exclusivos de la PS, uno de los motivos para que haya sido la consola vencedora de esta generación, aunque si otros muy buenos presentes en todas las plataformas.
 
-Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción más sensata parece no esperar ya que la PS4 tiene un gran catálogo de juegos que dan para varios años de entretenimiento incluso pasado el tiempo de que aparezca la PS5 _slim_.
+Un motivo importante para no comprar una consola es que hay muchos juegos como _shooters_ y de estrategia en los que es preferible utilizar ratón y teclado sin embargo esto no es posible en la PS4. Stadia si soportará múltiples tipos de dispositivos controladores de entrada, entre ellos mandos de consolas, teclado y ratón.
+
+Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción más sensata parece no esperar ya que la PS4 tiene un gran catálogo de juegos que dan para varios años de entretenimiento incluso pasado el tiempo que tarde en aparecer la PS5 _slim_.
 
 ### Switcher HDMI
 
