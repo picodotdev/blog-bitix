@@ -97,8 +97,8 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 
 A modo de entretenimiento los juegos son una buena opción. Hay múltiples páginas y foros, entre los siguientes enlaces destaco varios canales de YouTube personales muy aleajdos de la estridente, forzada y poco natural forma de hablar de algunos famosos _youtubers_ que puede tengan más suscriptores pero que en mi caso aborrezco su forma de publicar contenido, me gusta mas el tono de los siguientes enlaces.
 
-* [RicharBetaCode](https://www.youtube.com/user/richar1979BetaCode/videos): en este canal hay partidas grabadas de cantidad de juegos en episodios de unos 45 minutos de duración. Muy interesantes para ver como es un juego, su historia y su jugabilidad.
-* [tonondor](https://www.youtube.com/user/TheTonondor/videos): diría que este es un vídeo blog sobre juegos y consolas en el que se comenta opiniones personales sensatas aunque uno tenga una opinión distinta en algunos puntos de diferentes temas relacionadas con el mundo de los juegos y consolas.
+* [RicharBetaCode](https://www.youtube.com/user/richar1979BetaCode/videos): en este canal hay partidas grabadas de cantidad de juegos en episodios de unos 45 minutos de duración. Interesantes para ver como es un juego, su historia y su jugabilidad.
+* [tonondor](https://www.youtube.com/user/TheTonondor/videos): canal de YouTube o vídeo blog sobre juegos y consolas en el que se comenta opiniones personales sensatas aunque uno tenga una opinión distinta en algunos puntos de diferentes temas relacionadas con el mundo de los juegos y consolas. Muy recomendable.
 * [Video Bitacora](https://www.youtube.com/channel/UCvbMI-jDTAh54lLpdfBxSnw/videos): otro vídeo blog personal con opiniones alrededor de los juegos y consolas narrados con un tomo ameno.
 
 ## Otros
