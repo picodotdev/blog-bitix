@@ -39,14 +39,15 @@ problemas que tengas en tu sistema aunque procura buscar antes la solución no s
 * [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux, avances en el kernel, drivers, programas y análisis de rendimiento.
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
 * [lwn.net](https://lwn.net/): publica noticias relacionadas con GNU/Linux algunas de libre acceso y otras limitadas durante un tiempo solo para los subscriptores pero que pasado un tiempo quedan accesibles para todo el mundo. Los artículos son muy interesantes y elaborados con un conocimiento grande que es difícil encontrar en la mayoría de blogs personales.
-* [Noticias 3D](http://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
+* [Noticias 3D](https://www.noticias3d.com/) (su [feed](http://feed43.com/1358588145342036.xml)): noticias sobre tecnología y componentes informáticos, con unos análisis de productos hardware muy interesantes.
+* [Geektopia](https://www.geektopia.es/es/): más noticias de actualidad sobre tecnología, videojuegos y una sección muy completa con guías de compras sobre componentes y configuraciones de ordenadores ajustadas según presupuesto.
 * [Parcela Digital](https://parceladigital.com/): si te gusta la historia de la informática y curiosidades de los ordenadores de antaño así como noticias de actualidad esta página te va a encantar.
 * [Genbeta](https://www.genbeta.com/): una página con noticias de actualidad sobre el software, desde sistemas operativos a navegadores, cualquier información que se haga con código.
 * [Xataka](https://www.xataka.com/): al contrario que la web anterior en esta se publican noticias de actualidad relacionadas con el hardware y los _gadgets_.
 * [Linwind](https://www.dacostabalboa.com/es/): página también con noticias de sistemas operativos, software y hardware.
 * [ADSLZone](https://www.adslzone.net/): su contenido no solo versa sobre redes sino que incluye noticias sobre tecnología.
 * [D'Oh](http://diegocg.blogspot.com.es/): un blog personal en el que suele publicar artículos de opinión y avances que se producen alrededor del software libre. Otro de los mejores blogs que tengo en mi lector de _feeds_, cada artículo suele ser una perla.
-* [Foro Noticias 3D](http://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
+* [Foro Noticias 3D](https://foro.noticias3d.com/): el foro de la página anterior donde podrás preguntar a usuarios con muchos conocimientos sobre cualquier problema en tu ordenador o consejos para
 uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Barrapunto](http://barrapunto.com/): una web donde tan importante como la noticia son los comentarios de sus usuarios.
 * [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
@@ -80,7 +81,6 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [JavaWorld](https://www.javaworld.com/): al igual que las dos anteriores otra web con artículos de todo tipo y también sobre la plataforma Java.
 * [Java Code Geeks](https://www.javacodegeeks.com/): otro de los mejores blogs sobre las tecnologías Java.
 * [Java Magazine](https://www.oracle.com/technetwork/java/javamagazine/index.html): publicación bimensual con entrevistas, información y más cosas sobre Java. Muy recomendable.
-* [Takipi Blog](http://blog.takipi.com/): un blog de buena calidad sobre Java, Scala y cualquier cosa relacionada.
 * [Java, SQL and jOOQ](https://blog.jooq.org/): contiene artículos relacionados con las bases de datos relacionales y el lenguaje SQL pero también sobre Java.
 * [JavaHispano](http://www.javahispano.org): la página de la comunidad java hispana, noticias, novedades e información.
 * [Planeta Código](https://www.planetacodigo.com/): un agregador de bitácoras personales relacionadas con la programación.
@@ -90,9 +90,16 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
 * [Apuntes de Java](https://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
 * [Diario de Programación](http://blog.chuidiang.com): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.
-* [fernetjs](http://fernetjs.com/)
 * [El baúl del programador](https://elbauldelprogramador.com/)
 * [Android Studio FAQs](https://androidstudiofaqs.com/)
+
+## Juegos
+
+A modo de entretenimiento los juegos son una buena opción. Hay múltiples páginas y foros, entre los siguientes enlaces destaco varios canales de YouTube personales muy aleajdos de la estridente, forzada y poco natural forma de hablar de algunos famosos _youtubers_ que puede tengan más suscriptores pero que en mi caso aborrezco su forma de publicar contenido, me gusta mas el tono de los siguientes enlaces.
+
+* [RicharBetaCode](https://www.youtube.com/user/richar1979BetaCode/videos): en este canal hay partidas grabadas de cantidad de juegos en episodios de unos 45 minutos de duración. Muy interesantes para ver como es un juego, su historia y su jugabilidad.
+* [tonondor](https://www.youtube.com/user/TheTonondor/videos): diría que este es un vídeo blog sobre juegos y consolas en el que se comenta opiniones personales sensatas aunque uno tenga una opinión distinta en algunos puntos de diferentes temas relacionadas con el mundo de los juegos y consolas.
+* [Video Bitacora](https://www.youtube.com/channel/UCvbMI-jDTAh54lLpdfBxSnw/videos): otro vídeo blog personal con opiniones alrededor de los juegos y consolas narrados con un tomo ameno.
 
 ## Otros
 
