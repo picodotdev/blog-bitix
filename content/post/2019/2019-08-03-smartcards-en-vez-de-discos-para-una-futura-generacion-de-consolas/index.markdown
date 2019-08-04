@@ -3,6 +3,7 @@ pid: 426
 title: "Smartcards en vez de discos para una futura generación de consolas"
 url: "/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/"
 date: 2019-08-03T20:00:00+02:00
+updated: 2019-08-04T12:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -43,5 +44,7 @@ Resuelta la posesión física y la descarga queda como poseer la imagen de juego
 Queda resolver como poder descargar las imágenes de los juegos en una fecha tan posterior del lanzamiento de la consola como 20 años después pero mientras la seguridad esté en la posesión de la _smartcard_ como forma de poder jugar al juego en la consola incluso no tendría por que ser Sony, Microsoft o [Steam][steam] las que distribuyan las imágenes de los juegos y podría ser cualquier otra entidad o usuario incluso mediante torrent.
 
 Con las _smartcards_ el mercado de segunda mano del que se nutren algunas tiendas como forma alternativa de negocio a la venta de juegos nuevos precintados podría seguir funcionando exactamente igual cosa que con los digitales es susceptible de desaparecer. Por supuesto, las _smartcards_ serían algo más pequeñas que los discos, posiblemente tan fáciles de crear y con un coste no muy diferente.
+
+Eliminar el lector de discos tiene la ventaja adicional de que seguramente el lector de _smartcards_ sería mucho más pequeño con el consiguiente ahorro en tamaño de la PS4 y también peso.
 
 {{% /post %}}
