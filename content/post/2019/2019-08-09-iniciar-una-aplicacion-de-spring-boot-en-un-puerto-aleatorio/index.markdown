@@ -10,6 +10,7 @@ comments: true
 promoted: false
 tags: ["java", "planeta-codigo", "programacion"]
 series: ["spring-cloud"]
+summary: "En una arquitectura basada en microservicios es normal iniciar varias instancias de un mismo servicio, si están en la misma máquina ha de asignarse a cada instancia un puerto diferente. Asignar los puertos manualmente no es recomendable cuando se quieren varias instancias, Spring Boot ofrece la funcionalidad de iniciar la aplicación en un puerto aleatorio."
 ---
 
 {{% post %}}
