@@ -35,7 +35,7 @@ Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas
 
 Veamos primero la página inicial índice con el listado de productos generada con JSF. Obtiene el listado de productos y genera el HTML del mismo, además carga los JavaScripts necesarios para que la aplicación funcione en el navegador del cliente.
 
-{{< code file="index.html" language="HTML" options="" >}}
+{{< code file="index-1.html" language="HTML" options="" >}}
 {{< code file="template.html" language="HTML" options="" >}}
 {{< code file="IndexBean.java" language="Java" options="" >}}
 
