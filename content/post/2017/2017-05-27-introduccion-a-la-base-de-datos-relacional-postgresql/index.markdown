@@ -86,7 +86,7 @@ Las cláusula _WITH_ que define las _common table expressions_ o _CTE_ proporcio
 
 * [WITH Queries (Common Table Expressions)](https://www.postgresql.org/docs/current/static/queries-with.html)
 
-### Window functions
+### _Window functions_
 
 Las _window functions_ realizan cálculos sobre un conjunto de datos que están relacionados de alguna forma con la fila actual. Al contrario que las funciones de agregación el cálculo de las _window functions_ no causan que las filas se agrupen en una única fila manteniéndose como filas separadas.
 
