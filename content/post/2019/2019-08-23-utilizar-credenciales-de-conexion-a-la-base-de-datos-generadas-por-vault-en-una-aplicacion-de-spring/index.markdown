@@ -62,6 +62,7 @@ Para que la aplicación de Spring Boot obtenga las credenciales ha de autenticar
 
 En Vault los permisos se otorgan con las _policy_, los secretos se organiza en una estructura jerárquica de directorios y a cada una de los contextos se le otorga los permisos deseados. Spring obtiene las credenciales para la base de datos del contexto _database/creds/app_ por lo que al rol utilizando para obtener las credenciales hay que asocialer un _policy_ con permisos de lectura para este contexto. 
 
+{{< code file="vault-policy.sh" language="Bash" options="" >}}
 {{< code file="database-app.hcl" language="Plaintext" options="" >}}
 
 Obtenido un _role-id_ y un _secret-id_ so observa los _policies_ asociados además de otras propiedades.
