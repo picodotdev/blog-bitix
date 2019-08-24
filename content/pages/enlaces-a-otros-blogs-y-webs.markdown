@@ -51,6 +51,7 @@ problemas que tengas en tu sistema aunque procura buscar antes la solución no s
 uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Barrapunto](http://barrapunto.com/): una web donde tan importante como la noticia son los comentarios de sus usuarios.
 * [Incognitosis](https://javipas.com/): el blog personal de un editor de Xataka con artículos de opinión sobre tecnología.
+* [Hardware 360º](https://www.youtube.com/channel/UC40Ztmc_11leuUR-tHh_irQ): canal de YouTube especializado en hardware de consumo como procesadores y targetas gráficas pero también consolas. Son exhaustivos y de fácil comprensión con los que informarse en profundidad del hardware de las computadoras.
 
 ## Software libre y Linux
 
@@ -111,7 +112,6 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Justifica tu respuesta](https://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
 * [Ciencia de sofá](https://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
-* [La huertina de Toni](http://www.lahuertinadetoni.es/): ¿te gustan las plantas? ¿tienes huerto? ¿quieres plantar un árbol? Este blog trata sobre la jardinería y agricultura con artículos y vídeos muy ilustrativos.
 * [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
 
 Si tienes un blog personal con una temática similar a las anteriores páginas y blogs en el que se publica con cierta regularidad (semanal, mensual, cada dos meses... pero que sigue vivo) puedes dejar un comentario en esta página o ponerte en contacto conmigo (mi dirección de correo electrónico está en la página [Acerca de...][blogbitix-page-p2]) para hacérmelo llegar. También si conoces un blog que sigues habitualmente en tu lector de feeds del que no te pierdes ninguna de sus entradas y que publica información interesante compártelo ¡yo también quiero conocerlo y leerlo!. Seguro que ahí fuera hay muchos blogs interesantes esperando a ser descubiertos.
