@@ -1,7 +1,8 @@
 ---
 pid: 430
-title: "Ejemplo sencillo de como crear un documento PDF con PDFBox"
-url: "/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-pdfbox/"
+title: "Ejemplo sencillo de como crear un documento PDF con Java y PDFBox"
+url: "/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/"
+aliases: ["/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-pdfbox/"] 
 date: 2019-08-30T18:00:00+02:00
 language: "es"
 rss: true
