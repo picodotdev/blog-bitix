@@ -39,4 +39,10 @@ También se puede [utilizar Apache POI para crear hojas excel y OpenCSV para cre
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoApachePOI" command="./gradlew run" >}}
 
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Ejemplo sencillo de como crear un documento PDF con PDFBox][blogbitix-430]
+{{% /reference %}}
+
 {{% /post %}}

@@ -115,6 +115,7 @@ En JavaScript también hay librerías para generar gráficas pero para casos com
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [Ejemplo sencillo de como crear un documento PDF con PDFBox][blogbitix-430]
 * [JFreeChart Program Examples](https://www.javascan.com/chapter/jfreechart)
 * [JFreeChart Tutorial](https://www.tutorialspoint.com/jfreechart/index.htm)
 {{% /reference %}}
