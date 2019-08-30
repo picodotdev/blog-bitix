@@ -4,6 +4,7 @@ title: "Ejemplo sencillo de como crear un documento PDF con Java y PDFBox"
 url: "/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/"
 aliases: ["/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-pdfbox/"] 
 date: 2019-08-30T18:00:00+02:00
+updated: 2019-08-31T00:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -36,6 +37,10 @@ Para generar documentos en PDF en Java está disponible la librería [Apache PDF
         caption="Documento generado con PDFBox" >}}
 </div>
 
+Una alternativa a PDFBox es [iText][itext], la primera tiene una [licencia Apache][apache-license] e iText una [licencia AGPL][gnu-agpl] o comercial lo que puede ser determinante para un proyecto. La licencia AGPL obliga a que una aplicación web haga público su código fuente lo que probablemente en usos comerciales no sea lo deseado y usar la versión de la licencia comercial obliga a adquirir el derecho de uso al que obliga la licencia que posee un coste tal vez indeseado o que directamente hace que quede descartada.
+
+PDFBox no posee una forma de escribir párrafos y tener saltos de línea automáticos según el ancho de la página, en el ejemplo el texto se posiciona de forma absoluta en la página estando la coordenada (0,0) en la parte inferior izquierda. Para añadir esta funcionalidad a PDFBox hay que usar el complemento [pdfbox-layout](https://github.com/ralfstuckert/pdfbox-layout).
+
 Pero en vez de crear un documento PDF desde cero desde Java si se trata de una factura es más sencillo partir de un documento PDF a modo de plantilla con el diseño deseado en el que solo haya que incluir la información que varía en la ubicación del documento apropiada. Este sería en caso de una factura o justificante. Y si el documento es un informe con muchos datos o el diseño se desea cambia independientemente de la información que incluye o es complejo en vez de insertar cada campo de texto e imágenes individualmente con código está la opción de utilizar el generador de documentos [JasperReports][jasperreports]. 
 
 En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index.htm) se incluyen más ejemplos de tareas básicas al procesar documentos PDF con esta librería.
@@ -47,6 +52,8 @@ En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index
 {{< postslinks >}}
 * [Creating PDF Documents With Apache PDFBox 2](https://dzone.com/articles/creating-pdf-documents-with-apache-pdfbox-2)
 * [Inserting Image to a PDF Document](https://www.tutorialspoint.com/pdfbox/pdfbox_inserting_image.htm)
+* [Is iText Java library free of charge or have any fees to be paid?](https://stackoverflow.com/a/27867740)
+* [PDF text layout made easy with PDFBox-Layout](https://hardmockcafe.blogspot.com/2016/04/pdf-text-layout-made-easy-with-pdfbox_17.html)
 {{% /reference %}}
 
 {{% /post %}}
