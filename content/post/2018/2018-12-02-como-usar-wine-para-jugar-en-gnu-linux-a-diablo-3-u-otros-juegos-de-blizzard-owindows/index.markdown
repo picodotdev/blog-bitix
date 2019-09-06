@@ -131,7 +131,7 @@ Si soy sincero en toda mi época jugona creo que no he pagado por ningún juego 
         caption="Formas de pago" >}}
 </div>
 
-Otros juegos que tengo en mi lista pero ya de [Steam][steam] que tiene un cliente ya nativo para GNU/Linux con varios juegos compatibles. Aunque sea solo para probar que también se pueden jugar a muchos juegos del amplio catálogo de Steam lo probaré. Otra plataforma que posiblemente pruebe sea [GOG][gog]. Y con estas tres plataformas espero que quede demostrado que en GNU/Linux se puede jugar a juegos comerciales aceptablemente, aún alguno teniendo varios años como este Diablo 3 pero que para mi habiendo estado bastante desconectado de los juegos me parece que tiene una historia, argumento y una calidad gráfica artística impresionante.
+Otros juegos que tengo en mi lista pero ya de [Steam que tiene un cliente ya nativo para GNU/Linux][blogbitix-431] con varios juegos compatibles. Aunque sea solo para probar que también se pueden jugar a muchos juegos del amplio catálogo de Steam lo probaré. Otra plataforma que posiblemente pruebe sea [GOG][gog]. Y con estas tres plataformas espero que quede demostrado que en GNU/Linux se puede jugar a juegos comerciales aceptablemente, aún alguno teniendo varios años como este Diablo 3 pero que para mi habiendo estado bastante desconectado de los juegos me parece que tiene una historia, argumento y una calidad gráfica artística impresionante.
 
 Otros juegos en mi lista:
 
