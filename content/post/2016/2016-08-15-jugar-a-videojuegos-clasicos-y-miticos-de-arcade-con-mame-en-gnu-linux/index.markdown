@@ -121,7 +121,7 @@ Incluso con una [Raspberry Pi 3](https://amzn.to/2bjieY2) podremos jugar usando 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B013B61SCS&linkId=61b4a105bc7d42ff174de961aaab0e67&internal=1"></iframe>
 </div>
 
-Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una Play Station 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
+Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una PlayStation 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
 
 {{% reference %}}
 {{< links >}}

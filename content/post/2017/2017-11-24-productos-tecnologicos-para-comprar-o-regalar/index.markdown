@@ -92,7 +92,7 @@ El [Kindle](https://amzn.to/2i3XuMm) ya es suficiente para cualquier lector con 
 
 ### Consola
 
-Las consolas son otro de los regalos más populares, entre ellas están la [Play Station 4](http://amzn.to/2iagYPf) con su buen [catálogo de juegos](http://amzn.to/2i3pzDx) y la que le está dando buenos resultados a la otra compañía nipona con la [Nintendo Switch](http://amzn.to/2i411u6) con sus juegos franquicia de _The Legend Of Zelda: Breath Of The Wild_ y _Mario Odissey_ pero también está la [Nintendo 2DS](http://amzn.to/2i3VgfU) más económica para los más pequeños.
+Las consolas son otro de los regalos más populares, entre ellas están la [PlayStation 4](http://amzn.to/2iagYPf) con su buen [catálogo de juegos](http://amzn.to/2i3pzDx) y la que le está dando buenos resultados a la otra compañía nipona con la [Nintendo Switch](http://amzn.to/2i411u6) con sus juegos franquicia de _The Legend Of Zelda: Breath Of The Wild_ y _Mario Odissey_ pero también está la [Nintendo 2DS](http://amzn.to/2i3VgfU) más económica para los más pequeños.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077DCT8TQ&linkId=b2969725ecb564a934485a586ea0fd6d"></iframe>
