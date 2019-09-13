@@ -3,6 +3,7 @@ pid: 432
 title: "Desempaquetado de PlayStation 4 Slim de 1 TB"
 url: "/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/"
 date: 2019-09-08T18:00:00+02:00
+updated: 2019-09-13T23:00:00+02:00
 language: "es"
 rss: true
 sharing: true
