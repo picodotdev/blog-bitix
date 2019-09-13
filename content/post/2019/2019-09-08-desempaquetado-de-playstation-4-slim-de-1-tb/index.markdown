@@ -9,10 +9,9 @@ sharing: true
 comments: true
 promoted: false
 image: "images/ps4.jpg"
-tags: ["juegos", "planeta-codigo"]
-series: ["juegos"]
+tags: ["hardware", "juegos"]
+series: ["desempaquetado-tecnologia", "juegos"]
 summary: "A pesar de estar la PlayStation 4 al final de su ciclo de vida igualmente puede ser un buen momento para comprarla por otros motivos. Como por ejemplo que ahora es cuando mejor catálogo de juegos posee y que se ofrece en un modelo _slim_ que consume menos energía, es sensiblemente más pequeña, se calienta menos y es más silenciosa. Como usuario de GNU/Linux y un Intel NUC como ordenador personal una consola es una buena opción como plataforma de juegos sin complicaciones."
-draft: true
 ---
 
 {{% post %}}
@@ -29,7 +28,7 @@ Así que llevaba un tiempo buscando una consola pero al haber estado varios año
 
 He evaluado varias posibilidades como una [PlayStation 3][sony-play-station-3] de segunda mano, una [PlayStation 4][sony-play-station-4] o una [Xbox One][microsoft-xbox-one-s] también de segunda mano si pudiese conseguir o nueva. Aún sabiendo que la PlayStation 5 será lanzada en el 2020 en poco menos de un año. Finalmente me he decidido por comprar una PlayStation 4 nueva, no de segunda mano ya que encontrar alguna en [Wallapop][wallapop] no me ha resultado sencillo de un vendedor que la ponga a buen precio, y no casi a precio de tienda pero sin garantía, sea serio para quedar, la confianza por saber si funciona correctamente, que haya estado no muy usada, bien cuidada y que no tiene garantía en caso de fallo. Como no he jugado a juegos recientemente el catálogo que tiene ya al final de su ciclo de vida es completamente nuevo para mi, es muy amplio y seguro que me ofrece juegos durante varios años incluso aún cuando la PlayStation 5 sea comercializada. Otra opción sería esperar a [Stadia][google-stadia] pero yo tengo un lento ADSL que dudo tenga la capacidad para jugar a 1080p sin problemas, pasarme a fibra me resultaría algo más cara la cuota mensual de internet y el catálogo de Stadia inicialmente va a ser bastante limitado comparado con el de la PS, el futuro puede ser algo como Stadia pero hasta pasados unos años y si el modelo tiene éxito no, no voy a esperar a que tenga un catálogo amplio.
 
-Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energía de los modelos anteriores, eso le permite tener un tamaño más reducido, generar menos calor y ser más silenciosa. Está la versión de 500 GB y de 1 TB de capacidad de disco duro, he optado por la de 1 TB ya que 500 GB dicen que si se es alguien de jugar a muchos juegos hay que estar administrando con más cuidado el espacio del disco duro, admite cambiar el disco duro interno por uno de 2 TB y también admite disco duro externo USB 3.0 de 8 TB pero por no cambiarle el disco duro con su coste adicional y no tener que tener un disco duro externo he preferido el modelo de 1 TB. Hay juegos de 10, 25 y 50 GB así que dependiendo de la cantidad de juegos que un pretenda instalar convendrá un modelo de menor o mayor capacidad. La _Slim_ de 500 GB se comercializa a 290 € sin juegos y la de 1 TB con un _pack_ de juegos a 350 €, en algún momento de rebajas el descuento puede estar en 50 €. Un PC dedicado a juegos es mucho más caro, solo la tarjeta gráfica puede valer eso o más.
+Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energía de los modelos anteriores, eso le permite tener un tamaño más reducido, generar menos calor y ser más silenciosa. Está la versión de 500 GB y de 1 TB de capacidad de disco duro, he optado por la de 1 TB ya que 500 GB dicen que si se es alguien de jugar a muchos juegos hay que estar administrando con más cuidado el espacio del disco duro, admite cambiar el disco duro interno por uno de 2 TB y también admite disco duro externo USB 3.0 de hasta 8 TB pero por no cambiarle el disco duro con su coste adicional de adquirirlo y no tener que tener un disco duro externo he preferido el modelo de 1 TB. Hay juegos de 10, 25 y 50 GB así que dependiendo de la cantidad de juegos que un pretenda instalar convendrá un modelo de menor o mayor capacidad. La _Slim_ de 500 GB se comercializa a 290 € sin juegos y la de 1 TB con un _pack_ de juegos a 350 €, en algún momento de rebajas el descuento puede estar en 50 €. Un PC dedicado a juegos es mucho más caro, solo la tarjeta gráfica puede valer eso o más.
 
 * [Modelos de PlayStation](https://en.wikipedia.org/wiki/PlayStation_4_models)
 
@@ -50,9 +49,9 @@ Entre la Xbox y la PlayStation he preferido la última aún siendo más cara por
         caption="PlayStation 4 Slim y Xbox One S" >}}
 </div>
 
-La mayoría de juegos están en ambas consolas, salvo unos pocos exclusivos que tiene cada una. Revisando la lista que hecho de los juegos que me han llamado la atención de la PlayStation  solo tenía tres o cuatro exclusivos apuntados, así que esto para mi no ha sido determinante. Las dos consolas ofrecen diría que la misma calidad al utilizar ambas un procesador SOC similar producido por [AMD][amd], asi que esto tampoco es determinante para elegir una u otra plataforma.
+La mayoría de juegos están en ambas consolas, salvo unos cuantos exclusivos que tiene cada una (hay más exclusicos en la PS). Revisando la lista que hecho de los juegos que me han llamado la atención de la PlayStation  solo tenía tres o cuatro exclusivos apuntados, así que esto para mi no ha sido determinante. Las dos consolas ofrecen diría que la misma calidad al utilizar ambas un procesador SOC similar producido por [AMD][amd], asi que esto tampoco es determinante para elegir una u otra plataforma.
 
-En el caso de Stadia con mi conexión actual de ADSL no creo que me posibilite jugar con una calidad de al menos 1080p y está por ver que tal resulta la jugabilidad con las latencias. También está por ver a que precio salen los juegos en Stadia ya que en la opción sin suscripción de comprar únicamente los juegos y poder jugarlos cuanto se quiera me extraña que sean al mismo precio que en la PS, quizá me equivoque pero creo que los juegos de Stadia serán más caros o la PS tendrá dificultades por no tener que hacer un desembolso inicial en hardware.
+En el caso de Stadia con mi conexión actual de ADSL no creo que me posibilite jugar con una calidad de al menos 1080p y está por ver que tal resulta la jugabilidad con las latencias. También está por ver a que precio salen los juegos en Stadia ya que en la opción sin suscripción de comprar únicamente los juegos y poder jugarlos cuanto se quiera me extraña que sean al mismo precio que en la PS, quizá me equivoque pero creo que los juegos de Stadia serán más caros o será un punto a su favor por no tener que hacer un desembolso inicial en hardware.
 
 Si hubiese sabido que los juegos con Wine en GNU/Linux funcionan en lo que probado tan bien quizá en vez de un NUC hubiese evaluado de forma más positiva un ordenador ITX, aún así por el tamaño posiblemente hubiese seguido eligiendo el NUC y la PlayStation. Quizá en un futuro si que opte por un ITX o un equipo del tamaño del NUC pero más destinado a _gaming_ como los de [Zotac][zotac].
 
@@ -125,7 +124,7 @@ La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que
     <li>Frostpunk</li>
 </ul>
 
-Estos son los juegos que incluye el _pack_ del modelo de la consola que he comprado. Aunque es muy posible que al final los acabe adquiriendo en formato digital.
+Estos son los juegos que incluye el _pack_ del modelo de la consola que he comprado. Aunque es muy posible que al final que alguno lo acabe adquiriendo en formato digital.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -235,7 +234,54 @@ La verdad es que el precio no la he comprado en el mejor momento como se puede c
 
 Como decía prefiero juegos digitales pero con mi lento ADSL que descarga entre 1 y 1.5 MiB por segundo descargar 25 GiB tarda como unas 5 horas, nada que no pueda poner varios juegos en la cola de descarga y dejarlo bajando una noche pero es posible que las actualizaciones quizá me impida jugar en algún momento que quisiese. Salvo estos momentos puntuales de descarga mi ADSL me es más que suficiente, para mi no es mayor inconveniente.
 
-Tendré que crearme una cuenta en [PlayStation Network][playstation-network] para acceder a los juegos digitales y empezar a añadir los favoritos que deseo y así enterarme de cuando alguno de ellos esté de oferta comprarlo. Es importante elegir bien el nombre de la cuenta, el primer cambio de nombre de la cuenta es gratuito pero los siguientes hay que pagar. Creada la cuenta descargo algunos juegos _free to play_ para probar, empezando por _Fortnite_ y _World of Warships_.
+Desde el ordenador me he creado una cuenta en [PlayStation Network][playstation-network] para acceder a los juegos digitales y empezar a añadir los favoritos que deseo y así enterarme de cuando alguno de ellos esté de oferta comprarlo. Es importante elegir bien el nombre de la cuenta, el primer cambio de nombre de la cuenta es gratuito pero los siguientes hay que pagar. Creada la cuenta descargo algunos juegos _free to play_ para probar, empezando por _Fortnite_ y _World of Warships_.
+
+En el primer inicio se solicitan múltiples datos de condifuración y preferencias entre ellos si se desea la cuenta de PlayStation Network, como la he creado previamente desde el ordenador solo he tenido que introducir el nombre de usuario de inicio de sesión y la contraseña. Otras opciones solicitadas son las relativas a la privacidad y que información ven otros usuarios de nuestra actividad en la consola, pide unas cuantas, estas opciones se pueden editar también desde un ordenador entrando a la cuenta de PSN con el navegador.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="configuracion-inicial-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+        image2="configuracion-inicial-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+        image3="configuracion-inicial-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+    {{< figureproc
+        image1="configuracion-inicial-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+        image2="configuracion-inicial-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+        image3="configuracion-inicial-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+    {{< figureproc
+        image1="configuracion-inicial-7.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+        image2="configuracion-inicial-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+        image3="configuracion-inicial-9.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+    {{< figureproc
+        image1="configuracion-inicial-10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+        image2="configuracion-inicial-11.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+        caption="Configuración inicial" >}}
+</div>
+
+Varias opciones de privacidad.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="opciones-privacidad.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Opciones de privacidad"
+        caption="Opciones de privacidad" >}}
+</div>
+
+La configuración de PlayStation Network.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="configuracion-playstation-network.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Configuración de PlayStation Network"
+        caption="Configuración de PlayStation Network" >}}
+</div>
+
+Al finalizar toda la configuración se muestra la pantalla inicial de la consola.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="logo-inicio.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla inicial"
+        image2="pantalla-inicial-1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla inicial"
+        image3="pantalla-inicial-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla inicial"
+        caption="Pantalla inicial" >}}
+</div>
 
 En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, como lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre. Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador se podrá quitar la mayor parte del polvo que acumulen. En modelos anteriores los tornillos eran de metal y se podrían quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
 
@@ -243,7 +289,7 @@ En un futuro con el uso como a todo elemento electrónico que utiliza para refri
 
 Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades. Iba a comprarla en [El Corte Inglés][elcorteingles] por el hecho de ir, pagarla y llevármela para casa pero el día que fui solo tenían modelos de 500 GB y yo quería el de 1 TB de modo que al final la he adquirido por [Amazon][amazon], además necesitaba un conmutador HDMI para intercambiar la señal entre el NUC y la consola, también quería una funda para el mando y necesitaba un cable HDMI adicional.
 
-* [Amazon][amazon]
+* [Amazon PS4](https://amzn.to/2Lu5l1n)
 * [El Corte Inglés PS4](https://www.elcorteingles.es/videojuegos/ps4/consolas/)
 * [PC Componentes PS4](https://www.pccomponentes.com/videoconsolas-ps4)
 * [Mediamarkt PS4](https://www.mediamarkt.es/es/category/_consolas-ps4-702291.html)
@@ -255,7 +301,11 @@ Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades.
 
 ### Otros accesorios
 
-El [conmutador HDMI 4K de tres entradas](https://amzn.to/2NaQDyL) que he adquirido de hasta tres entradas y una salida con soporte de hasta un monitor de resolución 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo y que soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz. El conmutador no incluye cable HDMI por lo que adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) es necesario si no se tiene uno sin usar previamente. La [funda del mando de PS4](https://amzn.to/2ZGumzk) para protegerlo de golpes, y suciedad me he fijado más que nada en el color que sea negro y que las aberturas para los botones sean amplias, además de que trajese _grips_ para los _joysticks_ ya que con el uso se les puede desprender su goma de agarre. Si en algún momento oigo que el ventilador hace un ruido más alto de lo normal compraré un [aerosol de aire comprimido con cánula](https://amzn.to/2AdXzT2) para limpiarla evitando así estropear los tornillos de plástico junto con una asperadora para extraer el polvo acumulado.
+Para utilizar el ordenador y la consola en el mismo monitor sin tener que conectar y desconectar cables he comprado también un [conmutador HDMI 4K de tres entradas](https://amzn.to/2NaQDyL) que he adquirido de hasta tres entradas y una salida con soporte de hasta un monitor de resolución 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo y que soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz. El conmutador no incluye cable HDMI por lo que adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) es necesario si no se tiene uno sin usar previamente.
+
+También el comprado una [funda del mando de PS4](https://amzn.to/2ZGumzk) para protegerlo de golpes, y suciedad me he fijado más que nada en el color que sea negro y que las aberturas para los botones sean amplias, además de que trajese _grips_ para los _joysticks_ ya que con el uso se les puede desprender su goma de agarre.
+
+Si en algún momento oigo que el ventilador hace un ruido más alto de lo normal compraré un [aerosol de aire comprimido con cánula](https://amzn.to/2AdXzT2) para limpiarla evitando así estropear los tornillos de plástico junto con una aspiradora para extraer la mayor parte del polvo que acumule.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -288,10 +338,10 @@ El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasia
 
 ### Conclusión
 
-Quizá la calidad de las consolas de esta generación da muestras de agotamiento y está siendo superada por los juegos en PC, teniendo en cuenta que llevo muchos años sin jugar a juegos llegar a estos de la PS4 va a ser un salto importante sobre lo último que he jugado. En vídeos de YouTube los juegos que he visto me parece que tiene una muy buena calidad gráfica aún siendo YouTube una mala plataforma para apreciar la calidad por la compresión que le realiza a los vídeos. Y los de la PS5 seguro que es también un salto importante, sobre todo si le añaden trazado de rayos lo que le dotará de más realismo en reflejos y luces.
+Quizá la calidad de las consolas de esta generación da muestras de agotamiento y está siendo superada por los juegos en PC, teniendo en cuenta que llevo muchos años sin jugar a juegos llegar a estos de la PS4 va a ser un salto importante sobre lo último que he jugado. En vídeos de YouTube los juegos que he visto me parece que tiene una muy buena calidad gráfica aún siendo YouTube una mala plataforma para apreciar la calidad por la compresión que le realiza a los vídeos. La PS5 seguro que es también un salto importante, sobre todo si le añaden trazado de rayos lo que le dotará de más realismo en reflejos y luces.
 
 Aparte de echar de menos [una versión de la consola PlayStation sin discos todo digital][blogbitix-426] como tiene Xbox echo de menos poder usar teclado y ratón en algunos juegos como los de disparos o de estrategia en tiempo real, el ratón como apuntador es mas preciso y con el mayor número de teclas de un teclado más rápidas las acciones. Mucha gente juega en un monitor de ordenador y una mesa de escritorio sería una gran característica y seguro que sería posible técnicamente.
 
-Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol prefiero un buen juego.
+Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol un buen juego es una buena opción.
 
 {{% /post %}}
