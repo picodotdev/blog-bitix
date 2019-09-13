@@ -101,7 +101,7 @@ A modo de entretenimiento los juegos son una buena opción. Hay múltiples pági
 * [RicharBetaCode](https://www.youtube.com/user/richar1979BetaCode/videos): en este canal hay partidas grabadas de cantidad de juegos en episodios de unos 45 minutos de duración. Interesantes para ver como es un juego, su historia y su jugabilidad.
 * [tonondor](https://www.youtube.com/user/TheTonondor/videos): canal de YouTube o vídeo blog sobre juegos y consolas en el que se comenta opiniones personales sensatas aunque uno tenga una opinión distinta en algunos puntos de diferentes temas relacionadas con el mundo de los juegos y consolas. Muy recomendable.
 * [Video Bitacora](https://www.youtube.com/channel/UCvbMI-jDTAh54lLpdfBxSnw/videos): otro vídeo blog personal con opiniones alrededor de los juegos y consolas narrados con un tono ameno y alegre.
-* [CUBTC](https://www.youtube.com/channel/UC3-yxBBaDoMl-VhLjef_Vbw): la mayoría de vídeos son sobre los juegos _free to play_ de [Wargaming][wargaming] como [World of Tanks][wargaming-worldoftanks] y [World of Warships][wargaming-worldofwarships] con una muy buena cantidad de guías de como jugar y guías con consejos sobre estrategia explicados muy detalladamente.
+* [CUBTC](https://www.youtube.com/channel/UC3-yxBBaDoMl-VhLjef_Vbw/videos): la mayoría de vídeos son sobre los juegos _free to play_ de [Wargaming][wargaming] como [World of Tanks][wargaming-worldoftanks] y [World of Warships][wargaming-worldofwarships] con una muy buena cantidad de guías de como jugar y guías con consejos sobre estrategia explicados muy detalladamente.
 
 ## Otros
 
