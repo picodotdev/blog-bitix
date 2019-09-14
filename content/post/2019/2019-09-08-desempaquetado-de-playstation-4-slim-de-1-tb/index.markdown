@@ -3,7 +3,7 @@ pid: 432
 title: "Desempaquetado de PlayStation 4 Slim de 1 TB"
 url: "/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/"
 date: 2019-09-08T18:00:00+02:00
-updated: 2019-09-13T23:00:00+02:00
+updated: 2019-09-14T10:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -284,7 +284,7 @@ Al finalizar toda la configuración se muestra la pantalla inicial de la consola
         caption="Pantalla inicial" >}}
 </div>
 
-En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, como lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre. Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador se podrá quitar la mayor parte del polvo que acumulen. En modelos anteriores los tornillos eran de metal y se podrían quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
+En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, como lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre. Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) ([otro](https://www.youtube.com/watch?v=MTAiOTNUmJY)) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador a través de la abertura del ventilador se podrá quitar la mayor parte del polvo que acumulen, también está la posibilidad de [desmontar la fuente de alimentación](https://www.youtube.com/watch?v=LLMC0DCQVvs) para acceder a la parte trasera del disipador, con el aire comprimido y una aspiradora tratar de extraer el polvo que se acumule en la parte delantera, todo con el objetivo de no desmontar la tapa que cubre el ventilador y el disipador para no estropear los tornillos de plástico. En modelos anteriores los tornillos son de metal y se pueden quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
 
 ### Tienda donde comprar la consola
 
@@ -344,5 +344,16 @@ Quizá la calidad de las consolas de esta generación da muestras de agotamiento
 Aparte de echar de menos [una versión de la consola PlayStation sin discos todo digital][blogbitix-426] como tiene Xbox echo de menos poder usar teclado y ratón en algunos juegos como los de disparos o de estrategia en tiempo real, el ratón como apuntador es mas preciso y con el mayor número de teclas de un teclado más rápidas las acciones. Mucha gente juega en un monitor de ordenador y una mesa de escritorio sería una gran característica y seguro que sería posible técnicamente.
 
 Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol un buen juego es una buena opción.
+
+{{% reference %}}
+{{< links >}}
+{{< postslinks >}}
+* [Desempaquetado PS4 Slim (en)](https://www.youtube.com/watch?v=6a0r94hdxLc)
+* [Desempaquetado Sony PlayStation 4 Slim y configuración (en)](https://www.youtube.com/watch?v=0GMTBPdDsfM)
+* [Temperatura de PlayStation (en)](https://www.youtube.com/watch?v=tuJI0LGBfm8)
+* [Sobretemperatura en PlayStation (en)](https://www.youtube.com/watch?v=VfU_e08QvJs)
+* [Como abrir y limpiar correctamente tu PS4 Slim (en)](https://www.youtube.com/watch?v=7gW-oetZoYk)
+* [Como incrementar el almacenamiento de la PS4 Slim con una unidad externa (en)](https://www.youtube.com/watch?v=MMYAQSMjgxo)
+{{% /reference %}}
 
 {{% /post %}}
