@@ -237,7 +237,7 @@ Como decía prefiero juegos digitales pero con mi lento ADSL que descarga entre 
 
 Desde el ordenador me he creado una cuenta en [PlayStation Network][playstation-network] para acceder a los juegos digitales y empezar a añadir los favoritos que deseo y así enterarme de cuando alguno de ellos esté de oferta comprarlo. Es importante elegir bien el nombre de la cuenta, el primer cambio de nombre de la cuenta es gratuito pero los siguientes hay que pagar. Creada la cuenta descargo algunos juegos _free to play_ para probar, empezando por _Fortnite_ y _World of Warships_.
 
-En el primer inicio se solicitan múltiples datos de condifuración y preferencias entre ellos si se desea la cuenta de PlayStation Network, como la he creado previamente desde el ordenador solo he tenido que introducir el nombre de usuario de inicio de sesión y la contraseña. Otras opciones solicitadas son las relativas a la privacidad y que información ven otros usuarios de nuestra actividad en la consola, pide unas cuantas, estas opciones se pueden editar también desde un ordenador entrando a la cuenta de PSN con el navegador.
+En el primer inicio se solicitan múltiples datos de configuración y preferencias entre ellos si se desea la cuenta de PlayStation Network, como la he creado previamente desde el ordenador solo he tenido que introducir el nombre de usuario de inicio de sesión y la contraseña. Otras opciones solicitadas son las relativas a la privacidad y que información ven otros usuarios de nuestra actividad en la consola, pide unas cuantas, estas opciones se pueden editar también desde un ordenador entrando a la cuenta de PSN con el navegador.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -284,7 +284,46 @@ Al finalizar toda la configuración se muestra la pantalla inicial de la consola
         caption="Pantalla inicial" >}}
 </div>
 
-En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, como lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre. Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) ([otro](https://www.youtube.com/watch?v=MTAiOTNUmJY)) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador a través de la abertura del ventilador se podrá quitar la mayor parte del polvo que acumulen, también está la posibilidad de [desmontar la fuente de alimentación](https://www.youtube.com/watch?v=LLMC0DCQVvs) para acceder a la parte trasera del disipador, con el aire comprimido y una aspiradora tratar de extraer el polvo que se acumule en la parte delantera, todo con el objetivo de no desmontar la tapa que cubre el ventilador y el disipador para no estropear los tornillos de plástico. En modelos anteriores los tornillos son de metal y se pueden quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
+Uso un monitor de resolución 2560x1440 (2K), la PlayStation está preparada para un resolución 1920x1080 (FullHD) pero tanto en la interfaz de los menús como en los juegos la calidad de imagen es muy buena. Tiene una opción de configuración para elegir ampliar la imagen a 2K o usar el área nativo de FullHD.
+
+### Limpieza de ventilador y disipador, desmontaje y montaje, como cargar del mando
+
+En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, con lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre.
+
+Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) ([otro](https://www.youtube.com/watch?v=MTAiOTNUmJY)) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador a través de la abertura del ventilador se podrá quitar la mayor parte del polvo que acumulen, también está la posibilidad de desmontar la fuente de alimentación para acceder a la parte trasera del disipador, con el aire comprimido y una aspiradora tratar de extraer el polvo que se acumule en la parte delantera, todo con el objetivo de no desmontar la tapa que cubre el ventilador y el disipador para no estropear los tornillos de plástico. En modelos anteriores los tornillos son de metal y se pueden quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
+
+En las páginas de [iFixit][ifixit] y [How Fixit][how-fixit] hay unas muy buenas guías en las que se explica paso a paso y con imágenes como desmontar una PlayStation 4 Slim y como montarla con posterioridad. En estos artículos y vídeos queda perfectamente ilustrado como desmontarla y montarla. 
+
+* [Artículo desmontaje de una PlayStation 4 Slim (How Fixit)](https://www.how-fixit.com/laptop-repair-guides/game_console/ps4-slim-disassembly/) (es este se aprecia los tornillos de plástico con la cabeza fundida que fijan la tapa de metal que cubre el ventilador, disipador y la unidad lectora de los modelos más recientes de la consola)
+* [Artículo desmontaje de una PlayStation 4 Slim (iFixit)](https://es.ifixit.com/Device/PlayStation_4_Slim)
+* [Vídeo como desmontar una PlayStation 4 Slim](https://www.youtube.com/watch?v=0BYsBdS8lvE)
+* [Vídeo como montar una PlayStation 4 Slim](https://www.youtube.com/watch?v=iU9chZ86cm4)
+* [Otro vídeo de desmontaje de la Play Station 4 Slim](https://www.youtube.com/watch?v=lExiC4TAkVU)
+* [Cómo aplicar pasta térmica correctamente en un procesador](https://es.ifixit.com/Gu%C3%ADa/Como+aplicar+pasta+termica/744)
+* [Vídeo como aplicar pasta térmica](https://www.youtube.com/watch?v=JYwHB2P6GmM)
+
+Limpiar el ventilador solo requiere quitar la tapa superior de la consola y tratar de limpiar sus aspas con un bastoncillo o aire comprimido aplicándolo con el bote siempre en vertical ya que de otra manera expulsa líquido a baja temperatura con el riesgo de dañar algún componente electrónico si es necesario hay que cambiar la consola de posición pero el bote siempre en vertical, la tapa superior no anula la garantía si se tiene cuidado de dejar señales de manipulación. Sin embargo, para acceder al disipador al menos requiere desmontar la fuente de alimentación y para desmontarla hay que quitar la tapa inferior de la consola la cual requiere quitar un tornillo en la parte posterior de la consola que está protegido por una etiqueta de plástico pegada que lo cubre a modo de precinto de garantía. Si se quiere hacer una mejor limpieza que solo lo que permite acceder desde el ventilador no queda más remedio, como este paso ya anula la garantía solo es recomendable hacerlo una vez haya concluido su periodo legal que en España es de 2 años desde el momento de la compra. Quitar la fuente de alimentación permite acceder a la parte posterior del disipador, con un aerosol de aire comprimido se puede quitar la mayor parte del polvo que se le acumule en la parte frontal y el ventilador.
+
+Para hacer una limpieza profunda y completa teniendo acceso completo al disipador y ventilador como cambiar la pasta térmica del procesador limpiando el anterior con alcohol isopropílico que con el tiempo pierde su eficiencia hay que desmontar la placa base de la consola y soltar las conexiones de cables, quitar la placa base y asegurarse de que los _pads_ térmicos sigan colocados en cada uno de sus componentes electrónicos. Son un buen número de tornillos a quitar, no es simple y solo es recomendable para alguien con experiencia o esté dispuesto a seguir los pasos de las guías anteriores.
+
+Para realizar el montaje y desmontaje correctamente se requieren una serie de herramientas:
+
+* [Destornilladores de precisión](https://amzn.to/34OEeWs), la PS4 utiliza tornillos con cabeza Torx T8 y Phillips PH0.
+* [Pinzas de precisión](https://amzn.to/2Ai1n5Q) si el _kit_ de destornilladores de precisión no incluye. Los cables de datos de la PS4 son planos, sus conectores pequeños y es recomendable manipularlos con unas de estas pinzas.
+* [Aire comprimido](https://amzn.to/34OEkxi) usando siempre el bote en vertical y en pequeñas ráfagas.
+* [Pasta térmica](https://amzn.to/2UVuiGd) no conductiva para no crear un cortocircuito si no se aplica correctamente y en una capa muy fina.
+* [Alcohol isopropílico](https://amzn.to/2Lvyzx5).
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VR9PGPC&linkId=4a0232e9898e496af9e672fe50d57c81"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JZ3DTHG&linkId=1aede680c3b8a5b84657f52f73d54600"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M0GKOEN&linkId=cdc038354d536d752a8c70b8bddca748"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CYJLG1S&linkId=129773b7c65c13d8101eafd1035d2211"></iframe>
+</div>
+
+Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no es suficiente para los requisitos de carga del mando y en este caso de usarse la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA.
+
+**** [Foto cargador]
 
 ### Tienda donde comprar la consola
 
@@ -354,6 +393,8 @@ Voy a retomar este entretenimiento que deje hace años en la medida que el tiemp
 * [Sobretemperatura en PlayStation (en)](https://www.youtube.com/watch?v=VfU_e08QvJs)
 * [Como abrir y limpiar correctamente tu PS4 Slim (en)](https://www.youtube.com/watch?v=7gW-oetZoYk)
 * [Como incrementar el almacenamiento de la PS4 Slim con una unidad externa (en)](https://www.youtube.com/watch?v=MMYAQSMjgxo)
+* [Amperaje de los cargadores](https://www.elotrolado.net/hilo_amperaje-de-los-cargadores_2228907)
+* [USB Power](https://en.wikipedia.org/wiki/USB#Power)
 {{% /reference %}}
 
 {{% /post %}}

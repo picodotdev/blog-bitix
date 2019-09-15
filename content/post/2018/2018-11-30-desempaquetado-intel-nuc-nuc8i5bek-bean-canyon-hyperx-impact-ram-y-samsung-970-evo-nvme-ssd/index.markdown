@@ -3,7 +3,7 @@ pid: 363
 title: "Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/"
 date: 2018-11-30T17:00:00+01:00
-updated: 2018-12-01T20:20:00+01:00
+updated: 2019-09-16T00:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -281,6 +281,10 @@ Una vez colocados ambos elementos se vuelve a colocar la tapa inferior que hace 
         image3="montaje-nuc-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Montaje de memoria y SSD M.2"
         caption="Montaje de memoria y SSD M.2" >}}
 </div>
+
+El ventilador está en la parte superior del NUC, para acceder a él hay que desmontar la placa base con el objetivo de limpiar el polvo que se le acumule para que su capacidad de refrigeración sea eficiente. En el momento que funcione más rápidamente de lo normal en tareas que no requiere demasiada computación hay que hacerle una limpieza y al disipador.
+
+* [Desmontaje de un Intel NUC](https://www.ifixit.com/Guide/Intel+NUC5i7RYH+Disassembly/98011)
 
 ### Análisis
 
