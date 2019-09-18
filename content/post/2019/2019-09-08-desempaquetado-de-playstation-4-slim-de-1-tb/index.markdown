@@ -3,7 +3,7 @@ pid: 432
 title: "Desempaquetado de PlayStation 4 Slim de 1 TB"
 url: "/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/"
 date: 2019-09-08T18:00:00+02:00
-updated: 2019-09-14T10:30:00+02:00
+updated: 2019-09-18T14:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -158,7 +158,7 @@ Las [especificaciones ténicas de la PlayStation 4 Slim](https://www.playstation
 * Unidad disco: BD/DVD, DVD × 8 CAV, BD × 6 CAV (solo lectura)
 * Entrada/Salida: Super-Speed USB (USB 3.1 Gen1) 2 puertos
 * 1 puerto AUX
-* Red: Ethernet（10BASE-T, 100BASE-TX, 1000BASE-T）×1, IEEE 802.11 a/b/g/n/ac
+* Red: Ethernet 10BASE-T, 100BASE-TX, 1000BASE-T x1, IEEE 802.11 a/b/g/n/ac
 * Conectividad: Bluetooth®v4.0
 * Energía: 	AC 100-240V, 50/60Hz
 * Consumo energía: 165W máximo
@@ -288,9 +288,9 @@ Uso un monitor de resolución 2560x1440 (2K), la PlayStation está preparada par
 
 ### Limpieza de ventilador y disipador, desmontaje y montaje, como cargar del mando
 
-En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, con lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B algunos tornillos que cubren la unidad de discos y el disipador viene fijada con unos tornillos de plástico a los que les han fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que retirar la tapa metálica que lo cubre.
+En un futuro con el uso como a todo elemento electrónico que utiliza para refrigerarse un ventilador y un disipador se le acumulará polvo, con lo que cada cierto tiempo para que no haga demasiado ruido y disipe de forma más eficiente el calor que genera es recomendable limpiar el polvo que se le acumulará. En el modelo CUH-2216B la plancha de metal que cubre la unidad de discos y el disipador vienen fijados con unos tornillos de plástico a los que se les ha fundido la cabeza, con lo que no se pueden desatornillar. Para limpiar el ventilador un bastoncillo de algodón basta pero para limpiar el disipador completamente hay que desmontar la consola.
 
-Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) ([otro](https://www.youtube.com/watch?v=MTAiOTNUmJY)) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador a través de la abertura del ventilador se podrá quitar la mayor parte del polvo que acumulen, también está la posibilidad de desmontar la fuente de alimentación para acceder a la parte trasera del disipador, con el aire comprimido y una aspiradora tratar de extraer el polvo que se acumule en la parte delantera, todo con el objetivo de no desmontar la tapa que cubre el ventilador y el disipador para no estropear los tornillos de plástico. En modelos anteriores los tornillos son de metal y se pueden quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
+Con estos tornillos de plástico hay dos opciones [rebajarles la cabeza para que la tapa se pueda quitar](https://www.youtube.com/watch?v=dXH-c8hkueM) como se muestra en el vídeo en el que quedan estropeados, simplemente [limpiar el ventilador](https://www.youtube.com/watch?v=9s0GoewPFC0) ([otro vídeo](https://www.youtube.com/watch?v=MTAiOTNUmJY)) o sin necesidad de estropear esos tornillos de plástico utilizar un bote aerosol de aire comprimido con una cánula para limpiar el polvo también del disipador combinado con un aspirador a través de la abertura del ventilador se podrá quitar la mayor parte del polvo que acumulen, también está la posibilidad de desmontar la fuente de alimentación para acceder a la parte trasera del disipador, con el aire comprimido y una aspiradora tratar de extraer el polvo que se acumule en la parte delantera, todo con el objetivo de no desmontar la tapa que cubre el ventilador y el disipador para no estropear los tornillos de plástico. En modelos anteriores los tornillos son de metal y se pueden quitar perfectamente, Sony de forma deliberada los ha sustituido por estos de plástico que son peores, seguramente con la intención de que los usuarios no desmonten la PlayStation.
 
 En las páginas de [iFixit][ifixit] y [How Fixit][how-fixit] hay unas muy buenas guías en las que se explica paso a paso y con imágenes como desmontar una PlayStation 4 Slim y como montarla con posterioridad. En estos artículos y vídeos queda perfectamente ilustrado como desmontarla y montarla. 
 
@@ -302,9 +302,13 @@ En las páginas de [iFixit][ifixit] y [How Fixit][how-fixit] hay unas muy buenas
 * [Cómo aplicar pasta térmica correctamente en un procesador](https://es.ifixit.com/Gu%C3%ADa/Como+aplicar+pasta+termica/744)
 * [Vídeo como aplicar pasta térmica](https://www.youtube.com/watch?v=JYwHB2P6GmM)
 
-Limpiar el ventilador solo requiere quitar la tapa superior de la consola y tratar de limpiar sus aspas con un bastoncillo o aire comprimido aplicándolo con el bote siempre en vertical ya que de otra manera expulsa líquido a baja temperatura con el riesgo de dañar algún componente electrónico si es necesario hay que cambiar la consola de posición pero el bote siempre en vertical, la tapa superior no anula la garantía si se tiene cuidado de dejar señales de manipulación. Sin embargo, para acceder al disipador al menos requiere desmontar la fuente de alimentación y para desmontarla hay que quitar la tapa inferior de la consola la cual requiere quitar un tornillo en la parte posterior de la consola que está protegido por una etiqueta de plástico pegada que lo cubre a modo de precinto de garantía. Si se quiere hacer una mejor limpieza que solo lo que permite acceder desde el ventilador no queda más remedio, como este paso ya anula la garantía solo es recomendable hacerlo una vez haya concluido su periodo legal que en España es de 2 años desde el momento de la compra. Quitar la fuente de alimentación permite acceder a la parte posterior del disipador, con un aerosol de aire comprimido se puede quitar la mayor parte del polvo que se le acumule en la parte frontal y el ventilador.
+Limpiar el ventilador solo requiere quitar la tapa superior de la consola y tratar de limpiar sus aspas con un bastoncillo o aire comprimido aplicándolo con el bote siempre en vertical ya que de otra manera expulsa líquido a baja temperatura con el riesgo de dañar algún componente electrónico si es necesario hay que cambiar la consola de posición pero el bote siempre en vertical, la tapa superior no anula la garantía si se tiene cuidado de dejar señales de manipulación. Sin embargo, para acceder al disipador al menos requiere desmontar la fuente de alimentación y para desmontarla hay que quitar la tapa inferior de la consola la cual requiere quitar un tornillo en la parte posterior de la consola que está protegido por una etiqueta de plástico pegada que lo cubre a modo de precinto de garantía. Si se quiere hacer una mejor limpieza que solo lo que permite acceder desde el ventilador no queda más remedio, como este paso ya anula la garantía solo es recomendable hacerlo una vez haya concluido su periodo estipulado según la legislación que en España es de 2 años desde el momento de la compra. Quitar la fuente de alimentación permite acceder a la parte posterior del disipador, con un aerosol de aire comprimido se puede quitar la mayor parte del polvo que se le acumule en la parte frontal y el ventilador.
 
-Para hacer una limpieza profunda y completa teniendo acceso completo al disipador y ventilador como cambiar la pasta térmica del procesador limpiando el anterior con alcohol isopropílico que con el tiempo pierde su eficiencia hay que desmontar la placa base de la consola y soltar las conexiones de cables, quitar la placa base y asegurarse de que los _pads_ térmicos sigan colocados en cada uno de sus componentes electrónicos. Son un buen número de tornillos a quitar, no es simple y solo es recomendable para alguien con experiencia o esté dispuesto a seguir los pasos de las guías anteriores.
+Para hacer una limpieza profunda y completa teniendo acceso completo al disipador y ventilador asi como cambiar la pasta térmica del procesador limpiando la anterior con alcohol isopropílico que con el tiempo pierde su eficiencia hay que desmontar la placa base de la consola y soltar las conexiones de cables, quitar la placa base y asegurarse de que los _pads_ térmicos sigan colocados en cada uno de sus componentes electrónicos. Son un buen número de tornillos a quitar, no es simple y solo es recomendable para alguien con experiencia o esté dispuesto a seguir los pasos de las guías anteriores.
+
+<div class="media media-video" style="text-align: center;">
+	<iframe width="640" height="360" src="https://www.youtube.com/embed/0BYsBdS8lvE" frameborder="0" allowfullscreen></iframe>
+</div>
 
 Para realizar el montaje y desmontaje correctamente se requieren una serie de herramientas:
 
@@ -318,16 +322,23 @@ Para realizar el montaje y desmontaje correctamente se requieren una serie de he
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VR9PGPC&linkId=4a0232e9898e496af9e672fe50d57c81"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JZ3DTHG&linkId=1aede680c3b8a5b84657f52f73d54600"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M0GKOEN&linkId=cdc038354d536d752a8c70b8bddca748"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MZ45X9G&linkId=195df606f7ea4dae5d9df4e1887975c9"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CYJLG1S&linkId=129773b7c65c13d8101eafd1035d2211"></iframe>
 </div>
 
-Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no es suficiente para los requisitos de carga del mando y en este caso de usarse la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA.
+Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un adaptador de corriente utilizando para cargar un teléfono móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no son suficiente para los requisitos de carga del mando, en caso de usarse estos la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA según la especificación del estándar USB.
 
-**** [Foto cargador]
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="adaptador-de-corriente-de-telefono-movil.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A"
+        caption="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A" >}}
+</div>
 
 ### Tienda donde comprar la consola
 
 Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades. Iba a comprarla en [El Corte Inglés][elcorteingles] por el hecho de ir, pagarla y llevármela para casa pero el día que fui solo tenían modelos de 500 GB y yo quería el de 1 TB de modo que al final la he adquirido por [Amazon][amazon], además necesitaba un conmutador HDMI para intercambiar la señal entre el NUC y la consola, también quería una funda para el mando y necesitaba un cable HDMI adicional.
+
+Tanto en Wallapop como [Ebay][ebay] se pueden encontrar consolas de segunda mano a un mejor precio que el de en tienda nuevas si se está dispuesto a no tener garantía del producto y a aceptar la incertidumbre de si funcionará correctamente.
 
 * [Amazon PS4](https://amzn.to/2Lu5l1n)
 * [El Corte Inglés PS4](https://www.elcorteingles.es/videojuegos/ps4/consolas/)
@@ -341,7 +352,14 @@ Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades.
 
 ### Otros accesorios
 
-Para utilizar el ordenador y la consola en el mismo monitor sin tener que conectar y desconectar cables he comprado también un [conmutador HDMI 4K de tres entradas](https://amzn.to/2NaQDyL) que he adquirido de hasta tres entradas y una salida con soporte de hasta un monitor de resolución 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo y que soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz. El conmutador no incluye cable HDMI por lo que adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) es necesario si no se tiene uno sin usar previamente.
+Para utilizar el ordenador y la consola en el mismo monitor sin tener que conectar y desconectar cables he comprado también un [conmutador HDMI 4K de tres entradas y una salida](https://amzn.to/2NaQDyL) con soporte para una resolución de hasta 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo, posee un botón para realizar la selección de la fuente de entrada sin mando, soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz, no necesita alimentación aunque si fuera necesario posee un puerto USB para proporcionarle corriente y todos los puertos HDMI tanto de entrada como de salida están en el mismo lado. El conmutador no incluye cable HDMI por lo que es necesario adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) si no se tiene uno adicional disponible.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="conmutador-hdmi-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Conmutador HDMI"
+        image2="conmutador-hdmi-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Conmutador HDMI"
+        caption="Conmutador HDMI" >}}
+</div>
 
 También el comprado una [funda del mando de PS4](https://amzn.to/2ZGumzk) para protegerlo de golpes, y suciedad me he fijado más que nada en el color que sea negro y que las aberturas para los botones sean amplias, además de que trajese _grips_ para los _joysticks_ ya que con el uso se les puede desprender su goma de agarre.
 
@@ -373,7 +391,6 @@ El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasia
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=c4e617b84dbe20273c022f528f7f5451"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XJ5ZR5P&linkId=d6e6248621355a567e929b8e711a47c9"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M0GKOEN&linkId=1c4bd6867e6f85f22c06bc4229852a5e"></iframe>
 </div>
 
 ### Conclusión
@@ -387,6 +404,7 @@ Voy a retomar este entretenimiento que deje hace años en la medida que el tiemp
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
+* [Asistencia técnica de PlayStation](https://www.playstation.com/es-es/get-help/?smcid=other:es-es:blank:primary%20nav:msg-help:ayuda-y-asistencia-tcnica#!/)
 * [Desempaquetado PS4 Slim (en)](https://www.youtube.com/watch?v=6a0r94hdxLc)
 * [Desempaquetado Sony PlayStation 4 Slim y configuración (en)](https://www.youtube.com/watch?v=0GMTBPdDsfM)
 * [Temperatura de PlayStation (en)](https://www.youtube.com/watch?v=tuJI0LGBfm8)
