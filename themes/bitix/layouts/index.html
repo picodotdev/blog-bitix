@@ -2,15 +2,15 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-12">
         {{ partial "head.html" . }}
         <div class="row">
-          <div class="col-md-12 text-center">
+          <div class="col-12 text-center">
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-12">
             <div class="adblock-sidebar adblock-sidebar-left">
               <div class="adblock-sidebar-container">
                 {{ partial "sidebar-ad.html" . }}
@@ -22,8 +22,7 @@
               </div>
             </div>
             <ul class="list-unstyled">
-              {{ $paginator := .Paginate (where .Pages "Type" "post") }}
-              {{ range $paginator.Pages }}
+              {{ range .Paginator.Pages }}
               <li>
                 <article itemscope itemtype="http://schema.org/BlogPosting">
                   {{ if isset .Params "language" }}
@@ -31,7 +30,7 @@
                   {{ else }}
                   <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
                   {{ end }}
-                  <h1 itemprop="name"><a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a></h1>
+                  <h1 itemprop="name"><a href="{{ .RelPermalink }}" itemprop="name url">{{ .Title }}</a></h1>
                   <span class="information">
                     <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
                     {{ if isset .Params "tags" }}
@@ -60,12 +59,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-12">
             <hr class="separator">
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12 text-center">
+          <div class="col-12 text-center">
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>
