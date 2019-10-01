@@ -24,7 +24,6 @@ Para hacer la integración de los _listeners_ con Spring debemos sustituir el _I
 Configurando Spring con anotaciones y código Java, como es recomendable en vez de xml, la configuración del ejemplo es la siguiente y un archivo xml casi testimonial de Spring. En esta configuraicón vemos el servicio _ProductoEventAdapter_ que usaremos para recibir los eventos y el servicio _DummyService_ que se inyectará en el anterior:
 
 {{< code file="AppConfiguration.java" language="Java" options="" >}}
-{{< code file="applicationContext.xml" language="XML" options="" >}}
 
 En el _listener_ haremos uso de un servicio de Spring que podemos inyectar usando la anotación _@Autorwire_ tal y como hacemos normalmente usando el contenedor de depednecias de Spring. La implementación con respecto a usar un _listener_ con solo Hibernate varía ligeramente para adaptarse a los cambios de usar un servicio.
 
