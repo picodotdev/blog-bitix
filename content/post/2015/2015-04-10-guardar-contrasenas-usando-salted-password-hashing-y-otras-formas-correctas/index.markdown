@@ -3,7 +3,7 @@ pid: 75
 title: "Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas"
 url: "/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/"
 date: 2015-04-10T18:55:04+02:00
-updated: 2019-10-01T22:00:00+02:00
+updated: 2019-10-02T21:00:00+02:00
 rss: true
 sharing: true
 comments: true
