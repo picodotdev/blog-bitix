@@ -4,6 +4,7 @@ title: "Cómo usar Wine para jugar en GNU/Linux a Diablo 3 u otros juegos de Bli
 url: "/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-diablo-3-u-otros-juegos-de-blizzard-o-windows/"
 aliases: ["/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-diablo-3-u-otros-juegos-de-windows/"]
 date: 2018-12-02T17:30:00+01:00
+updated: 2018-10-07T16:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -112,7 +113,7 @@ El juego permite ajustar la calidad gráfica a la capacidad del equipo para tene
         caption="Opciones de calidad gráfica usadas para medir el rendimiento en fps" >}}
 </div>
 
-Por defeco en mi caso no he podido cambiar la resolución del juego desde las opciones solo me ofrece una opción la de la resolución del monitor, como 2560x1440 es una resolución alta y aún jugables los 42 fps no son muchos, a más fps se aprecia más fluidez. Para cambiar la resolución he tenido que utilizar el siguiente comando desde la terminal, se indica el nombre del escritorio Diablo 3, 1920x1080 es la resolución deseada y el último con _Diablo III.exe_ es la ubiciación del ejecutable.
+Por defeco en mi caso no he podido cambiar la resolución del juego desde las opciones solo me ofrece una opción la de la resolución del monitor, como 2560x1440 es una resolución alta y aún jugables los 42 fps no son muchos, a más fps se aprecia más fluidez. Para cambiar la resolución he tenido que utilizar el siguiente comando desde la terminal con el que Wine ejecuta el programa en modo explorador o en un escritorio virtual, se indica el nombre del escritorio virtual Diablo 3, 1920x1080 es la resolución deseada en este caso y el último parámetro _Diablo III.exe_ es la ubiciación del ejecutable.
 
 {{< code file="wine-explorer.sh" language="Bash" options="" >}}
 
