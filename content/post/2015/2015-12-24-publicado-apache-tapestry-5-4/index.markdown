@@ -42,7 +42,8 @@ En la [etiqueta Tapestry][blogbitix-tag-tapestry] puedes consultar los últimos 
 Buen regalo para acabar el año 2015, ¡feliz navidad!.
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2015/116/christmastux2015.jpg" alt="ChristmasTux 2015" title="ChristmasTux 2015">
+    {{< imageproc
+        image1="christmastux2015.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="ChristmasTux 2015" >}}
 </div>
 
 {{< plugintapestry >}}

@@ -36,7 +36,8 @@ La incorporación de los módulos a la plataforma con Java 9 es una de las modif
         caption="Tabla de novedades de Java 9" >}}
 </div>
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2017/263/duke-java-9.png" width="300" alt="Duke Java 9" title="Duke Java 9">
+    {{< imageproc
+        image1="duke-java-9.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Duke Java 9" >}}
 </div>
 
 Los módulos van a mejorar una de las deficiencias existentes en la visibilidad de las clases entre paquetes. Los módulos de Java proporcionan una mayor encapsulación de las clases contenidas en un paquete y las librerías. Esta encapsulación evita que una aplicación u otra librería haga uso y dependa de clases y paquetes de los que no debería lo que mejora la compatibilidad con versiones futuras. Los desarrolladores de una librería con los módulos ahora tienen un mayor control de los paquetes que expone una librería y que forma parte de su API pública. Con lo que se evita casos que se han dado hasta ahora como que librerías y programas dependan de clases internas en la API de Java como _sun.misc.BASE64Encoder_ o la famosa _sun.misc.Unsafe_, para la primera en Java se añadió un reemplazo con [java.util.Base64](https://docs.oracle.com/javase/9/docs/api/java/util/Base64.html), para la segunda con Java 9 para parte de su funcionalidad se ha añadido algunas nuevas clases.

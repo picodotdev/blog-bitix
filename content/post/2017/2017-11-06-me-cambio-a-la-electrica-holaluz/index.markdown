@@ -24,8 +24,9 @@ Entre las compañías eléctricas que empecé a barajar como posibles candidatas
 No me queda claro la diferencia entre energía 100% verde, que según indica incluye [cogeneración de alta eficiancia](http://www.plantasdecogeneracion.com/index.php/las-plantas-de-cogeneracion) ¿a partir de qué materia?, y energía renovable viendo la definición de estos términos en el [glosario](https://www.holaluz.com/glosario/). Además en la página [energía verde](https://www.holaluz.com/energia-verde/) donde se detalla de donde se obtiene la energía se incluye el termino valorización energética que representa un 48% pero su descripción me suena a incineradora. En la sección [Conócenos](https://www.holaluz.com/conocenos/) incluyen la siguiente frase: _Por eso toda la energía que comercializamos es de origen renovable: solar, hidráulica, eólica, biomasa y biogás_. Me queda alguna duda entre todas estas páginas. Holaluz afirman que su energía es 100% verde o 100% renovable.
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2017/278/holaluz.svg" width="300" alt="Holaluz" title="Holaluz">
-    <img src="assets/images/posts/2017/278/pepeenergy.png" width="300" alt="Pepeenergy" title="Pepeenergy">
+    {{< imageproc
+        image1="holaluz.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Holaluz"
+        image2="pepeenergy.png" command2="Fit" commandthumb2="Fit" options2="300x250" title2="Pepeenergy" >}}
 </div>
 
 El ahorro según mi consumo de aproximadamente unos 75 kWh mensuales con mi anterior compañía eléctrica es de 0,75 € y con respecto al precio que tiene Endesa de 1,41 €. No parece mucho pero la electricidad es un servicio indispensable, de uso prolongado en una vivienda y es raro cambiar de compañía cada poco tiempo, eligiendo bien la compañía al cabo de los años el ahorro es apreciable, nadie va a salir de pobre pero con lo ahorrado algo ya se puede comprar.

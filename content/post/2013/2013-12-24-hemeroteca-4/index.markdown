@@ -62,7 +62,8 @@ El resto de entradas han sido sobre diversos temas no relacionados como varias s
 El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, tengo apuntados algunos temas interesantes que en las próximas semanas y meses iré publicando. ¡Feliz navidad!
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2013/4/christmastux2013.jpg" alt="Christmastux 2013" title="Christmastux 2013">
+    {{< imageproc
+        image1="christmastux2013.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Christmastux 2013" >}}
 </div>
 
 {{% reference %}}

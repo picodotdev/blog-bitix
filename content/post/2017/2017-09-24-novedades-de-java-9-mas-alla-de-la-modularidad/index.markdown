@@ -37,9 +37,9 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
         image1="tabla-novedades-java-9.jpg" thumb1="tabla-novedades-java-9-thumb.jpg" title1="Tabla de novedades de Java 9"
         caption="Tabla de novedades de Java 9" >}}
 </div>
-
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2017/264/duke-java-9.png" width="300" alt="Duke Java 9" title="Duke Java 9">
+    {{< imageproc
+        image1="duke-java-9.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Duke Java 9" >}}
 </div>
 
 ### Métodos factoría para colecciones

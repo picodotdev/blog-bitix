@@ -20,7 +20,8 @@ summary: "Con ya dos décadas de vida y a lo largo de este tiempo Java se ha con
 El sábado 23 de mayo de 2015 el lenguaje Java cumple 20 años de historia y aún hoy Java sigue siendo uno de los lenguajes de programación preferidos para desarrollar en un mundo tecnológico en el que unos pocos años pueden darse grandes cambios y en dos décadas ver surgir nuevas tecnologías y verlas languidecer. Algunas personas se jactan y hablan con un tono de desprecio y mofa nada agradable hacia Java mostrando su desconocimiento o prejuicios siguiendo algunos tópicos bastante difundidos la mayoría incorrectos. A otras personas quizá no les gusta Java no tanto por el lenguaje como por los proyectos que ha desarrollado en él, en consultoras cárnicas, para clientes con condiciones laborales paupérrimas, con tecnologías, librerías y _frameworks_ obsoletos o códigos heredados programados por programadores aparentemente con poca experiencia que es un infierno mantener debido a una cantidad importante de errores, uso de tecnologías no adaptadas a la solución, malos funcionamientos y falta de documentación. Pero estas situaciones externas no tiene nada que ver con el lenguaje. Algunas otras personas quizá no les gusta porque no les ofrece el último azúcar sintáctico que han visto y usado en otros lenguajes o porque para propósitos específicos hay alternativas que permiten obtener una solución de una forma más sencilla.
 
 <div class="media" style="text-align: center;">
-    <img src="assets/images/posts/2015/81/java20.jpg" alt="Java 20 años (1995-2015)" title="Java 20 años (1995-2015)">
+    {{< imageproc
+        image1="java20.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Java 20 años (1995-2015)" >}}
 </div>
 
 En [JavaWorld][javaworld] ha publicado varios artículos para celebrar el aniversario comentando su futuro, su pasado y presente o que notables características reunió en su momento para ser hoy uno de los lenguajes más usados.
