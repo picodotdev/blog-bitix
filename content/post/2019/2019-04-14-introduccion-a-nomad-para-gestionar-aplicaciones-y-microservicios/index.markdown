@@ -46,7 +46,7 @@ Iniciados se pueden enviar _jobs_ y ver su estado, dirección y puerto asignado 
 
 {{< code file="nomad.sh" language="Bash" options="" >}}
 
-También poseen una interfaz web integrada en la que consultar la misma información, la de Nomad está en el puerto _8500_ y la de Nomad en el _4646_ donde ver el estado de los _jobs_ y el progreso de los despliegues.
+También poseen una interfaz web integrada en la que consultar la misma información, la de Consul está en el puerto _8500_ y la de Nomad en el _4646_ donde ver el estado de los _jobs_ y el progreso de los despliegues.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
