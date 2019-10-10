@@ -3,7 +3,7 @@ pid: 324
 title: "Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias"
 url: "/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/"
 date: 2018-05-26T12:15:00+02:00
-updated: 2018-05-26T18:15:00+02:00
+updated: 2019-10-10T19:10:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -21,7 +21,7 @@ summary: "Las aplicaciones Java se distribuyen en uno o varios archivos _jar_. S
 
 La forma de distribuir el código compilado a _bytecode_ en Java es a través de archivos de extensión _jar_. Los archivos _jar_ no son más que archivos comprimidos den formato _zip_. Si se les cambia de extensión y se descomprimen se extrae su contenido seguramente con una buena cantidad de archivos de extensión _class_ que es la extensión para los archivos Java compilados a _bytecode_ y que la máquina virtual interpreta para su ejecución. Las librerías que use la aplicación también se deben distribuir junto a esta para que funcione, por lo que la aplicación se distribuirá en forma de una colección de archivos _jar_.
 
-Una aplicación distribuida en forma de múltiples archivos archivos _jar_ se ejecuta con una línea de comandos como la siguiente en la que el parámetro _-cp_ indica las ubicaciones donde se buscarán librerías _jar_ y archivos _class_ si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método _main_ que inicia la aplicación. Previamente hay que compilar el proyecto con [Gradle][gradle].
+Una aplicación distribuida en forma de múltiples archivos archivos _jar_ se ejecuta con una línea de comandos como la siguiente en la que el parámetro _-cp_ indica las ubicaciones donde se buscarán librerías _jar_ y archivos _class_ si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método _main_ que inicia la aplicación. Previamente hay que generar el artefacto del proyecto con [Gradle][gradle].
 
 {{< code file="gradlew-assemble.sh" language="Bash" options="" >}}
 
@@ -31,8 +31,8 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="java-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo"
-        caption="Aplicación de ejemplo" >}}
+        image1="java-classpath.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
+        caption="Aplicación de ejemplo ejecutada con classpath" >}}
 </div>
 
 Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la opción _-jar_ se ignora el parámetro _-cp_ y no se indica la clase _main_ del punto de entrada de la aplicación. En el caso de las aplicaciones distribuidas en un archivo _jar_ tanto la clase _main_ como las dependencias se indican en un archivo de manifiesto incluido en el propio archivo _jar_. El archivo se ubica en _META-INF/MANIFEST.MF_ dentro del _jar_, es un archivo de texto donde se indican varias propiedades en forma de atributo y valor, una en cada linea. Un ejemplo de archivo de manifiesto sería el siguiente:
@@ -55,8 +55,14 @@ Para hacer la distribución más sencilla hay una posibilidad que usan algunos p
 
 Con el siguiente comando la ejecución de la aplicación empaquetada como _uberjar_ produce el mismo resultado. Con el _uberjar_ en el archivo de manifiesto no es necesario incluir el atributo _Class-Path_ ya que todas las clases necesarias tanto de la aplicación como de las dependencias ha sido empaquetadas en el _jar_.
 
+{{< code file="gradlew-assemble.sh" language="Bash" options="" >}}
 {{< code file="java-jar-uberjar.sh" language="Bash" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="java-jar-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
+        caption="Aplicación de ejemplo ejecutada con classpath" >}}
+</div>
 
 Hay un [_plugin_ de Gradle para generar _uberjars_](https://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
 
@@ -64,7 +70,7 @@ Que la aplicación sea un único _jar_ tiene la ventaja que el distribuible es m
 
 Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de apliaciones en archivos _jar_](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
 
-{{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble, java -jar build/libs/JavaUberjar-uberjar.jar" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble && java -jar build/libs/JavaUberjar-uberjar.jar" >}}
 
 {{% reference %}}
 {{< links >}}

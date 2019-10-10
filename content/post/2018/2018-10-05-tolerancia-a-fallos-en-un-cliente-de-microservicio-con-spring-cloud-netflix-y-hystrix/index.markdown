@@ -3,7 +3,7 @@ pid: 352
 title: "Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix"
 url: "/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/"
 date: 2018-10-05T20:30:00+02:00
-updated: 2018-12-21T11:00:00+01:00
+updated: 2019-10-10T19:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -26,7 +26,7 @@ Un patrón o técnica que se suele emplear es el de [Circuit Breaker](https://ww
 * Uno es que cuando un microservicio empieza a fallar es necesario dejar de hacerle peticiones para permitirle recuperarse si está saturado que provoca esos fallos. Cuando ocurre un fallo es posible realizar una acción en sustitución de la llamada al microservicio y devolver un valor alternativo como medida paliativa y hacer que el microsevicio afectado tenga la posibilidad de seguir ofreciendo su servicio aunque sea de forma degradada.
 * Otro problema es que el microservicio aunque no falle tarde demasiado en responder, se puede establecer un _timeout_ que si se supera se deja de esperar e igualmente se realiza la acción de sustitución lo que evita que los microservicios que usan uno que tarda demasiado en responder agoten sus recursos y empiecen a fallar o tardar demasiado también.
 
-En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo.
+En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo. El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional, en el artículo [Implementar tolerancia a fallos con Resilience4j][blogbitix-425] muestro su implementación.
 
 <div class="media" style="text-align: center;">
     {{< imageproc image1="hystrix.png" command1="Fit" options1="650x450" alt1="Hystrix" title1="Hystrix" >}}
@@ -66,8 +66,6 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
         image2="circuit-breaker-open.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
         caption="Estados del circuit breaker" >}}
 </div>
-
-El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional. 
 
 {{< code file="gradle-run.sh" language="Bash" options="" >}}
 
