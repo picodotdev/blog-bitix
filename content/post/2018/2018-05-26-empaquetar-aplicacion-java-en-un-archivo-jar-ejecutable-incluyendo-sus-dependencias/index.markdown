@@ -60,8 +60,8 @@ Con el siguiente comando la ejecución de la aplicación empaquetada como _uberj
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="java-jar-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
-        caption="Aplicación de ejemplo ejecutada con classpath" >}}
+        image1="java-jar-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con uberjar"
+        caption="Aplicación de ejemplo ejecutada con uberjar" >}}
 </div>
 
 Hay un [_plugin_ de Gradle para generar _uberjars_](https://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
