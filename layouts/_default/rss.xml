@@ -8,7 +8,7 @@
     <icon>{{ .Site.BaseURL }}/assets/images/logotipos/hugo.png</icon>
     <logo>{{ .Site.BaseURL }}/assets/images/logotipos/hugo.png</logo>
     {{ with .Site.Copyright }}<rights>{{.}}</rights>{{end}}
-    {{ range first 15 (where .Data.Pages ".Params.rss" true) }}
+    {{ range first 15 (where .RegularPages ".Params.rss" true) }}
     <entry>
         <id>{{ .Permalink }}</id>
         <title>{{ .Title }}</title>        
