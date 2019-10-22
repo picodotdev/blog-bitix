@@ -3,7 +3,7 @@ pid: 434
 title: "Novedades de Java 13"
 url: "/2019/09/novedades-de-java-13/"
 date: 2019-09-27T16:30:00+02:00
-updated: 2019-09-27T16:50:00+02:00
+updated: 2019-10-22T19:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -31,7 +31,7 @@ Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakar
 
 ### Bloques de texto
 
-Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble _"_ de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea _\n_. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML o JSON.
+Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble _"_ de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea _\n_. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.
 
 {{< code file="TextBlock-1.java" language="Java" options="" >}}
 
@@ -40,6 +40,8 @@ Con los bloques de texto se emplean una triple comilla doble _"_ para la apertur
 {{< code file="TextBlock-2.java" language="Java" options="" >}}
 
 Como ayuda a las cadenas de texto en la clase [String](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html) se han añadido varios métodos para eliminar la indentación (_String::stripIndent_), traducir los caracteres secuencia de escape (_String::translateEscapes_) y formatear una cadena usando un método de instancia (_String::formatted_).
+
+* [Text Blocks Come to Java](https://blogs.oracle.com/javamagazine/text-blocks-come-to-java)
 
 ### Expresiones switch mejoradas
 
@@ -50,6 +52,8 @@ En las [novedades de Java 12][blogbitix-391] se añadió la posibilidad de los _
 En Java 13 en vez únicamente el valor a retornar se permite crear bloques de sentencias para cada rama _case_ y retornar el valor con la palabra reservada _yield_. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.
 
 {{< code file="Switch-2.java" language="Java" options="" >}}
+
+* [Inside Java 13’s switch Expressions and Reimplemented Socket API](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api)
 
 ### Otras características
 
