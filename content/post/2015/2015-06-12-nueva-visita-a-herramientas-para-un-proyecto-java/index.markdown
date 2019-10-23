@@ -3,7 +3,7 @@ pid: 84
 title: "Nueva visita a Herramientas para un proyecto Java"
 url: "/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/"
 date: 2015-06-12T20:00:00+02:00
-updated: 2015-09-30T21:00:00+02:00
+updated: 2019-10-23T19:00:00+02:00
 rss: true
 sharing: true
 comments: true
@@ -27,6 +27,7 @@ Como lenguaje de programación seguiría usando Java, en mi caso es el lenguaje 
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [10 razones para seguir usando Java][blogbitix-81]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
+* [Novedades de la plataforma Java][blogbitix-serie-java-platform]
 
 ### Persistencia en base de datos
 
@@ -45,10 +46,13 @@ En un proyecto de larga duración y en el que se realicen mejoras probablemente 
 Para pruebas unitarias dos buenas posibilidades son [Spock][spock] y [Geb][geb]. Spock permite realizar los teses unitarias con un DSL bastante descriptivo que facilita la lectura posteriormente de la prueba. Por otro lado Geb permite automatizar las pruebas de las aplicaciones web proporcionando facilidades, se puede integrar con Spock.
 
 * [Pruebas unitarias con Spock y Mockito][elblogdepicodev-114]
+* [Pruebas funcionales con Geb en una aplicación web Java][blogbitix-332]
+* [Pruebas de carga y rendimiento de un servicio web con Apache Bench][blogbitix-411]
+* [Teses unitarios parametrizados con JUnit][blogbitix-410]
 
 ### Cliente
 
-En el lado cliente de una aplicación web usaría la combinación de varias tecnologías, [jQuery][jquery] para acceder y manipular el DOM de la página web, [RequireJS][requirejs] para cargar los archivos necesarios en la página y evitar la polución del ámbito global javascript. Si la aplicación tiene una carga importante en el lado cliente usaría [Backbone][backbone], [React][react] y [Mustache][mustache], en el ejemplo [lista de tareas con Backbone y React][elblogdepicodev-152] puede verse como podría quedar el código, también [Jasmine][jasmine] para hacer pruebas unitarias en javascript. Finalmente, [Grunt][grunt] para hacer algunas tareas de javascript y [Bower][bower] para obtener las librerías que requiera el proyecto.
+En el lado cliente de una aplicación web usaría la combinación de varias tecnologías, [jQuery][jquery] para acceder y manipular el DOM de la página web, [RequireJS][requirejs] para cargar los archivos necesarios en la página y evitar la polución del ámbito global javascript. Si la aplicación tiene una carga importante en el lado cliente usaría [Backbone][backbone], [React][react] y [Mustache][mustache], en el ejemplo [lista de tareas con Backbone y React][elblogdepicodev-152] puede verse como podría quedar el código, también [Jasmine][jasmine] para hacer pruebas unitarias en javascript.
 
 * [Introduccion y ejemplo de RequireJS][elblogdepicodev-147]
 * [Introducción y ejemplo de Backbone.js][elblogdepicodev-152]
@@ -56,22 +60,28 @@ En el lado cliente de una aplicación web usaría la combinación de varias tecn
 * [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon][elblogdepicodev-154]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
 * [Internacionalización (i18n) en JavaScript][blogbitix-63]
++ [Componentes en el cliente con Web Components usando JavaScript, HTML y CSS][blogbitix-388]
 
 ### _Framework_ web
 
-Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles. Si se tratase de una aplicación REST evaluaría [Spark][sparkjava] o [RESTEasy][resteasy] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST cruda. La tendencia actual es desarrollar microservicios y esto en las aplicaciones web supone que sean capaces de ofrecer su servicio por si mismas no usando un servidor de aplicaciones que hay que instalar previamente simplificando el despliegue a los administradores de sistemas, esto también se puede conseguir en parte usando [Docker][docker]. En vez de usar un [Tomcat][tomcat] tradicional podemos usar la versión embebible.
+Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles. Si se tratase de una aplicación REST evaluaría [Spark][sparkjava], [RESTEasy][resteasy] o [GraphQL][graphql] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST o GraphQL cruda. La tendencia actual es desarrollar microservicios y esto en las aplicaciones web supone que sean capaces de ofrecer su servicio por si mismas no usando un servidor de aplicaciones que hay que instalar previamente simplificando el despliegue a los administradores de sistemas, esto también se puede conseguir en parte usando [Docker][docker]. En vez de usar un [Tomcat][tomcat] tradicional podemos usar la versión embebible o [Spring Boot][spring-boot].
 
 * [Libro sobre desarrollo de aplicaciones con Apache Tapestry][blogbitix-12]
 * [Introducción y ejemplo de API RPC con Apache Thrift][blogbitix-72]
 * [Aplicación web Java autocontenida con Tomcat Embedded][blogbitix-71]
 * [Ejemplo sencillo de servicio web con RESTEasy][elblogdepicodev-142]
+* [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
+* [Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
++ [Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java][blogbitix-325]
 
 ### Base de datos
 
 Para una base de datos relacional en vez de [MySQL][mysql] usaría [PostgreSQL][postgresql]. PostgreSQL posee numerosas opciones avanzadas y es una de las bases de datos libres más reconocidas. El futuro de MySQL con Oracle y su escisión en MariaDB es más incierto además de no poseer algunas características que PostgreSQL sí.
 
-Dependiendo del causística de la aplicación otra opción complementaria es [Redis][redis], una base de datos clave-valor y en caso de tener que hacer búsquedas [Elasticsearch][elasticsearch].
+Dependiendo del causística de la aplicación otras opciones complementarias son [Redis][redis] y [Mongo][mongodb], una base de datos clave-valor, una base de datos de documentos y en caso de tener que hacer búsquedas [Elasticsearch][elasticsearch].
 
+* [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
+* [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Introducción a Elasticsearch][blogbitix-21]
 
 ### Entorno de desarrollo
@@ -85,16 +95,16 @@ Para el entorno de desarrollo o _devbox_ usaría [Docker][docker] y [Compose][do
 
 ### Hospedaje
 
-En cuanto al alojamiento para la aplicación la nube es otra tendencia por su flexibilidad. La [nube de Amazon][amazon-ec2] proporciona muchos servicios que pueden sernos útiles sin embargo si nuestra aplicación no los necesita y no es demasiado complicada podemos optar por otras opciones más baratas. Si usamos Amazon podemos aprovecharnos de [Bitnami][bitnami] si trabajamos con algunas de las aplicaciones para las que proporciona imágenes. Dos de estas opciones más baratas son [Linode][linode] o [Digital Ocean][digital-ocean] con las que por unos 5 o 10 € al mes podemos disponer de una máquina con 1 GIB de RAM, unos 30 GiB de discos SSD y una amplia transferencia de datos entrantes y salientes.
+En cuanto al alojamiento para la aplicación la nube es otra tendencia por su flexibilidad. La [nube de Amazon][amazon-ec2] proporciona muchos servicios que pueden sernos útiles sin embargo si nuestra aplicación no los necesita y no es demasiado complicada podemos optar por otras opciones más baratas. Dos opciones más baratas son [Linode][linode] o [Digital Ocean][digital-ocean] con las que por unos 5 o 10 € al mes podemos disponer de una máquina con 1 GIB de RAM, unos 30 GiB de discos SSD y una amplia transferencia de datos entrantes y salientes.
 
-* [Introducción a Bitnami][blogbitix-54]
 * [Nueva visita a 5+ opciones de «hosting» para aplicaciones][blogbitix-76]
 
 ### Otras
 
-Hay otras herramientas aún pasado este tiempo seguiría usando como [Git][git] para el control de versiones, [Redmine][redmine] como gestor de peticiones, [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente, [Gradle][gradle] como herramienta de construcción, [Jenkins][jenkins] como herramienta de integración continua, [GNU/Linux][linux] tanto para desarrollar como para el servidor en el que desplegar la aplicación, [eclipse][eclipse] para editar código Java o [Sublime Text][sublime-text] para editar archivos no Java, [JasperReports][jasperreports] para informes complejos, [Nginx][nginx] como servidor web, [Quartz][quartz] para lanzar tareas en ciertos momentos o regularmente, [Log4j][log4j] 2 para emitir trazas de la aplicación en vez las propuestas anteriormente (SLF4J o Logback), [less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación. O alguna nueva como [RabbitMQ][rabbitmq] para una comunicación entre aplicaciones o partes de ella basada en mensajes y de forma desacoplada,
+Hay otras herramientas aún pasado este tiempo seguiría usando como [Git][git] para el control de versiones, [GitLab][gitlab] como plataforma para desarrollo que incluye repositorio de git, gestión de peticiónes e integración continua además de otras funcionalidades en una única herramienta. [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente, [Gradle][gradle] como herramienta de construcción, [GNU/Linux][linux] tanto para desarrollar como para el servidor en el que desplegar la aplicación, [eclipse][eclipse] para editar código Java o [Visual Studio Code][microsoft-visual-studio-code] para editar archivos no Java, [JasperReports][jasperreports] para informes complejos, [Nginx][nginx] como servidor web, [Quartz][quartz] para lanzar tareas en ciertos momentos o regularmente, [Log4j][log4j] 2 para emitir trazas de la aplicación en vez las propuestas anteriormente (SLF4J o Logback), [less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación. O alguna nueva como [RabbitMQ][rabbitmq] para una comunicación entre aplicaciones o partes de ella basada en mensajes y de forma desacoplada.
 
-* [Análisis estático de código con PMD ][elblogdepicodev-117]
+* [GitLab, la completa herramienta integrada para desarrollo de software][blogbitix-290]
+* [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 
 Para cada un de estas herramientas en muchos casos tendremos varias alternativas similares para elegir, a veces elegir una u otra es algo subjetivo. Estas herramientas en muchos casos son de lo mejor que hay disponible pero perfectamente se pueden usar alternativas similares.
