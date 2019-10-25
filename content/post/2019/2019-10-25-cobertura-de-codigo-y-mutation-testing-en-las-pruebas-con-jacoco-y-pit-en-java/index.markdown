@@ -3,6 +3,7 @@ pid: 438
 title: "Cobertura de código y mutation testing en las pruebas con JaCoCo y PIT en Java"
 url: "/2019/10/cobertura-de-codigo-y-mutation-testing-en-las-pruebas-con-jacoco-y-pit-en-java/"
 date: 2019-10-25T16:30:00+02:00
+date: 2019-10-25T18:15:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -16,7 +17,7 @@ summary: "En el caso extremo una cobertura de código del cien por cien pero que
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una medida que se suele emplear para medir la calidad o efectividad de los teses unitarios es su cobertura de código que consiste en la cantidad de código ejercitado del total por las pruebas unitarias con los casos de prueba y _fixtures_ empleados. Sin embargo, la cobertura de código no es una medida fiable para conocer si los casos de prueba empleados son precisos y completos. La cobertura de código puede seguir siendo del cien por cien si se sustituye un un mayor que por un mayor que e igual o faltan casos de prueba que ejerciten los límites de las condiciones, los teses seguirán siendo correctos.
 
@@ -62,7 +63,7 @@ La siguiente batería de teses proporciona una cobertura de teses del cien por c
 
 El caso de prueba _calculatePriceForOneAdult_ utilizando un valor de edad de _20_ no es preciso ya que el límite de la edad de una persona adulta es a partir de 18 y no de 20, si PIT realiza una operación de mutación cambiando los límite de la condición de _if (passenger.getAge() > ADULT\_AGE)_ a _if (passenger.getAge() >= ADULT\_AGE)_, la mutación sobrevive. Para que esta mutación no sobreviva el valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, _18_ o la constante _ADULT\_AGE_.
 
-El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una famila en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado.
+El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una famila en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado entre ellas ivisiones en vez de multiplicaciones, substracciones en vez de sumas, reemplazo de valores de retorno o cambios y negaciones en condicionales.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
