@@ -1,7 +1,8 @@
 ---
 pid: 438
-title: "Cobertura de código y mutation testing en las pruebas con JaCoCo y PIT en Java"
-url: "/2019/10/cobertura-de-codigo-y-mutation-testing-en-las-pruebas-con-jacoco-y-pit-en-java/"
+title: "Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java"
+url: "/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/"
+aliases: ["/2019/10/cobertura-de-codigo-y-mutation-testing-en-las-pruebas-con-jacoco-y-pit-en-java/"]
 date: 2019-10-25T16:30:00+02:00
 date: 2019-10-25T18:15:00+02:00
 language: "es"
