@@ -4,7 +4,7 @@ title: "Cobertura de código y mutation testing en pruebas unitarias con JaCoCo 
 url: "/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/"
 aliases: ["/2019/10/cobertura-de-codigo-y-mutation-testing-en-las-pruebas-con-jacoco-y-pit-en-java/"]
 date: 2019-10-25T16:30:00+02:00
-date: 2019-10-25T18:15:00+02:00
+date: 2019-10-25T18:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -62,9 +62,9 @@ La siguiente batería de teses proporciona una cobertura de teses del cien por c
 
 {{< code file="TicketPriceCalculatorTest.java" language="Java" options="" >}}
 
-El caso de prueba _calculatePriceForOneAdult_ utilizando un valor de edad de _20_ no es preciso ya que el límite de la edad de una persona adulta es a partir de 18 y no de 20, si PIT realiza una operación de mutación cambiando los límite de la condición de _if (passenger.getAge() > ADULT\_AGE)_ a _if (passenger.getAge() >= ADULT\_AGE)_, la mutación sobrevive. Para que esta mutación no sobreviva el valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, _18_ o la constante _ADULT\_AGE_.
+El caso de prueba _calculatePriceForOneAdult_ utilizando un valor de edad de _20_ no es preciso ya que el límite de la edad de una persona adulta es a partir de 18 y no de 20, si PIT realiza una operación de mutación cambiando el límite de la condición de _if (passenger.getAge() > ADULT\_AGE)_ a _if (passenger.getAge() >= ADULT\_AGE)_, la mutación sobrevive. Para que esta mutación no sobreviva el valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, _18_ o la constante _ADULT\_AGE_.
 
-El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una famila en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado entre ellas ivisiones en vez de multiplicaciones, substracciones en vez de sumas, reemplazo de valores de retorno o cambios y negaciones en condicionales.
+El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una famila en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado entre ellas divisiones en vez de multiplicaciones, substracciones en vez de sumas, reemplazo de valores de retorno o cambios y negaciones en condicionales.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -74,7 +74,7 @@ El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada
         caption="Informe de cobertura de pruebas con JaCoCo e informe de mutation testing de PIT" >}}
 </div>
 
-Para generar los informes de cobertura de código y de mutación en Java y usando [Gradle][gradle] como herramienta de construcción las herramientas JaCoCo y PIT proporcionan un complemento o _plugin_ que hay que añadir al archivo de construcción, además de proporcionar algunas opciones de configuración en la sección _pitest_, entre estas propiedades está _mutators_ en la que se puede inidicar los _mutators_ que PIT emplea para lanzar los teses con mutaciones. Los informes se generan en el directorio _build/reports/_.
+Para generar los informes de cobertura de código y de mutación en Java y usando [Gradle][gradle] como herramienta de construcción las herramientas JaCoCo y PIT proporcionan un complemento o _plugin_ que hay que añadir al archivo de construcción además de proporcionar algunas opciones de configuración en la sección _pitest_, entre estas propiedades está _mutators_ en la que se puede inidicar los _mutators_ que PIT emplea para lanzar los teses con mutaciones. Los informes se generan en el directorio _build/reports/_. Ralizar _mutation testing_ solo requiere cierta configuración en el archivo de construcción del proyecto.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
 {{< code file="gradlew-run.sh" language="Bash" options="" >}}
