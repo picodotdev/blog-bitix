@@ -29,7 +29,7 @@ Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepic
 
 El primero de los comandos sirve para haceer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las vistas previas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
 
-Si la imagen original está en el formato escalar _svg_ para convertir a formatos _jpg_, _png_, o generar vistas previas el comando es similar.
+Si la imagen original está en el formato escalar _svg_ para convertir a formatos _jpg_, _png_, o generar vistas previas el comando es similar indicando también el tamaño de la imagen deseada.
 
 {{< code file="convert-svg.sh" language="Bash" options="" >}}
 
