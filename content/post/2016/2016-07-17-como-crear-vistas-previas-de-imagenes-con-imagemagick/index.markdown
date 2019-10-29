@@ -3,6 +3,7 @@ pid: 161
 title: "Cómo crear vistas previas de imágenes con ImageMagick"
 url: "/2016/07/como-crear-vistas-previas-de-imagenes-con-imagemagick/"
 date: 2016-07-17T12:00:00+02:00
+updated: 2019-10-29T19:00:00+01:00
 rss: true
 sharing: true
 comments: true
@@ -28,7 +29,11 @@ Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepic
 
 El primero de los comandos sirve para haceer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las vistas previas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
 
-En Blog Bitix para mostrar la vista previa uso la librería de JavaScript [Bootstrap Image Gallery](https://blueimp.github.io/Bootstrap-Image-Gallery/). Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducciónd de tamaño considerable.
+Si la imagen original está en el formato escalar _svg_ para convertir a formatos _jpg_, _png_, o generar vistas previas el comando es similar.
+
+{{< code file="convert-svg.sh" language="Bash" options="" >}}
+
+Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducciónd de tamaño considerable.
 
 <div class="media" style="text-align: center;">
     {{< figure
