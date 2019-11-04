@@ -3,6 +3,7 @@ pid: 440
 title: "Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux"
 url: "/2019/01/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/"
 date: 2019-11-03T13:00:00+01:00
+updated: 2019-11-04T19:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -56,8 +57,9 @@ En el caso de GNU/Linux los directorios de usuario además están localizados de
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="terminal-user-dirs.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en la terminal"
-        caption="Directorios de usuario en la terminal" >}}
+        image1="terminal-user-dirs.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+        image2="usb-terminal-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+        caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 </div>
 
 {{% reference %}}
