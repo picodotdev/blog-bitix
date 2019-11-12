@@ -3,7 +3,7 @@ pid: 199
 title: "Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java"
 url: "/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/"
 date: 2016-12-07T11:00:00+01:00
-updated: 2016-12-07T14:00:00+01:00
+updated: 2019-11-12T19:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -40,9 +40,10 @@ Según la [especificación del método equals](https://docs.oracle.com/javase/8/
 
 La implementación del método _equals_ de la clase _Object_ usa la equivalencia más restrictiva posible, esto es, para cualquier referencia no nula de _x_ e _y_ este método retorna _true_ si y solo si son el mismo objeto (_x == y_ tienen la misma referencia).
 
-Según estas reglas una implementación del método _equals_ tiene la siguiente forma:
+Hay dos formas comunes de implementar el método _equals_, una más restrictiva pero que cumple las propiedades y otra que no cumple completamente las propiedades pero es de utilidad en ciertos casos. Son las siguientes en las que cambia la sentencia que comprueba el tipo de la instancia del objeto con el que se está evaluando la igualdad. En el artículo [How to Implement Java’s equals Method Correctly](https://www.sitepoint.com/implement-javas-equals-method-correctly/) están descritas las implicaciones y motivo de existir de ambas variantes además de explicar que garantiza cada sentencia del método _equals_.
 
-{{< code file="PhoneNumber-equals.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-equals-1.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-equals-2.java" language="Java" options="" >}}
 
 Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html) de la librería [commons-lang](https://commons.apache.org/proper/commons-lang/) la implementación es aparentemente similar pero en el caso de necesitar hacer comparaciones con datos de tipo _float_, _double_, _arrays_ u objetos hace la implementación un poco más sencilla. En los _float_ y _double_ para hacer la comparación deberíamos usar los métodos [Float.compare](https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#compare-float-float-) y [Double.compare](https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#compare-double-double-) y en los objetos deberemos tener en cuenta si la referencia es posible que se a nula para evitar la excepción [NullPointerException](https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html) cosas que la clase _EqualsBuilder_ ya tiene en cuenta.
 
