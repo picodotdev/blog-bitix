@@ -32,11 +32,11 @@ Una de las cosas que tenemos que tener cuenta es que siempre que sobreescribamos
 
 Según la [especificación del método equals](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) definido en la clase _Object_ debe tener las siguientes propiedades:
 
-* Es reflexiva: para cualquier referencia no nula de x, <code>x.equals(x)</code> debe retornar _true_.
-* Es simétrica: para cualquier referencia no nula de x e y, <code>x.equals(y)</code> debe retornar _true_ si y solo si <code>y.equals(x)</code> retorna _true_.
-* Es transitiva: para cualquier referencia no nula de x, y y z, si <code>x.equals(y)</code> debe retorna _true_ y <code>y.equals(z)</code> retorna _true_ entonces <code>x.equals(z)</code> debe retornar _true_.
-* Es consistente: para cualquier referencia no nula de x e y, múltiples invocaciones de <code>x.equals(y)</code> consistentemente debe retornar _true_ o _false_, si no se ha modificado la información utilizada en la comparación.
-* Para para cualquier referencia no nula de x, <code>x.equals(null)</code> debe retornar _false_.
+* Es reflexiva: para cualquier referencia no nula de <code>x</code>, <code>x.equals(x)</code> debe retornar _true_.
+* Es simétrica: para cualquier referencia no nula de <code>x</code> e <code>y</code>, <code>x.equals(y)</code> debe retornar _true_ si y solo si <code>y.equals(x)</code> retorna _true_.
+* Es transitiva: para cualquier referencia no nula de <code>x</code>, <code>y</code> y <code>z</code>, si <code>x.equals(y)</code> retorna _true_ y <code>y.equals(z)</code> retorna _true_ entonces <code>x.equals(z)</code> debe retornar _true_.
+* Es consistente: para cualquier referencia no nula de <code>x</code> e <code>y</code>, múltiples invocaciones de <code>x.equals(y)</code> consistentemente debe retornar _true_ o _false_, si no se ha modificado la información utilizada en la comparación.
+* Para para cualquier referencia no nula de <code>x</code>, <code>x.equals(null)</code> debe retornar _false_.
 
 La implementación del método _equals_ de la clase _Object_ usa la equivalencia más restrictiva posible, esto es, para cualquier referencia no nula de _x_ e _y_ este método retorna _true_ si y solo si son el mismo objeto (_x == y_ tienen la misma referencia).
 
