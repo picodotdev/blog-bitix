@@ -32,15 +32,15 @@ Para tener una máquina virtual el proceso se puede hacer desde el principio des
 
 En este ejemplo se configura una máquina virtual usando como sistema operativo base Ubuntu 18.04, y se aprovisiona configurando ella [Docker][docker]. El aprovisionamiento se realiza mediante una serie de comandos y archivos que se añaden del _host_ al sistema virtualizado tal como se hace en un sistema Ubuntu desde su estado de instalación inicial. Entre las opciones de configuración permitidas están el nombre de la máquina virtual, su sistema operativo, la cantidad de memoria que se le asigna, propiedades de red, asignar direcciones IP estáticas, ...
 
-{{< code file="Vagrantfile" language="Java" options="" >}}
+{{< code file="Vagrantfile" language="java" options="" >}}
 
 Se puede crear un archivo inicia con comentarios para empezar a configurar la máquina virtual.
 
-{{< code file="vagrant-init.sh" language="Bash" options="" >}}
+{{< code file="vagrant-init.sh" language="bash" options="" >}}
 
 Definido el archivo de configuración para Vagrant se inician las máquina virtual con un comando. Y se detienen con otro. Si hay necesidad en el mismo archivo se pueden definir varias máquinas virtuales.
 
-{{< code file="vagrant-up.sh" language="Bash" options="" >}}
+{{< code file="vagrant-up.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -50,7 +50,7 @@ Definido el archivo de configuración para Vagrant se inician las máquina virtu
 
 Una vez iniciada la máquina virtual Vagrant configura SSH para tener acceso a su terminal, hay que especificar el nombre de la máquina virtual.
 
-{{< code file="vagrant-ssh.sh" language="Bash" options="" >}}
+{{< code file="vagrant-ssh.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

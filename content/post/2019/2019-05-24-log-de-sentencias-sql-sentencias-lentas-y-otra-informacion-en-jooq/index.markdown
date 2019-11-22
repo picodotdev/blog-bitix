@@ -28,8 +28,8 @@ En Hibernate la configuración de _statistics_, el _logger_ _org.hibernate.SQL_ 
 
 Usando [Spring Boot][spring-boot] y la dependencia de jOOQ hay que proporcionar una instancia que implemente la interfaz [ExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteListener.html) o crear una instancia de [DefaultExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html). Esta clase contiene numerosos métodos que permiten conocer y realizar acciones, en este caso emitir trazas. Dos de los métodos son [executeStart()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeStart-org.jooq.ExecuteContext-) y [executeEnd()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeEnd-org.jooq.ExecuteContext-) invocados por jOOQ antes y después de cada sentencia que lanza. Usando [System.nanoTime()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#nanoTime()) se mide el tiempo de ejecución.
 
-{{< code file="AppConfiguration.java" language="Java" options="" >}}
-{{< code file="JooqExecuteListener.java" language="Java" options="" >}}
+{{< code file="AppConfiguration.java" language="java" options="" >}}
+{{< code file="JooqExecuteListener.java" language="java" options="" >}}
 
 En las siguientes trazas de ejecución de sentencias se observa una inserción de un registro (1), una posterior muestra del listado para lo que se ralizan dos sentencias una que cuenta el número de elementos en la tabla con un _select count(*)_ que junto con el número de elementos por página permite conocer cuantas páginas hay y un _select_ con un _limit ?_ para recupear los datos de la primera página (2). Con el suficiente número de elementos en la tabla se hace una consulta con un _limit ?_ y un _offset ?_ para los elementos de una página posterior a la primera (3). Al eliminar un elemento de la tabla se ejecuta una sentencia _delete_ con el identificativo de la fila a eliminar en la clausula _where_ (4), finalmente si se utiliza el botón _Eliminar todos_ se elimina todas las filas con otra sentencia _delete_ pero sin especificar la clausula _where_ (5). En cada sentencia se muestra el tiempo que ha tardado.
 
@@ -46,7 +46,7 @@ La clase [ExecuteContext](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteCo
 
 Simplemente mostrando las trazas de sentencias me ha permitido detectar que en el ejemplo se estaba realizando una pequeña ineficiencia. La sentencia _select count(*)_ se lanzaba dos veces en la página de listado, una al querer saber si hay alguna fila y otra usada por el [componente Grid](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Grid.html) de [Tapestry][tapestry]. Para resolverlo se cachea el resultado en la clase anónima _JooqGridDataSource_ con el siguiente código.
 
-{{< code file="ProductoAdmin.java" language="Java" options="" >}}
+{{< code file="ProductoAdmin.java" language="java" options="" >}}
 
 Las bases de datos MySQL y PostgreSQL también ofrecen la posibilidad de [emitir en las sentencias en un _log_][blogbitix-379] incluidas las sentencias lentas. Otra posibilidad es [resaltar la sintaxis de las sentencias en la salida a la terminal][blogbitix-359] para una mejor lectura dando color a las palabras claves.
 

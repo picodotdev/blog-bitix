@@ -25,13 +25,13 @@ Si tenemos unas pocas imágenes y no es algo que hagamos a menudo podemos usar u
 
 Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepicodev-129] o [añadir marcas de agua a imágenes][elblogdepicodev-58] de forma automatizada con [Image Magick][imagemagick] podemos escalar imágenes para generar vistas previas o _thumbnails_ más pequeñas para que ocupen menos. El comando para escalar todas las imágenes de una extensión _jpg_ en este caso a un tamaño original de 1600 de ancho y 1067 de alto en pixeles conservando la proporción de la imagen es el siguiente:
 
-{{< code file="convert.sh" language="Bash" options="" >}}
+{{< code file="convert.sh" language="bash" options="" >}}
 
 El primero de los comandos sirve para haceer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las vistas previas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
 
 Si la imagen original está en el formato escalar _svg_ para convertir a formatos _jpg_, _png_, o generar vistas previas el comando es similar indicando también el tamaño de la imagen deseada.
 
-{{< code file="convert-svg.sh" language="Bash" options="" >}}
+{{< code file="convert-svg.sh" language="bash" options="" >}}
 
 Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducciónd de tamaño considerable.
 

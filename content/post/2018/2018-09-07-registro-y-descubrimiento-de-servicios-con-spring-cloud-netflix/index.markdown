@@ -29,7 +29,7 @@ Para crear un servidor Eureka con Spring y Spring Boot hay que crear una aplicac
 Utilizando [Gradle][gradle] las dependencias y la anotación _@EnableEurekaServer_ a añadir a la clase principal de la aplicación son las siguientes.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 La propiedad de configuración principal para formar el cluster es _eureka.client.serviceURL.defaultZone_ donde se especifica una lista _hostnames_ donde están los servidores de registro y descubrimiento. Para dar a cada servidor en local un nombre de dominio distinto he usado el servicio de DNS [xip.io][xipio] que resuleve el nombre de dominio a la dirección IP indicada en el propio nombre de dominio, así _ds1.127.0.0.1.xip.io_ se resuelve a _127.0.0.1_ que es la dirección para la propia máquina local al igual que _ds2.127.0.0.1.xip.io_ y _ds3.127.0.0.1.xip.io_. El servicio de xip.io evita tener que crear en el archivo de _hosts_ local una correspondencia entre nombre de _hostname_ y la dirección IP de _loopback_ de la propia máquina local.
 
@@ -39,12 +39,12 @@ En el archivo de configuración hay tres perfiles distintos que varían algunas 
 
 Los comandos para arrancar tres instancias de servidor de registro y descubrimiento utilizando varios perfiles de configuración de Spring son los siguientes.
 
-{{< code file="run-discoveryserver.sh" language="Bash" options="" >}}
+{{< code file="run-discoveryserver.sh" language="bash" options="" >}}
 
 Estando disponible el servicio de registro y descubrimiento ya se puede iniciar el servicio de configuración. Con estos dos servicios de infraestructura iniciados los que sería un servicio de la aplicación ya puede iniciarse que consiste en este caso en obtener una referencia de una instancia del servicio de configuración registada en el servicio de registro y descubrimiento, con esta referencia obtiene su configuración y se inicia.
 
-{{< code file="run-configserver.sh" language="Bash" options="" >}}
-{{< code file="run-service.sh" language="Bash" options="" >}}
+{{< code file="run-configserver.sh" language="bash" options="" >}}
+{{< code file="run-service.sh" language="bash" options="" >}}
 
 Una vez iniciados los servidores de descubrimiento en la página _dashboard_ de cualquiera de ellos cambiando el puerto de la dirección _http\://ds1.127.0.0.1.xip.io:8761/_ se observan varias propiedades como la lista de servidores del cluster, las réplicas registradas y disponibles y los servicios registrados con su ubicación y puerto. En este caso hay tres instancias del servicio de registro y descubrimiento, una de servidor de configuración y dos instancias de un servicio. 
 

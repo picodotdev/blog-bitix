@@ -38,8 +38,8 @@ Todo esto es algo que se comenta en el <a href="https://www.amazon.es/gp/product
 
 Esta es la teoría, veamos el código del ejemplo de configuración en Java con recarga dinámica. La mayor parte del código está en la clase ConfiguracionManager. Esta tiene dos métodos que son usados en la clase Main de la aplicación, el método load carga la clase y la compila, y el método monitor que monitoriza el archivo en busca de cambios y llama al método load cuando los detecte.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="ConfiguracionManager.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="ConfiguracionManager.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure

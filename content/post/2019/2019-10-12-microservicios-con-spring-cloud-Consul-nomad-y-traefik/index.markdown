@@ -62,15 +62,15 @@ La ejecución del ejemplo requiere [Docker][docker] ya que es en este caso el _d
 
 Los contenedores de Docker se añade a una misma red para que puedan comunicarse entre ellos, ha de ser así hasta que no se resuelva una [petición de Docker para que los contenedores puedan comunicarse con la máquina _host_](https://github.com/docker/for-linux/issues/264) que los alberga.
 
-{{< code file="docker-network-create.sh" language="Bash" options="" >}}
+{{< code file="docker-network-create.sh" language="bash" options="" >}}
 
 Poteriormente hay que ejecutar Consul y Nomad tras lo cual se puede acceder a sus consolas de estado.
 
-{{< code file="nomad-consul-run.sh" language="Bash" options="" >}}
+{{< code file="nomad-consul-run.sh" language="bash" options="" >}}
 
 Enviar a Nomad los _job_ de Traefik tras lo cual se puede acceder a su consola de estado. El siguiente paso es enviar el _job_ del servicio que proporciona la configuración a los microservicios. Lo anterior únicamente es infraestructura aún no hay ningún servicio que proporcione alguna funcionalidad, la funcionalidad que proporciona el servicio implementado con Spring es simplemente devolver un mensaje como respuesta a la petición que se le realice, se envía el _job_ del servicio a Nomad. Finalmente, el servicio es consumido por un cliente que realiza una petición al servicio cada 1 segundo.
 
-{{< code file="nomad-job-run.sh" language="Bash" options="" >}}
+{{< code file="nomad-job-run.sh" language="bash" options="" >}}
 
 Definición de un servicio en un _job_ para Nomad. _count_ define cuantas instancias del servicio se inicia, la _stanza_ _update_ define como será la actualización cuando se actualice el servicio, la _stanza_ _labels_ contiene la configuración para Traefik, _check_ define los parámetros para la monitorización.
 
@@ -91,8 +91,8 @@ Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas
 
 El código del servicio, del cliente implementados con Spring y la salida del cliente son los siguientes.
 
-{{< code file="DefaultController.java" language="Java" options="" >}}
-{{< code file="ProxyService.java" language="Java" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
+{{< code file="ProxyService.java" language="java" options="" >}}
 
 Como hay 2 instancias del servicio y Traefik realiza balanceo de carga utilizando el algoritmo _round robbin_ se observa en la salida con las respuestas que la dirección IP que ha atendido la petición es alternativamente una de las dos instancias del servicio.
 
@@ -100,11 +100,11 @@ Como hay 2 instancias del servicio y Traefik realiza balanceo de carga utilizand
 
 En un momento posterior si surge la necesidad de querer desplegar una nueva versión del microservicio basta con generar de nuevo el artefacto del microservicio, cambiando la versión en el archivo _build.gradle_. El despliegue de la nueva versión se realizan mediante la estrategia _canary_, manteniendo las instancias con la versión anterior del servicio y añadiendo una nueva con la nueva versión. Si se descubre algún error en la instancia _canary_ se puede revertir el estado a la versión anterior, que consiste en detener la instancia _canary_. Una vez se comprueba que la instancia con la nueva versión funciona correctamente analizando sus trazas y métricas se envía la order a Nomad de promocionar las instancias de forma progresiva con la versión antigua a la nueva versión.
 
-{{< code file="nomad-job-promote.sh" language="Bash" options="" >}}
+{{< code file="nomad-job-promote.sh" language="bash" options="" >}}
 
 El servicio exporta métricas en formato para Prometheus que con Grafana. Según se realizan peticiones al servicio el valor de métrica de contador de llamadas al servicio aumenta de forma progresiva.
 
-{{< code file="service-prometheus.sh" language="Bash" options="" >}}
+{{< code file="service-prometheus.sh" language="bash" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloudConsulNomadTraefik" command="./run.sh" %}}
 

@@ -26,7 +26,7 @@ Supongamos que queremos generar un contenido a tres columnas de una serie de ele
 
 En este ejemplo las etiquetas _div_ de apertura y cierre hacen que el XML de la plantilla no esté bien balanceado. No se si habrá otra forma mejor pero esta es el rodeo que uso para tener una plantilla bien balanceada y generar el contenido HTML necesario. En el código Java del componente creo un método que devuelve un mapa de trozos de HTML que no podría incluir en la propia plantilla, cada trozo de HTML tiene una clave asociada por la que identificarlo, en este caso _open_ y _close_.
 
-{{< code file="Component.java" language="Java" options="" >}}
+{{< code file="Component.java" language="java" options="" >}}
 
 Usando estos métodos en la plantilla el código de la plantilla _tml_ ya bien formado quedaría de la siguiente manera, usando el componente [OutputRaw](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/OutputRaw.html) se emite el trozo HTML de apertura o cierre:
 

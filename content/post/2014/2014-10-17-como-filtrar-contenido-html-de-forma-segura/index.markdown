@@ -24,11 +24,11 @@ Para hacer el filtrado de HTML en java podemos usar jsoup, para ello deberemos u
 
 Esta es la implementación de la clase Whitelist, con el método addTag se indican los tags permitidos, con addAttributes se indican los atributos permitidos para cada etiqueta, addProtocols se indican los protocolos permitidos para cada etiqueta y atributo, finalmente el método addAttribute permite usar una expresión regular para el valor del atributo, esto se comprueba en el método isSafeAttribute:
 
-{{< code file="AppWhitelist.java" language="Java" options="" >}}
+{{< code file="AppWhitelist.java" language="java" options="" >}}
 
 Y esta es la forma de usar la clase a través de [Jsoup.clean](http://jsoup.org/apidocs/org/jsoup/Jsoup.html#clean%28java.lang.String,%20java.lang.String,%20org.jsoup.safety.Whitelist%29):
 
-{{< code file="IndexServiceImpl.java" language="Java" options="" >}}
+{{< code file="IndexServiceImpl.java" language="java" options="" >}}
 
 El [código fuente completo de BS](https://github.com/picodotdev/blog-stack) junto con el «scrapeado» y el uso de esta clase está disponible en un repositorio de GitHub.
 

@@ -28,12 +28,12 @@ Los datos se guardan en el servidor y la _cookie_ con el identicativo de sesión
 
 Unsando [Spring Boot][spring-boot] y _Tomcat_ basta con usar la clase _Manager_ para cambiar el valor por defecto de longitud de la sesión.
 
-{{< code file="Main-1.java" language="Java" options="" >}}
+{{< code file="Main-1.java" language="java" options="" >}}
 
 Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] por defecto el identificativo de la sesión es generado a partir de un [UUID](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/UUID.html), el identificativo de la sesión tiene el mismo valor por defecto de 128 bits pero para cambiar la longitud hay que proporcionar una clase que cambia el comportamiento.
 
-{{< code file="Main-2.java" language="Java" options="" >}}
-{{< code file="DefaultRedisOperationSessionRespository.java" language="Java" options="" >}}
+{{< code file="Main-2.java" language="java" options="" >}}
+{{< code file="DefaultRedisOperationSessionRespository.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -41,7 +41,7 @@ Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] po
         caption="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" >}}
 </div>
 
-{{< code file="session-id.txt" language="Java" options="" >}}
+{{< code file="session-id.txt" language="java" options="" >}}
 
 Un libro dedicado a la seguridad muy bueno que he leído es [Iron-Clad Java Applications](https://amzn.to/2DeAdi1), tiene montón de detalles dedicados a la seguridad de las aplicaciones web sean seguras, incluido como este dedicado a la longitud de los identificativos de la sesión.
 

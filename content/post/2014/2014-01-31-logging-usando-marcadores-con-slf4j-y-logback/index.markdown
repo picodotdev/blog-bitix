@@ -25,9 +25,9 @@ Para obtener las trazas específicas que queremos y que pueden estar dispersas e
 
 Por ejemplo, para la siguientes clases nos podría interesar obtener las trazas asociadas a la funcionalidad de importación pero si indicamos que queremos la trazas del logger Importador y de nivel INFO obtendríamos todas la trazas de la clase incluidas las trazas de persistencia.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="Importador.java" language="Java" options="" >}}
-{{< code file="Utils.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="Importador.java" language="java" options="" >}}
+{{< code file="Utils.java" language="java" options="" >}}
 
 Este sería el resultado:
 
@@ -51,7 +51,7 @@ Utilizando la combinación slf4j y logback, la configuración para de logback y 
 
 Este sería el código del filtro que nos permitiría obtener las trazas de una determinada funcionalidad, en el caso del ejemplo las trazas relativas a la funcionalidad de importación.
 
-{{< code file="ImportacionFilter.java" language="Java" options="" >}}
+{{< code file="ImportacionFilter.java" language="java" options="" >}}
 
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/MarcadoresSLF4J) de su repositorio de GitHub y probarlo en tu equipo.
 

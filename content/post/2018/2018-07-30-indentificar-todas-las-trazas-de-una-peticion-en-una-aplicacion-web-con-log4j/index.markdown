@@ -25,11 +25,11 @@ En el contexto de una aplicación web para seguir la secuencia de trazas de una 
 
 El filtro podría ser el siguiente, el identificativo se genera de forma aleatoria con la clase [UUID](https://docs.oracle.com/javase/10/docs/api/java/util/UUID.html) del JDK de Java, se asigna al [ThreadContext](https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html) y al finalizar se limpia de información la variable de contexto en la cláusula _finally_ de un _try-catch_.
 
-{{< code file="AppFilter.java" language="Java" options="" >}}
+{{< code file="AppFilter.java" language="java" options="" >}}
 
 El emitir trazas no cambia en absoluto si utilizamos esta técnica para identificar trazas.
 
-{{< code file="Index.java" language="Java" options="" >}}
+{{< code file="Index.java" language="java" options="" >}}
 
 En el formato usado para determinar el contenido de la trazas se pueden referenciar las variables deseadas a incluir en la traza.
 

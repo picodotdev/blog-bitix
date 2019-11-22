@@ -28,11 +28,11 @@ Para la demostración usaré la aplicación con los ejemplos que hice para el [l
 
 Posteriormente crearemos una clase Java con su método main que inicie el servidor de aplicaciones embebido con la aplicación web desplegada en él, podemos indicar el puerto que queremos que escuche y las configuraciones que necesitemos tal como si lo configurásemos el archivo _server.xml_ o _context.xml_ pero usando código Java, usaremos la API ofrecida por las clases incluidas en las dependencias anteriores (_org.apache.catalina.startup.Tomcat_).
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos la aplicación con la clase que contiene el método main con [Gradle][gradle] o desde la linea de comandos con java, necesitaremos descargar las librerías de Tomcat Embedded y en este ejemplo copiarlas al directorio _lib/_ junto con la librería _TomcatEmbedded-0.1.jar_ que contiene la clase _Main_ construida con el comando <code>gradlew build</code>:
 
-{{< code file="startup.sh" language="Bash" options="" >}}
+{{< code file="startup.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure

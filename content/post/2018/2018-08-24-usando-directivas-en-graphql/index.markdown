@@ -23,12 +23,12 @@ En [GraphQL][graphql] construyendo la consulta adecuada se recuperan exclusivame
 
 Por ejemplo, si de un libro solo se requieren las propiedades el _id_, _title_ y _date_ de entre todas las que tienen la consulta sería en este caso la siguiente para una consulta que devuelve los datos de un conjunto de libros.
 
-{{< code file="query-1.graphql" language="Plaintext" options="" >}}
+{{< code file="query-1.graphql" language="graphql" options="" >}}
 
 Si se desea recuperar solo el _id_ y _title_ sin el _date_ la consulta debe ser diferente.
 
-{{< code file="query-2.graphql" language="Plaintext" options="" >}}
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
+{{< code file="query-2.graphql" language="graphql" options="" >}}
+{{< code file="library.graphqls" language="graphqls" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -43,9 +43,9 @@ Las directivas se definen en el lenguaje de consulta de GraphQL con el caracter 
 
 Esta sería la consulta parametrizada para obtener los datos de los libros omitiendo o incluyendo su fecha en función de una variable utilizando la directiva _include_. Cuando el valor de la variable es _true_ se incluye el dato fecha, cuando el valor de la variable es _false_ no se incluye.
 
-{{< code file="query-3.graphql" language="Plaintext" options="" >}}
-{{< code file="variables-1.graphql" language="Plaintext" options="" >}}
-{{< code file="variables-2.graphql" language="Plaintext" options="" >}}
+{{< code file="query-3.graphql" language="graphql" options="" >}}
+{{< code file="variables-1.graphql" language="graphql" options="" >}}
+{{< code file="variables-2.graphql" language="graphql" options="" >}}
 
 Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consultas de una API de GraphQL se obtienen los resultados.
 
@@ -58,11 +58,11 @@ Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consult
 
 Con un comando _curl_ se realizan las mismas consultas.
 
-{{< code file="curl-1.sh" language="Bash" options="" >}}
-{{< code file="data-1.json" language="JSON" options="" >}}
+{{< code file="curl-1.sh" language="bash" options="" >}}
+{{< code file="data-1.json" language="json" options="" >}}
 
-{{< code file="curl-2.sh" language="Bash" options="" >}}
-{{< code file="data-2.json" language="JSON" options="" >}}
+{{< code file="curl-2.sh" language="bash" options="" >}}
+{{< code file="data-2.json" language="json" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 

@@ -24,19 +24,19 @@ Antes de empezar con la guía propiamente hay que tener en cuenta que otra de la
 
 Primeramente deberemos instalar el paquete de docker, en el caso de [Arch Linux][archlinux] con el siguiente comando:
 
-{{< code file="docker-1.sh" language="Bash" options="" >}}
+{{< code file="docker-1.sh" language="bash" options="" >}}
 
 Para poder usar docker sin emplear el comando sudo deberemos crear y añadir nuestro usuario al grupo docker:
 
-{{< code file="docker-2.sh" language="Bash" options="" >}}
+{{< code file="docker-2.sh" language="bash" options="" >}}
 
 Una vez instalado el paquete y añadido nuestro usuario al grupo docker podemos iniciar el servicio de docker, en Arch Linux con systemd:
 
-{{< code file="docker-3.sh" language="Bash" options="" >}}
+{{< code file="docker-3.sh" language="bash" options="" >}}
 
 Con el comando «docker images», «docker ps», «docker ps -a» podemos respectivamente ver las imágenes de docker disponibles en nuestro sistema, las instancias de los contenedores iniciadas y las instancias de los contenedores incluyendo las no iniciadas.
 
-{{< code file="docker-4.sh" language="Bash" options="" >}}
+{{< code file="docker-4.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure
@@ -49,7 +49,7 @@ Una vez conocemos los comandos básicos para gestionar las imágenes y contenedo
 
 Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el usuario que creó la imagen, el nombre de la imagen y el tag. En el siguiente enlace en la pestaña tags podemos ver las [imágenes para docker de Debian y sus tag](https://registry.hub.docker.com/_/debian/):
 
-{{< code file="docker-5.sh" language="Bash" options="" >}}
+{{< code file="docker-5.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure
@@ -58,7 +58,7 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 
 Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:
 
-{{< code file="docker-6.sh" language="Bash" options="" >}}
+{{< code file="docker-6.sh" language="bash" options="" >}}
 
 En la terminal que se inicia podemos usar cualquier comando que usaríamos en un sistema [debian][debian] como apt-get.
 

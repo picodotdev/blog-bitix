@@ -49,7 +49,7 @@ La librería diozeo para identificar los _pines_ usa la nomenclatura de Broadcom
 
 Usando la librería diozero el código Java para realizar el ejemplo no necesita excesiva explicación. Es posible hacer uso de las [funciones lambdas que incorporó el lenguaje Java en la versión de Java 8][blogbitix-17] y con la sentencia _try-with-resources_ del lenguaje los elementos se finalizará correctamente en caso de producirse alguna excepción, por ejemplo apagando el diodo en caso de que estuviese encendido o apagando el zumbador en su caso.
 
-{{< code file="LedButtonBuzzer.java" language="Java" options="" >}}
+{{< code file="LedButtonBuzzer.java" language="java" options="" >}}
 
 Este es un pequeño vídeo en el que muestro su funcionamiento.
 

@@ -30,13 +30,13 @@ Los comandos concretos para montar el sistema de archivos depende de la configur
 
 Una vez iniciado el sistema con la imagen ISO de instalación de Arch Linux este _script_ contiene los comandos para iniciar la recuperación, los pasos de su uso son los siguientes:
 
-{{< code file="alis-recovery-start.sh" language="Bash" options="" >}}
+{{< code file="alis-recovery-start.sh" language="bash" options="" >}}
 
 En el paso _vim alis-recovery.conf_ se modifica la configuración según el sistema a recuperar. Básicamente se dice en qué unidad está el sistema de archivos de Arch Linux, si utiliza LVM y está cifrado. El _script_ de recuperación está adaptado al propio _script_ de instalación, no cubre la infinidad de casos personalizados que cada usuario por su cuenta puede realizar o existir pero sirve en cualquier caso como guía de cómo iniciar la recuperación.
 
 El contenido completo del propio _script_ de recuperación es el siguiente, no es más que un _script_ de [bash][bash] con los mismos comandos que serían necesarios para realizar la recuperación manualmente de forma interactiva.
 
-{{< code file="alis-recovery.sh" language="Bash" options="" >}}
+{{< code file="alis-recovery.sh" language="bash" options="" >}}
 
 {{< sourcecode git="alis/tree/master/" >}}
 

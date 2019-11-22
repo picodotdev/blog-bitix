@@ -38,7 +38,7 @@ Usando la librería [diozero][diozero] para controlar los _pines_ GPIO desde un 
         caption="Cableado sensor de golpes" >}}
 </div>
 
-{{< code file="Tilt.java" language="Java" options="" >}}
+{{< code file="Tilt.java" language="java" options="" >}}
 
 En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.
 
@@ -56,11 +56,11 @@ El programa Java para el sensor de movimiento es similar al sensor _tilt_ e igua
         caption="Cableado sensor de movimiento" >}}
 </div>
 
-{{< code file="Motion.java" language="Java" options="" >}}
+{{< code file="Motion.java" language="java" options="" >}}
 
 Ambos ejemplos pueden usarse con los siguientes comandos cambiando la dirección IP de la Raspberry Pi y el directorio de la misma a donde se suben los ejemplos.
 
-{{< code file="execute.sh" language="Bash" options="" >}}
+{{< code file="execute.sh" language="bash" options="" >}}
 
 El siguiente artículo de la sería será sobre cómo usar un _servo motor_ que es diferente de un motor que gira constantemente.
 

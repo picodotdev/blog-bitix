@@ -42,12 +42,12 @@ La implementación del método _equals_ de la clase _Object_ usa la equivalencia
 
 Hay dos formas comunes de implementar el método _equals_, una más restrictiva pero que cumple las propiedades y otra que no cumple completamente las propiedades pero es de utilidad en ciertos casos. Son las siguientes en las que cambia la sentencia que comprueba el tipo de la instancia del objeto con el que se está evaluando la igualdad. En el artículo [How to Implement Java’s equals Method Correctly](https://www.sitepoint.com/implement-javas-equals-method-correctly/) están descritas las implicaciones y motivo de existir de ambas variantes además de explicar que garantiza cada sentencia del método _equals_.
 
-{{< code file="PhoneNumber-equals-1.java" language="Java" options="" >}}
-{{< code file="PhoneNumber-equals-2.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-equals-1.java" language="java" options="" >}}
+{{< code file="PhoneNumber-equals-2.java" language="java" options="" >}}
 
 Usando la clase [EqualsBuilder](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html) de la librería [commons-lang](https://commons.apache.org/proper/commons-lang/) la implementación es aparentemente similar pero en el caso de necesitar hacer comparaciones con datos de tipo _float_, _double_, _arrays_ u objetos hace la implementación un poco más sencilla. En los _float_ y _double_ para hacer la comparación deberíamos usar los métodos [Float.compare](https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#compare-float-float-) y [Double.compare](https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#compare-double-double-) y en los objetos deberemos tener en cuenta si la referencia es posible que se a nula para evitar la excepción [NullPointerException](https://docs.oracle.com/javase/8/docs/api/java/lang/NullPointerException.html) cosas que la clase _EqualsBuilder_ ya tiene en cuenta.
 
-{{< code file="PhoneNumber-equals-commons-lang.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-equals-commons-lang.java" language="java" options="" >}}
 
 ### Como implementar el método _hashCode_
 
@@ -64,13 +64,13 @@ La implementación del [método hashCode](https://docs.oracle.com/javase/8/docs/
   * Si el campo es un _array_ se debe tratar individualmente cada elemento aplicando estas reglas a cada elemento. Si cada elemento del array es significativo se puede usar [Arrays.hashCode](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#hashCode-java.lang.Object:A-).
   * Combinar los _hash code_ obtenidos de la siguiente forma, <code>result = 31 * result + c</code>.
 
-{{< code file="PhoneNumber-hashcode.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-hashcode.java" language="java" options="" >}}
 
 Implementar este método en cada clase de una aplicación es tedioso, repetitivo y propenso a errores, para hacer más sencilla su implementación existe el método [Objects.hash](https://docs.oracle.com/javase/8/docs/api/java/util/Objects.html#hash-java.lang.Object...-) desde la versión 7 de Java. Si usamos una versión anterior a Java 7 disponemos de la clase [HashCodeBuilder](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html) en la librería _commons-lang_. La misma implementación anterior quedaría.
 
-{{< code file="PhoneNumber-hashcode-java.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-hashcode-java.java" language="java" options="" >}}
 
-{{< code file="PhoneNumber-hashcode-commons-lang.java" language="Java" options="" >}}
+{{< code file="PhoneNumber-hashcode-commons-lang.java" language="java" options="" >}}
 
 En el libro [Effective Java](https://amzn.to/2g9N1bi) se explican con un poco más detalle estas dos cosas y muchas otras otras sobre Java que son muy interesantes conocer, el libro es una buena y recomendada lectura para todo programador Java que está entre los [8+ libros para mejorar como programadores](https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/) que recomiendo.
 

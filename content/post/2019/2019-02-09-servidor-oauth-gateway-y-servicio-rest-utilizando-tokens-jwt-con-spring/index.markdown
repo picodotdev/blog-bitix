@@ -50,17 +50,17 @@ Empezando por el servidor OAuth y las dependencias que necesita, son _spring-sec
 
 La clase principal de Spring Boot y que inicia la aplicación no tiene nada especial salvo la necesaria anotación _@EnableAuthorizationServer_ para habilitar el servidor OAuth.
 
-{{< code file="oauth/Main.java" language="Java" options="" >}}
+{{< code file="oauth/Main.java" language="java" options="" >}}
 
 La parte importante está en la clase de configuración. La clase _JwtAccessTokenConverter_ se encarga de codificar el token, la clase _TokenStore_ de generarlos, _DefaultTokenServices_ contiene referencias a ambos, los métodos heredados _configure()_ configuran diferentes aspectos del servicio como los requisitos para acceder a los _endpoint_ para ver el contenido de un _token_ o los clientes OAuth que reconoce. Para cada cliente se necesita proporcionar el identificativo del cliente, su clave privada o _secret_, identificativo del recurso, que tipos de concesiones, _grants_, formas o flujos de obtener el _token_, que autoridades y ámbitos o _scopes_ se le asigna al token.
 
-{{< code file="oauth/AuthorizationServerConfiguration.java" language="Java" options="" >}}
+{{< code file="oauth/AuthorizationServerConfiguration.java" language="java" options="" >}}
 
 El servidor OAuth de ejemplo se inicia con el comando _./gradlew oauth:run_. Para obtener un _token_ se realiza con las siguientes peticiones. Por defecto, se solicita autenticación _basic_ pero la invocación al método _allowFormAuthenticationForClients()_ hace que los parámetros de las credenciales se puedan indicar por parámetros.
 
 Con el _endpoint_ _/oauth/check\_token_ se decodifica el _token_. En la página de JWT hay una herramienta para decodificar el token y verificar de la firma introduciendo clave de firma en la casilla.
 
-{{< code file="oauth/curl.sh" language="Bash" options="" >}}
+{{< code file="oauth/curl.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -85,17 +85,17 @@ Dado que el servicio interpreta los _tokens_ JWT y aplica reglas de seguridad ne
 
 El recurso es muy simple, solo devuelve un mensaje.
 
-{{< code file="service/DefaultController.java" language="Java" options="" >}}
+{{< code file="service/DefaultController.java" language="java" options="" >}}
 
 El servicio comparte configuración similar al servidor de Ouath par el _JwtAccessTokenConverter_, _TokenStore_ y _DefaultTokenServices_. En el método configure se define que el _endpoint_ _/_ requiere el rol _CLIENT_ que se obtiene del token JWT enviado. Hay que utilizar la anotación _@EnableResourceServer_, se inicia con el comando _./gradlew service:run_.
 
 Hay que recalcar que el servicio para verificar el _token_ y comprobar la autorización no necesita comunicarse con el servidor OAuth toda la información que necesita está en el _token_.
 
-{{< code file="service/ResourceServerConfiguration.java" language="Java" options="" >}}
+{{< code file="service/ResourceServerConfiguration.java" language="java" options="" >}}
 
 Si no se envía el _token_ JWT se produce un error de autenticación con código de error _401 Unauthorized_, si se envía un token correcto y la autoridad requerida del recurso la petición se devuelve el mensaje u el código de estado _200 OK_, si se envía un _token_ JWT con una autoridad que no corresponde con la necesaria para el recurso, en el ejemplo una autoridad _DUMMY_, se devuelve un código de estado _403 Forbbiden_.
 
-{{< code file="service/curl.sh" language="Bash" options="" >}}
+{{< code file="service/curl.sh" language="bash" options="" >}}
 
 Los _tokens_ JWT además de firmar se pueden cifrar, en el ejemplo se usa una conexión no segura con el protocolo HTTP usando una conexión segura HTTPS ya se proporcionaría confidencialidad para los _tokens_ y es lo recomendado.
 

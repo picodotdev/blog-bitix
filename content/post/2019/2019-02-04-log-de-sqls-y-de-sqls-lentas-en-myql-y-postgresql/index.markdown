@@ -30,7 +30,7 @@ Para activar la generación de logs y de SQLs lentas en MySQL hay que añadir la
 {{< code file="mysql/docker-compose.yml" language="Yaml" options="" >}}
 {{< code file="mysql/configuration/mysql.cnf" language="Ini" options="" >}}
 {{< code file="mysql/scripts/database.sql" language="Sql" options="" >}}
-{{< code file="mysql/bash.sh" language="Bash" options="" >}}
+{{< code file="mysql/bash.sh" language="bash" options="" >}}
 
 ### PostgreSQL
 
@@ -39,7 +39,7 @@ En el caso de PostgeSQL el archivo de log se ubica según el valor de la propied
 {{< code file="postgresql/docker-compose.yml" language="Yaml" options="" >}}
 {{< code file="postgresql/configuration/postgresql.conf" language="Plaintext" options="" >}}
 {{< code file="postgresql/scripts/database.sql" language="Sql" options="" >}}
-{{< code file="postgresql/bash.sh" language="Bash" options="" >}}
+{{< code file="postgresql/bash.sh" language="bash" options="" >}}
 
 Como los archivos de log de sentencias ejecutadas potencialmente serán grandes hay que rotarlos y monitorizar o limitar su tamaño. En PostgreSQL usando las directivas de configuración, _log\_rotation\_age_ o _log\_rotation\_size_, en MySQL posiblemente con el comando [logrotate](https://linux.die.net/man/8/logrotate).
 

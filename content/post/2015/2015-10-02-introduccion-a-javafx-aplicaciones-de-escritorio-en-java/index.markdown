@@ -39,11 +39,11 @@ A continuación mostraré los requerimientos y entorno que deberemos tener para 
 En el [repositorio de GitHub del ejemplo de JavaFX](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJavaFX) está el código fuente. Usando [Gradle][gradle] como herramienta automatizada de construcción y descargado el código podemos lanzar la aplicación de ejemplo con el comando de _run.sh_.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="run.sh" language="Bash" options="" >}}
+{{< code file="run.sh" language="bash" options="" >}}
 
 La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/HolaMundoJavaFX/src/main/java/io/github/picodotdev/javafx/HelloWorld.java) extiende de [Application](https://docs.oracle.com/javafx/2/api/javafx/application/Application.html) y en el método _start_ definimos los controles de lo que será la escena (la ventana), principalmente un botón con un manejador de evento a ejecutar al ser pulsado.
 
-{{< code file="HelloWorld.java" language="Java" options="" >}}
+{{< code file="HelloWorld.java" language="java" options="" >}}
 
 Esta es la captura de pantalla de la aplicación y el mensaje emitido en la consola cuando se hace clic en el botón.
 
@@ -57,7 +57,7 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
 
 En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) hay unos cuantos referentes a JavaFX bastante completos. Iniciando la aplicación contenida en _Ensemble.jar_ podemos ver numerosas funcionalidades (animación, efectos visuales, gráficas, controles, gráficos 2D, gráficos 3D, lenguaje, disposición, multimedia, ...), también con la aplicación _Modena.jar_ podemos ver como son visualmente por defecto los diferentes elementos gráficos de JavaFX.
 
-{{< code file="examples.sh" language="Bash" options="" >}}
+{{< code file="examples.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

@@ -26,7 +26,7 @@ Usar una expresión regular tampoco es solución, con alguna puede parecer que e
 
 Para dar solución a este problema podemos emplear jsoup. [Jsoup][jsoup] es una librería Java que nos permite manipular el html, desde extraer en forma de texto plano el contenido hasta modificar el html empleando una API. Empleando esta librería podemos ir extrayendo el contenido para contar cuantos caracteres de texto contiene el html y a la vez crear un extracto del documento html.
 
-{{< code file="AppPostRecord.java" language="Java" options="" >}}
+{{< code file="AppPostRecord.java" language="java" options="" >}}
 
 Empleando esta librería la cadena del ejemplo anterior podría quedar:
 

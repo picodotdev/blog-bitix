@@ -41,18 +41,18 @@ Si nos convencen estas características y propiedades de jOOQ podemos empezar le
 
 En el siguiente ejemplo mostraré como usar jOOQ y la configuración necesaria para emplearlo junto con [Spring][spring]. En la siguiente configuración de Spring usando únicamente código Java se construye un _DataSource_, un _Datasource_ con soporte de transacciones para el acceso a la base de datos, un [_ConnectionProvider_](http://www.jooq.org/javadoc/latest/org/jooq/ConnectionProvider.html) de jOOQ que usará el _DataSource_ para obtener las conexiones a la base de datos, con la clase [_Configuration_](http://www.jooq.org/javadoc/latest/org/jooq/Configuration.html) realizamos la configuración de jOOQ y finalmente [_DSLContext_](http://www.jooq.org/javadoc/latest/org/jooq/DSLContext.html) es el objeto que usaremos para construir las sentencias SQL.
 
-{{< code file="AppConfiguration.java" language="Java" options="" >}}
+{{< code file="AppConfiguration.java" language="java" options="" >}}
 
 Una de las cosas que tendremos que resolver es que al generar código y usar el patrón _Active Record_, si lo usamos ya que podemos usar jOOQ para generar únicamente las sentencias SQL o en los casos que lo hagamos pudiendo combiar _Active Records_ para unos casos y sentencias SQL con JDBC para otros, puede que necesitemos incluir campos adicionales a los presentes en la base de datos que manejen cierta lógica en la aplicación, también puede que necesitemos incluir métodos de lógica de negocio adicionales. Para incluir estos datos y métodos tendremos que extender la clase _Active Record_ que genera jOOQ. En aquellos sitios de la aplicación que necesitemos usar esas propiedades y métodos adicionales deberemos transformar la instancia de la clase que usa jOOQ (_PostRecord_) por la clase que tenga esos datos adicionales (_AppPostRecord_). Para ello la API de la clase [Record](http://www.jooq.org/javadoc/3.6.x/org/jooq/Record.html) ofrece el método [_into_](http://www.jooq.org/javadoc/3.6.x/org/jooq/Record.html#into-java.lang.Class-) o [_from_](http://www.jooq.org/javadoc/3.6.x/org/jooq/Record.html#from-java.lang.Object-) como muestro en el código de _AppPostRecord_ a continuación. Esta es la solución que he usado en [Blog Stack][blogstack].
 
 jOOQ genera automáticamente las clases que implementa el patrón _Active Record_ y dispondremos de los métodos CRUD heredados de la clase [Record](http://www.jooq.org/javadoc/3.6.x/org/jooq/Record.html).
 
-{{< code file="AppPostRecord.java" language="Java" options="" >}}
+{{< code file="AppPostRecord.java" language="java" options="" >}}
 
 [Los desarrolladores de jOOQ abogan por la eliminación de capas](https://blog.jooq.org/2014/09/12/why-you-should-not-implement-layered-architecture/) en la arquitectura de la aplicación pero puede que aún preferimos desarrollar una capa que contenga las consultas a la base de datos que sea usada y compartida por el resto la aplicación para el acceso los datos, quizá más que una capa en este caso es una forma de organizar el código. Los _Active Records_ proporcionan algunos métodos de consulta pero probablemente necesitaremos más. En el siguiente ejemplo podemos ver como son las consultas con jOOQ. Si necesitamos métodos de búsqueda adicionales a los que por defecto jOOQ proporciona en Blog Stack he creado una clase [DAO](https://es.wikipedia.org/wiki/Data_Access_Object) por cada entidad de la base de datos. En el siguiente ejemplo se puede ver como se construyen las sentencias SQL con jOOQ usando su API fluida.
 
-{{< code file="PostDAO.java" language="Java" options="" >}}
-{{< code file="PostDAOImpl.java" language="Java" options="" >}}
+{{< code file="PostDAO.java" language="java" options="" >}}
+{{< code file="PostDAOImpl.java" language="java" options="" >}}
 
 Para usar el generador de código de jOOQ con [Gradle][gradle] debemos añadir la siguiente configuración al archivo de construcción del proyecto, este generador se conectará a la base de datos, obtendrá los datos de esquema y generará todas las clases del paquete [info.blogstack.persistence.jooq](https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/persistence/jooq). Por ejemplo, puede que queramos usar [JodaTime][jodatime] en vez de las clases [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) y [Timesptamp](https://docs.oracle.com/javase/8/docs/api/java/sql/Timestamp.html) de la API de Java al menos si no usamos aún [Java 8 y sus novedades][blogbitix-17].
 

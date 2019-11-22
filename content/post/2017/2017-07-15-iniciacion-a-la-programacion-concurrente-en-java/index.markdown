@@ -31,7 +31,7 @@ El soporte para la programación concurrente ofrecido en Java es suficiente para
 
 El primer ejemplo que muestro es usando concurrencia ejecutar varias tareas y como realizándolas de forma secuencial el tiempo total empleado es la suma del tiempo de las tareas individuales y como usando concurrencia es la suma de la tarea que más tarda. El ejemplo se trata de 8 tareas que de forma secuencial tardan aproximadamente 24 segundos ya que cada tarea emplea 3 segundos, en el caso empleando concurrencia el tiempo es de aproximadamente 6 segundos ya se se emplea en _pool_ de _threads_ de 4 de capacidad con lo que las primeras 4 tareas tardan 3 segundos y el siguiente lote de 4 tareas tarda otros 3 segundos para un total de 6 segundos.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 {{< asciinema id="129084" caption="Ejecución secuencial y concurrente de tareas" >}}
 
@@ -45,20 +45,20 @@ En este código del problema de los filósofos la clase _Table_ crea los filóso
 Esta implementación de los filósofos no es del todo correcta debido a que un filósofo podría quedarse sin comer o quedarse sin comer duramente mucho tiempo. En el artículo [El problema de concurrencia de la cena de los filósofos resuelto con Java][blogbitix-302] expongo otra solución sin este problema y resuelto correctamente.
 {{% /warning %}}
 
-{{< code file="PhilosophersMain.java" language="Java" options="" >}}
-{{< code file="Table.java" language="Java" options="" >}}
-{{< code file="Fork.java" language="Java" options="" >}}
-{{< code file="Philosopher.java" language="Java" options="" >}}
+{{< code file="PhilosophersMain.java" language="java" options="" >}}
+{{< code file="Table.java" language="java" options="" >}}
+{{< code file="Fork.java" language="java" options="" >}}
+{{< code file="Philosopher.java" language="java" options="" >}}
 
 {{< asciinema id="129083" caption="Ejemplo de concurrencia de los filósofos" >}}
 
 En el caso de ejemplo del barbero cuando solo hay un barbero los clientes se acumulan ya que estos entran en la tienda a razón de 1 entre 1500 y 3500ms y el barbero tarda afeitar un cliente entre 2000 y 7000ms. Poniendo en la barbería dos barberos los clientes ya no se acumulan en la sala de espera.
 
-{{< code file="BarberShopMain.java" language="Java" options="" >}}
-{{< code file="BarberShop.java" language="Java" options="" >}}
-{{< code file="Street.java" language="Java" options="" >}}
-{{< code file="Barber.java" language="Java" options="" >}}
-{{< code file="Client.java" language="Java" options="" >}}
+{{< code file="BarberShopMain.java" language="java" options="" >}}
+{{< code file="BarberShop.java" language="java" options="" >}}
+{{< code file="Street.java" language="java" options="" >}}
+{{< code file="Barber.java" language="java" options="" >}}
+{{< code file="Client.java" language="java" options="" >}}
 
 {{< asciinema id="129098" caption="Ejemplo de concurrencia del barbero (1 barbero)" >}}
 

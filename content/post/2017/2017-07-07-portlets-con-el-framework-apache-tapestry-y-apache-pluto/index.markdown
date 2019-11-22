@@ -37,13 +37,13 @@ Al igual que en el _framework_ están incluidos múltiples componentes el conten
 
 Para hacer el ejemplo _Hola Mundo_ hay que definir dos páginas, una para mostrar el mensaje y otra para obtener un nombre, cada página se compone de una clase Java y una plantilla asociada que genera el HTML, ambos elementos son muy simples. El _portlet_ hará uso del mecanismo de preferencias proporcionado por el portal con la clase [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) y que se encarga de persistir en su propia base de datos para obtener y guardar valores en este caso el nombre usado en el mensaje. El _portlet_ usa un formulario que envía el nombre donde se utilizan los componentes [Form](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Form.html), [Label](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html) y [TextField](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextField.html).
 
-{{< code file="Index.java" language="Java" options="" >}}
+{{< code file="Index.java" language="java" options="" >}}
 {{< code file="Index.tml" language="HTML" options="" >}}
 
-{{< code file="preferences-Index.java" language="Java" options="" >}}
+{{< code file="preferences-Index.java" language="java" options="" >}}
 {{< code file="preferences-Index.tml" language="HTML" options="" >}}
 
-{{< code file="AppPortletModule.java" language="Java" options="" >}}
+{{< code file="AppPortletModule.java" language="java" options="" >}}
 
 El resto son varios archivos descriptores necesarios entre los que está el típico _web.xml_ de las aplicaciones web Java y el descriptor específico de los _portlets_ _portlet.xml_.
 

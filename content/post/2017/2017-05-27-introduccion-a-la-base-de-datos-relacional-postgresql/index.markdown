@@ -34,7 +34,7 @@ Para una fácil instalación de una instancia de la base de datos PostgreSQL usa
 Una vez instalado Docker e iniciado su servicio y con el comando <code>docker-compose</code> y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando <code>docker-compose up</code>. El comando <code>docker ps</code> lista los contenedores en ejecución y con el comando <code>docker exec</code> iniciamos un proceso bash en el contenedor indicado con su identificativo.
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="docker-compose.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.sh" language="bash" options="" >}}
 
 ### Comandos básicos del _shell_ psql
 
@@ -52,7 +52,7 @@ El _shell_ de psql usa varios comandos precedidos por una contrabarra para inter
 
 Antes de lanzar sentencias SQL hay que crear una base de datos con varias tablas y datos, en este caso usando una base de datos de ejemplo que se descarga con el comando <code>wget</code>, se descomprime, se crea un nuevo esquema y se importan las tablas y datos, finalmente se listas las definiciones de las tablas.
 
-{{< code file="database-world.sh" language="Bash" options="" >}}
+{{< code file="database-world.sh" language="bash" options="" >}}
 
 Para probar que la base de datos se ha importado correctamente la siguiente sentencia SQL lista el número de ciudades por país ordenados alfabéticamente o por número de ciudades descendentemente.
 
@@ -60,7 +60,7 @@ Para probar que la base de datos se ha importado correctamente la siguiente sent
 
 Para algunas sentencias usaré una base de datos un poco más sencilla que con una tabla para almacenar empresas.
 
-{{< code file="database-companies.sh" language="Bash" options="" >}}
+{{< code file="database-companies.sh" language="bash" options="" >}}
 
 ### Inserción múltiple
 

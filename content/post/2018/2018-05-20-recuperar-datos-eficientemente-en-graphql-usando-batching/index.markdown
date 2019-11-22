@@ -29,19 +29,19 @@ Esta es la teoría ya que en el momento de escribir este artículo en la [librer
 
 Se implementaba con la anotación _@Batched_ en el método del resolver pero esta anotación ha quedado obsoleta. Como alternativa y mejor forma el resolver que recupera los libros, _Query_ se encarga de recuperar la propiedad de todos los libros devueltos en la consulta y se proporciona al resolver de la propiedad del libro, _BookResolver_, a traves del contexto. A destacar que las propiedades _batched_ solo son recuperadas si en la consulta de GraphQL se solicitan.
 
-{{< code file="Query.java" language="Java" options="" >}}
-{{< code file="BookResolver.java" language="Java" options="" >}}
+{{< code file="Query.java" language="java" options="" >}}
+{{< code file="BookResolver.java" language="java" options="" >}}
 
 En la configuración de GraphQL se especifica el tipo de datos que actua como contexto, en este caso _DefaultGraphQLContext_.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="DefaultGraphQLContext.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="DefaultGraphQLContext.java" language="java" options="" >}}
 
 Con la lista completa de libros de la que hay que recuperar los comentarios ya sería posible lanzar una única consulta SQL a una base de datos relacional en vez de una por cada libro.
 
 La consulta de GraphQL a realizar para recuperar los tres primeros comentarios de cada libro y los resultados que devuelve son los siguientes. La consulta parece un tanto compleja porque la propiedad de los comentarios implementa paginación pero básicamente se recupera de cada libro su título y los comentarios.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradew run" >}}

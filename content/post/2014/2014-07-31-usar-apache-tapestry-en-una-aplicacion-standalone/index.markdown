@@ -24,15 +24,15 @@ El contenedor de dependencias de Tapestry tiene algunas propiedades interesantes
 
 Una vez que tenemos la dependencia en el programa deberemos iniciar el contenedor IoC e indicarle los diferentes módulos que contendrán la definición de los servicios.
 
-{{< code file="Main-1.java" language="Java" options="" >}}
+{{< code file="Main-1.java" language="java" options="" >}}
 
 En este caso he usado [Spring para la transacionalidad](https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html) e Hibernate para la persistencia. Después de esto tenemos la referencia al registro de servicios, podemos obtener cualquiera en base a la interfaz que implementa, en este caso el servicio que implementa la interfaz [MainService](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/MainService.java).
 
-{{< code file="Main-2.java" language="Java" options="" >}}
+{{< code file="Main-2.java" language="java" options="" >}}
 
 Al final de la aplicación deberemos llamar al método shutdown del registro.
 
-{{< code file="Main-3.java" language="Java" options="" >}}
+{{< code file="Main-3.java" language="java" options="" >}}
 
 Otra cosa que nos puede interesar es poder generar contenido html usando el sistema de plantillas y componentes de Tapestry, ya sea en una aplicación «standalone» o en una aplicación web para enviar el contenido en un correo electrónico o quizá guardarlo en un archivo. Hay muchos sistemas de plantillas, cada _framework_ suele tener uno propio o usar una solución específica como [Thymeleaf](http://www.thymeleaf.org/) pero la mayoría usa un [modelo push en vez de un modelo pull][blogbitix-31], en el caso de Tapestry se emplea el modelo pull que tiene algunas ventajas como explico en el artículo anterior. Si usamos una aplicación Tapestry usándolo también para generar el contenido de los correos o cierto contenido estático evitamos tener que aprender una segunda tecnología además de aprovechar todo el código reutilizable que posiblemente hemos desarrollado en algunos componentes. Para generar el contenido estático que generaría una página en Tapestry tenemos el módulo [Tapestry Offline](https://github.com/uklance/tapestry-offline). Como no está en los repositorio de maven debemos descargarnos el jar e incluir la dependencia como un archivo.
 
@@ -40,7 +40,7 @@ Otra cosa que nos puede interesar es poder generar contenido html usando el sist
 
 Para generar una página de Tapestry fuera de una petición web y de un servidor de aplicaciones debemos usar el servicio OfflineComponentRenderer. Su uso sería el siguiente:
 
-{{< code file="GeneratorServiceImpl.java" language="Java" options="" >}}
+{{< code file="GeneratorServiceImpl.java" language="java" options="" >}}
 
 Tengo que decir que al generar la página fuera de una petición web tendremos alguna limitación como solo poder usar assets con el prefijo context. Pero esto por lo menos [como he explicado en el caso de Blog Stack][blogbitix-24] no me ha supuesto ningún problema.
 

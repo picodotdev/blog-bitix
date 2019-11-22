@@ -32,7 +32,7 @@ Para conseguir que un _job_ de Nomad se ubique siempre en un mismo nodo hay que 
 
 Con los siguientes comandos se inspecciona los nodos que forman parte del cluster de Nomad, entre sus datos está el identificativo de cada nodo formado por una cadena de 36 caracteres. En el modo verboso se emite el identificativo completo y una lista de propiedades del nodo entre los que están detalles de Consul, la CPU, _driver_ que soporta, kernel, sistema operativo, ... En documentación sobre [interpolación de variables](https://www.nomadproject.io/docs/runtime/interpolation.html) hay una lista de variables disponibles.
 
-{{< code file="nomad-status.sh" language="Bash" options="" >}}
+{{< code file="nomad-status.sh" language="bash" options="" >}}
 
 En este caso solo hay un nodo registrado en Nomad, la siguiente definición de _job_ en el fragmento _constraint_ hace que Nomad lo ubique siempre en él.
 
@@ -40,13 +40,13 @@ En este caso solo hay un nodo registrado en Nomad, la siguiente definición de _
 
 Como el _job_ se ubica en el mismo nodo siempre montando un directorio del nodo como un volumen de datos en el _job_ y contenedor de [Docker][docker], los datos se persisten en el sistema de archivos y transcienden al tiempo de vida del _job_, se puede iniciar el _job_, insertar datos en la base de datos en este caso de MongoDB, eliminar el _job_, volverlo a iniciar y los mismos datos están presentes en MongoDB.
 
-{{< code file="nomad-job-run.sh" language="Bash" options="" >}}
-{{< code file="mongodb.sh" language="Bash" options="" >}}
-{{< code file="nomad-job-stop.sh" language="Bash" options="" >}}
+{{< code file="nomad-job-run.sh" language="bash" options="" >}}
+{{< code file="mongodb.sh" language="bash" options="" >}}
+{{< code file="nomad-job-stop.sh" language="bash" options="" >}}
 
 Para iniciar [Consul][consul] y Nomad hay que utilizar los siguientes comandos y para el ejecutar _job_ es requisito haber instalado Docker dado que en este ejemplo lo utiliza.
 
-{{< code file="consul-nomad.sh" language="Bash" options="" >}}
+{{< code file="consul-nomad.sh" language="bash" options="" >}}
 
 Las restricciones se han de cumplir para elegir un nodo, por otro lado está también la afinidad. La [afinidad](https://www.nomadproject.io/docs/job-specification/affinity.html) es una preferencia utilizada por Nomad al seleccionar los nodos que tratará de cumplir si hay algún nodo disponible con las propiedades de afinidad deseadas pero si no hay un nodo disponible se elige algún otro.
 

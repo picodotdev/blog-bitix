@@ -28,7 +28,7 @@ Las librerías más populares de JavaScript o CSS están empaquetadas como _webj
 
 En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la [guía de uso](https://www.webjars.org/documentation#tapestry) con el objetivo que los recursos de los _webjars_ sean servidos.
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 Inspeccionando el código fuente de la página devuelta se observa que en el caso de Tapestry la URL generada al solicitar en un _webjar_ es del estilo _https\://localhost:8443/assets/webjars/z941c28a3/requirejs/2.3.5/require.js_.

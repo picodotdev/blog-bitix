@@ -23,19 +23,19 @@ Este artículo es introductorio a los siguientes que escribiré y publicaré sob
 
 En la Raspberry Pi deberemos instalar por supuesto [Java][java] (es posible usar Java 8) junto con SSH y rsync, configurar el servidor SSH en la RPi modificando el archivo _/etc/ssh/sshd\_config_, habilitar el servidor SSH, copiar nuestra [clave pública ssh generada previamente][blogbitix-13] al archivo _~/.ssh/authorized\_keys_ del usuario e instalar [Python][python] como requerimiento de Ansible. Los programas Java los escribiremos en un equipo más potente que la Raspberry Pi ya sea un portátil o un equipo de sobremesa con un IDE ya sea [IntelliJ][intellij], [eclipse][eclipse] u otro, también deberemos instalar Gradle, Ansible y rsync. En Arch Linux con los siguientes comandos del gestor de paquetes:
 
-{{< code file="pacman-raspberrypi.sh" language="Bash" options="" >}}
+{{< code file="pacman-raspberrypi.sh" language="bash" options="" >}}
 {{< code file="authorized_keys" language="Plaintext" options="" >}}
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 Con la ayuda de unas tareas para la herramienta de construcción Gradle haremos el despliegue y la ejecución de la librería _jar_ del proyecto de los ejemplos y de las dependencias que necesiten. El archivo de construcción de Gradle sería el siguiente en el que la tarea _copyDependencies_ copia las dependencias al directorio _build/libs_. La tarea _upload_ ejecutan el comando <code>rsync</code> para subir el archivo _jar_ y las dependencias del proyecto a la Raspberry Pi. Finalmente, una tarea como _executeHelloWorld_ ejecutará el comando en la Raspberry Pi para lanzar el programa Java. Con SSH también se puede lanzar el comando de forma remota cambiando la dirección IP de la Raspberry Pi por la que tenga asignada.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="executeSSH.sh" language="Bash" options="" >}}
-{{< code file="executeGradle.sh" language="Bash" options="" >}}
+{{< code file="executeSSH.sh" language="bash" options="" >}}
+{{< code file="executeGradle.sh" language="bash" options="" >}}
 
 El programa de ejemplo es universal gracias a la idea _«Write once, run anywhere»_ posibilitado por la máquina virtual o <abbr title="Java Virtual Machine">[JVM][jvm]</abbr> y el _bytecode_, está compilado en un sistema con arquitectura x64 (el de mi equipo) y ejecutado en un sistema con arquitectura arm (el de la RPi). No se diferencia en nada al que usaríamos para lo mismo en cualquier otro sistema distinto de la Raspberry Pi.
 
-{{< code file="HelloWorld.java" language="Java" options="" >}}
+{{< code file="HelloWorld.java" language="java" options="" >}}
 
 El resultado de este ejemplo es un mensaje en la terminal que es emitido por un programa Java ejecutado en la Raspberry Pi y lanzado de forma remota.
 

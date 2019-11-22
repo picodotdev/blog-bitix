@@ -40,16 +40,16 @@ configurada. En este caso se actualiza la versión de _nginx_ de la versión _ng
 La estrategia de despliegue en _Nomad_ se define en la [sección de configuración _update_](https://www.nomadproject.io/docs/job-specification/update.html). El parámetro _min\_healthy\_time_ es el tiempo que se espera cuando se hace un _rolling update_ para considerar una instancia como sana y continuar la actualización con la siguiente, _max\_parallel_ indica el número de instancias que se migran al mismo tiempo. El parámetro _canary_ indica el número de instancias que se crean en las estrategias _blue/green_ y _canary_, en la primera el número de instancias coincidirá con el parámetro _canary_ que indica el número de instancias de un servicio. Nomad con los parámetros _health\_check_, _min\_healthy\_time_, _healthy\_deadline_, _progress\_deadline_, _stagger_ y _auto\_revert_ se puede poner unos límites para considerar válido un despliegue y en caso de no serlo realizar un _rollback_ de forma autmática.
 
 {{< code file="nginx.nomad" language="Plaintext" options="" >}}
-{{< code file="nomad-job-run.sh" language="Bash" options="" >}}
+{{< code file="nomad-job-run.sh" language="bash" options="" >}}
 
 En el caso de los despliegues _blue/green_ y _canary_ una vez comprobado que la versión de los nuevos servicios funcionan correctamente se promocionan y actualizan el resto de instancias en el caso de _canary_ o se detienen las instancias antiguas en el caso de _blue/green_.
 
-{{< code file="nomad-promote.sh" language="Bash" options="" >}}
+{{< code file="nomad-promote.sh" language="bash" options="" >}}
 
 Desde la línea de comandos se puede observar el estado del servicio y el proceso de actualización, el primero es el estado previo a realizar el despliegue, el segundo durante el proceso de actualización con _rolling update_ y el tercero una vez finalizado el proceso de despliegue y marcado como exitoso en el que todas las instancias han pasado de la versión 0 a la 1.
 
-{{< code file="nomad-status-before.sh" language="Bash" options="" >}}
-{{< code file="nomad-status-after.sh" language="Bash" options="" >}}
+{{< code file="nomad-status-before.sh" language="bash" options="" >}}
+{{< code file="nomad-status-after.sh" language="bash" options="" >}}
 
 {{% asciinema id="241669" caption="Progreso del despliegue rolling update en Nomad" %}}
 
@@ -65,12 +65,12 @@ El proceso de despliegue también se puede monitorizar desde la interfaz web que
 
 En este ejemplo los servicios están en contenedores docker, también se observa que la versión de los contenedores en ejecución pasan de la versión _stable-alpine_ a _alpine_.
 
-{{< code file="docker-ps-before.sh" language="Bash" options="" >}}
-{{< code file="docker-ps-after.sh" language="Bash" options="" >}}
+{{< code file="docker-ps-before.sh" language="bash" options="" >}}
+{{< code file="docker-ps-after.sh" language="bash" options="" >}}
 
 Nomad y [Consul][consul] se inician con los siguientes comandos en modo desarrollo comentados en el artículo [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398].
 
-{{< code file="consul-nomad.sh" language="Bash" options="" >}}
+{{< code file="consul-nomad.sh" language="bash" options="" >}}
 
 {{% reference %}}
 {{< links >}}

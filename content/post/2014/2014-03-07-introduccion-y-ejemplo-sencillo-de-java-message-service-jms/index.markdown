@@ -39,7 +39,7 @@ A continuación pondré el código de una sencilla aplicación que se conecta al
 
 Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensajes se reciben por todos los receptores (los dos threads que escuchan en un topic que debemos crear), en este caso hay un publicador y dos suscriptores:
 
-{{< code file="Topic.java" language="Java" options="" >}}
+{{< code file="Topic.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure
@@ -48,7 +48,7 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 
 A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:
 
-{{< code file="Queue.java" language="Java" options="" >}}
+{{< code file="Queue.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure
@@ -59,7 +59,7 @@ Comentar que los mensajes se procesan en serie por cada MessageListener, esto es
 
 Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones WildFly. Para que los ejemplos funcionen deberemos configurarlo añadiendo un usuario «guest», de contraseña «guest» y de rol «guest», el añadirlo lo podemos hacer con la utilidad add-user.sh. También deberemos modificar el archivo standalone-full.xml añadiendo el topic y el queue en la sección de JMS e iniciar WildFly usando esa configuración:
 
-{{< code file="standalone.sh" language="Bash" options="" >}}
+{{< code file="standalone.sh" language="bash" options="" >}}
 {{< code file="standalone-full.xml" language="XML" options="" >}}
 
 Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.amazon.es/gp/product/0596522045/ref=as_li_tf_tl?ie=UTF8&camp=3626&creative=24790&creativeASIN=0596522045&linkCode=as2&tag=blobit-21">Java Message Service</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596522045" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">

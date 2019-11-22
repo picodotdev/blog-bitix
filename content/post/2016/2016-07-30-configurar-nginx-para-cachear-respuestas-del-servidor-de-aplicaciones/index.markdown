@@ -30,7 +30,7 @@ Hay que modificar el archivo de configuración de Nginx para que cachee el conte
 
 La siguiente pequeña aplicación Java que usa el [framework Spark][spark] expone dos recursos para probar el funcionamiento de cache de Nginx, un recurso añade cabeceras de cacheo para la respuesta y otro no añade las cabeceras de respuesta. Atendiendo a las cabeceras establecidas por la aplicación y Nginx configurado para hacer de _proxy_ y cache devolverá el contenido deseado de su cache o solicitándolo a la aplicación y cacheándolo si así se indica en las cabeceras de respuesta.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 La primera petición que se realiza al recurso _cache_ devuelve un [código de estado 200 de HTTP](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#2xx:_Peticiones_correctas) y Nginx en la cabecera _X-Proxy-Cache_ indica que se ha producido un _MISS_ o fallo en la cache, la segunda petición realizada antes de que pase el minuto del tiempo de expiración devuelve un [código de estado 304](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#3xx:_Redirecciones) y Nginx en la cabecera _X-Proxy-Cache_ un _HIT_ o acierto en la cache, finalmente pasado más de un minuto del tiempo de expiración se devuelve un código de estado 200 y Nginx en la cabecera _X-Proxy-Cache_ un _EXPIRED_. En las trazas de Nginx vemos las peticiones que se producen sus códigos de estado y después de este los bytes transferidos de contenido, nótese que en los casos de los 304 los bytes transferidos son 0, bytes de datos ahorrados y evitado que la petición llegue a la aplicación que son unos de los objetivos de las caches. En el recurso _nocache_ de la aplicación Nginx no cachea el contenido devuelto ya que en este no se establecen las cabeceras de cache en la respuesta.
 
@@ -45,7 +45,7 @@ La primera petición que se realiza al recurso _cache_ devuelve un [código de e
 </div>
 
 {{< code file="nginx.out" language="Plaintext" options="" >}}
-{{< code file="curl-cache.sh" language="Bash" options="" >}}
+{{< code file="curl-cache.sh" language="bash" options="" >}}
 
 Hay servidores específicos para realizar tareas de cache como [Varnish][varnish] con más opciones de las que ofrece Nginx. Para los casos no complicados usando Nginx evitamos añadir una nueva pieza a la arquitectura de la aplicación. Entre los productos que ofrece Amazon está [Cloudfront](https://aws.amazon.com/es/cloudfront/) que es una cache para recursos estáticos con el añadido de que de forma automática está distribuida geográficamente de forma que los recursos se sirven por un servidor más cercano al cliente evitando un mal rendimiento por la latencia. En el artículo [servir recursos estáticos de un CDN en Apache Tapestry][blogbitix-34] comento como usar esta red de distribución de contenido ofrecida por Amazon.
 

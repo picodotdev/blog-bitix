@@ -27,12 +27,12 @@ Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libr
 
 Para que una consulta que recupere el ISBN funcione correctamente es necesario implementar un _resolver_ creando una clase que implemente la interfaz _GraphQLResolver\<Book\>_ en la que se incluya un método _get_ por cada propiedad del tipo _Book_ que esté alamcenada en otro repositorio. Estos métodos _get_ reciben como parámetro el objeto _Book_ a partir del cual como contexto es posible tener los datos del libro del que hay que recuperar el ISBN, posiblemente utilizando su identificativo. En el ejemplo simplemente se devuelve un dato aleatorio pero perfectamente en caso necesario se podría usar un repositorio que lo recupere del sistema de información que lo almacena.
 
-{{< code file="BookResolver.java" language="Java" options="" >}}
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="BookResolver.java" language="java" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 A la hora de definir el servicio de GraphQL hay que proporcionar el _resolver_ personalizado.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Los _resolvers_ permiten almacenar la información en dos bases de datos distintas, una podría ser almacenar una información una base de datos relacional, otra información en una base de datos NoSQL, dos bases de datos relacionales distintas o inlcuso proporcionado por una API distinta. En cualquier caso para el usuario de la API y del servicio es transparente como esté almacenada la información.
 

@@ -31,7 +31,7 @@ En el archivo de contrucción de la aplicación hay que incluir las dependencias
 
 Obtener la credenciales de conexión a la base de datos es transparente para el código de la aplicación, lo único que se necesita es el usuario y contraseña además de la URL de conexión. 
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 La parte más relevante está en la configuración necesaria de la aplicación. Hay que añadir como configuración la ubicación del servidor Vault, es necesario configurar un método de autenticación para Vault, para el caso de aplicaciones el recomendado es _AppRole_. Con _AppRole_ cada aplicación necesita de un _role-id_ y un _secret-id_ que hay que generar previamente. Y el rol del que obtener las credenciales, _app_.
@@ -40,34 +40,34 @@ La parte más relevante está en la configuración necesaria de la aplicación. 
 
 Para probarlo hay que iniciar en este caso el servidor [Consul][consul] ya que en el ejemplo se utiliza como el lugar donde se guardan los secretos. También hay que iniciar Vault.
 
-{{< code file="consul.sh" language="Bash" options="" >}}
-{{< code file="vault.sh" language="Bash" options="" >}}
+{{< code file="consul.sh" language="bash" options="" >}}
+{{< code file="vault.sh" language="bash" options="" >}}
 {{< code file="vault.hcl" language="Plaintext" options="" >}}
 
 La base de datos postgres se inicia como un contenedor de [Docker][docker].
 
-{{< code file="postgres.sh" language="Bash" options="" >}}
+{{< code file="postgres.sh" language="bash" options="" >}}
 
 Para realizar la configuración de Vault primero hay que iniciar sesión, en el modo desarrollo del ejemplo utilizando el _token root_ que es generado y emitido en la salida al iniciarlo.
 
-{{< code file="vault-login.sh" language="Bash" options="" >}}
+{{< code file="vault-login.sh" language="bash" options="" >}}
 
 Como en el artículo [Generar credenciales de conexión a base de datos bajo demanda con Vault][blogbitix-428] hay que activar el _backend_ de _database_ para generar credenciales de bases de datos, en las que básicamente se especifica la cadena de conexión a la base de datos de postgres con un usuario y contraseña con permisos suficientes para crear usuarios y la sentencia SQL que los crea. Se habilita y configura el _backend database_ del que obtener las credenciales.
 
-{{< code file="vault-database.sh" language="Bash" options="" >}}
+{{< code file="vault-database.sh" language="bash" options="" >}}
 
 Para que la aplicación de Spring Boot obtenga las credenciales ha de autenticarse en Vault en este caso utilizando el método recomendado para las aplicaciones que es utilizando en mecanismo de autenticación _AppRole_ que básicamente es un usuario y contraseña para las aplicaciones.
 
-{{< code file="vault-approle.sh" language="Bash" options="" >}}
+{{< code file="vault-approle.sh" language="bash" options="" >}}
 
 En Vault los permisos se otorgan con las _policy_, los secretos se organiza en una estructura jerárquica de directorios y a cada una de los contextos se le otorga los permisos deseados. Spring obtiene las credenciales para la base de datos del contexto _database/creds/app_ por lo que al rol utilizando para obtener las credenciales hay que asocialer un _policy_ con permisos de lectura para este contexto. 
 
-{{< code file="vault-policy.sh" language="Bash" options="" >}}
+{{< code file="vault-policy.sh" language="bash" options="" >}}
 {{< code file="database-app.hcl" language="Plaintext" options="" >}}
 
 Obtenido un _role-id_ y un _secret-id_ so observa los _policies_ asociados además de otras propiedades.
 
-{{< code file="vault-role-id.sh" language="Bash" options="" >}}
+{{< code file="vault-role-id.sh" language="bash" options="" >}}
 
 En este caso la aplicación de Spring incluye en su configuración las credenciales del _AppRole_, también se puede proporcionar como variables de entorno y propiedades del sistema.
 

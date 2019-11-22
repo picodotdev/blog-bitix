@@ -27,7 +27,7 @@ Para trabajar con archivos _xls_ de Excel debemos usar las clases [HSSFWorkbook]
 
 El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a las cabeceras y una fórmula con el total de los precios de una lista de productos, al final escribe el excel en un archivo. En el archivo de construcción, en este caso de [Gradle][gradle], debemos incluir la dependencia de la librería de Apache POI.
 
-{{< code file="Main-excel.java" language="Java" options="" >}}
+{{< code file="Main-excel.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 [LibreOffice][libreoffice] tiene la capacidad de abrir documentos excel, en la siguiente imagen se ve el documento abierto con LibreOffice Calc creado en el ejemplo.
@@ -40,7 +40,7 @@ El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a 
 
 Otro formato de datos muy utilizado es el de columnas separadas por comas o CSV. Con la librería [OpenCSV][opencsv] se pueden escribir archivos bien formados en este formato teniendo en cuenta el caracter separador de las columnas y el entrecomillado de los datos.
 
-{{< code file="Main-csv.java" language="Java" options="" >}}
+{{< code file="Main-csv.java" language="java" options="" >}}
 
 En la [guía de iniciación a las características de los documentos HSSF y XSSF](http://poi.apache.org/spreadsheet/quick-guide.html) hay ejemplos pequeños sobre varias de las funcionalidades más comunes que necesitaremos al generar documentos. Otra funcionalidad relacionada con la escritura en el formato de estos tipos de archivos es la lectura que también es posible con estas mismas librerías, [Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java][blogbitix-357].
 

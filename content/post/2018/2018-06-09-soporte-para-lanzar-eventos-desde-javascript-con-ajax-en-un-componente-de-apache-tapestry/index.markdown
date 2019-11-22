@@ -23,7 +23,7 @@ Algunos _frameworks_ proporcionan cierto soporte para JavaScript y recursos CSS 
 
 Una de estas funcionalidades que proporciona Tapestry es poder lanzar eventos desde el cliente mediante una petición _Ajax_ para que sean procesados en el servidor y obtener la respuesta que se devuelva desde el servidor normalmente en formato _Json_. Hay que definir un manejador de evento en el servidor siguiendo la convención _on[Event]_ y en caso de querer lanzar un evento desde el cliente anotándolo con [@PublishEvent](http://tapestry.apache.org/current/apidocs/index.html?org/apache/tapestry5/ComponentResources.html).
 
-{{< code file="Event.java" language="Java" options="" >}}
+{{< code file="Event.java" language="java" options="" >}}
 {{< code file="Event.tml" language="HTML" options="" >}}
 
 El uso del componente en una plantilla de una página.
@@ -45,7 +45,7 @@ En el primer elemento del HTML se añade un atributo _data-componenent-events_ q
 
 Esta funcionalidad se incorporó en Apache Tapestry 5.2 donde hasta entonces era necesario construir la URL del evento en el servidor con [ComponentResources.createEventLink()](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ComponentResourcesCommon.html#createEventLink-java.lang.String-java.lang.Object...-) y enviarlo al componente haciendo uso de [JavaScriptSupport](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html) como se muestra en el componente _Ajax_ que no hace uso de esta funcionalidad de eventos.
 
-{{< code file="Ajax.java" language="Java" options="" >}}
+{{< code file="Ajax.java" language="java" options="" >}}
 
 Con este soporte es algo más fácil enviar eventos y realizar peticiones _Ajax_ desde el cliente para obtener datos.
 

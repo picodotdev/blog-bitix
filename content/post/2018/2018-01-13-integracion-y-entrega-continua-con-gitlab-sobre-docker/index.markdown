@@ -38,7 +38,7 @@ Añadido el archivo del _pipeline_ al código fuente del proyecto hay que defini
 
 Al registrarlo hay que especificar el tipo de _runner_, hay varios tipos, en este caso se usa el de _docker_ para ejecutar el _pipeline_ dentro de un contenedor de [Docker][docker]. En en archivo de [Docker Compose][docker-compose] es necesario que el _runner_ pueda comunicarse con el servicio de Docker, para ello como punto de montaje del contenedor de _gitlab-runner_ se especificar el archivo _docker.sock_.
 
-{{< code file="add-gitlab-runner.sh" language="Bash" options="" >}}
+{{< code file="add-gitlab-runner.sh" language="bash" options="" >}}
 
 En este ejemplo y con este _pipeline_ el artefacto distribuible de la aplicación y el Javadoc se alamacena en GitLab estando accesible para su descarga desde el panel lateral una vez finalizado el _pipeline_.
 

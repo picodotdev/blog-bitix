@@ -33,15 +33,15 @@ Gulp define las tareas de un proyecto en un archivo de nombre _gulpfile.js_ que 
 
 Para usar Gulp deberemos tener instalado [npm][npm] que en Arch Linux sería instalar su paquete:
 
-{{< code file="npm.sh" language="Bash" options="" >}}
+{{< code file="npm.sh" language="bash" options="" >}}
 
 Instalar Gulp a nivel global en el sistema:
 
-{{< code file="gulp.sh" language="Bash" options="" >}}
+{{< code file="gulp.sh" language="bash" options="" >}}
 
 Y finalmente instalar en el proyecto las dependencias definidas en el archivo _package.json_:
 
-{{< code file="npm-install.sh" language="Bash" options="" >}}
+{{< code file="npm-install.sh" language="bash" options="" >}}
 
 El archivo JavaScript original con ECMAScript 6 es el siguiente.
 

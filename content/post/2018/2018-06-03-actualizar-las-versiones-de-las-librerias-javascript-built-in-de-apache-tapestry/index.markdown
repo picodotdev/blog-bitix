@@ -25,7 +25,7 @@ Apache Tapestry es un _framework_ extremadamente personalizable, adaptable y ext
 
 Estas pocas líneas de código bastan para redefinir las versiones de las librerías.
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

@@ -24,7 +24,7 @@ El concepto de _Heap Pollution_ consiste de forma breve (quizá inexacta) en que
 
 Veamos en código las circunstancias bajo las cuales se pueden producir _Heap Pollution_. Un tipo _List\<String\>_ puede asignarse a un _List_ y luego añadir a esa _List_ un _Integer_ momento en el que el compilador nos avisa con un _unchecked warning_ indicando que no puede validar que la lista _raw_ siendo _List_ un tipo genérico se le está añadiendo una referencia del tipo que debería tener, el compilador nos informa de que esa responsabilidad la tenemos nosotros. También podemos asignar un _List_ a un _List\<Number\>_, en este caso el compilador tampoco puede validar que la _List_ sea realmente un _List\<Number\>_ y lo indica también con un _unchecked warning_. Ignorando estas adevertencias se produce un _ClassCastException_ al acceder al elemento _Integer_ que contiene la _List\<String\>_ como se comprueba en los teses.
 
-{{< code file="MainTest-generics.java" language="Java" options="" >}}
+{{< code file="MainTest-generics.java" language="java" options="" >}}
 
 Por otra parte en Java los arrays en tiempo de ejecución necesitan conocer el tipo _reified_ que contendrá. Esto unido a que los _varargs_ realmente se transforman en un array, el posible _Heap Pollution_ se da también en los métodos que soportan _varargs_.
 
@@ -34,7 +34,7 @@ El compilador convierte los _varargs_ de tipos genéricos de la siguiente forma:
 
 En un método cuyo último argumento es un _vararg_ y de tipo genérico puede producirse _Heap Pollution_ como indica el compilaror, si estamos seguros de que no se puede dar este caso en el código del método podemos eliminar la advertencia del compilador añadiendo la anotación [@SafeVarargs](https://docs.oracle.com/javase/8/docs/api/java/lang/SafeVarargs.html) en el método. Añadir la anotación solo implica que el compilador eliminará la advertencia pero aún con ella puede seguir produciéndose la excepción _ClassCastException_ si el método no ha sido cuidadoso.
 
-{{< code file="MainTest-varargs.java" language="Java" options="" >}}
+{{< code file="MainTest-varargs.java" language="java" options="" >}}
 
 Tener en cuenta el _Heap Pollution_ es importante ya que la excepción _ClassCastException_ se produce más tarde y en un punto diferente de donde realmente está el error, mucho más tarde si el tipo genérico es serializado e incluso en otra <abbr title="Java Virtual Machine">JVM</abbr> diferente. Estos errores son de los peores de depurar por la poca información que proporcionan ya que la traza de la excepción solo dice quien la lanzó no donde se introdujo el fallo.
 

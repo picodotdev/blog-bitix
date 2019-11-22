@@ -25,7 +25,7 @@ En Java en realidad hay 4 tipos de referencias a objetos, además de las fuertes
 
 Después de la llamada de varias veces al recolector de basura en este caso de forma explícita con el método [System.gc()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--) las referencias son encoladas.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 El objeto de una referencia _soft_ es recolectable a discreción del recolector de basura ante necesidades de memoria, el objeto de una referencias _weak_ es recolectable si solo es alcanzable por referencias _weak_ y las referencias _phantom_ son una mejor y más flexible alternativa al mecanismo de finalización de los objetos.
@@ -42,7 +42,7 @@ En los constructores de las referencias débiles se puede indicar un [ReferenceQ
 
 En el artículo [Replacing Finalizers With Phantom References](http://resources.ej-technologies.com/jprofiler/help/doc/helptopics/cpu/finalizers.html) se explica junto con su código como implementar el mecanismo alternativo al método _finalize_. La librería [Guava] proporciona las clases [FinalizablePhantomReference](https://google.github.io/guava/releases/23.0/api/docs/com/google/common/base/FinalizablePhantomReference.html) y [FinalizableReferenceQueue](https://google.github.io/guava/releases/23.0/api/docs/com/google/common/base/FinalizableReferenceQueue.html) con una forma un poco más sencilla de usar las referencias _phantom_, en esa documentación también hay un ejemplo de código con su uso para liberar un recurso (_ServerSocket_) asociado a un objeto (_MyServer_).
 
-{{< code file="MyServer.java" language="Java" options="" >}}
+{{< code file="MyServer.java" language="java" options="" >}}
 
 Las referencias débiles añaden una indirección a la referencia que contienen, usando el método [get()](https://docs.oracle.com/javase/8/docs/api/java/lang/ref/Reference.html#get--) se accede al objeto referenciado pero hay que tener en en cuenta que el método _get_ puede devolver un _null_ ya que no impiden al recolector de basura reclamar el objeto referenciado, en el caso de las _PhantomReferences_ el método _get_ siempre devuelve _null_ para evitar que la referencia a un objeto sea revivida.
 

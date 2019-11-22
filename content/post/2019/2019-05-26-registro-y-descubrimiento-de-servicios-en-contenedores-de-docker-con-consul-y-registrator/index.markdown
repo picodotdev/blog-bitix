@@ -33,11 +33,11 @@ Registrator es un contenedor de Docker, su funcionamiento es escuchar los evento
 
 Primero se inicia el servicio de Consul.
 
-{{< code file="consul.sh" language="Bash" options="" >}}
+{{< code file="consul.sh" language="bash" options="" >}}
 
 Luego se inicia el contenedor Registrator indicando la ubicación con dirección IP y puerto del servicio de Consul.
 
-{{< code file="docker-registrator.sh" language="Bash" options="" >}}
+{{< code file="docker-registrator.sh" language="bash" options="" >}}
 
 Iniciados estos dos servicios en la interfaz de estado de Consul se observa que no hay ningún servicio pero cuando se inicie un nuevo contenedor será registrado en Consul por Registrator. 
 
@@ -48,8 +48,8 @@ Iniciados estos dos servicios en la interfaz de estado de Consul se observa que 
 
 En este caso se utiliza como servicio una base de datos [PostgreSQL][postgresql]. Dado que el puerto en el que esté disponible el servicio de PostgreSQL es indiferente al utilizar un servicio de registro y descubrimiento se indica el _-p_ sin indicar el puerto del _host_, de este modo Docker le asigna un puerto público aleatorio.
 
-{{< code file="docker-postgres.sh" language="Bash" options="" >}}
-{{< code file="docker-ps.sh" language="Bash" options="" >}}
+{{< code file="docker-postgres.sh" language="bash" options="" >}}
+{{< code file="docker-ps.sh" language="bash" options="" >}}
 
 En la salida del contenedor de Registrator se emite una traza indicando que el servicio de postgres ha sido registrado en Consul.
 
@@ -66,7 +66,7 @@ Una vez iniciado el servicio de postgres en la consola de Consul se muestra con 
 
 En vez de iniciar los servicios individualmente con comandos de Docker creando un archivo de [Docker Compose][docker-compose] con la definición de todos los contenedores se facilita iniciar todos los contenedores con un comando.
 
-{{< code file="docker-compose-up.sh" language="Bash" options="" >}}
+{{< code file="docker-compose-up.sh" language="bash" options="" >}}
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 
 El proyecto de [Spring Cloud][spring-cloud] ofrece soporte para ambas tareas de registrar y descubrir servicios, aunque perfectamente la tarea de registro se puede delegar como en este caso a Registrator y utilizar en los servicios de Spring Boot únicamente la parte de descubrimiento.

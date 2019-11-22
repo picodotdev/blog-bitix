@@ -27,14 +27,14 @@ Para evitar la caída de servicio en un reinicio de aplicación requiere tener v
 En el siguiente ejemplo de microservicio que posee una clase de configuración con algunas propiedades. El valor de estas propiedades se utilizan para el resultado de una acción en un _endpoint_ del servicio.
 
 
-{{< code file="DefaultConfiguration.java" language="Java" options="" >}}
-{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="DefaultConfiguration.java" language="java" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
 {{< code file="service.yml" language="YAML" options="" >}}
 
 Iniciada la aplicación que requiere iniciar previamente el servicio de registro y descubrimiento y el servidor de configuración, la aplicación al iniciarse obtiene su configuración del servidor de configuración. Si se cambia la configuración de la variable _config.key_ la aplicación no obtendrá el valor actualizado hasta que se invoque el _endpoint_ _http\://localhost:8080/actuator/refresh_. Para que Spring Boot recargue la configuración es necesario anotar con _@RefreshScope_ la clase de configuración. Invocado el _endpoint_ de recarga de configuración la aplicación toma de nuevo los nuevos valores del servicio de configuración.
 
-{{< code file="gradle-run-1.sh" language="Bash" options="" >}}
-{{< code file="curl-1.sh" language="Bash" options="" >}}
+{{< code file="gradle-run-1.sh" language="bash" options="" >}}
+{{< code file="curl-1.sh" language="bash" options="" >}}
 
 En una aplicación orientada microservicios es muy posible que haya múltiples instancias del mismo servicio y para recargar la configuración de cada uno de ellos hay que hacerlo de forma individual con su _endpoint_ de recarga de configuración. Dado el número de microservicios y su ubicación distribuida hacerlo de forma individual es un inconveniente.
 
@@ -45,8 +45,8 @@ Para resolver este inconveniente integrando [Spring Cloud Bus][spring-cloud-bus]
 
 Los pasos para probar estas funcionalidades con Spring Cloud Bus en una o varias varias instancias son iniciar una instancia o más del servidor de registro y descubrimiento, iniciar una o más instancias del servidor de configuración, iniciar una o varias instancias del servicio todas las instancias en un puerto y terminal diferente, invocar el servicio cuyo valor de respuesta depende de una propiedad de configuración, modificar el valor de la propiedad de configuración, recargar la configuración e invocar de nuevo el servicio para comprobar que el nuevo valor se ha hecho efectivo.
 
-{{< code file="gradle-run-2.sh" language="Bash" options="" >}}
-{{< code file="curl-2.sh" language="Bash" options="" >}}
+{{< code file="gradle-run-2.sh" language="bash" options="" >}}
+{{< code file="curl-2.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run-1.sh, ./curl-1.sh" >}}
 

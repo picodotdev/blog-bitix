@@ -39,8 +39,8 @@ Las anotaciones proporcionadas por Lombok son las siguientes, en la documentaci�
 
 Usando algunas de estas anotaciones en una clase Java y su uso en un programa.
 
-{{< code file="Car.java" language="Java" options="" >}}
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Car.java" language="java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Usando [Gradle][gradle] hay que añadir en el archivo de construcción del proyecto _build.gradle_ la dependencia en el ámbito de _compileOnly_.
 

@@ -23,26 +23,26 @@ Ahora con herramientas como Gradle además de compilar y ejecutar el programa in
 
 Usar estos dos comandos directamente ya no es necesario pero como curiosidad comentaré como es su uso. El comando _javac_ sirve para compilar los archivos de código fuente, dado que los paquetes del código fuente de Java se corresponden con directorios en el sistema de archivos el código fuente se ha de ubicar de forma consistente entre la estructura de directorio y el código fuente. Suponiendo que que hay las siguientes clases que hacen uso de la librería [log4j2][log4j] y están ubicadas en el directorio _src/main/java_ con la misma convención que utiliza Gradle el comando para realizar la compilación y copiar los recursos es el siguiente.
 
-{{< code file="tree.sh" language="Bash" options="" >}}
-{{< code file="javac.sh" language="Bash" options="" >}}
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="tree.sh" language="bash" options="" >}}
+{{< code file="javac.sh" language="bash" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Con el parámetro _-classpath_ se indica la ubicación de las librerías o dependencias que requiriere el código fuente, con el parámetro _-sourcepath_ el directorio raíz de los archivos de código fuente, el parámetro _-source_ indica la versión del lenguaje del código fuente, _-target_ la versión de la máquina virtual del _bytecode_ que generará el compilador y con el parámetro _-d_ el directorio donde generan los archivos _class_ con el _bytecode_.
 
 Una vez generados los archivos de _bytecode_ a partir de la compilación del código fuente su ejecución se realiza con el comando _java_ donde hay que indicar las ubicaciones del los archivos _class_ y las librerías _jar_ necesarias que necesiten, la clase principal con el punto de entrada del programa que contenga un método _public static void main(String[] args)_ y los parámetros del programa que se reciben en el parámetro _args_ del método _main_.
 
-{{< code file="java.sh" language="Bash" options="" >}}
-{{< code file="java-run.sh" language="Bash" options="" >}}
+{{< code file="java.sh" language="bash" options="" >}}
+{{< code file="java-run.sh" language="bash" options="" >}}
 
 La distribución de los archivos _class_ se suele realizar usando librerías _jar_ y estas se construyen usando el comando _jar_. El [archivo de manifiesto](https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html) es un descriptor en el que se puede indicar la clase de entrada sin tener que especificarla en el comando _java_ haciendo los archivo _jar_ similar a un ejecutable.
 
-{{< code file="jar.sh" language="Bash" options="" >}}
+{{< code file="jar.sh" language="bash" options="" >}}
 {{< code file="MANIFEST.MF" language="Plaintext" options="" >}}
 
 Y la ejecución de del programa contenido en el archivo _jar_.
 
-{{< code file="java-jar.sh" language="Bash" options="" >}}
-{{< code file="java-jar-run.sh" language="Bash" options="" >}}
+{{< code file="java-jar.sh" language="bash" options="" >}}
+{{< code file="java-jar-run.sh" language="bash" options="" >}}
 
 Así es la compilación y ejecución de código Java en Java 8 y anteriores, con la [introducción de la modularidad a partir de Java 9][blogbitix-263] esto cambia ya que el _classpath_ queda obsoleto y es reemplazado por el equivalente con módulos _module-path_.
 

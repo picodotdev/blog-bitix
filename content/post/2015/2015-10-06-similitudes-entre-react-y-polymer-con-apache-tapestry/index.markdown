@@ -32,7 +32,7 @@ Uno de los [motivos que comentaba para elegir Tapestry][elblogdepicodev-71] era 
 
 Para usar un componente en Tapestry basta con conocer sus parámetros y los eventos que puede lanzar, estos forman su interfaz que nos abstraen de su funcionamiento interno. Por supuesto su pueden crear componentes más complejos a partir de otros más simples como si de piezas lego se tratase.
 
-{{< code file="NumeroProductos.java" language="Java" options="" >}}
+{{< code file="NumeroProductos.java" language="java" options="" >}}
 {{< code file="NumeroProductos.tml" language="HTML" options="" >}}
 
 Según lo que comenta la gente parece bastante entusiasmada cuando prueban React o Polymer y considero que si les gusta el concepto de componentes en el lado del cliente creo que también les gustaría el concepto de componentes en el servidor que proporciona Apache Tapestry (entre otras muchas cosas que proporciona) si lo conociesen y probasen. Y son herramientas totalmente compatibles porque perfectamente se puede usar Tapestry en el lado del servidor y React o Polymer en el lado del cliente.

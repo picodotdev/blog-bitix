@@ -25,12 +25,12 @@ Para usar la clase _LinkedHashMap_ como estructura de datos para una cache simpl
 
 En el ejemplo se crea una cache que tiene como máximo 5 elementos y se insertan en ella 15, cuando se intenta insertar en elemento más de la capacidad máxima el elemento más viejo se elimina de modo que la cache siempre tiene como máximo 5 elementos. Si la cache va a ser accedida tanto para operaciones de lectura como de escritura desde múltiples _threads_ hay que prevenir posibles problemas de concurrencia sincronizando su acceso con el método [Collections.synchronizedMap](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#synchronizedMap-java.util.Map-).
 
-{{< code file="Main-1.java" language="Java" options="" >}}
-{{< code file="SimpleCache.java" language="Java" options="" >}}
+{{< code file="Main-1.java" language="java" options="" >}}
+{{< code file="SimpleCache.java" language="java" options="" >}}
 
 Si son necesarias funcionalidades más avanzadas como que los elementos expiren pasado un tiempo y para mayores cantidades de datos guardar parte de la cache en disco con un límite de espacio ocupado una de las opciones más conocidas es Ehcache.
 
-{{< code file="Main-2.java" language="Java" options="" >}}
+{{< code file="Main-2.java" language="java" options="" >}}
 
 Cachear datos se puede hacer en varios puntos de una aplicación, si se trata de una aplicación web [Varnish][varnish] cachea el HTML, CSS y JavaScript además de los códigos de estado incluso [nginx incorpora la funcionalidad de cache][blogbitix-165], la propia aplicación puede cachear ciertos datos con alguna de las formas expuestas en este artículo y las propias bases de datos pueden cachear en memoria ciertos datos para evitar acceder al sistema de ficheros o disco. En definitiva una cache usada de forma efectiva ayuda a mitigar la penalización de operaciones costosas de acceso a red o a disco comparado con el acceso a memoria.
 

@@ -48,10 +48,10 @@ Usando [Apache Tapestry][tapestry] con su concepto de parámetros informales añ
 
 Este sería el código para crear una instancia de _SelectModel_ para un componente [Select](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html) de Tapestry para un ficticio selector de país. En el ejemplo en vez de usar un mapa vacío con _Collections.EMPTY\_MAP_ se podría sustituir por un mapa con atributos que se añadirían a la opción para usar alguna otra funcionalidad de _bootstrap-select_.
 
-{{< code file="Index.java" language="Java" options="" >}}
+{{< code file="Index.java" language="java" options="" >}}
 {{< code file="Index.tml" language="HTML" options="" >}}
-{{< code file="AppOptionGroupModel.java" language="Java" options="" >}}
-{{< code file="AppOptionModel.java" language="Java" options="" >}}
+{{< code file="AppOptionGroupModel.java" language="java" options="" >}}
+{{< code file="AppOptionModel.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -64,7 +64,7 @@ Al ser enviado el formulario que contiene el _select_ el valor seleccionado los 
 
 En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript necesarios para usar _bootstrap-select_, además de iniciarlizar los selectores con JavaScript.
 
-{{< code file="PlugInStack.java" language="Java" options="" >}}
+{{< code file="PlugInStack.java" language="java" options="" >}}
 {{< code file="index.js" language="JavaScript" options="" >}}
 
 En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario y en [añadir botones selectores de opciones][blogbitix-189] como incluir selectores adicionales además de Todos y Ninguno.

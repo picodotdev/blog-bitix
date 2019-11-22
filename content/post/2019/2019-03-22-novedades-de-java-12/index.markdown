@@ -43,19 +43,19 @@ Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas
 * [JDK 12: Switch Statements/Expressions in Action](https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action)
 * [Informe de JEP 325 Switch Expressions (Preview)](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8192963)
 
-{{< code file="SwitchExpression.java" language="Java" options="" >}}
+{{< code file="SwitchExpression.java" language="java" options="" >}}
 
 ### Teeing Collectors
 
 Los _stream_ proporcionan un flujo de elementos a procesar. En el caso de querer recolectar dos valores de ese flujo requiere usar un _reduce_ que complica el código. Se ha añadido un nuevo colector [Collectors.teeing()](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/stream/Collectors.html#teeing(java.util.stream.Collector,java.util.stream.Collector,java.util.function.BiFunction)) para enviar un elemento de un _stream_ a dos _streams_, de forma similar a lo que hace el comando _tee_ en Unix.
 
-{{< code file="TeeingCollectors.java" language="Java" options="" >}}
+{{< code file="TeeingCollectors.java" language="java" options="" >}}
 
 ### Formato de número compacto
 
 Ahr se puede expresar un número de forma compacta con la clase [CompactNumberFormat](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/CompactNumberFormat.html) o el método [NumberFormat.getCompactNumberInstance()](https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/text/NumberFormat.html#getCompactNumberInstance(java.util.Locale,java.text.NumberFormat.Style)).
 
-{{< code file="CompactNumbers.java" language="Java" options="" >}}
+{{< code file="CompactNumbers.java" language="java" options="" >}}
 
 ### Recolector de basura Shenandoah
 

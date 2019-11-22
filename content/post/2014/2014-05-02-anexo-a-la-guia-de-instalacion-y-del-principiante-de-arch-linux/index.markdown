@@ -32,7 +32,7 @@ Sin más, comencemos con la guía. Lo primero que deberemos hacer es [descargar 
 
 Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/sdx por el dispositivo de la memoria USB en la que queramos grabar el medio cosa que en linux podemos conocer usando el comando lsblk:
 
-{{< code file="script-0.sh" language="Bash" options="" >}}
+{{< code file="script-0.sh" language="bash" options="" >}}
 
 Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.
 
@@ -44,17 +44,17 @@ Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La
 
 Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:
 
-{{< code file="script-1.sh" language="Bash" options="" >}}
+{{< code file="script-1.sh" language="bash" options="" >}}
 
 Modificamos también el archivo locale.gen y descomentamos el dato es_ES.UTF-8 UTF-8, finalmente lo exportamos para el shell:
 
-{{< code file="script-2.sh" language="Bash" options="" >}}
+{{< code file="script-2.sh" language="bash" options="" >}}
 
 ### 1.1 Particionar el disco
 
 El siguiente paso es particionar el disco duro y antes de hacerlo deberemos asegurarnos de que hemos hecho una copia de seguridad de los datos ya que en el siguiente paso se perderá el contenido del disco duro o SSD. Usaremos el siguiente comando para hacer el [particionado usando GPT](https://wiki.archlinux.org/index.php/GUID_Partition_Table). En función de si nuestro sistema tiene BIOS o EFI las particiones son distintas, si es un ordenador de unos dos años o menos o venía con Windows 8 preinstalador probablemente tenga EFI.
 
-{{< code file="script-3.sh" language="Bash" options="" >}}
+{{< code file="script-3.sh" language="bash" options="" >}}
 
 #### 1.1.1 Para un sistema con BIOS
 
@@ -76,25 +76,25 @@ Si tenemos un sistema con 8 GiB o más de memoria probablemente podamos prescind
 
 Una vez tenemos las particiones creados deberemos formatearlas, sustituimos sdaX por lo que corresponda según el orden en que hemos creado las particiones:
 
-{{< code file="script-4.sh" language="Bash" options="" >}}
+{{< code file="script-4.sh" language="bash" options="" >}}
 
 Y si tenemos partición de swap:
 
-{{< code file="script-5.sh" language="Bash" options="" >}}
+{{< code file="script-5.sh" language="bash" options="" >}}
 
 ### 1.3 Montar las particiones
 
 Lo siguiente que haremos es montar las particiones para empezar a usarlas, primero la partición root (/), que en esta guía es sda2 y luego la partición boot (/boot):
 
-{{< code file="script-6.sh" language="Bash" options="" >}}
+{{< code file="script-6.sh" language="bash" options="" >}}
 
 Si nuestro sistema tiene EFI hacemos:
 
-{{< code file="script-7.sh" language="Bash" options="" >}}
+{{< code file="script-7.sh" language="bash" options="" >}}
 
 Si tenemos un disco SSD montamos las particiones usando las opciones de montaje adecuados para que se use TRIM:
 
-{{< code file="script-8.sh" language="Bash" options="" >}}
+{{< code file="script-8.sh" language="bash" options="" >}}
 
 ### 1.4 Establecer el mirror
 
@@ -102,19 +102,19 @@ Debemos seleccionar un espejo del que se descargarán los paquetes del sistema b
 
 Server = http\://mirrors.kernel.org/archlinux/$repo/os/$arch
 
-{{< code file="script-9.sh" language="Bash" options="" >}}
+{{< code file="script-9.sh" language="bash" options="" >}}
 
 ### 1.5 Instalar paquetes del sistema base
 
 Lo siguiente será instalar los archivos del sistema base el siguiente comando que descargará del espejo de paquetes que hayamos elegido los paquetes del sistema base:
 
-{{< code file="script-10.sh" language="Bash" options="" >}}
+{{< code file="script-10.sh" language="bash" options="" >}}
 
 ### 1.6 Generar de fstab
 
 Generamos el archivo fstab que contendrá las características de nuestras particiones y opciones de montaje:
 
-{{< code file="script-11.sh" language="Bash" options="" >}}
+{{< code file="script-11.sh" language="bash" options="" >}}
 
 Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las opciones noatime y discard.
 
@@ -122,15 +122,15 @@ Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las op
 
 Hacemos un chroot para cambiar el directorio root que estamos usando para configurar nuestro sistema.
 
-{{< code file="script-12.sh" language="Bash" options="" >}}
+{{< code file="script-12.sh" language="bash" options="" >}}
 
 Editamos /etc/locale.gen, lo generamos y exportamos las variables:
 
-{{< code file="script-13.sh" language="Bash" options="" >}}
+{{< code file="script-13.sh" language="bash" options="" >}}
 
 Editamos el archivo /etc/vconsole.conf para cambiar el mapa de teclas de las terminales TTY:
 
-{{< code file="script-14.sh" language="Bash" options="" >}}
+{{< code file="script-14.sh" language="bash" options="" >}}
 
 Introducimos el siguiente contenido:
 
@@ -140,21 +140,21 @@ Introducimos el siguiente contenido:
 
 Establecemos la zona horaria de nuestro sistema:
 
-{{< code file="script-16.sh" language="Bash" options="" >}}
+{{< code file="script-16.sh" language="bash" options="" >}}
 
 ### 1.9 Modificar el nombre de nuesta máquina
 
-{{< code file="script-17.sh" language="Bash" options="" >}}
+{{< code file="script-17.sh" language="bash" options="" >}}
 
 ### 1.10 Instalar el gestor de redes
 
 NetworkManager puede servirnos, lo instalamos con el gestor de paquetes de arch pacman y activamos el servicio:
 
-{{< code file="script-18.sh" language="Bash" options="" >}}
+{{< code file="script-18.sh" language="bash" options="" >}}
 
 ### 1.11 Cambiar la contraseña de root
 
-{{< code file="script-19.sh" language="Bash" options="" >}}
+{{< code file="script-19.sh" language="bash" options="" >}}
 
 ### 1.12 Instalar el gestor de arranque
 
@@ -162,17 +162,17 @@ Este es el punto más delicado y que más problemas puede dar, ya que si no lo h
 
 Para un sistema con BIOS:
 
-{{< code file="script-20.sh" language="Bash" options="" >}}
+{{< code file="script-20.sh" language="bash" options="" >}}
 
 Para un sistema con EFI:
 
 En mi equipo que es un Sony Vaio SVE con EFI aún no he conseguido que GRUB me arranque correctamente (al inicial parece que se queda con la pantalla en negro y aparentemente bloqueado aunque puedo reiniciarlo con ctrl-alt-supr) y he tenido que usar [rEFInd](https://wiki.archlinux.org/index.php/REFInd). Aún así también tengo instalado Grub que iniciandolo a través de rEFInd si funciona bien.
 
-{{< code file="script-21.sh" language="Bash" options="" >}}
+{{< code file="script-21.sh" language="bash" options="" >}}
 
 Posteriormente instalo rEFInd:
 
-{{< code file="script-22.sh" language="Bash" options="" >}}
+{{< code file="script-22.sh" language="bash" options="" >}}
 
 Edito el archivo /boot/FI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:
 
@@ -180,7 +180,7 @@ Edito el archivo /boot/FI/refind/refind.conf modificando el timeout y la opción
 
 También debemos modificar el archivo /boot/refind_linux.conf
 
-{{< code file="script-24.sh" language="Bash" options="" >}}
+{{< code file="script-24.sh" language="bash" options="" >}}
 
 En el archivo sustituiremos los PARTUUID por los que correspondan en nuestro sistema, con el comando blkid los habremos añadido al final del archivo, el contenido debe quedarnos algo como:
 
@@ -188,21 +188,21 @@ En el archivo sustituiremos los PARTUUID por los que correspondan en nuestro sis
 
 Además, con rEFInd hemos de crear el gestor de arranque con el comando efobootmgr. Pero en mi caso para que funcione primero he de borrar todos los que ya existen sino parece que en mi caso se recrea y usa el gestor de arranque EFI de Windows y al inicial el sistema me sale el mensaje «Operating System Not Found», podemos ver los gestores de arranque con:
 
-{{< code file="script-26.sh" language="Bash" options="" >}}
+{{< code file="script-26.sh" language="bash" options="" >}}
 
 Los borramos con el siguiente comando, donde xxxx se corresponde con el número de gestor de arranque:
 
-{{< code file="script-27.sh" language="Bash" options="" >}}
+{{< code file="script-27.sh" language="bash" options="" >}}
 
 Finalmente, creamos el gestor de arranque para rEFInd:
 
-{{< code file="script-28.sh" language="Bash" options="" >}}
+{{< code file="script-28.sh" language="bash" options="" >}}
 
 ### 1.13 Finalizar la instalación
 
 Finalmente, salimos del entorno enjaulado, desmontamos las particiones y reiniciamos el sistema:
 
-{{< code file="script-29.sh" language="Bash" options="" >}}
+{{< code file="script-29.sh" language="bash" options="" >}}
 
 ## 2. Post instalación base
 
@@ -212,11 +212,11 @@ Ya tenemos el sistema base pero para usarlo seguramente queramos un entorno grá
 
 Creamos un usuario para no usar el usuario root, sustituimos picodotdev por el nuestro:
 
-{{< code file="script-30.sh" language="Bash" options="" >}}
+{{< code file="script-30.sh" language="bash" options="" >}}
 
 Permitirmos a los usuarios del grupo wheel usar el comando sudo:
 
-{{< code file="script-31.sh" language="Bash" options="" >}}
+{{< code file="script-31.sh" language="bash" options="" >}}
 
 Descomentamos la siguiente linea:
 
@@ -224,29 +224,29 @@ Descomentamos la siguiente linea:
 
 Editamos el archivo pacman.conf según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.
 
-{{< code file="script-33.sh" language="Bash" options="" >}}
+{{< code file="script-33.sh" language="bash" options="" >}}
 
 ### 2.2 Instalar el entorno gráfico
 
 Instalamos los paquetes básicos del entorno gráfico, en este caso los controladores para una tarjeta gráfica intel:
 
-{{< code file="script-34.sh" language="Bash" options="" >}}
+{{< code file="script-34.sh" language="bash" options="" >}}
 
 ### 2.3 Instalar el entorno de escritorio
 
 Instalamos el entorno de escritorio según nuestras preferencias, en mi caso GNOME:
 
-{{< code file="script-35.sh" language="Bash" options="" >}}
+{{< code file="script-35.sh" language="bash" options="" >}}
 
 Habilitamos el servicio del gestor de escritorio GDM:
 
-{{< code file="script-36.sh" language="Bash" options="" >}}
+{{< code file="script-36.sh" language="bash" options="" >}}
 
 ### 2.4 Instalación de yaourt
 
 Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) deberemos instalar la herramienta yaourt:
 
-{{< code file="script-37.sh" language="Bash" options="" >}}
+{{< code file="script-37.sh" language="bash" options="" >}}
 
 Añadimos su repositorio:
 
@@ -254,7 +254,7 @@ Añadimos su repositorio:
 
 Lo instalamos con:
 
-{{< code file="script-39.sh" language="Bash" options="" >}}
+{{< code file="script-39.sh" language="bash" options="" >}}
 
 A partir de este momento podemos usar el comando yaourt en vez de pacman.
 
@@ -262,13 +262,13 @@ A partir de este momento podemos usar el comando yaourt en vez de pacman.
 
 Los programas que instalaremos cambiarán según nuestras preferencias, estos son casi todos los que suelo utilizar:
 
-{{< code file="script-40.sh" language="Bash" options="" >}}
+{{< code file="script-40.sh" language="bash" options="" >}}
 
 ### 2.6 Activar el servicio de sincronización de hora
 
 Para mantener la hora de nuestro sistema correctamente podemos usar un servicio que se encargue de mantenerla con un servicio a través de la red.
 
-{{< code file="script-41.sh" language="Bash" options="" >}}
+{{< code file="script-41.sh" language="bash" options="" >}}
 
 El resultado de la instalación y usando GNOME es el siguiente:
 

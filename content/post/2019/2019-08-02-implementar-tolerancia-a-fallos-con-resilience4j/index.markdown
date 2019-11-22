@@ -38,7 +38,7 @@ La configuración de Resilience4j se puede proporcionar mediante código Java, c
 
 Resilience4j para implementar los patrones lo que hace es decorar la función objetivo que hace la invocación del servicio. Si se quieren aplicar varios patrones hay que encadenar las decoraciones, por ejemplo, si se quiere limitar el número de llamadas salientes con _bulkhead_ y el patrón _circuit breaker_ hay que aplicar una decoración sobre la otra. En este ejemplo se aplica un _time limiter_ y un _circuit breaker_ usando código Java. La variable _get_ es la que realmente contiene la llamada al servicio.
 
-{{< code file="Resilience4jProxyService.java" language="Java" options="" >}}
+{{< code file="Resilience4jProxyService.java" language="java" options="" >}}
 
 Las dependencias que hay que añadir en el proyecto son:
 

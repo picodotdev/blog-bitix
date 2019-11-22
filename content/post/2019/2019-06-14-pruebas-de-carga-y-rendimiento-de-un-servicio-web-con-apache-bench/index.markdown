@@ -25,7 +25,7 @@ Es una herramienta que se utiliza para medir el rendimiento de el servidor Apach
 
 Si quisiese medir el rendimiento en mi blog alojado en [GitHub Pages][github-pages] podría hacerlo lanzando 1000 peticiones para que sea una muestra suficientemente amplia con 20 usuarios de forma concurrente que son los que en los momentos de más tráfico tiene mi blog. Mi conexión de internet es un ADSL que no llega a 1 MB/s de subida por lo que la conexión en cierta medida limite el test.
 
-{{< code file="ab.sh" language="Bash" options="" >}}
+{{< code file="ab.sh" language="bash" options="" >}}
 
 El informe de resultado que ofrece _ab_ al finalizar la prueba incluye el tiempo dedicado en la conexión, en el procesado, esperando y en total con los valores para cada uno de ellos con mínimo y máximo, de media y la mediana. El tiempo total empleado por la prueba, el protocolo SSL/TLS usado, los bytes devueltos en la petición, el número de peticiones servidas por segundo, el tiempo de media empleado de media por cada petición y de media teniendo en cuenta la concurrencia, la tasa de transferencia en la respuesta y finalmente el tiempo de respuesta según percentil que van que desde el 50 al 100, es decir, que el 50% de las peticiones se han respondido en el tiempo en milisegundos indicado. Si las hubiera también muestra las peticiones fallidas y las que han devuelto un código de respuesta distinto de 200.
 

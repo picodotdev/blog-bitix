@@ -36,14 +36,14 @@ Basándome en estos ejemplos he creado un proyecto uno muy similar al Tutorial 1
 
 Tanto en el emisor como en el receptor deberemos declarar las colas que van a usar (si una no existe se creará y si existe se usará), a la cola se le asigna un nombre y el receptor define un manejador para recibir los mensajes según se envían.
 
-{{< code file="Send.java" language="Java" options="" >}}
-{{< code file="Receive.java" language="Java" options="" >}}
+{{< code file="Send.java" language="java" options="" >}}
+{{< code file="Receive.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 Para ejecutar el ejemplo usaré el [contenedor de Docker para RabbitMQ](https://hub.docker.com/_/rabbitmq/) iniciándolo con [Docker Compose][docker-compose] y el siguiente archivo descriptor. Puedes consultar la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí para conocer cómo usarlo.
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="docker-run.sh" language="Bash" options="" >}}
+{{< code file="docker-run.sh" language="bash" options="" >}}
 
 Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en cualquier orden la parte receptora de los mensajes y la parte emisora de mensajes con los comandos <code>./gradlew receive</code> y <code>./gradlew send</code> respectivamente, momento en el cual veremos que en la consola salen las notificaciones de recepción y envío.
 

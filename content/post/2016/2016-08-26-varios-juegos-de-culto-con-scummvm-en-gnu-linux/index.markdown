@@ -40,7 +40,7 @@ Con ScummVM podemos jugar a esos juegos del estilo _point-and-click_ en los que 
 
 En GNU/Linux podemos seguir jugando a estos juegos, para ello debemos instalar el emulador ScummVM y descargar la ROM de los mismos. En [Arch Linux][archlinux] instalamos el emulador con el [paquete scummvm](https://www.archlinux.org/packages/community/x86_64/scummvm/) y el siguiente comando:
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

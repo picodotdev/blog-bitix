@@ -39,7 +39,7 @@ El siguiente ejemplo muestra como autenticar con Keycloak como proveedor de OAut
 Iniciar el servidor OAuth de Keycloak usando [Docker][docker] es muy sencillo con el siguiente comando y archivo de [Docker Compose][docker-compose], en el primer acceso se nos solicitará una clave y contraseña de administración:
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="docker-compose.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.sh" language="bash" options="" >}}
 
 Para el ejemplo crearé un nuevo _realm_ que contendrá los usuarios y en el que registraremos la aplicación cliente.
 
@@ -61,14 +61,14 @@ Usando uno de los [adaptadores proporcionados por Keycloak](https://keycloak.git
 
 Autenticado el usuario podemos obtener la instancia de [AccessToken](https://www.keycloak.org/docs/javadocs/org/keycloak/representations/AccessToken.html) que representa el _token_ de OAuth, para la autorización podemos usar Apache Shiro y para ellos deberemos implementar un Realm de tipo [AuthorizingRealm](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html). Tiene dos métodos que deberemos implementar [doGetAuthenticationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthenticatingRealm.html#doGetAuthenticationInfo-org.apache.shiro.authc.AuthenticationToken-) y [doGetAuthorizationInfo](https://shiro.apache.org/static/1.3.2/apidocs/org/apache/shiro/realm/AuthorizingRealm.html#doGetAuthorizationInfo-org.apache.shiro.subject.PrincipalCollection-), el primero lo usaremos para autenticar al usuario que en este caso teniendo el _AccessToken_ ya estará autenticado con Keycloak y el segundo método nos permitirá obtener los roles y permisos asociados al usuario que podríamos obtenerlos de una base de datos relacional, en el ejemplo los roles también se obtienen del token. Con un filtro realizaremos el inicio de sesión de forma programática del usuario representado por el _AccessToken_ cuando esté presente en la petición.
 
-{{< code file="KeycloakFilter.java" language="Java" options="" >}}
-{{< code file="AppRealm.java" language="Java" options="" >}}
+{{< code file="KeycloakFilter.java" language="java" options="" >}}
+{{< code file="AppRealm.java" language="java" options="" >}}
 
 Con Apache Tapestry el filtro se registra en el módulo de la aplicación y con Shiro podemos realizar la autorización necesaria en las páginas u acciones de la aplicación usando anotaciones. En este caso una página pública que no requiere estar autenticado, una página accesible por un usuario autenticado y con rol _user_ y finalmente una página de administración que requiere rol _admin_.
 
-{{< code file="Index.java" language="Java" options="" >}}
-{{< code file="User.java" language="Java" options="" >}}
-{{< code file="Admin.java" language="Java" options="" >}}
+{{< code file="Index.java" language="java" options="" >}}
+{{< code file="User.java" language="java" options="" >}}
+{{< code file="Admin.java" language="java" options="" >}}
 {{< code file="Index.tml" language="HTML" options="" >}}
 {{< code file="User.tml" language="HTML" options="" >}}
 {{< code file="Admin.tml" language="HTML" options="" >}}

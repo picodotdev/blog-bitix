@@ -27,7 +27,7 @@ Teniendo un [servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-
 Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accedemos al panel de administración con el navegador, en mi caso en _http\://localhost:9080_ con el usuario _admin_ y contraseña _admin_ según lo indicado en el archivo _docker-compose.yml_.
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="docker-compose-up.sh" language="Bash" options="" >}}
+{{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -49,11 +49,11 @@ Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos
 Indicaremos también el rol que deberá poseer el cliente para acceder al servicio REST junto que URLs del servicio estarán autenticadas por OAuth. Añadida la configuración al archivo _application.yml_ el servicio REST es totalmente inconsciente de la autenticación que se realizará con OAuth y Keycloak.
 
 {{< code file="application.yml" language="YAML" options="" >}}
-{{< code file="MessageResource.java" language="Java" options="" >}}
+{{< code file="MessageResource.java" language="java" options="" >}}
 
 Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.
 
-{{< code file="curl-token.sh" language="Bash" options="" >}}
+{{< code file="curl-token.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -62,7 +62,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> pod
 
 Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un [código de estado HTTP 401][wikipedia-http-status-codes] indicando que se necesitan proporcionar las credenciales que con OAuth es un _token_.
 
-{{< code file="curl-401.sh" language="Bash" options="" >}}
+{{< code file="curl-401.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -71,7 +71,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 
 Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el _token_ no es válido obtendremos un error HTTP 401.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

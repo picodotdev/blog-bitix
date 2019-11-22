@@ -48,8 +48,8 @@ Al servicio de [nginx][nginx] la clave privada y certificado para configurar el 
 
 Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el contenido de los secretos incorporados en el contenedor cuando se solicita en la URL _https\://192.168.99.100/system/info/_, esto no se debe hacer porque se pierde la seguridad que proporcionan los secretos pero sirve a modo de muestra en el ejemplo.
 
-{{< code file="HostInfoContributor.java" language="Java" options="" >}}
-{{< code file="info.json" language="JSON" options="" >}}
+{{< code file="HostInfoContributor.java" language="java" options="" >}}
+{{< code file="info.json" language="json" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -59,7 +59,7 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 
 Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa es la siguiente:
 
-{{< code file="run.sh" language="Bash" options="" >}}
+{{< code file="run.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 

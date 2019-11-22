@@ -20,7 +20,7 @@ summary: "Sin usar la clase _Collator_ incluida en el JDK al ordenar alfabética
 
 Quizá algunos digan que la aparentemente sencilla tarea de ordenar una lista de palabras es algo fácil de hacer con cualquier lenguaje de programación. La realidad es que puede complicarse en una buena cantidad si se ha de realizar con los caracteres del alfabeto de algunos lenguajes. La ordenación no es tan simple como realizar lo siguiente en código Java:
 
-{{< code file="Sort.java" language="Java" options="" >}}
+{{< code file="Sort.java" language="java" options="" >}}
 
 Primeramente nos daremos cuenta de que la siguiente lista de nombres de provincias las ordena de una forma que quizá no es la que esperamos. En algunas páginas web se puede observar este error en algunos elementos de selección de opciones de nombres de paises, ciudades, provincias u otro conjunto de elementos que suelen estar ordenados alfabéticamente para facilitar el encontrar el elemento a seleccionar pero que si se da el caso de que hay variación de palabras con tildes y sin ellas y minúsculas y mayúsculas se presenta la ordenación incorrecta.
 
@@ -32,7 +32,7 @@ En Java la solución es utilizar la clase [Collator](https://docs.oracle.com/jav
 
 Usando la clase _Collator_ y realizando la ordenación de la misma lista anterior el resultado es diferente y seguramente más apropiado. Como la clase _Collator_ implementa la interfaz _Comparable_ podemos usarla como el comparador aplicar en el método [Arrays.sort(T[], Comparator<? super T>)](https://docs.oracle.com/javase/9/docs/api/java/util/Arrays.html#sort-T:A-java.util.Comparator-) o [List.sort(Comparator<? super E>)](https://docs.oracle.com/javase/9/docs/api/java/util/List.html#sort-java.util.Comparator-).
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 Utilizando el _Collator_ con solo diferencias primarias _Cantabria_ se ordena al final de la lista por tener las letras _a_, _A_ y _Á_ una diferencia primaria con _C_. Con diferencias secundarias las letras _A_ y _a_ se ordenan antes que _Á_ por tener diferencias secundarias. Finalmente, con diferencias terciarias _a_ se ordena antes que _A_. 

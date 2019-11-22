@@ -68,7 +68,7 @@ Ahora los parámetros de una lambda pueden declararse con _var_ con inferencia d
 
 Esta funcionalidad tiene algunas restricciones. No se puede mezclar el uso y no uso de _var_ y no se puede mezclar el uso de _var_ y tipos en _lambdas_ explícitas. Son consideradas ilegales por el compilador y producirá un error en tiempo de compilación.
 
-{{< code file="Lambda.java" language="Java" options="" >}}
+{{< code file="Lambda.java" language="java" options="" >}}
 
 <div class="media media-video" style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/0eWgRyanQI0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -86,13 +86,13 @@ En Java 9 se incorporó de forma experimental un cliente HTTP con soporte para H
 
 Para ejecutar un programa Java es necesario compilarlo a _bytecode_ y posteriormente ejecutarlos. Se necesitan dos pasos. Para facilitar la ejecución de los programas que se componen de un único archivo de código fuente se añade la posibilidad de lanzar un programa desde el archivo de código fuente. Esto es útil par programas pequeños o para los casos de estar aprendiendo el lenguaje.
 
-{{< code file="HelloWorld.java" language="Java" options="" >}}
-{{< code file="java-helloworld.sh" language="Bash" options="" >}}
+{{< code file="HelloWorld.java" language="java" options="" >}}
+{{< code file="java-helloworld.sh" language="bash" options="" >}}
 
 Esta funcionalidad es compatible con los _shebang_ de los sistemas Unix.
 
-{{< code file="helloworld.sh" language="Bash" options="" >}}
-{{< code file="hello.sh" language="Bash" options="" >}}
+{{< code file="helloworld.sh" language="bash" options="" >}}
+{{< code file="hello.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

@@ -22,15 +22,15 @@ Sin embargo, a pesar de seguir el esquema estándar de buscar las clases y usar 
 
 Con la clase que permite funcionar las aplicaciones Tapestry en JBoss/WildFly junto con un poco de configuración para el contenedor de dependencias definido en un módulo será suficiente. La clase es la siguiente:
 
-{{< code file="WildFlyClasspathURLConverter.java" language="Java" options="" >}}
+{{< code file="WildFlyClasspathURLConverter.java" language="java" options="" >}}
 
 La configuración adicional para el contenedor de dependencias es para que Tapestry use esta nueva clase:
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 
 El ContextListener que nos permite acceder al ServletContext es el siguiente:
 
-{{< code file="ContextListener.java" language="Java" options="" >}}
+{{< code file="ContextListener.java" language="java" options="" >}}
 
 Además hemos de incluir en el proyecto un par de librerías y usar al menos la versión 16 de guava si se incluye como dependencia en el war:
 

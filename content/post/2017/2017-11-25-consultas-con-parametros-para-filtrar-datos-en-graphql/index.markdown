@@ -27,18 +27,18 @@ Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este 
 
 La implementación del tipo _BookFilter_ en la implementación de Java de GraphQL es una _Java Bean_ con una propiedad por cada argumento y sus correspondientes métodos _set_ y _get_.
 
-{{< code file="BookFilter.java" language="Java" options="" >}}
+{{< code file="BookFilter.java" language="java" options="" >}}
 
 La clase _Query_ es el punto de entrada a las consultas raíz y posee un método con el mimo nombre que la consulta solicitada en GraphQL y que en este caso es _findBooks_ que recibe como argumento una instancia del objeto _BookFilter_ que a su vez se lo proporciona al servicio de repositorio independiente de GraphQL para que haga la búsqueda adecuada según corresponda en el sistema de persistencia empleado. En el caso que los datos se guarden en una base de datos relacional posiblemente el filtrado se realiza ejecutando una sentencia SQL. En el caso del ejemplo como los datos están en una colección de una estructura de datos Java el filtrado se realiza usando los _streams_, expresiones regulares y código Java.
 
-{{< code file="Query.java" language="Java" options="" >}}
-{{< code file="LibraryRepository.java" language="Java" options="" >}}
+{{< code file="Query.java" language="java" options="" >}}
+{{< code file="LibraryRepository.java" language="java" options="" >}}
 
 Siguiendo la idea del ejemplo es posible realizar el filtrado de los datos con los argumentos que sean necesarios y la lógica adecuada según el repositorio donde estén almacenados los datos ya sea en un sistema con una base de datos relacional como [PostgreSQL][postgresql] o NoSQL como [MongoDB][mongodb]. Se podrían añadir más datos por ejemplo para filtrar por otros criterios como el número de páginas, autor o incluir otros parámetros para realizar otras funciones como especificar criterios de ordenación.
 
 Esta petición busca los libros que su título comience por las letras _O_ o _R_ obteniendo dos coincidencias como resultado. En este caso entre los datos solo se devuelve el título del libro pero perfectamente podrían haber sido cualesquiera otros de entre los que posee el tipo _Book_.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 Pero... ¿que ocurre si aún con el filtrado o en una consulta el número de coincidencias son unos cuantos miles? Seguramente sean demasiadas coincidencias para devolver en una única petición y por ello es habitual [realizar paginación en GraphQL][blogbitix-283]. Eso será tema para otro de los siguientes artículos de esta serie sobre GraphQL.
 

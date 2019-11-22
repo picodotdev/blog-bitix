@@ -27,11 +27,11 @@ Con EncFS el contenido de los archivos y sus nombres serán cifrados aunque su t
 
 Para usar EncFS debemos instalar su paquete, en [Arch Linux][archlinux] con:
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 Instalado el paquete y con el comando <code>encfs</code> indicamos el directorio donde se almacenará el sistema de archivos cifrado y el directorio donde EncFS montará el sistema de archivos sin cifrar, la primera vez que lo usemos nos pedirá la contraseña con la que el sistema de archivos se cifrará que deberemos recordar ya que nos la pedirá cada vez que montemos el sistema de archivos cifrado.
 
-{{< code file="encfs.sh" language="Bash" options="" >}}
+{{< code file="encfs.sh" language="bash" options="" >}}
 {{< asciinema id="36852" caption="Inicialización y montaje de un sistema de archivos cifrado para su uso con EncFS" >}}
 
 Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.
@@ -43,7 +43,7 @@ Montado el sistema de archivos veremos que en el explorador de archivos se ha mo
 
 La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con _Ctrl-C_ momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:
 
-{{< code file="fusermount.sh" language="Bash" options="" >}}
+{{< code file="fusermount.sh" language="bash" options="" >}}
 
 Montado el sistema de archivos en primer o segundo plano podremos trabajar con los archivos normalmente y EncFS irá cifrando su contenido y nombres de archivos de forma transparente en el directorio de archivos cifrados. Añadiendo algún archivo este podría ser el contenido del directorio de archivos cifrados.
 

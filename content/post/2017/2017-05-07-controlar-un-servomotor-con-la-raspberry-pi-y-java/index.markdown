@@ -36,7 +36,7 @@ Usando la librería [Diozero][diozero] es sencillo controlar un servomotor a tra
 
 El siguiente programa Java cambia en un bucle la posición del servo desde la posición mínima a la máxima. En él he utilizado el _pin_ 18 que en la Raspberry Pi 1 soporta PWD, en las versiones 2 y 3 podríamos haber usado los _pines_ 18 o 19.
 
-{{< code file="Servomotor.java" language="Java" options="" >}}
+{{< code file="Servomotor.java" language="java" options="" >}}
 
 <div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" allowfullscreen></iframe>

@@ -32,11 +32,11 @@ Podemos obtener la metainformación guardada en la foto de diferentes formas. Un
 
 Instalado el paquete [ImageMagick][imagemagick] de nuestra distribución [GNU][gnu]/[Linux][linux], en este caso con [Arch Linux][archlinux] la metainformación de una foto se obtiene con el comando:
 
-{{< code file="identify.sh" language="Bash" options="" >}}
+{{< code file="identify.sh" language="bash" options="" >}}
 
 Si la foto incluye personas algunas redes sociales como [Facebook][facebook] permiten identificarlas, acompañada de metainformación además informa de con que, con quién, cuando y donde se tomó la foto. Si te importa y quieres proteger tu privacidad un poco es aconsejable eliminar esta metainformación al subir o compartir las fotos en las redes sociales. Con ImageMagick se puede eliminar la metainformación con los siguientes comandos. El primero modifica el archivo original y el segundo crea una copia de la foto sin la metainformación:
 
-{{< code file="mogrify-convert.sh" language="Bash" options="" >}}
+{{< code file="mogrify-convert.sh" language="bash" options="" >}}
 
 [Twitter elimina los datos EXIF](https://help.twitter.com/es/using-twitter/tweeting-gifs-and-pictures) de las fotos aunque utiliza la ubicación de la foto para realizar sugerencias de ubicaciones. [Facebook][facebook] creo que también elimina los datos EXIF al menos al visualizarlas, también [WhatsApp][whatsapp] y [Telegram][telegram]. Pero al compartir los archivos de fotos de forma directa como correo electrónico o por algún otro medio los metadatos seguirán estando presentes.
 

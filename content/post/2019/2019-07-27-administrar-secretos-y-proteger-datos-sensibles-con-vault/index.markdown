@@ -28,7 +28,7 @@ La infraestructura informática de los sistemas actuales es cada vez más comple
 
 No es seguro utilizar archivos sin cifrar aún utilizando los permisos del sistema de archivos dado que una intrusión en el sistema posibilita el acceso al secreto. Cifrarlos los archivos es el mismo caso de herramientas como [Chef][chef], [Puppet][puppet] y [Ansible][ansible]. Utilizar variables de entorno para proporcionar secretos tampoco es seguro ya que aunque los secretos no están en el sistema de archivos se pueden inspeccionar las variables de entorno de un proceso.
 
-{{< code file="commands.sh" language="Bash" options="" >}}
+{{< code file="commands.sh" language="bash" options="" >}}
 
 Por otra parte las contraseñas y claves han de rotarse regularmente para limitar en el tiempo el acceso ante el filtrado de las credenciales en un sistema o para denegar el acceso a una persona que en algún momento haya tenido credenciales de acceso como un empleado que ya no pertenece a la compañía.
 
@@ -72,12 +72,12 @@ Todo en Vault está basado en _paths_. Las [_policies_]((https://www.vaultprojec
 
 La [instalación de Vault](https://www.vaultproject.io/docs/install/index.html) es muy sencilla ya que es un único binario sin más dependencias. En una distribución [GNU][gnu]/[Linux][linux] estará en los repositorios oficiales. En [Arch Linux][archlinux] se instala con el comando.
 
-{{< code file="install.sh" language="Bash" options="" >}}
+{{< code file="install.sh" language="bash" options="" >}}
 
 En el siguiente ejemplo en modo desarrollo de uso de Vault se inicia, se realiza la autenticación con el _token_ _root_ de superusuario y se crea un secreto. Aquí solo se muestra el caso de uso de guardar y recuperar secretos, otros son generar credenciales para conectarse a una base de datos y proporcionar cifrado y descifrado como servicio.
 
-{{< code file="vault.sh" language="Bash" options="" >}}
-{{< code file="secret.sh" language="Bash" options="" >}}
+{{< code file="vault.sh" language="bash" options="" >}}
+{{< code file="secret.sh" language="bash" options="" >}}
 
 Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Consul y [Nomad][nomad] posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.
 

@@ -24,19 +24,19 @@ Asciinema es como un vídeo pero de texto que además podemos compartir para que
 
 Una vez instalado, podemos iniciar una grabación de la terminal, esto creará un archivo _video.asciinema_. Podremos parar la grabación con la combinación de teclas <kbd>ctrl+d</kbd> o tecleando el comando <code>exit</code>:
 
-{{< code file="asciinema-rec.sh" language="Bash" options="" >}}
+{{< code file="asciinema-rec.sh" language="bash" options="" >}}
 
 Reproducir el vídeo creado con:
 
-{{< code file="asciinema-play.sh" language="Bash" options="" >}}
+{{< code file="asciinema-play.sh" language="bash" options="" >}}
 
 Y compartirlo con:
 
-{{< code file="asciinema-upload.sh" language="Bash" options="" >}}
+{{< code file="asciinema-upload.sh" language="bash" options="" >}}
 
 Para compartir los vídeos solo necesitaremos una cuenta de correo, no necesitaremos una clave ya que la autenticación en Asciinema se hace mediante un enlace que se nos envían a nuestra cuenta de correo cada vez que queremos acceder a nuestra cuenta. Si instalamos Asciinema por segunda vez o en otro ordenador y queremos asociarlo con la cuenta que ya tenemos podemos hacerlo con:
 
-{{< code file="asciinema-auth.sh" language="Bash" options="" >}}
+{{< code file="asciinema-auth.sh" language="bash" options="" >}}
 
 En la [documentación de Asciinema](https://asciinema.org/docs) están las opciones completas que podemos usar por ejemplo para añadir un título al vídeo o para ejecutar un comando directamente. Una vez que tenemos subido el vídeo a la web de Asciinema podemos compartirlo ya sea enviando en enlace del vídeo o con un reproductor embebido en una página web o artículo de un _blog_. Para esto último deberemos incluir un _script_ de JavaScript para el reproductor de la siguiente forma, con el atributo id indicamos el vídeo que queremos reproducir, en la [documentación de las opciones para embeber los vídeos](https://asciinema.org/docs/embedding) podemos ver las opciones completas que podemos emplear:
 

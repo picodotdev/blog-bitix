@@ -28,15 +28,15 @@ En el siguiente ejemplo uso un _cluster_ de nodos Docker, VirtualBox y REX-Ray p
 
 Para la integración entre VirtualBox y REX-Ray hay que iniciar primero un servidor en el _host_ que permite a REX-Ray hacer llamadas remotas a VirtualBox para que gestione los volúmenes de datos.
 
-{{< code file="02-vboxwebsrv.sh" language="Bash" options="" >}}
+{{< code file="02-vboxwebsrv.sh" language="bash" options="" >}}
 
 Si hay un _firewall_ hay que permitir el tráfico para el puerto _18083_, en mi caso que uso _ufw_ creando la siguiente regla.
 
-{{< code file="ufw.sh" language="Bash" options="" >}}
+{{< code file="ufw.sh" language="bash" options="" >}}
 
 Con el _cluster_ creado debemos instalar y configurar REX-Ray en cada uno de los nodos ejecutando varios comandos, un comando instala REX-Ray, otro crea el archivo de configuración en _/etc/rexray/config.yml_ y finalmente otro inicia el servicio de REX-Ray. Algunas opciones que se indican en el archivo de configuración de REX-Ray es la ubicación en el _host_ donde se guardan los volúmenes con el parámetro _volumePath_.
 
-{{< code file="03-rex-ray-install.sh" language="Bash" options="" >}}
+{{< code file="03-rex-ray-install.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -47,7 +47,7 @@ Con el _cluster_ creado debemos instalar y configurar REX-Ray en cada uno de los
 Para probar la persistencia de datos usaré un _stack_ iniciado de la misma forma que en artículo [Iniciar un stack de servicios en un cluster de Docker Swarm][blogbitix-220] pero con un contenedor de postgres que guarda los datos en un volumen de REX-Ray en _/var/lib/postgresql/data_. Para iniciar el _stack_ el _custer_ de Docker Swarm uso un archivo de [Docker Compose][docker-compose] con la definición del _stack_ en formato YAML.
 
 {{< code file="docker-compose-stack-postgres.yml" language="YAML" options="" >}}
-{{< code file="06-docker-compose-stack-deploy-postgres.sh" language="Bash" options="" >}}
+{{< code file="06-docker-compose-stack-deploy-postgres.sh" language="bash" options="" >}}
 
 En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el contenedor de postgres y que identificativo se le ha asignado.
 
@@ -59,7 +59,7 @@ En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el c
 
 En el _stack_ el volumen de datos postgres está declarado y creado de forma externa. Usando VirtualBox con REX-Ray en el _host_ o anfitrión se crea un archivo que contiene los datos del volumen. Al listar los volúmenes de datos además de los creados _postgres_ y _app_ están los de los discos duros de cada uno de los nodos identificados como _disk.vmdk_. El parámetro _opt=size=5_ indica que el volumen de datos es de una tamaño de 5GiB.
 
-{{< code file="06-create-volumes.sh" language="Bash" options="" >}}
+{{< code file="06-create-volumes.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -70,11 +70,11 @@ En el _stack_ el volumen de datos postgres está declarado y creado de forma ext
 
 Para crear algunos datos en la base de datos hay que conectarse al contenedor y lanzar algunas sentencias SQL. Hay que obtener el identificativo del contenedor de postgres, iniciar un proceso _bash_, realizar la conexión a la base de datos con el cliente _psql_ y lanzar las sentencias SQL.
 
-{{< code file="postgres.sh" language="Bash" options="" >}}
+{{< code file="postgres.sh" language="bash" options="" >}}
 
 Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm iniciará el contenedor en otro nodo del _cluster_ pero los datos seguirán estando presentes en la base de datos postgres, se puede comprobar iniciando una nueva sesión bash en el nuevo contenedor, iniciando el cliente de psql y lanzando la consulta _select_ de SQL o con el comando <code>\dt</code> para obtener las tablas de la base de datos, _\d+ company_ para obtener una descripción de la tabla y la consulta SQL _SELECT * FROM company;_.
 
-{{< code file="docker-compose-stack-remove-postgres.sh" language="Bash" options="" >}}
+{{< code file="docker-compose-stack-remove-postgres.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 

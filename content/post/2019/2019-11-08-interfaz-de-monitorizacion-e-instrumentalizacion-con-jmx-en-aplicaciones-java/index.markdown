@@ -34,16 +34,16 @@ Además de propiedades y operaciones los _MBean_ también pueden emitir notifica
 
 Un _MBean_ no es más que una interfaz que una clase Java implementa.
 
-{{< code file="HelloMBean.java" language="Java" options="" >}}
-{{< code file="Hello-java.java" language="Java" options="" >}}
+{{< code file="HelloMBean.java" language="java" options="" >}}
+{{< code file="Hello-java.java" language="java" options="" >}}
 
 Creada la interfaz y la implementación del _MBean_ ha de registrarse en el servidor de _MBean_. Los _MBean_ se registra en un dominio junto con una serie de propiedades clave/valor.
 
-{{< code file="Main-java.java" language="Java" options="" >}}
+{{< code file="Main-java.java" language="java" options="" >}}
 
 Iniciando la aplicación que registra un _MBean_ en el servidor de _MBean_ la plataforma Java incluye la herramienta _JConsole_ de monitorización y gestión que cumple con la especificación JMX. [VisualVM][visualvm] es otra herramienta de monitorización para una máquina virtual de Java, el soporte para visualizar y realizar operaciones sobre _MBans_ hay que añadirlo con un complemento o _plugin_. Se inician con el siguiente comando y hay que abrir un diálogo para conectarse a uno de los agentes locales iniciados por una máquina virtual.
 
-{{< code file="jconsole-visualvm.sh" language="Bash" options="" >}}
+{{< code file="jconsole-visualvm.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -68,12 +68,12 @@ El ejemplo anterior muestra como usar JMX en una aplicación Java, Spring ofrece
 
 El mismo _MBean_ de la aplicación Java implementado con spring es el siguiente, lo único que cambia son las anotaciones prporcionadas para que Spring descubra de forma automática los _MBean_ disponibles y los registre sin necesidad de hacerlo de forma explícita.
 
-{{< code file="HelloMBean.java" language="Java" options="" >}}
-{{< code file="Hello-spring.java" language="Java" options="" >}}
+{{< code file="HelloMBean.java" language="java" options="" >}}
+{{< code file="Hello-spring.java" language="java" options="" >}}
 
 Por autoconfiguración y la anotación [@EnableMBeanExport](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/context/annotation/EnableMBeanExport.html) los _MBean_ se autodescubren y registran en el servidor _MBean_.
 
-{{< code file="Main-springboot.java" language="Java" options="" >}}
+{{< code file="Main-springboot.java" language="java" options="" >}}
 
 Tanto en el ejemplo de _MBean_ con Java como con Spring el puerto RMI para acceder a JMX se configura con varias propiedades de la máquina virtual o con un archivo _properties_ de configuración.
 
@@ -83,7 +83,7 @@ Tanto en el ejemplo de _MBean_ con Java como con Spring el puerto RMI para acced
 
 Por defecto JMX solo es accesible desde la maquina local, esto en producción no es muy útil pero activar el acceso remoto requiere añadir nuevas propiedades de configuración para proporcionar seguridad realizando autenticación y usando una comunicación segura con SSL. Para la comunicación segura se requiere crear un _keystore_.
 
-{{< code file="keystore.sh" language="Bash" options="" >}}
+{{< code file="keystore.sh" language="bash" options="" >}}
 {{< code file="jmxremote-2.properties" language="Plaintext" options="" >}}
 {{< code file="jmxremote-ssl.properties" language="Plaintext" options="" >}}
 
@@ -94,7 +94,7 @@ Los archivos _jmxremote.password_ y _jmxremote.access_ configuran la autenticaci
 
 {{< code file="permissions.sh" language="Plaintext" options="" >}}
 
-{{< code file="jconsole.sh" language="Bash" options="" >}}
+{{< code file="jconsole.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

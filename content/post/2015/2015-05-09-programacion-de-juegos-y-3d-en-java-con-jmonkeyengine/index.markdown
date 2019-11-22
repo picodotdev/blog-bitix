@@ -93,8 +93,8 @@ Todos estos juegos están programados utilizando el lenguaje de programación Ja
 
 A continuación mostraré el código y unas capturas de pantalla de algunas las posibilidades de jMonkeyEngine. Primeramente veamos como crear un ejemplo básico con un cubo aplicándole una textura con el que veremos como crear una escena. El segundo ejemplo aplica texturas de diferentes formas que varían la visualización de un elemento geométrico.
 
-{{< code file="HolaMundoJMonkeyEngine.java" language="Java" options="" >}}
-{{< code file="Materiales.java" language="Java" options="" >}}
+{{< code file="HolaMundoJMonkeyEngine.java" language="java" options="" >}}
+{{< code file="Materiales.java" language="java" options="" >}}
 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 

@@ -29,7 +29,7 @@ La paginación con _limit_ y _offset_ permite ir a una página directamente en u
 
 Haciendo _seek_ la paginación es más eficiente ya que la base de datos no necesita recuperar los datos de las páginas anteriores ya que los descarta utilizando la cláusula _where_ que al final es en lo que se traduce la clausula _seek_. Y se elimina el problema de que se inserten datos en páginas anteriores y alguno se pudiese aparecer dos veces en los resultados ya que manteniendo la ordenación de la conlsulta si se insertan filas en páginas anteriores no afectarán a las páginas siguientes.
 
-{{< code file="Seek.java" language="Java" options="" >}}
+{{< code file="Seek.java" language="java" options="" >}}
 
 La SQL generada por jOOQ es la siguiente donde la clausula _seek_ se añade como una condición en la cláusula _where_. El campo de la clausula _seek_ coincide con el campo del criterio de ordenación, el operador mayor que en la condición coincide también con el orden ascendente del _order by_.
 

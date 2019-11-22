@@ -33,7 +33,7 @@ En el archivo _build.gradle_ global podemos incluir las cosas comunes a todos lo
 
 Podemos ver los módulos (o proyectos como los llama Gradle) de los que se compone la aplicación y las tareas que podemos ejecutar con:
 
-{{< code file="gradle-info.sh" language="Bash" options="" >}}
+{{< code file="gradle-info.sh" language="bash" options="" >}}
 {{< asciinema id="26292" caption="Comandos básicos de Gradle" >}}
 
 En los proyectos web incluiremos como dependencias las propias de Apache Tapestry, el proyecto _library_ y _core_, también aplicaremos el _plugin_ de [Tomcat][tomcat] para poder iniciar los proyectos con Gradle configurándolos para que cada uno se inicie en un puerto distinto 8080/8443 para web y 9080/9443 para back.
@@ -51,11 +51,11 @@ En el último proyecto _core_ incluiremos una clase de utilidad con los típicos
 
 Para arrancar los proyectos web deberemos inicializar la base de datos. Con [docker-compose][docker-compose] y el [archivo descriptor de Docker](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/misc/postgres/docker-compose.yml)) iniciamos el contenedor de [Docker][docker] con la base de datos PostgreSQL. La base de datos deberemos crearla manualmente pero el esquema donde se guardarán los datos los crearemos con [Liquibase que nos permite hacer modificaciones a una BBDD][elblogdepicodev-155], deberemos tenerlo instalado y su comando incluido en el _PATH_ del sistema para este ejemplo.
 
-{{< code file="database.sh" language="Bash" options="" >}}
+{{< code file="database.sh" language="bash" options="" >}}
 
 Una vez tenemos en cada directorio los archivos _build.gradle_ y el resto de archivos que necesite cada proyecto (archivos .java, .tml, ...) podemos construir los módulos a la vez o de forma individual. Podemos iniciar los proyectos web y acceder a ellos con el navegador con:
 
-{{< code file="back-run.sh" language="Bash" options="" >}}
+{{< code file="back-run.sh" language="bash" options="" >}}
 {{< asciinema id="26293" caption="Iniciando aplicación backoffice" >}}
 
 Creando un producto desde la consola de PostgreSQL y refrescando la página en el proyecto de _web_ o _back_ veremos que se visualizan sus datos.

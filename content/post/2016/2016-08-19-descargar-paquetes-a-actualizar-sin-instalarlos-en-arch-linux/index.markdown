@@ -23,15 +23,15 @@ Algunos de los paquetes del sistema como el _kernel linux_, el gestor de arranqu
 
 Para descargar las bases de datos de paquetes usamos la opción <code>-y</code> y para realizar la actualización completa de los paquetes desactualizados que tengamos instalados con la opción <code>-u</code>. Poniendo el comando completo usando <code>pacman</code> o la alternativa <code>yaourt</code>:
 
-{{< code file="pacman-update.sh" language="Bash" options="" >}}
+{{< code file="pacman-update.sh" language="bash" options="" >}}
 
 Si queremos actualizar las bases de datos de paquetes y descargar los paquetes a actualizar pero sin realizar la actualización añadimos simplemente la opción <code>-w</code> de tal forma que los comandos anteriores nos quedarían:
 
-{{< code file="pacman-download.sh" language="Bash" options="" >}}
+{{< code file="pacman-download.sh" language="bash" options="" >}}
 
 Esta opción puede ayudarnos a ahorrarnos algo de tiempo cada vez que hagamos una actualización al evitarnos esperar a la descarga de los paquetes. En la página de [manual de pacman](https://www.archlinux.org/pacman/pacman.8.html) podemos ver la multitud de opciones que tenemos disponibles aunque como usuarios las anteriores serán las que más usemos.
 
-{{< code file="pacman-man.sh" language="Bash" options="" >}}
+{{< code file="pacman-man.sh" language="bash" options="" >}}
 
 Si te interesa conocer cómo instalar Arch Linux recomiendo hacerlo antes en una máquina virtual con [VirtualBox][virtualbox] leyendo antes y siguiendo el [manual oficial](https://wiki.archlinux.org/index.php/Installation_guide), la [guía para principiantes](https://wiki.archlinux.org/index.php/Beginners'_guide) y para completarlo un artículo que escribí como [anexo a las guías oficiales][blogbitix-22] anteriores.
 

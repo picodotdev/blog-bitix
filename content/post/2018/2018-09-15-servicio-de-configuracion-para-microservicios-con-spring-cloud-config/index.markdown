@@ -25,7 +25,7 @@ Dado que este servicio de configuración es esencial para que los microservicios
 
 Con el comando <code>./gradlew configserver:run --args="--port=8090"</code> se inicia una instancia de servicio de configuración en el puerto _8090_, cambiando el número de puerto se puede iniciar otra instancia en el puerto especificado. Una vez iniciadas varias instancias en el _dashboard_ del servicio de descubrimiento se observa como se autoregistran y su estado.
 
-{{< code file="gradlew-run.sh" language="Bash" options="" >}}
+{{< code file="gradlew-run.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -50,9 +50,9 @@ El proceso de configuración de un microservicio está formado por dos pasos, en
 
 El servicio de configuración es accesible mediante una interfaz REST. Para obtener la configuración del servicio _service_ y del servicio _client_ de este ejemplo las URLs para obtenerlas son las siguientes. Estos _endpoints_ devuelven en formato _json_ un documento con los valores de las propiedades principalmente están en el mapa _source_ entre otros datos que Spring al iniciar la aplicación con ellos configura la aplicación.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
-{{< code file="service-config.json" language="JSON" options="" >}}
-{{< code file="client-config.json" language="JSON" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
+{{< code file="service-config.json" language="json" options="" >}}
+{{< code file="client-config.json" language="json" options="" >}}
 
 En otro artículo relacionado con la configuración de los microservicios comentaré [como recargar la configuración de los microservicios sin necesidad de reiniciarlos][blogbitix-349] y _como almacenar datos sensibles de forma cifrada_ para mayor seguridad.
 

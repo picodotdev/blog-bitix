@@ -28,16 +28,16 @@ La clase _ThreadLocal_ es bastante simple tiene un método para establecer el da
 
 Veamos un ejemplo en el que crearemos un filtro que detecte el dominio por el que se accede a la aplicación y lo deje disponible en una variable _ThreadLocal_ de modo que la aplicación lo tenga disponible desde cualquier capa de la aplicación. Primero crearemos una clase con variables estáticas globales que contendrá la referencia a la instancia _ThreadLocal_.
 
-{{< code file="Globals.java" language="Java" options="" >}}
+{{< code file="Globals.java" language="java" options="" >}}
 
 A continuación el filtro que obtiene el dominio de la _request_ y lo deja en el _ThreadLocal_ de forma global. Al usar una clase _ThreadLocal_ es importante limpiar el dato correctamente, en este caso usando un bloque _try_ con su _finally_ para que aunque se produzca una excepción el dato acabe desasociado del _thread_ al finalizar la petición, de lo contrario tendremos una fuga de memoria.
 
-{{< code file="AppFilter.java" language="Java" options="" >}}
+{{< code file="AppFilter.java" language="java" options="" >}}
 
 Finalmente, podemos acceder al dato desde cualquier punto de la aplicación, en este caso desde la capa de presentación en la página _Index_ de una aplicación usando [Apache Tapestry][tapestry] y desde la capa de lógica de negocio o servicios que es independiente de la capa de presentación.
 
-{{< code file="Index.java" language="Java" options="" >}}
-{{< code file="DefaultJooqProductoDAO.java" language="Java" options="" >}}
+{{< code file="Index.java" language="java" options="" >}}
+{{< code file="DefaultJooqProductoDAO.java" language="java" options="" >}}
 
 Con el filtro y las anteriores clases en la consola se imprimirán los mensajes con el dominio por el que ha sido accedida la aplicación, en este caso _localhost_.
 

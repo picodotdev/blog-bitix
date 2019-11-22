@@ -30,7 +30,7 @@ Usando varias [directivas de Nginx para la compresión](http://nginx.org/en/docs
 
 Para probarlo usaré un contenedor de [Docker][docker] en el que personalizaré la configuración y usaré mi propia bitácora como página web a servir. Para conocer Docker puedes consultar otra [serie de artículos sobre Docker][blogbitix-serie-docker] dedicados a esta tecnología de contenedores. Escrito el archivo de configuración, el contenedor se inicia con:
 
-{{< code file="docker-nginx.sh" language="Bash" options="" >}}
+{{< code file="docker-nginx.sh" language="bash" options="" >}}
 
 En la siguiente captura se aprecia que Nginx devuelve la cabecera de respuesta _Content-Enconfing: gzip_ indicando que el contenido ha sido comprimido antes de su transmisión por la red. Haciendo que Nginx haga de servidor web para mi propia bitácora se pueden apreciar la significativa diferencia en kilobytes transmitidos entre el tamaño que tienen y lo transferido para algunos recursos. Por ejemplo, el HTML de la página de inicio tiene un tamaño sin comprimir de 34,11 KB y comprimido un tamaño mucho menor 8,38 KB, una diferencia de 25,73 KB aproximadamente un ratio de compresión del 75%. Para el recurso _bootstrap.min.css_ que ya está minificado eliminando caracteres innecesarios es aún más significativo de 118,43 KB a 23,36, 95,04 KB menos un 80% de reducción.
 
@@ -48,7 +48,7 @@ Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuen
 Activado el módulo para realizar la compresión al igual que el caso de Nginx podemos establecer la cantidad de memoria reservada para la compresión, el nivel de compresión y los _mimetypes_ del contenido a comprimir. Con las [directivas adicionales de la documentación](http://httpd.apache.org/docs/current/mod/mod_deflate.html) se puede personalizar aún más el proceso de compresión.
 
 {{< code file="httpd.conf" language="Plaintext" options="" >}}
-{{< code file="docker-httpd.sh" language="Bash" options="" >}}
+{{< code file="docker-httpd.sh" language="bash" options="" >}}
 
 Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Apache el recurso a servir ha de tener cierto tamaño siendo de unos pocos bytes opta por servirlo sin comprimir ya que considerará que no producirá un ahorro significativo.
 

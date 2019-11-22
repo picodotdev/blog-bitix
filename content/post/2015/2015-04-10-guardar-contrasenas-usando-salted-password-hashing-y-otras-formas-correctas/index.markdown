@@ -34,7 +34,7 @@ Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque 
 
 Antes de comentar alguna opción más que dificulte los ataques de fuerza bruta o de diccionario veamos como implementar _Salted Password Hashing_ empleando Apache Shiro como librería de autenticación y autorización para los usuarios. El ejemplo será simple sin guardar los datos en una base de datos pero suficiente para mostrar que se debe añadir al proyecto para que Shiro compruebe las contraseñas usando una función de _hash_ y un _salt_. Partiré de un ejemplo que hice para el [libro PlugIn Tapestry][blogbitix-12] sobre el desarrollo de aplicaciones web con el _framework_ [Apache Tapestry][tapestry]. Básicamente deberemos crear un nuevo _Realm_ que devuelva los datos del usuario, el _hash_ y el _salt_. Una implementación suficiente para el ejemplo sería la siguiente, la parte importante está en el método _doGetAuthenticationInfo_, las clases _SimpleAuthenticationInfo_ y _HashedCredentialsMatcher_ y en la inicialización _static_ de la clase:
 
-{{< code file="Realm.java" language="Java" options="" >}}
+{{< code file="Realm.java" language="java" options="" >}}
 
 Las contraseñas _hasheadas_ tendrán la siguiente forma, podemos guardarlas codificadas en formato hexadecimal o en formato Base64:
 
@@ -42,7 +42,7 @@ Las contraseñas _hasheadas_ tendrán la siguiente forma, podemos guardarlas cod
 
 En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe modificar la configuración para que se utilice el nuevo _Realm_ el antiguo guardaba las contraseñas en texto plano (_shiro-users.properties_).
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 
 El cambio de _Realm_ para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con _root_ como usuario y _password_ como contraseña.
 
@@ -65,7 +65,7 @@ Para implementar la segunda opción deberemos proporcionar implementaciones prop
 
 El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado en un repositorio de GitHub, es completamente funcional y puedes probarlo en tu equipo. Una vez descargado el siguiente comando e introduciendo en el navegador _http\://localhost:8080/PlugInTapestry_, en la página que se muestra hay un botón para iniciar sesión:
 
-{{< code file="gradlew.sh" language="Bash" options="" >}}
+{{< code file="gradlew.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

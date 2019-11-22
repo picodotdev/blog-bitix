@@ -24,13 +24,13 @@ Los sistemas de información empleados tradicionalmente en las aplicaciones son 
 Al igual que las bases de datos relacionales MongoDB posee un _shell_ JavaScript con el que lanzar todas las operaciones anteriores que junto con [Docker][docker] la experimentación de todo lo anterior será una tarea no demasiado complicada. Bastará descargar la [imagen de MongoDB para Docker](https://hub.docker.com/_/mongo/), iniciar un contenedor, iniciar una _shell bash_ en el contenedor y la _shell_ de MongoDB desde la que lanzar las consultas. Siguendo la [seríe de artículos sobre Docker][blogbitix-serie-docker] en unas pocas horas puedes usarlo.
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="docker-compose.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.sh" language="bash" options="" >}}
 
 La base de datos MongoDB al igual que muchas NoSQL no soporta completamente las propiedades ACID de las bases de datos relacionales, no soporta transacciones aunque sí garantiza que las operaciones individuales son atómicas, pero a cambio proporciona otras propiedades que para algunas necesidades podemos considerar más adecuadas como mayor escalabilidad horizontal, alta disponibilidad, réplicas y _shards_ para distribuir los datos entre varias instancias. MongoDB guarda la información en documentos con formato JSON.
 
 En vez de tablas, filas y columnas los términos en MongoDB son colecciones de documentos, los documentos son la unidad mínima de información almacenable y propiedades en esos documentos. Una propiedad interesante de los documentos es que estos no tiene porque tener todos las mismas propiedades, aunque se recomienda que las propiedades sean siempre del mismo tipo. Los documentos hacen menos necesarios y complejos los <abbr title="Object-Relational mapping">[ORM][orm]</abbr> para convertir del modelo relacional usado en las bases de datos al modelo de objetos de la aplicación.
 
-{{< code file="documents.json" language="JSON" options="" >}}
+{{< code file="documents.json" language="json" options="" >}}
 
 Se pueden almacenar los documentos anteriores en la misma colección de artículos aunque ambos no tengan las mismas propiedades, en una base de datos relacional sería más complicado y en el caso de que los datos fuesen desconocidos en el momento de definir el modelo obligaría a usar el [modelo entity-atribute-value](https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model).
 
@@ -40,10 +40,10 @@ Algunas bases de datos NoSQL no necesitan del potente lenguaje de consulta SQL d
 
 Estas son las [operaciones CRUD][crud] ejecutadas desde la _shell_ de MongoDB en una colección de artículos.
 
-{{< code file="insert.json" language="JSON" options="" >}}
-{{< code file="find.json" language="JSON" options="" >}}
-{{< code file="update.json" language="JSON" options="" >}}
-{{< code file="delete.json" language="JSON" options="" >}}
+{{< code file="insert.json" language="json" options="" >}}
+{{< code file="find.json" language="json" options="" >}}
+{{< code file="update.json" language="json" options="" >}}
+{{< code file="delete.json" language="json" options="" >}}
 
 MongoDB proporciona controladores para acceder a la base de datos desde los lenguejes de programación más populares como muestro en el artículo [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239].
 

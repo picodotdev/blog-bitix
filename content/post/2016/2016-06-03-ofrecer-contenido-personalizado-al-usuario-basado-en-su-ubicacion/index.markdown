@@ -24,9 +24,9 @@ En [Arch Linux][archlinux] al igual que en muchas otras distribuciones [GNU][gnu
 
 Instalados los paquetes con las bases de datos de geoposicionamiento en la distribución GNU/Linux su uso desde la línea de comandos es el siguiente, indicando la dirección IP o nombre de dominio de la que queramos conocer su ubicación:
 
-{{< code file="geoiplookup-85.84.77.93.sh" language="Bash" options="" >}}
-{{< code file="geoiplookup-8.8.8.8.sh" language="Bash" options="" >}}
-{{< code file="geoiplookup-marca.es.sh" language="Bash" options="" >}}
+{{< code file="geoiplookup-85.84.77.93.sh" language="bash" options="" >}}
+{{< code file="geoiplookup-8.8.8.8.sh" language="bash" options="" >}}
+{{< code file="geoiplookup-marca.es.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -40,7 +40,7 @@ Este sería el código para obtener la información de forma más sencilla que l
 
 En el siguiente ejemplo no incluyo la base de datos en el código fuente del proyecto ya que ocupa casi 65MiB. Descargada, descomprimida y ubicada en el directorio _src/main/resources_ la aplicación se iniciar con el comando <code>./gradlew run</code>.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 <div class="media" style="text-align: center;">

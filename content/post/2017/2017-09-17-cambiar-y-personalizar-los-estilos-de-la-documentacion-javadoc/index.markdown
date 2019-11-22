@@ -53,7 +53,7 @@ La [tarea de Gradle para generar la documentación Javadoc](https://docs.gradle.
 
 El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help_ se obtiene una listado y descripción de cada una de ellas. Dependiendo del destinatario de la documentación, se pueden limitar las clases que son incluidas en el Javadoc si por ejemplo solo se quiere ofrecer la documentación de la parte pública.
 
-{{< code file="javadoc-help.sh" language="Bash" options="" >}}
+{{< code file="javadoc-help.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 

@@ -40,8 +40,8 @@ En la parte servidora Sleuth proporciona un filtro que se encarga de obtener y c
 
 Este es el código para instrumentalizar el cliente HTTP de _Jersey_ que utiliza el servicio cliente que invoca al _gateway_ y el código para crear el _span_ en el cliente con los identificativos de correlación y recogerlos en el servicio servidor.
 
-{{< code file="ProxyService.java" language="Java" options="" >}}
-{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="ProxyService.java" language="java" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
 
 He utilizado el ejemplo de la [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] añadiendo el soporte para Spring Cloud Sleuth. La aplicación se compone de un microservicio de configuración (con [Spring Cloud Config][spring-cloud-config]), otro de registro y descubrimiento (con Eureka), un servicio de API _gateway_ (con Zuul), el servicio de aplicación y un cliente del servicio que envía las peticiones al _gateway_ y este las redirige al servicio de aplicación.
 
@@ -51,7 +51,7 @@ El cliente inicia un _span_ que es enviado al servidor y el servidor obtiene las
 
 Para iniciar los diferentes microservicios de la aplicación hay que utilizar los siguientes comandos.
 
-{{< code file="gradle-run.sh" language="Bash" options="" >}}
+{{< code file="gradle-run.sh" language="bash" options="" >}}
 
 En los proyectos hay que incluir la dependencia para Sleuth en la herramienta de construcción.
 

@@ -37,7 +37,7 @@ Si usamos Windows deberemos ejecutar los siguientes comandos en modo administrad
 
 En el caso de Linux el archivo de comandos es similar e igualmente sustituiremos _macOS Sierra 10.12_ por el nombre que le hayamos dado a la máquina virtual al crearla:
 
-{{< code file="linux.sh" language="Bash" options="" >}}
+{{< code file="linux.sh" language="bash" options="" >}}
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos que empiezan a salir unos cuantos mensajes hasta que se inicia el sistema gráfico con la instalación y su asistente que constará de varios pasos.
 

@@ -36,11 +36,11 @@ Consul además de descubrimiento de servicios proporciona otras funcionalidades 
 
 Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección _http\://localhost:8500_ con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
 
-{{< code file="consul.sh" language="Bash" options="" >}}
+{{< code file="consul.sh" language="bash" options="" >}}
 
 Una aplicación que use Spring Boot y que quiera hacer pública su disponibilidad en Consul basta con que use la anotación <code>@EnableDiscoveryClient</code> en la clase de inicio de la aplicación junto con las dependencias adecuadas. Con la declaración de esta anotación y la dependencia _spring-cloud-starter-consul-all_ Spring se comunicará con Consul a través de la API REST para registrar cuando se inicie la aplicación, su nombre, nombre de máquina y puerto en el que estará disponible.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="application.yml" language="YAML" options="" >}}
 
 Spring Cloud proporciona además un servicio que podemos usar para conocer los servicios registrados en Consul, con la clase _DiscoveryClient_ podemos conocer los nombres de los servicios, su nombre de máquina y puerto desde una aplicación Java. En el método _run_ de la clase _Main_ se usa en este ejemplo para imprimir en la salida el listado de servicios registrados en Consul. Uno de esos servicios esta aplicación de ejemplo, ya que se registra en Consul cuando se inicia.

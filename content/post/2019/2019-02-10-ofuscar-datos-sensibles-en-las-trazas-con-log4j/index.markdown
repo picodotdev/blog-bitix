@@ -24,8 +24,8 @@ Los archivos de trazas o _logs_ contienen información de lo que ha realizado la
 
 En el siguiente ejemplo se hace uso de _lookahead_ como se detalla en la clase [Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html) de Java para añadir la funcionalidad de que los últimos caracteres queden visibles y la clase _SecuredMessage_ aplica expresiones regulares al mensaje, en caso de encontrar una coincidencia realiza la ofuscación.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="SecuredMessage.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="SecuredMessage.java" language="java" options="" >}}
 
 Utilizar una clase que implemente la interfaz [Message](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html) para realizar el reemplazo requiere modificar todos los puntos de la aplicación que emitan información sensible, para evitar posibles omisiones este aspecto de la aplicación se puede delegar en Log4j y ser aplicado de forma global.
 

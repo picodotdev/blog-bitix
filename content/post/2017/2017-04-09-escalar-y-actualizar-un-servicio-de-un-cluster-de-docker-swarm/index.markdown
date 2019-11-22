@@ -24,7 +24,7 @@ Una vez que ya hemos [creado un _cluster_ de nodos con Docker Swarm][blogbitix-2
 
 En la documentación de [Docker][docker] están detallados y comentados los [comandos para escalar un servicio](https://docs.docker.com/engine/swarm/swarm-tutorial/scale-service/). Por ejemplo, en el _cluster_ de ejemplo formado por tres nodos, uno con el rol de _manager_ y otros dos como _worker_, ejecutándose en [VirtualBox][virtualbox] y desplegando un servicio para el servidor [nginx][nginx] con inicialmente una réplica o instancia podemos escalar el servicio para que se cree alguna instancia o contenedor más del servicio con el siguiente comando <code>docker service scale</code>.
 
-{{< code file="06-nginx-scale.sh" language="Bash" options="" >}}
+{{< code file="06-nginx-scale.sh" language="bash" options="" >}}
 
 Al igual que cuando se crea un contenedor para un servicio en el _cluster_ [Docker Swarm][docker-swarm] si no se indica alguna restricción decidirá en qué nodos se crean las nuevas instancias o contenedores del servicio.
 
@@ -42,7 +42,7 @@ Por otro lado, una vez desplegados en un _cluster_ algunos servicios llegará el
 
 En el ejemplo al crear el _cluster_ se usa la última imagen de docker para nginx, en un entorno de producción es más recomendable establecer una versión en concreto para evitar que la imagen que se usa no varía desde que se prueba hasta que se despliega. El siguiente _script_ actualiza la imagen a la versión _nginx:1.10-alpine_ en todas las réplicas del servicio de nginx en el _cluster_.
 
-{{< code file="06-nginx-update.sh" language="Bash" options="" >}}
+{{< code file="06-nginx-update.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

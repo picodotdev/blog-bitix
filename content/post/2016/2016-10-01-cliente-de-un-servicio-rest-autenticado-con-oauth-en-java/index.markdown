@@ -26,7 +26,7 @@ Primero añadiremos como dependencia del proyecto la librería HttComponents. Co
 
 Este sencillo cliente realiza varias peticiones _get_ y _post_. Una para obtener la configuración de los _endpoints_, el que nos interesa es el de obtener un _access token_, otra petición para obtener el _access token_ y finalmente con el _access token_ invocar al servicio mediante otra petición.
 
-{{< code file="ClientMain.java" language="Java" options="" >}}
+{{< code file="ClientMain.java" language="java" options="" >}}
 
 Iniciado [Keycloak][keycloak] con [Docker][docker], configurado el _realm_ y creado un cliente junto con un rol e iniciado el servicio REST podemos ejecutar el cliente que invoque al servicio. El resultado de las trazas que obtendremos en la terminal será el siguiente.
 

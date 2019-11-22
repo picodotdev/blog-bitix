@@ -25,8 +25,8 @@ La clase tiene varios métodos uno que indica el nombre único del _taglet_ que 
 
 Los _taglets_ pueden ser de tipo bloque con su propia entidad o ser embebidos en linea en un comentario del _javadoc_. En ejemplo de _taglet_ de bloque siguiente consiste en permitir incluir elementos que quedan por hacer en el código, una anotación _todo_. Con esta anotación el desarrollador incluye un comentario descriptivo de cuales son las cosas pendientes para un futuro. El código del _taglet_ sería el siguiente.
 
-{{< code file="TodoTaglet.java" language="Java" options="" >}}
-{{< code file="Main.java" language="Java" options="" >}}}
+{{< code file="TodoTaglet.java" language="java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}}
 
 Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su ubicación al generar la documentación con la herramienta _javadoc_. Hay que indicar varias opciones (_tagletPath_ y _taglets_) que también se usarían como parámetros empleando directamente la herramienta _javadoc_, los comandos serían los siguientes usando [Gradle][gradle]. También hay que incluir de forma explícita como dependencia la librería _tools.jar_ ubicado en el JDK.
 

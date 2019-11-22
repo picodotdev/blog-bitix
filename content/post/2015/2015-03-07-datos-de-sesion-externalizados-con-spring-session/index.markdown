@@ -28,15 +28,15 @@ Las soluciones más comentadas son:
 
 Usando [Spring Session][spring-session] se puede externalizar los datos de la sesión en un servidor Redis usándolo como caché externa. Para demostrar y enseñar el código necesario he creado una pequeña aplicación web con [Spring Boot][spring-boot]. El controlador no tiene nada especial, obtiene la sesión y guarda los datos enviados en un formulario en la sesión, luego esta transparentemente se serializa en Redis. Usando la anotación _@SpringBootApplication_ con la autoconfiguración se activa la infraestructura necesaria en el contenedor de Spring para guardar los datos de la sesión en Redis incluida la conexión a Redis. Por supuesto hay que añadir las dependencias necesarias al proyecto entre ellas el cliente Java de Redis.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="SessionController.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="SessionController.java" language="java" options="" >}}
 {{< code file="docker-compose.yml" language="Yaml" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 Descargado el [código fuente de la aplicación de ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringSession) y utilizando [Docker][docker] para iniciar el servidor Redis se puede iniciar la aplicación con el comando:
 
-{{< code file="docker-compose.sh" language="Bash" options="" >}}
-{{< code file="gradlew.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.sh" language="bash" options="" >}}
+{{< code file="gradlew.sh" language="bash" options="" >}}
 
 Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Derteniendo la aplicación e iniciándolo de nuevo los datos de la sesión no se pierden al estar persistidos en Redis, el navegador envía la _cookie_ de sesión que contiene únicamente su identificativo y la aplicación recupera los datos de Redis.
 

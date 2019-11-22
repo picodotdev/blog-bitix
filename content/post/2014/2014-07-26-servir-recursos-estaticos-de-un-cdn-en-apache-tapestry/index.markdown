@@ -34,11 +34,11 @@ Para que el contenido estático se sirva del CDN debemos hacer que las URL de la
 
 Una de las cosas muy interesantes de Tapestry es que podemos modificar prácticamente cualquier comportamiento del mismo, esto es debido a que la mayor parte de sus funcionalidades son ofrecidas mediante servicios que podemos sobreescribir con los que nosotros proporcionemos, el contenedor de dependencias (IoC) de tapestry lo hace muy fácil. Para modificar las URL de los recursos estáticos que son generados en Tapestry deberemos implementar la clase [AssetPathConverter](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/services/AssetPathConverter.html). Una implementación podría ser la siguiente:
 
-{{< code file="CDNAssetPathConverterImpl.java" language="Java" options="" >}}
+{{< code file="CDNAssetPathConverterImpl.java" language="java" options="" >}}
 
 También deberemos añadir un poco de configuración al módulo de la aplicación para que se use esta nueva implementación. Esto se hace en el método serviceOverride de la clase AppModule.java, donde también en el método contributeApplicationDefaults configuramos los símbolos que se usarán al generar las URLs entre ellos el dominio del CDN.
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 
 Estas serían las URLs por defecto:
 

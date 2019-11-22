@@ -52,7 +52,7 @@ Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente n
 
 Quizá debamos cambiar el propietario y permisos con:
 
-{{< code file="script-1.sh" language="Bash" options="" >}}
+{{< code file="script-1.sh" language="bash" options="" >}}
 
 El archivo localhost.pem contiene la clave y el certificado.
 

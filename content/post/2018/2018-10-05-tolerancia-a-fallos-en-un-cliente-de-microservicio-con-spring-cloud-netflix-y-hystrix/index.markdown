@@ -46,13 +46,13 @@ Para utilizar Hystrix como implementación del patrón _circuit breaker_ en una 
 
 En el ejemplo el cliente en un bucle realiza las llamadas al servicio con un método _get()_ anotado con _@HystrixCommand_. En este método se encapsula la petición HTTP que puede fallar, utilizando la librería [Jersey][jersey] y obtenida la ubicación de una instancia del servicio a su vez del servicio de registro y descubrimiento [Eureka][netflix-eureka].
 
-{{< code file="ClientService.java" language="Java" options="" >}}
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="ClientService.java" language="java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 El circuito se abre cuando el número de llamadas supera un umbral y un porcentaje de fallos, se han de cumplir las dos condiciones. Si el número de llamadas que se realizan no superan el umbral aunque todas fallen el circuito permanece cerrado. Ambos valores son personalizables con las propiedades _circuitBreaker.requestVolumeThreshold_ y _circuitBreaker.errorThresholdPercentage_. El circuito permanece abierto al menos durante el tiempo indicado por _metrics.rollingStats.timeInMilliseconds_.
 
-{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
 
 En la aplicación ejemplo hay un microservicio servidor y un microservicio cliente, iniciada una instancia de microservicio servidor y una instancia del microservicio cliente que implementa el patrón _circuit breaker_ inicialmente las peticiones se realizarán correctamente si no ocurre un _timeout_. Si se finaliza el proceso del microservicio servidor las peticiones del cliente al servidor empezarán a fallar y este obtiene el valor alternativo del método _fallback_, si se supera el umbral de llamadas y de fallos el circuito pasa a estado abierto. Mientras el circuito permanezca abierto el cliente sondea con una petición cada cierto tiempo el estado del servidor, si el servicio servidor se inicia unos instantes después de que esté disponible el cliente con la petición de sondeo comprobará que el servidor funciona, se cerrará el circuito y el cliente empezará a obtener los valores devueltos por el microservicio servidor.
 
@@ -67,7 +67,7 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
         caption="Estados del circuit breaker" >}}
 </div>
 
-{{< code file="gradle-run.sh" language="Bash" options="" >}}
+{{< code file="gradle-run.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 

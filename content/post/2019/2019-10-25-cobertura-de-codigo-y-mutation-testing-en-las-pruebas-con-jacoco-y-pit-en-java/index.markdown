@@ -55,12 +55,12 @@ Para complementar la cobertura de código y obtener una medida de la precisión 
 
 En siguiente ejemplo, la clase _TicketPriceCalculator_ calcula el precio de los billetes de un grupo de viajeros. La lógica del calculador de precios determina el precio en función de la edad de los pasajeros y de si cumplen la condición de familia se les aplica un descuento.
 
-{{< code file="Passenger.java" language="Java" options="" >}}
-{{< code file="TicketPriceCalculator.java" language="Java" options="" >}}
+{{< code file="Passenger.java" language="java" options="" >}}
+{{< code file="TicketPriceCalculator.java" language="java" options="" >}}
 
 La siguiente batería de teses proporciona una cobertura de teses del cien por cien tanto para la cobertura del código como para las mutaciones como se muestran en los informes de [JaCoCo][jacoco] para la cobertura de código y de PIT para la cobertura de mutaciones, después de haber realizado cambios tanto en el código como en los teses para obtener estos resultados.
 
-{{< code file="TicketPriceCalculatorTest.java" language="Java" options="" >}}
+{{< code file="TicketPriceCalculatorTest.java" language="java" options="" >}}
 
 Sin los casos de prueba _calculatePriceForChildNarrowCase_ y _calculatePriceForFreeTicketNarrowCase_ los teses son correctos, pero si PIT con una edad de 16 realiza una operación de mutación cambiando los límites de la condición de _passenger.getAge() > FREE_TICKET_AGE_BELOW && passenger.getAge() <= ADULT_AGE_, la mutación de _<=_ a <_ sobrevive, esto inidica que los teses y casos de prueba no son totalmente precisos. Para que esta mutación no sobreviva hay que añadir estos dos teses que se encargan de comprobar los límites de las condiciones. El valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, es un niño si su edad está comprendida a partir de _3_ y menor e igual que 18.
 
@@ -87,7 +87,7 @@ El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada
 Para generar los informes de cobertura de código y de mutación en Java y usando [Gradle][gradle] como herramienta de construcción las herramientas JaCoCo y PIT proporcionan un complemento o _plugin_ que hay que añadir al archivo de construcción además de proporcionar algunas opciones de configuración en la sección _pitest_, entre estas propiedades está _mutators_ en la que se puede indicar los _mutators_ que PIT emplea para lanzar los teses con mutaciones. Los informes se generan en el directorio _build/reports/_. Realizar _mutation testing_ solo requiere cierta configuración en el archivo de construcción del proyecto.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="gradlew-run.sh" language="Bash" options="" >}}
+{{< code file="gradlew-run.sh" language="bash" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaMutationTesting" command="./gradlew test jacocoTestReport pitest" %}}
 

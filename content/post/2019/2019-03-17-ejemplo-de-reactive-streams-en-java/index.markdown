@@ -27,7 +27,7 @@ Un _Publisher_ publica elementos para los _Subscriber_ basándose en sus demanda
 
 En el ejemplo de código un productor produce y los consumidores procesan elementos a cierto ritmo, dependiendo de la velocidad relativa de cada uno se usará un modelo _push_ o _pull_. La clase _Flow.Processor_ permite procesar los elementos del productor para aplicarles alguna transformación antes de que sean entregados a los consumidores, actual como consumidor y productor. En este _stream_ de números enteros se aplica la función elevarlos al cuadrado.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 {{< code file="System.out" language="Plaintext" options="" >}}
 

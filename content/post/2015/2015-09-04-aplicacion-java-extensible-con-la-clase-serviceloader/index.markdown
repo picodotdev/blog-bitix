@@ -21,21 +21,21 @@ Puede que al desarrollar una aplicación necesitamos que esta sea extensible, es
 
 A través de la clase _ServiceLoader_ y con su método estático [load](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html#load-java.lang.Class-) cargamos los servicios que implementen una determinada interfaz, en el parámetro de tipo _Class_ indicamos la interfaz del servicio. Por ejemplo, supongamos que tenemos la siguiente definición de servicio:
 
-{{< code file="Saludador.java" language="Java" options="" >}}
+{{< code file="Saludador.java" language="java" options="" >}}
 
 En el momento de desarrollar esta aplicación podemos definir unos cuantos servicios que implementen la interfaz _Saludador_ pero deseamos que en futuro podamos o un tercero pueda añadir más servicios para otros _locales_. La implementación de estos servicios en Español, Inglés y Euskera sería:
 
-{{< code file="EspanolSaludador.java" language="Java" options="" >}}
-{{< code file="InglesSaludador.java" language="Java" options="" >}}
-{{< code file="EuskeraSaludador.java" language="Java" options="" >}}
+{{< code file="EspanolSaludador.java" language="java" options="" >}}
+{{< code file="InglesSaludador.java" language="java" options="" >}}
+{{< code file="EuskeraSaludador.java" language="java" options="" >}}
 
 Iniciando la aplicación podemos obtener los servicios disponibles para ser usados con el siguiente código:
 
-{{< code file="Main1.java" language="Java" options="" >}}
+{{< code file="Main1.java" language="java" options="" >}}
 
 Para obtener el mensaje de saludo en el idioma que deseemos basta con obtenerlo de la lista si está disponible y usarlo:
 
-{{< code file="Main2.java" language="Java" options="" >}}
+{{< code file="Main2.java" language="java" options="" >}}
 
 La clase _ServiceLoader_ busca los servicios en los archivos _META-INF/services/[interfaz]_ que haya disponibles en cualquiera de las librerías jar incluidas en el _classpath_, en el caso de este ejemplo el archivo sería _META-INF/services/io.github.picodotdev.serviceloader.Saludador_ y este su contenido con las tres implementaciones de servicios incluidas en el ejemplo:
 

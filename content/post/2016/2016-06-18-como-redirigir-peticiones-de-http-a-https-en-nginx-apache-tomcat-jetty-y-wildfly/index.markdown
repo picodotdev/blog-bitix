@@ -30,7 +30,7 @@ Usando [Docker][docker] nos resultará más sencillo hacer la prueba que teniend
 En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el pueto HTTPS (443) accitva el uso de TLS/SSL usando varias directivas y sirve los documentos de _/usr/share/nginx/html_ en la ruta _/_.
 
 {{< code file="nginx.conf" language="Plaintext" options="" >}}
-{{< code file="docker-nginx.sh" language="Bash" options="" >}}
+{{< code file="docker-nginx.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -42,7 +42,7 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 La configuración para Apache HTTPD es similar simplemente cambian las directivas según su propia configuración. Se activan los módulos para usar TLS/SSL y el que permite hacer reescrituras de las URL.
 
 {{< code file="httpd.conf" language="Plaintext" options="" >}}
-{{< code file="docker-httpd.sh" language="Bash" options="" >}}
+{{< code file="docker-httpd.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -60,7 +60,7 @@ Para el caso de Tomcat, Jetty y WildFly habiendo configurado la posibilidad de u
 ### Redirección a nivel de aplicación
 Con algún mecanismo propio que empleemos al programar la aplicación (en Java por ejemplo con un filtro) o el _framework_ web que usemos para desarrollar la aplicación web quizá nos ofrezca algún mecanismo para redirigir las peticiones al puerto seguro cuando sea accedida por el puerto inseguro, por ejemplo, para que la redirección la haga la aplicación en vez del servidor con el _framework_ Apache Tapestry basta añadir la siguiente configuración en el módulo de la aplicación.
 
-{{< code file="AppModule.java" language="Java" options="" >}}
+{{< code file="AppModule.java" language="java" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 

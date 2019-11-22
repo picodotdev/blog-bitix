@@ -24,7 +24,7 @@ Si extraemos las canciones de un CD de música dependiendo del programa obtendre
 
 La herramienta FFmpeg nos permite hacer las conversiones, por ejemplo para convertir de wav a mp3, de wav a ogg o de mp3 a ogg ejecutaríamos los siguientes comandos:
 
-{{< code file="convert.sh" language="Bash" options="" >}}
+{{< code file="convert.sh" language="bash" options="" >}}
 
 Con la opción _-i_ indicamos el archivo a convertir, con la opción _-acodec_ indicamos el códec a usar para la conversión, en este caso _libmp3lame_ para mp3, _libvorbis_ para ogg y el último parámetro para indicar el archivo de salida. Para convertir a otros formatos los códecs que debemos usar son:
 
@@ -35,11 +35,11 @@ Con la opción _-i_ indicamos el archivo a convertir, con la opción _-acodec_ i
 
 Para hacer la conversión no de un archivo individual sino de forma masiva o múltiple que en los casos anteriores usamos:
 
-{{< code file="masive-convert.sh" language="Bash" options="" >}}
+{{< code file="masive-convert.sh" language="bash" options="" >}}
 
 Para hacer un conversión masiva, recursiva y en múltiples directorios usamos:
 
-{{< code file="recursive-convert.sh" language="Bash" options="" >}}
+{{< code file="recursive-convert.sh" language="bash" options="" >}}
 
 En la [documentación de FFmpeg](https://trac.ffmpeg.org/wiki) podemos encontrar más parámetros al hacer las conversiones como modificar la calidad, la tasa de bits y por tanto el tamaño del archivo o extraer ciertas partes de un audio o canción. FFmpeg no sirve solo para archivos de sonido o música también sirve para [realizar conversiones entre formatos de archivos de vídeo][blogbitix-135] o para extraer el audio de un vídeo pero eso quizá sea contenido para otro artículo.
 

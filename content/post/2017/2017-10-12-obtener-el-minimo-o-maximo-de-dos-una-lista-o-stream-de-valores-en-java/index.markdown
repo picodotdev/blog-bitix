@@ -23,7 +23,7 @@ Sin embargo, en la API de Java hay dos métodos que permiten simplificar esta ta
 
 Este sería el código para los casos de comparar dos elementos, una lista y un stream de valores. Se que se puede probar con [la herramienta JShell][blogbitix-265] incluída entre [otras novedades de Java 9][blogbitix-264]. En la lista de 20 valores aleatorios el menor es el 2 y entre la variable _a_ y _b_ el valor mínimo es 19. 
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

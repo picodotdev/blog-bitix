@@ -33,16 +33,16 @@ La generación de código se ha vuelto ubicua en muchas de las librerías más p
 
 Un ejemplo sencillo de la definición de una nueva clase en tiempo de ejecución con el método [String.toString()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toString--) que devuelve un valor fijo sería la siguiente:
 
-{{< code file="Main-1.java" language="Java" options="" >}}
+{{< code file="Main-1.java" language="java" options="" >}}
 
 Con los métodos [saveIn](http://bytebuddy.net/javadoc/1.4.28/net/bytebuddy/dynamic/DynamicType.html#saveIn-java.io.File-), [inject](http://bytebuddy.net/javadoc/1.4.28/net/bytebuddy/dynamic/DynamicType.html#inject-java.io.File-) y [toJar](http://bytebuddy.net/javadoc/1.4.28/net/bytebuddy/dynamic/DynamicType.html#toJar-java.io.File-) de [DynamicType.Unloaded](http://bytebuddy.net/javadoc/1.4.28/net/bytebuddy/dynamic/DynamicType.Unloaded.html) podemos generar las clases en el momento de construcción de la aplicación previo a que sea desplegada y guardarlas en archivos _.class_ o en librerías _.jar_.
 
-{{< code file="Main-2.java" language="Java" options="" >}}
+{{< code file="Main-2.java" language="java" options="" >}}
 
 Usando los selectores adecuados como _method_, _field_, _constructor_, _named_ entre muchos otros de la clase [ElementMatchers](http://bytebuddy.net/javadoc/1.4.28/net/bytebuddy/matcher/ElementMatchers.html) seremos capaces de interceptar las llamadas a los métodos y establecerles el comportamiento que deseemos.
 
-{{< code file="Main-3.java" language="Java" options="" >}}
-{{< code file="Foo.java" language="Java" options="" >}}
+{{< code file="Main-3.java" language="java" options="" >}}
+{{< code file="Foo.java" language="java" options="" >}}
 
 Byte Buddy permite tres tipos de extensiones:
 
@@ -54,9 +54,9 @@ Devolver valores fijos en un método seguramente no será lo que deseemos en muc
 
 Podemos proporcionar implementaciones de métodos de la siguiente forma, suponiendo que queremos redefinir el método _hello_ de la clase _Source_ con el comportamiento implementado en la clase _Target_:
 
-{{< code file="Main-4.java" language="Java" options="" >}}
-{{< code file="Source.java" language="Java" options="" >}}
-{{< code file="Target.java" language="Java" options="" >}}
+{{< code file="Main-4.java" language="java" options="" >}}
+{{< code file="Source.java" language="java" options="" >}}
+{{< code file="Target.java" language="java" options="" >}}
 
 Dicho esto, la generación de código en tiempo de ejecución o compilación nos permite nuevas posibilidades que solo ofrecían lenguajes dinámicos o de resolver problemas con [programación orientada a aspectos](https://en.wikipedia.org/wiki/Aspect-oriented_programming). Aún así hay que tener en cuenta que las clases Java son elementos especiales para la la máquina virtual y nunca son recolectadas por el recolector de basura mientras su [ClassLoader](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html) este en uso por alguna de las clases que hay cargadas en la aplicación.
 

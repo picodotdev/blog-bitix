@@ -30,7 +30,7 @@ Descargar y ejecutar un programa en GNU/Linux de una fuente externa a los reposi
 
 **ADVERTENCIA: no los ejecutes!**. El primero elimina todos los archivos del sistema y el segundo por mucho que parezcan unos extraños inocentes emoticonos crea procesos hasta que agota los recursos del sistema. Un usuario de GNU/Linux precavido y con conocimientos antes revisaría el contenido de cualquier _script_ o binario ejecutable y no ejecutaría nada en caso de duda.
 
-{{< code file="nuke.sh" language="Bash" options="" >}}
+{{< code file="nuke.sh" language="bash" options="" >}}
 
 Dicho lo cual, tanto GNU/Linux y Windows tendrán un nivel de seguridad no tan diferente bien configurados pero el hecho de que los primeros normalmente se basan en software libre, usan repositorios de software confiables, se mantienen siempre actualizados y más rápidamente (al no suponer un coste en nuevas licencias de Windows ni tiene una fecha de expiración del soporte como Windows XP, Vista o Windows 7), se evitan usar activadores, el código fuente está disponible para cualquiera que quiera verlo, la seguridad es auditable y si contuviese alguna función maliciosa podría ser descubierta con mayor facilidad, junto con que los usuarios de GNU/Linux tienen de media más conocimientos que los usuarios Windows, es una plataforma minoritaria en cuota de uso, más fragmentada en diferentes distribuciones y por tanto menos atractiva para atacar hace que GNU/Linux a nivel de usuario tenga menos problemas de seguridad.
 

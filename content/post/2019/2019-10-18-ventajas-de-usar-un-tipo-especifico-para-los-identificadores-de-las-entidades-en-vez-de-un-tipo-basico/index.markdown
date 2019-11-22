@@ -23,26 +23,26 @@ El inconveniente es que al ser el identificador un tipo de datos básico cualqui
 
 También en cierta medida es un problema en la legibilidad del código ya que el tipo de dato de una variable no es significativo para saber si es un identificador. También es un problema al trabajar con colecciones, los siguientes ejemplos de código demuestran que los tipos no son todo lo semánticos o significativos que deberían.
 
-{{< code file="Collection-Long.java" language="Java" options="" >}}
+{{< code file="Collection-Long.java" language="java" options="" >}}
 
 La solución es crear un tipo para cada identificador de cada entidad y en vez de usar un _Long_ pasar a usar un _ProductoId_, _UsuarioId_, _CompraId_ o como en el ejemplo _EventId_. Estas serían unas posibles implementaciones.
 
-{{< code file="EntityId.java" language="Java" options="" >}}
-{{< code file="LongId.java" language="Java" options="" >}}
-{{< code file="EventId.java" language="Java" options="" >}}
+{{< code file="EntityId.java" language="java" options="" >}}
+{{< code file="LongId.java" language="java" options="" >}}
+{{< code file="EventId.java" language="java" options="" >}}
 
 El tipo de las colecciones ahora son más semánticas además de que el compilador realizará comprobaciones de tipos.
 
-{{< code file="Collection-EventId.java" language="Java" options="" >}}
+{{< code file="Collection-EventId.java" language="java" options="" >}}
 
 En la popular herramienta ORM de persistencia [Hibernate][Hibernate] o JPA se puede usar el tipo propio para el identificador usando la anotación [@Converter](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Converter.html) y en otra alternativa de persistencia para Java como [jOOQ][jooq] especificando en el generador el tipo que se quiere usar para una columna. En ambos casos hay que proporcionar una implementación que convierta del tipo de la base de datos al del identificador en el dominio y viceversa. Son muy simples.
 
-{{< code file="EventIdConverter-hibernate.java" language="Java" options="" >}}
-{{< code file="EventIdConverter-jooq.java" language="Java" options="" >}}
+{{< code file="EventIdConverter-hibernate.java" language="java" options="" >}}
+{{< code file="EventIdConverter-jooq.java" language="java" options="" >}}
 
 En una entidad de Hibernate los identificadores se definen de la siguiente forma.
 
-{{< code file="Event.java" language="Java" options="" >}}
+{{< code file="Event.java" language="java" options="" >}}
 
 En jOOQ en la configuración del generador hay que especificar que para un campo se use un _converter_.
 

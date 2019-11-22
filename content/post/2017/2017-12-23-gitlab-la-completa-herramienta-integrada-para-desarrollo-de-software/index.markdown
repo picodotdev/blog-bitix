@@ -64,9 +64,9 @@ Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus clav
 
 Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la dirección URL con la que se puede clonar, convertir una carpeta existente en un repositorio o añadir un repositorio existente. Una vez con el repositorio en el sistema de archivos local se puede empezar a subir, modificar y eliminar archivos del repositorio de control de versiones. Hecho algún _commit_ y subido algún archivo desde GitLab se puede ver el contenido del repositorio de Git.
 
-{{< code file="clone-repository.sh" language="Bash" options="" >}}
-{{< code file="existing-folder.sh" language="Bash" options="" >}}
-{{< code file="existing-repository.sh" language="Bash" options="" >}}
+{{< code file="clone-repository.sh" language="bash" options="" >}}
+{{< code file="existing-folder.sh" language="bash" options="" >}}
+{{< code file="existing-repository.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

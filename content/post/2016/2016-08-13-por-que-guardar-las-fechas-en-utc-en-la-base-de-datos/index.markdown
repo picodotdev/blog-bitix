@@ -42,7 +42,7 @@ Supongamos que tenemos la fecha 30 de octubre a las 02:30 CEST y la guardamos en
 
 Esto puede probarse con el siguiente ejemplo de código de un programa Java que guarda y recupera de una base de datos [PostgreSQL][postgresql] una fecha que está en el intervalo de cambio horario. En el ejemplo utilizaré [Docker][blogbitix-serie-docker].
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 

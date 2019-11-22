@@ -37,7 +37,7 @@ Después de introducir la dirección del sitio web, que con estas herramientas h
 
 Si el sitio web no está accesible en internet o queremos encontrar enlaces rotos en el momento de desarrollo podemos usar el comando <code>wget</code> para que nos rastree los enlaces, cada petición que devuelva un código 404 será un enlace roto. En el archivo _wget.log_ tendremos los resultados del rastreo.
 
-{{< code file="wget.sh" language="Bash" options="" >}}
+{{< code file="wget.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

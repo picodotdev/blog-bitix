@@ -33,8 +33,8 @@ Para mayor seguridad se ha incorporado la sección _secrets_ en la que se especi
 
 La forma de iniciar y eliminar un _stack_ en un _cluster_ de nodos Docker Swarm es el siguiente:
 
-{{< code file="06-docker-compose-stack-deploy-nginx.sh" language="Bash" options="" >}}
-{{< code file="docker-compose-stack-remove-nginx.sh" language="Bash" options="" >}}
+{{< code file="06-docker-compose-stack-deploy-nginx.sh" language="bash" options="" >}}
+{{< code file="docker-compose-stack-remove-nginx.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

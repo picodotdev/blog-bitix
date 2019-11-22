@@ -23,11 +23,11 @@ Las expresiones de [JSONPath](https://goessner.net/articles/JsonPath/) o _XPath 
 
 Dado el siguiente texto en JSON estos son algunos ejemplos de expresiones que seleccionan datos utilizando JsonPath.
 
-{{< code file="store.json" language="Json" options="" >}}
+{{< code file="store.json" language="json" options="" >}}
 
 En estas expresiones por orden se obtienen los autores de los libros de la tienda, los libros de la tienda, los libros cuyo precio es menor que 10, los libros que tienen un atributo _isbn_, los dos primeros libros y los precios de todos los artículos incluidos los de las bicicletas. En las páginas de JSONPath y de JsonPath hay una documentación más detallada de la sintaxis de las expresiones. JSONPath dispone de un [evaluador de expresiones](http://jsonpath.com/) para probar las expresiones de forma rápida.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 Estas son las dependencias necesarias para JsonPath y como usa [SLF4J][slf4j] varias más para redirigir las trazas a [Log4j][log4j].

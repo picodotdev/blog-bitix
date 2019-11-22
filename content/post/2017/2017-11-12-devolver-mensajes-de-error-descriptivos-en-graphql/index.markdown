@@ -23,27 +23,27 @@ Por defecto [GraphQL][graphql] devuelve errores con mensajes descriptivos para l
 
 Los errores en GraphQL usando el lenguaje Java se gestionan implementando en una clase la interfaz [GrapQLError](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java), este podría ser en caso de una excepción que además de heredar de [Exception](https://docs.oracle.com/javase/9/docs/api/java/lang/Exception.html) implemente la interfaz _GraphQLError_. Sin embargo, GraphQL cuando una clase hereda únicamente de _Exception_ lo considera un error interno del servidor y para no dar información interna del servicio a los clientes como mensaje indica únicamente _Internal Server Error(s) while executing query_.
 
-{{< code file="curl-default-errors.sh" language="Bash" options="" >}}
+{{< code file="curl-default-errors.sh" language="bash" options="" >}}
 
 Para que GraphQL muestre el error personalizado deseado lanzando excepciones hay que adaptar esa excepción y que implementa _GraphQLError_ con una clase que únicamente implemente la interfaz _GraphQLError_ pero no herede de _Exception_. Esta sería una clase adaptador necesaria.
 
-{{< code file="GraphQLErrorAdapter.java" language="Java" options="" >}}
+{{< code file="GraphQLErrorAdapter.java" language="java" options="" >}}
 
 Para adaptar las clases excepción hay que cambiar el comportamiento de la clase _GraphQLErrorHandler_ de modo que transforme las excepciones a la clase _GraphQLError_ propia. Esta clase se indica al construir el objeto _SimpleGraphQLServlet_ y _ServletRegistrationBean_.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 En el caso de este ejemplo solo un usuario de nombre _admin_ tiene permitido hacer modificaciones en la colección de libros guardados en la clase repositorio _LibraryRepository_. Por otro lado, cuando se añade un libro se hace una validación de los datos comprobando que el autor del libro a añadir exista en la librería. Estas son las peticiones válidas.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 Y estas las inválidas que devuelve los mensajes propios más descriptivos de los errores o validaciones realizadas en el servidor de más utilidad para un usuario del servicio.
 
-{{< code file="curl-custom-errors.sh" language="Bash" options="" >}}
+{{< code file="curl-custom-errors.sh" language="bash" options="" >}}
 
 La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la descripción del mensaje pero con el método _getExtensions()_ es posible incluir cualquier dato en forma de clave-valor que deseemos como un código de error o cualquier otra información deseada. El caso de la excepción _PermissionException_ devuelve dos datos adicionales _foo_ y _fizz_, en un caso real se implementaría una lógica más útil para devolver estos datos adicionales posiblemente proporcionándolos en el constructor u obteniéndolos con la referencia a algún objeto.
 
-{{< code file="PermissionException.java" language="Java" options="" >}}
+{{< code file="PermissionException.java" language="java" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 

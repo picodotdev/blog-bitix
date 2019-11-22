@@ -85,7 +85,7 @@ En Java, existe una librería que permite generar gráficas de diferentes tipos 
 
 Desde la propia página web de JFreeChart es posible ejecutar una [aplicación Java Web Start de demostración](http://www.jfree.org/jfreechart/jfreechart-1.0.16-demo.jnlp) que contiene múltiples ejemplos con datos para ver como son los diferentes tipos de gráficas, en la librería hay un archivo _jar_ con la misma aplicación de demostración junto con el código fuente de algunos ejemplos. En el [Javadoc](http://www.jfree.org/jfreechart/api/javadoc/overview-summary.html) está la documentación con la API ofrecida por la librería. El autor de la librería ofrece una [guía en formato PDF y el código fuente de los ejemplos](http://object-refinery.com/jfreechart/guide.html) pero estos son de pago. La última versión tiene unos años pero es compatible con Java 1.6.
 
-{{< code file="demo.sh" language="Bash" options="" >}}
+{{< code file="demo.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -99,7 +99,7 @@ Desde la propia página web de JFreeChart es posible ejecutar una [aplicación J
 
 Este sería el código fuente de un ejemplo sencillo para una gráfica varias series datos. En el ejemplo primeramente se crear el conjunto de datos, el [Dataset](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/data/general/Dataset.html) de la gráfica, se establecen algunos estilos de visualización con [XYLineAndShapeRenderer](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/renderer/xy/XYLineAndShapeRenderer.html), con la clase factoría [ChartFactory](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/ChartFactory.html) se obtiene la gráfica proporcionándole los datos y finalmente generan un archivo en formato _png_ en un archivo, también se podría generar en un [OutputStream](https://docs.oracle.com/javase/9/docs/api/java/io/OutputStream.html) si fuese el caso de una aplicación web que quisiera enviar la imagen al navegador del cliente o también para incluir la imagen en un archivo PDF.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 <div class="media" style="text-align: center;">

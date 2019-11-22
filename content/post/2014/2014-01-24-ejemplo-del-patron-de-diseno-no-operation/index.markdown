@@ -26,10 +26,10 @@ Esta patrón puede usarse también para evitar la excepción NullPointerExceptio
 
 Veámoslo con el ejemplo de una factoría que para determinados enumerados se devuelve un objeto que sigue el patrón command pero para ciertos valores del enumerado no hay command válido y en vez de devolver null devolvemos un command no operation, este es el caso de llamar a la factoría con un enumerado null. Para el enumerado Operacion.MENSAJE se develve un command que emite un mensaje, para Operacion.NO_MENSAJE y null se devuelve un command que no hace nada.
 
-{{< code file="OperacionCommandFactory.java" language="Java" options="" >}}
-{{< code file="OperacionCommand.java" language="Java" options="" >}}
-{{< code file="NoOperacionCommand.java" language="Java" options="" >}}
-{{< code file="MensajeCommand.java" language="Java" options="" >}}
+{{< code file="OperacionCommandFactory.java" language="java" options="" >}}
+{{< code file="OperacionCommand.java" language="java" options="" >}}
+{{< code file="NoOperacionCommand.java" language="java" options="" >}}
+{{< code file="MensajeCommand.java" language="java" options="" >}}
 
 Y finalmente el caso de prueba donde puede verse que no hay ningún if ya que no se devuelve en ningún caso un null:
 

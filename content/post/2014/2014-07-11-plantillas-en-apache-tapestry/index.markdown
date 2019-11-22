@@ -27,7 +27,7 @@ En este artículo voy a explicar como crear un componente que nos de a todas las
 
 El esquema de la plantilla será una cabecera, una barra de navegación con enlaces a diferentes secciones de la web, un menú lateral con contenido variable según la página, el contenido que variará según la página y un pie de página. Como todo componente de [Apache Tapestry](http://tapestry.apache.org/) está formado de una clase Java y una plantilla. El componente puede tener diferentes parámetros, y en el caso del de la plantilla muchos para poder variar el contenido por defecto de las diferentes secciones de la página, estos son aside1, aside2, aside3, aside4.
 
-{{< code file="Layout.java" language="Java" options="" >}}
+{{< code file="Layout.java" language="java" options="" >}}
 
 El archivo tml asociado al componente plantilla será el que genere el contenido html que se enviará al navegador del usuario. En esta plantilla se incluye una cabecera con el logo de la aplicación y una frase que lo describe, posteriormente está una barra de navegación con varios enlaces, con <t:body> se incluye el contenido propio de la página que usa el componente plantilla y usando el componente [<t:delegate>](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/corelib/components/Delegate.html) se incluye el contenido de los diferentes bloques aside si se han personalizado en el uso de la plantilla, con el componente [<t:if test="aside">](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/corelib/components/If.html) se comprueba si hay algún aside usándose el método isAside de la clase Layout asociada al componente plantilla y del tml. Finalmente, está el pie que será común a todas las páginas que usen este componente.
 

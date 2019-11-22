@@ -40,11 +40,11 @@ Los elementos de las vistas se recomienda definirlas con los elementos que propo
 
 Para probar el código podemos hacerlo abriendo el archivo test/javascript/SpecRunner.html, sin embargo, deberemos hacerlo con Chrome o Chromium y lanzándolo con un parámetro opcional para permitir la carga de los archivos.
 
-{{< code file="chromium.sh" language="Bash" options="" >}}
+{{< code file="chromium.sh" language="bash" options="" >}}
 
 También podríamos probarlo usando gradle con:
 
-{{< code file="gradlew.sh" language="Bash" options="" >}}
+{{< code file="gradlew.sh" language="bash" options="" >}}
 
 Sin embargo, [PhantomJS](http://phantomjs.org/) que es lo que se utiliza para simular el navegador en las pruebas con jasmine y grunt, no soporta la función bind produciéndose la siguiente excepción al usarse en la librería de React.
 
@@ -58,7 +58,7 @@ Este problema de la función _bind_ ya esta incluido como [peticion en PhantomJS
 
 El ejemplo con el [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/BackboneReact) está en [mi repositorio de GitHub](https://github.com/picodotdev), puedes probarlo en tu equipo con el siguiente comando:
 
-{{< code file="gradle-tomcatRun.sh" language="Bash" options="" >}}
+{{< code file="gradle-tomcatRun.sh" language="bash" options="" >}}
 
 {{% reference %}}
 {{< links >}}

@@ -27,11 +27,11 @@ El error en concreto al montarlo en mi sistema [Arch Linux][archlinux] era el si
 
 Podemos extraer una imagen de una unidad con el comando <code>dd</code>, el parámetro _if_ será la unidad de entrada y el parámetro _of_ la imagen que se creará en un archivo:
 
-{{< code file="dd.sh" language="Bash" options="" >}}
+{{< code file="dd.sh" language="bash" options="" >}}
 
 Una vez que disponemos de la imagen en un archivo en un sistema libre de fallos usaremos Foremost para que intente recuperar los archivos que no han sido completamente corrompidos por el error. Indicamos la imagen del archivo extraída con el parámetro _-i_ y la carpeta donde dejará los archivos recuperados con el parámetro _-o_ agrupados en directorios por tipo, con el parámetro _-t_ indicamos los tipos de archivos que queremos recuperar de entre todos los que pueda (doc, docx, pdf, jpg, png, txt, ...).
 
-{{< code file="foremost.sh" language="Bash" options="" >}}
+{{< code file="foremost.sh" language="bash" options="" >}}
 
 Si tenemos suerte con Foremost recuperaremos gran parte de ellos y evitaremos perderlos para siempre. En la wiki de Arch Linux hay una [guía con consejos y explicaciones de como proceder en la recuperación de archivos](https://wiki.archlinux.org/index.php/file_recovery).
 

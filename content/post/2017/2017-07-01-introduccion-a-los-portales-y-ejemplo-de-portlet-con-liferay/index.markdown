@@ -101,7 +101,7 @@ Para cada una de estas fases en la API de los _portlets_ hay un método específ
 
 La interfaz [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) obtenida con el método [getPreferences()](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletRequest.html#getPreferences()) de una clase que herede de _PortletRequest_ también es importante ya que con ella el _portlet_ es capaz de persistir incluso entre reinicios del servidor los datos relativos a su funcionamiento que desee aunque esto no sustituye a la utilización de una base de datos como [PostgreSQL][postgresql] o [MongoDB][mongodb]. Los _portlets_ también tienen el equivalente de filtros de los _servlets_ con la clase [PortletFilter](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/filter/PortletFilter.html) y el equivalente de sesión con la clase [PortletSession](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletSession.html).
 
-{{< code file="HolaMundoPortlet.java" language="Java" options="" >}}
+{{< code file="HolaMundoPortlet.java" language="java" options="" >}}
 
 Usando como herramienta de construcción del proyecto [Gradle][gradle] el archivo _.war_ a desplegar el Liferay se genera con la tarea _build_ en el directorio _build/libs/HolaMundoPortlet-0.1.war_. Esta archivo hay que desplegarlo en Liferay para posteriormente incluirlo en alguna página, se visualice el contenido que genera y se pueda interactuar con él.
 

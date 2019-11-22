@@ -67,9 +67,9 @@ Las resistencias poseen cuatro bandas de colores que indican el valor en ohmios 
 
 El programa Java para hacer parpadear el diodo LED con la librería Diozero con el proveedor [pigpio](http://abyz.co.uk/rpi/pigpio/). El ejemplo consiste en activar y apagar el _pin_ sucesivamente en un bucle y usar el método [Thread.sleep](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep-long-) para que pase unos segundos entre uno y otro y nos de tiempo a ver el encendido y apagado. El nada complejo programa Java para controlar el diodo y un vídeo de su funcionamiento están a continuación.
 
-{{< code file="PinBlink.java" language="Java" options="" >}}
-{{< code file="executeSSH.sh" language="Bash" options="" >}}
-{{< code file="executeGradle.sh" language="Bash" options="" >}}
+{{< code file="PinBlink.java" language="java" options="" >}}
+{{< code file="executeSSH.sh" language="bash" options="" >}}
+{{< code file="executeGradle.sh" language="bash" options="" >}}
 
 <div class="media media-video" style="text-align: center;">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/NX5tBxWuzFA" frameborder="0" allowfullscreen></iframe>

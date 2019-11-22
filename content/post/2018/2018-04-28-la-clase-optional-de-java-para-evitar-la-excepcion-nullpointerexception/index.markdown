@@ -24,7 +24,7 @@ Entre las [novedades que Java 8 incluyó en el lenguaje y JDK][blogbitix-17] est
 
 Usar un objeto _Optional_ advierte al programador de que la referencia que contiene puede ser nula y usada correctamente evita los _NullPointerException_ aunque usarla indiscriminadamente hace del código más incómodo de escribir y leer, en variables locales es prescindible su uso pero útil en algunos valores de retorno o parámetros de métodos.
 
-{{< code file="jshell.sh" language="Bash" options="" >}}
+{{< code file="jshell.sh" language="bash" options="" >}}
 
 Hay algunos métodos más en la clase _Optional_ con algunas funcionalidades adicionales que hace uso de las nuevas capacidades funcionales del lenguaje como convertir un _Optional_ a un [Stream](https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html).
 

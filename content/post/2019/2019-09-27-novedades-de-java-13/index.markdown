@@ -33,11 +33,11 @@ Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakar
 
 Para definir una cadena de caracteres que tuviese varias lineas en Java había que emplear concatenación de cadenas, si esa cadena contiene el caracter comilla doble _"_ de inicio de cadena había que escaparlo, si esa cadena contenía saltos de línea había que emplear el caracter de escape de salto de línea _\n_. El resultado es una cadena con problemas de legibilidad por los caracteres de escape que incluye en el código fuente del lenguaje. Esto podría se al definir una cadena de texto que tuviese elementos HTML, JSON, sentencias SQL o expresiones regulares.
 
-{{< code file="TextBlock-1.java" language="Java" options="" >}}
+{{< code file="TextBlock-1.java" language="java" options="" >}}
 
 Con los bloques de texto se emplean una triple comilla doble _"_ para la apertura y cierre de la cadena.
 
-{{< code file="TextBlock-2.java" language="Java" options="" >}}
+{{< code file="TextBlock-2.java" language="java" options="" >}}
 
 Como ayuda a las cadenas de texto en la clase [String](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html) se han añadido varios métodos para eliminar la indentación (_String::stripIndent_), traducir los caracteres secuencia de escape (_String::translateEscapes_) y formatear una cadena usando un método de instancia (_String::formatted_).
 
@@ -47,11 +47,11 @@ Como ayuda a las cadenas de texto en la clase [String](https://docs.oracle.com/e
 
 En las [novedades de Java 12][blogbitix-391] se añadió la posibilidad de los _switch_ fueran expresiones que retornan un valor en vez de sentencias y se evita el uso de la palabra reservada _break_.
 
-{{< code file="Switch-1.java" language="Java" options="" >}}
+{{< code file="Switch-1.java" language="java" options="" >}}
 
 En Java 13 en vez únicamente el valor a retornar se permite crear bloques de sentencias para cada rama _case_ y retornar el valor con la palabra reservada _yield_. En los bloques de sentencias puede haber algún cálculo más complejo que directamente retornar el valor deseado.
 
-{{< code file="Switch-2.java" language="Java" options="" >}}
+{{< code file="Switch-2.java" language="java" options="" >}}
 
 * [Inside Java 13’s switch Expressions and Reimplemented Socket API](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api)
 

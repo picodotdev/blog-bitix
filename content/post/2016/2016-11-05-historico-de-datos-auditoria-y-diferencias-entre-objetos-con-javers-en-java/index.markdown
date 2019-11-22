@@ -26,9 +26,9 @@ Javers diferencia dos tipos de objetos [Entities](http://javers.org/documentatio
 
 En el siguiente ejemplo muestro como hacer comparaciones, como hacer cambios y persistirlos, como lanzar una consulta para obtener los cambios que se han producido u obtener _snapshots_ de versiones anteriores y como persistir estos cambios en una base de datos [PostgreSQL][postgresql] en la que utilizaré [Docker][docker]. En la primera sección del ejemplo se comparan dos objetos y obtienen sus diferencias, posteriormente se persisten varios cambios y finalmente se realiza una consulta para obtener los cambios que haya habido en la propiedad _price_.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="Category.java" language="Java" options="" >}}
-{{< code file="Product.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="Category.java" language="java" options="" >}}
+{{< code file="Product.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 

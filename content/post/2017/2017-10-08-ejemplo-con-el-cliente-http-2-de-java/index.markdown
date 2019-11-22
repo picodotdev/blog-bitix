@@ -24,8 +24,8 @@ Las clases importantes de esta nueva API con [HttpClient](https://docs.oracle.co
 
 El siguiente ejemplo realiza una petición a la página del buscador Google con unas cabeceras y obtiene el código de estado, las cabeceras devueltas y el cuerpo de la página de resultado. En la declaración del módulo para usar el cliente hay que indicar que tiene como requerimiento su módulo de _java.net.http_.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="module-info.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="module-info.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

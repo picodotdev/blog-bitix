@@ -65,7 +65,7 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
 Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el momento de escribir este artículo con la versión 1.8.0_74 del [OpenJDK][openjdk], _modules/alpn-impl/alpn-1.8.0\_74.mod_.
 
 {{< code file="alpn-1.8.0_74.mod" language="Plaintext" options="" >}}
-{{< code file="jetty.sh" language="Bash" options="" >}}
+{{< code file="jetty.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

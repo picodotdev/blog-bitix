@@ -25,22 +25,22 @@ Imaginemos el caso de una empresa dedicada al comercio electrónico que ofrece p
 
 Siguiendo el ejemplo de la empresa expuesta tendríamos dos bases de datos: _inventory_ y _purchases_. Podemos tener un servicio que sea _InventoryService_ y otro servicio que sea _PurchasesService_ que contengan la lógica de negocio de cada área de negocio.
 
-{{< code file="InventoryService.java" language="Java" options="" >}}
-{{< code file="DefaultInventoryService.java" language="Java" options="" >}}
+{{< code file="InventoryService.java" language="java" options="" >}}
+{{< code file="DefaultInventoryService.java" language="java" options="" >}}
 
-{{< code file="PurchasesService.java" language="Java" options="" >}}
-{{< code file="DefaultPurchasesService.java" language="Java" options="" >}}
+{{< code file="PurchasesService.java" language="java" options="" >}}
+{{< code file="DefaultPurchasesService.java" language="java" options="" >}}
 
 Al realizarse una compra a través del servicio _PurchasesService_ se ha de modificar el inventario del producto cosa que no se hace en el propio servicio de compras sino que se llama al servicio _InventoryService_ para que haga lo que deba, en el ejemplo modificar el inventario pero en un futuro podría ser enviar además una notificación o correo electrónico indicando que el _stock_ es bajo si cae por debajo de determinado número, el servicio de compras no debe conocer nada de esto ya que el inventario no forma parte de su nicho de información. En el ejemplo es una llamada usando un método de una clase pero podría ser una llamada a una <abbr title="Application Programming Interface">API</abbr> <abbr title="Representational State Transfer">REST</abbr> o <abbr title="Remote Procedure Call">RPC</abbr> si realmente fueran microservicios.
 
 Las sencillas clases _Item_ y _Purchase_ generadas con jOOQ implementan las siguientes interfaces:
 
-{{< code file="IItem.java" language="Java" options="" >}}
-{{< code file="IPurchase.java" language="Java" options="" >}}
+{{< code file="IItem.java" language="java" options="" >}}
+{{< code file="IPurchase.java" language="java" options="" >}}
 
 El acceso a una base de datos usando jOOQ se consigue a través de la clase [DSLContext](http://www.jooq.org/javadoc/latest/org/jooq/DSLContext.html), cada servicio recibe uno diferente que debemos definir en el contenedor de dependencias de Spring. Si fuesen dos bases de datos diferentes realmente debería haber definidos dos _bean_ _DataSource_ uno para cada servicio pero solo hay uno porque en el ejemplo se usa la base de datos [H2][h2] y se accede no con un servidor sino al fichero directamente. También en el ejemplo realmente no son necesarios dos (uno para cada servicio) _TransactionManager_, _TransactionAwareDataSourceProxy_, _ConnectionProvider_, _Config_ y _DSLContext_ pues solo hay una base de datos pero por mostrar más fielmente como sería el caso siendo dos bases de datos completamente diferentes lo he puesto así.
 
-{{< code file="AppConfiguration.java" language="Java" options="" >}}
+{{< code file="AppConfiguration.java" language="java" options="" >}}
 
 Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][gradle] y con [Liquibase][liquibase], con el comando <code>./gradlew updateDatabase</code>, a continuación solo una parte del [archivo _build.gradle_ completo](https://github.com/picodotdev/blog-ejemplos/blob/master/Multidatabase/build.gradle) y los archivos XML de actualización de los esquemas.
 
@@ -60,7 +60,7 @@ Como en jOOQ la fuente de la verdad es la base de datos los modelos se generan a
 
 Este sería el programa de ejemplo iniciado con [Spring Boot][spring-boot] que usa ambos servicios, el de inventario y el de compras, creando un producto y haciendo una compra junto con su salida en la terminal. Ejecutándolo repetidamente con <code>./gradlew run</code> veremos aumenta el número de productos y compras guardados en cada tabla de los dos esquemas.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 {{< asciinema id="28856" caption="Ejecución del ejemplo multidatabase" >}}
 

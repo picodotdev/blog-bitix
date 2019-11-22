@@ -48,7 +48,7 @@ Con las instrucciones RUN y ADD instalamos el paquete de mysql y el cliente de m
 
 Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los comandos ADD contruimos la imagen con:
 
-{{< code file="docker-build.sh" language="Bash" options="" >}}
+{{< code file="docker-build.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
 	{{< figure
@@ -57,11 +57,11 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 
 Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:
 
-{{< code file="docker-run-1.sh" language="Bash" options="" >}}
+{{< code file="docker-run-1.sh" language="bash" options="" >}}
 
 Posteriormente podemos iniciar y parar el contenedor de msql con:
 
-{{< code file="docker-run-2.sh" language="Bash" options="" >}}
+{{< code file="docker-run-2.sh" language="bash" options="" >}}
 
 En los siguientes artículos comentaré la herramienta de automatización [ansible][ansible] y como sacarle provecho para iniciar los contenedores en una máquina de desarrollo (devbox). También en algún otro artículo comentaré la opción de [bitnami][bitnami] que dentro de poco ofrecerá soporte para docker y como con esta opción podemos usar un servicio «out-of-the-box» si tener que crear ni siquiera un Dockerfile o tener que documentarnos para instalar un servicio (que en algunos casos pueden tener cierta complejidad) aunque sea usando virtualización con [virtualbox][virtualbox] o computación en la nube.
 

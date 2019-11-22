@@ -48,7 +48,7 @@ Aún Java no incorpora en el lenguaje una forma de definir como literales elemen
 
 Aparte de definir este tipo de colecciones de una forma mucho más sencilla que hasta Java 8, las colecciones además son significativamente más eficientes. En el caso de Java 8 un _Set_ con dos elementos de capacidad 3 requiere un objeto _wrapper_ para la colección inmodificable, 1 _HashSet_, 1 _HashMap_, 1 Object[] de longitud 3, 2 dos nodos uno para cada elemento requiriendo en total unos 152 bytes. En el caso de Set creado con Java 9 requiere solo 20 bytes que comparados con los 152 es una mejora significativa más al tener en cuenta que este tipo de estructuras de datos son utilizadas de forma numerosa en cualquier programa. Aún estando hablando de bytes multiplicado por cada uso en algunos casos la reducción de memoria puede ser apreciable.
 
-{{< code file="Collections.java" language="Java" options="" >}}
+{{< code file="Collections.java" language="java" options="" >}}
 
 <div class="media media-video" style="text-align: center;">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0"></iframe>
@@ -116,7 +116,7 @@ Ahora es posible obtener el identificador del proceso o _pid_ con el método [pi
 
 La clase [StackWalker](https://docs.oracle.com/javase/9/docs/api/java/lang/StackWalker.html) permite obtener un _stream_ secuencial de [StackWalker.StackFrames](https://docs.oracle.com/javase/9/docs/api/java/lang/StackWalker.StackFrame.html) del _thread_ actual para procesar la pila de llamadas o _stacktrace_.
 
-{{< code file="StackWalker.java" language="Java" options="" >}}
+{{< code file="StackWalker.java" language="java" options="" >}}
 
 ### Strings compactos
 
@@ -153,7 +153,7 @@ Ahora se pueden crear métodos privados en interfaces como utilidad a las implem
 
 Ahora las variables finales o efectivamente finales pueden ser colocadas en los bloques _try-with-resource_ simplificando  algunos usos.
 
-{{< code file="TryWithResources.java" language="Java" options="" >}}
+{{< code file="TryWithResources.java" language="java" options="" >}}
 
 ### Javadoc
 

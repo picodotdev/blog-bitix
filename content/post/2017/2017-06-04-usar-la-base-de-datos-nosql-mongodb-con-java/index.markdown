@@ -27,7 +27,7 @@ Los documentos en MongoDB están en formato JSON, como Java no ofrece de una sin
 
 Con la referencia a una colección se realizan las operaciones de inserción de un documento, actualización del documento completo o de una parte, eliminación de un documento y búsqueda de documentos con una consulta.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 La instancia del servidor de MongDB la inicio usando Docker con un archivo de [Docker Compose][docker-compose] y el comando <code>docker-compose up</code>. En la  [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí puedes aprender como empezar a usar Docker y adquirir un conocimiento hasta un nivel intermedio.

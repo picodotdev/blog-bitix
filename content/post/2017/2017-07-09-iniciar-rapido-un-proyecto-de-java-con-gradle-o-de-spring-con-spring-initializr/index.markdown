@@ -25,7 +25,7 @@ En [Maven][maven] existen los arquetipos que construyen el esqueleto básico del
 
 Al usar el _plugin_ _init_ de Gradle se especifica el tipo de artefacto, aplicación o librería, y el _framework_ para las pruebas unitarias en este caso [Spock][spock].
 
-{{< code file="gradle-init.sh" language="Bash" options="" >}}
+{{< code file="gradle-init.sh" language="bash" options="" >}}
 
 Para proyectos que usen [Spring Boot][spring-boot] está disponible la herramienta [Spring Initializr][spring-initializr] que en pocos minutos permite disponer de una aplicación funcional con las propiedades que se seleccionen. Se puede elegir la herramienta de construcción, Maven o Gradle, la versión de Spring Boot, los metadatos de la aplicación para el paquete de las clases y artefacto, las dependencias de otros módulos de Spring y otras librerías populares.
 
@@ -38,7 +38,7 @@ Cambiando a la versión completa del generador es posible cambiar el tipo de emp
 
 Una vez seleccionadas las opciones se genera el proyecto y descarga un archivo comprimido _zip_. Con el comando <code>gradlew bootRun</code> si inicia la aplicación, pero dependiendo de las dependencias incluidas quizá sea necesaria hacer alguna configuración adicional antes de poder iniciar la aplicación, por ejemplo si seleccionamos la dependencia de [jOOQ][jooq] hay que definir las propiedades para el [DataSource](https://docs.oracle.com/javase/8/docs/api/javax/sql/DataSource.html) en el archivo _application.properties_ con las que el contenedor inversión de control de Spring pueda crear las conexiones a la base de datos.
 
-{{< code file="tree-initializr.sh" language="Bash" options="" >}}
+{{< code file="tree-initializr.sh" language="bash" options="" >}}
 
 Como con todos los generadores de código es recomendable saber suficientemente que es código que generan para en caso de modificaciones posteriores saber como aplicarlas. También es posible que no se adapte exactamente a lo que necesitamos, por ejemplo, si queremos hacer un [multiproyecto con Gradle][blogbitix-96] o si una dependencia necesaria no está incluida en la lista de categorías hay añadirla después. A partir de aquí se empieza a programar el proyecto.
 

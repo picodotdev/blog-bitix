@@ -29,7 +29,7 @@ Para el ejemplo me basaré en varios artículos que he escrito anteriormente com
 
 Para la parte servidor deberemos incluir como dependencia en el archivo _build.gradle_ la propia del servidor de Spring Cloud Config, _org.springframework.cloud:spring-cloud-config-server_, y dos archivos de configuración, _application.yml_ y _bootstrap.yml_ donde indicaremos el puerto donde escuchará la aplicación y la ruta del sistema de ficheros del repositorio de configuraciones. En la clase que inicia el servidor con [Spring Boot][spring-boot] usaremos la anotación <code>@EnableConfigServer</code>.
 
-{{< code file="Main-server.java" language="Java" options="" >}}
+{{< code file="Main-server.java" language="java" options="" >}}
 {{< code file="build-server.gradle" language="Groovy" options="" >}}
 {{< code file="application.yml" language="YAML" options="" >}}
 {{< code file="bootstrap-server.yml" language="YAML" options="" >}}
@@ -59,7 +59,7 @@ Este sería el inicio del servidor de configuración y el documento JSON que dev
 
 La aplicación cliente cuando se inicie solicitará su configuración al servidor Spring Cloud Config mediante una petición HTTP en función del entorno para el que se inicie. Deberemos usar la dependencia _org.springframework.cloud:spring-cloud-starter-config_. Para obtener los valores de las propiedades de configuración podemos usar la anotación <code>@Value</code>. En los archivos _application.yml_ y _bootstrap.yml_ indicamos el perfil para el cual se activará la aplicación y podemos especificar la <abbr title="Uniform Resource Locator">URL</abbr> con la localización del servidor de configuración.
 
-{{< code file="Main-client.java" language="Java" options="" >}}
+{{< code file="Main-client.java" language="java" options="" >}}
 {{< code file="build-client.gradle" language="Groovy" options="" >}}
 {{< code file="bootstrap-client.yml" language="YAML" options="" >}}
 

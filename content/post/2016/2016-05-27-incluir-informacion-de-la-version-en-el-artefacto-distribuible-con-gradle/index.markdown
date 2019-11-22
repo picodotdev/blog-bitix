@@ -31,7 +31,7 @@ El nombre del artefacto se modifica con una clase cuyo método _toString()_ prop
 
 En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1.0.b42.fea4d2f.jar_. Ejecutando el _jar_ con <code>java -jar build/libs/GradleVersion-1.0.b42.77c083e.jar</code> cuya clase con el método _main_ informa de la versión leyendo el archivo _properties_ incluído en el _jar_ obtenemos la siguiente salida en la terminal.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

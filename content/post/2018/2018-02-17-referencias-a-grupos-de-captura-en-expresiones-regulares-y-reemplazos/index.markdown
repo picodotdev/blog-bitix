@@ -32,7 +32,7 @@ Para hacer referencia en los grupos de coindiciendia en la cadena de reemplazo h
 
 Un ejemplo más útil de los grupos de referencia en la cadena de reemplazo sería reemplazar en un texto plano las direcciones de correo electrónico por sus enlaces en HTML. Usando una expresión regular para encontrar las direcciones de correo electrónico y sustituirlas por los enlaces HTML haciendo uso de los grupos de captura y referencias a ellos.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 La salida del ejemplo en la terminal es el siguiente.
 

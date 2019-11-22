@@ -21,7 +21,7 @@ Habiendo explicado [que es la herramienta Javadoc][blogbitix-259], y en otros ar
 
 Lo primero es incluir en el proyecto el _plugin_ de java. Con el _plugin_ incluido se añade una tarea con la que generar la documentación _javadoc_.
 
-{{< code file="gradle.sh" language="Bash" options="" >}}
+{{< code file="gradle.sh" language="bash" options="" >}}
 
 Para indicar en Gradle [las opciones del comando javadoc](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html#options) hay que ver cuales son en las clases [MinimalJavadocOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/MinimalJavadocOptions.html), [CoreJavadocOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html) y [StandardJavadocDocletOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html). Las opciones permiten indicar la clase de _taglet_ propio y lo mismo para usar una hoja de estilos propia que puede estar basada pero con pequeñas modificaciones sobre la que usa _javadoc_ por defecto, también para incluir un texto en cada página en el pie. Lo mismo sería para usar cualquiera de las otras opciones que tiene el comando _javadoc_. En el ejemplo se usan dos opciones para la codificación de caracteres.
 

@@ -23,11 +23,11 @@ Por defecto el directorio donde se guardan las imágenes y los contenedores junt
 
 En Arch Linux el proceso de docker se arranca con un servicio de systemd:
 
-{{< code file="docker-start.sh" language="Bash" options="" >}}
+{{< code file="docker-start.sh" language="bash" options="" >}}
 
 En la definición del servicio de docker se establecen los parámetros de inicio del demonio de docker y deberemos cambiarlo para cambiar la localización de las imágenes y contenedores. En la información de ayuda del comando de docker podemos ver que si queremos cambiar la localización por defecto de las imágenes y contenedores de docker debemos emplear la opción _-g "/var/lib/docker"_.
 
-{{< code file="docker-help.sh" language="Bash" options="" >}}
+{{< code file="docker-help.sh" language="bash" options="" >}}
 
 En Arch Linux el servicio de systemd de docker se guarda en _/usr/lib/systemd/system/docker.service_. Modificando el parámetro _ExecStart_ de la sección _[Service]_ para añadir el parámetro _-g_ nos quedaría algo como:
 

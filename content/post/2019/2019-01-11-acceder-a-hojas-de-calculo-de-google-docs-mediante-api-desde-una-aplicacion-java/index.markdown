@@ -24,7 +24,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 Para acceder a los servicios mediante APIs hay que obtener unas credenciales. Un ejemplo es el siguiente usando un API _key_ para acceder a una hoja de cálculo compartida para cualquier usuario que tenga el enlace o identificativo del documento en Google Drive. Cada servicio de Google ofrece una API distinta según su contexto y datos que maneja.
 
-{{< code file="Main-1.java" language="Java" options="" >}}
+{{< code file="Main-1.java" language="java" options="" >}}
 
 Las hojas de cálculo se utilizan para contener información, son fácilmente editables por los usuarios y se convierten casi en una forma de base de datos. Con [las APIs que ofrece Google para Spreadsheets](https://developers.google.com/sheets/api/) esta información es utilizable en una aplicación, un buen caso de uso es aquel en el que ciertos datos o parámetros potencialmente cambian cada cierto tiempo o según reglas de negocio. Por ejemplo, se puede crear una hoja de cálculo con los precios, descripciones, existencias, disponibilidad o gastos de envío de los productos e importar esta información en la base de datos de una aplicación usando una API de Google, en vez de crear una aplicación _backoffice_ de edición a medida para editar esa información, la aplicación consistiría en procesar el documento e insertar su información en la base de datos.
 
@@ -36,12 +36,12 @@ Como contrapartida de estas integraciones hay que tener en cuenta que una aplica
 
 Otro posible aplicación es utilizar documentos de texto en Google Drive como plantillas de correos electrónicos, se permite una edición sencilla y posteriormente se importan en la aplicación para que los utilice. A un documento de Google Drive se accede mediante esta petición HTTP GET. Las hojas de cálculo tamibén están disponibles mediante una interfaz REST sin embargo usando las APIs que ofrece Google para cada lenguaje es más cómodo que tratar con los datos en crudo en formato JSON.
 
-{{< code file="curl-1.sh" language="Bash" options="" >}}
-{{< code file="curl-2.sh" language="Bash" options="" >}}
+{{< code file="curl-1.sh" language="bash" options="" >}}
+{{< code file="curl-2.sh" language="bash" options="" >}}
 
 Para las hojas de cálculo hay dos formas de autorización para una aplicación. Mediante una API _key_ con permisos de utilización de la API permite acceder a cualquier documento público, compartido de forma pública o para los usuarios que tengan el enlace o identificativo del documento. La otra más segura es creando una cuenta de servicio de forma que el documento se comparta únicamente con esa cuenta de servicio como si de cualquier otro usuario se tratase en vez de hacerlo público o para cualquiera que tenga el enlace.
 
-{{< code file="Main-2.java" language="Java" options="" >}}
+{{< code file="Main-2.java" language="java" options="" >}}
 
 Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crer un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de ecritura.
 
@@ -62,7 +62,7 @@ El enlace al compartir el documento o al editarlo contiene el identificativo de 
         caption="Hoja de cálculo y documento de Google" >}}
 </div>
 
-{{< code file="Main-3.java" language="Java" options="" >}}
+{{< code file="Main-3.java" language="java" options="" >}}
 {{< code file="gradlew-run.sh" language="Bash" options="hl_lines=7-8" >}}
 
 El método de API _key_ obliga a hacer público el documento lo que no es deseable desde el punto de vista de seguridad aunque es un poco más simple que crear una cuenta de servicio. Para no hacer público el documento pero permitir acceder a una aplicación hay que crear una cuenta de servicio en la página [Cuentas de servicio](https://console.developers.google.com/iam-admin/serviceaccounts) seleccionando o creando un proyecto.
@@ -87,7 +87,7 @@ En vez de compartir el documento con cualquiera que tenga en enlace, con una cue
 
 El siguiente código Java accede a un documento utilizando las credenciales de una cuenta de servicio.
 
-{{< code file="Main-4.java" language="Java" options="" >}}
+{{< code file="Main-4.java" language="java" options="" >}}
 
 En el caso de Java hay que incluir la dependencia que proporciona la implementación de la API de Google Spreadsheets para Java como se muestra usando [Gradle][gradle].
 

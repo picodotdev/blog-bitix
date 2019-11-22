@@ -45,8 +45,8 @@ Si además queremos ver las consultas HQL de Hibernate y parámetros que se est�
 
 La implementación de appender para capturar las HQL que lanza grails es la siguiente:
 
-{{< code file="HibernateAppender.java" language="Java" options="" >}}
-{{< code file="HibernateLogger.java" language="Java" options="" >}}
+{{< code file="HibernateAppender.java" language="java" options="" >}}
+{{< code file="HibernateLogger.java" language="java" options="" >}}
 
 El resultado es el siguiente:
 

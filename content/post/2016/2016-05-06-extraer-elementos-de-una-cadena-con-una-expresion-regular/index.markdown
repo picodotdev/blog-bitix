@@ -26,7 +26,7 @@ Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la 
 
 En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) y [Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) podemos hacer las validaciones y obtener los grupos de captura de la usando el método [group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#group-int-) de la clase Matcher:
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

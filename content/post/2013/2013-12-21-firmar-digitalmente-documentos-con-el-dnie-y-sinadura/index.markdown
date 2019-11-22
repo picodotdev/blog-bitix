@@ -22,7 +22,7 @@ En esta entrada voy a comentar como firmar digitalmente documentos en cualquier 
 
 Primeramente deberemos descargar la última versión de [Sinadura](http://www.sinadura.net/es/) según la arquitectura de nuestro procesador, de 32 bits o de 64 bits y la plataforma linux o windows. El archivo descargado es un instalador que deberemos ejecutarlo, como es un programa Java deberemos tener instalado previamente un entorno de ejecución de Java como el [OpenJDK](http://openjdk.java.net/). Lo ejecutamos con:
 
-{{< code file="instalar-sinadura.sh" language="Bash" options="" >}}
+{{< code file="instalar-sinadura.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -31,7 +31,7 @@ Primeramente deberemos descargar la última versión de [Sinadura](http://www.si
 
 Una vez instalado sinadura y también teniendo instalado el lector de tarjetas inteligentes para el DNI y funcionando deberemos conectarlo al ordenador e introducir el DNI. Iniciaremos sinadura con que se encuentra dentro del directorio de instalación de Sinadura:
 
-{{< code file="iniciar-sinadura.sh" language="Bash" options="" >}}
+{{< code file="iniciar-sinadura.sh" language="bash" options="" >}}
 
 Inicialmente veremos una pantalla como la siguiente con una lista de archivos vacíos y una serie de botones para realizar varias acciones.
 
@@ -65,8 +65,8 @@ Una vez firmados los archivos podemos enviarlos por correo electrónico y la per
 
 Si queremos firmar muchos archivos a la vez usar la interfaz gráfica nos va a resultar lento y un trabajo repetitivo. En caso de querer hacer firmas masivas de archivos es mejor usar la linea de comandos o un proceso sh que nos haga la tarea. Sinadura también proporciona una utilidad basada en la linea de comandos que debemos usar de la siguiente forma:
 
-{{< code file="sinadura-console-pdf.sh" language="Bash" options="" >}}
-{{< code file="sinadura-console-xades.sh" language="Bash" options="" >}}
+{{< code file="sinadura-console-pdf.sh" language="bash" options="" >}}
+{{< code file="sinadura-console-xades.sh" language="bash" options="" >}}
 
 Con el siguiente archivo de preferencias:
 

@@ -23,7 +23,7 @@ También hay herramientas para optimizar los recursos eliminando los espacios in
 
 En Java disponemos de la librería [wro4j][wro4j] (_Web Resource Optimizer for Java_) para hacer este procesado de conversión y optimización desde nuestra aplicación. Puede interesarnos si el _framework_ web no ofrece esta funcionalidad o en una aplicación _standalone_ como ha sido el caso de [Blog Stack][blogstack] donde la he usado para en vez de usar CSS directamente usar un archivo less y luego transformarlo a CSS. Su uso no es complicado y puede mejorar nuestra aplicación o el desarrollo de la misma notablemente:
 
-{{< code file="Wro4j.java" language="Java" options="" >}}
+{{< code file="Wro4j.java" language="java" options="" >}}
 
 Aparte de los procesadores de este ejemplo wro4j tiene [disponibles muchos otros](https://code.google.com/p/wro4j/wiki/AvailableProcessors). Este procesado es algo costoso en cuanto a tiempo pero el archivo producido podemos cachearlo al inicio de la aplicación o después de compilarlo.
 

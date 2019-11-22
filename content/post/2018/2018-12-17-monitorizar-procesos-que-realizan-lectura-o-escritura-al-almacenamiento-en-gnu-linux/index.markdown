@@ -25,7 +25,7 @@ Según Samsung la cantidad de datos que se pueden escribir en un [860 EVO](https
 
 Para cuidar el SSD hay que conocer la cantidad de datos que se están escribiendo en la unidad. En [GNU][gnu]/[Linux][linux] es sencillo, el siguiente comando da la cantidad de datos en megabytes leídos y escritos desde que que se ha encendido el sistema.
 
-{{< code file="awk-uptime-writes.sh" language="Bash" options="" >}}
+{{< code file="awk-uptime-writes.sh" language="bash" options="" >}}
 
 En este caso se han escrito 326 MB en el dispositivo _nvme0n1p2_ que corresponde a la partición _root_ en una hora de actividad del sistema realizando tareas ofimáticas y de navegación.
 
@@ -37,7 +37,7 @@ En este caso se han escrito 326 MB en el dispositivo _nvme0n1p2_ que corresponde
 
 También es interesante conocer los datos escritos en la unidad en total desde su instalación, en realidad lo siguiente nos dará los GiB escritos desde la creación de la partición, si se han hecho varios particionados no será el total del tiempo de vida de la unidad. Al usar LVM on LUKS el nombre que Linux le a la unidad en mi caso es _dm-1_, según la configuración del sistema otro nombre que se le asigna es _sda2_. En esta captura de 129 GB.
 
-{{< code file="awk-lifetime-writes.sh" language="Bash" options="" >}}
+{{< code file="awk-lifetime-writes.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -47,7 +47,7 @@ También es interesante conocer los datos escritos en la unidad en total desde s
 
 Después de [comprar un Intel NUC junto con SSD][blogbitix-363] e instalarle [Arch Linux][archlinux] me he dado cuenta que de forma periódica, cada 5 o 10 segundos, parpadea la luz de actividad del disco duro (o simplemente almacenamiento al tener un SSD) sin hacer ninguna actividad salvo tener algunas aplicaciones abietas. He instalado _iotop_ para descubrir el origen de esta actividad y he encontrado dos. Por un lado [Firefox][firefox], varios procesos de él, y otro proceso del sistema _jdb2-dm-1-8_ que corresponde al _journaling_ del sistema de archivos. La opción _-a_ de iotop muestra la cantidad de E/S en la sesión por proceso y la opción _--only_ solo aquellos que han realizado E/S.
 
-{{< code file="iotop.sh" language="Bash" options="" >}}
+{{< code file="iotop.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

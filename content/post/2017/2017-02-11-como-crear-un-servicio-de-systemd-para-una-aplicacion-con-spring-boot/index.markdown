@@ -39,8 +39,8 @@ La instalación de la aplicación y de los servicios de systemd en el sistema se
 
 Los archivos _unit_ propios deben ser ubicados en el directorio _/etc/systemd/system/_, siendo el directorio _/usr/lib/systemd/system/_ donde se ubican los instalados por los paquetes del sistema. Iniciado el servicio con el comando <code>sudo systemctl start spring-boot-jaxrs.service</code>, si queremos habilitarlo con el inicio del sistema usamos el comando <code>sudo systemctl enable spring-boot-jaxrs.service</code>. Para ver el estado del servicio usamos el comando <code>sudo systemctl status spring-boot-jaxrs.service</code>.
 
-{{< code file="install.sh" language="Bash" options="" >}}
-{{< code file="manage.sh" language="Bash" options="" >}}
+{{< code file="install.sh" language="bash" options="" >}}
+{{< code file="manage.sh" language="bash" options="" >}}
 
 En los enlaces de referencia hay documentación más detallada tanto para gestionar los servicios con systemd como también documentación de sus archivos _unit_.
 

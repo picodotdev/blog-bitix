@@ -40,11 +40,11 @@ Nomad y Nomad cada uno son un binario ejecutable sin ninguna otra dependencia. B
 
 Nomad y Nomad se ejecutan con los siguientes comandos en modo desarrollo.
 
-{{< code file="nomad-consul.sh" language="Bash" options="" >}}
+{{< code file="nomad-consul.sh" language="bash" options="" >}}
 
 Iniciados se pueden enviar _jobs_ y ver su estado, dirección y puerto asignado así como los _logs_ generados.
 
-{{< code file="nomad.sh" language="Bash" options="" >}}
+{{< code file="nomad.sh" language="bash" options="" >}}
 
 También poseen una interfaz web integrada en la que consultar la misma información, la de Consul está en el puerto _8500_ y la de Nomad en el _4646_ donde ver el estado de los _jobs_ y el progreso de los despliegues.
 

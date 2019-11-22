@@ -28,9 +28,9 @@ Los _generics_ permiten usar tipos para parametrizar las clases, interfaces y m�
 
 Un tipo usando _generics_ tiene el siguiente aspecto, por ejemplo usando una clase _Box_ contenedor de una referencia a un tipo no determinado en la definición de la clase pero que lo será en su uso. Una clase genérica puede tener múltiples argumentos de tipos y los argumentos pueden ser a su vez tipos genéricos. Después del nombre de la clase se puede indicar la lista de parámetros de tipos con el formato <code>\<T1, T2, T3, ...\></code>.
 
-{{< code file="Box.java" language="Java" options="" >}}
-{{< code file="Pair.java" language="Java" options="" >}}
-{{< code file="OrderedPair.java" language="Java" options="" >}}
+{{< code file="Box.java" language="java" options="" >}}
+{{< code file="Pair.java" language="java" options="" >}}
+{{< code file="OrderedPair.java" language="java" options="" >}}
 
 Según las convenciones los nombres de los parámetros de tipo usados comúnmente son los siguientes:
 
@@ -43,35 +43,35 @@ Según las convenciones los nombres de los parámetros de tipo usados comúnment
 
 En el momento de la instanciación de un tipo genérico indicaremos el argumento para el tipo, en este caso _Box_ contendrá una referencia a un tipo _Integer_. Con Java 7 se puede usar el operador _diamond_ y el compilador inferirá el tipo según su definición para mayor claridad en el código. Podemos usar cualquiera de esta dos maneras prefiriendo usar el operador _diamond_ por ser más clara.
 
-{{< code file="Instantation.java" language="Java" options="" >}}
+{{< code file="Instantation.java" language="java" options="" >}}
 
 Para mantener la compatibilidad con versiones anteriores a Java 5 los tipos genéricos que al usarse no indican argumentos de tipo se denominan _raw_. El compilador indicará una advertencia como un uso potencialmente peligroso ya que no podrá validar los tipos.
 
-{{< code file="Raw.java" language="Java" options="" >}}
+{{< code file="Raw.java" language="java" options="" >}}
 
 Además de las clases los métodos también pueden tener su propia definición de tipos genéricos.
 
-{{< code file="Method.java" language="Java" options="" >}}
+{{< code file="Method.java" language="java" options="" >}}
 
 La sintaxis completa de uso sería:
 
-{{< code file="MethodUsage.java" language="Java" options="" >}}
+{{< code file="MethodUsage.java" language="java" options="" >}}
 
 Aunque puede abreviarse ya que el compilador puede inferir los tipos:
 
-{{< code file="MethodUsageInference.java" language="Java" options="" >}}
+{{< code file="MethodUsageInference.java" language="java" options="" >}}
 
 A veces querremos limitar los tipos que pueden ser usados empleando lo que se denomina _bounded type_. Con <code>\<U extends Number\></code> el tipo _U_ debe extender la clase _Number_.
 
-{{< code file="BoxBounds.java" language="Java" options="" >}}
+{{< code file="BoxBounds.java" language="java" options="" >}}
 
 Una clase puede tener múltiples limitaciones, si una es una clase debe ser la primera y el resto de argumentos interfaces.
 
-{{< code file="Bounds.java" language="Java" options="" >}}
+{{< code file="Bounds.java" language="java" options="" >}}
 
 En Java un tipo puede ser asignado a otro mientras el primero sea compatible con el segundo, es decir tengan una «relación es un». Una referencia de _Object_ puede referenciar una instancia de _Integer_ (un _Integer_ es un _Object_).
 
-{{< code file="IsA.java" language="Java" options="" >}}
+{{< code file="IsA.java" language="java" options="" >}}
 
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
@@ -87,7 +87,7 @@ Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie e
         image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" >}}
 </div>
 
-{{< code file="PayloadList.java" language="Java" options="" >}}
+{{< code file="PayloadList.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -96,7 +96,7 @@ Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie e
 
 En los _generics_ un parámetro para un tipo _?_ se denomina _wildcard_ siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de _List\<Integer\>_, _List\<Double\>_ y _List\<Number\>_. El término _List\<Number\>_ es más restrictivo que _List\<? extends Number\>_ porque el primero solo acepta una lista de _Number_ y el segundo una lista de _Number_ o de sus subtipos. _List\<? extends Number\>_ es un _upper bounded wildcard_.
 
-{{< code file="BoundedWildcard.java" language="Java" options="" >}}
+{{< code file="BoundedWildcard.java" language="java" options="" >}}
 
 Se puede definir una lista de un tipo desconocido, _List\<?\>_, en casos en los que:
 
@@ -107,7 +107,7 @@ Digamos que queremos definir un método que inserte objetos _Integer_ en un _Lis
 
 Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pero usando _wildcads_ podemos crearlas.
 
-{{< code file="WildcardList.java" language="Java" options="" >}}
+{{< code file="WildcardList.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -130,7 +130,7 @@ Los _generics_ son un mecanismo para proporcionar comprobaciones en tiempo de co
 
 Un tipo _non reifiable_ son aquellos cuya información de tipo ha sido [eliminada en tiempo de compilación por el _type erasure_][blogbitix-308], para la JVM no hay ninguna diferencia en tiempo de ejecución entre _List\<String\>_ y _List\<Number\>_. No se crean nuevas clases para los tipos parametrizados de modo que no hay ninguna penalización en tiempo de ejecución. Una clase genérica al compilarla se transforma aplicando _type erasure_:
 
-{{< code file="TypeErasure.java" language="Java" options="" >}}
+{{< code file="TypeErasure.java" language="java" options="" >}}
 
 Los _generics_ tiene algunas restricciones:
 
@@ -156,7 +156,7 @@ Para profundizar más en este importante tema de genéricos de Java tenemos a nu
 
 A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca exepciones [ClassCastException](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
 
-{{< code file="HeapPollution.java" language="Java" options="" >}}
+{{< code file="HeapPollution.java" language="java" options="" >}}
 
 En resumen, los genéricos en Java son un añadido muy útil al lenguaje.
 

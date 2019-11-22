@@ -28,13 +28,13 @@ Para hacer uso de Guava Event Bus hay que obtener una referencia a la clase [Eve
 
 En el contenedor de Spring se define como un _bean_ la clase _EventBus_ que es inicializada con las clases _listener_ con métodos anotados con _@Suscribe_ registradas con el método [register()](https://guava.dev/releases/snapshot-jre/api/docs/com/google/common/eventbus/EventBus.html#register-java.lang.Object-).
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="EventListener.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="EventListener.java" language="java" options="" >}}
 
 En este ejemplo sencillo se lanza un evento cuando se realiza una petición y como reacción a este evento se imprime un mensaje en la salida. Una aplicación real del _EventBus_ será más complicada pero este ejemplo muestra perfectamente el mecanismo de lanzado y recepción de eventos en una misma aplicación. La clase que se lanza como evento en este caso es un _POJO_ sin ningún requerimiento especial.
 
-{{< code file="DefaultRestController.java" language="Java" options="" >}}
-{{< code file="Event.java" language="Java" options="" >}}
+{{< code file="DefaultRestController.java" language="java" options="" >}}
+{{< code file="Event.java" language="java" options="" >}}
 
 Al realizar peticiones a la aplicación el controlador emite un evento que es recibido por _listener_ al procesar el evento, en la salida de la aplicación aparecen los mensajes.
 

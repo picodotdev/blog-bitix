@@ -23,22 +23,22 @@ Para facilitar el inicio de los proyectos podemos usar [Spring Initializr][sprin
 
 Esta es la definición del _bean_ del servicio que creará el mensaje para el contenedor de inversión de control, también definimos el recurso del servicio REST para Jersey.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="JerseyConfig.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="JerseyConfig.java" language="java" options="" >}}
 
 El servicio lo definimos en una interfaz y una clase que la implementa.
 
-{{< code file="MessageService.java" language="Java" options="" >}}
-{{< code file="DefaultMessageService.java" language="Java" options="" >}}
-{{< code file="Message.java" language="Java" options="" >}}
+{{< code file="MessageService.java" language="java" options="" >}}
+{{< code file="DefaultMessageService.java" language="java" options="" >}}
+{{< code file="Message.java" language="java" options="" >}}
 
  Es habitual que los servicios REST produzca como resultado un JSON como formato para devolver los datos. No necesitaremos hacer nada especial para convertir el _Java Bean_ de la clase _Message_ a JSON, de ello se encargará automáticamente JAX-RS. Con anotaciones como [@QueryParam](https://docs.oracle.com/javaee/7/api/javax/ws/rs/QueryParam.html) podemos obtener los parámetros del _query string_, de la URL o cabeceras enviadas.
 
-{{< code file="MessageResource.java" language="Java" options="" >}}
+{{< code file="MessageResource.java" language="java" options="" >}}
 
 Iniciada la aplicación con <code>./gradlew run</code> y con la siguiente comando de <code>curl</code> y URL obtendremos el mensaje en formato JSON en la salida.
 
-{{< code file="curl.sh" language="Bash" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 {{< code file="out.txt" language="Plaintext" options="" >}}
 
 Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).

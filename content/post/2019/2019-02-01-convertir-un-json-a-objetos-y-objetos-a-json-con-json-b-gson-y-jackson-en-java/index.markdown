@@ -28,17 +28,17 @@ Hay tres librerías distintas populares para hacer este _binding_ entre JSON y o
 
 Se utilizan los métodos _toJson()_ tanto en JSON-B como en Gson y el método _writeValueAsString()_ en Jackson para convertir a JSON y los métodos _fromJson()_ y _readValue()_ para convertir desde JSON a objetos. Estos métodos devuelven una instancia de la clase raíz indicada y acceder a las propiedades se hace con los correspondientes _getter_.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="Comprador.java" language="Java" options="" >}}
-{{< code file="Direccion.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="Comprador.java" language="java" options="" >}}
+{{< code file="Direccion.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 
 Para añadir tipos de datos que no están entre los básicos de JSON como es una fecha cada librería proporciona interfaces o clases abstractas para hacer la conversión desde el dato a un tipo de JSON y desde JSON al tipo del dato. En este caso para un tipo de dato [LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html).
 
-{{< code file="JsonLocalDateAdapter.java" language="Java" options="" >}}
-{{< code file="GsonLocalDateTypeAdapter.java" language="Java" options="" >}}
-{{< code file="JacksonLocalDateSerializer.java" language="Java" options="" >}}
-{{< code file="JacksonLocalDateDeserializer.java" language="Java" options="" >}}
+{{< code file="JsonLocalDateAdapter.java" language="java" options="" >}}
+{{< code file="GsonLocalDateTypeAdapter.java" language="java" options="" >}}
+{{< code file="JacksonLocalDateSerializer.java" language="java" options="" >}}
+{{< code file="JacksonLocalDateDeserializer.java" language="java" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaJson" command="./gradlew run" %}}
 

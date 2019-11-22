@@ -27,7 +27,7 @@ Hay que notar otra diferencia entre la soluciones con _if-else_, _Reflection_ y 
 
 La solución del _Enum_ el código resultante es bastante verboso y menos legible que las otras soluciones aún usando polimorfismo (en mi humilde opinión), por otra parte crear una nueva instancia de validador cada vez que se invoca a _newInstance_ en la factoría puede que no sea lo que queramos (o quizá sí). Por esto voy a plantear una nueva solución que es usando un _Enum_ como clave de un _Map_, que es una variante de la solución comentada en el artículo con _Map_. Es código de la nueva solución es el siguiente:
 
-{{< code file="ValidatorFactory.java" language="Java" options="" >}}
+{{< code file="ValidatorFactory.java" language="java" options="" >}}
 
 Si necesitásemos que la factoría devolviese una nueva instancia de _Validator_ en cada llamada a _newInstance_ (por ejemplo, porque no es _thread-safe_) podemos poner en el mapa una instancia de [Supplier](https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html) haciendo uso de las funciones _lambda_ incluidas como una de las [nuevas características incorporadas en Java 8][blogbitix-17].
 

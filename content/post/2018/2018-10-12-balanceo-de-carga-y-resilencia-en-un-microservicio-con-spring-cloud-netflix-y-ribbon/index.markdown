@@ -31,14 +31,14 @@ Ante el fallo de una instancia para evitar que temporalmente el cliente empiece 
 
 El cliente usa la clase _LoadBalancerClient_ que en cada invocación del método _choose()_ devuelve una instancia diferente de servicio realizando balanceo de carga utilizando el método _round-robin_. La clase _ServiceInstance_ proporciona la URL de la instancia del servicio.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="ClientService.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="ClientService.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 La clase del servicio y los comandos para iniciar el servicio de registro y descubrimiento, el servicio de configuración, las instancias del servicio en diferentes puertos y el cliente.
 
-{{< code file="DefaultController.java" language="Java" options="" >}}
-{{< code file="gradle-run.sh" language="Bash" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
+{{< code file="gradle-run.sh" language="bash" options="" >}}
 
 Esta es la salida y funcionamiento del cliente realizando balanceado la carga entre las mútiples instancias y que ocurre cuando se añade una nueva o una empieza a fallar y se elimina de la lista.
 

@@ -20,7 +20,7 @@ Como he comentado en un artículo anterior sobre los [modelos push y pull emplea
 
 [Apache Tapestry](http://tapestry.apache.org/) que emplea el modelo pull dispone de la [anotación Cached](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/annotations/Cached.html) que permite cachear el resultado de un método a nivel de componente y página durante la generación de la misma. Su uso sería el siguiente:
 
-{{< code file="Label.java" language="Java" options="" >}}
+{{< code file="Label.java" language="java" options="" >}}
 
 En este ejemplo cada vez que se llama a los métodos getPosts, getPostsCount se accede a una base de datos (o sistema externo) que lanza una consulta, supongamos, costosa de calcular o que simplemente es innecesaria hacerla varias veces. Usando la anotación Cached podemos hacer la aplicación más eficiente evitando las segundas llamadas a los métodos. Si el componente Label del ejemplo se usa dentro de un bucle de un [componente loop](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/corelib/components/Loop.html) y como parámetros se le van pasando varios labels las llamadas a los métodos getPosts y getPostCount se realizarán solo para cada valor diferente.
 

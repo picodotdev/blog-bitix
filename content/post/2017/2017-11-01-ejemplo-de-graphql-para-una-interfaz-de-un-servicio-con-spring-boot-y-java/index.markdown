@@ -37,33 +37,33 @@ Para usar GraphQL hay que definir un _schema_ que incluye los tipos, sus propied
 
 Una definido el esquema hay que desarrollar los _resolvers_ que son encargados de obtener los datos seguramente de una base de datos externa ya sea una base de datos SQL o NoSQL en este caso utilizando una clase que implementa el patrón repositorio y que abstrae del sistema de persistencia donde se almacenan los datos.
 
-{{< code file="Query.java" language="Java" options="" >}}
-{{< code file="LibraryRepository.java" language="Java" options="" >}}
-{{< code file="Book.java" language="Java" options="" >}}
-{{< code file="Author.java" language="Java" options="" >}}
+{{< code file="Query.java" language="java" options="" >}}
+{{< code file="LibraryRepository.java" language="java" options="" >}}
+{{< code file="Book.java" language="java" options="" >}}
+{{< code file="Author.java" language="java" options="" >}}
 
 Los _mutators_ son los encargados de procesar las peticiones de modificación.
 
-{{< code file="Mutation.java" language="Java" options="" >}}
+{{< code file="Mutation.java" language="java" options="" >}}
 
 Usando una aplicación de [Spring Boot][spring-boot] para ofrecer el servicio hay que realizar la contribución adecuada al contenedor de dependencias, en Java GraphQL se define como un [_servlet_](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html) al cual hay que proporcionarle la configuración de los _resolvers_, _mutators_, procesador de contexto que en este caso se utiliza para la autenticación y definición del esquema entre otras posibles cosas.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="AuthContext.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="AuthContext.java" language="java" options="" >}}
 
 El lenguaje de consulta GraphQL permite consultar el grafo de objetos y recuperar los datos deseados. En el siguiente ejemplo se obtienen los libros, los autores y los libros con los datos de sus autores de una clase que implementa el patrón _repository_. En el ejemplo los datos del repositorio están definidos en la propia clase de forma estática pero como su función es abstraer de donde se obtienen los datos el cambio sería sencillo para que los obtuviese de una base de datos SQL o NoSQL ya que los cambios estarían encapsulados principalmente en esa clase. Los datos son devueltos en formato JSON.
 
-{{< code file="curl-1.sh" language="Bash" options="" >}}
+{{< code file="curl-1.sh" language="bash" options="" >}}
 
 Una de las ventajas de GraphQL sobre REST es que es posible realizar una única petición lo que en REST podrían ser varias. Por ejemplo, la siguiente consulta obtiene en una única consulta todos los libros, todos los autores y el autor con identificativo 1 de la biblioteca, esto mejora el rendimiento ya que en REST se hubiesen requerido varias peticiones una para obtener libros, otra para los autores y otra para el autor 1. La otra ventaja sobre REST es que se devuelven únicamente los datos que el cliente solicita y no una lista prefijada por el desarrollador de la interfaz.
 
-{{< code file="curl-2.sh" language="Bash" options="" >}}
+{{< code file="curl-2.sh" language="bash" options="" >}}
 
 Las peticiones de modificación se envían mediante _POST_. Este es el caso para añadir un libro a la biblioteca y los casos de que el autor del libro no sea válido o que el usuario que añade el libro no tenga permisos. En el ejemplo los errores no son descriptivos de lo que realmente ha sucedido, habría que hacer el [tratamiento de errores adecuado para que los mensajes fuesen más descriptivos][blogbitix-279].
 
-{{< code file="curl-3.sh" language="Bash" options="" >}}
-{{< code file="PermissionException.java" language="Java" options="" >}}
-{{< code file="ValidationException.java" language="Java" options="" >}}
+{{< code file="curl-3.sh" language="bash" options="" >}}
+{{< code file="PermissionException.java" language="java" options="" >}}
+{{< code file="ValidationException.java" language="java" options="" >}}
 
 La forma explicada en las guías de GraphQL para Java es que el _mutator_ reciba los datos y este delegue la funcionalidad en una clase que implemente el patrón _repository_ que abstrae del sistema de almacenamiento (base de datos SQL, NoSQL o cualquier otro), además, este patrón _repository_ o clase de lógica de negocio se recomienda que implemente la funcionalidad necesaria para aplicar la autorización. En el ejemplo aunque de forma sencilla solo en usuario _admin_ tiene permitido añadir libros, en un proyecto es posible realizar la autenticación usando [Keycloak][keycloak] como sistema de OAuth, usar el _token_ de OAuth para implementar la autorización y un _framework_ de seguridad como [Apache Shiro][shiro] para aplicar los permisos a las funcionalidades.
 

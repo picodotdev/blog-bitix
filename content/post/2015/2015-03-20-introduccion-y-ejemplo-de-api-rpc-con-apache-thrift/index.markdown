@@ -35,7 +35,7 @@ Apache Thrift es un _framework_ para desarrollar servicios eficientes e interope
 
 Primeramente, para usar Apache Thrift debemos instalar el paquete en la distribución que usemos. En Arch Linux con:
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 A continuación deberemos definir la interfaz del servicio, supongamos que queremos hacer un servicio que nos ofrezca un mensaje de ping, la hora del servidor y la suma de dos números. La interfaz de este servicio usando el DSL es:
 
@@ -43,16 +43,16 @@ A continuación deberemos definir la interfaz del servicio, supongamos que quere
 
 Podemos elegir cualesquiera lenguajes deseemos de la amplia lista soportada anterior, en este caso usaré Java tanto para el servidor como para el cliente. Usando el comando <code>thrift</code> e indicando el lenguaje y la interfaz generamos los artefactos:
 
-{{< code file="gradlew.sh" language="Bash" options="" >}}
+{{< code file="gradlew.sh" language="bash" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 Esto nos genera unas clases en Java y una interfaz que implementaremos para proporcionar la funcionalidad del servicio, en el caso del ejemplo la interfaz es _Service.Iface_. Para que los clientes puedan consumir este servicio debemos iniciar el servidor que no será más que un programa Java que escucha las peticiones de los clientes en un puerto.
 
-{{< code file="Server.java" language="Java" options="" >}}
+{{< code file="Server.java" language="java" options="" >}}
 
 Una vez están los servicios disponibles podemos consumirlos con las siguientes siguientes líneas de código de una implementación de cliente, basta hacer uso de las clase _Service.Client_ generada a partir de la interfaz del servicio.
 
-{{< code file="Client.java" language="Java" options="" >}}
+{{< code file="Client.java" language="java" options="" >}}
 
 Ejecutando el cliente y llamando a los métodos de la interfaz del servicio veremos en la terminal la siguiente salida:
 

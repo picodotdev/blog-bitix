@@ -59,7 +59,7 @@ Vavr proporciona una representación bien diseñada de algunos de los tipos más
 
 Entre la [documentación de Varv](http://www.vavr.io/vavr-docs) hay numerosos ejemplos de código de todo lo anterior que recomiendo leer. En el siguiente ejemplo de código incluyo algunos posibles casos de uso de varias de las funcionalidades anteriores. En definitiva la librería Vavr complementa y añade a Java algunas de las características presentes en la programación funcional de otros lenguajes.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="Plaintext" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 

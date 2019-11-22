@@ -28,11 +28,11 @@ Teniendo instalado en la tarjeta SD tanto la partición de arranque como la part
 			image1="lsbk.png" thumb1="lsbk-thumb.png" >}}
 </div>
 
-{{< code file="leer-particion.sh" language="Bash" options="" >}}
+{{< code file="leer-particion.sh" language="bash" options="" >}}
 
 El comando dd creará un archivo en nuestro ordenador con la imagen de la partición del sistema de la Raspberry Pi. A continuación deberemos escribir esa imagen de la partición en el dispositivo USB también usando el comando dd. Hay que tener en cuenta que al escribir la imagen perderemos todos los datos que tengamos en el dispositivo destino. En el ejemplo, el dispositivo /dev/sdb1 se corresponde con la partición del dispositivo USB en el que copiaremos la partición del sistema de la Raspberry Pi.
 
-{{< code file="escribir-particion.sh" language="Bash" options="" >}}
+{{< code file="escribir-particion.sh" language="bash" options="" >}}
 
 Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos /dev/sdb1, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
 

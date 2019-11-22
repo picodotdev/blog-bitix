@@ -29,30 +29,30 @@ Para permitir a Vault generar credenciales de conexión hay que activar el _back
 
 Con las siguientes comandos se inicia [Consul][consul] y Vault. 
 
-{{< code file="consul.sh" language="Bash" options="" >}}
-{{< code file="vault.sh" language="Bash" options="" >}}
+{{< code file="consul.sh" language="bash" options="" >}}
+{{< code file="vault.sh" language="bash" options="" >}}
 {{< code file="vault.hcl" language="Plaintext" options="" >}}
 
 La base de datos se inicia en un contenedor de Docker, se crea una base de datos y una tabla.
 
-{{< code file="postgres.sh" language="Bash" options="" >}}
+{{< code file="postgres.sh" language="bash" options="" >}}
 
 En Vault hay que crear la configuración para conectarse a la base de datos y un rol que contiene la configuración para generar las credenciales y permitir obtenerlas, básicamente es un sentencia SQL con el nombre del usuario y contraseña, los permisos que se le asignan y el tiempo de concesión.
 
-{{< code file="vault-database.sh" language="Bash" options="" >}}
-{{< code file="vault-role.sh" language="Bash" options="" >}}
+{{< code file="vault-database.sh" language="bash" options="" >}}
+{{< code file="vault-role.sh" language="bash" options="" >}}
 
 Las credenciales se generan en el momento de leer una propiedad de Vault.
 
-{{< code file="vault-credentials.sh" language="Bash" options="" >}}
+{{< code file="vault-credentials.sh" language="bash" options="" >}}
 
 En postgres la conexión desde la máquina local se permiten sin necesidad de credenciales, para simular realizar la conexión desde otra máquina hay que iniciar otro contenedor. En la conexión se utilizan las credenciales que ha proporcionado Vault. Dado que se realiza una operación de red hay que desactivar el _firewall_ del sistema o permitir la conexión al puerto de la base de datos que en postgres es el 5432 si fuera necesario. Listando los usuarios de la base de datos con el comando _\du_ se muestra el creado por Vault y si tiempo de validez.
 
-{{< code file="postgres-connect.sh" language="Bash" options="" >}}
+{{< code file="postgres-connect.sh" language="bash" options="" >}}
 
 Si el usuario y contraseña no es correcto no se permite la conexión a la base de datos.
 
-{{< code file="postgres-connect-fail.sh" language="Bash" options="" >}}
+{{< code file="postgres-connect-fail.sh" language="bash" options="" >}}
 
 En las aplicaciones Java que utilizan [Spring][spring] el proyecto [Spring Cloud Vault][spring-cloud-vault] proporciona las utilidades para simplificar en gran medida la obtención de las credenciales a la base de datos utilizando Vault.
 

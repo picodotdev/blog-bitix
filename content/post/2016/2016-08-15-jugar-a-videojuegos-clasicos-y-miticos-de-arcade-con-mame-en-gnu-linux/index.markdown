@@ -28,7 +28,7 @@ Voy a explicar como instalar [Mame][mame] para emular esos sistemas antiguos y c
 
 Deberemos instalar el paquete del [emulador Mame](https://www.archlinux.org/packages/community/x86_64/mame/) y un lanzador que en este caso usaré [QMC2](https://www.archlinux.org/packages/community/x86_64/qmc2/) aunque como alternativa también está [RetroArch](https://wiki.archlinux.org/index.php/RetroArch) o [Lakka para una Raspberry Pi][blogbitix-301]. Posteriormente deberemos obtener las ROMs de los juegos de algunas de las muchas páginas que existen en internet. En [Arch Linux][archlinux] los paquetes del emulador Mame y el lanzador QMC2 los instalamos con el siguiente comando:
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 Instalados estos paquetes y descargada una ROM de ejemplo como la de [Ghouls & Gosht](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs\/Ghouls'n_Ghosts_(World)/13191) de [EMUPARADISE](http://www.emuparadise.me) y colocada en un directorio (no hace falta descomprimir el archivo de la ROM) iniciamos el lanzador QMC2. QMC2 inicialmente nos pedirá donde se encuentra el binario del emulador y el directorio donde están las ROMs. Configurado QMC2 buscaremos el juego por su nombre del que hayamos descargado la ROM.
 

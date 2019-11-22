@@ -28,7 +28,7 @@ En realidad de KeePass hay varias implementaciones, la original es KeePass imple
 
 Instalado el [paquete de KeePassXC](https://www.archlinux.org/packages/community/x86_64/keepassxc/) de nuestra distribución [GNU][gnu]/[Linux][linux] o el binario para nuestro sistema operativo lo primero que deberemos hacer es crear una base de datos que protegeremos con una contraseña maestra, se puede guardar la base de datos en un archivo en cualquier ubicación.
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

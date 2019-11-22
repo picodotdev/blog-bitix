@@ -33,7 +33,7 @@ Podemos usar la versión gratuita del [plugin RedmineCRM](http://www.redminecrm.
 
 Después de [instalar Redmine con Bitnami][blogbitix-54] si queremos instalar el plugin ágile de RedmineCRM debemos realizar los siguientes pasos desde la terminal de la máquina virtual, en mi caso usando VirtualBox:
 
-{{< code file="instalar-redminecrm-bitnami.sh" language="Bash" options="" >}}
+{{< code file="instalar-redminecrm-bitnami.sh" language="bash" options="" >}}
 
 Finalmente, debemos activar el plugin agile en el proyecto usando la opción Administration> Agile.
 

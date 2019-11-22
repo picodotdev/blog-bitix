@@ -24,7 +24,7 @@ Para entender los formatos de archivos de vídeo hay que distinguir tres concept
 
 Contenedores de vídeo son MKV (Matroska), AVI, MP4, WebM, WMV, o FLV siendo MKV, MP4 y AVI los más comunes en el momento de escribir este artículo. Con el siguiente comando obtenemos la lista de codificadores y decodificadores que es capaz de utilizar FFmpeg:
 
-{{< code file="ffmpeg-codecs.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-codecs.sh" language="bash" options="" >}}
 
 Algunos de los codificadores (_encoders_) y decodificadores (_decoders_) más comunes son:
 
@@ -35,7 +35,7 @@ Si antes de reproducirlos en el reproductor multimedia o Smart TV pruebas en ví
 
 Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio codificado con mp3 estos son los comandos que me han servidor para recodificarlo y reproducirlo corretamente en un reproductor multimedia [iomega ScreenPlay TV Link](https://www.google.es/search?q=omega+ScreenPlay+TV+Link&ie=utf-8&oe=utf-8&gws_rd=cr&ei=_Q4BV7WXBcnXU9nQtcgI) que tendrá ya más de 7 años. De MKV/H.264/MP3 a MPG/MPEG2/MP3, a MPG/MPEG1/MP3, a MP4/H.264/AC3 y en el caso de DivX AVI/XViD/MP el vídeo se reproducía con unos molestos frecuentes pequeños parones en la imagen. Con el parámetro _-c:v_ indicamos el codificador de vídeo, con _-c:a_ el codificador de audio y con la extensión del archivo de salida el contenedor.
 
-{{< code file="ffmpeg-convert.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-convert.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -44,19 +44,19 @@ Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio
 
 Si no se indica la tasa de bits como indican en la [documentación de FFmpeg](https://ffmpeg.org/ffmpeg.html) el codificador seleccionará por defecto una tasa de bits muy baja resultando en una calidad muy pobre por lo que deberemos indicar una similar a la original. Para ver ver la calidad de un vídeo y del audio usamos el parámetro _-i_:
 
-{{< code file="ffmpeg-info.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-info.sh" language="bash" options="" >}}
 
 Con la información de la calidad el vídeo y audio original lo indicamos en la conversión con los parámetros _-b:v_ y _-b:a_ para el vídeo y audio de los como se ha usado en los ejemplos anteriores. Si queremos cambiar la resolución del vídeo lo indicamos con el parámetro _-vf_, reduciremos también la tasa de bits dedicados si el tamaño del vídeo de salida es menor.
 
-{{< code file="ffmpeg-scale.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-scale.sh" language="bash" options="" >}}
 
 Con FFmpeg también nos es posible extraer el audio de un vídeo a un archivo de sonido mp3 o ogg o quitar el audio del vídeo, para ello con el parámetro _-vn_ omitiremos el vídeo y con _-an_ omitiremos el audio:
 
-{{< code file="ffmpeg-extract.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-extract.sh" language="bash" options="" >}}
 
 Los vídeos pueden tener múltiples pistas de audio y subtítulos en varios idiomas, para reducir el tamaño del archivo podemos eliminar las pistas de los idiomas que no queramos. Por ejemplo, el siguiente vídeo contiene tres pistas de subtítulos en los idiomas español, inglés y francés y cuatro pistas de audio en japonés, español, francés y español latinoamericano, el siguiente comando nos da información de las pistas o _streams_ en la parte final.
 
-{{< code file="ffmpeg-i.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-i.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -65,11 +65,11 @@ Los vídeos pueden tener múltiples pistas de audio y subtítulos en varios idio
 
 Para hacer la eliminación de las pistas usamos el siguiente comando donde los parámetros _-map_ son las pistas o _streams_ que queremos copiar y conservar del original en el nuevo archivo, en este caso solo la pista del vídeo y la pista de audio en español. Dependiendo del número de pistas para otros idiomas que tenga el archivo y de la duración del vídeo el ahorro de espacio que conseguiremos será más o menos notable. Haciendo un cálculo suponiendo algunas cifras habituales un audio a 320kb/s para una película de 120 minutos el audio ocupa alrededor de 281 MiB que ya es una cifra notable ((320 kilobits/segundo / 8 bits/byte) * 60 segundos/minuto * 120 minutos / 1024 kilobytes/megabyte = 281,25 megabytes) y a lo que hay que multiplicar cada pista de audio que eliminemos del original.
 
-{{< code file="ffmpeg-map.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-map.sh" language="bash" options="" >}}
 
 Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</code> podemos reproducirlo, quizá en algún caso nos sirva aunque esté destinado principalmente para pruebas ya que no ofrece controles para pausar o detener la reproducción.
 
-{{< code file="ffplay.sh" language="Bash" options="" >}}
+{{< code file="ffplay.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -78,7 +78,7 @@ Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</co
 
 Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.
 
-{{< code file="ffmpeg-masive.sh" language="Bash" options="" >}}
+{{< code file="ffmpeg-masive.sh" language="bash" options="" >}}
 
 Otras opciones útiles disponibles en los comandos de FFmpeg son:
 

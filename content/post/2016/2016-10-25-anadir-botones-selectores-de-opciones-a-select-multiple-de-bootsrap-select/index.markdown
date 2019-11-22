@@ -51,7 +51,7 @@ Y este sería el aspecto de componente en el navegador.
 
 Si usásemos el [componente de selección múltiple con Apache Tapetstry y bootstrap-select][blogbitix-188] sería el propio componente _MultiSelect_ el que se encargaría de incluir el JavaScript en la página cuando en ella se usase lo que nos evita incluir el JavaScript de forma global en la aplicación y en todas las páginas cuando realmente no se usa.
 
-{{< code file="MultiSelect.java" language="Java" options="" >}}
+{{< code file="MultiSelect.java" language="java" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 

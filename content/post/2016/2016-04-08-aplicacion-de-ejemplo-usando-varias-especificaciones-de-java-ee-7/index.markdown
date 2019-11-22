@@ -37,7 +37,7 @@ Veamos primero la página inicial índice con el listado de productos generada c
 
 {{< code file="index-1.html" language="HTML" options="" >}}
 {{< code file="template.html" language="HTML" options="" >}}
-{{< code file="IndexBean.java" language="Java" options="" >}}
+{{< code file="IndexBean.java" language="java" options="" >}}
 
 El JavaScript añade la lógica en el cliente para ir realizando la lista de la compra usando poco más que [jQuery][jquery] y [Require JS][requirejs], además, inicializa el WebSocket para recibir los mensajes desde el servidor con la actualizaciones del stock de los productos. Realizada la lista de productos se enviará un petición REST al servidor para formalizar la compra.
 
@@ -45,23 +45,23 @@ El JavaScript añade la lógica en el cliente para ir realizando la lista de la 
 
 Las peticiones de compras en el servidor se procesarán por un _endpoint_ de una interfaz REST que usando un EJB con la lógica de negocio para persistir la compra en una base de datos relacional y actualizar los _stocks_. Actualizados los _stocks_ y persistida la compra se genera un evento CDI con el hecho de que se ha producido una compra.
 
-{{< code file="PurchasesResource.java" language="Java" options="" >}}
-{{< code file="ApplicationConfig.java" language="Java" options="" >}}
-{{< code file="NoStockExceptionHandler.java" language="Java" options="" >}}
+{{< code file="PurchasesResource.java" language="java" options="" >}}
+{{< code file="ApplicationConfig.java" language="java" options="" >}}
+{{< code file="NoStockExceptionHandler.java" language="java" options="" >}}
 
 La aplicación irá registrando los usuarios conectados a la aplicación con el objetivo de enviarles las actualizaciones de _stock_ de los productos y con un evento CDI con la notificación de que se ha producido una compra que ha actualizado el _stock_ de algunos productos enviará los nuevos _stocks_ a los clientes con la tecnología WebSocket en un mensaje con datos en JSON que soportan los navegadores y Java EE.
 
-{{< code file="Supermarket.java" language="Java" options="" >}}
-{{< code file="SupermarketLocal.java" language="Java" options="" >}}
+{{< code file="Supermarket.java" language="java" options="" >}}
+{{< code file="SupermarketLocal.java" language="java" options="" >}}
 
 Usando la API de seguridad de Java EE autenticaremos al comprador o vendedor, la página se personalizará según el rol del usuario y en el servidor con la anotación [RolesAllowed](https://docs.oracle.com/javaee/7/api/javax/annotation/security/RolesAllowed.html) y métodos _post_, _get_, _list_ se limitarán las acciones que pueden realizar según sus roles, su uso se puede ver en los listados de código anteriores. Con la página de inicio de sesión se autenticará al usuario de forma programática usando <code>request.login(username, password);</code>. Esta acción es recomendable hacerla usando el [protocolo seguro HTTPS con TLS a configurar en el servidor][blogbitix-14] para que la contraseña se transmita cifrada entre el cliente y el servidor.
 
 {{< code file="login.html" language="HTML" options="" >}}
-{{< code file="LoginBean.java" language="Java" options="" >}}
+{{< code file="LoginBean.java" language="java" options="" >}}
 
 La aplicación está dividida en varios módulos construidos con la [herramienta de automatización Gradle][elblogdepicodev-98] siendo una aplicación <abbr title="Enterprise ARchive">EAR</abbr> estándar estando constituida por un módulo para los EJB, otro para la aplicación web con un <abbr title="Web  ARchive">WAR</abbr>. Un cliente podría conectarse directamente a la aplicación sin mediación de un navegador web, esto último sería lo que emplearíamos si fuese una [aplicación de escritorio empleando Java FX][blogbitix-100].
 
-{{< code file="SupermarketClient.java" language="Java" options="" >}}
+{{< code file="SupermarketClient.java" language="java" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

@@ -38,7 +38,7 @@ En esta entrada explicaré como instalar GeeXboX en la Raspberry Pi y de esta ma
 
 Lo primero que haremos es [descargar la última versión de GeeXboX](http://www.geexbox.org/download/) para la Raspberry Pi y el [script para nuestro dispositivo](http://www.geexbox.org/geexbox-for-embedded-devices-creating-a-bootable-sd-card/) que hará todo el proceso de instalación, en este caso para la Pi. Antes de grabar la imagen en la tarjeta SD deberemos conocer el nombre del dispositivo de la tarjeta SD, para ello ejecutamos los comandos lsblk y blkid en modo superusuario antes y después de introducir la tarjeta SD. Anotamos el nombre y lo usamos para ejecutar el siguiente comando sustituyendo el dispositivo anotado por el de este comando si es distinto que copiará la imagen del sistema a la tarjeta SD.
 
-{{< code file="instalacion-geexbox.sh" language="Bash" options="" >}}
+{{< code file="instalacion-geexbox.sh" language="bash" options="" >}}
 
 Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar [GParted](http://gparted.org/). Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.
 

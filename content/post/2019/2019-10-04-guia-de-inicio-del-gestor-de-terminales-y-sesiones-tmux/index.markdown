@@ -44,7 +44,7 @@ Para facilitar un poco su uso y poder cambiar entre paneles y hacer _scroll_ si 
 
 Para automatizar la configuración inicial de tmux soporta un archivo para personalizarlo a través de un _script_ con comandos. Así por ejemplo si siempre se desea una misma configuración de paneles y ventanas con la misma disposición es posible realizarlo con un _script_ como el siguiente.
 
-{{< code file="tmux.sh" language="Bash" options="" >}}
+{{< code file="tmux.sh" language="bash" options="" >}}
 
 En el [manpage de tmux](http://man.openbsd.org/OpenBSD-current/man1/tmux.1) y los enlaces de referencia hay guías con una lista más completa que las operaciones básicas que incluyo en este artículo.
 

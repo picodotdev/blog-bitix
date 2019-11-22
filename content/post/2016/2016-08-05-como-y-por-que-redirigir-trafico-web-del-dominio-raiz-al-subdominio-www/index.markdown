@@ -31,7 +31,7 @@ Dependiendo del servidor web que utilicemos la configuración a añadir para hac
 
 Usando Docker y el archivo de configuración completo podemos probar que funciona en local sin necesidad de instalar o cambiar la configuración de Nginx si tenemos instalado su paquete.
 
-{{< code file="docker-run-nginx.sh" language="Bash" options="" >}}
+{{< code file="docker-run-nginx.sh" language="bash" options="" >}}
 {{< code file="nginx.conf" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">
@@ -43,7 +43,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 
 ### Apache
 
-{{< code file="docker-run-httpd.sh" language="Bash" options="" >}}
+{{< code file="docker-run-httpd.sh" language="bash" options="" >}}
 {{< code file="httpd.conf" language="Plaintext" options="" >}}
 
 <div class="media" style="text-align: center;">

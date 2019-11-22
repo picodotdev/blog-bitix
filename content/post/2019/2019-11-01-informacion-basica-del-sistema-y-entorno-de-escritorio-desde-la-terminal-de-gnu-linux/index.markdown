@@ -23,7 +23,7 @@ Al realizar una captura de pantalla del escritorio es muy interesante mostrar un
 
 Los comandos _neofetch_ y _screenfetch_ son muy similares en la salida que producen, quizá prefiero _neofetch_ porque tiene menos dependencias sobre otros paquetes y ocupa menos. Con la opción _--help_ de cada uno de ellos muestran las opciones de personalización que poseen.
 
-{{< code file="commands.sh" language="Bash" options="" >}}
+{{< code file="commands.sh" language="bash" options="" >}}
 
 En las imágenes se aprecia que mi distribución es [Arch Linux][archlinux], [mi equipo es un Intel NUC8i5BEK][blogbitix-363], en el momento de escribir el artículo tengo la versión 5.3.7 del núcleo de Linux, un millar de paquetes instalados y unos pocos de [paquetes de Flatpak][blogbitix-362], mi interprete de comandos es [Bash][bash], mi entorno de escritorio es [GNOME][gnome] sin apenas personalización, la CPU del NUC es una [Intel i5-8259][intel-i5-8259U] de 4 núcleos y 8 hilos que tiene una GPU integrada [Intel Iris Plus Graphics 655][intel-iris-graphics-655], con algunos programas abiertos que está consumiendo unos 3 GiB de los 32 GiB disponibles.
 

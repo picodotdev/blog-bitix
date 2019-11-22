@@ -38,23 +38,23 @@ Lo primero que deberemos hacer para acceder a la información del sensor desde J
 
 El código en C invocará el método _setTemperatureHumidity_ pasando como parámetros los datos de temperatura y humedad leídos del sensor, el método nativo _read_ es utilizado por el código Java que controla el sensor para realizar la lectura en el código C.
 
-{{< code file="Dht11.java" language="Java" options="" >}}
+{{< code file="Dht11.java" language="java" options="" >}}
 {{< code file="Dht11.h" language="C" options="" >}}
 {{< code file="Dht11.c" language="C" options="" >}}
 
 El código en C del sensor hay que compilarlo en la Raspberry Pi con el compilador [gcc][gcc] obteniendo una librería con código nativo que Java y JNI cargará y enlazará de forma dinámica en el programa Java. Ya que el código C usa la librería wiringPi ha de instalarse previamente junto con el compilador gcc. Obtenida la librería la copiamos mediante FTP o SSH de la Raspberry Pi a nuestro equipo de desarrollo. El código C realiza la lectura usando la librería wiringPi siguiendo la especificación de como se transmiten los datos por el sensor, realizada una lectura correcta usa varias de las funciones de la estructura [JNIEnv](http://xdprof.sourceforge.net/doxygen/structJNIEnv__.html) para obtener la referencia a un método de la clase DHT11 e invocarlo con los valores obtenidos del sensor o lanza una excepción si la lectura ha sido errónea.
 
-{{< code file="install-packages.sh" language="Bash" options="" >}}
+{{< code file="install-packages.sh" language="bash" options="" >}}
 
 El comando para compilar la librería de código nativo a partir del código en C y el archivo de cabecera generado con _javah_ es el siguiente.
 
-{{< code file="compile.sh" language="Bash" options="" >}}
+{{< code file="compile.sh" language="bash" options="" >}}
 
 Para facilitar la ejecución la librería la proporcionó ya compilada y ubicada en el directorio _src/main/resources_ de modo que será incluida en el archivo _jar_ generado por [Gradle][gradle] en el ejemplo y que la clase DHT11 extraerá al directorio temporal del sistema y cargará para su uso.
 
 La clase Java del ejemplo que hace uso del sensor realiza una lectura cada 3 segundos e imprime en la terminal y en el _display_ 1602 el último valor obtenido correctamente de la temperatura y humedad.
 
-{{< code file="TemperatureHumidity.java" language="Java" options="" >}}
+{{< code file="TemperatureHumidity.java" language="java" options="" >}}
 
 Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del _pin_ GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del _header_ de la Raspberry Pi. Para ver el cableado del _display_ 1602 más detalladamente y la activación del bus de comunicación I2C que necesita consulta el artículo [Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java][blogbitix-215].
 
@@ -76,11 +76,11 @@ Ejecutando el programa del ejemplo y usando el display 1602 (16 columnas y 2 fil
 En el kernel de Linux hay un módulo que proporciona también los valores del sensor, sin embargo, no he conseguido obtener la temperatura y humedad usándolo. Lo he probado con el kernel 4.4 de Arch Linux ARM y en la versión 4.9 veo que hay cambios en este módulo que quizá lo hagan funcionar. Para usar el módulo del kernel hay que añadir un poco de configuración para el inicio de la Raspberry Pi. En los archivos _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ y _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ estarán la temperatura y humedad respectivamente.
 
 {{< code file="kernel-module-config.txt" language="Plaintext" options="" >}}
-{{< code file="cat.sh" language="Bash" options="" >}}
+{{< code file="cat.sh" language="bash" options="" >}}
 
 Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos comandos.
 
-{{< code file="execute.sh" language="Bash" options="" >}}
+{{< code file="execute.sh" language="bash" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" >}}
 

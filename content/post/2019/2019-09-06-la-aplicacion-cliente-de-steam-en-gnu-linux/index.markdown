@@ -24,15 +24,15 @@ La plataforma de juegos [Steam][steam] es una de las más populares. Con su clie
 
 Steam ofrece un cliente nativo para GNU/Linux que en Arch Linux se ofrece en los repositorios oficiales. Requiere además habilitar el repositorio _multilib_ para paquetes de 32 bits e instalar el controlador gráfico de la tarjeta gráfica de 32 bits.
 
-{{< code file="pacman-steam.sh" language="Bash" options="" >}}
+{{< code file="pacman-steam.sh" language="bash" options="" >}}
 
 Para habilitar el repositorio _multilib_ en Arch Linux hay que editar el archivo de configuración _/etc/pacman.conf_ y descomentar varias líneas quitando el caracter _#_ que las precede.
 
-{{< code file="pacman.conf" language="Bash" options="" >}}
+{{< code file="pacman.conf" language="bash" options="" >}}
 
 En el caso de un gráfica Intel hay que instalar el paquete lib32-mesa.
 
-{{< code file="pacman-lib32-mesa.sh" language="Bash" options="" >}}
+{{< code file="pacman-lib32-mesa.sh" language="bash" options="" >}}
 
 Hecho esto se puede iniciar el cliente, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego [Company of Heroes 2](https://store.steampowered.com/app/231430/Company_of_Heroes_2/).
 

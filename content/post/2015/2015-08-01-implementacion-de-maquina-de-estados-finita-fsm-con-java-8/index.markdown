@@ -35,23 +35,23 @@ Basándome en Stateless4j he creado una nueva implementación y usando Java 8 la
 
 La API de la máquina de estados se compone de dos _builders_ que proporcionan una API fluida, uno para crear los estados (StateBuilder) y otro para la máquina de estados (StateMachineBuilder). Además de la máquina de estados (StateMachine) y la clase que representa un estado (State).
 
-{{< code file="StateMachineBuilder.java" language="Java" options="" >}}
-{{< code file="StateBuilder.java" language="Java" options="" >}}
-{{< code file="StateMachine.java" language="Java" options="" >}}
-{{< code file="State.java" language="Java" options="" >}}
+{{< code file="StateMachineBuilder.java" language="java" options="" >}}
+{{< code file="StateBuilder.java" language="java" options="" >}}
+{{< code file="StateMachine.java" language="java" options="" >}}
+{{< code file="State.java" language="java" options="" >}}
 
 Internamente se usa la clase _TransitionBehiavour_ que define el comportamiento en una transición y ante un evento. Si posee una función de protección (guard) se comprueba antes de ejecutar la acción (selector) y que devolverá el nuevo estado.
 
-{{< code file="TriggerBehaviour.java" language="Java" options="" >}}
+{{< code file="TriggerBehaviour.java" language="java" options="" >}}
 
 El siguiente es un ejemplo de uso similar al del artículo del patrón de diseño State con un hipotético flujo de estados para una compra junto con el código de la máquina de estados necesario para implementarlo y con unas pruebas unitarias. El enumerado _State_ define los posibles estados y el enumerado _Trigger_ define los posibles eventos, en constructor _static_ se define la única instancia de máquina de estados necesaria para manejar cualquier número de instancias de _Purchase_ usando las clases _builder_.
 
-{{< code file="Purchase.java" language="Java" options="" >}}
-{{< code file="PurchaseTest.java" language="Java" options="" >}}
+{{< code file="Purchase.java" language="java" options="" >}}
+{{< code file="PurchaseTest.java" language="java" options="" >}}
 
 La interfaz _Subject_ proporciona las operaciones para que la máquina de estados pueda obtener y modificar el estado del objeto manejado en una transición, en este caso de una instancia de _Purchase_.
 
-{{< code file="Subject.java" language="Java" options="" >}}
+{{< code file="Subject.java" language="java" options="" >}}
 
 Otra posibilidad a las máquinas de estados son las herramientas de [procesos de negocio](https://es.wikipedia.org/wiki/Proceso_de_negocio) o BPM (Business Process Management) pero salvo que tengamos algo muy complejo la máquina de estados de este ejemplo será más que suficiente para la mayoría de situaciones. Hace un tiempo escribir varios artículos sobre [Activiti][activiti] y [Drools][drools]:
 

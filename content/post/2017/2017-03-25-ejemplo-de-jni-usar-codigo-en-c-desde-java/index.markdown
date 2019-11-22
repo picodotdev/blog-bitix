@@ -48,20 +48,20 @@ Desde los métodos de código nativo se puede:
 
 Los comandos para generar el archivo de cabecera de C y compilarlo con el código nativo en una librería compartida con gcc son:
 
-{{< code file="build.sh" language="Bash" options="" >}}
+{{< code file="build.sh" language="bash" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 La cabecera usa varias definiciones de tipos definidas en los archivos _jni.h_ y el archivo que variará según el sistema operativo _jni\_md.h_. En la [estructura JNIEnv](http://xdprof.sourceforge.net/doxygen/structJNIEnv__.html) con múltiples funciones de integración en C y Java, también varias definiciones de los tipos Java para usarlos en C como _jobject_, _jstring_, _jint_, _jboolean_, _jlong_, _jdouble_, _jchar_, etc.
 
 El programa que emite el mensaje _Hello World!_ desde código nativo en C debe cargar y enlazar la librería de código nativo con el código de la clase Java. Esto se muestra en el bloque de inicialización _static_ de la clase, en este caso usándo el método [System.load()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#load-java.lang.String-), la librería de código nativo de extensión _.so_ en GNU/Linux como en este caso al construirse el proyecto se incluye en el archivo _.jar_ del artefacto resultante se extráe al directorio temporal y se carga desde esa ubicación temporal. En el programa se llama al método _print_ implementado en código nativo y en el código C se usa la función _printf_ de la librería _stdio_ para emitir el mensaje:
 
-{{< code file="JniHelloWorld.java" language="Java" options="" >}}
+{{< code file="JniHelloWorld.java" language="java" options="" >}}
 {{< code file="JniHelloWorld.c" language="C" options="" >}}
 {{< code file="JniHelloWorld.h" language="C" options="" >}}
 
 La librería compartida para un sistema _amd64_ la he compilado en mi equipo de escritorio y para la versión _arm_ en la Raspberry Pi e incluido en el directorio _src/main/resources_ de código fuente del ejemplo.
 
-{{< code file="execute.sh" language="Bash" options="" >}}
+{{< code file="execute.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

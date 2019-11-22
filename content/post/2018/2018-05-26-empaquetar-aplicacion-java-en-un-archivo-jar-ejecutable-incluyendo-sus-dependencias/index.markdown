@@ -23,11 +23,11 @@ La forma de distribuir el código compilado a _bytecode_ en Java es a través de
 
 Una aplicación distribuida en forma de múltiples archivos archivos _jar_ se ejecuta con una línea de comandos como la siguiente en la que el parámetro _-cp_ indica las ubicaciones donde se buscarán librerías _jar_ y archivos _class_ si se distribuyen de forma individual, el segundo parámetro indica la clase que contiene el método _main_ que inicia la aplicación. Previamente hay que generar el artefacto del proyecto con [Gradle][gradle].
 
-{{< code file="gradlew-assemble.sh" language="Bash" options="" >}}
+{{< code file="gradlew-assemble.sh" language="bash" options="" >}}
 
 En este caso se trata de una aplicación que emite un arte en formato _ascii_ en la terminal donde para cada linea se usa un color diferente mediante la librería [Jansi][jansi] que la aplicación tiene como dependencia.
 
-{{< code file="java-cp.sh" language="Bash" options="" >}}
+{{< code file="java-cp.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -41,7 +41,7 @@ Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la op
 
 La propiedad _Manifest-Version_ y _Created-By_ son informativas de la versión del archivo de manifiesto y el autor de la librería _jar_. La propiedad _Main-Class_ indica la clase _main_ de la librería o aplicación y la propiedad _Class-Path_ es una lista separada por espacios de librerías adicionales. Las propiedades _Main-Class_ y _Class-Path_ son los parámetros que indicamos como parámetros en el comando _java_ anterior. Con el archivo _jar_, su manifiesto y las librerías la aplicación Java se inicia de forma un poco más sencilla que antes al no tener que indicar ni la clase _main_ ni el _classpath_.
 
-{{< code file="java-jar.sh" language="Bash" options="" >}}
+{{< code file="java-jar.sh" language="bash" options="" >}}
 
 Como en este caso, si Java no se encuentra la dependencia de Jansi y se produce la siguiente excepción que indica que no se ha encontrado una clase necesaria.
 
@@ -55,8 +55,8 @@ Para hacer la distribución más sencilla hay una posibilidad que usan algunos p
 
 Con el siguiente comando la ejecución de la aplicación empaquetada como _uberjar_ produce el mismo resultado. Con el _uberjar_ en el archivo de manifiesto no es necesario incluir el atributo _Class-Path_ ya que todas las clases necesarias tanto de la aplicación como de las dependencias ha sido empaquetadas en el _jar_.
 
-{{< code file="gradlew-assemble.sh" language="Bash" options="" >}}
-{{< code file="java-jar-uberjar.sh" language="Bash" options="" >}}
+{{< code file="gradlew-assemble.sh" language="bash" options="" >}}
+{{< code file="java-jar-uberjar.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc

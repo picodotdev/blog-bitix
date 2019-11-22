@@ -32,11 +32,11 @@ Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar 
 
 Para generar un par de claves RSA que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:
 
-{{< code file="script-1.sh" language="Bash" options="" >}}
+{{< code file="script-1.sh" language="bash" options="" >}}
 
 Para cifrar la clave generada con el algoritmo _aes256_ y protegerla por una contraseña se puede emplear el siguiente comando, en realidad al generar la clave indicando la misma opción _-aes256_ en el comando anterior la clave se generará cifrada y protegida por una contraseña. Para cambiar la contraseña es el mismo comando y el segundo comando elimina la contraseña y la descifra:
 
-{{< code file="script-12.sh" language="Bash" options="" >}}
+{{< code file="script-12.sh" language="bash" options="" >}}
 
 El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspecto (los tres puntos son líneas de contenido omitidas).
 
@@ -46,11 +46,11 @@ El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspect
 
 El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
 
-{{< code file="script-9.sh" language="Bash" options="" >}}
+{{< code file="script-9.sh" language="bash" options="" >}}
 
 También se puede obtener la clave pública en formato [OpenSSH][openssh] y una representación gráfica de la huella digital.
 
-{{< code file="script-10.sh" language="Bash" options="" >}}
+{{< code file="script-10.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -62,7 +62,7 @@ También se puede obtener la clave pública en formato [OpenSSH][openssh] y una 
 
 La huella digital de una clave pública sirve para comprobar que la clave es la esperada. Son una cadena de números y letras pudiendo estar cada pareja de caracteres separados por _:_.
 
-{{< code file="script-11.sh" language="Bash" options="" >}}
+{{< code file="script-11.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure
@@ -74,11 +74,11 @@ La huella digital de una clave pública sirve para comprobar que la clave es la 
 
 Un certificado contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:
 
-{{< code file="script-2.sh" language="Bash" options="" >}}
+{{< code file="script-2.sh" language="bash" options="" >}}
 
 Si no queremos tratar con una autoridad de certificado, ya que cobran por la firma, podemos crear un certificado autofirmado que puede ser suficiente para un entorno de pruebas. El comando para generar el certificado autofirmado es:
 
-{{< code file="script-3.sh" language="Bash" options="" >}}
+{{< code file="script-3.sh" language="bash" options="" >}}
 
 ### Convertir un certificado a otros formatos
 
@@ -86,23 +86,23 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 
 #### Convertir un certificado en formato DER (.crt .cer .der) a PEM
 
-{{< code file="script-4.sh" language="Bash" options="" >}}
+{{< code file="script-4.sh" language="bash" options="" >}}
 
 #### Convertir un certificado en formato PEM a DER
 
-{{< code file="script-5.sh" language="Bash" options="" >}}
+{{< code file="script-5.sh" language="bash" options="" >}}
 
 #### Convertir un certificado en formato PEM y una clave privada a PKCS#12 (.pfx .p12)
 
-{{< code file="script-6.sh" language="Bash" options="" >}}
+{{< code file="script-6.sh" language="bash" options="" >}}
 
 #### Convertir un archivo en formato PKCS#12 (.pfx .p12) que contiene una clave privada y certificado a PEM
 
-{{< code file="script-7.sh" language="Bash" options="" >}}
+{{< code file="script-7.sh" language="bash" options="" >}}
 
 #### Convertir PKCS#12 a keystore JKS
 
-{{< code file="script-8.sh" language="Bash" options="" >}}
+{{< code file="script-8.sh" language="bash" options="" >}}
 
 Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. Pero eso será tema para la entrada [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14].
 

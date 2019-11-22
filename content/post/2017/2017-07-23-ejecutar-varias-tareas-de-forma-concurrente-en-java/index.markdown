@@ -29,7 +29,7 @@ Suponiendo que una aplicación ha de realizar varias consultas a una base de dat
 
 Este es el código para ejecutar tareas de forma secuencial y de forma concurrente con un _pool_ de _threads_ de tamaño el doble del número de procesadores del sistema midiendo además el tiempo total para comprobar la diferencia de tiempos de ambas opciones.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 {{< asciinema id="130161" caption="Ejemplo de ejecución secuencial y concurrente" >}}
 

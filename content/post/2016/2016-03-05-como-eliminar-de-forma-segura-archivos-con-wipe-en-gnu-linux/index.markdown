@@ -23,11 +23,11 @@ Esto es necesario o recomendable si trabajamos con información sensible como da
 
 En GNU/Linux para eliminar archivos de forma segura disponemos del [comando <code>wipe</code>](http://linux.die.net/man/1/wipe) que en [Arch Linux][archlinux] su [paquete](https://www.archlinux.org/packages/extra/x86_64/wipe/) se encuentra en el repositorio Extra. Su uso es el siguiente, la opción _-r_ hace un borrado recursivo de un directorio por lo que hay que usarla con cuidado y la opción _-q_ hace un borrado rápido sobreescribiendo únicamente 4 veces el contenido del archivo con datos aleatorios, finalmente se indica la ruta del archivo o directorio a eliminar de forma segura. Con otras opciones se puede afinar el comportamiento de borrado.
 
-{{< code file="wipe.sh" language="Bash" options="" >}}
+{{< code file="wipe.sh" language="bash" options="" >}}
 
 Para destruir la información de forma completa con datos aleatorios de una unidad de almacenamiento podemos usar el [comando <code>dd</code>](http://linux.die.net/man/1/dd), deberemos sustituir la _X_ por el identificador adecuado asignado a la unidad que podemos obtener con el comando <code>blkid</code>:
 
-{{< code file="dd.sh" language="Bash" options="" >}}
+{{< code file="dd.sh" language="bash" options="" >}}
 
 Como se indica en la [documentación de _wipe_](http://manpages.ubuntu.com/manpages/lucid/man1/wipe.1.html) todavía puede ser posible recuperar archivos por el sistema de registro o _journaling_ de los sistemas de archivos modernos en los que algunos datos pueden escribirse en el sistema de registro, también se comenta alguna noción más a tener en cuenta en cuanto a la seguridad.
 

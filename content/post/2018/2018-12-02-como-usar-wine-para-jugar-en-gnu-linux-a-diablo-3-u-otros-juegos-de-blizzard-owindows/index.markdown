@@ -31,7 +31,7 @@ Como los juegos son desarrollados para Windows hay que utilizar una capa que imp
 
 Como siempre he empezado por leer el artículo de la [wiki de Arch Linux dedicado a Wine](https://wiki.archlinux.org/index.php/Wine) pra ver que paquetes son necesarios instalar además del repositorio _multilib_ y que información contiene, en un primer momento hay que habilitar el repositorio _multilib_ con implementaciones de librerías de 32 bits. Para juegos la opción recomendable es [wine-staging](https://www.archlinux.org/packages/multilib/x86_64/wine-staging/) que contiene los últimos parches añadidos, [wine](https://www.archlinux.org/packages/multilib/x86_64/wine/) es una versión más estable pero con una cadencia de versiones más lenta que no tiene los últimos parches. También son necesarios los [controladores gráficos de 32 bits de la tarjeta](https://www.archlinux.org/packages/multilib/x86_64/lib32-mesa/), en este caso de Intel. Y el sistema de sonido para 32 bits, si no se instala [lib32-libpulse](lib32-libpulse)  en la terminal aparecen mensajes de que no se encuentra las librerías _libpulse.so.0_ y _libpulse.so.2_. [wine_gecko](https://www.archlinux.org/packages/multilib/x86_64/wine_gecko/) y [wine-mono](https://www.archlinux.org/packages/community/any/wine-mono/) son unos requerimientos de Wine y los programas Windows.
 
-{{< code file="install-wine.sh" language="Bash" options="" >}}
+{{< code file="install-wine.sh" language="bash" options="" >}}
 
 Por otro lado Wine posee una [base de datos con información de compatibilidad y estabilidad][wine-appdb] de programas Windows sobre Wine en GNU/Linux. [Diablo 3][blizzard-diablo3] es un juego de [Blizzard][blizzard] que posee un sistema con una aplicación propia para descargar, instalar y controlar el uso adecuado del juego, la aplicación es [Battle.net][blizzard-battlenet] con la que se pueden instalar [todos los juegos de este estudio](http://eu.blizzard.com/es-es/games/). Para obtenerla hay que registrarse como usuario y una vez registrados se puede descargar el cliente que es un archivo ejecutable de Windows _.exe_ que hay que ejecutar con Wine. 
 
@@ -44,15 +44,15 @@ Por otro lado Wine posee una [base de datos con información de compatibilidad y
 
 Por lo que para instalar Diablo 3 es necesario Battle.net. La [página de información de Battle.net de Wine](https://appdb.winehq.org/objectManager.php?sClass=version&iId=28855) indica que es necesario adicionalmente las librerías [lib32-libldap](https://www.archlinux.org/packages/multilib/x86_64/lib32-libldap/) y [lib32-gnutls](https://www.archlinux.org/packages/multilib/x86_64/lib32-gnutls/) además de [winetricks](https://www.archlinux.org/packages/community/any/winetricks/). El comando de _winetricks_ es necesario para resolver el problema descrito en la página de Wine sobre Battle.net, _Blizzard App icon keeps spinning forever_, para poder iniciar sesión en con el cliente.
 
-{{< code file="install-libs.sh" language="Bash" options="" >}}
+{{< code file="install-libs.sh" language="bash" options="" >}}
 
 Con esto ya se puede iniciar el cliente de Battle.net con Wine y comenzar la instalación de Diablo 3, ocupa unos 17 GB que dependiendo de la conexión a internet de la que se disponga tardará más menos. Llegado a cierta cantidad de datos descargado del juego ya se puede iniciar pero se puede esperar a que se descargue completamente para tener mejor experiencia y no falte nada del contenido. En algunos momentos mientras se descarga el juego la aplicación parece que se queda congelada aunque sigue descargando, basta redimensionar un poco la ventana para activarse de nuevo y ver el progreso.
 
-{{< code file="winetrics.sh" language="Bash" options="" >}}
+{{< code file="winetrics.sh" language="bash" options="" >}}
 
 Una vez instalados los paquetes necesarios y realizada la configuración se puede iniciar el cliente de Battle.net.
 
-{{< code file="wine-battlenet.sh" language="Bash" options="" >}}
+{{< code file="wine-battlenet.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -69,7 +69,7 @@ Una vez instalados los paquetes necesarios y realizada la configuración se pued
 
 Instalado el juego se inicia con un comando de Wine o con el acceso directo del menú de aplicaciones del juego o del cliente de Battle.net.
 
-{{< code file="wine-diablo3.sh" language="Bash" options="" >}}
+{{< code file="wine-diablo3.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -115,7 +115,7 @@ El juego permite ajustar la calidad gráfica a la capacidad del equipo para tene
 
 Por defeco en mi caso no he podido cambiar la resolución del juego desde las opciones solo me ofrece una opción la de la resolución del monitor, como 2560x1440 es una resolución alta y aún jugables los 42 fps no son muchos, a más fps se aprecia más fluidez. Para cambiar la resolución he tenido que utilizar el siguiente comando desde la terminal con el que Wine ejecuta el programa en modo explorador o en un escritorio virtual, se indica el nombre del escritorio virtual Diablo 3, 1920x1080 es la resolución deseada en este caso y el último parámetro _Diablo III.exe_ es la ubiciación del ejecutable.
 
-{{< code file="wine-explorer.sh" language="Bash" options="" >}}
+{{< code file="wine-explorer.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -147,7 +147,7 @@ Hay alguna utilidad que realiza algunas modificaciones a Wine, una de ellas es [
 
 Al instalar programas en Wine se crean accesos directos en el menú de aplicaciones con lo que la integración en el sistema es perfecta y una aplicación Wine se puede ejecutar como cualquier otra aplicación del sistema. Si más tarde se desea [desinstalar todos esos paquetes de _multilib_](https://wiki.archlinux.org/index.php/Official_repositories#Disabling_multilib), Wine y [eliminar los accesos directos en el menú de aplicaciones creados por Wine](https://wiki.archlinux.org/index.php/Wine#Removing_menu_entries) hay que ejecutar los siguientes comandos, en Arch Linux.
 
-{{< code file="uninstall.sh" language="Bash" options="" >}}
+{{< code file="uninstall.sh" language="bash" options="" >}}
 
 {{% reference %}}
 {{< links >}}

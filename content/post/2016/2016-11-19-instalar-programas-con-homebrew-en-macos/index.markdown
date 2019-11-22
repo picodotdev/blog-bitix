@@ -29,55 +29,55 @@ En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, [Ho
 
 Para instalar Hombrew ejecutamos el siguiente comando en la terminal:
 
-{{< code file="homebrew.sh" language="Bash" options="" >}}
+{{< code file="homebrew.sh" language="bash" options="" >}}
 
 El siguiente comando nos permitirá instalar versiones anteriores a las últimas, por ejemplo, Java 7:
 
-{{< code file="brew-versions.sh" language="Bash" options="" >}}
+{{< code file="brew-versions.sh" language="bash" options="" >}}
 
 Lo siguiente será buscar los programas que queramos:
 
-{{< code file="brew-search.sh" language="Bash" options="" >}}
+{{< code file="brew-search.sh" language="bash" options="" >}}
 
 Para instalar Firefox, Google Chrome, VirtualBox, Docker, Java 8 y Java 7, Atom e iTerm2:
 
-{{< code file="brew-cask-install.sh" language="Bash" options="" >}}
+{{< code file="brew-cask-install.sh" language="bash" options="" >}}
 
 Algunos otros programas que podemos instalar si programamos son:
 
-{{< code file="brew-install.sh" language="Bash" options="" >}}
+{{< code file="brew-install.sh" language="bash" options="" >}}
 
 Con jenv podemos cambiar entre las versiones de Java 8 y Java 7:
 
-{{< code file="jenv.sh" language="Bash" options="" >}}
+{{< code file="jenv.sh" language="bash" options="" >}}
 
 Los servicios como MySQL o Redis podemos iniciarlos y pararlos, además de ver cuales hemos instalado:
 
-{{< code file="brew-services.sh" language="Bash" options="" >}}
+{{< code file="brew-services.sh" language="bash" options="" >}}
 
 También podemos listar que paquetes y programas tenemos instalados:
 
-{{< code file="brew-list.sh" language="Bash" options="" >}}
+{{< code file="brew-list.sh" language="bash" options="" >}}
 
 Para ver que programas y paquetes tenemos desactualizados:
 
-{{< code file="brew-outdated.sh" language="Bash" options="" >}}
+{{< code file="brew-outdated.sh" language="bash" options="" >}}
 
 Para actualizar todos los paquetes desactualizados o actualizar uno individualmente:
 
-{{< code file="brew-upgrade.sh" language="Bash" options="" >}}
+{{< code file="brew-upgrade.sh" language="bash" options="" >}}
 
 Si queremos mantener desactualizado un paquete podemos fijar la versión que tengamos instalada:
 
-{{< code file="brew-pin.sh" language="Bash" options="" >}}
+{{< code file="brew-pin.sh" language="bash" options="" >}}
 
 Y para desinstalar paquetes:
 
-{{< code file="brew-uninstall.sh" language="Bash" options="" >}}
+{{< code file="brew-uninstall.sh" language="bash" options="" >}}
 
 La terminal incluida de serie en macOS es muy básica por ello mucha gente suele instalar una más avanzada como [iTerm2](http://iterm2.com/). iTerm2 añade funcionalidades como pestañas y podemos dividir una terminal horizontal y verticalmente. También se puede instalar [oh-my-zsh](https://ohmyz.sh/) que permite gestionar la configuración del intérprete de comandos [zsh][zsh] pudiendo añadir temas para modificar el _prompt_ del sistema o cambiarlo según la información del directorio actual, por ejemplo, si estamos en un directorio de git veremos en que rama estamos y si hay cambios realizados.
 
-{{< code file="oh-my-zsh.sh" language="Bash" options="" >}}
+{{< code file="oh-my-zsh.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

@@ -41,15 +41,15 @@ Utilizando el ejemplo que hice para la [serie de artículos sobre Spring Cloud][
 
 Una clase de una aplicación de Spring Boot que utiliza un _Counter_.
 
-{{< code file="DefaultController.java" language="Java" options="" >}}
+{{< code file="DefaultController.java" language="java" options="" >}}
 
 Las claves de las métricas por defecto exportadas por Spring Boot Actuator.
 
-{{< code file="actuator-metrics.json" language="JSON" options="" >}}
+{{< code file="actuator-metrics.json" language="json" options="" >}}
 
 Los datos de una métrica en el _enpoint_ _/actuator/metrics/service.invocations_.
 
-{{< code file="actuator-metrics-service-invocations.json" language="JSON" options="" >}}
+{{< code file="actuator-metrics-service-invocations.json" language="json" options="" >}}
 
 Y las mismas métricas en el formato que espera Prometheus.
 
@@ -57,13 +57,13 @@ Y las mismas métricas en el formato que espera Prometheus.
 
 Para iniciar el ejemplo de Spring Cloud que consta de un servicio de registro y descubrimiento, un servicio de configuración, un servicio del que se pueden iniciar varias instancias y un cliente que hace peticiones hay que utilizar la siguiente serie de comandos.
 
-{{< code file="gradlew-run.sh" language="Bash" options="" >}}
+{{< code file="gradlew-run.sh" language="bash" options="" >}}
 
 Una vez expuestas las métricas en el formato que espera Prometheus este ya puede recolectarlas. Para usar Prometheus y posteriormente Grafana de forma fácil evitando tener que instalar y configurar nada se puede usar [Docker][docker], en este caso con [Docker Compose][docker-compose]. En la [serie de artículos sobre Docker][blogbitix-serie-docker] explico que proporciona Docker y como usar las varias herramientas que ofrece.
 
 El archivo de Docker Compose contiene dos contenedores uno para Prometheus y otro para Grafana, con sus archivos de configuración. En la configuración de Prometheus se crean un _job_ que recolecta las métricas cada pocos segundos del servicio a través del _endpoint_ de métricas. En la configuración de Grafana se añade como una fuente de datos Prometheus, se puede añadir otras varias.
 
-{{< code file="docker-compose.sh" language="Bash" options="" >}}
+{{< code file="docker-compose.sh" language="bash" options="" >}}
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 {{< code file="prometheus.yml" language="YAML" options="" >}}
 {{< code file="grafana-datasources.yml" language="YAML" options="" >}}

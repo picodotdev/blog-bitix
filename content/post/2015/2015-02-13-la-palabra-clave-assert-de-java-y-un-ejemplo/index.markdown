@@ -35,7 +35,7 @@ Nos pueden entrar dudas de cuando emplear un _assert_ y cuando un _if_ o una exc
 
 Un pequeño ejemplo de los _asserts_ podría ser el siguiente en la que en el método _nextNumber_ hay una postcondición según la cual el método debe devolver un número entero entre 0 y 9 (incluidos):
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Un _assert_ cuya expresión se evalúa como falso produce una excepción del tipo [java.lang.AssertionError](https://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html) pero para ello se han de habilitar en tiempo de ejecución como el parámetro _-ea_ de la máquina virtual. En [eclipse][eclipse] podemos cambiarlo en la configuración de ejecución del programa en la pestaña _Arguments_ y _VM arguments_ tal como se ven en la siguiente captura de pantalla:
 

@@ -91,7 +91,7 @@ El entorno de ejecución de Java y el compilador conocen exactamente ahora que m
 
 Los módulos permiten definir a cada librería los paquetes de clases que exporta como su API accesible por otra librería o programa que la requiera. Además, cada librería debe al mismo tiempo definir qué paquetes requiere. Las exportaciones y requerimientos permiten ahora detectar al iniciar la máquina virtual si el grafo de dependencias está completo cosa que antes se producía en un mayor número de casos en tiempo de ejecución posiblemente con la excepción [NoClassDefFound](https://docs.oracle.com/javase/9/docs/api/java/lang/NoClassDefFoundError.html). Una de los efectos que se mejoran en Java y que ya es una característica a la que se le da mucha importancia es la compatibilidad hacia atrás y también la encapsulación ya que los desarrolladores de las librerías tienen mayor control de que paquetes se permite su uso evitando dependencias no deseadas que impidan en un futuro que aplicaciones que hipotéticamente las usasen dejasen de ser compatibles con nuevas versiones.
 
-{{< code file="java-list-modules.sh" language="Bash" options="" >}}
+{{< code file="java-list-modules.sh" language="bash" options="" >}}
 
 La definición de un módulo se realiza con un nuevo archivo de código fuente de nombre _module-info.java_. Con la palabra reservada _requires_ y una línea por paquete se definen qué paquetes requiere el módulo, con la palabra reservada _exports_ se define que paquetes del módulo se exportan y son visibles por algún otro módulo que lo requiera. También se han añadido las palabras reservadas _provides_ y _uses_ para proporcionar y usar definiciones de servicios que con anterioridad se realizaba en archivos ubicados en _META-INF/services_ como muestro en el ejemplo [Aplicación Java extensible con la clase ServiceLoader][blogbitix-94]. También se puede hacer que la directiva _requires_ sea de forma transitiva para que el módulo que lo use pueda usar ese paquete sin requerirlo de forma explícita, la directiva _opens_ permite hacer uso de reflectividad usando el método [setAccesible](https://docs.oracle.com/javase/9/docs/api/java/lang/reflect/AccessibleObject.html).
 
@@ -99,9 +99,9 @@ Dado que la transición hacia el uso de los módulos puede generar problemas de 
 
 Este es el típico ejemplo _Hola Mundo_ con Java 9 en que que muestro como compilar un programa usando los módulos y como ejecutarlo directamente desde la linea de comandos. En el código de la clase _Main_ no hay ningún cambio respecto al que sería con una versión anterior de Java sin embargo se añade el nuevo archivo de código fuente _module-info.java_ donde se definen sus dependencias que este programa no tiene salvo la implícita sobre el módulo _java.base_. Los comandos para compilar y ejecutar el ejemplo directamente con los comandos _javac_ y _java_ si cambian, ahora se usa en vez de _classpath_ la opción _module-path_ y se indica la clase del módulo que contiene el método _main_ del programa, [comparar con un ejemplo en Java 8 o anteriores versiones][blogbitix-373]. 
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="module-info.java" language="Java" options="" >}}
-{{< code file="java.sh" language="Bash" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="module-info.java" language="java" options="" >}}
+{{< code file="java.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figure

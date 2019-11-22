@@ -31,15 +31,15 @@ Entrando a discutir el apartado de la simplicidad de ejecución de un lenguaje i
 Teniendo 3 pequeños _scripts_ de ejemplo el archivo _build.gradle_ que necesitaríamos sería el siguiente definiendo de forma dinámica una tarea _runScript_ y otra _createStartScripts_ para cada uno, los _scripts_ son lo más sencillos posible emitiendo en la consola un mensaje pero podrían hacer cualquier cosa, incluso [usar Spring Boot][blogbitix-103]:
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="Script1.java" language="Java" options="" >}}
+{{< code file="Script1.java" language="java" options="" >}}
 
 Si necesitamos ejecutar los _scripts_ cada cierto tiempo en _cron_ podemos programar el comando que queremos ejecutar regularmente, en vez de usar el comando <code>gradlew</code> que comprueba si ha cambiado el código fuente y necesita compilarse de nuevo tardando un poco más en iniciarse, con una tarea de tipo [CreateStartScripts](https://docs.gradle.org/current/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) podemos generar el _script_ bash tanto para sistemas de la familia Unix como Windows que realmente lanzará los _scripts_ Java. La tarea de Gradle _createStartScripts_ genera todos los _scripts_ de inicio del proyecto.
 
-{{< code file="gradle-build.sh" language="Bash" options="" >}}
+{{< code file="gradle-build.sh" language="bash" options="" >}}
 
 La ejecución de cada uno de los _scripts_ con _gradlew_ y usando los _scripts_ lanzadores sería:
 
-{{< code file="gradle-run.sh" language="Bash" options="" >}}
+{{< code file="gradle-run.sh" language="bash" options="" >}}
 {{< asciinema id="29509" caption="Ejecución de <i>scripts</i> en Java" >}}
 
 Para un proyecto de _scripts_ con Java necesitaremos un archivo _build.gradle_ y cierta estructura de directorios pero no es algo suficiente complejo como para descartar Java como lenguaje para este propósito más teniendo en cuenta sus ventajas, a parte de la JVM el proyecto de _scripts_ será autocontenido incluso para las dependencias con lo que su despliegue en un entorno de producción será muy sencillo basta con copiar archivos (<abbr title="File Transfer Protocol">FTP</abbr>, _wget_, ...) o hacer <code>git clone</code> y <code>git pull</code> directamente del repositorio de código fuente para actualizarlo, si se usan los _scripts_ lanzadores después de actualizar el código fuente del proyecto será necesario reconstruirlo con <code>./gradlew build</code>.

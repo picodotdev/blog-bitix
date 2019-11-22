@@ -27,13 +27,13 @@ En Log4j implementando una clase de tipo [Message](http://logging.apache.org/log
 
 El método heredado de [getFormattedMessage()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getFormattedMessage()) es el encargado de generar la traza en este caso utilizando como apoyo los métodos también heredados [getFormat()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getFormat()) que contiene el patrón del mensaje y [getParameters()](http://logging.apache.org/log4j/log4j-2.3/log4j-api/apidocs/org/apache/logging/log4j/message/Message.html#getParameters()) que devuelve como parámetros para el patrón del mensaje los valores de las propiedades.
 
-{{< code file="SimpleProductMessage.java" language="Java" options="" >}}
-{{< code file="ProductMessage.java" language="Java" options="" >}}
-{{< code file="Product.java" language="Java" options="" >}}
+{{< code file="SimpleProductMessage.java" language="java" options="" >}}
+{{< code file="ProductMessage.java" language="java" options="" >}}
+{{< code file="Product.java" language="java" options="" >}}
 
 En los siguientes casos se utilizan diferentes formas para emitir la traza. En el primer caso se utiliza la forma habitual de proporcionar el patrón y sus parámetros, el segundo caso utiliza el método _toString()_ del objeto. En el tercer y cuarto caso se utilizan las clases que implementan la interfaz _Message_ emitiendo un mensaje diferente cada una de ellas sin tener que proporcionar el patrón ni extraer las propiedades de la clase _Producto_ ya que son estas implementaciones en las que se delega esto.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 En todos estos casos las trazas emitidas son las mismas salvo en el caso de _ProductMessage_ que muestra una traza con más información.
 

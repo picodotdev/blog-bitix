@@ -27,8 +27,8 @@ Una aplicación práctica en la que usar _lookahead_ es para ocultar los número
 
 Una tarjeta de crédito está formada por 4 grupos de 4 dígitos separados por espacios cumpliendo la expresión regular _\d{4} \d{4} \d{4} \d{4}_ y un _bearer token_ puede seguir la expresión regular _Bearer \w+_. Para ocultar la información de estas cadenas excepto los cuatro últimos caracteres hay que comprobar que los primeros complen el patrón añadiéndolos en un grupo de captura para su reemplazo posterior y mirar los cuatro siguientes si también lo cumplen fuera del grupo de captura. En el caso de la tarjeta de crédito se mira que la expresión cumple los primeros números de una tarjeta de crédito y le siguen los restantes, la primera parte se incluye en un grupo de captura con los paréntesis.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="SecuredMessage.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="SecuredMessage.java" language="java" options="" >}}
 {{< code file="log4j2.yaml" language="Yaml" options="" >}}
 
 El resultado es el siguiente:

@@ -25,11 +25,11 @@ Con [GPG][gnupg] y [JavaMail][javamail] podemos firmar los mensajes electrónico
 
 Además de cómo firmar un correo electrónico el siguiente ejemplo muestra [cómo ejecutar un proceso del sistema en Java][blogbitix-132] que nos proporciona acceso a todas las utilidades GNU, scripts de [Python][python] u otros comandos que tenga instalados, también muestra [cómo enviar un correo electrónico en un programa Java][elblogdepicodev-50] que ya comenté pero ahora con un ejemplo ejecutable y enviando un archivo adjunto.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firma el asunto, fecha, otros adjuntos y destinatarios del mensaje pero podría utilizarse lo mismo para firmar estos otros datos. Enviado el correo electrónico podemos verificar la firma con el siguiente comando de GPG.
 
-{{< code file="gpg-verify.sh" language="Bash" options="" >}}
+{{< code file="gpg-verify.sh" language="bash" options="" >}}
 {{< code file="email.txt" language="Plaintext" options="" >}}
 {{< code file="signature.asc.txt" language="Plaintext" options="" >}}
 {{< code file="email-original.txt" language="Plaintext" options="" >}}

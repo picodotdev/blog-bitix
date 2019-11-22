@@ -28,28 +28,28 @@ Para mejorar la seguridad en la web y facilitar la administración de certificad
 
 Los pasos para usar en un servidor web un certificado de Let's Encrypt son los siguientes. Primero hay que instalar el [paquete certbot](https://www.archlinux.org/packages/community/any/certbot/) según la distribución de GNU/Linux, en [Arch Linux][archlinux]:
 
-{{< code file="pacman.sh" language="Bash" options="" >}}
+{{< code file="pacman.sh" language="bash" options="" >}}
 
 En el proceso de obtención del certificado demostraremos que somos los propietarios del sitio web a certificar. Usando [nginx][nginx] como servidor web, iniciado y el dominio a certificar con la opción _-d_ se usa el siguiente comando:
 
-{{< code file="certbot.sh" language="Bash" options="" >}}
+{{< code file="certbot.sh" language="bash" options="" >}}
 
 El certificado obtenido tiene una fecha de expiración de únicamente tres meses periodo antes del cual hay que renovarlo. Para hacer la renovación hay que usar el comando:
 
-{{< code file="certbot-renew.sh" language="Bash" options="" >}}
+{{< code file="certbot-renew.sh" language="bash" options="" >}}
 
 La renovación del certificado se realiza cuando queda poco tiempo para que expire, unos 30 días, el siguiente comando permite comprobar antes si la configuración es correcta para realizar la renovación.
 
-{{< code file="certbot-renew-dry-run.sh" language="Bash" options="" >}}
+{{< code file="certbot-renew-dry-run.sh" language="bash" options="" >}}
 
 La clave privada y certificado que Let's Encrypt genera una vez el dominio se ha validado se ubican en el directorio _/etc/letsencrypt/live/_ con una carpeta por cada dominio. También se puede ver desde la linea de comandos los certificados existentes y sus fechas de expiración.
 
-{{< code file="key-cert.sh" language="Bash" options="" >}}
-{{< code file="certbot-certificates.sh" language="Bash" options="" >}}
+{{< code file="key-cert.sh" language="bash" options="" >}}
+{{< code file="certbot-certificates.sh" language="bash" options="" >}}
 
 Dado el relativo poco tiempo de validez de los certificados es recomendable automatizar la renovación empleando una [expresión cron](https://es.wikipedia.org/wiki/Cron_(Unix)). La utilidad _certbot_ solo hace la renovación del certificado cuando queda menos de un més para su expiración aunque se programe su ejecución en este caso cada 6 horas y en un minuto aleatorio que Let's Encrypt recomienda para que todos los usuarios no programen sus renovaciones al mismo tiempo:
 
-{{< code file="cron.sh" language="Bash" options="" >}}
+{{< code file="cron.sh" language="bash" options="" >}}
 
 Una vez que se ha renovado el certificado hay que reiniciar el servidor web para que lo utilice y para ello está el parámetro _--renew-hook_ que ejecuta un comando cuando se produce una renovación. En el ejemplo anterior está el comando para reiniciar el servicio de nginx con el sistema gestión de procesos de [systemd][systemd].
 

@@ -23,14 +23,14 @@ Con las [secuencias de escape](http://www.termsys.demon.co.uk/vtansi.htm) se pue
 
 Hay varias formas de conocer el tamaño de la terminal. Con el intérprete de comandos [Bash][bash] el ancho y alto de la terminal se obtiene con las variables de entorno _$COLUMNS_ y _$LINES_ respectivamente. Pero también se puede obtener la misma información con el comando [tput](https://linux.die.net/man/1/tput). Para obtener esta información desde un programa Java basta con [ejecutar un proceso del sistema][blogbitix-132], obtener la salida de estos comandos y procesarla para obtener la información.
 
-{{< code file="echo.out" language="Bash" options="" >}}
+{{< code file="echo.out" language="bash" options="" >}}
 
 El siguiente ejemplo muestra varias barras de progreso utilizando la secuencia de escape _\33[{COUNT}B_, _\33[{COUNT}A_ para posicionar el cursor una linea abajo o arriba y la información de ancho y alto de la terminal obtenida de ejecutar como un subproceso el comando _tput_.
 
-{{< code file="Main.java" language="Java" options="" >}}
-{{< code file="Terminal.java" language="Java" options="" >}}
-{{< code file="Printer.java" language="Java" options="" >}}
-{{< code file="Progress.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
+{{< code file="Terminal.java" language="java" options="" >}}
+{{< code file="Printer.java" language="java" options="" >}}
+{{< code file="Progress.java" language="java" options="" >}}
 
 {{% asciinema id="237621" caption="Progreso escribiendo en la misma línea de la consola" %}}
 

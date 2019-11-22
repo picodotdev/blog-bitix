@@ -23,12 +23,12 @@ Los fragmentos en el contexto de [GraphQL][graphql] pueden ser de dos tipos, def
 
 Teniendo dos consultas que recuperan los datos de una colección de libros sin los fragmentos habría que definir los mismos datos a recuperar dos veces en ambas consultas. En estas consultas de ejemplo se recupera una lista de libros y un libro determinado. Si en ambas se recuperan los datos _id_, _title_ y _date_ hay que indicar los campos a recuperar dos veces.
 
-{{< code file="query-1.graphql" language="Plaintext" options="" >}}
-{{< code file="query-1.json" language="JSON" options="" >}}
+{{< code file="query-1.graphql" language="graphql" options="" >}}
+{{< code file="query-1.json" language="json" options="" >}}
 
 Con un fragmento se definen esos campos comunes a recuperar en las consultas una sola vez. Si posteriormente cambian los datos a recuperar solo es necesario cambiarlo en un único punto. Los fragmentos definidos son una forma de simplificar las consultas y evitar tener que cambiar varias consultas si el grupo de datos cambia en todas ellas. Los datos obtenidos son los mismos que en el caso sin utilizar el fragmento.
 
-{{< code file="query-1-fragment.graphql" language="Plaintext" options="" >}}
+{{< code file="query-1-fragment.graphql" language="graphql" options="" >}}
 
 <div class="media" style="text-align: center;">
     {{< figureproc
@@ -41,9 +41,9 @@ Los fragmentos en línea o _inline_ permiten por otra parte una funcionalidad ad
 
 Estas son las definiciones de las entidades resumidas y la consulta _publications_ que devuelve las publicaciones que incluye libros y revistas. Con la definición de una _union_ se establece que una _Publication_ puede ser un _Book_ o _Magazine_.
 
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
-{{< code file="fragment-inline.graphql" language="Plaintext" options="" >}}
-{{< code file="fragment-inline.json" language="JSON" options="" >}}
+{{< code file="library.graphqls" language="graphqls" options="" >}}
+{{< code file="fragment-inline.graphql" language="graphql" options="" >}}
+{{< code file="fragment-inline.json" language="json" options="" >}}
 
 Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _id_, _title_ y _date_. Para las publicaciones de tipo _Magazine_ se recuperan los campos _id_, _name_ y _pages_. Las publicaciones _Muy interesante_ y _PC Actual_ son dos _Magazine_ y el resto de publicaciones son del tipo _Book_.
 
@@ -55,14 +55,14 @@ Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _
 
 Si es necesario hay que añadir la clases Java que representan a los tipos de GraphQL a la lista de clases del diccionario en la definición del esquema.
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 Para cada entidad hay una clase Java que la representa y un repositorio que contiene la consulta para obtener las publicaciones que no hace más que añadir en una lista el conjunto de libros y revistas en la librería.
 
-{{< code file="Book.java" language="Java" options="" >}}
-{{< code file="Magazine.java" language="Java" options="" >}}
-{{< code file="Publication.java" language="Java" options="" >}}
-{{< code file="LibraryRepository.java" language="Java" options="" >}}
+{{< code file="Book.java" language="java" options="" >}}
+{{< code file="Magazine.java" language="java" options="" >}}
+{{< code file="Publication.java" language="java" options="" >}}
+{{< code file="LibraryRepository.java" language="java" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 

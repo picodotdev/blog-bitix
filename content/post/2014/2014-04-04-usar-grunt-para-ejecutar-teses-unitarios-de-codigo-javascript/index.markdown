@@ -22,23 +22,23 @@ Sin embargo, para ejecutar las pruebas unitarias se necesitaba un navegador y ha
 
 Primeramente necesitaremos instalar node.js y el paquete de javascript grunt-cli con de forma global en el sistema:
 
-{{< code file="script-1.sh" language="Bash" options="" >}}
+{{< code file="script-1.sh" language="bash" options="" >}}
 
 En caso de que tengamos pruebas unitarias con Jasmine como es el caso de este ejemplo deberemos instalar los siguientes paquetes en el directorio raíz del proyecto:
 
-{{< code file="script-2.sh" language="Bash" options="" >}}
+{{< code file="script-2.sh" language="bash" options="" >}}
 
 La siguiente linea como se explica en [la documentación del paquete grunt-template-jasmine-requirejs](https://www.npmjs.org/package/grunt-template-jasmine-requirejs) puede ser necesaria si en algún momento obtenemos el siguiente error:
 
-{{< code file="script-3.sh" language="Bash" options="" >}}
+{{< code file="script-3.sh" language="bash" options="" >}}
 
 {{< code file="mensaje.txt" language="Plaintext" options="" >}}
 
-{{< code file="script-4.sh" language="Bash" options="" >}}
+{{< code file="script-4.sh" language="bash" options="" >}}
 
 Si usamos [Mocha][mochajs] como librería de pruebas unitarias probablemente disponemos de varios paquetes que podemos instalar de forma similar. Una vez instaladas estas herramientas debemos crear dos archivos necesarios para Grunt, que son [package.json](https://github.com/picodotdev/elblogdepicodev/blob/master/MarionetteREST/package.json) y [grunt.js](https://github.com/picodotdev/elblogdepicodev/blob/master/MarionetteREST/grunt.js). El primero contiene la definición del paquete js para Grunt, quizá lo más destacable es que el nombre del paquete debe estar en minúsculas sino obtendremos un error parecido a «Error: Invalid name: "MarionetteREST" npm ERR! at ensureValidName». El archivo grunt.js es la descripción de las tareas de grunt que contiene un poco de configuración donde indicamos las especificaciones que contienen las pruebas unitarias, las dependencias necesarias para ejecutar las pruebas y las tareas que se definen. Con todo esto ya podemos ejecutar las pruebas con:
 
-{{< code file="script-5.sh" language="Bash" options="" >}}
+{{< code file="script-5.sh" language="bash" options="" >}}
 
 Sin embargo, puede que deseemos ejecutarlas desde la herramienta de construcción que usemos, en mi caso con Gradle. Para añadir el soporte a Gradle de ejecutar las pruebas unitarias a su vez con Grunt debemos añadir la siguiente configuración a nuestro archivo build.gradle:
 
