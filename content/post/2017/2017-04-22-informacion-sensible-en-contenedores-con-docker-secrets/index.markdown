@@ -44,7 +44,7 @@ Usando un _stack_ de servicios con un archivo de [Docker Compose][docker-compose
 Al servicio de [nginx][nginx] la clave privada y certificado para configurar el acceso mediante el protocolo seguro HTTPS se le proporciona a través de secretos que son referenciados en el archivo de configuración del servidor web _nginx.conf_.
 
 {{< code file="docker-compose-stack-app.yml" language="YAML" options="" >}}
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 
 Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el contenido de los secretos incorporados en el contenedor cuando se solicita en la URL _https\://192.168.99.100/system/info/_, esto no se debe hacer porque se pierde la seguridad que proporcionan los secretos pero sirve a modo de muestra en el ejemplo.
 

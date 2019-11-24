@@ -44,7 +44,7 @@ Las clases completas _Main.java_ y _AppServiceImpl.java_ son las siguientes.
 
 La salida en la terminal de esta aplicación al iniciarse es la siguiente:
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 jOOQ presenta varias cosas interesantes sobre Hibernate, ya es en una alternativa con un enfoque diferente, con ideas interesantes, algunas ventajas y el tiempo dirá si se convierte en el nuevo estándar para la persistencia en las aplicaciones Java. Otra de las cosas comunes que necesitaremos en una aplicación es validar los objetos _Record_, una posibilidad es usando Spring Validation.
 

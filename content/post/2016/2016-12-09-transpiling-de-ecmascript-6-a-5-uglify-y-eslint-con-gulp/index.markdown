@@ -54,17 +54,17 @@ Transformado a ECMAScript 5 queda lo siguiente.
 Estos son los archivos de configuración para ESLint donde indicaremos las reglas que queremos aplicar al código JavaScript y la configuración para Babel donde indicamos a que versión de JavaScript haremos la transformación.
 
 {{< code file="eslintrc.js" language="JavaScript" options="" >}}
-{{< code file="babelrc" language="Plaintext" options="" >}}
+{{< code file="babelrc" language="plaintext" options="" >}}
 
 Transformado con Uglify queda algo ilegible pero con el archivo _.map_ podremos depurar en el navegador mostrándose los nombres de las variables originales.
 
 {{< code file="main-uglify.js" language="JavaScript" options="" >}}
-{{< code file="main.js.map" language="Plaintext" options="" >}}
+{{< code file="main.js.map" language="plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/ECMAScript6" command="npm install, gulp, node ./build/dist/main.js" >}}
 
 El resultado son los siguientes mensajes en la terminal tanto para la ejecución del archivo ECMAScript 6 original con <code>node src/main/js/main.js</code> como para el _transpilado_ con <code>node ./build/dist/main.js</code>.
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 {{% /post %}}

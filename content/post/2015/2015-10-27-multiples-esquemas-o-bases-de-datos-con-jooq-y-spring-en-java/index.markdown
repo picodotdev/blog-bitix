@@ -61,7 +61,7 @@ Como en jOOQ la fuente de la verdad es la base de datos los modelos se generan a
 Este sería el programa de ejemplo iniciado con [Spring Boot][spring-boot] que usa ambos servicios, el de inventario y el de compras, creando un producto y haciendo una compra junto con su salida en la terminal. Ejecutándolo repetidamente con <code>./gradlew run</code> veremos aumenta el número de productos y compras guardados en cada tabla de los dos esquemas.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 {{< asciinema id="28856" caption="Ejecución del ejemplo multidatabase" >}}
 
 Si quieres obtener más información sobre varias de las herramientas como jOOQ, Liquibase, Gradle o Spring Boot que forman en el momento de escribir este artículo el actual estado del arte en Java puedes leer los diferentes artículos que he he escrito sobre ellos de forma específica:

@@ -39,7 +39,7 @@ El servicio lo definimos en una interfaz y una clase que la implementa.
 Iniciada la aplicación con <code>./gradlew run</code> y con la siguiente comando de <code>curl</code> y URL obtendremos el mensaje en formato JSON en la salida.
 
 {{< code file="curl.sh" language="bash" options="" >}}
-{{< code file="out.txt" language="Plaintext" options="" >}}
+{{< code file="out.txt" language="plaintext" options="" >}}
 
 Al diseñar APIs REST más complejas que este sencillo ejemplo conviene conocer el término [HATEOAS][hateoas]. Deberemos definir como organizar la información devuelta por los diferentes que los libros [RESTful Web APIs](https://amzn.to/2cxWMRo) y [REST in Practice](https://amzn.to/2cEzQz5) además de [artículos con consejos sobre como diseñar APIs RESTful](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api).
 

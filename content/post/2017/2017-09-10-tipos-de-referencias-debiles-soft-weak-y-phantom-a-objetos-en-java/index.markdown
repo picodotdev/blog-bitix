@@ -26,7 +26,7 @@ En Java en realidad hay 4 tipos de referencias a objetos, además de las fuertes
 Después de la llamada de varias veces al recolector de basura en este caso de forma explícita con el método [System.gc()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#gc--) las referencias son encoladas.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 El objeto de una referencia _soft_ es recolectable a discreción del recolector de basura ante necesidades de memoria, el objeto de una referencias _weak_ es recolectable si solo es alcanzable por referencias _weak_ y las referencias _phantom_ son una mejor y más flexible alternativa al mecanismo de finalización de los objetos.
 

@@ -32,7 +32,7 @@ La siguiente linea como se explica en [la documentación del paquete grunt-templ
 
 {{< code file="script-3.sh" language="bash" options="" >}}
 
-{{< code file="mensaje.txt" language="Plaintext" options="" >}}
+{{< code file="mensaje.txt" language="plaintext" options="" >}}
 
 {{< code file="script-4.sh" language="bash" options="" >}}
 

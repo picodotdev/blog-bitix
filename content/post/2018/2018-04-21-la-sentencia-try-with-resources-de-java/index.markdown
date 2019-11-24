@@ -32,7 +32,7 @@ El código es similar pero no es equivalente. Observesé que require declarar la
 La excepción que se lanza en el bloque _try_ y usando el método [Throwable.addSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#addSuppressed(java.lang.Throwable)) que se añadió en la API en Java 7 junto con el método [Throwable.getSuppressed()](https://docs.oracle.com/javase/10/docs/api/java/lang/Throwable.html#getSuppressed()) se obtienen las excepciones enmascaradas o suprimidas en la sentencia _try-with-resources_. El orden de ejecución de los bloques de una sentencia _try-with-resources_ es el indicado en los números emitidos con el método _println_.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 La mayoría de clases relacionadas con entrada y salida implementan la interfaz _AutoCloseable_ como las relacionadas con el sistema de ficheros y flujos de red como [InputStream](https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html), también las relacionadas con la conexión de base de datos mediante JDBC con [Connection](https://docs.oracle.com/javase/10/docs/api/java/sql/Connection.html).
 

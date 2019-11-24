@@ -35,7 +35,7 @@ Usando el primero de ellos junto con el _api-key_ que nos han asignado [https://
 
 Estas son las 165 divisas soportadas:
 
-{{< code file="divisas-soportadas.txt" language="Plaintext" options="" >}}
+{{< code file="divisas-soportadas.txt" language="plaintext" options="" >}}
 
 Teniendo esta API podemos automatizar en nuestra aplicación la obtención de los ratios con un límite de 1000 consultas al mes en el plan gratuito, por ejemplo una vez al día o cada seis horas dependiendo del grado de precisión que nos parezca suficiente para la aplicación. En los [planes de pago disponibles](https://openexchangerates.org/signup) las posibilidades de la API son más permitiendo por ejemplo aumentar el límite de consultas, obtener los ratios referenciados a otra moneda distinta al dólar estadounidense u otras consultas y funcionalidades.
 

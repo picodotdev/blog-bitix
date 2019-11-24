@@ -31,7 +31,7 @@ Con esto nos es posible hacer cualquier cosa que el sistema pueda hacer según l
 Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lleva arrancado. Primero se crea el proceso, se espera a que termine y se obtiene su código de salida, se obtiene la salida del proceso (entrada para el programa), se procesa el resultado y se imprimen los segudos que lleva el sistema iniciado.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="Main.out" language="Plaintext" options="" >}}
+{{< code file="Main.out" language="plaintext" options="" >}}
 
 Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades aunque si podemos es mejor tener disponible un API para invocar la funcionalidad que queremos en vez de una integración más frágil leyendo y escribiendo en la salida, de error y entrada del proceso. En el siguiente artículo basándome es esto comentaré [cómo enviar un correo electrónico en Java firmado digitalmente con GPG][blogbitix-133], aplicando esto mismo podemos [obtener el país y ciudad en base a la dirección IP][blogbitix-147] en una aplicación web.
 

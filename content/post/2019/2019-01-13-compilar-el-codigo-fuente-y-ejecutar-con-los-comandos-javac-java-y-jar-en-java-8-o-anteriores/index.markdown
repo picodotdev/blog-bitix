@@ -37,7 +37,7 @@ Una vez generados los archivos de _bytecode_ a partir de la compilación del có
 La distribución de los archivos _class_ se suele realizar usando librerías _jar_ y estas se construyen usando el comando _jar_. El [archivo de manifiesto](https://docs.oracle.com/javase/tutorial/deployment/jar/manifestindex.html) es un descriptor en el que se puede indicar la clase de entrada sin tener que especificarla en el comando _java_ haciendo los archivo _jar_ similar a un ejecutable.
 
 {{< code file="jar.sh" language="bash" options="" >}}
-{{< code file="MANIFEST.MF" language="Plaintext" options="" >}}
+{{< code file="MANIFEST.MF" language="plaintext" options="" >}}
 
 Y la ejecución de del programa contenido en el archivo _jar_.
 

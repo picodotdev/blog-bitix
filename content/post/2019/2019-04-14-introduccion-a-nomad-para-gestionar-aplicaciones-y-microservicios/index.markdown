@@ -36,7 +36,7 @@ Los _jobs_ son la unidad de trabajo que contienen la definición de los servicio
 
 Nomad y Nomad cada uno son un binario ejecutable sin ninguna otra dependencia. Basta con descargarlos e incluirlos en el _path_ del sistema. En este ejemplo hay definido un _job_ compuesto por una tarea de un contenedor docker de [nginx][nginx] configurado en un puerto aleatorio y con 1 GB de memoria para cada una de las dos instancias del servicio. Dado que lo usa es necesario [instalar Docker][blogbitix-50].
 
-{{< code file="nginx.nomad" language="Plaintext" options="" >}}
+{{< code file="nginx.nomad" language="plaintext" options="" >}}
 
 Nomad y Nomad se ejecutan con los siguientes comandos en modo desarrollo.
 

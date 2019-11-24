@@ -28,7 +28,7 @@ Para hacer una desactualización deberemos tener la versión del paquete a la qu
 
 Si no queremos que un paquete sea actualizado en la siguiente actualización del sistema que hagamos deberemos añadirlo a la lista _IgnorePkg_ del archivo _/etc/pacman.conf_.
 
-{{< code file="pacman.conf" language="Plaintext" options="" >}}
+{{< code file="pacman.conf" language="plaintext" options="" >}}
 
 No es recomendable mantener muchos paquetes desactualizados y en la lista de _IgnorePkg_ ya que estos pueden tener dependencias sobre paquetes también desactualizados, solo debe ser empleado para casos puntuales.
 

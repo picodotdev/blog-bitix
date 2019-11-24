@@ -24,7 +24,7 @@ Tener varios proyectos con dependencias entre ellos exige de la herramienta de c
 
 Necesitaremos 4 proyectos para los módulos y 5 proyectos Gradle, uno para cada módulo y otro que los englobe a todos. La estructura de directorios y archivos relativos a Gradle será la siguiente:
 
-{{< code file="estructura.txt" language="Plaintext" options="" >}}
+{{< code file="estructura.txt" language="plaintext" options="" >}}
 
 En el archivo _build.gradle_ global podemos incluir las cosas comunes a todos los proyectos como dependencias o _plugins_, en el archivo _settings.gradle_ definimos de que componentes está formado el proyecto. Las cosas comunes a todos los proyectos será el uso del _plugin java_ y [_eclipse_][eclipse], el repositorio de dependencias de _mavenCentral_, algunas dependencias y una tarea para instalar el _wrapper_ de Gradle que nos servirá para usarlo sin necesidad de instalar nada (se descargarán sus binarios automáticamente).
 

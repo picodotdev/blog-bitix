@@ -29,7 +29,7 @@ Para el caso de los CSV hay que utilizar la clase [CSVReader](http://opencsv.sou
 
 En ambos casos la salida en la consola al leer los datos de los documentos es la misma.
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 Las dependencias a incluir en el proyecto son las siguientes.
 

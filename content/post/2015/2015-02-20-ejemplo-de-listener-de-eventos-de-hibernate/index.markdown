@@ -79,7 +79,7 @@ Una vez que tenemos la clase que va a recibir los eventos para que Hibernate la 
 
 Finalmente, para que Hibernate conozca la existencia de este Integrator debemos crear un archivo que contenga el nombre completo de la clase _Integrator_. El archivo ha de estar en de un librería .jar en la ubicación _/META-INF/services/org.hibernate.integrator.spi.Integrator_ y disponible en el classpath. El contenido de este archivo para el ejemplo es:
 
-{{< code file="Integrator" language="Plaintext" options="" >}}
+{{< code file="Integrator" language="plaintext" options="" >}}
 
 Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en la consola los mensajes cuando se inserte, actualice o elimine una fila de base de datos. En las capturas de imagen se muestran las trazas de una inserción, una traza para la preinseción _Action: preInsert, Id: null_ donde se ve que la entidad no tienen identificativo asignado y otra traza después de la inserción _Action: postInsert, Id: 1_ donde la entidad ya tiene identificativo asignado y la sentencia SQL se ha ejecutado, como se ve en la captura los mensajes salen antes y después de ejecutarse la sentencia SQL que se envía a la base de datos.
 

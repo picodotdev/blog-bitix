@@ -26,7 +26,7 @@ Las clases anónimas pueden definirse en la misma línea de código donde se dec
 {{< code file="Product.java" language="java" options="" >}}
 {{< code file="Order.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 Para los programadores en Java seguramente esto de las clases _inner_ y anónimas no es nada nuevo pero ¿conoces las clases locales? Dentro de un método también se puede definir una clase, llamada por ello local. Las clases locales no son habituales y para su uso su funcionalidad ha de estar altamente cohesionado con el método, un posible uso es para realizar validaciones o formateos que sean un poco complejos. El siguiente [ejemplo de clase local](https://docs.oracle.com/javase/tutorial/java/javaOO/localclasses.html) _PhoneNumber_ muestra su uso.
 

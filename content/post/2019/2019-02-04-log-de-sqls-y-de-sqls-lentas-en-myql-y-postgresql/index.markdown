@@ -37,7 +37,7 @@ Para activar la generación de logs y de SQLs lentas en MySQL hay que añadir la
 En el caso de PostgeSQL el archivo de log se ubica según el valor de la propiedad _log\_directory_ y _log\_filename_. Se activa el log con la propiedad _logging\_collector_. Las sentencias con errores también se incluyen en el mismo archivo. Para obtener los tiempos que tardan las sentencias en ejecutarse hay que establecer un umbral en milisegundos para que la sentencia sea incluida en el log, con el valor 0 se incluyen todas las sentencias en el log en la propiedad _log\_min\_duration\_statement_.
 
 {{< code file="postgresql/docker-compose.yml" language="Yaml" options="" >}}
-{{< code file="postgresql/configuration/postgresql.conf" language="Plaintext" options="" >}}
+{{< code file="postgresql/configuration/postgresql.conf" language="plaintext" options="" >}}
 {{< code file="postgresql/scripts/database.sql" language="Sql" options="" >}}
 {{< code file="postgresql/bash.sh" language="bash" options="" >}}
 

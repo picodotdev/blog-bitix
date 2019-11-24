@@ -37,7 +37,7 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la opción _-jar_ se ignora el parámetro _-cp_ y no se indica la clase _main_ del punto de entrada de la aplicación. En el caso de las aplicaciones distribuidas en un archivo _jar_ tanto la clase _main_ como las dependencias se indican en un archivo de manifiesto incluido en el propio archivo _jar_. El archivo se ubica en _META-INF/MANIFEST.MF_ dentro del _jar_, es un archivo de texto donde se indican varias propiedades en forma de atributo y valor, una en cada linea. Un ejemplo de archivo de manifiesto sería el siguiente:
 
-{{< code file="MANIFEST.MF" language="Plaintext" options="" >}}
+{{< code file="MANIFEST.MF" language="plaintext" options="" >}}
 
 La propiedad _Manifest-Version_ y _Created-By_ son informativas de la versión del archivo de manifiesto y el autor de la librería _jar_. La propiedad _Main-Class_ indica la clase _main_ de la librería o aplicación y la propiedad _Class-Path_ es una lista separada por espacios de librerías adicionales. Las propiedades _Main-Class_ y _Class-Path_ son los parámetros que indicamos como parámetros en el comando _java_ anterior. Con el archivo _jar_, su manifiesto y las librerías la aplicación Java se inicia de forma un poco más sencilla que antes al no tener que indicar ni la clase _main_ ni el _classpath_.
 
@@ -45,7 +45,7 @@ La propiedad _Manifest-Version_ y _Created-By_ son informativas de la versión d
 
 Como en este caso, si Java no se encuentra la dependencia de Jansi y se produce la siguiente excepción que indica que no se ha encontrado una clase necesaria.
 
-{{< code file="Exception.out" language="Plaintext" options="" >}}
+{{< code file="Exception.out" language="plaintext" options="" >}}
 
 Sin embargo, para distribuir la aplicación aún hay que distribuir varios archivos _jar_, el de la aplicación y los _jar_ de las librerías que necesite la aplicación. En este caso solo es un _jar_ adicional ya que la aplicación solo tiene una dependencia y esta transitivamente no tiene ninguna otra pero en una aplicación más compleja el número de dependencias puede llegar a la centena.
 

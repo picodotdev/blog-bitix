@@ -48,7 +48,7 @@ JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha
 
 Lighttpd es un servidor web de los denominados ligeros que aunque posiblemente no tiene toda la versatilidad de Apache ofrece un mayor rendimiento. Para activar SSL en lighttpd debemos modificar el archivo de configuración y añadir lo siguiente:
 
-{{< code file="lighttpd.conf" language="Plaintext" options="" >}}
+{{< code file="lighttpd.conf" language="plaintext" options="" >}}
 
 Quizá debamos cambiar el propietario y permisos con:
 
@@ -60,13 +60,13 @@ El archivo localhost.pem contiene la clave y el certificado.
 
 El proceso es similar para el servidor web Nginx aunque lógicamente se usan las directivas propias de configuración de Nginx.
 
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 
 ### Configurar SSL/TLS en Apache
 
 Apache es uno de los servidores web más utilizados para servir sitios web en internet. Para activar SSL en Apache debemos modificar el archivo de configuración, añadiendo la siguiente configuración que activa el soporte de SSL y especifica el archivo de clave y certificado, nada distinto de lo necesario en los servidores anteriores:
 
-{{< code file="httpd.conf" language="Plaintext" options="" >}}
+{{< code file="httpd.conf" language="plaintext" options="" >}}
 
 {{% reference %}}
 {{< links >}}

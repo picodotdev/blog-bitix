@@ -24,7 +24,7 @@ Los _webjars_ son librerías de extensión _jar_ con los recursos de lado del cl
 
 Las librerías más populares de JavaScript o CSS están empaquetadas como _webjars_ en las diferentes versiones y han sido publicadas de forma que es posible añadir la dependencia en la versión concreta que necesite la aplicación. Dado que los _webjars_ se gestionan como una dependencia Java si estos a su vez tiene alguna dependencia sobre otra librería está se incluyen en el proyecto de forma transitiva. El contenido del _webjar_ para _jQuery_ es el siguiente.
 
-{{< code file="jquery-webjar.out" language="Plaintext" options="" >}}
+{{< code file="jquery-webjar.out" language="plaintext" options="" >}}
 
 En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes para el desarrollo de aplicaciones web Java tan solo hay que incluir la dependencia en el proyecto y un poco de configuración en el módulo de la aplicación para el contenedor de dependencias como se indica en la [guía de uso](https://www.webjars.org/documentation#tapestry) con el objetivo que los recursos de los _webjars_ sean servidos.
 

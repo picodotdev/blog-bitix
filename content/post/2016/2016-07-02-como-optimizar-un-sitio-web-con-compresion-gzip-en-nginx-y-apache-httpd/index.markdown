@@ -26,7 +26,7 @@ Dependiendo del servidor web la configuración que deberemos añadir será difer
 
 Usando varias [directivas de Nginx para la compresión](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) la activamos, establecemos el nivel de compresión, el tamaño de los _buffers_ dedicados a la compresión y finalmente los _mimetypes_ de los archivos que queremos sean comprimidos antes de enviarse al cliente (el texto plano, contenido CSS, JSON, XML, RSS y JavaScript). El _mimetype_ _text/html_ no hace falta indicarlo porque siempre está activo y para los formatos de archivos que ya están comprimidos es innecesario como fotos o vídeos.
 
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 
 Para probarlo usaré un contenedor de [Docker][docker] en el que personalizaré la configuración y usaré mi propia bitácora como página web a servir. Para conocer Docker puedes consultar otra [serie de artículos sobre Docker][blogbitix-serie-docker] dedicados a esta tecnología de contenedores. Escrito el archivo de configuración, el contenedor se inicia con:
 
@@ -47,7 +47,7 @@ Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuen
 
 Activado el módulo para realizar la compresión al igual que el caso de Nginx podemos establecer la cantidad de memoria reservada para la compresión, el nivel de compresión y los _mimetypes_ del contenido a comprimir. Con las [directivas adicionales de la documentación](http://httpd.apache.org/docs/current/mod/mod_deflate.html) se puede personalizar aún más el proceso de compresión.
 
-{{< code file="httpd.conf" language="Plaintext" options="" >}}
+{{< code file="httpd.conf" language="plaintext" options="" >}}
 {{< code file="docker-httpd.sh" language="bash" options="" >}}
 
 Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Apache el recurso a servir ha de tener cierto tamaño siendo de unos pocos bytes opta por servirlo sin comprimir ya que considerará que no producirá un ahorro significativo.

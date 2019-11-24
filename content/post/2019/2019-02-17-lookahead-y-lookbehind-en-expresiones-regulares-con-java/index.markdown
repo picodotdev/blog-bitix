@@ -33,7 +33,7 @@ Una tarjeta de crédito está formada por 4 grupos de 4 dígitos separados por e
 
 El resultado es el siguiente:
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaLog4j" command="./gradlew run" %}}
 

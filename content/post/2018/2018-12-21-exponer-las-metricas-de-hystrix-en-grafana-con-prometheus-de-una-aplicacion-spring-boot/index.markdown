@@ -31,7 +31,7 @@ Una vez hecho esto Spring en el _endpoint_ _/actuator/metrics_ se exponen las m�
 
 {{< code file="metrics-endpoints.sh" language="bash" options="" >}}
 {{< code file="actuator-metrics.json" language="json" options="" >}}
-{{< code file="actuator-prometheus.prometheus" language="Plaintext" options="" >}}
+{{< code file="actuator-prometheus.prometheus" language="plaintext" options="" >}}
 
 Con estas métricas recolectadas por Prometheus se pueden visualizar en gráficas por Grafana. Hay algunos [paneles de Grafana para Hystrix](https://grafana.com/dashboards?search=hystrix) como el [7145](https://grafana.com/dashboards/7145) pero que necesitan ser adaptados según la nomenclatura de las propiedades expuestas por Spring Boot. En este caso se monitoriza el número de peticiones realizadas, el tiempo de latencia, si los circuitos están abiertos, los fallos, éxitos y _tiemouts_ así como el estado de los _thread pools_ que utiliza Hystrix para realizar las peticiones de un cliente a un servicio.
 

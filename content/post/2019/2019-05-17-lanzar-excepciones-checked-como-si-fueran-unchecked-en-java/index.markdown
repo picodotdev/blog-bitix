@@ -24,17 +24,17 @@ En Java existen dos tipos de excepciones las _checked_ que son de obligada captu
 En el siguiente código el compilador producirá un error de compilación ya que intenta lanzar una excepción pero la interfaz funcional que implementa no lo permite.
 
 {{< code file="Main1.java" language="java" options="" >}}
-{{< code file="System.out-1" language="Plaintext" options="" >}}
+{{< code file="System.out-1" language="plaintext" options="" >}}
 
 Aunque en Java existen las excepciones _checked_ y estas han de ser declaradas no es una limitación a nivel de la máquina virtual, se puede lanzar una excepción _checked_ aunque no esté declarada. El siguiente código compila sin errores y se ejecutan, lanzándose la excepción aunque el método _main()_ no la declare. Esto es debido a que en el método _sneakyThrow()_ _T_ es inferido como del tipo _RuntimeException_.
 
 {{< code file="Main2.java" language="java" options="" >}}
-{{< code file="System.out-2" language="Plaintext" options="" >}}
+{{< code file="System.out-2" language="plaintext" options="" >}}
 
 Con la clase [Unsafe](http://www.docjar.com/docs/api/sun/misc/Unsafe.html) interna del JDK (que tampoco es recomendable usar porque en el futuro será eliminada) también es posible lanzar una excepción _checked_ sin declararla, aunque _Main3.getUnsafe().throwException(e)_ lanza una excepción el método _main()_ no la declara.
 
 {{< code file="Main3.java" language="java" options="" >}}
-{{< code file="System.out-3" language="Plaintext" options="" >}}
+{{< code file="System.out-3" language="plaintext" options="" >}}
 
 Es posible lanzar excepciones _checked_ como si fuesen _uncheked_, no es una buena práctica ya que no permite al compilador cumplir con la tarea a la que está destinada que es detectar errores en tiempo de compilación potenciales problemas además de no indicar en la API que un método lanza una excepción que debería se tratada. En la librería [Vavr][vavr] con la clase [Try](https://www.javadoc.io/doc/io.vavr/vavr/1.0.0-alpha-2) se puede usar un método que lanza una excepción, tratarla si se produce y convertir el método en uno que no lanza excepciones adecuado para el uso en los _streams_.
 

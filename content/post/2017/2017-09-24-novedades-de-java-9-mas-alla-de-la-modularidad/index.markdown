@@ -171,7 +171,7 @@ Los desarrolladores de librerías para dar soporte a varias versiones de Java de
 
 Con Java 9 se puede generar un único archivo _jar_ con algunas clases para una o varias versiones de Java. Por ejemplo, en un archivo _jar_ con las clases _A_, _B_, _C_ y _D_ compatibles con Java 6 el desarrollador ahora puede decidir que para la versión 9 la clase _A_ y _B_ sean unas optimizadas para esta versión. Esto se consigue con una estructura específica de directorios en el archivo _jar_, ubicándose la clase optimizada para Java 9 _A_ en _META-INF/versions/9/A.class_ y para Java 10 en _META-INF/versions/10/A.class_.
 
-{{< code file="Multirelease.out" language="Plaintext" options="" >}}
+{{< code file="Multirelease.out" language="plaintext" options="" >}}
 
 * [JEP 238: Multi-Release JAR Files](http://openjdk.java.net/jeps/238)
 

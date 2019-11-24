@@ -32,7 +32,7 @@ Para obtener mejor visibilidad de los tiempos y latencias se puede utilizar [Zip
 
 En Java el proyecto [Spring Cloud Sleuth][spring-cloud-sleuth] proporciona la funcionalidad de trazabilidad. En el [esquema se observa como Sleuth envía las cabeceras](https://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/2.1.0.RELEASE/single/spring-cloud-sleuth.html#_propagation) de un servicio cliente a un servicio servidor.
 
-{{< code file="sleuth-headers.txt" language="Plaintext" options="" >}}
+{{< code file="sleuth-headers.txt" language="plaintext" options="" >}}
 
 Sleuth se encarga de propagar las cabeceras del servicio cliente al servicio servidor automáticamente instrumentando los clientes HTTP de _RestTemplate_, _AsyncRestTemplate_, _WebClient_, _Apache HttpClient_ y _Netty HttpClient_. Para enviar, recibir, obtener y establecer los identificativos de correlación con Sleuth junto con el cliente HTTP de Java hay que hacer la instrumentación manualmente con las clases _Tracing_ y _Tracer_ si no está entre los soportados como en el caso del [cliente HTTP que se añadió en Java 11 en el propio JDK][blogbitix-350] con el soporte para HTTP/2.
 
@@ -47,7 +47,7 @@ He utilizado el ejemplo de la [serie de artículos sobre Spring Cloud][blogbitix
 
 El cliente inicia un _span_ que es enviado al servidor y el servidor obtiene las cabeceras enviadas. El cliente y el servidor son dos procesos distintos del sistema pero se observa que el identificativo global de la transacción _traceId_ se mantiene en ambos y el identificativo de _spanId_ cambia entre el cliente y el servidor.
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 Para iniciar los diferentes microservicios de la aplicación hay que utilizar los siguientes comandos.
 

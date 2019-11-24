@@ -32,7 +32,7 @@ Para que GraphQL soporte un nuevo tipo de dato escalar es necesario implementar 
 Al definir el esquema se proporciona con el método _scalars_ una lista con los tipos de datos escalares adicionales, en este caso una instancia de _GraphQLScalarType_ con una instancia de _LocalDateCoercing_. Además en el descriptor del esquema hay que declarar el nuevo escalar con la palabra clave _scalar_.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
+{{< code file="library.graphqls" language="plaintext" options="" >}}
 {{< code file="LibraryRepository.java" language="java" options="" >}}
 
 Añadiendo al tipo _Book_ una fecha de publicación usando este nuevo tipo escalar al realizar una consulta y devolver el dato se realiza la conversión.

@@ -77,22 +77,22 @@ Por autoconfiguración y la anotación [@EnableMBeanExport](https://docs.spring.
 
 Tanto en el ejemplo de _MBean_ con Java como con Spring el puerto RMI para acceder a JMX se configura con varias propiedades de la máquina virtual o con un archivo _properties_ de configuración.
 
-{{< code file="jmxremote-1.properties" language="Plaintext" options="" >}}
+{{< code file="jmxremote-1.properties" language="plaintext" options="" >}}
 
 ### Cómo añadir acceso remoto y añadir seguridad securizad a JMX
 
 Por defecto JMX solo es accesible desde la maquina local, esto en producción no es muy útil pero activar el acceso remoto requiere añadir nuevas propiedades de configuración para proporcionar seguridad realizando autenticación y usando una comunicación segura con SSL. Para la comunicación segura se requiere crear un _keystore_.
 
 {{< code file="keystore.sh" language="bash" options="" >}}
-{{< code file="jmxremote-2.properties" language="Plaintext" options="" >}}
-{{< code file="jmxremote-ssl.properties" language="Plaintext" options="" >}}
+{{< code file="jmxremote-2.properties" language="plaintext" options="" >}}
+{{< code file="jmxremote-ssl.properties" language="plaintext" options="" >}}
 
 Los archivos _jmxremote.password_ y _jmxremote.access_ configuran la autenticación mediante clave y contraseña además de la autorización a las operaciones que el usuario tiene permiso para realizar. Estos archivos han tener restringidos los permisos de lectura para el usuario que inicia la aplicación o se produce una excepción.
 
-{{< code file="jmxremote.password" language="Plaintext" options="" >}}
-{{< code file="jmxremote.access" language="Plaintext" options="" >}}
+{{< code file="jmxremote.password" language="plaintext" options="" >}}
+{{< code file="jmxremote.access" language="plaintext" options="" >}}
 
-{{< code file="permissions.sh" language="Plaintext" options="" >}}
+{{< code file="permissions.sh" language="plaintext" options="" >}}
 
 {{< code file="jconsole.sh" language="bash" options="" >}}
 

@@ -23,7 +23,7 @@ Validar los datos es importante para una aplicación pero no es suficiente para 
 El siguiente código de un archivo JSP que obtiene un parámetro de la petición y lo emite en la salida permite a un usuario malicioso insertar código en la página web, si el dato que se envía es el contenido de _xss.data_ y las _cookies_ no se crearon con las cabeceras _httponly_ el usuario malicioso puede obtener acceso a la sesión del usuario en el sitio web y es un grave fallo de seguridad. En este caso solo se emplea un _alert_ pero el código podría ser más elaborado y realizar una petición a una URL en la que el usuario malicioso reciba los datos de las _cookies_ de sesión.
 
 {{< code file="RequestParameter.jsp" language="JSP" options="" >}}
-{{< code file="user-parameter-xss.data" language="Plaintext" options="" >}}
+{{< code file="user-parameter-xss.data" language="plaintext" options="" >}}
 
 El contenido HTML generado por la aplicación y enviado al navegador sería el siguiente:
 

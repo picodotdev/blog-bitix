@@ -32,7 +32,7 @@ En el archivo de contrucción de la aplicación hay que incluir las dependencias
 Obtener la credenciales de conexión a la base de datos es transparente para el código de la aplicación, lo único que se necesita es el usuario y contraseña además de la URL de conexión. 
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 La parte más relevante está en la configuración necesaria de la aplicación. Hay que añadir como configuración la ubicación del servidor Vault, es necesario configurar un método de autenticación para Vault, para el caso de aplicaciones el recomendado es _AppRole_. Con _AppRole_ cada aplicación necesita de un _role-id_ y un _secret-id_ que hay que generar previamente. Y el rol del que obtener las credenciales, _app_.
 
@@ -42,7 +42,7 @@ Para probarlo hay que iniciar en este caso el servidor [Consul][consul] ya que e
 
 {{< code file="consul.sh" language="bash" options="" >}}
 {{< code file="vault.sh" language="bash" options="" >}}
-{{< code file="vault.hcl" language="Plaintext" options="" >}}
+{{< code file="vault.hcl" language="plaintext" options="" >}}
 
 La base de datos postgres se inicia como un contenedor de [Docker][docker].
 
@@ -63,7 +63,7 @@ Para que la aplicación de Spring Boot obtenga las credenciales ha de autenticar
 En Vault los permisos se otorgan con las _policy_, los secretos se organiza en una estructura jerárquica de directorios y a cada una de los contextos se le otorga los permisos deseados. Spring obtiene las credenciales para la base de datos del contexto _database/creds/app_ por lo que al rol utilizando para obtener las credenciales hay que asocialer un _policy_ con permisos de lectura para este contexto. 
 
 {{< code file="vault-policy.sh" language="bash" options="" >}}
-{{< code file="database-app.hcl" language="Plaintext" options="" >}}
+{{< code file="database-app.hcl" language="plaintext" options="" >}}
 
 Obtenido un _role-id_ y un _secret-id_ so observa los _policies_ asociados además de otras propiedades.
 

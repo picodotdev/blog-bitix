@@ -63,7 +63,7 @@ Consul para conocer que los servicios siguen en funcionamiento hace una petició
 
 Esta es la salida en la consola listando los servicios disponibles, siendo uno de ellos esta aplicación.
 
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloudConsul" command="./consul/consul.sh y ./gradlew run" >}}
 

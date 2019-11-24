@@ -36,7 +36,7 @@ Con los siguientes comandos se inspecciona los nodos que forman parte del cluste
 
 En este caso solo hay un nodo registrado en Nomad, la siguiente definición de _job_ en el fragmento _constraint_ hace que Nomad lo ubique siempre en él.
 
-{{< code file="mongodb.nomad" language="Plaintext" options="" >}}
+{{< code file="mongodb.nomad" language="plaintext" options="" >}}
 
 Como el _job_ se ubica en el mismo nodo siempre montando un directorio del nodo como un volumen de datos en el _job_ y contenedor de [Docker][docker], los datos se persisten en el sistema de archivos y transcienden al tiempo de vida del _job_, se puede iniciar el _job_, insertar datos en la base de datos en este caso de MongoDB, eliminar el _job_, volverlo a iniciar y los mismos datos están presentes en MongoDB.
 

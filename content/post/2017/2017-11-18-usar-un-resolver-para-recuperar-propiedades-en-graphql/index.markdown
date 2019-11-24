@@ -23,7 +23,7 @@ Cuando en una consulta de [GraphQL][graphql] se indican las propiedades a devolv
 
 Por ejemplo, supongamos que en el ejemplo de la librería en el caso de los libros le añadimos un nuevo dato para el ISBN que está almacenado en un sistema externo, en otro repositorio. La nueva definición del esquema quedaría de la siguiente forma, basta con añadir la nueva propiedad al tipo _Book_ y su tipo que será _String_.
 
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
+{{< code file="library.graphqls" language="plaintext" options="" >}}
 
 Para que una consulta que recupere el ISBN funcione correctamente es necesario implementar un _resolver_ creando una clase que implemente la interfaz _GraphQLResolver\<Book\>_ en la que se incluya un método _get_ por cada propiedad del tipo _Book_ que esté alamcenada en otro repositorio. Estos métodos _get_ reciben como parámetro el objeto _Book_ a partir del cual como contexto es posible tener los datos del libro del que hay que recuperar el ISBN, posiblemente utilizando su identificativo. En el ejemplo simplemente se devuelve un dato aleatorio pero perfectamente en caso necesario se podría usar un repositorio que lo recupere del sistema de información que lo almacena.
 

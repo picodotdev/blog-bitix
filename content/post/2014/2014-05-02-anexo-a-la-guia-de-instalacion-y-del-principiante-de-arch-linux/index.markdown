@@ -60,17 +60,17 @@ El siguiente paso es particionar el disco duro y antes de hacerlo deberemos aseg
 
 En un sistema BIOS usando GPT el esquema de particiones será el siguiente:
 
-{{< code file="script-42.txt" language="Plaintext" options="" >}}
+{{< code file="script-42.txt" language="plaintext" options="" >}}
 
 #### 1.1.2 Para un sistema con EFI
 
 En un sistema EFI las particiones deberán ser las siguientes:
 
-{{< code file="script-43.txt" language="Plaintext" options="" >}}
+{{< code file="script-43.txt" language="plaintext" options="" >}}
 
 Si tenemos un sistema con 8 GiB o más de memoria probablemente podamos prescindir de la partición de swap. Sino podemos crear una tal que:
 
-{{< code file="script-44.txt" language="Plaintext" options="" >}}
+{{< code file="script-44.txt" language="plaintext" options="" >}}
 
 ### 1.2 Formatear las particiones
 
@@ -134,7 +134,7 @@ Editamos el archivo /etc/vconsole.conf para cambiar el mapa de teclas de las ter
 
 Introducimos el siguiente contenido:
 
-{{< code file="script-15.txt" language="Plaintext" options="" >}}
+{{< code file="script-15.txt" language="plaintext" options="" >}}
 
 ### 1.8 Establecer la zona horaria
 
@@ -176,7 +176,7 @@ Posteriormente instalo rEFInd:
 
 Edito el archivo /boot/FI/refind/refind.conf modificando el timeout y la opción seleccionada por defecto:
 
-{{< code file="script-23.txt" language="Plaintext" options="" >}}
+{{< code file="script-23.txt" language="plaintext" options="" >}}
 
 También debemos modificar el archivo /boot/refind_linux.conf
 
@@ -184,7 +184,7 @@ También debemos modificar el archivo /boot/refind_linux.conf
 
 En el archivo sustituiremos los PARTUUID por los que correspondan en nuestro sistema, con el comando blkid los habremos añadido al final del archivo, el contenido debe quedarnos algo como:
 
-{{< code file="script-25.txt" language="Plaintext" options="" >}}
+{{< code file="script-25.txt" language="plaintext" options="" >}}
 
 Además, con rEFInd hemos de crear el gestor de arranque con el comando efobootmgr. Pero en mi caso para que funcione primero he de borrar todos los que ya existen sino parece que en mi caso se recrea y usa el gestor de arranque EFI de Windows y al inicial el sistema me sale el mensaje «Operating System Not Found», podemos ver los gestores de arranque con:
 
@@ -220,7 +220,7 @@ Permitirmos a los usuarios del grupo wheel usar el comando sudo:
 
 Descomentamos la siguiente linea:
 
-{{< code file="script-32.txt" language="Plaintext" options="" >}}
+{{< code file="script-32.txt" language="plaintext" options="" >}}
 
 Editamos el archivo pacman.conf según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.
 
@@ -250,7 +250,7 @@ Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php
 
 Añadimos su repositorio:
 
-{{< code file="script-38.txt" language="Plaintext" options="" >}}
+{{< code file="script-38.txt" language="plaintext" options="" >}}
 
 Lo instalamos con:
 

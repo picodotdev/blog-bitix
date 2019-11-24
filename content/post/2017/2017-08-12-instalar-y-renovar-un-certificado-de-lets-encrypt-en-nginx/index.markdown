@@ -57,7 +57,7 @@ Let's Encrypt con _certbot_ comprueba si somos el propietario de un sitio web in
 
 La siguiente configuración del servidor web nginx redirige todo el tráfico usando el procotolo HTTPS excepto el contenido del directorio _/.well-known/acme-challenge/_ que queda accesible por HTTP.
 
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 
 Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una [Raspberry Pi][raspberrypi] accesible desde internet con un dominio de [FreeDNS][freedns]:
 

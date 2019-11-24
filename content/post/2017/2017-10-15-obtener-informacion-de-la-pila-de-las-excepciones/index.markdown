@@ -26,7 +26,7 @@ Todas las excepciones en Java heredan de [Throwable](https://docs.oracle.com/jav
 Con esta información podemos imprimir en la terminal un informe de excepción diferente del que genera el método [printStackTrace()](https://docs.oracle.com/javase/9/docs/api/java/lang/Throwable.html#printStackTrace--). En el ejemplo limitando el informe de la pila de llamadas a los tres últimos métodos del _stacktrace_.
 
 {{< code file="Throwable.java" language="java" options="" >}}
-{{< code file="jshell.out" language="Plaintext" options="" >}}
+{{< code file="jshell.out" language="plaintext" options="" >}}
 
 Si en una aplicación manejamos varios hilos con [Thread.getAllStackTraces()](https://docs.oracle.com/javase/9/docs/api/java/lang/Thread.html#getAllStackTraces--) obtenemos las pilas de llamadas de todos los hilos y con [Thread.getStackTrace()](https://docs.oracle.com/javase/9/docs/api/java/lang/Thread.html#getStackTrace--) el del hilo en concreto que con [Thread.currentThread()](https://docs.oracle.com/javase/9/docs/api/java/lang/Thread.html#currentThread--) sería el actual. Con el _array_ de _StackTraceElement_ obtenidos de los hilos podemos obtener un informe personalizado y la situación de cada uno, el método [dumpStack()](https://docs.oracle.com/javase/9/docs/api/java/lang/Thread.html#dumpStack--) genera el _stacktrace_ en la salida de error.
 

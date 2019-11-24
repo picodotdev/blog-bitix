@@ -38,7 +38,7 @@ Las aplicaciones web dinámicas Java se despliegan en un contenedor de _servlets
 
 Para que un servidor web como Nginx actúe como _proxy_ inverso o _reverse proxy_ para un servidor de aplicaciones debemos añadir unas pocas directivas al archivo de configuración del servidor web. En el caso de Nginx usando la directiva _proxy\_pass_ donde indicamos para una localización la URL del servidor de aplicaciones a la que se le solicitará el contenido, en el ejemplo usando un servidor [Tomcat][tomcat].
 
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 
 Una forma fácil de probarlo es usando [Docker][docker] y [Docker Compose][docker-compose] que en varios artículos introductorios siendo el primero el [inicio básico de Docker][blogbitix-50] comento como empezar a usarlo y en que consiste esta nueva forma de ejecución para las aplicaciones. Con el siguiente archivo de Docker Compose creamos dos contenedores uno para Nginx en el que proporcionamos su configuración personalizada y otro contenedor para Tomcat.
 

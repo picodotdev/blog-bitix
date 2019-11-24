@@ -31,7 +31,7 @@ Con las siguientes comandos se inicia [Consul][consul] y Vault.
 
 {{< code file="consul.sh" language="bash" options="" >}}
 {{< code file="vault.sh" language="bash" options="" >}}
-{{< code file="vault.hcl" language="Plaintext" options="" >}}
+{{< code file="vault.hcl" language="plaintext" options="" >}}
 
 La base de datos se inicia en un contenedor de Docker, se crea una base de datos y una tabla.
 

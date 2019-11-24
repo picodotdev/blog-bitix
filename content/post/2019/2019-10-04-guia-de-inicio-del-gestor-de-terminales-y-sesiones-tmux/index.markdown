@@ -40,7 +40,7 @@ Tmux al ser un programa de la terminal todas sus opciones se realizan con el tec
 
 Para facilitar un poco su uso y poder cambiar entre paneles y hacer _scroll_ si se usa en un entorno gráfico se pueden habilitar las funciones del ratón. Basta editar el archivo de configuración _~/.tmux.conf_ o introducir la opción con <kbd>Ctrl-b :</kbd>. En un entorno gráfico habilitar el soporte para el ratón cambia el comportamiento de copiar y pegar, para seleccionar texto hay que hacer uso de la tecla <kbd>Shift</kbd> a la vez que se selecciona el texto con el botón izquierdo del ratón.
 
-{{< code file="tmux.conf" language="Plaintext" options="" >}}
+{{< code file="tmux.conf" language="plaintext" options="" >}}
 
 Para automatizar la configuración inicial de tmux soporta un archivo para personalizarlo a través de un _script_ con comandos. Así por ejemplo si siempre se desea una misma configuración de paneles y ventanas con la misma disposición es posible realizarlo con un _script_ como el siguiente.
 

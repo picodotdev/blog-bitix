@@ -36,7 +36,7 @@ Usar SSH es más seguro y más cómodo que usar contraseñas para realizar la au
 
 En el servidor SSH se deben modificar algunas propiedades de configuración del archivo de configuración _/etc/ssh/sshd\_config_ para permitir la autenticación con usuario y contraseña para poder copiar la clave pública y una vez copiada la clave para mayor seguridad no permitir la autenticación mediante usuario y contraseña.
 
-{{< code file="sshd_config" language="Plaintext" options="" >}}
+{{< code file="sshd_config" language="plaintext" options="" >}}
 
 Una vez generado el par de claves hay que copiar la clave pública al servidor donde se desee iniciar sesión. Manualmente concatenando la clave pública al archivo _.ssh/authorized_keys_ del directorio _home_ del usuario con el que se quiere iniciar sesión o también se puede copiar la clave pública usando el comando _ssh-copy-id_. Para revocar el acceso mediante esa clave basta con eliminar su linea del archivo de claves autorizadas.
 
@@ -53,7 +53,7 @@ La clave privada debe tener permisos restringidos sino se muestra una advertenci
 
 Para probar la autenticación con SSH se puede utilizar una máquina virtual de [VirtualBox][virtualbox] creada con [Vagrant][vagrant]. En el caso de utilizar el usuario _ubuntu_ hay que asignarle una clave con el comando _passwd_ para ejecutar comando _ssh-copy-id_ ya que se solicita su contraseña en este paso, una vez realizado se puede desactivar la autenticación mediante usuario y contraseña cambiando el valor de la configuración _PasswordAuthentication_ a _no_.
 
-{{< code file="Vagrantfile" language="Plaintext" options="" >}}
+{{< code file="Vagrantfile" language="plaintext" options="" >}}
 {{< code file="vagrant.sh" language="bash" options="" >}}
 
 {{% reference %}}

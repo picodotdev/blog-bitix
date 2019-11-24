@@ -53,7 +53,7 @@ En este caso se utiliza como servicio una base de datos [PostgreSQL][postgresql]
 
 En la salida del contenedor de Registrator se emite una traza indicando que el servicio de postgres ha sido registrado en Consul.
 
-{{< code file="docker-registrator.out" language="Plaintext" options="" >}}
+{{< code file="docker-registrator.out" language="plaintext" options="" >}}
 
 Una vez iniciado el servicio de postgres en la consola de Consul se muestra con su dirección y puerto en el que se encuentra, en el contenedor utiliza su puerto por defecto _5432_ pero hacia el exterior en este caso al no haber especificado uno Docker le asigna un puerto aleatorio en este caso el _32777_. Este puerto aleatorio es con el que los clientes acceden a la base de datos.
 

@@ -37,7 +37,7 @@ Una vez creados los _data loaders_ hay que usarlos en los _resolver_ de las prop
 
 Al obtener los datos del conjunto de libros que utilizan un _batch loader_ se produce la siguiente salida.
 
-{{< code file="curl.sh" language="Plaintext" options="" >}}
+{{< code file="curl.sh" language="plaintext" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
 

@@ -22,7 +22,7 @@ Por ejemplo, supongamos que tenemos un código de un producto formateado de la s
 
 Los grupos de captura se especifican mediante paréntesis, «(» y «)», en la expresión regular. En el caso del código usaremos la siguiente expresión regular:
 
-{{< code file="regex.txt" language="Plaintext" options="" >}}
+{{< code file="regex.txt" language="plaintext" options="" >}}
 
 En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html) y [Matcher](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) podemos hacer las validaciones y obtener los grupos de captura de la usando el método [group](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html#group-int-) de la clase Matcher:
 

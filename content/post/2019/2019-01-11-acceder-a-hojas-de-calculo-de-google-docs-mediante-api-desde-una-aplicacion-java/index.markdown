@@ -75,7 +75,7 @@ El método de API _key_ obliga a hacer público el documento lo que no es deseab
 
 Al crear una cuenta de servicio y una clave se genera un archivo en formato JSON con las credenciales que hay que guardar y utilizar en una aplicación para acceder a los documentos compartidos con esta cuenta de servicio.
 
-{{< code file="blogbitix-119471bc8ebf.json" language="Plaintext" options="" >}}
+{{< code file="blogbitix-119471bc8ebf.json" language="plaintext" options="" >}}
 
 En vez de compartir el documento con cualquiera que tenga en enlace, con una cuenta de servicio el documento se puede compartir únicamente con esa cuenta de servicio, la cuenta de servicio posee un correo electrónico que la identifica, el documento se puede compartir únicamente con esta cuenta de servicio como si de cualquier otro usuario se tratase.
 

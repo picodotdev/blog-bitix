@@ -40,7 +40,7 @@ El archivo descriptor nos puede servir no solo como forma de iniciar los contene
 Tenemos varias formas de instalar Docker Compose. La que más me gusta y la que recomiendo por ser sencilla es [descargar el binario de docker compose](https://github.com/docker/compose/releases) según nuestra plataforma GNU/Linux o Mac.  Descargando el binario de Docker Compose deberemos darle permisos de ejecución y si nos interesa colocarlo en la variable de entorno _PATH_ del sistema:
 
 {{< code file="permisos.sh" language="bash" options="" >}}
-{{< code file="bashrc" language="Plaintext" options="" >}}
+{{< code file="bashrc" language="plaintext" options="" >}}
 
 Con el siguiente comando veremos que Docker Compose funciona correctamente y la versión del mismo.
 

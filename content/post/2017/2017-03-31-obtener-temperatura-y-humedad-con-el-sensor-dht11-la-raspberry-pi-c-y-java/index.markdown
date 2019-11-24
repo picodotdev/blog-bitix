@@ -75,7 +75,7 @@ Ejecutando el programa del ejemplo y usando el display 1602 (16 columnas y 2 fil
 
 En el kernel de Linux hay un módulo que proporciona también los valores del sensor, sin embargo, no he conseguido obtener la temperatura y humedad usándolo. Lo he probado con el kernel 4.4 de Arch Linux ARM y en la versión 4.9 veo que hay cambios en este módulo que quizá lo hagan funcionar. Para usar el módulo del kernel hay que añadir un poco de configuración para el inicio de la Raspberry Pi. En los archivos _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ y _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ estarán la temperatura y humedad respectivamente.
 
-{{< code file="kernel-module-config.txt" language="Plaintext" options="" >}}
+{{< code file="kernel-module-config.txt" language="plaintext" options="" >}}
 {{< code file="cat.sh" language="bash" options="" >}}
 
 Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos comandos.

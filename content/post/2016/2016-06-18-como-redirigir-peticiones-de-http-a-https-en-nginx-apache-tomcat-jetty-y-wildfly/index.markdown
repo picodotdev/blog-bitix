@@ -29,7 +29,7 @@ Usando [Docker][docker] nos resultará más sencillo hacer la prueba que teniend
 
 En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el pueto HTTPS (443) accitva el uso de TLS/SSL usando varias directivas y sirve los documentos de _/usr/share/nginx/html_ en la ruta _/_.
 
-{{< code file="nginx.conf" language="Plaintext" options="" >}}
+{{< code file="nginx.conf" language="plaintext" options="" >}}
 {{< code file="docker-nginx.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">
@@ -41,7 +41,7 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 ### Apache HTTPD
 La configuración para Apache HTTPD es similar simplemente cambian las directivas según su propia configuración. Se activan los módulos para usar TLS/SSL y el que permite hacer reescrituras de las URL.
 
-{{< code file="httpd.conf" language="Plaintext" options="" >}}
+{{< code file="httpd.conf" language="plaintext" options="" >}}
 {{< code file="docker-httpd.sh" language="bash" options="" >}}
 
 <div class="media" style="text-align: center;">

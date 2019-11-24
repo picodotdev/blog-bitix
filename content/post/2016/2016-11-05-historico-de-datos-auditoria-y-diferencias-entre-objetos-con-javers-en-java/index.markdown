@@ -29,7 +29,7 @@ En el siguiente ejemplo muestro como hacer comparaciones, como hacer cambios y p
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="Category.java" language="java" options="" >}}
 {{< code file="Product.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 
 La información se persistirán en varias tablas en este caso en un base de datos relacional PostgreSQL que Javers creará al iniciarse la aplicación, ejecutada la aplicación encontraremos datos.

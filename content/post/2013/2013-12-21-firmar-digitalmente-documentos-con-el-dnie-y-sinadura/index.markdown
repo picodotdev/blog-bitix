@@ -70,7 +70,7 @@ Si queremos firmar muchos archivos a la vez usar la interfaz gráfica nos va a r
 
 Con el siguiente archivo de preferencias:
 
-{{< code file="preferences-console.properties" language="Plaintext" options="" >}}
+{{< code file="preferences-console.properties" language="plaintext" options="" >}}
 
 La linea de comandos producirá el mismo resultado que el uso con la interfaz gráfica. Realmente los ejemplos de firma por consola no me han funcionado, en ambos casos me da una excepción NullPointerException que no es muy aclarativa de lo que está sucediendo, probablemente sea que falta algo en el archivo de preferencias.
 

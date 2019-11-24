@@ -27,11 +27,11 @@ Dependiendo del _framework_ web que utilicemos podremos hacerlo de una o varias 
 
 ¿Como se puede evitar? En el _framework_ [Apache Tapestry][tapestry] la doble botonera puede hacerse de varias formas una de ellas es crear un componente pero esto nos obliga a crear un archivo para la clase java y probablemente tambien un archivo de plantilla con el contenido html causando el problema de la microgestión. Pero en Tapestry también podemos hacer uso del [componente block](http://tapestry.apache.org/component-templates.html) que sirve para incluir en él cierto contenido y el [componente delegate](http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/corelib/components/Delegate.html) que sirve para emitir el contenido entre otras cosas de un componente block. Usando estos dos componentes podemos evitar la microgestión definiendo todo en un mismo archivo, además al tener todo en un mismo archivo el código será más fácilmente legible, quedándonos en un ejemplo de la siguiente forma:
 
-{{< code file="ProductoAdmin.tml" language="Plaintext" options="" >}}
+{{< code file="ProductoAdmin.tml" language="plaintext" options="" >}}
 
 En [Grails][grails] por poner un ejemplo de un _framework_ que no usa el concepto de componentes la forma habitual de hacerlo es usando un g:include y con ello teniendo microgestión. Pero retorciendo un poco (creo) en este caso el uso de Grails podemos emplear la etiqueta g:set para establecer el contenido de la botonera y emitir su contenido dos veces en el gsp.
 
-{{< code file="ProductoAdmin.gsp" language="Plaintext" options="" >}}
+{{< code file="ProductoAdmin.gsp" language="plaintext" options="" >}}
 
 El código completo de este ejemplo del caso de Tapestry está en un [repositorio de GitHub][ejemplo-plugin-tapestry]. Si estás interesado en conocer más en profundidad como funciona Tapestry y sus múltiples «killer features», bastantes mucho más importantes que lo explicado en este artículo, puedes descargarte el [libro PlugIn Tapestry][blogbitix-12] que he escrito, de forma gratuita, sin registros, y en varios formatos ¿que más puedes pedir?. Y si te interesa el tema puedes suscribirte al [canal RSS de esta bitácora][blogbitix-feed] para no perderte nada del nuevo contenido que publique, no solo sobre Tapestry, sino también sobre Java, Linux, ...
 

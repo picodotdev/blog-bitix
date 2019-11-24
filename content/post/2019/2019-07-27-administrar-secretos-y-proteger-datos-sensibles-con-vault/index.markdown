@@ -66,7 +66,7 @@ La [auditoria]((https://www.vaultproject.io/docs/audit/index.html)) permite obte
 
 Todo en Vault está basado en _paths_. Las [_policies_]((https://www.vaultproject.io/docs/concepts/policies.html)) permiten o deniegan el acceso a ciertos _paths_.  Poseen la siguiente sintaxis, donde las _capabilities_ son las operaciones CRUD permitidas.
 
-{{< code file="policy.hcl" language="Plaintext" options="" >}}
+{{< code file="policy.hcl" language="plaintext" options="" >}}
 
 ### Instalación y un caso de uso
 

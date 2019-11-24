@@ -39,7 +39,7 @@ Primeramente, para usar Apache Thrift debemos instalar el paquete en la distribu
 
 A continuación deberemos definir la interfaz del servicio, supongamos que queremos hacer un servicio que nos ofrezca un mensaje de ping, la hora del servidor y la suma de dos números. La interfaz de este servicio usando el DSL es:
 
-{{< code file="Service.thrift" language="Plaintext" options="" >}}
+{{< code file="Service.thrift" language="plaintext" options="" >}}
 
 Podemos elegir cualesquiera lenguajes deseemos de la amplia lista soportada anterior, en este caso usaré Java tanto para el servidor como para el cliente. Usando el comando <code>thrift</code> e indicando el lenguaje y la interfaz generamos los artefactos:
 

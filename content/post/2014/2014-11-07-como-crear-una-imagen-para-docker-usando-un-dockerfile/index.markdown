@@ -26,8 +26,8 @@ Si no hay ninguna que se adapte totalmente a nuestras necesidades, no nos gusta 
 
 Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker para mysql, lo paso a explicar después.
 
-{{< code file="Dockerfile-base" language="Plaintext" options="" >}}
-{{< code file="Dockerfile-mysql" language="Plaintext" options="" >}}
+{{< code file="Dockerfile-base" language="plaintext" options="" >}}
+{{< code file="Dockerfile-mysql" language="plaintext" options="" >}}
 
 Los Dockerfile tienen algunas instrucciones:
 

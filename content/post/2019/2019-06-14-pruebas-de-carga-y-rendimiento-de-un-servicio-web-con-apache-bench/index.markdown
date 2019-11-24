@@ -29,7 +29,7 @@ Si quisiese medir el rendimiento en mi blog alojado en [GitHub Pages][github-pag
 
 El informe de resultado que ofrece _ab_ al finalizar la prueba incluye el tiempo dedicado en la conexión, en el procesado, esperando y en total con los valores para cada uno de ellos con mínimo y máximo, de media y la mediana. El tiempo total empleado por la prueba, el protocolo SSL/TLS usado, los bytes devueltos en la petición, el número de peticiones servidas por segundo, el tiempo de media empleado de media por cada petición y de media teniendo en cuenta la concurrencia, la tasa de transferencia en la respuesta y finalmente el tiempo de respuesta según percentil que van que desde el 50 al 100, es decir, que el 50% de las peticiones se han respondido en el tiempo en milisegundos indicado. Si las hubiera también muestra las peticiones fallidas y las que han devuelto un código de respuesta distinto de 200.
 
-{{< code file="ab.out" language="Plaintext" options="" >}}
+{{< code file="ab.out" language="plaintext" options="" >}}
 
 Esta herramienta puede ser utilizada para par medir el rendimiento de cualquier servicio web. Un blog de [Wordpress][wordpress], una página de una organización, un _endpoint_ de un servicio REST o GraphQL, etc... Es muy sencilla de utilizar y genera un informe corto pero con interesante información sobre el rendimiento. Si se hacen cambios se puede medir el antes y el después y comparar los resultados para observar de que modo han afectado al redimiento si de forma positiva o negativa y en que grado.
 

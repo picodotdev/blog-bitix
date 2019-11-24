@@ -33,7 +33,7 @@ En GraphQL se define un [esquema](https://graphql.org/learn/schema/) con la defi
 
 Para usar GraphQL hay que definir un _schema_ que incluye los tipos, sus propiedades y tipos. También se pueden usar [fragmentos](https://graphql.org/learn/caching/) para reutilizar partes de la definición de los tipos. Cada _type_ representa una entidad que definen las propiedades que posee ya sean datos escalares o referencias a otras entidades formando de esta manera grafos de objetos, los tipos de las variables que poseen una exclamación al final quiere decir que son opcionales, por defecto todos los datos son distinto de nulo. Las listas se definen con corchetes y el tipo entre ellos. Este es el IDL del esquema del ejemplo.
 
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
+{{< code file="library.graphqls" language="plaintext" options="" >}}
 
 Una definido el esquema hay que desarrollar los _resolvers_ que son encargados de obtener los datos seguramente de una base de datos externa ya sea una base de datos SQL o NoSQL en este caso utilizando una clase que implementa el patrón repositorio y que abstrae del sistema de persistencia donde se almacenan los datos.
 

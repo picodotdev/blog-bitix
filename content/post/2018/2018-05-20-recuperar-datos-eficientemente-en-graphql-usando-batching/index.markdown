@@ -42,7 +42,7 @@ Con la lista completa de libros de la que hay que recuperar los comentarios ya s
 La consulta de GraphQL a realizar para recuperar los tres primeros comentarios de cada libro y los resultados que devuelve son los siguientes. La consulta parece un tanto compleja porque la propiedad de los comentarios implementa paginación pero básicamente se recupera de cada libro su título y los comentarios.
 
 {{< code file="curl.sh" language="bash" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradew run" >}}
 

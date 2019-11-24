@@ -27,7 +27,7 @@ En el caso de la [paginación en GraphQL](https://graphql.org/learn/pagination/)
 
 En este ejemplo de una librería para mostrar la paginación he añadido a los libros una lista de comentarios que será en la que soporte paginación. La definición del esquema queda de la siguiente forma siguiendo la [especificación de Relay](https://facebook.github.io/relay/graphql/connections.htm) para lo cual se definen los tipos _CommentsConnection_, _CommentEdge_ (usando _generics_ no sería necesario implementar unas de estas clases por cada entidad paginable) y _PageInfo_. Los cursores son un dato opaco para el cliente pero que decodificado incluye el identificativo del comentario. La propiedad _comments_ utiliza un _resolver_ con parámetros que se usa para realizar la búsqueda y recuperar los elementos solicitados en la consulta.
 
-{{< code file="library.graphqls" language="Plaintext" options="" >}}
+{{< code file="library.graphqls" language="plaintext" options="" >}}
 {{< code file="CommentsConnection.java" language="java" options="" >}}
 {{< code file="CommentEdge.java" language="java" options="" >}}
 {{< code file="PageInfo.java" language="java" options="" >}}

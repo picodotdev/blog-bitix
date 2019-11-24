@@ -59,7 +59,7 @@ Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [Th
 
 Finalmente, quizás si estás usando GNU/Linux y VirtualBox como yo al crear los nodos con el comando <code>docker-machine</code> te produzca el siguiente error (quizá se corrija en futuras versiones de Docker o VirtualBox).
 
-{{< code file="vboxnet0-error.out" language="Plaintext" options="" >}}
+{{< code file="vboxnet0-error.out" language="plaintext" options="" >}}
 
 La solución que he encontrado para que funcione es asignar una dirección IP al adaptador puente solo-anfitrión y levantar la interfaz que usa Docker para comunicarse con las máquinas virtuales previamente a crear el nodo. En [Arch Linux][archlinux] con los siguientes comandos.
 

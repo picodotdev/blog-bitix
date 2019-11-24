@@ -40,7 +40,7 @@ Realmente aunque el ejemplo muestra como validar un objeto de tipo [Record](http
 En la salida en al terminal de la [aplicación de ejemplo con Spring Boot][blogbitix-103] se observa que se producen varios errores de validación para un objeto empleado, al validarlo le falta un valor para los campos _id_, _name_ por restricciones de base de datos detectadas con las anotaciones @NotNull y al tener una fecha posterior a la actual también falla una validación propia de la aplicación. El campo _id_ lo asignará jOOQ cuando se guarde en base de datos por lo que esta validación no deberemos tenerla en cuenta al guardar registros nuevos.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="System.out" language="Plaintext" options="" >}}
+{{< code file="System.out" language="plaintext" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew updateDatabase, ./gradlew generateModels, ./gradlew run" >}}
 

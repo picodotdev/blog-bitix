@@ -53,7 +53,7 @@ Los datos de una métrica en el _enpoint_ _/actuator/metrics/service.invocations
 
 Y las mismas métricas en el formato que espera Prometheus.
 
-{{< code file="actuator-metrics-prometheus.txt" language="Plaintext" options="" >}}
+{{< code file="actuator-metrics-prometheus.txt" language="plaintext" options="" >}}
 
 Para iniciar el ejemplo de Spring Cloud que consta de un servicio de registro y descubrimiento, un servicio de configuración, un servicio del que se pueden iniciar varias instancias y un cliente que hace peticiones hay que utilizar la siguiente serie de comandos.
 

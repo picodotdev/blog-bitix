@@ -20,7 +20,7 @@ En algunas web las urls incluyen el identificativo del objeto de la base de dato
 
 Lo primero que debemos conseguir es que las direcciones urls sean únicas para cualquier página de la web, por tanto, en la url deberemos incluir tanta información como sea necesaria pero al mismo tiempo la mínima para hacerlas únicas, sean cortas y que nos permitan identificar de forma unequívoca el contenido a mostrar o el objeto que nos permite obtener la información a visualizar en la página, esta información formará el denominado _slug_. En el caso de Blog Stack las direcciones «bonitas» se emplean en este momento en dos sitios, para los artículos y para las etiquetas. La información mínima para un artículo es el nombre de la fuente, el año, el mes y el título, para las etiquetas es simplemente el nombre de la etiqueta. Este es un desglose de las partes que forman una dirección url.
 
-{{< code file="url.txt" language="Plaintext" options="" >}}
+{{< code file="url.txt" language="plaintext" options="" >}}
 
 Pero eso no es todo además quizá queramos transliterar los caracteres de forma que las urls no tengan ciertos caracteres propios de cada idioma. La solución simple pero poco efectiva es hacer una serie de sustituciones como por ejemplo reemplazar á por a, ñ por n, etc... Esta solución aparte de tener que hacerla nosotros probablemente no seamos ni siquiera conscientes que deberíamos haber reemplazado algún carácter más, se complica más si hemos de hacer lo mismo con el resto de codificaciones de la que ni siquiera conocemos los caracteres. Una solución mejor es utilizar el comando iconv disponible en linux que hace precisamente lo que buscamos:
 
@@ -28,19 +28,19 @@ Pero eso no es todo además quizá queramos transliterar los caracteres de forma
 
 Para que la url sea más fácilmente legible es recomendable convertir las mayúsculas a minúsculas y sustituir los caracteres de espacio por un guión (-). En Blog Stack suponiendo un [artículo][blogbitix-0] de la fuente blogbitix publicado en diciembre de 2013 y de título «¡Hola nuevo mundo!» partiríamos de la siguiente url previamente a aplicar la transliteración de caracteres:
 
-{{< code file="paso-1.txt" language="Plaintext" options="" >}}
+{{< code file="paso-1.txt" language="plaintext" options="" >}}
 
 Convertida a minúsculas:
 
-{{< code file="paso-2.txt" language="Plaintext" options="" >}}
+{{< code file="paso-2.txt" language="plaintext" options="" >}}
 
 Transliterada con iconv a ASCII:
 
-{{< code file="paso-3.txt" language="Plaintext" options="" >}}
+{{< code file="paso-3.txt" language="plaintext" options="" >}}
 
 Y finalmente sustituidos cualquier carácter que no esté entre en la siguiente expresión regular [^a-z1-9-] para eliminar por ejemplo signos de puntuación, múltiples guiones seguidos y si el resultado empieza o acaba por guión eliminándolo, al final tenemos el _slug_ o parte de la [url final][blogbitix-0] a la que deberíamos añadir el protocolo y el dominio:
 
-{{< code file="paso-4.txt" language="Plaintext" options="" >}}
+{{< code file="paso-4.txt" language="plaintext" options="" >}}
 
 Todo esto en código java se traduce en:
 

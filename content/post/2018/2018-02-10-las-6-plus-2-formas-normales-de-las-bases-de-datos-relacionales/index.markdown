@@ -46,7 +46,7 @@ En el caso del ejemplo los grupos repetidos de columnas implica que de una perso
 
 Las columnas con múltiples valores son difíciles de actualizar con sentencias SQL por el formato que emplea la columna para guardar el dato, en este caso utilizando una barra como separador.
 
-{{< code file="1fn.txt" language="Plaintext" options="" >}}
+{{< code file="1fn.txt" language="plaintext" options="" >}}
 
 ### Segunda forma normal, 2FN
 
@@ -54,7 +54,7 @@ Cada columna de una tabla está relacionada con todas las columnas de la clave p
 
 En este caso el problema además de contener posibles inconsistencias en los valores de las direcciones es que si se quisiera actualizar la dirección de una empresa habría que actualizar todos los registros de los empleados y empresa.
 
-{{< code file="2fn.txt" language="Plaintext" options="" >}}
+{{< code file="2fn.txt" language="plaintext" options="" >}}
 
 ### Tercera forma normal, 3FN
 
@@ -62,19 +62,19 @@ Cada columna de una tabla está relacionada directamente con las columnas de la 
 
 Podría haber inconsistenias de datos si dos personas tuviesen diferentes horas semanales para el mismo puesto.
 
-{{< code file="3fn.txt" language="Plaintext" options="" >}}
+{{< code file="3fn.txt" language="plaintext" options="" >}}
 
 ### Forma normal de Boyce-Codd, BCNF
 
 Una tabla está en BCNF y está en 3FN y todos los campos tienen como deteminante (dependen) la clave primaria. En un caso en que un trabajador trabaja en varias empresas con un responsable asignado e introduciendo la restricción de que en una empresa solo hay un responsable para todos los trabajadores, el campo _id\_responsable_ tiene una dependencia sobre el campo _id\_empresa_ que no es clave primaria.
 
-{{< code file="bcfn.txt" language="Plaintext" options="" >}}
+{{< code file="bcfn.txt" language="plaintext" options="" >}}
  
 ### Cuarta forma normal, 4FN
 
 No existen dos o más relaciones independientes en una misma tabla. En una relación que guarde las empresas de un trabajador y las localidades en las que trabaja, si las empresas y las localidades son independientes hay redundancia de datos por guardar para cada empresa cada una de las localidades del trabajador. Aplicando la 4FN en vez de utilizar 6 filas se utilizan 2 y 3 filas en las tablas _Trabajador_ y _Localidad_.
 
-{{< code file="4fn.txt" language="Plaintext" options="" >}}
+{{< code file="4fn.txt" language="plaintext" options="" >}}
 
 ### Quinta forma normal, 5FN
 
@@ -82,7 +82,7 @@ En el mismo caso anterior si se intodujese una realación entre empresa y locali
 
 Si el trabajador 1 empezase a trabajar en la empresa 2 sin aplicar la 5FN habría que insertar dos nuevas filas en la trabla _Zona_. Aplicando la 5FN bastaría con insertar una en la tabla _TrabajadorEmpresa_ (id_persona: 1, id_empresa: 2).
 
-{{< code file="5fn.txt" language="Plaintext" options="" >}}
+{{< code file="5fn.txt" language="plaintext" options="" >}}
 
 ### Sexta forma normal, 6FN
 
