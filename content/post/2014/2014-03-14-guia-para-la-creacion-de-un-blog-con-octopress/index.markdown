@@ -44,7 +44,7 @@ Cambiamos el origen de la rama master a la de nuestro GitHub en vez del origen d
 
 {{< code file="script-6.sh" language="bash" options="" >}}
 
-Podemos previsualizar el estado actual del blog en el navegador introduciendo en él la dirección [http://localhost:4000/blog-bitix/](http://localhost:4000/blog-bitix/):
+Podemos previsualizar el estado actual del blog en el navegador introduciendo en él la dirección _http\://localhost:4000/blog-bitix/_:
 
 {{< code file="script-7.sh" language="bash" options="" >}}
 
@@ -87,7 +87,7 @@ En el [código fuente del blog](https://github.com/picodotdev/blog-bitix) se pue
 {{< links >}}
 {{< postslinks >}}
 * [Hola nuevo mundo][blogbitix-0]
-* [Mi experiencia y consejos para un blog](http://localhost:4000/blog-bitix/2014/01/mi-experiencia-y-consejos-para-un-blog/)
+* [Mi experiencia y consejos para un blog][blogbitix-7]
 {{% /reference %}}
 
 {{% /post %}}

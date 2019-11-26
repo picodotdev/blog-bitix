@@ -23,7 +23,7 @@ Estoy titulado como Ingeniero en Informática y he trabajado en varias consultor
 
 Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electrónico que es <a href="mailto:pico.dev@gmail.com">pico.dev@gmail.com</a>, estaré encantado de escuchar:
 
-* Ofertas de trabajo. Estoy interesado en [Java][java], [Java EE][java-ee], [JBoss][jboss], [WildFly][wildfly], [Tomcat][tomcat], [Apache Tapestry][tapestry], [Hibernate][hibernate], [jOOQ][jooq], [Gradle][gradle], [jQuery][jquery], [Backbone.js][backbone], [React][react], [PostgreSQL][postgresql], [GNU][gnu]/[Linux][linux] y software libre.
+* Ofertas de trabajo. Estoy interesado en [Java][java], [Java EE][java-ee], [JBoss][jboss], [WildFly][wildfly], [Tomcat][tomcat], [Apache Tapestry][tapestry], [Spring][spring], [Hibernate][hibernate], [jOOQ][jooq], [Gradle][gradle], [jQuery][jquery], [React][react], [PostgreSQL][postgresql], [GNU][gnu]/[Linux][linux] y software libre.
 * Propuestas de colaboración con artículos patrocinados, análisis de productos, _banners_ u otras formas de publicidad principalmente relacionada con la temática de este blog.
 * Consultas o preguntas.
 * Sugerencias de artículos.
@@ -37,6 +37,6 @@ Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electr
 
 [Blog Bitix][blogbitix] es la continuación a partir de diciembre de 2013 de [El blog de pico.dev][elblogdepicodev] pero empleando [Octopress][octopress] después de esa fecha y con [Hugo][hugo] a partir de mayo de 2015. Octopress [tiene varias ventajas][blogbitix-0] y por estas ventajas el cambio de plataforma en un primer momento, con Hugo he podido personalizar completamente la apariencia y la instalación y actualización me ha resultado más simple. El contenido que publiqué en El blog de pico.dev sigue estando accesible y no lo he migrado, pero a partir de su abandono el nuevo contenido lo crearé ya en este blog hasta que surja otra herramienta que supere a Hugo y decida hacer otro cambio.
 
-Espero que este blog os resulte de interés y os divirtáis leyéndolo tanto como yo me divierto escribiendo en él.
+Espero que este blog os resulte de interés tanto como yo me divierto escribiendo en él.
 
 {{% /post %}}
