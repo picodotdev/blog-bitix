@@ -1,6 +1,7 @@
 {{ $file := print "code/" .Params.file }}
 {{ $resource := .Page.Resources.GetMatch $file }}
 {{ $content := $resource.Content | safeHTML }}
+
 <div class="code">
     {{ highlight $content .Params.language .Params.options }}
     <div class="highlight-meta">
