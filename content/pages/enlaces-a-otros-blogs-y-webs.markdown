@@ -29,9 +29,6 @@ Si usas la distribución Arch Linux estos son algunos enlaces que no debes perde
 * [Wiki Arch Linux](https://wiki.archlinux.org/): una gran fuente de información sobre Arch Linux pero que le puede servir a cualquier usuario del sistema del pingüino. Aquí está una documentación más oficial que la que se puede encontrar en los foros.
 * [Arch Linux - Package Database](https://www.archlinux.org/packages/): al ser Arch Linux una distribución _rolling release_ los paquetes se actualizan constantemente.
 Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el _kernel_ de linux, los controlador gráfico, etc...
-* [Repositorio AUR](https://aur.archlinux.org/): lo mismo que lo anterior pero para los paquetes del repositorio de AUR.
-* [Arch Linux en Español][archlinux-forums-es]: el foro de usuarios de Arch Linux de habla hispana. Gente que está dispuesta a ayudarte en los
-problemas que tengas en tu sistema aunque procura buscar antes la solución no seas un vampiro de ayuda.
 * [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o la solución este ya comentada por otro usuario.
 
 ## Noticias
@@ -87,7 +84,7 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [Planeta Código](https://www.planetacodigo.com/): un agregador de bitácoras personales relacionadas con la programación.
 * [OpenLibra](https://openlibra.com/es/collection): su biblioteca contiene cantidad de libros que pueden descargarse totalmente gratis sobre muchos temas relacionados con la tecnología entre otros como la programación y las metodologías ágiles. Una invaluable recopilación de documentación.    
 * [Koalite](http://blog.koalite.com/): un blog sobre programación con una buena cantidad de artículos interesantes. Muy recomendable.
-* [Arquitectura Java](http://www.arquitecturajava.com/blog/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
+* [Arquitectura Java](https://www.arquitecturajava.com/): artículos sobre el lenguaje java principalmente y de un nivel no muy avanzado, aún así merece agregarlo al lector de _feeds_.
 * [Adictos al trabajo](https://www.adictosaltrabajo.com/): la bitácora de la gente que trabaja en [Autentia](https://www.autentia.com/) con artículos y tutoriales muy interesantes, muchos sobre Java y bastante elaborados.
 * [Apuntes de Java](https://www.apuntesdejava.com/): como su nombre indica una bitácora con artículos sobre Java que ya tiene una larga trayectoria iniciada el año 2006.
 * [Diario de Programación](http://blog.chuidiang.com): no publica todas las semanas pero los artículos que contiene son muy interesantes y tienen una buena calidad. En este blog prima la calidad sobre la cantidad.

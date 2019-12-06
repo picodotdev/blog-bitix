@@ -3,6 +3,7 @@ pid: 414
 title: "Conocer la evolución de los precios de los productos en Amazon con CamelCamelCamel"
 url: "/2019/06/conocer-la-evolucion-de-los-precios-de-los-productos-en-amazon-con-camelcamelcamel/"
 date: 2019-06-22T07:00:00+02:00
+updated: 2019-12-06T13:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -22,7 +23,7 @@ La tecnología avanza notablemente en periodos de meses y por este avance los pr
 
 Un ejemplo atípico ha sido el de la memoria RAM que ha costado casi el doble que hace un par de años. La razón de esta rareza en el mundo tecnológico es que muchos fabricantes han orientado su producción al de las memorias NAND utilizada en los SSD y al aumento de la demanda por la mayor demanda de los dispositivos móviles entre otros dispositivos.
 
-Para seguir la evolución de los precios y saber de los productos en [Amazon][amazon] está la página [CamelCamelCamel](https://camelcamelcamel.com/). Buscando el producto en Amazon, copiando su dirección o URL y pegándola en el buscador de CamelCamelCamel se obtiene una gráfica de la evolución de su precio a lo largo del tiempo que se ha estado vendiendo en esa tienda de internet. En la misma gráfica queda reflejado también la disponibilidad del producto y el precio de los vendedores terceros.
+Para seguir la evolución de los precios y saber de los productos en [Amazon][amazon] está la página [CamelCamelCamel](https://camelcamelcamel.com/). Buscando el producto en Amazon, copiando su dirección o URL y pegándola en el buscador de CamelCamelCamel se obtiene una gráfica de la evolución de su precio a lo largo del tiempo que se ha estado vendiendo en esa tienda de internet. En la misma gráfica queda reflejado también la disponibilidad del producto y el precio de los vendedores terceros. Es especialmente útil en épocas señaladas de descuentos como el _black friday_, _cyber monday_ o época navideña a las que se espera para comprar ese capricho o regalo a mejor precio, permite conocer el descuento real aplicado comparándolo con periodos de tiempo más largos que los días inmediatamente anteriores.
 
 Como ejemplo se puede mostrar el precio de un SDD [Samsung 970 EVO en formato M.2 de 250 GiB](https://amzn.to/2XuRE9p) o de [1 TB](https://amzn.to/2IvJJjU) y _kit_ de memorias de [HyperX Impact de 32 GiB DDR4 a 2400Mhz](https://amzn.to/2XwfQrS).
 
