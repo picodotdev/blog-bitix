@@ -42,6 +42,8 @@ Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tama
         caption="Previsualización de imagen en tamaño 650x450 y 300x200 del original 1600x1067" >}}
 </div>
 
+Los ahorros de espacio conseguidos anteriores son consecuencia de reducir el tamaño de la imagen, [utilizar el formato de imagen WebP en vez de _jpg_ y _png_][blogbitix-447] además permite conseguir importantes reducciones de tamaño del espacio ocupado por las fotografías e imágenes originales, en torno al 20% y 60%.
+
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
