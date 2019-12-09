@@ -8,8 +8,8 @@
 
   <script type="text/javascript" async>
     var disqus_shortname = '{{ .Site.Params.disqus.shortname }}';
-    var disqus_identifier = '{{ .Permalink }}';
-    var disqus_url = '{{ .Permalink }}';
+    var disqus_identifier = '{{ .Site.Params.disqus.shortname }}-{{ .Params.pid }}';
+    var disqus_url = '{{ .Site.Params.baseurl }}{{ .Params.url }}';
     var disqus_script = 'embed.js';
     (function () {
       var dsq = document.createElement('script'); 
