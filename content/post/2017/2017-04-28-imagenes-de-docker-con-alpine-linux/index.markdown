@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "planeta-codigo", "planeta-linux"]
 series: ["docker"]
 ---
 

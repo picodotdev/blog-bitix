@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
 series: ["terminal"]
 summary: "Conociendo los comandos y sus opciones podemos realizar una tarea que nos ahorre una gran cantidad de tiempo si lo hubiésemos hecho manualmente o con una interfaz gráfica. La parte GNU de las mayoría distribuciones Linux proporcionan una buena cantidad de comandos útiles interesantes de conocer que están a nuestra disposición para cuando los necesitemos."
 ---

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
 series: ["electronica"]
 summary: "El _kit_ de iniciación a la electrónica para la Raspberry Pi tiene un sensor para la temperatura y humedad, el modelo DHT11. Obtener la información requiere restricciones de tiempo, este es un caso de uso justificado para usar lenguaje C y JNI para integrarlo con Java. En el ejemplo el código C llama a un método de una clase Java con dos valores enteros o lanza una excepción en caso de que al realizar la lectura haya habido algún error en la transmisión de los bits."
 ---

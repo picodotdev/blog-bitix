@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["java", "programacion", "planeta-codigo", "blog-stack"]
+tags: ["java", "programacion", "planeta-codigo"]
 series: ["jooq"]
 summary: "Los ORMs nos han facilitado el acceso a los datos de una base de datos relacional. Han solucionado algunos problemas pero traído consigo otros nuevos como el problema N+1 o la pérdida de control del modelo relacional. jOOQ forma parte de una nueva generación de herramientas que puede sustituir o complementar a otras como Hibernate. Y después de haberlo usado considero que puede ser factible."
 ---

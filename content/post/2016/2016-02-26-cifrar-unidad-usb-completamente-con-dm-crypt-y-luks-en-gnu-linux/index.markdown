@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "seguridad", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "seguridad", "software-libre"]
 summary: "¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos contenía? Muy posiblemente son varias las memorias USB que tenemos, por su poco tamaño y cada vez mayor capacidad incluso llevaremos alguna en la cartera siempre con nosotros. Si quieres mantener a salvo los datos en caso de pérdida hay varias opciones, una para esta necesidad es cifrar completamente la unidad con dm-crypt junto con LUKS+Ext4 en GNU/Linux. Suena muy técnico pero es muy sencillo usando la aplicación Discos de GNOME y la seguridad de nuestra información aumentará notablemente."
 ---
 

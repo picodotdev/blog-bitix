@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "microsoft", "planeta-codigo", "software"]
+tags: ["microsoft", "planeta-codigo", "software"]
 summary: "Un virus, el _bloatware_ preinstalado en muchos portátiles o tras instalar y desinstalar programas en Windows puede ocasionar que el equipo sea lento, se muestren mensajes de error o un virus cifre los archivos personales. En estos casos una solución habitual sencilla, rápida y fiable de volver a usar con normalidad el equipo es reinstalar Windows 10 desde cero. No es complicado pero para un usuario con pocos conocimientos de informática no es una tarea sencilla. En este artículo explicaré como instalar paso a paso y desde cero el sistema operativo Windows 10."
 ---
 

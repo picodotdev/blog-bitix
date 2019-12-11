@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}

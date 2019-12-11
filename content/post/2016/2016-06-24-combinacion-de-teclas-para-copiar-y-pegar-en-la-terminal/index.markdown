@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
 series: ["terminal"]
 summary: "En vez de usar el botón derecho de ratón y hacer clic sobre el menú desplegable para realizar la acción de copiar y pegar se puede emplear el teclado con una combinación de teclas para realizar estas mismas acciones. Si estas operaciones se realizan frecuentemente la combinación de teclas es más rápido y sencillo."
 ---

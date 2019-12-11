@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Spark _framework_ es un _microframework_ web para Java que además hace uso de las novedades introducidas en la versión 8 del lenguaje. Para una aplicación no compleja o de un tamaño reducido permite desarrollar con su sencillez la funcionalidad de la aplicación inmediatamente y una arquitectura liviana."
 ---
 

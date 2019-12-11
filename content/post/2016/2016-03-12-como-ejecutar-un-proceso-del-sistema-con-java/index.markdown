@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["java", "gnu-linux", "planeta-codigo", "planeta-linux"]
 summary: "Dada la popularidad de Java es difícil que no encontremos en el propio JDK o librería la funcionalidad que necesitamos y sino en algún comando del sistema de los muchos que tenemos a disposición en un sistema GNU/Linux. Esto nos da acceso a una gran cantidad de funcionalidades también desde los programas Java."
 ---
 

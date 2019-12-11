@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "java","planeta-codigo", "programacion"]
+tags: ["java","planeta-codigo", "programacion"]
 series: ["java-platform"]
 summary: "Si en Java 8 la característica más destacada fue la incorporación al lenguaje de las _lambdas_ y los _streams_ en Java 9 la característica que más destaca es la definición de los módulos que proporciona varios importantes beneficios."
 ---

@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "blog-stack", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 summary: "Pasado un nuevo semestre he escrito principalmente sobre temas de programación, Java y poco sobre Linux o software libre. Incluyo aquí el listado completo de los artículos que he escrito."

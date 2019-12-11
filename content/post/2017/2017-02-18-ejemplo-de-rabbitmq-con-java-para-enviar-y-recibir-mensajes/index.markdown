@@ -7,7 +7,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["java", "planeta-codigo", "planeta-linux", "programacion"]
 summary: "Entre las ventajas de integrar dos aplicaciones mediante el envío de mensajes están que evita que estén acopladas y la comunicación es asíncrona. Con RabbitMQ también podremos implementar cada uno de ellas con el lenguaje de programación que prefiramos de entre las varias posibilidades para las que ofrece clientes y por esto último podemos preferir usarlo en vez de las especificación JMS propia de Java EE que nos obligaría a usar un servidor de aplicaciones que lo implemente, posiblemente JBoss/Wildfly o Weblogic en vez de Tomcat o Jetty. En el artículo incluyo un ejemplo para el lenguaje Java mostrando el envío y recepción de mensajes junto con la aplicación de administración que nos proporcionará información útil."
 ---
 

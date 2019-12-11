@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["planeta-codigo", "planeta-linux"]
 series: ["bilbostack"]
 ---
 

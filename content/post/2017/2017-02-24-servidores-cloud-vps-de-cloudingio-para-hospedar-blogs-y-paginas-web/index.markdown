@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: true
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "patrocinado"]
+tags: ["planeta-codigo", "planeta-linux", "patrocinado"]
 summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente para proyectos de presencia en internet, blogs, pequeños y medianos proyectos de páginas web. Además, con soporte en español en caso de necesitar algún tipo de asistencia o ayuda."
 ---
 

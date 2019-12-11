@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-linux"]
+tags: ["gnu-linux", "planeta-linux"]
 series: ["juegos"]
 summary: "Un juego puede gustar por sus gráficos espectaculares, sin embargo, no será venerado si no proporciona gran cantidad de diversión. Hay algunos juegos en que gran parte de la diversión es proporcionada por la historia o guión. Este son los casos de varios juegos de apuntar y pinchar de hace algunos lustros que quedaron en el recuerdo de muchos de sus jugadores que hoy en día son jugables con ScummVM."
 ---

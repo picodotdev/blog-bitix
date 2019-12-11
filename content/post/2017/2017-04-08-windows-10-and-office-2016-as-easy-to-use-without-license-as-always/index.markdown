@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "en"
-tags: ["blog-stack", "microsoft", "opinion"]
+tags: ["microsoft", "opinion"]
 summary: "I commented in an article that it is surprising that Microsoft with the capacity that it has and being the devices connected to Internet mostly is not able to avoid using its software without license. I'm about to see if with Windows 10 and Office 2016 it's still as easy to use as always. I will also have a sample of the unfair fame of Windows but that allows Microsoft for the bloatware that the device manufacturers pre-installs with its operating system."
 ---
 

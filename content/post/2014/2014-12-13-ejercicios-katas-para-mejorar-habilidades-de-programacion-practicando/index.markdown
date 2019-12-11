@@ -6,7 +6,7 @@ date: 2014-12-13T12:06:06+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "software-libre", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["java", "software-libre", "planeta-codigo", "planeta-linux", "programacion"]
 ---
 
 {{% post %}}

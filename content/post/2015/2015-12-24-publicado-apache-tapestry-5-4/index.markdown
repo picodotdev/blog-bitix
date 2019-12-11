@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "tapestry", "programacion"]
+tags: ["java", "planeta-codigo", "tapestry", "programacion"]
 ---
 
 {{% post %}}

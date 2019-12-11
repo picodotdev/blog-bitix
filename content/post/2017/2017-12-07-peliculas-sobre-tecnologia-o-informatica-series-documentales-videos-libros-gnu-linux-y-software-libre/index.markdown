@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "planeta-codigo"]
+tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}

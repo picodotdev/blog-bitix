@@ -7,7 +7,7 @@ updated: 2016-01-31T10:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["planeta-codigo", "planeta-linux"]
 series: ["bilbostack"]
 ---
 

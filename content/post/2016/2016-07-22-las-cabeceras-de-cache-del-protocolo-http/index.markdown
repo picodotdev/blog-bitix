@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
 series: ["web"]
 summary: "Establecer directivas de cacheo en los recursos devueltos en una página o aplicación web tiene las ventajas de reducir el número de peticiones que llegan al servidor mejorando la latencia y el rendimiento pudiendo atender a más usuarios y mejora los tiempos de carga de las páginas. Usando varias directivas de cacheo la aplicación es capaz de determinar cómo quiere que el contenido devuelto o los recursos sean cacheados por los clientes o servidores de cache intermedios."
 ---

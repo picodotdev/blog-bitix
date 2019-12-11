@@ -8,7 +8,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "planeta-codigo", "planeta-linux"]
 summary: "Los artículos y log blogs personales no se escriben solos, cada artículo está fabricado artesanalmente letra a letra por alguna persona en algún lugar. Hace unos meses Victorhck inició una cadena de artículos que algunos blogueros han continuado donde compartían el lugar donde crean sus artículos."
 ---
 

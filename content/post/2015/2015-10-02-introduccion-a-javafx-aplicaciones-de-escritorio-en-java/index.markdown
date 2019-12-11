@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Java tiene una fuerte presencia en el ámbito de desarrollo para aplicaciones web, más recientemente ha sido empleado por la plataforma Android. En la misma medida que han crecido las aplicaciones web y móviles nativas las aplicaciones de escritorio han perdido presencia, sin embargo, para ciertos casos son la opción adecuada. Con la aparición de JavaFX aportando varias mejoras sobre Swing o AWT en la plataforma Java se pueden desarrollar aplicaciones de escritorio multiplataforma «ricas». Podemos empezar por el ejemplo Hola Mundo de JavaFX de este artículo."
 ---
 

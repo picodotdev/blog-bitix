@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "microsoft", "planeta-linux", "software", "software-libre"]
+tags: ["microsoft", "planeta-linux", "software", "software-libre"]
 summary: "Realizar copias de seguridad cada cierta frecuencia nos salvará de perder los datos en algún momento, no sabemos cuando pero tarde o temprano algo del equipo que usemos fallará ya sea a causa de software o hardware. A nivel de usuario mantener una copia sincronizada en otro dispositivo de nuestros archivos seguramente sea suficiente para no perderlos a causa de un desastre, para ello podemos usar FreeFileSync."
 ---
 

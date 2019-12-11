@@ -7,7 +7,7 @@ updated: 2015-11-10T19:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
 ---
 
 {{% post %}}

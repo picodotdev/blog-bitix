@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "software-libre"]
 series: ["donacion"]
 summary: "Recibidas nuevas transferencias de Google y Amazon por la publicidad AdSense y los enlaces de afiliado respectivamente que incluyo en esta bitácora he realizado unas pequeñas nuevas donaciones económicas a varios proyectos de software libre que uso habitualmente."
 ---

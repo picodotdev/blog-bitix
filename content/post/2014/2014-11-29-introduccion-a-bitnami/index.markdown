@@ -7,7 +7,7 @@ updated: 2017-05-28T01:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "hardware", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["hardware", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
 ---
 
 {{% post %}}

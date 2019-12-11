@@ -9,7 +9,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}

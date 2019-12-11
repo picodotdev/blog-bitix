@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "gnu-linux", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-linux", "software-libre"]
 ---
 
 {{% post %}}

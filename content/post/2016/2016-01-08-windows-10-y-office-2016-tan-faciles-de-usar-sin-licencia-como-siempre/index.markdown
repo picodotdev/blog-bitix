@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["microsoft", "opinion", "planeta-codigo", "planeta-linux"]
 summary: "Comentaba en un artículo que es sorprendente que Microsoft con la capacidad que tiene y estando los dispositivos conectados a internet mayoritariamente no sea capaz de evitar usar su software sin licencia. Estoy a punto de ver si con Windows 10 y Office 2016 sigue siendo tan fácil como siempre. También tendré una muestra de la injusta fama de Windows pero que permite Microsoft por el _bloatware_ que preinstalan los fabricantes de dispositivos con su sistema operativo."
 ---
 

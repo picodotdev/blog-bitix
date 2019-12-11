@@ -7,7 +7,7 @@ updated: 2015-02-14T23:30:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Aunque no es muy utilizada, para tareas de depuración es una ayuda que bien empleada permite descubrir el origen de algún _bug_ en un programa. Los _asserts_ en Java son ignorados, por tanto no suponen ninguna penalización en tiempo de ejecucción, salvo que se indique de forma explicita en la ejecución del programa, esto permite añadirlos al código fuente y activarlos en el momento que se desee realizar una depuración para encontrar errores."
 ---
 

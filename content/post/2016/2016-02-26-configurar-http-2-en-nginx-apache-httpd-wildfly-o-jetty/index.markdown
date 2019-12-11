@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["planeta-codigo", "planeta-linux"]
 series: ["web"]
 summary: "HTTP/2 se puede usar ya, los principales navegadores web, servidores web y de aplicaciones ya han añadido el soporte necesario ofreciendo varias ventajas para los usuarios, desarrolladores, dispositivos cliente y los servidores. En varios de los servidores más ppulares la configuración necesaria no es complicada."
 ---

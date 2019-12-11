@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "opinion"]
+tags: ["opinion"]
 ---
 
 {{% post %}}

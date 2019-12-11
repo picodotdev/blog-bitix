@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "planeta-codigo", "software", "software-libre"]
+tags: ["planeta-codigo", "software", "software-libre"]
 series: ["gitlab"]
 ---
 

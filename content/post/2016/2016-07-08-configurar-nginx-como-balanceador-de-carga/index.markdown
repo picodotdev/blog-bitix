@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
 series: ["web"]
 summary: "Para escalar horizontalmente los servidores de aplicaciones, aumentar el rendimiento, disminuir la latencia, conseguir tolerancia a fallos y aumentar la disponibilidad podemos usar el servidor web Nginx como balanceador de carga entre varios servidores de aplicaciones. En este ejemplo muestro la configuración necesaria para añadir la funcionalidad de balanceador de carga a Nginx entre varios servidores de aplicaciones Tomcat usando además Docker."
 ---

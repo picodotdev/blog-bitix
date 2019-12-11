@@ -7,7 +7,7 @@ updated: 2015-05-26T20:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["java", "programacion", "planeta-codigo", "blog-stack"]
+tags: ["java", "programacion", "planeta-codigo"]
 summary: "A falta de una forma estructurada para obtener datos de una fuente podemos extraerla directamente del contenido html de una página, a esto se le denomina «web scraping». En Java y con la librería jsoup podemos obtener la información que necesitamos de forma sencilla."
 ---
 

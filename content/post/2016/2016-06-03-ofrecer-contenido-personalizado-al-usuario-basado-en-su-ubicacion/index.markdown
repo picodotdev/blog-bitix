@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "programacion", "software", "software-libre"]
 summary: "Cuando navegamos por internet el navegador envía mútiple información sobre nosotros y algunas páginas web recopilan esa información y la procesan para ofrecer contenido personalizado que creen nos resultaría de interés. Contenido con mayor relevancia para el usuario mejora la experiencia de usuario y la páginas web mejorarán su ratio de conversión y facturación. La información que proporcionamos sin ser conscientes son las _cookies_, la dirección IP, el navegador que usamos, el sistema operativo, nuestra resolución de pantalla, la hora a la que accedemos a la página, ... en base a ella y aunque la información está impersonalizada sirve para identificarnos como inequivocamente usuarios. Con la dirección IP y usando una base de datos es posible obtener al menos el país desde el que se accede a una web y muy posiblemente la ciudad."
 ---
 

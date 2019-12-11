@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "java", "planeta-codigo", "programacion", "tapestry"]
+tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 summary: "Los portales ofrecen una solución para los casos de uso de integración de aplicaciones, edición de contenido a modo de CMS, agregación de blogs, foros, colaboración entre personas, red social entre otros. La pieza fundamental de un portal en Java es un _portlet_. Desarrollar un _portlet_ usando la API directamente no es simple, algunos _frameworks_ que usaríamos para desarrollar aplicaciones y páginas web son usables para desarrollar _portlets_, Apache Tapestry es uno de ellos como muestro con un ejemplo en este artículo."
 ---
 

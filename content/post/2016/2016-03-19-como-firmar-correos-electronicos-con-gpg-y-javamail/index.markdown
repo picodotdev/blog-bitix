@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "planeta-linux", "programacion", "seguridad"]
+tags: ["java", "planeta-codigo", "planeta-linux", "programacion", "seguridad"]
 summary: "El correo electrónico es un medio muy utilizado para realizar ataques de _phising_, algunos son muy burdos pero seguramente algunos usuarios sin muchos conocimientos caen víctimas de ellos y aún los usuarios con conocimientos también pueden serlo si están bien realizados y muestran un correo electrónico exactamente igual que el que intentan suplantar. Los usuarios son las víctimas pero si los sitios web que envían los correos electrónicos legítimos los firmasen digitalmente sería una garantía más para proteger a sus usuarios, pudiendo detectar de otra forma el _spam_ y _phising_. En este artículo muestro a modo de ejemplo como firmar un correo electrónico con GPG y JavaMail e igualmente podría utilizarse para cifrarlo, aunque usar DKIM sería lo más apropiado."
 ---
 

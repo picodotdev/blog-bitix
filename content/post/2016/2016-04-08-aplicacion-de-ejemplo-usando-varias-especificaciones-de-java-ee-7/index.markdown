@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
 summary: "Más lentamente que otras tecnologías Java EE en cada nueva versión sigue adaptándose a las nuevas tendencias en el desarrollo y facilitando la programación de aplicaciones de entidad empresarial. Java EE está formado por un conjunto de especificaciones que resuelven en gran medida muchas de las necesidades funcionales de las aplicaciones ya sean de persistencia, seguridad, mensajería, lógica de negocio, transaccionalidad, inyección de dependencias, presentación HTML, JSON, WebSockets, conexión a base de datos, envío de correos electrónicos o concurrencia. En este artículo mostraré un ejemplo usando varias de estas especificaciones y proporcionaré el código fuente completo."
 ---

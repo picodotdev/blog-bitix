@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
 series: ["web"]
 summary: "Las caches son un recurso utilizado para aumentar el rendimiento y evitar malgastar recursos. Si una petición es muy costosa pero que no cambia muy a menudo o no se necesitan que los datos estén totalmente actualizados cachear el resultado de esa petición evitará tener que recalcularla para cada petición, si se realizan muchas peticiones el aumento de rendimiento será drásticamente mejor usando además un menor número de recursos de los sistemas. Hay soluciones específicas para cacheo pero si nuestra necesidades no son extremadamente avanzadas el cacheo ofrecido por Nginx probablemente sea suficiente."
 ---

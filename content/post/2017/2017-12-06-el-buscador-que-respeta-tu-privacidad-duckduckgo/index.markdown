@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "planeta-codigo"]
+tags: ["planeta-codigo"]
 ---
 
 {{% post %}}

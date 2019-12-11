@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "microsoft", "software", "software-libre"]
+tags: ["gnu-linux", "microsoft", "software", "software-libre"]
 summary: "Microsoft Office is the office suite with a great margin of difference in the usage quota with the next option on Windows systems. It is very complete and includes more features that most users know but it is also a more expensive option than other alternatives that are free without having anything to envy for most users and use cases."
 ---
 

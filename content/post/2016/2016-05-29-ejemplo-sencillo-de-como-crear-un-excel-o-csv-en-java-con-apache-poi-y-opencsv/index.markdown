@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Los archivos Excel y separados por comas o CSV son muy utilizados como formato para intercambiar datos entre aplicaciones o como formato para exportar cantidades grandes de datos de una aplicación. Por su utilidad es probable que tarde o temprano surja en una aplicación la necesidad de crear archivos o exportar datos a estos formatos. Con la librería Apache POI se pueden crear Excel desde Java y con la librería OpenCSV exportar datos a archivos CSV con el formato correcto."
 ---
 

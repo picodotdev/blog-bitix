@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion",]
+tags: ["java", "planeta-codigo", "programacion",]
 summary: "Las aplicaciones basadas en eventos y con E/S no bloqueante son más eficientes, requieren menos recursos y son capaces de servir más peticiones o usuarios por unidad de tiempo. En JavaScript su mejor representante es Node.js, en la plataforma JVM uno equivalente es Vert.x. Pero también tiene sus contrapartidas. En el artículo incluiré un pequeño ejemplo de Vert.x que muestre las diferencias con las aplicaciones tradicionalmente basadas en hilos y llamadas a métodos bloqueantes."
 ---
 

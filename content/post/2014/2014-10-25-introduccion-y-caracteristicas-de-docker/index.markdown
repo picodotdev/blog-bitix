@@ -7,7 +7,7 @@ updated: 2017-05-02T23:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["gnu-linux", "planeta-linux", "planeta-codigo", "blog-stack"]
+tags: ["gnu-linux", "planeta-linux", "planeta-codigo"]
 series: ["docker"]
 summary: "Los contenedores no son una tecnología nueva pero Docker ha reunido las características necesarias para hacerla sencilla y popular en Linux. Suponen un cambio en la infraestructura de las aplicaciones con algunas ventajas sobre la virtualización y la instalación de los servicios directamente en el sistema."
 ---

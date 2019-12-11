@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion", "spring"]
+tags: ["java", "planeta-codigo", "programacion", "spring"]
 series: ["spring-cloud"]
 summary: "La configuración de una aplicación suele varíar según el entorno en el que se ejecuta, la opción recomendada es que este externalizada y que el artefacto que se despliega en cada entorno sea el mismo. Con Spring Cloud Config en vez de guardar la configuración en un archivo de la propia máquina donde se instala podemos guardar de forma centralizada en un repositorio y que la aplicación obtenga la versión más actualizada cuando se inicia. En este ejemplo explicaré como crear el servidor de configuraciones con Spring Cloud Config y un ejemplo de cliente con Spring Boot que le solicita su configuración según su entorno."
 ---

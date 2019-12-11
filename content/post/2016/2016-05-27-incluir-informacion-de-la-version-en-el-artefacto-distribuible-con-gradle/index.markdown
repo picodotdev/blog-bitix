@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Tener trazabilidad entre el código fuente y el código que se está ejecutando en el entorno de producción es importante para saber cual es el origen de alguna excepción o error que se produzca. Con Gradle podemos conseguir esta trazabilidad haciendo unas pocas modificaciones al _script_ de construcción."
 ---
 

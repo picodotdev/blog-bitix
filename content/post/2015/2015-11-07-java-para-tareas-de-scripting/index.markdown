@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["java", "planeta-codigo", "planeta-linux", "programacion"]
 summary: "Para programar pequeños _scripts_ normalmente se suele emplear el intérprete de comandos en GNU/Linux bash o si es algo complejo un lenguaje interpretado como Python, Ruby o Groovy. Pero no pienses que Java no puede ser empleado para tareas de _scripting_, en este artículo muestro que problemas presentan los lenguajes interpretados o dinámicos, que ventajas tiene usar Java y finalmente como usarlo con la misma sencillez que un lenguaje interpretado para el nicho funcional de los _scripts_."
 ---
 

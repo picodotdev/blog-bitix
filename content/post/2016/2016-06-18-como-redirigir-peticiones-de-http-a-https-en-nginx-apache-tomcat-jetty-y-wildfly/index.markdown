@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "seguridad", "software", "software-libre"]
+tags: ["planeta-codigo", "planeta-linux", "seguridad", "software", "software-libre"]
 series: ["web"]
 summary: "Usar el protocolo seguro HTTPS proporciona confidencialidad en la comunicación entre el navegador del usuario y el servidor, es una forma de mejorar la seguridad y privacidad. Por ello el buscador de Google lo tiene en cuenta como un parámetro que afecta al SEO siendo mejor usar el protocolo seguro. Sin embargo, el usuario puede estar accediendo por el protocolo no seguro a la página web al poner la dirección en la barra de direcciones o hay enlaces hacia nuestro sitio en otros que hacen uso del protocolo HTTP. Si queremos que nuestro sitio sea accedido únicamente usando el protocolo seguro deberemos hacer una redirección en el servidor."
 ---

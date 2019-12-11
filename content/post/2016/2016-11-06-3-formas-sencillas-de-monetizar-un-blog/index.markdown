@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "blog-stack", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "planeta-codigo", "planeta-linux"]
 summary: "Si tenemos un blog probablemente tengamos algún gasto como el dominio o el _hosting_. Pasado un tiempo si los artículos del blog son interesantes empezaremos a tener visitas que podemos monetizar para costear los gastos y seguramente algo más. En este artículo comento 3 formas sencillas de monetizar un blog que no nos requieren mucho trabajo."
 ---
 

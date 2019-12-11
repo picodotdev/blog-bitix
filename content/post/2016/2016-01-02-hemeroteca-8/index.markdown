@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "blog-stack", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 summary: "Seis meses más de artículos la mayoría sobre programación en Java tratando algunas de las nuevas tendencias de programación con las posibilidades de la plataforma de la JVM. Unos pocos artículos más continuando la serie sobre Docker y uno de opinión sobre las licencias de Microsoft."

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "java", "planeta-codigo", "opinion",]
+tags: ["java", "planeta-codigo", "opinion",]
 ---
 
 {{% post %}}

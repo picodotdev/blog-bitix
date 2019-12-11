@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
 summary: "Java sigue siendo uno de los lenguajes más usado para desarrollar aplicaciones empresariales en entidades públicas o empresas privadas. Proporciona un conjunto de especificaciones que cubren las necesidades funcionales de la mayoría de las aplicaciones y sigue evolucionando, adaptándose a las nuevas tendencias actuales y agregando nuevas funcionalidades de forma estandarizada en la plataforma. Aún así muchas entidades siguen y seguirán usando versiones anteriores a la última tanto de Java EE como de Java."
 ---

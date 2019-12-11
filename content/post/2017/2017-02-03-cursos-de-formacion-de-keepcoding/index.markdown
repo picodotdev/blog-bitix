@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: true
-tags: ["blog-stack", "planeta-codigo", "planeta-linux", "programacion", "patrocinado"]
+tags: ["planeta-codigo", "planeta-linux", "programacion", "patrocinado"]
 ---
 
 {{% post %}}

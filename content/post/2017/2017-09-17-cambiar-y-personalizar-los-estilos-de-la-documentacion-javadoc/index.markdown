@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "java", planeta-codigo", "programacion"]
+tags: ["java", planeta-codigo", "programacion"]
 ---
 
 {{% post %}}

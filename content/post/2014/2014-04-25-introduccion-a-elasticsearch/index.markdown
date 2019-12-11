@@ -7,7 +7,7 @@ updated: 2015-11-10T19:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["software", "programacion", "planeta-codigo", "blog-stack"]
+tags: ["software", "programacion", "planeta-codigo"]
 summary: "Elasticsearch es una potente herramienta que nos permite indexar una gran volumen de datos y posteriormente hacer consultas sobre ellos soportando entre otras muchas cosas búsquedas aproximadas, facetas y resaltado. Un uso puede ser hacer consultas de texto completo, al estar los datos indexados los resultados se obtienen de forma muy rápida."
 ---
 

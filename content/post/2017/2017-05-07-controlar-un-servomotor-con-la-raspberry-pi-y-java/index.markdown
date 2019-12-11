@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
 series: ["electronica"]
 ---
 

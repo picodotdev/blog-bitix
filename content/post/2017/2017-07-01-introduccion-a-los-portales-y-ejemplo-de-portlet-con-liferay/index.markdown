@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "java", "planeta-codigo", "programacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "Muchas organizaciones usan portales para mantener su presencia en internet. Los portales son herramientas muy versátiles que incluyen la gestión de contenidos y flujo de trabajo para publicarlo, foros, blog, ... Liferay es uno de los más conocidos que usa la plataforma Java. La unidad básica funcional de un portal es un _portlet_ que en ciertos aspectos son similares en otros diferentes a lo que son los _servlets_ en las aplicaciones web Java."
 ---
 

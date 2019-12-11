@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog-stack", "gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
 series: ["electronica"]
 summary: "Para tareas muy específicas que requieran alto rendimiento, baja latencia, tiempo real o haya restricciones de tiempo el lenguaje Java y la JVM pueden mostrar algunas limitaciones obligando a escribir alguna sección crítica de un programa en un lenguaje nativo como C o C++. Para hacer posible la integración entre Java y C existe en Java la API JNI. En este artículo mostraré como realizar un programa Java que emite el mensaje Hola Mundo desde una biblioteca compartida en C y usando JNI."
 ---

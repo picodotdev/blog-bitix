@@ -8,7 +8,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["apple", "blog-stack", "gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["apple", "gnu-linux", "planeta-codigo", "planeta-linux"]
 summary: "Hace ya más de un lustro pase de usar Windows a usar GNU/Linux incluso en el trabajo, ahora por motivos laborales no me queda opción que usar un Mac, el primer Mac que usaré. En casa a nivel personal seguiré usando la distribución Arch Linux y antes de empezar a usar un Mac seguirá siendo así, ¿usar un Mac me hará cambiar de opinión y usaré un producto de Apple incluido a nivel personal en un futuro?"
 ---
 
