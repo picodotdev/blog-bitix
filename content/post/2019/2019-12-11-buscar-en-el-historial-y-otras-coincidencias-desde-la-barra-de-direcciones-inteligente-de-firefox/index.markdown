@@ -1,7 +1,7 @@
 ---
 pid: 448
-title: "Buscar en el historial y otras coincidencias desde la barra de direcciones inteligente de Firefox"
-url: "/2019/12/buscar-en-el-historial-y-otras-coincidencias-desde-la-barra-de-direcciones-inteligente-de-firefox/"
+title: "Buscar en el historial desde la barra de direcciones inteligente de Firefox"
+url: "/2019/12/buscar-en-el-historial-desde-la-barra-de-direcciones-inteligente-de-firefox/"
 date: 2019-12-11T17:00:00+01:00
 language: "es"
 rss: true
