@@ -53,7 +53,7 @@ draft: true
 
 {{< gist picodotdev id "file" >}}
 
-{{< code file="Main.java" language="Java" options="" >}}
+{{< code file="Main.java" language="java" options="" >}}
 
 {{% asciinema id="" caption="" %}}
 
