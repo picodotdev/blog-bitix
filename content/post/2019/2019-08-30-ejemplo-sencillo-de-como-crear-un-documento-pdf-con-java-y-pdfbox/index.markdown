@@ -43,7 +43,7 @@ PDFBox no posee una forma de escribir párrafos y tener saltos de línea automá
 
 Pero en vez de crear un documento PDF desde cero desde Java si se trata de una factura es más sencillo partir de un documento PDF a modo de plantilla con el diseño deseado en el que solo haya que incluir la información que varía en la ubicación del documento apropiada. Este sería en caso de una factura o justificante. Y si el documento es un informe con muchos datos o el diseño se desea cambia independientemente de la información que incluye o es complejo en vez de insertar cada campo de texto e imágenes individualmente con código está la opción de utilizar el generador de documentos [JasperReports][jasperreports]. 
 
-En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index.htm) se incluyen más ejemplos de tareas básicas al procesar documentos PDF con esta librería.
+En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index.htm) se incluyen más ejemplos de tareas básicas al procesar documentos PDF con esta librería. Con PDFBox el documento PDF se genera completamente mediante código, si el PDF requiere cambios hay que modificar el código que para documentos sencillos es aceptable. Para documentos PDF complejos y para separar el estilo, la información que contiene y que el código no requiera modificaciones también se pueden [Generar documentos, informes y facturas en formato PDF con JasperReports][blogbitix-449].
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaPdf" command="./gradlew run" %}}
 
