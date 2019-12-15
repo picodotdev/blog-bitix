@@ -21,7 +21,7 @@ Llega el final de año y los comerciales de los bancos llaman a sus clientes, cu
 
 Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet y a través de una entidad bancaria.
 
-También hay que decir que los gestores personales que las entidades bancarias asignan a sus clientes son empleados y les paga su sueldo el banco, son como cualesquiera otros comerciales y vendedores profesionales con objetivos de ventas anuales (en este caso productos financieros), pueden informar y asesorar hasta cierto punto pero hay que tener cautela en lo que un gestor personal nos ofrece porque sus intereses pueden no ir en el mayor beneficio de sus clientes y el dinero invertido en un producto de riesgo es el del propio cliente. Por mucha confianza que el cliente tenga en su asesor por la relación que tengan durante largos años.
+También hay que decir que los gestores personales que las entidades bancarias asignan a sus clientes son empleados y les paga su sueldo el banco, son como cualesquiera otros comerciales y vendedores profesionales con objetivos de ventas anuales (en este caso productos financieros), pueden informar y asesorar hasta cierto punto pero hay que tener cautela en lo que un gestor personal nos ofrece porque sus intereses pueden no ir en el mayor beneficio de sus clientes y el dinero invertido en un producto de riesgo es el del propio cliente. Por mucha confianza que el cliente tenga en su asesor por la relación que tengan durante largos años. Más cautela en un producto a muy largo plazo como es un plan de pensiones.
 
 ### Características de los planes de pensiones
 
