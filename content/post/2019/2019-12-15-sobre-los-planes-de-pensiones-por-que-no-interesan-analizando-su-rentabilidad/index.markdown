@@ -39,7 +39,7 @@ La otra parte de los planes de pensiones es que el dinero es gestionado a travé
 
 ### Ventajas fiscales en tributación por IRPF de los planes de pensiones
 
-El principal atractivo con el que publicitan los planes de pensiones es su ahorro fiscal, salvo por el ahorro fiscal en IRPF un plan de pensiones es un fondo de inversión. Pero cuidado, hay que tener en cuenta que aunque hoy no se cotice por IRPF por el dinero aportado en el año a un plan de pensiones, en el momento de disponer del dinero si se hace.
+El principal atractivo con el que publicitan los planes de pensiones es su ahorro fiscal, salvo por el ahorro fiscal en IRPF un plan de pensiones es un fondo de inversión. Pero cuidado, hay que tener en cuenta que aunque hoy no se tribute por IRPF por el dinero aportado en el año a un plan de pensiones, en el momento de disponer del dinero si se hace.
 
 Con lo que en realidad lo que se hace es aplazar la cotización del IRPF. El ahorro fiscal se produce si el tipo impositivo al que tributa ese dinero es menor que en el año en que se aportó al plan de pensiones. Dado que en la edad de jubilación los ingresos por la pensión más la renta del plan de pensiones son menores que los ingresos del salario durante la vida laboral el tipo impositivo por el que se tributa en IRPF es normalmente menor, la diferencia puede ser de entre un 5% y un 10%.
 
@@ -88,22 +88,20 @@ Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exact
     </tbody>
 </table>
 
-Sabiendo el funcionamiento de tributación por IRPF aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5000€ el ahorro en IRPF ser de 500€. Pero la otra variable de la rentabilidad es el plazo y un ahorro de 500€ en un plazo de 30 años para 5000€ es un interés del 0,3% (para el dinero aportado en el primer año, 0,5% a 20 años), lo que es muy bajo.
+Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5000€ el ahorro en IRPF ser de 500€. Pero la otra variable de la rentabilidad es el plazo y un ahorro de 500€ en un plazo de 30 años para 5000€ es un interés del 0,3% (para el dinero aportado en el primer año, 0,5% a 20 años), lo que es muy bajo.
 
 Los planes de pensiones se recuperan de dos formas, en forma de renta (una cantidad baja todos los meses que complemente la pensión), o en forma de capital. Si se recupera en forma de capital (todo el fondo en un mismo año fiscal) el tipo impositivo podría ser mayor que no tener plan de pensión ya que los ingresos en ese año podría llegar a los tramos fiscales altos.
 
 Un ahorro fiscal que produce el equivalente a un interés del 0,3% se queda muy lejos de la comisión del 1,6% en gastos de gestión, no compensa, el fondo de inversión ha de tener una rentabilidad superior al 1,3% para no perder dinero.
 
-Este gŕafico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja.
+Este gŕafico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja sino es negativa.
 
 <div class="media" style="text-align: center;">
     {{< imageproc
         image1="rentabilidad-plan-de-pensiones.svg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Rentabilidad por ahorro de IRPF" >}}
 </div>
 
-Aportar a un plan 5K€ durante los últimos 10 años ya son 50K€ ahorrados y permite recuperar 5K anuales para complementar la pensión después de la jubilación durante 10 años. Eso daría un complemento a la pensión hasta los 75 o 77 años. La cantidad de dinero que se desea tener en un plan es otra de las variables a tener en cuenta, un plan de pensiones de más de 50K€ no tiene mucho sentido porque o no se a disfrutar ese dinero por la esperanza de vida o si se recupera más cantidad el tipo impositivo por IRPF va a ser mayor.
-
-Por otro lado hay un límite de aportación anual que se beneficia del ahorro fiscal de los planes de pensiones, a partir de esa cantidad no hay ventaja fiscal. 
+Aportar a un plan 5K€ durante los últimos 10 años ya son 50K€ ahorrados y permite recuperar 5K anuales para complementar la pensión después de la jubilación durante 10 años. Eso daría un complemento a la pensión hasta los 75 o 77 años. La cantidad de dinero que se desea tener en un plan es otra de las variables a tener en cuenta, un plan de pensiones de más de 50K€ no tiene mucho sentido porque o no se a disfrutar ese dinero por la esperanza de vida o si se recupera más cantidad el tipo impositivo por IRPF va a ser mayor. Por otro lado hay un límite de aportación anual que se beneficia del ahorro fiscal de los planes de pensiones, a partir de esa cantidad no hay ventaja fiscal. 
 
 En cualquier caso estamos hablando de cotizaciones al IRPF de un dinero en una declaración de la renta dentro de 20 o 30 años donde nadie, ni los mayores expertos fiscales, ni el banco, ni el gestor personal saben cuales van a ser los tramos impositivos del IRPF, ni los tipos impositivos ya que durante estos periodos de tiempo tan largos muy posiblemente sean cambiados por el gobierno de turno y las circunstancias económicas.
 
@@ -124,13 +122,13 @@ gestión del 1,6% (podría haber comisiones de depósito), asumiendo riesgo e in
 
 ¿En 20 o 30 años no volverá a haber depósitos que tenga una rentabilidad significativamente superior al 0,65%, como ha habido épocas del 2%, 3% y 4%?
 
-Los planes de pensiones son más beneficiosos para gente que tenga rentas altas (a partir de 50K-60K) y cotice en los tramos altos del IRPF, esté en la última década o lustro antes de la jubilación, tenga capacidad de ahorro y no tenga deudas como crédito e hipoteca. Con rentas modestas de entre 20K hasta 40K si se llega a ellas no son tan interesantes o nada interesantes. En primera instancia el dinero está mejor empleado a saldar una deuda por crédito o hipoteca, olvidándose de plan de pensiones.
+Los planes de pensiones son más beneficiosos para gente que tenga rentas altas (a partir de 50K-60K) y tribute en los tramos altos del IRPF, esté en la última década o lustro antes de la jubilación, tenga capacidad de ahorro y no tenga deudas como crédito e hipoteca. Con rentas modestas de entre 20K hasta 40K si se llega a ellas no son tan interesantes o nada interesantes. En primera instancia el dinero está mejor empleado a saldar una deuda por crédito o hipoteca, olvidándose de plan de pensiones.
 
 No ya sólo por su rentabilidad sino por su liquidez, comisiones y distinta tributación, directamente un fondo de inversión es mejor opción si se está dispuesto a asumir sus riesgos, salvo en la última década antes de la jubilación.
 
-Para ahorrar y de mayor rentabilidad que un plan de pensiones o fondo de inversión si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
+Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
 
-El mayor beneficiado de un plan de pensión es el banco por sus altas comisiones, capital a su disposición a largo plazo en fondos de inversión que pensando mal en algún caso en parte no me extrañaría que emplearán para adquirir sus propios activos tóxicos transfiriendo las pérdidas a sus clientes y de ahí su interés con publicidad en televisión, prensa y llamadas telefónicas en que sus clientes los contraten.
+El mayor beneficiado de un plan de pensión es el banco por sus altas comisiones, capital a su disposición a largo plazo en fondos de inversión que pensando mal en algún caso en parte no me extrañaría que emplearán para adquirir sus propios activos tóxicos transfiriendo las pérdidas a sus clientes y de ahí su interés con publicidad en televisión, prensa y llamadas telefónicas en que se contraten.
 
 {{% reference %}}
 {{< links >}}
