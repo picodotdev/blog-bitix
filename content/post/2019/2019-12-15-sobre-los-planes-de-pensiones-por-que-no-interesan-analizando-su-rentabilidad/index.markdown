@@ -109,7 +109,7 @@ En cualquier caso estamos hablando de cotizaciones al IRPF de un dinero en una d
 
 El capital aportado al plan de pensiones es gestionado como un fondo de inversión. Los fondos de inversión son productos con riesgo, unos fondos tiene más riesgo que otros, también hay planes de pensiones con más riesgo que otros dependiendo del riesgo del fondo de inversión asociado. Aún con el fondo de menos riesgo se puede llegar a tener una rentabilidad negativa y por tanto perder dinero. El fondo de inversión asociado al plan de pensión no es fijo y se puede cambiar de uno más agresivo con la esperanza de obtener mayor rentabilidad a uno más conservador para tener menos riesgo cuando queda poco para la jubilación.
 
-Para cubrir la comisión por gastos de gestión del plan de pensiones el fondo de inversión ha de tener, en el ejemplo, una rentabilidad del entre 1,3%, analizando algunos planes de pensiones conservadores no llegan a esa cifra. Y los fondos no conservadores tienen más riesgo, como los propios bancos indican es sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_.
+Para cubrir la comisión por gastos de gestión del plan de pensiones el fondo de inversión ha de tener, en el ejemplo, una rentabilidad del entre 1,3%, analizando algunos planes de pensiones conservadores no llegan a esa cifra. Y los fondos no conservadores tienen más riesgo, como los propios bancos indican en sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_.
 
 Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95% que sumado a la rentabilidad del 0,3% por IRPF que con el el 1,6% de comisión de gestión deja una rentabilidad del 0,65%, mayor que un depósito en el 2019 pero sigue siendo una rentabilidad baja.
 
@@ -118,13 +118,11 @@ Además, la rentabilidad del los planes de pensiones de pensiones tributa como I
 ### Conclusión
 
 Con un ahorro fiscal del 10% (podría ser del 15% pero también del 5%), una comisión de 
-gestión del 1,6% (podría haber comisiones de depósito), asumiendo riesgo e inmovilizando el dinero 20 o 30 años... ¿merecen la pena?
-
-¿En 20 o 30 años no volverá a haber depósitos que tenga una rentabilidad significativamente superior al 0,65%, como ha habido épocas del 2%, 3% y 4%?
+gestión del 1,6% (podría haber comisiones de depósito), asumiendo riesgo e inmovilizando el dinero 20 o 30 años... ¿con estas características son interesantes? ¿en 20 o 30 años no volverá a haber depósitos que tenga una rentabilidad significativamente superior al 0,65%, como ha habido épocas del 2%, 3% y 4%?
 
 Los planes de pensiones son más beneficiosos para gente que tenga rentas altas (a partir de 50K-60K) y tribute en los tramos altos del IRPF, esté en la última década o lustro antes de la jubilación, tenga capacidad de ahorro y no tenga deudas como crédito e hipoteca. Con rentas modestas de entre 20K hasta 40K si se llega a ellas no son tan interesantes o nada interesantes. En primera instancia el dinero está mejor empleado a saldar una deuda por crédito o hipoteca, olvidándose de plan de pensiones.
 
-No ya sólo por su rentabilidad sino por su liquidez, comisiones y distinta tributación, directamente un fondo de inversión es mejor opción si se está dispuesto a asumir sus riesgos, salvo en la última década antes de la jubilación.
+Salvo en la última década antes de la jubilación, no ya sólo por su rentabilidad sino por su liquidez, comisiones y distinta tributación, directamente un fondo de inversión es mejor opción si se está dispuesto a asumir sus riesgos.
 
 Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
 
