@@ -3,6 +3,7 @@ pid: 450
 title: "Sobre los planes de pensiones, por que no interesan analizando su rentabilidad"
 url: "/2019/12/sobre-los-planes-de-pensiones-por-que-no-interesan-analizando-su-rentabilidad/"
 date: 2019-12-15T16:00:00+01:00
+updated: 2019-12-15T18:00:00+01:00
 language: "es"
 rss: true
 sharing: true
