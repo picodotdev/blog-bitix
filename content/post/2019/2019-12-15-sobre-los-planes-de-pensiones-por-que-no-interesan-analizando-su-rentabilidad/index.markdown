@@ -3,7 +3,7 @@ pid: 450
 title: "Sobre los planes de pensiones, por que no interesan analizando su rentabilidad"
 url: "/2019/12/sobre-los-planes-de-pensiones-por-que-no-interesan-analizando-su-rentabilidad/"
 date: 2019-12-15T16:00:00+01:00
-updated: 2019-12-16T03:00:00+01:00
+updated: 2019-12-16T18:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -99,11 +99,11 @@ Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exact
     </tbody>
 </table>
 
-Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5000€ el ahorro en IRPF ser de 500€. Pero la otra variable de la rentabilidad es el plazo y un ahorro de 500€ en un plazo de 30 años para 5000€ es un interés del 0,3% (para el dinero aportado en el primer año, 0,5% a 20 años), lo que es muy bajo.
+Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5000€ el ahorro en IRPF ser de 500€. Pero la otra variable de la rentabilidad es el plazo y un ahorro de 500€ en un plazo de 30 años para 5000€ es un interés del 0,3% (para el dinero aportado en el primer año, 0,5% a 20 años, 1% a 10 años), lo que es muy bajo.
 
 Los planes de pensiones se recuperan de dos formas, en forma de renta (una cantidad baja todos los meses que complemente la pensión), o en forma de capital. Si se recupera en forma de capital (todo el fondo en un mismo año fiscal) el tipo impositivo podría ser mayor que no tener plan de pensión ya que los ingresos en ese año podría llegar a los tramos fiscales altos.
 
-Un ahorro fiscal que produce el equivalente a un interés del 0,3% se queda muy lejos de la comisión del 1,6% en gastos de gestión que el banco cobra todos los años, no compensa, el fondo de inversión ha de tener una rentabilidad superior al 1,6% para no perder dinero.
+Un ahorro fiscal que produce el equivalente a un interés del 0,3% se queda muy lejos de la comisión del 1,6% en gastos de gestión que el banco cobra todos los años, no compensa, el fondo de inversión ha de tener una rentabilidad superior al 1,3%, 1,1% o 0,6% (a 30, 20 y 10 años hasta la jubilación) para no perder dinero.
 
 Este gŕafico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja sino es negativa dependiendo del fondo de inversión.
 
@@ -122,9 +122,9 @@ El capital aportado al plan de pensiones es gestionado como un fondo de inversi�
 
 Para cubrir la comisión por gastos de gestión del plan de pensiones el fondo de inversión ha de tener una rentabilidad del 1,6%, analizando algunos planes de pensiones conservadores no llegan a esa cifra, y algunos a 10 años sus rentabilidades quedan en 0,43%, 2,69%, 1,95% y 2,41% inviertiendo en renta fija a corto plazo, en renta fija, 15% en renta variable y 30% en renta variable respectivamente. Y los fondos no conservadores (los del 15% y 30% en variable) tienen más riesgo, como los propios bancos indican en sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_.
 
-Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95% que sumado a la rentabilidad que con el el 1,6% de comisión de gestión deja una rentabilidad del 0,35%, mayor que un depósito en el 2019 pero sigue siendo una rentabilidad baja. 
+Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95% que restando la comisión de gestión del 1,6% deja una rentabilidad del 0,35%, 0,85%, 1,35% (a 30, 20 y 10 años hasta la jubilación) mayor que un depósito en el 2019 pero sigue siendo una rentabilidad baja. 
 
-Hay que notar que el cliente del plan de pensiones pone el capital del fondo, asume el riesgo de la inversión pero es el banco el que se lleva un 1,6% sin riesgo todos los años independientemente de lo que ocurra con el fondo de inversión y el cliente solo un 0,35% o un 1% lustros y décadas después en el momento de su jubilación. Además, la rentabilidad del los planes de pensiones tributan como IRPF al tramo de renta que correponda como al 28% o 35% que son tipos más altos que la tributación de los intereses de los fondos de inversión que tributan en torno al 19% a 23%.
+Hay que notar que el cliente del plan de pensiones pone el capital del fondo, asume el riesgo de la inversión pero es el banco el que se lleva un 1,6% sin riesgo todos los años independientemente de lo que ocurra con el fondo de inversión y el cliente solo un 0,35%, 0,85%, 1,35% lustros y décadas después en el momento de su jubilación. Además, la rentabilidad del los planes de pensiones tributan como IRPF al tramo de renta que correponda como al 28% o 35% que son tipos más altos que la tributación de los intereses de los fondos de inversión que tributan en torno al 19% a 23%.
 
 ### Conclusión
 
