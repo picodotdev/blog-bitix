@@ -3,7 +3,7 @@ pid: 450
 title: "Sobre los planes de pensiones, por que no interesan analizando su rentabilidad"
 url: "/2019/12/sobre-los-planes-de-pensiones-por-que-no-interesan-analizando-su-rentabilidad/"
 date: 2019-12-15T16:00:00+01:00
-updated: 2019-12-15T18:00:00+01:00
+updated: 2019-12-16T03:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -22,6 +22,17 @@ Llega el final de año y los comerciales de los bancos llaman a sus clientes, cu
 Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet y a través de una entidad bancaria.
 
 También hay que decir que los gestores personales que las entidades bancarias asignan a sus clientes son empleados y les paga su sueldo el banco, son como cualesquiera otros comerciales y vendedores profesionales con objetivos de ventas anuales (en este caso productos financieros), pueden informar y asesorar hasta cierto punto pero hay que tener cautela en lo que un gestor personal nos ofrece porque sus intereses pueden no ir en el mayor beneficio de sus clientes y el dinero invertido en un producto de riesgo es el del propio cliente. Por mucha confianza que el cliente tenga en su asesor por la relación que tengan durante largos años. Más cautela en un producto a muy largo plazo como es un plan de pensiones.
+
+<div class="media" style="text-align: center;">
+    {{< imageproc
+        image1="santander.svg" command1="Fit" commandthumb1="Fit" options1="200x150" title1="Santander"
+        image2="bbva.svg" command2="Fit" commandthumb2="Fit" options2="200x150" title2="BBVA"
+        image3="caixabank.svg" command3="Fit" commandthumb3="Fit" options3="200x150" title3="Caixabank" >}}
+    {{< imageproc
+        image1="sabadell.svg" command1="Fit" commandthumb1="Fit" options1="200x150" title1="Sabadell"
+        image2="bankia.svg" command2="Fit" commandthumb2="Fit" options2="200x150" title2="Bankia"
+        image3="kutxabank.svg" command3="Fit" commandthumb3="Fit" options3="200x150" title3="Kutxabank" >}}
+</div>
 
 ### Características de los planes de pensiones
 
@@ -92,9 +103,9 @@ Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización po
 
 Los planes de pensiones se recuperan de dos formas, en forma de renta (una cantidad baja todos los meses que complemente la pensión), o en forma de capital. Si se recupera en forma de capital (todo el fondo en un mismo año fiscal) el tipo impositivo podría ser mayor que no tener plan de pensión ya que los ingresos en ese año podría llegar a los tramos fiscales altos.
 
-Un ahorro fiscal que produce el equivalente a un interés del 0,3% se queda muy lejos de la comisión del 1,6% en gastos de gestión, no compensa, el fondo de inversión ha de tener una rentabilidad superior al 1,3% para no perder dinero.
+Un ahorro fiscal que produce el equivalente a un interés del 0,3% se queda muy lejos de la comisión del 1,6% en gastos de gestión que el banco cobra todos los años, no compensa, el fondo de inversión ha de tener una rentabilidad superior al 1,6% para no perder dinero.
 
-Este gŕafico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja sino es negativa.
+Este gŕafico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja sino es negativa dependiendo del fondo de inversión.
 
 <div class="media" style="text-align: center;">
     {{< imageproc
@@ -109,11 +120,11 @@ En cualquier caso estamos hablando de cotizaciones al IRPF de un dinero en una d
 
 El capital aportado al plan de pensiones es gestionado como un fondo de inversión. Los fondos de inversión son productos con riesgo, unos fondos tiene más riesgo que otros, también hay planes de pensiones con más riesgo que otros dependiendo del riesgo del fondo de inversión asociado. Aún con el fondo de menos riesgo se puede llegar a tener una rentabilidad negativa y por tanto perder dinero. El fondo de inversión asociado al plan de pensión no es fijo y se puede cambiar de uno más agresivo con la esperanza de obtener mayor rentabilidad a uno más conservador para tener menos riesgo cuando queda poco para la jubilación.
 
-Para cubrir la comisión por gastos de gestión del plan de pensiones el fondo de inversión ha de tener, en el ejemplo, una rentabilidad del entre 1,3%, analizando algunos planes de pensiones conservadores no llegan a esa cifra. Y los fondos no conservadores tienen más riesgo, como los propios bancos indican en sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_.
+Para cubrir la comisión por gastos de gestión del plan de pensiones el fondo de inversión ha de tener una rentabilidad del 1,6%, analizando algunos planes de pensiones conservadores no llegan a esa cifra, y algunos a 10 años sus rentabilidades quedan en 0,43%, 2,69%, 1,95% y 2,41% inviertiendo en renta fija a corto plazo, en renta fija, 15% en renta variable y 30% en renta variable respectivamente. Y los fondos no conservadores (los del 15% y 30% en variable) tienen más riesgo, como los propios bancos indican en sus pasquines _Rentabilidades pasadas no garantizan rentabilidades futuras_.
 
-Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95% que sumado a la rentabilidad del 0,3% por IRPF que con el el 1,6% de comisión de gestión deja una rentabilidad del 0,65%, mayor que un depósito en el 2019 pero sigue siendo una rentabilidad baja.
+Algunos fondos con riesgo tienen años con rentabilidades del 5% pero también años de pérdidas del -4,4% y como resultado a 10 años su rentabilidad ser del 1,95% que sumado a la rentabilidad que con el el 1,6% de comisión de gestión deja una rentabilidad del 0,35%, mayor que un depósito en el 2019 pero sigue siendo una rentabilidad baja. 
 
-Además, la rentabilidad del los planes de pensiones de pensiones tributa como IRPF que son tipos más altos que la tributación de los intereses de los fondos de inversión, que tributa en torno al 19% a 23%.
+Hay que notar que el cliente del plan de pensiones pone el capital del fondo, asume el riesgo de la inversión pero es el banco el que se lleva un 1,6% sin riesgo todos los años independientemente de lo que ocurra con el fondo de inversión y el cliente solo un 0,35% o un 1% lustros y décadas después en el momento de su jubilación. Además, la rentabilidad del los planes de pensiones tributan como IRPF al tramo de renta que correponda como al 28% o 35% que son tipos más altos que la tributación de los intereses de los fondos de inversión que tributan en torno al 19% a 23%.
 
 ### Conclusión
 
@@ -124,9 +135,9 @@ Los planes de pensiones son más beneficiosos para gente que tenga rentas altas 
 
 Salvo en la última década antes de la jubilación, no ya sólo por su rentabilidad sino por su liquidez, comisiones y distinta tributación, directamente un fondo de inversión es mejor opción si se está dispuesto a asumir sus riesgos.
 
-Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
+Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes y que permita capacidad de ahorro, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
 
-El mayor beneficiado de un plan de pensión es el banco por sus altas comisiones, capital a su disposición a largo plazo en fondos de inversión que pensando mal en algún caso en parte no me extrañaría que emplearán para adquirir sus propios activos tóxicos transfiriendo las pérdidas a sus clientes y de ahí su interés con publicidad en televisión, prensa y llamadas telefónicas en que se contraten.
+La parte más beneficiada de un plan de pensión es el banco por sus altas comisiones, más incluso que el cliente, sin asumir riesgo, el capital lo pone el cliente pero está a disposición del banco a largo plazo en fondos de inversión que pensando mal en algún caso en parte no me extrañaría que emplearán para adquirir sus propios activos tóxicos transfiriendo las pérdidas a sus clientes y de ahí su interés con publicidad en televisión, prensa y llamadas telefónicas en que se contraten.
 
 {{% reference %}}
 {{< links >}}
