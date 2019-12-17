@@ -18,7 +18,7 @@ summary: "En los últimos años un producto financiero que se ha puesto de moda 
 {{< links >}}
 {{< postslinks >}}
 
-Llega el final de año y los comerciales de los bancos llaman a sus clientes, cuales comerciales de operadores telefónicos, para ofrecerles un plan de pensiones o para que hagan aportaciones a los mismos. La ventaja fiscal en IRPF que poseen es el principal argumento de venta. Pero como cualquier otro producto financiero hay que analizar sus características de liquidez, comisiones y con números determinar su rentabilidad y compararla con otros productos financieros, además de la situación personal del ahorrador en cuando a renta disponible, capacidad de ahorro y necesidades económicas futuras próximas.
+Llega el final de año y los comerciales de los bancos llaman a sus clientes, cuales comerciales de operadores telefónicos, para ofrecerles un plan de pensiones o para que hagan aportaciones a los mismos. La ventaja fiscal en IRPF que poseen es el principal argumento de venta. Pero como cualquier otro producto financiero hay que analizar sus características de liquidez, comisiones y con números determinar su rentabilidad y compararla con otros productos financieros, además de la situación personal del ahorrador en cuanto a renta disponible, capacidad de ahorro y necesidades económicas futuras próximas.
 
 Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet, a través de una entidad bancaria y de un gestor personal de una entidad bancaria.
 
@@ -121,7 +121,7 @@ Analizando algunos planes de pensiones conservadores en sus rentabilidades a 10 
 
 ### Inversión inmobiliaria
 
-En España es costumbre invetir en bienes inmobiliarios, como una segunda vivienda con vistas a alquilarla para obtener rentabilidad. Sin embargo, este tipo de inversión también tiene sus riesgos e inconvenientes, entre ellos que el precio de la vivienda baje, en décadas anteriores siempre se ha revalorizado pero esto puede cambiar en el futuro por demografía y natalidad. Por otro lado es una inversión muy ilíquida ya que puede no ser fácil deshacerse de ella. Tiene gastos como reparaciones, IBI, comunidad, seguro, reformas y si es adquirida para alquilar incertidumbre de si el inquilino la va a tratar bien.
+En España es costumbre «invertir» en bienes inmobiliarios, como una segunda vivienda con vistas a alquilarla para obtener rentabilidad. Sin embargo, este tipo de inversión también tiene sus riesgos e inconvenientes, entre ellos que el precio de la vivienda baje, en décadas anteriores siempre se ha revalorizado pero esto puede cambiar en el futuro por demografía y natalidad. Por otro lado es una inversión muy ilíquida ya que puede no ser fácil deshacerse de ella. Tiene gastos como reparaciones, IBI, comunidad, seguro, reformas y si es adquirida para alquilar incertidumbre de si el inquilino la va a tratar bien.
 
 Con el conjunto de gastos de un bien inmobiliario por alquiler su rentabilidad puede quedar cerca de la de un fondo de inversión con la ventaja este último de ser mucho más líquido y más sencillo de gestionar.
 
