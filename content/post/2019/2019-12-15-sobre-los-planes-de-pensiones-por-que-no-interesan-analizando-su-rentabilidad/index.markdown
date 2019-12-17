@@ -4,7 +4,7 @@ title: "Sobre los planes de pensiones, analizando sus ventajas fiscales y rentab
 url: "/2019/12/sobre-los-planes-de-pensiones-analizando-sus-ventajas-fiscales-y-rentabilidad/"
 aliases: ["/2019/12/sobre-los-planes-de-pensiones-por-que-no-interesan-analizando-su-rentabilidad/"]
 date: 2019-12-15T16:00:00+01:00
-updated: 2019-12-17T12:00:00+01:00
+updated: 2019-12-17T21:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -20,7 +20,7 @@ summary: "En los últimos años un producto financiero que se ha puesto de moda 
 
 Llega el final de año y los comerciales de los bancos llaman a sus clientes, cuales comerciales de operadores telefónicos, para ofrecerles un plan de pensiones o para que hagan aportaciones a los mismos. La ventaja fiscal en IRPF que poseen es el principal argumento de venta. Pero como cualquier otro producto financiero hay que analizar sus características de liquidez, comisiones y con números determinar su rentabilidad y compararla con otros productos financieros, además de la situación personal del ahorrador en cuanto a renta disponible, capacidad de ahorro y necesidades económicas futuras próximas.
 
-Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet, a través de una entidad bancaria y de un gestor personal de una entidad bancaria.
+Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet, a través de una entidad bancaria y de un gestor personal de una entidad bancaria. Como inexperto en temas fiscales y financieros esta información puede ser inexacta u omitir aspectos importantes.
 
 También hay que decir que los gestores personales que las entidades bancarias asignan a sus clientes son empleados y les paga su sueldo el banco, son como cualesquiera otros comerciales y vendedores profesionales con objetivos de ventas anuales (en este caso productos financieros), pueden informar y asesorar hasta cierto punto pero hay que tener cautela en lo que un gestor personal nos ofrece porque sus intereses pueden no ir en el mayor beneficio de sus clientes ni conocen sus circunstancias completas y el dinero invertido en un producto de riesgo es el del propio cliente. Por mucha confianza que el cliente tenga en su asesor por la relación que tengan durante largos años. Más cautela en un producto a muy largo plazo como es un plan de pensiones.
 
@@ -102,13 +102,6 @@ Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización po
 
 Los planes de pensiones se recuperan de dos formas, en forma de renta (una cantidad baja todos los meses que complemente la pensión), o en forma de capital. Si se recupera en forma de capital (todo el fondo en un mismo año fiscal) el tipo impositivo podría ser mayor que no tener plan de pensión ya que los ingresos en ese año podría llegar a los tramos fiscales altos.
 
-Este gráfico muestra la rentabilidad por el ahorro fiscal a lo largo de 30 años, muestra que sólo en los últimos 5-6 años el ahorro fiscal compensa la comisión del 1,6%. Con lo que este producto desde desde el punto de vista de rentabilidad por IRPF es mucho más atractivo en el último lustro hasta la jubilación, faltando 30 y 20 años su rentabilidad es baja sino es negativa dependiendo del fondo de inversión.
-
-<div class="media" style="text-align: center;">
-    {{< imageproc
-        image1="rentabilidad-plan-de-pensiones.svg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Rentabilidad por ahorro de IRPF" >}}
-</div>
-
 Aportar a un plan 5K€ durante los últimos 10 años ya son 50K€ ahorrados y permite recuperar 5K€ anuales para complementar la pensión después de la jubilación durante 10 años. Eso daría un complemento a la pensión hasta los 75 o 77 años. Por otro lado hay un límite de aportación anual de 5K€ que se beneficia del ahorro fiscal de los planes de pensiones, a partir de esa cantidad no hay ventaja fiscal. Si se tiene una capacidad de ahorro mayor que 5K€ es recomendable invertirlos además en un fondo de inversión para compensar la pérdida del valor del dinero por IPC, en 5 años la pérdida de valor por IPC está entre el 2% y 15%.
 
 En cualquier caso estamos hablando de cotizaciones al IRPF de un dinero en una declaración de la renta dentro de 20 o 30 años donde nadie, ni los mayores expertos fiscales, ni el banco, ni el gestor personal saben cuales van a ser los tramos impositivos del IRPF, ni los tipos impositivos ya que durante estos periodos de tiempo tan largos muy posiblemente sean cambiados por el gobierno de turno y las circunstancias económicas.
@@ -140,6 +133,11 @@ Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente p
 * [¿Cómo debo cobrar mi plan de pensiones una vez jubilado?](https://www.economiasimple.net/como-debo-cobrar-mi-plan-de-pensiones-una-vez-jubilado.html)
 * [¿Cuándo puedo recuperar el dinero de un plan de pensiones?](https://www.economiasimple.net/cuando-puedo-recuperar-el-dinero-de-un-plan-de-pensiones.html)
 * [Planes de pensiones: ¿Cuánto me puedo desgravar?](https://www.expansion.com/ahorro/pensiones/2017/12/16/5a310190468aeb24538b45cb.html)
+* [Abrir un plan de pensiones: 10 preguntas básicas que has de plantearte](https://www.elconfidencial.com/mercados/finanzas-personales/2014-10-18/diez-preguntas-basicas-que-debe-plantearse-antes-de-abrir-un-plan-de-pensiones_268863/)
+* [¿Cómo puedo calcular mi pensión?](https://blog.bankinter.com/economia/-/noticia/2017/12/5/calcular-pension)
+* [Cálculo de la pensión: Edad de jubilación y años cotizados](https://www.expertofinanciero.es/calculo-de-la-pension-edad-de-jubilacion-y-anos-cotizados/)
+* [Calcule cuál será su pensión estimada cuando se jubile](https://www.ocu.org/inversiones/calculadoras/calcular-la-pension)
+* [Coeficientes corrección monetaria Bizkaia 2018](https://www.bizkaia.eus/fitxategiak/05/Ogasuna/guregida/dokumentuak/artxiboak/2018%20Coeficientes%20correcci%C3%B3n%20monetaria.pdf)
 * [Los planes de pensiones no interesan](https://www.ocu.org/dinero/deposito-inversion/noticias/planes-de-pensiones-no-interesan-473454)
 {{% /reference %}}
 
