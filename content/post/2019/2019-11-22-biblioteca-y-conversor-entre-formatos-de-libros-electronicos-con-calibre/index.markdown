@@ -17,7 +17,7 @@ summary: "Dado que los libros electrónicos ocupan muy poco se puede llegar a te
 {{< links >}}
 {{< postslinks >}}
 
-{{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
+{{< logotype image1="calibre.png" title1="Calibre" width1="200" >}}
 
 Hace ya unos años que tengo un lector de libros electrónicos y estoy muy contento con él, el popular [Amazon Kindle][amazon-kindle] aún echando de menos la luz integrada y el modelo _paperwhite_ que tiene la pantalla más blanca de los modelos más recientes que el mío. Una de las ventajas de los libros electrónicos es que una vez leídos no ocupan espacio físico con lo que no hay que tener varias baldas de libros ocupando espacio, al ser electrónicos no son más que un archivo de ordenador que ocupan muy poco no llegando muchos de ellos al megabyte de espacio. Teniendo una gran cantidad de libros según se obtienen o se empiezan a leer un libro se puede añadir a la biblioteca para tenerlo catalogado. Para gestionar la biblioteca de libros una de las mejores opciones sino la mejor es [Calibre][calibre] no solo por su completa funcionalidad sino porque es software libre.
 
@@ -54,7 +54,7 @@ Quizá algunos de los libros no tenga los metadatos correctos como el título, n
         caption="Metadatos de un libro electrónico" >}}
 </div>
 
-Calibre tiene más funciones pero la catalogar los libros en una biblioteca digital y la realizar la conversión entre formatos para diferentes dispositivos son las dos principales. Está [disponible para los principales sistemas operativos](https://calibre-ebook.com/download) como [GNU][gnu]/[Linux][linux] en forma de paquete proporcionado por la distribución o como [aplicación Flatpak universal para cualquier distribución](https://flathub.org/apps/details/com.calibre_ebook.calibre), [Windows][windows] y [macOS][macos].
+Calibre tiene más funciones pero la catalogar los libros en una biblioteca digital y la realizar la conversión entre formatos para diferentes dispositivos son las dos principales. Está [disponible para los principales sistemas operativos](https://calibre-ebook.com/download) como [GNU][gnu]/[Linux][linux] en forma de paquete proporcionado por la distribución o como [aplicación Flatpak universal para cualquier distribución](https://flathub.org/apps/details/com.calibre_ebook.calibre), [Windows][windows] y [macOS][macos]. Puedes conocer la [historia de Calibre](https://calibre-ebook.com/about#history) y cmo surgió como una necesidad de su autor.
 
 {{% reference %}}
 {{< links >}}

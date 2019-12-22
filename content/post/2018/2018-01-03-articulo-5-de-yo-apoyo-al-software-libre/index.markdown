@@ -74,9 +74,11 @@ En ambos casos las donaciones que he hecho han sido de 15€.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="donacion-lineageos.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Donación LineageOS"
-        image2="donacion-replicant.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Donación Replicant"
-        caption="Donación LineageOS y Replicant" >}}
+        image1="donacion-lineageos.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación LineageOS"
+        caption="Donación LineageOS" >}}
+    {{< figureproc
+        image1="donacion-replicant.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Replicant"
+        caption="Donación Replicant" >}}
 </div>
 
 {{< donations >}}

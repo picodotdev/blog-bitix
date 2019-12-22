@@ -64,7 +64,7 @@ La donación no es muy grande pero espero que ayude para cubrir los costes que t
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="donacion-wine.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Donación Wine"
+        image1="donacion-wine.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Wine"
         caption="Donación Wine" >}}
 </div>
 
