@@ -27,7 +27,7 @@ Hace unos meses se publicó la versión 4.0 del programa y cada semana o dos sem
 <div class="media" style="text-align: center;">
     {{< figureproc
         image1="calibre.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
-        caption="Bibliteca y conversor de libros electrónicos Calibre" >}}
+        caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 </div>
 
 La cantidad que he donado no es mucho pero si un porcentaje de los usuarios que lo utilizan realizarán una pequeña donación el proyecto continuará desarrollándose. Muchos programas de software libre utilizados por usuarios e incluso empresas que ganan millones de dólares confían en proyectos que en algunos casos solo están mantenidos por una persona y de forma voluntaria en su tiempo libre sin recibir un sueldo a cambio.
