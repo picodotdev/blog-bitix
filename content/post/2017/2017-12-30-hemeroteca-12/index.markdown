@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 ---
@@ -101,14 +101,14 @@ Algunos artículos de tema alternativos en la temática principal de este blog p
 Una buena colección de libros técnicos que he leído durante el último trío de años y me han gustado junto con una selección de productos tecnológicos.
 
 * [37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído][blogbitix-254]
-* [Productos tecnológicos para comprar o regalar][blogbitix-281]
+* [8+ ideas de productos tecnológicos para comprar o regalar][blogbitix-281]
 
 Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al [_feed_ a Blog Bitix][blogbitix-feed]. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de [Klouner][klowner]... ¡Buen <strike>2016</strike> 2018!
 
 <div class="media" style="text-align: center;">
-    {{< figure
-        image1="christmas-tux-2017.jpg" thumb1="christmas-tux-2017-thumb.jpg" title1="¡Buen 2018!"
-        caption="¡Buen 2018!" >}}
+    {{< figureproc
+        image1="christmas-tux-2017.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2019" title1="¡Buen 2018!"
+        caption="¡Buen 2018!" source="klowner.com" >}}
 </div>
 
 {{% /post %}}

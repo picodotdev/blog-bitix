@@ -118,8 +118,8 @@ Como siempre mis deseos de que empecéis bien el nuevo año, en este caso el 201
 
 <div class="media" style="text-align: center;">
     {{< figureproc
-        image1="christmastux-2018.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="ChristmasTux2018"
-        caption="¡Buen 2019!" source="www.klowner.com" >}}
+        image1="christmas-tux-2018.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2018"
+        caption="¡Buen 2019!" source="klowner.com" >}}
 </div>
 
 {{% /post %}}

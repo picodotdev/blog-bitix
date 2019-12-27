@@ -8,7 +8,7 @@ updated: 2015-05-30T00:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "hemeroteca", "planeta-linux", "planeta-codigo"]
+tags: ["blog", "planeta-linux", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
 ---
@@ -63,7 +63,8 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
 
 <div class="media" style="text-align: center;">
     {{< imageproc
-        image1="christmastux2013.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Christmastux 2013" >}}
+        image1="christmas-tux-2013.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" options1="600x450" title1="Christmas Tux 2013"
+        caption="¡Buen 2014!" source="klowner.com" >}}
 </div>
 
 {{% reference %}}
@@ -73,7 +74,6 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
 * [Hemeroteca #2][elblogdepicodev-136]
 * [Hemeroteca #1][elblogdepicodev-111]
 * [Hemeroteca #0][elblogdepicodev-87]
-* [Christmas Tux](http://www.klowner.com/wallpaper/)
 {{% /reference %}}
 
 {{% /post %}}

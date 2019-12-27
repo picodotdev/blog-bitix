@@ -7,7 +7,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 summary: "Echando un vistazo a estos seis últimos meses han sido buenos, en número de artículos que he escrito y publicado como en el aumento de número de páginas vistas mensuales con respecto a inicios de 2016 y en similar proporción los ingresos mensuales por publicidad AdSense. De esta forma el esfuerzo en tiempo que supone escribir los artículos me es recompensado de alguna forma."
@@ -98,9 +98,9 @@ En la categoría de artículos de opinion junto con otros de teḿatica variada 
 ¡Felices fiestas! ¡A por el 2017!
 
 <div class="media" style="text-align: center;">
-    {{< figure
-        image1="christmas-tux-2016.jpg" thumb1="christmas-tux-2016-thumb.jpg" title1="¡Felices fiestas y buen 2017!"
-        caption="¡Felices fiestas y buen 2017!" >}}
+    {{< figureproc
+        image1="christmas-tux-2016.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="¡Felices fiestas y buen 2017!"
+        caption="¡Felices fiestas y buen 2017!" source="klowner.com" >}}
 </div>
 
 {{% /post %}}

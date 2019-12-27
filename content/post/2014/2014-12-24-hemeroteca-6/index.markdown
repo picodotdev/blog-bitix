@@ -8,7 +8,7 @@ updated: 2014-12-24T18:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["hemeroteca", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
 series: ["hemeroteca"]
 library: "true"
 ---
@@ -62,17 +62,17 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
 
 <div class="media" style="text-align: center;">
     {{< imageproc
-        image1="christmastux2014.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Christmastux 2014" >}}
+        image1="christmas-tux-2014.jpg" command1="Fit" commandthumb1="Fit" options1="600x450" title1="Christmastux 2014"
+        caption="¡Buen 2015!" source="klowner.com" >}}
 </div>
 
 {{% reference %}}
 {{< links >}}
 {{< postslinks >}}
-* [Hemeroteca #3](https://elblogdepicodev.blogspot.com.es/2013/06/hemeroteca-3.html)
-* [Hemeroteca #2](https://elblogdepicodev.blogspot.com.es/2012/12/el-blog-de-picodev-te-desea-un-2013.html)
-* [Hemeroteca #1](https://elblogdepicodev.blogspot.com.es/2012/06/hemeroteca-1.html)
-* [Hemeroteca #0](https://elblogdepicodev.blogspot.com.es/2011/12/feliz-navidad-y-prospero-2012.html)
-* [Christmas Tux](http://www.klowner.com/wallpaper/)
+* [Hemeroteca #3][elblogdepicodev-162]
+* [Hemeroteca #2][elblogdepicodev-136]
+* [Hemeroteca #1][elblogdepicodev-111]
+* [Hemeroteca #0][elblogdepicodev-87]
 {{% /reference %}}
 
 {{% /post %}}

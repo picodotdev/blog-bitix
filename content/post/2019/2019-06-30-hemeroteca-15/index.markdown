@@ -8,8 +8,9 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "planeta-codigo"]
+tags: ["blog", "gnu-linux", "java", "planeta-codigo"]
 series: ["hemeroteca"]
+library: "true"
 ---
 
 {{% post %}}

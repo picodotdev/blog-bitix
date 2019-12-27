@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 summary: "Seis meses más de artículos la mayoría sobre programación en Java tratando algunas de las nuevas tendencias de programación con las posibilidades de la plataforma de la JVM. Unos pocos artículos más continuando la serie sobre Docker y uno de opinión sobre las licencias de Microsoft."
@@ -92,5 +92,11 @@ El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo t
 </div>
 
 Ya solo me queda decir... ¡gracias por leer, compartir y comentar esta bitácora!, no recibo muchos comentarios pero algunos como [este](https://twitter.com/josetesan/status/669434170221928449) me anima a seguir escribiendo y compartiendo, ¡que os vaya bien el 2016!.
+
+<div class="media" style="text-align: center;">
+    {{< figureproc
+        image1="christmas-tux-2015.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Christmas Tux 2016"
+        caption="¡Buen 2016!" source="klowner.com" >}}
+</div>
 
 {{% /post %}}

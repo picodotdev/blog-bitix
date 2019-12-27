@@ -1,7 +1,7 @@
 ---
 pid: 436
 title: "Microservicios con Spring Cloud, Consul, Nomad y Traefik"
-url: "/2019/10/microservicios-con-spring-cloud-Consul-nomad-y-traefik/"
+url: "/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/"
 date: 2019-10-12T02:30:00+02:00
 language: "es"
 rss: true

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "hemeroteca", "java", "planeta-codigo", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "java", "planeta-codigo", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 ---

@@ -17,6 +17,6 @@ A algunos usuarios parece que les gusta lo que escribo en algunos artículos de 
 
 En algunos blogs utilizan como forma de monetización donaciones mediante [Patreon][patreon], sin embargo, no me convence mucho esta forma de donación porque me parece demasiado generosa para el que la hace. Me gusta más que si alguien quiere donar algo lo haga usando los enlaces de afiliado que a veces adjunto en algunos artículos aunque al final acaben comprando otro producto de los que incluyo. Al usuario que compra el precio del producto es el mismo pero a mi me llega una comisión por la compra de afiliación.
 
-Por ello si alguien quiere donarme algo por los artículos que escribo le propongo que lo haga a través de los siguientes enlaces de afiliación aunque al final acabe comprando otros productos. En el artículo [Productos tecnológicos para comprar o regalar][blogbitix-281] incluyo una lista con una selección productos tecnológicos de diferentes categorías, gamas y rangos de precios.
+Por ello si alguien quiere donarme algo por los artículos que escribo le propongo que lo haga a través de los siguientes enlaces de afiliación aunque al final acabe comprando otros productos. En el artículo [8+ ideas de productos tecnológicos para comprar o regalar][blogbitix-281] incluyo una lista con una selección productos tecnológicos de diferentes categorías, gamas y rangos de precios.
 
 {{% /post %}}

@@ -8,7 +8,7 @@ updated: 2014-12-24T17:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["hemeroteca", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 ---
