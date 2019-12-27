@@ -66,7 +66,7 @@ En el blog de Holaluz escriben artículos muy buenos sobre el funcionamiento de 
 * [Blog Holaluz](https://blog.holaluz.com)
 * [Preguntas frecuentes](https://www.holaluz.com/preguntas/)
 
-Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo o código de Holaluz es **3R9L6I**, de forma temporal con el código **COPS-3R9L6I** el descuento será de 30€ en vez de 20€.
+Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo o código de Holaluz es **3R9L6I**, de forma temporal hasta finales de enero del 2020 con el código **COPS-3R9L6I** el descuento será de 30€ en vez de 20€.
 
 <div class="media" style="text-align: center;">
     {{< figure

@@ -114,7 +114,7 @@ Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][
 * https://www.mame.net/
 * http://qmc2.batcom-it.net/
 
-Incluso con una [Raspberry Pi 3](https://amzn.to/2bjieY2) podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
+Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1"></iframe>

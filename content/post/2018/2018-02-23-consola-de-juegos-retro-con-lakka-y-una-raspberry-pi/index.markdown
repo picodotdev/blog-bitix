@@ -30,9 +30,9 @@ Lo primero que he hecho es comprar unos [mandos similares a los de la antigua Su
     <img src="assets/images/logotipos/retroarch.png" width="600" alt="Retroarch" title="RetroArch">
 </div>
 
-Los elementos necesarios para tener tener una consola retro son los siguientes: una [Raspberry Pi 3](http://amzn.to/2EP9mHX), un [cargador USB](http://amzn.to/2Cf9Vxp) adecuado, una [tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX) o más, [dos mandos para consola USB](http://amzn.to/2Cg6035) o un [teclado USB](http://amzn.to/2ou0QHD), un [cable HDMI](http://amzn.to/2sPcjqz) y si se quiere una [caja](http://amzn.to/2Fvtyjy). Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de [Amazon][amazon].
+Los elementos necesarios para tener tener una consola retro son los siguientes: una [Raspberry Pi][amazon-raspberrypi], un [cargador USB](http://amzn.to/2Cf9Vxp) adecuado, una [tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX) o más, [dos mandos para consola USB](http://amzn.to/2Cg6035) o un [teclado USB](http://amzn.to/2ou0QHD), un [cable HDMI](http://amzn.to/2sPcjqz) y si se quiere una [caja](http://amzn.to/2Fvtyjy). Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de [Amazon][amazon].
 
-* [Raspberry Pi 3](http://amzn.to/2EP9mHX)
+* [Raspberry Pi][amazon-raspberrypi]
 * [Cargador USB](http://amzn.to/2Cf9Vxp)
 * [Tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX)
 * [Cable HDMI](http://amzn.to/2sPcjqz)
@@ -42,13 +42,15 @@ Los elementos necesarios para tener tener una consola retro son los siguientes: 
 * [ROMs de juegos](https://archive.org/details/datomatic.no-intro.org)
 
 <div class="media-amazon" style="text-align: center;">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=e16de107a3b45aa06c042744e18fc33a"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFSZGCC&linkId=132bc906913976b2a43c4582b23f5fb5"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N59IUV5&linkId=0bcc896ec870ce504e2c4c0acfaa8870"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JYC4XM&linkId=fc47107b5f2e02c96571abfa0506c1c7"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B014I8U33I&linkId=df5c52be4ca21b9991d26145edb0b642"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VMXHJ4Q&linkId=39ee0802cdc202ce8259d463b59224ed"></iframe>
 </div>
+
 <div class="media-amazon" style="text-align: center;">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06ZZJ5KVX&linkId=acb19b6a6d9a6e3504f3b52fcb45ff72"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00NW4SJRM&linkId=7bf1d9cf65b79b18155abd26c96831d5"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N59IUV5&linkId=0bcc896ec870ce504e2c4c0acfaa8870"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00564GWEI&linkId=2264c2741c0914e881d4e70b36b927da"></iframe>
 </div>
 

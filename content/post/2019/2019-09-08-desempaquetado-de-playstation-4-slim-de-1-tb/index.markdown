@@ -340,7 +340,7 @@ Si no se tiene preferencia por en que tienda comprarla hay varias posibilidades.
 
 Tanto en Wallapop como [Ebay][ebay] se pueden encontrar consolas de segunda mano a un mejor precio que el de en tienda nuevas si se está dispuesto a no tener garantía del producto y a aceptar la incertidumbre de si funcionará correctamente.
 
-* [Amazon PS4](https://amzn.to/2Lu5l1n)
+* [Amazon Sony PS4][amazon-playstation-4]
 * [El Corte Inglés PS4](https://www.elcorteingles.es/videojuegos/ps4/consolas/)
 * [PC Componentes PS4](https://www.pccomponentes.com/videoconsolas-ps4)
 * [Mediamarkt PS4](https://www.mediamarkt.es/es/category/_consolas-ps4-702291.html)

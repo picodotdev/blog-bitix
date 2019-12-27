@@ -21,7 +21,7 @@ summary: "La siguiente pieza que he adquirido para completar lo que será mi ord
 
 {{< logotype image1="benq.svg" title1="Benq" width1="300" >}}
 
-Aún no se está comercializando en España [el ordenador que he decidido comprar, un Intel NUC][blogbitix-329] entre las [opciones entre portátil, ITX o NUC que evalué hace ya más de seis meses][blogbitix-309]. Espero que no quede mucho hasta que haya disponibilidad en Amazon del [Intel NUC8i5BEK Bean Canyon](https://amzn.to/2Sb0CmW), al menos está listado y en Amazon EEUU ya hay disponibilidad. A pesar de esto ya estoy comprando las otras piezas que en cualquier caso necesito como [teclado y ratón inalámbrico, alfombrilla para la mesa][blogbitix-348] y ahora otra pieza más importante, el monitor.
+[El ordenador que tenía intención de comprar, un Intel NUC][blogbitix-329] entre las [opciones entre portátil, ITX o NUC que evalué hace ya más de seis meses][blogbitix-309] ha sido finalmente uno de sus modelos que me decidí a comprar, [el ordenador Intel NUC NUC8i5BEK del cual he realizado su desempaquetado][blogbitix-363]. Mientras espero a su comercialización ya estoy comprando las otras piezas que en cualquier caso necesito como [teclado y ratón inalámbrico, alfombrilla para la mesa][blogbitix-348] y ahora otra pieza más importante, el monitor.
 
 Ya con unas semanas habiendo usado el teclado y ratón V7 CKW200 acepto que el ratón no sea totalmente fiable y un peligro hacer cosas importantes con él al arrastrar y soltar ya que falla en ocasiones, quizá compre un ratón tradicional con cable si me da muchos problemas. He comprobado que se pueden tener dos ratones conectados simultáneamente, funcionado ambos. El teclado funciona perfectamente y estoy encantado con él, solo por el teclado no los he devuelto. Sin embargo, en el monitor con algún defecto de píxeles muertos o retención de imagen si haría la devolución, por fortuna una vez me ha llegado y lo he comprobado con unas [imágenes de prueba para detectar píxeles muertos o vagos](https://jasonfarrell.com/misc/deadpixeltest.php) no he visto ninguno así que el panel me ha llegado perfecto estado.
 
@@ -286,6 +286,14 @@ Para probar la calidad del monitor (o televisor) en cuanto a colores o resoluci�
 
 <div class="media media-video" style="text-align: center;">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+### Switch HDMI, monitor con el ordenador y consola
+
+Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la Play Station 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa"></iframe>
 </div>
 
 ### Soporte VESA

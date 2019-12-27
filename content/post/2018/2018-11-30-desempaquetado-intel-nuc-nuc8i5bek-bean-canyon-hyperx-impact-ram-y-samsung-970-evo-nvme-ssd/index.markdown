@@ -90,8 +90,6 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1BTZ&linkId=f3958514001abbfacb4d2d944dbaae79"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JB2M5JS&linkId=222f9d7e5b7ea470df5df9148d6ab300"></iframe>
-</div>
-<div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JBM1CFH&linkId=4f67d035caf205cfbefa4e5afe68674a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1LCL&linkId=5b22e238d8496d8d76cd9397d7f13a2d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07J6T8PH6&linkId=866537dd626ab63935971b2c0b3fa830"></iframe>
@@ -136,9 +134,7 @@ Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](htt
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01BNJL8I4&linkId=ef22daf2b91899709c8686b7db8a49c7"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01BNJL8K2&linkId=6533af03761af37a69a759fade2c9a66"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017UC3UPW&linkId=06d1aea567128e234b58d2e800ef099c"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017UC3UFC&linkId=d0f4f32393a8a66aed6fadf13b996f4f"></iframe>    
 </div>
 
 * [Memoria HyperX Impact](https://www.hyperxgaming.com/es/memory/impact-ddr4)
@@ -372,6 +368,14 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
         image2="slimbook-one-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
         image3="slimbook-one-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
         caption="Slimbook ONE (v2)" >}}
+</div>
+
+### Switch HDMI, monitor con el ordenador y consola
+
+Si el monitor es compartido tanto por el ordenador como por [una consola como la Play Station 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
+
+<div class="media-amazon" style="text-align: center;">
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa"></iframe>
 </div>
 
 ### Nuevo escritorio
