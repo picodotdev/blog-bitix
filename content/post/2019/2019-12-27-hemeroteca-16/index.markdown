@@ -71,7 +71,7 @@ La otra temática principal de mi blog es la programación con el lenguaje [Java
 
 En cuanto a las cifras del blog en número de visitas se ha mantenido prácticamente igual al 2018 con ~500K páginas vistas. Aunque siempre es un punto de motivación normalmente no pienso en escribir artículos que atraigan a más lectores sino antes en lo que me apetece escribir y publicar. Aún escribiendo artículos más avanzados uno de los artículos más visitados es a pesar de su sencillez y simplicidad es [4 formas de hacer un bucle for  en Java][blogbitix-247], he escrito artículos mucho más avanzados que hacer varias formas de hacer un bucle _for_ pero parece que los artículos sencillos tienen un público más amplio que los artículos más avanzados que tiene un público más restringido.
 
-He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desdeñanado conseguir más visitas pero sin ser esta la principal motivación de escribir algo.
+He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desdeñanado conseguir más visitas pero sin ser esta la principal motivación de escribir algo. Como cada año, para observar las métricas pasados varios, hago públicos los datos de visitas en Analytics, ingresos de AdSense y de afiliación de Amazon. Por si a alguien sin un blog para hacerse una idea, con uno o por comparar le resultan interesantes.
 
 <div class="media" style="text-align: center;">
     {{< figureproc
