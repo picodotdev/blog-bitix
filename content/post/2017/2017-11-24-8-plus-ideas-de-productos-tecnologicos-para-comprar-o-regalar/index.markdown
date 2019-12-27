@@ -99,7 +99,7 @@ En la gama de entrada están el [Xiaomi Mi 9 Lite](https://amzn.to/2Q02zTR) con 
 
 Entre la cantidad de modelos y marcas que hay en tabletas y libros electrónicos destacan las de Amazon por su calidad, potencia y precio muy ajustado con la posibilidad de acceder al amplio catálogo de contenidos de la enorme tienda de Amazon. Yo tengo un Kindle Touch de cuarta generación y estoy encantado con él. Las versiones más recientes son aún mejores con una pantalla de mayor resolución, mayor contraste y con luz integrada.
 
-El [Kindle Fire 7][amazon-kindle-fire-7]tiene un precio para las características que tiene muy ajustado y es difícil encontrar algo mejor por ese precio, pantalla de 7 pulgadas de 1024x768 de resolución con 8 o 16 GiB de almacenamiento y procesador de cuatro núcleos. El [Kindle Fire HD 8][https://amzn.to/2ZuabRQ] tiene una pantalla algo más grande, de mayor resolución y algo más de almacenamiento, pantalla de 8 pulgadas con 1280x800 píxeles y entre 16 y 32 GiB.
+El [Kindle Fire 7][amazon-kindle-fire-7]tiene un precio para las características que tiene muy ajustado y es difícil encontrar algo mejor por ese precio, pantalla de 7 pulgadas de 1024x768 de resolución con 8 o 16 GiB de almacenamiento y procesador de cuatro núcleos. El [Kindle Fire HD 8](https://amzn.to/2ZuabRQ) tiene una pantalla algo más grande, de mayor resolución y algo más de almacenamiento, pantalla de 8 pulgadas con 1280x800 píxeles y entre 16 y 32 GiB.
 
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01J90P010&linkId=532e9386ab389303b2eff116fed15a39"></iframe>
@@ -119,8 +119,6 @@ El [Amazon Kindle][amazon-kindle] ya es suficiente para cualquier lector con su 
 
 Las consolas son otro de los regalos más populares, entre ellas están la [Sony Play Station 4][amazon-playstation-4] con su buen [catálogo de juegos](http://amzn.to/2i3pzDx) y la que le está dando buenos resultados a la otra compañía nipona con la [Nintendo Switch](https://amzn.to/2tOmUTw) o la versión más económica [Nintendo Swtich Lite](https://amzn.to/351eZiw) con sus juegos franquicia de [The Legend Of Zelda: Breath Of The Wild](https://amzn.to/2EXt1HK) y [Mario Odissey](https://amzn.to/2MyaHsV) pero también está la [Nintendo 2DS](http://amzn.to/2i3VgfU) más económica para los más pequeños. La [Xbox One S](https://amzn.to/2t2W8qn) también con su _Game Pass_ es una muy buena opción para disfrutar de una completa colección de juegos de su generación.
 
-[Yo acabé comprando una Play Station 4][blogbitix-432], aún estando en su fase final de vida tiene un gran catálogo de juegos y aún saliendo la Play Station 5 a finales del 2020 durante varios años de transición se seguirán viendo juegos físicos en las tiendas o digitales en la propia Play Station Store, además en los primeros años la PS5 será mas cara y están las dudas si las primeras versiones estarán libres de fallos además de su limitado catálogo de juegos inicial hechos de forma especifica para aprovechar completamente sus capacidades.
-
 <div class="media-amazon" style="text-align: center;">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XBTPRCV&linkId=0203280a356eba12b73ebbc6090a6247"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07WKNQ8JT&linkId=5a7ca82c27c76c94e865f9362c8236c2"></iframe>
@@ -128,11 +126,14 @@ Las consolas son otro de los regalos más populares, entre ellas están la [Sony
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VN9HTX2&linkId=320cd323e06edb21ae469838d05547db"></iframe>
 </div>
 
+[Yo acabé comprando una Play Station 4][blogbitix-432], aún estando en su fase final de vida tiene un gran catálogo de juegos y aún saliendo la Play Station 5 a finales del 2020 durante varios años de transición se seguirán viendo juegos físicos en las tiendas o digitales en la propia Play Station Store, además en los primeros años la PS5 será mas cara y están las dudas si las primeras versiones estarán libres de fallos además de su limitado catálogo de juegos inicial hechos de forma especifica para aprovechar completamente sus capacidades.
+
 ### Televisión 4K, HDR, Smart TV
 
 De las [televisiones que he visto](http://amzn.to/2jlOZsn) me gustan más los modelos de Sony ya que estos incorporan el sistema [Android TV](https://www.android.com/tv/) para el sistema _Smart TV_ lo que les permite tener mayor cantidad de aplicaciones disponibles. Aún así los modelos de Samsung y LG también son buenas opciones. En un futuro aunque todavía tardará unos años pero no muy lejano habrá una nueva reantenización y será necesario que las televisiones dispongan de un decodificacdor DVB-T2 que solo he visto que incorporen las televisiones 4K. Las televisiones 4K ya están empezando a tener unos precios que no son exageradamente superiores a los modelos Full HD.
 
-Algunos modelos que yo también los estoy siguiendo son, estos modelos está disponibles en tamaños desde 43" hasta 65" son de resolución 4K con soporte HDR, los _Smart TV_ de Samsung incorpora su propio sistema operativo Tizen, la Sony con Android TV y la LG con webOS:los
+Estos modelos está disponibles en tamaños desde 43" hasta 65" son de resolución 4K con soporte HDR, los _Smart TV_ de Samsung incorpora su propio sistema operativo Tizen, la Sony con Android TV y la LG con webOS.
+
 * [Samsung 4K 43RU7405](https://amzn.to/37cFHq3)
 * [Sony KD-43XG8196BAEP](https://amzn.to/2EZ3pdf)
 * [LG 43UM7100](https://amzn.to/2MxNIhE)
