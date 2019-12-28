@@ -19,9 +19,9 @@
         {{ if isset .Params "author" }}<author><name>{{ .Params.author }}</name></author>{{ else }}<author><name>{{ .Site.Author.name }}</name></author>{{ end }}
         <content type="html">
         {{ if isset .Params "summary" }}
-          &lt;p&gt;&lt;strong&gt;{{ .Params.summary | markdownify | html }}&lt;/strong&gt;&lt;/p&gt;
+          {{ htmlUnescape "&lt;![CDATA[" | safeHTML }}<p><strong>{{ .Params.summary | markdownify }}</strong></p>]]>
         {{ end }}
-        {{ (replace .Content (print .Site.Params.context) "") | html }}
+        {{ htmlUnescape "&lt;![CDATA[" | safeHTML }}{{ .Content }}]]>
         </content>
         {{ if isset .Params "tags" }}
             {{ range .Params.tags }}

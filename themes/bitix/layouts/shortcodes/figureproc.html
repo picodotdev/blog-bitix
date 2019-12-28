@@ -96,16 +96,16 @@
 {{ if or $imagescaled1 $imagescaled3 $imagescaled3 }}
 <figure>
   {{ if $imagescaled1 }}
-  <a href="{{ $imagescaled1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery><img src="{{ $imagescaledthumb1.RelPermalink }}" width="{{ $imagescaledthumb1.Width }}"/></a>
+  <a href="{{ $imagescaled1.RelPermalink }}" title="{{ .Params.title1 }}" data-gallery="data-gallery"><img src="{{ $imagescaledthumb1.RelPermalink }}" width="{{ $imagescaledthumb1.Width }}"/></a>
   {{ end }}
   {{ if $imagescaled2 }}
-  <a href="{{ $imagescaled2.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery><img src="{{ $imagescaledthumb2.RelPermalink }}" width="{{ $imagescaledthumb2.Width }}"/></a>
+  <a href="{{ $imagescaled2.RelPermalink }}" title="{{ .Params.title2 }}" data-gallery="data-gallery"><img src="{{ $imagescaledthumb2.RelPermalink }}" width="{{ $imagescaledthumb2.Width }}"/></a>
   {{ end }}
   {{ if $imagescaled3 }}
-  <a href="{{ $imagescaled3.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagescaledthumb3.RelPermalink }}" width="{{ $imagescaledthumb3.Width }}"/></a>
+  <a href="{{ $imagescaled3.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery="data-gallery"><img src="{{ $imagescaledthumb3.RelPermalink }}" width="{{ $imagescaledthumb3.Width }}"/></a>
   {{ end }}
   {{ if .Params.caption }}
-  <figcaption>{{ .Params.caption }}{{ if .Params.source }}<br><small>{{ i18n "source" }}: {{ .Params.source }}</small>{{ end }}</figcaption>
+  <figcaption>{{ .Params.caption }}{{ if .Params.source }}<br/><small>{{ i18n "source" }}: {{ .Params.source }}</small>{{ end }}</figcaption>
   {{ end }}
 </figure>
 {{ end }}

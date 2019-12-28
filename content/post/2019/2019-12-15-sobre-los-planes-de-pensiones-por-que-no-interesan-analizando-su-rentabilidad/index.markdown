@@ -69,11 +69,11 @@ Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exact
         </tr>
         <tr>
             <td>16.030,00 - 32.060,00</td>
-            <td>28%</em></td>
+            <td>28%</td>
         </tr>
         <tr>
             <td>32.060,00 - 48.090,00</td>
-            <td>35%</em></td>
+            <td>35%</td>
         </tr>
         <tr>
             <td>48.090,00 - 68.690,00</td>
@@ -81,11 +81,11 @@ Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exact
         </tr>
         <tr>
             <td>68.690,00 - 95.150,00</td>
-            <td>45%</em></td>
+            <td>45%</td>
         </tr>
         <tr>
             <td>95.150,00 - 126.850,00</td>
-            <td>46%</em></td>
+            <td>46%</td>
         </tr>
         <tr>
             <td>126.850,00 - 184.950,00</td>
