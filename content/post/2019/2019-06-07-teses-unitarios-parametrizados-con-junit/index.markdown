@@ -13,8 +13,7 @@ summary: "Hay múltiples lenguajes y librerías donde cada una publica nuevas ve
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="junit.png" title1="JUnit" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

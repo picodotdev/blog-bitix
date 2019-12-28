@@ -10,8 +10,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -58,8 +57,7 @@ Puedes obtener el [código fuente completo del ejemplo](https://github.com/picod
 ¿Conocías y has usado alguna vez esta funcionalidad?
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Librerías de logging para Java (slf4j, Log4j, java.util.logging, logback, MentaLog](https://elblogdepicodev.blogspot.com.es/2012/04/librerias-de-logging-para-java-slf4j.html)
 {{% /reference %}}
 

@@ -12,8 +12,7 @@ tags: ["java", planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -58,8 +57,7 @@ El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentacion Javadoc del JDK][javadoc-8]
 {{% /reference %}}
 

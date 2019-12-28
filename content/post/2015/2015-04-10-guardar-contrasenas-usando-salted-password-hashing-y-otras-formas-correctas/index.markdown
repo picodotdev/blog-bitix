@@ -11,8 +11,7 @@ tags: ["java", "programacion", "seguridad", "tapestry", "planeta-linux", "planet
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-shiro.png" title1="Apache Shiro" width1="300">}}
 
@@ -77,8 +76,7 @@ El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado 
 En este artículo recomiendo leer los interesantes enlaces del apartado de referencia del final, de ellos los siguientes dos son bastante completos [Password Security the Right Way](https://stormpath.com/blog/password-security-right-way/) y [The RIGHT Way: How to Hash Properly](https://crackstation.net/hashing-security.htm) aunque todos merecen el tiempo dedicado a una lectura detenida. Para terminar mucho de esto es fútil si se permiten contraseñas sencillas por lo que exigir contraseñas con cierta fortaleza de la forma comentada al principio también es necesario si la seguridad de la aplicación es un requisito importante.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Password Security the Right Way](https://stormpath.com/blog/password-security-right-way/)
 * [How To Safely Store A Password](http://codahale.com/how-to-safely-store-a-password/)
 * [Password Security with Stormpath](https://stormpath.com/product/password_security/)

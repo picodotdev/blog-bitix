@@ -13,8 +13,7 @@ summary: "Los artículos y log blogs personales no se escriben solos, cada artí
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 A iniciativa de [Victorhck en su blog](https://victorhckinthefreeworld.com) se inició hace ya unos meses una cadena con un artículo para que los blogueros sobre software libre y GNU/Linux escribiesen un artículo para mostrar ese lugar donde se escriben, editan y publican los artículos y el lugar de trabajo en una aleación seguramente con diversión. Hace unos días ví en [Twitter][twitter] que en [Jvare Blog](https://jvare.com) y unos días más tarde en [Poesía Binaria](http://totaki.com/poesiabinaria/) aparecían otros. Así que esta semana me he decidido a publicar el mío.
 

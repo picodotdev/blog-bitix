@@ -13,8 +13,7 @@ series: ["donacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="wine.svg" title1="Wine" width1="200" >}}
 

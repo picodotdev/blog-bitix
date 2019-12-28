@@ -14,8 +14,7 @@ summary: "He cambiado ligeramente el diseño del blog con la intención de mejor
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
@@ -76,8 +75,7 @@ Padría hacer algún experimento o test _a/b_ de que diseño resulta mejor si el
 También he introducirdo un _banner_ _billboard_ en la cabecera de la página a ver que tal resultado da, el _leaderboard_ del inicio de los artículos tenía buen rendimiento aún siendo bastante pequeño, lo he mantenido en los artículos que incluyo un resumen. En los que no tienen un resumen lo he sustituido por el _billboard_ ya que mantener ambos me resutlaba un exceso de publicidad. Dentro de unos meses compararé con los anteriores o del año pasado si los cambios que he hecho dan buen resultado.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hola nuevo mundo][blogbitix-0]
 * [Nuevo diseño en Blog Bitix][blogbitix-80]
 {{% /reference %}}

@@ -13,8 +13,7 @@ summary: "Hace no tanto tiempo era prácticamente imposible adquirir un equipo s
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="slimbook.png" title1="Slimbook" width1="200" image2="vant.svg" title2="VANT" width2="200" >}}
 

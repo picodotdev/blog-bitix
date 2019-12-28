@@ -11,8 +11,7 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -117,8 +116,7 @@ Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java 
 ¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf)
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html) (elblogdepicodev)
 {{% /reference %}}
 

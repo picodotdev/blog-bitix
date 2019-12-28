@@ -12,8 +12,7 @@ summary: "Elasticsearch es una potente herramienta que nos permite indexar una g
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="elasticsearch.png" title="Elasticsearch" width="300" >}}
 
@@ -89,8 +88,7 @@ Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas má
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Búsquedas de texto completo en objetos de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html)
 * [Elasticsearch](http://www.elasticsearch.org)
 * [Exploring Elasticsearch](http://exploringelasticsearch.com/)

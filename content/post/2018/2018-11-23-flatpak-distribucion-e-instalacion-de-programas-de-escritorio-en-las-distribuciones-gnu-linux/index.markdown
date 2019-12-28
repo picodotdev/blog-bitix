@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="flatpak.svg" title1="Flatpak" width1="300" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -70,8 +69,7 @@ Si usas Arch Linux e instalas el entorno de escritorio GNOME con los paquetes _g
 {{< code file="install.sh" language="bash" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Flatpak vs Snap - Which format is "Better"? A rather excellent in-depth comparison](https://www.reddit.com/r/linux/comments/60qdtw/flatpak_vs_snap_which_format_is_better_a_rather/)
 * [Flatpak Arch Linux Wiki](https://wiki.archlinux.org/index.php/Flatpak)
 {{% /reference %}}

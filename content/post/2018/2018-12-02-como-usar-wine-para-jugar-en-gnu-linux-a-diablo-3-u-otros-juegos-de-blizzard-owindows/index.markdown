@@ -16,8 +16,7 @@ series: ["juegos"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="wine.svg" title1="Wine" width1="200" image2="blizzard.svg" title2="Blizzard" width2="300" image3="linux.svg" title3="Linux" width3="200" >}}
 
@@ -150,8 +149,7 @@ Al instalar programas en Wine se crean accesos directos en el menú de aplicacio
 {{< code file="uninstall.sh" language="bash" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [How to Install Blizzard Battlenet App on Linux](https://linoxide.com/linux-how-to/install-blizzard-battlenet-app-linux/)
 * [How do I get Wine to launch an application in a virtual desktop?](https://wiki.winehq.org/FAQ#How_do_I_get_Wine_to_launch_an_application_in_a_virtual_desktop.3F)
 {{% /reference %}}

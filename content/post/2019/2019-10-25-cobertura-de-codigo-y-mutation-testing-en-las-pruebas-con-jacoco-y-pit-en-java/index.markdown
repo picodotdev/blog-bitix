@@ -15,8 +15,7 @@ summary: "En el caso extremo una cobertura de código del cien por cien pero que
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -92,8 +91,7 @@ Para generar los informes de cobertura de código y de mutación en Java y usand
 {{% sourcecode git="blog-ejemplos/tree/master/JavaMutationTesting" command="./gradlew test jacocoTestReport pitest" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Mutation testing – PIT nuestro gran amigo](http://qajungle.com/mutation-testing-pit-nuestro-gran-amigo/)
 * [Pitest - mutation testing in Java](https://beyondscheme.com/2016/pitest-with-java)
 * [Mutation Testing with PITest](https://www.baeldung.com/java-mutation-testing-with-pitest)

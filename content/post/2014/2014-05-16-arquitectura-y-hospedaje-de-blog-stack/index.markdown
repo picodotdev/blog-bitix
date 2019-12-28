@@ -11,8 +11,7 @@ tags: ["software", "software-libre", "java", "programacion", "planeta-linux", "p
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="blogstack.png" title="Blog Stack" width="300" >}}
 
@@ -53,8 +52,7 @@ Estando convencido del uso del software libre para ser coherente no tenía otra 
 Con el desarrollo de Blog Stack he tenido que resolver unos cuantos problemas, en posteriores entradas explicaré como he implementado las soluciones a algunas funcionalidades que son comunes a los proyectos web, como la correspondencia entre las urls y los artículos o etiquetas para [no poner identificadores de entidades de la base de datos en las urls y que queden más limpias y amigables][blogbitix-46], como hacer la transliteración de los títulos de las entradas para la construcción de las urls, como obtener un extracto de la entrada (puede parecer simple pero no lo es tanto), como usar un servidor embebido que sirva el contenido estático o como procesar recursos estáticos como archivos less para generar el css con [wro4j](https://code.google.com/p/wro4j/).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Presentación de Blog Stack][blogbitix-23]
 {{% /reference %}}
 

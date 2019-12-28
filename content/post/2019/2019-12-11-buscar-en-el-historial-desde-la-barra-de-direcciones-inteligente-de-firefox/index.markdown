@@ -12,8 +12,7 @@ tags: ["planeta-codigo", "software"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="firefox.svg" title1="Firefox" width1="200" >}}
 
@@ -44,8 +43,7 @@ En esta captura de hace una búsqueda por el título de las páginas en el histo
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Address bar autocomplete in Firefox - Search your bookmarks, history and tabs](https://support.mozilla.org/en-US/kb/address-bar-autocomplete-firefox?redirectlocale=en-US&redirectslug=awesome-bar-search-firefox-bookmarks-history-tabs)
 {{% /reference %}}
 

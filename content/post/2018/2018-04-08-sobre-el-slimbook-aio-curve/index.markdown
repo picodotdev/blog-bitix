@@ -13,8 +13,7 @@ tags: ["hardware", "opinion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="slimbook.jpg" title1="Slimbook" width1="200" >}}
 

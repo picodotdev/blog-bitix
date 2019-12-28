@@ -14,8 +14,7 @@ tags: ["opinion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el [primer videojuego](https://es.wikipedia.org/wiki/Primer_videojuego#1947:_Dispositivo_de_Entretenimiento_de_Tubos_de_Rayos_Cat%C3%B3dicos). En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en [la guerra actual por añadir más núcleos a las CPU][blogbitix-337]. Recientemente los sistemas operativos y entornos de escritorio han empezado a aprovechar de las capacidades de las tarjetas gráficas o GPU para proporcionar efectos visuales y acelerar algunas operaciones de cálculo más eficientemente que en la CPU.
 
@@ -66,8 +65,7 @@ Este es un documental sobre lo que rodea a las  competiciones deportivas en equi
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Xataka eSports](https://esports.xataka.com/)
 * [Los 'eSports' se calientan: 600.000€ para la alternativa española a Twitch (Amazon)](https://www.elconfidencial.com/tecnologia/2017-06-06/gamerswalk-esports-twitch-amazon_1394223/)
 * ['eSports': los bufetes se calzan las botas para jugar un partido de 600 millones de euros](http://www.elconfidencial.com/empresas/2017-05-13/deportes-electronicos-esports-regulacion-situacion-espana-jugadores-deporte-ligas_1381822/)

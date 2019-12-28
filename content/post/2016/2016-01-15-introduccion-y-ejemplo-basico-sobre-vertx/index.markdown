@@ -13,8 +13,7 @@ summary: "Las aplicaciones basadas en eventos y con E/S no bloqueante son más e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="vertx.png" title1="Vert.x" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -38,8 +37,7 @@ La documentación de cada módulo de Vert.x está bastante bien y explicada en l
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoVertx" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [10 razones para seguir usando Java][blogbitix-81]
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
 * [Múltiples esquemas o bases de datos con jOOQ y Spring en Java][blogbitix-106]

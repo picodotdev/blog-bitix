@@ -10,8 +10,7 @@ tags: ["blog", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
@@ -55,8 +54,7 @@ A lo largo de varios años hay épocas en los que surgen más ideas sobre las qu
 Y esto son algunos detalles de mi experiencia como blogger que tal vez le sirvan a alguien más. ¡Feliz _blogging_!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hola nuevo mundo][blogbitix-0]
 * [Guía de creación de blog con Octopress][blogbitix-16]
 {{% /reference %}}

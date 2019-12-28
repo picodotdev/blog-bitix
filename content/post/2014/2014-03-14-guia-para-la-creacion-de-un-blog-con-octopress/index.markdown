@@ -11,8 +11,7 @@ tags: ["blog", "software", "software-libre", "planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
@@ -84,8 +83,7 @@ En el [código fuente del blog](https://github.com/picodotdev/blog-bitix) se pue
 * custom/post/karmacracy.html
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hola nuevo mundo][blogbitix-0]
 * [Mi experiencia y consejos para un blog][blogbitix-7]
 {{% /reference %}}

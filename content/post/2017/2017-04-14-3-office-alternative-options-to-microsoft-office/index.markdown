@@ -13,8 +13,7 @@ summary: "Microsoft Office is the office suite with a great margin of difference
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
@@ -90,8 +89,7 @@ Some other options that deserves to be commented is [Calligra][calligra] the [KD
 The next time I'm asked to reinstall Windows or Office instead of installing the Microsoft Office suite without a license I think I will install the WPS Office personal use option, I will recommend using Google Docs or LibreOffice, I hope them improve and update to modern times its interface when I have to install it again.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [A Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92]
 * [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-222]
 * [Windows tax][elblogdepicodev-57]

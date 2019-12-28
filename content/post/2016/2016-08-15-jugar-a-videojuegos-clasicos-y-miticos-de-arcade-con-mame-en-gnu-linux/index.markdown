@@ -13,8 +13,7 @@ series: ["juegos"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="mame.jpg" title1="MAME" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -124,8 +123,7 @@ Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pa
 Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una PlayStation 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Emuparadise](http://www.emuparadise.me)
 * [MAME Database](http://www.mamedb.com)
 * [Emuladores, ROMs y el debate entre la nostalgia, el amor a lo retro y la ilegalidad](https://www.xataka.com/videojuegos/emuladores-roms-y-el-debate-entre-la-nostalgia-el-amor-a-lo-retro-y-la-ilegalidad)

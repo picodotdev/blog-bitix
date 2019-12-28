@@ -14,8 +14,7 @@ summary: "Aún en las aplicaciones monolíticas que comparten una única base de
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 

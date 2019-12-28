@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="postgresql.svg" title2="PostgreSQL" width2="200" >}}
 
@@ -51,8 +50,7 @@ Tabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones
 {{< sourcecode git="blog-ejemplos/tree/master/DateTimeDatabase" command="cd misc/docker/postgresql/, docker-compose up, ./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Convertir fechas y husos horarios en Java][blogbitix-64]
 * [Always store dates/times in UTC (in the database)](http://ideas.kentico.com/forums/239189-kentico-product-ideas/suggestions/6825844-always-store-dates-times-in-utc-in-the-database)
 * [Por qué guardar los importes con al menos un decimal más de la precisión necesaria][blogbitix-389]

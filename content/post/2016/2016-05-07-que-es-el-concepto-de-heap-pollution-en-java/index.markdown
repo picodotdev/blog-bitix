@@ -13,8 +13,7 @@ summary: "Al trabajar con referencias de tipos genéricos, _raw_ y arrays debemo
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -53,8 +52,7 @@ Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos n
 {{< sourcecode git="blog-ejemplos/tree/master/JavaHeapPollution" command="./gradlew test" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Tutorial sobre los tipos genéricos de Java][blogbitix-138]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]

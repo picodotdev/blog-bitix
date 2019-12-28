@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
@@ -33,8 +32,7 @@ Si no queremos que un paquete sea actualizado en la siguiente actualización del
 No es recomendable mantener muchos paquetes desactualizados y en la lista de _IgnorePkg_ ya que estos pueden tener dependencias sobre paquetes también desactualizados, solo debe ser empleado para casos puntuales.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Artículo en la Wiki sobre desactualización de paquetes](https://wiki.archlinux.org/index.php/Downgrading_Packages)
 * [Arch Rollback Machine](https://wiki.archlinux.org/index.php/Arch_Rollback_Machine)
 {{% /reference %}}

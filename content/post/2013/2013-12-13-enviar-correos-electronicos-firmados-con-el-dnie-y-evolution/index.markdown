@@ -11,8 +11,7 @@ tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "softwar
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="200" image2="dnie.jpg" title2="DNIe" width2="200" >}}
 
@@ -41,8 +40,7 @@ Una vez con las propiedades de la cuenta configurada para que Evolution use nues
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Crear una par de claves GPG][elblogdepicodev-181]
 * [Como firmar correos electrónicos con GPG][elblogdepicodev-182]
 * [Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux ][elblogdepicodev-183]

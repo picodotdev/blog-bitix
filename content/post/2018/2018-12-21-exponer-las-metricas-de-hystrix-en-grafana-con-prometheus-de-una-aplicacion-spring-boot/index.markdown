@@ -13,8 +13,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="spring.svg" title2="Spring" width2="200" >}}
 
@@ -48,8 +47,7 @@ Exponer las métricas en una aplicación de Spring Boot para Prometheus es muy s
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Expose Hystrix metrics to Actuator /metrics (and /prometheus)](https://github.com/spring-cloud/spring-cloud-netflix/issues/3004)
 {{% /reference %}}
 

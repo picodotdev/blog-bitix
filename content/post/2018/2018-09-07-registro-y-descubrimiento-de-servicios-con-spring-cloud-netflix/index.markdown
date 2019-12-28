@@ -13,8 +13,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

@@ -14,8 +14,7 @@ summary: "Más lentamente que otras tecnologías Java EE en cada nueva versión 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java-ee.png" title1="Java EE" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -87,8 +86,7 @@ Ejecutar este ejemplo require instalar previamente el servidor de aplicaciones [
 En el futuro Java EE 8 está planificado un _framework_ basado en acciones en vez de componentes como en JSF, también el soporte para [el protocolo HTTP/2][blogbitix-127].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Tutorial Java EE 7](https://docs.oracle.com/javaee/7/tutorial/)

@@ -15,8 +15,7 @@ summary: "Oracle y los ingenieros a cargo del desarrollo de Java están haciendo
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -104,8 +103,7 @@ En el nuevo modelo las nuevas características no se añaden hasta que están pr
 En la sección final de referencia incluyo varios artículos y vídeos de los que he obtenido la información para hacer este resumen de las novedades de Java 10. Algunos son muy interesantes y amplían en gran medida lo comentado y lo que posiblemente llegue en un futuro.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [First contact with 'var' in Java 10](https://www.youtube.com/watch?v=Le1DbpRZdRQ)
 * [Keynotes: Oracle Code Chicago](https://youtu.be/84mCmmzksGI?t=47m43s)
 * [Introducing Java SE 10](https://developer.oracle.com/java/java10)

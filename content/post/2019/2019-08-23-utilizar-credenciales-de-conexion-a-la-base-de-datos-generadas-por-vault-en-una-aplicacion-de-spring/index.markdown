@@ -14,8 +14,7 @@ summary: "Spring Cloud Vault facilita la integración con Vault, una de sus usos
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="vault.svg" title2="Vault" width2="200" >}}
 
@@ -74,8 +73,7 @@ En este caso la aplicación de Spring incluye en su configuración las credencia
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloudVault" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [An Intro to Spring Cloud Vault](https://www.baeldung.com/spring-cloud-vault)
 * [Spring Cloud Vault AppRole authentication](https://cloud.spring.io/spring-cloud-vault/reference/html/#_approle_authentication)
 * [Spring Cloud Vault Database backends](https://cloud.spring.io/spring-cloud-vault/reference/html/#vault.config.backends.database-backends)

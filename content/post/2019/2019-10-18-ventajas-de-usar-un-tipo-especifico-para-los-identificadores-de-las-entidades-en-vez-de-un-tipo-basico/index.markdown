@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="hibernate.svg" title2="Hibernate" width2="200" image3="jooq.png" title2="jOOQ" width3="200" >}}
 
@@ -51,8 +50,7 @@ En jOOQ en la configuración del generador hay que especificar que para un campo
 Con un tipo de datos propio para los identificadores es muy importante [implementar correctamente los métodos equals y hashCode][blogbitix-199] tanto en clases de identificadores como en las entidades de dominio ya que las colecciones de Java se basan en estos métodos para determinar si una colección contiene un elemento.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
 {{% /reference %}}
 

@@ -13,8 +13,7 @@ summary: "Construir objetos es una tarea básica en los lenguajes orientados a o
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -55,8 +54,7 @@ En el libro <a href="https://www.amazon.es/gp/product/0321356683/ref=as_li_ss_tl
 En el apartado de referencia puedes encontrar más artículos que he escrito sobre otros patrones de diseño.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [8+ libros para mejorar como programadores][blogbitix-55]
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
 * [Ejemplo del patrón de diseño _No Operation_][blogbitix-8]

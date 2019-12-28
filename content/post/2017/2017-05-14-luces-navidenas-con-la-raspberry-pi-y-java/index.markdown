@@ -14,8 +14,7 @@ summary: "Con diferentes sensores y dispositivos de salida de electrónica se pu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

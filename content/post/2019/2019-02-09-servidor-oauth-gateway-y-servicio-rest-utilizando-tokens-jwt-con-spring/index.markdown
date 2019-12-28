@@ -14,8 +14,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -102,8 +101,7 @@ Los _tokens_ JWT además de firmar se pueden cifrar, en el ejemplo se usa una co
 {{% sourcecode git="blog-ejemplos/tree/master/SpringOauth" command="./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Using JWT with Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-jwt)
 * [Secure Spring REST API using OAuth2](http://websystique.com/spring-security/secure-spring-rest-api-using-oauth2/)
 * [Spring Boot Security OAuth2 Jwt Auth Example](https://www.devglan.com/spring-security/spring-boot-oauth2-jwt-example)

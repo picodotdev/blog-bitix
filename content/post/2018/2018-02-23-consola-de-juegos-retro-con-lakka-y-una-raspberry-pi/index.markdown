@@ -15,8 +15,7 @@ summary: "El propósito original de las Raspberry Pi era educativo y se ha hecho
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="lakka.png" title1="Lakka" width1="250" image2="linux.svg" title2="Linux" width2="250" >}}
 
@@ -137,8 +136,7 @@ Al obtener ROMs de forma individual a veces es difícil dar con una que funcione
 Ya solo queda pasar algunos buenos momentos con estos juegos antiguos pero entretenidos, nosotros o los más pequeños de la casa. Otra opción alternativa a Lakka para el mismo propósito es [RetroPie](https://retropie.org.uk) aunque la primera soporta algunos modelos mas de placas similares a la Raspberry Pi.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Raspberry Pi, desempaquetado](https://elblogdepicodev.blogspot.com.es/2012/05/raspberry-pi-desempaquetado-unboxing.html)
 * [Imágenes juegos](http://thumbnailpacks.libretro.com/)
 * [Nintendo video game consoles](https://en.wikipedia.org/wiki/Nintendo_video_game_consoles)

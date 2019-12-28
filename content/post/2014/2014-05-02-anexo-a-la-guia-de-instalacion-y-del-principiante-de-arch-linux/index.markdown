@@ -13,8 +13,7 @@ note: "<strong>Nota</strong>: Si quieres [instalar Arch Linux de forma desatendi
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 

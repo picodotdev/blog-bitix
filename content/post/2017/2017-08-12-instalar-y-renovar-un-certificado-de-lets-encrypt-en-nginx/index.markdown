@@ -15,8 +15,7 @@ summary: "Let's Encrypt es una entidad que emite certificados TLS/SSL que son re
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="lets-encrypt.svg" title1="Let's Encrypt" width1="350" >}}
 

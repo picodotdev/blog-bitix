@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "seguridad", "spring"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="tomcat.svg" title1="Tomcat" width1="200" image2="java.svg" title2="Java" width2="200" image3="spring-boot.svg" title3="Spring Boot" width3="200" >}}
 
@@ -50,8 +49,7 @@ Una clave asimétrica considerada segura puedes ser de 2048 bits pero se puede [
 {{% sourcecode git="blog-ejemplos/tree/master/SpringSession" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [How to change the session id length in Spring Boot](https://stackoverflow.com/questions/35062780/how-to-change-the-session-id-length-in-spring-boot)
 * [Spring Session, Allow for configuration of session id generation and format](https://github.com/spring-projects/spring-session/pull/204)
 {{% /reference %}}

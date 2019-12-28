@@ -14,8 +14,7 @@ summary: "Aún en Java 8 no tenemos una API incluida en el JDK dedicada al manej
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -80,8 +79,7 @@ Por si todo esto fuera poco podemos usar las características de programación f
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMoney) está en uno de mis repositorios de GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [JSR 354 API](https://github.com/JavaMoney/jsr354-api)
 * [JSR 354 RI](https://github.com/JavaMoney/jsr354-ri)
 * [JSR 354 - Currency and Money](https://java.net/projects/javamoney/pages/Home)

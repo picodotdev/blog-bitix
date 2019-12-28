@@ -14,8 +14,7 @@ summary: "¿Que en GNU/Linux no hay juegos? Los hay, ciertamente no muchos de lo
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -184,8 +183,7 @@ Disparos. Juego similar a [Counter Strike](https://es.wikipedia.org/wiki/Counter
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [List of games](https://wiki.archlinux.org/index.php/List_of_games)
 * [Videojuegos libres](https://es.wikipedia.org/wiki/Anexo:Videojuegos_libres)
 * [Humble Bundle](https://www.humblebundle.com)

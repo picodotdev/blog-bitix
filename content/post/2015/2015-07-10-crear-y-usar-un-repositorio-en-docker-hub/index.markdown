@@ -14,8 +14,7 @@ summary: "¿Por qué se habla tanto de Docker y despierta tanto interes si la te
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
@@ -60,8 +59,7 @@ En la creación del repositorio en Docker Hub con _build_ automatizada seleccion
 Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Get started with Docker Hub](https://docs.docker.com/userguide/dockerrepos/)
 * [The Dockerfile and Automated Builds](http://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds)
 {{% /reference %}}

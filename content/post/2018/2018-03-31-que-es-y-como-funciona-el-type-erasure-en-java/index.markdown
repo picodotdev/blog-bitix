@@ -13,8 +13,7 @@ summary: "Los tipos genéricos en Java se implementaron usando _type erasure_ po
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -34,8 +33,7 @@ En Java dos métodos distintos no pueden tener la misma firma, dado que los _gen
 Al mismo tiempo que el compilador inserta los _cast_ necesarios para mantener la validación de tipos inserta métodos _bridge_ para mantener el polimorfismo en las clases que extienden de tipos genéricos. Si se extiende la clase _Node_ anterior y se aplica _type erasure_ la firma del método _setData_ de _IntegerNode_ no coincide con el de la clase _Node_. Para solventar este problema el compilador inserta un método _bridge_ para el método _setData_ con un parámetro _Object_ que se encarga de hacer de puente y llamar al método _setData_ que recibe un _Integer_ aplicando un _cast_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Type Erasure](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)
 * [Qué es el concepto de Heap Pollution en Java][blogbitix-141]
 * [What are the pros and cons of having Generics as erasure or reifiable?](https://www.quora.com/What-are-the-pros-and-cons-of-having-Generics-as-erasure-or-reifiable?share=1)

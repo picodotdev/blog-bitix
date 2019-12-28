@@ -13,8 +13,7 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="keepassxc.png" title1="KeePassXC" width1="200" >}}
 

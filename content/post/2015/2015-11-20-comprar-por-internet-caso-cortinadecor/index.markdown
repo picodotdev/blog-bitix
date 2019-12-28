@@ -14,8 +14,7 @@ summary: "Este artículo es un poco fuera de tema de lo que suelo escribir en el
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Desde hace un tiempo quería comprar unos estores tanto para la habitación como para el salón. Empecé a mirar que opciones había navegando por internet. Lógicamente miré en varias tiendas empezando por [Ikea](http://www.ikea.com/es/es/), [El Corte Inglés][elcorteingles] e incluso en [Amazon](https://www.amazon.es/). Una de las primeras cosas que me dí cuenta es que en estas tres tiendas ofrecían estores en ciertas medidas concretas que podrían no quedar bien ajustados a la ventana en la que sería colocado. Otra de las cosas que me interesaba era no tener que taladrar las ventanas para colocarlos, en Amazon a través de un vendedor externo compré unos <a rel="nofollow" href="https://www.amazon.es/gp/product/B00G32WWTQ/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00G32WWTQ&linkCode=as2&tag=blobit-21">soportes para colocar los estores sin taladrar la ventana</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00G32WWTQ" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> que se enganchan a la parte superior del marco y a los cuales se atornillan los estores, además parecían compatibles con los soportes, con ellos la instalación era más sencilla y que a «manzanas» como yo en temas de bricolaje permite ajustar la colocación sin peligro de hacer un estropicio en las ventanas. Compré uno por cada estor, cada uno son dos unidaes.
 

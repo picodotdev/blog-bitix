@@ -14,8 +14,7 @@ summary: "Establecer directivas de cacheo en los recursos devueltos en una pági
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="html.svg" title1="HTML" width1="200" >}}
 
@@ -56,8 +55,7 @@ El servidor especifica como quiere que el contenido o recursos que devuelve sean
 * Pragma: esta es una directiva antigua que indicada como _pragma: no-cache_, se interpreta como _cache-control: no-cache_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [A Beginner's Guide to HTTP Cache Headers](http://dev.mobify.com/blog/beginners-guide-to-http-cache-headers/)
 * [Header Field Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
 * [Capítulo 14. La caché de HTTP](https://librosweb.es/libro/symfony_2_x/capitulo_14.html)

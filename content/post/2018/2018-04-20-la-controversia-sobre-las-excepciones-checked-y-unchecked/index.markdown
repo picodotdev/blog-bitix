@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -42,8 +41,7 @@ En el siguiente código se observa como capturar, lanzar y declarar excepciones 
 En el aparatado referncia incluyo unos buenos enlaces que amplian y detallan más apropiadamente la controversia sobre las excepciones _checked_ y _unchecked_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Exceptions tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
 * [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 * [Advantages of Exceptions](https://docs.oracle.com/javase/tutorial/essential/exceptions/advantages.html)

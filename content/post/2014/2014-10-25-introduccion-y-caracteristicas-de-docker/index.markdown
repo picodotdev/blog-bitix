@@ -13,8 +13,7 @@ summary: "Los contenedores no son una tecnología nueva pero Docker ha reunido l
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
@@ -59,8 +58,7 @@ Una vez conocidos los aspectos básicos y en que se diferencia docker de la virt
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Inicio básico de Docker][blogbitix-50]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Docker][docker]

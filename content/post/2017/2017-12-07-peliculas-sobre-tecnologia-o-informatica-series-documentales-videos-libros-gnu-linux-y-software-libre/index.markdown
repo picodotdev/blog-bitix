@@ -13,8 +13,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Si estás interesado en la tecnología, informática en general y en el software libre, código abierto y GNU/Linux estoy más que seguro que las siguientes listas de películas, series, documentales y libros te gustarán bastante. Probablemente algunas ya hayas visto pero otra quizá no conocías o aún no has visto y este artículo te anima a ver. En el momento de escribir esto aún no he visto todo el contenido de este artículo pero con esta lista lo tengo anotado y pendiente de ver.
 
@@ -124,8 +123,7 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 ¿Conoces alguno imprescindible más que incluir en esta lista?
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Software Libre: La comunidad sin amos](https://victorhckinthefreeworld.com/2013/06/21/software-libre-la-comunidad-sin-amos/)
 * [Nueve documentales sobre la historia de la informática que no te puedes perder](http://www.xataka.com/historias-de-la-tecnologia/nueve-documentales-sobre-la-historia-de-la-informatica-que-no-te-puedes-perder)
 * [Documentales sobre GNU/Linux y Open Source](http://www.javipas.com/2015/06/26/documentales-sobre-gnulinux-y-open-source/)

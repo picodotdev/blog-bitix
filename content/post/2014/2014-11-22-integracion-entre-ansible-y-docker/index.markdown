@@ -12,8 +12,7 @@ series: ["docker"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="ansible.svg" title1="Ansible" width1="200" image2="docker.svg" title2="Docker" width2="200">}}
 
@@ -38,8 +37,7 @@ Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.ht
 * Y algunos más
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a Docker][blogbitix-49]
 * [Guía de inicio básico de Docker][blogbitix-50]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]

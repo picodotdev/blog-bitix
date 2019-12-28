@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -36,8 +35,7 @@ Para GNU/Linux y los sistemas operativos en general uno de sus requisitos es que
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Fork Bomb](https://en.wikipedia.org/wiki/Fork_bomb)
 {{% /reference %}}
 

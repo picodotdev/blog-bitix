@@ -14,8 +14,7 @@ summary: "En unos pocos años las bases de datos NoSQL se han dado a conocer amp
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="mongodb.svg" title1="MongoDB" width1="400" >}}
 
@@ -56,8 +55,7 @@ El libro [MongoDB in Action](https://amzn.to/2qvYqqU) es un buen material de ref
 [La base de datos PostgreSQL][blogbitix-236] es una de las mejores opciones en el ámbito de las bases de datos relacionales y el potente lenguaje SQL, las propiedades ACID o el PL/pgSQL entre otras funcionalidades hará que siga siendo una de las mejores opciones para almacenar de forma persistente la preciosa información. En los casos que la escalabilidad o la estructuración de la información en documentos se un factor determinante MongoDB es una buena opción. Ambas opciones no son excluyentes, según el caso estos dos sistemas de información se podrán combinar para obtener lo mejor de cada uno de ellos.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación MongoDB](https://docs.mongodb.com/)
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]

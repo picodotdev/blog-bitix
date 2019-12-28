@@ -13,8 +13,7 @@ summary: "Sin usar la clase _Collator_ incluida en el JDK al ordenar alfabética
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

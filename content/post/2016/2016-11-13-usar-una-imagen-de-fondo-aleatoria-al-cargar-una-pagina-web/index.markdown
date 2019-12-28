@@ -12,8 +12,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Para darle un toque de estilo a la bitácora he usado unas cuantas texturas de fondo obtenidas de [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/). Son unas imágenes con un patrón repetitivo de colores suaves y poco llamativos que podemos usar como fondo de una página web, son de libre uso respetando la [licencia Creative Commons - Reconocimiento - Compartir igual](https://creativecommons.org/licenses/by-sa/3.0/). Podemos encontrar texturas en las siguientes categorías y motivos:
 
@@ -39,8 +38,7 @@ Si lo que queremos son fotos de buena calidad en la página en [Unsplash](https:
 Una buena textura o imagen pueden darle a una página un aspecto mucho más atractivo y si además hacemos que se use una diferente cada cierto tiempo o de forma aleatoria hacemos que la página sea algo diferente cada vez que se visualiza.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Subtle Patterns](http://subtlepatterns.com/)
 * [Noise Texture Generator](http://www.noisetexturegenerator.com/)
 * [Unsplash](https://unsplash.com/)

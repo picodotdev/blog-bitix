@@ -15,8 +15,7 @@ summary: "Los servicios que necesitan almacenar datos como las bases de datos o 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 
@@ -51,8 +50,7 @@ Para iniciar [Consul][consul] y Nomad hay que utilizar los siguientes comandos y
 Las restricciones se han de cumplir para elegir un nodo, por otro lado está también la afinidad. La [afinidad](https://www.nomadproject.io/docs/job-specification/affinity.html) es una preferencia utilizada por Nomad al seleccionar los nodos que tratará de cumplir si hay algún nodo disponible con las propiedades de afinidad deseadas pero si no hay un nodo disponible se elige algún otro.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Estrategias de despliegue para microservicios con Nomad][blogbitix-399]
 * [Portworx](https://www.nomadproject.io/guides/stateful-workloads/portworx.html)

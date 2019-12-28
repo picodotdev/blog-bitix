@@ -14,8 +14,7 @@ summary: "Con el buscador Google y usando las palabras clave adecuadas es raro n
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En internet hay cantidad de información que nos permiten aprender sobre cualquier cosa a nuestro libre albedrío y que queramos teniendo el tiempo para dedicárselo ya sea en forma de escuetas presentaciones en [SpeakerDeck][speakerdeck] o [SlideShare][slideshare], páginas sobre temas de programación, artículos en bitácoras como esta que estás leyendo u otras, vídeos en [YouTube][youtube], convenciones presenciales o _hangouts_.
 

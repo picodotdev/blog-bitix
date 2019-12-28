@@ -14,8 +14,7 @@ series: ["graphql"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
@@ -67,8 +66,7 @@ Para cada entidad hay una clase Java que la representa y un repositorio que cont
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Fragments](https://graphql.org/learn/queries/#fragments)
 * [Inline Fragments](https://graphql.org/learn/queries/#inline-fragments)
 * [More GraphQL Concepts](https://www.howtographql.com/advanced/2-more-graphql-concepts/)

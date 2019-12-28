@@ -14,8 +14,7 @@ summary: "Echando un vistazo a estos seis últimos meses han sido buenos, en nú
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Otros seis meses acumulados de vida, ya son poco menos de 7 años desde que tengo un blog y 3 desde que empecé a escribir en Blog Bitix. A pesar de la gran cantidad de tiempo que me requiere escribir y publicar artículos, tanto como entre 3 y 10 horas de dedicación por artículo, es una de las cosas que más me alegro de haber empezado en el año 2010. Lo que aprendo con cada artículo de las cosas que me motivan y compartirlo por si a alguien más le resultan interesantes me resulta muy satisfactorio.
 

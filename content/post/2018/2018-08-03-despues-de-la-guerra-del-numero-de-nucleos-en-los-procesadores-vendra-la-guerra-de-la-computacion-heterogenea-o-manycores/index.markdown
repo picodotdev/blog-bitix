@@ -13,8 +13,7 @@ tags: ["hardware", "opinion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="intel.svg" title1="Intel" width1="200" image2="amd.svg" title2="AMD" width2="300" >}}
 
@@ -69,8 +68,7 @@ Si quieres conocer más en detalle los procesadores tanto de su historia, evoluc
 Dentro de unos años, lustros o alguna década revisaré estos artículos de predicción a ver cuanto hay de acierto en la evolución de la tecnología que se produzca finalmente.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [ARM big.LITTLE](https://en.wikipedia.org/wiki/ARM_big.LITTLE)
 * [Materiales del futuro! Grafeno Vs Siliceno](https://www.taringa.net/posts/ciencia-educacion/11725464/Materiales-del-futuro-Grafeno-Vs-Siliceno-Megapost.html)
 * [Fibra óptica multi-núcleo para interconexiones ópticas con la mayor densidad

@@ -13,8 +13,7 @@ summary: "Hay numerosos y diferentes lenguajes de programación pero solo una do
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Hay cantidad de lenguajes de programación, algunas diferencias entre ellos se encuentran su propósito (general o específico para cierto tipo de tareas), en la sintaxis, el sistema de tipos, por los paradigmas de programación que soporta (<abbr title="Programación orientada a objetos">POO</abbr>, imperativo, funcional, ...), otras diferencias están en la librerías disponibles, _frameworks_ o comunidad, sin embargo, la mayoría comparten algunas características por las que se pueden catalogar los lenguajes. En este artículo comentaré algunas de estas características por las que podemos catalogar y agrupar los lenguajes de programación.
 
@@ -79,8 +78,7 @@ La asignación desestructurada permite extraer datos de _arrays_ y objetos usand
 Las tuplas son una estructura de datos formada por varios tipos, en Java 8 puede usarse la librería [vavr][vavr] que añade esto y otras funcionalidades interesantes. En algunos lenguajes puede combinarse con la asignación desestructurada. [Ceylon Tuples](http://ceylon-lang.org/documentation/1.2/tour/sequences/#tuples).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [10 razones para seguir usando Java][blogbitix-81]
 {{% /reference %}}

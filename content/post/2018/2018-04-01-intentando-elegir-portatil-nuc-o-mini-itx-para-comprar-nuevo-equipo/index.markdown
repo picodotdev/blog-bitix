@@ -12,8 +12,7 @@ tags: ["hardware"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="intel.svg" title1="Intel" width1="300" image2="amd.svg" title2="AMD" width2="300" >}}
 

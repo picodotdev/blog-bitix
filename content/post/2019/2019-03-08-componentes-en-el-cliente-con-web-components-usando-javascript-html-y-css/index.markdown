@@ -12,8 +12,7 @@ tags: ["javascript", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" image2="html.svg" title2="HTML" width2="200" >}}
 
@@ -58,8 +57,7 @@ La [compatibilidad de los navegadores de los Web Components](https://developer.m
 {{% sourcecode git="blog-ejemplos/tree/master/WebComponents" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introduction to Web Components](http://www.w3.org/TR/components-intro/)
 * [MDN Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 * [Web Components][web-components]

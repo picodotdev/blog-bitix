@@ -13,8 +13,7 @@ series: ["bilbostack"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Cuando me inscribí en la [BilboStack][bilbostack] para reservar entrada no me llamaron mucho la atención las presentaciones del programa pero ya a una semana de decidir a cuales iba a ir definitivamente he tenido dificultades para elegir y en varios casos me hubiese gustado ir a las de los dos _tracks_. Como años anteriores la BilboStack se ha celebrado en Bilbao en el mismo emplazamiento de la [Universidad de Deusto][universidad-de-deusto] pero volviendo como en años precedentes al edificio de las ingenierías. Otro cambio ha sido que este año fueron cuatro presentaciones por _track_ cuando en años anteriores fueron cinco.
 
@@ -108,7 +107,6 @@ Estos aparatos conectados a internet nos ofrecen una nuevo área posibilidades. 
 El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](https://software.intel.com/es-es/iot/hardware/edison) junto con un servicio en la nube de Azure pero perfectamente podría ser una [Raspberry Pi][raspberrypi] u otra de las numerosas pequeñas placas que están surgiendo en este nuevo mercado. El [código fuente del ejemplo](https://github.com/isabelcabezasm/notwificador) está compartido en un repositorio de GitHub.
 
 {{% reference %}}
-{{< postslinks >}}
 * [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
 {{% /reference %}}
 
@@ -139,7 +137,6 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
 * Y el propio que ha comenzado a desarrollar Naiara, [nakDS](https://github.com/nabaroa/nakDS) que ha compartido en su GitHub
 
 {{% reference %}}
-{{< postslinks >}}
 * [Presentación](https://nabaroa.github.io/erase-una-vez-el-design-system/#/)
 {{% /reference %}}
 
@@ -171,7 +168,6 @@ Un sistema ágil es una aproximación a la incertidumbre. Incertidumbre que siem
 La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se construye lo no necesario, no se prueba lo que no se puede entregar, no se desarrolla lo que no se puede probar y no se especifica lo no se puede desarrollar produce una reducción de tiempos de entrega, hay mayor predictibilidad y elimina rehacer trabajo.
 
 {{% reference %}}
-{{< postslinks >}}
 * [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
 {{% /reference %}}
 
@@ -191,7 +187,6 @@ DDD se divide en patrones estratégicos (_bounded context_) que no tienen códig
 Un ejemplo de aplicación donde han aplicado DDD es [Kreta](https://github.com/kreta/kreta).
 
 {{% reference %}}
-{{< postslinks >}}
 * Libro [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php)
 {{% /reference %}}
 

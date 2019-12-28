@@ -15,8 +15,7 @@ summary: "En los últimos años un producto financiero que se ha puesto de moda 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Llega el final de año y los comerciales de los bancos llaman a sus clientes, cuales comerciales de operadores telefónicos, para ofrecerles un plan de pensiones o para que hagan aportaciones a los mismos. La ventaja fiscal en IRPF que poseen es el principal argumento de venta. Pero como cualquier otro producto financiero hay que analizar sus características de liquidez, comisiones y con números determinar su rentabilidad y compararla con otros productos financieros, además de la situación personal del ahorrador en cuanto a renta disponible, capacidad de ahorro y necesidades económicas futuras próximas.
 
@@ -127,8 +126,7 @@ Salvo en la última década antes de la jubilación, no ya sólo por su rentabil
 Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes y que permita capacidad de ahorro, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Calcular el ahorro fiscal de un plan de pensiones](https://www.economiasimple.net/calcular-el-ahorro-fiscal-de-un-plan-de-pensiones.html)
 * [¿Cómo debo cobrar mi plan de pensiones una vez jubilado?](https://www.economiasimple.net/como-debo-cobrar-mi-plan-de-pensiones-una-vez-jubilado.html)
 * [¿Cuándo puedo recuperar el dinero de un plan de pensiones?](https://www.economiasimple.net/cuando-puedo-recuperar-el-dinero-de-un-plan-de-pensiones.html)

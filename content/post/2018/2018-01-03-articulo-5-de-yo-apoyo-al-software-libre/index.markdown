@@ -14,8 +14,7 @@ series: ["donacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 La última donación que hice a algún proyecto de software libre fue en mayo del 2017, desde entonces he recibido algunos ingresos por la publicidad AdSense que incluyó en el blog. Los ingresos por AdSense están empezando a ser bastantes constantes de al menos 1€ al día con lo que al mes se convierten en 30€, un més bueno en 50€, con lo que cada dos o tres meses recibo un ingreso.
 

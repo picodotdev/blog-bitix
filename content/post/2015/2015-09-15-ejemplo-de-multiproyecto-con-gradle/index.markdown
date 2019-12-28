@@ -13,8 +13,7 @@ summary: "En un proyecto grande podemos tener necesidad de dividir el monolito a
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="gradle.svg" title2="Gradle" width2="200" >}}
 
@@ -73,8 +72,7 @@ El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejem
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Incluir información de la versión en el artefacto distribuible con Gradle][blogbitix-145]

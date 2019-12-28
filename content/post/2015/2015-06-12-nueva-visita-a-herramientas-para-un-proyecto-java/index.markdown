@@ -13,8 +13,7 @@ summary: "Las tecnologías para desarrollar una aplicación son un medio para re
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -112,8 +111,7 @@ Para cada un de estas herramientas en muchos casos tendremos varias alternativas
 ¿Cuales serán las herramientas que formarán el «estado del arte» dentro de otros cuatro años? ¿Cuales sobrevivirán y cuales perecerán en el camino? ¡Apasionante!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Elegir herramientas para un proyecto][elblogdepicodev-62]
 * [Build Your Own Technology Radar](http://nealford.com/memeagora/2013/05/28/build_your_own_technology_radar.html)
 * [Technology Radar](http://www.thoughtworks.com/radar)

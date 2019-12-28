@@ -14,8 +14,7 @@ summary: "El Intel NUC que adquirí hace unos meses no es el ideal para jugar so
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="google-stadia.svg" title2="Google Stadia" width2="200" >}}
 

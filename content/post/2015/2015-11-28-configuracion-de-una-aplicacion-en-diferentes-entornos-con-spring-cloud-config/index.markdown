@@ -14,8 +14,7 @@ summary: "La configuración de una aplicación suele varíar según el entorno e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -72,8 +71,7 @@ Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spr
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew cloudconfig:run, ./gradlew clouddiscovery:run, ./gradlew service:run, ./gradlew client:run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]

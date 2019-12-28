@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-lib
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="redmine.png" title1="Redmine" image2="bitnami.svg" title2="Bitnami" width2="200" >}}
 
@@ -52,8 +51,7 @@ Pero Redmine es más que una herramienta de gestión de tareas, los complementos
 En el siguiente artículo comentaré como instalar el [plugin agile de Redmine](http://www.redminecrm.com/projects/agile/pages/1) con la imagen de Bitnami en VirtualBox de forma que podamos visualizar las tareas en un panel kanban, y de un vistazo y rápidamente conozcamos las tareas que están terminadas, que están en progreso, a punto de empezarse o en la cola de tareas por hacer.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Instalar y usar plugin ágil en Redmine][blogbitix-59]
 * [Introducción e inicio a Drupal][blogbitix-60]
 * [5 plugins gratuitos para instalar a Redmine](http://www.luisblasco.com/5-plugins-gratuitos-instalar-en-redmine/)

@@ -15,8 +15,7 @@ summary: "Hacer una compra informada no es fácil cualquiera que sea el producto
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="dyson.png" title="Dyson" width="300" >}}
 

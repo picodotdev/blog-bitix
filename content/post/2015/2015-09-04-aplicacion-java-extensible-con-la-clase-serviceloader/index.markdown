@@ -12,8 +12,7 @@ summary: "Java ofrece un mecanismo incluido en el propio JDK para hacer las apli
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -52,8 +51,7 @@ Este mecanismo es que el se usa para permitir definir nuevos proveedores de rati
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/ServiceLoader) está en uno de mis repositorios de GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
 {{% /reference %}}
 

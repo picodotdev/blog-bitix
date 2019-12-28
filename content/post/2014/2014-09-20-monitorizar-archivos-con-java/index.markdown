@@ -10,8 +10,7 @@ tags: ["software", "programacion", "java", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -35,8 +34,7 @@ Esta funcionalidad de monitorización de cambios de archivos junto con la [compi
 El código fuente completo puede encontrarse en el [siguiente repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos/tree/master/ConfiguracionJava).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Path](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html)
 * [WatchService](https://docs.oracle.com/javase/7/docs/api/java/nio/file/WatchService.html)
 * [Introducción a NIO.2, el sistema de entrada/salida de Java][blogbitix-310]

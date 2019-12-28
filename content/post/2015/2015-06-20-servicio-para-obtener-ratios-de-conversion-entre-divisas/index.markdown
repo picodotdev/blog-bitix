@@ -13,8 +13,7 @@ summary: "¿Trabajas con importes en diferentes divisas y necesitas hacer conver
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -46,8 +45,7 @@ Hay otras posibilidades como un [servicio proporcionado por el banco central eur
 Si te ha interesado este artículo puede que también te interese [Cómo trabajar con importes, ratios y divisas en Java][blogbitix-90].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Open Exchange Rates](https://openexchangerates.org)
 * [How do I get currency exchange rates via an API?](https://stackoverflow.com/questions/3139879/how-do-i-get-currency-exchange-rates-via-an-api-such-as-google-finance)
 * [European Central Bank Rates](http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml)

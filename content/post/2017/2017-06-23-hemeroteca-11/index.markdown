@@ -15,8 +15,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Desde hace ya tiempo escribir y publicar en el blog es una de las cosas que realmente me gustan y me motivan a pesar de que el blog me requiere mucho tiempo de mi tiempo personal, cada artículo me exige entre 5 y 10 horas de dedicación durante el fin de semana y en mi tiempo libre. Es satisfactorio ver que cada semana y cada mes el número de visitas aumentan a un ritmo rozando los dos dígitos y que también se nota en los [ingresos por publicidad de AdSense que en parte dono][blogbitix-serie-donacion] a alguno de los proyectos de software libre que usó o me parecen interesante apoyarles económicamente aunque sea de forma pequeña.
 

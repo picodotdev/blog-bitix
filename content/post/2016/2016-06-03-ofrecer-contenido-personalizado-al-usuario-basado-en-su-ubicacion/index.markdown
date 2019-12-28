@@ -13,8 +13,7 @@ summary: "Cuando navegamos por internet el navegador envía mútiple informació
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" image3="java.svg" title3="Java" width3="200" >}}
 
@@ -58,8 +57,7 @@ Proporcionar contenido personalizado al usuario probablemente ayuda a mejorar la
 {{< sourcecode git="blog-ejemplos/tree/master/JavaGeolocation/" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Lanzar proceso del sistema con Java][blogbitix-132]
 * [Geolocation software](https://en.wikipedia.org/wiki/Geolocation_software)
 * [W3C Geolocation API](https://en.wikipedia.org/wiki/W3C_Geolocation_API)

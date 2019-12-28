@@ -12,8 +12,7 @@ summary: "Muchos archivos y su contenido son recuperables aún después de elimi
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -44,8 +43,7 @@ Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado se
 Te sorprenderá la cantidad de archivos que son recuperados por Foremost: documentos, imágenes, archivos de texto, ...
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
 * [Cómo eliminar de forma segura archivos con wipe en GNU/Linux][blogbitix-130]

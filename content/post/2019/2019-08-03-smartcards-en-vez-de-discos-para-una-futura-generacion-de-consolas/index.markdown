@@ -15,8 +15,7 @@ summary: "Todo indica que el formato físico de los juegos está a punto de desa
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="xbox.svg" title2="Xbox" width2="200" >}}
 

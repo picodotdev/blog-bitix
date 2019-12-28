@@ -13,8 +13,7 @@ summary: "Comprimir el contenido es de utilidad para aquellos usuarios a los que
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nginx.svg" title1="Nginx" width1="300" image2="apache.svg" title2="Apache HTTPD" width2="200" >}}
 
@@ -73,7 +72,6 @@ Estas funcionalidades las puedes consultar en el resto de artículos de la [seri
 {{< sourcecode git="blog-ejemplos/tree/master/CompresionGzip" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
 {{% reference %}}
-{{< postslinks >}}
 * [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 * [Apache Module mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
 * [How To Optimize Your Site With GZIP Compression](http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)

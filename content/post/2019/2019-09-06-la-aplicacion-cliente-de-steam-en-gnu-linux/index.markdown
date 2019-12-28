@@ -15,8 +15,7 @@ summary: "Durante unos años he estado sin jugar a juegos porque al haberme pasa
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="steam.svg" title1="Steam" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 

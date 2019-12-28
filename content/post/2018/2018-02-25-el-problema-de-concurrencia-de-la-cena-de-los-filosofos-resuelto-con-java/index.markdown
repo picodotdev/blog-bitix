@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -54,8 +53,7 @@ En esta implementación he optado por hacer que el último filósofo en vez de s
 {{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Dining Philosophers in Java 8](https://bruceeckel.github.io/2016/12/29/dining-philosophers-in-java-8/)
 {{% /reference %}}
 

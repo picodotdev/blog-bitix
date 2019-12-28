@@ -13,8 +13,7 @@ summary: "OAuth es un protocolo usado para permitir a una aplicación acceder a 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="keycloak.png" title1="Keycloak" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -103,8 +102,7 @@ Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, en
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [OAuth Getting Started](https://oauth.net/getting-started/)
 * [OAuth Documentation](https://oauth.net/2/)
 * [Keycloak Basics Tutorial Part 1](https://www.youtube.com/watch?v=z-sUzl9eG6M)

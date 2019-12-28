@@ -13,8 +13,7 @@ summary: "Para programar pequeños _scripts_ normalmente se suele emplear el int
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -47,8 +46,7 @@ Para un proyecto de _scripts_ con Java necesitaremos un archivo _build.gradle_ y
 {{< sourcecode git="blog-ejemplos/tree/master/JavaScripts" command="./gradlew runScript1" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Java for everything](http://www.teamten.com/lawrence/writings/java-for-everything.html)
 * [Herramienta de construccion Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle Wrapper][elblogdepicodev-100]

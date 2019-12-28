@@ -10,8 +10,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -41,8 +40,7 @@ En este ejemplo el resultado que veríamos en la consola sería el siguiente con
 Usando los _listeners_ de Hibernate con Spring no necesitamos el archivo que creábamos antes en _/META-INF/services/org.hibernate.integrator.spi.Integrator_. Esto es un ejemplo de prueba de concepto pero perfectamente podría ser aplicado a una necesidad real. En el ejemplo [PlugIn Tapestry][ejemplo-plugin-tapestry] que hice para un [libro sobre el _framework_ de desarrollo web Apache Tapestry][blogbitix-12] puede verse el código completo y funcional de esta implementación.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Autowiring Spring beans in Hibernate/JPA entity listeners](http://guylabs.ch/2014/02/22/autowiring-pring-beans-in-hibernate-jpa-entity-listeners/)
 * [Spring-injected Beans in JPA EntityListeners](http://invariantproperties.com/2013/09/29/spring-injected-beans-in-jpa-entitylisteners/)
 {{% /reference %}}

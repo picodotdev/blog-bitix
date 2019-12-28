@@ -14,8 +14,7 @@ summary: "Los procesadores Intel se han visto afectados por un grave error de se
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El año 2018 ha empezando haciéndose público uno de los peores _bugs_ de seguridad que afecta a absolutamente todos los procesadores [Intel][intel] que esta compañía ha fabricado en la última década, denominado [_Meltdown_ y su variante _Spectre_](https://meltdownattack.com/), el error tiene su propio nombre, logotipo y página web. Un error de diseño en los procesadores que solo se puede corregir reemplazando el microprocesador o modificando los sistemas operativos aunque se especula con una pérdida de rendimiento en ciertas cargas de trabajo, entre un 5% y un 30%. El error es tan grave que permite leer a un programa la memoria del núcleo del sistema operativo que debería estar protegida. En la memoria del _kernel_ residen las claves de acceso a sistemas o datos sensibles que obtenidos y utilizados pueden ocasionar graves problemas de seguridad con consecuencias económicas o de acceso no autorizado a información. Este error es tan grave que deja al viejo conocido [fallo de la división de los Pentium](https://en.wikipedia.org/wiki/Pentium_FDIV_bug) a la altura de chiste. Hace unos meses por si fuera poco se conocía otro error de seguridad en el [Management Engine (ME)](https://en.wikipedia.org/wiki/Intel_Management_Engine) de Intel. 
 
@@ -114,8 +113,7 @@ Intel tiene un problema importante, con AMD y sus Ryzen a buen precio, con buen 
 En el _kernel_ de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux con un Intel Core i5-3210M que posee la característica _pcid_ y esa versión del _kernel_ no he notado ninguna perdida de rendimiento apreciable.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Why Raspberry Pi isn’t vulnerable to Spectre or Meltdown](https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/)
 * [The Intel 80x86 Processor Architecture: Pitfalls for Secure Systems](https://pdfs.semanticscholar.org/2209/42809262c17b6631c0f6536c91aaf7756857.pdf)
 * [An Update on AMD Processor Security](https://www.amd.com/en/corporate/speculative-execution)

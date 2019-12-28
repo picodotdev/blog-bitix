@@ -13,8 +13,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -63,8 +62,7 @@ En el caso de GNU/Linux los directorios de usuario además están localizados de
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [XDG user directories](https://wiki.archlinux.org/index.php/XDG_user_directories)
 * [Change the location of subfolders in your Home partition](https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-the-location-of-subfolders-in-your-home-partition)
 {{% /reference %}}

@@ -14,8 +14,7 @@ summary: "Empresas como Google ofrecen servicios gratuitos que los usuarios pued
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nextcloud.svg" title1="Nextcloud" width1="200" image2="onlyoffice.svg" title2="OnlyOffice" width2="200" >}}
 
@@ -92,8 +91,7 @@ Con las [aplicaciones para _smatphone_](https://nextcloud.com/install/#) los doc
 Hay [ejemplo de archivo de Docker Compose para tener Nexcloud con un certificado](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/with-nginx-proxy/postgres/fpm/docker-compose.yml) creado y renovado de forma automática con Let's Encrypt a través del contenedor [jrcs/letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) y configurando las variables de entorno _LETSENCRYPT\_HOST_, _LETSENCRYPT\_EMAIL_ con el dominio propio para Nexcloud y un correo electrónico.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 {{% /reference %}}
 

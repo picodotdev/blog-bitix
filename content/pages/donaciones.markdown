@@ -10,8 +10,7 @@ footer: true
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 A algunos usuarios parece que les gusta lo que escribo en algunos artículos de todos los que publicó, en [alguna ocasión][blogbitix-242] me lo han manifestado en un comentario. Con que esos usuarios se suscriban al blog ya me siento suficientemente recompensado al ver que cada vez el blog sigue creciendo en visitas. Con el aumento de visitas también aumenta de forma similar los ingresos por la publicidad AdSense.
 

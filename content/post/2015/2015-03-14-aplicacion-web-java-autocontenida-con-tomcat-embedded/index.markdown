@@ -11,8 +11,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -51,8 +50,7 @@ La tendencia actual es que las aplicaciones evolucionen hacia microservicios por
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/TomcatEmbedded) y el [código fuente de la aplicación web](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) usada los puedes encontrar en mi repositorio de GitHub. Finalmente he de decir que la aplicación usada aunque es un ejemplo no es simple (usa [Tapestry][tapestry], [Spring][spring], [Hibernate][hibernate], [Shiro][shiro], [H2][h2]) y a pesar de ello no he tenido ninguna excepción extraña que haya tenido que resolver, con esto quiero decir que usar Tomcat Embedded me ha resultado totalmente fiable.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
 * [Arquitectura orientada a servicios](https://es.wikipedia.org/wiki/Arquitectura_orientada_a_servicios)
 * [Not Your Father's Java: An Opinionated Guide to Modern Java Development, Part 1](http://blog.paralleluniverse.co/2014/05/01/modern-java/)

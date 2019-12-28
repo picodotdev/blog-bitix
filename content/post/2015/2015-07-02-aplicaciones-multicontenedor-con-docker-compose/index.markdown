@@ -14,8 +14,7 @@ summary: "Continuando la serie de artículos sobre Docker, otra de las herramien
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
@@ -79,8 +78,7 @@ docker-compose inicia los contenedores en el orden que hemos indicado en el arch
 En las siguientes semanas publicaré más artículos sobre esta serie de Docker comentando [Docker Hub][docker-hub], [Docker Machine][docker-machine] y explicaré de qué forma nos pueden ser útiles estas otras herramientas.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a elasticsearch][blogbitix-21]
 {{% /reference %}}
 

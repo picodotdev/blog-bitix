@@ -15,8 +15,7 @@ summary: "Salvo que un servicio sea sin estado o _stateless_ los contenedores de
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
@@ -79,8 +78,7 @@ Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm inici
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [REX-Ray Installation](https://rexray.readthedocs.io/en/v0.3.3/user-guide/installation/)
 * [REX-Ray Installation - Docker Machine (VirtualBox)](https://rexray.readthedocs.io/en/v0.3.3/user-guide/installation/#docker-machine-virtualbox)
 * [REX-Ray Storage Providers - VirtualBox](https://rexray.readthedocs.io/en/v0.3.3/user-guide/storage-providers/#virtualbox)

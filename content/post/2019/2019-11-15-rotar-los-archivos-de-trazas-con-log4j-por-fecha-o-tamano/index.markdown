@@ -13,8 +13,7 @@ summary: "La librería log4j 2 es configurable para que si se guardan las trazas
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

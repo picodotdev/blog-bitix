@@ -14,8 +14,7 @@ summary: "Los portales ofrecen una solución para los casos de uso de integraci�
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="apache-pluto.png" title2="Apache Pluto" width2="300" image3="java.svg" title3="Java" width3="200"  >}}
 
@@ -87,8 +86,7 @@ Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.o
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Apache Tapestry Portlet](https://github.com/got5/tapestry5-portlet)
 * [Documentación Apache Tapestry Portlet](http://got5.github.io/tapestry5-portlet/)
 {{% /reference %}}

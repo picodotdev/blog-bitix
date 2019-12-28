@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="pmd.png" title1="PMD" width1="300" >}}
 

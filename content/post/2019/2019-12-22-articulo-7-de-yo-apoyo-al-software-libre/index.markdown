@@ -13,8 +13,7 @@ series: ["donacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="calibre.png" title1="Calibre" width1="300" >}}
 

@@ -12,8 +12,7 @@ summary: "Incluir enlaces a otras web u otras páginas o artículos dentro del m
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
@@ -29,15 +28,14 @@ El día que un enlace cambie basta con que lo modifique en el archivo enlaces si
 
 Esto para los enlaces externos hacia otras páginas pero de forma similar lo aplico a los enlaces internos hacia otras páginas de la bitácora. A cada artículo le asigno un número secuencial según los voy escribiendo y publicando, con esa secuencia creo un identificativo para el artículo y le asocio su URL.
 
-{{< code file="postlinks.html" language="HTML" options="" >}}
+{{< code file="links-posts.html" language="HTML" options="" >}}
 
 Con estos archivos usando la [sintaxis de markdown](https://daringfireball.net/projects/markdown/syntax#link) con <code>\[texto enlace\]\[identificativo-enlace\]</code>, por ejemplo <code>\[¡Hola nuevo mundo!\]\[blogbitix-0\]</code>, puedo hacer referencia a los enlaces con su identificativo y al generar el contenido estas referencias será sustituidas por los enlaces referenciados.
 
 Rastreando la página web o bitácora podremos encontrar y posteriormente corregir los enlaces rotos que encontremos. En el artículo [cómo buscar los enlaces rotos de un sitio web][blogbitix-115] comento varias formas de descubrir estos enlaces que en su momento lo fueron pero han dejado de ser válidos y que proporcionan una mala experiencia al usuario.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hugo][hugo]
 * [Octopress][octopress]
 * [WordPress][wordpress]

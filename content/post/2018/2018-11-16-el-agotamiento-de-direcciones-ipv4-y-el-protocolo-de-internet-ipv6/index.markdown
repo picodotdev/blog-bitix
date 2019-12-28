@@ -13,8 +13,7 @@ summary: "Las direcciones IP de IPv4 que identifican a las computadoras de forma
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El protocolo mediante el cual las computadoras intercambian datos mayoritariamente es el [protocolo IPv4][wikipedia-ipv4]. Este protocolo identifica a cada máquina conectada a internet mediante una dirección IP que es un número de 32 bits normalmente escrito en cuatro grupos decimales para ser más fácilmente recordados por los humanos, por ejemplo, _192.169.1.56_. La dirección IP pública que tenemos asignada la podemos obtener de páginas como [cual-es-mi-ip](https://www.cual-es-mi-ip.net/). Un número binario de 32 bits da un máximo teórico de 4.294.967.296 posibles direcciones IP. En la época en que fué desarrollado las primeras redes de computadoras este número parecía adecuado y suficiente, sin embargo, con el éxito de internet y el crecimiento del número de dispositivos conectados el número de direcciones IP libres ya se ha agotado.
 

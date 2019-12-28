@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -37,8 +36,7 @@ JSON-P es una API de bajo nivel para procesar JSON y un tanto engorrosa de utili
 
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Usar expresiones JSONPath para extraer datos de un JSON en Java][blogbitix-376]
 * [Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java][blogbitix-378]
 {{% /reference %}}

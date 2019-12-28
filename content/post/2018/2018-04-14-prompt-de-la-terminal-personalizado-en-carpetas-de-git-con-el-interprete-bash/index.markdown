@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -43,8 +42,7 @@ Este es el archivo _.bashrc_ completo de la distribución [Arch Linux][archlinux
 La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del _script_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Personalizar el prompt del sistema del intérprete de comandos Bash][blogbitix-316]
 {{% /reference %}}
 

@@ -14,8 +14,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -59,8 +58,7 @@ En otro artículo relacionado con la configuración de los microservicios coment
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew run:configserver --args=\"port=8090\"" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Cloud Config, Git](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_git_backend)
 * [Spring Cloud Config, Vault](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#vault-backend)
 * [Spring Cloud Config, JDBC](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_jdbc_backend)

@@ -10,8 +10,7 @@ tags: ["java", "programacion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -39,8 +38,7 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 Con [Groovy][groovy] además de las _closures_ no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Otros artículos sobre Java][blogbitix-tag-java]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 {{% /reference %}}

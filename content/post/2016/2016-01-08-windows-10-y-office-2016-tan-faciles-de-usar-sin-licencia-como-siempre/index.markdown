@@ -13,8 +13,7 @@ summary: "Comentaba en un artículo que es sorprendente que Microsoft con la cap
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" image3="microsoft-office.svg" title3="Microsoft Office" width3="200" >}}
 

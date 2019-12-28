@@ -16,8 +16,7 @@ summary: "La siguiente pieza que he adquirido para completar lo que será mi ord
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="benq.svg" title1="Benq" width1="300" >}}
 
@@ -319,8 +318,7 @@ Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Calculadora DPI y PPI](https://www.sven.de/dpi/)
 * [HDMI Version Comparison](https://en.wikipedia.org/wiki/HDMI#Version_comparison)
 * [HDMI 1.4](https://es.wikipedia.org/wiki/High-Definition_Multimedia_Interface#HDMI_1.4)

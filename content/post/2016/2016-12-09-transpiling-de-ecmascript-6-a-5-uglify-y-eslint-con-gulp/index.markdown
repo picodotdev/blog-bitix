@@ -12,8 +12,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 

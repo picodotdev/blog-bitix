@@ -12,8 +12,7 @@ summary: "Aunque no es muy utilizada, para tareas de depuración es una ayuda qu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -57,8 +56,7 @@ En el recomendable artículo [_Programming With Assertions_](https://docs.oracle
 El funcionamiento de los _assert_ en [Groovy][groovy] es distinto. En groovy los _assert_ no pueden deshabilitarse, están siempre habilitados y por tanto no hace falta usar el parámetro _-ea_ de la máquina virtual que empleamos en Java, no es un _bug_ es una _feature_. Por el contrario, en Java los _asserts_ se consideran una herramienta en tiempo de desarrollo o depuración y por tanto podemos habilitarlos mientras desarrollamos y no habilitarlos en producción, una de las razones es que los _asserts_ pueden suponer una penalización de rendimiento si las comprobaciones son costosas en tiempo o carga de CPU cosa que no queremos en producción donde el código ya se considera correcto.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Programming With Assertions](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html)
 * [Correct use Java "assert" keyword](https://stackoverflow.com/questions/18907487/correct-use-java-assert-keyword)
 * [When to use an assertion and when to use an exception](https://stackoverflow.com/questions/1957645/when-to-use-an-assertion-and-when-to-use-an-exception)

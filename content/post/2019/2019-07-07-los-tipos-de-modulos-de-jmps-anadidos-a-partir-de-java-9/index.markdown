@@ -13,8 +13,7 @@ summary: "Los módulos de Java dotan a la plataforma de nuevas características.
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

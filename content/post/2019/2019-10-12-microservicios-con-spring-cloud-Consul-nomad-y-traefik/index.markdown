@@ -14,8 +14,7 @@ summary: "Sin entrar a si los microservicios son adecuados o no son adecuados en
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="spring.svg" title2="Spring" width2="200" >}}
 

@@ -14,8 +14,7 @@ summary: "Las funcionalidades de Docker Swarm están incorporadas en Docker para
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 

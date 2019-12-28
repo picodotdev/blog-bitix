@@ -14,8 +14,7 @@ summary: "La tecnología avanza inexorablemente respondiendo a nuevas necesidade
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 La velocidad de carga de una web en el navegador es importante, tanto que añadir unos pocos cientos de milisegundos en un sitio de comercio electrónico afecta en un porcentaje significativo el abandono, la conversión y en definitiva las compras que se realizan. Un tiempo de más de 100ms ya es percibido por los usuarios. Por este motivo además Google lo tiene en cuenta a la hora del posicionamiento en su buscador, con lo que mejorar y tener un tiempo de carga bajo de las páginas producirá más compras y más visitas por tráfico orgánico que se traducirá también en más compras.
 
@@ -53,8 +52,7 @@ En definitiva el protocolo HTTP/2 supone una mejora de rendimiento para los clie
 En el siguiente artículo comentaré cómo poner esto en práctica y [configurar HTTP/2 con el servidor web Nginx, Apache HTTPD y el servidor de aplicaciones Java WildFly o Jetty][blogbitix-129].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
 * [HTTP](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 * [HTTP/2 FAQ](https://http2.github.io/faq/)

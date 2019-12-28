@@ -14,8 +14,7 @@ summary: "Hacer copias de seguridad es una buena práctica para evitar perder in
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -63,8 +62,7 @@ Por supuesto, el contenido de un archivo cifrado será completamente ininteligib
 En el [artículo de EncFS de la wiki de Arch Linux](https://wiki.archlinux.org/index.php/EncFS) está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux][blogbitix-125]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
 * [Cómo eliminar de forma segura archivos con wipe en GNU/Linux][blogbitix-130]

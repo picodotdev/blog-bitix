@@ -14,8 +14,7 @@ summary: "Internet es la revolución de finales del sigo XX e inicio del siglo X
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="amazon.svg" title1="Amazon" width1="400" image2="elcorteingles.svg" title2="El Corte Inglés" width2="400" >}}
 
@@ -58,8 +57,7 @@ El comercio electrónico destruirá muchos empleos al mismo tiempo que creará o
 Mineros que extraen carbón cada vez serán menos, personas que podrían trabajar en energías renovables solar fotovoltaica o térmica, eólica o marítima podría ser mucha más. No será porque España no tenga sol, costa o viento solo hace falta voluntad política que cree en el sector una legislación estable con condiciones adecuadas para la inversión y el desarrollo, todo lo contrario de tratar de poner [impuestos al sol](https://www.huffingtonpost.es/2015/10/09/impuesto-al-sol-autoconsumo-energetico_n_8267900.html) que perpetúen el oligopolio de unas pocas eléctricas y lastre el desarrollo. El mismo potencial tiene el sector tecnológico.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [El Corte Inglés pisa los talones a Amazon en España](https://cincodias.elpais.com/cincodias/2017/04/10/companias/1491837961_255161.html)
 * [¿Por qué se queja El Corte Inglés de Amazon?](https://www.elmundo.es/economia/empresas/2018/04/18/5ad64286e2704e366b8b4988.html)
 * [El Corte Inglés se planta frente a Amazon: 'No puede ser que nosotros paguemos impuestos y ellos no"](https://www.elmundo.es/economia/empresas/2018/03/06/5a9ec40e468aeb267e8b45de.html)

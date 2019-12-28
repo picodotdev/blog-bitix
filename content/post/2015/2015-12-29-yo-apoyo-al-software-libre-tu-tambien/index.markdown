@@ -14,8 +14,7 @@ summary: "Hay múltiples formas con las que colaborar con el software libre, una
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="fsf.png" title1="Free Software Foundation" image2="fsfe.png" title2="Free Software Foundation Europe" image3="gnu.svg" title3="GNU" width3="200" >}}
 

@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="mongodb.svg" title1="MongoDB" width1="400" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -49,8 +48,7 @@ En el libro [MongDB in Action](https://amzn.to/2qvYqqU) comentan más detalladam
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación MongoDB](https://docs.mongodb.com/)
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]

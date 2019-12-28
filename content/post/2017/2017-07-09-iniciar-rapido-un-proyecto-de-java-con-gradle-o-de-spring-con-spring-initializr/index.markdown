@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gradle.svg" title1="Gradle" width1="200" image2="spring.svg" title2="Spring" width2="200" image3="java.svg" title3="Java" width3="200" >}}
 

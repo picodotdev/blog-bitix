@@ -15,8 +15,7 @@ summary: "Java 11 es la primera versión de soporte extendido publicada o LTS ba
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -125,8 +124,7 @@ Oracle ya no ofrece el entorno de ejecución JRE ni versiones de 32 bits para Wi
 Las anteriores son las funcionalidades que he considerado más destacables para todos los usuarios., También hay otras funcionalidades añadidas, soporte eliminado para funciones específicas o de funcionamiento interno.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducing Java SE 11](https://developer.oracle.com/java/java11)
 * [JDK 11 Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html)
 * [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/)

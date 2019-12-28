@@ -13,8 +13,7 @@ summary: "El tipado seguro y el sistema de tipos es sin duda una de las caracter
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="bytebuddy.png" title1="Byte Buddy" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -69,8 +68,7 @@ En el [tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial) encontraremos m√
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoByteBuddy" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Byte Buddy][bytebuddy]
 * [Tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial)
 * [Java Magazine Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter)

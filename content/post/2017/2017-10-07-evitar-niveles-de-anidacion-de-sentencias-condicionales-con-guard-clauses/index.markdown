@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -30,8 +29,7 @@ En vez de crear este nivel de anidación y crear varios flujos distintos por don
 También es una recomendación que los métodos solo tengan una sentencia _return_, de hecho en la enseñanza de programación se explica pero para estos casos de comprobaciones la ventaja de no tener varios _if_ anidados es justificable tener varios _return_, el código queda más legible.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Replace Nested Conditional with Guard Clauses](https://refactoring.com/catalog/replaceNestedConditionalWithGuardClauses.html)
 {{% /reference %}}
 

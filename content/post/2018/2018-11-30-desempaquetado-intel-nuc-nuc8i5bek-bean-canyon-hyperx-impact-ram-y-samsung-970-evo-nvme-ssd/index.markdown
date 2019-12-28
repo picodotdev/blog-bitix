@@ -16,8 +16,7 @@ summary: "Al fin tengo nuevo equipo que cumple con los requisitos que le demanda
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="intel.svg" title1="Intel" width1="300" image2="hyperx.svg" title2="HyperX" width2="300" image3="samsung.svg" title3="Samsung" width3="300" >}}
 
@@ -422,8 +421,7 @@ Y el que tengo ahora.
 > Software. Hardware. Complete.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Intel Download Center](https://downloadcenter.intel.com/)
 * [Intel Download Center - Intel NUC](https://downloadcenter.intel.com/product/98414/Mini-PCs)
 * [Intel NUC8i5BEK/NUC8i5BEH Brief](https://www.intel.es/content/www/es/es/products/docs/boards-kits/nuc/nuc8i5bek-nuc8i5beh-brief.html)

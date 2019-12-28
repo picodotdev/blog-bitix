@@ -13,8 +13,7 @@ summary: "Dada la popularidad de Java es difícil que no encontremos en el propi
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="gnu.svg" title2="GNU" width2="200" image3="linux.svg" title3="Linux" wdth3="200" >}}
 
@@ -38,8 +37,7 @@ Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaProcess" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Javadoc ProcessBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html)
 * [Javadoc Process](https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html)
 * [Javadoc Runtime](https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html)

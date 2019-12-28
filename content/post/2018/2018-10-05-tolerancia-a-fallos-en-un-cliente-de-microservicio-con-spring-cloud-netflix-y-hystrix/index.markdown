@@ -14,8 +14,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -72,8 +71,7 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [CircuitBreaker](https://www.martinfowler.com/bliki/CircuitBreaker.html)
 * [Circuit Breaker: Hystrix Clients](http://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.0.1.RELEASE/single/spring-cloud-netflix.html#_circuit_breaker_hystrix_clients)
 * [Hyxtrix Configuration (1)](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica#configuration)

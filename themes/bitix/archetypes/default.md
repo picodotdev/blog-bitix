@@ -18,8 +18,6 @@ draft: true
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
@@ -60,8 +58,6 @@ draft: true
 {{% sourcecode git="blog-ejemplos/tree/master/" command="" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
 *
 {{% /reference %}}
 

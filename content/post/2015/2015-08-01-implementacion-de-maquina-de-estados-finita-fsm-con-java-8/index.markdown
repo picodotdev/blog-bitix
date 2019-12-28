@@ -14,8 +14,7 @@ note: "<strong>Nota</strong>: Cuando busqué no encontré pero resulta que entre
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -62,8 +61,7 @@ Otra posibilidad a las máquinas de estados son las herramientas de [procesos de
 El [código fuente completo](https://github.com/picodotdev/blog-ejemplos/tree/master/Machinarum) está disponible en mi repositorio de ejemplos en GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Statemachine][spring-statemachine]
 * [Stateless4j](https://github.com/oxo42/stateless4j)
 * [Recommended FSM (Finite State Machine) Library for Java](https://stackoverflow.com/questions/10875317/recommended-fsm-finite-state-machine-library-for-java)

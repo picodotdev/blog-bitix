@@ -13,8 +13,7 @@ tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -59,8 +58,7 @@ Los comandos anteriores aunque cambiando los valores de los puertos o dirección
 En algunos casos como usando una [Raspberry Pi][raspberrypi] sin interfaz gráfica para minimizar el consumo de recursos es necesario conocer o consultar los comandos de ufw.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Ubuntu UFW](https://help.ubuntu.com/community/UFW)
 {{% /reference %}}
 

@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -43,8 +42,7 @@ En el siguiente [documento con varios de los problemas de concurrencia y sincron
 {{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Cigarette smokers problem](https://en.wikipedia.org/wiki/Cigarette_smokers_problem)
 * [Introducción sobre la programación concurrente en Java][blogbitix-246]
 {{% /reference %}}

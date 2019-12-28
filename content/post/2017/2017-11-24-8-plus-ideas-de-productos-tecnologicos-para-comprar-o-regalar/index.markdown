@@ -14,8 +14,7 @@ summary: "Los productos de tecnología de consumo son regalos siempre bien recib
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Los productos tecnológicos son de los más codiciados para regalar o comprar a otras personas o a uno mismo en cumpleaños, fechas señaladas de descuentos como días sin IVA que algunas grandes superficies comerciales realizar un par de veces al año, en la época previa a navidades que empieza ya en el _Black Friday_ y poco después continua con el _Cyber Monday_ seguido de la época de navidades con _Papá Noel_ o equivalentes regionales y reyes magos. En el siguiente artículo incluyo una selección de productos de diferentes categorías, gamas y precios entre los más deseados.
 

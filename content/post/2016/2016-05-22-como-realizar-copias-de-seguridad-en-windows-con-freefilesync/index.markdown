@@ -12,8 +12,7 @@ summary: "Realizar copias de seguridad cada cierta frecuencia nos salvará de pe
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="freefilesync.png" title1="FreeFileSync" >}}
 
@@ -70,8 +69,7 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 La ventaja realizar un copia de los archivos directamente sin comprimir o cifrar es que no necesitaremos ningún programa adicional para acceder a ellos en caso de necesidad. Otros programas de copias de seguridad son capaces de guardar los datos cifrados y comprimidos pero para recuperar los datos necesitaremos esos programas. Dependiendo de los requerimientos para la copia de seguridad podemos [cifrar la unidad USB externa con BitLocker en Windows](http://windows.microsoft.com/es-es/windows/protect-files-bitlocker-drive-encryption#1TC=windows-8) y [cifrar la unidad USB externa con dm-crypt y LUKS en GNU/Linux][blogbitix-128].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Copia de seguridad con rsync][elblogdepicodev-156]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]

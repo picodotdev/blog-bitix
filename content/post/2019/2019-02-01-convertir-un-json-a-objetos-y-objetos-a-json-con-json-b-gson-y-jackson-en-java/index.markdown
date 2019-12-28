@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -43,8 +42,7 @@ Para añadir tipos de datos que no están entre los básicos de JSON como es una
 {{% sourcecode git="blog-ejemplos/tree/master/JavaJson" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [JSON-B Users Guide](http://json-b.net/users-guide.html)
 {{% /reference %}}
 

@@ -13,8 +13,7 @@ summary: "Spark _framework_ es un _microframework_ web para Java que además hac
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="sparkjava.png" title1="Spark" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -38,8 +37,7 @@ En la dirección http://127.0.0.1:4567/hola obtendremos el mensaje de este ejemp
 Otra opción usando Java u otros varios lenguajes para los que se ofrece soporte, basado en la programación reactiva y más escalable si llegamos a ese punto de necesidad es [Vert.x que describo y muestro en otro ejemplo básico][blogbitix-120].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Ejemplo sencillo de servicio web con RESTEasy][elblogdepicodev-142]
 * [Cliente javascript y java de servicio web REST con RESTEasy ][elblogdepicodev-143]
 * [Devolver xml, json o html con RESTEasy ][elblogdepicodev-144]

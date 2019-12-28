@@ -14,8 +14,7 @@ summary: "jOOQ es una alternativa a Hibernate que devuelve la base de datos a pr
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 

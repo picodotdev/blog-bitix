@@ -11,8 +11,7 @@ tags: ["java", "software-libre", "planeta-codigo", "planeta-linux", "programacio
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Hay cantidad de información para aprender y en diferentes formatos desde libros si queremos tener un conocimiento más profundo sobre alguna materia pasando por presentaciones en [SlideShare][slideshare] o [SpeakerDeck][speakerdeck] que aún comentando los detalles de forma escueta sirven para conocer los detalles importantes sobre un tema, charlas de hangouts que quizá requieran menos esfuerzo y tiempo por nuestra parte que leer un libro como las compartidas en [desarrolloweb](https://www.desarrolloweb.com/) o en [Virtual JUG](http://virtualjug.com/), blogs con artículos que explican un detalle específico (aquí hay una buena [colección de bitácoras sobre java](https://www.baeldung.com/java-blogs)), [katayunos y merendojos](http://katayunos.com/) en los que se practican técnicas de programación sobre un problema conocido, sencillos, de los que ya se conoce su solución y que se realizan junto a otras personas, convenciones como [Codemotion](http://www.codemotion.es/), [PyCon](https://es.pycon.org/), [Greach](https://greachconf.com/), [LibreCon](http://www.librecon.io/), [CAS](http://agile-spain.org), [Spring I/O](http://www.springio.net/), [ApacheCon](http://apachecon.com/), [BilboStack][bilbostack]... En estas conveciones se hacen presentaciones de alrededor de una hora para los asistentes, además siendo presenciales permiten reunirse con otras personas con los mismos intereses y de las que algunas los vídeos están disponibles en YouTube... en definitiva, para aprender lo único que se necesita es tiempo y motivación que no es poco después de una jornada laboral que ocupa la mayor parte de nuestro tiempo.
 
@@ -69,8 +68,7 @@ En una [pregunta y respuesta de stackoveflow](https://stackoverflow.com/question
 De la lista de este artículo el que me falta por leer es Code Complete el resto por mi propia experiencia recomiendo leerlos incluso más de una vez dependiendo de lo bien que absorbamos el conocimiento recogido en ellos y más tarde lo tengamos presente mientras trabajamos y programamos. Estos son de los libros más mencionados en artículos similares a este como buena documentación que leer sobre programación, si los leemos y nos quedamos con un porcentaje aunque sea pequeño ya mejoraremos bastante, también es probable que algunas cosas de las comentadas en los libros ya las tengamos presentes con la experiencia que hemos adquirido por nosotros mismos, en estos libros ese conocimiento adquirido y más comprobaremos que está documentado. ¡Feliz lectura!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Novedades de Java 8][blogbitix-17]
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-patrones-de-diseno-en-la-programacion]
 * [Ejercicios (katas) para mejorar habilidades de programación practicando][blogbitix-56]

@@ -15,8 +15,7 @@ series: ["bilbostack"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 La octava edición de la [BilboStack][bilbostack] sigue fiel a su cita en el calendario a finales de enero como en anteriores ocasiones. Tampoco cambia el formato de cuatro presentaciones en dos _tracks_ simultáneos y de ser únicamente de media jornada a la mañana par disfrutar a la tarde del _networking_, comida y de Bilbao para aquellos que así quieran y aprovechar el viaje si se viene de fuera. Tampoco cambia el recinto como en la edición anterior de el Palacio Euskalduna, con un aforo bastante amplio aún así las entradas han llegado a agotarse y no han quedado prácticamente sitios libres en la sala A3.
 
@@ -211,8 +210,7 @@ Hay funcionalidades que no forman parte del núcleo del negocio. Estas funcional
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [BilboStack 2019 por _Vicenç García-Altés_](https://medium.com/@vgaltes/bilbostack-2019-78553b19af25)
 * [Bilbostack 2019. Nunca defrauda. por _Azahara Fernández Guizán_](https://medium.com/@azaharafernandezguizan/bilbostack-2019-nunca-defrauda-5b0eb785932e)
 * [Bilbostack 2019 por _Eduardo Ferro Aldama_](https://www.eferro.net/2019/01/bilbostack.html)

@@ -11,8 +11,7 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -38,8 +37,7 @@ El código completo de este ejemplo del caso de Tapestry está en un [repositori
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Más artículos sobre Apache Tapestry][blogbitix-tag-tapestry]
 {{% /reference %}}

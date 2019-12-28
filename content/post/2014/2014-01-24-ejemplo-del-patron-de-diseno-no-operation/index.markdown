@@ -11,8 +11,7 @@ tags: ["java", "programacion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -38,8 +37,7 @@ Y finalmente el caso de prueba donde puede verse que no hay ningún if ya que no
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation) de su repositorio de GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Código fuente del ejemplo del patrón de diseño No Operation](https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation)
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
 * [Ejemplo del patrón de diseño Command y programación concurrente en Java][elblogdepicodev-101]

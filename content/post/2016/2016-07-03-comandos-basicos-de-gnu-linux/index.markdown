@@ -14,8 +14,7 @@ summary: "Conociendo los comandos y sus opciones podemos realizar una tarea que 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -79,8 +78,7 @@ En sus respectivas páginas de manual, <code>man [comando]</code>, podemos conoc
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Manual GNU Coreutils](https://www.gnu.org/software/coreutils/manual/coreutils.html)
 * [Manual de referencia bash](https://www.gnu.org/software/bash/manual/bashref.html)
 * [20 Useful Commands for Linux Newbies](http://www.tecmint.com/useful-linux-commands-for-newbies/)

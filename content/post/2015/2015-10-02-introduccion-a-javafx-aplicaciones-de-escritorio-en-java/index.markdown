@@ -13,8 +13,7 @@ summary: "Java tiene una fuerte presencia en el ámbito de desarrollo para aplic
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -79,8 +78,7 @@ Hace ya mucho tiempo cuando programaba alguna aplicación de escritorio con Swin
 GNOME proporciona una librería de _bindings_ para el lenguaje Java sin embargo teniendo JavaFX me parece mejor esta última ya que la aplicación será más portable además de estar mejor soportada, ya con los propios ejemplos de GNOME con Java he obtenido errores por lo que parecían incompatibilidades entre versiones.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [JavaFX Get Started Tutorial](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/hello_world.htm)
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 {{% /reference %}}

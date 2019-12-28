@@ -13,8 +13,7 @@ summary: "Por seguridad, por auditoría o histórico de datos una aplicación pu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

@@ -12,8 +12,7 @@ series: ["juegos"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnome.svg" title1="GNOME" width1="200" >}}
 

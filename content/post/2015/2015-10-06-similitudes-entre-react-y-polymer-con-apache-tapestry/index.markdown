@@ -12,8 +12,7 @@ summary: "React y Polymer son dos librerías JavaScript para construir interface
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -42,8 +41,7 @@ Hace meses escribí un [libro sobre Apache Tapestry][blogbitix-12] que puedes de
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Ejemplo lista de tareas con React y Backbone][blogbitix-20]
 * [Aprende a crear Web Components con Polymer](https://platzi.com/blog/web-components-polymer/)
 {{% /reference %}}

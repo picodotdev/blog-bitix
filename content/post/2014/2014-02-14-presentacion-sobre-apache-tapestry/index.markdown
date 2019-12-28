@@ -11,8 +11,7 @@ tags: ["java", "programacion", "tapestry", "software", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 

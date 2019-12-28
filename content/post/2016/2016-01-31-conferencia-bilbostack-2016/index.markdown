@@ -13,8 +13,7 @@ series: ["bilbostack"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="bilbostack.png" title="BilboStack" width="300" >}}
 
@@ -252,8 +251,7 @@ Sigues pudiendo saciar tu curiosidad con algunos vídeos de YouTube de [elComite
 De nuevo hay que dar las gracias a sus organizadores, ponentes, Universidad de Deusto, asistentes y a la guerrera minoría de asistentas. Hasta el 2017, no te la pierdas.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Mi primer BilboStack](https://www.ricardofelix.es/mi-primer-bilbostack/)
 * [Mi experiencia en la BilboStack](https://www.genbetadev.com/formacion/mi-experiencia-en-la-bilbostack)
 {{% /reference %}}

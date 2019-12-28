@@ -12,8 +12,7 @@ tags: ["apple", "opinion","planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apple.svg" title1="Apple" width="300" >}}
 

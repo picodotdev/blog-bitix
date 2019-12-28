@@ -13,8 +13,7 @@ tags: ["planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="html.svg" title1="HTML" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -58,8 +57,7 @@ No siempre se desea codificar un dato simple según el contexto, a veces se quie
 Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase [PreparedStatement](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html) con parámetros. 
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [OWASP Java Encoder Project](https://www.owasp.org/index.php/OWASP_Java_Encoder_Project)
 * [OWASP Java HTML Sanitizer Project](https://www.owasp.org/index.php/OWASP_Java_HTML_Sanitizer_Project)
 * [Cross Site Tracing (XST)](https://www.owasp.org/index.php/Cross_Site_Tracing)

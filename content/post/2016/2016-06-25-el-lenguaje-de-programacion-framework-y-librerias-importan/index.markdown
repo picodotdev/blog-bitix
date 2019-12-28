@@ -12,8 +12,7 @@ tags: ["opinion", "planeta-codigo", "planeta-linux", "programacion", "software"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Para programar hay una abundancia tremenda de lenguajes, librerías, _frameworks_, tecnologías, etc... disponibles para desarrollar un proyecto. Esto es muy bueno ya que podremos elegir la combinación de cualquiera de ellas que más se ajuste a las necesidades del proyecto, las que mejor conozcamos ya o según nuestras preferencias en base a sus características incluyendo su comunidad, documentación, si tiene un desarrollo activo, fecha de la última versión u otros motivos que consideremos. El lado malo de esta abundancia es que requiere analizar seguramente no todas pero al menos las más nombradas, más usadas, con mejor documentación o con un mantenimiento activo. Por la cantidad de opciones dicha tarea de análisis requiere tiempo y esfuerzo que no debe abrumarnos considerando que cualquiera de ellas vale.
 

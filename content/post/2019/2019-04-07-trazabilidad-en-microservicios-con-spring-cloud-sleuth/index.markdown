@@ -15,8 +15,7 @@ summary: "Los microservicios son independientes pero se llaman unos a otros, sue
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -60,8 +59,7 @@ En los proyectos hay que incluir la dependencia para Sleuth en la herramienta de
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin](https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/)
 * [Distributed Tracing : Latency Analysis for Your Microservices](https://content.pivotal.io/springone-platform-2017/distributed-tracing-latency-analysis-for-your-microservices-grzejszczak-krishna)
 {{% /reference %}}

@@ -13,8 +13,6 @@ summary: "Para generar documentos PDF sencillos en Java está la librería PDFBo
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -64,8 +62,6 @@ Los siguientes enlaces son documentación a una guía de inicio, una guía compl
 {{% sourcecode git="blog-ejemplos/tree/master/JasperReports" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
 * [Example on how to generate a simple pdf report with JasperReports](https://gist.github.com/rponte/5044469)
 {{% /reference %}}
 

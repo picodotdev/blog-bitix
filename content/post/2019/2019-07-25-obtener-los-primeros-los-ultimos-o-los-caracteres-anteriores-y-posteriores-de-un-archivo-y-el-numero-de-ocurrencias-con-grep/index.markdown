@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -43,8 +42,7 @@ Para contar el número de coincidencias en el archivo se puede combinar el coman
 En este caso el XML es muy pequeño y un editor de texto es capaz de abrirlo perfectamente pero un archivo de texto a partir unas cuantas decenas de MiB se le atraganta a los editores incluso a los basados en texto y en el caso querer hacer comprobaciones una buena alternativa o la única es recurrir a los comandos _head_, _tail_, _grep_ y _wc_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Grep characters before and after match?](https://stackoverflow.com/questions/8101701/grep-characters-before-and-after-match)
 {{% /reference %}}
 

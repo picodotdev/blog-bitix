@@ -13,8 +13,7 @@ summary: "Usando los comandos expuestos en este artículo y con OpenSSL podemos 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
@@ -107,8 +106,7 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. Pero eso será tema para la entrada [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [OpenSSL][openssl]
 * [The Most Common OpenSSL Commands](http://www.sslshopper.com/article-most-common-openssl-commands.html)
 {{% /reference %}}

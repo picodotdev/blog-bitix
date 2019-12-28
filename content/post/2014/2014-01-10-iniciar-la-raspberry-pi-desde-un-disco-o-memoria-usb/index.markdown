@@ -12,8 +12,7 @@ summary: "La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="raspberrypi.svg" title="Raspberry Pi" width="200" >}}
 
@@ -58,8 +57,7 @@ Los elementos básicos para usar este miniordenador son la [placa de la Raspberr
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html)
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte II, programas) ](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch_22.html)
 * [Raspberry Pi como Media Center con GeeXboX][blogbitix-5]

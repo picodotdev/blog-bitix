@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -38,8 +37,7 @@ El resultado es el siguiente:
 {{% sourcecode git="blog-ejemplos/tree/master/JavaLog4j" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]
 * [Los cuantificadores greedy, reluctant y possessive en expresiones regulares][blogbitix-257]
 * [Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)

@@ -14,8 +14,7 @@ summary: "Ya tengamos un sitio web, una bitácora, o una aplicación web es reco
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="html.svg" title="HTML" width="200" >}}
 
@@ -52,8 +51,7 @@ Lo anterior nos sirve para detectar los enlaces rotos que tenemos en nuestro sit
 Al mismo tiempo [validar el HTML](https://validator.w3.org/) y [validar los estilos CSS](http://jigsaw.w3.org/css-validator/) respecto a su especificación también mejorarán el código del sitio web.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [How to find broken links on a website](https://stackoverflow.com/questions/65515/how-to-find-broken-links-on-a-website)
 * [Check broken links using wget as a spider](http://www.commandlinefu.com/commands/view/8234/check-broken-links-using-wget-as-a-spider)
 {{% /reference %}}

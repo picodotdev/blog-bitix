@@ -15,8 +15,7 @@ summary: "Tener una caldera es cara, bien por el coste fijo del gas tanto por el
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="fleck.jpg" title1="Fleck" width1="300" >}}
 

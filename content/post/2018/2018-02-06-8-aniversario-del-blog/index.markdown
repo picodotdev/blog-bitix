@@ -15,8 +15,7 @@ series: ["aniversario"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 

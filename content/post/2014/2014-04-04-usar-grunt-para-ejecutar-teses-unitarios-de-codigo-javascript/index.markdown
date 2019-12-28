@@ -11,8 +11,7 @@ tags: ["software", "programacion", "javascript", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="grunt.png" title="Grunt" width="200" >}}
 
@@ -56,8 +55,7 @@ Al hacer esta entrada de forma que las pruebas se ejecuten con Grunt he movido l
 Aún tengo otra entrada preparada sobre javascript que es el mismo ejemplo de la lista de tareas pero en vez de usando las vistas de Backbone o Marionette usando [React](https://reactjs.org/). El [código fuente completo de este ejemplo sobre pruebas unitarias y Marionette](https://github.com/picodotdev/elblogdepicodev/tree/master/MarionetteREST) está en [mi regpostorio de GitHub](https://github.com/picodotdev).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción y ejemplo de RequireJS](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
 * [Introducción y ejemplo de Mustache](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
 * [Logging en JavaScript con log4javascript](https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)

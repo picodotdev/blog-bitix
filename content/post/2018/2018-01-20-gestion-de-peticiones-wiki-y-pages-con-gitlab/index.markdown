@@ -13,8 +13,7 @@ series: ["gitlab"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 

@@ -14,8 +14,7 @@ tags: ["opinion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="sun-microsystems.svg" title1="Sun Microsystems" width1="300" image2="oracle.svg" title2="Oracle" width2="300" >}}
 
@@ -60,8 +59,7 @@ Por afinidad hacia el _open source_ con su cultura de empresa la que hubiese pre
 Sun Microsystems dejó una larga herencia que dura aún en día y frases legendarias y visionarias como _«the network is the computer»_ atribuida a [John Gage](https://en.wikipedia.org/wiki/John_Gage) o _«write once, run anywhere»_ de Java.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Sun Microsystems][sun-microsystems]
 * [Sun acquisition by Oracle](https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle)
 * [Write once, run anywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)

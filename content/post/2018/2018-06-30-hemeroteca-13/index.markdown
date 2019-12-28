@@ -14,8 +14,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 artículos sobre la temática habitual de esta bitácora como programación, software libre, [GNU][gnu]/[Linux][linux] algunos de opinión relacionados con la tecnología. Las visitas e ingresos de AdSense no han crecido tanto como en ocasiones anteriores pero se han mantenido a un nivel similar sobre los 30K páginas vistas y los 30€ de ingresos en AdSense que no están nada mal.
 

@@ -15,8 +15,7 @@ summary: "Muchas bitácoras perecen y son abandonadas al cabo de un par de años
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 

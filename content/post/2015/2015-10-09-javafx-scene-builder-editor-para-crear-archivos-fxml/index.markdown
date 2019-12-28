@@ -13,8 +13,7 @@ summary: "Con la aplicación JavaFX Scene Builder podemos construir la interfaz 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -84,8 +83,7 @@ En la propia página web de JavaFX, en el libro <a href="https://www.amazon.es/g
 En definitiva con la aplicación JavaFX Scene Builder y los archivos FXML construir la interfaces gráficas de una aplicación de escritorio Java es bastante más simple que lo era antiguamente. JavaFX además ofrece posibilidades que antes no eran posibles en Swing y AWT como rotar componentes, un componente visualizador de HTML, soporte para aceleración gráfica por hardware y más cosas. Después de haber conocido en algo más detalle JavaFX me quedo con una buena sensación. Como muestra de la flexibilidad de cambio de los estilos de los controles el proyecto [JFoenix](http://www.jfoenix.com/) les aplica el _Material Desing_ de las aplicaciones [Android][android] de Google.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a JavaFX][blogbitix-100]
 * [FXML Get Started](https://docs.oracle.com/javafx/2/fxml_get_started/jfxpub-fxml_get_started.htm)
 * [Introduction to FXML](https://docs.oracle.com/javafx/2/api/javafx/fxml/doc-files/introduction_to_fxml.html)

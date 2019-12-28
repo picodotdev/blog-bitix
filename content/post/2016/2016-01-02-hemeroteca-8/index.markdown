@@ -16,8 +16,7 @@ summary: "Seis meses más de artículos la mayoría sobre programación en Java 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El 2015 pasó, a mi muy rápido. En cuanto a la bitácora toca recapitular cuáles han sido los artículos que he escrito, de que temas principales he hablado, un poco cómo han evolucionado las visitas y que tengo preparado para publicar durante los siguientes meses ya de 2016.
 

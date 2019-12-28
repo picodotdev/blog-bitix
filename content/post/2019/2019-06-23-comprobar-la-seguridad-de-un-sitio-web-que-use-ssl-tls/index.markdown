@@ -13,8 +13,7 @@ series: ["web"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Aunque un sitio web no trate datos sensibles como tarjetas de crédito o datos personales es muy recomendable que use el protocolo seguro HTTPS para proporcionar cifrado entre el servidor y el navegador del usuario para dotar de confidencialidad a las comunicaciones a la vez que evitar modificaciones por terceras personas de los datos transmitidos. Además, el buscador Google lo tiene en cuenta para el SEO o posicionamiento en su buscador.
 

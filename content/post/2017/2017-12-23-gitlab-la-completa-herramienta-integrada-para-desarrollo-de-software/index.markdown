@@ -15,8 +15,7 @@ summary: "Al desarrollar software una herramienta de control de versiones como G
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 

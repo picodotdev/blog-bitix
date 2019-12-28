@@ -13,8 +13,7 @@ summary: "Tanto en un servidor web como de aplicaciones podemos hacer que la com
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
@@ -69,8 +68,7 @@ Apache es uno de los servidores web más utilizados para servir sitios web en in
 {{< code file="httpd.conf" language="plaintext" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Tomcat](https://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html)
 * [JBoss](http://docs.jboss.org/jbossweb/7.0.x/ssl-howto.html)
 * [WildFly (Undertow)](https://community.jboss.org/message/824152#824152)

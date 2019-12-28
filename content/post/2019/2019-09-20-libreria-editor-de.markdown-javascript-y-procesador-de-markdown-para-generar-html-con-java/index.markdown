@@ -13,8 +13,7 @@ tags: ["java", "javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -38,8 +37,7 @@ Una vez que se obtiene el texto en formato _markdown_ en algún momento al visua
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Markdown Guide](https://www.markdownguide.org/getting-started)
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax)
 {{% /reference %}}

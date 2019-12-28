@@ -11,8 +11,7 @@ tags: ["planeta-linux", "planeta-codigo", "software-libre", "hardware", "softwar
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="200" image2="dnie.jpg" title2="DNIe" width2="200" >}}
 
@@ -73,8 +72,7 @@ Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos 
 En definitiva, el DNIe puede evitarnos algún viaje a alguna ventanilla y podemos hacer el trámite las 24 horas sin hacer colas.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Configuración del DNI electrónico en Mozilla / Firefox](http://web.cenatic.es/dnie/index.php?option=com_content&view=article&id=104&Itemid=139)
 * [Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux][elblogdepicodev-183]
 * [Enviar correos electrónicos firmados con el DNIe y Evolution][blogbitix-2]

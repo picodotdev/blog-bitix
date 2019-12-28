@@ -15,8 +15,7 @@ summary: "Si en Java 8 la característica más destacada fue la incorporación a
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -134,8 +133,7 @@ Para finalizar este artículo incluyo un vídeo sobre los módulos que comenta l
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoJava9" command="./java.sh" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Java 9: It's Heeeere](https://dzone.com/articles/java-9-its-heeeere)
 * [Java Platform, Standard Edition Oracle JDK 9 Migration Guide](https://docs.oracle.com/javase/9/migrate/toc.htm)
 * [Java 9 modules – JPMS basics](https://jaxenter.com/java-9-modules-jpms-basics-135885.html)

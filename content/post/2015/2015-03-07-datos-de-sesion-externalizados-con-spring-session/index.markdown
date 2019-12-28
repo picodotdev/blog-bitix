@@ -12,8 +12,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -58,8 +57,7 @@ En el momento de escribir este artículo Spring Session es un proyecto reciente 
 Otras posibilidades ofrecidas por Spring Session son múltiples sesiones en la misma instancia del navegador y soporte para aplicaciones REST y WebSocket. Para aumentar la seguridad se puede [aumentar el tamaño del identificativo de la sesión almacenada en su _cookie_][blogbitix-397].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Session][spring-session]
 * [Simple Session-Sharing in Tomcat Cluster Using the Session-in-Cookie](https://shinesolutions.com/2012/12/18/simple-session-sharing-in-tomcat-cluster-using-the-session-in-cookie-pattern/)
 * [Tomcat Cluster](http://tomcat.apache.org/tomcat-8.0-doc/cluster-howto.html)

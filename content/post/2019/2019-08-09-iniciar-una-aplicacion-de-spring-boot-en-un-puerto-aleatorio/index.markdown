@@ -14,8 +14,7 @@ summary: "En una arquitectura basada en microservicios es normal iniciar varias 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -38,8 +37,7 @@ Sin embargo, por algún motivo con Eureka los servicios no se registran en el pu
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Boot Random Server Port](https://javadeveloperzone.com/spring-boot/spring-boot-random-server-port/)
 * [Registro y descubrimiento de servicios con Spring Cloud y Consul][blogbitix-206]
 {{% /reference %}}

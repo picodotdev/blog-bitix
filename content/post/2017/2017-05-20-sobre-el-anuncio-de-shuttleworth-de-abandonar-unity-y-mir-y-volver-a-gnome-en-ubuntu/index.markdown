@@ -13,8 +13,7 @@ tags: ["gnu-linux", "opinion", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="ubuntu.png" title1="Ubuntu" width1="200" image2="canonical.svg" title2="Canonical" width2="350" >}}
 

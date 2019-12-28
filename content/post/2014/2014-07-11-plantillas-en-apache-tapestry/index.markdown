@@ -11,8 +11,7 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -46,8 +45,7 @@ Por supuesto, podemos crear tantos componentes plantilla como necesitemos en una
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Código fuente de Blog Stack](https://github.com/picodotdev/blog-stack)
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)

@@ -14,8 +14,7 @@ series: ["electronica"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -67,8 +66,7 @@ El siguiente artículo de la sería será sobre cómo usar un _servo motor_ que 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Raspberry Pi Motion Sensor using a PIR Sensor](https://pimylifeup.com/raspberry-pi-motion-sensor/)
 * [PIR motion detector – a sensor for Arduino and Raspberry Pi (1st part)](http://www.meccanismocomplesso.org/en/pir-motion-detector/)
 {{% /reference %}}

@@ -15,8 +15,7 @@ summary: "Muchas organizaciones usan portales para mantener su presencia en inte
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="liferay.png" title2="Liferay" width2="400" >}}
 
@@ -126,8 +125,7 @@ Aunque el libro [Liferay in Action](https://amzn.to/2sc1tWN) o [Portlets in Acti
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Web portal](https://en.wikipedia.org/wiki/Web_portal)
 * [Portlet](https://es.wikipedia.org/wiki/Portlet)
 * [¿Qué es un Portal?](https://web.liferay.com/es/products/what-is-a-portal/web-platform)

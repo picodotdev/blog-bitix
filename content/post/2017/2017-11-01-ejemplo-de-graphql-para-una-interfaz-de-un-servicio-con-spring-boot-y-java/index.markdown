@@ -15,8 +15,7 @@ summary: "GraphQL es una alternativa a una interfaz REST con las ventajas de pod
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
@@ -77,8 +76,7 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [GraphQL][graphql]
 * [Welcome to graphql-java](https://graphql-java.readthedocs.io/en/v5/)
 * [GraphQL Java implementation](https://github.com/graphql-java/graphql-java)

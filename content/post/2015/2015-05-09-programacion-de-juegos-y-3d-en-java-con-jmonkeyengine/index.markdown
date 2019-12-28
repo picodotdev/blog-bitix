@@ -11,8 +11,7 @@ tags: ["java", "programacion", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="jmonkeyengine.png" title1="jMonkeyEngine" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -125,8 +124,7 @@ Otras librerías como [Slick2D][slick2d] permiten hacer videojuegos en 2D como s
 Que, ¿aún crees que en Java no se pueden hacer juegos que no tienen que envidiar a muchos otros?
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [jMonkeyEngine][jmonkeyengine]
 * [Curso Experto Desarrollo Videojuegos](http://www.cedv.es./)
 * <a href="https://www.amazon.es/gp/product/1849516464/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1849516464&linkCode=as2&tag=blobit-21">Libro jMonkeyEngine 3.0 Beginners Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1849516464" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"><br>

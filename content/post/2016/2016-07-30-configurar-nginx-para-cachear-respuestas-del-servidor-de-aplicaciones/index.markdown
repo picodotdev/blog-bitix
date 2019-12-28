@@ -14,8 +14,7 @@ summary: "Las caches son un recurso utilizado para aumentar el rendimiento y evi
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nginx.svg" title1="Nginx" width1="300" >}}
 
@@ -52,8 +51,7 @@ Hay servidores específicos para realizar tareas de cache como [Varnish][varnish
 {{< sourcecode git="blog-ejemplos/tree/master/NginxCache" command="./gradlew build, cd docker, docker-compose up" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Servir recursos estáticos desde un CDN en Apache Tapestry][blogbitix-34]
 * [Nginx Caching](https://serversforhackers.com/nginx-caching)
 {{% /reference %}}

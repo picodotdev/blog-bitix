@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="geb.png" title1="Geb" width1="350" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -55,8 +54,7 @@ Algunas otras herramientas que son ampliamente usadas en proyectos Java son las 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew integrationTest" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Pruebas unitarias y de integración en Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html)
 {{% /reference %}}
 

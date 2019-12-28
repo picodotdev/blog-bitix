@@ -14,8 +14,7 @@ series: ["bilbostack"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha tenido lugar en el [Palacio Euskalduna][euskalduna] en vez de la [Universidad de Deusto][universidad-de-deusto] permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.
 

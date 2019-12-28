@@ -14,8 +14,7 @@ summary: "Haciendo un seguimiento de los precios en Amazon los de algunos produc
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="amazon.svg" title1="Amazon" width1="350" >}}
 

@@ -14,8 +14,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -51,8 +50,7 @@ Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Jav
 {{< sourcecode git="blog-ejemplos/tree/master/JavaReference" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter)
 * [Tipos de referencias en Java](http://www.guajava.net/tipos-de-referencias-en-java/)
 * [Difference between WeakReference vs SoftReference vs PhantomReference vs Strong reference in Java](https://javarevisited.blogspot.com.es/2014/03/difference-between-weakreference-vs-softreference-phantom-strong-reference-java.html)

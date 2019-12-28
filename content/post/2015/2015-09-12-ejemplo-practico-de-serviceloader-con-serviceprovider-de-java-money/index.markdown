@@ -12,8 +12,7 @@ summary: "Una aplicación que trabaje con importes y diferentes divisas necesita
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -41,8 +40,7 @@ No es muy complicado lo que hay que hacer para integrar un proveedor de ratios s
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMoney) del repositorio de ejemplos de este blog en GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [JSR-354 API](https://github.com/JavaMoney/jsr354-api)
 * [JSR-354 RI](https://github.com/JavaMoney/jsr354-ri)
 * [Bootstrap.java](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/spi/Bootstrap.java)

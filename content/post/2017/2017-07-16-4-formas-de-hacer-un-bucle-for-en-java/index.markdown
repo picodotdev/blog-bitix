@@ -14,8 +14,7 @@ summary: "La forma habitual en Java de hacer un bucle es con una sentecia _for_ 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

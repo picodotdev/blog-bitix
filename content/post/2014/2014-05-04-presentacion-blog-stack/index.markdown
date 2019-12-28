@@ -11,8 +11,7 @@ tags: ["software", "software-libre", "gnu-linux", "programacion", "planeta-linux
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="blogstack.png" title="Blog Stack" width="300" >}}
 
@@ -38,8 +37,7 @@ En las próximas semanas publicaré en mi blog de forma más detallada [como est
 ¡Hola planeta!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Arquitectura y hospedaje de Blog Stack][blogbitix-24]
 {{% /reference %}}
 

@@ -11,8 +11,7 @@ tags: ["blog", "planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 

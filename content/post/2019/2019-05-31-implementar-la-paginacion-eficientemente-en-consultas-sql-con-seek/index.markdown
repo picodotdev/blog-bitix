@@ -14,8 +14,7 @@ summary: Las aplicaciones que muestran listados probablemente necesiten mostrarl
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="jooq.png" title1="jOOQ" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

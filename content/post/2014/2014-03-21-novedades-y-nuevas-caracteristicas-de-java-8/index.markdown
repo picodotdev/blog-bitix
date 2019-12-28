@@ -13,8 +13,7 @@ summary: "La octava versión de Java añade numerosas novedades importantes al l
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -182,8 +181,7 @@ En los [tutoriales de Java](https://docs.oracle.com/javase/tutorial/) hay alguno
 Java es usado ampliamente en entornos empresariales ya sean públicos o privados, pequeños o grandes que con las [especificaciones de Java EE 7][blogbitix-131] proporcionan a las aplicaciones un conjunto de funcionalidades estadarizadas con las que tendremos posibilidad de elegir la implementación que mejor consideremos no encadenándonos a un determinado vendedor.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [JDK 8](http://openjdk.java.net/projects/jdk8/)
 * [Java 8](https://www.javacodegeeks.com/2013/10/java8.html)
 * [Java 8 Tutorial](http://winterbe.com/posts/2014/03/16/java-8-tutorial/)

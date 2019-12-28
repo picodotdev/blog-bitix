@@ -13,8 +13,7 @@ summary: "Las personas que usan de forma intensiva la terminal seguramente usand
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -49,8 +48,7 @@ Para automatizar la configuración inicial de tmux soporta un archivo para perso
 En el [manpage de tmux](http://man.openbsd.org/OpenBSD-current/man1/tmux.1) y los enlaces de referencia hay guías con una lista más completa que las operaciones básicas que incluyo en este artículo.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [A tmux Crash Course](https://robots.thoughtbot.com/a-tmux-crash-course)
 * [A Quick and Easy Guide to tmux](http://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/)
 * [How to Use tmux the Terminal Multiplexer](https://www.linode.com/docs/networking/ssh/persistent-terminal-sessions-with-tmux/)

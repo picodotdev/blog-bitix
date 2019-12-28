@@ -13,8 +13,7 @@ series: ["donacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Los últimos meses me han sido bastante buenos en cuanto a los ingresos por la publicidad [AdSense][google-adsense] y los enlaces de afiliado de [Amazon][amazon] que incluyo en el blog con el objetivo de monetizarlo un poco. Desde luego esos pequeños ingresos no compensan la enorme cantidad de tiempo que requiere escribir un artículo, y no es solo escribirlo sino también editarlo, crear el ejemplo de código si el artículo es sobre programación, sacar las capturas de pantalla e investigar la materia de la que habla el artículo. Otra forma de monetizar el blog que estoy evaluando es escribir artículos patrocinados con la plataforma [Publisuites][publisuites], sin embargo, aún no he recibido ninguna propuesta ya que quizá haya puesto el precio demasiado alto pero escribir un artículo cuesta unas horas de trabajo.
 

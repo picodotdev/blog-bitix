@@ -14,8 +14,7 @@ tags: ["gnu-linux", "hardware", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" image3="arm.svg" title3="ARM" width3="350"  >}}
 
@@ -229,8 +228,7 @@ A pesar de que las alternativas de placas bases sean más capaces que la Raspber
 Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 4 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para [trastear con la electrónica como LEDs, _displays_ y otros actuadores][blogbitix-serie-electronica]. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Procesadores ARM Cortex-A](https://www.arm.com/products/processors/cortex-a)
 * [Arquitectura ARM](https://es.wikipedia.org/wiki/Arquitectura_ARM)
 * [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi)

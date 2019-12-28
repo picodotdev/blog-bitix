@@ -15,8 +15,7 @@ tags: ["opinion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="redhat.svg" title1="Red Hat" width1="300" image2="ibm.svg" title2="IBM" width2="300" >}}
 
@@ -69,8 +68,7 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [IBM compra Red Hat por 34.000 millones de dólares en un hito histórico para la empresa que triunfó con Linux y el Open Source](https://www.xataka.com/empresas-y-economia/ibm-compra-red-hat-34-000-millones-dolares-hito-historico-para-empresa-que-triunfo-linux-open-source)
 * [IBM compra Red Hat en una histórica operación de 34.000 millones de dólares](https://www.genbeta.com/actualidad/ibm-compra-red-hat-historica-operacion-34-000-millones-dolares)
 * [Red Hat, cómo una empresa de software open source llegó a valer 34.000 millones de dólares](https://www.genbeta.com/a-fondo/red-hat-como-empresa-software-open-source-llego-a-valer-34-000-millones-dolares)

@@ -13,8 +13,7 @@ summary: "En esta serie de artículos sobre juegos vamos a ver que en GNU/Linux 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -53,8 +52,7 @@ En Amazon hay algunos libros como [El Go, un juego oriental milenario](https://a
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Juego Go](https://en.wikipedia.org/wiki/Go_(game))
 * [Rules of go](https://en.wikipedia.org/wiki/Rules_of_go)
 * [GNU Go](https://www.gnu.org/software/gnugo/)

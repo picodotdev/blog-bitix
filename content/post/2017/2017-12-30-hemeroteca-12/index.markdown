@@ -15,8 +15,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Cuarto año de Blog Bitix y en febrero serán ocho desde que empecé con [El blog del pico.dev][elblogdepicodev]. En los últimos seis meses he seguido publicando casi a dos artículos por semana y durante el 2017 ha sido casi siempre así, en este semestre han sido 48 artículos, que juntos con los 39 del primero son 87 durante el año 2017, mi mayor tasa de publicación en un año.
 

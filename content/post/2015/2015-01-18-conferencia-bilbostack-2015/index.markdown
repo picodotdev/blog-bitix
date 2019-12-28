@@ -12,8 +12,7 @@ series: ["bilbostack"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="bilbostack.png" title="BilboStack" width="300" >}}
 

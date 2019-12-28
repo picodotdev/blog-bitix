@@ -13,8 +13,7 @@ summary: "Sustituyendo las bombillas incandescentes por bombillas LED o de bajo 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Desde hace unos años las bombillas incandescentes ya no se fabrican y se venden hasta agotar las existencias con el objetivo de que sean sustituidas por nuevas bombillas de más bajo consumo reduciendo de esta manera el consumo de energía eléctrica. Ya solo se venden dos tipos de bombillas, las de bajo consumo similares a las lámparas fluorescentes pero mucho más compactas y las bombillas LED que permiten ahorrar en electricidad dedicada a la iluminación entre un significativo 60% y 80% respecto a las bombillas incandescentes y un 50% respecto a las de bajo consumo. Una bombilla LED equivalente a 60W y 100W de una incandescente consume solo unos 6W y 11W respectivamente por lo que es recomendable hacer la sustitución de aquellas que usemos más habitualmente como salón, habitaciones y baño.
 
@@ -54,8 +53,7 @@ En [Amazon][amazon] hay una amplia gama de bombillas LED variando en tipo de cas
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Equivalencia de Lumen a Vatios](http://www.llumor.es/info-led/equivalencia-de-lumen-a-vatios)
 {{% /reference %}}
 

@@ -15,8 +15,7 @@ summary: "Ciertos servicios requieren que al hacer un despliegue el servicio con
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 
@@ -73,8 +72,7 @@ Nomad y [Consul][consul] se inician con los siguientes comandos en modo desarrol
 {{< code file="consul-nomad.sh" language="bash" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Servicios con persistencia en el orquestador Nomad][blogbitix-400]
 {{% /reference %}}

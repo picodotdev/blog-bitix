@@ -13,8 +13,7 @@ summary: "La tecnología no para de avanzar, cada varios meses salen noticias de
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En el mundo de la tecnología cada nuevo procesador, tarjeta gráfica, <abbr title="Solid-State Drive">SSD</abbr> y otros componentes de un dispositivo se presentan prometiendo mejoras significativas en rendimiento y/o consumo de energía habitualmente entre un 20% y 90% sobre la generación anterior. Las mejoras de los componentes aunque significativas no suponen una disrupción en la tecnología, simplemente la hacen más rápida. El caso de los procesadores, tarjetas gráficas o SSD es una muestra, estos nuevos sistemas de almacenamiento aunque suponen una gran mejora sobre los discos duros mecánicos con una mucho mayor tasa de transferencia no modifican de forma disruptiva la tecnología para el usuario, si el ordenador en vez de iniciarse en un minuto y medio tarda 15 segundos aunque el SSD suponga una mejora significativa en el rendimiento de los ordenadores no es más que esperar más o menos tiempo, es una pequeña disrupción para los usuarios aunque grande para los fabricantes.
 

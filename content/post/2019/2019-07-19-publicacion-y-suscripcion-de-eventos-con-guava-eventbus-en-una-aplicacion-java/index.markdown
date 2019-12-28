@@ -13,8 +13,7 @@ summary: "Guava EventBus es una solución simple para la publicación y suscripc
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -47,8 +46,7 @@ En el proyecto hay que incluir como dependencia la librería Guava en este caso 
 {{% sourcecode git="blog-ejemplos/tree/master/Guava" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Guide to Guava’s EventBus](https://www.baeldung.com/guava-eventbus)
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 * [Introducción y ejemplo sencillo de Java Message Service (JMS)][blogbitix-15]

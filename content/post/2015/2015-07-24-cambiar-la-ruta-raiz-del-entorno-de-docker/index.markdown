@@ -14,8 +14,7 @@ summary: "Cambiando la ruta raíz del entorno de ejecución de docker, dónde gu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
@@ -42,8 +41,7 @@ Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos e
 </div>
 
 {{% warning %}}
-{{< links >}}
-{{< postslinks >}}
+
 Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobreescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.
 {{% /warning %}}
 

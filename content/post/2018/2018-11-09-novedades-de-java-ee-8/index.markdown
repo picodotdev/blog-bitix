@@ -13,8 +13,7 @@ series: ["java-platform"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java-ee.png" title1="Java EE" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -47,8 +46,7 @@ El soporte para [HTTP/2 y sus importantes novedades][blogbitix-127] hace que des
 Hay un [tutorial de Java EE 8](https://javaee.github.io/tutorial/) y con el [ejemplo FirstCup](https://javaee.github.io/firstcup/toc.html) se puede adquirir un buen conocimiento para desarrollar aplicaciones con el lenguaje Java. En el artículo [What's new in Java EE 8](https://www.ibm.com/developerworks/opensource/library/j-whats-new-in-javaee-8/index.html) hay unos pocos ejemplos de código con varias de estas novedades. Finalmente, con el traspaso de Java EE a la fundación Eclipse y por motivos de marca registrada el proyecto ha sido renombrado a Jakarta EE. Java EE o ahora Jakarta EE, [Microprofile][microprofile] y [Spring][spring] junto con algunos _frameworks_ especializados son las opciones más utilizadas para realizar aplicaciones en Java en el lado del servidor.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Java Platform, Enterprise Edition 8 SDK - Release Notes](https://www.oracle.com/technetwork/java/javaee/documentation/ee8-release-notes-3894362.html)
 * [What's new in Java EE 8](https://www.ibm.com/developerworks/opensource/library/j-whats-new-in-javaee-8/index.html)
 * [Java EE 8 Overview](https://blogs.oracle.com/java/java-ee-8-overview)

@@ -13,8 +13,7 @@ summary: "En las páginas y aplicaciones web también es posible utilizar combin
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="html.svg" title1="HTML" width1="200" image2="javascript.svg" title2="JavaScript" width2="200" >}}
 
@@ -45,8 +44,7 @@ La propiedad global _accesskey_ puede utilizarse en cualquier elemento de HTML, 
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Atributos globales][https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes]
 * [Introducción al JavaScript de ECMAScript 6][blogbitix-198]
 {{% /reference %}}

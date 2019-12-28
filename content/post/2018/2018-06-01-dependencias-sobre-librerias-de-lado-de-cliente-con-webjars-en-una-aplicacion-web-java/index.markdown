@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="webjars.png" title2="Webjars" width2="250" >}}
 
@@ -46,8 +45,7 @@ Los _webjars_ muy útiles para gestionar las librerías de lado cliente que hace
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introduction to WebJars](https://www.baeldung.com/maven-webjars)
 {{% /reference %}}
 

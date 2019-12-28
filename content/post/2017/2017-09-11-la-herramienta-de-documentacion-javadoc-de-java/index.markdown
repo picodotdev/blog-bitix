@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -77,8 +76,7 @@ La documentación Javadoc al ser una colección de archivos HTML y demás recurs
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Javadoc 8](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html)
 * [Javadoc 7](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html)
 * [How to Write Doc Comments for the Javadoc Tool](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html)

@@ -11,8 +11,7 @@ tags: ["planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="blogstack.png" title="Blog Stack" >}}
 

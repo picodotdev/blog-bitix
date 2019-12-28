@@ -13,8 +13,7 @@ summary: "En GNU/Linux hay multitud de distribuciones, no existe la mejor distri
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 

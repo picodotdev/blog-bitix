@@ -15,8 +15,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Casi 9 años publicando de forma constante un artículo a la semana, dos artículos algunas semanas. Durante casi está década creo que ha habido pocas semanas en las que no he publicado. Este último años no ha sido distinto, el siguiente espero... espero que sea parecido o mejor ahora que tengo mi propio equipo personal que he estado mucho tiempo esperando hasta que fuese comercializado, un [Intel NUC Bean Canyon][blogbitix-363] del que en este semestre he publicado un artículo con de su desempaquetado junto con otros artículos del [monitor Benq PD2700Q][blogbitix-356] y [teclado ratón][blogbitix-348] pero también comentando las opciones que he barajado.
 

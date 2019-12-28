@@ -13,8 +13,7 @@ summary: "Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicac
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="keycloak.png" title1="Keycloak" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -94,8 +93,7 @@ En el siguiente artículo mostraré un [cliente del servicio REST autenticado co
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrsOauth" command="./gradle run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-178]
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot"][blogbitix-185]
 * [Securing RESTful Web Services with OAuth2](https://blog.pivotal.io/pivotal-cloud-foundry/products/securing-restful-web-services-with-oauth2)

@@ -13,8 +13,7 @@ summary: "En vez de usar el botón derecho de ratón y hacer clic sobre el menú
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -33,8 +32,7 @@ Con el ratón deberemos seleccionar el texto pero con la combinación de teclas 
 Esto no es algo nada vital pero si es algo que usamos frecuentemente puede hacernos más fácil la tarea y ahorrarnos tiempo al igual que conocer y usar los [atajos de teclado básicos de la terminal en GNU/Linux][blogbitix-150].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 [A terminal which provides select-to-copy and right-click-to-paste](http://askubuntu.com/questions/211292/a-terminal-which-provides-select-to-copy-and-right-click-to-paste)
 {{% /reference %}}
 

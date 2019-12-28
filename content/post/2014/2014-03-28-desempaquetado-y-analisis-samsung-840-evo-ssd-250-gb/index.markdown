@@ -12,8 +12,7 @@ series: ["desempaquetado-tecnologia"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En estos momentos sin lugar a dudas la actualización más provechosa para mejorar el rendimiento de un equipo es una unidad de estado sólido o [<abbr title="Solid State Drive">SSD</abbr>](https://es.wikipedia.org/wiki/Unidad_de_estado_s%C3%B3lido) una vez tengamos memoria RAM suficiente, unos 2 GiB suelen ser suficientes para tareas ofimáticas y acceder a internet y los equipos que se están vendiendo ahora ya suelen venir con 4 GiB e incluso 8 GiB. El tiempo de acceso a un disco duro mecánico es grande y la velocidad de transferencia es pequeña, en los momentos que se require un uso intensivo del disco se nota que son el cuello de botella del sistema. A veces una mejora en el software puede producir una notable aumento de rendimiento con el mismo hardware pero cuando ya no hay margen de mejora en el software con una mejora en el hardware podemos conseguir el aumento de rendimiento buscado, este es el caso de los SSD.
 
@@ -68,8 +67,7 @@ Si alguien está pensando en comprar un disco SSD lo primero que deberá hacer e
 En siguientes artículos comentaré como monitorizar las escrituras a disco, obtener la cantidad de datos escritos y leídos, una guía de instalación de [Arch Linux](https://www.archlinux.org/) con notas específicas para SSD entre otras cosas y una serie de recomendaciones para proteger la esperanza de vida del SSD. En internet hay multitud de análisis sobre este SSD, dos de los que más me han gustado han sido [Testing the endurance of TLC NAND](http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand) y otro de [xbitlabs](http://www.xbitlabs.com/articles/storage/display/samsung-840-evo.html).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Página de Samsung SSD 840 EVO](http://www.samsung.com/global/business/semiconductor/minisite/SSD/us/html/about/SSD840EVO.html)
 * [Página de Samsung SSD 850 EVO](http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/ssd850evo/overview.html)
 * [Test de resistencia SSD 840 EVO](http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand)

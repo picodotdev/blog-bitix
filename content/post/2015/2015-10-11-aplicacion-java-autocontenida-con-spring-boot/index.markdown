@@ -14,8 +14,7 @@ summary: "Si queremos una aplicación Java autocontenida ya sea una aplicación 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -68,8 +67,7 @@ Añadiendo la dependencia [Spring Boot Actuator][spring-boot-actuator] podemos [
 En un repositorio de GitHub de Spring hay muchos más [ejemplos sobre Spring Boot](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación de Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 * [Información y métricas de aplicación con Spring Boot Actuator][blogbitix-113]
 * [Configuración de una aplicación en diferentes entornos con Spring Cloud Config][blogbitix-112]

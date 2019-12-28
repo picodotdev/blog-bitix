@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -44,8 +43,7 @@ En Java 9 aunque aún no se incorporen la definición de literales al lenguaje c
 También es posible [lanzar excepciones checked como si fueran unchecked en Java][blogbitix-405] pero al igual que en este caso no es recomendable.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [What is Double Brace Initialization in Java? Anti Pattern Example](http://javarevisited.blogspot.com.es/2015/10/what-is-double-brace-initialization-in-java-example-anti-pattern.html)
 * [Double Brace Initialization](http://c2.com/cgi/wiki?DoubleBraceInitialization)
 * [What is Double Brace initialization in Java?](https://stackoverflow.com/questions/1958636/what-is-double-brace-initialization-in-java)

@@ -13,8 +13,7 @@ series: ["hashicorp"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="vagrant.svg" title1="Vagrant" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 

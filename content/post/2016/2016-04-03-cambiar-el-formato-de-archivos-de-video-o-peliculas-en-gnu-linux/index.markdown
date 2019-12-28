@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-linux", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="ffmpeg.png" title1="FFmpeg" width1="400" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -103,8 +102,7 @@ Si preferimos realizar la conversión mediante una interfaz gráfica podemos usa
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación de FFmpeg](https://trac.ffmpeg.org/wiki)
 * [Video Encoding](https://wiki.archlinux.org/index.php/video_encoding)
 * [Vídeos de ejemplo](http://www.sample-videos.com/)

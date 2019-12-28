@@ -14,8 +14,7 @@ summary: "Los _stacks_ en Docker Swarm son definiciones en un archivo de texto e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
@@ -60,8 +59,7 @@ Docker Swarm es una opción simple y que está integrada en Docker pero no ofrec
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Deploy a stack to a swarm](https://docs.docker.com/engine/swarm/stack-deploy/)
 * [Compose file reference](https://docs.docker.com/compose/compose-file/)
 {{% /reference %}}

@@ -14,8 +14,7 @@ summary: "Como consumidor y como todo el mundo trato de elegir compañías que o
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Hace tiempo que quería cambiarme de compañía eléctrica. No es que estuviese excesivamente descontento con la que ya estaba salvo por las continuas subidas de precio en cada factura pero quería pasarme a una compañía que ofreciese energía 100% renovable. Después de dar de baja el suministro de gas al [cambiar la caldera por un termo eléctrico][blogbitix-251] ya tenía más claro pasarme a otra compañía, ya he notado unos cuantos [euros de ahorro al mes dando de baja el gas][blogbitix-277] que al año son una buena cantidad. Utilizar una energía limpia y elaborada, como la eléctrica, para calentar una casa con calefacción u obtener agua caliente no es tan eficiente, es mejor convertir el gas que llega a casa directamente en calor, que no tener que procesar la energía dos veces (de una fuente a electricidad y la electricidad a calor en el domicilio) para conseguir el mismo resultado pero si no haces cierto consumo de gas disponer del servicio no compensa económicamente.
 

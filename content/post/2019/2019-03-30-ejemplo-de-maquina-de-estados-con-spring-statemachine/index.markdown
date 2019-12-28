@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "spring"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -81,8 +80,7 @@ Estas son las dependencias necesarias a añadir n la herramienta de construcció
 {{% sourcecode git="blog-ejemplos/tree/master/SpringStatemachine" command="./gradle run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Statemachine Javadoc](https://docs.spring.io/spring-statemachine/docs/current/api/)
 * [A Guide to the Spring State Machine Project](https://www.baeldung.com/spring-state-machine)
 * [Spring State Machine: what is it and do you need it?](https://codeburst.io/spring-state-machine-what-is-it-and-do-you-need-it-e894c78f5d84)

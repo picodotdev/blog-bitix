@@ -11,8 +11,7 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -53,8 +52,7 @@ Por supuesto, no evitaremos tener otro tipo de errores en la aplicación pero al
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Página Dashboard de Apache Tapestry][blogbitix-28]
 * [Artículos sobre Apache Tapestry][blogbitix-tag-tapestry]

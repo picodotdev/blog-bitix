@@ -13,8 +13,7 @@ summary: "Usar el protocolo seguro HTTPS proporciona confidencialidad en la comu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nginx.svg" title1="Nginx" width1="300" image2="apache.svg" title2="Apache HTTPD" width2="200" >}}
 
@@ -65,8 +64,7 @@ Con algún mecanismo propio que empleemos al programar la aplicación (en Java p
 {{< sourcecode git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Redirect Request to SSL](https://wiki.apache.org/httpd/RedirectSSL)
 * [Redirect HTTP Requests to HTTPS (in Tomcat)](https://confluence.atlassian.com/stashkb/redirect-http-requests-to-https-333810132.html)
 * [Configuring SSL/TLS (in Jetty)](http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html)

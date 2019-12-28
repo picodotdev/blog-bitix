@@ -13,8 +13,7 @@ summary: "Teniendo un servicio REST securizado con OAuth2 al invocarlo deberemos
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 

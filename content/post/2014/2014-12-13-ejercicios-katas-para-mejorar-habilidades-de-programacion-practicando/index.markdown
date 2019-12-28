@@ -10,8 +10,7 @@ tags: ["java", "software-libre", "planeta-codigo", "planeta-linux", "programacio
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 La semana pasada escribía sobre [algunos libros que leer para ser mejores programadores][blogbitix-55], sin embargo, toda esa teoría solo sirve cuando se interioriza para usar más tarde en la práctica. Para interiorizar parte de ese conocimiento hasta el momento creo que no se ha inventado mejor manera que escribiendo código teniendo en cuenta esos principios.
 
@@ -34,8 +33,7 @@ Intentando implementar en código una posible solución aplicando el patrón Str
 Aun practicando estas katas no va a hacer que luego nuestro código en un proyecto real sea perfecto ni siquiera algo cercano a ello más bien hará que sea un poquito mejor, estos ejercicios son bastante simples que no tienen las complejidades de algunos casos reales, aún así siguen mereciendo realizarlos. También hay que tener en cuenta que no son realmente para aprender a programar aunque si pueden servir para aprender un nuevo lenguaje sobre todo si se hacen con otra persona que ya lo conoce y mientras se realiza la kata podemos preguntarle y nos resuelva las dudas que nos vayan surgiendo de la sintaxis, API o herramientas de ese lenguaje.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * http://codekata.com/<br>
 * http://katayunos.com/<br>
 * http://www.codewars.com/

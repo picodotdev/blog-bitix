@@ -13,8 +13,7 @@ summary: "Las pruebas unitarias y de integración tratan de probar que el compor
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Al desarrollar pruebas unitarias o de integración se emplean varios términos que no son imprescindibles conocer para hacer una prueba pero si es recomendable conocerlos para saber que diferencias hay entre ellos y saber que posibilidades tenemos para construir la prueba. Los términos básicos son sujeto bajo prueba o _subject under test_, _fake_, _mock_, _stub_ y _spy_.
 
@@ -52,8 +51,7 @@ En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda est
 {{< sourcecode git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Mock object](https://en.wikipedia.org/wiki/Mock_object)
 {{% /reference %}}
 

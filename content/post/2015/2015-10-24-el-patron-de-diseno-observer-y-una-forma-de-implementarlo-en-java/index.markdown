@@ -14,8 +14,7 @@ summary: "Otro de los patrones de diseño que en algún momento nos puede ser ú
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -44,8 +43,7 @@ Conocer los patrones de diseño, conocer sus beneficios y desventajas y saber cu
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/PatronObserver) puedes descargarlo del repositorio de ejemplos alojado en [GitHub][github] y probarlo ejecutando el comando <code>./gradlew run</code>.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
 * [Ejemplo del patrón de diseño State][elblogdepicodev-170]
 * [Implementación de máquina de estados finita (FSM) con Java 8][blogbitix-93]

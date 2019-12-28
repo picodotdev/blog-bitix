@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 

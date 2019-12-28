@@ -14,8 +14,7 @@ summary: "Una de las tareas más importante que realizan algunas aplicaciones es
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -70,8 +69,7 @@ En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recib
 {{< sourcecode git="blog-ejemplos/tree/master/JavaNIO" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Artículo NIO.2, Java Magazine Jul/Ago 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter)
 {{% /reference %}}
 

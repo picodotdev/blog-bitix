@@ -11,8 +11,7 @@ tags: ["java", "programacion", "software", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="wildfly.png" title="WildFly" width="300" >}}
 
@@ -56,8 +55,7 @@ En las [notas de publicación de WildFly 8](http://wildfly.org/news/2014/02/11/W
 En posteriores entradas y siguiendo la serie de entradas de seguridad ([I][elblogdepicodev-181], [II][elblogdepicodev-182], [III][elblogdepicodev-183], [IV][blogbitix-1], [V][blogbitix-2] y [VI][blogbitix-3]) comentaré como crear certificados para usarlos con el protocolo seguro SSL y como configurar diferentes servidores web y de aplicaciones Java, entre ellos WildFly, para usar SSL y el protocolo HTTPS.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 * [Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]

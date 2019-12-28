@@ -15,8 +15,7 @@ summary: "En las aplicaciones basadas en microservicios dado el número de ellos
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="consul.svg" title2="Consul" width2="200" image3="hashicorp.svg" title3="HashiCorp" width3="200" >}}
 
@@ -65,8 +64,7 @@ La [documentación de Nomad](https://www.nomadproject.io/docs/index.html), Nomad
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Estrategias de despliegue para microservicios con Nomad][blogbitix-399]
 * [Servicios con persistencia en el orquestador Nomad][blogbitix-400]
 * [Nomad – Simple deployment and monitoring of applications](http://targetveb.com/nomad-simple-deployment-monitoring-applications.html)

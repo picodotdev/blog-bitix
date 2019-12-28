@@ -14,8 +14,7 @@ summary: "Recibidas nuevas transferencias de Google y Amazon por la publicidad A
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="firefox.svg" title1="Firefox" width1="200" image2="wikipedia.svg" title2="Wikipedia" width2="200" >}}
 
@@ -51,8 +50,7 @@ Puede que ni siquiera uses GNU/Linux o software libre pero al visitar esta bitá
 {{< donations >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Donaciones Wikipedia](https://wikimediafoundation.org/wiki/Donaciones)
 * [Donaciones Mozilla](https://wiki.mozilla.org/Donate)
 {{% /reference %}}

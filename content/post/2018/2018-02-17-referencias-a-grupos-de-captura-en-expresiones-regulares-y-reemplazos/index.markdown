@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -45,8 +44,7 @@ En la [documentación Javadoc de la clase Pattern](https://docs.oracle.com/javas
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRegexpReferenceGroups" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Extraer elementos de una cadena con una expresión regular][blogbitix-140]
 * [Los cuantificadores greedy, reluctant y possessive en expresiones regulares][blogbitix-257]
 * [Ofuscar datos sensibles en las trazas con Log4j][blogbitix-383]

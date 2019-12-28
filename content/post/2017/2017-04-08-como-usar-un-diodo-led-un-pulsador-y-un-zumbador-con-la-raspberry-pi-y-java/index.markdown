@@ -14,8 +14,7 @@ summary: "El _kit_ de electrónica para la Raspberry Pi incluye varios dispositi
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

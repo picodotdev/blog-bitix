@@ -13,8 +13,7 @@ summary: "Pasar de usar Windows a usar una distribución GNU/Linux es un paso di
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="ubuntu.svg" title1="Ubuntu" width1="200" image2="linux.svg" title2="Linux" width2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
 

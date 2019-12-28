@@ -14,8 +14,7 @@ summary: "Otros productos que he comprado han sido un cargador de pilas recargab
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200">}}
 

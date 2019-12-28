@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-lib
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="drupal.png" title="Drupal" width="300" >}}
 
@@ -61,8 +60,7 @@ En definitiva Drupal es una herramienta de mucha utilidad para gestionar un siti
 Si queremos probarlo posiblemente la solución mas sencilla es usar la [imagen que ofrece Bitnami de Drupal](https://bitnami.com/stack/drupal) que contiene todos los requisitos de Drupal ya instalados (servidor web, base de datos, dependencias, ...), podemos descargarla y crear una máquina virtual con VirtualBox, en unos pocos minutos podemos empezar a probar Drupal. En el artículo de [introducción sobre Bitnami][blogbitix-54] explico como crear una máquina virtual e iniciar cualquiera de las [imágenes](https://bitnami.com/stacks) de las que ofrece [Bitnami][bitnami] con VirtualBox.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a Bitnami][blogbitix-54]
 * [Introducción al gestor de proyectos y tareas Redmine][blogbitix-57]
 * [Instalar y usar un plugin ágil en Redmine][blogbitix-59]

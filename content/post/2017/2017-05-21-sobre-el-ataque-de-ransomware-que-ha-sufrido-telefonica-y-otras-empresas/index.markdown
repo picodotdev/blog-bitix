@@ -13,8 +13,7 @@ tags: ["gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" >}}
 

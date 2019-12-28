@@ -14,8 +14,7 @@ summary: "En la universidad se explican las formas normales, en mi caso que yo r
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Las bases de datos relacionales desarrolladas en los años 70 son la forma más utilizada aún en la actualidad para almacenar la información en la mayoría de las aplicaciones informáticas de cualquier ámbito. Los datos se guardan en tablas separadas en campos y con un tipo, los datos almacenados en cada tabla están relacionados entre sí, por ejemplo, podría ser la información de una persona, nombre, apellidos, fecha de nacimiento, ciudad de residencia, teléfono, ... Además las tablas pueden relacionarse con otras tablas. Siguiendo el ejemplo podríamos tener una tabla de películas o libros y relacionarlas con la tabla de personas de forma que conozcamos que películas ha visto o libros ha leído una persona, de cada película podemos guardar su director, de los libros el autor y de cada uno de ellos los actores o personajes.
 

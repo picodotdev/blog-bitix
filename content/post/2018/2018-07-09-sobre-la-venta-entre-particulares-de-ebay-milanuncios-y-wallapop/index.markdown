@@ -12,8 +12,7 @@ tags: ["opinion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Ya he escrito en un varios artículos relacionados comentando que estoy [interesando en comprar un Intel NUC][blogbitix-329] pero como lo que quiero aún no se comercializa la espera ya se me está haciendo muy larga, me estoy aburriendo un poco de impaciencia y para entretenerme mientras me ha dado por buscar NUCs en las principales páginas de venta entre particulares y de segunda mano como [eBay][ebay], [milanuncios][milanuncios] y [Wallapop][wallapop]. Por curiosidad a ver que precio tienen y si me resultaría atractivo comprar un NUC de una generación anterior en vez de la última que saldrá ya no a mucho tardar.
 

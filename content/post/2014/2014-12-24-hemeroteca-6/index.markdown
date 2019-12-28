@@ -14,8 +14,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
@@ -67,8 +66,7 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hemeroteca #3][elblogdepicodev-162]
 * [Hemeroteca #2][elblogdepicodev-136]
 * [Hemeroteca #1][elblogdepicodev-111]

@@ -13,8 +13,7 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" image2="linux.svg" title2="Linux" width2="200" >}}
 

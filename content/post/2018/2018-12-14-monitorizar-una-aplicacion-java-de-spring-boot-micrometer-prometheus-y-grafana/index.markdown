@@ -13,8 +13,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="prometheus.svg" title2="Promehteus" width2="200" image3="grafana.svg" title3="Grafana" width3="200" >}}
 
@@ -103,8 +102,7 @@ Aún quedan algunas preguntas por responder ¿como agregar los datos de múltipl
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh, docker-compose up" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Using Prometheus with Spring Boot](https://njalnordmark.wordpress.com/2017/05/08/using-prometheus-with-spring-boot/)
 * [Monitoring Spring Boot Applications with Prometheus – Part 1](https://raymondhlee.wordpress.com/2016/09/24/monitoring-spring-boot-applications-with-prometheus/)
 * [Monitoring Spring Boot Applications with Prometheus – Part 2](https://raymondhlee.wordpress.com/2016/10/03/monitoring-spring-boot-applications-with-prometheus-part-2/)

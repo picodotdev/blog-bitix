@@ -11,8 +11,7 @@ tags: ["java", "programacion", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -33,8 +32,7 @@ Y esta es la forma de usar la clase a través de [Jsoup.clean](http://jsoup.org/
 El [código fuente completo de BS](https://github.com/picodotdev/blog-stack) junto con el «scrapeado» y el uso de esta clase está disponible en un repositorio de GitHub.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Qué es y cómo hacer «web scraping» en Java][blogbitix-47]
 * [Cómo hacer un substring de una cadena html][blogbitix-61]
 * [Codificar los datos para evitar ataques XSS en una página web][blogbitix-392]

@@ -13,8 +13,7 @@ summary: "Ciertas propiedades de la programación funcional fueron una de las ca
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="vavr.png" title1="Vavr" width1="300" >}}
 
@@ -68,8 +67,7 @@ La librería Varv es una de las que pongo como ejemplo en el artículo [La trist
 {{< sourcecode git="blog-ejemplos/tree/master/Vavr" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación de Vavr](http://docs.vavr.io/)
 * [Javadoc de Vavr](http://www.javadoc.io/doc/io.vavr/vavr)
 {{% /reference %}}

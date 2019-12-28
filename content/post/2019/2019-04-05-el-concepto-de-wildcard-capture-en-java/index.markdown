@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -35,8 +34,7 @@ Este concepto de _wildcard capture_ genera bastantes dudas y en internet hay mú
 * [The Java™ Tutorials - Generics Capture](https://docs.oracle.com/javase/tutorial/java/generics/capture.html)
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Why use a wildcard capture helper method?](http://www.howtobuildsoftware.com/index.php/how-do/h83/java-generics-wildcard-why-use-a-wild-card-capture-helper-method) es la mejor explicación que he encontrado de _wildcard capture_.
 * [Wildcard Capture and Helper Methods](https://docs.oracle.com/javase/tutorial/java/generics/capture.html)
 * [Capturing wildcards in Java generics](https://stackoverflow.com/questions/17340474/capturing-wildcards-in-java-generics)

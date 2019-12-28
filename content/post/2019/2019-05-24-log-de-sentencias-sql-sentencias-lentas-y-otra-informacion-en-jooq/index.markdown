@@ -15,8 +15,7 @@ summary: "Algunas de las causas del bajo rendimiento de una aplicación que util
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="jooq.png" title1="jOOQ" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

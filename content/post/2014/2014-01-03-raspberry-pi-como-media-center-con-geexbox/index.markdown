@@ -11,8 +11,7 @@ tags: ["planeta-linux", "hardware", "software", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="geexbox.png" title1="GeeXboX" image2="raspberrypi.jpg" title2="Raspberry Pi" >}}
 
@@ -75,8 +74,7 @@ Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspb
 ¡A disfrutar!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Guía instalación Raspberry Pi con Arch Linux][elblogdepicodev-108]
 * [Iniciar la Raspberry Pi desde un disco o memoria USB][blogbitix-6]
 {{% /reference %}}

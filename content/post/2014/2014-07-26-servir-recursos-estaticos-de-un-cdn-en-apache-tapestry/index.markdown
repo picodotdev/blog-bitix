@@ -12,8 +12,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -53,8 +52,7 @@ Así de simple podemos cambiar el comportamiento de Tapestry y en este caso empl
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 * [AssetPathConverter](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/AssetPathConverter.html)

@@ -13,8 +13,7 @@ series: ["quercus-robur"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="quercus-robur.png" title1="Quercus Robur" width1="175" >}}
 

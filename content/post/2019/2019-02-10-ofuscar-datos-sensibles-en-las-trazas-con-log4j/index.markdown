@@ -13,8 +13,7 @@ summary: "Ciertos datos son sensibles y hay que protegerlos al guardarlos en una
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -40,8 +39,7 @@ En la salida del ejemplo la primera traza corresponde al uso de la clase _Securd
 {{% sourcecode git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Lookahead en expresiones regulares con Java][blogbitix-385]
 {{% /reference %}}
 

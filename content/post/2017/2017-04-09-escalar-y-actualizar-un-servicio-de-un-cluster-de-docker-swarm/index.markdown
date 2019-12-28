@@ -15,8 +15,7 @@ summary: "Ya tenemos un _cluster_ formado por varios nodos con algún servicio e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 

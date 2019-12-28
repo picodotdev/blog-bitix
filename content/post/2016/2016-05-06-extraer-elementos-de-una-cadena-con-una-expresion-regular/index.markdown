@@ -11,8 +11,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -41,8 +40,7 @@ La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos [
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRegex" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Using Regular Expressions to Extract a Value in Java](https://stackoverflow.com/questions/237061/using-regular-expressions-to-extract-a-value-in-java)
 * [Los cuantificadores greedy, reluctant y posessive en expresiones regulares][blogbitix-257]
 * [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]

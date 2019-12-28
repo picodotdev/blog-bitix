@@ -15,8 +15,7 @@ summary: "Leer un CSV, escribir un CSV, archivos excel, generar gráficas para v
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -48,8 +47,7 @@ En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index
 {{% sourcecode git="blog-ejemplos/tree/master/JavaPdf" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Creating PDF Documents With Apache PDFBox 2](https://dzone.com/articles/creating-pdf-documents-with-apache-pdfbox-2)
 * [Inserting Image to a PDF Document](https://www.tutorialspoint.com/pdfbox/pdfbox_inserting_image.htm)
 * [Is iText Java library free of charge or have any fees to be paid?](https://stackoverflow.com/a/27867740)

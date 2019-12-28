@@ -12,8 +12,7 @@ summary: "Eliminar archivos del sistema de ficheros no basta para destruir la in
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200">}}
 
@@ -36,8 +35,7 @@ Hacer una eliminación segura con el comando <code>wipe</code> o uno similar dif
 Aunque si queremos asegurarnos de que la información sea verdaderamente irrecuperable de una unidad otro buen método es usar un martillo como saben en alguna organización política.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux][blogbitix-125]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]

@@ -11,8 +11,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
@@ -95,8 +94,7 @@ El [código fuente completo de este ejemplo](https://github.com/picodotdev/blog-
 {{< code file="gradle-tomcatRun.sh" language="bash" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Internationalization in JavaScript](https://stackoverflow.com/questions/3084675/internationalization-in-javascript)
 * [Internacionalización a lenguajes con diferentes formas plurales en Java][elblogdepicodev-internacionalizacion-lenguajes-con]
 * [Internacionalización (i18n) de campos con Hibernate][elblogdepicodev-internacionalizacion-i18n-de-campos-con]

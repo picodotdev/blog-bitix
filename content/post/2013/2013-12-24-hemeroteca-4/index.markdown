@@ -14,8 +14,7 @@ library: "true"
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
@@ -68,8 +67,7 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hemeroteca #3][elblogdepicodev-162]
 * [Hemeroteca #2][elblogdepicodev-136]
 * [Hemeroteca #1][elblogdepicodev-111]

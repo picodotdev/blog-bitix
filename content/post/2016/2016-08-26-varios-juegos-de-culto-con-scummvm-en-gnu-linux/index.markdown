@@ -14,8 +14,7 @@ summary: "Un juego puede gustar por sus gráficos espectaculares, sin embargo, n
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="scummvm.png" title1="ScummVM" image2="linux.svg" title2="Linux" width2="200" >}}
 

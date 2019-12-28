@@ -14,8 +14,7 @@ summary: "jOOQ no proporciona la misma transparencia de acceso a una base de dat
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 

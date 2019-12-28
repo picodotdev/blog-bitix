@@ -13,8 +13,7 @@ summary: "Las velocidades de conexión actuales de 100 Mbps y de 600 Mbps en los
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -47,8 +46,7 @@ Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la 
 {{< code file="convert-to.webp.sh" language="bash" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Convertir imágenes entre formatos y cambiar tamaño con ImageMagick][elblogdepicodev-129]
 {{% /reference %}}
 

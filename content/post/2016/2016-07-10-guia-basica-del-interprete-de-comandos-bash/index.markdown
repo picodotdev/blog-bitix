@@ -13,8 +13,7 @@ summary: "La línea de comandos sigue siendo una poderosa herramienta que aunque
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -180,8 +179,7 @@ el siguiente [manual de Bash](http://bash.cyberciti.biz/guide/Main_Page).
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [How To Use Bash History to Improve Your Command-Line Productivity](http://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/)
 {{% /reference %}}
 

@@ -12,8 +12,7 @@ summary: "Entre las ventajas de integrar dos aplicaciones mediante el envío de 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="rabbitmq.svg" title1="RabbitMQ" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -73,8 +72,7 @@ Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos b
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [RabbitMQ][rabbitmq]
 * [Documentación RabbitMQ](http://www.rabbitmq.com/documentation.html)
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]

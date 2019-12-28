@@ -15,8 +15,7 @@ summary: "Parte de la información que usan los contenedores de Docker se debe p
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 

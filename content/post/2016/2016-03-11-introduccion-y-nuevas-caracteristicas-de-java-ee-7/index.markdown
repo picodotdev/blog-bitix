@@ -14,8 +14,7 @@ summary: "Java sigue siendo uno de los lenguajes más usado para desarrollar apl
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java-ee.png" title1="Java EE" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -135,8 +134,7 @@ Descrito, en el otro artículo presentaré un [ejemplo de aplicación usando Jav
 Por cierto, como nota para técnicos, reclutadores, empresas y páginas de empleo, Java EE pasó a llamarse así en el ¡2006!, hace una década, ya es hora actualizarse también y dejar de llamarlo incorrectamente J2EE o JEE.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)

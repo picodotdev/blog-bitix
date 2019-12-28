@@ -14,8 +14,7 @@ summary: "Office es la suite ofimática de Microsoft con un margen de diferencia
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
@@ -104,8 +103,7 @@ Alguna otra opción que merece ser comentada es [Calligra][calligra] la _suite_ 
 La próxima vez que me pidan reinstalar Windows u Office en vez de instalar la suite ofimática de Microsoft sin licencia creo que instalaré la opción para uso personal de WPS Office, recomendaré usar Google Docs, OnlyOffice o LibreOffice que espero mejore y actualice a los tiempos modernos su interfaz cuando tenga que instalarlo.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [A Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92]
 * [Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre][blogbitix-119]
 * [El impuesto Windows][elblogdepicodev-57]

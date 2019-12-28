@@ -14,8 +14,7 @@ summary: "Java proporciona en su API numerosas primitivas para realizar programa
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -40,8 +39,7 @@ Dos de los problemas más conocidos en la programación concurrente son el de [L
 En este código del problema de los filósofos la clase _Table_ crea los filósofos asignándoles los _Fork_ que tienen que compartir para comer después de estar un tiempo pensando. En la ejecución se observa que el primer filósofo que intenta comer puede hacerlo ya que sus tenedores adyacentes está libres pero posteriormente se observa que en algunas ocasiones algún filósofo no puede hacerlo porque sus tenedores están siendo usados por alguno de sus compañeros adyacentes.
 
 {{% warning %}}
-{{< links >}}
-{{< postslinks >}}
+
 Esta implementación de los filósofos no es del todo correcta debido a que un filósofo podría quedarse sin comer o quedarse sin comer duramente mucho tiempo. En el artículo [El problema de concurrencia de la cena de los filósofos resuelto con Java][blogbitix-302] expongo otra solución sin este problema y resuelto correctamente.
 {{% /warning %}}
 
@@ -69,8 +67,7 @@ Estos no son los únicos ejemplos clásicos otro es el del [agente y los fumador
 {{< sourcecode git="blog-ejemplos/tree/master/JavaconCurrency" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Tutorial sobre la concurrencia en Java](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
 {{% /reference %}}
 

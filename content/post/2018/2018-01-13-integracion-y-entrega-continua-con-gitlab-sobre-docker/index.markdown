@@ -13,8 +13,7 @@ series: ["gitlab"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 
@@ -58,8 +57,7 @@ En la sección de referencia hay unos buenos enlaces de documentación de GitLab
 {{< sourcecode git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [GitLab Continuous Integration (GitLab CI/CD)](https://docs.gitlab.com/ce/ci/)
 * [Getting started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.html)
 * [Configuration of your jobs with .gitlab-ci.yml](https://docs.gitlab.com/ce/ci/yaml/README.html)

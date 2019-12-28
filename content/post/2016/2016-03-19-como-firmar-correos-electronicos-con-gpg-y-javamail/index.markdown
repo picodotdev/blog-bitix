@@ -12,8 +12,7 @@ summary: "El correo electrónico es un medio muy utilizado para realizar ataques
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="gnupg.png" title2="GnuPG" >}}
 
@@ -49,8 +48,7 @@ Las suplantaciones mediante correo electrónico son y seguirán siendo habituale
 {{< code file="email-dkim.txt" language="plaintext" options="" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción a la criptografía e inicio con GPG ][elblogdepicodev-181]
 * [Enviar correos electrónicos mediante Java Mail ][elblogdepicodev-50]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]

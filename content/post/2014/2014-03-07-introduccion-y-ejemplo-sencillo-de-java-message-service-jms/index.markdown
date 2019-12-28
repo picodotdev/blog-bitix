@@ -12,8 +12,7 @@ summary: "JMS es una especificación de Java que define en esta plataforma una f
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -72,8 +71,7 @@ Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.ama
 El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJMS) los puedes descargar de [mi repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [WildFly Messaging configuration](https://docs.jboss.org/author/display/WFLY8/Messaging+configuration)
 * [WildFly8Configurations](https://docs.jboss.org/author/display/WFLY8/Getting+Started+Guide#GettingStartedGuide-WildFly8Configurations)
 * [HelloWorldJMSClient.java](https://github.com/wildfly/quickstart/blob/master/helloworld-jms/src/main/java/org/jboss/as/quickstarts/jms/HelloWorldJMSClient.java)

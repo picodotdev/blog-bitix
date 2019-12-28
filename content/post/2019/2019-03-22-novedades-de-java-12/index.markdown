@@ -13,8 +13,7 @@ series: ["java-platform"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -66,8 +65,7 @@ Una de la áreas que más atención reciben para mejorar el rendimiento de las a
 [Algunos métodos han sido eliminados](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#Removed) varios relacionados con el método _finalize_ cuyo uso está desaconsejado desde hace mucho tiempo por no se una forma segura de liberar recursos. Algunos algoritmos de cifrado inseguros han sido deshabilitados. Se ha añadido soporte para Unicode 11.0.0 con nuevos caracteres, bloques y  _scripts_.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Definitive Guide To Java 12](http://blog.codefx.org/java/java-12-guide/)
 * [Changes to Garbage Collection in Java 12](https://blog.idrsolutions.com/2019/03/changes-to-garbage-collection-in-java-12/)
 * [Java 12 is here!](https://jaxenter.com/java-12-is-here-156964.html)

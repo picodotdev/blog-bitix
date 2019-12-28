@@ -14,8 +14,7 @@ series: ["spring-cloud"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -93,7 +92,6 @@ Según vaya escribiendo y publicando los artículos aparecerán en la lista de l
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Monolithic vs. Microservices Architecture](https://articles.microservices.com/monolithic-vs-microservices-architecture-5c4848858f59)
 {{% /reference %}}

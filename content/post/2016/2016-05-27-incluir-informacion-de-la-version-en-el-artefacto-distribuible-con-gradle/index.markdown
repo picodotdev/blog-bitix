@@ -13,8 +13,7 @@ summary: "Tener trazabilidad entre el código fuente y el código que se está e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="gradle.svg" title2="Gradle" width2="200" >}}
 
@@ -49,8 +48,7 @@ El libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617291307/ref
 {{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]

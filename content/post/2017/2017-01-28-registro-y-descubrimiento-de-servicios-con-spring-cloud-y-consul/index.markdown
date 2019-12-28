@@ -13,8 +13,7 @@ summary: "Tradicionalmente el conectar un servicio con sus servicios dependiente
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -68,8 +67,7 @@ Esta es la salida en la consola listando los servicios disponibles, siendo uno d
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloudConsul" command="./consul/consul.sh y ./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Spring Cloud][spring-cloud]
 * [Spring Cloud Consul][spring-cloud-consul]
 {{% /reference %}}

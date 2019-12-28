@@ -16,8 +16,7 @@ summary: "El _kit_ de iniciación a la electrónica para la Raspberry Pi tiene u
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -85,8 +84,7 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Java programming with JNI](https://www.ibm.com/developerworks/java/tutorials/j-jni/j-jni.html)
 * [Accessing 1-wire Protocol Devices from Java](http://hirt.se/blog/?p=493)
 * [How to Set Up the DHT11 Humidity Sensor on the Raspberry Pi](http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)

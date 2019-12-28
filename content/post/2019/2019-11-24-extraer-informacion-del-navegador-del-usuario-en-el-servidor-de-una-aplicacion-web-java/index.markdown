@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -37,8 +36,7 @@ Accediendo a la dirección del controlador _http\://localhost:8080_ se obtienen 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaUserAgent" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [MDN User-Agent](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/User-Agent)
 * [Firefox user agent string reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox)
 * [Browser detection using the user agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)

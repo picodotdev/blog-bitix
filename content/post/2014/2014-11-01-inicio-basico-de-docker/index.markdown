@@ -13,8 +13,7 @@ summary: "La tecnología de contenedores nos ofrece múltiples ventajas para nue
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
@@ -78,8 +77,7 @@ Continuando esta serie de artículos sobre docker explicaré como construir una 
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción y características de Docker][blogbitix-49]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Introducción a Ansible][blogbitix-52]

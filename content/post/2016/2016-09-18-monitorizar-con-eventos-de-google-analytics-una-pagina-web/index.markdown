@@ -13,8 +13,7 @@ summary: "Conociendo cómo usar los eventos de Analytics podemos conocer informa
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="google-analytics.png" title1="Google Analytics" >}}
 

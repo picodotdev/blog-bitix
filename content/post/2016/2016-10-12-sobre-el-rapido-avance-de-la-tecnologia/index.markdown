@@ -13,8 +13,7 @@ summary: "La tecnología en un periodo tan corto como un año avanza significati
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 El mundo de la tecnología avanza muy rápido, las mejoras son constantes y en el tiempo de pocos meses o un año los dispositivos son notablemente más capaces generalmente manteniendo o incluso a un pequeño menor precio. Los procesadores, las tarjetas gráficas, la cantidad de memoria RAM, la capacidad de los discos duros, los discos de estado sólido es raro que cada año no tengan nuevas generaciones que prometen más rendimiento en los ordenadores personales. Más recientemente los teléfonos inteligentes con una cantidad de memoria RAM mayor que no hace tanto tenían los ordenadores personales, quizá en no mucho tiempo puedan sustituir en muchas tareas para la mayoría de usuarios a los PC con [la convergencia que baticino será la siguiente disrupción tecnológica][blogbitix-149], los televisores con capacidad de obtener contenidos de internet y que próximamente veremos con una resolución 4K y en un futuro con 8K cuando aún algunas cadenas de televisión no emiten aún ni en verdadera resolución 1080p, el ancho de banda de internet que aún no se quien puede necesitar 300 Mbps simétricos en el hogar pero que ya se ofrecen, ...
 

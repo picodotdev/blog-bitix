@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="google.svg" title2="Google" width2="350" >}}
 
@@ -98,8 +97,7 @@ Google ofrece un [explorador para probar las peticiones y permisos de los docume
 {{< sourcecode git="blog-ejemplos/tree/master/JavaGoogleApi" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Google API Client Library for Java, Javadoc](https://googleapis.github.io/google-api-java-client/releases/1.25.0/javadoc/index.html)
 * [Google Sheets API v4, Javadoc](https://developers.google.com/resources/api-libraries/documentation/sheets/v4/java/latest/)
 * [Código fuente Google APIs](https://github.com/googleapis/)

@@ -13,8 +13,7 @@ summary: "Para no tener que descargar binarios e instalarlos manualmente y estar
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apple.svg" title1="Apple" width1="200" image2="macos.svg" title2="macOS" width2="300" >}}
 

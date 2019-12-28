@@ -13,8 +13,7 @@ tags: ["opinion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En multitud de ocasiones habrás oído consejos a seguir para como candidato a una oferta de trabajo. Desde informarte previamente a la entrevista de trabajo sobre el puesto y la empresa, ser puntual, revisar el _curriculum vitae_ y la carta de presentación para enviarlos sin faltas de ortografía, sobre actitud en la entrevista, ... en [Infojobs](http://orientacion-laboral.infojobs.net/) se ofrecen cantidad de ellos. La mayoría son consejos para los aspirantes a un puesto de trabajo y al igual que hay consejos para los candidatos también se me ocurren algunos para las empresas. Aquí algunos que yo sigo para archivar empresas candidatas interesantes para un futurible aún en un momento determinado no estando buscando activamente un nuevo puesto de trabajo.
 

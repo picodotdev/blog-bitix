@@ -14,8 +14,7 @@ summary: "Con ECMAScript 6 se han incorporado al lenguaje varias novedades como 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
@@ -136,8 +135,7 @@ Los manejadores de eventos se van recorriendo primero en modo captura desde la r
 Todos estos ejemplos funcionan en los navegadores Firefox y Chrome pudiendo probarlos en la consola JavaScript que incorporan para los desarrolladores. En la página [es6-features](http://es6-features.org/) hay una lista completa de todas las nuevas características de ECMAScript 6.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Mozilla Developer Network][mozilla-mdn]
 * [es6-features](http://es6-features.org/)
 {{% /reference %}}

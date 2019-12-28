@@ -16,8 +16,7 @@ summary: "Los teclados básicos son más que suficientes para la mayoría de usu
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="videoseven.png" title1="Videoseven" width1="200" >}}
 

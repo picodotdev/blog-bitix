@@ -11,8 +11,7 @@ tags: ["blog", "planeta-codigo", "planeta-linux"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
@@ -43,8 +42,7 @@ El código fuente completo del tema que he creado y del blog realizado con Hugo 
 ¿Que te parece el nuevo diseño?
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Hola nuevo mundo][blogbitix-0]
 * [Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky][blogbitix-404]
 {{% /reference %}}

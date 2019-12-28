@@ -12,8 +12,7 @@ tags: ["patrocinado", "software"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Las TV inteligentes o Smart TVs son cada vez más comunes, bien en la propia televisión, o con dispositivos externos o con miniPCs o, [como ya vimos en su momento][blogbitix-5], con una Raspberry Pi
 En este artículo veremos que hay cierto contenido o algunos servicios a los que no podréis acceder por estar limitados geográficamente, es decir, que solo podréis acceder a ellos si os conectáis desde una dirección IP localizada en la región en la que se presta el servicio. Empecemos con algunos conceptos básicos.

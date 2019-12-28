@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -35,8 +34,7 @@ El huso horario de Madrid es _Europe/Madrid_ y el huso horario de Buenos Aires e
 Finalmente, hay que tener en cuenta que los [horarios de verano](https://es.wikipedia.org/wiki/Horario_de_verano) que se establecen en cada país con la intención de ajustar normalmente el horario a las horas de luz y de este modo ahorrar energía. Estos horarios de verano los establece cada país y varían más a menudo de lo que podemos creer, a veces son una cuestión política. En el JDK para actualizar estos horarios de verano debemos actualizar el JDK esperando que [Oracle][oracle] los haya actualizado debidamente o usar la herramienta [Timezone Updater Tool](https://www.oracle.com/us/technologies/java/tzupdater-readme-136440.html). El actualizar el JDK o usar la herramienta Timezone Updater Tool en un servidor para esto puede ser un problema o simplemente es algo que no controlamos como desarrolladores de la aplicación por no estar el servidor bajo nuestro control, esta es otra ventaja de usar JodaTime ya que esta librería como dependencia del proyecto si está bajo nuestro control y podemos ir actualizando la versión de la misma en la que los horarios de verano si están actualizados.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Java 7 Date API](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
 * [Java 8 Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 * [JodaTime][jodatime]

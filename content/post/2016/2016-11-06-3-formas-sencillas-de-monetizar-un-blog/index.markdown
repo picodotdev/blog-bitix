@@ -12,8 +12,7 @@ summary: "Si tenemos un blog probablemente tengamos algún gasto como el dominio
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Lo que más cuesta de tener un blog es el tiempo que requiere escribir los artículos, editarlos, hacer un ejemplo de código si es el caso y obtener las imágenes a incluir, cada artículo puede suponer un trabajo de entre 3 y 10 horas según mi experiencia. A pesar de todo solo es nuestro tiempo y muchos si seguimos escribiendo en un blog lo hacemos de buen gusto y nuestra propia motivación. Sin embargo, otra parte es que quizá el _hosting_ y tener un dominio para el blog nos cueste algo de dinero, el dominio alrededor de 12€ al año y el hosting 5€, 10€ o algo más al mes con lo que al año serían unos 130€ aproximadamente. Si tenemos una cifra de páginas visitas respetable a partir de 25K al mes hay varias formas de monetizar un blog para sufragar los gastos que nos ocasione, aunque probablemente no compensen el tiempo de dedicación al blog.
 

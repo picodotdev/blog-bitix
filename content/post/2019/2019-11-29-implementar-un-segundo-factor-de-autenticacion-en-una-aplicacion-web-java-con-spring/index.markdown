@@ -13,8 +13,7 @@ summary: "El segundo factor de autenticación es una medida adicional en la aute
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="spring.svg" title2="Spring" width2="200" >}}
 
@@ -84,8 +83,7 @@ Muchos de los servicios populares en internet implementan 2FA como medida de pro
 {{% sourcecode git="blog-ejemplos/tree/master/Spring2FA" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Two Factor Auth with Spring Security](https://www.baeldung.com/spring-security-two-factor-authentication-with-soft-token)
 * [Redirect to Different Pages after Login with Spring Security](https://www.baeldung.com/spring_redirect_after_login)
 * [Two Step Login Example](https://github.com/altfatterz/two-step-login/)

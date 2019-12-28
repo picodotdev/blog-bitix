@@ -10,8 +10,7 @@ footer: true
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En Blog Bitix con alrededor de 45000 páginas vistas y 30000 usuarios mensuales tanto de España como de América Latina ofrezco varias posibilidades de publicidad para organizaciones u empresas que deseen promocionar sus servicios o productos relacionados de alguna forma con la tecnología, programación, el software libre y el contenido de este blog u de otra temática de interés para los lectores.
 

@@ -12,8 +12,7 @@ footer: true
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Empecé el blog allá por febrero de 2010 con la motivación de escribir y aprender sobre temas de mi interés que en mis horas de trabajo no podía, ni aún muchas veces puedo, tratar de ayudar a los demás, de compartir conocimientos, es una de las formas de colaborar con el software libre y también sin duda por divertirme.
 

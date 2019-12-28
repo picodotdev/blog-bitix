@@ -13,8 +13,7 @@ tags: ["planeta-codigo", "planeta-linux", "programacion", "patrocinado"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="keepcoding.png" title1="KeepCoding" width1="300" >}}
 

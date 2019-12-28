@@ -15,8 +15,7 @@ summary: "Para tareas muy específicas que requieran alto rendimiento, baja late
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="gnu.svg" title2="SVG" width2="200" image3="linux.svg" title3="Linux" wdth3="200" width3="200" >}}
 
@@ -75,8 +74,7 @@ Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la l
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeJniHelloWorldLocal" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [GO: Call me maybe, Java!](https://blog.dogan.io/2015/08/15/java-jni-jnr-go/)
 * [Java Native Interface Specification](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html)
 * [Java Programming Tutorial, Java Native Interface (JNI)](http://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)

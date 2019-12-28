@@ -14,8 +14,7 @@ series: ["graphql"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 

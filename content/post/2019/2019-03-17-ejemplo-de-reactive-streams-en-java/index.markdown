@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -34,8 +33,7 @@ En el ejemplo de código un productor produce y los consumidores procesan elemen
 {{% sourcecode git="blog-ejemplos/tree/master/ReactiveStreams" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Reactive Streams in Java 9](https://dzone.com/articles/reactive-streams-in-java-9)
 {{% /reference %}}
 

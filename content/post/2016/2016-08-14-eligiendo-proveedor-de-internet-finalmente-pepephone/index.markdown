@@ -15,8 +15,7 @@ note: "<strong>Nota</strong>: Este no es ni mucho menos un artículo patrocinado
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="pepephone.svg" title1="Pepephone" width1="400">}}
 

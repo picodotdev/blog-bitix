@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-lib
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="redmine.png" title="Redmine" width="300" >}}
 
@@ -51,8 +50,7 @@ Una vez activado ya podemos ver el panel kanban mostrado en la primera captura e
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción al gestor de proyectos y tareas Redmine][blogbitix-57]
 * [Introducción a Bitnami][blogbitix-54]
 * [Introducción e inicio a Drupal][blogbitix-60]

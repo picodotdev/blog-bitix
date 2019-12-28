@@ -13,8 +13,7 @@ series: ["docker"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="docker.svg" title1="Docker" width1="200" image2="alpinelinux.svg" title2="Alpine Linux" width2="350" >}}
 

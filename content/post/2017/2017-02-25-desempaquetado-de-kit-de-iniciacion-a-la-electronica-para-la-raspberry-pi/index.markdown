@@ -14,8 +14,7 @@ series: ["electronica", "desempaquetado-tecnologia"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" >}}
 

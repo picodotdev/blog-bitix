@@ -12,8 +12,7 @@ summary: "Arch Linux al ser una distribución de GNU/Linux _rolling release_ las
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -36,8 +35,7 @@ Esta opción puede ayudarnos a ahorrarnos algo de tiempo cada vez que hagamos un
 Si te interesa conocer cómo instalar Arch Linux recomiendo hacerlo antes en una máquina virtual con [VirtualBox][virtualbox] leyendo antes y siguiendo el [manual oficial](https://wiki.archlinux.org/index.php/Installation_guide), la [guía para principiantes](https://wiki.archlinux.org/index.php/Beginners'_guide) y para completarlo un artículo que escribí como [anexo a las guías oficiales][blogbitix-22] anteriores.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Anexo a la guía de instalación y del principiante de Arch Linux][blogbitix-22]
 * [De Windows a Arch Linux][elblogdepicodev-15]
 * [De Arch Linux a Arch Linux][blogbitix-36]

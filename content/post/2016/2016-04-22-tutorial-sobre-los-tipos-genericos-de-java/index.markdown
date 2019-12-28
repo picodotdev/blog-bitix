@@ -13,8 +13,7 @@ summary: "Hace ya más de una década que en Java 5 se introdujeron los _generic
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -161,8 +160,7 @@ A pesar de los _generics_ y el compilador es posible poner en un _String_ en un 
 En resumen, los genéricos en Java son un añadido muy útil al lenguaje.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [10 razones para seguir usando Java][blogbitix-81]

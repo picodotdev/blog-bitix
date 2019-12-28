@@ -12,8 +12,7 @@ summary: "¿Has perdido alguna vez una memoria USB? ¿sí, aún no? ¿qué datos
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -50,8 +49,7 @@ Introducida la contraseña veremos los archivos originales y podremos trabajar c
 Son increíbles las opciones que uno va descubriendo del software libre de GNU/Linux y esta es una con la que haremos nuestras unidades USB y los preciados datos que contienen bastante más seguras y a salvo en caso de pérdida o robo. Y esto es solo una muestra, con dm-crypt es posible hacer muchas más cosas que con curiosidad puedes descubrir en la wiki de Arch Linux.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux][blogbitix-125]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cómo eliminar de forma segura archivos con wipe en GNU/Linux][blogbitix-130]

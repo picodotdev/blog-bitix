@@ -14,8 +14,7 @@ summary: "Al diferencia de una API REST donde cada recurso posee un _endpoint_ p
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 

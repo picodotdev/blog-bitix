@@ -11,8 +11,7 @@ tags: ["gnu-linux", "planeta-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="ansible.svg" title="Ansible" width="200" >}}
 
@@ -68,8 +67,7 @@ Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la document
 Habiendo hecho una [introducción a Docker][blogbitix-49] y esta a Ansible en el siguiente artículo comentaré [como usar Docker con Ansible][blogbitix-53].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Artículo en la wikipedia](https://en.wikipedia.org/wiki/Ansible_%28software%29)
 * [Presentación sobre Ansible](https://speakerdeck.com/slok/ansible-all-the-things)
 * [Ansible examples](https://github.com/ansible/ansible-examples)

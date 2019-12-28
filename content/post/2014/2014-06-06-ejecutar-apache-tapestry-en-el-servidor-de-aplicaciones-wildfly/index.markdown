@@ -11,8 +11,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="wildfly.png" title2="WildFly" >}}
 
@@ -41,8 +40,7 @@ En la [aplicación de ejemplo](https://github.com/picodotdev/elblogdepicodev/tre
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 * [Servidor de aplicaciones JBoss/WildFly][blogbitix-10]

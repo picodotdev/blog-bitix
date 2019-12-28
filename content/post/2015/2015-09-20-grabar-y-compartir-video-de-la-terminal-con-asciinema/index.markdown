@@ -13,8 +13,7 @@ summary: "Asciinema es una herramienta que nos permite grabar un vídeo de texto
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="asciinema.png" title="Asciinema" >}}
 
@@ -47,8 +46,7 @@ Y este es el resultado de un vídeo, en este caso el vídeo introductorio de Asc
 {{< asciinema id="22124" caption="Vídeo introducción Asciinema" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Asciinema][asciinema]
 * [Documentación de Asciinema](https://asciinema.org/docs)
 * [Documentación para embeber vídeos](https://asciinema.org/docs/embedding)

@@ -12,8 +12,7 @@ tags: ["planeta-codigo", "programacion", "software"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="visual-studio-code.svg" title1="Visual Studio Code" width1="200" >}}
 
@@ -61,8 +60,7 @@ Por otro lado ocupa menos que los 260 MiB de Atom contra los 180 MiB de Visual S
 En los sistemas Unix habrá gente que prefiera [Vim][vim] por sus enormes posibilidades, bajo consumo de memoria y exprimir al máximo cada megaherzio del procesador pero este requiere un tiempo de aprendizaje elevado inicial comparado con cualquiera de los editores anteriores.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Setup](https://code.visualstudio.com/docs/setup/setup-overview)
 * [Basics](https://code.visualstudio.com/docs/editor/codebasics)
 * [Tasks](https://code.visualstudio.com/Docs/editor/tasks)

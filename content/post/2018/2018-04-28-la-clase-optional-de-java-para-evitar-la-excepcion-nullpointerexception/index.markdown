@@ -13,8 +13,7 @@ summary: "Con la clase _Optional_ añadida en el JDK en la versión 8 del lengua
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -29,8 +28,7 @@ Usar un objeto _Optional_ advierte al programador de que la referencia que conti
 Hay algunos métodos más en la clase _Optional_ con algunas funcionalidades adicionales que hace uso de las nuevas capacidades funcionales del lenguaje como convertir un _Optional_ a un [Stream](https://docs.oracle.com/javase/10/docs/api/java/util/stream/Stream.html).
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Las excepciones del lenguaje Java][blogbitix-270]
 * [The $1 Solution to Avoid the Null Pointer Exception](https://dzone.com/articles/one-dollar-solution-to-avoid-null-pointer-exceptio)
 {{% /reference %}}

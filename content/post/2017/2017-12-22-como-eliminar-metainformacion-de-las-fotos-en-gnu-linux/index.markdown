@@ -12,8 +12,7 @@ tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 

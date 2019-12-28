@@ -11,8 +11,7 @@ tags: ["software", "java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -33,8 +32,7 @@ Aún así, la anotación Cached funciona a nivel de petición, cada vez que que 
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 {{% /reference %}}

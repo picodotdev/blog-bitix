@@ -12,8 +12,7 @@ summary: "En la mayoría de aplicaciones no solo es habitual sino algo muy usado
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapstry" width1="400" >}}
 
@@ -80,8 +79,7 @@ Es sorprendentemente lo sencillo que es usar el componente _Grid_ para toda la f
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Mantenimiento CRUD en Apache Tapestry][elblogdepicodev-160]
 * [Artículos sobre Tapestry en Blog Bitix][blogbitix-tag-tapestry]
 * [Artículos sobre Tapestry en El blog de pico.dev][elblogdepicodev-label-tapestry]

@@ -14,8 +14,7 @@ summary: "Una API REST no ofrece introspección y por tanto hay que recurrir a u
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 

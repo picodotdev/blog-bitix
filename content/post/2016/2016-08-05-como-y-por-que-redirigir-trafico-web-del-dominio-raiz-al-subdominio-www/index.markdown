@@ -14,8 +14,7 @@ summary: "La redirección del dominio raíz al subdominio es una de las cosas b�
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="html.svg" title1="HTML" width1="200" >}}
 
@@ -59,8 +58,7 @@ Si prefieriesemos hacer la redirección al revés, del subdominio www al dominio
 
 Referencia:
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Nginx config for www to non-www and non-www to www redirection](https://easyengine.io/tutorials/nginx/www-non-www-redirection/)
 * [How to Redirect URLs from Your Root Domain to the WWW Subdomain and Vice Versa](http://www.thesitewizard.com/apache/redirect-domain-www-subdomain.shtml)
 {{% /reference %}}

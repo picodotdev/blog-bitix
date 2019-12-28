@@ -14,8 +14,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
@@ -34,8 +33,7 @@ Suponiendo que se desea poner un punto de ruptura en un código JavaScript hay q
 Con la herramienta de depuración abierta se pueden poner expresiones de inspección, nuevos puntos de ruptura e ir paso a paso en la ejecución del código JavaScript. Esta sentencia para iniciar la depuración es lo mismo que añadir un punto de ruptura inspeccionando los recursos de JavaScript de la página pero quizá resulta más cómodo.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [MDN debugger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
 {{% /reference %}}
 

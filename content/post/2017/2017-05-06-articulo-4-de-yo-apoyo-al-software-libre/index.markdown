@@ -13,8 +13,7 @@ series: ["donacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 En los últimos meses las visitas que estoy recibiendo en Blog Bitix están creciendo cada mes entre un 5% y 10%, junto con el número de visitas los ingresos por la publicidad AdSense también estoy notando que está aumentando en proporción similar o incluso más aún. Cuando hace no tanto un buen mes generaba unos 12€ y uno malo 6€ ahora el _blog_ me está reportando entre 18€ y 40€ al mes. Además, en este último periodo he escrito un artículo patrocinado sobre [Servidores Cloud VPS en la nube][blogbitix-211] para [Clouding.io][cloudingio] que también ha sido otra forma de ingreso. El punto negativo de todo esto es que solo son unos pocos artículos los que se llevan la mayor parte del tráfico de mi _blog_, aún así el resto de artículos contribuyen a que las visitas e ingresos aumenten constantemente.
 

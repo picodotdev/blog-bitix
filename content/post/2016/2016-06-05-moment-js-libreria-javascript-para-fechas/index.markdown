@@ -12,8 +12,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
@@ -36,8 +35,7 @@ La librería Moment.js permite en el lado del cliente formatear fechas según un
 En este artículo no incluiré un ejemplo de código ya que en la página de inicio del proyecto está muy bien explicado, la documentación parece bastante completa.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Moment.js][momentjs]
 {{% /reference %}}
 

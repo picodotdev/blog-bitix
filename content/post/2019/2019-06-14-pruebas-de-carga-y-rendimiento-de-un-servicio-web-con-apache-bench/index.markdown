@@ -14,8 +14,7 @@ summary: "En algunos que un servicio devuelva los datos esperados no es suficien
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache.svg" title1="Apache" width1="200" >}}
 

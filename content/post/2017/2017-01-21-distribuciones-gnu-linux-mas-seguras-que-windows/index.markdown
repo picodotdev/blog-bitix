@@ -13,8 +13,7 @@ summary: "Los sistemas GNU/Linux pueden ser igual de seguros o inseguros que los
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 

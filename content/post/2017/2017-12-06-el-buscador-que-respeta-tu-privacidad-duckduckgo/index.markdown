@@ -13,8 +13,7 @@ tags: ["planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="duckduckgo.svg" title1="DuckDuckGo" width1="200" >}}
 

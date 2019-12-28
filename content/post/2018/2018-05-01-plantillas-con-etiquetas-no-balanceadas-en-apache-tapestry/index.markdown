@@ -13,8 +13,7 @@ summary: "Apache Tapestry es uno de los mejores _frameworks_ web para Java que h
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" >}}
 

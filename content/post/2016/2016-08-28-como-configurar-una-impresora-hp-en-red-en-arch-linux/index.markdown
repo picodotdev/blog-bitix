@@ -13,8 +13,7 @@ summary: "Después de mucho tiempo sin tener configurada una impresora en red de
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
@@ -67,8 +66,7 @@ Con todo configurado la prueba de impresión realizable tanto desde la página d
 Para otras marcas y modelos de impresoras deberemos instalar otro controlador, en la siguiente [base de datos de impresoras](http://www.openprinting.org/printers) encontraremos el controlador aconsejado si en nuestra distribución no está documentado.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [CUPS][cups]
 * [CUPS](https://es.wikipedia.org/wiki/Common_Unix_Printing_System) (wikipedia)
 * [Documentación de CUPS](https://www.cups.org/documentation.html)

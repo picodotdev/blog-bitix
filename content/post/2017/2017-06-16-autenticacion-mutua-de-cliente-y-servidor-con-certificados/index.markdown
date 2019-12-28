@@ -14,8 +14,7 @@ series: ["web"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
@@ -89,8 +88,7 @@ Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Ja
 {{< sourcecode git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 * [Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas][blogbitix-75]
 {{% /reference %}}

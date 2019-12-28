@@ -10,8 +10,7 @@ tags: ["java", "planeta-codigo", "planeta-linux", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
@@ -42,8 +41,7 @@ El resultado aplicando está solución puede verse en el [feed de la portada de 
 El código fuente de Blog Stack está disponible en un [repositorio de GitHub](https://github.com/picodotdev/blog-stack/tree/master) donde puede verse el código completo.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Qué es y cómo hacer «web scraping» en Java][blogbitix-47]
 * [Cómo filtrar contenido HTML de forma segura][blogbitix-48]
 {{% /reference %}}

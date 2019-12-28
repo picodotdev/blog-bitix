@@ -13,8 +13,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
@@ -57,8 +56,7 @@ Otro caso habitual es añadir la rama de git del directorio actual de trabajo y 
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Short date in bash PS1 prompt](https://stackoverflow.com/questions/9200862/short-date-in-bash-ps1-prompt)
 {{% /reference %}}
 

@@ -12,8 +12,7 @@ tags: ["java", planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -41,8 +40,7 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Javadoc Technology](https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html)
 * [Taglet Overview](https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/taglet/overview.html)
 {{% /reference %}}

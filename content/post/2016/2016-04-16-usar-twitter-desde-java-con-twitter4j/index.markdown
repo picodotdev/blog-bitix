@@ -11,8 +11,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -37,8 +36,7 @@ Tener acceso de escritura en la aplicación requiere que introduzcamos nuestro n
 Teniendo a nuestra disposición la API de Twitter en nuestra aplicación solo nos queda darle un uso útil.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Twitter4j][twitter4j]
 * [Java Twitter Integration](https://java.dzone.com/articles/java-twitter-integration)
 * [Twitter Apps](https://dev.twitter.com/apps)

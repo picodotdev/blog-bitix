@@ -13,8 +13,7 @@ summary: "JMX es una forma sencilla e integrada en la plataforma Java de monitor
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -107,8 +106,7 @@ El acceso remoto también es posible mediante una [aplicación Java que actúe c
 {{% sourcecode git="blog-ejemplos/tree/master/JavaJMX" command="./gradlew run" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Monitoring and Management Using JMX Technology](https://docs.oracle.com/javase/7/docs/technotes/guides/management/agent.html)
 * [Tutorial Java Management Extensions (JMX)](https://docs.oracle.com/javase/tutorial/jmx/index.html)
 * [Securing remote JMX](https://gquintana.github.io/2016/09/01/Securing-remote-JMX.html)

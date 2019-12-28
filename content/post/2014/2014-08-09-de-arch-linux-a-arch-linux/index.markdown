@@ -11,8 +11,7 @@ tags: ["gnu-linux", "opinion", "planeta-linux", "software", "software-libre"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
@@ -33,8 +32,7 @@ Aún así Arch Linux puede que no sea lo más adecuado para todo o todas las per
 ¡Larga vida a Linux y a Arch Linux!
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [De Windows a Arch Linux][elblogdepicodev-de-windows-arch-linux]
 * [Experiencia instalando sistema operativo a ordenador viejo][blogbitix-37]
 * [Anexo a la guía de instalación de Arch Linux][blogbitix-22]

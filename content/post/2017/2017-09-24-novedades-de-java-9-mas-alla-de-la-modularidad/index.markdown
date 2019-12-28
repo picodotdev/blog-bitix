@@ -15,8 +15,7 @@ summary: "La modularidad introducida en Java 9 no es la única novedad incorpora
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -200,8 +199,7 @@ Y unos buenos vídeos sobre las nuevas características de Java 9, uno en españ
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [The best Java 9 Language and API improvements](https://zeroturnaround.com/rebellabs/the-best-java-9-language-and-api-improvements/)
 * [New Java 9 features at a glance](https://jaxenter.com/new-features-in-java-9-137344.html)
 * [Modern Java Recipes](http://amzn.to/2ylsidI)

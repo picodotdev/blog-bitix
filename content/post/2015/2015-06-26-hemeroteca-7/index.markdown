@@ -16,8 +16,7 @@ summary: "Pasado un nuevo semestre he escrito principalmente sobre temas de prog
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Otros seis meses que han pasado y estos especialmente para mi muy rápido. Como suelo hacer cada este periodo de tiempo recopilo en un artículo _Hemeroteca_ los artículos que he publicado al ritmo que mantengo de uno por semana. Este ya es el séptimo contando los de [El blog de pico.dev][elblogdepicodev] y de [Blog Bitix][blogbitix].
 

@@ -14,8 +14,7 @@ series: ["electronica"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -49,8 +48,7 @@ En otros artículos de la serie puedes consultar cómo usar otros [elementos de 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeServomotor" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Especificación SG90 servomotor](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf)
 * [Servomotor](https://es.wikipedia.org/wiki/Servomotor)
 {{% /reference %}}

@@ -13,8 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="ffmpeg.png" title2="FFmpeg" width2="400" >}}
 
@@ -52,8 +51,7 @@ En todos los casos como se muestra en el código es posible también conocer la 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaSound" command="./gradlew run --args=\"midi\", ./gradlew run --args=\"mp3\", ./gradlew run --args=\"ogg\"" %}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Tutorial Java Sound](https://docs.oracle.com/javase/tutorial/sound/sampled-overview.html)
 * [Java Media Framework](https://www.oracle.com/technetwork/java/javase/tech/index-jsp-140239.html)
 {{% /reference %}}

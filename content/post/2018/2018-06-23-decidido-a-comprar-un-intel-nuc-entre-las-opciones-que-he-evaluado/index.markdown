@@ -14,8 +14,7 @@ tags: ["hardware", "planeta-codigo", "opinion"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="intel.svg" title1="Intel" width1="300" >}}
 
@@ -108,8 +107,7 @@ En estas dos páginas se pueden conocer muchos detalles de los procesadores y gr
 Cuando realmente compre el equipo publicaré varios artículos con el _unboxing_, instalación, análisis, uso y opinión personal de varios de ellos.
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [The NUC Blog](http://nucblog.net/)
 * [Intel NUC Roadmap 2018 – 2019](https://www.cnx-software.com/2017/09/20/intel-nuc-roadmap-2018-2019-gemini-lake-coffee-lake-and-kaby-lake-h/)
 * [Intel HD Graphics - Nvidia and AMD Equivalents](https://www.pvladov.com/2015/07/intel-hd-graphics-nvidia-and-amd-equivalents.html)

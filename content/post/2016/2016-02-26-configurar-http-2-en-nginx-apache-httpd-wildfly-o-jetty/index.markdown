@@ -13,8 +13,7 @@ summary: "HTTP/2 se puede usar ya, los principales navegadores web, servidores w
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 HTTP/2 es el protocolo que ha surgido para mejorar la experiecia de navegación de la web, proporcionará menos latencia y más velocidad siendo más eficiente. En la [introducción al protocolo HTTP/2][blogbitix-127] comentaba de que necesidad surge, sus ventajas, alguna diferencia con HTTP 1.1, varias cosas que los desarrolladores hacíamos que quedarán obsoletas y otras varias que deberemos seguir haciendo. Se pubicó oficialmente en 2015 y los principales navegadores como [Mozilla Firefox][firefox], [Google Chrome][google-chrome] y [Microsoft Edge][microsoft-edge] ya lo soportan.
 
@@ -73,8 +72,7 @@ Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el mom
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [NGINX Open Source 1.9.5 Released with HTTP/2 Support](https://www.nginx.com/blog/nginx-1-9-5/)
 * [Jetty ALPN](http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html)
 * [Maven ALPN](http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/8.1.7.v20160121/)

@@ -13,8 +13,7 @@ summary: "Aprender las combinaciones de teclas de aquellas aplicaciones que usam
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
@@ -68,8 +67,7 @@ Las anteriores combinaciones de teclas son del intérprete de comandos bash, el 
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Keyboard Shortcuts for Bash (Command Shell for Ubuntu, Debian, Suse, Redhat, Linux, etc)](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
 * [Bg, Fg, &, Ctrl-Z – 5 Examples to Manage Unix Background Jobs](http://www.thegeekstuff.com/2010/05/unix-background-job/)
 * [Block select on a Linux console](http://serverfault.com/questions/430153/block-select-on-a-linux-console)

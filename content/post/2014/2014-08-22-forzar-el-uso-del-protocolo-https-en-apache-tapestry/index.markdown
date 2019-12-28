@@ -11,8 +11,7 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -46,8 +45,7 @@ En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https 
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 * [Libro PlugIn Tapestry][blogbitix-12]

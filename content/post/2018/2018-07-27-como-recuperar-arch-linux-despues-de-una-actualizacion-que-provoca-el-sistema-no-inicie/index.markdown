@@ -13,8 +13,7 @@ summary: "Instalar un sistema GNU/Linux es sencillo y está muy bien, también e
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 

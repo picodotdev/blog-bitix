@@ -15,8 +15,7 @@ summary: "Las semillas de roble son sencillas de hacer germinar, básicamnte lo 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="quercus-robur.png" title1="Quercus Robur" width1="175" >}}
 
@@ -114,8 +113,7 @@ Para finalizar un par de vídeos de como plantar un roble y vídeo en tiempo ace
 </div>
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Como germinar una bellota de roble](http://www.lahuertinadetoni.es/como-germinar-una-bellota-o-roble/)
 * [Como germinar bellotas](https://www.youtube.com/watch?v=aZQzbc5GYGU)
 * [La mejor manera de germinar bellotas](https://www.youtube.com/watch?v=AQCqBzikA8c)

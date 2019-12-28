@@ -14,8 +14,7 @@ summary: "Desarrollar una aplicación no solo implica implementar su funcionalid
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -66,8 +65,7 @@ Con Uptime Robot y el _endpoint_ _health_ podemos [monitorizar la aplicación y 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
 * [Configuración de una aplicación en diferentes entornos con Spring Cloud Config][blogbitix-112]
 * [Monitorizar estado de sitios web con Uptime Robot][blogbitix-114]

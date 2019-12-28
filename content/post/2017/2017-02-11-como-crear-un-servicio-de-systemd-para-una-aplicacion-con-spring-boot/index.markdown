@@ -12,8 +12,7 @@ summary: "La mayoría de distribuciones Linux ya usan systemd como gestor y supe
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
@@ -47,8 +46,7 @@ En los enlaces de referencia hay documentación más detallada tanto para gestio
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="sudo systemctl start spring-boot-jaxrs.service" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Understanding Systemd Units and Unit Files](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files)
 * [systemd unit](http://www.freedesktop.org/software/systemd/man/systemd.unit.html)
 * [systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)

@@ -14,8 +14,7 @@ summary: "Las aplicaciones Java se distribuyen en uno o varios archivos _jar_. S
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -73,8 +72,7 @@ Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https
 {{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble && java -jar build/libs/JavaUberjar-uberjar.jar" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Creating a Fat Jar in Gradle](https://www.baeldung.com/gradle-fat-jar)
 * [Shadow Plugin User Guide & Examples](https://imperceptiblethoughts.com/shadow/)
 * [Gradle – Create a Jar file with dependencies](http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/)

@@ -13,8 +13,7 @@ summary: "Redis es una de las bases de datos NoSQL en este caso de tipo clave-va
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="redis.svg" title1="Redis" width1="200" >}}
 
@@ -54,8 +53,7 @@ Para un conocimiento mucho más detallado de las posibilidades de esta base de d
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRedis" command="docker-compose up, ./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Documentación Redis](https://redis.io/documentation)
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]

@@ -13,8 +13,7 @@ summary: "En Java existe una clase con la que podemos asociar un dato al hilo o 
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
@@ -48,8 +47,7 @@ En definitiva, en ciertos casos el uso selectivo de _ThreadLocal_ simplifica el 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry/" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Alternatives to Global Variables ](https://dzone.com/articles/alternatives-to-global-variables)
 {{% /reference %}}
 

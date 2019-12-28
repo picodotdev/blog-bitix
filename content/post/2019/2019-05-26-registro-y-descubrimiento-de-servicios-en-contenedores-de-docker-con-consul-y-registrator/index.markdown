@@ -14,8 +14,7 @@ summary: "En los microservicios se hace necesario un servicio de registro y desc
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="consul.svg" title1="Consul" width1="200" image2="docker.svg" title2="Docker" width2="200" >}}
 

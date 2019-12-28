@@ -12,8 +12,7 @@ series: ["web"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un [protocolo seguro como SSL/TLS][tls] debemos disponer de con certificado, [con OpenSSL podemos generar y convertirlo al formato que deseemos][blogbitix-13], sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una [autoridad de certificación](https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n) (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en _Preferencias> Avanzado> Certificados> Ver certificados_), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.
 
@@ -51,8 +50,7 @@ Si no necesitamos el recuadro verde ni un certificado _wildcard_ una opción int
 Una vez obtenido el certificado debemos instalarlo en el servidor, en el artículo [Configurar SSL en un servidor Tomcat JBoss, Wildfly, Lighttpd, Nginx o Apache][blogbitix-14] comento como usar un certificado en los principales servidores web y de aplicaciones. Si necesitamos un formato concreto podemos [convertir el certificado con OpenSSL][blogbitix-13].
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Qué es un certificado SSL y por qué debería importarte](https://www.genbeta.com/seguridad/que-es-un-certificado-ssl-y-por-que-deberia-importarte)
 {{% /reference %}}
 

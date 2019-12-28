@@ -12,8 +12,7 @@ tags: ["java", "planeta-codigo", "programacion", "spring"]
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="spring.svg" title2="Spring Framework" width2="200" >}}
 
@@ -55,8 +54,7 @@ Otra alternativa a una interfaz REST es usar [GraphQL][graphql] que muestro en e
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
 * [Buenas prácticas para el diseño de una API RESTful pragmática](https://elbauldelprogramador.com/buenas-practicas-para-el-diseno-de-una-api-restful-pragmatica/)

@@ -13,8 +13,7 @@ summary: "Un proyecto grande contendrá muchos archivos de código fuente, posee
 ---
 
 {{% post %}}
-{{< links >}}
-{{< postslinks >}}
+
 
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
@@ -37,8 +36,7 @@ En la clase Java asociada al componente está el método _getBlock_ que determin
 {{< plugintapestry >}}
 
 {{% reference %}}
-{{< links >}}
-{{< postslinks >}}
+
 * [Artículos sobre Tapestry en Blog Bitix][blogbitix-tag-tapestry]
 * [Artículos sobre Tapestry en El blog de pico.dev][elblogdepicodev-label-tapestry]
 {{% /reference %}}
