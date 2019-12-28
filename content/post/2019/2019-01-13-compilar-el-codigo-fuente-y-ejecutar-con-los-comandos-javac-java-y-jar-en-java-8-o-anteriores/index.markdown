@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos [javac](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html), [java](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html) y [jar](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jar.html) en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como [Gradle][gradle], había que descargar manualmente las librerías de dependencias en forma de archivos _jar_ que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.

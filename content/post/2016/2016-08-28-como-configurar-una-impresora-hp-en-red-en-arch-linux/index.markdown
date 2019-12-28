@@ -14,7 +14,6 @@ summary: "Después de mucho tiempo sin tener configurada una impresora en red de
 
 {{% post %}}
 
-
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
 Uso [Arch Linux][archlinux] desde hace ya más de un lustro, en mi equipo personal e incluso en el equipo del trabajo. Hasta hace poco cuando necesitaba imprimir llevaba el documento en formato PDF en una memoria USB a una copistería y allí los imprimía dado que no tenía configurado mi equipo para usar la impresora en red, más que nada porque no le había dedicado de tiempo para hacerlo. Por último, encontré un momento y realice la configuración de un impresora en red _Hewlett Packard Color LaserJet MFP M476dw_ con <abbr title="Common Unix Printing System">[CUPS][cups]</abbr> en Arch Linux no sin encontrarme con algunos algunos problemas que finalmente conseguí resolver.

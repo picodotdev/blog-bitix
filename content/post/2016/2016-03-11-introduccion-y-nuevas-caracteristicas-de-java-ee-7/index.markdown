@@ -15,7 +15,6 @@ summary: "Java sigue siendo uno de los lenguajes más usado para desarrollar apl
 
 {{% post %}}
 
-
 {{< logotype image1="java-ee.png" title1="Java EE" image2="java.svg" title2="Java" width2="200" >}}
 
 Hace ya unos años, en 2013, fue publicada una nueva versión del conjunto de especificaciones que forman parte de [Java EE][java-ee] con varias novedades y mejoras que aumentan la productividad. Java EE 7 es el conjunto de especificaciones a disposición de las aplicaciones empresariales que son implementadas por cada servidor de aplicaciones donde se ejecutan las _apps_ Java, estas especificaciones describen la funcionalidad y permiten que una aplicación pueda ser ejecutada en cualquier servidor que las implemente ya sea [WildFly][wildfly], [WebLogic][weblogic] o [WebSphere][websphere] sin necesidad de grandes cambios o ninguno en absoluto al proporcionar interoperabilidad entre diferentes implementaciones con el objetivo de no estar encadenado a un determinado vendedor.

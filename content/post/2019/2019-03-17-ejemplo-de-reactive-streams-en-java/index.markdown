@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Los _streams_ representan un flujo de elementos producidos por un productor y consumidos por uno o más consumidores. Para procesar los elementos del _stream_ se pueden emplear dos modelos, el modelo _push_ donde el productor produce elementos para el consumidor que es avisado cuando hay un nuevo elemento disponible y el modelo _pull_ en el que es el consumidor el que solicita al productor nuevos elementos que los genera bajo demanda. Ambos modelos presentan problemas cuando el productor y el consumidor no funcionan a la misma velocidad de elementos producidos o procesados. La solución es proporcionar un _stream_ que se adapta a la velocidad de ambos. Los _reactive streams_ son empleados cuando los elementos son producidos y consumidos en tiempo real como en sistemas de mensajes o peticiones HTTP en vez de un flujo constante como un dispositivo de almacenamiento.

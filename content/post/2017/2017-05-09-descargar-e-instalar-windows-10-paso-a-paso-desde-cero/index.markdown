@@ -15,7 +15,6 @@ summary: "Un virus, el _bloatware_ preinstalado en muchos portátiles o tras ins
 
 {{% post %}}
 
-
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" >}}
 
 Prácticamente la totalidad de portátiles que se venden en las grandes superficies comerciales más conocidas están con el sistema operativo Windows preinstalado. Pero los fabricantes con la intención dotar de más capacidades y funcionalidades que las que incorpora [Windows][windows] instalan numerosos programas que conforman el conocido _bloatware_ que en muchas ocasiones hacen que un equipo completamente nuevo sea más lento de lo normal al iniciar el sistema, al arrancar programas o trabajar con ellos. Entre los programas que suelen preinstalar los fabricantes están los antivirus que al cabo de un tiempo se desactivan ya que suelen ser versiones de evaluación pudiendo dejar al equipo desprotegido ante virus y software malicioso, Windows 10 ya incorpora uno, Windows Defender, y para la mayoría de usuarios es suficiente por su efectividad aceptable. Otros programas que los fabricantes suelen instalar son reproductores de vídeo o software multimedia en la mayoría de casos innecesario ya que Windows  de por si ya incorpora las capacidades de trabajar con archivos multimedia como fotografías o vídeos. También puede darse el caso que tras una actualización o la instalación de un programa el equipo empiece a presentar fallos.

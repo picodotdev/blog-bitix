@@ -14,7 +14,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Otra de las [nuevas funcionalidades incluidas en Java 9][blogbitix-264] aunque en modo incubación e incorporado en Java 11 de forma estable es el cliente con soporte para HTTP/2 para realizar peticiones a recursos usando este protocolo más eficiente y rápido. Al mismo tiempo se ha simplificado el código necesario para realizar una petición y obtener el resultado de una URL. También se ha añadido la funcionalidad de realizar peticiones asíncronas y creación de conexiones de _WebSockets_.

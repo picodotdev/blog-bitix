@@ -14,7 +14,6 @@ summary: "La librería log4j 2 es configurable para que si se guardan las trazas
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una tendencia en el uso de aplicaciones basadas en contenedores o microservicios es que estos sus mensajes de trazas o _logs_ los emitan a la salida estándar del proceso, esto tiene la ventaja de que la aplicación no ha de conocer ni impone ninguna limitación si posteriormente se utiliza alguna herramienta para agregar esos _logs_. Una combinación es utilizar ELK ([Elasticsearch][elasticsearch] para indexar el texto, [Logstash][logstash] para guardar los _logs_, [Kibana][kibana] como interfaz de consulta) pero en un futuro podría cambiarse por otra y la aplicación que emita sus _logs_ en la salida estándar no requeriría ninguna modificación.

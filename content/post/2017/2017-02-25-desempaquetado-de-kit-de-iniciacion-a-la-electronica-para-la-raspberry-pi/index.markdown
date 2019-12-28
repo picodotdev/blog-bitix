@@ -15,7 +15,6 @@ series: ["electronica", "desempaquetado-tecnologia"]
 
 {{% post %}}
 
-
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" >}}
 
 En el año 2012 compré una de las primeras Raspberry Pi que estuvieron disponibles a la venta, una placa modelo B de 256 MiB. La Raspberry Pi es un pequeño computador en una placa del tamaño de una tarjeta de crédito a un precio que aún se sigue manteniendo en las nuevas versiones de unos 40€ a los que hay que sumar algunos complementos necesarios como una tarjeta SD o microSD y un cargador con conector miniUSB. Las versiones iniciales que es la que tengo se componían de:

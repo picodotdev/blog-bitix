@@ -16,7 +16,6 @@ summary: "Salvo que un servicio sea sin estado o _stateless_ los contenedores de
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
 Los contenedores de datos son efímeros, se crean y se destruyen y con ellos los datos que tuviesen en su sistema de archivos de modo que cualquier dato que queramos que sobreviva a la vida del contenedor ha de almacenarse de forma externa, este es el caso de los datos de una base de datos como [PostgreSQL][postgresql] o [MongoDB][mongodb]. Además usando [Docker Swarm][docker-swarm] se plantea el problema de que hay varios nodos formando un _cluster_ por lo que los datos han de estar accesibles independientemente del nodo en el que sea iniciado el contenedor que los utilice y significa que los datos no pueden estar almacenados en el nodo ya que un contenedor podría ser iniciado en cualquiera de ellos.

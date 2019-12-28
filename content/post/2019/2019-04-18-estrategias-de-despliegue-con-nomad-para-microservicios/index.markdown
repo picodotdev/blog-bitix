@@ -16,7 +16,6 @@ summary: "Ciertos servicios requieren que al hacer un despliegue el servicio con
 
 {{% post %}}
 
-
 {{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 
 El ciclo de vida de una aplicación no consiste solo en desarrollarla, incluye también su puesta en producción o despliegue en un entorno de pruebas, pero también una vez la aplicación está desplegada en algún momento será necesario actualizarla con una nueva versión.

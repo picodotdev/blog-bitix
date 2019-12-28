@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Junto con los ejemplos de [la cena de los filósofos][blogbitix-302] y [la barbería][blogbitix-246] el de los fumadores es otro ejemplo clásico que se estudia en las asignaturas de sistemas operativos. Estos ejemplos necesitan de mecanismos de sincronización y concurrencia para su correcto funcionamiento al haber varios procesos y recursos compartidos que los procesos intentan utilizar de forma concurrente pero que no se debe permitir utilizando notificaciones entre procesos o [algunas primitivas de sincronización, concurrencia e hilos que posee Java][blogbitix-246] como _mutex_, _locks_ o semáforos.

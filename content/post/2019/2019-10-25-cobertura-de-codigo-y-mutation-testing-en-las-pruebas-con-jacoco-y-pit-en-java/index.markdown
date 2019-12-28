@@ -16,7 +16,6 @@ summary: "En el caso extremo una cobertura de código del cien por cien pero que
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una medida que se suele emplear para medir la calidad o efectividad de los teses unitarios es su cobertura de código que consiste en la cantidad de código ejercitado del total por las pruebas unitarias con los casos de prueba y _fixtures_ empleados. Sin embargo, la cobertura de código no es una medida fiable para conocer si los casos de prueba empleados son precisos y completos. La cobertura de código puede seguir siendo del cien por cien si se sustituye un un mayor que por un mayor que e igual o faltan casos de prueba que ejerciten los límites de las condiciones, los teses seguirán siendo correctos.

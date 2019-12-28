@@ -14,7 +14,6 @@ tags: ["hardware", "opinion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="intel.svg" title1="Intel" width1="200" image2="amd.svg" title2="AMD" width2="300" >}}
 
 Hace alguna década los procesadores eran de un solo núcleo y hasta la aparición de Windows NT y GNU/Linux los sistemas operativos no se aprovechaban plenamente las capacidades de multiprogramación de los procesadores que ya se incluían desde los [Intel 386](https://es.wikipedia.org/wiki/Intel_80386).

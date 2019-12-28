@@ -15,7 +15,6 @@ summary: "Las funcionalidades de Docker Swarm están incorporadas en Docker para
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
 En [artículos anteriores de la serie sobre Docker][blogbitix-serie-docker] comentaba varias de las herramientas de [Docker][docker] como [Docker Compose][docker-compose], Dockerfile o [Docker Machine][docker-machine] con ejemplos de como usarlo en local. Una de las herramientas que me quedaba por investigar era [Docker Swarm][docker-swarm] para crear _clusters_ de nodos para contenedores Docker en un entorno de producción. A partir de la versión 1.12 de Docker se han incorporado varias características a Docker para usaar contenedores de forma distribuida y que a pesar de la complejidad subjacente que debe haber es realmente simple usarlo.

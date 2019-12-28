@@ -16,7 +16,6 @@ summary: "En los últimos años un producto financiero que se ha puesto de moda 
 
 {{% post %}}
 
-
 Llega el final de año y los comerciales de los bancos llaman a sus clientes, cuales comerciales de operadores telefónicos, para ofrecerles un plan de pensiones o para que hagan aportaciones a los mismos. La ventaja fiscal en IRPF que poseen es el principal argumento de venta. Pero como cualquier otro producto financiero hay que analizar sus características de liquidez, comisiones y con números determinar su rentabilidad y compararla con otros productos financieros, además de la situación personal del ahorrador en cuanto a renta disponible, capacidad de ahorro y necesidades económicas futuras próximas.
 
 Antes de nada decir que yo, como a muchas personas a las que se les ofrece este producto, no tengo ningún conocimiento financiero, únicamente lo que me he podido informar en internet, a través de una entidad bancaria y de un gestor personal de una entidad bancaria. Como inexperto en temas fiscales y financieros esta información puede ser inexacta u omitir aspectos importantes.

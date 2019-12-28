@@ -12,7 +12,6 @@ tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-lib
 
 {{% post %}}
 
-
 {{< logotype image="redmine.png" title="Redmine" width="300" >}}
 
 Las metodologías ágiles para la gestión de proyectos son ya ampliamente usadas, como [scrum][scrum] o [programación extrema][programacion-extrema] (XP). Una diferencia entre las metodologías ágiles y las metodologías empleadas tradicionalmente como el modelo en cascada es que en las metodologías ágiles se tiene en cuenta que se pueden producir cambios en el desarrollo del proyecto y suelen ser más flexibles y adaptables ante estos cambios.

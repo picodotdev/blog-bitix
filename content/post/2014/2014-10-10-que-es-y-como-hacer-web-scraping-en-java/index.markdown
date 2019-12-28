@@ -13,7 +13,6 @@ summary: "A falta de una forma estructurada para obtener datos de una fuente pod
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 Algunas aplicaciones en internet necesitan intercambiar información para hacer algún tipo de integración. La tendencia actual es proporcionar una API REST o algún tipo de archivo descargable con cierto formato que permita procesarlo de forma automatizada y a las aplicaciones obtener la información de forma sencilla y precisa. Sin embargo, hay ocasiones en las que las aplicaciones de las que necesitamos extraer la información no proporcionan ni una API REST ni un archivo descargable con lo que no nos queda más remedio que extraer los datos de la propias páginas web inspeccionando el código HTML, esto en inglés se le conoce como [«web scraping»](https://es.wikipedia.org/wiki/Web_scraping).

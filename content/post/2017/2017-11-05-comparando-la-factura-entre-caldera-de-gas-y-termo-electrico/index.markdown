@@ -15,7 +15,6 @@ summary: "Cambié una caldera por un termo eléctrico. Haciendo unas estimacione
 
 {{% post %}}
 
-
 Hace unos meses [sustituí la caldera de gas por un termo eléctrico][blogbitix-251] dado que me tocaba hacer la versión de la instalación del gas y de la caldera, dos revisiones independientes que tiene un coste de unos 60€ y 90€ respectivamente que hay que realizar obligatoriamente por normativa cada 5 y 2 años y en las que hay que estar presente para permitir el acceso a la vivienda al técnico para que pueda hacer la inspección. Dado que en invierno no usaba la calefacción, me basta con ponerme más ropa o usar alguna manta, al hacer la sustitución no me importaba perder esa característica. Por otro lado si me tocase sustituir la caldera por otra la salida de humos debería ir a la calle en vez de la chimenea del edificio con lo que habría que picar la fechada para hacer el agujero del tubo para la salida de humos. Además, las calderas de gas son mucho más caras, sobre unos 900€ una de gama baja, mucho más caras que los termos más caros, un termo de gama alta de lo más caro está sobre unos 300€ de 50 litros, casi tres veces menos que una caldera.
 
 <div class="media">

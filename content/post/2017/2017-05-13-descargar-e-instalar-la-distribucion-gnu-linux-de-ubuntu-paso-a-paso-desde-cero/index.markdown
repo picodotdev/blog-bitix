@@ -14,7 +14,6 @@ summary: "Pasar de usar Windows a usar una distribución GNU/Linux es un paso di
 
 {{% post %}}
 
-
 {{< logotype image1="ubuntu.svg" title1="Ubuntu" width1="200" image2="linux.svg" title2="Linux" width2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
 
 Quizá hayas oído hablar de Linux o [GNU][gnu]/[Linux][linux] como alternativa al sistema operativo de Microsoft [Windows][windows] y sientes curiosidad por probarlo y adentrarte con ello en el mundo del software libre. Si estás leyendo esta guía y te es necesaria para instalar una de las muchas distribuciones de GNU/Linux entiendo que necesitas ayuda para saber como instalarlo desde cero, paso a paso y empezando desde lo más básico.

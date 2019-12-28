@@ -15,7 +15,6 @@ summary: "Con diferentes sensores y dispositivos de salida de electrónica se pu
 
 {{% post %}}
 
-
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Como muestra de lo que se puede hacer con la Raspberry Pi usando los _pines_ GPIO haré un ejemplo que consistirá en múltiples diodos LED de diferentes colores enciendan y apaguen simulando una especie de luces navideñas. Como yo tengo la Raspbperry Pi 1 B con 26 _pines_ de los cuales solo 17 son GPIO podré usar hasta 17 diodos LED, aunque solo usaré 15. En el [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212] viene incluidos 24 diodos LED de diferentes colores 6 blancos, 6 rojos, 6 amarillos y 6 verdes, también es necesario una resistencia por cada diodo de unos 200 ohmios de los cuales en el _kit_ se incluyen 20 de este valor.

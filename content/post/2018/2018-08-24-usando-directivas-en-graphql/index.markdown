@@ -15,7 +15,6 @@ series: ["graphql"]
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 En [GraphQL][graphql] construyendo la consulta adecuada se recuperan exclusivamente los datos solicitados.

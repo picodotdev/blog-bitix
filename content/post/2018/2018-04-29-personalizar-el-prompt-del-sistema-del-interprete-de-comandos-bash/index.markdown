@@ -14,7 +14,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 El _prompt_ de la terminal es el símbolo del sistema que precede al comando que introducimos en la terminal y por defecto indica el directorio de trabajo que utilizarán los comandos y el directorio que utilizarán las rutas relativas. El _prompt_ del intérprete de comandos _Bash_ se puede personalizar para por ejemplo modificar el color de su texto y la información que incluye con las preferencias del usuario.

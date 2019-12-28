@@ -15,7 +15,6 @@ summary: "En los microservicios se hace necesario un servicio de registro y desc
 
 {{% post %}}
 
-
 {{< logotype image1="consul.svg" title1="Consul" width1="200" image2="docker.svg" title2="Docker" width2="200" >}}
 
 El registro y descubrimiento de servicios permite a los servicios registrase y a los clientes descubrir la ubicación de otros servicios, la ubicación consiste en la dirección IP y el puerto en el que contactarles. Dado la naturaleza efímera de los servicios donde nuevas instancias de servicios se inician y se detienen en diferentes máquinas y puertos el servicio de descubrimiento es esencial.

@@ -15,7 +15,6 @@ series: ["web"]
 
 {{% post %}}
 
-
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
 Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación _BASIC_ o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el _handsake_ del [protocolo TLS][tls].

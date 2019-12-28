@@ -15,7 +15,6 @@ series: ["desempaquetado-otros"]
 
 {{% post %}}
 
-
 Tener en casa un pequeño conjunto de herramientas es necesario para realizar pequeñas tareas domésticas, desde quitar un grifo a atornillar algún elemento. Buscando en el gran catálogo del que dispone [Amazon][amazon] en su web quería uno que fuese bastante completo sin ser muy caro y aunque no fuese de calidad profesional cumpliese con las tarea. Hay muchos modelos pero me fijé en uno de [Mannesmann modelo M29085](https://amzn.to/2w6YVem). También necesitaba unas bandejas para la cocina y salón.
 
 ### Maletín herramientas Mannesmann M29085

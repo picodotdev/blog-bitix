@@ -14,7 +14,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Los directorios de _Descargas_, _Documentos_, _Música_, _Imágenes_, _Vídeos_, _Escritorio_, _Plantillas_ y _Público_ «bien conocidos» por defecto se encuentran en el directorio de inicio o _home_ del usuario, en mi caso sería _/home/picodotdev/_ o abreviadamente _~/_.

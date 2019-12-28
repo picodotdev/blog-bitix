@@ -14,7 +14,6 @@ summary: "En GNU/Linux hay multitud de distribuciones, no existe la mejor distri
 
 {{% post %}}
 
-
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Linux es el núcleo del sistema operativo de las distribuciones [GNU][gnu]/[Linux][linux]. GNU es el conjunto de herramientas de usuario que permiten interactuar mediante programas específicos según la tarea con el núcleo Linux. Tanto GNU como Linux son software libre y su licencia otorga al usuario [las 4 libertades que debe poseer todo software libre](https://www.gnu.org/philosophy/free-sw.es.html) para ser calificado como tal. Como las herramientas GNU, Linux y otros proyectos de software libre como los entornos de escritorio [GNOME][gnome], [KDE][kde], [XFCE][xfce], [LXDE][lxde] y programas como [VLC][vlc], [LibreOffice][libreoffice], [Firefox][firefox] entre otros están disponibles en la mayoría de los casos de forma gratuita, grupos de usuarios y organizaciones forman distribuciones que contienen las herramientas GNU, el núcleo Linux, y un gestor de paquetes de los programas para instalarlos de forma sencilla junto con sus dependencias.

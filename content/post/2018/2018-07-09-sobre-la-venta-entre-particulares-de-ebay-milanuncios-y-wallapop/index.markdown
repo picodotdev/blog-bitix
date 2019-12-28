@@ -13,7 +13,6 @@ tags: ["opinion"]
 
 {{% post %}}
 
-
 Ya he escrito en un varios artículos relacionados comentando que estoy [interesando en comprar un Intel NUC][blogbitix-329] pero como lo que quiero aún no se comercializa la espera ya se me está haciendo muy larga, me estoy aburriendo un poco de impaciencia y para entretenerme mientras me ha dado por buscar NUCs en las principales páginas de venta entre particulares y de segunda mano como [eBay][ebay], [milanuncios][milanuncios] y [Wallapop][wallapop]. Por curiosidad a ver que precio tienen y si me resultaría atractivo comprar un NUC de una generación anterior en vez de la última que saldrá ya no a mucho tardar.
 
 He buscado en esas 3 webs por modelos de Intel NUC, no hay pocos, me ha sorprendido la cantidad de ellos que se publicitan como con poco uso, como nuevo, alguno con _ticket_ de compra en garantía e incluso alguno con el precinto de plástico que le envuelve sin romper con lo que es sinónimo de que no ha sido usado ni abierto. Pero si bien hay algunos anuncios interesantes un buen porcentaje los calificaré de morralla con precios que me parece no se corresponden con el de referencia en una tienda como [Amazon][amazon] nuevos, sino el exacto, el equivalente similar.

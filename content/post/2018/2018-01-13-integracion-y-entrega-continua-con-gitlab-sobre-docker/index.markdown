@@ -14,7 +14,6 @@ series: ["gitlab"]
 
 {{% post %}}
 
-
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 
 [GitLab][gitlab] es una herramienta muy completa, una de las necesidades de los proyectos es tener teses y que estos se ejecuten con cada _commit_ para asegurar que los cambios no introducen errores en las funcionalidades cubiertas por los teses, esto es la integración continua. La entrega inmediata es una vez que los teses se han ejecutado correctamente hacer el despliegue en los servidores de forma pasa el tiempo mínimo entre que una funcionalidad está desarrollada y esta se puede utilizar.

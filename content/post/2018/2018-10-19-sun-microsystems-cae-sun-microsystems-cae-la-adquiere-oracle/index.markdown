@@ -15,7 +15,6 @@ tags: ["opinion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="sun-microsystems.svg" title1="Sun Microsystems" width1="300" image2="oracle.svg" title2="Oracle" width2="300" >}}
 
 Era enero del 2010 y se anunciaba que [Oracle][oracle] adquiría [Sun][sun-microsystems] (_Stanford University Network_) por unos 7400 millones de dólares. Sun Microsystems era asimilada por uno de los grandes entre el mundo empresarial que eliminaba a uno de sus competidores. Fue un hecho importante debido a varias de las tecnologías que había desarrollado Sun y poseía como aún a día de hoy uno de los lenguajes más populares para el desarrollo de software, Java, y otras tecnologías importantes que había adquirido hace no tanto tiempo como la base de datos [MySQL][mysql] competencia de Oracle.

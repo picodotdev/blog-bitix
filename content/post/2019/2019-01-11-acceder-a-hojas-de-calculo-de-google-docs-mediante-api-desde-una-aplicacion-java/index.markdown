@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="google.svg" title2="Google" width2="350" >}}
 
 [Google ofrece numerosos productos de desarrollo](https://developers.google.com/products/develop/) que permiten automatizar tareas e realizar integración con servicios, aplicaciones y documentos de Google creando un programa con un lenguaje de programacion. [Las API que ofrece Google](https://developers.google.com/api-client-library/java/apis/) desde [Drive][google-drive], [Sheets][google-sheets], [Sides][google-slides], [GMail][google-gmail], [Calendar][google-calendar], [Contacts][google-contacts], [Street View][google-streetview], [AdSense][google-adsense], [Analytics][google-analytics], [Youtube][youtube],  [Speech][google-speech] y muchos más.

@@ -15,7 +15,6 @@ summary: "Al diferencia de una API REST donde cada recurso posee un _endpoint_ p
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Una de las dificultades a resolver en GraphQL es evitar los problemas de generar 1+N consultas dado que en algunas peticiones se recupera una lista de elementos para recuperar alguna otra propiedad de esos elementos para la que se realiza otra consulta. Suele ocurrir al navegar las relaciones de las entidades, por ejemplo al solicitar una lista de libros y de cada libro obtener su autor, para obtener los libros se necesita una consulta y hay que evitar que para recuperar el autor de cada libro generar otra consulta, si el número de libros recuperados es grande el número de consultas será grande y la consulta será poco eficiente, lenta y generará una carga a evitar en el servidor de base de datos.

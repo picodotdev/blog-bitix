@@ -11,7 +11,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 En el anterior artículo explicaba como [crear un _listener_ que reciba eventos de Hibernate][blogbitix-68] pero quizá necesitemos en el _listener_ hacer uso de un servicio de [Spring][spring] si el proceso de la acción necesita aprovecharse de la funcionalidad proporcionada en los servicios. En este artículo mostraré como crear un _listener_ de [Hibernate][hibernate] que use un servicio de Spring, es decir, un _listener_ de Hibernate con la posibilidad de inyectar servicios de Spring.

@@ -13,7 +13,6 @@ summary: "Con nuevas tecnologías como less, Sass o CoffeeScript el desarrollo y
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 El desarrollo y las tecnologías de las páginas web sigue evolucionando, HTML 5, JavaScript, CSS 3, [diseño adaptable](https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable) (_responsive_), ... Y también surgen nuevas herramientas que hacen el desarrollo más simple o hace que las aplicaciones sean más eficientes. Algunas de estas nuevas tecnologías son [less][less] o [Sass][sass] que permiten producir hojas de estilo CSS utilizando una mejor notación, si la hoja de estilos es grande usar una tecnología como esta puede reducir considerablemente su tamaño, hacerla más legible y de más fácil mantenimiento, [CoffeeScript][coffeescript] también puede hacer más simple el desarrollo de la parte cliente de una aplicación, proporciona una sintaxis más clara (para algunos) que la ofrecida por el propio lenguaje JavaScript, que compilados generan su equivalente en JavaScript.

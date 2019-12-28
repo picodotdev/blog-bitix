@@ -14,7 +14,6 @@ summary: "Guava EventBus es una solución simple para la publicación y suscripc
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 En programación los eventos son una buena forma de comunicación que permite desacoplar el emisor del evento del receptor o receptores. Los eventos permiten reaccionar a situaciones que se producen a la aplicación. El emisor los lanza cuando considera adecuado y los receptores se suscriben a los eventos que quieren recibir y actúan según su funcionalidad.

@@ -15,7 +15,6 @@ summary: "¿Que en GNU/Linux no hay juegos? Los hay, ciertamente no muchos de lo
 
 {{% post %}}
 
-
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 El número de juegos disponibles en GNU/Linux no es tan amplia como en Windows. Hay algunos clásicos como el [juego del ajedrez][blogbitix-160] que podemos jugar contra otro humano o contra la computadora, otro clásico es el [juego Go][blogbitix-163] o los [juegos incluidos en el entorno de escritorio GNOME][blogbitix-167].

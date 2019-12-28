@@ -14,7 +14,6 @@ series: ["donacion"]
 
 {{% post %}}
 
-
 Los últimos meses me han sido bastante buenos en cuanto a los ingresos por la publicidad [AdSense][google-adsense] y los enlaces de afiliado de [Amazon][amazon] que incluyo en el blog con el objetivo de monetizarlo un poco. Desde luego esos pequeños ingresos no compensan la enorme cantidad de tiempo que requiere escribir un artículo, y no es solo escribirlo sino también editarlo, crear el ejemplo de código si el artículo es sobre programación, sacar las capturas de pantalla e investigar la materia de la que habla el artículo. Otra forma de monetizar el blog que estoy evaluando es escribir artículos patrocinados con la plataforma [Publisuites][publisuites], sin embargo, aún no he recibido ninguna propuesta ya que quizá haya puesto el precio demasiado alto pero escribir un artículo cuesta unas horas de trabajo.
 
 Por la publicidad de AdSense he notado un significativo aumento de ingresos duante los últimos meses del 2016 superando los 20€ mensuales cuando hasta no hace mucho la cifra estaba en unos 10€. En proporción al aumento de número de visitas que ha experimentado este blog en 2016 como comento en el artículo [Heroteca #10][blogbitix-202] donde hago un repaso de ese año. Esto ha hecho que en poco menos de cinco meses Google me haya hecho otra transferencia por importe de unos 75€. Por los enlaces de afiliado también he recibido otro ingreso por parte de Amazon de unos 35€.

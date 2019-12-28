@@ -14,7 +14,6 @@ summary: "Si Microsoft quisiera no habría usuarios de Windows sin la correspond
 
 {{% post %}}
 
-
 {{< logotype image="microsoft.svg" title="Microsoft" width="400" >}}
 
 [Microsoft][microsoft] ha lanzado a la venta y preinstalará la licencia por el derecho de uso (que no propiedad del producto) de su próximo sistema operativo, [Windows][windows] 10. Aunque la mayoría adquirirán esa licencia a través del [impuesto Windows][elblogdepicodev-57] al comprar un nuevo equipo (aunque no quieran) y aunque (raramente) es posible [conseguir su reembolso](http://totaki.com/poesiabinaria/2012/08/aventuras-devolviendo-una-licencia-de-windows-que-venia-de-serie-con-un-portatil/) aún con trabas, la gran mayoría no lo hará bien por desconocimiento de que el equipo y su sistema operativo son dos productos distintos (muchos no saben tampoco que es un sistema operativo), desconocimiento de la posibilidad del reembolso o por no realizar el esfuerzo (me declaro culpable) del cual el fabricante es habitual que proporcione cero información sobre cómo proceder y cuando se realiza es con dificultades. Muchos pagamos la licencia de Windows aunque no la queremos y aunque Microsoft lógicamente prefiere que adquieras la licencia creo que no le importa que no la pagues para un uso personal.

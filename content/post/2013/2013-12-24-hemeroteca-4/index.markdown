@@ -15,7 +15,6 @@ library: "true"
 
 {{% post %}}
 
-
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
 El 2013 toca a su fin, el 2014 está llamando a la puerta y como cada medio año en el blog toca hacer una recapitulación con las entradas que he escrito durante estos meses. Durante este año he cumplido con el objetivo de escribir y publicar una entrada por semana, en total han sido 52, casi todas publicadas en [elblogdepicodev][elblogdepicodev] y las del último més del año publicadas en [Blog Bitix][blogbitix]. Esta entrada es un buen momento para leer alguna que te perdiste o releer alguna que te gustó.

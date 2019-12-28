@@ -14,7 +14,6 @@ summary: "Al trabajar con referencias de tipos genéricos, _raw_ y arrays debemo
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 La introducción de los [tipos genéricos al lenguaje Java][blogbitix-138] en la versión 5 hizo posible que pudiesemos parametrizar los tipos y que el compilador hiciese validaciones sobre ellos, también se permitieron eliminar muchos _cast_ que hasta entonces eran necesarios al usar el _framework_ de colecciones. Los tipos genéricos permiten evitar errores en tiempo de compilación, al mismo tiempo la eliminación de los _cast_ hace el código más legible y más fácilmente refactorizable. Sin embargo, para mantener la compatibilidad con versiones anteriores se optó por hacer algunos sacrificios en la implementación de genéricos en pos de otros beneficios. Una situación potencialmente problemática es el denominado [Heap Pollution](https://en.wikipedia.org/wiki/Heap_pollution).

@@ -11,7 +11,6 @@ tags: ["java", "planeta-codigo", "planeta-linux", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 Una de las cosas que he tenido que resolver en [Blog Stack][blogstack] es como conseguir un extracto del contenido completo de una cadena que es HTML. Esto lo he usado en los diferentes feeds de Blog Stack donde solo se muestra el extracto de cada artículo y no el texto completo. A primera vista puede parecer fácil pero no lo es tanto, cortar una cadena que es html haciendo un substring puede ocasionar problemas si se hace en un mal punto de la cadena y luego esa cadena cortada se inserta como contenido de nuevo el una página web. Lo más probable que ocurra es una desmaquetación de la página o que los estilos aparezcan mal pero puede dejar estropeada la página completa.

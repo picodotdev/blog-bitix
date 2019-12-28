@@ -16,7 +16,6 @@ summary: "Al desarrollar software una herramienta de control de versiones como G
 
 {{% post %}}
 
-
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 
 Usar una herramienta de control de versiones para el código fuente de un proyecto o programa es imprescindible para recuperar versiones anteriores de los archivos, comparar y compartir los cambios con el resto de desarrolladores del equipo. Otras herramientas imprescindibles son un gestor de peticiones para documentar cuál es el trabajo a realizar, ver en que se está trabajando, priorizar el trabajo inmediato que se realizará y el estado de cada petición. Por otro lado una herramienta donde recoger documentación del proyecto ayuda a compartir información y hacer que ese conocimiento quede recogido en algún lugar que pueda ser consultado con posterioridad o para futuros desarrolladores. También en estos días es imprescindible una herramienta para automatizar la ejecución de las pruebas unitarias y funcionales en cada _commit_ al repositorio de código fuente.

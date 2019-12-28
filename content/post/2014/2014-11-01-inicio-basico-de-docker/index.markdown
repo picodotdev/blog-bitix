@@ -14,7 +14,6 @@ summary: "La tecnología de contenedores nos ofrece múltiples ventajas para nue
 
 {{% post %}}
 
-
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
 En el [artículo anterior introductorio sobre Docker][blogbitix-49] comentaba cuales son sus principales características, que diferencias tiene con la virtualización y algunos casos y motivos por los que nos puede interesar usarlo. El objetivo de este artículo será a modo de guía rápida como empezar a usar [docker][docker]. Comentaré cuales son los comandos básicos para manejar docker, las imágenes y los contenedores.

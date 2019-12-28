@@ -13,7 +13,6 @@ summary: "Para generar documentos PDF sencillos en Java está la librería PDFBo
 ---
 
 {{% post %}}
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Las aplicaciones en el ámbito de gestión necesitan generar documentos a partir de la información que contienen. Pueden ser para [exportar datos en un archivo en formato CSV con Apache POI][blogbitix-146] o [documentos PDF sencillos con PDFBox][blogbitix-430]. Los documentos PDF pueden ser de diverso tipo, informes, facturas, cartas, recibos, ... En Java una de las librerías para generar documentos PDF complejos es [JasperReports][jasperreports].

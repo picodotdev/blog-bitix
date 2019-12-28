@@ -16,7 +16,6 @@ summary: "Let's Encrypt es una entidad que emite certificados TLS/SSL que son re
 
 {{% post %}}
 
-
 {{< logotype image1="lets-encrypt.svg" title1="Let's Encrypt" width1="350" >}}
 
 [Google][google] ha anunciado que su buscador va a considerar el uso del protocolo seguro HTTPS como un criterio de <abbr title="Search Engine Optimization">SEO</abbr> y posicionamiento en la lista de resultados, posicionando mejor aquellas páginas web que usen el protocolo seguro. Además, el navegador [Chrome][google-chrome] va a advertir al usuario para algunas páginas que usen solo HTTP que esas páginas son inseguras. Por estos motivos y para mayor seguridad y privacidad del usuario es conveniente usar el protocolo seguro HTTPS.

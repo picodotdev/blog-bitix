@@ -14,7 +14,6 @@ tags: ["gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
 
 {{% post %}}
 
-
 {{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" >}}
 
 El día 12 de mayo de 2017 se produjo un ataque informático de tipo ransomware que afectó a varias empresas entre ellas Telefonica. El ataque se aprovecha de una vulnerabilidad conocida en los sistemas con el sistema operativo [Windows][windows] no parcheados y vulnerables y para la cual [Microsoft][microsoft] ya había publicado un parche de seguridad que la corregía. El programa [ransomware _WannaCry_](https://en.wikipedia.org/wiki/WannaCry_ransomware_attack) era extremadamente peligroso ya que cifra los archivos y documentos locales o en unidades a las que tuviese acceso el sistema afectado solicitando para recuperarlos 300 dólares en bitcoins.

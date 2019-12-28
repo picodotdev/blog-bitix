@@ -12,7 +12,6 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 
 {{% post %}}
 
-
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
 Hace unos meses publiqué el libro PlugIn Tapestry, un libro acerca del desarrollo de aplicaciones y páginas web en el lenguaje Java y con el _framework_ [Apache Tapestry](http://tapestry.apache.org/).

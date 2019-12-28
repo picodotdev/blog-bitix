@@ -13,7 +13,6 @@ summary: "Arch Linux al ser una distribución de GNU/Linux _rolling release_ las
 
 {{% post %}}
 
-
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Al actualizar los paquetes de la distribución _rolling release_ [Arch Linux][archlinux] puede interesarnos actualizar las bases de datos de paquetes y descargar los paquetes que estén desactualizados pero sin instalarlos. Descargando los paquetes sin instalarlos nos permite realizar la actualización en el momento que deseemos como por ejemplo en el momento que dejemos de usar el ordenador, descargar los paquetes mientras seguimos usando la computadora y hacer la actualización en el momento que deseemos sin tener que esperar a descargar los paquetes.

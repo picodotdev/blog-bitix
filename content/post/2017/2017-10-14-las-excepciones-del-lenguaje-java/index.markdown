@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Las excepciones son un mecanismo para capturar y producir condiciones de error en un programa. Es una alternativa al retorno de valores especiales que indique errores y que en estos no son obligatorios su correcta comprobación.

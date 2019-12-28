@@ -16,7 +16,6 @@ summary: "GraphQL es una alternativa a una interfaz REST con las ventajas de pod
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 Con anterioridad las aplicaciones que lo necesitaban ofrecían una interfaz como un servicio mediante _web services_, sin embargo, esta tecnología era complicada por usar XML y no de fácil utilización en clientes JavaScript. La evolución que a día de hoy sigue siendo mayoritaria son las interfaces [REST][rest] que emplean la semántica de los verbos del protocolo HTTP para realizar operaciones de búsqueda, creación, modificación y eliminación y normalmente empleando JSON como formato para intercambiar los datos. Sin embargo, REST no está exento de algunos problemas como la necesidad de realizar varias peticiones a cada uno de los recursos que ofrece si se necesitan datos de varios de ellos, otro es que los datos ofrecidos por los servicios REST está prefijados en tiempo de desarrollo no adaptándose a lo que necesita el cliente. En cierta medida estas dos cosas se pueden implementar en la interfaz REST con algunos parámetros pero requiere codificarlo explícitamente.

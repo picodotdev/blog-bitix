@@ -13,7 +13,6 @@ series: ["web"]
 
 {{% post %}}
 
-
 Usar un protocolo seguro garantiza de que los datos intercambiados entre el cliente y el servidor no son leídos ni modificados por una tercera parte además de verificar que la comunicación se está realizando entre las partes que dicen ser. Para usar un [protocolo seguro como SSL/TLS][tls] debemos disponer de con certificado, [con OpenSSL podemos generar y convertirlo al formato que deseemos][blogbitix-13], sin embargo, para que el usuario tenga garantía de que el certificado es válido este se debe estar firmado por una [autoridad de certificación](https://es.wikipedia.org/wiki/Autoridad_de_certificaci%C3%B3n) (CA) en la que confíe, generalmente con una de las autoridades de certificación cuyos certificados están preinstalados en el navegador web (en Firefox podemos verlos en _Preferencias> Avanzado> Certificados> Ver certificados_), los certificados autofirmados son útiles para hacer pruebas pero no son válidos para los usuarios. En este artículo comentaré que tipos de certificados hay y donde podemos obtener o comprar un certificado digital firmado por una CA que sea de confianza para el usuario.
 
 Los navegadores suelen indicar que se está usando una comunicación segura cuando en la barra de direcciones se muestra un candado y se está usando el protocolo https. Además, haciendo clic en el candado se pueden ver los detalles del certificado usado por el servidor para la comunicación cifrada.

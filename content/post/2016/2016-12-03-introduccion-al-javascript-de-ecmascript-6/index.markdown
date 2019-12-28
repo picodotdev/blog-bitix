@@ -15,7 +15,6 @@ summary: "Con ECMAScript 6 se han incorporado al lenguaje varias novedades como 
 
 {{% post %}}
 
-
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
 Hasta ahora como desarrollador web durante prácticamente toda mi vida laboral no había dedicado tiempo a conocer en más detalle el lenguaje de programación [JavaScript][javascript] usado en los navegadores web. Mucho de lo que necesitaba me era suficiente con librerías como [jQuery][jquery] o [underscore][underscorejs]. Ahora algunas páginas web tienen un peso importante en el lado cliente y ante esta necesidad el lenguaje JavaScript está evolucionando e incorporando nuevas características como las definidas en sus especificaciones de [ECMAScript][ecmascript].

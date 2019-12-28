@@ -11,7 +11,6 @@ tags: ["java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 Hace un tiempo tuve necesidad de generar cierto contenido sobre varios writers, la necesidad en concreto era generar un archivo xml en disco y al mismo tiempo el mismo contenido para un correo electrónico. Para no escribir lo mismo en dos [Writer](https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html) diferentes la solución fue crear un writer y este fuese el que escribiese el contenido que se le enviaba sobre varios writers. En la API de Java no hay una clase específica que haga esto pero es muy sencillo hacer una implementación que lo haga, esto va a ser lo que explicaré en el siguiente artículo.

@@ -14,7 +14,6 @@ summary: "Spark _framework_ es un _microframework_ web para Java que además hac
 
 {{% post %}}
 
-
 {{< logotype image1="sparkjava.png" title1="Spark" image2="java.svg" title2="Java" width2="200" >}}
 
 La cantidad de _frameworks_ web disponibles en Java incluso para la misma tarea es notable, a veces cuesta decidirse por uno, sin embargo, tampoco es cuestión de elegir cualquiera. Deberemos evaluar las necesidades de la aplicación y las opciones que consideramos como adecuadas. [Spark Framework][sparkjava] es un _microframework_ simple y sencillo, sin muchas de las funcionalidades de otras opciones más completas y complejas y que quizá no necesitemos. Su funcionalidad es suficiente capaz para servirnos en múltiples casos, uno de ellos es una <abbr title="Application Programming Interface">API</abbr> <abbr title="Representational State Transfer">REST</abbr>, otro una página web dinámica sencilla, prototipos funcionales, ... su sencillez hace que podamos empezar a hacer cosas en poco tiempo. Spark es un _framework_ muy sencillo al estilo de otros disponibles en otros lenguajes pero para la plataforma [Java], ofrece soporte para las [nuevas características introducidas en la versión 8 de Java][blogbitix-17] que facilitan la tarea de programación como las _lambdas_.

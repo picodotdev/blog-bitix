@@ -13,7 +13,6 @@ tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 En los archivos de las fotos e imágenes además de su información visual gráfica, los millones de píxeles, se guarda información adicional relacionada con la misma, por ejemplo, con que modelo de cámara se realizó, la fecha y la hora a la que se realizó, e incluso la localización si la cámara dispone de GPS u otro medio de ubicación como posicionamiento mediante la red de datos móvil o WIFI.

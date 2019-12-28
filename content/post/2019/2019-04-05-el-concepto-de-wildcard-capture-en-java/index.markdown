@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Con la [introducción de los _generics_ en el lenguaje Java][blogbitix-138] en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos _wildcard_ definidos con un _?_. Una lista definida como _List<?>_ se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como _List<?>_ o _List<? extends Object>_ a partir de Java 5.

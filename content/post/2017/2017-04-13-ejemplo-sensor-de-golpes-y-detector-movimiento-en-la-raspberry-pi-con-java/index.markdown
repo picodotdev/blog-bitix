@@ -15,7 +15,6 @@ series: ["electronica"]
 
 {{% post %}}
 
-
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Otro par de sensores que incluye el [kit de introducción a la electrónica para la Raspberry Pi][blogbitix-212] son un sensor de golpes o _tilt_ y un detector de movimiento. El funcionamiento de ambos es muy similar, utilizando un _pin_ <abbr title="General Purpose Input Output">GPIO</abbr> como entrada se recibe si el sensor de golpes está activo o si el detector de movimiento ha detectado movimiento. El sensor de golpes es una bolita de mercurio encerrada en una ampolla de cristal. Como el mercurio a temperatura ambiente su estado es líquido puede moverse y como es un metal puede conducir la electricidad cuando está en una determinada posición entre dos filamentos.

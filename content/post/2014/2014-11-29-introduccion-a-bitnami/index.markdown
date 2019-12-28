@@ -12,7 +12,6 @@ tags: ["hardware", "gnu-linux", "planeta-codigo", "planeta-linux", "software", "
 
 {{% post %}}
 
-
 {{< logotype image="bitnami.svg" title="Bitnami" width="200" >}}
 
 Instalar algunas aplicaciones, herramientas o servicios no siempre es sencillo y rápido. En la mayoría de los casos los pasos están explicados suficientemente pero en la práctica nos pueden surgir dudas o problemas que no están documentados que pueden hacer que la experiencia de instalación no sea agradable o necesitar dependencias que hay que instalar a la vez para obtener un funcionamiento correcto. Además, sin emplear una máquina virtual se necesita instalar en el propio equipo o servidor cuando quizá solo interesa evaluar el producto con lo que al hacer la desinstalación se acaba con archivos temporales que quizá no se eliminen y permanezcan ocupando espacio para siempre o hasta ser eliminados.

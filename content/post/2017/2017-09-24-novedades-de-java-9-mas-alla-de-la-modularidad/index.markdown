@@ -16,7 +16,6 @@ summary: "La modularidad introducida en Java 9 no es la única novedad incorpora
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 La última versión mayor de Java fue publicada en el año 2014, hace ya mucho tiempo para la época actual donde las cosas avanzan a un ritmo muy rápido. [Java 8 introdujo en el lenguaje notables cambios][blogbitix-17] como las expresiones _lambda_ dotándolo de capacidades funcionales y mayor expresividad en menos líneas de código junto con referencias a métodos e interfaces funcionales que permite crear implementaciones anónimas de interfaces con una _lambda_, se añaden los _streams_ como nueva forma de iterar sobre las colecciones, interfaces con métodos por defecto o estáticos que aumentan la compatibilidad hacia atrás que siempre se le ha dado gran importancia en la plataforma o una nueva API para fechas que solventa las deficiencias de la anterior. Grandes cambios en el lenguaje tan importantes como los que supusieron Java 5.

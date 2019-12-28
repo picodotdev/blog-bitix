@@ -14,7 +14,6 @@ series: ["bilbostack"]
 
 {{% post %}}
 
-
 {{< logotype image="bilbostack.png" title="BilboStack" width="300" >}}
 
 Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilbao en la localización de la [Universidad de Deusto](http://www.deusto.es), este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.

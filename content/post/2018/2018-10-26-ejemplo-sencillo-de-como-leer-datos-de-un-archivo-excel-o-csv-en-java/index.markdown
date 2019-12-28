@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Los formatos de archivo de columnas separadas por comas o CSV y los documentos en formato de hojas de cálculo excel del paquete ofimático [Microsoft Office][microsoft-office] son muy utilizados como formato de archivo para intercambiar datos entre aplicaciones o simplemente como contenedores de datos. Para leer los datos en estos formatos de archivos en Java hay que emplear alguna librería que facilite y entienda estos formatos de los archivos. Para leer los archivos CSV está la librería [OpenCSV][opencsv] y para los archivos excel está la librería [Apache POI][apache-poi].

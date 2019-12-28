@@ -12,7 +12,6 @@ tags: ["gnu-linux", "opinion", "planeta-linux", "software", "software-libre"]
 
 {{% post %}}
 
-
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
 Ya llevo usando algo más de 4 años [Arch Linux][archlinux] de forma continuada desde que definitivamente hice el paso desde Windows según comentaba en [mi camino de Windows a Arch Linux][elblogdepicodev-de-windows-arch-linux] como sistema de mi ordenador personal. Pasé un poco de tiempo usando [Debian][debian] y evaluando [Ubuntu][ubuntu], [Fedora][fedora], y [openSUSE][opensuse] pero al final la distribución que elegí fue Arch Linux.

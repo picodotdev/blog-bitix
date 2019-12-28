@@ -16,7 +16,6 @@ summary: "He estado muy contento con un Samsung Galaxy S3 durante unos 3 o 4 añ
 
 {{% post %}}
 
-
 {{< logotype image1="samsung.svg" title1="Samsung" width1="300" image2="android.svg" title2="Android" width2="200" >}}
 
 El móvil es posiblemente el primer contacto de mucha gente nacida sobre los años 1970 en una época que su juventud la pasó sin la tecnología actual como internet, los ordenadores personales y los citados móviles que también pueden ser donde realizan la mayor parte de su actividad tecnológica. Los móviles primero llegaron como sustitutos de los teléfonos fijos para enviar y recibir llamadas incorporando la funcionalidad de mensajes de texto y de forma muy limitada conexión servicios por red no diría internet.

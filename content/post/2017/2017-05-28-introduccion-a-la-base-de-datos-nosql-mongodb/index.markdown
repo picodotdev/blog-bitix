@@ -15,7 +15,6 @@ summary: "En unos pocos años las bases de datos NoSQL se han dado a conocer amp
 
 {{% post %}}
 
-
 {{< logotype image1="mongodb.svg" title1="MongoDB" width1="400" >}}
 
 Los sistemas de información empleados tradicionalmente en las aplicaciones son las bases de datos relacionales como [MySQL][mysql], [PostgreSQL][postgresql] u otras comerciales. Las bases de datos relacionales con sus propiedades <abbr title="Atomicity, Consistency, Isolation, Durability">[ACID][acid]</abbr> seguirán usándose pero desde hace unos años están surgiendo y empleándose para algunos casos otro tipo de [bases de datos conocidas como NoSQL][nosql]. Dentro de las bases de datos NoSQL hay varios tipos: clave-valor, de documentos, grafos, ... Dentro de la categoría de bases de datos NoSQL orientadas a almacenar documentos una de las más destacadas es [MongoDB][mongodb].

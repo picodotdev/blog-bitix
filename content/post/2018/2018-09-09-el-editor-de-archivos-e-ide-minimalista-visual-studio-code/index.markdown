@@ -13,7 +13,6 @@ tags: ["planeta-codigo", "programacion", "software"]
 
 {{% post %}}
 
-
 {{< logotype image1="visual-studio-code.svg" title1="Visual Studio Code" width1="200" >}}
 
 Para trabajar y desde que empecé a usar un generador estático para el blog primero con [Octopress][octopress] y luego con [Hugo][hugo] he necesitado un editor de archivos de texto y de código fuente. Uno de los más conocidos es [Sublime Text][sublime-text] con numerosas funcionalidades y atajos de teclado para realizar muchas acciones únicamente pulsado unas pocas teclas y sin necesidad de ratón en gran medida. Sublime Text está muy bien pero no es gratuito por lo que después de un tiempo empecé a usar [Atom][atom], sin embargo, al estar este basado en [Electron][electronjs] que en realidad es un navegador [Chrome][google-chrome] y [JavaScript][javascript] con [Node][nodejs] su rendimiento se nota pobre. Buscando más alternativas la gente mencionaba bastante a menudo [Visual Studio Code][microsoft-visual-studio-code], lo probé, es el que más me ha gustado de todos y el que uso ahora.

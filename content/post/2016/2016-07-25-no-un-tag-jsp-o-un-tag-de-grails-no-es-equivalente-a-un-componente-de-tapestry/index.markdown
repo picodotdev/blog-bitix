@@ -13,7 +13,6 @@ summary: "Alguna vez que he dado una presentación sobre Apache Tapestry despué
 
 {{% post %}}
 
-
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
 
 Viendo el panel [Kanban](https://es.wikipedia.org/wiki/Kanban_(desarrollo)) de la herramienta de peticiones [JIRA][jira] que usamos para registrar y priorizar las siguiente tareas en la empresa que trabajo hay unas cuantas que consisten en dado un listado de compras poder realizar operaciones sobre múltiples filas sin salir de la pantalla del listado. La necesidad es evitar que los usuarios de la aplicación hagan las acciones de forma individual de forma repetitiva, evitarles esto harán que sean más productivos y podrán desarrollar su trabajo mejor y más rápido. Así de sencillo, aparentemente.

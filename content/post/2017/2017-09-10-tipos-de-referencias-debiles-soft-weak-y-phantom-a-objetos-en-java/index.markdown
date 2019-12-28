@@ -15,7 +15,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Cuando un objeto ya no es alcanzable a través de ninguna referencia directa o cadena de referencias fuertes el objeto es seleccionable para reclamar su memoria y el recolector de basura o _garbage collector_ de Java lo hace cuando estima oportuno, liberándonos a los programadores de esta tarea, simplificando el código y evitando fugas de memoria. El lenguaje Java le debe al recolector de basura entre otras varias cosas una buena parte de su éxito.

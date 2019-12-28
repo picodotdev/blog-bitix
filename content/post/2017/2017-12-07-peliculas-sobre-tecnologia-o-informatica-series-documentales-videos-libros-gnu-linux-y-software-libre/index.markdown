@@ -14,7 +14,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 Si estás interesado en la tecnología, informática en general y en el software libre, código abierto y GNU/Linux estoy más que seguro que las siguientes listas de películas, series, documentales y libros te gustarán bastante. Probablemente algunas ya hayas visto pero otra quizá no conocías o aún no has visto y este artículo te anima a ver. En el momento de escribir esto aún no he visto todo el contenido de este artículo pero con esta lista lo tengo anotado y pendiente de ver.
 
 ### Películas

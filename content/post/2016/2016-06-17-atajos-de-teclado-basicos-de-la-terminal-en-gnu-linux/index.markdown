@@ -14,7 +14,6 @@ summary: "Aprender las combinaciones de teclas de aquellas aplicaciones que usam
 
 {{% post %}}
 
-
 {{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
 
 Si no conoces lo que estás buscando una interfaz gráfica es una buena forma de descubrir cosas, si conoces exactamente lo que buscas y si lo tienes que hacer de forma repetida es tediosa y lenta. La terminal en [GNU][gnu]/[Linux][linux] sigue siendo una poderosa herramienta para realizar multitud de tareas. Entre sus ventajas son realizar la tareas de forma mucho más directa y simple que con una interfaz gráfica o la posibilidad de automatizar tareas repetitivas en un _script bash_ o en un lenguaje de programación como [Python][python]. Entre las desventajas de la línea de comandos está que no suele ser tan intuitiva como una interfaz gráfica. Dadas las ventajas de la terminal o línea de comandos para algunas personas su uso es muy frecuente y en GNU/Linux es común tener que usarla en algún momento, conocer las combinaciones de teclas que podemos usar la tarea será más fácil y la haremos rápidamente.

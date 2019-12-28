@@ -15,7 +15,6 @@ series: ["graphql"]
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 Cuando en una consulta de [GraphQL][graphql] se indican las propiedades a devolver GraphQL usa para cada una de ellas lo que en la implementación de Java se llama un _resolver_ y en otras implementaciones _data fetcher_. En la mayoría de casos las propiedades serán propiedades de un objeto y en estos casos se usará un _PropertyDataFetcher_ usando en Java la convención de los _java beans_ o la clave de un mapa. En el caso de que cierto dato no esté almacenado en el objeto sino en un repositorio externo es necesario usar un _resolver_ para devolver esa propiedad en la consulta.

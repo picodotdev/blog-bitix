@@ -15,7 +15,6 @@ series: ["graphql"]
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 El conjunto de datos de una entidad en algunos casos será grande, miles o cientos de miles de registros, y por tanto no es viable devolverlos todos en una misma consulta por lo que es necesario realizar paginación devolviéndolos en pequeños grupos. La paginación se puede implementar de varias formas, habitualmente con un parámetro que limite el número de elementos a incluir en la página y otro parámetro _offset_ que deseche los primeros elementos hasta el primero deseado. Sin embargo, utilizar los parámetros _limit_ y _offset_ puede producir resultados inesperados si mientras la obtención de una página y la siguiente se insertan nuevos elementos anteriores al _offset_ ocasionando que lo que sería por ejemplo el décimo elemento pase a ser el undécimo.

@@ -16,7 +16,6 @@ summary: "El propósito original de las Raspberry Pi era educativo y se ha hecho
 
 {{% post %}}
 
-
 {{< logotype image1="lakka.png" title1="Lakka" width1="250" image2="linux.svg" title2="Linux" width2="250" >}}
 
 Desde que compré la [Raspberry Pi][raspberrypi] en el año 2012, el modelo inicial B con 256 MiB de memoria, me ha dado y me esta dando un estupendo servicio. Principalmente la he estado usando para descargar películas y libros vía _torrent_ con [Transmission][transmissionbt] usando la distribución [Arch Linux para ARM][archlinuxarm]. Sin embargo, ya estoy pensando en sustituirla por algo más potente para hacer algunas pruebas con [Docker][docker], [Ansible][ansible] y algunas pruebas más que se me ocurran aparte de seguir queriendo hacer descargas o en un futuro con la función de SmartTV. De la Raspberry Pi no se lanzará un nuevo modelo, el que sería el 4, hasta el 2019 y cuando salga no creo que sea más potente que una [Rock64][rock64] que ya a día de hoy incorporan hasta 4 GiB de memoria, tienen Gigabit Ethernet y un puerto USB 3.0 con precio similar a la Raspberry Pi, lo único que le falta respecto al modelo de la RPi 3 es WiFi y Bluetooth pero a cambio se puede tener 4 veces más memoria, Gigabit Ethernet y un puerto USB 3.0. El mayor problema de la Rock64 es su soporte tanto en distribuciones, software y comunidad, en estos es donde la Raspberry Pi no tiene competidor.

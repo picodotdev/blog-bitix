@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Si tenemos dos valores y queremos obtener el menor con una línea de código, podemos obtenerlo con un a sentencia _if_ o con el operador condicional _? :_. Si queremos obtener el menor de tres valores con sentencias _if_ o el operador _? :_  el problema aparentemente sencillo se complica y si optamos por usar una lista de valores tratándola como si el tamaño fuese desconocido quizá usemos un bucle _for_ junto con una variable que mantenga el menor valor encontrado hasta el momento usando un _if_ que compare el valor menor encontrado con el valor actual de la lista.

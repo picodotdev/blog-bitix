@@ -13,7 +13,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Los comandos [neofetch][neofetch] y [screenfetch][screenfetch] permiten obtener una información básica del sistema desde la terminal. Esta información incluye la distribución GNU/Linux que se esté usando, la versión del _kernel_ de Linux, el número de paquetes instalados, que intérprete de comandos se usa y su versión, la resolución de la pantalla, el gestor de ventanas y su tema, la colección de iconos, terminal y fuente de la terminal, CPU, GPU y cantidad de memoria usada y total del sistema.

@@ -15,7 +15,6 @@ summary: "La tecnología avanza inexorablemente respondiendo a nuevas necesidade
 
 {{% post %}}
 
-
 La velocidad de carga de una web en el navegador es importante, tanto que añadir unos pocos cientos de milisegundos en un sitio de comercio electrónico afecta en un porcentaje significativo el abandono, la conversión y en definitiva las compras que se realizan. Un tiempo de más de 100ms ya es percibido por los usuarios. Por este motivo además Google lo tiene en cuenta a la hora del posicionamiento en su buscador, con lo que mejorar y tener un tiempo de carga bajo de las páginas producirá más compras y más visitas por tráfico orgánico que se traducirá también en más compras.
 
 Desde hace quince años el protocolo usado para la transferencia desde el servidor al navegador del HTML, CSS, JavaScript, imágenes y demás recursos de la página ha sido el [protocolo de transferencia de hypertexto](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol) o HTTP. Con el cada vez mayor ancho de banda que ofrece mayores velocidades de transferencia de los dispositivos conectados a internet el tiempo de carga de una página ha dejado de estar tan limitado por la velocidad de transferencia a ser la latencia una parte importante del tiempo. Con el objetivo de disminuir la latencia y el tiempo de carga de las páginas se publicó primero el protocolo [SPDY](https://es.wikipedia.org/wiki/SPDY) y posteriormente basado en él HTTP/2 en mayo de 2015 con varias mejoras.

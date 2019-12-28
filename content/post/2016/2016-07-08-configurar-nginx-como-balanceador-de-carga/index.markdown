@@ -15,7 +15,6 @@ summary: "Para escalar horizontalmente los servidores de aplicaciones, aumentar 
 
 {{% post %}}
 
-
 {{< logotype image1="nginx.svg" title1="Nginx" width1="300" >}}
 
 Un balanceador de carga distribuye las peticiones que llegan al servidor entre varios servidores para que las atiendan consiguiendo optimizar el uso de los recursos, aumentar el número de peticiones atendidas por unidad de tiempo, reducir la latencia y proporcionar tolerancia a fallos. Escalar un servidor que deba procesar un gran número de peticiones llegado un límite es más barato escalar horizontalmente añadiendo más servidores que escalar verticalmente usando servidores más potentes.

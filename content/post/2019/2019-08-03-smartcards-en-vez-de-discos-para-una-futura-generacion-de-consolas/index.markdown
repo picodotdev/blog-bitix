@@ -16,7 +16,6 @@ summary: "Todo indica que el formato físico de los juegos está a punto de desa
 
 {{% post %}}
 
-
 {{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="xbox.svg" title2="Xbox" width2="200" >}}
 
 Hasta recientemente la forma de distribuir los juegos en las consolas y PC ha sido a través de cartuchos y discos CD, DVD, y Blu-Ray, si embargo con la masificación de internet y con anchos de banda asequibles para las conexiones residenciales de los usuarios de entre 30 Mbps, 600 Mbps y en un futuro aún más parece que es el momento de que los fabricantes y algunos usuarios estén prefiriendo un modelo de distribución basado en la descarga digital por internet. De hecho [Microsoft][microsoft] con la [Xbox][xbox] One All-Digital ya ni siquiera posee lector de discos y todos los juegos ha de ser adquiridos a través de su tienda, la [PlayStation][playstation] de [Sony][sony] también posee su modelo de distribución digital.

@@ -17,7 +17,6 @@ summary: "La siguiente pieza que he adquirido para completar lo que será mi ord
 
 {{% post %}}
 
-
 {{< logotype image1="benq.svg" title1="Benq" width1="300" >}}
 
 [El ordenador que tenía intención de comprar, un Intel NUC][blogbitix-329] entre las [opciones entre portátil, ITX o NUC que evalué hace ya más de seis meses][blogbitix-309] ha sido finalmente uno de sus modelos que me decidí a comprar, [el ordenador Intel NUC NUC8i5BEK del cual he realizado su desempaquetado][blogbitix-363]. Mientras espero a su comercialización ya estoy comprando las otras piezas que en cualquier caso necesito como [teclado y ratón inalámbrico, alfombrilla para la mesa][blogbitix-348] y ahora otra pieza más importante, el monitor.

@@ -13,7 +13,6 @@ summary: "La Raspberry Pi utiliza para arrancar una tarjeta SD en todo caso, sin
 
 {{% post %}}
 
-
 {{< logotype image="raspberrypi.svg" title="Raspberry Pi" width="200" >}}
 
 Por defecto la Raspberry Pi se instala en una tarjeta SD y se inicia desde ella, sin embargo, la tarjeta SD es muy lenta tanto en la lectura como en la escritura de datos y cuando tiene que hacerlo de forma intensiva el sistema queda sin responder y aparentemente atascado. Para aumentar muy notablemente el rendimiento de la Raspberry Pi podemos instalar la partición del sistema en una memoria USB o disco duro externo.

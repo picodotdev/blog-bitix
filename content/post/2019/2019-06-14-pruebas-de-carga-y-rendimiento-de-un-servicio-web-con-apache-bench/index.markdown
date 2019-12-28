@@ -15,7 +15,6 @@ summary: "En algunos que un servicio devuelva los datos esperados no es suficien
 
 {{% post %}}
 
-
 {{< logotype image1="apache.svg" title1="Apache" width1="200" >}}
 
 Para hacer pruebas de carga o medir el rendimiento de cualquier servicio que funcione mediante el protocolo HTTP hay multitud de herramientas. Una de las más sencillas de utilizar y con un informe con información interesante es [Apache Bench][apache-bench] o simplemente _ab_. Este comando se puede utilizar con simplemente tres parámetros el _endpoint_ a probar, el número de peticiones en total a realizar (_-n_) y cuantas peticiones concurrentes al mismo tiempo (_-c_). Otos parámetros son los datos POST a enviar, cabeceras (_-H_) y _cookies_ (_-C_) de las peticiones, tiempos de _timeout_ (_-s_) o cerficado de cliente (_-E_) entre algunos otros. En vez limitar las pruebas a un número de peticiones las pruebas se pueden limitar a un tiempo determinado por ejemplo 60 segundos (_-t_).

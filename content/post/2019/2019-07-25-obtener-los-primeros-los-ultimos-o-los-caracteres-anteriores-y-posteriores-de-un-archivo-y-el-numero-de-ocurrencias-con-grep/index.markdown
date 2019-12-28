@@ -13,7 +13,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Algunos archivos de texto tienen un tamaño de cientos de megas, a veces incluso sin ningún salto de línea. Visualizar el contenido de estos archivos en una aplicación con interfaz gráfica no suele ser posible porque la aplicación se queda bloqueada al intentar cargar tan enormes archivos. Incluso tampoco puede ser posible con un editor mucho más ligero como [vim][vim]. Hacer un _cat_ del archivo tampoco es útil.

@@ -11,7 +11,6 @@ tags: ["java", "software-libre", "planeta-codigo", "planeta-linux", "programacio
 
 {{% post %}}
 
-
 La semana pasada escribía sobre [algunos libros que leer para ser mejores programadores][blogbitix-55], sin embargo, toda esa teoría solo sirve cuando se interioriza para usar más tarde en la práctica. Para interiorizar parte de ese conocimiento hasta el momento creo que no se ha inventado mejor manera que escribiendo código teniendo en cuenta esos principios.
 
 Las katas y dojos son unos ejercicios que se realizan para practicar, son problemas sencillos de los que se conoce la solución pero lo importante no es resolverlos sino aplicar las lecciones aprendidas y mejorar nuestras habilidades de programación que posteriormente usemos en los proyectos que trabajamos. Estos ejercicios se suelen realizar con otras personas, en la página [Katayunos - Merendojos](http://katayunos.com/) se suelen organizar encuentros en algunas ciudades y fechas, si no nos cuadran las fechas y lugares podemos realizarlas individualmente cuando y donde prefiramos aunque una de las partes que nos perderemos es aprender de las habilidades y formas de trabajar de otras personas.

@@ -16,7 +16,6 @@ tags: ["opinion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="redhat.svg" title1="Red Hat" width1="300" image2="ibm.svg" title2="IBM" width2="300" >}}
 
 Hace unos pocos días recordaba una de las adquisiciones más relevantes entre empresas de software y de tecnología, [la adquisición de Sun Microsystems por parte de Oracle][blogbitix-355] en enero del 2010. En este octubre del 2018 acaba de anunciarse la adquisición de [Red Hat][redhat] por parte de [IBM][ibm].

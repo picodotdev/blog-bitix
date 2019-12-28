@@ -15,7 +15,6 @@ series: ["graphql"]
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 Dada una consulta con los datos a recuperar [GraphQL][graphql] hace una llamada al correspondiente _resolver_ o _data fecher_ para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un _java bean_ esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.

@@ -14,7 +14,6 @@ summary: "Las velocidades de conexión actuales de 100 Mbps y de 600 Mbps en los
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Para que las imágenes ocupen menos espacio se utilizan formatos como _jpg_ para fotos y _png_ utilizado en imágenes como capturas de pantalla de ordenador. En las imágenes fotográficas los píxeles adyacentes suelen tener el mismo color y formatos como _jpg_ se basan en esto para dividir la imagen en pequeñas baldosas en las que  pueda almacenar la información de menos píxeles, _jpg_ es un formato con pérdida de calidad que sin ser excesiva es aceptable y se ve compensada con un ahorro importante en el tamaño de la imagen. El formato _png_ es un formato sin pérdida de calidad pero con igualmente con reducido tamaño en imágenes de captura de pantalla de ordenador.

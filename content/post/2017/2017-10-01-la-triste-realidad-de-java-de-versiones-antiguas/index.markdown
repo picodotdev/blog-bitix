@@ -15,7 +15,6 @@ tags: ["java", "planeta-codigo", "opinion",]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Algunos desarrolladores que utilizan el lenguaje de programación Java desearían que el tiempo que pasa entre publicación de una nueva versión y la siguiente fuese menor. Las nuevas versiones incorporan modificaciones en el lenguaje y en la API que facilitan el trabajo de los desarrolladores haciendo que escriban menos líneas de código, haciendo que el código fuente sea más legible que al final redunda en software con menos _bugs_, con más funcionalidades, un tiempo de desarrollo menor y con menos costes.

@@ -14,7 +14,6 @@ summary: "Visualizar datos de forma gŕafica ayuda a comprender un conjunto de d
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una de las principales tareas de las aplicaciones informáticas es manejar información, almacenar y recuperar datos de diversos tipos según sea el ámbito de la información tratada. Ejemplos podrían ser datos meteorológicos como temperatura, presión, velocidad y dirección del viento o datos poblacionales como número de personas, hombres y mujeres, nativos y extranjeros, ... todos estos datos se pueden recoger a lo largo del tiempo. Al recuperar los datos y presentarlos los datos se pueden presentar de forma tabular con las cifras tal y como están guardadas, sin embargo, esta forma hace difícil comprender los datos ¿si queremos ver como han evolucionado los datos meteorológicos durante un periodo de tiempo? ¿si queremos ver el porcentaje de población que le corresponde a cada comunidad autónoma respecto al total o como ha variado en varios años? Visualizar la información de forma gráfica nos ayuda a visualizar y comprender mejor un gran volumen de datos en mucho menos tiempo. Una vez comprendida la información se extraen tendencias de algunos datos e información útil que ayuden a tomar decisiones.

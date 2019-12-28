@@ -15,7 +15,6 @@ tags: ["hardware", "planeta-codigo", "opinion"]
 
 {{% post %}}
 
-
 {{< logotype image1="intel.svg" title1="Intel" width1="300" >}}
 
 El ordenador portátil que tenía sigue siendo perfectamente útil, sin embargo, en algunos casos concretos de mi uso la cantidad de memoria que tenía se me estaba quedando corta y cuando me pasa esto suelo aprovechar si alguien de mi entorno necesita ordenador traspasarlo y yo comprarme otro nuevo.

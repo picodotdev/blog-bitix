@@ -17,7 +17,6 @@ summary: "Pasado un nuevo semestre he escrito principalmente sobre temas de prog
 
 {{% post %}}
 
-
 Otros seis meses que han pasado y estos especialmente para mi muy rápido. Como suelo hacer cada este periodo de tiempo recopilo en un artículo _Hemeroteca_ los artículos que he publicado al ritmo que mantengo de uno por semana. Este ya es el séptimo contando los de [El blog de pico.dev][elblogdepicodev] y de [Blog Bitix][blogbitix].
 
 Como resumen de estas 26 semanas he publicado 27 artículos destacando que he cambiado de herramienta con la que mantengo la bitácora pasando de usar [Octopress][octopress] a [Hugo][hugo] que me ha permitido cambiar el diseño completamente personalizándolo enteramente a mi gusto y agregar algunas nuevas funcionalidades como un mejor previsualizador de imágenes, resúmenes al inicio de los artículos, o un nuevo menú con las categorías principales de las que escribo. De lo que más he escrito ha sido sobre programación y como no pueden faltar en este _blog_ algún artículo sobre [Apache Tapestry][tapestry].

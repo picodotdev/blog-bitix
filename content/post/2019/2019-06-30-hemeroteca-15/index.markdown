@@ -15,7 +15,6 @@ library: "true"
 
 {{% post %}}
 
-
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
 Estos seis primeros meses del 2019 han transcurrido como todos los años anteriores, sigo manteniendo la constancia de publicar dos artículos nuevos y únicos, algunas semanas sólo uno las menos tres.

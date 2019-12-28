@@ -12,7 +12,6 @@ tags: ["java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 En algunas web las urls incluyen el identificativo del objeto de la base de datos a partir de cual se muestra el contenido principal de la página, en [Blog Stack][blogstack] esto podría ser un artículo pero en otras páginas webs podría ser un producto. Esto genera direcciones de páginas webs «feas» de cara al usuario y al [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization) de los buscadores además de exponer cierta información de la base de datos que probablemente no interese a nadie excepto al desarrollador de la página. En este artículo voy a explicar una forma de generar [urls semánticas](https://es.wikipedia.org/wiki/URL_sem%C3%A1ntica), «bonitas» o amigables de cara al usuario y al SEO para los buscadores y como lo he implementado en un ejemplo real como es Blog Stack.

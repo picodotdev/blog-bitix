@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 En una aplicación web dependiendo de las características del cliente si es de escritorio, móvil u otro dispositivo y tamaño, lenguaje o [dependiendo de la ubicación mediante su dirección IP][blogbitix-147] puede servirse diferente contenido adaptado a las propiedades del cliente.

@@ -14,7 +14,6 @@ summary: "Redis es una de las bases de datos NoSQL en este caso de tipo clave-va
 
 {{% post %}}
 
-
 {{< logotype image1="redis.svg" title1="Redis" width1="200" >}}
 
 [Redis][redis] es una de las bases de datos para almacenar información de los conocidas como [NoSQL][nosql]. Almacena los datos en memoria por lo que es muy rápido y es usada como base de datos, como cache o _broker_ de mensajes. Los datos no se almacenan en tablas como en los sistemas relacionales tradiciones [<abbr title="Relational Database Management System">RDBMS</abbr>][rdbms] como [PostgreSQL][postgresql] o [MySQL][mysql] sino en estructuras de datos como cadenas, _hashes_, listas, conjuntos, conjuntos ordenado con rangos, _bitmaps_, _hyperloglogs_ e índices geoespaciales. Incorpora replicación, _scripting_ con LUA, desalojo <abbr title="Least Recently Used">LRU</abbr>, transacciones, diferentes niveles de persistencia en disco y alta disponibilidad con [Redis Sentinel](https://redis.io/topics/sentinel) y paticionamiento con [Redis Cluster](https://redis.io/topics/cluster-tutorial).

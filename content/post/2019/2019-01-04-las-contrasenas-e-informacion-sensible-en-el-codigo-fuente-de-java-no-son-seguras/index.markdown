@@ -14,7 +14,6 @@ tags: ["java", "planeta-codigo", "programacion", "seguridad"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 En Java el código fuente se compila a una representación en _bytecode_ independiente de la arquitectura del procesador y sistema operativo donde posteriormente se ejecuta. Este _bytecode_ es un formato binario pero que puede ser decompilado fácilmente con la herramienta _javap_ incluida en el propio JDK o examinado su contenido simplemente con un editor de texto hexadecimal. Con estas herramientas es fácil ver las instrucciones del programa para la máquina virtual y los caracteres de las cadenas que fueron incluidas en el código fuente.

@@ -15,7 +15,6 @@ summary: "Una API REST no ofrece introspección y por tanto hay que recurrir a u
 
 {{% post %}}
 
-
 {{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
 
 Una de las cosas que me gustan de GraphQL sobre REST es que la API de un servicio se define en un esquema. Tanto las operaciones de consulta, de modificación con sus nombres de parámetros, tipos y si son requeridos o no. Esta información es básica para hacer un buen uso de esa API y conocer cual es su contrato. Además con [la herramienta GraphiQL][blogbitix-340] se pueden crear y realizar consultas con un pequeño IDE con asistencia de código. GraphQL genera los metadatos e ofrece la instrospección a partir únicamente de la definición del esquema del servicio sin ningún esfuerzo adicional por parte del creador del servicio.

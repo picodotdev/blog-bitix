@@ -14,7 +14,6 @@ series: ["gitlab"]
 
 {{% post %}}
 
-
 {{< logotype image1="gitlab.svg" title1="GitLab" width1="200" >}}
 
 Una de las cosas que me gustan de [GitLab][gitlab] es que se puede usar en un servidor propio, la otra cosa que me gusta es que incluye varias herramientas casi imprescindibles para cualquier proyecto como gestión de peticiones para recoger las historias, wiki como documentación e información y _pages_ para generar pequeños sitios web además de los repositorios de [Git] o el servidor de integración y entrega continua. Que GitLab incluya por defecto todas estas herramientas hace innecesario recurrir en la mayoría de los casos a varias herramientas especializadas que cubran estas necesidades como [JIRA][jira], [Jenkins][jenkins], [MediaWiki][mediawiki] o un servidor web para los sitios web.

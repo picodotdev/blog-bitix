@@ -16,7 +16,6 @@ summary: "Parte de la información que usan los contenedores de Docker se debe p
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
 Los contenedores de [Docker][docker] necesitan acceder a algunos datos sensibles desde el punto de vista de la seguridad como usuarios y contraseñas, certificados SSL, claves privadas SSH o cualquier otra información de acceso restringido. Algunos de estos datos en Docker se proporcionan mediante variables de entorno al lanzar los contenedores, esto es inseguro ya que al hacer un listado de los procesos con sus parámetros de invocación los relativos a Docker mostrarán esta información, lo que es un posible problema de seguridad.

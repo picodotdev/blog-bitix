@@ -15,7 +15,6 @@ summary: "La forma habitual en Java de hacer un bucle es con una sentecia _for_ 
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Hasta Java 5 para hacer un bucle desde 0 a N elementos había que usar una variable para mantener un contador, hacer una comparación para comprobar si se había llegado al límite e incrementar la variable en la siguiente ejecución. El código era bastante verboso y dado que los bucles son una construcción básica de cualquier lenguaje de programación es empleada numerosas veces en cualquier algoritmo. Antes de Java 5 un bucle _for_ de 0 a 5 y de una colección se realizaba de la siguiente manera:

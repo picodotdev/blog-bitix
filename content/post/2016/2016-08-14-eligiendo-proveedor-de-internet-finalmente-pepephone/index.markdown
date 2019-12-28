@@ -16,7 +16,6 @@ note: "<strong>Nota</strong>: Este no es ni mucho menos un artículo patrocinado
 
 {{% post %}}
 
-
 {{< logotype image1="pepephone.svg" title1="Pepephone" width1="400">}}
 
 Después de hacer unos cuantos temas ha llegado el turno de elegir un proveedor de internet. Como en todos los casos en los que hay que tomar alguna decisión he empezado por recopilar que opciones ofrece cada compañía, con que características y precios. Hay diferencias importantes entre algunas de las ofertas de los operadores que dependiendo de nuestras necesidades alguna se adaptará mejor, no hay una oferta que de forma absoluta sea la mejor aunque puede que si para una mayoría.

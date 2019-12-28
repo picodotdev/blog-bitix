@@ -17,7 +17,6 @@ summary: "Seis meses más de artículos la mayoría sobre programación en Java 
 
 {{% post %}}
 
-
 El 2015 pasó, a mi muy rápido. En cuanto a la bitácora toca recapitular cuáles han sido los artículos que he escrito, de que temas principales he hablado, un poco cómo han evolucionado las visitas y que tengo preparado para publicar durante los siguientes meses ya de 2016.
 
 Muchos de los artículos que he escrito han estado relacionados con la programación en la plataforma Java, en los que destacaría prácticamente todos empezando por los relacionados con [Spring Boot][spring-boot], [Spring Cloud Config][spring-cloud-config] y [Spring Boot Actuator][spring-boot-actuator] que forman parte del actual de la tendencia a la hora de desarrollar aplicaciones en Java pero también otros cuantos relacionados con [jOOQ][jooq] que ya es una alternativa a [Hibernate][hibernate] y su uso probablemente se extienda y aumente, también otro artículo sobre [Gradle][gradle] que ya es la herramienta de automatización de construcción ampliamente usada.

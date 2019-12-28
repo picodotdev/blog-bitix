@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Para tratar JSON en Java hay varias alternativas una de ellas es [utilizar la API de bajo nivel JSON-P][blogbitix-374], otra es [JSON-B][json-b] que requiere construir una o varias clases de Java a las que hacer la correspondencia entre el JSON y los objetos Java. Otra alternativa es utilizar expresiones o selectores que seleccionen los datos de JSON de forma similar a como se puede hacer con [XPath][xpath] para el caso de XML o [jQuery][jquery] con los elementos de HTML.

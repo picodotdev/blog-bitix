@@ -15,7 +15,6 @@ summary: "A lo largo del tiempo han surgido varias formas de gestionar las excep
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una parte importante para el correcto funcionamiento de un programa corresponde a la gestión de errores que pueden producirse en su ejecución. Si se trata de un programa que se comunica vía interfaz de red ha de estar preparado ante la situación que la conexión se pierda o se produzcan errores en la transmisión porque por ejemplo se ha desconectado el cable de red o la WiFi no es estable. Si se trata de un programa que guarda datos en el almacenamiento persistente también pueden producirse errores como que el archivo ya existe, el directorio no existe o el espacio del disco se ha agotado. Los posibles casos de error que pueden producirse en un programa son muchos y variados.

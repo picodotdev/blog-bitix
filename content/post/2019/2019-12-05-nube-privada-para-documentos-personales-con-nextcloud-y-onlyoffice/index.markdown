@@ -15,7 +15,6 @@ summary: "Empresas como Google ofrecen servicios gratuitos que los usuarios pued
 
 {{% post %}}
 
-
 {{< logotype image1="nextcloud.svg" title1="Nextcloud" width1="200" image2="onlyoffice.svg" title2="OnlyOffice" width2="200" >}}
 
 Una cuenta de Google da acceso a múltiples servicios gratuitos, útiles y con un servicio más que correcto. Algunas de estos servicios está el de correo electrónico de [GMail][google-gmail], la sincronización y unidad de documentos de [Google Drive][google-drive], calendario para apuntar citas y recordatorios con [Google Calendar][google-calendar], el acceso a la _suite_ ofimática colaborativa [Google Docs][google-docs] o fotos con [Google Photos][google-photos]. Estos son los servicios que uso de Google por su comodidad.

@@ -13,7 +13,6 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 El siguiente aparente, gracioso e inocente conjunto de caracteres que parecen una colección de varios extraños _emojis_ es un comando que si se ejecuta en una terminal de GNU/Linux crea gran cantidad de procesos de forma continua hasta que los recursos del sistema se agotan causando que sea inusable haya que reiniciarlo generando los problemas que de ello se deriven si el reinicio es forzado, este comando es el comando [fork bomb](https://en.wikipedia.org/wiki/Fork_bomb) para el intérprete de comandos [bash][bash].

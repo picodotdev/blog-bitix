@@ -15,7 +15,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 En una aplicación web hay múltiples usuarios realizando peticiones al servidor de modo que al usar una librería de _logging_ como [Log4j][log4j] las trazas de información de los diferentes usuarios aparecerán intercaladas. En esta maraña de trazas resulta difícil obtener la secuencia de trazas de una petición siendo la diferencia entre descubrir la causa de un error o pasar varias horas revisando trazas sin encontrar nada significativo en la inmensa cantidad de ellas relativas a otras peticiones. La librería Log4j proporciona un mecanismo para seguir la secuencia completa de trazas de una petición con el [concepto denominado _fish tagging_](https://logging.apache.org/log4j/2.x/manual/thread-context.html).

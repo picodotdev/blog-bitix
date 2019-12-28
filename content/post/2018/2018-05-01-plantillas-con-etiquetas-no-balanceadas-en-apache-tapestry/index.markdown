@@ -14,7 +14,6 @@ summary: "Apache Tapestry es uno de los mejores _frameworks_ web para Java que h
 
 {{% post %}}
 
-
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" >}}
 
 Las plantillas en [Apache Tapestry][tapestry] son XHTML, esto quere decir que al ser [archivos xml han de estar bien formados](https://es.wikipedia.org/wiki/Validaci%C3%B3n_XML#Documento_Bien_Formado) con sus etiquetas bien balanceadas y anidadas. Esto tiene la ventaja de que Tapestry nos avisará cuando se intente generar código HTML mal formado con el contenido de plantilla, una especie de compilación que si no es correcta no pasará desapercibida como en otros _frameworks_ y que puede generar otro tipo de errores. Sin embargo, también tiene una desventaja y es que si necesitamos generar una etiqueta de inicio dentro de un componente _if_ la plantilla no será válida.

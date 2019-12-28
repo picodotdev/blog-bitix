@@ -16,7 +16,6 @@ series: ["electronica"]
 
 {{% post %}}
 
-
 {{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Uno de los motivos por los que compré el [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212], además de cacharrear un poco, era en concreto controlar el _display_ LCD de 16 columnas y 2 filas. En el _kit_ el _display_ viene con un adaptador con el bus de comunicación I2C. El _display_ se puede usar sin este bus pero requiere utilizar muchos más _pines_ GPIO de datos de los limitados 17 que ofrece la Raspberry Pi 1 y los 26 de las Raspberry Pi B+, 2  y 3. Controlar el _display_ con I2C requiere únicamente 2 pines, por contra sin usar I2C requiere un número significativamente mayor 4 u 8 pines.

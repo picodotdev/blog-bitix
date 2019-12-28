@@ -16,7 +16,6 @@ summary: "Los servicios que necesitan almacenar datos como las bases de datos o 
 
 {{% post %}}
 
-
 {{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 
 Algunos servicios no necesitan almacenar ningún estado porque no lo necesitan o porque el estado se mantiene en otro servicio. Que un servicio no necesite mantener estado es bueno porque de esta manera el servicio se puede escalar al número de instancias adecuadas para prestar el servicio, también porque si falla una instancia la petición puede ser reenviada a otra instancia, una instancia que falla puede ser reemplazada sin problema en otro _host_. Sin embargo, hay otro tipo de instancias que si almacenan estado como las bases de datos ya sea [PostgreSQL][postgresql], [MySQL][mysql], [Redis][redis], [MongoDB][mongodb], otra o simplemente archivos en el sistema de archivos.

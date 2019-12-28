@@ -13,7 +13,6 @@ summary: "React y Polymer son dos librerías JavaScript para construir interface
 
 {{% post %}}
 
-
 {{< logotype image="apache-tapestry-5.svg" title="Apache Tapestry" width="400" >}}
 
 La librería JavaScript [ReactJS][react] es una de las que más se está hablando para bien y utilizando para construir aplicaciones complejas en el navegador. Personalmente después de haberla probado en el [ejemplo lista de tareas con React y Backbone][blogbitix-20] me ha parecido que está muy bien. Otra de las librerías que suele mencionarse y que en un futuro puede emplearse mucho más es [Polymer][polymer]. ¿Cuál es el éxito de estas librerías?

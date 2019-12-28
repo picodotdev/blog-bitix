@@ -14,7 +14,6 @@ series: ["spring-cloud"]
 
 {{% post %}}
 
-
 {{< logotype image1="resilience4j.png" title1="Resilience4j" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 [Hystrix][netflix-hystrix] ha sido una de las primeras librerías en Java disponibles para implementar varios patrones de tolerancia a fallos en los microservicios. Desde hace un tiempo ha pasado a modo mantenimiento en el que ya no se incluyen nuevas características, una de las librerías recomendadas como sustituta es [Resilience4j][resilience4j]. Resilience4j proporciona las características similares con algunas ventajas adicionales.

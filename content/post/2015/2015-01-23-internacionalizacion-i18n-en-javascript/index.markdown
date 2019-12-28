@@ -12,7 +12,6 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" >}}
 
 Si desarrollamos una aplicación web, que es usada en múltiples idiomas y el lado del cliente tiene cierta complejidad quizá nos encontremos con la necesidad de proporcionar internacionalización (i18n) para los textos o mensajes mediante una librería javascript. Una de la que más me ha gustado de las que he encontrado ha sido [i18next][i18next] pero hay [varias opciones más](https://stackoverflow.com/questions/3084675/internationalization-in-javascript), incluidas dos que merecen ser nombradas que son [polyglot](http://airbnb.github.io/polyglot.js/) y [messageformat](https://github.com/SlexAxton/messageformat.js), estas tres opciones son parecidas pero no tienen exactamente las mismas funcionalidades, deberemos evaluarlas para elegir una según lo que necesitemos.

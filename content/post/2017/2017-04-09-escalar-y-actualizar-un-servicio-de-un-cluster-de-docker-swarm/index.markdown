@@ -16,7 +16,6 @@ summary: "Ya tenemos un _cluster_ formado por varios nodos con algún servicio e
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
 Una vez que ya hemos [creado un _cluster_ de nodos con Docker Swarm][blogbitix-216] y hemos desplegado algunos servicios ya sea directamente mediante comandos para crear servicios o mediante un [_stack_ con un archivo similar a un Docker Compose][blogbitix-220] al cabo de un tiempo necesitaremos hacer otras operaciones. Dos de esas operaciónes básicas son escalar hacia arriba o hacia abajo un servicio cambiando el número de instancias de contenedores desplegadas o actualizar la imagen que utilizan los servicios por otra diferente posiblemente más nueva.

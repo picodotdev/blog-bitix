@@ -13,7 +13,6 @@ footer: true
 
 {{% post %}}
 
-
 Empecé el blog allá por febrero de 2010 con la motivación de escribir y aprender sobre temas de mi interés que en mis horas de trabajo no podía, ni aún muchas veces puedo, tratar de ayudar a los demás, de compartir conocimientos, es una de las formas de colaborar con el software libre y también sin duda por divertirme.
 
 En su mayor parte la temática de este blog está entorno a la programación, la tecnología y al software libre. Por lo general mi objetivo no es escribir entradas con un conocimiento muy profundo del tema tratado en cada artículo (aunque eso depende también de los conocimientos del lector) sino lo suficiente amplio para que a alguien le cree curiosidad y proporcionando enlaces de referencia pueda profundizar más por su cuenta si lo desea.

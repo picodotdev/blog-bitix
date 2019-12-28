@@ -14,7 +14,6 @@ summary: "Las aplicaciones basadas en eventos y con E/S no bloqueante son más e
 
 {{% post %}}
 
-
 {{< logotype image1="vertx.png" title1="Vert.x" image2="java.svg" title2="Java" width2="200" >}}
 
 Tradicionalmente las aplicaciones web y los servidores han manejado con un hilo cada petición. Hasta ahora ha funcionado y en muchos casos sigue siendo suficiente para el número de usuarios y peticiones a los que atienden esas aplicaciones. Pero cuando se necesita escalar a un gran volumen de peticiones y usuarios usar hilos es ineficiente y requiere escalar horizontalmente (con más servidores) que tiene costes adicionales y una mayor complejidad en la infraestructura de la aplicación. Dedicar en exclusiva un hilo por petición hasta que esta es atendida es ineficiente ya que las operaciones de  entrada/salida como disco o red como un servidor de base de datos el hilo se bloquea esperando a obtener respuesta del disco o base de datos, recursos que quedan bloqueados. Por otra parte, un cambio de contexto del procesador para pasar de ejecutar un proceso o hilo a otro es una operación costosa comparada con las velocidades de los procesadores y al mismo tiempo agravada por la necesidad de contención entre los hilos en el acceso concurrente a datos.

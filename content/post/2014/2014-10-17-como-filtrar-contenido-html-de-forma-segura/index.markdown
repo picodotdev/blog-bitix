@@ -12,7 +12,6 @@ tags: ["java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 Algunos sitios y aplicaciones pueden tener la necesidad de [«scrapear» el contenido de sitios web][blogbitix-47] para extraer información de ellos y posteriormente usarla de alguna forma. El contenido «scrapeado» o obtenido de una fuente externa debe ser filtrado, si no es filtrado y posteriormente es servido a los usuarios puede enviárseles principalmente scripts con contenido malicioso (provocando un ataque [cross-site scripting, XSS](https://en.wikipedia.org/wiki/Cross-site_scripting)) o causar una desmaquetación al visualizar el contenido. A la hora de implementar la agregación de contenido de forma segura en [Blog Stack][blogstack], contenido obtenido de una fuente RSS o Atom pero que en esencia es HTML he usado la librería [jsoup][jsoup], de tal forma que solo el contenido considerado seguro o confiable de los artículos sea agregado.

@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Las expresiones regulares son un gran invento y muy útil para comprobar que una cadena cumple el patrón definido en la expresión regular, hay coincidencias en partes de la cadena y para reemplazar coincidencias. Son muy potentes para realizar estas tareas pero al mismo tiempo pueden volverse en cierta medida complicadas.

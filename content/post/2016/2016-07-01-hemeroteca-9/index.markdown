@@ -17,7 +17,6 @@ summary: "6 meses más y 35 nuevos artículos escritos sobre temas de programaci
 
 {{% post %}}
 
-
 Como cada seis meses en Blog Bitix hago una recopilación de los artículos que he publicado durante este tiempo, comento sobre que he escrito y comparto cómo ha evolucionado esta bitácora. Durante estas 26 primeras semanas del año he escrito 35 nuevos artículos siguiendo mi ritmo de publicación no muy prolífico pero muy constante al ritmo de uno por semana, algunas publicando dos artículos casi siempre durante el fin de semana.
 
 Los temas de los artículos han sido los habituales programación, GNU/Linux, Java, JavaScript, unos pocos de opinión y algún desempaquetado de producto que he comprado y he usado.

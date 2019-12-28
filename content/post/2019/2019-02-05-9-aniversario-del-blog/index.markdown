@@ -14,7 +14,6 @@ series: ["aniversario"]
 
 {{% post %}}
 
-
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
 Ya han pasado nueve años desde que el sábado 6 de febrero del 2010 cree un blog, [El blog de pico.dev][elblogdepicodev], que fue el precedente de [Blog Bitix][blogbitix] cambio motivado por pasar de [Blogger][blogger] a [Octopress][octopress] con [GitHub Pages][github-pages] y posteriormente con [Hugo][hugo].

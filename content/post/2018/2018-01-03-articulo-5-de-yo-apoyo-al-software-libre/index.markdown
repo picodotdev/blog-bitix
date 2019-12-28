@@ -15,7 +15,6 @@ series: ["donacion"]
 
 {{% post %}}
 
-
 La última donación que hice a algún proyecto de software libre fue en mayo del 2017, desde entonces he recibido algunos ingresos por la publicidad AdSense que incluyó en el blog. Los ingresos por AdSense están empezando a ser bastantes constantes de al menos 1€ al día con lo que al mes se convierten en 30€, un més bueno en 50€, con lo que cada dos o tres meses recibo un ingreso.
 
 También hace unos meses escribí un artículo patrocinado con enlaces de afiliación sobre varios [cursos de formación de KeepCoding][blogbitix-207], la mayoría de usuarios se registran en los cursos gratuitos y ya cuando había perdido las esperanzas de que alguien comprase algún curso pagando un par de usuarios se registraron usando mis códigos de afiliado.

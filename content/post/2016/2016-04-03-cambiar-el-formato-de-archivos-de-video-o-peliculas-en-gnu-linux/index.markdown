@@ -12,7 +12,6 @@ tags: ["gnu-linux", "planeta-linux", "software-libre"]
 
 {{% post %}}
 
-
 {{< logotype image1="ffmpeg.png" title1="FFmpeg" width1="400" image2="linux.svg" title2="Linux" width2="200" >}}
 
 En el artículo anterior comentaba [como cambiar el formato de archivos de música o audio][blogbitix-135], por ejemplo de wav a mp3, de wav a ogg o de mp3 a ogg de archivos individuales, de forma masiva los de un directorio o de forma recursiva de toda una biblioteca de música organizada en múltiples directorios. Para hacer la conversión usaba la herramienta [FFmpeg][ffmpeg], esta misma herramienta sirve también para hacer conversiones en el formato de archivos de vídeo o películas. Las conversiones de los archivos de música nos puede interesar para reducir su tamaño, un mp3 ocupa mucho menos que un wav y un archivo ogg es un formato libre de patentes no así el formato mp3. En el caso de los vídeos también nos puede interesar hacer una conversión, reducir su tamaño, extraer solo el audio, extraer solo el vídeo u obtener un trozo del vídeo entre varias cosas más que podemos realizar con FFmpeg.

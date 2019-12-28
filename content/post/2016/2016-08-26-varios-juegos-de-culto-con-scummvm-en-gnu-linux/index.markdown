@@ -15,7 +15,6 @@ summary: "Un juego puede gustar por sus gráficos espectaculares, sin embargo, n
 
 {{% post %}}
 
-
 {{< logotype image1="scummvm.png" title1="ScummVM" image2="linux.svg" title2="Linux" width2="200" >}}
 
 A día de hoy hay una buena colección de juegos que ya tiene varias décadas pero que están muy bien y han alcanzado el calificativo de míticos. Los clásicos del [juego del ajedrez][blogbitix-160] y el [juego go][blogbitix-163] son atemporales, en GNU/Linux también otros [clásicos del arcade y consolas con el emulador Mame][blogbitix-170], también en GNU/Linux hay [otros más actuales][blogbitix-172] algunos basados en originales de distintos géneros como Arcade, FPS, estrategia con gráficos en tres dimensiones o basados en texto jugables desde la terminal y que no requieren computadoras potentes. Otros juegos buenos, muy conocidos y míticos son [Monkey Island](https://en.wikipedia.org/wiki/Monkey_Island_(series)), [Maniac Mansion](https://es.wikipedia.org/wiki/Maniac_Mansion), [El día del tentáculo](https://es.wikipedia.org/wiki/Day_of_the_Tentacle), [Indiana Jones](https://es.wikipedia.org/wiki/Indiana_Jones_and_the_Fate_of_Atlantis), ... jugables con el emulador [ScummVM][scummvm].

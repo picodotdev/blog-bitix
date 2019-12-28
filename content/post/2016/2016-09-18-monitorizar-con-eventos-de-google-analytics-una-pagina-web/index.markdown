@@ -14,7 +14,6 @@ summary: "Conociendo cómo usar los eventos de Analytics podemos conocer informa
 
 {{% post %}}
 
-
 {{< logotype image1="google-analytics.png" title1="Google Analytics" >}}
 
 No se mucho de [Google Analytics][google-analytics] únicamente lo que he aprendido aplicándolo en mi propia bitácora. Cuando [cambié de herramienta para generar de forma estática la bitácora][blogbitix-0] pude personalizar en mucha mayor medida que lo que podía primeramente con [Blogger][blogger] y después tenía con [Octopress][octopress].

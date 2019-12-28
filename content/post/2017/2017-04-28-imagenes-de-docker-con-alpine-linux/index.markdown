@@ -14,7 +14,6 @@ series: ["docker"]
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" image2="alpinelinux.svg" title2="Alpine Linux" width2="350" >}}
 
 En el repositorio de imágenes [Docker Hub][docker-hub] de [Docker][docker] hay múltiples versiones de cada software _contenirizado_, alguna de las versiones están etiquetadas con la palabra _alpine_. Las imágenes de Docker etiquetadas con _alpine_ hacen referencia a que usan como base la distribución [Alpine Linux][alpine-linux] y la razón de usar Alpine Linux es que al ser una distribución minimalista basada en [busybox][busybox] y [musl-libc][musl-libc] hace que las imágenes ocupen bastante menos que una imagen equivalente por ejemplo basada en [Ubuntu][ubuntu] o [Debian][debian], seguramente porque no contienen una buena cantidad de cosas innecesarias.

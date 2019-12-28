@@ -14,7 +14,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 En el mundo de las expresiones regulares hay tres tipos de cuantificadores que varían el comportamiento según el número caracteres que toman para encontrar ocurrencias. Son _greedy_ o avaricioso, _reluctant_ o reacio y _possesive_ o posesivo. Cada cuantificador tiene una expresión en una expresión regular. La opción más habitual es el cuantificador _greedy_, añadiendo una _?_ se convierte en _reluctant_ y añadiendo un _+_ se convierte en _possesive_.
 
 <pre>

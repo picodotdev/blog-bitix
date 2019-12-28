@@ -14,7 +14,6 @@ summary: "Las pruebas unitarias y de integración tratan de probar que el compor
 
 {{% post %}}
 
-
 Al desarrollar pruebas unitarias o de integración se emplean varios términos que no son imprescindibles conocer para hacer una prueba pero si es recomendable conocerlos para saber que diferencias hay entre ellos y saber que posibilidades tenemos para construir la prueba. Los términos básicos son sujeto bajo prueba o _subject under test_, _fake_, _mock_, _stub_ y _spy_.
 
 En una prueba el objeto bajo prueba es el elemento del que se quiere probar su comportamiento y que las pruebas verificarán que para los casos de prueba funciona según lo esperado. Dado que raramente el sujeto bajo prueba funciona de forma aislada sino que que se comunica con otros elementos estos colaboradores han de reemplazarse preprogramado su comportamiento, a los colaboradores se les denomina impostores o _fakes_ ya que no son los objetos reales que se usan en el programa en ejecución pero simulan su comportamiento.

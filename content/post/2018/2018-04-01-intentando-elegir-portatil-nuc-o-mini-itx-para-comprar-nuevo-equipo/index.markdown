@@ -13,7 +13,6 @@ tags: ["hardware"]
 
 {{% post %}}
 
-
 {{< logotype image1="intel.svg" title1="Intel" width1="300" image2="amd.svg" title2="AMD" width2="300" >}}
 
 Ya he comentado que [a mi los Mac ni macOS me convencen][blogbitix-305] por varios motivos, por su precio, por el software libre y porque lo que he podido comprobar no me ha parecido que tenga nada de lo que [GNU][gnu]/[Linux][linux] hoy en día tenga algo que envidiar, algunas cosas en macOS quizá sean algo mejor pero otras en GNU/Linux también en él lo son.

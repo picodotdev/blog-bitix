@@ -15,7 +15,6 @@ summary: "Los productos de tecnología de consumo son regalos siempre bien recib
 
 {{% post %}}
 
-
 Los productos tecnológicos son de los más codiciados para regalar o comprar a otras personas o a uno mismo en cumpleaños, fechas señaladas de descuentos como días sin IVA que algunas grandes superficies comerciales realizar un par de veces al año, en la época previa a navidades que empieza ya en el _Black Friday_ y poco después continua con el _Cyber Monday_ seguido de la época de navidades con _Papá Noel_ o equivalentes regionales y reyes magos. En el siguiente artículo incluyo una selección de productos de diferentes categorías, gamas y precios entre los más deseados.
 
 En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un _gadget_ sobre todo con los productos de tecnología que parece se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186]. Y aunque aquí pongo enlaces de [Amazon][amazon] compara con otras tiendas ya que no siempre tiene los mejores precios en todos los productos especialmente en aquellos que son vendidos por terceros en su _marketplace_, en el caso de Amazon [el seguidor de precios CamelCamelCamel permite conocer la evolución de precios][blogbitix-414] a lo argo del tiempo permitiendo conocer si en el momento de intención de compra el producto tiene buen precio.

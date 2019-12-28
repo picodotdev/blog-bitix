@@ -13,7 +13,6 @@ summary: "Elasticsearch es una potente herramienta que nos permite indexar una g
 
 {{% post %}}
 
-
 {{< logotype image="elasticsearch.png" title="Elasticsearch" width="300" >}}
 
 Continuando con la forma de [como dar solución a la búsquedas en las entidades de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html) en esta entrada profundizaré en la solución que comentaba de usar [Elasticsearch](http://www.elasticsearch.org) (ES). ES se basa en [Lucene](http://lucene.apache.org/core/) pero expone su funcionalidad a través de una interfaz REST recibiendo y enviando datos en formato JSON y oculta mediante esta interfaz los detalles internos de lucene. Esta interfaz permite que pueda ser utilizada por cualquier plataforma no solo Java, puede usarse desde Python, .NET, PHP o incluso desde un navegador con JavaScript. Es persistente, es decir, que lo que indexemos en ella sobrevivirá a un reinicio del servidor.

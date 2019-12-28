@@ -16,7 +16,6 @@ summary: "Las semillas de roble son sencillas de hacer germinar, básicamnte lo 
 
 {{% post %}}
 
-
 {{< logotype image1="quercus-robur.png" title1="Quercus Robur" width1="175" >}}
 
 Las semillas para germinar necesitan las condiciones adecuadas. Para algunos tipos de semillas se utilizan dos procesos, la [escarificación](http://www.botanical-online.com/escarificacion.htm) y [estratificación](http://www.botanical-online.com/estratificacion.htm), la primera simula la degradación de la semilla que se daría en condiciones naturales y la segunda simula las condiciones de frío del invierno. Simular de forma artificial la escarificación se realiza desgastando la semilla con una lija o deteriorando la cáscara de la semilla, la estratificación se simula dejando las semillas un periodo de tiempo en el frigorífico pero no en el congelador. Todas las semillas no necesitan de estos dos procesos y pueden germinar simplemente envolviéndolas con un papel de cocina húmedo mantenido así durante varios días.

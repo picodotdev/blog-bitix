@@ -13,7 +13,6 @@ summary: "Una aplicación que trabaje con importes y diferentes divisas necesita
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 La semana pasada comentaba la [clase ServiceLoader disponibles en el JDK][blogbitix-94] y como nos puede servir para que nuestra aplicación o API sea extensible en futuras versiones o para alguien que quiera adaptarla a sus necesidades. La clase ServiceLoader es el método que se emplea en la [API de Java para tratamiento de divisas, importes y conversiones][blogbitix-90] que quizá en un futuro se ofrezca en Java con la especificación JSR-354. Por el momento se puede usar la [librería con la implementación de referencia](https://github.com/JavaMoney/jsr354-ri). En este ejemplo mostraré cómo proporcionar un nuevo proveedor de ratios que obtenga [ratios de conversión del servicio Open Exchange Rates][blogbitix-85].

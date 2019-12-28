@@ -17,7 +17,6 @@ summary: "Al fin tengo nuevo equipo que cumple con los requisitos que le demanda
 
 {{% post %}}
 
-
 {{< logotype image1="intel.svg" title1="Intel" width1="300" image2="hyperx.svg" title2="HyperX" width2="300" image3="samsung.svg" title3="Samsung" width3="300" >}}
 
 Llevaba unos cuantos meses buscando entre las muchas opciones que hay un nuevo ordenador personal, casi un año desde enero del 2018 hasta ahora noviembre. La espera en algunos momentos se me ha hecho larga ya que sobre [Intel NUC][intel-nuc] por el que me he decidido como nuevo equipo ya había noticias de él en enero, sin embargo, hasta julio no los empezaba a distribuir [Intel][intel] y no ha sido hasta octubre y noviembre (coincidiendo con la semana del _black friday_ a finales de noviembre) cuando ha empezado a estar disponible en las tiendas para comprar. Ha sido tanto tiempo por el conjunto de características que deseaba que limitaba en buena medida las opciones entre las que podía elegir, más cuando en las tiendas aún no estaba el equipo que quería. Por algunas cosas aún seguiría esperando pero ya me decidido a quedarme con el NUC ya que no quiero esperar más a tener mi propio equipo. Por obligación estoy usando un Apple MacBook Pro del 2015 que tengo a mi disposición por motivos laborales pero echo de menos mi distribución [GNU][gnu]/[Linux][linux] preferida que es [Arch Linux][archlinux].

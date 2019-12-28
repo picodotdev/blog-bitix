@@ -14,7 +14,6 @@ series: ["donacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="wine.svg" title1="Wine" width1="200" >}}
 
 La dedicación que me exige el blog para tratar de escribir, editar y publicar al menos un artículo a la semana de forma constante sin faltar ninguna semana, últimamente estoy publicando dos, se me está recompensando en forma de superar unas pocas visitas más cada mes. Y esto también se ve reflejado en los ingresos de [AdSense][google-adsense], ya es raro el día que no me genera al menos dos euros al día salvo los fin de semanas que puede quedarse cerca. Un buen día según el número de clics y la fortuna de que en estos el coste por clic (CPC) sea generoso los ingresos pueden llegar a entre tres y cinco euros.

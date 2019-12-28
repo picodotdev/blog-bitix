@@ -14,7 +14,6 @@ series: ["bilbostack"]
 
 {{% post %}}
 
-
 Cuando me inscribí en la [BilboStack][bilbostack] para reservar entrada no me llamaron mucho la atención las presentaciones del programa pero ya a una semana de decidir a cuales iba a ir definitivamente he tenido dificultades para elegir y en varios casos me hubiese gustado ir a las de los dos _tracks_. Como años anteriores la BilboStack se ha celebrado en Bilbao en el mismo emplazamiento de la [Universidad de Deusto][universidad-de-deusto] pero volviendo como en años precedentes al edificio de las ingenierías. Otro cambio ha sido que este año fueron cuatro presentaciones por _track_ cuando en años anteriores fueron cinco.
 
 El número de asistentes ha sido numeroso quedando algo de sitio libre en el _track 2_ que era un aula pero en la sala de conferencias del _track 1_ aunque tiene cómodas butacas salvo por su estrechez el sitio libre era inexsitente de modo que en algunas presentaciones ha habido algunos asistentes que han debido estar de pie.

@@ -13,7 +13,6 @@ summary: "En esta nueva revisión de las opciones de alojamiento que disponemos 
 
 {{% post %}}
 
-
 Hace tres años escribí un artículo sobre [varias opciones de _hosting_][elblogdepicodev-5-opciones-de-hosting-para-aplicaciones] que disponemos para hospedar aplicaciones o páginas web. En ese artículo comentaba varias posibilidades desde un servidor propio usando una  Raspberry Pi, proveedores de _hosting_, [Amazon EC2][amazon-ec2], [Google App Engine][google-appengine], [Jelastic][jelastic], [OpenShift][openshift], [AppFog][appfog], [Cloud Foundry (VMWare)][cloudfoundry], [Heroku][heroku], [Azure (Microsoft)][microsoft-azure] y [Google Compute (Google Cloud Platform)][google-compute]. Pasado todo este tiempo en este artículo revisaré las opciones de hospedaje con algunas nuevas que en su momento no conocía, otras siguen siendo totalmente válidas.
 
 ### Servidor propio

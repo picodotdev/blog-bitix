@@ -15,7 +15,6 @@ summary: "Echando un vistazo a estos seis últimos meses han sido buenos, en nú
 
 {{% post %}}
 
-
 Otros seis meses acumulados de vida, ya son poco menos de 7 años desde que tengo un blog y 3 desde que empecé a escribir en Blog Bitix. A pesar de la gran cantidad de tiempo que me requiere escribir y publicar artículos, tanto como entre 3 y 10 horas de dedicación por artículo, es una de las cosas que más me alegro de haber empezado en el año 2010. Lo que aprendo con cada artículo de las cosas que me motivan y compartirlo por si a alguien más le resultan interesantes me resulta muy satisfactorio.
 
 En estos seis meses en vez de publicar un solo artículo por semana he estado publicando dos artículos y algunas semanas incluso 3. El número de páginas vistas mensuales han aumentado hasta el punto de multiplicar por cuatro las páginas vistas que tenía a inicios de año siendo ahora unas 26K/mes. Y no son muchas, otros blogs personales tienen muchas más, dos o tres veces más. La mala noticia es que un porcentaje importante de las visitas provienen de unos pocos artículos bien posicionados en Google. En cualquier caso en una proporción similar que han aumentado las páginas vistas han aumentado los ingresos por publicidad de [Google AdSense][google-adsense] que incluyo en el blog, e incluso los últimos meses los ingresos han sido de alrededor de 20€ y 25€, con lo que podré hacer más [donaciones al software libre][blogbitix-serie-donacion] y más frecuentemente. En definitiva este ha sido un buen año en este aspecto, si el siguiente fuera similar sería estupendo.

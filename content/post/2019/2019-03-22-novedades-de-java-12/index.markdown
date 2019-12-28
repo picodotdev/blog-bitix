@@ -14,7 +14,6 @@ series: ["java-platform"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario de lanzar una nueva versión cada seis meses incorporando nuevas funcionalidades de forma incremental. La versión 12 no es una versión con soporte extendido y dejará de tener actualizaciones cuando se publique la siguiente versión. La primera versión LTS con la funcionalidad de módulos es la 11 y la recomendada para proyectos de larga duración o bajo mantenimiento, la siguiente LTS será la versión 17 que según lo planificado se publicará en septiembre de 2021 después de tres años.

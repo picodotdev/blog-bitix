@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 No es una buena práctica al igual que al no recomendado [antipatrón de inicialización de variables con dobles llaves][blogbitix-253] pero en el uso de _streams_ que aceptan _lambdas_ es un rodeo a la limitación de no poder lanzar excepciones _checked_ por no estar definida en su API.

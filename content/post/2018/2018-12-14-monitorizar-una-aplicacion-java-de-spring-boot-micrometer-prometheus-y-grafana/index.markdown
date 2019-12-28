@@ -14,7 +14,6 @@ series: ["spring-cloud"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" image2="prometheus.svg" title2="Promehteus" width2="200" image3="grafana.svg" title3="Grafana" width3="200" >}}
 
 Los [proyectos de Spring][spring-projects] no son tan conservadores como Java EE o ahora Jakata EE y se desarrollan a una velocidad mayor cubriendo de forma más temprana las necesidades de los programadores según evolucionan las tecnologías y se adoptan nuevos modelos de arquitectura.

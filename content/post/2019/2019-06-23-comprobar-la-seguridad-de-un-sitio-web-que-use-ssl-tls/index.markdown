@@ -14,7 +14,6 @@ series: ["web"]
 
 {{% post %}}
 
-
 Aunque un sitio web no trate datos sensibles como tarjetas de crédito o datos personales es muy recomendable que use el protocolo seguro HTTPS para proporcionar cifrado entre el servidor y el navegador del usuario para dotar de confidencialidad a las comunicaciones a la vez que evitar modificaciones por terceras personas de los datos transmitidos. Además, el buscador Google lo tiene en cuenta para el SEO o posicionamiento en su buscador.
 
 Para usar HTTPS lo difícil era conseguir un certificado firmado por una autoridad de confianza que los navegadores tengan instalada, la obtención y renovación de un certificado tenía un coste. Desde hace un tiempo la autoridad [Let's encrypt][letsencrypt] emite certificados digitales gratuitamente que proporciona uno en pocos minutos y de forma automatizada incluida la renovación para usar un protocolo seguro. [Usar un certificado de Let's encrypt en el servidor web nginx][blogbitix-252] no es complicado.

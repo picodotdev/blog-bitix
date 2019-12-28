@@ -16,7 +16,6 @@ summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucion
 
 {{% post %}}
 
-
 {{< logotype image1="vault.svg" title1="Vault" width1="200" image2="hashicorp.svg" title2="HashiCorp" width2="200" >}}
 
 La seguridad es un aspecto muy importante de los sistemas informáticos, no darle la consideración necesaria puede dar lugar a caídas de servicio y robo de datos potencialmente ocasionando importantes pérdidas de dinero, sanciones y pérdida de confianza de los clientes y proveedores de una organización.

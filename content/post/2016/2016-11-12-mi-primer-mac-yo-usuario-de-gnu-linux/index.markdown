@@ -14,7 +14,6 @@ summary: "Hace ya más de un lustro pase de usar Windows a usar GNU/Linux inclus
 
 {{% post %}}
 
-
 {{< logotype image1="apple.svg" title1="Apple" width1="200" image2="macos.svg" title2="macOS" width2="300" >}}
 
 Hasta el momento en el trabajo podía usar GNU/Linux como sistema operativo, concretamente la distribución [Arch Linux][archlinux] con [GNOME][gnome] y [Docker][docker] para el entorno de desarrollo. Sin embargo, algunos cambios han hecho que tuviese que elegir entre [Windows][windows] que no uso desde hace ya más de un lustro o [macOS][macos] que usaría por primera vez. Dado que macOS es más similar a [GNU][gnu]/[Linux][linux] por seguir ambos la filosofía Unix al final opté por un Mac como prácticamente la totalidad de mis compañeros de trabajo. Una razón es que muchas de las herramientas y comandos que están disponibles en GNU/Linux lo están también en macOS.

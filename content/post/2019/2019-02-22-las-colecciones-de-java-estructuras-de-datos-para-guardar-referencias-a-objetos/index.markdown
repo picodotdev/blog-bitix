@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Los programas en su funcionamiento manejan información y esta se guarda en algún tipo de estructura adecuada según el tipo de uso de esa información, ya sea para lectura al recuperar datos y escritura par insertar nuevos datos. En Java hay dos interfaces que el resto de colecciones implementa, una interfaz es [Collection](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Collection.html) y la otra es [Map](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html), estas en su contrato define una serie de métodos que las implementaciones deben proporcionar.

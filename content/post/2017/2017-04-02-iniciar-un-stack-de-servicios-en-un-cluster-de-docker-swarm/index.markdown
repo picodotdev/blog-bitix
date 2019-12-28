@@ -15,7 +15,6 @@ summary: "Los _stacks_ en Docker Swarm son definiciones en un archivo de texto e
 
 {{% post %}}
 
-
 {{< logotype image1="docker.svg" title1="Docker" width1="200" >}}
 
 Con [Docker Compose][docker-compose] se pueden [definir en un único archivo un conjunto de contenedores][blogbitix-87] que forma un servicio o aplicación y que se lanzan como una unidad. En vez de ejecutar los comandos individuales que inician cada contenedor el archivo en formato [yaml][yaml] de Docker Compose define varios contenedores y al ser un archivo de texto es añadible a un sistema de control de versiones para registrar los cambios. La información del archivo de Docker Compose es la misma que se indicaría en el comando para iniciar un contenedor individual.

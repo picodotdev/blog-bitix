@@ -14,7 +14,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 La librería [Log4j][log4j] es la librería sucesora de _log4j_ y [logback][logback] para emitir las trazas de depuración e información indispensables cuando son requeridas en una aplicación Java. Suele usarse en combinación [slf4j][slf4j] ya que esta permite cambiar de librería de _logging_ subyacente sin hacer ningún cambio en la aplicación.

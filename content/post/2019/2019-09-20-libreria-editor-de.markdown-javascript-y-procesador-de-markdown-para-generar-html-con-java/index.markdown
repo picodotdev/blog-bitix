@@ -14,7 +14,6 @@ tags: ["java", "javascript", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="javascript.svg" title1="JavaScript" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Algunas aplicaciones permiten escribir contenido para posteriormente mostrarse en una página web. Permitir introducir directamente en texto en formato HTML es peligroso ya que puede causar problemas si no es correcto y ha de validarse para no permitir introducir archivos CSS, archivos JavaScript u otras etiquetas que supongan un problema de seguridad o desmaqueten la página web. Una alternativa es utilizar como entrada texto en formato _markdown_ y posteriormente transformarlo a contenido en formato HTML.

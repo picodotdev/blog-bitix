@@ -13,7 +13,6 @@ summary: "Eliminar archivos del sistema de ficheros no basta para destruir la in
 
 {{% post %}}
 
-
 {{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200">}}
 
 Aunque los eliminemos su contenido permanece en el sistema de archivos que con herramientas como [Foremost](https://wiki.archlinux.org/index.php/Foremost) pueden recuperarse. Esto es debido a que cuando se elimina un archivo realmente lo que se hace es liberar el espacio ocupado, el contenido mientras no se sobreescriba por el de otro nuevo archivo sigue estando presente en el dispositivo de almacenamiento. Para eliminar de forma segura tal que no sea posible recuperar ni con herramientas como Foremost un archivo del sistema de almacenamiento hay que hacer un borrado seguro del archivo o de la unidad completa, proceso que consiste en sobreescribir la información con datos aleatorios.

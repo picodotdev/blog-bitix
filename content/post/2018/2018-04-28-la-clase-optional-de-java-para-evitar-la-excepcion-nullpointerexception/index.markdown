@@ -14,7 +14,6 @@ summary: "Con la clase _Optional_ añadida en el JDK en la versión 8 del lengua
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una de las excepciones que más se producen en un programa hecho con el lenguaje Java es la conocida [NullPointerExpcetion](https://docs.oracle.com/javase/10/docs/api/java/lang/NullPointerException.html) que ocurre cuando se hace uso de una variable que referencia a un objeto pero que el contenido de la variable es _null_, sin valor o sin contener una referencia a un objeto de modo que la llamada al método no es posible. La excepción _NullPointerException_ extiende de [RuntimeException](https://docs.oracle.com/javase/10/docs/api/java/lang/RuntimeException.html) por lo que es una _unchecked exception_ y por ello no es necesario capturarla o lanzarla, cuando se produce hay un error en el programa.

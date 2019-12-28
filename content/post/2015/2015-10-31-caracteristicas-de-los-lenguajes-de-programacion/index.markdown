@@ -14,7 +14,6 @@ summary: "Hay numerosos y diferentes lenguajes de programación pero solo una do
 
 {{% post %}}
 
-
 Hay cantidad de lenguajes de programación, algunas diferencias entre ellos se encuentran su propósito (general o específico para cierto tipo de tareas), en la sintaxis, el sistema de tipos, por los paradigmas de programación que soporta (<abbr title="Programación orientada a objetos">POO</abbr>, imperativo, funcional, ...), otras diferencias están en la librerías disponibles, _frameworks_ o comunidad, sin embargo, la mayoría comparten algunas características por las que se pueden catalogar los lenguajes. En este artículo comentaré algunas de estas características por las que podemos catalogar y agrupar los lenguajes de programación.
 
 Describiré brevemente cada una de las características ya que están muy bien explicadas en cada una de sus páginas de la wikipedia.

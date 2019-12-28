@@ -13,7 +13,6 @@ tags: ["java", "javascript", "planeta-codigo", "programacion", "tapestry"]
 
 {{% post %}}
 
-
 {{< logotype image1="apache-tapestry-5.svg" title1="Apache Tapestry" width1="400" image2="java.svg" title2="Java" width2="200" >}}
 
 El selector de opciones implementado en los navegadores es muy simple pudiendo seleccionar un elemento de una lista, mostrar los elementos agrupados por categorías o seleccionar múltiples elementos pero mostrándolos en formato de una lista en vez de como un desplegable. [bootstrap-select](https://silviomoreto.github.io/bootstrap-select/) es una librería que utiliza los estilos de [Bootstrap][bootstrap] y que añade algunas funcionalidades más a los componentes de selección de opciones de los formularios de una página web.

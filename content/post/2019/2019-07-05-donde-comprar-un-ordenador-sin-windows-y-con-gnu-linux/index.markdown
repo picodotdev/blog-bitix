@@ -14,7 +14,6 @@ summary: "Hace no tanto tiempo era prácticamente imposible adquirir un equipo s
 
 {{% post %}}
 
-
 {{< logotype image1="slimbook.png" title1="Slimbook" width1="200" image2="vant.svg" title2="VANT" width2="200" >}}
 
 En todos los comercios, grandes superficies e incluso en las pequeñas tiendas especializadas en informática solo hay dos opciones para comprar un portátil o lo compras con [Windows][windows] incluído o optas por los caros mac de [Apple][apple], los ordenadores de marca en formato torre o todo en uno también vienen todos con Windows. Hasta el momento no he encontrado ningún portátil con la posibilidad de adquirirlos con GNU/Linux en las tiendas en las que he estado. En el caso de los ordenadores de torre que montan las pequeñas tiendas a medida es posible adquirirlos sin sistema operativo pero para los usuarios con pocos conocimientos es un problema ya que no saben como instalárselo. Aún así tampoco he visto a ningún pequeño comercio ofrecer el servicio de instalarle alguna distribución de GNU/Linux sin coste al adquirir el equipo o con un coste mucho más reducido que la licencia de Windows.

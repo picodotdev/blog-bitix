@@ -12,7 +12,6 @@ tags: ["gnu-linux", "planeta-linux"]
 
 {{% post %}}
 
-
 {{< logotype image1="archlinux.svg" title1="Arch Linux" width1="250" >}}
 
 [Arch Linux][archlinux] es un distribución [_rolling release_][rollingrelease] en la que los paquetes son actualizados en cuanto sale una nueva versión. Esto tiene la ventaja de que siempre tendremos el sistema actualizado con las versiones más recientes de los programas, en los que se van añadiendo nuevas características y corrigiendo errores de seguridad y funcionales. Sin embargo, en algún momento nos puede ocurrir que una actualización de algún paquete nos introduzca algún error, en este caso podemos hacer una desactualización de paquete y volver a una versión estable.

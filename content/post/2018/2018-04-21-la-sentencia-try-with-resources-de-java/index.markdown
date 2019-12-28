@@ -13,7 +13,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Una de las novedades que incorporó Java 7 es la sentencia _try-with-resources_ con el objetivo de cerrar los recursos de forma automática en la sentencia _try-catch-finally_ y hacer más simple el código. Aquellas varaibles cuyas clases implementan la interfaz [AutoCloseable](https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html) pueden declararse en el bloque de inicialización de la sentencia _try-with-resources_ y sus métodos [close()](https://docs.oracle.com/javase/10/docs/api/java/lang/AutoCloseable.html#close()) serán llamados después del bloque _finally_ como si su código estuviese de forma explícita.

@@ -14,7 +14,6 @@ summary: "Ciertas propiedades de la programación funcional fueron una de las ca
 
 {{% post %}}
 
-
 {{< logotype image1="vavr.png" title1="Vavr" width1="300" >}}
 
 Varv se define a si misma como una librería funcional para Java 8+. Ayuda a reducir la cantidad de código y a incrementar la robustez. Un primer paso hacia la programación funcional es empezar a pensar en valores inmutables. Vavr proporciona colecciones inmutables, las necesarias funciones y estructuras de control para operar estos valores. El resultado es bello y simplemente funciona.

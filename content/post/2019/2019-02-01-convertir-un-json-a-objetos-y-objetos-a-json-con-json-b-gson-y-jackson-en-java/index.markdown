@@ -14,7 +14,6 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-
 {{< logotype image1="java.svg" title1="Java" width1="200" >}}
 
 Continuando la serie de pequeños artículos sobre cómo procesar JSON después de ver anteriormente otras dos formas, [Generar, procesar y modificar documentos JSON con JSON-P en Java][blogbitix-374] y [Usar expresiones JSONPath para extraer datos de un JSON en Java][blogbitix-376], en este artículo hay una tercera.

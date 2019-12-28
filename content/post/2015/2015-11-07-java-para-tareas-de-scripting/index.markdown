@@ -14,7 +14,6 @@ summary: "Para programar pequeños _scripts_ normalmente se suele emplear el int
 
 {{% post %}}
 
-
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
 Java puede emplearse para cualquier propósito desde aplicaciones web en la parte servidora, aplicaciones de escritorio como escribí en dos [artículos introductorios sobre JavaFX][blogbitix-100], juegos con alta calidad gráfica incluso para dispositivos de capacidades más reducidas como <abbr title="Internet of Things">IoT</abbr> o embebidos y verdaderamente limitados. Para cualquier plataforma en la que haya disponible una <abbr title="Java Virtual Machine">JVM</abbr> se pueden ejecutar aplicaciones programadas con el lenguaje Java. Sin embargo, hay multitud de otros lenguajes aunque solo una docena con un porcentaje de uso significativo que tratan de ocupar nichos de funcionalidades específicas. Unos pueden ser el análisis de datos como con el [lenguaje R][r] y otro la programación de pequeñas tareas, los _scripts_ o lenguajes de _scripting_.
