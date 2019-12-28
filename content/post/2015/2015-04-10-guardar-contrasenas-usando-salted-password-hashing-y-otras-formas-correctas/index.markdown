@@ -46,7 +46,7 @@ En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe 
 
 El cambio de _Realm_ para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con _root_ como usuario y _password_ como contraseña.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="formulario-inicio-sesion.png" thumb1="formulario-inicio-sesion.png" title1="Formulario de inicio de sesión" >}}
 </div>
@@ -67,7 +67,7 @@ El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado 
 
 {{< code file="gradlew.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="iniciar-sesion.png" thumb1="iniciar-sesion.png" title1="Botón de inicio de sesión" >}}
 </div>

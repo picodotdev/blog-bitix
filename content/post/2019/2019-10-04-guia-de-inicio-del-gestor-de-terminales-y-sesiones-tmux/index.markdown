@@ -22,9 +22,9 @@ Las terminales gráficas como [GNOME][gnome] Terminal y [KDE][kde] Konsole sopor
 
 [Tmux][tmux] es un multiplexador de terminales con soporte para iniciar sesiones. Con tmux en una misma terminal o sesión SSH es posible dividirla en varios paneles y ventanas. También permite iniciar sesiones y salir de ellas sin que los procesos que están corriendo sean terminados lo que permite iniciar una sesión por ejemplo en el trabajo, dejarla suspendida y luego continuarla desde otro equipo, ubicación o ser iniciada por una persona y continuada por otra.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="tmux.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Sesión de tmux en la terminal de GNOME"
+        image1="tmux.png" options1="2560x1440" optionsthumb1="300x200" title1="Sesión de tmux en la terminal de GNOME"
         caption="Sesión de tmux en la terminal de GNOME" >}}
 </div>
 

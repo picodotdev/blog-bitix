@@ -31,7 +31,7 @@ Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electr
 * Correcciones de errores.
 * Cualquier otra cosa que quieras comentarme.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <a href="mailto:pico.dev@gmail.com"><img src="assets/images/pd-email.png" alt="pico.dev@gmail.com" title="pico.dev@gmail.com"></a>
 </div>
 

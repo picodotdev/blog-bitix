@@ -26,9 +26,9 @@ En este ejemplo se captura la combinación de teclas <kbd>Ctrl + Shift + s</kbd>
 
 {{< code file="HtmlKeyCombinations.html" language="HTML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="key-combinations-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo combinaciones de teclas"
+        image1="key-combinations-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo combinaciones de teclas"
         caption="Ejemplo combinaciones de teclas" >}}
 </div>
 
@@ -36,9 +36,9 @@ Los usos que se les pueden dar a estas combinaciones de teclas van desde posicio
 
 La propiedad global _accesskey_ puede utilizarse en cualquier elemento de HTML, en el ejemplo en un elemento de formulario _input_ y en un botón. En [Firefox][firefox] y [GNU][gnu]/[Linux][linux] la combinación de teclas es <kbd>Alt + Shift + [key]</kbd>, para el campo de texto la combinación es <kbd>Alt + Shift + t</kbd> y para el botón <kbd>Alt + Shift + b</kbd>, en el botón la acción es ubicar el foco de entrada en el campo de texto y para el botón realizar la acción clic.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="key-combinations-2.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Captura de Ctrl + Shift + s"
+        image1="key-combinations-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Captura de Ctrl + Shift + s"
         image2="key-combinations-3.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Captura de Alt + Shift + t, ubica el foco en el campo de texto"
         image3="key-combinations-4.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Captura de Alt + Shift + b, ejecuta la acción clic del botón"
         caption="Acciones con combinaciones de teclas" >}}

@@ -32,7 +32,7 @@ Algunas de las características que ofrece la librería Diozero son:
 
 Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspberry Pi ya que hay varias nomenclaturas (_header_, wiringPi y Broadcom) y que nomenclatura utiliza la librería Diozero. También deberemos tener en cuenta el modelo de la Raspberry Pi que poseamos ya que según el modelo hay pequeñas diferencias en algunos _pines_. Además si usamos una placa de extensión para pruebas sin sodadura como la [wiringPi][wiringpi] deberemos identificarlos por su nombre. Yo que poseo una de las primeras Raspberry Pi (la 1, rev1) el correspondiente su [esquema de _pines_ Raspberry Pi 1 (rev. 1)](https://www.raspberrypi.org/documentation/usage/gpio/) es el del enlace. En ese esquema se define que el _pin_ número 12 según el conteo del _header_ corresponde a GPIO 18 según la nomenclatura Broadcom y la librería Diozero y al GPIO 1 en la librería Pi4J y en la placa de extensión wiringPi.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="raspberrypi1b.jpg" thumb1="raspberrypi1b-thumb.jpg" title1="Raspberry Pi 1 B"
         image2="raspberrypi3b.jpg" thumb2="raspberrypi3b-thumb.jpg" title2="Raspberry Pi 3 B"
@@ -51,7 +51,7 @@ Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspber
 Para el ejemplo utilizaré la placa de extensión sin soldadura, una resistencia de 200 ohmios (dadas sus bandas de colores rojo, negro, marrón y dorado) y un diodo LED además de un par de cables macho-macho para realizar las conexiones electrónicas entre el GPIO 18 (según la nomenclatura de la librería Diozero y Broadcom, 12 según la nomenclatura del _header_ y 1 según la de wiringPi) y la resistencia además de entre el diodo y la línea de tierra. Los diodos LED poseen una orientación y hay que conectar la resistencia con el polo positivo del diodo LED, el polo positivo del diodo LED identifica porque es la patita larga y el negativo con tierra es la patita corta. Si realizamos la conexión al revés solo pasará que el diodo no se enciende pero no lo estropeará, la resistencia si es necesaria para no hacer que pase por el diodo una intensidad que lo estropee como se explica en
 [¿Qué resistencia ooner a un LED?](http://www.educachip.com/resistencia-led/).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="diodo-resistencia.jpg" thumb1="diodo-resistencia-thumb.jpg" title1="Diodo blanco y resistencia de 200 ohmios"
         caption="Diodo blanco y resistencia de 200 ohmios" >}}
@@ -59,7 +59,7 @@ Para el ejemplo utilizaré la placa de extensión sin soldadura, una resistencia
 
 Las resistencias poseen cuatro bandas de colores que indican el valor en ohmios de esa resistencia, la tabla de colores es el siguiente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="codigo-colores-resistencias.jpg" thumb1="codigo-colores-resistencias-thumb.jpg" title1="Código de colores de las resistencias"
         caption="Código de colores de las resistencias" >}}
@@ -71,7 +71,7 @@ El programa Java para hacer parpadear el diodo LED con la librería Diozero con 
 {{< code file="executeSSH.sh" language="bash" options="" >}}
 {{< code file="executeGradle.sh" language="bash" options="" >}}
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/NX5tBxWuzFA" frameborder="0" allowfullscreen></iframe>
 </div>
 

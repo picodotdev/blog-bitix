@@ -20,9 +20,9 @@ series: ["quercus-robur"]
 
 Ya han pasado varios meses desde que hice germinar en septiembre varias bellotas de roble, ha pasado el invierno, ha llegado la primavera y ahora tengo unos pequeños plantones de roble. Al germinar y crecer hasta la altura entre unos 10 o 15 centímetros en un primer momento desarrollaron unas siete hojas de un tamaño bastante grande. Con el invierno las hojas se les comenzaron a amarillear y aún en mayo todavía tienen varias aunque en algún momento se les caerán, cuando veo que la hoja ya está bastante amarilla pruebo a ver si la hora se desprende fácilmente sin hacer mucha fuerza.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20171001_094507.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Plantones germinando desde la semilla"
+        image1="IMG_20171001_094507.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Plantones germinando desde la semilla"
         image2="IMG_20171021_144607.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plantones después de 20 días"
         caption="Plantones germinando y después de 20 días" >}}
 </div>
@@ -31,9 +31,9 @@ A finales de agosto y hasta finales de septiembre recogí un montón de bellotas
 
 Después de recoger un montón de bellotas mi intención era hacer germinar otra tanda en enero pero cuando llegó esa fecha e hice la prueba de viabilidad de las semillas todas flotaban al sumergirlas en agua y cuando esto ocurre quiere decir que han perdido su poder de germinación con que por la experiencia que he tenido este año cuando recoja una nueva cosecha de bellotas las haré germinar sin esperar muchos días.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20171230_171135.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Roble sin hojas"
+        image1="IMG_20171230_171135.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Roble sin hojas"
         image2="IMG_20180329_165558.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Roble brotando"
         image3="IMG_20180429_160000.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Roble después de un mes de empezar a brotar"        
         caption="Roble sin hojas, brotando y después de un mes de empezar a brotar" >}}
@@ -41,17 +41,17 @@ Después de recoger un montón de bellotas mi intención era hacer germinar otra
 
 Así han empezado a brotar los plantones de nuevo en primavera. Tenía dudas de si realmente los había cuidado bien sobre todo en la cantidad de agua, si han empezado a brotar en primavera tan mal no los he tratado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20180324_111057.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Yemas germinando por primavera"
+        image1="IMG_20180324_111057.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Yemas germinando por primavera"
         image2="IMG_20180329_164111.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Yemas germinando por primavera"
         image3="IMG_20180329_164025.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Yemas germinando por primavera"        
         caption="Yemas y germinando por primavera" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20180503_083246.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Plantones de roble"
+        image1="IMG_20180503_083246.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Plantones de roble"
         image2="IMG_20180503_083257.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plantones de roble"
         image3="IMG_20180503_083305.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Plantones de roble"
         caption="Plantones de roble" >}}
@@ -59,21 +59,21 @@ Así han empezado a brotar los plantones de nuevo en primavera. Tenía dudas de 
 
 Los he estado regando con un pequeño tapón para echar aproximadamente la misma medida de agua siempre, una vez a la semana con un tapón, algunas veces dos medidas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20180504_184743.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Medida de agua para el riego con tapón"
+        image1="IMG_20180504_184743.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Medida de agua para el riego con tapón"
         caption="Medida de agua para el riego con tapón" >}}
 </div>
 
 Inicialmente los tiestos que pretendía utilizar era un tetrabrik de leche de un litro rectangulares pero encontré otros también de un litro un poco más altos y finalmente estos fueron los que estoy utilizando. En la base del tiesto les hice unos agujeros y en el fondo les puse un poco de papel de cocina para que la tierra no se saliese. No se si será lo más adecuado. La tierra de sustrato la compré en [Amazon][amazon].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="IMG_20170930_085351.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Tiestos"
+        image1="IMG_20170930_085351.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Tiestos"
         caption="Tiestos" >}}
 </div>
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00ZFWT2A2&linkId=5811e0fc7740584beea103b28efa8bdd"></iframe>
 </div>
 

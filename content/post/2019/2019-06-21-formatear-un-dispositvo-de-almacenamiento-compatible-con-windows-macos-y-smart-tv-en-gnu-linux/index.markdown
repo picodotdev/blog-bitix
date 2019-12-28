@@ -24,7 +24,7 @@ Los sistemas de archivos más compatibles son los que tradicionalmente se han ut
 
 En GNU/Linux puede utilizarse FAT32, NTFS y exFAT tanto en modo lectura como escritura, pero Windows solo permite sus propios formatos nativos y ha de utilizarse alguno de los anteriores, macOS soporta FAT en modo lectura y escritura, NTFS en modo lectura y para exFAT soporta también lectura y escritura. Otros dispositivos como _Smart TV_ suelen soportar alguno de los sistemas de archivos de Microsoft ya sea FAT32, NTFS y exFAT. Salvo que se quiera la máxima compatibilidad con FAT32 para con versiones antiguas de Windows o dispositivos con algunos años la opción más recomendable a usar es exFAT.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/_h30HBYxtws?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
@@ -34,17 +34,17 @@ Para formatear una unidad ya sea una memoria USB o disco duro externo con format
 
 En la parte izquierda se encuentra los dispositivos conectados y reconocidos por el sistema. En mi caso el disco del sistema, un Samsung 970 EVO de 500 GB, un disco duro externo USB de 500 GB y una memoria USB de 16 GB sin ningún formato.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome-disks-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Dispositivos de almacenamiento del sistema"
+        image1="gnome-disks-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Dispositivos de almacenamiento del sistema"
         caption="Unidades del sistema" >}}
 </div>
 
 Primero es importante identificar correctamente la unidad que se quiere formatear para no perder los datos al elegir por error otra. Se introduce el nombre del volumen que identifica al dispositivo y se elige el sistema de archivos, como opciones más comunes se ofrece ext4, NTFS y FAT pero pulsando en _Otro_ aparecen más, entre ellos exFAT. Pulsando el botón _Siguiente_ al cabo de unos segundos la partición queda formateada con exFAT y lista para usarse tanto en GNU/Linux como en Windows, macOS o un Smart TV.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome-disks-2.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
+        image1="gnome-disks-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
         image2="gnome-disks-3.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
         image3="gnome-disks-4.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
         caption="Formatear dispositivo de almacenamiento" >}}

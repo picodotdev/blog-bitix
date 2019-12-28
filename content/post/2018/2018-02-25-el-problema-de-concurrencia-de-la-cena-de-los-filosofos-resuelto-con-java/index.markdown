@@ -21,9 +21,9 @@ En un [artículo de introducción sobre la programación concurrente en Java][bl
 
 Dado que dos filósofos no puede utilizar el mismo tenedor a la vez hay que implementar sincronización a la hora de utilizarlos. En la realidad un filósofo representa a un proceso y un tenedor representa a un recurso compartido de uso exclusivo.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="dining-philosophers.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="La cena de los filósofos"
+        image1="dining-philosophers.png" options1="2560x1440" optionsthumb1="300x200" title1="La cena de los filósofos"
         caption="La cena de los filósofos" >}}
 </div>
 

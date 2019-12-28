@@ -24,7 +24,7 @@ Uno de los motivos por los que compré el [kit de iniciación a la electrónica 
 
 El _display_ 1602 con su adaptador para el bus I2C que viene con el _kit_ ya incorporado en la parte trasera es el siguiente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="display-lcd-1602.jpg" thumb1="display-lcd-1602-thumb.jpg" title1="Display LCD 16 columnas y 2 filas"
         image2="adaptador-bus-i2c-1602.jpg" thumb2="adaptador-bus-i2c-1602-thumb.jpg" title2="Adaptador bus I2C para display 1602"
@@ -33,7 +33,7 @@ El _display_ 1602 con su adaptador para el bus I2C que viene con el _kit_ ya inc
 
 El esquema de conexionado para controlar el _display_ requiere usar los _pines_ de la Raspberry Pi _SDA_ y _SDL_ además de un _pin_ para proporcionar un voltaje de 5V y otro _pin_ para la tierra. El _pin_ _SDA_ es el número 2 según la numeración de _pines_ de la Raspberry Pi y el _SDL_ es el 5. El _pin_ _SDA_ es utilizado en el bus I2C para transmitir los datos y el _SDL_ para la señal de reloj o sincronización. Utilizando la placa de extensión wiringPi de 26 _pines_ los _pines_ _SDA_ y _SDL_ se encuentran identificados por su nombre y el de la placa de extensión de 40 _pines_ que viene con el _kit_ de iniciación también, deberemos identificar estos _pines_ y realizar las conexiones adecuadamente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="breadboard-cableado.jpg" thumb1="breadboard-cableado-thumb.jpg" title1="Cableado en la breadboard"
         image2="esquema-cableado.png" thumb2="esquema-cableado-thumb.png" title2="Esquema del cableado"
@@ -42,7 +42,7 @@ El esquema de conexionado para controlar el _display_ requiere usar los _pines_ 
 
 Hay que emplear varios cables macho-macho y hembra-hembra para conectar a los _pines_ del adaptador I2C del _display_  a los _pines_ del voltaje de 5V, tierra, _SDA_ y _SDL_ de la placa de pruebas sin soldadura.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="cables-macho-macho-hembra-hembra.jpg" thumb1="cables-macho-macho-hembra-hembra-thumb.jpg" title1="Unión cables macho-macho y hembra-hembra"
         caption="Unión cables macho-hembra" >}}
@@ -52,7 +52,7 @@ El siguiente paso será activar el bus I2C en la Raspberry Pi que por defecto es
 
 {{< code file="configuration.txt" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="i2cdetect.png" thumb1="i2cdetect-thumb.png" title1="Detectción del display 1602 en el bus I2C"
         caption="Detectción del display 1602 en el bus I2C" >}}
@@ -72,12 +72,12 @@ En el ejemplo mostraré un texto en cada una de las lineas del _display_ y usar�
 {{< code file="executeSSH.sh" language="bash" options="" >}}
 {{< code file="executeGradle.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="mensaje-lcd-1602.jpg" thumb1="mensaje-lcd-1602-thumb.jpg" title1="Mensaje en LCD 1602"
         caption="Mensaje en LCD 1602" >}}
 </div>
-<div class="media media media-video" style="text-align: center;">
+<div class="media media media-video">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/V6msjQNDPuU" frameborder="0" allowfullscreen></iframe>
 </div>
 

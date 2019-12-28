@@ -25,7 +25,7 @@ Este sería el código para los casos de comparar dos elementos, una lista y un 
 
 {{< code file="Main.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="min-max.png" thumb1="min-max-thumb.png" title1="Diferentes formas de obtener el valor mínimo y máximo"
         caption="Diferentes formas de obtener el valor mínimo y máximo" >}}

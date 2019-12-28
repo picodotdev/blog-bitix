@@ -19,7 +19,7 @@ En estos momentos sin lugar a dudas la actualización más provechosa para mejor
 
 Así que después de estar leyendo prácticamente en todas las opiniones de los usuarios que han adquirido un SSD la apreciable mejora conseguida finalmente decidí comprar uno. El modelo que he elegido ha sido un Samsung 840 EVO SSD de 250 GB, que en el momento de adquirirlo es posiblemente una de las mejores opciones en cuanto calidad/precio, aunque posteriormente ha salido la evolución de este modelo el [Samsung 850 EVO de 250 GB](https://amzn.to/2kdQsRO) con la novedad de que usa 3D NAND con la que consigue mayor densidad de almacenamiento que para los usuarios se traducirá en menor coste, otra buena opción era el Crucial MX100 256 GB o el Crucial M550 256 GB. Los SSD aún siguen siendo un producto con un precio más alto que los discos mecánicos pero desde la aparición de los primeros modelos han bajado notablemente de precio y ya se están poniendo alrededor de los 110 € para los modelos de 250 GB y en 65 € para los modelos de 120 GB, unos precios que empiezan a ser muy accesibles y posiblemente sus ventas empiecen a dispararse y a ser incluidos de serie en los equipos nuevos. Hay modelos de más capacidad, de [1 TB también en la serie Samsung 850 EVO](https://amzn.to/2kdYGJK) y [500 GB](https://amzn.to/2jSgJ7j) pero los precios son algo abultados y posiblemente tampoco necesitemos tanto espacio.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00P736UEU&linkId=aa53644682c0b41fb724794cd8520441"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01IAGSD68&linkId=dd46ea2eaf680d9611b0c061e7175161"></iframe>
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M8ABFX6&linkId=9cd758f1be3b2f10e911ccb1a41a98f8"></iframe>
@@ -30,7 +30,7 @@ En cualquier caso el SSD para mi tampoco ha sido una necesidad real sino más bi
 
 El disco Samsung 840 EVO SSD de 250 GB lo compré en [Amazon](https://amzn.to/2kdYOJe), en algunos productos como este suelen tener los mejores precios y una abundante cantidad de modelos donde elegir. En las ocasiones que he comprado en ellos el proceso de compra y el envío ha sido perfecto, en tres días laborables tenía los productos en la dirección de entrega y en todo momento he estado informado tanto del estado del pedido como del envío del producto. Amazon es un buen modelo a seguir en cuanto a comercio electrónico. Si bien es cierto que si hubiese tenido oportunidad y los precios hubiesen sido similares o un poco superiores lo hubiese preferido comprar en un tienda local, [IzarMicro](http://www.izarmicro.net/) me era una buena opción pero en el momento que hice el pedido el precio era algo superior.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
                 image1="samsung-840-evo-ssd-1.jpg" thumb1="samsung-840-evo-ssd-1-thumb.jpg" title1="Samsung SSD 840 EVO 250 GB"
                 image2="samsung-840-evo-ssd-2.jpg" thumb2="samsung-840-evo-ssd-2-thumb.jpg" title2="Samsung SSD 840 EVO 250 GB" >}}
@@ -55,7 +55,7 @@ Las especificaciones técnicas de la serie de discos SSD de Samsung 840 EVO SSD 
 
 El disco es muy ligero pesando solo unos pocos gramos, tiene un tamaño de 7 milímetros de altura y la dimensiones son de 2.5 pulgadas, el tamaño más ampliamente usando en los discos para los portátiles no muy viejos. El disco se nota que en su mayor parte está vacío, he visto en [alguna foto](http://www.xbitlabs.com/articles/storage/display/samsung-840-evo_3.html) que en realidad el disco solo ocupa una fracción del tamaño total de 2.5 pulgadas, por lo que los SSD todavía tienen margen para aumentar su capacidad, un punto donde aún les ganan los discos mecánicos. El ruido que hace es ninguno por lo que ya no oiremos "rascar" al disco cuando se escriba de forma intensiva en él. Aunque en la etiqueta se indica que el disco tiene una capacidad de 250 GB en realidad usables son unos 232 GiB una vez formateado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
         image1="samsung-840-evo-ssd-5.jpg" thumb1="samsung-840-evo-ssd-5-thumb.jpg"
         image2="samsung-840-evo-ssd-6.jpg" thumb2="samsung-840-evo-ssd-6-thumb.jpg" >}}

@@ -22,9 +22,9 @@ Las aplicaciones en el ámbito de gestión necesitan generar documentos a partir
 
 Los informes de JasperReports se generan a partir de una plantilla creada con [JasperReport Studio][jaspersoft-studio]. JasperReports divide un documento en diferentes bandas en las cuales se puede incluir diferentes elementos como texto, valores, imágenes, ... Las bandas son apartados de información como la cabeceras o detalles, puede estar anidadas y repetirse según los datos de la fuente de datos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="jaspersoft-studio.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="JasperSoft Studio"
+        image1="jaspersoft-studio.png" options1="2560x1440" optionsthumb1="650x450" title1="JasperSoft Studio"
         caption="JasperSoft Studio" >}}
 </div>
 
@@ -32,9 +32,9 @@ Los informes con JasperReports tiene varias posibilidades de obtener los datos, 
 
 Utilizando los elementos de la paleta como campos de texto e imagen y posicionándolos en el lugar adecuado sobre el informe se crea la plantilla del documento. Para asignar valores a los elementos se inserta una expresión que en este caso permite obtenerlo de los parámetros que se le proporcionen al informe a los cuales con funciones incorporadas se les puede aplicar transformaciones para obtener el valor deseado (de fecha, lógicas, numéricas o de texto).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="editor-expresiones-parametros.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
+        image1="editor-expresiones-parametros.png" options1="2560x1440" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
         image2="editor-expresiones-campos.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Editor de expresiones, campos"
         image3="editor-expresiones-variables.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Editor de expresiones, variables"
         caption="Editor de expresiones" >}}
@@ -47,9 +47,9 @@ El código Java necesario para compilar el archivo de la plantilla del informe, 
 
 El resultado es este boceto de factura a la que con más tiempo, añadiendo más elementos y modificando los estilos quedará algo más real a lo que son las facturas emitidas por las compañías.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="documento.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Documento PDF generado con JasperReports"
+        image1="documento.png" options1="2560x1440" optionsthumb1="650x450" title1="Documento PDF generado con JasperReports"
         caption="Documento PDF generado con JasperReports" >}}
 </div>
 

@@ -46,7 +46,7 @@ Sin embargo, puede que deseemos ejecutarlas desde la herramienta de construcció
 
 Veremos como salida el siguiente resultado en la terminal.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="grunt-jasmine.png" thumb1="grunt-jasmine-thumb.png" title1="Ejecutar teses Jasmine con Grunt" >}}
 </div>

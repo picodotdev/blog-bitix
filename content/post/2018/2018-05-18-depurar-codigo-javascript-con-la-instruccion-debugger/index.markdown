@@ -25,9 +25,9 @@ Suponiendo que se desea poner un punto de ruptura en un código JavaScript hay q
 
 {{< code file="Debugger.html" language="HTML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="javascript-debugger.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="JavaScript Debugger"
+        image1="javascript-debugger.png" options1="2560x1440" optionsthumb1="300x200" title1="JavaScript Debugger"
         caption="JavaScript Debugger" >}}
 </div>
 

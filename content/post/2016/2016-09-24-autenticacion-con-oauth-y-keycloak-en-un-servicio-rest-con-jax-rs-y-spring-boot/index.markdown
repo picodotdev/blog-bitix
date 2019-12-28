@@ -29,14 +29,14 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="keycloak-login.png" thumb1="keycloak-login-thumb.png" title1="Inicio de sesión de Keycloak" >}}
 </div>
 
 Creamos un _realm_, en el ejemplo llamado _springbootjaxrs_ y un cliente con id _client_, además crearemos un rol _api_ y se lo asignaremos al cliente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="keycloak-add-client.png" thumb1="keycloak-add-client-thumb.png" title1="Registro del cliente"
         image2="keycloak-add-role.png" thumb2="keycloak-add-role-thumb.png" title2="Creación de rol" >}}
@@ -55,7 +55,7 @@ Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> pod
 
 {{< code file="curl-token.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
 </div>
@@ -64,7 +64,7 @@ Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio RES
 
 {{< code file="curl-401.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
 </div>
@@ -73,7 +73,7 @@ Proporcionando el token mediante una cabecera de la petición el servicio nos de
 
 {{< code file="curl.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
         image2="client-token-tampered.png" thumb2="client-token-tampered-thumb.png" title2="Llamada al servicio REST con token inválido" >}}
@@ -85,7 +85,7 @@ Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir alg
 
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1"></iframe>
 </div>
 

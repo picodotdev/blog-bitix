@@ -31,7 +31,7 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 
 {{< code file="Main.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" title1="Salida en la consola" >}}
 </div>

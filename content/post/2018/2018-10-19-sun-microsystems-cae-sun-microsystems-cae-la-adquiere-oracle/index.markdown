@@ -23,9 +23,9 @@ Era enero del 2010 y se anunciaba que [Oracle][oracle] adquiría [Sun][sun-micro
 
 Otras tecnologías de Sun relevantes eran el sistema operativo [Solaris][solaris], la tecnologías de depuración [DTraze][dtrace], el avanzado sistema de archivos [ZFS][zfs] utilizando a día de hoy en los sistemas [BSD][bsd], el paquete ofimático OpenOffice predecesora de [LibreOffice][libreoffice], la herramienta de automatización de proyectos Hudson también predecesora de [Jenkins][jenkins], el software de virtualización [VirtualBox][virtualbox] o la plataforma de microprocesadores [Sparc][sparc].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="sun-microsystems-headquarters.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" alt1="Sun Microsystems Headquarters" title1="Sun Microsystems Headquarters"
+        image1="sun-microsystems-headquarters.jpg" options1="2560x1440" optionsthumb1="200x150" alt1="Sun Microsystems Headquarters" title1="Sun Microsystems Headquarters"
         image2="sun-microsystems-workstation.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" alt2="Sun Microsystems Workstation" title2="Sun Microsystems Workstation"
         image3="sun-ultrasparc.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" alt3="Sun Microsystems Sparc" title3="Sun Microsystems sparc" >}}
 </div>
@@ -36,7 +36,7 @@ La adquisición de Oracle generó dudas por la cultura de empresa más cerrada q
 
 Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar rentabilidad, otras como Java las ha seguido desarrollando creo en una buena dirección con la publicación de Java 7 y más tarde incluyendo cambios más importantes con [Java 8][blogbitix-17], más recientemente [Java 9][blogbitix-263], [10][blogbitix-306] y [11][blogbitix-350]. Con Java EE ha dado también un paso importante para proporcionarle un modelo de desarrollo más abierto y rápido traspasando el desarrollo a la fundación Eclipse y adoptando un nuevo nombre de [Java EE][java-ee] a [Jakarta EE][jakartaee]. Algunas otras conserva como VirtualBox con buena salud.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< imageproc
         image1="java.svg" logotype1="true" options1="300x200" alt1="Java" title1="Java"
         image2="solaris.svg" logotype2="true" options2="300x200" alt2="Solaris" title2="Solaris"

@@ -32,9 +32,9 @@ De esto que das un paseo andando o estás cansado a punto de dormir y después d
 
 El concepto de una _smartcard_ es un objeto tangible como una tarjeta de crédito que correspondería a la posesión física de un disco al que reemplazaría, al contrario de los discos no tendría almacenamiento sino que simplemente sería algún tipo de credencial de que su poseedor concede el derecho a usar un juego. Lógicamente esta _smartcard_ debería estar dotada de suficientes medidas de seguridad para que no pueda ser suplantada. El lector de disco con partes mecánicas sería reemplazado por un lector de tarjetas inteligentes por contacto o _contacless_ como ya funciona numerosas tarjetas de crédito y bonos de medios de transporte.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< imageproc
-        image1="smartcard-contactless.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Smartcard contactless" >}}
+        image1="smartcard-contactless.png" options1="300x250" title1="Smartcard contactless" >}}
 </div>
 
 Quedada resuelta la posesión física de los juegos con la _smarcard_, queda como descargarlos y en este modelo que planteo la descarga se realizaría a través de internet tal como ocurre en los juegos digitales. Una vez descargado el juego ya no sería necesaria la conexión a internet y solo introducir la _smartcard_ en cada inicio del juego, en cada 3 inicios o cada 3 días para evitar la incomodidad de tener que usar la _smartcard_ en cada inicio.

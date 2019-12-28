@@ -23,7 +23,7 @@ También hace unos meses escribí un artículo patrocinado con enlaces de afilia
 
 En esta ocasión los proyectos a los que he hecho una donación han sido [LineageOS][lineageos] y [Replicant][replicant], dos distribuciones de [Android][android] que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <figure>
         <img src="assets/images/logotipos/lineageos.svg" alt="LineageOS" title="LineageOS" width="200"/>
         <img src="assets/images/logotipos/replicant.svg" alt="Replicant" title="Replicant" width="200"/>
@@ -44,9 +44,9 @@ Finalmente, ayer precisamente me decidí a instalar LineageOS 14.1 que incorpora
 
 Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los [costes de LineageOS](https://wiki.lineageos.org/costs/).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="cyanogenmod-10.2.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="CynogenMod 10.2"
+        image1="cyanogenmod-10.2.jpg" options1="2560x1440" optionsthumb1="300x200" title1="CynogenMod 10.2"
         image2="lineageos-14.1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="LineageOS 14.1"
         caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 </div>
@@ -62,9 +62,9 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 * [Motivaciones del uso de Replicant, Freedom and privacy/security issues](https://www.replicant.us/freedom-privacy-security-issues.php)
 * [Guías de instalación](https://redmine.replicant.us/projects/replicant/wiki#Replicant-installation)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="replicant-6.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Replicant 6"
+        image1="replicant-6.png" options1="2560x1440" optionsthumb1="300x200" title1="Replicant 6"
         caption="Replicant 6" >}}
 </div>
 
@@ -72,12 +72,12 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 
 En ambos casos las donaciones que he hecho han sido de 15€.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="donacion-lineageos.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación LineageOS"
+        image1="donacion-lineageos.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación LineageOS"
         caption="Donación LineageOS" >}}
     {{< figureproc
-        image1="donacion-replicant.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Replicant"
+        image1="donacion-replicant.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Replicant"
         caption="Donación Replicant" >}}
 </div>
 

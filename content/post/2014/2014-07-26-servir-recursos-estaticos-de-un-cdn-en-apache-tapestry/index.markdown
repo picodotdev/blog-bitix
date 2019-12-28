@@ -25,7 +25,7 @@ Un [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_net
 
 [Amazon ClodFront](http://aws.amazon.com/es/cloudfront/) es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el _framework_ de desarrollo de aplicaciones web en la plataforma Java [Apache Tapestry](http://tapestry.apache.org/).
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="nocdn-cdn.png" thumb1="nocdn-cdn-thumb.png" title1="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" >}}
 </div>

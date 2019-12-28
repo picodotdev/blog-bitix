@@ -30,9 +30,9 @@ Si se desea recuperar solo el _id_ y _title_ sin el _date_ la consulta debe ser 
 {{< code file="query-2.graphql" language="graphql" options="" >}}
 {{< code file="library.graphqls" language="graphqls" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="image-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consulta id, title y date"
+        image1="image-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta id, title y date"
         image2="image-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Consulta id y title"
         caption="Consultas diferentes que devuelven diferentes datos" >}}
 </div>
@@ -49,9 +49,9 @@ Esta sería la consulta parametrizada para obtener los datos de los libros omiti
 
 Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consultas de una API de GraphQL se obtienen los resultados.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="image-3.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con directiva include"
+        image1="image-3.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con directiva include"
         image2="image-4.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Consulta con directiva include"
         caption="Misma consulta con directiva include que devuelve diferentes datos" >}}
 </div>

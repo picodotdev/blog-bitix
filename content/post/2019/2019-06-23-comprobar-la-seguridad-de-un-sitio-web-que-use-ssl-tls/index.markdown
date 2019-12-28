@@ -24,9 +24,9 @@ Sin embargo, usar HTTPS simplemente no es suficiente y ha de configurarse el ser
 
 El informe que proporciona incluye información sobre el certificado del servidor entre ella su tiempo de validadez y fecha de expiración, y si es de confianza para los navegadores y plataformas como Mozilla, Apple, Android, Java o Windows. Los datos de configuración como protocolos soportados, _cipher suites_ y una simulación de _handshake_ con una gran variedad de versiones de navegadores en diferentes plataformas y versiones incluyendo dispositivos móviles y de escritorio que permite conocer si algún dipositivo pudiera tener algún problema con la configuración de TLS en la conexión, también otros detalle del protocolo.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="ssllabs.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Informe de seguridad TLS"
+        image1="ssllabs.png" options1="2560x1440" optionsthumb1="650x450" title1="Informe de seguridad TLS"
         caption="Informe de seguridad TLS" >}}
 </div>
 

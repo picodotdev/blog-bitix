@@ -39,7 +39,7 @@ La [tarea de Gradle para generar la documentación Javadoc](https://docs.gradle.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" title1="Estilos personalizados de la documentación Javadoc"
         image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" title2="Estilos personalizados de la documentación Javadoc"

@@ -25,9 +25,9 @@ Con [OpenSSH][openssh] también se puede iniciar sesión de línea de comandos e
 
 {{< code file="ssh.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< imageproc
-        image1="openssh.png" command1="Fit" commandthumb1="Fit" options1="600x450" title1="OpenSSH" >}}
+        image1="openssh.png" options1="600x450" title1="OpenSSH" >}}
 </div>
 
 Usar SSH es más seguro y más cómodo que usar contraseñas para realizar la autenticación, es más seguro ya que una clave pública y privada son más largas y es más cómodo ya que no se solicita contraseña constantemente que de otra manera al cabo de un tiempo se convierte en un paso tedioso y molesto. Lo primero que hay que hacer es [generar una clave SSH pública y privada][blogbitix-13] propia. Una clave de 2048 bits ya se considera segura pero como cuesta lo mismo generar una de más bits se puede generar una de 8192 bits para más seguridad.

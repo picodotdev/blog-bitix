@@ -32,14 +32,14 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
 * [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="tabla-novedades-java-9.jpg" thumb1="tabla-novedades-java-9-thumb.jpg" title1="Tabla de novedades de Java 9"
         caption="Tabla de novedades de Java 9" >}}
 </div>
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< imageproc
-        image1="duke-java-9.png" command1="Fit" commandthumb1="Fit" options1="300x250" title1="Duke Java 9" >}}
+        image1="duke-java-9.png" options1="300x250" title1="Duke Java 9" >}}
 </div>
 
 ### Métodos factoría para colecciones
@@ -50,7 +50,7 @@ Aparte de definir este tipo de colecciones de una forma mucho más sencilla que 
 
 {{< code file="Collections.java" language="java" options="" >}}
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0"></iframe>
 </div>
 
@@ -74,13 +74,13 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 
 * [Guía de usuario de jshell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="jshell.png" thumb1="jshell-thumb.png" title1="jshell"
         caption="jshell" >}}
 </div>
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0"></iframe>
 </div>
 
@@ -92,7 +92,7 @@ En Java 9 se proporciona [jlink](http://openjdk.java.net/jeps/282) que un sustit
 
 Esto es especialmente útil para los contenedores de [Docker][docker] y los entornos _cloud_ ya que permite generar imágenes de contenedores con un tamaño significativamente menor. Por ejemplo, una imagen de Docker basada en la distribución [Alpine Linux][alpine-linux] con el JDK completo ocupa unos 360 MiB, con _jlink_ si una aplicación solo necesita del módulo _java.base_ se puede generar un _runtime_ con únicamente ese módulo, con este _runtime_ adaptado la imagen del contenedor tiene un tamaño mucho menor, en este caso de únicamente de unos 40 MiB.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen frameborder="0"></iframe>
 </div>
 
@@ -135,7 +135,7 @@ Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para un
 * [Getting Started with the G1 Garbage Collector](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
 * [Case for Defaulting to G1 Garbage Collector in Java 9](https://www.infoq.com/articles/Make-G1-Default-Garbage-Collector-in-Java-9)
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen frameborder="0"></iframe>
 </div>
 
@@ -159,7 +159,7 @@ Ahora las variables finales o efectivamente finales pueden ser colocadas en los 
 
 Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cuadro de búsqueda para encontrar más fácilmente tipos y métodos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="javadoc.png" thumb1="javadoc-thumb.png" title1="Javadoc"
         caption="Javadoc" >}}
@@ -181,20 +181,20 @@ A partir de la publicación de Java 9 se cambia el modelo de publicación de nue
 
 Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][openjdk] y [licencia GPL][gpl] para satisfacer las necesidades de los desarrolladores y una versión con soporte de largo plazo cada tres años para satisfacer las necesidades de tiempo de soporte prolongado de las empresas, _Oracle JDK_.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0"></iframe>
 </div>
 
 Para finalizar un par de libros, [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT) que explican detalladamente las novedades de la modularidad, las novedades incluídas en este artículo y algunas otras más.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a"></iframe>
 </div>
 
 Y unos buenos vídeos sobre las nuevas características de Java 9, uno en español y otro en inglés.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/CkmB86pCV6A" frameborder="0" allowfullscreen></iframe>
     <iframe width="640" height="360" src="https://www.youtube.com/embed/9EiLRD95zDg" frameborder="0" allowfullscreen></iframe>
 </div>

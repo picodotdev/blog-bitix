@@ -21,7 +21,7 @@ Realizar copias de seguridad es algo imprescindible si no queremos perder los da
 
 Nuestros datos en forma de documentos, fotos, música o vídeos son más importantes que el equipo estropeado ya que este se se puede reemplazar pero recuperar los datos será mas complicado o imposible dependiendo del fallo si no hemos realizado copias de seguridad. En GNU/Linux hay múltiples programas y formas de hacer las copias de seguridad, incrementales, comprimidas, cifradas, ... pero para un uso personal [hacer una copia de los archivos y mantenerla sincronizada con rsync][elblogdepicodev-156] es más que suficiente. En Windows un programa es [FreeFileSync][freefilesync] equivalente a _rsync_ disponible en GNU/Linux.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="freefilesync.png" thumb1="freefilesync-thumb.png" title1="FreeFileSync" >}}
 </div>
@@ -59,7 +59,7 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 * [Opciones de sinconización](https://freefilesync.org/manual.php?topic=synchronization-settings). Es dónde seleccionaremos el tipo de sincronización y las acciones a realizar según el tipo de categoría de modificación. Para las eliminaciones podremos elegir entre eliminar de forma permanente, enviar a la papelera de reciclaje o versionar los archivos. También elegiremos la posibilidad de que nos muestre una ventana con los conflictos que se produzcan. Por último, la acción una vez terminada la sincronización en caso de tomar mucho tiempo que nos servirá para desatender la sincronización, por ejemplo, apagar el equipo al terminar.
 * [Notas y trucos](https://freefilesync.org/manual.php?topic=tips-and-tricks).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="freefilesync-comparacion.png" thumb1="freefilesync-comparacion-thumb.png" title1="Opciones de comparación de FreeFileSync"
         image2="freefilesync-filtro.png" thumb2="freefilesync-filtro-thumb.png" title2="Opciones de filtrado de FreeFileSync" >}}

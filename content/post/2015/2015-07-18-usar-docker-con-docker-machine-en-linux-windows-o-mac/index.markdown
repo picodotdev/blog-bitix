@@ -48,7 +48,7 @@ El directorio por defecto donde se guardarán los archivos de las máquinas virt
 
 En el administrador de VirtualBox veremos que se ha creado la máquina virtual _dev_ además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="virtualbox.png" thumb1="virtualbox-thumb.png" title1="Máquina de Docker Machine ne VirtualBox"
         caption="Máquina de Docker Machine en VirtualBox" >}}

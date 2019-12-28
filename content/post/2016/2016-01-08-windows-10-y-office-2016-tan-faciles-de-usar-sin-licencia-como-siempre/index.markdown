@@ -28,7 +28,7 @@ Llegado al punto de hacer la reinstalación no tuve mayor problema, el equipo te
 
 Toca instalar los programas adicionales básicos con la intención de que sean de software libre o respetando las licencias [Firefox][firefox] junto con [AdBlockPlus][adblockplus], [VLC][vlc], [PeaZip][peazip], [ImgBurn][imgburn], [Acrobat Reader][adobe-acrobat-reader], [FreeFileSync][freefilesync], [uTorrent][utorrent] a los que añado [Java][java]. Finalmente me piden que instale la _suite_ ofimática [Microsoft Office][microsoft-office] ya que va a ser utilizada, mi intención al traste, me planteo recomendar alguna opción alternativa como [Google Docs][google-docs] o [LibreOffice][libreoffice]. Sin embargo, Office es lo que usan ¿piden a los alumnos que adquieran una licencia que aún para estudiantes cuesta unos 125€? ¿250€ para otros mortales?, es inicio del 2016, es fin de semana y no quiero darle muchas vueltas al tema, descargo la última versión de Office y la instalo.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01019TBFO&linkId=cd34e38c16f0643882e1dc753d6ef77d&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HC6QQQM&linkId=762b16ff0b7f340317343dc4a24097ab&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01FNRXAZG&linkId=1f45d19184a5ea936b680670062a7fad&internal=1"></iframe>
@@ -42,7 +42,7 @@ Inicio la tercera instalación de nuevo en el portátil y realizo la activación
 
 Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office, más que días del año. Y sigo teniendo razón, usarlos sin licencia sigue siendo tan fácil como siempre una vez encontrados los enlaces adecuados en Google, ¿un martes de parches se instalará alguna actualización de Windows que descubra el _crack_ aplicado al Office? Me enteraré.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="windows-10.png" thumb1="windows-10-thumb.png" title1="Windows 10"
         caption="Windows 10" >}}

@@ -20,7 +20,7 @@ Cuando me inscribí en la [BilboStack][bilbostack] para reservar entrada no me l
 
 El número de asistentes ha sido numeroso quedando algo de sitio libre en el _track 2_ que era un aula pero en la sala de conferencias del _track 1_ aunque tiene cómodas butacas salvo por su estrechez el sitio libre era inexsitente de modo que en algunas presentaciones ha habido algunos asistentes que han debido estar de pie.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="bilbostack-2017.jpg" thumb1="bilbostack-2017.jpg" title1="BilboStack 2017"
         caption="BilboStack 2017" >}}
@@ -90,7 +90,7 @@ Este era el programa completo con su horario, temas muy distintos y variados com
     </tbody>
 </table>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="track-1.jpg" thumb1="track-1-thumb.jpg" title1="Track 1"
         image2="track-2.jpg" thumb2="track-2-thumb.jpg" title2="Track 2"
@@ -112,7 +112,7 @@ El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](
 * [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
 {{% /reference %}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="invisible-o-desaparece.jpg" thumb1="invisible-o-desaparece-thumb.jpg" title1="Invisible o desaparece..." >}}
 </div>
@@ -143,7 +143,7 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
 * [Presentación](https://nabaroa.github.io/erase-una-vez-el-design-system/#/)
 {{% /reference %}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="design-system.jpg" thumb1="design-system-thumb.jpg" title1="Érase una vez... el Design System" >}}
 </div>
@@ -164,7 +164,7 @@ Un sistema ágil es una aproximación a la incertidumbre. Incertidumbre que siem
 
 > This booklet tells the story of Justin - a project manager who achieved remarkable results with his team by doing very simple things! This guide covers the core concepts of Kanban for knowledge work, and shows how limiting your amount of work-in-progress can lead to getting things done better and faster.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0985305169&linkId=3fb69c8c67a77d17456e3a5fca1ce831"></iframe>
 </div>
 
@@ -175,7 +175,7 @@ La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se c
 * [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
 {{% /reference %}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="agile-for-scrummies.jpg" thumb1="agile-for-scrummies-thumb.jpg" title1="Agile for scrummies" >}}
 </div>
@@ -195,7 +195,7 @@ Un ejemplo de aplicación donde han aplicado DDD es [Kreta](https://github.com/k
 * Libro [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php)
 {{% /reference %}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="domain-driven-design.jpg" thumb1="domain-driven-design-thumb.jpg" title1="Domain-Driven Design, uniendo negocio con el software" >}}
 </div>

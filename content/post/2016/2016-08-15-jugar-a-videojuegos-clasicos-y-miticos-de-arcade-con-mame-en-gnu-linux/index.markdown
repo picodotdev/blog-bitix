@@ -32,7 +32,7 @@ Deberemos instalar el paquete del [emulador Mame](https://www.archlinux.org/pack
 
 Instalados estos paquetes y descargada una ROM de ejemplo como la de [Ghouls & Gosht](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs\/Ghouls'n_Ghosts_(World)/13191) de [EMUPARADISE](http://www.emuparadise.me) y colocada en un directorio (no hace falta descomprimir el archivo de la ROM) iniciamos el lanzador QMC2. QMC2 inicialmente nos pedirá donde se encuentra el binario del emulador y el directorio donde están las ROMs. Configurado QMC2 buscaremos el juego por su nombre del que hayamos descargado la ROM.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="qmc2.png" thumb1="qmc2-thumb.png" title1="Lanzador QMC2"
         image2="qmc2-config.png" thumb2="qmc2-config-thumb.png" title2="Configuración de QMC2"
@@ -43,7 +43,7 @@ Si hay varios resultados para el mismo nombre de juego iremos probando a iniciar
 
 Esta es una pequeña lista no completa de los juegos míticos que recuerdo de mi época.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="amidar.png" thumb1="amidar-thumb.png" title1="Amidar"
         image2="dark-seal.png" thumb2="dark-seal-thumb.png" title2="Dark Seal"
@@ -102,7 +102,7 @@ Ya solo nos queda buscar con tu buscador preferido algún artículo que recopile
 
 Para jugar a los juegos de la NES de Nintendo con QMC2 no he conseguido ejecutarlos, he tenido que introducir el comando <code>sdlmame nes</code> en la terminal buscar la ROM navegando por los directorios, seleccionarla y usar la opción de _reset_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="sdlmame-nes.png" thumb1="sdlmame-nes-thumb.png" title1="sdlmame NES"
         image2="sdlmame-nes-supermariobros3.png" thumb2="sdlmame-nes-supermariobros3-thumb.png" title2="sdlmame Super Mario Bros 3"
@@ -116,7 +116,7 @@ Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][
 
 Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B013B61SCS&linkId=61b4a105bc7d42ff174de961aaab0e67&internal=1"></iframe>
 </div>

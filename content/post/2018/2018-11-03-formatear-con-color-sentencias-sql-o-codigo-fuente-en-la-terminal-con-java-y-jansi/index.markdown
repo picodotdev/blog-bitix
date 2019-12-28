@@ -28,9 +28,9 @@ Una formateador simple para cada uno de estos casos serían los siguientes donde
 
 El resultado en la terminal es el siguiente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="JavaRegexFormatter.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Formateado de sentencia SQL y código Java"
+        image1="JavaRegexFormatter.png" options1="2560x1440" optionsthumb1="650x450" title1="Formateado de sentencia SQL y código Java"
         caption="Formateado de sentencia SQL y código Java" >}}
 </div>
 

@@ -43,7 +43,7 @@ De entre los servidores de aplicaciones mencionados anteriormente JBoss o WildFl
 
 A continuación unas pocas capturas de pantalla de la página de inicio de WildFly y de la consola de administración:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="wildfly.png" thumb1="wildfly-thumb.png"
     	image2="wildfly-admin-1.png" thumb2="wildfly-admin-1-thumb.png" title2="Consola de administración" >}}

@@ -27,9 +27,9 @@ Llevaba unos cuantos meses buscando entre las muchas opciones que hay un nuevo o
 
 Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es darle el que tengo yo y yo comprar uno nuevo, de esta forma al ordenador que entrego le doy una segunda vida para la que es perfectamente útil, así ha sido con los tres ordenadores que he comprado hasta el momento desde el 2002. Mis usos son mucho más exigentes, principalmente los equipos se me han quedado pequeños por la cantidad de memoria RAM. El primer ordenador que compré en el 2004 fue un ordenador de escritorio en formato torre tradicional ATX con un [AMD Athlon][amd-athlon] 1800+ (32 bits), 512 MiB de memoria, 60 GB de disco duro y tarjeta gráfica [NVIDIA GeForce2][nvidia-geforce2] MX 400 creo que con 32 MiB. Viendo que al finalizar su vida útil era algo complicado donar un ordenador ATX por tema de espacio el siguiente equipo que compré en el 2008 fue un portátil Dell XPS 1530 con un [Intel Core 2 Duo T8100][intel-core-t8100], 4 GiB de memoria, 320 GB de disco duro y gráfica [NVIDIA 8600GT](https://www.nvidia.es/object/geforce_8600_es.html) con 512 MiB, al poco tiempo de donarlo se estropeó, se quedó completamente muerto sin llegar a hacer ningún atisbo de encenderse, desde entonces no quiero nada que venga de Dell incluidos monitores tampoco me convenció pasado el tiempo de deslumbramiento inicial de su posesión la calidad de esta marca. El tercer equipo que compré a finales del 2012 también fue un portátil con la misma intención de poder donarlo llegado el momento, un Sony VAIO de 14" de resolución 1600x900 en panel TN con un [Intel Core i5 3210M][intel-i5-3210M] (Ivy Bridge, con un [gráfica integrada HD 4000][intel-hd-4000]), 8 GB de memoria con la que poder virtualizar más a gusto y un SSD Samsung 840 EVO de 250 GB SATA III (550 MB/s lectura, 500 MB/s escritura) que le puse a posteriori con el que el aumento de rendimiento en acceso a almacenamiento persistente. El SSD fue una gran mejora respecto a los discos duros mecánicos, mejor inversión que mejor procesador y más cantidad de memoria. Una pena que Sony haya abandonado el mercado de los portátiles porque con este Sony he estado realmente contento aún con algunos acabados en plástico y su pantalla TN.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="componentes.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100)"
+        image1="componentes.jpg" options1="2560x1440" optionsthumb1="200x150" title1="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100)"
         image2="amd-athlon.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Microprocesador AMD Athlon"
         image3="intel-core-2-duo.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Microprocesador Intel Core 2 Duo (T8100)"
         caption="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100) de anteriores equipos" >}}
@@ -67,15 +67,15 @@ Ocupan muy poco, tiene un tamaño de 11x11x3.6cm (ancho, largo, alto en centíme
 * [Intel Graphics Technology](https://en.wikipedia.org/wiki/Intel_Graphics_Technology)
 * [Intel's Bean Canyon NUCs Hit the Shelves](https://www.tomshardware.com/news/intel-bean-canyon-pricing-specs,37626.html)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="intel-nuc8i5-brief.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Intel NUC Bean Canyon (tall)"
+        image1="intel-nuc8i5-brief.png" options1="2560x1440" optionsthumb1="600x450" title1="Intel NUC Bean Canyon (tall)"
         caption="Intel NUC Bean Canyon (slim y tall)" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="especificaciones-modelos-intel-nuc-bean-canyon.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Especificaciones de los modelos Intel NUC Bean Canyon"
+        image1="especificaciones-modelos-intel-nuc-bean-canyon.png" options1="2560x1440" optionsthumb1="600x450" title1="Especificaciones de los modelos Intel NUC Bean Canyon"
         caption="Especificaciones de los modelos Intel NUC Bean Canyon" >}}
 </div>
 
@@ -87,7 +87,7 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
 * [Intel NUC8i5BEH](https://amzn.to/2Ra7Arh)
 * [Intel NUC8i7BEH](https://amzn.to/2Rc0MJw)
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1BTZ&linkId=f3958514001abbfacb4d2d944dbaae79"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JB2M5JS&linkId=222f9d7e5b7ea470df5df9148d6ab300"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JBM1CFH&linkId=4f67d035caf205cfbefa4e5afe68674a"></iframe>
@@ -111,7 +111,7 @@ He esperado todos estos meses hasta ahora que han aparecido a la venta en [Amazo
 
 En el primer vídeo se hace una análisis del NUC y en el siguiente se puede observar como se comporta en varias pruebas de rendimiento y juegos.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/MMuJlVW7mQE?rel=0" frameborder="0" allowfullscreen></iframe>
     <iframe width="640" height="360" src="https://www.youtube.com/embed/4miXwdJMG1s?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
@@ -132,7 +132,7 @@ Probablemente 16 GiB me sería suficientes pero no me importa ir a por los 32 Gi
 
 Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320€. Al final opté por la memoria HyperX Impact.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01BNJL8I4&linkId=ef22daf2b91899709c8686b7db8a49c7"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017UC3UPW&linkId=06d1aea567128e234b58d2e800ef099c"></iframe>
 </div>
@@ -147,7 +147,7 @@ Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500
 
 Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III tendría creo que suficiente pero no estoy ajustando mucho el precio, al igual que en la memoria. 
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MFBLN7K&linkId=d8ee308b386ae8fc1ed0978391f98ade"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SQ8J1V&linkId=048e7dde98c59aff3bdf3eda82b0057a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B078WST5RK&linkId=9843c55e883197e8c5108e19cff142ae"></iframe>
@@ -156,7 +156,7 @@ Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III 
 
 Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](https://amzn.to/2BHXPeA) o [de 256 GB](https://amzn.to/2Qq04vm) como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como carperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFHQGB9&linkId=69626bf45c9c279219546f122fd33a06"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFS5657&linkId=186319e6ae3e35777b9412d236a46297"></iframe>
 </div>
@@ -172,13 +172,13 @@ Con estos componentes he realizado el pedido en [Amazon][amazon] ya que es la ti
 
 La caja del NUC es muy pequeña en la que se incluye el NUC y la fuente de alimentación que es mucho más pequeña que el ladrillo de los Hades Canyon.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="desempaquetado-nuc-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
+        image1="desempaquetado-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
         image2="desempaquetado-nuc-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
         image3="desempaquetado-nuc-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja Intel NUC8i5BEK" >}}
     {{< figureproc
-        image1="desempaquetado-nuc-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
+        image1="desempaquetado-nuc-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
         image2="desempaquetado-nuc-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
         image3="desempaquetado-nuc-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja Intel NUC8i5BEK"
         caption="Caja Intel NUC8i5BEK" >}}
@@ -186,13 +186,13 @@ La caja del NUC es muy pequeña en la que se incluye el NUC y la fuente de alime
 
 Aspecto exterior del NUC.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="desempaquetado-nuc-7.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
+        image1="desempaquetado-nuc-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
         image2="desempaquetado-nuc-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
         image3="desempaquetado-nuc-9.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Aspecto exterior Intel NUC8i5BEK" >}}
     {{< figureproc
-        image1="desempaquetado-nuc-10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
+        image1="desempaquetado-nuc-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
         image2="desempaquetado-nuc-11.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
         image3="desempaquetado-nuc-12.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Aspecto exterior Intel NUC8i5BEK"
         caption="Aspecto exterior Intel NUC8i5BEK" >}}
@@ -200,18 +200,18 @@ Aspecto exterior del NUC.
 
 La fuente de alimentación del NUC y el soporte VESA con sus tornillos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="desempaquetado-nuc-13.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Fuente de alimentación"
+        image1="desempaquetado-nuc-13.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Fuente de alimentación"
         image2="desempaquetado-nuc-14.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Soporte VESA"
         caption="Fuente de alimentación y soporte VESA" >}}
 </div>
 
 Manuales e instrucciones del NUC.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="instrucciones-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Manuales e instrucciones del NUC"
+        image1="instrucciones-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Manuales e instrucciones del NUC"
         image2="instrucciones-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Manuales e instrucciones del NUC"
         image3="instrucciones-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Manuales e instrucciones del NUC"
         caption="Manuales e instrucciones del NUC" >}}
@@ -219,17 +219,17 @@ Manuales e instrucciones del NUC.
 
 En el interior se aprecia el conector SATA aunque para usarlo en la versión _slim_ hay que dejar la tapa inferior sin poner para poder añadir el disco 2.5" y los cables que necesita. La parte interior de la tapa inferior tiene una tira de un material que hace de disipador para el SSD NVMe.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nucblog-interior-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Placa base del NUC"
+        image1="nucblog-interior-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Placa base del NUC"
         caption="Placa base del NUC" source="nucblog.net" >}}
 </div>
 
 El ventilador es más grande que en generaciones anteriores.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nucblog-nuc8i3beh-fan.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Ventilador"
+        image1="nucblog-nuc8i3beh-fan.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Ventilador"
         image2="nucblog-nuc8i3beh-heatsink.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Disipador"
         caption="Ventilador y disipador" source="nucblog.net" >}}
 </div>
@@ -238,9 +238,9 @@ El ventilador es más grande que en generaciones anteriores.
 
 El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo está empaquetado en un _blister_ de plástico.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="desempaquetado-ram-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado memoria HyperX Impact"
+        image1="desempaquetado-ram-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado memoria HyperX Impact"
         image2="desempaquetado-ram-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado memoria HyperX Impact"
         image3="desempaquetado-ram-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado memoria HyperX Impact"
         caption="Desempaquetado memoria HyperX Impact" >}}
@@ -250,13 +250,13 @@ El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo est�
 
 El _stick_ del SSD también es muy pequeño solo mide 8cm de largo y unos 2,5 cm de ancho.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="desempaquetado-ssd-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
+        image1="desempaquetado-ssd-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
         image2="desempaquetado-ssd-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado SSD Samsung 970 EVO NVMe"
         image3="desempaquetado-ssd-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado SSD Samsung 970 EVO NVMe" >}}
     {{< figureproc
-        image1="desempaquetado-ssd-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
+        image1="desempaquetado-ssd-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
         caption="Desempaquetado SSD Samsung 970 EVO NVMe" >}}
 </div>
 
@@ -270,9 +270,9 @@ El SSD se coloca de forma similar, con cierta inclinación al presentar el SSD e
 
 Una vez colocados ambos elementos se vuelve a colocar la tapa inferior que hace de base en el NUC y ya está listo para el primer encendido para instalarle el sistema operativo o entrar en la BIOS con las tecla F2, F10 para seleccionar la unidad de inicio y F7 para realizar una actualización del firmware y BIOS.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="montaje-nuc-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Montaje de memoria y SSD M.2"
+        image1="montaje-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Montaje de memoria y SSD M.2"
         image2="montaje-nuc-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Montaje de memoria y SSD M.2"
         image3="montaje-nuc-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Montaje de memoria y SSD M.2"
         caption="Montaje de memoria y SSD M.2" >}}
@@ -286,17 +286,17 @@ El ventilador está en la parte superior del NUC, para acceder a él hay que des
 
 El NUC es realmente pequeño con sus 11x11cm ocupa muy poco espacio, además la versión _slim_ solo tiene 3,6 cm de altura. Para instalar el sistema operativo, en mi caso la distribución Arch Linux de GNU/Linux he tenido que deshabilitar el _Secure Boot_ desde la BIOS a la que se accede pulsando la tecla F2 en el momento que se inicia el sistema, con la tecla F10 se puede elegir la unidad de inicio que será una memoria USB formateada con el medio de instalación, la tecla F7 sirve para instalar actualizaciones del firmware y BIOS cuando Intel los publica, el nuevo firmware se ha de guardar en una memoria USB formateada en FAT32. La BIOS es gráfica y se puede manejar con ratón con opciones que se muestran en las capturas. Por el contrario la selección de unidad de inicio y actualización del firmware son basadas en texto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nucblog-nuc8i5_bios1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image1="nucblog-nuc8i5_bios1.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
         image2="nucblog-nuc8i5_bios2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
         image3="nucblog-nuc8i5_bios3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
     {{< figureproc
-        image1="nucblog-nuc8i5_bios4.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image1="nucblog-nuc8i5_bios4.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
         image2="nucblog-nuc8i5_bios5.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
         image3="nucblog-nuc8i5_bios6.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
     {{< figureproc
-        image1="nucblog-nuc8i5_bios7.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
+        image1="nucblog-nuc8i5_bios7.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
         image2="nucblog-nuc8i5_bios8.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
         image3="nucblog-nuc8i5_bios9.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="BIOS"
         caption="BIOS" source="nucblog.net" >}}
@@ -316,9 +316,9 @@ Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/e
 
 Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el NUC me he dado cuenta de dos cosas. Una que al usar el monitor externo Benq PD2700Q con resolución QHD me da la sensación de que el texto se ve mejor al usarlo con el NUC que con el Mac, esto puede ser una sensación pero la segunda cosa de la que me he dado cuenta que no admite interpretación es que cuando se saca el audio junto con el vídeo por el cable HDMI al monitor y de este el audio se conecta a unos altavoces por el jack 3.5mm en macOS el contol de volumen de audio queda desactivado de modo que si no tienes unos altavoces con control de volumen propio es muy incómodo usar los botones del monitor para regularlo, en GNOME se puede controlar el volumen desde el entorno de escritorio que en una configuración ordenador conectado a un monitor externo es lo que un usuario espera y lo más cómodo.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="mac-mini-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Mac mini (2018)"
+        image1="mac-mini-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mac mini (2018)"
         image2="mac-mini-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Mac mini (2018)"
         image3="mac-mini-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Mac mini (2018)"
         caption="Mac mini (2018)" >}}
@@ -362,9 +362,9 @@ En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese 
 
 También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power-minipc-one) per no me convenció porque solo tienen un _slot_ de memoria, admite hasta 32GB pero aún no hay módulos de esa cantidad si no es en _kit_, lo que en la práctica limita su memoria a 16GB. La tarjeta gráfica que tienen es una UHD 630 como comentaba la mitad de potente en teoría que la Iris Graphics 655. El diseño que tiene no es muy atractivo y no tiene tarjeta microSD como una forma de ampliarle el almacenamiento. El ONE sin descuento parte de 480€ más caro que los 400€ del Intel NUC.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="slimbook-one-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Slimbook ONE (v2)"
+        image1="slimbook-one-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Slimbook ONE (v2)"
         image2="slimbook-one-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
         image3="slimbook-one-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
         caption="Slimbook ONE (v2)" >}}
@@ -374,7 +374,7 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
 
 Si el monitor es compartido tanto por el ordenador como por [una consola como la Play Station 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa"></iframe>
 </div>
 
@@ -382,38 +382,38 @@ Si el monitor es compartido tanto por el ordenador como por [una consola como la
 
 Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [Benq PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratín [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=757f02716b01871e45865d4a9f1b75c6"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0758DMHZG&linkId=49e0edf2268751aed306f89bf5a657f6"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B003D8ZT0C&linkId=fbe6dbb7cf4d1a724de6c75d49946d10"></iframe>
 </div>
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC4DR1C&linkId=0aaffd200da53423d2078de9209797e6"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=15cb29717d9441d0d13f0720d9731a0d"></iframe>
 </div>
 
 He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto lo pruebe más a fondo muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine, PlayOnLinux/Phoenicis, Winepak además de Steam y GOG en algún momento más tarde.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Intel NUC8i5BEK con Arch Linux y GNOME"
+        image1="gnome.png" options1="2560x1440" optionsthumb1="600x450" title1="Intel NUC8i5BEK con Arch Linux y GNOME"
         caption="Intel NUC8i5BEK con Arch Linux y GNOME" >}}
 </div>
 
 Este es [el escritorio que tenía antes][blogbitix-201], con mucho espacio desaprovechado por la ubicación del portátil. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="escritorio-portatil-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Escritorio con portátil"
+        image1="escritorio-portatil-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Escritorio con portátil"
         caption="Escritorio con portátil" >}}
 </div>
 
 Y el que tengo ahora.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="escritorio-nuc-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Escritorio con NUC"
+        image1="escritorio-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Escritorio con NUC"
         image2="escritorio-nuc-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Escritorio con NUC"
         image3="escritorio-nuc-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Escritorio con NUC"
         caption="Escritorio con NUC" >}}

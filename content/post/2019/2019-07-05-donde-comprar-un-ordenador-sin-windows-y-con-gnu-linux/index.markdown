@@ -22,13 +22,13 @@ En todos los comercios, grandes superficies e incluso en las pequeñas tiendas e
 
 Sin embargo, desde hace un tiempo es posible adquirir un ordenador con GNU/Linux y sin la licencia de Windows ni su coste, que no tienen nada que envidiar a cualquier otro equipo comercial de una marca más grande. En el caso de portátil están los [Slimbook][slimbook] o de [VANT][vant] que tiene unas características muy notables con el Slimbook PRO X a un precio razonable, con última generación de procesadores Intel, posibilidad de dos SSD NVMe, 32 GiB de memoria, pantalla con resolución 1920x1080 de marcos reducidos. En el caso de Slimbook ofrecen también un modelo de mini PC, el Slimbook ONE o con disipación pasiva el ZERO. En el caso de VANT sus portátiles MOOVE y de escritorio BLOCK, CELL y LIFE inluso con procesadores [AMD Ryzen][amd-ryzen]. En ambos casos hay posibilidad de elegir entre algunas distribuciones de GNU/Linux con las que se quiere que venga preinstalado y estos son solo algunos de los modelos que tienen disponibles, Slimbook tiene también algún modelo tipo AIO o _all-in-one_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="slimbook-pro-x.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Portátiles Slimbook PRO y X"
+        image1="slimbook-pro-x.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Portátiles Slimbook PRO y X"
         image2="vant-moove14.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Portátiles VANT MOOVE"
         caption="Portátiles Slimbook y VANT" >}}
     {{< figureproc
-        image1="slimbook-one.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ordenadores de escritorio Slimbook ONE"
+        image1="slimbook-one.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Ordenadores de escritorio Slimbook ONE"
         image2="vant-pure-a.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Ordenadores de escritorio VANT PURE-A"
         caption="Ordenadores de escritorio Slimbook y VANT" >}}
 </div>

@@ -54,7 +54,7 @@ Con Apache Tapestry están a nuestra disposición todas las facilidades de un _f
 
 Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despliega copiando el archivo _war_ al directorio de despliegue de los _portlets_ de Apache Pluto, en _webapps_. Una vez desplegado accediendo a la página de administración se configuran los _portlets_ que incluye cada página. El usuario y contraseña para iniciar sesión en Apache Pluto es _pluto_ para el usuario y _pluto_ para la contraseña.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="pluto-admin.png" thumb1="pluto-admin-thumb.png" title1="Página de administración de portlets de Apache Pluto"
         image2="pluto-login.png" thumb2="pluto-login-thumb.png" title2="Inicio de sesión de Apache Pluto"
@@ -63,7 +63,7 @@ Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despli
 
 Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra el mensaje que emite y seleccionando la opción _edit_ acceder a la página de preferencias acceder a la página que muestra el formulario y permite cambiar el mensaje. Este es el resultado del _portlet_ desplegado en Apache Pluto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="tapestry-portlet.png" thumb1="tapestry-portlet-thumb.png" title1="Porlet con Apache Tapestry en Apache Pluto"
         image2="tapestry-portlet-preferences.png" thumb2="tapestry-portlet-preferences-thumb.png" title2="Página de preferencias del portlet" >}}
@@ -74,7 +74,7 @@ Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra e
 
 Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amzn.to/2tzpbjL) es una buena fuente de documentación.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
 </div>
 

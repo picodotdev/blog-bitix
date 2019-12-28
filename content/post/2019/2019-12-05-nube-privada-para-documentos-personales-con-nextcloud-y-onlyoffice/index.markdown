@@ -27,7 +27,7 @@ Los servicios en la nube permiten guardar los documentos e información fuera de
 
 Una [Raspberry Pi 4][raspberrypi] o una de sus [7 computadoras alternativas][blogbitix-304] similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nexcloud con los 4 GiB de memoria del modelo con más capacidad. Hay [otras placas similares][blogbitix-304] o incluso se puede utilizar un [Intel NUC][blogbitix-363] que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JWXGNT&linkId=d64d66fda7d25defd2018c4119aa7e46"></iframe>
@@ -50,9 +50,9 @@ Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una bas
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nextcloud-configuracion.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Nextcloud"
+        image1="nextcloud-configuracion.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Nextcloud"
         image2="nextcloud-inicio.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Inicio de Nextcluod"
         image3="nextcloud-archivos.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Archivos en Nextcloud"
         caption="Configuración y archivos en Nextcloud" >}}
@@ -60,9 +60,9 @@ Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una bas
 
 [OnlyOffice es un paquete ofimático alternativa a Microsoft Office][blogbitix-143] que ofrece un editor de documentos de texto, una hoja de cálculo y una aplicación para realizar presentaciones integrables en Nextcloud. Son aplicaciones con menos opciones que las ofrecidas por Microsoft Office pero suficientes para un uso sencillo, también dispone de una versión como aplicaciones de escritorio.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nextcloud-onlyoffice-documento.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Documento con OnlyOffice"
+        image1="nextcloud-onlyoffice-documento.png" options1="2560x1440" optionsthumb1="300x200" title1="Documento con OnlyOffice"
         image2="nextcloud-onlyoffice-hoja-de-calculo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Hola de cálculo con OnlyOffice"
         image3="nextcloud-onlyoffice-presentacion.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Presentación con OnlyOffice"
         caption="Ofimática con OnlyOffice y Nextcloud alternativa a Google Docs" >}}
@@ -70,9 +70,9 @@ Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una bas
 
 Otras utilidades es un reproductor de música, calendario o galería de fotos, hay un complemento para añadir estas funcionalidades.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nextcloud-visor-pdf.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Visor de documento PDF"
+        image1="nextcloud-visor-pdf.png" options1="2560x1440" optionsthumb1="300x200" title1="Visor de documento PDF"
         image2="nextcloud-calendario.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Calendario"
         image3="nextcloud-visor-fotos.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Vidor de fotos"
         caption="Aplicaciones y complementos" >}}
@@ -80,9 +80,9 @@ Otras utilidades es un reproductor de música, calendario o galería de fotos, h
 
 Con [WebDAV](https://en.wikipedia.org/wiki/WebDAV) los documentos son accesibles como si fuese una unidad local proporcionando la misma funcionalidad de Google Drive. En GNOME con el explorador de archivos Nautilus es posible conectarse a dispositivo WebDAV, en el caso de Nextcloud la dirección es _dav\://localhost/remote.php/dav/files/admin_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nextcloud-webdav.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Archivos en el explorador de archivos Nautilus con WebDAV"
+        image1="nextcloud-webdav.png" options1="2560x1440" optionsthumb1="300x200" title1="Archivos en el explorador de archivos Nautilus con WebDAV"
         image2="nextcloud-administracion.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Opciones de administración"
         caption="Archivos en el explorador de archivos Nautilus con WebDAV y opciones de administración" >}}
 </div>

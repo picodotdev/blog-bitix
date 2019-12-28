@@ -44,7 +44,7 @@ Si nos encontramos con una de estas excepciones con los genéricos en una colecc
 
 Relacionados con casos de combinar genéricos y arrays y _ClassCastException_ en el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/0596527756/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0596527756&linkCode=as2&tag=blobit-21">Java Generics and Collections</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596527756" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> se definen dos principios a seguir para evitar excepciones: _The Principle of Truth in Advertising_ y _The Principle of Indecent Exposure_.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 		<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596527756&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 

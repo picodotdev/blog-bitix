@@ -23,7 +23,7 @@ Otro par de sensores que incluye el [kit de introducción a la electrónica para
 
 El sensor de golpes necesita de tres cables uno para la corriente de 3.3V, otro para tierra y finalmente otro que se conecta como entrada a un _pin_ GPIO. Usando varios cables hembra-hembra y macho-macho hacemos las conexiones entre el sensor y la placa de pruebas sin soldadura o _breadboard_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="sensores-1.jpg" thumb1="sensores-1-thumb.jpg" title1="Sensor de golpes y detector de movimiento"
         image2="sensores-2.jpg" thumb2="sensores-2-thumb.jpg" title2="Sensor de golpes y detector de movimiento"
@@ -32,7 +32,7 @@ El sensor de golpes necesita de tres cables uno para la corriente de 3.3V, otro 
 
 Usando la librería [diozero][diozero] para controlar los _pines_ GPIO desde un programa implementado con Java detectamos si el sensor está activo o no según la posición de la bolita de mercurio. El ejemplo consiste en [encender un diodo LED][blogbitix-214] que ya mostré en un artículo anterior de esta [serie sobre electrónica][blogbitix-serie-electronica] cuando el sensor _tilt_ esté activo. Usaré el _pin_ 18 para el diodo LED y el _pin_ 21 para el sensor según la nomenclatura de Broadcom. Los _pines_ serían el 12 según la nomenclatura del _header_ y 1 según la nomenclatura de wiringPi para el diodo LED y 13 y 2 para el sensor _tilt_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="cableado-tilt.jpg" thumb1="cableado-tilt-thumb.jpg" title1="Cableado sensor de golpes"
         caption="Cableado sensor de golpes" >}}
@@ -42,7 +42,7 @@ Usando la librería [diozero][diozero] para controlar los _pines_ GPIO desde un 
 
 En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" allowfullscreen></iframe>
 </div>
 
@@ -50,7 +50,7 @@ El detector de movimiento en teoría es similar en funcionamiento al _tilt_ y la
 
 El programa Java para el sensor de movimiento es similar al sensor _tilt_ e igualmente encendería o apagaría un diodo LED cuando detecta movimiento.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="cableado-motion.jpg" thumb1="cableado-motion-thumb.jpg" title1="Cableado sensor de movimiento"
         caption="Cableado sensor de movimiento" >}}

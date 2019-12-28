@@ -53,13 +53,13 @@ Java no suele ser considerado como opción para programar videojuegos triple A p
 
 Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/ODjq7IUkwUg" frameborder="0" allowfullscreen></iframe>
 </div>
 
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="4089.jpg" thumb1="4089-thumb.jpg" title1="4089: Ghost Within"
     	image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" title2="Rising World" >}}
@@ -98,7 +98,7 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
     	image2="cubos.png" thumb2="cubos-thumb.png" title2="Texturas y materiales" >}}
@@ -116,7 +116,7 @@ Para instalar jMonkeyEngine debemos [descargar el SDK](http://jmonkeyengine.org/
 El <a href="https://www.amazon.es/gp/product/1849516464/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1849516464&linkCode=as2&tag=blobit-21">libro jMonkeyEngine 3.0 Beginners Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1849516464" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
  me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1849516464&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 

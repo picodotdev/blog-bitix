@@ -62,7 +62,7 @@ Escrito el archivo de los contenedores y llamándolo _docker-compose.yml_ podemo
 
 {{< code file="docker-compose-up.sh" language="YAML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="docker-compose.png" thumb1="docker-compose-thumb.png" title1="Docker Compose"
         caption="Docker Compose" >}}
@@ -72,7 +72,7 @@ docker-compose inicia los contenedores en el orden que hemos indicado en el arch
 
 {{< asciinema id="23602" caption="Comandos básicos de Docker Compose" >}}
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>
 </div>
 

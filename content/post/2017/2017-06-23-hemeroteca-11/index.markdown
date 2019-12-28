@@ -26,7 +26,7 @@ El número de visitas ha aumentado notablemente de unas 9K páginas vistas en en
 
 Más del 90% del tráfico que recibo proviene del buscador Google y el resto de tráfico directo o de referencia. Solo unos 5 artículos son los que reciben la mayor parte de las visitas y que intento aprovechar para que los usuarios accedan a otros artículos relacionados. El aumento de visitas se debe a que con el paso del tiempo habré posicionado mejor algunos artículos en Google y en menor medida a los nuevos que he publicado. A Google creo que le gustan los sitios que publican nuevo contenido con asiduidad y regularmente en primera instancia y en medida similar si es de calidad. De enero de 2014 a enero de 2016 el crecimiento parece plano pero también fue constante aunque simplemente se ve enmascarado por el de los últimos meses.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="analytics.png" thumb1="analytics-thumb.png" title1="Analytics"
         image2="gadsense.png" thumb2="gadsense-thumb.png" title2="AdSense"

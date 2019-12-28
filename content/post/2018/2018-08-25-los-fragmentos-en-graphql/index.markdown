@@ -30,9 +30,9 @@ Con un fragmento se definen esos campos comunes a recuperar en las consultas una
 
 {{< code file="query-1-fragment.graphql" language="graphql" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="query-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consultas sin utilizar un fragmento"
+        image1="query-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consultas sin utilizar un fragmento"
         image2="query-1-fragment.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Consultas con un fragmento"
         caption="Consultas sin y con un fragmento" >}}
 </div>
@@ -47,9 +47,9 @@ Estas son las definiciones de las entidades resumidas y la consulta _publication
 
 Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _id_, _title_ y _date_. Para las publicaciones de tipo _Magazine_ se recuperan los campos _id_, _name_ y _pages_. Las publicaciones _Muy interesante_ y _PC Actual_ son dos _Magazine_ y el resto de publicaciones son del tipo _Book_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="fragment-inline.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
+        image1="fragment-inline.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
         caption="Consulta con fragmentos en linea" >}}
 </div>
 

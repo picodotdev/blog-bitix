@@ -83,7 +83,7 @@ Finalmente, para que Hibernate conozca la existencia de este Integrator debemos 
 
 Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en la consola los mensajes cuando se inserte, actualice o elimine una fila de base de datos. En las capturas de imagen se muestran las trazas de una inserción, una traza para la preinseción _Action: preInsert, Id: null_ donde se ve que la entidad no tienen identificativo asignado y otra traza después de la inserción _Action: postInsert, Id: 1_ donde la entidad ya tiene identificativo asignado y la sentencia SQL se ha ejecutado, como se ve en la captura los mensajes salen antes y después de ejecutarse la sentencia SQL que se envía a la base de datos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="aplicacion.png" thumb1="aplicacion-thumb.png" title1="Creando un registro en la base de datos"
     	image2="consola.png" thumb2="consola-thumb.png" title2="Trazas de ejecución del listener" >}}

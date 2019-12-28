@@ -33,9 +33,9 @@ En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes
 
 Inspeccionando el código fuente de la página devuelta se observa que en el caso de Tapestry la URL generada al solicitar en un _webjar_ es del estilo _https\://localhost:8443/assets/webjars/z941c28a3/requirejs/2.3.5/require.js_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="tapestry-webjars.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Apache Tapestry con Webjars"
+        image1="tapestry-webjars.png" options1="2560x1440" optionsthumb1="650x450" title1="Apache Tapestry con Webjars"
         caption="Apache Tapestry con Webjars" >}}
 </div>
 

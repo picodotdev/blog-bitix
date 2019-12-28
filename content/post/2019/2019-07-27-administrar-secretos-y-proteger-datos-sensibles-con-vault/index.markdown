@@ -81,9 +81,9 @@ En el siguiente ejemplo en modo desarrollo de uso de Vault se inicia, se realiza
 
 Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Consul y [Nomad][nomad] posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="vault-ui-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Interfaz gráfica de Vault"
+        image1="vault-ui-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Interfaz gráfica de Vault"
         image2="vault-ui-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2=""
         caption="Interfaz gráfica de Vault" >}}
 </div>

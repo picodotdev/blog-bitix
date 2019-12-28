@@ -29,9 +29,9 @@ Para cuidar el SSD hay que conocer la cantidad de datos que se están escribiend
 
 En este caso se han escrito 326 MB en el dispositivo _nvme0n1p2_ que corresponde a la partición _root_ en una hora de actividad del sistema realizando tareas ofimáticas y de navegación.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="awk.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos al almacenamiento desde el inicio del sistema"
+        image1="awk.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos al almacenamiento desde el inicio del sistema"
         caption="Datos escritos al almacenamiento desde el inicio del sistema" >}}
 </div>
 
@@ -39,9 +39,9 @@ También es interesante conocer los datos escritos en la unidad en total desde s
 
 {{< code file="awk-lifetime-writes.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="awk-lifetime.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos a una partición"
+        image1="awk-lifetime.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos a una partición"
         caption="Datos escritos a una partición" >}}
 </div>
 
@@ -49,9 +49,9 @@ Después de [comprar un Intel NUC junto con SSD][blogbitix-363] e instalarle [Ar
 
 {{< code file="iotop.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="iotop.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos por procesos del sistema"
+        image1="iotop.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos por procesos del sistema"
         caption="Datos escritos por procesos del sistema" >}}
 </div>
 
@@ -68,9 +68,9 @@ Las opciones a cambiar en la configuración son:
 
 Estas opciones se cambian el la sección de configuración de Firefox introduciendo _about:config_ en la barra de direcciones.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="firefox-config-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Firefox optimizado para SSD"
+        image1="firefox-config-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Firefox optimizado para SSD"
         image2="firefox-config-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Configuración de Firefox optimizado para SSD"
         caption="Configuración de Firefox optimizado para SSD" >}}
 </div>
@@ -79,18 +79,18 @@ Con la configuración por defecto y cambiando estas opciones esta es la diferenc
 
 Dado que la caché ocasiona escrituras en el almacenamiento el proceso de _journaling_ del sistema también realiza escrituras amplificando el problema. Con Firefox optimizado para SSD el proceso _firefox [Cache2 I/O]_ desaparece y al escribir la sesión no cada 15 segundos Firefox deja de escribir de forma regular. [Google Chrome][google-chrome] no ofrece estas opciones de personalización.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="firefox-default.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Entrada y salida con las opciones de Firefox por defecto"
+        image1="firefox-default.png" options1="2560x1440" optionsthumb1="300x200" title1="Entrada y salida con las opciones de Firefox por defecto"
         image2="firefox-ssd.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Entrada y salida con opciones de Firefox optimizadas para SSD"
         caption="Entrada y salida de Firefox por defecto y optimizado para SSD" >}}
 </div>
 
 En el entorno de escritorio [GNOME][gnome] con la aplicación _Monitor del sistema_ es posible ver la cantidad de datos escritos por un proceso en total y en tiempo real.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome-monitor-del-sistema.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Monitor del sistema de GNOME"
+        image1="gnome-monitor-del-sistema.png" options1="2560x1440" optionsthumb1="300x200" title1="Monitor del sistema de GNOME"
         caption="Monitor del sistema de GNOME" >}}
 </div>
 
@@ -98,9 +98,9 @@ Dado que los SSD no hacen ruido no se ha pedido la alerta sonora del «rascar» 
 
 Para visualizar el uso del disco de forma constante [en GNOME hay una extensión que hace de monitor del sistema](https://extensions.gnome.org/extension/120/system-monitor/) que agregará en la barra superior un área de estado visible en todo momento en la que se puede ver la información del estado del sistema, entre esa información se puede visualizar la cantidad de lectura y escritura que está realizando al almacenamiento.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome-extension-system-monitor.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Extensión de GNOME de monitor del sistema"
+        image1="gnome-extension-system-monitor.png" options1="2560x1440" optionsthumb1="300x200" title1="Extensión de GNOME de monitor del sistema"
         caption="Extensión de GNOME de monitor del sistema" >}}
 </div>
 

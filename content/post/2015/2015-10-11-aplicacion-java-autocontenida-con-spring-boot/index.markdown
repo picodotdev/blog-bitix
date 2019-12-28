@@ -27,7 +27,7 @@ Otra forma de poder hacer la aplicación autocontenida es con [Spring Boot][spri
 
 Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring Boot, en el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617292540/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1617292540&linkCode=as2&tag=blobit-21">Spring Boot in Action</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1617292540" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> se comenta en mucho más detalle y de forma didáctica, un libro muy recomendable para adentrarse rápidamente en ste nuevo mundo de posibilidades.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617292540&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 

@@ -28,13 +28,13 @@ En mi caso el móvil me sigue pareciendo un dispositivo incómodo para trabajar 
 
 He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.com/motorola_c350-381.php) y pasando por [Nokia 6630](https://www.gsmarena.com/nokia_6630-811.php), [HTC Wildfire CDMA](https://www.gsmarena.com/htc_wildfire_cdma-3577.php), [Motorola Defy](https://www.gsmarena.com/motorola_defy+-4098.php), el citado [Samsung Galaxy S3](https://www.gsmarena.com/samsung_i9300_galaxy_s_iii-4238.php) lanzado en el 2012 hasta que he vuelto a cambiar. Realmente el único móvil que he comprado fue el primero el resto los he ido heredando de los descartes de otras personas y el Samsung Galaxy S3 es un móvil con el que he hecho todo lo que he necesitado. Principalmente usar [GMail][google-gmail], [Twitter][twitter], mensajería con [WhatsApp][whatsapp], ocasionalmente [Firefox][firefox] para el móvil y algún juego como [Clash Royale](https://play.google.com/store/apps/details?id=com.supercell.clashroyale&hl=es). En buenas condiciones de luz realizando un enfoque adecuado con sus 8 megapixeles de cámara principal es capaz de tomar buenas fotografías y sacar buenos vídeos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="motorola-c350.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Motorola C350"
+        image1="motorola-c350.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Motorola C350"
         image2="nokia-6630.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Nokia 6630"
         image3="htc-wildfire-cdma.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="HTC Wildfire" >}}
     {{< figureproc
-        image1="motorola-defy.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Motorola Defy"
+        image1="motorola-defy.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Motorola Defy"
         image2="samsung-galaxy-s3.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S3"        
         caption="Móviles que he tenido" >}}
 </div>
@@ -48,7 +48,7 @@ Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www
 * [Especificaciones Xiaomi Mi 9](https://www.gsmarena.com/xiaomi_mi_9-9507.php)
 * [Especificaciones Xiaomi Mi 9 SE](https://www.gsmarena.com/xiaomi_mi_9_se-9583.php)
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07PDZLZ9V&linkId=e6aff6e43c47d613b79a67b98759ef5a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07NRK942P&linkId=bee64f83ca4375f0702a1162e17db294"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07NRK942P&linkId=bee64f83ca4375f0702a1162e17db294"></iframe>
@@ -66,9 +66,9 @@ Sin embargo, en vez de comprar uno de estos anteriores nuevos como en ocasiones 
 * Sensores huellas en el botón de inicio, acelerómetro, giroscopio, proximidad, brújula, barómetro, frecuencia cardiaca.
 * Batería 2550mAh no extraíble, carga rápida de 15W, carga inalámbrica.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="samsung-galaxy-s6-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Samsung Galaxy S6"
+        image1="samsung-galaxy-s6-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Samsung Galaxy S6"
         image2="samsung-galaxy-s6-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S6"
         caption="Nuevo móvil, Samsung Galaxy S6" >}}
 </div>

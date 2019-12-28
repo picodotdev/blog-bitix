@@ -34,7 +34,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="docker-run-nginx.sh" language="bash" options="" >}}
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="nginx.png" thumb1="nginx-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="nginx-www.png" thumb2="nginx-www-thumb.png" title2="Dominio después de acceder al sitio"
@@ -46,7 +46,7 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="docker-run-httpd.sh" language="bash" options="" >}}
 {{< code file="httpd.conf" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="httpd.png" thumb1="httpd-thumb.png" title1="Dominio antes de acceder al sitio"
         image2="httpd-www.png" thumb2="httpd-www-thumb.png" title2="Dominio después de acceder al sitio"

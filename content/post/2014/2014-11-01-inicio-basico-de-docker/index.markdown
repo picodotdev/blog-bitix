@@ -38,7 +38,7 @@ Con el comando «docker images», «docker ps», «docker ps -a» podemos respec
 
 {{< code file="docker-4.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="docker-images.png" thumb1="docker-images-thumb.png" title1="docker-images" >}}
 </div>
@@ -51,7 +51,7 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 
 {{< code file="docker-5.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="docker-pull.png" thumb1="docker-pull-thumb.png" title1="docker-pull" >}}
 </div>
@@ -66,14 +66,14 @@ Este es el momento para explicar otra de las peculiaridades de los contenedores 
 
 Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores docker en esencia no son más que procesos dentro del sistema.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="docker-run.png" thumb1="docker-run-thumb.png" title1="docker-run" >}}
 </div>
 
 Continuando esta serie de artículos sobre docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>
 </div>
 

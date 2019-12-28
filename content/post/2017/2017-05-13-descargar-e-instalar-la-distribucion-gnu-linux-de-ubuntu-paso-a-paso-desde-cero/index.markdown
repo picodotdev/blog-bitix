@@ -61,7 +61,7 @@ Para una mayor velocidad de instalación es mejor usar una memoria USB de al men
 
 Hay que conectar una memoria USB, seleccionarla, seleccionar el archivo de la imagen ISO de Ubuntu y pulsar el botón _Empezar_, al cabo de unos minutos la memoria estará lista para empezar a instalar Ubuntu.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="rufus.png" thumb1="rufus-thumb.png" title1="Creación de medio de instalación en memoria USB desde Windows"
         caption="Creación de medio de instalación en memoria USB dese Windows" >}}
@@ -103,7 +103,7 @@ El asistente de instalación pregunta:
 
 Los asistentes de instalación utilizan el entorno de escritorio del sabor que se está instalando pero los pasos son similares y piden la misma información.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="instalacion-ubuntu-01.png" thumb1="instalacion-ubuntu-01-thumb.png" title1="Instalación de Ubuntu"
         image2="instalacion-ubuntu-02.png" thumb2="instalacion-ubuntu-02-thumb.png" title2="Instalación de Ubuntu"
@@ -138,7 +138,7 @@ Los asistentes de instalación utilizan el entorno de escritorio del sabor que s
 
 Si se ha elegido cifrar el contenido del dispositivo de almacenamiento al realizar la instalación en el inicio del sistema Ubuntu pregunta por la contraseña para descifrar su contenido.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="ubuntu-01.png" thumb1="ubuntu-01-thumb.png" title1="Ubuntu 16.04"
         image2="ubuntu-02.png" thumb2="ubuntu-02-thumb.png" title1="Ubuntu 16.04"
@@ -161,7 +161,7 @@ Ubuntu por defecto ya incorpora una buena cantidad de software preinstalado. En 
 
 Al cabo de un tiempo de haber instalado Ubuntu se publicarán actualizaciones del software que tengas instalado con mejoras y correcciones de seguridad que son recomendables instalarlas usando la aplicación _Actualizciones de software_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="ubuntu-software.png" thumb1="ubuntu-software-thumb.png" title1="Instalar y desinstalar software"
         image2="ubuntu-actualizaciones.png" thumb2="ubuntu-actualizaciones-thumb.png" title2="Instalar actualizaciones de seguridad y software"

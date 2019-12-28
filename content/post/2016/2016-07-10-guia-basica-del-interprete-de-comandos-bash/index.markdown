@@ -31,7 +31,7 @@ Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obt
 
 {{< code file="sorteo-1.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="sorteo.png" thumb1="sorteo-thumb.png" title1="Sorteo implementado con dos comandos de GNU/Linux"
         caption="Sorteo implementado con dos comandos de GNU/Linux" >}}
@@ -50,7 +50,7 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
 
 {{< code file="multiples-comandos.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="multiples-comandos.png" thumb1="multiples-comandos-thumb.png" title1="Múltiples comandos en la misma línea"
         caption="Múltiples comandos en la misma línea" >}}
@@ -65,7 +65,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 
 {{< code file="variables-2.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="variables.png" thumb1="variables-thumb.png" title1="Interpolación en cadenas de variables y comandos"
         caption="Interpolación en cadenas de variables y comandos" >}}
@@ -74,7 +74,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 ### Invocaciones de comandos anteriores
 Con el comando <code>history</code> podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="history.png" thumb1="history-thumb.png" title1="Historial de comandos"
         caption="Historial de comandos" >}}
@@ -106,7 +106,7 @@ En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _scr
 
 {{< code file="funciones-1.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="opciones.png" thumb1="opciones-thumb.png" title1="Opciones de un script"
         caption="Opciones de un script" >}}
@@ -166,7 +166,7 @@ Las expresiones anteriores se pueden combinar:
 ### Control de trabajos
 El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecutando junto con su identificador y estado, con la combinación de teclas <kbd>Ctrl+z</kbd> dejamos el proceso actual detenido y en segundo plano, con <code>fg</code> lo devolvemos a primer plano y si estaba detenido se continua su ejecución, con <code>bg</code> si estaba detenido continua su ejecución en segundo plano.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="trabajos.png" thumb1="trabajos-thumb.png" title1="Trabajos en primer y segundo plano"
         caption="Trabajos en primer y segundo plano" >}}
@@ -175,7 +175,7 @@ El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecut
 Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, [UNIX and Linux System Administration Handbook](https://amzn.to/29vctVP). Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html) y
 el siguiente [manual de Bash](http://bash.cyberciti.biz/guide/Main_Page).
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0131480057&linkId=28302f39b86c5d07ee3db2bc5752c2ed&internal=1"></iframe>
 </div>
 

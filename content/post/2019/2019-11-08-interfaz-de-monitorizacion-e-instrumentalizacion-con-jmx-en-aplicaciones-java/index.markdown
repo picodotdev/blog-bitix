@@ -45,17 +45,17 @@ Iniciando la aplicación que registra un _MBean_ en el servidor de _MBean_ la pl
 
 {{< code file="jconsole-visualvm.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="jconsole.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Herramienta de monitorización e instrumentalización JConsole"
+        image1="jconsole.png" options1="2560x1440" optionsthumb1="650x450" title1="Herramienta de monitorización e instrumentalización JConsole"
         caption="Herramienta de monitorización e instrumentalización JConsole" >}}
 </div>
 
 Realizada la conexión al agente se muestran las propiedades y operaciones de los MBean registrados con la posibilidad de cambiar sus valores, invocar las operaciones y obtener sus resultados. La propia plataforma Java proporciona numerosos _MBean_ como se muestra en el árbol lateral de la imagen.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="jconsole-mbean.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x250" title1="Instrumentalización de un MBean en JConsole"
+        image1="jconsole-mbean.png" options1="2560x1440" optionsthumb1="300x250" title1="Instrumentalización de un MBean en JConsole"
         image2="visualvm-mbean.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x250" title2="Instrumentalización de un MBean en VisualVM"
         caption="Instrumentalización de un MBean en JConsole y VisualVM" >}}
 </div>
@@ -96,9 +96,9 @@ Los archivos _jmxremote.password_ y _jmxremote.access_ configuran la autenticaci
 
 {{< code file="jconsole.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="jconsole-remote.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"
+        image1="jconsole-remote.png" options1="2560x1440" optionsthumb1="650x450" title1="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"
         caption="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" >}}
 </div>
 

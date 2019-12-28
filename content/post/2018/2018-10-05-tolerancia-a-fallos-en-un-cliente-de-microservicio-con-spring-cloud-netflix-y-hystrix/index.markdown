@@ -28,15 +28,15 @@ Un patrón o técnica que se suele emplear es el de [Circuit Breaker](https://ww
 
 En ambos casos se evita que la cadena de microservicios empiece a fallar y con ello sistema completo. El proyecto [Hystrix ha dejado de desarrollarse de forma activa](https://dzone.com/articles/resilience4j-and-sentinel-two-open-source-alternat) tal como aparece en el propio [README.md](https://github.com/Netflix/Hystrix/blob/master/README.md) y como alternativa se recomienda usar [Resilience4j](https://github.com/resilience4j/resilience4j) que además está diseñado para Java 8 y la programacion funcional, en el artículo [Implementar tolerancia a fallos con Resilience4j][blogbitix-425] muestro su implementación.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< imageproc image1="hystrix.png" command1="Fit" options1="650x450" alt1="Hystrix" title1="Hystrix" >}}
 </div>
 
 El patrón _circuit breaker_ se denomina así ya que implementa una lógica similar a un circuito eléctrico. El circuito en su estado normal está cerrado y se realizan las llamadas al microservicio servidor. Si el microservicio servidor empieza a fallar se llama a la acción alternativa con su valor, si se supera un umbral de errores el circuito pasa a estado abierto y se dejan de hacer llamadas al microservicio servidor. Cada cierto tiempo definido se realiza una llamada al servicio servidor para comprobar su estado de forma que si responde correctamente el circuito pasa a estado cerrado nuevamente y las siguientes llamadas se realizan al microservicio servidor dejándose de utilizar la acción alternativa.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="circuit-breaker-diagram.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diagrama del patrón circuit breaker"
+        image1="circuit-breaker-diagram.png" options1="2560x1440" optionsthumb1="300x200" title1="Diagrama del patrón circuit breaker"
         image2="circuit-breaker-states.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Diagrama de estados"
         image3="hystrix-fallback.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Fallback del patrón circuit breaker"
         caption="Diagrama del patrón circuit breaker, de estados y método fallback" >}}
@@ -60,9 +60,9 @@ En la aplicación ejemplo hay un microservicio servidor y un microservicio clien
 
 Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofrece un _dashboard_ en el que visualizan el número de peticiones que se están realizando, las fallidas, el estado de los circuitos, las que fallan por _timeout_ o las que fallan con error. Para tener acceso a esta página hay que incluir la dependencia _org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard_. La página _dashboard_ está disponible en la dirección _http\://localhost:8085/hystrix_. Este _dahsboard_ que ofrece Hystrix es muy básico y con un diseño mejorable, se pueden [exponer las métricas de Hystrix en Grafana con Prometheus][blogbitix-368] para tener un panel con exactamente la información que se desee en una gráficas muhco más vistosas además de observar los datos exactamente en el periodo de tiempo deseado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="circuit-breaker-closed.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Circuit breaker cerrado"
+        image1="circuit-breaker-closed.png" options1="2560x1440" optionsthumb1="300x200" title1="Circuit breaker cerrado"
         image2="circuit-breaker-open.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
         caption="Estados del circuit breaker" >}}
 </div>

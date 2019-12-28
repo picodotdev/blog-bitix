@@ -28,7 +28,7 @@ En Java con la clase [Pattern](https://docs.oracle.com/javase/8/docs/api/java/ut
 
 {{< code file="Main.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="java-regex.png" thumb1="java-regex-thumb.png" title1="Extracción de valores de una cadena usando una expresión regular"
         caption="Extracción de valores de una cadena usando una expresión regular" >}}

@@ -24,7 +24,7 @@ Es política de Apple que su sistema operativo solo pueda ser ejecutado en sus e
 
 Los pasos para instalar macOS en una máquina virtual con VirtualBox son los siguientes, hay que descargar un {{< resourcelink text="archivo torrent con la imagen del disco duro de macOS" name="macOS-Mojave-10.14.4.torrent" >}} y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Deberemos descomprimir la imagen del disco duro para obtener el archivo de extensión _vmdk_ y proceder a crear la máquina virtual. Elegimos crear una máquina virtual de tipo macOS, cambiaremos algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionaremos el disco duro con la imagen _vmdk_ descomprimida y cambiaremos la memoria asignada a la pantalla.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="configuracion-virtualbox-macos-vm.png" thumb1="configuracion-virtualbox-macos-vm-thumb.png" title1="Configuración máquina virtual macOS"
         image2="configuracion-virtualbox-macos-pantalla.png" thumb2="configuracion-virtualbox-macos-pantalla-thumb.png" title2="Configuración pantalla VirtualBox"
@@ -41,7 +41,7 @@ En el caso de Linux el archivo de comandos es similar e igualmente sustituiremos
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos que empiezan a salir unos cuantos mensajes hasta que se inicia el sistema gráfico con la instalación y su asistente que constará de varios pasos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="1-instalacion-inicio.png" thumb1="1-instalacion-inicio-thumb.png" title1="Inicio instalación macOS"
         image2="2-instalacion-welcome.png" thumb2="2-instalacion-welcome-thumb.png" title2="Asistente instalación macOS" >}}
@@ -64,7 +64,7 @@ Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos qu
 
 Terminada la instalación entramos en el escritorio con el aspecto clásico y fondo de pantalla de macOS y las aplicaciones incorporadas en el propio sistema por defecto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="13-macos-start.png" thumb1="13-macos-start-thumb.png" title1="Inicio"
         image2="14-macos-help.png" thumb2="14-macos-help-thumb.png" title2="Ayuda" >}}
@@ -78,7 +78,7 @@ Terminada la instalación entramos en el escritorio con el aspecto clásico y fo
 
 Como partidario del software libre y la privacidad además de [los ínfimos impuestos que paga Apple][blogbitix-175] usando reprobable ingeniería fiscal y su software privativo no recomiendo usar un Mac pero si alguien quiere probar este sistema operativo antes de decidirse a hacer una compra usarlo de forma virtualizado es una buena ayuda para tomar una decisión y ver si nos gusta su sistema operativo aparte del propio equipo junto con su precio que podemos ver en las tiendas. Si no nos convence ni su software ni su abultado precio podemos optar por un portátil de [Slimbook](https://slimbook.es/) mucho más económico y con características notables con los que no tendremos que pagar tampoco el [impuesto Windows][elblogdepicodev-57] ya que podemos elegir entre varias la distribución GNU/Linux preinstalada que deseamos.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00OQ2I4GK&linkId=cb28136e0fe9b53cc2f70659a332a802&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01ET2K6SU&linkId=0e5bd11129416c356bc34a6aefbcfff7&internal=1"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01EWWHFOU&linkId=a06a014a2d694cd3a57c629904fbba42&internal=1"></iframe>

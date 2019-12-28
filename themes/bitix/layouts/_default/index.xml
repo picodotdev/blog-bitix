@@ -21,7 +21,7 @@
         {{ if isset .Params "summary" }}
           &lt;p&gt;&lt;strong&gt;{{ .Params.summary | markdownify | html }}&lt;/strong&gt;&lt;/p&gt;
         {{ end }}
-        {{ .Content | html }}
+        {{ (replace .Content (print .Site.Params.context) "") | html }}
         </content>
         {{ if isset .Params "tags" }}
             {{ range .Params.tags }}

@@ -38,7 +38,7 @@ La tarea que hacen los mantenedores es útil para comprobar que los paquetes de 
 * Cualquiera puede publicar su aplicación y ser utilizable por los usuarios sin que necesite ganar popularidad para que los mantenedores la incluyan en la distribución.
 * Las aplicaciones Flatpak se puede instalar a nivel de sistema (por defecto) y a nivel de usuario.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/jDVCITRWGgs?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 

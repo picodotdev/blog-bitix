@@ -21,7 +21,7 @@ He buscado en esas 3 webs por modelos de Intel NUC, no hay pocos, me ha sorprend
 
 Hay que tener en cuenta que son de segunda mano, hay incertidumbre del estado del producto, sin garantía de dos años en el funcionamiento del producto, falta confianza en la transacción para evitar estafas y problemas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <figure>
         <img src="assets/images/logotipos/ebay.svg" alt="eBay" title="eBay" width="200"/>
         <img src="assets/images/logotipos/milanuncios.png" alt="milanuncios" title="milanuncios" width="200"/>
@@ -31,18 +31,18 @@ Hay que tener en cuenta que son de segunda mano, hay incertidumbre del estado de
 
 Por tantear un NUC en el que podría estar interesado contacté con el vendedor de [un anuncio en milanuncios](https://www.milanuncios.com/ordenadores-de-segunda-mano/mini-pc-intel-nuc-i5-8gb-500gbm-2-266347572.htm), se pedía 420€ por un NUC modelo [NUC7I5BNH](https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnh.html) incluyendo 8 GiB de memoria y un SSD WD Blue de 250 GiB. El NUC nuevo en [PcComponentes][pccomponentes] está al precio de 370€, el SSD a 80€ y una memoria equivalente a 80€ en Amazon. En total nuevos serían 530€, un descuento de 110€ pero con las contrapartidas que comento en el parrafo anterior. Por probar le ofrecía 175€ que estaría dispuesto a pagarle solo por el NUC ya que en la memoria y el SSD no es lo principal en lo que estaba interesado. En aproximadamente una hora recibo la contestación y me ofrece únicamente el NUC a 280€ + 12€ en gastos de envío. Lógicamente cada parte defendiendo su posición, yo comentándole el precio en tienda física, garantía, confianza en la transacción, Intel NUC Bean Canyon a punto de salir y él que me ofrece pago por PayPal para mayor confianza, dos módulos de 8 GiB a 60€ y que no tiene prisa en venderlo con lo que no se mueve mucho del precio anunciado. Desisto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="intel-nuc-milanuncios-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC con aspecto interesante"
+        image1="intel-nuc-milanuncios-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC con aspecto interesante"
         image2="intel-nuc-milanuncios-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Intel NUC con aspecto interesante"
         caption="Intel NUC con aspecto interesante" >}}
 </div>
 
 Este era uno de los pocos que me han resultado atractivos otros es que son morralla y se encuentran ejemplos de ellos en cualquiera de las tres páginas, no se si esperando encontrar algún comprador despistado. Como este parecido al del vendedor anterior pero con un precio de 589€, que vamos todo nuevo no cuesta eso. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="intel-nuc-wallapop-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
+        image1="intel-nuc-wallapop-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
         image2="intel-nuc-wallapop-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Ejemplo morralla"
         caption="Ejemplos de morralla" >}}
 </div>

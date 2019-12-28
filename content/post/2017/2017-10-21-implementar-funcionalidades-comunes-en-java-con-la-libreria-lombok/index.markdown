@@ -48,7 +48,7 @@ Usando [Gradle][gradle] hay que añadir en el archivo de construcción del proye
 
 Usando un IDE, su complemento para Lombok y añadida la dependencia los métodos que implementa Lombok con las anotaciones son visualizados con el asistente de código.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="lombok-intellij.png" thumb1="lombok-intellij-thumb.png" title1="Soporte de Lombok en IntelliJ"
         image2="lombok.png" thumb2="lombok-thumb.png" title2="Ejecución del ejemplo"

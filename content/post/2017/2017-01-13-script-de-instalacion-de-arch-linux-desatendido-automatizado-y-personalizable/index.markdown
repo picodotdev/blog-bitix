@@ -20,7 +20,7 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 
 Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene más dificultad que instalar un sistema operativo como [Windows][windows], que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las [distribuciones aconsejadas para usuarios que provienen de Windows o macOS][blogbitix-190] o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de una hora. Distribuciones como [Ubuntu][ubuntu], [elementary OS][elementary] o [Linux Mint][linuxmint] hacen que la instalación no requiera muchos conocimientos y sea completada con éxito por cualquier usuario.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="debian-installer-text.png" thumb1="debian-installer-text-thumb.png" title1="Instalador de Debian en modo texto"
         image2="debian-installer-graphics.png" thumb2="debian-installer-graphics-thumb.png" title2="Instalador de Debian en modo gráfico"
@@ -73,7 +73,7 @@ El tiempo requerido de instalación varía según el ancho de banda de la conexi
 
 Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema con el proceso completo de instalación.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="archlinux-gnome.jpg" thumb1="archlinux-gnome-thumb.jpg" title1="GNOME"
         image2="archlinux-kde.jpg" thumb2="archlinux-kde-thumb.jpg" title2="KDE"

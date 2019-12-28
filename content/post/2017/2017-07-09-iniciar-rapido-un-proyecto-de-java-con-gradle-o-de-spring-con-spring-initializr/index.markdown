@@ -29,7 +29,7 @@ Al usar el _plugin_ _init_ de Gradle se especifica el tipo de artefacto, aplicac
 
 Para proyectos que usen [Spring Boot][spring-boot] está disponible la herramienta [Spring Initializr][spring-initializr] que en pocos minutos permite disponer de una aplicación funcional con las propiedades que se seleccionen. Se puede elegir la herramienta de construcción, Maven o Gradle, la versión de Spring Boot, los metadatos de la aplicación para el paquete de las clases y artefacto, las dependencias de otros módulos de Spring y otras librerías populares.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="spring-initalizr.png" thumb1="spring-initalizr-thumb.png" title1="Generador de proyectos Spring Initalizr" >}}
 </div>
@@ -44,7 +44,7 @@ Como con todos los generadores de código es recomendable saber suficientemente 
 
 En el libro [Spring Boot in Action](https://amzn.to/2tvCJMs) se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro [Mastering Spring 5.0](https://amzn.to/2tZInqM) que también inlcuye secciones sobre Spring Boot.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=86ce91eca968f6de1d0a777f48ca3069"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N750Z7H&linkId=e4f7f44a8b854b00a547d526b83f6469"></iframe>
 </div>

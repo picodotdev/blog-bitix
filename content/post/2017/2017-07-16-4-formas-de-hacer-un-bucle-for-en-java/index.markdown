@@ -43,7 +43,7 @@ El siguiente programa muestra las cuatro opciones, su salida en la consola serí
 
 {{< code file="Main.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="bucles-java.png" thumb1="bucles-java-thumb.png" title1="4 formas de hacer un bucle en Java"
         caption="4 formas de hacer un bucle en Java" >}}

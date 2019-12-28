@@ -24,9 +24,9 @@ Lo uso habitualmente para convertir los libros en formato _epub_ a _mobi_ para p
 
 Hace unos meses se publicó la versión 4.0 del programa y cada semana o dos semanas hay una nueva versión que incluye correcciones y algunas mejoras, aún usando la distribución de [GNU][gnu]/[Linux] como [Arch Linux][archlinux] siendo _rolling release_ y actualizando el sistema cada dos semanas es uno de los pocos programas que habitualmente tengo desactualizado en una versión anterior a la última, eso es resultado de las numerosas versiones que se publican del mismo.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="calibre.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
+        image1="calibre.png" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
         caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 </div>
 
@@ -34,9 +34,9 @@ La cantidad que he donado no es mucho pero si un porcentaje de los usuarios que 
 
 Una donación en la medida que uno pueda o desee es una buena forma de si un programa le es realmente útil devolver algo en compensación de su uso. A continuación el recibo de la donación que he realizado a Calibre. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="donacion-calibre.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Calibre"
+        image1="donacion-calibre.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Calibre"
         caption="Donación Calibre" >}}
 </div>
 

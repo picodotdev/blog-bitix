@@ -32,7 +32,7 @@ Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compos
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="change-password.png" thumb1="change-password-thumb.png" title1="Contraseña de root"
         image2="sing-in.png" thumb2="sing-in-thumb.png" title2="Inicio de sesión"
@@ -48,7 +48,7 @@ Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compos
 
 Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus claves SSH, repositorios de Git pudiendo importar otros existentes, crear nuevos, páginas de una wiki y peticiones, integración y entrega continua y personalizar el panel _kanban_ con el flujo que deseamos que sigan las peticiones en la organización, por ejemplo, _planning_, _ready_, _doing_, _review_, _merged_ y _deployed_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="new-proyect.png" thumb1="new-proyect-thumb.png" title1="Nuevo proyecto"
         caption="Nuevo proyecto" >}}
@@ -68,7 +68,7 @@ Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la
 {{< code file="existing-folder.sh" language="bash" options="" >}}
 {{< code file="existing-repository.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="project-details-1.png" thumb1="project-details-1-thumb.png" title1="Detalles de proyecto"
         image2="project-details-2.png" thumb2="project-details-2-thumb.png" title2="Detalles de proyecto"

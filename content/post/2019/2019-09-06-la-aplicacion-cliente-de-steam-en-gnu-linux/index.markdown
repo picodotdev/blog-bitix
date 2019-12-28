@@ -36,27 +36,27 @@ En el caso de un gráfica Intel hay que instalar el paquete lib32-mesa.
 
 Hecho esto se puede iniciar el cliente, en el menú de aplicaciones del sistema aparecen su acceso directo de aplicación, se necesita una cuenta por que lo que hay que registrarse antes desde su plataforma web. Los juegos de la biblioteca aparecen en el cliente para instalar. En este caso tengo el juego [Company of Heroes 2](https://store.steampowered.com/app/231430/Company_of_Heroes_2/).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="cliente-steam.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Cliente de Steam en GNU/Linux"
+        image1="cliente-steam.png" options1="2560x1440" optionsthumb1="300x200" title1="Cliente de Steam en GNU/Linux"
         image2="cliente-steam-juegos.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Cliente de Steam en GNU/Linux"
         caption="Cliente de Steam en GNU/Linux" >}}
 </div>
 
 Instalado el juego se puede iniciar desde el cliente de Steam. Aún con una gráfica integrada Intel de un [Intel NUC8i5BEK (Bean Canyon)][blogbitix-363] se pueden jugar a muchos juegos bajando algo los detalles y resolución.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="company-of-heroes-2-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Company of Heroes 2"
+        image1="company-of-heroes-2-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Company of Heroes 2"
         image2="company-of-heroes-2-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Cliente de Steam en GNU/Linux"
         caption="Company of Heroes 2" >}}
 </div>
 
 Los juegos ofrecen diferente nivel de soporte para GNU/Linux, para [Windows][windows], [macOS][macOS] y Steam+Linux, los que deben funcionar sin problema son los de la última categoría. Los de Windows pueden funcionar a través de una capa de emulación desarrollada por Steam, para activarla hay que ir a _Steam > Parámetros > Steam Play_ y activar las opciones _Enable Steam Play for Supported title_ y _Activar Steam para todos los demás títulos_. Sin embargo, no hay garantía que los juegos con solo soporte de Windows funcionen correctamente, he probado con [World of Warships](https://store.steampowered.com/app/552990/World_of_Warships/) y no se iniciaba correctamente mostrando únicamente una pequeña ventana negra.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="steam-play-settings.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Steam Play Settings"
+        image1="steam-play-settings.png" options1="2560x1440" optionsthumb1="300x200" title1="Steam Play Settings"
         caption="Steam Play Settings" >}}
 </div>
 

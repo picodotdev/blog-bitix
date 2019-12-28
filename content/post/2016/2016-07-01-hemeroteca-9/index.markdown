@@ -75,7 +75,7 @@ Con algunos artículos he quedado bastante satisfecho como en los que he hablado
 
 En cuanto a como han evolucionado las visitas siempre es motivante ver que con el nuevo contenido añadido y poco a poco las visitas y número de páginas vistas aumentan algo, en cualquier caso siguen siendo pocas con las que seguramente tengan otras bitácoras de temática similar pero también seguramente más que otros cuantas. De casi aproximadamente 7000 sesiones al mes que tenía en enero ahora en junio Analytics me contabiliza unas 11000, en el mismo periodo de tiempo he pasado de 9000 páginas vistas a casi 13500. La mayor parte de esta mejora ha sido por unos pocos artículos que se habrán posicionado bien en los primeros meses del año en el buscador Google fuente de la que provienen la mayor parte de las visitas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="analytics.png" thumb1="analytics-thumb.png" title1="Evolución de sesiones mensuales en Blog Bitix"
         caption="Evolución de sesiones mensuales en Blog Bitix" >}}

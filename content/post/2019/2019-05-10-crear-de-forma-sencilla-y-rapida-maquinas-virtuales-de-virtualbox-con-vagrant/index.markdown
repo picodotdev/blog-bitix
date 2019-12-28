@@ -22,9 +22,9 @@ series: ["hashicorp"]
 
 La virtualización es una buena forma de probar una distribución [GNU][gnu]/[Linux][linux] para evaluarla o ejecutar [Windows][windows] en un Linux. Hay otras herramientas de virtualización como [QEMU][qemu] y [KVM][kvm] pero la virtud de VirtualBox es que es muy sencilla y está disponible para Windows, GNU/Linux y [macOS][macos].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="virtualbox.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox"
+        image1="virtualbox.png" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox"
         caption="VirtualBox" >}}
 </div>
 
@@ -42,9 +42,9 @@ Definido el archivo de configuración para Vagrant se inician las máquina virtu
 
 {{< code file="vagrant-up.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="virtualbox-vagrant-vm.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox Vagrant VM"
+        image1="virtualbox-vagrant-vm.png" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox Vagrant VM"
         caption="VirtualBox Vagrant VM" >}}
 </div>
 
@@ -52,17 +52,17 @@ Una vez iniciada la máquina virtual Vagrant configura SSH para tener acceso a s
 
 {{< code file="vagrant-ssh.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="vagrant-ssh.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Vagrant SSH"
+        image1="vagrant-ssh.png" options1="2560x1440" optionsthumb1="300x200" title1="Vagrant SSH"
         caption="Vagrant SSH" >}}
 </div>
 
 La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ con los comandos para instalarlo y un archivo de [Docker Compose][docker-compose] con un servicio del servidor web [nginx][nginx]. Desde la terminal de la máquina virtual se inicia el servicio con Docker que queda accesible tanto desde la pripia máquina virtual como desde el _host_ indicando la dirección IP que se le ha asignado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="docker-compose-up.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
+        image1="docker-compose-up.png" options1="2560x1440" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
         image2="curl.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
         image3="firefox.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Página devuelta por nginx"
         caption="docker-compose up y curl desde la MV y desde el host" >}}

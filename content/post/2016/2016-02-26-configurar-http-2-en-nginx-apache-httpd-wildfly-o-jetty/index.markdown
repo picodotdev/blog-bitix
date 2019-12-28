@@ -28,7 +28,7 @@ En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _de
 
 {{< code file="default.conf" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="http2-nginx.png" thumb1="http2-nginx-thumb.png" title1="HTTP/2 en Nginx" >}}
 </div>
@@ -39,7 +39,7 @@ En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.or
 
 {{< code file="httpd-default.conf" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="http2-httpd.png" thumb1="http2-httpd-thumb.png" title1="HTTP/2 en Apache HTTPD" >}}
 </div>
@@ -55,7 +55,7 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
 
 {{< code file="standalone.xml" language="XML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="http2-wildfly.png" thumb1="http2-wildfly-thumb.png" title1="HTTP/2 en WildFly" >}}
 </div>
@@ -67,7 +67,7 @@ Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el mom
 {{< code file="alpn-1.8.0_74.mod" language="plaintext" options="" >}}
 {{< code file="jetty.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="http2-jetty.png" thumb1="http2-jetty-thumb.png" title1="HTTP/2 en Jetty" >}}
 </div>

@@ -20,7 +20,7 @@ En el mundo de la tecnología cada nuevo procesador, tarjeta gráfica, <abbr tit
 
 De las disrupciones que estoy hablando son las cambian significativamente la tecnología, la aparición del ordenador personal y como los aprovechó [Microsoft][microsoft] e [IBM][ibm] no supo o no pudo, la aparición de las interfaces gráficas cuando solo existía la línea de comandos o estaban basadas en texto e iniciaron el dominio de Microsoft y [Apple][apple] en la informática de consumo, de la aparición de los teléfonos móviles en la que en una época [Nokia][nokia] era el líder y como con la aparición de los teléfonos inteligentes al no adaptarse o preverlo sucumbió al menos tal y como era, de como _3dfx_ no pudo competir con las <abbr title="Graphics Processor Unit">GPU</abbr> modernas que [NVIDIA][nvidia] popularizó con gran éxito. Algunas disrupciones importantes no son instantáneas pueden tardar algún lustro pero sin las compañías líderes no las ven venir ni se adaptan cuando quieren darse cuenta ya es demasiado tarde llegando a desaparecer o convertirse en poco relevantes. Algunas tecnologías prometedoras no tienen el éxito esperado como las pantallas de televisión 3D o curvas, un porcentaje grande de otros casos siguen el mismo camino, ¿alguien ha dicho _blu-ray_?, ¿_smartwatch_?, ...
 
-<div class="media" style="text-align: center;">
+<div class="media">
   <img src="assets/images/logotipos/microsoft.svg" alt="Microsoft" title="Microsoft" width="250"/>
   <img src="assets/images/logotipos/apple.svg" alt="Apple" title="Apple" width="200"/>
   <img src="assets/images/logotipos/linux.svg" alt="Linux" title="Linux" width="200"/>
@@ -34,7 +34,7 @@ Los ordenadores de escritorio no se pueden transportar, los portátiles no pesan
 
 Cuando la diferencia entre el ordenador de escritorio y el dispositivo móvil sea poco significativa la convergencia será una realidad, cada año está más cerca no hay más que ver que ya hoy hay móviles con 4GiB de memoria la misma que algunos ordenadores de escritorio y portátiles de gama mediana y baja. Solo falta saber quienes del mercado tecnológico se adaptarán, perecerán, surgirán, perderán su relevancia y cual será el primero en comercializar un producto convergente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
   <img src="assets/images/logotipos/intel.png" alt="Intel" title="Intel" width="300"/>
   <img src="assets/images/logotipos/arm.png" alt="ARM" title="ARM" width="300"/>
 </div>

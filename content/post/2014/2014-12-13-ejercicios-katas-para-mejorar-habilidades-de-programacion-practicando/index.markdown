@@ -26,7 +26,7 @@ Intentando implementar en código una posible solución aplicando el patrón Str
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="MainTest.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="teses-junit.png" thumb1="teses-junit.png" title1="Ejecución de teses" >}}
 </div>

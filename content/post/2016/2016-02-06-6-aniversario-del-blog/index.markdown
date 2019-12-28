@@ -26,7 +26,7 @@ Seis años publicando un artículo semanalmente y algunas semanas incluso dos re
 
 Lentamente cada mes recibo alguna visita más y aumenta algo los ingresos por la publicidad AdSense y con los enlaces de afiliado de [Amazon][amazon], mensualmente unas 9000 páginas vistas y entre 7€ y 15€ por la publicidad. Aún después de algo más de dos años de crear Blog Bitix no he llegado al mismo nivel de páginas vistas que en los mejores momentos de El blog de pico.dev, 16000 frente a 9000, lo que es una muestra de lo difícil que resulta, por lo menos a mí, atraer visitas. Quizá Google posicione mejor cuando una página tiene ya dos o tres años de vida, quizá considere mejor un dominio propio que el que tengo de _https://picodotdev.github.io/blog-bitix/_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="paginas-vistas-el-blog-de-pico-dev.png" thumb1="paginas-vistas-el-blog-de-pico-dev-thumb.png" title1="Páginas vistas El blog de pico.dev"
         image2="paginas-vistas-blog-bitix.png" thumb2="paginas-vistas-blog-bitix-thumb.png" title2="Páginas vistas Blog Bitix" >}}

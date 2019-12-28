@@ -50,7 +50,7 @@ La implementación de appender para capturar las HQL que lanza grails es la sigu
 
 El resultado es el siguiente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="grails-hibernate-statistics.png" thumb1="grails-hibernate-statistics.png" title1="Estadísticas de Hibernate en Grails" >}}
 </div>

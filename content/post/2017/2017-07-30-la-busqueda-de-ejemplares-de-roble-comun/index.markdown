@@ -35,7 +35,7 @@ El primero que encontré fue en un lugar inesperado y volviendo de jugar un part
 
 Aprovechando el típico paseo andando del fin de semana me he ido fijando y yendo por las zonas donde creía que podría encontrar más. Y sí he encontrado otro cerca de la Universidad de Sarriko, cerca de mi casa, más cerca de lo que esperaba. He pasado muchas veces al lado pero hasta ahora no me había fijado. Con bellotas de muy buen aspecto en las ramas y algunas caídas del año anterior. Las del suelo la mayoría podridas o vacías. Un ejemplar de roble bastante grande aunque sin recibir cuidados y creciendo en total libertad.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="roble-sarriko-1.jpg" thumb1="roble-sarriko-1-thumb.jpg" title1="Roble en Universidad de Sarriko"
         image2="roble-sarriko-2.jpg" thumb2="roble-sarriko-2-thumb.jpg" title2="Roble en Universidad de Sarriko"
@@ -44,7 +44,7 @@ Aprovechando el típico paseo andando del fin de semana me he ido fijando y yend
 
 También he encontrado un grupo de ellos en una zona ajardinada de un parque en Deusto pegado a la ría. Unos cinco juntos aunque un par de ellos no se si están en el mejor estado. También tenían algunas bellotas en las ramas y algunas en el césped.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="roble-deusto.jpg" thumb1="roble-deusto-thumb.jpg" title1="Roble en parque de Deusto"
         caption="Roble en el parque de Deusto" >}}
@@ -52,7 +52,7 @@ También he encontrado un grupo de ellos en una zona ajardinada de un parque en 
 
 Pasado el museo Guggenheim enfrente de la nueva biblioteca de la Universidad de Deusto en otra zona ajardinada hay otro grupo de robles comunes con muy buen aspecto de salud. No son tan grandes como el de la Universidad de Sarriko pero al estar en una zona ajardinada están mejor cuidados y se nota que están bien sanos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="roble-abandoibarra-1.jpg" thumb1="roble-abandoibarra-1-thumb.jpg" title1="Roble en Abandoibarra"
         image2="roble-abandoibarra-2.jpg" thumb2="roble-abandoibarra-2-thumb.jpg" title2="Roble en Abandoibarra" >}}
@@ -63,7 +63,7 @@ Pasado el museo Guggenheim enfrente de la nueva biblioteca de la Universidad de 
 
 Incluso debajo de alguno de ellos hay algunos retoños.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="plantulas-abandoibarra-1.jpg" thumb1="plantulas-abandoibarra-1-thumb.jpg" title1="Plántulas en Abandoibarra"
         image2="plantulas-abandoibarra-2.jpg" thumb2="plantulas-abandoibarra-2-thumb.jpg" title2="Plántulas en Abandoibarra"
@@ -78,7 +78,7 @@ Con esta primera búsqueda de ejemplares ya tengo identificados casi una decena 
 
 Sin embargo, aprovechando esta ocasión ya he recogido unas cuantas bellotas con buen aspecto del año anterior. Que no son tantas ya que la mayoría están podridas, vacías o son pequeñas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="bellotas-roble.jpg" thumb1="bellotas-roble-thumb.jpg" title1="Bellotas de roble común"
         caption="Bellotas de roble común" >}}

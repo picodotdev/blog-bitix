@@ -25,7 +25,7 @@ Aunque con muchos más LED el ejemplo no es más complicado que el ejemplo que y
 
 Esta es la foto del cableado usando múltiples cables macho-macho para conectar los _pines_ con el polo positivo de los diodos pasando por la resistencia y también múltiples cables para conectar el polo negativo del diodo con tierra. Usando una placa _breadboard_ para realizar las conexiones sin soldadura y una placa de extensión wiringPi para conectar la Raspberry Pi con la placa _breadboard_ con un cable de 26 _pines_ en mi caso por el modelo que tengo de RPi este es el aspecto de cableado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="arbol-navidad-01.jpg" thumb1="arbol-navidad-01-thumb.jpg" title1="Cableado de las luces LED del árbol de navidad"
         image2="arbol-navidad-02.jpg" thumb2="arbol-navidad-02-thumb.jpg" title2="Cableado de las luces LED del árbol de navidad" >}}
@@ -45,7 +45,7 @@ Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros s
 
 Esta aplicación para la Raspberry Pi queda bastante vistosa y no es muy complicado de realizar a pesar del del lío de cables que resulta. Este es un vídeo de su funcionamiento.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
   <iframe width="640" height="360" src="https://www.youtube.com/embed/F2BChbcyr5g" frameborder="0" allowfullscreen></iframe>
 </div>
 

@@ -27,7 +27,7 @@ El siguiente ejemplo realiza una petición a la página del buscador Google con 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="module-info.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="java-http2.png" thumb1="java-http2-thumb.png" title1="Petición con el cliente de Java para HTTP/2"
         caption="Petición con el cliente de Java para HTTP/2" >}}

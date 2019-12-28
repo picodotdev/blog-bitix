@@ -51,7 +51,7 @@ En la búsqueda de las ubicaciones de los archivos de configuración se siguen l
 Este sería el inicio del servidor de configuración y el documento JSON que devuelve para la aplicación _springcloudclient_ para el entorno _prod_ en una petición <abbr title="Hypertext Transfer Protocol">HTTP</abbr>.
 
 {{< asciinema id="30811" caption="Inicio del servidor Spring Cloud Config" >}}
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="spring-cloud-client-prod.png" thumb1="spring-cloud-client-prod-thumb.png" title1="Configuración de la aplicación para el entorno de producción"
         caption="Configuración de la aplicación para el entorno de producción" >}}

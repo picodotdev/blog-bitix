@@ -20,7 +20,7 @@ Una vez hemos conseguido [instalar el DNIe en Linux][blogbitix-1] correctamente 
 
 En esta entrada explicaré como usar el DNIe electrónico con la combinación del navegador [Firefox][firefox] y [Linux][linux]. Para ello primeramente debemos hacer que Firefox detecte el lector de tarjetas inteligentes, desde el menú de Firefox vamos a «Preferencias> Avanzado> Certificados> Dispositivos de seguridad».
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="preferencias-firefox.png" thumb1="preferencias-firefox-thumb.png" title1="Preferencias de Firefox"
         image2="administrador-dispositivos-1.png" thumb2="administrador-dispositivos-1-thumb.png" title1="Administrador de dispositivos (1)" >}}
@@ -35,7 +35,7 @@ En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes dat
 
 Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconoza el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="lector-dnie.jpg" thumb1="lector-dnie-thumb.jpg" title1="Lector de tarjetas inteligentes y DNIe"
         image2="dnie.jpg" thumb2="dnie-thumb.jpg" title2="DNI electrónico" >}}
@@ -45,7 +45,7 @@ Para probar que tenemos instalado el DNIe crrectamente y que Firefox es capaz de
 
 Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o consultas, por ejemplo, muchos bancos ofrecen medios para acceder de forma electrónica, online y mediante un navegador la consulta del saldo de nuestras cuentas y operaciones que se han realizado o para hacer transferencias. Alguno de los que he visto que soportan el DNIe como medio de autenticación son [BBK](https://portal.bbk.es), [Santander](https://www.bancosantander.es) y el infame [Bankia](http://www.bankia.com/es/), seguro que hay unos cuantos más. También otro tipo de consulta que podemos hacer es consultar los puntos de carnet de conducir que poseemos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="bbk-dnie.png" thumb1="bbk-dnie-thumb.png" title1="Autenticación BBK con DNIe"
         image2="dgt-puntos-carnet.jpg" thumb2="dgt-puntos-carnet-thumb.jpg" title2="Consultar puntos cárnet DGT" >}}
@@ -55,14 +55,14 @@ Independientemente del trámite que hagamos el proceso es el mismo si se permite
 
 En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="pin.png" thumb1="pin-thumb.png" title1="Diálogo de solicitud de PIN con el DNIe" >}}
 </div>
 
 El PIN secreto de nuestro DNI se facilita en el momento de solicitar o renovar el documento nacional de identidad, es proporcionado en un documento como el siguiente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="documento-pin-dnie-1.jpg" thumb1="documento-pin-dnie-1-thumb.jpg" title1="Documento con el PIN del DNIe (1)"
         image2="documento-pin-dnie-2.jpg" thumb2="documento-pin-dnie-2-thumb.jpg" title2="Documento con el PIN del DNIe (2)" >}}

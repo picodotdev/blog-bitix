@@ -23,34 +23,34 @@ Hace ya unos años que tengo un lector de libros electrónicos y estoy muy conte
 
 Calibre permite organizar los libros por autor y muestra las portadas de los mismos, además permite convertir entre formatos de libros electrónicos. Dos de los formatos mayormente soportados por los lectores de libros electrónicos son el _EPUB_ y _MOBI_. Los Amazon Kindle soportan _MOBI_, _AZW_, _AZW3_ y muchas de otras marcas soportan _EPUB_, dependiendo del dispositivo en que vayan a ser leídos los libros y el formato en el que se tenga el libro puede ser necesaria una conversión.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="calibre.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
+        image1="calibre.png" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
         caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 </div>
 
 La conversión entre formatos no tarda muchos y en ningún momento me he encontrado que el resultado sea malo si el original está correctamente formateado. Como los libros electrónicos son archivos pequeños la conversión se realiza en unos pocos decenas de segundos. Además, Calibre permite realizar la conversión de forma masiva sobre varios libros guardando los libros en diferentes formatos en la biblioteca.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="calibre-convertir.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Convertir un libro electrónico a otro formato con Calibre"
+        image1="calibre-convertir.png" options1="2560x1440" optionsthumb1="300x200" title1="Convertir un libro electrónico a otro formato con Calibre"
         caption="Convertir un libro electrónico a otro formato" >}}
 </div>
 
 La biblioteca se guarda en el sistema de archivos del ordenador en una estructura de directorios organizados por autor, títulos del libro y en los formatos en los que se haya realizado la conversión.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="calibre-biblioteca-autores.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Organización por autores de los archivos en la biblioteca"
+        image1="calibre-biblioteca-autores.png" options1="2560x1440" optionsthumb1="300x200" title1="Organización por autores de los archivos en la biblioteca"
         image2="calibre-biblioteca-libros.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Organización por autor de los archivos en la biblioteca"
         caption="Organización de los archivos en la biblioteca" >}}
 </div>
 
 Quizá algunos de los libros no tenga los metadatos correctos como el título, nombre del autor o el número del libro si forma parte de una serie de libros relacionados, mediante otro diálogo se puede editar y catalogar correctamente el libro.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="calibre-metadatos.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Convertir un libro electrónico a otro formato con Calibre"
+        image1="calibre-metadatos.png" options1="2560x1440" optionsthumb1="300x200" title1="Convertir un libro electrónico a otro formato con Calibre"
         caption="Metadatos de un libro electrónico" >}}
 </div>
 

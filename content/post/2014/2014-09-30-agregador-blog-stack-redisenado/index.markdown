@@ -20,7 +20,7 @@ Estas últimas semanas he podido dedicar un poco de tiempo a al proyecto persona
 
 En este tiempo que he podido dedicarle he mejorado el diseño y aspecto visual de la página, destacando a dos columnas los últimos artículos agregados, incluyendo etiquetas con imágenes y modificando ligeramente el menú de navegación al [archivo](http://www.blogstack.info/archive), [preguntas frecuentes](http://www.blogstack.info/faq) y [como solicitar agregar una bitácora](http://www.blogstack.info/faq#aggregate). Probablemente cuando tenga más ideas, un poco más de tiempo y el ánimo para implementarlas siga mejorándolo más. Pero el rediseño no ha sido todo, he credo una [cuenta de twitter][twitter-blogstack] para BS de modo que los artículos que vaya agregando sean publicados en tweets de forma automática y posiblemente lleguen a más gente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="blogstack.jpg" thumb1="blogstack-thumb.jpg" title1="Blog Stack" >}}
 </div>

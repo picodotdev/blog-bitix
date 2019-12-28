@@ -49,7 +49,7 @@ Para completar el ejemplo debemos inicializar la librería i18next con la config
 
 Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="lista-tareas-es.png" thumb1="lista-tareas-es-thumb.png" title1="Aplicación en español"
     	image2="lista-tareas-en.png" thumb2="lista-tareas-en-thumb.png" title2="Aplicación en inglés" >}}
@@ -57,7 +57,7 @@ Cambiando el idioma preferido en el navegador podemos ver los textos de la aplic
 
 El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png" title1="Una tarea completada"
     	image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" title2="Dos tareas completadas" >}}
@@ -65,7 +65,7 @@ El texto que indica cuantas tareas están completadas usa las diferentes formas 
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="peticiones-locales-es-ES.png" thumb1="peticiones-locales-es-ES-thumb.png" title1="Búsqueda de traducciones"
     	image2="peticiones-locales-dev.png" thumb2="peticiones-locales-dev-thumb.png" title2="Búsqueda de traducciones" >}}
@@ -73,7 +73,7 @@ i18next se encarga de obtener los archivos de traducciones automáticamente seg�
 
 Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="teses.png" thumb1="teses-thumb.png" title1="Pruebas unitarias" >}}
 </div>

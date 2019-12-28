@@ -40,7 +40,7 @@ Descargado el [código fuente de la aplicación de ejemplo](https://github.com/p
 
 Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Derteniendo la aplicación e iniciándolo de nuevo los datos de la sesión no se pierden al estar persistidos en Redis, el navegador envía la _cookie_ de sesión que contiene únicamente su identificativo y la aplicación recupera los datos de Redis.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="dato-en-sesion.png" thumb1="dato-en-sesion-thumb.png" title1="Dato en sesión"
     	image2="cookie-navegador.png" thumb2="cookie-navegador-thumb.png" title2="Cookie de sesión en el navegador" >}}
@@ -48,7 +48,7 @@ Lanzando una petición se puede ver como el Redis se guardan los datos de la ses
 
 Examinando los datos en Redis se puede ver que se ha creado una clave con el mismo identificativo de la cookie de sesión, en la clave están guardados los valores serializados entre ellos el nombre del atributo y su valor y otros datos como la fecha de creación, el último acceso y el intervalo máximo de inactividad antes de la expiración.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="contenido-sesion-redis.png" thumb1="contenido-sesion-redis-thumb.png" title1="Contenido sesión en redis" >}}
 </div>

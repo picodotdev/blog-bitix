@@ -29,7 +29,7 @@ He barajado varias opciones principalmente ordenadores en factor de forma peque�
 
 A pesar de saber que todos los procesadores Intel de la última década está afectados por los [importantes problemas de seguridad Meltdown y Spectre][blogbitix-293] que se están mitigando por software, de momento no se ha descubierto una forma de aprovecharlos pero quizá en un futuro se pueda y afecte de forma importante al rendimiento para corregirlos si es que se puede. Pero es que el resto de opciones he ido descartando por otros motivos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <figure>
         <img src="assets/images/logotipos/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
         <img src="assets/images/logotipos/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
@@ -41,10 +41,10 @@ El precio que calculo tendrá el Intel NUC Bean Canyon con procesador [Intel i5 
 
 He revisado algunos análisis de los NUC y me han gustado, en este por ejemplo se explica cómo instalar la memoria, el SSD, como es la BIOS/UEFI y sus opciones de configuración como por ejemplo el _ring_ que puede mostrar la actividad del SSD y se pueden personalizar los colores, también muestra el rendimiento en algunos juegos. Y en otro la gráfica HD 620 es suficiente para jugar a Diablo 3 a 30 fotogramas por segundo en un resolución de 1080p bajando detalles, esta gráfica integrada equivale a una dedicada NVIDIA GeForcd 920m _laptop_ o GeForce 730 _desktop_ que no está del todo mal para un jugador ocasional si no importa jugar bajando algunos detalles de calidad. En GNU/Linux es posible jugar a juegos destinados a Windows con [PlayOnLinux](https://www.playonlinux.com/en/).
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/GBCI3Xg3b9g" frameborder="0" allowfullscreen></iframe>
 </div>
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/su06vU8X1V8" frameborder="0" allowfullscreen></iframe>
 </div>
 
@@ -60,13 +60,13 @@ El uso que le daré es el de programación, virtualización, contenedores [Docke
 
 Los Gigabyte Brix ya hay algunos modelos con los Intel i5 8250U a un precio de unos 440€, sin embargo, no me gusta que no tienen luz indicador de actividad de SSD y creo que su BIOS/UEFI es en modo texto. La luz de actividad de SSD me parece importante para saber si en algún momento el ordenador se queda bloqueado o por algún tipo de problema lee, o peor escribe, constantemente al almacenamiento persistente cuando no debería. Los Zotac están dotados de una buena cantidad de puertos USB, incluso algunos tiene dos conexiones de red pero son algo caros y la mayoría de sus modelos están orientados a _gamers_, no son fáciles de encontrar ni siquiera en [Amazon][amazon] ni en [PC Componentes][pccomponentes] que es donde compraré finalmente el equipo. De MSI Cubi no hay muchos modelos y aún no he visto ninguno anunciado con un Intel de 4 núcleos. Los Slimbook ONE me gustaban pero los modelos con los Intel de 4 núcleos solo tienen una ranura de memoria, se les pueden instalar 32 GiB... cuando haya módulos de memoria de 32 GiB, ahora me tendría que conformar con 16 GiB.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07DGVT2Q9&linkId=9d60080eaf057ed135f9a7518f1e3e9d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N6SRT4H&linkId=17acb1dd67101dd9012b6020fa699714"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D8ZK6QB&linkId=84f61ad5974ea5bb1b1c0d644818349a"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N6SG8DP&linkId=d2208cc6633acfc885c4f2f7ef94c7a0"></iframe>
 </div>
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CZ6GMRB&linkId=6c7ae73f4dc54a1da316d1b5292ca18d"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B019FRBHZ0&linkId=6353b999569a8b0acfdc24bb1a9e4532"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CGGNX7S&linkId=f2af5cb1f93ced34794cb7a11675b810"></iframe>
@@ -76,7 +76,7 @@ También he seguido los NUC con un Intel Core i3 7100U sin embargo tiene solo 2 
 
 Preferiría un microprocesador [AMD][amd] ya que solo están afectados por algunas variantes de _Spectre_, pero AMD no tiene tanta diversidad de productos como tiene Intel, no tienen nada parecido a los Intel NUC y en portátiles prácticamente todos los modelos equipan un Intel, quizá cambia ahora algo con los Ryzen. Por rendimiento y precio posiblemente elegiría un [AMD Ryzen 2400G](https://www.amd.com/es/products/apu/amd-ryzen-5-2400g) pero de momento las placas con el _chipset_ B450 para sacarle el máximo rendimiento aún no están disponibles, en la generación 1xxx de los Ryzen no hay modelos con gráfica integrada, tendría que ser un mini-ITX y el equipo me lo tendría que montar yo, no es difícil pero si tuviese algún imprevisto o incompatibilidad sería un problema por tener que devolver piezas y buscar otras, además no estoy seguro del ruido que haría, lo quiero muy silencioso al menos en tareas ofimáticas, navegación por internet y cosas simples, no estoy seguro de que lo sea con el ventilador de la CPU y fuente de alimentación. Ocupa más que un NUC para mi importante si en un futuro le quiero dar uso como ordenador secundario, servidor personal o quisiera traspasarlo. Pero por 400€ se tiene un ordenador muy decente en plataforma AMD Ryzen a falta de memoria y SSD.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077BZRZVL&linkId=a905704fcfef9ed2713a34d3ddb555fa"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B079D8FD28&linkId=143ee2d24bf0649b2d0affddf13f24cb"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073R8DB3G&linkId=5f0cd76fff30430ed354ec67845802e8"></iframe>
@@ -88,7 +88,7 @@ La pantalla que estoy siguiendo es una 2K de [BenQ PD2700Q](https://amzn.to/2lts
 
 Entre otras cosas están el teclado y ratón que me conformo con un modelo básico y barato como el [Logitech MK120](https://amzn.to/2yCcE2T) y una alfombrilla que cubra la mesa.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=1f32d07d228fd9c0eaaafcd1146b25d8"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00564GWEI&linkId=e51cd8d969848df3bb23c36529afdc8e"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01HNYV65S&linkId=76bdcf7d3ff1a90eff397bc913a911d7"></iframe>

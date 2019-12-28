@@ -2,7 +2,7 @@
 pid: 452
 title: "Hemeroteca #16"
 url: "/2019/12/hemeroteca-16/"
-date: 2019-12-01T19:00:00+01:00
+date: 2019-12-27T19:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -19,11 +19,11 @@ library: "true"
 
 {{< logotype image1="hugo.svg" title1="Hugo" width1="200" >}}
 
-Se acaba otro año y en este caso además efeméride de la década, en el siguiente 2020 harán 10 años ya desde que empecé a escribir artículos técnicos principalmente sobre [GNU][gnu]/[Linux][linux] y Java, algunos artículos de opinión y desempaquetados los productos que compro relacionados con la tecnología. Una década escribiendo uno o dos artículos semanales, no es fácil aguantar durante todo este tiempo y conservar la motivación y tener el tiempo que requieren cada uno de los artículos. Muchos surgen de ideas del trabajo que en muchos casos no puedo aplicar laboralmente, salvo alguna pequeña excepción, por implementarlos en Java por mi preferencia en el caso de los de programación y usar otras tecnologías laboralmente. 
+Se acaba otro año y en este caso además la década, en el siguiente 2020 harán 10 años ya desde que empecé a escribir artículos técnicos principalmente sobre [GNU][gnu]/[Linux][linux] y Java, algunos artículos de opinión y desempaquetados los productos que compro relacionados con la tecnología. Una década escribiendo uno o dos artículos semanales, no es fácil aguantar durante todo este tiempo y conservar la motivación y tener el tiempo que requieren cada uno de los artículos. Muchos surgen de ideas del trabajo que en muchos casos no puedo aplicar laboralmente, salvo alguna pequeña excepción, por implementarlos en Java por mi preferencia en el caso de los de programación y usar otras tecnologías laboralmente. 
 
-Este segundo semestre he escrito algunos menos artículos, 33, frente a los 46 del primer semestre y es que con la [compra de una Play Station 4][blogbitix-432] estoy dedicando parte del tiempo que antes dedicaba al blog e investigar tecnología a jugar a algunos videojuegos, aún así esa cantidad de artículos sigue siendo al menos uno por semana que es mi cadencia mínima de publicación que deseo. En total en el 2019 he publicado 82 artículos para llegar a la cifra de 453 artículos en el tiempo de vida de Blog Bitix desde finales del 2013, son muchos más teniendo en cuenta para ser algo que dedico en mi tiempo libre y cada caracter de los artículos requiere teclearlo, idea e imagen a recortar y capturar está colocada de forma artesanal y manual, lo único automatizado es generar la versión estática de la web que gracias a [Hugo][hugo], [GitHub Pages][github-pages] y algunos comandos de GNU/Linux me permite centrarme más en solo escribir el contenido.
+Este segundo semestre he escrito algunos artículos menos, 34, frente a los 48 del primer semestre y es que con la [compra de una Play Station 4][blogbitix-432] estoy dedicando parte del tiempo que antes dedicaba al blog e investigar tecnología a jugar a algunos videojuegos, aún así esa cantidad de artículos sigue siendo al menos uno por semana que es mi cadencia mínima de publicación que deseo. En total en el 2019 he publicado 82 artículos para llegar a la cifra de 453 artículos en el tiempo de vida de Blog Bitix desde finales del 2013, son muchos más teniendo en cuenta para ser algo que dedico en mi tiempo libre y cada caracter de los artículos requiere teclearlo, corregir las faltas de ortografía, hacer que las frases estén bien construidas sintácticamente y sean fáciles de comprender, cada idea e imagen a recortar y capturar está colocada de forma artesanal y manual, lo único automatizado es generar la versión estática de la web que gracias a [Hugo][hugo] junto con [GitHub Pages][github-pages] y algunos comandos de GNU/Linux me permite centrarme más en solo escribir el contenido.
 
-Pero los artículos no es lo único que he hecho, he recibido algunas _pull request_ e _issues_ para [Script de instalación de Arch Linux desatendido, automatizado y personalizable][blogbitix-204], he continuado manteniendo la traducción al español de [VLC][vlc], he enviado una actualización con las nuevas cadenas y corregidos algunos errores de la traducción al español para la reciente versión 6.1 de [VirtualBox][virtualbox] y tratado de mejorar la de [KeePassXC][keepassxc] y algunas mejoras internas para generar el blog, incluido [rediseñarlo para que el contenido esté centrado, más grande horizontalmente y publicidad lateral _sticky_][blogbitix-404].
+Pero los artículos no es lo único que he hecho este 2019, he recibido algunas _pull request_ e _issues_ para [Script de instalación de Arch Linux desatendido, automatizado y personalizable][blogbitix-204] y [el repositorio en GitHub](https://github.com/picodotdev/alis/) tiene una buena cantidad de _stars_ y _forks_, he continuado manteniendo la traducción al español de [VLC][vlc], he enviado una actualización con las nuevas cadenas y corregidos algunos errores de la traducción al español para la reciente versión 6.1 de [VirtualBox][virtualbox] y tratado de mejorar la de [KeePassXC][keepassxc], algunas mejoras internas para generar el blog, incluido [rediseñarlo para que el contenido esté centrado, más grande horizontalmente y publicidad lateral _sticky_][blogbitix-404].
 
 Listando los artículos que he escrito durante este semestre, en la categoría de artículos de desempaquetado he escrito sobre la Play Station 4.
 
@@ -69,30 +69,30 @@ La otra temática principal de mi blog es la programación con el lenguaje [Java
 * [Implementar un segundo factor de autenticación en una aplicación web Java con Spring][blogbitix-445]
 * [Generar documentos, informes y facturas en formato PDF con JasperReports y Java][blogbitix-449]
 
-En cuanto a las cifras del blog en número de visitas se ha mantenido prácticamente igual al 2018 con ~500K páginas vistas. Aunque siempre es un punto de motivación normalmente no pienso en escribir artículos que atraigan a más lectores sino antes en lo que me apetece escribir y publicar. Aún escribiendo artículos más avanzados uno de los artículos más visitados es a pesar de su sencillez y simplicidad es [4 formas de hacer un bucle for  en Java][blogbitix-247], he escrito artículos mucho más avanzados que hacer varias formas de hacer un bucle _for_ pero parece que los artículos sencillos tienen un público más amplio que los artículos más avanzados que tiene un público más restringido.
+En cuanto a las cifras del blog en número de visitas se ha mantenido prácticamente igual al 2018 con ~500K páginas vistas, a pesar de la cifra anualizada no son más de 1.5K al día que no es mucho, hay mucho margen de mejora. Aunque siempre es un punto de motivación normalmente no pienso en escribir artículos que atraigan a más lectores sino antes en lo que me apetece escribir y publicar. Aún escribiendo artículos más avanzados uno de los artículos más visitados es a pesar de su sencillez y simplicidad [4 formas de hacer un bucle for  en Java][blogbitix-247], he escrito artículos mucho más avanzados que hacer varias formas de hacer un bucle _for_ pero parece que los artículos sencillos tienen un público más amplio que los artículos más avanzados.
 
-He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desdeñanado conseguir más visitas pero sin ser esta la principal motivación de escribir algo. Como cada año, para observar las métricas pasados varios, hago públicos los datos de visitas en Analytics, ingresos de AdSense y de afiliación de Amazon. Por si a alguien sin un blog para hacerse una idea, con uno o por comparar le resultan interesantes.
+He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desdeñanado conseguir más visitas pero sin ser esta la principal motivación de escribir algo. Como cada año, para observar las métricas pasados varios, hago públicos los datos de visitas en Analytics, ingresos de AdSense y de afiliación de Amazon. Por si a alguien sin blog, con uno o por comparar le resultan interesantes y quiere hacerse una idea.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="analytics-2019.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2019 de Blog Bitix"
+        image1="analytics-2019.png" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2019 de Blog Bitix"
         image2="gadsense-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2019 de Blog Bitix"
         caption="Evolución visitas e ingresos en 2019" >}}
 </div>
 
 En cuanto a ingresos algunos menos 410€ frente a 480€ del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 euros que no está mal.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gadsense-ingresos-2019.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
+        image1="gadsense-ingresos-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
         image2="gadsense-paginas-vistas-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
         image3="gadsense-clics-2019.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
     {{< figureproc
-        image1="gadsense-crt-2019.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2019 de Blog Bitix"
+        image1="gadsense-crt-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2019 de Blog Bitix"
         image2="gadsense-cpc-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2019 de Blog Bitix"
         image3="gadsense-rpm-2019.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2019 de Blog Bitix" >}}
     {{< figureproc
-        image1="gadsense-tipos-de-puja-2019.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2019 de Blog Bitix"
+        image1="gadsense-tipos-de-puja-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2019 de Blog Bitix"
         image2="gadsense-plataformas-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2019 de Blog Bitix"
         caption="Métricas de AdSense" >}}
 </div>
@@ -101,16 +101,16 @@ En los ingresos por enlaces de afiliado de [Amazon][amazon] ha habido algunos me
 
 Aparte de la publicidad de AdSense la monetización por afiliación es una gran estrategia para conseguir ventas en un negocio beneficioso para las tres partes el editor que obtiene una recompensa por la venta motivándole a seguir escribiendo artículos que los usuarios consideren buenos como para finalizar en una compra, el usuario que dependiendo del artículo obtiene información objetiva que le disipa las dudas como para realizar con mayores garantías de hacer una buena compra y el vendedor que aumenta su facturación y en caso de que no se produzca la venta coloca enlaces dando su página de comercio electrónico a conocer con los enlaces disponibles para una futura ocasión u otros usuarios.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="amazon-2019.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Facturación e ingresos Amazon" >}}
+        image1="amazon-2019.png" options1="2560x1440" optionsthumb1="600x450" title1="Facturación e ingresos Amazon" >}}
 </div>
 
 Esto es todo, ¡buen 2020!
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="christmas-tux-2019.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2019"
+        image1="christmas-tux-2019.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2019"
         caption="¡Buen 2020!" source="klowner.com" >}}
 </div>
 

@@ -54,14 +54,14 @@ Una vez instalados los paquetes necesarios y realizada la configuración se pued
 
 {{< code file="wine-battlenet.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="battle-net-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
+        image1="battle-net-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
         image2="battle-net-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
         image3="battle-net-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Cliente de Battle.net"
         caption="Cliente de Battle.net" >}}
     {{< figureproc
-        image1="battle-net-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
+        image1="battle-net-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
         image2="battle-net-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
         image3="battle-net-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Instalación de Diablo 3"
         caption="Instalación de Diablo 3" >}}
@@ -71,9 +71,9 @@ Instalado el juego se inicia con un comando de Wine o con el acceso directo del 
 
 {{< code file="wine-diablo3.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="menu-aplicaciones.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Menú de aplicaciones con accesos directos de Battle.net y Diablo 3"
+        image1="menu-aplicaciones.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Menú de aplicaciones con accesos directos de Battle.net y Diablo 3"
         caption="Menú de aplicaciones" >}}
 </div>
 
@@ -81,19 +81,19 @@ Leyendo la [página de información de Diablo 3](https://appdb.winehq.org/object
 
 Diablo 3 comienza con una cinemática introductoria que en mi caso no iba bien y tampoco las siguientes cinemáticas que se reproducen en ciertos hitos del juego. Para verlas se puede ir a Youtube, cada clase tiene una inicial distinta. Como he elegido como clase la del monje para mi primer personaje pongo la de este.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
     <iframe width="640" height="360" src="https://www.youtube.com/embed/8U-grPG5W8M?rel=0" frameborder="0" allowfullscreen></iframe>
     <iframe width="640" height="360" src="https://www.youtube.com/embed/STx7Um655aw?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 La trama del juego comienza con la caída de una estrella en la antigua catedral de Tristán y el personaje en el camino dirigiéndose hacia Nueva Tristán con motivo de tal acontecimiento.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="diablo-3-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
+        image1="diablo-3-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
         image2="diablo-3-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
     {{< figureproc
-        image1="diablo-3-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
+        image1="diablo-3-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
         image2="diablo-3-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
         image3="diablo-3-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Jugando a Diablo 3"
         caption="Juego de Diablo 3" >}}
@@ -107,9 +107,9 @@ El juego permite ajustar la calidad gráfica a la capacidad del equipo para tene
 * A 1920x1080 va a 60 fps.
 * A 1600x900 va a 70 fps.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="opciones-graficas.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Opciones de calidad gráfica usadas para medir el rendimiento en fps"
+        image1="opciones-graficas.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Opciones de calidad gráfica usadas para medir el rendimiento en fps"
         caption="Opciones de calidad gráfica usadas para medir el rendimiento en fps" >}}
 </div>
 
@@ -117,18 +117,18 @@ Por defeco en mi caso no he podido cambiar la resolución del juego desde las op
 
 {{< code file="wine-explorer.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="wine-exporer-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diablo 3 en Wine modo explorardor"
+        image1="wine-exporer-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Diablo 3 en Wine modo explorardor"
         image2="wine-exporer-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Diablo 3 a resolución 1920x1080"
         caption="Diablo 3 en Wine modo explorardor a 1920x1080" >}}
 </div>
 
 Si soy sincero en toda mi época jugona creo que no he pagado por ningún juego de los que he tenido y he jugado a muchos de los más populares que estaban cada momento. Así que recuerde es muy posible que me decida a pagar por este Diablo 3 por primera vez por un juego viendo que puedo jugar el GNU/Linux perfectamente. Se puede mediante [PayPal][paypal] y por supuesto con tarjeta de crédito. La única duda que tengo es si ejecutar Diablo 3 sobre Wine es algo aceptable por Blizzard o si esto es motivo de expulsión y cierre de cuenta, el llamado _baneo_, hay comentados algunos casos por estos motivos. El [juego básico de Diablo 3](https://eu.shop.battle.net/es-es/product/diablo-iii) cuesta 20 € y [la expansión Reaper of Souls](https://eu.shop.battle.net/es-es/product/diablo-iii-reaper-of-souls) que incluye una nueva clase la de cruzado, el acto V, modo aventura y nuevas habilidades en clases otros 20€, [comprando ambos a la vez](https://eu.shop.battle.net/es-es/product/diablo-iii-battle-chest) son 30€. Hay una [segunda expansión, Despertar del Nigromante](https://eu.shop.battle.net/es-es/product/diablo-iii-rise-of-the-necromancer), que permite jugar con una clase adicional de nigromante por 15 €.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="pago.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Formas de pago"
+        image1="pago.png" options1="2560x1440" optionsthumb1="300x200" title1="Formas de pago"
         caption="Formas de pago" >}}
 </div>
 

@@ -19,12 +19,12 @@ series: ["bilbostack"]
 
 A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha tenido lugar en el [Palacio Euskalduna][euskalduna] en vez de la [Universidad de Deusto][universidad-de-deusto] permitiendo un aforo aún mayor que el de la universidad y con unas salas más grandes y butacas más cómodas que las espartanas sillas de la uni en las que igualmente si se ponía atención y luego esfuerzo se aprendían cosas interesantes, muchos hemos pasado varios años en ellas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="bilbostack-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
+        image1="bilbostack-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
         image2="bilbostack-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="BilboStack 2018" >}}
     {{< figureproc
-        image1="bilbostack-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
+        image1="bilbostack-3.jpg" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
         image2="presentacion.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Presentación BilboStack 2018"
         caption="BilboStack 2018" >}}
 </div>
@@ -33,9 +33,9 @@ En la presentación inicial se ha comentado como se gestó la primera BilboStack
 
 Hasta el momento siempre se ha mantenido gratuita la entrada previa reserva pero este año con la ayuda de los patrocinadores han podido acceder a este gran recinto y costear el viaje a los ponentes, esto demuestra lo agradecidos que debemos estar a los de los  años anteriores ya que además de hacer la presentación compartiendo su conocimiento se pagaban ellos mismos el viaje.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="euskalduna-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Palacio Euskalduna"
+        image1="euskalduna-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Palacio Euskalduna"
         image2="euskalduna-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Palacio Euskalduna"
         caption="Palacio Euskalduna" >}}
 </div>
@@ -54,9 +54,9 @@ Número de asistentes por año:
 
 Por supuesto tener a disposición para la conferencia este recinto y los ponente sin que estos se paguen el viaje ha sido más fácil y posible gracias a los patrocinadores que además han ofrecido algunas pegatinas, cuadernillos, folletos a los asistentes e incluso ofertas laborales.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="patrocinadores.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Patrocinadores"
+        image1="patrocinadores.png" options1="2560x1440" optionsthumb1="300x200" title1="Patrocinadores"
         image2="merchandising.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Merchandising"
         caption="Patrocinadores" >}}
 </div>
@@ -154,9 +154,9 @@ Referencia:
 * [Libro Desarrolla aplicaciones con Vue](https://www.gitbook.com/book/jdonsan/desarrolla-aplicaciones-con-vuejs/details)
 * [Curso Testing con Vuejs, CodelyTv Pro](https://www.youtube.com/watch?v=esFGn_8S_mw)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="lo-que-no-se-vue.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Lo que no se Vue" >}}
+        image1="lo-que-no-se-vue.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Lo que no se Vue" >}}
 </div>
 
 ### CSS Grid Layout en acción <em>por Diana Aceves</em>
@@ -187,9 +187,9 @@ Referencia:
 * [CSS Flexbox Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
 * [Grid Auto-Placement Is Ready](https://blogs.igalia.com/mrego/2015/02/25/grid-auto-placement-is-ready/)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="css-grid-layout-en-accion.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="CSS Grid Layout en acción" >}}
+        image1="css-grid-layout-en-accion.jpg" options1="2560x1440" optionsthumb1="300x200" title1="CSS Grid Layout en acción" >}}
 </div>
 
 ### Camino a producción <em>por Mario Marin</em>
@@ -207,9 +207,9 @@ En este punto es cuando empiezan a mejorar, aprendiendo cosas que antes no conoc
 
 Echando la vista atrás se ve lo que has mejorado y es satisfactorio, a pesar de que quedan muchas cosas por hacer.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="camino-a-produccion.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Camino a producción" >}}
+        image1="camino-a-produccion.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Camino a producción" >}}
 </div>
 
 ### Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em>
@@ -224,9 +224,9 @@ A nivel de la infraestructura una forma de interfaz son los eventos, un sistema 
 
 Aunque los microservicios solucionan algunos problemas de los monolitos traen consigo nuevo problemas como una consistencia eventual en las diferentes bases de datos que posee cada microservicio, también puede haber duplicados y no se garantiza el orden de los mensajes.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="evitando-el-efecto-domino-en-nuestros-micoservicios.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Evitando el efecto dominó en nuestros (mico)servicios" >}}
+        image1="evitando-el-efecto-domino-en-nuestros-micoservicios.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Evitando el efecto dominó en nuestros (mico)servicios" >}}
 </div>
 
 Cuando en diciembre se pusieron las entradas para reserva a no mucho tardar y con las ganas de ir a la conferencia estaba motivado para ir, en los días anteriores siempre da algo de pereza la asistencia ya que después de una semana de trabajo las ganas no son tantas de pasar la mañana o el día también con el mismo tema sin desconectar ni descansar, pero luego después de haber madrugado y las presentaciones queda una buena sensación y de haber merecido la pena el esfuerzo.

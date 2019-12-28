@@ -22,14 +22,14 @@ summary: "Si Microsoft quisiera no habría usuarios de Windows sin la correspond
 
 Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alguna distribución de Linux, de buena calidad, con buenas especificaciones y con un precio razonable, una de ellas son los portátiles de [Slimbook][slimbook]. En la bitácora de [KDE Blog](http://www.kdeblog.com/) hay un [artículo sobre un modelo de estos portátiles](http://www.kdeblog.com/slimbook-tu-portatil-linux-de-calidad.html) y un [vídeo con el _unboxing_](http://www.kdeblog.com/unboxing-de-mi-slimbook-con-kubuntu-15-04-y-plasma-5.html).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="windows-10.png" thumb1="windows-10.png" title1="Windows 10" >}}
 </div>
 
 ¿Por qué digo que no le importa que no pagues la licencia? Porque versión tras versión la medidas incluidas en Windows u Office para protegerlos de un uso sin licencia son evitadas sin aparentemente muchas dificultades y al cabo de muy poco tiempo aparecen en las páginas de descargas las imágenes junto con las instrucciones a seguir para instalarlo sin ningún tipo de problema. Y en Windows 10 será igual. ¿Por que las medidas de validación incluidas no evitan el uso sin licencia? Porque le conviene a Microsoft no ser muy restrictivos. Si lo fueran algunos pagarían la licencia pero otros muchos dirían _¡¿que? ¿que la licencia cuesta 119 € (o 199, o 50 según lo que se consigue con devolución en un equipo nuevo)? ¿un tercio (aprox.) de lo que me costó el ordenador?!_, y eso solo Windows, si además le sumamos Office y otros programas el coste de las licencias podría superar con creces el precio del equipo. Peor aún, cantidad a desembolsar cada unos pocos años por la obsolescencia y nuevas versiones. ¿Y qué harían esos  que no pudiesen usar Windows u Office? Buscar alternativas y... ¿cuál creéis que eligirían? La también cara competencia de [Apple][apple] con sus [Mac][mac] o alguna distribución GNU/Linux como [Ubuntu][ubuntu], [Linux Mint][linuxmint], [Debian][debian], [Fedora][fedora], [openSUSE][opensuse], etc... Que la gente supiese y pagase el coste de las licencias de software probablemente sería una de las mejores formas de fomentar el uso del software libre y GNU/Linux.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="linux-gnu-ditributions.png" thumb1="linux-gnu-ditributions.png" title1="Linux, GNU, distribuciones" >}}
 </div>
@@ -38,7 +38,7 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
 
 Solo hay que ver las millonadas obscenas que se adjudican en [contratos para la compra de licencias en la administración pública](https://www.meneame.net/m/tecnolog%C3%ADa/concurso-millonario-migrar-windows-xp-8-1-comunidad-madrid). Dinero que salen de tus impuestos que aún muchos políticos y funcionarios (ir)responsables de tales adjudicaciones no comprenden (o no quieren comprender) que dicho abultado gasto recurrente está mucho mejor invertido en empresas locales que crean puestos de trabajo en la región y en software libre del que cualquiera puede beneficiarse en vez de en una empresa que para poco de su desarrollo realiza en cada país donde es usado (notar la diferencia entre gasto e inversión como se comenta en [El blog de danitxu](http://www.danitxu.com/blog/2015/02/23/podemos-y-debemos-apostar-por-el-software-libre/)). El coste de las alternativas de software libre pueden ser igual de obsceno, más abultado aún o mucho menor pero la diferencia entre otras es que muy seguramente no sea por las licencias sino por los servicios de consultoría o desarrollo que pueden ser ofrecidos por empresas locales y de los que dependiendo del caso cualquiera podría beneficiarse.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="windows-genuine.jpg" thumb1="windows-genuine.jpg" title1="Windows Genuine" >}}
 </div>

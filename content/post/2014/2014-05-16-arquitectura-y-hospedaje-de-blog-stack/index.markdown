@@ -28,14 +28,14 @@ Generar el contenido de forma estática tiene limitaciones y obliga a hacer las 
 
 Con todo la arquitectura de despliegue y hospedaje de Blog Stack es la siguiente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
         image1="arquitectura-blogstack.png" thumb1="arquitectura-blogstack-thumb.png" >}}
 </div>
 
 En cuanto a la aplicación y el código Java en si las partes importantes están en un [servicio que se encarga de la indexación](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/IndexerServiceImpl.java) extrayendo el contenido de las fuentes y guardalo en una base de datos, otro [servicio para la generación del contenido](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/GeneratorServiceImpl.java) del sitio de forma estática (html, css, js, imgs, ...) y finalmente el [programa Java principal](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/cli/Main.java) que sirve para lanzarlo desde la linea de comandos, el resto son las [clases del modelo de datos](https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/entities)  y los [DAO de persistencia y acceso a dataos](https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/services/dao). La aplicación sigue el esquema tradicional de 3 capas, la de presentación (páginas y componentes de tapestry), la de lógica de negocio formada por los servicios de indexación, generación y los DAOs (formada por el contenedor de servicios de tapestry y spring) y finalmente la capa de datos formada por una base de datos H2 (donde hibernate interviene). En realidad en BS no hay un servidor de aplicaciones sino que se usa Tapestry en una aplicación «standalone».
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
         image1="arquitectura-aplicacion-blogstack.png" thumb1="arquitectura-aplicacion-blogstack-thumb.png" title="Arquitectura de la aplicación Blog Stack" >}}
 </div>

@@ -22,7 +22,7 @@ Como es habitual herramientas que gestionan tareas disponemos de varias algunas 
 
 Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imagen de Bitnami con VirtualBox. En la [introducción a Bitnami][blogbitix-54] comento qué es y como nos puede ayudar a disponer de software que en algunos casos no es simple de instalar y que con Bitnami podemos disponer de forma sencilla y rápida, además de como usar con VirtualBox cualquier imagen de Bitnami de las herramientas ofrecidas. Una vez seguidos los pasos de la guía anterior podemos acceder a Redmine con el navegador web y una dirección similar a _http\://192.168.0.11_, el usuario y contraseña para acceder es user y bitnami respectivamente.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="proyecto.png" thumb1="proyecto-thumb.png" title1="Proyecto"
     	image2="peticion.png" thumb2="peticion-thumb.png" title2="Petición" >}}
@@ -30,7 +30,7 @@ Si queremos evaluar Redmine una forma sencilla podemos hacerlo mediante una imag
 
 Con Redmine podemos adaptar el flujo de las tareas a la forma de organización que empleemos, podemos personalizar el grafo de estados que siguen las tareas y que personas tiene permisos para hacer cada uno de los cambios de estado. También podemos añadir campos personalizados que queremos recoger para cada petición, por ejemplo, podemos querer dar un tamaño a las tareas en función de si estimamos que es grande, media o pequeña. También podemos crear filtros y guardarlos para encontrar fácilmente tareas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="estados.png" thumb1="estados-thumb.png" title1="Estados"
     	image2="propiedades.png" thumb2="propiedades-thumb.png" title2="Propiedades" >}}
@@ -41,7 +41,7 @@ Con Redmine podemos adaptar el flujo de las tareas a la forma de organización q
 
 Además de gestionar las tareas Redmine dispone de herramientas que nos pueden ser útiles en el proyecto como una wiki para recoger documentación del proyecto y un repositorio de documentos para aquellos que no queremos incluir en la herramienta de control de versiones por su tamaño pero que queremos que estén disponibles para cualquiera que trabaje con el proyecto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="wiki.png" thumb1="wiki-thumb.png" title1="Wiki"
     	image2="archivos.png" thumb2="archivos-thumb.png" title2="Archivos" >}}

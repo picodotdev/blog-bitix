@@ -70,9 +70,9 @@ El archivo de Docker Compose contiene dos contenedores uno para Prometheus y otr
 
 Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas recogidas pero no tiene la habilidad de crear paneles que recogen una colección de gráficas relacionadas o un editor de consultas más avanzado como tiene Grafana.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="prometheus-graph.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Métrica de la aplicación en Prometheus"
+        image1="prometheus-graph.png" options1="2560x1440" optionsthumb1="300x200" title1="Métrica de la aplicación en Prometheus"
         image2="grafana-graph.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Métrica de la aplicación en Grafana"
         caption="Métrica de la aplicación en Prometheus y Grafana" >}}
 </div>
@@ -80,17 +80,17 @@ Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas r
 Una vez que Prometheus recolecta los datos de las métricas al introducir las expresiones se proporciona asistencia de código. Por otro lado, en la sección _Status > Targets_ de 
 Prometheus se puede ver el estado de los servicios de los que recolecta métricas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="prometheus-targets.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Estado de servicios en Prometheus"
+        image1="prometheus-targets.png" options1="2560x1440" optionsthumb1="300x200" title1="Estado de servicios en Prometheus"
         caption="Estado de los servicios rastreados por Prometheus" >}}
 </div>
 
 Como Spring Boot Actuator exporta muchas métricas del funcionamiento del servicio Grafana puede crear gráficas de todas ellas. No hace falta crear un _dashboard_ desde cero, se pueden descargar e importar _dashboards_. Este [ejemplo para Micrometer](https://grafana.com/dashboards/4701) recoge la memoria de la JVM (_heap_ y no _heap_), uso de CPU, carga, hilos, estado de hilos, descriptores de archivos, recolector de basura, _classloader_ y entrada/salida básica.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="grafana-spring-boot-micrometer-dashboard.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Estado de servicios en Prometheus"
+        image1="grafana-spring-boot-micrometer-dashboard.png" options1="2560x1440" optionsthumb1="600x450" title1="Estado de servicios en Prometheus"
         caption="Dashboard de una aplicación Spring Boot en Grafana" >}}
 </div>
 

@@ -21,9 +21,9 @@ Uno de los sistemas de control de versiones más utilizado es [Git][git]. [Bash]
 
 El intérprete [Zsh][zsh] y [Oh-My-Zsh](https://ohmyz.sh/) ofrece mediante sus temas soporte para los repositorios de git modificando el símbolo del sistema para mostrar más información acerca del estado. En Bash también es posible añadir soporte para que muestre información como la rama actual en la que se está trabajando, si hay archivos modificados o no añadidos al control de versiones, si hay archivos en el _stash_ y una comparación entre la rama actual y la del origen o _upstream_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="terminal.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
+        image1="terminal.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
         image2="git-bash.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Prompt de la terminal en carpeta git"        
         caption="Prompt de la terminal por defecto y en carpeta de git" >}}
 </div>

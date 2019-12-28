@@ -45,7 +45,7 @@ El Viewsonic es un modelo del 2015 con dos HDMI 1.3 y DisplayPort 1.2. El Benq P
 * [Viewsonic VG2719-2K](https://amzn.to/2OIyidi) ([página fabricante](https://www.viewsonic.com/es/products/lcd/VG2719-2K.php))
 * [V7 L27HAS2K-2E](https://amzn.to/2CZj8dx) ([página fabricante](http://www.v7world.com/es/productos/monitores/27-qhd-widescreen-led-monitor.html))
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=37c01c8c71f103d6c7ad009afd2892a9"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0737M9QP7&linkId=3f46b23e2d6b884222796306587cced8"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M913DVG&linkId=9a692fa2ff43017270841146c742bb88"></iframe>
@@ -59,7 +59,7 @@ Los otros candidatos destacables que he visto han sido alguno en formato panorá
 * [LG 29UB67-B](https://amzn.to/2Pecupj)
 * [iiyama Prolite XUB2792QSU-B1](https://amzn.to/2OFcHlX)
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798R91FD&linkId=508f802016832287212a9dcd4d793770"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00T5P1USW&linkId=24fc95197f28f3d4d9db6514153de223"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N2Z7OZT&linkId=9560c7d04ae8f76ee1e3cd4a20abe387"></iframe>
@@ -67,7 +67,7 @@ Los otros candidatos destacables que he visto han sido alguno en formato panorá
 
 Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [Benq BL2711U](https://amzn.to/2yBnLq7), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. 
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07GLR6RQF&linkId=c69a55a9bb5bf63725b1bdffaa567444"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RORBPEW&linkId=b0cf487ca59691649f2507aa3837a2cf"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798RDRMH&linkId=3160f5b6618d07e065b1f81192395611"></iframe>
@@ -85,9 +85,9 @@ En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos co
 
 En [PcComponentes][pccomponentes] los precios no varían tanto pero en Amazon en algunos productos si hay notables diferencias entre pocos días o alguna semana, sobre todo en productos de tecnología. Para conocer si el precio actual de un producto es alto, bajo o está bajando la página [CamelCamelCamel][camelcamelcamel] permite introduciendo la URL del producto de Amazon mostrar una gráfica con la evolución del precio.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="camelcamelcamel-benq-pd2700q.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Evolución del precio del monitor Benq PD2700Q"
+        image1="camelcamelcamel-benq-pd2700q.png" options1="2560x1440" optionsthumb1="300x200" title1="Evolución del precio del monitor Benq PD2700Q"
         caption="Evolución del precio del monitor Benq PD2700Q" >}}
 </div>
 
@@ -151,83 +151,83 @@ El monitor está perfectamente embalado en una caja impresa con las principales 
 * Cable USB para conectar al monitor y ordenador.
 * Gancho para colgar cascos en la parte trasera.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-unboxing-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
+        image1="benq-pd2700q-unboxing-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
         image2="benq-pd2700q-unboxing-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
         image3="benq-pd2700q-unboxing-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
     {{< figureproc
-        image1="benq-pd2700q-unboxing-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
+        image1="benq-pd2700q-unboxing-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
         image2="benq-pd2700q-unboxing-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
         image3="benq-pd2700q-unboxing-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
     {{< figureproc
-        image1="benq-pd2700q-unboxing-7.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
+        image1="benq-pd2700q-unboxing-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
         image2="benq-pd2700q-unboxing-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
         caption="Desempaquetado" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-unboxing-9.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
+        image1="benq-pd2700q-unboxing-9.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
         image2="benq-pd2700q-unboxing-10.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
         image3="benq-pd2700q-unboxing-11.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
     {{< figureproc
-        image1="benq-pd2700q-unboxing-12.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
+        image1="benq-pd2700q-unboxing-12.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
         caption="Contenido de la caja" >}}
 </div>
 
 El monitor posee unos biseles bastante amplios de 2 cm sin embargo al ser el marco negro con acabado mate no distraen mucho ni son molestos estéticamente. Aún así la tendencia es que estos biseles sean reducidos pero este modelo de monitor ya tiene algunos años.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-review-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
+        image1="benq-pd2700q-review-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
         image2="benq-pd2700q-review-17.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
         image3="benq-pd2700q-review-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla" >}}
     {{< figureproc
-        image1="benq-pd2700q-review-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
+        image1="benq-pd2700q-review-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
         image2="benq-pd2700q-review-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
         image3="benq-pd2700q-review-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla" >}}
     {{< figureproc
-        image1="benq-pd2700q-review-6.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
+        image1="benq-pd2700q-review-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
         image2="benq-pd2700q-review-7.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
         caption="Pantalla" >}}
     {{< figureproc
-        image1="benq-pd2700q-review-8.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
+        image1="benq-pd2700q-review-8.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
         image2="benq-pd2700q-review-9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
         image3="benq-pd2700q-review-14.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla parte trasera" >}}
     {{< figureproc
-        image1="benq-pd2700q-review-15.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
+        image1="benq-pd2700q-review-15.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
         image2="benq-pd2700q-review-16.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
         caption="Pantalla parte trasera" >}}
 </div>
 
 Este modelo de monitor incluye dos puertos USB 2.0 en la parte trasera, tiene utilidad en un ordenador de escritorio que esté debajo de la mesa para tener unos puertos USB más cerca del escritorio con un concentrador USB.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-review-10.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
+        image1="benq-pd2700q-review-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
         image2="benq-pd2700q-review-11.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Conexiones"
         image3="benq-pd2700q-review-12.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Conexiones" >}}
     {{< figureproc
-        image1="benq-pd2700q-review-13.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
+        image1="benq-pd2700q-review-13.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
         caption="Conexiones" >}}
 </div>
 
 Los botones para ajustar los parámetros del monitor y OSD están detrás del monitor y el piloto indicador de encendido en un lateral de modo que en un ambiente de luz oscuro no molesta.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-osd-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
+        image1="benq-pd2700q-osd-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
         image2="benq-pd2700q-osd-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
         image3="benq-pd2700q-osd-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="OSD"
         caption="" >}}
     {{< figureproc
-        image1="benq-pd2700q-osd-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
+        image1="benq-pd2700q-osd-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
         image2="benq-pd2700q-osd-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
         image3="benq-pd2700q-osd-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="OSD"
         caption="" >}}
     {{< figureproc
-        image1="benq-pd2700q-osd-7.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
+        image1="benq-pd2700q-osd-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
         image2="benq-pd2700q-osd-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
         caption="Configuración en pantalla (OSD)" >}}
 </div>
@@ -242,9 +242,9 @@ Con la resolución de 2560x1440 se puede visualizar más información al mismo t
 
 La primera impresión es que un monitor de 27" es grande pero ya me han comentado que es cuestión de acostumbrase y que dentro de poco me parecerá lo normal o incluso pequeño, de hecho ya hay monitores de 32" para esa gente que aún lo quiere más grande. A la espera del Intel NUC tendré monitor que me parece grande pero un equipo que cabe en la palma de la mano. Comparado con la pantalla retina del MacBook las cosas no se ven tan definidas, un monitor de 27" con pantalla retina no he visto salvo los Mac. Con 27" en UHD tampoco se considera HiDPI y se queda en 163 dpi contra los 226 del Mac. Para que un monitor de 27" tenga similar definición que con una pantalla retina la resolución debería ser del doble, 5120x2880, con esto alcanzaría unos 216 dpi y ya se consideraría HiDPI aunque habría que escalar la resolución en la configuración del ordenador ya que en la resolución nativa el texto se vería muy pequeño.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-screen-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Imagen en la pantalla"
+        image1="benq-pd2700q-screen-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Imagen en la pantalla"
         image2="benq-pd2700q-screen-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Imagen en la pantalla"
         image3="benq-pd2700q-screen-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Imagen en la pantalla"
         caption="Imagen en la pantalla" >}}
@@ -254,17 +254,17 @@ Este monitor tiene los botones de ajustes detrás del monitor marcados con unos 
 
 Las fugas de luz o _bleeding_ es otro de los posibles problemas de un monitor, por la tecnología de retoiluminación led hace que en condiciones oscuras los negros aparezcan como grises y que en los bordes de la pantalla se noten zonas un poco iluminadas al no bloquearse por completo la retoiluminación. Ya era consciente de este problema y no me sorprende que el que me ha llegado a mi tenga, no se si será mucho o poco porque no puedo comparar pero no me ha parecido excesivo. Sin píxeles muertos o vagos sin mucha fuga de luz me doy por contento. Por el momento tampoco he notado retención de imagen.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-screen-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Bleeding en ambiente oscuro"
+        image1="benq-pd2700q-screen-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Bleeding en ambiente oscuro"
         caption="Bleeding en ambiente oscuro" >}}
 </div>
 
 Con una resolución QHD hay más espacio que en una Full HD que agradecen los programadores, diseñadores y gente que pasa mucho tiempo delante de una pantalla trabajando en tareas relacionadas con múltiples documentos o aplicaciones. Por ejemplo, con un IDE es posible visualizar el código fuente de dos archivos o visualizar en primer plano el IDE, navegador y terminal al mismo tiempo. Las personas que trabajan con gráficos pueden visualizar imágenes más grandes ya sea en [Photoshop][adobe-photoshop], [GIMP][gimp], [Inkscape][inkscape], [OpenShot][openshot] y herramientas similares.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="benq-pd2700q-screen-5.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Espacio en resolución QHD"
+        image1="benq-pd2700q-screen-5.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Espacio en resolución QHD"
         image2="benq-pd2700q-screen-6.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Espacio en resolución QHD"
         image3="benq-pd2700q-screen-7.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Espacio en resolución QHD"
         caption="Espacio en resolución QHD" >}}
@@ -284,7 +284,7 @@ Es recomendable realizar una primera prueba al monitor para buscar píxeles muer
 
 Para probar la calidad del monitor (o televisor) en cuanto a colores o resolución [en YouTube hay varios](https://www.youtube.com/results?search_query=4k+video+test), uno de ellos de ejemplo es este pudiendo seleccionar la calidad desde 720p (HD), 1080p (FHD, 1K), 1440p (QHD, 2K) y 2160p (UHD, 4K). Lógicamente para apreciar las diferencias de calidad con respecto a una resolución más baja hay que tener un monitor o televisor que soporte la resolución más alta. Esto da una idea de como se ve una película, vídeo o imágenes. Las tareas ofimáticas no es lo mismo que ver vídeos, en UHD y usando escalado el texto gracias a su mayor PPI en el mismo tamaño que un QHD se ve más definido y claro. Sin embargo, el escalado aún presenta problemas ya que no todas las aplicaciones está preparadas.
 
-<div class="media media-video" style="text-align: center;">
+<div class="media media-video">
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
@@ -292,7 +292,7 @@ Para probar la calidad del monitor (o televisor) en cuanto a colores o resoluci�
 
 Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la Play Station 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa"></iframe>
 </div>
 
@@ -302,7 +302,7 @@ En todos los modelos he buscado que sea compatible con la norma VESA 100x100 por
 
 Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N9KKQH5&linkId=0d2db11714bff4c47c1ffe1efc1f795c"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MZ70QJB&linkId=f457dd5a087e2880f54ffc2105e0999b"></iframe>
 </div>
@@ -311,7 +311,7 @@ Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
 Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay hubs de 4, 7 y 10 puertos pero con esta candidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=c0347223e569327beb79d01b30cd549e"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00LI4O9EA&linkId=32d93c1c8151c7d869e32b061d0d08b4"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHKEM&linkId=3e9560e254b297e251314782a4ae4044"></iframe>

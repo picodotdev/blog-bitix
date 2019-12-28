@@ -72,7 +72,7 @@ En caso de que al usar un _keystore_ con un certificado de una autoridad que no 
 
 Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Java, en el caso de querer realizar autenticación mutua con un navegador web como [Firefox][firefox] hay que instalar el certificado del cliente y si es necesario el certificado de la autoridad de certificación para que el candado indicativo de la seguridad del protocolo HTTPS se muestre en verde y no indique ningún problema de seguridad en la autenticación del servidor. En Firefox los certificados se añaden en el menú _Preferencias > Avanzado > Ver certficados_. En la pestaña _Sus certificados_ hay que importar el certificado del cliente en formato _PKCS12_ y en la pestaña _Autoridades_ el certificado de la autoridad que haya firmado el certificado del servidor, con el botón _Importar_ se selecciona el archivo _crt_ de la autoridad. Al introducir la URL y realizar la petición Firefox solicita mediante un diálogo seleccionar el certificado a usar para realizar la autenticación en el servidor.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="firefox-bad-request.png" thumb1="firefox-bad-request-thumb.png" title1="Autenticación mutua fallida"
         image2="firefox-mutual-authorized.png" thumb2="firefox-mutual-authorized-thumb.png" title2="Autenticación mutua correcta"

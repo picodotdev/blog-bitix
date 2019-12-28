@@ -34,7 +34,7 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Los fisgones (Sneakers)](https://www.filmaffinity.com/es/film233071.html)
 * [Otras películas sobre _hackers_](https://es.wikipedia.org/wiki/Categor%C3%ADa:Pel%C3%ADculas_sobre_hackers)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="pirates-of-silicon-valley.jpg" thumb1="pirates-of-silicon-valley-thumb.jpg" title1="Piratas de Silicon Valley"
         image2="office-space.jpg" thumb2="office-space-thumb.jpg" title2="Trabajo basura"
@@ -51,7 +51,7 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Scorpion](https://www.filmaffinity.com/es/film482651.html)
 * [Odio canibal](https://www.filmaffinity.com/es/film752650.html)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="black-mirror.jpg" thumb1="black-mirror-thumb.jpg" title1="Black Mirror"
         image2="mr-robot.jpg" thumb2="mr-robot-thumb.jpg" title2="Mr Robot"
@@ -97,7 +97,7 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 * [Preguntas Richard Matthew Stallman](https://www.youtube.com/watch?v=06pLIUqB6zY)
 * [Entrevista en Español con Richard Stallman, «Software Libre»](https://www.youtube.com/watch?v=onrIApj3Cjs)
 
-<div class="media" style="text-align: center;">
+<div class="media">
   <figure>
     <img src="assets/images/logotipos/gnu.svg" alt="GNU" title="GNU" width="200">
     <img src="assets/images/logotipos/linux.svg" alt="Linux" title="Linux" width="200">
@@ -114,7 +114,7 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 * ¿Sueñan los androides con ovejas eléctricas? de _Philip K. Dick_
 * [Algunas novelas sobre informática y _hackers_](http://www.proyecto-tic.es/algunas-novelas-sobre-informatica-y-hackers/)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="el-circulo.jpg" thumb1="el-circulo-thumb.jpg" title1="El circulo"
         image2="microsiervos.jpg" thumb2="microsiervos-thumb.jpg" title2="Microsiervos"

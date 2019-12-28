@@ -34,25 +34,25 @@ Diablo 2 es uno de los últimos juegos que jugué y lo finalice por completo aun
 
 Wine es una implementación de la API de Windows con la que los programas de Windows pueden ser ejecutados en GNU/Linux y [macOS][macos], incluidos los juegos y su API DirectX. Y hace posible que tener Windows no sea imprescindible para determinados programas como [Microsoft Office][microsoft-office] o los juegos que son algunos de los motivos por los que algunas personas siguen usando Windows en vez de pasarse definitivamente y de forma completa a GNU/Linux.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="battle-net-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
+        image1="battle-net-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
         image2="battle-net-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
         image3="battle-net-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Cliente de Battle.net"
         caption="Cliente de Battle.net" >}}
     {{< figureproc
-        image1="battle-net-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
+        image1="battle-net-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
         image2="battle-net-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
         image3="battle-net-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Instalación de Diablo 3"
         caption="Instalación de Diablo 3" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="diablo-3-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
+        image1="diablo-3-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
         image2="diablo-3-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
     {{< figureproc
-        image1="diablo-3-3.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
+        image1="diablo-3-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
         image2="diablo-3-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
         image3="diablo-3-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Jugando a Diablo 3"
         caption="Juego de Diablo 3" >}}
@@ -62,9 +62,9 @@ Wine es una implementación de la API de Windows con la que los programas de Win
 
 La donación no es muy grande pero espero que ayude para cubrir los costes que tengan las personas que contribuyen en el desarrollo de este proyecto. La donación se puede realizar mediante el medio de pago [PayPal][paypal]. Como tenía algo de dinero acumulado de un par de artículos patrocinados que escribí he utilizado $20 de ese saldo para donar a [Wine][wine].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="donacion-wine.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Wine"
+        image1="donacion-wine.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Wine"
         caption="Donación Wine" >}}
 </div>
 

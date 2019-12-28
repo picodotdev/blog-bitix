@@ -39,7 +39,7 @@ En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anter
 
 {{< asciinema id="107868" caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="maquinas-virtuales-cluster.png" thumb1="maquinas-virtuales-cluster-thumb.png" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
         caption="Máquinas virtuales de los nodos del cluster de Docker Swarm" >}}
@@ -52,7 +52,7 @@ Los comandos para eliminar un servicio del _cluster_ y eliminar completamente el
 
 Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [The Devops 2.1 Toolkit](https://amzn.to/2mIirti) que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es [Docker in Action](https://amzn.to/2mF3Xtj).
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=a6c4acab72c208d29232f2e0a8edb8ee"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=2101ae950cfcfe9e69b6cc1210e4bf2c"></iframe>
 </div>

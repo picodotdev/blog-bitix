@@ -48,7 +48,7 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 {{< code file="inventory-changelog.xml" language="XML" options="" >}}
 {{< code file="purchases-changelog.xml" language="XML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="basededatos.png" thumb1="basededatos.png" title1="Base de datos con varios esquemas"
         caption="Base de datos con varios esquemas, inventory y purchases" >}}

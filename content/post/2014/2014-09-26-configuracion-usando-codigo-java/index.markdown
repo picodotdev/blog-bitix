@@ -41,7 +41,7 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="ConfiguracionManager.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="main.png" thumb1="main.png" title1="Salida programa Main.java" >}}
 </div>

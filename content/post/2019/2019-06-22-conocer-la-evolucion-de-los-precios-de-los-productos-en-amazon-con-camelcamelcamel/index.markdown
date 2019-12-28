@@ -27,9 +27,9 @@ Para seguir la evolución de los precios y saber de los productos en [Amazon][am
 
 Como ejemplo se puede mostrar el precio de un SDD [Samsung 970 EVO en formato M.2 de 250 GiB](https://amzn.to/2XuRE9p) o de [1 TB](https://amzn.to/2IvJJjU) y _kit_ de memorias de [HyperX Impact de 32 GiB DDR4 a 2400Mhz](https://amzn.to/2XwfQrS).
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="precios-amazon-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Precio SSD 500 GB"
+        image1="precios-amazon-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Precio SSD 500 GB"
         image2="precios-amazon-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Precio SSD 1 TB"
         image3="precios-amazon-3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Precio 32 GB de memoria"
         caption="Evolución de precios en Amazon" >}}

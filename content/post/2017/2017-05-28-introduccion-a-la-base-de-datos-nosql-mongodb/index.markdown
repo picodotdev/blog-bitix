@@ -49,7 +49,7 @@ MongoDB proporciona controladores para acceder a la base de datos desde los leng
 
 El libro [MongoDB in Action](https://amzn.to/2qvYqqU) es un buen material de referencia para dominar esta base de datos NoSQL con consejos prácticos de como guardar la información y como administrar la base de datos para replicar los datos en un _cluster_, escalar y otros temas administrativos como crear copias de seguridad, rendimiento, seguridad o monitorización.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=53e36564344401d0a3e0f29a4cef1968"></iframe>
 </div>
 

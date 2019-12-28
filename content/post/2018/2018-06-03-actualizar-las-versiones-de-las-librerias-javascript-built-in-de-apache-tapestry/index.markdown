@@ -27,9 +27,9 @@ Estas pocas líneas de código bastan para redefinir las versiones de las librer
 
 {{< code file="AppModule.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="tapestry-jquery-1.12.1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Antes de actualizar las librerías JavaScript"
+        image1="tapestry-jquery-1.12.1.png" options1="2560x1440" optionsthumb1="300x200" title1="Antes de actualizar las librerías JavaScript"
         image2="tapestry-jquery-3.3.1.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Después de actualizar las librerías JavaScript"
         caption="Antes y después de actualizar las librerías JavaScript" >}}
 </div>

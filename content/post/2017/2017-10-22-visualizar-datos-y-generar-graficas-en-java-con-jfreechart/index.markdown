@@ -87,7 +87,7 @@ Desde la propia página web de JFreeChart es posible ejecutar una [aplicación J
 
 {{< code file="demo.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="pie-chart.png" thumb1="pie-chart-thumb.png" title1="Gráfica de tarta"
         image2="polar-chart.png" thumb2="polar-chart-thumb.png" title2="Gráfica de coordenadas polares" >}}
@@ -102,7 +102,7 @@ Este sería el código fuente de un ejemplo sencillo para una gráfica varias se
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="xy-chart.png" thumb1="xy-chart-thumb.png" title1="Gráfica de series"
         caption="Gráfica de series" >}}

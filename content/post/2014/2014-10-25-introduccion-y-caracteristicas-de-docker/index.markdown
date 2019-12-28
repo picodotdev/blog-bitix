@@ -24,7 +24,7 @@ Al contrario de la virtualización Docker no emula o virtualiza una máquina y s
 
 La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como [OpenVZ][openvz] también en Linux, [FreeBSD Jails](http://www.freebsd.org/doc/handbook/jails.html) o los [contenedores de Solaris](https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html).
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="virtual-machines.png" thumb1="virtual-machines.png" title1="Máquinas virtuales"
     	image2="docker.png" thumb2="docker.png" title2="Docker" >}}
@@ -48,13 +48,13 @@ Para los administradores de sistemas tiene las siguientes ventajas:
 
 En la siguiente presentación muy completa están ampliados muchas de sus posibilidades y funcionalidades.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< speakerdeck c02e6030ee52013165c72a37516b560d >}}
 </div>
 
 Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un devbox o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré [cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos][blogbitix-50]. En la siguiente [lista de enlaces sobre Docker](http://www.nkode.io/2014/08/24/valuable-docker-links.html) se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>
 </div>
 

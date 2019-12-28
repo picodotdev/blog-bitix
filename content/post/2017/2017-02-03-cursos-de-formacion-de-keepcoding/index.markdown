@@ -94,7 +94,7 @@ Para aprender de forma intensiva durante 4 y 6 meses con mayor profundidad impar
 * [Full Stack Big Data & Machine Learning Bootcamp](https://keepcoding.io/es/big-data-machine-learning-bootcamp/?affcode=897_eznkgvrg)
 * [Full Stack DevOps Bootcamp](https://keepcoding.io/es/bootcamp-devops/?affcode=897_eznkgvrg)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="keepcoding-course.png" thumb1="keepcoding-course-thumb.png" title1="Curso online de KeepCoding"
         caption="Curso online de KeepCoding" >}}

@@ -24,9 +24,9 @@ El protocolo mediante el cual las computadoras intercambian datos mayoritariamen
 
 El problema de agotamiento de direcciones IPv4 no es nuevo y ya desde hace alguna década se estaba advirtiendo e implementando medidas en el protocolo para retrasar durante algún tiempo el llegar a agotar las direcciones. Algunas de estas medidas son [CIDR][wikipedia-cidr] y [NAT][wikipedia-nat]. CIDR permite aprovechar mejor o no desperdiciar tantas direcciones IP en los grupos de direcciones estableciendo una máscara para determinar cuál es la parte de dirección de red y cual es la dirección del host dentro de esa red, con CIDR las direcciones IP se identifican con el siguiente formato _255.255.255.255 /8_ donde el último número determina que número de bits corresponden a la dirección de red y que parte a los _hosts_ de esa red, en este caso 24 bits corresponden a la red y 8 bits a identificar al _host_ hasta llegar a 32 bits. NAT permite a los dispositivos de una red compartir la misma dirección IP al conectarse a otras redes o internet, de esta forma en vez de requerirse una dirección pública por cada dispositivo de la red solo es necesaria una para todos los equipos, en los hogares es el enrutador o _router_ el dispositivo el que hace NAT y el que tiene la dirección IP pública asignada. NAT no está exento de inconvenientes ya que los equipos externos a una red no pueden contactar directamente a los equipos internos de una red en la que se hace NAT, para ello hay que usar activación o reenvío de puertos que los _routers_ ofrecen en su panel de administración. Incluso algunos proveedores de internet están implementado un NAT a nivel de proveedor conocido como [CG-NAT][wikipedia-cgnat] para usar una o unas pocas direcciones IP para todos los usuarios del proveedor. A este nivel está llegando la escasez de direcciones IP del protocolo IPv4.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nat.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Panel de un router para hacer NAT"
+        image1="nat.png" options1="2560x1440" optionsthumb1="300x200" title1="Panel de un router para hacer NAT"
         caption="Panel de un router para hacer NAT" >}}
 </div>
 

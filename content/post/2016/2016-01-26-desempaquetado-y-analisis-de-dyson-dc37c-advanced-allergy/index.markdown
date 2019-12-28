@@ -28,7 +28,7 @@ No quería que después de comprar la aspiradora tener que comprar ningún tipo 
 
 De los primeros aspiradores que vi interesantes uno fue el [Rowenta Compacteo Ergo 4359EA](https://amzn.to/2kdF2gT), me gustó que era pequeño, sin bolsa, barato y podría guardarlo en el mismo armario junto con la escoba. El precio era similar tanto en Amazon, Media Markt y El Corte Inglés. Pudiendo, prefiero comprar en una tienda física, el bulto iba a ser grande con lo que no quería enviármelo al trabajo y por si quería hacer alguna devolución es más fácil en una tienda física como finalmente me ocurrió, además quería ver físicamente el producto. En El Corte Inglés no tenían disponibilidad, fui a comprarlo a Media Markt por poco menos de 80€. Amablemente un par de personas del personal de Media Markt me atendieron resolviendo varias dudas que tenía. Me llevé este modelo a casa.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00TOHS3JA&linkId=3f1a337594c8d70b15a387fb1ba68323"></iframe>
 </div>
 
@@ -46,7 +46,7 @@ Además se alinearon los astros y justo al día siguiente de que hiciese la devo
 
 El modelo Dyson DC37c asi como los otros basados en ciclones tienen un filtro lavable permanente, el polvo es fácilmente desechable y su cubo fácilmente limpiable, una cosa a tener en cuenta ya que en los aspiradores sin bolsa en mayor o menor medida a lo hora de tirar el polvo recogido a la basura podemos entrar en contacto con él. El modelo Dyson DC52c tienía más ciclones siendo más eficiente aún, la tecnología por la cual estas aspiradoras son tan eficientes y separan el aire del polvo aprovechando la fuerza centrífuga, y ni siquiera es necesario limpiar el filtro durante su vida útil, ¡sorprendente!, el modelo Dyson DC63 es más compacta por lo que ocupa menos espacio al guardarla y el modelo modelo DC33c es algo más barata.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M8YTI3G&linkId=ca4a2dcafafc51f8e19f70df6ea9321e"></iframe>
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01DXZX0BE&linkId=bceee6c9505474d4cc43e03e5438ebd5"></iframe>
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01DXZWYA2&linkId=123c8901ec88a9ee541a5fdd2f63ede3"></iframe>
@@ -63,7 +63,7 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 
 ### Caja y desempaquetado
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_091246.jpg" thumb1="Dyson_DC37c_20160124_091246-thumb.jpg"
     		image2="Dyson_DC37c_20160124_091312.jpg" thumb2="Dyson_DC37c_20160124_091312-thumb.jpg" >}}
@@ -83,7 +83,7 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 
 ### Cuerpo principal
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_092450.jpg" thumb1="Dyson_DC37c_20160124_092450-thumb.jpg"
     		image2="Dyson_DC37c_20160124_092459.jpg" thumb2="Dyson_DC37c_20160124_092459-thumb.jpg" >}}
@@ -111,7 +111,7 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 
 En la caja no viene pero se proporcionan más accesorios de los indicados además de para suelos duros y tarima o parquet y el de antibloqueo _tangle-free_ para hebras.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_092358.jpg" thumb1="Dyson_DC37c_20160124_092358-thumb.jpg"
     		image2="Dyson_DC37c_20160124_092412.jpg" thumb2="Dyson_DC37c_20160124_092412-thumb.jpg" >}}
@@ -133,14 +133,14 @@ En la caja no viene pero se proporcionan más accesorios de los indicados ademá
 
 Estos son los accesorios adicionales no indicados en la caja, está el de esquinas y otros que parecen para sofás o similares junto con un soporte porta accesorios que se coloca en el tubo cerca de la empuñadura.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_092405.jpg" thumb1="Dyson_DC37c_20160124_092405-thumb.jpg" >}}
 </div>
 
 ### Filtro y ciclón
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_100811.jpg" thumb1="Dyson_DC37c_20160124_100811-thumb.jpg"
     		image2="Dyson_DC37c_20160124_100821.jpg" thumb2="Dyson_DC37c_20160124_100821-thumb.jpg" >}}
@@ -159,7 +159,7 @@ Estos son los accesorios adicionales no indicados en la caja, está el de esquin
 
 El manual de usuario está en perfecto español sin ninguna falta de ortografía, otros múltiples idiomas y cumple con su función de mostrar el montaje, las normas y precauciones básicas de uso.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_094541.jpg" thumb1="Dyson_DC37c_20160124_094541-thumb.jpg"
     		image2="Dyson_DC37c_20160124_094550.jpg" thumb2="Dyson_DC37c_20160124_094550-thumb.jpg" >}}
@@ -179,7 +179,7 @@ El manual de usuario está en perfecto español sin ninguna falta de ortografía
 
 ### Otros detalles
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
     		image1="Dyson_DC37c_20160124_100832.jpg" thumb1="Dyson_DC37c_20160124_100832-thumb.jpg"
     		image2="Dyson_DC37c_20160124_100348.jpg" thumb2="Dyson_DC37c_20160124_100348-thumb.jpg" >}}

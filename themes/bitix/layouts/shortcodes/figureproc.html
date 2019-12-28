@@ -1,16 +1,16 @@
 {{ if .Params.image1 }}
   {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
   {{ $imagethumb1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
-  {{ $command1 := .Params.command1 }}
+  {{ $command1 := default "Fit" .Params.command1 }}
   {{ $options1 := .Params.options1 }}
-  {{ $commandthumb1 := .Params.commandthumb1 }}
+  {{ $commandthumb1 := default "Fit" .Params.commandthumb1 }}
   {{ $optionsthumb1 := .Params.optionsthumb1 }}
 
-  {{ if eq $command1 "Fit"}}
+  {{ if eq $command1 "Fit" }}
     {{ $.Scratch.Set "imagescaled1" ($image1.Fit $options1) }}
-  {{ else if eq $command1 "Resize"}}
+  {{ else if eq $command1 "Resize" }}
     {{ $.Scratch.Set "imagescaled1" ($image1.Resize $options1) }}
-  {{ else if eq $command1 "Fill"}}
+  {{ else if eq $command1 "Fill" }}
     {{ $.Scratch.Set "imagescaled1" ($image1.Fill $options1) }}
   {{ else }}
     {{ errorf "Invalid image1 processing command: Must be one of Fit, Fill or Resize."}}
@@ -30,9 +30,9 @@
 {{ if .Params.image2 }}
   {{ $image2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
   {{ $imagethumb2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
-  {{ $command2 := .Params.command2 }}
+  {{ $command2 := default "Fit" .Params.command2 }}
   {{ $options2 := .Params.options2 }}
-  {{ $commandthumb2 := .Params.commandthumb2 }}
+  {{ $commandthumb2 := default "Fit" .Params.commandthumb2 }}
   {{ $optionsthumb2 := .Params.optionsthumb2 }}
 
   {{ if eq $command2 "Fit"}}
@@ -59,16 +59,16 @@
 {{ if .Params.image3 }}
   {{ $image3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
   {{ $imagethumb3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
-  {{ $command3 := .Params.command3 }}
+  {{ $command3 := default "Fit" .Params.command3 }}
   {{ $options3 := .Params.options3 }}
-  {{ $commandthumb3 := .Params.commandthumb3 }}
+  {{ $commandthumb3 := default "Fit" .Params.commandthumb3 }}
   {{ $optionsthumb3 := .Params.optionsthumb3 }}
 
-  {{ if eq $command3 "Fit"}}
+  {{ if eq $command3 "Fit" }}
     {{ $.Scratch.Set "imagescaled3" ($image3.Fit $options3) }}
-  {{ else if eq $command3 "Resize"}}
+  {{ else if eq $command3 "Resize" }}
     {{ $.Scratch.Set "imagescaled3" ($image3.Resize $options3) }}
-  {{ else if eq $command3 "Fill"}}
+  {{ else if eq $command3 "Fill" }}
     {{ $.Scratch.Set "imagescaled3" ($image3.Fill $options3) }}
   {{ else }}
     {{ errorf "Invalid image3 processing command: Must be one of Fit, Fill or Resize."}}
@@ -105,7 +105,7 @@
   <a href="{{ $imagescaled3.RelPermalink }}" title="{{ .Params.title3 }}" data-gallery><img src="{{ $imagescaledthumb3.RelPermalink }}" width="{{ $imagescaledthumb3.Width }}"/></a>
   {{ end }}
   {{ if .Params.caption }}
-    <figcaption>{{ .Params.caption }}{{ if .Params.source }}. {{ i18n "source" }}: {{ .Params.source }}{{ end }}</figcaption>
+  <figcaption>{{ .Params.caption }}{{ if .Params.source }}<br><small>{{ i18n "source" }}: {{ .Params.source }}</small>{{ end }}</figcaption>
   {{ end }}
 </figure>
 {{ end }}

@@ -20,7 +20,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 twitter4j nos ofrece una API Java para acceder a la API REST de Twitter de forma más cómoda. Primeramente deberemos crear y registrar una aplicación, esto nos proporcionará varios datos que identificarán a la aplicación y _tokens_ privados para que solo nuestra aplicación en nuestra cuenta pueda realizar las acciones, básicamente son unos datos para autenticar al cliente. La creación de la aplicación se realiza desde la [sección de desarrolladores de twitter] (https://apps.twitter.com/), también veremos las aplicaciones con acceso a la cuenta.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="twitter-apps.png" thumb1="twitter-apps-thumb.png" title1="Twitter Apps"
         caption="Twitter Apps" >}}

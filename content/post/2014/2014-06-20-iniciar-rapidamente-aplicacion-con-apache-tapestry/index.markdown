@@ -24,7 +24,7 @@ Para crear el esqueleto de una aplicación rápidamente en [Apache Tapestry](htt
 
 El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, org.apache.tapestry:quickstart. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo io.github.picodotdev.bitix y como nombre de artefacto iniciorapido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="arquetipos-maven.png" thumb1="arquetipos-maven-thumb.png"
     	image2="arquetipos-tapestry.png" thumb2="arquetipos-tapestry-thumb.png" >}}
@@ -34,7 +34,7 @@ El comando nos presentará un montón de arquetipos, el propio de Tapestry se co
 
 Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con [Gradle](http://www.gradle.org/), una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="archivos-generados.png" thumb1="archivos-generados-thumb.png" title1="Terminal al iniciar la aplicación" >}}
 </div>
@@ -45,7 +45,7 @@ Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jett
 
 Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="inicio-aplicacion-terminal.png" thumb1="inicio-aplicacion-terminal-thumb.png" title1="Terminal al iniciar la aplicación"
     	image2="inicio-aplicacion-navegador.png" thumb2="inicio-aplicacion-navegador-thumb.png" title2="Aplicación en el navegador" >}}

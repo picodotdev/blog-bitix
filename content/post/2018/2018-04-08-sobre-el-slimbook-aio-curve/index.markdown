@@ -28,14 +28,14 @@ Varios medios se hacía eco de la presentación:
 * [Slimbook anuncia Curve, su primer All in One](https://www.muylinux.com/2018/04/03/slimbook-curve-aio/)
 * [SlimBook Curve, fantástico All In One con Linux](https://www.gizlogic.com/slimbook-curve-un-fantastico-all-in-one/)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="slimbook-curve-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Slimbook AIO Curve" >}}
+        image1="slimbook-curve-1.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Slimbook AIO Curve" >}}
     {{< figureproc
         image2="slimbook-curve-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
         image3="slimbook-curve-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Slimbook AIO Curve" >}}
     {{< figureproc
-        image1="slimbook-curve-4.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Slimbook AIO Curve"
+        image1="slimbook-curve-4.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Slimbook AIO Curve"
         image2="slimbook-curve-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
         caption="Slimbook AIO Curve" >}}
 </div>

@@ -29,9 +29,9 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 {{< code file="java-cp.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-classpath.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
+        image1="java-classpath.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
         caption="Aplicación de ejemplo ejecutada con classpath" >}}
 </div>
 
@@ -58,9 +58,9 @@ Con el siguiente comando la ejecución de la aplicación empaquetada como _uberj
 {{< code file="gradlew-assemble.sh" language="bash" options="" >}}
 {{< code file="java-jar-uberjar.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-jar-uberjar.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con uberjar"
+        image1="java-jar-uberjar.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con uberjar"
         caption="Aplicación de ejemplo ejecutada con uberjar" >}}
 </div>
 

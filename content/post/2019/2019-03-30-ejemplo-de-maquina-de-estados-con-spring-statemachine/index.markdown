@@ -28,9 +28,9 @@ Aparte de proporcionar una librería para crear máquinas de estados en Java otr
 
 En el ejemplo he definido el siguente grafo de estados y transiciones que contiene estado inicial, _choice_, _fork_, _join_, jerarquía de estados con en el estado _Tasks_ y un estado final. Una selección completa del conjunto de tipos de estados. En este caso las flechas van únicamente en una dirección pero perfectamente el flujo podría tener transiciones que volviesen a estados anteriores creando ciclos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="graph.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="600x450" title1="Grafo de la máquina de estados"
+        image1="graph.png" options1="2560x1440" optionsthumb1="600x450" title1="Grafo de la máquina de estados"
         caption="Grafo de la máquina de estados" >}}
 </div>
 

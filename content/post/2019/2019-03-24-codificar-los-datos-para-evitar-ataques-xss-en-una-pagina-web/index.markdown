@@ -31,9 +31,9 @@ El contenido HTML generado por la aplicación y enviado al navegador sería el s
 
 En este caso al cargar la página en el navegador se muestra un mensaje _alert_ con una ventana emergente pero si el usuario malicioso enviase los datos de las _cookies_ a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="xss.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="XSS"
+        image1="xss.png" options1="2560x1440" optionsthumb1="300x200" title1="XSS"
         image2="xss-user.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="XSS"
         caption="XSS" >}}
 </div>

@@ -1,6 +1,6 @@
 {{ if and (.Params.image1) (not (findRE "\\.svg$" .Params.image1)) }}
   {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
-  {{ $command1 := .Params.command1 }}
+  {{ $command1 := default "Fit" .Params.command1 }}
   {{ $options1 := .Params.options1 }}
 
   {{ if eq $command1 "Fit"}}
@@ -18,7 +18,7 @@
 
 {{ if and (.Params.image2) (not (findRE "\\.svg$" .Params.image2)) }}
   {{ $image2 := .Page.Resources.GetMatch (print "images/" .Params.image2) }}
-  {{ $command2 := .Params.command2 }}
+  {{ $command2 := default "Fit" .Params.command2 }}
   {{ $options2 := .Params.options2 }}
 
   {{ if eq $command2 "Fit"}}
@@ -36,7 +36,7 @@
 
 {{ if and (.Params.image3) (not (findRE "\\.svg$" .Params.image3)) }}
   {{ $image3 := .Page.Resources.GetMatch (print "images/" .Params.image3) }}
-  {{ $command3 := .Params.command3 }}
+  {{ $command3 := default "Fit" .Params.command3 }}
   {{ $options3 := .Params.options3 }}
 
   {{ if eq $command3 "Fit"}}

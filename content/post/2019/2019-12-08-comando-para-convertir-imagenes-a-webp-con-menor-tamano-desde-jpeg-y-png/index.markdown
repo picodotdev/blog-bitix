@@ -26,16 +26,16 @@ Los navegadores modernos como [Google Chrome][google-chrome], [Firefox][firefox]
 
 Una imagen que usé para [crear una imagen reducida o vista previa][blogbitix-161] tiene un tamaño de 1600 píxeles de ancho y 1067 de alto ocupando 1018 KiB, la imagen en formato _png_ tiene un tamaño de 1426 píxeles por 947 ocupando 78 KiB.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="image-1.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato jpg"
+        image1="image-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato jpg"
         image2="image-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
         caption="Imágenes en formato jpg y PNG" >}}
 </div>
 
 Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la original en formato _jpg_ y 26 KiB, un 66% menos, para la original en formato _png_. Las reducciones de tamaño son importantes y teniendo en cuenta que es sin pérdida de calidad apreciable sobre las originales utilizar WebP como formato de imagen permite ahorrar un tamaño importante de descarga en una página web o en espacio de almacenamiento en colecciones grandes de fotografías e imágenes.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="image-1.webp" thumb1="image-1-thumb.webp" title1="Fotografía en formato WebP"
         image2="image-2.webp" thumb2="image-2-thumb.webp" title2="Captura de pantalla en formato WebP"

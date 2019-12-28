@@ -23,7 +23,7 @@ A día de hoy hay una buena colección de juegos que ya tiene varias décadas pe
 
 Con ScummVM podemos jugar a esos juegos del estilo _point-and-click_ en los que se trata de probar diferentes acciones algunas lógicas otras no tanto con los objetos que tenemos o el escenario de la pantalla. Para los días de hoy gráficamente no son muy avanzados aunque sigue siendo notable su arte pixelado, pero lo principal de estos juegos no son los gráficos sino la historia que se desarrolla en los mismos. Historia que incluye bastante humor que ha hecho que perduren en el recuerdo de sus jugadores. Algunas de estas aventuras gráficas más conocidas son Monkey Island, Maniac Mansion, El día del tentáculo o Indiana Jones entre los que yo conocí.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="the-secret-of-monkey-island.jpg" thumb1="the-secret-of-monkey-island-thumb.jpg" title1="The Secret of Monkey Island"
         image2="lechuck-revenge.jpg" thumb2="lechuck-revenge-thumb.jpg" title2="LeChuck's Revenge" >}}
@@ -42,7 +42,7 @@ En GNU/Linux podemos seguir jugando a estos juegos, para ello debemos instalar e
 
 {{< code file="pacman.sh" language="bash" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="scummvm.png" thumb1="scummvm-thumb.png" title1="ScummVM" >}}
 </div>
@@ -51,7 +51,7 @@ Son juegos en los que se desarrollan diálogos y hay que leer texto por lo que s
 
 Instalado ScummVM y con las ROMs descomprimidas iniciamos el emulador, seleccionamos _Add game..._ y buscamos el directorio descomprimido del juego usando el botón _Go up_ en caso de ser necesario para navegar el árbol de directorios. Añadido los juegos los iniciamos con el botón _Start_ y a partir de este momento ya podemos empezar a jugar. Algunos juegos originalmente tenían una protección anticopia que en las ROMs y ScummVM queda desactivada. En el [manual de usuario de ScummVM](https://raw.githubusercontent.com/scummvm/scummvm/v1.8.1/README) tenemos el listado de juegos soportados así como las teclas usables y sus funciones. Como son juegos que deberemos continuar en múltiples partidas deberemos guardar el estado del juego con <kbd>Alt 0-9</kbd> y cargar para continuar con <kbd>Ctrl 0-9</kbd>.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="the-secret-of-monkey-island-game.jpg" thumb1="the-secret-of-monkey-island-game-thumb.jpg" title1="The Secret of Monkey Island"
         image2="lechuck-revenge-game.jpg" thumb2="lechuck-revenge-game-thumb.jpg" title2="LeChuck's Revenge" >}}

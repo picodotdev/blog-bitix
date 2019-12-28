@@ -36,7 +36,7 @@ Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/
 
 Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
         image1="instalacion-archlinux.png" thumb1="instalacion-arch-linux-thumb.png" title1="Menú instalación Arch Linux"
         image2="instalacion-arch-linux-prompt.png" thumb2="instalacion-arch-linux-prompt-thumb.png" title2="Inicio instalación Arch Linux" >}}
@@ -272,7 +272,7 @@ Para mantener la hora de nuestro sistema correctamente podemos usar un servicio 
 
 El resultado de la instalación y usando GNOME es el siguiente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
 	{{< figure
     	image1="escritorio-gnome.jpg" thumb1="escritorio-gnome-thumb.jpg" >}}
 </div>

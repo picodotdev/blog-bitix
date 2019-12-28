@@ -48,9 +48,9 @@ Estando disponible el servicio de registro y descubrimiento ya se puede iniciar 
 
 Una vez iniciados los servidores de descubrimiento en la página _dashboard_ de cualquiera de ellos cambiando el puerto de la dirección _http\://ds1.127.0.0.1.xip.io:8761/_ se observan varias propiedades como la lista de servidores del cluster, las réplicas registradas y disponibles y los servicios registrados con su ubicación y puerto. En este caso hay tres instancias del servicio de registro y descubrimiento, una de servidor de configuración y dos instancias de un servicio. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="spring-eureka-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Cluster del servicio de registro y descubrimiento"
+        image1="spring-eureka-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Cluster del servicio de registro y descubrimiento"
         image2="spring-eureka-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Servicios registrados en el servicio de registro y descubrimiento"
         caption="Servicios y su estado registrados en el servicio de registro y descubrimiento" >}}
 </div>

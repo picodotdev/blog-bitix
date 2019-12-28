@@ -30,9 +30,9 @@ Los colaboradores permiten hacer los casos de prueba deterministas haciendo que 
 
 En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres mediciones consecutivas que la temperatura está por encima de cierto valor suene una alarma. Los elementos de este sistema serán una clase _Monitor_ que obtiene las temperaturas de un sensor y si detecta la condición de una temperatura elevada hace sonar una alarma. El monitor será el sujeto bajo prueba y el sensor y la alarma los colaboradores. El sensor será un _fake_ de tipo _Stub_ ya que solo se necesita preprogramar sus valores de retorno de temperaturas y la alarma un _fake_ de tipo _Mock_ ya que se debe comprobar que el monitor ha llamado una vez al método que haría sonar la alarma, esto es se necesitan verificar las interacciones.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="monitor.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Sistema simulado"
+        image1="monitor.png" options1="2560x1440" optionsthumb1="650x450" title1="Sistema simulado"
         caption="Sistema de control de temperatura simulado" >}}
 </div>
 
@@ -45,7 +45,7 @@ Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temper
 
 En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda esta teoría básica de pruebas además de explicar bastante detalladamente todas las posibilidades de la herramienta de _testing_ [Spock][spock].
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=b57d8e90599c681fc8e794027e17bea3"></iframe>
 </div>
 

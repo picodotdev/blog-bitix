@@ -27,17 +27,17 @@ Este deseo me obligaba a quitar el panel lateral donde tenía un _banner_ de pub
 
 Querer que el contenido estuviese centrado y ocupase más espacio horizontal y querer publicidad lateral competían entre sí así que tenía que buscar una solución que cumpliese ambos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="diseno-blogbitix-antes.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diseño de Blog Bitix antes de hacer cambios"
+        image1="diseno-blogbitix-antes.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño de Blog Bitix antes de hacer cambios"
         caption="Diseño de Blog Bitix antes de hacer cambios" >}}
 </div>
 
 Hacer que el contenido estuviese centrado y ocupase más espacio horizontal obligaba poner la publicidad lateral más a la derecha, fuera del espacio del contenido central. Como mejora para esa publicidad lateral también quería que permaneciese visible aún haciendo desplazamiento vertical, ya que antes la publicidad siempre permanecía en la misma posición al inicio del artículo y se dejaba de ver en la parte inferior del artículo posiblemente quedando desaprovechada alguna oportunidad. Para hacer que la publicidad se desplace verticalmente he usado el [posicionamiento _sticky_](https://developer.mozilla.org/en-US/docs/Web/CSS/position) que ya soportan los navegadores. Con los primeros cambios el diseño queda como deseaba.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="diseno-blogbitix-despues-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diseño de Blog Bitix después de hacer algunos cambios"
+        image1="diseno-blogbitix-despues-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño de Blog Bitix después de hacer algunos cambios"
         caption="Primer diseño de Blog Bitix después de hacer algunos cambios" >}}
 </div>
 
@@ -45,9 +45,9 @@ Sin embargo, hacer que el contenido ocupe todo el espacio horizontal de lo que t
 
 Mantener la publicidad lateral _sticky_ hace que no entre un _skycraper_ y un _large-rectangle_ verticalmente en una resolución de 768px de alto de modo que he dejado solo un espacio para publicidad. Como idea para el futuro quizá haga que al llegar a cierto desplazamiento vertical se cambier el espacio de publicidad por otro.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="resolucion-usuarios.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Resolución de pantalla de los usuarios"
+        image1="resolucion-usuarios.png" options1="2560x1440" optionsthumb1="300x200" title1="Resolución de pantalla de los usuarios"
         caption="Resolución de pantalla de los usuarios" >}}
 </div>
 
@@ -59,13 +59,13 @@ En resoluciones menores de 1366 he optado por quitar completamente la publicidad
 
 Así queda en las resoluciones habituales de 2560 píxeles, 1920, 1600, 1440, 1366 y 1200.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="diseno-blogbitix-despues-2560.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 2560"
+        image1="diseno-blogbitix-despues-2560.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 2560"
         image2="diseno-blogbitix-despues-1920.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1920"
         image3="diseno-blogbitix-despues-1600.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Diseño después con resolución 1600" >}}
     {{< figureproc
-        image1="diseno-blogbitix-despues-1440.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 1440"
+        image1="diseno-blogbitix-despues-1440.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 1440"
         image2="diseno-blogbitix-despues-1366.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1366"
         image3="diseno-blogbitix-despues-1200.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Diseño después con resolución 1200"
         caption="Diseño después de los cambios a diferentes resoluciones (2560, 1920, 1600, 1440, 1366 y 1200)" >}}

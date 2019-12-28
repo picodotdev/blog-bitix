@@ -55,9 +55,9 @@ Desde la línea de comandos se puede observar el estado del servicio y el proces
 
 El proceso de despliegue también se puede monitorizar desde la interfaz web que ofrece Nomad.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="nomad-rolling-update-before.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Antes del proceso de despliegue rolling update en Nomad"
+        image1="nomad-rolling-update-before.png" options1="2560x1440" optionsthumb1="300x200" title1="Antes del proceso de despliegue rolling update en Nomad"
         image2="nomad-rolling-update-while.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Durante el proceso de despliegue rolling update en Nomad"
         image3="nomad-rolling-update-after.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Después del proceso de despliegue rolling update en Nomad"
         caption="Progreso del despliegue rolling update en Nomad" >}}

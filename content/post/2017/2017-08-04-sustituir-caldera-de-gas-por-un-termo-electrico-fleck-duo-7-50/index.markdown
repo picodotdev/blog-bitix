@@ -35,7 +35,7 @@ Uno de los problemas que tenía con la cadera es que en algunos momentos se apag
 
 El sustituir la caldera de gas por un termo me evitará los costes de las revisiones de la instalación del gas y de la caldera que en unos 6 años ya habrá cubierto el coste del termo eléctrico. Además me evitará los costes fijos del gas como el alquiler del contador y la disponibilidad de unos 5€ al mes que compensarán el gasto en electricidad que necesite el termo. Otro de mis motivos de dar de baja el gas y solo necesitar electricidad es que cambiándome a una compañía que proporcione energía de fuentes 100% renovable evitaré usar gas aunque esta sea más energía barata que la electricidad y más eficiente para calentar agua el coste global incluyendo costes de aparatos, fijos y revisiones es más cara. Si la factura me sale algo más cara, que no creo por los costes fijos del gas, asumiré el coste pero tendré la satisfacción de usar sólo energía renovable.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="caldera-01.jpg" thumb1="caldera-01-thumb.jpg" title1="Caldera de gas"
         image2="caldera-02.jpg" thumb2="caldera-02-thumb.jpg" title2="Caldera de gas"
@@ -51,7 +51,7 @@ Dependiendo de la zona de residencia el agua llevará más cal o menos o será m
 
 También hay que elegir la capacidad del depósito del termo, los hay de 15 litros, de 30, de 50, de 80, de 100, de 150 y más. Para una vivienda para el uso de agua sanitaria para ducharse 30 litros son suficientes para una persona, o 50 litros para una ducha más larga o más personas. También hay que tener en cuenta las medidas para que encaje en el hueco que deja la caldera, tanto en altura, anchura y profundidad.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="mapa-dureza-agua.jpg" thumb1="mapa-dureza-agua-thumb.jpg" title1="Mapa de dureza del agua"
         caption="Mapa de dureza del agua" >}}
@@ -67,7 +67,7 @@ Todos estos termos poseen un tamaño similar al de una caldera por lo que en cua
 * [Fagor CB-50ECO](http://www.fagorcnagroup.com/termos-electricos-cb-50eco-pantalla-led-con-eco-funcion-control-smart/c/911010057)
 * [Fleck Duo 7](http://www.fleck.es/id/29/producto/mejor-termo-electrico-duo7)
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MTL02S4&linkId=4b5320be60b4df3802da30306b8e3f7b"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01EMZWDTY&linkId=9c8849411b404178b7b4abcc7cd1ef33"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00KG6I2TY&linkId=32d1f18e40c2345afb044565dd3be7e3"></iframe>
@@ -81,7 +81,7 @@ Finalmente me decidí por el termo Feck Duo7 50 es un termo de gama alta y su pr
 
 El termo Fleck Duo 7 50 consume como máximo 1500W, yo tengo una potencia contratada de las más bajas de 2200W, quizá no pueda poner la lavadora, vitrocerámica y aspiradora simultáneamente pero organizándose un poco no hay mayor problema para que no salte la luz. Aún no lo he probado con el termo encendido y a la vez la  vitrocerámica que son de los aparatos eléctricos que más consumen.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="caja-01.jpg" thumb1="caja-01-thumb.jpg" title1="Caja Fleck Duo 7 50"
         image2="caja-02.jpg" thumb2="caja-02-thumb.jpg" title2="Caja Fleck Duo 7 50"
@@ -101,7 +101,7 @@ En el manual de Fleck Duo 7 50 se explican mejor las funciones que posee, una de
 
 Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de diámetro y una plantilla de montaje que tiene el tamaño real del termo para calcular la posición deseada antes de taladrar la pared. Los tacos incluidos en la caja no son muy buenos y cuando los puse los anclajes quedaban algo separados de la pared. Al final en vez de usar los tacos incluidos use un taco químico y unas varillas roscadas de 10mm para anclar los soportes y colgar el termo. Con las varillas, taco químico, roscas y arandelas el termo queda mejor asegurado. Al ser el termo bastante plano la carga que ejerce sobre la pared es más vertical.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="tacos-casquillo-electroliticos.jpg" thumb1="tacos-casquillo-electroliticos-thumb.jpg" title1="Válvula de seguridad por presión, tacos, tornillos y  casquillos electrolíticos"
         image2="plantilla-montaje.jpg" thumb2="plantilla-montaje-thumb.jpg" title2="Plantilla montaje"
@@ -109,7 +109,7 @@ Incluye dos tacos y tornillos de unos 8 centímetros de largo y 8 milímetros de
         caption="Válvula de seguridad por presión, tacos, tornillos, casquillos electrolíticos, plantilla montaje y etiqueta de calificación energética" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="soportes-01.jpg" thumb1="soportes-01-thumb.jpg" title1="Soportes incluidos en la caja"
         image2="soportes-02.jpg" thumb2="soportes-02-thumb.jpg" title2="Soportes incluidos en la caja"
@@ -126,7 +126,7 @@ Antes de empezar la instalación del termo solicite la baja del suministro del g
 
 También he tenido que adaptar la conexión eléctrica ya que de construción a la caldera le llegaban directamente los cables. He puesto un enchufe de tipo _schuko_ de superficie, todavía me queda poner una canaleta para los cables. Con un poco de yeso a las salidas de los tubos para embellecer la pared que ahora se ve más.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="instalacion-termo-01.jpg" thumb1="instalacion-termo-01-thumb.jpg" title1="Instalación termo eléctrico"
         image2="instalacion-termo-02.jpg" thumb2="instalacion-termo-02-thumb.jpg" title2="Instalación termo eléctrico"
@@ -146,13 +146,13 @@ El termo Fleck me costó 315€ comprándolo en [Bricomart](https://www.bricomar
 
 Con el grifo monomando que tengo la temperatura del agua caliente se puede regular perfectamente pero si quieres tener mayor control existen los grifos termoestáticos que regulan el caudal de agua caliente y fría automáticamente para que en la salida el agua esté a la temperatura deseada.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="grifo-01.jpg" thumb1="grifo-01-thumb.jpg" title1="Grifo monomando"
         caption="Grifo monomando" >}}
 </div>
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RTG1HSC&linkId=baa76cf96f2ebb3cb7d15d6baa53c816"></iframe>
 </div>
 

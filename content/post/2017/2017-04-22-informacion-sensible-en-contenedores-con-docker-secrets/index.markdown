@@ -51,7 +51,7 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 {{< code file="HostInfoContributor.java" language="java" options="" >}}
 {{< code file="info.json" language="json" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
         caption="Contenido del archivo message.txt" >}}

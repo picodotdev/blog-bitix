@@ -26,9 +26,9 @@ Como editor JavaScript para _markdown_ de las varias opciones que he encontrado 
 
 {{< code file="index-1.html" language="HTML" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="editor-md.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Editor JavaScript de markdown"
+        image1="editor-md.png" options1="2560x1440" optionsthumb1="650x450" title1="Editor JavaScript de markdown"
         caption="Editor JavaScript de markdown" >}}
 </div>
 

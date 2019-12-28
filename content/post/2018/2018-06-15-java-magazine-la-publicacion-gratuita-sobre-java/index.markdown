@@ -22,9 +22,9 @@ La revista [Java Magazine][java-magazine] es una publicación bimensual gratuita
 
 Estas son las portadas de la revista de los tres últimos años y medio, desde el 2015 hasta junio del 2018, en las que se incluye los principales temas tratados en cada revista. Durante este tiempo publicando por supuesto algún número dedicado a Java 9 y Java 10, Java EE 8, JSF, JavaMail, JAX-RS, Spring Boot, JVM, JUnit, IoT, HTTP/2, JavaFX, Gradle, Lombok, JCommander, Byte Buddy, Jsoup, WebSockets, JPA, CDI, Servlet 4.0, _testing_, miroservicios y contenedores y muchos más temas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-magazine-2018-may-jun.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2018 Mayo/Junio"
+        image1="java-magazine-2018-may-jun.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2018 Mayo/Junio"
         image2="java-magazine-2018-mar-apr.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2018 Marzo/Abril"
         image3="java-magazine-2018-jan-feb.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2018 Enero/Febrero"
         caption="Java Magazine 2018" >}}
@@ -34,13 +34,13 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
 * [Marzo/Abril 2018](http://www.javamagazine.mozaicreader.com/MarApr2018/Twitter)
 * [Enero/Febrero 2018](http://www.javamagazine.mozaicreader.com/JanFeb2018/Twitter)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-magazine-2017-nov-dec.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2017 Noviembre/Diciembre"
+        image1="java-magazine-2017-nov-dec.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2017 Noviembre/Diciembre"
         image2="java-magazine-2017-sep-oct.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2017 Sepiembre/Octubre"
         image3="java-magazine-2017-jul-aug.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2017" >}}
     {{< figureproc
-        image1="java-magazine-2017-may-jun.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2017 Mayo/Junio"
+        image1="java-magazine-2017-may-jun.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2017 Mayo/Junio"
         image2="java-magazine-2017-mar-apr.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2017 Marzo/Abril"
         image3="java-magazine-2018-jan-feb.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2017 Enero/Febrero"
         caption="Java Magazine 2017" >}}
@@ -53,13 +53,13 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
 * [Marzo/Abril 2017](http://www.javamagazine.mozaicreader.com/MarApr2017/Twitter)
 * [Enero/Febrero 2017](http://www.javamagazine.mozaicreader.com/JanFeb2017/Twitter)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-magazine-2016-nov-dec.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2016 Noviembre/Diciembre"
+        image1="java-magazine-2016-nov-dec.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2016 Noviembre/Diciembre"
         image2="java-magazine-2016-sep-oct.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2016 Sepiembre/Octubre"
         image3="java-magazine-2016-jul-aug.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2016" >}}
     {{< figureproc
-        image1="java-magazine-2016-may-jun.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2016 Mayo/Junio"
+        image1="java-magazine-2016-may-jun.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2016 Mayo/Junio"
         image2="java-magazine-2016-mar-apr.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2016 Marzo/Abril"
         image3="java-magazine-2016-jan-feb.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2016 Enero/Febrero"
         caption="Java Magazine 2016" >}}
@@ -72,13 +72,13 @@ Estas son las portadas de la revista de los tres últimos años y medio, desde e
 * [Marzo/Abril 2016](http://www.javamagazine.mozaicreader.com/MarApr2016/Twitter)
 * [Enero/Febrero 2016](http://www.javamagazine.mozaicreader.com/JanFeb2016/Twitter)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="java-magazine-2015-nov-dec.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2015 Noviembre/Diciembre"
+        image1="java-magazine-2015-nov-dec.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2015 Noviembre/Diciembre"
         image2="java-magazine-2015-sep-oct.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2015 Sepiembre/Octubre"
         image3="java-magazine-2015-jul-aug.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2015" >}}
     {{< figureproc
-        image1="java-magazine-2015-may-jun.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2015 Mayo/Junio"
+        image1="java-magazine-2015-may-jun.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Java Magazine 2015 Mayo/Junio"
         image2="java-magazine-2015-mar-apr.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Java Magazine 2015 Marzo/Abril"
         image3="java-magazine-2015-jan-feb.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Java Magazine 2015 Enero/Febrero"
         caption="Java Magazine 2015" >}}

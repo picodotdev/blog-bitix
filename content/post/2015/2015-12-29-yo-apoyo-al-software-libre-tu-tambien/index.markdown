@@ -34,9 +34,9 @@ Usar el software libre ya es una buena forma de apoyarlo pero también requiere 
 
 Finalmente como tenía intención, hice una donación a la [organización Europea de la Free Software Foundation][fsfe] comprando unas camisetas reivindicativas en su [tienda](https://fsfe.org/order/order.es.html) que además usaré alegremente a modo de promoción, hay más modelos incluidos para mujer y otra serie de artículos como tazas, llaveros, bolígrafos y pins. Estas son las camisetas.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="fsfe-t-shirts.jpg" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Camisetas FSFE"
+        image1="fsfe-t-shirts.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Camisetas FSFE"
         caption="Camisetas FSFE" >}}
 </div>
 
@@ -48,9 +48,9 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
 
 [Yo apoyo al software libre](http://www.gnu.org/)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="donacion-fsfe.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="650x450" title1="Donación Free Software Foundation Europe"
+        image1="donacion-fsfe.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Free Software Foundation Europe"
         caption="Donación Free Software Foundation Europe" >}}
 </div>
 

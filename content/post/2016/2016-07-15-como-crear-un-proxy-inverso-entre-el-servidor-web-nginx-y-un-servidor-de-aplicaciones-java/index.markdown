@@ -30,7 +30,7 @@ Las aplicaciones web dinámicas Java se despliegan en un contenedor de _servlets
 * [Forzar el uso del protocolo seguro HTTPS][blogbitix-38].
 * [Ofrecer el protocolo HTTP/2][blogbitix-129].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="reverse-proxy.png" thumb1="reverse-proxy.png" title1="Esquema de un proxy inverso"
         caption="Un proxy inverso recibe las peticiones de internet y las reenvía a los servidores de una red interna sin necesidad de que los clientes conozcan la red interna" >}}
@@ -50,7 +50,7 @@ En la documentación se comentan varios [parámetros de configuración de Tomcat
 
 Arrancado los contenedores con el comando <code>docker-compose up</code> accediendo al servidor web veremos que el contenido proporcionado es el ofrecido por Tomcat, que con la configuración del ejemplo es la página de inicio de Tomcat. En las cabeceras de respuesta Nginx añade una, _Server_, indicando su versión.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="nginx-tomcat.png" thumb1="nginx-tomcat-thumb.png" title1="Nginx configurado como proxy inverso de un servidor de aplicaciones Tomcat"
         caption="Nginx configurado como proxy inverso de un servidor de aplicaciones Tomcat" >}}

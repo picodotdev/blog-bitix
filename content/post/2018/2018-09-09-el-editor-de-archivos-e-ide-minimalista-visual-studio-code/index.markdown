@@ -21,26 +21,26 @@ Para trabajar y desde que empecé a usar un generador estático para el blog pri
 
 Visual Studio Code es un editor de archivos de texto avanzado orintado a desarrolladores sin llegar a ser un IDE pero con algunas funcionalidades de estos. Visual Studio Code se nota mucho más rápido que Atom y soporta al igual que Sublime Text varias combinaciones de teclas para trabajar rápido con los archivos. Soporta numerosos formatos de archivos con resaltado de sintaxis entre ellos [Markdown][markdown], [Yaml][yaml], HTML, CSS, imágenes _png_ y fotos _jpg_ que son los formatos de archivo que utilizo para crear los artículos del blog. Permite visualizar imágenes y fotos sin necesidad de ir a la aplicación del sistema operativo para visualizarlas. Dada la popularidad que está alcanzando soporta un gran número de complementos o _plugins_ que entre otros añaden resaltado de sintaxis para otros formatos de archivos que por defecto no soporta, como [Java][java]. En el caso del [_plugin_ para Java](https://marketplace.visualstudio.com/items?itemName=redhat.java) también permite asistencia de código y detectar errores de compilación, aunque no llegue a las capacidades de un IDE como [IntelliJ][intellij], [eclipse][eclipse] o [Visual Studio][microsoft-visual-studio] sirve para editar ocasionalmente archivos de código fuente Java sin necesidad de abrir el IDE y su proyecto. Hay complementos para [Python][python], [Ruby][ruby], [Go][go], [Rust][rust] o [Gradle][gradle] entre otros muchos, y por supuesto JavaScript o [TypeScript][typescript].
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="visual-studio-code-1.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Visual Studio Code"
+        image1="visual-studio-code-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Visual Studio Code"
         image2="visual-studio-code-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Visual Studio Code"
         caption="Visual Studio Code" >}}
 </div>
 
 Incluye una [terminal integrada](https://code.visualstudio.com/docs/editor/integrated-terminal) para ejecutar comandos sin necesidad de salir del editor a la terminal del sistema. Soporta [Emmet](https://code.visualstudio.com/docs/editor/emmet) para crear código con _snippets_ en los tipos de archivos que los soporten entre ellos HTML y CSS. También incluye soporte para el sistema de [control de versiones Git](https://code.visualstudio.com/docs/editor/versioncontrol) y otros con _plugins_ que permiten ver las modificaciones realizadas en los archivos y los archivos modificados, hay gran cantidad de complementos.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="git.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Git integrado"
+        image1="git.png" options1="2560x1440" optionsthumb1="300x200" title1="Git integrado"
         caption="Git integrado" >}}
 </div>
 
 Con la combinación <code>Ctrl + P</code> se abre una ventana emergente para abrir archivos por su nombre. Introduciendo <code>?</code> se obtienen las posibles acciones que se pueden realizar. Otra muy utilizada es <code>Ctrl + G</code> para ir a una línea específica del archivo, también se puede hacer desde la ventana emergente e introduciendo el carácter <code>:</code>. Con <code>Ctrl + Shift + O</code> se va a los símbolos detectados por editor según el tipo de archivo. Posee una buena [documentación](https://code.visualstudio.com/docs) con la que ir aprendiendo a medida que se usa el mayor provecho posible.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="ventana-emergente.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Ventana emergente de acciones rápidas"
+        image1="ventana-emergente.png" options1="2560x1440" optionsthumb1="300x200" title1="Ventana emergente de acciones rápidas"
         caption="Ventana emergente de acciones rápidas" >}}
 </div>
 

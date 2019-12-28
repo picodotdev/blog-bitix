@@ -21,7 +21,7 @@ El año 2018 ha empezando haciéndose público uno de los peores _bugs_ de segur
 
 * [Listado de procesadores Intel afectados por Meltdown y Spectre](https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&languageid=en-fr)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <figure>
         <img src="assets/images/logotipos/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
         <img src="assets/images/logotipos/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
@@ -33,7 +33,7 @@ Reemplazar todos los microprocesadores es tremendamente caro además de que prim
 
 Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este _bug_ es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <figure>
         <img src="assets/images/logotipos/intel.svg" alt="Intel" title="Intel" width="200"/>
         <img src="assets/images/logotipos/amd.svg" alt="AMD" title="AMD" width="200"/>

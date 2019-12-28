@@ -24,7 +24,7 @@ Por preferencias o necesidad según el usuario, la ubicación de cada uno de est
 
 Los discos duros SSD se han abaratado muchísimo en los últimos años pero aún no han alcanzado a los discos duros mecánicos en el precio de € por GB. Un [disco duro mecánico de 4 TB](https://amzn.to/2NEWsly) tiene un precio bastante asequible. A lo largo del tiempo he ido reaprovechando los discos duros de portátiles para los que compré una caja USB para utilizarlos como discos duros externos USB y ahora tengo varios, uno de 500 GB, otro de 320 GB, y dos de 120 GB.
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0713WPGLL&linkId=e4fd44ae2ee8a6632bf514c94a9bcce2"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07H1231S8&linkId=51f9f449af48eb3c5f98ae05eb93cbc7"></iframe>
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07FD6D4HJ&linkId=7e74aadff0dd2b77d5f5d8ee66108f4d"></iframe>
@@ -46,18 +46,18 @@ El identificador UUID de un dispositivo se obtiene con el comando _lsblk_.
 
 Con esta configuración para el explorador de archivos en este caso Nautilus de [GNOME][gnome] la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio _home_ siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio _Documentos_ se muestra el contenido _/run/media/bmovenegro/Documentos_ y no de _~/Documentos_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="gnome-user-dirs.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+        image1="gnome-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
         image2="usb-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
         caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 </div>
 
 En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos. 
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figureproc
-        image1="terminal-user-dirs.png" command1="Fit" commandthumb1="Fit" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+        image1="terminal-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
         image2="usb-terminal-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
         caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 </div>

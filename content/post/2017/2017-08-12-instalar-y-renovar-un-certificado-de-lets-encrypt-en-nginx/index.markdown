@@ -61,7 +61,7 @@ La siguiente configuración del servidor web nginx redirige todo el tráfico usa
 
 Y este es el resultado al acceder con el navegador al sitio web que tengo instalado en una [Raspberry Pi][raspberrypi] accesible desde internet con un dominio de [FreeDNS][freedns]:
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="smaug-1.png" thumb1="smaug-1-thumb.png" title1="Sitio web con certificado de Let's Encrypt"
         image2="smaug-2.png" thumb2="smaug-2-thumb.png" title2="Sitio web con certificado de Let's Encrypt"

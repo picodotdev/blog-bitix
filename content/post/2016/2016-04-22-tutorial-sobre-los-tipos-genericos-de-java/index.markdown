@@ -75,21 +75,21 @@ En Java un tipo puede ser asignado a otro mientras el primero sea compatible con
 
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="generics-subtypeRelationship.gif" thumb1="generics-subtypeRelationship.gif" >}}
 </div>
 
 Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que _ArrayList\<String\>_ es un subtipo de _List\<String\>_ que a su vez es un subtipo de _Collection\<String\>_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" >}}
 </div>
 
 {{< code file="PayloadList.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" >}}
 </div>
@@ -109,7 +109,7 @@ Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pe
 
 {{< code file="WildcardList.java" language="java" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="generics-listParent.gif" thumb1="generics-listParent.gif"
         image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" >}}
@@ -149,7 +149,7 @@ Para profundizar más en este importante tema de genéricos de Java tenemos a nu
 * <a rel="nofollow" href="https://www.amazon.es/gp/product/0596527756/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0596527756&linkCode=as2&tag=blobit-21">Java Generics and Collections</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596527756" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 * <a rel="nofollow" href="https://www.amazon.es/gp/product/0321356683/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0321356683&linkCode=as2&tag=blobit-21">Effective Java (2nd Edition): A Programming Language Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0321356683" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 
-<div class="media-amazon" style="text-align: center;">
+<div class="media-amazon">
 		<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596527756&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 		<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0321356683&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>

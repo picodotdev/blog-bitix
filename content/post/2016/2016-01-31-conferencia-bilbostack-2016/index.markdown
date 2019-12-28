@@ -20,7 +20,7 @@ series: ["bilbostack"]
 
 Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilbao en la localización de la [Universidad de Deusto](http://www.deusto.es), este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
         image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto" >}}
@@ -94,7 +94,7 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
     </tbody>
 </table>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1"
         image2="track2.jpg" thumb2="track2-thumb.jpg" title2="Sala track 2" >}}
@@ -114,7 +114,7 @@ Los equipos están autoorganizados tomando sus propias decisiones con un objetiv
 
 ¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, _karts_ o _paintball_.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <iframe src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
@@ -134,7 +134,7 @@ Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comu
 
 Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <iframe src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
@@ -157,12 +157,12 @@ Hay que tener en cuenta:
 
 Es importante tener datos para evaluar pero hay que tener cuidado con las métricas ya que son maleables.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" title1="Your code as a crime scene" >}}
 </div>
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <iframe src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
@@ -187,7 +187,7 @@ Su futuro es bueno [Sun][sun-microsystems] en su momento lo hizo de código abie
 
 En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está [jOOQ][jooq] para demostrar que los ORM no son siempre la mejor solución.
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="java-moderno.jpg" thumb1="java-moderno-thumb.jpg" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
 </div>
@@ -241,7 +241,7 @@ Otros ejemplos de productos son:
 * [Death to the stock photos](http://deathtothestockphoto.com/)
 * [Marvel app](https://marvelapp.com/)
 
-<div class="media" style="text-align: center;">
+<div class="media">
     <iframe src="https://player.vimeo.com/video/154470785?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 

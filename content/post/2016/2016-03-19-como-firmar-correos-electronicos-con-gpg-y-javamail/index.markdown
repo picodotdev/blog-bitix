@@ -34,7 +34,7 @@ En este ejemplo solo se firma el contenido del mensaje quedando fuera de la firm
 {{< code file="signature.asc.txt" language="plaintext" options="" >}}
 {{< code file="email-original.txt" language="plaintext" options="" >}}
 
-<div class="media" style="text-align: center;">
+<div class="media">
     {{< figure
         image1="gpg-verify.png" thumb1="gpg-verify-thumb.png" title1="Verificación de la firma GPG del correo electrónico"
         caption="Verificación de la firma GPG del correo electrónico" >}}
