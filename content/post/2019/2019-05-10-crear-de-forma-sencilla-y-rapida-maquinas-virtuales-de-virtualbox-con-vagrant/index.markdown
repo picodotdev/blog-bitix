@@ -54,7 +54,7 @@ La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ 
 
 {{< figureproc
     image1="docker-compose-up.png" options1="2560x1440" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
-    image2="curl.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
+    image2="curl.png" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
     image3="firefox.png" options3="2560x1440" optionsthumb3="300x200" title3="Página devuelta por nginx"
     caption="docker-compose up y curl desde la MV y desde el host" >}}
 

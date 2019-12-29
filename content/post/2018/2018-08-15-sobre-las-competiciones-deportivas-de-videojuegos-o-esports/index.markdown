@@ -19,7 +19,7 @@ El sector de los videojuegos es una industria que mueve miles de millones de eur
 
 {{< figureproc
     image1="1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Primer videojuego"
-    image2="2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Pong"
+    image2="2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Pong"
     image3="3.jpg" options3="2560x1440" optionsthumb3="300x200" title3="3 en raya"
     caption="Primeros videojuegos" >}}
 

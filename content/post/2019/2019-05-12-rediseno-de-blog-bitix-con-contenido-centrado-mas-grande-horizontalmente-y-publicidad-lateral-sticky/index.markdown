@@ -53,11 +53,11 @@ Así queda en las resoluciones habituales de 2560 píxeles, 1920, 1600, 1440, 13
 
 {{< figureproc
     image1="diseno-blogbitix-despues-2560.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 2560"
-    image2="diseno-blogbitix-despues-1920.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1920"
+    image2="diseno-blogbitix-despues-1920.png" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1920"
     image3="diseno-blogbitix-despues-1600.png" options3="2560x1440" optionsthumb3="300x200" title3="Diseño después con resolución 1600" >}}
 {{< figureproc
     image1="diseno-blogbitix-despues-1440.png" options1="2560x1440" optionsthumb1="300x200" title1="Diseño después con resolución 1440"
-    image2="diseno-blogbitix-despues-1366.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1366"
+    image2="diseno-blogbitix-despues-1366.png" options2="2560x1440" optionsthumb2="300x200" title2="Diseño después con resolución 1366"
     image3="diseno-blogbitix-despues-1200.png" options3="2560x1440" optionsthumb3="300x200" title3="Diseño después con resolución 1200"
     caption="Diseño después de los cambios a diferentes resoluciones (2560, 1920, 1600, 1440, 1366 y 1200)" >}}
 

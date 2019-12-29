@@ -44,7 +44,7 @@ Se ofrece de forma gratuita pero los servidores que son necesarios para el desar
 
 {{< figureproc
     image1="cyanogenmod-10.2.jpg" options1="2560x1440" optionsthumb1="300x200" title1="CynogenMod 10.2"
-    image2="lineageos-14.1.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="LineageOS 14.1"
+    image2="lineageos-14.1.jpg" options2="2560x1440" optionsthumb2="300x200" title2="LineageOS 14.1"
     caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 
 ### Replicant

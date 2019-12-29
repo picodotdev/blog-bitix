@@ -48,7 +48,7 @@ También poseen una interfaz web integrada en la que consultar la misma informac
 
 {{< figureproc
     image1="consul.png" options1="2560x1440" optionsthumb1="200x150" title1="Consul"
-    image2="nomad-1.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Nomad"
+    image2="nomad-1.png" options2="2560x1440" optionsthumb2="200x150" title2="Nomad"
     image3="nomad-2.png" options3="2560x1440" optionsthumb3="200x150" title3="Nomad"
     caption="Interfaces web de Consul y Nomad" >}}
 

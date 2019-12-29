@@ -50,7 +50,7 @@ Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una bas
 
 {{< figureproc
     image1="nextcloud-configuracion.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Nextcloud"
-    image2="nextcloud-inicio.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Inicio de Nextcluod"
+    image2="nextcloud-inicio.png" options2="2560x1440" optionsthumb2="300x200" title2="Inicio de Nextcluod"
     image3="nextcloud-archivos.png" options3="2560x1440" optionsthumb3="300x200" title3="Archivos en Nextcloud"
     caption="Configuración y archivos en Nextcloud" >}}
 
@@ -58,7 +58,7 @@ Este archivo de Docker Compose incluye Nextcloud con OnlyOffice sin usar una bas
 
 {{< figureproc
     image1="nextcloud-onlyoffice-documento.png" options1="2560x1440" optionsthumb1="300x200" title1="Documento con OnlyOffice"
-    image2="nextcloud-onlyoffice-hoja-de-calculo.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Hola de cálculo con OnlyOffice"
+    image2="nextcloud-onlyoffice-hoja-de-calculo.png" options2="2560x1440" optionsthumb2="300x200" title2="Hola de cálculo con OnlyOffice"
     image3="nextcloud-onlyoffice-presentacion.png" options3="2560x1440" optionsthumb3="300x200" title3="Presentación con OnlyOffice"
     caption="Ofimática con OnlyOffice y Nextcloud alternativa a Google Docs" >}}
 
@@ -66,7 +66,7 @@ Otras utilidades es un reproductor de música, calendario o galería de fotos, h
 
 {{< figureproc
     image1="nextcloud-visor-pdf.png" options1="2560x1440" optionsthumb1="300x200" title1="Visor de documento PDF"
-    image2="nextcloud-calendario.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Calendario"
+    image2="nextcloud-calendario.png" options2="2560x1440" optionsthumb2="300x200" title2="Calendario"
     image3="nextcloud-visor-fotos.png" options3="2560x1440" optionsthumb3="300x200" title3="Vidor de fotos"
     caption="Aplicaciones y complementos" >}}
 
@@ -74,7 +74,7 @@ Con [WebDAV](https://en.wikipedia.org/wiki/WebDAV) los documentos son accesibles
 
 {{< figureproc
     image1="nextcloud-webdav.png" options1="2560x1440" optionsthumb1="300x200" title1="Archivos en el explorador de archivos Nautilus con WebDAV"
-    image2="nextcloud-administracion.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Opciones de administración"
+    image2="nextcloud-administracion.png" options2="2560x1440" optionsthumb2="300x200" title2="Opciones de administración"
     caption="Archivos en el explorador de archivos Nautilus con WebDAV y opciones de administración" >}}
 
 Con las [aplicaciones para _smatphone_](https://nextcloud.com/install/#) los documentos quedan accesibles en cualquier lugar teniendo un dispositivo móvil, _smartphone_ o tableta. Tener una nube propia que esté accesible en internet hace necesario tener un dominio propio, añadir seguridad para lo que es necesario configurar Nextcloud de modo que utilice el protocolo seguro que cifre las comunicaciones con TLS, esto requiere obtener [un certificado autofirmado][blogbitix-13] al menos o mejor obteniendolo de [Let's Encrypt][letsencrypt], que proporciona certificados de forma automatizada y gratuita. Otra medida para aumentar la seguridad es utilizar un segundo factor de autenticación o _2FA_.

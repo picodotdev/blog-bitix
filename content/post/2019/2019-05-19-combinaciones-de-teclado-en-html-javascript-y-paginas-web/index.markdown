@@ -34,7 +34,7 @@ La propiedad global _accesskey_ puede utilizarse en cualquier elemento de HTML, 
 
 {{< figureproc
     image1="key-combinations-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Captura de Ctrl + Shift + s"
-    image2="key-combinations-3.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Captura de Alt + Shift + t, ubica el foco en el campo de texto"
+    image2="key-combinations-3.png" options2="2560x1440" optionsthumb2="200x150" title2="Captura de Alt + Shift + t, ubica el foco en el campo de texto"
     image3="key-combinations-4.png" options3="2560x1440" optionsthumb3="200x150" title3="Captura de Alt + Shift + b, ejecuta la acción clic del botón"
     caption="Acciones con combinaciones de teclas" >}}
 

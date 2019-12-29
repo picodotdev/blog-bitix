@@ -29,7 +29,7 @@ Utilizando los elementos de la paleta como campos de texto e imagen y posicioná
 
 {{< figureproc
     image1="editor-expresiones-parametros.png" options1="2560x1440" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
-    image2="editor-expresiones-campos.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Editor de expresiones, campos"
+    image2="editor-expresiones-campos.png" options2="2560x1440" optionsthumb2="200x150" title2="Editor de expresiones, campos"
     image3="editor-expresiones-variables.png" options3="2560x1440" optionsthumb3="200x150" title3="Editor de expresiones, variables"
     caption="Editor de expresiones" >}}
 

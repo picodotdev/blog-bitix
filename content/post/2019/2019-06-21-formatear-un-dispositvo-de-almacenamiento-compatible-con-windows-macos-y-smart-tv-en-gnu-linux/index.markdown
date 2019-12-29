@@ -40,7 +40,7 @@ Primero es importante identificar correctamente la unidad que se quiere formatea
 
 {{< figureproc
     image1="gnome-disks-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
-    image2="gnome-disks-3.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
+    image2="gnome-disks-3.png" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
     image3="gnome-disks-4.png" options3="2560x1440" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
     caption="Formatear dispositivo de almacenamiento" >}}
 

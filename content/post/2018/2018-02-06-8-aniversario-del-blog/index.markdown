@@ -40,7 +40,7 @@ En cuanto al navegador usado por los usuarios la mayor cuota de uso es [Chrome][
 
 {{< figureproc
     image1="navegador.png" options1="2560x1440" optionsthumb1="300x200" title1="Navegador"
-    image2="sistema-operativo.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Sistema operativo"
+    image2="sistema-operativo.png" options2="2560x1440" optionsthumb2="300x200" title2="Sistema operativo"
     caption="Navegador y sistema operativo" >}}
 
 En un porcentaje aplastante la mayoría de usuarios proviene del buscador Google con un 91% y un 4,8% para el tráfico directo.

@@ -19,10 +19,10 @@ A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha te
 
 {{< figureproc
     image1="bilbostack-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
-    image2="bilbostack-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="BilboStack 2018" >}}
+    image2="bilbostack-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="BilboStack 2018" >}}
 {{< figureproc
     image1="bilbostack-3.jpg" options1="2560x1440" optionsthumb1="300x200" title1="BilboStack 2018"
-    image2="presentacion.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Presentación BilboStack 2018"
+    image2="presentacion.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Presentación BilboStack 2018"
     caption="BilboStack 2018" >}}
 
 En la presentación inicial se ha comentado como se gestó la primera BilboStack. A la vuelta de otra conferencia los organizadores se preguntaron por que no organizar una ellos en Bilbao para no siempre ir a otras ciudades como Madrid o Barcelona.
@@ -31,7 +31,7 @@ Hasta el momento siempre se ha mantenido gratuita la entrada previa reserva pero
 
 {{< figureproc
     image1="euskalduna-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Palacio Euskalduna"
-    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Palacio Euskalduna"
+    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Palacio Euskalduna"
     caption="Palacio Euskalduna" >}}
 
 700 y pico entradas eran las que se han ofrecido, ni los organizadores creían que se iban a agotar y se jactaban de que habría entradas para todos en los primeros días de poner la primera oleada para la reserva, pues al final ni esas 700 parece que han estado sobradas. Sorprendente ya que en el 2016 los asistentes fueron 332, algo menos de la mitad del aforo de este año. 6 de las 8 presentaciones han sido dadas por mujeres y en años anteriores también ha habido presencia femenina tanto ponentes como asistentes.
@@ -50,7 +50,7 @@ Por supuesto tener a disposición para la conferencia este recinto y los ponente
 
 {{< figureproc
     image1="patrocinadores.png" options1="2560x1440" optionsthumb1="300x200" title1="Patrocinadores"
-    image2="merchandising.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Merchandising"
+    image2="merchandising.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Merchandising"
     caption="Patrocinadores" >}}
 
 La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cuatro presentaciones en cada una de ellas, en formato de una mañana y el posterior postevento para el que desee.

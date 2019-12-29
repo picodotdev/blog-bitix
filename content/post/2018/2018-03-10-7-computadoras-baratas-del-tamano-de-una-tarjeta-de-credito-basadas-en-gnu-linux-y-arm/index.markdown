@@ -69,7 +69,7 @@ El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega 
 
 {{< figureproc
     image1="raspberrypi3b.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Raspberry Pi 3"
-    image2="raspberrypi4b.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Raspberry Pi 4"
+    image2="raspberrypi4b.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Raspberry Pi 4"
     caption="Raspberry Pi 3 y 4" >}}
 
 <div class="media-amazon">
@@ -183,7 +183,7 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
 
 {{< figureproc
     image1="cubox.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Cubox"
-    image2="cubox-pulse.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Cubox Pulse"
+    image2="cubox-pulse.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Cubox Pulse"
     caption="Cubox y Cubox Pulse" >}}
 
 ### ODROID

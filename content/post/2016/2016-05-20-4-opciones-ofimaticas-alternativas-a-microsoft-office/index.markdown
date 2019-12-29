@@ -37,7 +37,7 @@ Microsoft Office incluye Word como procesador de textos, Powerpoint para present
 
 {{< figureproc
     image1="microsoft-office-word.png" options1="2560x1440" optionsthumb1="200x150" title1="Microsoft Office Word"
-    image2="microsoft-office-excel.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Microsoft Office Excel"
+    image2="microsoft-office-excel.png" options2="2560x1440" optionsthumb2="200x150" title2="Microsoft Office Excel"
     image3="microsoft-office-powerpoint.png" options3="2560x1440" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
     caption="Microsoft Office" >}}
 
@@ -47,7 +47,7 @@ La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://e
 
 {{< figureproc
     image1="libreoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="LibreOffice Writer"
-    image2="libreoffice-calc.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="LibreOffice Calc"
+    image2="libreoffice-calc.png" options2="2560x1440" optionsthumb2="200x150" title2="LibreOffice Calc"
     image3="libreoffice-impress.png" options3="2560x1440" optionsthumb3="200x150" title3="LibreOffice Impress"
     caption="LibreOffice" >}}
 
@@ -61,7 +61,7 @@ Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para lo
 
 {{< figureproc
     image1="wpsoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="WPS Office"
-    image2="wpsoffice-spreadsheets.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="WPS Office"
+    image2="wpsoffice-spreadsheets.png" options2="2560x1440" optionsthumb2="200x150" title2="WPS Office"
     image3="wpsoffice-presentation.png" options3="2560x1440" optionsthumb3="200x150" title3="WPS Office"
     caption="WPS Office" >}}
 
@@ -73,7 +73,7 @@ Para las empresas se ofrece al precio de 4€ por usuario al mes que incluye el 
 
 {{< figureproc
     image1="googledocs-documento.png" options1="2560x1440" optionsthumb1="200x150" title1="Google Docs"
-    image2="googledocs-hoja-de-calculo.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Google Docs"
+    image2="googledocs-hoja-de-calculo.png" options2="2560x1440" optionsthumb2="200x150" title2="Google Docs"
     image3="googledocs-presentacion.png" options3="2560x1440" optionsthumb3="200x150" title3="Google Docs"
     caption="Google Docs" >}}
 
@@ -83,7 +83,7 @@ Para las empresas se ofrece al precio de 4€ por usuario al mes que incluye el 
 
 {{< figureproc
     image1="onlyoffice-documentos.png" options1="2560x1440" optionsthumb1="200x150" title1="OnlyOffice Documentos"
-    image2="onlyoffice-hojas-de-calculo.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="OnlyOffice Hojas de cálculo"
+    image2="onlyoffice-hojas-de-calculo.png" options2="2560x1440" optionsthumb2="200x150" title2="OnlyOffice Hojas de cálculo"
     image3="onlyoffice-presentaciones.png" options3="2560x1440" optionsthumb3="200x150" title3="OnlyOffice Presentaciones"
     caption="OnlyOffice" >}}
 

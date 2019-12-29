@@ -31,7 +31,7 @@ Varias de las mismas consultas que hacía con _curl_ en otros artículos es posi
 
 {{< figureproc
     image1="graphiql-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta"
-    image2="graphiql-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Asistencia contextual"
+    image2="graphiql-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Asistencia contextual"
     image3="graphiql-3.png" options3="2560x1440" optionsthumb3="300x200" title3="Explorador del esquema"
     caption="El editor GraphiQL para una API con GraphQL" >}}
 

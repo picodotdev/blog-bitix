@@ -35,7 +35,7 @@ La biblioteca se guarda en el sistema de archivos del ordenador en una estructur
 
 {{< figureproc
     image1="calibre-biblioteca-autores.png" options1="2560x1440" optionsthumb1="300x200" title1="Organización por autores de los archivos en la biblioteca"
-    image2="calibre-biblioteca-libros.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Organización por autor de los archivos en la biblioteca"
+    image2="calibre-biblioteca-libros.png" options2="2560x1440" optionsthumb2="300x200" title2="Organización por autor de los archivos en la biblioteca"
     caption="Organización de los archivos en la biblioteca" >}}
 
 Quizá algunos de los libros no tenga los metadatos correctos como el título, nombre del autor o el número del libro si forma parte de una serie de libros relacionados, mediante otro diálogo se puede editar y catalogar correctamente el libro.

@@ -22,12 +22,12 @@ La novedad más relevante de este año es que por primera vez las entradas han t
 
 {{< figureproc
     image1="euskalduna-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Palacio Euskalduna"
-    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
+    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
     image3="bilbostack-logo-2.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Palacio Euskalduna"
     caption="Palacio Euskalduna" source="@BilboStack">}}
 {{< figureproc
     image1="patrocinadores.png" options1="2560x1440" optionsthumb1="200x150" title1="Patrocinadores"
-    image2="localizacion.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
+    image2="localizacion.png" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
     image3="paquete-bienvenida.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Paquete de bienvenida"
     caption="Patrocinadores, ubicación y paquete de bienvenida" >}}
 
@@ -136,7 +136,7 @@ Tenía claro que quería acudir a esta presentación, era una en la que no tení
 
 {{< figureproc
     image1="webcomponents-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Web Components API"
-    image2="webcomponents-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Web Components API"
+    image2="webcomponents-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Web Components API"
     caption="Web Components API" >}}
 
 ### Agile JavaScript por _Ricardo Borillo_
@@ -149,7 +149,7 @@ Esta presentación junto con la anterior forman la representación de JavaScript
 
 {{< figureproc
     image1="agilejavascript-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Agile JavaScript"
-    image2="agilejavascript-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Agile JavaScript"
+    image2="agilejavascript-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Agile JavaScript"
     caption="Agile JavaScript" >}}
 
 ### Descanso
@@ -158,7 +158,7 @@ No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacer
 
 {{< figureproc
     image1="bilbostack-networking.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Networking + Café"
-    image2="bilbostack-photocall.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Photocall"
+    image2="bilbostack-photocall.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Photocall"
     image3="bilbostack-hashtag.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Hashtag"
     caption="Networking + Café, photocall y hashtag" >}}
 

@@ -45,7 +45,7 @@ Laa API _key_ se crean en la página de [Credenciales](https://console.developer
 
 {{< figureproc
     image1="google-credentials.png" options1="2560x1440" optionsthumb1="300x200" title1="Google Credentials"
-    image2="google-api-key.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
+    image2="google-api-key.png" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
     image3="google-document-share.png" options3="2560x1440" optionsthumb3="300x200" title3="Compartir documento en Google Drive"
     caption="Google Credentials, API Key y compartir documento" >}}
 
@@ -53,7 +53,7 @@ El enlace al compartir el documento o al editarlo contiene el identificativo de 
 
 {{< figureproc
     image1="google-spreadsheet.png" options1="2560x1440" optionsthumb1="300x200" title1="Hoja de cálculo de Google"
-    image2="google-document.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
+    image2="google-document.png" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
     caption="Hoja de cálculo y documento de Google" >}}
 
 {{< code file="Main-3.java" language="java" options="" >}}

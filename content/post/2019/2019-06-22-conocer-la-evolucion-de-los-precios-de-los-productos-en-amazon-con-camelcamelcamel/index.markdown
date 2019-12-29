@@ -27,7 +27,7 @@ Como ejemplo se puede mostrar el precio de un SDD [Samsung 970 EVO en formato M.
 
 {{< figureproc
     image1="precios-amazon-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Precio SSD 500 GB"
-    image2="precios-amazon-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Precio SSD 1 TB"
+    image2="precios-amazon-2.png" options2="2560x1440" optionsthumb2="200x150" title2="Precio SSD 1 TB"
     image3="precios-amazon-3.png" options3="2560x1440" optionsthumb3="200x150" title3="Precio 32 GB de memoria"
     caption="Evolución de precios en Amazon" >}}
 

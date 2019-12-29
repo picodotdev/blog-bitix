@@ -27,7 +27,7 @@ En las imágenes se aprecia que mi distribución es [Arch Linux][archlinux], [mi
 
 {{< figureproc
     image1="neofetch-1.png" options1="2560x1440" optionsthumb1="300x250" title1="Información del sistema proporcionada por neofetch"
-    image2="neofetch-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
+    image2="neofetch-2.png" options2="2560x1440" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
     caption="Información del sistema proporcionada por neofetch" >}}
 
 Ambos comandos están disponibles en los repositorios de paquetes de la distribución que se esté usando.

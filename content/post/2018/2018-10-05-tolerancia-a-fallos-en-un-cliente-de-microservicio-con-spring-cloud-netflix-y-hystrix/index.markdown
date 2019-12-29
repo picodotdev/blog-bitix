@@ -32,7 +32,7 @@ El patrón _circuit breaker_ se denomina así ya que implementa una lógica simi
 
 {{< figureproc
     image1="circuit-breaker-diagram.png" options1="2560x1440" optionsthumb1="300x200" title1="Diagrama del patrón circuit breaker"
-    image2="circuit-breaker-states.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Diagrama de estados"
+    image2="circuit-breaker-states.png" options2="2560x1440" optionsthumb2="300x200" title2="Diagrama de estados"
     image3="hystrix-fallback.png" options3="2560x1440" optionsthumb3="300x200" title3="Fallback del patrón circuit breaker"
     caption="Diagrama del patrón circuit breaker, de estados y método fallback" >}}
 
@@ -56,7 +56,7 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
 
 {{< figureproc
     image1="circuit-breaker-closed.png" options1="2560x1440" optionsthumb1="300x200" title1="Circuit breaker cerrado"
-    image2="circuit-breaker-open.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
+    image2="circuit-breaker-open.png" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
     caption="Estados del circuit breaker" >}}
 
 {{< code file="gradle-run.sh" language="bash" options="" >}}

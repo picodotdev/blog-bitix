@@ -48,7 +48,7 @@ Una vez iniciados los servidores de descubrimiento en la página _dashboard_ de 
 
 {{< figureproc
     image1="spring-eureka-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Cluster del servicio de registro y descubrimiento"
-    image2="spring-eureka-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Servicios registrados en el servicio de registro y descubrimiento"
+    image2="spring-eureka-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Servicios registrados en el servicio de registro y descubrimiento"
     caption="Servicios y su estado registrados en el servicio de registro y descubrimiento" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew discoveryserver:run --args=\"--spring.profiles.active=ds1\"" >}}

@@ -28,11 +28,11 @@ He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.
 
 {{< figureproc
     image1="motorola-c350.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Motorola C350"
-    image2="nokia-6630.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Nokia 6630"
+    image2="nokia-6630.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Nokia 6630"
     image3="htc-wildfire-cdma.jpg" options3="2560x1440" optionsthumb3="200x150" title3="HTC Wildfire" >}}
 {{< figureproc
     image1="motorola-defy.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Motorola Defy"
-    image2="samsung-galaxy-s3.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S3"        
+    image2="samsung-galaxy-s3.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S3"        
     caption="Móviles que he tenido" >}}
 
 Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, en modo espera me aguanta un día pero con un uso algo más intensivo la batería baja rápidamente y requiere alguna carga más de una carga al día. Algunas aplicaciones como GMail y Twitter se nota que el procesador Exynos 4412 quad-core que tiene cumple pero no va sobrado para la época actual. En total el S3 habrá tenido 7 años de vida, menos lo que no sería mucho si no lo hubiese dado un segundo uso y un tercero con LineageOS.
@@ -64,7 +64,7 @@ Sin embargo, en vez de comprar uno de estos anteriores nuevos como en ocasiones 
 
 {{< figureproc
     image1="samsung-galaxy-s6-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Samsung Galaxy S6"
-    image2="samsung-galaxy-s6-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S6"
+    image2="samsung-galaxy-s6-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Samsung Galaxy S6"
     caption="Nuevo móvil, Samsung Galaxy S6" >}}
 
 Tiene marcos grandes, no tiene un sensor de huellas integrado en la pantalla, sin triple cámara con gran angular, ni zoom óptico y efecto desenfoque como están incorporando los móviles nuevos como los anteriores y echo de menos una tarjeta microSD para ampliarle la capacidad de almacenamiento sobre todo para añadirle mi colección de música. Pero suficiente para mi.

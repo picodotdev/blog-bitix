@@ -149,20 +149,20 @@ El monitor está perfectamente embalado en una caja impresa con las principales 
 
 {{< figureproc
     image1="benq-pd2700q-unboxing-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
-    image2="benq-pd2700q-unboxing-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
+    image2="benq-pd2700q-unboxing-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
     image3="benq-pd2700q-unboxing-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
 {{< figureproc
     image1="benq-pd2700q-unboxing-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
-    image2="benq-pd2700q-unboxing-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
+    image2="benq-pd2700q-unboxing-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
     image3="benq-pd2700q-unboxing-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
 {{< figureproc
     image1="benq-pd2700q-unboxing-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
-    image2="benq-pd2700q-unboxing-8.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
+    image2="benq-pd2700q-unboxing-8.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
     caption="Desempaquetado" >}}
 
 {{< figureproc
     image1="benq-pd2700q-unboxing-9.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
-    image2="benq-pd2700q-unboxing-10.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
+    image2="benq-pd2700q-unboxing-10.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado"
     image3="benq-pd2700q-unboxing-11.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado" >}}
 {{< figureproc
     image1="benq-pd2700q-unboxing-12.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado"
@@ -172,30 +172,30 @@ El monitor posee unos biseles bastante amplios de 2 cm sin embargo al ser el mar
 
 {{< figureproc
     image1="benq-pd2700q-review-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
-    image2="benq-pd2700q-review-17.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
+    image2="benq-pd2700q-review-17.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
     image3="benq-pd2700q-review-2.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla" >}}
 {{< figureproc
     image1="benq-pd2700q-review-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
-    image2="benq-pd2700q-review-4.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
+    image2="benq-pd2700q-review-4.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
     image3="benq-pd2700q-review-5.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla" >}}
 {{< figureproc
     image1="benq-pd2700q-review-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla"
-    image2="benq-pd2700q-review-7.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
+    image2="benq-pd2700q-review-7.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla"
     caption="Pantalla" >}}
 {{< figureproc
     image1="benq-pd2700q-review-8.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
-    image2="benq-pd2700q-review-9.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
+    image2="benq-pd2700q-review-9.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
     image3="benq-pd2700q-review-14.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla parte trasera" >}}
 {{< figureproc
     image1="benq-pd2700q-review-15.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla parte trasera"
-    image2="benq-pd2700q-review-16.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
+    image2="benq-pd2700q-review-16.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla parte trasera"
     caption="Pantalla parte trasera" >}}
 
 Este modelo de monitor incluye dos puertos USB 2.0 en la parte trasera, tiene utilidad en un ordenador de escritorio que esté debajo de la mesa para tener unos puertos USB más cerca del escritorio con un concentrador USB.
 
 {{< figureproc
     image1="benq-pd2700q-review-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
-    image2="benq-pd2700q-review-11.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Conexiones"
+    image2="benq-pd2700q-review-11.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Conexiones"
     image3="benq-pd2700q-review-12.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Conexiones" >}}
 {{< figureproc
     image1="benq-pd2700q-review-13.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conexiones"
@@ -205,17 +205,17 @@ Los botones para ajustar los parámetros del monitor y OSD están detrás del mo
 
 {{< figureproc
     image1="benq-pd2700q-osd-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
-    image2="benq-pd2700q-osd-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
+    image2="benq-pd2700q-osd-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
     image3="benq-pd2700q-osd-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="OSD"
     caption="" >}}
 {{< figureproc
     image1="benq-pd2700q-osd-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
-    image2="benq-pd2700q-osd-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
+    image2="benq-pd2700q-osd-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
     image3="benq-pd2700q-osd-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="OSD"
     caption="" >}}
 {{< figureproc
     image1="benq-pd2700q-osd-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="OSD"
-    image2="benq-pd2700q-osd-8.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
+    image2="benq-pd2700q-osd-8.jpg" options2="2560x1440" optionsthumb2="200x150" title2="OSD"
     caption="Configuración en pantalla (OSD)" >}}
 
 Habitualmente estoy trabajando con un portátil MacBook Pro con pantalla retina y anteriormente he usado un Sony VAIO E 14P con panel TN de resolución 1600x900 y un monitor [LG 2351](https://www.lg.com/hk_en/monitor/lg-E2351VR-home) también TN de resolución 1920x1080. Con respecto a los dos paneles TN que he usado hasta el momento la mejora es apreciable en sus ángulos de visión, colores más intensos, este es el motivo de requerir un panel tipo IPS. Si tengo que destacar algo del MacBook es la pantalla, la pantalla del Benq cumple pero al no ser retina la diferencia es clara, aún conservando buena vista la definición del texto no es mala pero no llega a la calidad de la pantalla del MacBook, eso si en cuanto a colores no tiene nada que envidiar a la pantalla del Mac.
@@ -230,7 +230,7 @@ La primera impresión es que un monitor de 27" es grande pero ya me han comentad
 
 {{< figureproc
     image1="benq-pd2700q-screen-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Imagen en la pantalla"
-    image2="benq-pd2700q-screen-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Imagen en la pantalla"
+    image2="benq-pd2700q-screen-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Imagen en la pantalla"
     image3="benq-pd2700q-screen-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Imagen en la pantalla"
     caption="Imagen en la pantalla" >}}
 
@@ -246,7 +246,7 @@ Con una resolución QHD hay más espacio que en una Full HD que agradecen los pr
 
 {{< figureproc
     image1="benq-pd2700q-screen-5.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Espacio en resolución QHD"
-    image2="benq-pd2700q-screen-6.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Espacio en resolución QHD"
+    image2="benq-pd2700q-screen-6.png" options2="2560x1440" optionsthumb2="200x150" title2="Espacio en resolución QHD"
     image3="benq-pd2700q-screen-7.png" options3="2560x1440" optionsthumb3="200x150" title3="Espacio en resolución QHD"
     caption="Espacio en resolución QHD" >}}
 

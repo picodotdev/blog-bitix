@@ -64,7 +64,7 @@ Sin los casos de prueba _calculatePriceForChildNarrowCase_ y _calculatePriceForF
 
 {{< figureproc
     image1="tests-report-correct.png" options1="2560x1440" optionsthumb1="200x150" title1="Informe de teses correcto"
-    image2="pit-report-fail-1.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Informe de PIT incorrecto"
+    image2="pit-report-fail-1.png" options2="2560x1440" optionsthumb2="200x150" title2="Informe de PIT incorrecto"
     image3="pit-report-fail-2.png" options3="2560x1440" optionsthumb3="200x150" title3="Informe de PIT incorrecto"
     caption="Informe de teses correcto y de PIT incorrecto" >}}
 
@@ -72,10 +72,10 @@ El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada
 
 {{< figureproc
     image1="tests-report.png" options1="2560x1440" optionsthumb1="300x200" title1="Informe de pruebas de JUnit"
-    image2="jacoco-report.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Informe de cobertura de JaCoCo" >}}
+    image2="jacoco-report.png" options2="2560x1440" optionsthumb2="300x200" title2="Informe de cobertura de JaCoCo" >}}
 {{< figureproc
     image1="pit-report-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Informe de mutación de PIT"
-    image2="pit-report-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Informe de mutación de PIT"
+    image2="pit-report-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Informe de mutación de PIT"
     caption="Informe de pruebas de JUnit, de cobertura de JaCoCo y de mutación de PIT" >}}
 
 Para generar los informes de cobertura de código y de mutación en Java y usando [Gradle][gradle] como herramienta de construcción las herramientas JaCoCo y PIT proporcionan un complemento o _plugin_ que hay que añadir al archivo de construcción además de proporcionar algunas opciones de configuración en la sección _pitest_, entre estas propiedades está _mutators_ en la que se puede indicar los _mutators_ que PIT emplea para lanzar los teses con mutaciones. Los informes se generan en el directorio _build/reports/_. Realizar _mutation testing_ solo requiere cierta configuración en el archivo de construcción del proyecto.

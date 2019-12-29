@@ -70,7 +70,7 @@ Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas r
 
 {{< figureproc
     image1="prometheus-graph.png" options1="2560x1440" optionsthumb1="300x200" title1="Métrica de la aplicación en Prometheus"
-    image2="grafana-graph.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Métrica de la aplicación en Grafana"
+    image2="grafana-graph.png" options2="2560x1440" optionsthumb2="300x200" title2="Métrica de la aplicación en Grafana"
     caption="Métrica de la aplicación en Prometheus y Grafana" >}}
 
 Una vez que Prometheus recolecta los datos de las métricas al introducir las expresiones se proporciona asistencia de código. Por otro lado, en la sección _Status > Targets_ de 

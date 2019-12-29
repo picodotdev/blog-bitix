@@ -27,7 +27,7 @@ Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es da
 
 {{< figureproc
     image1="componentes.jpg" options1="2560x1440" optionsthumb1="200x150" title1="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100)"
-    image2="amd-athlon.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Microprocesador AMD Athlon"
+    image2="amd-athlon.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Microprocesador AMD Athlon"
     image3="intel-core-2-duo.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Microprocesador Intel Core 2 Duo (T8100)"
     caption="4 GiB DDR2 de memoria RAM, AMD Athlon e Intel Core 2 Duo (T8100) de anteriores equipos" >}}
 
@@ -166,11 +166,11 @@ La caja del NUC es muy pequeña en la que se incluye el NUC y la fuente de alime
 
 {{< figureproc
     image1="desempaquetado-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
-    image2="desempaquetado-nuc-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
+    image2="desempaquetado-nuc-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
     image3="desempaquetado-nuc-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Caja Intel NUC8i5BEK" >}}
 {{< figureproc
     image1="desempaquetado-nuc-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja Intel NUC8i5BEK"
-    image2="desempaquetado-nuc-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
+    image2="desempaquetado-nuc-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Caja Intel NUC8i5BEK"
     image3="desempaquetado-nuc-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Caja Intel NUC8i5BEK"
     caption="Caja Intel NUC8i5BEK" >}}
 
@@ -178,11 +178,11 @@ Aspecto exterior del NUC.
 
 {{< figureproc
     image1="desempaquetado-nuc-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
-    image2="desempaquetado-nuc-8.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
+    image2="desempaquetado-nuc-8.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
     image3="desempaquetado-nuc-9.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Aspecto exterior Intel NUC8i5BEK" >}}
 {{< figureproc
     image1="desempaquetado-nuc-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Aspecto exterior Intel NUC8i5BEK"
-    image2="desempaquetado-nuc-11.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
+    image2="desempaquetado-nuc-11.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Aspecto exterior Intel NUC8i5BEK"
     image3="desempaquetado-nuc-12.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Aspecto exterior Intel NUC8i5BEK"
     caption="Aspecto exterior Intel NUC8i5BEK" >}}
 
@@ -190,14 +190,14 @@ La fuente de alimentación del NUC y el soporte VESA con sus tornillos.
 
 {{< figureproc
     image1="desempaquetado-nuc-13.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Fuente de alimentación"
-    image2="desempaquetado-nuc-14.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Soporte VESA"
+    image2="desempaquetado-nuc-14.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Soporte VESA"
     caption="Fuente de alimentación y soporte VESA" >}}
 
 Manuales e instrucciones del NUC.
 
 {{< figureproc
     image1="instrucciones-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Manuales e instrucciones del NUC"
-    image2="instrucciones-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Manuales e instrucciones del NUC"
+    image2="instrucciones-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Manuales e instrucciones del NUC"
     image3="instrucciones-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Manuales e instrucciones del NUC"
     caption="Manuales e instrucciones del NUC" >}}
 
@@ -211,7 +211,7 @@ El ventilador es más grande que en generaciones anteriores.
 
 {{< figureproc
     image1="nucblog-nuc8i3beh-fan.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Ventilador"
-    image2="nucblog-nuc8i3beh-heatsink.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Disipador"
+    image2="nucblog-nuc8i3beh-heatsink.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Disipador"
     caption="Ventilador y disipador" source="nucblog.net" >}}
 
 #### Memoria
@@ -220,7 +220,7 @@ El _kit_ de la memoria DDR4 a 2400 Mhz no tiene nada especial. Cada módulo est�
 
 {{< figureproc
     image1="desempaquetado-ram-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado memoria HyperX Impact"
-    image2="desempaquetado-ram-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado memoria HyperX Impact"
+    image2="desempaquetado-ram-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado memoria HyperX Impact"
     image3="desempaquetado-ram-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado memoria HyperX Impact"
     caption="Desempaquetado memoria HyperX Impact" >}}
 
@@ -230,7 +230,7 @@ El _stick_ del SSD también es muy pequeño solo mide 8cm de largo y unos 2,5 cm
 
 {{< figureproc
     image1="desempaquetado-ssd-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
-    image2="desempaquetado-ssd-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado SSD Samsung 970 EVO NVMe"
+    image2="desempaquetado-ssd-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Desempaquetado SSD Samsung 970 EVO NVMe"
     image3="desempaquetado-ssd-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Desempaquetado SSD Samsung 970 EVO NVMe" >}}
 {{< figureproc
     image1="desempaquetado-ssd-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Desempaquetado SSD Samsung 970 EVO NVMe"
@@ -248,7 +248,7 @@ Una vez colocados ambos elementos se vuelve a colocar la tapa inferior que hace 
 
 {{< figureproc
     image1="montaje-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Montaje de memoria y SSD M.2"
-    image2="montaje-nuc-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Montaje de memoria y SSD M.2"
+    image2="montaje-nuc-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Montaje de memoria y SSD M.2"
     image3="montaje-nuc-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Montaje de memoria y SSD M.2"
     caption="Montaje de memoria y SSD M.2" >}}
 
@@ -262,15 +262,15 @@ El NUC es realmente pequeño con sus 11x11cm ocupa muy poco espacio, además la 
 
 {{< figureproc
     image1="nucblog-nuc8i5_bios1.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
-    image2="nucblog-nuc8i5_bios2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+    image2="nucblog-nuc8i5_bios2.png" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
     image3="nucblog-nuc8i5_bios3.png" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
 {{< figureproc
     image1="nucblog-nuc8i5_bios4.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
-    image2="nucblog-nuc8i5_bios5.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+    image2="nucblog-nuc8i5_bios5.png" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
     image3="nucblog-nuc8i5_bios6.png" options3="2560x1440" optionsthumb3="200x150" title3="BIOS" >}}
 {{< figureproc
     image1="nucblog-nuc8i5_bios7.png" options1="2560x1440" optionsthumb1="200x150" title1="BIOS"
-    image2="nucblog-nuc8i5_bios8.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
+    image2="nucblog-nuc8i5_bios8.png" options2="2560x1440" optionsthumb2="200x150" title2="BIOS"
     image3="nucblog-nuc8i5_bios9.png" options3="2560x1440" optionsthumb3="200x150" title3="BIOS"
     caption="BIOS" source="nucblog.net" >}}
 
@@ -290,7 +290,7 @@ Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el
 
 {{< figureproc
     image1="mac-mini-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mac mini (2018)"
-    image2="mac-mini-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Mac mini (2018)"
+    image2="mac-mini-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Mac mini (2018)"
     image3="mac-mini-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Mac mini (2018)"
     caption="Mac mini (2018)" >}}
 
@@ -334,7 +334,7 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
 
 {{< figureproc
     image1="slimbook-one-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Slimbook ONE (v2)"
-    image2="slimbook-one-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
+    image2="slimbook-one-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
     image3="slimbook-one-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
     caption="Slimbook ONE (v2)" >}}
 
@@ -377,7 +377,7 @@ Y el que tengo ahora.
 
 {{< figureproc
     image1="escritorio-nuc-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Escritorio con NUC"
-    image2="escritorio-nuc-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Escritorio con NUC"
+    image2="escritorio-nuc-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Escritorio con NUC"
     image3="escritorio-nuc-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Escritorio con NUC"
     caption="Escritorio con NUC" >}}
 

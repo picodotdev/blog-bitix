@@ -83,22 +83,22 @@ Revisando los artículos que he publicado en [otras hemerotecas][blogbitix-serie
 
 {{< figureproc
     image1="analytics-2018.png" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2018 de Blog Bitix"
-    image2="gadsense-2018.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2018 de Blog Bitix"
+    image2="gadsense-2018.png" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2018 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2018" >}}
 
 Incluyo además algunas métricas que proporciona AdSense de RPM, clics y CPC. Este final de año ha sido especialmente bueno con la semana del _black friday_ como punto álgido llegando casi a 70 € en un mes, en todo el año han sido casi 500 € contra los 450 € del 2017.
 
 {{< figureproc
     image1="gadsense-ingresos-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
-    image2="gadsense-paginas-vistas-2018.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
+    image2="gadsense-paginas-vistas-2018.png" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
     image3="gadsense-clics-2018.png" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
 {{< figureproc
     image1="gadsense-crt-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2018 de Blog Bitix"
-    image2="gadsense-cpc-2018.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2018 de Blog Bitix"
+    image2="gadsense-cpc-2018.png" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2018 de Blog Bitix"
     image3="gadsense-rpm-2018.png" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2018 de Blog Bitix" >}}
 {{< figureproc
     image1="gadsense-tipos-de-puja-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2018 de Blog Bitix"
-    image2="gadsense-plataformas-2018.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2018 de Blog Bitix"
+    image2="gadsense-plataformas-2018.png" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2018 de Blog Bitix"
     caption="Métricas de AdSense" >}}
 
 Además, de AdSense incluyo enlaces de Amazon de algunos productos que compro y de los que publico algún artículo. Este año a través de los enlaces de afiliado de Amazon ha facturado a través de ellos casi 900 € y he recibido a cambio 50 € en comisiones.

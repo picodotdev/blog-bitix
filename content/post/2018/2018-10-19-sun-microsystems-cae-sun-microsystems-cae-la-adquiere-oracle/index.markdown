@@ -23,7 +23,7 @@ Otras tecnologías de Sun relevantes eran el sistema operativo [Solaris][solaris
 
 {{< figureproc
     image1="sun-microsystems-headquarters.jpg" options1="2560x1440" optionsthumb1="200x150" alt1="Sun Microsystems Headquarters" title1="Sun Microsystems Headquarters"
-    image2="sun-microsystems-workstation.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" alt2="Sun Microsystems Workstation" title2="Sun Microsystems Workstation"
+    image2="sun-microsystems-workstation.jpg" options2="2560x1440" optionsthumb2="200x150" alt2="Sun Microsystems Workstation" title2="Sun Microsystems Workstation"
     image3="sun-ultrasparc.jpg" options3="2560x1440" optionsthumb3="200x150" alt3="Sun Microsystems Sparc" title3="Sun Microsystems sparc" >}}
 
 La adquisición de Oracle generó dudas por la cultura de empresa más cerrada que la que tenía Sun que contribuyó e influenció notablemente en el mundo tecnológico aún a día de hoy. Después de unos meses de la adquisición varias personas salieron de la compañía como [James Gosling][james-gosling] creador de Java, [Tim Bray](https://en.wikipedia.org/wiki/Tim_Bray) creador de formato XML, [Kohsuke Kawaguchi](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) desarrollador principal de Hudson o [Bryan Cantrill](https://en.wikipedia.org/wiki/Bryan_Cantrill) creador de DTrace.

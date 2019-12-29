@@ -51,7 +51,7 @@ Realizada la conexión al agente se muestran las propiedades y operaciones de lo
 
 {{< figureproc
     image1="jconsole-mbean.png" options1="2560x1440" optionsthumb1="300x250" title1="Instrumentalización de un MBean en JConsole"
-    image2="visualvm-mbean.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x250" title2="Instrumentalización de un MBean en VisualVM"
+    image2="visualvm-mbean.png" options2="2560x1440" optionsthumb2="300x250" title2="Instrumentalización de un MBean en VisualVM"
     caption="Instrumentalización de un MBean en JConsole y VisualVM" >}}
 
 En el caso de que la aplicación esté contenida dentro de una aplicación web y desplegada en un servidor de aplicaciones como [Tomcat][tomcat] o [WildFly][wildfly] registrar un _MBean_ es similar al caso del ejemplo de la aplicación Java y posteriormente administrados con la herramienta JConsole.

@@ -54,12 +54,12 @@ Una vez instalados los paquetes necesarios y realizada la configuración se pued
 
 {{< figureproc
     image1="battle-net-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
-    image2="battle-net-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
+    image2="battle-net-2.png" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
     image3="battle-net-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Cliente de Battle.net"
     caption="Cliente de Battle.net" >}}
 {{< figureproc
     image1="battle-net-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
-    image2="battle-net-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
+    image2="battle-net-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
     image3="battle-net-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Instalación de Diablo 3"
     caption="Instalación de Diablo 3" >}}
 
@@ -84,10 +84,10 @@ La trama del juego comienza con la caída de una estrella en la antigua catedral
 
 {{< figureproc
     image1="diablo-3-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
-    image2="diablo-3-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
+    image2="diablo-3-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
 {{< figureproc
     image1="diablo-3-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
-    image2="diablo-3-4.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
+    image2="diablo-3-4.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
     image3="diablo-3-5.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Jugando a Diablo 3"
     caption="Juego de Diablo 3" >}}
 
@@ -109,7 +109,7 @@ Por defeco en mi caso no he podido cambiar la resolución del juego desde las op
 
 {{< figureproc
     image1="wine-exporer-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Diablo 3 en Wine modo explorardor"
-    image2="wine-exporer-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Diablo 3 a resolución 1920x1080"
+    image2="wine-exporer-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Diablo 3 a resolución 1920x1080"
     caption="Diablo 3 en Wine modo explorardor a 1920x1080" >}}
 
 Si soy sincero en toda mi época jugona creo que no he pagado por ningún juego de los que he tenido y he jugado a muchos de los más populares que estaban cada momento. Así que recuerde es muy posible que me decida a pagar por este Diablo 3 por primera vez por un juego viendo que puedo jugar el GNU/Linux perfectamente. Se puede mediante [PayPal][paypal] y por supuesto con tarjeta de crédito. La única duda que tengo es si ejecutar Diablo 3 sobre Wine es algo aceptable por Blizzard o si esto es motivo de expulsión y cierre de cuenta, el llamado _baneo_, hay comentados algunos casos por estos motivos. El [juego básico de Diablo 3](https://eu.shop.battle.net/es-es/product/diablo-iii) cuesta 20 € y [la expansión Reaper of Souls](https://eu.shop.battle.net/es-es/product/diablo-iii-reaper-of-souls) que incluye una nueva clase la de cruzado, el acto V, modo aventura y nuevas habilidades en clases otros 20€, [comprando ambos a la vez](https://eu.shop.battle.net/es-es/product/diablo-iii-battle-chest) son 30€. Hay una [segunda expansión, Despertar del Nigromante](https://eu.shop.battle.net/es-es/product/diablo-iii-rise-of-the-necromancer), que permite jugar con una clase adicional de nigromante por 15 €.

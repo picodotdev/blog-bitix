@@ -34,21 +34,21 @@ Wine es una implementación de la API de Windows con la que los programas de Win
 
 {{< figureproc
     image1="battle-net-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
-    image2="battle-net-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
+    image2="battle-net-2.png" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
     image3="battle-net-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Cliente de Battle.net"
     caption="Cliente de Battle.net" >}}
 {{< figureproc
     image1="battle-net-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
-    image2="battle-net-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
+    image2="battle-net-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
     image3="battle-net-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Instalación de Diablo 3"
     caption="Instalación de Diablo 3" >}}
 
 {{< figureproc
     image1="diablo-3-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
-    image2="diablo-3-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
+    image2="diablo-3-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
 {{< figureproc
     image1="diablo-3-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
-    image2="diablo-3-4.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
+    image2="diablo-3-4.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
     image3="diablo-3-5.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Jugando a Diablo 3"
     caption="Juego de Diablo 3" >}}
 

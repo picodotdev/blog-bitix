@@ -81,7 +81,7 @@ Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Cons
 
 {{< figureproc
     image1="vault-ui-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Interfaz gráfica de Vault"
-    image2="vault-ui-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2=""
+    image2="vault-ui-2.png" options2="2560x1440" optionsthumb2="300x200" title2=""
     caption="Interfaz gráfica de Vault" >}}
 
 Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de [guía](https://learn.hashicorp.com/vault) y en formato de [documentación](https://www.vaultproject.io/docs/). En una aplicación Java el proyecto [Spring][spring] facilita su uso con [Spring Vault][spring-vault] y [Spring Cloud Vault][spring-cloud-vault].

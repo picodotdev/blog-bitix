@@ -21,7 +21,7 @@ Visual Studio Code es un editor de archivos de texto avanzado orintado a desarro
 
 {{< figureproc
     image1="visual-studio-code-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Visual Studio Code"
-    image2="visual-studio-code-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Visual Studio Code"
+    image2="visual-studio-code-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Visual Studio Code"
     caption="Visual Studio Code" >}}
 
 Incluye una [terminal integrada](https://code.visualstudio.com/docs/editor/integrated-terminal) para ejecutar comandos sin necesidad de salir del editor a la terminal del sistema. Soporta [Emmet](https://code.visualstudio.com/docs/editor/emmet) para crear código con _snippets_ en los tipos de archivos que los soporten entre ellos HTML y CSS. También incluye soporte para el sistema de [control de versiones Git](https://code.visualstudio.com/docs/editor/versioncontrol) y otros con _plugins_ que permiten ver las modificaciones realizadas en los archivos y los archivos modificados, hay gran cantidad de complementos.

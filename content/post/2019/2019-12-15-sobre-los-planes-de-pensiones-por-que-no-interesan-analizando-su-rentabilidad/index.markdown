@@ -24,11 +24,11 @@ También hay que decir que los gestores personales que las entidades bancarias a
 
 {{< imageproc
     image1="santander.svg" options1="200x150" title1="Santander"
-    image2="bbva.svg" options2="2560x1440" optionsthumb2="450x400" options2="200x150" title2="BBVA"
+    image2="bbva.svg" options2="200x150" title2="BBVA"
     image3="caixabank.svg" options3="200x150" title3="Caixabank" >}}
     {{< imageproc
     image1="sabadell.svg" options1="200x150" title1="Sabadell"
-    image2="bankia.svg" options2="2560x1440" optionsthumb2="450x400" options2="200x150" title2="Bankia"
+    image2="bankia.svg" options2="200x150" title2="Bankia"
     image3="kutxabank.svg" options3="200x150" title3="Kutxabank" >}}
 
 ### Características de los planes de pensiones

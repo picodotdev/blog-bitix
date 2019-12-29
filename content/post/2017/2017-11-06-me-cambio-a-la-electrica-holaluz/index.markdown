@@ -23,7 +23,7 @@ No me queda claro la diferencia entre energía 100% verde, que según indica inc
 
 {{< imageproc
     image1="holaluz.png" options1="300x250" title1="Holaluz"
-    image2="pepeenergy.png" options2="2560x1440" optionsthumb2="450x400" options2="300x250" title2="Pepeenergy" >}}
+    image2="pepeenergy.png" options2="300x250" title2="Pepeenergy" >}}
 
 El ahorro según mi consumo de aproximadamente unos 75 kWh mensuales con mi anterior compañía eléctrica es de 0,75 € y con respecto al precio que tiene Endesa de 1,41 €. No parece mucho pero la electricidad es un servicio indispensable, de uso prolongado en una vivienda y es raro cambiar de compañía cada poco tiempo, eligiendo bien la compañía al cabo de los años el ahorro es apreciable, nadie va a salir de pobre pero con lo ahorrado algo ya se puede comprar.
 

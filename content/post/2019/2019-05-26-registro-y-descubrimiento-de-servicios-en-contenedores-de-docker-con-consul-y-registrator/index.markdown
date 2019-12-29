@@ -55,7 +55,7 @@ Una vez iniciado el servicio de postgres en la consola de Consul se muestra con 
 
 {{< figureproc
     image1="consul-postgres-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Servicio de postgres registrado en Consul"
-    image2="consul-postgres-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Servicio de postgres registrado en Consul"
+    image2="consul-postgres-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Servicio de postgres registrado en Consul"
     caption="Servicio de postgres registrado en Consul por Registrator" >}}
 
 En vez de iniciar los servicios individualmente con comandos de Docker creando un archivo de [Docker Compose][docker-compose] con la definición de todos los contenedores se facilita iniciar todos los contenedores con un comando.

@@ -46,14 +46,14 @@ Con esta configuración para el explorador de archivos en este caso Nautilus de 
 
 {{< figureproc
     image1="gnome-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-    image2="usb-user-dirs.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    image2="usb-user-dirs.png" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
     caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos. 
 
 {{< figureproc
     image1="terminal-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-    image2="usb-terminal-user-dirs.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    image2="usb-terminal-user-dirs.png" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
     caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 {{< reference >}}
