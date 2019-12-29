@@ -31,7 +31,7 @@ En ambos casos la salida en la consola al leer los datos de los documentos es la
 
 Las dependencias a incluir en el proyecto son las siguientes.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 También se puede [utilizar Apache POI para crear hojas excel y OpenCSV para crear archivos CSV][blogbitix-146] con las columnas correctamente separadas por comas. Otra alternativa para leer o escribir archivos en formato CSV es [Apache Commons CSV][apache-commons-csv].
 

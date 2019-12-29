@@ -25,7 +25,7 @@ Con Java y un IDE podremos detectar los errores de compilación que en un lengua
 {{< figureproc
     image1="producto.png" thumb1="producto.png" options1="2560x1440" optionsthumb1="450x400" title1="Edición de un producto" >}}
 
-{{< code file="ProductoAdmin.tml" language="HTML" options="" >}}
+{{< code file="ProductoAdmin.tml" language="html" options="" >}}
 
 {{< figureproc
     image1="error.png" thumb1="error.png" options1="2560x1440" optionsthumb1="450x400" title1="Error de compilación al acceder a la página" >}}

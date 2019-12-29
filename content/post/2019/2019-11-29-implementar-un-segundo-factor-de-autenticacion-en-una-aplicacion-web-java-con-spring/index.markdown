@@ -42,20 +42,20 @@ Validado el código del 2FA al usuario se le asignan los permisos que le corresp
 
 La implementación en código contiene las clases que representan una cuenta en el sistema, en _InMemoryAccountRepository_ se crean dos usuarios _admin_ y _user_ con sus contraseñas en el ejemplo en texto plano y los roles que tiene asignados que les otorgarán permisos para realizar acciones en la aplicación.
 
-{{< code file="AccountRepository.java" language="Java" options="" >}}
-{{< code file="InMemoryAccountRepository.java" language="Java" options="" >}}
-{{< code file="Account.java" language="Java" options="" >}}
+{{< code file="AccountRepository.java" language="java" options="" >}}
+{{< code file="InMemoryAccountRepository.java" language="java" options="" >}}
+{{< code file="Account.java" language="java" options="" >}}
 
 La configuración de seguridad en Spring Security indica para cada URL que permisos se requieren. Para acceder a la página de contenido _/home_ de la aplicación se requiere el rol _USER_, a la página de inicio de sesión _/login_ se permite acceder a los usuario no autenticados donde introducen sus credenciales de usuario y contraseña, una vez validado el usuario y contraseña el usuario autenticado tiene el rol _PRE\_AUTH\_USER_, dependiendo de si el usuario en su prefrencia usa 2FA o no en el manejador de autenticación exitosa _SecondFactorAuthenticationSuccessHandler_ redirige al usuario a la página _/home_ o la página _/code_ para intorducir el código de verificación del segundo factor autenticación. Al usuario autenticado exitosamente de forma completa se le sustituye el permiso _PRE\_AUTH\_USER_ por los que tenga asignado, en el ejemplo el rol _USER_.
 
 La verificación del código del segundo paso de autenticación se realiza en la clase _CodeController_ con la clase _Totp_ a partir del código enviado y el código secreto con el cual se generó la imagen de código QR.
 
-{{< code file="WebSecurityConfig.java" language="Java" options="" >}}
-{{< code file="WebMvcConfig.java" language="Java" options="" >}}
-{{< code file="SecondFactorAuthenticationSuccessHandler.java" language="Java" options="" >}}
-{{< code file="Utils.java" language="Java" options="" >}}
-{{< code file="UserDetailsAdapter.java" language="Java" options="" >}}
-{{< code file="UserDetailsServiceAdapter.java" language="Java" options="" >}}
+{{< code file="WebSecurityConfig.java" language="java" options="" >}}
+{{< code file="WebMvcConfig.java" language="java" options="" >}}
+{{< code file="SecondFactorAuthenticationSuccessHandler.java" language="java" options="" >}}
+{{< code file="Utils.java" language="java" options="" >}}
+{{< code file="UserDetailsAdapter.java" language="java" options="" >}}
+{{< code file="UserDetailsServiceAdapter.java" language="java" options="" >}}
 
 El código QR es una imagen generada a partir del código secreto y una información adicional que al usurio le permite identificar la cuenta, hay _webs_ que permiten [decodificar una imagen QR](https://zxing.org/w/decode.jspx) para analizar que información incorpora, en esta la información de la cuenta _Spring2FA (admin)_ y el secreto _6YFX5TVT76OHHNMS_ utilizado para generar los códigos temporales. En el HTML devuelto se incluye una imagen con la información embebida en el enlace de la imagen, la imagen se genera por un servicio de Google.
 

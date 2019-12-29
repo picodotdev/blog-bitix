@@ -23,7 +23,7 @@ Entre las varias funcionalidades que proporcionar el proyecto [Spring Cloud Netf
 En el ejemplo que he utilizado para esta [serie de artículos sobre Spring Cloud][blogbitix-serie-spring-cloud] hay un servicio que por defecto se inicia en el puerto _8080_ y ofrece un _endpoint_ _/_ que devuelve un mensaje. Para crear un microservicio _proxy_ con Zuul hay que crear una aplicación [Spring Boot][spring-boot] anotar la clase principal con la anotación _@EnableZuulProxy_ y proporcionar la configuración para la correspondencia de rutas y microservicios, además de las propiedades para hacer reintentos en caso de que un microservicio falle y de _timeouts_ en caso de que se comporte no como se espera en cuanto tiempos de respuesta.
 
 {{< code file="Main (zuul).java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Se puede establecer un tiempo máximo para establecer la conexión, de tiempo de petición, el número de reintentos en la misma instancia si falla o en otro número de instancias, el número máximo de conexiones y el número máximo de conexiones al mismo _host_. Todas ellas definibles en cada servicio de forma individual bajo las propiedades _hystrix.command.service_ y _service.ribbon_ donde _service_ es el identificativo del servicio. Las rutas se indican bajo la propiedad _zuul.routes_ con la relación identificativo del servicio y _path_.
 

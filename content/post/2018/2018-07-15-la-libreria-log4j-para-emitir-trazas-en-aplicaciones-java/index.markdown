@@ -43,7 +43,7 @@ Una vez se ha iniciado la aplicación Spring Boot invoca el método _run_ y se e
 En el archivo de construcción de la aplicación usando [Gradle][gradle] hay que incluir las dependencias de las librerías.
 
 {{< code file="log4j2.yaml" language="YAML" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Las trazas son muy importantes por la valiosa información que proporcionan de lo que está sucediendo en una aplicación a los que recurriendo es posible obtener la valiosa información que permite saber que ha sucedido en una determinada acción o que permite descubrir mucho más rápidamente la causa de un error.
 

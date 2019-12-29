@@ -80,7 +80,7 @@ El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada
 
 Para generar los informes de cobertura de código y de mutación en Java y usando [Gradle][gradle] como herramienta de construcción las herramientas JaCoCo y PIT proporcionan un complemento o _plugin_ que hay que añadir al archivo de construcción además de proporcionar algunas opciones de configuración en la sección _pitest_, entre estas propiedades está _mutators_ en la que se puede indicar los _mutators_ que PIT emplea para lanzar los teses con mutaciones. Los informes se generan en el directorio _build/reports/_. Realizar _mutation testing_ solo requiere cierta configuración en el archivo de construcción del proyecto.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="gradlew-run.sh" language="bash" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaMutationTesting" command="./gradlew test jacocoTestReport pitest" %}}

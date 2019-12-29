@@ -26,7 +26,7 @@ En el artículo [Información y métricas de la aplicación con Spring Boot Actu
 
 Usando Spring Boot 2 exportar los datos para Prometheus es realmente sencillo, basta con incluir la dependencia _io.micrometer:micrometer-registry-prometheus_ mediante la herramienta de construcción, por ejemplo [Gradle][gradle], y automáticamente se expone en el _endpoint_ _/actuator/prometheus_ con la información de las métricas en el formato que espera Prometheus para recolectarla.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Micrometer y Prometheus ofrecen varios tipos de métricas:
 

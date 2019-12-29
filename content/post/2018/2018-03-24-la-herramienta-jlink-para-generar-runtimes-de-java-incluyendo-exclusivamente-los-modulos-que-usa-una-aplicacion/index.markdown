@@ -36,7 +36,7 @@ El contenido del _runtime_ y de su estructura de directorios es la indicada a co
 
 {{< code file="info.sh" language="bash" options="" >}}
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Una vez generado el _runtime_ su uso es el siguiente:
 

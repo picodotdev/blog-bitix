@@ -42,7 +42,7 @@ Usando algunas de estas anotaciones en una clase Java y su uso en un programa.
 
 Usando [Gradle][gradle] hay que añadir en el archivo de construcción del proyecto _build.gradle_ la dependencia en el ámbito de _compileOnly_.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Usando un IDE, su complemento para Lombok y añadida la dependencia los métodos que implementa Lombok con las anotaciones son visualizados con el asistente de código.
 

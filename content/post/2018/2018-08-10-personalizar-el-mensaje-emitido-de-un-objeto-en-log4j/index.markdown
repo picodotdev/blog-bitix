@@ -39,7 +39,7 @@ En todos estos casos las trazas emitidas son las mismas salvo en el caso de _Pro
 
 En la [API de Log4j](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/index.html) hay multitud de clases [Message](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/index.html) ya implementadas, por ejemplo, [MapMessage](https://logging.apache.org/log4j/2.x/log4j-api/apidocs/org/apache/logging/log4j/message/MapMessage.html) para objetos del tipo [Map](https://docs.oracle.com/javase/10/docs/api/java/util/Map.html) entre otros muchos.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="log4j2.yaml" language="YAML" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Log4j" command="./gradlew run" >}}

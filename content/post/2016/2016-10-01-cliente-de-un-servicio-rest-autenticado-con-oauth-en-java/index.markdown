@@ -20,7 +20,7 @@ Explicaba como llamar a un servicio REST autenticado con OAuth2 en el artículo 
 
 Primero añadiremos como dependencia del proyecto la librería HttComponents. Como en las diferentes llamadas el intercambio de datos se realiza mediante el [formato JSON][json] añadiremos otro par dependencias para procesar los datos en este formato, en este caso usando la API de [JSON-P][json-p] y una implementación.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Este sencillo cliente realiza varias peticiones _get_ y _post_. Una para obtener la configuración de los _endpoints_, el que nos interesa es el de obtener un _access token_, otra petición para obtener el _access token_ y finalmente con el _access token_ invocar al servicio mediante otra petición.
 

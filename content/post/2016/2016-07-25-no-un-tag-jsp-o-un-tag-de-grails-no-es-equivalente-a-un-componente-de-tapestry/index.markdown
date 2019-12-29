@@ -43,18 +43,18 @@ Sin embargo, como el contenido de los diálogos depende del producto o productos
 Definida la necesidad y unas pocas notas voy a poner el código de como con Apache Tapestry implementar la solución. La página del listado será la siguiente. En el _checkbox_ de selección se añade el atributo _data-product-actions_ con las acciones posibles que se obtienen del servicio _AppService_ con el método _getAvaliableActions_. El componente de Tapestry _actions_ generará el código de los botones tanto para los individuales en su uso _\<t:actions\>_ con el parámetro _product_ como múltiples en su uso con el parámetro _type_.
 
 {{< code file="Index.java" language="java" options="" >}}
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 
 El código para mostrar las acciones con botones para un determinado producto o para los productos es el siguiente. El mismo componente se encargará de realizar en el servidor la acción habilitar que no necesita modal. Con un poco de [JavaScript][javascript], [jQuery][jquery] y [Underscore][underscorejs] se habilitarán o deshabilitarán los botones y se mostrará el diálogo para la acción deshabilitar.
 
 {{< code file="Actions.java" language="java" options="" >}}
-{{< code file="Actions.tml" language="HTML" options="" >}}
+{{< code file="Actions.tml" language="html" options="" >}}
 {{< code file="actions.js" language="JavaScript" options="" >}}
 
 El código del modal para deshabilitar sería el siguiente. En el método _show_ recibe los _ids_ de los productos a deshabilitar y recupera del servidor el contenido de diálogo con una petición AJAX. El componente del modal se encargará de hacer el deshabilitado de los productos y la recarga de la página si finaliza correctamente o de mostar los errores de validación que se produzcan si no se ha introducido el motivo.
 
 {{< code file="DisableProductsModal.java" language="java" options="" >}}
-{{< code file="DisableProductsModal.tml" language="HTML" options="" >}}
+{{< code file="DisableProductsModal.tml" language="html" options="" >}}
 {{< code file="modals.js" language="JavaScript" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/TapestryMultipleActions" command="./gradlew run" >}}

@@ -81,7 +81,7 @@ El siguiente código Java accede a un documento utilizando las credenciales de u
 
 En el caso de Java hay que incluir la dependencia que proporciona la implementación de la API de Google Spreadsheets para Java como se muestra usando [Gradle][gradle].
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Google ofrece un [explorador para probar las peticiones y permisos de los documentos](https://developers.google.com/apis-explorer/#p/sheets/v4/) o [explorar cualquier otra API de Google](https://developers.google.com/apis-explorer/#p/) por ejemplo esta de Drive para [exportar un documento en un formato determinado](https://developers.google.com/apis-explorer/#p/drive/v3/drive.files.export) directamente desde una web sin tener que crear una aplicación, también se pueden [hacer peticiones desde las páginas de documentación](https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/get).
 

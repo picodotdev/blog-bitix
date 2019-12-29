@@ -53,7 +53,7 @@ Para iniciar los diferentes microservicios de la aplicación hay que utilizar lo
 
 En los proyectos hay que incluir la dependencia para Sleuth en la herramienta de construcción.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 

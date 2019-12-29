@@ -36,7 +36,7 @@ Tanto en el emisor como en el receptor deberemos declarar las colas que van a us
 
 {{< code file="Send.java" language="java" options="" >}}
 {{< code file="Receive.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Para ejecutar el ejemplo usaré el [contenedor de Docker para RabbitMQ](https://hub.docker.com/_/rabbitmq/) iniciándolo con [Docker Compose][docker-compose] y el siguiente archivo descriptor. Puedes consultar la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí para conocer cómo usarlo.
 

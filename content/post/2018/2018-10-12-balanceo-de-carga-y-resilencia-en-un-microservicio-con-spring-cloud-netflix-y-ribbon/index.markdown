@@ -31,7 +31,7 @@ El cliente usa la clase _LoadBalancerClient_ que en cada invocación del método
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="ClientService.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La clase del servicio y los comandos para iniciar el servicio de registro y descubrimiento, el servicio de configuración, las instancias del servicio en diferentes puertos y el cliente.
 

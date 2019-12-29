@@ -28,18 +28,18 @@ Para evitar el problema N+1 hemos de recuperar todos los datos haciendo una úni
 
 O con una criteria en Grails:
 
-{{< code file="Criteria.groovy" language="Groovy" options="" >}}
+{{< code file="Criteria.groovy" language="groovy" options="" >}}
 
 Pero para saber en que sitios de nuestro código debemos establecer los métodos de búsqueda EAGER necesitamos detectar los problemas N+1, con la experiencia conoceremos donde se pueden producir, otros casos se nos pueden pasar por alto y necesitaremos detectarlos. Para detectar estos problemas N+1 o para determinar si una página es muy lenta porque hace muchas consultas a la base de datos Hibernate dispone de unas estadísticas mediante las cuales podemos conocer cuantas consultas select, update, insert, conexiones, y más datos por entidad y relación... se han lanzado por haber accedido a una página. Podemos acceder a las estadísticas de Hibernate mediante el objeto [SessionFactory](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/SessionFactory.html) y el método [getStatistics](https://docs.jboss.org/hibernate/orm/4.3/javadocs/org/hibernate/SessionFactory.html#getStatistics%28%29), con ese objeto y método podemos obtener estadísticas globales y para cada una de las entidades persistidas por Hibernate.
 
 En Grails podemos hacer un controlador y gsp que nos muestre esa información que podrían ser de la siguiente forma:
 
-{{< code file="HibernateController.groovy" language="Groovy" options="" >}}
+{{< code file="HibernateController.groovy" language="groovy" options="" >}}
 {{< code file="index.gsp" language="plaintext" options="" >}}
 
 Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo Config.goovy y añadir la siguiente configuración en el apartado Log4j:
 
-{{< code file="Config.groovy" language="Groovy" options="" >}}
+{{< code file="Config.groovy" language="groovy" options="" >}}
 
 La implementación de appender para capturar las HQL que lanza grails es la siguiente:
 

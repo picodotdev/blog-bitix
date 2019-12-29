@@ -31,7 +31,7 @@ Veámoslo con el ejemplo de una factoría que para determinados enumerados se de
 
 Y finalmente el caso de prueba donde puede verse que no hay ningún if ya que no se devuelve en ningún caso un null:
 
-{{< code file="OperacionCommandFactorySpec.groovy" language="Groovy" options="" >}}
+{{< code file="OperacionCommandFactorySpec.groovy" language="groovy" options="" >}}
 
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/PatronNoOperation) de su repositorio de GitHub.
 

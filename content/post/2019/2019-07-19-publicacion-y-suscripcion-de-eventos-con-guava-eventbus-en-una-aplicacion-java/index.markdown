@@ -40,7 +40,7 @@ Al realizar peticiones a la aplicación el controlador emite un evento que es re
 
 En el proyecto hay que incluir como dependencia la librería Guava en este caso usando [Gradle][gradle].
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/Guava" command="./gradlew run" %}}
 

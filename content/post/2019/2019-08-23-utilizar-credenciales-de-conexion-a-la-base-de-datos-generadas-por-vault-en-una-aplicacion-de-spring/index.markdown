@@ -25,7 +25,7 @@ Vault permite centralizar la seguridad, otorgar a cada aplicación los permisos 
 
 En el archivo de contrucción de la aplicación hay que incluir las dependencias de Spring para la integración con Vault.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Obtener la credenciales de conexión a la base de datos es transparente para el código de la aplicación, lo único que se necesita es el usuario y contraseña además de la URL de conexión. 
 

@@ -54,7 +54,7 @@ jOOQ genera automáticamente las clases que implementa el patrón _Active Record
 
 Para usar el generador de código de jOOQ con [Gradle][gradle] debemos añadir la siguiente configuración al archivo de construcción del proyecto, este generador se conectará a la base de datos, obtendrá los datos de esquema y generará todas las clases del paquete [info.blogstack.persistence.jooq](https://github.com/picodotdev/blog-stack/tree/master/src/main/java/info/blogstack/persistence/jooq). Por ejemplo, puede que queramos usar [JodaTime][jodatime] en vez de las clases [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) y [Timesptamp](https://docs.oracle.com/javase/8/docs/api/java/sql/Timestamp.html) de la API de Java al menos si no usamos aún [Java 8 y sus novedades][blogbitix-17].
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Otra alternativa con algunas similitudes a jOOQ es [JDBI][jdbi] pero en esta las consultas no tienen el soporte del compilador que ofrece jOOQ, otra es [Slick][slick] para [Scala][scala]. También tiene cierta similitud con [MyBatis][mybatis] que existe desde hace bastante tiempo aunque jOOQ ofrece más posibilidades.
 

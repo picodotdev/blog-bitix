@@ -38,8 +38,8 @@ En una aplicación orientada microservicios es muy posible que haya múltiples i
 
 Para resolver este inconveniente integrando [Spring Cloud Bus][spring-cloud-bus] en las aplicaciones es posible recargar la configuración de todos los microservicios haciendo una única llamada al _endpoint_ _http\://localhost:8090/monitor_ indicando el servicio a actualizar su configuración lo que es independiente del número de instancias y de su ubicación. Integrar Spring Clud Bus requiere disponer de una instancia de mensajes como [RabbitMQ][rabbitmq] e incluir como dependencia tanto en el servidor de configuración como en el servicio la dependencia _spring-cloud-starter-bus-amqp_. Para esta comunicación de mensajes Spring Cloud Config crea en RabbitMQ una cola de mensajes que empieza por _springCloudBus_. 
 
-{{< code file="configserver.gradle" language="Groovy" options="" >}}
-{{< code file="service.gradle" language="Groovy" options="" >}}
+{{< code file="configserver.gradle" language="groovy" options="" >}}
+{{< code file="service.gradle" language="groovy" options="" >}}
 
 Los pasos para probar estas funcionalidades con Spring Cloud Bus en una o varias varias instancias son iniciar una instancia o más del servidor de registro y descubrimiento, iniciar una o más instancias del servidor de configuración, iniciar una o varias instancias del servicio todas las instancias en un puerto y terminal diferente, invocar el servicio cuyo valor de respuesta depende de una propiedad de configuración, modificar el valor de la propiedad de configuración, recargar la configuración e invocar de nuevo el servicio para comprobar que el nuevo valor se ha hecho efectivo.
 

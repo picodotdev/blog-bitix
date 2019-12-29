@@ -45,7 +45,7 @@ Desde los métodos de código nativo se puede:
 Los comandos para generar el archivo de cabecera de C y compilarlo con el código nativo en una librería compartida con gcc son:
 
 {{< code file="build.sh" language="bash" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La cabecera usa varias definiciones de tipos definidas en los archivos _jni.h_ y el archivo que variará según el sistema operativo _jni\_md.h_. En la [estructura JNIEnv](http://xdprof.sourceforge.net/doxygen/structJNIEnv__.html) con múltiples funciones de integración en C y Java, también varias definiciones de los tipos Java para usarlos en C como _jobject_, _jstring_, _jint_, _jboolean_, _jlong_, _jdouble_, _jchar_, etc.
 

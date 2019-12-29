@@ -28,7 +28,7 @@ Entrando a discutir el apartado de la simplicidad de ejecución de un lenguaje i
 
 Teniendo 3 pequeños _scripts_ de ejemplo el archivo _build.gradle_ que necesitaríamos sería el siguiente definiendo de forma dinámica una tarea _runScript_ y otra _createStartScripts_ para cada uno, los _scripts_ son lo más sencillos posible emitiendo en la consola un mensaje pero podrían hacer cualquier cosa, incluso [usar Spring Boot][blogbitix-103]:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="Script1.java" language="java" options="" >}}
 
 Si necesitamos ejecutar los _scripts_ cada cierto tiempo en _cron_ podemos programar el comando que queremos ejecutar regularmente, en vez de usar el comando <code>gradlew</code> que comprueba si ha cambiado el código fuente y necesita compilarse de nuevo tardando un poco más en iniciarse, con una tarea de tipo [CreateStartScripts](https://docs.gradle.org/current/dsl/org.gradle.jvm.application.tasks.CreateStartScripts.html) podemos generar el _script_ bash tanto para sistemas de la familia Unix como Windows que realmente lanzará los _scripts_ Java. La tarea de Gradle _createStartScripts_ genera todos los _scripts_ de inicio del proyecto.

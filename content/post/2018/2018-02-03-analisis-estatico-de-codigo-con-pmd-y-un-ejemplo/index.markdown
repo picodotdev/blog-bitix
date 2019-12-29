@@ -35,7 +35,7 @@ Usando la [herramienta de construcción Gradle][elblogdepicodev-98] y su [_plugi
 
 Suponiendo que con la intención de hacer el software más mantenible se define que el código debe seguir las normas de estilo de Java, en el caso del ejemplo que los métodos no tengan más de 50 líneas, en un informe en formato HTML o XML PMD genera las violaciones a las reglas que encuentre y posteriormente corregirlas si se considera adecuado. Este es un ejemplo de archivo de Gradle de que solo pongo la parte relevante para el ejemplo para usar PMD aplicando unas pocas reglas ya incorporadas en PMD y la de la longitud de los métodos personalizada a una valor de 50 líneas:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="ruleset.xml" language="XML" options="" >}}
 
 Aplicado el _plugin_ y definidas las reglas en las construcción del proyecto se revisarán y generará un informe con el comando <code>./gradlew check</code>. En el directorio _build/reports/pmd/_ relativo a la raíz del proyecto se genera un conjunto de archivos HTML y XML con los informes del análisis del código. En el informe se indica la clase, la linea y el error que se ha encontrado, con esta información es sencillo modificar el código para que en la siguiente ejecución de la validación el error desaparezca del informe, la myoría de reglas son fáciles de corregir.

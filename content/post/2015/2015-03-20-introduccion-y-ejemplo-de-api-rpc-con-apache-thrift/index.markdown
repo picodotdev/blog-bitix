@@ -42,7 +42,7 @@ A continuación deberemos definir la interfaz del servicio, supongamos que quere
 Podemos elegir cualesquiera lenguajes deseemos de la amplia lista soportada anterior, en este caso usaré Java tanto para el servidor como para el cliente. Usando el comando <code>thrift</code> e indicando el lenguaje y la interfaz generamos los artefactos:
 
 {{< code file="gradlew.sh" language="bash" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Esto nos genera unas clases en Java y una interfaz que implementaremos para proporcionar la funcionalidad del servicio, en el caso del ejemplo la interfaz es _Service.Iface_. Para que los clientes puedan consumir este servicio debemos iniciar el servidor que no será más que un programa Java que escucha las peticiones de los clientes en un puerto.
 

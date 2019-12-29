@@ -30,7 +30,7 @@ En estas expresiones por orden se obtienen los autores de los libros de la tiend
 
 Estas son las dependencias necesarias para JsonPath y como usa [SLF4J][slf4j] varias más para redirigir las trazas a [Log4j][log4j].
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 El código equivalente para extraer estos datos usando JSON-P sería más largo, complejo, difícil de mantener y de difícil compresión. Dependiendo de la cantidad de datos a seleccionar se preferirá JSON-B si son muchos o JsonPath si son pocos o hay cierta lógica de filtrado.
 

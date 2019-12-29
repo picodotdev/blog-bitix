@@ -37,7 +37,7 @@ Usando [Docker][docker] se puede iniciar una instancia de Redis con un archivo d
 Hay multitud de [clientes para los lenguajes de programación](https://redis.io/clients) más populares y otros menos usados, en Java uno de los clientes más conocidos es [Jedis](https://github.com/xetorthio/jedis). En el siguiente ejemplo un cliente Java se conecta a la instancia de Redis y lanza los varios comandos para almacenar cadenas, un _set_, _set_ ordenados, lista, _hash_ y algunas operaciones sobre claves. Este ejemplo desde Java realiza las mismas operaciones que las realizadas en el _shell_ de Redis anterior.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
 
 Cada comando de Redis tiene una complejidad de tiempo ejecución, para obtener el mejor rendimiento hay que analizar los datos para almacenarlos en la estructura de datos adecuada de las que ofrece Redis junto con los comandos que son utilizados y su complejidad indicada en la documentación del comando en [notación Big O](https://en.wikipedia.org/wiki/Big_O_notation). Redis solo es uno de los sistemas NoSQL, hay otros conocidos con [MongoDB][mongodb] orientado a documentos o [Cassandra][cassandra] híbrido entre clave-valor y tabular.

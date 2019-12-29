@@ -37,7 +37,7 @@ Este sería el código para obtener la información de forma más sencilla que l
 En el siguiente ejemplo no incluyo la base de datos en el código fuente del proyecto ya que ocupa casi 65MiB. Descargada, descomprimida y ubicada en el directorio _src/main/resources_ la aplicación se iniciar con el comando <code>./gradlew run</code>.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< figureproc
     image1="geolite2.png" thumb1="geolite2-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Información de geoposicionamiento en base a la dirección IP con GeoLite2"

@@ -25,7 +25,7 @@ Uno de estos casos podría ser la generación de una factura en base a una plant
 Para generar documentos en PDF en Java está disponible la librería [Apache PDFBox][apache-pdfbox]. Un ejemplo sencillo de como generar un archivo PDF con algunos estilos de texto, fuentes, un tamaño específico de página y una imagen es el siguiente.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
  El resultado es el siguiente {{< resourcelink text="Documento PDF" name="document.pdf" >}}.
 

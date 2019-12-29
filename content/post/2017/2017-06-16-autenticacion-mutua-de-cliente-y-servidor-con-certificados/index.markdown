@@ -61,7 +61,7 @@ Si se intenta realizar una petición sin certificado de cliente o con un certifi
 El siguiente _script_ escrito en lenguaje [Groovy][groovy] muestra como desde un programa para la plataforma Java se realiza autenticación mutua y que error da cuando alguno de los certificados es inválido ya sea el del cliente o el del servidor. Generando previamente los _keystores_ de la autoridad de certificado y del cliente introduciendo como clave en el ejemplo _password_ cuando se solicita.
 
 {{< code file="keytool.sh" language="bash" options="" >}}
-{{< code file="MutualCertAuth.groovy" language="Groovy" options="" >}}
+{{< code file="MutualCertAuth.groovy" language="groovy" options="" >}}
 {{< code file="groovy.sh" language="bash" options="" >}}
 
 En caso de que al usar un _keystore_ con un certificado de una autoridad que no valida el certificado del servidor se producirán un error, también cuando el certificado del cliente no sea válido para el servidor.

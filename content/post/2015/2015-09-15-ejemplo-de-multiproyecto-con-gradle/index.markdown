@@ -26,8 +26,8 @@ Necesitaremos 4 proyectos para los módulos y 5 proyectos Gradle, uno para cada 
 
 En el archivo _build.gradle_ global podemos incluir las cosas comunes a todos los proyectos como dependencias o _plugins_, en el archivo _settings.gradle_ definimos de que componentes está formado el proyecto. Las cosas comunes a todos los proyectos será el uso del _plugin java_ y [_eclipse_][eclipse], el repositorio de dependencias de _mavenCentral_, algunas dependencias y una tarea para instalar el _wrapper_ de Gradle que nos servirá para usarlo sin necesidad de instalar nada (se descargarán sus binarios automáticamente).
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
-{{< code file="settings.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
+{{< code file="settings.gradle" language="groovy" options="" >}}
 
 Podemos ver los módulos (o proyectos como los llama Gradle) de los que se compone la aplicación y las tareas que podemos ejecutar con:
 
@@ -36,16 +36,16 @@ Podemos ver los módulos (o proyectos como los llama Gradle) de los que se compo
 
 En los proyectos web incluiremos como dependencias las propias de Apache Tapestry, el proyecto _library_ y _core_, también aplicaremos el _plugin_ de [Tomcat][tomcat] para poder iniciar los proyectos con Gradle configurándolos para que cada uno se inicie en un puerto distinto 8080/8443 para web y 9080/9443 para back.
 
-{{< code file="build-web.gradle" language="Groovy" options="" >}}
-{{< code file="build-back.gradle" language="Groovy" options="" >}}
+{{< code file="build-web.gradle" language="groovy" options="" >}}
+{{< code file="build-back.gradle" language="groovy" options="" >}}
 
 En el proyecto _library_ incluiremos los componentes que podemos reutilizar en cualquiera de los proyectos, será una librería de componentes de Apache Tapestry. Esta librería de componentes no es más que un archivo jar, cada proyecto que necesite utilizarlos basta con que lo incluya como una dependencia.
 
-{{< code file="build-library.gradle" language="Groovy" options="" >}}
+{{< code file="build-library.gradle" language="groovy" options="" >}}
 
 En el último proyecto _core_ incluiremos una clase de utilidad con los típicos métodos estáticos, incluiremos un [servicio que nos facilitará la persistencia](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/src/main/java/io/github/picodotdev/gradle/core/services/ItemDAOImpl.java) y una [clase de modelo a persistir](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/src/main/java/io/github/picodotdev/gradle/core/models/tables/records/ItemRecord.java) en una base de datos [PostgreSQL][postgresql] generada con [jOOQ como alternativa a Hibernate][blogbitix-82], añadiendo o eliminando instancias persistidas son visualizadas desde el proyecto _web_ y _back_.
 
-{{< code file="build-core.gradle" language="Groovy" options="" >}}
+{{< code file="build-core.gradle" language="groovy" options="" >}}
 
 Para arrancar los proyectos web deberemos inicializar la base de datos. Con [docker-compose][docker-compose] y el [archivo descriptor de Docker](https://github.com/picodotdev/blog-ejemplos/blob/master/MultiprojectGradle/core/misc/postgres/docker-compose.yml)) iniciamos el contenedor de [Docker][docker] con la base de datos PostgreSQL. La base de datos deberemos crearla manualmente pero el esquema donde se guardarán los datos los crearemos con [Liquibase que nos permite hacer modificaciones a una BBDD][elblogdepicodev-155], deberemos tenerlo instalado y su comando incluido en el _PATH_ del sistema para este ejemplo.
 

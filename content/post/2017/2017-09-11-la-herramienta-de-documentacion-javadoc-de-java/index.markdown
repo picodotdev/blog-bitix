@@ -54,7 +54,7 @@ Un ejemplo usando estas anotaciones en una clase sería el siguiente.
 Una vez documentado el código fuente hay que usar la [herramienta Javadoc](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html) para generar la documentación. Mediante la herramienta de construcción [Gradle][gradle] se hace con la tarea _javadoc_.
 
 {{< code file="gradle.sh" language="bash" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La propia documentación de las clases del JDK está generada con la herramienta Javadoc. Este es el aspecto de la documentación de este ejemplo que tiene exactamente el mismo aspecto que la del JDK.
 

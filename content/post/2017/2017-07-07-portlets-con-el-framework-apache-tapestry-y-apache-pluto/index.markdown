@@ -36,10 +36,10 @@ Al igual que en el _framework_ están incluidos múltiples componentes el conten
 Para hacer el ejemplo _Hola Mundo_ hay que definir dos páginas, una para mostrar el mensaje y otra para obtener un nombre, cada página se compone de una clase Java y una plantilla asociada que genera el HTML, ambos elementos son muy simples. El _portlet_ hará uso del mecanismo de preferencias proporcionado por el portal con la clase [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) y que se encarga de persistir en su propia base de datos para obtener y guardar valores en este caso el nombre usado en el mensaje. El _portlet_ usa un formulario que envía el nombre donde se utilizan los componentes [Form](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Form.html), [Label](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html) y [TextField](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextField.html).
 
 {{< code file="Index.java" language="java" options="" >}}
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 
 {{< code file="preferences-Index.java" language="java" options="" >}}
-{{< code file="preferences-Index.tml" language="HTML" options="" >}}
+{{< code file="preferences-Index.tml" language="html" options="" >}}
 
 {{< code file="AppPortletModule.java" language="java" options="" >}}
 
@@ -74,7 +74,7 @@ Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amz
 
 Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.org/pluto/download.html) para inicia con el comando <code>startup.sh</code>. Apache Pluto es en realidad un servidor [Apache Tomcat][tomcat] con las adiciones para proporcionarle la funcionalidad de portal en la dirección _http\://localhost:8080/pluto_.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/TapestryPortlet" command="./pluto-3.0.0/bin, ./gradlew build" >}}
 

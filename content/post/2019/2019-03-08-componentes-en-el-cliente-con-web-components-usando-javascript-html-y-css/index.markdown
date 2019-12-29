@@ -31,16 +31,16 @@ Con las funciones _connectedCallback()_, _disconnectedCallback()_, _adoptedCallb
 
 El _Shadow DOM_ compone el etiquetado oculto del _Web Compnent_, las etiquetas HTML y los estilos CSS. El _Shadow DOM_ es exclusivo del _Web Component_ y está aislado del resto de modo que las clases CSS de estilos no entrarán en conflicto con las de otros _Web Components_ aunque tengan los mismos nombres, esto hace menos necesarias las nomenclaturas que se utilizan precisamente para evitar los conflictos.
 
-{{< code file="index-1.html" language="Html" options="" >}}
-{{< code file="index-2.html" language="Html" options="" >}}
+{{< code file="index-1.html" language="html" options="" >}}
+{{< code file="index-2.html" language="html" options="" >}}
 
 Para hacer más sencilla la creación del etiquetado de los _Web Components_ en vez de usando código JavaScript con las funciones _createElement()_ y _appendChild()_ está la especificación de _HTML Templates_. Plantillas en las que además se puede incluir los estilos CSS.
 
-{{< code file="index-3.html" language="Html" options="" >}}
+{{< code file="index-3.html" language="html" options="" >}}
 
 Además con los _slots_ se le puede proporcionar al _Web Component_ un fragmento de HTML.
 
-{{< code file="index-4.html" language="Html" options="" >}}
+{{< code file="index-4.html" language="html" options="" >}}
 
 {{< figureproc
     image1="web-components-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Web Components"

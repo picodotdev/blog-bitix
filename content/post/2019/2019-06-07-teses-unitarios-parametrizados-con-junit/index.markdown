@@ -22,12 +22,12 @@ El primer motivo de usar Spock sobre la legibilidad del test se puede suplir añ
 
 Aqui se compara el mismo test usando Spock y luego JUnit.
 
-{{< code file="StringLengthCalculatorSpecification.groovy" language="Groovy" options="" >}}
+{{< code file="StringLengthCalculatorSpecification.groovy" language="groovy" options="" >}}
 {{< code file="StringLengthCalculatorTest.java" language="java" options="" >}}
 
 O si la parametrización es más compleja usando un método que devuelve una lista de parámetros en Junit.
 
-{{< code file="CalculatorSpecification.groovy" language="Groovy" options="" >}}
+{{< code file="CalculatorSpecification.groovy" language="groovy" options="" >}}
 {{< code file="CalculatorTest.java" language="java" options="" >}}
 
 Con estas posibilidades de JUnit y para hacer _mocking_ con [Mockito][mockito] realmente los dos motivos que tenía para usar Spock no son imprescindibles además de disponer de un lenguaje con buena asistencia de código en los IDEs. También para los teses igualmente se aplican las [10 razones que tengo para seguir usando Java][blogbitix-81].

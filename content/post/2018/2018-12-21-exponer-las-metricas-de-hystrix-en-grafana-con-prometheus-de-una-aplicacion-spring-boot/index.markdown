@@ -23,7 +23,7 @@ En el artículo [Tolerancia a fallos en un cliente de microservicio con Spring C
 Hystrix ofrece un _dashboard_ algo espartano con los datos de Hystrix de la propia aplicación. Los datos de las métricas de Hystrix por defecto no se exponen en Spring Boot Actuator pero se pueden añadir creando un _bean_ _HystrixMetricsBinder_ en la configuración de Spring.
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Una vez hecho esto Spring en el _endpoint_ _/actuator/metrics_ se exponen las métricas de Hystrix, si además se configura Spring añadiendo la dependencia _io.micrometer:micrometer-registry-prometheus_ para exponer las métricas en el formato para que Prometheus las recolecta también se añaden en el _endpoint_ _/actuator/prometheus_.
 

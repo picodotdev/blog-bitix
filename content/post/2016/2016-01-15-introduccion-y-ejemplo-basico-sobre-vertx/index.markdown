@@ -26,7 +26,7 @@ Teniendo en cuenta estos aspectos una de las opciones de la plataforma JVM es [V
 
 En el código del siguiente ejemplo emplearé Java por [mis preferencias y motivos para seguir usándolo][blogbitix-81] pero sería similar empleando cualquiera de los otros si prefirieses uno de ellos. El ejemplo _Main.java_ es una aplicación que devuelve un mensaje en la URL _http\://localhost:8080_, el ejemplo _Server.java_ devuelve una cabecera y usa un [Verticle](https://vertx.io/docs/vertx-core/java/#_verticles) y el tercero _Web.java_ acepta un parámetro y usa una plantilla de [Thymeleaf][thymeleaf], finalmente el archivo _build.gradle_ contiene las dependencias necesarias para los tres ejemplos y la construcción del proyecto con [Gradle][gradle].
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="Server.java" language="java" options="" >}}
 {{< code file="Web.java" language="java" options="" >}}

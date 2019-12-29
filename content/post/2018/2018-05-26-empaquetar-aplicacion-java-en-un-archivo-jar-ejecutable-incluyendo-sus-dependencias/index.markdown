@@ -47,7 +47,7 @@ Sin embargo, para distribuir la aplicación aún hay que distribuir varios archi
 
 Para hacer la distribución más sencilla hay una posibilidad que usan algunos programadores de Java que es reempaquetar todas las clases del _jar_ de la aplicación y de las librerías en un nuevo _jar_, a esta opción de reempaquetar las clases se le conoce como _uberjar_ o _fatjar_. En la herramienta de construcción Gradle existe un _plugin_ para realizar esta tarea de creación del _uberjar_ pero también se puede hacer definiendo una tarea sin necesidad del _plugin_. El archivo de Gradle adaptado para producir un _uberjar_ de forma automatizada es el siguiente. La tarea importante en el caso del ejemplo es _uberJar_.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Con el siguiente comando la ejecución de la aplicación empaquetada como _uberjar_ produce el mismo resultado. Con el _uberjar_ en el archivo de manifiesto no es necesario incluir el atributo _Class-Path_ ya que todas las clases necesarias tanto de la aplicación como de las dependencias ha sido empaquetadas en el _jar_.
 

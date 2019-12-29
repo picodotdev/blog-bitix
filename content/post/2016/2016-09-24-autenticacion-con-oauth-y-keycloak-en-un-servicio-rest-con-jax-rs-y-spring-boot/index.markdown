@@ -69,7 +69,7 @@ Proporcionando el token mediante una cabecera de la petición el servicio nos de
 
 Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir algunas dependencias al proyecto que usando [Gradle][gradle] como herramienta de construcción serían las siguientes.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 

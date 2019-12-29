@@ -65,9 +65,9 @@ Con Apache Tapestry el filtro se registra en el módulo de la aplicación y con 
 {{< code file="Index.java" language="java" options="" >}}
 {{< code file="User.java" language="java" options="" >}}
 {{< code file="Admin.java" language="java" options="" >}}
-{{< code file="Index.tml" language="HTML" options="" >}}
-{{< code file="User.tml" language="HTML" options="" >}}
-{{< code file="Admin.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
+{{< code file="User.tml" language="html" options="" >}}
+{{< code file="Admin.tml" language="html" options="" >}}
 
 Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.
 

@@ -55,7 +55,7 @@ Entre la [documentación de Varv](http://www.vavr.io/vavr-docs) hay numerosos ej
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La librería Varv es una de las que pongo como ejemplo en el artículo [La triste realidad de Java, versiones antiguas][blogbitix-266], si es útil no usarla puede hacer que programar en Java no sea todo lo placentero que podría ser. Algunas de las críticas que recibe Java no tienen validez usando las herramientas o librerías adecuadas porque en cierta medida las herramientas importan aunque por ahí circule la idea de que las herramientas no importan, para una persona de negocio quizá no sin embargo para un desarrollador sí.
 

@@ -18,7 +18,7 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 
 El contenedor de dependencias de Tapestry tiene algunas propiedades interesantes como que dos servicios pueden ser mutuamente dependientes y que se puede contribuir configuración a cualquier servicio para cambiar en cierta medida su comportamiento además de otras características que explico más en detalle en el libro [PlugIn Tapestry][blogbitix-12]. Para usarlo en una un programa que se ejecuta de la linea de comandos usando el main de una clase Java primeramente deberemos incluir en el proyecto la dependencia sobre tapestry-ioc, si usamos [Gradle][gradle] de la siguiente manera:
 
-{{< code file="build-1.gradle" language="Groovy" options="" >}}
+{{< code file="build-1.gradle" language="groovy" options="" >}}
 
 Una vez que tenemos la dependencia en el programa deberemos iniciar el contenedor IoC e indicarle los diferentes módulos que contendrán la definición de los servicios.
 
@@ -34,7 +34,7 @@ Al final de la aplicación deberemos llamar al método shutdown del registro.
 
 Otra cosa que nos puede interesar es poder generar contenido html usando el sistema de plantillas y componentes de Tapestry, ya sea en una aplicación «standalone» o en una aplicación web para enviar el contenido en un correo electrónico o quizá guardarlo en un archivo. Hay muchos sistemas de plantillas, cada _framework_ suele tener uno propio o usar una solución específica como [Thymeleaf](http://www.thymeleaf.org/) pero la mayoría usa un [modelo push en vez de un modelo pull][blogbitix-31], en el caso de Tapestry se emplea el modelo pull que tiene algunas ventajas como explico en el artículo anterior. Si usamos una aplicación Tapestry usándolo también para generar el contenido de los correos o cierto contenido estático evitamos tener que aprender una segunda tecnología además de aprovechar todo el código reutilizable que posiblemente hemos desarrollado en algunos componentes. Para generar el contenido estático que generaría una página en Tapestry tenemos el módulo [Tapestry Offline](https://github.com/uklance/tapestry-offline). Como no está en los repositorio de maven debemos descargarnos el jar e incluir la dependencia como un archivo.
 
-{{< code file="build-2.gradle" language="Groovy" options="" >}}
+{{< code file="build-2.gradle" language="groovy" options="" >}}
 
 Para generar una página de Tapestry fuera de una petición web y de un servidor de aplicaciones debemos usar el servicio OfflineComponentRenderer. Su uso sería el siguiente:
 

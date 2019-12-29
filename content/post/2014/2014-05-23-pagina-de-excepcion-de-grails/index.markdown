@@ -24,7 +24,7 @@ En este artículo crearé una página de excepción para Grails con los parámet
 
 Para hacer uso de la página de excepción deberemos configurar el archivo UrlMappings para que Grails use esta página de excepción.
 
-{{< code file="UrlMappings.groovy" language="Groovy" options="" >}}
+{{< code file="UrlMappings.groovy" language="groovy" options="" >}}
 
 El resultado se puede ver en la siguiente captura de pantalla.
 

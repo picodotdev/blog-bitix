@@ -46,7 +46,7 @@ Con la clase [SSLContext](https://docs.oracle.com/en/java/javase/11/docs/api/jav
 
 Para ejecutar el ejemplo usando [Gradle][gradle] y Java 11 hay que añadir un poco de configuración al _script_ de construcción que posiblemente en un futuro no será necesaria cuando se mejore el soporte.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaHttp2" command="./gradlew run" >}}
 

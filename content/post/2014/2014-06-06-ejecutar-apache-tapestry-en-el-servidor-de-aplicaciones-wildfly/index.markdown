@@ -32,7 +32,7 @@ El ContextListener que nos permite acceder al ServletContext es el siguiente:
 
 Además hemos de incluir en el proyecto un par de librerías y usar al menos la versión 16 de guava si se incluye como dependencia en el war:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 En la [aplicación de ejemplo](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) también deberemos actualizar la versión de guava al menos a la versión 16. Y esta clase y configuración es suficiente para que "mágicamente" se solucionen los problemas de las aplicaciones Tapestry con el servidor de aplicaciones JBoss/WildFly. Si no usamos lo indicado en este artículo al acceder al acceder a la aplicación fallaría con una excepción.
 

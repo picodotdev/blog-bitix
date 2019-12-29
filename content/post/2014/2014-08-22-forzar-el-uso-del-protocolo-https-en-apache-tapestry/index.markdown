@@ -28,7 +28,7 @@ Probablemente nos interese configurar el puerto y el host que usará Tapestry al
 
 Para probar mientras desarrollamos, al menos en nuestro equipo, que la redirección se hace correctamente empleando el plugin de gradle para tomcat podemos hacer que el servidor de desarrollo se inicie con el puerto https disponible. [Para usar https se necesita un certificado digital][blogbitix-13] que el [plugin de gradle para tomcat](https://github.com/bmuschko/gradle-tomcat-plugin) se encarga de generar al iniciar la aplicación, aunque sea autofirmado y el navegador alerte que no lo reconoce como firmado un una autoridad en la que confíe, si lo aceptamos podemos acceder a la aplicación sin más problema. Usando gradle la configuración que podemos emplear es:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La anotación @Secure en Tapestry es suficiente pero podemos hacer lo mismo empleando [Shiro][shiro]. [Integrando Shiro con Tapestry nos permite realizar autenticación y autorización][elblogdepicodev-seguridad-en-aplicacion-web-con-apache], pero además empleando Shiro también podemos obligar a usar el protocolo https del mismo modo que lo hacemos con la anotación Secure. Cualquiera de las dos formas es perfectamente válida y depende más de cual prefiramos. Con la anotación @Secure deberemos anotar cada página, con Shiro podemos tener centralizado en un único punto en que páginas requerimos https. Con Shiro la configuración se hace con una contribución al servicio SecurityConfiguration y usando el método contributeSecurityConfiguration del módulo y la clase SecurityFilterChainFactory y su método ssl(). Un ejemplo es el siguiente:
 

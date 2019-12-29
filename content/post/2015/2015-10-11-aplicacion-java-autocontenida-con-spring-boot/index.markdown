@@ -31,7 +31,7 @@ Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring
 
 Spring Boot proporciona un _plugin_, _spring-boot_, para [Gradle][gradle] que deberemos añadir al archivo _build.gradle_, a partir de este momento dispondremos algunas tareas adicionales en el proyecto como _bootRun_ para ejecutar la aplicación desde Gradle (similar a la opción _run_ y el parámetro _mainClassName_ que añade el _plugin application_) y _bootRepackage_ para poder ejecutar la aplicación con el comando <code>java -jar</code>.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 El punto de inicio de una aplicación de Spring Boot es una clase Java con su tradicional método _main_, en el ejemplo la clase _Main_. Bastan tres lineas para iniciar la aplicación y una anotación. Anotando con [<code>@SpringBootApplication</code>](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/autoconfigure/SpringBootApplication.html) la clase que contiene el método _main_ activaremos Spring Boot y el procesado de las anotaciones de Spring. En el método _main_ estableciendo la clase contexto de la aplicación variaremos el tipo de aplicación [AnnotationConfigApplicationContext](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/AnnotationConfigApplicationContext.html) para una aplicación de linea de comandos o de escritorio y [AnnotationConfigWebApplicationContext](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/context/support/AnnotationConfigWebApplicationContext.html) para las aplicaciones web que inicializará el servidor de aplicaciones embebido. Implementando la interfaz [CommandLineRunner](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/CommandLineRunner.html) en la clase que contiene la anotación _SpringBootApplication_  y su método _run_ será el punto de entrada de la aplicación, en el método recibiremos los parámetros de la linea de comandos. Implementar esta interfaz es opcional en las aplicaciones web.
 
@@ -46,8 +46,8 @@ No será muy común pero si queremos configurar algunas propiedades internas com
 Si en vez de usar Tomcat queremos usar Jetty o Undertow debemos cambiar las dependencias de la aplicación, excluimos la dependencia transitiva Tomcat y por defecto de _spring-boot-starter-web_ e incluimos la propia del servidor que deseemos.
 [spring-boot-starter-jetty](httpd://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-jetty-instead-of-tomcat) para Jetty y [spring-boot-starter-undertow](httpd://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-undertow-instead-of-tomcat) para Undertow. En el siguiente código la configuración a modificar en el archivo _build.gradle_ para ambas.
 
-{{< code file="build-jetty.gradle" language="Groovy" options="" >}}
-{{< code file="build-undertow.gradle" language="Groovy" options="" >}}
+{{< code file="build-jetty.gradle" language="groovy" options="" >}}
+{{< code file="build-undertow.gradle" language="groovy" options="" >}}
 
 El resto de esta aplicación de ejemplo es propio de [jOOQ][jooq] y de [Apache Tapestry][tapestry]. Para inicializar la base de datos H2 antes de ejecutar la aplicación debemos ejecutar la tarea de Gradle _updataDatabase_ que creará las base de datos, esquema y tablas con la herramienta [Liquibase][liquibase].
 

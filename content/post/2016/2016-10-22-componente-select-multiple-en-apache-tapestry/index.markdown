@@ -28,12 +28,12 @@ Esta sería una implementación de un componente _select_ múltiple. La mayor di
 
 Esta implementación del componente no necesita de una plantilla _tml_ sino que todo el HTML se generará desde el código Java. El componente soporta parámetros informales como indicamos con la anotación [@SupportsInformalParameters](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/annotations/SupportsInformalParameters.html) que son parámetros que se añadirán a la etiqueta _select_ incluidos tal cual se indican en su uso que por ejemplo podemos utilizar para variar el número de opciones visibles, personalizar los textos y otras funcionalidades de [bootstrap-select](https://silviomoreto.github.io/bootstrap-select/).
 
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 {{< code file="Index.java" language="java" options="" >}}
 
 El código HTML generado por el componente es el siguiente:
 
-{{< code file="Index.html" language="HTML" options="" >}}
+{{< code file="Index.html" language="html" options="" >}}
 
 Este sería el aspecto del _select_ múltiple con sus botones para seleccionar todas las opciones y deseleccionar todas, además de personalizados los textos y una pequeña flecha en el desplegable hacia el componente _select_, todo esto configurado principalmente a través de atributos _data_ y clases <abbr title="Cascading Stylesheets">CSS</abbr>.
 

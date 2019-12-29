@@ -23,11 +23,11 @@ Lo primero es incluir en el proyecto el _plugin_ de java. Con el _plugin_ inclui
 
 Para indicar en Gradle [las opciones del comando javadoc](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/javadoc.html#options) hay que ver cuales son en las clases [MinimalJavadocOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/MinimalJavadocOptions.html), [CoreJavadocOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/CoreJavadocOptions.html) y [StandardJavadocDocletOptions](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html). Las opciones permiten indicar la clase de _taglet_ propio y lo mismo para usar una hoja de estilos propia que puede estar basada pero con pequeñas modificaciones sobre la que usa _javadoc_ por defecto, también para incluir un texto en cada página en el pie. Lo mismo sería para usar cualquiera de las otras opciones que tiene el comando _javadoc_. En el ejemplo se usan dos opciones para la codificación de caracteres.
 
-{{< code file="build-1.gradle" language="Groovy" options="" >}}
+{{< code file="build-1.gradle" language="groovy" options="" >}}
 
 Para generar un artefacto con la documentación comprimida en un archivo _zip_ hay que incluir la siguiente configuración en el archivo _build.gradle_.
 
-{{< code file="build-2.gradle" language="Groovy" options="" >}}
+{{< code file="build-2.gradle" language="groovy" options="" >}}
 
 Con Gradle la documentación Javadoc se genera en el directorio _build/xxx_ y el artefacto en el directorio _build/xxx_. Con las opciones anteriores este es el resultado del HTML generado.
 

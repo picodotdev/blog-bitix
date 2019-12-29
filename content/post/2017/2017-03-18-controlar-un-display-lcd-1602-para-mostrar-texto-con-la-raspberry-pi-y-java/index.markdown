@@ -58,7 +58,7 @@ En el ejemplo mostraré un texto en cada una de las lineas del _display_ y usar�
 [displayOn](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#displayOn--) para apgar y encender el _display_ y [createChar](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#createChar-int-byte:A-) para crear nuevos caracteres definidos como una _array_ de 8 posiciones donde cada _byte_ indica los pixeles encendidos de cada fila del caracter de 5x8 y con [setCharacter](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html#setCharacter-int-int-char-) para emitir uno de los 8 posibles que se pueden usar al mismo tiempo. Además de estos también hay otros pocos métodos más relacionados con el cursor.
 
 {{< code file="Lcd.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="executeSSH.sh" language="bash" options="" >}}
 {{< code file="executeGradle.sh" language="bash" options="" >}}
 

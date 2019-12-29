@@ -22,7 +22,7 @@ La forma de utilizar combinaciones de teclas en una página web es haciendo uso 
 
 En este ejemplo se captura la combinación de teclas <kbd>Ctrl + Shift + s</kbd> a nivel de página que muestra una ventana emergente utilizando la función _alert()_ de JavaScript. El [objeto del evento](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) que se recibe como parámetro del _listener_ posee las propiedades _ctrlKey_, _shiftKey_ y _altKey_ con las que determinar además de la tecla pulsada las teclas modificadoras adicionales pulsadas al mismo tiempo.
 
-{{< code file="HtmlKeyCombinations.html" language="HTML" options="" >}}
+{{< code file="HtmlKeyCombinations.html" language="html" options="" >}}
 
 {{< figureproc
     image1="key-combinations-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo combinaciones de teclas"

@@ -28,7 +28,7 @@ Los _taglets_ pueden ser de tipo bloque con su propia entidad o ser embebidos en
 
 Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su ubicación al generar la documentación con la herramienta _javadoc_. Hay que indicar varias opciones (_tagletPath_ y _taglets_) que también se usarían como parámetros empleando directamente la herramienta _javadoc_, los comandos serían los siguientes usando [Gradle][gradle]. También hay que incluir de forma explícita como dependencia la librería _tools.jar_ ubicado en el JDK.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}}
+{{< code file="build.gradle" language="groovy" options="" >}}}
 
 {{< figureproc
     image1="javadoc-taglet.png" thumb1="javadoc-taglet-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contenido del taglet todo en el javadoc"

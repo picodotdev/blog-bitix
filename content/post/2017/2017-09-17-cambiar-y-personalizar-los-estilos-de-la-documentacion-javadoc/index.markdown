@@ -35,7 +35,7 @@ En el caso de este ejemplo en vez de usar el color azul por defecto he modificad
 
 La [tarea de Gradle para generar la documentación Javadoc](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.javadoc.Javadoc.html) posee [opciones](https://docs.gradle.org/current/javadoc/org/gradle/external/javadoc/StandardJavadocDocletOptions.html) equivalentes al comando _javadoc_, unas de ellas como ejemplo son _footer_ y _bottom_ que añaden un texto en en el pie de página de cada página.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< figureproc
     image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Estilos personalizados de la documentación Javadoc"

@@ -42,7 +42,7 @@ En el ejemplo el cliente en un bucle realiza las llamadas al servicio con un mé
 
 {{< code file="ClientService.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 El circuito se abre cuando el número de llamadas supera un umbral y un porcentaje de fallos, se han de cumplir las dos condiciones. Si el número de llamadas que se realizan no superan el umbral aunque todas fallen el circuito permanece cerrado. Ambos valores son personalizables con las propiedades _circuitBreaker.requestVolumeThreshold_ y _circuitBreaker.errorThresholdPercentage_. El circuito permanece abierto al menos durante el tiempo indicado por _metrics.rollingStats.timeInMilliseconds_.
 

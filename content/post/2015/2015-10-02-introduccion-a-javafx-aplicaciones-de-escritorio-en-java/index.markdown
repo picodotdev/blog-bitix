@@ -36,7 +36,7 @@ A continuación mostraré los requerimientos y entorno que deberemos tener para 
 
 En el [repositorio de GitHub del ejemplo de JavaFX](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJavaFX) está el código fuente. Usando [Gradle][gradle] como herramienta automatizada de construcción y descargado el código podemos lanzar la aplicación de ejemplo con el comando de _run.sh_.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="run.sh" language="bash" options="" >}}
 
 La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/HolaMundoJavaFX/src/main/java/io/github/picodotdev/javafx/HelloWorld.java) extiende de [Application](https://docs.oracle.com/javafx/2/api/javafx/application/Application.html) y en el método _start_ definimos los controles de lo que será la escena (la ventana), principalmente un botón con un manejador de evento a ejecutar al ser pulsado.

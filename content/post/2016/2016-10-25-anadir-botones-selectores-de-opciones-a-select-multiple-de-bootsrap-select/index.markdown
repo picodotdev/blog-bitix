@@ -32,9 +32,9 @@ Un atributo que usa _bootstrap-select_ para la opción de filtrado es el atribut
 
 Este sería un ejemplo de código JavaScript junto con el uso del componente de Tapestry en la aplicación que podríamos emplear para añadir al elemento selector este comportamiento de selección de grupos de opciones que básicamente añade de forma dinámica un pequeño trozo de HTML similar al que el componente utiliza para mostrar los botones de todos y ninguno. Cuando se haga clic en un botón de selección con el evento _loaded.bs.select_ se buscan las opciones que contiene el _token_ asociado al botón y se seleccionan teniendo en cuenta también las opciones que estén deshabilitadas. Además, cuando todas las opciones de un botón selector están seleccionadas queda como pulsado como indicativo, lógica que se realiza en el evento _change_.
 
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 {{< code file="multiselect.js" language="JavaScript" options="" >}}
-{{< code file="Index.html" language="HTML" options="" >}}
+{{< code file="Index.html" language="html" options="" >}}
 
 Y este sería el aspecto de componente en el navegador.
 

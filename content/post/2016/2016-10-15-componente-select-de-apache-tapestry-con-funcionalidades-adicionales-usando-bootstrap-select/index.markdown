@@ -47,7 +47,7 @@ Usando [Apache Tapestry][tapestry] con su concepto de parámetros informales añ
 Este sería el código para crear una instancia de _SelectModel_ para un componente [Select](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html) de Tapestry para un ficticio selector de país. En el ejemplo en vez de usar un mapa vacío con _Collections.EMPTY\_MAP_ se podría sustituir por un mapa con atributos que se añadirían a la opción para usar alguna otra funcionalidad de _bootstrap-select_.
 
 {{< code file="Index.java" language="java" options="" >}}
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 {{< code file="AppOptionGroupModel.java" language="java" options="" >}}
 {{< code file="AppOptionModel.java" language="java" options="" >}}
 

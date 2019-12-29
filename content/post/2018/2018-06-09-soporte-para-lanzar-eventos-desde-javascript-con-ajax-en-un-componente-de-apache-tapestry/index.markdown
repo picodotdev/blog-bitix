@@ -22,11 +22,11 @@ Algunos _frameworks_ proporcionan cierto soporte para JavaScript y recursos CSS 
 Una de estas funcionalidades que proporciona Tapestry es poder lanzar eventos desde el cliente mediante una petición _Ajax_ para que sean procesados en el servidor y obtener la respuesta que se devuelva desde el servidor normalmente en formato _Json_. Hay que definir un manejador de evento en el servidor siguiendo la convención _on[Event]_ y en caso de querer lanzar un evento desde el cliente anotándolo con [@PublishEvent](http://tapestry.apache.org/current/apidocs/index.html?org/apache/tapestry5/ComponentResources.html).
 
 {{< code file="Event.java" language="java" options="" >}}
-{{< code file="Event.tml" language="HTML" options="" >}}
+{{< code file="Event.tml" language="html" options="" >}}
 
 El uso del componente en una plantilla de una página.
 
-{{< code file="Index.tml" language="HTML" options="" >}}
+{{< code file="Index.tml" language="html" options="" >}}
 
 En el código JavaScript asociado a una página o componente hay que hacer uso del módulo que ofrece el soporte para _Ajax_ y los eventos desde el cliente, con [RequireJS][requirejs] se obtiene una referencia a él. Solo es necesario indicar como parámetro el nombre del evento a lanzar, los parámetros si los hubiese y los manejadores de respuesta, tanto en el caso de ser correcta que recibirá los datos devueltos en el servidor como incorrecta. En el archivo [ajax.coffee](https://git1-us-west.apache.org/repos/asf?p=tapestry-5.git;a=blob_plain;f=tapestry-core/src/main/coffeescript/META-INF/modules/t5/core/ajax.coffee;hb=85cc611fbad4a3574664b33ce9adf614b4f0fe07) están documentados todos los parámetros que posee la función _ajax_ del módulo _t5/core/ajax_.
 

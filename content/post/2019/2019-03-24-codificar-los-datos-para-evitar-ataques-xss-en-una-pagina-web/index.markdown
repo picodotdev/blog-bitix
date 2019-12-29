@@ -25,7 +25,7 @@ El siguiente código de un archivo JSP que obtiene un parámetro de la petición
 
 El contenido HTML generado por la aplicación y enviado al navegador sería el siguiente:
 
-{{< code file="RequestParameter.html" language="HTML" options="" >}}
+{{< code file="RequestParameter.html" language="html" options="" >}}
 
 En este caso al cargar la página en el navegador se muestra un mensaje _alert_ con una ventana emergente pero si el usuario malicioso enviase los datos de las _cookies_ a una URL suya el usuario ni siquiera sería consciente de que le han robado la sesión. Y este fallo de seguridad se produce simplemente por cargar una página de una aplicación insegura por XSS.
 

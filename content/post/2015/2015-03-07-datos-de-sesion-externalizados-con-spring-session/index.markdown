@@ -29,7 +29,7 @@ Usando [Spring Session][spring-session] se puede externalizar los datos de la se
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="SessionController.java" language="java" options="" >}}
 {{< code file="docker-compose.yml" language="Yaml" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Descargado el [código fuente de la aplicación de ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringSession) y utilizando [Docker][docker] para iniciar el servidor Redis se puede iniciar la aplicación con el comando:
 

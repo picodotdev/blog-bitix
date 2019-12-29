@@ -22,7 +22,7 @@ Para hacer cualquier aplicación autocontenida sin necesidad de instalar el serv
 
 Para la demostración usaré la aplicación con los ejemplos que hice para el [libro PulgIn Tapestry][blogbitix-12] que trataba del el _framework_ de desarrollo [Apache Tapestry][tapestry]. Primeramente deberemos añadir al proyecto la dependencia de tomcat-embedded de forma que podamos importar las clases y paquetes de Tomcat a usar en la clase que iniciará la aplicación.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Posteriormente crearemos una clase Java con su método main que inicie el servidor de aplicaciones embebido con la aplicación web desplegada en él, podemos indicar el puerto que queremos que escuche y las configuraciones que necesitemos tal como si lo configurásemos el archivo _server.xml_ o _context.xml_ pero usando código Java, usaremos la API ofrecida por las clases incluidas en las dependencias anteriores (_org.apache.catalina.startup.Tomcat_).
 

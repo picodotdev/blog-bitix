@@ -40,7 +40,7 @@ Resilience4j para implementar los patrones lo que hace es decorar la función ob
 
 Las dependencias que hay que añadir en el proyecto son:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Resilience4j proporciona añadidos de integración con Spring Boot y exportación de métricas para [Prometheus][prometheus].
 

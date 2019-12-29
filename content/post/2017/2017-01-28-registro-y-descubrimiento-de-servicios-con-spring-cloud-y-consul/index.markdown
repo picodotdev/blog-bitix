@@ -47,7 +47,7 @@ Spring Cloud proporciona además un servicio que podemos usar para conocer los s
 
 Consul para conocer que los servicios siguen en funcionamiento hace una petición <abbr>HTTP</abbr> cada ciertos segundos a una ruta de la aplicación, Spring Boot proporciona una dependencia, _spring-boot-starter-actuator_, que usada provee del _endpoint /health_ para que Consul monitorice el estado del servicio.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< figureproc
     image1="service-health.png" thumb1="service-health-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Endpoint de estado de servicio"

@@ -35,7 +35,7 @@ En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres m
 {{< code file="Sensor.java" language="java" options="" >}}
 {{< code file="Alarm.java" language="java" options="" >}}
 {{< code file="Monitor.java" language="java" options="" >}}
-{{< code file="MonitorSpec.groovy" language="Groovy" options="" >}}
+{{< code file="MonitorSpec.groovy" language="groovy" options="" >}}
 
 Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temperaturas altas siendo la siguiente baja y posteriormente otra alta la alarma no es disparada.
 

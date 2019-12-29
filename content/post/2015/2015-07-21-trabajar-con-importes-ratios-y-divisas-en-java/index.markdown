@@ -21,7 +21,7 @@ Las aplicaciones de comercio electrónico o que realizan operaciones financieras
 
 Aunque la especificación no es parte de Java aún el grupo de trabajo encargado ha generado una dependencia que podemos usar. En el [repositorio de GitHub](https://github.com/JavaMoney/) podemos encontrar el código de la librería. Incluyéndola como dependencia de un proyecto podemos usarla, usando [Gradle][gradle] con:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 La librería hace uso de lambdas, una de las [novedades que introdujo de Java 8 en el lenguaje][blogbitix-17], y nos facilita varias funcionalidades. También permite usar _streams_. Veamos algunas de las posibilidades.
 

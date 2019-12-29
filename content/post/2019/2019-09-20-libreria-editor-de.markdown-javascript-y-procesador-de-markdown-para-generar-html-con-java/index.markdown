@@ -22,7 +22,7 @@ _Markdown_ es un formato de texto simple con una sintaxis que permite introducir
 
 Como editor JavaScript para _markdown_ de las varias opciones que he encontrado la que más me ha gustado es [Editor.md](https://pandao.github.io/editor.md/en.html) por sus numerosas opciones, documentación y ejemplos, aunque no tiene una versión reciente. Posee barra de herramientas para realizar opciones básicas de edición, previsualizador de contenido HTML, colapsador de secciones, manejadores de eventos, subir imágenes, internacionalización, personalizar la barra de herramientas como está descrito en su [sección de ejemplos](https://pandao.github.io/editor.md/examples/index.html). En la [página de Editor.md en GitHub](https://github.com/pandao/editor.md) están documentadas las opciones de configuración.
 
-{{< code file="index-1.html" language="HTML" options="" >}}
+{{< code file="index-1.html" language="html" options="" >}}
 
 {{< figureproc
     image1="editor-md.png" options1="2560x1440" optionsthumb1="650x450" title1="Editor JavaScript de markdown"
@@ -31,7 +31,7 @@ Como editor JavaScript para _markdown_ de las varias opciones que he encontrado 
 Una vez que se obtiene el texto en formato _markdown_ en algún momento al visualizarlo como parte del código fuente en una página web hay que transformarlo a formato HTML, para esto en Java hay varias librerías algunas ya obsoletas, antiguas y sin mantenimiento. De las que su desarrollo sigue activa una es [Flexmark Java](https://github.com/vsch/flexmark-java).
 
 {{< code file="Main.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< reference >}}
 * [Markdown Guide](https://www.markdownguide.org/getting-started)

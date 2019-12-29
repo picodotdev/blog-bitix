@@ -41,7 +41,7 @@ Las métricas ofrecidas en el _endpoint_ _metrics_ por Spring Boot Actuator mues
 
 En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator en el archivo _build.gradle_ del proyecto podemos acceder a los _endpoints_ comentados en las <abbr title="Uniform Resource Locator">URL</abbr> según el puerto y contexto de la interfaz de administración.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 {{< figureproc
     image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Spring Boot Actuator endpoint Health"

@@ -44,7 +44,7 @@ En una entidad de Hibernate los identificadores se definen de la siguiente forma
 
 En jOOQ en la configuración del generador hay que especificar que para un campo se use un _converter_.
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Con un tipo de datos propio para los identificadores es muy importante [implementar correctamente los métodos equals y hashCode][blogbitix-199] tanto en clases de identificadores como en las entidades de dominio ya que las colecciones de Java se basan en estos métodos para determinar si una colección contiene un elemento.
 

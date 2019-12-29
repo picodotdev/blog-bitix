@@ -35,7 +35,7 @@ Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos
 
 Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jetty](http://www.eclipse.org/jetty/) con la aplicación desplegada en él ya usando [Gradle](http://www.gradle.org/):
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.
 

@@ -44,7 +44,7 @@ Los servicios los mantengo separados ya que al combinarlos pueden surgir problem
 
 Empezando por el servidor OAuth y las dependencias que necesita, son _spring-security-oauth2_ y para generar _tokens_ JWT _spring-security-jwt_, el resto son dependencias necesarias de Spring Boot
 
-{{< code file="oauth/build.gradle" language="Groovy" options="" >}}
+{{< code file="oauth/build.gradle" language="groovy" options="" >}}
 
 La clase principal de Spring Boot y que inicia la aplicación no tiene nada especial salvo la necesaria anotación _@EnableAuthorizationServer_ para habilitar el servidor OAuth.
 
@@ -70,14 +70,14 @@ El servidor _gateway_ en realidad no interviene en la lógica de OAuth porque la
 
 Lo único necesario par definir el _gateway_ son las dependencias del proyecto, poco más que _spring-cloud-starter-gateway_, y la configuración de enrutado que _matchea_ peticiones según el parámetro _predicates_, reescribe la URL hacia el servicio  según el filtro _RewritePath_ y finalmente redirige la petición a la ubicación del servicio indicada en _uri_. Se inicia con _./gradlew gateway:run_.
 
-{{< code file="gateway/build.gradle" language="Groovy" options="" >}}
+{{< code file="gateway/build.gradle" language="groovy" options="" >}}
 {{< code file="gateway/application.yml" language="Yaml" options="" >}}
 
 ### Servicio, servidor de recurso
 
 Dado que el servicio interpreta los _tokens_ JWT y aplica reglas de seguridad necesita las mismas dependencias que utiliza el servidor OAuth.
 
-{{< code file="service/build.gradle" language="Groovy" options="" >}}
+{{< code file="service/build.gradle" language="groovy" options="" >}}
 
 El recurso es muy simple, solo devuelve un mensaje.
 

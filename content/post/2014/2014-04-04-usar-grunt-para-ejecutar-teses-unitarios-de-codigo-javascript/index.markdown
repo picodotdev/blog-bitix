@@ -40,7 +40,7 @@ Si usamos [Mocha][mochajs] como librería de pruebas unitarias probablemente dis
 
 Sin embargo, puede que deseemos ejecutarlas desde la herramienta de construcción que usemos, en mi caso con Gradle. Para añadir el soporte a Gradle de ejecutar las pruebas unitarias a su vez con Grunt debemos añadir la siguiente configuración a nuestro archivo build.gradle:
 
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 
 Veremos como salida el siguiente resultado en la terminal.
 

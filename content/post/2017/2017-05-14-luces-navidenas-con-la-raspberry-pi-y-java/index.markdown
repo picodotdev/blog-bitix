@@ -36,7 +36,7 @@ Esta es la foto del cableado usando múltiples cables macho-macho para conectar 
 Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros se apagarán y otros seguirán en el estado que estaban. Para ello generaré un booleano aleatorio para cada uno de los diodos que determinará si debe estar encendido o apagado. Este es el programa Java junto con la parte relevante del archivo [Gradle][gradle] para compilar y construir el ejemplo y el comando que uso para ejecutarlo.
 
 {{< code file="ChristmasTree.java" language="java" options="" >}}
-{{< code file="build.gradle" language="Groovy" options="" >}}
+{{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="execute.sh" language="bash" options="" >}}
 
 Esta aplicación para la Raspberry Pi queda bastante vistosa y no es muy complicado de realizar a pesar del del lío de cables que resulta. Este es un vídeo de su funcionamiento.

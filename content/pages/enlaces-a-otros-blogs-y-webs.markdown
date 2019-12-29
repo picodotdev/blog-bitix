@@ -58,8 +58,6 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Software Libre Deusto](http://softwarelibre.deusto.es/)
 * [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
 * [DesdeLinux](https://blog.desdelinux.net/)
-* [/etc/cron.d](http://www.etccrond.es/)
-* [El blog de abr4xas](https://blog.abr4xas.org/)
 * [SYSADMIT](https://www.sysadmit.com/): contiene artículos de Linux, Microsoft, VMware y más temas relacionados con la administración de sistemas informáticos.
 * [LiGNUx](https://lignux.com/)
 * [Linuxito](https://www.linuxito.com/)
