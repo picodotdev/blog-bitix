@@ -59,11 +59,9 @@ Para una mayor velocidad de instalación es mejor usar una memoria USB de al men
 
 Hay que conectar una memoria USB, seleccionarla, seleccionar el archivo de la imagen ISO de Ubuntu y pulsar el botón _Empezar_, al cabo de unos minutos la memoria estará lista para empezar a instalar Ubuntu.
 
-<div class="media">
-    {{< figure
-        image1="rufus.png" thumb1="rufus-thumb.png" title1="Creación de medio de instalación en memoria USB desde Windows"
-        caption="Creación de medio de instalación en memoria USB dese Windows" >}}
-</div>
+{{< figure
+    image1="rufus.png" thumb1="rufus-thumb.png" title1="Creación de medio de instalación en memoria USB desde Windows"
+    caption="Creación de medio de instalación en memoria USB dese Windows" >}}
 
 ### Iniciar el sistema con el medio de instalación
 
@@ -101,57 +99,53 @@ El asistente de instalación pregunta:
 
 Los asistentes de instalación utilizan el entorno de escritorio del sabor que se está instalando pero los pasos son similares y piden la misma información.
 
-<div class="media">
+{{< figure
+    image1="instalacion-ubuntu-01.png" thumb1="instalacion-ubuntu-01-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-02.png" thumb2="instalacion-ubuntu-02-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-03.png" thumb3="instalacion-ubuntu-03-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-01.png" thumb1="instalacion-ubuntu-01-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-02.png" thumb2="instalacion-ubuntu-02-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-03.png" thumb3="instalacion-ubuntu-03-thumb.png" title3="Instalación de Ubuntu" >}}
+    image1="instalacion-ubuntu-04.png" thumb1="instalacion-ubuntu-04-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-05.png" thumb2="instalacion-ubuntu-05-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-06.png" thumb3="instalacion-ubuntu-06-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-04.png" thumb1="instalacion-ubuntu-04-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-05.png" thumb2="instalacion-ubuntu-05-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-06.png" thumb3="instalacion-ubuntu-06-thumb.png" title3="Instalación de Ubuntu" >}}
+    image1="instalacion-ubuntu-07.png" thumb1="instalacion-ubuntu-07-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-08.png" thumb2="instalacion-ubuntu-08-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-09.png" thumb3="instalacion-ubuntu-09-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-07.png" thumb1="instalacion-ubuntu-07-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-08.png" thumb2="instalacion-ubuntu-08-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-09.png" thumb3="instalacion-ubuntu-09-thumb.png" title3="Instalación de Ubuntu" >}}
+    image1="instalacion-ubuntu-10.png" thumb1="instalacion-ubuntu-10-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-11.png" thumb2="instalacion-ubuntu-11-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-12.png" thumb3="instalacion-ubuntu-12-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-10.png" thumb1="instalacion-ubuntu-10-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-11.png" thumb2="instalacion-ubuntu-11-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-12.png" thumb3="instalacion-ubuntu-12-thumb.png" title3="Instalación de Ubuntu" >}}
+    image1="instalacion-ubuntu-13.png" thumb1="instalacion-ubuntu-13-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-14.png" thumb2="instalacion-ubuntu-14-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-15.png" thumb3="instalacion-ubuntu-15-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-13.png" thumb1="instalacion-ubuntu-13-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-14.png" thumb2="instalacion-ubuntu-14-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-15.png" thumb3="instalacion-ubuntu-15-thumb.png" title3="Instalación de Ubuntu" >}}
+    image1="instalacion-ubuntu-16.png" thumb1="instalacion-ubuntu-16-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-17.png" thumb2="instalacion-ubuntu-17-thumb.png" title2="Instalación de Ubuntu"
+    image3="instalacion-ubuntu-18.png" thumb3="instalacion-ubuntu-18-thumb.png" title3="Instalación de Ubuntu" >}}
     {{< figure
-        image1="instalacion-ubuntu-16.png" thumb1="instalacion-ubuntu-16-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-17.png" thumb2="instalacion-ubuntu-17-thumb.png" title2="Instalación de Ubuntu"
-        image3="instalacion-ubuntu-18.png" thumb3="instalacion-ubuntu-18-thumb.png" title3="Instalación de Ubuntu" >}}
-    {{< figure
-        image1="instalacion-ubuntu-19.png" thumb1="instalacion-ubuntu-19-thumb.png" title1="Instalación de Ubuntu"
-        image2="instalacion-ubuntu-20.png" thumb2="instalacion-ubuntu-20-thumb.png" title1="Instalación de Ubuntu"
-        caption="Instalación de Ubuntu" >}}
-</div>
+    image1="instalacion-ubuntu-19.png" thumb1="instalacion-ubuntu-19-thumb.png" title1="Instalación de Ubuntu"
+    image2="instalacion-ubuntu-20.png" thumb2="instalacion-ubuntu-20-thumb.png" title1="Instalación de Ubuntu"
+    caption="Instalación de Ubuntu" >}}
 
 ### Usando Ubuntu
 
 Si se ha elegido cifrar el contenido del dispositivo de almacenamiento al realizar la instalación en el inicio del sistema Ubuntu pregunta por la contraseña para descifrar su contenido.
 
-<div class="media">
+{{< figure
+    image1="ubuntu-01.png" thumb1="ubuntu-01-thumb.png" title1="Ubuntu 16.04"
+    image2="ubuntu-02.png" thumb2="ubuntu-02-thumb.png" title1="Ubuntu 16.04"
+    image3="ubuntu-03.png" thumb3="ubuntu-03-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio Unity"
+    caption="Ubuntu 16.04 con entorno de escritorio Unity" >}}
     {{< figure
-        image1="ubuntu-01.png" thumb1="ubuntu-01-thumb.png" title1="Ubuntu 16.04"
-        image2="ubuntu-02.png" thumb2="ubuntu-02-thumb.png" title1="Ubuntu 16.04"
-        image3="ubuntu-03.png" thumb3="ubuntu-03-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio Unity"
-        caption="Ubuntu 16.04 con entorno de escritorio Unity" >}}
+    image1="ubuntu-04.png" thumb1="ubuntu-04-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio GNOME"
+    image2="ubuntu-05.png" thumb2="ubuntu-05-thumb.png" title2="Ubuntu 16.04 con entorno de escritorio GNOME"
+    image3="ubuntu-06.png" thumb3="ubuntu-06-thumb.png" title3="Ubuntu 16.04 con entorno de escritorio GNOME"
+    caption="Ubuntu 16.04 con entorno de escritorio GNOME" >}}
     {{< figure
-        image1="ubuntu-04.png" thumb1="ubuntu-04-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio GNOME"
-        image2="ubuntu-05.png" thumb2="ubuntu-05-thumb.png" title2="Ubuntu 16.04 con entorno de escritorio GNOME"
-        image3="ubuntu-06.png" thumb3="ubuntu-06-thumb.png" title3="Ubuntu 16.04 con entorno de escritorio GNOME"
-        caption="Ubuntu 16.04 con entorno de escritorio GNOME" >}}
-    {{< figure
-        image1="ubuntu-07.png" thumb1="ubuntu-07-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio KDE"
-        image2="ubuntu-08.png" thumb2="ubuntu-08-thumb.png" title2="Ubuntu 16.04 con entorno de escritorio KDE"
-        caption="Ubuntu 16.04 con entorno de escritorio KDE" >}}
-</div>
+    image1="ubuntu-07.png" thumb1="ubuntu-07-thumb.png" title1="Ubuntu 16.04 con entorno de escritorio KDE"
+    image2="ubuntu-08.png" thumb2="ubuntu-08-thumb.png" title2="Ubuntu 16.04 con entorno de escritorio KDE"
+    caption="Ubuntu 16.04 con entorno de escritorio KDE" >}}
 
 ### Centro de software y actualizaciones
 
@@ -159,12 +153,10 @@ Ubuntu por defecto ya incorpora una buena cantidad de software preinstalado. En 
 
 Al cabo de un tiempo de haber instalado Ubuntu se publicarán actualizaciones del software que tengas instalado con mejoras y correcciones de seguridad que son recomendables instalarlas usando la aplicación _Actualizciones de software_.
 
-<div class="media">
-    {{< figure
-        image1="ubuntu-software.png" thumb1="ubuntu-software-thumb.png" title1="Instalar y desinstalar software"
-        image2="ubuntu-actualizaciones.png" thumb2="ubuntu-actualizaciones-thumb.png" title2="Instalar actualizaciones de seguridad y software"
-        caption="Instalar actualizaciones de seguridad y software" >}}
-</div>
+{{< figure
+    image1="ubuntu-software.png" thumb1="ubuntu-software-thumb.png" title1="Instalar y desinstalar software"
+    image2="ubuntu-actualizaciones.png" thumb2="ubuntu-actualizaciones-thumb.png" title2="Instalar actualizaciones de seguridad y software"
+    caption="Instalar actualizaciones de seguridad y software" >}}
 
 ### Ayuda
 

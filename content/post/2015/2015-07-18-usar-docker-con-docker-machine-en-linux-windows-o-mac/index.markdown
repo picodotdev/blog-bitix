@@ -38,7 +38,7 @@ Estableciendo las variables de entorno de la máquina virtual podemos usar el co
 Podemos detener, volver a iniciar, hacer SSH y eliminar la máquina virtual con:
 
 {{< code file="docker-machine-manage.sh" language="bash" options="" >}}
-{{< asciinema id="23600" caption="Comandos y uso de Docker Machine en una máquina virtual" >}}
+{{< asciinema id="23600"    caption="Comandos y uso de Docker Machine en una máquina virtual" >}}
 
 El directorio por defecto donde se guardarán los archivos de las máquinas virtuales es _~/.docker/machine_, si queremos cambiarlo podemos utilizar el parámetro _--storage-path_ en cada uno de los comandos anteriores de la siguiente forma, el orden de los parámetros es importante:
 
@@ -46,11 +46,9 @@ El directorio por defecto donde se guardarán los archivos de las máquinas virt
 
 En el administrador de VirtualBox veremos que se ha creado la máquina virtual _dev_ además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.
 
-<div class="media">
-    {{< figure
-        image1="virtualbox.png" thumb1="virtualbox-thumb.png" title1="Máquina de Docker Machine ne VirtualBox"
-        caption="Máquina de Docker Machine en VirtualBox" >}}
-</div>
+{{< figure
+    image1="virtualbox.png" thumb1="virtualbox-thumb.png" title1="Máquina de Docker Machine ne VirtualBox"
+    caption="Máquina de Docker Machine en VirtualBox" >}}
 
 Dado que los contenedores se ejecutan en una máquina virtual de VirtualBox y VirtualBox está disponible en Windows y Mac OS además del binario de Docker Machine para estas plataformas podemos usar docker en cualquiera de estos. Aunque no sea de forma nativa como en Linux para un entorno de desarrollo donde las personas trabajan con cualquiera de estos sistemas operativos puede sernos de utilidad.
 

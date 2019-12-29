@@ -40,17 +40,15 @@ Lo primero que haremos es [descargar la última versión de GeeXboX](http://www.
 
 Este comando tardará un poco de tiempo dada la lentitud de las tarjetas SD. Una vez termine quizá debamos expandir la partición del sistema para aprovechar todo el espacio de la tarjeta SD. Para expandir la partición del sistema podemos usar [GParted](http://gparted.org/). Y esto es lo mínimo imprescindible para instalar GeeXboX en una tarjeta SD para la Pi. GeeXboX tiene el siguiente aspecto.
 
-<div class="media">
+{{< figure
+    image1="geexbox-inicio.jpg" thumb1="geexbox-inicio-thumb.jpg"
+    image2="geexbox-ajustes.jpg" thumb2="geexbox-ajustes-thumb.jpg" >}}
 	{{< figure
-    	image1="geexbox-inicio.jpg" thumb1="geexbox-inicio-thumb.jpg"
-    	image2="geexbox-ajustes.jpg" thumb2="geexbox-ajustes-thumb.jpg" >}}
+    image1="geexbox-ajustes-video.jpg" thumb1="geexbox-ajustes-video-thumb.jpg"
+    image2="geexbox-apariencia-ajustes.jpg" thumb2="geexbox-apariencia-ajustes-thumb.jpg" >}}
 	{{< figure
-    	image1="geexbox-ajustes-video.jpg" thumb1="geexbox-ajustes-video-thumb.jpg"
-    	image2="geexbox-apariencia-ajustes.jpg" thumb2="geexbox-apariencia-ajustes-thumb.jpg" >}}
-	{{< figure
-    	image1="geexbox-servicios.jpg" thumb1="geexbox-servicios-thumb.jpg"
-    	image2="geexbox-reproduccion.jpg" thumb2="geexbox-reproduccion-thumb.jpg" >}}
-</div>
+    image1="geexbox-servicios.jpg" thumb1="geexbox-servicios-thumb.jpg"
+    image2="geexbox-reproduccion.jpg" thumb2="geexbox-reproduccion-thumb.jpg" >}}
 
 Como apunte a tener en cuenta es que para reproducir películas en formato imagen de DVD (iso) *intuyo* que se necesita adquirir la licencia MPEG-2 en la [tienda de la propia página de Raspberry Pi](http://www.raspberrypi.com/license-keys/). Para otros formatos como DivX (avi) o Matroska (mkv) no tendremos ningún problema en reproducir las películas y van totalmente fluídas. Otras opciones son bastante más potentes pero Pi ya tiene capacidad suficiente para reproducir películas a 1080p.
 

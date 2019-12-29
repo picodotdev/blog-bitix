@@ -25,12 +25,10 @@ En la [especificación del sensor DHT11](http://www.micropik.com/PDF/dht11.pdf) 
 
 Dada las restricciones de tiempo que utiliza el sensor en el ejemplo usaré el lenguaje C para obtener los valores de temperatura y humedad y <abbr title="Java Native Interface">JNI</abbr> para acceder a ellos desde Java. Aún usando C se producen errores en la obtención de los valores ya que el método usado por el sensor y transmitir los datos basados en tiempo de microsegundos no es muy fiable. Usando Java la situación sería peor por las restricciones que impone la máquina virtual con sus paradas para la recolección de basura por ejemplo. Así que el ejemplo consistirá en una combinación de C y Java con JNI un poco más avanzado que el [Ejemplo de JNI, usar código en C desde Java][blogbitix-217].
 
-<div class="media">
-    {{< figure
-        image1="dht11-1.jpg" thumb1="dht11-1-thumb.jpg" title1="Sensor DHT11"
-        image2="dht11-2.jpg" thumb2="dht11-2-thumb.jpg" title2="Sensor DHT11"
-        caption="Sensor DHT11" >}}
-</div>
+{{< figure
+    image1="dht11-1.jpg" thumb1="dht11-1-thumb.jpg" title1="Sensor DHT11"
+    image2="dht11-2.jpg" thumb2="dht11-2-thumb.jpg" title2="Sensor DHT11"
+    caption="Sensor DHT11" >}}
 
 Lo primero que deberemos hacer para acceder a la información del sensor desde Java es crear una clase que contenga un método nativo que realizará la lectura de la información en C. Con la utilidad _javah_ obtendremos el archivo de cabecera que implementará el programa en C. Finalmente, siguiendo la especificación se escribe el código C que realice la lectura que en este caso usará la librería [wiringPi][wiringpi] para la interacción con los _pines_ GPIO de la Raspberry Pi.
 
@@ -56,20 +54,16 @@ La clase Java del ejemplo que hace uso del sensor realiza una lectura cada 3 seg
 
 Este es el esquema de conexiones que he utilizado para el ejemplo y una foto del cableado real, he usado del _pin_ GPIO número 2 según la nomenclatura de wiringPi para el cable de datos del sensor DHT11 que se corresponde con pin número 13 según la nomenclatura del _header_ de la Raspberry Pi. Para ver el cableado del _display_ 1602 más detalladamente y la activación del bus de comunicación I2C que necesita consulta el artículo [Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java][blogbitix-215].
 
-<div class="media">
-    {{< figure
-        image1="cableado.jpg" thumb1="cableado-thumb.jpg" title1="Cableado sensor DHT11 y display 1602"
-        caption="Cableado sensor DHT11 y display 1602" >}}
-</div>
+{{< figure
+    image1="cableado.jpg" thumb1="cableado-thumb.jpg" title1="Cableado sensor DHT11 y display 1602"
+    caption="Cableado sensor DHT11 y display 1602" >}}
 
 Ejecutando el programa del ejemplo y usando el display 1602 (16 columnas y 2 filas) se muestra la temperatura y humedad obtenida del sensor.
 
-<div class="media">
-    {{< figure
-        image1="temperature-humidity.jpg" thumb1="temperature-humidity-thumb.jpg" title1="Cableado ejemplo y funcionando"
-        image2="display.jpg" thumb2="display-thumb.jpg" title2="Cableado ejemplo y funcionando"
-        caption="Cableado ejemplo y funcionando" >}}
-</div>
+{{< figure
+    image1="temperature-humidity.jpg" thumb1="temperature-humidity-thumb.jpg" title1="Cableado ejemplo y funcionando"
+    image2="display.jpg" thumb2="display-thumb.jpg" title2="Cableado ejemplo y funcionando"
+    caption="Cableado ejemplo y funcionando" >}}
 
 En el kernel de Linux hay un módulo que proporciona también los valores del sensor, sin embargo, no he conseguido obtener la temperatura y humedad usándolo. Lo he probado con el kernel 4.4 de Arch Linux ARM y en la versión 4.9 veo que hay cambios en este módulo que quizá lo hagan funcionar. Para usar el módulo del kernel hay que añadir un poco de configuración para el inicio de la Raspberry Pi. En los archivos _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ y _/sys/devices/platform/dht11@0/iio:device0/in\_temp\_input_ estarán la temperatura y humedad respectivamente.
 

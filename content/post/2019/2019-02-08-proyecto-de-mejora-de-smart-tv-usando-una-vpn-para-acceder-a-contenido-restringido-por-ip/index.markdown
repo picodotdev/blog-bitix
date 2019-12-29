@@ -20,10 +20,8 @@ En este artículo veremos que hay cierto contenido o algunos servicios a los que
 
 Para conectarse a internet es necesario disponer de un identificador público (una dirección IP) reconocido por otros elementos de internet, estos identificadores son entregados por los proveedores de acceso a internet a sus clientes como parte del servicio de conexión a internet.
 
-<div class="media">
-    {{< imageproc
-        image1="direccion.jpg" options1="600x450" title1="Dirección" >}}
-</div>
+{{< imageproc
+    image1="direccion.jpg" options1="600x450" title1="Dirección" >}}
 
 Para racionalizar y dirigir la asignación de direcciones se crearon organismos que gestionan las direcciones en cada uno de los continentes, esto genera una primera división de las direcciones IP en función del organismo que gestione la dirección IP que estamos utilizando.
 
@@ -35,10 +33,8 @@ Existen servicios populares como Hulu que no pueden verse fuera de los EEUU o se
 
 Además, algunos canales de televisión ofrecen a sus suscriptores un servicio de _streaming_ de contenidos que solo está disponible si la dirección IP desde la que se realiza la conexión pertenece al mismo país que el servicio.
 
-<div class="media">
-    {{< imageproc
-        image1="pagina-bloqueada.jpg" options1="600x450" title1="Página bloqueada" >}}
-</div>
+{{< imageproc
+    image1="pagina-bloqueada.jpg" options1="600x450" title1="Página bloqueada" >}}
 
 ### Evitando las limitaciones geográficas
 

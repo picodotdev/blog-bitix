@@ -27,31 +27,25 @@ Para cuidar el SSD hay que conocer la cantidad de datos que se están escribiend
 
 En este caso se han escrito 326 MB en el dispositivo _nvme0n1p2_ que corresponde a la partición _root_ en una hora de actividad del sistema realizando tareas ofimáticas y de navegación.
 
-<div class="media">
-    {{< figureproc
-        image1="awk.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos al almacenamiento desde el inicio del sistema"
-        caption="Datos escritos al almacenamiento desde el inicio del sistema" >}}
-</div>
+{{< figureproc
+    image1="awk.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos al almacenamiento desde el inicio del sistema"
+    caption="Datos escritos al almacenamiento desde el inicio del sistema" >}}
 
 También es interesante conocer los datos escritos en la unidad en total desde su instalación, en realidad lo siguiente nos dará los GiB escritos desde la creación de la partición, si se han hecho varios particionados no será el total del tiempo de vida de la unidad. Al usar LVM on LUKS el nombre que Linux le a la unidad en mi caso es _dm-1_, según la configuración del sistema otro nombre que se le asigna es _sda2_. En esta captura de 129 GB.
 
 {{< code file="awk-lifetime-writes.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="awk-lifetime.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos a una partición"
-        caption="Datos escritos a una partición" >}}
-</div>
+{{< figureproc
+    image1="awk-lifetime.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos a una partición"
+    caption="Datos escritos a una partición" >}}
 
 Después de [comprar un Intel NUC junto con SSD][blogbitix-363] e instalarle [Arch Linux][archlinux] me he dado cuenta que de forma periódica, cada 5 o 10 segundos, parpadea la luz de actividad del disco duro (o simplemente almacenamiento al tener un SSD) sin hacer ninguna actividad salvo tener algunas aplicaciones abietas. He instalado _iotop_ para descubrir el origen de esta actividad y he encontrado dos. Por un lado [Firefox][firefox], varios procesos de él, y otro proceso del sistema _jdb2-dm-1-8_ que corresponde al _journaling_ del sistema de archivos. La opción _-a_ de iotop muestra la cantidad de E/S en la sesión por proceso y la opción _--only_ solo aquellos que han realizado E/S.
 
 {{< code file="iotop.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="iotop.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos por procesos del sistema"
-        caption="Datos escritos por procesos del sistema" >}}
-</div>
+{{< figureproc
+    image1="iotop.png" options1="2560x1440" optionsthumb1="300x200" title1="Datos escritos por procesos del sistema"
+    caption="Datos escritos por procesos del sistema" >}}
 
 Investigando sobre los motivos de escritura de Firefox he encotrado algunos artículos y tres recomendaciones a cambiar en la configuración de Firefox para optimizar su uso en unidades SSD.
 
@@ -66,40 +60,32 @@ Las opciones a cambiar en la configuración son:
 
 Estas opciones se cambian el la sección de configuración de Firefox introduciendo _about:config_ en la barra de direcciones.
 
-<div class="media">
-    {{< figureproc
-        image1="firefox-config-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Firefox optimizado para SSD"
-        image2="firefox-config-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Configuración de Firefox optimizado para SSD"
-        caption="Configuración de Firefox optimizado para SSD" >}}
-</div>
+{{< figureproc
+    image1="firefox-config-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Firefox optimizado para SSD"
+    image2="firefox-config-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Configuración de Firefox optimizado para SSD"
+    caption="Configuración de Firefox optimizado para SSD" >}}
 
 Con la configuración por defecto y cambiando estas opciones esta es la diferencia de los procesos de Firefox que causan E/S después de un tiempo de uso. Por defecto se observa que hay un proceso relacionado que debe estar relacionado con la caché a raíz de su nombre que escribe en el almacenamiento y cambiadas las opciones solo los procesos _mozStorage_ escriben, estos procesos están relacionados con las _cookies_ y almacenamiento local o bases de datos que los navegadores ofrecen a las páginas web pero los procesos relacionados con la caché han desaparecido. La cantidad de datos escritos con las opciones por defecto y cambiadas son significativamente menores en el mismo periodo de tiempo.
 
 Dado que la caché ocasiona escrituras en el almacenamiento el proceso de _journaling_ del sistema también realiza escrituras amplificando el problema. Con Firefox optimizado para SSD el proceso _firefox [Cache2 I/O]_ desaparece y al escribir la sesión no cada 15 segundos Firefox deja de escribir de forma regular. [Google Chrome][google-chrome] no ofrece estas opciones de personalización.
 
-<div class="media">
-    {{< figureproc
-        image1="firefox-default.png" options1="2560x1440" optionsthumb1="300x200" title1="Entrada y salida con las opciones de Firefox por defecto"
-        image2="firefox-ssd.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Entrada y salida con opciones de Firefox optimizadas para SSD"
-        caption="Entrada y salida de Firefox por defecto y optimizado para SSD" >}}
-</div>
+{{< figureproc
+    image1="firefox-default.png" options1="2560x1440" optionsthumb1="300x200" title1="Entrada y salida con las opciones de Firefox por defecto"
+    image2="firefox-ssd.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Entrada y salida con opciones de Firefox optimizadas para SSD"
+    caption="Entrada y salida de Firefox por defecto y optimizado para SSD" >}}
 
 En el entorno de escritorio [GNOME][gnome] con la aplicación _Monitor del sistema_ es posible ver la cantidad de datos escritos por un proceso en total y en tiempo real.
 
-<div class="media">
-    {{< figureproc
-        image1="gnome-monitor-del-sistema.png" options1="2560x1440" optionsthumb1="300x200" title1="Monitor del sistema de GNOME"
-        caption="Monitor del sistema de GNOME" >}}
-</div>
+{{< figureproc
+    image1="gnome-monitor-del-sistema.png" options1="2560x1440" optionsthumb1="300x200" title1="Monitor del sistema de GNOME"
+    caption="Monitor del sistema de GNOME" >}}
 
 Dado que los SSD no hacen ruido no se ha pedido la alerta sonora del «rascar» del disco cuando algún programa está escribiendo o leyendo de forma intensiva y por ello quizá no nos demos cuenta de que algún programa está teniendo un mal comportamiento y esté escribiendo muchos datos al SSD, peor aún si el sistema ni siquiera dispone de este LED de actividad.
 
 Para visualizar el uso del disco de forma constante [en GNOME hay una extensión que hace de monitor del sistema](https://extensions.gnome.org/extension/120/system-monitor/) que agregará en la barra superior un área de estado visible en todo momento en la que se puede ver la información del estado del sistema, entre esa información se puede visualizar la cantidad de lectura y escritura que está realizando al almacenamiento.
 
-<div class="media">
-    {{< figureproc
-        image1="gnome-extension-system-monitor.png" options1="2560x1440" optionsthumb1="300x200" title1="Extensión de GNOME de monitor del sistema"
-        caption="Extensión de GNOME de monitor del sistema" >}}
-</div>
+{{< figureproc
+    image1="gnome-extension-system-monitor.png" options1="2560x1440" optionsthumb1="300x200" title1="Extensión de GNOME de monitor del sistema"
+    caption="Extensión de GNOME de monitor del sistema" >}}
 
 {{% /post %}}

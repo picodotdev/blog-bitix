@@ -59,11 +59,9 @@ Las anteriores combinaciones de teclas son del intérprete de comandos bash, el 
 * <kbd>Left Mouse</kbd>: selecciona líneas de texto de la terminal.
 * <kbd>Ctrl+Left Mouse</kbd>: selecciona bloques de texto de la terminal.
 
-<div class="media">
-    {{< figure
-        image1="gnome-terminal.png" thumb1="gnome-terminal-thumb.png" title1="Terminal de GNOME con el intérprete de comandos bash"
-        caption="Terminal de GNOME con el intérprete de comandos bash" >}}
-</div>
+{{< figure
+    image1="gnome-terminal.png" thumb1="gnome-terminal-thumb.png" title1="Terminal de GNOME con el intérprete de comandos bash"
+    caption="Terminal de GNOME con el intérprete de comandos bash" >}}
 
 {{< reference >}}
 * [Keyboard Shortcuts for Bash (Command Shell for Ubuntu, Debian, Suse, Redhat, Linux, etc)](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)

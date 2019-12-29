@@ -44,64 +44,46 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
   * [openSUSE][opensuse]: la distribución comunitaria de SUSE. Hace no mucho ha cambiado su política de versionado ofreciendo una más estable basada en la versión empresarial SUSE llamada [openSUSE Leap](https://en.opensuse.org/Portal:Leap) y otra con un modelo _rolling release_ y con las últimas versiones del software llamda [openSUSE Tumbleweed](https://en.opensuse.org/Portal:Tumbleweed).
   * [Debian][debian]: una de las distribuciones más antiguas y con mayor número de derivadas, una de ellas Ubuntu. Posee tres ramas según la confianza de cada una del software que contiene. Para servidores la recomendación es usar la rama estable y para un usuario la rama _testing_ que contiene software más reciente.
 
-<div class="media">
-    {{< figure
-        image1="ubuntu-installer.png" thumb1="ubuntu-installer-thumb.png" title1="Instalador de Ubuntu"
-        image2="ubuntu.png" thumb2="ubuntu-thumb.png" title2="Ubuntu"
-        caption="Ubuntu con Unity" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="elementary-os-installer.png" thumb1="elementary-os-installer-thumb.png" title1="Instalador de elementary OS"
-        image2="elementary-os.png" thumb2="elementary-os-thumb.png" title2="Elementary OS"
-        caption="Elementary OS" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="linux-mint-installer.png" thumb1="linux-mint-installer-thumb.png" title1="Instalador de Linux Mint"
-        image2="linux-mint.png" thumb2="linux-mint-thumb.png" title2="Linux Mint con Cinnamon"
-        caption="Linux Mint con Cinnamon" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="opensuse-installer.png" thumb1="opensuse-installer-thumb.png" title1="Instalador de openSUSE"
-        image2="opensuse.png" thumb2="opensuse-thumb.png" title2="openSUSE con KDE"
-        caption="openSUSE con KDE" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="debian-installer-1.png" thumb1="debian-installer-1-thumb.png" title1="Instalador de Debian (1)"
-        image2="debian-installer-2.png" thumb2="debian-installer-2-thumb.png" title2="Instalador de Debian (2)"
-        caption="Instalador de Debian" >}}
-</div>
+{{< figure
+    image1="ubuntu-installer.png" thumb1="ubuntu-installer-thumb.png" title1="Instalador de Ubuntu"
+    image2="ubuntu.png" thumb2="ubuntu-thumb.png" title2="Ubuntu"
+    caption="Ubuntu con Unity" >}}
+{{< figure
+    image1="elementary-os-installer.png" thumb1="elementary-os-installer-thumb.png" title1="Instalador de elementary OS"
+    image2="elementary-os.png" thumb2="elementary-os-thumb.png" title2="Elementary OS"
+    caption="Elementary OS" >}}
+{{< figure
+    image1="linux-mint-installer.png" thumb1="linux-mint-installer-thumb.png" title1="Instalador de Linux Mint"
+    image2="linux-mint.png" thumb2="linux-mint-thumb.png" title2="Linux Mint con Cinnamon"
+    caption="Linux Mint con Cinnamon" >}}
+{{< figure
+    image1="opensuse-installer.png" thumb1="opensuse-installer-thumb.png" title1="Instalador de openSUSE"
+    image2="opensuse.png" thumb2="opensuse-thumb.png" title2="openSUSE con KDE"
+    caption="openSUSE con KDE" >}}
+{{< figure
+    image1="debian-installer-1.png" thumb1="debian-installer-1-thumb.png" title1="Instalador de Debian (1)"
+    image2="debian-installer-2.png" thumb2="debian-installer-2-thumb.png" title2="Instalador de Debian (2)"
+    caption="Instalador de Debian" >}}
 
 * Para usuario intermedio:
   * [Arch Linux][archlinux]: de las distribuciones _rolling release_ es una de las más populares, no posee instalador gráfico y su instalación puede intimidar a un usuario nuevo de GNU/Linux que se hace leyendo la [guía de instalación](https://wiki.archlinux.org/index.php/Installation_guide) y sus referencias, adaptándola cada uno a sus preferencias y equipo y ejecutando comandos en la terminal paso a paso desde la selección desde la disposición del teclado, pasando por el particionado del disco hasta la instalación del cargador de arranque. [arch-anywhere][arch-anywhere] ofrece un instalador que hace más fácil y rápida la instalación de una distribución Arch Linux.
   * [Fedora][fedora]: es la distribución comunitario que ofrece [RedHat][redhat] a los usuarios en la que desarrollan los cambios que luego se incorporan a la distribución empresarial RHEL.
 
-<div class="media">
-    {{< figure
-        image1="archlinux-installer-1.png" thumb1="archlinux-installer-1-thumb.png" title1="Instalador de Arch Linux (1)"
-        image2="archlinux-installer-2.png" thumb2="archlinux-installer-2-thumb.png" title2="Instalador de Arch Linux (2)"
-        caption="Instalador de Arch Linux" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="archlinux.jpg" thumb1="archlinux-thumb.jpg" title1="Arch Linux con GNOME"
-        caption="Arch Linux con GNOME" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="arch-anywhere-installer-1.png" thumb1="arch-anywhere-installer-1-thumb.png" title1="Instalador de arch-anywhere (1)"
-        image2="arch-anywhere-installer-2.png" thumb2="arch-anywhere-installer-2-thumb.png" title2="Instalador de arch-anywhere (2)"
-        caption="Instalador de arch-anywhere" >}}
-</div>
-<div class="media">
-    {{< figure
-        image1="fedora-installer.png" thumb1="fedora-installer-thumb.png" title1="Instalador de Fedora"
-        image2="fedora.png" thumb2="fedora-thumb.png" title2="Fedora con GNOME"
-        caption="Fedora con GNOME" >}}
-</div>
+{{< figure
+    image1="archlinux-installer-1.png" thumb1="archlinux-installer-1-thumb.png" title1="Instalador de Arch Linux (1)"
+    image2="archlinux-installer-2.png" thumb2="archlinux-installer-2-thumb.png" title2="Instalador de Arch Linux (2)"
+    caption="Instalador de Arch Linux" >}}
+{{< figure
+    image1="archlinux.jpg" thumb1="archlinux-thumb.jpg" title1="Arch Linux con GNOME"
+    caption="Arch Linux con GNOME" >}}
+{{< figure
+    image1="arch-anywhere-installer-1.png" thumb1="arch-anywhere-installer-1-thumb.png" title1="Instalador de arch-anywhere (1)"
+    image2="arch-anywhere-installer-2.png" thumb2="arch-anywhere-installer-2-thumb.png" title2="Instalador de arch-anywhere (2)"
+    caption="Instalador de arch-anywhere" >}}
+{{< figure
+    image1="fedora-installer.png" thumb1="fedora-installer-thumb.png" title1="Instalador de Fedora"
+    image2="fedora.png" thumb2="fedora-thumb.png" title2="Fedora con GNOME"
+    caption="Fedora con GNOME" >}}
 
 * Para usuario avanzado:
   * [Gentoo][gentoo]: la instalación de los programas se hace compilando el código fuente. Permite personalizar y obtener el máximo rendimiento del equipo en que sea instalado pero el tiempo de compilación puede ser notable.
@@ -115,23 +97,19 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
   * [Lubuntu][lubuntu]
   * [Xubuntu][xubuntu]
 
-<div class="media">
-    {{< figure
-        image1="xubuntu-installer.png" thumb1="xubuntu-installer-thumb.png" title1="Instalador de Xubuntu"
-        image2="xubuntu.png" thumb2="xubuntu-thumb.png" title2="Xubuntu con XFCE"
-        caption="Xubuntu con XFCE" >}}
-</div>
+{{< figure
+    image1="xubuntu-installer.png" thumb1="xubuntu-installer-thumb.png" title1="Instalador de Xubuntu"
+    image2="xubuntu.png" thumb2="xubuntu-thumb.png" title2="Xubuntu con XFCE"
+    caption="Xubuntu con XFCE" >}}
 
 * Para usuarios con preferencias de software libre: aunque las distribuciones GNU/Linux son en su mayoría software libre hay algunas partes que no lo son como controladores privativos de la tarjeta gráfica o diversos firmwares del núcleo o controladores. Estas distribuciones tratan de eliminar la mayor parte posible de ese software que no es libre.
   * [gNewSense][gnewsense]
   * [Trisquel][trisquel]
 
-<div class="media">
-    {{< figure
-        image1="triquel-installer.png" thumb1="triquel-installer-thumb.png" title1="Instalador de Trisquel"
-        image2="trisquel.png" thumb2="trisquel-thumb.png" title2="Trisquel"
-        caption="Trisquel" >}}
-</div>
+{{< figure
+    image1="triquel-installer.png" thumb1="triquel-installer-thumb.png" title1="Instalador de Trisquel"
+    image2="trisquel.png" thumb2="trisquel-thumb.png" title2="Trisquel"
+    caption="Trisquel" >}}
 
 Estas son solo algunas de las distribuciones más populares y usadas de GNU/Linux y las que recomiendo pero en [DistroWatch][distrowatch] hay un listado más completo. En el libro [Introduction Linux Distros](https://amzn.to/2fol03B) encontraremos una introducción más detallada a GNU/Linux y sus distribuciones.
 

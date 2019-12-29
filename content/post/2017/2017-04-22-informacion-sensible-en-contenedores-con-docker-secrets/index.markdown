@@ -49,11 +49,9 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 {{< code file="HostInfoContributor.java" language="java" options="" >}}
 {{< code file="info.json" language="json" options="" >}}
 
-<div class="media">
-    {{< figure
-        image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
-        caption="Contenido del archivo message.txt" >}}
-</div>
+{{< figure
+    image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
+    caption="Contenido del archivo message.txt" >}}
 
 Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa es la siguiente:
 

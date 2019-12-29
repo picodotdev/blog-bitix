@@ -58,11 +58,9 @@ Si no quieres perderte ninguno de los nuevos artículos que escriba puede suscri
 
 Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mosteiro), [Jose Luís Sáchez](https://twitter.com/josetesan), [Joaquín Bravo](https://twitter.com/jbravo), [Marcos Bello](https://twitter.com/mbmerayo) y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)
 
-<div class="media">
-    {{< imageproc
-        image1="christmas-tux-2014.jpg" options1="600x450" title1="Christmastux 2014"
-        caption="¡Buen 2015!" source="klowner.com" >}}
-</div>
+{{< figureproc
+    image1="christmas-tux-2014.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmastux 2014"
+    caption="¡Buen 2015!" source="klowner.com" >}}
 
 {{< reference >}}
 * [Hemeroteca #3][elblogdepicodev-162]

@@ -31,12 +31,10 @@ En el año 2012 compré una de las primeras Raspberry Pi que estuvieron disponib
 
 Después de unos años se han lanzado versiones notablemente mejoradas, hasta la fecha la última es la [Raspberry Pi 3](https://amzn.to/2mmu6Os) de esta placa que multiplica por 4 la cantidad de memoria RAM hasta 1 GiB y con una CPU de 4 núcleos a una frecuencia de 1.2 Ghz basados en los procesadores ARM Cortex-A53 de 64 bits, incluyendo WIFI N y Bluetooth 4.1, 4 conectores USB, lector microSD y 26 _pines_ GPIO. Aunque la finalidad original de este computador es el aprendizaje de programación y electrónica el uso principal que le he dado hasta ahora ha sido para hacer descargas P2P via torrent. Esta placa es muy popular debido a su bajo coste aunque hay que sumarle posteriormente el precio de una tarjeta microSD y el cargador para proporcionarle energía, su éxito no solo es debido a su coste ya que hay opciones aún más potentes en algunos aspectos a precio similar que no son tan populares, el valor diferenciador de la Raspberry Pi es el apoyo y soporte de la comunidad.
 
-<div class="media">
-    {{< figure
-        image1="raspberrypi1b.jpg" thumb1="raspberrypi1b-thumb.jpg" title1="Raspberry Pi 1 B"
-        image2="raspberrypi3b.jpg" thumb2="raspberrypi3b-thumb.jpg" title2="Raspberry Pi 3 B"
-        caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
-</div>
+{{< figure
+    image1="raspberrypi1b.jpg" thumb1="raspberrypi1b-thumb.jpg" title1="Raspberry Pi 1 B"
+    image2="raspberrypi3b.jpg" thumb2="raspberrypi3b-thumb.jpg" title2="Raspberry Pi 3 B"
+    caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
 
 <div class="media-amazon">
   <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=8984621587929046662fba2b79079f5e"></iframe>
@@ -69,24 +67,22 @@ El contenido del _kit_ es el siguiente que viene en una estupenda caja de plást
 * 1 x Infrared Remote Controller and Receiver(VS1838B)
 * 1 x Raspberry Pi/Arduino 8-Channel TTL Logic Level Converter
 
-<div class="media">
+{{< figure
+    image1="caja.jpg" thumb1="caja-thumb.jpg" title1="Caja"
+    image2="componentes-1.jpg" thumb2="componentes-1-thumb.jpg" title2="Componentes"
+    caption="Caja, componentes y sensores" >}}
     {{< figure
-        image1="caja.jpg" thumb1="caja-thumb.jpg" title1="Caja"
-        image2="componentes-1.jpg" thumb2="componentes-1-thumb.jpg" title2="Componentes"
-        caption="Caja, componentes y sensores" >}}
+    image1="display-1.jpg" thumb1="display-1-thumb.jpg" title1="Display 16x02"
+    image2="display-2.jpg" thumb2="display-2-thumb.jpg" title2="Display 16x02 con adaptador I2C"
+    caption="Display 16x02 y adaptador I2C" >}}
     {{< figure
-        image1="display-1.jpg" thumb1="display-1-thumb.jpg" title1="Display 16x02"
-        image2="display-2.jpg" thumb2="display-2-thumb.jpg" title2="Display 16x02 con adaptador I2C"
-        caption="Display 16x02 y adaptador I2C" >}}
+    image1="breadboard-1.jpg" thumb1="breadboard-1-thumb.jpg" title1="Breadboard"
+    image2="breadboard-2.jpg" thumb2="breadboard-2-thumb.jpg" title2="Breadboard y adaptador"
+    caption="Breadboard y adaptador" >}}
     {{< figure
-        image1="breadboard-1.jpg" thumb1="breadboard-1-thumb.jpg" title1="Breadboard"
-        image2="breadboard-2.jpg" thumb2="breadboard-2-thumb.jpg" title2="Breadboard y adaptador"
-        caption="Breadboard y adaptador" >}}
-    {{< figure
-        image1="adaptador-breadboard.jpg" thumb1="adaptador-breadboard-thumb.jpg" title1="Breadboard"
-        image2="diodos-resistencias.jpg" thumb2="diodos-resistencias-thumb.jpg" title2="Diodos, botones, resistencias y fotoresistores"
-        caption="Adaptador breadboard, diodos, botones, resistencias y fotoresistores" >}}
-</div>
+    image1="adaptador-breadboard.jpg" thumb1="adaptador-breadboard-thumb.jpg" title1="Breadboard"
+    image2="diodos-resistencias.jpg" thumb2="diodos-resistencias-thumb.jpg" title2="Diodos, botones, resistencias y fotoresistores"
+    caption="Adaptador breadboard, diodos, botones, resistencias y fotoresistores" >}}
 
 <div class="media-amazon">
   <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MDUP97N&linkId=a16adfaf3d471a1e94dc0590c0d615be"></iframe>
@@ -101,36 +97,30 @@ Mi intención para este _kit_ es hacer unos pequeños ejemplos usando en cada un
 
 En la página del fabricante o distribuidor mayorista [Osoyoo](http://osoyoo.com/) hay colgados varios ejemplos usando varios de estos elementos. También deberemos hacernos con las referencias de los _pines_ para saber las conexiones que debemos hacer con los cables junto con la tabla de referencia de colores de las resistencias. Para usar las tablas de referencia debemos saber que hay varias formas de numerar los pines. Está la del _header_ del 1 al 26 o del 1 al 40 secuencialmente según la disposición en el _header_, la que utiliza la librería [wiringPi][wiringpi] y [Pi4J][pi4j] para numerar los _pines_ GPIO y la de Broadcom que utiliza la librería Diozero. Estas tablas de referencia de nomenclatura son importantes porque cada una numera los _pines_ de forma diferente, por ejemplo, según la numeración de wiringPi el pin número 3 corresponde al GPIO 8 cuando según la nomenclatura de Broadcom el mismo pin corresponde al GPIO 0 en el modelo RPi 1 modelo B rev1 y al GPIO 2 en la RPi 3.
 
-<div class="media">
+{{< figure
+    image1="raspberrypi1b-header-rev1.png" thumb1="raspberrypi1b-header-rev1-thumb.png" title1="Header de _pines_ Raspberry Pi 1 B"
+    image2="raspberrypi3b-header.png" thumb2="raspberrypi3b-header-thumb.png" title2="Header de _pines_ Raspberry Pi 3 B"
+    caption="Header de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura wiringPi" >}}
     {{< figure
-        image1="raspberrypi1b-header-rev1.png" thumb1="raspberrypi1b-header-rev1-thumb.png" title1="Header de _pines_ Raspberry Pi 1 B"
-        image2="raspberrypi3b-header.png" thumb2="raspberrypi3b-header-thumb.png" title2="Header de _pines_ Raspberry Pi 3 B"
-        caption="Header de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura wiringPi" >}}
+    image1="raspberrypi1b-header-rev1-broadcom.png" thumb1="raspberrypi1b-header-rev1-broadcom-thumb.png" title1="Header de _pines_ Raspberry Pi 1 B"
+    image2="raspberrypi3b-header-broadcom.png" thumb2="raspberrypi3b-header-broadcom-thumb.png" title2="Header de _pines_ Raspberry Pi 3 B"
+    caption="Headers de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura Broadcom" >}}
     {{< figure
-        image1="raspberrypi1b-header-rev1-broadcom.png" thumb1="raspberrypi1b-header-rev1-broadcom-thumb.png" title1="Header de _pines_ Raspberry Pi 1 B"
-        image2="raspberrypi3b-header-broadcom.png" thumb2="raspberrypi3b-header-broadcom-thumb.png" title2="Header de _pines_ Raspberry Pi 3 B"
-        caption="Headers de _pines_ Raspberry Pi 1 B y Raspberry Pi 3 B, nomenclatura Broadcom" >}}
-    {{< figure
-        image1="codigo-colores-resistencias.jpg" thumb1="codigo-colores-resistencias-thumb.jpg" title1="Código de colores de las resistencias"
-        caption="Código de colores de las resistencias" >}}
-</div>
+    image1="codigo-colores-resistencias.jpg" thumb1="codigo-colores-resistencias-thumb.jpg" title1="Código de colores de las resistencias"
+    caption="Código de colores de las resistencias" >}}
 
 Un ejemplo básico sin necesidad de programar nada es encender un diodo LED. Los elementos a usar son el diodo LED, una resistencia, los cables macho-macho, el cable de extensión y la matriz de puntos. Para ello conectamos el cable de extensión a la matriz de puntos donde con los cables macho-macho haremos las conexiones en los agujeros de la matriz de puntos. Usaremos la conexión de voltaje de 3.3V y una resistencia de 200 ohmios para que el LED no reciba demasiada intensidad. Los diodos LED tienen dos patitas, una más corta que la otra que indican la polaridad, la corta es el polo negativo y se conecta a tierra, la larga es el polo positivo que se conecta a uno de los extremos de la resistencia y el otro extremo de esta la voltaje de 3.3V.
 
-<div class="media">
-    {{< figure
-        image1="hola-mundo-led.jpg" thumb1="hola-mundo-led-thumb.jpg" title1="Ejemplo conexión LEDs"
-        image2="raspberrypi.jpg" thumb2="raspberrypi-thumb.jpg" title2="Raspberry Pi"
-        caption="Ejemplo conexión LEDs y Raspberry Pi" >}}
-</div>
+{{< figure
+    image1="hola-mundo-led.jpg" thumb1="hola-mundo-led-thumb.jpg" title1="Ejemplo conexión LEDs"
+    image2="raspberrypi.jpg" thumb2="raspberrypi-thumb.jpg" title2="Raspberry Pi"
+    caption="Ejemplo conexión LEDs y Raspberry Pi" >}}
 
 Con el programa [Fritzing](http://fritzing.org/home/) podremos prototipar y documentar el esquema de  conexiones que realicemos de los proyectos. Posee numerosos modelos, elementos electrónicos y dispositivos de entrada y salida aunque no he encontrado el correspondiente la placa de extensión de wiringPi.
 
-<div class="media">
-    {{< figure
-        image1="fritzing.png" thumb1="fritzing-thumb.png" title1="Fritzing"
-        caption="Fritzing" >}}
-</div>
+{{< figure
+    image1="fritzing.png" thumb1="fritzing-thumb.png" title1="Fritzing"
+    caption="Fritzing" >}}
 
 En el siguiente artículo explicaré como crear un programa Java para encender y apagar varias veces un diodo LED con la librería Doizero. Además explicaré como con [Gradle][gradle], [SSH][ssh] y [Ansible][ansible] hacerlo de forma cómoda desde nuestra máquina de desarrollo y no directamente desde la más lenta Raspberry Pi.
 

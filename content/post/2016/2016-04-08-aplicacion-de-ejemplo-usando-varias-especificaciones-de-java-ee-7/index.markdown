@@ -25,11 +25,9 @@ Este ejemplo está relacionado con otros artículos que he escrito como [Ejemplo
 
 Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas librerías JavaScript de forma similar al ejemplo de la [lista de tareas con Backbone y React junto con RequireJS][blogbitix-20]. Seleccionados los productos, la compra se realizará usando una API REST intercambiando los datos con formato JSON, se persistirá en la base de datos con JPA actualizándose en ese momento el _stock_ de los productos de lo que se encargará un EJB para controlar esta pequeña lógica de negocio, si no hay _stock_ suficiente de un producto se producirá una excepción y devolverá un código de estado adecuado en la petición HTTP, al realizar la compra se generará un mensaje evento CDI que desencadenará la actualización del _stock_ de los usuarios conectados usando WebSockets. La página del listado de productos y el formulario de autenticación se generará usando la tecnología de presentación JSF.
 
-<div class="media">
-    {{< figure
-        image1="supermarket-java-ee-7.png" thumb1="supermarket-java-ee-7-thumb.png" title1="Supermarket con Java EE 7"
-        caption="Supermarket con Java EE 7" >}}
-</div>
+{{< figure
+    image1="supermarket-java-ee-7.png" thumb1="supermarket-java-ee-7-thumb.png" title1="Supermarket con Java EE 7"
+    caption="Supermarket con Java EE 7" >}}
 
 Veamos primero la página inicial índice con el listado de productos generada con JSF. Obtiene el listado de productos y genera el HTML del mismo, además carga los JavaScripts necesarios para que la aplicación funcione en el navegador del cliente.
 
@@ -61,11 +59,9 @@ La aplicación está dividida en varios módulos construidos con la [herramienta
 
 {{< code file="SupermarketClient.java" language="java" options="" >}}
 
-<div class="media">
-    {{< figure
-        image1="aplicacion-cliente.png" thumb1="aplicacion-cliente-thumb.png" title1="Aplicación cliente Supermarket"
-        caption="Aplicación cliente Supermarket" >}}
-</div>
+{{< figure
+    image1="aplicacion-cliente.png" thumb1="aplicacion-cliente-thumb.png" title1="Aplicación cliente Supermarket"
+    caption="Aplicación cliente Supermarket" >}}
 
 El conjunto de especificaciones de Java EE proporciona una solución para la mayoría de funcionalidades que necesita una aplicación pero también podemos sustituir alguna y combinarlas con otras de las muchas librerías o _frameworks_ disponibles en la plataforma Java. Por ejemplo, como _framework_ en vez de usar Servlet y JSP o JSF podemos usar [Apache Tapestry][blogbitix-12], [Vert.x][blogbitix-120], [Spark][blogbitix-121], [Struts][struts], [Grails][grails], ... dependiendo de las necesidades de la aplicación, su complejidad y nuestras preferencias. Como [alternativa al ORM de JPA o JDBC se puede usar jOOQ][blogbitix-82]. [RabbitMQ][rabbitmq] en vez de JMS o [Spring][spring] en vez de CDI, EJB y JTA.
 

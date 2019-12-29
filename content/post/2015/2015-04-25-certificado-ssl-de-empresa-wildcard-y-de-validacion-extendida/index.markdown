@@ -17,19 +17,15 @@ Usar un protocolo seguro garantiza de que los datos intercambiados entre el clie
 
 Los navegadores suelen indicar que se está usando una comunicación segura cuando en la barra de direcciones se muestra un candado y se está usando el protocolo https. Además, haciendo clic en el candado se pueden ver los detalles del certificado usado por el servidor para la comunicación cifrada.
 
-<div class="media">
+{{< figure
+    image1="certificado-validacion-dominio.png" thumb1="certificado-validacion-dominio.png" title1="Certificado SSL con validación de dominio" >}}
     {{< figure
-        image1="certificado-validacion-dominio.png" thumb1="certificado-validacion-dominio.png" title1="Certificado SSL con validación de dominio" >}}
-    {{< figure
-        image1="certificado.png" thumb1="certificado-thumb.png" title1="Datos de certificado de GitHub" >}}
-</div>
+    image1="certificado.png" thumb1="certificado-thumb.png" title1="Datos de certificado de GitHub" >}}
 
 Sin embargo, para proporcionar más seguridad y garantía de que como usuarios nos estamos comunicando con el servidor que creemos sin examinar el certificado algunos certificados permiten mostrar también en la barra de direcciones un recuadro verde con el nombre de la entidad, el recuadro verde que solemos ver también en la barra de direcciones al acceder a algunos dominios y que es proporcionado por certificados de validación extendida.
 
-<div class="media">
-    {{< figure
-        image1="certificado-validacion-extendida.png" thumb1="certificado-validacion-extendida.png" title1="Certificado SSL con validación extendida" >}}
-</div>
+{{< figure
+    image1="certificado-validacion-extendida.png" thumb1="certificado-validacion-extendida.png" title1="Certificado SSL con validación extendida" >}}
 
 Por otra parte los certificados SSL se generan para un dominio en concreto con lo que en principio se debería comprar un certificado por cada dominio en el que deseemos usar una comunicación segura. Sin embargo, para evitar comprar múltiples certificados para los diferentes dominios o subdominios podemos comprar un certificado _wildcard_ que nos servirá para los subdominios (*.ejemplo.com) o un certificado multidominio (ejemplo.com, ejemplo.net, ...) para como su nombre indica varios dominios. En los certificados de empresa se solicitan datos datos adicionales al adquirirlo y en los detalles del certificado aparece el nombre de la empresa (campo Organización (O) como en el caso de GitHub).
 
@@ -37,10 +33,8 @@ Los certificados _wildcard_ y que muestran el recuadro verde son más caros pero
 
 ¿Cómo obtener un certificado SSL firmado por una entidad raíz de certificación? Las entidades de registro de dominios aparte de dominios, _hosting_ virtual o privado algunos permiten comprar certificados SSL. Uno de los que conozco que permite comprar certificados SSL, de empresa, con recuadro verde o _wildcard_ es [DonDominio](http://www.dondominio.com/products/ssl/), otro es [Arsys](http://www.arsys.es/certificados-seguridad-ssl).
 
-<div class="media">
-    {{< figure
-        image1="certificados-dondominio.png" thumb1="certificados-dondominio-thumb.png" title1="Certificados DonDominio" >}}
-</div>
+{{< figure
+    image1="certificados-dondominio.png" thumb1="certificados-dondominio-thumb.png" title1="Certificados DonDominio" >}}
 
 En el caso de DonDominio dependiendo de la entidad emisora del certficado que deseemos variará el precio, también si queremos que tenga validación extendida o sea _wildcard_. En el caso de un certificado SSL simple que valide solo el dominio es de unos 5 €, de validación de empresa unos 28 €, un certificado de validación extendida con recuadro verde desde unos 126 € y un _certificado wildcard_ de desde unos 75 €. Estos son precios desde, diferentes opciones pueden salir bastante más caras y hay que tener en cuenta que son para una validez de una año, al igual que los dominios hay que renovar su uso.
 

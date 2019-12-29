@@ -18,10 +18,8 @@ Una página web está formada por un conjunto de páginas enlazadas entre ellas.
 
 En este artículo voy a explicar como crear un componente que nos de a todas las páginas un aspecto común de una aplicación usando apache Tapestry como _framework_ web de tal forma que esa parte común no esté duplicada en la aplicación y pueda ser reutilizada fácilmente. En el caso de [Blog Stack](http://www.blogstack.info) las páginas se componen de las siguientes partes.
 
-<div class="media">
-	{{< figure
-    	image1="plantilla-blog-stack.png" thumb1="plantilla-blog-stack-thumb.png" title1="Plantilla de Blog Stack" >}}
-</div>
+{{< figure
+    image1="plantilla-blog-stack.png" thumb1="plantilla-blog-stack-thumb.png" title1="Plantilla de Blog Stack" >}}
 
 El esquema de la plantilla será una cabecera, una barra de navegación con enlaces a diferentes secciones de la web, un menú lateral con contenido variable según la página, el contenido que variará según la página y un pie de página. Como todo componente de [Apache Tapestry](http://tapestry.apache.org/) está formado de una clase Java y una plantilla. El componente puede tener diferentes parámetros, y en el caso del de la plantilla muchos para poder variar el contenido por defecto de las diferentes secciones de la página, estos son aside1, aside2, aside3, aside4.
 

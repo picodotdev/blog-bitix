@@ -45,21 +45,17 @@ Para ejecutar el ejemplo usaré el [contenedor de Docker para RabbitMQ](https://
 
 Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en cualquier orden la parte receptora de los mensajes y la parte emisora de mensajes con los comandos <code>./gradlew receive</code> y <code>./gradlew send</code> respectivamente, momento en el cual veremos que en la consola salen las notificaciones de recepción y envío.
 
-<div class="media">
-    {{< figure
-        image1="send.png" thumb1="send-thumb.png" title1="Aplicación de ejemplo enviando mensajes"
-        image2="receive.png" thumb2="receive-thumb.png" title2="Aplicación de ejemplo reciviendo mensajes" >}}
-</div>
+{{< figure
+    image1="send.png" thumb1="send-thumb.png" title1="Aplicación de ejemplo enviando mensajes"
+    image2="receive.png" thumb2="receive-thumb.png" title2="Aplicación de ejemplo reciviendo mensajes" >}}
 
 En la comunicación con RabbitMQ se puede usar [TLS/SSL](http://www.rabbitmq.com/ssl.html) así como mecanismos de [autenticación](http://www.rabbitmq.com/authentication.html) y [autorización](http://www.rabbitmq.com/access-control.html) para mayor seguridad. Usando confirmaciones si el receptor falla en el procesado el mensaje no se pierde ya que no se habrá declarado como _acknowledge_ aún así si RabbitMQ falla los mensajes se perderán a menos que las colas se declaren como persistentes las cuales se guardarán en disco perdurando a una catástrofe.
 
 RabbitMQ posee un [_plugin_ para la administración](https://www.rabbitmq.com/management.html) con el que podemos administrar permisos, tener una vista global, ver ratios de mensajes, estadísticas, colas, _exchanges_ y más información, nos da información muy interesante sobre el estado del procesamiento de mensajes. Es accesible mediante el navegador y la URL _http\://localhost:15672/_. En la captura del estado de la cola _hello_ hay 10 mensajes encolados pendientes de entregar a algún receptor.
 
-<div class="media">
-    {{< figure
-        image1="rabbitmq-management.png" thumb1="rabbitmq-management-thumb.png" title1="Aplicación web de administración de RabbitMQ"
-        image2="rabbitmq-queue.png" thumb2="rabbitmq-queue-thumb.png" title2="Información de estado de una cola" >}}
-</div>
+{{< figure
+    image1="rabbitmq-management.png" thumb1="rabbitmq-management-thumb.png" title1="Aplicación web de administración de RabbitMQ"
+    image2="rabbitmq-queue.png" thumb2="rabbitmq-queue-thumb.png" title2="Información de estado de una cola" >}}
 
 Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son [Learning RabbitMQ](https://amzn.to/2lTGMQc) y [Matering RabbitMQ](https://amzn.to/2lW9qwF) cubriendo temas más avanzados como _clustering_, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.
 

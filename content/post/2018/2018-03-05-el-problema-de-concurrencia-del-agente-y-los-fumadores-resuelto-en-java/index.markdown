@@ -34,7 +34,7 @@ Para la solución hay que optar por otra estrategia, en el ejemplo de código he
 {{< code file="Pusher.java" language="java" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< asciinema id="167230" caption="Ejemplo de concurrencia del agente y los fumadores" >}}
+{{< asciinema id="167230"    caption="Ejemplo de concurrencia del agente y los fumadores" >}}
 
 En el siguiente [documento con varios de los problemas de concurrencia y sincronización](https://cse.yeditepe.edu.tr/~kserdaroglu/spring2014/cse331/labnotes/WEEK%205%20-%20SEMAPHORES/mysemaphoreexamplesMOE.pdf) está muy bien explicado la solución a este problema de los fumadores y de los otros casos. En algunos otros sitios este caso lo convierten en un problema de sincronización en vez de uno de concurrencia.
 

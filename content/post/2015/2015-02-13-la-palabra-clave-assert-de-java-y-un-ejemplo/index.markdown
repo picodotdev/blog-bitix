@@ -37,18 +37,14 @@ Un pequeño ejemplo de los _asserts_ podría ser el siguiente en la que en el m�
 
 Un _assert_ cuya expresión se evalúa como falso produce una excepción del tipo [java.lang.AssertionError](https://docs.oracle.com/javase/8/docs/api/java/lang/AssertionError.html) pero para ello se han de habilitar en tiempo de ejecución como el parámetro _-ea_ de la máquina virtual. En [eclipse][eclipse] podemos cambiarlo en la configuración de ejecución del programa en la pestaña _Arguments_ y _VM arguments_ tal como se ven en la siguiente captura de pantalla:
 
-<div class="media">
-	{{< figure
+{{< figure
     image1="activacion-assert-java.png" thumb1="activacion-assert-java-thumb.png" title1="Activación asserts en eclipse" >}}
-</div>
 
 En la primera de las siguentes capturas de pantalla puede verse como el programa se ejecuta sin producir una excepción a pesar de no cumplirse el _assert_ del método _nextNumber_ ya que los _asserts_ no fueron activados, en la segunda captura activando los _assert_ se lanza una excepción al no cumplirse la postcondición.
 
-<div class="media">
-	{{< figure
-    	image1="no-excepcion.png" thumb1="no-excepcion-thumb.png" title1="Ejecución sin excepción"
-    	image1="excepcion-assert.png" thumb2="excepcion-assert-thumb.png" title2="Ejecución con excepción" >}}
-</div>
+{{< figure
+    image1="no-excepcion.png" thumb1="no-excepcion-thumb.png" title1="Ejecución sin excepción"
+    image1="excepcion-assert.png" thumb2="excepcion-assert-thumb.png" title2="Ejecución con excepción" >}}
 
 En el recomendable artículo [_Programming With Assertions_](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) se comenta de forma más detallada y amplia el funcionamiento y uso adecuado de la palabra clave _assert_ de Java.
 

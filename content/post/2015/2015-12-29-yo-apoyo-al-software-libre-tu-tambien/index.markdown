@@ -32,11 +32,9 @@ Usar el software libre ya es una buena forma de apoyarlo pero también requiere 
 
 Finalmente como tenía intención, hice una donación a la [organización Europea de la Free Software Foundation][fsfe] comprando unas camisetas reivindicativas en su [tienda](https://fsfe.org/order/order.es.html) que además usaré alegremente a modo de promoción, hay más modelos incluidos para mujer y otra serie de artículos como tazas, llaveros, bolígrafos y pins. Estas son las camisetas.
 
-<div class="media">
-    {{< figureproc
-        image1="fsfe-t-shirts.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Camisetas FSFE"
-        caption="Camisetas FSFE" >}}
-</div>
+{{< figureproc
+    image1="fsfe-t-shirts.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Camisetas FSFE"
+    caption="Camisetas FSFE" >}}
 
 La económica solo es una forma de colaborar con el software libre, usarlo es una buena iniciativa y contribuir con él de alguna manera es algo que está al alcance de todos. No tiene por que ser haciendo donaciones económicas puede ser difundiendo su uso instalando alguna distribución [GNU][gnu]/[Linux][linux] a alguien que te pide que le reinstales el sistema operativo, dando una charla, realizando traducciones al español como en mi caso a dos programa que uso como son el [Reproductor multimedia VLC][vlc] y [VirtualBox][virtualbox], escribiendo artículos en una bitácora como podría ser esta e incluso un libro gratuito sobre el _framework_ web de desarrollo para aplicaciones Java, [PlugIn Tapestry][blogbitix-12].
 
@@ -46,11 +44,9 @@ Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquis
 
 [Yo apoyo al software libre](http://www.gnu.org/)
 
-<div class="media">
-    {{< figureproc
-        image1="donacion-fsfe.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Free Software Foundation Europe"
-        caption="Donación Free Software Foundation Europe" >}}
-</div>
+{{< figureproc
+    image1="donacion-fsfe.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Free Software Foundation Europe"
+    caption="Donación Free Software Foundation Europe" >}}
 
 {{< donations >}}
 

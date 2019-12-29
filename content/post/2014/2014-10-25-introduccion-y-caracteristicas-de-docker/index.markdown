@@ -22,11 +22,9 @@ Al contrario de la virtualización Docker no emula o virtualiza una máquina y s
 
 La tecnología de contenedores no es nueva y también está disponible en otros sistemas operativos como [OpenVZ][openvz] también en Linux, [FreeBSD Jails](http://www.freebsd.org/doc/handbook/jails.html) o los [contenedores de Solaris](https://www.oracle.com/technetwork/server-storage/solaris/containers-169727.html).
 
-<div class="media">
-	{{< figure
-    	image1="virtual-machines.png" thumb1="virtual-machines.png" title1="Máquinas virtuales"
-    	image2="docker.png" thumb2="docker.png" title2="Docker" >}}
-</div>
+{{< figure
+    image1="virtual-machines.png" thumb1="virtual-machines.png" title1="Máquinas virtuales"
+    image2="docker.png" thumb2="docker.png" title2="Docker" >}}
 
 Docker tiene varias características interesantes. Es ligero ya que no hay virtualización aprovechándose mejor el hardware y únicamente necesitando el sistema de archivos mínimo para que funcionen los servicios. Los contenedores son autosuficientes (aunque pueden depender de otros contenedores, por ejemplo, un wordpress que necesita una base de datos mysql) no necesitando nada más que la imagen del contenedor para que funcionen los servicios que ofrece. Las imágenes de docker son portables entre diferentes plataformas el único requisito es que en el sistema huésped esté disponible docker. Es seguro, pudiendo hacer que los contenedores se comuniquen por un túnel solo disponible para ellos, los contenedores están aislados en el sistema mediante namespaces y control groups.
 

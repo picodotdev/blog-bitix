@@ -29,7 +29,7 @@ Este es el código para ejecutar tareas de forma secuencial y de forma concurren
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< asciinema id="130161" caption="Ejemplo de ejecución secuencial y concurrente" >}}
+{{< asciinema id="130161"    caption="Ejemplo de ejecución secuencial y concurrente" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaExecutors" command="./gradlew run" >}}
 

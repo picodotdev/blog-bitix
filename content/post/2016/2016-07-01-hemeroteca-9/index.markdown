@@ -73,11 +73,9 @@ Con algunos artículos he quedado bastante satisfecho como en los que he hablado
 
 En cuanto a como han evolucionado las visitas siempre es motivante ver que con el nuevo contenido añadido y poco a poco las visitas y número de páginas vistas aumentan algo, en cualquier caso siguen siendo pocas con las que seguramente tengan otras bitácoras de temática similar pero también seguramente más que otros cuantas. De casi aproximadamente 7000 sesiones al mes que tenía en enero ahora en junio Analytics me contabiliza unas 11000, en el mismo periodo de tiempo he pasado de 9000 páginas vistas a casi 13500. La mayor parte de esta mejora ha sido por unos pocos artículos que se habrán posicionado bien en los primeros meses del año en el buscador Google fuente de la que provienen la mayor parte de las visitas.
 
-<div class="media">
-    {{< figure
-        image1="analytics.png" thumb1="analytics-thumb.png" title1="Evolución de sesiones mensuales en Blog Bitix"
-        caption="Evolución de sesiones mensuales en Blog Bitix" >}}
-</div>
+{{< figure
+    image1="analytics.png" thumb1="analytics-thumb.png" title1="Evolución de sesiones mensuales en Blog Bitix"
+    caption="Evolución de sesiones mensuales en Blog Bitix" >}}
 
 Durante este tiempo en la bitácora he realizado algunos cambios haciendo el tamaño de letra más pequeña de las secciones de referencia y series de artículos así como en las series de artículos numerar los artículos. He añadido publicidad a nivel de página para los dispositivos móviles soportados que desde no hace mucho ofrece Google AdSense. He añadido un buscador con la tecnología de Google para buscar contenido en Blog Bitix y he minimizado el HTML con la intención de que la cantidad de datos descargados al acceder al _blog_ sean unos cuantos kilobytes menos. También he añadido un mensaje para aquellos usuarios que usen AdBlock y lo tengan activado instándolos a considerar que lo desactiven en Blog Bitix ya que la publicidad que incluyo en el _blog_ es amable y poco intrusiva.
 

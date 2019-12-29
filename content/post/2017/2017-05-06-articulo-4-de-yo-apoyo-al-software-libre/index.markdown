@@ -46,17 +46,15 @@ Por un problema con el medio de pago que usa Arch Linux, [Software in the Public
 
 ### Comprobantes de las donaciones
 
-<div class="media">
-    {{< figureproc
-        image1="donacion-gnome.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación GNOME"
-        caption="Donación GNOME" >}}
-    {{< figureproc
-        image1="donacion-videolan.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
-        caption="Donación VideoLAN (VLC)" >}}
-    {{< figureproc
-        image1="donacion-archlinux.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Arch Linux"
-        caption="Donación Arch Linux" >}}
-</div>
+{{< figureproc
+    image1="donacion-gnome.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación GNOME"
+    caption="Donación GNOME" >}}
+{{< figureproc
+    image1="donacion-videolan.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
+    caption="Donación VideoLAN (VLC)" >}}
+{{< figureproc
+    image1="donacion-archlinux.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Arch Linux"
+    caption="Donación Arch Linux" >}}
 
 Las donaciones no son muy cuantiosas pero son una forma de entre las muchas que hay de colaborar con estos proyectos. Otras formas de colaborar son reportando de errores o que no requieren conocimiento técnico como traduciendo las aplicaciones al lenguaje español o simplemente compartiendo las imágenes torrent de las distribuciones GNU/Linux.
 

@@ -31,22 +31,18 @@ Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energí
 
 * [Modelos de PlayStation](https://en.wikipedia.org/wiki/PlayStation_4_models)
 
-<div class="media">
-    {{< figureproc
-        image1="playstation-4-models.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Modelos de PlayStation 4"
-        caption="Modelos de PlayStation 4" >}}
-</div>
+{{< figureproc
+    image1="playstation-4-models.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Modelos de PlayStation 4"
+    caption="Modelos de PlayStation 4" >}}
 
 ### PlayStation, Xbox, Stadia o PC
 
 Entre la Xbox y la PlayStation he preferido la última aún siendo más cara por tres motivos principalmente. Uno, porque los juegos de la PlayStation me ha dado la sensación de que son más baratos al menos sus respectivas tiendas digitales, la PlayStation tiene varios juegos muy populares catalogados como _PlayStation Hits_ al precio de unos razonables 20 € y la PS4 parece tener más ofertas puntuales en algunos juegos para incentivar su compra, los juegos de la Xbox en lo que he visto los mismos están alrededor de 30 € cuando en la PS están en 20 €. Dos, porque el mano de la Xbox va con pilas y no quiero estar cambiándolas o usando pilas recargables, creo que se puede comprar una batería aunque aparte con su cargador. La Xbox está más barata para hacerla más atractiva en el mercado en parte seguramente porque la consola que ha vendido más unidades ha sido la PlayStation, la he visto en algunos momentos a 200 € la de 1 TB con unidad de disco cuando la PlayStation en algunos momentos de rebajas únicamente la he visto a 300€ aunque con un paquete de juegos. Tres, para jugar a través de internet en la Xbox se requiere una suscripción mensual y en la PlayStation para el _World of Warships_ que es del estilo _free to play_ no he visto que sea necesario, y este es un juego que me llama la atención.
 
-<div class="media">
-    {{< figureproc
-        image1="playstation-4-slim.jpg" options1="2560x1440" optionsthumb1="300x200" title1="PlayStation 4 Slim y Xbox One S"
-        image2="xbox-one-s.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
-        caption="PlayStation 4 Slim y Xbox One S" >}}
-</div>
+{{< figureproc
+    image1="playstation-4-slim.jpg" options1="2560x1440" optionsthumb1="300x200" title1="PlayStation 4 Slim y Xbox One S"
+    image2="xbox-one-s.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
+    caption="PlayStation 4 Slim y Xbox One S" >}}
 
 La mayoría de juegos están en ambas consolas, salvo unos cuantos exclusivos que tiene cada una (hay más exclusicos en la PS). Revisando la lista que hecho de los juegos que me han llamado la atención de la PlayStation  solo tenía tres o cuatro exclusivos apuntados, así que esto para mi no ha sido determinante. Las dos consolas ofrecen diría que la misma calidad al utilizar ambas un procesador SOC similar producido por [AMD][amd], asi que esto tampoco es determinante para elegir una u otra plataforma.
 
@@ -125,20 +121,18 @@ La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que
 
 Estos son los juegos que incluye el _pack_ del modelo de la consola que he comprado. Aunque es muy posible que al final que alguno lo acabe adquiriendo en formato digital.
 
-<div class="media">
-    {{< figureproc
-        image1="juegos-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
-        image2="juegos-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack" >}}
-    {{< figureproc
-        image1="juegos-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
-        image2="juegos-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
-        image3="juegos-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Juegos incluidos en el pack" >}}
-    {{< figureproc
-        image1="juegos-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
-        image2="juegos-7.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
-        image3="juegos-8.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Juegos incluidos en el pack"
-        caption="Juegos incluidos en el pack" >}}
-</div>
+{{< figureproc
+    image1="juegos-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
+    image2="juegos-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack" >}}
+{{< figureproc
+    image1="juegos-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
+    image2="juegos-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
+    image3="juegos-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Juegos incluidos en el pack" >}}
+{{< figureproc
+    image1="juegos-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Juegos incluidos en el pack"
+    image2="juegos-7.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
+    image3="juegos-8.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Juegos incluidos en el pack"
+    caption="Juegos incluidos en el pack" >}}
 
 ### Desempaquetado PlayStation 4 Slim 1 TB
 
@@ -176,56 +170,48 @@ Estos es lo que incluye la caja del _pack_ que he comprado:
 * Auriculares y micrófono.
 * Juegos del _pack_ (Ratchet & Clank, Uncharted 4, The Last of Us).
 
-<div class="media">
-    {{< figureproc
-        image1="caja-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
-        image2="caja-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja" >}}
-    {{< figureproc
-        image1="caja-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
-        image2="caja-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja"
-        image3="caja-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja" >}}
-    {{< figureproc
-        image1="caja-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
-        image2="caja-7.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja"
-        image3="caja-8.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja"
-        caption="Caja" >}}
-</div>
+{{< figureproc
+    image1="caja-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
+    image2="caja-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja" >}}
+{{< figureproc
+    image1="caja-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
+    image2="caja-4.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja"
+    image3="caja-5.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja" >}}
+{{< figureproc
+    image1="caja-6.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Caja"
+    image2="caja-7.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Caja"
+    image3="caja-8.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Caja"
+    caption="Caja" >}}
 
 La consola.
 
-<div class="media">
-    {{< figureproc
-        image1="playstation-4-slim-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="PlayStation 4 Slim"
-        image2="playstation-4-slim-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="PlayStation 4 Slim"
-        image3="playstation-4-slim-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="PlayStation 4 Slim" >}}
-    {{< figureproc
-        image1="playstation-4-slim-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="PlayStation 4 Slim"
-        image2="playstation-4-slim-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="PlayStation 4 Slim"
-        image3="playstation-4-slim-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="PlayStation 4 Slim"
-        caption="PlayStation 4 Slim" >}}
-</div>
+{{< figureproc
+    image1="playstation-4-slim-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="PlayStation 4 Slim"
+    image2="playstation-4-slim-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="PlayStation 4 Slim"
+    image3="playstation-4-slim-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="PlayStation 4 Slim" >}}
+{{< figureproc
+    image1="playstation-4-slim-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="PlayStation 4 Slim"
+    image2="playstation-4-slim-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="PlayStation 4 Slim"
+    image3="playstation-4-slim-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="PlayStation 4 Slim"
+    caption="PlayStation 4 Slim" >}}
 
 Y los cables y manuales incluidos. En la foto se ven el mando, el calbe HDMI, el cable USB cargador del mando, el cable de energía y los auriculares con micrófono.
 
-<div class="media">
-    {{< figureproc
-        image1="cables-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Cables y manuales"
-        image2="manuales-1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Cables y manuales"
-        caption="Cables y manuales" >}}
-</div>
+{{< figureproc
+    image1="cables-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Cables y manuales"
+    image2="manuales-1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Cables y manuales"
+    caption="Cables y manuales" >}}
 
 [La guía de usuario de la PS4](https://manuals.playstation.net/document/es/ps4/) incluye información para saber como realizar varias tareas y en estos dos vídeos sobre el mando, que función tiene el panel táctil parece que no sirve para mucho salvo como botón de selección, como bajar la intensidad de la luz para que le dure más la batería, se puede seguir jugando con el mando mientras se carga con el cable y la duración de la carga tarda unas dos horas.
 
 * [PS4: Mando análisis, funciones y demás](https://www.youtube.com/watch?v=gHGMWLhPAkw)
 * [Uso del DualShock 4](https://www.youtube.com/watch?v=Bz0S5LpJEAs)
 
-<div class="media">
-    {{< figureproc
-        image1="mando-dualshock-4-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2"
-        image2="mando-dualshock-4-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Mando DualShock 4 V2"
-        image3="mando-dualshock-4-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Mando DualShock 4 V2"
-        caption="Mando DualShock" >}}
-</div>
+{{< figureproc
+    image1="mando-dualshock-4-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2"
+    image2="mando-dualshock-4-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Mando DualShock 4 V2"
+    image3="mando-dualshock-4-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Mando DualShock 4 V2"
+    caption="Mando DualShock" >}}
 
 La verdad es que el precio no la he comprado en el mejor momento como se puede comprobar usando el [seguidor de precios CamelCamelCamel][blogbitix-414], para estar el producto en el final de su vida el precio no es que sea mucho menor que desde su comercialización ni comparándolo con sus competidores. Para adquirirla a mejor precio hubiera sido mejor que esperase un par e meses al _black friday_ o época navideña o un día sin IVA de algún centro comercial o ya casi hasta que salga la PS5 momento en el que bajara algo de precio por empezar a agotar existencias y quedar descatalogada. Pero es durante unas semanas de vacaciones en las que iba a poder jugar de forma más intensiva, los ingresos de Adsense del blog los empleo en esto, de esta menera me compensa la dedicación que me requiere, otra gente tendrá otros vicios y gastos que yo no tengo. Otra posibilidad era haber cogido la versión de 500 GB que salía algo más económica y un disco de 1 o 2 TB aparte pero entre portátiles que voy desechando quedándome con los discos duros no quería tener otro más de 500 GB junto con tener que adquirirle una caja USB de disco duro externa.
 
@@ -237,50 +223,42 @@ Desde el ordenador me he creado una cuenta en [PlayStation Network][playstation-
 
 En el primer inicio se solicitan múltiples datos de configuración y preferencias entre ellos si se desea la cuenta de PlayStation Network, como la he creado previamente desde el ordenador solo he tenido que introducir el nombre de usuario de inicio de sesión y la contraseña. Otras opciones solicitadas son las relativas a la privacidad y que información ven otros usuarios de nuestra actividad en la consola, pide unas cuantas, estas opciones se pueden editar también desde un ordenador entrando a la cuenta de PSN con el navegador.
 
-<div class="media">
-    {{< figureproc
-        image1="configuracion-inicial-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
-        image2="configuracion-inicial-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
-        image3="configuracion-inicial-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
-    {{< figureproc
-        image1="configuracion-inicial-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
-        image2="configuracion-inicial-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
-        image3="configuracion-inicial-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
-    {{< figureproc
-        image1="configuracion-inicial-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
-        image2="configuracion-inicial-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
-        image3="configuracion-inicial-9.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
-    {{< figureproc
-        image1="configuracion-inicial-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
-        image2="configuracion-inicial-11.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
-        caption="Configuración inicial" >}}
-</div>
+{{< figureproc
+    image1="configuracion-inicial-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+    image2="configuracion-inicial-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+    image3="configuracion-inicial-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+{{< figureproc
+    image1="configuracion-inicial-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+    image2="configuracion-inicial-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+    image3="configuracion-inicial-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+{{< figureproc
+    image1="configuracion-inicial-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+    image2="configuracion-inicial-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+    image3="configuracion-inicial-9.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Configuración inicial" >}}
+{{< figureproc
+    image1="configuracion-inicial-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración inicial"
+    image2="configuracion-inicial-11.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Configuración inicial"
+    caption="Configuración inicial" >}}
 
 Varias opciones de privacidad.
 
-<div class="media">
-    {{< figureproc
-        image1="opciones-privacidad.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Opciones de privacidad"
-        caption="Opciones de privacidad" >}}
-</div>
+{{< figureproc
+    image1="opciones-privacidad.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Opciones de privacidad"
+    caption="Opciones de privacidad" >}}
 
 La configuración de PlayStation Network.
 
-<div class="media">
-    {{< figureproc
-        image1="configuracion-playstation-network.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración de PlayStation Network"
-        caption="Configuración de PlayStation Network" >}}
-</div>
+{{< figureproc
+    image1="configuracion-playstation-network.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Configuración de PlayStation Network"
+    caption="Configuración de PlayStation Network" >}}
 
 Al finalizar toda la configuración se muestra la pantalla inicial de la consola.
 
-<div class="media">
-    {{< figureproc
-        image1="logo-inicio.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla inicial"
-        image2="pantalla-inicial-1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla inicial"
-        image3="pantalla-inicial-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla inicial"
-        caption="Pantalla inicial" >}}
-</div>
+{{< figureproc
+    image1="logo-inicio.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Pantalla inicial"
+    image2="pantalla-inicial-1.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Pantalla inicial"
+    image3="pantalla-inicial-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Pantalla inicial"
+    caption="Pantalla inicial" >}}
 
 Uso un monitor de resolución 2560x1440 (2K), la PlayStation está preparada para un resolución 1920x1080 (FullHD) pero tanto en la interfaz de los menús como en los juegos la calidad de imagen es muy buena. Tiene una opción de configuración para elegir ampliar la imagen a 2K o usar el área nativo de FullHD.
 
@@ -326,11 +304,9 @@ Para realizar el montaje y desmontaje correctamente se requieren una serie de he
 
 Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un adaptador de corriente utilizando para cargar un teléfono móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no son suficiente para los requisitos de carga del mando, en caso de usarse estos la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA según la especificación del estándar USB.
 
-<div class="media">
-    {{< figureproc
-        image1="adaptador-de-corriente-de-telefono-movil.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A"
-        caption="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A" >}}
-</div>
+{{< figureproc
+    image1="adaptador-de-corriente-de-telefono-movil.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A"
+    caption="Adaptador de corriente de teléfono móvil con salida de corriente 5V, 1.55A" >}}
 
 ### Tienda donde comprar la consola
 
@@ -352,39 +328,33 @@ Tanto en Wallapop como [Ebay][ebay] se pueden encontrar consolas de segunda mano
 
 Para utilizar el ordenador y la consola en el mismo monitor sin tener que conectar y desconectar cables he comprado también un [conmutador HDMI 4K de tres entradas y una salida](https://amzn.to/2NaQDyL) con soporte para una resolución de hasta 4K@60Hz, hay modelos de conmutadores de hasta 5 entradas. Lo que me ha convencido de este conmutador HDMI es que el sensor infrarrojo del mando lo tiene incorporado y no necesita un elemento externo, posee un botón para realizar la selección de la fuente de entrada sin mando, soporta 60 Hz en resolución 4K cuando otros conmutadores solo soportan 30 Hz, no necesita alimentación aunque si fuera necesario posee un puerto USB para proporcionarle corriente y todos los puertos HDMI tanto de entrada como de salida están en el mismo lado. El conmutador no incluye cable HDMI por lo que es necesario adquirir un [cable HDMI](https://amzn.to/2Q7Tt9Q) si no se tiene uno adicional disponible.
 
-<div class="media">
-    {{< figureproc
-        image1="conmutador-hdmi-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conmutador HDMI"
-        image2="conmutador-hdmi-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Conmutador HDMI"
-        caption="Conmutador HDMI" >}}
-</div>
+{{< figureproc
+    image1="conmutador-hdmi-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Conmutador HDMI"
+    image2="conmutador-hdmi-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Conmutador HDMI"
+    caption="Conmutador HDMI" >}}
 
 También el comprado una [funda del mando de PS4](https://amzn.to/2ZGumzk) para protegerlo de golpes, y suciedad me he fijado más que nada en el color que sea negro y que las aberturas para los botones sean amplias, además de que trajese _grips_ para los _joysticks_ ya que con el uso se les puede desprender su goma de agarre.
 
 Si en algún momento oigo que el ventilador hace un ruido más alto de lo normal compraré un [aerosol de aire comprimido con cánula](https://amzn.to/2AdXzT2) para limpiarla evitando así estropear los tornillos de plástico junto con una aspiradora para extraer la mayor parte del polvo que acumule.
 
-<div class="media">
-    {{< figureproc
-        image1="funda-mando-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
-        image2="funda-mando-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
-        image3="funda-mando-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Funda mando" >}}
-    {{< figureproc
-        image1="funda-mando-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
-        image2="funda-mando-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
-        image3="funda-mando-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Funda mando" >}}
-    {{< figureproc
-        image1="funda-mando-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
-        image2="funda-mando-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
-        caption="Funda mando" >}}
-</div>
+{{< figureproc
+    image1="funda-mando-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
+    image2="funda-mando-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
+    image3="funda-mando-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Funda mando" >}}
+{{< figureproc
+    image1="funda-mando-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
+    image2="funda-mando-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
+    image3="funda-mando-6.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Funda mando" >}}
+{{< figureproc
+    image1="funda-mando-7.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Funda mando"
+    image2="funda-mando-8.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Funda mando"
+    caption="Funda mando" >}}
 
 El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasiado ya que la funda a pesar de ser de goma, resistente y elástica alguna de sus uniones más finas podría romperse en un descuido.
 
-<div class="media">
-    {{< figureproc
-        image1="mando-dualshock-4-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2 con funda"
-        caption="Mando DualShock 4 V2 con funda" >}}
-</div>
+{{< figureproc
+    image1="mando-dualshock-4-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2 con funda"
+    caption="Mando DualShock 4 V2 con funda" >}}
 
 <div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=c4e617b84dbe20273c022f528f7f5451"></iframe>

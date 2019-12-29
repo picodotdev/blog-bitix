@@ -57,35 +57,33 @@ Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
-<div class="media">
+{{< figure
+    image1="4089.jpg" thumb1="4089-thumb.jpg" title1="4089: Ghost Within"
+    image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" title2="Rising World" >}}
 	{{< figure
-    	image1="4089.jpg" thumb1="4089-thumb.jpg" title1="4089: Ghost Within"
-    	image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" title2="Rising World" >}}
+    image1="seizon.jpg" thumb1="seizon-thumb.jpg" title1="Seizon"
+    image2="copod.png" thumb2="copod-thumb.png" title2="Copod" >}}
 	{{< figure
-    	image1="seizon.jpg" thumb1="seizon-thumb.jpg" title1="Seizon"
-    	image2="copod.png" thumb2="copod-thumb.png" title2="Copod" >}}
+    image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" title1="Drohtin – Tales of an Old Kingdom"
+    image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" title2="CHAOS: In the Darkness" >}}
 	{{< figure
-    	image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" title1="Drohtin – Tales of an Old Kingdom"
-    	image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" title2="CHAOS: In the Darkness" >}}
+    image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg" title1="Just Tactics"
+    image2="spermination.png" thumb2="spermination-thumb.png" title2="Spermination" >}}
 	{{< figure
-    	image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg" title1="Just Tactics"
-    	image2="spermination.png" thumb2="spermination-thumb.png" title2="Spermination" >}}
+    image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" title1="Maker’s Tale"
+    image2="piratehell.jpg" thumb2="piratehell-thumb.jpg" title2="PirateHell" >}}
 	{{< figure
-    	image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" title1="Maker’s Tale"
-    	image2="piratehell.jpg" thumb2="piratehell-thumb.jpg" title2="PirateHell" >}}
+    image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg" title1="Hostile Sector"
+    image2="3079.png" thumb2="3079-thumb.png" title2="3079" >}}
 	{{< figure
-    	image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg" title1="Hostile Sector"
-    	image2="3079.png" thumb2="3079-thumb.png" title2="3079" >}}
+    image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg" title1="Urban Galaxy"
+    image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" title2="Grappling Hook" >}}
 	{{< figure
-    	image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg" title1="Urban Galaxy"
-    	image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" title2="Grappling Hook" >}}
+    image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg" title1="Mad Skills Motocross"
+    image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" title2="Pets vs Monsters" >}}
 	{{< figure
-    	image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg" title1="Mad Skills Motocross"
-    	image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" title2="Pets vs Monsters" >}}
-	{{< figure
-    	image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" title1="Bang! Howdy"
-    	image2="imperii.jpg" thumb2="imperii-thumb.jpg" title2="Imperii" >}}
-</div>
+    image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" title1="Bang! Howdy"
+    image2="imperii.jpg" thumb2="imperii-thumb.jpg" title2="Imperii" >}}
 
 Todos estos juegos están programados utilizando el lenguaje de programación Java y la librería [jMonkeyEngine][jmonkeyengine] que facilita las tareas de programación de videojuegos proporcionando programación gráfica en 3D usando [OpenGL][opengl], manejo de eventos de entrada como teclado o ratón, manejo de sonido, pantallas de menús o red. Usando jMonkeyEngine se pueden hacer cosas muy interesantes como se ve en los ejemplos. En el siguiente enlace se pueden encontrar el [código fuente de varios ejemplos](https://github.com/jMonkeyEngine/BookSamples/tree/master/src) que podemos probar.
 
@@ -96,14 +94,12 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
-<div class="media">
+{{< figure
+    image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
+    image2="cubos.png" thumb2="cubos-thumb.png" title2="Texturas y materiales" >}}
 	{{< figure
-    	image1="cubo.png" thumb1="cubo-thumb.png" title1="¡Hola mundo!"
-    	image2="cubos.png" thumb2="cubos-thumb.png" title2="Texturas y materiales" >}}
-	{{< figure
-    	image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" title1="Sistemas de partículas, fuego"
-    	image2="agua.png" thumb2="agua-thumb.png" title2="Agua" >}}
-</div>
+    image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" title1="Sistemas de partículas, fuego"
+    image2="agua.png" thumb2="agua-thumb.png" title2="Agua" >}}
 
 Un videojuego se compone de múltiples recursos como imágenes, modelos 3D, música, _sprites_, texturas, fuentes de texto, sonidos, iconos... en la página [Open Game Art](http://opengameart.org) podemos encontrar todo este tipo de material sin necesidad de tener que crearlo desde la nada.
 

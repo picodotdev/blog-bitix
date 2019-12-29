@@ -23,10 +23,8 @@ Un [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_net
 
 [Amazon ClodFront](http://aws.amazon.com/es/cloudfront/) es una de las opciones que podemos usar como CDN. En este artículo voy a comentar como tener un CDN para servir el contenido estático en una aplicación que emplee el _framework_ de desarrollo de aplicaciones web en la plataforma Java [Apache Tapestry](http://tapestry.apache.org/).
 
-<div class="media">
-	{{< figure
-    	image1="nocdn-cdn.png" thumb1="nocdn-cdn-thumb.png" title1="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" >}}
-</div>
+{{< figure
+    image1="nocdn-cdn.png" thumb1="nocdn-cdn-thumb.png" title1="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" >}}
 
 Para que el contenido estático se sirva del CDN debemos hacer que las URL de las imágenes y hojas de estilo se generen con la URL propia del CDN, al menos, deberemos cambiar el host de esas URL. No hay que hacer mucho más ya que CloudFront creo que se puede configurar para que cuando le lleguen las peticiones del contenido si no las tiene las delegue en la aplicación, una vez que las tiene cacheadas ya no necesita solicitarselas a la aplicación y las sirve él mismo.
 

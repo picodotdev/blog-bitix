@@ -79,46 +79,40 @@ Una vez más al igual que en otros análisis de productos que hago incluyo fotos
 
 El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respectivamente, el ratón 7x12 centímetros de ancho y largo. Tanto el teclado como ratón y pilas estaban en la caja protegidos con una bolsa de plástico para evitar rayaduras. El adaptador para que el ordenador reciba la señal de teclado y ratón es muy pequeño y pasa casi despercibido conectado en el puerto USB. Se incluye en la caja una pila AA y dos AAA para poder usar el teclado y ratón desde el primer momento lo cual es de agradecer.
 
-<div class="media">
-    {{< figureproc
-        image1="v7-ckw200-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="v7-ckw200-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-        image3="v7-ckw200-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
-    {{< figureproc
-        image1="v7-ckw200-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="v7-ckw200-6.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-        image3="v7-ckw200-7.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
-    {{< figureproc
-        image1="v7-ckw200-8.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-        image2="v7-ckw200-9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-        caption="La caja, manual y pilas incluídas" >}}
-</div>
+{{< figureproc
+    image1="v7-ckw200-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+    image2="v7-ckw200-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    image3="v7-ckw200-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+{{< figureproc
+    image1="v7-ckw200-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+    image2="v7-ckw200-6.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    image3="v7-ckw200-7.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+{{< figureproc
+    image1="v7-ckw200-8.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
+    image2="v7-ckw200-9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    caption="La caja, manual y pilas incluídas" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="v7-ckw200-11.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="v7-ckw200-15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="v7-ckw200-26.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}        
-    {{< figureproc
-        image1="v7-ckw200-16.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        image2="v7-ckw200-17.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-        image3="v7-ckw200-18.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
-    {{< figureproc
-        image1="v7-ckw200-19.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-        caption="El teclado" >}}
-</div>
+{{< figureproc
+    image1="v7-ckw200-11.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+    image2="v7-ckw200-15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+    image3="v7-ckw200-26.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}        
+{{< figureproc
+    image1="v7-ckw200-16.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+    image2="v7-ckw200-17.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+    image3="v7-ckw200-18.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
+{{< figureproc
+    image1="v7-ckw200-19.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
+    caption="El teclado" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="v7-ckw200-20.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-        image2="v7-ckw200-21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
-        image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
-    {{< figureproc
-        image1="v7-ckw200-25.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-        image2="v7-ckw200-27.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El adaptador USB"
-        image3="v7-ckw200-24.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El adaptador USB"
-        caption="El ratón y el adaptador USB" >}}
-</div>
+{{< figureproc
+    image1="v7-ckw200-20.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
+    image2="v7-ckw200-21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
+    image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
+{{< figureproc
+    image1="v7-ckw200-25.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
+    image2="v7-ckw200-27.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El adaptador USB"
+    image3="v7-ckw200-24.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El adaptador USB"
+    caption="El ratón y el adaptador USB" >}}
 
 ### Conclusión
 
@@ -136,11 +130,9 @@ Según está indicado en la descripción de los huecos para las pilas el teclado
 
 Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla de 70cm de ancho por 30 cm de alto](https://amzn.to/2Dm7me3) en la que colocar tanto ratón como teclado que está ribeteada con hilo para mayor duración, esto protegerá la mesa del movimiento de ratón que con el tiempo se desgastaría.
 
-<div class="media">
-    {{< figureproc
-        image1="v7-ckw200-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
-        caption="Alfombrilla, teclado y ratón" >}}
-</div>
+{{< figureproc
+    image1="v7-ckw200-10.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
+    caption="Alfombrilla, teclado y ratón" >}}
 
 <div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC4DR1C&linkId=a9e97138ccb3a59af838861eb2156d10"></iframe>

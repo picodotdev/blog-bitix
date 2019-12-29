@@ -28,38 +28,30 @@ Todos estos juegos los encontraremos entre los paquetes para nuestra distribuci�
 ### Astromenace
 Acción y aventura. Astromenace es un juego de naves con la adición que permite mejorar las armas de la nave. Tiene un aspecto gráfico en tres dimensiones con efectos especiales de gran calidad. [Sitio web](http://www.viewizard.com/astromenace/index_linux.php).
 
-<div class="media">
-    {{< figure
-        image1="astromenace-1.jpg" thumb1="astromenace-1-thumb.jpg"
-        image2="astromenace-2.jpg" thumb2="astromenace-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="astromenace-1.jpg" thumb1="astromenace-1-thumb.jpg"
+    image2="astromenace-2.jpg" thumb2="astromenace-2-thumb.jpg" >}}
 
 #### Teeworlds
 Disparos. Es un _shooter_ en dos dimensiones para jugar contra otros jugadores y con diferentes modos de juego como todos contra todos, equipo contra equipo y capturar la bandera. [Sitio web](https://www.teeworlds.com/).
 
-<div class="media">
-    {{< figure
-        image1="teeworlds-1.jpg" thumb1="teeworlds-1-thumb.jpg"
-        image2="teeworlds-2.jpg" thumb2="teeworlds-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="teeworlds-1.jpg" thumb1="teeworlds-1-thumb.jpg"
+    image2="teeworlds-2.jpg" thumb2="teeworlds-2-thumb.jpg" >}}
 
 ### GCompris
 Educación. Es una colección de juegos educativos con numerosas actividades para niños de entre dos y 10 años. Algunas actividades están orientadas al juego no obstante orientadas a la educación. [Sitio web](http://gcompris.net/index-es.html).
 
-<div class="media">
-    {{< figure
-        image1="gcompris-1.jpg" thumb1="gcompris-1-thumb.jpg"
-        image2="gcompris-2.jpg" thumb2="gcompris-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="gcompris-1.jpg" thumb1="gcompris-1-thumb.jpg"
+    image2="gcompris-2.jpg" thumb2="gcompris-2-thumb.jpg" >}}
 
 ### Torcs
 Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio web](http://torcs.sourceforge.net/)
 
-<div class="media">
-    {{< figure
-        image1="torcs-1.jpg" thumb1="torcs-1-thumb.jpg"
-        image2="torcs-2.jpg" thumb2="torcs-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="torcs-1.jpg" thumb1="torcs-1-thumb.jpg"
+    image2="torcs-2.jpg" thumb2="torcs-2-thumb.jpg" >}}
 
 ### VDrift
 Carreras. Otro juego de simulación de conducción. [Sitio web](http://vdrift.net/)
@@ -78,40 +70,32 @@ Carreras. Similar al [Mario Kart](https://es.wikipedia.org/wiki/Super_Mario_Kart
 ### Glest
 Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controlar dos ejércitos de diferentes acciones, Tech que se compone de guerreros y dispositivos mecánicos y Magic que prefieren magos y criaturas invocadas. [Sitio web](http://glest.org/es/)
 
-<div class="media">
-    {{< figure
-        image1="glest-1.jpg" thumb1="glest-1-thumb.jpg"
-        image2="glest-2.jpg" thumb2="glest-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="glest-1.jpg" thumb1="glest-1-thumb.jpg"
+    image2="glest-2.jpg" thumb2="glest-2-thumb.jpg" >}}
 
 ### 0 A.D
 Estrategia. Un juego similar a [Age of Empires](https://www.ageofempires.com/) que no tiene nada que envidiarle. Podremos controlar varias de las civilizaciones más conocidas de la antigüedad. [Sitio web](https://play0ad.com/)
 
-<div class="media">
-    {{< figure
-        image1="0ad-1.jpg" thumb1="0ad-1-thumb.jpg"
-        image2="0ad-2.jpg" thumb2="0ad-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="0ad-1.jpg" thumb1="0ad-1-thumb.jpg"
+    image2="0ad-2.jpg" thumb2="0ad-2-thumb.jpg" >}}
 
 ### The Battle for Wesnoth
 Estrategia. Está basado en turnos con una ambientación de fantasía. Deberás formar gradualmente una armada reclutando nuevos guerreros y formando veteranos. Elige personajes de una amplia selección y forma una fuerza con las habilidades correctas para luchar correctamente en diferentes terrenos.
 
 Wesnoth tiene varias campañas, 200 tipos de unidades, 60 razas, 6 facciones y cientos de años de historia. El mundo de Wesnoth es muy grande. [Sitio web](https://www.wesnoth.org/)
 
-<div class="media">
-    {{< figure
-        image1="wesnoth-1.jpg" thumb1="wesnoth-1-thumb.jpg"
-        image2="wesnoth-2.jpg" thumb2="wesnoth-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="wesnoth-1.jpg" thumb1="wesnoth-1-thumb.jpg"
+    image2="wesnoth-2.jpg" thumb2="wesnoth-2-thumb.jpg" >}}
 
 ### UFO AI
 Estrategia. Un juego de estrategia basado en turnos. Formarás un grupo de resistencia para luchar contra la invasión alien. Crearás una base y equiparán a un grupo de combatientes. Está basado en el conocido juego [X-COM](https://es.wikipedia.org/wiki/X-COM). [Sitio web](http://ufoai.org/)
 
-<div class="media">
-    {{< figure
-        image1="ufo-ai-1.jpg" thumb1="ufo-ai-1-thumb.jpg"
-        image2="ufo-ai-2.jpg" thumb2="ufo-ai-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="ufo-ai-1.jpg" thumb1="ufo-ai-1-thumb.jpg"
+    image2="ufo-ai-2.jpg" thumb2="ufo-ai-2-thumb.jpg" >}}
 
 ### Warzone 2100
 Estrategia. Es un juego de estrategia y táctica en tiempo real donde comandarás fuerzas para reconstruir el mundo después de que haya sido destruido por misiles nucleares. Ofrece un modo de campaña, multijugador y de un solo jugador de escaramuzas. 400 diferentes tecnologías combinado con el sistema de diseño de unidades permite una variedad de posibles unidades y tácticas. [Sitio web](https://wz2100.net/)
@@ -123,20 +107,16 @@ Estrategia. Es un juego de estrategia y táctica en tiempo real donde comandará
 ### Widelands
 Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wiki/The_Settlers_II) pero con una significante más variedad. Deberás recolectar diferentes tipos de materias y productos para hacer crecer a tu pueblo. [Sitio web](https://wl.widelands.org/)
 
-<div class="media">
-    {{< figure
-        image1="widelands-1.jpg" thumb1="widelands-1-thumb.jpg"
-        image2="widelands-2.jpg" thumb2="widelands-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="widelands-1.jpg" thumb1="widelands-1-thumb.jpg"
+    image2="widelands-2.jpg" thumb2="widelands-2-thumb.jpg" >}}
 
 ### Unknown Horizons
 Estrategia. Es un juego de estrategia de simulación en tiempo real en 2D con énfasis en la economía y la construcción de ciudades. Expande tu pequeño establecimiento para forma una colonia poderosa, recolecta impuestos y proporciona a tus habitantes bienes valiosos. Incrementa tu poder con una economía bien balanceada y con comercio estratégico y diplomacia. [Sitio web](http://www.unknown-horizons.org/)
 
-<div class="media">
-    {{< figure
-        image1="unkonown-horizons-1.jpg" thumb1="unkonown-horizons-1-thumb.jpg"
-        image2="unkonown-horizons-2.jpg" thumb2="unkonown-horizons-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="unkonown-horizons-1.jpg" thumb1="unkonown-horizons-1-thumb.jpg"
+    image2="unkonown-horizons-2.jpg" thumb2="unkonown-horizons-2-thumb.jpg" >}}
 
 ### Angband
 _Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugador. Está basado en texto. Jugarás con un aventurero en busca de riquezas, lucharás contra monstruos y te prepararás para una batalla final con Morgoth, el señor de la oscuridad. [Sitio web](http://rephial.org/)
@@ -144,23 +124,19 @@ _Roguelike_. Angband es un juego de exploración de mazmorras para un solo jugad
 ### Nethack
 _Roguelike_. Similar a Angband y uno de los juegos de su estilo más conocidos. [Sitio web](http://www.nethack.org/)
 
-<div class="media">
-    {{< figure
-        image1="nethack-1.png" thumb1="nethack-1-thumb.png"
-        image2="nethack-2.png" thumb2="nethack-2-thumb.png" >}}
-</div>
+{{< figure
+    image1="nethack-1.png" thumb1="nethack-1-thumb.png"
+    image2="nethack-2.png" thumb2="nethack-2-thumb.png" >}}
 
 ### Shattered Pixel Dungeon
 [Shattered Pixel Dungeon](http://pixeldungeon.wikia.com/wiki/Mod-Shattered_Pixel_Dungeon) es del mismo estilo que _Nethack_, _roguelike_ y RPG, pero en modo gráfico un héroe, a elegir entre cuatro, guerrero, mago, ladrón y cazadora, se adentra en una mazmorra con el objetivo de aniquilar a los monstruos y recuperar el Amuleto de Yandor. La dificultad del juego es bastante elevada y hay que usar de forma adecuada las habilidades del personaje y los objetos (no todos son buenos, algunos están malditos) que se encuentren en la mazmorra para llegar lo más lejos posible. Hay trampas, puertas secretas, nuevas armas, armaduras, posibilidad de fabricar nuevos objetos y niveles que alcanzar ganando experiencia y dos carreras que seguir.
 
-<div class="media">
+{{< figure
+    image1="shattered-pixel-dungeon-1.png" thumb1="shattered-pixel-dungeon-1-thumb.png"
+    image2="shattered-pixel-dungeon-2.png" thumb2="shattered-pixel-dungeon-2-thumb.png" >}}
     {{< figure
-        image1="shattered-pixel-dungeon-1.png" thumb1="shattered-pixel-dungeon-1-thumb.png"
-        image2="shattered-pixel-dungeon-2.png" thumb2="shattered-pixel-dungeon-2-thumb.png" >}}
-    {{< figure
-        image1="shattered-pixel-dungeon-3.png" thumb1="shattered-pixel-dungeon-3-thumb.png"
-        image2="shattered-pixel-dungeon-4.png" thumb2="shattered-pixel-dungeon-4-thumb.png" >}}
-</div>
+    image1="shattered-pixel-dungeon-3.png" thumb1="shattered-pixel-dungeon-3-thumb.png"
+    image2="shattered-pixel-dungeon-4.png" thumb2="shattered-pixel-dungeon-4-thumb.png" >}}
 
 ### Alien Arena, AssaultCube, Cube 2: Sauerbraten, Nexuiz, Warsow, Xonotic
 Disparos. Juegos similares a [Quake](https://es.wikipedia.org/wiki/Quake).
@@ -175,11 +151,9 @@ Disparos. Juegos similares a [Quake](https://es.wikipedia.org/wiki/Quake).
 ### Urban Terror
 Disparos. Juego similar a [Counter Strike](https://es.wikipedia.org/wiki/Counter-Strike) que es la referencia de este estilo. Posee diferentes modos de juego. Ambientado en la actualidad. [Sitio web](http://www.urbanterror.info/home/)
 
-<div class="media">
-    {{< figure
-        image1="urban-terror-1.jpg" thumb1="urban-terror-1-thumb.jpg"
-        image2="urban-terror-2.jpg" thumb2="urban-terror-2-thumb.jpg" >}}
-</div>
+{{< figure
+    image1="urban-terror-1.jpg" thumb1="urban-terror-1-thumb.jpg"
+    image2="urban-terror-2.jpg" thumb2="urban-terror-2-thumb.jpg" >}}
 
 {{< reference >}}
 * [List of games](https://wiki.archlinux.org/index.php/List_of_games)

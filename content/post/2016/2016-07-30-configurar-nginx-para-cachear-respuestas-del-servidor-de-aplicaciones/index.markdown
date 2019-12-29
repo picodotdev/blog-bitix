@@ -32,15 +32,13 @@ La siguiente pequeña aplicación Java que usa el [framework Spark][spark] expon
 
 La primera petición que se realiza al recurso _cache_ devuelve un [código de estado 200 de HTTP](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#2xx:_Peticiones_correctas) y Nginx en la cabecera _X-Proxy-Cache_ indica que se ha producido un _MISS_ o fallo en la cache, la segunda petición realizada antes de que pase el minuto del tiempo de expiración devuelve un [código de estado 304](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP#3xx:_Redirecciones) y Nginx en la cabecera _X-Proxy-Cache_ un _HIT_ o acierto en la cache, finalmente pasado más de un minuto del tiempo de expiración se devuelve un código de estado 200 y Nginx en la cabecera _X-Proxy-Cache_ un _EXPIRED_. En las trazas de Nginx vemos las peticiones que se producen sus códigos de estado y después de este los bytes transferidos de contenido, nótese que en los casos de los 304 los bytes transferidos son 0, bytes de datos ahorrados y evitado que la petición llegue a la aplicación que son unos de los objetivos de las caches. En el recurso _nocache_ de la aplicación Nginx no cachea el contenido devuelto ya que en este no se establecen las cabeceras de cache en la respuesta.
 
-<div class="media">
+{{< figure
+    image1="nginx-cache-peticion-miss.png" thumb1="nginx-cache-peticion-miss-thumb.png" title1="Fallo en la cache de Nginx"
+    image2="nginx-cache-peticion-hit.png" thumb2="nginx-cache-peticion-hit-thumb.png" title2="Acierto en la cache de Nginx" >}}
     {{< figure
-        image1="nginx-cache-peticion-miss.png" thumb1="nginx-cache-peticion-miss-thumb.png" title1="Fallo en la cache de Nginx"
-        image2="nginx-cache-peticion-hit.png" thumb2="nginx-cache-peticion-hit-thumb.png" title2="Acierto en la cache de Nginx" >}}
-    {{< figure
-        image1="nginx-cache-peticion-expired.png" thumb1="nginx-cache-peticion-expired-thumb.png" title1="Expiración en la cache de Nginx"
-        image2="curl-cache-miss-hit-expired.png" thumb2="curl-cache-miss-hit-expired-thumb.png" title2="Fallo, acierto y expiración en la cache de Nginx con curl"
-        caption="Fallo, acierto y expiración que produce en la cache de Nginx al realizar peticiones" >}}
-</div>
+    image1="nginx-cache-peticion-expired.png" thumb1="nginx-cache-peticion-expired-thumb.png" title1="Expiración en la cache de Nginx"
+    image2="curl-cache-miss-hit-expired.png" thumb2="curl-cache-miss-hit-expired-thumb.png" title2="Fallo, acierto y expiración en la cache de Nginx con curl"
+    caption="Fallo, acierto y expiración que produce en la cache de Nginx al realizar peticiones" >}}
 
 {{< code file="nginx.out" language="plaintext" options="" >}}
 {{< code file="curl-cache.sh" language="bash" options="" >}}

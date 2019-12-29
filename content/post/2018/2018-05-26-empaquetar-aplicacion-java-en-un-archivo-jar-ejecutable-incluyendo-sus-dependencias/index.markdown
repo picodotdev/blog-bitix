@@ -27,11 +27,9 @@ En este caso se trata de una aplicación que emite un arte en formato _ascii_ en
 
 {{< code file="java-cp.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="java-classpath.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
-        caption="Aplicación de ejemplo ejecutada con classpath" >}}
-</div>
+{{< figureproc
+    image1="java-classpath.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con classpath"
+    caption="Aplicación de ejemplo ejecutada con classpath" >}}
 
 Cuando la aplicación está contenida en un archivo _jar_ y se ejecuta con la opción _-jar_ se ignora el parámetro _-cp_ y no se indica la clase _main_ del punto de entrada de la aplicación. En el caso de las aplicaciones distribuidas en un archivo _jar_ tanto la clase _main_ como las dependencias se indican en un archivo de manifiesto incluido en el propio archivo _jar_. El archivo se ubica en _META-INF/MANIFEST.MF_ dentro del _jar_, es un archivo de texto donde se indican varias propiedades en forma de atributo y valor, una en cada linea. Un ejemplo de archivo de manifiesto sería el siguiente:
 
@@ -56,11 +54,9 @@ Con el siguiente comando la ejecución de la aplicación empaquetada como _uberj
 {{< code file="gradlew-assemble.sh" language="bash" options="" >}}
 {{< code file="java-jar-uberjar.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="java-jar-uberjar.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con uberjar"
-        caption="Aplicación de ejemplo ejecutada con uberjar" >}}
-</div>
+{{< figureproc
+    image1="java-jar-uberjar.png" options1="2560x1440" optionsthumb1="650x450" title1="Aplicación de ejemplo ejecutada con uberjar"
+    caption="Aplicación de ejemplo ejecutada con uberjar" >}}
 
 Hay un [_plugin_ de Gradle para generar _uberjars_](https://imperceptiblethoughts.com/shadow/) que ofrece varias opciones para filtrar los archivos que se incluyen en el _fatjar_, fusionar los archivos de servicios que permiten extender funcionalidades y otras tareas para realizar generar el distribuible con _distShadowZip_ y _distShadowTar_. [Spring Boot][spring-boot] ofrece algo similar con la tarea _bootRepackage_ pero si no se trata de una aplicación que use Spring Boot lo anterior sirve para cualquier otra aplicación Java como sería el caso de una [aplicación de escritorio que utiliza JavaFX][blogbitix-100].
 

@@ -21,7 +21,7 @@ No será extraño que en una API para obtener datos esté la necesidad de realiz
 
 Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del _enpoint_ de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con _input_ es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.
 
-{{< code file="library.graphqls" language="plaintext" options="" >}}
+{{< code file="library.graphqls" language="graphqls" options="" >}}
 
 La implementación del tipo _BookFilter_ en la implementación de Java de GraphQL es una _Java Bean_ con una propiedad por cada argumento y sus correspondientes métodos _set_ y _get_.
 

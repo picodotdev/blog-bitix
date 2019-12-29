@@ -37,17 +37,15 @@ La [tarea de Gradle para generar la documentación Javadoc](https://docs.gradle.
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-<div class="media">
+{{< figure
+    image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" title1="Estilos personalizados de la documentación Javadoc"
+    image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" title2="Estilos personalizados de la documentación Javadoc"
+    image3="javadoc-3.png" thumb3="javadoc-3-thumb.png" title3="Estilos personalizados de la documentación Javadoc"
+    caption="Estilos personalizados de la documentación Javadoc" >}}
     {{< figure
-        image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" title1="Estilos personalizados de la documentación Javadoc"
-        image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" title2="Estilos personalizados de la documentación Javadoc"
-        image3="javadoc-3.png" thumb3="javadoc-3-thumb.png" title3="Estilos personalizados de la documentación Javadoc"
-        caption="Estilos personalizados de la documentación Javadoc" >}}
-    {{< figure
-        image1="javadoc-jdk-1.png" thumb1="javadoc-jdk-1-thumb.png" title1="Estilos por defecto de la documentación Javadoc"
-        image2="javadoc-jdk-2.png" thumb2="javadoc-jdk-2-thumb.png" title2="Estilos por defecto de la documentación Javadoc"
-        caption="Estilos por defecto de la documentación Javadoc" >}}
-</div>
+    image1="javadoc-jdk-1.png" thumb1="javadoc-jdk-1-thumb.png" title1="Estilos por defecto de la documentación Javadoc"
+    image2="javadoc-jdk-2.png" thumb2="javadoc-jdk-2-thumb.png" title2="Estilos por defecto de la documentación Javadoc"
+    caption="Estilos por defecto de la documentación Javadoc" >}}
 
 El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help_ se obtiene una listado y descripción de cada una de ellas. Dependiendo del destinatario de la documentación, se pueden limitar las clases que son incluidas en el Javadoc si por ejemplo solo se quiere ofrecer la documentación de la parte pública.
 

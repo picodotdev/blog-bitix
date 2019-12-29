@@ -47,34 +47,26 @@ Para completar el ejemplo debemos inicializar la librería i18next con la config
 
 Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:
 
-<div class="media">
-	{{< figure
-    	image1="lista-tareas-es.png" thumb1="lista-tareas-es-thumb.png" title1="Aplicación en español"
-    	image2="lista-tareas-en.png" thumb2="lista-tareas-en-thumb.png" title2="Aplicación en inglés" >}}
-</div>
+{{< figure
+    image1="lista-tareas-es.png" thumb1="lista-tareas-es-thumb.png" title1="Aplicación en español"
+    image2="lista-tareas-en.png" thumb2="lista-tareas-en-thumb.png" title2="Aplicación en inglés" >}}
 
 El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.
 
-<div class="media">
-	{{< figure
-    	image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png" title1="Una tarea completada"
-    	image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" title2="Dos tareas completadas" >}}
-</div>
+{{< figure
+    image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png" title1="Una tarea completada"
+    image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" title2="Dos tareas completadas" >}}
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
 
-<div class="media">
-	{{< figure
-    	image1="peticiones-locales-es-ES.png" thumb1="peticiones-locales-es-ES-thumb.png" title1="Búsqueda de traducciones"
-    	image2="peticiones-locales-dev.png" thumb2="peticiones-locales-dev-thumb.png" title2="Búsqueda de traducciones" >}}
-</div>
+{{< figure
+    image1="peticiones-locales-es-ES.png" thumb1="peticiones-locales-es-ES-thumb.png" title1="Búsqueda de traducciones"
+    image2="peticiones-locales-dev.png" thumb2="peticiones-locales-dev-thumb.png" title2="Búsqueda de traducciones" >}}
 
 Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:
 
-<div class="media">
-	{{< figure
-    	image1="teses.png" thumb1="teses-thumb.png" title1="Pruebas unitarias" >}}
-</div>
+{{< figure
+    image1="teses.png" thumb1="teses-thumb.png" title1="Pruebas unitarias" >}}
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.
 

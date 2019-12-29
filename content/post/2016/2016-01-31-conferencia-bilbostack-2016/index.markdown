@@ -18,11 +18,9 @@ series: ["bilbostack"]
 
 Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilbao en la localización de la [Universidad de Deusto](http://www.deusto.es), este año la edición del 2016. Con más asistentes que en años anteriores y unas aulas dispuestas por la universidad más grandes para dar cabida a todos. Sigue manteniéndose gratuita aunque hay que reservar entrada, todas las entradas se agotaron y ha habido lista de espera para conseguir las de aquellos que finalmente tuvieron la mala suerte de no poder asistir. Si el siguiente año no quieres perdértela no hagas planes desde ya para finales de enero de 2017 cuando esperemos sea la edición del 2017.
 
-<div class="media">
-    {{< figure
-        image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
-        image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto" >}}
-</div>
+{{< figure
+    image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
+    image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto" >}}
 
 Al igual que en anteriores entregas las presentaciones se han dividido en dos _tracks_ con duración de 45 minutos ofrecidas en una única mañana. Este año estando el _track_ 1 orientado a temas de programación o código y el _track_ 2 con una temática más diversa desde equipos a productos y servicios.
 
@@ -92,11 +90,9 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
     </tbody>
 </table>
 
-<div class="media">
-    {{< figure
-        image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1"
-        image2="track2.jpg" thumb2="track2-thumb.jpg" title2="Sala track 2" >}}
-</div>
+{{< figure
+    image1="track1.jpg" thumb1="track1-thumb.jpg" title1="Sala track 1"
+    image2="track2.jpg" thumb2="track2-thumb.jpg" title2="Sala track 2" >}}
 
 No podía faltar la cuota para el popular lenguaje [JavaScript][javascript] este año con las dos primeras presentaciones del _track_ 1 y si el año pasado comentaba que no había habido ninguna de [Java][java] en ya cuatro entregas, este finalmente ha tenido presencia. Aún siendo solo dos _tracks_ me ha costado algo decidirme por la presentaciones a las que asistir. En resumen, he preferido ir salvo a la de Java a las presentaciones del _track_ 2. [React][react] ya lo conozco al escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20], en [Angular][angular] 2 habrán mejorado las cosas pero se me hace redundante. En general creo que me podría enriquecer más del _track_ 2 que del 1 ya que en mayor o menor medida las del primero ya me iban ser bastante familiares siendo programador.
 
@@ -155,10 +151,8 @@ Hay que tener en cuenta:
 
 Es importante tener datos para evaluar pero hay que tener cuidado con las métricas ya que son maleables.
 
-<div class="media">
-    {{< figure
-        image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" title1="Your code as a crime scene" >}}
-</div>
+{{< figure
+    image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" title1="Your code as a crime scene" >}}
 
 <div class="media">
     <iframe src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -185,10 +179,8 @@ Su futuro es bueno [Sun][sun-microsystems] en su momento lo hizo de código abie
 
 En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a las bases de datos relacionales y el potente lenguaje SQL que tampoco nunca dejaron de molar y ahí está [jOOQ][jooq] para demostrar que los ORM no son siempre la mejor solución.
 
-<div class="media">
-    {{< figure
-        image1="java-moderno.jpg" thumb1="java-moderno-thumb.jpg" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
-</div>
+{{< figure
+    image1="java-moderno.jpg" thumb1="java-moderno-thumb.jpg" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
 
 La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes, plataforma y ecosistema con el que desarrollar aplicaciones, han sido todo argumentos. Si alguien lo quiere ver en la práctica puede revisar varios de los artículos que he escrito en esta bitácora:
 

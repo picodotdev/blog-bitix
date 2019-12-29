@@ -43,33 +43,27 @@ Para las hojas de cálculo hay dos formas de autorización para una aplicación.
 
 Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crer un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de ecritura.
 
-<div class="media">
-    {{< figureproc
-        image1="google-credentials.png" options1="2560x1440" optionsthumb1="300x200" title1="Google Credentials"
-        image2="google-api-key.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
-        image3="google-document-share.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Compartir documento en Google Drive"
-        caption="Google Credentials, API Key y compartir documento" >}}
-</div>
+{{< figureproc
+    image1="google-credentials.png" options1="2560x1440" optionsthumb1="300x200" title1="Google Credentials"
+    image2="google-api-key.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
+    image3="google-document-share.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Compartir documento en Google Drive"
+    caption="Google Credentials, API Key y compartir documento" >}}
 
 El enlace al compartir el documento o al editarlo contiene el identificativo de documento. Con la API _key_ o cuenta de servicio, el identificativo del documento y el documento compartido al menos para cualquiera que tenga el enlace la información del documento está accesible para una aplicación mediante una API REST o de forma programática con una implementación de la API con Java, este programa Java imprime el contenido de las celdas de la hoja de cálculo en la terminal. Se necesita una expresión que identifique la hoja y el contenido de las celdas de las que se quieren datos con un [rango en notación A1](https://developers.google.com/sheets/api/guides/concepts#a1_notation).
 
-<div class="media">
-    {{< figureproc
-        image1="google-spreadsheet.png" options1="2560x1440" optionsthumb1="300x200" title1="Hoja de cálculo de Google"
-        image2="google-document.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
-        caption="Hoja de cálculo y documento de Google" >}}
-</div>
+{{< figureproc
+    image1="google-spreadsheet.png" options1="2560x1440" optionsthumb1="300x200" title1="Hoja de cálculo de Google"
+    image2="google-document.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
+    caption="Hoja de cálculo y documento de Google" >}}
 
 {{< code file="Main-3.java" language="java" options="" >}}
 {{< code file="gradlew-run.sh" language="Bash" options="hl_lines=7-8" >}}
 
 El método de API _key_ obliga a hacer público el documento lo que no es deseable desde el punto de vista de seguridad aunque es un poco más simple que crear una cuenta de servicio. Para no hacer público el documento pero permitir acceder a una aplicación hay que crear una cuenta de servicio en la página [Cuentas de servicio](https://console.developers.google.com/iam-admin/serviceaccounts) seleccionando o creando un proyecto.
 
-<div class="media">
-    {{< figureproc
-        image1="google-service-account.png" options1="2560x1440" optionsthumb1="300x200" title1="Cuenta de servicio de Google"
-        caption="Cuenta de servicio de Google" >}}
-</div>
+{{< figureproc
+    image1="google-service-account.png" options1="2560x1440" optionsthumb1="300x200" title1="Cuenta de servicio de Google"
+    caption="Cuenta de servicio de Google" >}}
 
 Al crear una cuenta de servicio y una clave se genera un archivo en formato JSON con las credenciales que hay que guardar y utilizar en una aplicación para acceder a los documentos compartidos con esta cuenta de servicio.
 
@@ -77,11 +71,9 @@ Al crear una cuenta de servicio y una clave se genera un archivo en formato JSON
 
 En vez de compartir el documento con cualquiera que tenga en enlace, con una cuenta de servicio el documento se puede compartir únicamente con esa cuenta de servicio, la cuenta de servicio posee un correo electrónico que la identifica, el documento se puede compartir únicamente con esta cuenta de servicio como si de cualquier otro usuario se tratase.
 
-<div class="media">
-    {{< figureproc
-        image1="google-document-share-service-account.png" options1="2560x1440" optionsthumb1="300x200" title1="Documento compartido con cuenta de servicio"
-        caption="Documento compartido con cuenta de servicio" >}}
-</div>
+{{< figureproc
+    image1="google-document-share-service-account.png" options1="2560x1440" optionsthumb1="300x200" title1="Documento compartido con cuenta de servicio"
+    caption="Documento compartido con cuenta de servicio" >}}
 
 El siguiente código Java accede a un documento utilizando las credenciales de una cuenta de servicio.
 

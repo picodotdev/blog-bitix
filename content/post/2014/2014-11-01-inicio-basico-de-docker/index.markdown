@@ -36,10 +36,8 @@ Con el comando «docker images», «docker ps», «docker ps -a» podemos respec
 
 {{< code file="docker-4.sh" language="bash" options="" >}}
 
-<div class="media">
-	{{< figure
-    	image1="docker-images.png" thumb1="docker-images-thumb.png" title1="docker-images" >}}
-</div>
+{{< figure
+    image1="docker-images.png" thumb1="docker-images-thumb.png" title1="docker-images" >}}
 
 Con los comandos _docker rm [contenedor]_ y _docker rmi [imagen]_ podemos eliminar las instancias de contenedores y las imágenes que no estén siendo usadas por ningún contenedor, si están siendo usadas deberemos eliminar primero el contenedor.
 
@@ -49,10 +47,8 @@ Para obtener una imagen usamos el comando «docker pull [imagen]» indicando el 
 
 {{< code file="docker-5.sh" language="bash" options="" >}}
 
-<div class="media">
-	{{< figure
-    	image1="docker-pull.png" thumb1="docker-pull-thumb.png" title1="docker-pull" >}}
-</div>
+{{< figure
+    image1="docker-pull.png" thumb1="docker-pull-thumb.png" title1="docker-pull" >}}
 
 Una vez descargada la imagen podemos iniciar un contenedor de la imagen con:
 
@@ -64,10 +60,8 @@ Este es el momento para explicar otra de las peculiaridades de los contenedores 
 
 Si usamos el comando «uname -a» puede verse que aunque el contenedor usa el sistema de archivos de una distribución debian el kernel empleado es el del sistema anfitrión, esto es así porque los contenedores docker en esencia no son más que procesos dentro del sistema.
 
-<div class="media">
-	{{< figure
-    	image1="docker-run.png" thumb1="docker-run-thumb.png" title1="docker-run" >}}
-</div>
+{{< figure
+    image1="docker-run.png" thumb1="docker-run-thumb.png" title1="docker-run" >}}
 
 Continuando esta serie de artículos sobre docker explicaré como construir una imagen mediante los Dockerfiles con la que podamos usar una base de datos mysql y explicaré en más detalle como podemos conseguir la persistencia que necesitaremos para almacenar los datos de la base de datos usando otro contenedor con este propósito.
 

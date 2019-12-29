@@ -34,11 +34,9 @@ En las siguientes trazas de ejecución de sentencias se observa una inserción d
 Estas sentencias se ejecutan en unos pocos milisegundos, en una aplicación con tablas de algún millon de registros, varios _joins_, condiciones _where_ complejas, ordenación y paginación las sentencias SQL pueden tardar varias segundos y decenas de segundos, conocer sus tiempos de ejecución es importante.
 
 {{< code file="System.out" language="plaintext" options="" >}}
-<div class="media">
-    {{< figureproc
-        image1="pagina-listado.png" options1="2560x1440" optionsthumb1="650x450" title1="Listado de elementos"
-        caption="Listado de elementos" >}}
-</div>
+{{< figureproc
+    image1="pagina-listado.png" options1="2560x1440" optionsthumb1="650x450" title1="Listado de elementos"
+    caption="Listado de elementos" >}}
 
 La clase [ExecuteContext](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteContext.html) proporciona numerosa información sobre la ejecución de la sentencia como número de filas afectadas, si se ha producido una excepción, el tipo de sentencia (_READ_, _WRITE_, _DDL_, _BATCH_, _ROUTINE_ u _OTHER_), sentencias _batch_ u obtener los parámetros a través del objeto [Query](https://www.jooq.org/javadoc/latest/org/jooq/Query.html).
 

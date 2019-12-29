@@ -33,12 +33,10 @@ Si la imagen original está en el formato escalar _svg_ para convertir a formato
 
 Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tamaño original ocupa 1 MB, la vista previa aproximadamente 210 KB en tamaño 650x450 y 50 KB en tamaño de 300x200. Una reducciónd de tamaño considerable.
 
-<div class="media">
-    {{< figure
-        image1="201607.jpg" thumb1="201607-thumb (650x450).jpg" title1=""
-        image2="201607.jpg" thumb2="201607-thumb (300x200).jpg" title2=""
-        caption="Previsualización de imagen en tamaño 650x450 y 300x200 del original 1600x1067" >}}
-</div>
+{{< figure
+    image1="201607.jpg" thumb1="201607-thumb (650x450).jpg" title1=""
+    image2="201607.jpg" thumb2="201607-thumb (300x200).jpg" title2=""
+    caption="Previsualización de imagen en tamaño 650x450 y 300x200 del original 1600x1067" >}}
 
 Los ahorros de espacio conseguidos anteriores son consecuencia de reducir el tamaño de la imagen, [utilizar el formato de imagen WebP en vez de _jpg_ y _png_][blogbitix-447] además permite conseguir importantes reducciones de tamaño del espacio ocupado por las fotografías e imágenes originales, en torno al 20% y 60%.
 

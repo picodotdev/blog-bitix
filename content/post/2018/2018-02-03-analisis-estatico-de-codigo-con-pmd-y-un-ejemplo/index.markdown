@@ -42,11 +42,9 @@ Aplicado el _plugin_ y definidas las reglas en las construcción del proyecto se
 
 Para que en el informe aparezcan datos he cambiado la configuración de longitud a 10 líneas por método como máximo.
 
-<div class="media">
-    {{< figureproc
-        image1="pmd-report.png" options1="2560x1440" optionsthumb1="300x200" title1="Informe de PMD con violaciones a las reglas"
-        caption="Informe de PMD con violaciones a las reglas" >}}
-</div>
+{{< figureproc
+    image1="pmd-report.png" options1="2560x1440" optionsthumb1="300x200" title1="Informe de PMD con violaciones a las reglas"
+    caption="Informe de PMD con violaciones a las reglas" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew check" >}}
 

@@ -18,12 +18,10 @@ summary: "Arch Linux es una de las distribuciones más personalizables de GNU/Li
 
 Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene más dificultad que instalar un sistema operativo como [Windows][windows], que consiste en descargar la imagen ISO del CD o DVD, grabarla en un CD, DVD o memoria USB e iniciar el sistema con el medio. Las [distribuciones aconsejadas para usuarios que provienen de Windows o macOS][blogbitix-190] o no tiene muchos conocimientos informáticos poseen instaladores gráficos o basados en texto y guiados en varios pasos hasta completar la instalación en menos de una hora. Distribuciones como [Ubuntu][ubuntu], [elementary OS][elementary] o [Linux Mint][linuxmint] hacen que la instalación no requiera muchos conocimientos y sea completada con éxito por cualquier usuario.
 
-<div class="media">
-    {{< figure
-        image1="debian-installer-text.png" thumb1="debian-installer-text-thumb.png" title1="Instalador de Debian en modo texto"
-        image2="debian-installer-graphics.png" thumb2="debian-installer-graphics-thumb.png" title2="Instalador de Debian en modo gráfico"
-        caption="Instalación guíada de Debian basada en texto y gráfica" >}}
-</div>
+{{< figure
+    image1="debian-installer-text.png" thumb1="debian-installer-text-thumb.png" title1="Instalador de Debian en modo texto"
+    image2="debian-installer-graphics.png" thumb2="debian-installer-graphics-thumb.png" title2="Instalador de Debian en modo gráfico"
+    caption="Instalación guíada de Debian basada en texto y gráfica" >}}
 
 Otras distribuciones basadas en principios diferentes y usuarios a los que está destinadas con otras necesidades o preferencias puede que requieran algo más de conocimientos a cambio de realizar configuraciones más avanzadas como el particionado del disco, cifrado del disco o software que se instala. Algunas distribuciones como [Arch Linux][archlinux] incluso no proporcionan ningún instalador.
 
@@ -71,25 +69,23 @@ El tiempo requerido de instalación varía según el ancho de banda de la conexi
 
 Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema con el proceso completo de instalación.
 
-<div class="media">
+{{< figure
+    image1="archlinux-gnome.jpg" thumb1="archlinux-gnome-thumb.jpg" title1="GNOME"
+    image2="archlinux-kde.jpg" thumb2="archlinux-kde-thumb.jpg" title2="KDE"
+    caption="Entornos de escritorio GNOME y KDE" >}}
     {{< figure
-        image1="archlinux-gnome.jpg" thumb1="archlinux-gnome-thumb.jpg" title1="GNOME"
-        image2="archlinux-kde.jpg" thumb2="archlinux-kde-thumb.jpg" title2="KDE"
-        caption="Entornos de escritorio GNOME y KDE" >}}
+    image1="archlinux-xfce.jpg" thumb1="archlinux-xfce-thumb.jpg" title1="XFCE"
+    image2="archlinux-cinnamon.jpg" thumb2="archlinux-cinnamon-thumb.jpg" title2="Cinnamon"
+    caption="Entornos de escritorio Xfce y Cinnamon" >}}
     {{< figure
-        image1="archlinux-xfce.jpg" thumb1="archlinux-xfce-thumb.jpg" title1="XFCE"
-        image2="archlinux-cinnamon.jpg" thumb2="archlinux-cinnamon-thumb.jpg" title2="Cinnamon"
-        caption="Entornos de escritorio Xfce y Cinnamon" >}}
+    image1="archlinux-lxde.jpg" thumb1="archlinux-lxde-thumb.jpg" title1="LXDE"
+    image2="archlinux-mate.jpg" thumb2="archlinux-mate-thumb.jpg" title2="Mate"
+    caption="Entornos de escritorio LXDE y Mate" >}}
     {{< figure
-        image1="archlinux-lxde.jpg" thumb1="archlinux-lxde-thumb.jpg" title1="LXDE"
-        image2="archlinux-mate.jpg" thumb2="archlinux-mate-thumb.jpg" title2="Mate"
-        caption="Entornos de escritorio LXDE y Mate" >}}
-    {{< figure
-        image1="archlinux-root-password.png" thumb1="archlinux-root-password-thumb.png" title1="Solicitud de contraseña para descifrar partición root"
-        caption="Solicitud de contraseña para descifrar partición root" >}}
-</div>
+    image1="archlinux-root-password.png" thumb1="archlinux-root-password-thumb.png" title1="Solicitud de contraseña para descifrar partición root"
+    caption="Solicitud de contraseña para descifrar partición root" >}}
 
-{{< asciinema id="192880" caption="Instalación de sistema base de Arch Linux con alis" >}}
+{{< asciinema id="192880"    caption="Instalación de sistema base de Arch Linux con alis" >}}
 
 El código del instalador no es muy complicado y mucho más sencillo que el [código de arch-anywhere](https://github.com/deadhead420/arch-linux-anywhere/blob/master/arch-installer.sh) al no estar mezclado con los mensajes interactivos que hacen preguntas y esperan respuestas, además despues de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario intruduzca más datos de forma interactiva. Los comandos que he recopilado de la receta son los que ejecutaríamos uno detrás de otro con únicamente el medio de instalación de Arch Linux. La función _main_ contiene los pasos en los que consiste la instalación, desde el paticionado y cifrado del disco hasta el reinicio una vez completada la instalación, el resto de las funciones los comandos de ese paso de la instalación.
 

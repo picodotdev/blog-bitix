@@ -35,25 +35,21 @@ En este artículo me centraré más en las alternativas a Office que también so
 
 Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio, y las versiones web para estos y otros sistemas. [Office 365](https://products.office.com/es-es/) tiene un coste alrededor de 8,80€ por usuario y mes según el plan que incluye más o menos aplicaciones.
 
-<div class="media">
-    {{< figureproc
-        image1="microsoft-office-word.png" options1="2560x1440" optionsthumb1="200x150" title1="Microsoft Office Word"
-        image2="microsoft-office-excel.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Microsoft Office Excel"
-        image3="microsoft-office-powerpoint.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
-        caption="Microsoft Office" >}}
-</div>
+{{< figureproc
+    image1="microsoft-office-word.png" options1="2560x1440" optionsthumb1="200x150" title1="Microsoft Office Word"
+    image2="microsoft-office-excel.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Microsoft Office Excel"
+    image3="microsoft-office-powerpoint.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
+    caption="Microsoft Office" >}}
 
 ### LibreOffice
 
 La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://es.libreoffice.org/). Incluye un editor de textos con Writer, hojas de cálculo con Calc, presentaciones con Impress, Draw para crear gráficos y Base para bases de datos sencillas. Sin embargo, la interfaz es el similar al de Office en las ediciones anteriores a la incorporación de _ribbon_ con una estética sin la sensación de estar cuidada. Los menús son largos y encontrar un opción entre las muchas disponibles no es sencillo, al abrir una opción de menú uno se puede sentir intimidado por la longitud del mismo y es algo más difícil encontrar rápidamente la opción buscada entre todas las mostradas. Habrá usuarios que prefieran la interfaz de menús y barras de herramientas, yo soy de los que les gusta más _ribbon_. Está disponible para Windows, Linux y Mac.
 
-<div class="media">
-    {{< figureproc
-        image1="libreoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="LibreOffice Writer"
-        image2="libreoffice-calc.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="LibreOffice Calc"
-        image3="libreoffice-impress.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="LibreOffice Impress"
-        caption="LibreOffice" >}}
-</div>
+{{< figureproc
+    image1="libreoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="LibreOffice Writer"
+    image2="libreoffice-calc.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="LibreOffice Calc"
+    image3="libreoffice-impress.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="LibreOffice Impress"
+    caption="LibreOffice" >}}
 
 ### WPS Office
 
@@ -63,13 +59,11 @@ Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste 
 
 Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para los que ni Microsoft Office ya ofrece soporte, Linux, Android e iOS. Su instalador ocupa únicamente unos 80 MiB contra los más de 3 GiB de Office.
 
-<div class="media">
-    {{< figureproc
-        image1="wpsoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="WPS Office"
-        image2="wpsoffice-spreadsheets.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="WPS Office"
-        image3="wpsoffice-presentation.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="WPS Office"
-        caption="WPS Office" >}}
-</div>
+{{< figureproc
+    image1="wpsoffice-writer.png" options1="2560x1440" optionsthumb1="200x150" title1="WPS Office"
+    image2="wpsoffice-spreadsheets.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="WPS Office"
+    image3="wpsoffice-presentation.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="WPS Office"
+    caption="WPS Office" >}}
 
 ### Google Docs
 
@@ -77,25 +71,21 @@ Otra alternativa a Office es [Google Docs](https://www.google.es/intl/es/docs/ab
 
 Para las empresas se ofrece al precio de 4€ por usuario al mes que incluye el cliente de correo Gmail, calendarios, videollamadas y 30 GB de almacenamiento. Serán 8€ con más opciones de almacenamiento y retención de mensajes.
 
-<div class="media">
-    {{< figureproc
-        image1="googledocs-documento.png" options1="2560x1440" optionsthumb1="200x150" title1="Google Docs"
-        image2="googledocs-hoja-de-calculo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Google Docs"
-        image3="googledocs-presentacion.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Google Docs"
-        caption="Google Docs" >}}
-</div>
+{{< figureproc
+    image1="googledocs-documento.png" options1="2560x1440" optionsthumb1="200x150" title1="Google Docs"
+    image2="googledocs-hoja-de-calculo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Google Docs"
+    image3="googledocs-presentacion.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Google Docs"
+    caption="Google Docs" >}}
 
 ### OnlyOffice
 
 [OnlyOffice][onlyoffice] ofrece también un paquete ofimático básico que se compone de documentos, hojas de cálculo y presentaciones. Tiene una aplicación de escritorio para los principales sistemas operativos y también se puede ejecutar en una nube propia hospedada con [Nextcloud][nextcloud] conservando la propiedad de los documentos y sin el inconveniente de pérdida de privacidad de Google Docs. Son aplicaciones sin todas las opciones que ofrecen Microsoft Office o LibreOffice pero para un uso básico suficiente.
 
-<div class="media">
-    {{< figureproc
-        image1="onlyoffice-documentos.png" options1="2560x1440" optionsthumb1="200x150" title1="OnlyOffice Documentos"
-        image2="onlyoffice-hojas-de-calculo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="OnlyOffice Hojas de cálculo"
-        image3="onlyoffice-presentaciones.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="OnlyOffice Presentaciones"
-        caption="OnlyOffice" >}}
-</div>
+{{< figureproc
+    image1="onlyoffice-documentos.png" options1="2560x1440" optionsthumb1="200x150" title1="OnlyOffice Documentos"
+    image2="onlyoffice-hojas-de-calculo.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="OnlyOffice Hojas de cálculo"
+    image3="onlyoffice-presentaciones.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="OnlyOffice Presentaciones"
+    caption="OnlyOffice" >}}
 
 Alguna otra opción que merece ser comentada es [Calligra][calligra] la _suite_ del [entorno de escritorio KDE][kde], [Abiword][abiword], [Lyx][lyx] o [Gnumeric][gnumeric].
 

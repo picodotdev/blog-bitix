@@ -30,15 +30,11 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
 * [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter)
 
-<div class="media">
-    {{< figure
-        image1="tabla-novedades-java-9.jpg" thumb1="tabla-novedades-java-9-thumb.jpg" title1="Tabla de novedades de Java 9"
-        caption="Tabla de novedades de Java 9" >}}
-</div>
-<div class="media">
-    {{< imageproc
-        image1="duke-java-9.png" options1="300x250" title1="Duke Java 9" >}}
-</div>
+{{< figure
+    image1="tabla-novedades-java-9.jpg" thumb1="tabla-novedades-java-9-thumb.jpg" title1="Tabla de novedades de Java 9"
+    caption="Tabla de novedades de Java 9" >}}
+{{< imageproc
+    image1="duke-java-9.png" options1="300x250" title1="Duke Java 9" >}}
 
 ### Métodos factoría para colecciones
 
@@ -72,11 +68,9 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 
 * [Guía de usuario de jshell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8)
 
-<div class="media">
-    {{< figure
-        image1="jshell.png" thumb1="jshell-thumb.png" title1="jshell"
-        caption="jshell" >}}
-</div>
+{{< figure
+    image1="jshell.png" thumb1="jshell-thumb.png" title1="jshell"
+    caption="jshell" >}}
 
 <div class="media media-video">
     <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0"></iframe>
@@ -157,11 +151,9 @@ Ahora las variables finales o efectivamente finales pueden ser colocadas en los 
 
 Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cuadro de búsqueda para encontrar más fácilmente tipos y métodos.
 
-<div class="media">
-    {{< figure
-        image1="javadoc.png" thumb1="javadoc-thumb.png" title1="Javadoc"
-        caption="Javadoc" >}}
-</div>
+{{< figure
+    image1="javadoc.png" thumb1="javadoc-thumb.png" title1="Javadoc"
+    caption="Javadoc" >}}
 
 ### Archivos Jar multiversión
 

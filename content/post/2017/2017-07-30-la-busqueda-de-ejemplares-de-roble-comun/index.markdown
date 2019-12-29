@@ -33,40 +33,32 @@ El primero que encontré fue en un lugar inesperado y volviendo de jugar un part
 
 Aprovechando el típico paseo andando del fin de semana me he ido fijando y yendo por las zonas donde creía que podría encontrar más. Y sí he encontrado otro cerca de la Universidad de Sarriko, cerca de mi casa, más cerca de lo que esperaba. He pasado muchas veces al lado pero hasta ahora no me había fijado. Con bellotas de muy buen aspecto en las ramas y algunas caídas del año anterior. Las del suelo la mayoría podridas o vacías. Un ejemplar de roble bastante grande aunque sin recibir cuidados y creciendo en total libertad.
 
-<div class="media">
-    {{< figure
-        image1="roble-sarriko-1.jpg" thumb1="roble-sarriko-1-thumb.jpg" title1="Roble en Universidad de Sarriko"
-        image2="roble-sarriko-2.jpg" thumb2="roble-sarriko-2-thumb.jpg" title2="Roble en Universidad de Sarriko"
-        caption="Roble en la Universidad de Sarriko" >}}
-</div>
+{{< figure
+    image1="roble-sarriko-1.jpg" thumb1="roble-sarriko-1-thumb.jpg" title1="Roble en Universidad de Sarriko"
+    image2="roble-sarriko-2.jpg" thumb2="roble-sarriko-2-thumb.jpg" title2="Roble en Universidad de Sarriko"
+    caption="Roble en la Universidad de Sarriko" >}}
 
 También he encontrado un grupo de ellos en una zona ajardinada de un parque en Deusto pegado a la ría. Unos cinco juntos aunque un par de ellos no se si están en el mejor estado. También tenían algunas bellotas en las ramas y algunas en el césped.
 
-<div class="media">
-    {{< figure
-        image1="roble-deusto.jpg" thumb1="roble-deusto-thumb.jpg" title1="Roble en parque de Deusto"
-        caption="Roble en el parque de Deusto" >}}
-</div>
+{{< figure
+    image1="roble-deusto.jpg" thumb1="roble-deusto-thumb.jpg" title1="Roble en parque de Deusto"
+    caption="Roble en el parque de Deusto" >}}
 
 Pasado el museo Guggenheim enfrente de la nueva biblioteca de la Universidad de Deusto en otra zona ajardinada hay otro grupo de robles comunes con muy buen aspecto de salud. No son tan grandes como el de la Universidad de Sarriko pero al estar en una zona ajardinada están mejor cuidados y se nota que están bien sanos.
 
-<div class="media">
+{{< figure
+    image1="roble-abandoibarra-1.jpg" thumb1="roble-abandoibarra-1-thumb.jpg" title1="Roble en Abandoibarra"
+    image2="roble-abandoibarra-2.jpg" thumb2="roble-abandoibarra-2-thumb.jpg" title2="Roble en Abandoibarra" >}}
     {{< figure
-        image1="roble-abandoibarra-1.jpg" thumb1="roble-abandoibarra-1-thumb.jpg" title1="Roble en Abandoibarra"
-        image2="roble-abandoibarra-2.jpg" thumb2="roble-abandoibarra-2-thumb.jpg" title2="Roble en Abandoibarra" >}}
-    {{< figure
-        image1="roble-abandoibarra-3.jpg" thumb1="roble-abandoibarra-3-thumb.jpg" title1="Roble en Abandoibarra"
-        caption="Robles en Abandoibarra" >}}
-</div>
+    image1="roble-abandoibarra-3.jpg" thumb1="roble-abandoibarra-3-thumb.jpg" title1="Roble en Abandoibarra"
+    caption="Robles en Abandoibarra" >}}
 
 Incluso debajo de alguno de ellos hay algunos retoños.
 
-<div class="media">
-    {{< figure
-        image1="plantulas-abandoibarra-1.jpg" thumb1="plantulas-abandoibarra-1-thumb.jpg" title1="Plántulas en Abandoibarra"
-        image2="plantulas-abandoibarra-2.jpg" thumb2="plantulas-abandoibarra-2-thumb.jpg" title2="Plántulas en Abandoibarra"
-        caption="Plántulas en Abandoibarra" >}}
-</div>
+{{< figure
+    image1="plantulas-abandoibarra-1.jpg" thumb1="plantulas-abandoibarra-1-thumb.jpg" title1="Plántulas en Abandoibarra"
+    image2="plantulas-abandoibarra-2.jpg" thumb2="plantulas-abandoibarra-2-thumb.jpg" title2="Plántulas en Abandoibarra"
+    caption="Plántulas en Abandoibarra" >}}
 
 Donde esperaba haber encontrado alguno ha sido en el parque de Doña Casilda y sin embargo solo he encontrado uno apartado y no con tan buen aspecto como los anteriores. Aún así, es otro ejemplar y tenía alguna bellota que en julio aún están verdes.
 
@@ -76,11 +68,9 @@ Con esta primera búsqueda de ejemplares ya tengo identificados casi una decena 
 
 Sin embargo, aprovechando esta ocasión ya he recogido unas cuantas bellotas con buen aspecto del año anterior. Que no son tantas ya que la mayoría están podridas, vacías o son pequeñas.
 
-<div class="media">
-    {{< figure
-        image1="bellotas-roble.jpg" thumb1="bellotas-roble-thumb.jpg" title1="Bellotas de roble común"
-        caption="Bellotas de roble común" >}}
-</div>
+{{< figure
+    image1="bellotas-roble.jpg" thumb1="bellotas-roble-thumb.jpg" title1="Bellotas de roble común"
+    caption="Bellotas de roble común" >}}
 
 Cuando llegue la época de caída de las bellotas recogeré más y seguro que con mejor aspecto y mayor probabilidad de germinar que las que ya tengo. Solo he de tener paciencia y dejar que pase el tiempo. Mientras llega la época adecuada de recolección y aún unos meses más para la germinación aprovecharé para buscar en internet cómo hacer germinar bellotas, que necesita un roble, como cuidarlo sobre todo en el riego necesario.
 

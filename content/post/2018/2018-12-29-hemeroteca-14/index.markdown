@@ -81,43 +81,35 @@ Y varios de opinión o noticias relevantes como la caída de [Sun][sun-microsyst
 
 Revisando los artículos que he publicado en [otras hemerotecas][blogbitix-serie-hemeroteca] hay algunos que parece no los haya escrito hace 2 y 3 años sino mucho menos. El crecimiento tanto en visitas como en ingresos no ha sido tanto como años anteriores, supongo que ya llegado un cierto umbral es difícil conservar los mismos ratios de crecimiento. Todos estos nuevos artículos es nuevo contenido que hace que reciba algunas visitas más y que los ingresos sean algo mayores. Dependiendo de si miro en Analytics o AdSense unas 520K páginas vistas este 2018 no muchas más que las casi 500K del 2017. En cualquier caso en las siguientes imágenes están las estadísticas de este blog por si a alguien le sirven para comparar con el suyo o como previsión de una web similar, a mi me servirá para consultarlo en un futuro y ver la evolución de los datos, también el tiempo necesario para conseguirlo o el número de artículos requeridos.
 
-<div class="media">
-    {{< figureproc
-        image1="analytics-2018.png" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2018 de Blog Bitix"
-        image2="gadsense-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2018 de Blog Bitix"
-        caption="Evolución visitas e ingresos en 2018" >}}
-</div>
+{{< figureproc
+    image1="analytics-2018.png" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2018 de Blog Bitix"
+    image2="gadsense-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2018 de Blog Bitix"
+    caption="Evolución visitas e ingresos en 2018" >}}
 
 Incluyo además algunas métricas que proporciona AdSense de RPM, clics y CPC. Este final de año ha sido especialmente bueno con la semana del _black friday_ como punto álgido llegando casi a 70 € en un mes, en todo el año han sido casi 500 € contra los 450 € del 2017.
 
-<div class="media">
-    {{< figureproc
-        image1="gadsense-ingresos-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
-        image2="gadsense-paginas-vistas-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
-        image3="gadsense-clics-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
-    {{< figureproc
-        image1="gadsense-crt-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2018 de Blog Bitix"
-        image2="gadsense-cpc-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2018 de Blog Bitix"
-        image3="gadsense-rpm-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2018 de Blog Bitix" >}}
-    {{< figureproc
-        image1="gadsense-tipos-de-puja-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2018 de Blog Bitix"
-        image2="gadsense-plataformas-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2018 de Blog Bitix"
-        caption="Métricas de AdSense" >}}
-</div>
+{{< figureproc
+    image1="gadsense-ingresos-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
+    image2="gadsense-paginas-vistas-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
+    image3="gadsense-clics-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
+{{< figureproc
+    image1="gadsense-crt-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2018 de Blog Bitix"
+    image2="gadsense-cpc-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2018 de Blog Bitix"
+    image3="gadsense-rpm-2018.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2018 de Blog Bitix" >}}
+{{< figureproc
+    image1="gadsense-tipos-de-puja-2018.png" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2018 de Blog Bitix"
+    image2="gadsense-plataformas-2018.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2018 de Blog Bitix"
+    caption="Métricas de AdSense" >}}
 
 Además, de AdSense incluyo enlaces de Amazon de algunos productos que compro y de los que publico algún artículo. Este año a través de los enlaces de afiliado de Amazon ha facturado a través de ellos casi 900 € y he recibido a cambio 50 € en comisiones.
 
-<div class="media">
-    {{< figureproc
-        image1="amazon-2018.png" options1="2560x1440" optionsthumb1="600x450" title1="Facturación e ingresos Amazon" >}}
-</div>
+{{< figureproc
+    image1="amazon-2018.png" options1="2560x1440" optionsthumb1="600x450" title1="Facturación e ingresos Amazon" >}}
 
 Como siempre mis deseos de que empecéis bien el nuevo año, en este caso el 2019, ¡buen 2019!.
 
-<div class="media">
-    {{< figureproc
-        image1="christmas-tux-2018.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2018"
-        caption="¡Buen 2019!" source="klowner.com" >}}
-</div>
+{{< figureproc
+    image1="christmas-tux-2018.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2018"
+    caption="¡Buen 2019!" source="klowner.com" >}}
 
 {{% /post %}}

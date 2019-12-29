@@ -16,10 +16,8 @@ tags: ["software", "software-libre", "gnu-linux", "programacion", "planeta-linux
 
 Con este artículo quiero presentar un nuevo proyecto, Blog Stack. [Blog Stack](http://www.blogstack.info/) (BS) es una agregador, planeta, o fuente de información de bitácoras sobre programación, desarrollo, desarrollo ágil, software, software libre, hardware, gnu/linux o en general temas relacionados con la tecnología.
 
-<div class="media">
-	{{< figure
-        image1="blogstack-portada.png" thumb1="blogstack-portada-thumb.png" title1="Portada de Blog Stack" >}}
-</div>
+{{< figure
+    image1="blogstack-portada.png" thumb1="blogstack-portada-thumb.png" title1="Portada de Blog Stack" >}}
 
 Otro agregador o planeta no es ninguna idea nueva pero BS incorpora alguna cosa adicional como poder suscribirse a únicamente el contenido etiquetado en que cada uno esté interesando (programación, desarrollo-ágil, java, python, linux, ubuntu, ...) o recibir el contenido publicado en todas las bitácoras agregadas sin tener que suscribirse individualmente a cada una de ellas. BS aún está en desarrollo y posiblemente vaya incorporando nuevas ideas que me surjan o se me propongan pero en el estado actual ya cumple con la función básica de agregador.
 

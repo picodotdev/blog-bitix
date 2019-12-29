@@ -40,14 +40,12 @@ I start the third installation again on the laptop and perform the activation in
 
 It is the beginning of 2016 and I have not made one but three installations of Windows and Office, more than days of the year have. And I'm still right, using them without a license is still as easy as ever once found the right links in Google, Do a tuesday patch day will install some Windows update that discovers the crack applied to Office? I'll find out.
 
-<div class="media">
+{{< figure
+    image1="windows-10.png" thumb1="windows-10-thumb.png" title1="Windows 10"
+    caption="Windows 10" >}}
     {{< figure
-        image1="windows-10.png" thumb1="windows-10-thumb.png" title1="Windows 10"
-        caption="Windows 10" >}}
-    {{< figure
-        image1="microsoft-word-2016.png" thumb1="microsoft-word-2016-thumb.png" title1="Microsoft Word 2016"
-        caption="Microsoft Word 2016" >}}
-</div>
+    image1="microsoft-word-2016.png" thumb1="microsoft-word-2016-thumb.png" title1="Microsoft Word 2016"
+    caption="Microsoft Word 2016" >}}
 
 If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-225] that suits your needs.
 

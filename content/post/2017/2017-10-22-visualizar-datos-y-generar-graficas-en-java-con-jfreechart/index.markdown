@@ -85,26 +85,22 @@ Desde la propia página web de JFreeChart es posible ejecutar una [aplicación J
 
 {{< code file="demo.sh" language="bash" options="" >}}
 
-<div class="media">
+{{< figure
+    image1="pie-chart.png" thumb1="pie-chart-thumb.png" title1="Gráfica de tarta"
+    image2="polar-chart.png" thumb2="polar-chart-thumb.png" title2="Gráfica de coordenadas polares" >}}
     {{< figure
-        image1="pie-chart.png" thumb1="pie-chart-thumb.png" title1="Gráfica de tarta"
-        image2="polar-chart.png" thumb2="polar-chart-thumb.png" title2="Gráfica de coordenadas polares" >}}
-    {{< figure
-        image1="stacked-xy-bar.png" thumb1="stacked-xy-bar-thumb.png" title1="Gráfica de barras apiladas"
-        image2="time-series.png" thumb2="time-series-thumb.png" title2="Gráfica de series"
-        caption="Ejemplos de gráficas" >}}
-</div>
+    image1="stacked-xy-bar.png" thumb1="stacked-xy-bar-thumb.png" title1="Gráfica de barras apiladas"
+    image2="time-series.png" thumb2="time-series-thumb.png" title2="Gráfica de series"
+    caption="Ejemplos de gráficas" >}}
 
 Este sería el código fuente de un ejemplo sencillo para una gráfica varias series datos. En el ejemplo primeramente se crear el conjunto de datos, el [Dataset](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/data/general/Dataset.html) de la gráfica, se establecen algunos estilos de visualización con [XYLineAndShapeRenderer](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/renderer/xy/XYLineAndShapeRenderer.html), con la clase factoría [ChartFactory](http://www.jfree.org/jfreechart/api/javadoc/org/jfree/chart/ChartFactory.html) se obtiene la gráfica proporcionándole los datos y finalmente generan un archivo en formato _png_ en un archivo, también se podría generar en un [OutputStream](https://docs.oracle.com/javase/9/docs/api/java/io/OutputStream.html) si fuese el caso de una aplicación web que quisiera enviar la imagen al navegador del cliente o también para incluir la imagen en un archivo PDF.
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-<div class="media">
-    {{< figure
-        image1="xy-chart.png" thumb1="xy-chart-thumb.png" title1="Gráfica de series"
-        caption="Gráfica de series" >}}
-</div>
+{{< figure
+    image1="xy-chart.png" thumb1="xy-chart-thumb.png" title1="Gráfica de series"
+    caption="Gráfica de series" >}}
 
 En JavaScript también hay librerías para generar gráficas pero para casos complejos y con muchos datos probablemente sea mejor idea generar las gráficas en el lado del servidor que enviar todos los datos que necesite la gráfica al cliente. En GNU/Linux disponemos del programa [gnuplot][gnuplot] usable desde la línea de comandos y por tanto desde cualquier lenguaje que tenga la capacidad de ejecutar comandos del sistema, [ejecutar un comando del sistema con Java][blogbitix-132] de gnuplot para que nos generase la gráfica. Hay varias posibilidades para visualizar de forma gráfica la información.
 

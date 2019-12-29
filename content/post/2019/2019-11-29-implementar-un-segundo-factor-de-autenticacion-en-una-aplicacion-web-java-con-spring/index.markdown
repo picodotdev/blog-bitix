@@ -28,19 +28,15 @@ A través de [Spring Security][spring-security] y la librería [aerogear-otp-jav
 
 El primer paso de la autenticación utilizando 2FA es introducir el usuario y contraseña. El segundo paso es introducir el código del segundo factor de autenticación. Introducidos ambos el usuario es redirigido a la página de inicio.
 
-<div class="media">
-    {{< figureproc
-        image1="autenticacion-2fa-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Autenticación con segundo factor de autenticación"
-        image2="autenticacion-2fa-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
-        image3="autenticacion-2fa-3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
-        caption="Autenticación con segundo factor de autenticación" >}}
-</div>
+{{< figureproc
+    image1="autenticacion-2fa-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Autenticación con segundo factor de autenticación"
+    image2="autenticacion-2fa-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
+    image3="autenticacion-2fa-3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
+    caption="Autenticación con segundo factor de autenticación" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="google-authenticator.png" options1="2560x1440" optionsthumb1="300x200" title1="Aplicación Google Authenticator con varios generadores de códigos temporales"
-        caption="Aplicación Google Authenticator con varios generadores de códigos temporales" >}}
-</div>
+{{< figureproc
+    image1="google-authenticator.png" options1="2560x1440" optionsthumb1="300x200" title1="Aplicación Google Authenticator con varios generadores de códigos temporales"
+    caption="Aplicación Google Authenticator con varios generadores de códigos temporales" >}}
 
 Validado el código del 2FA al usuario se le asignan los permisos que le corresponden en el sistema y que le otorgan permisos para realizar acciones, en este caso entrar a la página de inicio.
 
@@ -63,11 +59,9 @@ La verificación del código del segundo paso de autenticación se realiza en la
 
 El código QR es una imagen generada a partir del código secreto y una información adicional que al usurio le permite identificar la cuenta, hay _webs_ que permiten [decodificar una imagen QR](https://zxing.org/w/decode.jspx) para analizar que información incorpora, en esta la información de la cuenta _Spring2FA (admin)_ y el secreto _6YFX5TVT76OHHNMS_ utilizado para generar los códigos temporales. En el HTML devuelto se incluye una imagen con la información embebida en el enlace de la imagen, la imagen se genera por un servicio de Google.
 
-<div class="media">
-    {{< figureproc
-        image1="qr-code-decoder.png" options1="2560x1440" optionsthumb1="300x200" title1="Decodificador de imágenes código QR"
-        caption="Decodificador de imágenes código QR" >}}
-</div>
+{{< figureproc
+    image1="qr-code-decoder.png" options1="2560x1440" optionsthumb1="300x200" title1="Decodificador de imágenes código QR"
+    caption="Decodificador de imágenes código QR" >}}
 
 {{< code file="login.html" language="html" options="" >}}
 

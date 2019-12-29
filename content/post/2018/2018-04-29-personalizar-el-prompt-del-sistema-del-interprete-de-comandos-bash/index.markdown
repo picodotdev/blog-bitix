@@ -22,11 +22,9 @@ El _prompt_ se configura con la variable de entorno _PS1_ que en _Bash_ está en
 
 El siguiente es el que utilizo en mi sistema con colores, el nombre del usuario, el nombre sistema y el directorio de trabajo actual.
 
-<div class="media">
-    {{< figureproc
-        image1="prompt-bash-personalizado.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal personalizado"
-        caption="Prompt de la terminal personalizado" >}}
-</div>
+{{< figureproc
+    image1="prompt-bash-personalizado.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal personalizado"
+    caption="Prompt de la terminal personalizado" >}}
 
 Según se edita el _prompt_ el asistente previsualiza como queda en la sección _Preview_, una vez que el _prompt_ es el que deseamos en la sección _Result_ el asistente ofrece el contenido de la variable de entorno _PS1_ que hay que añadir o cambiar en el archivo _~/.bashrc_.
 
@@ -40,19 +38,15 @@ Ahora hay que incluir esta información en el _prompt_ de la siguiente forma.
 
 {{< code file="bashrc-date" language="plaintext" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="prompt-bash-date.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal personalizado con el resultado de un comando"
-        caption="Prompt de la terminal personalizado con el resultado de un comando" >}}
-</div>
+{{< figureproc
+    image1="prompt-bash-date.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal personalizado con el resultado de un comando"
+    caption="Prompt de la terminal personalizado con el resultado de un comando" >}}
 
 Otro caso habitual es añadir la rama de git del directorio actual de trabajo y si esta tiene cambios como comento en [Prompt de la terminal personalizado en carpetas de git con el intérprete Bash][blogbitix-316]. El _script_ necesario que proporciona [Git][git] es más complejo que el caso anterior pero con la misma finalidad, el _script_ está en [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) y requiere modificar la variable de entorno _PS1_ o bien _PROMPT\_COMMAND_.
 
-<div class="media">
-    {{< figureproc
-        image1="git-bash.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
-        caption="Prompt de la terminal personalizado en carpeta de git" >}}
-</div>
+{{< figureproc
+    image1="git-bash.png" options1="2560x1440" optionsthumb1="300x200" title1="Prompt de la terminal por defecto"
+    caption="Prompt de la terminal personalizado en carpeta de git" >}}
 
 {{< reference >}}
 * [Short date in bash PS1 prompt](https://stackoverflow.com/questions/9200862/short-date-in-bash-ps1-prompt)

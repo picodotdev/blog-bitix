@@ -34,11 +34,9 @@ La forma de iniciar y eliminar un _stack_ en un _cluster_ de nodos Docker Swarm 
 {{< code file="06-docker-compose-stack-deploy-nginx.sh" language="bash" options="" >}}
 {{< code file="docker-compose-stack-remove-nginx.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figure
-        image1="nginx-service.png" thumb1="nginx-service-thumb.png" title1=""
-        caption="Cluster de nodos de Docker Swarm con servicio de nginx replicado con 2 instancias" >}}
-</div>
+{{< figure
+    image1="nginx-service.png" thumb1="nginx-service-thumb.png" title1=""
+    caption="Cluster de nodos de Docker Swarm con servicio de nginx replicado con 2 instancias" >}}
 
 En la captura de la terminal se aprecia como estando el _cluster_ formado por tres nodos y el servicio estando replicado con dos instancias Docker Swarm ha decidido iniciar una instancia de contenedor nginx en el _nodo-01_ y otra en el _nodo-03_ pero perfectamente podría haber iniciado una de ellas en el _nodo-02_. Gracias a las capacidades de _networking_ de Docker Swarm con [Routing Mesh](https://docs.docker.com/engine/swarm/ingress/) al cualquier nodo que se le haga una petición al puerto 80 del servicio de nginx devolverá una respuesta, incluso si se hace en el ejemplo la petición al _nodo-02_ la respuesta será devuelta aunque en ese nodo no tenga una instancia de contenedor ejecutándose, realmente redirigirá la petición de forma transparente para el cliente la petición a un nodo que si tenga una instancia de nginx. También, al estar el servicio replicado con dos instancias Docker Swarm realizará automáticamente un [balanceo de carga](https://docs.docker.com/docker-cloud/getting-started/deploy-app/9_load-balance_the_service/) _round-robin_ repartiendo las peticiones entre cada una de las instancias de nginx.
 

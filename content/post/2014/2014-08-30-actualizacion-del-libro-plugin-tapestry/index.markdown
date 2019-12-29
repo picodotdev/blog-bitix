@@ -16,10 +16,8 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 
 Hace un poco más de una año publiqué el [libro PlugIn Tapestry][blogbitix-12] que como su nombre ya adelanta versa sobre el _framework_ [Apache Tapestry][tapestry] para el desarrollo de aplicaciones y páginas web con Java. Casi 300 páginas de documentación que describen este _framework_, como usarlo y va más allá explicando como realizar algunas de las tareas comunes que es necesario hacer en casi todas las aplicaciones web independientemente del _framework_ que elijamos pero en este caso visto desde el punto de vista de Tapestry.
 
-<div class="media">
-    {{< figureproc
-        image1="PugInTapestry (Portada).png" options1="2560x1440" optionsthumb1="300x200" title1="" >}}
-</div>
+{{< figureproc
+    image1="PugInTapestry (Portada).png" options1="2560x1440" optionsthumb1="300x200" title1="" >}}
 
 En esta actualización he revisado capítulos como el Inicio rápido para empezar a desarrollar en unos pocos minutos, la sección que trata sobre Plantillas para dar a las páginas un aspecto común, la sección que trata sobre unas Convenciones para los archivos de literales, ampliada la sección de Principios en la que se detalla cuales son las ideas y objetivos por los que se rige el _framework_, también reescrita la sección de Integración con Spring, una de las librerías más usadas y que facilita el desarrollo enormemente.
 

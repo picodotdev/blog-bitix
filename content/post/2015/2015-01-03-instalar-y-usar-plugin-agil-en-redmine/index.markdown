@@ -18,10 +18,8 @@ Las metodologías ágiles para la gestión de proyectos son ya ampliamente usada
 
 En el modelo de metodología ágil podemos usar un panel kanban donde ver de un vistazo rápido las tareas terminadas, las que están en progreso y las próximas tareas planificadas reflejando la realidad del equipo de desarrollo. Reorganizándolas según prioridades que pueden cambiar de una semana a otra, en las metodologías ágiles no se realiza una planificación completa inicial sino que se va realizando a medida que el proyecto progresa.
 
-<div class="media">
-	{{< figure
-    	image1="panel-kanban.png" thumb1="panel-kanban-thumb.png" title1="Panel Kanban de Redmine" >}}
-</div>
+{{< figure
+    image1="panel-kanban.png" thumb1="panel-kanban-thumb.png" title1="Panel Kanban de Redmine" >}}
 
 También para la gestión de las tareas de los proyectos se suele usar algún tipo de herramienta que permita recoger y gestionar las peticiones adaptada a la metodología que usemos, una de estas herramientas puede ser [Redmine][redmine]. En la [introducción sobre Redmine][blogbitix-57] comentaba que es lo nos puede ofrecer para gestionar el proyecto.
 
@@ -35,18 +33,14 @@ Después de [instalar Redmine con Bitnami][blogbitix-54] si queremos instalar el
 
 Finalmente, debemos activar el plugin agile en el proyecto usando la opción Administration> Agile.
 
-<div class="media">
-	{{< figure
-    	image1="configuracion.png" thumb1="configuracion-thumb.png" title1="Activación panel Kanban" >}}
-</div>
+{{< figure
+    image1="configuracion.png" thumb1="configuracion-thumb.png" title1="Activación panel Kanban" >}}
 
 Una vez activado ya podemos ver el panel kanban mostrado en la primera captura en la pestaña ágil. Por defecto en Redmine solo veremos las columnas New, In progress, Resolved y Feedback pero podemos modificar el flujo de las peticiones adaptándolo a nuestra metodología u organización, podemos hacer esto desde Administración> Estados de peticiones para crear nuevos estados y Administración> Flujo de trabajo para establecer el grafo de estados determinando a que estados puede cambiar una petición desde su estado actual.
 
-<div class="media">
-	{{< figure
-    	image1="estados-peticiones.png" thumb1="estados-peticiones-thumb.png" title1="Estados de peticiones"
-    	image2="flujo-de-trabajo.png" thumb2="flujo-de-trabajo-thumb.png" title2="Flujo de trabajo" >}}
-</div>
+{{< figure
+    image1="estados-peticiones.png" thumb1="estados-peticiones-thumb.png" title1="Estados de peticiones"
+    image2="flujo-de-trabajo.png" thumb2="flujo-de-trabajo-thumb.png" title2="Flujo de trabajo" >}}
 
 {{< reference >}}
 * [Introducción al gestor de proyectos y tareas Redmine][blogbitix-57]

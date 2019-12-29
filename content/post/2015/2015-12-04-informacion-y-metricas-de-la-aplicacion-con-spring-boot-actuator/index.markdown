@@ -43,13 +43,11 @@ En la aplicación Spring Boot incluyendo la dependencia de Spring Boot Actuator 
 
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-<div class="media">
-    {{< figure
-        image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png" title1="Spring Boot Actuator endpoint Health"
-        image2="spring-boot-actuator-env.png" thumb2="spring-boot-actuator-env-thumb.png" title2="Spring Boot Actuator endpoint Env"
-        image3="spring-boot-actuator-metrics.png" thumb3="spring-boot-actuator-metrics-thumb.png" title3="Spring Boot Actuator endpoint Metrics"
-        caption="Spring Boot Actuator endpoints health, env y metrics " >}}
-</div>
+{{< figure
+    image1="spring-boot-actuator-health.png" thumb1="spring-boot-actuator-health-thumb.png" title1="Spring Boot Actuator endpoint Health"
+    image2="spring-boot-actuator-env.png" thumb2="spring-boot-actuator-env-thumb.png" title2="Spring Boot Actuator endpoint Env"
+    image3="spring-boot-actuator-metrics.png" thumb3="spring-boot-actuator-metrics-thumb.png" title3="Spring Boot Actuator endpoint Metrics"
+    caption="Spring Boot Actuator endpoints health, env y metrics " >}}
 
 Spring Boot Actuator es otro de los varios módulos disponibles en Spring Boot. Para conocer más en detalle cuales son sus posibilidades el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617292540/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1617292540&linkCode=as2&tag=blobit-21">Spring Boot in Action</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1617292540" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> lo explica bastante bien.
 

@@ -28,11 +28,9 @@ Para realizar integración y entrega continua hay definir las acciones, tareas y
 
 Añadido el archivo del _pipeline_ al código fuente del proyecto hay que definir un _runner_ que se encargará de ejecutarlo con cada _commit_ que se envíe al repositorio de código fuente. Hay que registrarlo y se necesita un _token_ que se puede obtener desde el área de administración en _Overview > Runners_.
 
-<div class="media">
-    {{< figureproc
-        image1="gitlab-runners.png" options1="2560x1440" optionsthumb1="300x200" title1="Runners"
-        caption="GitLab Runners" >}}
-</div>
+{{< figureproc
+    image1="gitlab-runners.png" options1="2560x1440" optionsthumb1="300x200" title1="Runners"
+    caption="GitLab Runners" >}}
 
 Al registrarlo hay que especificar el tipo de _runner_, hay varios tipos, en este caso se usa el de _docker_ para ejecutar el _pipeline_ dentro de un contenedor de [Docker][docker]. En en archivo de [Docker Compose][docker-compose] es necesario que el _runner_ pueda comunicarse con el servicio de Docker, para ello como punto de montaje del contenedor de _gitlab-runner_ se especificar el archivo _docker.sock_.
 
@@ -40,12 +38,10 @@ Al registrarlo hay que especificar el tipo de _runner_, hay varios tipos, en est
 
 En este ejemplo y con este _pipeline_ el artefacto distribuible de la aplicación y el Javadoc se alamacena en GitLab estando accesible para su descarga desde el panel lateral una vez finalizado el _pipeline_.
 
-<div class="media">
-    {{< figureproc
-        image1="pipelines.png" options1="2560x1440" optionsthumb1="300x200" title1="Pipelines"
-        image2="pipeline.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Pipeline"
-        caption="Pipeline" >}}
-</div>
+{{< figureproc
+    image1="pipelines.png" options1="2560x1440" optionsthumb1="300x200" title1="Pipelines"
+    image2="pipeline.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Pipeline"
+    caption="Pipeline" >}}
 
 El descriptor usando [Docker Compose][docker-compose] que define el servicio de GitLab y otro para GitLab Runner es el siguiente. El nombre de dominio que he utilizado para el servidor es _gitlab_ y ha de añadirse al archivo _/etc/hosts_ para que sea resuelto localmente.
 

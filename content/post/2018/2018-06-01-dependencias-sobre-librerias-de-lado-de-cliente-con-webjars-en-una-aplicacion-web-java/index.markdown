@@ -31,11 +31,9 @@ En el caso del _framework_ web [Apache Tapestry][tapestry] basado en componentes
 
 Inspeccionando el código fuente de la página devuelta se observa que en el caso de Tapestry la URL generada al solicitar en un _webjar_ es del estilo _https\://localhost:8443/assets/webjars/z941c28a3/requirejs/2.3.5/require.js_.
 
-<div class="media">
-    {{< figureproc
-        image1="tapestry-webjars.png" options1="2560x1440" optionsthumb1="650x450" title1="Apache Tapestry con Webjars"
-        caption="Apache Tapestry con Webjars" >}}
-</div>
+{{< figureproc
+    image1="tapestry-webjars.png" options1="2560x1440" optionsthumb1="650x450" title1="Apache Tapestry con Webjars"
+    caption="Apache Tapestry con Webjars" >}}
 
 Los _webjars_ muy útiles para gestionar las librerías de lado cliente que hacen innecesario descargar manualmente las dependencias, automatizan la descarga, hacen muy sencillo actualizar a nuevas versiones y es muy fácil de usar al no requerir mucha confiración ni ser invasiva. Además, al estar como una dependencia en el archivo de construcción del proyecto queda indicado de forma explícita que el proyecto utiliza y necesita esa librería. Para mi son una herramienta imprescindible.
 

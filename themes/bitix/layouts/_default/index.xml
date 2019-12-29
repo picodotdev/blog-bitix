@@ -12,7 +12,7 @@
     {{ range first 15 (where .Site.RegularPages ".Params.rss" true) }}
     <entry>
         <id>{{ .Permalink }}</id>
-        <title>{{ .Title }}</title>        
+        <title>{{ .Title }}</title>
         <updated>{{ if isset .Params "updated" }}{{ .Params.updated | safeHTML }}{{ else }}{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}{{ end }}</updated>
         <published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
         <link rel="alternate" href="{{ .Permalink }}"/>

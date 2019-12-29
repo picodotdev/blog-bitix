@@ -19,11 +19,9 @@ En un [artículo de introducción sobre la programación concurrente en Java][bl
 
 Dado que dos filósofos no puede utilizar el mismo tenedor a la vez hay que implementar sincronización a la hora de utilizarlos. En la realidad un filósofo representa a un proceso y un tenedor representa a un recurso compartido de uso exclusivo.
 
-<div class="media">
-    {{< figureproc
-        image1="dining-philosophers.png" options1="2560x1440" optionsthumb1="300x200" title1="La cena de los filósofos"
-        caption="La cena de los filósofos" >}}
-</div>
+{{< figureproc
+    image1="dining-philosophers.png" options1="2560x1440" optionsthumb1="300x200" title1="La cena de los filósofos"
+    caption="La cena de los filósofos" >}}
 
 La solución del ejemplo que ponía en el artículo anterior no era completamente correcto ya que un filósofo si tiene mala suerte podría quedarse sin  comer o sin comer durante mucho tiempo, debido a que en esa implementación el filósofo intentaba coger los tenedores y si no podía desistía si alguno de sus compañeros los estuviese utilizando. Las reglas que ha de cumplir una solución a un problema de concurrencia para considerarse válida son:
 
@@ -47,7 +45,7 @@ En esta implementación he optado por hacer que el último filósofo en vez de s
 {{< code file="Fork.java" language="java" options="" >}}
 {{< code file="Philosopher.java" language="java" options="" >}}
 
-{{< asciinema id="165278" caption="Ejemplo de concurrencia de los filósofos" >}}
+{{< asciinema id="165278"    caption="Ejemplo de concurrencia de los filósofos" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 

@@ -44,21 +44,17 @@ El identificador UUID de un dispositivo se obtiene con el comando _lsblk_.
 
 Con esta configuración para el explorador de archivos en este caso Nautilus de [GNOME][gnome] la ubicación de estos archivos de usuario es transparente, los directorios aparecen en el panel lateral. Aunque en el directorio _home_ siguen existiendo las carpetas originales de los directorios de usuario realmente cuando se hace clic en el panel lateral del directorio _Documentos_ se muestra el contenido _/run/media/bmovenegro/Documentos_ y no de _~/Documentos_.
 
-<div class="media">
-    {{< figureproc
-        image1="gnome-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-        image2="usb-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
-        caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
-</div>
+{{< figureproc
+    image1="gnome-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+    image2="usb-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 En el caso de GNU/Linux los directorios de usuario además están localizados de forma automática, esto es al listar los directorios los nombres están en el idioma del usuario de forma consistente, al contrario de como ocurre en otros sistemas operativos que sus nombres se mantienen en inglés aún en su explorador de archivos aparecer en el idioma del usuario creando una inconsistencia entre los nombres que se listan desde la terminal y los que aparecen en su explorador de archivos. 
 
-<div class="media">
-    {{< figureproc
-        image1="terminal-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
-        image2="usb-terminal-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
-        caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
-</div>
+{{< figureproc
+    image1="terminal-user-dirs.png" options1="2560x1440" optionsthumb1="300x200" title1="Directorios de usuario en el directorio home"
+    image2="usb-terminal-user-dirs.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Directorios de usuario en disco USB externo"
+    caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 
 {{< reference >}}
 * [XDG user directories](https://wiki.archlinux.org/index.php/XDG_user_directories)

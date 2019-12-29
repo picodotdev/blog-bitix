@@ -29,17 +29,13 @@ Por ejemplo, para la siguientes clases nos podría interesar obtener las trazas 
 
 Este sería el resultado:
 
-<div class="media">
-	{{< figure
-    	image1="sin-filtro.png" thumb1="sin-filtro-thumb.png" >}}
-</div>
+{{< figure
+    image1="sin-filtro.png" thumb1="sin-filtro-thumb.png" >}}
 
 Para conseguir solo las trazas de una funcionalidad se pueden utilizar los marcadores («markers») de forma que además de por el nivel del mensaje de traza y el logger podamos filtrar por el marcador asociado a la traza. El marcador de una traza es una etiqueta por la que posteriormente podemos filtrar. Si una funcionalidad estuviese repartida por varias clases podríamos usar el mismo marcador en todas esas trazas de forma que podamos filtrar luego por él. El resultado del ejemplo completo sería el siguiente:
 
-<div class="media">
-	{{< figure
-    	image1="con-filtro.png" thumb1="con-filtro-thumb.png" >}}
-</div>
+{{< figure
+    image1="con-filtro.png" thumb1="con-filtro-thumb.png" >}}
 
 En ambos resultados puede verse el nombre del marcador (IMP de importación, PER de persistencia, UTL de utilidad) asociado a la traza, en el segundo solo se muestran las trazas con el marcador IMP de la funcionalidad de importación.
 

@@ -21,12 +21,10 @@ En estos seis meses en vez de publicar un solo artículo por semana he estado pu
 
 A pesar de la gran mejora en número de visitas mensuales durante este año cuesta un horror hacer crecer al blog y escribir y publicar al ritmo que lo he estado haciendo durante estos últimos meses. Hay que tener un poco de intuición y algo de suerte para acertar con artículos que se posicionen bien en los buscadores si lo que queremos es aumentar las visitas.
 
-<div class="media">
-    {{< figure
-        image1="analytics-2016.png" thumb1="analytics-2016-thumb.png" title1="Analytics 2016 de Blog Bitix"
-        image2="gadsense-2016.png" thumb2="gadsense-2016-thumb.png" title2="AdSense 2016 de Blog Bitix"
-        caption="Evolución visitas e ingresos de AdSense en 2016" >}}
-</div>
+{{< figure
+    image1="analytics-2016.png" thumb1="analytics-2016-thumb.png" title1="Analytics 2016 de Blog Bitix"
+    image2="gadsense-2016.png" thumb2="gadsense-2016-thumb.png" title2="AdSense 2016 de Blog Bitix"
+    caption="Evolución visitas e ingresos de AdSense en 2016" >}}
 
 Una de las cosas que me estoy arrepintiendo ahora es no de tener dominio propio, no lo hice porque con [GitHub Pages][github-pages] me ofrecía el hospedaje gratis y sin complicaciones. Ahora me plantearía hospedar el blog en una máquina de [Linode][linode], [Digital Ocean][digital-ocean] o en la reciente competencia de estos con [Amazon Lightsail][amazon-lightsail]. Mas que por necesidad por practicar con [Ansible][ansible] e implementar en el blog HTTPS/2 o usar [Let's encrypt][letsencrypt] asi como aprender sobre esos servicios en la nube. La migración es posible pero posiblemente no perfecta.
 
@@ -95,10 +93,8 @@ En la categoría de artículos de opinion junto con otros de teḿatica variada 
 
 ¡Felices fiestas! ¡A por el 2017!
 
-<div class="media">
-    {{< figureproc
-        image1="christmas-tux-2016.jpg" options1="2560x1440" optionsthumb1="600x450" title1="¡Felices fiestas y buen 2017!"
-        caption="¡Felices fiestas y buen 2017!" source="klowner.com" >}}
-</div>
+{{< figureproc
+    image1="christmas-tux-2016.jpg" options1="2560x1440" optionsthumb1="600x450" title1="¡Felices fiestas y buen 2017!"
+    caption="¡Felices fiestas y buen 2017!" source="klowner.com" >}}
 
 {{% /post %}}

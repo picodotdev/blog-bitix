@@ -51,14 +51,12 @@ Cuando un servidor falla al servir una petición Nginx lo marca como en estado e
 
 Si queremos que el cliente conozca que servidor atendió la petición podemos añadir la [directiva _add\_header_](http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header) usando una de las [variables añadidas por el módulo  _ngx\_http\_upstream_](http://nginx.org/en/docs/http/ngx_http_upstream_module.html#variables), nos servirá para depurar la aplicación en tiempo de desarrollo.
 
-<div class="media">
+{{< figure
+    image1="nginx-load-balancer-1.png" thumb1="nginx-load-balancer-1-thumb.png" title1="Servidor balanceado 172.17.0.2:8080"
+    image2="nginx-load-balancer-2.png" thumb2="nginx-load-balancer-2-thumb.png" title2="Servidor balanceado 172.17.0.3:8080" >}}
     {{< figure
-        image1="nginx-load-balancer-1.png" thumb1="nginx-load-balancer-1-thumb.png" title1="Servidor balanceado 172.17.0.2:8080"
-        image2="nginx-load-balancer-2.png" thumb2="nginx-load-balancer-2-thumb.png" title2="Servidor balanceado 172.17.0.3:8080" >}}
-    {{< figure
-        image1="nginx-load-balancer-3.png" thumb1="nginx-load-balancer-3-thumb.png" title1="Servidor balanceado 172.17.0.4:8080"
-        caption="Nginx balanceando la carga entre 3 servidores de aplicaciones Tomcat" >}}
-</div>
+    image1="nginx-load-balancer-3.png" thumb1="nginx-load-balancer-3-thumb.png" title1="Servidor balanceado 172.17.0.4:8080"
+    caption="Nginx balanceando la carga entre 3 servidores de aplicaciones Tomcat" >}}
 
 En el ejemplo de configuración usaré [Docker][docker] para crear un servidor web Nginx que haga de balanceador de carga entre tres servidores de aplicaciones Tomcat. Con Docker hacer esta prueba es mucho más sencilla que instalar tres Tomcats y un servidor Nginx a travbés de los paquetes del sistema o descargando binarios, puedes leer los [artículos de la serie Docker][blogbitix-serie-docker] que he escrito para conocer como usarlo y que ofrece esta útil herramienta. El archivo de _docker-compose.yml_ completo es el siguiente:
 

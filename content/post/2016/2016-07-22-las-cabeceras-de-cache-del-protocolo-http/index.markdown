@@ -23,12 +23,10 @@ El cacheo o almacenamiento temporal de datos puede hacerse a diferentes niveles 
 
 Según la cantidad de tiempo de expiración que establezcamos como cache para el contenido conseguiremos variar el número de aciertos en la cache, aumentando el tiempo unos pocos segundos el tiempo que almacenamos en la cache el contenido conseguimos aumentar el porcentaje de aciertos en mayor medida. Con un tiempo de cache de un minuto ya se consiguen porcentajes elevados de aciertos según el número de peticiones realizadas en ese periodo de tiempo.
 
-<div class="media">
-    {{< figure
-        image1="cache-hit.png" thumb1="cache-hit-thumb.png" title1="Petición con acierto en cache"
-        image2="cache-miss.png" thumb2="cache-miss-thumb.png" title2="Petición con fallo en cache"
-        caption="Petición con acierto y fallo en la cache" >}}
-</div>
+{{< figure
+    image1="cache-hit.png" thumb1="cache-hit-thumb.png" title1="Petición con acierto en cache"
+    image2="cache-miss.png" thumb2="cache-miss-thumb.png" title2="Petición con fallo en cache"
+    caption="Petición con acierto y fallo en la cache" >}}
 
 En el protocolo HTTP 1.1 se definieron tres mecanismos para las caches:
 

@@ -38,18 +38,14 @@ Descargado el [código fuente de la aplicación de ejemplo](https://github.com/p
 
 Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Derteniendo la aplicación e iniciándolo de nuevo los datos de la sesión no se pierden al estar persistidos en Redis, el navegador envía la _cookie_ de sesión que contiene únicamente su identificativo y la aplicación recupera los datos de Redis.
 
-<div class="media">
-	{{< figure
-    	image1="dato-en-sesion.png" thumb1="dato-en-sesion-thumb.png" title1="Dato en sesión"
-    	image2="cookie-navegador.png" thumb2="cookie-navegador-thumb.png" title2="Cookie de sesión en el navegador" >}}
-</div>
+{{< figure
+    image1="dato-en-sesion.png" thumb1="dato-en-sesion-thumb.png" title1="Dato en sesión"
+    image2="cookie-navegador.png" thumb2="cookie-navegador-thumb.png" title2="Cookie de sesión en el navegador" >}}
 
 Examinando los datos en Redis se puede ver que se ha creado una clave con el mismo identificativo de la cookie de sesión, en la clave están guardados los valores serializados entre ellos el nombre del atributo y su valor y otros datos como la fecha de creación, el último acceso y el intervalo máximo de inactividad antes de la expiración.
 
-<div class="media">
-	{{< figure
-    	image1="contenido-sesion-redis.png" thumb1="contenido-sesion-redis-thumb.png" title1="Contenido sesión en redis" >}}
-</div>
+{{< figure
+    image1="contenido-sesion-redis.png" thumb1="contenido-sesion-redis-thumb.png" title1="Contenido sesión en redis" >}}
 
 En el momento de escribir este artículo Spring Session es un proyecto reciente y solo soporta la opción de Redis como caché externa pero seguramente con nuevas versiones soporte otras opciones como _memcached_, guardar la sesión en una _cookie_ o en una base de datos relacional. La solución propuesta por Spring Session es válida para cualquier servidor de aplicaciones ya que se basa en crear un filtro en la aplicación que proporciona una versión modificada de [HttpSession](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpSession.html) mediante el cual se guardan los datos de forma externa.
 

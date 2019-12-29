@@ -16,10 +16,8 @@ tags: ["java", "programacion", "tapestry", "planeta-codigo"]
 
 Por motivos de usabiliad en algunas páginas se incluyen dos barra de botones, una antes de una larga sección y otra después. El motivo de la doble barra de botones inicial es que no sea necesario hacer «scroll» hasta el final de la página para acceder a los botones y realizar la acción que permitan. Por el contrario, inlcuir la barra de botones al final de la página permite que una vez seleccionados los elementos o revisado el contenido de la sección hacer disponibles las acciones que es probable que se quieran realizar.
 
-<div class="media">
-	{{< figure
-    	image1="doble-barra-botones.png" thumb1="doble-barra-botones-thumb.png" title1="Doble barra de botones" >}}
-</div>
+{{< figure
+    image1="doble-barra-botones.png" thumb1="doble-barra-botones-thumb.png" title1="Doble barra de botones" >}}
 
 Dependiendo del _framework_ web que utilicemos podremos hacerlo de una o varias formas pero de lo que estamos seguros es que copiar y pegar haciendo que el código esté duplicado no es una buena idea por los problemas de mantenimiento que puede suponer. Pero crear una pequeña plantilla o archivo exclusivo para incluir la barra de botones tampoco es la solución ideal, ¿por que? pues porque creando un archivo específico con la botonera puede que nos ocasione un problema que denominaré de «microgestión», es decir, nos obliga a crear un montón de pequeños archivos pequeñitos y hacer referencia o utilizar el mecanismo de inclusión que dispongamos para usar el contenido en unos de otros. En una aplicación grande esta microgestión si nos vemos obligados a ella puede llegar a ser molesta al desarrollar cuanto menos.
 

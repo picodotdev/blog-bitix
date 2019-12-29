@@ -31,11 +31,9 @@ Para generar un artefacto con la documentación comprimida en un archivo _zip_ h
 
 Con Gradle la documentación Javadoc se genera en el directorio _build/xxx_ y el artefacto en el directorio _build/xxx_. Con las opciones anteriores este es el resultado del HTML generado.
 
-<div class="media">
-    {{< figure
-        image1="javadoc.png" thumb1="javadoc-thumb.png" title1="Artefacto generado con la documentación javadoc"
-        caption="Artefacto generado con la documentación javadoc" >}}
-</div>
+{{< figure
+    image1="javadoc.png" thumb1="javadoc-thumb.png" title1="Artefacto generado con la documentación javadoc"
+    caption="Artefacto generado con la documentación javadoc" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew build" >}}
 

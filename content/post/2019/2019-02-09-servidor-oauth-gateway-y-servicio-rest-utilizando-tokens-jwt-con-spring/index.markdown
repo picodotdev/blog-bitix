@@ -60,11 +60,9 @@ Con el _endpoint_ _/oauth/check\_token_ se decodifica el _token_. En la página 
 
 {{< code file="oauth/curl.sh" language="bash" options="" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="encoded-decoded-jwt.png" options1="2560x1440" optionsthumb1="600x450" title1="Token JWT codificado y decodificado"
-        caption="Token JWT codificado y decodificado" >}}
-</div>
+{{< figureproc
+    image1="encoded-decoded-jwt.png" options1="2560x1440" optionsthumb1="600x450" title1="Token JWT codificado y decodificado"
+    caption="Token JWT codificado y decodificado" >}}
 
 ### Servidor Gateway
 
