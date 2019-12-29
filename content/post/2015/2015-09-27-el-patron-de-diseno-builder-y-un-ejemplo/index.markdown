@@ -52,8 +52,7 @@ En el libro <a href="https://www.amazon.es/gp/product/0321356683/ref=as_li_ss_tl
 
 En el apartado de referencia puedes encontrar más artículos que he escrito sobre otros patrones de diseño.
 
-{{% reference %}}
-
+{{< reference >}}
 * [8+ libros para mejorar como programadores][blogbitix-55]
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
 * [Ejemplo del patrón de diseño _No Operation_][blogbitix-8]
@@ -62,6 +61,6 @@ En el apartado de referencia puedes encontrar más artículos que he escrito sob
 * [Implementación de máquina de estados finita (FSM) con Java 8][blogbitix-93]
 * [Patrón múltiples vistas de un mismo dato en Tapestry][blogbitix-83]
 * [Novedades y nuevas caracteristicas de Java 8][blogbitix-17]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -74,8 +74,7 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [GraphQL][graphql]
 * [Welcome to graphql-java](https://graphql-java.readthedocs.io/en/v5/)
 * [GraphQL Java implementation](https://github.com/graphql-java/graphql-java)
@@ -85,6 +84,6 @@ Finalmente, el archivo de construcción de [Gradle][gradle] del ejemplo con las 
 * [¿Por qué deberíamos abandonar REST y empezar a usar GraphQL en nuestras APIs?](https://www.genbetadev.com/desarrollo-aplicaciones-moviles/por-que-deberiamos-abandonar-rest-y-empezar-a-usar-graphql-en-nuestras-apis)
 * [GraphQL: ¡todos para uno y uno para todos!](https://www.paradigmadigital.com/dev/graphql-todos-uno-uno-todos/)
 * [Introducción a GraphQL](https://www.adictosaltrabajo.com/tutoriales/introduccion-a-graphql/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

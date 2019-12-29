@@ -66,11 +66,10 @@ En el [tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial) encontraremos m√
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoByteBuddy" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Byte Buddy][bytebuddy]
 * [Tutorial de Byte Buddy](http://bytebuddy.net/#/tutorial)
 * [Java Magazine Nov/Dic 2015](http://www.javamagazine.mozaicreader.com/NovDec2015/Twitter)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

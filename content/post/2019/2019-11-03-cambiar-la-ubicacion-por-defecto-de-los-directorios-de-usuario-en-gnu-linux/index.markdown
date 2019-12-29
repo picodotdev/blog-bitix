@@ -60,10 +60,9 @@ En el caso de GNU/Linux los directorios de usuario además están localizados de
         caption="Directorios de usuario en el directorio home y en disco USB externo" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [XDG user directories](https://wiki.archlinux.org/index.php/XDG_user_directories)
 * [Change the location of subfolders in your Home partition](https://sites.google.com/site/installationubuntu/tweaking-ubuntu/change-the-location-of-subfolders-in-your-home-partition)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

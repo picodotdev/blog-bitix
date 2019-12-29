@@ -51,9 +51,8 @@ En esta implementación he optado por hacer que el último filósofo en vez de s
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Dining Philosophers in Java 8](https://bruceeckel.github.io/2016/12/29/dining-philosophers-in-java-8/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

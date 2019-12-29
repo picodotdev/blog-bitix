@@ -36,9 +36,8 @@ El resultado se puede ver en la siguiente captura de pantalla.
 
 Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como [obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails][blogbitix-26], esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Detectar problema N+1 y obtener estadísticas de Hibernate con Grails][blogbitix-26]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

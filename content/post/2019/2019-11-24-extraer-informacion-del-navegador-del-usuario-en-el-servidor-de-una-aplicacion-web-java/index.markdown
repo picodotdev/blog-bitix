@@ -34,12 +34,11 @@ Accediendo a la dirección del controlador _http\://localhost:8080_ se obtienen 
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaUserAgent" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [MDN User-Agent](https://developer.mozilla.org/es/docs/Web/HTTP/Headers/User-Agent)
 * [Firefox user agent string reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox)
 * [Browser detection using the user agent](https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent)
 * [NavigatorID.userAgent](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

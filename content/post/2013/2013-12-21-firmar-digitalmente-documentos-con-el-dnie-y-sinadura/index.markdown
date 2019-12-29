@@ -74,13 +74,12 @@ La linea de comandos producirá el mismo resultado que el uso con la interfaz gr
 
 En definitiva, la firma digital de documentos es otro uso que le podemos dar al DNI electrónico y con Sinadura realizarlo es bastante sencillo.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Crear una par de claves GPG][elblogdepicodev-181]
 * [Como firmar correos electrónicos con GPG][elblogdepicodev-182]
 * [Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux ][elblogdepicodev-183]
 * [Usar el DNI electrónico con Firefox en Linux][blogbitix-1]
 * [Enviar correos electrónicos firmados con el DNIe y Evolution][blogbitix-2]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

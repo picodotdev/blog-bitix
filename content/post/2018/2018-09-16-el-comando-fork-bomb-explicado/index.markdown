@@ -33,9 +33,8 @@ Para GNU/Linux y los sistemas operativos en general uno de sus requisitos es que
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/Q9Mdy7H8Qmc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Fork Bomb](https://en.wikipedia.org/wiki/Fork_bomb)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

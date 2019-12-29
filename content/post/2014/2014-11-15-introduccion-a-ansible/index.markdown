@@ -65,8 +65,7 @@ Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la document
 
 Habiendo hecho una [introducción a Docker][blogbitix-49] y esta a Ansible en el siguiente artículo comentaré [como usar Docker con Ansible][blogbitix-53].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Artículo en la wikipedia](https://en.wikipedia.org/wiki/Ansible_%28software%29)
 * [Presentación sobre Ansible](https://speakerdeck.com/slok/ansible-all-the-things)
 * [Ansible examples](https://github.com/ansible/ansible-examples)
@@ -75,6 +74,6 @@ Habiendo hecho una [introducción a Docker][blogbitix-49] y esta a Ansible en el
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Integración entre Ansible y Docker][blogbitix-53]
 * [Introducción a Bitnami][blogbitix-54]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

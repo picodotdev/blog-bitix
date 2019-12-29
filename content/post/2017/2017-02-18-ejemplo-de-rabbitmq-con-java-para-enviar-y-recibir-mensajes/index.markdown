@@ -70,13 +70,12 @@ Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos b
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [RabbitMQ][rabbitmq]
 * [Documentación RabbitMQ](http://www.rabbitmq.com/documentation.html)
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 * [Introducción y ejemplo sencillo de Java Message Service (JMS)][blogbitix-15]
 * [Publicación y suscripción de eventos con Guava EventBus en una aplicación Java][blogbitix-422]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

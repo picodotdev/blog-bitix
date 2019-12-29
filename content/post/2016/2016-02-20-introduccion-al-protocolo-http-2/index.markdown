@@ -50,8 +50,7 @@ En definitiva el protocolo HTTP/2 supone una mejora de rendimiento para los clie
 
 En el siguiente artículo comentaré cómo poner esto en práctica y [configurar HTTP/2 con el servidor web Nginx, Apache HTTPD y el servidor de aplicaciones Java WildFly o Jetty][blogbitix-129].
 
-{{% reference %}}
-
+{{< reference >}}
 * [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2)
 * [HTTP](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
 * [HTTP/2 FAQ](https://http2.github.io/faq/)
@@ -62,6 +61,6 @@ En el siguiente artículo comentaré cómo poner esto en práctica y [configurar
 * [HTTP/2 For Web Developers](https://blog.cloudflare.com/http-2-for-web-developers/)
 * [Tools for debugging, testing and using HTTP/2](https://blog.cloudflare.com/tools-for-debugging-testing-and-using-http-2/)
 * [Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

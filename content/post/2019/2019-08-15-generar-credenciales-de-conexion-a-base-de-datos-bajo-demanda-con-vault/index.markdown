@@ -56,10 +56,9 @@ En las aplicaciones Java que utilizan [Spring][spring] el proyecto [Spring Cloud
 
 Esto permite que únicamente Vault conozca la cuenta _root_ de la base de datos o una con suficientes permisos para crear credenciales, las aplicaciones no almacenan en su configuración las credenciales para conectarse la base de datos solo las de Vault que le permiten obtener unas credenciales para la base de datos con un tiempo de vida limitado y que pueden revocarse desde Vault en caso de un problema de seguridad para cuales quiera bases de datos que se utilicen.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

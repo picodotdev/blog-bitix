@@ -122,8 +122,7 @@ Oracle ya no ofrece el entorno de ejecución JRE ni versiones de 32 bits para Wi
 
 Las anteriores son las funcionalidades que he considerado más destacables para todos los usuarios., También hay otras funcionalidades añadidas, soporte eliminado para funciones específicas o de funcionamiento interno.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducing Java SE 11](https://developer.oracle.com/java/java11)
 * [JDK 11 Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html)
 * [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/)
@@ -137,6 +136,6 @@ Las anteriores son las funcionalidades que he considerado más destacables para 
 * [Java Mission Control - Now serving OpenJDK binaries too!](https://twitter.com/java/status/1044609723012665344)
 * [Oracle JDK 11 Migration Guide](https://docs.oracle.com/en/java/javase/11/migrate/index.html)
 * [Countdown to Java Release Date](http://www.java-countdown.xyz/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

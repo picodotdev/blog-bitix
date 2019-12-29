@@ -51,10 +51,9 @@ Si preferimos realizar la conversión mediante una interfaz gráfica podemos usa
         image1="vlc-output.png" thumb1="vlc-output-thumb.png" title1="Salida de conversión" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación de FFmpeg](https://trac.ffmpeg.org/wiki)
 * [FFmpeg audio format conversions](http://linuxconfig.org/ffmpeg-audio-format-conversions)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

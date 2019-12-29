@@ -35,10 +35,9 @@ Sin embargo, por algún motivo con Eureka los servicios no se registran en el pu
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Spring Boot Random Server Port](https://javadeveloperzone.com/spring-boot/spring-boot-random-server-port/)
 * [Registro y descubrimiento de servicios con Spring Cloud y Consul][blogbitix-206]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

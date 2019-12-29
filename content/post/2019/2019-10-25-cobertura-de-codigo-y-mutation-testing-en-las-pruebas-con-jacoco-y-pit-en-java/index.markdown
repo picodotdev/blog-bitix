@@ -89,12 +89,11 @@ Para generar los informes de cobertura de código y de mutación en Java y usand
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaMutationTesting" command="./gradlew test jacocoTestReport pitest" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Mutation testing – PIT nuestro gran amigo](http://qajungle.com/mutation-testing-pit-nuestro-gran-amigo/)
 * [Pitest - mutation testing in Java](https://beyondscheme.com/2016/pitest-with-java)
 * [Mutation Testing with PITest](https://www.baeldung.com/java-mutation-testing-with-pitest)
 * [Mutation Testing con PIT](https://www.adictosaltrabajo.com/2015/11/10/mutation-testing-con-pit/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

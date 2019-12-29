@@ -29,10 +29,9 @@ El algoritmo o algoritmos que necesitemos para extraer la información será esp
 
 Pero hay que tener cuidado con el contenido «scrapeado» y se debe tratar como una fuente de datos no segura. Por seguridad hay que tener especial cuidado con los scripts del contenido importado que podrían hacer que nuestra aplicación al mostrarlos tuviese algún problema de seguridad. La siguiente semana explicaré [como «scrapear» contenido de forma segura][blogbitix-48] en un ejemplo real como es el agregador de bitácoras [Blog Stack][blogstack] donde solo se permiten los scripts de fuentes consideradas seguras como presentaciones de [Speakerdeck][speakerdeck], [Gist][github-gist] de GitHub, [YouTube][youtube], [Vimeo][vimeo] o publicidad del [programa de afiliados de Amazon][amazon-afiliados].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Cómo filtrar contenido HTML de forma segura][blogbitix-48]
 * [Cómo hacer un substring de una cadena html][blogbitix-61]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

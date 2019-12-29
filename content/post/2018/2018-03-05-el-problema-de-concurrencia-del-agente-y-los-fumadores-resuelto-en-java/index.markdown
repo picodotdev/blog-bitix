@@ -40,10 +40,9 @@ En el siguiente [documento con varios de los problemas de concurrencia y sincron
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaConcurrency" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Cigarette smokers problem](https://en.wikipedia.org/wiki/Cigarette_smokers_problem)
 * [Introducción sobre la programación concurrente en Java][blogbitix-246]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

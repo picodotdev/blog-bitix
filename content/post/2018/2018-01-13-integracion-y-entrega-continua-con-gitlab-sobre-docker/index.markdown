@@ -55,12 +55,11 @@ En la sección de referencia hay unos buenos enlaces de documentación de GitLab
 
 {{< sourcecode git="blog-ejemplos/tree/master/GitLab" command="docker-compose -f docker-compose-all.yml up" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [GitLab Continuous Integration (GitLab CI/CD)](https://docs.gitlab.com/ce/ci/)
 * [Getting started with GitLab CI/CD](https://docs.gitlab.com/ce/ci/quick_start/README.html)
 * [Configuration of your jobs with .gitlab-ci.yml](https://docs.gitlab.com/ce/ci/yaml/README.html)
 * [A sample of .gitlab-ci.yml for a gradle project](https://gist.github.com/daicham/5ac8461b8b49385244aa0977638c3420)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

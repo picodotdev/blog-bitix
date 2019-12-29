@@ -38,11 +38,10 @@ La sentencia _SELECT_ se compone de varias cláusulas que se interpretan siguien
 
 Este es el orden general pero el algoritmo del planificador puede optimizar estos pasos realizándose en diferente orden o incluso simultáneamente. Por ejemplo, si se especifica un límite de 1 no es necesario obtener todas las filas de las tablas fuente sino solo una que cumpla la condición _WHERE_.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Logical Processing Order of the SELECT statement](https://msdn.microsoft.com/en-us/library/ms189499.aspx)
 * [Libro Learning PostgreSQL 11](https://amzn.to/2Jai732)
 * [Sintaxis de sentencia SELECT en MySQL](https://dev.mysql.com/doc/refman/8.0/en/select.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

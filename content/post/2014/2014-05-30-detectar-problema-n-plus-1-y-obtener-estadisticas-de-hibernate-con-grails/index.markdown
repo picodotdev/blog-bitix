@@ -57,12 +57,11 @@ En la imagen se puede apreciar las consultas lanzadas y que parámetros se han e
 
 Obtener información de lo que sucede en la aplicación es importante y el _framework_ debería ayudar, también podemos [mejorar lo que ofrece Grails con una página de excepción más informativa][blogbitix-25]. En [Tapestry](http://tapestry.apache.org/) es más sencillo aún ya que incluyendo la dependencia de tapestry-hibernate ya se añade a la [página Dashboard y un apartado con estas estadísticas][blogbitix-28], pero esto último será tema para otro artículo.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Página de excepción de Grails][blogbitix-25]
 * https://stackoverflow.com/questions/11621495/how-can-i-obtain-grails-hibernate-l2-cache-statistics<br>
 * https://stackoverflow.com/questions/2568507/how-to-log-sql-statements-in-grails<br>
 * https://hibernate.atlassian.net/browse/HHH-3659
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

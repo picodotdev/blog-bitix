@@ -48,11 +48,10 @@ Tabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones
 
 {{< sourcecode git="blog-ejemplos/tree/master/DateTimeDatabase" command="cd misc/docker/postgresql/, docker-compose up, ./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Convertir fechas y husos horarios en Java][blogbitix-64]
 * [Always store dates/times in UTC (in the database)](http://ideas.kentico.com/forums/239189-kentico-product-ideas/suggestions/6825844-always-store-dates-times-in-utc-in-the-database)
 * [Por qué guardar los importes con al menos un decimal más de la precisión necesaria][blogbitix-389]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

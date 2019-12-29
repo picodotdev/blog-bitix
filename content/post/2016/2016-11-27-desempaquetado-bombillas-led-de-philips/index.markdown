@@ -51,9 +51,8 @@ En [Amazon][amazon] hay una amplia gama de bombillas LED variando en tipo de cas
         caption="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Equivalencia de Lumen a Vatios](http://www.llumor.es/info-led/equivalencia-de-lumen-a-vatios)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -45,9 +45,8 @@ Resulta que nos quejamos de los precios de algunos operadores o del trato que of
 
 ¿Tu proveedor de internet te trata así?
 
-{{% reference %}}
-
+{{< reference >}}
 * [Una caída de la fibra y el ADSL de MásMóvil, Yoigo y Pepephone dejó sin servicio a sus clientes](https://www.adslzone.net/2017/05/31/una-caida-de-la-fibra-y-el-adsl-de-masmovil-yoigo-y-pepephone-dejo-sin-servicio-sus-clientes/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -64,10 +64,9 @@ El siguiente artículo de la sería será sobre cómo usar un _servo motor_ que 
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Raspberry Pi Motion Sensor using a PIR Sensor](https://pimylifeup.com/raspberry-pi-motion-sensor/)
 * [PIR motion detector – a sensor for Arduino and Raspberry Pi (1st part)](http://www.meccanismocomplesso.org/en/pir-motion-detector/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -62,11 +62,10 @@ Con algún mecanismo propio que empleemos al programar la aplicación (en Java p
 
 {{< sourcecode git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Redirect Request to SSL](https://wiki.apache.org/httpd/RedirectSSL)
 * [Redirect HTTP Requests to HTTPS (in Tomcat)](https://confluence.atlassian.com/stashkb/redirect-http-requests-to-https-333810132.html)
 * [Configuring SSL/TLS (in Jetty)](http://www.eclipse.org/jetty/documentation/current/configuring-ssl.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

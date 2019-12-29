@@ -70,10 +70,9 @@ Estas funcionalidades las puedes consultar en el resto de artículos de la [seri
 
 {{< sourcecode git="blog-ejemplos/tree/master/CompresionGzip" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
-{{% reference %}}
-* [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
+{{< reference >}}* [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 * [Apache Module mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
 * [How To Optimize Your Site With GZIP Compression](http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

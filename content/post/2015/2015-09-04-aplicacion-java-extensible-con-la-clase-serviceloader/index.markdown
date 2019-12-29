@@ -49,9 +49,8 @@ Este mecanismo es que el se usa para permitir definir nuevos proveedores de rati
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/ServiceLoader) está en uno de mis repositorios de GitHub.
 
-{{% reference %}}
-
+{{< reference >}}
 * [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

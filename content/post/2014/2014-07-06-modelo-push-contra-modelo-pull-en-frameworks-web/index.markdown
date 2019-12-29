@@ -78,11 +78,10 @@ Este ejemplo es muy sencillo y empleando cualquiera de los dos modelos es viable
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Pull vs. Push MVC Architecture](http://www.guyrutenberg.com/2008/04/26/pull-vs-push-mvc-architecture/)
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

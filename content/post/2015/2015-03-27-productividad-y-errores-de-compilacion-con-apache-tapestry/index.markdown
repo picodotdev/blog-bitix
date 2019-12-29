@@ -50,11 +50,10 @@ Por supuesto, no evitaremos tener otro tipo de errores en la aplicación pero al
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Página Dashboard de Apache Tapestry][blogbitix-28]
 * [Artículos sobre Apache Tapestry][blogbitix-tag-tapestry]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

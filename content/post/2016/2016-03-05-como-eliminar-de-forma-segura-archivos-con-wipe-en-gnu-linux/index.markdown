@@ -33,8 +33,7 @@ Hacer una eliminación segura con el comando <code>wipe</code> o uno similar dif
 
 Aunque si queremos asegurarnos de que la información sea verdaderamente irrecuperable de una unidad otro buen método es usar un martillo como saben en alguna organización política.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux][blogbitix-125]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
@@ -42,6 +41,6 @@ Aunque si queremos asegurarnos de que la información sea verdaderamente irrecup
 * [comando <code>dd</code>](http://linux.die.net/man/1/dd)
 * [Securely wipe disk](https://wiki.archlinux.org/index.php/Securely_wipe_disk)
 * [Disk encryption](https://wiki.archlinux.org/index.php/Disk_encryption)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

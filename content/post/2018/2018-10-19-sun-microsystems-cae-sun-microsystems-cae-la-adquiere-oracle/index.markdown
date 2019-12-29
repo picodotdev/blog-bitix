@@ -57,13 +57,12 @@ Por afinidad hacia el _open source_ con su cultura de empresa la que hubiese pre
 
 Sun Microsystems dejó una larga herencia que dura aún en día y frases legendarias y visionarias como _«the network is the computer»_ atribuida a [John Gage](https://en.wikipedia.org/wiki/John_Gage) o _«write once, run anywhere»_ de Java.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Sun Microsystems][sun-microsystems]
 * [Sun acquisition by Oracle](https://en.wikipedia.org/wiki/Sun_acquisition_by_Oracle)
 * [Write once, run anywhere](https://en.wikipedia.org/wiki/Write_once,_run_anywhere)
 * [Links related with the history of Sun Microsystems](https://gist.github.com/dbonillaf/d62dc83bc3747cccb0d885c9d4ad76f5)
 * [The rise and fall of Sun Microsystems](https://www.arnnet.com.au/slideshow/334210/pictures-remember-rise-fall-sun-microsystems/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

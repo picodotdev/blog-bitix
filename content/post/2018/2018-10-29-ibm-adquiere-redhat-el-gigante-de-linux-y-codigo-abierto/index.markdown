@@ -66,8 +66,7 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
     <iframe width="640" height="360" src="https://www.youtube.com/embed/2_VFKqw1q2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [IBM compra Red Hat por 34.000 millones de dólares en un hito histórico para la empresa que triunfó con Linux y el Open Source](https://www.xataka.com/empresas-y-economia/ibm-compra-red-hat-34-000-millones-dolares-hito-historico-para-empresa-que-triunfo-linux-open-source)
 * [IBM compra Red Hat en una histórica operación de 34.000 millones de dólares](https://www.genbeta.com/actualidad/ibm-compra-red-hat-historica-operacion-34-000-millones-dolares)
 * [Red Hat, cómo una empresa de software open source llegó a valer 34.000 millones de dólares](https://www.genbeta.com/a-fondo/red-hat-como-empresa-software-open-source-llego-a-valer-34-000-millones-dolares)
@@ -83,6 +82,6 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 * [IBM and Red Hat?](https://www.reddit.com/r/redhat/comments/9s5rqr/ibm_and_red_hat/)
 * [Linux Ads](https://www.youtube.com/watch?v=2_VFKqw1q2Q&list=PL040C33624F3CBAF9)
 * [Red Hat Brand Standards](https://brand.redhat.com/foundations/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

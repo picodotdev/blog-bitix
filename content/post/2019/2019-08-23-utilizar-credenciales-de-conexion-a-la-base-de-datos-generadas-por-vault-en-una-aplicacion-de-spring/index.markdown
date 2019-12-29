@@ -71,11 +71,10 @@ En este caso la aplicación de Spring incluye en su configuración las credencia
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloudVault" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [An Intro to Spring Cloud Vault](https://www.baeldung.com/spring-cloud-vault)
 * [Spring Cloud Vault AppRole authentication](https://cloud.spring.io/spring-cloud-vault/reference/html/#_approle_authentication)
 * [Spring Cloud Vault Database backends](https://cloud.spring.io/spring-cloud-vault/reference/html/#vault.config.backends.database-backends)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

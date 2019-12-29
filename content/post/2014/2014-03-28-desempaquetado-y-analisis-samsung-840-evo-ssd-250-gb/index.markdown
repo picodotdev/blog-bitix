@@ -65,12 +65,11 @@ Si alguien está pensando en comprar un disco SSD lo primero que deberá hacer e
 
 En siguientes artículos comentaré como monitorizar las escrituras a disco, obtener la cantidad de datos escritos y leídos, una guía de instalación de [Arch Linux](https://www.archlinux.org/) con notas específicas para SSD entre otras cosas y una serie de recomendaciones para proteger la esperanza de vida del SSD. En internet hay multitud de análisis sobre este SSD, dos de los que más me han gustado han sido [Testing the endurance of TLC NAND](http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand) y otro de [xbitlabs](http://www.xbitlabs.com/articles/storage/display/samsung-840-evo.html).
 
-{{% reference %}}
-
+{{< reference >}}
 * [Página de Samsung SSD 840 EVO](http://www.samsung.com/global/business/semiconductor/minisite/SSD/us/html/about/SSD840EVO.html)
 * [Página de Samsung SSD 850 EVO](http://www.samsung.com/global/business/semiconductor/minisite/SSD/global/html/ssd850evo/overview.html)
 * [Test de resistencia SSD 840 EVO](http://www.anandtech.com/show/6459/samsung-ssd-840-testing-the-endurance-of-tlc-nand)
 * [Artículo sobre Samsung 840 EVO](http://www.xbitlabs.com/articles/storage/display/samsung-840-evo.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

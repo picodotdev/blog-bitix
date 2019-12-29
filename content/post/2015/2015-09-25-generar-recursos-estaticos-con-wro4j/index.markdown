@@ -27,11 +27,10 @@ Aparte de los procesadores de este ejemplo wro4j tiene [disponibles muchos otros
 
 Si queremos usarlo en una aplicación web Java y el _framework_ que usemos no lo usa internamente o no proporciona algo parecido podemos [seguir 3 para emplear wro4j](http://wro4j.github.io/wro4j/), añadir un filtro, una configuración en XML y una etiqueta _link_ y otra _script_ para incluirlos en las páginas, por supuesto habrá que añadir la dependencia de la librería con [la herramienta de construcción automatizada Gradle][elblogdepicodev-98] u otra.
 
-{{% reference %}}
-
+{{< reference >}}
 * [wro4j][wro4j]
 * [less][less]
 * [sass][sass]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

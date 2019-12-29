@@ -46,11 +46,10 @@ El libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617291307/ref
 
 {{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

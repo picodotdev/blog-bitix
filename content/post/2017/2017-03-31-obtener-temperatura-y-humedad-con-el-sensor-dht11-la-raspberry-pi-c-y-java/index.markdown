@@ -82,8 +82,7 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeTemperatureHumidity" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Java programming with JNI](https://www.ibm.com/developerworks/java/tutorials/j-jni/j-jni.html)
 * [Accessing 1-wire Protocol Devices from Java](http://hirt.se/blog/?p=493)
 * [How to Set Up the DHT11 Humidity Sensor on the Raspberry Pi](http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-the-raspberry-pi/)
@@ -94,6 +93,6 @@ Para ejecutar el ejemplo con ya todo instalado uso uno de los siguientes dos com
 * [A DHT11 Class for Arduino](http://playground.arduino.cc/Main/DHT11Lib)
 * [torvalds/linux/blob/master/drivers/iio/humidity/dht11.c](https://github.com/torvalds/linux/blob/master/drivers/iio/humidity/dht11.c)
 * [RaspberryPi DHT11 temperature and humidity sensor driver](http://www.tortosaforum.com/raspberrypi/dht11driver.htm)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

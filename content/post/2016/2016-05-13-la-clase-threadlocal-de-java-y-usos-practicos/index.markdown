@@ -45,9 +45,8 @@ En definitiva, en ciertos casos el uso selectivo de _ThreadLocal_ simplifica el 
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry/" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Alternatives to Global Variables ](https://dzone.com/articles/alternatives-to-global-variables)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

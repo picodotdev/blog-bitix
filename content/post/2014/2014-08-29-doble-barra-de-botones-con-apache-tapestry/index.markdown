@@ -35,10 +35,9 @@ El código completo de este ejemplo del caso de Tapestry está en un [repositori
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Más artículos sobre Apache Tapestry][blogbitix-tag-tapestry]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

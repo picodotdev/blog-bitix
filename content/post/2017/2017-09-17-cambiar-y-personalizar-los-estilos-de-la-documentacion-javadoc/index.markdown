@@ -55,9 +55,8 @@ El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentacion Javadoc del JDK][javadoc-8]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

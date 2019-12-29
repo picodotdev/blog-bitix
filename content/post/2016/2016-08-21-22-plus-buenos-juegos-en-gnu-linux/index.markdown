@@ -181,13 +181,12 @@ Disparos. Juego similar a [Counter Strike](https://es.wikipedia.org/wiki/Counter
         image2="urban-terror-2.jpg" thumb2="urban-terror-2-thumb.jpg" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [List of games](https://wiki.archlinux.org/index.php/List_of_games)
 * [Videojuegos libres](https://es.wikipedia.org/wiki/Anexo:Videojuegos_libres)
 * [Humble Bundle](https://www.humblebundle.com)
 * [Steam Linux](http://store.steampowered.com/browse/linux/?l=spanish)
 * [GOG](https://www.gog.com/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

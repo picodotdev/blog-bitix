@@ -48,10 +48,9 @@ Puede que ni siquiera uses GNU/Linux o software libre pero al visitar esta bitá
 
 {{< donations >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Donaciones Wikipedia](https://wikimediafoundation.org/wiki/Donaciones)
 * [Donaciones Mozilla](https://wiki.mozilla.org/Donate)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

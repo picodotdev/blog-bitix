@@ -33,8 +33,7 @@ Con estos archivos usando la [sintaxis de markdown](https://daringfireball.net/p
 
 Rastreando la página web o bitácora podremos encontrar y posteriormente corregir los enlaces rotos que encontremos. En el artículo [cómo buscar los enlaces rotos de un sitio web][blogbitix-115] comento varias formas de descubrir estos enlaces que en su momento lo fueron pero han dejado de ser válidos y que proporcionan una mala experiencia al usuario.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hugo][hugo]
 * [Octopress][octopress]
 * [WordPress][wordpress]
@@ -43,6 +42,6 @@ Rastreando la página web o bitácora podremos encontrar y posteriormente correg
 * [Generador de páginas web estáticas y bitácoras Hugo][blogbitix-323]
 * [Nuevo diseño en Blog Bitix][blogbitix-80]
 * [Cómo buscar los enlaces rotos de un sitio web][blogbitix-115]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

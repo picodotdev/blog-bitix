@@ -55,14 +55,13 @@ La [compatibilidad de los navegadores de los Web Components](https://developer.m
 
 {{% sourcecode git="blog-ejemplos/tree/master/WebComponents" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introduction to Web Components](http://www.w3.org/TR/components-intro/)
 * [MDN Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 * [Web Components][web-components]
 * [Web Components: from zero to hero](https://dev.to/thepassle/web-components-from-zero-to-hero-4n4m)
 * [Artículo REST con Java][blogbitix-178]
 * [Serie GraphQL][blogbitix-serie-graphql]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

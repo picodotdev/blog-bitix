@@ -48,8 +48,7 @@ Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Jav
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaReference" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Weak, Soft, and Phantom References in Java (and Why They Matter)](https://dzone.com/articles/weak-soft-and-phantom-references-in-java-and-why-they-matter)
 * [Tipos de referencias en Java](http://www.guajava.net/tipos-de-referencias-en-java/)
 * [Difference between WeakReference vs SoftReference vs PhantomReference vs Strong reference in Java](https://javarevisited.blogspot.com.es/2014/03/difference-between-weakreference-vs-softreference-phantom-strong-reference-java.html)
@@ -58,6 +57,6 @@ Otro artículo que recomiendo leer es [Weak, Soft, and Phantom References in Jav
 * [Java Reference Objects](http://www.kdgregory.com/index.php?page=java.refobj)
 * [WeakReference string didn't garbage collected? How?](https://stackoverflow.com/questions/14494875/weakreference-string-didnt-garbage-collected-how)
 * [Understanding Phantom reference vs weak reference with respect to Reference queue](https://stackoverflow.com/questions/26211657/understanding-phantom-reference-vs-weak-reference-with-respect-to-reference-queu)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

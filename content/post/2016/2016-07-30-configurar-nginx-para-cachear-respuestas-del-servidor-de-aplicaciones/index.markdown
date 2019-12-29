@@ -49,10 +49,9 @@ Hay servidores específicos para realizar tareas de cache como [Varnish][varnish
 
 {{< sourcecode git="blog-ejemplos/tree/master/NginxCache" command="./gradlew build, cd docker, docker-compose up" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Servir recursos estáticos desde un CDN en Apache Tapestry][blogbitix-34]
 * [Nginx Caching](https://serversforhackers.com/nginx-caching)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

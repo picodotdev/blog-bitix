@@ -58,10 +58,9 @@ En la [documentación sobre _reverse proxy_ de Nginx](https://www.nginx.com/reso
 
 {{< sourcecode git="blog-ejemplos/tree/master/NginxReverseProxy" command="docker-compose up" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [NGINX Reverse Proxy](https://www.nginx.com/resources/admin-guide/reverse-proxy/)
 * [Unir Apache HTTPD y Tomcat mediante un reverse proxy ](https://elblogdepicodev.blogspot.com.es/2011/02/unir-apache-httpd-y-tomcat-mediante-un.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

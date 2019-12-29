@@ -75,9 +75,8 @@ Tiene marcos grandes, no tiene un sensor de huellas integrado en la pantalla, si
 
 [La tecnología avanza muy rápido][blogbitix-186] cada año hay un nuevo modelo de móvil que supera al anterior, pero suelen ser mejoras graduales que hasta pasado varios años más un móvil como el Samsung Galaxy S6 después de 4 años sigue siendo un gran móvil al que le daré una segunda vida. Quizá dentro de unos años herede un Samsung Galaxy S8 o S9 y así estoy tirando millas sin necesidad real de tener que comprar un móvil. Mejor que reciclar es reutilizar.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Base de datos de especificaciones de móviles GSMArena](https://www.gsmarena.com)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

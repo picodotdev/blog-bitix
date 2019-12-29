@@ -44,9 +44,8 @@ Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la 
 
 {{< code file="convert-to.webp.sh" language="bash" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Convertir imágenes entre formatos y cambiar tamaño con ImageMagick][elblogdepicodev-129]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

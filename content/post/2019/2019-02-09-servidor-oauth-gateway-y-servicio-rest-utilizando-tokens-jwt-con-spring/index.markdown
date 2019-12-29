@@ -99,8 +99,7 @@ Los _tokens_ JWT además de firmar se pueden cifrar, en el ejemplo se usa una co
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringOauth" command="./gradlew oauth:run, ./gradlew gateway:run, ./gradlew service:run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Using JWT with Spring Security OAuth](https://www.baeldung.com/spring-security-oauth-jwt)
 * [Secure Spring REST API using OAuth2](http://websystique.com/spring-security/secure-spring-rest-api-using-oauth2/)
 * [Spring Boot Security OAuth2 Jwt Auth Example](https://www.devglan.com/spring-security/spring-boot-oauth2-jwt-example)
@@ -108,6 +107,6 @@ Los _tokens_ JWT además de firmar se pueden cifrar, en el ejemplo se usa una co
 * [Spring OAuth2 "Full authentication is required to access this resource"](https://stackoverflow.com/questions/23950068/spring-oauth2-full-authentication-is-required-to-access-this-resource)
 * [Issue with having multiple WebSecurityConfigurerAdapter in spring-boot](https://stackoverflow.com/questions/52606720/issue-with-having-multiple-websecurityconfigureradapter-in-spring-boot)
 * [Spring Security 5: There is no PasswordEncoder mapped for the id "null"](https://stackoverflow.com/questions/49654143/spring-security-5-there-is-no-passwordencoder-mapped-for-the-id-null)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -70,13 +70,12 @@ Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el mom
         image1="http2-jetty.png" thumb1="http2-jetty-thumb.png" title1="HTTP/2 en Jetty" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [NGINX Open Source 1.9.5 Released with HTTP/2 Support](https://www.nginx.com/blog/nginx-1-9-5/)
 * [Jetty ALPN](http://www.eclipse.org/jetty/documentation/current/alpn-chapter.html)
 * [Maven ALPN](http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/8.1.7.v20160121/)
 * [Using HTTP2 With Wildfly 9.0.0.Beta1](http://undertow.io/blog/2015/03/26/HTTP2-In-Wildfly.html)
 * [WildFly Security Realms](https://docs.jboss.org/author/display/WFLY10/Security+Realms)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

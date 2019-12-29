@@ -41,9 +41,8 @@ En esta captura de hace una búsqueda por el título de las páginas en el histo
         caption="Barra de búsqueda inteligente de Firefox" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Address bar autocomplete in Firefox - Search your bookmarks, history and tabs](https://support.mozilla.org/en-US/kb/address-bar-autocomplete-firefox?redirectlocale=en-US&redirectslug=awesome-bar-search-firefox-bookmarks-history-tabs)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

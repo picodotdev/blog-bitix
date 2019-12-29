@@ -100,14 +100,13 @@ Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, en
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [OAuth Getting Started](https://oauth.net/getting-started/)
 * [OAuth Documentation](https://oauth.net/2/)
 * [Keycloak Basics Tutorial Part 1](https://www.youtube.com/watch?v=z-sUzl9eG6M)
 * [Keycloak Basics Tutorial Part 2](https://www.youtube.com/watch?v=CXDrGJoCVhc)
 * [Keycloak Demo Part 1](https://www.youtube.com/watch?v=B-qIkB9lsLs)
 * [Keycloak Demo Part 2](https://www.youtube.com/watch?v=QgWgUg5F_JQ)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

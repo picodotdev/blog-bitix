@@ -72,11 +72,10 @@ Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la l
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeJniHelloWorldLocal" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [GO: Call me maybe, Java!](https://blog.dogan.io/2015/08/15/java-jni-jnr-go/)
 * [Java Native Interface Specification](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html)
 * [Java Programming Tutorial, Java Native Interface (JNI)](http://www3.ntu.edu.sg/home/ehchua/programming/java/JavaNativeInterface.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

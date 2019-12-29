@@ -34,10 +34,9 @@ En la clase Java asociada al componente está el método _getBlock_ que determin
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Artículos sobre Tapestry en Blog Bitix][blogbitix-tag-tapestry]
 * [Artículos sobre Tapestry en El blog de pico.dev][elblogdepicodev-label-tapestry]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

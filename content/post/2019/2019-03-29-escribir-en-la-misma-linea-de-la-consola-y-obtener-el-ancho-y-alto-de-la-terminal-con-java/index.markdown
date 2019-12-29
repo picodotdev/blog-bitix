@@ -34,10 +34,9 @@ El siguiente ejemplo muestra varias barras de progreso utilizando la secuencia d
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaTerminal" command="./gradlew build && ./run.sh" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [How do I find the width & height of a terminal window?](https://stackoverflow.com/questions/263890/how-do-i-find-the-width-height-of-a-terminal-window)
 * [Can I find the console width with Java?](https://stackoverflow.com/questions/1286461/can-i-find-the-console-width-with-java)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

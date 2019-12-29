@@ -41,8 +41,7 @@ Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado se
 
 Te sorprenderá la cantidad de archivos que son recuperados por Foremost: documentos, imágenes, archivos de texto, ...
 
-{{% reference %}}
-
+{{< reference >}}
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
 * [Cómo eliminar de forma segura archivos con wipe en GNU/Linux][blogbitix-130]
@@ -51,6 +50,6 @@ Te sorprenderá la cantidad de archivos que son recuperados por Foremost: docume
 * [Wipe](http://linux.die.net/man/1/wipe)
 * [Securely Wipe Disk](https://wiki.archlinux.org/index.php/Securely_wipe_disk)
 * [Disk encryption](https://wiki.archlinux.org/index.php/Disk_encryption)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

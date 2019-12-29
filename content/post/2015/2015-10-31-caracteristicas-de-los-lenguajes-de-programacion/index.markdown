@@ -76,10 +76,9 @@ La asignación desestructurada permite extraer datos de _arrays_ y objetos usand
 ### Tuples
 Las tuplas son una estructura de datos formada por varios tipos, en Java 8 puede usarse la librería [vavr][vavr] que añade esto y otras funcionalidades interesantes. En algunos lenguajes puede combinarse con la asignación desestructurada. [Ceylon Tuples](http://ceylon-lang.org/documentation/1.2/tour/sequences/#tuples).
 
-{{% reference %}}
-
+{{< reference >}}
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [10 razones para seguir usando Java][blogbitix-81]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

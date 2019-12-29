@@ -114,9 +114,8 @@ Según su principal desarrollador (Howard Lewis Ship, que obtuvo el premio Java 
 
 ¡Que lo disfrutéis!, usar el siguiente [enlace para ¡descargarlo!](https://picodotdev.github.io/blog-bitix/assets/custom/PlugInTapestry.pdf)
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html) (elblogdepicodev)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

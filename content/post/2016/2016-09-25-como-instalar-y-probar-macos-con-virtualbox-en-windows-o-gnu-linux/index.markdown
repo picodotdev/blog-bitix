@@ -85,9 +85,8 @@ Como partidario del software libre y la privacidad además de [los ínfimos impu
 
 Deberemos tener en cuenta al probar macOS con VirtualBox que el rendimiento de la máquina virtual no será exactamente el mismo que en un equipo real por la sobrecarga impuesta por la virtualización realizada. La experiencia de usuario puede cambiar significativamente junto con el hecho de que los portátiles Mac tiene una pantalla bastante mejor y con más resolución que la mayoría de portátiles diseñados para Windows o GNU/Linux y un SSD de gran rendimiento además de la falta de su _touchpad_, todo esto puede marcar alguna diferencia.
 
-{{% reference %}}
-
+{{< reference >}}
 * [How to Install macOS Sierra 10.12 on VirtualBox?](http://www.wikigain.com/install-macos-sierra-10-12-virtualbox/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

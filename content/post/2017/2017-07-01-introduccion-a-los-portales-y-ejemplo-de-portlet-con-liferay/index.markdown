@@ -123,13 +123,12 @@ Aunque el libro [Liferay in Action](https://amzn.to/2sc1tWN) o [Portlets in Acti
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Web portal](https://en.wikipedia.org/wiki/Web_portal)
 * [Portlet](https://es.wikipedia.org/wiki/Portlet)
 * [¿Qué es un Portal?](https://web.liferay.com/es/products/what-is-a-portal/web-platform)
 * [Portlet Specification 3.0](https://jcp.org/aboutJava/communityprocess/edr/jsr362/index2.html)
 * [Portlets 3.0 API](https://portals.apache.org/pluto/portlet-3.0-apidocs/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

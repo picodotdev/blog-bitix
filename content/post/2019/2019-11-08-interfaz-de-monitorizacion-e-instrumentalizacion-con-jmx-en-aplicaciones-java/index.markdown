@@ -104,8 +104,7 @@ El acceso remoto también es posible mediante una [aplicación Java que actúe c
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaJMX" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Monitoring and Management Using JMX Technology](https://docs.oracle.com/javase/7/docs/technotes/guides/management/agent.html)
 * [Tutorial Java Management Extensions (JMX)](https://docs.oracle.com/javase/tutorial/jmx/index.html)
 * [Securing remote JMX](https://gquintana.github.io/2016/09/01/Securing-remote-JMX.html)
@@ -113,6 +112,6 @@ El acceso remoto también es posible mediante una [aplicación Java que actúe c
 * [Spring Boot Monitoring and Management over JMX](https://docs.spring.io/spring-boot/docs/2.2.0.RELEASE/reference/html/spring-boot-features.html#boot-features-jmx)
 * [Basic Introduction to JMX](https://www.baeldung.com/java-management-extensions)
 * [JMX with Spring Framework](http://actimem.com/java/jmx-spring/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

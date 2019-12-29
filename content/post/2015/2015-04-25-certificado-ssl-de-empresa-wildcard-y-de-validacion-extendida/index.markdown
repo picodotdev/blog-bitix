@@ -48,9 +48,8 @@ Si no necesitamos el recuadro verde ni un certificado _wildcard_ una opción int
 
 Una vez obtenido el certificado debemos instalarlo en el servidor, en el artículo [Configurar SSL en un servidor Tomcat JBoss, Wildfly, Lighttpd, Nginx o Apache][blogbitix-14] comento como usar un certificado en los principales servidores web y de aplicaciones. Si necesitamos un formato concreto podemos [convertir el certificado con OpenSSL][blogbitix-13].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Qué es un certificado SSL y por qué debería importarte](https://www.genbeta.com/seguridad/que-es-un-certificado-ssl-y-por-que-deberia-importarte)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

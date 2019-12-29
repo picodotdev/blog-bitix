@@ -48,9 +48,8 @@ En jOOQ en la configuración del generador hay que especificar que para un campo
 
 Con un tipo de datos propio para los identificadores es muy importante [implementar correctamente los métodos equals y hashCode][blogbitix-199] tanto en clases de identificadores como en las entidades de dominio ya que las colecciones de Java se basan en estos métodos para determinar si una colección contiene un elemento.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

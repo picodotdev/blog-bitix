@@ -36,11 +36,10 @@ Si lo que queremos son fotos de buena calidad en la página en [Unsplash](https:
 
 Una buena textura o imagen pueden darle a una página un aspecto mucho más atractivo y si además hacemos que se use una diferente cada cierto tiempo o de forma aleatoria hacemos que la página sea algo diferente cada vez que se visualiza.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Subtle Patterns](http://subtlepatterns.com/)
 * [Noise Texture Generator](http://www.noisetexturegenerator.com/)
 * [Unsplash](https://unsplash.com/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

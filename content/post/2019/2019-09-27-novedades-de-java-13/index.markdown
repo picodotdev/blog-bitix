@@ -57,8 +57,7 @@ En Java 13 en vez únicamente el valor a retornar se permite crear bloques de se
 
 Las las otras tres características destacadas _Dynamic CDS Archives_, _ZGC: Uncommit Unused Memory_ para la mejora del recolector de basura y _Reimplement the Legacy Socket API_ reescribiendo el código para los _sockets_ en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.
 
-{{% reference %}}
-
+{{< reference >}}
 * [What is new in Java 13](https://www.mkyong.com/java/what-is-new-in-java-13/)
 * [Definitive Guide To Java 13](https://blog.codefx.org/java/java-13-guide/)
 * [Java 13 – a deep dive into the JDK’s new features](https://jaxenter.com/java-13-jdk-deep-dive-new-features-162272.html)
@@ -67,6 +66,6 @@ Las las otras tres características destacadas _Dynamic CDS Archives_, _ZGC: Unc
 * [ The Differences Between Java EE, Jakarta EE, and MicroProfile](https://dzone.com/articles/the-differences-between-java-ee-jakarta-ee-and-mic)
 * [Cloud Native Java](https://jakarta.ee/documents/insights/cloud_native_java_ebook.pdf)
 * [OpenJFX 13 – "JavaFX gets its own identity"](https://jaxenter.com/openjfx-13-interview-dirk-lemmermann-161967.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

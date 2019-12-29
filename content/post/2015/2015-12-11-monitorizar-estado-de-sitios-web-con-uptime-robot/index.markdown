@@ -53,11 +53,10 @@ Hay otras herramientas de monitorización similares pero la mayoría son de pago
 
 Perfectamente podemos usar Uptime Robot sobre el _endpoint_ _health_ de una [aplicación que usa Spring Boot Actuator][blogbitix-113] para proporcionar información y métricas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Uptime Robot][uptimerobot]
 * [Los 10 mejores servicios gratuitos para monitorizar sitios web](http://www.herramientas10.com/10-servicios-gratuitos-monitorizar-sitios-web_155.html)
 * [Cómo puedes monitorizar una página web](http://papelesdeinteligencia.com/como-puedes-monitorizar-una-pagina-web/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -41,14 +41,13 @@ Conocer los patrones de diseño, conocer sus beneficios y desventajas y saber cu
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/PatronObserver) puedes descargarlo del repositorio de ejemplos alojado en [GitHub][github] y probarlo ejecutando el comando <code>./gradlew run</code>.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
 * [Ejemplo del patrón de diseño State][elblogdepicodev-170]
 * [Implementación de máquina de estados finita (FSM) con Java 8][blogbitix-93]
 * [Ejemplo del patrón de diseño Command y programación concurrente en Java][elblogdepicodev-101]
 * [Ejemplo del patrón de diseño No Operation][blogbitix-8]
 * [8+ libros para mejorar como programadores][blogbitix-55]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

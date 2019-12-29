@@ -56,12 +56,11 @@ En otro artículo relacionado con la configuración de los microservicios coment
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew run:configserver --args=\"port=8090\"" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Spring Cloud Config, Git](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_git_backend)
 * [Spring Cloud Config, Vault](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#vault-backend)
 * [Spring Cloud Config, JDBC](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_jdbc_backend)
 * [Spring Cloud Config, Externalized Configuration](https://docs.spring.io/spring-boot/docs/2.0.4.RELEASE/reference/htmlsingle/#boot-features-external-config)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

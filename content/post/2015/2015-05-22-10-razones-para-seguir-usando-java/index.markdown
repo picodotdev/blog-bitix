@@ -120,10 +120,9 @@ En Junio de 1997 James Gosling formando parte de Sun Microsystems Inc. escribía
 
 ¡Larga vida a Java!
 
-{{% reference %}}
-
+{{< reference >}}
 * [10 Reasons Why Java Now Rocks More Than Ever](http://zeroturnaround.com/rebellabs/10-reasons-why-java-now-rocks-more-than-ever-part-1-the-java-compiler/)
 * [10 Reasons to Love Java and the JVM](https://www.voxxed.com/blog/2015/02/10-reasons-to-love-java-and-the-jvm-reconnecting-with-your-warm-and-fuzzies/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -76,12 +76,11 @@ Destruyendo el _stack_ y volviéndolo a arrancar posiblemente Docker Swarm inici
 
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [REX-Ray Installation](https://rexray.readthedocs.io/en/v0.3.3/user-guide/installation/)
 * [REX-Ray Installation - Docker Machine (VirtualBox)](https://rexray.readthedocs.io/en/v0.3.3/user-guide/installation/#docker-machine-virtualbox)
 * [REX-Ray Storage Providers - VirtualBox](https://rexray.readthedocs.io/en/v0.3.3/user-guide/storage-providers/#virtualbox)
 * [REX-Ray - Applications](http://rexray.readthedocs.io/en/stable/user-guide/applications/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

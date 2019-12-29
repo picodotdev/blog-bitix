@@ -33,12 +33,11 @@ El equipo es viejo pero con Arch Linux tiene las versiones de los últimos progr
 
 También puedes leer los pasos que he seguido [desde Windows a Arch Linux][elblogdepicodev-de-windows-arch-linux] con algunos motivos y características de Arch explicados más detalladamente y [De Arch Linux a Arch Linux][blogbitix-36] donde comento ya con más conocimiento porque después de 4 años sigo usando Arch Linux y no he cambiado de distribución GNU/Linux. En el siguiente [anexo a la guía de instalación](https://picodotdev.github.io/blog-bitix/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/) puedes encontrar los pasos que sigo para instalar Arch Linux.
 
-{{% reference %}}
-
+{{< reference >}}
 * [De Windows a Arch Linux][elblogdepicodev-de-windows-arch-linux]
 * [De Arch Linux a Arch Linux][blogbitix-36]
 * [Anexo a la guía de instalación de Arch Linux][blogbitix-22]
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)][elblogdepicodev-guia-instalacion-raspberry-pi-con-arch]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

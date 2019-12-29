@@ -44,8 +44,7 @@ El soporte para [HTTP/2 y sus importantes novedades][blogbitix-127] hace que des
 
 Hay un [tutorial de Java EE 8](https://javaee.github.io/tutorial/) y con el [ejemplo FirstCup](https://javaee.github.io/firstcup/toc.html) se puede adquirir un buen conocimiento para desarrollar aplicaciones con el lenguaje Java. En el artículo [What's new in Java EE 8](https://www.ibm.com/developerworks/opensource/library/j-whats-new-in-javaee-8/index.html) hay unos pocos ejemplos de código con varias de estas novedades. Finalmente, con el traspaso de Java EE a la fundación Eclipse y por motivos de marca registrada el proyecto ha sido renombrado a Jakarta EE. Java EE o ahora Jakarta EE, [Microprofile][microprofile] y [Spring][spring] junto con algunos _frameworks_ especializados son las opciones más utilizadas para realizar aplicaciones en Java en el lado del servidor.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Java Platform, Enterprise Edition 8 SDK - Release Notes](https://www.oracle.com/technetwork/java/javaee/documentation/ee8-release-notes-3894362.html)
 * [What's new in Java EE 8](https://www.ibm.com/developerworks/opensource/library/j-whats-new-in-javaee-8/index.html)
 * [Java EE 8 Overview](https://blogs.oracle.com/java/java-ee-8-overview)
@@ -57,6 +56,6 @@ Hay un [tutorial de Java EE 8](https://javaee.github.io/tutorial/) y con el [eje
 * [From Java EE to Jakarta EE](https://www.infoq.com/news/2018/02/from-javaee-to-jakartaee)
 * [An Overview of CDI Events](https://dzone.com/articles/an-overview-of-cdi-events)
 * [Firing CDI events asynchronously](http://docs.jboss.org/cdi/spec/2.0/cdi-spec.html#firing_events_asynchronously)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

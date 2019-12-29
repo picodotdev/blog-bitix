@@ -63,11 +63,10 @@ Con Uptime Robot y el _endpoint_ _health_ podemos [monitorizar la aplicación y 
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBoot" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
 * [Configuración de una aplicación en diferentes entornos con Spring Cloud Config][blogbitix-112]
 * [Monitorizar estado de sitios web con Uptime Robot][blogbitix-114]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

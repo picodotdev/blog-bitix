@@ -30,9 +30,8 @@ Con el ratón deberemos seleccionar el texto pero con la combinación de teclas 
 
 Esto no es algo nada vital pero si es algo que usamos frecuentemente puede hacernos más fácil la tarea y ahorrarnos tiempo al igual que conocer y usar los [atajos de teclado básicos de la terminal en GNU/Linux][blogbitix-150].
 
-{{% reference %}}
-
+{{< reference >}}
 [A terminal which provides select-to-copy and right-click-to-paste](http://askubuntu.com/questions/211292/a-terminal-which-provides-select-to-copy-and-right-click-to-paste)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

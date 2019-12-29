@@ -51,13 +51,12 @@ Para un conocimiento mucho más detallado de las posibilidades de esta base de d
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRedis" command="docker-compose up, ./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación Redis](https://redis.io/documentation)
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

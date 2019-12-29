@@ -35,11 +35,10 @@ El resultado es el siguiente:
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaLog4j" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]
 * [Los cuantificadores greedy, reluctant y possessive en expresiones regulares][blogbitix-257]
 * [Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -35,8 +35,7 @@ La documentación de cada módulo de Vert.x está bastante bien y explicada en l
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoVertx" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [10 razones para seguir usando Java][blogbitix-81]
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
 * [Múltiples esquemas o bases de datos con jOOQ y Spring en Java][blogbitix-106]
@@ -45,6 +44,6 @@ La documentación de cada módulo de Vert.x está bastante bien y explicada en l
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
 * [Aplicación web con Spark _framework_ y Java][blogbitix-121]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

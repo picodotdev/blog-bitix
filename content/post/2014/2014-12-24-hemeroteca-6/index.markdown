@@ -64,12 +64,11 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
         caption="¡Buen 2015!" source="klowner.com" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hemeroteca #3][elblogdepicodev-162]
 * [Hemeroteca #2][elblogdepicodev-136]
 * [Hemeroteca #1][elblogdepicodev-111]
 * [Hemeroteca #0][elblogdepicodev-87]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

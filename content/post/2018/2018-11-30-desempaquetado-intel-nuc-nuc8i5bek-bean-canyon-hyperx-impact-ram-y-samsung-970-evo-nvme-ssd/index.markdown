@@ -419,14 +419,13 @@ Y el que tengo ahora.
 
 > Software. Hardware. Complete.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Intel Download Center](https://downloadcenter.intel.com/)
 * [Intel Download Center - Intel NUC](https://downloadcenter.intel.com/product/98414/Mini-PCs)
 * [Intel NUC8i5BEK/NUC8i5BEH Brief](https://www.intel.es/content/www/es/es/products/docs/boards-kits/nuc/nuc8i5bek-nuc8i5beh-brief.html)
 * [Intel® NUC Kit NUC8i5BEK Compatibility Tool](http://compatibleproducts.intel.com/ProductDetails/ExportPeripheralInfo?moduleName=Intel%C2%AE%20NUC&productType=Kits&productName=Intel%C2%AE%20NUC%20Kit%20NUC8i5BEK)
 * [Intel® NUC Products NUC8i3BE/NUC8i5BE/NUC8i7BE Technical Product Specification ](ttps://www.intel.com/content/dam/support/us/en/documents/mini-pcs/NUC8i3BE_NUC8i5BE_NUC8i7BE_TechProdSpec.pdf)
 * [Intel® NUC Support Community](https://communities.intel.com/community/tech/nuc)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

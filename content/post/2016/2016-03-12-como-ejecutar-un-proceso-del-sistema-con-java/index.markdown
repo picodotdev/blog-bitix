@@ -35,14 +35,13 @@ Ejecutar un comando del sistema nos da acceso a un nuevo mundo de posibilidades 
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaProcess" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Javadoc ProcessBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html)
 * [Javadoc Process](https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html)
 * [Javadoc Runtime](https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html)
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Cómo firmar correos electrónicos con GPG y JavaMail][blogbitix-133]
 * [Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java][blogbitix-393]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

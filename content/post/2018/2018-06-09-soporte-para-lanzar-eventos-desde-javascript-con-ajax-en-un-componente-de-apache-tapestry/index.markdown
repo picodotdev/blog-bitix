@@ -51,10 +51,9 @@ Con este soporte es algo más fácil enviar eventos y realizar peticiones _Ajax_
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ajax and Zones](https://tapestry.apache.org/ajax-and-zones.html)
 * [ajax.coffee](https://git1-us-west.apache.org/repos/asf?p=tapestry-5.git;a=blob_plain;f=tapestry-core/src/main/coffeescript/META-INF/modules/t5/core/ajax.coffee;hb=85cc611fbad4a3574664b33ce9adf614b4f0fe07)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

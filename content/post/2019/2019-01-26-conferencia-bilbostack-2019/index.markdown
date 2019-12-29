@@ -208,11 +208,10 @@ Hay funcionalidades que no forman parte del núcleo del negocio. Estas funcional
         caption="Viaje desde Arquitectura Hexagonal al Event Sourcing" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [BilboStack 2019 por _Vicenç García-Altés_](https://medium.com/@vgaltes/bilbostack-2019-78553b19af25)
 * [Bilbostack 2019. Nunca defrauda. por _Azahara Fernández Guizán_](https://medium.com/@azaharafernandezguizan/bilbostack-2019-nunca-defrauda-5b0eb785932e)
 * [Bilbostack 2019 por _Eduardo Ferro Aldama_](https://www.eferro.net/2019/01/bilbostack.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

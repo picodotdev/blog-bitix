@@ -60,8 +60,7 @@ Los siguientes enlaces son documentación a una guía de inicio, una guía compl
 
 {{% sourcecode git="blog-ejemplos/tree/master/JasperReports" command="./gradlew run" %}}
 
-{{% reference %}}
-* [Example on how to generate a simple pdf report with JasperReports](https://gist.github.com/rponte/5044469)
-{{% /reference %}}
+{{< reference >}}* [Example on how to generate a simple pdf report with JasperReports](https://gist.github.com/rponte/5044469)
+{{< /reference >}}
 
 {{% /post %}}

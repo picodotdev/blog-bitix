@@ -42,10 +42,9 @@ Este sería una ejemplo de la imagen que tengo como fondo de escritorio. Su tama
 
 Los ahorros de espacio conseguidos anteriores son consecuencia de reducir el tamaño de la imagen, [utilizar el formato de imagen WebP en vez de _jpg_ y _png_][blogbitix-447] además permite conseguir importantes reducciones de tamaño del espacio ocupado por las fotografías e imágenes originales, en torno al 20% y 60%.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Añadir marcas de agua a imágenes con ImageMagick][elblogdepicodev-58]
 * [Convertir imágenes entre formatos y cambiar tamaño con ImageMagick][elblogdepicodev-129]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

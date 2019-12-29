@@ -43,11 +43,10 @@ En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https 
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 * [Libro PlugIn Tapestry][blogbitix-12]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

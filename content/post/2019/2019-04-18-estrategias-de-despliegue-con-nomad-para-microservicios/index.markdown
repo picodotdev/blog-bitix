@@ -70,10 +70,9 @@ Nomad y [Consul][consul] se inician con los siguientes comandos en modo desarrol
 
 {{< code file="consul-nomad.sh" language="bash" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Servicios con persistencia en el orquestador Nomad][blogbitix-400]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

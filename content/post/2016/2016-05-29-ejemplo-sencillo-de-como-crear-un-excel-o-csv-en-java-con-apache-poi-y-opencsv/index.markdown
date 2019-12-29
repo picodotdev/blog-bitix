@@ -44,10 +44,9 @@ En la [guía de iniciación a las características de los documentos HSSF y XSSF
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoApachePOI/" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ejemplo sencillo de como crear un documento PDF con Java y PDFBox][blogbitix-430]
 * [Busy Developers' Guide to HSSF and XSSF Features](http://poi.apache.org/spreadsheet/quick-guide.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

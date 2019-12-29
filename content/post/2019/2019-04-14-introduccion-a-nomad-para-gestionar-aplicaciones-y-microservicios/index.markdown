@@ -62,11 +62,10 @@ La [documentación de Nomad](https://www.nomadproject.io/docs/index.html), Nomad
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/A6CuZUoINX0?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Estrategias de despliegue para microservicios con Nomad][blogbitix-399]
 * [Servicios con persistencia en el orquestador Nomad][blogbitix-400]
 * [Nomad – Simple deployment and monitoring of applications](http://targetveb.com/nomad-simple-deployment-monitoring-applications.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

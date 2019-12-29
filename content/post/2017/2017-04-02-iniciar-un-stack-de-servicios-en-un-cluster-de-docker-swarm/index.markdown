@@ -57,10 +57,9 @@ Docker Swarm es una opción simple y que está integrada en Docker pero no ofrec
 
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Deploy a stack to a swarm](https://docs.docker.com/engine/swarm/stack-deploy/)
 * [Compose file reference](https://docs.docker.com/compose/compose-file/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

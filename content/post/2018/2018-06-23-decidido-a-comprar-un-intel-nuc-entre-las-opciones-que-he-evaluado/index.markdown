@@ -105,8 +105,7 @@ En estas dos páginas se pueden conocer muchos detalles de los procesadores y gr
 
 Cuando realmente compre el equipo publicaré varios artículos con el _unboxing_, instalación, análisis, uso y opinión personal de varios de ellos.
 
-{{% reference %}}
-
+{{< reference >}}
 * [The NUC Blog](http://nucblog.net/)
 * [Intel NUC Roadmap 2018 – 2019](https://www.cnx-software.com/2017/09/20/intel-nuc-roadmap-2018-2019-gemini-lake-coffee-lake-and-kaby-lake-h/)
 * [Intel HD Graphics - Nvidia and AMD Equivalents](https://www.pvladov.com/2015/07/intel-hd-graphics-nvidia-and-amd-equivalents.html)
@@ -115,6 +114,6 @@ Cuando realmente compre el equipo publicaré varios artículos con el _unboxing_
 * [Intel NUC NUC7i7DNKE Intel Core i7-8650U](https://www.pccomponentes.com/barebone-intel-nuc-nuc7i7dnke-intel-core-i7-8650u)
 * [Intel NUC NUC7PJYH2 Intel Pentium Silver J5005](https://www.pccomponentes.com/barebone-intel-nuc-nuc7pjyh2-intel-pentium-silver-j5005)
 * [Sapphire lanzará placas base 5×5″ con una APU Ryzen V1000 soldada](https://elchapuzasinformatico.com/2018/07/sapphire-placas-base-5x5-apu-ryzen-v1000/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -38,8 +38,7 @@ No es muy complicado lo que hay que hacer para integrar un proveedor de ratios s
 
 Puedes obtener el [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/JavaMoney) del repositorio de ejemplos de este blog en GitHub.
 
-{{% reference %}}
-
+{{< reference >}}
 * [JSR-354 API](https://github.com/JavaMoney/jsr354-api)
 * [JSR-354 RI](https://github.com/JavaMoney/jsr354-ri)
 * [Bootstrap.java](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/spi/Bootstrap.java)
@@ -59,6 +58,6 @@ Puedes obtener el [código fuente completo del ejemplo](https://github.com/picod
 * [LoadDataLoaderService.java](https://github.com/JavaMoney/jsr354-ri/blob/master/src/main/java/org/javamoney/moneta/internal/loader/LoadDataLoaderService.java)
 * [ResourceCache.java](https://github.com/JavaMoney/jsr354-ri/blob/master/src/main/java/org/javamoney/moneta/internal/loader/ResourceCache.java)
 * [DefaultResourceCache.java](https://github.com/JavaMoney/jsr354-ri/blob/master/src/main/java/org/javamoney/moneta/internal/loader/DefaultResourceCache.java)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

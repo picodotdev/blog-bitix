@@ -84,10 +84,9 @@ Descargado y descomprimido el [binario de Apache Pluto](https://portals.apache.o
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Apache Tapestry Portlet](https://github.com/got5/tapestry5-portlet)
 * [Documentación Apache Tapestry Portlet](http://got5.github.io/tapestry5-portlet/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

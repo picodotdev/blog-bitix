@@ -70,13 +70,12 @@ Al introducir el PIN hay que poner cuidado y atención, suelen ser unos cuantos 
 
 En definitiva, el DNIe puede evitarnos algún viaje a alguna ventanilla y podemos hacer el trámite las 24 horas sin hacer colas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Configuración del DNI electrónico en Mozilla / Firefox](http://web.cenatic.es/dnie/index.php?option=com_content&view=article&id=104&Itemid=139)
 * [Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux][elblogdepicodev-183]
 * [Enviar correos electrónicos firmados con el DNIe y Evolution][blogbitix-2]
 * [Crear una par de claves GPG][elblogdepicodev-181]
 * [Como firmar correos electrónicos con GPG][elblogdepicodev-182]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -41,14 +41,13 @@ En el caso de PostgeSQL el archivo de log se ubica según el valor de la propied
 
 Como los archivos de log de sentencias ejecutadas potencialmente serán grandes hay que rotarlos y monitorizar o limitar su tamaño. En PostgreSQL usando las directivas de configuración, _log\_rotation\_age_ o _log\_rotation\_size_, en MySQL posiblemente con el comando [logrotate](https://linux.die.net/man/8/logrotate).
 
-{{% reference %}}
-
+{{< reference >}}
 * [MySQL Server Logs](https://dev.mysql.com/doc/refman/8.0/en/server-logs.html)
 * [PostgreSQL Error Reporting and Logging](https://www.postgresql.org/docs/current/runtime-config-logging.html)
 * [How to see log files in MySQL?](https://stackoverflow.com/questions/5441972/how-to-see-log-files-in-mysql)
 * [How to enable MySQL Query Log?](https://stackoverflow.com/questions/6479107/how-to-enable-mysql-query-log)
 * [How to log PostgreSQL queries?](https://stackoverflow.com/questions/722221/how-to-log-postgresql-queries)
 * [PostgreSQL: Error Reporting and Logging](http://www.postgresql.org/docs/current/static/runtime-config-logging.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -50,8 +50,7 @@ Así de simple podemos cambiar el comportamiento de Tapestry y en este caso empl
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
 * [AssetPathConverter](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/AssetPathConverter.html)
@@ -64,6 +63,6 @@ Así de simple podemos cambiar el comportamiento de Tapestry y en este caso empl
 * [General CDN problem that came up with Tree component](http://apache-tapestry-mailing-list-archives.1045711.n5.nabble.com/General-CDN-problem-that-came-up-with-Tree-component-td5671331.html)
 * [Using Amazon S3 Origins and Custom Origins for Web Distributions](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html)
 * [Serving Private Content through CloudFront](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

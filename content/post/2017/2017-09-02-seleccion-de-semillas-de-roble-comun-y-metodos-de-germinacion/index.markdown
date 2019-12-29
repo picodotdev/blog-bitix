@@ -111,12 +111,11 @@ Para finalizar un par de vídeos de como plantar un roble y vídeo en tiempo ace
 	<iframe width="640" height="360" src="https://www.youtube.com/embed/MB-BvkOyHww" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Como germinar una bellota de roble](http://www.lahuertinadetoni.es/como-germinar-una-bellota-o-roble/)
 * [Como germinar bellotas](https://www.youtube.com/watch?v=aZQzbc5GYGU)
 * [La mejor manera de germinar bellotas](https://www.youtube.com/watch?v=AQCqBzikA8c)
 * [Plantación de quercus](https://www.youtube.com/watch?v=MDHKlVJJrzg)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

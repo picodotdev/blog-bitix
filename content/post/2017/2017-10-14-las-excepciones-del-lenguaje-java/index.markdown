@@ -43,10 +43,9 @@ Cuando se produce una excepción la clase [Throwable](https://docs.oracle.com/ja
 
 Hay una cierta [controversia sobre las excepciones _checked_ y _unchecked_][blogbitix-313] ya que mejoran el control de errores pero pueden generar otros problemas. Ambas opciones tienen sus lados positivos y otros negativos. En Java se optó por implementar el mecanismo de excepciones donde las _checked_ es obligatorio tratarlas o lanzarlas a un nivel superior de la pila de llamadas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Gestión de errores con Either en vez de con código de error, null, Optional, checked exception o unchecked exception][blogbitix-319]
-{{% /reference %}}
+{{< /reference >}}
 
 
 {{% /post %}}

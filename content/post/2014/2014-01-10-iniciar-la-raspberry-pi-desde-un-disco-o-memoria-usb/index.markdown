@@ -55,14 +55,13 @@ Los elementos básicos para usar este miniordenador son la [placa de la Raspberr
 		<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J2BU7WO&linkId=f3093eebc185e207e98f6b5c53cd2c3a&internal=1"></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html)
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte II, programas) ](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch_22.html)
 * [Raspberry Pi como Media Center con GeeXboX][blogbitix-5]
 * [RaspBerry en USB](http://www.diverteka.com/?p=580)
 * [HOWTO: Move the filesystem to a USB stick](https://www.raspberrypi.org/phpBB3/viewtopic.php?f=29&t=44177)
 * [Using usb hard drive as default boot and storage?](https://www.raspberrypi.org/phpBB3/viewtopic.php?f=91&t=9117)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

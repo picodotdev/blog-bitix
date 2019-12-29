@@ -191,13 +191,12 @@ Por todas estas características se considera a PostgreSQL una de las bases de d
 
 En caso de optar por una base de datos NoSQL para persistir la información [la base de datos NoSQL MongoDB][blogbitix-237] permite guardar los datos en forma de documentos y conseguir la escalabilidad que las bases de datos relacionales con sus propiedades ACID es difícil.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación PostgreSQL](https://www.postgresql.org/docs/current/static/index.html)
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239]
 * [Introducción a la base de datos NoSQL Redis][blogbitix-240]
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

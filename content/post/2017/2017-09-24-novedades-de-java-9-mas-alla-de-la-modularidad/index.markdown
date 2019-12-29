@@ -197,8 +197,7 @@ Y unos buenos vídeos sobre las nuevas características de Java 9, uno en españ
     <iframe width="640" height="360" src="https://www.youtube.com/embed/9EiLRD95zDg" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [The best Java 9 Language and API improvements](https://zeroturnaround.com/rebellabs/the-best-java-9-language-and-api-improvements/)
 * [New Java 9 features at a glance](https://jaxenter.com/new-features-in-java-9-137344.html)
 * [Modern Java Recipes](http://amzn.to/2ylsidI)
@@ -207,6 +206,6 @@ Y unos buenos vídeos sobre las nuevas características de Java 9, uno en españ
 * [Java 9 and IntelliJ IDEA](https://dzone.com/articles/java-9-and-intellij-idea)
 * [Java 9 más allá de la modularidad](https://www.autentia.com/2017/09/13/java-9-mas-alla-de-la-modularidad/)
 * [JShell la herramienta REPL incorporada en Java 9][blogbitix-265]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

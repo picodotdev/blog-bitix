@@ -89,9 +89,8 @@ Con las [aplicaciones para _smatphone_](https://nextcloud.com/install/#) los doc
 
 Hay [ejemplo de archivo de Docker Compose para tener Nexcloud con un certificado](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/with-nginx-proxy/postgres/fpm/docker-compose.yml) creado y renovado de forma automática con Let's Encrypt a través del contenedor [jrcs/letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) y configurando las variables de entorno _LETSENCRYPT\_HOST_, _LETSENCRYPT\_EMAIL_ con el dominio propio para Nexcloud y un correo electrónico.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

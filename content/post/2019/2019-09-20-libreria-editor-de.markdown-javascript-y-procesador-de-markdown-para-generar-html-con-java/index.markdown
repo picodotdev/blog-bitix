@@ -35,10 +35,9 @@ Una vez que se obtiene el texto en formato _markdown_ en algún momento al visua
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="Groovy" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Markdown Guide](https://www.markdownguide.org/getting-started)
 * [Markdown Basic Syntax](https://www.markdownguide.org/basic-syntax)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -42,10 +42,9 @@ La propiedad global _accesskey_ puede utilizarse en cualquier elemento de HTML, 
         caption="Acciones con combinaciones de teclas" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Atributos globales][https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes]
 * [Introducción al JavaScript de ECMAScript 6][blogbitix-198]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

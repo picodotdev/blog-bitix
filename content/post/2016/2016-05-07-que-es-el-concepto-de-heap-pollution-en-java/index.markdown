@@ -50,12 +50,11 @@ Salvo que hagamos operaciones complicadas entre genéricos de diferentes tipos n
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaHeapPollution" command="./gradlew test" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Tutorial sobre los tipos genéricos de Java][blogbitix-138]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Heap Pollution](https://en.wikipedia.org/wiki/Heap_pollution)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -32,8 +32,7 @@ Este concepto de _wildcard capture_ genera bastantes dudas y en internet hay mú
 
 * [The Java™ Tutorials - Generics Capture](https://docs.oracle.com/javase/tutorial/java/generics/capture.html)
 
-{{% reference %}}
-
+{{< reference >}}
 * [Why use a wildcard capture helper method?](http://www.howtobuildsoftware.com/index.php/how-do/h83/java-generics-wildcard-why-use-a-wild-card-capture-helper-method) es la mejor explicación que he encontrado de _wildcard capture_.
 * [Wildcard Capture and Helper Methods](https://docs.oracle.com/javase/tutorial/java/generics/capture.html)
 * [Capturing wildcards in Java generics](https://stackoverflow.com/questions/17340474/capturing-wildcards-in-java-generics)
@@ -42,6 +41,6 @@ Este concepto de _wildcard capture_ genera bastantes dudas y en internet hay mú
 * [Going wild with generics, Part 1](https://www.ibm.com/developerworks/library/j-jtp04298/)
 * [Why use a wild card capture helper method?](https://stackoverflow.com/questions/30763895/why-use-a-wild-card-capture-helper-method)
 * [When to use generic methods and when to use wild-card?](https://stackoverflow.com/questions/18176594/when-to-use-generic-methods-and-when-to-use-wild-card)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

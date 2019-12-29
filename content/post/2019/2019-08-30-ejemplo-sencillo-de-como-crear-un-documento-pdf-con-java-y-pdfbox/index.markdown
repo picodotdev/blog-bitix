@@ -45,12 +45,11 @@ En el siguiente [tutorial de PDFBox](https://www.tutorialspoint.com/pdfbox/index
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaPdf" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Creating PDF Documents With Apache PDFBox 2](https://dzone.com/articles/creating-pdf-documents-with-apache-pdfbox-2)
 * [Inserting Image to a PDF Document](https://www.tutorialspoint.com/pdfbox/pdfbox_inserting_image.htm)
 * [Is iText Java library free of charge or have any fees to be paid?](https://stackoverflow.com/a/27867740)
 * [PDF text layout made easy with PDFBox-Layout](https://hardmockcafe.blogspot.com/2016/04/pdf-text-layout-made-easy-with-pdfbox_17.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

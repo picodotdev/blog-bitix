@@ -35,8 +35,7 @@ En la dirección http://127.0.0.1:4567/hola obtendremos el mensaje de este ejemp
 
 Otra opción usando Java u otros varios lenguajes para los que se ofrece soporte, basado en la programación reactiva y más escalable si llegamos a ese punto de necesidad es [Vert.x que describo y muestro en otro ejemplo básico][blogbitix-120].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ejemplo sencillo de servicio web con RESTEasy][elblogdepicodev-142]
 * [Cliente javascript y java de servicio web REST con RESTEasy ][elblogdepicodev-143]
 * [Devolver xml, json o html con RESTEasy ][elblogdepicodev-144]
@@ -49,6 +48,6 @@ Otra opción usando Java u otros varios lenguajes para los que se ofrece soporte
 * [Información y métricas de la aplicación con Spring Boot Actuator][blogbitix-113]
 * [Steps toward the glory of REST](https://martinfowler.com/articles/richardsonMaturityModel.html)
 * [Hypertext Application Language](http://stateless.co/hal_specification.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

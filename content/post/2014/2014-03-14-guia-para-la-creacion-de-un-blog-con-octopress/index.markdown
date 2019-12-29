@@ -81,10 +81,9 @@ En el [código fuente del blog](https://github.com/picodotdev/blog-bitix) se pue
 * source/layouts/\_post.html
 * custom/post/karmacracy.html
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hola nuevo mundo][blogbitix-0]
 * [Mi experiencia y consejos para un blog][blogbitix-7]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -40,9 +40,8 @@ Para añadir tipos de datos que no están entre los básicos de JSON como es una
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaJson" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [JSON-B Users Guide](http://json-b.net/users-guide.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

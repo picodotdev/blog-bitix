@@ -39,10 +39,9 @@ Hace meses escribí un [libro sobre Apache Tapestry][blogbitix-12] que puedes de
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ejemplo lista de tareas con React y Backbone][blogbitix-20]
 * [Aprende a crear Web Components con Polymer](https://platzi.com/blog/web-components-polymer/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

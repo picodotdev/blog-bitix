@@ -34,11 +34,10 @@ Con Hugo personalicé completamente el diseño y estilos de de la bitácora pero
 
 Una de las características destacadas de Hugo es que es muy rápido, en unos pocos segundos es capaz de generar la página web completa a partir del código fuente de los archivos. Ya he escrito más de 300 artículos y tarda menos de 3 segundos en generar este blog. Otra que destaco es que solo se necesita un único binario con lo que se evita el infierno de dependencias que en alguna ocasión con Octopress me causó problemas. Usando el servidor web incorporado que posee es posible previsualizar en local el contenido de la página antes de publicarla.
 
-{{% reference %}}
-
+{{< reference >}}
 * [¡Hola nuevo mundo!][blogbitix-0]
 * [Nuevo diseño en Blog Bitix][blogbitix-80]
 * [Gestionar los enlaces de una bitácora con Hugo][blogbitix-182]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

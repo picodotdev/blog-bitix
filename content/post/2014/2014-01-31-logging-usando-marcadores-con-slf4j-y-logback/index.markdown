@@ -55,9 +55,8 @@ Puedes obtener el [código fuente completo del ejemplo](https://github.com/picod
 
 ¿Conocías y has usado alguna vez esta funcionalidad?
 
-{{% reference %}}
-
+{{< reference >}}
 * [Librerías de logging para Java (slf4j, Log4j, java.util.logging, logback, MentaLog](https://elblogdepicodev.blogspot.com.es/2012/04/librerias-de-logging-para-java-slf4j.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

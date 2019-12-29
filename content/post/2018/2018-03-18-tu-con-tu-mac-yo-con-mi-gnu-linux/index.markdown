@@ -77,9 +77,8 @@ La marca Apple tiene un halo de idolatración, de que no hay nada mejor ya sea e
 
 Pasado este tiempo usando un Mac a mi no me han convencido de cambiar y comprar uno de ellos. La plataforma del pingüino también tiene defectos al igual que macOS no está exento de ellos, los dos alguna vez se me han bloqueado, pero después de probar un Mac la verdad es que no entiendo la idolatración y lo fieles que son algunos de sus usuarios a esta marca. Al pagar lo que hay que pagar por un Mac uno debe pensar que con legitimidad van a recibir a cambio algo acorde a sus expectativas más cuanto mayor sea el precio, quizá si el precio es elevado cuesta más reconocer los defectos. Quédate con tu Mac, a mi dame mi GNU/Linux.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Apple actualiza la lista de Mac y otros dispositivos “vintage y obsoletos”](https://www.soydemac.com/apple-actualiza-la-lista-de-mac-y-otros-dispositivos-vintage-y-obsoletos/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

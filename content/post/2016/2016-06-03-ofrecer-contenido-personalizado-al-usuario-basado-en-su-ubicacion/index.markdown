@@ -55,11 +55,10 @@ Proporcionar contenido personalizado al usuario probablemente ayuda a mejorar la
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaGeolocation/" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Lanzar proceso del sistema con Java][blogbitix-132]
 * [Geolocation software](https://en.wikipedia.org/wiki/Geolocation_software)
 * [W3C Geolocation API](https://en.wikipedia.org/wiki/W3C_Geolocation_API)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

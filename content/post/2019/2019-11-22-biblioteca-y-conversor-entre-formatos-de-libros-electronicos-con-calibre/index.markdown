@@ -54,9 +54,8 @@ Quizá algunos de los libros no tenga los metadatos correctos como el título, n
 
 Calibre tiene más funciones pero la catalogar los libros en una biblioteca digital y la realizar la conversión entre formatos para diferentes dispositivos son las dos principales. Está [disponible para los principales sistemas operativos](https://calibre-ebook.com/download) como [GNU][gnu]/[Linux][linux] en forma de paquete proporcionado por la distribución o como [aplicación Flatpak universal para cualquier distribución](https://flathub.org/apps/details/com.calibre_ebook.calibre), [Windows][windows] y [macOS][macos]. Puedes conocer la [historia de Calibre](https://calibre-ebook.com/about#history) y cmo surgió como una necesidad de su autor.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux][blogbitix-362]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

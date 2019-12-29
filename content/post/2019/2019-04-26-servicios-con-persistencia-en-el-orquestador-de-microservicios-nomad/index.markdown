@@ -48,14 +48,13 @@ Para iniciar [Consul][consul] y Nomad hay que utilizar los siguientes comandos y
 
 Las restricciones se han de cumplir para elegir un nodo, por otro lado está también la afinidad. La [afinidad](https://www.nomadproject.io/docs/job-specification/affinity.html) es una preferencia utilizada por Nomad al seleccionar los nodos que tratará de cumplir si hay algún nodo disponible con las propiedades de afinidad deseadas pero si no hay un nodo disponible se elige algún otro.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Estrategias de despliegue para microservicios con Nomad][blogbitix-399]
 * [Portworx](https://www.nomadproject.io/guides/stateful-workloads/portworx.html)
 * [Ephemeral Disk](https://www.nomadproject.io/docs/job-specification/ephemeral_disk.html)
 * [Nomad - our experiences and best practices](https://tech.trivago.com/2019/01/25/nomad-our-experiences-and-best-practices/)
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

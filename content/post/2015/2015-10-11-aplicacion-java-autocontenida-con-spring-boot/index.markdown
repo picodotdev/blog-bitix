@@ -65,14 +65,13 @@ Añadiendo la dependencia [Spring Boot Actuator][spring-boot-actuator] podemos [
 
 En un repositorio de GitHub de Spring hay muchos más [ejemplos sobre Spring Boot](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples).
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación de Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 * [Información y métricas de aplicación con Spring Boot Actuator][blogbitix-113]
 * [Configuración de una aplicación en diferentes entornos con Spring Cloud Config][blogbitix-112]
 * [Aplicación web Java de forma autontenida con la versión embebida de Tomcat][blogbitix-71]
 * [La herramienta de automaticación Gradle][elblogdepicodev-98]
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

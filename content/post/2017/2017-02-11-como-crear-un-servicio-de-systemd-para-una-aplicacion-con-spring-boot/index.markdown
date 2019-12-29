@@ -44,12 +44,11 @@ En los enlaces de referencia hay documentación más detallada tanto para gestio
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="sudo systemctl start spring-boot-jaxrs.service" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Understanding Systemd Units and Unit Files](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files)
 * [systemd unit](http://www.freedesktop.org/software/systemd/man/systemd.unit.html)
 * [systemd service](http://www.freedesktop.org/software/systemd/man/systemd.service.html)
 * [Docker host integration](https://docs.docker.com/engine/admin/host_integration/)
 * [Installing Spring Boot applications](https://docs.spring.io/spring-boot/docs/1.5.1.RELEASE/reference/htmlsingle/#deployment-install)
 * [Systemd (Arch Linux Wiki)](https://wiki.archlinux.org/index.php/Systemd)
-{{% /reference %}}
+{{< /reference >}}

@@ -76,11 +76,10 @@ En sus respectivas páginas de manual, <code>man [comando]</code>, podemos conoc
         caption="Uso de comandos GNU/Linux y página del manual de grep" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Manual GNU Coreutils](https://www.gnu.org/software/coreutils/manual/coreutils.html)
 * [Manual de referencia bash](https://www.gnu.org/software/bash/manual/bashref.html)
 * [20 Useful Commands for Linux Newbies](http://www.tecmint.com/useful-linux-commands-for-newbies/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

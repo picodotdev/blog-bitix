@@ -75,8 +75,7 @@ Continuando esta serie de artículos sobre docker explicaré como construir una 
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción y características de Docker][blogbitix-49]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Introducción a Ansible][blogbitix-52]
@@ -84,6 +83,6 @@ Continuando esta serie de artículos sobre docker explicaré como construir una 
 * [Introducción a Bitnami][blogbitix-54]
 * [Docker Hub Registry](https://registry.hub.docker.com/)
 * http://phusion.github.io/baseimage-docker/
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

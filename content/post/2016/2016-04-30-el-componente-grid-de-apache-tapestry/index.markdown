@@ -77,11 +77,10 @@ Es sorprendentemente lo sencillo que es usar el componente _Grid_ para toda la f
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Mantenimiento CRUD en Apache Tapestry][elblogdepicodev-160]
 * [Artículos sobre Tapestry en Blog Bitix][blogbitix-tag-tapestry]
 * [Artículos sobre Tapestry en El blog de pico.dev][elblogdepicodev-label-tapestry]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

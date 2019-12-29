@@ -101,8 +101,7 @@ En el nuevo modelo las nuevas características no se añaden hasta que están pr
 
 En la sección final de referencia incluyo varios artículos y vídeos de los que he obtenido la información para hacer este resumen de las novedades de Java 10. Algunos son muy interesantes y amplían en gran medida lo comentado y lo que posiblemente llegue en un futuro.
 
-{{% reference %}}
-
+{{< reference >}}
 * [First contact with 'var' in Java 10](https://www.youtube.com/watch?v=Le1DbpRZdRQ)
 * [Keynotes: Oracle Code Chicago](https://youtu.be/84mCmmzksGI?t=47m43s)
 * [Introducing Java SE 10](https://developer.oracle.com/java/java10)
@@ -117,6 +116,6 @@ En la sección final de referencia incluyo varios artículos y vídeos de los qu
 * [The Incredible Shrinking Java Platform](https://www.azul.com/the-incredible-shrinking-java-platform/)
 * [Oracle Java SE Support Roadmap](https://www.oracle.com/technetwork/java/eol-135779.html)
 * [Java on Docker will no longer suck: improvements coming in Java 10](https://www.opsian.com/blog/java-on-docker/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

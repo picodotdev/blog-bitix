@@ -56,9 +56,8 @@ Los comandos anteriores aunque cambiando los valores de los puertos o dirección
 
 En algunos casos como usando una [Raspberry Pi][raspberrypi] sin interfaz gráfica para minimizar el consumo de recursos es necesario conocer o consultar los comandos de ufw.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ubuntu UFW](https://help.ubuntu.com/community/UFW)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

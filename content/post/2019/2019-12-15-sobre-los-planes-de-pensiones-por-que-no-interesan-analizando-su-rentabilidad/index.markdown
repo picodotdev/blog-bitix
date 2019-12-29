@@ -124,8 +124,7 @@ Salvo en la última década antes de la jubilación, no ya sólo por su rentabil
 
 Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente para los gastos corrientes y que permita capacidad de ahorro, esto es de mayor rentabilidad que un plan de pensiones o fondo de inversión. Otras cosas que ayudan es si el coche no es un medio de transporte imprescindible para trabajar es uno de los primeros gastos (compra coche, seguro, gasolina, reparaciones e ITV) que uno puede pensar en quitar usando transporte público como alternativa. 
 
-{{% reference %}}
-
+{{< reference >}}
 * [Calcular el ahorro fiscal de un plan de pensiones](https://www.economiasimple.net/calcular-el-ahorro-fiscal-de-un-plan-de-pensiones.html)
 * [¿Cómo debo cobrar mi plan de pensiones una vez jubilado?](https://www.economiasimple.net/como-debo-cobrar-mi-plan-de-pensiones-una-vez-jubilado.html)
 * [¿Cuándo puedo recuperar el dinero de un plan de pensiones?](https://www.economiasimple.net/cuando-puedo-recuperar-el-dinero-de-un-plan-de-pensiones.html)
@@ -136,6 +135,6 @@ Para ahorrar una parte fundamental es tener un buen sueldo, que sea suficiente p
 * [Calcule cuál será su pensión estimada cuando se jubile](https://www.ocu.org/inversiones/calculadoras/calcular-la-pension)
 * [Coeficientes corrección monetaria Bizkaia 2018](https://www.bizkaia.eus/fitxategiak/05/Ogasuna/guregida/dokumentuak/artxiboak/2018%20Coeficientes%20correcci%C3%B3n%20monetaria.pdf)
 * [Los planes de pensiones no interesan](https://www.ocu.org/dinero/deposito-inversion/noticias/planes-de-pensiones-no-interesan-473454)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -67,9 +67,8 @@ En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recib
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaNIO" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Artículo NIO.2, Java Magazine Jul/Ago 2016](http://www.javamagazine.mozaicreader.com/JulyAug2016/Twitter)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

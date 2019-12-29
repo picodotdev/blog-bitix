@@ -72,10 +72,9 @@ Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspb
 
 ¡A disfrutar!
 
-{{% reference %}}
-
+{{< reference >}}
 * [Guía instalación Raspberry Pi con Arch Linux][elblogdepicodev-108]
 * [Iniciar la Raspberry Pi desde un disco o memoria USB][blogbitix-6]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

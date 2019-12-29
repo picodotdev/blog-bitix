@@ -100,11 +100,10 @@ Si preferimos realizar la conversión mediante una interfaz gráfica podemos usa
         image2="vlc-convert-audio-codec.png" thumb2="vlc-convert-audio-codec-thumb.png" title2="Parámetros del códec de audio" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación de FFmpeg](https://trac.ffmpeg.org/wiki)
 * [Video Encoding](https://wiki.archlinux.org/index.php/video_encoding)
 * [Vídeos de ejemplo](http://www.sample-videos.com/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -69,8 +69,7 @@ Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spr
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew cloudconfig:run, ./gradlew clouddiscovery:run, ./gradlew service:run, ./gradlew client:run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
@@ -78,6 +77,6 @@ Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spr
 * [Spring Cloud][spring-cloud]
 * [Spring Cloud Config][spring-cloud-config]
 * [Documentación Spring Cloud Config](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

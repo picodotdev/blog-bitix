@@ -86,12 +86,11 @@ Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas má
 	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00JXLF7AK&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Búsquedas de texto completo en objetos de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html)
 * [Elasticsearch](http://www.elasticsearch.org)
 * [Exploring Elasticsearch](http://exploringelasticsearch.com/)
 * [Tutorial Elasticsearch](http://www.elasticsearchtutorial.com/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -44,12 +44,11 @@ En el proyecto hay que incluir como dependencia la librería Guava en este caso 
 
 {{% sourcecode git="blog-ejemplos/tree/master/Guava" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Guide to Guava’s EventBus](https://www.baeldung.com/guava-eventbus)
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 * [Introducción y ejemplo sencillo de Java Message Service (JMS)][blogbitix-15]
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

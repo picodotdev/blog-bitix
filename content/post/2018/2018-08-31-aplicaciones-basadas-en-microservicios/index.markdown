@@ -90,7 +90,6 @@ Según vaya escribiendo y publicando los artículos aparecerán en la lista de l
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Monolithic vs. Microservices Architecture](https://articles.microservices.com/monolithic-vs-microservices-architecture-5c4848858f59)
-{{% /reference %}}
+{{< /reference >}}

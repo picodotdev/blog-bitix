@@ -84,8 +84,7 @@ Ejecutar este ejemplo require instalar previamente el servidor de aplicaciones [
 
 En el futuro Java EE 8 está planificado un _framework_ basado en acciones en vez de componentes como en JSF, también el soporte para [el protocolo HTTP/2][blogbitix-127].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Tutorial Java EE 7](https://docs.oracle.com/javaee/7/tutorial/)
@@ -97,6 +96,6 @@ En el futuro Java EE 8 está planificado un _framework_ basado en acciones en ve
 * [Introducción a JavaFX, aplicaciones de escritorio en Java][blogbitix-100]
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Ejemplo de multiproyecto con Gradle][blogbitix-96]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -57,10 +57,9 @@ En la creación del repositorio en Docker Hub con _build_ automatizada seleccion
 
 Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Get started with Docker Hub](https://docs.docker.com/userguide/dockerrepos/)
 * [The Dockerfile and Automated Builds](http://docs.docker.com/docker-hub/builds/#the-dockerfile-and-automated-builds)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

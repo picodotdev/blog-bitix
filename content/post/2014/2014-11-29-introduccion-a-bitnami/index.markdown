@@ -48,8 +48,7 @@ Accediendo con el navegador a la dirección _https\://192.168.1.3_ se accede a l
 
 En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los servicios que ofrece tanto para probarlos con una máquina virtual o para instalarlos en la nube de Amazon EC2, Azure o en Google Cloud. La nube evita adquirir hardware y posibilita escalarlo según las necesidades siempre estando dispuestos a pagar su coste, en algunos casos un mini PC como los [Brix](https://amzn.to/2rauzYV), [NUC](https://amzn.to/2s8GYtI) o [Cubi](https://amzn.to/2r07KGS) que soportan cantidades de memoria de 16 GiB y algunos 32 GiB son mas que suficientes para una infraestructura interna de una empresa pequeña que incluya control de versiones, gestor de peticiones, integración continua, base de datos, servidor de aplicaciones, ... estos ordenadores pequeños en tamaño pero con una capacidad de proceso y memoria nada despreciable son una opción a considerar para algunas tareas y pueden actuar perfectamente como servidores en los que alojar algunos servicios para consumo interno.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Bitnami](https://bitnami.com)
 * [Wikipedia Bitnami](https://en.wikipedia.org/wiki/Bitnami)
 * [Bitnami, Una tienda de Aplicaciones para Servidores](http://www.jsitech.com/generales/bitnami-una-tienda-de-aplicaciones-para-servidores/)
@@ -61,6 +60,6 @@ En definitiva, Bitnami es de utilidad si se necesita usar cualquiera de los serv
 * [Introducción al gestor de proyectos y tareas Redmine][blogbitix-57]
 * [Instalar y usar plugin ágil en Redmine][blogbitix-59]
 * [Introducción e inicio a Drupal][blogbitix-60]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

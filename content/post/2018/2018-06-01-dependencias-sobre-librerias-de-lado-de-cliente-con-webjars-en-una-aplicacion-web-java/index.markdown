@@ -43,9 +43,8 @@ Los _webjars_ muy útiles para gestionar las librerías de lado cliente que hace
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introduction to WebJars](https://www.baeldung.com/maven-webjars)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

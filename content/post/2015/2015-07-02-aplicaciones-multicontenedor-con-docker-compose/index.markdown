@@ -76,9 +76,8 @@ docker-compose inicia los contenedores en el orden que hemos indicado en el arch
 
 En las siguientes semanas publicaré más artículos sobre esta serie de Docker comentando [Docker Hub][docker-hub], [Docker Machine][docker-machine] y explicaré de qué forma nos pueden ser útiles estas otras herramientas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a elasticsearch][blogbitix-21]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

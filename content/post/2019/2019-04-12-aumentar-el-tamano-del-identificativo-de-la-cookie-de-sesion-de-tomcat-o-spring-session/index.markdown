@@ -47,10 +47,9 @@ Una clave asimétrica considerada segura puedes ser de 2048 bits pero se puede [
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringSession" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [How to change the session id length in Spring Boot](https://stackoverflow.com/questions/35062780/how-to-change-the-session-id-length-in-spring-boot)
 * [Spring Session, Allow for configuration of session id generation and format](https://github.com/spring-projects/spring-session/pull/204)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

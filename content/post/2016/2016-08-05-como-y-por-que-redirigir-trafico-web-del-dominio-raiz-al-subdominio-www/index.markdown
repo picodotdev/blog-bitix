@@ -56,10 +56,9 @@ Si prefieriesemos hacer la redirección al revés, del subdominio www al dominio
 {{< sourcecode git="blog-ejemplos/tree/master/RedirigirSubdominio" >}}
 
 Referencia:
-{{% reference %}}
-
+{{< reference >}}
 * [Nginx config for www to non-www and non-www to www redirection](https://easyengine.io/tutorials/nginx/www-non-www-redirection/)
 * [How to Redirect URLs from Your Root Domain to the WWW Subdomain and Vice Versa](http://www.thesitewizard.com/apache/redirect-domain-www-subdomain.shtml)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

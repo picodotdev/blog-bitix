@@ -30,12 +30,11 @@ Aún así Arch Linux puede que no sea lo más adecuado para todo o todas las per
 
 ¡Larga vida a Linux y a Arch Linux!
 
-{{% reference %}}
-
+{{< reference >}}
 * [De Windows a Arch Linux][elblogdepicodev-de-windows-arch-linux]
 * [Experiencia instalando sistema operativo a ordenador viejo][blogbitix-37]
 * [Anexo a la guía de instalación de Arch Linux][blogbitix-22]
 * [Guía instalación Raspberry Pi con Arch Linux ARM (Parte I, instalación base)][elblogdepicodev-guia-instalacion-raspberry-pi-con-arch]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

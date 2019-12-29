@@ -67,10 +67,9 @@ Si usas Arch Linux e instalas el entorno de escritorio GNOME con los paquetes _g
 
 {{< code file="install.sh" language="bash" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Flatpak vs Snap - Which format is "Better"? A rather excellent in-depth comparison](https://www.reddit.com/r/linux/comments/60qdtw/flatpak_vs_snap_which_format_is_better_a_rather/)
 * [Flatpak Arch Linux Wiki](https://wiki.archlinux.org/index.php/Flatpak)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

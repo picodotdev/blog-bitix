@@ -67,7 +67,7 @@ Iniciado el sistema con la imagen ISO de Arch Linux de instalación, hay que des
 El tiempo requerido de instalación varía según el ancho de banda de la conexión y del tipo de almacenamiento, en mi caso con ADSL con una descarga de 1.2 MiB/s y SSD la instalación del sistema base sin entorno de escritorio me tarda aproximandamente 20 minutos. Con una conexión de fibra tardará sensiblemente menos tiempo. El _script_ de instalación contiene con los mismos comandos que serían necesarios para realizar la instalación manualmente de forma interactiva.
 
 {{< code file="alis-install.sh" language="bash" options="" >}}
-{{< code file="alis.conf" language="plaintext" options="" >}}
+{{< code file="alis.conf" language="bash" options="" >}}
 
 Estas son algunas capturas de pantalla con diferentes entornos de escritorio que he probado con VirtualBox y un vídeo grabado con asciinema con el proceso completo de instalación.
 

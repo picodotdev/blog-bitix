@@ -61,12 +61,11 @@ Respecto a gnu/linux he actualizado la guía de instalación de [Arch Linux][arc
 
 En el siguiente semestre seguiré escribiendo nuevos artículos sobre estos mismos temas y publicando uno nuevo cada semana de los que ya tengo preparados. Feliz lectura (o relectura)!
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hemeroteca #3](https://elblogdepicodev.blogspot.com.es/2013/06/hemeroteca-3.html)
 * [Hemeroteca #2](https://elblogdepicodev.blogspot.com.es/2012/12/el-blog-de-picodev-te-desea-un-2013.html)
 * [Hemeroteca #1](https://elblogdepicodev.blogspot.com.es/2012/06/hemeroteca-1.html)
 * [Hemeroteca #0](https://elblogdepicodev.blogspot.com.es/2011/12/feliz-navidad-y-prospero-2012.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

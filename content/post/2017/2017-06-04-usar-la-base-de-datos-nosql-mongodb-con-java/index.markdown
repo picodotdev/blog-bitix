@@ -46,13 +46,12 @@ En el libro [MongDB in Action](https://amzn.to/2qvYqqU) comentan más detalladam
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación MongoDB](https://docs.mongodb.com/)
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
 * [Introducción a la base de datos NoSQL Redis][blogbitix-240]
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

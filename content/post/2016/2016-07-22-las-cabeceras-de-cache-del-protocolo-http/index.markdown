@@ -53,13 +53,12 @@ El servidor especifica como quiere que el contenido o recursos que devuelve sean
 * Vary: indica que el recurso varía según alguna cabecera proporcionada por el cliente como por ejemplo _User-Agent_ o _Accept-Encoding_.
 * Pragma: esta es una directiva antigua que indicada como _pragma: no-cache_, se interpreta como _cache-control: no-cache_.
 
-{{% reference %}}
-
+{{< reference >}}
 * [A Beginner's Guide to HTTP Cache Headers](http://dev.mobify.com/blog/beginners-guide-to-http-cache-headers/)
 * [Header Field Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html)
 * [Capítulo 14. La caché de HTTP](https://librosweb.es/libro/symfony_2_x/capitulo_14.html)
 * [14.3. Introducción a la caché de HTTP](https://librosweb.es/libro/symfony_2_x/capitulo_14/introduccion_a_la_cache_de_http.html)
 * [14.4. Caducidad y validación HTTP](https://librosweb.es/libro/symfony_2_x/capitulo_14/caducidad_y_validacion_http.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -70,10 +70,9 @@ Hay otro tipo de opciones conocidas como [plataforma como servicio][paas] (PaaS,
 
 Las opciones son múltiples para hospedar nuestra aplicación. Si se trata de algo para uso personal una Raspberry Pi pueda valernos, si se trata de una web presencial estática que no requiera programación un proveedor de _hosting_ será suficiente. Si queremos tener flexibilidad y más libertad en las herramientas del proyecto las nubes de Amazon, Azure o Google nos servirán. Si no necesitamos todos los servicios de los anteriores Linode o Digital Ocean ofrecen unos planes de precios muy sencillos y previsibles. Finalmente están los PaaS que permiten desentendernos de la infraestructura y centrarnos en la aplicación.
 
-{{% reference %}}
-
+{{< reference >}}
 * [5 opciones de hosting para aplicaciones Java](https://elblogdepicodev.blogspot.com.es/2012/02/5-opciones-de-hosting-para-aplicaciones.html)
 * [Arquitectura y hospedaje de Blog Stack][blogbitix-24]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

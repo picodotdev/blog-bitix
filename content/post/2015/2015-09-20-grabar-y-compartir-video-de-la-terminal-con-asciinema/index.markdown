@@ -44,11 +44,10 @@ Y este es el resultado de un vídeo, en este caso el vídeo introductorio de Asc
 
 {{< asciinema id="22124" caption="Vídeo introducción Asciinema" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Asciinema][asciinema]
 * [Documentación de Asciinema](https://asciinema.org/docs)
 * [Documentación para embeber vídeos](https://asciinema.org/docs/embedding)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

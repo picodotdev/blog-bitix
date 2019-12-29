@@ -49,9 +49,8 @@ En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda est
 
 {{< sourcecode git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Mock object](https://en.wikipedia.org/wiki/Mock_object)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

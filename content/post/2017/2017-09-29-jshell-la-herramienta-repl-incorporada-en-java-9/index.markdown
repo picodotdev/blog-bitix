@@ -54,9 +54,8 @@ También se pueden [añadir módulos o librerías](https://docs.oracle.com/javas
 
 En la [guía oficial de JShell](https://docs.oracle.com/javase/9/jshell/toc.htm) se comenta algunas opciones más de esta nueva herramienta.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Getting Started with JShell](https://www.pluralsight.com/guides/java-and-j2ee/getting-started-with-jshell)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

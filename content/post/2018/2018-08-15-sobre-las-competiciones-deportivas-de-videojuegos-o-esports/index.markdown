@@ -63,11 +63,10 @@ Este es un documental sobre lo que rodea a las  competiciones deportivas en equi
     <iframe width="560" height="315" src="https://www.youtube.com/embed/yvxMwoYuSp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Xataka eSports](https://esports.xataka.com/)
 * [Los 'eSports' se calientan: 600.000€ para la alternativa española a Twitch (Amazon)](https://www.elconfidencial.com/tecnologia/2017-06-06/gamerswalk-esports-twitch-amazon_1394223/)
 * ['eSports': los bufetes se calzan las botas para jugar un partido de 600 millones de euros](http://www.elconfidencial.com/empresas/2017-05-13/deportes-electronicos-esports-regulacion-situacion-espana-jugadores-deporte-ligas_1381822/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

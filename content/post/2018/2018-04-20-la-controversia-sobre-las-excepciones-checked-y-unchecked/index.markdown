@@ -39,13 +39,12 @@ En el siguiente código se observa como capturar, lanzar y declarar excepciones 
 
 En el aparatado referncia incluyo unos buenos enlaces que amplian y detallan más apropiadamente la controversia sobre las excepciones _checked_ y _unchecked_.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Exceptions tutorial](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
 * [Unchecked Exceptions — The Controversy](https://docs.oracle.com/javase/tutorial/essential/exceptions/runtime.html)
 * [Advantages of Exceptions](https://docs.oracle.com/javase/tutorial/essential/exceptions/advantages.html)
 * [Why are Exceptions not Checked in .NET?](https://stackoverflow.com/questions/124143/why-are-exceptions-not-checked-in-net#126122)
 * [The Trouble with Checked Exceptions](http://www.artima.com/intv/handcuffs.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

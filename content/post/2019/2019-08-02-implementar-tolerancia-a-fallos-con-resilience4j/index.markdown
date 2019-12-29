@@ -46,11 +46,10 @@ Resilience4j proporciona añadidos de integración con Spring Boot y exportació
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Achieving Fault Tolerance With Resilience4j](https://dzone.com/articles/resilience4j-intro)
 * [Guide to Resilience4j](https://www.baeldung.com/resilience4j)
 * [Spring Cloud Greenwich.RELEASE](https://spring.io/blog/2019/01/23/spring-cloud-greenwich-release-is-now-available)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

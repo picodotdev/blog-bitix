@@ -49,10 +49,9 @@ En todos los casos como se muestra en el código es posible también conocer la 
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaSound" command="./gradlew run --args=\"midi\", ./gradlew run --args=\"mp3\", ./gradlew run --args=\"ogg\"" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Tutorial Java Sound](https://docs.oracle.com/javase/tutorial/sound/sampled-overview.html)
 * [Java Media Framework](https://www.oracle.com/technetwork/java/javase/tech/index-jsp-140239.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

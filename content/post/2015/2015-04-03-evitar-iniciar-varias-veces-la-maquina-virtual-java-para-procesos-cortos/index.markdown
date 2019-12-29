@@ -38,10 +38,9 @@ El programa Java con el que he medido el tiempo de inicio de la JVM es el siguie
 
 {{< code file="Test.java" language="java" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Novedades y nuevas características sobre Java 8][blogbitix-17]
 * [Más artículos sobre Java][blogbitix-tag-java]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

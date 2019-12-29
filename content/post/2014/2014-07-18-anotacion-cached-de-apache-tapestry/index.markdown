@@ -30,10 +30,9 @@ Aún así, la anotación Cached funciona a nivel de petición, cada vez que que 
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

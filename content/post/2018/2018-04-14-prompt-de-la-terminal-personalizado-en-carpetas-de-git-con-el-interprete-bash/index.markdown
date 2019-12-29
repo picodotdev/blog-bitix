@@ -40,9 +40,8 @@ Este es el archivo _.bashrc_ completo de la distribución [Arch Linux][archlinux
 
 La documentación completa con todas las opciones de personalización están en las primeras líneas de comentario del _script_.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Personalizar el prompt del sistema del intérprete de comandos Bash][blogbitix-316]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

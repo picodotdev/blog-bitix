@@ -59,10 +59,9 @@ En un artículo anterior comenté como [adaptar el componente _Select_ y este _M
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Select](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Select.html)
 * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

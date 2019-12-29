@@ -93,13 +93,12 @@ Esto así puede servirnos pero si el _listeners_ es más complejo debamos hacer 
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/elblogdepicodev/tree/master/PlugInTapestry) lo puedes encontrar en mi [repositorio de GitHub][github-picodotdev].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación hibernate](http://docs.jboss.org/hibernate/orm/4.3/manual/en-US/html_single/)
 * [Interceptores y eventos](http://docs.jboss.org/hibernate/orm/3.6/reference/es-ES/html/events.html)
 * [Special service registries](http://docs.jboss.org/hibernate/orm/4.3/devguide/en-US/html_single/#d5e2282)
 * [Event Listener Registration](http://planet.jboss.org/post/event_listener_registration)
 * [Listeners y reglas de negocio](http://cursohibernate.es/doku.php?id=unidades:06_objetos_validaciones:04_listeners)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -65,10 +65,9 @@ La librería Varv es una de las que pongo como ejemplo en el artículo [La trist
 
 {{< sourcecode git="blog-ejemplos/tree/master/Vavr" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Documentación de Vavr](http://docs.vavr.io/)
 * [Javadoc de Vavr](http://www.javadoc.io/doc/io.vavr/vavr)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

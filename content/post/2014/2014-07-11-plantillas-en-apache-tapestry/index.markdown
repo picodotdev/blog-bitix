@@ -43,11 +43,10 @@ Por supuesto, podemos crear tantos componentes plantilla como necesitemos en una
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Código fuente de Blog Stack](https://github.com/picodotdev/blog-stack)
 * [Libro PlugIn Tapestry][blogbitix-12]
 * [Documentación sobre Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2010/05/documentacion-sobre-apache-tapestry.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

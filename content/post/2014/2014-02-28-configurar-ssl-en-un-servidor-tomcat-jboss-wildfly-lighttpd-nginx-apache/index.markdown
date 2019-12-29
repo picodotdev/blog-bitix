@@ -66,14 +66,13 @@ Apache es uno de los servidores web más utilizados para servir sitios web en in
 
 {{< code file="httpd.conf" language="plaintext" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Tomcat](https://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html)
 * [JBoss](http://docs.jboss.org/jbossweb/7.0.x/ssl-howto.html)
 * [WildFly (Undertow)](https://community.jboss.org/message/824152#824152)
 * [Lighttpd](http://redmine.lighttpd.net/projects/1/wiki/HowToSimpleSSL)
 * [Nginx](http://nginx.org/en/docs/http/ngx_http_ssl_module.html)
 * [Apache](http://httpd.apache.org/docs/current/ssl/ssl_howto.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

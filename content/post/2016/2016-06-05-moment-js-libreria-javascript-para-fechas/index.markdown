@@ -33,9 +33,8 @@ La librería Moment.js permite en el lado del cliente formatear fechas según un
 
 En este artículo no incluiré un ejemplo de código ya que en la página de inicio del proyecto está muy bien explicado, la documentación parece bastante completa.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Moment.js][momentjs]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

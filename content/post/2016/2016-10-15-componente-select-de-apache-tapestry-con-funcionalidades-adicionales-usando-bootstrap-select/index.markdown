@@ -71,11 +71,10 @@ En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] 
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Bootstrap Select](https://silviomoreto.github.io/bootstrap-select/)
 * [Bootstrap Select Examples](https://silviomoreto.github.io/bootstrap-select/examples/)
 * [Bootstrap Select Methods](https://silviomoreto.github.io/bootstrap-select/methods/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

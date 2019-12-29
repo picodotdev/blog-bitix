@@ -54,9 +54,8 @@ Otro caso habitual es añadir la rama de git del directorio actual de trabajo y 
         caption="Prompt de la terminal personalizado en carpeta de git" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Short date in bash PS1 prompt](https://stackoverflow.com/questions/9200862/short-date-in-bash-ps1-prompt)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

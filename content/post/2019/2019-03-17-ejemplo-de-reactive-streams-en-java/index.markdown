@@ -31,9 +31,8 @@ En el ejemplo de código un productor produce y los consumidores procesan elemen
 
 {{% sourcecode git="blog-ejemplos/tree/master/ReactiveStreams" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Reactive Streams in Java 9](https://dzone.com/articles/reactive-streams-in-java-9)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

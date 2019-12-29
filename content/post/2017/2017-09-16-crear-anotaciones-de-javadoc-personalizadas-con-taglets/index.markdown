@@ -38,10 +38,9 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Javadoc Technology](https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/index.html)
 * [Taglet Overview](https://docs.oracle.com/javase/8/docs/technotes/guides/javadoc/taglet/overview.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

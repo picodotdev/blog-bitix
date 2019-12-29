@@ -100,13 +100,12 @@ Aún quedan algunas preguntas por responder ¿como agregar los datos de múltipl
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradlew-run.sh, docker-compose up" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Using Prometheus with Spring Boot](https://njalnordmark.wordpress.com/2017/05/08/using-prometheus-with-spring-boot/)
 * [Monitoring Spring Boot Applications with Prometheus – Part 1](https://raymondhlee.wordpress.com/2016/09/24/monitoring-spring-boot-applications-with-prometheus/)
 * [Monitoring Spring Boot Applications with Prometheus – Part 2](https://raymondhlee.wordpress.com/2016/10/03/monitoring-spring-boot-applications-with-prometheus-part-2/)
 * [Prometheus with Java EE](https://blog.sebastian-daschner.com/entries/prometheus-java-ee)
 * [Add Eureka Service Discovery](https://github.com/prometheus/prometheus/pull/3369)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

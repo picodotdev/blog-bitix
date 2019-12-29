@@ -121,14 +121,13 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 ¿Conoces alguno imprescindible más que incluir en esta lista?
 
-{{% reference %}}
-
+{{< reference >}}
 * [Software Libre: La comunidad sin amos](https://victorhckinthefreeworld.com/2013/06/21/software-libre-la-comunidad-sin-amos/)
 * [Nueve documentales sobre la historia de la informática que no te puedes perder](http://www.xataka.com/historias-de-la-tecnologia/nueve-documentales-sobre-la-historia-de-la-informatica-que-no-te-puedes-perder)
 * [Documentales sobre GNU/Linux y Open Source](http://www.javipas.com/2015/06/26/documentales-sobre-gnulinux-y-open-source/)
 * [Documentales sobre informática](https://es.wikipedia.org/wiki/Categor%C3%ADa:Documentales_sobre_inform%C3%A1tica)
 * [Algunas películas y series sobre informática y ordenadores](http://www.proyecto-tic.es/algunas-peliculas-y-series-sobre-informatica-y-ordenadores/)
 * [Algunas novelas sobre informática y hackers](http://www.proyecto-tic.es/algunas-novelas-sobre-informatica-y-hackers/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

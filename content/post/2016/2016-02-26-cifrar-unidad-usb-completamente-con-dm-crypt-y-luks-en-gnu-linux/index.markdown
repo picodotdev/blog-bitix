@@ -47,8 +47,7 @@ Introducida la contraseña veremos los archivos originales y podremos trabajar c
 
 Son increíbles las opciones que uno va descubriendo del software libre de GNU/Linux y esta es una con la que haremos nuestras unidades USB y los preciados datos que contienen bastante más seguras y a salvo en caso de pérdida o robo. Y esto es solo una muestra, con dm-crypt es posible hacer muchas más cosas que con curiosidad puedes descubrir en la wiki de Arch Linux.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux][blogbitix-125]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 * [Cómo eliminar de forma segura archivos con wipe en GNU/Linux][blogbitix-130]
@@ -57,6 +56,6 @@ Son increíbles las opciones que uno va descubriendo del software libre de GNU/L
 * [Disk encryption](https://wiki.archlinux.org/index.php/disk_encryption)
 * [Drive preparation](https://wiki.archlinux.org/index.php/Dm-crypt/Drive_preparation)
 * [Device encryption](https://wiki.archlinux.org/index.php/Dm-crypt/Device_encryption)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

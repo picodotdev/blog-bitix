@@ -34,11 +34,10 @@ La excepción que se lanza en el bloque _try_ y usando el método [Throwable.add
 
 La mayoría de clases relacionadas con entrada y salida implementan la interfaz _AutoCloseable_ como las relacionadas con el sistema de ficheros y flujos de red como [InputStream](https://docs.oracle.com/javase/10/docs/api/java/io/InputStream.html), también las relacionadas con la conexión de base de datos mediante JDBC con [Connection](https://docs.oracle.com/javase/10/docs/api/java/sql/Connection.html).
 
-{{% reference %}}
-
+{{< reference >}}
 * [The try-with-resources Statement](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 * [Try-with-resources in Java 7](http://tutorials.jenkov.com/java-exception-handling/try-with-resources.html)
 * [What is a suppressed exception?](https://stackoverflow.com/a/27033358)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

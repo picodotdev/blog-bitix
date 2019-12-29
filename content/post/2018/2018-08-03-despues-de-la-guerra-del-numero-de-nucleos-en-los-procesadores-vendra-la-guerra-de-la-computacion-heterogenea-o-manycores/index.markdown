@@ -66,12 +66,11 @@ Si quieres conocer más en detalle los procesadores tanto de su historia, evoluc
 
 Dentro de unos años, lustros o alguna década revisaré estos artículos de predicción a ver cuanto hay de acierto en la evolución de la tecnología que se produzca finalmente.
 
-{{% reference %}}
-
+{{< reference >}}
 * [ARM big.LITTLE](https://en.wikipedia.org/wiki/ARM_big.LITTLE)
 * [Materiales del futuro! Grafeno Vs Siliceno](https://www.taringa.net/posts/ciencia-educacion/11725464/Materiales-del-futuro-Grafeno-Vs-Siliceno-Megapost.html)
 * [Fibra óptica multi-núcleo para interconexiones ópticas con la mayor densidad
 ](https://www.conectronica.com/fibra-optica/cables-de-fibra-optica/fibra-optica-multi-nucleo-para-interconexiones-opticas-con-la-mayor-densidad)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

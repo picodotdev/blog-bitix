@@ -46,10 +46,9 @@ En otros artículos de la serie puedes consultar cómo usar otros [elementos de 
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeServomotor" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Especificación SG90 servomotor](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf)
 * [Servomotor](https://es.wikipedia.org/wiki/Servomotor)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

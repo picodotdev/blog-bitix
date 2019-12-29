@@ -45,8 +45,7 @@ Microsoft sabe que estás usando su software sin la correspondiente licencia y t
 
 Una nueva versión de Windows o un nuevo equipo es una ocasión ideal para en vez de migrar a la nueva versión de Windows dar el salto a GNU/Linux y dejar de preocuparte de estar violando esclavizantes licencias o aceptando cláusulas que la mayoría de personas si leyera y comprendiera no aceptaría tan alegremente. Yo lo hice hace unos años pasando por varias distribuciones, [de Windows a Arch Linux][elblogdepicodev-15], y después de casi seis años aun sigo en Arch, [De Arch Linux a Arch Linux][blogbitix-36].
 
-{{% reference %}}
-
+{{< reference >}}
 * [Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre][blogbitix-119]
 * [3 opciones ofimáticas alternativas a Microsoft Office][blogbitix-143]
 * [De Windows a Arch Linux][elblogdepicodev-15]
@@ -57,6 +56,6 @@ Una nueva versión de Windows o un nuevo equipo es una ocasión ideal para en ve
 * [Concurso millonario para migrar de Windows XP a 8.1 en la Comunidad de Madrid](https://www.meneame.net/m/tecnolog%C3%ADa/concurso-millonario-migrar-windows-xp-8-1-comunidad-madrid)
 * [Devolución del canon Windows](https://www.meneame.net/m/actualidad/devolucion-canon-windows)
 * [¿Cuánto gana Microsoft por cada PC con Windows que se vende?](https://www.meneame.net/story/cuanto-gana-microsoft-cada-pc-windows-vende)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

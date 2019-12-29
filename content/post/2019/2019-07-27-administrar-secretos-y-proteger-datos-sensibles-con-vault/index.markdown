@@ -88,9 +88,8 @@ Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Cons
 
 Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de [guía](https://learn.hashicorp.com/vault) y en formato de [documentación](https://www.vaultproject.io/docs/). En una aplicación Java el proyecto [Spring][spring] facilita su uso con [Spring Vault][spring-vault] y [Spring Cloud Vault][spring-cloud-vault].
 
-{{% reference %}}
-
+{{< reference >}}
 * [An Intro to Vault](https://www.baeldung.com/vault)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

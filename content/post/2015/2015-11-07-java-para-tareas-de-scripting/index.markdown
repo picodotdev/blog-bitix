@@ -44,12 +44,11 @@ Para un proyecto de _scripts_ con Java necesitaremos un archivo _build.gradle_ y
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaScripts" command="./gradlew runScript1" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Java for everything](http://www.teamten.com/lawrence/writings/java-for-everything.html)
 * [Herramienta de construccion Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle Wrapper][elblogdepicodev-100]
 * [Aplicacion Java autocontenida con Spring Boot][blogbitix-103]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

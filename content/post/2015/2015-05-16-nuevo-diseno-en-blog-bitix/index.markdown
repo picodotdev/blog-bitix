@@ -40,10 +40,9 @@ El código fuente completo del tema que he creado y del blog realizado con Hugo 
 
 ¿Que te parece el nuevo diseño?
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hola nuevo mundo][blogbitix-0]
 * [Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky][blogbitix-404]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

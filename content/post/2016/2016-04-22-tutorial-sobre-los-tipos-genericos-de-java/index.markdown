@@ -158,14 +158,13 @@ A pesar de los _generics_ y el compilador es posible poner en un _String_ en un 
 
 En resumen, los genéricos en Java son un añadido muy útil al lenguaje.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [10 razones para seguir usando Java][blogbitix-81]
 * [Qué es el concepto de Heap Pollution en Java][blogbitix-141]
 * [Java Tutorials: Lesson: Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 * [Java 1.5 Generics Tutorial](http://javarevisited.blogspot.com.es/2011/09/generics-java-example-tutorial.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -58,8 +58,7 @@ Por otro lado ocupa menos que los 260 MiB de Atom contra los 180 MiB de Visual S
 
 En los sistemas Unix habrá gente que prefiera [Vim][vim] por sus enormes posibilidades, bajo consumo de memoria y exprimir al máximo cada megaherzio del procesador pero este requiere un tiempo de aprendizaje elevado inicial comparado con cualquiera de los editores anteriores.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Setup](https://code.visualstudio.com/docs/setup/setup-overview)
 * [Basics](https://code.visualstudio.com/docs/editor/codebasics)
 * [Tasks](https://code.visualstudio.com/Docs/editor/tasks)
@@ -68,6 +67,6 @@ En los sistemas Unix habrá gente que prefiera [Vim][vim] por sus enormes posibi
 * [Emmet](https://code.visualstudio.com/docs/editor/emmet)
 * [Extension gallery](https://code.visualstudio.com/docs/editor/extension-gallery)
 * [Java tutorial](https://code.visualstudio.com/docs/java/java-tutorial)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

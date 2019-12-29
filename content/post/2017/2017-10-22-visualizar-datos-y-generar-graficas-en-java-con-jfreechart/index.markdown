@@ -110,11 +110,10 @@ En JavaScript también hay librerías para generar gráficas pero para casos com
 
 {{< sourcecode git="blog-ejemplos/tree/master/JFreeChart" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Ejemplo sencillo de como crear un documento PDF con Java y PDFBox][blogbitix-430]
 * [JFreeChart Program Examples](https://www.javascan.com/chapter/jfreechart)
 * [JFreeChart Tutorial](https://www.tutorialspoint.com/jfreechart/index.htm)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

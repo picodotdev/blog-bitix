@@ -36,11 +36,10 @@ Los _resolvers_ permiten almacenar la información en dos bases de datos distint
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Creating a schema](https://graphql-java.readthedocs.io/en/v5/schema.html)
 * [DataFetchingEnvironment](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/schema/DataFetchingEnvironment.java)
 * [DataFetcher](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/schema/DataFetcher.java)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

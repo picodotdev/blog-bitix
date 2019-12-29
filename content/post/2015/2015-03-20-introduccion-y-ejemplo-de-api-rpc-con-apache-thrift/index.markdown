@@ -70,12 +70,11 @@ Apache Thrift no es la única herramienta para hacer llamadas RPC, una muy simil
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoThrift) lo puedes encontrar en mi repositorio de GitHub.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Is REST losing its flair? REST API Alternatives](http://www.programmableweb.com/news/rest-losing-its-flair-rest-api-alternatives/analysis/2013/12/19)
 * [What is the advantage of using Thrift, as opposed to exposing an HTTP REST API?](http://www.quora.com/What-is-the-advantage-of-using-Thrift-as-opposed-to-exposing-an-HTTP-REST-API)
 * [Creating a public API with Apache Thrift](http://willwarren.com/2012/01/24/creating-a-public-api-with-apache-thrift/)
 * [Thrift vs Protocol Buffers vs Avro - Biased Comparison](http://es.slideshare.net/IgorAnishchenko/pb-vs-thrift-vs-avro)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -46,13 +46,12 @@ Las suplantaciones mediante correo electrónico son y seguirán siendo habituale
 
 {{< code file="email-dkim.txt" language="plaintext" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a la criptografía e inicio con GPG ][elblogdepicodev-181]
 * [Enviar correos electrónicos mediante Java Mail ][elblogdepicodev-50]
 * [Generar y convertir claves y certificados con OpenSSL][blogbitix-13]
 * [Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14]
 * [Easy DKIM in Amazon SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

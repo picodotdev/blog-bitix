@@ -35,9 +35,8 @@ En las próximas semanas publicaré en mi blog de forma más detallada [como est
 
 ¡Hola planeta!
 
-{{% reference %}}
-
+{{< reference >}}
 * [Arquitectura y hospedaje de Blog Stack][blogbitix-24]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

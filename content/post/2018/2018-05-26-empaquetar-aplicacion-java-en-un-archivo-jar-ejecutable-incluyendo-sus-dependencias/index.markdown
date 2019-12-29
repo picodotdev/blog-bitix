@@ -70,12 +70,11 @@ Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble && java -jar build/libs/JavaUberjar-uberjar.jar" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Creating a Fat Jar in Gradle](https://www.baeldung.com/gradle-fat-jar)
 * [Shadow Plugin User Guide & Examples](https://imperceptiblethoughts.com/shadow/)
 * [Gradle – Create a Jar file with dependencies](http://www.mkyong.com/gradle/gradle-create-a-jar-file-with-dependencies/)
 * [Packing your Java application as one (or fat) JAR](https://www.javacodegeeks.com/2012/11/packing-your-java-application-as-one-or-fat-jar.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

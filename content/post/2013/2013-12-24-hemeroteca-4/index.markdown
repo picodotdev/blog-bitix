@@ -65,12 +65,11 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
         caption="¡Buen 2014!" source="klowner.com" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Hemeroteca #3][elblogdepicodev-162]
 * [Hemeroteca #2][elblogdepicodev-136]
 * [Hemeroteca #1][elblogdepicodev-111]
 * [Hemeroteca #0][elblogdepicodev-87]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

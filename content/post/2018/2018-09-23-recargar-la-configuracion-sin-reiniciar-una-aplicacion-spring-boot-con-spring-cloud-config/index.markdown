@@ -48,11 +48,10 @@ Los pasos para probar estas funcionalidades con Spring Cloud Bus en una o varias
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run-1.sh, ./curl-1.sh" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Spring Cloud Bus - Quick Start](http://cloud.spring.io/spring-cloud-static/spring-cloud-bus/2.0.0.RELEASE/single/spring-cloud-bus.html#_quick_start)
 * [Spring CloudBus - Push Notifications and Spring Cloud Bus](http://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.0.1.RELEASE/single/spring-cloud-config.html#_push_notifications_and_spring_cloud_bus)
 * [Spring Boot - Configuration Classes](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-configuration-classes.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -58,8 +58,7 @@ El ejemplo con el [código fuente completo de este ejemplo](https://github.com/p
 
 {{< code file="gradle-tomcatRun.sh" language="bash" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción y ejemplo de RequireJS](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)
 * [Introducción y ejemplo de Mustache](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-mustache.html)
 * [Logging en JavaScript con log4javascript](https://elblogdepicodev.blogspot.com.es/2013/03/logging-en-javascript-con-log4javascript.html)

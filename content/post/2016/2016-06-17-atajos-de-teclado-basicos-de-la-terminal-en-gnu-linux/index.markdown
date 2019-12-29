@@ -65,12 +65,11 @@ Las anteriores combinaciones de teclas son del intérprete de comandos bash, el 
         caption="Terminal de GNOME con el intérprete de comandos bash" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Keyboard Shortcuts for Bash (Command Shell for Ubuntu, Debian, Suse, Redhat, Linux, etc)](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/)
 * [Bg, Fg, &, Ctrl-Z – 5 Examples to Manage Unix Background Jobs](http://www.thegeekstuff.com/2010/05/unix-background-job/)
 * [Block select on a Linux console](http://serverfault.com/questions/430153/block-select-on-a-linux-console)
 * [Job Control Commands](http://www.tldp.org/LDP/abs/html/x9644.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

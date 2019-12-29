@@ -65,9 +65,8 @@ Estos no son los únicos ejemplos clásicos otro es el del [agente y los fumador
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaconCurrency" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Tutorial sobre la concurrencia en Java](https://docs.oracle.com/javase/tutorial/essential/concurrency/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

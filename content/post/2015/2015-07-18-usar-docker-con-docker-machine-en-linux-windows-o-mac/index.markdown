@@ -56,9 +56,8 @@ Dado que los contenedores se ejecutan en una máquina virtual de VirtualBox y Vi
 
 Como nota final diré que después de crear una máquina virtual las siguientes veces al crear una nueva Docker Machine se me quedaba indefinidamente en el mensaje _Starting VM..._, algún problema con Docker Machine o VirtualBox que en una futura versión podría solucionarse, la única forma de resolverlo que se es reiniciando el ordenador pero seguro que hay alguna mejor.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Docker Machine](https://docs.docker.com/machine/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

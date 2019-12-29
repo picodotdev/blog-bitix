@@ -52,9 +52,8 @@ Algunas otras herramientas que son ampliamente usadas en proyectos Java son las 
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew integrationTest" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Pruebas unitarias y de integración en Apache Tapestry](https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -81,11 +81,10 @@ Muchos de los servicios populares en internet implementan 2FA como medida de pro
 
 {{% sourcecode git="blog-ejemplos/tree/master/Spring2FA" command="./gradlew run" %}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Two Factor Auth with Spring Security](https://www.baeldung.com/spring-security-two-factor-authentication-with-soft-token)
 * [Redirect to Different Pages after Login with Spring Security](https://www.baeldung.com/spring_redirect_after_login)
 * [Two Step Login Example](https://github.com/altfatterz/two-step-login/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

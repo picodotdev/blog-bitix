@@ -66,11 +66,10 @@ En una [pregunta y respuesta de stackoveflow](https://stackoverflow.com/question
 
 De la lista de este artículo el que me falta por leer es Code Complete el resto por mi propia experiencia recomiendo leerlos incluso más de una vez dependiendo de lo bien que absorbamos el conocimiento recogido en ellos y más tarde lo tengamos presente mientras trabajamos y programamos. Estos son de los libros más mencionados en artículos similares a este como buena documentación que leer sobre programación, si los leemos y nos quedamos con un porcentaje aunque sea pequeño ya mejoraremos bastante, también es probable que algunas cosas de las comentadas en los libros ya las tengamos presentes con la experiencia que hemos adquirido por nosotros mismos, en estos libros ese conocimiento adquirido y más comprobaremos que está documentado. ¡Feliz lectura!
 
-{{% reference %}}
-
+{{< reference >}}
 * [Novedades de Java 8][blogbitix-17]
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-patrones-de-diseno-en-la-programacion]
 * [Ejercicios (katas) para mejorar habilidades de programación practicando][blogbitix-56]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

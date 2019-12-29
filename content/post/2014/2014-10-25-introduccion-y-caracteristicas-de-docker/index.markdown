@@ -56,8 +56,7 @@ Una vez conocidos los aspectos básicos y en que se diferencia docker de la virt
 	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a"></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Inicio básico de Docker][blogbitix-50]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Docker][docker]
@@ -67,6 +66,6 @@ Una vez conocidos los aspectos básicos y en que se diferencia docker de la virt
 * [Seguridad Docker](https://docs.docker.com/articles/security/)
 * [Four ways Docker fundamentally changes application development](https://www.javaworld.com/article/2685223/java-app-dev/four-ways-docker-fundamentally-changes-application-development.html)
 * [Docker, qué es y sus principales características](https://openwebinars.net/docker-que-es-sus-principales-caracteristicas/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

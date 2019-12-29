@@ -109,9 +109,8 @@ Con LyX le podemos ofrecer al usuario la versión del libro que prefiera sin muc
 
 Para finalizar diré que escribir un libro es un trabajo que consume mucho tiempo y esfuerzo y aunque parezca que no escribir el contenido del libro puede no ser la parte más costosa, revisarlo me costó tanto como escribirlo así como el hacer la aplicación con los ejemplos, la página en la que la alojaría y el marketing para darlo a conocer lo máximo posible publicándolo en webs en las que sus usuarios podrían estar interesados, en este caso en [JavaHispano][javahispano], [Barrapunto][barrapunto], en este blog y en los varios planetas en los que este blog puede publicar sus entradas.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a LaTeX/XeTeX/LyX](https://elpinguinotolkiano.wordpress.com/latexxetexlyx/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

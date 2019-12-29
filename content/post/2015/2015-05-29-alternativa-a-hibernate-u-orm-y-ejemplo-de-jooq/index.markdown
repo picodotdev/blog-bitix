@@ -64,8 +64,7 @@ Como comentan en su propio blog [usa ModelMapper y jOOQ para recuperar el contro
 
 jOOQ está [licenciado](http://www.jooq.org/legal/licensing) de forma dual, [ASL](http://www.apache.org/licenses/LICENSE-2.0) para la versión _community_ que ofrece soporte para las bases de datos [MySQL][mysql], [PostgreSQL][postgresql], SQLite, H2 y alguna más y una licencia comercial que ofrece soporte para bases de datos como [Microsoft Access][microsoft-access], [Oracle][oracle-database] y [Microsoft SQL Server][microsoft-sqlserver].
 
-{{% reference %}}
-
+{{< reference >}}
 * [jOOQ][jooq]
 * [ModelMapper][modelmapper]
 * [Integración entre jOOQ y ModelMapper](http://modelmapper.org/user-manual/jooq-integration/)
@@ -73,6 +72,6 @@ jOOQ está [licenciado](http://www.jooq.org/legal/licensing) de forma dual, [ASL
 * [Hibernate][hibernate]
 * [Introducción a Gradle][elblogdepicodev-98]
 * [Usar DateTime en Hibernate][elblogdepicodev-116]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

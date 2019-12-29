@@ -48,11 +48,10 @@ Una vez activado ya podemos ver el panel kanban mostrado en la primera captura e
     	image2="flujo-de-trabajo.png" thumb2="flujo-de-trabajo-thumb.png" title2="Flujo de trabajo" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción al gestor de proyectos y tareas Redmine][blogbitix-57]
 * [Introducción a Bitnami][blogbitix-54]
 * [Introducción e inicio a Drupal][blogbitix-60]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

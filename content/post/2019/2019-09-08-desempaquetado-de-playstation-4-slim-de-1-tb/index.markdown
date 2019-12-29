@@ -399,8 +399,7 @@ Aparte de echar de menos [una versión de la consola PlayStation sin discos todo
 
 Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol un buen juego es una buena opción.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Asistencia técnica de PlayStation](https://www.playstation.com/es-es/get-help/?smcid=other:es-es:blank:primary%20nav:msg-help:ayuda-y-asistencia-tcnica#!/)
 * [Desempaquetado PS4 Slim (en)](https://www.youtube.com/watch?v=6a0r94hdxLc)
 * [Desempaquetado Sony PlayStation 4 Slim y configuración (en)](https://www.youtube.com/watch?v=0GMTBPdDsfM)
@@ -410,6 +409,6 @@ Voy a retomar este entretenimiento que deje hace años en la medida que el tiemp
 * [Como incrementar el almacenamiento de la PS4 Slim con una unidad externa (en)](https://www.youtube.com/watch?v=MMYAQSMjgxo)
 * [Amperaje de los cargadores](https://www.elotrolado.net/hilo_amperaje-de-los-cargadores_2228907)
 * [USB Power](https://en.wikipedia.org/wiki/USB#Power)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

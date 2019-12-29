@@ -38,13 +38,12 @@ Una vez con las propiedades de la cuenta configurada para que Evolution use nues
         image2="mensaje-firmado-dnie.png" thumb2="mensaje-firmado-dnie-thumb.png" title2="Mensaje firmado con el DNIe" >}}
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Crear una par de claves GPG][elblogdepicodev-181]
 * [Como firmar correos electrónicos con GPG][elblogdepicodev-182]
 * [Instalar un lector de tarjetas inteligentes y usar el DNIe en Arch Linux ][elblogdepicodev-183]
 * [Usar el DNI electrónico con Firefox en Linux][blogbitix-1]
 * [Firmar digitalmente documentos con el DNIe y Sinadura][blogbitix-3]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

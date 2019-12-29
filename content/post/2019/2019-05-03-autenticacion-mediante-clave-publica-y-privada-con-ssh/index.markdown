@@ -54,11 +54,10 @@ Para probar la autenticación con SSH se puede utilizar una máquina virtual de 
 {{< code file="Vagrantfile" language="plaintext" options="" >}}
 {{< code file="vagrant.sh" language="bash" options="" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Does ssh key need to be named id_rsa?](http://askubuntu.com/questions/30788/does-ssh-key-need-to-be-named-id-rsa#30792)
 * [How to permanently add a private key with ssh-add on Ubuntu?](http://stackoverflow.com/questions/3466626/add-private-key-permanently-with-ssh-add-on-ubuntu)
 * [How do I remove the passphrase for the SSH key without having to create a new key?](http://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

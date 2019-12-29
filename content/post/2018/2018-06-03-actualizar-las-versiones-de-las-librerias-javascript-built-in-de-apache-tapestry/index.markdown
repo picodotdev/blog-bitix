@@ -40,9 +40,8 @@ Al usar una versión más reciente de las librerías es importante asegurarse y 
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [JavaScriptModule.java](https://git1-us-west.apache.org/repos/asf?p=tapestry-5.git;a=blob;f=tapestry-core/src/main/java/org/apache/tapestry5/modules/JavaScriptModule.java;h=68fcfc81546a49469cd153ea1e58026549718f61;hb=85cc611fbad4a3574664b33ce9adf614b4f0fe07)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

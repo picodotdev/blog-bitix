@@ -66,12 +66,11 @@ En el ejemplo de configuración usaré [Docker][docker] para crear un servidor w
 
 {{< sourcecode git="blog-ejemplos/tree/master/NginxLoadBalancer" command="docker-compose up" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Using NGINX as HTTP load balancer](http://nginx.org/en/docs/http/load_balancing.html)
 * [Load Balancing with NGINX and NGINX Plus, Part 1](https://www.nginx.com/blog/load-balancing-with-nginx-plus/)
 * [Load Balancing with NGINX and NGINX Plus, Part 2](https://www.nginx.com/blog/load-balancing-with-nginx-plus-part2/)
 * [NGINX Load Balancing - HTTP Load Balancer](https://www.nginx.com/resources/admin-guide/load-balancer/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

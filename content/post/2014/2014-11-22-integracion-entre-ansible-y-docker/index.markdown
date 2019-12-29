@@ -35,8 +35,7 @@ Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.ht
 * [Módulos para manejo de sistemas de control de versiones](http://docs.ansible.com/list_of_source_control_modules.html)
 * Y algunos más
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción a Docker][blogbitix-49]
 * [Guía de inicio básico de Docker][blogbitix-50]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
@@ -44,6 +43,6 @@ Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.ht
 * [Introducción a Bitnami][blogbitix-54]
 * http://docs.ansible.com/docker_module.html<br>
 * http://docs.ansible.com/docker_image_module.html
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

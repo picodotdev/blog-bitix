@@ -70,8 +70,7 @@ El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejem
 
 {{< plugintapestry >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Herramienta de construcción Gradle][elblogdepicodev-98]
 * [Usar Gradle mediante Gradle wrapper][elblogdepicodev-100]
 * [Incluir información de la versión en el artefacto distribuible con Gradle][blogbitix-145]
@@ -80,6 +79,6 @@ El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejem
 * [Gradle: Múltiples Proyectos en Java - P1](https://www.youtube.com/watch?v=eP0NBHkAwwU)
 * [Gradle: Múltiples Proyectos en Java - P2](https://www.youtube.com/watch?v=fkzPB3IgrB8)
 * [Gradle: Múltiples Proyectos en Java - P3](https://www.youtube.com/watch?v=-ITQ7_94iMM)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

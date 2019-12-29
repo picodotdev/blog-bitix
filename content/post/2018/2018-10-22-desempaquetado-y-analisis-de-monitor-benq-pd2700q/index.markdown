@@ -316,8 +316,7 @@ Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B075NYCWQ6&linkId=9b678e32ccc83f551b57e34aa2db3296"></iframe>
 </div>
 
-{{% reference %}}
-
+{{< reference >}}
 * [Calculadora DPI y PPI](https://www.sven.de/dpi/)
 * [HDMI Version Comparison](https://en.wikipedia.org/wiki/HDMI#Version_comparison)
 * [HDMI 1.4](https://es.wikipedia.org/wiki/High-Definition_Multimedia_Interface#HDMI_1.4)
@@ -325,6 +324,6 @@ Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 
 * [TFT Central](http://www.tftcentral.co.uk)
 * [LDC Monitor Test Images](http://www.lagom.nl/lcd-test/)
 * [Backlight Bleeding](https://www.pchardwarehelp.com/guides/backlight-bleeding.php)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

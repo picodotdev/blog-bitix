@@ -49,14 +49,13 @@ Pero Redmine es más que una herramienta de gestión de tareas, los complementos
 
 En el siguiente artículo comentaré como instalar el [plugin agile de Redmine](http://www.redminecrm.com/projects/agile/pages/1) con la imagen de Bitnami en VirtualBox de forma que podamos visualizar las tareas en un panel kanban, y de un vistazo y rápidamente conozcamos las tareas que están terminadas, que están en progreso, a punto de empezarse o en la cola de tareas por hacer.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Instalar y usar plugin ágil en Redmine][blogbitix-59]
 * [Introducción e inicio a Drupal][blogbitix-60]
 * [5 plugins gratuitos para instalar a Redmine](http://www.luisblasco.com/5-plugins-gratuitos-instalar-en-redmine/)
 * [Aplicar y guardar filtros](http://www.redmine.org/projects/redmine/wiki/RedmineIssueList#Applying-and-saving-filters)
 * [Como modificar un filtro](https://stackoverflow.com/questions/9027479/how-do-you-modify-a-filter-in-redmine)
 * [Blog con varios artículos interesantes sobre Redmine](http://www.luisblasco.com/blog/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

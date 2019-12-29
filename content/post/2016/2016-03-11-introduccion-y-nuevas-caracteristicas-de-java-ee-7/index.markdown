@@ -132,8 +132,7 @@ Descrito, en el otro artículo presentaré un [ejemplo de aplicación usando Jav
 
 Por cierto, como nota para técnicos, reclutadores, empresas y páginas de empleo, Java EE pasó a llamarse así en el ¡2006!, hace una década, ya es hora actualizarse también y dejar de llamarlo incorrectamente J2EE o JEE.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
 * [Ejemplo de API REST en Java con JAX-RS y Spring Boot][blogbitix-178]
 * [Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition)
@@ -145,6 +144,6 @@ Por cierto, como nota para técnicos, reclutadores, empresas y páginas de emple
 * [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129]
 * [Servidor de aplicaciones JBoss/WildFly][blogbitix-10]
 * [Alternativa a Hibernate u ORM y ejemplo de jOOQ][blogbitix-82]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

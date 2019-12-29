@@ -65,10 +65,9 @@ Esta es la salida en la consola listando los servicios disponibles, siendo uno d
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringCloudConsul" command="./consul/consul.sh y ./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Spring Cloud][spring-cloud]
 * [Spring Cloud Consul][spring-cloud-consul]
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

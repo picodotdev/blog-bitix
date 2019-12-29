@@ -52,11 +52,10 @@ Otra alternativa a una interfaz REST es usar [GraphQL][graphql] que muestro en e
 
 {{< sourcecode git="blog-ejemplos/tree/master/SpringBootJaxrs" command="./gradlew run" >}}
 
-{{% reference %}}
-
+{{< reference >}}
 * [Introducción y nuevas características de Java EE 7][blogbitix-131]
 * [Aplicación de ejemplo usando varias especificaciones de Java EE 7][blogbitix-136]
 * [Buenas prácticas para el diseño de una API RESTful pragmática](https://elbauldelprogramador.com/buenas-practicas-para-el-diseno-de-una-api-restful-pragmatica/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

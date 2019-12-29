@@ -133,10 +133,9 @@ Los manejadores de eventos se van recorriendo primero en modo captura desde la r
 
 Todos estos ejemplos funcionan en los navegadores Firefox y Chrome pudiendo probarlos en la consola JavaScript que incorporan para los desarrolladores. En la página [es6-features](http://es6-features.org/) hay una lista completa de todas las nuevas características de ECMAScript 6.
 
-{{% reference %}}
-
+{{< reference >}}
 * [Mozilla Developer Network][mozilla-mdn]
 * [es6-features](http://es6-features.org/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}
