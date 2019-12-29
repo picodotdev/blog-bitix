@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["microsoft", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["microsoft", "opinion", "planeta-codigo", "planeta-linux", "windows"]
 summary: "Comentaba en un artículo que es sorprendente que Microsoft con la capacidad que tiene y estando los dispositivos conectados a internet mayoritariamente no sea capaz de evitar usar su software sin licencia. Estoy a punto de ver si con Windows 10 y Office 2016 sigue siendo tan fácil como siempre. También tendré una muestra de la injusta fama de Windows pero que permite Microsoft por el _bloatware_ que preinstalan los fabricantes de dispositivos con su sistema operativo."
 ---
 
@@ -40,11 +40,11 @@ Inicio la tercera instalación de nuevo en el portátil y realizo la activación
 
 Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office, más que días del año. Y sigo teniendo razón, usarlos sin licencia sigue siendo tan fácil como siempre una vez encontrados los enlaces adecuados en Google, ¿un martes de parches se instalará alguna actualización de Windows que descubra el _crack_ aplicado al Office? Me enteraré.
 
-{{< figure
-    image1="windows-10.png" thumb1="windows-10-thumb.png" title1="Windows 10"
+{{< figureproc
+    image1="windows-10.png" thumb1="windows-10-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Windows 10"
     caption="Windows 10" >}}
-    {{< figure
-    image1="microsoft-word-2016.png" thumb1="microsoft-word-2016-thumb.png" title1="Microsoft Word 2016"
+{{< figureproc
+    image1="microsoft-word-2016.png" thumb1="microsoft-word-2016-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Microsoft Word 2016"
     caption="Microsoft Word 2016" >}}
 
 Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows [eligiendo una distribución GNU/Linux][blogbitix-190] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades. E inlcuso si se quiere [comprar un ordenador nuevo sin Windows][blogbitix-419] tanto portátil o de escritorio de buena calidad las marcas [Slimbook][slimbook] y [VANT][vant] ofrecen varios modelos en cada categoría, también están [los pequeños Intel NUC][blogbitix-363].

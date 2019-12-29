@@ -26,14 +26,14 @@ Una imagen que usé para [crear una imagen reducida o vista previa][blogbitix-16
 
 {{< figureproc
     image1="image-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato jpg"
-    image2="image-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
+    image2="image-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
     caption="Imágenes en formato jpg y PNG" >}}
 
 Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la original en formato _jpg_ y 26 KiB, un 66% menos, para la original en formato _png_. Las reducciones de tamaño son importantes y teniendo en cuenta que es sin pérdida de calidad apreciable sobre las originales utilizar WebP como formato de imagen permite ahorrar un tamaño importante de descarga en una página web o en espacio de almacenamiento en colecciones grandes de fotografías e imágenes.
 
 {{< figure
-    image1="image-1.webp" thumb1="image-1-thumb.webp" title1="Fotografía en formato WebP"
-    image2="image-2.webp" thumb2="image-2-thumb.webp" title2="Captura de pantalla en formato WebP"
+    image1="image-1.webp" thumb1="image-1-thumb.webp" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato WebP"
+    image2="image-2.webp" thumb2="image-2-thumb.webp" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato WebP"
     caption="Mismas imágenes en formato WebP" >}}
 
 [ImageMagick][imagemagick] permite convertir las imágenes entre estos formatos. Con este comando se convierten todas las imágenes _jpg_ y _png_ de un directorio formato WebP.

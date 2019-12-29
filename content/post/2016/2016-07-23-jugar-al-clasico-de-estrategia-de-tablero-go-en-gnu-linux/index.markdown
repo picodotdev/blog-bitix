@@ -26,9 +26,9 @@ El tablero clásico se compone de una matriz de 19 por 19 en el que en las inter
 
 En el juego de computadora el siguiente movimiento se hace introduciendo la coordenada del tablero donde queremos colocar la siguiente piedra que se compone de una letra para la coordenada horizontal y un número para la coordenada vertical.
 
-{{< figure
-    image1="tablero-go.jpg" thumb1="tablero-go-thumb.jpg" title1="Tablero tradicional de Go"
-    image2="tablero-gnugo.png" thumb2="tablero-gnugo-thumb.png" title2="Tablero de Gnugo"
+{{< figureproc
+    image1="tablero-go.jpg" thumb1="tablero-go-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Tablero tradicional de Go"
+    image2="tablero-gnugo.png" thumb2="tablero-gnugo-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Tablero de Gnugo"
     caption="Tablero tradicional de juego y tablero de Gnugo" >}}
 
 En la wikipedia está documentado de forma bastante extensa las [reglas del juego Go](https://es.wikipedia.org/wiki/Go#Reglas_del_go), las diferentes formas de [calcular el marcador al final del juego](https://es.wikipedia.org/wiki/Go#Puntuaci.C3.B3n) y las [tácticas](https://es.wikipedia.org/wiki/Go#T.C3.A1ctica) y [estrategias](https://es.wikipedia.org/wiki/Go#Estrategia_b.C3.A1sica) para jugar de la forma más efectiva que podamos.

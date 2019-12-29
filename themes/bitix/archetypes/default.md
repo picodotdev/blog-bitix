@@ -21,25 +21,19 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
-<div class="media">
-    {{< figure
-        image1="" thumb1="-thumb.png" title1=""
-        image2="" thumb2="-thumb.png" title2=""
-        caption="" >}}
-</div>
+{{< figure
+    image1="" thumb1="-thumb.png" title1=""
+    image2="" thumb2="-thumb.png" title2=""
+    caption="" >}}
 
-<div class="media">
-    {{< imageproc
-        image1="direccion.jpg" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
-</div>
+{{< imageproc
+    image1="direccion.jpg" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
 
-<div class="media">
-    {{< figureproc
-        image1="" options1="2560x1440" optionsthumb1="300x200" title1=""
-        image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
-        image3="" options3="2560x1440" optionsthumb3="300x200" title3=""
-        caption="" >}}
-</div>
+{{< figureproc
+    image1="" options1="2560x1440" optionsthumb1="300x200" title1=""
+    image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
+    image3="" options3="2560x1440" optionsthumb3="300x200" title3=""
+    caption="" >}}
 
 <div class="media-amazon">
     <iframe src="&internal=1"></iframe>

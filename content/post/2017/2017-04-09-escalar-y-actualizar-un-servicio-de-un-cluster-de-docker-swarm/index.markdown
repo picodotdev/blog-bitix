@@ -26,12 +26,12 @@ En la documentación de [Docker][docker] están detallados y comentados los [com
 
 Al igual que cuando se crea un contenedor para un servicio en el _cluster_ [Docker Swarm][docker-swarm] si no se indica alguna restricción decidirá en qué nodos se crean las nuevas instancias o contenedores del servicio.
 
-{{< figure
-    image1="nginx-service-1.png" thumb1="nginx-service-1-thumb.png" title1="Servicio de nginx con una réplica"
-    image2="nginx-service-4.png" thumb2="nginx-service-4-thumb.png" title2="Servicio de nginx escalado a cuatro réplicas"
+{{< figureproc
+    image1="nginx-service-1.png" thumb1="nginx-service-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Servicio de nginx con una réplica"
+    image2="nginx-service-4.png" thumb2="nginx-service-4-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Servicio de nginx escalado a cuatro réplicas"
     caption="Servicio de nginx antes y después de escalarlo" >}}
-    {{< figure
-    image1="nginx-service-scale.png" thumb1="nginx-service-scale-thumb.png" title1="Escalado del servicio de nginx"
+{{< figureproc
+    image1="nginx-service-scale.png" thumb1="nginx-service-scale-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Escalado del servicio de nginx"
     caption="Escalado del servicio de nginx" >}}
 
 Por otro lado, una vez desplegados en un _cluster_ algunos servicios llegará el momento en que queramos actualizar algún parámetro del servicio, uno de ellos será probablemente la imagen del servicio cuando se publique una nueva. En la página de documentación [Aplicando actualizaciones a un servicio](https://docs.docker.com/engine/swarm/swarm-tutorial/rolling-update/) está explicada esta funcionalidad y los comandos junto con sus opciones que hay que utilizar.
@@ -40,8 +40,8 @@ En el ejemplo al crear el _cluster_ se usa la última imagen de docker para ngin
 
 {{< code file="06-nginx-update.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="nginx-service-update.png" thumb1="nginx-service-update-thumb.png" title1="Actualización de la imagen del servicio de nginx"
+{{< figureproc
+    image1="nginx-service-update.png" thumb1="nginx-service-update-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Actualización de la imagen del servicio de nginx"
     caption="Actualización de la imagen del servicio de nginx" >}}
 
 Docker Swarm realiza el proceso de actualización siguiendo los siguientes pasos:

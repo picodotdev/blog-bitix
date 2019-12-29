@@ -30,16 +30,16 @@ Algunas de las características que ofrece la librería Diozero son:
 
 Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspberry Pi ya que hay varias nomenclaturas (_header_, wiringPi y Broadcom) y que nomenclatura utiliza la librería Diozero. También deberemos tener en cuenta el modelo de la Raspberry Pi que poseamos ya que según el modelo hay pequeñas diferencias en algunos _pines_. Además si usamos una placa de extensión para pruebas sin sodadura como la [wiringPi][wiringpi] deberemos identificarlos por su nombre. Yo que poseo una de las primeras Raspberry Pi (la 1, rev1) el correspondiente su [esquema de _pines_ Raspberry Pi 1 (rev. 1)](https://www.raspberrypi.org/documentation/usage/gpio/) es el del enlace. En ese esquema se define que el _pin_ número 12 según el conteo del _header_ corresponde a GPIO 18 según la nomenclatura Broadcom y la librería Diozero y al GPIO 1 en la librería Pi4J y en la placa de extensión wiringPi.
 
-{{< figure
-    image1="raspberrypi1b.jpg" thumb1="raspberrypi1b-thumb.jpg" title1="Raspberry Pi 1 B"
-    image2="raspberrypi3b.jpg" thumb2="raspberrypi3b-thumb.jpg" title2="Raspberry Pi 3 B"
+{{< figureproc
+    image1="raspberrypi1b.jpg" thumb1="raspberrypi1b-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Raspberry Pi 1 B"
+    image2="raspberrypi3b.jpg" thumb2="raspberrypi3b-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Raspberry Pi 3 B"
     caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
-    {{< figure
-    image1="breadboard-cableado.jpg" thumb1="breadboard-cableado-thumb.jpg" title1="Breadboard y placa extesión GPIO wiringPi de 26 pines"
-    image2="gpio-extension-40-pines-board.jpg" thumb2="gpio-extension-40-pines-board-thumb.jpg" title2="Placa extesión GPIO de 40 pines"
+{{< figureproc
+    image1="breadboard-cableado.jpg" thumb1="breadboard-cableado-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Breadboard y placa extesión GPIO wiringPi de 26 pines"
+    image2="gpio-extension-40-pines-board.jpg" thumb2="gpio-extension-40-pines-board-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Placa extesión GPIO de 40 pines"
     caption="Breadboard y placa extesión GPIO wiringPi de 26 _pines_ y 40 pines" >}}
-    {{< figure
-    image1="esquema-cableado.png" thumb1="esquema-cableado-thumb.png" title1="Esquema del cableado"
+{{< figureproc
+    image1="esquema-cableado.png" thumb1="esquema-cableado-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Esquema del cableado"
     caption="Esquema del cableado" >}}
 
 Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspberry Pi a otra placa para hacer pruebas sin soldadura también conocidas como _breadboard_  resultará que en el programa Java al usar Diozero uso la nomenclatura Broadcom para identificar los _pines_ pero al conectar los cables en la placa de pruebas uso la nomenclatura de wiringPi.
@@ -47,14 +47,14 @@ Como uso la placa de extensión wiringPi para conectar los _pines_ de la Raspber
 Para el ejemplo utilizaré la placa de extensión sin soldadura, una resistencia de 200 ohmios (dadas sus bandas de colores rojo, negro, marrón y dorado) y un diodo LED además de un par de cables macho-macho para realizar las conexiones electrónicas entre el GPIO 18 (según la nomenclatura de la librería Diozero y Broadcom, 12 según la nomenclatura del _header_ y 1 según la de wiringPi) y la resistencia además de entre el diodo y la línea de tierra. Los diodos LED poseen una orientación y hay que conectar la resistencia con el polo positivo del diodo LED, el polo positivo del diodo LED identifica porque es la patita larga y el negativo con tierra es la patita corta. Si realizamos la conexión al revés solo pasará que el diodo no se enciende pero no lo estropeará, la resistencia si es necesaria para no hacer que pase por el diodo una intensidad que lo estropee como se explica en
 [¿Qué resistencia ooner a un LED?](http://www.educachip.com/resistencia-led/).
 
-{{< figure
-    image1="diodo-resistencia.jpg" thumb1="diodo-resistencia-thumb.jpg" title1="Diodo blanco y resistencia de 200 ohmios"
+{{< figureproc
+    image1="diodo-resistencia.jpg" thumb1="diodo-resistencia-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Diodo blanco y resistencia de 200 ohmios"
     caption="Diodo blanco y resistencia de 200 ohmios" >}}
 
 Las resistencias poseen cuatro bandas de colores que indican el valor en ohmios de esa resistencia, la tabla de colores es el siguiente:
 
-{{< figure
-    image1="codigo-colores-resistencias.jpg" thumb1="codigo-colores-resistencias-thumb.jpg" title1="Código de colores de las resistencias"
+{{< figureproc
+    image1="codigo-colores-resistencias.jpg" thumb1="codigo-colores-resistencias-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Código de colores de las resistencias"
     caption="Código de colores de las resistencias" >}}
 
 El programa Java para hacer parpadear el diodo LED con la librería Diozero con el proveedor [pigpio](http://abyz.co.uk/rpi/pigpio/). El ejemplo consiste en activar y apagar el _pin_ sucesivamente en un bucle y usar el método [Thread.sleep](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep-long-) para que pase unos segundos entre uno y otro y nos de tiempo a ver el encendido y apagado. El nada complejo programa Java para controlar el diodo y un vídeo de su funcionamiento están a continuación.

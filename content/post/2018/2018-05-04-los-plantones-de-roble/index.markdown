@@ -20,7 +20,7 @@ Ya han pasado varios meses desde que hice germinar en septiembre varias bellotas
 
 {{< figureproc
     image1="IMG_20171001_094507.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Plantones germinando desde la semilla"
-    image2="IMG_20171021_144607.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plantones después de 20 días"
+    image2="IMG_20171021_144607.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Plantones después de 20 días"
     caption="Plantones germinando y después de 20 días" >}}
 
 A finales de agosto y hasta finales de septiembre recogí un montón de bellotas de un ejemplar de roble bastante grande, recogí varios kilos eligiendo las bellotas más grandes y solo fueron un pequeño porcentaje de todas las que había en el suelo. En un primer momento hice germinar varias utilizando una bolsa de plástico con un poco de agua para que tuviesen humedad, dejando la bolsa cerrada durante un mes abriéndola de vez en cuando para ver cómo evolucionaban y cambiarle el agua o humedeciéndolas de nuevo.
@@ -29,22 +29,22 @@ Después de recoger un montón de bellotas mi intención era hacer germinar otra
 
 {{< figureproc
     image1="IMG_20171230_171135.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Roble sin hojas"
-    image2="IMG_20180329_165558.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Roble brotando"
-    image3="IMG_20180429_160000.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Roble después de un mes de empezar a brotar"        
+    image2="IMG_20180329_165558.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Roble brotando"
+    image3="IMG_20180429_160000.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Roble después de un mes de empezar a brotar"        
     caption="Roble sin hojas, brotando y después de un mes de empezar a brotar" >}}
 
 Así han empezado a brotar los plantones de nuevo en primavera. Tenía dudas de si realmente los había cuidado bien sobre todo en la cantidad de agua, si han empezado a brotar en primavera tan mal no los he tratado.
 
 {{< figureproc
     image1="IMG_20180324_111057.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Yemas germinando por primavera"
-    image2="IMG_20180329_164111.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Yemas germinando por primavera"
-    image3="IMG_20180329_164025.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Yemas germinando por primavera"        
+    image2="IMG_20180329_164111.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Yemas germinando por primavera"
+    image3="IMG_20180329_164025.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Yemas germinando por primavera"        
     caption="Yemas y germinando por primavera" >}}
 
 {{< figureproc
     image1="IMG_20180503_083246.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Plantones de roble"
-    image2="IMG_20180503_083257.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plantones de roble"
-    image3="IMG_20180503_083305.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Plantones de roble"
+    image2="IMG_20180503_083257.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Plantones de roble"
+    image3="IMG_20180503_083305.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Plantones de roble"
     caption="Plantones de roble" >}}
 
 Los he estado regando con un pequeño tapón para echar aproximadamente la misma medida de agua siempre, una vez a la semana con un tapón, algunas veces dos medidas.

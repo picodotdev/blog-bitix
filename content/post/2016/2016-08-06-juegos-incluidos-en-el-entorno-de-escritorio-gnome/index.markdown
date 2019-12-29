@@ -25,8 +25,8 @@ Es una colección de más de 80 modos de solitario de cartas fáciles de jugar c
 
 [Manual](http://library.gnome.org/users/aisleriot/stable/)
 
-{{< figure
-    image1="aisleriot.png" thumb1="aisleriot-thumb.png" title1="Juego aisleriot"
+{{< figureproc
+    image1="aisleriot.png" thumb1="aisleriot-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego aisleriot"
     caption="Juego aisleriot" >}}
 
 ### Cinco o mas
@@ -35,8 +35,8 @@ El objetivo del juego es alinear 5 o más objetos del mismo color y forma hacié
 
 [Manual](http://library.gnome.org/users/five-or-more/stable/ )
 
-{{< figure
-    image1="five-or-more.png" thumb1="five-or-more-thumb.png" title1="Juego cinco o más"
+{{< figureproc
+    image1="five-or-more.png" thumb1="five-or-more-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego cinco o más"
     caption="Juego cinco o más" >}}
 
 ### Cuatro en raya
@@ -45,8 +45,8 @@ El objetivo de 4 en raya es construir una línea de cuatro fichas mientras inten
 
 [Manual](http://library.gnome.org/users/four-in-a-row/stable/)
 
-{{< figure
-    image1="four-in-a-row.png" thumb1="four-in-a-row-thumb.png" title1="Juego cuatro en raya"
+{{< figureproc
+    image1="four-in-a-row.png" thumb1="four-in-a-row-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego cuatro en raya"
     caption="Juego cuatro en raya" >}}
 
 ### Hitori
@@ -55,8 +55,8 @@ Hitori es similar al juego de puzles Sudoku pero en el que se trata de ir elimin
 
 [Manual](https://en.wikipedia.org/wiki/Hitori)
 
-{{< figure
-    image1="hitori.png" thumb1="hitori-thumb.png" title1="Juego hitori"
+{{< figureproc
+    image1="hitori.png" thumb1="hitori-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego hitori"
     caption="Juego hitori" >}}
 
 ### Iagno
@@ -65,8 +65,8 @@ Iango es una versión para computadora del [juego Reversi](https://es.wikipedia.
 
 [Manual](http://library.gnome.org/users/iagno/stable/)
 
-{{< figure
-    image1="iagno.png" thumb1="iagno-thumb.png" title1="Juego iagno"
+{{< figureproc
+    image1="iagno.png" thumb1="iagno-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego iagno"
     caption="Juego iagno" >}}
 
 ### Klotski
@@ -75,8 +75,8 @@ El objetivo es mover el bloque marcado al área con bordes verdes utilizando un 
 
 [Manual](http://library.gnome.org/users/gnome-klotski/stable/ )
 
-{{< figure
-    image1="klotski.png" thumb1="klotski-thumb.png" title1="Juego klotski"
+{{< figureproc
+    image1="klotski.png" thumb1="klotski-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego klotski"
     caption="Juego klotski" >}}
 
 ### Luces fuera
@@ -85,8 +85,8 @@ Luces fuera es un juego de puzle donde el objetivo es apagar todas las baldosas 
 
 [Manual](https://help.gnome.org/users/lightsoff/stable/)
 
-{{< figure
-    image1="lights-off.png" thumb1="lights-off-thumb.png" title1="Juego luces fuera"
+{{< figureproc
+    image1="lights-off.png" thumb1="lights-off-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego luces fuera"
     caption="Juego luces fuera" >}}
 
 ### Mahjongg
@@ -95,8 +95,8 @@ Mahjongg es un solitario para un jugador donde el objetivo es seleccionar baldos
 
 [Manual](https://wiki.gnome.org/Apps/Mahjongg)
 
-{{< figure
-    image1="mahjongg.png" thumb1="mahjongg-thumb.png" title1="Juego mahjongg"
+{{< figureproc
+    image1="mahjongg.png" thumb1="mahjongg-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego mahjongg"
     caption="Juego mahjongg" >}}
 
 ### Minas
@@ -105,8 +105,8 @@ Mines es un juego de puzle donde hay que localizar las minas flotando en un océ
 
 [Manual](http://library.gnome.org/users/gnome-mines/stable/)
 
-{{< figure
-    image1="mines.png" thumb1="mines-thumb.png" title1="Juego minas"
+{{< figureproc
+    image1="mines.png" thumb1="mines-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego minas"
     caption="Juego minas" >}}
 
 ### Nibbles
@@ -115,8 +115,8 @@ En Nibbles es un juego donde controlas una serpiente. La serpiente se mueve alre
 
 [Manual](http://library.gnome.org/users/gnome-nibbles/stable/)
 
-{{< figure
-    image1="nibbles.png" thumb1="nibbles-thumb.png" title1="Juego nibbles"
+{{< figureproc
+    image1="nibbles.png" thumb1="nibbles-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego nibbles"
     caption="Juego nibbles" >}}
 
 ### Quadrapassel
@@ -125,8 +125,8 @@ Es similar al clásico [juego Tetris](https://es.wikipedia.org/wiki/Tetris). El 
 
 [Manual](http://library.gnome.org/users/quadrapassel/stable/)
 
-{{< figure
-    image1="quadrapassel.png" thumb1="quadrapassel-thumb.png" title1="Juego quadrapassel"
+{{< figureproc
+    image1="quadrapassel.png" thumb1="quadrapassel-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego quadrapassel"
     caption="Juego quadrapassel" >}}
 
 ### Robots
@@ -135,8 +135,8 @@ Debes evitar una horda de robots que intentarán alcanzarte. En cada paso que de
 
 [Manual](https://help.gnome.org/users/gnome-robots/stable/)
 
-{{< figure
-    image1="robots.png" thumb1="robots-thumb.png" title1="Juego robots"
+{{< figureproc
+    image1="robots.png" thumb1="robots-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego robots"
     caption="Juego robots" >}}
 
 ### Sudoku
@@ -145,8 +145,8 @@ Sudoku es un juego de lógica japonés donde iremos colocando números que no se
 
 [Manual](http://library.gnome.org/users/gnome-sudoku/stable/)
 
-{{< figure
-    image1="sudoku.png" thumb1="sudoku-thumb.png" title1="Juego sudoku"
+{{< figureproc
+    image1="sudoku.png" thumb1="sudoku-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego sudoku"
     caption="Juego sudoku" >}}
 
 ### Swell Foop
@@ -155,8 +155,8 @@ Es un juego de tipo puzle cuyo objetivo es eliminar los objetos del mismo color 
 
 [Manual](http://library.gnome.org/users/swell-foop/stable/)
 
-{{< figure
-    image1="swell-foop.png" thumb1="swell-foop-thumb.png" title1="Juego swell foop"
+{{< figureproc
+    image1="swell-foop.png" thumb1="swell-foop-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego swell foop"
     caption="Juego swell foop" >}}
 
 ### Tali
@@ -165,8 +165,8 @@ Es un juego de tipo poker con dados y menos dinero. Lanzas los dados tres veces 
 
 [Manual](https://help.gnome.org/users/tali/stable/)
 
-{{< figure
-    image1="tali.png" thumb1="tali-thumb.png" title1="Juego tali"
+{{< figureproc
+    image1="tali.png" thumb1="tali-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego tali"
     caption="Juego tali" >}}
 
 ### Tetravex
@@ -175,16 +175,16 @@ Es un juego tipo puzle donde las piezas han de posicionarse de modo que los mism
 
 [Manual](https://help.gnome.org/users/gnome-tetravex/stable/)
 
-{{< figure
-    image1="tetravex.png" thumb1="tetravex-thumb.png" title1="Juego tetravex"
+{{< figureproc
+    image1="tetravex.png" thumb1="tetravex-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego tetravex"
     caption="Juego tetravex" >}}
 
 ### Ajedrez
 
 Es el clásico juego de ajedrez donde las partidas pueden ser jugadas contra un humano o una computadora. He escrito un [artículo sobre el juego de ajedrez][blogbitix-160] de GNOME.
 
-{{< figure
-    image1="chess.png" thumb1="chess-thumb.png" title1="Juego ajedrez"
+{{< figureproc
+    image1="chess.png" thumb1="chess-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Juego ajedrez"
     caption="Juego ajedrez" >}}
 
 {{% /post %}}

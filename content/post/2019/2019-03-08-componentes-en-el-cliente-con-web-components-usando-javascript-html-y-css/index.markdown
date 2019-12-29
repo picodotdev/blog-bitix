@@ -44,7 +44,7 @@ Además con los _slots_ se le puede proporcionar al _Web Component_ un fragmento
 
 {{< figureproc
     image1="web-components-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Web Components"
-    image2="web-components-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Eventos de ciclo de vida Web Components"
+    image2="web-components-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Eventos de ciclo de vida Web Components"
     caption="Etiquetado y eventos de varios Web Components" >}}
 
 En la página de [documentación los _Web Components_ en MDN](https://developer.mozilla.org/en-US/docs/Web/Web_Components) esta muy bien detallados. Los componentes de lado del cliente permiten desarrollar elementos funcionales reutilizables y compuestos entre ellos. Combinado con una interfaz REST o [GraphQL][graphql] en el lado del servidor es una forma de construir una aplicación o página web. [JSF][jsf], [Wicket][wicket], [Apache Tapestry][tapestry] son _frameworks_ web Java que proporciona componentes con ciertas similitudes pero en el lado del servidor.

@@ -26,9 +26,9 @@ En alguna ocasión me han comentado que me donarían algo por los artículos que
 
 Quien crea que es mucho que pruebe a crearse una bitácora, un canal en [YouTube][youtube] o un _podcast_ y verá rápidamente que o se acierta en la temática y se es muy bueno creando contenido que genera interés o primero verá que han de pasar dos años y dedicar una ingente cantidad de horas a crear ese contenido para llegar a estas cifras que tampoco son altas, no en vano muchos de estos proyectos son abandonados al cabo de unos meses, por algo será.
 
-{{< figure
-    image1="analytics-2017.png" thumb1="analytics-2017-thumb.png" title1="Analytics 2017 de Blog Bitix"
-    image2="gadsense-2017.png" thumb2="gadsense-2017-thumb.png" title2="AdSense 2017 de Blog Bitix"
+{{< figureproc
+    image1="analytics-2017.png" thumb1="analytics-2017-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Analytics 2017 de Blog Bitix"
+    image2="gadsense-2017.png" thumb2="gadsense-2017-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="AdSense 2017 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2017" >}}
 
 Pero por otra parte he recibido buenos comentarios sobre lo que escribo en Blog Bitix, por algunas personas vía [Twitter][twitter] y otras en algún comentario que me anima a seguir escribiendo y compartiendo como hasta ahora lo que voy aprendiendo e investigando que algún día espero utilizar en algún trabajo antes de que me jubile o pruebe ser un jardinero o barrendero.

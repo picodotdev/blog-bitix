@@ -32,10 +32,10 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Los fisgones (Sneakers)](https://www.filmaffinity.com/es/film233071.html)
 * [Otras películas sobre _hackers_](https://es.wikipedia.org/wiki/Categor%C3%ADa:Pel%C3%ADculas_sobre_hackers)
 
-{{< figure
-    image1="pirates-of-silicon-valley.jpg" thumb1="pirates-of-silicon-valley-thumb.jpg" title1="Piratas de Silicon Valley"
-    image2="office-space.jpg" thumb2="office-space-thumb.jpg" title2="Trabajo basura"
-    image3="wargames.jpg" thumb3="wargames-thumb.jpg" title3="Juegos de guerra" >}}
+{{< figureproc
+    image1="pirates-of-silicon-valley.jpg" thumb1="pirates-of-silicon-valley-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Piratas de Silicon Valley"
+    image2="office-space.jpg" thumb2="office-space-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Trabajo basura"
+    image3="wargames.jpg" thumb3="wargames-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Juegos de guerra" >}}
 
 ### Series
 
@@ -47,10 +47,10 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Scorpion](https://www.filmaffinity.com/es/film482651.html)
 * [Odio canibal](https://www.filmaffinity.com/es/film752650.html)
 
-{{< figure
-    image1="black-mirror.jpg" thumb1="black-mirror-thumb.jpg" title1="Black Mirror"
-    image2="mr-robot.jpg" thumb2="mr-robot-thumb.jpg" title2="Mr Robot"
-    image3="silicon-valley.jpg" thumb3="silicon-valley-thumb.jpg" title3="Silicon Valley" >}}
+{{< figureproc
+    image1="black-mirror.jpg" thumb1="black-mirror-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Black Mirror"
+    image2="mr-robot.jpg" thumb2="mr-robot-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Mr Robot"
+    image3="silicon-valley.jpg" thumb3="silicon-valley-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Silicon Valley" >}}
 
 ### Documentales
 
@@ -108,10 +108,10 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 * ¿Sueñan los androides con ovejas eléctricas? de _Philip K. Dick_
 * [Algunas novelas sobre informática y _hackers_](http://www.proyecto-tic.es/algunas-novelas-sobre-informatica-y-hackers/)
 
-{{< figure
-    image1="el-circulo.jpg" thumb1="el-circulo-thumb.jpg" title1="El circulo"
-    image2="microsiervos.jpg" thumb2="microsiervos-thumb.jpg" title2="Microsiervos"
-    image3="cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" thumb3="cuando-los-administradores-de-sistemas-gobernaron-tierra-thumb.jpg" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
+{{< figureproc
+    image1="el-circulo.jpg" thumb1="el-circulo-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="El circulo"
+    image2="microsiervos.jpg" thumb2="microsiervos-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Microsiervos"
+    image3="cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" thumb3="cuando-los-administradores-de-sistemas-gobernaron-tierra-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
 
 ¿Conoces alguno imprescindible más que incluir en esta lista?
 

@@ -30,75 +30,75 @@ Deberemos instalar el paquete del [emulador Mame](https://www.archlinux.org/pack
 
 Instalados estos paquetes y descargada una ROM de ejemplo como la de [Ghouls & Gosht](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs\/Ghouls'n_Ghosts_(World)/13191) de [EMUPARADISE](http://www.emuparadise.me) y colocada en un directorio (no hace falta descomprimir el archivo de la ROM) iniciamos el lanzador QMC2. QMC2 inicialmente nos pedirá donde se encuentra el binario del emulador y el directorio donde están las ROMs. Configurado QMC2 buscaremos el juego por su nombre del que hayamos descargado la ROM.
 
-{{< figure
-    image1="qmc2.png" thumb1="qmc2-thumb.png" title1="Lanzador QMC2"
-    image2="qmc2-config.png" thumb2="qmc2-config-thumb.png" title2="Configuración de QMC2"
+{{< figureproc
+    image1="qmc2.png" thumb1="qmc2-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Lanzador QMC2"
+    image2="qmc2-config.png" thumb2="qmc2-config-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Configuración de QMC2"
     caption="Lanzador QMC2 de juegos MAME y su configuración" >}}
 
 Si hay varios resultados para el mismo nombre de juego iremos probando a iniciarlos uno a uno hasta que se abra una ventana emergente con el juego. Las teclas por defecto del primer jugador son las flechas del teclado, la tecla <kbd>Alt-izquierda</kbd> para el botón 1, <kbd>Ctrl-izquierdo</kbd> para el botón 2 y la <kbd>barra espaciadora</kbd> para el botón 3. Iniciado sdlmame en la sección de _Input > Player 1_ podremos configurar las teclas. Las teclas <kbd>1</kbd> y <kbd>2</kbd> nos permitirá seleccionar entre uno y dos jugadores y la tecla <kbd>5</kbd> introducir monedas o créditos.
 
 Esta es una pequeña lista no completa de los juegos míticos que recuerdo de mi época.
 
-{{< figure
-    image1="amidar.png" thumb1="amidar-thumb.png" title1="Amidar"
-    image2="dark-seal.png" thumb2="dark-seal-thumb.png" title2="Dark Seal"
+{{< figureproc
+    image1="amidar.png" thumb1="amidar-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Amidar"
+    image2="dark-seal.png" thumb2="dark-seal-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Dark Seal"
     caption="Amidar y Dark Seal" >}}    
-    {{< figure
-    image1="donkey-kong.png" thumb1="donkey-kong-thumb.png" title1="Donkey Kong"
-    image2="donkey-kong-jr.png" thumb2="donkey-kong-jr-thumb.png" title2="Donkey Kong Jr."
+{{< figureproc
+    image1="donkey-kong.png" thumb1="donkey-kong-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donkey Kong"
+    image2="donkey-kong-jr.png" thumb2="donkey-kong-jr-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Donkey Kong Jr."
     caption="Donkey Kong y Donkey Kong Jr." >}}
-    {{< figure
-    image1="ghosts-and-goblins.png" thumb1="ghosts-and-goblins-thumb.png" title1="Ghosts and Goblins"
-    image2="ghouls-and-ghosts.png" thumb2="ghouls-and-ghosts-thumb.png" title2="Ghouls and Ghosts"
+{{< figureproc
+    image1="ghosts-and-goblins.png" thumb1="ghosts-and-goblins-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Ghosts and Goblins"
+    image2="ghouls-and-ghosts.png" thumb2="ghouls-and-ghosts-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Ghouls and Ghosts"
     caption="Ghosts and Goblins y Ghouls and Ghosts" >}}
-    {{< figure
-    image1="hyper-sports.png" thumb1="hyper-sports-thumb.png" title1="Hyper Sports"
-    image2="metal-slug.png" thumb2="metal-slug-thumb.png" title2="Metal Slug"
+{{< figureproc
+    image1="hyper-sports.png" thumb1="hyper-sports-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Hyper Sports"
+    image2="metal-slug.png" thumb2="metal-slug-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Metal Slug"
     caption="Hyper Sports y Metal Slug" >}}
-    {{< figure
-    image1="meikyu-jima.png" thumb1="meikyu-jima-thumb.png" title1="Meikyu Jima"
-    image2="new-rally-x.png" thumb2="new-rally-x-thumb.png" title2="New Rally X"
+{{< figureproc
+    image1="meikyu-jima.png" thumb1="meikyu-jima-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Meikyu Jima"
+    image2="new-rally-x.png" thumb2="new-rally-x-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="New Rally X"
     caption="Meikyu Jima y New Rally X" >}}
-    {{< figure
-    image1="pang.png" thumb1="pang-thumb.png" title1="Pang"
-    image2="pengo.png" thumb2="pengo-thumb.png" title2="Pengo"
+{{< figureproc
+    image1="pang.png" thumb1="pang-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Pang"
+    image2="pengo.png" thumb2="pengo-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Pengo"
     caption="Pang y Pengo" >}}
-    {{< figure
-    image1="puck-man.png" thumb1="puck-man-thumb.png" title1="Puck Man"
-    image2="rainbow-islands.png" thumb2="rainbow-islands-thumb.png" title2="Rainbow Islands"
+{{< figureproc
+    image1="puck-man.png" thumb1="puck-man-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Puck Man"
+    image2="rainbow-islands.png" thumb2="rainbow-islands-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Rainbow Islands"
     caption="Puck Man y Rainbow Islands" >}}
-    {{< figure
-    image1="rygar.png" thumb1="rygar-thumb.png" title1="Rygar"
-    image2="squash.png" thumb2="squash-thumb.png" title2="Squash"
+{{< figureproc
+    image1="rygar.png" thumb1="rygar-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Rygar"
+    image2="squash.png" thumb2="squash-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Squash"
     caption="Rygar y Squash" >}}
-    {{< figure
-    image1="super-mario-bros.png" thumb1="super-mario-bros-thumb.png" title1="Super Mario Bros"
-    image2="super-mario-bros-3.png" thumb2="super-mario-bros-3-thumb.png" title2="Super Mario Bros 3"
+{{< figureproc
+    image1="super-mario-bros.png" thumb1="super-mario-bros-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Super Mario Bros"
+    image2="super-mario-bros-3.png" thumb2="super-mario-bros-3-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Super Mario Bros 3"
     caption="Super Mario Bros y Super Mario Bros 3" >}}
-    {{< figure
-    image1="super-volleyball.png" thumb1="super-volleyball-thumb.png" title1="Super Volleyball"
-    image2="tetris.png" thumb2="tetris-thumb.png" title2="Tetris"
+{{< figureproc
+    image1="super-volleyball.png" thumb1="super-volleyball-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Super Volleyball"
+    image2="tetris.png" thumb2="tetris-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Tetris"
     caption="Super Volleyball y Tetris" >}}
-    {{< figure
-    image1="toki.png" thumb1="toki-thumb.png" title1="Toki"
-    image2="track-and-field.png" thumb2="track-and-field-thumb.png" title2="Track and Field"
+{{< figureproc
+    image1="toki.png" thumb1="toki-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Toki"
+    image2="track-and-field.png" thumb2="track-and-field-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Track and Field"
     caption="Toki y Track and Field" >}}
-    {{< figure
-    image1="traverse.png" thumb1="traverse-thumb.png" title1="Traverse"
-    image2="willow.png" thumb2="willow-thumb.png" title2="Willow"
+{{< figureproc
+    image1="traverse.png" thumb1="traverse-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Traverse"
+    image2="willow.png" thumb2="willow-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Willow"
     caption="Traverse y Willow" >}}
-    {{< figure
-    image1="wonder-boy.png" thumb1="wonder-boy-thumb.png" title1="Wonder Boy"
-    image2="world-rally.png" thumb2="world-rally-thumb.png" title2="World Rally"
+{{< figureproc
+    image1="wonder-boy.png" thumb1="wonder-boy-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Wonder Boy"
+    image2="world-rally.png" thumb2="world-rally-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="World Rally"
     caption="Wonder Boy y World Rally" >}}
 
 Ya solo nos queda buscar con tu buscador preferido algún artículo que recopile las mejores ROMs o aquellas que recuerdes y descargarlas en el directorio de las ROMS. Algunos emuladores deberemos previamente [descargar su ROM de emulador como en el caso de Neo-Geo](https://www.emuparadise.me/M.A.M.E._-_Multiple_Arcade_Machine_Emulator_ROMs/Neo-Geo/15030) para esta plataforma y colocarla también en el directorio de las ROMs.
 
 Para jugar a los juegos de la NES de Nintendo con QMC2 no he conseguido ejecutarlos, he tenido que introducir el comando <code>sdlmame nes</code> en la terminal buscar la ROM navegando por los directorios, seleccionarla y usar la opción de _reset_.
 
-{{< figure
-    image1="sdlmame-nes.png" thumb1="sdlmame-nes-thumb.png" title1="sdlmame NES"
-    image2="sdlmame-nes-supermariobros3.png" thumb2="sdlmame-nes-supermariobros3-thumb.png" title2="sdlmame Super Mario Bros 3"
+{{< figureproc
+    image1="sdlmame-nes.png" thumb1="sdlmame-nes-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="sdlmame NES"
+    image2="sdlmame-nes-supermariobros3.png" thumb2="sdlmame-nes-supermariobros3-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="sdlmame Super Mario Bros 3"
     caption="Ejecución de un juego NES con sdlmame" >}}
 
 Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][windows] como para [Mac OS X][macos] en sus secciones de descarga:

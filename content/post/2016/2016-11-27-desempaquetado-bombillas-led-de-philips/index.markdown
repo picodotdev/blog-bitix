@@ -38,15 +38,15 @@ En [Amazon][amazon] hay una amplia gama de bombillas LED variando en tipo de cas
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B001BB1SSA&linkId=a35b7a1682f1f28f137f770d01fc5318&internal="></iframe>
 </div>
 
-{{< figure
-    image1="bombilla-led-philips-1.jpg" thumb1="bombilla-led-philips-1-thumb.jpg" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
-    image2="bombilla-led-philips-2.jpg" thumb2="bombilla-led-philips-2-thumb.jpg" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K" >}}
-    {{< figure
-    image1="bombilla-led-philips-3.jpg" thumb1="bombilla-led-philips-3-thumb.jpg" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
-    image2="bombilla-led-philips-4.jpg" thumb2="bombilla-led-philips-4-thumb.jpg" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
+{{< figureproc
+    image1="bombilla-led-philips-1.jpg" thumb1="bombilla-led-philips-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
+    image2="bombilla-led-philips-2.jpg" thumb2="bombilla-led-philips-2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K" >}}
+{{< figureproc
+    image1="bombilla-led-philips-3.jpg" thumb1="bombilla-led-philips-3-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
+    image2="bombilla-led-philips-4.jpg" thumb2="bombilla-led-philips-4-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Bombilla LED PHILIPS 100W E27 13.5W 2700K"
     caption="Bombilla LED PHILIPS 100W E27 13.5W 2700K" >}}
-    {{< figure
-    image1="lampara-brilliant.jpg" thumb1="lampara-brilliant-thumb.jpg" title1="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K"
+{{< figureproc
+    image1="lampara-brilliant.jpg" thumb1="lampara-brilliant-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K"
     caption="Lámpara Brilliant con bombillas LED PHILIPS 100W E27 13.5W 2700K" >}}
 
 {{< reference >}}

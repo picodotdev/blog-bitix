@@ -62,7 +62,7 @@ Estas opciones se cambian el la sección de configuración de Firefox introducie
 
 {{< figureproc
     image1="firefox-config-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Configuración de Firefox optimizado para SSD"
-    image2="firefox-config-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Configuración de Firefox optimizado para SSD"
+    image2="firefox-config-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Configuración de Firefox optimizado para SSD"
     caption="Configuración de Firefox optimizado para SSD" >}}
 
 Con la configuración por defecto y cambiando estas opciones esta es la diferencia de los procesos de Firefox que causan E/S después de un tiempo de uso. Por defecto se observa que hay un proceso relacionado que debe estar relacionado con la caché a raíz de su nombre que escribe en el almacenamiento y cambiadas las opciones solo los procesos _mozStorage_ escriben, estos procesos están relacionados con las _cookies_ y almacenamiento local o bases de datos que los navegadores ofrecen a las páginas web pero los procesos relacionados con la caché han desaparecido. La cantidad de datos escritos con las opciones por defecto y cambiadas son significativamente menores en el mismo periodo de tiempo.
@@ -71,7 +71,7 @@ Dado que la caché ocasiona escrituras en el almacenamiento el proceso de _journ
 
 {{< figureproc
     image1="firefox-default.png" options1="2560x1440" optionsthumb1="300x200" title1="Entrada y salida con las opciones de Firefox por defecto"
-    image2="firefox-ssd.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Entrada y salida con opciones de Firefox optimizadas para SSD"
+    image2="firefox-ssd.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Entrada y salida con opciones de Firefox optimizadas para SSD"
     caption="Entrada y salida de Firefox por defecto y optimizado para SSD" >}}
 
 En el entorno de escritorio [GNOME][gnome] con la aplicación _Monitor del sistema_ es posible ver la cantidad de datos escritos por un proceso en total y en tiempo real.

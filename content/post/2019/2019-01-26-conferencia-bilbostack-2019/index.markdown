@@ -22,13 +22,13 @@ La novedad más relevante de este año es que por primera vez las entradas han t
 
 {{< figureproc
     image1="euskalduna-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Palacio Euskalduna"
-    image2="euskalduna-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
-    image3="bilbostack-logo-2.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Palacio Euskalduna"
+    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
+    image3="bilbostack-logo-2.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Palacio Euskalduna"
     caption="Palacio Euskalduna" source="@BilboStack">}}
 {{< figureproc
     image1="patrocinadores.png" options1="2560x1440" optionsthumb1="200x150" title1="Patrocinadores"
-    image2="localizacion.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
-    image3="paquete-bienvenida.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Paquete de bienvenida"
+    image2="localizacion.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
+    image3="paquete-bienvenida.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Paquete de bienvenida"
     caption="Patrocinadores, ubicación y paquete de bienvenida" >}}
 
 La conferencia comienza con la presentación y la bienvenida de los organizadores junto con unas palabras de Xabier Otxandiano concejal de desarrollo económico del ayuntamiento de Bilbao comentando la transformación que ha realizado la ciudad en las últimas décadas, urbanística siendo representante el propio palacio Euskalduna de un entorno más industrial a otro más de servicios y la importancia de la tecnología con el potencial para convertirse en la nueva industria de la ciudad. Por este motivo la conferencia BilboStack es importante y lo apoyan de forma institucional haciendo hincapié que no es fácil organizar una conferencia con el poder de convocatoria de casi 700 personas un sábado a la mañana y a la que muchos acuden haciendo muchos kilómetros de viaje.
@@ -136,7 +136,7 @@ Tenía claro que quería acudir a esta presentación, era una en la que no tení
 
 {{< figureproc
     image1="webcomponents-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Web Components API"
-    image2="webcomponents-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Web Components API"
+    image2="webcomponents-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Web Components API"
     caption="Web Components API" >}}
 
 ### Agile JavaScript por _Ricardo Borillo_
@@ -149,7 +149,7 @@ Esta presentación junto con la anterior forman la representación de JavaScript
 
 {{< figureproc
     image1="agilejavascript-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Agile JavaScript"
-    image2="agilejavascript-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Agile JavaScript"
+    image2="agilejavascript-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Agile JavaScript"
     caption="Agile JavaScript" >}}
 
 ### Descanso
@@ -158,8 +158,8 @@ No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacer
 
 {{< figureproc
     image1="bilbostack-networking.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Networking + Café"
-    image2="bilbostack-photocall.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Photocall"
-    image3="bilbostack-hashtag.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Hashtag"
+    image2="bilbostack-photocall.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Photocall"
+    image3="bilbostack-hashtag.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Hashtag"
     caption="Networking + Café, photocall y hashtag" >}}
 
 ### UX para desarrolladores front y back por _Virginia Aguirre_

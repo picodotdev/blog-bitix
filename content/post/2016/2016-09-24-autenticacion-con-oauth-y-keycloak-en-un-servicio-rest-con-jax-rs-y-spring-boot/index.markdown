@@ -27,16 +27,16 @@ Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accede
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="keycloak-login.png" thumb1="keycloak-login-thumb.png" title1="Inicio de sesión de Keycloak" >}}
+{{< figureproc
+    image1="keycloak-login.png" thumb1="keycloak-login-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Inicio de sesión de Keycloak" >}}
 
 Creamos un _realm_, en el ejemplo llamado _springbootjaxrs_ y un cliente con id _client_, además crearemos un rol _api_ y se lo asignaremos al cliente.
 
-{{< figure
-    image1="keycloak-add-client.png" thumb1="keycloak-add-client-thumb.png" title1="Registro del cliente"
-    image2="keycloak-add-role.png" thumb2="keycloak-add-role-thumb.png" title2="Creación de rol" >}}
-    {{< figure
-    image1="keycloak-service-account-roles.png" thumb1="keycloak-service-account-roles-thumb.png" title1="Asignación de roles al cliente" >}}
+{{< figureproc
+    image1="keycloak-add-client.png" thumb1="keycloak-add-client-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Registro del cliente"
+    image2="keycloak-add-role.png" thumb2="keycloak-add-role-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Creación de rol" >}}
+{{< figureproc
+    image1="keycloak-service-account-roles.png" thumb1="keycloak-service-account-roles-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Asignación de roles al cliente" >}}
 
 Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos la configuración para el adaptador de Keycloak para el servicio REST desde la pestaña _Installation_ que añadiremos en el fichero de configuración de Spring Boot _application.yml_. Además, indicaremos que el cliente solo aceptará _access tokens_ mediante la opción _bearer-only_ de modo que no hará redirecciones para autenticar.
 
@@ -49,23 +49,23 @@ Iniciado Keycloak y el servicio REST con el comando <code>gradlew run</code> pod
 
 {{< code file="curl-token.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" title1="Obtención de un token" >}}
+{{< figureproc
+    image1="keycloak-access-token.png" thumb1="keycloak-access-token-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Obtención de un token" >}}
 
 Obtenido el _access token_ si no lo proporcionamos en la llamada al servicio REST observaremos que la respuesta que obtenemos es un [código de estado HTTP 401][wikipedia-http-status-codes] indicando que se necesitan proporcionar las credenciales que con OAuth es un _token_.
 
 {{< code file="curl-401.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="client-no-token.png" thumb1="client-no-token-thumb.png" title1="Llamada al servicio REST sin token" >}}
+{{< figureproc
+    image1="client-no-token.png" thumb1="client-no-token-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Llamada al servicio REST sin token" >}}
 
 Proporcionando el token mediante una cabecera de la petición el servicio nos devolverá los datos que proporciona. Si el _token_ no es válido obtendremos un error HTTP 401.
 
 {{< code file="curl.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="client-ouath.png" thumb1="client-ouath-thumb.png" title1="Llamada al servicio REST con token"
-    image2="client-token-tampered.png" thumb2="client-token-tampered-thumb.png" title2="Llamada al servicio REST con token inválido" >}}
+{{< figureproc
+    image1="client-ouath.png" thumb1="client-ouath-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Llamada al servicio REST con token"
+    image2="client-token-tampered.png" thumb2="client-token-tampered-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Llamada al servicio REST con token inválido" >}}
 
 Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir algunas dependencias al proyecto que usando [Gradle][gradle] como herramienta de construcción serían las siguientes.
 

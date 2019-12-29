@@ -25,8 +25,8 @@ La instalación de ES es muy sencilla, basta con [descargar el zip de su distrib
 
 Después de unos segundos deberemos ver algo como lo siguiente.
 
-{{< figure
-    image1="elasticsearch.png" thumb1="elasticsearch-thumb.png" >}}
+{{< figureproc
+    image1="elasticsearch.png" thumb1="elasticsearch-thumb.png" options1="2560x1440" optionsthumb1="450x400" >}}
 
 Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.
 
@@ -64,8 +64,8 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 
 {{< code file="script-9.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="categorias-amazon.png" thumb1="categorias-amazon-thumb.png" title1="Categorías de productos (facets) en Amazon" >}}
+{{< figureproc
+    image1="categorias-amazon.png" thumb1="categorias-amazon-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Categorías de productos (facets) en Amazon" >}}
 
 Otra de las funcionalizades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palablas que tienen fallos de escritura.
 

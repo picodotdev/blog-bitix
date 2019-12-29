@@ -81,9 +81,9 @@ Finalmente, para que Hibernate conozca la existencia de este Integrator debemos 
 
 Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en la consola los mensajes cuando se inserte, actualice o elimine una fila de base de datos. En las capturas de imagen se muestran las trazas de una inserción, una traza para la preinseción _Action: preInsert, Id: null_ donde se ve que la entidad no tienen identificativo asignado y otra traza después de la inserción _Action: postInsert, Id: 1_ donde la entidad ya tiene identificativo asignado y la sentencia SQL se ha ejecutado, como se ve en la captura los mensajes salen antes y después de ejecutarse la sentencia SQL que se envía a la base de datos.
 
-{{< figure
-    image1="aplicacion.png" thumb1="aplicacion-thumb.png" title1="Creando un registro en la base de datos"
-    image2="consola.png" thumb2="consola-thumb.png" title2="Trazas de ejecución del listener" >}}
+{{< figureproc
+    image1="aplicacion.png" thumb1="aplicacion-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Creando un registro en la base de datos"
+    image2="consola.png" thumb2="consola-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Trazas de ejecución del listener" >}}
 
 Otra implementación distinta a la expuesta en este artículo es con anotaciones tal y como hace JPA, podríamos hacer una implementación de _listener_ que busque una anotación en la entidad y llame a ese método cuando se produzca el evento. Depende de como  prefiramos organizar el código, si preferimos tener el código del _listener_ separado de la entidad o todo el código en la propia entidad.
 

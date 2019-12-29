@@ -76,11 +76,11 @@ Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas
 
 {{< figureproc
     image1="consul.png" options1="2560x1440" optionsthumb1="200x150" title1="Consul"
-    image2="nomad-1.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Nomad"
-    image3="nomad-2.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Nomad" >}}
+    image2="nomad-1.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Nomad"
+    image3="nomad-2.png" options3="2560x1440" optionsthumb3="200x150" title3="Nomad" >}}
 {{< figureproc
     image1="traefik-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Traefik"
-    image2="traefik-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Traefik"
+    image2="traefik-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Traefik"
     caption="Consolas de administración de Consul, Nomad y Traefik" >}}
 
 El código del servicio, del cliente implementados con Spring y la salida del cliente son los siguientes.

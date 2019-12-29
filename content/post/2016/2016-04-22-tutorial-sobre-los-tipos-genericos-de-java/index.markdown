@@ -73,18 +73,18 @@ En Java un tipo puede ser asignado a otro mientras el primero sea compatible con
 
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
-{{< figure
-    image1="generics-subtypeRelationship.gif" thumb1="generics-subtypeRelationship.gif" >}}
+{{< figureproc
+    image1="generics-subtypeRelationship.gif" thumb1="generics-subtypeRelationship.gif" options1="2560x1440" optionsthumb1="450x400" >}}
 
 Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que _ArrayList\<String\>_ es un subtipo de _List\<String\>_ que a su vez es un subtipo de _Collection\<String\>_.
 
-{{< figure
-    image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" >}}
+{{< figureproc
+    image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" options1="2560x1440" optionsthumb1="450x400" >}}
 
 {{< code file="PayloadList.java" language="java" options="" >}}
 
-{{< figure
-    image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" >}}
+{{< figureproc
+    image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" options1="2560x1440" optionsthumb1="450x400" >}}
 
 En los _generics_ un parámetro para un tipo _?_ se denomina _wildcard_ siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de _List\<Integer\>_, _List\<Double\>_ y _List\<Number\>_. El término _List\<Number\>_ es más restrictivo que _List\<? extends Number\>_ porque el primero solo acepta una lista de _Number_ y el segundo una lista de _Number_ o de sus subtipos. _List\<? extends Number\>_ es un _upper bounded wildcard_.
 
@@ -101,9 +101,9 @@ Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pe
 
 {{< code file="WildcardList.java" language="java" options="" >}}
 
-{{< figure
-    image1="generics-listParent.gif" thumb1="generics-listParent.gif"
-    image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" >}}
+{{< figureproc
+    image1="generics-listParent.gif" thumb1="generics-listParent.gif" options1="2560x1440" optionsthumb1="450x400"
+    image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" options2="2560x1440" optionsthumb2="450x400" >}}
 
 Uno de las mayores confusiones al usar generics es cuando usar _upper bounded wildcards_ o cuando usar _lower bounded wildcards_. Podemos usar las siguientes reglas:
 

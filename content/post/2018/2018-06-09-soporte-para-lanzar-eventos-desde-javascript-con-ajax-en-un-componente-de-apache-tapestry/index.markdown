@@ -36,7 +36,7 @@ En el primer elemento del HTML se añade un atributo _data-componenent-events_ q
 
 {{< figureproc
     image1="event.png" options1="2560x1440" optionsthumb1="300x200" title1="Petición Ajax del evento"
-    image2="data-component-events.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Atributo con la URL del evento"
+    image2="data-component-events.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Atributo con la URL del evento"
     caption="Petición Ajax y atributo con la URL del evento" >}}
 
 Esta funcionalidad se incorporó en Apache Tapestry 5.2 donde hasta entonces era necesario construir la URL del evento en el servidor con [ComponentResources.createEventLink()](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ComponentResourcesCommon.html#createEventLink-java.lang.String-java.lang.Object...-) y enviarlo al componente haciendo uso de [JavaScriptSupport](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html) como se muestra en el componente _Ajax_ que no hace uso de esta funcionalidad de eventos.

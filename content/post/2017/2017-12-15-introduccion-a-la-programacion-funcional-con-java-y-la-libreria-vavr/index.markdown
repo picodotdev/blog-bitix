@@ -24,8 +24,8 @@ Me parece que ha sido hace mucho menos pero Java 8 fue publicado ya nada más y 
 
 Java 8 no las incorpora todo lo que podría en el JDK por decisión de los desarrolladores, ya que una de los principios que guían el desarrollo de Java es la compatibilidad hacia atrás e incorporar cosas en el lenguaje o JDK que en un momento determinado hasta que no demuestran que son realmente útiles y beneficiosas. Conservar la compatibilidad hacia atrás es una fortaleza pero que puede dar la sensación que Java siempre va un paso por detrás en incorporar novedades, aún así complementado con librerías como Vavr en el caso de las programación funcional se echa de menos menos otros lenguajes como [Kotlin][kotlin] o [Clojure][clojure].
 
-{{< figure
-    image1="vavr-overview.png" thumb1="vavr-overview-thumb.png" title1="Jerarquía de clases de Vavr"
+{{< figureproc
+    image1="vavr-overview.png" thumb1="vavr-overview-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Jerarquía de clases de Vavr"
     caption="Jerarquía de clases de Vavr" >}}
 
 Los principios que sigue la librería Vavr y que forman la tendencia en la programación y la programación funcional son:
@@ -44,9 +44,9 @@ Vavr proporciona una representación bien diseñada de algunos de los tipos más
 * Valores: los valores en Vavr son inmutables. Algunos objetos [Value](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/Value.html) proporcionados son: [Option](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Option.html), [Try](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Try.html), [Lazy](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/Lazy.html), [Either](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Either.html), [Future](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/concurrent/Future.html), [Validation](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/control/Validation.html).
 * Colecciones: se ha diseñado una nueva librería de colecciones para Java que cumple con los requerimientos de la programación funcional e inmutabilidad. [List](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/List.html), [Queue](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Queue.html), [SortedSet](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/SortedSet.html), [Seq](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Seq.html), [Set](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Set.html), [Map](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Map.html), [Stream](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Stream.html), [Traversable](http://static.javadoc.io/io.vavr/vavr/0.9.2/io/vavr/collection/Traversable.html), ...
 
-{{< figure
-    image1="collections-seq.png" thumb1="collections-seq-thumb.png" title1="Jerarquía de clases de Seq"
-    image2="collections-set-map.png" thumb2="collections-set-map-thumb.png" title2="Jerarquía de clases de Set y Map"
+{{< figureproc
+    image1="collections-seq.png" thumb1="collections-seq-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Jerarquía de clases de Seq"
+    image2="collections-set-map.png" thumb2="collections-set-map-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Jerarquía de clases de Set y Map"
     caption="Jerarquía de clases de Seq, Set y Map" >}}
 
 * _Pattern matching_: son una especie de sentencia _switch_ que son evaluadas como una expresión y que retornan un valor.

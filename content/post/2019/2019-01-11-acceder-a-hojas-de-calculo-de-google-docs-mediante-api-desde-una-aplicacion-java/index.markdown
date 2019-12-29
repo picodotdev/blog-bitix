@@ -45,15 +45,15 @@ Laa API _key_ se crean en la página de [Credenciales](https://console.developer
 
 {{< figureproc
     image1="google-credentials.png" options1="2560x1440" optionsthumb1="300x200" title1="Google Credentials"
-    image2="google-api-key.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
-    image3="google-document-share.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Compartir documento en Google Drive"
+    image2="google-api-key.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Google API Key"
+    image3="google-document-share.png" options3="2560x1440" optionsthumb3="300x200" title3="Compartir documento en Google Drive"
     caption="Google Credentials, API Key y compartir documento" >}}
 
 El enlace al compartir el documento o al editarlo contiene el identificativo de documento. Con la API _key_ o cuenta de servicio, el identificativo del documento y el documento compartido al menos para cualquiera que tenga el enlace la información del documento está accesible para una aplicación mediante una API REST o de forma programática con una implementación de la API con Java, este programa Java imprime el contenido de las celdas de la hoja de cálculo en la terminal. Se necesita una expresión que identifique la hoja y el contenido de las celdas de las que se quieren datos con un [rango en notación A1](https://developers.google.com/sheets/api/guides/concepts#a1_notation).
 
 {{< figureproc
     image1="google-spreadsheet.png" options1="2560x1440" optionsthumb1="300x200" title1="Hoja de cálculo de Google"
-    image2="google-document.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
+    image2="google-document.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Documento de Google"
     caption="Hoja de cálculo y documento de Google" >}}
 
 {{< code file="Main-3.java" language="java" options="" >}}

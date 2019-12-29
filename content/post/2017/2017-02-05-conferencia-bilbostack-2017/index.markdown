@@ -18,12 +18,12 @@ Cuando me inscribí en la [BilboStack][bilbostack] para reservar entrada no me l
 
 El número de asistentes ha sido numeroso quedando algo de sitio libre en el _track 2_ que era un aula pero en la sala de conferencias del _track 1_ aunque tiene cómodas butacas salvo por su estrechez el sitio libre era inexsitente de modo que en algunas presentaciones ha habido algunos asistentes que han debido estar de pie.
 
-{{< figure
-    image1="bilbostack-2017.jpg" thumb1="bilbostack-2017.jpg" title1="BilboStack 2017"
+{{< figureproc
+    image1="bilbostack-2017.jpg" thumb1="bilbostack-2017.jpg" options1="2560x1440" optionsthumb1="450x400" title1="BilboStack 2017"
     caption="BilboStack 2017" >}}
-    {{< figure
-    image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" title1="Universidad de Deusto"
-    image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" title2="Universidad de Deusto"
+{{< figureproc
+    image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Universidad de Deusto"
+    image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Universidad de Deusto"
     caption="Universidad de Deusto" >}}
 
 Este era el programa completo con su horario, temas muy distintos y variados como Xamarin, _internet of things_, el siempre presente JavaScript con Angular y Node, Lean Analytics y DDD entre algunos otros de la siguiente agenda:
@@ -86,9 +86,9 @@ Este era el programa completo con su horario, temas muy distintos y variados com
     </tbody>
 </table>
 
-{{< figure
-    image1="track-1.jpg" thumb1="track-1-thumb.jpg" title1="Track 1"
-    image2="track-2.jpg" thumb2="track-2-thumb.jpg" title2="Track 2"
+{{< figureproc
+    image1="track-1.jpg" thumb1="track-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Track 1"
+    image2="track-2.jpg" thumb2="track-2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Track 2"
     caption="Agenda" >}}
 
 Al igual que en ediciones previas hago un pequeño resumen de las presentaciones a las que asistí. Los resúmenes no le hace justicia a las grandes ponencias que fueron en realidad pero espero haber captado y transmitir aquí escuetamente las ideas básicas que se expusieron. Y con este es el tercer resumen consecutivo que escribo de la BilboStack, los anteriores (y posteriores que si tengo oportunidad espero escribir) de esta serie de artículos están al final de este artículo.
@@ -101,11 +101,12 @@ Estos aparatos conectados a internet nos ofrecen una nuevo área posibilidades. 
 
 El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](https://software.intel.com/es-es/iot/hardware/edison) junto con un servicio en la nube de Azure pero perfectamente podría ser una [Raspberry Pi][raspberrypi] u otra de las numerosas pequeñas placas que están surgiendo en este nuevo mercado. El [código fuente del ejemplo](https://github.com/isabelcabezasm/notwificador) está compartido en un repositorio de GitHub.
 
-{{< reference >}}* [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
+{{< reference >}}
+* [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
 {{< /reference >}}
 
-{{< figure
-    image1="invisible-o-desaparece.jpg" thumb1="invisible-o-desaparece-thumb.jpg" title1="Invisible o desaparece..." >}}
+{{< figureproc
+    image1="invisible-o-desaparece.jpg" thumb1="invisible-o-desaparece-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Invisible o desaparece..." >}}
 
 ### Érase una vez... el Design System <em>por Naiara Abaroa</em>
 
@@ -128,11 +129,12 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
 * [Foundation](https://foundation.zurb.com/)
 * Y el propio que ha comenzado a desarrollar Naiara, [nakDS](https://github.com/nabaroa/nakDS) que ha compartido en su GitHub
 
-{{< reference >}}* [Presentación](https://nabaroa.github.io/erase-una-vez-el-design-system/#/)
+{{< reference >}}
+* [Presentación](https://nabaroa.github.io/erase-una-vez-el-design-system/#/)
 {{< /reference >}}
 
-{{< figure
-    image1="design-system.jpg" thumb1="design-system-thumb.jpg" title1="Érase una vez... el Design System" >}}
+{{< figureproc
+    image1="design-system.jpg" thumb1="design-system-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Érase una vez... el Design System" >}}
 
 ### Agile for scrummies <em>por Jorge Uriarte</em>
 
@@ -156,11 +158,12 @@ Un sistema ágil es una aproximación a la incertidumbre. Incertidumbre que siem
 
 La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se construye lo no necesario, no se prueba lo que no se puede entregar, no se desarrolla lo que no se puede probar y no se especifica lo no se puede desarrollar produce una reducción de tiempos de entrega, hay mayor predictibilidad y elimina rehacer trabajo.
 
-{{< reference >}}* [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
+{{< reference >}}
+* [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
 {{< /reference >}}
 
-{{< figure
-    image1="agile-for-scrummies.jpg" thumb1="agile-for-scrummies-thumb.jpg" title1="Agile for scrummies" >}}
+{{< figureproc
+    image1="agile-for-scrummies.jpg" thumb1="agile-for-scrummies-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Agile for scrummies" >}}
 
 ### Domain-Driven Design, uniendo negocio con el software <em>por Gorka Laucirica y Beñat Espiña</em>
 
@@ -172,11 +175,12 @@ DDD se divide en patrones estratégicos (_bounded context_) que no tienen códig
 
 Un ejemplo de aplicación donde han aplicado DDD es [Kreta](https://github.com/kreta/kreta).
 
-{{< reference >}}* Libro [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php)
+{{< reference >}}
+* Libro [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php)
 {{< /reference >}}
 
-{{< figure
-    image1="domain-driven-design.jpg" thumb1="domain-driven-design-thumb.jpg" title1="Domain-Driven Design, uniendo negocio con el software" >}}
+{{< figureproc
+    image1="domain-driven-design.jpg" thumb1="domain-driven-design-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Domain-Driven Design, uniendo negocio con el software" >}}
 
 <hr>
 

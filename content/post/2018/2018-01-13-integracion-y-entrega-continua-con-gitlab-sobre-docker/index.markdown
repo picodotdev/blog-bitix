@@ -40,7 +40,7 @@ En este ejemplo y con este _pipeline_ el artefacto distribuible de la aplicació
 
 {{< figureproc
     image1="pipelines.png" options1="2560x1440" optionsthumb1="300x200" title1="Pipelines"
-    image2="pipeline.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Pipeline"
+    image2="pipeline.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Pipeline"
     caption="Pipeline" >}}
 
 El descriptor usando [Docker Compose][docker-compose] que define el servicio de GitLab y otro para GitLab Runner es el siguiente. El nombre de dominio que he utilizado para el servidor es _gitlab_ y ha de añadirse al archivo _/etc/hosts_ para que sea resuelto localmente.

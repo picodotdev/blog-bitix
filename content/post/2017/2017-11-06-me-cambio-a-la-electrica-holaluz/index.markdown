@@ -23,7 +23,7 @@ No me queda claro la diferencia entre energía 100% verde, que según indica inc
 
 {{< imageproc
     image1="holaluz.png" options1="300x250" title1="Holaluz"
-    image2="pepeenergy.png" command2="Fit" commandthumb2="Fit" options2="300x250" title2="Pepeenergy" >}}
+    image2="pepeenergy.png" options2="2560x1440" optionsthumb2="450x400" options2="300x250" title2="Pepeenergy" >}}
 
 El ahorro según mi consumo de aproximadamente unos 75 kWh mensuales con mi anterior compañía eléctrica es de 0,75 € y con respecto al precio que tiene Endesa de 1,41 €. No parece mucho pero la electricidad es un servicio indispensable, de uso prolongado en una vivienda y es raro cambiar de compañía cada poco tiempo, eligiendo bien la compañía al cabo de los años el ahorro es apreciable, nadie va a salir de pobre pero con lo ahorrado algo ya se puede comprar.
 
@@ -44,9 +44,9 @@ Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo
 
 Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que estoy seguro que con las subidas de precio en la electridad en este mismo periodo de tiempo sigue siendo un precio menor que otras compañías eléctricas. 
 
-{{< figure
-    image1="factura-holaluz-1.png" thumb1="factura-holaluz-1-thumb.png" title1="Factura Holaluz"
-    image2="factura-holaluz-2.png" thumb2="factura-holaluz-2-thumb.png" title2="Factura Holaluz"
+{{< figureproc
+    image1="factura-holaluz-1.png" thumb1="factura-holaluz-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Factura Holaluz"
+    image2="factura-holaluz-2.png" thumb2="factura-holaluz-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Factura Holaluz"
     caption="Factura Holaluz después de unos meses con consumo" >}}
 
 No hay ninguna diferencia entre la electricidad de cualquier compañía, la diferencia entre las empresas está en el precio, el origen de la electricidad que ofrecen, el servicio de atención al cliente y el trato que ofrecen a sus clientes. Compañías como Holaluz tienen un precio mejor que las grandes tradicionales, ofrecen energía 100% de origen renovable, el servicio de atención al cliente es bueno y el trato significativamente mejor.
@@ -62,8 +62,8 @@ En el blog de Holaluz escriben artículos muy buenos sobre el funcionamiento de 
 
 Finalmente, a modo de promoción ofrecen un descuento si al hacer la contratación te lo ha recomendado un amigo. Al hacer la contratación introduciendo el código del amigo Holaluz dan un descuento de 20€ a cada uno una vez se completa el alta. Si tienes un amigo al que aprecias con Holaluz pídele su código e introdúcelo al darte de alta y hazle un regalo y a ti otro, si no tienes un conocido que te ofrezca un código puedes usar el mío si este artículo te ha resultado de interés, mi código de amigo o código de Holaluz es **3R9L6I**, de forma temporal hasta finales de enero del 2020 con el código **COPS-3R9L6I** el descuento será de 30€ en vez de 20€.
 
-{{< figure
-    image1="contratacion-holaluz-paso-1.png" thumb1="contratacion-holaluz-paso-1-thumb.png" title1="Contratación Holaluz"
+{{< figureproc
+    image1="contratacion-holaluz-paso-1.png" thumb1="contratacion-holaluz-paso-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contratación Holaluz"
     caption="Contratación Holaluz" >}}
 
 {{% /post %}}

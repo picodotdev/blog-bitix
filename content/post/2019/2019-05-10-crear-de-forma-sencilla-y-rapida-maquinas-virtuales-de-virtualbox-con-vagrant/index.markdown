@@ -54,8 +54,8 @@ La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ 
 
 {{< figureproc
     image1="docker-compose-up.png" options1="2560x1440" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
-    image2="curl.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
-    image3="firefox.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Página devuelta por nginx"
+    image2="curl.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
+    image3="firefox.png" options3="2560x1440" optionsthumb3="300x200" title3="Página devuelta por nginx"
     caption="docker-compose up y curl desde la MV y desde el host" >}}
 
 Vagrant tiene un [repositorio de imágenes](https://app.vagrantup.com/boxes/search) entre las que elegir para el sistema, están las más populares como [Ubuntu][ubuntu], [Fedora][fedora], [Debian][debian] y [CentOS][centos]. Es un repositorio en donde los usuarios pueden subir sus propias imágenes aunque por defecto es mejor usar las oficiales de cada sistema.

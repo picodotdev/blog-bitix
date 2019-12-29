@@ -28,8 +28,8 @@ El modelo clásico de capas en la arquitectura de las aplicaciones Java EE se di
 * Capa de negocio: proporciona y persiste los datos de la capa cliente y contiene la lógica de negocio de la aplicación. Se ejecuta en un servidor de aplicaciones o contenedor de _servlets_.
 * Sistemas de información: donde se persisten los datos de la aplicación, puede ser una base de datos relacional como [Oracle][oracle], [MySQL][mysql] o [PostgreSQL][postgresql] o una base de datos NoSQL como [Redis][redis] o [MongoDB][mongodb] u otros sistemas como [Elasticsearch][elasticsearch].
 
-{{< figure
-    image1="aplicaciones-multicapa-javaee.png" thumb1="aplicaciones-multicapa-javaee.png" title1="Aplicaciones multicapa Java EE"
+{{< figureproc
+    image1="aplicaciones-multicapa-javaee.png" thumb1="aplicaciones-multicapa-javaee.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicaciones multicapa Java EE"
     caption="Aplicaciones multicapa Java EE" >}}
 
 En el [listado de especificaciones](https://www.oracle.com/technetwork/java/javaee/tech/index.html) encontramos algunas dedicadas a persistencia en base de datos (JDBC, JPA), transaccionalidad (JTA), procesamiento de peticiones HTTP (Servlets, JSF, REST), generación de HTML (Servlets, JSP, JSF), servicios web basados en REST y SOAP (JAX-RS, JAX-WS), soporte para websockets en el lado del servidor y cliente, [generar, procesar y modificar documentos JSON][blogbitix-374], validación de objetos, comunicación entre aplicaciones desacoplada con mensajes (JMS), concurrencia, servicios de nombres y descubrimiento o trabajos en lotes entre otras. Las especificaciones y versiones que componen Java EE 7 son:

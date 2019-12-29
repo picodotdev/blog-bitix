@@ -19,8 +19,8 @@ Realizar copias de seguridad es algo imprescindible si no queremos perder los da
 
 Nuestros datos en forma de documentos, fotos, música o vídeos son más importantes que el equipo estropeado ya que este se se puede reemplazar pero recuperar los datos será mas complicado o imposible dependiendo del fallo si no hemos realizado copias de seguridad. En GNU/Linux hay múltiples programas y formas de hacer las copias de seguridad, incrementales, comprimidas, cifradas, ... pero para un uso personal [hacer una copia de los archivos y mantenerla sincronizada con rsync][elblogdepicodev-156] es más que suficiente. En Windows un programa es [FreeFileSync][freefilesync] equivalente a _rsync_ disponible en GNU/Linux.
 
-{{< figure
-    image1="freefilesync.png" thumb1="freefilesync-thumb.png" title1="FreeFileSync" >}}
+{{< figureproc
+    image1="freefilesync.png" thumb1="freefilesync-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="FreeFileSync" >}}
 
 FreeFileSync tiene una licencia de software libre y está disponible tanto para [Windows][windows], [GNU][gnu]/[Linux][linux] y [Mac OS X][macos]. Ofrece una interfaz gráfica y su uso no es complicado. Primero deberemos seleccionar los directorios de los que hacer copia de seguridad y para cada uno de ellos el directorio destino en el que se guardará la copia de seguridad, FreeFileSync llama al origen y destino izquierdo y derecho ya que los presenta así en la interfaz y con la característica que cualquiera de ellos puede actuar como origen y destino. Habitualmente el directorio origen será uno del disco duro del sistema y el directorio destino un directorio de un disco duro o memoria USB externa. La copia de seguridad debería guardase en un dispositivo diferente al origen.
 
@@ -55,11 +55,11 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 * [Opciones de sinconización](https://freefilesync.org/manual.php?topic=synchronization-settings). Es dónde seleccionaremos el tipo de sincronización y las acciones a realizar según el tipo de categoría de modificación. Para las eliminaciones podremos elegir entre eliminar de forma permanente, enviar a la papelera de reciclaje o versionar los archivos. También elegiremos la posibilidad de que nos muestre una ventana con los conflictos que se produzcan. Por último, la acción una vez terminada la sincronización en caso de tomar mucho tiempo que nos servirá para desatender la sincronización, por ejemplo, apagar el equipo al terminar.
 * [Notas y trucos](https://freefilesync.org/manual.php?topic=tips-and-tricks).
 
-{{< figure
-    image1="freefilesync-comparacion.png" thumb1="freefilesync-comparacion-thumb.png" title1="Opciones de comparación de FreeFileSync"
-    image2="freefilesync-filtro.png" thumb2="freefilesync-filtro-thumb.png" title2="Opciones de filtrado de FreeFileSync" >}}
-    {{< figure
-    image1="freefilesync-sincronizacion.png" thumb1="freefilesync-sincronizacion-thumb.png" title1="Opciones de sincronización de FreeFileSync" >}}
+{{< figureproc
+    image1="freefilesync-comparacion.png" thumb1="freefilesync-comparacion-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Opciones de comparación de FreeFileSync"
+    image2="freefilesync-filtro.png" thumb2="freefilesync-filtro-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Opciones de filtrado de FreeFileSync" >}}
+{{< figureproc
+    image1="freefilesync-sincronizacion.png" thumb1="freefilesync-sincronizacion-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Opciones de sincronización de FreeFileSync" >}}
 
 La ventaja realizar un copia de los archivos directamente sin comprimir o cifrar es que no necesitaremos ningún programa adicional para acceder a ellos en caso de necesidad. Otros programas de copias de seguridad son capaces de guardar los datos cifrados y comprimidos pero para recuperar los datos necesitaremos esos programas. Dependiendo de los requerimientos para la copia de seguridad podemos [cifrar la unidad USB externa con BitLocker en Windows](http://windows.microsoft.com/es-es/windows/protect-files-bitlocker-drive-encryption#1TC=windows-8) y [cifrar la unidad USB externa con dm-crypt y LUKS en GNU/Linux][blogbitix-128].
 

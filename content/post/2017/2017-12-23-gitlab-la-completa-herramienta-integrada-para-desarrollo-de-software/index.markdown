@@ -30,30 +30,30 @@ Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compos
 
 {{< code file="docker-compose.yml" language="YAML" options="" >}}
 
-{{< figure
-    image1="change-password.png" thumb1="change-password-thumb.png" title1="Contraseña de root"
-    image2="sing-in.png" thumb2="sing-in-thumb.png" title2="Inicio de sesión"
+{{< figureproc
+    image1="change-password.png" thumb1="change-password-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contraseña de root"
+    image2="sing-in.png" thumb2="sing-in-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Inicio de sesión"
     caption="Contraseña e inicio de sesión" >}}
-    {{< figure
-    image1="welcome.png" thumb1="welcome-thumb.png" title1="Página de bienvenida"
+{{< figureproc
+    image1="welcome.png" thumb1="welcome-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Página de bienvenida"
     caption="Página de bienvenida" >}}
-    {{< figure
-    image1="profile.png" thumb1="profile-thumb.png" title1="Perfil de usuario"
-    image2="admin-area.png" thumb2="admin-area-thumb.png" title2="Área de administración"
+{{< figureproc
+    image1="profile.png" thumb1="profile-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Perfil de usuario"
+    image2="admin-area.png" thumb2="admin-area-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Área de administración"
     caption="Perfil de usuario y área de administración" >}}
 
 Iniciada sesión ya se puede empezar a usar GitLab a crear usuarios con sus claves SSH, repositorios de Git pudiendo importar otros existentes, crear nuevos, páginas de una wiki y peticiones, integración y entrega continua y personalizar el panel _kanban_ con el flujo que deseamos que sigan las peticiones en la organización, por ejemplo, _planning_, _ready_, _doing_, _review_, _merged_ y _deployed_.
 
-{{< figure
-    image1="new-proyect.png" thumb1="new-proyect-thumb.png" title1="Nuevo proyecto"
+{{< figureproc
+    image1="new-proyect.png" thumb1="new-proyect-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Nuevo proyecto"
     caption="Nuevo proyecto" >}}
-    {{< figure
-    image1="new-issue.png" thumb1="new-issue-thumb.png" title1="Nueva petición"
-    image2="issues-board.png" thumb2="issues-board-thumb.png" title2="Panel de peticiones"
+{{< figureproc
+    image1="new-issue.png" thumb1="new-issue-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Nueva petición"
+    image2="issues-board.png" thumb2="issues-board-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Panel de peticiones"
     caption="Nueva petición y panel de peticiones" >}}
-    {{< figure
-    image1="new-wiki-page.png" thumb1="new-wiki-page-thumb.png" title1="Nueva página wiki"
-    image2="wiki-page.png" thumb2="wiki-page-thumb.png" title2="Página wiki"
+{{< figureproc
+    image1="new-wiki-page.png" thumb1="new-wiki-page-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Nueva página wiki"
+    image2="wiki-page.png" thumb2="wiki-page-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Página wiki"
     caption="Página wiki" >}}
 
 Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la dirección URL con la que se puede clonar, convertir una carpeta existente en un repositorio o añadir un repositorio existente. Una vez con el repositorio en el sistema de archivos local se puede empezar a subir, modificar y eliminar archivos del repositorio de control de versiones. Hecho algún _commit_ y subido algún archivo desde GitLab se puede ver el contenido del repositorio de Git.
@@ -62,12 +62,12 @@ Creado un proyecto GitLab e introducida la clave pública SSH nos proporciona la
 {{< code file="existing-folder.sh" language="bash" options="" >}}
 {{< code file="existing-repository.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="project-details-1.png" thumb1="project-details-1-thumb.png" title1="Detalles de proyecto"
-    image2="project-details-2.png" thumb2="project-details-2-thumb.png" title2="Detalles de proyecto"
+{{< figureproc
+    image1="project-details-1.png" thumb1="project-details-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Detalles de proyecto"
+    image2="project-details-2.png" thumb2="project-details-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Detalles de proyecto"
     caption="Detalles de proyecto" >}}
-    {{< figure
-    image1="source-file.png" thumb1="source-file-thumb.png" title1="Contenido de archivo código fuente"
+{{< figureproc
+    image1="source-file.png" thumb1="source-file-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contenido de archivo código fuente"
     caption="Contenido de archivo de código fuente" >}}
 
 Otras formas de usar GitLab es desde la nube de [Amazon EC2][amazon-ec2] o de forma SaaS a un coste de entre 39€ y 199€ por usuario y mes pero si la nube no es una opción una de las ventajas de GitLab es que se puede instalar en algún sistema propio de cualquiera de las formas anteriores y tener proyecto privados. GitLab es otra herramienta que a añadiría a [Herramientas para un proyecto Java][blogbitix-84]. Hay alguna cosa adicional a conocer [como realizar una actualización](https://docs.gitlab.com/ce/update/README.html) cuando se publique una nueva versión o [como hacer copias de seguridad y restaurarlas](https://docs.gitlab.com/ce/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system). Lo que he mostrado aqui son solo una introducción a unas pocas de las muchas posibilidades de GitLab.

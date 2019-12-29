@@ -34,9 +34,9 @@ En la siguiente captura se aprecia que Nginx devuelve la cabecera de respuesta _
 
 Unos pocos kilobytes no son mucho para un único recurso pero si tenemos en cuenta que una página tiene varias docenas y hacemos una multiplicación por cada acceso a una página la cantidad de datos ahorrados en la transferencia es notable.
 
-{{< figure
-    image1="nginx-no-gzip.png" thumb1="nginx-no-gzip-thumb.png" title1="Nginx configurado sin compresión GZIP"
-    image2="nginx-gzip.png" thumb2="nginx-gzip-thumb.png" title2="Nginx configurado con compresión GZIP"
+{{< figureproc
+    image1="nginx-no-gzip.png" thumb1="nginx-no-gzip-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Nginx configurado sin compresión GZIP"
+    image2="nginx-gzip.png" thumb2="nginx-gzip-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Nginx configurado con compresión GZIP"
     caption="Nginx configurado sin y con compresión GZIP" >}}
 
 ### Apache HTTPD
@@ -48,9 +48,9 @@ Activado el módulo para realizar la compresión al igual que el caso de Nginx p
 
 Vemos una reducción en la transferencia similar a la conseguida en Nginx. En Apache el recurso a servir ha de tener cierto tamaño siendo de unos pocos bytes opta por servirlo sin comprimir ya que considerará que no producirá un ahorro significativo.
 
-{{< figure
-    image1="apache-httpd-no-gzip.png" thumb1="apache-httpd-no-gzip-thumb.png" title1="Apache HTTPD configurado sin compresión GZIP"
-    image2="apache-httpd-gzip.png" thumb2="apache-httpd-gzip-thumb.png" title2="Apache HTTPD configurado con compresión GZIP"
+{{< figureproc
+    image1="apache-httpd-no-gzip.png" thumb1="apache-httpd-no-gzip-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Apache HTTPD configurado sin compresión GZIP"
+    image2="apache-httpd-gzip.png" thumb2="apache-httpd-gzip-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Apache HTTPD configurado con compresión GZIP"
     caption="Apache HTTPD configurado sin y con compresión GZIP" >}}
 
 La compresión se hace en cada petición que se hace al servidor que con los avanzados procesadores actuales con eficientes instrucciones específicas para la tarea implementadas en el hardware salvo un tráfico muy elevado no tiene por que notarse en gran medida el procesado de cada recurso. Si el tráfico fuese elevado y la carga de compresión se notase Nginx y Apache ofrecen la posibilidad de [precomprimir los recursos](http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html) y de forma similar [precomprimir los recursos en apache](http://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed).
@@ -66,7 +66,8 @@ Estas funcionalidades las puedes consultar en el resto de artículos de la [seri
 
 {{< sourcecode git="blog-ejemplos/tree/master/CompresionGzip" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
-{{< reference >}}* [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
+{{< reference >}}
+* [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 * [Apache Module mod_deflate](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
 * [How To Optimize Your Site With GZIP Compression](http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)
 {{< /reference >}}

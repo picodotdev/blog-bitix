@@ -73,22 +73,22 @@ He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desde�
 
 {{< figureproc
     image1="analytics-2019.png" options1="2560x1440" optionsthumb1="600x450" title1="Analytics 2019 de Blog Bitix"
-    image2="gadsense-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2019 de Blog Bitix"
+    image2="gadsense-2019.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="600x450" title2="AdSense 2019 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2019" >}}
 
 En cuanto a ingresos algunos menos 410€ frente a 480€ del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 euros que no está mal.
 
 {{< figureproc
     image1="gadsense-ingresos-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="Ingresos 2018 de Blog Bitix"
-    image2="gadsense-paginas-vistas-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
-    image3="gadsense-clics-2019.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
+    image2="gadsense-paginas-vistas-2019.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Páginas vistas 2018 de Blog Bitix"
+    image3="gadsense-clics-2019.png" options3="2560x1440" optionsthumb3="300x200" title3="Clics 2018 de Blog Bitix" >}}
 {{< figureproc
     image1="gadsense-crt-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="CRT 2019 de Blog Bitix"
-    image2="gadsense-cpc-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2019 de Blog Bitix"
-    image3="gadsense-rpm-2019.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2019 de Blog Bitix" >}}
+    image2="gadsense-cpc-2019.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="CPC 2019 de Blog Bitix"
+    image3="gadsense-rpm-2019.png" options3="2560x1440" optionsthumb3="300x200" title3="RPM 2019 de Blog Bitix" >}}
 {{< figureproc
     image1="gadsense-tipos-de-puja-2019.png" options1="2560x1440" optionsthumb1="300x200" title1="Tipos de puja 2019 de Blog Bitix"
-    image2="gadsense-plataformas-2019.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2019 de Blog Bitix"
+    image2="gadsense-plataformas-2019.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Plataformas 2019 de Blog Bitix"
     caption="Métricas de AdSense" >}}
 
 En los ingresos por enlaces de afiliado de [Amazon][amazon] ha habido algunos meses especialmente notables y me sorprende que un solo blog como este le proporcione a Amazon facturar esa cantidad de dinero.

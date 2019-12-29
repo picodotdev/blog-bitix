@@ -30,8 +30,8 @@ El primer paso de la autenticación utilizando 2FA es introducir el usuario y co
 
 {{< figureproc
     image1="autenticacion-2fa-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Autenticación con segundo factor de autenticación"
-    image2="autenticacion-2fa-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
-    image3="autenticacion-2fa-3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
+    image2="autenticacion-2fa-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Autenticación con segundo factor de autenticación"
+    image3="autenticacion-2fa-3.png" options3="2560x1440" optionsthumb3="200x150" title3="Autenticación con segundo factor de autenticación"
     caption="Autenticación con segundo factor de autenticación" >}}
 
 {{< figureproc

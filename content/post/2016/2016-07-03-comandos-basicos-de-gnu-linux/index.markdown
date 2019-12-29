@@ -69,9 +69,9 @@ En la colección de [utilidades que forman el núcleo de GNU](https://www.gnu.or
 
 En sus respectivas páginas de manual, <code>man [comando]</code>, podemos conocer las opciones que permite cada uno de ellos junto con algunos ejemplos de uso. Estos comandos se pueden combinar haciendo que la salida de un comando sea la entrada del siguiente mediante tuberías, por ejemplo, para ordenar un fichero de texto y mostrar las 5 primeras líneas con los comandos _sort_ y _head_ usaríamos <code>sort fichero.txt | head -5</code>. Precisamente el comando <code>sort</code> es lo que he utilizado para ordenar alfabéticamente la lista de comandos anterior.
 
-{{< figure
-    image1="comandos-gnu-linux.png" thumb1="comandos-gnu-linux-thumb.png" title1="Uso de comandos GNU/Linux"
-    image2="man-grep.png" thumb2="man-grep-thumb.png" title2="Página de manual de grep"
+{{< figureproc
+    image1="comandos-gnu-linux.png" thumb1="comandos-gnu-linux-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Uso de comandos GNU/Linux"
+    image2="man-grep.png" thumb2="man-grep-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Página de manual de grep"
     caption="Uso de comandos GNU/Linux y página del manual de grep" >}}
 
 {{< reference >}}

@@ -32,8 +32,8 @@ Empleando esta librería la cadena del ejemplo anterior podría quedar:
 
 El resultado aplicando está solución puede verse en el [feed de la portada de Blog Stack][blogbitix-feed] donde se muestra una entradilla o extracto del inicio del contenido de cada uno de los artículos.
 
-{{< figure
-    image1="blogstack.png" thumb1="blogstack-thumb.png" title1="Portada Blog Stack" >}}
+{{< figureproc
+    image1="blogstack.png" thumb1="blogstack-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Portada Blog Stack" >}}
 
 El código fuente de Blog Stack está disponible en un [repositorio de GitHub](https://github.com/picodotdev/blog-stack/tree/master) donde puede verse el código completo.
 

@@ -23,8 +23,8 @@ Este sería el código para los casos de comparar dos elementos, una lista y un 
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< figure
-    image1="min-max.png" thumb1="min-max-thumb.png" title1="Diferentes formas de obtener el valor mínimo y máximo"
+{{< figureproc
+    image1="min-max.png" thumb1="min-max-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Diferentes formas de obtener el valor mínimo y máximo"
     caption="Diferentes formas de obtener el valor mínimo y máximo" >}}
 
 Para obtener el máximo sería similar pero usando el método [Math.max()](https://docs.oracle.com/javase/9/docs/api/java/lang/Math.html#max-int-int-), [Collections.max()](https://docs.oracle.com/javase/9/docs/api/java/util/Collections.html#max-java.util.Collection-) o [Stream.max()](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html#max-java.util.Comparator-).

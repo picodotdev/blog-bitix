@@ -19,8 +19,8 @@ El sector de los videojuegos es una industria que mueve miles de millones de eur
 
 {{< figureproc
     image1="1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Primer videojuego"
-    image2="2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Pong"
-    image3="3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="3 en raya"
+    image2="2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Pong"
+    image3="3.jpg" options3="2560x1440" optionsthumb3="300x200" title3="3 en raya"
     caption="Primeros videojuegos" >}}
 
 Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tomb Raider.

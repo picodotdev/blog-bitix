@@ -30,8 +30,8 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 {{< code file="docker-nginx.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="nginx-https.png" thumb1="nginx-https-thumb.png" title1="Redirección de HTTP a HTTPS en Nginx"
+{{< figureproc
+    image1="nginx-https.png" thumb1="nginx-https-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Redirección de HTTP a HTTPS en Nginx"
     caption="Redirección de HTTP a HTTPS en Nginx" >}}
 
 ### Apache HTTPD
@@ -40,8 +40,8 @@ La configuración para Apache HTTPD es similar simplemente cambian las directiva
 {{< code file="httpd.conf" language="plaintext" options="" >}}
 {{< code file="docker-httpd.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
+{{< figureproc
+    image1="apache-httpd-https.png" thumb1="apache-httpd-https-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
     caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
 
 ### Tomcat, Jetty y WildFly

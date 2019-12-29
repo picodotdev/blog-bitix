@@ -49,8 +49,8 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 {{< code file="HostInfoContributor.java" language="java" options="" >}}
 {{< code file="info.json" language="json" options="" >}}
 
-{{< figure
-    image1="message.png" thumb1="message-thumb.png" title1="Contenido del archivo message.txt"
+{{< figureproc
+    image1="message.png" thumb1="message-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contenido del archivo message.txt"
     caption="Contenido del archivo message.txt" >}}
 
 Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa es la siguiente:

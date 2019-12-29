@@ -15,8 +15,8 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 Si en una aplicación o proyecto tenemos necesidad de ejecutar uno o varios procesos múltiples veces donde únicamente cambian los parámetros, de forma seguida y el tiempo de ejecución de esos procesos es corto probablemente quizá veamos que la mayor parte del tiempo empleado de los procesos sea empleado en iniciar la máquina virtual Java (JVM). Digo quizá porque usando [Ubuntu][ubuntu] en la [nube de Amazon EC2][amazon-ec2] el tiempo de inicio era de varios segundos, sin embargo, en mi ordenador personal usando [Arch Linux][archlinux] y con un [disco SSD de Samsung][blogbitix-18] los tiempos que obtengo son de unos pocos milisegundos, quizá la larga [lista de dependencias del paquete de Java 7 en Ubuntu](http://packages.ubuntu.com/trusty/openjdk-7-jdk) (probablemente del paquete [openjdk-7-jre](http://packages.ubuntu.com/trusty/openjdk-7-jre)) y ocupando considerablemente más megas en disco tenga algo que ver:
 
-{{< figure
-    image1="tiempo-inicio-jvm.png" thumb1="tiempo-inicio-jvm.png" title1="Tiempo de inicio de la JVM" >}}
+{{< figureproc
+    image1="tiempo-inicio-jvm.png" thumb1="tiempo-inicio-jvm.png" options1="2560x1440" optionsthumb1="450x400" title1="Tiempo de inicio de la JVM" >}}
 
 Por ejemplo, supongamos que tenemos unos procesos que tienen que ejecutarse de forma regular cada cierto tiempo variando los parámetros que se indica en cada uno de ellos. La ejecución de los procesos podría ser:
 

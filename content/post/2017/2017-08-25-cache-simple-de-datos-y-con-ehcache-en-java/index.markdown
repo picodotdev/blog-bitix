@@ -32,8 +32,8 @@ Si son necesarias funcionalidades más avanzadas como que los elementos expiren 
 
 Cachear datos se puede hacer en varios puntos de una aplicación, si se trata de una aplicación web [Varnish][varnish] cachea el HTML, CSS y JavaScript además de los códigos de estado incluso [nginx incorpora la funcionalidad de cache][blogbitix-165], la propia aplicación puede cachear ciertos datos con alguna de las formas expuestas en este artículo y las propias bases de datos pueden cachear en memoria ciertos datos para evitar acceder al sistema de ficheros o disco. En definitiva una cache usada de forma efectiva ayuda a mitigar la penalización de operaciones costosas de acceso a red o a disco comparado con el acceso a memoria.
 
-{{< figure
-    image1="java-cache.png" thumb1="java-cache-thumb.png" title1="Ejecución del ejemplo" >}}
+{{< figureproc
+    image1="java-cache.png" thumb1="java-cache-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Ejecución del ejemplo" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaCache" command="./gradlew run" >}}
 

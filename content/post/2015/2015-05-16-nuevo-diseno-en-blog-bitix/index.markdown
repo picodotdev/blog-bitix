@@ -27,9 +27,9 @@ Con Hugo también he tenido que hacer algún _hack_ y es que en los diferentes a
 
 Entre las cosas de diseño que quería cambiar estaba la cabecera intentando que fuese pequeña verticalmente para que según se cargue la página se vea la mayor parte posible de contenido, con esto he quitado la descripción de la bitácora de la cabecera y la he puesto en el pié de página. En el menú he puesto enlaces a las secciones de las que suelo hablar: [Java][blogbitix-tag-java], [GNU/Linux][blogbitix-tag-gnu-linux], [JavaScript][blogbitix-tag-javascript] y [Apache Tapestry][blogbitix-tag-tapestry]. Los usuarios podrán encontar más fácilmente el contenido de los temas principales que escribo y quizá Google averigüe un poco mejor de que trata la bitácora. Entre otras cosas he cambiado el tema a uno basado en el color blanco, reorganizado los bloques de anuncios de publicidad Adsense, eliminado [Karmacracy][karmacracy] por nulo uso para compartir contenido y dejando solo [Share This][sharethis] para este propósito, he situado los enlaces de sindicación al lado del logotipo para darles más visibilidad, cambiada la visualización de los _thumbnails_ de las imágenes ahora se podrán ver en un tamaño mucho más grande y mejor, la página de inicio ahora solo incluye un resumen de los artículos en vez del artículo completo con lo que espero que esta página se cargue mucho más rápido, un fondo que varía de forma aleatoria en cada carga de página (lo mismo que hago en [Blog Stack][blogstack]), añadidos algunos estilos para poner pies en las imágenes y algunas correcciones y modificaciones más en el pie y en la barra lateral.
 
-{{< figure
-    image1="blog-bitix-hugo.jpg" thumb1="blog-bitix-hugo-thumb.jpg" title1="Diseño nuevo"
-    image2="blog-bitix-octopress.jpg" thumb2="blog-bitix-octopress-thumb.jpg" title2="Diseño anterior"
+{{< figureproc
+    image1="blog-bitix-hugo.jpg" thumb1="blog-bitix-hugo-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Diseño nuevo"
+    image2="blog-bitix-octopress.jpg" thumb2="blog-bitix-octopress-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Diseño anterior"
     caption="Diseño de Blog Bitix ahora con Hugo y antes con Octopress" >}}
 
 Las _urls_ del contenido no han variado, sí algunas del archivo y de las etiquetas pero como tengo bloqueadas estas con el archivo _robots.txt_ Google no me indicará errores 404. Probablemente si me informe de algún 404 en el contenido aunque espero que no muchos, si ocurre los corregiré en los próximos días o cualquier otra cosa de la que vaya dándome cuenta.

@@ -30,8 +30,8 @@ Horas después Apple en su web publicaba una carta firmada por Tim Cook indicand
 
 * [Un mensaje para la comunidad de Apple en Europa](https://www.apple.com/es/customer-letter/)
 
-{{< figure
-    image1="apple-tim-cook-letter.png" thumb1="apple-tim-cook-letter-thumb.png" title1="Carta de Apple a su comunidad en Europa"
+{{< figureproc
+    image1="apple-tim-cook-letter.png" thumb1="apple-tim-cook-letter-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Carta de Apple a su comunidad en Europa"
     caption="Carta de Apple a su comunidad en Europa" >}}
 
 Hasta aquí los hechos.

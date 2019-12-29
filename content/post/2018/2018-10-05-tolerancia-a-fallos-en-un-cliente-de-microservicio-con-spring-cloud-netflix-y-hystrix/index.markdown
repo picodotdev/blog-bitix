@@ -32,8 +32,8 @@ El patrón _circuit breaker_ se denomina así ya que implementa una lógica simi
 
 {{< figureproc
     image1="circuit-breaker-diagram.png" options1="2560x1440" optionsthumb1="300x200" title1="Diagrama del patrón circuit breaker"
-    image2="circuit-breaker-states.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Diagrama de estados"
-    image3="hystrix-fallback.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Fallback del patrón circuit breaker"
+    image2="circuit-breaker-states.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Diagrama de estados"
+    image3="hystrix-fallback.png" options3="2560x1440" optionsthumb3="300x200" title3="Fallback del patrón circuit breaker"
     caption="Diagrama del patrón circuit breaker, de estados y método fallback" >}}
 
 Para utilizar Hystrix como implementación del patrón _circuit breaker_ en una aplicación Java con [Spring Boot][spring-boot] el método que realiza la llamada al microservicio servidor ha de  encapsularse en un método anotado con la anotación [@HystrixCommand](https://netflix.github.io/Hystrix/javadoc/com/netflix/hystrix/HystrixCommand.html), como parámetro se indica un método con la acción alternativa o _fallback_ que obtiene un valor en los fallos. También se puede indicar el _tiemout_ de espera antes de considerar que la llamada ha fallado con la propiedad _execution.isolation.thread.timeoutInMilliseconds_. Igualmente se pueden indicar los valores para abrir el circuito con _circuitBreaker.requestVolumeThreshold_ y _circuitBreaker.errorThresholdPercentage_. Esos son los básicos para utilizar este patrón de tolerancia a fallos. Tiene [algunos valores adicionales más que se pueden configurar](https://github.com/Netflix/Hystrix/tree/master/hystrix-contrib/hystrix-javanica#configuration) para adaptar el patrón a los valores óptimos de la aplicación.
@@ -56,7 +56,7 @@ Para monitorizar en tiempo real el estado del sistema y de los circuitos se ofre
 
 {{< figureproc
     image1="circuit-breaker-closed.png" options1="2560x1440" optionsthumb1="300x200" title1="Circuit breaker cerrado"
-    image2="circuit-breaker-open.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
+    image2="circuit-breaker-open.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Circuit breaker abierto"
     caption="Estados del circuit breaker" >}}
 
 {{< code file="gradle-run.sh" language="bash" options="" >}}

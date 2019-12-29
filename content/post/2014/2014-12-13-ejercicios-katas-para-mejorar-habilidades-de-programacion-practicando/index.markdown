@@ -24,8 +24,8 @@ Intentando implementar en código una posible solución aplicando el patrón Str
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="MainTest.java" language="java" options="" >}}
 
-{{< figure
-    image1="teses-junit.png" thumb1="teses-junit.png" title1="Ejecución de teses" >}}
+{{< figureproc
+    image1="teses-junit.png" thumb1="teses-junit.png" options1="2560x1440" optionsthumb1="450x400" title1="Ejecución de teses" >}}
 
 Aun practicando estas katas no va a hacer que luego nuestro código en un proyecto real sea perfecto ni siquiera algo cercano a ello más bien hará que sea un poquito mejor, estos ejercicios son bastante simples que no tienen las complejidades de algunos casos reales, aún así siguen mereciendo realizarlos. También hay que tener en cuenta que no son realmente para aprender a programar aunque si pueden servir para aprender un nuevo lenguaje sobre todo si se hacen con otra persona que ya lo conoce y mientras se realiza la kata podemos preguntarle y nos resuelva las dudas que nos vayan surgiendo de la sintaxis, API o herramientas de ese lenguaje.
 

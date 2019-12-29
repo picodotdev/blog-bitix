@@ -81,37 +81,37 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
 
 {{< figureproc
     image1="v7-ckw200-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-    image3="v7-ckw200-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+    image2="v7-ckw200-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    image3="v7-ckw200-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
 {{< figureproc
     image1="v7-ckw200-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-6.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
-    image3="v7-ckw200-7.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
+    image2="v7-ckw200-6.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    image3="v7-ckw200-7.jpg" options3="2560x1440" optionsthumb3="200x150" title3="La caja" >}}
 {{< figureproc
     image1="v7-ckw200-8.jpg" options1="2560x1440" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-9.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
+    image2="v7-ckw200-9.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="La caja"
     caption="La caja, manual y pilas incluídas" >}}
 
 {{< figureproc
     image1="v7-ckw200-11.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-    image2="v7-ckw200-15.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-    image3="v7-ckw200-26.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}        
+    image2="v7-ckw200-15.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+    image3="v7-ckw200-26.jpg" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}        
 {{< figureproc
     image1="v7-ckw200-16.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
-    image2="v7-ckw200-17.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
-    image3="v7-ckw200-18.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
+    image2="v7-ckw200-17.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="El teclado"
+    image3="v7-ckw200-18.jpg" options3="2560x1440" optionsthumb3="200x150" title3="El teclado" >}}
 {{< figureproc
     image1="v7-ckw200-19.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El teclado"
     caption="El teclado" >}}
 
 {{< figureproc
     image1="v7-ckw200-20.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-    image2="v7-ckw200-21.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
-    image3="v7-ckw200-22.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
+    image2="v7-ckw200-21.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="El ratón"
+    image3="v7-ckw200-22.jpg" options3="2560x1440" optionsthumb3="200x150" title3="El ratón" >}}
 {{< figureproc
     image1="v7-ckw200-25.jpg" options1="2560x1440" optionsthumb1="200x150" title1="El ratón"
-    image2="v7-ckw200-27.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="El adaptador USB"
-    image3="v7-ckw200-24.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="El adaptador USB"
+    image2="v7-ckw200-27.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="El adaptador USB"
+    image3="v7-ckw200-24.jpg" options3="2560x1440" optionsthumb3="200x150" title3="El adaptador USB"
     caption="El ratón y el adaptador USB" >}}
 
 ### Conclusión

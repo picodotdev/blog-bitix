@@ -40,8 +40,8 @@ Primero es importante identificar correctamente la unidad que se quiere formatea
 
 {{< figureproc
     image1="gnome-disks-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
-    image2="gnome-disks-3.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
-    image3="gnome-disks-4.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
+    image2="gnome-disks-3.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
+    image3="gnome-disks-4.png" options3="2560x1440" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
     caption="Formatear dispositivo de almacenamiento" >}}
 
 No está de más recordar que en el caso de desechar un dispositivo de almacenamiento es recomendable hacerle un formateo completo para que los datos que contenga no sean accedidos por la persona a la que se le entregue el dispositivo ya que incluso se pueden [recuperar datos previamente eliminados incluso en una unidad corrupta][blogbitix-125]. Por otro lado en GNU/Linux si se desea mayor seguridad se puede cifrar la partición con la opción LUKS.

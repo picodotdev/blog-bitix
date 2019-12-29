@@ -31,14 +31,14 @@ Por tantear un NUC en el que podría estar interesado contacté con el vendedor 
 
 {{< figureproc
     image1="intel-nuc-milanuncios-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Intel NUC con aspecto interesante"
-    image2="intel-nuc-milanuncios-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Intel NUC con aspecto interesante"
+    image2="intel-nuc-milanuncios-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Intel NUC con aspecto interesante"
     caption="Intel NUC con aspecto interesante" >}}
 
 Este era uno de los pocos que me han resultado atractivos otros es que son morralla y se encuentran ejemplos de ellos en cualquiera de las tres páginas, no se si esperando encontrar algún comprador despistado. Como este parecido al del vendedor anterior pero con un precio de 589€, que vamos todo nuevo no cuesta eso. 
 
 {{< figureproc
     image1="intel-nuc-wallapop-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Ejemplo morralla"
-    image2="intel-nuc-wallapop-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Ejemplo morralla"
+    image2="intel-nuc-wallapop-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Ejemplo morralla"
     caption="Ejemplos de morralla" >}}
 
 Los vendedores de estas páginas ofrecen algo de descuento sobre nuevo en tienda pero en lo poco que he visto no más de un 20%, si se rastrea está página y coincide el momento adecuado quizá pueda encontrarse alguna ganga pero me quedo con la sensación de que serán excepciones y no la norma. En definitiva me han parecido que en estas páginas si quieres o vas ajustado de presupuesto se puede encontrar algo de descuento si no es prioritario la segunda mano, garantía, confianza en la transacción y tiempo dedicado al filtrado de la morralla.

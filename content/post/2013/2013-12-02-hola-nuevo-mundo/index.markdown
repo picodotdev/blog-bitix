@@ -30,7 +30,7 @@ Por varias razones, [blogger][blogger] es una plataforma estupenda y a mi durant
 * Parece que blogger no es una de las herramientas que Google cuide (al igual que otras varias), las actualizaciones son escasas y con el tiempo van surgiendo herramientas mejores que blogger.
 * Los ejemplos de código los añado a cada entrada utilizando [Gist][github-gist] e introducir la referencias adecuadas en cada entrada implica editar e introducir código en la vista html. Además en la vista del editor wysiwyg los gist no se visualizan y si no se tiene cuidado se pueden borrar sin querer con lo que hay que volver a introducirlos. Nuevamente incluir las referencias de los gist me consume tiempo.
 
-## ¿Que herramienta de_blogging_ he elegido?
+## ¿Que herramienta de _blogging_ he elegido?
 
 La plataforma de_blogging_ que he elegido ha sido [Octopress][octopress], una plataforma de_blogging_ que en mi caso solventa casi todos los problemas o molestias  que actualmente me ocasiona blogger descritos en los anteriores puntos. Es una plataforma basada en [Ruby][ruby] y [Jekyll][jekyll], uno de los precursores de una nueva generación de plataforma para blogear y es la plataforma de referencia para escribir en blogs y alojarlos en [GitHub Pages][github-pages]. Aún asi hay alternativas parecidas en otros lenguajes de programación como en Python con [Pelican](http://docs.getpelican.com). La verdad es que usar Pelican en un principio me atraía más porque con ello quizá aprendiese algo de Python pero el hecho de que Jekyll sea la plataforma de referencia de GitHub es un punto a su favor.
 

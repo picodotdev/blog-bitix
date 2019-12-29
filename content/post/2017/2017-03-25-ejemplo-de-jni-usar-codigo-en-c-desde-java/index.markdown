@@ -24,8 +24,8 @@ Sin embargo, en casos que se necesita un alto rendimiento para tareas muy espec�
 
 Acceder desde Java a código nativo en C requiere usar [Java Native Interface o por sus siglas JNI](https://docs.oracle.com/javase/8/docs/technotes/guides/jni/spec/jniTOC.html). Lo primero que hay que realizar es crear una clase que declare los métodos que serán implementados de forma nativa declarando estos métodos usando la palabra reservada _native_ y que serán enlazados por la JVM cargando una librería compartida con [System.loadLibrary()](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#loadLibrary-java.lang.String-). Creada la clase Java se ha de generar el archivo de cabecera _.h_ propia del lenguaje C con el programa de utilidad del JDK _javah_. Con el archivo de cabecera se implementa la función y se crea una librería compartida en [GNU][gnu]/[Linux][linux] usando el [compilador gcc][gcc]. Con la librería compartida se puede iniciar el programa Java. Si la biblioteca compartida no se encuentra se lanzará una excepción del tipo [UnsatisfiedLinkError](https://docs.oracle.com/javase/8/docs/api/java/lang/UnsatisfiedLinkError.html).
 
-{{< figure
-    image1="UnsatisfiedLinkError.png" thumb1="UnsatisfiedLinkError-thumb.png" title1="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"
+{{< figureproc
+    image1="UnsatisfiedLinkError.png" thumb1="UnsatisfiedLinkError-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo"
     caption="Excepción UnsatisfiedLinkError cuando no se encuentra la librería de código nativo" >}}
 
 Algunas otras necesidades para hacer uso de JNI son:
@@ -59,9 +59,9 @@ La librería compartida para un sistema _amd64_ la he compilado en mi equipo de 
 
 {{< code file="execute.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="JniHelloWorld-amd64.png" thumb1="JniHelloWorld-amd64-thumb.png" title1="Mensaje en la terminal emitido desde código nativo (amd64)"
-    image2="JniHelloWorld-arm.png" thumb2="JniHelloWorld-arm-thumb.png" title2="Mensaje en la terminal emitido desde código nativo (ARM)"
+{{< figureproc
+    image1="JniHelloWorld-amd64.png" thumb1="JniHelloWorld-amd64-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Mensaje en la terminal emitido desde código nativo (amd64)"
+    image2="JniHelloWorld-arm.png" thumb2="JniHelloWorld-arm-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Mensaje en la terminal emitido desde código nativo (ARM)"
     caption="Mensaje en la terminal emitido desde código nativo en un sistema amd64 y ARM" >}}
 
 Ente ejemplo usa Java 8 y requiere instalar el compilador gcc para compilar la librería con código nativo. [Gradle][gradle] ofrece soporte para [compilar código nativo con su plugin](https://docs.gradle.org/3.4.1/userguide/native_software.html), sin embargo, he preferido usar y conocer los comandos javah y gcc sin usar Gradle. En el siguiente artículo mostraré el ejemplo del sensor DHT11 usando JNI y código nativo en C llamando a métodos de un objeto Java desde código C.

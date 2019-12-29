@@ -21,9 +21,9 @@ Una de las opciones que añade es poniendo en la etiqueta _select_ el atributo _
 
 Este es el aspecto de un elemento de selección con los botones de seleccionar todas las opciones y ninguna que son muy útiles para el usuario evitándose seleccionar una a una cada una de las opciones.
 
-{{< figure
-    image1="multiselect-todos.png" thumb1="multiselect-todos-thumb.png" title1="Multiselect con opciones Todos y Ninguno"
-    image2="multiselect.png" thumb2="multiselect-thumb.png" title2="Opciones seleccionadas de Multiselect"
+{{< figureproc
+    image1="multiselect-todos.png" thumb1="multiselect-todos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Multiselect con opciones Todos y Ninguno"
+    image2="multiselect.png" thumb2="multiselect-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Opciones seleccionadas de Multiselect"
     caption="MultiSelect con opciones Todos y Ninguno" >}}
 
 A pesar de todas las opciones adicionales que añade _bootstrap-select_ incluidas los botones de seleccionar todas las opciones y ninguna aún quizá queramos personalizar más el comportamiento, por ejemplo, permitir seleccionar con botones adicionales un grupo de opciones relacionadas. Supongamos que tenemos un componente de selección múltiple de países y queremos seleccionar los países de Europa, América o Asia además de las opciones que _bootstrap-select_ de todos y ninguno.
@@ -38,9 +38,9 @@ Este sería un ejemplo de código JavaScript junto con el uso del componente de 
 
 Y este sería el aspecto de componente en el navegador.
 
-{{< figure
-    image1="multiselect-europa.png" thumb1="multiselect-europa-thumb.png" title1="Multiselect con opciones Europa"
-    image2="multiselect-asia.png" thumb2="multiselect-asia-thumb.png" title2="Multiselect con opciones Asia"
+{{< figureproc
+    image1="multiselect-europa.png" thumb1="multiselect-europa-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Multiselect con opciones Europa"
+    image2="multiselect-asia.png" thumb2="multiselect-asia-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Multiselect con opciones Asia"
     caption="MultiSelect con opciones Europa, America y Asia" >}}
 
 Si usásemos el [componente de selección múltiple con Apache Tapetstry y bootstrap-select][blogbitix-188] sería el propio componente _MultiSelect_ el que se encargaría de incluir el JavaScript en la página cuando en ella se usase lo que nos evita incluir el JavaScript de forma global en la aplicación y en todas las páginas cuando realmente no se usa.

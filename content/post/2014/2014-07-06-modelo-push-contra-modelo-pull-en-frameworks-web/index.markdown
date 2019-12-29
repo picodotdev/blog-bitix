@@ -18,8 +18,8 @@ En la mayoría de _frameworks_ de desarrollo de aplicaciones o páginas web para
 
 * Push: este es el modelo comentado. El controlador recupera de antemano todos los datos que necesita la vista, el controlador también determina la vista o plantilla que se usar. Combinando los datos y la plantilla se produce el resultado.
 
-{{< figure
-    image1="modelo-push.png" thumb1="modelo-push.png" title1="Modelo push" width1="650" >}}
+{{< figureproc
+    image1="modelo-push.png" thumb1="modelo-push.png" options1="2560x1440" optionsthumb1="450x400" title1="Modelo push" width1="650" >}}
 
 Los pasos que se siguen en este modelo son:
 
@@ -34,8 +34,8 @@ Los pasos que se siguen en este modelo son:
 
 * Pull: en este modelo el controlador no conoce los datos que usará la vista y es esta la que los solicita según necesita. La vista tira del controlador, el controlador solo debe ofrecer el soporte par que la vista pueda recuperar los datos que necesite.
 
-{{< figure
-    image1="modelo-pull.png" thumb1="modelo-pull.png" title1="Modelo pull" width1="650" >}}
+{{< figureproc
+    image1="modelo-pull.png" thumb1="modelo-pull.png" options1="2560x1440" optionsthumb1="450x400" title1="Modelo pull" width1="650" >}}
 
 Los pasos que se siguen en este modelo varían ligeramente del modelo push pero de forma importante, son:
 

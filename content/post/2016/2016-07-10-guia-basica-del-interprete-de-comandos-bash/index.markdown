@@ -29,8 +29,8 @@ Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obt
 
 {{< code file="sorteo-1.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="sorteo.png" thumb1="sorteo-thumb.png" title1="Sorteo implementado con dos comandos de GNU/Linux"
+{{< figureproc
+    image1="sorteo.png" thumb1="sorteo-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Sorteo implementado con dos comandos de GNU/Linux"
     caption="Sorteo implementado con dos comandos de GNU/Linux" >}}
 
 Por defecto la salida estándar de un comando es la terminal pero podemos redirigirla a un fichero con la opción <code>></code>.
@@ -46,8 +46,8 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
 
 {{< code file="multiples-comandos.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="multiples-comandos.png" thumb1="multiples-comandos-thumb.png" title1="Múltiples comandos en la misma línea"
+{{< figureproc
+    image1="multiples-comandos.png" thumb1="multiples-comandos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Múltiples comandos en la misma línea"
     caption="Múltiples comandos en la misma línea" >}}
 
 ### Variables e interpolación de cadenas
@@ -59,15 +59,15 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 
 {{< code file="variables-2.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="variables.png" thumb1="variables-thumb.png" title1="Interpolación en cadenas de variables y comandos"
+{{< figureproc
+    image1="variables.png" thumb1="variables-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Interpolación en cadenas de variables y comandos"
     caption="Interpolación en cadenas de variables y comandos" >}}
 
 ### Invocaciones de comandos anteriores
 Con el comando <code>history</code> podemos ver el historial completo de comandos que hemos ejecutado con anterioridad. Al lado de cada comando vemos un identificador numérico que podemos usar para ejecutarlo de nuevo con <code>![identificador]</code>. Con el siguiente historial podemos ejecutar el comando con identificador 512 indicando una exclamación y el identificador, <code>!512</code>. Si queremos ejecutar el último comando introducido podemos usar la doble exclamación <code>!!</code>. Si queremos ejecutar el último comando completo de cierto comando podemos usar <code>![comando]</code> en vez de su identificador.
 
-{{< figure
-    image1="history.png" thumb1="history-thumb.png" title1="Historial de comandos"
+{{< figureproc
+    image1="history.png" thumb1="history-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Historial de comandos"
     caption="Historial de comandos" >}}
 
 Hay más [formas de ejecutar comandos del historial](http://www.softpanorama.org/Scripting/Shellorama/bash_command_history_reuse.shtml). Si quisieramos invocar un comando del historial cambiando algún argumento podemos hacer una búsqueda en orden inverso con <kbd>Ctrl+r</kbd>.
@@ -96,8 +96,8 @@ En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _scr
 
 {{< code file="funciones-1.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="opciones.png" thumb1="opciones-thumb.png" title1="Opciones de un script"
+{{< figureproc
+    image1="opciones.png" thumb1="opciones-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Opciones de un script"
     caption="Opciones de un script" >}}
 
 {{< code file="funciones-2.sh" language="bash" options="" >}}
@@ -154,8 +154,8 @@ Las expresiones anteriores se pueden combinar:
 ### Control de trabajos
 El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecutando junto con su identificador y estado, con la combinación de teclas <kbd>Ctrl+z</kbd> dejamos el proceso actual detenido y en segundo plano, con <code>fg</code> lo devolvemos a primer plano y si estaba detenido se continua su ejecución, con <code>bg</code> si estaba detenido continua su ejecución en segundo plano.
 
-{{< figure
-    image1="trabajos.png" thumb1="trabajos-thumb.png" title1="Trabajos en primer y segundo plano"
+{{< figureproc
+    image1="trabajos.png" thumb1="trabajos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Trabajos en primer y segundo plano"
     caption="Trabajos en primer y segundo plano" >}}
 
 Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, [UNIX and Linux System Administration Handbook](https://amzn.to/29vctVP). Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html) y

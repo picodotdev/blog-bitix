@@ -29,11 +29,11 @@ Varios medios se hacía eco de la presentación:
 {{< figureproc
     image1="slimbook-curve-1.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Slimbook AIO Curve" >}}
 {{< figureproc
-    image2="slimbook-curve-2.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
-    image3="slimbook-curve-3.jpg" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Slimbook AIO Curve" >}}
+    image2="slimbook-curve-2.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
+    image3="slimbook-curve-3.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Slimbook AIO Curve" >}}
 {{< figureproc
     image1="slimbook-curve-4.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Slimbook AIO Curve"
-    image2="slimbook-curve-5.jpg" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
+    image2="slimbook-curve-5.jpg" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Slimbook AIO Curve"
     caption="Slimbook AIO Curve" >}}
 
 Hasta aquí los hechos. Siendo usuario de GNU/Linux y estando [intentando buscar un nuevo equipo pequeño y silencioso][blogbitix-309] y siendo Slimbook una de las marcas que estoy siguiendo como candidata para comprar uno de sus equipos me voy a permitir el lujo como posible cliente de dar mi opinión de por que el Slimbook AIO Curve no me lo planteo como una opción que evaluar.

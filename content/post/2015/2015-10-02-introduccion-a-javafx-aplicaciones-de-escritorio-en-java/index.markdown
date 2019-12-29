@@ -45,8 +45,8 @@ La clase [HelloWorld](https://github.com/picodotdev/blog-ejemplos/blob/master/Ho
 
 Esta es la captura de pantalla de la aplicación y el mensaje emitido en la consola cuando se hace clic en el botón.
 
-{{< figure
-    image1="helloworld.png" thumb1="helloworld-thumb.png" title1="Aplicación ¡Hola Mundo!"
+{{< figureproc
+    image1="helloworld.png" thumb1="helloworld-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación ¡Hola Mundo!"
     caption="Aplicación ¡Hola Mundo! con JavaFX" >}}
 
 {{< code file="System.out" language="plaintext" options="" >}}
@@ -55,11 +55,11 @@ En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/
 
 {{< code file="examples.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="ensemble.png" thumb1="ensemble-thumb.png" title1="Aplicación Ensemble"
+{{< figureproc
+    image1="ensemble.png" thumb1="ensemble-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación Ensemble"
     caption="Aplicación Ensemble" >}}
-    {{< figure
-    image1="modena.png" thumb1="modena-thumb.png" title1="Aplicación Modena"
+{{< figureproc
+    image1="modena.png" thumb1="modena-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación Modena"
     caption="Aplicación Modena" >}}
 
 El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro <a href="https://www.amazon.es/gp/product/1118385349/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1118385349&linkCode=as2&tag=blobit-21">JavaFX For Dummies</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1118385349" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.

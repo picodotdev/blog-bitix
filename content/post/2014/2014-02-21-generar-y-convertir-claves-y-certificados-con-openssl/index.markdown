@@ -50,8 +50,8 @@ También se puede obtener la clave pública en formato [OpenSSH][openssh] y una 
 
 {{< code file="script-10.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="openssh-fingerprint.png" thumb1="openssh-fingerprint-thumb.png" title1="Huella digital de una clave pública OpenSSH"
+{{< figureproc
+    image1="openssh-fingerprint.png" thumb1="openssh-fingerprint-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Huella digital de una clave pública OpenSSH"
     caption="Huella digital de una clave pública OpenSSH" >}}
 
 #### Obtener la huella digital de la clave pública
@@ -60,8 +60,8 @@ La huella digital de una clave pública sirve para comprobar que la clave es la 
 
 {{< code file="script-11.sh" language="bash" options="" >}}
 
-{{< figure
-    image1="openssl-dgst.png" thumb1="openssl-dgst-thumb.png" title1="Huella digital de una clave pública"
+{{< figureproc
+    image1="openssl-dgst.png" thumb1="openssl-dgst-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Huella digital de una clave pública"
     caption="Huella digital de una clave pública" >}}
 
 #### Crear un certificado

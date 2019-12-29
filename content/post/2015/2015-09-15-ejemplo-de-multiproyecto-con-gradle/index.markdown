@@ -60,8 +60,8 @@ Creando un producto desde la consola de PostgreSQL y refrescando la página en e
 
 {{< code file="insert.sql" language="SQL" options="" >}}
 
-{{< figure
-    image1="back.png" thumb1="back.png" title1="Backoffice"
+{{< figureproc
+    image1="back.png" thumb1="back.png" options1="2560x1440" optionsthumb1="450x400" title1="Backoffice"
     caption="Aplicación backoffice" >}}
 
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/MultiprojectGradle) puedes verlo y descargarlo desde su repositorio de GitHub.

@@ -29,8 +29,8 @@ Utilizando los elementos de la paleta como campos de texto e imagen y posicioná
 
 {{< figureproc
     image1="editor-expresiones-parametros.png" options1="2560x1440" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
-    image2="editor-expresiones-campos.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="200x150" title2="Editor de expresiones, campos"
-    image3="editor-expresiones-variables.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="200x150" title3="Editor de expresiones, variables"
+    image2="editor-expresiones-campos.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="200x150" title2="Editor de expresiones, campos"
+    image3="editor-expresiones-variables.png" options3="2560x1440" optionsthumb3="200x150" title3="Editor de expresiones, variables"
     caption="Editor de expresiones" >}}
 
 El código Java necesario para compilar el archivo de la plantilla del informe, proporcionarle los parámetros y generar el PDF es el siguiente.
@@ -54,7 +54,8 @@ Los siguientes enlaces son documentación a una guía de inicio, una guía compl
 
 {{% sourcecode git="blog-ejemplos/tree/master/JasperReports" command="./gradlew run" %}}
 
-{{< reference >}}* [Example on how to generate a simple pdf report with JasperReports](https://gist.github.com/rponte/5044469)
+{{< reference >}}
+* [Example on how to generate a simple pdf report with JasperReports](https://gist.github.com/rponte/5044469)
 {{< /reference >}}
 
 {{% /post %}}

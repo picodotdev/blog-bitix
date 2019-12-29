@@ -83,7 +83,7 @@ Con el cable de red conectado a la Rasberry Pi al _router_ y desde un equipo con
 
 {{< figureproc
     image1="lakka-samba-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Carpetas compartidas por Lakka mediante SAMBA"
-    image2="lakka-samba-2.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Archivos de ROMs vía SAMBA"
+    image2="lakka-samba-2.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Archivos de ROMs vía SAMBA"
     caption="Carpetas compartidas por Lakka mediante SAMBA" >}}
 
 Copiados los archivos de las ROMs a la Raspberry Pi desde la opción _Import Content > Scan Directory_ de Lakka esta detectará todos los juegos que encuentre en su base de datos añadiéndolos en varios menús según el sistema emulado del juego en las últimas opciones del menú horizontal de Lakka.
@@ -96,12 +96,12 @@ Detectadas las ROMS iniciar un juego basta con seleccionarlo desde los menús e 
 
 {{< figureproc
     image1="the-legend-of-zelda.png" options1="2560x1440" optionsthumb1="300x200" title1="The Legend of Zelda"
-    image2="zelda-II-the-adventure-of-link.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="Zelda-II: The Adventure of Link"
-    image3="super-mario-bros-3.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Super Mario Bros 3" >}}
+    image2="zelda-II-the-adventure-of-link.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="Zelda-II: The Adventure of Link"
+    image3="super-mario-bros-3.png" options3="2560x1440" optionsthumb3="300x200" title3="Super Mario Bros 3" >}}
 {{< figureproc
     image1="mega-man-5.png" options1="2560x1440" optionsthumb1="300x200" title1="Mega Man 5"
-    image2="1943.png" command2="Fit" commandthumb2="Fit" options2="2560x1440" optionsthumb2="300x200" title2="1943"
-    image3="sonic-the-hedgehog.png" command3="Fit" commandthumb3="Fit" options3="2560x1440" optionsthumb3="300x200" title3="Sonic The Hedgehog"
+    image2="1943.png" options2="2560x1440" optionsthumb2="450x400" options2="2560x1440" optionsthumb2="300x200" title2="1943"
+    image3="sonic-the-hedgehog.png" options3="2560x1440" optionsthumb3="300x200" title3="Sonic The Hedgehog"
     caption="Varios juegos de la NES y Sega">}}
 </div>
 

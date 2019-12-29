@@ -46,9 +46,9 @@ Usando [Gradle][gradle] hay que añadir en el archivo de construcción del proye
 
 Usando un IDE, su complemento para Lombok y añadida la dependencia los métodos que implementa Lombok con las anotaciones son visualizados con el asistente de código.
 
-{{< figure
-    image1="lombok-intellij.png" thumb1="lombok-intellij-thumb.png" title1="Soporte de Lombok en IntelliJ"
-    image2="lombok.png" thumb2="lombok-thumb.png" title2="Ejecución del ejemplo"
+{{< figureproc
+    image1="lombok-intellij.png" thumb1="lombok-intellij-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Soporte de Lombok en IntelliJ"
+    image2="lombok.png" thumb2="lombok-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Ejecución del ejemplo"
     caption="Soporte de Lombok en IntelliJ y ejecución del ejemplo" >}}
 
 Las anotaciones de Lombok permiten escribir menos código repetitivo en _beans_ o objetos de transferencia de datos o DTO pero conviene conocer lo que hacen esas anotaciones. Una de las características por las que algunas personas usan otros lenguajes más recientes como [Groovy][groovy] es que en estos requieren menos líneas código para hacer lo mismo que en Java como el caso de los métodos _get_ y _set_ de las propiedades que en Groovy se proporcionan de forma implícita y en Java de forma explícita, con Lombok en Java estos métodos también se pueden proporcionar con anotaciones sin tener que codificarlos.
