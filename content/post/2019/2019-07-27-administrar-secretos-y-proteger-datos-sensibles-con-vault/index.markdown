@@ -60,9 +60,9 @@ Otro concepto es la [autenticación](https://www.vaultproject.io/docs/auth/index
 
 Los secretos necesitan [almacenamiento](https://www.vaultproject.io/docs/configuration/storage/index.html). Algunos tipos de almacenamiento son mejores para la alta disponibilidad y otros facilitan la copia de seguridad y la restauración. Puede ser en memoria, sistema de archivos, una herramienta como Consul o varias bases de datos entre ellas bases de datos relacionales.
 
-La [auditoria]((https://www.vaultproject.io/docs/audit/index.html)) permite obtener una trazabilidad de las operaciones que se han realizado, dado que todas las operaciones se realizan mediante una API el _log_ de auditoría es simplemente cada interacción autenticada con Vault, incluidas los errores. Puede ser un archivo o un _socket_.
+La [auditoria](https://www.vaultproject.io/docs/audit/index.html) permite obtener una trazabilidad de las operaciones que se han realizado, dado que todas las operaciones se realizan mediante una API el _log_ de auditoría es simplemente cada interacción autenticada con Vault, incluidas los errores. Puede ser un archivo o un _socket_.
 
-Todo en Vault está basado en _paths_. Las [_policies_]((https://www.vaultproject.io/docs/concepts/policies.html)) permiten o deniegan el acceso a ciertos _paths_.  Poseen la siguiente sintaxis, donde las _capabilities_ son las operaciones CRUD permitidas.
+Todo en Vault está basado en _paths_. Las [_policies_](https://www.vaultproject.io/docs/concepts/policies.html) permiten o deniegan el acceso a ciertos _paths_.  Poseen la siguiente sintaxis, donde las _capabilities_ son las operaciones CRUD permitidas.
 
 {{< code file="policy.hcl" language="plaintext" options="" >}}
 
