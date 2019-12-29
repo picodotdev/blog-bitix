@@ -370,7 +370,7 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
 
 ### Switch HDMI, monitor con el ordenador y consola
 
-Si el monitor es compartido tanto por el ordenador como por [una consola como la Play Station 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
+Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
 <div class="media-amazon">
     <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa"></iframe>

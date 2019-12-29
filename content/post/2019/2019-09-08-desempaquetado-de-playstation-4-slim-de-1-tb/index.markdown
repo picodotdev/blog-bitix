@@ -296,7 +296,7 @@ En las páginas de [iFixit][ifixit] y [How Fixit][how-fixit] hay unas muy buenas
 * [Artículo desmontaje de una PlayStation 4 Slim (iFixit)](https://es.ifixit.com/Device/PlayStation_4_Slim)
 * [Vídeo como desmontar una PlayStation 4 Slim](https://www.youtube.com/watch?v=0BYsBdS8lvE)
 * [Vídeo como montar una PlayStation 4 Slim](https://www.youtube.com/watch?v=iU9chZ86cm4)
-* [Otro vídeo de desmontaje de la Play Station 4 Slim](https://www.youtube.com/watch?v=lExiC4TAkVU)
+* [Otro vídeo de desmontaje de la PlayStation 4 Slim](https://www.youtube.com/watch?v=lExiC4TAkVU)
 * [Cómo aplicar pasta térmica correctamente en un procesador](https://es.ifixit.com/Gu%C3%ADa/Como+aplicar+pasta+termica/744)
 * [Vídeo como aplicar pasta térmica](https://www.youtube.com/watch?v=JYwHB2P6GmM)
 
