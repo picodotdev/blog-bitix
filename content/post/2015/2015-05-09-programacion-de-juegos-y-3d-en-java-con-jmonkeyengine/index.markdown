@@ -52,7 +52,7 @@ Java no suele ser considerado como opción para programar videojuegos triple A p
 Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 
 <div class="media">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/ODjq7IUkwUg" frameborder="0" allowfullscreen></iframe>
+	<iframe width="560" height="315" data-src="https://www.youtube.com/embed/ODjq7IUkwUg" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
@@ -111,7 +111,7 @@ El <a href="https://www.amazon.es/gp/product/1849516464/ref=as_li_ss_tl?ie=UTF8&
  me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
 
 <div class="media-amazon">
-	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1849516464&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	<iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1849516464&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
 </div>
 
 Otras librerías como [Slick2D][slick2d] permiten hacer videojuegos en 2D como serían los juegos de plataformas, más o menos lo que permite jMonkeyEngine en el 3D aplicado a 2D también usando como lenguaje Java. Sin duda los videojuegos han sido el motivo en parte de que muchos hoy seamos programadores e informáticos aunque en nuestro trabajo nos dediquemos a otro tipo de aplicaciones y entornos.

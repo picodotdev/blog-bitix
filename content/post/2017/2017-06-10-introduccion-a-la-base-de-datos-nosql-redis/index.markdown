@@ -45,8 +45,8 @@ Cada comando de Redis tiene una complejidad de tiempo ejecución, para obtener e
 Para un conocimiento mucho más detallado de las posibilidades de esta base de datos el libro [Mastering Redis](https://amzn.to/2s9CYfJ) o [Redis in Action](https://amzn.to/2rio3vH) son un buen inicio.
 
 <div class="media-amazon">
-  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783988185&linkId=8459459236559fee49442452db7fb5b2"></iframe>
-  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290858&linkId=3d85e30c0781f28d90d25591d5183d0d"></iframe>
+  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783988185&linkId=8459459236559fee49442452db7fb5b2" class="lozad"></iframe>
+  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290858&linkId=3d85e30c0781f28d90d25591d5183d0d" class="lozad"></iframe>
 </div>
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRedis" command="docker-compose up, ./gradlew run" >}}

@@ -57,7 +57,7 @@ Nomad permite varias estrategias para actualizar los _jobs_ a una nueva versión
 La [documentación de Nomad](https://www.nomadproject.io/docs/index.html), Nomad y otros productos de HashiCorp dedicados a la infraestructura en la nube esta muy bien explicada y detallada, este artículo solo es un resumen de las partes básicas para conocer como empezar a usarlo. En el siguiente vídeo se hace una pequeña explicación y demostración.
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/A6CuZUoINX0?rel=0" frameborder="0" allowfullscreen></iframe>
+	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/A6CuZUoINX0?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 {{< reference >}}

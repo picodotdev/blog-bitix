@@ -60,7 +60,7 @@ Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.ama
  de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
 <div class="media-amazon">
-	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+	<iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
 </div>
 
 El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJMS) los puedes descargar de [mi repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos).

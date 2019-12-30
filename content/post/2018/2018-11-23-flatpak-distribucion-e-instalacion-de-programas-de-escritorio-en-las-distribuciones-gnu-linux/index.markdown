@@ -37,7 +37,7 @@ La tarea que hacen los mantenedores es útil para comprobar que los paquetes de 
 * Las aplicaciones Flatpak se puede instalar a nivel de sistema (por defecto) y a nivel de usuario.
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/jDVCITRWGgs?rel=0" frameborder="0" allowfullscreen></iframe>
+	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/jDVCITRWGgs?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 La [instalación de Flatpak](https://www.flatpak.org/setup/) y [guía de uso](http://docs.flatpak.org/en/latest/using-flatpak.html) no es más complicado que utilizar el propio gestor de paquetes de cada distribución. Los desarrolladores tienen su [guía para crear paquetes](http://docs.flatpak.org/en/latest/building.html) y [publicar](http://docs.flatpak.org/en/latest/publishing.html) en Flatpak.

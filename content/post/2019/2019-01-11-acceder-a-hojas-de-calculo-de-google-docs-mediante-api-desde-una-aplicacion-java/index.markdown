@@ -29,7 +29,7 @@ Las hojas de cálculo se utilizan para contener información, son fácilmente ed
 Como contrapartida de estas integraciones hay que tener en cuenta que una aplicación se hace dependiente del servicio los servicios de Google que utilice, hay que evaluar si esta dependencia es deseable.
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/0rpgVE_nrIk?rel=0" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/0rpgVE_nrIk?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 Otro posible aplicación es utilizar documentos de texto en Google Drive como plantillas de correos electrónicos, se permite una edición sencilla y posteriormente se importan en la aplicación para que los utilice. A un documento de Google Drive se accede mediante esta petición HTTP GET. Las hojas de cálculo tamibén están disponibles mediante una interfaz REST sin embargo usando las APIs que ofrece Google para cada lenguaje es más cómodo que tratar con los datos en crudo en formato JSON.

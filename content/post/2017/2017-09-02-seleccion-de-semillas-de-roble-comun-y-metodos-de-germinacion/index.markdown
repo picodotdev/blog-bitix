@@ -92,11 +92,11 @@ También hay que vigilar los plantones para que no les crezcan hongos o se gener
 Para finalizar un par de vídeos de como plantar un roble y vídeo en tiempo acelerado del nacimiento de una bellota hasta los 8 primeros meses de vida.
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/QRCDilvqa5E" frameborder="0" allowfullscreen></iframe>
+	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/QRCDilvqa5E" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/MB-BvkOyHww" frameborder="0" allowfullscreen></iframe>
+	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/MB-BvkOyHww" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 {{< reference >}}

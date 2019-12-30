@@ -109,7 +109,7 @@ Los equipos están autoorganizados tomando sus propias decisiones con un objetiv
 ¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, _karts_ o _paintball_.
 
 <div class="media">
-    <iframe src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe data-src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
 </div>
 
 ### Cómo ser maestros constructores <em>por Zuriñe Menendez</em>
@@ -129,7 +129,7 @@ Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comu
 Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1680500384/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1680500384&linkCode=as2&tag=blobit-21">Your Code as a Crime Scene</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1680500384" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />.
 
 <div class="media">
-    <iframe src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe data-src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
 </div>
 
 Hay herramietas para analizar el código:
@@ -155,7 +155,7 @@ Es importante tener datos para evaluar pero hay que tener cuidado con las métri
     image1="crime-scene.jpg" thumb1="crime-scene-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Your code as a crime scene" >}}
 
 <div class="media">
-    <iframe src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe data-src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
 </div>
 
 ### Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em>
@@ -232,7 +232,7 @@ Otros ejemplos de productos son:
 * [Marvel app](https://marvelapp.com/)
 
 <div class="media">
-    <iframe src="https://player.vimeo.com/video/154470785?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe data-src="https://player.vimeo.com/video/154470785?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
 </div>
 
 <hr>

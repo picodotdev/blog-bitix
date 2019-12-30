@@ -35,7 +35,7 @@ El siguiente programa Java cambia en un bucle la posición del servo desde la po
 {{< code file="Servomotor.java" language="java" options="" >}}
 
 <div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" allowfullscreen></iframe>
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/g8RsvZ26Cqg" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 Aunque he conseguido hacer funcionar el servomotor con este programa no ha sido exento de problemas. Y es que cuando el programa finaliza la Raspberry Pi se me bloquea o se pierde la conectividad de red. No se si por algún _bug_ en la librería Diozero o alguna incompatibilidad con la Raspberry Pi 1 B, quizá en otro modelo de la Raspberry Pi no dé los problemas que a mi me da.

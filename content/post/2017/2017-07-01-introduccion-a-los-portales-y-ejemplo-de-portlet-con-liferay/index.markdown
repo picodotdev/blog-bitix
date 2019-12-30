@@ -107,8 +107,8 @@ Desarrollar un _portlet_ con su API directamente es una tarea costosa si la func
 Aunque el libro [Liferay in Action](https://amzn.to/2sc1tWN) o [Portlets in Action](https://amzn.to/2tzpbjL) no están actualizados a la última versión sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
 
 <div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=193518282X&linkId=a4fdbe9a2a0c68685cfc8119f253125b"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d" class="lozad"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=193518282X&linkId=a4fdbe9a2a0c68685cfc8119f253125b" class="lozad"></iframe>
 </div>
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" >}}

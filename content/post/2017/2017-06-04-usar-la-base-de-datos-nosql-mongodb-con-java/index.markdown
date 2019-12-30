@@ -41,7 +41,7 @@ Spring ofrece en su API mediante el proyecto [Spring Data MongoDB](https://proje
 En el libro [MongDB in Action](https://amzn.to/2qvYqqU) comentan más detalladamente y de forma más completa las opciones que se pueden utilizar en el lenguaje de consulta, muchas de las opciones son equivalentes a las que son conocidas del lenguaje SQL de las bases de datos relacionales.
 
 <div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=53e36564344401d0a3e0f29a4cef1968"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=53e36564344401d0a3e0f29a4cef1968" class="lozad"></iframe>
 </div>
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoMongoDB" command="docker-compose up, ./gradlew run" >}}

@@ -48,7 +48,7 @@ Usando la librería diozero el código Java para realizar el ejemplo no necesita
 Este es un pequeño vídeo en el que muestro su funcionamiento.
 
 <div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/jaqMi53pjf0" frameborder="0" allowfullscreen></iframe>
+  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/jaqMi53pjf0" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRaspberryPi" command="./gradlew executeLedButtonBuzzer" >}}

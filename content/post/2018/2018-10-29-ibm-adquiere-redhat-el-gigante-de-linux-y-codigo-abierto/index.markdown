@@ -58,8 +58,8 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 </div>
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/s7dTjpvakmA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/2_VFKqw1q2Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/s7dTjpvakmA" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
+    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/2_VFKqw1q2Q" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
 </div>
 
 {{< reference >}}

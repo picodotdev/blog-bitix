@@ -37,7 +37,7 @@ Usando la librería [diozero][diozero] para controlar los _pines_ GPIO desde un 
 En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor de movimiento se mueve la bolita de mercurio y el diodo LED de ejemplo se enciende y apaga.
 
 <div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/7Rkou-pJWFY" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 El detector de movimiento en teoría es similar en funcionamiento al _tilt_ y la librería diozero proporciona la clase [MotionSensor](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html) para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el [ejemplo de osoyoo](http://osoyoo.com/2016/07/14/motionsensor-pi/), no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniendome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su _pin_ GPIO de datos. Los otros dos _pines_ que utiliza son uno para el voltaje de 5V y el de tierra.

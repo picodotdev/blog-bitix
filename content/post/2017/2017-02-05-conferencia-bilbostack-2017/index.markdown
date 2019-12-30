@@ -153,7 +153,7 @@ Un sistema ágil es una aproximación a la incertidumbre. Incertidumbre que siem
 > This booklet tells the story of Justin - a project manager who achieved remarkable results with his team by doing very simple things! This guide covers the core concepts of Kanban for knowledge work, and shows how limiting your amount of work-in-progress can lead to getting things done better and faster.
 
 <div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0985305169&linkId=3fb69c8c67a77d17456e3a5fca1ce831"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0985305169&linkId=3fb69c8c67a77d17456e3a5fca1ce831" class="lozad"></iframe>
 </div>
 
 La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se construye lo no necesario, no se prueba lo que no se puede entregar, no se desarrolla lo que no se puede probar y no se especifica lo no se puede desarrollar produce una reducción de tiempos de entrega, hay mayor predictibilidad y elimina rehacer trabajo.

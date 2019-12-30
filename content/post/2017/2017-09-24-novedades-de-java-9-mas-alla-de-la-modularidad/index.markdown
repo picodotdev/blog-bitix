@@ -45,7 +45,7 @@ Aparte de definir este tipo de colecciones de una forma mucho más sencilla que 
 {{< code file="Collections.java" language="java" options="" >}}
 
 <div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0" class="lozad"></iframe>
 </div>
 
 ### Mejoras en la clase _Optional_
@@ -73,7 +73,7 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
     caption="jshell" >}}
 
 <div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0" class="lozad"></iframe>
 </div>
 
 ### jlink para generar _runtimes_ mínimos
@@ -85,7 +85,7 @@ En Java 9 se proporciona [jlink](http://openjdk.java.net/jeps/282) que un sustit
 Esto es especialmente útil para los contenedores de [Docker][docker] y los entornos _cloud_ ya que permite generar imágenes de contenedores con un tamaño significativamente menor. Por ejemplo, una imagen de Docker basada en la distribución [Alpine Linux][alpine-linux] con el JDK completo ocupa unos 360 MiB, con _jlink_ si una aplicación solo necesita del módulo _java.base_ se puede generar un _runtime_ con únicamente ese módulo, con este _runtime_ adaptado la imagen del contenedor tiene un tamaño mucho menor, en este caso de únicamente de unos 40 MiB.
 
 <div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen frameborder="0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen frameborder="0" class="lozad"></iframe>
 </div>
 
 ### Concurrencia
@@ -128,7 +128,7 @@ Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para un
 * [Case for Defaulting to G1 Garbage Collector in Java 9](https://www.infoq.com/articles/Make-G1-Default-Garbage-Collector-in-Java-9)
 
 <div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen frameborder="0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen frameborder="0" class="lozad"></iframe>
 </div>
 
 ### Identificador para variables _
@@ -172,21 +172,21 @@ A partir de la publicación de Java 9 se cambia el modelo de publicación de nue
 Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][openjdk] y [licencia GPL][gpl] para satisfacer las necesidades de los desarrolladores y una versión con soporte de largo plazo cada tres años para satisfacer las necesidades de tiempo de soporte prolongado de las empresas, _Oracle JDK_.
 
 <div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0"></iframe>
+    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0" class="lozad"></iframe>
 </div>
 
 Para finalizar un par de libros, [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT) que explican detalladamente las novedades de la modularidad, las novedades incluídas en este artículo y algunas otras más.
 
 <div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a" class="lozad"></iframe>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a" class="lozad"></iframe>
 </div>
 
 Y unos buenos vídeos sobre las nuevas características de Java 9, uno en español y otro en inglés.
 
 <div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/CkmB86pCV6A" frameborder="0" allowfullscreen></iframe>
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/9EiLRD95zDg" frameborder="0" allowfullscreen></iframe>
+    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/CkmB86pCV6A" frameborder="0" class="lozad" allowfullscreen></iframe>
+    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/9EiLRD95zDg" frameborder="0" class="lozad" allowfullscreen></iframe>
 </div>
 
 {{< reference >}}
