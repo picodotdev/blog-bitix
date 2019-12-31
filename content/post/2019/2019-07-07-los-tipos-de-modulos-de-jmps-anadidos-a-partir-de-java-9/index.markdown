@@ -28,9 +28,8 @@ Para mantener la compatibilidad hacia atrás y hacer más sencillo la transició
 
 Ya se han publicado varios libros que explican detalladamente la modularidad introducida en Java 9. Cualquiera de ellos es una guía completa de la modularidad de Java.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484225910&linkId=9c7874501bb32fa3318e285022e0207a"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484227123&linkId=59d96101c25f9c16c4427b8ee9daef1a" >}}
 
 {{% /post %}}

@@ -63,9 +63,8 @@ El programa Java para hacer parpadear el diodo LED con la librería Diozero con 
 {{< code file="executeSSH.sh" language="bash" options="" >}}
 {{< code file="executeGradle.sh" language="bash" options="" >}}
 
-<div class="media media-video">
-  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/NX5tBxWuzFA" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+
+{{< youtube video="NX5tBxWuzFA" >}}
 
 En un artículo anterior comento [como disponer de un entorno para desarrollar, desplegar las librerías _jar_ en la Raspberry Pi][blogbitix-213] y como ejecutar los ejemplos desde la línea de comandos usando una combinación de herramientas de [SSH][ssh], [rsync][rsync] y [Ansible][ansible].
 

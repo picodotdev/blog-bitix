@@ -43,13 +43,12 @@ El Viewsonic es un modelo del 2015 con dos HDMI 1.3 y DisplayPort 1.2. El Benq P
 * [Viewsonic VG2719-2K](https://amzn.to/2OIyidi) ([página fabricante](https://www.viewsonic.com/es/products/lcd/VG2719-2K.php))
 * [V7 L27HAS2K-2E](https://amzn.to/2CZj8dx) ([página fabricante](http://www.v7world.com/es/productos/monitores/27-qhd-widescreen-led-monitor.html))
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=37c01c8c71f103d6c7ad009afd2892a9" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0737M9QP7&linkId=3f46b23e2d6b884222796306587cced8" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M913DVG&linkId=9a692fa2ff43017270841146c742bb88" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0789D843P&linkId=74dce1e9be6c5b55e9345a20cfcc08b3" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B079P3YSTK&linkId=c643b6119b0142d924df263c65a22e43" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=37c01c8c71f103d6c7ad009afd2892a9"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0737M9QP7&linkId=3f46b23e2d6b884222796306587cced8"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00M913DVG&linkId=9a692fa2ff43017270841146c742bb88"
+    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0789D843P&linkId=74dce1e9be6c5b55e9345a20cfcc08b3"
+    link5="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B079P3YSTK&linkId=c643b6119b0142d924df263c65a22e43" >}}
 
 Los otros candidatos destacables que he visto han sido alguno en formato panorámico.
 
@@ -57,20 +56,18 @@ Los otros candidatos destacables que he visto han sido alguno en formato panorá
 * [LG 29UB67-B](https://amzn.to/2Pecupj)
 * [iiyama Prolite XUB2792QSU-B1](https://amzn.to/2OFcHlX)
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798R91FD&linkId=508f802016832287212a9dcd4d793770" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00T5P1USW&linkId=24fc95197f28f3d4d9db6514153de223" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N2Z7OZT&linkId=9560c7d04ae8f76ee1e3cd4a20abe387" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798R91FD&linkId=508f802016832287212a9dcd4d793770"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00T5P1USW&linkId=24fc95197f28f3d4d9db6514153de223"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N2Z7OZT&linkId=9560c7d04ae8f76ee1e3cd4a20abe387" >}}
 
 Los monitores UHD para un tamaño de 27 pulgadas a máxima resolución el texto y elementos gráficos se ven muy pequeños con lo que para uso ofimático hay que escalar a una más pequeña. Hay en un rango de precios muy amplio, desde 200€ a 700+€. Dos modelos en 4K de los anteriores son el [Benq PD2700U](https://amzn.to/2Pik820) que es el que hubiese elegido en caso de haber optado por UHD, el [Benq BL2711U](https://amzn.to/2yBnLq7), el [LG 27UK600-W](https://amzn.to/2PbNIGB) o el [LG 27UK650-W](https://amzn.to/2Jcu1sP), nótese la _U_ en estos modelos. Estos monitores aún siendo UHD no llegan a los 192 dpi, se quedan en 163, para considerarse [HiDPI](https://wiki.gnome.org/HowDoI/HiDpi) ni tienen una pantalla retina. Otras opciones son optar por 32" UHD y en formato panorámico. 
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07GLR6RQF&linkId=c69a55a9bb5bf63725b1bdffaa567444" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RORBPEW&linkId=b0cf487ca59691649f2507aa3837a2cf" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798RDRMH&linkId=3160f5b6618d07e065b1f81192395611" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798QLW64&linkId=2386c7d19354b2df0dbbe4e5cf268ab4" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07GLR6RQF&linkId=c69a55a9bb5bf63725b1bdffaa567444"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RORBPEW&linkId=b0cf487ca59691649f2507aa3837a2cf"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798RDRMH&linkId=3160f5b6618d07e065b1f81192395611"
+    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0798QLW64&linkId=2386c7d19354b2df0dbbe4e5cf268ab4" >}}
 
 En monitores de 27 pulgadas la recomendación en varios foros es de 2K. Menos con 1K o _full hd_ es ver píxeles como centollos, más es ver las cosas pequeñas a máxima resolución para tareas ofimáticas y es habitual tener que escalar a una resolución más baja aunque tenga mayor definición aprovechando la mayor densidad de píxeles o DPI. Estos son unos hilos en foros y dos artículos que me han parecido interesantes y que me han resuelto alguna duda o confirmado lo que ya suponía.
 
@@ -264,17 +261,14 @@ Es recomendable realizar una primera prueba al monitor para buscar píxeles muer
 
 Para probar la calidad del monitor (o televisor) en cuanto a colores o resolución [en YouTube hay varios](https://www.youtube.com/results?search_query=4k+video+test), uno de ellos de ejemplo es este pudiendo seleccionar la calidad desde 720p (HD), 1080p (FHD, 1K), 1440p (QHD, 2K) y 2160p (UHD, 4K). Lógicamente para apreciar las diferencias de calidad con respecto a una resolución más baja hay que tener un monitor o televisor que soporte la resolución más alta. Esto da una idea de como se ve una película, vídeo o imágenes. Las tareas ofimáticas no es lo mismo que ver vídeos, en UHD y usando escalado el texto gracias a su mayor PPI en el mismo tamaño que un QHD se ve más definido y claro. Sin embargo, el escalado aún presenta problemas ya que no todas las aplicaciones está preparadas.
 
-<div class="media media-video">
-	<iframe width="560" height="315" data-src="https://www.youtube.com/embed/Bey4XXJAqS8" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="Bey4XXJAqS8" >}}>
 
 ### Switch HDMI, monitor con el ordenador y consola
 
 Si el monitor es compartido tanto por el [ordenador como un Intel NUC][blogbitix-363] como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada y se cambia automáticamente.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa" >}}
 
 ### Soporte VESA
 
@@ -282,21 +276,19 @@ En todos los modelos he buscado que sea compatible con la norma VESA 100x100 por
 
 Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N9KKQH5&linkId=0d2db11714bff4c47c1ffe1efc1f795c" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MZ70QJB&linkId=f457dd5a087e2880f54ffc2105e0999b" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N9KKQH5&linkId=0d2db11714bff4c47c1ffe1efc1f795c"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MZ70QJB&linkId=f457dd5a087e2880f54ffc2105e0999b" >}}
 
 ### _Hub_ de puertos USB
 
 Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay hubs de 4, 7 y 10 puertos pero con esta candidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=c0347223e569327beb79d01b30cd549e" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00LI4O9EA&linkId=32d93c1c8151c7d869e32b061d0d08b4" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHKEM&linkId=3e9560e254b297e251314782a4ae4044" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B075NYCWQ6&linkId=9b678e32ccc83f551b57e34aa2db3296" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=c0347223e569327beb79d01b30cd549e"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00LI4O9EA&linkId=32d93c1c8151c7d869e32b061d0d08b4"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHKEM&linkId=3e9560e254b297e251314782a4ae4044"
+    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B075NYCWQ6&linkId=9b678e32ccc83f551b57e34aa2db3296" >}}
 
 {{< reference >}}
 * [Calculadora DPI y PPI](https://www.sven.de/dpi/)

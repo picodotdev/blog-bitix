@@ -11,13 +11,13 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <div class="adblock-sidebar adblock-sidebar-left">
-              <div class="adblock-sidebar-container">
+            <div class="adblock-sidebar-container adblock-sidebar-container-left">
+              <div class="adblock-sidebar adblock-sidebar-left">
                 {{ partial "sidebar-ad.html" . }}
               </div>
             </div>
-            <div class="adblock-sidebar adblock-sidebar-right">
-              <div class="adblock-sidebar-container">
+            <div class="adblock-sidebar-container adblock-sidebar-container-right">
+              <div class="adblock-sidebar adblock-sidebar-right">
                 {{ partial "sidebar-ad.html" . }}
               </div>
             </div>
@@ -65,6 +65,7 @@
         </div>
         <div class="row">
           <div class="col-12 text-center">
+            <a id="pageBottom"></a>
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>

@@ -21,27 +21,31 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
-{{< figure
-    image1="" thumb1="-thumb.png" title1=""
-    image2="" thumb2="-thumb.png" title2=""
-    caption="" >}}
-
-{{< imageproc
-    image1="direccion.jpg" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
-
 {{< figureproc
     image1="" options1="2560x1440" optionsthumb1="300x200" title1=""
     image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
     image3="" options3="2560x1440" optionsthumb3="300x200" title3=""
     caption="" >}}
 
-<div class="media-amazon">
-    <iframe src="&internal=1"></iframe>
-</div>
+{{< imageproc
+    image1="direccion.jpg" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
 
-<div class="media media-video">
-	<iframe width="640" height="360" src="https://www.youtube.com/embed/FTfAP29TjUk?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< amazon
+    link1="" }}
+
+{{< figure
+    link1=""
+    link2=""
+    link3=""
+    link4="" >}}
+
+{{< youtube
+    video1="" }}
+
+{{< figure
+    image1="" thumb1="-thumb.png" title1=""
+    image2="" thumb2="-thumb.png" title2=""
+    caption="" >}}
 
 {{< gist picodotdev id "file" >}}
 

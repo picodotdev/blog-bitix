@@ -42,7 +42,7 @@ Esta es una pequeña lista no completa de los juegos míticos que recuerdo de mi
 {{< figureproc
     image1="amidar.png" thumb1="amidar-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Amidar"
     image2="dark-seal.png" thumb2="dark-seal-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Dark Seal"
-    caption="Amidar y Dark Seal" >}}    
+    caption="Amidar y Dark Seal" >}}
 {{< figureproc
     image1="donkey-kong.png" thumb1="donkey-kong-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donkey Kong"
     image2="donkey-kong-jr.png" thumb2="donkey-kong-jr-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Donkey Kong Jr."
@@ -108,10 +108,9 @@ Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][
 
 Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B013B61SCS&linkId=61b4a105bc7d42ff174de961aaab0e67&internal=1" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B013B61SCS&linkId=61b4a105bc7d42ff174de961aaab0e67&internal=1" >}}
 
 Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una PlayStation 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
 

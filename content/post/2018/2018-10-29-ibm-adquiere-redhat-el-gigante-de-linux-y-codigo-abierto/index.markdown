@@ -52,15 +52,14 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 
 ¿IBM se convertirá en el gigante rojo o Red Hat se convertirá en Blue Hat?.
 
-<div class="media media-video">
+<div class="media">
     <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck"><p lang="en" dir="ltr">Red Hat gains stronger foothold in open source and more industry expertise with IBM deal, says CEO Jim Whitehurst <a href="https://t.co/gtXAO1CQ6X">https://t.co/gtXAO1CQ6X</a> <a href="https://t.co/21QzUw3rre">pic.twitter.com/21QzUw3rre</a></p>&mdash; Bloomberg Technology (@technology) <a href="https://twitter.com/technology/status/1056893767913889794?ref_src=twsrc%5Etfw">October 29, 2018</a></blockquote>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
-<div class="media media-video">
-	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/s7dTjpvakmA" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/2_VFKqw1q2Q" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="s7dTjpvakmA" >}}>
+
+{{< youtube video="2_VFKqw1q2Q" >}}>
 
 {{< reference >}}
 * [IBM compra Red Hat por 34.000 millones de dólares en un hito histórico para la empresa que triunfó con Linux y el Open Source](https://www.xataka.com/empresas-y-economia/ibm-compra-red-hat-34-000-millones-dolares-hito-historico-para-empresa-que-triunfo-linux-open-source)

@@ -20,15 +20,8 @@
     {{ end }}
     <div class="row">
       <div class="col-12">
-        {{/*
-        <div class="adblock-sidebar adblock-sidebar-left">
-          <div class="adblock-sidebar-container">
-            {{ partial "sidebar-ad.html" . }}
-          </div>
-        </div>
-        */}}
-        <div class="adblock-sidebar adblock-sidebar-right">
-          <div class="adblock-sidebar-container">
+        <div class="adblock-sidebar-container adblock-sidebar-container-right">
+          <div class="adblock-sidebar adblock-sidebar-right">
             {{ partial "sidebar-ad.html" . }}
           </div>
         </div>
@@ -39,7 +32,7 @@
           <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
           {{ end }}
           {{ if isset .Params "tags" }}
-            <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
+          <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
           {{ end }}
 
           <h1 itemprop="name">{{ .Title }}</h1>
@@ -94,6 +87,7 @@
         {{ partial "share-this.html" . }}
         <div class="row">
           <div class="col-12 text-center">
+            <a id="pageBottom"></a>
             {{ partial "adsense/billboard.html" . }}
           </div>
         </div>

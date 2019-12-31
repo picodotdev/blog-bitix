@@ -22,9 +22,7 @@ Los sistemas de archivos más compatibles son los que tradicionalmente se han ut
 
 En GNU/Linux puede utilizarse FAT32, NTFS y exFAT tanto en modo lectura como escritura, pero Windows solo permite sus propios formatos nativos y ha de utilizarse alguno de los anteriores, macOS soporta FAT en modo lectura y escritura, NTFS en modo lectura y para exFAT soporta también lectura y escritura. Otros dispositivos como _Smart TV_ suelen soportar alguno de los sistemas de archivos de Microsoft ya sea FAT32, NTFS y exFAT. Salvo que se quiera la máxima compatibilidad con FAT32 para con versiones antiguas de Windows o dispositivos con algunos años la opción más recomendable a usar es exFAT.
 
-<div class="media media-video">
-	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/_h30HBYxtws?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="_h30HBYxtws" >}}
 
 En GNU/Linux para formatear y utilizar particiones en NTFS hay que instalar el paquete [ntfs-3g](https://www.archlinux.org/packages/extra/x86_64/ntfs-3g/) y para exFAT el paquete [exfat-utils](https://www.archlinux.org/packages/community/x86_64/exfat-utils/), estos son los paquetes para [Arch Linux][archlinux] otras distribuciones tienen un paquete equivalente.
 

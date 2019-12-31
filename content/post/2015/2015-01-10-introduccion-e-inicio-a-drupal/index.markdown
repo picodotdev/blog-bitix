@@ -47,10 +47,9 @@ En definitiva Drupal es una herramienta de mucha utilidad para gestionar un siti
  y <a href="https://www.amazon.es/gp/product/1430228385/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1430228385&linkCode=as2&tag=blobit-21">Pro Drupal 7 Development</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1430228385" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
  son un buen inicio, he leído el primero y están muy bien explicado partiendo desde cero conocimiento sobre Drupal o PHP, contiene suficiente detalle para conocer las diferentes posibilidades que ofrece esta plataforma de gestión de contenidos.
 
-<div class="media-amazon">
-    <iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1430228598&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
-    <iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1430228385&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1430228598&internal=1" >}}
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1430228385&internal=1" >}}
 
 Si queremos probarlo posiblemente la solución mas sencilla es usar la [imagen que ofrece Bitnami de Drupal](https://bitnami.com/stack/drupal) que contiene todos los requisitos de Drupal ya instalados (servidor web, base de datos, dependencias, ...), podemos descargarla y crear una máquina virtual con VirtualBox, en unos pocos minutos podemos empezar a probar Drupal. En el artículo de [introducción sobre Bitnami][blogbitix-54] explico como crear una máquina virtual e iniciar cualquiera de las [imágenes](https://bitnami.com/stacks) de las que ofrece [Bitnami][bitnami] con VirtualBox.
 

@@ -43,10 +43,9 @@ Con el comando <code>help</code> obtendremos una lista completa de los comandos 
 
 En Amazon hay algunos libros como [El Go, un juego oriental milenario](https://amzn.to/2anENOU) y [GO para principiantes](https://amzn.to/29ULTWQ), en la librería libre también hay algunos como [Manual del Juego del Go](https://openlibra.com/es/book/manual-del-juego-del-go) y [GO: Utilizando las 36 estrategias chinas](https://openlibra.com/es/book/go-utilizando-las-36-estrategias-chinas).
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B015ENSU18&linkId=210d272021d815869d2c44e1503b904e&internal=1" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8415211945&linkId=f7342910d70bf91cda078a1ce3abbbc0&internal=1" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B015ENSU18&linkId=210d272021d815869d2c44e1503b904e&internal=1"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8415211945&linkId=f7342910d70bf91cda078a1ce3abbbc0&internal=1" >}}
 
 {{< reference >}}
 * [Juego Go](https://en.wikipedia.org/wiki/Go_(game))

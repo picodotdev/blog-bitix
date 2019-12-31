@@ -157,9 +157,8 @@ Las [especificaciones ténicas de la PlayStation 4 Slim](https://www.playstation
 * Temperatura funcionamiento: 5 ºC – 35ºC
 * Salida vídeo: puerto HDMI™ (con soporte para HDR)
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07LFY8WBX&linkId=95a091643d28db1abfa20f5e3e12a899" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07LFY8WBX&linkId=95a091643d28db1abfa20f5e3e12a899" >}}
 
 Estos es lo que incluye la caja del _pack_ que he comprado:
 
@@ -282,9 +281,7 @@ Limpiar el ventilador solo requiere quitar la tapa superior de la consola y trat
 
 Para hacer una limpieza profunda y completa teniendo acceso completo al disipador y ventilador asi como cambiar la pasta térmica del procesador limpiando la anterior con alcohol isopropílico que con el tiempo pierde su eficiencia hay que desmontar la placa base de la consola y soltar las conexiones de cables, quitar la placa base y asegurarse de que los _pads_ térmicos sigan colocados en cada uno de sus componentes electrónicos. Son un buen número de tornillos a quitar, no es simple y solo es recomendable para alguien con experiencia o esté dispuesto a seguir los pasos de las guías anteriores.
 
-<div class="media media-video">
-	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/0BYsBdS8lvE" frameborder="0" allowfullscreen class="lozad"></iframe>
-</div>
+{{< youtube video="0BYsBdS8lvE" >}}
 
 Para realizar el montaje y desmontaje correctamente se requieren una serie de herramientas:
 
@@ -294,13 +291,12 @@ Para realizar el montaje y desmontaje correctamente se requieren una serie de he
 * [Pasta térmica](https://amzn.to/2UVuiGd) no conductiva para no crear un cortocircuito si no se aplica correctamente y en una capa muy fina.
 * [Alcohol isopropílico](https://amzn.to/2Lvyzx5).
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VR9PGPC&linkId=4a0232e9898e496af9e672fe50d57c81" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JZ3DTHG&linkId=1aede680c3b8a5b84657f52f73d54600" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M0GKOEN&linkId=cdc038354d536d752a8c70b8bddca748" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MZ45X9G&linkId=195df606f7ea4dae5d9df4e1887975c9" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CYJLG1S&linkId=129773b7c65c13d8101eafd1035d2211" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VR9PGPC&linkId=4a0232e9898e496af9e672fe50d57c81"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JZ3DTHG&linkId=1aede680c3b8a5b84657f52f73d54600"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01M0GKOEN&linkId=cdc038354d536d752a8c70b8bddca748"
+    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MZ45X9G&linkId=195df606f7ea4dae5d9df4e1887975c9"
+    link5="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07CYJLG1S&linkId=129773b7c65c13d8101eafd1035d2211" >}}
 
 Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un adaptador de corriente utilizando para cargar un teléfono móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no son suficiente para los requisitos de carga del mando, en caso de usarse estos la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA según la especificación del estándar USB.
 
@@ -356,10 +352,9 @@ El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasia
     image1="mando-dualshock-4-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2 con funda"
     caption="Mando DualShock 4 V2 con funda" >}}
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=c4e617b84dbe20273c022f528f7f5451" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XJ5ZR5P&linkId=d6e6248621355a567e929b8e711a47c9" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=c4e617b84dbe20273c022f528f7f5451"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XJ5ZR5P&linkId=d6e6248621355a567e929b8e711a47c9" >}}
 
 ### Conclusión
 

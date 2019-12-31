@@ -66,8 +66,7 @@ En el ejemplo mostraré un texto en cada una de las lineas del _display_ y usar�
     image1="mensaje-lcd-1602.jpg" thumb1="mensaje-lcd-1602-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Mensaje en LCD 1602"
     caption="Mensaje en LCD 1602" >}}
 <div class="media media media-video">
-  <iframe width="640" height="360" data-src="https://www.youtube.com/embed/V6msjQNDPuU" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="V6msjQNDPuU" >}}
 
 Pudiendo mostrar mensajes en _display_ es posible mostrar cualquier información que un programa sea capaz de capturar como temperatura y humedad del correspondiente sensor en el mismo _kit_, estado de un pulsador, espacio disponible en el disco del sistema, y memoria libre, _uptime_ del sistema, fecha y hora, ... cualquier cosa que se nos ocurra.
 

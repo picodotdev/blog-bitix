@@ -56,16 +56,14 @@ Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio 
 ### VDrift
 Carreras. Otro juego de simulación de conducción. [Sitio web](http://vdrift.net/)
 
-<div class="media media-video">
-  <iframe width="560" height="315" data-src="https://www.youtube.com/embed/ziUSi5ApD6w?list=PL39564EDB4B815C2D" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+
+{{< youtube video="ziUSi5ApD6w?list=PL39564EDB4B815C2D" >}}
 
 ### Supertux Kart
 Carreras. Similar al [Mario Kart](https://es.wikipedia.org/wiki/Super_Mario_Kart) pero ambientado con los personajes del mundo Tux. Es un juego de carreras con múltiples circuitos, personajes y modos de juego. Es un juego con la intención de ser divertido para todas las edades más que realista. Se puede jugar contra la computadora y otros jugadores. [Sitio web](https://supertuxkart.net/Main_Page)
 
-<div class="media media-video">
-  <iframe width="560" height="315" data-src="https://www.youtube.com/embed/0FEwDH7XU9Q" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+
+{{< youtube video="0FEwDH7XU9Q" >}}
 
 ### Glest
 Estrategia. Glest es un juego de estrategia en tiempo real donde puedes controlar dos ejércitos de diferentes acciones, Tech que se compone de guerreros y dispositivos mecánicos y Magic que prefieren magos y criaturas invocadas. [Sitio web](http://glest.org/es/)
@@ -100,9 +98,8 @@ Estrategia. Un juego de estrategia basado en turnos. Formarás un grupo de resis
 ### Warzone 2100
 Estrategia. Es un juego de estrategia y táctica en tiempo real donde comandarás fuerzas para reconstruir el mundo después de que haya sido destruido por misiles nucleares. Ofrece un modo de campaña, multijugador y de un solo jugador de escaramuzas. 400 diferentes tecnologías combinado con el sistema de diseño de unidades permite una variedad de posibles unidades y tácticas. [Sitio web](https://wz2100.net/)
 
-<div class="media media-video">
-	<iframe width="560" height="315" data-src="https://www.youtube.com/embed/Qq7qUxeTHvo" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+
+{{< youtube video="Qq7qUxeTHvo" >}}
 
 ### Widelands
 Estrategia. Inspirado en el gran juego [Settlers II](https://en.wikipedia.org/wiki/The_Settlers_II) pero con una significante más variedad. Deberás recolectar diferentes tipos de materias y productos para hacer crecer a tu pueblo. [Sitio web](https://wl.widelands.org/)

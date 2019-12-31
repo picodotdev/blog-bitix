@@ -25,9 +25,7 @@ El sector de los videojuegos es una industria que mueve miles de millones de eur
 
 Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tomb Raider.
 
-<div class="media media-video">
-	<iframe width="560" height="315" data-src="https://www.youtube.com/embed/D-P-smim5gQ" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="D-P-smim5gQ" >}}>
 
 La industria de juego sigue creciendo con las nuevas generaciones ya siendo nativos digitales. Desde hace un tiempo se están organizando competiciones deportivas en diferentes juegos populares y se están retransmitiendo en internet en la plataforma especializada en videojuegos [Twitch][twitch]. Estas competiciones promovidas por actores importantes del hardware interesados en potenciar el sector como [Nvidia][nvidia], [Intel][intel], [AMD][amd] u otros fabricantes de hardware y estudios de desarrollo de videojuegos como [Blizzard][blizzard] ofrecen a los finalistas y campeones importantes premios económicos. Tanto que algunas personas se están dedicando ya como profesionalmente con absoluta dedicación a competir y entrenar aprovechando sus habilidades y conocimiento profundo de los juegos en los que están especializados.
 
@@ -37,17 +35,11 @@ La industria de juego sigue creciendo con las nuevas generaciones ya siendo nati
 
 Algunos de los juegos actuales en los que se realizan competiciones son [Hearthstone](https://playhearthstone.com/es-es/), [League of legends](https://play.euw.leagueoflegends.com/es_ES), [Clash Royale](https://clashroyale.com/es/), ... que han sido diseñados no solo como para el entretenimiento como los juegos de hace unas pocas décadas para competir entre humano e inteligencia artificial más o menos inteligente o automática de la máquina sino para ser jugados de forma competitiva entre humanos principalmente.
 
-<div class="media media-video">
-	<iframe width="560" height="315" src="https://gaming.youtube.com/embed/lBWgRCRH1Gs" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube-gaming video="lBWgRCRH1Gs" >}}>
 
-<div class="media media-video">
-	<iframe width="560" height="315" src="https://gaming.youtube.com/embed/NpVXLpkjUCc" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube-gaming video="NpVXLpkjUCc" >}}>
 
-<div class="media media-video">
-	<iframe width="560" height="315" src="https://gaming.youtube.com/embed/MUb8dGKpuEE" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube-gaming video="MUb8dGKpuEE" >}}>
 
 Es plausible que en un futuro estas competiciones se conviertan en eventos deportivos con el potencial de ser el equivalente en los _eSports_ como hoy lo son la liga de campeones europea, la copa del mundo de fútbol, la Super Bowl o las finales de la NBA ya sea en modalidades de por equipos o de selecciones por país.
 
@@ -55,9 +47,7 @@ Hace unas semanas veía en directo una final del juego para móvil Clash Royale,
 
 Este es un documental sobre lo que rodea a las  competiciones deportivas en equipos y sobre los _eSports_.
 
-<div class="media media-video">
-    <iframe width="560" height="315" data-src="https://www.youtube.com/embed/yvxMwoYuSp4" frameborder="0" allow="autoplay; encrypted-media" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="yvxMwoYuSp4" >}}>
 
 {{< reference >}}
 * [Xataka eSports](https://esports.xataka.com/)

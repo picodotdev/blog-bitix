@@ -32,11 +32,10 @@ En la siguiente [calculadora de ahorro con bombillas LED](http://www.bombillasle
 
 En [Amazon][amazon] hay una amplia gama de bombillas LED variando en tipo de casquillo, temperatura de la luz, formas y tamaños. Yo compré [6 bombillas LED E27 de 13.5 W equivalente a 100 W con 1521 lúmenes en luz cálida](https://amzn.to/2fDevZv) de la marca PHILIPS algo más caras de lo que están ahora aunque Amazon ha sacado un modelo similar de su marca blanca AmazonBasics. Encontraremos [más modelos de bombillas](https://amzn.to/2fQIpr9) que también deberemos elegir según la lámpara donde vaya ser colocadas. Yo las puse en varias del siguiente modelo de [lámpara de 3 focos Brilliant](https://amzn.to/2fQKYJJ) y estoy contento tanto con las bombillas como con las lámparas.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01GRYK35Y&linkId=27b2aaaf6a098d54c4ded8cb52f9f5a6&internal=1" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01J1NTGVA&linkId=b0ce33f634a15053194c9178f2e2d7dc&internal=1" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B001BB1SSA&linkId=a35b7a1682f1f28f137f770d01fc5318&internal=" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01GRYK35Y&linkId=27b2aaaf6a098d54c4ded8cb52f9f5a6&internal=1"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01J1NTGVA&linkId=b0ce33f634a15053194c9178f2e2d7dc&internal=1"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B001BB1SSA&linkId=a35b7a1682f1f28f137f770d01fc5318&internal=" >}}
 
 {{< figureproc
     image1="bombilla-led-philips-1.jpg" thumb1="bombilla-led-philips-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Bombilla LED PHILIPS 100W E27 13.5W 2700K"

@@ -59,9 +59,8 @@ Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones 
 Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.amazon.es/gp/product/0596522045/ref=as_li_tf_tl?ie=UTF8&camp=3626&creative=24790&creativeASIN=0596522045&linkCode=as2&tag=blobit-21">Java Message Service</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596522045" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
  de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
-<div class="media-amazon">
-	<iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" >}}
 
 El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJMS) los puedes descargar de [mi repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos).
 

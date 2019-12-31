@@ -59,9 +59,8 @@ Inicialmente los tiestos que pretendía utilizar era un tetrabrik de leche de un
     image1="IMG_20170930_085351.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Tiestos"
     caption="Tiestos" >}}
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00ZFWT2A2&linkId=5811e0fc7740584beea103b28efa8bdd" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00ZFWT2A2&linkId=5811e0fc7740584beea103b28efa8bdd" >}}
 
 Por el momento parece que aguantan aunque cuando han empezado a brotar de nuevo por primavera las hojas que han echado no son tan grandes como cuando brotaron desde las semillas. Algunos han brotado de nuevo antes que otros pero de los seis con los que me quedé todos han despertado después de un pequeño tiempo de letargo.
 

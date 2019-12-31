@@ -1,0 +1,5 @@
+{{ if or .Params.video }}
+<div class="media media-video">
+  <iframe width="640" height="360" data-src="https://gaming.youtube.com/embed/{{ .Params.video }}" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+{{ end }}

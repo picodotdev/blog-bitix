@@ -38,9 +38,8 @@ En este caso el artefacto que he usado ha sido un archivo _jar_ si se tratase de
 
 El libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617291307/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1617291307&linkCode=as2&tag=blobit-21">Gradle in Action</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1617291307" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> proporciona una aplicación más detallada de muchos conceptos de Gradle, otro buen punto de partida es la propia [documentación de Gradle](https://docs.gradle.org/current/userguide/userguide.html).
 
-<div class="media-amazon">
-    <iframe data-src="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291307&internal=1" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291307&internal=1" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 

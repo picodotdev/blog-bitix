@@ -36,13 +36,10 @@ La conferencia comienza con la presentación y la bienvenida de los organizadore
 {{< figureproc
     image1="presentacion.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Presentación"
     caption="Presentación">}}
-</div>
 
 La agenda comienza a las 9:00 de la mañana del sábado con una presentación y terminaba a las 14:00 aunque por el control de acceso de este año ha sido recomendable llegar un poco antes para evitar alguna pequeña aglomeración en los últimos minutos y encontrar y entrar en las salas con suficiente antelación. Llega el momento de decidir a qué presentación de los dos _tracks_ asistir, dependiendo de los intereses de cada uno a veces no es fácil y uno quisiera haber asistido a las dos.
 
-<div class="media media-video">
-	<iframe width="640" height="360" data-src="https://www.youtube.com/embed/6qQIs8q2Q9s?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="6qQIs8q2Q9s" >}}
 
 <table class="table">
     <thead class="thead-light">

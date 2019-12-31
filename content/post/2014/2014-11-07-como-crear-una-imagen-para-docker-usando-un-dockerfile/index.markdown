@@ -61,9 +61,8 @@ Posteriormente podemos iniciar y parar el contenedor de msql con:
 
 En los siguientes artículos comentaré la herramienta de automatización [ansible][ansible] y como sacarle provecho para iniciar los contenedores en una máquina de desarrollo (devbox). También en algún otro artículo comentaré la opción de [bitnami][bitnami] que dentro de poco ofrecerá soporte para docker y como con esta opción podemos usar un servicio «out-of-the-box» si tener que crear ni siquiera un Dockerfile o tener que documentarnos para instalar un servicio (que en algunos casos pueden tener cierta complejidad) aunque sea usando virtualización con [virtualbox][virtualbox] o computación en la nube.
 
-<div class="media-amazon">
-	<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a" >}}
 
 {{< reference >}}
 * [Introducción a Docker][blogbitix-49]

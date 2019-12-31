@@ -18,10 +18,9 @@ summary: "Microsoft Office is the office suite with a great margin of difference
 
 In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125€ for [home and students](https://amzn.to/2bg4CR2) and about 250€ for [home and business](https://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HC6QQQM&linkId=762b16ff0b7f340317343dc4a24097ab&internal=1" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01FNRXAZG&linkId=1f45d19184a5ea936b680670062a7fad&internal=1" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HC6QQQM&linkId=762b16ff0b7f340317343dc4a24097ab&internal=1"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01FNRXAZG&linkId=1f45d19184a5ea936b680670062a7fad&internal=1" >}}
 
 Given how easy it is to use Windows and Office without license along with the [Windows tax][elblogdepicodev-57] they have a market share in virtually monopoly numbers, that will not change in the short term. Sometimes I think that [Microsoft does not care if Windows or Office users uses them without a license][blogbitix-285] for personal use. However, there are alternatives for both Windows and Office that have little to envy, much cheaper or even free and libre software even with better support than [Microsoft][microsoft] offers for its own software.
 

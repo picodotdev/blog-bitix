@@ -75,10 +75,9 @@ Leyendo la [página de información de Diablo 3](https://appdb.winehq.org/object
 
 Diablo 3 comienza con una cinemática introductoria que en mi caso no iba bien y tampoco las siguientes cinemáticas que se reproducen en ciertos hitos del juego. Para verlas se puede ir a Youtube, cada clase tiene una inicial distinta. Como he elegido como clase la del monje para mi primer personaje pongo la de este.
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/8U-grPG5W8M?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
-    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/STx7Um655aw?rel=0" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="8U-grPG5W8M" >}}
+
+{{< youtube video="STx7Um655aw" >}}
 
 La trama del juego comienza con la caída de una estrella en la antigua catedral de Tristán y el personaje en el camino dirigiéndose hacia Nueva Tristán con motivo de tal acontecimiento.
 

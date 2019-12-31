@@ -72,13 +72,12 @@ El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega 
     image2="raspberrypi4b.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Raspberry Pi 4"
     caption="Raspberry Pi 3 y 4" >}}
 
-<div class="media-amazon">
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JYC4XM&linkId=fc47107b5f2e02c96571abfa0506c1c7" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B014I8U33I&linkId=df5c52be4ca21b9991d26145edb0b642" class="lozad"></iframe>
-    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" data-src="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VMXHJ4Q&linkId=39ee0802cdc202ce8259d463b59224ed" class="lozad"></iframe>
-</div>
+{{< amazon
+    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747"
+    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f"
+    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JYC4XM&linkId=fc47107b5f2e02c96571abfa0506c1c7"
+    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B014I8U33I&linkId=df5c52be4ca21b9991d26145edb0b642"
+    link5="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VMXHJ4Q&linkId=39ee0802cdc202ce8259d463b59224ed" >}}
 
 ### Rock64
 
@@ -106,9 +105,7 @@ El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versio
 
 Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un _splitter_ con _Power Over Ethernet_ o _PoE_ que hace innecesario el alimentador de corriente si poseemos o adquirimos un _switch_ con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/ZejkWra-Mfc" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+{{< youtube video="ZejkWra-Mfc" >}}
 
 En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor _SoC_ [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
 
@@ -140,9 +137,8 @@ Un modelo de placa mas reciente también basada en el mismo _SoC_ de la Rock64Pr
 
 Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70€ y los 107€ según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="https://www.youtube.com/embed/C4p9EpjA0ZM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
+
+{{< youtube video="C4p9EpjA0ZM" >}}
 
 ### ASUS Tinker Board
 
