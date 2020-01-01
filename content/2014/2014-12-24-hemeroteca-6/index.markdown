@@ -17,7 +17,7 @@ library: "true"
 
 {{< logotype image="octopress.png" title="Octopress" width="300" >}}
 
-Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de [El blog de pico.dev][elblogdepicodev]. Otro año que finaliza y toca hacer recapitulación de los que he escrito durante este tiempo, 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.
+Seis nuevos meses para el Blog Bitix cumpliendo un año como tal y siendo la continuación de los casi cuatro años de [El blog de pico.dev][elblogdepicodev]. Otro año que finaliza y toca hacer [recapitulación de los que he escrito durante este tiempo][blogbitix-section-2014], 26 nuevos artículos escritos con puntualidad uno por semana y publicados el viernes o sábado.
 
 Aunque aún no puedo usar profesionalmente el _framework_ web [Apache Tapestry][tapestry] con el realmente me divierto programando sigo escribiendo sobre él con algunos temas interesantes tales que cómo usar un CDN, cómo crear plantillas para dar un aspecto común a todas las páginas de la aplicación, una comparativa entre el modelo «pull» que usa Tapestry y el modelo «push» que normalmente se usa en los _framework_ basados en acciones, cómo crear una doble barra de botones sin duplicar el mismo código, como forzar el uso de https o la anotación Cached. Todo este contenido lo he añadido al [libro PlugIn Tapestry][blogbitix-12] y que puedes descargar de forma totalmente libre en varios formatos. No está mal y aún tengo más contenido pendiente por publicar tal que como embeber una aplicación web usando tomcat-embed de forma que la aplicación esté autocontenida y el despliegue sea más sencillo y evitemos problemas, hacer un ejemplo con el componente Grid que muestre sus grandes posibilidades y la gran cantidad de trabajo que nos puede ahorrar, ...
 
@@ -61,12 +61,5 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
 {{< figureproc
     image1="christmas-tux-2014.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmastux 2014"
     caption="¡Buen 2015!" source="klowner.com" >}}
-
-{{< reference >}}
-* [Hemeroteca #3][elblogdepicodev-162]
-* [Hemeroteca #2][elblogdepicodev-136]
-* [Hemeroteca #1][elblogdepicodev-111]
-* [Hemeroteca #0][elblogdepicodev-87]
-{{< /reference >}}
 
 {{% /post %}}

@@ -43,7 +43,7 @@
               <li><a href="series/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
             {{ end }}
             </ul>
-            {{ range (where .Site.Pages "Section" "post").GroupByDate "2006" "desc" }}
+            {{ range (where .Site.Pages "Section" "in" (split "2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029" ",")).GroupByDate "2006" "desc" }}
               <h3>{{ .Key }}</h3>
               <ul>
               {{ range where .Pages "Title" "not in" (slice "Posts") }}

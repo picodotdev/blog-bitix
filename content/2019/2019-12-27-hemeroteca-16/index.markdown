@@ -24,7 +24,7 @@ Este segundo semestre he escrito algunos artículos menos, 34, frente a los 48 d
 
 Pero los artículos no es lo único que he hecho este 2019, he recibido algunas _pull request_ e _issues_ para [Script de instalación de Arch Linux desatendido, automatizado y personalizable][blogbitix-204] y [el repositorio en GitHub](https://github.com/picodotdev/alis/) tiene una buena cantidad de _stars_ y _forks_, he continuado manteniendo la traducción al español de [VLC][vlc], he enviado una actualización con las nuevas cadenas y corregidos algunos errores de la traducción al español para la reciente versión 6.1 de [VirtualBox][virtualbox] y tratado de mejorar la de [KeePassXC][keepassxc], algunas mejoras internas para generar el blog, incluido [rediseñarlo para que el contenido esté centrado, más grande horizontalmente y publicidad lateral _sticky_][blogbitix-404].
 
-Listando los artículos que he escrito durante este semestre, en la categoría de artículos de desempaquetado he escrito sobre la PlayStation 4.
+Listando los [artículos que he escrito durante el año 2019][blogbitix-section-2019] y este semestre, en la categoría de artículos de desempaquetado he escrito sobre la PlayStation 4.
 
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 

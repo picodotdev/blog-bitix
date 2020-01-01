@@ -22,7 +22,7 @@ Casi 9 años publicando artículos algunos mejor que otros pero siempre intentan
 
 Ahora que tengo mi propio equipo y como de nuevo estoy usando [Arch Linux][archlinux] podré publicar más artículos sobre [GNU][gnu]/[Linux][linux], he empezado por publicar como jugar a [Diablo 3][blizzard-diablo3] u otros juegos de [Blizzard][blizzard] en Linux con [Wine].
 
-Durante este semestre he escrito varios relacionados con el ordenador que necesitaba y finalmente he comprado al final de año pero del que había noticias desde muchos meses antes, la espera de varios meses hasta que se comercializase se me hizo larga.
+Durante [el año 2018 he escrito múltiples artículos][blogbitix-section-2018] y este semestre he escrito varios relacionados con el ordenador que necesitaba y finalmente he comprado al final de año pero del que había noticias desde muchos meses antes, la espera de varios meses hasta que se comercializase se me hizo larga.
 
 * [Desempaquetado y análisis de teclado y ratón inalámbrico V7 CKW200][blogbitix-348]
 * [Desempaquetado y análisis de monitor Benq PD2700Q][blogbitix-356]

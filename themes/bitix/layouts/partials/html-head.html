@@ -9,7 +9,7 @@
   {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
   <base href="{{ .Site.BaseURL }}">
 
-  <title>{{ if eq .Title .Site.Title }}{{ .Title }}{{ else }}{{ .Title }}{{ end }}</title>
+  <title>{{ .Title }}</title>
 
   <link rel="author" type="text/plain" href="humans.txt" />
   <link rel="shortcut icon" href="assets/favicon.ico">

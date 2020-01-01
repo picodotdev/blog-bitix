@@ -33,7 +33,7 @@ Quien crea que es mucho que pruebe a crearse una bitácora, un canal en [YouTube
 
 Pero por otra parte he recibido buenos comentarios sobre lo que escribo en Blog Bitix, por algunas personas vía [Twitter][twitter] y otras en algún comentario que me anima a seguir escribiendo y compartiendo como hasta ahora lo que voy aprendiendo e investigando que algún día espero utilizar en algún trabajo antes de que me jubile o pruebe ser un jardinero o barrendero.
 
-Este semestre me propuse publicar una mayor cantidad de artículos relacionados con el lenguaje de programación Java con motivo de la pasada publicación de Java 9. Pero primero empecé con un par de artículos sobre _portlets_ y [Apache Tapestry][tapestry] que en algún momento espero añadirlos en alguna sección del libro [PlugIn Tapestry][blogbitix-40]. Por supuesto, varios artículos comentando las novedades más relevantes de Java 9 publicado en septiembre entre ellas la modularidad y otras no menos notables.
+Este [año 2017 he escrito los artículos][blogbitix-section-2017] y este semestre me propuse publicar una mayor cantidad de artículos relacionados con el lenguaje de programación Java con motivo de la pasada publicación de Java 9. Pero primero empecé con un par de artículos sobre _portlets_ y [Apache Tapestry][tapestry] que en algún momento espero añadirlos en alguna sección del libro [PlugIn Tapestry][blogbitix-40]. Por supuesto, varios artículos comentando las novedades más relevantes de Java 9 publicado en septiembre entre ellas la modularidad y otras no menos notables.
 
 * [Introducción a los portales y ejemplo de portlet con Liferay][blogbitix-243]
 * [Portlets con el framework Apache Tapestry y Apache Pluto][blogbitix-244]

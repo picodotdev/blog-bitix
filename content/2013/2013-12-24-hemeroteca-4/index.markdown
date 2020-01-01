@@ -19,7 +19,7 @@ library: "true"
 
 El 2013 toca a su fin, el 2014 está llamando a la puerta y como cada medio año en el blog toca hacer una recapitulación con las entradas que he escrito durante estos meses. Durante este año he cumplido con el objetivo de escribir y publicar una entrada por semana, en total han sido 52, casi todas publicadas en [elblogdepicodev][elblogdepicodev] y las del último més del año publicadas en [Blog Bitix][blogbitix]. Esta entrada es un buen momento para leer alguna que te perdiste o releer alguna que te gustó.
 
-Durante estos 6 meses y este año a destacar ha sido el [libro que publiqué sobre Apache Tapestry][blogbitix-12], un _framework_ para el desarrollo de aplicaciones en Java, del que dentro de no mucho tiempo se publicará la versión 5.4 final. El libro tiene más de 250 páginas escritas en español, un precio de 0.00 € y puedes [descargarlo en diferentes formatos][blogbitix-12] entre los que se encuentran los formatos EPUB y MOBI más adecuados para leerlos en un libro electrónico pero también puede descargarse en formato PDF para leer en el ordenador. La página del libro desde la que puede descargarse es [PlugIn Tapestry][blogbitix-12]. Una buena cantidad de páginas en las que no solo se trata los principales aspectos relacionados con este _framework_ sino que cubre varios aspectos que en muchas aplicaciones deben abordar como seguridad, relaciones jerárquicas en base de datos, doble envío de formularios, DAO genérico, convenciones para archivos i10n, i18n en entidades de dominio, logging, layout de páginas, ...  y a resolver independientemente del _framework_ que se utilice aunque en el libro se aporta la solución desde el punto de vista de Tapestry.
+Durante estos 6 meses y [este año][blogbitix-section-2013] a destacar ha sido el [libro que publiqué sobre Apache Tapestry][blogbitix-12], un _framework_ para el desarrollo de aplicaciones en Java, del que dentro de no mucho tiempo se publicará la versión 5.4 final. El libro tiene más de 250 páginas escritas en español, un precio de 0.00 € y puedes [descargarlo en diferentes formatos][blogbitix-12] entre los que se encuentran los formatos EPUB y MOBI más adecuados para leerlos en un libro electrónico pero también puede descargarse en formato PDF para leer en el ordenador. La página del libro desde la que puede descargarse es [PlugIn Tapestry][blogbitix-12]. Una buena cantidad de páginas en las que no solo se trata los principales aspectos relacionados con este _framework_ sino que cubre varios aspectos que en muchas aplicaciones deben abordar como seguridad, relaciones jerárquicas en base de datos, doble envío de formularios, DAO genérico, convenciones para archivos i10n, i18n en entidades de dominio, logging, layout de páginas, ...  y a resolver independientemente del _framework_ que se utilice aunque en el libro se aporta la solución desde el punto de vista de Tapestry.
 
 También he escrito otras cuantas entradas sobre Tapestry que me han servido para posteriormente incluirlo como contenido en el libro.
 
@@ -62,12 +62,5 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
 {{< figureproc
     image1="christmas-tux-2013.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2013"
     caption="¡Buen 2014!" source="klowner.com" >}}
-
-{{< reference >}}
-* [Hemeroteca #3][elblogdepicodev-162]
-* [Hemeroteca #2][elblogdepicodev-136]
-* [Hemeroteca #1][elblogdepicodev-111]
-* [Hemeroteca #0][elblogdepicodev-87]
-{{< /reference >}}
 
 {{% /post %}}
