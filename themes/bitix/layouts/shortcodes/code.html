@@ -9,7 +9,10 @@
 <div class="code">
     {{ $content | safeHTML }}
     <div class="highlight-meta">
+        <span>{{ .Params.file }}</span>
+    </div>
+        <!--
         <span class="raw"><a href="{{ $resourceRelPermalink }}" target="_blank">view raw</a></span>
         <a href="{{ $resourceRelPermalink }}" target="_blank">{{ .Params.file }}</a>
-    </div>
+        -->
 </div>
