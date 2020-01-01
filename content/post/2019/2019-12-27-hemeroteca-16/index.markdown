@@ -3,7 +3,7 @@ pid: 452
 title: "Hemeroteca #16"
 url: "/2019/12/hemeroteca-16/"
 date: 2019-12-27T19:00:00+01:00
-updated: 2019-12-30T21:00:00+01:00
+updated: 2019-12-31T19:30:00+01:00
 language: "es"
 rss: true
 sharing: true
