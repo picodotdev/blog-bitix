@@ -101,7 +101,6 @@ Detectadas las ROMS iniciar un juego basta con seleccionarlo desde los menús e 
     image2="1943.png" options2="2560x1440" optionsthumb2="300x200" title2="1943"
     image3="sonic-the-hedgehog.png" options3="2560x1440" optionsthumb3="300x200" title3="Sonic The Hedgehog"
     caption="Varios juegos de la NES y Sega">}}
-</div>
 
 Tenía dudas por la calidad de los mandos por si eran demasiado frágiles, sin embargo, cuando me han llegado y los he visto me han parecido muy decentes y creo que tratándolos bien van a aguantar mucho tiempo. Además, la Raspberry Pi y Lakka los han reconocido sin ningún tipo de problema tanto conectando uno individualmente o los dos al mismo tiempo reconociendo correctamente todos los botones. Lo único que he tenido que hacer es configurar en el menú _Input > Menu Toggle Gamepad Combo_ (se elige con la cruceta a derecha e izquierda) un botón para salir de un juego pulsando a la vez los botones _Start + Select_.
 
