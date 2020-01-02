@@ -11,6 +11,28 @@ languages:
 
 theme: "bitix"
 
+mediaTypes:
+  text/html:
+    suffixes:
+    - enr
+  text/html:
+    suffixes:
+    - asp
+
+outputs:
+  home:
+  - HTML
+  - AMP
+  - RSS
+  page:
+  - HTML
+  - AMP
+
+outputFormats:
+  AMP:
+    path: ""
+    baseName: "index.amp"
+
 markup:
   defaultMarkdownHandler: goldmark
   blackFriday:
