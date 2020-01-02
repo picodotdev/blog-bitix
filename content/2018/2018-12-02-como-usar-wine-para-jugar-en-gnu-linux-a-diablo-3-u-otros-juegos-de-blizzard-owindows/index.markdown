@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: "images/battle-net-3.jpg"
+imageHead: "images/battle-net-3.jpg"
 tags: ["gnu-linux", "juegos", "software", "software-libre", "windows"]
 series: ["juegos"]
 ---

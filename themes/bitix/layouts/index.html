@@ -22,18 +22,12 @@
             <ul class="list-unstyled">
               {{ range .Paginator.Pages }}
               <li>
-                <article itemscope itemtype="http://schema.org/BlogPosting">
-                  {{ if isset .Params "language" }}
-                  <meta itemprop="inLanguage" content="{{ .Params.language }}">
-                  {{ else }}
-                  <meta itemprop="inLanguage" content="{{ .Site.Language.Lang }}">
-                  {{ end }}
-                  <h1 itemprop="name"><a href="{{ .RelPermalink }}" itemprop="name url">{{ .Title }}</a></h1>
+                <article>
+                  <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
                   <span class="information">
-                    <time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02/01/2006" }}</time>
+                    <time>{{ .Date.Format "02/01/2006" }}</time>
                     {{ if isset .Params "tags" }}
                       {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
-                      <meta itemprop="keywords" content="{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}">
                     {{ end }}
                   </span>
                   <p>
@@ -43,7 +37,7 @@
                       {{ .Summary }}
                     {{ end }}
                     <br>
-                    <a href="{{ .RelPermalink }}" itemprop="url">{{ i18n "cotinue_reading" }}</a>
+                    <a href="{{ .RelPermalink }}">{{ i18n "cotinue_reading" }}</a>
                   </p>
                 </article>
               </li>

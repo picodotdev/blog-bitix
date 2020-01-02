@@ -23,8 +23,8 @@ En esta ocasión los proyectos a los que he hecho una donación han sido [Lineag
 
 <div class="media">
     <figure>
-        <img src="assets/images/logotipos/lineageos.svg" alt="LineageOS" title="LineageOS" width="200"/>
-        <img src="assets/images/logotipos/replicant.svg" alt="Replicant" title="Replicant" width="200"/>
+        <img src="assets/images/logotypes/lineageos.svg" alt="LineageOS" title="LineageOS" width="200"/>
+        <img src="assets/images/logotypes/replicant.svg" alt="Replicant" title="Replicant" width="200"/>
     </figure>
 </div>
 

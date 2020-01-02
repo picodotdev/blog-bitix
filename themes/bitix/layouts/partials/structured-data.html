@@ -1,0 +1,31 @@
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ .Permalink }}"
+    },
+    "headline": "{{ .Title }}",
+    "description": "{{ if isset .Params "summary" }}{{ .Params.summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}",
+    "image": [
+        {{ range $i, $image := (partial "structured-data-image-post.html" .) }}{{ if gt $i 0 }}, {{ end }}"{{ $.Site.BaseURL }}{{ $image }}"{{ end }}
+    ],
+    "datePublished": "{{ dateFormat "2006-01-02T15:04:05-07:00" .Params.date | safeHTML }}",
+    "dateModified": "{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Params.date .Params.updated) | safeHTML }}",
+    "inLanguage": "{{ .Params.language }}",
+    {{ if .Keywords }}"keywords": "{{ delimit .Keywords "," }}",{{ end }}
+    "wordCount": "{{ .WordCount }}",
+    "license": "{{ .Site.Copyright }}",
+    "author": {
+        "@type": "Person",
+        "name": "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Params.publisher.name }}",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.publisher.logotype }}"
+        }
+    }
+}

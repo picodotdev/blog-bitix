@@ -21,8 +21,8 @@ El año 2018 ha empezando haciéndose público uno de los peores _bugs_ de segur
 
 <div class="media">
     <figure>
-        <img src="assets/images/logotipos/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
-        <img src="assets/images/logotipos/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
+        <img src="assets/images/logotypes/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
+        <img src="assets/images/logotypes/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
         <figcaption>Logotipos de Meltdown y Spectre</figcaption>
     </figure>
 </div>
@@ -33,9 +33,9 @@ Como usuarios domésticos para estar protegidos conviene descargar únicamente s
 
 <div class="media">
     <figure>
-        <img src="assets/images/logotipos/intel.svg" alt="Intel" title="Intel" width="200"/>
-        <img src="assets/images/logotipos/amd.svg" alt="AMD" title="AMD" width="200"/>
-        <img src="assets/images/logotipos/arm.svg" alt="ARM" title="ARM" width="200"/>
+        <img src="assets/images/logotypes/intel.svg" alt="Intel" title="Intel" width="200"/>
+        <img src="assets/images/logotypes/amd.svg" alt="AMD" title="AMD" width="200"/>
+        <img src="assets/images/logotypes/arm.svg" alt="ARM" title="ARM" width="200"/>
     </figure>
 </div>
 

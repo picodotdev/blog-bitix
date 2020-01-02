@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: "images/image.jpg"
+imageHead: "images/image.jpg"
 tags: ["hardware", "planeta-codigo"]
 series: ["desempaquetado-tecnologia"]
 summary: "La siguiente pieza que he adquirido para completar lo que será mi ordenador personal en casa es el monitor que usaré en mayor medida para tareas ofimáticas, navegar por internet, quizá ver alguna película y en menor medida quizá también algún juego. De entre las opciones que buscaba inicialmente era que fuese IPS por los colores, de 27 pulgadas y con ese tamaño de pantalla con al menos resolución QHD. Hay muchos modelos entre los que elegir y con variaciones de precios notables en aparentemente las mismas características, de 32 pulgadas, ultrapanorámicos, UHD, orientados más a _gaming_, ..."

@@ -29,8 +29,8 @@ A pesar de saber que todos los procesadores Intel de la última década está af
 
 <div class="media">
     <figure>
-        <img src="assets/images/logotipos/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
-        <img src="assets/images/logotipos/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
+        <img src="assets/images/logotypes/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
+        <img src="assets/images/logotypes/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
         <figcaption>Logotipos de Meltdown y Spectre</figcaption>
     </figure>
 </div>

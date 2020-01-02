@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: "images/redhat.jpg"
+imageHead: "images/redhat.jpg"
 tags: ["opinion", "planeta-codigo"]
 ---
 

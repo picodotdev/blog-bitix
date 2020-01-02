@@ -25,7 +25,7 @@ Pero antes estoy pensando en el uso que le puedo dar a la Raspberry Pi para que 
 Lo primero que he hecho es comprar unos [mandos similares a los de la antigua Super NES](http://amzn.to/2Cg6035), aunque con un teclado USB también se puede jugar es más cómodo con los mandos, además de poder jugar a dos jugadores. En muchos juegos de _arcade_ antiguos es posible incluso a tres o cuatro jugadores.
 
 <div class="media">
-    <img src="assets/images/logotipos/retroarch.png" width="600" alt="Retroarch" title="RetroArch">
+    <img src="assets/images/logotypes/retroarch.png" width="600" alt="Retroarch" title="RetroArch">
 </div>
 
 Los elementos necesarios para tener tener una consola retro son los siguientes: una [Raspberry Pi][amazon-raspberrypi], un [cargador USB](http://amzn.to/2Cf9Vxp) adecuado, una [tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX) o más, [dos mandos para consola USB](http://amzn.to/2Cg6035) o un [teclado USB](http://amzn.to/2ou0QHD), un [cable HDMI](http://amzn.to/2sPcjqz) y si se quiere una [caja](http://amzn.to/2Fvtyjy). Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de [Amazon][amazon].

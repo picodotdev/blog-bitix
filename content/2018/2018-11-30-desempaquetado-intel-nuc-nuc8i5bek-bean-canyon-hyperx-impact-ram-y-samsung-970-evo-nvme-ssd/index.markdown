@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: "images/desempaquetado-nuc-2.jpg"
+imageHead: "images/desempaquetado-nuc-2.jpg"
 tags: ["hardware", "planeta-codigo", "software"]
 series: ["desempaquetado-tecnologia"]
 summary: "Al fin tengo nuevo equipo que cumple con los requisitos que le demandaba. Principalmente que sea pequeño pero al mismo tiempo suficientemente potente para que me suponga un salto notable en rendimiento respecto al portátil que tenía. Después de decidirme entre nuevo portátil, ITX o NUC me decidí por unos de los nuevos Bean Canyon con procesador de 4 núcleos y 8 hilos, posibilidad de SSD con NVMe y hasta un máximo de 32 GiB de RAM."

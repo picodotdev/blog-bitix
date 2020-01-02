@@ -10,7 +10,9 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: ""
+imageHead: ""
+imagePost: "calibre.png"
+keywords: ""
 tags: ["blog", "planeta-codigo"]
 series: [""]
 summary: ""

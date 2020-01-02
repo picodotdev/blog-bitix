@@ -93,8 +93,8 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 <div class="media">
   <figure>
-    <img src="assets/images/logotipos/gnu.svg" alt="GNU" title="GNU" width="200">
-    <img src="assets/images/logotipos/linux.svg" alt="Linux" title="Linux" width="200">
+    <img src="assets/images/logotypes/gnu.svg" alt="GNU" title="GNU" width="200">
+    <img src="assets/images/logotypes/linux.svg" alt="Linux" title="Linux" width="200">
 </div>
 
 ### Libros y novelas

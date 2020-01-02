@@ -24,13 +24,13 @@ Dado que en GNU/Linux hay muchas distribuciones un nuevo usuario puede sentirse 
 
 <div class="media">
   <figure>
-    <img src="assets/images/logotipos/ubuntu.svg" alt="Ubuntu" title="Ubuntu" width="100">
-    <img src="assets/images/logotipos/opensuse.svg" alt="openSUSE" title="openSUSE" width="100">
-    <img src="assets/images/logotipos/debian.svg" alt="Debian" title="Debian" width="100">
-    <img src="assets/images/logotipos/archlinux.svg" alt="Arch Linux" title="Arch Linux" width="100">
-    <img src="assets/images/logotipos/fedora.svg" alt="Fedora" title="Fedora" width="100">
-    <img src="assets/images/logotipos/elementary.svg" alt="Elementary OS" title="Elementary OS" width="100">
-    <img src="assets/images/logotipos/trisquel.svg" alt="Trisquel" title="Trisquel" width="100">
+    <img src="assets/images/logotypes/ubuntu.svg" alt="Ubuntu" title="Ubuntu" width="100">
+    <img src="assets/images/logotypes/opensuse.svg" alt="openSUSE" title="openSUSE" width="100">
+    <img src="assets/images/logotypes/debian.svg" alt="Debian" title="Debian" width="100">
+    <img src="assets/images/logotypes/archlinux.svg" alt="Arch Linux" title="Arch Linux" width="100">
+    <img src="assets/images/logotypes/fedora.svg" alt="Fedora" title="Fedora" width="100">
+    <img src="assets/images/logotypes/elementary.svg" alt="Elementary OS" title="Elementary OS" width="100">
+    <img src="assets/images/logotypes/trisquel.svg" alt="Trisquel" title="Trisquel" width="100">
     <figcaption>Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas</figcaption>
   </figure>
 </div>

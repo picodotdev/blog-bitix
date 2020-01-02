@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-image: "images/bilbostack-logo-1.jpg"
+imageHead: "images/bilbostack-logo-1.jpg"
 tags: ["planeta-codigo", "programacion"]
 series: ["bilbostack"]
 ---

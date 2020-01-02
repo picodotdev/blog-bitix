@@ -3,11 +3,12 @@ pid: 451
 title: "Artículo #7 de Yo apoyo al software libre"
 url: "/2019/12/articulo-7-de-yo-apoyo-al-software-libre/"
 date: 2019-12-22T11:30:00+01:00
+created: "2019-12-22T11:30:00+01:00"
 language: "es"
 rss: true
 sharing: true
 comments: true
-promoted: false
+imagePost: "logotype:calibre.png"
 tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 ---

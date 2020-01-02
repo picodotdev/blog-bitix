@@ -41,9 +41,9 @@ En esta lista falta un orquestador para el despliegue de los microservicios, que
 Además, en este ejemplo reemplazo varias de estas herramientas de Spring. Sustituyo el servicio de registro y descubrimiento proporcionado por Eureka por [Consul][consul], el _gateway_, _load balancer_ y _reverse proxy_ proporcionado por Zuul por [Traefik][traefik] y añado el orquestador de microservicios [Nomad][nomad].
 
 <div class="media">
-    <img src="assets/images/logotipos/consul.svg" alt="Consul" title="Consul" width="200"/>
-    <img src="assets/images/logotipos/nomad.svg" alt="Nomad" title="Nomad" width="200"/>
-    <img src="assets/images/logotipos/traefik.svg" alt="Traefik" title="Traefik" width="200"/>
+    <img src="assets/images/logotypes/consul.svg" alt="Consul" title="Consul" width="200"/>
+    <img src="assets/images/logotypes/nomad.svg" alt="Nomad" title="Nomad" width="200"/>
+    <img src="assets/images/logotypes/traefik.svg" alt="Traefik" title="Traefik" width="200"/>
 </div>
 
 Traefik se configura con los servicios iniciados en los contenedores de Docker utilizando junto con los bloques o _stanzas_ de _config_ y _labels_ en la definición de los servicios de Nomad. Según el criterio definido por el servicio Traefik es capaz de redirigir el tráfico que le llegue al servicio apropiado, entre las posibilidades que puede realizar Traefik es balanceo de carga entre las múltiples instancias que se hayan definido pero también implementa patrones de tolerancia a fallos con reintentos, el patrón _circuit breaker_ o limitar el tráfico para evitar saturar a un servicio con demasiadas peticiones.

@@ -16,12 +16,18 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144-precomposed.png">
   <link rel="canonical" href="{{ .Permalink }}">
 
+  {{ if .IsPage }}
+  <script type="application/ld+json">
+    {{ partial "structured-data.html" . | safeJS }}
+  </script>
+  {{ end }}
+
   <!-- Feed -->
   <link href="{{ .Site.Params.links.feed.url }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
   <!-- CSS -->
   <!-- Fonts -->
-    <link rel="stylesheet" type="text/css" href="assets/css/font.css"> 
+  <link rel="stylesheet" type="text/css" href="assets/css/font.css">
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-4.3.1/css/bootstrap.min.css">
   <!-- Gallery -->
@@ -29,7 +35,7 @@
   <!-- Theme -->
   <link rel="stylesheet" type="text/css" href="assets/css/syntax.css">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  
+
   <!-- JavaScript -->
   <script type="text/javascript" src="assets/js/require-config.js" data-main="js/main" defer></script>
   <script type="text/javascript" src="assets/libs/require.js" data-main="js/main" defer></script>

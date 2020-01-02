@@ -21,9 +21,9 @@ Hay que tener en cuenta que son de segunda mano, hay incertidumbre del estado de
 
 <div class="media">
     <figure>
-        <img src="assets/images/logotipos/ebay.svg" alt="eBay" title="eBay" width="200"/>
-        <img src="assets/images/logotipos/milanuncios.png" alt="milanuncios" title="milanuncios" width="200"/>
-        <img src="assets/images/logotipos/wallapop.svg" alt="Wallapop" title="Wallapop" width="150"/>
+        <img src="assets/images/logotypes/ebay.svg" alt="eBay" title="eBay" width="200"/>
+        <img src="assets/images/logotypes/milanuncios.png" alt="milanuncios" title="milanuncios" width="200"/>
+        <img src="assets/images/logotypes/wallapop.svg" alt="Wallapop" title="Wallapop" width="150"/>
     </figure>
 </div>
 
