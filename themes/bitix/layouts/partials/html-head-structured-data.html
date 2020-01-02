@@ -6,10 +6,12 @@
         "@id": "{{ .Permalink }}"
     },
     "headline": "{{ .Title }}",
-    "description": "{{ if isset .Params "summary" }}{{ .Params.summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}",
-    "image": [
-        {{ range $i, $image := (partial "structured-data-image-post.html" .) }}{{ if gt $i 0 }}, {{ end }}"{{ $.Site.BaseURL }}{{ $image }}"{{ end }}
-    ],
+    "image": {
+        {{ range first 1 (.Scratch.Get "images") }}
+          "@type": "ImageObject",
+          "url": "{{ $.Site.BaseURL }}{{ . }}"
+        {{ end }}
+      },
     "datePublished": "{{ dateFormat "2006-01-02T15:04:05-07:00" .Params.date | safeHTML }}",
     "dateModified": "{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Params.date .Params.updated) | safeHTML }}",
     "inLanguage": "{{ .Params.language }}",
@@ -18,7 +20,8 @@
     "license": "{{ .Site.Copyright }}",
     "author": {
         "@type": "Person",
-        "name": "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}"
+        "name": "{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}",
+        "url": "{{ .Site.Params.links.twitter.url }}"
     },
     "publisher": {
         "@type": "Organization",
@@ -27,5 +30,6 @@
         "@type": "ImageObject",
         "url": "{{ .Site.Params.publisher.logotype }}"
         }
-    }
+    },
+    "description": "{{ if isset .Params "summary" }}{{ .Params.summary | markdownify }}{{ else }}{{ .Summary }}{{ end }}"
 }
