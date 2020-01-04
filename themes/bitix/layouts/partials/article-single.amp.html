@@ -10,7 +10,7 @@
       <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span> el <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
       {{ if isset .Params "tags" }}
         <br>
-        {{ range $tag := .Params.tags }}
+        {{ range $tag := .Params.tags -}}
           {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
           <a href="{{ $url }}">{{ $tag }}</a>
         {{ end }}

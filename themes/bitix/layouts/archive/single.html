@@ -23,7 +23,7 @@
             <h1>{{ .Title }}</h1>
             <h3>{{ i18n "library" }}</h3>
             <ul class="library">
-            {{ range where .Site.Pages "Params.library" "true" }}
+            {{ range where .Site.Pages "Params.library" "true" -}}
               <li>
                 <article class="h-entry">
                   <a href="{{ .Permalink }}" itemprop="name url">{{ .Title }}</a>
@@ -34,29 +34,29 @@
             </ul>
             <h3>{{ i18n "tags" }}</h3>
             <ul class="tags">
-              {{ range $tag, $taxonomy := .Site.Taxonomies.tags }}
+              {{ range $tag, $taxonomy := .Site.Taxonomies.tags -}}
                 {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
                 <li><a href="{{ $url | urlize }}">{{ $tag }}</a> <small>({{ $taxonomy.Count }})</small></li>
               {{ end }}
               </ul>
               <h3>Series</h3>
               <ul class="tags">
-              {{ range $serie, $taxonomy := .Site.Taxonomies.series }}
+              {{ range $serie, $taxonomy := .Site.Taxonomies.series -}}
                 {{ $url := print "series/" $serie "/" $urlsuffix | relURL }}
                 <li><a href="{{ $url | urlize }}">{{ $serie }}</a> <small>({{ $taxonomy.Count }})</small></li>
               {{ end }}
             </ul>
-            {{ range (where .Site.Pages "Section" "in" (split "2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029" ",")).GroupByDate "2006" "desc" }}
+            {{ range (where .Site.Pages "Section" "in" (split "2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029" ",")).GroupByDate "2006" "desc" -}}
               <h3>{{ .Key }}</h3>
               <ul>
-              {{ range where .Pages "Title" "not in" (slice "Posts") }}
+              {{ range where .Pages "Title" "not in" (slice "Posts") -}}
                 <li>
                   <article class="h-entry">
                     <a href="{{ .Permalink }}" class="p-name u-url">{{ .Title }}</a>
                   </article>
                 </li>
               {{ end }}
-            </ul>
+              </ul>
             {{ end }}
           </div>
         </div>

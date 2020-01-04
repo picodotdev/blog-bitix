@@ -1,6 +1,6 @@
 {{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
 <nav class="nav nav-pills nav-fill">
-  {{ range .Site.Menus.header }}
+  {{ range .Site.Menus.header -}}
     <a href="{{ print .URL $urlsuffix }}" class="nav-item nav-link">{{ .Name }}</a>
-  {{end}}
+  {{ end }}
 </nav>

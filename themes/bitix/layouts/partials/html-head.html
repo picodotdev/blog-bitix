@@ -15,16 +15,16 @@
   <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
   <link rel="canonical" type="text/html" href="{{ with .OutputFormats.Get "HTML" }}{{ .Permalink }}{{ end }}">
-  {{ range .AlternativeOutputFormats -}}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">{{ end }}
-  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+  {{ end }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url | absURL }}" title="{{ .Site.Title }}">
   <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
 
   {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
 
-  {{ if .IsPage }}
   {{ partial "html-head-social.html" . }}
-  {{ end }}
 
   {{ if .IsPage }}
   <script type="application/ld+json">

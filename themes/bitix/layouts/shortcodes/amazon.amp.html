@@ -20,8 +20,10 @@
     data-amzn_assoc_linkid="{{ .Params.linkid }}"
     data-amzn_assoc_asins="{{ .Params.asins1 }}">
   </amp-ad>
+</div>
 {{ end }}
 {{ if and .Params.linkid .Params.asins2 }}
+<div class="media-amazon"></div>
   <amp-ad
     width="600"
     height="250"

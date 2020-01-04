@@ -1,13 +1,13 @@
 {{ $urlsuffix := .Site.Params.outputformats.amp.urlsuffix }}
 <ul class="list-unstyled">
-    {{ range .Paginator.Pages }}
+    {{ range .Paginator.Pages -}}
     <li>
       <article>
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
         <span class="information">
           <time>{{ .Date.Format "02/01/2006" }}</time>
           {{ if isset .Params "tags" }}
-            {{ range $tag := .Params.tags }}
+            {{ range $tag := .Params.tags -}}
               {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
               <a href="{{ $url }}">{{ $tag }}</a>
             {{ end }}

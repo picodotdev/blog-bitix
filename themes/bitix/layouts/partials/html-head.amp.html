@@ -15,19 +15,23 @@
 
   <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
-  {{ range .AlternativeOutputFormats }}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">{{ end }}
-  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
+  {{ range .AlternativeOutputFormats -}}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">
+  {{ end }}
   <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
 
-  {{ if .IsPage }}
   {{ partial "html-head-social.html" . }}
-  {{ end }}
 
   {{ if .IsPage }}
-  {{ partial "html-head-post-structured-data.html" . | safeHTML }}
-  {{ partial "html-head-orzanization-structured-data.html" . | safeHTML }}
+  <script type="application/ld+json">
+  {{ partial "html-head-post-structured-data.html" . | safeJS }}
+  </script>
   {{ end }}
+
+  <script type="application/ld+json">
+  {{ partial "html-head-orzanization-structured-data.html" . | safeJS }}
+  </script>
 
   {{ "<!-- boilerplate -->" | safeHTML }}
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>

@@ -20,11 +20,17 @@
 
 {{ if and .Params.linkid .Params.asins1 }}
 <div class="media-amazon">
-  {{ range $asin := (split .Params.asins1 ",") }}{{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }} {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ range $asin := (split .Params.asins1 ",") -}}
+  {{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }}
+  {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}
+  {{ end }}
 </div>
 {{ end }}
 {{ if and .Params.linkid .Params.asins2 }}
 <div class="media-amazon">
-  {{ range $asin := (split .Params.asins1 ",") }}{{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }} {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ range $asin := (split .Params.asins1 ",") -}}
+  {{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }}
+  {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}
+  {{ end }}
 </div>
 {{ end }}

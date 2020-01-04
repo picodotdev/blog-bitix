@@ -7,7 +7,7 @@
     },
     "headline": "{{ .Title }}",
     "image": {
-        {{ range $image := first 1 (.Scratch.Get "images") }}
+        {{ range $image := first 1 (.Scratch.Get "images") -}}
           "@type": "ImageObject",
           "url": "{{ $image }}"
         {{ end }}

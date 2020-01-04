@@ -13,9 +13,9 @@
     </div>
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">
-        {{ range .Site.Menus.footer }}
+        {{ range .Site.Menus.footer -}}
           <li><a href="{{ print .URL $urlsuffix }}">{{ .Name }}</a></li>
-        {{end}}
+        {{ end }}
       </ul>
     </div>
     <div class="col-12 col-sm-4 text-center links">

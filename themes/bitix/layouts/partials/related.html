@@ -1,15 +1,15 @@
 {{ if not .Params.series }}
-	{{ $related := .Site.RegularPages.Related . | first 5 }}
-	{{ with $related }}
-	<div class="row related">
-		<div class="col-md-12">
-			{{ i18n "related_articles" }}:
-			<ul>
-				{{ range . }}
-				<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-				{{ end }}
-			</ul>
-		</div>
-	</div>
-	{{ end }}
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
+    <div class="row related">
+        <div class="col-md-12">
+            {{ i18n "related_articles" }}:
+            <ul>
+                {{ range . -}}
+                <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            </ul>
+        </div>
+    </div>
+    {{ end }}
 {{ end }}
