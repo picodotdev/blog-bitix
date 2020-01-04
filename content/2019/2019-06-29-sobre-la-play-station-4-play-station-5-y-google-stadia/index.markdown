@@ -66,6 +66,6 @@ Pero esto es la decisión de siempre adquirir lo que hay o esperar, la opción m
 En el caso de utilizar un monitor que solo disponga de una entrada HDMI tanto para el PC como para una consola se necesita un conmutador o _switch_ HDMI que permita conmutar la entrada sin tener que conectar y desconectar cables. En [Amazon][amazon] hay muchos modelos, uno de los que más me ha gustado ha sido este [Conmutador HDMI 2.0 4K@60Hz de 5 entradas](https://amzn.to/2LsewzY) que ofrece 4K a 60 Hz con hasta cinco entradas HDMI, una salida y está alimentado por USB.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MV8BBS2&linkId=f554140ed8a800631481721106f71a23" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MV8BBS2&linkId=f554140ed8a800631481721106f71a23" >}}
 
 {{% /post %}}

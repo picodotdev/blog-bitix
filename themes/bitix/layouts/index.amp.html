@@ -3,46 +3,23 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        {{ partial "head.html" . }}
+        {{ partial "head.amp.html" . }}
         <div class="row">
           <div class="col-12 text-center">
-            {{ partial "adsense/billboard.html" . }}
+            {{ partial "adsense/billboard.amp.html" . }}
           </div>
         </div>
         <div class="row">
           <div class="col-12">
             <div class="adblock-sidebar-container">
               <div class="adblock-sidebar-container-left">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.amp.html" . }}
               </div>
               <div class="adblock-sidebar-container-right">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.amp.html" . }}
               </div>
             </div>
-            <ul class="list-unstyled">
-              {{ range .Paginator.Pages }}
-              <li>
-                <article>
-                  <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-                  <span class="information">
-                    <time>{{ .Date.Format "02/01/2006" }}</time>
-                    {{ if isset .Params "tags" }}
-                      {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
-                    {{ end }}
-                  </span>
-                  <p>
-                    {{ if isset .Params "summary" }}
-                      {{ .Params.summary | markdownify }}
-                    {{ else }}
-                      {{ .Summary }}
-                    {{ end }}
-                    <br>
-                    <a href="{{ .RelPermalink }}">{{ i18n "cotinue_reading" }}</a>
-                  </p>
-                </article>
-              </li>
-              {{ end }}
-            </ul>
+            {{ partial "article-list.amp.html" . }}
           </div>
         </div>
         <div class="row">
@@ -58,7 +35,7 @@
         <div class="row">
           <div class="col-12 text-center">
             <a id="pageBottom"></a>
-            {{ partial "adsense/billboard.html" . }}
+            {{ partial "adsense/billboard.amp.html" . }}
           </div>
         </div>
         <div class="row">
@@ -66,11 +43,12 @@
             <hr>
           </div>
         </div>
-        {{ partial "footer.html" . }}
+        {{ partial "footer.amp.html" . }}
       </div>
     </div>
   </div>
   {{ partial "html-footer.html" . }}
-  {{ partial "html-footer-custom.html" . }}
+  {{ partial "html-footer-custom.amp.html" . }}
+  {{ partial "analytics.amp.html" . }}
 </body>
 </html>

@@ -13,36 +13,13 @@
           <div class="col-12">
             <div class="adblock-sidebar-container">
               <div class="adblock-sidebar-container-left">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.html" . }}
               </div>
               <div class="adblock-sidebar-container-right">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.html" . }}
               </div>
             </div>
-            <ul class="list-unstyled">
-              {{ range .Paginator.Pages }}
-              <li>
-                <article>
-                  <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-                  <span class="information">
-                    <time>{{ .Date.Format "02/01/2006" }}</time>
-                    {{ if isset .Params "tags" }}
-                      {{ range .Params.tags }} <a href="tags/{{ . }}/">{{ . }}</a>{{ end }}
-                    {{ end }}
-                  </span>
-                  <p>
-                    {{ if isset .Params "summary" }}
-                      {{ .Params.summary | markdownify }}
-                    {{ else }}
-                      {{ .Summary }}
-                    {{ end }}
-                    <br>
-                    <a href="{{ .RelPermalink }}">{{ i18n "cotinue_reading" }}</a>
-                  </p>
-                </article>
-              </li>
-              {{ end }}
-            </ul>
+            {{ partial "article-list.html" . }}
           </div>
         </div>
         <div class="row">

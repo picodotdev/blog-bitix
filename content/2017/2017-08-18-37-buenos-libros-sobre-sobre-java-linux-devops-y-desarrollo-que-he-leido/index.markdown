@@ -42,7 +42,7 @@ Estos son los que me ha parecido que están bastante bien, algunos he leído de 
 ### Java 9 Modularity
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491954167&linkId=a4ac0f67b92d5e64b2f115dec0ed246c" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491954167&linkId=a4ac0f67b92d5e64b2f115dec0ed246c" >}}
 
 La modularidad no es la única característica que se incorporará en Java 9 hay muchas otras pero quizá la que más llama la atención en parte porque estaba prevista ya para versiones anteriores y finalmente se ha postergado desde la versión 7. En cualquier caso la modularidad mejora la encapsulación, seguridad, rendimiento y compatibilidad con versiones futuras aspecto de la compatibilidad hacia atrás que siempre se la ha dado y es destacado en la plataforma Java.
 
@@ -53,7 +53,7 @@ Java 9 será publicado en septiembre y ya tengo ideados unos cuantos artículos 
 ### Java Generics and Collections
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596527756&linkId=7392be28d1ec52d1dca41e10fc216fc1" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596527756&linkId=7392be28d1ec52d1dca41e10fc216fc1" >}}
 
 Los tipos genéricos se añadieron en Java 5, en el año 2004, que el copilador utiliza para validar la corrección del código evitando problemas que serían producidos en tiempo de ejecución. En la API de colecciones se usa de forma extensiva.
 
@@ -64,7 +64,7 @@ El concepto no es difícil pero dominar las declaraciones de los _generics_ no l
 ### Cloud Native Java
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B074R4B7LY&linkId=cb4b120dd4eac60796de0ec4796fbf8e" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B074R4B7LY&linkId=cb4b120dd4eac60796de0ec4796fbf8e" >}}
 
 La flexibilidad que aporta la computación en la nube (o en los ordenadores de otros como dice la FSF) es en gran medida su éxito. Los programas que adopten esta nueva arquitectura obtienen varias ventajas como escalabilidad, tolerancia a fallos o administración de automatizada. Sin embargo, las aplicaciones tiene que diseñarse o adaptarse a este nuevo entorno.
 
@@ -73,7 +73,7 @@ Algunas librerías como [Spring Boot][spring-boot] proporciona a las aplicacione
 ### Java The Good Parts
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596803737&linkId=c8d9a7967ea7439451a570b1f2659e9d" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596803737&linkId=c8d9a7967ea7439451a570b1f2659e9d" >}}
 
 El lenguaje de programación Java es uno de los lenguajes más populares y que más desarrolladores posee desde ya muchos años. Su éxito se debe a varios principios que los arquitectos de la plataforma incorporaron desde sus inicios. Un lenguaje orientado a objetos, con excepciones para el tratamiento de errores, organización de clases en paquetes, recolector de basura que libera al programador de la tarea y evitar fugas de memoria o errores no controlados, la máquina virtual que posibilita escribir el código una vez y ejecutarlo en cualquier plataforma para la que haya una JVM, la gran documentación en _javadoc_ que sirve como consulta y como formato para documentar en el propio código fuente, las colecciones que proporcionan estructuras de datos básicas y útiles para cualquier programa, concurrencia con hilos y primitivas para la sincronización y con el paso del tiempo un ecosistema muy grande de librerías, herramientas y entornos integrados de desarrollo.
 
@@ -82,21 +82,21 @@ Todas estas características se comentan detalladamente en [Java The Good Parts]
 ### Building Maintainable Software Java Edition
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491953527&linkId=6a378c8faf06d2e362cdeb9226b925cf" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491953527&linkId=6a378c8faf06d2e362cdeb9226b925cf" >}}
 
 Hay conocimiento que es independiente del lenguaje que se utilice como tratar de escribir funciones o métodos con pocas líneas de código, mantener las interfaces pequeñas, separar en módulos, mantener el acoplamiento bajo y balanceados, que la base de código sea pequeña, automatizar las pruebas o escribir código limpio. Aunque [Building Maintainable Software Java Edition](https://amzn.to/2vPOQ6v) es una edición para Java con los ejemplos en este lenguaje las motivaciones que describe de cada uno de los puntos anteriores es universal.
 
 ### The Well-Grounded Java Developer
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290068&linkId=1b305765190419f6de43b75335e43746" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290068&linkId=1b305765190419f6de43b75335e43746" >}}
 
 [The Well-Grounded Java Developer](https://amzn.to/2fRQgJS) diserta sobre varios conceptos a tener en cuenta para tener una base sólida sobre la plataforma Java. Nuevas características de Java 7, cosas vitales como inyección de dependencias, concurrencia, ficheros _class_ y _bytecode_ o lenguajes alternativos para la máquina virtual.
 
 ### Spring Boot in Action
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=990ac035faf92b423b7edd4e70377b89" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=990ac035faf92b423b7edd4e70377b89" >}}
 
 Spring Boot permite que una aplicación sea completamente autocontenida incluyendo un servidor web como [Tomcat][tomcat] entre otros disponibles. En vez de distribuir la aplicación en formato _war_ para ser desplegada en un contenedor de _servlets_ o aplicaciones la aplicación se distribuye en formato _jar_ y se inicia como una aplicación Java tradicional. Es la aplicación la que inicia el servidor web embebido y hace que proporcione su servicio. Esta es nueva tendencia que se sigue en las aplicaciones y en las aplicaciones basadas en la nube.
 
@@ -109,7 +109,7 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 ### Gradle in Action
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291307&linkId=86af7295a55368699341bfbe2ae7040e" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291307&linkId=86af7295a55368699341bfbe2ae7040e" >}}
 
 [Gradle][gradle] es una herramienta de construcción de proyectos y gestión de dependencias que adopta las mejores características de [Ant][ant] y [Maven][maven] con pocas o ninguna de sus deficiencias. [Gradle in Action](https://amzn.to/2uY2naN) explica en profundidad esta herramienta de construcción para llegar a dominarla.
 
@@ -122,14 +122,14 @@ Spring Boot proporciona una integración con la parte del ecosistema de [Spring]
 ### Java Testing with Spock
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=ac77f9a86125173cda19c2c4949ce0a3" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=ac77f9a86125173cda19c2c4949ce0a3" >}}
 
 Las pruebas automatizadas son indispensables para escribir código con menos errores y con mayor calidad. En Java hay varias herramientas de _testing_ para hacer pruebas unitarias, de integración o funcionales. [Spock][spock] con el que se escriben especificaciones con un DSL y utilizando el lenguaje [Groovy][groovy] permite automatizar las indispensables pruebas de todo código. [Java Testing with Spock](https://amzn.to/2vPt5Ul) explica esta herramienta.
 
 ### Portlets in Action
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=e954596f73982d6fc4c7338ffb4225b7" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=e954596f73982d6fc4c7338ffb4225b7" >}}
 
 Los portales son utilizados por algunas organizaciones para gestionar el contenido que publican en su web. [Portlets in Action](https://amzn.to/2w96DIn) explica como crear las unidades básicas de los portales en Java, los _portlets_.
 
@@ -141,7 +141,7 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 ### Learning JavaScript
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=380952682c6e61c533807cd32a6dd038" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=380952682c6e61c533807cd32a6dd038" >}}
 
 [Learning JavaScript](https://amzn.to/2xbmkMh) explica este lenguaje de programación utilizado en los navegadores web. Denostado a veces por falta de conocimiento el libro explica muchas cosas interesantes del lenguaje e incorporadas la versión de ECMAScript 6. Es un libro que no requiere gran conocimiento previo y empieza desde un nivel básico.
 
@@ -150,15 +150,15 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 ### The Book of CSS3
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275803&linkId=74be128029bfbd8f789af03a1b673aba" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275803&linkId=74be128029bfbd8f789af03a1b673aba" >}}
 
 Al igual que JavaScript el denostado CSS también a veces lo es por el mismo motivo. [The Book of CSS3](https://amzn.to/2wgURft) explica las nuevas posibilidades para aplicar estilos a documentos HTML en los navegadores. _Media queries_, selectores, psedo-clases y pseudo-elementos, _web fonts_, efectos y estilos de tipografías, disposiciones en múltiples columnas, imágenes de fondo, bordes y efectos de caja, color y opacidad, gradientes transoformaciones 3D, animaciones y transiciones, _layouts_, modos _blend_, filtros y máscaras es el contenido del libro.
 
 ### Learning RabbitMQ y Mastering RabbitMQ
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783984562&linkId=bffff9170b71717eb95f6be0a95274db"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783981520&linkId=4cce33b79c609e875e6fb2a8b3b9ded2" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783984562&linkId=bffff9170b71717eb95f6be0a95274db"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783981520&linkId=4cce33b79c609e875e6fb2a8b3b9ded2" >}}
 
 Los libros [Learning RabbitMQ](https://amzn.to/2xbdSN2) y [Mastering RabbitMQ](https://amzn.to/2xbjaI2) tratan sobre la herramienta [RabbitMQ][rabbitmq] para desarrollar aplicaciones que se comuniquen mediante mensajes. Los mensajes son una forma efectiva de desacoplar dos aplicaciones tanto temporalmente como en el lenguaje utilizado en cada una de ellas.
 
@@ -167,7 +167,7 @@ Los libros [Learning RabbitMQ](https://amzn.to/2xbdSN2) y [Mastering RabbitMQ](h
 ### MongoDB in Action
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=497acae6ed525c559c046c38d3ed28c0" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617291609&linkId=497acae6ed525c559c046c38d3ed28c0" >}}
 
 La misión de las bases de datos es almacenar información para una posterior consulta o búsqueda. [MongoDB in Action](https://amzn.to/2xb7KUJ) trata sobre la base de datos orientada a documentos [MongoDB][mongodb] catalogada como NoSQL.
 
@@ -177,15 +177,15 @@ La misión de las bases de datos es almacenar información para una posterior co
 ### SQL Antipatterns
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1934356557&linkId=f6f8cc4cba1c24fdec9a4a47503e738d" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1934356557&linkId=f6f8cc4cba1c24fdec9a4a47503e738d" >}}
 
 Aún con la popularización de las bases de datos NoSQL las bases de datos relacionales siguen siendo perfectamente válidas. El libro [SQL Antipatterns](https://amzn.to/2icem2F) es una colección de consejos a tener en cuenta al diseñar y utilizar las bases de datos relacionales. Algunas formas de uso que generan problemas están desaconsejados y se consideran antipatrones.
 
 ### Beginning SQL Queries y Learning PostgreSQL
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484219546&linkId=6c88c8326d867c036266f6483f41477d"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783989181&linkId=0b62f915f94acd860485c75946fa0392" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484219546&linkId=6c88c8326d867c036266f6483f41477d"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783989181&linkId=0b62f915f94acd860485c75946fa0392" >}}
 
 El lenguaje declarativo SQL es muy potente y yo al menos desconocía o he usado poco muchas cosas que se han añadido al lenguaje en versiones más modernas y que algunas bases de datos como [PostgreSQL][postgresql] implementan. Algunas de estas cosas son las _windows functions_, tipos definidos por el usuario, _triggers_, _common table expression_ o CTE, consultas recursivas, búsqueda de texto más avanzado y eficiente que la expresión _like_, _lateral subqueries_, ...
 
@@ -194,21 +194,21 @@ Los libros [Beginning SQL Queries](https://amzn.to/2xbh62O) y [Learning PostgreS
 ### CORS in Action
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=161729182X&linkId=a1fec0248175841014bd8986c63eb82e" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=161729182X&linkId=a1fec0248175841014bd8986c63eb82e" >}}
 
 _Cross-Origin Resource Sharing_ permite a sitios distintos del origen de la página proporcionar su contenido. Por defecto, los navegadores solo permiten hacer peticiones al mismo sitio del origen de la página, con una combinación del navegador y cabeceras en las peticiones que proporcionan los sitios web permiten hacer llamadas entre diferentes sitios manteniendo la seguridad. El libro [CORS in Action](https://amzn.to/2vKvmlf) trata en detalle este tema.
 
 ### Microservice Architecture
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491956259&linkId=57e9f172013ca12309e2ca2b5fa19fc2" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491956259&linkId=57e9f172013ca12309e2ca2b5fa19fc2" >}}
 
 El ámbito _cloud_ y una nueva forma de arquitectura para las aplicaciones han originado los denominados microservicios. En vez de desarrollar una aplicación monolítica y grande se tiende hacia múltiples aplicaciones más pequeñas con un contexto específico que colaboran para proporcionar la misma funcionalidad. El libro [Microservice Architecture](https://amzn.to/2vPtaY3) trata las motivaciones, que valor aportan los microservicios así como sus principios y cultura.
 
 ### Learning HTTP/2
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491962445&linkId=1a89f93cde97f31c639b38ca79811040" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491962445&linkId=1a89f93cde97f31c639b38ca79811040" >}}
 
 La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es más eficiente, con menos latencia, con mejor rendimiento mas seguro al requerirse una conexión cifrada y haciendo innecesarios varias técnicas que se usaban anteriormente. [Learning HTTP/2](https://amzn.to/2xaScjO) es un buen material para conocer las diferencias y los problemas que presentaba HTTP/1.
 
@@ -217,7 +217,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 ### Mastering OAuth 2.0
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=c62cfbc31fdea33038fa6650c9bf9686" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=c62cfbc31fdea33038fa6650c9bf9686" >}}
 
 [OAuth][oauth] es un protocolo para proporcionar autenticación y autorización a un sitio o aplicación sin que el usuario le proporcione las credenciales. Una aplicación que requiera acceso aun tercero necesita obtener un _bearer token_ que mediante un proceso de autorización se puede obtener de cuatro formas diferentes dependiendo de la aplicación y de si el dispositivo autorizado es de confianza o no. [Matering OAuth 2.0](https://amzn.to/2wXTEH6) es una buena introducción.
 
@@ -229,22 +229,22 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 ### Git: Mastering Version Control
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MXIFY5E&linkId=f6eea55958b2783765b4bda371dd3e04" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MXIFY5E&linkId=f6eea55958b2783765b4bda371dd3e04" >}}
 
 He leído varios libros sobre [Git][git], muchos empiezan explicando como es la estructura de información que guarda Git, no es necesario empezar por ahí. El libro [Git: Mastering Version Control](https://amzn.to/2vKqyMR) es mucho más pragmático y explica muy bien los casos de uso que uno requiere de este sistema de control de versiones. Con este libro finalmente he aprendido mejor como usar un _rebase_ interactivo para reescribir los _commits_ o hacer un _squash_, también como crear _alias_ y _hooks_, los diferentes modos de _reset_ además de como crear _commits_, hacer búsquedas en el repositorio y otras muchas cosas que no he usado aún.
 
 ### GitLab Cookbook
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783986840&linkId=153454430c956fe5335fe123ab829a40" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783986840&linkId=153454430c956fe5335fe123ab829a40" >}}
 
 Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una versión para la comunidad usable por ejemplo en un servidor propio de una empresa u organización y que tiene varias herramientas integradas como son una wiki, un sistema de _tracking_ para las tareas de un proyecto junto con tableros y soporte para hacer integración y entrega continua sin necesidad de más herramientas lo que simplifica la infraestructura para el desarrollo en gran medida. También soporta otras características presentes en GitHub como _merge request_, revisiones entre pares o calidad de código entre otras muchas otras, la [lista completa de _features_](https://about.gitlab.com/features/) es grande. [GitLab Cookbook](https://amzn.to/2icQyvr) es un libro introductorio para empezar a manejarlo.
 
 ### Docker in Action y The DevOps 2.1 Toolkit
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=f257277b2f9112d7cd77aa1147bafd1d"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=f250891fe3d29d340f3fd3f82af96671" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=f257277b2f9112d7cd77aa1147bafd1d"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=f250891fe3d29d340f3fd3f82af96671" >}}
 
 [Docker][docker] y los contenedores junto con la computación en la nube han cambiado la forma de distribuir y desplegar las aplicaciones en los servidores. Docker es una gran herramienta muy interesante de conocer. Son varias las herramientas del ecosistema, [Docker in Action](https://amzn.to/2icqdxN) explica _docker_ y [_docker compose_][docker-compose] y [The DevOps 2.1 Toolkit](https://amzn.to/2uXSwBT) explica [_docker swarm_][docker-swarm] para crear _clusters_ de servidores.
 
@@ -253,8 +253,8 @@ Como servidor de Git me gustan de [GitLab][gitlab] dos cosas: que tiene una vers
 ### Ansible Up and Running y Implementing DevOps with Ansible 2
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491979801&linkId=35c25b05f8577bf1bf72e0797ca47367"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1787120538&linkId=2e83b442739bb1c91a6637a6f3d50a6c" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491979801&linkId=35c25b05f8577bf1bf72e0797ca47367"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1787120538&linkId=2e83b442739bb1c91a6637a6f3d50a6c" >}}
 
 [Ansible][ansible] es una herramienta para automatizar tareas en una o múltiples máquinas locales o remotas. Otra de sus propiedades en la mayoría de los casos es que es idempotente, es decir, se pueden ejecutar las acciones múltiples veces aplicando los cambios pertinentes o no haciendo nada según el estado de la máquina y el estado deseado.
 
@@ -265,9 +265,9 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 ### UNIX and Linux System Administration Handbook, Linux Administration A Beginner’s Guide y How Linux Works
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0134277554&linkId=7c91fcafae6964872c27d9bf3f68a9f1"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0071845364&linkId=a7a84bf9b3f731a5b2e4cffba08c00b4"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275676&linkId=09f1c68e67a12909a5af564fc43cf8d3" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0134277554&linkId=7c91fcafae6964872c27d9bf3f68a9f1"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0071845364&linkId=a7a84bf9b3f731a5b2e4cffba08c00b4"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1593275676&linkId=09f1c68e67a12909a5af564fc43cf8d3" >}}
 
 [UNIX and Linux System Administration Handbook](https://amzn.to/2vPg7WB) es un libro que presenta al usuario los sistemas GNU/Linux, [Linux Administration A Beginner’s Guide](https://amzn.to/2wXrJae) detalla las tareas administrativas para un servidor Linux y [How Linux Works](https://amzn.to/2uYcE6Z) es un libro que explica detalles más profundos de aspectos internos de Linux.
 
@@ -275,8 +275,8 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 <div class="media-amazon float-right">
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292885&linkId=88093372487f3f14280848b9bec59ef8"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1118571835&linkId=03661313e03334c617b0ec833c2e2eb3" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292885&linkId=88093372487f3f14280848b9bec59ef8"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1118571835&linkId=03661313e03334c617b0ec833c2e2eb3" >}}
 
 Aún habiendo leído [Amazon Web Services in Action](https://amzn.to/2v8nI0F) y [Amazon Web Services For Dummies](https://amzn.to/2icfumV) como no he tenido la oportunidad de practicar con la nube de Amazon casi todo de lo que leí lo tengo olvidado. [Amazon ofrece una capa gratuita](https://aws.amazon.com/es/free/) para probarlo.
 
@@ -295,7 +295,7 @@ Aun es la [edición del 2015](https://dzone.com/guides/the-java-ecosystem-2015-e
 ### The daemon, the GNU and the penguin
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=097903423X&linkId=cf2cd5a87906b63405d49e3f74dc59a3" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=097903423X&linkId=cf2cd5a87906b63405d49e3f74dc59a3" >}}
 
 [The daemon, the GNU and the penguin](https://amzn.to/2vKs5CH) es un documento que repasa el origen, inicios y evolución del software libre y de código abierto desde el año 1968 con referencias a Unix, BSD, Minix, Sun, GPL, Hurd, la web, Tanenbaum, Torvalds, Linux, ... Este documento y el siguiente son unos clásicos en internet.
 

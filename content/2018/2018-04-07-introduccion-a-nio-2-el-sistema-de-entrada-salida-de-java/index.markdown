@@ -59,8 +59,8 @@ En cuanto a la programación de entrada/salida asíncrona se ofrecen dos paradig
 Si se desea profundizar más en NIO y NIO.2 el libro [The Well-Grounded Java Developer](https://amzn.to/2JsEIao) dedica un capítulo introductorio en el que me he basado para realizar este artículo, el libro [Java I/O, NIO and NIO.2](https://amzn.to/2q7qMdN) está completamente dedicado al nuevo sistema de entrada/salida de Java y el tutorial [Java Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html) también está muy bien como introducción.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290068&linkId=61507308185711a0af4b5ed5ab70b62b"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484215664&linkId=d748ea086bd02aa68dd0b27945514558" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617290068&linkId=61507308185711a0af4b5ed5ab70b62b"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1484215664&linkId=d748ea086bd02aa68dd0b27945514558" >}}
 
 En el artículo [monitorizar archivos con Java][blogbitix-43] muestro como recibir eventos cuando se añade, elimina o modifica algún archivo de los observados usando la clase [WatchService](https://docs.oracle.com/javase/10/docs/api/java/nio/file/WatchService.html).
 

@@ -1,3 +1,7 @@
+{{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
 {{ partial "links.html" . }}
-{{ partial "links-posts.html" . }}
+{{ $linksposts := partial "links-posts.html" . }}
+{{ $linksposts1 := replaceRE "\n" (print $urlsuffix "\n") $linksposts }}
+{{ $linksposts2 := replaceRE (print "\n" $urlsuffix "\n") "\n\n" $linksposts1 }}
+{{ $linksposts2 }}
 {{ .Inner }}

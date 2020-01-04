@@ -1,25 +1,58 @@
+{{ $tags := $.Site.Data.theme.conf.tags.html }}
+{{ $imgtag := $tags.imgtag }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+
+{{ $proportion := div 4.0 3.0 }}
+{{ $width := .Params.width }}
+{{ $width1 := .Params.width1 }}
+{{ $width2 := .Params.width2 }}
+{{ $width3 := .Params.width3 }}
+{{ $width4 := .Params.width4 }}
+{{ $height := "" }}
+{{ $height1 := "" }}
+{{ $height2 := "" }}
+{{ $height3 := "" }}
+{{ $height4 := "" }}
+
 {{ if .Params.image }}
+{{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image)) true }}{{ errorf "Missing file '%s': %s" .Params.image .Position }}{{ end }}
+{{ with .Get "width" }}{{ else }}{{ errorf "Missing value for 'width': %s" .Position }}{{ end }}
+{{ $image := print "assets/images/logotypes/" .Params.image }}
 <div class="logotypes">
-    <img src="{{ .Site.Params.context }}/assets/images/logotypes/{{ .Params.image }}" class="right {{ .Params.class }}"{{ if .Params.width }} width="{{ .Params.width }}"{{ end }} alt="{{ .Params.title }}" title="{{ .Params.title }}"/>
+   {{ $imgtagopen | safeHTML }} src="{{ $image | relURL }}" class="right" width="{{ .Params.width }}" height="{{ $height }}" layout="responsive" alt="{{ .Params.title }}" title="{{ .Params.title }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image1 }}
+{{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image1)) true }}{{ errorf "Missing file '%s': %s" .Params.image1 .Position }}{{ end }}
+{{ with .Get "width1" }}{{ else }}{{ errorf "missing value for 'width1': %s" .Position }}{{ end }}
+{{ $image1 := print "assets/images/logotypes/" .Params.image1 }}
 <div class="logotypes">
-    <img src="{{ .Site.Params.context }}/assets/images/logotypes/{{ .Params.image1 }}" class="right {{ .Params.class1 }}"{{ if .Params.width1 }} width="{{ .Params.width1 }}"{{ end }} alt="{{ .Params.title1 }}" title="{{ .Params.title1 }}"/>
+   {{ $imgtagopen | safeHTML }} src="{{ $image1 | relURL }}" class="right" width="{{ .Params.width1 }}" height="{{ $height1 }}" layout="responsive" alt="{{ .Params.title1 }}" title="{{ .Params.title1 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image2 }}
+{{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image2)) true }}{{ errorf "Missing file '%s': %s" .Params.image2 .Position }}{{ end }}
+{{ with .Get "width2" }}{{ else }}{{ errorf "missing value for 'width2': %s" .Position }}{{ end }}
+{{ $image2 := print "assets/images/logotypes/" .Params.image2 }}
 <div class="logotypes">
-    <img src="{{ .Site.Params.context }}/assets/images/logotypes/{{ .Params.image2 }}" class="right {{ .Params.class2 }}"{{ if .Params.width2 }} width="{{ .Params.width2 }}"{{ end }} alt="{{ .Params.title2 }}" title="{{ .Params.title2 }}"/>
+   {{ $imgtagopen | safeHTML }} src="{{ $image2 | relURL }}" class="right" width="{{ .Params.width2 }}" height="{{ $height2 }}" layout="responsive" alt="{{ .Params.title2 }}" title="{{ .Params.title2 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image3 }}
+{{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image3)) true }}{{ errorf "Missing file '%s': %s" .Params.image3 .Position }}{{ end }}
+{{ with .Get "width3" }}{{ else }}{{ errorf "missing value for 'width3': %s" .Position }}{{ end }}
+{{ $image3 := print "assets/images/logotypes/" .Params.image3 }}
 <div class="logotypes">
-    <img src="{{ .Site.Params.context }}/assets/images/logotypes/{{ .Params.image3 }}" class="right {{ .Params.class3 }}"{{ if .Params.width3 }} width="{{ .Params.width3 }}"{{ end }} alt="{{ .Params.title3 }}" title="{{ .Params.title3 }}"/>
+   {{ $imgtagopen | safeHTML }} src="{{ $image3 | relURL }}" class="right" width="{{ .Params.width3 }}" height="{{ $height3 }}" layout="responsive" alt="{{ .Params.title3 }}" title="{{ .Params.title3 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image4 }}
+{{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image4)) true }}{{ errorf "Missing file '%s': %s" .Params.image4 .Position }}{{ end }}
+{{ with .Get "width4" }}{{ else }}{{ errorf "missing value for 'width4': %s" .Position }}{{ end }}
+{{ $image4 := print "assets/images/logotypes/" .Params.image4 }}
 <div class="logotypes">
-    <img src="{{ .Site.Params.context }}/assets/images/logotypes/{{ .Params.image4 }}" class="right {{ .Params.class4 }}"{{ if .Params.width4 }} width="{{ .Params.width4 }}"{{ end }} alt="{{ .Params.title4 }}" title="{{ .Params.title4 }}"/>
+   {{ $imgtagopen | safeHTML }} src="{{ $image4 | relURL }}" class="right" width="{{ .Params.width4 }}" height="{{ $height4 }}" layout="responsive" alt="{{ .Params.title4 }}" title="{{ .Params.title4 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}

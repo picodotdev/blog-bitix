@@ -49,7 +49,7 @@ En los playbooks podemos usar tareas, grupos de máquinas, variables, variables 
 
 El libro [Ansible Up & Running](https://www.ansible.com/ansible-book) es un buen punto de partida que explica los aspectos básicos ya en su versión de vista previa, por supuesto la propia [documentación del proyecto](http://docs.ansible.com/index.html) y los [recursos de evangelización](https://www.ansible.com/resources) están bastante bien. En la siguiente buena y completa presentación se explican con un poco más detalle más cosas:
 
-{{< speakerdeck e02a4f70ee4d01312be742839f79c6f5 >}}
+{{< speakerdeck id="e02a4f70ee4d01312be742839f79c6f5" >}}
 
 También, en el siguiente [repositorio de GitHub hay varios ejemplos](https://github.com/ansible/ansible-examples) que podemos revisar para ver como se organizan los archivos y carpetas y las convenciones en su estructura que se usan implícitamente.
 

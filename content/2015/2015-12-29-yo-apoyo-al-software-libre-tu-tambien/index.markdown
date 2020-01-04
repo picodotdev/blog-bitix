@@ -15,7 +15,7 @@ summary: "Hay múltiples formas con las que colaborar con el software libre, una
 
 {{% post %}}
 
-{{< logotype image1="fsf.png" title1="Free Software Foundation" image2="fsfe.png" title2="Free Software Foundation Europe" image3="gnu.svg" title3="GNU" width3="200" >}}
+{{< logotype image1="fsf.svg" title1="Free Software Foundation" width1="300" image2="fsfe.svg" title2="Free Software Foundation Europe" width2="200" image3="gnu.svg" title3="GNU" width3="200" >}}
 
 Hace una semanas he recibido la cuarta transferencia de Google por la publicidad AdSense que incluyo en Blog Bitix. Si es por la cantidad, el esfuerzo y tiempo que requiere cada artículo no compensa aunque recibirlo de vez cuando alegra. Al año el blog me genera unos 80€, dependiendo de mes y los clics que se hagan entre 7€ y 11€. Un día [Liher publicó un artículo](http://elblogdeliher.com/lo-prometido-es-deuda-y-a-mi-no-me-gusta-ser-deudor-d/) en el que comentaba que había hecho una donación al proyecto [Debian][debian] dando muestras de ello con la transferencias de PayPal para que no hubiese ningún género de duda. Me pareció muy buena iniciativa y escribí en su artículo un comentario que el día que yo recibiese la siguiente transferencia de Google por la publicidad haría una donación a algún proyecto relacionado con software libre.
 

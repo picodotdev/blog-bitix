@@ -1,0 +1,51 @@
+{{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
+<article>
+    <h1>{{ .Title }}</h1>
+    <p class="information">
+      {{ if eq .Params.promoted "external" }}
+        {{ i18n "published_by" }}
+      {{ else }}
+        {{ i18n "writed_by" }}
+      {{ end }} 
+      <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span> el <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, actualizado el <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
+      {{ if isset .Params "tags" }}
+        <br>
+        {{ range $tag := .Params.tags }}
+          {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
+          <a href="{{ $url }}">{{ $tag }}</a>
+        {{ end }}
+      {{ end }}
+      <br>
+      <a href="{{ .RelPermalink }}">{{ i18n "permanent_link" }}</a>
+      {{ if .Params.comments }}
+        <a href="{{ .RelPermalink }}#comments">{{ i18n "comments" }}</a>
+      {{ end }}
+      {{ if eq .Params.promoted true }}
+        <div class="alert alert-info" role="alert">
+          <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_info" | markdownify | htmlUnescape | safeHTML }}</small>
+        </div>
+      {{ else if eq .Params.promoted "external" }}
+        <div class="alert alert-info" role="alert">
+          <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "promoted_external_info" | markdownify | htmlUnescape | safeHTML }}</small>
+        </div>
+      {{ end }}
+    </p>
+
+    {{ if isset .Params "summary" }}
+      <p class="summary">{{ .Params.summary | markdownify }}</p>
+    {{ end }}
+    {{ if isset .Params "note" }}
+      <div class="alert alert-warning">{{ .Params.note | markdownify }}</div>
+    {{ end }}
+
+    {{ if isset .Params "summary" }}
+      <div>
+        {{ partial "adsense/leaderboard.html" . }}
+      </div>
+    {{ end }}
+
+    <div class="content">
+      {{ partial "share-this-begin.html" . }}
+      {{ .Content }}
+    </div>
+  </article>

@@ -1,28 +1,30 @@
+{{ .Scratch.Set "outputFormat" "HTML" }}
+{{ partial "globals.html" . }}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
-  <base href="{{ .Site.BaseURL }}">
-
+  <meta name="base" href="{{ "" | relURL }}">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
-  {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
 
-  {{ .Scratch.Set "images" (partial "images-post.html" .) }}
+  <title>{{ .Title }}</title>
+
+  <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
+  <link rel="canonical" type="text/html" href="{{ with .OutputFormats.Get "HTML" }}{{ .Permalink }}{{ end }}">
+  {{ range .AlternativeOutputFormats -}}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
+  <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
 
   {{ if .IsPage }}
   {{ partial "html-head-social.html" . }}
   {{ end }}
-
-  <title>{{ .Title }}</title>
-
-  <link rel="shortcut icon" href="assets/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144-precomposed.png">
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
-  <link rel="humans" type="text/plain" href="humans.txt" />
 
   {{ if .IsPage }}
   <script type="application/ld+json">
@@ -30,36 +32,20 @@
   </script>
   {{ end }}
 
-
   {{ "<!-- CSS -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="assets/css/font.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/Gallery-2.33.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" | relURL }}">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/Gallery-2.33.0/css/blueimp-gallery.min.css" | relURL }}">
   {{ "<!-- Theme -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/syntax.css" | relURL }}">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main-cookieconsent.css" | relURL }}">
 
   {{ "<!-- JavaScript -->" | safeHTML }}
-  <script type="text/javascript" src="assets/js/require-config.js" data-main="js/main" defer></script>
-  <script type="text/javascript" src="assets/libs/require.js" data-main="js/main" defer></script>
+  <script type="text/javascript" src="{{ "assets/js/require-config.js" | relURL }}" defer></script>
+  <script type="text/javascript" src="{{ "assets/libs/require.js" | relURL }}" data-main="{{ "assets/js/main" | relURL }}" defer></script>
 
-  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
-  <script type="text/javascript" defer>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: '{{ .Site.Params.adsense.adclient }}',
-      enable_page_level_ads: true
-    });
-  </script>
-  <script type="text/javascript" defer>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '{{ .Site.Params.analytics.trackingid }}', '{{ .Site.Params.analytics.domain }}');
-    ga('send', 'pageview');
-  </script>
-  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5920c4ce1bd0670011e06acd&product=inline-share-buttons" defer></script>
+  {{ partial "analytics.html" . }}
+  {{ partial "html-head-adsense.html" . }}
 
   {{ partial "html-head-custom-css.html" . }}
   {{ partial "html-head-custom-js.html" . }}

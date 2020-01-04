@@ -1,3 +1,8 @@
+{{ $tags := $.Site.Data.theme.conf.tags.html }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+
 {{ if and (.Params.image1) (not (findRE "\\.svg$" .Params.image1)) }}
   {{ $image1 := .Page.Resources.GetMatch (print "images/" .Params.image1) }}
   {{ $command1 := default "Fit" .Params.command1 }}
@@ -64,7 +69,7 @@
 <div class="media">
 <figure>
 {{ if $imagescaled1 }}
-  <img data-src="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" height="{{ $imagescaled1.Height }}" class="lozad {{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $imagescaled1.RelPermalink }}" width="{{ $imagescaled1.Width }}" height="{{ $imagescaled1.Height }}" class="lozad {{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}">{{ $imgtagclose | safeHTML }}
 {{ else if $imagevectorial1 }}
   {{ if .Params.logotype1 }}
     {{ $.Scratch.Set "path1" "assets/images/logotipos/" }}
@@ -72,10 +77,10 @@
     {{ $.Scratch.Set "path1" (print (replaceRE "^/" "" .Page.Params.url) "images/") }}
   {{ end }}
   {{ $path1 := $.Scratch.Get "path1" }}
-  <img data-src="{{ $path1 }}{{ $imagevectorial1 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options1) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options1) 0 }}px;" class="lozad {{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $path1 | relURL }}{{ $imagevectorial1 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options1) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options1) 0 }}px;" class="lozad {{ .Params.class1 }}" alt="{{ .Params.alt1 }}" title="{{ .Params.title1 }}">{{ $imgtagclose | safeHTML }}
 {{ end }}
 {{ if $imagescaled2 }}
-  <img data-src="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" height="{{ $imagescaled2.Height }}" class="lozad {{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $imagescaled2.RelPermalink }}" width="{{ $imagescaled2.Width }}" height="{{ $imagescaled2.Height }}" class="lozad {{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}">{{ $imgtagclose | safeHTML }}
 {{ else if $imagevectorial2 }}
   {{ if .Params.logotype2 }}
     {{ $.Scratch.Set "path2" "assets/images/logotipos/" }}
@@ -83,10 +88,10 @@
     {{ $.Scratch.Set "path2" (print (replaceRE "^/" "" .Page.Params.url) "images/") }}
   {{ end }}
   {{ $path2 := $.Scratch.Get "path2" }}
-  <img data-src="{{ $path2 }}{{ $imagevectorial2 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options2) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options2) 0 }}px;" class="lozad {{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $path2 | relURL }}{{ $imagevectorial2 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options2) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options2) 0 }}px;" class="lozad {{ .Params.class2 }}" alt="{{ .Params.alt2 }}" title="{{ .Params.title2 }}">{{ $imgtagclose | safeHTML }}
 {{ end }}
 {{ if $imagescaled3 }}
-  <img data-src="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" height="{{ $imagescaled3.Height }}" class="lozad {{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $imagescaled3.RelPermalink }}" width="{{ $imagescaled3.Width }}" height="{{ $imagescaled3.Height }}" class="lozad {{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}">{{ $imgtagclose | safeHTML }}
 {{ else if $imagevectorial3 }}
   {{ if .Params.logotype3 }}
     {{ $.Scratch.Set "path3" "assets/images/logotipos/" }}
@@ -94,7 +99,7 @@
     {{ $.Scratch.Set "path3" (print (replaceRE "^/" "" .Page.Params.url) "images/") }}
   {{ end }}
   {{ $path3 := $.Scratch.Get "path3" }}
-  <img data-src="{{ $path3 }}{{ $imagevectorial3 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options3) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options3) 0 }}px;" class="lozad {{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}"/>
+  {{ $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $path3 | relURL }}{{ $imagevectorial3 }}" style="max-width: {{ index (findRE "^\\d+" .Params.options3) 0 }}px; max-height: {{ index (findRE "\\d+$" .Params.options3) 0 }}px;" class="lozad {{ .Params.class3 }}" alt="{{ .Params.alt3 }}" title="{{ .Params.title3 }}">{{ $imgtagclose | safeHTML }}
 {{ end }}
 </figure>
 </div>

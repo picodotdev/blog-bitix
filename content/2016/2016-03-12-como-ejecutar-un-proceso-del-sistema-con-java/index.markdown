@@ -14,7 +14,7 @@ summary: "Dada la popularidad de Java es difícil que no encontremos en el propi
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="gnu.svg" title2="GNU" width2="200" image3="linux.svg" title3="Linux" wdth3="200" >}}
+{{< logotype image1="java.svg" title1="Java" width1="200" image2="gnu.svg" title2="GNU" width2="200" image3="linux.svg" title3="Linux" width3="200" >}}
 
 Java de por sí incluye una amplia colección de clases con las funcionalidades principales que podamos necesitar, si no lo ofrece en la [API][javadoc-8] es muy posible que haya una librería que lo proporcione. Pero en algún momento quizá se nos dé el caso que un comando del sistema devuelve la información o realiza la acción que necesitamos. Puede ser una un comando del sistema [GNU][gnu]/[Linux][linux], [Windows][windows] o [Mac OS X][mac] o un [_script_ en Java][blogbitix-108], [Python][python], [Ruby][ruby] u otro lenguaje de programación. A través de las clase [Process](https://docs.oracle.com/javase/8/docs/api/java/lang/Process.html) y [ProcessBuilder](https://docs.oracle.com/javase/8/docs/api/java/lang/ProcessBuilder.html) nos es posible lanzar un proceso de cualquier comando del sistema y acceder a su entrada estándar, salida estándar y salida de error.
 

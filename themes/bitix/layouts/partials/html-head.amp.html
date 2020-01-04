@@ -1,28 +1,28 @@
+{{ .Scratch.Set "outputFormat" "AMP" }}
+{{ partial "globals.html" . }}
 <!DOCTYPE html>
 <html amp lang="{{ .Site.Language.Lang }}">
 <head>
-  <base href="{{ .Site.BaseURL }}">
-
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <meta name="base" content="{{ "" | relURL }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
 
-  {{ .Scratch.Set "images" (partial "images-post.html" .) }}
+  <title>{{ .Title }}</title>
+
+  <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
+  {{ range .AlternativeOutputFormats }}<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}">{{ end }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
+  <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
 
   {{ if .IsPage }}
   {{ partial "html-head-social.html" . }}
   {{ end }}
-
-  <title>{{ .Title }}</title>
-
-  <link rel="shortcut icon" href="assets/favicon.ico">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144-precomposed.png">
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="alternate" type="application/rss+xml" href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Title }}">
-  <link rel="humans" type="text/plain" href="humans.txt" />
 
   {{ if .IsPage }}
   <script type="application/ld+json">
@@ -30,37 +30,24 @@
   </script>
   {{ end }}
 
-
   {{ "<!-- CSS -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="assets/css/font.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/libs/Gallery-2.33.0/css/blueimp-gallery.min.css">
   {{ "<!-- Theme -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <style amp-custom> 
+  {{ partial "style-bootstrap.amp.css" . | safeCSS }}
+  {{ partial "style-syntax.amp.css" . | safeCSS }}
+  {{ partial "style-main.amp.css" . | safeCSS }}
+  </style>
 
-  {{ "<!-- JavaScript -->" | safeHTML }}
-  <script type="text/javascript" src="assets/js/require-config.js" data-main="js/main" defer></script>
-  <script type="text/javascript" src="assets/libs/require.js" data-main="js/main" defer></script>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" defer></script>
-  <script type="text/javascript" defer>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: '{{ .Site.Params.adsense.adclient }}',
-      enable_page_level_ads: true
-    });
-  </script>
-  <script type="text/javascript" defer>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>  
 
-    ga('create', '{{ .Site.Params.analytics.trackingid }}', '{{ .Site.Params.analytics.domain }}');
-    ga('send', 'pageview');
-  </script>
-  <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5920c4ce1bd0670011e06acd&product=inline-share-buttons" defer></script>
+  {{ partial "html-head-adsense.amp.html" . }}
 
-  {{ partial "html-head-custom-css.html" . }}
-  {{ partial "html-head-custom-js.html" . }}
+  {{ partial "html-head-custom-css.amp.html" . }}
+  {{ partial "html-head-custom-js.amp.html" . }}
 </head>

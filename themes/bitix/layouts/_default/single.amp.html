@@ -1,0 +1,58 @@
+{{ $tags := $.Site.Data.theme.conf.tags.amp }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+
+{{ partial "html-head.amp.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "head.amp.html" . }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        {{ partial "adsense/billboard.amp.html" . }}
+      </div>
+    </div>
+    {{ if .Params.imageHead }}
+    {{ $imagehead := .Page.Resources.GetMatch (print .Params.imageHead) }}
+    {{ $imageheadthumb := $imagehead.Resize "1040x" }}
+    <div class="row page-header">
+      <div class="col-12">
+        {{ $imgtagopen | safeHTML }} src="{{ $imageheadthumb.RelPermalink }}" width="{{ $imageheadthumb.Width }}" height="{{ $imageheadthumb.Height }}">
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-12">
+        <div class="adblock-sidebar-container">
+          <div class="adblock-sidebar-container-left"></div>
+          <div class="adblock-sidebar-container-right">
+            {{ partial "adsense/auto-vertical.amp.html" . }}
+          </div>
+        </div>
+        {{ partial "article-single.amp.html" . }}
+        {{ partial "series.html" . }}
+        {{ partial "related.html" . }}
+        {{ partial "share-this.amp.html" . }}
+        <div class="row">
+          <div class="col-12 text-center">
+            <a id="pageBottom"></a>
+            {{ partial "adsense/billboard.amp.html" . }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    {{ partial "footer.amp.html" . }}
+  </div>
+  {{ partial "html-footer.amp.html" . }}
+  {{ partial "html-footer-custom.amp.html" . }}
+</body>
+</html>

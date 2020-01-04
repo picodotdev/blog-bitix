@@ -1,0 +1,69 @@
+{{ $tags := $.Site.Data.theme.conf.tags.amp }}
+{{ $iframetagopen := $tags.iframetagopen }}
+{{ $iframetagclose := $tags.iframetagclose }}
+{{ $iframetagsrc := $tags.iframetagsrc }}
+
+{{ if or .Params.link1 .Params.link2 .Params.link3 .Params.link4 .Params.link5 .Params.link6 .Params.link7 .Params.link8 .Params.link9 .Params.link10 }}
+<div class="media-amazon">
+  {{ if .Params.link1 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link1 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link2 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link2 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link3 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link3 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link4 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link4 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link5 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link5 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link6 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link6 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link7 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link7 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link8 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link8 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link9 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link9 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+  {{ if .Params.link10 }}{{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ .Params.link10 }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+</div>
+{{ end }}
+
+{{ if and .Params.linkid .Params.asins1 }}
+<div class="media-amazon">
+  {{ range $asin := (split .Params.asins1 ",") }}{{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }} {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+</div>
+{{ end }}
+{{ if and .Params.linkid .Params.asins2 }}
+<div class="media-amazon">
+  {{ range $asin := (split .Params.asins1 ",") }}{{ $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $.Params.linkid }} {{ $iframetagopen | safeHTML }} style="width:120px;height:240px;" width="120" height="240" scrolling="no" frameborder="0" {{ $iframetagsrc }}="{{ $link }}" class="lozad">{{ $iframetagclose | safeHTML }}{{ end }}
+</div>
+{{ end }}
+
+{{/*
+{{ if and .Params.linkid or .Params.asins1 }}
+<div class="media-amazon">
+  <amp-ad
+    width="600"
+    height="250"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="{{ .Site.Params.amazon.trackingId }}"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="US"
+    data-amzn_assoc_title="{{ i18n "suggested_products" }}"
+    data-amzn_assoc_linkid="{{ .Params.linkid }}"
+    data-amzn_assoc_asins="{{ .Params.asins1 }}">
+  </amp-ad>
+{{ end }}
+{{ if and .Params.linkid or .Params.asins2 }}
+  <amp-ad
+    width="600"
+    height="250"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="{{ .Site.Params.amazon.trackingId }}"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="{{ i18n "suggested_products" }}"
+    data-amzn_assoc_linkid="{{ .Params.linkid }}"
+    data-amzn_assoc_asins="{ .Params.asins2 }}">
+  </amp-ad>
+</div>
+{{ end }}
+*/}}

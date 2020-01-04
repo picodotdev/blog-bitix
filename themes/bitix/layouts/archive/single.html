@@ -1,3 +1,4 @@
+{{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
 {{ partial "html-head.html" . }}
 <body>
   <div class="container">
@@ -13,10 +14,10 @@
           <div class="col-md-12">
             <div class="adblock-sidebar-container">
               <div class="adblock-sidebar-container-left">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.html" . }}
               </div>
               <div class="adblock-sidebar-container-right">
-                {{ partial "sidebar-ad.html" . }}
+                {{ partial "adsense/auto-vertical.html" . }}
               </div>
             </div>
             <h1>{{ .Title }}</h1>
@@ -33,15 +34,17 @@
             </ul>
             <h3>{{ i18n "tags" }}</h3>
             <ul class="tags">
-            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-              <li><a href="tags/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
-            {{ end }}
-            </ul>
-            <h3>Series</h3>
-            <ul class="tags">
-            {{ range $name, $taxonomy := .Site.Taxonomies.series }}
-              <li><a href="series/{{ $name | urlize }}/">{{ $name }}</a> <small>({{ $taxonomy.Count }})</small></li>
-            {{ end }}
+              {{ range $tag, $taxonomy := .Site.Taxonomies.tags }}
+                {{ $url := print "tags/" $tag "/" $urlsuffix | relURL }}
+                <li><a href="{{ $url | urlize }}">{{ $tag }}</a> <small>({{ $taxonomy.Count }})</small></li>
+              {{ end }}
+              </ul>
+              <h3>Series</h3>
+              <ul class="tags">
+              {{ range $serie, $taxonomy := .Site.Taxonomies.series }}
+                {{ $url := print "series/" $serie "/" $urlsuffix | relURL }}
+                <li><a href="{{ $url | urlize }}">{{ $serie }}</a> <small>({{ $taxonomy.Count }})</small></li>
+              {{ end }}
             </ul>
             {{ range (where .Site.Pages "Section" "in" (split "2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029" ",")).GroupByDate "2006" "desc" }}
               <h3>{{ .Key }}</h3>

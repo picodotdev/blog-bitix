@@ -37,9 +37,9 @@ Después de unos años se han lanzado versiones notablemente mejoradas, hasta la
     caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=8984621587929046662fba2b79079f5e"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01DDFFOYK&linkId=079335c8a813f0df668ada2e897b7562"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J29BR3Y&linkId=4c06245cfc2383a7972edcbe3e42333a" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=8984621587929046662fba2b79079f5e"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01DDFFOYK&linkId=079335c8a813f0df668ada2e897b7562"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J29BR3Y&linkId=4c06245cfc2383a7972edcbe3e42333a" >}}
 
 Hace unas semanas compré un [kit de electrónica básico para la Raspberry Pi](https://amzn.to/2mgnpko) pero que incluye una buena cantidad de sensores y elementos de electrónica y sirve para cualquier placa con _pines_ GPIO. Como el _kit_ es para la Raspberry Pi 3 y viene con un cable de extensión de 40 _pines_ (cantidad de _pines_ que tiene la Raspberry Pi 3) y yo tengo la 1 debí comprar también un [cable de extensión de 26 pines](https://amzn.to/2lSYiDF) (los que tiene la Raspberry Pi 1) para la matriz de puntos con la que hacer pruebas sin soldar los elementos. El precio del _kit_ no es muy caro, de unos 30€ y el barómetro no venía soldado con sus _pines_ por lo que si queremos usarlo deberemos hacer la soldadura primero con un [soldador de electrónica](https://amzn.to/2mtXv8L) y [estaño](https://amzn.to/2lSTYUU).
 
@@ -84,10 +84,10 @@ El contenido del _kit_ es el siguiente que viene en una estupenda caja de plást
     caption="Adaptador breadboard, diodos, botones, resistencias y fotoresistores" >}}
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MDUP97N&linkId=a16adfaf3d471a1e94dc0590c0d615be"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00W9F5LR6&linkId=5668053b0c5cb1aa9ff20db0e39790e8"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC2AQJK&linkId=e45d6edd69dac157bd5ddf58be2cb301"
-    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B008DEYEAW&linkId=1f3f2cae44a45a28da37ac44749ed329" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MDUP97N&linkId=a16adfaf3d471a1e94dc0590c0d615be"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00W9F5LR6&linkId=5668053b0c5cb1aa9ff20db0e39790e8"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC2AQJK&linkId=e45d6edd69dac157bd5ddf58be2cb301"
+    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B008DEYEAW&linkId=1f3f2cae44a45a28da37ac44749ed329" >}}
 
 La matriz de conexiones o _breadboard_ es una forma cómoda de hacer pruebas sin tener que hacer soldaduras, los puntos en vertical de la mitad superior e inferior están conectados entre si de modo que con los cables macho-macho podamos poner y quitar conexiones. La matriz está numerada horizontalmente con números y verticalmente con letras de forma que cada punto sea identificable individualmente. Las dos filas de puntos superiores suelen usarse para proporcionar un voltaje de 5V y la conexión de tierra, las dos filas de puntos inferiores para proporcionar un voltaje de 3.3V y tierra. La placa está dividida en dos mitades verticalmente de las letras A-D y E-F formando columnas verticales de puntos conectadas en grupos de 5.
 

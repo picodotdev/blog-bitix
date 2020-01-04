@@ -43,7 +43,7 @@ También podemos guardar la partida para continuarla con posterioridad. Solo nos
 En Amazon hay varios libros que serán más didácticos sobre estrategia para el juego del ajedrez como [Ajedrez para niños](https://amzn.to/29Cj30T) o [El ajedrez de torneo](https://amzn.to/29CiOTD) y en la biblioteca libre [OpenLibra][openlibra] hay algunos de libre acceso como [Ajedrez y su Enseñanza: Libro de Aperturas](https://openlibra.com/es/book/ajedrez-y-su-ensenanza-libro-de-aperturas). Leyendo alguno de estos libros obtendremos pautas y tácticas que podemos emplear para mejorar nuestras jugadas.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8425517893&linkId=c1e1fc606e2606fec91e2db08cadcfa7&internal=1"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=842450397X&linkId=b78575ac7587361ca5bb1405a9a2de99&internal=1" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=8425517893&linkId=c1e1fc606e2606fec91e2db08cadcfa7&internal=1"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=842450397X&linkId=b78575ac7587361ca5bb1405a9a2de99&internal=1" >}}
 
 {{% /post %}}

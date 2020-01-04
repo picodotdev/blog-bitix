@@ -35,11 +35,11 @@ La industria de juego sigue creciendo con las nuevas generaciones ya siendo nati
 
 Algunos de los juegos actuales en los que se realizan competiciones son [Hearthstone](https://playhearthstone.com/es-es/), [League of legends](https://play.euw.leagueoflegends.com/es_ES), [Clash Royale](https://clashroyale.com/es/), ... que han sido diseñados no solo como para el entretenimiento como los juegos de hace unas pocas décadas para competir entre humano e inteligencia artificial más o menos inteligente o automática de la máquina sino para ser jugados de forma competitiva entre humanos principalmente.
 
-{{< youtube-gaming video="lBWgRCRH1Gs" >}}>
+{{< youtube-gaming video="lBWgRCRH1Gs" >}}
 
-{{< youtube-gaming video="NpVXLpkjUCc" >}}>
+{{< youtube-gaming video="NpVXLpkjUCc" >}}
 
-{{< youtube-gaming video="MUb8dGKpuEE" >}}>
+{{< youtube-gaming video="MUb8dGKpuEE" >}}
 
 Es plausible que en un futuro estas competiciones se conviertan en eventos deportivos con el potencial de ser el equivalente en los _eSports_ como hoy lo son la liga de campeones europea, la copa del mundo de fútbol, la Super Bowl o las finales de la NBA ya sea en modalidades de por equipos o de selecciones por país.
 

@@ -62,10 +62,10 @@ Todos estos termos poseen un tamaño similar al de una caldera por lo que en cua
 * [Fleck Duo 7](http://www.fleck.es/id/29/producto/mejor-termo-electrico-duo7)
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MTL02S4&linkId=4b5320be60b4df3802da30306b8e3f7b"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01EMZWDTY&linkId=9c8849411b404178b7b4abcc7cd1ef33"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00KG6I2TY&linkId=32d1f18e40c2345afb044565dd3be7e3"
-    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HSGVBZW&linkId=5b9e03fd71cba23cd0430287e72564df" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01MTL02S4&linkId=4b5320be60b4df3802da30306b8e3f7b"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01EMZWDTY&linkId=9c8849411b404178b7b4abcc7cd1ef33"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00KG6I2TY&linkId=32d1f18e40c2345afb044565dd3be7e3"
+    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00HSGVBZW&linkId=5b9e03fd71cba23cd0430287e72564df" >}}
 
 Finalmente me decidí por el termo Feck Duo7 50 es un termo de gama alta y su precio es de los más altos entre los modelos de termos con la misma capacidad pero su precio como comentaba anteriormente es muy inferior a cualquier modelo de caldera. Donde vivo el agua es de buena calidad y blanda con lo que las resistencias no lo he considerado muy importante que estuviesen envainadas. El _display_ es bastante bueno pudiendo elegir la temperatura del agua, informa del tiempo restante hasta alcanzarla y la temperatura del agua actual. Este modelo de termo eléctrico una de las varias cosas buenas que tiene es que es muy plano tiendo únicamente 27 centímetros de fondo con lo que es posible ganar un espacio que antes estaba ocupado por la caldera como ha sido en mi caso. Se puede colocar en vertical u horizontal. Posee ánodo electrónico asi como también ánodos de magnesio, función antilegionela, antihelada, un _display_ digital que indica el tiempo restante hasta alcanzar la temperatura programada y la temperatura actual, función de ahorro de energía según hábitos de uso y dos depósitos independientes para mayor eficiencia calificada como B. Los controles son táctiles, intuitivos y con la rueda circular se controla la temperatura.
 
@@ -136,7 +136,7 @@ Con el grifo monomando que tengo la temperatura del agua caliente se puede regul
     caption="Grifo monomando" >}}
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RTG1HSC&linkId=baa76cf96f2ebb3cb7d15d6baa53c816" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00RTG1HSC&linkId=baa76cf96f2ebb3cb7d15d6baa53c816" >}}
 
 Me he duchado con el agua en el termo a 55, 50 y 45 grados (manteniendo a 45 grados el agua es más que suficiente) y con con una distancia en mi casa desde el termo hasta el baño de unos 15 metros de tubería y el agua en la ducha sale bastante caliente, lo suficiente para ducharse en verano y haciendo que el monomando que tengo no esté completamente abierto en el agua caliente. 50 litros dan más que suficiente para dos duchas sin agobios por ahorrar agua. Para disponer de más cantidad de agua caliente basta con subir la temperatura del agua en el termo.
 

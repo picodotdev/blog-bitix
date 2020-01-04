@@ -1,0 +1,53 @@
+{{ partial "html-head.amp.html" . }}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{ partial "head.amp.html" . }}
+        <div class="row">
+          <div class="col-12 text-center">
+            {{ partial "adsense/billboard.amp.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="adblock-sidebar-container">
+              <div class="adblock-sidebar-container-left">
+                {{ partial "adsense/auto-vertical.amp.html" . }}
+              </div>
+              <div class="adblock-sidebar-container-right">
+                {{ partial "adsense/auto-vertical.amp.html" . }}
+              </div>
+            </div>
+            {{ partial "article-list.amp.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            {{ partial "paginator.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <hr class="separator">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <a id="pageBottom"></a>
+            {{ partial "adsense/billboard.amp.html" . }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+        </div>
+        {{ partial "footer.amp.html" . }}
+      </div>
+    </div>
+  </div>
+  {{ partial "html-footer.amp.html" . }}
+  {{ partial "html-footer-custom.amp.html" . }}
+</body>
+</html>

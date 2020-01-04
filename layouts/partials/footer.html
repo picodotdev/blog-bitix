@@ -1,3 +1,9 @@
+{{ $tags := $.Site.Data.theme.conf.tags.html }}
+{{ $imgtagopen := $tags.imgtagopen }}
+{{ $imgtagclose := $tags.imgtagclose }}
+{{ $imgtagsrc := $tags.imgtagsrc }}
+{{ $urlsuffix := .Site.Params.outputformats.html.urlsuffix }}
+
 <footer>
   <div class="row">
     <div class="col-12 col-sm-4">
@@ -8,35 +14,35 @@
     <div class="col-12 col-sm-4 text-center menu">
       <ul class="list-unstyled">
         {{ range .Site.Menus.footer }}
-          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          <li><a href="{{ print .URL $urlsuffix }}">{{ .Name }}</a></li>
         {{end}}
       </ul>
     </div>
     <div class="col-12 col-sm-4 text-center links">
       {{ if .Site.Params.links.feed }}
-        <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}"><img src="assets/images/rss.png" class="icon"></a>
+        <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.png" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.twitter }}
-        <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}"><img src="assets/images/twitter.svg" class="icon"></a>
+        <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/twitter.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.googleplus }}
-        <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}"><img src="assets/images/google-plus.svg" class="icon"></a>
+        <a href="{{ .Site.Params.links.googleplus.url }}" title="{{ .Site.Params.links.googleplus.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/google-plus.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.github }}
-        <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}"><img src="assets/images/github.svg" class="icon"></a>
+        <a href="{{ .Site.Params.links.github.url }}" title="{{ .Site.Params.links.github.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/github.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.facebook }}
-        <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}"><img src="assets/images/facebook.svg" class="icon"></a>
+        <a href="{{ .Site.Params.links.facebook.url }}" title="{{ .Site.Params.links.facebook.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/facebook.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.linkedin }}
-        <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}"><img src="assets/images/linkedin.svg" class="icon"></a>
+        <a href="{{ .Site.Params.links.linkedin.url }}" title="{{ .Site.Params.links.linkedin.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/linkedin.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
     </div>
   </div>
   <div class="row">
     <div class="col-12">
-      Copyleft <span class="copyleft">&copy;</span> {{ now.Format "2006" }} - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" alt="Creative Commons License" title="Creative Commons License"/></a><br />
-      <a href="https://www.planetacodigo.com/" rel="nofollow"><img src="{{ .Site.BaseURL }}assets/images/planeta-codigo.png" alt="Planeta código" title="Planeta código"></a>
+      Copyleft <span class="copyleft">&copy;</span> {{ now.Format "2006" }} - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow">{{ $imgtagopen | safeHTML }} src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License">{{ $imgtagclose | safeHTML }}</a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/planeta-codigo.png" | relURL }}" width="80" height="15" alt="Planeta código" title="Planeta código">{{ $imgtagclose | safeHTML }}</a>
       <br/>
       <a href="{{ .Site.BaseURL }}" rel="nofollow">Blog Bitix</a> by <a href="{{ .Site.BaseURL }}">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
       <br/>

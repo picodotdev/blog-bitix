@@ -31,7 +31,7 @@ Y otra pero no menos interesante pregunta es por que tapestry se llama tapestry 
 
 A continuación la [presentación completa de la charla](https://speakerdeck.com/picodotdev/plugin-tapestry) que dí y que contiene de forma más explícita todo lo que está incluido en el libro [PlugIn Tapestry](https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/).
 
-{{< speakerdeck 94de4cc06da70131c6665e5071095c76 >}}
+{{< speakerdeck id=94de4cc06da70131c6665e5071095c76" >}}
 
 Un par de gracias, la sensación de haber aportado algo (o al menos haberlo intentado), el ruido que hicimos en twitter con el hastag [#tapestry5](https://twitter.com/search?q=tapestry5), unos pocos seguidores adicionales y algunos retweets incluido el del principal hacedor de Tapestry fue suficiente recompensa.
 

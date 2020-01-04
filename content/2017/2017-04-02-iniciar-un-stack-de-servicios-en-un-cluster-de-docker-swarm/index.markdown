@@ -47,8 +47,8 @@ De los _volumes_ y _secrets_ en posteriores entregas de esta [serie de artículo
 Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [The Devops 2.1 Toolkit](https://amzn.to/2mIirti) que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es [Docker in Action](https://amzn.to/2mF3Xtj).
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=a6c4acab72c208d29232f2e0a8edb8ee"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=2101ae950cfcfe9e69b6cc1210e4bf2c" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=a6c4acab72c208d29232f2e0a8edb8ee"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1542468914&linkId=2101ae950cfcfe9e69b6cc1210e4bf2c" >}}
 
 Docker Swarm es una opción simple y que está integrada en Docker pero no ofrece todas las funcionalidades de algunas otras opciones que el algunos casos de uso algo más avanzados son necesarias o convenientes. [Nomad][nomad] es otra opción simple para gestionar un conjunto de aplicaciones o servicios pero con algunas funcionalidades adicionales que no posee Docker Swarm como escribo en [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398].
 

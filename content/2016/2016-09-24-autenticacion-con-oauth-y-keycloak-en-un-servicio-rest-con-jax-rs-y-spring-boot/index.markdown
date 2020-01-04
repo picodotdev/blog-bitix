@@ -14,7 +14,7 @@ summary: "Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicac
 
 {{% post %}}
 
-{{< logotype image1="keycloak.png" title1="Keycloak" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="keycloak.png" title1="Keycloak" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 Una forma de autenticar a los clientes de un servicio REST es usar [autenticación Basic](https://en.wikipedia.org/wiki/Basic_access_authentication) que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de [usar el protocolo seguro HTTPS][blogbitix-14].
 
@@ -74,7 +74,7 @@ Para usar Keycloak en una aplicación Java con Spring Boot deberemos añadir alg
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1" >}}
 
 En el siguiente artículo mostraré un [cliente del servicio REST autenticado con OAuth en Java][blogbitix-183] que haga las mismas llamadas que con _curl_ pero usando código Java mediante la librería [HttpComponents][http-components].
 

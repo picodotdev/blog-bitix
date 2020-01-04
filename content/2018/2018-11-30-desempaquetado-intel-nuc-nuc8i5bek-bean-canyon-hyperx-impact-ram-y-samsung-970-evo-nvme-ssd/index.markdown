@@ -80,11 +80,11 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
 * [Intel NUC8i7BEH](https://amzn.to/2Rc0MJw)
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1BTZ&linkId=f3958514001abbfacb4d2d944dbaae79"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JB2M5JS&linkId=222f9d7e5b7ea470df5df9148d6ab300"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JBM1CFH&linkId=4f67d035caf205cfbefa4e5afe68674a"
-    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1LCL&linkId=5b22e238d8496d8d76cd9397d7f13a2d"
-    link5="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07J6T8PH6&linkId=866537dd626ab63935971b2c0b3fa830" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1BTZ&linkId=f3958514001abbfacb4d2d944dbaae79"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JB2M5JS&linkId=222f9d7e5b7ea470df5df9148d6ab300"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JBM1CFH&linkId=4f67d035caf205cfbefa4e5afe68674a"
+    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07JCF1LCL&linkId=5b22e238d8496d8d76cd9397d7f13a2d"
+    link5="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07J6T8PH6&linkId=866537dd626ab63935971b2c0b3fa830" >}}
 
 Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB, si necesitase más podría ponerle además una micro SDXC de 128 GB o 256 GB con las que tendré suficiente espacio, con el disco de 250 GB del portátil Sony no llegaba a los 100 GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se habrán abaratado mucho o aumentado su capacidad si continúan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora.
 
@@ -123,8 +123,8 @@ Probablemente 16 GiB me sería suficientes pero no me importa ir a por los 32 Gi
 Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320€. Al final opté por la memoria HyperX Impact.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01BNJL8I4&linkId=ef22daf2b91899709c8686b7db8a49c7"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017UC3UPW&linkId=06d1aea567128e234b58d2e800ef099c" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01BNJL8I4&linkId=ef22daf2b91899709c8686b7db8a49c7"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B017UC3UPW&linkId=06d1aea567128e234b58d2e800ef099c" >}}
 
 * [Memoria HyperX Impact](https://www.hyperxgaming.com/es/memory/impact-ddr4)
 
@@ -137,16 +137,16 @@ Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500
 Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III tendría creo que suficiente pero no estoy ajustando mucho el precio, al igual que en la memoria. 
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MFBLN7K&linkId=d8ee308b386ae8fc1ed0978391f98ade"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SQ8J1V&linkId=048e7dde98c59aff3bdf3eda82b0057a"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B078WST5RK&linkId=9843c55e883197e8c5108e19cff142ae"
-    link4="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SF8KMG&linkId=30e60238410c4c1f9584f13e067e8cca" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07MFBLN7K&linkId=d8ee308b386ae8fc1ed0978391f98ade"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SQ8J1V&linkId=048e7dde98c59aff3bdf3eda82b0057a"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B078WST5RK&linkId=9843c55e883197e8c5108e19cff142ae"
+    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B077SF8KMG&linkId=30e60238410c4c1f9584f13e067e8cca" >}}
 
 Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](https://amzn.to/2BHXPeA) o [de 256 GB](https://amzn.to/2Qq04vm) como una forma de ampliar la cantidad de almacenamiento que tengo disponible y como carperta de descargas y archivos temporales. Las SDXC admiten hasta un almacenamiento de 2 TiB que en un futuro se harán más asequibles en precio.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFHQGB9&linkId=69626bf45c9c279219546f122fd33a06"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFS5657&linkId=186319e6ae3e35777b9412d236a46297" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFHQGB9&linkId=69626bf45c9c279219546f122fd33a06"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06XFS5657&linkId=186319e6ae3e35777b9412d236a46297" >}}
 
 * [Samsung 970 EVO NVMe M.2 500GB SSD](https://www.samsung.com/es/memory-storage/ssd-970-evo/MZ-V7E500BW/)
 * [Samsung EVO Plus microSD](https://www.samsung.com/es/memory-storage/evo-plus-microsd-with-adapter-mb-mc128gaeu/MB-MC128GAEU/)
@@ -338,20 +338,20 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/en/power
 Si el monitor es compartido tanto por el ordenador como por [una consola como la PlayStation 4 como muestro en su desempaquetado][blogbitix-432] es necesario un adaptador o _switch_ HDMI de múltiples entradas y una salida para usar ambos sin necesidad de conectar y desconectar cables, no son caros y ofrecen mucha comodidad, con un botón se alterna entre la entrada del ordenador y la consola, además detecta la entrada pdesey se cambia automáticamente.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07KSYS2L4&linkId=3a5a1b554cb717c2763220c81be8b6fa" >}}
 
 ### Nuevo escritorio
 
 Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [Benq PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratín [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=757f02716b01871e45865d4a9f1b75c6"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0758DMHZG&linkId=49e0edf2268751aed306f89bf5a657f6"
-    link3="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B003D8ZT0C&linkId=fbe6dbb7cf4d1a724de6c75d49946d10" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01K2210GS&linkId=757f02716b01871e45865d4a9f1b75c6"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B0758DMHZG&linkId=49e0edf2268751aed306f89bf5a657f6"
+    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B003D8ZT0C&linkId=fbe6dbb7cf4d1a724de6c75d49946d10" >}}
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC4DR1C&linkId=0aaffd200da53423d2078de9209797e6"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=15cb29717d9441d0d13f0720d9731a0d" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KC4DR1C&linkId=0aaffd200da53423d2078de9209797e6"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00E0NHMNQ&linkId=15cb29717d9441d0d13f0720d9731a0d" >}}
 
 He tenido que esperar muchos meses a tener esta configuración, entre elegir que quería y aguantar a que lo que quería saliese al mercado. No se si la siguiente vez esperaré tanto ya que en algunos momento se me ha hecho un tanto difícil sobre todo los fines de semana y algunos días de vacaciones. Pero bueno ya lo tengo y ahora solo me queda sacarle provecho, no tener GNU/Linux durante un tiempo ha hecho que no haya escrito artículos sobre él, en cuanto lo pruebe más a fondo muy posiblemente escriba algunos artículos, empezando por esos que comento de como poder jugar a juegos con Wine, PlayOnLinux/Phoenicis, Winepak además de Steam y GOG en algún momento más tarde.
 
@@ -380,7 +380,7 @@ Y el que tengo ahora.
 * [Intel Download Center - Intel NUC](https://downloadcenter.intel.com/product/98414/Mini-PCs)
 * [Intel NUC8i5BEK/NUC8i5BEH Brief](https://www.intel.es/content/www/es/es/products/docs/boards-kits/nuc/nuc8i5bek-nuc8i5beh-brief.html)
 * [Intel® NUC Kit NUC8i5BEK Compatibility Tool](http://compatibleproducts.intel.com/ProductDetails/ExportPeripheralInfo?moduleName=Intel%C2%AE%20NUC&productType=Kits&productName=Intel%C2%AE%20NUC%20Kit%20NUC8i5BEK)
-* [Intel® NUC Products NUC8i3BE/NUC8i5BE/NUC8i7BE Technical Product Specification ](ttps://www.intel.com/content/dam/support/us/en/documents/mini-pcs/NUC8i3BE_NUC8i5BE_NUC8i7BE_TechProdSpec.pdf)
+* [Intel® NUC Products NUC8i3BE/NUC8i5BE/NUC8i7BE Technical Product Specification ](https://www.intel.com/content/dam/support/us/en/documents/mini-pcs/NUC8i3BE_NUC8i5BE_NUC8i7BE_TechProdSpec.pdf)
 * [Intel® NUC Support Community](https://communities.intel.com/community/tech/nuc)
 {{< /reference >}}
 

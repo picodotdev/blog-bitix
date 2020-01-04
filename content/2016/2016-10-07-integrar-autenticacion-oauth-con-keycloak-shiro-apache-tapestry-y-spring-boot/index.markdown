@@ -14,7 +14,7 @@ summary: "OAuth es un protocolo usado para permitir a una aplicación acceder a 
 
 {{% post %}}
 
-{{< logotype image1="keycloak.png" title1="Keycloak" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="keycloak.png" title1="Keycloak" width1="200" image2="java.svg" title2="Java" width2="200" >}}
 
 El protocolo [OAuth][oauth] permite a una aplicación cliente acceder a los recursos de un usuario almacenados en otra aplicación sin que el usuario proporcione a la aplicación cliente sus credenciales, además el usuario tiene la capacidad de revocar en caulquier momento los permisos concedidos a la aplicación cliente. El protocolo OAuth es ampliamente usado por empresas como [Google][google], [Facebook][facebook], [Twitter][twitter] en sus aplicaciones y servicios. También aplicando una arquitectura de microservicios, al dividir una aplicación en varios módulos o simplemente varias aplicaciones independientes pero que son usadas al mismo tiempo por el mismo usuario para evitar que el usuario se autentique en cada aplicación individualmente y que cada aplicación implemente la funcionalidad de autenticación podemos centralizarla usando OAuth a modo de autenticación única o [<abbr title="Single Sign-On">SSO</abbr>][sso]. Usando [Keycloak][keycloak] como servidor de OAuth podemos integrarlo en una aplicación Java que use [Apache Shiro][shiro] para la autorización, [Spring Boot][spring-boot] para iniciar la aplicación y [Apache Tapestry][tapestry] como _framework_ web.
 
@@ -85,7 +85,7 @@ Si intentamos acceder a la página de usuario o administrador sin estar autentic
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1784395404&linkId=726dc0d3e4914bc672e6b127da045db2&internal=1" >}}
 
 Este artículo solo es introductorio a las posibilidades de OAuth y Keycloak, entre otras posibilidades que ofrece Keycloak creo que está permitir registrarse a los usuarios o personalizar los estilos y páginas de autenticación.
 

@@ -41,8 +41,8 @@ Como con todos los generadores de código es recomendable saber suficientemente 
 En el libro [Spring Boot in Action](https://amzn.to/2tvCJMs) se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro [Mastering Spring 5.0](https://amzn.to/2tZInqM) que también inlcuye secciones sobre Spring Boot.
 
 {{< amazon
-    link1="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=86ce91eca968f6de1d0a777f48ca3069"
-    link2="//rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N750Z7H&linkId=e4f7f44a8b854b00a547d526b83f6469" >}}
+    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292540&linkId=86ce91eca968f6de1d0a777f48ca3069"
+    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N750Z7H&linkId=e4f7f44a8b854b00a547d526b83f6469" >}}
 
  En definitiva el _plugin_ _init_ de Gradle y la utilidad Spring Initializr son unas buenas herramientas para empezar un proyecto Java rápidamente y en pocos minutos disponer de un proyecto básico funcional y listo para implementar la funcionalidad de la aplicación.
 

@@ -27,11 +27,23 @@ outputs:
   page:
   - HTML
   - AMP
+  section:
+  - HTML
+  - AMP
+  - RSS
+  taxonomy:
+  - HTML
+  - AMP
+  - RSS
+  taxonomyTerm:
+  - HTML
+  - AMP
+  - RSS
 
 outputFormats:
   AMP:
     path: ""
-    baseName: "index.amp"
+    baseName: "index-amp"
 
 markup:
   defaultMarkdownHandler: goldmark
@@ -145,9 +157,19 @@ params:
     domain: "picodotdev.github.io"
   adsense:
     adclient: "ca-pub-3533636310991304"
-    adslot: "9933840986"
+    adslot:
+      billboard: "2975854584"
+      leaderboard: "5966819782"
+      autoVertical: "9933840986"
+  amazon:
+    trackingId: "blobit-21"
   sharethis:
     publisher: "ur-a2d4b156-3d22-5ffc-2477-6c0f8a809173"
     twitteruser: "picodotdev"
   disqus:
     shortname: "blog-bitix"
+  outputformats:
+    html:
+      urlsuffix: ""
+    amp:
+      urlsuffix: "index-amp.html"

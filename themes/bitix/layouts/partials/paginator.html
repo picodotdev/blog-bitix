@@ -9,7 +9,7 @@
     {{ end }}
     </div>
     <div class="col-md-4 text-center">
-      <a href="archive/">{{ i18n "archive" }}</a>
+      <a href="{{ ref . "archive" }}">{{ i18n "archive" }}</a>
     </div>
     <div class="col-md-4 text-right">
     {{ if $paginator.HasPrev }}

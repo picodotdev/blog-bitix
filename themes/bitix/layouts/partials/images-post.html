@@ -20,7 +20,7 @@
 {{ end }}
 
 {{ $image1x1 := default .Site.Params.publisher.logotype (.Scratch.Get "image1x1") }}
-{{ $image1x1 := replaceRE (print "^" .Site.Params.context "/") "" $image1x1 }}
+{{ $image1x1 := $image1x1 | relURL }}
 {{ $images := slice $image1x1 }}
 
 {{ return $images }}
