@@ -7,7 +7,7 @@ updated: 2017-01-31T22:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["hardware", "planeta-linux", "planeta-codigo"]
+tags: ["hardware", "planeta-codigo"]
 series: ["desempaquetado-tecnologia"]
 ---
 

@@ -8,8 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["planeta-codigo", "seguridad", "software"]
-series: ["web"]
+tags: ["planeta-codigo", "seguridad", "software", "web"]
 ---
 
 {{% post %}}

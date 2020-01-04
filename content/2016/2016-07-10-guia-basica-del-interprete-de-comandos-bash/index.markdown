@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 series: ["terminal"]
 summary: "La línea de comandos sigue siendo una poderosa herramienta que aunque menos intuitiva que una interfaz gráfica permite hacer las tareas de forma más sencilla, directa y que se puede automatizar. Conocer las opciones del intérprete de comandos es básico para aprovechar su máximo potencial. Desde las combinaciones de teclas hasta los _scripts_ o archivos de lotes. Tuberías y redirecciones, comandos con ejecución condicional, variables, interpolación de cadenas, _scrtips_, argumentos, funciones, _for_, _switch_, _if_, comparaciones, ..."
 ---

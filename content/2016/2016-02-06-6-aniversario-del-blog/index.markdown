@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "planeta-codigo"]
 series: ["aniversario"]
 summary: "Muchas bitácoras perecen y son abandonadas al cabo de un par de años, quizá sus autores desmotivados por las pocas visitas que reciben o por el tiempo que se dan cuenta que les requiere dedicar a escribir en una bitácora y más aún editar los artículos. En mi caso aún no he perdido las ganas por seguir escribiendo y son incluso mayores. La experiencia acumulada durante este tiempo también se nota en la redacción de los artículos."
 ---

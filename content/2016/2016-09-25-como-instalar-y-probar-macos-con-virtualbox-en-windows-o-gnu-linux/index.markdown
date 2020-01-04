@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["apple", "gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["apple", "gnu-linux", "planeta-codigo"]
 summary: "¿Queres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un _hackintosh_ mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento."
 ---
 

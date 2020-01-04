@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["microsoft", "opinion", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["microsoft", "opinion", "planeta-codigo", "software-libre"]
 summary: "Si Microsoft quisiera no habría usuarios de Windows sin la correspondiente licencia de uso. Pero lo consiente, tampoco le importa que para un uso personal se haga de forma «pirata». Pocos días después del señalado 29 de julio Windows 10 aparecerá en las redes de compartición de archivos y páginas de descarga, también pocos días después aparecerá un programa que evite el sistema de validación como ha ocurrido con anteriores versiones."
 ---
 

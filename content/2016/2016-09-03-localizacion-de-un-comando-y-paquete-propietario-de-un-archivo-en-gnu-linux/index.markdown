@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-linux"]
+tags: ["gnu-linux"]
 ---
 
 {{% post %}}

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "planeta-codigo"]
 series: ["docker"]
 summary: "Las funcionalidades de Docker Swarm están incorporadas en Docker para gestionar _clusters_ de nodos con contenedores de los servicios que deseemos. En artículo comentaré algunas de las propiedades de _networkning_ distribuido incorporado en Docker, como crear un _cluster_ de nodos Docker usando VirtualBox con máquinas virtuales para simular múltiples máquinas junto con como lanzar un servicio en el _cluster_ que en este caso consistirá en un servidor web nginx."
 ---

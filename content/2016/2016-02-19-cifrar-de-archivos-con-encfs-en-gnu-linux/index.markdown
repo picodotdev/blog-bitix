@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "seguridad", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "seguridad", "software-libre"]
 summary: "Hacer copias de seguridad es una buena práctica para evitar perder información en caso de que por ejemplo un disco duro se nos estropee. Cifrar la información o al menos parte de ella como las contraseñas (si las guardamos en un archivo de texto) también es una buena práctica por si perdemos una memoria USB, nos roban en un lugar público o en nuestro domicilio un disco duro o un portátil o los extraviamos en algún viaje. Una forma sencilla para proteger su contenido cifrando múltiples archivos es EncFS."
 ---
 

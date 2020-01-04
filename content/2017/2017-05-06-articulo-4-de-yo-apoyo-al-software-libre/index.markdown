@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 ---
 

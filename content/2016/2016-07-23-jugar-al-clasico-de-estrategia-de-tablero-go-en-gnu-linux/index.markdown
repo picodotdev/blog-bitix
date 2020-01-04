@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "software-libre"]
 series: ["juegos"]
 summary: "En esta serie de artículos sobre juegos vamos a ver que en GNU/Linux también hay juegos a los que podemos jugar en nuestra plataforma preferida. Otro de ellos es el clásico de estrategia Go."
 ---

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "opinion", "planeta-codigo"]
 series: ["aniversario"]
 ---
 

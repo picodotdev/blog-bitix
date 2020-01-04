@@ -7,7 +7,7 @@ updated: 2019-10-02T21:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["java", "programacion", "seguridad", "tapestry", "planeta-linux", "planeta-codigo"]
+tags: ["java", "programacion", "seguridad", "tapestry", "planeta-codigo"]
 ---
 
 {{% post %}}

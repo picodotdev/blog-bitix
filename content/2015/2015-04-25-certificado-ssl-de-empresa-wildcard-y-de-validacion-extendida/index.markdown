@@ -7,8 +7,7 @@ updated: 2015-04-25T12:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["programacion", "seguridad", "planeta-linux", "planeta-codigo"]
-series: ["web"]
+tags: ["programacion", "seguridad", "planeta-codigo", "web"]
 ---
 
 {{% post %}}

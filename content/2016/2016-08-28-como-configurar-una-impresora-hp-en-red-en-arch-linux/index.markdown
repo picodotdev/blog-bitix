@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-linux"]
+tags: ["gnu-linux"]
 summary: "Después de mucho tiempo sin tener configurada una impresora en red decidí dedicarle un tiempo a realizar la configuración. Con un par de errores que me encontré finalmente conseguí realizar correctamente la impresión de prueba con el modelo de impresora en concreto del que dispongo."
 ---
 

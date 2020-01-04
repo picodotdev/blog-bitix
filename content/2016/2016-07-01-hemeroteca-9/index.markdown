@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["blog", "java", "planeta-codigo", "planeta-linux", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
+tags: ["blog", "java", "planeta-codigo", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
 summary: "6 meses más y 35 nuevos artículos escritos sobre temas de programación, java, software libre y opinión. No son muchos artículos pero tampoco son artículos breves sobre noticias efímeras, en cada artículo trato de compartir no solo información sino conocimiento en los que además suelo incluir el código completo de un ejemplo totalmente funcional."

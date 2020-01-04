@@ -158,7 +158,9 @@ Las [especificaciones ténicas de la PlayStation 4 Slim](https://www.playstation
 * Temperatura funcionamiento: 5 ºC – 35ºC
 * Salida vídeo: puerto HDMI™ (con soporte para HDR)
 
-{{< amazon linkid="95a091643d28db1abfa20f5e3e12a899" asins1="B07LFY8WBX" >}}
+{{< amazon
+    linkids="95a091643d28db1abfa20f5e3e12a899"
+    asins="B07LFY8WBX" >}}
 
 Estos es lo que incluye la caja del _pack_ que he comprado:
 
@@ -291,7 +293,8 @@ Para realizar el montaje y desmontaje correctamente se requieren una serie de he
 * [Pasta térmica](https://amzn.to/2UVuiGd) no conductiva para no crear un cortocircuito si no se aplica correctamente y en una capa muy fina.
 * [Alcohol isopropílico](https://amzn.to/2Lvyzx5).
 
-{{< amazon linkid="95a091643d28db1abfa20f5e3e12a899" asins1="B07VR9PGPC,B07JZ3DTHG,B01M0GKOEN,B07MZ45X9G,B07CYJLG1S" >}}
+{{< amazon
+    linkids="4a0232e9898e496af9e672fe50d57c81,1aede680c3b8a5b84657f52f73d54600,cdc038354d536d752a8c70b8bddca748,195df606f7ea4dae5d9df4e1887975c9,129773b7c65c13d8101eafd1035d2211" asins="B07VR9PGPC,B07JZ3DTHG,B01M0GKOEN,B07MZ45X9G,B07CYJLG1S" >}}
 
 Por último, el mando se puede cargar con un cable USB a microUSB, el mismo que proporciona en la consola, desde uno de los puertos de la propia consola, sin embargo esto requiere que la consola esté encendida o en reposo. Cargar el mando desde un puerto de la consola no es la única forma. En algún momento puede interesar cargar el mando aún con la consola completamente apagada, esto se puede hacer con cualquier adaptador de corriente utilizado para cargar un adaptador de corriente utilizando para cargar un teléfono móvil siempre que este produzca como salida 5 voltios y al menos 800 mA (miliamperios), en el texto serigrafiado del adaptador aparece detallada esta información en letras pequeñas que si es preciso para leerlas se puede emplear una foto de un móvil y ampliarla. Los puertos USB 2.0 o inferiores de un ordenador solo entregan 500 mA lo que no son suficiente para los requisitos de carga del mando, en caso de usarse estos la batería del mando podría degradarse, ha de usarse un puerto USB 3.0 o superior que son capaces de proporcionar 900 mA según la especificación del estándar USB.
 
@@ -347,7 +350,9 @@ El mando con la funda puesta. Hay que tener algo cuidado de no estirarla demasia
     image1="mando-dualshock-4-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Mando DualShock 4 V2 con funda"
     caption="Mando DualShock 4 V2 con funda" >}}
 
-{{< amazon linkid="95a091643d28db1abfa20f5e3e12a899" asins1="B07KSYS2L4,B06XJ5ZR5P" >}}
+{{< amazon
+    linkids="c4e617b84dbe20273c022f528f7f5451,d6e6248621355a567e929b8e711a47c9"
+    asins="B07KSYS2L4,B06XJ5ZR5P" >}}
 
 ### Conclusión
 
@@ -355,7 +360,7 @@ Quizá la calidad de las consolas de esta generación da muestras de agotamiento
 
 Aparte de echar de menos [una versión de la consola PlayStation sin discos todo digital][blogbitix-426] como tiene Xbox echo de menos poder usar teclado y ratón en algunos juegos como los de disparos o de estrategia en tiempo real, el ratón como apuntador es mas preciso y con el mayor número de teclas de un teclado más rápidas las acciones. Mucha gente juega en un monitor de ordenador y una mesa de escritorio sería una gran característica y seguro que sería posible técnicamente.
 
-Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol un buen juego es una buena opción.
+Voy a retomar este entretenimiento que deje hace años en la medida que el tiempo que dispongo me lo permita. Entre leer novelas, el blog y ahora con los juegos tendré otra forma de entretenimiento en algunos ratos que quiera desconectar del trabajo. Los videojuegos no son considerados como aptos a partir de cierta edad pero entre algunos programas de televisión o partidos de fútbol un buen juego es una buena opción. 
 
 {{< reference >}}
 * [Asistencia técnica de PlayStation](https://www.playstation.com/es-es/get-help/?smcid=other:es-es:blank:primary%20nav:msg-help:ayuda-y-asistencia-tcnica#!/)

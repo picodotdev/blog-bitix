@@ -7,7 +7,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "java", "planeta-codigo"]
 summary: "La mayoría de distribuciones Linux ya usan systemd como gestor y supervisor de los servicios del sistema.  Creando un descriptor podremos gestionar un servicio propio con los mismos comandos de systemd que usamos para cualquier otro servicio del sistema."
 ---
 

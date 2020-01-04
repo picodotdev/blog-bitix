@@ -8,7 +8,7 @@ language: "es"
 rss: true
 sharing: true
 comments: true
-tags: ["gnu-linux", "microsoft", "opinion", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "microsoft", "opinion", "planeta-codigo"]
 summary: "Los sistemas GNU/Linux pueden ser igual de seguros o inseguros que los sistemas Windows. Sin embargo, en ambas plataformas hay algunas diferencias que explican por que los sistemas Windows tienen peor fama y por que los sistemas GNU/Linux se consideran más seguros que Windows."
 ---
 

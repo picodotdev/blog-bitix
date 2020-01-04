@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["microsoft", "opinion", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["microsoft", "opinion", "planeta-codigo", "software-libre"]
 summary: "If Microsoft wished there would be no Windows users using it without the corresponding license. But they consents, they does not care that for a personal use it pirated. A few days after July 29, Windows 10 will appear on the file sharing networks and download pages, also a few days later a program will appear that avoids the validation system as has happened with previous versions."
 ---
 

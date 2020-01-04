@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "java", "planeta-codigo", "programacion"]
 series: ["electronica"]
 summary: "Con diferentes sensores y dispositivos de salida de electrónica se pueden realizar proyectos muy interesantes. En el siguiente usaré múltiples diodos LED que se encenderán y apagarán de forma aleatoria cada cierto tiempo. El resultado será muy vistoso y lo utilizaré cuando lleguen las fechas como luces navideñas."
 ---

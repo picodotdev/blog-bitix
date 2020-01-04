@@ -8,8 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
-series: ["web"]
+tags: ["planeta-codigo", "software", "software-libre", "web"]
 summary: "Continuando la serie de artículos sobre varios aspectos realizados muy comúnmente en las aplicaciones y servidores web en este artículo explicaré como hacer que un servidor web nginx haga de _proxy_ inverso para un servidor de aplicaciones Java en este caso Tomcat."
 ---
 

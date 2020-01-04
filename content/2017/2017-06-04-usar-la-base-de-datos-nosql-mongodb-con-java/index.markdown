@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "planeta-codigo", "programacion"]
 ---
 
 {{% post %}}

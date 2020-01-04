@@ -8,7 +8,7 @@ updated: 2014-12-24T18:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 series: ["hemeroteca"]
 library: "true"
 ---

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "planeta-codigo"]
 series: ["docker"]
 summary: "¿Por qué se habla tanto de Docker y despierta tanto interes si la tecnología ya existía desde hace tiempo tanto en otros sistemas operativos como en Linux? Uno de los éxitos que ha contribuido a ellos es Docker Hub, un repositorio de imágenes en el que cualquiera puede contribuir con las suyas. Esto hace que pueda encontrarse cualquier herramienta de las populares y empezar a usarlas en muy pocos minutos."
 ---

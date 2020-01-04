@@ -6,7 +6,7 @@ date: 2014-01-17T15:44:23+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "planeta-linux"]
+tags: ["blog"]
 ---
 
 {{% post %}}

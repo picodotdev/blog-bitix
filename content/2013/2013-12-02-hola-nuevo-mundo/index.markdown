@@ -7,7 +7,7 @@ updated: 2015-05-28T20:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "planeta-linux", "planeta-codigo"]
+tags: ["blog", "planeta-codigo"]
 ---
 
 {{% post %}}

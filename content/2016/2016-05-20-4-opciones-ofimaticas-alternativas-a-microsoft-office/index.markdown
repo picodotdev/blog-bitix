@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "microsoft", "planeta-codigo", "planeta-linux", "software", "software-libre"]
+tags: ["gnu-linux", "microsoft", "planeta-codigo", "software", "software-libre"]
 summary: "Office es la suite ofimática de Microsoft con un margen de diferencia en la cuota de uso muy amplio sobre la siguiente opción en los sistemas con Windows. Es muy completa que incluye más funciones incluso que la mayoría de usuarios conoce o necesita pero también es una opción más cara que otras alternativas que incluso llegan a ser gratuitas sin tener nada que envidiarle para la mayoría de usuarios y casos de uso."
 ---
 

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux"]
+tags: ["gnu-linux", "planeta-codigo"]
 series: ["docker"]
 summary: "Cambiando la ruta raíz del entorno de ejecución de docker, dónde guarda las imágenes de los contenedores, los datos de los contenedores y otros metadatos, podemos almacenar esta información en un disco duro externo o memoria USB."
 ---

@@ -8,8 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
-series: ["web"]
+tags: ["planeta-codigo", "software", "software-libre", "web"]
 summary: "La redirección del dominio raíz al subdominio es una de las cosas básicas que es recomendable realizar en todo dominio, para ello hay que añadir algo de configuración propia de cada servidor para realizar la redirección. Junto con usar el uso del protocolo HTTPS y forzar su uso con otra redirección mejoraremos el SEO y evitaremos penalizaciones por contenido duplicado."
 ---
 

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["planeta-codigo", "planeta-linux", "programacion"]
+tags: ["planeta-codigo", "programacion"]
 summary: "Hay numerosos y diferentes lenguajes de programación pero solo una docena tienen una cuota de uso significativa. Muchos comparten características y algunos lenguajes las van incorporando a medida que se demuestra que sus beneficios son mayores que la complejidad que pueden añadir. Veamos algunas de sus propiedades."
 ---
 

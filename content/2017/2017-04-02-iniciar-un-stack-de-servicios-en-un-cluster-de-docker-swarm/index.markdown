@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["blog", "planeta-codigo", "planeta-linux"]
+tags: ["blog", "planeta-codigo"]
 series: ["docker"]
 summary: "Los _stacks_ en Docker Swarm son definiciones en un archivo de texto en formato YAML de múltiples servicios además de volúmenes, redes de software y secretos. Esta definición de un _stack_ ejecutado en un _cluster_ de nodos Docker Swarm permite iniciar múltiples contenedores además de los otros elementos que necesiten para su funcionamiento. Los _stacks_ son el equivalente para Docker Swarm de los archivos multicontenedor de Docker Compose, y el formato de ambos muy similar."
 ---

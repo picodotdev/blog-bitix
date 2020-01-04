@@ -7,7 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 series: ["terminal"]
 summary: "Aprender las combinaciones de teclas de aquellas aplicaciones que usamos frecuentemente y durante mucho tiempo nos ayuda a hacer las cosas en menos tiempo y de forma más sencilla. Cada aplicación tiene los suyos propios, en este artículo los de la terminal con el intérprete de comandos _bash_ para GNU/Linux."
 ---

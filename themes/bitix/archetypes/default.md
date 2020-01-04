@@ -33,7 +33,14 @@ draft: true
     image1="direccion.jpg" commandthumb1="Fit" options1="600x450" title1="Dirección" >}}
 
 {{< amazon
-    link1="" }}
+    link1=""
+    link2=""
+    link3=""
+    link4="" }}
+
+{{< amazon
+    linkids=""
+    asins="" }}
 
 {{< figure
     link1=""
@@ -44,13 +51,6 @@ draft: true
 {{< youtube
     video1="" }}
 
-{{< figure
-    image1="" thumb1="-thumb.png" title1=""
-    image2="" thumb2="-thumb.png" title2=""
-    caption="" >}}
-
-{{< gist picodotdev id "file" >}}
-
 {{< code file="Main.java" language="java" options="" >}}
 
 {{% asciinema id="" caption="" %}}
@@ -60,5 +60,12 @@ draft: true
 {{% reference %}}
 *
 {{% /reference %}}
+
+{{< gist picodotdev id "file" >}}
+
+{{< figure
+    image1="" thumb1="-thumb.png" title1=""
+    image2="" thumb2="-thumb.png" title2=""
+    caption="" >}}
 
 {{% /post %}}

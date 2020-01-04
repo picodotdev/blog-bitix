@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["apple", "opinion","planeta-codigo", "planeta-linux"]
+tags: ["apple", "opinion","planeta-codigo"]
 ---
 
 {{% post %}}

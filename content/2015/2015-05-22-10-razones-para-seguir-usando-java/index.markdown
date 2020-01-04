@@ -7,7 +7,7 @@ updated: 2015-11-10T19:00:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["java", "opinion", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["java", "opinion", "planeta-codigo", "programacion"]
 summary: "Con ya dos décadas de vida y a lo largo de este tiempo Java se ha convertido en uno de los lenguajes más empleados para programar a día de hoy. En este periodo han surgido otros lenguajes en la propia plataforma de la JVM como Groovy, Scala o Clojure y fuera de ella como C#, Python, Ruby, PHP, Go o Dart ofreciendo algunas cosas adicionales o supliendo algunas carencias de Java. Aún con toda esta competencia esta es mi lista de 10 razones por las que creo que Java sigue siendo una de las mejores opciones."
 ---
 

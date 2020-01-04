@@ -7,7 +7,7 @@ updated: 2014-05-06T21:00:00+02:00
 comments: true
 rss: true
 sharing: true
-tags: ["software", "software-libre", "gnu-linux", "programacion", "planeta-linux", "planeta-codigo"]
+tags: ["software", "software-libre", "gnu-linux", "programacion", "planeta-codigo"]
 ---
 
 {{% post %}}

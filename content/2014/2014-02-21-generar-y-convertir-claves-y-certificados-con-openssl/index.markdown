@@ -7,8 +7,7 @@ updated: 2017-04-08T23:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["programacion", "seguridad", "software", "software-libre", "planeta-linux"]
-series: ["web"]
+tags: ["programacion", "seguridad", "software", "software-libre", "web"]
 summary: "Usando los comandos expuestos en este artículo y con OpenSSL podemos crear una clave pública y privada para usarlo con ssh o para cifrar y descifrar mensajes, un certificado autofirmado que podremos usar en un servidor de aplicaciones para usar un protocolo seguro y también convertir las claves y certificados a uno de los formatos aceptados por la aplicación que usemos."
 ---
 

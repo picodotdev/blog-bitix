@@ -9,8 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["java", "planeta-codigo", "planeta-linux", "programacion", "seguridad"]
-series: ["web"]
+tags: ["java", "planeta-codigo", "programacion", "seguridad", "web"]
 ---
 
 {{% post %}}

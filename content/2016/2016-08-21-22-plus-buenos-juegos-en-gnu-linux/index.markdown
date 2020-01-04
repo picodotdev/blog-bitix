@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-linux"]
+tags: ["gnu-linux"]
 series: ["juegos"]
 summary: "¿Que en GNU/Linux no hay juegos? Los hay, ciertamente no muchos de los triple A comerciales pero hay algunos originales y otros basados en otros que fueron muy conocidos comerciales publicados con anterioridad que están muy bien."
 ---

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["planeta-codigo", "software-libre"]
 series: ["donacion"]
 summary: "Hay múltiples formas con las que colaborar con el software libre, una muy importante es usándolo y al final de cierto tiempo uno se plantea de colaborar de otras formas para devolver un poquito de todo lo que nos ha ofrecido. Así pues, podemos colaborar realizando o mejorando la traducción de algún programa que usemos, promocionándolo entre nuestros conocidos o escribiendo en un blog sobre él, enviando informes de error o si tenemos los conocimientos aportando código para corregir algún error o añadiéndole alguna funcionalidad, depende de tiempo y conocimiento que tengamos también. Otra forma es realizando alguna donación económica aunque sea una pequeña cantidad a algún proyecto o software que nos resulte de interés. Después de recibir el ingreso de AdSense por la publicidad de esta bitácora este es mi caso."
 ---

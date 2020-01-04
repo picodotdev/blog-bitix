@@ -8,7 +8,7 @@ updated: 2015-05-30T00:00:00+02:00
 rss: true
 sharing: true
 comments: true
-tags: ["blog", "planeta-linux", "planeta-codigo"]
+tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
 ---

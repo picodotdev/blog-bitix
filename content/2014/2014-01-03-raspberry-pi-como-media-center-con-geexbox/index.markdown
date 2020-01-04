@@ -7,7 +7,7 @@ updated: 2018-02-08T16:30:00+01:00
 rss: true
 sharing: true
 comments: true
-tags: ["planeta-linux", "hardware", "software", "software-libre"]
+tags: ["hardware", "software", "software-libre"]
 ---
 
 {{% post %}}

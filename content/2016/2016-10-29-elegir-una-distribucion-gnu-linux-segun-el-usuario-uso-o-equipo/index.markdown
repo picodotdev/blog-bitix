@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["gnu-linux", "planeta-codigo", "planeta-linux", "software-libre"]
+tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 summary: "En GNU/Linux hay multitud de distribuciones, no existe la mejor distribución sino aquella que mejor se adapta según el usuario o sus preferencias. En muchas distribuciones hay posibilidad de elegir diferentes _sabores_ según el entorno de escritorio. Para usuarios nuevos, intermedios, avanzados, para servidor, que requieren pocos recursos o con menor cantidad de software no libre."
 ---
 

@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["opinion", "planeta-codigo", "planeta-linux", "programacion", "software"]
+tags: ["opinion", "planeta-codigo", "programacion", "software"]
 ---
 
 {{% post %}}

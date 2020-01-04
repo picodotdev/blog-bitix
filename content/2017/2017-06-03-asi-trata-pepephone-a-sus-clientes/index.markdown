@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["opinion", "planeta-codigo", "planeta-linux"]
+tags: ["opinion", "planeta-codigo"]
 ---
 
 {{% post %}}

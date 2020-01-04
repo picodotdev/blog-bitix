@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["gnu-linux", "java", "planeta-codigo", "planeta-linux", "programacion"]
+tags: ["gnu-linux", "java", "planeta-codigo", "programacion"]
 series: ["electronica"]
 summary: "El _kit_ de electrónica para la Raspberry Pi incluye varios dispositivos controlables con lo _pines_ GPIO. En el caso de este ejemplo usaré un diodo LED, un zumbador y un pulsador para crear un ejemplo en el que el diodo LED se enciendan y el zumbador emita un sonido cuando el pulsador se active."
 ---

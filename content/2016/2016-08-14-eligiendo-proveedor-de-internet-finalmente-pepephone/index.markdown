@@ -8,7 +8,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["opinion", "planeta-codigo", "planeta-linux"]
+tags: ["opinion", "planeta-codigo"]
 series: ["desempaquetado-tecnologia", "desempaquetado-otros"]
 summary: "Cada unos de los operadores de telecomunicaciones más conocidos e importantes ofrecen internet ya sean con fibra óptica, ADSL o incluso 4G. Junto con la forma de ofrecer internet que en la mayoría es mediante fibra las diferencias están en el precio y las diferencias son significativas. En este artículo comentaré que opciones he barajado y por cual me he decidido finalmente."
 note: "<strong>Nota</strong>: Este no es ni mucho menos un artículo patrocinado encubierto. Simplemente es mi experiencia en la búsqueda de un proveedor de internet y como cliente."

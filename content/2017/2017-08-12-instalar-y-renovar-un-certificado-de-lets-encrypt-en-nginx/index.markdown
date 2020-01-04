@@ -9,8 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-tags: ["planeta-codigo", "seguridad", "software", "software-libre"]
-series: ["web"]
+tags: ["planeta-codigo", "seguridad", "software", "software-libre", "web"]
 summary: "Let's Encrypt es una entidad que emite certificados TLS/SSL que son reconocidos como de confianza por los navegadores web. Usando esta entidad de certificación es posible obtener y renovar un certificado TLS/SSL de forma automatizada, rápida y sin coste alguno."
 ---
 

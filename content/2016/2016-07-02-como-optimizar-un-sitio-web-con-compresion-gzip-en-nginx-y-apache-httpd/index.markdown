@@ -7,8 +7,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
-tags: ["planeta-codigo", "planeta-linux", "software", "software-libre"]
-series: ["web"]
+tags: ["planeta-codigo", "software", "software-libre", "web"]
 summary: "Comprimir el contenido es de utilidad para aquellos usuarios a los que se les factura por los datos transmitidos o tienen límites de transferencia en sus contratos con los proveedores de banda ancha o red móvil. Modificando la configuración del servidor web que usemos haremos que nuestra página o aplicación web comprima el contenido que envía a los navegadores de los usuarios reduciendo los datos transferidos y optimizando el sitio web."
 ---
 
