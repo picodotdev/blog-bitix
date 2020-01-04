@@ -21,7 +21,7 @@
     {{ $imageheadthumb := $imagehead.Resize "1040x" }}
     <div class="row page-header">
       <div class="col-12">
-        {{ $imgtagopen | safeHTML }} src="{{ $imageheadthumb.RelPermalink }}" width="{{ $imageheadthumb.Width }}" height="{{ $imageheadthumb.Height }}">
+        {{ $imgtagopen | safeHTML }} src="{{ $imageheadthumb.RelPermalink }}" width="{{ $imageheadthumb.Width }}" height="{{ $imageheadthumb.Height }}">{{ $imgtagclose | safeHTML }}
       </div>
     </div>
     {{ end }}

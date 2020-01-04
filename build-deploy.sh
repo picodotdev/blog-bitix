@@ -3,7 +3,9 @@ set -e
 
 (cd deploy/ && git pull)
 ./generate-styles.sh
-hugo --minify --destination="deploy" --source="." --cleanDestinationDir
+#https://github.com/gohugoio/hugo/issues/6699
+#hugo --minify --destination="deploy" --source="." --cleanDestinationDir
+hugo --destination="deploy" --source="." --cleanDestinationDir
 # Renombrado URLs absolutas en feeds
 find ./deploy -type f -name "index.xml" -exec sed -i 's|\"/blog-bitix/|\"https://picodotdev.github.io/blog-bitix/|g' {} +
 find ./deploy -type f -name "index.xml" -exec sed -i 's|\"https://picodotdev.github.io/blog-bitix/blog-bitix/|\"https://picodotdev.github.io/blog-bitix/|g' {} +

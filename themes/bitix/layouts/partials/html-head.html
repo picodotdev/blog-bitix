@@ -28,19 +28,22 @@
 
   {{ if .IsPage }}
   <script type="application/ld+json">
-    {{ partial "html-head-structured-data.html" . | safeJS }}
+  {{ partial "html-head-post-structured-data.html" . | safeJS }}
   </script>
   {{ end }}
+  <script type="application/ld+json">
+  {{ partial "html-head-orzanization-structured-data.html" . | safeJS }}
+  </script>
 
-  {{ "<!-- CSS -->" | safeHTML }}
+  {{ "<!-- css -->" | safeHTML }}
   <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" | relURL }}">
   <link rel="stylesheet" type="text/css" href="{{ "assets/libs/Gallery-2.33.0/css/blueimp-gallery.min.css" | relURL }}">
-  {{ "<!-- Theme -->" | safeHTML }}
+  {{ "<!-- theme -->" | safeHTML }}
   <link rel="stylesheet" type="text/css" href="{{ "assets/css/syntax.css" | relURL }}">
   <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}">
   <link rel="stylesheet" type="text/css" href="{{ "assets/css/main-cookieconsent.css" | relURL }}">
 
-  {{ "<!-- JavaScript -->" | safeHTML }}
+  {{ "<!-- javascript -->" | safeHTML }}
   <script type="text/javascript" src="{{ "assets/js/require-config.js" | relURL }}" defer></script>
   <script type="text/javascript" src="{{ "assets/libs/require.js" | relURL }}" data-main="{{ "assets/js/main" | relURL }}" defer></script>
 
