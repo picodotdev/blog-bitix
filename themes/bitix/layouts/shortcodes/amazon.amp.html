@@ -11,8 +11,8 @@
   {{ errorf "Invalid number linkids and asins: %s" .Position }}
 {{ end }}
 <div class="media-amazon">
-  {{ range $index, $linkid  := $linkids -}}
-  {{ $asin := index $asins $index }}
+  {{- range $index, $linkid  := $linkids -}}
+  {{- $asin := index $asins $index }}
   <amp-ad
     width="120"
     height="240"
@@ -28,6 +28,6 @@
     data-amzn_assoc_linkid="{{ $linkid }}"
     data-amzn_assoc_asins="{{ $asin }}">
   </amp-ad>
-  {{ end }}
+  {{- end }}
 </div>
 {{ end }}

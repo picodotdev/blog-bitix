@@ -66,9 +66,8 @@ Algunos servicios y contenidos están bloqueados según la ubicación del usuari
 Los elementos básicos para usar este miniordenador Pi son la [placa de la Raspberry Pi](https://amzn.to/2cN0d6L), una [cargador de 3A](https://amzn.to/2dfFJT7) junto con una [tarjeta SD](https://amzn.to/2cN0SFi).
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01566WOAG&linkId=1a779c49b1d7df6206e1c1428af645e7&internal=1"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J2BU7WO&linkId=f3093eebc185e207e98f6b5c53cd2c3a&internal=1" >}}
+    linkids="fecbf2f5ac6495bca6b3e686bc0fa2e0&internal=1,1a779c49b1d7df6206e1c1428af645e7&internal=1,f3093eebc185e207e98f6b5c53cd2c3a&internal=1"
+    asins="B01CD5VC92,B01566WOAG,B00J2BU7WO" >}}
 
 ¡A disfrutar!
 

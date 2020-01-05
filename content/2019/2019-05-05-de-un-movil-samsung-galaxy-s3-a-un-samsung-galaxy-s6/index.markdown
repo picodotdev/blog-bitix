@@ -47,10 +47,8 @@ Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www
 * [Especificaciones Xiaomi Mi 9 SE](https://www.gsmarena.com/xiaomi_mi_9_se-9583.php)
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07PDZLZ9V&linkId=e6aff6e43c47d613b79a67b98759ef5a"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07NRK942P&linkId=bee64f83ca4375f0702a1162e17db294"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07NRK942P&linkId=bee64f83ca4375f0702a1162e17db294"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07QMYX86G&linkId=978a77e06b7c87f3ff43d6c9b35ff059" >}}
+    linkids="e6aff6e43c47d613b79a67b98759ef5a,bee64f83ca4375f0702a1162e17db294,bee64f83ca4375f0702a1162e17db294,978a77e06b7c87f3ff43d6c9b35ff059"
+    asins="B07PDZLZ9V,B07NRK942P,B07NRK942P,B07QMYX86G" >}}
 
 Sin embargo, en vez de comprar uno de estos anteriores nuevos como en ocasiones anteriores he tenido la posibilidad de heredar otro móvil, en este caso un [Samsung Galaxy S6](https://www.gsmarena.com/samsung_galaxy_s6-6849.php) lanzado en el 2015 que para haber pasado 4 años a día de hoy y por las especificaciones que tiene ha resistido el paso del tiempo bastante bien creo para los móviles del 2019 de gama media-baja. Y es que es un móvil de gama alta de su época al igual que lo fue el S3 en su momento. En primer contacto con él se nota una apreciable fluidez al abrir aplicaciones comparado con el Samsung Galaxy S3.
 

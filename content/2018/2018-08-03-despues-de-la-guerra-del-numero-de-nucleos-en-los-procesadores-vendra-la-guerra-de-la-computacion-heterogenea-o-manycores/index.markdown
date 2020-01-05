@@ -52,16 +52,12 @@ Si quieres conocer más en detalle los procesadores tanto de su historia, evoluc
 * [El mundo de Bitman Volumen VII: En busca del valle de la sabiduría](https://amzn.to/2vtMxX0)
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D696XBB&linkId=68de3e78830192ba75c0512a8b048e63"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D6BF6CW&linkId=769694edd9c03d5e1a74b03b7eade17c"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D69FJZ6&linkId=b1f514ab8a8cae2115f747df36ac6f50"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D6CNWXY&linkId=746131c517ce1fcff5123b245b7b14e3" >}}
+    linkids="68de3e78830192ba75c0512a8b048e63,769694edd9c03d5e1a74b03b7eade17c,b1f514ab8a8cae2115f747df36ac6f50,746131c517ce1fcff5123b245b7b14e3"
+    asins="B07D696XBB,B07D6BF6CW,B07D69FJZ6,B07D6CNWXY" >}}
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D6DKR6M&linkId=d1f99426a5b8f832bed37cfe2dc523ce"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D6DJY7S&linkId=a815ffc4213a965f1e5c563d251ebf70"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1983184802&linkId=f8912ba1ea6fef10df26ccbcdd518fea"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07D6C48R2&linkId=c198603a8ed771769efbefe232468ecb" >}}
+    linkids="d1f99426a5b8f832bed37cfe2dc523ce,a815ffc4213a965f1e5c563d251ebf70,f8912ba1ea6fef10df26ccbcdd518fea,c198603a8ed771769efbefe232468ecb"
+    asins="B07D6DKR6M,B07D6DJY7S,1983184802,B07D6C48R2" >}}
 
 Dentro de unos años, lustros o alguna década revisaré estos artículos de predicción a ver cuanto hay de acierto en la evolución de la tecnología que se produzca finalmente.
 

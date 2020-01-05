@@ -31,12 +31,6 @@ draft: true
     caption="" >}}
 
 {{< amazon
-    link1=""
-    link2=""
-    link3=""
-    link4="" }}
-
-{{< amazon
     linkids=""
     asins="" }}
 
@@ -60,6 +54,12 @@ draft: true
 {{% /reference %}}
 
 {{< gist picodotdev id "file" >}}
+
+{{< amazon
+    link1=""
+    link2=""
+    link3=""
+    link4="" }}
 
 {{< figure
     image1="" thumb1="-thumb.png" title1=""

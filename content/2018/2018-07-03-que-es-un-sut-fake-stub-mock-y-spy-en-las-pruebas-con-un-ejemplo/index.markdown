@@ -43,7 +43,8 @@ Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temper
 En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda esta teoría básica de pruebas además de explicar bastante detalladamente todas las posibilidades de la herramienta de _testing_ [Spock][spock].
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1617292532&linkId=b57d8e90599c681fc8e794027e17bea3" >}}
+    linkids="b57d8e90599c681fc8e794027e17bea3"
+    asins="1617292532" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/TestingStubMock" command="./gradlew test" >}}
 

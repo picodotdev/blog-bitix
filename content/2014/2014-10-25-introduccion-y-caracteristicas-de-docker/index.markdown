@@ -50,7 +50,8 @@ En la siguiente presentación muy completa están ampliados muchas de sus posibi
 Una vez conocidos los aspectos básicos y en que se diferencia docker de la virtualización así como el caso de uso de por ejemplo un devbox o disponer de entornos similares a los de producción de una aplicación, en el siguiente artículo comentaré [cómo instalar docker, cómo empezar a usarlo, cómo obtener imágenes de servicios y pararlos y administrarlos][blogbitix-50]. En la siguiente [lista de enlaces sobre Docker](http://www.nkode.io/2014/08/24/valuable-docker-links.html) se puede encontrar mucha información reunida dispersa en la red, desde introducciones, opiniones, como usarlo, como empaquetar las aplicaciones, como monitorizar o como usarlo en microservicios.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1633430235&linkId=9d344246cd59cd65a952305379c2556a" >}}
+    linkids="9d344246cd59cd65a952305379c2556a"
+    asins="1633430235" >}}
 
 {{< reference >}}
 * [Inicio básico de Docker][blogbitix-50]

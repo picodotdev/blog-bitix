@@ -22,7 +22,8 @@ Hasta ahora como desarrollador web durante prácticamente toda mi vida laboral n
 Para aprender en mucho más en detalle lo poco que conocía de JavaScript he leído el libro [Learning JavaScript](https://amzn.to/2g3TV52) que cubre las novedades de ECMAScript 2015 también conocido como ECMAScript 6 (ES6). Después de leerlo diré que es un libro que me ha gustado mucho y considero que es adecuado tanto para alguien que pueda estar aprendiendo a programar como para alguien que ya conoce otros lenguajes de programación explicando los conceptos sin complicaciones.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1491914912&linkId=3ea3a8ae787fc5f9cdd9ca6934c7d635&internal=1" >}}
+    linkids="3ea3a8ae787fc5f9cdd9ca6934c7d635&internal=1"
+    asins="1491914912" >}}
 
 Las últimas versiones de los navegadores [Chrome][google-chrome] y [Firefox][firefox] ya soportan todo lo que describo a continuación y que está más detalladamente explicado en el libro. Para los navegadores que aún no soportan todo como en los dispositivos móviles hay compiladores o _transpilers_ para [traducir de ECMAScript 6 a ECMAScript 5][blogbitix-200]. En un entorno en el que sepamos se usa solo Chrome o Firefox como en una intranet o una aplicación de uso interno en una organización podemos utilizar estas novedades y si es una aplicación accesible por cualquier usuario desde internet podemos hacer la conversión de ECMAScript 6 a ECMAScript 5 con [gulp][gulpjs] o [grunt][grunt].
 

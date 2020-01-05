@@ -35,7 +35,7 @@ En la sección [Seguimiento de eventos](https://developers.google.com/analytics/
 Como para cualquier otra cosa en la que queramos profundizar una buena forma es con algunos libros específicos dedicados al tema. Los siguientes son dos libros de los [muchos libros sobre Google Analytics](https://amzn.to/2cH8SXR) disponibles en [Amazon][amazon].
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=0596158009&linkId=4babfb60d80236251c0ef398bc3ab757&internal=1"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=148420266X&linkId=c179f357fbd31e18d25e93fd13c9729e&internal=1" >}}
+    linkids="4babfb60d80236251c0ef398bc3ab757&internal=1,c179f357fbd31e18d25e93fd13c9729e&internal=1"
+    asins="0596158009,148420266X" >}}
 
 {{% /post %}}

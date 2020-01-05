@@ -33,16 +33,14 @@ En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo A
     image2="cargador-4.jpg" optionsthumb2="300x200" >}}
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01NGYNI1T&linkId=0bfa2d5bd06eb2605fb1139281987bf5"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01NBNILL7&linkId=5c3dcd6a3b17aca40628ad288a0947ed"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01NCP0MXC&linkId=0ffb4d325c98b4193eeee9efc053355a" >}}
+    linkids="0bfa2d5bd06eb2605fb1139281987bf5,5c3dcd6a3b17aca40628ad288a0947ed,0ffb4d325c98b4193eeee9efc053355a"
+    asins="B01NGYNI1T,B01NBNILL7,B01NCP0MXC" >}}
 
 Otros modelos de cargador en los que me fijé son los siguientes pero el que elegí en su rango de precios considero que es de lo mejor que hay disponible:
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00PY5RYXW&linkId=a49721d23c6f391be7fa88bd2a268c3a"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01KUKZMVQ&linkId=9edbbd320011598567b8f2ee39ef5770"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01NBV8V93&linkId=83325d3495624728f2271932495963e6" >}}
+    linkids="a49721d23c6f391be7fa88bd2a268c3a,9edbbd320011598567b8f2ee39ef5770,83325d3495624728f2271932495963e6"
+    asins="B00PY5RYXW,B01KUKZMVQ,B01NBV8V93" >}}
 
 ### Relog analógico
 
@@ -59,15 +57,14 @@ Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas 
     image1="reloj-3.jpg" optionsthumb1="300x200" >}}
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CZPVR2C&linkId=b4520ee6411fb18af5d5eeecf755ca44" >}}
+    linkids="b4520ee6411fb18af5d5eeecf755ca44"
+    asins="B01CZPVR2C" >}}
 
 Otros modelos de relojes digitales de pared y mesa que ví son los siguientes, casi todos tienen como función adicional indicar la temperatura interior y la fecha.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00J8Q59R6&linkId=bd6a22abb84218e18458f0f33b5c6354"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B019Q6ZPNA&linkId=e06285646693f16ed8dca012e2afb91b"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00I023BB0&linkId=ab0420b22a221629ea512e5d00dca56f"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00D2PIA7U&linkId=e4c59a48332124cead194f867605cde6" >}}
+    linkids="bd6a22abb84218e18458f0f33b5c6354,e06285646693f16ed8dca012e2afb91b,ab0420b22a221629ea512e5d00dca56f,e4c59a48332124cead194f867605cde6"
+    asins="B00J8Q59R6,B019Q6ZPNA,B00I023BB0,B00D2PIA7U" >}}
 
 ### Pilas recargables AA
 
@@ -85,7 +82,7 @@ Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](htt
 Pilas AA y AAA en Amazon.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00CWNMR5Y&linkId=452a2e62d3e787a6b63d8af73e5f278e"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00CWNMXQW&linkId=175ef0a2dea4d5a15c8c231fd006c67d" >}}
+    linkids="452a2e62d3e787a6b63d8af73e5f278e,175ef0a2dea4d5a15c8c231fd006c67d"
+    asins="B00CWNMR5Y,B00CWNMXQW" >}}
 
 {{% /post %}}

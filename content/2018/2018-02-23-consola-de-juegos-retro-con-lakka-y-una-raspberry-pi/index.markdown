@@ -40,15 +40,12 @@ Los elementos necesarios para tener tener una consola retro son los siguientes: 
 * [ROMs de juegos](https://archive.org/details/datomatic.no-intro.org)
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JYC4XM&linkId=fc47107b5f2e02c96571abfa0506c1c7"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B014I8U33I&linkId=df5c52be4ca21b9991d26145edb0b642"
-    link5="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VMXHJ4Q&linkId=39ee0802cdc202ce8259d463b59224ed" >}}
+    linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,fc47107b5f2e02c96571abfa0506c1c7,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
+    asins="B07TC2BK1X,B07XNVPK8X,B073JYC4XM,B014I8U33I,B07VMXHJ4Q" >}}
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01N59IUV5&linkId=0bcc896ec870ce504e2c4c0acfaa8870"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B00564GWEI&linkId=2264c2741c0914e881d4e70b36b927da" >}}
+    linkids="0bcc896ec870ce504e2c4c0acfaa8870,2264c2741c0914e881d4e70b36b927da"
+    asins="B01N59IUV5,B00564GWEI" >}}
 
 El software para usar la Raspberry Pi como consola retro que he utilizado es Lakka que es una distribución [GNU][gnu]/[Linux][linux] especifica para convertir un ordenador en una consola de juegos retro. Para instalarlo en la tarjeta microSD hay que [descargar la imagen de Lakka](http://www.lakka.tv/get/) y una forma simple de grabarla en la tarjeta microSD es utilizando [Etcher][etcher], basta instalarlo, iniciarlo, seleccionar la imagen de Lakka una vez descomprimido su archivo zip, seleccionar la unidad de la tarjeta SD (si es necesario ya que Etcher puede seleccionarla automáticamente) y pulsar el botón _Flash!_, después de unos pocos minutos la imagen está grabada y la tarjeta microSD lista para usarla en la Raspberry Pi y efectuar el primer inicio.
 

@@ -22,7 +22,7 @@ O si lo prefieres solicitame un artículo patrocinado a través de la [plataform
 * [Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP][blogbitix-381]
 
 <div class="text-center">
-    <p align="center"><a target="_blank" href="https://spacecontent.net/es/w/web/blogbitix/?affiliate=5acb9ab4c9a5f"> <img src="https://spacecontent.net/uploads/ad/bxt8g3imv.png" alt="Publicidad en Internet"></a></p>
+    <p aling="center"><a target="_blank" href="https://spacecontent.net/es/w/web/blogbitix/?affiliate=5acb9ab4c9a5f"> <img src="https://spacecontent.net/uploads/ad/bxt8g3imv.png" alt="Publicidad en Internet"></a></p>
     <p><a href="https://www.publisuites.com/advertisers/webaff/11383/" rel="nofollow" target="_blank"><img src="assets/images/paysuites-afiliado-500-v3.jpg" alt="Publicidad con Paysuites"></a></p>
 </div>
 

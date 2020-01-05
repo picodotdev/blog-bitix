@@ -124,8 +124,8 @@ Si no usamos Linux tanto Mame como QMC2 están disponibles tanto para [Windows][
 Incluso con una [Raspberry Pi][amazon-raspberrypi] podremos jugar usando como pantalla una televisión. Con un [mando inalámbrico de arcade](https://amzn.to/2bjiYN8) (no he probado si funcionará) tendremos una experiencia muy parecida a una consola. Instalando en la RPi una distribución como [Retropie](https://retropie.org.uk/) o [Libretro](https://www.libretro.com/) emularemos los juegos en este pequeño computador multipropósito.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B01CD5VC92&linkId=a79bf1bb391f6591c039b7696a22e9ef&internal=1"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B013B61SCS&linkId=61b4a105bc7d42ff174de961aaab0e67&internal=1" >}}
+    linkids="a79bf1bb391f6591c039b7696a22e9ef&internal=1,61b4a105bc7d42ff174de961aaab0e67&internal=1"
+    asins="B01CD5VC92,B013B61SCS" >}}
 
 Ya solo nos queda disfrutar y pasar un buen rato con nuestros juegos preferidos, nada que envidiar en cuanto a diversión a una PlayStation 4 ;), ah y no ocupan 20 GiB sino menos de 1 MiB.
 

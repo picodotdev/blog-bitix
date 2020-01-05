@@ -26,11 +26,8 @@ Los servicios en la nube permiten guardar los documentos e información fuera de
 Una [Raspberry Pi 4][raspberrypi] o una de sus [7 computadoras alternativas][blogbitix-304] similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nexcloud con los 4 GiB de memoria del modelo con más capacidad. Hay [otras placas similares][blogbitix-304] o incluso se puede utilizar un [Intel NUC][blogbitix-363] que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07TC2BK1X&linkId=6e87726b77e92056e7ac168add1bc747"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07XNVPK8X&linkId=bef0fad42b2cc046799c66f7fa220c0f"
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B073JWXGNT&linkId=d64d66fda7d25defd2018c4119aa7e46"
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B014I8U33I&linkId=df5c52be4ca21b9991d26145edb0b642"
-    link5="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B07VMXHJ4Q&linkId=39ee0802cdc202ce8259d463b59224ed" >}}
+    linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,d64d66fda7d25defd2018c4119aa7e46,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
+    asins="B07TC2BK1X,B07XNVPK8X,B073JWXGNT,B014I8U33I,B07VMXHJ4Q" >}}
 
 Usando [Docker][docker] y el [repositorio de GitHub](https://github.com/ONLYOFFICE/docker-onlyoffice-nextcloud) es sencillo iniciar el servidor de Nextcloud realizando los siguientes pasos.
 

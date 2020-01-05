@@ -62,8 +62,8 @@ RabbitMQ posee un [_plugin_ para la administración](https://www.rabbitmq.com/ma
 Para profundizar más en las aplicaciones basadas en mensajes con RabbitMQ dos buenos libros son [Learning RabbitMQ](https://amzn.to/2lTGMQc) y [Matering RabbitMQ](https://amzn.to/2lW9qwF) cubriendo temas más avanzados como _clustering_, alta disponibilidad, arquitectura, patrones de diseño, seguridad y rendimiento.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783984562&linkId=9bb0705e8a34f246d5530b141b0a690e"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1783981520&linkId=e87eebb622314cdf0c2c14fc32940264" >}}
+    linkids="9bb0705e8a34f246d5530b141b0a690e,e87eebb622314cdf0c2c14fc32940264"
+    asins="1783984562,1783981520" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoRabbitMQ" command="docker-compose up, ./gradlew receive, ./gradle send" >}}
 

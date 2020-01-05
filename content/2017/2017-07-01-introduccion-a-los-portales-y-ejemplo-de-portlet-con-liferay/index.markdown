@@ -113,8 +113,8 @@ Desarrollar un _portlet_ con su API directamente es una tarea costosa si la func
 Aunque el libro [Liferay in Action](https://amzn.to/2sc1tWN) o [Portlets in Action](https://amzn.to/2tzpbjL) no están actualizados a la última versión sirven para conocer los conceptos básicos de su funcionamiento, explican la teoría e incluyen ejemplos de código de como crear un _portlet_.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=1935182544&linkId=6d736075105602e7c318919a1c81609d"
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=193518282X&linkId=a4fdbe9a2a0c68685cfc8119f253125b" >}}
+    linkids="6d736075105602e7c318919a1c81609d,a4fdbe9a2a0c68685cfc8119f253125b"
+    asins="1935182544,193518282X" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoPortlet" command="./gradlew build" >}}
 
