@@ -31,12 +31,13 @@ En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="gradle-version.png" thumb1="gradle-version-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Artefacto distribuible con información de versión" >}}
+{{< image
+    gallery="true"
+    image1="gradle-version.png" optionsthumb1="300x200" title1="Artefacto distribuible con información de versión" >}}
 
 En este caso el artefacto que he usado ha sido un archivo _jar_ si se tratase de una aplicación web y de un archivo _war_ en el archivo de construcción de Grade se puede aplicar esto de forma similar. La aplicación podría devolver la versión como una cabecera <abbr title="HyperText Transfer Protocol">HTTP</abbr> o el en código fuente de <abbr title="HyperText Markup Language">HTML</abbr> como un comentario que genere sus páginas web.
 
-El libro <a rel="nofollow" href="https://www.amazon.es/gp/product/1617291307/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1617291307&linkCode=as2&tag=blobit-21">Gradle in Action</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1617291307" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> proporciona una aplicación más detallada de muchos conceptos de Gradle, otro buen punto de partida es la propia [documentación de Gradle](https://docs.gradle.org/current/userguide/userguide.html).
+El libro [Gradle in Action](https://amzn.to/2tzDFla) proporciona una aplicación más detallada de muchos conceptos de Gradle, otro buen punto de partida es la propia [documentación de Gradle](https://docs.gradle.org/current/userguide/userguide.html).
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291307&internal=1" >}}

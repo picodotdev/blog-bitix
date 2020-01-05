@@ -20,8 +20,9 @@ El día 12 de mayo de 2017 se produjo un ataque informático de tipo ransomware 
 
 La peligrosidad de este ransomware radica en que cifra los datos que es una de las cosas más importantes de un sistema, también causa que el sistema deje de prestar su servicio con los quebrantos que puede ocasionar si el buen funcionamiento del sistema es crítico en una empresa. Una vez un sistema es corrompido la forma de no ser víctima de la extorsión para recuperar los archivos es a través de una copia de seguridad una vez reinstalado Windows.
 
-{{< figureproc
-    image1="wannacry.png" thumb1="wannacry-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Captura del ransomware WannaCry en un sistema infectado"
+{{< image
+    gallery="true"
+    image1="wannacry.png" optionsthumb1="300x200" title1="Captura del ransomware WannaCry en un sistema infectado"
     caption="Captura del ransomware WannaCry en un sistema infectado" >}}
 
 El programa ransomware se introduce en los los sistemas aún vulnerables conectados a internet o porque un usuario lo activa por ejemplo mediante un clic en un correo electrónico en un sistema interno no conectado directamente a internet. Una vez un sistema es infectado se transmite al resto de equipos vulnerables a los que tenga acceso de la red local, multiplicando el problema.

@@ -22,16 +22,19 @@ Para crear el esqueleto de una aplicación rápidamente en [Apache Tapestry](htt
 
 El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, org.apache.tapestry:quickstart. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo io.github.picodotdev.bitix y como nombre de artefacto iniciorapido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.
 
-{{< figureproc
-    image1="arquetipos-maven.png" thumb1="arquetipos-maven-thumb.png" options1="2560x1440" optionsthumb1="450x400"
-    image2="arquetipos-tapestry.png" thumb2="arquetipos-tapestry-thumb.png" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="arquetipo-tapestry.png" thumb1="arquetipo-tapestry-thumb.png" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="arquetipos-maven.png" optionsthumb1="300x200"
+    image2="arquetipos-tapestry.png" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="arquetipo-tapestry.png" optionsthumb1="300x200" >}}
 
 Aunque el arquetipo lo realizamos con Maven los archivos que genera son válidos tanto para trabajar con Maven como con [Gradle](http://www.gradle.org/), una vez que tenemos la aplicación generada podemos usar el que prefiramos, probablemente mejor Gradle. Los archivos generados son los siguientes:
 
-{{< figureproc
-    image1="archivos-generados.png" thumb1="archivos-generados-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Terminal al iniciar la aplicación" >}}
+{{< image
+    gallery="true"
+    image1="archivos-generados.png" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación" >}}
 
 Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jetty](http://www.eclipse.org/jetty/) con la aplicación desplegada en él ya usando [Gradle](http://www.gradle.org/):
 
@@ -39,9 +42,10 @@ Una vez generada la aplicación podemos iniciarla con un servidor embebido [Jett
 
 Y accediendo con el navegador a la URL que nos indica Tapestry al final de las trazas veremos la aplicación en funcionamiento.
 
-{{< figureproc
-    image1="inicio-aplicacion-terminal.png" thumb1="inicio-aplicacion-terminal-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Terminal al iniciar la aplicación"
-    image2="inicio-aplicacion-navegador.png" thumb2="inicio-aplicacion-navegador-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Aplicación en el navegador" >}}
+{{< image
+    gallery="true"
+    image1="inicio-aplicacion-terminal.png" optionsthumb1="300x200" title1="Terminal al iniciar la aplicación"
+    image2="inicio-aplicacion-navegador.png" optionsthumb2="300x200" title2="Aplicación en el navegador" >}}
 
 Probablemente necesitaremos configurar muchas cosas adicionales como usar [Tomcat como servidor embebido](https://github.com/bmuschko/gradle-tomcat-plugin) en vez de Jetty o añadir la [configuración necesaria para ejecutar los teses unitarios y de integración](https://elblogdepicodev.blogspot.com.es/2013/06/pruebas-unitarias-y-de-integracion-en-apache-tapestry.html), Tapestry no es un _framework_ _fullstack_ y será responsabilidad nuestra disponer de esas características si necesitamos. En definitiva, con este arquetipo de Maven en unos pocos minutos y con poco esfuerzo podemos disponer de una aplicación Apache Tapestry a partir de la que empezar a desarrollar.
 

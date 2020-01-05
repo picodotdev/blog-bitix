@@ -29,10 +29,11 @@ En la página de este tutorial se explica cual es el [código HTML necesario par
 
 Varias de las mismas consultas que hacía con _curl_ en otros artículos es posible lanzarlas con GraphiQL. Es posible formatear correctamente una consulta con el botón _prettify_. Con en el enlace de documentación se puede explorar los tipos definidos en la API. Con funciones similares a un IDE ofrece errores de sintaxis, asistencia contextual e historial de consultas, en definitiva es una gran mejora sobre _curl_ y su incorporación a la aplicación es muy sencilla.
 
-{{< figureproc
-    image1="graphiql-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta"
-    image2="graphiql-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Asistencia contextual"
-    image3="graphiql-3.png" options3="2560x1440" optionsthumb3="300x200" title3="Explorador del esquema"
+{{< image
+    gallery="true"
+    image1="graphiql-1.png" optionsthumb1="300x200" title1="Consulta"
+    image2="graphiql-2.png" optionsthumb2="300x200" title2="Asistencia contextual"
+    image3="graphiql-3.png" optionsthumb3="300x200" title3="Explorador del esquema"
     caption="El editor GraphiQL para una API con GraphQL" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}

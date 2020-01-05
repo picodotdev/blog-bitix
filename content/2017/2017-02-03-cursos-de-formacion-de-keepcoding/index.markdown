@@ -92,8 +92,9 @@ Para aprender de forma intensiva durante 4 y 6 meses con mayor profundidad impar
 * [Full Stack Big Data & Machine Learning Bootcamp](https://keepcoding.io/es/big-data-machine-learning-bootcamp/?affcode=897_eznkgvrg)
 * [Full Stack DevOps Bootcamp](https://keepcoding.io/es/bootcamp-devops/?affcode=897_eznkgvrg)
 
-{{< figureproc
-    image1="keepcoding-course.png" thumb1="keepcoding-course-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Curso online de KeepCoding"
+{{< image
+    gallery="true"
+    image1="keepcoding-course.png" optionsthumb1="300x200" title1="Curso online de KeepCoding"
     caption="Curso online de KeepCoding" >}}
 
 Algunos cursos de que ofrece KeepCoding son gratis y puedes inscribirte en ellos libremente y permite conocer la metodología de los cursos. Los cursos de pago tienen un precio de entre 30€ y 300€. Si la empresa en la que trabajas tiene interés en formar a sus empleados (y debería) posiblemente también esté interesada en costear el curso si el trabajo que desarrollas coincide con la temática de los cursos, este puede ser el caso de los [Curso Programación Android desde Cero](https://plataforma.keepcoding.io/p/curso-programacion_android_desde_cero?affcode=897_eznkgvrg), del [Curso Git, GitHub & SourceTree](https://plataforma.keepcoding.io/p/curso-git-github-sourcetree?affcode=897_eznkgvrg), del [Curso iOS Avanzado](https://plataforma.keepcoding.io/p/curso-programacion-ios-avanzada?affcode=897_eznkgvrg) o de [Curso Django + Python & REST](https://plataforma.keepcoding.io/p/curso-online-python-django-rest?affcode=897_eznkgvrg). También a nivel personal es una buena opción de formación para optar a puestos de trabajo de nuestro interés y demandados en el mercado laboral. El pago se puede hacer mediante tarjeta de crédito y tienen un derecho de desistimiento de 14 días según las [Condiciones Generales de Contratación de KeepCoding](https://plataforma.keepcoding.io/p/condiciones-generales-contratacion/?affcode=897_eznkgvrg).

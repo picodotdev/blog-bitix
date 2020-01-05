@@ -37,8 +37,9 @@ El programa de ejemplo es universal gracias a la idea _«Write once, run anywher
 
 El resultado de este ejemplo es un mensaje en la terminal que es emitido por un programa Java ejecutado en la Raspberry Pi y lanzado de forma remota.
 
-{{< figureproc
-    image1="java-raspberrypi-hello-world.png" thumb1="java-raspberrypi-hello-world-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Ejemplo Hello World con Java en la Raspberry Pi"
+{{< image
+    gallery="true"
+    image1="java-raspberrypi-hello-world.png" optionsthumb1="300x200" title1="Ejemplo Hello World con Java en la Raspberry Pi"
     caption="Ejemplo Hello World con Java en la Raspberry Pi" >}}
 
 En los siguientes artículos de la serie mostraré ya como usar diferentes elementos de salida como diodos LED, zumbador, _display_ LCD 1602 o de entrada como un pulsador.

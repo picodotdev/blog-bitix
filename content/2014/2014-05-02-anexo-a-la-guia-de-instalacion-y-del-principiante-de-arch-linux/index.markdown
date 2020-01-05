@@ -34,9 +34,10 @@ Para grabarlo en una memoria USB deberemos usar el comando dd reemplazando /dev/
 
 Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La forma de hacerlo cambiará según la marca de nuestro ordenador pero normalmente es usando alguna tecla de entre ESC, F2, F8, F10, F10, en el caso de mi Sony Vaio es usando la tecla ASSIST y con el sistema apagado.
 
-{{< figureproc
-    image1="instalacion-arch-linux.png" thumb1="instalacion-arch-linux-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Menú instalación Arch Linux"
-    image2="instalacion-arch-linux-prompt.png" thumb2="instalacion-arch-linux-prompt-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Inicio instalación Arch Linux" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-arch-linux.png" optionsthumb1="300x200" title1="Menú instalación Arch Linux"
+    image2="instalacion-arch-linux-prompt.png" optionsthumb2="300x200" title2="Inicio instalación Arch Linux" >}}
 
 Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:
 
@@ -268,7 +269,8 @@ Para mantener la hora de nuestro sistema correctamente podemos usar un servicio 
 
 El resultado de la instalación y usando GNOME es el siguiente:
 
-{{< figureproc
-    image1="escritorio-gnome.jpg" thumb1="escritorio-gnome-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="escritorio-gnome.jpg" optionsthumb1="300x200" >}}
 
 {{% /post %}}

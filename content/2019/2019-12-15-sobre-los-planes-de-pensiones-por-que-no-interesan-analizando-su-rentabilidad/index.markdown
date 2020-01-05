@@ -22,14 +22,16 @@ Antes de nada decir que yo, como a muchas personas a las que se les ofrece este 
 
 También hay que decir que los gestores personales que las entidades bancarias asignan a sus clientes son empleados y les paga su sueldo el banco, son como cualesquiera otros comerciales y vendedores profesionales con objetivos de ventas anuales (en este caso productos financieros), pueden informar y asesorar hasta cierto punto pero hay que tener cautela en lo que un gestor personal nos ofrece porque sus intereses pueden no ir en el mayor beneficio de sus clientes ni conocen sus circunstancias completas y el dinero invertido en un producto de riesgo es el del propio cliente. Por mucha confianza que el cliente tenga en su asesor por la relación que tengan durante largos años. Más cautela en un producto a muy largo plazo como es un plan de pensiones.
 
-{{< imageproc
-    image1="santander.svg" options1="200x150" title1="Santander"
-    image2="bbva.svg" options2="200x150" title2="BBVA"
-    image3="caixabank.svg" options3="200x150" title3="Caixabank" >}}
-    {{< imageproc
-    image1="sabadell.svg" options1="200x150" title1="Sabadell"
-    image2="bankia.svg" options2="200x150" title2="Bankia"
-    image3="kutxabank.svg" options3="200x150" title3="Kutxabank" >}}
+{{< image
+    gallery="false"
+    image1="santander.svg" optionsthumb1="200x150" title1="Santander"
+    image2="bbva.svg" optionsthumb2="200x150" title2="BBVA"
+    image3="caixabank.svg" optionsthumb3="200x150" title3="Caixabank" >}}
+{{< image
+    gallery="false"
+    image1="sabadell.svg" optionsthumb1="200x150" title1="Sabadell"
+    image2="bankia.svg" optionsthumb2="200x150" title2="Bankia"
+    image3="kutxabank.svg" optionsthumb3="200x150" title3="Kutxabank" >}}
 
 ### Características de los planes de pensiones
 

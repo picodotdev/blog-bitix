@@ -29,8 +29,9 @@ Para generar documentos en PDF en Java está disponible la librería [Apache PDF
 
  El resultado es el siguiente {{< resourcelink text="Documento PDF" name="document.pdf" >}}.
 
-{{< figureproc
-    image1="document.png" options1="2560x1440" optionsthumb1="600x450" title1="Documento generado con PDFBox"
+{{< image
+    gallery="true"
+    image1="document.png" optionsthumb1="600x450" title1="Documento generado con PDFBox"
     caption="Documento generado con PDFBox" >}}
 
 Una alternativa a PDFBox es [iText][itext], la primera tiene una [licencia Apache][apache-license] e iText una [licencia AGPL][gnu-agpl] o comercial lo que puede ser determinante para un proyecto. La licencia AGPL obliga a que una aplicación web haga público su código fuente lo que probablemente en usos comerciales no sea lo deseado y usar la versión de la licencia comercial obliga a adquirir el derecho de uso al que obliga la licencia que posee un coste tal vez indeseado o que directamente hace que quede descartada.

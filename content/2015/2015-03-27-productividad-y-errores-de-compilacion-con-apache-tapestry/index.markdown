@@ -22,19 +22,22 @@ La errores de compilación no depende de escribir pocas lineas de código o ahor
 
 Con Java y un IDE podremos detectar los errores de compilación que en un lenguaje dinámico solo observaremos en tiempo de ejecución. En Tapestry además podemos detectar los errores de compilación en las plantillas tml que generan el contenido html con un botón en la [página Dashboard][blogbitix-28] que ofrece incorporada Tapestry. Usando como ejemplo la aplicación que hice para el [libro PlugIn Tapestry][blogbitix-12] vamos a ver como detectar estos errores. De forma intencionada introduciré un error en la página que muestra el detalle de un producto en el mantenimiento CRUD del ejemplo. En vez de _producto.nombre_ introduciré el error de compilación poniendo _producto.nombra_, _nombra_ es una propiedad que no existe en la clase _Producto_, error que solo detectaremos después de crear un producto en otros _frameworks_ al ejercitar el código pero que en Tapestry detectaremos también desde la página Dashboard. Por otra parte dado que en Tapestry las plantillas tml son xml válido si una etiqueta está mal balanceada también nos avisará.
 
-{{< figureproc
-    image1="producto.png" thumb1="producto.png" options1="2560x1440" optionsthumb1="450x400" title1="Edición de un producto" >}}
+{{< image
+    gallery="true"
+    image1="producto.png" optionsthumb1="300x200" title1="Edición de un producto" >}}
 
 {{< code file="ProductoAdmin.tml" language="html" options="" >}}
 
-{{< figureproc
-    image1="error.png" thumb1="error.png" options1="2560x1440" optionsthumb1="450x400" title1="Error de compilación al acceder a la página" >}}
+{{< image
+    gallery="true"
+    image1="error.png" optionsthumb1="300x200" title1="Error de compilación al acceder a la página" >}}
 
 Entrando a la [página Dashboard][blogbitix-28] y pulsando el botón _Load all pages_ detectaremos el error sin necesidad de crear un producto. El error es el siguiente que nos indicará claramente en que página o componente se ha producido el error y una descripción bastante clara de la causa del problema.
 
-{{< figureproc
-    image1="dashboard.png" thumb1="dashboard.png" options1="2560x1440" optionsthumb1="450x400" title1="Página dashboard"
-    image2="error-dashboard.png" thumb2="error-dashboard.png" options2="2560x1440" optionsthumb2="450x400" title2="Página dashboard" >}}
+{{< image
+    gallery="true"
+    image1="dashboard.png" optionsthumb1="300x200" title1="Página dashboard"
+    image2="error-dashboard.png" optionsthumb2="300x200" title2="Página dashboard" >}}
 
 En la imagen con el mensaje del error se puede ver de forma muy detallada cual es la causa, nos indica que el error está en la página _admin/Producto_ y que la clase _es.com.blogspot.elblogdepicodev.plugintapestry.Producto_ no tiene una propiedad llamada _nombra_, con este mensaje rápidamente nos damos cuenta del error de escritura que hemos cometido, corregirlo basta con sustituir _nombra_ por _nombre_ y pulsando de nuevo el botón _Load all pages_ comprobamos que no hay más errores en esa misma página o ninguna otra de la aplicación.
 

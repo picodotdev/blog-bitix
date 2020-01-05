@@ -24,36 +24,39 @@ Como me he propuesto en anteriores veces que he recibido algún ingreso por el b
 
 Aunque la distribución [GNU][gnu]/[Linux][linux] que uso es [Arch Linux][archlinux] he elegido donar a Elementary OS porque me parece una distribución interesante por ofrecer algo distinto a las otras muchas distribuciones que existen y no tienen algo diferenciador. Elementary tiene un diseño, estética y usabilidad de interfaz muy cuidada. Arch Linux es la distribución _rolling release_ que se mantiene siempre actualizada y con una gran [documentación en forma de wiki][archlinux-wiki]. Las versiones LTS de [Ubuntu][ubuntu] ofrecen soporte durante un periodo largo de tiempo pero cuya interfaz Unity no convence a muchos. [Debian][debian], [openSUSE][opensuse] y [Fedora][fedora] son otras de las distribuciones grandes y junto con [Linux Mint][linuxmint] también a tener en cuenta para los usuarios que quieren dar el cambio a Linux. Pero para un recién llegado a GNU/Linux o que simplemente quiere un sistema para trabajar en mi opinión Elementary OS o Linux Mint o una versión LTS de Ubuntu si nos convence su interfaz Unity sea lo recomendable por lo que usar en un primer momento, desde luego no Arch Linux y posiblemente tampoco Debian, openSUSE o Fedora. Espero que Elementary siga desarrollandose y no sea una de las muchas distribuciones que al cabo de unos años es abandonada por falta de interés de sus desarrolladores, falta de éxito o ingresos.
 
-<div class="media">
-    <img src="assets/images/logotypes/elementary.svg" alt="Elementary OS" title="Elementary OS" width="200"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/elementary.svg" optionsthumb1="200x200" title1="Elementary OS" >}}
 
 ### Libre Office
 
 LibreOffice es el proyecto ofimático que se postula como una de las mejores alternativas ofimáticas a [Microsoft Office][microsoft-office]. Su interfaz, en mi opinión, está saturada de opciones en menús donde es difícil encontrar la funcionalidad que uno necesita siendo parecida a versiones antiguas de Microsoft Office. Sin embargo, en GNU/Linux no hay muchas alternativas ofimáticas tan completas de software libre. Otra alternativa es [WPS Office][wps-office] con una interfaz mas cuidada y parecida a Microsoft Office con su interfaz de caja de herramientas _ribbon_ donde es más fácil encontrar las opciones en vez de interminables menús y diálogos de configuración. En LibreOffice me parece tan importante añadir nuevas funcionalidades como mejorar las existentes pero me gustaría que la interfaz fuese mejor, más parecida a la de Microsoft Office si fuese necesario. Parece que están dando los [primeros pasos en LibreOffice para evolucionar la barra de herramientas](https://es.blog.documentfoundation.org/evolucionando-mas-alla-de-las-restricciones-de-las-barras-de-herramientas/).
 
-<div class="media">
-    <img src="assets/images/logotypes/libreoffice.svg" alt="LibreOffice" title="LibreOffice" width="350"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/libreoffice.svg" optionsthumb1="350x350" title1="LibreOffice" >}}
 
 ### Arch Linux ARM
 
 El tercer proyecto al que he donado ha sido a Arch Linux ARM ya que lo uso en la [Raspberry Pi][raspberrypi] con la que hago la descarga de imágenes de alguna distribución que quiera probar, series, películas y libros mediante P2P. Solo tiene 256MiB de memoria y una CPU de un único núcleo pero son más que suficientes para en una noche descargar cualquier contenido que necesite.
 
-<div class="media">
-    <img src="assets/images/logotypes/archlinuxarm.svg" alt="Arch Linux ARM" title="Arch Linux ARM" width="350"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/archlinuxarm.svg" optionsthumb1="350x350" title1="Arch Linux ARM" >}}
 
 ### Comprobantes de las donaciones
 
-{{< figureproc
-    image1="donacion-elementary.png" thumb1="donacion-elementary-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donación Elementary OS"
+{{< image
+    gallery="true"
+    image1="donacion-elementary.png" optionsthumb1="300x200" title1="Donación Elementary OS"
     caption="Donación Elementary OS" >}}
-{{< figureproc
-    image1="donacion-thedocumentfoundation.png" thumb1="donacion-thedocumentfoundation-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donación The Document Foundation"
+{{< image
+    gallery="true"
+    image1="donacion-thedocumentfoundation.png" optionsthumb1="300x200" title1="Donación The Document Foundation"
     caption="Donación The Document Foundation" >}}
-{{< figureproc
-    image1="donacion-archlinuxarm.png" thumb1="donacion-archlinuxarm-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donación Arch Linux ARM"
+{{< image
+    gallery="true"
+    image1="donacion-archlinuxarm.png" optionsthumb1="300x200" title1="Donación Arch Linux ARM"
     caption="Donación Arch Linux ARM" >}}
 
 Otros proyectos que me planteo hacer una donación en el futuro son a algún proyecto relacionado con las [distribuciones BSD](https://es.wikipedia.org/wiki/Berkeley_Software_Distribution), [GNOME][gnome] o el [reproductor multimedia VLC][vlc]. Desde luego no es mucho ni todo lo que recibo como ingresos por la publicidad, sin embargo, espero que ayude a que estos grandes proyectos de software libre sigan mejorando y yo como usuario junto con otros muchos de algunos de ellos disfrutándolos en la totalidad de ellos sin coste alguno en licencias de software.

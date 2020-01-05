@@ -32,8 +32,9 @@ En el inventario descrito como un archivo en formato INI se asignan los nombres 
 
 {{< code file="ansible.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="ansible.png" thumb1="ansible-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Ansible" >}}
+{{< image
+    gallery="true"
+    image1="ansible.png" optionsthumb1="300x200" title1="Ansible" >}}
 
 El parámetro -m indica el módulo de Ansible que usamos y a continuación indicamos los parámetros. Ansible dispone de una amplia [colección de módulos](http://docs.ansible.com/list_of_all_modules.html) que nos permiten hacer cantidad de tareas.
 
@@ -53,7 +54,7 @@ El libro [Ansible Up & Running](https://www.ansible.com/ansible-book) es un buen
 
 También, en el siguiente [repositorio de GitHub hay varios ejemplos](https://github.com/ansible/ansible-examples) que podemos revisar para ver como se organizan los archivos y carpetas y las convenciones en su estructura que se usan implícitamente.
 
-Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la documentación de Ansible no me ha resultado que esté escrita de forma didáctica para dominarla empezando desde ningún conocimiento, por ello un libro como <a href="https://www.amazon.es/gp/product/1491915323/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1491915323&linkCode=as2&tag=blobit-21">Ansible: Up and Running</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1491915323" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> es una opción interesate para aprender.
+Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la documentación de Ansible no me ha resultado que esté escrita de forma didáctica para dominarla empezando desde ningún conocimiento, por ello un libro como [Ansible: Up and Running](https://amzn.to/37D5mIC) es una opción interesate para aprender.
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1491915323&internal=1" >}}

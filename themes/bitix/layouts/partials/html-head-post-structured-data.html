@@ -14,7 +14,7 @@
       },
     "datePublished": "{{ dateFormat "2006-01-02T15:04:05-07:00" .Params.date | safeHTML }}",
     "dateModified": "{{ dateFormat "2006-01-02T15:04:05-07:00" (default .Params.date .Params.updated) | safeHTML }}",
-    "inLanguage": "{{ .Params.language }}",
+    "inLanguage": "{{ default .Site.LanguageCode .Params.language }}",
     {{ if .Keywords }}"keywords": "{{ delimit .Keywords "," }}",{{ end }}
     "wordCount": "{{ .WordCount }}",
     "license": "{{ .Site.Copyright }}",

@@ -24,8 +24,9 @@ Aunque el componente tiene un buen número de parámetros para personalizar seg�
 {{< code file="ProductoAdmin.tml" language="html" options="" >}}
 {{< code file="ProductoAdmin.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="grid.png" thumb1="grid-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Componente Grid de Tapestry"
+{{< image
+    gallery="true"
+    image1="grid.png" optionsthumb1="300x200" title1="Componente Grid de Tapestry"
     caption="Componente Grid de Tapestry" >}}
 
 * _source_
@@ -51,8 +52,9 @@ Los parámetros informales (denominados así para aquellos que le pasamos al _Gr
 
 Con el parámetro _empty_ definimos un componente [Block](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/Block.html) que se usará cuando el _Grid_ no tenga filas que mostrar, lo que es útil para mostrar un mensaje indicando que la tabla no tiene filas como cuando no hay elementos.
 
-{{< figureproc
-    image1="grid-sin-elementos.png" thumb1="grid-sin-elementos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Mensaje de un Grid sin elementos"
+{{< image
+    gallery="true"
+    image1="grid-sin-elementos.png" optionsthumb1="300x200" title1="Mensaje de un Grid sin elementos"
     caption="Mensaje de un Grid sin elementos" >}}
 
 * _empty_

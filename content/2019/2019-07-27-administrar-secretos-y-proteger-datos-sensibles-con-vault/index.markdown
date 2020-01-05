@@ -79,9 +79,10 @@ En el siguiente ejemplo en modo desarrollo de uso de Vault se inicia, se realiza
 
 Vault al igual que otras de las herramientas de [HashiCorp][hashicorp] como Consul y [Nomad][nomad] posee una interfaz gráfica accesible mediante el navegador que permite realizar las mismas operaciones que a través de la API o desde la linea de comandos.
 
-{{< figureproc
-    image1="vault-ui-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Interfaz gráfica de Vault"
-    image2="vault-ui-2.png" options2="2560x1440" optionsthumb2="300x200" title2=""
+{{< image
+    gallery="true"
+    image1="vault-ui-1.png" optionsthumb1="300x200" title1="Interfaz gráfica de Vault"
+    image2="vault-ui-2.png" optionsthumb2="300x200" title2=""
     caption="Interfaz gráfica de Vault" >}}
 
 Vault a igual que otras de las herramientas de HashiCorp tiene una muy buena documentación en formato de [guía](https://learn.hashicorp.com/vault) y en formato de [documentación](https://www.vaultproject.io/docs/). En una aplicación Java el proyecto [Spring][spring] facilita su uso con [Spring Vault][spring-vault] y [Spring Cloud Vault][spring-cloud-vault].

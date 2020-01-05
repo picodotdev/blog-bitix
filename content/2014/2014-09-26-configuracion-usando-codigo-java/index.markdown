@@ -26,7 +26,7 @@ Algunas ventajas de definir la configuración de la aplicación de esta manera s
 
 Una de las razones de la existencia de los archivos de configuración es tener esa configuración de forma externalizada a la aplicación de tal forma que podamos cambiar la configuración sin tener que modificar la aplicación ni tener que recompilarla. Con la compilación y carga dinámica de la clase Java de la configuración podemos tener estas mismas propiedades de los archivos de configuración. Si a esto le sumamos la recarga dinámica evitamos tener caídas de servicio en la aplicación por modificaciones en el archivo de configuración.
 
-Todo esto es algo que se comenta en el <a href="https://www.amazon.es/gp/product/020161622X/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=020161622X&linkCode=as2&tag=blobit-21">libro The Pragmatic Programmer</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=020161622X" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> con las siguientes lineas:
+Todo esto es algo que se comenta en el [libro The Pragmatic Programmer](https://amzn.to/2sNTtku) con las siguientes lineas:
 
 > Many programs will scan such things only at startup, which is unfortunate. If you need to change the configuration, this forces you to
 > restart the application. A more flexible approach is to write programs that can reload their
@@ -39,8 +39,9 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="ConfiguracionManager.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="main.png" thumb1="main.png" options1="2560x1440" optionsthumb1="450x400" title1="Salida programa Main.java" >}}
+{{< image
+    gallery="true"
+    image1="main.png" optionsthumb1="300x200" title1="Salida programa Main.java" >}}
 
 Esta idea de no utilizar archivos de configuración sino emplear código como la mejor forma y más breve de definirla es algo que hace [gradle][gradle] con los archivos de configuración del proyecto y [apache tapestry][tapestry] para definir los módulos y la configuración del contenedor de inversión de control, parece una tendencia por el hecho de tener las propiedades y ventajas comentadas sobre otro tipo de archivos ya sean xml o sus sustitutos más recientes como yaml, json, ... que son más compactos y legibles que xml pero que siguen adoleciendo de algunos de los mismos defectos.
 

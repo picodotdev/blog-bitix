@@ -59,124 +59,157 @@ En cuanto al uso la aspiradora te sigue con facilidad al ir avanzando, tanto la 
 
 ### Caja y desempaquetado
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_091246.jpg" thumb1="Dyson_DC37c_20160124_091246-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_091312.jpg" thumb2="Dyson_DC37c_20160124_091312-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_091321.jpg" thumb1="Dyson_DC37c_20160124_091321-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_091343.jpg" thumb2="Dyson_DC37c_20160124_091343-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_091404.jpg" thumb1="Dyson_DC37c_20160124_091404-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_091417.jpg" thumb2="Dyson_DC37c_20160124_091417-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_091433.jpg" thumb1="Dyson_DC37c_20160124_091433-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_091653.jpg" thumb2="Dyson_DC37c_20160124_091653-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_091708.jpg" thumb1="Dyson_DC37c_20160124_091708-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_091738.jpg" thumb2="Dyson_DC37c_20160124_091738-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_091246.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_091312.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_091321.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_091343.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_091404.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_091417.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_091433.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_091653.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_091708.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_091738.jpg" optionsthumb2="300x200" >}}
 
 ### Cuerpo principal
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092450.jpg" thumb1="Dyson_DC37c_20160124_092450-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092459.jpg" thumb2="Dyson_DC37c_20160124_092459-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092509.jpg" thumb1="Dyson_DC37c_20160124_092509-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092519.jpg" thumb2="Dyson_DC37c_20160124_092519-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092558.jpg" thumb1="Dyson_DC37c_20160124_092558-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092613.jpg" thumb2="Dyson_DC37c_20160124_092613-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093036.jpg" thumb1="Dyson_DC37c_20160124_093036-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093045.jpg" thumb2="Dyson_DC37c_20160124_093045-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093058.jpg" thumb1="Dyson_DC37c_20160124_093058-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093105.jpg" thumb2="Dyson_DC37c_20160124_093105-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093110.jpg" thumb1="Dyson_DC37c_20160124_093110-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093134.jpg" thumb2="Dyson_DC37c_20160124_093134-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093201.jpg" thumb1="Dyson_DC37c_20160124_093201-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093941.jpg" thumb2="Dyson_DC37c_20160124_093941-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092450.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092459.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092509.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092519.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092558.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092613.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093036.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093045.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093058.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093105.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093110.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093134.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093201.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093941.jpg" optionsthumb2="300x200" >}}
 
 ### Componentes y accesorios
 
 En la caja no viene pero se proporcionan más accesorios de los indicados además de para suelos duros y tarima o parquet y el de antibloqueo _tangle-free_ para hebras.
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092358.jpg" thumb1="Dyson_DC37c_20160124_092358-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092412.jpg" thumb2="Dyson_DC37c_20160124_092412-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092422.jpg" thumb1="Dyson_DC37c_20160124_092422-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092431.jpg" thumb2="Dyson_DC37c_20160124_092431-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_111125.jpg" thumb1="Dyson_DC37c_20160124_111125-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_111137.jpg" thumb2="Dyson_DC37c_20160124_111137-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_111155.jpg" thumb1="Dyson_DC37c_20160124_111155-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093500.jpg" thumb2="Dyson_DC37c_20160124_093500-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093514.jpg" thumb1="Dyson_DC37c_20160124_093514-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_093523.jpg" thumb2="Dyson_DC37c_20160124_093523-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093542.jpg" thumb1="Dyson_DC37c_20160124_093542-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092358.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092412.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092422.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092431.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_111125.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_111137.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_111155.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093500.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093514.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_093523.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093542.jpg" optionsthumb1="300x200" >}}
 
 Estos son los accesorios adicionales no indicados en la caja, está el de esquinas y otros que parecen para sofás o similares junto con un soporte porta accesorios que se coloca en el tubo cerca de la empuñadura.
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_092405.jpg" thumb1="Dyson_DC37c_20160124_092405-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_092405.jpg" optionsthumb1="300x200" >}}
 
 ### Filtro y ciclón
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100811.jpg" thumb1="Dyson_DC37c_20160124_100811-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_100821.jpg" thumb2="Dyson_DC37c_20160124_100821-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100716.jpg" thumb1="Dyson_DC37c_20160124_100716-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_100733.jpg" thumb2="Dyson_DC37c_20160124_100733-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100628.jpg" thumb1="Dyson_DC37c_20160124_100628-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_100649.jpg" thumb2="Dyson_DC37c_20160124_100649-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100702.jpg" thumb1="Dyson_DC37c_20160124_100702-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_102301.jpg" thumb2="Dyson_DC37c_20160124_102301-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100811.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_100821.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100716.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_100733.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100628.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_100649.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100702.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_102301.jpg" optionsthumb2="300x200" >}}
 
 ### Manual de usuario
 
 El manual de usuario está en perfecto español sin ninguna falta de ortografía, otros múltiples idiomas y cumple con su función de mostrar el montaje, las normas y precauciones básicas de uso.
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094541.jpg" thumb1="Dyson_DC37c_20160124_094541-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094550.jpg" thumb2="Dyson_DC37c_20160124_094550-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094602.jpg" thumb1="Dyson_DC37c_20160124_094602-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094643.jpg" thumb2="Dyson_DC37c_20160124_094643-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094234.jpg" thumb1="Dyson_DC37c_20160124_094234-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094349.jpg" thumb2="Dyson_DC37c_20160124_094349-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094428.jpg" thumb1="Dyson_DC37c_20160124_094428-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094431.jpg" thumb2="Dyson_DC37c_20160124_094431-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094457.jpg" thumb1="Dyson_DC37c_20160124_094457-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094529.jpg" thumb2="Dyson_DC37c_20160124_094529-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094541.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094550.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094602.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094643.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094234.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094349.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094428.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094431.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094457.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094529.jpg" optionsthumb2="300x200" >}}
 
 ### Otros detalles
 
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100832.jpg" thumb1="Dyson_DC37c_20160124_100832-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_100348.jpg" thumb2="Dyson_DC37c_20160124_100348-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_100403.jpg" thumb1="Dyson_DC37c_20160124_100403-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094018.jpg" thumb2="Dyson_DC37c_20160124_094018-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094037.jpg" thumb1="Dyson_DC37c_20160124_094037-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_094052.jpg" thumb2="Dyson_DC37c_20160124_094052-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_094223.jpg" thumb1="Dyson_DC37c_20160124_094223-thumb.jpg" options1="2560x1440" optionsthumb1="450x400"
-    image2="Dyson_DC37c_20160124_092439.jpg" thumb2="Dyson_DC37c_20160124_092439-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" >}}
-{{< figureproc
-    image1="Dyson_DC37c_20160124_093952.jpg" thumb1="Dyson_DC37c_20160124_093952-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100832.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_100348.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_100403.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094018.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094037.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_094052.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_094223.jpg" optionsthumb1="300x200"
+    image2="Dyson_DC37c_20160124_092439.jpg" optionsthumb2="300x200" >}}
+{{< image
+    gallery="true"
+    image1="Dyson_DC37c_20160124_093952.jpg" optionsthumb1="300x200" >}}
 
 Por poner algún defecto después de usarla diré que no se puede guardar de forma vertical por su forma de cuerpo y bola, sus dimensiones son de unos 51cm de ancho x 31cm de alto x 26cm fondo mirada desde un lateral algo más grande que otras aspiradoras como la Rowenta que comentaba anteriormente. El gatillo es muy cómodo pero en caso de querer tenerlo constantemente abierto para disminuir la succión en el accesorio puede ser cansino, no tiene una posición para dejarlo abierto sin usar el gatillo de la manguera. Este modelo realmente incorpora más accesorios que los indicados en la caja por lo que realmente no debería ser un defecto, en las fotos se ve uno multifunción para esquinas embalados en una bolsa. Usando el accesorio de suelos duros y parquet se une al tubo usando un mecanismo que me queda justo a la altura de una tabla de una cama con lo que al aspirar por debajo de ella si no tengo cuidado choca con el mecanismo de liberación y el accesorio se desengancha, el mecanismo podría estar colocado en un lateral o en la parte de atrás y esto se evitaría. Aún con esto para mí estas cosas no hacen desmerecer la aspiradora.
 

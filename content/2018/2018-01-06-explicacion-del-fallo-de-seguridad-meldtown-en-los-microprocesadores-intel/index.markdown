@@ -19,25 +19,21 @@ El año 2018 ha empezando haciéndose público uno de los peores _bugs_ de segur
 
 * [Listado de procesadores Intel afectados por Meltdown y Spectre](https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&languageid=en-fr)
 
-<div class="media">
-    <figure>
-        <img src="assets/images/logotypes/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
-        <img src="assets/images/logotypes/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
-        <figcaption>Logotipos de Meltdown y Spectre</figcaption>
-    </figure>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/meltdown.svg" optionsthumb1="200x200" title1="Meltdown"
+    image2="assets/images/logotypes/spectre.svg" optionsthumb2="200x200" title2="Spectre"
+    caption="Logotipos de Meltdown y Spectre" >}}
 
 Reemplazar todos los microprocesadores es tremendamente caro además de que primero hay que diseñar y fabricar unos que estén exentos del _bug_ que lleva tiempo, meses o años hasta que estén preparados, por lo que la solución hasta el momento pasa por hacer modificaciones en el software y en los sistemas operativos, compiladores y programas para resolver o mitigar el problema. En el sistema operativo la solución consiste en separar el espacio de direcciones del _kernel_ de la de los programas, sin embargo, cada vez que el microprocesador cambia entre un espacio de direcciones a otro hay una penalización en tiempo por lo que en ciertas cargas de trabajo muy intensivas en las que se cambia frecuentemente de contextos como operaciones de red, de almacenamiento rápido o E/S el rendimiento se ve afectado. Para un usuario doméstico, ofimático o juegos la perdida de rendimiento será insignificante y no será apreciable ya que en estos casos el microprocesador no trabaja a la máxima carga o no está cambiando frecuentemente del espacio de direcciones del _kernel_ al de usuario. En grandes centros de datos como la computación en la nube de [Amazon Web Services][amazon-web-services], [Google Cloud Platform][google-cloud] o [Microsoft Azure][microsoft-azure] el rendimiento será más apreciable.
 
 Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este _bug_ es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios. 
 
-<div class="media">
-    <figure>
-        <img src="assets/images/logotypes/intel.svg" alt="Intel" title="Intel" width="200"/>
-        <img src="assets/images/logotypes/amd.svg" alt="AMD" title="AMD" width="200"/>
-        <img src="assets/images/logotypes/arm.svg" alt="ARM" title="ARM" width="200"/>
-    </figure>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/intel.svg" optionsthumb1="200x200" title1="Intel"
+    image2="assets/images/logotypes/amd.svg" optionsthumb2="200x200" title1="AMD"
+    image3="assets/images/logotypes/arm.svg" optionsthumb3="200x200" title1="ARM" >}}
 
 ### Técnicas para aumentar el rendimiento
 

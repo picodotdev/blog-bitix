@@ -30,16 +30,19 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
 * [Crosslinking Issues](https://docs.gitlab.com/ee/user/project/issues/crosslinking_issues.html)
 * [Issue Board](https://about.gitlab.com/product/issueboard/)
 
-{{< figureproc
-    image1="new-issue-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Nueva petición A"
-    image2="new-issue-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Nueva petición B"
+{{< image
+    gallery="true"
+    image1="new-issue-1.png" optionsthumb1="300x200" title1="Nueva petición A"
+    image2="new-issue-2.png" optionsthumb2="300x200" title2="Nueva petición B"
     caption="Nueva petición" >}}
-{{< figureproc
-    image1="issues.png" options1="2560x1440" optionsthumb1="300x200" title1="Lista de peticiones"
-    image2="labels.png" options2="2560x1440" optionsthumb2="300x200" title2="Etiquetas"
+{{< image
+    gallery="true"
+    image1="issues.png" optionsthumb1="300x200" title1="Lista de peticiones"
+    image2="labels.png" optionsthumb2="300x200" title2="Etiquetas"
     caption="Lista de peticiones y etiquetas" >}}
-{{< figureproc
-    image1="board.png" options1="2560x1440" optionsthumb1="300x200" title1="Panel Kanban"
+{{< image
+    gallery="true"
+    image1="board.png" optionsthumb1="300x200" title1="Panel Kanban"
     caption="Panel Kanban" >}}
 
 ### Wiki
@@ -50,9 +53,10 @@ Cuando se accede por primera vez a la wiki se crea la página de inicio que se p
 
 * [GitLab Wiki](https://docs.gitlab.com/ce/user/project/wiki/index.html)
 
-{{< figureproc
-    image1="new-page.png" options1="2560x1440" optionsthumb1="300x200" title1="Nueva página"
-    image2="page.png" options2="2560x1440" optionsthumb2="300x200" title2="Página"
+{{< image
+    gallery="true"
+    image1="new-page.png" optionsthumb1="300x200" title1="Nueva página"
+    image2="page.png" optionsthumb2="300x200" title2="Página"
     caption="Nueva página y página" >}}
 
 ### Pages

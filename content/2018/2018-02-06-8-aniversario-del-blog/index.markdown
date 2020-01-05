@@ -26,27 +26,31 @@ Tengo bastantes artículos ya escritos pero pendientes publicar, tengo esta rese
 
 Cada cierto tiempo reviso y publico los datos de las visitas mensuales que tengo, lentamente pero de forma constante van aumentando y comprobando la diferencia de año en año por el momento el aumento es significativo para un blog con una temática bastante especializada. Sin embargo hasta el momento no he dado más detalles de estos datos en grandes números. Después de un crecimiento notable en el mes de mayo de 2017 las visitas han vuelto a los números de los meses anteriores y parece que se han estancado, veré como evolucionan en los siguientes meses, diciembre y enero por las vacaciones y días festivos no son de los mejores meses.
 
-{{< figureproc
-    image1="paginas-vistas.png" options1="2560x1440" optionsthumb1="300x200" title1="Páginas vistas"
+{{< image
+    gallery="true"
+    image1="paginas-vistas.png" optionsthumb1="300x200" title1="Páginas vistas"
     caption="Páginas vistas" >}}
 
 Un poco menos de la mitad de los usuarios los recibo desde España y la otra mitad de varios países de latinoamérica ya que por compartir el lenguaje los buscadores devuelven referencias a alguno de mis artículos. A parte de España con un 35% entre los países de latinoamérica están México 17%, Argentina 8%, Colombia 8%, Chile 6%, Perú 5,3%, Ecuador 3%, Venezuela 2,5%, Estados Unidos 1,76% o Bolivia 1,25%.
 
-{{< figureproc
-    image1="pais.png" options1="2560x1440" optionsthumb1="300x200" title1="Ubicación por país"
+{{< image
+    gallery="true"
+    image1="pais.png" optionsthumb1="300x200" title1="Ubicación por país"
     caption="Ubicación por país" >}}
 
 En cuanto al navegador usado por los usuarios la mayor cuota de uso es [Chrome][google-chrome] con un 71%, luego [Firefox][firefox] con un 17% y en menores porcentajes Safari con un 3,7% y Edge con un pequeño 2,5% aún con la cuota de mercado de Windows. A pesar de publicar artículos sobre GNU/Linux la mayoría de usuarios usan [Windows][windows] con un 72% pero me sorprende el 10,23% de Android incluso por delante de GNU/Linux con otro 10% y un 4,5% de Macintosh, finalmente está iOS con un 2,76%.
 
-{{< figureproc
-    image1="navegador.png" options1="2560x1440" optionsthumb1="300x200" title1="Navegador"
-    image2="sistema-operativo.png" options2="2560x1440" optionsthumb2="300x200" title2="Sistema operativo"
+{{< image
+    gallery="true"
+    image1="navegador.png" optionsthumb1="300x200" title1="Navegador"
+    image2="sistema-operativo.png" optionsthumb2="300x200" title2="Sistema operativo"
     caption="Navegador y sistema operativo" >}}
 
 En un porcentaje aplastante la mayoría de usuarios proviene del buscador Google con un 91% y un 4,8% para el tráfico directo.
 
-{{< figureproc
-    image1="fuente.png" options1="2560x1440" optionsthumb1="300x200" title1="Fuente"
+{{< image
+    gallery="true"
+    image1="fuente.png" optionsthumb1="300x200" title1="Fuente"
     caption="Fuente" >}}
 
 Con toda la intención publiqué varios artículos sobre Windows contando mi experiencia al usar sin licencia tanto Windows como [Office][microsoft-office], pues estos son de los artículos más visitados en mi blog con diferencia. Dada la cuota de uso de Windows y que a nivel hogar muchos usuarios optan por usar sin licencia estos productos de [Microsoft][microsoft] es normal que estos artículos sean de los más visitados en mi blog. No se cuan efectivo será pero en esos artículos indico que existen las distribuciones GNU/Linux y que hay alternativas a Microsoft Office para la mayoría de usuarios perfectamente válidos.

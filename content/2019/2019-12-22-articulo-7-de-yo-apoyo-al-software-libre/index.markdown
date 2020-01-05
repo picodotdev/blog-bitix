@@ -23,16 +23,18 @@ Lo uso habitualmente para convertir los libros en formato _epub_ a _mobi_ para p
 
 Hace unos meses se publicó la versión 4.0 del programa y cada semana o dos semanas hay una nueva versión que incluye correcciones y algunas mejoras, aún usando la distribución de [GNU][gnu]/[Linux] como [Arch Linux][archlinux] siendo _rolling release_ y actualizando el sistema cada dos semanas es uno de los pocos programas que habitualmente tengo desactualizado en una versión anterior a la última, eso es resultado de las numerosas versiones que se publican del mismo.
 
-{{< figureproc
-    image1="calibre.png" options1="2560x1440" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
+{{< image
+    gallery="true"
+    image1="calibre.png" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
     caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 
 La cantidad que he donado no es mucho pero si un porcentaje de los usuarios que lo utilizan realizarán una pequeña donación el proyecto continuará desarrollándose. Muchos programas de software libre utilizados por usuarios e incluso empresas que ganan millones de dólares confían en proyectos que en algunos casos solo están mantenidos por una persona y de forma voluntaria en su tiempo libre sin recibir un sueldo a cambio.
 
 Una donación en la medida que uno pueda o desee es una buena forma de si un programa le es realmente útil devolver algo en compensación de su uso. A continuación el recibo de la donación que he realizado a Calibre. 
 
-{{< figureproc
-    image1="donacion-calibre.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Calibre"
+{{< image
+    gallery="true"
+    image1="donacion-calibre.png" optionsthumb1="650x450" title1="Donación Calibre"
     caption="Donación Calibre" >}}
 
 Recuerda que si no es por privacidad y usas un bloqueador de anuncios [desactivándolo en Blog Bitix][adblockplus-disable] ayudas a que pueda seguir haciendo estas donaciones aún siendo pequeñas y una parte pequeña de los ingresos que me genera el blog.

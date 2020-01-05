@@ -33,8 +33,9 @@ En Arch Linux el servicio de systemd de docker se guarda en _/usr/lib/systemd/sy
 
 Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos elegido se crean los metadatos y si hacemos un _pull_ de una imagen se guardará en esta localización.
 
-{{< figureproc
-    image1="docker-root.png" thumb1="docker-root.png" options1="2560x1440" optionsthumb1="450x400" title1="Directorio raíz de docker"
+{{< image
+    gallery="true"
+    image1="docker-root.png" optionsthumb1="300x200" title1="Directorio raíz de docker"
     caption="Directorio raíz de docker" >}}
 
 {{% warning %}}

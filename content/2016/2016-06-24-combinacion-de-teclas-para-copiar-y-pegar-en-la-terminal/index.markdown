@@ -22,8 +22,9 @@ La combinación de teclas estandarizada para copiar y pegar en cualquier aplicac
 
 Con el ratón deberemos seleccionar el texto pero con la combinación de teclas nos evitaremos pulsar el botón derecho del ratón, desplazarnos hasta la opción _Copiar_ del menú y finalmente hacer clic en él, para pegar la acción usaremos el mismo menú pero pulsando en la opción _Pegar_.
 
-{{< figureproc
-    image1="gnome-terminal.png" thumb1="gnome-terminal-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Menú para copiar y pegar en la terminal de GNOME"
+{{< image
+    gallery="true"
+    image1="gnome-terminal.png" optionsthumb1="300x200" title1="Menú para copiar y pegar en la terminal de GNOME"
     caption="Menú para copiar y pegar en la terminal de GNOME" >}}
 
 Esto no es algo nada vital pero si es algo que usamos frecuentemente puede hacernos más fácil la tarea y ahorrarnos tiempo al igual que conocer y usar los [atajos de teclado básicos de la terminal en GNU/Linux][blogbitix-150].

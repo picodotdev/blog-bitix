@@ -19,10 +19,12 @@ El primer semestre del 2018 ya ha pasado. Estos primeros meses he publicado 38 a
 
 Dado que desde hace unos cuantos meses no tengo ordenador propio y solo dispongo de el del trabajo normalmente solo los fines de semana no he podido investigar, probar tantas cosas que me gustaría y he publicado más artículos de opinión que de software libre y GNU/Linux. Como comento en algunos de los artículos publicados más o menos ya tengo decidido que mi siguiente equipo será un [Intel NUC][intel-nuc] pero estoy esperando a que salgan esta segunda mitad los Bean Canyon para que el salto que experimente sea notable tanto en el microprocesador con un [Intel Core i5 8250U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz) o [i5-8259U][intel-i5-8259U], 4 núcleos y 8 hilos, 6 MiB de caché y 32 GiB de memoria sobre lo que tenía antes un [Intel Core i5 3210M][intel-i5-3210M], 3 MiB de caché, 2 núcleos, 4 hilos y 8 GiB de memoria. Con tal cantidad de memoria podré hacer algunas pruebas con contenedores y virtualización que con solo 8 GiB de memoria ya incluso se me quedaba escaso. Cuando adquiera este nuevo equipo publicaré varios artículos con el desempaquetado o _unboxing_ y el análisis de varios de esos componentes.
 
-{{< figureproc
-    image1="analytics.png" options1="2560x1440" optionsthumb1="650x450" title1="Evolución Analytics" >}}
-{{< figureproc
-    image1="adsense.png" options1="2560x1440" optionsthumb1="650x450" title1="Evolución AdSense"
+{{< image
+    gallery="true"
+    image1="analytics.png" optionsthumb1="650x450" title1="Evolución Analytics" >}}
+{{< image
+    gallery="true"
+    image1="adsense.png" optionsthumb1="650x450" title1="Evolución AdSense"
     caption="Evolución Analytics y AdSense" >}}
 
 Entre los artículos sobre programación han estado los habituales sobre Java, destacando las novedades de Java 10, un par sobre [Apache Tapestry][tapestry]. Como resolver varios de los problemas clásicos de sincronización, programación concurrente en Java, [Webjars][webjars], ...

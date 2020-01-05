@@ -34,9 +34,10 @@ En el código JavaScript asociado a una página o componente hay que hacer uso d
 
 En el primer elemento del HTML se añade un atributo _data-componenent-events_ que contiene la URL necesaria para cada evento que haya sido declarado como lanzable. A partir del elemento indicado en la opción _element_ se busca la URL en el atributo _data-componenent-events_ siguiendo un orden empezando por el propio elemento, en los previos al mismo nivel jerárquicamente empezando por el más cercano desde abajo hacia arriba, en los padres y finalmente en el elemento _body_.
 
-{{< figureproc
-    image1="event.png" options1="2560x1440" optionsthumb1="300x200" title1="Petición Ajax del evento"
-    image2="data-component-events.png" options2="2560x1440" optionsthumb2="300x200" title2="Atributo con la URL del evento"
+{{< image
+    gallery="true"
+    image1="event.png" optionsthumb1="300x200" title1="Petición Ajax del evento"
+    image2="data-component-events.png" optionsthumb2="300x200" title2="Atributo con la URL del evento"
     caption="Petición Ajax y atributo con la URL del evento" >}}
 
 Esta funcionalidad se incorporó en Apache Tapestry 5.2 donde hasta entonces era necesario construir la URL del evento en el servidor con [ComponentResources.createEventLink()](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ComponentResourcesCommon.html#createEventLink-java.lang.String-java.lang.Object...-) y enviarlo al componente haciendo uso de [JavaScriptSupport](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html) como se muestra en el componente _Ajax_ que no hace uso de esta funcionalidad de eventos.

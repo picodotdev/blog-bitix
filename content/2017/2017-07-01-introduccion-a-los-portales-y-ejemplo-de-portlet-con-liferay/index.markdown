@@ -30,8 +30,9 @@ Algunos de sus casos de uso son:
 
 Uno de los servidores de portales más destacados y usados es [Liferay][liferay] aunque no es el único siendo [Apache Pluto][apache-pluto] el servidor de referencia. En lo poco que los he probado Liferay comparado con Apache Pluto el primero tarda bastante más en iniciarse, se nota más lento y me ha dado problemas al usar el _framework_ [Apache Tapestry][tapestry] para desarrollar un _portlet_, sin embargo, Liferay incorpora más [_portlets_](https://es.wikipedia.org/wiki/Portlet) con multitud de funcionalidades, es más usado y solicitado en ofertas de trabajo. Tanto Liferay como Apache Pluto implementan la [especificación de los _portlets_](https://jcp.org/aboutJava/communityprocess/edr/jsr362/index2.html) de Java que son la pieza básica funcional de un portal.
 
-{{< figureproc
-    image1="inicio.png" thumb1="inicio-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Página inicial de Liferay" >}}
+{{< image
+    gallery="true"
+    image1="inicio.png" optionsthumb1="300x200" title1="Página inicial de Liferay" >}}
 
 Liferay es el contenedor de _portlets_ y proporciona un entorno de ejecución similar a lo que los contenedores de _servlets_ como [Tomcat][tomcat] proporcionan para los _servlets_. Las similitudes y diferencias entre un _servlet_ y un _portlet_ son las siguientes:
 
@@ -58,14 +59,16 @@ El contenedor de _portlets_ proporciona funcionalidades como:
 
 Desde la [página de descargas](https://www.liferay.com/es/downloads) se puede obtener la edición para la comunidad de Liferay además de otros productos eligiendo la versión deseada y en la [red para desarrolladores](https://dev.liferay.com/es/home) obtener documentación y material de referencia. Una vez descargado el archivo de la distribución de Liferay y descomprimido se inicia con el comando ubicado en _tomcat-8.0.32/bin/startup.sh_. En el archivo _tomcat-8.0.32logs/catalina.out_ se emiten las trazas y mensajes del servidor. Iniciado Liferay se presenta una página de configuración, se han de aceptar los términos y condiciones e iniciar sesión con el usuario creado en la primera página de configuración.
 
-{{< figureproc
-    image1="configuracion.png" thumb1="configuracion-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Configuración básica de Liferay" >}}
+{{< image
+    gallery="true"
+    image1="configuracion.png" optionsthumb1="300x200" title1="Configuración básica de Liferay" >}}
 
 Para añadir un _portlet_ propio a Liferay hay que acceder al _Panel de control > Aplicaciones > Gestor de aplicaciones_ y pulsar la opción cargar ubicada en la parte superior derecha de la página. En la salida del servidor aparecerán varias trazas relativas al despliegue del _portlet_.
 
-{{< figureproc
-    image1="gestor-de-aplicaciones.png" thumb1="gestor-de-aplicaciones-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Gestor de aplicaciones"
-    image2="instalar-aplicacion.png" thumb2="instalar-aplicacion-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Instalar aplicación" >}}
+{{< image
+    gallery="true"
+    image1="gestor-de-aplicaciones.png" optionsthumb1="300x200" title1="Gestor de aplicaciones"
+    image2="instalar-aplicacion.png" optionsthumb2="300x200" title2="Instalar aplicación" >}}
 
 Los _portlets_ se distribuyen por lo general como archivos de aplicaciones web _.war_ con varios descriptores adicionales con información que usa Liferay para el despliegue del _portlet_.
 
@@ -82,9 +85,10 @@ Un _portlet_ es una clase Java que extiende de [GenericPortlet](https://portals.
 
 Los _portlets_ con sus diferencias funcionales con los _servlets_ tienen muchas similitudes y una API con clases equivalentes a los _servlets_. Así la clase principal de la que hay que heredar para crear un portlet es GenericPortlet o implementar la interfaz [Portlet](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/Portlet.html). Las peticiones en los _portlets_ siguen una serie de fases que se van ejecutando en el siguiente orden _ActionPhase_, _EventPhase_, _HeaderPhase_ y _RenderPhase_. Para los recursos como imágenes o documentos hay una fase específica _ResourcePhase_.
 
-{{< figureproc
-    image1="portlets-phase-model.png" thumb1="portlets-phase-model-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Fases del ciclo de vida de una petición de un portlet"
-    image2="portlet-lifecycle-methods.png" thumb2="portlet-lifecycle-methods-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Métodos de ciclo de vida de un portlet"
+{{< image
+    gallery="true"
+    image1="portlets-phase-model.png" optionsthumb1="300x200" title1="Fases del ciclo de vida de una petición de un portlet"
+    image2="portlet-lifecycle-methods.png" optionsthumb2="300x200" title2="Métodos de ciclo de vida de un portlet"
     caption="Fases y métodos del ciclo de vida de un portlet" >}}
 
 Para cada una de estas fases en la API de los _portlets_ hay un método específico que son [processAction](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#processAction(javax.portlet.ActionRequest,%20javax.portlet.ActionResponse)), [procesEvent](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#processEvent(javax.portlet.EventRequest,%20javax.portlet.EventResponse)), [renderHeaders](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#renderHeaders(javax.portlet.HeaderRequest,%20javax.portlet.HeaderResponse)) y [render](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#render(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)). Los _portlets_ poseen modos que se visualizan con los métodos [doEdit](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doEdit(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)), [doHelp](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doHelp(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)) y [doView](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doView(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)) o el correspondiente anotado con [@RenderMode](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderMode.html). Cada uno de esos métodos para cada una de las fases reciben dos parámetros uno que representa a la petición que heredan de [PortletRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletRequest.html) y son [ActionRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionRequest.html), [ClientDataRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ClientDataRequest.html), [EventRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventRequest.html), [HeaderRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/HeaderRequest.html), [RenderRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderRequest.html) y [ResourceRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceRequest.html). Los objetos que representan a las respuestas heredan de [PortletResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletResponse.html) y son [ActionResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionResponse.html), [EventResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventResponse.html), [HeaderResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/HeaderResponse.html), [MimeResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/MimeResponse.html), [RenderResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderResponse.html), [ResourceResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceResponse.html) y [StateAwareResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/StateAwareResponse.html).
@@ -95,12 +99,14 @@ La interfaz [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-api
 
 Usando como herramienta de construcción del proyecto [Gradle][gradle] el archivo _.war_ a desplegar el Liferay se genera con la tarea _build_ en el directorio _build/libs/HolaMundoPortlet-0.1.war_. Esta archivo hay que desplegarlo en Liferay para posteriormente incluirlo en alguna página, se visualice el contenido que genera y se pueda interactuar con él.
 
-{{< figureproc
-    image1="anadir-portlet.png" thumb1="anadir-portlet-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Añadir portlet"
-    image2="inicio-hola-mundo-portlet.png" thumb2="inicio-hola-mundo-portlet-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Portlet HolaMundo" >}}
-{{< figureproc
-    image1="preferencias.png" thumb1="preferencias-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Preferencias del portlet"
-    image2="preferencias-usuario.png" thumb2="preferencias-usuario-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Portlet HolaMundo con preferencias" >}}
+{{< image
+    gallery="true"
+    image1="anadir-portlet.png" optionsthumb1="300x200" title1="Añadir portlet"
+    image2="inicio-hola-mundo-portlet.png" optionsthumb2="300x200" title2="Portlet HolaMundo" >}}
+{{< image
+    gallery="true"
+    image1="preferencias.png" optionsthumb1="300x200" title1="Preferencias del portlet"
+    image2="preferencias-usuario.png" optionsthumb2="300x200" title2="Portlet HolaMundo con preferencias" >}}
 
 Desarrollar un _portlet_ con su API directamente es una tarea costosa si la funcionalidad o complejidad del _portlet_ es mucha. Al igual que en Java no se suele utilizar la API de los _servlets_ directamente, aunque es la API subyacente, y se suele utilizar alguno de los muchos _frameworks_ disponibles para los _portlets_ también hay varios _frameworks_ entre los que elegir. En el artículo [_Portlets_ con el framework Apache Tapestry y Apache Pluto][blogbitix-244] muestro un ejemplo usando un _framework_ de alto nivel, orientado a componentes y altamente productivo.
 

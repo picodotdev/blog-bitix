@@ -39,7 +39,8 @@ Cualquier equipo nuevo cumple con estos requisitos pero quizá algunos no posean
 
 Una vez que sabes que el equipo cumple con los requisitos mínimos hay que hacer una copia de seguridad de los documentos, fotos y demás archivos personales que posea el equipo y quieras conservar en un disco duro o memoria USB externo, si son muchos los datos en vez de copiar y pegar con el explorador de archivos puedes hacer la [copia de seguridad con el programa FreeFileSync][blogbitix-144] y restaurar los datos también con el mismo programa una vez reinstalado Windows.
 
-{{< figureproc
+{{< image
+    gallery="true"
     caption="Realizar copia de seguridad con FreeFileSync" >}}
 
 ### Creación del medio de instalación
@@ -52,13 +53,15 @@ Accediendo a la página de descarga de Windows 10 desde un sistema con Windows 7
 
 Para realizar la instalación de Windows 10 es más recomendable usar una memoria USB con el programa _Media Creation Tool_ ya que es más rápida que utilizar un disco DVD ya en desuso para los que algunos sistemas ya ni siquiera incorporan su lector.
 
-{{< figureproc
-    image1="windows-media-creation-tool-01.png" thumb1="windows-media-creation-tool-01-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Media Creation Tool"
-    image2="windows-media-creation-tool-02.png" thumb2="windows-media-creation-tool-02-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Media Creation Tool"
-    image3="windows-media-creation-tool-03.png" thumb3="windows-media-creation-tool-03-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Media Creation Tool" >}}
-{{< figureproc
-    image1="windows-media-creation-tool-04.png" thumb1="windows-media-creation-tool-04-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Media Creation Tool"
-    image2="windows-media-creation-tool-05.png" thumb2="windows-media-creation-tool-05-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Media Creation Tool"
+{{< image
+    gallery="true"
+    image1="windows-media-creation-tool-01.png" optionsthumb1="300x250" title1="Media Creation Tool"
+    image2="windows-media-creation-tool-02.png" optionsthumb2="300x250" title2="Media Creation Tool"
+    image3="windows-media-creation-tool-03.png" optionsthumb3="300x250" title3="Media Creation Tool" >}}
+{{< image
+    gallery="true"
+    image1="windows-media-creation-tool-04.png" optionsthumb1="300x250" title1="Media Creation Tool"
+    image2="windows-media-creation-tool-05.png" optionsthumb2="300x250" title2="Media Creation Tool"
     caption="Creación del medio de instalación" >}}
 
 ### Inicio instalación de Window 10
@@ -87,21 +90,25 @@ Entre los pasos están la selección del idioma, la versión del sistema _Home_ 
 
 Es recomendable la instalación _Personalizada: instalar solo Windows_ y no conservar archivos y configuraciones anteriores para evitar problemas o heredarlos del sistema anterior. También es recomendable eliminar todas las particiones del disco y dejar que Windows cree las necesarias.
 
-{{< figureproc
-    image1="instalacion-windows-10-01.png" thumb1="instalacion-windows-10-01-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Instalación de Windows 10"
-    image2="instalacion-windows-10-02.png" thumb2="instalacion-windows-10-02-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Instalación de Windows 10"
-    image3="instalacion-windows-10-03.png" thumb3="instalacion-windows-10-03-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-04.png" thumb1="instalacion-windows-10-04-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Instalación de Windows 10"
-    image2="instalacion-windows-10-05.png" thumb2="instalacion-windows-10-05-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Instalación de Windows 10"
-    image3="instalacion-windows-10-06.png" thumb3="instalacion-windows-10-06-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-07.png" thumb1="instalacion-windows-10-07-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Instalación de Windows 10"
-    image2="instalacion-windows-10-08.png" thumb2="instalacion-windows-10-08-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Instalación de Windows 10"
-    image3="instalacion-windows-10-09.png" thumb3="instalacion-windows-10-09-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-10.png" thumb1="instalacion-windows-10-10-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Instalación de Windows 10"
-    image2="instalacion-windows-10-11.png" thumb2="instalacion-windows-10-11-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Instalación de Windows 10"
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-01.png" optionsthumb1="300x250" title1="Instalación de Windows 10"
+    image2="instalacion-windows-10-02.png" optionsthumb2="300x250" title2="Instalación de Windows 10"
+    image3="instalacion-windows-10-03.png" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-04.png" optionsthumb1="300x250" title1="Instalación de Windows 10"
+    image2="instalacion-windows-10-05.png" optionsthumb2="300x250" title2="Instalación de Windows 10"
+    image3="instalacion-windows-10-06.png" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-07.png" optionsthumb1="300x250" title1="Instalación de Windows 10"
+    image2="instalacion-windows-10-08.png" optionsthumb2="300x250" title2="Instalación de Windows 10"
+    image3="instalacion-windows-10-09.png" optionsthumb3="300x250" title3="Instalación de Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-10.png" optionsthumb1="300x250" title1="Instalación de Windows 10"
+    image2="instalacion-windows-10-11.png" optionsthumb2="300x250" title2="Instalación de Windows 10"
     caption="Instalación de Windows 10" >}}
 
 Tras unos pasos donde se mostrará el progreso de instalación y algún reinicio automático el sistema se inicia con un asistente de configuración para personalizar el sistema.
@@ -116,38 +123,46 @@ Después de instalar Windows este ofrece un nuevo asistente donde se personaliza
 * Si se desea usar Cortana como asistente personal.
 * Algunas opciones de privacidad que son recomendables desactivar para que Windows no recopile información de nuestro dispositivo aunque sean datos anónimos.
 
-{{< figureproc
-    image1="instalacion-windows-10-12.png" thumb1="instalacion-windows-10-12-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-13.png" thumb2="instalacion-windows-10-13-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-14.png" thumb3="instalacion-windows-10-14-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-15.png" thumb1="instalacion-windows-10-15-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-16.png" thumb2="instalacion-windows-10-16-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-17.png" thumb3="instalacion-windows-10-17-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-18.png" thumb1="instalacion-windows-10-18-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-19.png" thumb2="instalacion-windows-10-19-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-20.png" thumb3="instalacion-windows-10-20-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-21.png" thumb1="instalacion-windows-10-21-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-22.png" thumb2="instalacion-windows-10-22-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-23.png" thumb3="instalacion-windows-10-23-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-24.png" thumb1="instalacion-windows-10-24-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-25.png" thumb2="instalacion-windows-10-25-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-26.png" thumb3="instalacion-windows-10-26-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-27.png" thumb1="instalacion-windows-10-27-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-28.png" thumb2="instalacion-windows-10-28-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-29.png" thumb3="instalacion-windows-10-29-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-30.png" thumb1="instalacion-windows-10-30-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-31.png" thumb2="instalacion-windows-10-31-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-32.png" thumb3="instalacion-windows-10-32-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
-{{< figureproc
-    image1="instalacion-windows-10-33.png" thumb1="instalacion-windows-10-33-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Configuración Windows 10"
-    image2="instalacion-windows-10-34.png" thumb2="instalacion-windows-10-34-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Configuración Windows 10"
-    image3="instalacion-windows-10-35.png" thumb3="instalacion-windows-10-35-thumb.png" options3="2560x1440" optionsthumb3="300x250" title3="Configuración Windows 10"
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-12.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-13.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-14.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-15.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-16.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-17.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-18.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-19.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-20.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-21.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-22.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-23.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-24.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-25.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-26.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-27.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-28.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-29.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-30.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-31.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-32.png" optionsthumb3="300x250" title3="Configuración Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="instalacion-windows-10-33.png" optionsthumb1="300x250" title1="Configuración Windows 10"
+    image2="instalacion-windows-10-34.png" optionsthumb2="300x250" title2="Configuración Windows 10"
+    image3="instalacion-windows-10-35.png" optionsthumb3="300x250" title3="Configuración Windows 10"
     caption="Configuración inicial de Windows 10" >}}
 
 ### Usando Windows
@@ -158,12 +173,14 @@ Llegado a este punto Windows 10 ya se puede empezar a usar y quizá instalar el 
 
 Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al cabo de un tiempo no puedas cambiar algunas opciones de personalización como el fondo del escritorio o temas de las ventanas pero nada importante que impida usarlo. Y en cualquier caso [Windows 10 y Office 2016 siguen siendo tan fáciles de usar sin licencia como siempre][blogbitix-119].
 
-{{< figureproc
-    image1="windows-10-01.jpg" thumb1="windows-10-01-thumb.jpg" options1="2560x1440" optionsthumb1="300x250" title1="Windows 10"
-    image2="windows-10-02.png" thumb2="windows-10-02-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Windows 10" >}}
-{{< figureproc
-    image1="windows-10-03.png" thumb1="windows-10-03-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Windows 10"
-    image2="windows-10-04.jpg" thumb2="windows-10-04-thumb.jpg" options2="2560x1440" optionsthumb2="300x250" title2="Windows 10"
+{{< image
+    gallery="true"
+    image1="windows-10-01.jpg" optionsthumb1="300x250" title1="Windows 10"
+    image2="windows-10-02.png" optionsthumb2="300x250" title2="Windows 10" >}}
+{{< image
+    gallery="true"
+    image1="windows-10-03.png" optionsthumb1="300x250" title1="Windows 10"
+    image2="windows-10-04.jpg" optionsthumb2="300x250" title2="Windows 10"
     caption="Windows 10" >}}
 
 ### Alternativa a Windows con distribuciones GNU/Linux
@@ -172,13 +189,15 @@ Debes conocer que Windows no es la única opción de sistema operativo que puede
 
 Las siguientes son unas capturas de pantalla de varias de las distribuciones GNU/Linux más famosas.
 
-{{< figureproc
-    image1="ubuntu.png" thumb1="ubuntu-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Ubuntu con entorno de escritorio Unity"
-    image2="elementary-os.png" thumb2="elementary-os-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="elementaryOS"
+{{< image
+    gallery="true"
+    image1="ubuntu.png" optionsthumb1="300x250" title1="Ubuntu con entorno de escritorio Unity"
+    image2="elementary-os.png" optionsthumb2="300x250" title2="elementaryOS"
     caption="Ubuntu y elementaryOS" >}}
-{{< figureproc
-    image1="fedora.png" thumb1="fedora-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Fedora con entorno de escritorio GNOME"
-    image2="opensuse.png" thumb2="opensuse-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="openSUSE con entorno de escritorio KDE"
+{{< image
+    gallery="true"
+    image1="fedora.png" optionsthumb1="300x250" title1="Fedora con entorno de escritorio GNOME"
+    image2="opensuse.png" optionsthumb2="300x250" title2="openSUSE con entorno de escritorio KDE"
     caption="Fedora y openSUSE" >}}
 
 {{% /post %}}

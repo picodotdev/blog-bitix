@@ -26,8 +26,9 @@ Entre las empresas Sun Microsystems y Red Hat hay algún punto en común como qu
 
 Sin embargo, también hay diferencias en la adquisición de Sun y Red Hat. Una de ellas significativa es que Sun no pasaba por buenos momentos cuando fue adquirida por Oracle aún con las importantes tecnologías que poseía incapaz de tener un modelo de negocio rentable sobre el que basarse para pedurar. Oracle se deshizo de los que no le eran provechosos y muchas personas abandonaron Sun/Oracle. En cambio Red Hat si posee un modelo de negocio rentable basado en el código abierto y software libre con una facturación de 2000 millones. Sun fue adquirida por 7400 millones de dólares lo que en su momento parecía una gran cantidad de dinero y ahora parece que fue muy barato, Red Hat ha sido adquirida por 34000 millones, una enorme diferencia entre ambas operaciones aún habiendo pasado casi una década.
 
-{{< figureproc
-    image1="redhat-homepage.png" options1="2560x1440" optionsthumb1="650x450" title1="Anuncio en la página de Red Hat"
+{{< image
+    gallery="true"
+    image1="redhat-homepage.png" optionsthumb1="650x450" title1="Anuncio en la página de Red Hat"
     caption="Anuncio en la página de Red Hat" >}}
 
 Conocida la operación en la página de Red Hat se publican varias notas de prensa.
@@ -40,8 +41,9 @@ A razón de estas notas de prensa después de haberlas leído el motivo principa
 
 Red Hat se fundó en 1993 liberando en 1994 la primera versión de Red Hat Linux, en el 2001 vendía en comercios por $29.95 cajas con el sistema operativo entre entusiastas o descargable gratuitamente de sitios FTP. Pero con solo entusiastas del código abierto no haría de Red Hat (o Linux) un jugador en el software empresarial. En el año 2002 se hace la apuesta por separar los productos comerciales de su inversión continuada en construir proyectos de código abierto. Se deja de lado la descarga gratuita y las cajas con Red Hat Linux siendo reemplazadas con un modelo de suscripción empresarial, reteniendo los principios del código abierto de libertad a la vez que creando un modelo de negocio sostenible a largo plazo, publicándolo como Red Hat Enterprise Linux. El punto importante es que encontró un modelo de negocio exitoso para Linux y el código abierto continuando invirtiendo e innovando en la comunidad con proyectos como Fedora, siendo aún a día de hoy su modelo pero mucho más expandido. Desde el día que presentaron RHEL su misión ha sido llevar el código abierto a la empresa. Lo hicieron para Lixux, para Java EE, para OpenStack y lo están haciendo para Ansible, Kubernetes y más proyectos de código abierto.
 
-{{< figureproc
-    image1="redhat-history.jpg" options1="2560x1440" optionsthumb1="650x450" title1="Historia de Red Hat"
+{{< image
+    gallery="true"
+    image1="redhat-history.jpg" optionsthumb1="650x450" title1="Historia de Red Hat"
     caption="Historia de Red Hat" >}}
 
 IBM es una compañía mucho más grande que Red Hat y tiene importantes valores como los [servidores _mainframe_ IBM Z][ibm-z], los [procesadores POWER][ibm-power], además de [su propia nube][ibm-cloud], software de analítica, internet de las cosas y [soluciones para varios sectores de la industria y gubernamentales](https://www.ibm.com/solutions/es/es/). El [proyecto Eclipse][eclipse] surgió de IBM y ha estado ampliamente relacionada con Java con los [servidores WebSphere][websphere] u [OpenLiberty][openliberty]. Ambas son dos de las [empresas que más contribuyen al _kernel_ de Linux](https://www.linuxfoundation.org/2017-linux-kernel-report-landing-page/).

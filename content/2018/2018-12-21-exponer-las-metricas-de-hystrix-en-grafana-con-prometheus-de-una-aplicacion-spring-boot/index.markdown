@@ -33,8 +33,9 @@ Una vez hecho esto Spring en el _endpoint_ _/actuator/metrics_ se exponen las m�
 
 Con estas métricas recolectadas por Prometheus se pueden visualizar en gráficas por Grafana. Hay algunos [paneles de Grafana para Hystrix](https://grafana.com/dashboards?search=hystrix) como el [7145](https://grafana.com/dashboards/7145) pero que necesitan ser adaptados según la nomenclatura de las propiedades expuestas por Spring Boot. En este caso se monitoriza el número de peticiones realizadas, el tiempo de latencia, si los circuitos están abiertos, los fallos, éxitos y _tiemouts_ así como el estado de los _thread pools_ que utiliza Hystrix para realizar las peticiones de un cliente a un servicio.
 
-{{< figureproc
-    image1="grafana-hystrix-dashboard.png" options1="2560x1440" optionsthumb1="600x450" title1="Panel de Grafana pàra métricas de Hystrix"
+{{< image
+    gallery="true"
+    image1="grafana-hystrix-dashboard.png" optionsthumb1="600x450" title1="Panel de Grafana pàra métricas de Hystrix"
     caption="Panel de Grafana para métricas de Hystrix" >}}
 
 Exponer las métricas en una aplicación de Spring Boot para Prometheus es muy sencillo y con Grafana se puede observar el estado del sistema de forma tan detallada como lo sean las métricas expuestas por la aplicación. Por defecto Spring Boot ya expone una buena cantidad de métricas del estado del servicio como uso de CPU, memoria, hilos o recolector de basura.

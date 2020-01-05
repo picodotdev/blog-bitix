@@ -80,17 +80,20 @@ Durante este segundo semestre de 2015 he publicado varios artículos entre seman
 
 El blog ha seguido creciendo un poco en cuanto a visitas a base de un esfuerzo tremendo tratando de escribir y publicar artículos con cierta calidad, los ingresos por publicidad AdSense siguen siendo prácticamente los mismos, entre 6 y 11€ al mes, como el alojamiento y el dominio me es gratuito es suficiente para hacer alguna [donación a un proyecto relacionado con el software libre][blogbitix-117] por lo que tú visitando este blog en cierta forma también podrás sentirte contribuidor del software libre ya uses productos [Microsoft][microsoft] o [Apple][apple]. Una de las cosas que dicen para aumentar visitas es casi más importante la cantidad que la calidad pero no puedo dedicar más tiempo a escribir así que opto por que lo que escriba no esté ya en varios otros cientos de sitios para alguien con el mismo interés le resulte aprovechable, además trato de que los artículos incluyan un ejemplo funcional con su código fuente completo que se pueda probar de manera simple descargándolo.
 
-{{< figureproc
-    image1="analytics-2015.png" thumb1="analytics-2015-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Analytics 2015 de Blog Bitix"
+{{< image
+    gallery="true"
+    image1="analytics-2015.png" optionsthumb1="300x200" title1="Analytics 2015 de Blog Bitix"
     caption="Analytics 2015 de Blog Bitix" >}}
-{{< figureproc
-    image1="gadsense-2015.png" thumb1="gadsense-2015-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="AdSense 2015 de Blog Bitix"
+{{< image
+    gallery="true"
+    image1="gadsense-2015.png" optionsthumb1="300x200" title1="AdSense 2015 de Blog Bitix"
     caption="AdSense 2015 de Blog Bitix" >}}
 
 Ya solo me queda decir... ¡gracias por leer, compartir y comentar esta bitácora!, no recibo muchos comentarios pero algunos como [este](https://twitter.com/josetesan/status/669434170221928449) me anima a seguir escribiendo y compartiendo, ¡que os vaya bien el 2016!.
 
-{{< figureproc
-    image1="christmas-tux-2015.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Christmas Tux 2016"
+{{< image
+    gallery="true"
+    image1="christmas-tux-2015.jpg" optionsthumb1="300x200" title1="Christmas Tux 2016"
     caption="¡Buen 2016!" source="klowner.com" >}}
 
 {{% /post %}}

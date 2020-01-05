@@ -48,8 +48,9 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 
 {{< code file="docker-build.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="docker-mysql.png" thumb1="docker-mysql-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="docker-mysql" >}}
+{{< image
+    gallery="true"
+    image1="docker-mysql.png" optionsthumb1="300x200" title1="docker-mysql" >}}
 
 Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:
 

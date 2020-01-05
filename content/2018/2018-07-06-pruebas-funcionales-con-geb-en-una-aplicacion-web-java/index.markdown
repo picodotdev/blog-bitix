@@ -42,8 +42,9 @@ Usando una [aplicación con Spring Boot][blogbitix-103] para ejecutar los teses 
 
 Con Gradle el informe de resultados de las pruebas se genera en _build/reports/tests/integrationTest_ en una colección de páginas HTML con el siguiente aspecto. Si hubiese algún error se mostraría un mensaje descriptivo del fallo ocurrido. La prueba _IndexSpec_ tarda medio minuto ya que previamente ha de iniciar el servidor de aplicaciones con la aplicación, en este caso usando [Spring Boot][spring-boot].
 
-{{< figureproc
-    image1="geb-test-results.png" options1="2560x1440" optionsthumb1="650x450" title1="Informe de pruebas de integración"
+{{< image
+    gallery="true"
+    image1="geb-test-results.png" optionsthumb1="650x450" title1="Informe de pruebas de integración"
     caption="Informe de las pruebas funcionales" >}}
 
 Algunas otras herramientas que son ampliamente usadas en proyectos Java son las que comentaba en el artículo [Nueva visita a herramientas para un proyecto Java][blogbitix-84].

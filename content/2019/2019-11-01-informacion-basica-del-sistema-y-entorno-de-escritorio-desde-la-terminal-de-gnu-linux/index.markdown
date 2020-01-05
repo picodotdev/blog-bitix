@@ -25,9 +25,10 @@ Los comandos _neofetch_ y _screenfetch_ son muy similares en la salida que produ
 
 En las imágenes se aprecia que mi distribución es [Arch Linux][archlinux], [mi equipo es un Intel NUC8i5BEK][blogbitix-363], en el momento de escribir el artículo tengo la versión 5.3.7 del núcleo de Linux, un millar de paquetes instalados y unos pocos de [paquetes de Flatpak][blogbitix-362], mi interprete de comandos es [Bash][bash], mi entorno de escritorio es [GNOME][gnome] sin apenas personalización, la CPU del NUC es una [Intel i5-8259][intel-i5-8259U] de 4 núcleos y 8 hilos que tiene una GPU integrada [Intel Iris Plus Graphics 655][intel-iris-graphics-655], con algunos programas abiertos que está consumiendo unos 3 GiB de los 32 GiB disponibles.
 
-{{< figureproc
-    image1="neofetch-1.png" options1="2560x1440" optionsthumb1="300x250" title1="Información del sistema proporcionada por neofetch"
-    image2="neofetch-2.png" options2="2560x1440" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
+{{< image
+    gallery="true"
+    image1="neofetch-1.png" optionsthumb1="300x250" title1="Información del sistema proporcionada por neofetch"
+    image2="neofetch-2.png" optionsthumb2="300x250" title2="Información del sistema proporcionada por neofetch"
     caption="Información del sistema proporcionada por neofetch" >}}
 
 Ambos comandos están disponibles en los repositorios de paquetes de la distribución que se esté usando.

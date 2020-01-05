@@ -28,9 +28,10 @@ Si se desea recuperar solo el _id_ y _title_ sin el _date_ la consulta debe ser 
 {{< code file="query-2.graphql" language="graphql" options="" >}}
 {{< code file="library.graphqls" language="graphqls" options="" >}}
 
-{{< figureproc
-    image1="image-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta id, title y date"
-    image2="image-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Consulta id y title"
+{{< image
+    gallery="true"
+    image1="image-1.png" optionsthumb1="300x200" title1="Consulta id, title y date"
+    image2="image-2.png" optionsthumb2="300x200" title2="Consulta id y title"
     caption="Consultas diferentes que devuelven diferentes datos" >}}
 
 Esto obliga en principio a tener dos consultas diferentes según los datos recuperar. En principio, ya que las [directivas _skip_ e _include_](https://graphql.org/learn/queries/#directives) definidas en la especificación de GraphQL permiten tener la misma consulta y parametrizar si un determinado dato ha de incluirse o no en el resultado.
@@ -45,9 +46,10 @@ Esta sería la consulta parametrizada para obtener los datos de los libros omiti
 
 Utilizando [el editor GraphiQL][blogbitix-340] para construir y ejecutar consultas de una API de GraphQL se obtienen los resultados.
 
-{{< figureproc
-    image1="image-3.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con directiva include"
-    image2="image-4.png" options2="2560x1440" optionsthumb2="300x200" title2="Consulta con directiva include"
+{{< image
+    gallery="true"
+    image1="image-3.png" optionsthumb1="300x200" title1="Consulta con directiva include"
+    image2="image-4.png" optionsthumb2="300x200" title2="Consulta con directiva include"
     caption="Misma consulta con directiva include que devuelve diferentes datos" >}}
 
 Con un comando _curl_ se realizan las mismas consultas.

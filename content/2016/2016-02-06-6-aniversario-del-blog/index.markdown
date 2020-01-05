@@ -24,9 +24,10 @@ Seis años publicando un artículo semanalmente y algunas semanas incluso dos re
 
 Lentamente cada mes recibo alguna visita más y aumenta algo los ingresos por la publicidad AdSense y con los enlaces de afiliado de [Amazon][amazon], mensualmente unas 9000 páginas vistas y entre 7€ y 15€ por la publicidad. Aún después de algo más de dos años de crear Blog Bitix no he llegado al mismo nivel de páginas vistas que en los mejores momentos de El blog de pico.dev, 16000 frente a 9000, lo que es una muestra de lo difícil que resulta, por lo menos a mí, atraer visitas. Quizá Google posicione mejor cuando una página tiene ya dos o tres años de vida, quizá considere mejor un dominio propio que el que tengo de _picodotdev.github.io_ ofrecido por GitHub Pages.
 
-{{< figureproc
-    image1="paginas-vistas-el-blog-de-pico-dev.png" thumb1="paginas-vistas-el-blog-de-pico-dev-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Páginas vistas El blog de pico.dev"
-    image2="paginas-vistas-blog-bitix.png" thumb2="paginas-vistas-blog-bitix-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Páginas vistas Blog Bitix" >}}
+{{< image
+    gallery="true"
+    image1="paginas-vistas-el-blog-de-pico-dev.png" optionsthumb1="300x200" title1="Páginas vistas El blog de pico.dev"
+    image2="paginas-vistas-blog-bitix.png" optionsthumb2="300x200" title2="Páginas vistas Blog Bitix" >}}
 
 Aún así cuando escribo pienso poco en las visitas, únicamente comparto aquello que me interesa y voy aprendiendo. Pero me satisface que por ejemplo el último artículo sobre la [Conferencia BilboStack 2016][blogbitix-123] celebrada el último fin de semana de enero lo pueda considerar ya un éxito, ha sido el más veces marcado como favorito y retuiteado con diferencia de los que he escrito, muy visitado en estos pocos días y a raíz de él varias personas de mi entorno cercano me han empezado a seguir. Uno de mis objetivos de este blog como comentaba en [Mi experiencia y consejos para un blog][blogbitix-7].
 

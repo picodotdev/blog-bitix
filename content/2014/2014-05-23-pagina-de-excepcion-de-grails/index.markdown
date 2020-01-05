@@ -28,9 +28,10 @@ Para hacer uso de la página de excepción deberemos configurar el archivo UrlMa
 
 El resultado se puede ver en la siguiente captura de pantalla.
 
-{{< figureproc
-    image1="pagina-excepcion-grails-por-defecto.png" thumb1="pagina-excepcion-grails-por-defecto-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Página de error por defecto de Grails"
-    image2="pagina-excepcion-grails-personalizada.png" thumb2="pagina-excepcion-grails-personalizada-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Página de error personalizada de Grails" >}}
+{{< image
+    gallery="true"
+    image1="pagina-excepcion-grails-por-defecto.png" optionsthumb1="300x200" title1="Página de error por defecto de Grails"
+    image2="pagina-excepcion-grails-personalizada.png" optionsthumb2="300x200" title2="Página de error personalizada de Grails" >}}
 
 Los estilos mostrados en las capturas de pantalla podrían ser mejores pero la esencia está en la información que se muestra. En otro artículo publicaré como [obtener estadísticas de Hibernate para detectar problemas de N+1 u obtener las consultas sql que se están realizando en cada página de una aplicación Grails][blogbitix-26], esta información nos puede ayudar bastante y no es excesivamente complicado hacerla. Con ambas conseguiremos que las aplicaciones que desarrollemos con Grails sean un poco más informativas.
 

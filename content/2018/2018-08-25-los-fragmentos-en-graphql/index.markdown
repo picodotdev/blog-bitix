@@ -28,9 +28,10 @@ Con un fragmento se definen esos campos comunes a recuperar en las consultas una
 
 {{< code file="query-1-fragment.graphql" language="graphql" options="" >}}
 
-{{< figureproc
-    image1="query-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Consultas sin utilizar un fragmento"
-    image2="query-1-fragment.png" options2="2560x1440" optionsthumb2="300x200" title2="Consultas con un fragmento"
+{{< image
+    gallery="true"
+    image1="query-1.png" optionsthumb1="300x200" title1="Consultas sin utilizar un fragmento"
+    image2="query-1-fragment.png" optionsthumb2="300x200" title2="Consultas con un fragmento"
     caption="Consultas sin y con un fragmento" >}}
 
 Los fragmentos en línea o _inline_ permiten por otra parte una funcionalidad adicional y es recuperar diferentes datos según el tipo de la entidad. En el ejemplo he añadido una nueva entidad _Magazine_ además de la ya existente _Book_, en el código Java ambas heredan de _Publication_. Las entidades _Book_ y _Magazine_ no comparten las mismas propiedades dado que son entidades diferentes por lo que en la consulta es necesario tener un mecanismo con el cual poder recuperar los datos en función del tipo.
@@ -43,8 +44,9 @@ Estas son las definiciones de las entidades resumidas y la consulta _publication
 
 Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _id_, _title_ y _date_. Para las publicaciones de tipo _Magazine_ se recuperan los campos _id_, _name_ y _pages_. Las publicaciones _Muy interesante_ y _PC Actual_ son dos _Magazine_ y el resto de publicaciones son del tipo _Book_.
 
-{{< figureproc
-    image1="fragment-inline.png" options1="2560x1440" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
+{{< image
+    gallery="true"
+    image1="fragment-inline.png" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
     caption="Consulta con fragmentos en linea" >}}
 
 Si es necesario hay que añadir la clases Java que representan a los tipos de GraphQL a la lista de clases del diccionario en la definición del esquema.

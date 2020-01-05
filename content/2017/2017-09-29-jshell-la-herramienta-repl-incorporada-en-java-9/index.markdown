@@ -20,26 +20,30 @@ Una de las [novedades de Java 9][blogbitix-263] es la incorporación de una herr
 
 El comando de la herramienta [JShell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm) es _jshell_ que inicia un símbolo del sistema donde empezar a introducir las expresiones, se sale de _jshell_ con el comando <code>/exit</code>.
 
-{{< figureproc
-    image1="jshell.png" thumb1="jshell-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="JShell"
+{{< image
+    gallery="true"
+    image1="jshell.png" optionsthumb1="300x200" title1="JShell"
     caption="JShell" >}}
 
 Se pueden crear variables, crear y modificar definiciones de métodos y clases. Cada una de estas expresiones crea un _snippet_ de código que pueden listarse con el comando <code>/list</code>. Al introducir las expresiones se soporta completado y asistencia de código con la tecla tabulador como ayuda para saber que métodos tiene un objeto.
 
 Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un [Stream](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html) de la cual se muestran los elementos de la serie menores que el número 100.
 
-{{< figureproc
-    image1="jshell-expressions.png" thumb1="jshell-expressions-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Expresiones"
-    image2="jshell-completion.png" thumb2="jshell-completion-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Asistencia de código"        
+{{< image
+    gallery="true"
+    image1="jshell-expressions.png" optionsthumb1="300x200" title1="Expresiones"
+    image2="jshell-completion.png" optionsthumb2="300x200" title2="Asistencia de código"        
     caption="Expresiones y asistencia de código" >}}
-{{< figureproc
-    image1="jshell-methods.png" thumb1="jshell-methods-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Serie de Fibonacci con un Stream en un método"
+{{< image
+    gallery="true"
+    image1="jshell-methods.png" optionsthumb1="300x200" title1="Serie de Fibonacci con un Stream en un método"
     caption="Serie de Fibonacci con un Stream en un método" >}}
 
 Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter _/_. Hay varios como los ya citados para listar los _snippets_ de código y salir de _jshell_, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e _imports_ con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.
 
-{{< figureproc
-    image1="jshell-commands.png" thumb1="jshell-commands-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Comandos"
+{{< image
+    gallery="true"
+    image1="jshell-commands.png" optionsthumb1="300x200" title1="Comandos"
     caption="Comandos" >}}
 
 Para los _snippets_ multilínea o algo complejos puede utilizarse un editor externo con el comando <code>/edit</code>. El editor de nuestra preferencia se establece con el comando <code>/set</code>.

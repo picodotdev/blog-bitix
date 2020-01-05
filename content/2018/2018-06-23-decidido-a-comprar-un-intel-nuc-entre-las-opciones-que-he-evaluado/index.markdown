@@ -27,13 +27,11 @@ He barajado varias opciones principalmente ordenadores en factor de forma peque�
 
 A pesar de saber que todos los procesadores Intel de la última década está afectados por los [importantes problemas de seguridad Meltdown y Spectre][blogbitix-293] que se están mitigando por software, de momento no se ha descubierto una forma de aprovecharlos pero quizá en un futuro se pueda y afecte de forma importante al rendimiento para corregirlos si es que se puede. Pero es que el resto de opciones he ido descartando por otros motivos.
 
-<div class="media">
-    <figure>
-        <img src="assets/images/logotypes/meltdown.svg" alt="Meltdown" title="Meltdown" width="200" height="200"/>
-        <img src="assets/images/logotypes/spectre.svg" alt="Spectre" title="Spectre" width="200" height="200"/>
-        <figcaption>Logotipos de Meltdown y Spectre</figcaption>
-    </figure>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/meltdown.svg" optionsthumb1="200x200" title1="Meltdown"
+    image2="assets/images/logotypes/spectre.svg" optionsthumb2="200x200" title2="Spectre"
+    caption="Logotipos de Meltdown y Spectre" >}}
 
 El precio que calculo tendrá el Intel NUC Bean Canyon con procesador [Intel i5 8250U](https://ark.intel.com/es-es/products/124967/Intel-Core-i5-8250U-Processor-6M-Cache-up-to-3_40-GHz) (4 núcleos, 8 hilos, 6 MiB cache) estará en el momento de su salida entre los 350 y 450€ sin incluir la memoria y el SSD, respecto al modelo con el [Intel i3 7100U](https://ark.intel.com/es-es/products/95442/Intel-Core-i3-7100U-Processor-3M-Cache-2_40-GHz) (2 núcleos, 4 hilos, 3 MiB cache) que cuesta unos 250€ se puede dudar si esos dos núcleos adicionales y 3 MiB de caché más en el procesador merecen la pena la diferencia de precio. En mi caso estoy estoy dispuesto a pagarlo queriendo tener algo significativamente con mejor rendimiento teórico que lo que tenía.
 

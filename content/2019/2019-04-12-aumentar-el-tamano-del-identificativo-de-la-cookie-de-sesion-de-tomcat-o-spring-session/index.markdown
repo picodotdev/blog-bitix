@@ -33,8 +33,9 @@ Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] po
 {{< code file="Main-2.java" language="java" options="" >}}
 {{< code file="DefaultRedisOperationSessionRespository.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="spring-session.png" options1="2560x1440" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
+{{< image
+    gallery="true"
+    image1="spring-session.png" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
     caption="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" >}}
 
 {{< code file="session-id.txt" language="java" options="" >}}

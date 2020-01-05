@@ -22,9 +22,10 @@ Lógicamente, de este modo _hardcodear_ una contraseña en el código fuente hac
 
 Compilado el programa y utilizando la herramienta _javap_ se puede obtener el valor de la contraseña. ¿Adivinas cual es la contraseña en este archivo binario de _bytecode_ examinado el contenido?
 
-{{< figureproc
-    image1="java-class-hex.png" options1="2560x1440" optionsthumb1="300x200" title1="Contenido hexadecimal de un archivo binario de bytecode Java"
-    image2="c-bin-hex.png" options2="2560x1440" optionsthumb2="300x200" title2="Contenido hexadecimal de un archivo binario de C"
+{{< image
+    gallery="true"
+    image1="java-class-hex.png" optionsthumb1="300x200" title1="Contenido hexadecimal de un archivo binario de bytecode Java"
+    image2="c-bin-hex.png" optionsthumb2="300x200" title2="Contenido hexadecimal de un archivo binario de C"
     caption="Contenido hexadecimal de un archivo binario de bytecode Java y C" >}}
 
 El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o decompilado los caracteres de la cadena son fácilmente reconocibles.

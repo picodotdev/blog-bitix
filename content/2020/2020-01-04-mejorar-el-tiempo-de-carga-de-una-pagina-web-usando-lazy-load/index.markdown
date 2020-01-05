@@ -23,24 +23,28 @@ Una de las variables que influyen en el tiempo de carga es el número de peticio
 
 Los artículos de mi blog como [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432] o [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363], incluyen numerosas imágenes e _iframes_ de vídeos de [Youtube][youtube] y publicidad de [Amazon][amazon], en todas se carga los comentarios de [Disqus][disqus] y para compartir los artículos con [ShareThis][sharethis] que están al final de la página y hasta que el usuario no ha leido el artículo son innecesarios. Disqus además en concreto para cargarse realiza numerosas peticiones adicionales. Estás páginas son de las más complejas por número de recursos y extensión del artículo que tengo en el blog por lo que he analizado una de ellas antes y después aplicando _lazy loading_ para cargar inicialmente solo los elementos que se visualizan que son aquellos que están en la parte superior de la página.
 
-{{< figureproc
-    image1="playstation-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Página PlayStation"
-    image2="playstation-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Página PlayStation" >}}
+{{< image
+    gallery="true"
+    image1="playstation-1.png" optionsthumb1="300x200" title1="Página PlayStation"
+    image2="playstation-2.png" optionsthumb2="300x200" title2="Página PlayStation" >}}
 
-{{< figureproc
-    image1="intel-nuc-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Página Intel NUC"
-    image2="intel-nuc-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Página Intel NUC"
+{{< image
+    gallery="true"
+    image1="intel-nuc-1.png" optionsthumb1="300x200" title1="Página Intel NUC"
+    image2="intel-nuc-2.png" optionsthumb2="300x200" title2="Página Intel NUC"
     caption="Páginas representativas de Blog Bitix" >}}
 
 Analizando el número de peticiones, tamaño y tiempo de carga en la página de la PlayStation realizaban 343 peticiones inicialmente, con un tamaño de descarga de 5 MiB en un tiempo de carga según Firefox de 15 segundos. Evaluando esta página con [PageSpeed][google-pagespeed] un aspecto importante que indica a mejora reducir el número de elementos descargados, además de reducir peticiones y tamaño de la página se descarguen inicialmente los elementos importantes y omitiendo recursos de JavaScript hace que el desempeño sea mejor. El resultado es un menor tiempo de carga.
 
-{{< figureproc
-    image1="metricas-pagespeed-playstation-antes.png" options1="2560x1440" optionsthumb1="300x200" title1="Métricas de carga en PageSpeed página PlayStation antes"
-    image2="metricas-pagespeed-intel-nuc-antes.png" options2="2560x1440" optionsthumb2="300x200" title2="Métricas de carga de PageSpeed página Intel NUC antes"
+{{< image
+    gallery="true"
+    image1="metricas-pagespeed-playstation-antes.png" optionsthumb1="300x200" title1="Métricas de carga en PageSpeed página PlayStation antes"
+    image2="metricas-pagespeed-intel-nuc-antes.png" optionsthumb2="300x200" title2="Métricas de carga de PageSpeed página Intel NUC antes"
     caption="Métricas de carga en PageSpeed antes" >}}
 
-{{< figureproc
-    image1="metricas-firefox-antes.png" options1="2560x1440" optionsthumb1="300x200" title1="Métricas de carga de Firefox página PlayStation antes"
+{{< image
+    gallery="true"
+    image1="metricas-firefox-antes.png" optionsthumb1="300x200" title1="Métricas de carga de Firefox página PlayStation antes"
     caption="Métricas de carga en Firefox" >}}
 
 La solución es cargar los elementos imágenes, _iframes_, vídeos y comentarios de Disqus cuando se vayan a visualizar al desplazarse el usuario hasta ellos. Esto reduce notablemente el número de peticiones realizadas inicialmente, el tamaño de descarga y el tiempo de carga. Una librería de JavaScript que permite realizar esta funcionalidad es [Lozad][lozad], no tiene dependencias, es muy pequeña, es soprendentemente fácil de utilizar en relación con el beneficio que aporta. Aprovecha el soporte de la interfaz [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver) precisamente proporcionada por los navegadores para realizar la carga vaga o _lazy load_ de forma eficiente.
@@ -85,13 +89,15 @@ Con simplemente esta mejora, que no es complicada de realizar, añadiendo el có
 
 La métrica de PageSpeed mejoran notablemente, es una cifra sobre 100 que aún dista de ser alta debido a que Analytics y AdSense imponen una fuerte penalización por utilizarlos e incluirlos en las páginas. La página [WebPageTest][webpagetest] proporciona algunos datos adicionales y complementarios a los proporcinados por PageSpeed, también es recomendable usarla para medir la variación en los resultados con los cambios realizados con el objetivo de mejorar una página.
 
-{{< figureproc
-    image1="metricas-pagespeed-playstation-despues.png" options1="2560x1440" optionsthumb1="300x200" title1="Métricas de carga en PageSpeed página PlayStation después"
-    image2="metricas-pagespeed-intel-nuc-despues.png" options2="2560x1440" optionsthumb2="300x200" title2="Métricas de carga de PageSpeed página Intel NUC después"
+{{< image
+    gallery="true"
+    image1="metricas-pagespeed-playstation-despues.png" optionsthumb1="300x200" title1="Métricas de carga en PageSpeed página PlayStation después"
+    image2="metricas-pagespeed-intel-nuc-despues.png" optionsthumb2="300x200" title2="Métricas de carga de PageSpeed página Intel NUC después"
     caption="Métricas de carga en PageSpeed después" >}}
 
-{{< figureproc
-    image1="metricas-firefox-despues.png" options1="2560x1440" optionsthumb1="300x200" title1="Métricas de carga de Firefox página PlayStation después"
+{{< image
+    gallery="true"
+    image1="metricas-firefox-despues.png" optionsthumb1="300x200" title1="Métricas de carga de Firefox página PlayStation después"
     caption="Métricas de carga en Firefox" >}}
 
 Los navegadores van a añadir el soporte de carga vaga directamente en las imágenes e _iframes_ con un el [atributo loading](https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading) mediante el cual el JavaScript anterior será innecesario para estos elementos.

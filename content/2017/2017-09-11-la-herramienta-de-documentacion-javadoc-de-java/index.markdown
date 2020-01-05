@@ -21,8 +21,9 @@ La documentación Javadoc es una colección de páginas HTML de todas las clases
 
 Se genera a partir del propio código fuente de las clases con los comentarios incluidos que siguen cierto formato precediendo la definición de las clases y métodos. Al estar código y documentación en el propio archivo de código fuente es más fácil mantener sincronizados el código y su documentación.
 
-{{< figureproc
-    image1="javadoc-jdk.png" thumb1="javadoc-jdk-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Documentación Javadoc del JDK"
+{{< image
+    gallery="true"
+    image1="javadoc-jdk.png" optionsthumb1="300x200" title1="Documentación Javadoc del JDK"
     caption="Documentación Javadoc del JDK" >}}
 
 La documentación en el código fuente se incluye en comentarios que preceden una clase o método, además, con anotaciones se pueden documentar los parámetros y el valor de retorno. Se pueden incluir etiquetas HTML junto con algunas de las anotaciones o _doclets_/_taglets_, algunas [anotaciones Javadoc incluidas en el JDK](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#javadoctags) son las siguientes pero también se pueden [desarrollar _doclets_/_taglets_ propios][blogbitix-261] o [personalizar los estilos de la documentación][blogbitix-262] para cambiar el contenido, información incluida o adaptar los estilos a unos según los colores de la organización.
@@ -58,12 +59,14 @@ Una vez documentado el código fuente hay que usar la [herramienta Javadoc](http
 
 La propia documentación de las clases del JDK está generada con la herramienta Javadoc. Este es el aspecto de la documentación de este ejemplo que tiene exactamente el mismo aspecto que la del JDK.
 
-{{< figureproc
-    image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Documentación Javadoc"
-    image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Documentación Javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc-1.png" optionsthumb1="300x200" title1="Documentación Javadoc"
+    image2="javadoc-2.png" optionsthumb2="300x200" title2="Documentación Javadoc"
     caption="Documentación Javadoc del ejemplo" >}}
-{{< figureproc
-    image1="javadoc-archivos.png" thumb1="javadoc-archivos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Archivos de la documentación Javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc-archivos.png" optionsthumb1="300x200" title1="Archivos de la documentación Javadoc"
     caption="Archivos de la documentación Javadoc" >}}
 
 La documentación Javadoc al ser una colección de archivos HTML y demás recursos estáticos pueden copiarse a cualquier servidor web si es necesario que estén disponibles a través de internet y accesibles con cualquier navegador web.

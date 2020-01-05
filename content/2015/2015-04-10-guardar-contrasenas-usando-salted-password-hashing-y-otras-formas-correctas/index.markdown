@@ -18,15 +18,15 @@ Para cada servicio deberíamos emplear una contraseña de una longitud de al men
 
 ### Algo de teoría y algunas explicaciones
 
-<div class="logotypes" style="float: right; text-align: right;">
-	<img src="assets/images/logotypes/java.svg" class="right" alt="Java" title="Java" width="200">
-</div>
-
 Aunque guardemos las contraseñas con MD5 o alguna variante de SHA hoy en día no es suficiente para que en caso de que alguien obtenga los _hashes_ de las contraseñas de la base de datos pueda averiguarlas o dar con una que genere el mismo _hash_, usando estas funciones se pueden encontrar colisiones en un tiempo razonable y por tanto ya no se consideran seguras. Dada la computación actual de los procesadores y las tarjetas gráficas una contraseña débil puede romperse usando un [ataque de fuerza bruta](https://es.wikipedia.org/wiki/Ataque_de_fuerza_bruta) y quizá antes con un [ataque de diccionario](https://es.wikipedia.org/wiki/Ataque_de_diccionario) que pruebe las más comunes. Muchos usuarios no tienen contraseñas largas ni utilizan letras en minúscula, mayúscula, números y símbolos, muchos usuarios utilizan contraseñas sencillas para ser recordadas más fácilmente, y aún _hasheando_ las contraseñas pueden ser averiguadas. También se pueden usar [tablas arcoiris](https://es.wikipedia.org/wiki/Tabla_arco%C3%ADris) o _rainbow tables_ con los _hashes_ precalculados de las contraseñas de un diccionario con lo que el tiempo empleado para romper una puede requerir poco tiempo de computación.
 
 También hay que tener en cuenta que muchos usuarios usan la misma contraseña para múltiples servicios por lo que basta que alguien obtenga la contraseña original de un servicio y podrá acceder a otros más interesantes para alguien con malas intenciones por mucha seguridad que tenga esos otros servicios, este es uno de los motivos de la autenticación en dos pasos (que emplea algo que sé, la contraseña, y algo que tengo, como el móvil) y la recomendación de usar una contraseña diferente para cada servicio. Las contraseñas por si solas tienen la seguridad más baja de los diferentes servicios donde se usen.
 
-Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque no serían posibles por la entropía añadida por los _salt_. Aún así conociendo el _salt_ y la función de _hash_ empleada seguiría siendo posible un ataque de fuerza bruta y de diccionario. Con _Salted Password Hashing_ se usa en la función de _hash_ y un dato variable denominado _salt_ que añade suficiente entropía y es diferente para cada contraseña, en la base de datos se guarda el resultado de la función de _hash_ junto con el _salt_, esto es, el resultado de SHA-512(contraseña+_salt_) y también el _salt_.
+Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque no serían posibles por la entropía añadida por los _salt_. Aún así conociendo el _salt_ y la función de _hash_ empleada seguiría siendo posible un ataque de fuerza bruta y de diccionario. Con _Salted Password Hashing_ se usa en la función de _hash_ y un dato variable denominado _salt_ que añade suficiente entropía y es diferente para cada contraseña, en la base de datos se guarda el resultado de la función de _hash_ junto con el _salt_, esto es, el resultado de SHA-512(contraseña + _salt_) y también el _salt_.
+
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/java.svg" optionsthumb1="127x218" title1="Java" >}}
 
 ### Ejemplo de _Salted Password Hashing_ usando Apache Shiro
 
@@ -44,8 +44,9 @@ En el ejemplo tratándose de una aplicación web usando Apache Tapestry se debe 
 
 El cambio de _Realm_ para el usuario no supone ninguna modificación y podrá seguir autenticandose con su misma contraseña. En el ejemplo con _root_ como usuario y _password_ como contraseña.
 
-{{< figureproc
-    image1="formulario-inicio-sesion.png" thumb1="formulario-inicio-sesion.png" options1="2560x1440" optionsthumb1="450x400" title1="Formulario de inicio de sesión" >}}
+{{< image
+    gallery="true"
+    image1="formulario-inicio-sesion.png" optionsthumb1="300x200" title1="Formulario de inicio de sesión" >}}
 
 Este es todo el código que necesitamos para la implementación de contraseñas codificadas con una función de _hashing_, en este caso SHA-512, y un _salt_, no es mucho y además es bastante simple la implementación con Shiro y en este caso en una aplicación usando el _framework_ Apache Tapestry. Estas pocas líneas de código pueden aumentar notablemente la seguridad de las contraseñas que guardamos en la base de datos. En el caso de que la base de datos se vea comprometida será más difícil para alguien con malas intenciones obtener las contraseñas originales.
 
@@ -63,8 +64,9 @@ El [código fuente completo del ejemplo][ejemplo-plugin-tapestry] está alojado 
 
 {{< code file="gradlew.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="iniciar-sesion.png" thumb1="iniciar-sesion.png" options1="2560x1440" optionsthumb1="450x400" title1="Botón de inicio de sesión" >}}
+{{< image
+    gallery="true"
+    image1="iniciar-sesion.png" optionsthumb1="300x200" title1="Botón de inicio de sesión" >}}
 
 ### Nota final
 

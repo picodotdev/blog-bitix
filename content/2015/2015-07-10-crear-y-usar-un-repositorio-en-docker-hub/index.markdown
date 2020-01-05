@@ -33,8 +33,9 @@ Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario deter
 
 {{< code file="docker-run.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="dockerhub.png" thumb1="dockerhub-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Docker Hub"
+{{< image
+    gallery="true"
+    image1="dockerhub.png" optionsthumb1="300x200" title1="Docker Hub"
     caption="Docker Hub" >}}
 
 ### Subir el archivo Dockerfile a un repositorio de GitHub
@@ -47,8 +48,9 @@ Una vez que tenemos el repositorio de GitHub subimos un [Dockerfile para el ejem
 
 En la creación del repositorio en Docker Hub con _build_ automatizada seleccionamos el repositorio de GitHub que contiene los repositorios y el archivo DockerFile para el que queremos hacer la build automatizada. Le asignamos un nombre al repositorio y un _tag_ a la _build_ que podremos usar al hacer el _pull_ de la imagen.
 
-{{< figureproc
-    image1="dockerhub-automated-build.png" thumb1="dockerhub-automated-build-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Docker Hub"
+{{< image
+    gallery="true"
+    image1="dockerhub-automated-build.png" optionsthumb1="300x200" title1="Docker Hub"
     caption="Build automatizada de Docker Hub" >}}
 
 Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.

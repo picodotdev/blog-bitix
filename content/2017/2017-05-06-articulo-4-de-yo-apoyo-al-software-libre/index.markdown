@@ -22,17 +22,17 @@ Como cada vez que desde hace un tiempo recibo una transferencia en mi cuenta por
 
 Uno de los proyectos a los que he donado esta vez ha sido al entorno de escritorio [GNOME][gnome] que uso en mi equipo con [GNU][gnu]/[Linux][linux] ya desde la época de la versión 2.30 allá por el 2010 y continué utilizándolo desde los inicios turbulentos de la versión 3.0 en la que todavía era un nuevo concepto del escritorio inmaduro pero que desde entonces ha mejorado notablemente en cada nueva versión publicada con una cadencia puntual cada seis meses. A partir de la versión 3.16 o 3.18 el escritorio de GNOME empezó a completar la visión de sus desarrolladores y satisfacer con las expectativas de muchos más usuarios en cuanto a funcionalidades y detalles gráficos. En las últimas versiones los cambios ya no son tan notables pero sigue mejorando.
 
-<div class="media">
-    <img src="assets/images/logotypes/gnome.svg" alt="GNOME" title="GNOME" width="200"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/gnome.svg" optionsthumb1="200x200" title1="GNOME" >}}
 
 ### VideoLAN (VLC)
 
 Otro proyecto al que he donado ha sido el [reproductor de multimedia VLC][vlc] del que no me gusta mucho su interfaz gráfica pero que funciona muy bien y es capaz de reproducir cualquier formato de archivo multimedia ya sea de audio o vídeo. Además de este proyecto me encargo de la traducción al español.
 
-<div class="media">
-    <img src="assets/images/logotypes/vlc.svg" alt="VLC" title="VLC" width="200"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/vlc.svg" optionsthumb1="200x200" title1="VLC" >}}
 
 ### Arch Linux
 
@@ -40,20 +40,23 @@ Finalmente, he donado a [Arch Linux][archlinux] que es la distribución de GNU/L
 
 Por un problema con el medio de pago que usa Arch Linux, [Software in the Public Interest (SPI)](http://spi-inc.org/), para hacer donaciones directas no he podido pagar con mi tarjeta de crédito, finalmente he optado por comprar unas pegatinas para poner en el portátil, unas de Arch Linux, otras de Linux y otras de GNOME en [unixstickers](http://www.unixstickers.com/).
 
-<div class="media">
-    <img src="assets/images/logotypes/archlinux.svg" alt="Arch Linux" title="Arch Linux" width="250"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/archlinux.svg" optionsthumb1="250x250" title1="Arch Linux" >}}
 
 ### Comprobantes de las donaciones
 
-{{< figureproc
-    image1="donacion-gnome.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación GNOME"
+{{< image
+    gallery="true"
+    image1="donacion-gnome.png" optionsthumb1="650x450" title1="Donación GNOME"
     caption="Donación GNOME" >}}
-{{< figureproc
-    image1="donacion-videolan.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
+{{< image
+    gallery="true"
+    image1="donacion-videolan.png" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
     caption="Donación VideoLAN (VLC)" >}}
-{{< figureproc
-    image1="donacion-archlinux.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Arch Linux"
+{{< image
+    gallery="true"
+    image1="donacion-archlinux.png" optionsthumb1="650x450" title1="Donación Arch Linux"
     caption="Donación Arch Linux" >}}
 
 Las donaciones no son muy cuantiosas pero son una forma de entre las muchas que hay de colaborar con estos proyectos. Otras formas de colaborar son reportando de errores o que no requieren conocimiento técnico como traduciendo las aplicaciones al lenguaje español o simplemente compartiendo las imágenes torrent de las distribuciones GNU/Linux.

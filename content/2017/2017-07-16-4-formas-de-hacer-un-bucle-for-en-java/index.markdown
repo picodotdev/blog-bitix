@@ -41,8 +41,9 @@ El siguiente programa muestra las cuatro opciones, su salida en la consola serí
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="bucles-java.png" thumb1="bucles-java-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="4 formas de hacer un bucle en Java"
+{{< image
+    gallery="true"
+    image1="bucles-java.png" optionsthumb1="300x200" title1="4 formas de hacer un bucle en Java"
     caption="4 formas de hacer un bucle en Java" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" >}}

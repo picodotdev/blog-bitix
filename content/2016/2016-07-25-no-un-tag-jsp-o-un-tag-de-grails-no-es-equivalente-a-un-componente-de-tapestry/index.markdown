@@ -25,9 +25,10 @@ Definiendo más la necesidad hasta ahora cada fila del listado tiene un conjunto
 
 Esta sería una imagen del prototipo de los botones para hacer acciones múltiples, seleccionar compras y el diálogo modal para introducir información adicional.
 
-{{< figureproc
-    image1="listado.png" thumb1="listado-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Listado de productos"
-    image2="modal.png" thumb2="modal-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Modal solicitando información adicional"
+{{< image
+    gallery="true"
+    image1="listado.png" optionsthumb1="300x200" title1="Listado de productos"
+    image2="modal.png" optionsthumb2="300x200" title2="Modal solicitando información adicional"
     caption="Listado y modal de la necesidad expuesta" >}}
 
 En la necesidad real las filas son compras pero en el ejemplo usaré la entidad _Product_. Las acciones en el ejemplo serán habilitar para la que no será necesaria información adicional, la otra acción será deshabilitar para la que se necesitará introducir una razón con un modal.
@@ -75,8 +76,9 @@ Los componentes de Tapestry usan el [modelo pull en vez del modelo push][blogbit
 
 Para volver a la misma página en [Spring MVC][spring], [Struts][struts] o [Grails][grails] posiblemente deberíamos recibir además información para retornar a la misma página en la que estabamos cosa que es innecesaria en Tapestry por su [concepto de contexto de activación de página](http://tapestry.apache.org/page-navigation.html) y el patrón _Redirect-After-Post_ hará que al recargar la página por código con <code>window.localtion.reload();</code> después de una petición POST el navegador no muestre un diálogo modal informando al usuario de que se reenviarán datos.
 
-{{< figureproc
-    image1="dialogo-recargar.png" thumb1="dialogo-recargar-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Diálogo recargar después de petición POST en Firefox"
+{{< image
+    gallery="true"
+    image1="dialogo-recargar.png" optionsthumb1="300x200" title1="Diálogo recargar después de petición POST en Firefox"
     caption="Diálogo recargar después de petición POST en Firefox" >}}
 
 [React][react] y [Polymer][polymer] son tecnologías de cliente en algunos aspectos similares a los componentes de Apache Tapestry pero con la diferencia de que unos son para el navegador del cliente y otros para el servidor, nada nos impide en la misma aplicación usar en el cliente React y Polymer y en el servidor Apache Tapestry. Nótese en el código del caso anterior que Tapestry ofrece integración con JavaScript de un modo que no existe ni en Spring MVC, Struts o Grails e incorpora de serie [RequireJS][requirejs], Undercore y jQuery, un componente de Tapestry puede requerir la cargar de un recurso de JavaScript y desde el componente es posible pasar datos al JavaScript usando el servicio [JavaScriptSupport](http://tapestry.apache.org/5.4/apidocs/org/apache/tapestry5/services/javascript/JavaScriptSupport.html).

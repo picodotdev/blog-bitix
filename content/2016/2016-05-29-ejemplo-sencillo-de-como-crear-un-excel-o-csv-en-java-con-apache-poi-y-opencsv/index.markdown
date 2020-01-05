@@ -30,8 +30,9 @@ El siguiente ejemplo crea documento excel con varios datos, aplicando estilos a 
 
 [LibreOffice][libreoffice] tiene la capacidad de abrir documentos excel, en la siguiente imagen se ve el documento abierto con LibreOffice Calc creado en el ejemplo.
 
-{{< figureproc
-    image1="libreoffice.png" thumb1="libreoffice-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Excel generado con Apache POI abierto con LibreOffice"
+{{< image
+    gallery="true"
+    image1="libreoffice.png" optionsthumb1="300x200" title1="Excel generado con Apache POI abierto con LibreOffice"
     caption="Excel generado con Apache POI abierto con LibreOffice" >}}
 
 Otro formato de datos muy utilizado es el de columnas separadas por comas o CSV. Con la librería [OpenCSV][opencsv] se pueden escribir archivos bien formados en este formato teniendo en cuenta el caracter separador de las columnas y el entrecomillado de los datos.

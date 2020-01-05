@@ -33,7 +33,9 @@ La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa 
 
 El uso que se les puede dar a estas computadores es muy diverso quizá no como para sustituir a un ordenador de escritorio o portátil basado en procesadores [Intel][intel] o [AMD][amd] pero si para otros propósitos como servidor de descargas, centro multimedia, servidor web, cluster de servidores con [Docker][docker], servicio en la nube propio con [OwnCloud][owncloud], servidor de código fuente con [GitLab][gitlab], servidor de integración continua con [Jenkins][jenkins], base de datos [PostgreSQL][postgresql] o los mencionados consola de juegos retro y centro multimedia entre cualesquiera otros usos que queramos mientras el software necesario esté disponible y la cantidad memoria de la computadora sea suficiente.
 
-{{< imageproc    image1="arm-powered.png" command1="Fit" options1="300x250" alt1="ARM Powered" title1="ARM Powered" >}}
+{{< image
+    gallery="false"
+    image1="arm-powered.png" command1="Fit" optionsthumb1="300x250" title1="ARM Powered" >}}
 
 ### Raspberry Pi
 
@@ -67,9 +69,10 @@ La [Raspberry Pi 4](https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-bench
 
 El precio del modelo de 1 GiB de memoria se mantiene en $35 y el de 4 GiB llega a $55. Con este nuevo modelo la Raspberry Pi vuelve a posicionarse a la altura de sus equivalentes que con el paso del tiempo habían superado a los modelos anteriores de RPi.
 
-{{< figureproc
-    image1="raspberrypi3b.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Raspberry Pi 3"
-    image2="raspberrypi4b.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Raspberry Pi 4"
+{{< image
+    gallery="true"
+    image1="raspberrypi3b.jpg" optionsthumb1="300x200" title1="Raspberry Pi 3"
+    image2="raspberrypi4b.jpg" optionsthumb2="300x200" title2="Raspberry Pi 4"
     caption="Raspberry Pi 3 y 4" >}}
 
 {{< amazon
@@ -99,8 +102,9 @@ El segundo modelo que destacaré es este de [PINE64][pine64] porque posee versio
 * Power, Reset and Recovery Buttons
 * IR Receiver Port
 
-{{< figureproc
-    image1="rock64.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Rock64"
+{{< image
+    gallery="true"
+    image1="rock64.jpg" optionsthumb1="300x200" title1="Rock64"
     caption="Rock64" >}}
 
 Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conectable a un puerto USB, también tienen la posibilidad de comprar el alimentador de corriente, mando a distancia, caja acrílica y un _splitter_ con _Power Over Ethernet_ o _PoE_ que hace innecesario el alimentador de corriente si poseemos o adquirimos un _switch_ con esa función, tarjetas eMMC de 16, 32 y 64 GiB. Su precio de unos $45 para el modelo de 4 GiB.
@@ -109,16 +113,18 @@ Para suplir la carencia de WiFi en su tienda hay disponible un accesorio conecta
 
 En el momento de escribir el artículo están preparando el lanzamiento de la placa Rock64Pro con un mejor _SoC_ [Rockchip RK3399](http://www.rock-chips.com/a/en/products/RK33_Series/2016/0419/758.html) _hexa-core_ con dos Cortex-A72 y 4 Cortex-A53 además de un puerto USB Type-C y mejor GPU con una [ARM Mali-T860MP4](https://developer.arm.com/products/graphics-and-multimedia/mali-gpus/mali-t860-and-mali-t880-gpus) _quad-core_ con soporte para OpenGL ES 1.1 / 2.0 / 3.0 and OpenCL 1.2.
 
-{{< figureproc
-    image1="rock64pro.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Rock64Pro"
+{{< image
+    gallery="true"
+    image1="rock64pro.jpg" optionsthumb1="300x200" title1="Rock64Pro"
     caption="Rock64Pro" >}}
 
 Estas placas de PINE64 son de lo mejor en la relación características hardware y precio, donde adolecen es en el software y es que aún con un tiempo relativamente corto de un año de vida es en el software donde pueden presentar algún problema. Conforme pase el tiempo mejorarán pero quizá no sea el modelo más adecuado para aquellos usuarios que no deseen encontrase problemas en su uso y no estén dispuestos buscar información o a resolver los que se presenten.
 
 Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM a un precio de $90. Pantalla de 11" o 14" con una resolución de 1366x768, 2 GiB de memoria, WiFi, microSD, mini HDMI, 16GB eMMC, dos puertos USB 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y _touchpad_.
 
-{{< figureproc
-    image1="pinebook-11-inch.jpg" options1="2560x1440" optionsthumb1="300x200" title1="PineBook (11 pulgadas)"
+{{< image
+    gallery="true"
+    image1="pinebook-11-inch.jpg" optionsthumb1="300x200" title1="PineBook (11 pulgadas)"
     caption="PineBook (11 pulgadas)" >}}
 
 ### Rock Pi 4B
@@ -156,8 +162,9 @@ Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que
 * 4 x USB 2.0
 * GPIO 40-pin header, up to 28 x GPIO pins, up to 2 x SPI bus, up to 2 x I2C bus, up to 4 x UART, up to 2 x PWM, up to 1 x PCM/I2S, 2 x 5V power pins, 2 x 3.3V power pins, 8 x ground pins, 1 x PWM, 1 x S/PDIF, 1 x 15-pin MIPI DSI, 1 x 15-pin MIPI CSI
 
-{{< figureproc
-    image1="asus-tinker-board.jpg" options1="2560x1440" optionsthumb1="300x200" title1="ASUS Tinker Board"
+{{< image
+    gallery="true"
+    image1="asus-tinker-board.jpg" optionsthumb1="300x200" title1="ASUS Tinker Board"
     caption="ASUS Tinker Board" >}}
 
 ### Cubox
@@ -177,9 +184,10 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
 * IR receiver
 * PoE sink support
 
-{{< figureproc
-    image1="cubox.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Cubox"
-    image2="cubox-pulse.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Cubox Pulse"
+{{< image
+    gallery="true"
+    image1="cubox.jpg" optionsthumb1="300x200" title1="Cubox"
+    image2="cubox-pulse.jpg" optionsthumb2="300x200" title2="Cubox Pulse"
     caption="Cubox y Cubox Pulse" >}}
 
 ### ODROID
@@ -188,8 +196,9 @@ Otro distribuidor importante es [Hardkernel][hardkernel] con sus modelos ODROID 
 
 Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) tambien basada en el _SoC_ Rockchip RK3399.
 
-{{< figureproc
-    image1="odroid-c2.jpg" options1="2560x1440" optionsthumb1="300x200" title1="ODROID C2"
+{{< image
+    gallery="true"
+    image1="odroid-c2.jpg" optionsthumb1="300x200" title1="ODROID C2"
     caption="ODROID C2" >}}
 
 ### NanoPi, OrangePi y BananaPi

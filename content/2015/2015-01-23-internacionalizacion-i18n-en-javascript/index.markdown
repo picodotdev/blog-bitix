@@ -47,26 +47,30 @@ Para completar el ejemplo debemos inicializar la librería i18next con la config
 
 Cambiando el idioma preferido en el navegador podemos ver los textos de la aplicación según el mismo:
 
-{{< figureproc
-    image1="lista-tareas-es.png" thumb1="lista-tareas-es-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación en español"
-    image2="lista-tareas-en.png" thumb2="lista-tareas-en-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Aplicación en inglés" >}}
+{{< image
+    gallery="true"
+    image1="lista-tareas-es.png" optionsthumb1="300x200" title1="Aplicación en español"
+    image2="lista-tareas-en.png" optionsthumb2="300x200" title2="Aplicación en inglés" >}}
 
 El texto que indica cuantas tareas están completadas usa las diferentes formas plurales del lenguaje, en el caso del español dos, singular y plural cuando se marca una o dos tareas completadas.
 
-{{< figureproc
-    image1="una-tarea-completada.png" thumb1="una-tarea-completada-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Una tarea completada"
-    image2="dos-tareas-completadas.png" thumb2="dos-tareas-completadas-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Dos tareas completadas" >}}
+{{< image
+    gallery="true"
+    image1="una-tarea-completada.png" optionsthumb1="300x200" title1="Una tarea completada"
+    image2="dos-tareas-completadas.png" optionsthumb2="300x200" title2="Dos tareas completadas" >}}
 
 i18next se encarga de obtener los archivos de traducciones automáticamente según el idioma en que se deba mostrar la aplicación, para el caso de que el usuario tenga como idioma preferido es-ES se buscarán los archivos localizados es-ES, es y finalmente dev:
 
-{{< figureproc
-    image1="peticiones-locales-es-ES.png" thumb1="peticiones-locales-es-ES-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Búsqueda de traducciones"
-    image2="peticiones-locales-dev.png" thumb2="peticiones-locales-dev-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Búsqueda de traducciones" >}}
+{{< image
+    gallery="true"
+    image1="peticiones-locales-es-ES.png" optionsthumb1="300x200" title1="Búsqueda de traducciones"
+    image2="peticiones-locales-dev.png" optionsthumb2="300x200" title2="Búsqueda de traducciones" >}}
 
 Una vez hechos los cambios y habiendo modificado las pruebas unitarias de javascript comprobamos que todos siguen pasando correctamente:
 
-{{< figureproc
-    image1="teses.png" thumb1="teses-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Pruebas unitarias" >}}
+{{< image
+    gallery="true"
+    image1="teses.png" optionsthumb1="300x200" title1="Pruebas unitarias" >}}
 
 Eso es todo, este ejemplo aunque sencillo muestra bastantes cosas que se podrían utilizar como base para algo real, usa [RequireJS][requirejs], [Mustache][mustache], [Backbone][backbone], [React][react], [Jasmine][jasmine], [Grunt][grunt] y ahora [i18next][i18next] por la parte cliente y [RESTEasy][resteasy] y [Apache Tapestry][tapestry] por la parte servidor, cada una de estas tecnologías las he comentado individualmente en varios artículos.
 

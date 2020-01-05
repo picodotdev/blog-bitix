@@ -29,13 +29,15 @@ Hubo una época que usaba el sistema operativo de Microsoft sin licencia de Wind
 
 Estas son las pruebas fehacientes que muestran las donaciones que he hecho a los dos proyectos anteriores.
 
-{{< figureproc
-    image1="donacion-mozilla.png" thumb1="donacion-mozilla-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donación Mozilla"
-    image2="donacion-mozilla-email.png" thumb2="donacion-mozilla-email-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Donación Mozilla"
+{{< image
+    gallery="true"
+    image1="donacion-mozilla.png" optionsthumb1="300x200" title1="Donación Mozilla"
+    image2="donacion-mozilla-email.png" optionsthumb2="300x200" title2="Donación Mozilla"
     caption="Donación Mozilla" >}}
-{{< figureproc
-    image1="donacion-wikipedia.png" thumb1="donacion-wikipedia-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Donación Wikipedia"
-    image2="donacion-wikipedia-email.png" thumb2="donacion-wikipedia-email-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Donación Wikipedia"
+{{< image
+    gallery="true"
+    image1="donacion-wikipedia.png" optionsthumb1="300x200" title1="Donación Wikipedia"
+    image2="donacion-wikipedia-email.png" optionsthumb2="300x200" title2="Donación Wikipedia"
     caption="Donación Wikipedia" >}}
 
 Probablemente dentro de alrededor de otros 8 meses cuando reciba nuevas transferencias de Google y Amazon haré una nueva donación a otra serie de proyectos que uso quizá en ese caso a [LibreOffice][libreoffice], [VLC][vlc], [GNOME][gnome], [GIMP][gimp], ... o lo intente de nuevo con Arch Linux. Y estos serán proyectos muy conocidos que no necesiten tanta colaboración económica seguro que hay muchos proyectos menos conocidos pero muy importantes que también necesitan financiación.

@@ -20,8 +20,9 @@ series: ["hashicorp"]
 
 La virtualización es una buena forma de probar una distribución [GNU][gnu]/[Linux][linux] para evaluarla o ejecutar [Windows][windows] en un Linux. Hay otras herramientas de virtualización como [QEMU][qemu] y [KVM][kvm] pero la virtud de VirtualBox es que es muy sencilla y está disponible para Windows, GNU/Linux y [macOS][macos].
 
-{{< figureproc
-    image1="virtualbox.png" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox"
+{{< image
+    gallery="true"
+    image1="virtualbox.png" optionsthumb1="300x200" title1="VirtualBox"
     caption="VirtualBox" >}}
 
 Para tener una máquina virtual el proceso se puede hacer desde el principio desde el medio de instalación ofrecido siguiendo los de su instalador. Pero para hacer alguna prueba de desarrollo y si se necesitan virtualizar varias máquinas el proceso manual es incómodo además de repetitivo. [Vagrant][vagrant] es una de las herramientas ofrecidas por [HashiCorp][hashicorp] que permite automatizar la creación y aprovisionamiento de máquinas virtuales en VirtualBox mediante la especificación de un archivo de configuración. Permite replicar entornos y crear un cluster de máquinas que resulta muy útil al desarrollar o probar cierto software.
@@ -38,24 +39,27 @@ Definido el archivo de configuración para Vagrant se inician las máquina virtu
 
 {{< code file="vagrant-up.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="virtualbox-vagrant-vm.png" options1="2560x1440" optionsthumb1="300x200" title1="VirtualBox Vagrant VM"
+{{< image
+    gallery="true"
+    image1="virtualbox-vagrant-vm.png" optionsthumb1="300x200" title1="VirtualBox Vagrant VM"
     caption="VirtualBox Vagrant VM" >}}
 
 Una vez iniciada la máquina virtual Vagrant configura SSH para tener acceso a su terminal, hay que especificar el nombre de la máquina virtual.
 
 {{< code file="vagrant-ssh.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="vagrant-ssh.png" options1="2560x1440" optionsthumb1="300x200" title1="Vagrant SSH"
+{{< image
+    gallery="true"
+    image1="vagrant-ssh.png" optionsthumb1="300x200" title1="Vagrant SSH"
     caption="Vagrant SSH" >}}
 
 La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ con los comandos para instalarlo y un archivo de [Docker Compose][docker-compose] con un servicio del servidor web [nginx][nginx]. Desde la terminal de la máquina virtual se inicia el servicio con Docker que queda accesible tanto desde la pripia máquina virtual como desde el _host_ indicando la dirección IP que se le ha asignado.
 
-{{< figureproc
-    image1="docker-compose-up.png" options1="2560x1440" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
-    image2="curl.png" options2="2560x1440" optionsthumb2="300x200" title2="curl (desde el host)"
-    image3="firefox.png" options3="2560x1440" optionsthumb3="300x200" title3="Página devuelta por nginx"
+{{< image
+    gallery="true"
+    image1="docker-compose-up.png" optionsthumb1="300x200" title1="docker-compose up y curl (desde la MV)"
+    image2="curl.png" optionsthumb2="300x200" title2="curl (desde el host)"
+    image3="firefox.png" optionsthumb3="300x200" title3="Página devuelta por nginx"
     caption="docker-compose up y curl desde la MV y desde el host" >}}
 
 Vagrant tiene un [repositorio de imágenes](https://app.vagrantup.com/boxes/search) entre las que elegir para el sistema, están las más populares como [Ubuntu][ubuntu], [Fedora][fedora], [Debian][debian] y [CentOS][centos]. Es un repositorio en donde los usuarios pueden subir sus propias imágenes aunque por defecto es mejor usar las oficiales de cada sistema.

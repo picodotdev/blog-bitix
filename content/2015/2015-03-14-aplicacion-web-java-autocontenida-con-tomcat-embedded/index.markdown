@@ -32,13 +32,15 @@ Generamos el war de la aplicación que queremos desplegar embebida, e iniciamos 
 
 {{< code file="startup.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="tomcat-embedded-comando.png" thumb1="tomcat-embedded-comando-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Iniciando TomcatEmbedded"
-    image2="tomcat-embedded-app.png" thumb2="tomcat-embedded-app-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="TomcatEmbedded iniciado" >}}
-{{< figureproc
-    image1="app.png" title="Aplicación web en TomcatEmbedded" thumb1="app-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación web en TomcatEmbedded" >}}
+{{< image
+    gallery="true"
+    image1="tomcat-embedded-comando.png" optionsthumb1="300x200" title1="Iniciando TomcatEmbedded"
+    image2="tomcat-embedded-app.png" optionsthumb2="300x200" title2="TomcatEmbedded iniciado" >}}
+{{< image
+    gallery="true"
+    image1="app.png" optionsthumb1="300x200" title1="Aplicación web en TomcatEmbedded" >}}
 
-La tendencia actual es que las aplicaciones evolucionen hacia microservicios por varias características deseables que ofrecen como al ser más pequeñas las funcionalidades sean más manejables, sean reemplazables, posibilidad de usar la tecnología más adecuada según el servicio desde lenguaje de programación al sistema de persistencia (relacional o noSQL), facilidad de despliegue, .... Si te interesan los microservicios un libro muy interesante y recomendable es <a href="https://www.amazon.es/gp/product/1491950358/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1491950358&linkCode=as2&tag=blobit-21">Building Microservices</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1491950358" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">. Proporciona una visión detallada de los diferentes aspectos que deben tratar las aplicaciones construidas según esta arquitectura.
+La tendencia actual es que las aplicaciones evolucionen hacia microservicios por varias características deseables que ofrecen como al ser más pequeñas las funcionalidades sean más manejables, sean reemplazables, posibilidad de usar la tecnología más adecuada según el servicio desde lenguaje de programación al sistema de persistencia (relacional o noSQL), facilidad de despliegue, .... Si te interesan los microservicios un libro muy interesante y recomendable es [Building Microservices](https://amzn.to/2MTStSv). Proporciona una visión detallada de los diferentes aspectos que deben tratar las aplicaciones construidas según esta arquitectura.
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1491950358&internal=1" >}}

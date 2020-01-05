@@ -25,8 +25,9 @@ Con el comando <code>./gradlew configserver:run --args="--port=8090"</code> se i
 
 {{< code file="gradlew-run.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="spring-eureka-2.png" options1="2560x1440" optionsthumb1="300x200" title1="Servicios registrados en el servicio de registro y descubrimiento"
+{{< image
+    gallery="true"
+    image1="spring-eureka-2.png" optionsthumb1="300x200" title1="Servicios registrados en el servicio de registro y descubrimiento"
     caption="Servicios y su estado registrados en el servicio de registro y descubrimiento" >}}
 
 Dado que los servicios de configuración no pueden confiar en obtener su configuración de una instancia de su servicio de configuración ha de establecerse en el propio microservicio los nombres de _host_ de las instancias de registro y descubrimiento en las que registrarse, en la propiedad _eureka.client.serviceUrl.defaultZone_.

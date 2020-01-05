@@ -27,8 +27,9 @@ En este artículo explicaré como usar la parte de descubrimiento de servicios d
 
 Consul además de descubrimiento de servicios proporciona otras funcionalidades como detección de fallos o caídas para prevenir enviar peticiones a máquinas fuera de servicio y almacenamiento básico clave/valor para configuración dinámica o activación de características. Dispone de una aplicación web en la que podemos ver el estado de los servicios, una [API REST](https://www.consul.io/api/index.html) con la que comunicarse con Consul en una aplicación o en cada microservicio y un servidor de nombres <abbr>DNS</abbr>, podemos usar cualquiera de las dos interfaces de consulta, la basada en la <abbr>API</abbr> <abbr>REST</abbr> o la basada en DNS para obtener las direcciones IP con la ubicación de los servicios.
 
-{{< imageproc
-    image1="consul.png" options1="300x250" title1="Consul" >}}
+{{< image
+    gallery="false"
+    image1="consul.png" optionsthumb1="300x250" title1="Consul" >}}
 
 Instalar Consul es muy sencillo basta con [descargar un binario](https://www.consul.io/downloads.html) y descargar la interfaz web si queremos tener el _dashboard_ con la información del servicio. Descargados y descomprimidos Consul se inicia con el siguiente comando. Podemos acceder al panel _dashboard_ con la dirección _http\://localhost:8500_ con un navegador web. Inicialmente en el panel de servicios solo se encuentra el propio de Consul cuando aún no se ha registrado ningún servicio, aplicación o microservicio.
 
@@ -41,16 +42,18 @@ Una aplicación que use Spring Boot y que quiera hacer pública su disponibilida
 
 Spring Cloud proporciona además un servicio que podemos usar para conocer los servicios registrados en Consul, con la clase _DiscoveryClient_ podemos conocer los nombres de los servicios, su nombre de máquina y puerto desde una aplicación Java. En el método _run_ de la clase _Main_ se usa en este ejemplo para imprimir en la salida el listado de servicios registrados en Consul. Uno de esos servicios esta aplicación de ejemplo, ya que se registra en Consul cuando se inicia.
 
-{{< figureproc
-    image1="consul-services.png" thumb1="consul-services-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Servicios registrados en Consul"
+{{< image
+    gallery="true"
+    image1="consul-services.png" optionsthumb1="300x200" title1="Servicios registrados en Consul"
     caption="Servicios registrados en Consul" >}}
 
 Consul para conocer que los servicios siguen en funcionamiento hace una petición <abbr>HTTP</abbr> cada ciertos segundos a una ruta de la aplicación, Spring Boot proporciona una dependencia, _spring-boot-starter-actuator_, que usada provee del _endpoint /health_ para que Consul monitorice el estado del servicio.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-{{< figureproc
-    image1="service-health.png" thumb1="service-health-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Endpoint de estado de servicio"
+{{< image
+    gallery="true"
+    image1="service-health.png" optionsthumb1="300x200" title1="Endpoint de estado de servicio"
     caption="Endpoint de estado de servicio" >}}
 
 Esta es la salida en la consola listando los servicios disponibles, siendo uno de ellos esta aplicación.

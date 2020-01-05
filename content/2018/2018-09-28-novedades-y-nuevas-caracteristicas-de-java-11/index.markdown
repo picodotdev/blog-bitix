@@ -88,8 +88,9 @@ Esta funcionalidad es compatible con los _shebang_ de los sistemas Unix.
 {{< code file="helloworld.sh" language="bash" options="" >}}
 {{< code file="hello.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="java-helloworld.png" options1="2560x1440" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
+{{< image
+    gallery="true"
+    image1="java-helloworld.png" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
     caption="Java 11 HelloWorld!" >}}
 
 ### Unicode 10

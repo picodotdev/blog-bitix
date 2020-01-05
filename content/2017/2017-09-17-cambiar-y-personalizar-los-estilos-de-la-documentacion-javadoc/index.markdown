@@ -37,14 +37,16 @@ La [tarea de Gradle para generar la documentación Javadoc](https://docs.gradle.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-{{< figureproc
-    image1="javadoc-1.png" thumb1="javadoc-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Estilos personalizados de la documentación Javadoc"
-    image2="javadoc-2.png" thumb2="javadoc-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Estilos personalizados de la documentación Javadoc"
-    image3="javadoc-3.png" thumb3="javadoc-3-thumb.png" options3="2560x1440" optionsthumb3="450x400" title3="Estilos personalizados de la documentación Javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc-1.png" optionsthumb1="300x200" title1="Estilos personalizados de la documentación Javadoc"
+    image2="javadoc-2.png" optionsthumb2="300x200" title2="Estilos personalizados de la documentación Javadoc"
+    image3="javadoc-3.png" optionsthumb3="300x200" title3="Estilos personalizados de la documentación Javadoc"
     caption="Estilos personalizados de la documentación Javadoc" >}}
-{{< figureproc
-    image1="javadoc-jdk-1.png" thumb1="javadoc-jdk-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Estilos por defecto de la documentación Javadoc"
-    image2="javadoc-jdk-2.png" thumb2="javadoc-jdk-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Estilos por defecto de la documentación Javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc-jdk-1.png" optionsthumb1="300x200" title1="Estilos por defecto de la documentación Javadoc"
+    image2="javadoc-jdk-2.png" optionsthumb2="300x200" title2="Estilos por defecto de la documentación Javadoc"
     caption="Estilos por defecto de la documentación Javadoc" >}}
 
 El comando _javadoc_ tiene una buena cantidad de opciones, con la opción _-help_ se obtiene una listado y descripción de cada una de ellas. Dependiendo del destinatario de la documentación, se pueden limitar las clases que son incluidas en el Javadoc si por ejemplo solo se quiere ofrecer la documentación de la parte pública.

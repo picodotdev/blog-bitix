@@ -41,15 +41,18 @@ Iniciar el servidor OAuth de Keycloak usando [Docker][docker] es muy sencillo co
 
 Para el ejemplo crearé un nuevo _realm_ que contendrá los usuarios y en el que registraremos la aplicación cliente.
 
-{{< figureproc
-    image1="keycloak-realm.png" thumb1="keycloak-realm-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Keycloak realm"
-    image2="keycloak-client.png" thumb2="keycloak-client-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Keycloak client" >}}
-{{< figureproc
-    image1="keycloak-client-roles.png" thumb1="keycloak-client-roles-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Keycloak client roles"
-    image2="keycloak-roles.png" thumb2="keycloak-roles-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Keycloak roles" >}}
-{{< figureproc
-    image1="keycloak-users.png" thumb1="keycloak-users-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Keycloak users"
-    image2="keycloak-users-role-mappings.png" thumb2="keycloak-users-role-mappings-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Keycloak users role mappings" >}}
+{{< image
+    gallery="true"
+    image1="keycloak-realm.png" optionsthumb1="300x200" title1="Keycloak realm"
+    image2="keycloak-client.png" optionsthumb2="300x200" title2="Keycloak client" >}}
+{{< image
+    gallery="true"
+    image1="keycloak-client-roles.png" optionsthumb1="300x200" title1="Keycloak client roles"
+    image2="keycloak-roles.png" optionsthumb2="300x200" title2="Keycloak roles" >}}
+{{< image
+    gallery="true"
+    image1="keycloak-users.png" optionsthumb1="300x200" title1="Keycloak users"
+    image2="keycloak-users-role-mappings.png" optionsthumb2="300x200" title2="Keycloak users role mappings" >}}
 
 Usando uno de los [adaptadores proporcionados por Keycloak](https://keycloak.gitbooks.io/securing-client-applications-guide/content/v/2.2/topics/overview/supported-platforms.html) para la integración en servidores y aplicaciones su uso no es complicado, en este caso usaré el adaptador para Spring Boot. Usándolo básicamente deberemos proporcionar en la configuración las credenciales de la aplicación cliente que hemos registrado previamente en Keycloak. Además indicaremos que URLs de la aplicación requiere autenticación y que roles han de poseer los usuarios autenticados. Al acceder a estas URLs el adaptador de Keycloak redirigirá al servidor para que el usuario se autentique, una vez autenticado se redirigirá a la aplicación de nuevo.
 
@@ -71,16 +74,19 @@ Con Apache Tapestry el filtro se registra en el módulo de la aplicación y con 
 
 Como la página de inicio no requiere autenticación es accesible por cualquier usuario. Al navegar a la página de usuario o administrador se iniciará el proceso de autenticación primeramente redirigiéndonos al servidor Keycloak para que introduzcamos las credenciales.
 
-{{< figureproc
-    image1="tapestry-index.png" thumb1="tapestry-index-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Index"
-    image2="tapestry-keycloak-login.png" thumb2="tapestry-keycloak-login-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Login" >}}
-{{< figureproc
-    image1="tapestry-user.png" thumb1="tapestry-user-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="User" >}}
+{{< image
+    gallery="true"
+    image1="tapestry-index.png" optionsthumb1="300x200" title1="Index"
+    image2="tapestry-keycloak-login.png" optionsthumb2="300x200" title2="Login" >}}
+{{< image
+    gallery="true"
+    image1="tapestry-user.png" optionsthumb1="300x200" title1="User" >}}
 
 Si intentamos acceder a la página de usuario o administrador sin estar autenticados se nos mostrará la página de error 403 y al acceder a la página de administración con un usuario sin rol _admin_ se nos mostrará la página de error 401.
 
-{{< figureproc
-    image1="tapestry-error403.png" thumb1="tapestry-error403-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Error 403" >}}
+{{< image
+    gallery="true"
+    image1="tapestry-error403.png" optionsthumb1="300x200" title1="Error 403" >}}
 
 Un buen libro sobre OAuth que he leído es [Mastering OAuth 2.0](https://amzn.to/2cUkF9d) que explica detalladamente el protocolo OAuth junto con el resto de formas de obtener un _token_ además del mostrado en este artículo usando las credenciales del cliente.
 

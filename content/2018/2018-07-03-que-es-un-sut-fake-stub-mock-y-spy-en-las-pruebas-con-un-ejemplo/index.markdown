@@ -28,8 +28,9 @@ Los colaboradores permiten hacer los casos de prueba deterministas haciendo que 
 
 En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres mediciones consecutivas que la temperatura está por encima de cierto valor suene una alarma. Los elementos de este sistema serán una clase _Monitor_ que obtiene las temperaturas de un sensor y si detecta la condición de una temperatura elevada hace sonar una alarma. El monitor será el sujeto bajo prueba y el sensor y la alarma los colaboradores. El sensor será un _fake_ de tipo _Stub_ ya que solo se necesita preprogramar sus valores de retorno de temperaturas y la alarma un _fake_ de tipo _Mock_ ya que se debe comprobar que el monitor ha llamado una vez al método que haría sonar la alarma, esto es se necesitan verificar las interacciones.
 
-{{< figureproc
-    image1="monitor.png" options1="2560x1440" optionsthumb1="650x450" title1="Sistema simulado"
+{{< image
+    gallery="true"
+    image1="monitor.png" optionsthumb1="650x450" title1="Sistema simulado"
     caption="Sistema de control de temperatura simulado" >}}
 
 {{< code file="Sensor.java" language="java" options="" >}}

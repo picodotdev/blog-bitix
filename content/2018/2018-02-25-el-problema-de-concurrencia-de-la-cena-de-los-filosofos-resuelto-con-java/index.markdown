@@ -19,8 +19,9 @@ En un [artículo de introducción sobre la programación concurrente en Java][bl
 
 Dado que dos filósofos no puede utilizar el mismo tenedor a la vez hay que implementar sincronización a la hora de utilizarlos. En la realidad un filósofo representa a un proceso y un tenedor representa a un recurso compartido de uso exclusivo.
 
-{{< figureproc
-    image1="dining-philosophers.png" options1="2560x1440" optionsthumb1="300x200" title1="La cena de los filósofos"
+{{< image
+    gallery="true"
+    image1="dining-philosophers.png" optionsthumb1="300x200" title1="La cena de los filósofos"
     caption="La cena de los filósofos" >}}
 
 La solución del ejemplo que ponía en el artículo anterior no era completamente correcto ya que un filósofo si tiene mala suerte podría quedarse sin  comer o sin comer durante mucho tiempo, debido a que en esa implementación el filósofo intentaba coger los tenedores y si no podía desistía si alguno de sus compañeros los estuviese utilizando. Las reglas que ha de cumplir una solución a un problema de concurrencia para considerarse válida son:

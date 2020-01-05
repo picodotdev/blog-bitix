@@ -17,9 +17,10 @@ summary: "Cambié una caldera por un termo eléctrico. Haciendo unas estimacione
 
 Hace unos meses [sustituí la caldera de gas por un termo eléctrico][blogbitix-251] dado que me tocaba hacer la versión de la instalación del gas y de la caldera, dos revisiones independientes que tiene un coste de unos 60€ y 90€ respectivamente que hay que realizar obligatoriamente por normativa cada 5 y 2 años y en las que hay que estar presente para permitir el acceso a la vivienda al técnico para que pueda hacer la inspección. Dado que en invierno no usaba la calefacción, me basta con ponerme más ropa o usar alguna manta, al hacer la sustitución no me importaba perder esa característica. Por otro lado si me tocase sustituir la caldera por otra la salida de humos debería ir a la calle en vez de la chimenea del edificio con lo que habría que picar la fechada para hacer el agujero del tubo para la salida de humos. Además, las calderas de gas son mucho más caras, sobre unos 900€ una de gama baja, mucho más caras que los termos más caros, un termo de gama alta de lo más caro está sobre unos 300€ de 50 litros, casi tres veces menos que una caldera.
 
-{{< figureproc
-    image1="caldera.jpg" thumb1="caldera-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Caldera de gas"
-    image2="termo.jpg" thumb2="termo-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Termo eléctrico"
+{{< image
+    gallery="true"
+    image1="caldera.jpg" optionsthumb1="300x200" title1="Caldera de gas"
+    image2="termo.jpg" optionsthumb2="300x200" title2="Termo eléctrico"
     caption="Caldera de gas y termo eléctrico" >}}
 
 He estado esperando a la factura en la que venga un periodo completo con el termo para comparar con un periodo con caldera estando en la misma compañía. Lógicamente el termo al ser eléctrico me subirá el consumo de luz pero a cambio no tendré que pagar el coste fijo de la disponibilidad del gas y su alquiler del contador. En estos periodos de tiempo hay que tener en cuenta que no he usado la caldera ni para la ducha ni para la calefacción y con el termo si lo he usado para el agua caliente de la ducha, también es que en la factura con el termo el precio del kWh es un poco más caro por lo que la diferencia de ahorro serían aún mayor en igualdad de condiciones.
@@ -28,9 +29,10 @@ En las factura con la caldera de gas en un periodo de tiempo de 63 días para el
 
 El gas es más eficiente y más barato que usar electricidad para transformar energía en calor para el agua caliente de agua sanitaria o calefacción pero los costes del servicio hace que si no consumes una cantidad suficiente no sea más barato que un termo eléctrico como es mi caso.
 
-{{< figureproc
-    image1="factura-caldera.png" thumb1="factura-caldera-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Factura con caldera de gas"
-    image2="factura-termo.png" thumb2="factura-termo-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="factura con termo eléctrico"
+{{< image
+    gallery="true"
+    image1="factura-caldera.png" optionsthumb1="300x200" title1="Factura con caldera de gas"
+    image2="factura-termo.png" optionsthumb2="300x200" title2="factura con termo eléctrico"
     caption="Factura con caldera de gas y termo eléctrico" >}}
 
 Aproximadamente una diferencia de 4€ cada dos meses o de 2€ cada mes y teniendo en cuenta el coste mensual de las revisiones de la instalación y de la caldera (aunque se pague integro en el momento de hacer la revisión) una diferencia de 6,75€ al mes (revisión caldera: 90/24 meses = 3,75€/mes y revisión instalación gas: 60/60 = 1€/mes, total revisiones: 4,75€/mes). Con esa diferencia de costes en unos 3-4 años ya me habrá salido rentable haber hecho la sustitución de la caldera de gas por el termo eléctrico que me costó 315€ sin ser el sitio donde lo compré el más barato. Es un termo de gama alta de los más caros que había en el mercado, pero los hay mucho más baratos, por 90€ ya se encuentran algunos de 30 y 50 litros aunque posiblemente no tan eficientes energéticamente.

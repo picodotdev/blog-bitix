@@ -30,8 +30,9 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
 
 {{< code file="build.gradle" language="groovy" options="" >}}}
 
-{{< figureproc
-    image1="javadoc-taglet.png" thumb1="javadoc-taglet-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Contenido del taglet todo en el javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc-taglet.png" optionsthumb1="300x200" title1="Contenido del taglet todo en el javadoc"
     caption="Contenido del taglet todo en el javadoc" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}

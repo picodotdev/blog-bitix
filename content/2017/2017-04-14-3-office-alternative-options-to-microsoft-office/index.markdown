@@ -32,21 +32,25 @@ In this article I will focus on alternatives to Office that are also several. By
 
 Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/) has a cost of 8.80€ per user and according to the plan that includes more or fewer applications.
 
-{{< figureproc
-    image1="microsoftoffice-word.png" thumb1="microsoftoffice-word-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Microsoft Office Word"
-    image2="microsoftoffice-excel.png" thumb2="microsoftoffice-excel-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Microsoft Office Excel" >}}
-{{< figureproc
-    image1="microsoftoffice-powerpoint.png" thumb1="microsoftoffice-powerpoint-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Microsoft Office Powerpoint" >}}
+{{< image
+    gallery="true"
+    image1="microsoftoffice-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
+    image2="microsoftoffice-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
+{{< image
+    gallery="true"
+    image1="microsoftoffice-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
 
 ### LibreOffice
 
 The free and libre alternative of Office is [LibreOffice](https://es.libreoffice.org/). It includes a text editor with Writing, spreadsheets with Calc, presentations with Impress, Drawing to create graphs and Base for simple databases. However, the interface is similar to the Office in the previous editions incorporated with an aesthetic and without the feeling of being taken care of. The menus are long and find a choice among the many is not easy, opening a menu option can be feel intimidated by the length of it and somewhat more difficult to quickly find the desired option among all shown. There will be users who prefer the menu interface and toolbars, I am the ones who like ribbon. It is available for Windows, Linux and Mac.
 
-{{< figureproc
-    image1="libreoffice-writer.png" thumb1="libreoffice-writer-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="LibreOffice Writer"
-    image2="libreoffice-calc.png" thumb2="libreoffice-calc-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="LibreOffice Calc" >}}
-{{< figureproc
-    image1="libreoffice-impress.png" thumb1="libreoffice-impress-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="LibreOffice Impress" >}}
+{{< image
+    gallery="true"
+    image1="libreoffice-writer.png" optionsthumb1="300x200" title1="LibreOffice Writer"
+    image2="libreoffice-calc.png" optionsthumb2="300x200" title2="LibreOffice Calc" >}}
+{{< image
+    gallery="true"
+    image1="libreoffice-impress.png" optionsthumb1="300x200" title1="LibreOffice Impress" >}}
 
 ### WPS Office
 
@@ -56,11 +60,13 @@ For the business environments with all its options its license has a much more r
 
 It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Microsoft Office does not already offer support, Linux, Android and iOS. Its installer occupies only 80 MB against more than 3 gigas of Office.
 
-{{< figureproc
-    image1="wpsoffice-writer.png" thumb1="wpsoffice-writer-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="WPS Writer"
-    image2="wpsoffice-spreadsheets.png" thumb2="wpsoffice-spreadsheets-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="WPS Spreadsheets" >}}
-{{< figureproc
-    image1="wpsoffice-presentation.png" thumb1="wpsoffice-presentation-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="WPS Office Presentation" >}}
+{{< image
+    gallery="true"
+    image1="wpsoffice-writer.png" optionsthumb1="300x200" title1="WPS Writer"
+    image2="wpsoffice-spreadsheets.png" optionsthumb2="300x200" title2="WPS Spreadsheets" >}}
+{{< image
+    gallery="true"
+    image1="wpsoffice-presentation.png" optionsthumb1="300x200" title1="WPS Office Presentation" >}}
 
 ### Google Docs
 
@@ -68,11 +74,13 @@ Another alternative to Office is [Google Docs](https://www.google.es/intl/es/doc
 
 For companies it is offered at the price of 4€ per user per month which includes the Gmail email client, calendars, video calls and 30GB of storage. There will be 8€ with more storage options and message retention.
 
-{{< figureproc
-    image1="googledocs-documento.png" thumb1="googledocs-documento-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Documento Google Docs"
-    image2="googledocs-hoja-de-calculo.png" thumb2="googledocs-hoja-de-calculo-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Hoja de cálculo Google Docs" >}}
-{{< figureproc
-    image1="googledocs-presentacion.png" thumb1="googledocs-presentacion-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Presentación Google Docs" >}}
+{{< image
+    gallery="true"
+    image1="googledocs-documento.png" optionsthumb1="300x200" title1="Documento Google Docs"
+    image2="googledocs-hoja-de-calculo.png" optionsthumb2="300x200" title2="Hoja de cálculo Google Docs" >}}
+{{< image
+    gallery="true"
+    image1="googledocs-presentacion.png" optionsthumb1="300x200" title1="Presentación Google Docs" >}}
 
 Some other options that deserves to be commented is [Calligra][calligra] the [KDE desktop environment][kde] suite, [Abiword][abiword], [Lyx][lyx] or [Gnumeric][gnumeric].
 

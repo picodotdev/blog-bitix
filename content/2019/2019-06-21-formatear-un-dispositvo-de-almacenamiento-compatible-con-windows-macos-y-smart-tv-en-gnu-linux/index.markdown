@@ -30,16 +30,18 @@ Para formatear una unidad ya sea una memoria USB o disco duro externo con format
 
 En la parte izquierda se encuentra los dispositivos conectados y reconocidos por el sistema. En mi caso el disco del sistema, un Samsung 970 EVO de 500 GB, un disco duro externo USB de 500 GB y una memoria USB de 16 GB sin ningún formato.
 
-{{< figureproc
-    image1="gnome-disks-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Dispositivos de almacenamiento del sistema"
+{{< image
+    gallery="true"
+    image1="gnome-disks-1.png" optionsthumb1="300x200" title1="Dispositivos de almacenamiento del sistema"
     caption="Unidades del sistema" >}}
 
 Primero es importante identificar correctamente la unidad que se quiere formatear para no perder los datos al elegir por error otra. Se introduce el nombre del volumen que identifica al dispositivo y se elige el sistema de archivos, como opciones más comunes se ofrece ext4, NTFS y FAT pero pulsando en _Otro_ aparecen más, entre ellos exFAT. Pulsando el botón _Siguiente_ al cabo de unos segundos la partición queda formateada con exFAT y lista para usarse tanto en GNU/Linux como en Windows, macOS o un Smart TV.
 
-{{< figureproc
-    image1="gnome-disks-2.png" options1="2560x1440" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
-    image2="gnome-disks-3.png" options2="2560x1440" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
-    image3="gnome-disks-4.png" options3="2560x1440" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
+{{< image
+    gallery="true"
+    image1="gnome-disks-2.png" optionsthumb1="200x150" title1="Formatear dispositivo de almacenamiento"
+    image2="gnome-disks-3.png" optionsthumb2="200x150" title2="Formatear dispositivo de almacenamiento"
+    image3="gnome-disks-4.png" optionsthumb3="200x150" title3="Formatear dispositivo de almacenamiento"
     caption="Formatear dispositivo de almacenamiento" >}}
 
 No está de más recordar que en el caso de desechar un dispositivo de almacenamiento es recomendable hacerle un formateo completo para que los datos que contenga no sean accedidos por la persona a la que se le entregue el dispositivo ya que incluso se pueden [recuperar datos previamente eliminados incluso en una unidad corrupta][blogbitix-125]. Por otro lado en GNU/Linux si se desea mayor seguridad se puede cifrar la partición con la opción LUKS.

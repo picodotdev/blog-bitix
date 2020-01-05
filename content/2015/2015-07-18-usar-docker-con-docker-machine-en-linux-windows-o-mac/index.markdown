@@ -46,8 +46,9 @@ El directorio por defecto donde se guardarán los archivos de las máquinas virt
 
 En el administrador de VirtualBox veremos que se ha creado la máquina virtual _dev_ además de poder cambiar la configuración de memoria y otros parámetros de la máquina virtual.
 
-{{< figureproc
-    image1="virtualbox.png" thumb1="virtualbox-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Máquina de Docker Machine ne VirtualBox"
+{{< image
+    gallery="true"
+    image1="virtualbox.png" optionsthumb1="300x200" title1="Máquina de Docker Machine ne VirtualBox"
     caption="Máquina de Docker Machine en VirtualBox" >}}
 
 Dado que los contenedores se ejecutan en una máquina virtual de VirtualBox y VirtualBox está disponible en Windows y Mac OS además del binario de Docker Machine para estas plataformas podemos usar docker en cualquiera de estos. Aunque no sea de forma nativa como en Linux para un entorno de desarrollo donde las personas trabajan con cualquiera de estos sistemas operativos puede sernos de utilidad.

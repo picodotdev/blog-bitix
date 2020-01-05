@@ -29,8 +29,9 @@ Los componentes de React reemplazan a las vistas de Backbone y vistas, controlad
 
 El resultado es el siguiente:
 
-{{< figureproc
-    image1="backbone-react.png" thumb1="backbone-react-thumb.png" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="backbone-react.png" optionsthumb1="300x200" >}}
 
 Los elementos de las vistas se recomienda definirlas con los elementos que proporciona React con React.DOM, pueden definirse más al estilo de html con jsx pero esto hace que el javascript haya de compilarse para transformar ese jsx/html a los elementos React.DOM, el mayor problema es que esto es un proceso costoso lo que puede ralentizar la carga de una página y que el compilador tiene un tamaño considerable de unos 300 KiB. El JSX es más claro y parecido al resultado final que el código equivalente React.DOM pero aún así el código javascript es suficientemente claro. Si aún así quisiésemos usar JSX lo recomendable sería que los archivos con contenido jsx se precompilase en un momento anterior de enviarlo al cliente, posiblemente antes del despliegue de la aplicación en el servidor.
 

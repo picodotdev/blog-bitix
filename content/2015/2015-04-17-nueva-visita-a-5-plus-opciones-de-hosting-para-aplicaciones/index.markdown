@@ -17,15 +17,15 @@ Hace tres años escribí un artículo sobre [varias opciones de _hosting_][elblo
 
 ### Servidor propio
 
-Si queremos una opción para algo simple y para nosotros mismos podemos utilizar un servidor propio usando como _hardware_ por ejemplo una <a href="https://www.amazon.es/gp/product/B00T2U7R7I/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00T2U7R7I&linkCode=as2&tag=blobit-21">Raspberry Pi 2 Model B</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00T2U7R7I" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">, con la segunda versión de este miniordenador que ahora tiene 4 núcleos y 1 GiB de memoria puede servirnos para cantidad de cosas interesantes. Además de la Raspberry Pi 2 hay multitud de dispositivos similares, en la [página de Arch Linux ARM][archlinuxarm] podemos ver los modelos soportados en esta distribución. Otro modelo destacado es la [Cubox-i](http://www.solid-run.com/products/cubox-i-mini-computer/cubox-i-specifications/) también con 4 núcleos y en el modelo más potente con 2 GiB de memoria aunque bastante más caro que la Raspberry Pi.
+Si queremos una opción para algo simple y para nosotros mismos podemos utilizar un servidor propio usando como _hardware_ por ejemplo una [Raspberry Pi 4](https://amzn.to/2umoNav), con la segunda versión de este miniordenador que ahora tiene 4 núcleos y 1 GiB de memoria puede servirnos para cantidad de cosas interesantes. Además de la Raspberry Pi 2 hay multitud de dispositivos similares, en la [página de Arch Linux ARM][archlinuxarm] podemos ver los modelos soportados en esta distribución. Otro modelo destacado es la [Cubox-i](http://www.solid-run.com/products/cubox-i-mini-computer/cubox-i-specifications/) también con 4 núcleos y en el modelo más potente con 2 GiB de memoria aunque bastante más caro que la Raspberry Pi.
 
 Uno de los usos para los que nos puede servir es para albergar con [ownCluod][owncloud] tu información personal como archivos, fotos, calendarios, contactos pudiendo acceder desde cualquier dispositivo ya sea el ordenador personal, teléfono inteligente o dispositivo móvil. Su punto a favor es que tus datos están bajo tu control. Aunque esta opción es posible se puede optar por otras opciones que comento más adelante, uno de los motivos es que no es fiable el servicio que podemos ofrecer ya que depende la conexión a internet que podemos tener en nuestra casa y por los cortes de corriente que se pueden producir o los fallos en el _hardware_ que puede provocar que perdamos los datos si no tenemos copias de seguridad.
 
 Con esta opción tendremos un control total del _software_ instalado sin ninguna limitación, sin embargo, si necesitamos escalar la aplicación tendremos más dificultades si necesitamos comprar _hardware_ nuevo.
 
-<div class="media">
-	<img src="assets/images/logotypes/raspberrypi.jpg" alt="Raspberry Pi" title="Raspberry Pi">
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/raspberrypi.svg" optionsthumb1="137x168" title1="Raspberry Pi" >}}
 
 ### Proveedor de _hosting_
 
@@ -45,11 +45,11 @@ En estas opciones IaaS tenemos libertad de elegir el lenguaje de programación q
 
 En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia _t1.small_ con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00€ por reservar la instancia durante ese periodo y unos 2€ adicionales al mes, a esto deberemos sumar el coste del dominio. En la [calculadora de Amazon EC2](http://calculator.s3.amazonaws.com/index.html) podemos estimar el coste según los recursos que necesitemos.
 
-<div class="media">
-	<img src="assets/images/logotypes/amazon-web-services.png" alt="Amazon Web Services" title="Amazon Web Services">
-	<img src="assets/images/logotypes/microsoft-azure.png" alt="Microsoft Azure" title="Microsoft Azure">
-	<img src="assets/images/logotypes/google-cloud.png" alt="Google Cloud" title="Google Cloud">
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/amazon-web-services.png" optionsthumb1="268x118" title1="Amazon Web Services"
+    image2="assets/images/logotypes/microsoft-azure.png" optionsthumb2="218x118" title2="Microsoft Azure"
+    image3="assets/images/logotypes/google-cloud.png" optionsthumb3="401x66" title3="Google Cloud" >}}
 
 ### Linode, Digital Ocean
 
@@ -57,10 +57,10 @@ Algunas opciones totalmente válidas para muchos casos que también nos proporci
 
 Estas opciones son totalmente válidas tanto para proyectos personales como un blog con WordPress como para proyectos profesionales. La nube de Amazon ofrece multitud de servicios que en algunos casos son útiles pero si no nos son necesarios las opciones comentadas en este apartado serán suficientes y algo más baratas.
 
-<div class="media">
-	<img src="assets/images/logotypes/linode.png" alt="Linode" title="Linode">
-	<img src="assets/images/logotypes/digital-ocean.png" alt="Digital Ocean" title="Digital Ocean">
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/linode.png" optionsthumb1="268x117" title1="Linode"
+    image2="assets/images/logotypes/digital-ocean.png" optionsthumb2="218x144" title2="Digital Ocean" >}}
 
 ### Otras
 

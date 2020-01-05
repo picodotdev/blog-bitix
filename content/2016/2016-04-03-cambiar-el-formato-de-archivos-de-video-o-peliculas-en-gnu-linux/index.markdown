@@ -35,8 +35,9 @@ Partiendo de un vídeo en un contenedor MKV, vídeo codificado con H.264 y audio
 
 {{< code file="ffmpeg-convert.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="ffmpeg-output.png" thumb1="ffmpeg-output-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Salida conversión de MKV a MPG" >}}
+{{< image
+    gallery="true"
+    image1="ffmpeg-output.png" optionsthumb1="300x250" title1="Salida conversión de MKV a MPG" >}}
 
 Si no se indica la tasa de bits como indican en la [documentación de FFmpeg](https://ffmpeg.org/ffmpeg.html) el codificador seleccionará por defecto una tasa de bits muy baja resultando en una calidad muy pobre por lo que deberemos indicar una similar a la original. Para ver ver la calidad de un vídeo y del audio usamos el parámetro _-i_:
 
@@ -54,8 +55,9 @@ Los vídeos pueden tener múltiples pistas de audio y subtítulos en varios idio
 
 {{< code file="ffmpeg-i.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="ffmpeg-i.png" thumb1="ffmpeg-i-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Información de un vídeo" >}}
+{{< image
+    gallery="true"
+    image1="ffmpeg-i.png" optionsthumb1="300x250" title1="Información de un vídeo" >}}
 
 Para hacer la eliminación de las pistas usamos el siguiente comando donde los parámetros _-map_ son las pistas o _streams_ que queremos copiar y conservar del original en el nuevo archivo, en este caso solo la pista del vídeo y la pista de audio en español. Dependiendo del número de pistas para otros idiomas que tenga el archivo y de la duración del vídeo el ahorro de espacio que conseguiremos será más o menos notable. Haciendo un cálculo suponiendo algunas cifras habituales un audio a 320kb/s para una película de 120 minutos el audio ocupa alrededor de 281 MiB que ya es una cifra notable ((320 kilobits/segundo / 8 bits/byte) * 60 segundos/minuto * 120 minutos / 1024 kilobytes/megabyte = 281,25 megabytes) y a lo que hay que multiplicar cada pista de audio que eliminemos del original.
 
@@ -65,8 +67,9 @@ Si no tenemos instalado un reproductor de vídeo con el comando <code>ffplay</co
 
 {{< code file="ffplay.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="ffplay.jpg" thumb1="ffplay-thumb.jpg" options1="2560x1440" optionsthumb1="300x250" title1="FFplay" >}}
+{{< image
+    gallery="true"
+    image1="ffplay.jpg" optionsthumb1="300x250" title1="FFplay" >}}
 
 Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.
 
@@ -80,17 +83,21 @@ Otras opciones útiles disponibles en los comandos de FFmpeg son:
 
 Si preferimos realizar la conversión mediante una interfaz gráfica podemos usar VLC que también nos servirá para hacer la conversión tanto en Windows como en Mac OS además de GNU/Linux. Primeramente en el menu _Archivo_ _>_ _Convertir_ añadimos el archivo a convertir a la lista y pulsamos botón _Convertir_. En el siguiente diálogo seleccionaremos el perfil de salida y el nombre del archivo de salida, editando el perfil tendremos opción de modificar la tasa de bits del vídeo y audio, además de la resolución y la posibilidad de aplicar algunos filtros.
 
-{{< figureproc
-    image1="vlc-input.png" thumb1="vlc-input-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Selección de archivo"
-    image2="vlc-convert-codecs.png" thumb2="vlc-convert-codecs-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Selección de códec" >}}
-{{< figureproc
-    image1="vlc-input.png" thumb1="vlc-input-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Selección de archivo"
-    image2="vlc-convert-container.png" thumb2="vlc-convert-container-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Información de contenedor" >}}
-{{< figureproc
-    image1="vlc-convert-resolution.png" thumb1="vlc-convert-resolution-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Resolución del vídeo" >}}
-{{< figureproc
-    image1="vlc-convert-video-codec.png" thumb1="vlc-convert-video-codec-thumb.png" options1="2560x1440" optionsthumb1="300x250" title1="Parámetros del códec de vídeo"
-    image2="vlc-convert-audio-codec.png" thumb2="vlc-convert-audio-codec-thumb.png" options2="2560x1440" optionsthumb2="300x250" title2="Parámetros del códec de audio" >}}
+{{< image
+    gallery="true"
+    image1="vlc-input.png" optionsthumb1="300x250" title1="Selección de archivo"
+    image2="vlc-convert-codecs.png" optionsthumb2="300x250" title2="Selección de códec" >}}
+{{< image
+    gallery="true"
+    image1="vlc-input.png" optionsthumb1="300x250" title1="Selección de archivo"
+    image2="vlc-convert-container.png" optionsthumb2="300x250" title2="Información de contenedor" >}}
+{{< image
+    gallery="true"
+    image1="vlc-convert-resolution.png" optionsthumb1="300x250" title1="Resolución del vídeo" >}}
+{{< image
+    gallery="true"
+    image1="vlc-convert-video-codec.png" optionsthumb1="300x250" title1="Parámetros del códec de vídeo"
+    image2="vlc-convert-audio-codec.png" optionsthumb2="300x250" title2="Parámetros del códec de audio" >}}
 
 {{< reference >}}
 * [Documentación de FFmpeg](https://trac.ffmpeg.org/wiki)

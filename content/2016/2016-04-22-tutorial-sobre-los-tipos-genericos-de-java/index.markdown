@@ -73,18 +73,21 @@ En Java un tipo puede ser asignado a otro mientras el primero sea compatible con
 
 Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ puede aceptar una instancia _Box\<Integer\>_ or _Box\<Double\>_ aun siendo _Integer_ y _Double_ subtipos de _Number_?. La respuesta es no, ya que _Box\<Integer\>_ y _Box\<Double\>_ en Java no son subtipos de _Box\<Number\>_. La jerarquía de tipos es la siguiente:
 
-{{< figureproc
-    image1="generics-subtypeRelationship.gif" thumb1="generics-subtypeRelationship.gif" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="generics-subtypeRelationship.gif" optionsthumb1="300x200" >}}
 
 Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que _ArrayList\<String\>_ es un subtipo de _List\<String\>_ que a su vez es un subtipo de _Collection\<String\>_.
 
-{{< figureproc
-    image1="generics-sampleHierarchy.gif" thumb1="generics-sampleHierarchy.gif" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="generics-sampleHierarchy.gif" optionsthumb1="300x200" >}}
 
 {{< code file="PayloadList.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="generics-payloadListHierarchy.gif" thumb1="generics-payloadListHierarchy.gif" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="generics-payloadListHierarchy.gif" optionsthumb1="300x200" >}}
 
 En los _generics_ un parámetro para un tipo _?_ se denomina _wildcard_ siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de _List\<Integer\>_, _List\<Double\>_ y _List\<Number\>_. El término _List\<Number\>_ es más restrictivo que _List\<? extends Number\>_ porque el primero solo acepta una lista de _Number_ y el segundo una lista de _Number_ o de sus subtipos. _List\<? extends Number\>_ es un _upper bounded wildcard_.
 
@@ -101,9 +104,10 @@ Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pe
 
 {{< code file="WildcardList.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="generics-listParent.gif" thumb1="generics-listParent.gif" options1="2560x1440" optionsthumb1="450x400"
-    image2="generics-wildcardSubtyping.gif" thumb2="generics-wildcardSubtyping.gif" options2="2560x1440" optionsthumb2="450x400" >}}
+{{< image
+    gallery="true"
+    image1="generics-listParent.gif" optionsthumb1="300x200"
+    image2="generics-wildcardSubtyping.gif" optionsthumb2="300x200" >}}
 
 Uno de las mayores confusiones al usar generics es cuando usar _upper bounded wildcards_ o cuando usar _lower bounded wildcards_. Podemos usar las siguientes reglas:
 
@@ -134,10 +138,10 @@ Los _generics_ tiene algunas restricciones:
 
 Este artículo es gran medida una traducción del [tutorial de Java sobre Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html), que también es recomendable echarle un vistazo incluso leerlo varias veces por la cantidad de información que contiene, en algunos puntos todo lo comentado en este artículo está explicado de forma más extensa.
 
-Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  <a rel="nofollow" href="https://www.amazon.es/gp/product/0596527756/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0596527756&linkCode=as2&tag=blobit-21">Java Generics and Collections</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596527756" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los _generics_ de Java no son perfectos, por el _type erasure_ y ser _non reifiables_, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.
+Para profundizar más en este importante tema de genéricos de Java tenemos a nuestra disposición varios libros, alguno como  [Java Generics and Collections](https://amzn.to/2SXyqXh) dedicado en gran parte a él, no importa que se un libro del 2006 ya que desde entonces los genéricos no han tenido grandes cambios y su contenido sigue siendo válido. Los _generics_ de Java no son perfectos, por el _type erasure_ y ser _non reifiables_, pero tampoco débiles y hay buenos motivos para que sean así como se dice en el libro.
 
-* <a rel="nofollow" href="https://www.amazon.es/gp/product/0596527756/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0596527756&linkCode=as2&tag=blobit-21">Java Generics and Collections</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596527756" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-* <a rel="nofollow" href="https://www.amazon.es/gp/product/0321356683/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=0321356683&linkCode=as2&tag=blobit-21">Effective Java (2nd Edition): A Programming Language Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0321356683" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+* [Java Generics and Collections](https://amzn.to/2MXNErp)
+* [Effective Java (2nd Edition): A Programming Language Guide](https://amzn.to/39HVI9u)
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596527756&internal=1" >}}

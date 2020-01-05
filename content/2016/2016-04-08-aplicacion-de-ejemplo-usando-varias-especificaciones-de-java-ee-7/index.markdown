@@ -25,8 +25,9 @@ Este ejemplo está relacionado con otros artículos que he escrito como [Ejemplo
 
 Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas librerías JavaScript de forma similar al ejemplo de la [lista de tareas con Backbone y React junto con RequireJS][blogbitix-20]. Seleccionados los productos, la compra se realizará usando una API REST intercambiando los datos con formato JSON, se persistirá en la base de datos con JPA actualizándose en ese momento el _stock_ de los productos de lo que se encargará un EJB para controlar esta pequeña lógica de negocio, si no hay _stock_ suficiente de un producto se producirá una excepción y devolverá un código de estado adecuado en la petición HTTP, al realizar la compra se generará un mensaje evento CDI que desencadenará la actualización del _stock_ de los usuarios conectados usando WebSockets. La página del listado de productos y el formulario de autenticación se generará usando la tecnología de presentación JSF.
 
-{{< figureproc
-    image1="supermarket-java-ee-7.png" thumb1="supermarket-java-ee-7-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Supermarket con Java EE 7"
+{{< image
+    gallery="true"
+    image1="supermarket-java-ee-7.png" optionsthumb1="300x200" title1="Supermarket con Java EE 7"
     caption="Supermarket con Java EE 7" >}}
 
 Veamos primero la página inicial índice con el listado de productos generada con JSF. Obtiene el listado de productos y genera el HTML del mismo, además carga los JavaScripts necesarios para que la aplicación funcione en el navegador del cliente.
@@ -59,13 +60,14 @@ La aplicación está dividida en varios módulos construidos con la [herramienta
 
 {{< code file="SupermarketClient.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="aplicacion-cliente.png" thumb1="aplicacion-cliente-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Aplicación cliente Supermarket"
+{{< image
+    gallery="true"
+    image1="aplicacion-cliente.png" optionsthumb1="300x200" title1="Aplicación cliente Supermarket"
     caption="Aplicación cliente Supermarket" >}}
 
 El conjunto de especificaciones de Java EE proporciona una solución para la mayoría de funcionalidades que necesita una aplicación pero también podemos sustituir alguna y combinarlas con otras de las muchas librerías o _frameworks_ disponibles en la plataforma Java. Por ejemplo, como _framework_ en vez de usar Servlet y JSP o JSF podemos usar [Apache Tapestry][blogbitix-12], [Vert.x][blogbitix-120], [Spark][blogbitix-121], [Struts][struts], [Grails][grails], ... dependiendo de las necesidades de la aplicación, su complejidad y nuestras preferencias. Como [alternativa al ORM de JPA o JDBC se puede usar jOOQ][blogbitix-82]. [RabbitMQ][rabbitmq] en vez de JMS o [Spring][spring] en vez de CDI, EJB y JTA.
 
-Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, <a rel="nofollow" href="https://www.amazon.es/gp/product/1449370179/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1449370179&linkCode=as2&tag=blobit-21">Java EE 7 Essentials</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1449370179" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es <a rel="nofollow" href="https://www.amazon.es/gp/product/1782171983/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1782171983&linkCode=as2&tag=blobit-21">Java EE 7 Development with WildFly</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1782171983" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://www.amazon.es/s/ref=as_li_ss_tl?_encoding=UTF8&camp=3626&creative=24822&field-keywords=libros%20java%20ee%207&linkCode=ur2&tag=blobit-21&url=search-alias%3Daps">Libros sobre Java EE 7</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=ur2&o=30" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
+Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, [Java EE 7 Essentials](https://amzn.to/2SW6cw2) hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es [Java EE 7 Development with WildFly](https://amzn.to/2T0MlvA) que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1449370179&internal=1" >}}

@@ -39,15 +39,17 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 
 {{< code file="Topic.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="topic.png" thumb1="topic-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Resultado de Topic.java" >}}
+{{< image
+    gallery="true"
+    image1="topic.png" optionsthumb1="300x200" title1="Resultado de Topic.java" >}}
 
 A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:
 
 {{< code file="Queue.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="queue.png" thumb1="queue-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Resultado de Queue.java" >}}
+{{< image
+    gallery="true"
+    image1="queue.png" optionsthumb1="300x200" title1="Resultado de Queue.java" >}}
 
 Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.
 
@@ -56,8 +58,7 @@ Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones 
 {{< code file="standalone.sh" language="bash" options="" >}}
 {{< code file="standalone-full.xml" language="XML" options="" >}}
 
-Para terminar y conocer más sobre JMS un buen libro es <a href="https://www.amazon.es/gp/product/0596522045/ref=as_li_tf_tl?ie=UTF8&camp=3626&creative=24790&creativeASIN=0596522045&linkCode=as2&tag=blobit-21">Java Message Service</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=0596522045" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
- de O'Reilly, que explica de forma mucho más extensa y completa este tema.
+Para terminar y conocer más sobre JMS un buen libro es [Java Message Service](https://amzn.to/37y9WYA) de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" >}}

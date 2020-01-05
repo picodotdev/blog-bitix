@@ -43,15 +43,17 @@ Iniciando la aplicación que registra un _MBean_ en el servidor de _MBean_ la pl
 
 {{< code file="jconsole-visualvm.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="jconsole.png" options1="2560x1440" optionsthumb1="650x450" title1="Herramienta de monitorización e instrumentalización JConsole"
+{{< image
+    gallery="true"
+    image1="jconsole.png" optionsthumb1="650x450" title1="Herramienta de monitorización e instrumentalización JConsole"
     caption="Herramienta de monitorización e instrumentalización JConsole" >}}
 
 Realizada la conexión al agente se muestran las propiedades y operaciones de los MBean registrados con la posibilidad de cambiar sus valores, invocar las operaciones y obtener sus resultados. La propia plataforma Java proporciona numerosos _MBean_ como se muestra en el árbol lateral de la imagen.
 
-{{< figureproc
-    image1="jconsole-mbean.png" options1="2560x1440" optionsthumb1="300x250" title1="Instrumentalización de un MBean en JConsole"
-    image2="visualvm-mbean.png" options2="2560x1440" optionsthumb2="300x250" title2="Instrumentalización de un MBean en VisualVM"
+{{< image
+    gallery="true"
+    image1="jconsole-mbean.png" optionsthumb1="300x250" title1="Instrumentalización de un MBean en JConsole"
+    image2="visualvm-mbean.png" optionsthumb2="300x250" title2="Instrumentalización de un MBean en VisualVM"
     caption="Instrumentalización de un MBean en JConsole y VisualVM" >}}
 
 En el caso de que la aplicación esté contenida dentro de una aplicación web y desplegada en un servidor de aplicaciones como [Tomcat][tomcat] o [WildFly][wildfly] registrar un _MBean_ es similar al caso del ejemplo de la aplicación Java y posteriormente administrados con la herramienta JConsole.
@@ -90,8 +92,9 @@ Los archivos _jmxremote.password_ y _jmxremote.access_ configuran la autenticaci
 
 {{< code file="jconsole.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="jconsole-remote.png" options1="2560x1440" optionsthumb1="650x450" title1="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"
+{{< image
+    gallery="true"
+    image1="jconsole-remote.png" optionsthumb1="650x450" title1="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole"
     caption="Acceso remoto a la herramienta de monitorización e instrumentalización JConsole" >}}
 
 El acceso remoto también es posible mediante una [aplicación Java que actúe como cliente del servidor _MBean_](https://docs.oracle.com/javase/tutorial/jmx/remote/custom.html).

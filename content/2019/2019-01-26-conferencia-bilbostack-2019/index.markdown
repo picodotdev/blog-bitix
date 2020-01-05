@@ -20,21 +20,24 @@ La octava edición de la [BilboStack][bilbostack] sigue fiel a su cita en el cal
 
 La novedad más relevante de este año es que por primera vez las entradas han tenido un precio muy módico que no llega a los 15€ por asistente que junto a los patrocinadores permitirá a la organización cubrir en parte algunos costes como viajes de los ponentes, alojamiento, comida, recinto, etc. Otra novedad es que en el descanso después de las dos primeras presentaciones ha habido café y de comer para acompañarlo junto a los _stands_ de varios de los patrocinadores para hacer contactos en el _networking_.
 
-{{< figureproc
-    image1="euskalduna-1.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Palacio Euskalduna"
-    image2="euskalduna-2.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Palacio Euskalduna"
-    image3="bilbostack-logo-2.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Palacio Euskalduna"
+{{< image
+    gallery="true"
+    image1="euskalduna-1.jpg" optionsthumb1="200x150" title1="Palacio Euskalduna"
+    image2="euskalduna-2.jpg" optionsthumb2="200x150" title2="Palacio Euskalduna"
+    image3="bilbostack-logo-2.jpg" optionsthumb3="300x200" title3="Palacio Euskalduna"
     caption="Palacio Euskalduna" source="@BilboStack">}}
-{{< figureproc
-    image1="patrocinadores.png" options1="2560x1440" optionsthumb1="200x150" title1="Patrocinadores"
-    image2="localizacion.png" options2="2560x1440" optionsthumb2="200x150" title2="Ubicación"
-    image3="paquete-bienvenida.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Paquete de bienvenida"
+{{< image
+    gallery="true"
+    image1="patrocinadores.png" optionsthumb1="200x150" title1="Patrocinadores"
+    image2="localizacion.png" optionsthumb2="200x150" title2="Ubicación"
+    image3="paquete-bienvenida.jpg" optionsthumb3="200x150" title3="Paquete de bienvenida"
     caption="Patrocinadores, ubicación y paquete de bienvenida" >}}
 
 La conferencia comienza con la presentación y la bienvenida de los organizadores junto con unas palabras de Xabier Otxandiano concejal de desarrollo económico del ayuntamiento de Bilbao comentando la transformación que ha realizado la ciudad en las últimas décadas, urbanística siendo representante el propio palacio Euskalduna de un entorno más industrial a otro más de servicios y la importancia de la tecnología con el potencial para convertirse en la nueva industria de la ciudad. Por este motivo la conferencia BilboStack es importante y lo apoyan de forma institucional haciendo hincapié que no es fácil organizar una conferencia con el poder de convocatoria de casi 700 personas un sábado a la mañana y a la que muchos acuden haciendo muchos kilómetros de viaje.
 
-{{< figureproc
-    image1="presentacion.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Presentación"
+{{< image
+    gallery="true"
+    image1="presentacion.jpg" optionsthumb1="200x150" title1="Presentación"
     caption="Presentación">}}
 
 La agenda comienza a las 9:00 de la mañana del sábado con una presentación y terminaba a las 14:00 aunque por el control de acceso de este año ha sido recomendable llegar un poco antes para evitar alguna pequeña aglomeración en los últimos minutos y encontrar y entrar en las salas con suficiente antelación. Llega el momento de decidir a qué presentación de los dos _tracks_ asistir, dependiendo de los intereses de cada uno a veces no es fácil y uno quisiera haber asistido a las dos.
@@ -131,9 +134,10 @@ En las _DevTools_ de [Firefox][firefox] se puede inspeccionar el _shadow_ DOM de
 
 Tenía claro que quería acudir a esta presentación, era una en la que no tenía muchas dudas al elegir por quien la daba [@ladybenko](https://twitter.com/ladybenko) de la que sigo Twitter sus interesantes comentarios que hace, desarrolladora de Firefox, es el nivel que hay en los ponentes de la BilboStack. Comenzaba la mañana posponiendo la alarma del despertador varias veces pero solo por esta presentación ya ha merecido el levantarme para acudir a la BilboStack.
 
-{{< figureproc
-    image1="webcomponents-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Web Components API"
-    image2="webcomponents-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Web Components API"
+{{< image
+    gallery="true"
+    image1="webcomponents-1.jpg" optionsthumb1="300x200" title1="Web Components API"
+    image2="webcomponents-2.jpg" optionsthumb2="300x200" title2="Web Components API"
     caption="Web Components API" >}}
 
 ### Agile JavaScript por _Ricardo Borillo_
@@ -144,19 +148,21 @@ Entre las que se mencionan, no son pocas, están [npm][npm], [nvm][nvm], [Node.j
 
 Esta presentación junto con la anterior forman la representación de JavaScript que siempre tiene la BilboStack y es que muchos lo utilizamos en mayor o menor medida.
 
-{{< figureproc
-    image1="agilejavascript-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Agile JavaScript"
-    image2="agilejavascript-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Agile JavaScript"
+{{< image
+    gallery="true"
+    image1="agilejavascript-1.jpg" optionsthumb1="300x200" title1="Agile JavaScript"
+    image2="agilejavascript-2.jpg" optionsthumb2="300x200" title2="Agile JavaScript"
     caption="Agile JavaScript" >}}
 
 ### Descanso
 
 No saque fotos pero algunos patrocinadores dispusieron _stands_ en los que hacerse con algunas pegatinas y bagatelas, de las empresas una oportunidad de conocerlas e iniciar algún contacto.
 
-{{< figureproc
-    image1="bilbostack-networking.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Networking + Café"
-    image2="bilbostack-photocall.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Photocall"
-    image3="bilbostack-hashtag.jpg" options3="2560x1440" optionsthumb3="300x200" title3="Hashtag"
+{{< image
+    gallery="true"
+    image1="bilbostack-networking.jpg" optionsthumb1="300x200" title1="Networking + Café"
+    image2="bilbostack-photocall.jpg" optionsthumb2="300x200" title2="Photocall"
+    image3="bilbostack-hashtag.jpg" optionsthumb3="300x200" title3="Hashtag"
     caption="Networking + Café, photocall y hashtag" >}}
 
 ### UX para desarrolladores front y back por _Virginia Aguirre_
@@ -169,8 +175,9 @@ En UX hay múltiples factores usuario, sociales, culturales, contexto de uso (ca
 
 De las que he asistido esta y la del otro _track_ era la presentación que podría haber asistido a cualquiera, en cualquier caso siempre se descubre algún detalle interesante, como programador en mi caso varios puntos interesantes.
 
-{{< figureproc
-    image1="ux.jpg" options1="2560x1440" optionsthumb1="300x200" title1="UX para desarrolladores front y back"
+{{< image
+    gallery="true"
+    image1="ux.jpg" optionsthumb1="300x200" title1="UX para desarrolladores front y back"
     caption="UX para desarrolladores front y back" >}}
 
 ### Viaje desde Arquitectura Hexagonal al Event Sourcing por _Carlos Buenosvinos_
@@ -188,8 +195,9 @@ Estar en el nivel 3 y 4 probablemente para muchas aplicaciones ya sea suficiente
 
 Hay funcionalidades que no forman parte del núcleo del negocio. Estas funcionalidades se pueden realizar al reaccionar a esos eventos, registrados en _elastic search_ o _rabbit_ se obtienen métricas en tiempo real de lo que sucede en la aplicación. Al mostrar una página la cantidad de información puede generar unas decenas o cientos de consultas a la base de datos y a medida que se añaden funcionalidades e información la página irá más lenta. Cuando se modifica una entidad se dispara un evento que un _listener_ escucha y se encarga de recuperar la información actualizada y gudarla transformada según las necesidades de lectura para que con una consulta se obtenga toda toda la información de la entidad, en este momento el rendimiento de la aplicación no se degrada al añadir nuevas características. En este sistema donde las consultas y modificaciones están separadas, con la serie de eventos que provocan cambios se puede reconstruir el estado final de una entidad aplicando la serie de eventos que sucedieron secuencialmente.
 
-{{< figureproc
-    image1="hexagonal-eventsourcing.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Viaje desde Arquitectura Hexagonal al Event Sourcing"
+{{< image
+    gallery="true"
+    image1="hexagonal-eventsourcing.jpg" optionsthumb1="300x200" title1="Viaje desde Arquitectura Hexagonal al Event Sourcing"
     caption="Viaje desde Arquitectura Hexagonal al Event Sourcing" >}}
 
 {{< reference >}}

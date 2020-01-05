@@ -40,18 +40,19 @@ En esta lista falta un orquestador para el despliegue de los microservicios, que
 
 Además, en este ejemplo reemplazo varias de estas herramientas de Spring. Sustituyo el servicio de registro y descubrimiento proporcionado por Eureka por [Consul][consul], el _gateway_, _load balancer_ y _reverse proxy_ proporcionado por Zuul por [Traefik][traefik] y añado el orquestador de microservicios [Nomad][nomad].
 
-<div class="media">
-    <img src="assets/images/logotypes/consul.svg" alt="Consul" title="Consul" width="200"/>
-    <img src="assets/images/logotypes/nomad.svg" alt="Nomad" title="Nomad" width="200"/>
-    <img src="assets/images/logotypes/traefik.svg" alt="Traefik" title="Traefik" width="200"/>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/consul.svg" optionsthumb1="200x200" title1="Consul"
+    image2="assets/images/logotypes/nomad.svg" optionsthumb2="200x200" title1="Nomad"
+    image3="assets/images/logotypes/traefik.svg" optionsthumb3="200x200" title1="Traefik" >}}
 
 Traefik se configura con los servicios iniciados en los contenedores de Docker utilizando junto con los bloques o _stanzas_ de _config_ y _labels_ en la definición de los servicios de Nomad. Según el criterio definido por el servicio Traefik es capaz de redirigir el tráfico que le llegue al servicio apropiado, entre las posibilidades que puede realizar Traefik es balanceo de carga entre las múltiples instancias que se hayan definido pero también implementa patrones de tolerancia a fallos con reintentos, el patrón _circuit breaker_ o limitar el tráfico para evitar saturar a un servicio con demasiadas peticiones.
 
 El esquema de servicios sería el siguiente. Los _job_ son enviados a Nomad desde la linea de comandos que inicia los contenedores en Docker y registra los servicios en Consul, Traefik monitoriza los contenedores que se inician en Docker y se autoconfigura según las propiedades de los _labels_ definidos para los contenedores. Una vez iniciados los servicios desde la terminal con un _curl_ o desde la aplicación cliente que accede a Consul para conocer la ubicación del servicio de Traefik envían una petición a Traefik que haciendo balanceo de carga la reenvía a una de las instancias del servicio, el servicio responde y Traefik envía la respuesta al cliente. Para ser más funcional Traefik debería configurarse a partir de Consul en vez de Docker para posibilitar que los contenedores pudieran estar en varios nodos.
 
-{{< figureproc
-    image1="esquema-arquitectura.png" options1="2560x1440" optionsthumb1="600x450" title1="Esquema arquitectura"
+{{< image
+    gallery="true"
+    image1="esquema-arquitectura.png" optionsthumb1="600x450" title1="Esquema arquitectura"
     caption="Esquema arquitectura" >}}
 
 La ejecución del ejemplo requiere [Docker][docker] ya que es en este caso el _driver_ empleado en Nomad para ejecutar los servicios del servicio de configuración, el _gateway_, el servicio y el cliente del servicio. Nomad además se encarga de registrar los servicios en el servicio de registro y descubrimiento de Consul.
@@ -74,13 +75,15 @@ Definición de un servicio en un _job_ para Nomad. _count_ define cuantas instan
 
 Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas en las siguientes direcciones respectivamente accesibles con el navegador _http\://127.0.0.1:8500_, _http\://127.0.0.1:4646_, _http\://127.0.0.1:8092_.
 
-{{< figureproc
-    image1="consul.png" options1="2560x1440" optionsthumb1="200x150" title1="Consul"
-    image2="nomad-1.png" options2="2560x1440" optionsthumb2="200x150" title2="Nomad"
-    image3="nomad-2.png" options3="2560x1440" optionsthumb3="200x150" title3="Nomad" >}}
-{{< figureproc
-    image1="traefik-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Traefik"
-    image2="traefik-2.png" options2="2560x1440" optionsthumb2="200x150" title2="Traefik"
+{{< image
+    gallery="true"
+    image1="consul.png" optionsthumb1="200x150" title1="Consul"
+    image2="nomad-1.png" optionsthumb2="200x150" title2="Nomad"
+    image3="nomad-2.png" optionsthumb3="200x150" title3="Nomad" >}}
+{{< image
+    gallery="true"
+    image1="traefik-1.png" optionsthumb1="200x150" title1="Traefik"
+    image2="traefik-2.png" optionsthumb2="200x150" title2="Traefik"
     caption="Consolas de administración de Consul, Nomad y Traefik" >}}
 
 El código del servicio, del cliente implementados con Spring y la salida del cliente son los siguientes.

@@ -26,8 +26,9 @@ Una formateador simple para cada uno de estos casos serían los siguientes donde
 
 El resultado en la terminal es el siguiente.
 
-{{< figureproc
-    image1="JavaRegexFormatter.png" options1="2560x1440" optionsthumb1="650x450" title1="Formateado de sentencia SQL y código Java"
+{{< image
+    gallery="true"
+    image1="JavaRegexFormatter.png" optionsthumb1="650x450" title1="Formateado de sentencia SQL y código Java"
     caption="Formateado de sentencia SQL y código Java" >}}
 
 Este ejemplo es una aplicación útil de las expresiones regulares. En este caso he usado Jansi para emitir en la terminal texto con color pero de forma similar esto se puede usar para formatear en una web el mismo texto transformándolo y generando el HTML con las clases CSS adecuadas.

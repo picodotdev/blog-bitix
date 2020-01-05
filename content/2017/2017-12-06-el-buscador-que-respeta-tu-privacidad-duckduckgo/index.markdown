@@ -20,26 +20,32 @@ En la <abbr title="World Wide Web">WWW</abbr> o simplemente en la web hay una ca
 
 Uno de los buscadores que está ganando popularidad es [DuckDuckGo][duckduckgo] ya que al contrario que otros [respeta la privacidad](https://duckduckgo.com/privacy) de los usuarios no rastreando al usuario, no compartiendo las búsquedas realizadas o el historial de búsquedas y no guardando información personal. Pero también porque tiene algunas características únicas como los [bang!](https://duckduckgo.com/bang) además de ofrecer una lista de resultados apropiada y relevante a lo que el usuario está buscando. También en cierta medida se puede [personalizar el buscador](https://duckduckgo.com/settings) cambiando la apariencia, algunas opciones de privacidad y opciones generales en los resultados de búsqueda. En la siguiente página pueden [comparar los términos de servicio de los principales proveedores de internet](https://tosdr.org/) de forma simple y resumida, entre ellos los [términos de servicio de Google](https://tosdr.org/#google) y los [términos de servicio de DuckDuckGo](https://tosdr.org/#duckduckgo).
 
-{{< figureproc
-    image1="duckduckgo.png" thumb1="duckduckgo-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="DuckDuckGo"
+{{< image
+    gallery="true"
+    image1="duckduckgo.png" optionsthumb1="300x200" title1="DuckDuckGo"
     caption="DuckDuckGo" >}}
-{{< figureproc
-    image1="duckduckgo-1.png" thumb1="duckduckgo-1-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="No guardamos tu información personal"
-    image2="duckduckgo-2.png" thumb2="duckduckgo-2-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Nosotros no te perseguimos con anuncios" >}}
-{{< figureproc
-    image1="duckduckgo-3.png" thumb1="duckduckgo-3-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="No rastreamos tu información"
-    image2="duckduckgo-4.png" thumb2="duckduckgo-4-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Cámbiate a DuckDuckGo"
+{{< image
+    gallery="true"
+    image1="duckduckgo-1.png" optionsthumb1="300x200" title1="No guardamos tu información personal"
+    image2="duckduckgo-2.png" optionsthumb2="300x200" title2="Nosotros no te perseguimos con anuncios" >}}
+{{< image
+    gallery="true"
+    image1="duckduckgo-3.png" optionsthumb1="300x200" title1="No rastreamos tu información"
+    image2="duckduckgo-4.png" optionsthumb2="300x200" title2="Cámbiate a DuckDuckGo"
     caption="Privacidad de DuckDuckGo" >}}
-{{< figureproc
-    image1="resultados.png" thumb1="resultados-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Resultados"
-    image2="resultados-imagenes.png" thumb2="resultados-imagenes-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Resultados de imágenes"
+{{< image
+    gallery="true"
+    image1="resultados.png" optionsthumb1="300x200" title1="Resultados"
+    image2="resultados-imagenes.png" optionsthumb2="300x200" title2="Resultados de imágenes"
     caption="Resultados de DuckDuckGo" >}}
-{{< figureproc
-    image1="opciones-general.png" thumb1="opciones-general-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Opciones general"
-    image2="opciones-diseno.png" thumb2="opciones-diseno-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Opciones diseño" >}}
-{{< figureproc
-    image1="opciones-apariencia.png" thumb1="opciones-apariencia-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Opciones apariencia"
-    image2="opciones-privacidad.png" thumb2="opciones-privacidad-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Opciones privacidad"
+{{< image
+    gallery="true"
+    image1="opciones-general.png" optionsthumb1="300x200" title1="Opciones general"
+    image2="opciones-diseno.png" optionsthumb2="300x200" title2="Opciones diseño" >}}
+{{< image
+    gallery="true"
+    image1="opciones-apariencia.png" optionsthumb1="300x200" title1="Opciones apariencia"
+    image2="opciones-privacidad.png" optionsthumb2="300x200" title2="Opciones privacidad"
     caption="Opciones de DuckDuckGo" >}}
 
 DuckDuckGo es una empresa con ánimo de lucro pero lo hace respetando la privacidad de sus usuarios. Usa varias formas para ganar dinero, una de ellas es mediante enlaces de afiliación de páginas como [Amazon][amazon] o [eBay][ebay] con los que si el hace una compra DuckDuckGo obtiene una pequeña comisión, también mostrando en la página de resultados algunos enlaces de publicidad relevantes según la búsqueda realizada.
@@ -50,8 +56,9 @@ Para hacer búsquedas efectivas y encontrar la información que se desea es muy 
 
 Firefox tiene la opción de convertir DuckDuckGo en el buscador predeterminado en el apartado de _Preferencias_ y sección _Buscar_.
 
-{{< figureproc
-    image1="firefox-duckduckgo.png" thumb1="firefox-duckduckgo-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Preferencias de buscadores en Firefox"
+{{< image
+    gallery="true"
+    image1="firefox-duckduckgo.png" optionsthumb1="300x200" title1="Preferencias de buscadores en Firefox"
     caption="Preferencias de buscadores en Firefox" >}}
 
 También se pueden hacer búsquedas de imágenes, vídeos o noticias. Los resultados que ofrece DuckDuckGo son bastante buenos, sino mejores que los de Google, y en los casos que no acierte se puede buscar con _!g_ en Google. Desde hace mucho tiempo DuckDuckGo es el único buscador que uso, #ComeToTheDuckSide.

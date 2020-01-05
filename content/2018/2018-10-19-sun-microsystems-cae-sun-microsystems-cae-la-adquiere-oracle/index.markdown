@@ -21,10 +21,11 @@ Era enero del 2010 y se anunciaba que [Oracle][oracle] adquiría [Sun][sun-micro
 
 Otras tecnologías de Sun relevantes eran el sistema operativo [Solaris][solaris], la tecnologías de depuración [DTraze][dtrace], el avanzado sistema de archivos [ZFS][zfs] utilizando a día de hoy en los sistemas [BSD][bsd], el paquete ofimático OpenOffice predecesora de [LibreOffice][libreoffice], la herramienta de automatización de proyectos Hudson también predecesora de [Jenkins][jenkins], el software de virtualización [VirtualBox][virtualbox] o la plataforma de microprocesadores [Sparc][sparc].
 
-{{< figureproc
-    image1="sun-microsystems-headquarters.jpg" options1="2560x1440" optionsthumb1="200x150" alt1="Sun Microsystems Headquarters" title1="Sun Microsystems Headquarters"
-    image2="sun-microsystems-workstation.jpg" options2="2560x1440" optionsthumb2="200x150" alt2="Sun Microsystems Workstation" title2="Sun Microsystems Workstation"
-    image3="sun-ultrasparc.jpg" options3="2560x1440" optionsthumb3="200x150" alt3="Sun Microsystems Sparc" title3="Sun Microsystems sparc" >}}
+{{< image
+    gallery="true"
+    image1="sun-microsystems-headquarters.jpg" optionsthumb1="200x150" title1="Sun Microsystems Headquarters"
+    image2="sun-microsystems-workstation.jpg" optionsthumb2="200x150" title2="Sun Microsystems Workstation"
+    image3="sun-ultrasparc.jpg" optionsthumb3="200x150" title3="Sun Microsystems sparc" >}}
 
 La adquisición de Oracle generó dudas por la cultura de empresa más cerrada que la que tenía Sun que contribuyó e influenció notablemente en el mundo tecnológico aún a día de hoy. Después de unos meses de la adquisición varias personas salieron de la compañía como [James Gosling][james-gosling] creador de Java, [Tim Bray](https://en.wikipedia.org/wiki/Tim_Bray) creador de formato XML, [Kohsuke Kawaguchi](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) desarrollador principal de Hudson o [Bryan Cantrill](https://en.wikipedia.org/wiki/Bryan_Cantrill) creador de DTrace.
 
@@ -32,14 +33,16 @@ La adquisición de Oracle generó dudas por la cultura de empresa más cerrada q
 
 Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar rentabilidad, otras como Java las ha seguido desarrollando creo en una buena dirección con la publicación de Java 7 y más tarde incluyendo cambios más importantes con [Java 8][blogbitix-17], más recientemente [Java 9][blogbitix-263], [10][blogbitix-306] y [11][blogbitix-350]. Con Java EE ha dado también un paso importante para proporcionarle un modelo de desarrollo más abierto y rápido traspasando el desarrollo a la fundación Eclipse y adoptando un nuevo nombre de [Java EE][java-ee] a [Jakarta EE][jakartaee]. Algunas otras conserva como VirtualBox con buena salud.
 
-{{< imageproc
-    image1="java.svg" logotype1="true" options1="300x200" alt1="Java" title1="Java"
-    image2="solaris.svg" logotype2="true" options2="300x200" alt2="Solaris" title2="Solaris"
-    image3="sparc.svg" logotype3="true" options3="300x200" alt3="Sparc" title3="Sparc" >}}
-    {{< imageproc
-    image1="libreoffice.svg" logotype1="true" command1="Fit" options1="300x200" alt1="LibreOffice" title1="LibreOffice"
-    image2="mysql.svg" logotype2="true" command2="Fit" options2="150x100" alt2="MySQL" title2="MySQL"
-    image3="virtualbox.svg" logotype3="true" command3="Fit" options3="300x200" alt3="Virtualbox" title3="Virtualbox" >}}
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/java.svg" optionsthumb1="300x200" title1="Java"
+    image2="assets/images/logotypes/solaris.svg" optionsthumb2="300x200" title2="Solaris"
+    image3="assets/images/logotypes/sparc.svg" optionsthumb3="300x200" title3="Sparc" >}}
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/libreoffice.svg" optionsthumb1="300x200" title1="LibreOffice"
+    image2="assets/images/logotypes/mysql.svg" optionsthumb2="150x100" title2="MySQL"
+    image3="assets/images/logotypes/virtualbox.svg" optionsthumb3="300x200" title3="VirtualBox" >}}
 
 En el artículo [The Java Saga](https://www.wired.com/1995/12/java-saga/) se comentan varios aspectos importantes de Java como que inicialmente este lenguaje estaba orientado a la electrónica donde la fiabilidad es más importante que la rapidez, C++ no era lo suficientemente fiable para lo que Gosling tenía en mente. Diseñaron la primera tableta electrónica, aún así pasa a ser la base de la emergente web para hacerla interactiva. Otro artículo interesante es [The downfall of Sun Microsystems](https://www.networkworld.com/article/2268096/servers/the-downfall-of-sun-microsystems.html) en el que precisamente se comenta la falta de rentabilizar varias de sus tecnologías y la crisis de las punto com.
 

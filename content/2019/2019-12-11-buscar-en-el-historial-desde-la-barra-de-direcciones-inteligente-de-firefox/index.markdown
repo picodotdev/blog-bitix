@@ -17,8 +17,9 @@ tags: ["planeta-codigo", "software"]
 
 Los navegadores web guardan un historial de todas las páginas a las que se acceden, además de los marcadores que los usuarios creen. Este historial en Firefox se guarda en orden cronológico pudiendo consultar todas las páginas accedidas en el día actual, el de ayer y anteriores fechas. También es posible realizar búsquedas para encontrar una cierta página. En Firefox al historial se accede desde en menú con la opción _Historial > Mostrar todo el historial_. El historial se muestra en una ventana.
 
-{{< figureproc
-    image1="historial-firefox.png" options1="2560x1440" optionsthumb1="650x450" title1="Historial de páginas en Firefox"
+{{< image
+    gallery="true"
+    image1="historial-firefox.png" optionsthumb1="650x450" title1="Historial de páginas en Firefox"
     caption="Historial de páginas en Firefox" >}}
 
 
@@ -33,8 +34,9 @@ Acceder al historial requiere abrir una ventana y luego hacer una búsqueda pero
 
 En esta captura de hace una búsqueda por el título de las páginas en el historial.
 
-{{< figureproc
-    image1="barra-de-busqueda-firefox.png" options1="2560x1440" optionsthumb1="650x450" title1="Barra de búsqueda inteligente de Firefox"
+{{< image
+    gallery="true"
+    image1="barra-de-busqueda-firefox.png" optionsthumb1="650x450" title1="Barra de búsqueda inteligente de Firefox"
     caption="Barra de búsqueda inteligente de Firefox" >}}
 
 {{< reference >}}

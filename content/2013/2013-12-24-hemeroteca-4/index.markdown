@@ -59,8 +59,9 @@ El resto de entradas han sido sobre diversos temas no relacionados como varias s
 
 El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, tengo apuntados algunos temas interesantes que en las próximas semanas y meses iré publicando. ¡Feliz navidad!
 
-{{< figureproc
-    image1="christmas-tux-2013.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2013"
+{{< image
+    gallery="true"
+    image1="christmas-tux-2013.jpg" optionsthumb1="600x450" title1="Christmas Tux 2013"
     caption="¡Buen 2014!" source="klowner.com" >}}
 
 {{% /post %}}

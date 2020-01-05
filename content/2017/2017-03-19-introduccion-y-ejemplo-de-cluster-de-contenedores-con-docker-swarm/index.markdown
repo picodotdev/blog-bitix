@@ -37,8 +37,9 @@ En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anter
 
 {{< asciinema id="107868"    caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" >}}
 
-{{< figureproc
-    image1="maquinas-virtuales-cluster.png" thumb1="maquinas-virtuales-cluster-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
+{{< image
+    gallery="true"
+    image1="maquinas-virtuales-cluster.png" optionsthumb1="300x200" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
     caption="Máquinas virtuales de los nodos del cluster de Docker Swarm" >}}
 
 Los comandos para eliminar un servicio del _cluster_ y eliminar completamente el _cluster_ son los siguientes.

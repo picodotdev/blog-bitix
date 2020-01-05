@@ -28,14 +28,16 @@ El blog es una de las cosas que más me divierte, pero quien quiera tener un blo
 ### Como ha evolucionado
 Aún después de estos casi 4 años el blog tiene solamente unas 600 páginas vistas y unas 400 visitas diarias. Poco a poco van aumentando pero han sido necesarios 4 años para llegar estos números y no son muy grandes, quizá podrían ser mejores si usase alguno de los [consejos que se dan por internet](http://www.marketingguerrilla.es/). En la gráfica de analytics desde que empecé el blog se ve que hay una leve tendencia ascendente. Comento esto para que si alguien empieza un blog no tenga falsas expectativas del número de visitas y pierda interés al recibir pocas, si un blog quiere llegar a esos 4 años de vida el interés de seguir manteniéndolo con vida no debe depender del número de visitas que recibe, la motivación debe estar en otra parte, en mi caso es la satisfacción personal y los momentos de diversión que me dá aprendiendo y compartiendo.
 
-{{< figureproc
-    image1="evolucion-analytics.png" thumb1="evolucion-analytics.png" options1="2560x1440" optionsthumb1="450x400" title1="Evolución vistas según Analytics" >}}
+{{< image
+    gallery="true"
+    image1="evolucion-analytics.png" optionsthumb1="300x200" title1="Evolución vistas según Analytics" >}}
 
 ### Publicidad
 En el blog incluyo unos bloques de publicidad adsense, han sido necesarios casi 3 años para superar los 70 € que exige Google para realizar la transferencia a mi cuenta, en el principio los ingresos mensuales eran de unos pocos céntimos y en estos momentos los ingresos suelen ser de entre 4 y 6 euros algún mes llegan a los 10 euros con unos 40 clics mensuales en los anuncios. También van aumentando mes a mes pero no dan para mucho más que para pagar un dominio propio si lo tuviese y para unas cervezas pagadas a crédito.
 
-{{< figureproc
-    image1="evolucion-adsense.png" thumb1="evolucion-adsense.png" options1="2560x1440" optionsthumb1="450x400" title1="Evolución publicidad según AdSense" >}}
+{{< image
+    gallery="true"
+    image1="evolucion-adsense.png" optionsthumb1="300x200" title1="Evolución publicidad según AdSense" >}}
 
 ### Como lo hago
 Para hacer el blog normalmente voy apuntando los temas sobre los que me interesa escribir. Las ideas pueden surgir en cualquier momento mientras voy en el metro, al irme a la cama, al leer un tweet, leer otros blogs, un libro, .... Por eso la forma de apuntarlos depende del momento, en el móvil, en un correo en borrador, en un bloc de notas de papel que casi siempre llevo conmigo, en archivos del disco duro, lo importante es que cuando se me ocurra una idea sobre la que escribir no se me olvide para ello lo mejor es apuntarla a no mucho tardar, olvidar una idea que nos ha pasado por la mente deja una mala sensación por ello ten siempre algo a mano en lo que apuntarlo. Sobre unas llego a escribir, otras pasan meses hasta que escribo sobre ellas y otras las descarto. Aunque aún no me ha pasado, si en algún momento me quedo sin ideas sobre las que escribir y como en mi caso escribo sorbre temas relacionados con la programación, software libre o linux una buena oportunidad está revisando un libro del que una vez leído explicar lo mismo que se explica en él de forma resumida las partes importantes, con un ejemplo propio y con nuestras propias palabras. Un libro y un tema técnico puede darnos para escribir una serie de entradas relacionadas dependiendo del grado de profundidad al que queramos llegar o de nuestro interés.

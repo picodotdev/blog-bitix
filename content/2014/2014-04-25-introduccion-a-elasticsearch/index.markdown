@@ -25,8 +25,9 @@ La instalación de ES es muy sencilla, basta con [descargar el zip de su distrib
 
 Después de unos segundos deberemos ver algo como lo siguiente.
 
-{{< figureproc
-    image1="elasticsearch.png" thumb1="elasticsearch-thumb.png" options1="2560x1440" optionsthumb1="450x400" >}}
+{{< image
+    gallery="true"
+    image1="elasticsearch.png" optionsthumb1="300x200" >}}
 
 Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.
 
@@ -64,8 +65,9 @@ Además de búsquedas ES puede ofrecernos más funcionalidades como las facetas 
 
 {{< code file="script-9.sh" language="bash" options="" >}}
 
-{{< figureproc
-    image1="categorias-amazon.png" thumb1="categorias-amazon-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Categorías de productos (facets) en Amazon" >}}
+{{< image
+    gallery="true"
+    image1="categorias-amazon.png" optionsthumb1="300x200" title1="Categorías de productos (facets) en Amazon" >}}
 
 Otra de las funcionalizades que nos puede interesar es que ES nos ofrezca sugerencias para determinados términos, en el siguiente ejemplo solicitamos además de la búsqueda sugerencias para algunas palablas que tienen fallos de escritura.
 
@@ -75,7 +77,7 @@ Finalmente, otra cosa que nos puede interesar es que ES nos resalte las palabras
 
 {{< code file="script-11.sh" language="bash" options="" >}}
 
-Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas más que leyendo solo la documentación de referencia es difícil descubrir. Unos buenos libros que explican muchas de las posibilidades y opciones de forma más didáctica son <a href="https://www.amazon.es/gp/product/1449358543/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1449358543&linkCode=as2&tag=blobit-21">Elasticsearch: The Definitive Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1449358543" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"> y/o <a href="https://www.amazon.es/gp/product/B00JXLF7AK/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=B00JXLF7AK&linkCode=as2&tag=blobit-21">Elasticsearch Server</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=B00JXLF7AK" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">, en algunos casos la documentación propia del proyecto es suficiente pero en el caso de Elasticsearch algunos libros como estos son casi necesarios para dominarlo.
+Estos son solo unos pocos ejemplos, ES seguro que puede ofrecer muchas cosas más que leyendo solo la documentación de referencia es difícil descubrir. Unos buenos libros que explican muchas de las posibilidades y opciones de forma más didáctica son [Elasticsearch: The Definitive Guide](https://amzn.to/2sChYkF) y/o [Elasticsearch Server](https://amzn.to/37GgF31), en algunos casos la documentación propia del proyecto es suficiente pero en el caso de Elasticsearch algunos libros como estos son casi necesarios para dominarlo.
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1449358543&internal=1" >}}

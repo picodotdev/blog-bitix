@@ -25,16 +25,18 @@ Los navegadores modernos como [Google Chrome][google-chrome], [Firefox][firefox]
 
 Una imagen que usé para [crear una imagen reducida o vista previa][blogbitix-161] tiene un tamaño de 1600 píxeles de ancho y 1067 de alto ocupando 1018 KiB, la imagen en formato _png_ tiene un tamaño de 1426 píxeles por 947 ocupando 78 KiB.
 
-{{< figureproc
-    image1="image-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato jpg"
-    image2="image-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
+{{< image
+    gallery="true"
+    image1="image-1.jpg" optionsthumb1="300x200" title1="Fotografía en formato jpg"
+    image2="image-2.png" optionsthumb2="300x200" title2="Captura de pantalla en formato _png_"
     caption="Imágenes en formato JPEG y PNG" >}}
 
 Las mismas imágenes comprimidas con WebP ocupan 826 KiB, un 18% menos, para la original en formato _jpg_ y 26 KiB, un 66% menos, para la original en formato _png_. Las reducciones de tamaño son importantes y teniendo en cuenta que es sin pérdida de calidad apreciable sobre las originales utilizar WebP como formato de imagen permite ahorrar un tamaño importante de descarga en una página web o en espacio de almacenamiento en colecciones grandes de fotografías e imágenes.
 
-{{< figure
-    image1="image-1.webp" thumb1="image-1-thumb.webp" options1="2560x1440" optionsthumb1="300x200" title1="Fotografía en formato WebP"
-    image2="image-2.webp" thumb2="image-2-thumb.webp" options2="2560x1440" optionsthumb2="300x200" title2="Captura de pantalla en formato WebP"
+{{< image
+    gallery="true"
+    image1="image-1.webp" thumb1="image-1-thumb.webp" optionsthumb1="300x200" title1="Fotografía en formato WebP"
+    image2="image-2.webp" thumb2="image-2-thumb.webp" optionsthumb2="300x200" title2="Captura de pantalla en formato WebP"
     caption="Mismas imágenes en formato WebP" >}}
 
 [ImageMagick][imagemagick] permite convertir las imágenes entre estos formatos. Con este comando se convierten todas las imágenes _jpg_ y _png_ de un directorio a formato WebP.

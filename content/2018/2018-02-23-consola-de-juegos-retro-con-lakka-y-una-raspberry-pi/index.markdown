@@ -16,7 +16,7 @@ summary: "El propósito original de las Raspberry Pi era educativo y se ha hecho
 
 {{% post %}}
 
-{{< logotype image1="lakka.png" title1="Lakka" width1="250" image2="linux.svg" title2="Linux" width2="250" >}}
+{{< logotype image1="lakka.png" title1="Lakka" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
 
 Desde que compré la [Raspberry Pi][raspberrypi] en el año 2012, el modelo inicial B con 256 MiB de memoria, me ha dado y me esta dando un estupendo servicio. Principalmente la he estado usando para descargar películas y libros vía _torrent_ con [Transmission][transmissionbt] usando la distribución [Arch Linux para ARM][archlinuxarm]. Sin embargo, ya estoy pensando en sustituirla por algo más potente para hacer algunas pruebas con [Docker][docker], [Ansible][ansible] y algunas pruebas más que se me ocurran aparte de seguir queriendo hacer descargas o en un futuro con la función de SmartTV. De la Raspberry Pi no se lanzará un nuevo modelo, el que sería el 4, hasta el 2019 y cuando salga no creo que sea más potente que una [Rock64][rock64] que ya a día de hoy incorporan hasta 4 GiB de memoria, tienen Gigabit Ethernet y un puerto USB 3.0 con precio similar a la Raspberry Pi, lo único que le falta respecto al modelo de la RPi 3 es WiFi y Bluetooth pero a cambio se puede tener 4 veces más memoria, Gigabit Ethernet y un puerto USB 3.0. El mayor problema de la Rock64 es su soporte tanto en distribuciones, software y comunidad, en estos es donde la Raspberry Pi no tiene competidor.
 
@@ -24,9 +24,9 @@ Pero antes estoy pensando en el uso que le puedo dar a la Raspberry Pi para que 
 
 Lo primero que he hecho es comprar unos [mandos similares a los de la antigua Super NES](http://amzn.to/2Cg6035), aunque con un teclado USB también se puede jugar es más cómodo con los mandos, además de poder jugar a dos jugadores. En muchos juegos de _arcade_ antiguos es posible incluso a tres o cuatro jugadores.
 
-<div class="media">
-    <img src="assets/images/logotypes/retroarch.png" width="600" alt="Retroarch" title="RetroArch">
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/retroarch.png" optionsthumb1="658x378" title1="RetroArch" >}}
 
 Los elementos necesarios para tener tener una consola retro son los siguientes: una [Raspberry Pi][amazon-raspberrypi], un [cargador USB](http://amzn.to/2Cf9Vxp) adecuado, una [tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX) o más, [dos mandos para consola USB](http://amzn.to/2Cg6035) o un [teclado USB](http://amzn.to/2ou0QHD), un [cable HDMI](http://amzn.to/2sPcjqz) y si se quiere una [caja](http://amzn.to/2Fvtyjy). Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de [Amazon][amazon].
 
@@ -52,8 +52,9 @@ Los elementos necesarios para tener tener una consola retro son los siguientes: 
 
 El software para usar la Raspberry Pi como consola retro que he utilizado es Lakka que es una distribución [GNU][gnu]/[Linux][linux] especifica para convertir un ordenador en una consola de juegos retro. Para instalarlo en la tarjeta microSD hay que [descargar la imagen de Lakka](http://www.lakka.tv/get/) y una forma simple de grabarla en la tarjeta microSD es utilizando [Etcher][etcher], basta instalarlo, iniciarlo, seleccionar la imagen de Lakka una vez descomprimido su archivo zip, seleccionar la unidad de la tarjeta SD (si es necesario ya que Etcher puede seleccionarla automáticamente) y pulsar el botón _Flash!_, después de unos pocos minutos la imagen está grabada y la tarjeta microSD lista para usarla en la Raspberry Pi y efectuar el primer inicio.
 
-{{< figureproc
-    image1="etcher.png" options1="2560x1440" optionsthumb1="300x200" title1="Etcher"
+{{< image
+    gallery="true"
+    image1="etcher.png" optionsthumb1="300x200" title1="Etcher"
     caption="Etcher" >}}
 
 Los juegos se distribuyen en archivos denominados ROM y estos se pueden descargar de ciertas páginas, una de ellas es de [Internet Archive][archive] donde está una [colección de juegos](https://archive.org/details/datomatic.no-intro.org) de las consolas más populares o si sabemos el nombre del juego de _arcade_ descargarlo individualmente de [CoolROM](http://coolrom.com/). Hay miles de juegos por lo que es importante conocer su nombre para hacer la búsqueda. En otro artículo hice una pequeña [recopilación de juegos míticos de arcade][blogbitix-170] y en otros blog están recopilados otra selección de juegos:
@@ -73,33 +74,38 @@ Algunas de las consolas emuladas son:
 
 En el primer inicio Lakka debe hacer una serie de tareas para inicializar el sistema durante unos minutos, recomiendo no conectar el cable de red  ni ningún mando o teclado en este paso. Una vez se completa este primer inicio el siguiente paso es copiar las ROMs, hay varias formas una de ellas es desde un equipo con GNU/Linux y copiar los archivos al directorio _/storage/ROMs/_ directamente a la tarjeta microSD desde un ordenador. En otros sistemas que no saben como acceder a las particiones _ext4_ de Linux la más sencilla es activando el protocolo SAMBA en Lakka y copiarlos por la red, aunque tarda más. SAMBA se activa desde el menú _Settings > Services > SAMBA Enable_. 
 
-{{< figureproc
-    image1="lakka.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Lakka"
+{{< image
+    gallery="true"
+    image1="lakka.jpg" optionsthumb1="300x200" title1="Lakka"
     caption="Raspberry Pi ejecutando Lakka (La televisión va acorde con los juegos XD)" >}}
 
 Con el cable de red conectado a la Rasberry Pi al _router_ y desde un equipo con Windows, macOS o GNU/Linux y probando la dirección IP que el _router_ le ha asignado a la Raspberry Pi se accede a los directorios compartidos por red poniendo en el explorador de archivos _\\\\192.168.0.2_, _\\\\192.168.0.3_ o _\\\\192.168.0.4_, ... o posteriores números dependiendo de los dispositivos conectados en la red, también podría ser _\\\\192.168.1.2_, _\\\\192.168.1.3_, _\\\\192.168.1.4_, ... Con acceso en el explorador de archivos ya solo queda copiar las ROMs a la carpeta compartida ROMs. En macOS macOS con _Finder_ en la opción _Ir > Conectar al servidor_.
 
-{{< figureproc
-    image1="lakka-samba-1.png" options1="2560x1440" optionsthumb1="300x200" title1="Carpetas compartidas por Lakka mediante SAMBA"
-    image2="lakka-samba-2.png" options2="2560x1440" optionsthumb2="300x200" title2="Archivos de ROMs vía SAMBA"
+{{< image
+    gallery="true"
+    image1="lakka-samba-1.png" optionsthumb1="300x200" title1="Carpetas compartidas por Lakka mediante SAMBA"
+    image2="lakka-samba-2.png" optionsthumb2="300x200" title2="Archivos de ROMs vía SAMBA"
     caption="Carpetas compartidas por Lakka mediante SAMBA" >}}
 
 Copiados los archivos de las ROMs a la Raspberry Pi desde la opción _Import Content > Scan Directory_ de Lakka esta detectará todos los juegos que encuentre en su base de datos añadiéndolos en varios menús según el sistema emulado del juego en las últimas opciones del menú horizontal de Lakka.
 
-{{< figureproc
-    image1="lakka-games.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Juegos Lakka"
+{{< image
+    gallery="true"
+    image1="lakka-games.jpg" optionsthumb1="300x200" title1="Juegos Lakka"
     caption="Juegos Lakka" >}}
 
 Detectadas las ROMS iniciar un juego basta con seleccionarlo desde los menús e iniciarlo. La mayoría funcionará con un rendimiento óptimo tanto el fluidez de imagen como en sonido, la Raspberry Pi es mucho más potente que los sistemas antiguos que emula, el modelo Raspberry Pi 3 incluso funcionará mejor. Aún asi algunos pueden ir un poco lentos o el sonido no ser completamente fiel al original.
 
-{{< figureproc
-    image1="the-legend-of-zelda.png" options1="2560x1440" optionsthumb1="300x200" title1="The Legend of Zelda"
-    image2="zelda-II-the-adventure-of-link.png" options2="2560x1440" optionsthumb2="300x200" title2="Zelda-II: The Adventure of Link"
-    image3="super-mario-bros-3.png" options3="2560x1440" optionsthumb3="300x200" title3="Super Mario Bros 3" >}}
-{{< figureproc
-    image1="mega-man-5.png" options1="2560x1440" optionsthumb1="300x200" title1="Mega Man 5"
-    image2="1943.png" options2="2560x1440" optionsthumb2="300x200" title2="1943"
-    image3="sonic-the-hedgehog.png" options3="2560x1440" optionsthumb3="300x200" title3="Sonic The Hedgehog"
+{{< image
+    gallery="true"
+    image1="the-legend-of-zelda.png" optionsthumb1="300x200" title1="The Legend of Zelda"
+    image2="zelda-II-the-adventure-of-link.png" optionsthumb2="300x200" title2="Zelda-II: The Adventure of Link"
+    image3="super-mario-bros-3.png" optionsthumb3="300x200" title3="Super Mario Bros 3" >}}
+{{< image
+    gallery="true"
+    image1="mega-man-5.png" optionsthumb1="300x200" title1="Mega Man 5"
+    image2="1943.png" optionsthumb2="300x200" title2="1943"
+    image3="sonic-the-hedgehog.png" optionsthumb3="300x200" title3="Sonic The Hedgehog"
     caption="Varios juegos de la NES y Sega">}}
 
 Tenía dudas por la calidad de los mandos por si eran demasiado frágiles, sin embargo, cuando me han llegado y los he visto me han parecido muy decentes y creo que tratándolos bien van a aguantar mucho tiempo. Además, la Raspberry Pi y Lakka los han reconocido sin ningún tipo de problema tanto conectando uno individualmente o los dos al mismo tiempo reconociendo correctamente todos los botones. Lo único que he tenido que hacer es configurar en el menú _Input > Menu Toggle Gamepad Combo_ (se elige con la cruceta a derecha e izquierda) un botón para salir de un juego pulsando a la vez los botones _Start + Select_.
@@ -114,8 +120,9 @@ Como son muchas ROMs reconocer una entre las muchas que hay o ver como es el jue
 
 Al obtener ROMs de forma individual a veces es difícil dar con una que funcione, de algunos juegos hay varias versiones y es posible que algunas de ellas fallen al cargarse, hay que tener un poco de paciencia para encontrar la correcta.
 
-{{< figureproc
-    image1="the-legend-of-zelda-screenshot.png" options1="2560x1440" optionsthumb1="300x200" title1="The Legend of Zelda"
+{{< image
+    gallery="true"
+    image1="the-legend-of-zelda-screenshot.png" optionsthumb1="300x200" title1="The Legend of Zelda"
     caption="Juego The Legend of Zelda de NES" >}}
 
 Ya solo queda pasar algunos buenos momentos con estos juegos antiguos pero entretenidos, nosotros o los más pequeños de la casa. Otra opción alternativa a Lakka para el mismo propósito es [RetroPie](https://retropie.org.uk) aunque la primera soporta algunos modelos mas de placas similares a la Raspberry Pi.

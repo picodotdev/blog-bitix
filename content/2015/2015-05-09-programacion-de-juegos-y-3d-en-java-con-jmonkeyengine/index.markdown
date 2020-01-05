@@ -55,33 +55,42 @@ Este es un vídeo del juego PirateHell que tiene una pinta muy buena:
 
 Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden encontrar vídeos de algunos de ellos.
 
-{{< figureproc
-    image1="4089.jpg" thumb1="4089-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="4089: Ghost Within"
-    image2="rising-world.jpg" thumb2="rising-world-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Rising World" >}}
-{{< figureproc
-    image1="seizon.jpg" thumb1="seizon-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Seizon"
-    image2="copod.png" thumb2="copod-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Copod" >}}
-{{< figureproc
-    image1="drohtin-tales-of-old-kingdom.png" thumb1="drohtin-tales-of-old-kingdom-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Drohtin – Tales of an Old Kingdom"
-    image2="chaos_in-the-darkness.jpg" thumb2="chaos_in-the-darkness-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="CHAOS: In the Darkness" >}}
-{{< figureproc
-    image1="just-tactics.jpg" thumb1="just-tactics-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Just Tactics"
-    image2="spermination.png" thumb2="spermination-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Spermination" >}}
-{{< figureproc
-    image1="makers-tale.jpg" thumb1="makers-tale-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Maker’s Tale"
-    image2="piratehell.jpg" thumb2="piratehell-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="PirateHell" >}}
-{{< figureproc
-    image1="hostile-sector.jpg" thumb1="hostile-sector-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Hostile Sector"
-    image2="3079.png" thumb2="3079-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="3079" >}}
-{{< figureproc
-    image1="urban-galaxy.jpg" thumb1="urban-galaxy-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Urban Galaxy"
-    image2="grapplinghook.jpg" thumb2="grapplinghook-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Grappling Hook" >}}
-{{< figureproc
-    image1="mad-skills-motocross.jpg" thumb1="mad-skills-motocross-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Mad Skills Motocross"
-    image2="pets-vs-monsters.jpg" thumb2="pets-vs-monsters-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Pets vs Monsters" >}}
-{{< figureproc
-    image1="bang-howdy.jpg" thumb1="bang-howdy-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Bang! Howdy"
-    image2="imperii.jpg" thumb2="imperii-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Imperii" >}}
+{{< image
+    gallery="true"
+    image1="4089.jpg" optionsthumb1="300x200" title1="4089: Ghost Within"
+    image2="rising-world.jpg" optionsthumb2="300x200" title2="Rising World" >}}
+{{< image
+    gallery="true"
+    image1="seizon.jpg" optionsthumb1="300x200" title1="Seizon"
+    image2="copod.png" optionsthumb2="300x200" title2="Copod" >}}
+{{< image
+    gallery="true"
+    image1="drohtin-tales-of-old-kingdom.png" optionsthumb1="300x200" title1="Drohtin – Tales of an Old Kingdom"
+    image2="chaos_in-the-darkness.jpg" optionsthumb2="300x200" title2="CHAOS: In the Darkness" >}}
+{{< image
+    gallery="true"
+    image1="just-tactics.jpg" optionsthumb1="300x200" title1="Just Tactics"
+    image2="spermination.png" optionsthumb2="300x200" title2="Spermination" >}}
+{{< image
+    gallery="true"
+    image1="makers-tale.jpg" optionsthumb1="300x200" title1="Maker’s Tale"
+    image2="piratehell.jpg" optionsthumb2="300x200" title2="PirateHell" >}}
+{{< image
+    gallery="true"
+    image1="hostile-sector.jpg" optionsthumb1="300x200" title1="Hostile Sector"
+    image2="3079.png" optionsthumb2="300x200" title2="3079" >}}
+{{< image
+    gallery="true"
+    image1="urban-galaxy.jpg" optionsthumb1="300x200" title1="Urban Galaxy"
+    image2="grapplinghook.jpg" optionsthumb2="300x200" title2="Grappling Hook" >}}
+{{< image
+    gallery="true"
+    image1="mad-skills-motocross.jpg" optionsthumb1="300x200" title1="Mad Skills Motocross"
+    image2="pets-vs-monsters.jpg" optionsthumb2="300x200" title2="Pets vs Monsters" >}}
+{{< image
+    gallery="true"
+    image1="bang-howdy.jpg" optionsthumb1="300x200" title1="Bang! Howdy"
+    image2="imperii.jpg" optionsthumb2="300x200" title2="Imperii" >}}
 
 Todos estos juegos están programados utilizando el lenguaje de programación Java y la librería [jMonkeyEngine][jmonkeyengine] que facilita las tareas de programación de videojuegos proporcionando programación gráfica en 3D usando [OpenGL][opengl], manejo de eventos de entrada como teclado o ratón, manejo de sonido, pantallas de menús o red. Usando jMonkeyEngine se pueden hacer cosas muy interesantes como se ve en los ejemplos. En el siguiente enlace se pueden encontrar el [código fuente de varios ejemplos](https://github.com/jMonkeyEngine/BookSamples/tree/master/src) que podemos probar.
 
@@ -92,12 +101,14 @@ A continuación mostraré el código y unas capturas de pantalla de algunas las 
 
 Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting_, sistemas de partículas con las que simular fuego, chispas, polvo, establecer animaciones a objetos como cuando un personaje está descansando, terrenos, paisajes, aplicar efectos simulando la física del mundo real, sonido ambiental y posicional y más cosas. En las siguientes imágenes se pueden ver algunos ejemplos de las anteriores posibilidades (la tasa de _fps_ normal es de 60, al tomar las capturas baja).
 
-{{< figureproc
-    image1="cubo.png" thumb1="cubo-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="¡Hola mundo!"
-    image2="cubos.png" thumb2="cubos-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Texturas y materiales" >}}
-{{< figureproc
-    image1="particulas-fuego.png" thumb1="particulas-fuego-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Sistemas de partículas, fuego"
-    image2="agua.png" thumb2="agua-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Agua" >}}
+{{< image
+    gallery="true"
+    image1="cubo.png" optionsthumb1="300x200" title1="¡Hola mundo!"
+    image2="cubos.png" optionsthumb2="300x200" title2="Texturas y materiales" >}}
+{{< image
+    gallery="true"
+    image1="particulas-fuego.png" optionsthumb1="300x200" title1="Sistemas de partículas, fuego"
+    image2="agua.png" optionsthumb2="300x200" title2="Agua" >}}
 
 Un videojuego se compone de múltiples recursos como imágenes, modelos 3D, música, _sprites_, texturas, fuentes de texto, sonidos, iconos... en la página [Open Game Art](http://opengameart.org) podemos encontrar todo este tipo de material sin necesidad de tener que crearlo desde la nada.
 
@@ -105,8 +116,7 @@ jMonkeyEngine ofrece un entorno de desarrollo (IDE) basado [NetBeans][netbeans].
 
 Para instalar jMonkeyEngine debemos [descargar el SDK](http://jmonkeyengine.org/downloads/) adecuado para la plataforma que usemos ya sea Windows, Linux o Macintosh. En el caso de Linux es un archivo .sh que deberemos ejecutar (dando permisos de ejecución si es necesario), seguimos las instrucciones y seleccionamos el directorio de instalación del SDK. En _jmonkeyplatform/libs_ de la carpeta de instalación encontramos los archivos .jar que deberemos usar en el IDE o en los programas de los ejemplos.
 
-El <a href="https://www.amazon.es/gp/product/1849516464/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1849516464&linkCode=as2&tag=blobit-21">libro jMonkeyEngine 3.0 Beginners Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1849516464" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;">
- me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
+El [libro jMonkeyEngine 3.0 Beginners Guide](https://amzn.to/2ZRNc38) me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
 
 {{< amazon
     link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1849516464&internal=1" >}}
@@ -118,7 +128,7 @@ Que, ¿aún crees que en Java no se pueden hacer juegos que no tienen que envidi
 {{< reference >}}
 * [jMonkeyEngine][jmonkeyengine]
 * [Curso Experto Desarrollo Videojuegos](http://www.cedv.es./)
-* <a href="https://www.amazon.es/gp/product/1849516464/ref=as_li_ss_tl?ie=UTF8&camp=3626&creative=24822&creativeASIN=1849516464&linkCode=as2&tag=blobit-21">Libro jMonkeyEngine 3.0 Beginners Guide</a><img src="https://ir-es.amazon-adsystem.com/e/ir?t=blobit-21&l=as2&o=30&a=1849516464" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;"><br>
+* [Libro jMonkeyEngine 3.0 Beginners Guide](https://amzn.to/2QsiP0q)
 * [Slick2D][slick2d]
 * [libGDX](https://libgdx.badlogicgames.com/)
 {{< /reference >}}

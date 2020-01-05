@@ -23,14 +23,17 @@ Aunque con muchos más LED el ejemplo no es más complicado que el ejemplo que y
 
 Esta es la foto del cableado usando múltiples cables macho-macho para conectar los _pines_ con el polo positivo de los diodos pasando por la resistencia y también múltiples cables para conectar el polo negativo del diodo con tierra. Usando una placa _breadboard_ para realizar las conexiones sin soldadura y una placa de extensión wiringPi para conectar la Raspberry Pi con la placa _breadboard_ con un cable de 26 _pines_ en mi caso por el modelo que tengo de RPi este es el aspecto de cableado.
 
-{{< figureproc
-    image1="arbol-navidad-01.jpg" thumb1="arbol-navidad-01-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Cableado de las luces LED del árbol de navidad"
-    image2="arbol-navidad-02.jpg" thumb2="arbol-navidad-02-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Cableado de las luces LED del árbol de navidad" >}}
-{{< figureproc
-    image1="arbol-navidad-03.jpg" thumb1="arbol-navidad-03-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Cableado de las luces LED del árbol de navidad"
-    image2="arbol-navidad-04.jpg" thumb2="arbol-navidad-04-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Cableado de las luces LED del árbol de navidad" >}}
-{{< figureproc
-    image1="arbol-navidad-05.jpg" thumb1="arbol-navidad-05-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Cableado de las luces LED del árbol de navidad"
+{{< image
+    gallery="true"
+    image1="arbol-navidad-01.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
+    image2="arbol-navidad-02.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
+{{< image
+    gallery="true"
+    image1="arbol-navidad-03.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
+    image2="arbol-navidad-04.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
+{{< image
+    gallery="true"
+    image1="arbol-navidad-05.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
     caption="Cableado de las luces LED del árbol de navidad" >}}
 
 Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros se apagarán y otros seguirán en el estado que estaban. Para ello generaré un booleano aleatorio para cada uno de los diodos que determinará si debe estar encendido o apagado. Este es el programa Java junto con la parte relevante del archivo [Gradle][gradle] para compilar y construir el ejemplo y el comando que uso para ejecutarlo.

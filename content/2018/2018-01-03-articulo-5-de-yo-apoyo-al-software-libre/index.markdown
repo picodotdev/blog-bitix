@@ -21,12 +21,10 @@ También hace unos meses escribí un artículo patrocinado con enlaces de afilia
 
 En esta ocasión los proyectos a los que he hecho una donación han sido [LineageOS][lineageos] y [Replicant][replicant], dos distribuciones de [Android][android] que permiten dar una segunda o tercera vida a móviles que desde hace tiempo se han quedado sin soporte oficial del fabricante ni de Google ni parches de seguridad con lo que ello supone en estos dispositivos que se están convirtiendo en cada vez más imprescindibles. Esto genera dispositivos no actualizados, tarde o temprano potencialmente inseguros y la conocida fragmentación en la plataforma Android. 
 
-<div class="media">
-    <figure>
-        <img src="assets/images/logotypes/lineageos.svg" alt="LineageOS" title="LineageOS" width="200"/>
-        <img src="assets/images/logotypes/replicant.svg" alt="Replicant" title="Replicant" width="200"/>
-    </figure>
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/lineageos.svg" optionsthumb1="200x200" title1="LineageOS"
+    image2="assets/images/logotypes/replicant.svg" optionsthumb2="200x200" title1="Replicant" >}}
 
 Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo _giga_ de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
 
@@ -42,9 +40,10 @@ Finalmente, ayer precisamente me decidí a instalar LineageOS 14.1 que incorpora
 
 Se ofrece de forma gratuita pero los servidores que son necesarios para el desarrollo y el mantenimiento de los sitios web tienen unos costes, este es el detalle de los [costes de LineageOS](https://wiki.lineageos.org/costs/).
 
-{{< figureproc
-    image1="cyanogenmod-10.2.jpg" options1="2560x1440" optionsthumb1="300x200" title1="CynogenMod 10.2"
-    image2="lineageos-14.1.jpg" options2="2560x1440" optionsthumb2="300x200" title2="LineageOS 14.1"
+{{< image
+    gallery="true"
+    image1="cyanogenmod-10.2.jpg" optionsthumb1="300x200" title1="CynogenMod 10.2"
+    image2="lineageos-14.1.jpg" optionsthumb2="300x200" title2="LineageOS 14.1"
     caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 
 ### Replicant
@@ -58,19 +57,22 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 * [Motivaciones del uso de Replicant, Freedom and privacy/security issues](https://www.replicant.us/freedom-privacy-security-issues.php)
 * [Guías de instalación](https://redmine.replicant.us/projects/replicant/wiki#Replicant-installation)
 
-{{< figureproc
-    image1="replicant-6.png" options1="2560x1440" optionsthumb1="300x200" title1="Replicant 6"
+{{< image
+    gallery="true"
+    image1="replicant-6.png" optionsthumb1="300x200" title1="Replicant 6"
     caption="Replicant 6" >}}
 
 ### Comprobantes de las donaciones
 
 En ambos casos las donaciones que he hecho han sido de 15€.
 
-{{< figureproc
-    image1="donacion-lineageos.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación LineageOS"
+{{< image
+    gallery="true"
+    image1="donacion-lineageos.png" optionsthumb1="650x450" title1="Donación LineageOS"
     caption="Donación LineageOS" >}}
-{{< figureproc
-    image1="donacion-replicant.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Replicant"
+{{< image
+    gallery="true"
+    image1="donacion-replicant.png" optionsthumb1="650x450" title1="Donación Replicant"
     caption="Donación Replicant" >}}
 
 {{< donations >}}

@@ -17,10 +17,11 @@ tags: ["opinion", "planeta-codigo"]
 
 El sector de los videojuegos es una industria que mueve miles de millones de euros en todo el mundo mayor que sectores con más historia como la industria del cine, los juegos triple A poseen inversiones y desarrollos cinematográficos. Los computadores y aparatos electrónicos están muy relacionados con los videojuegos ya desde hace mucho tiempo desde que aparecieran en 1947 el [primer videojuego](https://es.wikipedia.org/wiki/Primer_videojuego#1947:_Dispositivo_de_Entretenimiento_de_Tubos_de_Rayos_Cat%C3%B3dicos). En la actualidad los videojuegos son unos programas informáticos de los que en la computación personal más de cómputo requieren a los ordenadores, una buena parte de la presión para mejorar los computadores proviene de los videojuegos con tarjetas gráficas muy potentes, cantidades de memoria consideradas enormes hasta hace una década, procesadores más potentes en [la guerra actual por añadir más núcleos a las CPU][blogbitix-337]. Recientemente los sistemas operativos y entornos de escritorio han empezado a aprovechar de las capacidades de las tarjetas gráficas o GPU para proporcionar efectos visuales y acelerar algunas operaciones de cálculo más eficientemente que en la CPU.
 
-{{< figureproc
-    image1="1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Primer videojuego"
-    image2="2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Pong"
-    image3="3.jpg" options3="2560x1440" optionsthumb3="300x200" title3="3 en raya"
+{{< image
+    gallery="true"
+    image1="1.jpg" optionsthumb1="300x200" title1="Primer videojuego"
+    image2="2.jpg" optionsthumb2="300x200" title2="Pong"
+    image3="3.jpg" optionsthumb3="300x200" title3="3 en raya"
     caption="Primeros videojuegos" >}}
 
 Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tomb Raider.
@@ -29,8 +30,9 @@ Esta es una muestra de la evolución gráfica que han experimentado los juegos d
 
 La industria de juego sigue creciendo con las nuevas generaciones ya siendo nativos digitales. Desde hace un tiempo se están organizando competiciones deportivas en diferentes juegos populares y se están retransmitiendo en internet en la plataforma especializada en videojuegos [Twitch][twitch]. Estas competiciones promovidas por actores importantes del hardware interesados en potenciar el sector como [Nvidia][nvidia], [Intel][intel], [AMD][amd] u otros fabricantes de hardware y estudios de desarrollo de videojuegos como [Blizzard][blizzard] ofrecen a los finalistas y campeones importantes premios económicos. Tanto que algunas personas se están dedicando ya como profesionalmente con absoluta dedicación a competir y entrenar aprovechando sus habilidades y conocimiento profundo de los juegos en los que están especializados.
 
-{{< figureproc
-    image1="4.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Estadio de una final de League of legends"
+{{< image
+    gallery="true"
+    image1="4.jpg" optionsthumb1="600x450" title1="Estadio de una final de League of legends"
     caption="Estadio de una final de League of legends" >}}
 
 Algunos de los juegos actuales en los que se realizan competiciones son [Hearthstone](https://playhearthstone.com/es-es/), [League of legends](https://play.euw.leagueoflegends.com/es_ES), [Clash Royale](https://clashroyale.com/es/), ... que han sido diseñados no solo como para el entretenimiento como los juegos de hace unas pocas décadas para competir entre humano e inteligencia artificial más o menos inteligente o automática de la máquina sino para ser jugados de forma competitiva entre humanos principalmente.

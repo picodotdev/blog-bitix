@@ -32,32 +32,37 @@ Diablo 2 es uno de los últimos juegos que jugué y lo finalice por completo aun
 
 Wine es una implementación de la API de Windows con la que los programas de Windows pueden ser ejecutados en GNU/Linux y [macOS][macos], incluidos los juegos y su API DirectX. Y hace posible que tener Windows no sea imprescindible para determinados programas como [Microsoft Office][microsoft-office] o los juegos que son algunos de los motivos por los que algunas personas siguen usando Windows en vez de pasarse definitivamente y de forma completa a GNU/Linux.
 
-{{< figureproc
-    image1="battle-net-1.png" options1="2560x1440" optionsthumb1="200x150" title1="Cliente de Battle.net"
-    image2="battle-net-2.png" options2="2560x1440" optionsthumb2="200x150" title2="Cliente de Battle.net"
-    image3="battle-net-3.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Cliente de Battle.net"
+{{< image
+    gallery="true"
+    image1="battle-net-1.png" optionsthumb1="200x150" title1="Cliente de Battle.net"
+    image2="battle-net-2.png" optionsthumb2="200x150" title2="Cliente de Battle.net"
+    image3="battle-net-3.jpg" optionsthumb3="200x150" title3="Cliente de Battle.net"
     caption="Cliente de Battle.net" >}}
-{{< figureproc
-    image1="battle-net-4.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Instalación de Diablo 3"
-    image2="battle-net-5.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Instalación de Diablo 3"
-    image3="battle-net-6.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Instalación de Diablo 3"
+{{< image
+    gallery="true"
+    image1="battle-net-4.jpg" optionsthumb1="200x150" title1="Instalación de Diablo 3"
+    image2="battle-net-5.jpg" optionsthumb2="200x150" title2="Instalación de Diablo 3"
+    image3="battle-net-6.jpg" optionsthumb3="200x150" title3="Instalación de Diablo 3"
     caption="Instalación de Diablo 3" >}}
 
-{{< figureproc
-    image1="diablo-3-1.jpg" options1="2560x1440" optionsthumb1="300x200" title1="Personaje de clase monje"
-    image2="diablo-3-2.jpg" options2="2560x1440" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
-{{< figureproc
-    image1="diablo-3-3.jpg" options1="2560x1440" optionsthumb1="200x150" title1="Jugando a Diablo 3"
-    image2="diablo-3-4.jpg" options2="2560x1440" optionsthumb2="200x150" title2="Jugando a Diablo 3"
-    image3="diablo-3-5.jpg" options3="2560x1440" optionsthumb3="200x150" title3="Jugando a Diablo 3"
+{{< image
+    gallery="true"
+    image1="diablo-3-1.jpg" optionsthumb1="300x200" title1="Personaje de clase monje"
+    image2="diablo-3-2.jpg" optionsthumb2="300x200" title2="Caminio hacia Nueva Tristán" >}}
+{{< image
+    gallery="true"
+    image1="diablo-3-3.jpg" optionsthumb1="200x150" title1="Jugando a Diablo 3"
+    image2="diablo-3-4.jpg" optionsthumb2="200x150" title2="Jugando a Diablo 3"
+    image3="diablo-3-5.jpg" optionsthumb3="200x150" title3="Jugando a Diablo 3"
     caption="Juego de Diablo 3" >}}
 
 ### Donación
 
 La donación no es muy grande pero espero que ayude para cubrir los costes que tengan las personas que contribuyen en el desarrollo de este proyecto. La donación se puede realizar mediante el medio de pago [PayPal][paypal]. Como tenía algo de dinero acumulado de un par de artículos patrocinados que escribí he utilizado $20 de ese saldo para donar a [Wine][wine].
 
-{{< figureproc
-    image1="donacion-wine.png" options1="2560x1440" optionsthumb1="650x450" title1="Donación Wine"
+{{< image
+    gallery="true"
+    image1="donacion-wine.png" optionsthumb1="650x450" title1="Donación Wine"
     caption="Donación Wine" >}}
 
 Este es el sexto artículo de esta serie de donaciones con Yo apoyo el software libre ya son unas cuantas donaciones las que he hecho, gracias también a los visitantes que llegan principalmente como resultado de una búsqueda en un buscador, en menor medida también de alguno de los que están suscritos a la [fuente de artículos][blogbitix-feed] que en el momento que publico uno nuevo si les interesa lo visitan.

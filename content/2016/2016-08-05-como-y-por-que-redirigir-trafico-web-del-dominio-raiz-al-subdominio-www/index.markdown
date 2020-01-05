@@ -31,9 +31,10 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="docker-run-nginx.sh" language="bash" options="" >}}
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 
-{{< figureproc
-    image1="nginx.png" thumb1="nginx-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Dominio antes de acceder al sitio"
-    image2="nginx-www.png" thumb2="nginx-www-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Dominio después de acceder al sitio"
+{{< image
+    gallery="true"
+    image1="nginx.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
+    image2="nginx-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
     caption="Dominio antes y después de acceder al sitio con Nginx" >}}
 
 ### Apache
@@ -41,9 +42,10 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 {{< code file="docker-run-httpd.sh" language="bash" options="" >}}
 {{< code file="httpd.conf" language="plaintext" options="" >}}
 
-{{< figureproc
-    image1="httpd.png" thumb1="httpd-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Dominio antes de acceder al sitio"
-    image2="httpd-www.png" thumb2="httpd-www-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Dominio después de acceder al sitio"
+{{< image
+    gallery="true"
+    image1="httpd.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
+    image2="httpd-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
     caption="Dominio antes y después de acceder al sitio con Apache HTTPD" >}}
 
 Si prefieriesemos hacer la redirección al revés, del subdominio www al dominio, variaríamos los valores de los nombres del servidor y los valores de las directivas de redirección. En los enlaces de referencia se incluye un ejemplo de esta configuración.

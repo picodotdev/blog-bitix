@@ -30,11 +30,13 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 * [Varios _screencasts_ sobre varias de las novedades de Java 9](https://www.oracle.com/java/java9-screencasts.html)
 * [Java Magazine Sep/Oct 2017](http://www.javamagazine.mozaicreader.com/SeptOct2017/Twitter)
 
-{{< figureproc
-    image1="tabla-novedades-java-9.jpg" thumb1="tabla-novedades-java-9-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Tabla de novedades de Java 9"
+{{< image
+    gallery="true"
+    image1="tabla-novedades-java-9.jpg" optionsthumb1="300x200" title1="Tabla de novedades de Java 9"
     caption="Tabla de novedades de Java 9" >}}
-{{< imageproc
-    image1="duke-java-9.png" options1="300x250" title1="Duke Java 9" >}}
+{{< image
+    gallery="false"
+    image1="duke-java-9.png" optionsthumb1="300x250" title1="Duke Java 9" >}}
 
 ### Métodos factoría para colecciones
 
@@ -68,8 +70,9 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 
 * [Guía de usuario de jshell](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-630F27C8-1195-4989-9F6B-2C51D46F52C8)
 
-{{< figureproc
-    image1="jshell.png" thumb1="jshell-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="jshell"
+{{< image
+    gallery="true"
+    image1="jshell.png" optionsthumb1="300x200" title1="jshell"
     caption="jshell" >}}
 
 <div class="media media-video">
@@ -151,8 +154,9 @@ Ahora las variables finales o efectivamente finales pueden ser colocadas en los 
 
 Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cuadro de búsqueda para encontrar más fácilmente tipos y métodos.
 
-{{< figureproc
-    image1="javadoc.png" thumb1="javadoc-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Javadoc"
+{{< image
+    gallery="true"
+    image1="javadoc.png" optionsthumb1="300x200" title1="Javadoc"
     caption="Javadoc" >}}
 
 ### Archivos Jar multiversión

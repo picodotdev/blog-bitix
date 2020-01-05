@@ -22,9 +22,10 @@ Es política de Apple que su sistema operativo solo pueda ser ejecutado en sus e
 
 Los pasos para instalar macOS en una máquina virtual con VirtualBox son los siguientes, hay que descargar un {{< resourcelink text="archivo torrent con la imagen del disco duro de macOS" name="macOS-Mojave-10.14.4.torrent" >}} y una vez creada la máquina virtual en VirtualBox ejecutar unos comandos para cambiar algunos parámetros del sistema de arranque EFI. Deberemos descomprimir la imagen del disco duro para obtener el archivo de extensión _vmdk_ y proceder a crear la máquina virtual. Elegimos crear una máquina virtual de tipo macOS, cambiaremos algunas opciones, asignando unos 2 o 3 GiB de memoria, seleccionaremos el disco duro con la imagen _vmdk_ descomprimida y cambiaremos la memoria asignada a la pantalla.
 
-{{< figureproc
-    image1="configuracion-virtualbox-macos-vm.png" thumb1="configuracion-virtualbox-macos-vm-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Configuración máquina virtual macOS"
-    image2="configuracion-virtualbox-macos-pantalla.png" thumb2="configuracion-virtualbox-macos-pantalla-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Configuración pantalla VirtualBox"
+{{< image
+    gallery="true"
+    image1="configuracion-virtualbox-macos-vm.png" optionsthumb1="300x200" title1="Configuración máquina virtual macOS"
+    image2="configuracion-virtualbox-macos-pantalla.png" optionsthumb2="300x200" title2="Configuración pantalla VirtualBox"
     caption="Configuración de la máquina virtual" >}}
 
 Si usamos Windows deberemos ejecutar los siguientes comandos en modo administrador, sustituyendo _macOS Sierra 10.12_ por el nombre que le hayamos dado a la máquina virtual al crearla:
@@ -37,36 +38,45 @@ En el caso de Linux el archivo de comandos es similar e igualmente sustituiremos
 
 Hecho estos dos pasos podemos proceder a iniciar la máquina virtual, veremos que empiezan a salir unos cuantos mensajes hasta que se inicia el sistema gráfico con la instalación y su asistente que constará de varios pasos.
 
-{{< figureproc
-    image1="1-instalacion-inicio.png" thumb1="1-instalacion-inicio-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Inicio instalación macOS"
-    image2="2-instalacion-welcome.png" thumb2="2-instalacion-welcome-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Asistente instalación macOS" >}}
-{{< figureproc
-    image1="3-instalacion-keyboard.png" thumb1="3-instalacion-keyboard-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Teclado"
-    image2="4-instalacion-location.png" thumb2="4-instalacion-location-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Localización" >}}
-{{< figureproc
-    image1="5-instalacion-transfer.png" thumb1="5-instalacion-transfer-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Transferencia"
-    image2="6-instalacion-apple-id.png" thumb2="6-instalacion-apple-id-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Apple ID" >}}
-{{< figureproc
-    image1="7-instalacion-terms-conditions.png" thumb1="7-instalacion-terms-conditions-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Términos y condiciones"
-    image2="8-instalacion-account.png" thumb2="8-instalacion-account-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Cuenta" >}}
-{{< figureproc
-    image1="9-instacion-timezone.png" thumb1="9-instacion-timezone-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Zona horaria"
-    image2="10-instalacion-diagnostics.png" thumb2="10-instalacion-diagnostics-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Diagnósticos" >}}
-{{< figureproc
-    image1="11-instalacion-siri.png" thumb1="11-instalacion-siri-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Siri"
-    image2="12-instalacion-setting-up.png" thumb2="12-instalacion-setting-up-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Configurando" >}}
+{{< image
+    gallery="true"
+    image1="1-instalacion-inicio.png" optionsthumb1="300x200" title1="Inicio instalación macOS"
+    image2="2-instalacion-welcome.png" optionsthumb2="300x200" title2="Asistente instalación macOS" >}}
+{{< image
+    gallery="true"
+    image1="3-instalacion-keyboard.png" optionsthumb1="300x200" title1="Teclado"
+    image2="4-instalacion-location.png" optionsthumb2="300x200" title2="Localización" >}}
+{{< image
+    gallery="true"
+    image1="5-instalacion-transfer.png" optionsthumb1="300x200" title1="Transferencia"
+    image2="6-instalacion-apple-id.png" optionsthumb2="300x200" title2="Apple ID" >}}
+{{< image
+    gallery="true"
+    image1="7-instalacion-terms-conditions.png" optionsthumb1="300x200" title1="Términos y condiciones"
+    image2="8-instalacion-account.png" optionsthumb2="300x200" title2="Cuenta" >}}
+{{< image
+    gallery="true"
+    image1="9-instacion-timezone.png" optionsthumb1="300x200" title1="Zona horaria"
+    image2="10-instalacion-diagnostics.png" optionsthumb2="300x200" title2="Diagnósticos" >}}
+{{< image
+    gallery="true"
+    image1="11-instalacion-siri.png" optionsthumb1="300x200" title1="Siri"
+    image2="12-instalacion-setting-up.png" optionsthumb2="300x200" title2="Configurando" >}}
 
 Terminada la instalación entramos en el escritorio con el aspecto clásico y fondo de pantalla de macOS y las aplicaciones incorporadas en el propio sistema por defecto.
 
-{{< figureproc
-    image1="13-macos-start.png" thumb1="13-macos-start-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Inicio"
-    image2="14-macos-help.png" thumb2="14-macos-help-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Ayuda" >}}
-{{< figureproc
-    image1="15-macos-overview.png" thumb1="15-macos-overview-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Resumen"
-    image2="16-macos-finder.png" thumb2="16-macos-finder-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Finder" >}}
-{{< figureproc
-    image1="17-macos-photos.png" thumb1="17-macos-photos-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Fotos"
-    image2="18-macos-preferences.png" thumb2="18-macos-preferences-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Preferencias" >}}
+{{< image
+    gallery="true"
+    image1="13-macos-start.png" optionsthumb1="300x200" title1="Inicio"
+    image2="14-macos-help.png" optionsthumb2="300x200" title2="Ayuda" >}}
+{{< image
+    gallery="true"
+    image1="15-macos-overview.png" optionsthumb1="300x200" title1="Resumen"
+    image2="16-macos-finder.png" optionsthumb2="300x200" title2="Finder" >}}
+{{< image
+    gallery="true"
+    image1="17-macos-photos.png" optionsthumb1="300x200" title1="Fotos"
+    image2="18-macos-preferences.png" optionsthumb2="300x200" title2="Preferencias" >}}
 
 Como partidario del software libre y la privacidad además de [los ínfimos impuestos que paga Apple][blogbitix-175] usando reprobable ingeniería fiscal y su software privativo no recomiendo usar un Mac pero si alguien quiere probar este sistema operativo antes de decidirse a hacer una compra usarlo de forma virtualizado es una buena ayuda para tomar una decisión y ver si nos gusta su sistema operativo aparte del propio equipo junto con su precio que podemos ver en las tiendas. Si no nos convence ni su software ni su abultado precio podemos optar por un portátil de [Slimbook](https://slimbook.es/) mucho más económico y con características notables con los que no tendremos que pagar tampoco el [impuesto Windows][elblogdepicodev-57] ya que podemos elegir entre varias la distribución GNU/Linux preinstalada que deseamos.
 

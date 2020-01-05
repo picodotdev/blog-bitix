@@ -29,8 +29,9 @@ Independiente de la implementación con Java 7 o con a Java 8 el uso sería el s
 
 {{< code file="Main.java" language="java" options="" >}}
 
-{{< figureproc
-    image1="multiplewriter-consola.png" thumb1="multiplewriter-consola.png" options1="2560x1440" optionsthumb1="450x400" title1="Salida en la consola" >}}
+{{< image
+    gallery="true"
+    image1="multiplewriter-consola.png" optionsthumb1="300x200" title1="Salida en la consola" >}}
 
 Con [Groovy][groovy] además de las _closures_ no será necesario que declararemos de forma explícita el lanzamiento de las excepciones sin embargo al usarlo perderíamos la ayuda que ofrece el compilador.
 

@@ -43,11 +43,13 @@ En la [documentación de FFmpeg](https://trac.ffmpeg.org/wiki) podemos encontrar
 
 Si preferimos realizar la conversión mediante una interfaz gráfica podemos usar VLC que también nos servirá para hacer la conversión tanto en Windows como en Mac OS además de GNU/Linux. Primeramente en el menu _Archivo_ _>_ _Convertir_ añadimos el archivo a convertir a la lista y pulsamos botón _Convertir_. En el siguiente diálogo seleccionaremos el perfil de salida, en este caso _Audio - Vorbis (OGG)_ y el nombre del archivo de salida, editando el perfil tendremos opción de modificar la tasa de bits del audio, además de la resolución y la posibilidad de aplicar algunos filtros como el normalizador de volumen.
 
-{{< figureproc
-    image1="vlc-input.png" thumb1="vlc-input-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Conversión audio de MP3 a OGG"
-    image2="vlc-codec.png" thumb2="vlc-codec-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="Selección de códec" >}}
-{{< figureproc
-    image1="vlc-output.png" thumb1="vlc-output-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Salida de conversión" >}}
+{{< image
+    gallery="true"
+    image1="vlc-input.png" optionsthumb1="300x200" title1="Conversión audio de MP3 a OGG"
+    image2="vlc-codec.png" optionsthumb2="300x200" title2="Selección de códec" >}}
+{{< image
+    gallery="true"
+    image1="vlc-output.png" optionsthumb1="300x200" title1="Salida de conversión" >}}
 
 {{< reference >}}
 * [Documentación de FFmpeg](https://trac.ffmpeg.org/wiki)

@@ -26,9 +26,10 @@ En alguna ocasión me han comentado que me donarían algo por los artículos que
 
 Quien crea que es mucho que pruebe a crearse una bitácora, un canal en [YouTube][youtube] o un _podcast_ y verá rápidamente que o se acierta en la temática y se es muy bueno creando contenido que genera interés o primero verá que han de pasar dos años y dedicar una ingente cantidad de horas a crear ese contenido para llegar a estas cifras que tampoco son altas, no en vano muchos de estos proyectos son abandonados al cabo de unos meses, por algo será.
 
-{{< figureproc
-    image1="analytics-2017.png" thumb1="analytics-2017-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Analytics 2017 de Blog Bitix"
-    image2="gadsense-2017.png" thumb2="gadsense-2017-thumb.png" options2="2560x1440" optionsthumb2="450x400" title2="AdSense 2017 de Blog Bitix"
+{{< image
+    gallery="true"
+    image1="analytics-2017.png" optionsthumb1="300x200" title1="Analytics 2017 de Blog Bitix"
+    image2="gadsense-2017.png" optionsthumb2="300x200" title2="AdSense 2017 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2017" >}}
 
 Pero por otra parte he recibido buenos comentarios sobre lo que escribo en Blog Bitix, por algunas personas vía [Twitter][twitter] y otras en algún comentario que me anima a seguir escribiendo y compartiendo como hasta ahora lo que voy aprendiendo e investigando que algún día espero utilizar en algún trabajo antes de que me jubile o pruebe ser un jardinero o barrendero.
@@ -101,8 +102,9 @@ Una buena colección de libros técnicos que he leído durante el último trío 
 
 Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al [_feed_ a Blog Bitix][blogbitix-feed]. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de [Klouner][klowner]... ¡Buen <strike>2016</strike> 2018!
 
-{{< figureproc
-    image1="christmas-tux-2017.jpg" options1="2560x1440" optionsthumb1="600x450" title1="Christmas Tux 2019" title1="¡Buen 2018!"
+{{< image
+    gallery="true"
+    image1="christmas-tux-2017.jpg" optionsthumb1="600x450" title1="Christmas Tux 2019" title1="¡Buen 2018!"
     caption="¡Buen 2018!" source="klowner.com" >}}
 
 {{% /post %}}

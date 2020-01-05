@@ -18,9 +18,10 @@ A iniciativa de [Victorhck en su blog](https://victorhckinthefreeworld.com) se i
 
 Aunque en buena parte mi blog no es solo de software libre y GNU/Linux de vez en cuando escribo algún artículo sobre estos temas, tampoco es un blog de solo programación más bien es una mezcla de ambas cosas, algo no muy definido. Me pareció curioso conocer un poco el lugar de trabajo que hay detrás de cada blog.
 
-{{< figureproc
-    image1="1.jpg" thumb1="1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Escritorio"
-    image2="2.jpg" thumb2="2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Escritorio" >}}
+{{< image
+    gallery="true"
+    image1="1.jpg" optionsthumb1="300x200" title1="Escritorio"
+    image2="2.jpg" optionsthumb2="300x200" title2="Escritorio" >}}
 
 El lugar donde escribo los borradores de artículo, edito, publico los artículos y programo los ejemplos así como lee libros técnicos no es muy sofisticado. Aunque no solo se hace en esa mesa, muchas ideas me surgen en el trabajo o de vuelta a casa que voy recopilando y escribiendo sobre ellas cuando les llega su turno. A la derecha de la mesa tengo una ventana por la que dispongo de luz natural que siempre se agradece aunque la mayor parte las paso a las noches.
 
@@ -32,17 +33,20 @@ La mesa y la silla son de [Ofiprix](http://www.ofiprix.com/), la mesa aunque es 
 
 Por otro lado se ve una [Raspberry Pi][raspberrypi] de los primeros modelos, la 1 y la versión B, con únicamente 256 MiB de memoria más que suficiente para realizar descargas a la máxima velocidad que permite mi conexión a internet, no hay nada que le eche que en una noche no sea capaz de descargar. Por supuesto, en mi caso usando la distribución [Arch Linux ARM][archlinuxarm] en ella y con un disco externo de 120 GiB que [utilizo como disco duro desde el que arrancarla vía USB][blogbitix-6] que es mucho más rápido que la tarjeta SD, seguro que tiene más de un lustro y estará más cerca de la década aún así aguanta y me presta gran utilidad.
 
-{{< figureproc
-    image1="3.jpg" thumb1="3-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Regleta enchufes y router ADSL"
-    image2="4.jpg" thumb2="4-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Altavoces, Raspberry Pi, Tux y amigos de papel" >}}
+{{< image
+    gallery="true"
+    image1="3.jpg" optionsthumb1="300x200" title1="Regleta enchufes y router ADSL"
+    image2="4.jpg" optionsthumb2="300x200" title2="Altavoces, Raspberry Pi, Tux y amigos de papel" >}}
 
 También se ven ahí unos altavoces con _subwoofer_ que utilizo para escuchar mi propia música o alguna radio de [Jamendo][jamendo], los tengo arrinconados en una esquina para que ocupen muy poco espacio en la mesa sobre todo los cables. Junto a los altavoces tengo a [Tux hecho con papel](assets/custom/tux.pdf) al igual que un [cubo cheatsheet](assets/custom/arch-linux-cheat-cube.zip) y un dodecaedro con el [calendario del año 2012](assets/custom/arch-linux-calendar-2012.zip) que no he ido actualizando, muy _archeros_ ellos que decoran un poco la mesa. Y unos bidones de agua que a veces utilizo.
 
-{{< figureproc
-    image1="tux.png" thumb1="tux-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Tux"
-    image2="arch-linux-calendar-2012.png" thumb2="arch-linux-calendar-2012-thumb.png" options2="2560x1440" optionsthumb2="450x400" title1="Arch Linux calendar" >}}
-{{< figureproc
-    image1="arch-linux-cheat-cube.png" thumb1="arch-linux-cheat-cube-thumb.png" options1="2560x1440" optionsthumb1="450x400" title1="Arch Linux cheat cube" >}}
+{{< image
+    gallery="true"
+    image1="tux.png" optionsthumb1="300x200" title1="Tux"
+    image2="arch-linux-calendar-2012.png" optionsthumb2="300x200" title1="Arch Linux calendar" >}}
+{{< image
+    gallery="true"
+    image1="arch-linux-cheat-cube.png" optionsthumb1="300x200" title1="Arch Linux cheat cube" >}}
 
 Tengo un par de discos duros externos USB que utilizo para hacer copias de seguridad [cifrados con LUKS y dm-crypt][blogbitix-128], uno de ellos era el original de 500 GiB del portátil que sustituí por el SSD.
 

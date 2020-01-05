@@ -18,12 +18,14 @@ Cuando me inscribí en la [BilboStack][bilbostack] para reservar entrada no me l
 
 El número de asistentes ha sido numeroso quedando algo de sitio libre en el _track 2_ que era un aula pero en la sala de conferencias del _track 1_ aunque tiene cómodas butacas salvo por su estrechez el sitio libre era inexsitente de modo que en algunas presentaciones ha habido algunos asistentes que han debido estar de pie.
 
-{{< figureproc
-    image1="bilbostack-2017.jpg" thumb1="bilbostack-2017.jpg" options1="2560x1440" optionsthumb1="450x400" title1="BilboStack 2017"
+{{< image
+    gallery="true"
+    image1="bilbostack-2017.jpg" optionsthumb1="300x200" title1="BilboStack 2017"
     caption="BilboStack 2017" >}}
-{{< figureproc
-    image1="universidad-de-deusto-1.jpg" thumb1="universidad-de-deusto-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Universidad de Deusto"
-    image2="universidad-de-deusto-2.jpg" thumb2="universidad-de-deusto-2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Universidad de Deusto"
+{{< image
+    gallery="true"
+    image1="universidad-de-deusto-1.jpg" optionsthumb1="300x200" title1="Universidad de Deusto"
+    image2="universidad-de-deusto-2.jpg" optionsthumb2="300x200" title2="Universidad de Deusto"
     caption="Universidad de Deusto" >}}
 
 Este era el programa completo con su horario, temas muy distintos y variados como Xamarin, _internet of things_, el siempre presente JavaScript con Angular y Node, Lean Analytics y DDD entre algunos otros de la siguiente agenda:
@@ -86,9 +88,10 @@ Este era el programa completo con su horario, temas muy distintos y variados com
     </tbody>
 </table>
 
-{{< figureproc
-    image1="track-1.jpg" thumb1="track-1-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Track 1"
-    image2="track-2.jpg" thumb2="track-2-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Track 2"
+{{< image
+    gallery="true"
+    image1="track-1.jpg" optionsthumb1="300x200" title1="Track 1"
+    image2="track-2.jpg" optionsthumb2="300x200" title2="Track 2"
     caption="Agenda" >}}
 
 Al igual que en ediciones previas hago un pequeño resumen de las presentaciones a las que asistí. Los resúmenes no le hace justicia a las grandes ponencias que fueron en realidad pero espero haber captado y transmitir aquí escuetamente las ideas básicas que se expusieron. Y con este es el tercer resumen consecutivo que escribo de la BilboStack, los anteriores (y posteriores que si tengo oportunidad espero escribir) de esta serie de artículos están al final de este artículo.
@@ -105,8 +108,9 @@ El _hardware_ era la propia lámpara y una placa de computación [Intel Edison](
 * [Presentación](https://es.slideshare.net/isabelcabezas/bilbostack-17-invisible-o-desaparece)
 {{< /reference >}}
 
-{{< figureproc
-    image1="invisible-o-desaparece.jpg" thumb1="invisible-o-desaparece-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Invisible o desaparece..." >}}
+{{< image
+    gallery="true"
+    image1="invisible-o-desaparece.jpg" optionsthumb1="300x200" title1="Invisible o desaparece..." >}}
 
 ### Érase una vez... el Design System <em>por Naiara Abaroa</em>
 
@@ -133,8 +137,9 @@ Algunos recursos de diseño e implementaciones conocidas de _Design Systems_ son
 * [Presentación](https://nabaroa.github.io/erase-una-vez-el-design-system/#/)
 {{< /reference >}}
 
-{{< figureproc
-    image1="design-system.jpg" thumb1="design-system-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Érase una vez... el Design System" >}}
+{{< image
+    gallery="true"
+    image1="design-system.jpg" optionsthumb1="300x200" title1="Érase una vez... el Design System" >}}
 
 ### Agile for scrummies <em>por Jorge Uriarte</em>
 
@@ -161,8 +166,9 @@ La combinación de un WIP pequeño junto con un sistema _pull_ en el que no se c
 * [Presentación](https://es.slideshare.net/Gailen/agile-forscrummiesbilbaostack)
 {{< /reference >}}
 
-{{< figureproc
-    image1="agile-for-scrummies.jpg" thumb1="agile-for-scrummies-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Agile for scrummies" >}}
+{{< image
+    gallery="true"
+    image1="agile-for-scrummies.jpg" optionsthumb1="300x200" title1="Agile for scrummies" >}}
 
 ### Domain-Driven Design, uniendo negocio con el software <em>por Gorka Laucirica y Beñat Espiña</em>
 
@@ -178,8 +184,9 @@ Un ejemplo de aplicación donde han aplicado DDD es [Kreta](https://github.com/k
 * Libro [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php)
 {{< /reference >}}
 
-{{< figureproc
-    image1="domain-driven-design.jpg" thumb1="domain-driven-design-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Domain-Driven Design, uniendo negocio con el software" >}}
+{{< image
+    gallery="true"
+    image1="domain-driven-design.jpg" optionsthumb1="300x200" title1="Domain-Driven Design, uniendo negocio con el software" >}}
 
 <hr>
 

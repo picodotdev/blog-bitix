@@ -32,10 +32,11 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Los fisgones (Sneakers)](https://www.filmaffinity.com/es/film233071.html)
 * [Otras películas sobre _hackers_](https://es.wikipedia.org/wiki/Categor%C3%ADa:Pel%C3%ADculas_sobre_hackers)
 
-{{< figureproc
-    image1="pirates-of-silicon-valley.jpg" thumb1="pirates-of-silicon-valley-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Piratas de Silicon Valley"
-    image2="office-space.jpg" thumb2="office-space-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Trabajo basura"
-    image3="wargames.jpg" thumb3="wargames-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Juegos de guerra" >}}
+{{< image
+    gallery="true"
+    image1="pirates-of-silicon-valley.jpg" optionsthumb1="300x200" title1="Piratas de Silicon Valley"
+    image2="office-space.jpg" optionsthumb2="300x200" title2="Trabajo basura"
+    image3="wargames.jpg" optionsthumb3="300x200" title3="Juegos de guerra" >}}
 
 ### Series
 
@@ -47,10 +48,11 @@ Si estás interesado en la tecnología, informática en general y en el software
 * [Scorpion](https://www.filmaffinity.com/es/film482651.html)
 * [Odio canibal](https://www.filmaffinity.com/es/film752650.html)
 
-{{< figureproc
-    image1="black-mirror.jpg" thumb1="black-mirror-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="Black Mirror"
-    image2="mr-robot.jpg" thumb2="mr-robot-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Mr Robot"
-    image3="silicon-valley.jpg" thumb3="silicon-valley-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Silicon Valley" >}}
+{{< image
+    gallery="true"
+    image1="black-mirror.jpg" optionsthumb1="300x200" title1="Black Mirror"
+    image2="mr-robot.jpg" optionsthumb2="300x200" title2="Mr Robot"
+    image3="silicon-valley.jpg" optionsthumb3="300x200" title3="Silicon Valley" >}}
 
 ### Documentales
 
@@ -91,11 +93,10 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 * [Preguntas Richard Matthew Stallman](https://www.youtube.com/watch?v=06pLIUqB6zY)
 * [Entrevista en Español con Richard Stallman, «Software Libre»](https://www.youtube.com/watch?v=onrIApj3Cjs)
 
-<div class="media">
-  <figure>
-    <img src="assets/images/logotypes/gnu.svg" alt="GNU" title="GNU" width="200">
-    <img src="assets/images/logotypes/linux.svg" alt="Linux" title="Linux" width="200">
-</div>
+{{< image
+    gallery="false"
+    image1="assets/images/logotypes/gnu.svg" optionsthumb1="200x200" title1="GNU"
+    image2="assets/images/logotypes/linux.svg" optionsthumb2="200x200" title2="Linux" >}}
 
 ### Libros y novelas
 
@@ -108,10 +109,11 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 * ¿Sueñan los androides con ovejas eléctricas? de _Philip K. Dick_
 * [Algunas novelas sobre informática y _hackers_](http://www.proyecto-tic.es/algunas-novelas-sobre-informatica-y-hackers/)
 
-{{< figureproc
-    image1="el-circulo.jpg" thumb1="el-circulo-thumb.jpg" options1="2560x1440" optionsthumb1="450x400" title1="El circulo"
-    image2="microsiervos.jpg" thumb2="microsiervos-thumb.jpg" options2="2560x1440" optionsthumb2="450x400" title2="Microsiervos"
-    image3="cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" thumb3="cuando-los-administradores-de-sistemas-gobernaron-tierra-thumb.jpg" options3="2560x1440" optionsthumb3="450x400" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
+{{< image
+    gallery="true"
+    image1="el-circulo.jpg" optionsthumb1="300x200" title1="El circulo"
+    image2="microsiervos.jpg" optionsthumb2="300x200" title2="Microsiervos"
+    image3="cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" optionsthumb3="300x200" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
 
 ¿Conoces alguno imprescindible más que incluir en esta lista?
 
