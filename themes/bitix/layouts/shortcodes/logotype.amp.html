@@ -3,55 +3,117 @@
 {{ $imgtagclose := $tags.imgtagclose }}
 {{ $imgtagsrc := $tags.imgtagsrc }}
 
-{{ $proportion := div 4.0 3.0 }}
-{{ $width := .Params.width }}
-{{ $width1 := .Params.width1 }}
-{{ $width2 := .Params.width2 }}
-{{ $width3 := .Params.width3 }}
-{{ $width4 := .Params.width4 }}
-{{ $height := default (int (div (int $width) $proportion)) .Params.height }}
-{{ $height1 := default (int (div (int $width1) $proportion)) .Params.height1 }}
-{{ $height2 := default (int (div (int $width2) $proportion)) .Params.height2 }}
-{{ $height3 := default (int (div (int $width3) $proportion)) .Params.height3 }}
-{{ $height4 := default (int (div (int $width4) $proportion)) .Params.height4 }}
+{{ $logtypesinfo := $.Site.Data.logotypes.images }}
+{{ if eq $logtypesinfo nil }}{{ errorf "Missing logotypes info: %s" .Position }}{{ end }}
+{{ $defaultdict := (dict "" nil) }}
+
+{{ $image := cond (eq .Params.image nil) "" .Params.image }}
+{{ $image1 := cond (eq .Params.image1 nil) "" .Params.image1 }}
+{{ $image2 := cond (eq .Params.image2 nil) "" .Params.image2 }}
+{{ $image3 := cond (eq .Params.image3 nil) "" .Params.image3 }}
+{{ $image4 := cond (eq .Params.image4 nil) "" .Params.image4 }}
+{{ $info := index (default $defaultdict $logtypesinfo) (default "" $image) }}
+{{ $info1 := index (default $defaultdict $logtypesinfo) (default "" $image1) }}
+{{ $info2 := index (default $defaultdict $logtypesinfo) (default "" $image2) }}
+{{ $info3 := index (default $defaultdict $logtypesinfo) (default "" $image3) }}
+{{ $info4 := index (default $defaultdict $logtypesinfo) (default "" $image4) }}
+{{ $proportion := index (default $defaultdict $info) "proportion" }}
+{{ $proportion1 := index (default $defaultdict $info1) "proportion" }}
+{{ $proportion2 := index (default $defaultdict $info2) "proportion" }}
+{{ $proportion3 := index (default $defaultdict $info3) "proportion" }}
+{{ $proportion4 := index (default $defaultdict $info4) "proportion" }}
+{{ $defaultwidth := index (default $defaultdict $info) "defaultwidth" }}
+{{ $defaultwidth1 := index (default $defaultdict $info1) "defaultwidth" }}
+{{ $defaultwidth2 := index (default $defaultdict $info2) "defaultwidth" }}
+{{ $defaultwidth3 := index (default $defaultdict $info3) "defaultwidth" }}
+{{ $defaultwidth4 := index (default $defaultdict $info4) "defaultwidth" }}
+{{ $defaulttitle := index (default $defaultdict $info) "defaulttitle" }}
+{{ $defaulttitle1 := index (default $defaultdict $info1) "defaulttitle" }}
+{{ $defaulttitle2 := index (default $defaultdict $info2) "defaulttitle" }}
+{{ $defaulttitle3 := index (default $defaultdict $info3) "defaulttitle" }}
+{{ $defaulttitle4 := index (default $defaultdict $info4) "defaulttitle" }}
+
+{{ $title := default $defaulttitle .Params.title }}
+{{ $title1 := default $defaulttitle1 .Params.title1 }}
+{{ $title2 := default $defaulttitle2 .Params.title2 }}
+{{ $title3 := default $defaulttitle3 .Params.title3 }}
+{{ $title4 := default $defaulttitle4 .Params.title4 }}
+
+{{ $imagewidth := default $defaultwidth .Params.width }}
+{{ $imagewidth1 := default $defaultwidth1 .Params.width1 }}
+{{ $imagewidth2 := default $defaultwidth2 .Params.width2 }}
+{{ $imagewidth3 := default $defaultwidth3 .Params.width3 }}
+{{ $imagewidth4 := default $defaultwidth4 .Params.width4 }}
+
+{{ $width := $proportion }}
+{{ $width1 := $proportion1 }}
+{{ $width2 := $proportion2 }}
+{{ $width3 := $proportion3 }}
+{{ $width4 := $proportion4 }}
+{{ $height := "1" }}
+{{ $height1 := "1" }}
+{{ $height2 := "1" }}
+{{ $height3 := "1" }}
+{{ $height4 := "1" }}
+{{ $style := print " style=\"min-width: " $imagewidth "px;\"" }}
+{{ $style1 := print " style=\"min-width: " $imagewidth1 "px;\"" }}
+{{ $style2 := print " style=\"min-width: " $imagewidth2 "px;\"" }}
+{{ $style3 := print " style=\"min-width: " $imagewidth3 "px;\"" }}
+{{ $style4 := print " style=\"min-width: " $imagewidth4 "px;\"" }}
+
+{{ if and .Params.image (eq $proportion nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image .Position }}{{ end }}
+{{ if and .Params.image1 (eq $proportion1 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image1 .Position }}{{ end }}
+{{ if and .Params.image2 (eq $proportion2 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image2 .Position }}{{ end }}
+{{ if and .Params.image3 (eq $proportion3 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image3 .Position }}{{ end }}
+{{ if and .Params.image4 (eq $proportion4 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image4 .Position }}{{ end }}
+{{ if and .Params.image (eq $width nil) }}{{ errorf "Missing defaultwidth or width '%s': %s" .Params.image .Position }}{{ end }}
+{{ if and .Params.image1 (eq $width1 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image1 .Position }}{{ end }}
+{{ if and .Params.image2 (eq $width2 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image2 .Position }}{{ end }}
+{{ if and .Params.image3 (eq $width3 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image3 .Position }}{{ end }}
+{{ if and .Params.image4 (eq $width4 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image4 .Position }}{{ end }}
+{{ if and .Params.image (eq $title nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image .Position }}{{ end }}
+{{ if and .Params.image1 (eq $title1 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image1 .Position }}{{ end }}
+{{ if and .Params.image2 (eq $title2 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image2 .Position }}{{ end }}
+{{ if and .Params.image3 (eq $title3 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image3 .Position }}{{ end }}
+{{ if and .Params.image4 (eq $title4 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image4 .Position }}{{ end }}
 
 {{ if .Params.image }}
 {{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image)) true }}{{ errorf "Missing file '%s': %s" .Params.image .Position }}{{ end }}
-{{ with .Get "width" }}{{ else }}{{ errorf "Missing value for 'width': %s" .Position }}{{ end }}
+{{ if (eq $width nil) }}{{ errorf "Missing value for 'width': %s" .Position }}{{ end }}
 {{ $image := print "assets/images/logotypes/" .Params.image }}
-<div class="logotypes">
-    {{ $imgtagopen | safeHTML }} src="{{ $image | relURL }}" class="right" width="{{ .Params.width }}" height="{{ $height }}" layout="responsive" alt="{{ .Params.title }}" title="{{ .Params.title }}">{{ $imgtagclose | safeHTML }}
+<div class="logotypes"{{ $style | safeHTMLAttr }}>
+   {{ $imgtagopen | safeHTML }} src="{{ $image | relURL }}" class="right" width="{{ $width }}" height="{{ $height }}" layout="responsive" alt="{{ $title }}" title="{{ $title }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image1 }}
 {{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image1)) true }}{{ errorf "Missing file '%s': %s" .Params.image1 .Position }}{{ end }}
-{{ with .Get "width1" }}{{ else }}{{ errorf "missing value for 'width1': %s" .Position }}{{ end }}
+{{ if (eq $width1 nil) }}{{ errorf "Missing value for 'width1': %s" .Position }}{{ end }}
 {{ $image1 := print "assets/images/logotypes/" .Params.image1 }}
-<div class="logotypes">
-    {{ $imgtagopen | safeHTML }} src="{{ $image1 | relURL }}" class="right" width="{{ .Params.width1 }}" height="{{ $height1 }}" layout="responsive" alt="{{ .Params.title1 }}" title="{{ .Params.title1 }}">{{ $imgtagclose | safeHTML }}
+<div class="logotypes"{{ $style1 | safeHTMLAttr }}>
+  {{ $imgtagopen | safeHTML }} src="{{ $image1 | relURL }}" class="right" width="{{ $width1 }}" height="{{ $height1 }}" layout="responsive" alt="{{ $title1 }}" title="{{ $title1 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image2 }}
 {{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image2)) true }}{{ errorf "Missing file '%s': %s" .Params.image2 .Position }}{{ end }}
-{{ with .Get "width2" }}{{ else }}{{ errorf "missing value for 'width2': %s" .Position }}{{ end }}
+{{ if (eq $width2 nil) }}{{ errorf "Missing value for 'width2': %s" .Position }}{{ end }}
 {{ $image2 := print "assets/images/logotypes/" .Params.image2 }}
-<div class="logotypes">
-    {{ $imgtagopen | safeHTML }} src="{{ $image2 | relURL }}" class="right" width="{{ .Params.width2 }}" height="{{ $height2 }}" layout="responsive" alt="{{ .Params.title2 }}" title="{{ .Params.title2 }}">{{ $imgtagclose | safeHTML }}
+<div class="logotypes"{{ $style2 | safeHTMLAttr }}>
+   {{ $imgtagopen | safeHTML }} src="{{ $image2 | relURL }}" class="right" width="{{ $width2 }}" height="{{ $height2 }}" layout="responsive" alt="{{ $title2 }}" title="{{ $title2 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image3 }}
 {{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image3)) true }}{{ errorf "Missing file '%s': %s" .Params.image3 .Position }}{{ end }}
-{{ with .Get "width3" }}{{ else }}{{ errorf "missing value for 'width3': %s" .Position }}{{ end }}
+{{ if (eq $width3 nil) }}{{ errorf "Missing value for 'width3': %s" .Position }}{{ end }}
 {{ $image3 := print "assets/images/logotypes/" .Params.image3 }}
-<div class="logotypes">
-    {{ $imgtagopen | safeHTML }} src="{{ $image3 | relURL }}" class="right" width="{{ .Params.width3 }}" height="{{ $height3 }}" layout="responsive" alt="{{ .Params.title3 }}" title="{{ .Params.title3 }}">{{ $imgtagclose | safeHTML }}
+<div class="logotypes"{{ $style3 | safeHTMLAttr }}>
+   {{ $imgtagopen | safeHTML }} src="{{ $image3 | relURL }}" class="right" width="{{ $width3 }}" height="{{ $height3 }}" layout="responsive" alt="{{ $title3 }}" title="{{ $title3 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}
 {{ if .Params.image4 }}
 {{ if ne (fileExists (print "static/assets/images/logotypes/" .Params.image4)) true }}{{ errorf "Missing file '%s': %s" .Params.image4 .Position }}{{ end }}
-{{ with .Get "width4" }}{{ else }}{{ errorf "missing value for 'width4': %s" .Position }}{{ end }}
+{{ if (eq $width4 nil) }}{{ errorf "Missing value for 'width4': %s" .Position }}{{ end }}
 {{ $image4 := print "assets/images/logotypes/" .Params.image4 }}
-<div class="logotypes">
-    {{ $imgtagopen | safeHTML }} src="{{ $image4 | relURL }}" class="right" width="{{ .Params.width4 }}" height="{{ $height4 }}" layout="responsive" alt="{{ .Params.title4 }}" title="{{ .Params.title4 }}">{{ $imgtagclose | safeHTML }}
+<div class="logotypes"{{ $style4 | safeHTMLAttr }}>
+   {{ $imgtagopen | safeHTML }} src="{{ $image4 | relURL }}" class="right" width="{{ $width4 }}" height="{{ $height4 }}" layout="responsive" alt="{{ $title4 }}" title="{{ $title4 }}">{{ $imgtagclose | safeHTML }}
 </div>
 {{ end }}

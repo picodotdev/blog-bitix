@@ -15,7 +15,7 @@ summary: "El _kit_ de electrónica para la Raspberry Pi incluye varios dispositi
 
 {{% post %}}
 
-{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" >}}
 
 En artículos anteriores ya he comentado [como hacer parpadear un diodo LED][blogbitix-214], [como usar un display LCD de 16 columnas y 2 filas][blogbitix-215] y [como obtener la temperatura y humedad de un sensor DHT11][blogbitix-219], todo estos ejemplo usando varios elementos de [kit de iniciación a la electrónica para la Raspberry Pi 3][blogbitix-212]. En este artículo en el que mostraré cómo usar un LED, un pulsador y un zumbador es mucho más sencillo que los casos del _display_ LCD de 16 filas y 2 columnas y del sensor DHT11. Vistos los ejemplos de artículos anteriores lo más difícil de este es hacer el conexionado con los cables. Para controlar los _pines_ usaré la librería [diozero][diozero] que proporciona clases de alto nivel para cada uno de estos elementos para que desde código Java sea bastante sencillo controlarlos.
 

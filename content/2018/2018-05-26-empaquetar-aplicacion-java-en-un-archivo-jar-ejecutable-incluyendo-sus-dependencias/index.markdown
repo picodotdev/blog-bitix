@@ -15,7 +15,7 @@ summary: "Las aplicaciones Java se distribuyen en uno o varios archivos _jar_. S
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 La forma de distribuir el código compilado a _bytecode_ en Java es a través de archivos de extensión _jar_. Los archivos _jar_ no son más que archivos comprimidos den formato _zip_. Si se les cambia de extensión y se descomprimen se extrae su contenido seguramente con una buena cantidad de archivos de extensión _class_ que es la extensión para los archivos Java compilados a _bytecode_ y que la máquina virtual interpreta para su ejecución. Las librerías que use la aplicación también se deben distribuir junto a esta para que funcione, por lo que la aplicación se distribuirá en forma de una colección de archivos _jar_.
 

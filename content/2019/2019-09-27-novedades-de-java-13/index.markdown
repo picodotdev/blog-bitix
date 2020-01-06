@@ -15,7 +15,7 @@ series: ["java-platform"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones _switch_ mejoradas.
 

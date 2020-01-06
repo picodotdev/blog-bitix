@@ -15,7 +15,7 @@ series: ["spring-cloud"]
 
 {{% post %}}
 
-{{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="spring.svg" title1="Spring" width1="200" image2="java.svg" >}}
 
 Un servicio que recibe numerosas peticiones o es crítico para el funcionamiento de una aplicación es necesario escalarlo o crear múltiples instancias de él para atender toda la carga que se demanda o para que en caso de que una instancia falle haya otras disponibles que funcionen correctamente para atender las peticiones.
 

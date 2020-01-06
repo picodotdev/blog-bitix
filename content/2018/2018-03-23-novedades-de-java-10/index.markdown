@@ -16,7 +16,7 @@ summary: "Oracle y los ingenieros a cargo del desarrollo de Java están haciendo
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 El 20 de marzo de 2018 se publicó la que es la versión 10 de Java siguiendo el nuevo calendario de publicar una nueva versión cada seis meses, Java 9 fue publicado en septiembre del año anterior. Con este nuevo calendario no pasarán tantos años entre cada nueva versión que era la queja de algunos desarrolladores y el motivo de que la plataforma Java no evolucionar tan rápidamente como algunos desarrolladores desean, quizá ahora la queja sea al contrario que se publican demasiadas versiones y no da tiempo a asimilar los cambios. Para dar cabida a ambas necesidades y garantizar un soporte prolongado cada año y medio será declarada una versión como de soporte a plazo largo o _LTS_ para que las empresas tengan seguridad en las aplicaciones que desarrollen.
 

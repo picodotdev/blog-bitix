@@ -15,7 +15,7 @@ summary: "Una de las tareas más importante que realizan algunas aplicaciones es
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En las primeras versiones de Java el sistema de entrada/salida proporcionado en el paquete [_java.io_](https://docs.oracle.com/javase/10/docs/api/java/io/package-summary.html) era básico. En la versión 1.4 de Java se añadió un nuevo sistema de entrada/salida llamado NIO para suplir algunas de sus deficiencias que posteriormente en Java 7 se mejoró aún más con NIO.2. Entre las mejoras se incluyen permitir navegación de directorios sencillo, soporte para reconocer enlaces simbólicos, leer atributos de ficheros como permisos e información como última fecha de modificación, soporte de entrada/salida asíncrona y soporte para operaciones básicas sobre ficheros como copiar y mover ficheros.
 

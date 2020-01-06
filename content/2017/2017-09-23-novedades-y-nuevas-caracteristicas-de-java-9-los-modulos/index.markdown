@@ -16,7 +16,7 @@ summary: "Si en Java 8 la característica más destacada fue la incorporación a
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Después de unos cuantos aplazamientos de fechas finalmente ha sido publicado el 21 de septiembre de 2017 la [versión 9 del lenguaje y plataforma Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html), tres años después de las también importantes [novedades y nuevas características de Java 8][blogbitix-17]. Al mismo tiempo se ha publicado versión de [Java EE 8](https://www.oracle.com/technetwork/java/javaee/downloads/index.html).
 

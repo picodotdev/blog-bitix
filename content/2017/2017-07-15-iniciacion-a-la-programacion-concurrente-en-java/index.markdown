@@ -15,7 +15,7 @@ summary: "Java proporciona en su API numerosas primitivas para realizar programa
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En todo el tiempo que llevo programando en Java no he tenido necesidad de conocer en detalle las primitivas de concurrencia que ofrece el lenguaje y la API. Java desde sus primeras versiones ya ofrecía el soporte básico para la programación concurrente con las clases [Thread](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html) y [Runnable](https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html) y algunas primitivas de sincronización como la palabra clave reservada _syncrhonized_, los _locks_ intrínsecos de los objetos y algunos métodos de la clase _Thread_ como [sleep](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep-long-), [wait](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait--) y [join](https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#join--). Entre la documentación de Java está el siguiente [tutorial sobre la concurrencia en Java](https://docs.oracle.com/javase/tutorial/essential/concurrency/) que es muy recomendable leer.
 

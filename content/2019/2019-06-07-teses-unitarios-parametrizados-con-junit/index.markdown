@@ -14,7 +14,7 @@ summary: "Hay múltiples lenguajes y librerías donde cada una publica nuevas ve
 
 {{% post %}}
 
-{{< logotype image1="junit.png" title1="JUnit" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="junit.png" title1="JUnit" width1="200" image2="java.svg" >}}
 
 En mis preferencias de herramientas que elegiría para un proyecto basado en la plataforma Java estaba [Spock][spock], por la legibilidad de los teses con su lenguaje específico de dominio  o DSL con sus diferentes secciones _given_, _when_, _then_. Otro motivo era la posibilidad de ejercitar un mismo test pero con diferentes parámetros para ejecutar todas las condiciones del sujeto bajo prueba con la sección _where_ y las posibilidades de _mocking_ incorporadas. Pero Spock usa el lenguaje [Groovy]. Es menos verboso, es dinámico pero que no posee igual la asistencia de código de los IDEs y por su naturaleza dinámica con posibilidad de errores de compilación no detectados hasta en tiempo de ejecución. En mis preferencias está el lenguaje Java así que he revisado si estás características de Spock son ofrecidas por [JUnit][junit] desde la última vez que lo use.
 

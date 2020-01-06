@@ -14,7 +14,7 @@ summary: "Los métodos _equals_ y _hashCode_ son esenciales en las colecciones d
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En Java los métodos [equals](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals-java.lang.Object-) y [hashCode](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode--) están definidos en la raíz de la jerarquía de clases, esto es en la clase [Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html), lo que significa que todas las instancias de objetos los poseen. Estos métodos son especialmente importantes ya que afectan al correcto funcionamiento de las colecciones como [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html), [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html), [Set](https://docs.oracle.com/javase/8/docs/api/java/util/Set.html) y [Map](https://docs.oracle.com/javase/8/docs/api/java/util/Map.html), colecciones, listas, conjuntos y mapas que es difícil que cualquier programa no use alguna implementación de ellas.
 

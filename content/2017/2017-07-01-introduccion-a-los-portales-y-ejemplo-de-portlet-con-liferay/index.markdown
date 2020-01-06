@@ -16,7 +16,7 @@ summary: "Muchas organizaciones usan portales para mantener su presencia en inte
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="liferay.png" title2="Liferay" width2="400" >}}
+{{< logotype image1="java.svg" image2="liferay.svg" title2="Liferay" width2="200" >}}
 
 Los portales son una especialización de un sitio web que presenta información diversa de una forma integrada y uniforme. Suelen aplicarse cuando una entidad tiene necesidades de presentar información según el usuarios autenticado, su rol, los usuarios necesitan colaborar o se necesita integrar información de múltiples fuentes. Son usados por entidades públicas como gobiernos, ayuntamientos y también por corporaciones de tamaño mediano y grande.
 

@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Usar una librería como [Log4j][log4j] es probablemente indispensable en una aplicación para obtener información de su funcionamiento, mensajes informativos, advertencias, errores o excepciones que se están produciendo o se han producido. Los mensajes que se emiten contienen información útil para monitorización en tiempo real o su inspección pasado un tiempo.
 

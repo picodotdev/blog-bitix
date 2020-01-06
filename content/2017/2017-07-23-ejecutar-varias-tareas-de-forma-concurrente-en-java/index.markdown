@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En el artículo de [iniciación a la programación concurrente en Java][blogbitix-246] explicaba las facilidades que proporciona este lenguaje para la programación de tareas con varios hilos que implica la sincronización y bloqueo mediante varias primitivas como semáforos o _locks_, ponía el ejemplo y su código de dos de los típicos ejemplos que suelen usarse en las asignaturas de sistemas operativos, el problema de los filósofos y el del barbero.
 

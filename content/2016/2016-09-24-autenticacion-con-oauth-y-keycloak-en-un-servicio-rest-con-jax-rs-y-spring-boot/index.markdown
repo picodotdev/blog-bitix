@@ -14,7 +14,7 @@ summary: "Keycloak es un proveedor de OAuth que podemos usar en nuestras aplicac
 
 {{% post %}}
 
-{{< logotype image1="keycloak.png" title1="Keycloak" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="keycloak.png" title1="Keycloak" width1="200" image2="java.svg" >}}
 
 Una forma de autenticar a los clientes de un servicio REST es usar [autenticación Basic](https://en.wikipedia.org/wiki/Basic_access_authentication) que se basa en añadir una cabecera en la petición en la que se incluye un usuario y contraseña. La autenticación Basic es sencilla pero para que sea segura ha de [usar el protocolo seguro HTTPS][blogbitix-14].
 

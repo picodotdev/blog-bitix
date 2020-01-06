@@ -13,7 +13,7 @@ summary: "Entre las ventajas de integrar dos aplicaciones mediante el envío de 
 
 {{% post %}}
 
-{{< logotype image1="rabbitmq.svg" title1="RabbitMQ" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="rabbitmq.svg" title1="RabbitMQ" width1="200" image2="java.svg" >}}
 
 Las aplicaciones que se integran mediante el envío y recepción de mensajes evitan el acoplamiento y sincronía junto con la posibilidad de implementar cada una de ellas con diferentes lenguajes o plataformas. Entre las especificaciones que componen Java EE está <abbr title=”Java Message Service”>JMS</abbr> pero tanto la aplicación que envía como la que recibe mensajes deben estar programadas en el lenguaje Java, a menos que incluyamos un adaptador que permita a la aplicación no Java interactuar con JMS.
 

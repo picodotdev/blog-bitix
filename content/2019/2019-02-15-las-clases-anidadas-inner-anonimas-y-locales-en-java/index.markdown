@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Por regla general en Java cada clase se define en su propio archivo de código fuente, pdor ejemplo, una clase de nombre _Order_ se ha de definir en el archivo _Order.java_. Sin embargo, esta no es la única forma de definir clases, es posible definir clases _inner_ y anónimas que evita tener que crear un nuevo archivo de código fuente.
 

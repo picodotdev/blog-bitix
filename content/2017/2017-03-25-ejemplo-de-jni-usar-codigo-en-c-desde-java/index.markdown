@@ -16,7 +16,7 @@ summary: "Para tareas muy específicas que requieran alto rendimiento, baja late
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="gnu.svg" title2="SVG" width2="200" image3="linux.svg" title3="Linux" wdth3="200" width3="200" >}}
+{{< logotype image1="java.svg" image2="gnu.svg" title2="SVG" width2="200" image3="linux.svg" title3="Linux" wdth3="200" width3="200" >}}
 
 Nunca hasta ahora había tenido necesidad de crear un programa que no estuviese completamente escrito en el lenguaje Java. La [API de Java][javadoc-8] ofrece multitud de clases para cualquier funcionalidad que necesitemos desde estructuras de datos hasta algoritmos de búsqueda o criptografía. También porque el rendimiento de un programa en Java es suficiente y similar a un programa equivalente escrito en C o C++ gracias a las optimizaciones que implementa la máquina virtual de Java o <abbr title="Java Virtual Machine">JVM</abbr> aún siendo los programas Java compilados a una representación intermedia de _bytecode_ independiente de la arquitectura de procesador y sistema operativo en archivos de extensión _class_ y posteriormente interpretados y traducidos a la arquitectura de ejecución, lo que le proporciona a Java la conocida frase _"Write once, run anywhere"_.
 

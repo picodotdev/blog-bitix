@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Usando la librería [Jansi][Jansi] es posible [hacer que un programa Java emita texto en color en la terminal][elblogdepicodev-135]. Emitir color en la terminal sirve para identificar más fácilmente y visualmente ciertas partes del texto, por ejemplo, emitiendo en rojo mensajes importantes o con color amarillo de fondo algún dato. Una utilidad práctica es formatear con color una sentencia SQL que se va a ejecutar en una aplicación a modo de traza o con colores el código fuente de un archivo Java u otro tipo de archivo de texto.
 

@@ -12,7 +12,7 @@ tags: ["java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="jmonkeyengine.png" title1="jMonkeyEngine" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="jmonkeyengine.png" title1="jMonkeyEngine" width1="200" image2="java.svg" >}}
 
 Erróneamente se sigue pensado que Java es un lenguaje lento en ejecución, en las primeras versiones era cierto pero hoy la realidad es que con las mejoras introducidas en cada versión de Java y la máquina virtual el rendimiento actual es comparable a C y C++. En la programación de juegos y 3D gran parte del proceso de representación gráfica se ha descargado de la CPU a las cada vez más potentes tarjetas gráficas, la potencia de estas GPU son las que determinan la capacidad de proceso gráfico y la calidad gráfica de los juegos.
 

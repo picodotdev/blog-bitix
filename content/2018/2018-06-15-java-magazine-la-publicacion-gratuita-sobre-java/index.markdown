@@ -14,7 +14,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 La revista [Java Magazine][java-magazine] es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista [@Oraclejavamag](https://twitter.com/Oraclejavamag). Su longitud ronda algo menos de 100 páginas por número.
 

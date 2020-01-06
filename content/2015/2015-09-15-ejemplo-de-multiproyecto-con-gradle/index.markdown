@@ -14,7 +14,7 @@ summary: "En un proyecto grande podemos tener necesidad de dividir el monolito a
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="gradle.svg" title2="Gradle" width2="200" >}}
+{{< logotype image1="java.svg" image2="gradle.svg" title2="Gradle" width2="200" >}}
 
 Cuando una aplicación o proyecto crece en algún momento podemos tener necesidad de partir el monolito en varios módulos más pequeños y más manejables. Las arquitecturas basadas en microservicios proponen en vez de tener una aplicación grande que contenga toda la funcionalidad dividirla en varios servicios manejables, pequeños y lo más independientes posible. En el libro [Building Microservices](https://amzn.to/2MZWW6u) explican muy bien la idea y conceptos de los microservicios. La división de una aplicación implica tener un repositorio de código fuente para cada proyecto, probablemente algunos proyectos dependan de otros y haya alguno que sea utilizado por varios como uno de utilidades. Aunque diría que en los microservicios se prefiere en cierta medida duplicar código que compartir para que cada proyecto tenga un ciclo de vida independiente, esto permite desplegarlos individualmente, aún así podemos aceptar compartir cierto código de utilidades o componentes, necesitando que unos proyectos dependan de otros.
 

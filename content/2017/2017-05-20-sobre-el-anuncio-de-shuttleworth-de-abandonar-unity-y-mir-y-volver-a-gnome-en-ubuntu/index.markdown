@@ -14,7 +14,7 @@ tags: ["gnu-linux", "opinion", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="ubuntu.png" title1="Ubuntu" width1="200" image2="canonical.svg" title2="Canonical" width2="350" >}}
+{{< logotype image1="ubuntu.svg" title1="Ubuntu" width1="200" image2="canonical.svg" title2="Canonical" width2="350" >}}
 
 Hace unas semanas el fundador de Ubuntu, [Mark Shuttleworth][mark-shuttleworth], una de las distribuciones más populares de [GNU][gnu]/[Linux][linux] publicaba que [abandona dos de sus proyectos más conocidos, la interfaz Unity y el servidor gráfico Mir](https://plus.google.com/+MarkShuttleworthCanonical/posts/7LYubpaHUHH). Uno de ellos la interfaz Unity en favor de [GNOME][gnome] que se materializará en la siguiente versión de Ubuntu, la 17.10 o 18.04 LTS. Al mismo tiempo daba a conocer que abandonaba el desarrollo de su servidor gráfico [Mir][mir] en favor de su alternativa y más aceptada en la comunidad [Wayland][wayland].
 

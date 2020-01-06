@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 La documentación generada por [la herramienta Javadoc][blogbitix-259] se puede adaptar a las necesidades propias ya que tiene mecanismos para extenderla. [Crear un _taglet_ propio][blogbitix-261] es una forma pero también se pueden modificar los estilos aplicados al HTML generado, por ejemplo, para adaptar el Javadoc a los colores de la organización o para incluir un logotipo en la cabecera o un texto en el pie de página.
 

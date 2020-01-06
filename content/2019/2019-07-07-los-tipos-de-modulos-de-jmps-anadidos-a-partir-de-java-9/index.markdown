@@ -14,7 +14,7 @@ summary: "Los módulos de Java dotan a la plataforma de nuevas características.
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Con la [publicación de Java 9][blogbitix-263] el 2017 se introdujo la importante novedad de los módulos que proporciona a la plataforma Java varias características como encapsulación fuerte, interfaces bien definidas y dependencias explícitas. Todos las clases se organizan en paquetes y en Java 9 también en módulos para lo cual fue necesario reorganizar en módulos todos los paquetes de los que se compone la API de Java.
 

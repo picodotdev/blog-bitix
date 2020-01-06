@@ -14,7 +14,7 @@ summary: "Hace ya más de una década que en Java 5 se introdujeron los _generic
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Los _generics_ fueron introducidos en la versión 5 de Java en 2004 junto con otras muchas novedades suponiendo en su historia una de las mayores modificaciones o al mismo nivel de las [novedades introducidas con Java 8][blogbitix-17] más recientemente al lenguaje Java. Los _generics_ son importantes ya que permiten al compilador informar de muchos errores de compilación que hasta el momento solo se descubrirían en tiempo de ejecución, al mismo tiempo permiten eliminar los _cast_ simplificando, reduciendo la repetición y aumentando la legibilidad el código. Los errores por _cast_ inválido son especialmente problemáticos de _debuggear_ ya que el error se suele producir en un sitio alejado del de la causa.
 

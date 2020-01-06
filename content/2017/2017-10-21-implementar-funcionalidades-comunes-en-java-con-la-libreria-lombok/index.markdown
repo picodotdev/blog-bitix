@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Java es un lenguaje verboso además requerir realizar las definiciones de forma explícita y con poco azúcar sintáctico (o como diría algún otro, poco veneno para ratas), esto hace que el número de líneas de código necesarias sea mayor que en otros lenguajes. Que Java sea verboso, explícito y con poco azúcar sintáctico no es necesariamente un inconveniente ya que la mayor parte del tiempo los programadores la dedicamos a leer código ya escrito sin embargo a mayor número de líneas mayor tiempo se requiere en mantenerlas. Un ejemplo claro está en los _beans_ con múltiples propiedades donde por cada propiedad es necesario definir un método _get_ y un método _set_ además [implementar de forma correcta los métodos _equals_ y _hashCode_][blogbitix-199], el método _toString_, utilizar el [patrón builder][blogbitix-99], múltiples constructores con combinaciones de propiedades o comprobaciones para valores no nulos en parámetros.
 

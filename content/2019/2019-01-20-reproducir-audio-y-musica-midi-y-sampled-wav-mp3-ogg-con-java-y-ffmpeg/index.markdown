@@ -14,7 +14,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="ffmpeg.png" title2="FFmpeg" width2="400" >}}
+{{< logotype image1="java.svg" image2="ffmpeg.svg" title2="FFmpeg" width2="400" >}}
 
 En la API de Java en el paquete [javax.sound.sampled](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/package-summary.html) hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete [java.sound.midi](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/package-summary.html) contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son _wav, au, aif_ para los archivos _sampled_, y archivos _midi_ para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como _mp3_ u _ogg_.
 

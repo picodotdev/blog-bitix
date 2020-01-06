@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
 

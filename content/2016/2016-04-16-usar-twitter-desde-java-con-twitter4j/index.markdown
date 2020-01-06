@@ -12,7 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 [Twitter][twitter] ofrece una API para realizar las mismas acciones que como usuarios hacemos con su cliente web, desde publicar _tweets_, hacer _retweets_, enviar mensajes directos, leer _timelines_, ... Con la [API REST de twitter](https://dev.twitter.com/rest/public) podemos desde un programa de forma automatizada realizar cualquiera de las anteriores acciones. Por ejemplo, en [Blog Stack][blogstack] cada vez que agrega un artículo de cualquiera de las fuentes se publica un _tweet_ con el título del artículo y el enlace al mismo en la [cuenta de Twitter de Blog Stack][blogstack-twitter]. En este artículo mostraré como desde lenguaje de programación Java podemos usar la API de Twitter para realizar las acciones que deseemos con la librería [twitter4j][twitter4j].
 

@@ -14,7 +14,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En versiones anteriores de Java 9 había un único _runtime_ para ejecutar cualquier aplicación que debía ser instalado previamente para la ejecución de la aplicación. Aunque la aplicación no usase _Swing_ por ser una aplicación web o cosas como [CORBA](https://es.wikipedia.org/wiki/CORBA) ya en desuso aún estaban disponibles en el _runtime_ por motivos de no romper la compatibilidad con versiones anteriores.
 

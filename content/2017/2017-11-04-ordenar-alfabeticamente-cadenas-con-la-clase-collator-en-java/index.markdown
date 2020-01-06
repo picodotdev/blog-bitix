@@ -14,7 +14,7 @@ summary: "Sin usar la clase _Collator_ incluida en el JDK al ordenar alfabética
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Quizá algunos digan que la aparentemente sencilla tarea de ordenar una lista de palabras es algo fácil de hacer con cualquier lenguaje de programación. La realidad es que puede complicarse en una buena cantidad si se ha de realizar con los caracteres del alfabeto de algunos lenguajes. La ordenación no es tan simple como realizar lo siguiente en código Java:
 

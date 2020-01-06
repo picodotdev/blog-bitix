@@ -15,7 +15,7 @@ summary: Las aplicaciones que muestran listados probablemente necesiten mostrarl
 
 {{% post %}}
 
-{{< logotype image1="jooq.png" title1="jOOQ" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="jooq.png" title1="jOOQ" width1="200" image2="java.svg" >}}
 
 La paginación habitualmente se implementa con las palabras reservadas _limit_ y _offset_ del lenguaje SQL pero esto es ineficiente ya que para llegar los resultados de las últimas páginas la base de datos ha de recuperar antes todos los resultados anteriores. Cuando hay varios cientos de miles o millones de filas en una tabla esto es ineficiente y hace que las consultas sean lentas y añadan una importante carga al servidor de base de datos que al final afecta al rendimiento de la aplicación o su capacidad para atender a gran número de peticiones. 
 

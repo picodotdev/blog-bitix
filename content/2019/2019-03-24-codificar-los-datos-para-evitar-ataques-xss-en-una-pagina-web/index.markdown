@@ -14,7 +14,7 @@ tags: ["planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="html.svg" title1="HTML" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="html.svg" title1="HTML" width1="200" image2="java.svg" >}}
 
 Validar los datos es importante para una aplicación pero no es suficiente para crear una aplicación, es más, para crear una aplicación segura es más importante codificar correctamente los datos emitidos por la aplicación. Los ataques XSS se producen precisamente por no codificar correctamente los datos emitidos provenientes de una fuente no confiable. Una fuente no confiable puede ser un parámetro en una aplicación web pero también puede ser cualquier otro dato que incluya una petición HTTP como una cabecera.
 

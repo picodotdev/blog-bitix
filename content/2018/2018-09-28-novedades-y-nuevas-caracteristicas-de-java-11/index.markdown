@@ -16,7 +16,7 @@ summary: "Java 11 es la primera versión de soporte extendido publicada o LTS ba
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En la plataforma Java era habitual que entre versión y versión mayor pasasen varios años normalmente 3 o más. Este ciclo de publicaciones no se adapta a las necesidades de todas las empresas, organizaciones y usuarios. Algunas empresas y usuarios desean ciclos de publicaciones más cortos quizá con no tantas novedades en cada uno de ellos pero sí de forma más constante incorporando mejoras. Otras organizaciones necesitan confiar en una versión que tenga un ciclo de soporte largo para sus aplicaciones.
 

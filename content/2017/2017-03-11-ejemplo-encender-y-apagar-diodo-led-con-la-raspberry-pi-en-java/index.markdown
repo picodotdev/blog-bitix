@@ -16,7 +16,7 @@ series: ["electronica"]
 
 {{% post %}}
 
-{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" >}}
 
 El primer ejemplo que haré de un programa Java que usa los _pines_ GPIO para realizar algo con el [kit de inicialización a la electrónica con la Raspberry Pi][blogbitix-212] consiste en un pequeño programa Java que hace parpadear un diodo LED. La librería [Diozero][diozero] ofrece a los programas Java el acceso a los _pines_ GPIO de la diferentes versiones de la Raspberry Pi desde la 1 (rev 1 y rev 2) pasando por los modelos B+, 2 y 3. Otra librería que se puede usar con el lenguaje de programación Java es [Pi4J][pi4j] aunque personalmente Diozero me ha gustado más por ser de más alto nivel.
 

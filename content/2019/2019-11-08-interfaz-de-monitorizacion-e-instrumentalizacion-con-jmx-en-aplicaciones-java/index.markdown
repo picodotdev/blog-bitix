@@ -14,7 +14,7 @@ summary: "JMX es una forma sencilla e integrada en la plataforma Java de monitor
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Las aplicaciones Java tienen a su disposición integradas en la propia plataforma Java una interfaz para monitorizar su estado y realizar acciones de instrumentalización para modificar algún comportamiento o cambiar alguna configuración en tiempo real mientras la aplicación está funcionando sin necesidad de reiniciarla. La especificación que proporciona esta interfaz es _Java Management Extensions_ (JMX).
 

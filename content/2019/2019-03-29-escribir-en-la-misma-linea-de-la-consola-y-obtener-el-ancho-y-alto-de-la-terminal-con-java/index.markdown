@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Algunas aplicaciones en su salida en la terminal muestran una barra de progreso para la cual necesitan utilizar la secuencia de escape de la terminal o el caracter de carro para posicionar el cursor al inicio de la línea. En algunos casos incluso se muestran varias barras de progreso. Estos son los casos de los gestores de paquetes de [GNU][gnu]/[Linux][linux] como _pacman_ al realizar una actualización del sistema o de [Gradle][gradle] al descargar las dependencias.
 

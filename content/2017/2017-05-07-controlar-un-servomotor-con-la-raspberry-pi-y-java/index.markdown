@@ -15,7 +15,7 @@ series: ["electronica"]
 
 {{% post %}}
 
-{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" >}}
 
 Otro de los elementos que incluye el [kit de iniciación a la Raspberry Pi][blogbitix-212] es un [servomotor](https://es.wikipedia.org/wiki/Servomotor), en concreto uno del modelo SG90. En la [especificación del servomotor SG90](http://akizukidenshi.com/download/ds/towerpro/SG90_a.pdf) está detallado cual es el código de colores de los cables. Rojo para la corriente de 5V, marrón para tierra y naranja para el _pin_ <abbr title="Pulse Width Modulated">PWM</abbr> con el que se controlará el servo motor, el diodo led es simplemente para saber que cuando se enciende el programa Java se ha iniciado. La Raspberry Pi tiene algunos _pines_ con soporte hardware para realizar PWM.
 

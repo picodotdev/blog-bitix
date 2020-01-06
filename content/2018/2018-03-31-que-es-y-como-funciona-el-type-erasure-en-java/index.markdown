@@ -14,7 +14,7 @@ summary: "Los tipos genéricos en Java se implementaron usando _type erasure_ po
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 En la introducción de los [tipos genéricos en Java][blogbitix-138] con la versión 1.5 se decidió implementarlo usando _type erasuse_ que consiste en que en tiempo de ejecución se pierde la información de los tipos genéricos y para la máquina virtual no son distintos de un tipo no genérico, es un proceso que realiza el compilador. Esto tiene sus ventajas y algunas desventajas pero hay dos buenos motivos por los que en Java se decidió implementar los tipos genéricos usando _type erasuse_.
 

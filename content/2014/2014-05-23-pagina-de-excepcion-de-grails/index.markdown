@@ -12,7 +12,7 @@ tags: ["java", "programacion", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="grails.png" title1="Grails" width1="300" >}}
+{{< logotype image1="grails.svg" title1="Grails" width1="300" >}}
 
 No es la primera vez que comento algo similar ([I](https://elblogdepicodev.blogspot.com.es/2012/08/paginas-pagecatalog-servicestatus-e.html), [II](https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html)) disponer de la mayor cantidad de información cuando se produce una excepción o un error en la aplicación es vital para determinar rápidamente la causa del error y para solucionarlo correctamente. Para disponer de esta información podemos generar un archivo de log que nos permita revisar lo que pasó en la aplicación en un determinado momento. En el momento de desarrollo también nos puede interesar tener una página de excepción informativa.
 

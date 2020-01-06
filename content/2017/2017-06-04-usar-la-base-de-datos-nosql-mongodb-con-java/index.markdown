@@ -13,7 +13,7 @@ tags: ["gnu-linux", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="mongodb.svg" title1="MongoDB" width1="400" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="mongodb.svg" title1="MongoDB" width1="400" image2="java.svg" >}}
 
 En un artículo anterior hacía una pequeña [introducción a la base de datos NoSQL MongoDB][blogbitix-237] comentando sus características, como empezar a usarla con [Docker][docker] y como lanzar algunos comandos para crear bases de datos y colecciones junto las operaciones básicas de inserción, actualización, eliminación y búsquedas con consultas desde la _shell_ que ofrece [MongoDB][mongodb] para esta base de datos que guarda documentos.
 

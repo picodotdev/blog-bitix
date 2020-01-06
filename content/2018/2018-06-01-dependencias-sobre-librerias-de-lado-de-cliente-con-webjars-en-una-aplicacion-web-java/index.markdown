@@ -14,7 +14,7 @@ tags: ["java", "planeta-codigo", "programacion", "tapestry"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" image2="webjars.png" title2="Webjars" width2="250" >}}
+{{< logotype image1="java.svg" image2="webjars.png" title2="Webjars" width2="250" >}}
 
 Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos _framework_ web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como [jQuery][jquery], [React][react], [Underscore][underscorejs] o [Bootstrap][bootstrap] para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como [Gradle][gradle] se puede automatizar el descargar la librería de repositorios como [Maven Central][mavencentral] y la versión que se necesite así como hacer sencillo actualizar a una nueva. En el caso de las librerías de lado del cliente con [Webjars][webjars] se consiguen los mismos beneficios.
 

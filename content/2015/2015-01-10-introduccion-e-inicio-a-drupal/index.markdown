@@ -12,7 +12,7 @@ tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 
 {{% post %}}
 
-{{< logotype image="drupal.png" title="Drupal" width="300" >}}
+{{< logotype image="drupal.svg" title="Drupal" width="200" >}}
 
 Para los proyectos web cuyo punto central es el contenido disponemos de algunas opciones que prácticamente nos dan la solución hecha o facilitan enormemente la tarea como desarrolladores y posteriormente a los administradores que no necesitarán un gran conocimiento para administrar la web. Estas aplicaciones se les suele conocer como [Sistemas de gestión de contenidos][cms] (Content Management System, CMS) y como siempre disponemos de varias opciones, algunas similares.
 

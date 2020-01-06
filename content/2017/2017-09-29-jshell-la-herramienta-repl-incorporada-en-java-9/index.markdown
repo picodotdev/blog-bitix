@@ -14,7 +14,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Una de las [novedades de Java 9][blogbitix-263] es la incorporación de una herramienta _Read-Evaluation-Print-Loop_ o REPL similar a las disponibles en otros lenguajes dinámicos para permitir evaluar pequeños ejemplos de código, hacer pruebas o como herramienta para alguien que esté aprendiendo a programar sin la necesidad de utilizar un entorno integrado de desarrollo, una herramienta de construcción y los varios archivos y comandos necesarios para compilar y ejecutar el código Java.
 

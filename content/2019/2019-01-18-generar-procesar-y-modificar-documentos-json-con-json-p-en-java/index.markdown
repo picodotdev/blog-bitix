@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Los servicios que ofrecen una API REST normalmente emplean JSON como formato para intercambiar datos tanto en las peticiones como en las respuestas. En Java hay varias formas de generar y procesar JSON para obtener los datos que contiene.
 

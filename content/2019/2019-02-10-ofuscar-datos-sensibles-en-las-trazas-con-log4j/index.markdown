@@ -14,7 +14,7 @@ summary: "Ciertos datos son sensibles y hay que protegerlos al guardarlos en una
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Los archivos de trazas o _logs_ contienen información de lo que ha realizado la aplicación. Estos registros de información contienen los datos que el desarrollador considera de utilidad en caso de necesitar su consulta. Algunos datos son especialmente sensibles ya que su obtención permiten acceder a cuentas de usuario, obtener datos como tarjetas de crédito o cuentas bancarias, contraseñas o _bearer tokens_ de peticiones HTTP que autorizan el acceso. [Proteger las contraseñas _hasheandolas_ aún con _salt_][blogbitix-75] y cifrar información por motivos seguridad y privacidad es inútil si luego esta información está presente en los archivos de _log_ en texto plano.
 

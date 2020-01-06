@@ -15,7 +15,7 @@ series: ["electronica"]
 
 {{% post %}}
 
-{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" title2="Java" width2="200" >}}
+{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" >}}
 
 Este artículo es introductorio a los siguientes que escribiré y publicaré sobre el [kit de iniciación a la electrónica para la Raspberry Pi][blogbitix-212]. Antes de empezar a cacharrear con los sensores y dipositivos de entrada y salida, con los _pines_ GPIO y para hacerlo de forma cómoda crearé un entorno de desarrollo y despliegue en la [Raspberry Pi][raspberrypi] usando [SSH][ssh], [rsync][rsync] para copiar los artefactos del equipo de desarrollo a la RPi y [Ansible][ansible] usándolo desde [Gradle][gradle] para lanzar comandos y ejecutar los ejemplos de forma remota aunque si no se quiere usar Ansible se pueden lanzar los comandos mediante SSH.
 

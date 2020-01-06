@@ -12,7 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Las expresiones regulares son muy útiles para comprobar si una cadena de texto o un subconjunto de ella cumple un determinado patrón. Un uso común de las expresiones regulares es para validar cadenas de texto pero también pueden usarse para obtener coincidencias de la cadena, esto se hace con los grupos de captura.
 

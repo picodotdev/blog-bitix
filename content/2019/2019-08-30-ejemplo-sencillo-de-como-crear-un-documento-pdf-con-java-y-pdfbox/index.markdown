@@ -16,7 +16,7 @@ summary: "Leer un CSV, escribir un CSV, archivos excel, generar gráficas para v
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Generar documentos e informes de salida en una una tarea básica de cualquier aplicación y una forma de exportar los datos a otros formatos. Con [Apache POI][apache-poi] se pueden generar hojas de cálculo excel para su procesamiento con [LibreOffice][libreoffice] o [Microsoft Office Excel][microsoft-office]. En ocasiones también es necesario [generar gráficas para visualizar un conjunto grande de datos][blogbitix-273] para ser más fáciles de interpretar, descubrir tendencias, comparar, sacar conclusiones en base a las cuales tomar alguna acción. Los archivos PDF también son muy utilizados para imprimirlos en formato en papel o enviarlos adjuntos en correos electrónicos.
 

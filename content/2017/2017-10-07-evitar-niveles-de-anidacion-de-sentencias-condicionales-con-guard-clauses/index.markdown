@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image1="java.svg" title1="Java" width1="200" >}}
+{{< logotype image1="java.svg" >}}
 
 Al escribir el código de un método es habitual hacer algunas comprobaciones sobre los parámetros, por ejemplo, para comprobar que el parámetro tiene una referencia, si es nulo o cumple alguna condición, si es una lista que no esté vacía o para validar mediante alguna otra regla. Estas validaciones o aserciones se realizan al inicio del método con sentencias _if_ que añaden un nivel de tabulación al código si se anidan. Estos niveles de tabulación con sentencias _if_ anidadas hacen poco legible el código.
 
