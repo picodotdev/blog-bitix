@@ -308,9 +308,9 @@ En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese 
 <table class="table">
     <thead class="thead-light">
         <tr class="thead-light">
-            <th>Componente</td>
-            <th>Apple Mac mini</td>
-            <th>Intel NUC Bean Canyon</td>
+            <th>Componente</th>
+            <th>Apple Mac mini</th>
+            <th>Intel NUC Bean Canyon</th>
         </tr>
     </thead>
     <tbody>

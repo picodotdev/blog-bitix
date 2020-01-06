@@ -27,8 +27,8 @@ Para complementar la cobertura de código y obtener una medida de la precisión 
 <table class="table">
    <thead class="thead-light">
        <tr class="thead-light">
-           <th>Original</td>
-           <th>Mutación</td>
+           <th>Original</th>
+           <th>Mutación</th>
        </tr>
    </thead>
    <tbody>
