@@ -43,7 +43,7 @@ La clase _AppConfiguration_ contiene la definición de _beans_ propios del conte
 No será muy común pero si queremos configurar algunas propiedades internas como las [válvulas de Tomcat](https://tomcat.apache.org/tomcat-8.0-doc/config/valve.html) que funcionalmente es similar a un filtro de una aplicación web Java podemos definir un _bean_ del tipo [TomcatEmbeddedServletContainerFactory](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/context/embedded/tomcat/TomcatEmbeddedServletContainerFactory.html), con esta factoría además podremos configurar muchas de las propiedades que podemos configurar con ServletContextInitializer y EmbeddedServletContainerCustomizer pero salvo por las válvulas que es específico de Tomcat la forma preferida hacer la configuración es con estas últimas clases.
 
 Si en vez de usar Tomcat queremos usar Jetty o Undertow debemos cambiar las dependencias de la aplicación, excluimos la dependencia transitiva Tomcat y por defecto de _spring-boot-starter-web_ e incluimos la propia del servidor que deseemos.
-[spring-boot-starter-jetty](httpd://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-jetty-instead-of-tomcat) para Jetty y [spring-boot-starter-undertow](httpd://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-undertow-instead-of-tomcat) para Undertow. En el siguiente código la configuración a modificar en el archivo _build.gradle_ para ambas.
+[spring-boot-starter-jetty](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-jetty-instead-of-tomcat) para Jetty y [spring-boot-starter-undertow](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-use-undertow-instead-of-tomcat) para Undertow. En el siguiente código la configuración a modificar en el archivo _build.gradle_ para ambas.
 
 {{< code file="build-jetty.gradle" language="groovy" options="" >}}
 {{< code file="build-undertow.gradle" language="groovy" options="" >}}
@@ -52,7 +52,7 @@ El resto de esta aplicación de ejemplo es propio de [jOOQ][jooq] y de [Apache T
 
 {{< code file="update-database.sh" language="bash" options="" >}}
 
-El [código fuente del ejemplo completo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot) puedes encontrarlo en el repositorio de ejemplos de Blog Bitix, arrancarlo y acceder con el navegador a la dirección [http://127.0.0.1:8080/](http://127.0.0.1:8080/).
+El [código fuente del ejemplo completo](https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot) puedes encontrarlo en el repositorio de ejemplos de Blog Bitix, arrancarlo y acceder con el navegador a la dirección _http\://localhost:8080/_.
 
 {{< code file="run.sh" language="bash" options="" >}}
 
