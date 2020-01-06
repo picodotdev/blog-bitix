@@ -1,5 +1,6 @@
  ---
 pid: 5
+type: "post"
 title: "Raspberry Pi como Media Center con GeeXboX"
 url: "/2014/01/raspberry-pi-como-media-center-con-geexbox/"
 date: 2014-01-03T20:00:00+01:00

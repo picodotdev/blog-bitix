@@ -1,5 +1,6 @@
 ---
 pid: 283
+type: "post"
 title: "Paginación usando cursores en GraphQL y Java"
 url: "/2017/11/paginacion-usando-cursores-en-graphql-y-java/"
 date: 2017-11-26T10:30:00+01:00

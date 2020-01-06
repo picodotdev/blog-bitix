@@ -1,5 +1,6 @@
 ---
 pid: 143
+type: "post"
 title: "4 opciones ofimáticas alternativas gratuitas a Microsoft Office"
 aliases: ["/2016/05/3-opciones-ofimaticas-alternativas-a-microsoft-office/"]
 url: "/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/"

@@ -1,5 +1,6 @@
 ---
 pid: 407
+type: "post"
 title: "Log de sentencias SQL, sentencias lentas y otra información en jOOQ"
 url: "/2019/05/log-de-sentencias-sql-sentencias-lentas-y-otra-informacion-en-jooq/"
 aliases: ["/2019/05/log-de-sentencias-sentencias-lentas-y-otra-informacion-en-jooq/"]

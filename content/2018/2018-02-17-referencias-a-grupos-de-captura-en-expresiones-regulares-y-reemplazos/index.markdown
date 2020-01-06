@@ -1,5 +1,6 @@
 ---
 pid: 300
+type: "post"
 title: "Referencias a grupos de captura en expresiones regulares y reemplazos"
 url: "/2018/02/referencias-a-grupos-de-captura-en-expresiones-regulares-y-reemplazos/"
 date: 2018-02-17T17:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 163
+type: "post"
 title: "Jugar al clásico de estrategia de tablero Go en GNU/Linux"
 url: "/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/"
 date: 2016-07-23T13:00:00+02:00

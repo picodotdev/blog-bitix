@@ -1,5 +1,6 @@
 ---
 pid: 451
+type: "post"
 title: "Artículo #7 de Yo apoyo al software libre"
 url: "/2019/12/articulo-7-de-yo-apoyo-al-software-libre/"
 date: 2019-12-22T11:30:00+01:00

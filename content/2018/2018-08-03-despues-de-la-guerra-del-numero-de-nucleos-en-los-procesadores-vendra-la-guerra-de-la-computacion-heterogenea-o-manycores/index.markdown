@@ -1,5 +1,6 @@
 ---
 pid: 337
+type: "post"
 title: "Después de la guerra del número de núcleos en los procesadores, ¿vendrá la guerra de la computación heterogénea o manycores?"
 url: "/2018/08/despues-de-la-guerra-del-numero-de-nucleos-en-los-procesadores-vendra-la-guerra-de-la-computacion-heterogenea-o-manycores/"
 date: 2018-08-03T17:00:00+02:00

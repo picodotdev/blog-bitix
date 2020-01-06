@@ -1,5 +1,6 @@
 ---
 pid: 17
+type: "post"
 title: "Novedades y nuevas características de Java 8"
 url: "/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/"
 date: 2014-03-21T16:03:27+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 447
+type: "post"
 title: "Comando para convertir imágenes a WebP con menor tamaño desde JPEG y PNG"
 url: "/2019/12/comando-para-convertir-imagenes-a-webp-con-menor-tamano-desde-jpeg-y-png/"
 date: 2019-12-08T14:00:00+01:00

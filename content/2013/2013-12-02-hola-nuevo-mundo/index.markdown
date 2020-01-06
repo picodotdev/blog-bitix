@@ -1,5 +1,6 @@
 ---
 pid: 0
+type: "post"
 title: "¡Hola nuevo mundo!"
 url: "/2013/12/hola-nuevo-mundo/"
 date: 2013-12-02T13:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 364
+type: "post"
 title: "Cómo usar Wine para jugar en GNU/Linux a Diablo 3 u otros juegos de Blizzard o Windows"
 url: "/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-diablo-3-u-otros-juegos-de-blizzard-o-windows/"
 aliases: ["/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-diablo-3-u-otros-juegos-de-windows/"]

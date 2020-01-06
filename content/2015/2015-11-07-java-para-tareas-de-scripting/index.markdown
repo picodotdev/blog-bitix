@@ -1,5 +1,6 @@
 ---
 pid: 108
+type: "post"
 title: "Java para tareas de «scripting»"
 url: "/2015/11/java-para-tareas-de-scripting/"
 date: 2015-11-07T15:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 286
+type: "post"
 title: "El buscador que respeta tu privacidad, DuckDuckGo"
 url: "/2017/12/el-buscador-que-respeta-tu-privacidad-duckduckgo/"
 date: 2017-12-06T12:30:00+01:00

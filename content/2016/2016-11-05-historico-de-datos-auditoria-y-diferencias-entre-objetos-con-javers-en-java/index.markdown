@@ -1,5 +1,6 @@
 ---
 pid: 191
+type: "post"
 title: "Histórico de datos, auditoría y diferencias entre objetos con Javers en Java"
 url: "/2016/11/historico-de-datos-auditoria-y-diferencias-entre-objetos-con-javers-en-java/"
 aliases: ["/2016/11/historico-de-datos-y-diferencias-con-javers-en-java/", "/2016/11/historico-de-datos-y-diferencias-entre-objetos-con-javers-en-java/"]

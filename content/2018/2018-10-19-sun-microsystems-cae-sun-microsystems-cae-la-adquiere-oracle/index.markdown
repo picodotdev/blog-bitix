@@ -1,5 +1,6 @@
 ---
 pid: 355
+type: "post"
 title: "Sun Microsystems cae, la adquiere Oracle"
 url: "/2018/10/sun-microsystems-cae-la-adquiere-oracle/"
 aliases: ["/2018/10/sun-microsystems-cae/"]

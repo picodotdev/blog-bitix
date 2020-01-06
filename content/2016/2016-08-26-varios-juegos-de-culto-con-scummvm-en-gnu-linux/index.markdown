@@ -1,5 +1,6 @@
 ---
 pid: 173
+type: "post"
 title: "Varios juegos de culto con ScummVM en GNU/Linux"
 url: "/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/"
 date: 2016-08-26T12:00:00+02:00

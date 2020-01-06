@@ -1,5 +1,6 @@
 ---
 pid: 91
+type: "post"
 title: "Cambiar la ruta raíz del entorno de Docker"
 url: "/2015/07/cambiar-la-ruta-raiz-del-entorno-de-docker/"
 date: 2015-07-24T20:00:00+02:00

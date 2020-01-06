@@ -1,5 +1,6 @@
 ---
 pid: 166
+type: "post"
 title: "Cómo y por que redirigir tráfico web del dominio raíz al subdominio www (o viceversa)"
 url: "/2016/08/como-y-por-que-redirigir-trafico-web-del-dominio-raiz-al-subdominio-www/"
 date: 2016-08-05T17:00:00+02:00

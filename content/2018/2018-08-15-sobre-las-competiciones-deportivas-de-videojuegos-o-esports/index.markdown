@@ -1,5 +1,6 @@
 ---
 pid: 339
+type: "post"
 title: "Sobre las competiciones deportivas de videojuegos o eSports"
 url: "/2018/08/sobre-las-competiciones-deportivas-de-videojuegos-o-esports/"
 aliases: ["/2018/08/sobre-las-competiciones-deportivas-de-juegos-o-esports/"]

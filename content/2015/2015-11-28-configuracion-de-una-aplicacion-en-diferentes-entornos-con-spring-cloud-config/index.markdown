@@ -1,5 +1,6 @@
 ---
 pid: 112
+type: "post"
 title: "Configuración de una aplicación en diferentes entornos con Spring Cloud Config"
 url: "/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/"
 date: 2015-11-28T11:00:00+01:00

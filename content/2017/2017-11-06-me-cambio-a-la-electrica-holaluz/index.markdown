@@ -1,5 +1,6 @@
 ---
 pid: 278
+type: "post"
 title: "Me cambio a la eléctrica Holaluz"
 url: "/2017/11/me-cambio-a-la-electrica-holaluz/"
 date: 2017-11-06T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 281
+type: "post"
 title: "8+ ideas de productos tecnológicos para comprar o regalar"
 url: "/2017/11/8-plus-ideas-de-productos-tecnologicos-para-comprar-o-regalar/"
 aliases: ["/2017/11/productos-tecnologicos-para-comprar-o-regalar/"]

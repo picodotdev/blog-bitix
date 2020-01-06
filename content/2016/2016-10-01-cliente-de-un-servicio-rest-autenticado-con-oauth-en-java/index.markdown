@@ -1,5 +1,6 @@
 ---
 pid: 183
+type: "post"
 title: "Cliente de un servicio REST autenticado con OAuth en Java"
 url: "/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/"
 aliases: ["/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth2-en-java/"]

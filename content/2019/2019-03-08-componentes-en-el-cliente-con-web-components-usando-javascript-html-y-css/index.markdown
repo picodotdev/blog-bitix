@@ -1,5 +1,6 @@
 ---
 pid: 388
+type: "post"
 title: "Componentes en el cliente con Web Components usando JavaScript, HTML y CSS"
 url: "/2019/03/componentes-en-el-cliente-con-web-components-usando-javascript-html-y-css/"
 date: 2019-03-08T18:00:00+01:00

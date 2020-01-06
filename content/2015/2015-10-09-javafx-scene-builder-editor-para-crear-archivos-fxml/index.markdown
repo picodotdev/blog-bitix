@@ -1,5 +1,6 @@
 ---
 pid: 102
+type: "post"
 title: "JavaFX Scene Builder, editor para crear archivos FXML"
 url: "/2015/10/javafx-scene-builder-editor-para-crear-archivos-fxml/"
 date: 2015-10-09T00:00:00+02:00

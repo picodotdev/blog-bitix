@@ -1,5 +1,6 @@
 ---
 pid: 46
+type: "post"
 title: "Generar URLs semánticas y amigables"
 url: "/2014/10/generar-urls-semanticas-y-amigables/"
 date: 2014-10-03T20:14:18+02:00

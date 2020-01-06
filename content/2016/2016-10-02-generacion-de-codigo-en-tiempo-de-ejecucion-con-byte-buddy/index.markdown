@@ -1,5 +1,6 @@
 ---
 pid: 184
+type: "post"
 title: "Generación de código en tiempo de ejecución con Byte Buddy"
 url: "/2016/10/generacion-de-codigo-en-tiempo-de-ejecucion-con-byte-buddy/"
 date: 2016-10-02T12:00:00+02:00

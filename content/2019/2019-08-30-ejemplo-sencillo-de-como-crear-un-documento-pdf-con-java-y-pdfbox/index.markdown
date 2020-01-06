@@ -1,5 +1,6 @@
 ---
 pid: 430
+type: "post"
 title: "Ejemplo sencillo de como crear un documento PDF con Java y PDFBox"
 url: "/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/"
 aliases: ["/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-pdfbox/"] 

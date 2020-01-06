@@ -1,5 +1,6 @@
 ---
 pid: 57
+type: "post"
 title: "Introducción al gestor de proyectos y tareas Redmine"
 url: "/2014/12/introduccion-al-gestor-de-proyectos-y-tareas-redmine/"
 date: 2014-12-19T19:57:31+01:00

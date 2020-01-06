@@ -1,5 +1,6 @@
 ---
 pid: 410
+type: "post"
 title: "Teses unitarios parametrizados con JUnit"
 url: "/2019/06/teses-unitarios-parametrizados-con-junit/"
 date: 2019-06-07T17:00:00+02:00

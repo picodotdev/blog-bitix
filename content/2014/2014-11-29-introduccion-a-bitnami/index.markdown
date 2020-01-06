@@ -1,5 +1,6 @@
 ---
 pid: 54
+type: "post"
 title: "Introducción a Bitnami"
 url: "/2014/11/introduccion-a-bitnami/"
 date: 2014-11-29T10:45:45+01:00

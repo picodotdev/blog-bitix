@@ -1,5 +1,6 @@
 ---
 pid: 438
+type: "post"
 title: "Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java"
 url: "/2019/10/cobertura-de-codigo-y-mutation-testing-en-pruebas-unitarias-con-jacoco-y-pit-en-java/"
 aliases: ["/2019/10/cobertura-de-codigo-y-mutation-testing-en-las-pruebas-con-jacoco-y-pit-en-java/"]

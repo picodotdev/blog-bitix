@@ -1,5 +1,6 @@
 ---
 pid: 353
+type: "post"
 title: "Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon"
 url: "/2018/10/balanceo-de-carga-y-resilencia-en-un-microservicio-con-spring-cloud-netflix-y-ribbon/"
 date: 2018-10-12T11:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 423
+type: "post"
 title: "Obtener los primeros, los últimos o los caracteres anteriores y posteriores de un archivo y el número de ocurrencias con head, tail y grep"
 url: "/2019/07/obtener-los-primeros-los-ultimos-o-los-caracteres-anteriores-y-posteriores-de-un-archivo-y-el-numero-de-ocurrencias-con-head-tail-y-grep/"
 date: 2019-07-25T20:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 238
+type: "post"
 title: "Así trata Pepephone a sus clientes"
 url: "/2017/06/asi-trata-pepephone-a-sus-clientes/"
 date: 2017-06-03T12:00:00+02:00

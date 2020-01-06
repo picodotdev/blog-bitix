@@ -1,5 +1,6 @@
 ---
 pid: 81
+type: "post"
 title: "10 razones para seguir usando Java"
 url: "/2015/05/10-razones-para-seguir-usando-java/"
 date: 2015-05-22T17:00:00+02:00

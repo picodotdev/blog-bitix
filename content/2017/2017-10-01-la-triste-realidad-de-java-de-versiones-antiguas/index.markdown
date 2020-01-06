@@ -1,5 +1,6 @@
 ---
 pid: 266
+type: "post"
 title: "La triste realidad de Java, versiones antiguas"
 url: "/2017/10/la-triste-realidad-de-java-versiones-antiguas/"
 aliases: ["/2017/10/la-triste-realidad-de-java-de-versiones-antiguas/"]

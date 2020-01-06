@@ -1,5 +1,6 @@
 ---
 pid: 225
+type: "post"
 title: "3 office alternative options to Microsoft Office"
 url: "/2017/04/3-office-alternative-options-to-microsoft-office/"
 date: 2017-04-14T12:15:00+02:00

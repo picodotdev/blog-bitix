@@ -1,5 +1,6 @@
 ---
 pid: 317
+type: "post"
 title: "Plantillas con etiquetas no balanceadas en Apache Tapestry"
 url: "/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/"
 date: 2018-05-01T10:30:00+02:00

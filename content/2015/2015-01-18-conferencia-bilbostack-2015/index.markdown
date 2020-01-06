@@ -1,5 +1,6 @@
 ---
 pid: 62
+type: "post"
 title: "Conferencia BilboStack 2015"
 url: "/2015/01/conferencia-bilbostack-2015/"
 date: 2015-01-18T13:00:00+01:00

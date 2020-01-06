@@ -1,5 +1,6 @@
 ---
 pid: 402
+type: "post"
 title: "De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6"
 url: "/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/"
 date: 2019-05-05T18:00:00+02:00

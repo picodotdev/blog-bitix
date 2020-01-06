@@ -1,5 +1,6 @@
 ---
 pid: 213
+type: "post"
 title: "Ejemplo Hello World con Java en la Raspberry Pi"
 url: "/2017/03/ejemplo-hello-world-con-java-en-la-raspberry-pi/"
 date: 2017-03-04T11:00:00+01:00

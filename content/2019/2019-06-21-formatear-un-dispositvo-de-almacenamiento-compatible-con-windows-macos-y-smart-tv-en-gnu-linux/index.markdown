@@ -1,5 +1,6 @@
 ---
 pid: 413
+type: "post"
 title: "Formatear un dispositivo de almacenamiento compatible con Windows, macOS y Smart TV en GNU/Linux"
 url: "/2019/06/formatear-un-dispositivo-de-almacenamiento-compatible-con-windows-macos-y-smart-tv-en-gnu-linux/"
 date: 2019-06-21T19:00:00+02:00

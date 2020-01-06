@@ -1,5 +1,6 @@
 ---
 pid: 379
+type: "post"
 title: "Log de SQLs y de SQLs lentas en MySQL y PostgreSQL"
 url: "/2019/02/log-de-sqls-y-de-sqls-lentas-en-myql-y-postgresql/"
 date: 2019-02-04T13:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 66
+type: "post"
 title: "Cómo hacer un «downgrade» de un paquete en Arch Linux"
 url: "/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/"
 date: 2015-02-07T11:05:24+01:00

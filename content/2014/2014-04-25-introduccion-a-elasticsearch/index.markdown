@@ -1,5 +1,6 @@
 ---
 pid: 21
+type: "post"
 title: "Introducción a Elasticsearch"
 url: "/2014/04/introduccion-a-elasticsearch/"
 date: 2014-04-25T17:15:05+02:00

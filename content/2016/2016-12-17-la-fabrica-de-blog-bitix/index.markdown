@@ -1,5 +1,6 @@
 ---
 pid: 201
+type: "post"
 title: "La fábrica de Blog Bitix"
 url: "/2016/12/la-fabrica-de-blog-bitix/"
 date: 2016-12-17T11:00:00+01:00

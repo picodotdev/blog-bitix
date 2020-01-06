@@ -1,5 +1,6 @@
 ---
 pid: 31
+type: "post"
 title: "Modelo «push» contra modelo «pull» en frameworks web"
 url: "/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/"
 date: 2014-07-06T10:58:10+02:00

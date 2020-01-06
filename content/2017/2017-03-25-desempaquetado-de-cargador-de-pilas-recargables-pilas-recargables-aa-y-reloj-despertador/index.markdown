@@ -1,5 +1,6 @@
 ---
 pid: 218
+type: "post"
 title: "Desempaquetado de cargador de pilas recargables, pilas recargables AA y reloj despertador"
 url: "/2017/03/desempaquetado-de-cargador-de-pilas-recargables-pilas-recargables-aa-y-reloj-despertador/"
 date: 2017-03-25T10:30:00+01:00

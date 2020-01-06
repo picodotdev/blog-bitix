@@ -1,5 +1,6 @@
 ---
 pid: 182
+type: "post"
 title: "Gestionar los enlaces de una bitácora con Hugo"
 url: "/2016/09/gestionar-los-enlaces-de-una-bitacora-con-hugo/"
 date: 2016-09-30T23:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 424
+type: "post"
 title: "Administrar secretos y proteger datos sensibles con Vault"
 url: "/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/"
 date: 2019-07-27T18:30:00+02:00

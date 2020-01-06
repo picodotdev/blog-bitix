@@ -1,5 +1,6 @@
 ---
 pid: 363
+type: "post"
 title: "Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"
 url: "/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/"
 date: 2018-11-30T17:00:00+01:00

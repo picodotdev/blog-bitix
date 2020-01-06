@@ -1,5 +1,6 @@
 ---
 pid: 142
+type: "post"
 title: "La clase ThreadLocal de Java y usos prácticos"
 url: "/2016/05/la-clase-threadlocal-de-java-y-usos-practicos/"
 date: 2016-05-13T17:00:00+02:00

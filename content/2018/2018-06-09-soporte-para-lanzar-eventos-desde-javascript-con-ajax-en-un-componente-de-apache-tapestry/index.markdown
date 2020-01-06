@@ -1,5 +1,6 @@
 ---
 pid: 327
+type: "post"
 title: "Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry"
 url: "/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/"
 date: 2018-06-09T08:00:00+02:00

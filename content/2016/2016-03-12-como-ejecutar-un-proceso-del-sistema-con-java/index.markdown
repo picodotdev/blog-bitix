@@ -1,5 +1,6 @@
 ---
 pid: 132
+type: "post"
 title: "Cómo ejecutar un proceso del sistema con Java"
 url: "/2016/03/como-ejecutar-un-proceso-del-sistema-con-java/"
 date: 2016-03-12T22:30:00+01:00

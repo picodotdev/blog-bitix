@@ -1,5 +1,6 @@
 ---
 pid: 199
+type: "post"
 title: "Cómo implementar correctamente y por qué los métodos equals y hashCode de los objetos Java"
 url: "/2016/12/como-implementar-correctamente-y-por-que-los-metodos-equals-y-hashcode-de-los-objetos-java/"
 date: 2016-12-07T11:00:00+01:00

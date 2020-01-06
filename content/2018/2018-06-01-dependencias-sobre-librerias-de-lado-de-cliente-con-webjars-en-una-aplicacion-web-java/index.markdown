@@ -1,5 +1,6 @@
 ---
 pid: 325
+type: "post"
 title: "Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java"
 url: "/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/"
 date: 2018-06-01T17:00:00+02:00

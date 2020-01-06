@@ -1,5 +1,6 @@
 ---
 pid: 2
+type: "post"
 title: "Enviar correos electrónicos firmados con el DNIe y Evolution"
 url: "/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/"
 date: 2013-12-13T16:39:07+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 148
+type: "post"
 title: "Moment.js, librería JavaScript para fechas"
 url: "/2016/06/moment-js-libreria-javascript-para-fechas/"
 date: 2016-06-05T13:00:00+02:00

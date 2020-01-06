@@ -1,5 +1,6 @@
 ---
 pid: 357
+type: "post"
 title: "Ejemplo sencillo de cómo leer datos de un archivo Excel o CSV en Java"
 url: "/2018/10/ejemplo-sencillo-de-como-leer-datos-de-un-archivo-excel-o-csv-en-java/"
 date: 2018-10-26T10:00:00+02:00

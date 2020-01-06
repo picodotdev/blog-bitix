@@ -1,5 +1,6 @@
 ---
 pid: 345
+type: "post"
 title: "El editor de archivos e IDE minimalista Visual Studio Code"
 url: "/2018/09/el-editor-de-archivos-e-ide-minimalista-visual-studio-code/"
 date: 2018-09-09T11:00:00+02:00

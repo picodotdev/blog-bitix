@@ -1,5 +1,6 @@
 ---
 pid: 170
+type: "post"
 title: "Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux"
 url: "/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/"
 date: 2016-08-15T12:00:00+02:00

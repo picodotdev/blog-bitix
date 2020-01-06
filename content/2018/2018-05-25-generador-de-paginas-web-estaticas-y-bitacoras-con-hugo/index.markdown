@@ -1,5 +1,6 @@
 ---
 pid: 323
+type: "post"
 title: "Generador de páginas web estáticas y bitácoras Hugo"
 url: "/2018/05/generador-de-paginas-web-estaticas-y-bitacoras-con-hugo/"
 date: 2018-05-25T18:00:00+02:00

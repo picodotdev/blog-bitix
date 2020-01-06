@@ -1,5 +1,6 @@
 ---
 pid: 117
+type: "post"
 title: "Yo apoyo al software libre, tú también"
 url: "/2015/12/yo-apoyo-al-software-libre-tu-tambien/"
 date: 2015-12-29T21:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 342
+type: "post"
 title: "Los fragmentos en GraphQL"
 url: "/2018/08/los-fragmentos-en-graphql/"
 date: 2018-08-25T19:00:00+02:00

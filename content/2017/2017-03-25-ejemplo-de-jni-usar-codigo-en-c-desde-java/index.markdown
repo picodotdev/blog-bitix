@@ -1,5 +1,6 @@
 ---
 pid: 217
+type: "post"
 title: "Ejemplo de JNI, usar código en C desde Java"
 url: "/2017/03/ejemplo-de-jni-usar-codigo-en-c-desde-java/"
 date: 2017-03-25T10:00:00+01:00

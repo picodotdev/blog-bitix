@@ -1,5 +1,6 @@
 ---
 pid: 263
+type: "post"
 title: "Novedades y nuevas características de Java 9, los módulos"
 url: "/2017/09/novedades-y-nuevas-caracteristicas-de-java-9-los-modulos/"
 date: 2017-09-23T12:00:00+02:00

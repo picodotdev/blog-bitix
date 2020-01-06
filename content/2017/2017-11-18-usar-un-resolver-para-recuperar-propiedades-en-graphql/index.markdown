@@ -1,5 +1,6 @@
 ---
 pid: 280
+type: "post"
 title: "Usar un resolver para recuperar propiedades en GraphQL"
 url: "/2017/11/usar-un-resolver-para-recuperar-propiedades-en-graphql/"
 date: 2017-11-18T10:00:00+01:00

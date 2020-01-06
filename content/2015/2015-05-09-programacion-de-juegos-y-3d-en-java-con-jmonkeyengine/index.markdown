@@ -1,5 +1,6 @@
 ---
 pid: 79
+type: "post"
 title: "Programación de juegos y 3D en Java con jMonkeyEngine"
 url: "/2015/05/programacion-de-juegos-y-3d-en-java-con-jmonkeyengine/"
 date: 2015-05-09T10:18:40+02:00

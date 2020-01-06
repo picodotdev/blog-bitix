@@ -1,5 +1,6 @@
 ---
 pid: 32
+type: "post"
 title: "Plantillas en Apache Tapestry"
 url: "/2014/07/plantillas-en-apache-tapestry/"
 date: 2014-07-11T20:54:34+02:00

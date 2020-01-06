@@ -1,5 +1,6 @@
 ---
 pid: 42
+type: "post"
 title: "Compilar y cargar de forma dinámica una clase Java"
 url: "/2014/09/compilar-y-cargar-de-forma-dinamica-una-clase-java/"
 date: 2014-09-12T19:49:55+02:00

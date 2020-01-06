@@ -1,5 +1,6 @@
 ---
 pid: 11
+type: "post"
 title: "Presentación sobre Apache Tapestry"
 url: "/2014/02/presentacion-sobre-apache-tapestry/"
 date: 2014-02-14T16:05:53+01:00

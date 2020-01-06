@@ -1,5 +1,6 @@
 ---
 pid: 249
+type: "post"
 title: "Desempaquetado maletín herramientas Mannesmann y bandejas melamina Balvi"
 url: "/2017/07/desempaquetado-maletin-herramientas-mannesmann-y-bandejas-melamina-balvi/"
 date: 2017-07-28T18:00:00+02:00

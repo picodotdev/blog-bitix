@@ -1,5 +1,6 @@
 ---
 pid: 415
+type: "post"
 title: "Comprobar la seguridad de un sitio web que use SSL/TLS"
 url: "/2019/06/comprobar-la-seguridad-de-un-sitio-web-que-use-ssl-tls/"
 date: 2019-06-23T12:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 6
+type: "post"
 title: "Iniciar la Raspberry Pi desde un disco o memoria USB"
 url: "/2014/01/iniciar-la-raspberry-pi-desde-un-disco-o-memoria-usb/"
 date: 2014-01-10T12:41:33+01:00

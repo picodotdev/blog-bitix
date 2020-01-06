@@ -1,5 +1,6 @@
 ---
 pid: 103
+type: "post"
 title: "Aplicación Java autocontenida con Spring Boot"
 url: "/2015/10/aplicacion-java-autocontenida-con-spring-boot/"
 date: 2015-10-13T00:00:00+02:00

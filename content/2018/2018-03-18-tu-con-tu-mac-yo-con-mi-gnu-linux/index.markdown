@@ -1,5 +1,6 @@
 ---
 pid: 305
+type: "post"
 title: "Tú con tu Mac, yo con mi GNU/Linux"
 url: "/2018/03/tu-con-mac-yo-con-mi-gnu-linux/"
 date: 2018-03-17T14:00:00+01:00

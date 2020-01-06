@@ -1,5 +1,6 @@
 ---
 pid: 378
+type: "post"
 title: "Convertir un JSON a objetos y objetos a JSON con JSON-B, Gson y Jackson en Java"
 url: "/2019/02/convertir-un-json-a-objetos-y-objetos-a-json-con-json-b-gson-y-jackson-en-java/"
 date: 2019-02-01T17:30:00+01:00

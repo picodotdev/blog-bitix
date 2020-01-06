@@ -1,5 +1,6 @@
 ---
 pid: 279
+type: "post"
 title: "Devolver mensajes de error descriptivos en GraphQL"
 url: "/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/"
 date: 2017-11-12T11:30:00+01:00

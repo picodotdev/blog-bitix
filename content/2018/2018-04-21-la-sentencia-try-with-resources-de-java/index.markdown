@@ -1,5 +1,6 @@
 ---
 pid: 314
+type: "post"
 title: "La sentencia try-with-resources de Java"
 url: "/2018/04/la-sentencia-try-with-resources-de-java/"
 date: 2018-04-21T14:30:00+02:00

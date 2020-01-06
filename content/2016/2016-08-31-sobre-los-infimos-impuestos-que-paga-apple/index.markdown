@@ -1,5 +1,6 @@
 ---
 pid: 175
+type: "post"
 title: "Sobre los ínfimos impuestos que paga Apple"
 url: "/2016/08/sobre-los-infimos-impuestos-que-paga-apple/"
 date: 2016-08-31T10:00:00+02:00

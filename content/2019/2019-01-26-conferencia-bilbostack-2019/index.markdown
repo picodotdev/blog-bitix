@@ -1,5 +1,6 @@
 ---
 pid: 377
+type: "post"
 title: "Conferencia BilboStack 2019"
 url: "/2019/01/conferencia-bilbostack-2019/"
 date: 2019-01-26T17:00:00+01:00

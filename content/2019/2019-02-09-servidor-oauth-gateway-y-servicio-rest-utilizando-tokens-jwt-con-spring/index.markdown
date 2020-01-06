@@ -1,5 +1,6 @@
 ---
 pid: 382
+type: "post"
 title: "Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring"
 url: "/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/"
 aliases: ["/2019/02/servidor-oauth-gateway-y-servicio-utilizando-tokens-jwt-con-spring/"]

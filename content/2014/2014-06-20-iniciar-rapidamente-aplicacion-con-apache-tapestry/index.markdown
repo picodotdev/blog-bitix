@@ -1,5 +1,6 @@
 ---
 pid: 29
+type: "post"
 title: "Iniciar rápidamente aplicación con Apache Tapestry"
 url: "/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/"
 date: 2014-06-20T23:08:07+02:00

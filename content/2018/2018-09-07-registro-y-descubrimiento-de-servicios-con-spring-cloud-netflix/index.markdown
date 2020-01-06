@@ -1,5 +1,6 @@
 ---
 pid: 344
+type: "post"
 title: "Registro y descubrimiento de servicios con Spring Cloud Netflix"
 url: "/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/"
 date: 2018-09-07T19:00:00+02:00

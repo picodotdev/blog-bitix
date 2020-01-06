@@ -1,5 +1,6 @@
 ---
 pid: 267
+type: "post"
 title: "Evitar niveles de anidación de sentencias condicionales con guard clauses"
 url: "/2017/10/evitar-niveles-de-anidacion-de-sentencias-condicionales-con-guard-clauses/"
 date: 2017-10-07T12:00:00+02:00

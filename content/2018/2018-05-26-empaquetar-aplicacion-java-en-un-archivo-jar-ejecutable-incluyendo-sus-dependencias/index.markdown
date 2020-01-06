@@ -1,5 +1,6 @@
 ---
 pid: 324
+type: "post"
 title: "Empaquetar una aplicación Java en un archivo jar ejecutable incluyendo sus dependencias"
 url: "/2018/05/empaquetar-una-aplicacion-java-en-un-archivo-jar-ejecutable-incluyendo-sus-dependencias/"
 date: 2018-05-26T12:15:00+02:00

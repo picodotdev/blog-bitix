@@ -1,5 +1,6 @@
 ---
 pid: 302
+type: "post"
 title: "El problema de concurrencia de la cena de los filósofos resuelto con Java"
 url: "/2018/02/el-problema-de-concurrencia-de-la-cena-de-los-filosofos-resuelto-con-java/"
 date: 2018-02-25T10:00:00+01:00

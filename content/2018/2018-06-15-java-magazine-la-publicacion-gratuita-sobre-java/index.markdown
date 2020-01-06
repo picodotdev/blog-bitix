@@ -1,5 +1,6 @@
 ---
 pid: 328
+type: "post"
 title: "Java Magazine, la publicación gratuita sobre Java"
 url: "/2018/06/java-magazine-la-publicacion-gratuita-sobre-java/"
 date: 2018-06-15T23:00:00+02:00

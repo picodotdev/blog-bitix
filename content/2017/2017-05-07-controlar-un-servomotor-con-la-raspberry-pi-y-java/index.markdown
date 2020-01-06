@@ -1,5 +1,6 @@
 ---
 pid: 230
+type: "post"
 title: "Controlar un servomotor con la Raspberry Pi y Java"
 url: "/2017/05/controlar-un-servomotor-con-la-raspberry-pi-y-java/"
 date: 2017-05-07T11:00:00+02:00

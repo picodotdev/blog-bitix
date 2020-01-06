@@ -1,5 +1,6 @@
 ---
 pid: 99
+type: "post"
 title: "Ejemplo del patrón de diseño Builder"
 url: "/2015/09/ejemplo-del-patron-de-diseno-builder/"
 date: 2015-09-27T12:00:00+02:00

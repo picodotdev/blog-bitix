@@ -1,5 +1,6 @@
 ---
 pid: 406
+type: "post"
 title: "Combinaciones de teclado en HTML, JavaScript y páginas web"
 url: "/2019/05/combinaciones-de-teclado-en-html-javascript-y-paginas-web/"
 date: 2019-05-19T09:00:00+02:00

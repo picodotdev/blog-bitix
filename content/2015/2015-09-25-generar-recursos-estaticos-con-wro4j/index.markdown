@@ -1,5 +1,6 @@
 ---
 pid: 98
+type: "post"
 title: "Generar recursos estáticos con wro4j"
 url: "/2015/09/generar-recursos-estaticos-con-wro4j/"
 date: 2015-09-25T17:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 396
+type: "post"
 title: "Trazabilidad en microservicios con Spring Cloud Sleuth"
 url: "/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/"
 date: 2019-04-07T10:00:00+02:00

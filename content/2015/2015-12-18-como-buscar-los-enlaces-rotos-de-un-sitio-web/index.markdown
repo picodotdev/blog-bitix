@@ -1,5 +1,6 @@
 ---
 pid: 115
+type: "post"
 title: "Cómo buscar los enlaces rotos de un sitio web"
 url: "/2015/12/como-buscar-los-enlaces-rotos-de-un-sitio-web/"
 aliases: ["/2015/12/como-buscar-enlaces-rotos-de-un-sitio-web/"]

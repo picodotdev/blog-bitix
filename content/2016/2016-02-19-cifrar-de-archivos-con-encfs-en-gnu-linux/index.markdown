@@ -1,5 +1,6 @@
 ---
 pid: 126
+type: "post"
 title: "Cifrar archivos con EncFS en GNU/Linux"
 url: "/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/"
 aliases: ["/2016/02/cifrado-de-archivos-con-encfs-en-gnu-linux/"]

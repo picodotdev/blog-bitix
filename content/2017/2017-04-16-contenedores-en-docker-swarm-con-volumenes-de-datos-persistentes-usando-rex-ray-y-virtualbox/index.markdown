@@ -1,5 +1,6 @@
 ---
 pid: 226
+type: "post"
 title: "Contenedores en Docker Swarm con volúmenes de datos persistentes usando REX-Ray y VirtualBox"
 url: "/2017/04/contenedores-en-docker-swarm-con-volumenes-de-datos-persistentes-usando-rex-ray-y-virtualbox/"
 date: 2017-04-16T12:00:00+02:00

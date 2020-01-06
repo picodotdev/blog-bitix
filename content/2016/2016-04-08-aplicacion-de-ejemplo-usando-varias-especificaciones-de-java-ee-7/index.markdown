@@ -1,5 +1,6 @@
 ---
 pid: 136
+type: "post"
 title: "Aplicación de ejemplo usando varias especificaciones de Java EE 7"
 url: "/2016/04/aplicacion-de-ejemplo-usando-varias-especificaciones-de-java-ee-7/"
 date: 2016-04-08T17:00:00+02:00

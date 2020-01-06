@@ -1,5 +1,6 @@
 ---
 pid: 354
+type: "post"
 title: "Proxy para microservicios con Spring Cloud Netflix y Zuul"
 url: "/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/"
 date: 2018-10-13T23:00:00+02:00

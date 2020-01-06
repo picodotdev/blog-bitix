@@ -1,5 +1,6 @@
 ---
 pid: 251
+type: "post"
 title: "Sustituir caldera de gas por un termo eléctrico Fleck Duo 7 50"
 url: "/2017/08/sustituir-caldera-de-gas-por-un-termo-electrico-fleck-duo-7-50/"
 date: 2017-08-04T18:00:00+02:00

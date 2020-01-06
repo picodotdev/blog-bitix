@@ -1,5 +1,6 @@
 ---
 pid: 293
+type: "post"
 title: "Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel"
 url: "/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/"
 date: 2018-01-06T10:30:00+01:00

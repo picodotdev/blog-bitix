@@ -1,5 +1,6 @@
 ---
 pid: 96
+type: "post"
 title: "Ejemplo de multiproyecto con Gradle"
 url: "/2015/09/ejemplo-de-multiproyecto-con-gradle/"
 date: 2015-09-15T19:00:00+02:00

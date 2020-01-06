@@ -1,5 +1,6 @@
 ---
 pid: 120
+type: "post"
 title: "Introducción y ejemplo básico sobre Vert.x"
 url: "/2016/01/introduccion-y-ejemplo-basico-sobre-vertx/"
 date: 2016-01-15T15:00:00+01:00

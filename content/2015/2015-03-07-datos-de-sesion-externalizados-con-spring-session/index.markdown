@@ -1,5 +1,6 @@
 ---
 pid: 70
+type: "post"
 title: "Datos de sesión externalizados con Spring Session"
 url: "/2015/03/datos-de-sesion-externalizados-con-spring-session/"
 date: 2015-03-07T09:05:06+01:00

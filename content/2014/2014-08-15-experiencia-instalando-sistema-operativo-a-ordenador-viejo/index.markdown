@@ -1,5 +1,6 @@
 ---
 pid: 37
+type: "post"
 title: "Experiencia instalando sistema operativo a ordenador viejo"
 url: "/2014/08/experiencia-instalando-sistema-operativo-a-ordenador-viejo/"
 date: 2014-08-15T09:18:07+02:00

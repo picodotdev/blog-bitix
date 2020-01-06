@@ -1,5 +1,6 @@
 ---
 pid: 45
+type: "post"
 title: "Agregador Blog Stack rediseñado"
 url: "/2014/09/agregador-blog-stack-redisenado/"
 date: 2014-09-30T19:38:46+02:00

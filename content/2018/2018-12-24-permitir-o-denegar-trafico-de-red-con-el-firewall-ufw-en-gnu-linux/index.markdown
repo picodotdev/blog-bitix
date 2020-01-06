@@ -1,5 +1,6 @@
 ---
 pid: 369
+type: "post"
 title: "Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux"
 url: "/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/"
 aliases: ["/2018/12/impedir-o-permitir-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/"]

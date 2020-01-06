@@ -1,5 +1,6 @@
 ---
 pid: 358
+type: "post"
 title: "IBM adquiere Red Hat, el gigante de Linux y código abierto"
 url: "/2018/10/ibm-adquiere-red-hat-el-gigante-de-linux-y-codigo-abierto/"
 aliases: ["/2018/10/ibm-adquiere-redhat-el-gigante-de-linux-y-codigo-abierto/"]

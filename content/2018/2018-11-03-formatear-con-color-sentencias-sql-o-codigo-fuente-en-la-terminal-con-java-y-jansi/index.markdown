@@ -1,5 +1,6 @@
 ---
 pid: 359
+type: "post"
 title: "Formatear con color sentencias SQL o código fuente en la terminal con Java y Jansi"
 url: "/2018/11/formatear-con-color-sentencias-sql-o-codigo-fuente-en-la-terminal-con-java-y-jansi/"
 date: 2018-11-03T23:30:00+01:00

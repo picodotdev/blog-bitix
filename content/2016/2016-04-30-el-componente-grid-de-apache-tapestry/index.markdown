@@ -1,5 +1,6 @@
 ---
 pid: 139
+type: "post"
 title: "El componente Grid de Apache Tapestry"
 url: "/2016/04/el-componente-grid-de-apache-tapestry/"
 date: 2016-04-30T12:00:00+02:00

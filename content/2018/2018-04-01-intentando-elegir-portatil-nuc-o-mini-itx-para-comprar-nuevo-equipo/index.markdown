@@ -1,5 +1,6 @@
 ---
 pid: 309
+type: "post"
 title: "Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo"
 url: "/2018/04/intentando-elegir-portatil-nuc-o-mini-itx-para-comprar-nuevo-equipo/"
 date: 2018-04-01T10:00:00+02:00

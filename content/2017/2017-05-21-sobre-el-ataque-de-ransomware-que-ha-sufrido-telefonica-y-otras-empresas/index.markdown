@@ -1,5 +1,6 @@
 ---
 pid: 235
+type: "post"
 title: "Sobre el ataque de ransomware que ha sufrido Telefonica y otras empresas"
 url: "/2017/05/sobre-el-ataque-de-ransomware-que-ha-sufrido-telefonica-y-otras-empresas/"
 date: 2017-05-21T11:00:00+02:00

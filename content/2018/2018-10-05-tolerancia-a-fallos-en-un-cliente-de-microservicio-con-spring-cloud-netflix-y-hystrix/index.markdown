@@ -1,5 +1,6 @@
 ---
 pid: 352
+type: "post"
 title: "Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix"
 url: "/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/"
 date: 2018-10-05T20:30:00+02:00

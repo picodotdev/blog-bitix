@@ -1,5 +1,6 @@
 ---
 pid: 420
+type: "post"
 title: "Los tipos de módulos de JPMS añadidos a partir de Java 9"
 url: "/2019/07/los-tipos-de-modulos-de-jmps-anadidos-a-partir-de-java-9/"
 date: 2019-07-07T12:00:00+02:00

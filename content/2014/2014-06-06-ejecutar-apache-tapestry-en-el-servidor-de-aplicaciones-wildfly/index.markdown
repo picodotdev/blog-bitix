@@ -1,5 +1,6 @@
 ---
 pid: 27
+type: "post"
 title: "Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly"
 url: "/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/"
 date: 2014-06-06T20:58:25+02:00

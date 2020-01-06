@@ -1,5 +1,6 @@
 ---
 pid: 437
+type: "post"
 title: "Ventajas de usar un tipo específico para los identificadores de las entidades en vez de un tipo básico"
 url: "/2019/10/ventajas-de-usar-un-tipo-especifico-para-los-identificadores-de-las-entidades-en-vez-de-un-tipo-basico/"
 date: 2019-10-18T16:30:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 418
+type: "post"
 title: "Hemeroteca #15"
 url: "/2019/06/hemeroteca-15/"
 date: 2019-06-30T10:30:00+02:00

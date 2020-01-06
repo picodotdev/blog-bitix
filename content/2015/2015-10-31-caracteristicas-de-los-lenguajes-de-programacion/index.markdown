@@ -1,5 +1,6 @@
 ---
 pid: 107
+type: "post"
 title: "Características de los lenguajes de programación"
 url: "/2015/10/caracteristicas-de-los-lenguajes-de-programacion/"
 date: 2015-10-31T12:00:00+01:00

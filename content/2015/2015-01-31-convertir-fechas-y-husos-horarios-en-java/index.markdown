@@ -1,5 +1,6 @@
 ---
 pid: 64
+type: "post"
 title: "Convertir fechas y husos horarios en Java"
 url: "/2015/01/convertir-fechas-y-husos-horarios-en-java/"
 aliases: ["/2015/01/fechas-y-husos-horarios-en-java/", "/2015/01/fechas-y-usos-horarios-en-java/"]

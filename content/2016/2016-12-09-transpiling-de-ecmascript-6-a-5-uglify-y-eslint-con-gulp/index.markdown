@@ -1,5 +1,6 @@
 ---
 pid: 200
+type: "post"
 title: "Transpiling de ECMAScript 6 a 5, Uglify y ESLint con Gulp"
 url: "/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/"
 date: 2016-12-09T12:00:00+01:00

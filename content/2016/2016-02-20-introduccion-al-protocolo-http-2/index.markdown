@@ -1,5 +1,6 @@
 ---
 pid: 127
+type: "post"
 title: "Introducción al protocolo HTTP/2"
 url: "/2016/02/introduccion-al-protocolo-http-2/"
 date: 2016-02-20T20:00:00+01:00

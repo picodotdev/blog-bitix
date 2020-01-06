@@ -1,5 +1,6 @@
 ---
 pid: 65
+type: "post"
 title: "5º aniversario del blog"
 url: "/2015/02/5-aniversario-del-blog/"
 aliases: ["/2015/02/5o-aniversario-del-blog/"]

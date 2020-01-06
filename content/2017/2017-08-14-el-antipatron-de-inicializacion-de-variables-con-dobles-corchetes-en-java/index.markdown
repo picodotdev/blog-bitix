@@ -1,5 +1,6 @@
 ---
 pid: 253
+type: "post"
 title: "El antipatrón de inicialización de variables con dobles llaves en Java"
 url: "/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/"
 aliases: ["/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-corchetes-en-java/"]

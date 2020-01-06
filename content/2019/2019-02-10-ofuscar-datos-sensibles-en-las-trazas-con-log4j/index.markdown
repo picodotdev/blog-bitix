@@ -1,5 +1,6 @@
 ---
 pid: 383
+type: "post"
 title: "Ofuscar datos sensibles en las trazas con Log4j"
 url: "/2019/02/ofuscar-datos-sensibles-en-las-trazas-con-log4j/"
 date: 2019-02-10T10:30:00+01:00

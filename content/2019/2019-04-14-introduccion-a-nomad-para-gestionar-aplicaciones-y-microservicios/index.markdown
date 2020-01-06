@@ -1,5 +1,6 @@
 ---
 pid: 398
+type: "post"
 title: "Introducción a Nomad para gestionar aplicaciones y microservicios"
 url: "/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/"
 date: 2019-04-14T13:00:00+02:00

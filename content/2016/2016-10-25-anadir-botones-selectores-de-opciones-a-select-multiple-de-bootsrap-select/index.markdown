@@ -1,5 +1,6 @@
 ---
 pid: 189
+type: "post"
 title: "Añadir botones selectores de opciones a select múltiple de bootsrap-select"
 url: "/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/"
 date: 2016-10-25T15:30:00+02:00

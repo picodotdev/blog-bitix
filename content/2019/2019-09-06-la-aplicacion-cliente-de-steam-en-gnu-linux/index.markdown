@@ -1,5 +1,6 @@
 ---
 pid: 431
+type: "post"
 title: "La aplicación cliente de Steam en GNU/Linux"
 url: "/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/"
 aliases: ["/2019/09/como-instalar-el-cliente-de-steam-en-gnu-linux/"]

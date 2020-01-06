@@ -1,5 +1,6 @@
 ---
 pid: 152
+type: "post"
 title: "Combinación de teclas para copiar y pegar en la terminal"
 url: "/2016/06/combinacion-de-teclas-para-copiar-y-pegar-en-la-terminal/"
 date: 2016-06-24T15:30:00+02:00

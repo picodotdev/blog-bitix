@@ -1,5 +1,6 @@
 ---
 pid: 80
+type: "post"
 title: "Nuevo diseño en Blog Bitix"
 url: "/2015/05/nuevo-diseno-en-blog-bitix/"
 date: 2015-05-16T12:00:00+02:00

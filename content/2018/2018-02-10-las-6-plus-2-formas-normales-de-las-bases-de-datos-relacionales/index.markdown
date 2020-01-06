@@ -1,5 +1,6 @@
 ---
 pid: 299
+type: "post"
 title: "Las 6+2 formas normales de las bases de datos relacionales"
 url: "/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos-relacionales/"
 aliases: ["/2018/02/las-6-plus-2-formas-normales-de-las-bases-de-datos/"]

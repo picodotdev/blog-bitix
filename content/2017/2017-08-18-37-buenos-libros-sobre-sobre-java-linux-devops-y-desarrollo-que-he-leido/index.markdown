@@ -1,5 +1,6 @@
 ---
 pid: 254
+type: "post"
 title: "37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído"
 url: "/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/"
 date: 2017-08-18T23:00:00+02:00

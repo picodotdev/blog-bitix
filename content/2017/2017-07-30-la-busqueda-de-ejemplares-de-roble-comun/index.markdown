@@ -1,5 +1,6 @@
 ---
 pid: 250
+type: "post"
 title: "La búsqueda de ejemplares de roble común"
 url: "/2017/07/la-busqueda-de-ejemplares-de-roble-comun/"
 date: 2017-07-30T11:00:00+02:00

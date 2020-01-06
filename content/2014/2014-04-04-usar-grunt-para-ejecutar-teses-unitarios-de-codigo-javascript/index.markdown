@@ -1,5 +1,6 @@
 ---
 pid: 19
+type: "post"
 title: "Usar Grunt para ejecutar teses unitarios de código JavaScript"
 url: "/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/"
 date: 2014-04-04T16:43:23+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 326
+type: "post"
 title: "Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry"
 url: "/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/"
 date: 2018-06-03T08:30:00+02:00

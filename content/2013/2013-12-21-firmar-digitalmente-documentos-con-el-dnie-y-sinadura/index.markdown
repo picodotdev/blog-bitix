@@ -1,5 +1,6 @@
 ---
 pid: 3
+type: "post"
 title: "Firmar digitalmente documentos con el DNIe y Sinadura"
 url: "/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/"
 date: 2013-12-21T11:34:55+01:00

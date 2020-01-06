@@ -1,5 +1,6 @@
 ---
 pid: 389
+type: "post"
 title: "Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)"
 url: "/2019/03/varias-consideraciones-importantes-para-trabajar-con-importes-correctamente-tipo-de-datos-precision-y-guardado/"
 date: 2019-03-16T11:00:00+01:00

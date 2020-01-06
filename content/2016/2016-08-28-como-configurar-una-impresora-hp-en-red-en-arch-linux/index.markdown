@@ -1,5 +1,6 @@
 ---
 pid: 174
+type: "post"
 title: "Cómo configurar una impresora HP en red en Arch Linux"
 url: "/2016/08/como-configurar-una-impresora-hp-en-red-en-arch-linux/"
 date: 2016-08-28T10:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 390
+type: "post"
 title: "Ejemplo de Reactive Streams en Java"
 url: "/2019/03/ejemplo-de-reactive-streams-en-java/"
 date: 2019-03-17T10:00:00+01:00

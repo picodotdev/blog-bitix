@@ -1,5 +1,6 @@
 ---
 pid: 156
+type: "post"
 title: "Comandos básicos de GNU/Linux"
 url: "/2016/07/comandos-basicos-de-gnu-linux/"
 date: 2016-07-03T12:00:00+02:00

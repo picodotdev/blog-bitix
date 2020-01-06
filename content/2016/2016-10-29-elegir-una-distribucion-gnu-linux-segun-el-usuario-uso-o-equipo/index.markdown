@@ -1,5 +1,6 @@
 ---
 pid: 190
+type: "post"
 title: "Elegir una distribución GNU/Linux según el usuario, uso o equipo"
 url: "/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/"
 date: 2016-10-29T12:00:00+02:00

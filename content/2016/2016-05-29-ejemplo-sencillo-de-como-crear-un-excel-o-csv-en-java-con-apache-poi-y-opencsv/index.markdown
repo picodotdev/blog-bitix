@@ -1,5 +1,6 @@
 ---
 pid: 146
+type: "post"
 title: "Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV"
 url: "/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/"
 aliases: ["/2016/05/ejemplo-sencillo-de-como-crear-un-excel-en-java-con-apache-poi/"]

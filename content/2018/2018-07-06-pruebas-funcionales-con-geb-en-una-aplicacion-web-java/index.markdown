@@ -1,5 +1,6 @@
 ---
 pid: 332
+type: "post"
 title: "Pruebas funcionales con Geb en una aplicación web Java"
 url: "/2018/07/pruebas-funcionales-con-geb-en-una-aplicacion-web-java/"
 date: 2018-07-06T08:00:00+02:00

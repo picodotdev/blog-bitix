@@ -1,5 +1,6 @@
 ---
 pid: 55
+type: "post"
 title: "8+ libros para mejorar como programadores"
 url: "/2014/12/8-plus-libros-para-mejorar-como-programadores/"
 date: 2014-12-05T17:08:57+01:00

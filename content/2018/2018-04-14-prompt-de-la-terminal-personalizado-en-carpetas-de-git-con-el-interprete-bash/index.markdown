@@ -1,5 +1,6 @@
 ---
 pid: 312
+type: "post"
 title: "Prompt de la terminal personalizado en carpetas de git con el intérprete Bash"
 url: "/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/"
 date: 2018-04-14T00:30:00+02:00

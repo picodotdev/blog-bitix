@@ -1,5 +1,6 @@
 ---
 pid: 24
+type: "post"
 title: "Arquitectura y hospedaje de Blog Stack"
 url: "/2014/05/arquitectura-y-hospedaje-de-blog-stack/"
 date: 2014-05-16T17:21:55+02:00

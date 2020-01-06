@@ -1,5 +1,6 @@
 ---
 pid: 356
+type: "post"
 title: "Desempaquetado y análisis de monitor Benq PD2700Q"
 url: "/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q/"
 date: 2018-10-23T11:00:00+02:00

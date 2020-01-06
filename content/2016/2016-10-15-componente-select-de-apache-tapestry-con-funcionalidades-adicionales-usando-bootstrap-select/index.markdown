@@ -1,5 +1,6 @@
 ---
 pid: 187
+type: "post"
 title: "Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select"
 url: "/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/"
 date: 2016-10-15T13:00:00+02:00

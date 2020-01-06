@@ -1,5 +1,6 @@
 ---
 pid: 427
+type: "post"
 title: "Iniciar una aplicación de Spring Boot en un puerto aleatorio"
 url: "/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/"
 date: 2019-08-09T18:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 172
+type: "post"
 title: "22+ buenos juegos en GNU/Linux"
 url: "/2016/08/22-plus-buenos-juegos-en-gnu-linux/"
 date: 2016-08-21T13:00:00+02:00

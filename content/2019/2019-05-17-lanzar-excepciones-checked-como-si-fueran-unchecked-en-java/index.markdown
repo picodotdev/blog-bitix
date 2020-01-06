@@ -1,5 +1,6 @@
 ---
 pid: 405
+type: "post"
 title: "Lanzar excepciones checked como si fueran unchecked en Java"
 url: "/2019/05/lanzar-excepciones-checked-como-si-fueran-unchecked-en-java/"
 date: 2019-05-17T16:30:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 384
+type: "post"
 title: "Las clases anidadas inner, anónimas y locales en Java"
 url: "/2019/02/las-clases-anidadas-inner-anonimas-y-locales-en-java/"
 date: 2019-02-15T18:00:00+01:00

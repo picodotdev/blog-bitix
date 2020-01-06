@@ -1,5 +1,6 @@
 ---
 pid: 375
+type: "post"
 title: "Reproducir audio y música MIDI y sampled (wav, mp3, ogg) con Java y FFmpeg"
 url: "/2019/01/reproducir-audio-y-musica-midi-y-sampled-wav-mp3-ogg-con-java-y-ffmpeg/"
 date: 2019-01-21T12:00:00+01:00

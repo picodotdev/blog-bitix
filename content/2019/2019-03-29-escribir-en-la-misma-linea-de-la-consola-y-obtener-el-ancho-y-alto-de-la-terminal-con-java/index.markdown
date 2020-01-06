@@ -1,5 +1,6 @@
 ---
 pid: 393
+type: "post"
 title: "Escribir en la misma línea de la consola y obtener el ancho y alto de la terminal con Java"
 url: "/2019/03/escribir-en-la-misma-linea-de-la-consola-y-obtener-el-ancho-y-alto-de-la-terminal-con-java/"
 date: 2019-03-29T16:00:00+01:00

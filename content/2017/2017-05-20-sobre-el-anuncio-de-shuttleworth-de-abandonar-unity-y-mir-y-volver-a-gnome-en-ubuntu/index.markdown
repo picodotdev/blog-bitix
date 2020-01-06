@@ -1,5 +1,6 @@
 ---
 pid: 234
+type: "post"
 title: "Sobre el anuncio de Shuttleworth de abandonar Unity y Mir y volver a GNOME en Ubuntu"
 url: "/2017/05/sobre-el-anuncio-de-shuttleworth-de-abandonar-unity-y-mir-y-volver-a-gnome-en-ubuntu/"
 date: 2017-05-20T12:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 208
+type: "post"
 title: "Conferencia BilboStack 2017"
 url: "/2017/02/conferencia-bilbostack-2017/"
 date: 2017-02-05T00:00:00+01:00

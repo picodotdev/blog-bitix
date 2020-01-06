@@ -1,5 +1,6 @@
 ---
 pid: 429
+type: "post"
 title: "Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring"
 url: "/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/"
 date: 2019-08-23T09:00:00+02:00

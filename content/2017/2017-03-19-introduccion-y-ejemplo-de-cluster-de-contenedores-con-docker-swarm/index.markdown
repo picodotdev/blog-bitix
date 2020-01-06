@@ -1,5 +1,6 @@
 ---
 pid: 216
+type: "post"
 title: "Introducción y ejemplo de cluster de contenedores con Docker Swarm"
 url: "/2017/03/introduccion-y-ejemplo-de-cluster-de-contenedores-con-docker-swarm/"
 date: 2017-03-19T12:00:00+01:00

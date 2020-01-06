@@ -1,5 +1,6 @@
 ---
 pid: 34
+type: "post"
 title: "Servir recursos estáticos desde un CDN en Apache Tapestry"
 url: "/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/"
 aliases: "/2014/07/servir-recursos-estaticos-de-un-cdn-en-apache-tapestry/"

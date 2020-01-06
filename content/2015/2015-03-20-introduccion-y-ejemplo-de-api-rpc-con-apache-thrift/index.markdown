@@ -1,5 +1,6 @@
 ---
 pid: 72
+type: "post"
 title: "Introducción y ejemplo de API RPC con Apache Thrift"
 url: "/2015/03/introduccion-y-ejemplo-de-api-rpc-con-apache-thrift/"
 date: 2015-03-20T17:03:18+01:00

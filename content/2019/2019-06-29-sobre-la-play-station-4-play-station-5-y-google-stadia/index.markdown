@@ -1,5 +1,6 @@
 ---
 pid: 417
+type: "post"
 title: "Sobre la PlayStation 4, PlayStation 5 y Google Stadia"
 url: "/2019/06/sobre-la-play-station-4-play-station-5-y-google-stadia/"
 date: 2019-06-29T11:00:00+02:00

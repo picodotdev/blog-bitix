@@ -1,5 +1,6 @@
 ---
 pid: 338
+type: "post"
 title: "Personalizar el mensaje emitido de un objeto en Log4j"
 url: "/2018/08/personalizar-el-mensaje-emitido-de-un-objeto-en-log4j/"
 date: 2018-08-10T18:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 439
+type: "post"
 title: "Información básica del sistema y entorno de escritorio desde la terminal de GNU/Linux"
 url: "/2019/11/informacion-basica-del-sistema-y-entorno-de-escritorio-desde-la-terminal-de-gnu-linux/"
 date: 2019-11-01T17:00:00+01:00

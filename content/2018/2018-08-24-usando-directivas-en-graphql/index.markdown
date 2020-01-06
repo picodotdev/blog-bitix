@@ -1,5 +1,6 @@
 ---
 pid: 341
+type: "post"
 title: "Usando directivas en GraphQL"
 url: "/2018/08/usando-directivas-en-graphql/"
 date: 2018-08-24T08:00:00+02:00

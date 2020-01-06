@@ -1,5 +1,6 @@
 ---
 pid: 373
+type: "post"
 title: "Compilar el código fuente y ejecutar con los comandos javac, java y jar en Java 8 o anteriores"
 url: "/2019/01/compilar-el-codigo-fuente-y-ejecutar-con-los-comandos-javac-java-y-jar-en-java-8-o-anteriores/"
 date: 2019-01-13T14:00:00+01:00

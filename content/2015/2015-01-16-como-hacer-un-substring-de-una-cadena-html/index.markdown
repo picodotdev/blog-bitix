@@ -1,5 +1,6 @@
 ---
 pid: 61
+type: "post"
 title: "Cómo hacer un substring de una cadena HTML"
 url: "/2015/01/como-hacer-un-substring-de-una-cadena-html/"
 date: 2015-01-16T13:03:52+01:00

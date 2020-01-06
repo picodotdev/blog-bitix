@@ -1,5 +1,6 @@
 ---
 pid: 194
+type: "post"
 title: "Usar una imagen de fondo aleatoria al cargar una página web"
 url: "/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/"
 date: 2016-11-13T12:00:00+01:00

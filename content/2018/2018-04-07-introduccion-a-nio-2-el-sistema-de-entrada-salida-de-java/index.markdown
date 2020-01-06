@@ -1,5 +1,6 @@
 ---
 pid: 310
+type: "post"
 title: "Introducción a NIO.2, el sistema de entrada/salida de Java"
 url: "/2018/04/introduccion-a-nio-2-el-sistema-de-entrada-salida-de-java/"
 date: 2018-04-07T10:00:00+02:00

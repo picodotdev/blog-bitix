@@ -1,5 +1,6 @@
 ---
 pid: 247
+type: "post"
 title: "4 formas de hacer un bucle for en Java"
 url: "/2017/07/4-formas-de-hacer-un-bucle-for-en-java/"
 date: 2017-07-16T12:30:00+02:00

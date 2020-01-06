@@ -1,5 +1,6 @@
 ---
 pid: 68
+type: "post"
 title: "Ejemplo de listener de eventos de Hibernate"
 url: "/2015/02/ejemplo-de-listener-de-eventos-de-hibernate/"
 date: 2015-02-20T16:30:44+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 252
+type: "post"
 title: "Instalar y renovar un certificado de Let's Encrypt en Nginx"
 url: "/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/"
 date: 2017-08-12T11:00:00+02:00

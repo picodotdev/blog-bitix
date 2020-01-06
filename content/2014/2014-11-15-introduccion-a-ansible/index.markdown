@@ -1,5 +1,6 @@
 ---
 pid: 52
+type: "post"
 title: "Introducción a Ansible"
 url: "/2014/11/introduccion-a-ansible/"
 date: 2014-11-15T10:35:39+01:00

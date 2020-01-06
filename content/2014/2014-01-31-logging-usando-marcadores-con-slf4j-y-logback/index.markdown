@@ -1,5 +1,6 @@
 ---
 pid: 9
+type: "post"
 title: "Logging usando marcadores con slf4j y logback"
 url: "/2014/01/logging-usando-marcadores-con-slf4j-y-logback/"
 date: 2014-01-31T17:10:17+01:00

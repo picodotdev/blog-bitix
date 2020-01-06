@@ -1,5 +1,6 @@
 ---
 pid: 28
+type: "post"
 title: "Página Dashboard de Apache Tapestry"
 url: "/2014/06/pagina-dashboard-de-apache-tapestry/"
 date: 2014-06-13T17:37:24+02:00

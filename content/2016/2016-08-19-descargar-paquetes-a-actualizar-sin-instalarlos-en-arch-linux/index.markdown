@@ -1,5 +1,6 @@
 ---
 pid: 171
+type: "post"
 title: "Descargar paquetes a actualizar sin instalarlos en Arch Linux"
 url: "/2016/08/descargar-paquetes-a-actualizar-sin-instalarlos-en-arch-linux/"
 date: 2016-08-19T17:00:00+02:00

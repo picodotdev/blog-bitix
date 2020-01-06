@@ -1,5 +1,6 @@
 ---
 pid: 236
+type: "post"
 title: "Introducción a la base de datos relacional PostgreSQL"
 url: "/2017/05/introduccion-a-la-base-de-datos-relacional-postgresql/"
 date: 2017-05-27T12:00:00+02:00

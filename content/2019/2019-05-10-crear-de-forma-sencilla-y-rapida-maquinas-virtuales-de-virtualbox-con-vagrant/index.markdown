@@ -1,5 +1,6 @@
 ---
 pid: 403
+type: "post"
 title: "Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant"
 url: "/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/"
 date: 2019-05-10T17:00:00+02:00

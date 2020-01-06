@@ -1,5 +1,6 @@
 ---
 pid: 186
+type: "post"
 title: "Sobre el rápido avance de la tecnología"
 url: "/2016/10/sobre-el-rapido-avance-de-la-tecnologia/"
 date: 2016-10-12T12:00:00+02:00

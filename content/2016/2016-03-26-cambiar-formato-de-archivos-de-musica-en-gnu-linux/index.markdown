@@ -1,5 +1,6 @@
 ---
 pid: 134
+type: "post"
 title: "Cambiar el formato de archivos de música o audio en GNU/Linux"
 url: "/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/"
 aliases: ["/2016/03/cambiar-el-formato-de-archivos-de-musica-en-gnu-linux/"]

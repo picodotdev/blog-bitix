@@ -1,5 +1,6 @@
 ---
 pid: 391
+type: "post"
 title: "Novedades de Java 12"
 url: "/2019/03/novedades-de-java-12/"
 date: 2019-03-22T18:30:00+01:00

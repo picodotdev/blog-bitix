@@ -1,5 +1,6 @@
 ---
 pid: 38
+type: "post"
 title: "Forzar el uso del protocolo https en Apache Tapestry"
 url: "/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/"
 date: 2014-08-22T11:09:23+02:00

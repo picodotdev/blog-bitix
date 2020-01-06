@@ -1,5 +1,6 @@
 ---
 pid: 23
+type: "post"
 title: "Presentación de Blog Stack"
 url: "/2014/05/presentacion-blog-stack/"
 date: 2014-05-04T11:51:38+02:00

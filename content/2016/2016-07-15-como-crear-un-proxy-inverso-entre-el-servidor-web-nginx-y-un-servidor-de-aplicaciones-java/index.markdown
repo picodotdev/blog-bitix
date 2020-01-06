@@ -1,5 +1,6 @@
 ---
 pid: 159
+type: "post"
 title: "Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java"
 url: "/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/"
 date: 2016-07-15T18:00:00+02:00

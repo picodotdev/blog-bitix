@@ -1,5 +1,6 @@
 ---
 pid: 322
+type: "post"
 title: "Recuperar datos eficientemente en GraphQL usando batching"
 url: "/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/"
 date: 2018-05-20T19:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 44
+type: "post"
 title: "Configuración usando código Java"
 url: "/2014/09/configuracion-usando-codigo-java/"
 date: 2014-09-26T19:18:20+02:00

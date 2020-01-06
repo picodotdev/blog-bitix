@@ -1,5 +1,6 @@
 ---
 pid: 196
+type: "post"
 title: "Guardar contraseñas de forma segura con KeePassXC"
 url: "/2016/11/guardar-contrasenas-de-forma-segura-con-keepassxc/"
 aliases: ["/2016/11/guardar-contrasenas-de-forma-segura-con-keepassx/"]

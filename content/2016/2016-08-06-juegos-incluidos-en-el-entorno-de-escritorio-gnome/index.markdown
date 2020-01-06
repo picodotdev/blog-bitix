@@ -1,5 +1,6 @@
 ---
 pid: 167
+type: "post"
 title: "Juegos incluidos en el entorno de escritorio GNOME"
 url: "/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/"
 date: 2016-08-07T01:00:00+02:00

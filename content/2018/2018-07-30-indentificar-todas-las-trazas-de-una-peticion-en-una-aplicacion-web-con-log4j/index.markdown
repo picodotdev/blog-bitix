@@ -1,5 +1,6 @@
 ---
 pid: 336
+type: "post"
 title: "Identificar todas las trazas de una petición en una aplicación web Java con Log4j"
 url: "/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/"
 aliases: ["/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-con-log4j/"]

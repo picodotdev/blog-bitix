@@ -1,5 +1,6 @@
 ---
 pid: 86
+type: "post"
 title: "Hemeroteca #7"
 url: "/2015/06/hemeroteca-7/"
 aliases: ["/2015/06/hemeroteca-number-7/"]

@@ -1,5 +1,6 @@
 ---
 pid: 63
+type: "post"
 title: "Internacionalización (i18n) en JavaScript"
 url: "/2015/01/internacionalizacion-i18n-en-javascript/"
 date: 2015-01-23T10:00:00+01:00

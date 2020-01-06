@@ -1,5 +1,6 @@
 ---
 pid: 211
+type: "post"
 title: "Servidores Cloud VPS de Clouding.io para hospedar blogs y páginas web"
 url: "/2017/02/servidores-cloud-vps-de-cloudingio-para-hospedar-blogs-y-paginas-web/"
 date: 2017-02-28T22:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 169
+type: "post"
 title: "Eligiendo proveedor de internet, finalmente Pepephone"
 url: "/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/"
 date: 2016-08-14T12:00:00+02:00

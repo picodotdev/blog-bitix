@@ -1,5 +1,6 @@
 ---
 pid: 224
+type: "post"
 title: "Ejemplo sensor de golpes y detector de movimiento en la Raspberry Pi con Java"
 url: "/2017/04/ejemplo-sensor-de-golpes-y-detector-de-movimiento-en-la-raspberry-pi-con-java/"
 aliases: ["/2017/04/ejemplo-sensor-de-golpes-y-detector-movimiento-en-la-raspberry-pi-con-java/"]

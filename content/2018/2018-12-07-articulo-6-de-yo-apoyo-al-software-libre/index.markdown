@@ -1,5 +1,6 @@
 ---
 pid: 365
+type: "post"
 title: "Artículo #6 de Yo apoyo al software libre"
 url: "/2018/12/articulo-6-de-yo-apoyo-al-software-libre/"
 date: 2018-12-07T12:00:00+01:00

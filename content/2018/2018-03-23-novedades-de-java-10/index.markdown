@@ -1,5 +1,6 @@
 ---
 pid: 306
+type: "post"
 title: "Novedades de Java 10"
 url: "/2018/03/novedades-de-java-10/"
 date: 2018-03-23T20:00:00+01:00

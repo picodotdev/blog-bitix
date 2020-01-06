@@ -1,5 +1,6 @@
 ---
 pid: 321
+type: "post"
 title: "Depurar código JavaScript con la instrucción debugger"
 url: "/2018/05/depurar-codigo-javascript-con-la-instruccion-debugger/"
 aliases: ["/2018/05/depuracion-con-la-instruccion-debugger-en-javascript/"]

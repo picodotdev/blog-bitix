@@ -1,5 +1,6 @@
 ---
 pid: 232
+type: "post"
 title: "Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero"
 url: "/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/"
 date: 2017-05-13T09:00:00+02:00

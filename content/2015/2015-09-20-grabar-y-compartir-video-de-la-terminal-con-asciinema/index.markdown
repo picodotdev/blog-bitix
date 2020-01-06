@@ -1,5 +1,6 @@
 ---
 pid: 97
+type: "post"
 title: "Grabar y compartir vídeo de la terminal con Asciinema"
 url: "/2015/09/grabar-y-compartir-video-de-la-terminal-con-asciinema/"
 date: 2015-09-20T13:00:00+02:00

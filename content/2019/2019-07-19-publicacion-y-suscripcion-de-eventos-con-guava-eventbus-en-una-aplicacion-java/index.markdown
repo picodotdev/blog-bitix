@@ -1,5 +1,6 @@
 ---
 pid: 422
+type: "post"
 title: "Publicación y suscripción de eventos con Guava EventBus en una aplicación Java"
 url: "/2019/07/publicacion-y-suscripcion-de-eventos-con-guava-eventbus-en-una-aplicacion-java/"
 date: 2019-07-19T19:00:00+02:00

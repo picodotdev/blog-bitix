@@ -1,5 +1,6 @@
 ---
 pid: 301
+type: "post"
 title: "Consola de juegos retro con Lakka y una Raspberry Pi"
 url: "/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/"
 date: 2018-02-23T23:00:00+01:00

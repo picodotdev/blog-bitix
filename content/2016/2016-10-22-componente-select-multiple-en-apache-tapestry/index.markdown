@@ -1,5 +1,6 @@
 ---
 pid: 188
+type: "post"
 title: "Componente select múltiple en Apache Tapestry"
 url: "/2016/10/componente-select-multiple-en-apache-tapestry/"
 date: 2016-10-25T13:45:00+02:00

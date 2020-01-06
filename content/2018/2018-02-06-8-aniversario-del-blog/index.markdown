@@ -1,5 +1,6 @@
 ---
 pid: 298
+type: "post"
 title: "8º aniversario del blog"
 url: "/2018/02/8-aniversario-del-blog/"
 aliases: ["/2018/01/8o-aniversario-del-blog/"]

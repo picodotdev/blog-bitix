@@ -1,5 +1,6 @@
 ---
 pid: 51
+type: "post"
 title: "Cómo crear una imagen para Docker usando un Dockerfile"
 url: "/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/"
 date: 2014-11-07T19:50:17+01:00

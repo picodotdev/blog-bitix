@@ -1,5 +1,6 @@
 ---
 pid: 185
+type: "post"
 title: "Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot"
 url: "/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/"
 date: 2016-10-07T10:00:00+02:00

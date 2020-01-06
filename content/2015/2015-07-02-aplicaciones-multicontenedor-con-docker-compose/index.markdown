@@ -1,5 +1,6 @@
 ---
 pid: 87
+type: "post"
 title: "Aplicaciones multicontenedor con Docker Compose"
 url: "/2015/07/aplicaciones-multicontenedor-con-docker-compose/"
 date: 2015-07-03T16:00:00+02:00

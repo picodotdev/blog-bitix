@@ -1,5 +1,6 @@
 ---
 pid: 164
+type: "post"
 title: "No, un tag JSP o un tag de Grails no es equivalente a un componente de Tapestry"
 url: "/2016/07/no-un-tag-jsp-o-un-tag-de-grails-no-es-equivalente-a-un-componente-de-tapestry/"
 date: 2016-07-25T12:00:00+02:00

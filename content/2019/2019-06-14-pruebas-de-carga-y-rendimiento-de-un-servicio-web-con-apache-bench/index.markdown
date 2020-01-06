@@ -1,5 +1,6 @@
 ---
 pid: 411
+type: "post"
 title: "Pruebas de carga y rendimiento de un servicio web con Apache Bench"
 url: "/2019/06/pruebas-de-carga-y-rendimiento-de-un-servicio-web-con-apache-bench/"
 date: 2019-06-14T17:00:00+02:00

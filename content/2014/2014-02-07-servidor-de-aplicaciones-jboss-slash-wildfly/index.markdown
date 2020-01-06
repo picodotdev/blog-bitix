@@ -1,5 +1,6 @@
 ---
 pid: 10
+type: "post"
 title: "Servidor de aplicaciones JBoss/WildFly"
 url: "/2014/02/servidor-de-aplicaciones-jboss-slash-wildfly/"
 date: 2014-02-07T22:35:31+01:00

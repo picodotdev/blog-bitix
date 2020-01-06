@@ -1,5 +1,6 @@
 ---
 pid: 361
+type: "post"
 title: "El agotamiento de direcciones IPv4 y el protocolo de internet IPv6"
 url: "/2018/11/el-agotamiento-de-direcciones-ipv4-y-el-protocolo-de-internet-ipv6/"
 date: 2018-11-16T19:00:00+01:00

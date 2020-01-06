@@ -1,5 +1,6 @@
 ---
 pid: 75
+type: "post"
 title: "Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas"
 url: "/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/"
 date: 2015-04-10T18:55:04+02:00

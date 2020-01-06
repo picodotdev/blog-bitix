@@ -1,5 +1,6 @@
 ---
 pid: 426
+type: "post"
 title: "Smartcards en vez de discos para una futura generación de consolas"
 url: "/2019/08/smartcards-en-vez-de-discos-para-una-futura-generacion-de-consolas/"
 date: 2019-08-03T20:00:00+02:00

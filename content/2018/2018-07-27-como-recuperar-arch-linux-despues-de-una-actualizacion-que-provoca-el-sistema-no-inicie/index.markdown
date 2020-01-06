@@ -1,5 +1,6 @@
 ---
 pid: 335
+type: "post"
 title: "Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie"
 url: "/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/"
 date: 2018-07-27T16:00:00+02:00

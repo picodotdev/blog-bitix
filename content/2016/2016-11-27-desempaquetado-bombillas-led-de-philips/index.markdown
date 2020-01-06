@@ -1,5 +1,6 @@
 ---
 pid: 197
+type: "post"
 title: "Desempaquetado bombillas LED de PHILIPS"
 url: "/2016/11/desempaquetado-bombillas-led-de-philips/"
 date: 2016-11-26T23:00:00+01:00

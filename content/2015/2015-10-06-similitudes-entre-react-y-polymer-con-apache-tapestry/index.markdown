@@ -1,5 +1,6 @@
 ---
 pid: 101
+type: "post"
 title: "Similitudes entre React y Polymer con Apache Tapestry"
 url: "/2015/10/similitudes-entre-react-y-polymer-con-apache-tapestry/"
 date: 2015-10-06T18:00:00+02:00

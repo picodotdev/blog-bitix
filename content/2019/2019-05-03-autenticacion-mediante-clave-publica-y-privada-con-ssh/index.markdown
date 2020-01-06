@@ -1,5 +1,6 @@
 ---
 pid: 401
+type: "post"
 title: "Autenticación mediante clave pública y privada con SSH"
 url: "/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/"
 date: 2019-05-03T20:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 181
+type: "post"
 title: "Cómo instalar y probar macOS con VirtualBox en Windows o GNU/Linux"
 url: "/2016/09/como-instalar-y-probar-macos-con-virtualbox-en-windows-o-gnu-linux/"
 date: 2016-09-25T11:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 269
+type: "post"
 title: "Obtener el mínimo o máximo de dos, una lista o stream de valores en Java"
 url: "/2017/10/obtener-el-minimo-o-maximo-de-dos-una-lista-o-stream-de-valores-en-java/"
 date: 2017-10-12T11:00:00+02:00

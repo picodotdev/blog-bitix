@@ -1,5 +1,6 @@
 ---
 pid: 445
+type: "post"
 title: "Implementar un segundo factor de autenticación en una aplicación web Java con Spring"
 url: "/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/"
 date: 2019-11-29T18:00:00+01:00

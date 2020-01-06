@@ -1,5 +1,6 @@
 ---
 pid: 94
+type: "post"
 title: "Aplicación Java extensible con la clase ServiceLoader"
 url: "/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/"
 date: 2015-09-12T10:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 334
+type: "post"
 title: "La librería Log4j para emitir trazas en aplicaciones Java"
 url: "/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/"
 aliases: ["/2018/07/la-libreria-log4j2-para-emitir-trazas-en-aplicaciones-java/"]

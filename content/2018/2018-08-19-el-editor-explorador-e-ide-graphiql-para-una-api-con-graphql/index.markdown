@@ -1,5 +1,6 @@
 ---
 pid: 340
+type: "post"
 title: "El editor, explorador e IDE GraphiQL para una API con GraphQL"
 url: "/2018/08/el-editor-explorador-e-ide-graphiql-para-una-api-con-graphql/"
 date: 2018-08-19T11:00:00+02:00

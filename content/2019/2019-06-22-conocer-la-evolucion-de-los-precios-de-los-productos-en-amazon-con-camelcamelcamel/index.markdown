@@ -1,5 +1,6 @@
 ---
 pid: 414
+type: "post"
 title: "Conocer la evolución de los precios de los productos en Amazon con CamelCamelCamel"
 url: "/2019/06/conocer-la-evolucion-de-los-precios-de-los-productos-en-amazon-con-camelcamelcamel/"
 date: 2019-06-22T07:00:00+02:00

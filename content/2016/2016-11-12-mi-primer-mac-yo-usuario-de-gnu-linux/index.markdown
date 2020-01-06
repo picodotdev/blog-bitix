@@ -1,5 +1,6 @@
 ---
 pid: 193
+type: "post"
 title: "Mi primer Mac, yo usuario de GNU/Linux"
 url: "/2016/11/mi-primer-mac-yo-usuario-de-gnu-linux/"
 date: 2016-11-12T10:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 92
+type: "post"
 title: "A Microsoft no le importa que uses Windows u Office sin licencia"
 url: "/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/"
 date: 2015-07-28T19:30:00+02:00

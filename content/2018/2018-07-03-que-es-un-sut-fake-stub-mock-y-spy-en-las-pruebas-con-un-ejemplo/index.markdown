@@ -1,5 +1,6 @@
 ---
 pid: 331
+type: "post"
 title: "Qué es un SUT, fake, Stub, Mock y Spy en las pruebas con un ejemplo"
 url: "/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/"
 date: 2018-07-04T10:00:00+02:00

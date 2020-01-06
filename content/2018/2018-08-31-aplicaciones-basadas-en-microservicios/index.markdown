@@ -1,5 +1,6 @@
 ---
 pid: 343
+type: "post"
 title: "Aplicaciones basadas en microservicios"
 url: "/2018/08/aplicaciones-basadas-en-microservicios/"
 date: 2018-08-31T18:00:00+02:00

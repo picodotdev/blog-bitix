@@ -1,5 +1,6 @@
 ---
 pid: 444
+type: "post"
 title: "Extraer información del navegador del usuario en el servidor de una aplicación web Java"
 url: "/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/"
 date: 2019-11-24T00:15:00+01:00

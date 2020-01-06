@@ -1,5 +1,6 @@
 ---
 pid: 59
+type: "post"
 title: "Instalar y usar un plugin ágil en Redmine"
 url: "/2015/01/instalar-y-usar-plugin-agil-en-redmine/"
 date: 2015-01-03T01:27:56+01:00

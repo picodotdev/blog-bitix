@@ -1,5 +1,6 @@
 ---
 pid: 370
+type: "post"
 title: "Hemeroteca #14"
 url: "/2018/12/hemeroteca-14/"
 date: 2018-12-29T13:00:00+01:00

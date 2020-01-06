@@ -1,5 +1,6 @@
 ---
 pid: 162
+type: "post"
 title: "Las cabeceras de cache del protocolo HTTP"
 url: "/2016/07/las-cabeceras-de-cache-del-protocolo-http/"
 date: 2016-07-22T18:00:00+02:00

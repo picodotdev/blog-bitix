@@ -1,5 +1,6 @@
 ---
 pid: 48
+type: "post"
 title: "Cómo filtrar contenido HTML de forma segura"
 url: "/2014/10/como-filtrar-contenido-html-de-forma-segura/"
 date: 2014-10-17T16:53:25+02:00

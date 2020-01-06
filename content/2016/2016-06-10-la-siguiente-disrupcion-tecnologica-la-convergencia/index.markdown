@@ -1,5 +1,6 @@
 ---
 pid: 149
+type: "post"
 title: "La siguiente disrupción tecnológica, la convergencia"
 url: "/2016/06/la-siguiente-disrupcion-tecnologica-la-convergencia/"
 date: 2016-06-10T19:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 246
+type: "post"
 title: "Iniciación a la programación concurrente en Java"
 url: "/2017/07/iniciacion-a-la-programacion-concurrente-en-java/"
 aliases: ["/2017/07/tutorial-sobre-programacion-concurrente-en-java/"]

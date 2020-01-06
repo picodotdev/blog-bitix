@@ -1,5 +1,6 @@
 ---
 pid: 380
+type: "post"
 title: "9º aniversario del blog"
 url: "/2019/02/9-aniversario-del-blog/"
 date: 2019-02-05T20:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 416
+type: "post"
 title: "Orden de ejecución de las cláusulas de las sentencias SELECT de SQL"
 url: "/2019/06/orden-de-ejecucion-de-las-clausulas-de-las-sentencias-select-de-sql/"
 date: 2019-06-28T17:00:00+02:00

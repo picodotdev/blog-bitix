@@ -1,5 +1,6 @@
 ---
 pid: 180
+type: "post"
 title: "Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot"
 url: "/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/"
 date: 2016-09-24T12:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 231
+type: "post"
 title: "Descargar e instalar Windows 10 paso a paso desde cero"
 url: "/2017/05/descargar-e-instalar-windows-10-paso-a-paso-desde-cero/"
 date: 2017-05-09T22:30:00+02:00

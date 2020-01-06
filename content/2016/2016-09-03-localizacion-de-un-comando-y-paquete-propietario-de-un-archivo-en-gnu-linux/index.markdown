@@ -1,5 +1,6 @@
 ---
 pid: 176
+type: "post"
 title: "Localización de un comando y paquete propietario de un archivo en GNU/Linux"
 url: "/2016/09/localizacion-de-un-comando-y-paquete-propietario-de-un-archivo-en-gnu-linux/"
 date: 2016-09-03T13:00:00+02:00

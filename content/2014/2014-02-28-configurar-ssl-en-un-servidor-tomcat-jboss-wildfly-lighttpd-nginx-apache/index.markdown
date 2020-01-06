@@ -1,5 +1,6 @@
 ---
 pid: 14
+type: "post"
 title: "Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache"
 url: "/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/"
 date: 2014-02-28T16:58:17+01:00

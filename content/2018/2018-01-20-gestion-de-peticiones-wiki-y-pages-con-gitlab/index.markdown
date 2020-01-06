@@ -1,5 +1,6 @@
 ---
 pid: 295
+type: "post"
 title: "Gestión de peticiones, wiki y pages con GitLab"
 url: "/2018/01/gestion-de-peticiones-wiki-y-pages-con-gitlab/"
 date: 2018-01-20T10:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 25
+type: "post"
 title: "Página de excepción de Grails"
 url: "/2014/05/pagina-de-excepcion-de-grails/"
 date: 2014-05-23T20:00:19+02:00

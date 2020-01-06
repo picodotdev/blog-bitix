@@ -1,5 +1,6 @@
 ---
 pid: 227
+type: "post"
 title: "Información sensible en los contenedores con Docker Secrets"
 url: "/2017/04/informacion-sensible-en-los-contenedores-con-docker-secrets/"
 aliases: ["/2017/04/informacion-sensible-en-contenedores-con-docker-secrets/"]

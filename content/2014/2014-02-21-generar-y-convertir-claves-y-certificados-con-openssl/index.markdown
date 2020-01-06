@@ -1,5 +1,6 @@
 ---
 pid: 13
+type: "post"
 title: "Generar y convertir claves y certificados con OpenSSL"
 url: "/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/"
 date: 2014-02-21T17:36:21+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 446
+type: "post"
 title: "Nube privada para documentos personales con Nextcloud y OnlyOffice"
 url: "/2019/12/nube-privada-para-documentos-personales-con-nextcloud-y-onlyoffice/"
 aliases: ["/2019/12/nube-privada-de-documentos-personales-con-nextcloud-y-onlyoffice/"]

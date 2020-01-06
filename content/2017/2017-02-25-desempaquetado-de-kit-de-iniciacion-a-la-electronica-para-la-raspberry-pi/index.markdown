@@ -1,5 +1,6 @@
 ---
 pid: 212
+type: "post"
 title: "Desempaquetado del kit de iniciación a la electrónica para la Raspberry Pi"
 url: "/2017/02/desempaquetado-del-kit-de-iniciacion-a-la-electronica-para-la-raspberry-pi/"
 date: 2017-02-25T11:00:00+01:00

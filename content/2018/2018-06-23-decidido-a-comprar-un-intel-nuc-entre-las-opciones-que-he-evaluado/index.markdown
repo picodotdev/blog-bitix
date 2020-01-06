@@ -1,5 +1,6 @@
 ---
 pid: 329
+type: "post"
 title: "Decidido a comprar un Intel NUC entre las opciones que he evaluado"
 url: "/2018/06/decidido-a-comprar-un-intel-nuc-entre-las-opciones-que-he-evaluado/"
 aliases: ["/2018/06/decidido-a-comprar-un-intel-nuc-bean-canyon-entre-las-opciones-que-he-evaluado/"]

@@ -1,5 +1,6 @@
 ---
 pid: 137
+type: "post"
 title: "Usar Twitter desde Java con twitter4j"
 url: "/2016/04/usar-twitter-desde-java-con-twitter4j/"
 date: 2016-04-16T12:30:00+02:00

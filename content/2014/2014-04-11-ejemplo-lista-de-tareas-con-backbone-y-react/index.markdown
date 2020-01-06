@@ -1,5 +1,6 @@
 ---
 pid: 20
+type: "post"
 title: "Ejemplo lista de tareas con Backbone y React"
 url: "/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/"
 date: 2014-04-11T16:33:28+02:00

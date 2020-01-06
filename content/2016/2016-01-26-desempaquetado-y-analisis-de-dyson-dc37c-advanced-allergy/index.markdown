@@ -1,5 +1,6 @@
 ---
 pid: 122
+type: "post"
 title: "Desempaquetado y análisis de aspiradora Dyson DC37c Advanced Allergy"
 url: "/2016/01/desempaquetado-y-analisis-de-aspiradora-dyson-dc37c-advanced-allergy/"
 aliases: ["/2016/01/desempaquetado-y-analisis-de-dyson-dc37c-advanced-allergy/"]

@@ -1,5 +1,6 @@
 ---
 pid: 71
+type: "post"
 title: "Aplicación web Java autocontenida con Tomcat Embedded"
 url: "/2015/03/aplicacion-web-java-autocontenida-con-tomcat-embedded/"
 date: 2015-03-14T10:32:20+01:00

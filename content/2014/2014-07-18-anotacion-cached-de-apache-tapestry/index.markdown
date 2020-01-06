@@ -1,5 +1,6 @@
 ---
 pid: 33
+type: "post"
 title: "Anotación Cached de Apache Tapestry"
 url: "/2014/07/anotacion-cached-de-apache-tapestry/"
 date: 2014-07-18T21:30:20+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 223
+type: "post"
 title: "Escalar y actualizar un servicio de un cluster de Docker Swarm"
 url: "/2017/04/escalar-y-actualizar-un-servicio-de-un-cluster-de-docker-swarm/"
 date: 2017-04-09T11:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 237
+type: "post"
 title: "Introducción a la base de datos NoSQL MongoDB"
 url: "/2017/05/introduccion-a-la-base-de-datos-nosql-mongodb/"
 date: 2017-05-28T12:30:00+02:00

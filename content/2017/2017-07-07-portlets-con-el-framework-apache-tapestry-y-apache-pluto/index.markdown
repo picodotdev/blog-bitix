@@ -1,5 +1,6 @@
 ---
 pid: 244
+type: "post"
 title: "Portlets con el framework Apache Tapestry y Apache Pluto"
 url: "/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/"
 date: 2017-07-07T23:30:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 362
+type: "post"
 title: "Flatpak, distribución e instalación de programas de escritorio en las distribuciones GNU/Linux"
 url: "/2018/11/flatpak-distribucion-e-instalacion-de-programas-de-escritorio-en-las-distribuciones-gnu-linux/"
 date: 2018-11-23T17:30:00+01:00

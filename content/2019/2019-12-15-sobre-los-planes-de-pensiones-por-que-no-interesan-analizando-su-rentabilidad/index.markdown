@@ -1,5 +1,6 @@
 ---
 pid: 450
+type: "post"
 title: "Sobre los planes de pensiones, analizando sus ventajas fiscales y rentabilidad"
 url: "/2019/12/sobre-los-planes-de-pensiones-analizando-sus-ventajas-fiscales-y-rentabilidad/"
 aliases: ["/2019/12/sobre-los-planes-de-pensiones-por-que-no-interesan-analizando-su-rentabilidad/"]

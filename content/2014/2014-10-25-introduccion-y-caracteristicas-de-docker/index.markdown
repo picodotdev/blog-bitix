@@ -1,5 +1,6 @@
 ---
 pid: 49
+type: "post"
 title: "Introducción y características de Docker"
 url: "/2014/10/introduccion-y-caracteristicas-de-docker/"
 date: 2014-10-25T10:52:34+02:00

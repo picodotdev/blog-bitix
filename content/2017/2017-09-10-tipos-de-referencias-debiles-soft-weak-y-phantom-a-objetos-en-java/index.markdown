@@ -1,5 +1,6 @@
 ---
 pid: 258
+type: "post"
 title: "Los tipos de referencias débiles soft, weak y phantom en Java"
 url: "/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/"
 aliases: ["/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-a-objetos-en-java/"]

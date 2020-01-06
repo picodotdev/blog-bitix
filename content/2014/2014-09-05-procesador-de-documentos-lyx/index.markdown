@@ -1,5 +1,6 @@
 ---
 pid: 41
+type: "post"
 title: "Procesador de documentos LyX"
 url: "/2014/09/procesador-de-documentos-lyx/"
 date: 2014-09-05T13:12:12+02:00

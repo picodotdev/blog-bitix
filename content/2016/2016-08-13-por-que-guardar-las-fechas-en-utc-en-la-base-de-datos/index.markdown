@@ -1,5 +1,6 @@
 ---
 pid: 168
+type: "post"
 title: "Por qué guardar las fechas en UTC en la base de datos"
 url: "/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/"
 date: 2016-08-13T01:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 109
+type: "post"
 title: "Obtener datos de múltiples tablas con jOOQ"
 url: "/2015/11/obtener-datos-de-multiples-tablas-con-jooq/"
 date: 2015-11-14T19:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 105
+type: "post"
 title: "El patrón de diseño Observer y una forma de implementarlo en Java"
 url: "/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/"
 aliases: ["/2015/10/ejemplo-del-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/"]

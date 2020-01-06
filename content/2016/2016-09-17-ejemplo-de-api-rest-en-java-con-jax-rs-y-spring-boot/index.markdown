@@ -1,5 +1,6 @@
 ---
 pid: 178
+type: "post"
 title: "Ejemplo de API REST en Java con JAX-RS y Spring Boot"
 url: "/2016/09/ejemplo-de-api-rest-en-java-con-jax-rs-y-spring-boot/"
 date: 2016-09-17T12:00:00+02:00

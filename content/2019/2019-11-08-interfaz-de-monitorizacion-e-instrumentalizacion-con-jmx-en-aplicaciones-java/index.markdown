@@ -1,5 +1,6 @@
 ---
 pid: 441
+type: "post"
 title: "Interfaz de monitorización e instrumentalización con JMX en aplicaciones Java"
 url: "/2019/11/interfaz-de-monitorizacion-e-instrumentalizacion-con-jmx-en-aplicaciones-java/"
 date: 2019-11-08T17:00:00+01:00

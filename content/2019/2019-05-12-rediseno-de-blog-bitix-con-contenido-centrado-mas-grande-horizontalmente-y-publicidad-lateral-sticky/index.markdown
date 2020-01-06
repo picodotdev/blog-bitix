@@ -1,5 +1,6 @@
 ---
 pid: 404
+type: "post"
 title: "Rediseño de Blog Bitix con contenido centrado, más grande horizontalmente y publicidad lateral sticky"
 url: "/2019/05/rediseno-de-blog-bitix-con-contenido-centrado-mas-grande-horizontalmente-y-publicidad-lateral-sticky/"
 date: 2019-05-12T14:00:00+02:00

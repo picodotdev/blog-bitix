@@ -1,5 +1,6 @@
 ---
 pid: 435
+type: "post"
 title: "Guía de inicio del gestor de terminales y sesiones tmux"
 url: "/2019/10/guia-de-inicio-del-gestor-de-terminales-y-sesiones-tmux/"
 date: 2019-10-04T18:00:00+02:00

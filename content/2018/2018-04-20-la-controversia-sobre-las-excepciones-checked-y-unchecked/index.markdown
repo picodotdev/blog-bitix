@@ -1,5 +1,6 @@
 ---
 pid: 313
+type: "post"
 title: "La controversia sobre las excepciones checked y unchecked"
 url: "/2018/04/la-controversia-sobre-las-excepciones-checked-y-unchecked/"
 aliases: ["/2018/04/la-controversia-sobre-las-excepciones-checked-y-uncheked/"]

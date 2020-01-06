@@ -1,5 +1,6 @@
 ---
 pid: 308
+type: "post"
 title: "Qué es y cómo funciona el type erasure en Java"
 url: "/2018/03/que-es-y-como-funciona-el-type-erasure-en-java/"
 date: 2018-03-31T10:30:00+02:00

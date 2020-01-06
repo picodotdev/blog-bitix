@@ -1,5 +1,6 @@
 ---
 pid: 395
+type: "post"
 title: "El concepto de wildcard capture en Java"
 url: "/2019/04/el-concepto-de-wildcard-capture-en-java/"
 date: 2019-04-05T17:45:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 124
+type: "post"
 title: "6º aniversario del blog"
 url: "/2016/02/6-aniversario-del-blog/"
 alises: ["/2016/02/6o-aniversario-del-blog/"]

@@ -1,5 +1,6 @@
 ---
 pid: 140
+type: "post"
 title: "Extraer elementos de una cadena con una expresión regular"
 url: "/2016/05/extraer-elementos-de-una-cadena-con-una-expresion-regular/"
 date: 2016-05-06T18:00:00+02:00

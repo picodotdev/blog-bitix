@@ -1,5 +1,6 @@
 ---
 pid: 104
+type: "post"
 title: "Cómo crear clases factoría sin usar if-else"
 url: "/2015/10/como-crear-clases-factoria-sin-usar-if-else/"
 date: 2015-10-18T12:00:00+02:00

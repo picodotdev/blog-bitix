@@ -1,5 +1,6 @@
 ---
 pid: 133
+type: "post"
 title: "Cómo firmar correos electrónicos con GPG y JavaMail"
 url: "/2016/03/como-firmar-correos-electronicos-con-gpg-y-javamail/"
 date: 2016-03-19T10:00:00+01:00

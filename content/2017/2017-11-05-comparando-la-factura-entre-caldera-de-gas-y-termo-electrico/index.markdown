@@ -1,5 +1,6 @@
 ---
 pid: 277
+type: "post"
 title: "Comparando la factura entre caldera de gas y termo eléctrico"
 url: "/2017/11/comparando-la-factura-entre-caldera-de-gas-y-termo-electrico/"
 date: 2017-11-05T09:00:00+01:00

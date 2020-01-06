@@ -1,5 +1,6 @@
 ---
 pid: 442
+type: "post"
 title: "Rotar los archivos de trazas con log4j por fecha o tamaño"
 url: "/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/"
 date: 2019-11-15T17:00:00+01:00

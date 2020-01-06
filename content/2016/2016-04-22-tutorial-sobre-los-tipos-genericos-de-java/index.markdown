@@ -1,5 +1,6 @@
 ---
 pid: 138
+type: "post"
 title: "Tutorial sobre los tipos genéricos de Java"
 url: "/2016/04/tutorial-sobre-los-tipos-genericos-de-java/"
 date: 2016-04-23T00:00:00+02:00

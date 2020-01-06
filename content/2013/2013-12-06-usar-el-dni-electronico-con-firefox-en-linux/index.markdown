@@ -1,5 +1,6 @@
 ---
 pid: 1
+type: "post"
 title: "Usar el DNI electrónico con Firefox en Linux"
 url: "/2013/12/usar-el-dni-electronico-con-firefox-en-linux/"
 date: 2013-12-06T14:07:58+01:00

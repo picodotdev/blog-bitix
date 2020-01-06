@@ -1,5 +1,6 @@
 ---
 pid: 408
+type: "post"
 title: "Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator"
 url: "/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/"
 date: 2019-05-26T11:30:00+02:00

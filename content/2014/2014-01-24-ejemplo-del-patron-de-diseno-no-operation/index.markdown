@@ -1,5 +1,6 @@
 ---
 pid: 8
+type: "post"
 title: "Ejemplo del patrón de diseño No Operation"
 url: "/2014/01/ejemplo-del-patron-de-diseno-no-operation/"
 date: 2014-01-24T16:48:40+01:00

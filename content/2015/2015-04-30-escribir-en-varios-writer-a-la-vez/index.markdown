@@ -1,5 +1,6 @@
 ---
 pid: 78
+type: "post"
 title: "Escribir en varios «Writer» a la vez"
 url: "/2015/04/escribir-en-varios-writer-a-la-vez/"
 date: 2015-04-30T20:00:47+02:00

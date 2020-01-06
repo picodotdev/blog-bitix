@@ -1,5 +1,6 @@
 ---
 pid: 116
+type: "post"
 title: "Publicado Apache Tapestry 5.4"
 url: "/2015/12/publicado-apache-tapestry-5-4/"
 date: 2015-12-24T16:00:00+02:00

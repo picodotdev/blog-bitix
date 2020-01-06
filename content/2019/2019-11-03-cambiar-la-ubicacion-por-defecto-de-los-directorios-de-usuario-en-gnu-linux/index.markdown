@@ -1,5 +1,6 @@
 ---
 pid: 440
+type: "post"
 title: "Cambiar la ubicación por defecto de los directorios de usuario en GNU/Linux"
 url: "/2019/11/cambiar-la-ubicacion-por-defecto-de-los-directorios-de-usuario-en-gnu-linux/"
 date: 2019-11-03T13:00:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 376
+type: "post"
 title: "Usar expresiones JSONPath para extraer datos de un JSON en Java"
 url: "/2019/01/usar-expresiones-jsonpath-para-extraer-datos-de-un-json-en-java/"
 date: 2019-01-25T18:30:00+01:00

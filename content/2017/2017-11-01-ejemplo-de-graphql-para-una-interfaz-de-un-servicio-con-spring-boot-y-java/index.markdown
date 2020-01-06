@@ -1,5 +1,6 @@
 ---
 pid: 275
+type: "post"
 title: "Ejemplo de GraphQL para una interfaz de un servicio con Spring Boot y Java"
 url: "/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"
 date: 2017-11-01T12:00:00+01:00

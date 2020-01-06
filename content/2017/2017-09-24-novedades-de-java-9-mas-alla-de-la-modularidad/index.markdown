@@ -1,5 +1,6 @@
 ---
 pid: 264
+type: "post"
 title: "Novedades de Java 9, más allá de la modularidad"
 url: "/2017/09/novedades-de-java-9-mas-alla-de-la-modularidad/"
 date: 2017-09-24T10:00:00+02:00

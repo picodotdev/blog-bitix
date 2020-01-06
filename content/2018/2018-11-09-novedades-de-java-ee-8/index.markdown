@@ -1,5 +1,6 @@
 ---
 pid: 360
+type: "post"
 title: "Novedades de Java EE 8"
 url: "/2018/11/novedades-de-java-ee-8/"
 date: 2018-11-09T17:00:00+01:00

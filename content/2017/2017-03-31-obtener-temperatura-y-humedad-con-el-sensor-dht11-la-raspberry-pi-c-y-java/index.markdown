@@ -1,5 +1,6 @@
 ---
 pid: 219
+type: "post"
 title: "Obtener la temperatura y humedad con el sensor DHT11, la Raspberry Pi, C y Java"
 url: "/2017/03/obtener-la-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"
 aliases: ["/2017/03/obtener-temperatura-y-humedad-con-el-sensor-dht11-la-raspberry-pi-c-y-java/"]

@@ -1,5 +1,6 @@
 ---
 pid: 7
+type: "post"
 title: "Mi experiencia y consejos para un blog"
 url: "/2014/01/mi-experiencia-y-consejos-para-un-blog/"
 date: 2014-01-17T15:44:23+01:00

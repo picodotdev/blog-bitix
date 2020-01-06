@@ -1,5 +1,6 @@
 ---
 pid: 367
+type: "post"
 title: "Monitorizar procesos que realizan lectura o escritura al almacenamiento en GNU/Linux"
 url: "/2018/12/monitorizar-procesos-que-realizan-lectura-o-escritura-al-almacenamiento-en-gnu-linux/"
 date: 2018-12-17T11:00:00+01:00

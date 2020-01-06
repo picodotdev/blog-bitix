@@ -1,5 +1,6 @@
 ---
 pid: 18
+type: "post"
 title: "Desempaquetado y análisis Samsung SSD 840 EVO 250 GB"
 url: "/2014/03/desempaquetado-y-analisis-samsung-840-evo-ssd-250-gb/"
 date: 2014-03-28T18:22:41+01:00

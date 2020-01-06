@@ -1,5 +1,6 @@
 ---
 pid: 67
+type: "post"
 title: "La palabra clave assert de Java y un ejemplo"
 url: "/2015/02/la-palabra-clave-assert-de-java-y-un-ejemplo/"
 date: 2015-02-13T19:55:54+01:00

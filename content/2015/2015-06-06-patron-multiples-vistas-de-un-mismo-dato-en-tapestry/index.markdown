@@ -1,5 +1,6 @@
 ---
 pid: 83
+type: "post"
 title: "Patrón múltiples vistas de un mismo dato en Tapestry"
 url: "/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/"
 date: 2015-06-06T10:30:00+02:00

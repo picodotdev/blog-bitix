@@ -1,5 +1,6 @@
 ---
 pid: 93
+type: "post"
 title: "Implementación de máquina de estados finita (FSM) con Java 8"
 url: "/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/"
 date: 2015-08-01T12:00:00+02:00

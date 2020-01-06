@@ -1,5 +1,6 @@
 ---
 pid: 198
+type: "post"
 title: "Introducción al JavaScript de ECMAScript 6"
 url: "/2016/12/introduccion-al-javascript-de-ecmascript-6/"
 aliases: ["/2016/12/introduccion-a-javascript-de-ecmascript-6/"]

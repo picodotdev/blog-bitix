@@ -1,5 +1,6 @@
 ---
 pid: 195
+type: "post"
 title: "Instalar programas con Homebrew en macOS"
 url: "/2016/11/instalar-programas-con-homebrew-en-macos/"
 date: 2016-11-19T12:00:00+01:00

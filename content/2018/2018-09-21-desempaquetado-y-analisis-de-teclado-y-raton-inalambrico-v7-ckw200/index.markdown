@@ -1,5 +1,6 @@
 ---
 pid: 348
+type: "post"
 title: "Desempaquetado y análisis de teclado y ratón inalámbrico V7 CKW200"
 url: "/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200/"
 aliases: ["/2018/09/desempaquetado-y-analisis-de-teclado-y-raton-inalambrico-v7-ckw200-en-espanol/"]

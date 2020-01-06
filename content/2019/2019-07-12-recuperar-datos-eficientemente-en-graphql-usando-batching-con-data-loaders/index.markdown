@@ -1,5 +1,6 @@
 ---
 pid: 421
+type: "post"
 title: "Recuperar datos eficientemente en GraphQL usando batching con data loaders"
 url: "/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/"
 date: 2019-07-12T18:00:00+02:00

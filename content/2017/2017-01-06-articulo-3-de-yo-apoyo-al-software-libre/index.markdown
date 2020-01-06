@@ -1,5 +1,6 @@
 ---
 pid: 203
+type: "post"
 title: "Artículo #3 de Yo apoyo al software libre"
 url: "/2017/01/articulo-3-de-yo-apoyo-al-software-libre/"
 date: 2017-01-06T12:00:00+01:00

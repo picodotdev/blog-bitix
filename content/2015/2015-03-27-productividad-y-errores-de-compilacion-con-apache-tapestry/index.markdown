@@ -1,5 +1,6 @@
 ---
 pid: 73
+type: "post"
 title: "Productividad y errores de compilación con Apache Tapestry"
 url: "/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/"
 date: 2015-03-27T19:13:12+01:00

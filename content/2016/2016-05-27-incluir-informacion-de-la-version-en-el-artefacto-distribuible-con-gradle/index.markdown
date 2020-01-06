@@ -1,5 +1,6 @@
 ---
 pid: 145
+type: "post"
 title: "Incluir información de la versión en el artefacto distribuible con Gradle"
 url: "/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/"
 date: 2016-05-27T18:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 88
+type: "post"
 title: "Crear y usar un repositorio en Docker Hub"
 url: "/2015/07/crear-y-usar-un-repositorio-en-docker-hub/"
 date: 2015-07-10T20:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 151
+type: "post"
 title: "Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly"
 url: "/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/"
 date: 2016-06-18T13:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 425
+type: "post"
 title: "Implementar tolerancia a fallos con Resilience4j"
 url: "/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/"
 date: 2019-08-02T17:00:00+02:00

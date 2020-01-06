@@ -1,5 +1,6 @@
 ---
 pid: 36
+type: "post"
 title: "De Arch Linux a Arch Linux"
 url: "/2014/08/de-arch-linux-a-arch-linux/"
 date: 2014-08-09T00:07:58+02:00

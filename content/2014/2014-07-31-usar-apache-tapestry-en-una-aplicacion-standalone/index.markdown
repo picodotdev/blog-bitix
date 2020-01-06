@@ -1,5 +1,6 @@
 ---
 pid: 35
+type: "post"
 title: "Usar Apache Tapestry en una aplicación «standalone»"
 url: "/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/"
 date: 2014-07-31T13:06:58+02:00

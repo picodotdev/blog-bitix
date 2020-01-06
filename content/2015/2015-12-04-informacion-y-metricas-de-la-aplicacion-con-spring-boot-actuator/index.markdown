@@ -1,5 +1,6 @@
 ---
 pid: 113
+type: "post"
 title: "Información y métricas de la aplicación con Spring Boot Actuator"
 url: "/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/"
 date: 2015-12-04T17:30:00+01:00

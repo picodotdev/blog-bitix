@@ -1,5 +1,6 @@
 ---
 pid: 428
+type: "post"
 title: "Generar credenciales de conexión a base de datos bajo demanda con Vault"
 url: "/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/"
 date: 2019-08-15T09:00:00+02:00

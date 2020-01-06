@@ -1,5 +1,6 @@
 ---
 pid: 90
+type: "post"
 title: "Cómo trabajar con importes, ratios y divisas en Java"
 url: "/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/"
 aliases: ["/2015/07/trabajar-con-importes-ratios-y-divisas-en-java/"]

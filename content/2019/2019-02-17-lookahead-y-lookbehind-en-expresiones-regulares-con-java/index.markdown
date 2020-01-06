@@ -1,5 +1,6 @@
 ---
 pid: 385
+type: "post"
 title: "Lookahead y lookbehind en expresiones regulares con Java"
 url: "/2019/02/lookahead-y-lookbehind-en-expresiones-regulares-con-java/"
 date: 2019-02-17T10:00:00+01:00

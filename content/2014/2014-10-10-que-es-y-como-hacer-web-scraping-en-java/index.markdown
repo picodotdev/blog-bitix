@@ -1,5 +1,6 @@
 ---
 pid: 47
+type: "post"
 title: "Qué es y cómo hacer «web scraping» en Java"
 url: "/2014/10/que-es-y-como-hacer-web-scraping-en-java/"
 date: 2014-10-10T21:22:40+02:00

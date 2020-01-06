@@ -1,5 +1,6 @@
 ---
 pid: 69
+type: "post"
 title: "Listener de eventos de Hibernate con servicios de Spring"
 url: "/2015/02/listener-de-eventos-de-hibernate-con-servicios-de-spring/"
 date: 2015-02-28T10:59:08+01:00

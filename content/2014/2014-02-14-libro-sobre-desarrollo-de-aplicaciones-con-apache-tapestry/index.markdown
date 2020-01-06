@@ -1,5 +1,6 @@
 ---
 pid: 12
+type: "post"
 title: "Libro sobre desarrollo de aplicaciones con Apache Tapestry"
 url: "/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/"
 date: 2014-02-14T20:10:34+01:00

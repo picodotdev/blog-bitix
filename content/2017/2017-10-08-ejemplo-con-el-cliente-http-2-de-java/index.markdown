@@ -1,5 +1,6 @@
 ---
 pid: 268
+type: "post"
 title: "Ejemplo con el cliente HTTP/2 de Java"
 url: "/2017/10/ejemplo-con-el-cliente-http-2-de-java/"
 date: 2017-10-08T12:00:00+02:00

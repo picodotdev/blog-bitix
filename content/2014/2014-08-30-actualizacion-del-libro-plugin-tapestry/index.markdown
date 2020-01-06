@@ -1,5 +1,6 @@
 ---
 pid: 40
+type: "post"
 title: "Actualización del libro PlugIn Tapestry"
 url: "/2014/08/actualizacion-del-libro-plugin-tapestry/"
 date: 2014-08-30T00:16:10+02:00

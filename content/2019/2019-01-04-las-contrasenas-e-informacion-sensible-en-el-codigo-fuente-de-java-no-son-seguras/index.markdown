@@ -1,5 +1,6 @@
 ---
 pid: 371
+type: "post"
 title: "Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras"
 url: "/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/"
 date: 2019-01-04T19:00:00+01:00

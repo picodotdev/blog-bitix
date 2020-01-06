@@ -1,5 +1,6 @@
 ---
 pid: 192
+type: "post"
 title: "3 formas sencillas de monetizar un blog"
 url: "/2016/11/3-formas-sencillas-de-monetizar-un-blog/"
 date: 2016-11-06T14:00:00+01:00

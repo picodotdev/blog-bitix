@@ -1,5 +1,6 @@
 ---
 pid: 304
+type: "post"
 title: "7+ computadoras baratas del tamaño de una tarjeta de crédito basadas en GNU/Linux y ARM"
 url: "/2018/03/7-plus-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"
 aliases: ["/2018/03/7-computadoras-baratas-del-tamano-de-una-tarjeta-de-credito-basadas-en-gnu-linux-y-arm/"]

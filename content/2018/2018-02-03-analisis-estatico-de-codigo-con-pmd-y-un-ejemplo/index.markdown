@@ -1,5 +1,6 @@
 ---
 pid: 297
+type: "post"
 title: "Análisis estático de código con PMD y un ejemplo"
 url: "/2018/02/analisis-estatico-de-codigo-con-pmd-y-un-ejemplo/"
 date: 2018-02-03T22:00:00+01:00

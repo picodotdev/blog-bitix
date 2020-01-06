@@ -1,5 +1,6 @@
 ---
 pid: 307
+type: "post"
 title: "La herramienta jlink para generar runtimes de Java incluyendo exclusivamente los módulos que usa una aplicación"
 url: "/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/"
 date: 2018-03-24T23:30:00+01:00

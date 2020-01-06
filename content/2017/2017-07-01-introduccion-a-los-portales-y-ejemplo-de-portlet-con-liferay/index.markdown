@@ -1,5 +1,6 @@
 ---
 pid: 243
+type: "post"
 title: "Introducción a los portales y ejemplo de portlet con Liferay"
 url: "/2017/07/introduccion-a-los-portales-y-ejemplo-de-portlet-con-liferay/"
 aliases: ["/2017/07/portales-con-liferay-y-ejemplo-de-portlet/"]

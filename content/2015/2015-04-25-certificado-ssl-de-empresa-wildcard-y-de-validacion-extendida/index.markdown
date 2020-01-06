@@ -1,5 +1,6 @@
 ---
 pid: 77
+type: "post"
 title: "Certificado SSL, de empresa, «wildcard» y de validación extendida"
 url: "/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/"
 date: 2015-04-25T10:07:04+02:00

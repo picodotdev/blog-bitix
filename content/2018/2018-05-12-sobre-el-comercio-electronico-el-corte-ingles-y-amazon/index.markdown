@@ -1,5 +1,6 @@
 ---
 pid: 320
+type: "post"
 title: "Sobre el comercio electrónico, El Corte Inglés y Amazon"
 url: "/2018/05/sobre-el-comercio-electronico-el-corte-ingles-y-amazon/"
 date: 2018-05-12T11:00:00+02:00

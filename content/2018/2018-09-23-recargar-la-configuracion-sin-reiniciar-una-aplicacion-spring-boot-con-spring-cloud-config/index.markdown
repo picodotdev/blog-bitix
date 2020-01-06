@@ -1,5 +1,6 @@
 ---
 pid: 349
+type: "post"
 title: "Recargar sin reiniciar la configuración de una aplicación Spring Boot con Spring Cloud Config"
 url: "/2018/09/recargar-sin-reiniciar-la-configuracion-de-una-aplicacion-spring-boot-con-spring-cloud-config/"
 aliases: ["/2018/09/recargar-la-configuracion-sin-reiniciar-una-aplicacion-spring-boot-con-spring-cloud-config/"]

@@ -1,5 +1,6 @@
 ---
 pid: 409
+type: "post"
 title: "Implementar la paginación eficientemente en consultas SQL con seek"
 url: "/2019/05/implementar-la-paginacion-eficientemente-en-consultas-sql-con-seek/"
 date: 2019-05-31T18:00:00+02:00

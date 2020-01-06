@@ -1,5 +1,6 @@
 ---
 pid: 318
+type: "post"
 title: "Los plantones de roble"
 url: "/2018/05/los-plantones-de-roble/"
 date: 2018-05-04T18:30:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 179
+type: "post"
 title: "Monitorizar con eventos de Google Analytics una página web"
 url: "/2016/09/monitorizar-con-eventos-de-google-analytics-una-pagina-web/"
 date: 2016-09-18T12:00:00+02:00

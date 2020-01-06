@@ -1,5 +1,6 @@
 ---
 pid: 274
+type: "post"
 title: "Consejos para empresas y gente de recursos humanos que busquen talento"
 url: "/2017/10/consejos-para-empresas-y-gente-de-recursos-humanos-que-busquen-talento/"
 date: 2017-10-28T11:00:00+02:00

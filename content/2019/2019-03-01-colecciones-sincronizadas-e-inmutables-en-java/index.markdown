@@ -1,5 +1,6 @@
 ---
 pid: 387
+type: "post"
 title: "Colecciones sincronizadas e inmutables en Java"
 url: "/2019/03/colecciones-sincronizadas-e-inmutables-en-java/"
 date: 2019-03-01T16:30:00+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 22
+type: "post"
 title: "Anexo a la guía de instalación y del principiante de Arch Linux"
 url: "/2014/05/anexo-a-la-guia-de-instalacion-y-del-principiante-de-arch-linux/"
 date: 2014-05-02T19:09:56+02:00

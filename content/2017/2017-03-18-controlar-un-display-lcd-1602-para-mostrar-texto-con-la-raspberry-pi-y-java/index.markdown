@@ -1,5 +1,6 @@
 ---
 pid: 215
+type: "post"
 title: "Controlar un display LCD 1602 para mostrar texto con la Raspberry Pi y Java"
 url: "/2017/03/controlar-un-display-lcd-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/"
 aliases: ["/2017/03/controlar-un-display-1602-para-mostrar-texto-con-la-raspberry-pi-y-java/"]

@@ -1,5 +1,6 @@
 ---
 pid: 315
+type: "post"
 title: "La clase Optional de Java para evitar la excepción NullPointerException"
 url: "/2018/04/la-clase-optional-de-java-para-evitar-la-excepcion-nullpointerexception/"
 date: 2018-04-28T00:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 53
+type: "post"
 title: "Integración entre Ansible y Docker"
 url: "/2014/11/integracion-entre-ansible-y-docker/"
 date: 2014-11-22T10:28:52+01:00

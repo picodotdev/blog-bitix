@@ -1,5 +1,6 @@
 ---
 pid: 434
+type: "post"
 title: "Novedades de Java 13"
 url: "/2019/09/novedades-de-java-13/"
 date: 2019-09-27T16:30:00+02:00

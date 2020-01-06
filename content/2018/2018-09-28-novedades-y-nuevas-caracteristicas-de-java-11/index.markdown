@@ -1,5 +1,6 @@
 ---
 pid: 350
+type: "post"
 title: "Novedades y nuevas características de Java 11"
 url: "/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/"
 date: 2018-09-28T21:00:00+02:00

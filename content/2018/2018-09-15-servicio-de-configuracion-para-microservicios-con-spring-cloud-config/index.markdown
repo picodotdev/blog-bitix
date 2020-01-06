@@ -1,5 +1,6 @@
 ---
 pid: 346
+type: "post"
 title: "Servicio de configuración para microservicios con Spring Cloud Config"
 url: "/2018/09/servicio-de-configuracion-para-microservicios-con-spring-cloud-config/"
 date: 2018-09-15T16:00:00+02:00

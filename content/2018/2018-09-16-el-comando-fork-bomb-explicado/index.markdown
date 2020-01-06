@@ -1,5 +1,6 @@
 ---
 pid: 347
+type: "post"
 title: "El comando fork bomb explicado"
 url: "/2018/09/el-comando-fork-bomb-explicado/"
 date: 2018-09-16T11:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 381
+type: "post"
 title: "Proyecto de mejora de Smart TV usando una VPN para acceder a contenido restringido por IP"
 url: "/2019/02/proyecto-de-mejora-de-smart-tv-usando-una-vpn-para-acceder-a-contenido-restringido-por-ip/"
 date: 2019-02-08T16:50:00+01:00

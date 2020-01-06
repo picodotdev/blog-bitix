@@ -1,5 +1,6 @@
 ---
 pid: 265
+type: "post"
 title: "JShell la herramienta REPL incorporada en Java 9"
 url: "/2017/09/jshell-la-herramienta-repl-incorporada-en-java-9/"
 date: 2017-09-29T21:00:00+02:00

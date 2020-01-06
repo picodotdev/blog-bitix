@@ -1,5 +1,6 @@
 ---
 pid: 205
+type: "post"
 title: "Distribuciones GNU/Linux, ¿más seguras que Windows?"
 url: "/2017/01/distribuciones-gnu-linux-mas-seguras-que-windows/"
 date: 2017-01-21T10:00:00+01:00

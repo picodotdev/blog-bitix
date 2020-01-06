@@ -1,5 +1,6 @@
 ---
 pid: 209
+type: "post"
 title: "Cómo crear un servicio de systemd para una aplicación con Spring Boot"
 url: "/2017/02/como-crear-un-servicio-de-systemd-para-una-aplicacion-con-spring-boot/"
 date: 2017-02-11T10:00:00+01:00

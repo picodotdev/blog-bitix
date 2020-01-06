@@ -1,5 +1,6 @@
 ---
 pid: 449
+type: "post"
 title: "Generar documentos, informes y facturas en formato PDF con JasperReports y Java"
 url: "/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/"
 date: 2019-12-13T13:00:00+01:00

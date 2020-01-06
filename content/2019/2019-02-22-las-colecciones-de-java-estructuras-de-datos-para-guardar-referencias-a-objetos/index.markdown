@@ -1,5 +1,6 @@
 ---
 pid: 386
+type: "post"
 title: "Las colecciones de Java, estructuras de datos para guardar referencias a objetos"
 url: "/2019/02/las-colecciones-de-java-estructuras-de-datos-para-guardar-referencias-a-objetos/"
 date: 2019-02-22T18:45:00+01:00

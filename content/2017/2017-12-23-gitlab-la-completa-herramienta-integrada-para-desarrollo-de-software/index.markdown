@@ -1,5 +1,6 @@
 ---
 pid: 290
+type: "post"
 title: "GitLab, la completa herramienta integrada para desarrollo de software"
 url: "/2017/12/gitlab-la-completa-herramienta-integrada-para-desarrollo-de-software/"
 date: 2017-12-23T10:00:00+01:00

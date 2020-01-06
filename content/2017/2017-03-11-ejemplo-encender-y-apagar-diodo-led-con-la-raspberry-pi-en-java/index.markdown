@@ -1,5 +1,6 @@
 ---
 pid: 214
+type: "post"
 title: "Ejemplo encender y apagar diodo LED con la Raspberry Pi en Java"
 url: "/2017/03/ejemplo-encender-y-apagar-diodo-led-con-la-raspberry-pi-en-java/"
 aliases: ["/2017/03/ejemplo-de-apagado-y-encendido-de-diodo-led-con-la-raspberry-pi-en-java/"]

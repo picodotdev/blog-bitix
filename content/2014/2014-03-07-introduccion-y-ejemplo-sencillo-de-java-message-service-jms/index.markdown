@@ -1,5 +1,6 @@
 ---
 pid: 15
+type: "post"
 title: "Introducción y ejemplo sencillo de Java Message Service (JMS)"
 url: "/2014/03/introduccion-y-ejemplo-sencillo-de-java-message-service-jms/"
 date: 2014-03-07T18:31:22+01:00

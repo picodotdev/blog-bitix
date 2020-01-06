@@ -1,5 +1,6 @@
 ---
 pid: 56
+type: "post"
 title: "Ejercicios (katas) para mejorar habilidades de programación practicando"
 url: "/2014/12/ejercicios-katas-para-mejorar-habilidades-de-programacion-practicando/"
 date: 2014-12-13T12:06:06+01:00

@@ -1,5 +1,6 @@
 ---
 pid: 260
+type: "post"
 title: "Cómo generar la documentación Javadoc con Gradle"
 url: "/2017/09/como-generar-la-documentacion-javadoc-con-gradle/"
 date: 2017-09-14T10:00:00+02:00

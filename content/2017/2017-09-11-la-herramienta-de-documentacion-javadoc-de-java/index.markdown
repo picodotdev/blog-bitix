@@ -1,5 +1,6 @@
 ---
 pid: 259
+type: "post"
 title: "La herramienta de documentación Javadoc de Java"
 url: "/2017/09/la-herramienta-de-documentacion-javadoc-de-java/"
 date: 2017-09-11T13:00:00+02:00

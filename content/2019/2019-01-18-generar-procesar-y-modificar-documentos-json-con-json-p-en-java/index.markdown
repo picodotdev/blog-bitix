@@ -1,5 +1,6 @@
 ---
 pid: 374
+type: "post"
 title: "Generar, procesar y modificar documentos JSON con JSON-P en Java"
 url: "/2019/01/generar-procesar-y-modificar-documentos-json-con-json-p-en-java/"
 date: 2019-01-18T18:00:00+01:00

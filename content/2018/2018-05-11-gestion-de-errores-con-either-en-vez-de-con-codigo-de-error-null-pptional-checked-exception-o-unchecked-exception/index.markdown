@@ -1,5 +1,6 @@
 ---
 pid: 319
+type: "post"
 title: "Gestión de errores con Either o Try en vez de con código de error, null, Optional, checked exception o unchecked exception"
 url: "/2018/05/gestion-de-errores-con-either-o-try-en-vez-de-con-codigo-de-error-null-optional-checked-exception-o-unchecked-exception/"
 aliases: ["/2018/05/gestion-de-errores-con-either-o-try-en-vez-de-con-codigo-de-error-null-pptional-checked-exception-o-unchecked-exception/", "/2018/05/gestion-de-errores-con-either-en-vez-de-con-codigo-de-error-null-pptional-checked-exception-o-unchecked-exception/"]

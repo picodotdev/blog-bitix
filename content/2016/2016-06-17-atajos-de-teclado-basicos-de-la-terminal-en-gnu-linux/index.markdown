@@ -1,5 +1,6 @@
 ---
 pid: 150
+type: "post"
 title: "Atajos de teclado básicos de la terminal en GNU/Linux"
 url: "/2016/06/atajos-de-teclado-basicos-de-la-terminal-en-gnu-linux/"
 date: 2016-06-17T18:00:00+02:00

@@ -1,5 +1,6 @@
 ---
 pid: 221
+type: "post"
 title: "Cómo usar un diodo LED, un pulsador y un zumbador con la Raspberry Pi y Java"
 url: "/2017/04/como-usar-un-diodo-led-un-pulsador-y-un-zumbador-con-la-raspberry-pi-y-java/"
 date: 2017-04-09T12:00:00+02:00
