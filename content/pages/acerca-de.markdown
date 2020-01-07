@@ -19,7 +19,7 @@ En su mayor parte la temática de este blog está entorno a la programación, la
 
 Estoy titulado como Ingeniero en Informática y he trabajado en varias consultorías informáticas durante más de 10 años con las funciones de programador/analista técnico adquiriendo un conocimiento alto sobre muchas de las más actuales tecnologías de la plataforma Java y desarrollo web. En el presente estoy trabajando en una empresa dedicada al comercio electrónico.
 
-Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electrónico que es <a href="mailto:pico.dev@gmail.com">pico.dev@gmail.com</a>, estaré encantado de escuchar:
+Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electrónico que es [pico.dev@gmail.com](mailto:pico.dev@gmail.com), estaré encantado de escuchar:
 
 * Ofertas de trabajo. Estoy interesado en [Java][java], [Java EE][java-ee], [JBoss][jboss], [WildFly][wildfly], [Tomcat][tomcat], [Apache Tapestry][tapestry], [Spring][spring], [Hibernate][hibernate], [jOOQ][jooq], [Gradle][gradle], [jQuery][jquery], [React][react], [PostgreSQL][postgresql], [GNU][gnu]/[Linux][linux] y software libre.
 * Propuestas de colaboración con artículos patrocinados, análisis de productos, _banners_ u otras formas de publicidad principalmente relacionada con la temática de este blog.
@@ -29,9 +29,9 @@ Si quieres ponerte en contacto conmigo aquí dejo mi dirección de correo electr
 * Correcciones de errores.
 * Cualquier otra cosa que quieras comentarme.
 
-<div class="media">
-    <a href="mailto:pico.dev@gmail.com"><img src="assets/images/pd-email.png" alt="pico.dev@gmail.com" title="pico.dev@gmail.com"></a>
-</div>
+{{% media %}}
+[![a](url=asset:assets/images/pd-email.png,size=148x21,gallery=false "pico.dev@gmail.com")](mailto:pico.dev@gmail.com)
+{{% /media %}}
 
 [Blog Bitix][blogbitix] es la continuación a partir de diciembre de 2013 de [El blog de pico.dev][elblogdepicodev] pero empleando [Octopress][octopress] después de esa fecha y con [Hugo][hugo] a partir de mayo de 2015. Octopress [tiene varias ventajas][blogbitix-0] y por estas ventajas el cambio de plataforma en un primer momento, con Hugo he podido personalizar completamente la apariencia y la instalación y actualización me ha resultado más simple. El contenido que publiqué en El blog de pico.dev sigue estando accesible y no lo he migrado, pero a partir de su abandono el nuevo contenido lo crearé ya en este blog hasta que surja otra herramienta que supere a Hugo y decida hacer otro cambio.
 

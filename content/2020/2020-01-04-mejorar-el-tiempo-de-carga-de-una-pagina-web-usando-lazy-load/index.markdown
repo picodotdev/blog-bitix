@@ -61,10 +61,12 @@ Con simplemente esta mejora, que no es complicada de realizar, añadiendo el có
 
 <table class="table">
     <thead class="thead-light">
-        <th class="thead-light" width="140px">Página</th>
-        <th class="thead-light" width="140px">Prueba</th>
-        <th>Antes</th>
-        <th>Después</th>
+        <tr>
+            <th class="thead-light" width="140px">Página</th>
+            <th class="thead-light" width="140px">Prueba</th>
+            <th>Antes</th>
+            <th>Después</th>
+        </tr>
     </thead>
     <tbody>
         <tr>

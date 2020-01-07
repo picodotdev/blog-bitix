@@ -24,7 +24,16 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
-{{< imageproc
+![](url=logotype:java.svg:java.svg,size=200x200,gallery=true "Java")
+![](url=resource:playstation-1.png,size=200x200,gallery=true "Página PlayStation")
+
+// TODO
+{{% figure caption="Páginas representativas de Blog Bitix" source="" %}}
+    ![](url=resource:playstation-1.png,size=300x200,gallery=true "Página PlayStation")
+    ![](url=resource:playstation-2.png,size=300x200,gallery=true "Página PlayStation")
+{{% /post %}}
+
+{{< image
     gallery="true"
     image1="" options1="2560x1440" optionsthumb1="300x200" title1=""
     image2="" options2="2560x1440" optionsthumb2="300x200" title2=""
