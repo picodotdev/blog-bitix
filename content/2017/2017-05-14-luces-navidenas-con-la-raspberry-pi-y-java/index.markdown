@@ -26,15 +26,15 @@ Esta es la foto del cableado usando múltiples cables macho-macho para conectar 
 
 {{< image
     gallery="true"
-    image1="arbol-navidad-01.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
-    image2="arbol-navidad-02.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
+    image1="resource:arbol-navidad-01.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
+    image2="resource:arbol-navidad-02.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
 {{< image
     gallery="true"
-    image1="arbol-navidad-03.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
-    image2="arbol-navidad-04.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
+    image1="resource:arbol-navidad-03.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
+    image2="resource:arbol-navidad-04.jpg" optionsthumb2="300x200" title2="Cableado de las luces LED del árbol de navidad" >}}
 {{< image
     gallery="true"
-    image1="arbol-navidad-05.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
+    image1="resource:arbol-navidad-05.jpg" optionsthumb1="300x200" title1="Cableado de las luces LED del árbol de navidad"
     caption="Cableado de las luces LED del árbol de navidad" >}}
 
 Cada cierto tiempo los diodos cambian de estado, algunos se encenderán, otros se apagarán y otros seguirán en el estado que estaban. Para ello generaré un booleano aleatorio para cada uno de los diodos que determinará si debe estar encendido o apagado. Este es el programa Java junto con la parte relevante del archivo [Gradle][gradle] para compilar y construir el ejemplo y el comando que uso para ejecutarlo.

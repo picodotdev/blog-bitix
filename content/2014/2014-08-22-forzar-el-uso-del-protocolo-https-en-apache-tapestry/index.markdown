@@ -39,7 +39,7 @@ En cualquiera de los dos casos mostrados en este ejemplo se obliga a usar https 
 
 {{< image
     gallery="true"
-    image1="plugin-tapestry-https.png" optionsthumb1="300x200" title1="PlugIn Tapestry con https" >}}
+    image1="resource:plugin-tapestry-https.png" optionsthumb1="300x200" title1="PlugIn Tapestry con https" >}}
 
 {{< plugintapestry >}}
 

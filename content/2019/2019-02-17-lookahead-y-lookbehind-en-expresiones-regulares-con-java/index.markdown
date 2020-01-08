@@ -39,7 +39,7 @@ El resultado es el siguiente:
 {{< reference >}}
 * [Referencias a grupos de captura en expresiones regulares y reemplazos][blogbitix-300]
 * [Los cuantificadores greedy, reluctant y possessive en expresiones regulares][blogbitix-257]
-* [Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
+* [Pattern](javadoc11:java.base/java/util/regex/Pattern.html)
 {{< /reference >}}
 
 {{% /post %}}

@@ -20,7 +20,7 @@ El sábado 23 de mayo de 2015 el lenguaje Java cumple 20 años de historia y aú
 
 {{< image
     gallery="false"
-    image1="java20.jpg" optionsthumb1="600x450" title1="Java 20 años (1995-2015)" >}}
+    image1="resource:java20.jpg" optionsthumb1="600x450" title1="Java 20 años (1995-2015)" >}}
 
 En [JavaWorld][javaworld] ha publicado varios artículos para celebrar el aniversario comentando su futuro, su pasado y presente o que notables características reunió en su momento para ser hoy uno de los lenguajes más usados.
 
@@ -44,7 +44,7 @@ Quizá en las primeras versiones de los 90 fuera así pero la realidad hoy con l
 
 ### Javadoc
 
-Java tiene una gran herramienta de documentación que permite embeber la misma en el código fuente de los archivos y generar una serie de documentos html para su posterior consulta. La [documentación proporcionada en la API](https://docs.oracle.com/javase/8/docs/api/) es extensa, completa y buena, siendo simple html puede ser alojada en cualquier servidor web y consultada en internet. Sin documentación la tarea de los programadores sería considerablemente más complicada, aún en el caso de falta de documentación javadoc el IDE con la asistencia de código puede ayudarnos gracias a la introspección incorporada en la plataforma.
+Java tiene una gran herramienta de documentación que permite embeber la misma en el código fuente de los archivos y generar una serie de documentos html para su posterior consulta. La [documentación proporcionada en la API](javadoc8:) es extensa, completa y buena, siendo simple html puede ser alojada en cualquier servidor web y consultada en internet. Sin documentación la tarea de los programadores sería considerablemente más complicada, aún en el caso de falta de documentación javadoc el IDE con la asistencia de código puede ayudarnos gracias a la introspección incorporada en la plataforma.
 
 ### Compilado, tipado estático
 
@@ -111,9 +111,8 @@ Estas son otras listas de [10 razones por las que Java mola más que nunca](http
 Para aprender Java en profundidad son varios libros de los que he leído que me han gustado empezando por [Thinking in Java](https://amzn.to/2sNCizu), [Effective Java](https://amzn.to/2sQnZKp) y [Java 8 in Action](https://amzn.to/2MXMTi3) además de otros [buenos libros para mejorar como programadores][blogbitix-55] que son interesantes de leer.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0131872486&internal=1" >}}
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0321356683&internal=1" >}}
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291994&internal=1" >}}
+    linkids="2a437ba4126a093af22af88c893ac407,c0e2bda761aca019e979193070d80625,2256857b147eea05bc79aef83d2548fe"
+    asins="0131872486,0321356683,1617291994" >}}
 
 En Junio de 1997 James Gosling formando parte de Sun Microsystems Inc. escribía el artículo de título [The Feel of Java](http://www.win.tue.nl/~evink/education/avp/pdf/feel-of-java.pdf) detallando varias propiedades del lenguaje que hacen del él lo que es y que aún siguen estando vigentes. Y en 1996 junto con Henry McGilton [The Java Language Environment: A White Paper](http://www.stroustrup.com/1995_Java_whitepaper.pdf) donde describen los objetivos del lenguaje. Finalmente escrito más recientemente [Java The Legend](http://www.oreilly.com/programming/free/java-the-legend.csp) analiza Java, su pasado, aciertos y fallos, comunidad, ecosistema y futuro. Estos tres documentos son piezas valiosas de información.
 

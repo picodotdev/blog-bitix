@@ -33,17 +33,17 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
 
 {{< image
     gallery="true"
-    image1="new-issue-1.png" optionsthumb1="300x200" title1="Nueva petición A"
-    image2="new-issue-2.png" optionsthumb2="300x200" title2="Nueva petición B"
+    image1="resource:new-issue-1.png" optionsthumb1="300x200" title1="Nueva petición A"
+    image2="resource:new-issue-2.png" optionsthumb2="300x200" title2="Nueva petición B"
     caption="Nueva petición" >}}
 {{< image
     gallery="true"
-    image1="issues.png" optionsthumb1="300x200" title1="Lista de peticiones"
-    image2="labels.png" optionsthumb2="300x200" title2="Etiquetas"
+    image1="resource:issues.png" optionsthumb1="300x200" title1="Lista de peticiones"
+    image2="resource:labels.png" optionsthumb2="300x200" title2="Etiquetas"
     caption="Lista de peticiones y etiquetas" >}}
 {{< image
     gallery="true"
-    image1="board.png" optionsthumb1="300x200" title1="Panel Kanban"
+    image1="resource:board.png" optionsthumb1="300x200" title1="Panel Kanban"
     caption="Panel Kanban" >}}
 
 ### Wiki
@@ -56,8 +56,8 @@ Cuando se accede por primera vez a la wiki se crea la página de inicio que se p
 
 {{< image
     gallery="true"
-    image1="new-page.png" optionsthumb1="300x200" title1="Nueva página"
-    image2="page.png" optionsthumb2="300x200" title2="Página"
+    image1="resource:new-page.png" optionsthumb1="300x200" title1="Nueva página"
+    image2="resource:page.png" optionsthumb2="300x200" title2="Página"
     caption="Nueva página y página" >}}
 
 ### Pages

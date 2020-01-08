@@ -76,19 +76,19 @@ Sin embargo, en el caso de los _generics_, ¿una referencia de _Box\<Number\>_ p
 
 {{< image
     gallery="true"
-    image1="generics-subtypeRelationship.gif" optionsthumb1="300x200" >}}
+    image1="resource:generics-subtypeRelationship.gif" optionsthumb1="300x200" >}}
 
 Los tipos genéricos pueden extenderse o implementarse y mientras no se cambie el tipo del argumento la «relación es un» se preserva. De modo que _ArrayList\<String\>_ es un subtipo de _List\<String\>_ que a su vez es un subtipo de _Collection\<String\>_.
 
 {{< image
     gallery="true"
-    image1="generics-sampleHierarchy.gif" optionsthumb1="300x200" >}}
+    image1="resource:generics-sampleHierarchy.gif" optionsthumb1="300x200" >}}
 
 {{< code file="PayloadList.java" language="java" options="" >}}
 
 {{< image
     gallery="true"
-    image1="generics-payloadListHierarchy.gif" optionsthumb1="300x200" >}}
+    image1="resource:generics-payloadListHierarchy.gif" optionsthumb1="300x200" >}}
 
 En los _generics_ un parámetro para un tipo _?_ se denomina _wildcard_ siendo este un tipo desconocido. Son usados para reducir las restricciones de un tipo de modo que un método pueda funcionar con una lista de _List\<Integer\>_, _List\<Double\>_ y _List\<Number\>_. El término _List\<Number\>_ es más restrictivo que _List\<? extends Number\>_ porque el primero solo acepta una lista de _Number_ y el segundo una lista de _Number_ o de sus subtipos. _List\<? extends Number\>_ es un _upper bounded wildcard_.
 
@@ -107,8 +107,8 @@ Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pe
 
 {{< image
     gallery="true"
-    image1="generics-listParent.gif" optionsthumb1="300x200"
-    image2="generics-wildcardSubtyping.gif" optionsthumb2="300x200" >}}
+    image1="resource:generics-listParent.gif" optionsthumb1="300x200"
+    image2="resource:generics-wildcardSubtyping.gif" optionsthumb2="300x200" >}}
 
 Uno de las mayores confusiones al usar generics es cuando usar _upper bounded wildcards_ o cuando usar _lower bounded wildcards_. Podemos usar las siguientes reglas:
 
@@ -145,10 +145,10 @@ Para profundizar más en este importante tema de genéricos de Java tenemos a nu
 * [Effective Java (2nd Edition): A Programming Language Guide](https://amzn.to/39HVI9u)
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596527756&internal=1" >}}
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0321356683&internal=1" >}}
+    linkids="77088bd1b29706cdb837eebce10d8b88,cf908dff78cd2b9cd608d868b4de0fa3"
+    asins="0596527756,0321356683" >}}
 
-A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca exepciones [ClassCastException](https://docs.oracle.com/javase/8/docs/api/java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](https://docs.oracle.com/javase/8/docs/api/java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
+A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca exepciones [ClassCastException](javadoc8:java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](javadoc8:java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](javadoc8:java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](javadoc8:java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
 
 {{< code file="HeapPollution.java" language="java" options="" >}}
 

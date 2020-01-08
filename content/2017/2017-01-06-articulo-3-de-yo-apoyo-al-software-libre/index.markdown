@@ -27,7 +27,7 @@ Aunque la distribución [GNU][gnu]/[Linux][linux] que uso es [Arch Linux][archli
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/elementary.svg" optionsthumb1="200x200" title1="Elementary OS" >}}
+    image1="asset:assets/images/logotypes/elementary.svg" optionsthumb1="200x200" title1="Elementary OS" >}}
 
 ### Libre Office
 
@@ -35,7 +35,7 @@ LibreOffice es el proyecto ofimático que se postula como una de las mejores alt
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/libreoffice.svg" optionsthumb1="350x350" title1="LibreOffice" >}}
+    image1="asset:assets/images/logotypes/libreoffice.svg" optionsthumb1="350x350" title1="LibreOffice" >}}
 
 ### Arch Linux ARM
 
@@ -43,21 +43,21 @@ El tercer proyecto al que he donado ha sido a Arch Linux ARM ya que lo uso en la
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/archlinuxarm.svg" optionsthumb1="350x350" title1="Arch Linux ARM" >}}
+    image1="asset:assets/images/logotypes/archlinuxarm.svg" optionsthumb1="350x350" title1="Arch Linux ARM" >}}
 
 ### Comprobantes de las donaciones
 
 {{< image
     gallery="true"
-    image1="donacion-elementary.png" optionsthumb1="300x200" title1="Donación Elementary OS"
+    image1="resource:donacion-elementary.png" optionsthumb1="300x200" title1="Donación Elementary OS"
     caption="Donación Elementary OS" >}}
 {{< image
     gallery="true"
-    image1="donacion-thedocumentfoundation.png" optionsthumb1="300x200" title1="Donación The Document Foundation"
+    image1="resource:donacion-thedocumentfoundation.png" optionsthumb1="300x200" title1="Donación The Document Foundation"
     caption="Donación The Document Foundation" >}}
 {{< image
     gallery="true"
-    image1="donacion-archlinuxarm.png" optionsthumb1="300x200" title1="Donación Arch Linux ARM"
+    image1="resource:donacion-archlinuxarm.png" optionsthumb1="300x200" title1="Donación Arch Linux ARM"
     caption="Donación Arch Linux ARM" >}}
 
 Otros proyectos que me planteo hacer una donación en el futuro son a algún proyecto relacionado con las [distribuciones BSD](https://es.wikipedia.org/wiki/Berkeley_Software_Distribution), [GNOME][gnome] o el [reproductor multimedia VLC][vlc]. Desde luego no es mucho ni todo lo que recibo como ingresos por la publicidad, sin embargo, espero que ayude a que estos grandes proyectos de software libre sigan mejorando y yo como usuario junto con otros muchos de algunos de ellos disfrutándolos en la totalidad de ellos sin coste alguno en licencias de software.

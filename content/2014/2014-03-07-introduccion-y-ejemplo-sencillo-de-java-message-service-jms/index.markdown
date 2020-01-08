@@ -42,7 +42,7 @@ Primero el código de un modelo Pub/Sub. Como es propio de este modelo los mensa
 
 {{< image
     gallery="true"
-    image1="topic.png" optionsthumb1="300x200" title1="Resultado de Topic.java" >}}
+    image1="resource:topic.png" optionsthumb1="300x200" title1="Resultado de Topic.java" >}}
 
 A continuación el código de utilizando un modelo punto a punto en el que vuelve a haber un emisor y dos receptores. En el resultado de la ejecución puede observarse que a pesar de haber dos receptores solo uno de los dos recibe cada mensaje:
 
@@ -50,7 +50,7 @@ A continuación el código de utilizando un modelo punto a punto en el que vuelv
 
 {{< image
     gallery="true"
-    image1="queue.png" optionsthumb1="300x200" title1="Resultado de Queue.java" >}}
+    image1="resource:queue.png" optionsthumb1="300x200" title1="Resultado de Queue.java" >}}
 
 Comentar que los mensajes se procesan en serie por cada MessageListener, esto es, hasta que no termina el consumo de uno no se consume el siguiente. Esto se aplica por MensajeListener y sesión.
 
@@ -62,7 +62,8 @@ Si queremos probar los ejemplos deberemos disponer del servidor de aplicaciones 
 Para terminar y conocer más sobre JMS un buen libro es [Java Message Service](https://amzn.to/37y9WYA) de O'Reilly, que explica de forma mucho más extensa y completa este tema.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as1&m=amazon&f=ifr&ref=tf_til&asins=0596522045&internal=1" >}}
+    linkids="c529d10cc15d949e4e670e83bdb21d54"
+    asins="0131872486" >}}
 
 El [código fuente completo de estos ejemplos](https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJMS) los puedes descargar de [mi repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos).
 

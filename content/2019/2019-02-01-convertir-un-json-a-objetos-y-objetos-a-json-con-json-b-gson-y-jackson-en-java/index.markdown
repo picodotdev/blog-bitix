@@ -32,7 +32,7 @@ Se utilizan los métodos _toJson()_ tanto en JSON-B como en Gson y el método _w
 {{< code file="Direccion.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
 
-Para añadir tipos de datos que no están entre los básicos de JSON como es una fecha cada librería proporciona interfaces o clases abstractas para hacer la conversión desde el dato a un tipo de JSON y desde JSON al tipo del dato. En este caso para un tipo de dato [LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html).
+Para añadir tipos de datos que no están entre los básicos de JSON como es una fecha cada librería proporciona interfaces o clases abstractas para hacer la conversión desde el dato a un tipo de JSON y desde JSON al tipo del dato. En este caso para un tipo de dato [LocalDate](javadoc11:java.base/java/time/LocalDate.html).
 
 {{< code file="JsonLocalDateAdapter.java" language="java" options="" >}}
 {{< code file="GsonLocalDateTypeAdapter.java" language="java" options="" >}}

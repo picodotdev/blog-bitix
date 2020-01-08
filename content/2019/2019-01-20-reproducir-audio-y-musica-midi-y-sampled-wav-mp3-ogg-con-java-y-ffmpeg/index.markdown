@@ -17,26 +17,26 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" image2="ffmpeg.svg" title2="FFmpeg" width2="400" >}}
 
-En la API de Java en el paquete [javax.sound.sampled](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/package-summary.html) hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete [java.sound.midi](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/package-summary.html) contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son _wav, au, aif_ para los archivos _sampled_, y archivos _midi_ para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como _mp3_ u _ogg_.
+En la API de Java en el paquete [javax.sound.sampled](javadoc11:java.desktop/javax/sound/sampled/package-summary.html) hay unas pocas clases que permiten reproducir archivos de música o sonidos y en el paquete [java.sound.midi](javadoc11:java.desktop/javax/sound/midi/package-summary.html) contiene clases para la música o sonidos digitales o sintetizados. Los tipos de archivos de música o sonidos soportados son _wav, au, aif_ para los archivos _sampled_, y archivos _midi_ para los digitales. Nativamente Java con las clases incluidas en el JDK no puede reproducir varios formatos de archivo de sonido populares como _mp3_ u _ogg_.
 
 Como Java no soporta muchos tipos de archivos para reproducir los no soportados hay que hacer una conversión a alguno de los si soportados, por ejemplo de _mp3_ a _wav_. [FFmpeg][ffmpeg] es un programa con el que se pueden hacer [conversiones de archivos de sonido][blogbitix-134] y [recodificaciones de archivos de vídeo][blogbitix-135] que junto con la posibilidad de [invocar desde Java un proceso del sistema][blogbitix-132] habilita reproducir archivos _mp3_ u _ogg_ desde Java.
 
-La clase principal de la API de sonido es [AudioSystem](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/AudioSystem.html) para los archivos _sampled_ y [MidiSystem](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiSystem.html) para los archivos _midi_, con los métodos [getAudioFileTypes()](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/AudioSystem.html#getAudioFileTypes()) y [getMidiFileTypes()](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiSystem.html#getMidiFileTypes()) se obtienen los archivos de audio soportados.
+La clase principal de la API de sonido es [AudioSystem](javadoc11:java.desktop/javax/sound/sampled/AudioSystem.html) para los archivos _sampled_ y [MidiSystem](javadoc11:java.desktop/javax/sound/midi/MidiSystem.html) para los archivos _midi_, con los métodos [getAudioFileTypes()](javadoc11:java.desktop/javax/sound/sampled/AudioSystem.html#getAudioFileTypes()) y [getMidiFileTypes()](javadoc11:java.desktop/javax/sound/midi/MidiSystem.html#getMidiFileTypes()) se obtienen los archivos de audio soportados.
 
 {{< code file="Main-1.java" language="java" options="" >}}
 {{< code file="System.out-1" language="plaintext" options="" >}}
 
-Para reproducir un archivo _midi_ hay que usar las clases [MidiSystem](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/MidiSystem.html), [Sequence](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/Sequence.html) y [Sequencer](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/midi/Sequencer.html).
+Para reproducir un archivo _midi_ hay que usar las clases [MidiSystem](javadoc11:java.desktop/javax/sound/midi/MidiSystem.html), [Sequence](javadoc11:java.desktop/javax/sound/midi/Sequence.html) y [Sequencer](javadoc11:java.desktop/javax/sound/midi/Sequencer.html).
 
 {{< code file="Main-2.java" language="java" options="" >}}
 {{< code file="System.out-2" language="plaintext" options="" >}}
 
-Para reproducir un archivo _wav_ hay que usar las clases [AudioSystem](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/AudioSystem.html), [AudioInputStream](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/AudioInputStream.html) y [Clip](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/javax/sound/sampled/Clip.html).
+Para reproducir un archivo _wav_ hay que usar las clases [AudioSystem](javadoc11:java.desktop/javax/sound/sampled/AudioSystem.html), [AudioInputStream](javadoc11:java.desktop/javax/sound/sampled/AudioInputStream.html) y [Clip](javadoc11:java.desktop/javax/sound/sampled/Clip.html).
 
 {{< code file="Main-3.java" language="java" options="" >}}
 {{< code file="System.out-3" language="plaintext" options="" >}}
 
-Para reproducir un archivo _mp3_ o _ogg_ hay que convertirlo al formato _wav_, con el comando _FFmpeg_ y usando una tubería leyendo de su salida resultado de la conversión con un [InputStream](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/InputStream.html). En el siguiente ejemplo se realiza una conversión de un _mp3_ a _wav_ con el formato 44100Hz, 2 canales y de 16 bits con un proceso de _FFmpeg_. Para reproducir un archivo _ogg_ el código es similar.
+Para reproducir un archivo _mp3_ o _ogg_ hay que convertirlo al formato _wav_, con el comando _FFmpeg_ y usando una tubería leyendo de su salida resultado de la conversión con un [InputStream](javadoc11:java.base/java/io/InputStream.html). En el siguiente ejemplo se realiza una conversión de un _mp3_ a _wav_ con el formato 44100Hz, 2 canales y de 16 bits con un proceso de _FFmpeg_. Para reproducir un archivo _ogg_ el código es similar.
 
 {{< code file="Main-4.java" language="java" options="" >}}
 {{< code file="System.out-4" language="plaintext" options="" >}}

@@ -45,7 +45,7 @@ Para que en el informe aparezcan datos he cambiado la configuración de longitud
 
 {{< image
     gallery="true"
-    image1="pmd-report.png" optionsthumb1="300x200" title1="Informe de PMD con violaciones a las reglas"
+    image1="resource:pmd-report.png" optionsthumb1="300x200" title1="Informe de PMD con violaciones a las reglas"
     caption="Informe de PMD con violaciones a las reglas" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew check" >}}

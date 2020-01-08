@@ -27,7 +27,8 @@ Otra forma de poder hacer la aplicación autocontenida es con [Spring Boot][spri
 Los mostrado en este artículo es solo una pequeña parte de lo que ofrece Sring Boot, en el libro [Spring Boot in Action](https://amzn.to/39GvW5x) se comenta en mucho más detalle y de forma didáctica, un libro muy recomendable para adentrarse rápidamente en ste nuevo mundo de posibilidades.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617292540&internal=1" >}}
+    linkids="61b49fc8ef6bdf7c80975908df76d4af"
+    asins="1617292540" >}}
 
 Spring Boot proporciona un _plugin_, _spring-boot_, para [Gradle][gradle] que deberemos añadir al archivo _build.gradle_, a partir de este momento dispondremos algunas tareas adicionales en el proyecto como _bootRun_ para ejecutar la aplicación desde Gradle (similar a la opción _run_ y el parámetro _mainClassName_ que añade el _plugin application_) y _bootRepackage_ para poder ejecutar la aplicación con el comando <code>java -jar</code>.
 
@@ -59,7 +60,7 @@ El [código fuente del ejemplo completo](https://github.com/picodotdev/blog-ejem
 
 En el siguiente vídeo puede verse como es la salida en la terminal cuando la aplicación se arranca con Gradle y con el comando <code>java -jar</code>.
 
-{{< asciinema id="27694"    caption="Uso de Spring Boot con Gradle y Java" >}}
+{{< asciinema id="27694" caption="Uso de Spring Boot con Gradle y Java" >}}
 
 Añadiendo la dependencia [Spring Boot Actuator][spring-boot-actuator] podemos [obtener información de estado y métricas en las aplicaciones Spring Boot][blogbitix-113].
 

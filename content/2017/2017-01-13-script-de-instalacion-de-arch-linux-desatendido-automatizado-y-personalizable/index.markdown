@@ -21,8 +21,8 @@ Hace tiempo que instalar una distribución [GNU][gnu]/[Linux][linux] no tiene m�
 
 {{< image
     gallery="true"
-    image1="debian-installer-text.png" optionsthumb1="300x200" title1="Instalador de Debian en modo texto"
-    image2="debian-installer-graphics.png" optionsthumb2="300x200" title2="Instalador de Debian en modo gráfico"
+    image1="resource:debian-installer-text.png" optionsthumb1="300x200" title1="Instalador de Debian en modo texto"
+    image2="resource:debian-installer-graphics.png" optionsthumb2="300x200" title2="Instalador de Debian en modo gráfico"
     caption="Instalación guíada de Debian basada en texto y gráfica" >}}
 
 Otras distribuciones basadas en principios diferentes y usuarios a los que está destinadas con otras necesidades o preferencias puede que requieran algo más de conocimientos a cambio de realizar configuraciones más avanzadas como el particionado del disco, cifrado del disco o software que se instala. Algunas distribuciones como [Arch Linux][archlinux] incluso no proporcionan ningún instalador.
@@ -73,22 +73,22 @@ Estas son algunas capturas de pantalla con diferentes entornos de escritorio que
 
 {{< image
     gallery="true"
-    image1="archlinux-gnome.jpg" optionsthumb1="300x200" title1="GNOME"
-    image2="archlinux-kde.jpg" optionsthumb2="300x200" title2="KDE"
+    image1="resource:archlinux-gnome.jpg" optionsthumb1="300x200" title1="GNOME"
+    image2="resource:archlinux-kde.jpg" optionsthumb2="300x200" title2="KDE"
     caption="Entornos de escritorio GNOME y KDE" >}}
 {{< image
     gallery="true"
-    image1="archlinux-xfce.jpg" optionsthumb1="300x200" title1="XFCE"
-    image2="archlinux-cinnamon.jpg" optionsthumb2="300x200" title2="Cinnamon"
+    image1="resource:archlinux-xfce.jpg" optionsthumb1="300x200" title1="XFCE"
+    image2="resource:archlinux-cinnamon.jpg" optionsthumb2="300x200" title2="Cinnamon"
     caption="Entornos de escritorio Xfce y Cinnamon" >}}
 {{< image
     gallery="true"
-    image1="archlinux-lxde.jpg" optionsthumb1="300x200" title1="LXDE"
-    image2="archlinux-mate.jpg" optionsthumb2="300x200" title2="Mate"
+    image1="resource:archlinux-lxde.jpg" optionsthumb1="300x200" title1="LXDE"
+    image2="resource:archlinux-mate.jpg" optionsthumb2="300x200" title2="Mate"
     caption="Entornos de escritorio LXDE y Mate" >}}
 {{< image
     gallery="true"
-    image1="archlinux-root-password.png" optionsthumb1="300x200" title1="Solicitud de contraseña para descifrar partición root"
+    image1="resource:archlinux-root-password.png" optionsthumb1="300x200" title1="Solicitud de contraseña para descifrar partición root"
     caption="Solicitud de contraseña para descifrar partición root" >}}
 
 {{< asciinema id="192880" caption="Instalación de sistema base de Arch Linux con alis" >}}

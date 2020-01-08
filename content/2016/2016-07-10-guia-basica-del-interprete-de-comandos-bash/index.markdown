@@ -32,7 +32,7 @@ Por ejemplo, dada una lista de concursantes habilitados en un sorteo podemos obt
 
 {{< image
     gallery="true"
-    image1="sorteo.png" optionsthumb1="300x200" title1="Sorteo implementado con dos comandos de GNU/Linux"
+    image1="resource:sorteo.png" optionsthumb1="300x200" title1="Sorteo implementado con dos comandos de GNU/Linux"
     caption="Sorteo implementado con dos comandos de GNU/Linux" >}}
 
 Por defecto la salida estándar de un comando es la terminal pero podemos redirigirla a un fichero con la opción <code>></code>.
@@ -50,7 +50,7 @@ Si necesitamos ejecutar dos comandos seguidos podemos introducirlos en la misma 
 
 {{< image
     gallery="true"
-    image1="multiples-comandos.png" optionsthumb1="300x200" title1="Múltiples comandos en la misma línea"
+    image1="resource:multiples-comandos.png" optionsthumb1="300x200" title1="Múltiples comandos en la misma línea"
     caption="Múltiples comandos en la misma línea" >}}
 
 ### Variables e interpolación de cadenas
@@ -64,7 +64,7 @@ También podemos interpolar la salida de un comando dentro de una cadena:
 
 {{< image
     gallery="true"
-    image1="variables.png" optionsthumb1="300x200" title1="Interpolación en cadenas de variables y comandos"
+    image1="resource:variables.png" optionsthumb1="300x200" title1="Interpolación en cadenas de variables y comandos"
     caption="Interpolación en cadenas de variables y comandos" >}}
 
 ### Invocaciones de comandos anteriores
@@ -72,7 +72,7 @@ Con el comando <code>history</code> podemos ver el historial completo de comando
 
 {{< image
     gallery="true"
-    image1="history.png" optionsthumb1="300x200" title1="Historial de comandos"
+    image1="resource:history.png" optionsthumb1="300x200" title1="Historial de comandos"
     caption="Historial de comandos" >}}
 
 Hay más [formas de ejecutar comandos del historial](http://www.softpanorama.org/Scripting/Shellorama/bash_command_history_reuse.shtml). Si quisieramos invocar un comando del historial cambiando algún argumento podemos hacer una búsqueda en orden inverso con <kbd>Ctrl+r</kbd>.
@@ -103,7 +103,7 @@ En los _scripts_ Bash se pueden definir funciones para reutilizar parte del _scr
 
 {{< image
     gallery="true"
-    image1="opciones.png" optionsthumb1="300x200" title1="Opciones de un script"
+    image1="resource:opciones.png" optionsthumb1="300x200" title1="Opciones de un script"
     caption="Opciones de un script" >}}
 
 {{< code file="funciones-2.sh" language="bash" options="" >}}
@@ -162,7 +162,7 @@ El comando <code>jobs</code> obtenemos una lista de trabajos que se está ejecut
 
 {{< image
     gallery="true"
-    image1="trabajos.png" optionsthumb1="300x200" title1="Trabajos en primer y segundo plano"
+    image1="resource:trabajos.png" optionsthumb1="300x200" title1="Trabajos en primer y segundo plano"
     caption="Trabajos en primer y segundo plano" >}}
 
 Esta guía es parte de un tema de los explicados en el completo libro sobre la administración sobre sistemas Unix, [UNIX and Linux System Administration Handbook](https://amzn.to/29vctVP). Un libro con cantidad de temas para conocer más en detalle nuestros sistemas basados en la filosofía Unix. Casi 1300 páginas de documentación con información básica y detallada que deberíamos obligarnos a conocer. Redes, seguridad, virtualización, hospedaje web, copias de seguridad, procesos periódicos, instalación de software, control de procesos y muchos temas más. Otros buenos documentos son [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/index.html) y

@@ -31,13 +31,13 @@ Para usar EncFS debemos instalar su paquete, en [Arch Linux][archlinux] con:
 Instalado el paquete y con el comando <code>encfs</code> indicamos el directorio donde se almacenará el sistema de archivos cifrado y el directorio donde EncFS montará el sistema de archivos sin cifrar, la primera vez que lo usemos nos pedirá la contraseña con la que el sistema de archivos se cifrará que deberemos recordar ya que nos la pedirá cada vez que montemos el sistema de archivos cifrado.
 
 {{< code file="encfs.sh" language="bash" options="" >}}
-{{< asciinema id="36852"    caption="Inicialización y montaje de un sistema de archivos cifrado para su uso con EncFS" >}}
+{{< asciinema id="36852" caption="Inicialización y montaje de un sistema de archivos cifrado para su uso con EncFS" >}}
 
 Montado el sistema de archivos veremos que en el explorador de archivos se ha montado una unidad con el nombre del directorio sin cifrar que hemos indicado, como se aprecia en el caso de Nautilus.
 
 {{< image
     gallery="true"
-    image1="sistema-archivos-descifrados.png" optionsthumb1="300x200" title1="Sistema de archivos montado y descifrado" >}}
+    image1="resource:sistema-archivos-descifrados.png" optionsthumb1="300x200" title1="Sistema de archivos montado y descifrado" >}}
 
 La opción _-f_ sirve para usar EncFS en primer plano, si lo usamos de esta forma se quedará esperando hasta que lo finalicemos con _Ctrl-C_ momento en el que desmontará automáticamente la unidad. Cuando queramos desmontar el sistema de archivos otra opción es el siguiente comando:
 
@@ -47,14 +47,14 @@ Montado el sistema de archivos en primer o segundo plano podremos trabajar con l
 
 {{< image
     gallery="true"
-    image1="sistema-archivos-cifrados.png" optionsthumb1="300x200" title1="Sistema de archivos cifrado" >}}
+    image1="resource:sistema-archivos-cifrados.png" optionsthumb1="300x200" title1="Sistema de archivos cifrado" >}}
 
 Por supuesto, el contenido de un archivo cifrado será completamente ininteligible consiguiendo nuestro objetivo de que nuestros datos estén a salvo y protegidos.
 
 {{< image
     gallery="true"
-    image1="contenido-archivo-descifrado.png" optionsthumb1="300x200" title1="Contenido de un archivo de texto"
-    image2="contenido-archivo-cifrado.png" optionsthumb2="300x200" title2="Contenido del archivo de texto cifrado" >}}
+    image1="resource:contenido-archivo-descifrado.png" optionsthumb1="300x200" title1="Contenido de un archivo de texto"
+    image2="resource:contenido-archivo-cifrado.png" optionsthumb2="300x200" title2="Contenido del archivo de texto cifrado" >}}
 
 En el [artículo de EncFS de la wiki de Arch Linux](https://wiki.archlinux.org/index.php/EncFS) está muy bien explicado con alguna información más sobre esta forma de proteger la preciada información personal que poseemos en diversas formas de documentos, imágenes, fotos, vídeos, música y otros formatos.
 

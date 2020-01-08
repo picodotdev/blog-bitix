@@ -55,19 +55,19 @@ Construido el _portlet_ con una tarea de [Gradle][gradle] el _portlet_ se despli
 
 {{< image
     gallery="true"
-    image1="pluto-admin.png" optionsthumb1="300x250" title1="Página de administración de portlets de Apache Pluto"
-    image2="pluto-login.png" optionsthumb2="300x250" title2="Inicio de sesión de Apache Pluto"
+    image1="resource:pluto-admin.png" optionsthumb1="300x250" title1="Página de administración de portlets de Apache Pluto"
+    image2="resource:pluto-login.png" optionsthumb2="300x250" title2="Inicio de sesión de Apache Pluto"
     caption="Páginas de administración y sesión de Apache Pluto" >}}
 
 Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra el mensaje que emite y seleccionando la opción _edit_ acceder a la página de preferencias acceder a la página que muestra el formulario y permite cambiar el mensaje. Este es el resultado del _portlet_ desplegado en Apache Pluto.
 
 {{< image
     gallery="true"
-    image1="tapestry-portlet.png" optionsthumb1="300x250" title1="Porlet con Apache Tapestry en Apache Pluto"
-    image2="tapestry-portlet-preferences.png" optionsthumb2="300x250" title2="Página de preferencias del portlet" >}}
+    image1="resource:tapestry-portlet.png" optionsthumb1="300x250" title1="Porlet con Apache Tapestry en Apache Pluto"
+    image2="resource:tapestry-portlet-preferences.png" optionsthumb2="300x250" title2="Página de preferencias del portlet" >}}
 {{< image
     gallery="true"
-    image3="tapestry-portlet-name.png" optionsthumb3="300x250" title3="Portlet usando un dato almacenado en las preferencias"
+    image3="resource:tapestry-portlet-name.png" optionsthumb3="300x250" title3="Portlet usando un dato almacenado en las preferencias"
     caption="Porlet con Apache Tapestry en Apache Pluto" >}}
 
 Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amzn.to/2tzpbjL) es una buena fuente de documentación.

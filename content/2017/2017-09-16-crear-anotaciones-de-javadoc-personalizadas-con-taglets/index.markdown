@@ -33,7 +33,7 @@ Una vez escrito el código fuente del _taglet_ hay que compilarlo e indicar su u
 
 {{< image
     gallery="true"
-    image1="javadoc-taglet.png" optionsthumb1="300x200" title1="Contenido del taglet todo en el javadoc"
+    image1="resource:javadoc-taglet.png" optionsthumb1="300x200" title1="Contenido del taglet todo en el javadoc"
     caption="Contenido del taglet todo en el javadoc" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/Javadoc" command="./gradlew javadoc" >}}

@@ -36,11 +36,11 @@ Una de las propiedades interesantes del _networking_ de Docker Swarm es que ofre
 
 En este vídeo de [asciinema][asciinema] se ve en funcionamiento todos los anteriores comandos. Y en la aplicación de VirtualBox estarán las máquinas virtuales de cada uno de los nodos que crea el ejemplo. En el vídeo se aprecia que el servicio de nginx se está ejecutando en el nodo 02 cuando se listan los procesos de Docker de cada nodo con _docker ps_, nótese sin embargo que al hacer un petición HTTP a cualquiera de los nodos se devuelve la página de inicio de nginx ya que gracias al _routing mesh_ de Docker Swarm la petición se redirige de forma transparente para el cliente y el servicio al nodo donde realmente se está ejecutando el contenedor de nginx.
 
-{{< asciinema id="107868"    caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" >}}
+{{< asciinema id="107868" caption="Introducción y ejemplo de cluster de contenedores con Docker Swarm" >}}
 
 {{< image
     gallery="true"
-    image1="maquinas-virtuales-cluster.png" optionsthumb1="300x200" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
+    image1="resource:maquinas-virtuales-cluster.png" optionsthumb1="300x200" title1="Máquinas virtuales de los nodos del _cluster_ de Docker Swarm"
     caption="Máquinas virtuales de los nodos del cluster de Docker Swarm" >}}
 
 Los comandos para eliminar un servicio del _cluster_ y eliminar completamente el _cluster_ son los siguientes.

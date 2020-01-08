@@ -29,14 +29,14 @@ Unsando [Spring Boot][spring-boot] y _Tomcat_ basta con usar la clase _Manager_ 
 
 {{< code file="Main-1.java" language="java" options="" >}}
 
-Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] por defecto el identificativo de la sesión es generado a partir de un [UUID](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/UUID.html), el identificativo de la sesión tiene el mismo valor por defecto de 128 bits pero para cambiar la longitud hay que proporcionar una clase que cambia el comportamiento.
+Persistiendo la sesión en [Redis][redis] con [Spring Sesion][spring-session] por defecto el identificativo de la sesión es generado a partir de un [UUID](javadoc11:java.base/java/util/UUID.html), el identificativo de la sesión tiene el mismo valor por defecto de 128 bits pero para cambiar la longitud hay que proporcionar una clase que cambia el comportamiento.
 
 {{< code file="Main-2.java" language="java" options="" >}}
 {{< code file="DefaultRedisOperationSessionRespository.java" language="java" options="" >}}
 
 {{< image
     gallery="true"
-    image1="spring-session.png" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
+    image1="resource:spring-session.png" optionsthumb1="600x450" title1="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"
     caption="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" >}}
 
 {{< code file="session-id.txt" language="java" options="" >}}

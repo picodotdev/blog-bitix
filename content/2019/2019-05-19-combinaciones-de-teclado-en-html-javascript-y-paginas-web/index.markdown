@@ -27,7 +27,7 @@ En este ejemplo se captura la combinación de teclas <kbd>Ctrl + Shift + s</kbd>
 
 {{< image
     gallery="true"
-    image1="key-combinations-1.png" optionsthumb1="300x200" title1="Ejemplo combinaciones de teclas"
+    image1="resource:key-combinations-1.png" optionsthumb1="300x200" title1="Ejemplo combinaciones de teclas"
     caption="Ejemplo combinaciones de teclas" >}}
 
 Los usos que se les pueden dar a estas combinaciones de teclas van desde posicionar el foco en un determinado campo de entrada o realizar alguna acción como enviar los datos de un formulario una vez están rellenados y son válidos o cualquiera otra acción mediante [JavaScript][javascript]. Haciendo uso del método [preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) del objeto evento se evita que el evento dispare la acción por defecto si tiene una asignada.
@@ -36,9 +36,9 @@ La propiedad global _accesskey_ puede utilizarse en cualquier elemento de HTML, 
 
 {{< image
     gallery="true"
-    image1="key-combinations-2.png" optionsthumb1="200x150" title1="Captura de Ctrl + Shift + s"
-    image2="key-combinations-3.png" optionsthumb2="200x150" title2="Captura de Alt + Shift + t, ubica el foco en el campo de texto"
-    image3="key-combinations-4.png" optionsthumb3="200x150" title3="Captura de Alt + Shift + b, ejecuta la acción clic del botón"
+    image1="resource:key-combinations-2.png" optionsthumb1="200x150" title1="Captura de Ctrl + Shift + s"
+    image2="resource:key-combinations-3.png" optionsthumb2="200x150" title2="Captura de Alt + Shift + t, ubica el foco en el campo de texto"
+    image3="resource:key-combinations-4.png" optionsthumb3="200x150" title3="Captura de Alt + Shift + b, ejecuta la acción clic del botón"
     caption="Acciones con combinaciones de teclas" >}}
 
 {{< reference >}}

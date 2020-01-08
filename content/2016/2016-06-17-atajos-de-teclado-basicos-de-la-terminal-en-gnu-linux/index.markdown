@@ -62,7 +62,7 @@ Las anteriores combinaciones de teclas son del intérprete de comandos bash, el 
 
 {{< image
     gallery="true"
-    image1="gnome-terminal.png" optionsthumb1="300x200" title1="Terminal de GNOME con el intérprete de comandos bash"
+    image1="resource:gnome-terminal.png" optionsthumb1="300x200" title1="Terminal de GNOME con el intérprete de comandos bash"
     caption="Terminal de GNOME con el intérprete de comandos bash" >}}
 
 {{< reference >}}

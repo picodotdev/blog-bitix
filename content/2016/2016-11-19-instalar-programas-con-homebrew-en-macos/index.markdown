@@ -23,7 +23,7 @@ En macOS existe un gestor de paquetes similar a los existentes en GNU/Linux, [Ho
 
 {{< image
     gallery="true"
-    image1="homebrew.png" optionsthumb1="300x200" title1="Homebrew" >}}
+    image1="resource:homebrew.png" optionsthumb1="300x200" title1="Homebrew" >}}
 
 Para instalar Hombrew ejecutamos el siguiente comando en la terminal:
 
@@ -79,7 +79,7 @@ La terminal incluida de serie en macOS es muy básica por ello mucha gente suele
 
 {{< image
     gallery="true"
-    image1="iterm2.png" optionsthumb1="300x200" title1="iTerm2"
+    image1="resource:iterm2.png" optionsthumb1="300x200" title1="iTerm2"
     caption="Terminal iTerm2" >}}
 
 {{% /post %}}

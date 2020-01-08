@@ -2,23 +2,17 @@
 {{- $title := .Title -}}
 {{- $text := .Text -}}
 
-{{- if or (hasPrefix .Destination "href:") (hasPrefix .Destination "javadoc:") -}}
-  {{- $strings := split .Destination "," -}}
-  {{- $array := slice (nil) -}}
-  {{- range $i := $strings -}}{{- $array := union $array (split $i "=") -}}{{- end -}}
-  {{- $attributes := dict $array -}}
-  {{- $url := index $attributes "url" -}}
+{{- if or (hasPrefix .Destination "javadoc8:") (hasPrefix .Destination "javadoc11:") -}}
+  {{- $binding := index (split .Destination ":") 0 -}}
+  {{- $url := index (split .Destination ":") 1 -}}
 
-  {{- $binding := index (split $url ":") 0 -}}
-  {{- $url := index (split $url ":") 1 -}}
-
-  {{- if eq $binding "href" -}}
-    {{- $href := $url -}}
-  {{- else if eq $binding "javadoc" -}}
-    {{- $href := print "https://docs.oracle.com/en/java/javase/11/docs/api/" $url -}}
+  {{- if eq $binding "javadoc8" -}}
+    {{- $href = print "https://docs.oracle.com/javase/8/docs/api/" $url -}}
+  {{- else if eq $binding "javadoc11" -}}
+    {{- $href = print "https://docs.oracle.com/en/java/javase/11/docs/api/" $url -}}
   {{- end -}}
 {{- end -}}
 
-{{- $href := default .Destination $href -}}
+{{- $href = default .Destination $href -}}
 
 <a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | safeHTML }}</a>

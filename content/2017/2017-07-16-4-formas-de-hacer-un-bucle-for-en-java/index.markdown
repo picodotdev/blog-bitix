@@ -23,7 +23,7 @@ Hasta Java 5 para hacer un bucle desde 0 a N elementos había que usar una varia
 {{< code file="For.java" language="java" options="" >}}
 {{< code file="Iterator.java" language="java" options="" >}}
 
-En Java 5 el bucle _for_ se enriqueció notablemente, con el _foreach_ se puede recorrer una colección y cualquier objeto que implemente la interfaz [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html). Con el bucle _foreach_ una [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html) se recorre de la siguiente manera.
+En Java 5 el bucle _for_ se enriqueció notablemente, con el _foreach_ se puede recorrer una colección y cualquier objeto que implemente la interfaz [Iterable](javadoc8:java/lang/Iterable.html). Con el bucle _foreach_ una [Collection](javadoc8:java/util/Collection.html) se recorre de la siguiente manera.
 
 {{< code file="Foreach.java" language="java" options="" >}}
 
@@ -32,7 +32,7 @@ Pero esto es para las colecciones si se quiere hacer un bucle un número fijo de
 {{< code file="CounterIterable.java" language="java" options="" >}}
 {{< code file="Counter.java" language="java" options="" >}}
 
-En Java 8 con la introducción de los [Stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html) y de [IntStream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html) podemos usar el método [range](https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#range-int-int-) y [rangeClosed](https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html#rangeClosed-int-int-) para obtener un _Stream_ de enteros y hacer un bucle con un comportamiento similar a los anteriores.
+En Java 8 con la introducción de los [Stream](javadoc8:java/util/stream/Stream.html) y de [IntStream](javadoc8:java/util/stream/IntStream.html) podemos usar el método [range](javadoc8:java/util/stream/IntStream.html#range-int-int-) y [rangeClosed](javadoc8:java/util/stream/IntStream.html#rangeClosed-int-int-) para obtener un _Stream_ de enteros y hacer un bucle con un comportamiento similar a los anteriores.
 
 {{< code file="Stream.java" language="java" options="" >}}
 
@@ -44,7 +44,7 @@ El siguiente programa muestra las cuatro opciones, su salida en la consola serí
 
 {{< image
     gallery="true"
-    image1="bucles-java.png" optionsthumb1="300x200" title1="4 formas de hacer un bucle en Java"
+    image1="resource:bucles-java.png" optionsthumb1="300x200" title1="4 formas de hacer un bucle en Java"
     caption="4 formas de hacer un bucle en Java" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaForeach" command="./gradlew run" >}}

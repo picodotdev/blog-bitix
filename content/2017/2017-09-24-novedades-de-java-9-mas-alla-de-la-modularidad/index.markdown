@@ -33,11 +33,11 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
 
 {{< image
     gallery="true"
-    image1="tabla-novedades-java-9.jpg" optionsthumb1="300x200" title1="Tabla de novedades de Java 9"
+    image1="resource:tabla-novedades-java-9.jpg" optionsthumb1="300x200" title1="Tabla de novedades de Java 9"
     caption="Tabla de novedades de Java 9" >}}
 {{< image
     gallery="false"
-    image1="duke-java-9.png" optionsthumb1="300x250" title1="Duke Java 9" >}}
+    image1="resource:duke-java-9.png" optionsthumb1="300x250" title1="Duke Java 9" >}}
 
 ### Métodos factoría para colecciones
 
@@ -47,9 +47,7 @@ Aparte de definir este tipo de colecciones de una forma mucho más sencilla que 
 
 {{< code file="Collections.java" language="java" options="" >}}
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" allowfullscreen frameborder="0" class="lozad"></iframe>
-</div>
+{{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582422289001" size="640x360" >}}
 
 ### Mejoras en la clase _Optional_
 
@@ -73,12 +71,10 @@ Se pueden introducir expresiones que son evaluadas y comandos precedidos por el 
 
 {{< image
     gallery="true"
-    image1="jshell.png" optionsthumb1="300x200" title1="jshell"
+    image1="resource:jshell.png" optionsthumb1="300x200" title1="jshell"
     caption="jshell" >}}
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" allowfullscreen frameborder="0" class="lozad"></iframe>
-</div>
+{{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582429016001" size="640x360" >}}
 
 ### jlink para generar _runtimes_ mínimos
 
@@ -88,9 +84,7 @@ En Java 9 se proporciona [jlink](http://openjdk.java.net/jeps/282) que un sustit
 
 Esto es especialmente útil para los contenedores de [Docker][docker] y los entornos _cloud_ ya que permite generar imágenes de contenedores con un tamaño significativamente menor. Por ejemplo, una imagen de Docker basada en la distribución [Alpine Linux][alpine-linux] con el JDK completo ocupa unos 360 MiB, con _jlink_ si una aplicación solo necesita del módulo _java.base_ se puede generar un _runtime_ con únicamente ese módulo, con este _runtime_ adaptado la imagen del contenedor tiene un tamaño mucho menor, en este caso de únicamente de unos 40 MiB.
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" allowfullscreen frameborder="0" class="lozad"></iframe>
-</div>
+{{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582437011001" size="640x360" >}}
 
 ### Concurrencia
 
@@ -131,9 +125,7 @@ Se cambia el recolector de basura por defecto al llamado _G1_ optimizado para un
 * [Getting Started with the G1 Garbage Collector](https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html)
 * [Case for Defaulting to G1 Garbage Collector in Java 9](https://www.infoq.com/articles/Make-G1-Default-Garbage-Collector-in-Java-9)
 
-<div class="media media-video">
-    <iframe width="640" height="360" src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" allowfullscreen frameborder="0" class="lozad"></iframe>
-</div>
+{{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582428191001" size="640x360" >}}
 
 ### Identificador para variables _
 
@@ -157,7 +149,7 @@ Ahora la documentación Javadoc se genera con marcado de HTML 5 e incluye un cua
 
 {{< image
     gallery="true"
-    image1="javadoc.png" optionsthumb1="300x200" title1="Javadoc"
+    image1="resource:javadoc.png" optionsthumb1="300x200" title1="Javadoc"
     caption="Javadoc" >}}
 
 ### Archivos Jar multiversión
@@ -176,9 +168,7 @@ A partir de la publicación de Java 9 se cambia el modelo de publicación de nue
 
 Se ha optado por producir una nueva versión cada seis meses con el [OpenJDK][openjdk] y [licencia GPL][gpl] para satisfacer las necesidades de los desarrolladores y una versión con soporte de largo plazo cada tres años para satisfacer las necesidades de tiempo de soporte prolongado de las empresas, _Oracle JDK_.
 
-<div class="media media-video">
-    <iframe width="640" height="360" data-src="//players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" allowfullscreen frameborder="0" class="lozad"></iframe>
-</div>
+{{< iframe src="https://players.brightcove.net/1460825906/VkKNQZg6x_default/index.html?videoId=5582439790001" size="640x360" >}}
 
 Para finalizar un par de libros, [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT) que explican detalladamente las novedades de la modularidad, las novedades incluídas en este artículo y algunas otras más.
 

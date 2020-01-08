@@ -24,9 +24,9 @@ Otras tecnologías de Sun relevantes eran el sistema operativo [Solaris][solaris
 
 {{< image
     gallery="true"
-    image1="sun-microsystems-headquarters.jpg" optionsthumb1="200x150" title1="Sun Microsystems Headquarters"
-    image2="sun-microsystems-workstation.jpg" optionsthumb2="200x150" title2="Sun Microsystems Workstation"
-    image3="sun-ultrasparc.jpg" optionsthumb3="200x150" title3="Sun Microsystems sparc" >}}
+    image1="resource:sun-microsystems-headquarters.jpg" optionsthumb1="200x150" title1="Sun Microsystems Headquarters"
+    image2="resource:sun-microsystems-workstation.jpg" optionsthumb2="200x150" title2="Sun Microsystems Workstation"
+    image3="resource:sun-ultrasparc.jpg" optionsthumb3="200x150" title3="Sun Microsystems sparc" >}}
 
 La adquisición de Oracle generó dudas por la cultura de empresa más cerrada que la que tenía Sun que contribuyó e influenció notablemente en el mundo tecnológico aún a día de hoy. Después de unos meses de la adquisición varias personas salieron de la compañía como [James Gosling][james-gosling] creador de Java, [Tim Bray](https://en.wikipedia.org/wiki/Tim_Bray) creador de formato XML, [Kohsuke Kawaguchi](https://en.wikipedia.org/wiki/Kohsuke_Kawaguchi) desarrollador principal de Hudson o [Bryan Cantrill](https://en.wikipedia.org/wiki/Bryan_Cantrill) creador de DTrace.
 
@@ -36,14 +36,14 @@ Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar renta
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/java.svg" optionsthumb1="300x200" title1="Java"
-    image2="assets/images/logotypes/solaris.svg" optionsthumb2="300x200" title2="Solaris"
-    image3="assets/images/logotypes/sparc.svg" optionsthumb3="300x200" title3="Sparc" >}}
+    image1="asset:assets/images/logotypes/java.svg" optionsthumb1="300x200" title1="Java"
+    image2="asset:assets/images/logotypes/solaris.svg" optionsthumb2="300x200" title2="Solaris"
+    image3="asset:assets/images/logotypes/sparc.svg" optionsthumb3="300x200" title3="Sparc" >}}
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/libreoffice.svg" optionsthumb1="300x200" title1="LibreOffice"
-    image2="assets/images/logotypes/mysql.svg" optionsthumb2="150x100" title2="MySQL"
-    image3="assets/images/logotypes/virtualbox.svg" optionsthumb3="300x200" title3="VirtualBox" >}}
+    image1="asset:assets/images/logotypes/libreoffice.svg" optionsthumb1="300x200" title1="LibreOffice"
+    image2="asset:assets/images/logotypes/mysql.svg" optionsthumb2="150x100" title2="MySQL"
+    image3="asset:assets/images/logotypes/virtualbox.svg" optionsthumb3="300x200" title3="VirtualBox" >}}
 
 En el artículo [The Java Saga](https://www.wired.com/1995/12/java-saga/) se comentan varios aspectos importantes de Java como que inicialmente este lenguaje estaba orientado a la electrónica donde la fiabilidad es más importante que la rapidez, C++ no era lo suficientemente fiable para lo que Gosling tenía en mente. Diseñaron la primera tableta electrónica, aún así pasa a ser la base de la emergente web para hacerla interactiva. Otro artículo interesante es [The downfall of Sun Microsystems](https://www.networkworld.com/article/2268096/servers/the-downfall-of-sun-microsystems.html) en el que precisamente se comenta la falta de rentabilizar varias de sus tecnologías y la crisis de las punto com.
 

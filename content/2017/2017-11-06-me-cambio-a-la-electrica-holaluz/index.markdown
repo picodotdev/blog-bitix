@@ -24,8 +24,8 @@ No me queda claro la diferencia entre energía 100% verde, que según indica inc
 
 {{< image
     gallery="false"
-    image1="holaluz.png" optionsthumb1="300x250" title1="Holaluz"
-    image2="pepeenergy.png" optionsthumb2="300x250" title2="Pepeenergy" >}}
+    image1="resource:holaluz.png" optionsthumb1="300x250" title1="Holaluz"
+    image2="resource:pepeenergy.png" optionsthumb2="300x250" title2="Pepeenergy" >}}
 
 El ahorro según mi consumo de aproximadamente unos 75 kWh mensuales con mi anterior compañía eléctrica es de 0,75 € y con respecto al precio que tiene Endesa de 1,41 €. No parece mucho pero la electricidad es un servicio indispensable, de uso prolongado en una vivienda y es raro cambiar de compañía cada poco tiempo, eligiendo bien la compañía al cabo de los años el ahorro es apreciable, nadie va a salir de pobre pero con lo ahorrado algo ya se puede comprar.
 
@@ -48,8 +48,8 @@ Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que es
 
 {{< image
     gallery="true"
-    image1="factura-holaluz-1.png" optionsthumb1="300x200" title1="Factura Holaluz"
-    image2="factura-holaluz-2.png" optionsthumb2="300x200" title2="Factura Holaluz"
+    image1="resource:factura-holaluz-1.png" optionsthumb1="300x200" title1="Factura Holaluz"
+    image2="resource:factura-holaluz-2.png" optionsthumb2="300x200" title2="Factura Holaluz"
     caption="Factura Holaluz después de unos meses con consumo" >}}
 
 No hay ninguna diferencia entre la electricidad de cualquier compañía, la diferencia entre las empresas está en el precio, el origen de la electricidad que ofrecen, el servicio de atención al cliente y el trato que ofrecen a sus clientes. Compañías como Holaluz tienen un precio mejor que las grandes tradicionales, ofrecen energía 100% de origen renovable, el servicio de atención al cliente es bueno y el trato significativamente mejor.
@@ -67,7 +67,7 @@ Finalmente, a modo de promoción ofrecen un descuento si al hacer la contrataci�
 
 {{< image
     gallery="true"
-    image1="contratacion-holaluz-paso-1.png" optionsthumb1="300x200" title1="Contratación Holaluz"
+    image1="resource:contratacion-holaluz-paso-1.png" optionsthumb1="300x200" title1="Contratación Holaluz"
     caption="Contratación Holaluz" >}}
 
 {{% /post %}}

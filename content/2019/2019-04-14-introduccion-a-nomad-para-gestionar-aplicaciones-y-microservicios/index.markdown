@@ -49,9 +49,9 @@ También poseen una interfaz web integrada en la que consultar la misma informac
 
 {{< image
     gallery="true"
-    image1="consul.png" optionsthumb1="200x150" title1="Consul"
-    image2="nomad-1.png" optionsthumb2="200x150" title2="Nomad"
-    image3="nomad-2.png" optionsthumb3="200x150" title3="Nomad"
+    image1="resource:consul.png" optionsthumb1="200x150" title1="Consul"
+    image2="resource:nomad-1.png" optionsthumb2="200x150" title2="Nomad"
+    image3="resource:nomad-2.png" optionsthumb3="200x150" title3="Nomad"
     caption="Interfaces web de Consul y Nomad" >}}
 
 Nomad permite varias estrategias para actualizar los _jobs_ a una nueva versión de un servicio, basta modificar la configuración del _job_, volverlo a enviar a Nomad y este se encarga de [actualizar las instancias siguiendo la estrategia _rolling_, _blue/green_ o _canary_][blogbitix-399] definida en el _job_, pero eso lo muestro mas detalladamente en otro artículo.

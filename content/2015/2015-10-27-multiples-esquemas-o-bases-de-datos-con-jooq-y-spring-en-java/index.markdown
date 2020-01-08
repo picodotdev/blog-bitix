@@ -49,7 +49,7 @@ Podemos crear la base de datos y los dos esquemas con una tarea de [Gradle][grad
 
 {{< image
     gallery="true"
-    image1="basededatos.png" optionsthumb1="300x200" title1="Base de datos con varios esquemas"
+    image1="resource:basededatos.png" optionsthumb1="300x200" title1="Base de datos con varios esquemas"
     caption="Base de datos con varios esquemas, inventory y purchases" >}}
 
 Como en jOOQ la fuente de la verdad es la base de datos los modelos se generan a partir de ella usando otra tarea de Gradle, generará las clases con las que trabajaremos en la aplicación con el comando <code>./gradlew generateModels</code>. Las clases son las del paquete [io.github.picodotdev.blogbitix.multidatabase.jooq](https://github.com/picodotdev/blog-ejemplos/tree/master/Multidatabase/src/main/java/io/github/picodotdev/blogbitix/multidatabase/jooq).
@@ -60,7 +60,7 @@ Este sería el programa de ejemplo iniciado con [Spring Boot][spring-boot] que u
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
-{{< asciinema id="28856"    caption="Ejecución del ejemplo multidatabase" >}}
+{{< asciinema id="28856" caption="Ejecución del ejemplo multidatabase" >}}
 
 Si quieres obtener más información sobre varias de las herramientas como jOOQ, Liquibase, Gradle o Spring Boot que forman en el momento de escribir este artículo el actual estado del arte en Java puedes leer los diferentes artículos que he he escrito sobre ellos de forma específica:
 

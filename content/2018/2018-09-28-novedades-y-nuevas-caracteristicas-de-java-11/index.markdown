@@ -73,7 +73,7 @@ Esta funcionalidad tiene algunas restricciones. No se puede mezclar el uso y no 
 
 ### Cliente HTTP
 
-En Java 9 se incorporó de forma experimental un cliente HTTP con soporte para HTTP/2 en el propio JDK. En Java 11 alcanza la categoría de estable. Este cliente HTTP es una forma sencilla de hacer llamadas a servicios web ya sean REST o [GraphQL][graphql]. Las clases del nuevo cliente se encuentran en el paquete [java.net.http](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html). Al estar este cliente HTTP incorporado en el JDK no será necesario depender de librerías de terceros.
+En Java 9 se incorporó de forma experimental un cliente HTTP con soporte para HTTP/2 en el propio JDK. En Java 11 alcanza la categoría de estable. Este cliente HTTP es una forma sencilla de hacer llamadas a servicios web ya sean REST o [GraphQL][graphql]. Las clases del nuevo cliente se encuentran en el paquete [java.net.http](javadoc11:java.net.http/java/net/http/package-summary.html). Al estar este cliente HTTP incorporado en el JDK no será necesario depender de librerías de terceros.
 
 {{< youtube video="sZSdWq490Vw?rel=0" >}}>
 
@@ -91,7 +91,7 @@ Esta funcionalidad es compatible con los _shebang_ de los sistemas Unix.
 
 {{< image
     gallery="true"
-    image1="java-helloworld.png" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
+    image1="resource:java-helloworld.png" optionsthumb1="6500x450" title1="Java 11 HelloWorld!"
     caption="Java 11 HelloWorld!" >}}
 
 ### Unicode 10
@@ -108,7 +108,7 @@ Algunas de las versiones anteriores de TLS ya no se consideran seguras añadir s
 
 Se añaden implementaciones específicas para la arquitectura Aarch64 para un mejor rendimiento en la plataforma [ARM][arm] en algunas funciones. Se añade de forma experimental un nuevo recolector de basura ZGC con pausas para recolectar basura menores capaz de manejar cantidades de memoria pequeñas de megabytes y grandes de terabytes. Al mismo tiempo se añade un recolector de basura Epsilon que no reclama la memoria. Se añade soporte para los algoritmos criptográficos _ChaCha20_ y _Poly1305_ junto con otras funcionalidades criptográficas _RSASSA-PSS_, _AES Encryption with HMAC-SHA2 for Kerberos 5_, ...
 
-Se añaden varios métodos a la clase [String](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html) muy utilizados con los que no será necesario recurrie a librerías de terceros. Estos métodos son [repeat](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#repeat(int)), [isBlank](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#isBlank()), [strip](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#strip()), [stripLeading](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripLeading()), [stripTrailing](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#stripTrailing()), [lines](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#lines()). En otras clases de la API también se han añadido nuevos métodos.
+Se añaden varios métodos a la clase [String](javadoc11:java.base/java/lang/String.html) muy utilizados con los que no será necesario recurrie a librerías de terceros. Estos métodos son [repeat](javadoc11:java.base/java/lang/String.html#repeat(int)), [isBlank](javadoc11:java.base/java/lang/String.html#isBlank()), [strip](javadoc11:java.base/java/lang/String.html#strip()), [stripLeading](javadoc11:java.base/java/lang/String.html#stripLeading()), [stripTrailing](javadoc11:java.base/java/lang/String.html#stripTrailing()), [lines](javadoc11:java.base/java/lang/String.html#lines()). En otras clases de la API también se han añadido nuevos métodos.
 
 Java que tradicionalmente marcaba como _deprecarted_ características pero que las seguía manteniendo por compatibilidad hacia atrás parece que ha empezado a eliminar varias de esas características desaconsejadas de forma más agresiva. No solo se añaden nuevas características, también se eliminan algunas y se desaconseja el uso de otras entre ellas el visor de _applets_, eliminación de _Unsafe.defineClass_, _Thread.destroy()_ y _Thread.stop(Throwable)_, eliminación de las funcionalidades de despliegue de _Java Plugin_ y _Java Web Start_ que se marcaron como desaconsejadas en Java 9 y para eliminación en Java 10 finalmente en Java 11 se han eliminado sin reemplazo.
 
@@ -120,7 +120,7 @@ Las anteriores son las funcionalidades que he considerado más destacables para 
 * [Introducing Java SE 11](https://developer.oracle.com/java/java11)
 * [JDK 11 Release Notes](https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html)
 * [Java 11 Documentation](https://docs.oracle.com/en/java/javase/11/)
-* [Java 11 Javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
+* [Java 11 Javadoc](javadoc11:index.html)
 * [Introducing Java SE 11 (blog)](https://blogs.oracle.com/java-platform-group/introducing-java-se-11)
 * [Oracle JDK Releases for Java 11 and Later](https://blogs.oracle.com/java-platform-group/oracle-jdk-releases-for-java-11-and-later)
 * [Java 11 Will Include More Than Just Features](https://blog.takipi.com/java-11-will-include-more-than-just-features/)

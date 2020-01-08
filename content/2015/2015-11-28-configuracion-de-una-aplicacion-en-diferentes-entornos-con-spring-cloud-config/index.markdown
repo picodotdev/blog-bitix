@@ -49,10 +49,10 @@ En la búsqueda de las ubicaciones de los archivos de configuración se siguen l
 
 Este sería el inicio del servidor de configuración y el documento JSON que devuelve para la aplicación _springcloudclient_ para el entorno _prod_ en una petición <abbr title="Hypertext Transfer Protocol">HTTP</abbr>.
 
-{{< asciinema id="30811"    caption="Inicio del servidor Spring Cloud Config" >}}
+{{< asciinema id="30811" caption="Inicio del servidor Spring Cloud Config" >}}
 {{< image
     gallery="true"
-    image1="spring-cloud-client-prod.png" optionsthumb1="300x200" title1="Configuración de la aplicación para el entorno de producción"
+    image1="resource:spring-cloud-client-prod.png" optionsthumb1="300x200" title1="Configuración de la aplicación para el entorno de producción"
     caption="Configuración de la aplicación para el entorno de producción" >}}
 
 La aplicación cliente cuando se inicie solicitará su configuración al servidor Spring Cloud Config mediante una petición HTTP en función del entorno para el que se inicie. Deberemos usar la dependencia _org.springframework.cloud:spring-cloud-starter-config_. Para obtener los valores de las propiedades de configuración podemos usar la anotación <code>@Value</code>. En los archivos _application.yml_ y _bootstrap.yml_ indicamos el perfil para el cual se activará la aplicación y podemos especificar la <abbr title="Uniform Resource Locator">URL</abbr> con la localización del servidor de configuración.
@@ -63,7 +63,7 @@ La aplicación cliente cuando se inicie solicitará su configuración al servido
 
 Si no queremos obtener las propiedades con la anotación <code>@Value</code> podemos usar el _bean_ [Environment](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html) que define Spring y sus métodos _getProperty_ con el que además podremos averiguar los perfiles activos de la aplicación. Por otra parte las mismas propiedades de configuración del cliente podemos especificarlos mediante parámetros, propiedades de sistema, propiedades de entorno y algunas formas más como se explica en como [externalizar la configuración en las aplicaciones Spring](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html). De cualquiera de estas formas podemos indicar o sobreescribir los valores como puede ser el perfil activo de la aplicación.
 
-{{< asciinema id="30810"    caption="Inicio de aplicación cliente de servidor Spring Cloud Config" >}}
+{{< asciinema id="30810" caption="Inicio de aplicación cliente de servidor Spring Cloud Config" >}}
 
 Este ejemplo solo muestra una pequeña parte de las posibilidades que ofrece Spring Cloud Config, otras son la posibilidad de [servir archivos de configuración completos](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_serving_plain_text) para por ejemplo [Nginx][nginx], los valores de las propiedades de configuración en el repositorio de configuración pueden ser cifradas y al enviarlas al cliente ser descifradas. Spring Cloud Config solo es una pequeña parte del proyecto Spring Cloud que proporciona más funcionalidades útiles para sistemas distribuidos y microservicios y un complemento adicional interesante para Spring Boot.
 

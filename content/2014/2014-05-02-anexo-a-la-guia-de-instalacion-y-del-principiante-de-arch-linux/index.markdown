@@ -37,8 +37,8 @@ Una vez disponemos del CD o memoria USB deberemos iniciar el sistema con él. La
 
 {{< image
     gallery="true"
-    image1="instalacion-arch-linux.png" optionsthumb1="300x200" title1="Menú instalación Arch Linux"
-    image2="instalacion-arch-linux-prompt.png" optionsthumb2="300x200" title2="Inicio instalación Arch Linux" >}}
+    image1="resource:instalacion-arch-linux.png" optionsthumb1="300x200" title1="Menú instalación Arch Linux"
+    image2="resource:instalacion-arch-linux-prompt.png" optionsthumb2="300x200" title2="Inicio instalación Arch Linux" >}}
 
 Una vez estemos en el prompt inicial de la instalación deberemos cargar el mapa según nuestro teclado, para un teclado español usaremos normalmente:
 
@@ -272,6 +272,6 @@ El resultado de la instalación y usando GNOME es el siguiente:
 
 {{< image
     gallery="true"
-    image1="escritorio-gnome.jpg" optionsthumb1="300x200" >}}
+    image1="resource:escritorio-gnome.jpg" optionsthumb1="300x200" >}}
 
 {{% /post %}}

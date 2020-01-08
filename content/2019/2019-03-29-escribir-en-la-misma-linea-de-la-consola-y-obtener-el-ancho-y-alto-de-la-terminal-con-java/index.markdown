@@ -31,7 +31,7 @@ El siguiente ejemplo muestra varias barras de progreso utilizando la secuencia d
 {{< code file="Printer.java" language="java" options="" >}}
 {{< code file="Progress.java" language="java" options="" >}}
 
-{{% asciinema id="237621"    caption="Progreso escribiendo en la misma línea de la consola" %}}
+{{< asciinema id="237621" caption="Progreso escribiendo en la misma línea de la consola" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaTerminal" command="./gradlew build && ./run.sh" %}}
 

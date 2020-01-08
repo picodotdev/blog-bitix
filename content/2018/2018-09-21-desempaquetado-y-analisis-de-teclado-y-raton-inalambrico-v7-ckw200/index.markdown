@@ -80,45 +80,45 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
 
 {{< image
     gallery="true"
-    image1="v7-ckw200-1.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-2.jpg" optionsthumb2="200x150" title2="La caja"
-    image3="v7-ckw200-3.jpg" optionsthumb3="200x150" title3="La caja" >}}
+    image1="resource:v7-ckw200-1.jpg" optionsthumb1="200x150" title1="La caja"
+    image2="resource:v7-ckw200-2.jpg" optionsthumb2="200x150" title2="La caja"
+    image3="resource:v7-ckw200-3.jpg" optionsthumb3="200x150" title3="La caja" >}}
 {{< image
     gallery="true"
-    image1="v7-ckw200-4.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-6.jpg" optionsthumb2="200x150" title2="La caja"
-    image3="v7-ckw200-7.jpg" optionsthumb3="200x150" title3="La caja" >}}
+    image1="resource:v7-ckw200-4.jpg" optionsthumb1="200x150" title1="La caja"
+    image2="resource:v7-ckw200-6.jpg" optionsthumb2="200x150" title2="La caja"
+    image3="resource:v7-ckw200-7.jpg" optionsthumb3="200x150" title3="La caja" >}}
 {{< image
     gallery="true"
-    image1="v7-ckw200-8.jpg" optionsthumb1="200x150" title1="La caja"
-    image2="v7-ckw200-9.jpg" optionsthumb2="200x150" title2="La caja"
+    image1="resource:v7-ckw200-8.jpg" optionsthumb1="200x150" title1="La caja"
+    image2="resource:v7-ckw200-9.jpg" optionsthumb2="200x150" title2="La caja"
     caption="La caja, manual y pilas incluídas" >}}
 
 {{< image
     gallery="true"
-    image1="v7-ckw200-11.jpg" optionsthumb1="200x150" title1="El teclado"
-    image2="v7-ckw200-15.jpg" optionsthumb2="200x150" title2="El teclado"
-    image3="v7-ckw200-26.jpg" optionsthumb3="200x150" title3="El teclado" >}}
+    image1="resource:v7-ckw200-11.jpg" optionsthumb1="200x150" title1="El teclado"
+    image2="resource:v7-ckw200-15.jpg" optionsthumb2="200x150" title2="El teclado"
+    image3="resource:v7-ckw200-26.jpg" optionsthumb3="200x150" title3="El teclado" >}}
 {{< image
     gallery="true"
-    image1="v7-ckw200-16.jpg" optionsthumb1="200x150" title1="El teclado"
-    image2="v7-ckw200-17.jpg" optionsthumb2="200x150" title2="El teclado"
-    image3="v7-ckw200-18.jpg" optionsthumb3="200x150" title3="El teclado" >}}
+    image1="resource:v7-ckw200-16.jpg" optionsthumb1="200x150" title1="El teclado"
+    image2="resource:v7-ckw200-17.jpg" optionsthumb2="200x150" title2="El teclado"
+    image3="resource:v7-ckw200-18.jpg" optionsthumb3="200x150" title3="El teclado" >}}
 {{< image
     gallery="true"
-    image1="v7-ckw200-19.jpg" optionsthumb1="200x150" title1="El teclado"
+    image1="resource:v7-ckw200-19.jpg" optionsthumb1="200x150" title1="El teclado"
     caption="El teclado" >}}
 
 {{< image
     gallery="true"
-    image1="v7-ckw200-20.jpg" optionsthumb1="200x150" title1="El ratón"
-    image2="v7-ckw200-21.jpg" optionsthumb2="200x150" title2="El ratón"
-    image3="v7-ckw200-22.jpg" optionsthumb3="200x150" title3="El ratón" >}}
+    image1="resource:v7-ckw200-20.jpg" optionsthumb1="200x150" title1="El ratón"
+    image2="resource:v7-ckw200-21.jpg" optionsthumb2="200x150" title2="El ratón"
+    image3="resource:v7-ckw200-22.jpg" optionsthumb3="200x150" title3="El ratón" >}}
 {{< image
     gallery="true"
-    image1="v7-ckw200-25.jpg" optionsthumb1="200x150" title1="El ratón"
-    image2="v7-ckw200-27.jpg" optionsthumb2="200x150" title2="El adaptador USB"
-    image3="v7-ckw200-24.jpg" optionsthumb3="200x150" title3="El adaptador USB"
+    image1="resource:v7-ckw200-25.jpg" optionsthumb1="200x150" title1="El ratón"
+    image2="resource:v7-ckw200-27.jpg" optionsthumb2="200x150" title2="El adaptador USB"
+    image3="resource:v7-ckw200-24.jpg" optionsthumb3="200x150" title3="El adaptador USB"
     caption="El ratón y el adaptador USB" >}}
 
 ### Conclusión
@@ -139,7 +139,7 @@ Al mismo tiempo que he comprado el teclado y ratón he comprado una [alfombrilla
 
 {{< image
     gallery="true"
-    image1="v7-ckw200-10.jpg" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
+    image1="resource:v7-ckw200-10.jpg" optionsthumb1="200x150" title1="Alfombrilla, teclado y ratón"
     caption="Alfombrilla, teclado y ratón" >}}
 
 {{< amazon

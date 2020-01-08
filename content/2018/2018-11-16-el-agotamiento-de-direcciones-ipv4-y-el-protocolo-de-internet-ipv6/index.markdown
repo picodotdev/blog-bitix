@@ -25,7 +25,7 @@ El problema de agotamiento de direcciones IPv4 no es nuevo y ya desde hace algun
 
 {{< image
     gallery="true"
-    image1="nat.png" optionsthumb1="300x200" title1="Panel de un router para hacer NAT"
+    image1="resource:nat.png" optionsthumb1="300x200" title1="Panel de un router para hacer NAT"
     caption="Panel de un router para hacer NAT" >}}
 
 La solución a largo plazo para la escasez de direcciones IP del protocolo IPv4 es usar una nueva versión de protocolo conocida como [IPv6][wikipedia-ipv6]. En IPv6 las direcciones IP son números de 128 bits dando lugar a 2<sup>128</sup>, aproximadamente 3.4×10<sup>38</sup> o 340.282.366.920.938.463.463.374.607.431.768.211.456 combinaciones teóricas posibles, esto son unas 7.9×10<sup>28</sup> veces más direcciones IP posibles que en IPv4. Las direcciones IPv6 se escriben en ocho grupos de cuatro números hexadecimales, pudiéndose hacer una contracción omitiendo grupos de ceros contiguos con _::_. El enorme número de direcciones de IPv6 hace innecesaria el NAT y CG-NAT y los problemas que estos ocasionan. Estas son unas comparaciones:

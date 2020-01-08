@@ -28,7 +28,7 @@ Para facilitar el desarrollo de la aplicación en el lado cliente usaré algunas
 
 {{< image
     gallery="true"
-    image1="supermarket-java-ee-7.png" optionsthumb1="300x200" title1="Supermarket con Java EE 7"
+    image1="resource:supermarket-java-ee-7.png" optionsthumb1="300x200" title1="Supermarket con Java EE 7"
     caption="Supermarket con Java EE 7" >}}
 
 Veamos primero la página inicial índice con el listado de productos generada con JSF. Obtiene el listado de productos y genera el HTML del mismo, además carga los JavaScripts necesarios para que la aplicación funcione en el navegador del cliente.
@@ -63,7 +63,7 @@ La aplicación está dividida en varios módulos construidos con la [herramienta
 
 {{< image
     gallery="true"
-    image1="aplicacion-cliente.png" optionsthumb1="300x200" title1="Aplicación cliente Supermarket"
+    image1="resource:aplicacion-cliente.png" optionsthumb1="300x200" title1="Aplicación cliente Supermarket"
     caption="Aplicación cliente Supermarket" >}}
 
 El conjunto de especificaciones de Java EE proporciona una solución para la mayoría de funcionalidades que necesita una aplicación pero también podemos sustituir alguna y combinarlas con otras de las muchas librerías o _frameworks_ disponibles en la plataforma Java. Por ejemplo, como _framework_ en vez de usar Servlet y JSP o JSF podemos usar [Apache Tapestry][blogbitix-12], [Vert.x][blogbitix-120], [Spark][blogbitix-121], [Struts][struts], [Grails][grails], ... dependiendo de las necesidades de la aplicación, su complejidad y nuestras preferencias. Como [alternativa al ORM de JPA o JDBC se puede usar jOOQ][blogbitix-82]. [RabbitMQ][rabbitmq] en vez de JMS o [Spring][spring] en vez de CDI, EJB y JTA.
@@ -71,8 +71,8 @@ El conjunto de especificaciones de Java EE proporciona una solución para la may
 Algunos libros sobre Java EE que he leído y que me han gustado han sido los siguientes, [Java EE 7 Essentials](https://amzn.to/2SW6cw2) hace un repaso detallado pero no muy profundo para hacerse una idea bastante buena del conjunto de especificaciones de Java EE. Otro buen libro es [Java EE 7 Development with WildFly](https://amzn.to/2T0MlvA) que entra más en detalle en cada una de las especificaciones. El [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/tutorial/) también es un buen punto de partida. <a target="_blank" href="https://amzn.to/2QLs7TX">Libros sobre Java EE 7</a> hay muchos por la cantidad de tiempo que ya tiene, es recomendable leer alguno que esté actualizado a las últimas versiones.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1449370179&internal=1" >}}
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1782171983&internal=1" >}}
+    linkids="8f42c49cd2ee85af9d35494fe93b878b,85fd41d16bd855bb3954171284a6b637"
+    asins="1782171983,1782171983" >}}
 
 Con Java EE 6 y 7 ciertas partes de configuración se pueden realizar con anotaciones en vez de con XML sin embargo aún no ha desaparecido completamente aunque si reducido considerablemente.
 

@@ -84,8 +84,8 @@ Con esto ya recibiremos los eventos cuando ocurran. En el ejemplo aparecerá en 
 
 {{< image
     gallery="true"
-    image1="aplicacion.png" optionsthumb1="300x200" title1="Creando un registro en la base de datos"
-    image2="consola.png" optionsthumb2="300x200" title2="Trazas de ejecución del listener" >}}
+    image1="resource:aplicacion.png" optionsthumb1="300x200" title1="Creando un registro en la base de datos"
+    image2="resource:consola.png" optionsthumb2="300x200" title2="Trazas de ejecución del listener" >}}
 
 Otra implementación distinta a la expuesta en este artículo es con anotaciones tal y como hace JPA, podríamos hacer una implementación de _listener_ que busque una anotación en la entidad y llame a ese método cuando se produzca el evento. Depende de como  prefiramos organizar el código, si preferimos tener el código del _listener_ separado de la entidad o todo el código en la propia entidad.
 

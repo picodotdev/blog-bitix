@@ -18,7 +18,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 Aunque en muchas aplicaciones no será necesario si desarrollamos una aplicación que trabaje con diferentes paises y fechas probablemente deberemos tener en cuenta múltiples [husos horarios](https://es.wikipedia.org/wiki/Huso_horario) o zonas horarias. Según estos husos horarios, por ejemplo, en el momento que son las 12:00 en Madrid hora local no son las 12:00 en Buenos Aires, si dos ciudades emplean diferente huso horario hay que tenerlo en cuenta para obtener la hora local en cada ciudad.
 
-Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas [GregorianCalendar](https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html) y [Date](https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html), una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería [JodaTime][jodatime]. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la [nueva API para fechas de Java 8](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html), [entre otras novedades incluídas][blogbitix-17], la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.
+Hasta la versión 7 de Java el trabajo con fechas era complicado con las clases proporcionadas [GregorianCalendar](https://docs.oracle.com/javase/7/docs/api/java/util/GregorianCalendar.html) y [Date](https://docs.oracle.com/javase/7/docs/api/java/sql/Date.html), una alternativa a la API de Java para el manejo de fechas hasta esta versión era emplear la librería [JodaTime][jodatime]. JodaTime ofrece una API mejor y más completa para el manejo de fechas hasta la versión de Java 7. Con la [nueva API para fechas de Java 8](javadoc8:java/time/package-summary.html), [entre otras novedades incluídas][blogbitix-17], la situación ha mejorado pero hasta que tengamos oportunidad de usar esta versión puede que pase bastante tiempo y sigamos obligados a usar JodaTime si tenemos posibilidad de usar esta librería o usar directamente la API de Java 7 si no podemos.
 
 Otro aspecto que debemos tener en cuenta en una aplicación es en que huso horario vamos a guardar las fechas en la base de datos, para simplificar lo recomendable es guardar siempre las fechas en el mismo huso horario. Podemos elegir cualquier huso horario quizá la local del lugar donde estamos o una mas genérica como UTC.
 
@@ -35,7 +35,7 @@ Finalmente, hay que tener en cuenta que los [horarios de verano](https://es.wiki
 
 {{< reference >}}
 * [Java 7 Date API](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-* [Java 8 Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+* [Java 8 Time API](javadoc8:java/time/package-summary.html)
 * [JodaTime][jodatime]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 {{< /reference >}}

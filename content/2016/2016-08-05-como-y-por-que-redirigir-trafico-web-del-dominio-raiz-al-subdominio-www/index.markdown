@@ -34,8 +34,8 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 
 {{< image
     gallery="true"
-    image1="nginx.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
-    image2="nginx-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
+    image1="resource:nginx.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
+    image2="resource:nginx-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
     caption="Dominio antes y después de acceder al sitio con Nginx" >}}
 
 ### Apache
@@ -45,8 +45,8 @@ Usando Docker y el archivo de configuración completo podemos probar que funcion
 
 {{< image
     gallery="true"
-    image1="httpd.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
-    image2="httpd-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
+    image1="resource:httpd.png" optionsthumb1="300x200" title1="Dominio antes de acceder al sitio"
+    image2="resource:httpd-www.png" optionsthumb2="300x200" title2="Dominio después de acceder al sitio"
     caption="Dominio antes y después de acceder al sitio con Apache HTTPD" >}}
 
 Si prefieriesemos hacer la redirección al revés, del subdominio www al dominio, variaríamos los valores de los nombres del servidor y los valores de las directivas de redirección. En los enlaces de referencia se incluye un ejemplo de esta configuración.

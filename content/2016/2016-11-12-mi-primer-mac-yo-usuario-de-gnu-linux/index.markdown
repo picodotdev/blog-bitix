@@ -35,8 +35,8 @@ Por lo menos ahora podré hablar con un poco más de criterio cuando lo haga sob
 
 {{< image
     gallery="true"
-    image1="macos.png" optionsthumb1="300x200" title1="Información del sistema macOS"
-    image2="macos-sierra-desktop.jpg" optionsthumb2="300x200" title2="Escritorio de macOS"
+    image1="resource:macos.png" optionsthumb1="300x200" title1="Información del sistema macOS"
+    image2="resource:macos-sierra-desktop.jpg" optionsthumb2="300x200" title2="Escritorio de macOS"
     caption="Información del sistema y escritorio de macOS" >}}
 
 {{% /post %}}

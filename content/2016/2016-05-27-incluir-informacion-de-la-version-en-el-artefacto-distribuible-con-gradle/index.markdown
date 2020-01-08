@@ -34,14 +34,15 @@ En el caso de un artefacto _jar_ Gradle lo genera en _build/libs/GradleVersion-1
 
 {{< image
     gallery="true"
-    image1="gradle-version.png" optionsthumb1="300x200" title1="Artefacto distribuible con información de versión" >}}
+    image1="resource:gradle-version.png" optionsthumb1="300x200" title1="Artefacto distribuible con información de versión" >}}
 
 En este caso el artefacto que he usado ha sido un archivo _jar_ si se tratase de una aplicación web y de un archivo _war_ en el archivo de construcción de Grade se puede aplicar esto de forma similar. La aplicación podría devolver la versión como una cabecera <abbr title="HyperText Transfer Protocol">HTTP</abbr> o el en código fuente de <abbr title="HyperText Markup Language">HTML</abbr> como un comentario que genere sus páginas web.
 
 El libro [Gradle in Action](https://amzn.to/2tzDFla) proporciona una aplicación más detallada de muchos conceptos de Gradle, otro buen punto de partida es la propia [documentación de Gradle](https://docs.gradle.org/current/userguide/userguide.html).
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291307&internal=1" >}}
+    linkids="47801f62b1166dbad13b7f366c836d35"
+    asins="1617291307" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GradleVersion/" command="export BUILD_NUMBER=42 && ./gradlew build" >}}
 

@@ -50,15 +50,15 @@ Desde la línea de comandos se puede observar el estado del servicio y el proces
 {{< code file="nomad-status-before.sh" language="bash" options="" >}}
 {{< code file="nomad-status-after.sh" language="bash" options="" >}}
 
-{{% asciinema id="241669"    caption="Progreso del despliegue rolling update en Nomad" %}}
+{{< asciinema id="241669" caption="Progreso del despliegue rolling update en Nomad" >}}
 
 El proceso de despliegue también se puede monitorizar desde la interfaz web que ofrece Nomad.
 
 {{< image
     gallery="true"
-    image1="nomad-rolling-update-before.png" optionsthumb1="300x200" title1="Antes del proceso de despliegue rolling update en Nomad"
-    image2="nomad-rolling-update-while.png" optionsthumb2="300x200" title2="Durante el proceso de despliegue rolling update en Nomad"
-    image3="nomad-rolling-update-after.png" optionsthumb3="300x200" title3="Después del proceso de despliegue rolling update en Nomad"
+    image1="resource:nomad-rolling-update-before.png" optionsthumb1="300x200" title1="Antes del proceso de despliegue rolling update en Nomad"
+    image2="resource:nomad-rolling-update-while.png" optionsthumb2="300x200" title2="Durante el proceso de despliegue rolling update en Nomad"
+    image3="resource:nomad-rolling-update-after.png" optionsthumb3="300x200" title3="Después del proceso de despliegue rolling update en Nomad"
     caption="Progreso del despliegue rolling update en Nomad" >}}
 
 En este ejemplo los servicios están en contenedores docker, también se observa que la versión de los contenedores en ejecución pasan de la versión _stable-alpine_ a _alpine_.

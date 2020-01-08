@@ -25,8 +25,8 @@ Compilado el programa y utilizando la herramienta _javap_ se puede obtener el va
 
 {{< image
     gallery="true"
-    image1="java-class-hex.png" optionsthumb1="300x200" title1="Contenido hexadecimal de un archivo binario de bytecode Java"
-    image2="c-bin-hex.png" optionsthumb2="300x200" title2="Contenido hexadecimal de un archivo binario de C"
+    image1="resource:java-class-hex.png" optionsthumb1="300x200" title1="Contenido hexadecimal de un archivo binario de bytecode Java"
+    image2="resource:c-bin-hex.png" optionsthumb2="300x200" title2="Contenido hexadecimal de un archivo binario de C"
     caption="Contenido hexadecimal de un archivo binario de bytecode Java y C" >}}
 
 El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o decompilado los caracteres de la cadena son fácilmente reconocibles.

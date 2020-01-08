@@ -25,17 +25,17 @@ Dado que en GNU/Linux hay muchas distribuciones un nuevo usuario puede sentirse 
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/ubuntu.svg" optionsthumb1="100x100" title1="Ubuntu"
-    image2="assets/images/logotypes/opensuse.svg" optionsthumb2="100x100" title2="openSUSE"
-    image3="assets/images/logotypes/debian.svg" optionsthumb3="100x100" title3="Debian" >}}
+    image1="asset:assets/images/logotypes/ubuntu.svg" optionsthumb1="100x100" title1="Ubuntu"
+    image2="asset:assets/images/logotypes/opensuse.svg" optionsthumb2="100x100" title2="openSUSE"
+    image3="asset:assets/images/logotypes/debian.svg" optionsthumb3="100x100" title3="Debian" >}}
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/archlinux.svg" optionsthumb1="100x100" title1="Arch Linux"
-    image2="assets/images/logotypes/fedora.svg" optionsthumb2="100x100" title2="Fedora"
-    image3="assets/images/logotypes/elementary.svg" optionsthumb3="100x100" title3="Elementary OS" >}}
+    image1="asset:assets/images/logotypes/archlinux.svg" optionsthumb1="100x100" title1="Arch Linux"
+    image2="asset:assets/images/logotypes/fedora.svg" optionsthumb2="100x100" title2="Fedora"
+    image3="asset:assets/images/logotypes/elementary.svg" optionsthumb3="100x100" title3="Elementary OS" >}}
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/trisquel.svg" optionsthumb1="100x" title1="Trisquel"
+    image1="asset:assets/images/logotypes/trisquel.svg" optionsthumb1="100x" title1="Trisquel"
     caption="Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas" >}}
 
 Esta categorización que he hecho es general y muchos usuarios avanzados usan distribuciones que en esta categorización incluyo como para usuarios nuevos. Algunas distribuciones publican nuevas versiones cada seis meses o versiones más estables cada dos años con soporte durante mayor periodo de tiempo como Ubuntu y sus <abbr title="Long Term Support">LTS</abbr>. Algunas otras distribuciones se califican como en continua actualización o _rolling release_ que no siguen un calendario de publicaciones en las que en cada actualización completa del sistema se tiene la última versión disponible de cada paquete y programas. Algunas categorías y distribuciones son las siguientes:
@@ -49,28 +49,28 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="ubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Ubuntu"
-    image2="ubuntu.png" optionsthumb2="300x200" title2="Ubuntu"
+    image1="resource:ubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Ubuntu"
+    image2="resource:ubuntu.png" optionsthumb2="300x200" title2="Ubuntu"
     caption="Ubuntu con Unity" >}}
 {{< image
     gallery="true"
-    image1="elementary-os-installer.png" optionsthumb1="300x200" title1="Instalador de elementary OS"
-    image2="elementary-os.png" optionsthumb2="300x200" title2="Elementary OS"
+    image1="resource:elementary-os-installer.png" optionsthumb1="300x200" title1="Instalador de elementary OS"
+    image2="resource:elementary-os.png" optionsthumb2="300x200" title2="Elementary OS"
     caption="Elementary OS" >}}
 {{< image
     gallery="true"
-    image1="linux-mint-installer.png" optionsthumb1="300x200" title1="Instalador de Linux Mint"
-    image2="linux-mint.png" optionsthumb2="300x200" title2="Linux Mint con Cinnamon"
+    image1="resource:linux-mint-installer.png" optionsthumb1="300x200" title1="Instalador de Linux Mint"
+    image2="resource:linux-mint.png" optionsthumb2="300x200" title2="Linux Mint con Cinnamon"
     caption="Linux Mint con Cinnamon" >}}
 {{< image
     gallery="true"
-    image1="opensuse-installer.png" optionsthumb1="300x200" title1="Instalador de openSUSE"
-    image2="opensuse.png" optionsthumb2="300x200" title2="openSUSE con KDE"
+    image1="resource:opensuse-installer.png" optionsthumb1="300x200" title1="Instalador de openSUSE"
+    image2="resource:opensuse.png" optionsthumb2="300x200" title2="openSUSE con KDE"
     caption="openSUSE con KDE" >}}
 {{< image
     gallery="true"
-    image1="debian-installer-1.png" optionsthumb1="300x200" title1="Instalador de Debian (1)"
-    image2="debian-installer-2.png" optionsthumb2="300x200" title2="Instalador de Debian (2)"
+    image1="resource:debian-installer-1.png" optionsthumb1="300x200" title1="Instalador de Debian (1)"
+    image2="resource:debian-installer-2.png" optionsthumb2="300x200" title2="Instalador de Debian (2)"
     caption="Instalador de Debian" >}}
 
 * Para usuario intermedio:
@@ -79,22 +79,22 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="archlinux-installer-1.png" optionsthumb1="300x200" title1="Instalador de Arch Linux (1)"
-    image2="archlinux-installer-2.png" optionsthumb2="300x200" title2="Instalador de Arch Linux (2)"
+    image1="resource:archlinux-installer-1.png" optionsthumb1="300x200" title1="Instalador de Arch Linux (1)"
+    image2="resource:archlinux-installer-2.png" optionsthumb2="300x200" title2="Instalador de Arch Linux (2)"
     caption="Instalador de Arch Linux" >}}
 {{< image
     gallery="true"
-    image1="archlinux.jpg" optionsthumb1="300x200" title1="Arch Linux con GNOME"
+    image1="resource:archlinux.jpg" optionsthumb1="300x200" title1="Arch Linux con GNOME"
     caption="Arch Linux con GNOME" >}}
 {{< image
     gallery="true"
-    image1="arch-anywhere-installer-1.png" optionsthumb1="300x200" title1="Instalador de arch-anywhere (1)"
-    image2="arch-anywhere-installer-2.png" optionsthumb2="300x200" title2="Instalador de arch-anywhere (2)"
+    image1="resource:arch-anywhere-installer-1.png" optionsthumb1="300x200" title1="Instalador de arch-anywhere (1)"
+    image2="resource:arch-anywhere-installer-2.png" optionsthumb2="300x200" title2="Instalador de arch-anywhere (2)"
     caption="Instalador de arch-anywhere" >}}
 {{< image
     gallery="true"
-    image1="fedora-installer.png" optionsthumb1="300x200" title1="Instalador de Fedora"
-    image2="fedora.png" optionsthumb2="300x200" title2="Fedora con GNOME"
+    image1="resource:fedora-installer.png" optionsthumb1="300x200" title1="Instalador de Fedora"
+    image2="resource:fedora.png" optionsthumb2="300x200" title2="Fedora con GNOME"
     caption="Fedora con GNOME" >}}
 
 * Para usuario avanzado:
@@ -111,8 +111,8 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="xubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Xubuntu"
-    image2="xubuntu.png" optionsthumb2="300x200" title2="Xubuntu con XFCE"
+    image1="resource:xubuntu-installer.png" optionsthumb1="300x200" title1="Instalador de Xubuntu"
+    image2="resource:xubuntu.png" optionsthumb2="300x200" title2="Xubuntu con XFCE"
     caption="Xubuntu con XFCE" >}}
 
 * Para usuarios con preferencias de software libre: aunque las distribuciones GNU/Linux son en su mayoría software libre hay algunas partes que no lo son como controladores privativos de la tarjeta gráfica o diversos firmwares del núcleo o controladores. Estas distribuciones tratan de eliminar la mayor parte posible de ese software que no es libre.
@@ -121,8 +121,8 @@ Esta categorización que he hecho es general y muchos usuarios avanzados usan di
 
 {{< image
     gallery="true"
-    image1="triquel-installer.png" optionsthumb1="300x200" title1="Instalador de Trisquel"
-    image2="trisquel.png" optionsthumb2="300x200" title2="Trisquel"
+    image1="resource:triquel-installer.png" optionsthumb1="300x200" title1="Instalador de Trisquel"
+    image2="resource:trisquel.png" optionsthumb2="300x200" title2="Trisquel"
     caption="Trisquel" >}}
 
 Estas son solo algunas de las distribuciones más populares y usadas de GNU/Linux y las que recomiendo pero en [DistroWatch][distrowatch] hay un listado más completo. En el libro [Introduction Linux Distros](https://amzn.to/2fol03B) encontraremos una introducción más detallada a GNU/Linux y sus distribuciones.

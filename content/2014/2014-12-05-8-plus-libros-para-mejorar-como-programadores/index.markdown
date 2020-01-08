@@ -50,16 +50,8 @@ Quizá ya conocieses Clean Code pero conocías ¿[The Clean Coder](https://amzn.
 Comenzar un proyecto desde el inicio no es lo habitual y aún así pasado un tiempo no muy grande el código se convierte en heredado, lo habitual es que tengamos que modificar código que ya están escrito. El libro [Refactoring](https://amzn.to/39CyVMm) nos explica como modificar el código para que tenga mejor diseño y sea más legible o fácil de modificar en un futuro y ante los posibles cambios que se vayan introduciendo. Algunas de las acciones están relacionadas con aplicar algunos principios de los patrones de diseño explicados en Head First - Design Patterns o algunos principios comentados en Clean Code.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0131872486&internal=1" >}}
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1617291994&internal=1" >}}
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0321356683&internal=1" >}}
-    link4="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0596007124&internal=1" >}}
-    link5="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0201633612&internal=1" >}}
-    link6="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0132350882&internal=1" >}}
-    link7="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0735619670&internal=1" >}}
-    link8="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=020161622X&internal=1" >}}
-    link9="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0137081073&internal=1" >}}
-    link10="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0201485672&internal=1" >}}
+    linkids="dae8597bb6dc4beae956320ef09df513,70189a833eb781236f9c1b63064c8b27,468caab01af35306c48d99ca564ebf23,3fa600b62ab3a48a0c6a5dfc6b9c9651,2d6122afa07f905f4c3f2a9bcc62ff23,41b8842029752ed268fefa4ec10f03a7,caad6be50f3166c9e6c0c6cb8f8ba3ec,8ce01379ebca38f4fb82221abb3b0a81,2fb79f1801f1d0a448b7aa533cd1af8e,7c8b407a597aff8be999138b9159d305"
+    asins="0131872486,1617291994,0321356683,0596007124,0201633612,0132350882,0735619670,020161622X,0137081073,0201485672" >}}
 
 En una [pregunta y respuesta de stackoveflow](https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read) sobre los libros a leer por un programador, están recogidos una buena colección de los mejores de ellos.
 

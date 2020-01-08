@@ -48,7 +48,8 @@ La instancia de la clase _UsuarioBuilder_ en su uso recoge los datos usando una 
 En el libro [Effective Java](https://amzn.to/2FngVHS) en el _Item #2_ se comenta más detalladamente este patrón junto a otra buena colección de cosas sobre los constructores y más cosas sobre Java, es uno en mi lista de [8+ libros recomendables para mejorar como programadores][blogbitix-55].
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=0321356683&internal=1" >}}
+    linkids="b669e63080013f19e959a9d5b80e3f77"
+    asins="0321356683" >}}
 
 En el apartado de referencia puedes encontrar más artículos que he escrito sobre otros patrones de diseño.
 

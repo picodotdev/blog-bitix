@@ -58,40 +58,40 @@ Algunas capturas de imagen de estos juegos, en los enlaces anteriores se pueden 
 
 {{< image
     gallery="true"
-    image1="4089.jpg" optionsthumb1="300x200" title1="4089: Ghost Within"
-    image2="rising-world.jpg" optionsthumb2="300x200" title2="Rising World" >}}
+    image1="resource:4089.jpg" optionsthumb1="300x200" title1="4089: Ghost Within"
+    image2="resource:rising-world.jpg" optionsthumb2="300x200" title2="Rising World" >}}
 {{< image
     gallery="true"
-    image1="seizon.jpg" optionsthumb1="300x200" title1="Seizon"
-    image2="copod.png" optionsthumb2="300x200" title2="Copod" >}}
+    image1="resource:seizon.jpg" optionsthumb1="300x200" title1="Seizon"
+    image2="resource:copod.png" optionsthumb2="300x200" title2="Copod" >}}
 {{< image
     gallery="true"
-    image1="drohtin-tales-of-old-kingdom.png" optionsthumb1="300x200" title1="Drohtin – Tales of an Old Kingdom"
-    image2="chaos_in-the-darkness.jpg" optionsthumb2="300x200" title2="CHAOS: In the Darkness" >}}
+    image1="resource:drohtin-tales-of-old-kingdom.png" optionsthumb1="300x200" title1="Drohtin – Tales of an Old Kingdom"
+    image2="resource:chaos_in-the-darkness.jpg" optionsthumb2="300x200" title2="CHAOS: In the Darkness" >}}
 {{< image
     gallery="true"
-    image1="just-tactics.jpg" optionsthumb1="300x200" title1="Just Tactics"
-    image2="spermination.png" optionsthumb2="300x200" title2="Spermination" >}}
+    image1="resource:just-tactics.jpg" optionsthumb1="300x200" title1="Just Tactics"
+    image2="resource:spermination.png" optionsthumb2="300x200" title2="Spermination" >}}
 {{< image
     gallery="true"
-    image1="makers-tale.jpg" optionsthumb1="300x200" title1="Maker’s Tale"
-    image2="piratehell.jpg" optionsthumb2="300x200" title2="PirateHell" >}}
+    image1="resource:makers-tale.jpg" optionsthumb1="300x200" title1="Maker’s Tale"
+    image2="resource:piratehell.jpg" optionsthumb2="300x200" title2="PirateHell" >}}
 {{< image
     gallery="true"
-    image1="hostile-sector.jpg" optionsthumb1="300x200" title1="Hostile Sector"
-    image2="3079.png" optionsthumb2="300x200" title2="3079" >}}
+    image1="resource:hostile-sector.jpg" optionsthumb1="300x200" title1="Hostile Sector"
+    image2="resource:3079.png" optionsthumb2="300x200" title2="3079" >}}
 {{< image
     gallery="true"
-    image1="urban-galaxy.jpg" optionsthumb1="300x200" title1="Urban Galaxy"
-    image2="grapplinghook.jpg" optionsthumb2="300x200" title2="Grappling Hook" >}}
+    image1="resource:urban-galaxy.jpg" optionsthumb1="300x200" title1="Urban Galaxy"
+    image2="resource:grapplinghook.jpg" optionsthumb2="300x200" title2="Grappling Hook" >}}
 {{< image
     gallery="true"
-    image1="mad-skills-motocross.jpg" optionsthumb1="300x200" title1="Mad Skills Motocross"
-    image2="pets-vs-monsters.jpg" optionsthumb2="300x200" title2="Pets vs Monsters" >}}
+    image1="resource:mad-skills-motocross.jpg" optionsthumb1="300x200" title1="Mad Skills Motocross"
+    image2="resource:pets-vs-monsters.jpg" optionsthumb2="300x200" title2="Pets vs Monsters" >}}
 {{< image
     gallery="true"
-    image1="bang-howdy.jpg" optionsthumb1="300x200" title1="Bang! Howdy"
-    image2="imperii.jpg" optionsthumb2="300x200" title2="Imperii" >}}
+    image1="resource:bang-howdy.jpg" optionsthumb1="300x200" title1="Bang! Howdy"
+    image2="resource:imperii.jpg" optionsthumb2="300x200" title2="Imperii" >}}
 
 Todos estos juegos están programados utilizando el lenguaje de programación Java y la librería [jMonkeyEngine][jmonkeyengine] que facilita las tareas de programación de videojuegos proporcionando programación gráfica en 3D usando [OpenGL][opengl], manejo de eventos de entrada como teclado o ratón, manejo de sonido, pantallas de menús o red. Usando jMonkeyEngine se pueden hacer cosas muy interesantes como se ve en los ejemplos. En el siguiente enlace se pueden encontrar el [código fuente de varios ejemplos](https://github.com/jMonkeyEngine/BookSamples/tree/master/src) que podemos probar.
 
@@ -104,12 +104,12 @@ Se pueden crear objetos con texturas transparentes, efectos de luz, _ray casting
 
 {{< image
     gallery="true"
-    image1="cubo.png" optionsthumb1="300x200" title1="¡Hola mundo!"
-    image2="cubos.png" optionsthumb2="300x200" title2="Texturas y materiales" >}}
+    image1="resource:cubo.png" optionsthumb1="300x200" title1="¡Hola mundo!"
+    image2="resource:cubos.png" optionsthumb2="300x200" title2="Texturas y materiales" >}}
 {{< image
     gallery="true"
-    image1="particulas-fuego.png" optionsthumb1="300x200" title1="Sistemas de partículas, fuego"
-    image2="agua.png" optionsthumb2="300x200" title2="Agua" >}}
+    image1="resource:particulas-fuego.png" optionsthumb1="300x200" title1="Sistemas de partículas, fuego"
+    image2="resource:agua.png" optionsthumb2="300x200" title2="Agua" >}}
 
 Un videojuego se compone de múltiples recursos como imágenes, modelos 3D, música, _sprites_, texturas, fuentes de texto, sonidos, iconos... en la página [Open Game Art](http://opengameart.org) podemos encontrar todo este tipo de material sin necesidad de tener que crearlo desde la nada.
 
@@ -120,7 +120,8 @@ Para instalar jMonkeyEngine debemos [descargar el SDK](http://jmonkeyengine.org/
 El [libro jMonkeyEngine 3.0 Beginners Guide](https://amzn.to/2ZRNc38) me ha resultado muy interesante como punto de introducción a la programación gráfica 3D con Java, pero también si realmente nos interesa la programación de videojuegos es muy recomendable leer el material ofrecido en el [Curso de Experto en Desarrollo de Videojuegos](http://www.cedv.es/), un libro de una extensión de más de 1100 páginas de muy buena calidad, en español y descargables gratuitamente. En la [_wiki_ de jMonkeyEngine](http://wiki.jmonkeyengine.org/doku.php) se pueden encontrar [numerosos tutoriales para principiantes](http://wiki.jmonkeyengine.org/doku.php/jme3#tutorials_for_beginners), también numerosos artículos de nivel más avanzado y el [javadoc de la API](https://javadoc.jmonkeyengine.org/).
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1849516464&internal=1" >}}
+    linkids="56dfb3e4672ccdf48e706b39693b3b55"
+    asins="1849516464" >}}
 
 Otras librerías como [Slick2D][slick2d] permiten hacer videojuegos en 2D como serían los juegos de plataformas, más o menos lo que permite jMonkeyEngine en el 3D aplicado a 2D también usando como lenguaje Java. Sin duda los videojuegos han sido el motivo en parte de que muchos hoy seamos programadores e informáticos aunque en nuestro trabajo nos dediquemos a otro tipo de aplicaciones y entornos.
 

@@ -19,7 +19,7 @@ Por motivos de usabiliad en algunas páginas se incluyen dos barra de botones, u
 
 {{< image
     gallery="true"
-    image1="doble-barra-botones.png" optionsthumb1="300x200" title1="Doble barra de botones" >}}
+    image1="resource:doble-barra-botones.png" optionsthumb1="300x200" title1="Doble barra de botones" >}}
 
 Dependiendo del _framework_ web que utilicemos podremos hacerlo de una o varias formas pero de lo que estamos seguros es que copiar y pegar haciendo que el código esté duplicado no es una buena idea por los problemas de mantenimiento que puede suponer. Pero crear una pequeña plantilla o archivo exclusivo para incluir la barra de botones tampoco es la solución ideal, ¿por que? pues porque creando un archivo específico con la botonera puede que nos ocasione un problema que denominaré de «microgestión», es decir, nos obliga a crear un montón de pequeños archivos pequeñitos y hacer referencia o utilizar el mecanismo de inclusión que dispongamos para usar el contenido en unos de otros. En una aplicación grande esta microgestión si nos vemos obligados a ella puede llegar a ser molesta al desarrollar cuanto menos.
 

@@ -45,7 +45,7 @@ Con Gradle el informe de resultados de las pruebas se genera en _build/reports/t
 
 {{< image
     gallery="true"
-    image1="geb-test-results.png" optionsthumb1="650x450" title1="Informe de pruebas de integración"
+    image1="resource:geb-test-results.png" optionsthumb1="650x450" title1="Informe de pruebas de integración"
     caption="Informe de las pruebas funcionales" >}}
 
 Algunas otras herramientas que son ampliamente usadas en proyectos Java son las que comentaba en el artículo [Nueva visita a herramientas para un proyecto Java][blogbitix-84].

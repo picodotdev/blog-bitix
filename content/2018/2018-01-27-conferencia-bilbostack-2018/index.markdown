@@ -20,12 +20,12 @@ A diferencia de los seis años anteriores este la [BilboStack][bilbostack] ha te
 
 {{< image
     gallery="true"
-    image1="bilbostack-1.jpg" optionsthumb1="300x200" title1="BilboStack 2018"
-    image2="bilbostack-2.jpg" optionsthumb2="300x200" title2="BilboStack 2018" >}}
+    image1="resource:bilbostack-1.jpg" optionsthumb1="300x200" title1="BilboStack 2018"
+    image2="resource:bilbostack-2.jpg" optionsthumb2="300x200" title2="BilboStack 2018" >}}
 {{< image
     gallery="true"
-    image1="bilbostack-3.jpg" optionsthumb1="300x200" title1="BilboStack 2018"
-    image2="presentacion.jpg" optionsthumb2="300x200" title2="Presentación BilboStack 2018"
+    image1="resource:bilbostack-3.jpg" optionsthumb1="300x200" title1="BilboStack 2018"
+    image2="resource:presentacion.jpg" optionsthumb2="300x200" title2="Presentación BilboStack 2018"
     caption="BilboStack 2018" >}}
 
 En la presentación inicial se ha comentado como se gestó la primera BilboStack. A la vuelta de otra conferencia los organizadores se preguntaron por que no organizar una ellos en Bilbao para no siempre ir a otras ciudades como Madrid o Barcelona.
@@ -34,8 +34,8 @@ Hasta el momento siempre se ha mantenido gratuita la entrada previa reserva pero
 
 {{< image
     gallery="true"
-    image1="euskalduna-1.jpg" optionsthumb1="300x200" title1="Palacio Euskalduna"
-    image2="euskalduna-2.jpg" optionsthumb2="300x200" title2="Palacio Euskalduna"
+    image1="resource:euskalduna-1.jpg" optionsthumb1="300x200" title1="Palacio Euskalduna"
+    image2="resource:euskalduna-2.jpg" optionsthumb2="300x200" title2="Palacio Euskalduna"
     caption="Palacio Euskalduna" >}}
 
 700 y pico entradas eran las que se han ofrecido, ni los organizadores creían que se iban a agotar y se jactaban de que habría entradas para todos en los primeros días de poner la primera oleada para la reserva, pues al final ni esas 700 parece que han estado sobradas. Sorprendente ya que en el 2016 los asistentes fueron 332, algo menos de la mitad del aforo de este año. 6 de las 8 presentaciones han sido dadas por mujeres y en años anteriores también ha habido presencia femenina tanto ponentes como asistentes.
@@ -54,8 +54,8 @@ Por supuesto tener a disposición para la conferencia este recinto y los ponente
 
 {{< image
     gallery="true"
-    image1="patrocinadores.png" optionsthumb1="300x200" title1="Patrocinadores"
-    image2="merchandising.jpg" optionsthumb2="300x200" title2="Merchandising"
+    image1="resource:patrocinadores.png" optionsthumb1="300x200" title1="Patrocinadores"
+    image2="resource:merchandising.jpg" optionsthumb2="300x200" title2="Merchandising"
     caption="Patrocinadores" >}}
 
 La agenda del evento en esta edición ha sido la siguiente, dos _tracks_ con cuatro presentaciones en cada una de ellas, en formato de una mañana y el posterior postevento para el que desee.
@@ -153,7 +153,7 @@ Referencia:
 
 {{< image
     gallery="true"
-    image1="lo-que-no-se-vue.jpg" optionsthumb1="300x200" title1="Lo que no se Vue" >}}
+    image1="resource:lo-que-no-se-vue.jpg" optionsthumb1="300x200" title1="Lo que no se Vue" >}}
 
 ### CSS Grid Layout en acción <em>por Diana Aceves</em>
 
@@ -185,7 +185,7 @@ Referencia:
 
 {{< image
     gallery="true"
-    image1="css-grid-layout-en-accion.jpg" optionsthumb1="300x200" title1="CSS Grid Layout en acción" >}}
+    image1="resource:css-grid-layout-en-accion.jpg" optionsthumb1="300x200" title1="CSS Grid Layout en acción" >}}
 
 ### Camino a producción <em>por Mario Marin</em>
 
@@ -204,7 +204,7 @@ Echando la vista atrás se ve lo que has mejorado y es satisfactorio, a pesar de
 
 {{< image
     gallery="true"
-    image1="camino-a-produccion.jpg" optionsthumb1="300x200" title1="Camino a producción" >}}
+    image1="resource:camino-a-produccion.jpg" optionsthumb1="300x200" title1="Camino a producción" >}}
 
 ### Evitando el efecto dominó en nuestros (mico)servicios <em>por Javi Ferrer y Rafa Gómez</em>
 
@@ -220,7 +220,7 @@ Aunque los microservicios solucionan algunos problemas de los monolitos traen co
 
 {{< image
     gallery="true"
-    image1="evitando-el-efecto-domino-en-nuestros-micoservicios.jpg" optionsthumb1="300x200" title1="Evitando el efecto dominó en nuestros (mico)servicios" >}}
+    image1="resource:evitando-el-efecto-domino-en-nuestros-micoservicios.jpg" optionsthumb1="300x200" title1="Evitando el efecto dominó en nuestros (mico)servicios" >}}
 
 Cuando en diciembre se pusieron las entradas para reserva a no mucho tardar y con las ganas de ir a la conferencia estaba motivado para ir, en los días anteriores siempre da algo de pereza la asistencia ya que después de una semana de trabajo las ganas no son tantas de pasar la mañana o el día también con el mismo tema sin desconectar ni descansar, pero luego después de haber madrugado y las presentaciones queda una buena sensación y de haber merecido la pena el esfuerzo.
 

@@ -16,9 +16,9 @@ summary: "Java ofrece un mecanismo incluido en el propio JDK para hacer las apli
 
 {{< logotype image="java.svg" title="Java" width="200" >}}
 
-Puede que al desarrollar una aplicación necesitamos que esta sea extensible, esto significa que en el momento de desarrollo no conocemos las implementaciones de un determinado servicio que se proporcionarán en un futuro. Un servicio no es más que la implementación de una determinada interfaz que definimos en el momento de desarrollo. Java con la clase [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html) proporciona un mecanismo estándar e incorporado en el JDK para cargar servicios con alguna propiedad interesante.
+Puede que al desarrollar una aplicación necesitamos que esta sea extensible, esto significa que en el momento de desarrollo no conocemos las implementaciones de un determinado servicio que se proporcionarán en un futuro. Un servicio no es más que la implementación de una determinada interfaz que definimos en el momento de desarrollo. Java con la clase [ServiceLoader](javadoc8:java/util/ServiceLoader.html) proporciona un mecanismo estándar e incorporado en el JDK para cargar servicios con alguna propiedad interesante.
 
-A través de la clase _ServiceLoader_ y con su método estático [load](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html#load-java.lang.Class-) cargamos los servicios que implementen una determinada interfaz, en el parámetro de tipo _Class_ indicamos la interfaz del servicio. Por ejemplo, supongamos que tenemos la siguiente definición de servicio:
+A través de la clase _ServiceLoader_ y con su método estático [load](javadoc8:java/util/ServiceLoader.html#load-java.lang.Class-) cargamos los servicios que implementen una determinada interfaz, en el parámetro de tipo _Class_ indicamos la interfaz del servicio. Por ejemplo, supongamos que tenemos la siguiente definición de servicio:
 
 {{< code file="Saludador.java" language="java" options="" >}}
 
@@ -51,7 +51,7 @@ Este mecanismo es que el se usa para permitir definir nuevos proveedores de rati
 El [código fuente completo del ejemplo](https://github.com/picodotdev/blog-ejemplos/tree/master/ServiceLoader) está en uno de mis repositorios de GitHub.
 
 {{< reference >}}
-* [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
+* [ServiceLoader](javadoc8:java/util/ServiceLoader.html)
 {{< /reference >}}
 
 {{% /post %}}

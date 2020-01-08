@@ -18,7 +18,7 @@ tags: ["java", "planeta-codigo"]
 
 No es una buena práctica al igual que al no recomendado [antipatrón de inicialización de variables con dobles llaves][blogbitix-253] pero en el uso de _streams_ que aceptan _lambdas_ es un rodeo a la limitación de no poder lanzar excepciones _checked_ por no estar definida en su API.
 
-En Java existen dos tipos de excepciones las _checked_ que son de obligada captura o ser lanzadas y las _unchecked_ que no son de obligada captura ni ser declaradas. Al usar _streams_ y algunas interfaces funcionales de Java como [Consumer](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html) que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.
+En Java existen dos tipos de excepciones las _checked_ que son de obligada captura o ser lanzadas y las _unchecked_ que no son de obligada captura ni ser declaradas. Al usar _streams_ y algunas interfaces funcionales de Java como [Consumer](javadoc11:java.base/java/util/function/Consumer.html) que no lanzan excepciones el compilador generará un error de compilación si la implementación lanza una excepción.
 
 En el siguiente código el compilador producirá un error de compilación ya que intenta lanzar una excepción pero la interfaz funcional que implementa no lo permite.
 

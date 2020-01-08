@@ -23,7 +23,7 @@ Las terminales gráficas como [GNOME][gnome] Terminal y [KDE][kde] Konsole sopor
 
 {{< image
     gallery="true"
-    image1="tmux.png" optionsthumb1="300x200" title1="Sesión de tmux en la terminal de GNOME"
+    image1="resource:tmux.png" optionsthumb1="300x200" title1="Sesión de tmux en la terminal de GNOME"
     caption="Sesión de tmux en la terminal de GNOME" >}}
 
 Tmux al ser un programa de la terminal todas sus opciones se realizan con el teclado, y no son pocas [las combinaciones de teclas de su _cheatsheet_ o chuleta](https://tmuxcheatsheet.com/). Algunas opciones básicas necesario conocer con son:

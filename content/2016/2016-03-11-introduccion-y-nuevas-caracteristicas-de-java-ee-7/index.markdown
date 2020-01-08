@@ -31,7 +31,7 @@ El modelo clásico de capas en la arquitectura de las aplicaciones Java EE se di
 
 {{< image
     gallery="true"
-    image1="aplicaciones-multicapa-javaee.png" optionsthumb1="300x200" title1="Aplicaciones multicapa Java EE"
+    image1="resource:aplicaciones-multicapa-javaee.png" optionsthumb1="300x200" title1="Aplicaciones multicapa Java EE"
     caption="Aplicaciones multicapa Java EE" >}}
 
 En el [listado de especificaciones](https://www.oracle.com/technetwork/java/javaee/tech/index.html) encontramos algunas dedicadas a persistencia en base de datos (JDBC, JPA), transaccionalidad (JTA), procesamiento de peticiones HTTP (Servlets, JSF, REST), generación de HTML (Servlets, JSP, JSF), servicios web basados en REST y SOAP (JAX-RS, JAX-WS), soporte para websockets en el lado del servidor y cliente, [generar, procesar y modificar documentos JSON][blogbitix-374], validación de objetos, comunicación entre aplicaciones desacoplada con mensajes (JMS), concurrencia, servicios de nombres y descubrimiento o trabajos en lotes entre otras. Las especificaciones y versiones que componen Java EE 7 son:
@@ -121,9 +121,8 @@ Java EE ofrece a los desarrolladores un conjunto de especificaciones que cubren 
 Algunos libros que he he leído y me han gustado para conocer las nuevas posibilidades de Java EE 7 son los siguientes, [Java EE 7 Essentials](https://amzn.to/2sEyvVi) que no entra en muchos detalles pero hace un repaso general de todo e incluye ejemplos de cada cosa con suficientes pormenores para empezar a programar, [Java EE 7 Development with WildFly](https://amzn.to/2STrgmX) entra un poco más en detalle y explica varias cosas del servidor de aplicaciones WildFly, [Java EE 7 Developer Handbook](https://amzn.to/2Fl048P) repasa igualmente Java EE 7 con numerosos ejemplos de código, finalmente también es posible consultar el [tutorial oficial de Java EE 7](https://docs.oracle.com/javaee/7/JEETT.pdf).
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00EJX7WEQ&internal=1" >}}
-    link2="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00RP13D9M&internal=1" >}}
-    link3="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=B00FDLOF66&internal=1" >}}
+    linkids="c616c3f3eef393473f0af785d1eb8309,3708b1d14af899f26e43d0bade797dd7,d7fc3436deb932f471b629b68667d7ae"
+    asins="B00EJX7WEQ,B00RP13D9M,B00FDLOF66" >}}
 
 El futuro Java EE 8 está planificado para 2017 fecha también planificada para Java 9 en la que se añadirá soporte para HTTP/2 y será la versión 4.0 de los _servlets_. Pero no hace falta esperar hasta el 2017 para aprovecharnos hoy de las [ventajas de HTTP/2 tanto para clientes como servidores][blogbitix-127], los principales navegadores ya lo soportan y se puede [configurar HTTP/2 en varios servidores web y de aplicaciones Java][blogbitix-129] como [Nginx][nginx], [Apache HTTPD][apache-httpd], WildFly o Jetty. También se ha anunciado que como alternativa a JSF basado en componentes se proporcionará una especificación que implemente el patrón MVC basado en acciones.
 

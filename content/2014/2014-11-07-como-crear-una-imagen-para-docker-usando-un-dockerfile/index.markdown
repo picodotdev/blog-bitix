@@ -51,7 +51,7 @@ Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los
 
 {{< image
     gallery="true"
-    image1="docker-mysql.png" optionsthumb1="300x200" title1="docker-mysql" >}}
+    image1="resource:docker-mysql.png" optionsthumb1="300x200" title1="docker-mysql" >}}
 
 Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:
 

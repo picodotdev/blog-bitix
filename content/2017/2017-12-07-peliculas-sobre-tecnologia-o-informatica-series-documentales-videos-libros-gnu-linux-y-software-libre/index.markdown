@@ -35,9 +35,9 @@ Si estás interesado en la tecnología, informática en general y en el software
 
 {{< image
     gallery="true"
-    image1="pirates-of-silicon-valley.jpg" optionsthumb1="300x200" title1="Piratas de Silicon Valley"
-    image2="office-space.jpg" optionsthumb2="300x200" title2="Trabajo basura"
-    image3="wargames.jpg" optionsthumb3="300x200" title3="Juegos de guerra" >}}
+    image1="resource:pirates-of-silicon-valley.jpg" optionsthumb1="300x200" title1="Piratas de Silicon Valley"
+    image2="resource:office-space.jpg" optionsthumb2="300x200" title2="Trabajo basura"
+    image3="resource:wargames.jpg" optionsthumb3="300x200" title3="Juegos de guerra" >}}
 
 ### Series
 
@@ -51,9 +51,9 @@ Si estás interesado en la tecnología, informática en general y en el software
 
 {{< image
     gallery="true"
-    image1="black-mirror.jpg" optionsthumb1="300x200" title1="Black Mirror"
-    image2="mr-robot.jpg" optionsthumb2="300x200" title2="Mr Robot"
-    image3="silicon-valley.jpg" optionsthumb3="300x200" title3="Silicon Valley" >}}
+    image1="resource:black-mirror.jpg" optionsthumb1="300x200" title1="Black Mirror"
+    image2="resource:mr-robot.jpg" optionsthumb2="300x200" title2="Mr Robot"
+    image3="resource:silicon-valley.jpg" optionsthumb3="300x200" title3="Silicon Valley" >}}
 
 ### Documentales
 
@@ -96,8 +96,8 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/gnu.svg" optionsthumb1="200x200" title1="GNU"
-    image2="assets/images/logotypes/linux.svg" optionsthumb2="200x200" title2="Linux" >}}
+    image1="asset:assets/images/logotypes/gnu.svg" optionsthumb1="200x200" title1="GNU"
+    image2="asset:assets/images/logotypes/linux.svg" optionsthumb2="200x200" title2="Linux" >}}
 
 ### Libros y novelas
 
@@ -112,9 +112,9 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 {{< image
     gallery="true"
-    image1="el-circulo.jpg" optionsthumb1="300x200" title1="El circulo"
-    image2="microsiervos.jpg" optionsthumb2="300x200" title2="Microsiervos"
-    image3="cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" optionsthumb3="300x200" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
+    image1="resource:el-circulo.jpg" optionsthumb1="300x200" title1="El circulo"
+    image2="resource:microsiervos.jpg" optionsthumb2="300x200" title2="Microsiervos"
+    image3="resource:cuando-los-administradores-de-sistemas-gobernaron-tierra.jpg" optionsthumb3="300x200" title3="Cuando los administradores de sistemas gobernaron la tierra" >}}
 
 ¿Conoces alguno imprescindible más que incluir en esta lista?
 

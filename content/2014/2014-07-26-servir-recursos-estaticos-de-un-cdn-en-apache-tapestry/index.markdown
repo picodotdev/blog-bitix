@@ -26,7 +26,7 @@ Un [Content Delivery Network](https://en.wikipedia.org/wiki/Content_delivery_net
 
 {{< image
     gallery="true"
-    image1="nocdn-cdn.png" optionsthumb1="300x200" title1="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" >}}
+    image1="resource:nocdn-cdn.png" optionsthumb1="300x200" title1="Arquitectura no CDN (izquierda) contra arquitectura CDN (derecha)" >}}
 
 Para que el contenido estático se sirva del CDN debemos hacer que las URL de las imágenes y hojas de estilo se generen con la URL propia del CDN, al menos, deberemos cambiar el host de esas URL. No hay que hacer mucho más ya que CloudFront creo que se puede configurar para que cuando le lleguen las peticiones del contenido si no las tiene las delegue en la aplicación, una vez que las tiene cacheadas ya no necesita solicitarselas a la aplicación y las sirve él mismo.
 

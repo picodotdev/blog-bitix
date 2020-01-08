@@ -35,11 +35,11 @@ Microsoft Office includes Word as word processor, Powerpoint for presentations, 
 
 {{< image
     gallery="true"
-    image1="microsoftoffice-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
-    image2="microsoftoffice-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
+    image1="resource:microsoftoffice-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
+    image2="resource:microsoftoffice-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
 {{< image
     gallery="true"
-    image1="microsoftoffice-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
+    image1="resource:microsoftoffice-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
 
 ### LibreOffice
 
@@ -47,11 +47,11 @@ The free and libre alternative of Office is [LibreOffice](https://es.libreoffice
 
 {{< image
     gallery="true"
-    image1="libreoffice-writer.png" optionsthumb1="300x200" title1="LibreOffice Writer"
-    image2="libreoffice-calc.png" optionsthumb2="300x200" title2="LibreOffice Calc" >}}
+    image1="resource:libreoffice-writer.png" optionsthumb1="300x200" title1="LibreOffice Writer"
+    image2="resource:libreoffice-calc.png" optionsthumb2="300x200" title2="LibreOffice Calc" >}}
 {{< image
     gallery="true"
-    image1="libreoffice-impress.png" optionsthumb1="300x200" title1="LibreOffice Impress" >}}
+    image1="resource:libreoffice-impress.png" optionsthumb1="300x200" title1="LibreOffice Impress" >}}
 
 ### WPS Office
 
@@ -63,11 +63,11 @@ It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Mic
 
 {{< image
     gallery="true"
-    image1="wpsoffice-writer.png" optionsthumb1="300x200" title1="WPS Writer"
-    image2="wpsoffice-spreadsheets.png" optionsthumb2="300x200" title2="WPS Spreadsheets" >}}
+    image1="resource:wpsoffice-writer.png" optionsthumb1="300x200" title1="WPS Writer"
+    image2="resource:wpsoffice-spreadsheets.png" optionsthumb2="300x200" title2="WPS Spreadsheets" >}}
 {{< image
     gallery="true"
-    image1="wpsoffice-presentation.png" optionsthumb1="300x200" title1="WPS Office Presentation" >}}
+    image1="resource:wpsoffice-presentation.png" optionsthumb1="300x200" title1="WPS Office Presentation" >}}
 
 ### Google Docs
 
@@ -77,11 +77,11 @@ For companies it is offered at the price of 4€ per user per month which includ
 
 {{< image
     gallery="true"
-    image1="googledocs-documento.png" optionsthumb1="300x200" title1="Documento Google Docs"
-    image2="googledocs-hoja-de-calculo.png" optionsthumb2="300x200" title2="Hoja de cálculo Google Docs" >}}
+    image1="resource:googledocs-documento.png" optionsthumb1="300x200" title1="Documento Google Docs"
+    image2="resource:googledocs-hoja-de-calculo.png" optionsthumb2="300x200" title2="Hoja de cálculo Google Docs" >}}
 {{< image
     gallery="true"
-    image1="googledocs-presentacion.png" optionsthumb1="300x200" title1="Presentación Google Docs" >}}
+    image1="resource:googledocs-presentacion.png" optionsthumb1="300x200" title1="Presentación Google Docs" >}}
 
 Some other options that deserves to be commented is [Calligra][calligra] the [KDE desktop environment][kde] suite, [Abiword][abiword], [Lyx][lyx] or [Gnumeric][gnumeric].
 

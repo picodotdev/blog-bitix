@@ -34,12 +34,12 @@ La primera petición que se realiza al recurso _cache_ devuelve un [código de e
 
 {{< image
     gallery="true"
-    image1="nginx-cache-peticion-miss.png" optionsthumb1="300x200" title1="Fallo en la cache de Nginx"
-    image2="nginx-cache-peticion-hit.png" optionsthumb2="300x200" title2="Acierto en la cache de Nginx" >}}
+    image1="resource:nginx-cache-peticion-miss.png" optionsthumb1="300x200" title1="Fallo en la cache de Nginx"
+    image2="resource:nginx-cache-peticion-hit.png" optionsthumb2="300x200" title2="Acierto en la cache de Nginx" >}}
 {{< image
     gallery="true"
-    image1="nginx-cache-peticion-expired.png" optionsthumb1="300x200" title1="Expiración en la cache de Nginx"
-    image2="curl-cache-miss-hit-expired.png" optionsthumb2="300x200" title2="Fallo, acierto y expiración en la cache de Nginx con curl"
+    image1="resource:nginx-cache-peticion-expired.png" optionsthumb1="300x200" title1="Expiración en la cache de Nginx"
+    image2="resource:curl-cache-miss-hit-expired.png" optionsthumb2="300x200" title2="Fallo, acierto y expiración en la cache de Nginx con curl"
     caption="Fallo, acierto y expiración que produce en la cache de Nginx al realizar peticiones" >}}
 
 {{< code file="nginx.out" language="plaintext" options="" >}}

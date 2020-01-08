@@ -23,7 +23,7 @@ Observando en detalle la lista de componentes ofrecidos nos daremos cuenta de qu
 
 Todo componente de formulario en este _framework_ hereda de [AbstracField](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/base/AbstractField.html) en el que básicamente deberemos proporcionar una implementación del método [processSubmission()](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/base/AbstractField.html#processSubmission(java.lang.String)) donde procesaremos los datos recibidos en este caso con un método equivalente al tradicional en Java EE [ServletRequest.getParameterValues] (https://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html#getParameterValues-java.lang.String-). La otra parte que deberemos implementar es la generación de etiquetas HTML del componente en el método de ciclo de vida _beginRender()_ que en gran parte nos servirá lo implementado en el código fuente del componente _Select_ de Tapestry pero incluyendo el atributo _multiple_ que requiere HTML para los _selects_ de múltiples opciones.
 
-Esta sería una implementación de un componente _select_ múltiple. La mayor diferencia entre el componente _Select_ y este _MultiSelect_ está en la propiedad _value_ que en el primero es de tipo [Object](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html) donde se guardará el dato seleccionado y _selected_ en el segundo que es un [List](https://docs.oracle.com/javase/8/docs/api/java/util/List.html) de objetos donde se guardarán los datos seleccionados.
+Esta sería una implementación de un componente _select_ múltiple. La mayor diferencia entre el componente _Select_ y este _MultiSelect_ está en la propiedad _value_ que en el primero es de tipo [Object](javadoc8:java/lang/Object.html) donde se guardará el dato seleccionado y _selected_ en el segundo que es un [List](javadoc8:java/util/List.html) de objetos donde se guardarán los datos seleccionados.
 
 {{< code file="MultiSelect.java" language="java" options="" >}}
 
@@ -40,16 +40,16 @@ Este sería el aspecto del _select_ múltiple con sus botones para seleccionar t
 
 {{< image
     gallery="true"
-    image1="multiselect.png" optionsthumb1="300x200" title1="Aspecto del componente select mútiple"
-    image2="multiselect-2.png" optionsthumb2="300x200" title2="Vista con opciones seleccionadas enviadas al servidor"
+    image1="resource:multiselect.png" optionsthumb1="300x200" title1="Aspecto del componente select mútiple"
+    image2="resource:multiselect-2.png" optionsthumb2="300x200" title2="Vista con opciones seleccionadas enviadas al servidor"
     caption="Componente MultiSelect con bootstrap-select" >}}
 
 Si queremos seleccionar múltiples opciones usando _checkboxes_ Tapestry ofrece el componente [Checklist](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Checklist.html) y usando _selects_ otra opción es el componente [Palette](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Palette.html) pero seguramente no sea lo que deseamos.
 
 {{< image
     gallery="true"
-    image1="checklist.png" optionsthumb1="300x200" title1="Componente Checklist de Tapestry"
-    image2="palette.png" optionsthumb2="300x200" title2="Componente Palette de Tapestry"
+    image1="resource:checklist.png" optionsthumb1="300x200" title1="Componente Checklist de Tapestry"
+    image2="resource:palette.png" optionsthumb2="300x200" title2="Componente Palette de Tapestry"
     caption="Componentes Checklist y Palette" >}}
 
 En un artículo anterior comenté como [adaptar el componente _Select_ y este _MultiSelect_ para añadirle funcionalidades de la librería bootstrap-select][blogbitix-187] como cuadro de búsqueda, búsqueda por palabras clave, divisores, etc que consiste en añadir a las etiquetas HTML _select_, _optiongrp_ y _option_ ciertos atributos con sus correspondientes valores con una combinación de parámetros informales y personalización de la clase [SelectModel](https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/SelectModel.html). En el siguiente artículo comentaré como [añadir botones selectores de opciones][blogbitix-189] además de los que incorpora _bootstrap-select_ de Todos y Ninguno.

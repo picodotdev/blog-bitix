@@ -44,11 +44,11 @@ A continuación unas pocas capturas de pantalla de la página de inicio de WildF
 
 {{< image
     gallery="true"
-    image1="wildfly.png" optionsthumb1="300x200"
-    image2="wildfly-admin-1.png" optionsthumb2="300x200" title2="Consola de administración" >}}
+    image1="resource:wildfly.png" optionsthumb1="300x200"
+    image2="resource:wildfly-admin-1.png" optionsthumb2="300x200" title2="Consola de administración" >}}
 {{< image
     gallery="true"
-    image1="wildfly-admin-2.png" optionsthumb1="300x200" title1="Consola de administración" >}}
+    image1="resource:wildfly-admin-2.png" optionsthumb1="300x200" title1="Consola de administración" >}}
 
 En las [notas de publicación de WildFly 8](http://wildfly.org/news/2014/02/11/WildFly8-Final-Released/) pueden consultarse las numerosas e interesantes funcionalidades añadidas. También en el siguiente [vídeo](http://wildfly.org/news/2013/11/21/WildFly-8-Webinar/) se explican muchos de los detalles que incorpora.
 

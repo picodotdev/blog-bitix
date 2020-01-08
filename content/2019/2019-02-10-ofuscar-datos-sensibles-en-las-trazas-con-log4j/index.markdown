@@ -21,7 +21,7 @@ Los archivos de trazas o _logs_ contienen información de lo que ha realizado la
 
 [Log4j][log4j] es una de las librerías más utilizadas para añadir la funcionalidad de las trazas en una aplicación Java. Proteger algunos datos sensibles se puede hacer de varias formas. Una de ellas es hacer que sea la aplicación la que se encargue de no emitir estos datos en las trazas u ofuscarla enmascarándola al toda o parte. Para este caso se pueden [utilizar objetos Message][blogbitix-338] que adaptan los objetos de la aplicación a los datos a emitir en las trazas pero requiere modificar en todos los puntos de la aplicación.
 
-En el siguiente ejemplo se hace uso de _lookahead_ como se detalla en la clase [Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html) de Java para añadir la funcionalidad de que los últimos caracteres queden visibles y la clase _SecuredMessage_ aplica expresiones regulares al mensaje, en caso de encontrar una coincidencia realiza la ofuscación.
+En el siguiente ejemplo se hace uso de _lookahead_ como se detalla en la clase [Pattern](javadoc11:java.base/java/util/regex/Pattern.html) de Java para añadir la funcionalidad de que los últimos caracteres queden visibles y la clase _SecuredMessage_ aplica expresiones regulares al mensaje, en caso de encontrar una coincidencia realiza la ofuscación.
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="SecuredMessage.java" language="java" options="" >}}

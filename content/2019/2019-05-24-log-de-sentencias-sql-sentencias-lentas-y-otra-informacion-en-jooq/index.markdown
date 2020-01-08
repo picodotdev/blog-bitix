@@ -25,7 +25,7 @@ La librería [jOOQ][jooq] devuelve al lenguaje SQL de consultas para bases de da
 
 En Hibernate la configuración de _statistics_, el _logger_ _org.hibernate.SQL_ y con el parámetro _show\_sql_ permiten visualizar que sentencias SQL se están lanzando, útil para conocer si algún [problema de 1+N al navegar relaciones][blogbitix-26] que ocasionalmente se producen si no son tenidas en cuenta. Además de que sentencias se están lanzando es también interesante conocer que tiempo de ejecución está tomando cada sentencia para conseguir que el rendimiento de la aplicación no sea lento, para detectar sentencias lentas.
 
-Usando [Spring Boot][spring-boot] y la dependencia de jOOQ hay que proporcionar una instancia que implemente la interfaz [ExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteListener.html) o crear una instancia de [DefaultExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html). Esta clase contiene numerosos métodos que permiten conocer y realizar acciones, en este caso emitir trazas. Dos de los métodos son [executeStart()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeStart-org.jooq.ExecuteContext-) y [executeEnd()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeEnd-org.jooq.ExecuteContext-) invocados por jOOQ antes y después de cada sentencia que lanza. Usando [System.nanoTime()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#nanoTime()) se mide el tiempo de ejecución.
+Usando [Spring Boot][spring-boot] y la dependencia de jOOQ hay que proporcionar una instancia que implemente la interfaz [ExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteListener.html) o crear una instancia de [DefaultExecuteListener](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html). Esta clase contiene numerosos métodos que permiten conocer y realizar acciones, en este caso emitir trazas. Dos de los métodos son [executeStart()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeStart-org.jooq.ExecuteContext-) y [executeEnd()](https://www.jooq.org/javadoc/latest/org/jooq/impl/DefaultExecuteListener.html#executeEnd-org.jooq.ExecuteContext-) invocados por jOOQ antes y después de cada sentencia que lanza. Usando [System.nanoTime()](javadoc11:java.base/java/lang/System.html#nanoTime()) se mide el tiempo de ejecución.
 
 {{< code file="AppConfiguration.java" language="java" options="" >}}
 {{< code file="JooqExecuteListener.java" language="java" options="" >}}
@@ -37,7 +37,7 @@ Estas sentencias se ejecutan en unos pocos milisegundos, en una aplicación con 
 {{< code file="System.out" language="plaintext" options="" >}}
 {{< image
     gallery="true"
-    image1="pagina-listado.png" optionsthumb1="650x450" title1="Listado de elementos"
+    image1="resource:pagina-listado.png" optionsthumb1="650x450" title1="Listado de elementos"
     caption="Listado de elementos" >}}
 
 La clase [ExecuteContext](https://www.jooq.org/javadoc/latest/org/jooq/ExecuteContext.html) proporciona numerosa información sobre la ejecución de la sentencia como número de filas afectadas, si se ha producido una excepción, el tipo de sentencia (_READ_, _WRITE_, _DDL_, _BATCH_, _ROUTINE_ u _OTHER_), sentencias _batch_ u obtener los parámetros a través del objeto [Query](https://www.jooq.org/javadoc/latest/org/jooq/Query.html).

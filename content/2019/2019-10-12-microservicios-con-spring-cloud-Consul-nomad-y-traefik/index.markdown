@@ -43,9 +43,9 @@ Además, en este ejemplo reemplazo varias de estas herramientas de Spring. Susti
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/consul.svg" optionsthumb1="200x200" title1="Consul"
-    image2="assets/images/logotypes/nomad.svg" optionsthumb2="200x200" title1="Nomad"
-    image3="assets/images/logotypes/traefik.svg" optionsthumb3="200x200" title1="Traefik" >}}
+    image1="asset:assets/images/logotypes/consul.svg" optionsthumb1="200x200" title1="Consul"
+    image2="asset:assets/images/logotypes/nomad.svg" optionsthumb2="200x200" title1="Nomad"
+    image3="asset:assets/images/logotypes/traefik.svg" optionsthumb3="200x200" title1="Traefik" >}}
 
 Traefik se configura con los servicios iniciados en los contenedores de Docker utilizando junto con los bloques o _stanzas_ de _config_ y _labels_ en la definición de los servicios de Nomad. Según el criterio definido por el servicio Traefik es capaz de redirigir el tráfico que le llegue al servicio apropiado, entre las posibilidades que puede realizar Traefik es balanceo de carga entre las múltiples instancias que se hayan definido pero también implementa patrones de tolerancia a fallos con reintentos, el patrón _circuit breaker_ o limitar el tráfico para evitar saturar a un servicio con demasiadas peticiones.
 
@@ -53,7 +53,7 @@ El esquema de servicios sería el siguiente. Los _job_ son enviados a Nomad desd
 
 {{< image
     gallery="true"
-    image1="esquema-arquitectura.png" optionsthumb1="600x450" title1="Esquema arquitectura"
+    image1="resource:esquema-arquitectura.png" optionsthumb1="600x450" title1="Esquema arquitectura"
     caption="Esquema arquitectura" >}}
 
 La ejecución del ejemplo requiere [Docker][docker] ya que es en este caso el _driver_ empleado en Nomad para ejecutar los servicios del servicio de configuración, el _gateway_, el servicio y el cliente del servicio. Nomad además se encarga de registrar los servicios en el servicio de registro y descubrimiento de Consul.
@@ -78,13 +78,13 @@ Tanto Consul, Nomad como Traefik ofrecen una consola para ver su estado ubicadas
 
 {{< image
     gallery="true"
-    image1="consul.png" optionsthumb1="200x150" title1="Consul"
-    image2="nomad-1.png" optionsthumb2="200x150" title2="Nomad"
-    image3="nomad-2.png" optionsthumb3="200x150" title3="Nomad" >}}
+    image1="resource:consul.png" optionsthumb1="200x150" title1="Consul"
+    image2="resource:nomad-1.png" optionsthumb2="200x150" title2="Nomad"
+    image3="resource:nomad-2.png" optionsthumb3="200x150" title3="Nomad" >}}
 {{< image
     gallery="true"
-    image1="traefik-1.png" optionsthumb1="200x150" title1="Traefik"
-    image2="traefik-2.png" optionsthumb2="200x150" title2="Traefik"
+    image1="resource:traefik-1.png" optionsthumb1="200x150" title1="Traefik"
+    image2="resource:traefik-2.png" optionsthumb2="200x150" title2="Traefik"
     caption="Consolas de administración de Consul, Nomad y Traefik" >}}
 
 El código del servicio, del cliente implementados con Spring y la salida del cliente son los siguientes.

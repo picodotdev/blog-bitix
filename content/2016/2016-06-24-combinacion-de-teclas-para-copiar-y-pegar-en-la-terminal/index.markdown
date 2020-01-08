@@ -25,7 +25,7 @@ Con el ratón deberemos seleccionar el texto pero con la combinación de teclas 
 
 {{< image
     gallery="true"
-    image1="gnome-terminal.png" optionsthumb1="300x200" title1="Menú para copiar y pegar en la terminal de GNOME"
+    image1="resource:gnome-terminal.png" optionsthumb1="300x200" title1="Menú para copiar y pegar en la terminal de GNOME"
     caption="Menú para copiar y pegar en la terminal de GNOME" >}}
 
 Esto no es algo nada vital pero si es algo que usamos frecuentemente puede hacernos más fácil la tarea y ahorrarnos tiempo al igual que conocer y usar los [atajos de teclado básicos de la terminal en GNU/Linux][blogbitix-150].

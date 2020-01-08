@@ -25,8 +25,8 @@ Según la cantidad de tiempo de expiración que establezcamos como cache para el
 
 {{< image
     gallery="true"
-    image1="cache-hit.png" optionsthumb1="300x200" title1="Petición con acierto en cache"
-    image2="cache-miss.png" optionsthumb2="300x200" title2="Petición con fallo en cache"
+    image1="resource:cache-hit.png" optionsthumb1="300x200" title1="Petición con acierto en cache"
+    image2="resource:cache-miss.png" optionsthumb2="300x200" title2="Petición con fallo en cache"
     caption="Petición con acierto y fallo en la cache" >}}
 
 En el protocolo HTTP 1.1 se definieron tres mecanismos para las caches:

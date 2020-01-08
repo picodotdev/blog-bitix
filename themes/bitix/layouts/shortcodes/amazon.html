@@ -10,7 +10,7 @@
 {{ if ne (len $linkids) (len $asins) }}
   {{ errorf "Invalid number linkids and asins: %s" .Position }}
 {{ end }}
-<div class="media-amazon">
+<div class="media media-amazon">
   {{- range $index, $linkid := $linkids -}}
   {{- $asin := index $asins $index -}}
   {{- $link := print "https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&language=es_ES&o=30&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=" $asin "&linkId=" $linkid }}

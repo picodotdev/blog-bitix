@@ -32,8 +32,8 @@ En este caso al cargar la página en el navegador se muestra un mensaje _alert_ 
 
 {{< image
     gallery="true"
-    image1="xss.png" optionsthumb1="300x200" title1="XSS"
-    image2="xss-user.png" optionsthumb2="300x200" title2="XSS"
+    image1="resource:xss.png" optionsthumb1="300x200" title1="XSS"
+    image2="resource:xss-user.png" optionsthumb2="300x200" title2="XSS"
     caption="XSS" >}}
 
 Pero ¿como consigue el usuario malicioso inyectar su código mediante parámetros u otros datos emitidos por la página insegura? Una opción sería enviar al usuario un enlace especialmente construido para que se aproveche del fallo de seguridad, el medio de hacerlo llegar puede ser un correo electrónico o un enlace en las redes sociales o páginas de gran tráfico como Facebook. Para que el enlace no sea tan evidente se puede utilizar un acortador de enlaces. Los comentarios son otro vector con el que el usuario malicioso puede insertar enlaces o el propio contenido si no son tratados adecuadamente donde sean mostrados como en la página web, de otros médios como correos electrónicos o una aplicación de _backoffice_ de uso interno que incluso puede tener privilegios de realizar acciones especialmente sensibles.
@@ -53,7 +53,7 @@ No siempre se desea codificar un dato simple según el contexto, a veces se quie
 
 * [Cómo filtrar contenido HTML de forma segura con jsoup][blogbitix-48]
 
-Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase [PreparedStatement](https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/PreparedStatement.html) con parámetros. 
+Un ataque de XSS también puede producirse en contenidos distintos al HTML como pueden ser documentos JSON o XML en los que también hay que escapar los datos según su contexto para evitar por ejemplo que alguien cambien la estructura del XML o JSON previsto por la aplicación. El XSS es similar al problema de inyección de SQL si al construir las sentencias se insertan en ella datos en vez de usar en el caso de Java la clase [PreparedStatement](javadoc11:java.sql/java/sql/PreparedStatement.html) con parámetros. 
 
 {{< reference >}}
 * [OWASP Java Encoder Project](https://www.owasp.org/index.php/OWASP_Java_Encoder_Project)

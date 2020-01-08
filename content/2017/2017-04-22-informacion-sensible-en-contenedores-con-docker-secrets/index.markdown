@@ -52,7 +52,7 @@ Por otra parte la aplicación Java con [Spring Boot][spring-boot] lista el conte
 
 {{< image
     gallery="true"
-    image1="message.png" optionsthumb1="300x200" title1="Contenido del archivo message.txt"
+    image1="resource:message.png" optionsthumb1="300x200" title1="Contenido del archivo message.txt"
     caption="Contenido del archivo message.txt" >}}
 
 Para probar el ejemplo hay que ejecutar varios comandos, la secuencia completa es la siguiente:

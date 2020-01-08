@@ -41,11 +41,11 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
 
 {{< image
     gallery="true"
-    image1="windows-10.png" optionsthumb1="300x200" title1="Windows 10"
+    image1="resource:windows-10.png" optionsthumb1="300x200" title1="Windows 10"
     caption="Windows 10" >}}
 {{< image
     gallery="true"
-    image1="microsoft-word-2016.png" optionsthumb1="300x200" title1="Microsoft Word 2016"
+    image1="resource:microsoft-word-2016.png" optionsthumb1="300x200" title1="Microsoft Word 2016"
     caption="Microsoft Word 2016" >}}
 
 Si puedes usa software con su licencia, sino usa alguna de las opciones alternativas disponibles tanto para Windows [eligiendo una distribución GNU/Linux][blogbitix-190] como para [Office y alguna de sus alternativas][blogbitix-143] que se adapte tus necesidades. E inlcuso si se quiere [comprar un ordenador nuevo sin Windows][blogbitix-419] tanto portátil o de escritorio de buena calidad las marcas [Slimbook][slimbook] y [VANT][vant] ofrecen varios modelos en cada categoría, también están [los pequeños Intel NUC][blogbitix-363].

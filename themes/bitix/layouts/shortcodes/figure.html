@@ -2,5 +2,5 @@
 <figure>
 {{ .Inner }}
 </figure>
-{{- with .Params.caption }}<caption>{{ . }}</caption>{{ end -}}
+{{- with .Params.caption }}<figcaption>{{ . }} {{ i18n "source" }}: {{ .Params.source }}</figcaption>{{ end -}}
 </div>

@@ -31,7 +31,7 @@ En el ejemplo se quiere probar un sistema de alarma que cuando detecte en tres m
 
 {{< image
     gallery="true"
-    image1="monitor.png" optionsthumb1="650x450" title1="Sistema simulado"
+    image1="resource:monitor.png" optionsthumb1="650x450" title1="Sistema simulado"
     caption="Sistema de control de temperatura simulado" >}}
 
 {{< code file="Sensor.java" language="java" options="" >}}

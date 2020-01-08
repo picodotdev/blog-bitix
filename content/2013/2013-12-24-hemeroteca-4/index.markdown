@@ -62,7 +62,7 @@ El 2014 continuaré en la misma linea que he seguido hasta ahora con el blog, te
 
 {{< image
     gallery="true"
-    image1="christmas-tux-2013.jpg" optionsthumb1="600x450" title1="Christmas Tux 2013"
+    image1="resource:christmas-tux-2013.jpg" optionsthumb1="600x450" title1="Christmas Tux 2013"
     caption="¡Buen 2014!" source="klowner.com" >}}
 
 {{% /post %}}

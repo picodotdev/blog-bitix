@@ -35,7 +35,7 @@ En el inventario descrito como un archivo en formato INI se asignan los nombres 
 
 {{< image
     gallery="true"
-    image1="ansible.png" optionsthumb1="300x200" title1="Ansible" >}}
+    image1="resource:ansible.png" optionsthumb1="300x200" title1="Ansible" >}}
 
 El parámetro -m indica el módulo de Ansible que usamos y a continuación indicamos los parámetros. Ansible dispone de una amplia [colección de módulos](http://docs.ansible.com/list_of_all_modules.html) que nos permiten hacer cantidad de tareas.
 
@@ -58,7 +58,8 @@ También, en el siguiente [repositorio de GitHub hay varios ejemplos](https://gi
 Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la documentación de Ansible no me ha resultado que esté escrita de forma didáctica para dominarla empezando desde ningún conocimiento, por ello un libro como [Ansible: Up and Running](https://amzn.to/37D5mIC) es una opción interesate para aprender.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1491915323&internal=1" >}}
+    linkids="4d1cc610f8b4b9439ae029cb32f80c76"
+    asins="1491915323" >}}
 
 Habiendo hecho una [introducción a Docker][blogbitix-49] y esta a Ansible en el siguiente artículo comentaré [como usar Docker con Ansible][blogbitix-53].
 

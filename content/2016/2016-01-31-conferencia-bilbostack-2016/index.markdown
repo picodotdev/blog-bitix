@@ -21,8 +21,8 @@ Esta ha sido la quinta [BilboStack][bilbostack] celebrada de forma anual en Bilb
 
 {{< image
     gallery="true"
-    image1="universidad-de-deusto-1.jpg" optionsthumb1="300x200" title1="Universidad de Deusto"
-    image2="universidad-de-deusto-2.jpg" optionsthumb2="300x200" title2="Universidad de Deusto" >}}
+    image1="resource:universidad-de-deusto-1.jpg" optionsthumb1="300x200" title1="Universidad de Deusto"
+    image2="resource:universidad-de-deusto-2.jpg" optionsthumb2="300x200" title2="Universidad de Deusto" >}}
 
 Al igual que en anteriores entregas las presentaciones se han dividido en dos _tracks_ con duración de 45 minutos ofrecidas en una única mañana. Este año estando el _track_ 1 orientado a temas de programación o código y el _track_ 2 con una temática más diversa desde equipos a productos y servicios.
 
@@ -94,8 +94,8 @@ Al igual que en anteriores entregas las presentaciones se han dividido en dos _t
 
 {{< image
     gallery="true"
-    image1="track1.jpg" optionsthumb1="300x200" title1="Sala track 1"
-    image2="track2.jpg" optionsthumb2="300x200" title2="Sala track 2" >}}
+    image1="resource:track1.jpg" optionsthumb1="300x200" title1="Sala track 1"
+    image2="resource:track2.jpg" optionsthumb2="300x200" title2="Sala track 2" >}}
 
 No podía faltar la cuota para el popular lenguaje [JavaScript][javascript] este año con las dos primeras presentaciones del _track_ 1 y si el año pasado comentaba que no había habido ninguna de [Java][java] en ya cuatro entregas, este finalmente ha tenido presencia. Aún siendo solo dos _tracks_ me ha costado algo decidirme por la presentaciones a las que asistir. En resumen, he preferido ir salvo a la de Java a las presentaciones del _track_ 2. [React][react] ya lo conozco al escribir el artículo [Ejemplo lista de tareas con Backbone y React][blogbitix-20], en [Angular][angular] 2 habrán mejorado las cosas pero se me hace redundante. En general creo que me podría enriquecer más del _track_ 2 que del 1 ya que en mayor o menor medida las del primero ya me iban ser bastante familiares siendo programador.
 
@@ -111,9 +111,7 @@ Los equipos están autoorganizados tomando sus propias decisiones con un objetiv
 
 ¿Como hacer equipos? ¿Cómo se crean donde parece imposible? Hay equipos que emergen pero hay que cuidarlos. La empresas tienen que crear el ambiente adecuado. Los equipos nacen entre personas que confían entre ellas y se crean confiando en las personas. Se hacen uniendo personas con capacidades complementarias. En la presentación se comenta que una forma de crear equipo es realizando actividades como hacer excursiones, _karts_ o _paintball_.
 
-<div class="media">
-    <iframe data-src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
-</div>
+{{< iframe src="https://player.vimeo.com/video/154470806?title=0&byline=0&portrait=0" size="500x281" >}}
 
 ### Cómo ser maestros constructores <em>por Zuriñe Menendez</em>
 
@@ -131,9 +129,7 @@ Se debe usar [CSS orientado a objetos][oocss] (OOCCS) agrupando propiedades comu
 
 Nos quejamos de los jefes pero el código que hacemos nosotros tampoco es perfecto y viéndolo algunas partes apestan. Se puede extraer información analizando el código. La presentación se basa en el libro [Your Code as a Crime Scene](https://amzn.to/2STr7jp).
 
-<div class="media">
-    <iframe data-src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
-</div>
+{{< iframe src="https://player.vimeo.com/video/154470783?title=0&byline=0&portrait=0" size="500x281" >}}
 
 Hay herramietas para analizar el código:
 
@@ -156,11 +152,9 @@ Es importante tener datos para evaluar pero hay que tener cuidado con las métri
 
 {{< image
     gallery="true"
-    image1="crime-scene.jpg" optionsthumb1="300x200" title1="Your code as a crime scene" >}}
+    image1="resource:crime-scene.jpg" optionsthumb1="300x200" title1="Your code as a crime scene" >}}
 
-<div class="media">
-    <iframe data-src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
-</div>
+{{< iframe src="https://player.vimeo.com/video/154470784?title=0&byline=0&portrait=0" size="500x281" >}}
 
 ### Java ha muerto! Larga vida a Java (moderno) <em>por Jerónimo López</em>
 
@@ -185,7 +179,7 @@ En realidad Java nunca dejó de molar y ha evolucionado, esto me es parecido a l
 
 {{< image
     gallery="true"
-    image1="java-moderno.jpg" optionsthumb1="300x200" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
+    image1="resource:java-moderno.jpg" optionsthumb1="300x200" title1="Java ha muerto! Larga vida a Java (moderno)" >}}
 
 La presentación ha expuesto que Java sigue siendo una de los mejores lenguajes, plataforma y ecosistema con el que desarrollar aplicaciones, han sido todo argumentos. Si alguien lo quiere ver en la práctica puede revisar varios de los artículos que he escrito en esta bitácora:
 
@@ -236,9 +230,7 @@ Otros ejemplos de productos son:
 * [Death to the stock photos](http://deathtothestockphoto.com/)
 * [Marvel app](https://marvelapp.com/)
 
-<div class="media">
-    <iframe data-src="https://player.vimeo.com/video/154470785?title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen class="lozad" allowfullscreen></iframe>
-</div>
+{{< iframe src="https://player.vimeo.com/video/154470785?title=0&byline=0&portrait=0" size="500x281" >}}
 
 <hr>
 

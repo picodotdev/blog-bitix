@@ -72,8 +72,8 @@ En sus respectivas páginas de manual, <code>man [comando]</code>, podemos conoc
 
 {{< image
     gallery="true"
-    image1="comandos-gnu-linux.png" optionsthumb1="300x200" title1="Uso de comandos GNU/Linux"
-    image2="man-grep.png" optionsthumb2="300x200" title2="Página de manual de grep"
+    image1="resource:comandos-gnu-linux.png" optionsthumb1="300x200" title1="Uso de comandos GNU/Linux"
+    image2="resource:man-grep.png" optionsthumb2="300x200" title2="Página de manual de grep"
     caption="Uso de comandos GNU/Linux y página del manual de grep" >}}
 
 {{< reference >}}

@@ -33,7 +33,7 @@ Uno de los servidores de portales más destacados y usados es [Liferay][liferay]
 
 {{< image
     gallery="true"
-    image1="inicio.png" optionsthumb1="300x200" title1="Página inicial de Liferay" >}}
+    image1="resource:inicio.png" optionsthumb1="300x200" title1="Página inicial de Liferay" >}}
 
 Liferay es el contenedor de _portlets_ y proporciona un entorno de ejecución similar a lo que los contenedores de _servlets_ como [Tomcat][tomcat] proporcionan para los _servlets_. Las similitudes y diferencias entre un _servlet_ y un _portlet_ son las siguientes:
 
@@ -62,14 +62,14 @@ Desde la [página de descargas](https://www.liferay.com/es/downloads) se puede o
 
 {{< image
     gallery="true"
-    image1="configuracion.png" optionsthumb1="300x200" title1="Configuración básica de Liferay" >}}
+    image1="resource:configuracion.png" optionsthumb1="300x200" title1="Configuración básica de Liferay" >}}
 
 Para añadir un _portlet_ propio a Liferay hay que acceder al _Panel de control > Aplicaciones > Gestor de aplicaciones_ y pulsar la opción cargar ubicada en la parte superior derecha de la página. En la salida del servidor aparecerán varias trazas relativas al despliegue del _portlet_.
 
 {{< image
     gallery="true"
-    image1="gestor-de-aplicaciones.png" optionsthumb1="300x200" title1="Gestor de aplicaciones"
-    image2="instalar-aplicacion.png" optionsthumb2="300x200" title2="Instalar aplicación" >}}
+    image1="resource:gestor-de-aplicaciones.png" optionsthumb1="300x200" title1="Gestor de aplicaciones"
+    image2="resource:instalar-aplicacion.png" optionsthumb2="300x200" title2="Instalar aplicación" >}}
 
 Los _portlets_ se distribuyen por lo general como archivos de aplicaciones web _.war_ con varios descriptores adicionales con información que usa Liferay para el despliegue del _portlet_.
 
@@ -88,8 +88,8 @@ Los _portlets_ con sus diferencias funcionales con los _servlets_ tienen muchas 
 
 {{< image
     gallery="true"
-    image1="portlets-phase-model.png" optionsthumb1="300x200" title1="Fases del ciclo de vida de una petición de un portlet"
-    image2="portlet-lifecycle-methods.png" optionsthumb2="300x200" title2="Métodos de ciclo de vida de un portlet"
+    image1="resource:portlets-phase-model.png" optionsthumb1="300x200" title1="Fases del ciclo de vida de una petición de un portlet"
+    image2="resource:portlet-lifecycle-methods.png" optionsthumb2="300x200" title2="Métodos de ciclo de vida de un portlet"
     caption="Fases y métodos del ciclo de vida de un portlet" >}}
 
 Para cada una de estas fases en la API de los _portlets_ hay un método específico que son [processAction](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#processAction(javax.portlet.ActionRequest,%20javax.portlet.ActionResponse)), [procesEvent](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#processEvent(javax.portlet.EventRequest,%20javax.portlet.EventResponse)), [renderHeaders](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#renderHeaders(javax.portlet.HeaderRequest,%20javax.portlet.HeaderResponse)) y [render](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#render(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)). Los _portlets_ poseen modos que se visualizan con los métodos [doEdit](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doEdit(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)), [doHelp](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doHelp(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)) y [doView](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/GenericPortlet.html#doView(javax.portlet.RenderRequest,%20javax.portlet.RenderResponse)) o el correspondiente anotado con [@RenderMode](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderMode.html). Cada uno de esos métodos para cada una de las fases reciben dos parámetros uno que representa a la petición que heredan de [PortletRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletRequest.html) y son [ActionRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionRequest.html), [ClientDataRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ClientDataRequest.html), [EventRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventRequest.html), [HeaderRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/HeaderRequest.html), [RenderRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderRequest.html) y [ResourceRequest](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceRequest.html). Los objetos que representan a las respuestas heredan de [PortletResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletResponse.html) y son [ActionResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ActionResponse.html), [EventResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/EventResponse.html), [HeaderResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/HeaderResponse.html), [MimeResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/MimeResponse.html), [RenderResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/RenderResponse.html), [ResourceResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/ResourceResponse.html) y [StateAwareResponse](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/StateAwareResponse.html).
@@ -102,12 +102,12 @@ Usando como herramienta de construcción del proyecto [Gradle][gradle] el archiv
 
 {{< image
     gallery="true"
-    image1="anadir-portlet.png" optionsthumb1="300x200" title1="Añadir portlet"
-    image2="inicio-hola-mundo-portlet.png" optionsthumb2="300x200" title2="Portlet HolaMundo" >}}
+    image1="resource:anadir-portlet.png" optionsthumb1="300x200" title1="Añadir portlet"
+    image2="resource:inicio-hola-mundo-portlet.png" optionsthumb2="300x200" title2="Portlet HolaMundo" >}}
 {{< image
     gallery="true"
-    image1="preferencias.png" optionsthumb1="300x200" title1="Preferencias del portlet"
-    image2="preferencias-usuario.png" optionsthumb2="300x200" title2="Portlet HolaMundo con preferencias" >}}
+    image1="resource:preferencias.png" optionsthumb1="300x200" title1="Preferencias del portlet"
+    image2="resource:preferencias-usuario.png" optionsthumb2="300x200" title2="Portlet HolaMundo con preferencias" >}}
 
 Desarrollar un _portlet_ con su API directamente es una tarea costosa si la funcionalidad o complejidad del _portlet_ es mucha. Al igual que en Java no se suele utilizar la API de los _servlets_ directamente, aunque es la API subyacente, y se suele utilizar alguno de los muchos _frameworks_ disponibles para los _portlets_ también hay varios _frameworks_ entre los que elegir. En el artículo [_Portlets_ con el framework Apache Tapestry y Apache Pluto][blogbitix-244] muestro un ejemplo usando un _framework_ de alto nivel, orientado a componentes y altamente productivo.
 

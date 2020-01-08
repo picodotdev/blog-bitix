@@ -23,7 +23,7 @@ El comando de la herramienta [JShell](https://docs.oracle.com/javase/9/jshell/in
 
 {{< image
     gallery="true"
-    image1="jshell.png" optionsthumb1="300x200" title1="JShell"
+    image1="resource:jshell.png" optionsthumb1="300x200" title1="JShell"
     caption="JShell" >}}
 
 Se pueden crear variables, crear y modificar definiciones de métodos y clases. Cada una de estas expresiones crea un _snippet_ de código que pueden listarse con el comando <code>/list</code>. Al introducir las expresiones se soporta completado y asistencia de código con la tecla tabulador como ayuda para saber que métodos tiene un objeto.
@@ -32,19 +32,19 @@ Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci im
 
 {{< image
     gallery="true"
-    image1="jshell-expressions.png" optionsthumb1="300x200" title1="Expresiones"
-    image2="jshell-completion.png" optionsthumb2="300x200" title2="Asistencia de código"        
+    image1="resource:jshell-expressions.png" optionsthumb1="300x200" title1="Expresiones"
+    image2="resource:jshell-completion.png" optionsthumb2="300x200" title2="Asistencia de código"        
     caption="Expresiones y asistencia de código" >}}
 {{< image
     gallery="true"
-    image1="jshell-methods.png" optionsthumb1="300x200" title1="Serie de Fibonacci con un Stream en un método"
+    image1="resource:jshell-methods.png" optionsthumb1="300x200" title1="Serie de Fibonacci con un Stream en un método"
     caption="Serie de Fibonacci con un Stream en un método" >}}
 
 Para diferenciar las expresiones de código de los comandos estos últimos son precedidos por el caracter _/_. Hay varios como los ya citados para listar los _snippets_ de código y salir de _jshell_, otros son para listar las definiciones de variables con <code>/vars</code>, métodos con <code>/methods</code>, tipos con <code>/types</code> e _imports_ con <code>/imports</code>. La lista completa de comandos puede obtenerse pulsando la tecla tabulador después de la barra de comando.
 
 {{< image
     gallery="true"
-    image1="jshell-commands.png" optionsthumb1="300x200" title1="Comandos"
+    image1="resource:jshell-commands.png" optionsthumb1="300x200" title1="Comandos"
     caption="Comandos" >}}
 
 Para los _snippets_ multilínea o algo complejos puede utilizarse un editor externo con el comando <code>/edit</code>. El editor de nuestra preferencia se establece con el comando <code>/set</code>.

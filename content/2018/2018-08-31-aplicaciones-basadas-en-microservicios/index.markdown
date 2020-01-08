@@ -35,7 +35,7 @@ Los problemas que presentan las aplicaciones monolíticas donde toda la lógica 
 
 {{< image
     gallery="true"
-    image1="monolith.png" optionsthumb1="600x450" title1="Arquitectura basada en 3 capas"
+    image1="resource:monolith.png" optionsthumb1="600x450" title1="Arquitectura basada en 3 capas"
     caption="Arquitectura basada en 3 capas" >}}
 
 Los microservicios surgen como alternativa tratando de resolver los problemas de las aplicaciones monolíticas aunque planteando nuevos retos pero también varios beneficios:
@@ -51,7 +51,7 @@ Pueden ser una aplicación que ofrezca una API en forma de REST, [GraphQL][graph
 
 {{< image
     gallery="true"
-    image1="microservices.png" optionsthumb1="600x450" title1="Arquitectura basada en microservicios"
+    image1="resource:microservices.png" optionsthumb1="600x450" title1="Arquitectura basada en microservicios"
     caption="Arquitectura basada en microservicios" >}}
 
 Algunos nuevos retos de los microservicios son:

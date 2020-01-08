@@ -26,6 +26,7 @@
 {{- $options := default "2560x1440" (index $attributes "options") -}}
 {{- $optionsthumb := index $attributes "size" -}}
 {{- $gallery := eq "true" (index $attributes "gallery") -}}
+{{- $layout := index $attributes "layout" -}}
 
 {{- if or (hasPrefix $url "logotype:") (hasPrefix $url "resource:") (hasPrefix $url "asset:") -}}
   {{- $binding := index (split $url ":") 0 -}}
@@ -36,7 +37,7 @@
     {{- $src = print "assets/images/logotypes/" $image | relURL -}}
     {{- $srcthumb = cond (eq $imagethumb nil) nil (print "assets/images/logotypes/" $imagethumb) | relURL -}}
   {{- else if eq $binding "resource" -}}
-    {{- if (findRE "^\\.svg$|\\.webp$" $image) -}}
+    {{- if (findRE "\\.svg$|\\.webp$" $image) -}}
       {{- $src = print "images/" $image -}}
       {{- $srcthumb = cond (eq $imagethumb nil) nil (print "images/" $imagethumb) -}}
     {{- else -}}
@@ -69,6 +70,8 @@
 
       {{- $src = $scaled.RelPermalink -}}
       {{- $srcthumb = $scaledhumb.RelPermalink -}}
+      {{- $width = $scaledhumb.Width -}}
+      {{- $height = $scaledhumb.Height -}}
     {{- end -}}
   {{- else if eq $binding "asset" -}}
     {{- $src = $image | relURL -}}
@@ -87,5 +90,5 @@
 {{- end -}}
 
 {{- if $gallery }}<a href="{{ $srca }}" data-gallery="data-gallery">{{ end -}}
-{{- $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $srcimg }}"{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with $title }} alt="{{ . }}" title="{{ . }}"{{ end }} class="lozad">{{ $imgtagclose | safeHTML -}}
+{{- $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $srcimg }}"{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with $title }} alt="{{ . }}" title="{{ . }}"{{ end }}{{ with $layout }} layout="{{ . }}"{{ end }} class="lozad">{{ $imgtagclose | safeHTML -}}
 {{- if $gallery }}</a>{{ end -}}

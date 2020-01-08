@@ -26,12 +26,12 @@ En cuanto al cargador lo que quería era que admitiese al menos pilas del tipo A
 
 {{< image
     gallery="true"
-    image1="cargador-1.jpg" optionsthumb1="300x200"
-    image2="cargador-2.jpg" optionsthumb2="300x200" >}}
+    image1="resource:cargador-1.jpg" optionsthumb1="300x200"
+    image2="resource:cargador-2.jpg" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="cargador-3.jpg" optionsthumb1="300x200"
-    image2="cargador-4.jpg" optionsthumb2="300x200" >}}
+    image1="resource:cargador-3.jpg" optionsthumb1="300x200"
+    image2="resource:cargador-4.jpg" optionsthumb2="300x200" >}}
 
 {{< amazon
     linkids="0bfa2d5bd06eb2605fb1139281987bf5,5c3dcd6a3b17aca40628ad288a0947ed,0ffb4d325c98b4193eeee9efc053355a"
@@ -51,11 +51,11 @@ Por ello, finalmente me decidí por el siguiente modelo de [reloj de manecillas 
 
 {{< image
     gallery="true"
-    image1="reloj-1.jpg" optionsthumb1="300x200"
-    image2="reloj-2.jpg" optionsthumb2="300x200" >}}
+    image1="resource:reloj-1.jpg" optionsthumb1="300x200"
+    image2="resource:reloj-2.jpg" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="reloj-3.jpg" optionsthumb1="300x200" >}}
+    image1="resource:reloj-3.jpg" optionsthumb1="300x200" >}}
 
 {{< amazon
     linkids="b4520ee6411fb18af5d5eeecf755ca44"
@@ -73,12 +73,12 @@ Para completar el pedido compré unas [pilas AA recargables de AmazonBasics](htt
 
 {{< image
     gallery="true"
-    image1="pila-1.jpg" optionsthumb1="300x200"
-    image2="pila-2.jpg" optionsthumb2="300x200" >}}
+    image1="resource:pila-1.jpg" optionsthumb1="300x200"
+    image2="resource:pila-2.jpg" optionsthumb2="300x200" >}}
 {{< image
     gallery="true"
-    image1="pila-3.jpg" optionsthumb1="300x200"
-    image2="pila-4.jpg" optionsthumb2="300x200" >}}
+    image1="resource:pila-3.jpg" optionsthumb1="300x200"
+    image2="resource:pila-4.jpg" optionsthumb2="300x200" >}}
 
 Pilas AA y AAA en Amazon.
 

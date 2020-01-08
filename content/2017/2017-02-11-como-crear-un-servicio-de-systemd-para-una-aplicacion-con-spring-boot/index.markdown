@@ -32,7 +32,7 @@ Usando la aplicación del [Ejemplo de API REST en Java con JAX-RS y Spring Boot]
 {{< code file="spring-boot-jaxrs-postgres.service" language="systemd" options="" >}}
 {{< code file="postgres.service" language="systemd" options="" >}}
 
-{{< asciinema id="102785"    caption="Servicio de systemd para una aplicación con Spring Boot" >}}
+{{< asciinema id="102785" caption="Servicio de systemd para una aplicación con Spring Boot" >}}
 
 La instalación de la aplicación y de los servicios de systemd en el sistema se realizan copiando archivos, cambiando algunos permisos y usando los comandos de systemd para gestionar los servicios. Los mensajes de salida que emite el servicio se obtienen con el comando <code>journalctl -u spring-boot-jaxrs.service</code>.
 

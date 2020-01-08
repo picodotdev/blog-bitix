@@ -61,7 +61,7 @@ Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mos
 
 {{< image
     gallery="true"
-    image1="christmas-tux-2014.jpg" optionsthumb1="600x450" title1="Christmastux 2014"
+    image1="resource:christmas-tux-2014.jpg" optionsthumb1="600x450" title1="Christmastux 2014"
     caption="¡Buen 2015!" source="klowner.com" >}}
 
 {{% /post %}}

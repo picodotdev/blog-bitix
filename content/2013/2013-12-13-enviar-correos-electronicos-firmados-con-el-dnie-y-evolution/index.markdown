@@ -25,18 +25,18 @@ A continuación, el proceso es similar a como se configura la firma con claves G
 
 {{< image
     gallery="true"
-    image1="pin.png" optionsthumb1="300x200" title1="Diálogo de solicitud de PIN con el DNIe"
-    image2="seleccion-certificado.png" optionsthumb2="300x200" title2="Selección de certificado digital con el DNIe" >}}
+    image1="resource:pin.png" optionsthumb1="300x200" title1="Diálogo de solicitud de PIN con el DNIe"
+    image2="resource:seleccion-certificado.png" optionsthumb2="300x200" title2="Selección de certificado digital con el DNIe" >}}
 {{< image
     gallery="true"
-    image1="seguridad-evolution.png" optionsthumb1="300x200" title1="Diálogo de preferencias de seguridad de Evolution para el DNIe" >}}
+    image1="resource:seguridad-evolution.png" optionsthumb1="300x200" title1="Diálogo de preferencias de seguridad de Evolution para el DNIe" >}}
 
 Una vez con las propiedades de la cuenta configurada para que Evolution use nuestro DNI electrónico, si no hemos marcado la opción «Firmar siempre los mensajes...» podemos realizarlo al escribir el propio correo marcando la opción «Opciones> Firmar con S/MIME». Al enviar un correo electrónico firmado se añadirá automáticamente un adjunto con la firma de nombre «smime.sp7». Al contrario que GPG la firma está en un formato binario y es dificilmente legible con un lector de texto plano.
 
 {{< image
     gallery="true"
-    image1="confimacion-firma.png" optionsthumb1="300x200" title1="Confirmación de firma digital con el DNIe"
-    image2="mensaje-firmado-dnie.png" optionsthumb2="300x200" title2="Mensaje firmado con el DNIe" >}}
+    image1="resource:confimacion-firma.png" optionsthumb1="300x200" title1="Confirmación de firma digital con el DNIe"
+    image2="resource:mensaje-firmado-dnie.png" optionsthumb2="300x200" title2="Mensaje firmado con el DNIe" >}}
 
 {{< reference >}}
 * [Crear una par de claves GPG][elblogdepicodev-181]

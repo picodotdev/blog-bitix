@@ -36,7 +36,7 @@ Primero necesitaremos crear una cuenta en Docker Hub. El nombre de usuario deter
 
 {{< image
     gallery="true"
-    image1="dockerhub.png" optionsthumb1="300x200" title1="Docker Hub"
+    image1="resource:dockerhub.png" optionsthumb1="300x200" title1="Docker Hub"
     caption="Docker Hub" >}}
 
 ### Subir el archivo Dockerfile a un repositorio de GitHub
@@ -51,7 +51,7 @@ En la creación del repositorio en Docker Hub con _build_ automatizada seleccion
 
 {{< image
     gallery="true"
-    image1="dockerhub-automated-build.png" optionsthumb1="300x200" title1="Docker Hub"
+    image1="resource:dockerhub-automated-build.png" optionsthumb1="300x200" title1="Docker Hub"
     caption="Build automatizada de Docker Hub" >}}
 
 Docker Hub se encargará de obtener el archivo Dockerfile y construir la imagen, en el proceso podremos ver las trazas generadas.

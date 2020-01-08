@@ -42,7 +42,7 @@ draft: true
 
 {{< amazon
     linkids=""
-    asins="" }}
+    asins="" >}}
 
 {{< figure
     link1=""

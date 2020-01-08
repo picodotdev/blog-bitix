@@ -23,7 +23,7 @@ Con los archivos FXML que genera la aplicación JavaFX Scene Builder crear aplic
 
 {{< image
     gallery="true"
-    image1="javafx-scene-builder.png" optionsthumb1="300x200" title1="JavaFX Scene Builder con la aplicación ¡Hola Mundo!"
+    image1="resource:javafx-scene-builder.png" optionsthumb1="300x200" title1="JavaFX Scene Builder con la aplicación ¡Hola Mundo!"
     caption="JavaFX Scene Builder con la aplicación ¡Hola Mundo!" >}}
 
 Y el FXML que genera del mismo ejemplo.
@@ -38,7 +38,7 @@ En la aplicación JavaFX Scene Builder disponemos de una amplia paleta de contro
 
 {{< image
     gallery="true"
-    image1="controles-javafx-scene-builder.png" optionsthumb1="300x200" title1="Controles de JavaFX"
+    image1="resource:controles-javafx-scene-builder.png" optionsthumb1="300x200" title1="Controles de JavaFX"
     caption="Controles de JavaFX" >}}
 
 Si con los archivos FXML construimos la interfaz queda como enlazar los elementos visuales con su comportamiento mediante eventos. Una forma es inyectar en propiedades con una anotación los elementos visuales y añadirles el código de comportamiento, otra es indicar en el propio archivo FXML la clase controlador que se encargará del manejo de los eventos del evento visual y otra es incluir el código manejador de evento en el propio archivo FXML.
@@ -49,31 +49,32 @@ La clase manejador de eventos se indica en el panel _Controller_ y es una clase 
 
 {{< image
     gallery="true"
-    image1="javafx-scene-builder-controller.png" optionsthumb1="300x200" title1="Añadiendo comportamiento a aplicación JavaFX"
+    image1="resource:javafx-scene-builder-controller.png" optionsthumb1="300x200" title1="Añadiendo comportamiento a aplicación JavaFX"
     caption="Añadiendo comportamiento a aplicación JavaFX" >}}
 
 Además de poder enlazar los componente visuales con el código para añadirles funcionalidad se pueden modificar las propiedades visuales como el texto, fuente y tamaño, alineación, opacidad, visibilidad, altura, anchura, margen, margen interior, rotación, escalado, ... . Algunas propiedades son aplicables a varios componentes otras son específicas según el componente.
 
 {{< image
     gallery="true"
-    image1="propiedades-javafx-scene-builder.png" optionsthumb1="300x200" title1="Propiedades de los controles JavaFX"
+    image1="resource:propiedades-javafx-scene-builder.png" optionsthumb1="300x200" title1="Propiedades de los controles JavaFX"
     caption="Propiedades de los controles JavaFX, en este caso de un botón" >}}
 
 Entre las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html) está la aplicación _Modena_ con la que podemos ver el aspecto visual de los componentes, en la aplicación _Ensemble_ hay más ejemplos junto con código de muchos controles.
 
 {{< image
     gallery="true"
-    image1="modena.png" optionsthumb1="300x200" title1="Aplicación Modena"
+    image1="resource:modena.png" optionsthumb1="300x200" title1="Aplicación Modena"
     caption="Aplicación Modena" >}}
 {{< image
     gallery="true"
-    image1="ensemble.png" optionsthumb1="300x200" title1="Aplicación Ensemble"
+    image1="resource:ensemble.png" optionsthumb1="300x200" title1="Aplicación Ensemble"
     caption="Aplicación Ensemble" >}}
 
 En la propia página web de JavaFX, en el libro [JavaFX For Dummies](https://amzn.to/2ZQN8kp) y otra documentación se puede encontrar explicado de forma más detallada JavaFX.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1118385349&internal=1" >}}
+    linkids="86e39a50525b1973ff3f39ad53d4dff6"
+    asins="1118385349" >}}
 
 En definitiva con la aplicación JavaFX Scene Builder y los archivos FXML construir la interfaces gráficas de una aplicación de escritorio Java es bastante más simple que lo era antiguamente. JavaFX además ofrece posibilidades que antes no eran posibles en Swing y AWT como rotar componentes, un componente visualizador de HTML, soporte para aceleración gráfica por hardware y más cosas. Después de haber conocido en algo más detalle JavaFX me quedo con una buena sensación. Como muestra de la flexibilidad de cambio de los estilos de los controles el proyecto [JFoenix](http://www.jfoenix.com/) les aplica el _Material Desing_ de las aplicaciones [Android][android] de Google.
 

@@ -32,7 +32,7 @@ En la sección del servidor que escucha en el puerto HTTP (80) realizamos la red
 
 {{< image
     gallery="true"
-    image1="nginx-https.png" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Nginx"
+    image1="resource:nginx-https.png" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Nginx"
     caption="Redirección de HTTP a HTTPS en Nginx" >}}
 
 ### Apache HTTPD
@@ -43,7 +43,7 @@ La configuración para Apache HTTPD es similar simplemente cambian las directiva
 
 {{< image
     gallery="true"
-    image1="apache-httpd-https.png" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
+    image1="resource:apache-httpd-https.png" optionsthumb1="300x200" title1="Redirección de HTTP a HTTPS en Apache HTTPD"
     caption="Redirección de HTTP a HTTPS en Apache HTTPD" >}}
 
 ### Tomcat, Jetty y WildFly

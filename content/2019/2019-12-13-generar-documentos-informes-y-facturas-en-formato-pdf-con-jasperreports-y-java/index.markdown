@@ -23,7 +23,7 @@ Los informes de JasperReports se generan a partir de una plantilla creada con [J
 
 {{< image
     gallery="true"
-    image1="jaspersoft-studio.png" optionsthumb1="650x450" title1="JasperSoft Studio"
+    image1="resource:jaspersoft-studio.png" optionsthumb1="650x450" title1="JasperSoft Studio"
     caption="JasperSoft Studio" >}}
 
 Los informes con JasperReports tiene varias posibilidades de obtener los datos, una de ellas es proporcionándoselos mediante parámetros y o una colección de _beans_ de cualquier tipo, pero también proporcionándole una conexión a la base de datos relacional y que JasperReports lance consultas SQL para obtener los datos que necesita.
@@ -32,9 +32,9 @@ Utilizando los elementos de la paleta como campos de texto e imagen y posicioná
 
 {{< image
     gallery="true"
-    image1="editor-expresiones-parametros.png" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
-    image2="editor-expresiones-campos.png" optionsthumb2="200x150" title2="Editor de expresiones, campos"
-    image3="editor-expresiones-variables.png" optionsthumb3="200x150" title3="Editor de expresiones, variables"
+    image1="resource:editor-expresiones-parametros.png" optionsthumb1="200x150" title1="Editor de expresiones, parámetros"
+    image2="resource:editor-expresiones-campos.png" optionsthumb2="200x150" title2="Editor de expresiones, campos"
+    image3="resource:editor-expresiones-variables.png" optionsthumb3="200x150" title3="Editor de expresiones, variables"
     caption="Editor de expresiones" >}}
 
 El código Java necesario para compilar el archivo de la plantilla del informe, proporcionarle los parámetros y generar el PDF es el siguiente.
@@ -46,7 +46,7 @@ El resultado es este boceto de factura a la que con más tiempo, añadiendo más
 
 {{< image
     gallery="true"
-    image1="documento.png" optionsthumb1="650x450" title1="Documento PDF generado con JasperReports"
+    image1="resource:documento.png" optionsthumb1="650x450" title1="Documento PDF generado con JasperReports"
     caption="Documento PDF generado con JasperReports" >}}
 
 En este caso los datos solo se proporcionan mediante parámetros pero JasperReport también es capaz de extraer los datos realizando consultas en a la bases de datos directamente usando una conexión de JDBC y las sentencias SQL adecuadas. En algún caso también es posible insertar en el documento una [gráfica generada con JFreeChart][blogbitix-273] previamente, al informe como parámetros se le puede enviar cualquier tipo de Java que para una gráfica es un _InputStream_.

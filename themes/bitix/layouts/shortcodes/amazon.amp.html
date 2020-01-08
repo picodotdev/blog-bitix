@@ -10,7 +10,7 @@
 {{ if ne (len $linkids) (len $asins) }}
   {{ errorf "Invalid number linkids and asins: %s" .Position }}
 {{ end }}
-<div class="media-amazon">
+<div class="media media-amazon">
   {{- range $index, $linkid  := $linkids -}}
   {{- $asin := index $asins $index }}
   <amp-ad

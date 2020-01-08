@@ -41,11 +41,11 @@ It is the beginning of 2016 and I have not made one but three installations of W
 
 {{< image
     gallery="true"
-    image1="windows-10.png" optionsthumb1="300x200" title1="Windows 10"
+    image1="resource:windows-10.png" optionsthumb1="300x200" title1="Windows 10"
     caption="Windows 10" >}}
 {{< image
     gallery="true"
-    image1="microsoft-word-2016.png" optionsthumb1="300x200" title1="Microsoft Word 2016"
+    image1="resource:microsoft-word-2016.png" optionsthumb1="300x200" title1="Microsoft Word 2016"
     caption="Microsoft Word 2016" >}}
 
 If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-225] that suits your needs.

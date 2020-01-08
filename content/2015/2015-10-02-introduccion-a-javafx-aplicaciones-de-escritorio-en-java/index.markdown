@@ -48,7 +48,7 @@ Esta es la captura de pantalla de la aplicación y el mensaje emitido en la cons
 
 {{< image
     gallery="true"
-    image1="helloworld.png" optionsthumb1="300x200" title1="Aplicación ¡Hola Mundo!"
+    image1="resource:helloworld.png" optionsthumb1="300x200" title1="Aplicación ¡Hola Mundo!"
     caption="Aplicación ¡Hola Mundo! con JavaFX" >}}
 
 {{< code file="System.out" language="plaintext" options="" >}}
@@ -59,17 +59,18 @@ En las [demostraciones y ejemplos de Java 8](https://www.oracle.com/technetwork/
 
 {{< image
     gallery="true"
-    image1="ensemble.png" optionsthumb1="300x200" title1="Aplicación Ensemble"
+    image1="resource:ensemble.png" optionsthumb1="300x200" title1="Aplicación Ensemble"
     caption="Aplicación Ensemble" >}}
 {{< image
     gallery="true"
-    image1="modena.png" optionsthumb1="300x200" title1="Aplicación Modena"
+    image1="resource:modena.png" optionsthumb1="300x200" title1="Aplicación Modena"
     caption="Aplicación Modena" >}}
 
 El ejemplo de este artículo es muy sencillo y solo sirve para disponer de un entorno de desarrollo. Aunque no lo leído en el libro [JavaFX For Dummies](https://amzn.to/2SWtXnM) explican bastante detalladamente y de forma didáctica muchas posibilidades de JavaFX y como en el resto de libros de la serie _for dummies_ paso a paso y de forma simple sin suponer mucho conocimiento del lector.
 
 {{< amazon
-    link1="https://rcm-eu.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=blobit-21&o=30&p=8&l=as4&m=amazon&f=ifr&ref=ss_til&asins=1118385349&internal=1" >}}
+    linkids="4f0ce3c370a76b816eb95a489aa5de50"
+    asins="1118385349" >}}
 
 Hace ya mucho tiempo cuando programaba alguna aplicación de escritorio con Swing una de las cosas más complicadas era construir la interfaz usando código, el código resultante era extenso, poco legible y bastante complicado por tener que construir cada elemento gráfico, posicionarlo y establecerle sus estilos. En JavaFX y al igual que en las plataformas de [Microsoft][microsoft] y [GNOME][gnome] los elementos gráficos de una ventana se puede definir en un documento y este documento se puede generar usando una aplicación con una interfaz gráfica arrastrando y soltando componentes, estableciendo valores de propiedades. En el siguiente artículo comentaré [cómo crear un documento FXML con la aplicación JavaFX Scene Builder y como usarlo en una aplicación][blogbitix-102].
 

@@ -25,7 +25,7 @@ Uno de los proyectos a los que he donado esta vez ha sido al entorno de escritor
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/gnome.svg" optionsthumb1="200x200" title1="GNOME" >}}
+    image1="asset:assets/images/logotypes/gnome.svg" optionsthumb1="200x200" title1="GNOME" >}}
 
 ### VideoLAN (VLC)
 
@@ -33,7 +33,7 @@ Otro proyecto al que he donado ha sido el [reproductor de multimedia VLC][vlc] d
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/vlc.svg" optionsthumb1="200x200" title1="VLC" >}}
+    image1="asset:assets/images/logotypes/vlc.svg" optionsthumb1="200x200" title1="VLC" >}}
 
 ### Arch Linux
 
@@ -43,21 +43,21 @@ Por un problema con el medio de pago que usa Arch Linux, [Software in the Public
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/archlinux.svg" optionsthumb1="250x250" title1="Arch Linux" >}}
+    image1="asset:assets/images/logotypes/archlinux.svg" optionsthumb1="250x250" title1="Arch Linux" >}}
 
 ### Comprobantes de las donaciones
 
 {{< image
     gallery="true"
-    image1="donacion-gnome.png" optionsthumb1="650x450" title1="Donación GNOME"
+    image1="resource:donacion-gnome.png" optionsthumb1="650x450" title1="Donación GNOME"
     caption="Donación GNOME" >}}
 {{< image
     gallery="true"
-    image1="donacion-videolan.png" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
+    image1="resource:donacion-videolan.png" optionsthumb1="650x450" title1="Donación VideoLAN (VLC)"
     caption="Donación VideoLAN (VLC)" >}}
 {{< image
     gallery="true"
-    image1="donacion-archlinux.png" optionsthumb1="650x450" title1="Donación Arch Linux"
+    image1="resource:donacion-archlinux.png" optionsthumb1="650x450" title1="Donación Arch Linux"
     caption="Donación Arch Linux" >}}
 
 Las donaciones no son muy cuantiosas pero son una forma de entre las muchas que hay de colaborar con estos proyectos. Otras formas de colaborar son reportando de errores o que no requieren conocimiento técnico como traduciendo las aplicaciones al lenguaje español o simplemente compartiendo las imágenes torrent de las distribuciones GNU/Linux.

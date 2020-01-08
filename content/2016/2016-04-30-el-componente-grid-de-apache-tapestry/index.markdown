@@ -20,19 +20,19 @@ summary: "En la mayoría de aplicaciones no solo es habitual sino algo muy usado
 
 Uno de los componentes más complejos pero al mismo tiempo muy simple de usar ofrecidos por el _framework_ es el [componente Grid](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Grid.html). El componente _Grid_ muestra en una tabla un listado de datos ofreciendo las funcionalidades de paginación, ordenación, personalización de columnas, filtrado de columnas, personalización en caso de estar vacío y algunas cosas más. Lo único que debemos tener en cuenta para aprovechar al máximo el componente _Grid_ son los parámetros que declara en su documentación su funcionamiento interno nos es irrelevante, será de los componentes más complejos y no por ello no es más difícil de utilizar basta decir que solo tiene un parámetro requerido y que es lo único imprescindible que es la lista de datos a mostrar.
 
-Aunque el componente tiene un buen número de parámetros para personalizar según queramos su comportamiento basta que hagamos uso únicamente del parámetro _source_ que es la fuente de datos del _Grid_, puede ser un objeto de tipo [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html) o un [GridDataSource](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/grid/GridDataSource.html) que proporciona métodos para hacer la paginación y ordenación eficientemente recuperando de la base de datos o fuente de datos únicamente los registros a mostrar realizando paginación.
+Aunque el componente tiene un buen número de parámetros para personalizar según queramos su comportamiento basta que hagamos uso únicamente del parámetro _source_ que es la fuente de datos del _Grid_, puede ser un objeto de tipo [Collection](javadoc8:java/util/Collection.html) o un [GridDataSource](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/grid/GridDataSource.html) que proporciona métodos para hacer la paginación y ordenación eficientemente recuperando de la base de datos o fuente de datos únicamente los registros a mostrar realizando paginación.
 
 {{< code file="ProductoAdmin.tml" language="html" options="" >}}
 {{< code file="ProductoAdmin.java" language="java" options="" >}}
 
 {{< image
     gallery="true"
-    image1="grid.png" optionsthumb1="300x200" title1="Componente Grid de Tapestry"
+    image1="resource:grid.png" optionsthumb1="300x200" title1="Componente Grid de Tapestry"
     caption="Componente Grid de Tapestry" >}}
 
 * _source_
 
-Con los parámetros _include_ y _exclude_ podemos determinar que propiedades de los objetos o _beans_ de la fuente de datos se incluyen en el Grid, con el parámetro _add_ podemos añadir nuevas columnas y personalizarlas con los datos que necesitemos como sería el caso de añadir una columna con un [Checkbox](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Checkbox.html) por fila para realizar una selección múltiple o de una columna con botones para realizar acciones. Para ambas cosas en el cuerpo del componente_Grid_definimos subcomponentes con la siguiente nomenclatura _\<p:[nombreColumna]Cell\>_, en en ejemplo usando _\<p:nombreCell\>_ y _\<p:actionCell\>_. Las celdas de las columnas por defecto hacen un [toString()](https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#toString--) de la propiedad del _bean_ de la fila a mostrar, si queremos cambiar este comportamiento como en la columna nombre definimos la etiqueta _\<p:nombreCell\>_ y dentro incluimos el contenido que deseemos que puede contener otros componentes en este caso el nombre con un enlace.
+Con los parámetros _include_ y _exclude_ podemos determinar que propiedades de los objetos o _beans_ de la fuente de datos se incluyen en el Grid, con el parámetro _add_ podemos añadir nuevas columnas y personalizarlas con los datos que necesitemos como sería el caso de añadir una columna con un [Checkbox](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Checkbox.html) por fila para realizar una selección múltiple o de una columna con botones para realizar acciones. Para ambas cosas en el cuerpo del componente_Grid_definimos subcomponentes con la siguiente nomenclatura _\<p:[nombreColumna]Cell\>_, en en ejemplo usando _\<p:nombreCell\>_ y _\<p:actionCell\>_. Las celdas de las columnas por defecto hacen un [toString()](javadoc8:java/lang/Object.html#toString--) de la propiedad del _bean_ de la fila a mostrar, si queremos cambiar este comportamiento como en la columna nombre definimos la etiqueta _\<p:nombreCell\>_ y dentro incluimos el contenido que deseemos que puede contener otros componentes en este caso el nombre con un enlace.
 
 * _include_
 * _exclude_
@@ -55,7 +55,7 @@ Con el parámetro _empty_ definimos un componente [Block](http://tapestry.apache
 
 {{< image
     gallery="true"
-    image1="grid-sin-elementos.png" optionsthumb1="300x200" title1="Mensaje de un Grid sin elementos"
+    image1="resource:grid-sin-elementos.png" optionsthumb1="300x200" title1="Mensaje de un Grid sin elementos"
     caption="Mensaje de un Grid sin elementos" >}}
 
 * _empty_
@@ -68,7 +68,7 @@ Por si fuera poco con el parámetro _inPlace_ podemos hacer que la paginación y
 
 * _inPlace_
 
-Finalmente, comentaré el parámetro _encoder_ con el que podemos hacer que el componente _Grid_ funcione cuando se usa dentro de un componente _Form_. La clase [ValueEncoder](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ValueEncoder.html) transforma un objeto a un [String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html) que lo identifique en el cliente y a partir del identificador del cliente los transforme al objeto cuando se envíe de nuevo al servidor. Podemos indicar el _ValueEncoder_ en cada _Grid_ o definirlo como una configuración del contenedor <abbr title="Inversion of Control">IoC</abbr>.
+Finalmente, comentaré el parámetro _encoder_ con el que podemos hacer que el componente _Grid_ funcione cuando se usa dentro de un componente _Form_. La clase [ValueEncoder](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/ValueEncoder.html) transforma un objeto a un [String](javadoc8:java/lang/String.html) que lo identifique en el cliente y a partir del identificador del cliente los transforme al objeto cuando se envíe de nuevo al servidor. Podemos indicar el _ValueEncoder_ en cada _Grid_ o definirlo como una configuración del contenedor <abbr title="Inversion of Control">IoC</abbr>.
 
 Hay algún parámetro más como _sortModel_ y _paginationModel_ para mantener la información de ordenación y paginación pero los anteriores son los que más habitualmente usaremos y probablemente con _source_, _include_, _exclude_ y _add_ tengamos suficiente para muchos casos.
 

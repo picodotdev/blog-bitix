@@ -47,8 +47,8 @@ GNOME puede personalizarse en cierta medida con algunos complementos para por ej
 
 {{< image
     gallery="true"
-    image1="gnome-overview.jpg" optionsthumb1="300x200" title1="GNOME"
-    image2="macos-overview.jpg" optionsthumb2="300x200" title2="macOS"
+    image1="resource:gnome-overview.jpg" optionsthumb1="300x200" title1="GNOME"
+    image2="resource:macos-overview.jpg" optionsthumb2="300x200" title2="macOS"
     caption="Comparación entre el entorno de escritotio de GNOME y macOS" >}}
 
 GNOME incluye todo lo que un usuario necesita desde navegador de archivos, visor de fotos, visor de documentos, aplicación de correo electrónico, terminal, editor de texto plano. Y GNOME no es la única opción también está [KDE][kde] o [XFCE][xfce] por nombrar solo dos de los otros entornos e escritorio más conocidos.

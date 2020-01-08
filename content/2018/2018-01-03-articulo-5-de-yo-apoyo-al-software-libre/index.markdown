@@ -24,8 +24,8 @@ En esta ocasión los proyectos a los que he hecho una donación han sido [Lineag
 
 {{< image
     gallery="false"
-    image1="assets/images/logotypes/lineageos.svg" optionsthumb1="200x200" title1="LineageOS"
-    image2="assets/images/logotypes/replicant.svg" optionsthumb2="200x200" title1="Replicant" >}}
+    image1="asset:assets/images/logotypes/lineageos.svg" optionsthumb1="200x200" title1="LineageOS"
+    image2="asset:assets/images/logotypes/replicant.svg" optionsthumb2="200x200" title1="Replicant" >}}
 
 Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo _giga_ de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
 
@@ -43,8 +43,8 @@ Se ofrece de forma gratuita pero los servidores que son necesarios para el desar
 
 {{< image
     gallery="true"
-    image1="cyanogenmod-10.2.jpg" optionsthumb1="300x200" title1="CynogenMod 10.2"
-    image2="lineageos-14.1.jpg" optionsthumb2="300x200" title2="LineageOS 14.1"
+    image1="resource:cyanogenmod-10.2.jpg" optionsthumb1="300x200" title1="CynogenMod 10.2"
+    image2="resource:lineageos-14.1.jpg" optionsthumb2="300x200" title2="LineageOS 14.1"
     caption="CynogenMod 10.2 y LineageOS 14.1" >}}
 
 ### Replicant
@@ -60,7 +60,7 @@ Está basado en LineageOS 13 y Android 6 quitándole los componentes que no mant
 
 {{< image
     gallery="true"
-    image1="replicant-6.png" optionsthumb1="300x200" title1="Replicant 6"
+    image1="resource:replicant-6.png" optionsthumb1="300x200" title1="Replicant 6"
     caption="Replicant 6" >}}
 
 ### Comprobantes de las donaciones
@@ -69,11 +69,11 @@ En ambos casos las donaciones que he hecho han sido de 15€.
 
 {{< image
     gallery="true"
-    image1="donacion-lineageos.png" optionsthumb1="650x450" title1="Donación LineageOS"
+    image1="resource:donacion-lineageos.png" optionsthumb1="650x450" title1="Donación LineageOS"
     caption="Donación LineageOS" >}}
 {{< image
     gallery="true"
-    image1="donacion-replicant.png" optionsthumb1="650x450" title1="Donación Replicant"
+    image1="resource:donacion-replicant.png" optionsthumb1="650x450" title1="Donación Replicant"
     caption="Donación Replicant" >}}
 
 {{< donations >}}
