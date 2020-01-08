@@ -6,13 +6,13 @@
     {{ $resource := .Page.Resources.GetMatch $value }}
     {{ $resource1x1 := $resource.Fit "1200x1200" }}
 
-    {{ .Scratch.Set "image1x1" (cond (ne $resource nil) $resource1x1.RelPermalink nil) }}
+    {{ .Scratch.Set "image1x1" $resource1x1.Permalink }}
 {{ end }}
 {{ if (eq $binding "data") }}
     {{ $value1x1 := replaceRE "\\.(png|jpg)$" "-1200.$1" $value }}
-    {{ $image1x1 := print "static/assets/images/structured-data/" $value1x1 }}
+    {{ $image1x1 := print "assets/images/structured-data/" $value1x1 }}
 
-    {{ if ne (fileExists $image1x1) true }}
+    {{ if ne (fileExists (print "static/" $image1x1)) true }}
         {{ errorf "Missing image post logotype: %s" $image1x1 }}
     {{ end }}
 
