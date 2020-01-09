@@ -46,19 +46,17 @@ Son numerosos los medios que se han hecho eco del acontecimiento tecnológico de
 * [El investigador que frenó el ataque de ransomware mundial por accidente](https://hipertextual.com/2017/05/investigador-freno-ataque-ransomware-mundial-accidente)
 * [Recomendaciones para hacer frente a un ransomware](https://www.redeszone.net/2017/05/13/recomendaciones-para-hacer-frente-a-un-ransomware/)
 
-<div class="media-twitter">
-    <blockquote class="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">The release of the patch probably isn&#39;t going to help that £15m MRI machine that runs XP embedded whose maker went bankrupt 10 years ago.</p>&mdash; Barry Dorrans (@blowdart) <a href="https://twitter.com/blowdart/status/863364192316735488">13 de mayo de 2017</a></blockquote>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+{{< twitter id="863364192316735488" >}}
+<p lang="en" dir="ltr">The release of the patch probably isn&#39;t going to help that £15m MRI machine that runs XP embedded whose maker went bankrupt 10 years ago.</p>&mdash; Barry Dorrans (@blowdart) <a href="https://twitter.com/blowdart/status/863364192316735488">13 de mayo de 2017</a>
+{{< /twitter >}}
 
 Quizá alguien piense que un sistema con [GNU][gnu]/[Linux][linux] hubiese sido distinto pero no, un sistema GNU/Linux desactualizado es igual de vulnerable, por el hecho de ser GNU/Linux no es más seguro. Lo que hay que implementar son procedimientos y aplicar medidas para evitar estos fallos de seguridad y para minimizar las vulnerabilidades de los sistemas cualquiera que sea el sistema utilizado. A pesar de lo anterior una muestra de la seguridad que ofrece GNU/Linux que hay que destacar es que es un sistema utilizado en una gran mayoría de servidores importantes de los que ofrecen servicios en internet u otros servicios críticos, correctamente configurados y mantenidos funcionando de forma segura.
 
 En unas empresas y sociedad cada vez más dependientes de la tecnología un ataque como este puede causar importantes daños como ha sido en el caso del sistema de salud británico, en empresas como en el mismo caso de Telefonica ha obligado a apagar sistemas para evitar la propagación y preventivamente males mayores impidiendo trabajar con normalidad a un importante número de empleados de la empresa. El ataque de _WannaCry_ es una advertencia de lo que puede provocar un caso peor en el futuro, y este ransomware cuando actúa es evidente que se está sufriendo, otros ataques menos notorios pueden pasar inadvertidos. Algo que ocasionará lo sucedido es que [se dedicarán más recursos a la seguridad](http://www.publico.es/internacional/industria-ciberseguridad-coge-musculo-oleada.html).
 
-<div class="media-twitter">
-    <blockquote class="twitter-tweet" data-cards="hidden" data-lang="es"><p lang="en" dir="ltr">Windows XP was released in 2001, every Linux kernel before 2013 is out of support, more CVEs reported for Linux in 2016, 2017 than Windows <a href="https://t.co/QzTPSFp0Pr">pic.twitter.com/QzTPSFp0Pr</a></p>&mdash; Ben Adams (@ben_a_adams) <a href="https://twitter.com/ben_a_adams/status/863563517898747904">14 de mayo de 2017</a></blockquote>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+{{< twitter id="863563517898747904" >}}
+<p lang="en" dir="ltr">Windows XP was released in 2001, every Linux kernel before 2013 is out of support, more CVEs reported for Linux in 2016, 2017 than Windows <a href="https://t.co/QzTPSFp0Pr">pic.twitter.com/QzTPSFp0Pr</a></p>&mdash; Ben Adams (@ben_a_adams) <a href="https://twitter.com/ben_a_adams/status/863563517898747904">14 de mayo de 2017</a>
+{{< /twitter >}}
 
 GNU/Linux es un sistema más abierto y público que Windows, su código fuente está disponible para ser analizado por cualquiera con los conocimientos de programación suficientes y cuando un fallo de seguridad es descubierto el parche de seguridad es publicado no mucho tiempo más tarde sin depender de los intereses de una única empresa. Windows al ser más cerrado y desarrollado por una empresa que tiene su control absoluto, del cual dependen otras empresas y organizaciones gubernamentales, algunos fallos de seguridad son ocultados pero explotables hasta que son resueltos por el parche de seguridad.
 

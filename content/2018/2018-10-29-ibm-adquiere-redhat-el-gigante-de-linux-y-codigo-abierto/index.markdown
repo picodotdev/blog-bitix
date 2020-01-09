@@ -55,10 +55,9 @@ Al mismo tiempo se abre un periodo de incertidumbre considerando precedentes sim
 
 ¿IBM se convertirá en el gigante rojo o Red Hat se convertirá en Blue Hat?.
 
-<div class="media">
-    <blockquote class="twitter-tweet tw-align-center" data-partner="tweetdeck"><p lang="en" dir="ltr">Red Hat gains stronger foothold in open source and more industry expertise with IBM deal, says CEO Jim Whitehurst <a href="https://t.co/gtXAO1CQ6X">https://t.co/gtXAO1CQ6X</a> <a href="https://t.co/21QzUw3rre">pic.twitter.com/21QzUw3rre</a></p>&mdash; Bloomberg Technology (@technology) <a href="https://twitter.com/technology/status/1056893767913889794?ref_src=twsrc%5Etfw">October 29, 2018</a></blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+{{< twitter id="1056893767913889794" >}}
+<p lang="en" dir="ltr">Red Hat gains stronger foothold in open source and more industry expertise with IBM deal, says CEO Jim Whitehurst <a href="https://t.co/gtXAO1CQ6X">https://t.co/gtXAO1CQ6X</a> <a href="https://t.co/21QzUw3rre">pic.twitter.com/21QzUw3rre</a></p>&mdash; Bloomberg Technology (@technology) <a href="https://twitter.com/technology/status/1056893767913889794?ref_src=twsrc%5Etfw">October 29, 2018</a>
+{{< /twitter >}}
 
 {{< youtube video="s7dTjpvakmA" >}}>
 
