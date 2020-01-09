@@ -30,7 +30,7 @@ Dado el problema que causa este aparente comando u otro similar una buena recome
 
 Para GNU/Linux y los sistemas operativos en general uno de sus requisitos es que sean seguros e implementan medidas para que así sean incluso con el apoyo de los procesadores a nivel de hardware pero hacen lo que se les dice y no están a salvo de las estupideces por desconocimiento que pueda cometer el usuario.
 
-{{< youtube video="Q9Mdy7H8Qmc" >}}>
+{{< youtube video="Q9Mdy7H8Qmc" >}}
 
 {{< reference >}}
 * [Fork Bomb](https://en.wikipedia.org/wiki/Fork_bomb)

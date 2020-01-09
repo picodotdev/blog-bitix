@@ -275,7 +275,7 @@ Es recomendable realizar una primera prueba al monitor para buscar píxeles muer
 
 Para probar la calidad del monitor (o televisor) en cuanto a colores o resolución [en YouTube hay varios](https://www.youtube.com/results?search_query=4k+video+test), uno de ellos de ejemplo es este pudiendo seleccionar la calidad desde 720p (HD), 1080p (FHD, 1K), 1440p (QHD, 2K) y 2160p (UHD, 4K). Lógicamente para apreciar las diferencias de calidad con respecto a una resolución más baja hay que tener un monitor o televisor que soporte la resolución más alta. Esto da una idea de como se ve una película, vídeo o imágenes. Las tareas ofimáticas no es lo mismo que ver vídeos, en UHD y usando escalado el texto gracias a su mayor PPI en el mismo tamaño que un QHD se ve más definido y claro. Sin embargo, el escalado aún presenta problemas ya que no todas las aplicaciones está preparadas.
 
-{{< youtube video="Bey4XXJAqS8" >}}>
+{{< youtube video="Bey4XXJAqS8" >}}
 
 ### Switch HDMI, monitor con el ordenador y consola
 

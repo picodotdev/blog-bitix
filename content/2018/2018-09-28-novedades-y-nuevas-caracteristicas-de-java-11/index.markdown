@@ -69,13 +69,13 @@ Esta funcionalidad tiene algunas restricciones. No se puede mezclar el uso y no 
 
 {{< code file="Lambda.java" language="java" options="" >}}
 
-{{< youtube video="0eWgRyanQI0?rel=0" >}}>
+{{< youtube video="0eWgRyanQI0?rel=0" >}}
 
 ### Cliente HTTP
 
 En Java 9 se incorporó de forma experimental un cliente HTTP con soporte para HTTP/2 en el propio JDK. En Java 11 alcanza la categoría de estable. Este cliente HTTP es una forma sencilla de hacer llamadas a servicios web ya sean REST o [GraphQL][graphql]. Las clases del nuevo cliente se encuentran en el paquete [java.net.http](javadoc11:java.net.http/java/net/http/package-summary.html). Al estar este cliente HTTP incorporado en el JDK no será necesario depender de librerías de terceros.
 
-{{< youtube video="sZSdWq490Vw?rel=0" >}}>
+{{< youtube video="sZSdWq490Vw?rel=0" >}}
 
 ### Ejecución desde archivo de código fuente único
 
@@ -102,7 +102,7 @@ Tratar texto es una parte importante casi de cualquier aplicación, este soporte
 
 Algunas de las versiones anteriores de TLS ya no se consideran seguras añadir soporte para la versión más reciente TLS 1.3 permite a las aplicaciones Java ser más compatibles y más seguras. El protocolo TLS 1.3 proporciona dos beneficios principalmente, es más seguro y más rápido que sus versiones anteriores.
 
-{{< youtube video="HxDb5nwvN_Y?rel=0" >}}>
+{{< youtube video="HxDb5nwvN_Y?rel=0" >}}
 
 ### Otras mejoras
 

@@ -27,7 +27,7 @@ El sector de los videojuegos es una industria que mueve miles de millones de eur
 
 Esta es una muestra de la evolución gráfica que han experimentado los juegos desde 1995 hasta 2018, dos décadas en este caso con el juego de ación y aventuras Tomb Raider.
 
-{{< youtube video="D-P-smim5gQ" >}}>
+{{< youtube video="D-P-smim5gQ" >}}
 
 La industria de juego sigue creciendo con las nuevas generaciones ya siendo nativos digitales. Desde hace un tiempo se están organizando competiciones deportivas en diferentes juegos populares y se están retransmitiendo en internet en la plataforma especializada en videojuegos [Twitch][twitch]. Estas competiciones promovidas por actores importantes del hardware interesados en potenciar el sector como [Nvidia][nvidia], [Intel][intel], [AMD][amd] u otros fabricantes de hardware y estudios de desarrollo de videojuegos como [Blizzard][blizzard] ofrecen a los finalistas y campeones importantes premios económicos. Tanto que algunas personas se están dedicando ya como profesionalmente con absoluta dedicación a competir y entrenar aprovechando sus habilidades y conocimiento profundo de los juegos en los que están especializados.
 
@@ -50,7 +50,7 @@ Hace unas semanas veía en directo una final del juego para móvil Clash Royale,
 
 Este es un documental sobre lo que rodea a las  competiciones deportivas en equipos y sobre los _eSports_.
 
-{{< youtube video="yvxMwoYuSp4" >}}>
+{{< youtube video="yvxMwoYuSp4" >}}
 
 {{< reference >}}
 * [Xataka eSports](https://esports.xataka.com/)
