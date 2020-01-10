@@ -15,7 +15,7 @@ tags: ["gnu-linux", "planeta-codigo", "software-libre"]
 
 {{% post %}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" >}}
 
 Un cortafuegos o _firewall_ hace que un sistema sea más seguro analizando todo el tráfico de red que se recibe y envía impidiéndolo o permitiéndolo según las reglas que se hayan definido. Aunque los _routers_ con los que nos conectamos a internet también hacen la función de _firewall_ es aconsejable instalar un cortafuegos en cada sistema, sobre todo en sistemas portátiles que podemos conectar a redes WIFI ajenas a las que pueden conectarse al mismo tiempo otros muchos usuarios que desconocemos.
 

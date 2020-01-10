@@ -14,7 +14,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" >}}
 
 Uno de los sistemas de control de versiones más utilizado es [Git][git]. [Bash][bash] es el intérprete de comandos por defecto en la mayoría de distribuciones [GNU][gnu]/[Linux][linux]. A la hora de trabajar en la terminal y estando como directorio actual en un directorio que está bajo el control de versiones de git bash por defecto no muestra ninguna información del estado de los archivos en su repositorio en el símbolo del sistema o _prompt_.
 

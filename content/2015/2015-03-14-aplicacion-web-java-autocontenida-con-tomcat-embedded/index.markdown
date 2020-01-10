@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 La tendencia de las aplicaciones es que sean construidas como múltiples servicios pequeños que colaboran entre si en vez de consistir en una aplicación grande desplegada en un servidor de aplicaciones. La aparición de [nuevas tecnologías como Docker][blogbitix-50] facilitan la construcción y despliegue de los microservicios. Los microservicios con su máxima de bajo acoplamiento y alta cohesión tratan de incluir todo lo necesario para funcionar evitando las dependencias de cualquier tipo de elemento fuera de su ámbito no incluyendo el uso de otros servicios. Con [Docker][docker] es posible desplegarlos en cualquier máquina que disponga del servicio, esto evita problemas de configuración al pasar la aplicación de un entorno de desarrollo a uno de producción ya que las características del entorno de desarrollo y el de producción pueden ser idénticos.
 

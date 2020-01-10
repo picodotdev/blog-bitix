@@ -12,7 +12,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Un sistema de logging en una aplicación es indispensable para saber lo que está sucediendo en la aplicación en el mismo momento o pasado un tiempo. Es de gran utilidad tanto para en el momento de desarrollar la aplicación como para una vez puesta en producción. Con el registro de las trazas podemos obtener información que nos permitirá descubrir un error o averiguar más fácilmente y rápidamente porque sucede algún comportamiento que no es como se espera.
 

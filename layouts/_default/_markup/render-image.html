@@ -46,7 +46,7 @@
       {{- $scaled := $nil -}}
       {{- $scaledhumb := $nil -}}
 
-      {{- if eq $optionsthumb nil -}}{{- errorf "Invalid thumb optionsthumb '%s': %s" $optionsthumb .Position -}}{{- end -}}
+      {{- if eq $optionsthumb nil -}}{{- errorf "Invalid thumb optionsthumb '%s'" $optionsthumb -}}{{- end -}}
 
       {{- if eq $command "Fit" -}}
         {{- $scaled = $resource.Fit $options -}}
@@ -55,7 +55,7 @@
       {{- else if eq $command "Fill" -}}
         {{- $scaled = $resource.Fill $options -}}
       {{- else -}}
-        {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s': %s" .Destination .Position -}}
+        {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s'" .Destination -}}
       {{- end -}}
 
       {{- if eq $commandthumb "Fit" -}}
@@ -65,7 +65,7 @@
       {{- else if eq $commandthumb "Fill" -}}
         {{- $scaledhumb = $resourcethumb.Fill $optionsthumb -}}
       {{- else -}}
-        {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s': %s" .Destination .Position -}}
+        {{- errorf "Invalid image processing command: Must be one of Fit, Fill or Resize '%s'" .Destination -}}
       {{- end -}}
 
       {{- $src = $scaled.RelPermalink -}}
@@ -78,7 +78,7 @@
     {{- $srcthumb = $imagethumb | relURL -}}
   {{- end -}}
 {{- else -}}
-  {{- errorf "Malformed image destination '%s': %s" .Destination .Position -}}
+  {{- errorf "Malformed image destination '%s'" .Destination -}}
 {{- end -}}
 
 {{- $srcimg := default .Destination $src -}}

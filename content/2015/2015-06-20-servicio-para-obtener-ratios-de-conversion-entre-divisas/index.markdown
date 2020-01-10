@@ -15,7 +15,7 @@ summary: "¿Trabajas con importes en diferentes divisas y necesitas hacer conver
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 En una aplicación de comercio electrónico que venda sus productos o servicios a nivel internacional probablemente necesitará mostrar los precios en la moneda local del comprador. En estos casos será necesario hacer una conversión entre la divisa en la que está el importe del producto y la divisa del usuario con la que realizará el pago. Para hacer la conversión necesitaremos un ratio de conversión reciente entre la divisa origen y la divisa destino del importe o _pivotar_ sobre una divisa entre ambas. Los [ratios se actualizan constantemente cada día](http://www.investopedia.com/ask/answers/08/how-often-to-exchange-rates-fluctuate.asp) según diversos factores variando ligeramente su cotización en la economía global. En este artículo presentaré [Open Exchange Rates](https://openexchangerates.org), el mejor servicio de ratios de divisas que he encontrado.
 

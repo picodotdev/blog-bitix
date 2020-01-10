@@ -15,7 +15,7 @@ summary: "Las tecnologías para desarrollar una aplicación son un medio para re
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Hace 4 años escribí un [artículo comentando que tecnologías eligiría][elblogdepicodev-62] para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.
 

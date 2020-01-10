@@ -15,7 +15,7 @@ summary: "En vez de usar el botón derecho de ratón y hacer clic sobre el menú
 
 {{% post %}}
 
-{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="gnu.svg" title2="GNU" width2="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" >}}
 
 Usar una combinación de teclas para realizar alguna acción es más rápido que usar el ratón. Si se trata de una acción que realizamos frecuentemente podemos ahorrar bastante tiempo. Yo trabajo bastante con la terminal de GNOME y hasta ahora no sabía cómo copiar y pegar con una combinación de teclas del teclado.
 

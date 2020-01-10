@@ -14,7 +14,7 @@ tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 
 {{% post %}}
 
-{{< logotype image1="flatpak.svg" title1="Flatpak" width1="300" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="flatpak.svg" title1="Flatpak" width1="300" image2="linux.svg" >}}
 
 Las distribuciones GNU/Linux son la recolección de cantidad de programas de software libre, cientos o miles, con una garantía de que funcionan correctamente en esa distribución y que facilita a los usuarios una fácil utilización. Hay múltiples distribuciones GNU/Linux con diferentes intereses ya sean generalistas como [Ubuntu][ubuntu], [Fedora][fedora], [Debian][debian], [Arch Linux][archlinux], [elementary][elementary], [openSUSE][opensuse] entre las más populares y otras especializadas en propósitos más específicos para servidor con [RHEL][rhel], [CentOS][centos], [Zentyal] o [Alpine][alpine-linux], para equipos con pocos recursos como [Puppy][puppylinux] o [Tiny Core][tinycorelinux], seguridad y privacidad como [Tails][tails] o sin componentes privativos como [Trisquel][trisquel].
 

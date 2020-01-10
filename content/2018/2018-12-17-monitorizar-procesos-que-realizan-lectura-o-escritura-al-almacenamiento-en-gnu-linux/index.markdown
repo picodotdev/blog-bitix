@@ -14,7 +14,7 @@ tags: ["gnu-linux", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="linux" width2="200" image3="firefox.svg" title3="Firefox" width3="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" image3="firefox.svg" >}}
 
 Hoy día los precios de los SSD son asequibles y a cada mes que pasa su coste por GB se reduce de forma significativa, son mucho más rápidos que un disco duro mecánico y es una de las mejores mejoras que se le pueden hacer a un ordenador para aumentar el rendimiento si el problema es la tasa de transferencia del almacenamiento. El sistema se inicia mucho más rápido, en segundos en vez de minutos, y las aplicaciones también tardan mucho menos en cargarse. Cambiar a un SSD significa aumentar el rendimiento notablemente y parecer que se tiene equipo nuevo.
 

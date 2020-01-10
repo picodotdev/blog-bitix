@@ -14,7 +14,7 @@ summary: "JMS es una especificación de Java que define en esta plataforma una f
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 [La plataforma Java EE](https://en.wikipedia.org/wiki/Java_Platform,_Enterprise_Edition) (Java Enterprise Edition) pone a disposición de los desarrolladores varias especificaciones, estas especificaciones describen las funcionalidades y la API que deben proporcionar las implementaciones y proporcionan al desarrollador herramientas para facilitar, hacer mejor las aplicaciones y de forma estándar según estas especificaciones. Haciendo uso de una de estas especificaciones es posible cambiar de una implementación a otra de forma transparente y sin modificar ninguna línea de código de la aplicación (en teoría). Hay especificaciones para persistencia en base de datos (JPA), para transaccionalidad (JTA), para servicios web (JAX-WS ) y REST (JAX-RS) entre otras. En el siguiente enlace puede encontrarse el [listado completo de especificaciones y sus versiones de JEE 7](https://glassfish.java.net/downloads/ri/).
 

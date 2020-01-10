@@ -16,7 +16,7 @@ summary: "Las páginas grandes y con muchos recursos como imágenes e _iframes_ 
 
 {{% post %}}
 
-{{< logotype image1="firefox.svg" title1="Firefox" width1="200" image2="chromium.svg" title2="Chromium" width2="200" >}}
+{{< logotype image1="firefox.svg" image2="chromium.svg" title2="Chromium" width2="200" >}}
 
 El tiempo de carga de una página web es una métrica importante para una buena experiencia de usuario, es una métrica evaluada por _PageSpeed_ y también de cara al posicionamiento en los buscadores o SEO ya que influye en la fórmula que usa Google para clasificar y posicionar las páginas en la página de resultados de búsqueda, un buen posicionamiento en los buscadores es importante porque significa más visitas a una web que en muchos casos es la mayor fuente de usuarios. Un tiempo de carga alto hace que los usuarios abandonen la página antes de que esté cargada completamente, influyendo en el porcentaje de rebote y el tiempo de visita que se puede medir con [Google Analytics][google-analytics].
 

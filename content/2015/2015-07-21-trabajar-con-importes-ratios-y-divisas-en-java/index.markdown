@@ -16,7 +16,7 @@ summary: "Aún en Java 8 no tenemos una API incluida en el JDK dedicada al manej
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Las aplicaciones de comercio electrónico o que realizan operaciones financieras con importes seguro que necesitan una forma de representar un importe junto con una divisa. También si necesitan convertir importes en diferentes divisas necesitarán obtener los ratios de conversión de alguna fuente, en el artículo [Servicio para obtener ratios de conversión entre divisas][blogbitix-85] comentaba uno que podemos usar, [Open Exchange Rates](https://openexchangerates.org/). Java incluye clases para datos numéricos y con ellos se pueden representar importes como por ejemplo [BigDecimal](javadoc8:java/math/BigDecimal.html). Para importes no debemos usar en ningún caso un tipo de dato _float_ o _double_ ya que estos son incapaces de representar ciertos valores de forma exacta, usando [_float_ y _double_ tendremos errores de precisión, redondeo y representación][elblogdepicodev-89]. En vez de crear un nuevo tipo de datos (una clase) que tenga como propiedades un BigDecimal para el importe y un String o similar para representar la divisa además de implementar las varias operaciones aritméticas y de comparación entre otras muchas cosas que necesitaremos podemos usar la librería que la [especificación JSR-354](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/asciidoc/JavaMoneySpecification.adoc) proporciona una API dedicada a importes y divisas en Java. En Java 8 no se incluyó pero en una futura versión quizá si se incluya en el propio JDK. En este artículo comentaré como usando Java 8 podemos hacer uso de esta API desde ya y que ofrece.
 

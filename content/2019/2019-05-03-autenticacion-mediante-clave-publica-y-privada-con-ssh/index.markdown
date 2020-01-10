@@ -14,7 +14,7 @@ tags: ["gnu-linux", "planeta-codigo", "seguridad"]
 
 {{% post %}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" >}}
 
 Una de las formas más comunes de autenticar a un usuario, comprobar que un usuario es quien dice ser, es mediante un usuario y contraseña. Contraseña que (en principio) solo conoce el usuario por lo que si este proporciona la correcta se determina que es quien dice ser. Sin embargo, las contraseñas son débiles si no incluyen letras en mayúsculas y minúsculas, números y símbolos pero también difíciles de recordar agravado porque en cada servicio se debería usar una diferente para impedir que ante el descubrimiento de una no sea posible acceder a todos los otros servicios donde se usase la misma.
 

@@ -16,7 +16,7 @@ summary: "Recibidas nuevas transferencias de Google y Amazon por la publicidad A
 
 {{% post %}}
 
-{{< logotype image1="firefox.svg" title1="Firefox" width1="200" image2="wikipedia.svg" title2="Wikipedia" width2="200" >}}
+{{< logotype image1="firefox.svg" image2="wikipedia.svg" title2="Wikipedia" width2="200" >}}
 
 En diciembre de 2015 escribía un [artículo sobre la primera donación económica][blogbitix-117] que hacía un proyecto de software libre. En esa primera donación compré un par de camisetas a la [Free Software Foundation Europe][fsfe] o FSFE. Pasados ocho nuevos meses desde entonces me llegó una nueva transferencia de Google por la publicidad AdSense que incluyo en esta bitácora de alrededor de 80€, hace unos meses recibí otra por los enlaces de afiliado de Amazon que en este caso fue de alrededor de 25€. Como la bitácora no me genera ningún tipo de gasto ni para el hospedaje ni para el dominio (salvo buena parte de mi tiempo, que no es poco) me planteo hacer una nueva donación a algún proyecto o algunos proyectos.
 

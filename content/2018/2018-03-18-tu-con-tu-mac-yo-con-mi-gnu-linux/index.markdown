@@ -15,7 +15,7 @@ tags: ["apple", "gnu-linux", "microsoft", "opinion", "planeta-codigo", "windows"
 
 {{% post %}}
 
-{{< logotype image1="macos.svg" title1="macOS" width1="300" image2="windows-10.svg" title2="Windows" width2="350" image3="gnu.svg" title3="GNU" width3="200" image4="linux.svg" title4="Linux" width4="200" >}}
+{{< logotype image1="macos.svg" title1="macOS" width1="300" image2="windows-10.svg" title2="Windows" width2="350" image3="gnu.svg" image4="linux.svg" >}}
 
 Por motivos laborales y por política de la empresa tuve que elegir como equipo un portátil de [Apple][apple], en concreto un MacBook Pro con procesador Intel Core i5, 16 GiB de memoria y 512 GiB de almacenamiento SSD. Prácticamente el mejor portátil que había en su momento en el catálogo de la manzana que tendría un precio seguro más de 2000€ y quizá 2500€. Este cambio me ha permitido poder comparar con mi propio portátil, un Sony Vaio con procesador Intel Core i5 3210, 8 GiB de memoria y 250 GiB de almacenamiento SSD y la distribución [Arch Linux][archlinux] de [GNU][gnu]/[Linux][linux].
 

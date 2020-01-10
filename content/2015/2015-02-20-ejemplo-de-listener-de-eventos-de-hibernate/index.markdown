@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 En alguna ocasión puede que tengamos la necesidad de realizar alguna acción cuando una entidad es guardada en base de datos, actualizada, eliminada, cargada, ... . Algunos casos de uso pueden ser:
 

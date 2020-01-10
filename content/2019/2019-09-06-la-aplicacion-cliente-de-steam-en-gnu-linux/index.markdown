@@ -17,7 +17,7 @@ summary: "Durante unos años he estado sin jugar a juegos porque al haberme pasa
 
 {{% post %}}
 
-{{< logotype image1="steam.svg" title1="Steam" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="steam.svg" title1="Steam" width1="200" image2="linux.svg" >}}
 
 La plataforma de juegos [Steam][steam] es una de las más populares. Con su cliente de juegos es posible comprar, descargar e instalar juegos para tanto para Windows, macOS y también para [GNU][gnu]/[Linux][linux]. Steam y [Valve][valve] han posibilitado que se puedan jugar a varios juegos triple A en GNU/Linux, Valve se está esforzando para que muchos juegos sean jugables en la plataforma del pingüino.
 

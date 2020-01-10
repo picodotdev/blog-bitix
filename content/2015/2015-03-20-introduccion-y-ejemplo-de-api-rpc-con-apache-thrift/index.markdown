@@ -13,7 +13,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Las aplicaciones están pasando de ser elementos aislados, grandes y monolíticos a ser desarrolladas como varios microservicios que colaboran entre si para en conjunto ofrecer la funcionalidad deseada. Aunque los microservicios presentan sus propias problemáticas resuelven algunas que poseen los sistemas monolíticos, entre algunas de sus caracteríticas deseables están: mayor cohesión, menor acoplamiento, menor tamaño, mayor independencia de la tecnología usando la más adecuada en cada situación, más fácilmente reemplazables y despliegues más sencillos. También, la funcionalidad ofrecida por una aplicación puede quererse consumirse desde otra aplicación surgiendo de esta forma una API. Para ofrecer una API de una aplicación que pueda consumirse internamente, desde diferentes dispositivos o por terceras partes podemos usar [SOAP][soap] o [REST][rest] pero también han surgido algunas alternativas como [Apache Thrift][thrift] supliendo algunas carencias de las anteriores aún basándose en el mismo concepto de llamada a código en una máquina remota (Remote Procedure Call, [RPC][rpc]) ya visto en algunas opciones más antiguas como la misma SOAP, [RMI][rmi] o [CORBA][corba]. En este artículo explicaré algunas diferencias entre SOAP, REST y Apache Thrift y mostraré un ejemplo sencillo con código de cómo empezar a usar Apache Thrift.
 

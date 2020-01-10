@@ -16,7 +16,7 @@ summary: "jOOQ no proporciona la misma transparencia de acceso a una base de dat
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Una de las facilidades que proporciona la librería de persistencia [Hibernate] usada ampliamente en aplicaciones Java como buen <abbr title="Object/Relational Mapping">ORM</abbr> es la navegación de las relaciones a través de los métodos del modelo de objetos de forma transparente a las consultas SQL que se necesiten lanzar a la base de datos para ir obteniendo los resultados. Sin embargo, pensar únicamente en este modelo orientado a objetos o abusar de él sin tener en cuenta el número de consultas SQL que estamos realizando al modelo relacional provocará que la aplicación sea lenta, poco eficiente y sobrecargue el servidor de base de datos. Como ejemplo usando un ORM es habitual provocar un [problema de N+1 o 1+N que deberemos detectar][blogbitix-26] y corregir.
 

@@ -15,7 +15,7 @@ summary: "La octava versión de Java añade numerosas novedades importantes al l
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 El 18 de marzo de 2014 se publicó la nueva versión de la plataforma [Java 8](https://www.oracle.com/technetwork/java/javase/overview/java8-2100321.html), Java 7 fue liberada el en julio de 2011. Java 8 incorpora varias novedades siguiendo la tendencia de otros lenguajes como _lambdas_ o _closures_ o una demandada nueva API para el manejo de fechas entre otras muchas características más. La [lista completa de novedades](http://openjdk.java.net/projects/jdk8/features) es bastante amplia, a continuación pondré lo que me ha parecido más destacable:
 

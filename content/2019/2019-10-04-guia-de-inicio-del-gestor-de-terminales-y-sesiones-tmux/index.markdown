@@ -15,7 +15,7 @@ summary: "Las personas que usan de forma intensiva la terminal seguramente usand
 
 {{% post %}}
 
-{{< logotype image1="gnu.svg" title1="GNU" width1="200" image2="linux.svg" title2="Linux" width2="200" >}}
+{{< logotype image1="gnu.svg" image2="linux.svg" >}}
 
 Las terminales gráficas como [GNOME][gnome] Terminal y [KDE][kde] Konsole soportan pestañas e incluso desde un entorno gráfico en GNU/Linux están disponibles según la distribución varias terminales de texto accesibles con la combinación de teclas <kbd>Ctrl+Alt+F3</kbd> y <kbd>Ctrl+Alt+F4</kbd>, con <kbd>Ctrl+Alt+F2</kbd> se puede retornar a la interfaz gráfica. Sin embargo, ninguna de estas opciones permite dividir la misma terminal en varias ventanas o paneles para realizar operaciones y ver los resultados al mismo tiempo. Por otro lado cuando realizamos una sesión SSH y esta finaliza o termina abruptamente por un fallo en la conexión los procesos que se hayan iniciado desde ella son terminados lo que es especialmente grave si se está realizando una operación importante que puede ocasionar problemas.
 

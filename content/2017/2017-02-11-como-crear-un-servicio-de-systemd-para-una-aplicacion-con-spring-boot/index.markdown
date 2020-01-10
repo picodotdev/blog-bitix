@@ -14,7 +14,7 @@ summary: "La mayoría de distribuciones Linux ya usan systemd como gestor y supe
 
 {{% post %}}
 
-{{< logotype image1="linux.svg" title1="Linux" width1="200" image2="java.svg" >}}
+{{< logotype image1="linux.svg" image2="java.svg" >}}
 
 Habiendo creado una aplicación o microservicio, por ejemplo con [Spring Boot][spring-boot], necesitaremos que se inicie con el sistema y una forma de gestionarlo para detenerlo, reiniciarlo y que se reinicie en caso de salida abrupta.
 

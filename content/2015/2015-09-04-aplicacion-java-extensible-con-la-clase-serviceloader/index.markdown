@@ -14,7 +14,7 @@ summary: "Java ofrece un mecanismo incluido en el propio JDK para hacer las apli
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 Puede que al desarrollar una aplicación necesitamos que esta sea extensible, esto significa que en el momento de desarrollo no conocemos las implementaciones de un determinado servicio que se proporcionarán en un futuro. Un servicio no es más que la implementación de una determinada interfaz que definimos en el momento de desarrollo. Java con la clase [ServiceLoader](javadoc8:java/util/ServiceLoader.html) proporciona un mecanismo estándar e incorporado en el JDK para cargar servicios con alguna propiedad interesante.
 

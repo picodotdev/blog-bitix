@@ -18,7 +18,7 @@ series: ["juegos"]
 
 {{% post %}}
 
-{{< logotype image1="wine.svg" title1="Wine" width1="200" image2="blizzard.svg" title2="Blizzard" width2="300" image3="linux.svg" title3="Linux" width3="200" >}}
+{{< logotype image1="wine.svg" title1="Wine" width1="200" image2="blizzard.svg" title2="Blizzard" width2="300" image3="linux.svg" >}}
 
 Desde el año 2008 que llevo utilizando [GNU][gnu]/[Linux][linux] como único sistema operativo en mi equipo para todas las tareas que realizo nunca me he planteado jugar a juegos de primera linea o triple A. No por que no se pudiese sino porque GNU/Linux nunca ha sido considerado una opción para estos juegos, [hay juegos sí y algunos buenos][blogbitix-serie-juegos] pero la mayoría de los comerciales se desarrollan para ejecutarse en [Windows][windows] o como mucho en [macOS][macos] y yo ni siquiera me lo había planteado.
 

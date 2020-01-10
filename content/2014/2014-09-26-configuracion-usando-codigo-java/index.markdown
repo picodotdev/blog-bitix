@@ -13,7 +13,7 @@ tags: ["programacion", "java", "planeta-codigo"]
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 En las dos últimas entradas he explicado [como compilar un archivo de código fuente Java desde una aplicación][blogbitix-42] y como cargar esa clase compilada de forma dinámica para ser utilizada en un programa, la segunda entrada trataba el [como monitorizar un directorio o archivo para ver si han tenido cambios][blogbitix-43] con la nueva API que a partir de Java 7 disponemos.
 

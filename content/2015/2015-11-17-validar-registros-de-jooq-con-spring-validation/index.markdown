@@ -16,7 +16,7 @@ summary: "jOOQ es una alternativa a Hibernate que devuelve la base de datos a pr
 
 {{% post %}}
 
-{{< logotype image="java.svg" title="Java" width="200" >}}
+{{< logotype image="java.svg" >}}
 
 En la documentación de [jOOQ][jooq] no he encontrado nada referente a cómo realizar validaciones antes de guardar los datos en la base de datos. Pero con la herramienta de generación se puede indicar que las clases Java generadas se anoten con las anotaciones de validación de la especificación JSR-303 según las restricciones encontradas en la base de datos. Las clases contendrán validaciones básicas como [@NotNull](https://docs.oracle.com/javaee/7/api/javax/validation/constraints/NotNull.html) o [@Size](https://docs.oracle.com/javaee/7/api/javax/validation/constraints/Size.html) pero no he visto nada más allá de estas simples validaciones. Si tenemos validaciones dependientes entre campos o más complejas como una expresión regular necesitaremos algo más.
 

@@ -7,11 +7,11 @@
 {{ if eq $logtypesinfo nil }}{{ errorf "Missing logotypes info: %s" .Position }}{{ end }}
 {{ $defaultdict := (dict "" nil) }}
 
-{{ $image := cond (eq .Params.image nil) "" .Params.image }}
-{{ $image1 := cond (eq .Params.image1 nil) "" .Params.image1 }}
-{{ $image2 := cond (eq .Params.image2 nil) "" .Params.image2 }}
-{{ $image3 := cond (eq .Params.image3 nil) "" .Params.image3 }}
-{{ $image4 := cond (eq .Params.image4 nil) "" .Params.image4 }}
+{{ $image := .Params.image }}
+{{ $image1 := .Params.image1 }}
+{{ $image2 := .Params.image2 }}
+{{ $image3 := .Params.image3 }}
+{{ $image4 := .Params.image4 }}
 {{ $info := index (default $defaultdict $logtypesinfo) (default "" $image) }}
 {{ $info1 := index (default $defaultdict $logtypesinfo) (default "" $image1) }}
 {{ $info2 := index (default $defaultdict $logtypesinfo) (default "" $image2) }}
@@ -33,11 +33,11 @@
 {{ $defaulttitle3 := index (default $defaultdict $info3) "defaulttitle" }}
 {{ $defaulttitle4 := index (default $defaultdict $info4) "defaulttitle" }}
 
-{{ $title := default $defaulttitle .Params.title }}
-{{ $title1 := default $defaulttitle1 .Params.title1 }}
-{{ $title2 := default $defaulttitle2 .Params.title2 }}
-{{ $title3 := default $defaulttitle3 .Params.title3 }}
-{{ $title4 := default $defaulttitle4 .Params.title4 }}
+{{ $title := cond (isset .Params "title") .Params.title $defaulttitle }}
+{{ $title1 := cond (isset .Params "title1") .Params.title1 $defaulttitle1 }}
+{{ $title2 := cond (isset .Params "title2") .Params.title2 $defaulttitle2 }}
+{{ $title3 := cond (isset .Params "title3") .Params.title3 $defaulttitle3 }}
+{{ $title4 := cond (isset .Params "title4") .Params.title4 $defaulttitle4 }}
 
 {{ $imagewidth := default $defaultwidth .Params.width }}
 {{ $imagewidth1 := default $defaultwidth1 .Params.width1 }}
@@ -61,49 +61,49 @@
 {{ $style3 := print " style=\"min-width: " $imagewidth3 "px;\"" }}
 {{ $style4 := print " style=\"min-width: " $imagewidth4 "px;\"" }}
 
-{{ if and .Params.image (eq $proportion nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image .Position }}{{ end }}
-{{ if and .Params.image1 (eq $proportion1 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image1 .Position }}{{ end }}
-{{ if and .Params.image2 (eq $proportion2 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image2 .Position }}{{ end }}
-{{ if and .Params.image3 (eq $proportion3 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image3 .Position }}{{ end }}
-{{ if and .Params.image4 (eq $proportion4 nil) }}{{ errorf "Missing image proportion '%s': %s" .Params.image4 .Position }}{{ end }}
-{{ if and .Params.image (eq $width nil) }}{{ errorf "Missing defaultwidth or width '%s': %s" .Params.image .Position }}{{ end }}
-{{ if and .Params.image1 (eq $width1 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image1 .Position }}{{ end }}
-{{ if and .Params.image2 (eq $width2 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image2 .Position }}{{ end }}
-{{ if and .Params.image3 (eq $width3 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image3 .Position }}{{ end }}
-{{ if and .Params.image4 (eq $width4 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" .Params.image4 .Position }}{{ end }}
-{{ if and .Params.image (eq $title nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image .Position }}{{ end }}
-{{ if and .Params.image1 (eq $title1 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image1 .Position }}{{ end }}
-{{ if and .Params.image2 (eq $title2 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image2 .Position }}{{ end }}
-{{ if and .Params.image3 (eq $title3 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image3 .Position }}{{ end }}
-{{ if and .Params.image4 (eq $title4 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" .Params.image4 .Position }}{{ end }}
+{{ if and $image (eq $proportion nil) }}{{ errorf "Missing image proportion '%s': %s" $image .Position }}{{ end }}
+{{ if and $image1 (eq $proportion1 nil) }}{{ errorf "Missing image proportion '%s': %s" $image1 .Position }}{{ end }}
+{{ if and $image2 (eq $proportion2 nil) }}{{ errorf "Missing image proportion '%s': %s" $image2 .Position }}{{ end }}
+{{ if and $image3 (eq $proportion3 nil) }}{{ errorf "Missing image proportion '%s': %s" $image3 .Position }}{{ end }}
+{{ if and $image4 (eq $proportion4 nil) }}{{ errorf "Missing image proportion '%s': %s" $image4 .Position }}{{ end }}
+{{ if and $image (eq $width nil) }}{{ errorf "Missing defaultwidth or width '%s': %s" $image .Position }}{{ end }}
+{{ if and $image1 (eq $width1 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" $image1 .Position }}{{ end }}
+{{ if and $image2 (eq $width2 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" $image2 .Position }}{{ end }}
+{{ if and $image3 (eq $width3 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" $image3 .Position }}{{ end }}
+{{ if and $image4 (eq $width4 nil) }}{{ errorf "Missing defaultwidth or width width '%s': %s" $image4 .Position }}{{ end }}
+{{ if and $image (eq $title nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" $image .Position }}{{ end }}
+{{ if and $image1 (eq $title1 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" $image1 .Position }}{{ end }}
+{{ if and $image2 (eq $title2 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" $image2 .Position }}{{ end }}
+{{ if and $image3 (eq $title3 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" $image3 .Position }}{{ end }}
+{{ if and $image4 (eq $title4 nil) }}{{ errorf "Missing image defaulttitle or title '%s': %s" $image4 .Position }}{{ end }}
 
-{{ with .Params.image }}
+{{ with $image }}
 <div class="logotypes"{{ $style | safeHTMLAttr }}>
 
-![](url=logotype:{{ . }},size={{ $width }}x{{ $height }},gallery=false,layout=responsive "{{ $.Params.title }}")
+![](url=logotype:{{ . }},size={{ $width }}x{{ $height }},gallery=false "{{ $title }}")
 </div>
 {{ end }}
-{{ with .Params.image1 }}
+{{ with $image1 }}
 <div class="logotypes"{{ $style1 | safeHTMLAttr }}>
 
-![](url=logotype:{{ . }},size={{ $width1 }}x{{ $height1 }},gallery=false,layout=responsive "{{ $.Params.title1 }}")
+![](url=logotype:{{ . }},size={{ $width1 }}x{{ $height1 }},gallery=false "{{ $title1 }}")
 </div>
 {{ end }}
-{{ with .Params.image2 }}
+{{ with $image2 }}
 <div class="logotypes"{{ $style2 | safeHTMLAttr }}>
 
-![](url=logotype:{{ . }},size={{ $width2 }}x{{ $height2 }},gallery=false,layout=responsive "{{ $.Params.title2 }}")
+![](url=logotype:{{ . }},size={{ $width2 }}x{{ $height2 }},gallery=false "{{ $title2 }}")
 </div>
 {{ end }}
-{{ with .Params.image3 }}
+{{ with $image3 }}
 <div class="logotypes"{{ $style3 | safeHTMLAttr }}>
 
-![](url=logotype:{{ . }},size={{ $width3 }}x{{ $height3 }},gallery=false,layout=responsive "{{ $.Params.title3 }}")
+![](url=logotype:{{ . }},size={{ $width3 }}x{{ $height3 }},gallery=false "{{ $title3 }}")
 </div>
 {{ end }}
-{{ with .Params.image4 }}
+{{ with $image4 }}
 <div class="logotypes"{{ $style4 | safeHTMLAttr }}>
 
-![](url=logotype:{{ . }},size={{ $width4 }}x{{ $height4 }},gallery=false,layout=responsive "{{ $.Params.title4 }}")
+![](url=logotype:{{ . }},size={{ $width4 }}x{{ $height4 }},gallery=false "{{ $title4 }}")
 </div>
 {{ end }}
