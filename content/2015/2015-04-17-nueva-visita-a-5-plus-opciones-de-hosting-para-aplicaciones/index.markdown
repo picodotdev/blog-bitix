@@ -26,7 +26,7 @@ Con esta opción tendremos un control total del _software_ instalado sin ninguna
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/raspberrypi.svg" optionsthumb1="137x168" title1="Raspberry Pi" >}}
+    image1="logotype:raspberrypi.svg" optionsthumb1="137x168" title1="Raspberry Pi" >}}
 
 ### Proveedor de _hosting_
 
@@ -48,9 +48,9 @@ En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, 
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/amazon-web-services.png" optionsthumb1="268x118" title1="Amazon Web Services"
-    image2="asset:assets/images/logotypes/microsoft-azure.png" optionsthumb2="218x118" title2="Microsoft Azure"
-    image3="asset:assets/images/logotypes/google-cloud.png" optionsthumb3="401x66" title3="Google Cloud" >}}
+    image1="logotype:amazon-web-services.png" optionsthumb1="268x118" title1="Amazon Web Services"
+    image2="logotype:microsoft-azure.png" optionsthumb2="218x118" title2="Microsoft Azure"
+    image3="logotype:google-cloud.png" optionsthumb3="401x66" title3="Google Cloud" >}}
 
 ### Linode, Digital Ocean
 
@@ -60,8 +60,8 @@ Estas opciones son totalmente válidas tanto para proyectos personales como un b
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/linode.png" optionsthumb1="268x117" title1="Linode"
-    image2="asset:assets/images/logotypes/digital-ocean.png" optionsthumb2="218x144" title2="Digital Ocean" >}}
+    image1="logotype:linode.png" optionsthumb1="268x117" title1="Linode"
+    image2="logotype:digital-ocean.png" optionsthumb2="218x144" title2="Digital Ocean" >}}
 
 ### Otras
 

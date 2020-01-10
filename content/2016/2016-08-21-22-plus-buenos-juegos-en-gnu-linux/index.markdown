@@ -62,7 +62,7 @@ Carreras. Torcs es un juego de simulación de carreras con gráficos 3D. [Sitio 
 Carreras. Otro juego de simulación de conducción. [Sitio web](http://vdrift.net/)
 
 
-{{< youtube video="ziUSi5ApD6w?list=PL39564EDB4B815C2D" >}}
+{{< youtube video="ziUSi5ApD6w" >}}
 
 ### Supertux Kart
 Carreras. Similar al [Mario Kart](https://es.wikipedia.org/wiki/Super_Mario_Kart) pero ambientado con los personajes del mundo Tux. Es un juego de carreras con múltiples circuitos, personajes y modos de juego. Es un juego con la intención de ser divertido para todas las edades más que realista. Se puede jugar contra la computadora y otros jugadores. [Sitio web](https://supertuxkart.net/Main_Page)

@@ -27,7 +27,7 @@ Aunque la distribución [GNU][gnu]/[Linux][linux] que uso es [Arch Linux][archli
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/elementary.svg" optionsthumb1="200x200" title1="Elementary OS" >}}
+    image1="logotype:elementary.svg" optionsthumb1="200x200" title1="Elementary OS" >}}
 
 ### Libre Office
 
@@ -35,7 +35,7 @@ LibreOffice es el proyecto ofimático que se postula como una de las mejores alt
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/libreoffice.svg" optionsthumb1="350x350" title1="LibreOffice" >}}
+    image1="logotype:libreoffice.svg" optionsthumb1="350x350" title1="LibreOffice" >}}
 
 ### Arch Linux ARM
 
@@ -43,7 +43,7 @@ El tercer proyecto al que he donado ha sido a Arch Linux ARM ya que lo uso en la
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/archlinuxarm.svg" optionsthumb1="350x350" title1="Arch Linux ARM" >}}
+    image1="logotype:archlinuxarm.svg" optionsthumb1="350x350" title1="Arch Linux ARM" >}}
 
 ### Comprobantes de las donaciones
 

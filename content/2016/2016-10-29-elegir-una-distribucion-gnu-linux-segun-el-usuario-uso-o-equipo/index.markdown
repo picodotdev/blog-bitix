@@ -25,17 +25,17 @@ Dado que en GNU/Linux hay muchas distribuciones un nuevo usuario puede sentirse 
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/ubuntu.svg" optionsthumb1="100x100" title1="Ubuntu"
-    image2="asset:assets/images/logotypes/opensuse.svg" optionsthumb2="100x100" title2="openSUSE"
-    image3="asset:assets/images/logotypes/debian.svg" optionsthumb3="100x100" title3="Debian" >}}
+    image1="logotype:ubuntu.svg" optionsthumb1="100x100" title1="Ubuntu"
+    image2="logotype:opensuse.svg" optionsthumb2="100x100" title2="openSUSE"
+    image3="logotype:debian.svg" optionsthumb3="100x100" title3="Debian" >}}
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/archlinux.svg" optionsthumb1="100x100" title1="Arch Linux"
-    image2="asset:assets/images/logotypes/fedora.svg" optionsthumb2="100x100" title2="Fedora"
-    image3="asset:assets/images/logotypes/elementary.svg" optionsthumb3="100x100" title3="Elementary OS" >}}
+    image1="logotype:archlinux.svg" optionsthumb1="100x100" title1="Arch Linux"
+    image2="logotype:fedora.svg" optionsthumb2="100x100" title2="Fedora"
+    image3="logotype:elementary.svg" optionsthumb3="100x100" title3="Elementary OS" >}}
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/trisquel.svg" optionsthumb1="100x" title1="Trisquel"
+    image1="logotype:trisquel.svg" optionsthumb1="100x100" title1="Trisquel"
     caption="Logotipos de varias de las distribuciones GNU/Linux más importantes y usadas" >}}
 
 Esta categorización que he hecho es general y muchos usuarios avanzados usan distribuciones que en esta categorización incluyo como para usuarios nuevos. Algunas distribuciones publican nuevas versiones cada seis meses o versiones más estables cada dos años con soporte durante mayor periodo de tiempo como Ubuntu y sus <abbr title="Long Term Support">LTS</abbr>. Algunas otras distribuciones se califican como en continua actualización o _rolling release_ que no siguen un calendario de publicaciones en las que en cada actualización completa del sistema se tiene la última versión disponible de cada paquete y programas. Algunas categorías y distribuciones son las siguientes:

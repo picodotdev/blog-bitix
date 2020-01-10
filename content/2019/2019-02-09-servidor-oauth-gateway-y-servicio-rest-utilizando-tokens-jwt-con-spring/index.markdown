@@ -38,8 +38,8 @@ Los servicios los mantengo separados ya que al combinarlos pueden surgir problem
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/oauth.svg" optionsthumb1="200x200" title1="OAuth"
-    image2="asset:assets/images/logotypes/jwt.svg" optionsthumb2="318x168" title2="JWT" >}}
+    image1="logotype:oauth.svg" optionsthumb1="200x200" title1="OAuth"
+    image2="logotype:jwt.svg" optionsthumb2="318x168" title2="JWT" >}}
 
 ### Servidor OAuth
 

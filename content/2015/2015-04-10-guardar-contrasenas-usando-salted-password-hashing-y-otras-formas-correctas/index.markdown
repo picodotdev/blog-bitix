@@ -27,7 +27,7 @@ Con _Salted Password Hashing_ el uso de _rainbow tables_ que aceleren el ataque 
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/java.svg" optionsthumb1="127x218" title1="Java" >}}
+    image1="logotype:java.svg" optionsthumb1="127x218" title1="Java" >}}
 
 ### Ejemplo de _Salted Password Hashing_ usando Apache Shiro
 

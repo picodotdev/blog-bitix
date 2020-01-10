@@ -96,8 +96,8 @@ Probablemente ya conozcas el software libre, o quizá no, en cualquier caso te r
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/gnu.svg" optionsthumb1="200x200" title1="GNU"
-    image2="asset:assets/images/logotypes/linux.svg" optionsthumb2="200x200" title2="Linux" >}}
+    image1="logotype:gnu.svg" optionsthumb1="200x200" title1="GNU"
+    image2="logotype:linux.svg" optionsthumb2="200x200" title2="Linux" >}}
 
 ### Libros y novelas
 

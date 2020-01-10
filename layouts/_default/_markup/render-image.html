@@ -35,11 +35,11 @@
 
   {{- if eq $binding "logotype" -}}
     {{- $src = print "assets/images/logotypes/" $image | relURL -}}
-    {{- $srcthumb = cond (eq $imagethumb nil) nil (print "assets/images/logotypes/" $imagethumb) | relURL -}}
+    {{- $srcthumb = cond (eq $imagethumb nil) $src (print "assets/images/logotypes/" $imagethumb | relURL) -}}
   {{- else if eq $binding "resource" -}}
     {{- if (findRE "\\.svg$|\\.webp$" $image) -}}
       {{- $src = print "images/" $image -}}
-      {{- $srcthumb = cond (eq $imagethumb nil) nil (print "images/" $imagethumb) -}}
+      {{- $srcthumb = cond (eq $imagethumb nil) $image (print "images/" $imagethumb) -}}
     {{- else -}}
       {{- $resource := .Page.Resources.GetMatch (print "images/" $image) -}}
       {{- $resourcethumb := .Page.Resources.GetMatch (print "images/" $image) -}}
@@ -75,7 +75,7 @@
     {{- end -}}
   {{- else if eq $binding "asset" -}}
     {{- $src = $image | relURL -}}
-    {{- $srcthumb = $imagethumb | relURL -}}
+    {{- $srcthumb = cond (eq $imagethumb nil) $src (print "assets/images/logotypes/" $imagethumb | relURL) -}}
   {{- end -}}
 {{- else -}}
   {{- errorf "Malformed image destination '%s'" .Destination -}}

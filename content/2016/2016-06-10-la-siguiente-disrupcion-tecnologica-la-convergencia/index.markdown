@@ -21,9 +21,9 @@ De las disrupciones que estoy hablando son las cambian significativamente la tec
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/microsoft.svg" optionsthumb1="300x200" title1="Microsoft"
-    image2="asset:assets/images/logotypes/apple.svg" optionsthumb2="300x200" title1="Apple"
-    image3="asset:assets/images/logotypes/linux.svg" optionsthumb3="300x200" title1="Linux" >}}
+    image1="logotype:microsoft.svg" optionsthumb1="300x200" title1="Microsoft"
+    image2="logotype:apple.svg" optionsthumb2="300x200" title1="Apple"
+    image3="logotype:linux.svg" optionsthumb3="300x200" title1="Linux" >}}
 
 ¿Cuál será la siguiente disrupción? Hacer cábalas sobre futuro es difícil y suele ser más propio del inicio de año pero aquí haré mi apuesta y a ver si acierto. En estos momentos hay varias novedosas que pueden cambiar significativamente el mundo de la tecnología una de ellas es la realidad virtual o la realidad aumentada de las _holosens_ de Microsoft, muy de películas futuristas pero incómodas de usar para el usuario ya que requieren gafas en el caso de la realidad virtual que acaparan la visión y las _holosens_ de Microsoft para la realidad aumentada no veo porque no vayan a seguir el mismo camino que las [Google Glass](https://es.wikipedia.org/wiki/Google_Glass), otro proyecto futurista de realidad aumentada es [Google Tango](https://get.google.com/tango/) que será un nuevo ámbito de acción para muchas empresas. De todas la que creo que más temprano que tarde llegará será la convergencia entre dispositivos móviles, tabletas, ordenadores e incluso _smart tv_.
 
@@ -35,8 +35,8 @@ Cuando la diferencia entre el ordenador de escritorio y el dispositivo móvil se
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/intel.svg" optionsthumb1="300x200" title1="Intel"
-    image2="asset:assets/images/logotypes/arm.svg" optionsthumb2="300x200" title2="ARM" >}}
+    image1="logotype:intel.svg" optionsthumb1="300x200" title1="Intel"
+    image2="logotype:arm.svg" optionsthumb2="300x200" title2="ARM" >}}
 
 Intel lo tiene difícil, más [con las recientes noticas del abandono de sus SoCs móviles](https://www.anandtech.com/show/10288/intel-broxton-sofia-smartphone-socs-cancelled), ya que los procesadores ARM son más baratos de fabricar y consumen menos energía lo que los hace más adecuados para los dispositivos móviles, salvo que el histórico Intel se adapte perderá gran parte de su relevancia en el mundo del hardware de cómputo en la misma medida que ARM la gane. Los fabricantes que adaptan los diseños ARM explorarán nuevos campos de mercado que hasta ahora no les era posible acceder. Los mejor posicionados [Qualcomm][qualcomm], [Samsung][samsung] y quizá Nvidia tenga más éxito con sus [procesadores ARM Tegra](https://www.nvidia.es/object/tegra-es.html) y en menor medida [Freescale][Freescale], [Texas Instruments][texas-instruments], [Broadcom][broadcom], y puede que veamos a [AMD][amd] fabricar de forma masiva procesadores con arquitectura ARM en detrimento de _x86-64_, ...
 

@@ -15,4 +15,4 @@
 
 {{- $href = default .Destination $href -}}
 
-<a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | safeHTML }}</a>
+<a href="{{ $href }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>

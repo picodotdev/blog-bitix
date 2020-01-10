@@ -27,7 +27,7 @@ Lo primero que he hecho es comprar unos [mandos similares a los de la antigua Su
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/retroarch.png" optionsthumb1="658x378" title1="RetroArch" >}}
+    image1="logotype:retroarch.png" optionsthumb1="658x378" title1="RetroArch" >}}
 
 Los elementos necesarios para tener tener una consola retro son los siguientes: una [Raspberry Pi][amazon-raspberrypi], un [cargador USB](http://amzn.to/2Cf9Vxp) adecuado, una [tarjeta microSD de 32 GiB](http://amzn.to/2EP9uXX) o más, [dos mandos para consola USB](http://amzn.to/2Cg6035) o un [teclado USB](http://amzn.to/2ou0QHD), un [cable HDMI](http://amzn.to/2sPcjqz) y si se quiere una [caja](http://amzn.to/2Fvtyjy). Por unos 65 € se pueden adquirir los elementos imprescindibles en la tienda de [Amazon][amazon].
 

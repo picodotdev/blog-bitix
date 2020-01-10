@@ -36,14 +36,14 @@ Oracle se ha deshecho muchas de las tecnologías a las que creía no sacar renta
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/java.svg" optionsthumb1="300x200" title1="Java"
-    image2="asset:assets/images/logotypes/solaris.svg" optionsthumb2="300x200" title2="Solaris"
-    image3="asset:assets/images/logotypes/sparc.svg" optionsthumb3="300x200" title3="Sparc" >}}
+    image1="logotype:java.svg" optionsthumb1="300x200" title1="Java"
+    image2="logotype:solaris.svg" optionsthumb2="300x200" title2="Solaris"
+    image3="logotype:sparc.svg" optionsthumb3="300x200" title3="Sparc" >}}
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/libreoffice.svg" optionsthumb1="300x200" title1="LibreOffice"
-    image2="asset:assets/images/logotypes/mysql.svg" optionsthumb2="150x100" title2="MySQL"
-    image3="asset:assets/images/logotypes/virtualbox.svg" optionsthumb3="300x200" title3="VirtualBox" >}}
+    image1="logotype:libreoffice.svg" optionsthumb1="300x200" title1="LibreOffice"
+    image2="logotype:mysql.svg" optionsthumb2="150x100" title2="MySQL"
+    image3="logotype:virtualbox.svg" optionsthumb3="300x200" title3="VirtualBox" >}}
 
 En el artículo [The Java Saga](https://www.wired.com/1995/12/java-saga/) se comentan varios aspectos importantes de Java como que inicialmente este lenguaje estaba orientado a la electrónica donde la fiabilidad es más importante que la rapidez, C++ no era lo suficientemente fiable para lo que Gosling tenía en mente. Diseñaron la primera tableta electrónica, aún así pasa a ser la base de la emergente web para hacerla interactiva. Otro artículo interesante es [The downfall of Sun Microsystems](https://www.networkworld.com/article/2268096/servers/the-downfall-of-sun-microsystems.html) en el que precisamente se comenta la falta de rentabilizar varias de sus tecnologías y la crisis de las punto com.
 

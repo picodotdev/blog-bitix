@@ -24,8 +24,8 @@ En esta ocasión los proyectos a los que he hecho una donación han sido [Lineag
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/lineageos.svg" optionsthumb1="200x200" title1="LineageOS"
-    image2="asset:assets/images/logotypes/replicant.svg" optionsthumb2="200x200" title1="Replicant" >}}
+    image1="logotype:lineageos.svg" optionsthumb1="200x200" title1="LineageOS"
+    image2="logotype:replicant.svg" optionsthumb2="200x200" title1="Replicant" >}}
 
 Muchos móviles siguen siendo perfectamente útiles aún pasados más de dos años. En mi móvil, un Samsung Galaxy S3 (i9300) del año 2012 con 4 núcleos y un solo _giga_ de memoria RAM con no tantos años de vida pero que ya podría considerarse obsoleto debido al gran avance en capacidades que experimentado los _smartphones_ usaba la extinta CyanogenMod en su versión 10.2 que incorporaba Android 4.4 (KitKat) cuando de fábrica tenía 4.1 o 4.2 (Jelly Bean). En alguna ocasión he pensado en actualizarlo a alguna versión más reciente de Android aunque por el poco uso que hago del móvil ya me era suficiente con la versión 4.4 de Android, también porque me daba un poco de pereza hacer la actualización aún no siendo demasiado complicado y no tardando mucho sabiendo lo que hay que hacer. En estas dos distribuciones de Android el Samsung Galaxy S3 está soportado.
 

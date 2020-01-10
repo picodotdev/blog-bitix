@@ -25,7 +25,7 @@ Uno de los proyectos a los que he donado esta vez ha sido al entorno de escritor
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/gnome.svg" optionsthumb1="200x200" title1="GNOME" >}}
+    image1="logotype:gnome.svg" optionsthumb1="200x200" title1="GNOME" >}}
 
 ### VideoLAN (VLC)
 
@@ -33,7 +33,7 @@ Otro proyecto al que he donado ha sido el [reproductor de multimedia VLC][vlc] d
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/vlc.svg" optionsthumb1="200x200" title1="VLC" >}}
+    image1="logotype:vlc.svg" optionsthumb1="200x200" title1="VLC" >}}
 
 ### Arch Linux
 
@@ -43,7 +43,7 @@ Por un problema con el medio de pago que usa Arch Linux, [Software in the Public
 
 {{< image
     gallery="false"
-    image1="asset:assets/images/logotypes/archlinux.svg" optionsthumb1="250x250" title1="Arch Linux" >}}
+    image1="logotype:archlinux.svg" optionsthumb1="250x250" title1="Arch Linux" >}}
 
 ### Comprobantes de las donaciones
 

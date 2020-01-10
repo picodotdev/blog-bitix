@@ -16,7 +16,7 @@ tags: ["java", "planeta-codigo"]
 
 {{< logotype image1="java.svg" >}}
 
-Con la [introducción de los _generics_ en el lenguaje Java][blogbitix-138] en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos _wildcard_ definidos con un _?_. Una lista definida como _List<?>_ se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como _List<?>_ o _List<? extends Object>_ a partir de Java 5.
+Con la [introducción de los _generics_ en el lenguaje Java][blogbitix-138] en la versión de Java 5 se añadió validación de tipos a por ejemplo las colecciones, y entre ellos los elementos _wildcard_ definidos con un _?_. Una lista definida como _List\<?>_ se considera una lista de elementos de un tipo desconocido, todas las colecciones pre-java5 se consideran a partir de Java 5 de forma efectiva como _List\<?>_ o _List<? extends Object>_ a partir de Java 5.
 
 El siguiente código produce un error de compilación con el mensaje _capture of_ ya que el compilador no puede validar que el tipo que se inserta en la lista, _Object_, como primer elemento si es compatible en tiempo de ejecución con el tipo de elementos que tiene la lista:
 
