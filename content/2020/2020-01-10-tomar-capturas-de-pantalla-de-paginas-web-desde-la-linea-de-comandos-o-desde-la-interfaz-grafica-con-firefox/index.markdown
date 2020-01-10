@@ -17,6 +17,8 @@ summary: "El navegador web Firefox tiene una opción con la que poder tomar una 
 
 {{< logotype image1="firefox.svg" >}}
 
+[HttpClient](javadoc11:java.net.http/java/net/http/HttpClient.html)
+
 Como norma general las pruebas de una aplicación deben estar automatizadas con una herramienta de _testing_. [Para el código Java una herramienta de pruebas es JUnit][blogbitix-410] y [para una aplicación web es Geb][blogbitix-332]. Sin embargo, algunas pruebas que no son de funcionalidad de la aplicación sino en una aplicación web por ejemplo de estilos y de visualización en la pantalla, que la página se muestre correctamente. Para estos casos no queda más que revisar, visualizar y comprobar la corrección visual de la misma, una posibilidad es entrar en la página manualmente mediante su dirección y realizar la comprobación.
 
 Sin embargo, las acciones manuales hay que evitarlas en la medida de lo posible y que sean las menos posibles realizando su automatización ya que consumen muhco tiempo dedicable a tareas de valor. En este caso realizando la automatización se evita abrir el navegador, introducir la URL de la página o navegar hasta ella por cada URL a probar.

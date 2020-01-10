@@ -20,7 +20,7 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       {{ if .Site.Params.links.feed }}
-        <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.png" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
+        <a href="{{ .Site.Params.links.feed.url | absURL }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.png" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
       {{ end }}
       {{ if .Site.Params.links.twitter }}
         <a href="{{ .Site.Params.links.twitter.url }}" title="{{ .Site.Params.links.twitter.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/twitter.svg" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>

@@ -6,8 +6,8 @@
     <updated>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
     <author>{{ with .Site.Author.name }}<name>{{.}}</name>{{end}}</author>
     <generator>Hugo</generator>
-    <icon>{{ .Site.BaseURL }}assets/images/logotipos/hugo.png</icon>
-    <logo>{{ .Site.BaseURL }}assets/images/logotipos/hugo.png</logo>
+    <icon>{{ "assets/favicon.ico" | absURL }}</icon>
+    <logo>{{ .Site.Params.publisher.logotype }}</logo>
     {{ with .Site.Copyright }}<rights>{{.}}</rights>{{end}}
     {{ range first 15 (where .Site.RegularPages ".Params.rss" true) }}
     <entry>
