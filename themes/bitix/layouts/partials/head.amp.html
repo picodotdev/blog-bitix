@@ -2,12 +2,13 @@
 {{ $imgtagopen := $tags.imgtagopen }}
 {{ $imgtagclose := $tags.imgtagclose }}
 {{ $imgtagsrc := $tags.imgtagsrc }}
+{{ $urlsuffix := .Site.Params.outputformats.amp.urlsuffix }}
 
 <header>
   <div class="row">
     <div class="col-12 col-lg-4"></div>
     <div class="col-12 col-lg-4">
-      <h2 class="title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+      <h2 class="title"><a href="{{ print .Site.BaseURL $urlsuffix }}">{{ .Site.Title }}</a></h2>
       <div class="links">
         {{ if .Site.Params.links.feed }}
           <a href="{{ .Site.Params.links.feed.url }}" title="{{ .Site.Params.links.feed.title }}">{{ $imgtagopen | safeHTML }} src="{{ "assets/images/rss.png" | relURL }}" width="50" height="50" class="icon">{{ $imgtagclose | safeHTML }}</a>
