@@ -69,7 +69,7 @@ La definición incluye dos servicios uno que proporciona un contador y otro que 
 
 {{< code file="nomad-run.sh" language="bash" options="" >}}
 
-En la definición de _job_ las partes relativas a Consul Connect están en los bloques o _stanzas_ _connect_, en el caso de _count-api_ simplemente para indicar que desea un _proxy_ y en el caso de _count-dashboard_ para indicar que desea un _proxy_ para conectarse al servicio _count-api_.
+En la definición de _job_ las partes relativas a Consul Connect están en los bloques o _stanzas_ _connect_, en el caso de _count-api_ simplemente para indicar que desea un _proxy_ y en el caso de _count-dashboard_ para indicar que desea un _proxy_ para conectarse al servicio _count-api_, la variable de entorno _COUNTING\_SERVICE\_URL_ contiene la dirección del _proxy_ que permite la conexión con _count-api_.
 
 {{< code file="connect.nomad" language="hcl" options="" >}}
 
