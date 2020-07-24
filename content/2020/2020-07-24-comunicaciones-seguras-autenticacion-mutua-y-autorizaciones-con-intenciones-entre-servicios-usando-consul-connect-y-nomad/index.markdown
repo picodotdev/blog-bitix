@@ -68,6 +68,9 @@ El siguiente paso es enviar el Nomad la definición de los servicios para que pl
 La definición incluye dos servicios uno que proporciona un contador y otro que obtiene el valor de ese contador y lo muestra en una página web. En la definición del servicio _count-api_ se define que va a ofrecer su comunicación por red en el puerto 9001 asociado a la interfaz de red _localhost_ de modo que este puerto solo pueda ser accedido por Consul a través del _proxy_ que crea, la definición del servicio _count-dashboard_  ofrece su servicio en el puerto 9002 y que tiene tiene como dependencia el servicio _count-api_ para el que Consul crea un nuevo _proxy_, el servicio _count-dashboard_ se conecta al puerto _8080_ para comunicarse con el  servicio _count-api_ mediante los _proxys_ de Consul Connect. Los servicios solo se comunican con los _proxys_ y son los _proxys_ los que se comunican entre ellos.
 
 {{< code file="nomad-run.sh" language="bash" options="" >}}
+
+En la definición de _job_ las partes relativas a Consul Connect están en los bloques o _stanzas_ _connect_, en el caso de _count-api_ simplemente para indicar que desea un _proxy_ y en el caso de _count-dashboard_ para indicar que desea un _proxy_ para conectarse al servicio _count-api_.
+
 {{< code file="connect.nomad" language="hcl" options="" >}}
 
 El resultado es esta aplicación sencilla de ejemplo que muestra un contador en una página web con el tiempo se va incrementando. En las consolas de administración de Consul se observan los servicios registrados y en Nomad la ejecución de los mismos.
