@@ -17,7 +17,7 @@ summary: "Aunque no usemos Linux podemos hacer uso de docker a través de una m�
 
 {{% post %}}
 
-{{< logotype image="docker.svg" title="Docker" width="200" >}}
+{{< logotype image1="docker.svg" >}}
 
 [Docker][docker] ha dejado de ser únicamente una tecnología de contenedores formando un ecosistema alrededor de docker más completo, [Docker Compose][docker-compose] que permite [definir un grupo de contenedores en un archivo][blogbitix-51], por supuesto parte importante de este ecosistema es [Docker Hub][docker-hub] para [compartir imágenes de contenedores][blogbitix-88] y [Docker Swarm][docker-swarm] que permite formar un _cluster_ de máquinas. En este artículo comentaré cómo usar [Docker Machine][docker-machine] y dejaré para un futuro [Docker Swarm][docker-swarm] (ya que por el momento las pruebas que he hecho no han sido exitosas).
 

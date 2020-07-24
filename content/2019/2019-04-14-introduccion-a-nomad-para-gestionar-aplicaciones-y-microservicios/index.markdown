@@ -18,7 +18,7 @@ summary: "En las aplicaciones basadas en microservicios dado el número de ellos
 
 {{% post %}}
 
-{{< logotype image1="nomad.svg" title1="Nomad" width1="200" image2="consul.svg" title2="Consul" width2="200" image3="hashicorp.svg" title3="HashiCorp" width3="200" >}}
+{{< logotype image1="nomad.svg" image2="consul.svg" image3="hashicorp.svg" >}}
 
 En las arquitecturas de aplicaciones basadas en microservicios cada microservicio o simplemente servicio es una aplicación distinta e independiente, son varias aplicaciones que hay que gestionar y desplegar de forma individual o de forma coordinada.
 
