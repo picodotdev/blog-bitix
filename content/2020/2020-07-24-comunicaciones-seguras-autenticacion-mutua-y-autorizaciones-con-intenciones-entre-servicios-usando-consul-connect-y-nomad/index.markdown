@@ -53,9 +53,10 @@ Hay que instalar los paquetes de Consul, Nomad, Envoy y _cni-plugins_ de la dist
 
 {{< code file="getenvoy.sh" language="bash" options="" >}}
 
-Nomad requiere que los _cni-plugins_ esté ubicados en la carpeta _/opt/cni/bin_, en Arch Linux se instalan en la carpeta _/usr/lib/cni/_ por lo que hay que crear un enlace simbólico para que sean encontrados por Nomad.
+Nomad requiere que los _cni-plugins_ esté ubicados en la carpeta _/opt/cni/bin_, en Arch Linux se instalan en la carpeta _/usr/lib/cni/_ por lo que hay que crear un enlace simbólico para que sean encontrados por Nomad. En Ubuntu la opción es realizar la instalación descargando el paquete manualmente.
 
 {{< code file="install-cni-plugins.sh" language="bash" options="" >}}
+{{< code file="install-cni-plugins-archlinux.sh" language="bash" options="" >}}
 
 Con los binarios necesarios instalados hay que iniciar Consul y Nomad con los siguientes comandos que los arrancan en su configuración de desarrollo y con el soporte para Consul Connect en Nomad.
 
