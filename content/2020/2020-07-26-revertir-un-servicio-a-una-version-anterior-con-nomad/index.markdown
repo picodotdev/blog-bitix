@@ -1,8 +1,9 @@
 ---
 pid: 503
 type: "post"
-title: "Revertir a una versión anterior de un servicio con Nomad"
-url: "/2020/07/revertir-a-una-version-anterior-de-un-servicio-con-nomad/"
+title: "Revertir un servicio a una versión anterior con Nomad"
+url: "/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/"
+aliases: ["/2020/07/revertir-a-una-version-anterior-de-un-servicio-con-nomad/"]
 date: 2020-07-26T09:00:00+02:00
 language: "es"
 rss: true
