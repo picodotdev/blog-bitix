@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "image:nomad-versions.png"
-tags: ["blog", "planeta-codigo"]
+tags: ["gnu-linux", "planeta-codigo"]
 series: ["hashicorp"]
 summary: "Los errores no se planifican, se producen de forma inesperada. Además, un error en un entorno de producción es normalmente urgente e importante lo que obliga a cambiar las prioridades del equipo dejando lo que están haciendo y ocuparse de resolver el problema. En ocasiones no será posible resolver el problema y la única solución es revertir la versión de la aplicación a la anterior. Dependiendo de la automatización de los procesos incluso el volver a la versión anterior quizá sea complicado. Los errores no se planifican pero si se puede planificar estar preparado para algunos errores, una forma de estar preparado ante errores es tener un proceso y herramientas para volver a la versión anterior rápido y fácilmente."
 ---
