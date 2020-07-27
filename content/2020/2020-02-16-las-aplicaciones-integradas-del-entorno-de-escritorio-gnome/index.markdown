@@ -44,6 +44,8 @@ Las distribuciones de GNU/Linux proporcionan el conjunto de software completo fo
 
 El entorno de escritorio se instala con el sistema con lo que primero es [elegir una distribución GNU/Linux][blogbitix-190], para los usuarios que proviene de Windows o macOS y quieren probar GNU/Linux una distribución recomendable es Ubuntu. El siguiente paso seguir la guía de [como instalar Ubuntu paso a paso desde cero][blogbitix-232] y conocer [las tareas básicas de administración y uso después de instalar una distribución][blogbitix-462]. Para los usuarios que ya conocen GNU/Linux, quieren personalizar el sistema con sus preferencias  no las de los desarrolladores de la distribución y prefieren un modelo de ciclo de vida _rolling release_ en el que el software se mantiene en constante actualización con las últimas versiones puede [instalar Arch Linux de forma fácil, rápida, desatendida y personalizable con un script][blogbitix-204].
 
+{{< tableofcontents >}}
+
 ### El entorno de escritorio GNOME
 
 GNOME con las críticas iniciales a la versión primera de la rama 3.0 publicada en abril del 2011 por el cambio significativo respecto a versiones anteriores ha mejorado mucho y sigue haciéndolo con cada nueva versión publicada cada seis meses.

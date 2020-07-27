@@ -29,6 +29,8 @@ En los navegadores se pueden inspeccionar estos datos almacenados en el lado del
 
 Dado que los datos se almacenan en el navegador del usuario hay que tener en cuenta en que el propio usuario tiene acceso a ellos y es capaz de modificarlos, de modo que si estos datos se envían al servidor hay que tratarlos como una fuente de datos no confiable y validarlos en el lado del servidor si es necesario para evitar fallos de seguridad ni ser datos que comprometan la seguridad.
 
+{{< tableofcontents >}}
+
 ### Guardar datos en el navegador con cookies
 
 El protocolo HTTP es un protocolo sin estado, esto significa que cada petición al servidor es independiente y no comparten información. Las _cookies_ son la forma de convertir el protocolo HTTP a un protocolo con estado identificando al usuario en las diferentes peticiones. Las _cookies_ son unos pequeños datos guardados por el navegador y enviados al servidor en cada petición al servidor.

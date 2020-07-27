@@ -28,6 +28,8 @@ Ya con unas semanas habiendo usado el teclado y ratón V7 CKW200 acepto que el r
 
 He mirado varias opciones y modelos de  monitor y aún así tampoco estoy seguro de que la que finalmente he elegido sea la mejor en el mercado. Leyendo comentarios y opiniones de otros usuarios en todos los modelos siempre hay alguno que ha tenido problemas, en el caso de los monitores de píxeles muertos, vagos, fugas de luz, hasta retención de imágenes. Las fugas de luz es algo normal en la tecnología actual de monitores y televisores con retroiluminación led en los bordes de la pantalla, apreciable en condiciones de poca luz e imágenes oscuras.
 
+{{< tableofcontents >}}
+
 ### Opciones
 
 Partía de unos requerimientos de que fuera IPS por su calidad de colores, de 27 pulgadas y con resolución 2K o 2560x1440 en un rango de precio de hasta unos 300€. En otro orden de cosas menos importantes que valoraba era que tuviese conexión [HDMI][hdmi] y [DisplayPort][displayport], marcos finos y compatibilidad con soporte VESA. Hay opciones en formato ultrapanorámico de 29 pulgadas y resolución 2560x1080. He visto alguno de estos pero finalmente he preferido que tenga más resolución vertical y no sea tan ancho para no tener que girar la cabeza.

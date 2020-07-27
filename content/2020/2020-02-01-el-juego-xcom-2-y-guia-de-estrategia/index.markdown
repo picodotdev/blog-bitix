@@ -49,6 +49,8 @@ Esta es mi guía de estrategia del juego para que he seguido para acabar el jueg
 
 {{< game-spoiler >}}
 
+{{< tableofcontents >}}
+
 ### Recursos
 
 En ningún momento habrá recursos para todo, por lo que hay que priorizar en las cosas imprescindibles e importantes ni desperdiciarlos en cosas prescindibles. Incluso para no perder tiempo y tratar de desbaratar el proyecto AVATAR algunas misiones de recolección de recursos prescindibles que no apartan mucho beneficio han de dejarse de hacer, cada día que pasa en el calendario es un día menos para que los alienígenas completen su proyecto de dominación. En el cuartel general a cada inicio de mes existe la posibilidad de incorporar ingenieros o investigadores que en algunos casos también se obtienen en misiones.

@@ -40,6 +40,8 @@ Pero Java 9 además de los módulos incorpora en la plataforma otros cambios des
     gallery="false"
     image1="image:duke-java-9.png" optionsthumb1="300x250" title1="Duke Java 9" >}}
 
+{{< tableofcontents >}}
+
 ### Métodos factoría para colecciones
 
 Aún Java no incorpora en el lenguaje una forma de definir como literales elementos tan comunes como listas, conjuntos o mapas. Como alternativa se proporcionan métodos factoría estáticos para crear este tipo de estructuras de datos usando métodos por defecto en sus respectivas interfaces. Además, estos métodos crean colecciones inmutables.

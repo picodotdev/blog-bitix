@@ -44,6 +44,8 @@ Java 8 representa una evolución notable en este lenguaje de programación al mi
 
 A continuación algunas características de Java explicadas con un poco más de detalle.
 
+{{< tableofcontents >}}
+
 ### Streams
 
 Los streams no son un nuevo tipo de colección son una nueva forma de recorrer las colecciones distinta a los [Iterator](javadoc8:java/util/Iterator.html). La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones más funcionales. Un flujo consiste un una fuente (una colección), varias operaciones intermedias (de filtrado o transformación) y una operación final que produce un resultado (suma, cuenta...). Los streams son lazy de modo que las operaciones solo se realizan cuando se llama a la operación final, también son eficientes no necesitando en algunos casos procesar todos los elementos del stream para devolver el resultado final.

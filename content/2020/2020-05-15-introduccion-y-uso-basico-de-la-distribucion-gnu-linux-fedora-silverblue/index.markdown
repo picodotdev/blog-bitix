@@ -52,6 +52,8 @@ Una distribución que se basa en principios diferentes que pueden ser el futuro 
     image1="image:fedora-silverblue-neofetch.png" optionsthumb1="650x450" title1="Fedora Silverblue"
     caption="Fedora Silverblue" >}}
 
+{{< tableofcontents >}}
+
 ### La distribución Fedora Silverblue
 
 Una de las mayores fuentes de problemas de las distribuciones y de los sistemas operativos son las actualizaciones que por los cambios que introducen con nuevas versiones del software en ocasiones hace que algunas partes dejen de funcionar. Son solucionables desactualizando un paquete o en los casos más graves hace que el sistema ni siquiera se inicie correctamente llegando incluso a tener que reinstalar el sistema o peor aún provocando pédida de datos.

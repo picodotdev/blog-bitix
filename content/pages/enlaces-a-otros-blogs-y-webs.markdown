@@ -19,7 +19,7 @@ En esta página quiero poner la selección de páginas web y blogs personales o 
 
 [El blog de pico.dev](https://elblogdepicodev.blogspot.com.es) es el blog antecesor de de este, con la misma temática y contenido similar pero en vez de emplear Octopress como herramienta de _blogging_ empleando Blogger. Iniciado en febrero de 2010 y abandonado en diciembre de 2013 en detrimento de [Blog Bitix](https://picodotdev.github.io/blog-bitix/) por los motivos expuestos en [¡Hola nuevo mundo!][blogbitix-0] tiene casi 200 entradas de contenido publicadas a razón de casi una entrada por semana durante su vida.
 
-## Arch Linux
+### Arch Linux
 
 Si usas la distribución Arch Linux estos son algunos enlaces que no debes perderte para estar informado de las noticias sobre esta distribución.
 
@@ -29,7 +29,7 @@ Si usas la distribución Arch Linux estos son algunos enlaces que no debes perde
 Aunque no hace falta actualizar cada día es aconsejable seguirlo para conocer si va a ser necesario actualizar un paquete importante del sistema como el _kernel_ de linux, los controlador gráfico, etc...
 * [Arch Linux Forums](https://bbs.archlinux.org/index.php): el foro oficial de Arch Linux. Si no encuentras solución en el foro en español posiblemente el problema o la solución este ya comentada por otro usuario.
 
-## Noticias
+### Noticias
 
 * [Phoronix](https://www.phoronix.com/): Una de las mejores páginas que tengo en mi lector de noticias, suele publicar un montón de información interesante sobre varias distribuciones linux, avances en el kernel, drivers, programas y análisis de rendimiento.
 * [DistroWatch](https://distrowatch.com/): distribuciones de linux hay muchas, unas más conocidas y otras no tanto en esta página podrás encontrar la que mejor se adapte a tus necesidades, además podrás conocer cuando se publica una nueva versión y el calendario de nuevas versiones de varias distribuciones. Una página para estar informado de cada una de las nuevas versiones. También publica un semanario con el análisis de alguna distribución o noticias recientes. Además, se puede encontrar en esta página una categorización de la distribuciones según su popularidad basada en las visitas que reciben y las últimas versiones publicadas del software que compone las distribuciones GNU/Linux.
@@ -50,7 +50,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Coreteks](https://www.youtube.com/channel/UCX_t3BvnQtS5IHzto_y7tbw/videos): canal de YouTube en inglés con información avanzada y profunda sobre tecnológía hardware de procesadores, gráficos y computación, también incluye información de actualidad.
 * Barrapunto (actualmente discontinuada): era la web al estilo de [slashdot](https://slashdot.org/) en español donde tan importante como la noticia eran los comentarios de sus usuarios.
 
-## Software libre y GNU/Linux
+### Software libre y GNU/Linux
 
 * [Red Hat](https://www.redhat.com): web de una de las empresas que más colaboran con el desarrollo de GNU/Linux y que ofrece servicios para empresas siendo una de las que más éxito han tenido usando este modelo de negocio. Su distribución empresarial es RHEL.
 * [Fedora](https://getfedora.org/): distribución que incorpora rápido las nuevas tecnologías de Linux, respaldada por Red Hat y que pasado un tiempo incluye en su distribución empresarial RHEL las nuevas características ya probadas en Fedora.
@@ -71,7 +71,7 @@ uno nuevo según tus necesidades y restricciones de presupuesto.
 * [Administración de sistemas - systemadmin.es](http://systemadmin.es/)
 * [LiGNUx](https://lignux.com/)
 
-## Desarrollo y programación
+### Desarrollo y programación
 
 Varios blogs relacionados con la programación y el desarrollo, principalmente de java, javascript, desarrollo web, ...
 
@@ -93,7 +93,7 @@ Varios blogs relacionados con la programación y el desarrollo, principalmente d
 * [El baúl del programador](https://elbauldelprogramador.com/)
 * [Android Studio FAQs](https://androidstudiofaqs.com/)
 
-## Juegos
+### Juegos
 
 A modo de entretenimiento los juegos son una buena opción. Hay múltiples páginas y foros, entre los siguientes enlaces destaco varios canales de YouTube personales muy aleajdos de la estridente, forzada y poco natural forma de hablar de algunos famosos _youtubers_ que puede tengan más suscriptores pero que en mi caso aborrezco su forma de publicar contenido, me gusta mas el tono de los siguientes enlaces.
 
@@ -108,7 +108,7 @@ A modo de entretenimiento los juegos son una buena opción. Hay múltiples pági
 * [Video Games OST](https://www.youtube.com/channel/UCdg9Ye9WLOHhmDVLfbZQiNA/playlists), bandas sonoras originales de videojuegos: los videojuegos no solo son un entretenimiento sino que cuenta una historia en la que particias con el personaje que encarnas, son una obra artística tanto en el apartdo gráfico como en el sonoro. En el apartado sonoro algunos videojuegos tiene producciónes a la altura de obras cinematográficas. En el canal se recogen las bandas sonoras originales de los video juegos.
 * [Video Game Soundtrack Archive](https://www.youtube.com/channel/UCdg9Ye9WLOHhmDVLfbZQiNA/videos): otro canal dedicado a las bandas sonoras de videojuegos en el que encontrar algunas de los más populares hace ya unos cuantos años.
 
-## Otros
+### Otros
 
 Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 

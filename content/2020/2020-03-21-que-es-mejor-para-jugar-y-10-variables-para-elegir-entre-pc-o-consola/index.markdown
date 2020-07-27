@@ -30,6 +30,8 @@ A la hora de elegir la mejor mejor opción para cada persona según sus necesida
 
 En mi opinión no me parece que haya una opción clara ganadora para todas las personas, la decisión depende de varios de estos factores. Para algunas personas el PC es la opción preferida pero para otras es la consola.
 
+{{< tableofcontents >}}
+
 ### Versatilidad
 
 El PC es un producto polivalente capaz de realizar múltiples funciones, una de ellas los juegos pero también tareas ofimáticas, navegación por internet, descargas y muchas otras. Las consolas aunque en realidad son como un PC son un producto que solo se pueden utilizar exclusivamente para juegos.

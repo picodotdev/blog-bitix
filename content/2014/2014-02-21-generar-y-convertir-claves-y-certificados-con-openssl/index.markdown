@@ -4,7 +4,7 @@ type: "post"
 title: "Generar y convertir claves y certificados con OpenSSL"
 url: "/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/"
 date: 2014-02-21T17:36:21+01:00
-updated: 2017-04-08T23:00:00+02:00
+updated: 2020-07-27T12:00:00+02:00
 rss: true
 sharing: true
 comments: true
@@ -19,17 +19,19 @@ summary: "Usando los comandos expuestos en este artículo y con OpenSSL podemos 
 
 Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar [GnuPG](https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html) es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.
 
-Para hacer uso en un servidor de una comunicación https donde los datos viajan cifrados y sin que otras partes salvo el usuario y el servidor puedan acceder a los datos necesitamos un certificado digital. Un certificado es un archivo que contiene la clave pública sirviéndonos para verificar su autenticidad. Un certificado autofirmado es un certificado firmado con la misma clave privada asociada a la clave pública que contiene el certificado. Un certificado autofirmado es suficiente para un entorno de pruebas pero en un servidor para proporcionar confianza a los usuarios deberemos solicitar que una autoridad de certificados que nos firme con su clave nuestro certificado, si el usuario confía en esa autoridad de certificado puede de esta manera confiar en nuestro certificado y clave pública. Varias entidades de registro de dominios o halojamiento web ofrecen la compra de certificados SSL, en el artículo [Certificado SSL, de empresa, «wildcard» y de validación extendida][blogbitix-77] comento con un poco más detalle los varios tipos de certificados y algunas opciones donde obtenerlos o comprarlos.
+Para hacer uso en un servidor de una comunicación https donde los datos viajan cifrados y sin que otras partes salvo el usuario y el servidor puedan acceder a los datos necesitamos un certificado digital. Un certificado es un archivo que contiene la clave pública sirviéndonos para verificar su autenticidad. Un certificado autofirmado es un certificado firmado con la misma clave privada asociada a la clave pública que contiene el certificado. Un certificado autofirmado es suficiente para un entorno de pruebas pero en un servidor para proporcionar confianza a los usuarios deberemos solicitar que una autoridad de certificados que nos firme con su clave nuestro certificado, si el usuario confía en esa autoridad de certificado puede de esta manera confiar en nuestro certificado y clave pública. Varias entidades de registro de dominios o alojamiento web ofrecen la compra de certificados SSL, en el artículo [Certificado SSL, de empresa, «wildcard» y de validación extendida][blogbitix-77] comento con un poco más detalle los varios tipos de certificados y algunas opciones donde obtenerlos o comprarlos.
 
 Dependiendo del tipo de certificado que solicitemos y nos entregue la autoridad de certificado el usuario podrá ver que está simplemente accediendo a un servidor con conexión segura, ver los detalles de nuestro certificado y en algunos casos el usuario podrá ver en la barra de direcciones en verde el nombre de la entidad, que puede darle al usuario más confianza y ver que realmente está accediendo al servidor correcto y no a uno que esté intentando suplantar una identidad. En este último caso la barra de direcciones no tendría en verde el nombre de la entidad, esto es algo que como usuarios debemos comprobar al acceder a determinados sitios de forma segura.
 
-Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar claves y certificados y realizar las conversiones entre formatos que necesitemos.
+Con la herramienta [OpenSSL][openssl] y los siguientes comandos podemos generar claves y certificados y realizar las conversiones entre formatos que necesitemos. Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. En otros artículos muestro [cómo configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14], por otro lado usar HTTPS es un requisito para [utilizar el protocolo HTTP/2 en un servidor web][blogbitix-129].
+
+{{< tableofcontents >}}
 
 ### Crear claves y certificados
 
 #### Crear una clave privada y pública
 
-Para generar un par de claves RSA que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:
+Para generar un par de claves RSA pública y privada que nos permitan tanto cifrar datos como realizar firmas se emplea el siguiente comando:
 
 {{< code file="script-1.sh" language="bash" options="" >}}
 
@@ -43,7 +45,7 @@ El contenido de un archivo de clave privada sin cifrar tiene el siguiente aspect
 
 #### Exportar la clave pública
 
-El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
+El archivo generado al crear el par de claves contiene tanto la clave pública como la privada. La privada no se debe distribuir y se debe mantener protegida de forma que solo la conozca su propietario por ejemplo guardándola en una base de datos de KeePassXC como un archivo adjunto de [la aplicación KeePassXC][blogbitix-196]. La clave pública es la que se distribuye a otras personas o entidades. Para extraer la clave pública del archivo generado anterior por OpenSSL usamos el siguiente comando:
 
 {{< code file="script-9.sh" language="bash" options="" >}}
 
@@ -51,10 +53,7 @@ También se puede obtener la clave pública en formato [OpenSSH][openssh] y una 
 
 {{< code file="script-10.sh" language="bash" options="" >}}
 
-{{< image
-    gallery="true"
-    image1="image:openssh-fingerprint.png" optionsthumb1="300x200" title1="Huella digital de una clave pública OpenSSH"
-    caption="Huella digital de una clave pública OpenSSH" >}}
+{{< code file="script-15.sh" language="bash" options="" >}}
 
 #### Obtener la huella digital de la clave pública
 
@@ -62,24 +61,19 @@ La huella digital de una clave pública sirve para comprobar que la clave es la 
 
 {{< code file="script-11.sh" language="bash" options="" >}}
 
-{{< image
-    gallery="true"
-    image1="image:openssl-dgst.png" optionsthumb1="300x200" title1="Huella digital de una clave pública"
-    caption="Huella digital de una clave pública" >}}
-
 #### Crear un certificado
 
-Un certificado contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:
+Un certificado permite utilizar el protocolo seguro HTTPS en un servidor web y contiene la firma de una tercera parte que valida nuestra clave pública como auténtica. Para que esa tercera parte pueda firmar nuestra clave deberemos generar una petición de firma de certificado y enviársela a la autoridad de certificado que nos lo devolverá firmado. La petición firma de certificado se crea con el siguiente comando:
 
 {{< code file="script-2.sh" language="bash" options="" >}}
 
-Si no queremos tratar con una autoridad de certificado, ya que cobran por la firma, podemos crear un certificado autofirmado que puede ser suficiente para un entorno de pruebas. El comando para generar el certificado autofirmado es:
+Si no queremos tratar con una autoridad de certificado, ya que cobran por la firma, podemos crear un certificado autofirmado que puede ser suficiente para un entorno de pruebas de un servidor web. El comando para generar el certificado autofirmado es, la opción _-subj_ indica la información del sujeto a autenticar:
 
 {{< code file="script-3.sh" language="bash" options="" >}}
 
 ### Convertir un certificado a otros formatos
 
-Dependiendo de la autoridad de certificado el certificado puede estar en diferentes formatos, dependiendo del servidor donde tengamos idea de usarlo podemos necesitar convertirlo a otro formato. También podemos usar OpenSSL para hacer las conversiones.
+Dependiendo de la autoridad de certificado el certificado puede estar en diferentes formatos, también dependiendo del servidor donde se quiera usar es necesario convertirlo a al formato adecuado. OpenSSL permite para hacer las conversiones entre formatos DER, PEM y PKCS#12.
 
 #### Convertir un certificado en formato DER (.crt .cer .der) a PEM
 
@@ -101,7 +95,15 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 
 {{< code file="script-8.sh" language="bash" options="" >}}
 
-Una vez que disponemos de un certificado y del formato en el que necesitemos podemos hacer uso de él, por ejemplo, en un servidor de páginas web o aplicaciones para proporcionar acceso mediante el protocolo HTTPS y proporcionar seguridad SSL. Pero eso será tema para la entrada [Configurar SSL en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache][blogbitix-14].
+### Examinar certficados
+
+#### Examinar un certificado
+
+{{< code file="script-13.sh" language="bash" options="" >}}
+
+#### Examinar el certificado de un servidor web
+
+{{< code file="script-14.sh" language="bash" options="" >}}
 
 {{< reference >}}
 * [OpenSSL][openssl]

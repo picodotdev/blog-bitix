@@ -22,6 +22,8 @@ Los productos tecnológicos son de los más codiciados para regalar o comprar a 
 
 En cualquier caso se un consumidor responsable, no hace falta estar a la última con cada versión de un _gadget_ sobre todo con los productos de tecnología que parece se quedan anticuados pasado un año pero que en realidad siguen siendo totalmente válidos, comentaba algo sobre ello en el artículo [Sobre el rápido avance de la tecnología][blogbitix-186]. Y aunque aquí pongo enlaces de [Amazon][amazon] compara con otras tiendas ya que no siempre tiene los mejores precios en todos los productos especialmente en aquellos que son vendidos por terceros en su _marketplace_, en el caso de Amazon [el seguidor de precios CamelCamelCamel permite conocer la evolución de precios][blogbitix-414] a lo argo del tiempo permitiendo conocer si en el momento de intención de compra el producto tiene buen precio.
 
+{{< tableofcontents >}}
+
 ### Unidad de almacenamiento SSD
 
 Una unidad SSD es la mejor actualización que se le puede hacer a un portátil o equipo que aún tenga un disco mecánico. He visto un ordenador con un Intel Pentium 6100 con 4 GiB de memoria que tardaba en ser usable casi 10 minutos por estar leyendo constantemente del disco duro y revivir una vez instalado un SSD pasando a iniciarse en 10 segundos y ser totalmente operativo. Los precios que tienen actualmente son muy asequibles, cada trimestre que pasa aún así siguen reduciendo su precio y continúan aumentado su capacidad.

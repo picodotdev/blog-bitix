@@ -52,6 +52,8 @@ Otros artículos relativos a la recolección de basura y su configuración son l
 * [Garbage-First Collector](https://docs.oracle.com/en/java/javase/11/gctuning/garbage-first-garbage-collector.html#GUID-ED3AB6D3-FD9B-4447-9EDF-983ED2F7A573)
 * [ZGC Collector](https://docs.oracle.com/en/java/javase/11/gctuning/z-garbage-collector1.html#GUID-A5A42691-095E-47BA-B6DC-FB4E5FAA43D0)
 
+{{< tableofcontents >}}
+
 ### Cómo funciona el recolector de basura
 
 En un lenguaje orientado a objetos como Java los datos están contenidos en los objetos. Los objetos son almacenados en el espacio de memoria del sistema denominado _heap_ distinta a la memoria del código ejecutable del programa, datos para las constantes y de las pilas de memoria para los argumentos y valores de retorno entre métodos.

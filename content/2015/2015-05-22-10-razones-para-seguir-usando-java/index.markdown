@@ -39,6 +39,8 @@ Algún otros artículos interesantes son:
 
 Aunque algunos parecen considerar ya hoy a Java el nuevo [COBOL][cobol] (y este último aún tiene futuro) y no sea lo habitual, en este artículo trataré de exponer algunos argumentos que posee Java para su defensa y por los que en mi caso aún no he tenido necesidad de buscar mayor felicidad programando en otra opción.
 
+{{< tableofcontents >}}
+
 ### Java no es lento
 
 Quizá en las primeras versiones de los 90 fuera así pero la realidad hoy con las mejoras introducidas en cada versión a la [Java Virtual Machine][jvm] (JVM) un programa Java es comparativamente igual de rápido que uno en C o C++, salvo para tareas muy específicas de cálculos intensivos no hay diferencia. Eligiendo las estructuras de datos adecuadas no tendría por qué haber una diferencia de rendimiento considerable y además para la mayoría de las tareas más importante que la rapidez es la legibilidad del código, su fácil desarrollo, mantenimiento o coste.

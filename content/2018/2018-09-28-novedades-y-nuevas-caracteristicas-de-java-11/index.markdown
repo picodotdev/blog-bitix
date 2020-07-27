@@ -50,6 +50,8 @@ Las mejoras incluídas en esta versión son:
 * 335: [Deprecate the Nashorn JavaScript Engine](http://openjdk.java.net/jeps/335)
 * 336: [Deprecate the Pack200 Tools and API](http://openjdk.java.net/jeps/336)
 
+{{< tableofcontents >}}
+
 ### Eliminación de módulos Java EE y CORBA
 
 Se eliminan del JDK paquetes ya desaconsejados hace varias versiones anteriores y que no eran muy usados en cualquier caso. Estos paquetes son los de CORBA una forma de llamada a procedimientos remotos que se utilizó como alternativa a RMI pero que nunca tuvo un uso extendido prefiriéndose SOAP o más recientemente interfaces REST.

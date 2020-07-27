@@ -21,6 +21,8 @@ Además de los clásicos juegos de estrategia y de pensar como son el [ajedrez][
 
 Son los siguientes juegos con una pequeña descripción de cada uno, alguna captura de pantalla y su manual de usuario.
 
+{{< tableofcontents >}}
+
 ### Aisleriot
 
 Es una colección de más de 80 modos de solitario de cartas fáciles de jugar con la ayuda de un ratón. Cada modo de juego tiene sus propias reglas y disposición de cartas.

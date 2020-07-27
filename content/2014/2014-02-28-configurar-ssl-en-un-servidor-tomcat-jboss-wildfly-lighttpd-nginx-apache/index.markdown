@@ -23,6 +23,8 @@ Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="
 
 Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente [protocolo HTTP/2][blogbitix-127] que es más eficiente tanto para el cliente como para el servidor y con menores latencias. [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129] es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones.
 
+{{< tableofcontents >}}
+
 ### Configurar SSL/TLS en Tomcat
 
 Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplicaciones web desarrolladas con el lenguaje Java. La forma que explicaré a continuación sobre como obtener cifrado SSL con este servidor será usando APR (_Apache Portable Runtime_). Previamente deberemos haber generado un certificado SSL con OpenSSL, una vez dispogamos del nuestro aunque sea autofirmado debemos añadir la siguiente configuración al archivo server.xml:

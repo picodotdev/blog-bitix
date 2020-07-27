@@ -46,6 +46,6 @@
 
     <div class="content">
       {{ partial "share-this-begin.html" . }}
-      {{ .Content }}
+      {{ replace .Content "<toc></toc>" .TableOfContents | safeHTML }}
     </div>
   </article>

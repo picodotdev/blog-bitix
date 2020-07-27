@@ -18,7 +18,7 @@ tags: ["software", "software-libre", "planeta-codigo"]
 
 Hace unos días publiqué una [nueva edición del libro PlugIn Tapestry][blogbitix-40], sobre el _framework_ [Apache Tapestry][tapestry] para el desarrollo de páginas y aplicaciones web con Java. En este artículo quiero recoger las herramientas que utilicé para escribirlo y algunas cosas básicas a conocer para tener un libro con un aspecto decente y más prefesional. Son cosas muy básicas pero que a mi me costo un poco poco encontrarlas para conseguir lo que quería, quizá a alguien le sirvan.
 
-## Herramientas
+### Herramientas
 
 Empecé evaluando la herramienta más adecuada para escribir el libro, en un principio empecé con [Google Docs][google-docs], también con [LibreOffice][libreoffice], sin embargo, al final descubrí [LyX][lyx] y fué el que empleé. ¿Por que LyX? Porque al contrario de Google Docs y LibreOffice que son procesadores de textos LyX es un procesador de documentos ¿que significa esto? Que con LyX te centras casi exclusivamente en escribir el contenido del libro no de estar formateándolo. Como procesador de documentos hace que no tengas tanto control sobre los estilos pero a la vez hace que todo el libro tenga un formato homogéneo y no tengas que «microgestionar» el estilo de cada elemento, en un documento grande de más de 250 páginas es muy útil y te evita casi todo el trabajo de mantener la coherencia en los estilos, ahorrándole a uno mucho tiempo.
 
@@ -26,7 +26,7 @@ Empecé evaluando la herramienta más adecuada para escribir el libro, en un pri
     gallery="true"
     image1="image:lyx-plugin.png" optionsthumb1="300x200" title1="LyX" >}}
 
-## LyX
+### LyX
 
 LyX es una herramienta que funciona excelentemente, mucho mejor que LibreOffice según mi experiencia y tiene más posibilidades que Google Docs. LyX tiene varias funcionalidades que nos serán muy útiles como la creación de índices (también para figuras, cuadros, ...), inclusión de figuras y referencias que permiten a un término hacer referencia a otra parte del libro, inlcuir los listados de código en archivos externos, ...
 
@@ -48,7 +48,7 @@ Otras opciones deberemos incluirlas como código Tex al principio (Insertar> Có
 
 Con LyX si necesitamos reorganizar los capítulos o secciones es muy simple, para ello abrimos el panel del esquema, seleccionamos la sección o capítulo y pulsamos sobre las flechas de ordenación.
 
-## Fuente del documento
+### Fuente del documento
 
 Podemos modificar la fuente del documento en Documento> Configuración> Tipografías. La fuente del elemento Romana será la que se use para la mayoría de elementos del documento.
 
@@ -56,7 +56,7 @@ Podemos modificar la fuente del documento en Documento> Configuración> Tipograf
     gallery="true"
     image1="image:lyx-tipografias.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
-## Encabezados y pies de página
+### Encabezados y pies de página
 
 En Documento> Configuración> Diseño de página podemos establecer si queremos encabezados y pies de página en los que se incluye el número de página. Tenemos a nuestra disposición de varios tipos.
 
@@ -64,13 +64,13 @@ En Documento> Configuración> Diseño de página podemos establecer si queremos 
     gallery="true"
     image1="image:lyx-diseno-pagina.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
-## Referencias
+### Referencias
 
 Las referencias permiten hacer referencia a otra parte del documento donde el concepto esté explicado de forma más completa. Las referencias son creadas en dos pasos, primero toda sección del documento a la que queramos hacer referencia deberemos asignarle una etiqueta Insertar> Etiqueta.
 
 Una vez que disponemos la etiqueta podemos insertar una referencia a ella en cualquier otra parte del documento con Insertar> Referencia cruzada. Disponemos de varios formatos para la referencia como texto al que hace la referencia o como la página en la que se encuentra.
 
-## Listados de código
+### Listados de código
 
 Si el libro versa sobre un téma técnico y queremos mostrar listados de código tenemos dos opciones incrustar el código dentro del texto en LyX o hacer que se incluyan desde un archivo externo. En mi caso prefiero la segunda ya que de este modo si en algún momento queremos hacer alguna corrección a algún listado me parece más fácil hacerlo en el archivo externo que en el propio LyX, además el documento LyX queda más sencillo que con listados de código.
 
@@ -80,7 +80,7 @@ Para insertar un listado de código como documento externo debemos usar la opci�
     gallery="true"
     image1="image:listado-codigo.png" optionsthumb1="300x200" title1="Listados de código" >}}
 
-## Portada
+### Portada
 
 Con LyX no podremos crear una portada atractiva dado lo limitado que estamos para modificar los estilos. Sin embargo, podemos incluir las páginas de un pdf externo a nuestro ducmento LyX. Este pdf externo lo podemos crear con la herramienta que queramos LibreOffice o Inskape. Con la opción Insertar> Archivo> Material externo podemos insertar todas las páginas del documento o solo las que queramos.
 
@@ -88,11 +88,11 @@ Con LyX no podremos crear una portada atractiva dado lo limitado que estamos par
     gallery="true"
     image1="image:libreoffice-plugin.png" optionsthumb1="300x200" title1="Tipografías, LyX" >}}
 
-## Corrector ortográfico
+### Corrector ortográfico
 
 Parte de la revisión consiste en corregir los posibles fallos ortográficos que cometamos, LyX incluye un corrector ortográfico. Para hacer uso de él deberemos instalar los diccionarios, en [Arch Linux][archlinux] instalaremos los paquetes aspell y aspell-es. Una vez instados podemos hacer uso del corrector con Herramientas> Corrector ortográfico, una vez iniciada la revisión podremos ir corrigiendo las palabras que no se encuentren en el diccionario.
 
-## Versiones en formato de libro electrónico (pdf, epub y mobi)
+### Versiones en formato de libro electrónico (pdf, epub y mobi)
 
 En un principio no lo tuve en cuenta pero con LyX es posible generar muy fácilmente además de la versión pdf, la versión epub y mobi del libro con la ayuda de [Calibre][calibre]. La versión de libro electrónico en formato epub y mobi es muy útil para los usuarios que posean un lector de ebooks como el Kindle o cualquier otro, el pdf también se puede leer en un ebook pero una página del pdf no entrará de forma completa en la pantalla y obligaremos al usuario a hacer varios cambios de página.
 
@@ -100,7 +100,7 @@ Una vez que tenemos nuestro documento podemos exportarlo a diferentes formatos, 
 
 Con LyX le podemos ofrecer al usuario la versión del libro que prefiera sin mucho trabajo por nuestra parte.
 
-## Revisión, difusión y publicidad
+### Revisión, difusión y publicidad
 
 Para finalizar diré que escribir un libro es un trabajo que consume mucho tiempo y esfuerzo y aunque parezca que no escribir el contenido del libro puede no ser la parte más costosa, revisarlo me costó tanto como escribirlo así como el hacer la aplicación con los ejemplos, la página en la que la alojaría y el marketing para darlo a conocer lo máximo posible publicándolo en webs en las que sus usuarios podrían estar interesados, en este caso en [JavaHispano][javahispano], [Barrapunto][barrapunto], en este blog y en los varios planetas en los que este blog puede publicar sus entradas.
 

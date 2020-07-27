@@ -23,6 +23,8 @@ summary: "El altavoz es un dispositivo que también ha añadido funciones de dis
 
 Los altavoces que tengo los compré con el primer ordenador, el venerable AMD Athlon XP 1800+, pagado con el dinero de mi primer trabajo en el 2004, unos [Creative Fourpointsurround FPS 1600 4.1](https://www.cnet.com/products/cambridge-soundworks-fourpointsurround-fps1600-speaker-system-for-pc/). Unos altavoces con uno dedicado a los graves o _subwoofer_ con a mi entender una muy buena calidad de sonido y potencia. Durante esta casi una década y media he estado muy contento con ellos, hasta ahora que he decidido buscar una alternativa por un problema que llevo arrastrando no desde hace días, semanas o meses sino ya algunos años.
 
+{{< tableofcontents >}}
+
 ### El problema de mis altavoces
 
 El problema es que aleatoriamente en ciertos periodos de tiempo cada pocos minutos el volumen sube y al cabo de un tipo vuelve a bajar, en algunas ocasiones aguanta un cuarto de hora o media hora sin variación de volumen. Para ver vídeos donde alguien está hablando y algunos sonidos no se nota pero escuchando música sí, la diferencia entre el tono alto y bajo tiene suficiente diferencia como para que sea molesto, con este problema es difícil ajustar el volumen y en algunas ocasiones requiere ajustarlo desde el mando de control y desde el volumen del entorno de escritorio del ordenador.

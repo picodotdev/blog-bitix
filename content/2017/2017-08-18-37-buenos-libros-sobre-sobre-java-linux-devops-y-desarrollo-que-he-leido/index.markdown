@@ -40,7 +40,9 @@ Podemos leer libros cuya información no está relacionada con un determinado he
 
 Estos son los que me ha parecido que están bastante bien, algunos he leído de forma completa otros solo ciertos capítulos, algunos después de leídos olvidados en parte por falta de uso y porque mi inglés no es muy bueno. Son libros relacionados con la programación, la web o el lenguaje Java en su mayoría. Hay algún libro más que he leído pero estos son los que quería destacar. Además de aprender leer esta buena cantidad de libros me da ideas para escribir algunos artículos, algunos de los cuanles he incluído en este artículo como relacionados.
 
-## Libros sobre Java
+{{< tableofcontents >}}
+
+### Libros sobre Java
 
 ### Java 9 Modularity
 
@@ -149,7 +151,7 @@ Los portales son utilizados por algunas organizaciones para gestionar el conteni
 * [Introducción a los portales y ejemplo de portlet con Liferay][blogbitix-243]
 * [Portlets con el framework Apache Tapestry y Apache Pluto][blogbitix-244]
 
-## Varios libros
+### Varios libros
 
 ### Learning JavaScript
 
@@ -245,7 +247,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185]
 
-## Libros sobre Linux y DevOps
+### Libros sobre Linux y DevOps
 
 ### Git: Mastering Version Control
 
@@ -302,7 +304,7 @@ La herramienta es muy útil para tratar a los servidores siendo numerosos como g
 
 Aún habiendo leído [Amazon Web Services in Action](https://amzn.to/2v8nI0F) y [Amazon Web Services For Dummies](https://amzn.to/2icfumV) como no he tenido la oportunidad de practicar con la nube de Amazon casi todo de lo que leí lo tengo olvidado. [Amazon ofrece una capa gratuita](https://aws.amazon.com/es/free/) para probarlo.
 
-## Publicaciones más breves
+### Publicaciones más breves
 
 Esto ya no son libros sino documentos más pequeños sobre diferentes temas.
 

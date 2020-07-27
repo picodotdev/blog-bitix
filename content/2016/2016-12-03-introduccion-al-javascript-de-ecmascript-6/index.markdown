@@ -31,6 +31,8 @@ Las últimas versiones de los navegadores [Chrome][google-chrome] y [Firefox][fi
 
 Estas son gran parte de las novedades que he anotado al leer el libro Learning JavaScript. Para profundizar sobre JavaScript la documentación de [Mozilla Developer Network][mozilla-mdn] está muy bien como manual de referencia donde hay más ejemplos y comentarios más extensos de los que hago en cada sección.
 
+{{< tableofcontents >}}
+
 ### Definición de variables
 
 Para solventar las deficiencias de las variables declaradas con _var_ hay dos nuevas palabras reservadas _let_ para [declarar variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Declarations) que cambian de valor y _const_ para constantes. También se pueden declarar símbolos que son identificadores de tipos únicos e inmutables.

@@ -29,6 +29,8 @@ Veamos algunos ejemplos de estas características del lenguaje SQL y que Postgre
 
 Para una fácil instalación de una instancia de la base de datos PostgreSQL usaré [Docker][docker] con la que una vez terminados los ejemplos se puede eliminar sin dejar ningún rastro. Si aún no has usado Docker puedes leer la [serie de artículos sobre Docker][blogbitix-serie-docker] que he escrito.
 
+{{< tableofcontents >}}
+
 ### Instalación PostgreSQL con Docker
 
 Una vez instalado Docker e iniciado su servicio y con el comando `docker-compose` y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando `docker-compose up`. El comando `docker ps` lista los contenedores en ejecución y con el comando `docker exec` iniciamos un proceso bash en el contenedor indicado con su identificativo.

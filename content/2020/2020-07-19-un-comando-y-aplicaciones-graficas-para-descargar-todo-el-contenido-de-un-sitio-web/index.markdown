@@ -22,6 +22,8 @@ La necesidad puede ser hacer una copia de seguridad periódicas para conservar e
 
 Los navegadores web con el botón derecho del ratón ofrecen la posibilidad de descargar y guardar en el sistema de archivos la página que se está visualizando, está es la opción más simple ya que no se necesitan herramientas adicionales si solo se quiere guardar una página de las muchas de un sitio web. Su desventaja es que no sirve para guardar un sitio web completo por requerir hacer la operación manualmente por cada página, de forma que para realizar la operación de forma másiva y automatizada para el sitio web completo hay que utilizar alguna herramienta especializada.
 
+{{< tableofcontents >}}
+
 ### Cómo descargar un sitio web desde la línea de comandos con wget
 
 La herramienta de línea de comandos [wget][wget] permite descargar un sitio web completo con un comando ejecutado desde la terminal incluyendo los archivos HTML y de recursos como imágenes, vídeos, contenido multimedia como audio o música, de estilos CSS o archivos JavaScript. El contenido que descarga wget es el referenciado a través de los enlaces presentes en el propio contenido, wget explora los archivos HTML en busca de enlaces a recursos u otras páginas HTML y de forma recursiva descarga el contenido completo al sistema de archivos local. Está disponible para los sistemas operativos [Windows][windows], [GNU][gnu]/[Linux][linux] y [macOS][macOS] y es una herramienta de software libre y gratuita.

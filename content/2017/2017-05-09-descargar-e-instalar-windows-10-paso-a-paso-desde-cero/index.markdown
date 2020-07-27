@@ -23,6 +23,8 @@ Prácticamente la totalidad de portátiles que se venden en las grandes superfic
 
 En los casos anteriores realizar una reinstalación de Windows desde cero es necesaria. Muchos usuarios no tienen conocimientos avanzados de tecnología o informática y no conocen los pasos para realizar una reinstalación. En este artículo explicaré detalladamente, paso a paso y desde cero cuales son los pasos que hay que realizar para instalar Windows 10.
 
+{{< tableofcontents >}}
+
 ### Requisitos mínimos
 
 Lo primero es conocer que Windows 10 para funcionar correctamente posee unos requisitos mínimos para el equipo en el que vaya a ser instalado, fue comercializado en julio del 2015 y cualquier equipo posterior a esa fecha ya cumplirá con los requisitos mínimos y también los equipos que cumpliesen con los de Windows 7 o viniesen preinstalados con esta versión anterior. En la página de [Especificaciones y requisitos del sistema para Windows](https://www.microsoft.com/es-es/windows/windows-10-specifications) están detalladas una buena cantidad de notas informativas y los requerimientos que son los siguientes:

@@ -22,6 +22,8 @@ Por motivos laborales y por política de la empresa tuve que elegir como equipo 
 
 Tenía la duda de si esta experiencia me iba a convencer de pasarme al lado oscuro. Llevo usando el MacBook desde hace un año siendo este [mi primer contacto con un Mac][blogbitix-193] y puedo decir de momento que no hay nada en los Mac que me convezca de adquirir uno de los portátiles de Apple. Sí no son feos, tenían (en pasado) alguna cosa distinta como los _magsafe_ en el adaptador de corriente, no tienen elementos obsoletos como una salida VGA o grabadora DVD, una buena pantalla y un buen _touchpad_ pero a un precio exagerado. Aún así y ahora que he probado tanto Windows, macOS como GNU/Linux no tengo nada que envidiar a los portátiles de Apple ni a macOS por mi parte, es más estoy más convencido de usar GNU/Linux.
 
+{{< tableofcontents >}}
+
 ### Software
 
 Empezando por el software libre, ¿hace falta que mecione [las cuatro libertades esenciales](https://www.gnu.org/philosophy/free-sw.es.html)? o la posibilidad de elegir la distribución o entorno de escritorio que más me guste o mejor se adapte a mis requerimientos. Pensando mal, en el portátil Mac no estoy seguro de que no tengan algún tipo de software espía, algún tipo de monitorización o telemetría.

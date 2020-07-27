@@ -18,6 +18,8 @@ Hay cantidad de información para aprender y en diferentes formatos desde libros
 
 En este artículo comentaré algunos libros que a mí me han gustado y que mucha gente recomienda leer ya que contienen cantidad importante e interesante de información útil para realizar mejor la tarea de programación, algunos tratan sobre el código otros sobre como enfrentarnos a las tareas y problemas que nos encontramos en el desarrollo y trabajo.
 
+{{< tableofcontents >}}
+
 ### Thinking in Java
 
 Yo como programador Java el libro que recomiendo para aquellos que ya tengan unos pocos conocimientos de programación estén empezando a programar en Java es [Thinking in Java](https://amzn.to/2Qo38qQ) aunque también es recomendable para aquellos que incluso llevan varios años programando en Java, contiene una explicación detallada de cada uno de los aspectos del lenguaje. Java 8 ha introducido numerosas novedades (streams, lambdas, mejorada la programación asíncrona, date api, default methods, programación funcional, ...) y el libro [Java 8 in Action](https://amzn.to/2ZThJxJ) nos permite conocerlas detalladamente. En otros lenguajes hay otros libros que nos pueden introducir en la materia como [C# 5.0 All-in-One For Dummies](https://amzn.to/39GxlsU) o [Beginning Python](https://amzn.to/35oMxHG).

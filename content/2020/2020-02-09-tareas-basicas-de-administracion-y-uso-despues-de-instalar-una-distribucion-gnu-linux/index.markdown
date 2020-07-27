@@ -34,6 +34,8 @@ Dependiendo de la distribución cada una de estas tareas puede variar el comando
     image1="logotype:ubuntu.svg" optionsthumb1="200x150" title1="Ubuntu"
     image2="logotype:archlinux.svg" optionsthumb2="200x150" title2="Arch Linux" >}}
 
+{{< tableofcontents >}}
+
 ### Actualizar los paquetes instalados del sistema
 
 En todas las distribuciones hay un gestor de paquetes que se encarga de forma automatizada de descargar desde los repositorios las nuevas versiones y actualizar los paquetes. Cada paquete tiene unas dependencias que el gestor de paquetes también se encarga de descargar, instalar y actualizar. Es importante realizar la actualización regularmente, todas las semanas o cada dos semanas, dado que estos incluyen importantes correcciones de seguridad, correcciones de errores o mejoras con nuevas opciones.

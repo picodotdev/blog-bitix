@@ -30,6 +30,8 @@ The alternatives to Windows are the expensive [Apple][apple] products very orien
 
 In this article I will focus on alternatives to Office that are also several. Bypassing the issue of libre software, Office is a good and complete office suite with more options than many users will need.
 
+{{< tableofcontents >}}
+
 ### Microsoft Office
 
 Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/) has a cost of 8.80€ per user and according to the plan that includes more or fewer applications.

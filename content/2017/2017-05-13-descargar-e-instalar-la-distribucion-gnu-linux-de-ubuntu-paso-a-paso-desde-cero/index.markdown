@@ -36,6 +36,8 @@ Para instalar Ubuntu solo se necesita una memoria USB de 4 GiB de capacidad, el 
 
 En este artículo explicaré como instalar Ubuntu en su versión 20.04 <abbr title="Long Term Support">LTS</abbr>.
 
+{{< tableofcontents >}}
+
 ### Requisitos mínimos
 
 Los [requisitos mínimos de Ubuntu](https://help.ubuntu.com/community/Installation/SystemRequirements) son bastante bajos para cualquier sistema de unos pocos años, menores que los requeridos para instalar Windows. Aunque en la memoria es recomendable tener al menos 2 GiB o incluso 4 GiB. Cualquier equipo medio de de la última década cumple estos requisitos.

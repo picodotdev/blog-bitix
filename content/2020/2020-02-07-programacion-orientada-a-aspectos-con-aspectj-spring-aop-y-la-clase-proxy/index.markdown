@@ -45,6 +45,8 @@ Se recomienda usra la forma más simple que sea suficiente para las necesidad de
 
 Si no se usa spring o se necesitan aplicar aspectos en objetos no gestionados por el contenedor de Spring (como objetos de dominio) o aplicar _advices_ en _joint points_ distintos a las ejecuciones de métodos, por ejemplo para la obtención o asignación de una propiedad entonces la opción a usar es [AspectJ][aspectj].
 
+{{< tableofcontents >}}
+
 ### Programación orientada a aspectos con AspectJ
 
 AspectJ es una librería específica y la que más posibilidades ofrece de las que muestro en el artículo. Hay varias formas de utilizar AspectJ, la de usarla mediante anotaciones es bastante simple.

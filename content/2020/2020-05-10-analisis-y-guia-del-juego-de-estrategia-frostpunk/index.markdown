@@ -39,6 +39,8 @@ Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los tex
 
 {{< game-spoiler >}}
 
+{{< tableofcontents >}}
+
 ### Estrategia inicial
 
 Frostpunk es un juego de gestión de recursos en el que hay que ser previsor a las necesidades futuras para no malgastar tiempo esperando a tener los recursos necesarios. Hay que construir edificios por adelantado antes de que sean imprescindibles o acumular recursos para acometer la siguiente investigación en cuanto se pueda. De forma regular es aconsejable realizar guardados para poder volver a un punto anterior para poder reconducir la partida tomando otras decisiones.

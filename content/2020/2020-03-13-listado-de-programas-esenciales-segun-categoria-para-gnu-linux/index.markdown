@@ -47,6 +47,8 @@ Todos estos programas están disponibles como paquete para cada distribución GN
 * [Programación y desarrollo](#programación-y-desarrollo)
 * [Seguridad y privacidad](#seguridad-y-privacidad)
 
+{{< tableofcontents >}}
+
 ### Ofimática, documentos y escritorio
 
 La ofimática es la funcionalidad más común a todos los usuarios. Poder editar documentos de texto, utilizar hojas de cálculo aplicando fórmulas y crear presentaciones. Un editor de texto avanzado tiene más funcionalidad si son necesarias que el simple editor de texto incluido en los entornos de escritorio. Visualizar archivos digitalizados como libros electrónicos y archivos de cómics es necesario para aquellos usuarios que les gusta la lectura. Tomar capturas de pantalla es otra funcionalidad para que los entornos de escritorio ya incluyen algún programa pero también suelen ser simples aunque suficientes, para los usuarios que necesitan alguna funcionalidad hay algún programa más especializado.

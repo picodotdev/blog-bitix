@@ -26,6 +26,8 @@ El código imperativo se basa en la ejecución de forma secuencial de un conjunt
 
 Cada uno de estos tipos de sentencias forman las piezas básicas de construcción de los programas, combinadas en múltiples lineas de código forman programas complejos que sirven para el propósito para que el programa fue escrito.
 
+{{< tableofcontents >}}
+
 ### Sentencias de asignación
 
 Las sentencias de asignación sirven para asignar nuevos valores y referencias a objetos a variables y propiedades de objetos. La sintaxis de la asignación consta del nombre de variable que toma el valor a la izquierda, el operador de asignación en el medio y de la expresión a la derecha. El valor de una variable o propiedad cambia con una sentencia de asignación, el valor anterior se reemplaza por el nuevo valor. El nuevo valor de la variable es el resultado de evaluar la expresión que proporciona el valor, con una asignación de inicialización es posible asignar un valor al mismo tiempo que se declara una variable o propiedad de un objeto.

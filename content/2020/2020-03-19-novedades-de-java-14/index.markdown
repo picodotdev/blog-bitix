@@ -42,6 +42,8 @@ Las mejoras incluídas en esta versión son:
 * 368: [Text Blocks (Second Preview)](https://openjdk.java.net/jeps/368)
 * 370: [Foreign-Memory Access API (Incubator)](https://openjdk.java.net/jeps/370)
 
+{{< tableofcontents >}}
+
 ### Excepciones NullPointerException más útiles
 
 Cuando se produce una excepción _NullPointerException_ por usar una referencia de objeto cuyo valor es _null_ Java emite una traza indicando la línea de código donde se ha producido, la clase y método donde se ha intentado referenciar pero no se ha podido.

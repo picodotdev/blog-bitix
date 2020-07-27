@@ -38,6 +38,8 @@ En los enlaces de la wikipedia está incluida una explicación más detallada de
     linkids="5952266d59f312e39e2a850c1dc3a54a"
     asins="1934356557" >}}
 
+{{< tableofcontents >}}
+
 ### Primera forma normal, 1FN
 
 No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.

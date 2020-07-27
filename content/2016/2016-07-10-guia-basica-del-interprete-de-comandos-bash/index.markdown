@@ -22,6 +22,8 @@ Automatizar las tareas que realizamos permite ahorrarnos el tiempo de tener que 
 
 El intérprete de comandos Bash junto con la combinación de otros programas proporcionados por la parte GNU de los sistemas Linux presentes en la mayoría de las distribuciones por defecto es suficiente para automatizar la mayor parte de tareas que necesitemos conociendo que hacen [50 comandos útiles de línea de comandos][blogbitix-477]. Para aumentar la productividad es necesario aprender [las combinaciones de teclas del intérprete Bash y del emulador de la terminal][blogbitix-152].
 
+{{< tableofcontents >}}
+
 ### Tuberías y redirecciones
 
 Al ejecutar un comando podemos querer encadenar la salida de un comando con la entrada de otro, mediante una tubería. Uno de los puntos de la filosofía de los programas de los sistemas Unix es que realicen una o pocas tareas pero que lo hagan muy bien. Usando varios programas especializados en una tarea podemos juntarlos como si fuese piezas de Lego para realizarla tarea compleja que necesitamos, encadenando la salida de un comando como la entrada del siguiente.

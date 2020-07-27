@@ -26,6 +26,8 @@ Por otro lado el hecho de usar Linux hace que no todos los juegos estén disponi
 
 Ya han sido publicadas noticias indicando que la PlayStation 4 está al final de su ciclo de vida comercial y será sustituida previsiblemente en algún momento de 2020 o 2021 por una nueva PlayStation 5. Por otro lado Google ha anunciado su plataforma de juegos [Stadia][google-stadia] con un funcionamiento vía _streaming_, disponible a finales del 2019 o principios del 2020. En esta situación surgen varias dudas razonables: ¿comprar una PlayStation 4? ¿seguir con Diablo 3? ¿esperar a la PlayStation 5? ¿que ofrece Google Stadia?
 
+{{< tableofcontents >}}
+
 ### PlayStation 4
 
 La [PlayStation 4](https://es.wikipedia.org/wiki/PlayStation_4) fue comercializada a finales del 2013, con su actualización del modelo _slim_ y _pro_ en el 2016. Habiendo ya pasado varios años desde su lanzamiento posee un amplio catálogo de juegos con muy buena calidad. Su precio está entre los 350€ nueva para el modelo _slim_ o 230€ de segunda mano o seminueva en una tienda. Al haber pasado ya unos años hace que muchos destacados juegos se encuentren en unos razonables precios de entre 10€ y 20€.

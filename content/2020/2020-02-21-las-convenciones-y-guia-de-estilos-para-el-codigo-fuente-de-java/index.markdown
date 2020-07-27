@@ -25,6 +25,8 @@ Es importante seguir en todo el código fuente las mismas convenciones ya que en
 
 Otros lenguajes como [Python][python] y [C#][csharp] definen sus propias convenciones bastante diferentes de las de Java que cambia significativamente el aspecto del código.
 
+{{< tableofcontents >}}
+
 ### Convenciones de código en Java
 
 Algunas recomendaciones en Java son:

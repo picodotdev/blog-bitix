@@ -27,6 +27,8 @@ Hace un tiempo hice una [pequeña lista de juegos en GNU/Linux][elblogdepicodev-
 
 Todos estos juegos los encontraremos entre los paquetes para nuestra distribución GNU/Linux disponibles para instalar mediante el gestor de paquetes. Si queremos juegos comerciales en Linux en [Steam](http://store.steampowered.com/browse/linux/?l=spanish) y [GOG](https://www.gog.com/) encontraremos algunos bastante buenos.
 
+{{< tableofcontents >}}
+
 ### Astromenace
 Acción y aventura. Astromenace es un juego de naves con la adición que permite mejorar las armas de la nave. Tiene un aspecto gráfico en tres dimensiones con efectos especiales de gran calidad. [Sitio web](http://www.viewizard.com/astromenace/index_linux.php).
 

@@ -52,6 +52,8 @@ Cada tipo de navío posee unas características que condicionan la forma de juga
     image2="image:mapa-mision.jpg" optionsthumb2="300x250" title2="Mapa y objetivo de una batalla"
     caption="Inicio de una batalla, mapa y objetivo" >}}
 
+{{< tableofcontents >}}
+
 ### Tipos de navíos
 
 En la versión de consola hay tres tipos de navíos, cada uno por sus características y consumibles participan de una forma distinta en la batalla. Cada tipo como norma general tiene un enemigo mortal, el de los destructores son son cruceros, el de los cruceros son los acorazados y el de los acorazados son los destructores.

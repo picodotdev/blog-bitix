@@ -21,7 +21,9 @@ En el lado del servidor varios servidores web también han incluido el soporte p
 
 Para usar HTTP/2 los navegadores Mozilla Firefox, Google Chrome y Microsoft Edge han anunciado que se necesitará cifrado, por lo tanto deberemos añadir el [soporte para TLS/SSL en el servidor][blogbitix-14] previamente.
 
-### Nginx
+{{< tableofcontents >}}
+
+### Configurar HTTP/2 en Nginx
 
 En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _default.conf_ para que quede de forma similar a la siguiente.
 
@@ -31,7 +33,7 @@ En Nginx es muy sencillo, deberemos modifificar el archivo de configuración _de
     gallery="true"
     image1="image:http2-nginx.png" optionsthumb1="300x200" title1="HTTP/2 en Nginx" >}}
 
-### Apache HTTPD
+### Configurar HTTP/2 en Apache HTTPD
 
 En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.org/packages/extra/x86_64/nghttp2/) de nuestra distribución. y usar el módulo _mod\_http2.so_ junto con _mod\_ssl.so_ para el cifrado.
 
@@ -41,7 +43,7 @@ En Apache HTTPD deberemos instalar el [paquete nghttp2](https://www.archlinux.or
     gallery="true"
     image1="image:http2-httpd.png" optionsthumb1="300x200" title1="HTTP/2 en Apache HTTPD" >}}
 
-### WildFly
+### Configurar HTTP/2 en WildFly
 
 El WildFly deberemos descargar un archivo jar que ofrece el soporte para la negociación de protocolo,
 <abbr title="Application-Layer Protocol Negotiation">ALPN</abbr>, según la versión del JDK que usemos de [Maven Central](http://central.maven.org/maven2/org/mortbay/jetty/alpn/alpn-boot/). Modificamos el archivo de configuración _bin/standalone.conf_.
@@ -56,7 +58,7 @@ Y el archivo _standalone/configuration/standalone.xml_ añadimos un nuevo listen
     gallery="true"
     image1="image:http2-wildfly.png" optionsthumb1="300x200" title1="HTTP/2 en WildFly" >}}
 
-### Jetty
+### Configurar HTTP/2 en Jetty
 
 Dependiendo de la versión de Java, usaremos el módulo alpn adecuado, en el momento de escribir este artículo con la versión 1.8.0_74 del [OpenJDK][openjdk], _modules/alpn-impl/alpn-1.8.0\_74.mod_.
 

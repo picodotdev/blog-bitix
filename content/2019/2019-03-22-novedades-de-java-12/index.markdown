@@ -37,6 +37,8 @@ Las mejoras incluídas en esta versión son:
 * 344: [Abortable Mixed Collections for G1](https://openjdk.java.net/jeps/344)
 * 346: [Promptly Return Unused Committed Memory from G1](https://openjdk.java.net/jeps/346)
 
+{{< tableofcontents >}}
+
 ### Expresiones switch
 Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas. Cada rama de la sentencia _siwtch_ devuelve un valor y no hace falta usar la sentencia _break_, se pueden utilizar varios casos para cada rama.
 

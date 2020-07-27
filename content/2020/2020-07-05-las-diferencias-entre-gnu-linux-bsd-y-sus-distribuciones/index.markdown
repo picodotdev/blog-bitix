@@ -34,6 +34,8 @@ Aunque solo para representar a los proyectos una diferencia está en su mascota,
     image3="logotype:gnu.svg" optionsthumb3="300x200" title3="GNU la mascota de GNU"
     caption="Mascotas de Linux, BSD y GNU" >}}
 
+{{< tableofcontents >}}
+
 ### Diferencias en el modelo de desarrollo
 
 Lo que conocemos como Linux es simplemente el núcleo del sistema operativo de las distribuciones GNU/Linux. Las distribuciones GNU/Linux están compuestas por otra multitud de programas de usuario que forman el sistema operativo completo y lo hacen usable, estos programas son muchos de los programados bajo los proyectos de la fundación GNU. Este es el motivo de que las distribuciones GNU/Linux incluyan los términos de ambos proyectos. Las distribuciones GNU/Linux son una recopilación de programas de terceras partes, todos estos programas GNU y no GNU incluidos en los sistemas GNU/Linux están desarrollados por diferentes programadores ajenos a Linux y los creadores de la distribución. Los creadores de las distribuciones GNU/Linux son los encargados de juntar los diferentes programas de cada fuente y empaquetarlas como un sistema usable, estable y libre de errores.

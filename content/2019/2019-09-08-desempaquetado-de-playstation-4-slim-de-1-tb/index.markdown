@@ -38,6 +38,8 @@ Nuevas ya solo se puede elegir el modelo _Slim_ que reduce el consumo de energí
     image1="image:playstation-4-models.jpg" optionsthumb1="300x200" title1="Modelos de PlayStation 4"
     caption="Modelos de PlayStation 4" >}}
 
+{{< tableofcontents >}}
+
 ### PlayStation, Xbox, Stadia o PC
 
 Entre la Xbox y la PlayStation he preferido la última aún siendo más cara por tres motivos principalmente. Uno, porque los juegos de la PlayStation me ha dado la sensación de que son más baratos al menos sus respectivas tiendas digitales, la PlayStation tiene varios juegos muy populares catalogados como _PlayStation Hits_ al precio de unos razonables 20 € y la PS4 parece tener más ofertas puntuales en algunos juegos para incentivar su compra, los juegos de la Xbox en lo que he visto los mismos están alrededor de 30 € cuando en la PS están en 20 €. Dos, porque el mano de la Xbox va con pilas y no quiero estar cambiándolas o usando pilas recargables, creo que se puede comprar una batería aunque aparte con su cargador. La Xbox está más barata para hacerla más atractiva en el mercado en parte seguramente porque la consola que ha vendido más unidades ha sido la PlayStation, la he visto en algunos momentos a 200 € la de 1 TB con unidad de disco cuando la PlayStation en algunos momentos de rebajas únicamente la he visto a 300€ aunque con un paquete de juegos. Tres, para jugar a través de internet en la Xbox se requiere una suscripción mensual y en la PlayStation para el _World of Warships_ que es del estilo _free to play_ no he visto que sea necesario, y este es un juego que me llama la atención.

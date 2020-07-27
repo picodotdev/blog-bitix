@@ -25,6 +25,8 @@ Algunos de estos ejemplos de bucles son utilizables a partir de Java 5, en versi
 
 Los bucles son uno de [los tipos de sentencias y estructuras de control de flujo básicas de Java][blogbitix-494] que permiten repetir la ejecución de un bloque de sentencias mientras se cumpla la expresión de condición de repetición, en cada iteración del bucle se evalua la expresión de condición y en el momento que no se cumple se continua con la siguiente sentencia del programa.
 
+{{< tableofcontents >}}
+
 ### Bucle for
 
 Antes de Java 5 un bucle _for_ de 0 a 5 y de una colección se realizaba de la siguiente manera manteniendo una variable normalmente de nombre _i_ que hace de contador y _j_ si el bucle _for_ está anidado en otro. Además de la variable de contador requiere establecer la condición que permita salir del bucle cuando se llegue al final de la iteración, la condición es muy importante para no crear un bucle infinito.

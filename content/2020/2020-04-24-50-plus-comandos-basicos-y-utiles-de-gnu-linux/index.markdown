@@ -36,6 +36,8 @@ Algunos ejemplos de lo que es posible realizar desde la línea de comandos son e
     image1="image:unix-linux-command-reference.jpg" optionsthumb1="650x450" title1="Referencia de comandos Unix/Linux"
     caption="Referencia de comandos Unix/Linux" >}}
 
+{{< tableofcontents >}}
+
 ### Sistema de archivos
 
 Esta colección de comandos permiten navegar el sistema de archivos, cambiar de directorio actual, copiar, mover y eliminar archivos, crear enlaces simbólicos, crear directorios y eliminar directorios así como cambiar [los permisos del sistema de archivos][blogbitix-455].

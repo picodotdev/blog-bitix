@@ -26,7 +26,9 @@ Arch Linux no tiene un asistente de instalación y la misma se hace desde la ter
 
 A pesar de que la guía oficial de Arch Linux está muy bien hay que leer varias páginas de la wiki y hay algunas cosas importantes que hay que tener en cuenta. Lo que aportará esta guía sobre la oficial son esos pequeños detalles a tener en cuenta y mi experiencia con la instalación en mi ordenador.
 
-## 1. Instalación base
+{{< tableofcontents >}}
+
+### 1. Instalación base
 
 Sin más, comencemos con la guía. Lo primero que deberemos hacer es [descargar el medio de instalación](https://www.archlinux.org/download/) de algún espejo de la red. Los medios con la coletilla -dual nos servirán tanto para sistemas de x86 (32 bits) como para sistemas x86_64 (64 bits). Una vez descargado deberemos grabarlo en un CD o más recomendable en una memoria USB.
 
@@ -49,19 +51,19 @@ Modificamos también el archivo locale.gen y descomentamos el dato es_ES.UTF-8 U
 
 {{< code file="script-2.sh" language="bash" options="" >}}
 
-### 1.1 Particionar el disco
+#### 1.1 Particionar el disco
 
 El siguiente paso es particionar el disco duro y antes de hacerlo deberemos asegurarnos de que hemos hecho una copia de seguridad de los datos ya que en el siguiente paso se perderá el contenido del disco duro o SSD. Usaremos el siguiente comando para hacer el [particionado usando GPT](https://wiki.archlinux.org/index.php/GUID_Partition_Table). En función de si nuestro sistema tiene BIOS o EFI las particiones son distintas, si es un ordenador de unos dos años o menos o venía con Windows 8 preinstalador probablemente tenga EFI.
 
 {{< code file="script-3.sh" language="bash" options="" >}}
 
-#### 1.1.1 Para un sistema con BIOS
+##### 1.1.1 Para un sistema con BIOS
 
 En un sistema BIOS usando GPT el esquema de particiones será el siguiente:
 
 {{< code file="script-42.txt" language="plaintext" options="" >}}
 
-#### 1.1.2 Para un sistema con EFI
+##### 1.1.2 Para un sistema con EFI
 
 En un sistema EFI las particiones deberán ser las siguientes:
 
@@ -71,7 +73,7 @@ Si tenemos un sistema con 8 GiB o más de memoria probablemente podamos prescind
 
 {{< code file="script-44.txt" language="plaintext" options="" >}}
 
-### 1.2 Formatear las particiones
+#### 1.2 Formatear las particiones
 
 Una vez tenemos las particiones creados deberemos formatearlas, sustituimos sdaX por lo que corresponda según el orden en que hemos creado las particiones:
 
@@ -81,7 +83,7 @@ Y si tenemos partición de swap:
 
 {{< code file="script-5.sh" language="bash" options="" >}}
 
-### 1.3 Montar las particiones
+#### 1.3 Montar las particiones
 
 Lo siguiente que haremos es montar las particiones para empezar a usarlas, primero la partición root (/), que en esta guía es sda2 y luego la partición boot (/boot):
 
@@ -95,7 +97,7 @@ Si tenemos un disco SSD montamos las particiones usando las opciones de montaje 
 
 {{< code file="script-8.sh" language="bash" options="" >}}
 
-### 1.4 Establecer el mirror
+#### 1.4 Establecer el mirror
 
 Debemos seleccionar un espejo del que se descargarán los paquetes del sistema base, modificamos el archivo /etc/pacman.d/mirrrorlist y ponemos el primero el que deseemos, yo suelo usar:
 
@@ -103,13 +105,13 @@ Server = http\://mirrors.kernel.org/archlinux/$repo/os/$arch
 
 {{< code file="script-9.sh" language="bash" options="" >}}
 
-### 1.5 Instalar paquetes del sistema base
+#### 1.5 Instalar paquetes del sistema base
 
 Lo siguiente será instalar los archivos del sistema base el siguiente comando que descargará del espejo de paquetes que hayamos elegido los paquetes del sistema base:
 
 {{< code file="script-10.sh" language="bash" options="" >}}
 
-### 1.6 Generar de fstab
+#### 1.6 Generar de fstab
 
 Generamos el archivo fstab que contendrá las características de nuestras particiones y opciones de montaje:
 
@@ -117,7 +119,7 @@ Generamos el archivo fstab que contendrá las características de nuestras parti
 
 Si usamos un disco SSD revisaremos el archivo asegurándonos que contiene las opciones noatime y discard.
 
-### 1.7 Chroot y configuración de sistema base
+#### 1.7 Chroot y configuración de sistema base
 
 Hacemos un chroot para cambiar el directorio root que estamos usando para configurar nuestro sistema.
 
@@ -135,27 +137,27 @@ Introducimos el siguiente contenido:
 
 {{< code file="script-15.txt" language="plaintext" options="" >}}
 
-### 1.8 Establecer la zona horaria
+#### 1.8 Establecer la zona horaria
 
 Establecemos la zona horaria de nuestro sistema:
 
 {{< code file="script-16.sh" language="bash" options="" >}}
 
-### 1.9 Modificar el nombre de nuesta máquina
+#### 1.9 Modificar el nombre de nuesta máquina
 
 {{< code file="script-17.sh" language="bash" options="" >}}
 
-### 1.10 Instalar el gestor de redes
+#### 1.10 Instalar el gestor de redes
 
 NetworkManager puede servirnos, lo instalamos con el gestor de paquetes de arch pacman y activamos el servicio:
 
 {{< code file="script-18.sh" language="bash" options="" >}}
 
-### 1.11 Cambiar la contraseña de root
+#### 1.11 Cambiar la contraseña de root
 
 {{< code file="script-19.sh" language="bash" options="" >}}
 
-### 1.12 Instalar el gestor de arranque
+#### 1.12 Instalar el gestor de arranque
 
 Este es el punto más delicado y que más problemas puede dar, ya que si no lo hacemos bien probablemente nuestro sistema no arrancará y por desgracia está al final de todo el proceso.
 
@@ -197,17 +199,17 @@ Finalmente, creamos el gestor de arranque para rEFInd:
 
 {{< code file="script-28.sh" language="bash" options="" >}}
 
-### 1.13 Finalizar la instalación
+#### 1.13 Finalizar la instalación
 
 Finalmente, salimos del entorno enjaulado, desmontamos las particiones y reiniciamos el sistema:
 
 {{< code file="script-29.sh" language="bash" options="" >}}
 
-## 2. Post instalación base
+### 2. Post instalación base
 
 Ya tenemos el sistema base pero para usarlo seguramente queramos un entorno gráfico, un usuario propio para no usar el usuario root y los programas que solemos usar habitualmente. Para ellos continuaremos en la postinstalación.
 
-### 2.1 Creación de usuario
+#### 2.1 Creación de usuario
 
 Creamos un usuario para no usar el usuario root, sustituimos picodotdev por el nuestro:
 
@@ -225,13 +227,13 @@ Editamos el archivo pacman.conf según nuestras preferencias, por ejemplo, para 
 
 {{< code file="script-33.sh" language="bash" options="" >}}
 
-### 2.2 Instalar el entorno gráfico
+#### 2.2 Instalar el entorno gráfico
 
 Instalamos los paquetes básicos del entorno gráfico, en este caso los controladores para una tarjeta gráfica intel:
 
 {{< code file="script-34.sh" language="bash" options="" >}}
 
-### 2.3 Instalar el entorno de escritorio
+#### 2.3 Instalar el entorno de escritorio
 
 Instalamos el entorno de escritorio según nuestras preferencias, en mi caso GNOME:
 
@@ -241,7 +243,7 @@ Habilitamos el servicio del gestor de escritorio GDM:
 
 {{< code file="script-36.sh" language="bash" options="" >}}
 
-### 2.4 Instalación de yaourt
+#### 2.4 Instalación de yaourt
 
 Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) deberemos instalar la herramienta yaourt:
 
@@ -257,13 +259,13 @@ Lo instalamos con:
 
 A partir de este momento podemos usar el comando yaourt en vez de pacman.
 
-### 2.5 Instalar de programas
+#### 2.5 Instalar de programas
 
 Los programas que instalaremos cambiarán según nuestras preferencias, estos son casi todos los que suelo utilizar:
 
 {{< code file="script-40.sh" language="bash" options="" >}}
 
-### 2.6 Activar el servicio de sincronización de hora
+#### 2.6 Activar el servicio de sincronización de hora
 
 Para mantener la hora de nuestro sistema correctamente podemos usar un servicio que se encargue de mantenerla con un servicio a través de la red.
 
