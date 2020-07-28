@@ -95,7 +95,7 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 
 {{< code file="script-8.sh" language="bash" options="" >}}
 
-### Examinar certficados
+### Examinar certificados
 
 #### Examinar un certificado
 
