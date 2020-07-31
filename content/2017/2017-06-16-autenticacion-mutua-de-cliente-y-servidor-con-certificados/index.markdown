@@ -86,7 +86,7 @@ Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Ja
     image1="image:firefox-select-cert.png" optionsthumb1="300x250" title1="Selección de certificado de cliente"
     caption="Autenticación mutua de cliente y servidor con el navegador web Firefox" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/MutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/WebServerMutualCertAuth" command="docker-compose up, groovy MutualCertAuth.groovy" >}}
 
 {{< reference >}}
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]

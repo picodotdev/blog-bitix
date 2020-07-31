@@ -65,7 +65,7 @@ Con algún mecanismo propio que empleemos al programar la aplicación (en Java p
 
 {{< code file="AppModule.java" language="java" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/RedirigirHTTPaHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/WebServerRedirectHTTPtoHTTPS" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
 {{< reference >}}
 * [Redirect Request to SSL](https://wiki.apache.org/httpd/RedirectSSL)

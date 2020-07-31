@@ -67,7 +67,7 @@ La compresión es otra de las configuraciones básicas aconsejable hacer en un s
 
 Estas funcionalidades las puedes consultar en el resto de artículos de la [serie web][blogbitix-serie-web].
 
-{{< sourcecode git="blog-ejemplos/tree/master/CompresionGzip" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/WebServerCompresionGzip" command="./docker-nginx.sh o ./docker-httpd.sh" >}}
 
 {{< reference >}}
 * [Module ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
