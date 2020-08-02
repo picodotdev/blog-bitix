@@ -112,6 +112,8 @@ Otra desventaja de la autenticación básica es que los archivos _htpasswd_ los 
 
 Estas desventajas hace de la autenticación básica no adecuada para algunos casos, dependiendo del caso las alternativas son implementar un formulario de autenticación, [implementar OAuth en una aplicación web][blogbitix-185] o [utilizar autenticación mutua con certificados][blogbitix-241].
 
+{{% sourcecode git="blog-ejemplos/tree/master/WebBasicAuth" command="./docker-nginx.sh o ./docker-apache.sh" %}}
+
 {{% reference %}}
 * [Autenticación HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
 * [Restricting Access with HTTP Basic Authentication (nginx)](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/)
