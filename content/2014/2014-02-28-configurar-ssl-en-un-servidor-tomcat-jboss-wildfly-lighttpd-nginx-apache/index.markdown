@@ -21,7 +21,7 @@ En entradas anteriores he explicado [en que consiste la criptografía y GPG][elb
 
 Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.
 
-Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente [protocolo HTTP/2][blogbitix-127] que es más eficiente tanto para el cliente como para el servidor y con menores latencias. [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129] es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones.
+Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente [protocolo HTTP/2][blogbitix-127] que es más eficiente tanto para el cliente como para el servidor y con menores latencias. [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129] es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protoclo seguro HTTPS es tambien una condición encesaria por seguridad al [utilizar autenticación básica][blogbitix-505].
 
 {{< tableofcontents >}}
 

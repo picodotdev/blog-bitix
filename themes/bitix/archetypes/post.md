@@ -24,6 +24,8 @@ draft: true
 
 {{< logotype image1="" title1="" width1="200" image2="" title2="" width2="200" >}}
 
+{{< tableofcontents >}}
+
 ![](url=logotype:java.svg:java.svg,size=200x200,gallery=true "Java")
 ![](url=resource:playstation-1.png,size=200x200,gallery=true "Página PlayStation")
 
