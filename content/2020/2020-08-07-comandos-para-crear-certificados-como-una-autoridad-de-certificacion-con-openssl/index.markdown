@@ -131,6 +131,8 @@ Al revocar un certificado la CA regenera el CRL.
 
 Los certificados se emiten con una de caducidad, llegado en el tiempo a la fecha de caducidad el certificado ya no se considera válido. En este caso hay que renovarlo. El servidor, cliente o usuario genera una nueva solicitud de certificado a partir de las mismas u otras nuevas claves privada y pública, la autoridad intermedia la recibe y realiza dos acciones: revoca el certificado anterior y genera un nuevo certificado a partir de la nueva solicitud de certificado. El comando de OpenSSL de la autoridad de certificados no permite que haya dos certificados con el mismo _Subject_ válidos de modo que primero hay que revocar el certificado anterior. Los comandos son los mismos que los mostrados anteriormente para cada una de las acciones.
 
+{{% sourcecode git="blog-ejemplos/tree/master/CertificateAuthority" command="./ca.sh && ./server-certs.sh" %}}
+
 {{% reference %}}
 * [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html)
 * [How do you sign a Certificate Signing Request with your Certification Authority?](https://stackoverflow.com/questions/21297139/how-do-you-sign-a-certificate-signing-request-with-your-certification-authority)
