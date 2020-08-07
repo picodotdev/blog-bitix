@@ -15,7 +15,7 @@ summary: "Usando los comandos expuestos en este artículo y con OpenSSL podemos 
 
 {{% post %}}
 
-{{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
+{{< logotype image1="openssl.svg" >}}
 
 Para un uso personal como enviar correos o archivos cifrados o firmados digitalmente usar [GnuPG](https://elblogdepicodev.blogspot.com.es/2013/11/introduccion-la-criptografia-e-inicio-con-gpg.html) es una buena opción. En Internet los servidores también se aprovechan del uso de criptografía para realizar comunicaciones seguras entre el usuario y el servidor.
 
@@ -104,6 +104,10 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 #### Examinar el certificado de un servidor web
 
 {{< code file="script-14.sh" language="bash" options="" >}}
+
+### Autoridad de certificación
+
+Los comandos anteriores permiten generar un certificado autofirmado válido para propocrionar una conexión cifrada entre un servidor y un cliente como es el caso de un servidor web y un navegador web. Pero los certificados autofirmados no permiten todas las validaciones de seguridad, el cliente no puede confiar en que realmente se está conectando al nombre del dominio del servidor que el certificado incluye y por ello en el cliente hay que eliminar la validación de comprobación del certificado. Para mayor seguridad y en un entorno de producción se ha de utilizar una autoridad de certificación, es posible [crear una autoridad de certificación propia con comandos de OpenSSL][blogbitix-506].
 
 {{< reference >}}
 * [OpenSSL][openssl]
