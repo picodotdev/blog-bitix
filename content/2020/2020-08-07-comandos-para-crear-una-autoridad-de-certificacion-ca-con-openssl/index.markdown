@@ -1,8 +1,9 @@
 ---
 pid: 506
 type: "post"
-title: "Comandos para crear certificados como una autoridad de certificación con OpenSSL"
-url: "/2020/08/comandos-para-crear-certificados-como-una-autoridad-de-certificacion-con-openssl/"
+title: "Comandos para crear una autoridad de certificación (CA) con OpenSSL"
+url: "/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/"
+aliases: ["/2020/08/comandos-para-crear-certificados-como-una-autoridad-de-certificacion-con-openssl/"]
 date: 2020-08-07T15:00:00+02:00
 language: "es"
 rss: true
