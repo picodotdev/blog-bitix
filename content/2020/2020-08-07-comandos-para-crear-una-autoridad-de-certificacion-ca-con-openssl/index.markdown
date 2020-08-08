@@ -35,11 +35,16 @@ El certificado de la CA raíz es simplemente un certificado autofirmado.
 
 {{< code file="ca-root-2.sh" language="bash" options="" >}}
 
+{{< image
+    gallery="true"
+    image1="image:archivos-ca.png" optionsthumb1="300x250" title1="Archivos y directorios de la autoridad de certificación con OpenSSL"
+    caption="Archivos y directorios de la autoridad de certificación con OpenSSL" >}}
+
 Al crear el certificado se utiliza un archivo de configuración donde se guardan las opciones por defecto de configuración que determinan varios aspectos de OpenSSL como directorios, políticas, fecha de validez de los certificados emitidos, campos de los certificados que emite o perfiles de firma entre algunos otros.
 
 {{< code file="ca/openssl.conf" language="ini" options="" >}}
 
-### Crear la clave y certificados de la autoridad de certificación intermedia
+### Crear la clave y certificado de la autoridad de certificación intermedia
 
 De la confianza en la CA raíz depende toda la seguridad de los certificados que emite, que su clave privada y pública o certificado sean comprometidos es posiblemente lo peor que le puede ocurrir a una CA. Para minimizar el riesgo se intenta hacer el menor uso posible de la clave privada y pública de la autoridad de certificación raíz, para esto se suele crear una autoridad de certificación intermedia que es la que realmente firma, revoca y renueva los certificados para el servidor, clientes o usuarios. Si la CA intermedia es comprometida aún siendo también un problema grave de seguridad al menos la CA raíz puede crear una nueva CA intermedia en la que se pueda confiar.
 
