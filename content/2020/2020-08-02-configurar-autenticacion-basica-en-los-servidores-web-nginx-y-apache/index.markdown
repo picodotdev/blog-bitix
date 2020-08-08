@@ -46,7 +46,7 @@ Si los datos proporcionados no son correctos se devuelve el código de estado _4
     gallery="true"
     image1="image:nginx-401.png" optionsthumb1="300x200" title1="Solicitud de credenciales"
     image2="image:nginx-web.png" optionsthumb2="300x200" title2="Acceso al recurso solicitado"
-    caption="Solicitud de credeciales y acceso al recurso solicitado" >}}
+    caption="Solicitud de credenciales y acceso al recurso solicitado" >}}
 
 ### Configurar autenticación básica en el servidor web Apache
 
