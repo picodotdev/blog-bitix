@@ -49,7 +49,7 @@ Desde hace un tiempo estoy escribiendo más sobre temas de programación que sob
 * [Integración entre Ansible y Docker][blogbitix-53]
 * [Introducción a Ansible][blogbitix-52]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
-* [Inicio básico de Docker][blogbitix-50]
+* [Cómo instalar y guía de inicio básica de Docker][blogbitix-50]
 * [Introducción y características de Docker][blogbitix-49]
 * [Agregador Blog Stack rediseñado][blogbitix-45]
 * [Procesador de documentos LyX][blogbitix-41]

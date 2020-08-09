@@ -192,7 +192,7 @@ Las aplicaciones normalmente guardan sus datos en almacenes de datos, esto son l
 Hay otro tipo de programas útiles en el desarrollo como los servidores web como [Nginx][nginx], mensajería como [RabbitMQ][rabbitmq] o tecnología de contenedores como [Docker][docker].
 
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
-* [Inicio básico de Docker][blogbitix-50]
+* [Cómo instalar y guía de inicio básica de Docker][blogbitix-50]
 
 #### Virtualización
 

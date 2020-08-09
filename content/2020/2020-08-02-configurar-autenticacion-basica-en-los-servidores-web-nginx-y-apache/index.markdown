@@ -19,7 +19,7 @@ tags: ["planeta-codigo", "web"]
 
 La autenticación básica o _basic auth_ es un mecanismo de autenticación sencillo que permite proteger los recursos solicitados de un sitio o aplicación web. Es fácil de configurar en el servidor web y está implementado en los propios navegadores, otra ventaja es que se puede añadir a un sitio o aplicación web sin necesidad de realizar modificaciones en su código.
 
-La autenticación básica por seguridad requiere [utilizar en el servidor web el protocolo seguro HTTPS][blogbitix-14] y [obtener un certificado para el nombre del dominio del servidor web][blogbitix-13] ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.
+La autenticación básica por seguridad requiere [utilizar en el servidor web el protocolo seguro HTTPS][blogbitix-14] y [obtener un certificado para el nombre del dominio del servidor web][blogbitix-13] ya que el navegador cuando envía al servidor el usuario y contraseña no los protege de forma especial y utiliza el mecanismo de comunicación de la conexión, es usual también [configurar un servidor web virtual][blogbitix-507] para aplicar esta configuración únicamente al sitio web deseado. Con el protocolo HTTPS el usuario y contraseña se transmite cifrada por la propia conexión segura.
 
 Cuando un servidor para el acceso a un recurso requiere autenticación básica el navegador muestra una ventana emergente en la que se solicita un usuario y contraseña.
 
@@ -34,7 +34,7 @@ Cuando un servidor para el acceso a un recurso requiere autenticación básica e
 
 La autenticación básica en [Nginx][nginx] se activan añadiendo dos directivas, _auth_basic_ y _auth_basic_user_file_, en el archivo de configuración del sitio web y recurso a proteger. En este caso con la raíz del sitio web _/_ cualquier ruta está protegida con autenticación básica.
 
-{{< code file="nginx.conf" language="plaintext" options="" >}}
+{{< code file="nginx-default.conf" language="plaintext" options="" >}}
 
 Utilizando [Docker][docker] se puede crear un contenedor y probar la configuración. Al acceder a la dirección _https:\/\/localhost_ el navegador mostrará el diálogo que solicita el usuario y contraseña. 
 

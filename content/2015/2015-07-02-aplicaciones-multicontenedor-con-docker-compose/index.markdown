@@ -19,15 +19,15 @@ summary: "Continuando la serie de artículos sobre Docker, otra de las herramien
 
 {{< logotype image1="docker.svg" >}}
 
-Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la [introducción a docker][blogbitix-49], conocemos [como empezar a usar docker][blogbitix-50] y sabemos [cómo crear nuestras propias imágenes de docker][blogbitix-51] para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:
+Una vez que ya sabemos que nos puede proporcionar una de las herramientas de la que más se está hablando con la [introducción a Docker][blogbitix-49], conocemos [como empezar a usar Docker][blogbitix-50] y sabemos [cómo crear nuestras propias imágenes de Docker][blogbitix-51] para los propósitos específicos que necesitemos nos resultará interesante algunas de las nuevas herramientas que proporciona Docker. El ecosistema de docker ya no solo se compone del entorno de ejecución de los contenedores, explicadas de forma básica son:
 
 * [Docker][docker]: el sistema de contenedores (_runtime_, imágenes, ...).
 * [Docker Hub][docker-hub]: el repositorio de imágenes que las diferentes herramientas de forma oficial o a través de usuarios construyen y comparten imágenes que cualquiera puede usar.
 * [Docker Compose][docker-compose]: permite describir un conjunto de contenedores que se relacionan entre ellos.
-* [Docker Machine][docker-machine]: permite construir máquinas virtuales para alojar contenedores. Similar a lo que hace [Vagrant][vagrant], al igual que el anterior también permite construir máquinas que ejecuten contenedores con [VirtualBox][virtualbox] o diferentes sistemas de computación en en la nube como [Amazon EC2][amazon-ec2], [Digital Ocean][digital-ocean] u otros. Docker Machine puede ser la forma de usar docker en Windows o Mac OS hasta que funcione de forma nativa como en GNU/Linux.
-* [Docker Swarm][docker-swarm]: permite construir un _cluster_ de máquinas al que se puede enviar contenedores docker para su ejecución.
+* [Docker Machine][docker-machine]: permite construir máquinas virtuales para alojar contenedores. Similar a lo que hace [Vagrant][vagrant], al igual que el anterior también permite construir máquinas que ejecuten contenedores con [VirtualBox][virtualbox] o diferentes sistemas de computación en en la nube como [Amazon EC2][amazon-ec2], [Digital Ocean][digital-ocean] u otros. Docker Machine puede ser la forma de usar Docker en Windows o Mac OS hasta que funcione de forma nativa como en GNU/Linux.
+* [Docker Swarm][docker-swarm]: permite construir un _cluster_ de máquinas al que se puede enviar contenedores Docker para su ejecución.
 
-Continuando la [serie de artículos sobre docker][blogbitix-serie-docker] que escribí hace unos meses escribiré sobre cada una de estas nuevas herramientas, empezando en este artículo con Docker Compose en el que explicaré de qué forma nos puede servir, como instalarlo y el descriptor de contenedores con un ejemplo.
+Continuando la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí hace unos meses escribiré sobre cada una de estas nuevas herramientas, empezando en este artículo con Docker Compose en el que explicaré de qué forma nos puede servir, como instalarlo y el descriptor de contenedores con un ejemplo.
 
 ### Introducción a Docker Compose
 

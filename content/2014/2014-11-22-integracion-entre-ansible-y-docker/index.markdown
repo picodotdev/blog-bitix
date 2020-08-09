@@ -38,13 +38,8 @@ Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.ht
 * Y algunos más
 
 {{< reference >}}
-* [Introducción a Docker][blogbitix-49]
-* [Guía de inicio básico de Docker][blogbitix-50]
-* [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Introducción a Ansible][blogbitix-52]
 * [Introducción a Bitnami][blogbitix-54]
-* http://docs.ansible.com/docker_module.html<br>
-* http://docs.ansible.com/docker_image_module.html
 {{< /reference >}}
 
 {{% /post %}}

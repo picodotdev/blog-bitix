@@ -69,7 +69,7 @@ Habiendo hecho una [introducción a Docker][blogbitix-49] y esta a Ansible en el
 * [Presentación sobre Ansible](https://speakerdeck.com/slok/ansible-all-the-things)
 * [Ansible examples](https://github.com/ansible/ansible-examples)
 * [Introducción a Docker][blogbitix-49]
-* [Guía de inicio básico de Docker][blogbitix-50]
+* [Cómo instalar y guía de inicio básica de Docker][blogbitix-50]
 * [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Integración entre Ansible y Docker][blogbitix-53]
 * [Introducción a Bitnami][blogbitix-54]

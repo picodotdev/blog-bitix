@@ -69,8 +69,6 @@ En los siguientes artículos comentaré la herramienta de automatización [ansib
     asins="1633430235" >}}
 
 {{< reference >}}
-* [Introducción a Docker][blogbitix-49]
-* [Guía de inicio básico de Docker][blogbitix-50]
 * [Lista de enlaces sobre Docker](http://www.nkode.io/2014/08/24/valuable-docker-links.html)
 * [Introducción a Ansible][blogbitix-52]
 * [Integración entre Ansible y Docker][blogbitix-53]

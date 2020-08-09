@@ -56,8 +56,6 @@ Una vez conocidos los aspectos básicos y en que se diferencia docker de la virt
     asins="1633430235" >}}
 
 {{< reference >}}
-* [Inicio básico de Docker][blogbitix-50]
-* [Cómo crear una imagen para Docker usando un Dockerfile][blogbitix-51]
 * [Docker][docker]
 * [Introducción a Ansible][blogbitix-52]
 * [Integración entre Ansible y Docker][blogbitix-53]
