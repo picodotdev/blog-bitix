@@ -3,7 +3,7 @@ pid: 507
 type: "post"
 title: "Configurar un servidor web virtual en Nginx y Apache"
 url: "/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/"
-date: 2020-08-09T11:00:00+02:00
+date: 2020-08-09T14:00:00+02:00
 language: "es"
 rss: true
 sharing: true
