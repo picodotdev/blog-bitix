@@ -237,7 +237,7 @@ Vault se comunica con Consul para utilizar el almacén de clave-valor o KV en el
 
 {{< image
     gallery="true"
-    image1="image:virtualbox.png" optionsthumb1="200x150" title1="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"
+    image1="image:virtualbox.png" optionsthumb1="300x250" title1="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant"
     caption="Máquinas virtuales en VirtuaBox aprovisionadas con Vagrant" >}}
 
 La comunicación entre Consul, Vault y Nomad se realiza utilizando diferentes protocolos y puertos de red, el entorno de computación como el que proporcionan los proveedores de computación en la nube no es confiable por ser compartido aún con las medidas de aislamiento de red que implementan. Para mayor seguridad Consul, Vault y Nomad permite utilizar comunicaciones cifradas para todo el tráfico de red entrante y saliente para lo que es necesario generar certificados que permitan cifrar las comunicaciones y permitan identificar tanto al servidor como al cliente con autenticación mutua basada en certificados.
