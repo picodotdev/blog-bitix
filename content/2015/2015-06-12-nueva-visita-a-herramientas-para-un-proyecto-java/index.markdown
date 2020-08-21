@@ -60,7 +60,7 @@ En el lado cliente de una aplicación web usaría la combinación de varias tecn
 * [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon][elblogdepicodev-154]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
 * [Internacionalización (i18n) en JavaScript][blogbitix-63]
-+ [Componentes en el cliente con Web Components usando JavaScript, HTML y CSS][blogbitix-388]
+* [Componentes en el cliente con Web Components usando JavaScript, HTML y CSS][blogbitix-388]
 
 ### _Framework_ web
 
@@ -72,13 +72,13 @@ Para el desarrollo de una página o aplicación web seguiría usando [Apache Tap
 * [Ejemplo sencillo de servicio web con RESTEasy][elblogdepicodev-142]
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
 * [Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Boot y Java][blogbitix-275]
-+ [Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java][blogbitix-325]
+* [Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java][blogbitix-325]
 
 ### Base de datos
 
 Para una base de datos relacional en vez de [MySQL][mysql] usaría [PostgreSQL][postgresql]. PostgreSQL posee numerosas opciones avanzadas y es una de las bases de datos libres más reconocidas. El futuro de MySQL con Oracle y su escisión en MariaDB es más incierto además de no poseer algunas características que PostgreSQL sí.
 
-Dependiendo del causística de la aplicación otras opciones complementarias son [Redis][redis] y [Mongo][mongodb], una base de datos clave-valor, una base de datos de documentos y en caso de tener que hacer búsquedas [Elasticsearch][elasticsearch].
+Dependiendo del causística de la aplicación otras opciones complementarias son [Redis][redis] y [MongoDB][mongodb], una base de datos clave-valor, una base de datos de documentos y en caso de tener que hacer búsquedas [Elasticsearch][elasticsearch].
 
 * [Introducción a la base de datos relacional PostgreSQL][blogbitix-236]
 * [Introducción a la base de datos NoSQL MongoDB][blogbitix-237]
