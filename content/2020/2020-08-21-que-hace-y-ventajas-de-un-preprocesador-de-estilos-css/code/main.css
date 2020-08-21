@@ -1,0 +1,133 @@
+html {
+  font-size: 16px;
+}
+body {
+  color: #222;
+  font-family: 'PT Serif', 'Times New Roman', Times, serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 50px;
+  background-color: #F8F8F8;
+  background-image: url('/blog-bitix/assets/images/backgrounds/grey.png');
+}
+::-moz-selection {
+  background-color: #61b135;
+  color: white;
+}
+::selection {
+  background-color: #61b135;
+  color: white;
+}
+a {
+  color: #569d2f;
+}
+a:visited {
+  color: #7aca4e;
+}
+a:hover {
+  color: #4b8929;
+}
+a:active {
+  color: #569d2f;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  clear: both;
+}
+
+...
+
+article h1 {
+  font-size: 2.6em;
+}
+@media (max-width: 576px) {
+  article h1 {
+    font-size: 1.8em;
+  }
+}
+article p.information,
+article span.information {
+  font-size: 0.9em;
+}
+article p.summary {
+  font-weight: 700;
+}
+article ul.columns {
+  columns: 4 12em;
+  column-gap: 1em;
+}
+article table {
+  margin-bottom: 20px;
+}
+article blockquote {
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
+}
+article div.logotypes {
+  margin-left: 1.5em;
+  text-align: right;
+  float: right;
+  clear: right;
+  max-width: 400px;
+  min-width: 150px;
+}
+@media (max-width: 576px) {
+  article div.logotypes {
+    width: 125px;
+  }
+}
+article div.logotypes img,
+article div.logotypes amp-img {
+  background-color: white;
+  border: 0.5em solid white;
+  border-radius: 0.3em;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+@media (max-width: 576px) {
+  article div.logotypes img,
+  article div.logotypes amp-img {
+    width: 125px;
+  }
+}
+article div.code {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+article div.code div.highlight {
+  font-size: 0.8em;
+  border-bottom: 1px solid #ddd;
+}
+article div.code div.highlight table {
+  overflow: auto;
+}
+article div.code div.highlight table td:nth-child(2) {
+  width: 100%;
+}
+article div.code div.highlight-meta {
+  font-size: 0.8em;
+  background-color: #f7f7f7;
+  padding: 6px;
+}
+article div.code div.highlight-meta span.raw {
+  float: right;
+}
+article div.code div.highlight-meta span,
+article div.code div.highlight-meta a {
+  color: #666;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 0.8em;
+}
+
+...
