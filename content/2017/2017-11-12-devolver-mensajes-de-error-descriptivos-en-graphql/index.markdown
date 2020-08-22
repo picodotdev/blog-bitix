@@ -26,11 +26,11 @@ En esta consulta de mutación que añade un nuevo libreo a la librería se puede
 {{< code file="Library.java" language="java" options="" >}}
 {{< code file="Mutation.java" language="java" options="" >}}
 
-En el caso de no personalizar los mensajes de error se devuelve un error genérico de error interno del servidor nada descriptivo para el usuario de que cual es el motivo del error devuelvo como respuesta.
+En el caso de no personalizar los mensajes de error se devuelve un error genérico de error interno del servidor nada descriptivo para el usuario de que cual es el motivo del error devuelvo como respuesta, la respuesta debería indicar el autor no existe y el usuario no tiene permisos.
 
 {{< code file="curl-generic-errors.sh" language="bash" options="" >}}
 
-PAra alguos tipos de error como una consulta cuya sintaxis no es correcta o se hace referencia a campos que no existen se devuelven errores más descriptivos.
+Para alguos tipos de error como una consulta cuya sintaxis no es correcta o se hace referencia a campos que no existen se devuelven errores más descriptivos.
 
 {{< code file="curl-default-errors.sh" language="bash" options="" >}}
 
