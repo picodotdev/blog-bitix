@@ -21,8 +21,6 @@ Las páginas web están formadas por varios elementos separados, por un lado est
 
 Las hojas de estilos cambian propiedades de visualización de diferentes elementos como tipo de letra, tamaño de texto, formato, color, alineación, bordes, etc... La etiqueta _h1_ representa el título principal de la página, con el siguiente código se establecen varias propiedades a cada una de las etiquetas.
 
-{{< code file="main.css" language="css" options="" >}}
-
 Siendo las páginas web cada vez más complejas, en gran medida las hojas de estilo también se convierten en más complejas con la aparición de los dispositivos móviles un poco más dado que hay que adaptar la página al tamaño de cada uno de los dispositivos. Por esto se suelen usar _toolkits_ o librerías como [Bootstrap][bootstrap] con unos estilos elegantes listos para usar sin tener que crearlos desde cero en cada proyecto,  proporciona diferentes componentes como _layouts_, botones, formularios, modales, _popovers_, barras de progreso, desplegables y algunos más. Sin embargo, aún con Bootstrap suelen ser necesarios escribir algunos estilos adicionales propios de la página.
 
 ### El preprocesador de estilos CSS
@@ -32,6 +30,8 @@ Para facilitar la escritura de hojas de estilos complejas con menor código y m�
 Las ventajas de un preprocesador CSS es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, _namespaces_ para agrupar contextos de estilos y _mixins_ para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran y simplifican significativamente el trabajo con hojas de estilo.
 
 Los preprocesadores CSS facilitan la escritura y mantenimiento de las hojas de estilos con funcionalidades que CSS no tiene pero esto no hace del CSS resultante generado mejor que si estuviese escrito directamente sin utilizar un preprocesador, por ejemplo no conviene crear muchos niveles de anidación ya que el CSS generado será más grande y más costoso de aplicar al navegador. Para desarrollar estilos aplicables a elementos HTML que sean reutilizables y más fácilmente mantenibles hay que emplear alguna de las metodologías más aceptadas que proponen buenas prácticas para la escritura de CSS, algunas de estas metodologías son OOCSS, BEM y SMACSS.
+
+Este es un ejemplo de código fuente en formato Less que muestra varias de las funcionalidades que aporta sobre CSS estándar.
 
 {{< code file="example.less" language="plaintext" options="" >}}
 
@@ -46,5 +46,9 @@ El archivo CSS en formato _less_ hay que compilarlo para producir el archivo CSS
 La hoja de estilos en formato _less_ que genera el código CSS anterior el siguiente. Se observa que los estilos aplicables a _la etiqueta _article_ quedan agrupados en el contexto de _article_ de modo que son fácilmente identificables todos los estilos de cada etiqueta, además algunos colores utilizan variables cuyos valores no hace falta repetir en cada uso junto con el uso de funciones como _lighten_ y _darken_ para generar variaciones del color base indicado.
 
 {{< code file="main.less" language="plaintext" options="" >}}
+
+Y su resultado en formato CSS.
+
+{{< code file="main.css" language="css" options="" >}}
 
 {{% /post %}}
