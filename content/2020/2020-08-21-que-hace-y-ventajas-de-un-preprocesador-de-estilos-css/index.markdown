@@ -27,18 +27,24 @@ Siendo las páginas web cada vez más complejas, en gran medida las hojas de est
 
 ### El preprocesador de estilos CSS
 
-Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS. Un preprocesador de hojas de estilos lee un archivo de código fuente en el formato que espera el preprocesador y genera una hoja de estilos en formato CSS que los navegadores entienden. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es [less][less], otro es [SASS][sass].
+Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o _css preprocessors_ con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS. Un preprocesador de hojas de estilos lee un archivo de código fuente en el formato pseudo-código CSS que espera el preprocesador y genera un archivo hoja de estilos en formato CSS que los navegadores entienden, transforma el lenguaje de un archivo a otro en este caso de un código que suele ser similar a CSS a CSS estándar. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es [less][less], otro es [Sass][sass].
 
-Las ventajas de un preprocesador CSS como _less_ es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, _namespaces_ para agrupar contextos de estilos y _mixins_ para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran significativamente el trabajo con hojas de estilo.
+Las ventajas de un preprocesador CSS es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, _namespaces_ para agrupar contextos de estilos y _mixins_ para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran y simplifican significativamente el trabajo con hojas de estilo.
 
-La hoja de estilos en formato _less_ que genera el código CSS anterior el siguiente. Se observa que los estilos aplicables a _la etiqueta _article_ quedan agrupados en el contexto de _article_ de modo que son fácilmente identificables todos los estilos de cada etiqueta, además algunos colores utilizan variables cuyos valores no hace falta repetir en cada uso junto con el uso de funciones como _lighten_ y _darken_ para generar variaciones del color base indicado.
+Los preprocesadores CSS facilitan la escritura y mantenimiento de las hojas de estilos con funcionalidades que CSS no tiene pero esto no hace del CSS resultante generado mejor que si estuviese escrito directamente sin utilizar un preprocesador, por ejemplo no conviene crear muchos niveles de anidación ya que el CSS generado será más grande y más costoso de aplicar al navegador. Para desarrollar estilos aplicables a elementos HTML que sean reutilizables y más fácilmente mantenibles hay que emplear alguna de las metodologías más aceptadas que proponen buenas prácticas para la escritura de CSS, algunas de estas metodologías son OOCSS, BEM y SMACSS.
 
-{{< code file="main.less" language="plaintext" options="" >}}
+{{< code file="example.less" language="plaintext" options="" >}}
+
+### Cómo transformar el pseudo-codigo CSS a CSS con un preprocesador
 
 El archivo CSS en formato _less_ hay que compilarlo para producir el archivo CSS que los navegadores entienden. La herramienta para compilar el archivo de estilos en formato _less_ es _lessc_. Se puede usar directamente en un _script_ Bash o con una herramienta de construcción como [npm][npm] o a través de [webpack][webpack].
 
 {{< code file="npm-install.sh" language="bash" options="" >}}
 {{< code file="package.json" language="json" options="" >}}
 {{< code file="npm-less-main.sh" language="bash" options="" >}}
+
+La hoja de estilos en formato _less_ que genera el código CSS anterior el siguiente. Se observa que los estilos aplicables a _la etiqueta _article_ quedan agrupados en el contexto de _article_ de modo que son fácilmente identificables todos los estilos de cada etiqueta, además algunos colores utilizan variables cuyos valores no hace falta repetir en cada uso junto con el uso de funciones como _lighten_ y _darken_ para generar variaciones del color base indicado.
+
+{{< code file="main.less" language="plaintext" options="" >}}
 
 {{% /post %}}

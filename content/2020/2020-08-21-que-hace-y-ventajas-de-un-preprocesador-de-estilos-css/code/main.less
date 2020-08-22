@@ -18,31 +18,7 @@ body {
   background-image: url('/blog-bitix/assets/images/backgrounds/grey.png');
 }
 
-::-moz-selection {
-  background-color: lighten(@link, 5);
-  color: white;
-}
-
-::selection {
-  background-color: lighten(@link, 5);
-  color: white;
-}
-
-a {
-  color: @link;
-}
-
-a:visited {
-  color: lighten(@link, 15);
-}
-
-a:hover {
-  color: darken(@link, 5);
-}
-
-a:active {
-  color: @link;
-}
+...
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
@@ -108,43 +84,6 @@ article {
 
       @media (max-width: 576px) {
         width: 125px;
-      }
-    }
-  }
-
-  div.code {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    margin-bottom: 1em;
-
-    div.highlight {
-      font-size: 0.8em;
-      border-bottom: 1px solid #ddd;
-
-      table {
-        overflow: auto;
-
-        td:nth-child(2) {
-          width: 100%;
-        }
-      }
-    }
-  
-    div.highlight-meta {
-      font-size: 0.8em;
-      background-color: #f7f7f7;
-      padding: 6px;
-  
-      span.raw {
-        float: right;
-      }
-
-      span, a {
-        color: #666;
-        font-weight: 600;
-        text-decoration: none;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-        font-size: 0.8em;
       }
     }
   }
