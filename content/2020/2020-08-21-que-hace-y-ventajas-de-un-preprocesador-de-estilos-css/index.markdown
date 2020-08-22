@@ -25,13 +25,15 @@ Siendo las páginas web cada vez más complejas, en gran medida las hojas de est
 
 ### El preprocesador de estilos CSS
 
-Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o _css preprocessors_ con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS. Un preprocesador de CSS es un programa que lee un archivo de código fuente en el formato pseudo-código CSS que espera el preprocesador y genera un archivo hoja de estilos en formato CSS que los navegadores entienden, es un compilador que transforma el lenguaje de un archivo a otro en este caso de un código que suele ser similar a CSS a CSS estándar. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es [less][less], otro es [Sass][sass].
+Para facilitar la escritura de hojas de estilos complejas con menor código y más legibles han aparecido preprocesadores de hojas de estilos o _css preprocessors_ con funcionalidades adicionales y una nueva forma de escribir hojas de estilo menos tediosa que el CSS.
+
+Un preprocesador de CSS es un programa que lee un archivo de código fuente en el formato pseudo-código CSS que espera el preprocesador y genera un archivo hoja de estilos en formato CSS que los navegadores entienden, es un compilador que transforma el lenguaje de un archivo a otro en este caso de un código que suele ser similar a CSS a CSS estándar. Uno de los preprocesadores más populares por su simplicidad pero con muchas funciones útiles es [less][less], otro es [Sass][sass].
 
 Las ventajas de un preprocesador CSS es que se pueden usar variables que pueden ser utilizadas por ejemplo para aplicar el mismo color a varios elementos sin tener que repetir el color RGB en cada uno de los elementos lo que facilita el mantenimiento de las hojas de estilo. Anidar estilos relativos a un elemento y selectores, realizar operaciones, utilizar funciones, _namespaces_ para agrupar contextos de estilos y _mixins_ para estilos aplicables a varios elementos algunas cosas más pero estas ya mejoran y simplifican significativamente el trabajo con hojas de estilo.
 
 Los preprocesadores CSS facilitan la escritura y mantenimiento de las hojas de estilos con funcionalidades que CSS no tiene pero esto no hace del CSS resultante generado mejor que si estuviese escrito directamente sin utilizar un preprocesador, por ejemplo no conviene crear muchos niveles de anidación ya que el CSS generado será más grande y más costoso de aplicar al navegador. Para desarrollar estilos aplicables a elementos HTML que sean reutilizables y más fácilmente mantenibles hay que emplear alguna de las metodologías más aceptadas que proponen buenas prácticas para la escritura de CSS, algunas de estas metodologías son OOCSS, BEM y SMACSS.
 
-Este es un ejemplo de código fuente en formato Less que muestra varias de las funcionalidades que aporta sobre CSS estándar.
+Este es un ejemplo de código fuente en formato del preprocesador Less que muestra varias de las funcionalidades que aporta sobre CSS estándar.
 
 {{< code file="example.less" language="plaintext" options="" >}}
 

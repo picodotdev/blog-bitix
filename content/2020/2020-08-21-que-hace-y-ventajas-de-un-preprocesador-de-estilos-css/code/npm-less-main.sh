@@ -2,4 +2,3 @@
 set -e
 
 npm run less-main
-...
