@@ -1,48 +1,43 @@
-$ curl -XPOST -H "Content-Type: application/json" -d '{"query": "mutation addBook($title: String, $author: Long){addBook(title: $title, author: $author){title}}", "variables": { "title": "El lazarillo de Tormes", "author": 6}}' http://localhost:8080/graphql
+$ curl -s -XPOST -H "Content-Type: application/json" -H "User: admin" -d '{"query": "mutation AddBook($title: String, $author: Long){addBook(title: $title, author: $author){title}}", "variables": { "title": "El lazarillo de Tormes 2", "author": "999"}}' http://localhost:8080/graphql
 {
-  "data": {
-    "addBook": null
-  },
   "errors": [
     {
-      "errorType": "DataFetchingException",
-      "extensions": null,
       "message": "Invalid author",
-      "path": [
-        "addBook"
-      ],
-      "locations": [
-        {
-          "line": 1,
-          "column": 49
-        }
-      ]
+      "locations": [],
+      "extensions": {
+        "source": {
+          "line": 114,
+          "column": -1,
+          "sourceName": "io.github.picodotdev.blogbitix.graphql.repository.LibraryRepository.addBook(LibraryRepository.java:114)"
+        },
+        "classification": "ServerError"
+      }
     }
-  ]
+  ],
+  "data": {
+    "addBook": null
+  }
 }
 
-$ curl -XPOST -H "Content-Type: application/json" -d '{"query": "mutation addBook($title: String, $author: Long){addBook(title: $title, author: $author){title}}", "variables": { "title": "El lazarillo de Tormes", "author": 6}}' http://localhost:8080/graphql
+$ curl -s -XPOST -H "Content-Type: application/json" -d '{"query": "mutation AddBook($title: String, $author: Long){addBook(title: $title, author: $author){title}}", "variables": { "title": "El lazarillo de Tormes 2", "author": "6"}}' http://localhost:8080/graphql
 {
-  "data": {
-    "addBook": null
-  },
   "errors": [
     {
-      "errorType": "DataFetchingException",
-      "extensions": {
-        "foo": "bar",
-        "fizz": "whizz"
-      },
       "message": "Invalid permissions",
-      "path": [
-        "addBook"
-      ],
-      "locations": [
-        {
-          "line": 1,
-          "column": 49
-        }
-      ]
+      "locations": [],
+      "extensions": {
+        "source": {
+          "line": 110,
+          "column": -1,
+          "sourceName": "io.github.picodotdev.blogbitix.graphql.repository.LibraryRepository.addBook(LibraryRepository.java:110)"
+        },
+        "foo": "bar",
+        "fizz": "whizz",
+        "classification": "ServerError"
+      }
     }
-  ]
+  ],
+  "data": {
+    "addBook": null
+  }
 }

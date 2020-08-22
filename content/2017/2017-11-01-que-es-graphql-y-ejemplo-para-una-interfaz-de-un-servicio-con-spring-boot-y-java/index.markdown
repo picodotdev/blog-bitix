@@ -5,7 +5,7 @@ title: "Qué es GraphQL y ejemplo para una interfaz de un servicio con Spring Bo
 url: "/2017/11/que-es-graphql-y-ejemplo-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"
 aliases: ["/2017/11/ejemplo-de-graphql-para-una-interfaz-de-un-servicio-con-spring-boot-y-java/"]
 date: 2017-11-01T12:00:00+01:00
-updated: 2020-06-01T23:00:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -60,7 +60,7 @@ Una de las ventajas de GraphQL sobre REST es que es posible realizar una única 
 
 {{< code file="curl-2.sh" language="bash" options="" >}}
 
-Las peticiones de modificación se envían mediante _POST_. Este es el caso para añadir un libro a la biblioteca y los casos de que el autor del libro no sea válido o que el usuario que añade el libro no tenga permisos. En el ejemplo los errores no son descriptivos de lo que realmente ha sucedido, habría que hacer el [tratamiento de errores adecuado para que los mensajes fuesen más descriptivos][blogbitix-279].
+Las peticiones de modificación se envían mediante _POST_. Este es el caso para añadir un libro a la biblioteca y los casos de que el autor del libro no sea válido o que el usuario que añade el libro no tenga permisos. En el ejemplo los errores no son descriptivos de lo que realmente ha sucedido lo que no es malo para no dar pistas de funcionamiento interno si son errores internos del servidor como un fallo de conexión a la base de datos, en el caso de validaciones hay que [devolver mensajes de error descriptivos][blogbitix-279] para dar al usuario de la API suficientemente información de modo que sepa por qué está fallando la petición y si es posible corrija la consulta.
 
 {{< code file="curl-3.sh" language="bash" options="" >}}
 {{< code file="PermissionException.java" language="java" options="" >}}

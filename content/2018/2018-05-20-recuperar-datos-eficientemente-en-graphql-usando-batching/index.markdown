@@ -4,7 +4,7 @@ type: "post"
 title: "Recuperar datos eficientemente en GraphQL usando batching"
 url: "/2018/05/recuperar-datos-eficientemente-en-graphql-usando-batching/"
 date: 2018-05-20T19:00:00+02:00
-updated: 2019-06-15T01:25:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true

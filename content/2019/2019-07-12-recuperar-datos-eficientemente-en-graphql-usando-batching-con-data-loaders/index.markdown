@@ -4,6 +4,7 @@ type: "post"
 title: "Recuperar datos eficientemente en GraphQL usando batching con data loaders"
 url: "/2019/07/recuperar-datos-eficientemente-en-graphql-usando-batching-con-data-loaders/"
 date: 2019-07-12T18:00:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -37,7 +38,7 @@ Una vez creados los _data loaders_ hay que usarlos en los _resolver_ de las prop
 
 Al obtener los datos del conjunto de libros que utilizan un _batch loader_ se produce la siguiente salida.
 
-{{< code file="curl.sh" language="plaintext" options="" >}}
+{{< code file="curl.sh" language="bash" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" %}}
 

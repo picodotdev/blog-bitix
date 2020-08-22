@@ -4,7 +4,7 @@ type: "post"
 title: "Devolver mensajes de error descriptivos en GraphQL"
 url: "/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/"
 date: 2017-11-12T11:30:00+01:00
-updated: 2019-06-15T01:00:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -21,35 +21,42 @@ series: ["graphql"]
 
 Por defecto [GraphQL][graphql] devuelve errores con mensajes descriptivos para los errores del cliente como son los errores de sintaxis en la sentencia de consulta o mutación, en el caso de que el campo solicitado no exista o no se ha indicado ninguno. En el caso de Java si se lanza una excepción en la clase repositorio que guarda los datos o en la lógica de negocio y no se captura GraphQL indicará que se ha producido un error interno en el servidor. Esto no es muy descriptivo y es mejor indicar errores más útiles para el usuario de la API como podría ser que no se tienen permisos para realizar la modificación o el error que se ha producido al validar los datos y por los que la operación no se ha completado.
 
-Los errores en GraphQL usando el lenguaje Java se gestionan implementando en una clase la interfaz [GrapQLError](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java), este podría ser en caso de una excepción que además de heredar de [Exception](https://docs.oracle.com/javase/9/docs/api/java/lang/Exception.html) implemente la interfaz _GraphQLError_. Sin embargo, GraphQL cuando una clase hereda únicamente de _Exception_ lo considera un error interno del servidor y para no dar información interna del servicio a los clientes como mensaje indica únicamente _Internal Server Error(s) while executing query_.
+En esta consulta de mutación que añade un nuevo libreo a la librería se puede producir dos excepciones, uno en el caso de que el usuario que lanza la consulta no tenga permisos y otro en el caso de que el autor no exista.
+
+{{< code file="Library.java" language="java" options="" >}}
+{{< code file="Mutation.java" language="java" options="" >}}
+
+En el caso de no personalizar los mensajes de error se devuelve un error genérico de error interno del servidor nada descriptivo para el usuario de que cual es el motivo del error devuelvo como respuesta.
+
+{{< code file="curl-generic-errors.sh" language="bash" options="" >}}
+
+PAra alguos tipos de error como una consulta cuya sintaxis no es correcta o se hace referencia a campos que no existen se devuelven errores más descriptivos.
 
 {{< code file="curl-default-errors.sh" language="bash" options="" >}}
 
-Para que GraphQL muestre el error personalizado deseado lanzando excepciones hay que adaptar esa excepción y que implementa _GraphQLError_ con una clase que únicamente implemente la interfaz _GraphQLError_ pero no herede de _Exception_. Esta sería una clase adaptador necesaria.
+Los errores en GraphQL usando el lenguaje Java se gestionan haciendo uso de la clase la interfaz [GrapQLError](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java), que contiene los datos que se devuelven como respuesta como el mensaje de error, el tipo de error, la ubicación en el ćodigo fuente donde se ha producido además de otros datos personalizados adicionales que se quieran incluir.
 
-{{< code file="GraphQLErrorAdapter.java" language="java" options="" >}}
+Para adaptar las clases excepción que se lanzan desde el servicio de persistencia a las clases GrapQLError que utiliza GraphQL hay que utilizar métodos con la anotación @ExceptionHandler que básicamente transofrman una [RuntimeException](javadoc11:java.base/java/lang/RuntimeException.html) a un [GraphQLError](https://javadoc.io/doc/com.graphql-java/graphql-java/latest/graphql/GraphQLError.html).
 
-Para adaptar las clases excepción hay que cambiar el comportamiento de la clase _GraphQLErrorHandler_ de modo que transforme las excepciones a la clase _GraphQLError_ propia. Esta clase se indica al construir el objeto _SimpleGraphQLServlet_ y _ServletRegistrationBean_.
-
-{{< code file="Main.java" language="java" options="" >}}
+{{< code file="ExceptionHandlers.java" language="java" options="" >}}
 
 En el caso de este ejemplo solo un usuario de nombre _admin_ tiene permitido hacer modificaciones en la colección de libros guardados en la clase repositorio _LibraryRepository_. Por otro lado, cuando se añade un libro se hace una validación de los datos comprobando que el autor del libro a añadir exista en la librería. Estas son las peticiones válidas.
 
 {{< code file="curl.sh" language="bash" options="" >}}
 
-Y estas las inválidas que devuelve los mensajes propios más descriptivos de los errores o validaciones realizadas en el servidor de más utilidad para un usuario del servicio.
+Y estas las inválidas que devuelven los mensajes propios más descriptivos de los errores o validaciones realizadas en el servidor de más utilidad para un usuario del servicio.
 
 {{< code file="curl-custom-errors.sh" language="bash" options="" >}}
 
-La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la descripción del mensaje pero con el método _getExtensions()_ es posible incluir cualquier dato en forma de clave-valor que deseemos como un código de error o cualquier otra información deseada. El caso de la excepción _PermissionException_ devuelve dos datos adicionales _foo_ y _fizz_, en un caso real se implementaría una lógica más útil para devolver estos datos adicionales posiblemente proporcionándolos en el constructor u obteniéndolos con la referencia a algún objeto.
+La interfaz _GraphQLError_ posee el método _getMessage()_ para devolver la descripción del mensaje pero con el método _getExtensions()_ es posible incluir cualquier dato en forma de clave-valor que deseemos como un código de error o cualquier otra información deseada. El caso de la excepción _PermissionException_ devuelve dos datos adicionales _foo_ y _fizz_, en un caso real se implementaría una lógica más útil para devolver estos datos adicionales posiblemente proporcionándolos en el constructor u obteniéndolos con la referencia a algún objeto, podría ser incluso el _stacktrace_ completo de la excepción.
 
 {{< code file="PermissionException.java" language="java" options="" >}}
+{{< code file="ValidationException.java" language="java" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{< reference >}}
 * [Execution](https://graphql-java.readthedocs.io/en/v5/execution.html)
-* [GraphQLError.java](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java)
 {{< /reference >}}
 
 {{% /post %}}

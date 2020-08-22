@@ -4,7 +4,7 @@ type: "post"
 title: "Paginación usando cursores en GraphQL y Java"
 url: "/2017/11/paginacion-usando-cursores-en-graphql-y-java/"
 date: 2017-11-26T10:30:00+01:00
-updated: 2019-06-15T01:15:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true

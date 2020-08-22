@@ -4,7 +4,7 @@ type: "post"
 title: "Definir nuevos tipos de datos escalares en GraphQL"
 url: "/2017/12/definir-nuevos-tipos-de-datos-escalares-en-graphql/"
 date: 2017-12-01T10:00:00+01:00
-updated: 2019-06-15T01:20:00+02:00
+updated: 2020-08-22T21:00:00+02:00
 language: "es"
 rss: true
 sharing: true
