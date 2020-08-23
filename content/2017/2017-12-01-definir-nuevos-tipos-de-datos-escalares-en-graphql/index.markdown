@@ -17,11 +17,11 @@ series: ["graphql"]
 
 {{% post %}}
 
-{{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
+{{< logotype image1="graphql.svg" >}}
 
 [GraphQL es una alternativa a una interfaz REST][blogbitix-275] con las ventajas de permitir al consumidor obtener únicamente los datos que requiere y realizar varias consultas en una misma petición.
 
-[GraphQL][graphql] por defecto soporta un conjunto de tipos escalares en los datos entre los que están varios numéricos, cadenas, booleanos, enumerados además de los tipos o estructuras de datos definidos en la interfaz del servicio. Sin embargo, si es necesario es posible definir nuevos tipos de datos escalares como podría ser el caso de un tipo de dato para representar una fecha fecha y otro de importe monetario.
+[GraphQL][graphql] por defecto soporta un conjunto de tipos escalares en los datos entre los que están varios numéricos, cadenas, booleanos, enumerados además de los tipos o estructuras de datos definidos en la interfaz del servicio. Sin embargo, si es necesario es posible definir nuevos tipos de datos escalares como podría ser el caso de un tipo de dato para representar una fecha y otro de importe monetario.
 
 El objeto en Java que representa una fecha con Java 8 sería [LocalDate](https://docs.oracle.com/javase/9/docs/api/java/time/LocalDate.html) y la clase para el importe monetario podría ser un [BigDecimal](https://docs.oracle.com/javase/9/docs/api/java/math/BigDecimal.html) o alguna de [la librería JavaMoney][blogbitix-90].
 

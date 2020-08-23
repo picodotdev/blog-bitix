@@ -17,7 +17,7 @@ series: ["graphql"]
 
 {{% post %}}
 
-{{< logotype image1="graphql.svg" title1="GraphQL" width1="200" >}}
+{{< logotype image1="graphql.svg" >}}
 
 Los fragmentos en el contexto de [GraphQL][graphql] pueden ser de dos tipos, definidos previamente o definidos en linea. Los primeros permiten simplificar las consultas definiendo en un bloque una colección de datos a recuperar si tener que indicarlos explícitamente individualmente, lo que resulta útil para no repetir el mimo grupo de datos si se utiliza en varias consultas diferentes. Los fragmentos en línea permiten recuperar unos datos u otros en función del tipo de la instancia de la cual se quieren recuperar.
 
@@ -48,7 +48,7 @@ Para las publicaciones del tipo _Book_ en este ejemplo se recuperan los campos _
 
 {{< image
     gallery="true"
-    image1="image:fragment-inline.png" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
+    image1="image:query-fragment-inline.png" optionsthumb1="300x200" title1="Consulta con fragmentos en linea"
     caption="Consulta con fragmentos en linea" >}}
 
 Si es necesario hay que añadir la clases Java que representan a los tipos de GraphQL a la lista de clases del diccionario en la definición del esquema.
@@ -62,7 +62,7 @@ Para cada entidad hay una clase Java que la representa y un repositorio que cont
 {{< code file="Publication.java" language="java" options="" >}}
 {{< code file="LibraryRepository.java" language="java" options="" >}}
 
-{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" note="Requiere Java 9+ o Docker" >}}
+{{< sourcecode git="blog-ejemplos/tree/master/GraphQL" command="./gradlew run" >}}
 
 {{< reference >}}
 * [Fragments](https://graphql.org/learn/queries/#fragments)
