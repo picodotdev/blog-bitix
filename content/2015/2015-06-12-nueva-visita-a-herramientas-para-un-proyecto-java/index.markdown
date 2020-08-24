@@ -56,6 +56,7 @@ Otra herramienta muy útil es [Testcontainers][Testcontainers] que permite hacer
 
 * [Pruebas unitarias con Spock y Mockito][elblogdepicodev-114]
 * [Pruebas funcionales con Geb en una aplicación web Java][blogbitix-332]
+* [Cobertura de código y mutation testing en pruebas unitarias con JaCoCo y PIT en Java][blogbitix-438]
 * [Pruebas de carga y rendimiento de un servicio web con Apache Bench][blogbitix-411]
 * [Teses unitarios parametrizados con JUnit][blogbitix-410]
 * [Pruebas de integración con Testcontainers, ejemplo de JPA con la base de datos PostgreSQL][blogbitix-490]
@@ -64,7 +65,7 @@ Otra herramienta muy útil es [Testcontainers][Testcontainers] que permite hacer
 
 En el lado cliente de una aplicación web usaría la combinación de varias tecnologías, [jQuery][jquery] para acceder y manipular el DOM de la página web, [RequireJS][requirejs] para cargar los archivos necesarios en la página y evitar la polución del ámbito global JavaScript.
 
-Si la aplicación tiene una carga importante en el lado cliente evaluaría usar [TypeScript][typescript] como lenguaje por ser un compilado con sus ventajas en bases de código grandes, [Webpack][webpack] para gestionar los recursos, empaquetarlos y realizar transformaciones como alternativa a RequireJS y [React][react] para crear componentes en el lado cliente. [Jest][jest] o [Jasmine][jasmine] para hacer pruebas unitarias en JavaScript.
+Si la aplicación tiene una carga importante en el lado cliente evaluaría usar [TypeScript][typescript] como lenguaje por ser un compilado con sus ventajas en bases de código grandes, [Webpack][webpack] para gestionar los recursos, empaquetarlos y realizar transformaciones como alternativa a RequireJS y [React][react] para crear componentes en el lado cliente. [Jest][jestjs] o [Jasmine][jasmine] para hacer pruebas unitarias en JavaScript.
 
 * [Introduccion y ejemplo de RequireJS][elblogdepicodev-147]
 * [Introducción y ejemplo de Backbone.js][elblogdepicodev-152]
@@ -77,9 +78,11 @@ Si la aplicación tiene una carga importante en el lado cliente evaluaría usar 
 
 ### _Framework_ web
 
-Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles. Si se tratase de una aplicación REST evaluaría [Spark][sparkjava], [RESTEasy][resteasy] o [GraphQL][graphql] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST o GraphQL cruda.
+Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_ si necesita recursos de cliente añadiendo dependencias con [Webjars][webjars]. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles.
 
-La tendencia actual es desarrollar microservicios y esto en las aplicaciones web supone que sean capaces de ofrecer su servicio por si mismas no usando un servidor de aplicaciones que hay que instalar previamente simplificando el despliegue a los administradores de sistemas, esto también se puede conseguir en parte usando [Docker][docker]. En vez de usar un [Tomcat][tomcat] tradicional podemos usar la versión embebible o [Spring Boot][spring-boot].
+Si se tratase de una aplicación REST evaluaría [Spring Boot][springboot] o [GraphQL][graphql] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST o GraphQL cruda.
+
+La tendencia actual es desarrollar microservicios y esto en las aplicaciones web supone que sean capaces de ofrecer su servicio por si mismas no usando un servidor de aplicaciones que hay que instalar previamente simplificando el despliegue a los administradores de sistemas, esto también se puede conseguir en parte usando [Docker][docker]. En vez de usar un [Tomcat][tomcat] tradicional podemos usar la versión embebible o Spring Boot.
 
 * [Libro sobre desarrollo de aplicaciones con Apache Tapestry][blogbitix-12]
 * [Introducción y ejemplo de API RPC con Apache Thrift][blogbitix-72]
@@ -124,7 +127,7 @@ Aún usando un servicio en la nube para no encadenarse a uno determinado y dispo
 
 ### Otras
 
-Otras funcionalidades que necesita algunas aplicaciones son trazabilidad con [Sleuth][spring-cloud-sleuth], tolerancia a fallos ron [Resilience4j][resilience4j], búsquedas a texto completo con [Elascticsearch][elascticsearch], métricas y monitorización con [Micrometer][micrometer], [Prometheus][prometheus] y [Grafana][grafana], autenticación y autorización con [Keycloak][keycloak], [OAuth][oauth], [JWT][jwt] y [pac4j][pac4j], bus de eventos con Spring Events y comunicación desacoplada entre aplicaciones basado en mensajes con [RabbitMQ][rabbitmq], [Quartz][quartz] para la programación de tareas de forma periódica.
+Otras funcionalidades que necesita algunas aplicaciones son trazabilidad con [Sleuth][spring-cloud-sleuth], tolerancia a fallos ron [Resilience4j][resilience4j], búsquedas a texto completo con [Elasticsearch][elasticsearch], métricas y monitorización con [Micrometer][micrometer], [Prometheus][prometheus] y [Grafana][grafana], autenticación y autorización con [Keycloak][keycloak], [OAuth][oauth], [JWT][jwt] y [pac4j][pac4j], bus de eventos con Spring Events o [Guava][guava] y comunicación desacoplada entre aplicaciones basado en mensajes con [RabbitMQ][rabbitmq], [Quartz][quartz] para la programación de tareas de forma periódica.
 
 * [Trazabilidad en microservicios con Spring Cloud Sleuth][blogbitix-396]
 * [Implementar tolerancia a fallos con Resilience4j][blogbitix-425]
@@ -132,6 +135,7 @@ Otras funcionalidades que necesita algunas aplicaciones son trazabilidad con [Sl
 * [Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana][blogbitix-366]
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]
 * [Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring][blogbitix-382]
+* [Publicación y suscripción de eventos con Guava EventBus en una aplicación Java][blogbitix-422]
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 * [Tareas programadas de forma periódica con Quartz y Spring en Java][blogbitix-497]
 
