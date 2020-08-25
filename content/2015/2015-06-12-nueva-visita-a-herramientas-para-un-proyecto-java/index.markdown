@@ -127,7 +127,22 @@ Aún usando un servicio en la nube para no encadenarse a uno determinado y dispo
 
 ### Otras
 
-Otras funcionalidades que necesita algunas aplicaciones son trazabilidad con [Sleuth][spring-cloud-sleuth], tolerancia a fallos ron [Resilience4j][resilience4j], búsquedas a texto completo con [Elasticsearch][elasticsearch], métricas y monitorización con [Micrometer][micrometer], [Prometheus][prometheus] y [Grafana][grafana], autenticación y autorización con [Keycloak][keycloak], [OAuth][oauth], [JWT][jwt] y [pac4j][pac4j], bus de eventos con Spring Events o [Guava][guava] y comunicación desacoplada entre aplicaciones basado en mensajes con [RabbitMQ][rabbitmq], [Quartz][quartz] para la programación de tareas de forma periódica.
+Otras funcionalidades que necesita algunas aplicaciones son:
+
+* Trazabilidad con [Sleuth][spring-cloud-sleuth].
+* Tolerancia a fallos ron [Resilience4j][resilience4j]
+* Búsquedas a texto completo con [Elasticsearch][elasticsearch].
+* Métricas y monitorización con [Micrometer][micrometer], [Prometheus][prometheus] y [Grafana][grafana].
+* Autenticación y autorización con [Keycloak][keycloak], [OAuth][oauth], [JWT][jwt] y [pac4j][pac4j].
+* Bus de eventos con Spring Events o [Guava][guava].
+* Comunicación desacoplada entre aplicaciones basado en mensajes con [RabbitMQ][rabbitmq].
+* [Quartz][quartz] para la programación de tareas de forma periódica.
+* [JasperReports][jasperreports] para informes complejos o documentos CSV, Excel o PDF sencillos
+* [Log4j 2][log4j] para emitir trazas, un preprocesador.
+* Preprocesador CSS con [Less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación.
+* [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente.
+
+De algunas de estas herramientas he escrito de forma individualizada.
 
 * [Trazabilidad en microservicios con Spring Cloud Sleuth][blogbitix-396]
 * [Implementar tolerancia a fallos con Resilience4j][blogbitix-425]
@@ -138,18 +153,18 @@ Otras funcionalidades que necesita algunas aplicaciones son trazabilidad con [Sl
 * [Publicación y suscripción de eventos con Guava EventBus en una aplicación Java][blogbitix-422]
 * [Ejemplo de RabbitMQ con Java para enviar y recibir mensajes][blogbitix-210]
 * [Tareas programadas de forma periódica con Quartz y Spring en Java][blogbitix-497]
-
-Hay otras herramientas aún pasado este tiempo seguiría usando como [Git][git] para el control de versiones, [GitLab][gitlab] como plataforma para desarrollo que incluye repositorio de git, gestión de peticiones e integración continua además de otras funcionalidades en una única herramienta. [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente, [SDKMAN][sdkman] para gestionar las versiones de librerías Java en el entorno de desarrollo, [Gradle][gradle] como herramienta de construcción, [GNU/Linux][linux] tanto para desarrollar como para el servidor en el que desplegar la aplicación, [IntelliJ][intellij] como IDE para editar código Java o [Visual Studio Code][microsoft-visual-studio-code] para editar archivos no Java, [JasperReports][jasperreports] para informes complejos o documentos CSV, Excel o PDF sencillos, [Log4j 2][log4j] para emitir trazas, un preprocesador CSS como [Less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación.
-
-* [GitLab, la completa herramienta integrada para desarrollo de software][blogbitix-290]
-* [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
-* [Herramienta de construcción Gradle][elblogdepicodev-98]
-* [La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java][blogbitix-489]
 * [Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV][blogbitix-146]
 * [Ejemplo sencillo de como crear un documento PDF con Java y PDFBox][blogbitix-430]
 * [Generar documentos, informes y facturas en formato PDF con JasperReports y Java][blogbitix-449]
 * [La librería Log4j para emitir trazas en aplicaciones Java][blogbitix-334]
 * [Qué hace y ventajas de un preprocesador de estilos CSS][blogbitix-509]
+* [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
+
+Hay otras herramientas aún pasado este tiempo seguiría usando como [Git][git] para el control de versiones, [GitLab][gitlab] como plataforma para desarrollo que incluye repositorio de git, gestión de peticiones e integración continua además de otras funcionalidades en una única herramienta. [SDKMAN][sdkman] para gestionar las versiones de librerías Java en el entorno de desarrollo, [Gradle][gradle] como herramienta de construcción, [GNU/Linux][linux] tanto para desarrollar como para el servidor en el que desplegar la aplicación, [IntelliJ][intellij] como IDE para editar código Java o [Visual Studio Code][microsoft-visual-studio-code] para editar archivos no Java.
+
+* [GitLab, la completa herramienta integrada para desarrollo de software][blogbitix-290]
+* [Herramienta de construcción Gradle][elblogdepicodev-98]
+* [La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java][blogbitix-489]
 
 Usar herramientas adecuadas para un proyecto es importante aunque independientemente de las herramientas también es importante la metodología, [Domain Divern Design][wikipedia-domain-driven-design] o DDD propone numerosas pautas para organizar y modelar aplicaciones complejas con reglas de negocio de mofo que las diferentes partes estén desacopladas y el mantenimiento sea más sencillo. Los patrones de diseño aplicados de forma adecuada simplifican enormemente el código.
 
