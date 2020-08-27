@@ -67,10 +67,6 @@ En el lado cliente de una aplicación web usaría la combinación de varias tecn
 
 Si la aplicación tiene una carga importante en el lado cliente evaluaría usar [TypeScript][typescript] como lenguaje por ser un compilado con sus ventajas en bases de código grandes, [Webpack][webpack] para gestionar los recursos, empaquetarlos y realizar transformaciones como alternativa a RequireJS y [React][react] para crear componentes en el lado cliente. [Jest][jestjs] o [Jasmine][jasmine] para hacer pruebas unitarias en JavaScript.
 
-* [Introduccion y ejemplo de RequireJS][elblogdepicodev-147]
-* [Introducción y ejemplo de Backbone.js][elblogdepicodev-152]
-* [Introducción y ejemplo de Mustache][elblogdepicodev-148]
-* [Ejemplo de pruebas unitarias en javascript con Jasmine y Sinon][elblogdepicodev-154]
 * [Ejemplo lista de tareas con Backbone y React][blogbitix-20]
 * [Internacionalización (i18n) en JavaScript][blogbitix-63]
 * [Componentes en el cliente con Web Components usando JavaScript, HTML y CSS][blogbitix-388]
@@ -130,15 +126,15 @@ Aún usando un servicio en la nube para no encadenarse a uno determinado y dispo
 Otras funcionalidades que necesita algunas aplicaciones son:
 
 * Trazabilidad con [Sleuth][spring-cloud-sleuth].
-* Tolerancia a fallos ron [Resilience4j][resilience4j]
+* Tolerancia a fallos con [Resilience4j][resilience4j].
 * Búsquedas a texto completo con [Elasticsearch][elasticsearch].
 * Métricas y monitorización con [Micrometer][micrometer], [Prometheus][prometheus] y [Grafana][grafana].
 * Autenticación y autorización con [Keycloak][keycloak], [OAuth][oauth], [JWT][jwt] y [pac4j][pac4j].
 * Bus de eventos con Spring Events o [Guava][guava].
 * Comunicación desacoplada entre aplicaciones basado en mensajes con [RabbitMQ][rabbitmq].
 * [Quartz][quartz] para la programación de tareas de forma periódica.
-* [JasperReports][jasperreports] para informes complejos o documentos CSV, Excel o PDF sencillos
-* [Log4j 2][log4j] para emitir trazas, un preprocesador.
+* [JasperReports][jasperreports] y [PDFBox][apache-pdfbox] para informes complejos o documentos CSV, Excel o PDF sencillos.
+* [Log4j 2][log4j] para emitir trazas.
 * Preprocesador CSS con [Less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación.
 * [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente.
 

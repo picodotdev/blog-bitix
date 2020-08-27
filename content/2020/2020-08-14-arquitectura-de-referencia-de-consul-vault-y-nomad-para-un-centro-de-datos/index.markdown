@@ -24,6 +24,11 @@ La empresa [HashiCorp][hashicorp] cataloga las necesidades de las aplicaciones b
 
 En muchas organizaciones los desarrolladores solo se encargan del desarrollo de la aplicación o servicio, del despliegue y administración se encargan los administradores de sistemas. Los centros de datos se operan en base a peticiones entre los desarrolladores y los administradores de sistemas, este modelo organización es lento y propenso a ineficiencias, para evitarlo hay que tratar que los desarrolladores sean lo más autosuficientes posible para operar el entorno de ejecución de sus servicios haciendo que estos no solo desarrollen sus aplicaciones sino que también tengan capacidad de desplegarlas y monitorizarlas.
 
+{{< image
+    gallery="true"
+    image1="image:hashicorp-static-dynamic.png" optionsthumb1="200x150" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
+    caption="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" >}}
+
 En este artículo muestro un ejemplo usando tres de estos mismos productos que se usarían en un entorno de producción [Consul][consul] para el registro de servicios y conexión de forma segura, [Vault][vault] para seguridad y servicios de cifrado y [Nomad][nomad] para la ejecución de servicios con contenedores [Docker][docker]. Para el aprovisionamiento y ejecutar el ejemplo en la propia máquina el ejemplo usa [Vagrant][vagrant] que permite crear y aprovisionar máquinas virtuales sobre [VirtualBox][virtualbox], en un entorno basado en la nube se usaría [Terraform][terraform]. Consul, Vault y Nomad forman lo que sería un centro de datos de un entorno de ejecución para aplicaciones y servicios.
 
 [HashiQube](https://github.com/servian/hashiqube/) proporciona un entorno para hacer pruebas de desarrollo con todas las herramientas de HashiCorp, pero no es utilizable en un entorno de producción. Para construir un entorno con grado de producción hay que leer mucha de la buena ducmentación que ofrece HashiCorp de sus productos. Los productos de HashiCorp tienen una buena documentación en formato guía y tutoriales divididos en secciones individuales sobre un tema en concreto.
@@ -55,6 +60,24 @@ Este artículo hace uso, está relacionado y se complementa con otros artículos
 {{< tableofcontents >}}
 
 ### Servicios de HashiCorp
+
+{{< image
+    gallery="true"
+    image1="image:hashicorp-products-1.png" optionsthumb1="200x150" title1="Productos de HashiCorp"
+    image2="image:hashicorp-products-2.png" optionsthumb2="200x150" title2="Productos de HashiCorp"
+    image3="image:hashicorp-products-2.png" optionsthumb3="200x150" title3="Productos de HashiCorp"
+    caption="Productos de HashiCorp" >}}
+
+{{< image
+    gallery="true"
+    image1="image:hashicorp-consul-before-after.png" optionsthumb1="200x150" title1="Antes y despues con Consul"
+    image2="image:hashicorp-vault-before-after.png" optionsthumb2="200x150" title2="Antes y despues con Vault"
+    image3="image:hashicorp-nomad-before-after.png" optionsthumb3="200x150" title3="Antes y despues con Nomad" >}}
+{{< image
+    gallery="true"
+    image1="image:hashicorp-terraform-before-after.png" optionsthumb1="200x150" title1="Antes y despues con Terraform"
+    image2="image:hashicorp-terraform-before-after.png" optionsthumb2="200x150" title2="Ecosistema con Nomad"
+    caption="Ecosistema con Nomad" >}}
 
 #### Consul
 
