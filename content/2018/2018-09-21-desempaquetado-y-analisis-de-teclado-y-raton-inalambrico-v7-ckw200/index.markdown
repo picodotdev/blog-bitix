@@ -14,7 +14,7 @@ promoted: false
 imagePost: "logotype:videoseven.png"
 tags: ["hardware", "planeta-codigo"]
 series: ["desempaquetado-tecnologia"]
-summary: "Los teclados básicos son más que suficientes para la mayoría de usuarios, incluso los inalámbricos solo cuestan unos pocos euros más. Buscaba un teclado inalámbrico y al final opté por el V7 CKW200 por ser barato, tener un diseño atractivo, ser teclado completo, inalámbrico y tener teclas multimedia para subir y bajar el volumen entre otras. Este modelo es un _combo_ de teclado y ratón inalámbrico, el ratón me ha dado problemas de conectividad y agotamiento de las pilas en poco tiempo pero con el teclado estoy contento después de unos meses de uso, ya van casi 6 y aún no le he cambiado las pilas al teclado. El ratón del V7 CKW200 finalmente lo sustituí por uno con cable, un Logitech M90."
+summary: "Los teclados básicos son más que suficientes para la mayoría de usuarios, incluso los inalámbricos solo cuestan unos pocos euros más. Buscaba un teclado inalámbrico y al final opté por el V7 CKW200 por ser barato, tener un diseño atractivo, ser teclado completo, inalámbrico y tener teclas multimedia para subir y bajar el volumen entre otras. Este modelo es un _combo_ de teclado y ratón inalámbrico baratos pero básicos, el teclado funciona perfectamente durando las pilas casi un año y medio, el ratón del V7 CKW200 finalmente lo sustituí por uno con cable, un Logitech M90."
 ---
 
 {{% post %}}
@@ -23,19 +23,15 @@ summary: "Los teclados básicos son más que suficientes para la mayoría de usu
 
 Aún estoy esperando a que [Intel][intel] comercialice en España como decía en un artículo anterior [entre las opciones que he evaluado los Intel NUC Bean Canyon][blogbitix-329] para comprar nuevo equipo. La espera se me está haciendo un poco larga pero en teoría a mediados de octubre los empezarán a enviar desde la página especializada [SimplyNUC](https://simplynuc.co.uk/) y posiblemente hasta noviembre o diciembre no aparezcan a la venta en [Amazon][amazon] que es donde en principio lo compraré o más o menos al mismo tiempo en [PcComponentes][pccomponentes].
 
-Pero mientras tanto otras cosas que necesito es un monitor 2K de 27 pulgadas que como primera opción tengo el [Benq PD2700Q](https://amzn.to/2xCE2tP) con un precio de 337€ pero lo he visto en algunos momentos a 275€, si lo vuelvo a ver a ese precio será el que compre aún no teniendo todavía el NUC. Ese monitor u otro modelo muy similar de [Benq GW2765HT](https://amzn.to/2O06ikl∫) la mayor diferencia entre estos dos monitores es que este último no ofrece puertos USB pero tiene conexión VGA aunque no le veo mucho sentido en un monitor 2K por ser menor que la nativa del monitor ya que el VGA solo ofrece como máximo una resolución de 1920x1080.
+Pero mientras tanto otras cosas que necesito es un monitor 2K de 27 pulgadas que como primera opción tengo el [BenQ PD2700Q](https://amzn.to/2xCE2tP) con un precio de 337€ pero lo he visto en algunos momentos a 275€, si lo vuelvo a ver a ese precio será el que compre aún no teniendo todavía el NUC. Ese monitor u otro modelo muy similar de [BenQ GW2765HT](https://amzn.to/2O06ikl∫) la mayor diferencia entre estos dos monitores es que este último no ofrece puertos USB pero tiene conexión VGA aunque no le veo mucho sentido en un monitor 2K por ser menor que la nativa del monitor ya que el VGA solo ofrece como máximo una resolución de 1920x1080.
 
-{{< amazon
-    linkids="930604874c5c52f2c31549109cfd682b,560005b7fb75dd9d22d6549dc3fc3b52"
-    asins="B01K2210GS,B00M913DVG" >}}
-
-Aparte de la memoria, el SSD para el NUC y tras cosas de menor importancia que ya comentaré otras piezas que me faltan son un teclado y un ratón que finalmente ya he adquirido. He visto bastantes modelos con diferentes características entre ellos principalmente los de la marca [Logitech][logitech] por ser una marca de reconocido prestigio en cuanto a periféricos para ordenadores. Tenía pensado adquirir un modelo de teclado y ratón con cable muy básico aunque suficiente para mis usos el [Logitech MK120](https://amzn.to/2xEo4PH) pero finalmente me he decidido por uno muy similar aunque inalámbrico, el [Videoseven (V7) modelo CKW200](https://amzn.to/2xqrINW) que también está disponible en [formato con cable](https://amzn.to/2NyBaZX).
+Aparte de la memoria, el SSD para el NUC y tras cosas de menor importancia que ya comentaré otras piezas que me faltan son un teclado y un ratón que finalmente ya he adquirido. He visto bastantes modelos con diferentes características entre ellos principalmente los de la marca [Logitech][logitech] por ser una marca conocida en cuanto a periféricos para ordenadores. Tenía pensado adquirir un modelo de teclado y ratón con cable muy básico aunque suficiente para mis usos el [Logitech MK120](https://amzn.to/2xEo4PH) pero finalmente me he decidido por uno muy similar aunque inalámbrico, el [Videoseven (V7) modelo CKW200](https://amzn.to/2xqrINW) que también está disponible en [formato con cable](https://amzn.to/2NyBaZX).
 
 Pasados unos meses de uso veré si ha sido buena decisión por su fiabilidad y el incordio que supone cambiar de pilas si es muy habitualmente, con las recargables no me supondrá un gasto adicional recurrente que hay que tener en cuenta en el coste del teclado y ratón, también al precio de las pilas no recargables o regarcables si se le suma el del cargador aunque como uso pilas recargables para otro tipo de aparatos electrónicos (relojes, mandos a distancia, ...) este último es un gasto compartido.
 
 {{< amazon
-    linkids="32d37ac4289e4cc6001d3442d8a448e1,22f1206a79c0eb63d39b94ca6b26ee80"
-    asins="B00564GWEI,B0758DMHZG" >}}
+    linkids="22f1206a79c0eb63d39b94ca6b26ee80,32d37ac4289e4cc6001d3442d8a448e1,930604874c5c52f2c31549109cfd682b,6e19b96606f3c2b4a50d462873467b99"
+    asins="B0758DMHZG,B00564GWEI,B01K2210GS,B01N4AIIIV" >}}
 
 ### Con cable o inalámbrico
 
@@ -47,7 +43,7 @@ Hay teclados y ratones que funcionan por Bluetooth pero no funcionan hasta que s
 
 Supongo que depende del uso, el Magic Mouse 2 que tiene una batería recargable de casi 2000 mAh me dura unas 3-4 semanas usándolo de forma intensiva todos los días tanto para trabajar entre semana como el fin de semana entre 5 y 9 horas diarias. Una [pila recargable AA de Amazon Basics](https://amzn.to/2QRoefk) que es la que usan tanto el ratón de Logitech como el de Videoseven tiene una capacidad de 1900 mAh. Con el uso que le doy la pila del ratón supongo que me durará algo más de tiempo que una carga del Magic Mouse 2 pero no creo que me dure esos 6 meses que indica el fabricante, el Magic Mouse lo uso para trabajar y el ratón solo a nivel personal lo que es durante menos tiempo. Una vez lo use mediré lo que dura la pila de ratón. Por la duración de las pilas del teclado no me preocupo tanto ya que en este las pilas sí durarán varios meses.
 
-En cuanto a usabilidad no noto retraso en las acciones por el hecho de que sean inalámbricos, la respuesta en la acción es instantánea tal como lo es en un teclado y ratón con cable. Es muy cómodo poder mover o levantar el teclado o ratón sin la ataduría  del cable. Habiéndolo probado en un Mac el teclado y ratón son reconocidos sin ningún tipo de problema incluyendo la disposición de teclas de la disposición español y multimedia, en otros sistemas operativos es igual y no requiere ningún tipo de configuración en el sistema, es conectar el adaptador USB y usar.
+En cuanto a usabilidad no noto retraso en las acciones por el hecho de que sean inalámbricos, la respuesta en la acción es instantánea tal como lo es en un teclado y ratón con cable. Es muy cómodo poder mover o levantar el teclado o ratón sin la atadura del cable. Habiéndolo probado en un Mac el teclado y ratón son reconocidos sin ningún tipo de problema incluyendo la disposición de teclas de la disposición español y multimedia, en otros sistemas operativos es igual y no requiere ningún tipo de configuración en el sistema, es conectar el adaptador USB y usar.
 
  No se por que hay que elegir entre con cable o inalámbrico, ¿no hay todavía un modelo de teclado y ratón que soporte los dos modos de funcionamiento y que sea el usuario el que decida como quiere usarlos? Si con la fiabilidad del cable o con la comodidad del inalámbrico en cada momento.
 
@@ -61,23 +57,21 @@ El teclado CKW200 es un teclado completo tradicional con teclado numérico y tec
 
 Las teclas no son en forma de isla sino que son como en la generación anterior de teclados y tienen el inconveniente de que entre los huecos de las teclas se suele acumular suciedad y polvo y no son muy fáciles de limpiar, en los teclados en formato isla se acumula menos suciedad. No posee florituras adicionales como retroiluminación para las teclas útil en condiciones de baja luz ni tampoco adornos como teclas RBG con efectos lumínicos, a un teclado con este precio no se le pueden pedir esas cosas hay que ir a teclados de mayor precio para encontrar esas funciones si se echan de menos que no son más que un añadido estético.
 
-Un detalle importante de este teclado es que los caracteres y símbolos de las teclas está impresas mediante el proceso [UV coating](https://en.wikipedia.org/wiki/UV_coating) que consiste en que están impresas o protegidas mediante un proceso de luz ultravioleta. Esto es una gran característica ya que evita que en el caso de ser pintura el dibujo de las telas desaparezca por el uso debido a la grasa de los dedos y suciedad. Varios usuarios se quejan de esto en algunos modelos incluso de los que están en los primeros puestos de ventas en Amazon.
-
-El teclado posee un indicador de batería entre los LED indicadores de estado, se enciende al conectar las pilas no se si indicará también el nivel bajo de las dos pilas AAA que usa.
+Dado el precio de este teclado los caracteres y símbolos de las teclas está impresos con el método más barato, mediante pegatinas que con el paso del tiempo y uso puede hacer que algunoas teclas pierdan su caracter, pasados dos años de uso a una tecla se le borrado parte del caracter. La pérdida del caracter en la tecla no afecta al funcionamiento pero sin pasa en varis teclas y de forma completa dificulta puede dificultar la escritura ya que no me se la posición de todos los caracterres. El teclado posee un indicador de batería entre los LED indicadores de estado, se enciende al conectar las pilas no se si indicará también el nivel bajo de las dos pilas AAA que usa. Las pilas del teclado duran muchisimo tiempo, mucho más del que pensaba, las dos pilas AAA regacables que uso le duran más de un año y medio.
 
 ### El ratón CKW200
 
 El ratón posee tres botones, izquierdo, derecho y el de la rueda de desplazamiento pero no posee botones de desplazamiento lateral. Es de tamaño normal no reducido, ergonómico con la palma de la mano y simétrico apto para diestros y zurdos. Dado que V7 es una empresa nueva en el mercado su modelo de teclado es del 2017 más reciente que otros muchos modelos que pueden ser incluso tan viejos como del 2013, 2015 o 2016.
 
-El ratón posee botón de encendido y apagado pero el teclado no. El ratón posee una función de ahorro de energía con la que al cabo de un minuto la luz óptica que detecta el movimiento empieza a parpadear cada medio segundo, al cabo de 8 minutos la luz se paga completamente y el ratón entra en reposo para ahorrar batería y que dure más tiempo. Con solo hacer clic el ratón sale del estado de reposo y el sensor de movimiento se enciende. Por otro lado si el ratón detecta que el ordenador se ha apagado también entra en modo reposo lo que es muy útil para ni siquiera tener que apagar el ratón manualmente con su interruptor.
+El ratón posee botón de encendido y apagado pero el teclado no. El ratón posee una función de ahorro de energía con la que al cabo de un minuto la luz óptica que detecta el movimiento empieza a parpadear cada medio segundo, al cabo de 8 minutos la luz se paga completamente y el ratón entra en reposo para ahorrar batería y que dure más tiempo. Con solo hacer clic el ratón sale del estado de reposo y el sensor de movimiento se enciende. Por otro lado si el ratón detecta que el ordenador se ha apagado también entra en modo reposo lo que es muy útil para ni siquiera tener que apagar el ratón manualmente con su interruptor. El ratón posee un hueco para insertar el adaptador USB de como una forma de guardarlo para que no se pierda al trasnportarlo transporta.
 
-El ratón entre una pila AA y el sensor de movimiento posee un hueco para insertar el adaptador USB de como una forma de guardarlo y que no se pierda si se transporta.
+El ratón usa una pila AA que le ura bastante poco con un tiempo de uso de unas 6 horas diarias, en menos de dos semanas hay que cambiarla por lo que recomiendo usar una pila recargable. Aunque una pila no pesa mucho hace que el peso del ratón sea apreciable con el uso comparado con un ratón con cable que no usa pilas. Aún así la duración de la pila y el peso no es el mayor problema, el mayor problema es que es habitual que el ratón pierda la conexión, lo que lo hace muy molesto ya que ocurre de forma inesperada e impide usar el puntero en el ordenador rompiendo de forma constante con el flujo de trabajo, al final compré un [ratón con cable Logitech M90](https://amzn.to/2NyBaZX) que funciona perfectamente, no necesita cambiarle la pila cada dos semanas y comparado es mucho más ligero.
 
 ### Desempaquetado
 
 Una vez más al igual que en otros análisis de productos que hago incluyo fotos mejores que las que proporciona el propio fabricante hechas por mi ya antiguo móvil. Me parece increíble que a estas alturas den tan poca importancia a esto ya que los usuarios utilizan la red para informarse en los productos con comentarios de Ámazon y vídeos de YouTube, fotos del fabricante que debería tener la información más fiable y detallada, incluyendo fotos de gran calidad y numerosas. No indica dimensiones reales del teclado y ratón, solo del paquete.
 
-El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respectivamente, el ratón 7x12 centímetros de ancho y largo. Tanto el teclado como ratón y pilas estaban en la caja protegidos con una bolsa de plástico para evitar rayaduras. El adaptador para que el ordenador reciba la señal de teclado y ratón es muy pequeño y pasa casi despercibido conectado en el puerto USB. Se incluye en la caja una pila AA y dos AAA para poder usar el teclado y ratón desde el primer momento lo cual es de agradecer.
+El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respectivamente, el ratón 7x12 centímetros de ancho y largo. Tanto el teclado como ratón y pilas estaban en la caja protegidos con una bolsa de plástico para evitar rayaduras. El adaptador para que el ordenador reciba la señal de teclado y ratón es muy pequeño y pasa casi desapercibido conectado en el puerto USB. Se incluye en la caja una pila AA y dos AAA para poder usar el teclado y ratón desde el primer momento lo cual es de agradecer.
 
 {{< image
     gallery="true"
@@ -122,13 +116,40 @@ El teclado tiene una dimensiones de 45x14,5 centímetros de ancho y largo respec
     image3="image:v7-ckw200-24.jpg" optionsthumb3="200x150" title3="El adaptador USB"
     caption="El ratón y el adaptador USB" >}}
 
+### Las alternativas
+
+Modelos de teclados y ratones hay muchos, hay paquetes que incluyen ambos o se venden por separado. Si no tienes las preferencias claras puedes empezar por consultar la [clasificación de los teclados y ratones según el número de ventas](https://amzn.to/2xtwXwa) que puede ser un indicador de popularidad y buena relación calidad/precio. Como decía hay con cable, inalámbricos, formato isla, gota, ergonómico, compactos, teclados completos, mecánicos, ligeros con panel táctil integrado, adaptados para Smart TV, más económicos, de precio significativo, ... aquí pongo algunos de los otros que he mirado.
+
+De entre todos estos y otros de la lista de más vendidos por una cosa u otra al final elegí el Videoseven CKW200 de este artículo, ya sea por los comentarios de los clientes de Amazon o por su diseño y estética.
+
+{{< amazon
+    linkids="d83fcfb5b254583b4923a15aee46b182,96032d684a9a1e19798dbac1b6dd7200,462e180975e635483e5ef4deb5cfc240"
+    asins="B006LNTSP8,B01C4HCV58,B00D2PX8C2" >}}
+
+Después de dos años de uso intensivo el teclado V7 CKW200 pierde parte de la impresión de una tecla.
+
+{{< image
+    gallery="true"
+    image1="image:v7-ckw200-impresion-tecla.jpg" optionsthumb1="300x250" title1="Perdida de caracter impreso en una tecla"
+    caption="Perdida de caracter impreso en una tecla" >}}
+
+Pasado dos años desde que tengo el teclado si tuviese que comprar un teclado me replantearía otro modelo aunque fuese algo más caro, buscaría que fuese mecánico, sin teclado numérico para que fuese más compacto pero con teclas de función, flechas y las de _Insertar_, _Suprimir_, _Inicio_, _Fin_, _RePag_ y _AvPag_, si pudiera ser también inalámbrico, con teclas con función multimedia.
+
+Los teclados mecánicos son significativamente más caros empiezan a partir de los 40€ y llegan hasta los 150€ pero son de mucha mayor calidad y durabilidad. Las teclas hacen algo de más ruido pero la sensación en la pulsación de la tecla es más parecida por las personas que escriben con teclados de forma intensiva. Las teclas son de un material plástico de mayor calidad y para la impresión de los caracteres en las teclas emplean mejores procesos ya sea con doble inyección o impresión con láser que hace que los caracteres no se pierdan con el uso, las teclas son desmontables para limpiar el polvo y restos que se suelen acumular entre teclas y sustituibles para personalizarlas.
+
+Estos son algunos modelos que tiene un buen aspecto, la dificultad es encontrar algún modelo que tenga la disposición de las teclas en la disposición de español ya que muchos de ellos tienen la disposición inglesa a las que les falta algunos caracteres que usamos como la _ñ_.
+
+{{< amazon
+    linkids="c83ac1ce0d130d286f123d8c61be16c6,d022cc6910af12be8e89cad501542d56,658ec6ee4014466a1d077b38e7aff3ad,7f3f0e73e699311aa9a9aa62e2d6a957"
+    asins="B01NAM76QW,B07Z4TCJZM,B07PJKHC5K,B07W5PD6VS" >}}
+
 ### Conclusión
 
-Es un teclado y ratón básico pero yo no le pido más, de plástico pero con un buen acabado, estética cuidada sin ninguna extrabagancia y ligero. Posee pestañas para aumentar la inclinación de las teclas. Por lo que he probado hasta el momento durante unos días el teclado y ratón funciona correctamente la mayor parte del tiempo sin embargo en algún momento puntual el teclado y ratón han perdido la conexión algunas veces. La mayor parte de las veces la conexión se recupera sola en unos pocos segundos, el ratón queda como muerto ya que la luz óptima de movimiento se apaga. Si su funcionamiento es como hasta ahora estaré contento con la compra y habrá sido buena pero si las conexiones son frecuentes y no se recupera pronto me será un poco molesto y no acabaré tan contento.
+Es un teclado y ratón básico pero yo no le pido más, de plástico pero con un buen acabado, estética cuidada sin ninguna extrabagancia y ligero. Posee pestañas para aumentar la inclinación de las teclas. Por lo que he probado hasta el momento durante unos días el teclado y ratón funciona correctamente la mayor parte del tiempo sin embargo en algún momento puntual el teclado y ratón pierden la conexión de forma habitual. La mayor parte de las veces la conexión se recupera sola en unos pocos segundos, el ratón queda como muerto ya que la luz óptima de movimiento se apaga. Si su funcionamiento es como hasta ahora estaré contento con la compra y habrá sido buena pero si las conexiones son frecuentes y no se recupera pronto me será un poco molesto y no acabaré tan contento.
 
 Llevo usándolo unos días pero se me está haciendo más cómodo el teclado completo que el reducido por ahorrar espacio de los portátiles, sobre todo las teclas de las flechas y de inicio, fin, avance página y retroceso página, también la tecla de suprimir y borrar. El adaptador USB no se calienta y según se enciende el ordenador el teclado y ratón son usables. Quitando las desconexiones en su uso normal funciona perfectamente. Las pulsaciones de teclas y clic del ratón hace algo de ruido pero nada fuera de lo normal. No hay retraso entre la pulsación de la tecla y movimiento del ratón y la detección en el ordenador.
 
-Como defectos están las desconexiones esporádicas que he tenido y que el ratón solo es de tres botones y no de 5, no tiene desplazamiento horizontal que otros ratones tienen moviendo la rueda el ratón hacia los lados. Quizá el ratón estaría mejor que tuviese dos pilas AA en vez de solo una para que la batería le durase más tiempo y hubiese que cambiar las pilas con menor frecuencia. Esto haría que el ratón pesase más pero no creo que fuese un inconveniente grande, con una pila es bastante ligero. Es curioso que el teclado que gasta menos pilas tenga dos AAA (de 750 mAh si son recargables) y el ratón solo una.
+Como defectos están las desconexiones esporádicas que he tenido y que el ratón solo es de tres botones y no de 5, no tiene desplazamiento horizontal que otros ratones tienen moviendo la rueda el ratón hacia los lados. Quizá el ratón estaría mejor que tuviese dos pilas AA en vez de solo una para que la batería le durase más tiempo y hubiese que cambiar las pilas con menor frecuencia. Esto haría que el ratón pesase más pero no creo que fuese un inconveniente grande. Es curioso que el teclado que gasta menos pilas tenga dos AAA (de 750 mAh si son recargables) y el ratón solo una.
 
 Por el motivo de la perdida de conexión no lo recomiendo para los juegos pero ni este modelo ni ningún otro inalámbrico que quizá funcionen más fiablemente pero no serán perfectos en este sentido, para los juegos es más recomendable un teclado y ratón con cable.
 
@@ -154,15 +175,5 @@ Para no incurrir en mayores gastos adicionales por tener que sustituir pilas cad
 {{< amazon
     linkids="4b82c9473891e7e300af6af12e499a3b,7a974f6747d38d7ceae51b4c2a524820,0dc25d7884cf6c199de5621aa2a54eef"
     asins="B00CWNMR5Y,B00CWNMW1S,B01N0VFBPI" >}}
-
-### Otras opciones según preferencias
-
-Modelos de teclados y ratones hay muchos, hay paquetes que incluyen ambos o se venden por separado. Si no tienes las preferencias claras puedes empezar por consultar la [clasificación de los teclados y ratones según el número de ventas](https://amzn.to/2xtwXwa) que puede ser un indicador de popularidad y buena relación calidad/precio. Como decía hay con cable, inalámbricos, formato isla, gota, ergonómico, compactos, teclados completos, ligeros con panel táctil integrado, adaptados para Smart TV, más económicos, de precio significativo, ... aquí pongo algunos de los otros que he mirado.
-
-De entre todos estos y otros de la lista de más vendidos por una cosa u otra al final elegí el Videoseven CKW200 de este artículo, ya sea por los comentarios de los clientes de Amazon o por su diseño y estética.
-
-{{< amazon
-    linkids="d83fcfb5b254583b4923a15aee46b182,96032d684a9a1e19798dbac1b6dd7200,462e180975e635483e5ef4deb5cfc240"
-    asins="B006LNTSP8,B01C4HCV58,B00D2PX8C2" >}}
 
 {{% /post %}}
