@@ -103,8 +103,11 @@ Este es un ejemplo muy básico y no incluye varias necesidades habituales que se
 * [Registro y descubrimiento de servicios con Spring Cloud y Consul][blogbitix-206]
 * [Introducción a Nomad para gestionar aplicaciones y microservicios][blogbitix-398]
 * [Implementar tolerancia a fallos con Resilience4j][blogbitix-425]
+* [Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana][blogbitix-366]
 * [Microservicios con Spring Cloud, Consul, Nomad y Traefik][blogbitix-436]
 * [Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos][blogbitix-508]
+
+{{% sourcecode git="blog-ejemplos/tree/master/HolaMundoGRPC" command="./gradlew run" %}}
 
 {{% reference %}}
 * [gRPC: The state of winning API for Microservices](https://medium.com/@omoletoye/grpc-the-state-of-winning-api-for-microservices-18d9b6bd8196)
