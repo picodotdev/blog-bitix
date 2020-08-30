@@ -26,7 +26,7 @@ En muchas organizaciones los desarrolladores solo se encargan del desarrollo de 
 
 {{< image
     gallery="true"
-    image1="image:hashicorp-static-dynamic.png" optionsthumb1="200x150" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
+    image1="image:hashicorp-static-dynamic.png" optionsthumb1="650x450" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
     caption="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" >}}
 
 En este artículo muestro un ejemplo usando tres de estos mismos productos que se usarían en un entorno de producción [Consul][consul] para el registro de servicios y conexión de forma segura, [Vault][vault] para seguridad y servicios de cifrado y [Nomad][nomad] para la ejecución de servicios con contenedores [Docker][docker]. Para el aprovisionamiento y ejecutar el ejemplo en la propia máquina el ejemplo usa [Vagrant][vagrant] que permite crear y aprovisionar máquinas virtuales sobre [VirtualBox][virtualbox], en un entorno basado en la nube se usaría [Terraform][terraform]. Consul, Vault y Nomad forman lo que sería un centro de datos de un entorno de ejecución para aplicaciones y servicios.
