@@ -76,12 +76,13 @@ Si la aplicación tiene una carga importante en el lado cliente evaluaría usar 
 
 Para el desarrollo de una página o aplicación web seguiría usando [Apache Tapestry][tapestry] por la productividad y alta reutilización que se puede conseguir, también por la flexibilidad, extensibilidad y adaptabilidad del _framework_ si necesita recursos de cliente añadiendo dependencias con [Webjars][webjars]. Descargando el [libro PlugIn Tapesty][blogbitix-12] puedes conocer muchos más detalles.
 
-Si se tratase de una aplicación REST evaluaría [Spring Boot][springboot] o [GraphQL][graphql] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST o GraphQL cruda.
+Si se tratase de una aplicación REST evaluaría [Spring Boot][springboot] o [GraphQL][graphql] para proporcionar la interfaz exterior de los microservicios y quizá evaluaría [Apache Thrift][apache-thrift] o [gRPC][grpc] para consumirlos internamente, Thrift permite acceder a la API de una forma programática más sencillamente que consumir una interfaz REST o GraphQL cruda.
 
 La tendencia actual es desarrollar microservicios y esto en las aplicaciones web supone que sean capaces de ofrecer su servicio por si mismas no usando un servidor de aplicaciones que hay que instalar previamente simplificando el despliegue a los administradores de sistemas, esto también se puede conseguir en parte usando [Docker][docker]. En vez de usar un [Tomcat][tomcat] tradicional podemos usar la versión embebible o Spring Boot.
 
 * [Libro sobre desarrollo de aplicaciones con Apache Tapestry][blogbitix-12]
 * [Introducción y ejemplo de API RPC con Apache Thrift][blogbitix-72]
+* [Introducción a gRPC y ejemplo con Java][blogbitix-512]
 * [Aplicación web Java autocontenida con Tomcat Embedded][blogbitix-71]
 * [Ejemplo sencillo de servicio web con RESTEasy][elblogdepicodev-142]
 * [Aplicación Java autocontenida con Spring Boot][blogbitix-103]
