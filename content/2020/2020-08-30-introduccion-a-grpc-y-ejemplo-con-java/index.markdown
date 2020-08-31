@@ -43,7 +43,7 @@ gRPC al contrario que RMI que era específico de Java es agnóstico del lenguaje
 * Compresión selectiva: si se envían datos en formato texto e imagen se puede deshabilitar la compresión para las imágenes.
 * Generación de código servidor y cliente: a partir del esquema se generan artefactos en cualquiera de los lenguajes soportado con los cuales crear la implementación del servidor y cliente rápidamente.
 
-#### Las diferencias entre gRPC y REST son
+#### Las diferencias entre gRPC y REST
 
 * Formato de intercambio de dato (Protobuf contra JSON): esa es una de las diferencias principales entre REST y gRPC, los mensajes REST contiene datos en formato JSON habitualmente mientras gRPC hace uso de Protobuf. Protobuf es una mejor forma de codificar datos estructurados, tiene mejor compresión y es más eficiente que JSON.
 * Tipado fuerte contra serialización: en REST que normalmente se usa JSON no hay ningún mecanismo pra coordinar el formato de los datos intercambiados en las peticiones y respuestas que hay que tener en cuenta especialmente cuando se hacen cambios en la API para mantener la compatibilidad con los clientes o requiere actualizar los clientes de forma corrdinada a la nueva versión lo que suele ser muy difícil. Por otro lado el formato JSON ha de ser convertir tanto en el servidor como en el cliente a estructuras de datos del lenguaje en el que estén implementados, la serialización es otro paso que añade la posibilidad de errores así como sobrecarga en el rendimiento.
