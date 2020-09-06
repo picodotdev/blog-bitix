@@ -20,9 +20,9 @@ summary: "Ha una cantidad ingente de juegos nuevos y antiguos a los que jugar. Y
 
 {{< logotype image1="playstation.svg" title1="PlayStation" width1="200" image2="xbox.svg" title2="Xbox" width2="200" >}}
 
-Una de los propósitos que se puede utilizar un PC es de dedicarlo en mayor o menor medida a los juegos. Con [NVIDIA][nvidia] y Ati, ahora [AMD][amd], y evolución de las tarjetas gráficas dedicadas y las integradas cada vez más capaces los juegos han ganado en detalles gŕaficos enormemente.
+Una de los propósitos que se puede utilizar un PC es de dedicarlo en mayor o menor medida a los juegos. Con [NVIDIA][nvidia] y Ati, ahora [AMD][amd], y evolución de las tarjetas gráficas dedicadas y las integradas cada vez más capaces los juegos han ganado en detalles gráficos enormemente.
 
-Las consolas y los PC en la actualidad utilizan la arquitectura de mismos componentes. Una consola es casi un PC especializado exclusivamente en juegos, utiliza los mismos componentes que se encuentran en el mercado de los PC, en cuanto a procesador, memoria, tarjeta gráfica y almacenamiento. 
+Las consolas y los PC en la actualidad utilizan la arquitectura de mismos componentes. Una consola es casi un PC especializado exclusivamente en juegos, utiliza similares componentes que se encuentran en el mercado de los PC, en cuanto a procesador, memoria, tarjeta gráfica y almacenamiento. 
 
 La siguiente evolución de las tarjetas gráficas es la adopción de la tecnología de trazado de rayos que mejorará aún más el realismo y detalles gráficos de los juegos. En trazado de rayos ya está disponible en los juegos que lo soporten en las tarjetas gráficas de NVIDIA de la serie RTX 2000. AMD añadirá su soporte en la siguiente generación de gráficas con arquitectura RDNA2 y aparecerá en la generación de las consolas PlayStation 5 y Xbox Series X  del año 2020. Con el trazados incluso juegos con gráficos simples como Minecraft lucen excepcionalmente bien.
 
@@ -97,13 +97,13 @@ También puede influir el tipo de PC que se quiera tener, un PC compacto como lo
 
 Los juegos de las consolas requieren del hardware de la consola y cambiar a la siguiente generación puede que no sea posible jugar a los juegos antiguos en ella. En los PC comprar un nuevo PC no solo es posible jugar a los juegos antiguos sino que además es posible jugarlos en mejores calidades e incluso jugar a juegos de consola antiguos con emuladores.
 
-En el caso de la PS5 y Xbox Series X se ha anunciado que son retrocompatibles con los juegos de anteriores generaciones, en el caso de pa PS5 con la mayoría de los juegos de la PS4 y en el caso de la Xbox Series X con todo el catálogo de las anteriores.
+En el caso de la PS5 y Xbox Series X se ha anunciado que son retrocompatibles con los juegos de anteriores generaciones, la PS5 con la mayoría de los juegos de la PS4 y en el caso de la Xbox Series X con todo el catálogo de las anteriores.
 
 ### Disponibilidad juegos
 
 Algunos pocos juegos son exclusivos de una plataforma y para jugarlos hay que tener esa plataforma. Esto es un argumento de venta para las consolas y el hecho de que haya más exclusivos en estas.
 
-Dependiendo si un juego al que se quiere jugar es exclusivo de esa plataforma es necesario adquirirla. Algunos juegos son exclusivos de una plataforma de forma temporal y pasado ese tiempo sale en el resto de plataformas si a uno no le importa esperar. E incluso Horizon Zero Down que era exclusivo de PS4 se ha anunciado que saldrá en PC.
+Dependiendo si un juego al que se quiere jugar es exclusivo de esa plataforma es necesario adquirirla. Algunos juegos son exclusivos de una plataforma de forma temporal y pasado ese tiempo sale en el resto de plataformas si a uno no le importa esperar. E incluso Horizon Zero Dawn que era exclusivo de PS4 se ha anunciado que saldrá en PC.
 
 ### Juegos en streaming
 
