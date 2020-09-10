@@ -46,7 +46,7 @@ Windows 10 tiene diferentes versiones, las diferencias entre ellas está en las 
 
 * _Home_: es la versión usada mayoritariamente y suficiente para la mayoría de usuarios que se instala en los equipos domésticos.
 * _Pro_: esta versión incluye todas las funcionalidades de la edición _Home_ con algunas adicionales normalmente necesarias en entornos empresariales. Algunas de sus funcionalidades adicionales son [Directorio Activo], Escritorio remoto, BitLocker, virtualización con Hyper-V y _Windows Defender Device Guard_.
-* _Pro for Workstations_: es la versión que permite usar Windows en equipos de altas prestaciones con procesadores [Intel Xeon] o [AMD Epyc], grandes cantidades de memoria y algunas opciones avanzadas más.
+* _Pro for Workstations_: es la versión que permite usar Windows en equipos de altas prestaciones con procesadores Intel Xeon o AMD Epyc, grandes cantidades de memoria y algunas opciones avanzadas más.
 
 ### Copia de seguridad
 
@@ -59,7 +59,7 @@ Una vez que sabes que el equipo cumple con los requisitos mínimos hay que hacer
 
 ### Descargar Windows 10
 
-En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Con Windows 10 la propia Microsoft ofrece mediante descarga directa la imagen ISO desde su propia página y una herramienta para la creación del medio USB o DVD. Basta con [descargar el medio de instlación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendoo a la página de descarga con un navegador web, el medio de instalación incluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_.
+En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Con Windows 10 la propia Microsoft ofrece mediante descarga directa la imagen ISO desde su propia página y una herramienta para la creación del medio USB o DVD. Basta con [descargar el medio de instalación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendoo a la página de descarga con un navegador web, el medio de instalación incluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_.
 
 ### Creación del medio de instalación
 
@@ -119,7 +119,7 @@ Es recomendable la instalación _Personalizada: instalar solo Windows_ y no cons
     gallery="true"
     image1="image:instalacion-windows-10-07.png" optionsthumb1="200x150" title1="Instalación de Windows 10"
     image2="image:instalacion-windows-10-08.png" optionsthumb2="200x150" title2="Instalación de Windows 10"
-    image3="image:instalacion-windows-10-09.png" optionsthumb3="200x150" title3="Instalación de Windows 10" >}}
+    image3="image:instalacion-windows-10-09.png" optionsthumb3="200x150" title3="Instalación de Windows 10"
     caption="Instalación de Windows 10" >}}
 
 #### Configuración básica
@@ -188,12 +188,17 @@ Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al ca
 {{< image
     gallery="true"
     image1="image:windows-10-01.png" optionsthumb1="200x150" title1="Windows 10"
-    image2="image:windows-10-02.png" optionsthumb2="200x150" title2="Windows 10" >}}
+    image2="image:windows-10-02.png" optionsthumb2="200x150" title2="Windows 10"
+    image3="image:windows-10-03.png" optionsthumb3="200x150" title3="Windows 10" >}}
 {{< image
     gallery="true"
-    image1="image:windows-10-03.png" optionsthumb1="200x150" title1="Windows 10"
-    image2="image:windows-10-04.jpg" optionsthumb2="200x150" title2="Windows 10"
+    image1="image:windows-10-04.png" optionsthumb1="200x150" title1="Windows 10"
+    image2="image:windows-10-05.jpg" optionsthumb2="200x150" title2="Windows 10"
     caption="Windows 10" >}}
+
+#### Comprar licencia y activar Windows 10
+
+Pasados unos días después de la instalación ha de activarse con un código de licencia válido, si se deshabilitarán algunas opciones de personalización coo el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
 
 ### Alternativa a Windows con distribuciones GNU/Linux
 

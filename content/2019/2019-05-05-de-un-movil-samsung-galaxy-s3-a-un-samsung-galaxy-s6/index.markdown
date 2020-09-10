@@ -41,7 +41,7 @@ He tenido varios móviles empezando por un [Motorola C350](https://www.gsmarena.
 
 Pero el Galaxy S3 también ya me estaba dando algunos síntomas de agotamiento, en modo espera me aguanta un día pero con un uso algo más intensivo la batería baja rápidamente y requiere alguna carga más de una carga al día. Algunas aplicaciones como GMail y Twitter se nota que el procesador Exynos 4412 quad-core que tiene cumple pero no va sobrado para la época actual. En total el S3 habrá tenido 7 años de vida, menos lo que no sería mucho si no lo hubiese dado un segundo uso y un tercero con LineageOS.
 
-Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9 SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450€ que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
+Como opciones candidatas he estado barajando un [Samsung Galaxy A50](https://www.samsung.com/es/smartphones/galaxy-a50/SM-A505FZKSPHE/), [Samsung Galaxy A70](https://www.samsung.com/es/smartphones/galaxy-a70-a705/SM-A705FZKUPHE/), [Xiaomi Mi 9](https://www.mi.com/es/mi9/) y [Xiaomi Mi 9 SE](https://www.mi.com/es/mi-9-se/). Cualquiera de ellos unos pedazo móviles en el rango de los 300-450 € que no tienen mucho que envidiar a otros de gama alta pero que cuestan el doble o más.
 
 * [Especificaciones Samsung Galaxy A50](https://www.gsmarena.com/samsung_galaxy_a50-9554.php)
 * [Especificaciones Samsung Galaxy A70](https://www.gsmarena.com/samsung_galaxy_a70-9646.php)

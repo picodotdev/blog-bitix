@@ -78,7 +78,7 @@ Ocupan muy poco, tiene un tamaño de 11x11x3.6cm (ancho, largo, alto en centíme
     image1="image:especificaciones-modelos-intel-nuc-bean-canyon.png" optionsthumb1="600x450" title1="Especificaciones de los modelos Intel NUC Bean Canyon"
     caption="Especificaciones de los modelos Intel NUC Bean Canyon" >}}
 
-En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los 300€, el NUC8i5BEK sobre los 400€ y el NUC8i7BEK sobre los 500€. Los Hades Canyon llegan a los 800€ y 1000€ pero con mejor gráfica y mayor número de puertos de conexión. Con la aparición de los Bean Canyon los [Baby Canyon][intel-nuc-baby-canyon] de la generación anterior se han convertido en una opción desaconsejada por la reducida diferencia de precio, el [NUC7i5BNK](https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnk.html) (i5-7260U) cuesta unos 360€ y tiene 2 núcleos menos que el NUC8i5.
+En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los 300 €, el NUC8i5BEK sobre los 400 € y el NUC8i7BEK sobre los 500 €. Los Hades Canyon llegan a los 800 € y 1000 € pero con mejor gráfica y mayor número de puertos de conexión. Con la aparición de los Bean Canyon los [Baby Canyon][intel-nuc-baby-canyon] de la generación anterior se han convertido en una opción desaconsejada por la reducida diferencia de precio, el [NUC7i5BNK](https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc7i5bnk.html) (i5-7260U) cuesta unos 360 € y tiene 2 núcleos menos que el NUC8i5.
 
 * [Intel NUC8i3BEK](https://amzn.to/2OYiO0d)
 * [Intel NUC8i3BEH](https://amzn.to/2RdbQq6)
@@ -92,7 +92,7 @@ En el momento de comercialización el modelo NUC8i3BEK tiene un precio sobre los
 
 Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobre el NUC8i7BEH porque este no ofrece un aumente de rendimiento significativo sobre el i5 acorde a la diferencia de precio. Podría haber tenido alguna duda de si optar por el modelo sin bahía de 2.5 SATA (_slim_) o el modelo con bahía (_tall_) pero con los 500GB, si necesitase más podría ponerle además una micro SDXC de 128 GB o 256 GB con las que tendré suficiente espacio, con el disco de 250 GB del portátil Sony no llegaba a los 100 GB ocupados. Y en cualquier caso en el futuro si necesito más espacio los SSD se habrán abaratado mucho o aumentado su capacidad si continúan con su bajada de precios y aumento de capacidades a cada mes que pasa como hasta ahora.
 
-El precio del NUC en el momento de salida es de unos 400€ no es muy superior respecto a los que costaría un equipo ITX teniendo en cuenta que en estos hay que comprar procesador, placa base, fuente de alimentación y caja, con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400€, el Ryzen tiene mejor gráfica integrada que la Intel pero el conjunto ocupa sensiblemente mucho más espacio.
+El precio del NUC en el momento de salida es de unos 400 € no es muy superior respecto a los que costaría un equipo ITX teniendo en cuenta que en estos hay que comprar procesador, placa base, fuente de alimentación y caja, con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400 €, el Ryzen tiene mejor gráfica integrada que la Intel pero el conjunto ocupa sensiblemente mucho más espacio.
 
 He esperado todos estos meses hasta ahora que han aparecido a la venta en [Amazon][amazon] y también en [Pc Componentes][pccomponentes]. Varios meses antes se han publicado varios artículos analizando en buen detalle estos modelos de NUC asi como antes la [nota de prensa con la presentación oficial de Intel](https://newsroom.intel.com/news/intel-introduces-new-nuc-kits-nuc-mini-pcs-intel-nuc-family/) en el momento de su inicio de comercialización. En mi experiencia con este caso desde que aparecen las primeras noticias en los medios hasta que se empieza a comercializar y más tarde hasta que aparece en las tiendas y llega a tiendas como Amazon y Pc Componentes, puede pasar perfectamente más de medio año o un año.
 
@@ -124,7 +124,7 @@ Probablemente 16 GiB me sería suficientes pero no me importa ir a por los 32 Gi
 * [Difference between memory kits and single memory modules](http://www.tomshardware.co.uk/forum/270105-30-difference-memory-kits-single-memory-modules)
 * [HyperX Impact Memory Module Specifications](https://www.kingston.com/datasheets/HX424S14IBK2_32.pdf)
 
-Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320€. Al final opté por la memoria HyperX Impact.
+Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320 €. Al final opté por la memoria HyperX Impact.
 
 {{< amazon
     linkids="ef22daf2b91899709c8686b7db8a49c7,06d1aea567128e234b58d2e800ef099c"
@@ -136,7 +136,7 @@ Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](htt
 
 El almacenamiento en formato SSD está bajando notablemente de precio a cada mes o par de meses que pasa. En tamaño de 250 GB ya tienen un precio muy asequible e incluso en 500 GB y 1 TB no son prohibitivos. Cambiar el disco duro por un SSD es la mejor inversión a realizar en un ordenador si la cantidad de memoria es suficiente, cualquier procesador cumple para usos ofimáticos. Se puede optar por un SSD con interfaz SATA III con una velocidad de lectura y escritura de 550 / 500 MB/s que ya es bastante rápido para muchos usuarios o en formato M.2 NVMe que ofrece sensiblemente mayores tasas de transferencia de hasta 3500 / 2500 MB/s.
 
-Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500 considerando que una gran parte de los datos los tengo en dos discos duros USB externos por duplicado y el equipo solo contendría los más importantes. He barajado un M.2, ya que es el conector que ofrece el Intel NUC que he elegido, como el [Samsung 970 EVO](https://amzn.to/2OITkDX) y con interfaz SATA III de 500 GB con conector M.2 había barajado el [Crucial MX500](https://amzn.to/2DGhIFg). Por comparar como han evolucionado el SSD que compré en el 2014 para el Sony Vaio era un Samsung 840 EVO de 250 GB me costó 125€ y ahora un NVMe ofrece el doble de capacidad y a una velocidad sensiblemente superior y en formato SATA III doble de capacidad a un precio sensiblemente inferior.
+Por la cantidad de datos que tengo el tamaño que necesito está entre 250 y 500 considerando que una gran parte de los datos los tengo en dos discos duros USB externos por duplicado y el equipo solo contendría los más importantes. He barajado un M.2, ya que es el conector que ofrece el Intel NUC que he elegido, como el [Samsung 970 EVO](https://amzn.to/2OITkDX) y con interfaz SATA III de 500 GB con conector M.2 había barajado el [Crucial MX500](https://amzn.to/2DGhIFg). Por comparar como han evolucionado el SSD que compré en el 2014 para el Sony Vaio era un Samsung 840 EVO de 250 GB me costó 125 € y ahora un NVMe ofrece el doble de capacidad y a una velocidad sensiblemente superior y en formato SATA III doble de capacidad a un precio sensiblemente inferior.
 
 Al final he optado por el Samsung 970 EVO, con el Crucial con interfaz SATA III tendría creo que suficiente pero no estoy ajustando mucho el precio, al igual que en la memoria. 
 
@@ -155,7 +155,7 @@ Es muy posible que compre adicionalmente una [tarjeta micro SDXC de 128 GB](http
 
 ### Desempaquetado
 
-Con estos componentes he realizado el pedido en [Amazon][amazon] ya que es la tienda que suelo utilizar para las compras en internet que hago, por comodidad, ahorrar tiempo, poder informarme lo mejor que puedo con las opiniones de otros clientes y por el amplio catálogo de productos que tiene. En total el conjunto de todos estos componentes me ha salido por unos 830€, algo más barato que el portátil Sony si tengo en cuenta el SSD que le compre luego pero sensiblemente mejor con el lustro que ha pasado entre uno y otro.
+Con estos componentes he realizado el pedido en [Amazon][amazon] ya que es la tienda que suelo utilizar para las compras en internet que hago, por comodidad, ahorrar tiempo, poder informarme lo mejor que puedo con las opiniones de otros clientes y por el amplio catálogo de productos que tiene. En total el conjunto de todos estos componentes me ha salido por unos 830 €, algo más barato que el portátil Sony si tengo en cuenta el SSD que le compre luego pero sensiblemente mejor con el lustro que ha pasado entre uno y otro.
 
 #### NUC
 
@@ -296,7 +296,7 @@ Aún tengo que probarlo más pero estos NUCs se ajustan perfectamente a lo que f
 
 ### Apple Mac mini
 
-Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/es/mac-mini/). Después de unos años Apple los ha renovado como unos procesadores más recientes, más cantidad de memoria y SSD instalable. Pero a unos precios muy exagerados, tanto que el Mac mini con una configuración similar a la de este artículo del NUC saldría por 2100€, bastante más del doble. Salvo que uno quiera macOS sí o sí y uno esté muy obcecado en querer Apple no es una opción en mi opinión acertada. Paro bueno esto pasa con cualquier producto de Apple no solo es específico de Mac mini aunque como se aprecia es un ejemplo claro y sangrante al compararlo. Por si fuera poco el procesador no soporta HyperThreading o SMT con lo que son 4 núcleos y 4 hilos y la gráfica es una UHD 630 la mitad de potente que la Iris Graphics 655.
+Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/es/mac-mini/). Después de unos años Apple los ha renovado como unos procesadores más recientes, más cantidad de memoria y SSD instalable. Pero a unos precios muy exagerados, tanto que el Mac mini con una configuración similar a la de este artículo del NUC saldría por 2100 €, bastante más del doble. Salvo que uno quiera macOS sí o sí y uno esté muy obcecado en querer Apple no es una opción en mi opinión acertada. Paro bueno esto pasa con cualquier producto de Apple no solo es específico de Mac mini aunque como se aprecia es un ejemplo claro y sangrante al compararlo. Por si fuera poco el procesador no soporta HyperThreading o SMT con lo que son 4 núcleos y 4 hilos y la gráfica es una UHD 630 la mitad de potente que la Iris Graphics 655.
 
 Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el NUC me he dado cuenta de dos cosas. Una que al usar el monitor externo Benq PD2700Q con resolución QHD me da la sensación de que el texto se ve mejor al usarlo con el NUC que con el Mac, esto puede ser una sensación pero la segunda cosa de la que me he dado cuenta que no admite interpretación es que cuando se saca el audio junto con el vídeo por el cable HDMI al monitor y de este el audio se conecta a unos altavoces por el jack 3.5mm en macOS el contol de volumen de audio queda desactivado de modo que si no tienes unos altavoces con control de volumen propio es muy incómodo usar los botones del monitor para regularlo, en GNOME se puede controlar el volumen desde el entorno de escritorio que en una configuración ordenador conectado a un monitor externo es lo que un usuario espera y lo más cómodo.
 
@@ -320,30 +320,30 @@ En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese 
     <tbody>
         <tr>
             <td>Ordenador</td>
-            <td style="text-align: right;">900€</td>
-            <td style="text-align: right;">300€ (i3), 400€ (i5), 500€ (i7)</td>
+            <td style="text-align: right;">900 €</td>
+            <td style="text-align: right;">300 € (i3), 400 € (i5), 500 € (i7)</td>
         </tr>
         <tr>
             <td>Memoria 32 GiB</td>
-            <td style="text-align: right;">+720€</td>
-            <td style="text-align: right;">+300€</td>
+            <td style="text-align: right;">+720 €</td>
+            <td style="text-align: right;">+300 €</td>
         </tr>
         <tr>
             <td>SSD 500GB</td>
-            <td style="text-align: right;">+480€</td>
-            <td style="text-align: right;">+120€</td>
+            <td style="text-align: right;">+480 €</td>
+            <td style="text-align: right;">+120 €</td>
         </tr>
         <tr>
             <td>Total</td>
-            <td style="text-align: right;">2100€</td>
-            <td style="text-align: right;">820€ (i5)</td>
+            <td style="text-align: right;">2100 €</td>
+            <td style="text-align: right;">820 € (i5)</td>
         </tr>
     </tbody>
 </table>
 
 ### Slimbook One
 
-También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per no me convenció porque solo tienen un _slot_ de memoria, admite hasta 32GB pero aún no hay módulos de esa cantidad si no es en _kit_, lo que en la práctica limita su memoria a 16GB. La tarjeta gráfica que tienen es una UHD 630 como comentaba la mitad de potente en teoría que la Iris Graphics 655. El diseño que tiene no es muy atractivo y no tiene tarjeta microSD como una forma de ampliarle el almacenamiento. El ONE sin descuento parte de 480€ más caro que los 400€ del Intel NUC.
+También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per no me convenció porque solo tienen un _slot_ de memoria, admite hasta 32GB pero aún no hay módulos de esa cantidad si no es en _kit_, lo que en la práctica limita su memoria a 16GB. La tarjeta gráfica que tienen es una UHD 630 como comentaba la mitad de potente en teoría que la Iris Graphics 655. El diseño que tiene no es muy atractivo y no tiene tarjeta microSD como una forma de ampliarle el almacenamiento. El ONE sin descuento parte de 480 € más caro que los 400 € del Intel NUC.
 
 {{< image
     gallery="true"

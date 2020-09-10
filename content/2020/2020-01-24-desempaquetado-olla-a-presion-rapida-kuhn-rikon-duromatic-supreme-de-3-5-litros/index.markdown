@@ -43,7 +43,7 @@ Para hacerme una idea aproximada de las dimensiones de la olla he hecho con unos
 
 ### Opciones que he evaluado
 
-Modelos hay muchos, de diferentes capacidades y de precios. Los modelos de entrada están entre 50€ y los modelos de la gama que se considera la superior está entre 130€ o hasta 200€ según capacidad. Pero el precio no lo he considerado algo determinante sabiendo que una olla perfectamente puede durar toda la vida si sale buena. Los modelos de entrada son perfectamente válidos pero en algunos detalles como los materiales se nota la diferencia con los modelos de gama alta.
+Modelos hay muchos, de diferentes capacidades y de precios. Los modelos de entrada están entre 50 € y los modelos de la gama que se considera la superior está entre 130 € o hasta 200 € según capacidad. Pero el precio no lo he considerado algo determinante sabiendo que una olla perfectamente puede durar toda la vida si sale buena. Los modelos de entrada son perfectamente válidos pero en algunos detalles como los materiales se nota la diferencia con los modelos de gama alta.
 
 Un punto importante que he considerado ha sido el poder encontrar repuestos y el precio de los mismos. A lo largo de la vida útil de una olla un elemento que hay que cambiar cada dos años aproximadamente es la goma que permite que coja presión, es importante que esté en buenas condiciones ya que o hace que no coja presión o suponga un riesgo de seguridad, no poder encontrar repuestos hace que la olla perfectamente válida quede inservible y haya que comprar otra. Por otro lado si los repuestos son caros hace que el precio a lo largo de su vida se incremente sensiblemente. En ambos casos lo barato puede salir más caro.
 
@@ -65,7 +65,7 @@ He visto algún modelo más económico como [Elo Praktika Xs](https://amzn.to/37
 
 Mi madre tenía una Fissler y le ha durado mucho tiempo aunque permite elegir la presión que no tiene otros modelos finalmente la he descartado porque el modelo nuevo [Fissler Vitavit Comfort](https://amzn.to/36p4d6o) para la válvula tiene una membrana de silicona en vez de ser completamente de metal como el anterior, esto hace que tenga otro elemento que posiblemente necesita repuesto y puede que frágil, además la válvula es algo más difícil de limpiar por la pieza de metal que tiene en ella.
 
-La [WMF Perfect Plus](https://amzn.to/36lAFGP) también utiliza una membrana para la válvula y no permite seleccionar la presión de trabajo. Quizá hubiese elegido una WMF porque hay algún modelo con 3 litros de capacidad, sin embargo sus repuestos los he visto algo más caros, y por lo de la membrana de la válvula al final la que más me ha convencido es una [Kuhn Rikon Duromatic Supreme](https://amzn.to/37kR5Rc). Todas tenían un precio alrededor de 130€.
+La [WMF Perfect Plus](https://amzn.to/36lAFGP) también utiliza una membrana para la válvula y no permite seleccionar la presión de trabajo. Quizá hubiese elegido una WMF porque hay algún modelo con 3 litros de capacidad, sin embargo sus repuestos los he visto algo más caros, y por lo de la membrana de la válvula al final la que más me ha convencido es una [Kuhn Rikon Duromatic Supreme](https://amzn.to/37kR5Rc). Todas tenían un precio alrededor de 130 €.
 
 ### Modelo que he elegido, Kuhn Rikon Duromatic Supreme 3,5 litros
 

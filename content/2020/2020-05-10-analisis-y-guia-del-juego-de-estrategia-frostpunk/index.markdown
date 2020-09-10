@@ -33,7 +33,7 @@ No es un juego complicado pero requiere plantear bien las prioridades y construc
 
 Frostpunk es un juego corto sabiendo cual es la estrategia para sobrevivir. En mi caso me ha gustado mucho y me he divertido bastante con él tomando las decisiones que finalmente me han permitido superar con éxito el juego. Una vez acabada el modo historia inicial se habilitan otros modos de juego que permiten rejugarlo durante más tiempo. Más recientemente también se ha publicado una expansión del juego [Frostpunk The last Autumn](https://www.frostpunkgame.com/) ambientada en un punto anterior en la línea temporal de Frostpunk que permite conocer más detalles de esta historia.
 
-Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los textos están en español pero los diálogos están en inglés. Es un juego del 2019 en consolas con lo que hasta pasado un tiempo no tendrá una oferta importante y de forma habitual, en uno de estos momentos se puede comprar por unos 20€ en la [PlayStation Store][playstation-store] o físico en [Amazon][amazon].
+Ha sido lanzado para PC y consolas, yo lo he jugado en la PlayStation 4. Los textos están en español pero los diálogos están en inglés. Es un juego del 2019 en consolas con lo que hasta pasado un tiempo no tendrá una oferta importante y de forma habitual, en uno de estos momentos se puede comprar por unos 20 € en la [PlayStation Store][playstation-store] o físico en [Amazon][amazon].
 
 * [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432]
 

@@ -29,7 +29,7 @@ En otro artículo algo comentaba [Sobre el rápido avance de la tecnología][blo
 
 Una de las últimas adquisiciones que hice fué en 2012, uno de los primeros modelos de la popular computadora del tamaño de una tarjeta de crédito Raspberry Pi con un procesador ARM con el juego de instrucciones _armv6h_ y 256 MiB que he utilizado mayoritariamente para realizar descargas y compartir archivos _torrent_ o algunas pruebas de [utilización de sensores y dispositivos de entrada y salida con Java][blogbitix-212] o para [usar un certificador de Let's Encrypt en un servidor Nginx][blogbitix-252]. El siguiente uso que le daré es como [consola de juegos retro][blogbitix-301], otro uso es utilizarla como [nube privada de documentos personales con Nextcloud y OnlyOffice][blogbitix-446].
 
-Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36€ por los que se puede [comprar ahora en Amazon](http://amzn.to/2EP9mHX) ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria y ciertas limitaciones en el ancho de banda de red.
+Ya había placas de tamaño reducido con un computador completo similares a la Raspberry Pi pero la Raspberry Pi ha sido la placa con más éxito y que sigue teniendo uno de los mejores soportes y comunidad. Su propósito original es el aprendizaje a nivel educativo sin embargo su precio reducido de unos 36 € por los que se puede [comprar ahora en Amazon](http://amzn.to/2EP9mHX) ha sido gran parte de su éxito junto con una labor de promoción muy bien realizada en internet que contribuyó a crear gran expectación superando con creces la demanda esperada por los propios creadores en los meses iniciales. Han sido elaborados nuevos modelos más capaces con 4 núcleos a más velocidad y basados en un procesador de arquitectura ARM Cortex-A53 de 64 bits, con WiFi y Bluetooth, pero con solo 1 GiB de memoria y ciertas limitaciones en el ancho de banda de red.
 
 La Raspberry Pi es la más popular y con mejor soporte pero no es la mini placa más capaz ni incluso la más barata, debido a su éxito han surgido numerosas placas similares. La totalidad de estas placas usan alguna distribución de GNU/Linux y procesadores ARM ya sea [Debian][debian], [Ubuntu][ubuntu], [Android][android], [Arch Linux ARM][archlinuxarm], [Armbian][armbian] o algunas distribuciones especializadas como [Lakka][lakka] para consola de juegos retro y [LibreELEC][libreelec] o [Kodi][kodi] para centro multimedia de salón.
 
@@ -142,7 +142,7 @@ Un modelo de placa mas reciente también basada en el mismo _SoC_ de la Rock64Pr
 * IO 40-pin GPIO header
 * Power USB Type C, RTC battery connector
 
-Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70€ y los 107€ según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.
+Por si fuera poco tiene un precio razonable y similar al resto de placas que está entre los 70 € y los 107 € según configuración de memoria y accesorios incluidos, además es ofrecido por varias tiendas alemanas. Aunque no tiene el soporte de la Raspberry Pi en cuanto a características técnicas es posiblemente el mejor modelo de los comentados en este artículo.
 
 
 {{< youtube video="C4p9EpjA0ZM" >}}
@@ -172,7 +172,7 @@ Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que
 
 Aunque los modelos de [SolidRun][solid-run] son significativamente más caros poseen buenas especificaciones como el modelo [CuBox i4x4](https://www.solid-run.com/product/cubox-i4x4/) con un procesador _quad core_ aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y blutooth incluido en un formato de cubo de 2 pugadas. Como decía a un precio mas elevado, $170.
 
-El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-pulse/) incorpora un procesador [NXP i.MX8M](https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES) ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170€.
+El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-pulse/) incorpora un procesador [NXP i.MX8M](https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES) ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170 €.
 
 * CPU i.MX8M Dual/Quad core ARM Cortex A53 up to 1.5Ghz (with ARM M4 GPP)
 * Memoria up to 4GB LPDDR4
@@ -206,7 +206,7 @@ Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odr
 
 De [NanoPi][nanopi] voy a destacar el modelo [NanoPi K2](http://nanopi.org/NanoPi-K2_Feature.html) con 2 GiB de memoria, procesador quad core, con WiFi y bluetooth y gigabit ethernet y soporte de 4K@60fps y H.265 10bit, H.264 a un precio de $50.
 
-Parece que con la costumbre de denominar a estas placas bases el nombre de frutos están [OrangePi Plus 2](http://www.orangepi.org/orangepiplus2/) y [BananaPi M3](http://www.banana-pi.org/m3.html), el primero a un precio de 45€ con 2 GiB de memoria y soporte para HDMI 4K además de incluir gigabit ethernet y WiFi. El modelo de Banana Pi se diferencia en tener un procesador _octa-core_, un puerto SATA y un precio superior de 85€.
+Parece que con la costumbre de denominar a estas placas bases el nombre de frutos están [OrangePi Plus 2](http://www.orangepi.org/orangepiplus2/) y [BananaPi M3](http://www.banana-pi.org/m3.html), el primero a un precio de 45 € con 2 GiB de memoria y soporte para HDMI 4K además de incluir gigabit ethernet y WiFi. El modelo de Banana Pi se diferencia en tener un procesador _octa-core_, un puerto SATA y un precio superior de 85 €.
 
 ### Conclusión
 

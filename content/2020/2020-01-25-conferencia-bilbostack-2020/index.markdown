@@ -21,7 +21,7 @@ series: ["bilbostack"]
 
 Se cumple la 9º edición de la conferencia del ámbito de proyectos de tecnología que una vez más ha sido hospeda en el palacio Euskalduna. Como anteriores ediciones en un formato de dos _tracks_ simultáneos y cuatro presentaciones en cada uno, en una única mañana pero que se alarga durante la tarde con el _networking_ y los pintxos, y da a tiempo a visitar la ciudad si se viene de viaje.
 
-Las entradas fueron lanzadas en varias oleadas que en las primeras se agotaron en pocos minutos, incluso literalmente en unos segundos. Adquirir una entrada en la oleada final ya fue más sencillo. Al igual que el año anterior el precio ha sido muy reducido de 13,5€.
+Las entradas fueron lanzadas en varias oleadas que en las primeras se agotaron en pocos minutos, incluso literalmente en unos segundos. Adquirir una entrada en la oleada final ya fue más sencillo. Al igual que el año anterior el precio ha sido muy reducido de 13,5 €.
 
 Si otros años destacaba el desarrollo web, este año ha habido alguna presentación sobre la materia, este año ha habido algunas sobre varios de los temas que son tendencia en el desarrollo, _devops_ junto con sus asuntos relacionados de monitorización y microservicios. Estas fueron principalmente a las que asistí como resumo más adelante.
 

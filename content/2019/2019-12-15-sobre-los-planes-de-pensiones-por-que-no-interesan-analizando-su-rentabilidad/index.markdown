@@ -98,7 +98,7 @@ Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exact
     </tbody>
 </table>
 
-Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5K€ el ahorro en IRPF ser de 500€ o mayor aún si hay periodos en que los ingresos son mucho menores como excedencias o periodos de paro.
+Sabiendo el funcionamiento de tributación por IRPF, aplazando la cotización por IRPF en un momento en que tenemos menos ingresos como una vez jubilados es posible tener un ahorro fiscal. El ahorro puede ser de un 10%, de 5K€ el ahorro en IRPF ser de 500 € o mayor aún si hay periodos en que los ingresos son mucho menores como excedencias o periodos de paro.
 
 Los planes de pensiones se recuperan de dos formas, en forma de renta (una cantidad baja todos los meses que complemente la pensión), o en forma de capital. Si se recupera en forma de capital (todo el fondo en un mismo año fiscal) el tipo impositivo podría ser mayor que no tener plan de pensión ya que los ingresos en ese año podría llegar a los tramos fiscales altos.
 

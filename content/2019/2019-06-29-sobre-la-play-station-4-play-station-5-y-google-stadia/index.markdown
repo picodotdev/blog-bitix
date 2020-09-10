@@ -30,7 +30,7 @@ Ya han sido publicadas noticias indicando que la PlayStation 4 está al final de
 
 ### PlayStation 4
 
-La [PlayStation 4](https://es.wikipedia.org/wiki/PlayStation_4) fue comercializada a finales del 2013, con su actualización del modelo _slim_ y _pro_ en el 2016. Habiendo ya pasado varios años desde su lanzamiento posee un amplio catálogo de juegos con muy buena calidad. Su precio está entre los 350€ nueva para el modelo _slim_ o 230€ de segunda mano o seminueva en una tienda. Al haber pasado ya unos años hace que muchos destacados juegos se encuentren en unos razonables precios de entre 10€ y 20€.
+La [PlayStation 4](https://es.wikipedia.org/wiki/PlayStation_4) fue comercializada a finales del 2013, con su actualización del modelo _slim_ y _pro_ en el 2016. Habiendo ya pasado varios años desde su lanzamiento posee un amplio catálogo de juegos con muy buena calidad. Su precio está entre los 350 € nueva para el modelo _slim_ o 230 € de segunda mano o seminueva en una tienda. Al haber pasado ya unos años hace que muchos destacados juegos se encuentren en unos razonables precios de entre 10 € y 20 €.
 
 Aún habiéndose anunciado la PlayStation 5 como su sucesora aún están por lanzarse varios títulos importantes, todavía ofrecerá muchas horas de juego durante varios años más aún después de lanzarse la PS5.
 
@@ -54,7 +54,7 @@ Desde hace bastante tiempo la PlayStation ha sido la consola dominante sobre la 
 
 Ofrecerá una modalidad de suscripción para tener acceso a 4K, 60 FPS, HDR y sonido 5.1 pero en la modalidad Básica solo es necesario adquirir los juegos. Dado que se basa en la nube y funciona con _streaming_ requiere conexión permanente de internet y de un buen ancho de banda, un ADSL no soportará 4K y justamente la calidad 720p o 1080p con lo que sería recomendable utilizar fibra o cable de al menos 30 Mbps. Está por ver como afectará la latencia de la conexión a la experiencia de juego que es especialmente sensible a este aspecto.
 
-Por lo demás el precio de suscripción de 10€/mes es recurrente pero teniendo en cuenta que una PS5 costará entre 400€ y 500€ en el momento de lanzamiento el precio de suscripción dan para varios años en lo que costaría comprar una PS5. Esta también por ver el precio de los juegos en Stadia si serán similares a los de las consolas tradicionales o algo superiores y el catálogo de juegos que ofrece en el momento de lanzamiento y pasados unos meses o algún año. Sin embargo, la tendencia a futuro parece indicar que el modelo de Stadia sea el que sigan las consolas o plataformas de juego más tarde o temprano.
+Por lo demás el precio de suscripción de 10 €/mes es recurrente pero teniendo en cuenta que una PS5 costará entre 400 € y 500 € en el momento de lanzamiento el precio de suscripción dan para varios años en lo que costaría comprar una PS5. Esta también por ver el precio de los juegos en Stadia si serán similares a los de las consolas tradicionales o algo superiores y el catálogo de juegos que ofrece en el momento de lanzamiento y pasados unos meses o algún año. Sin embargo, la tendencia a futuro parece indicar que el modelo de Stadia sea el que sigan las consolas o plataformas de juego más tarde o temprano.
 
 Si Stadia ofrece un buen catalogo de juegos y la latencia no da problemas, los precios no son desorbitados y como parece se adelanta al lanzamiento de la PS5 puede suponer un cambio en las reglas del mercado de las consolas y ponerle dificultades a la hasta ahora dominante posición de PlayStation.
 
@@ -63,7 +63,7 @@ Si Stadia ofrece un buen catalogo de juegos y la latencia no da problemas, los p
 
 ### Evaluando posibilidades
 
-No es tanto el precio de la PS4 que está en 200€ de segunda mano o 290€ en tienda como saber en un año se lanzará un modelo mucho más capaz que lo dejará descatalogado y que además será retrocompatible con él. Stadia requiere una buena conexión de internet y no tendrá los juegos exclusivos de la PS, uno de los motivos para que haya sido la consola vencedora de esta generación, aunque si otros muy buenos presentes en todas las plataformas.
+No es tanto el precio de la PS4 que está en 200 € de segunda mano o 290 € en tienda como saber en un año se lanzará un modelo mucho más capaz que lo dejará descatalogado y que además será retrocompatible con él. Stadia requiere una buena conexión de internet y no tendrá los juegos exclusivos de la PS, uno de los motivos para que haya sido la consola vencedora de esta generación, aunque si otros muy buenos presentes en todas las plataformas.
 
 Un motivo importante para no comprar una consola es que hay muchos juegos como _shooters_ y de estrategia en los que es preferible utilizar ratón y teclado sin embargo esto no es posible en la PS4. Stadia si soportará múltiples tipos de dispositivos controladores de entrada, entre ellos mandos de consolas, teclado y ratón.
 

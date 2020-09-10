@@ -33,7 +33,7 @@ Con esta opción tendremos un control total del _software_ instalado sin ninguna
 
 La siguiente opción a considerar puede ser un servidor ofrecido por muchos registradores de dominios. Si el tráfico del servicio que planeamos ofrecer no es muy alto (y así serán en los inicios) es una opción adecuada. En la mayoría de las opciones de este tipo estaremos limitados en el lenguaje de programación que podremos usar generalmente [PHP][php] o la base de datos generalmente [MySQL][mysql].
 
-Mucha gente usa esta opción para albergar su bitácora con [WordPress][wordpress] que incluso para un tráfico considerable es suficiente, por supuesto es válida para las empresas que quieran tener presencia en internet aunque solo sea para incluir su dirección teléfono de contacto y una breve descripción y los productos que ofrece. Para estos usos el coste de esta opción puede estar entre 1€/mes y 20€/mes aparte del coste del dominio.
+Mucha gente usa esta opción para albergar su bitácora con [WordPress][wordpress] que incluso para un tráfico considerable es suficiente, por supuesto es válida para las empresas que quieran tener presencia en internet aunque solo sea para incluir su dirección teléfono de contacto y una breve descripción y los productos que ofrece. Para estos usos el coste de esta opción puede estar entre 1 €/mes y 20 €/mes aparte del coste del dominio.
 
 Hay multitud de proveedores algunos de los más conocidos son [DonDominio][dondominio], [Arsys][arsys], [Piensa Solutions][piensasolutions], ... pero ninguno de estos y en otros casos muy pocos ofrecen _hosting_ para aplicaciones de la plataforma Java. No tendremos libertad en la tecnología que usamos ni siquiera en las versiones de la misma.
 
@@ -45,7 +45,7 @@ Si la aplicación o proyecto crece las nubes de [Amazon EC2][amazon-ec2], [micro
 
 En estas opciones IaaS tenemos libertad de elegir el lenguaje de programación que queremos emplear para en la aplicación ya sea [Java][java], [PHP][php], [Python][python], [C#][csharp] o [Ruby][ruby], ... también tendremos libertad en la base de datos [MySQL][mysql], [PosgreSQL][postgresql], [Redis][redis], ... o en el servidor de aplicaciones o servidor web.
 
-En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia _t1.small_ con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00€ por reservar la instancia durante ese periodo y unos 2€ adicionales al mes, a esto deberemos sumar el coste del dominio. En la [calculadora de Amazon EC2](http://calculator.s3.amazonaws.com/index.html) podemos estimar el coste según los recursos que necesitemos.
+En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, para una aplicación mediana una instancia _t1.small_ con 2GiB de memoria reservada previamente y 50 GiB de espacio de disco SSD durante 3 años cuesta unos 332.00 € por reservar la instancia durante ese periodo y unos 2 € adicionales al mes, a esto deberemos sumar el coste del dominio. En la [calculadora de Amazon EC2](http://calculator.s3.amazonaws.com/index.html) podemos estimar el coste según los recursos que necesitemos.
 
 {{< image
     gallery="false"
@@ -55,7 +55,7 @@ En Amazon EC2 el coste puede variar dependiendo de los recursos que reservemos, 
 
 ### Linode, Digital Ocean
 
-Algunas opciones totalmente válidas para muchos casos que también nos proporcionan flexibilidad son [Linode][linode] y [Digital Ocean][digital-ocean], también entran dentro de la categoría de IaaS. El coste de los planes ofrecidos por cada una de estas es muy sencillo en Linode empieza desde los 10€/mes hasta los 80€/mes y en Digital Ocean desde los 5€/mes pasando por los 80€/mes hasta los 640€/mes. Salvo los planes de volúmenes altos de Digital Ocean los precios son similares a Linode según las características disponibles en ambos.
+Algunas opciones totalmente válidas para muchos casos que también nos proporcionan flexibilidad son [Linode][linode] y [Digital Ocean][digital-ocean], también entran dentro de la categoría de IaaS. El coste de los planes ofrecidos por cada una de estas es muy sencillo en Linode empieza desde los 10 €/mes hasta los 80 €/mes y en Digital Ocean desde los 5 €/mes pasando por los 80 €/mes hasta los 640 €/mes. Salvo los planes de volúmenes altos de Digital Ocean los precios son similares a Linode según las características disponibles en ambos.
 
 Estas opciones son totalmente válidas tanto para proyectos personales como un blog con WordPress como para proyectos profesionales. La nube de Amazon ofrece multitud de servicios que en algunos casos son útiles pero si no nos son necesarios las opciones comentadas en este apartado serán suficientes y algo más baratas.
 
@@ -66,7 +66,7 @@ Estas opciones son totalmente válidas tanto para proyectos personales como un b
 
 ### Otras
 
-Hay otro tipo de opciones conocidas como [plataforma como servicio][paas] (PaaS, _Platform as a service_) como [OpenShift][openshift], [AppFog][appfog], [Cloud Foundry][cloudfoundry], [Heroku][heroku]. De entre estas destacaré OpenShift ya que proporciona una capa gratuita con la que tendremos lo que ellos denominan _gears_, nos ofrecen gratuitamente 3 con 512 MiB de memoria y 1 GiB de espacio en disco. Esta opción es la que he utilizado para construir [Blog Stack][blogstack], en el artículo [Arquitectura y hospedaje de Blog Stack][blogbitix-24] detallo técnicamente el proyecto en el que el único coste es el dominio (12€/año).
+Hay otro tipo de opciones conocidas como [plataforma como servicio][paas] (PaaS, _Platform as a service_) como [OpenShift][openshift], [AppFog][appfog], [Cloud Foundry][cloudfoundry], [Heroku][heroku]. De entre estas destacaré OpenShift ya que proporciona una capa gratuita con la que tendremos lo que ellos denominan _gears_, nos ofrecen gratuitamente 3 con 512 MiB de memoria y 1 GiB de espacio en disco. Esta opción es la que he utilizado para construir [Blog Stack][blogstack], en el artículo [Arquitectura y hospedaje de Blog Stack][blogbitix-24] detallo técnicamente el proyecto en el que el único coste es el dominio (12 €/año).
 
 ### Notas finales
 

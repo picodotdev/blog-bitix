@@ -80,7 +80,7 @@ He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desde�
     image2="image:gadsense-2019.png" optionsthumb2="600x450" title2="AdSense 2019 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2019" >}}
 
-En cuanto a ingresos algunos menos 410€ frente a 480€ del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 euros que no está mal.
+En cuanto a ingresos algunos menos 410 € frente a 480 € del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 euros que no está mal.
 
 {{< image
     gallery="true"

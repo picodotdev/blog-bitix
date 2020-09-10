@@ -26,6 +26,13 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
     gallery="true"
     image1="image:windows-10.png" optionsthumb1="300x200" title1="Windows 10" >}}
 
+* [Licencia de Windows 10 Home](https://amzn.to/2FjvnDS) en Amazon.
+* [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
+* [Licencia de Microsoft Office 2019](https://amzn.to/2ZhuhzU) en Amazon.
+* [Licencia de Windows 10 Home](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) en eBay.
+* [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) en ebay.
+* [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) en eBay.
+
 ¿Por qué digo que no le importa que no pagues la licencia? Porque versión tras versión la medidas incluidas en Windows u Office para protegerlos de un uso sin licencia son evitadas sin aparentemente muchas dificultades y al cabo de muy poco tiempo aparecen en las páginas de descargas las imágenes junto con las instrucciones a seguir para instalarlo sin ningún tipo de problema. Y en Windows 10 será igual. ¿Por que las medidas de validación incluidas no evitan el uso sin licencia? Porque le conviene a Microsoft no ser muy restrictivos. Si lo fueran algunos pagarían la licencia pero otros muchos dirían _¡¿que? ¿que la licencia cuesta 119 € (o 199, o 50 según lo que se consigue con devolución en un equipo nuevo)? ¿un tercio (aprox.) de lo que me costó el ordenador?!_, y eso solo Windows, si además le sumamos Office y otros programas el coste de las licencias podría superar con creces el precio del equipo. Peor aún, cantidad a desembolsar cada unos pocos años por la obsolescencia y nuevas versiones. ¿Y qué harían esos  que no pudiesen usar Windows u Office? Buscar alternativas y... ¿cuál creéis que eligirían? La también cara competencia de [Apple][apple] con sus [Mac][mac] o alguna distribución GNU/Linux como [Ubuntu][ubuntu], [Linux Mint][linuxmint], [Debian][debian], [Fedora][fedora], [openSUSE][opensuse], etc... Que la gente supiese y pagase el coste de las licencias de software probablemente sería una de las mejores formas de fomentar el uso del software libre y GNU/Linux.
 
 {{< image

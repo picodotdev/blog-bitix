@@ -18,7 +18,7 @@ summary: "Microsoft Office is the office suite with a great margin of difference
 
 {{< logotype image1="microsoft.svg" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
-In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125€ for [home and students](https://amzn.to/2bg4CR2) and about 250€ for [home and business](https://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
+In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125 € for [home and students](https://amzn.to/2bg4CR2) and about 250 € for [home and business](https://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
 
 {{< amazon
     linkids="762b16ff0b7f340317343dc4a24097ab&internal=1,1f45d19184a5ea936b680670062a7fad&internal=1"
@@ -34,7 +34,7 @@ In this article I will focus on alternatives to Office that are also several. By
 
 ### Microsoft Office
 
-Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/) has a cost of 8.80€ per user and according to the plan that includes more or fewer applications.
+Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/) has a cost of 8.80 € per user and according to the plan that includes more or fewer applications.
 
 {{< image
     gallery="true"
@@ -60,7 +60,7 @@ The free and libre alternative of Office is [LibreOffice](https://es.libreoffice
 
 If you like the ribbon interface without menus with a multitude of options and that is more careful in a design than LibreOffice similar to the one used in Microsoft Office, [WPS Office](https://www.wps.com/) is a great option to take into account, it can also be activated in classic mode menus and toolbars, it can edit multiple documents in tabs. It offers the basic programs of an office suite: text editor, spreadsheets and presentations. For personal use it is available with some limitations when printing and exporting documents to PDF format.
 
-For the business environments with all its options its license has a much more reasonable cost than Microsoft Office, 30€ for a one year subscription license and 80€ for the perpetual license.
+For the business environments with all its options its license has a much more reasonable cost than Microsoft Office, 30 € for a one year subscription license and 80 € for the perpetual license.
 
 It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Microsoft Office does not already offer support, Linux, Android and iOS. Its installer occupies only 80 MB against more than 3 gigas of Office.
 
@@ -76,7 +76,7 @@ It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Mic
 
 Another alternative to Office is [Google Docs](https://www.google.es/intl/es/docs/about/), it does not have all the options that Office has but for most users it is enough. Simply have a Google account to use that includes a text editor, spreadsheets, presentations and the ability to make forms. It runs in the browser and although it is possible to work without internet connection at specific times is required. The documents are stored in the cloud so we will not lose them in case of spoiling our computer, we can access the documents from any of our devices as a smartphone o tablet, edit the same document by two or more persons simultaneously or share the documents with other people. Being based on the cloud we do not need to perform software updates except the browser.
 
-For companies it is offered at the price of 4€ per user per month which includes the Gmail email client, calendars, video calls and 30GB of storage. There will be 8€ with more storage options and message retention.
+For companies it is offered at the price of 4 € per user per month which includes the Gmail email client, calendars, video calls and 30GB of storage. There will be 8 € with more storage options and message retention.
 
 {{< image
     gallery="true"

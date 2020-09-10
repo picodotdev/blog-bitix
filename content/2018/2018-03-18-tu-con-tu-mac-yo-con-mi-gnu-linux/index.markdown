@@ -18,7 +18,7 @@ tags: ["apple", "gnu-linux", "microsoft", "opinion", "planeta-codigo", "windows"
 
 {{< logotype image1="macos.svg" title1="macOS" width1="300" image2="windows-10.svg" title2="Windows" width2="350" image3="gnu.svg" image4="linux.svg" >}}
 
-Por motivos laborales y por política de la empresa tuve que elegir como equipo un portátil de [Apple][apple], en concreto un MacBook Pro con procesador Intel Core i5, 16 GiB de memoria y 512 GiB de almacenamiento SSD. Prácticamente el mejor portátil que había en su momento en el catálogo de la manzana que tendría un precio seguro más de 2000€ y quizá 2500€. Este cambio me ha permitido poder comparar con mi propio portátil, un Sony Vaio con procesador Intel Core i5 3210, 8 GiB de memoria y 250 GiB de almacenamiento SSD y la distribución [Arch Linux][archlinux] de [GNU][gnu]/[Linux][linux].
+Por motivos laborales y por política de la empresa tuve que elegir como equipo un portátil de [Apple][apple], en concreto un MacBook Pro con procesador Intel Core i5, 16 GiB de memoria y 512 GiB de almacenamiento SSD. Prácticamente el mejor portátil que había en su momento en el catálogo de la manzana que tendría un precio seguro más de 2000 € y quizá 2500 €. Este cambio me ha permitido poder comparar con mi propio portátil, un Sony Vaio con procesador Intel Core i5 3210, 8 GiB de memoria y 250 GiB de almacenamiento SSD y la distribución [Arch Linux][archlinux] de [GNU][gnu]/[Linux][linux].
 
 Tenía la duda de si esta experiencia me iba a convencer de pasarme al lado oscuro. Llevo usando el MacBook desde hace un año siendo este [mi primer contacto con un Mac][blogbitix-193] y puedo decir de momento que no hay nada en los Mac que me convezca de adquirir uno de los portátiles de Apple. Sí no son feos, tenían (en pasado) alguna cosa distinta como los _magsafe_ en el adaptador de corriente, no tienen elementos obsoletos como una salida VGA o grabadora DVD, una buena pantalla y un buen _touchpad_ pero a un precio exagerado. Aún así y ahora que he probado tanto Windows, macOS como GNU/Linux no tengo nada que envidiar a los portátiles de Apple ni a macOS por mi parte, es más estoy más convencido de usar GNU/Linux.
 
@@ -40,7 +40,7 @@ El hardware de Apple es bonito y es un aspecto que lo cuidan mucho al menos más
 
 Mi equipo es del 2012 y el Mac que uso del 2015, realmente lo único que echo de menos es la resolución de la pantalla que en el Mac es de 2560x1600 nativa y de 1650x1050 escalada lo que hace que se vea el texto muy bien. El _magic mouse_ al ser táctil también está bien aunque a veces detecte gestos incorrectos pero el hecho de que cuando esté cargándose no se pueda utilizar es un fallo de diseño.
 
-Compara el [Slimbook Pro 2][slimbook] y el [MacBook Pro](https://www.apple.com/es/macbook-pro/), para empezar en el Slimbook se pueden instalar 32 GiB de memoria en el Mac solo 16 GiB, a características similares con disco SSD de 512 GiB y pantalla de HiDPI el Slimbook está sobre los 1000€ y los Mac empezando por 1500€.
+Compara el [Slimbook Pro 2][slimbook] y el [MacBook Pro](https://www.apple.com/es/macbook-pro/), para empezar en el Slimbook se pueden instalar 32 GiB de memoria en el Mac solo 16 GiB, a características similares con disco SSD de 512 GiB y pantalla de HiDPI el Slimbook está sobre los 1000 € y los Mac empezando por 1500 €.
 
 ### Entorno de escritorio
 
@@ -64,9 +64,9 @@ En los Mac se puede utilizar algo similar con [Homebrew][homebrew] y menos mal q
 
 ### Precio
 
-No se cuanto costaría exactamente el equipo Mac pero con su configuración al menos unos 2000€. Pues bien un Slimbook a día de hoy con con una configuración del modelo tal que Intel Core i5 8250U (4 núcleos, 8 hilos), 32 GiB de memoria, 250 GiB de almacenamiento SSD con interfaz NVMe y pantalla QHD+ 3200 x 1800 HiDPI cuesta unos 1400€ siendo el tope de gama. Eso para los usuarios que necesiten tal ingente cantidad de memoria y en una de las configuraciones más completas.
+No se cuanto costaría exactamente el equipo Mac pero con su configuración al menos unos 2000 €. Pues bien un Slimbook a día de hoy con con una configuración del modelo tal que Intel Core i5 8250U (4 núcleos, 8 hilos), 32 GiB de memoria, 250 GiB de almacenamiento SSD con interfaz NVMe y pantalla QHD+ 3200 x 1800 HiDPI cuesta unos 1400 € siendo el tope de gama. Eso para los usuarios que necesiten tal ingente cantidad de memoria y en una de las configuraciones más completas.
 
-El MacBook Pro más barato empieza en 1500€ y con únicamente 8 GiB de memoria y solo 128 GiB de SSD, con 16 GiB de memoria y 256 GiB de SSD se va a los 2000€.
+El MacBook Pro más barato empieza en 1500 € y con únicamente 8 GiB de memoria y solo 128 GiB de SSD, con 16 GiB de memoria y 256 GiB de SSD se va a los 2000 €.
 
 ### Obsolescencia
 

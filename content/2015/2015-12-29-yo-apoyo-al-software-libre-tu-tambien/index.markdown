@@ -19,7 +19,7 @@ summary: "Hay múltiples formas con las que colaborar con el software libre, una
 
 {{< logotype image1="fsf.svg" title1="Free Software Foundation" width1="300" image2="fsfe.svg" title2="Free Software Foundation Europe" width2="200" image3="gnu.svg" >}}
 
-Hace una semanas he recibido la cuarta transferencia de Google por la publicidad AdSense que incluyo en Blog Bitix. Si es por la cantidad, el esfuerzo y tiempo que requiere cada artículo no compensa aunque recibirlo de vez cuando alegra. Al año el blog me genera unos 80€, dependiendo de mes y los clics que se hagan entre 7€ y 11€. Un día [Liher publicó un artículo](http://elblogdeliher.com/lo-prometido-es-deuda-y-a-mi-no-me-gusta-ser-deudor-d/) en el que comentaba que había hecho una donación al proyecto [Debian][debian] dando muestras de ello con la transferencias de PayPal para que no hubiese ningún género de duda. Me pareció muy buena iniciativa y escribí en su artículo un comentario que el día que yo recibiese la siguiente transferencia de Google por la publicidad haría una donación a algún proyecto relacionado con software libre.
+Hace una semanas he recibido la cuarta transferencia de Google por la publicidad AdSense que incluyo en Blog Bitix. Si es por la cantidad, el esfuerzo y tiempo que requiere cada artículo no compensa aunque recibirlo de vez cuando alegra. Al año el blog me genera unos 80 €, dependiendo de mes y los clics que se hagan entre 7 € y 11 €. Un día [Liher publicó un artículo](http://elblogdeliher.com/lo-prometido-es-deuda-y-a-mi-no-me-gusta-ser-deudor-d/) en el que comentaba que había hecho una donación al proyecto [Debian][debian] dando muestras de ello con la transferencias de PayPal para que no hubiese ningún género de duda. Me pareció muy buena iniciativa y escribí en su artículo un comentario que el día que yo recibiese la siguiente transferencia de Google por la publicidad haría una donación a algún proyecto relacionado con software libre.
 
 Tenía casi decidido que la primera donación económica que hiciese a un proyecto sería a la [Free Software Foundation][fsf]. Organización no lucrativa que lucha por los derechos y libertades de los usuarios en cualquier materia que esté relacionada con el software y la computación. Se considera software libre si cumple las siguientes 4 libertades:
 
@@ -43,7 +43,7 @@ La económica solo es una forma de colaborar con el software libre, usarlo es un
 
 Y simplemente visitando, leyendo los artículos o haciendo un clic alguna vez en los anuncios de esta bitácora puedes considerar que tú también has contribuido al software libre a través de esta donación aunque uses [Windows][windows] o [Mac][mac], productos de Microsoft, Apple o software privativo. La siguiente transferencia dentro de unos meses que me haga Google por la publicidad AdSense ya veré a que proyecto de los que uso hago otra donación, no será muy elevada pero seguro que ayuda, ahí está mi granito de arena.
 
-Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquisición de dos camisetas por 20€ cada una y 7€ de gastos de envío. ¿Alguien continúa con esta pequeña cadena? Liher, pico.dev, ...
+Y esta es la muestra de la factura de PayPal en la que se ve la donación/adquisición de dos camisetas por 20 € cada una y 7 € de gastos de envío. ¿Alguien continúa con esta pequeña cadena? Liher, pico.dev, ...
 
 [Yo apoyo al software libre](http://www.gnu.org/)
 
