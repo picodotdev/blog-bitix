@@ -9,6 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "es"
+imageHead: "image:windows-10-wallpaper.jpg"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "opinion", "planeta-codigo", "windows"]
 summary: "Comentaba en un artículo que es sorprendente que Microsoft con la capacidad que tiene y estando los dispositivos conectados a internet mayoritariamente no sea capaz de evitar usar su software sin licencia. Estoy a punto de ver si con Windows 10 y Office 2016 sigue siendo tan fácil como siempre. También tendré una muestra de la injusta fama de Windows pero que permite Microsoft por el _bloatware_ que preinstalan los fabricantes de dispositivos con su sistema operativo."
@@ -16,7 +17,7 @@ summary: "Comentaba en un artículo que es sorprendente que Microsoft con la cap
 
 {{% post %}}
 
-{{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" image3="microsoft-office.svg" title3="Microsoft Office" width3="200" >}}
+{{< logotype image1="microsoft.svg" image2="windows-10.svg" image3="microsoft-office.svg" title3="Microsoft Office" width3="200" >}}
 
 Este 2016 lo he empezando nada más y nada menos que instalando el sistema operativo y programas de un portátil. Uno de esos favores que habitualmente hacemos los informáticos de los que yo normalmente hago de buen grado, en esta ocasión recibí otro a cambio de otra índole así que perfecto. La necesidad de la reinstalación venía de que el portátil era notablemente lento a pesar de tener un disco duro mecánico y tampoco era porque el equipo fuese antiguo o tuviese poca memoria, el procesador era un AMD Athlon x2 QL-65 con 4 GiB de memoria y 320 GB de disco duro, algo que debería ser más que suficiente para su propósito de navegar por internet, ver películas, escuchar música y tareas ofimáticas. Era lento al iniciarse, al ejecutar programas además de algún mensaje del antivirus quejándose de que su periodo de prueba había expirado que aparecía al entrar al escritorio. Eso no era todo algún virus había cifrado los archivos personales, fotos y documentos, pidiendo a cambio de recuperarlos algo que ni siquiera me molesté ver en detalle, seguro que nada bueno.
 

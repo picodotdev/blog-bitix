@@ -9,6 +9,7 @@ rss: true
 sharing: true
 comments: true
 language: "en"
+imageHead: "image:windows-10-wallpaper.jpg"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "opinion"]
 summary: "I commented in an article that it is surprising that Microsoft with the capacity that it has and being the devices connected to Internet mostly is not able to avoid using its software without license. I'm about to see if with Windows 10 and Office 2016 it's still as easy to use as always. I will also have a sample of the unfair fame of Windows but that allows Microsoft for the bloatware that the device manufacturers pre-installs with its operating system."
@@ -16,7 +17,7 @@ summary: "I commented in an article that it is surprising that Microsoft with th
 
 {{% post %}}
 
-{{< logotype image1="microsoft.svg" title1="Microsoft" width1="300" image2="windows-10.svg" title2="Windows 10" width2="300" image3="microsoft-office.svg" title3="Microsoft Office" width3="200" >}}
+{{< logotype image1="microsoft.svg" image2="windows-10.svg" image3="microsoft-office.svg" title3="Microsoft Office" width3="200" >}}
 
 This 2016 I have started nothing more and nothing less than installing the operating system and programs of a laptop. One of those favors that we as advanced computer users habitually do. I normally do it willingly, this time I received another in exchange for another kind, so perfect. The need for reinstallation came from the fact that the laptop was remarkably slow despite having a mechanical hard disk and it was not because the equipment was old or had little memory, the processor was an AMD Athlon x2 QL-65 with 4 GiB memory and 320GB hard drive, something that should be more than enough for the purpose of surfing the internet, watching movies, listening to music and do office tasks. It was slow to start, running programs in addition to some antivirus message popups complaining that its trial period expired that appeared when entering the desktop. That was not all, a virus encrypted the personal files, photos and documents, asking in exchange for recovering them something that I did not even bother to see in detail, surely nothing good.
 
