@@ -87,7 +87,7 @@ Windows 10 se puede activar durante la instalación o una vez instalado seleccio
     image3="image:activacion-windows-10-2.png" optionsthumb3="200x150" title3="Activación de Windows"
     caption="Activación de Windows durante la instalación y una vez instalado" >}}
 
-El siguiente comando permite obtener el código de activación de Windows 10.
+El siguiente comando ejecutado desde utilidad _Símbolo del sistema_ permite obtener el código de activación de Windows 10.
 
 {{< code file="wmic.cmd" language="cmd" options="" >}}
 
