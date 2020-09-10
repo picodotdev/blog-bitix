@@ -105,4 +105,5 @@ Una vez instaldo Microsoft Office al abrir una las aplicaciones de la _suite_ of
 * [Activación de Office](https://support.microsoft.com/es-es/office/activaci%C3%B3n-de-office-5bd38f38-db92-448b-a982-ad170b1e187e)
 * [Encontrar la clave del producto de Windows](https://support.microsoft.com/es-mx/help/10749/windows-10-find-product-key)
 * [Descargar e instalar o volver a instalar Microsoft 365 u Office 2019 en un equipo PC o Mac](https://support.microsoft.com/es-es/office/descargar-e-instalar-o-volver-a-instalar-microsoft-365-u-office-2019-en-un-equipo-pc-o-mac-4414eaaf-0478-48be-9c42-23adc4716658)
+* [Descargar Microsoft Office 2019 Hogar y Estudiantes](https://www.ardilu.com/descargar/office-2019-home-student)
 {{% /reference %}}
