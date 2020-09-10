@@ -59,7 +59,7 @@ Una vez que sabes que el equipo cumple con los requisitos mínimos hay que hacer
 
 ### Descargar Windows 10
 
-En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Con Windows 10 la propia Microsoft ofrece mediante descarga directa la imagen ISO desde su propia página y una herramienta para la creación del medio USB o DVD. Basta con [descargar el medio de instlación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendoo a la página de descarga con un navegador web, el medio de instalación cluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_.
+En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Con Windows 10 la propia Microsoft ofrece mediante descarga directa la imagen ISO desde su propia página y una herramienta para la creación del medio USB o DVD. Basta con [descargar el medio de instlación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendoo a la página de descarga con un navegador web, el medio de instalación incluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_.
 
 ### Creación del medio de instalación
 
