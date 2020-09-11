@@ -50,11 +50,8 @@ Es inicio del 2016 y no he hecho una sino tres instalaciones de Windows y Office
 {{< image
     gallery="true"
     image1="image:windows-10.png" optionsthumb1="300x200" title1="Windows 10"
-    caption="Windows 10" >}}
-{{< image
-    gallery="true"
-    image1="image:microsoft-word-2016.png" optionsthumb1="300x200" title1="Microsoft Word 2016"
-    caption="Microsoft Word 2016" >}}
+    image2="image:microsoft-word-2016.png" optionsthumb2="300x200" title2="Microsoft Word 2016"
+    caption="Windows 10 y Microsoft Word 2016" >}}
 
 ### Qué alternativa hay a usar un activador
 
