@@ -1,8 +1,9 @@
 ---
 pid: 514
 type: "post"
-title: "Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019"
-url: "/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-microsoft-office-2019/"
+title: "Cómo comprar una licencia y activar Windows 10 y Office 2019"
+url: "/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/"
+aliases: ["/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-microsoft-office-2019/"]
 date: 2020-09-10T22:00:00+02:00
 language: "es"
 rss: true
