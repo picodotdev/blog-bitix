@@ -22,7 +22,7 @@ summary: "Windows 10 y Microsoft Office 2019 son productos de software con una l
 
 El sistema operativo más utilizado en ordenadores personales para uso doméstico y en los equipos informáticos de las empresas es [Windows 10][windows] de [Microsoft][microsoft]. Muchos de los fabricantes de ordenadores de escritorio de marcas como HP o Dell pero también muchos de los ensambladores de ordenadores montados por piezas y prácticamente todos los fabricantes de portátiles incluyen preinstalado Windows 10 como sistema operativo junto con otro software, en estos casos no es necesario comprar una licencia de Windows pues ya que está está incluida en el importe del producto.
 
-En algunos casos el precio de la licencia de Windows 10 ha de adquirirse a parte del ordenador aunque se ofrezca de hacerlo al mismo tiempo, en la factura el coste del ordenador y la licencia de Windows 10 estará desglosada. El coste de la licencia de Windows 10 no es nada barata, cuesta entre 145 € para la versión _Home_, 259 € para la _Pro_ y 439 € para la _Pro for Workstations_, un coste adicional que encarece de forma muy significativa el ordenador teniendo en cuenta algunos parten de los 300 € e incluso para uno de 1000 € representa un porcentaje importante. [Microsoft vende licencias _Retail_ en su página web](https://www.microsoft.com/es-es/store/b/windows).
+En algunos casos el precio de la licencia de Windows 10 ha de adquirirse a parte del ordenador aunque se ofrezca de hacerlo al mismo tiempo, en la factura el coste del ordenador y la licencia de Windows 10 estará desglosada. El coste de la licencia de Windows 10 no es nada barata, cuesta entre 145 € para la versión _Home_, 259 € para la _Pro_ y 439 € para la _Pro for Workstations_, un coste adicional que encarece de forma muy significativa el ordenador teniendo en cuenta algunos parten de los 300 € e incluso para uno de 1000 € representa un porcentaje importante. [Microsoft vende licencias _Retail_ de Windows 10](https://www.microsoft.com/es-es/store/b/windows) y [licencias Microsoft Office 2019](https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products) en su página web.
 
 A través de vendedores distintos a Microsoft y los fabricantes de los ordenadores es posible comprar una licencia mucho más barata y completamente legal con la que activar estos productos y eliminar los mensajes que solicitan la activación para tener acceso a todas sus funciones sin que pasado un tiempo después de su instalación se deshabiliten.
 
@@ -70,6 +70,8 @@ Algunos de los vendedores lo hacen a través de [Amazon][amazon] o [eBay][ebay] 
 
 Una vez realizada la compra el código de activación del producto se envía en unas horas por correo electrónico o a la cuenta de la página. El código de activación de la licencia es una cadena de caracteres formada por varios números y letras separados por guiones con el siguiente aspecto, _XXXXX-XXXXX-XXXXX-XXXXX-XXXXX_ que hay que introducir en las secciones de configuración de Windows 10 y Microsoft Office 2019.
 
+* [Licencia de Windows 10](https://www.microsoft.com/es-es/store/b/windows) en Microsoft.
+* [Licencia de Microsoft Office 2019](https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products) en Microsoft.
 * [Licencia de Windows 10 Home](https://amzn.to/2FjvnDS) en Amazon.
 * [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
 * [Licencia de Microsoft Office 2019](https://amzn.to/2ZhuhzU) en Amazon.
