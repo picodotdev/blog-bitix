@@ -16,5 +16,11 @@
   {{ .RenderString "![](url=logotype:amazon.svg,size=32x32,gallery=false,layout=,lazy=false 'Desempaquetdo')" }}
 {{ else if (in .Params.tags "blog") }}
   {{ .RenderString "![](url=logotype:blogbitix.svg,size=32x32,gallery=false,layout=,lazy=false 'Blog')" }}
+{{ else if (in .Params.tags "microsoft") }}
+  {{ .RenderString "![](url=logotype:microsoft.svg,size=32x32,gallery=false,layout=,lazy=false 'Microsoft')" }}
+{{ else if (in .Params.tags "windows") }}
+  {{ .RenderString "![](url=logotype:windows.svg,size=32x32,gallery=false,layout=,lazy=false 'Windows')" }}
+{{ else if (in .Params.tags "apple") }}
+  {{ .RenderString "![](url=logotype:apple.svg,size=32x32,gallery=false,layout=,lazy=false 'Apple')" }}
 {{ else }}
 {{ end }}

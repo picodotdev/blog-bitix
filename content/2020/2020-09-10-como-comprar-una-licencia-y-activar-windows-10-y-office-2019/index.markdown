@@ -19,7 +19,7 @@ summary: "Windows 10 y Microsoft Office 2019 son productos de software con una l
 
 {{% post %}}
 
-{{< logotype image1="microsoft.svg" image2="windows-10.svg" image3="microsoft-office.svg" >}}
+{{< logotype image1="microsoft.svg" >}}
 
 El sistema operativo más utilizado en ordenadores personales para uso doméstico y en los equipos informáticos de las empresas es [Windows 10][windows] de [Microsoft][microsoft]. Muchos de los fabricantes de ordenadores de escritorio de marcas como HP o Dell pero también muchos de los ensambladores de ordenadores montados por piezas y prácticamente todos los fabricantes de portátiles incluyen preinstalado Windows 10 como sistema operativo junto con otro software, en estos casos no es necesario comprar una licencia de Windows pues ya que está está incluida en el importe del producto.
 
