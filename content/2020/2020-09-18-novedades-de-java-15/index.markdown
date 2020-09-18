@@ -106,9 +106,7 @@ Se reemplazan las implementaciones de bajo nivel para la comunicación por red [
 
 ### Recolectores de basura ZGC y Shenandoah
 
-Se califican como versión de producción los recolectores de basura _ZGC_ y _Shenandoah_ que ofrecen tiempos de pausa bajos aunque se mantiene como recolector de basura por defecto _G1_. Se soportan todas las plataformas comunes, Linux/x86_64, Linux/aarch64, Windows y macOS.
-
-El recolector de basura _ZGC_ se activa con la opción de la máquina virtual _-XX:+UseZGC_ y _Shenandoah_ con _-XX:+UseShenandoahGC_.
+Se califican como versión de producción los recolectores de basura _ZGC_ y _Shenandoah_ que ofrecen tiempos de pausa bajos aunque se mantiene como recolector de basura por defecto _G1_. Se soportan todas las plataformas comunes, Linux/x86_64, Linux/aarch64, Windows y macOS. El recolector de basura _ZGC_ se activa con la opción de la máquina virtual _-XX:+UseZGC_ y _Shenandoah_ con _-XX:+UseShenandoahGC_.
 
 * [El recolector de basura de Java, qué hace y cómo funciona en cada versión][blogbitix-463]
 
