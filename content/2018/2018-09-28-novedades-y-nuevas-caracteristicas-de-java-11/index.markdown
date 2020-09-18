@@ -27,7 +27,7 @@ Para adaptarse a ambos requerimientos Java a partir de Java 9 adoptó un nuevo c
 En esta nueva versión de Java 11 publicada el 25 de septiembre de 2018 las novedades no son tan relevantes como lo fuero Java 8 con las _lambadas_ y Java 9 con los módulos pero continúa con las mejoras incrementales y proporciona una versión LTS en la que empresas grandes confiarán como base para sus desarrollos.
 
 * [Características de Java 11](https://openjdk.java.net/projects/jdk/11/)
-* [Notas de publicación de Java 11](https://www.oracle.com/technetwork/java/javase/11all-relnotes-5013287.html)
+* [Notas de publicación de Java 11](hhttps://www.oracle.com/java/technologies/javase/jdk-11-relnote.html)
 * [Java 11 Javadoc](https://docs.oracle.com/en/java/javase/11/docs/api/)
 
 Las mejoras incluídas en esta versión son:

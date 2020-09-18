@@ -22,8 +22,8 @@ series: ["java-platform"]
 Continuando las mejoras incrementales cada seis meses el 17 de septiembre se publico Java 13. Java 13 incorpora algunas nuevas características interesantes que mejoran un facilitan la lectura del código, entre las más destacadas están los bloques de texto y las expresiones _switch_ mejoradas.
 
 * [Características de Java 13](https://openjdk.java.net/projects/jdk/13/)
-* [Notas de publicación de Java 13](https://jdk.java.net/13/release-notes)
-* [Java 13 Javadoc](https://docs.oracle.com/en/java/javase/13/docs/api/)
+* [Notas de publicación de Java 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html)
+* [Documentación Javadoc de Java 13](https://docs.oracle.com/en/java/javase/13/docs/api/)
 
 Las mejoras incluídas en esta versión son:
 
@@ -61,7 +61,7 @@ En Java 13 en vez únicamente el valor a retornar se permite crear bloques de se
 
 * [Inside Java 13’s switch Expressions and Reimplemented Socket API](https://blogs.oracle.com/javamagazine/inside-java-13s-switch-expressions-and-reimplemented-socket-api)
 
-### Otras características
+### Otras características incorporadas y cambios
 
 Las las otras tres características destacadas _Dynamic CDS Archives_, _ZGC: Uncommit Unused Memory_ para la mejora del recolector de basura y _Reimplement the Legacy Socket API_ reescribiendo el código para los _sockets_ en lenguaje Java son cambios internos que afectan a la plataforma Java pero no al lenguaje.
 

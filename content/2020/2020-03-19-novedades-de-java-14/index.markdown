@@ -20,8 +20,8 @@ series: ["java-platform"]
 Entre las novedades más destacadas que incorpora Java 14 están los _records_, la incorporación definitiva de las expresiones _switch_ o el _pattern matching_ para el operador _instanceof_. Otra de las novedades más destacadas es una traza de _NullPointerException_ más útil, también destaca la posibilidad de utilizar el recolector de basura ZGC en Windows y macOS. El resto de novedades son la eliminación de algunas funcionalidades con poco uso y la preparación marcando como desaconsejado su uso con _deprecated_.
 
 * [Características de Java 14](https://openjdk.java.net/projects/jdk/14/)
-* [Notas de publicación de Java 14](https://jdk.java.net/14/release-notes)
-* [Java 14 Javadoc](https://docs.oracle.com/en/java/javase/14/docs/api/)
+* [Notas de publicación de Java 14](https://www.oracle.com/java/technologies/javase/14-relnote-issues.html)
+* [Documentación Javadoc de Java 14](https://docs.oracle.com/en/java/javase/14/docs/api/)
 
 Las mejoras incluídas en esta versión son:
 

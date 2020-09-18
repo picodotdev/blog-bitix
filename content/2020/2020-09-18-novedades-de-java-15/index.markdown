@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:java.svg"
-tags: ["blog", "planeta-codigo"]
+tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las _lambdas_ de Java 8 o los módulos de Java 9, en Java 15 se añaden las _sealed classes_."
 ---
@@ -24,6 +24,10 @@ En septiembre del 2020 se ha publicado la versión 15 de Java siguiendo el calen
 Con este calendario de publicaciones tan frecuente las novedades son varias en cada nueva versión aunque algunas son simplemente versiones preliminares que pueden cambiar ligeramente en siguientes versiones destinadas a evaluar y probar las funcionalidades que se incorporarán de forma definitiva con posterioridad. Aunque sean versiones preliminares se pueden usar con normalidad, simplemente hay que tener en cuenta que en versiones posteriores requieran modificaciones en el código fuente hasta que sean declaradas como una versión definitiva.
 
 Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar [la herramienta SDKMAN][blogbitix-489] para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.
+
+* [Características de Java 15](https://openjdk.java.net/projects/jdk/15/)
+* [Notas de publicación de Java 15](https://www.oracle.com/java/technologies/javase/15-relnote-issues.html)
+* [Documentación Javadoc de Java 15](https://docs.oracle.com/en/java/javase/15/docs/api/)
 
 Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran impacto en el lenguaje ni la plataforma al ser más cambios internos que reimplementan y modernizan código existente, otras son versiones preliminares y segundas versiones preliminares no definitivas, algunas características en versiones anteriores se marcan como públicas dejando de ser preliminares, otras que se marcan como obsoletas desaconsejándose su uso y otras ya marcadas como obsoletas anteriormente son eliminadas.
 

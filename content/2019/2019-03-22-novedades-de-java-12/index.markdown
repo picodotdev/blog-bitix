@@ -22,9 +22,9 @@ El 19 de marzo del 2019 se publicaba la versión Java 12 siguiendo el calendario
 
 Las características destacadas de Java 12 son la incorporación de forma experimental las expresiones _switch_ y mejoras en el recolector de basura para mayor rendimiento.
 
-* [JDK 12 Documentation](https://docs.oracle.com/en/java/javase/12/)
-* [Release Notes](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html)
-* [Java 12 Javadoc](https://docs.oracle.com/en/java/javase/12/docs/api/)
+* [Características de Java 12](https://openjdk.java.net/projects/jdk/12/)
+* [Notas de publicación de Java 12](https://www.oracle.com/java/technologies/javase/12-relnote-issues.html)
+* [Documentación Javadoc de Java 12](https://docs.oracle.com/en/java/javase/12/docs/api/)
 
 Las mejoras incluídas en esta versión son:
 
@@ -63,9 +63,9 @@ Ahr se puede expresar un número de forma compacta con la clase [CompactNumberFo
 
 Una de la áreas que más atención reciben para mejorar el rendimiento de las aplicaciones es el recolector de basura. _Shenandoah_ es uno nuevo que independiente del tamaño de la memoria, ya sea de 200 MiB o 200 GiB, el tiempo de las pausas es el mismo. También se han implementado mejoras en el recolector de basura _G1_ actual.
 
-### Otras
+### Otras características incorporadas y cambios
 
-[Algunos métodos han sido eliminados](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#Removed) varios relacionados con el método _finalize_ cuyo uso está desaconsejado desde hace mucho tiempo por no se una forma segura de liberar recursos. Algunos algoritmos de cifrado inseguros han sido deshabilitados. Se ha añadido soporte para Unicode 11.0.0 con nuevos caracteres, bloques y  _scripts_.
+[Algunos métodos han sido eliminados](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html#Removed) varios relacionados con el método _finalize_ cuyo uso está desaconsejado desde hace mucho tiempo por no se una forma segura de liberar recursos. Algunos algoritmos de cifrado inseguros han sido deshabilitados. Se ha añadido soporte para Unicode 11.0 con nuevos caracteres, bloques y  _scripts_.
 
 {{< reference >}}
 * [Definitive Guide To Java 12](http://blog.codefx.org/java/java-12-guide/)
