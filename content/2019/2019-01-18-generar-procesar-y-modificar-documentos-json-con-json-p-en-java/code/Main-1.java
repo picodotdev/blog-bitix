@@ -6,11 +6,14 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Comprador comprador = buildComprador();
+        List<Comprador> compradores = List.of(buildComprador(), buildComprador());
+        
         String json = "";
+        String arrayJson = "";
 
         // JSON-P
         JsonObject jsonp = Json.createObjectBuilder()
-            .add("name", comprador.getNombre())
+            .add("nombre", comprador.getNombre())
             .add("edad", comprador.getEdad())
             .add("direcciones", Json.createArrayBuilder().add(
                 Json.createObjectBuilder()
@@ -26,10 +29,13 @@ public class Main {
                     .add("pais", comprador.getDirecciones().get(1).getPais()))
                     .build()
             ).build();
+        JsonArray arrayJsonp = Json.createArrayBuilder().add(jsonp).add(jsonp).build();
+
         json = jsonp.toString();
         jsonp = Json.createReader(new StringReader(json)).readObject();
         System.out.printf("JSON-P: %s%n", json);
         System.out.printf("JSON-P (JsonObject): %s%n", jsonp.toString());
+        System.out.printf("JSON-P (JsonArray): %s%n", arrayJson.toString());
         
         ...
     }

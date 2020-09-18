@@ -6,6 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Comprador comprador = buildComprador();
+        List<Comprador> compradores = List.of(buildComprador(), buildComprador());
         ...
 
         // JSON-B
@@ -14,6 +15,7 @@ public class Main {
 
         json = jsonb.toJson(comprador);
         comprador = jsonb.fromJson(json, Comprador.class);
+        ...
         System.out.printf("JSON-B: %s%n", json);
         System.out.printf("JSON-B (comprador): %s, %s, %d%n", comprador.getNombre(), comprador.getFechaNacimiento(), comprador.getDirecciones().size());
 
@@ -24,6 +26,7 @@ public class Main {
 
         json = gson.toJson(comprador);
         comprador = gson.fromJson(json, Comprador.class);
+        ...
         System.out.printf("Gson: %s%n", json);
         System.out.printf("Gson (comprador): %s, %s, %d%n", comprador.getNombre(), comprador.getFechaNacimiento(), comprador.getDirecciones().size());
 
@@ -36,6 +39,7 @@ public class Main {
 
         json = mapper.writeValueAsString(comprador);
         comprador = mapper.readValue(json, Comprador.class);
+        ...
         System.out.printf("Jackson: %s%n", json);
         System.out.printf("Jackson (comprador): %s, %s, %d%n", comprador.getNombre(), comprador.getFechaNacimiento(), comprador.getDirecciones().size());
         
