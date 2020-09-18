@@ -2,7 +2,7 @@
 {{- $title := .Title -}}
 {{- $text := .Text -}}
 
-{{- if or (hasPrefix .Destination "javadoc8:") (hasPrefix .Destination "javadoc11:") (hasPrefix .Destination "javaee8:") (hasPrefix .Destination "tapestry:") -}}
+{{- if or (eq (len (findRE "javadoc\\d+:" .Destination)) 1) (hasPrefix .Destination "javaee8:") (hasPrefix .Destination "tapestry:") -}}
   {{- $binding := index (split .Destination ":") 0 -}}
   {{- $url := index (split .Destination ":") 1 -}}
 
@@ -10,6 +10,9 @@
     {{- $href = print "https://docs.oracle.com/javase/8/docs/api/" $url -}}
   {{- else if eq $binding "javadoc11" -}}
     {{- $href = print "https://docs.oracle.com/en/java/javase/11/docs/api/" $url -}}
+  {{- else if (eq (len (findRE "javadoc\\d+" $binding)) 1) -}}
+    {{- $version := replace $binding "javadoc" "" -}}
+    {{- $href = print "https://docs.oracle.com/en/java/javase/" $version "/docs/api/" $url -}}
   {{- else if eq $binding "javaee8" -}}
     {{- $href = print "https://javaee.github.io/javaee-spec/javadocs/" $url -}}
   {{- else if eq $binding "tapestry" -}}

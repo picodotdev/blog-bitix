@@ -96,7 +96,7 @@ Al usar el operador _instanceOf_ para comprobar si un objeto es una instancia de
 
 {{< code file="IfPatternMatching-1.java" language="java" options="" >}}
 
-Ahora el operador _instanceOf_ permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el _cast_, esto simplifica el código y evita posibles errores.
+Ahora el operador _instanceof_ permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el _cast_, esto simplifica el código y evita posibles errores.
 
 {{< code file="IfPatternMatching-2.java" language="java" options="" >}}
 
