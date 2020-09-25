@@ -23,7 +23,7 @@ Los sistemas de información empleados tradicionalmente en las aplicaciones son 
 
 Al igual que las bases de datos relacionales MongoDB posee un _shell_ JavaScript con el que lanzar todas las operaciones anteriores que junto con [Docker][docker] la experimentación de todo lo anterior será una tarea no demasiado complicada. Bastará descargar la [imagen de MongoDB para Docker](https://hub.docker.com/_/mongo/), iniciar un contenedor, iniciar una _shell bash_ en el contenedor y la _shell_ de MongoDB desde la que lanzar las consultas. Siguendo la [seríe de artículos sobre Docker][blogbitix-serie-docker] en unas pocas horas puedes usarlo.
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose.sh" language="bash" options="" >}}
 
 La base de datos MongoDB al igual que muchas NoSQL no soporta completamente las propiedades ACID de las bases de datos relacionales, no soporta transacciones aunque sí garantiza que las operaciones individuales son atómicas, pero a cambio proporciona otras propiedades que para algunas necesidades podemos considerar más adecuadas como mayor escalabilidad horizontal, alta disponibilidad, réplicas y _shards_ para distribuir los datos entre varias instancias. MongoDB guarda la información en documentos con formato JSON.

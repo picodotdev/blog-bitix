@@ -23,7 +23,7 @@ Con [Docker Compose][docker-compose] se pueden [definir en un único archivo un 
 
 En versiones más recientes se ha modificado ligeramente el formato del archivo de Docker Compose para añadirle las características necesarias que necesita [Docker Swarm][docker-swarm], la [herramienta integrada en Docker que permite crear _clusters_ de nodos][blogbitix-216] que ejecuten contenedores [Docker][docker]. A estos archivos ahora se les denomina como _stacks_. Así hay nuevas secciones como _services_, _networks_, _volumes_ y _secrets_ entre otras para soportar algunas funcionalidades adicionales. La sección _services_ es similar a la que usábamos en Docker Compose y define los contenedores. Por ejemplo, para definir que el servicio se componga de un contenedor con un servidor web [nginx][nginx] usaríamos el siguiente archivo. El parámetro _version_ es muy importante ya que indica las opciones soportadas en el archivo.
 
-{{< code file="docker-compose-stack-nginx.yml" language="YAML" options="" >}}
+{{< code file="docker-compose-stack-nginx.yml" language="yaml" options="" >}}
 
 A destacar las opciones _deploy_ y _replicas_ ya que indican cuantas instancias o contenedores de ese servicio habrá en el _cluster_. Al igual que con los comandos de Docker Swarm era posible crear redes por software a las cuales conectar los contenedores para que se puedan comunicar entre sí en la sección _networks_ de cada servicio se indica las redes a las que conectarlo y en la sección a nivel raíz del archivo las redes a crear.
 
@@ -45,7 +45,7 @@ En la captura de la terminal se aprecia como estando el _cluster_ formado por tr
 
 De los _volumes_ y _secrets_ en posteriores entregas de esta [serie de artículos sobre Docker][blogbitix-serie-docker] las comentaré de forma específica. El _stack_ de servicios mostrado en este ejemplo es muy sencillo. Aunque también sencillo en el mismo código fuente del ejemplo incluyo otro _stack_ formado por un servicio de nginx y una aplicación Java con [Spring Boot][spring-boot] que hace uso de _secrets_ y _volumes_.
 
-{{< code file="docker-compose-stack-app.yml" language="YAML" options="" >}}
+{{< code file="docker-compose-stack-app.yml" language="yaml" options="" >}}
 
 Un libro que me ha gustado mucho y que recomiendo leer sobre Docker Swarm es [The Devops 2.1 Toolkit](https://amzn.to/2mIirti) que lo explica detalladamente y todo el libro está orientado a como usarlo en un entorno de producción. Un libro más introductorio que también he leído y que está bastante bien es [Docker in Action](https://amzn.to/2mF3Xtj).
 

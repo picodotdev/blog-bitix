@@ -35,7 +35,7 @@ La propiedad de configuración principal para formar el cluster es _eureka.clien
 
 En el archivo de configuración hay tres perfiles distintos que varían algunas propiedades según sea el perfil que se active al iniciar la instancia del servicio. En el perfil _ds1_ el puerto donde se inicia el servicio es _8761_, con el perfil _ds2_ el servicio se inicia en el puerto _8762_ y con _ds3_ en el _8763_, además se cambia el _hostname_ para que la instancia sepa cual es.
 
-{{< code file="application.yml" language="YAML" options="" >}}
+{{< code file="application.yml" language="yaml" options="" >}}
 
 Los comandos para arrancar tres instancias de servidor de registro y descubrimiento utilizando varios perfiles de configuración de Spring son los siguientes.
 

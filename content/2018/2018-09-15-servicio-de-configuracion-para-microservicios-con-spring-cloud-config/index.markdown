@@ -34,8 +34,8 @@ Con el comando `./gradlew configserver:run --args="--port=8090"` se inicia una i
 
 Dado que los servicios de configuración no pueden confiar en obtener su configuración de una instancia de su servicio de configuración ha de establecerse en el propio microservicio los nombres de _host_ de las instancias de registro y descubrimiento en las que registrarse, en la propiedad _eureka.client.serviceUrl.defaultZone_.
 
-{{< code file="bootstrap.yml" language="YAML" options="" >}}
-{{< code file="application.yml" language="YAML" options="" >}}
+{{< code file="bootstrap.yml" language="yaml" options="" >}}
+{{< code file="application.yml" language="yaml" options="" >}}
 
 Los archivos de configuración para los microservicios en este ejemplo están en el directorio _misc/config_ donde siguiendo algunas convenciones para asignar el nombre a los archivos se pueden personalizar las configuraciones de los microservicios según el entorno y perfil con el que se active. En este caso se utiliza lo que [Spring Cloud Config][spring-cloud-config] denomina un _filesystem backend_, sin embargo, hay otras disponibles como un repositorio de [git][git] el cual ofrece varias ventajas propias de un repositorio de código como historial, ramas de trabajo y hacer cambios con un _commit_.
 
@@ -43,9 +43,9 @@ Un microservicio o aplicación de [Spring][spring] que use un servidor de Spring
 
 El proceso de configuración de un microservicio está formado por dos pasos, en el primero el servicio se conecta al servicio de registro y descubrimiento obtiene los servicios registrados de configuración y en el segundo paso solicita a uno de ellos su configuración.
 
-{{< code file="bootstrap-service.yml" language="YAML" options="" >}}
-{{< code file="service.yml" language="YAML" options="" >}}
-{{< code file="client.yml" language="YAML" options="" >}}
+{{< code file="bootstrap-service.yml" language="yaml" options="" >}}
+{{< code file="service.yml" language="yaml" options="" >}}
+{{< code file="client.yml" language="yaml" options="" >}}
 
 El servicio de configuración es accesible mediante una interfaz REST. Para obtener la configuración del servicio _service_ y del servicio _client_ de este ejemplo las URLs para obtenerlas son las siguientes. Estos _endpoints_ devuelven en formato _json_ un documento con los valores de las propiedades principalmente están en el mapa _source_ entre otros datos que Spring al iniciar la aplicación con ellos configura la aplicación.
 

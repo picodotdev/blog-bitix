@@ -74,7 +74,7 @@ El servidor _gateway_ en realidad no interviene en la lógica de OAuth porque la
 Lo único necesario par definir el _gateway_ son las dependencias del proyecto, poco más que _spring-cloud-starter-gateway_, y la configuración de enrutado que _matchea_ peticiones según el parámetro _predicates_, reescribe la URL hacia el servicio  según el filtro _RewritePath_ y finalmente redirige la petición a la ubicación del servicio indicada en _uri_. Se inicia con _./gradlew gateway:run_.
 
 {{< code file="gateway/build.gradle" language="groovy" options="" >}}
-{{< code file="gateway/application.yml" language="Yaml" options="" >}}
+{{< code file="gateway/application.yml" language="yaml" options="" >}}
 
 ### Servicio, servidor de recurso
 

@@ -15,13 +15,13 @@ summary: "Elasticsearch es una potente herramienta que nos permite indexar una g
 
 {{% post %}}
 
-{{< logotype image="elasticsearch.svg" title="Elasticsearch" width="300" >}}
+{{< logotype image="elastic-elasticsearch.svg" >}}
 
-Continuando con la forma de [como dar solución a la búsquedas en las entidades de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html) en esta entrada profundizaré en la solución que comentaba de usar [Elasticsearch](http://www.elasticsearch.org) (ES). ES se basa en [Lucene](http://lucene.apache.org/core/) pero expone su funcionalidad a través de una interfaz REST recibiendo y enviando datos en formato JSON y oculta mediante esta interfaz los detalles internos de lucene. Esta interfaz permite que pueda ser utilizada por cualquier plataforma no solo Java, puede usarse desde Python, .NET, PHP o incluso desde un navegador con JavaScript. Es persistente, es decir, que lo que indexemos en ella sobrevivirá a un reinicio del servidor.
+Continuando con la forma de como dar solución a la búsquedas en las entidades de dominio en esta entrada profundizaré en la solución que comentaba de usar [Elasticsearch][elasticsearch]. Elasticsearch se basa en [Lucene](https://lucene.apache.org/core/) pero expone su funcionalidad a través de una interfaz REST recibiendo y enviando datos en formato JSON y oculta mediante esta interfaz los detalles internos de Lucene. Esta interfaz permite que pueda ser utilizada por cualquier plataforma no solo Java, puede usarse desde Python, .NET, PHP o incluso desde un navegador con JavaScript. Es persistente, es decir, que lo que indexemos en ella sobrevivirá a un reinicio del servidor.
 
 Como comentaba en [el artículo anterior de búsquedas sobre entidades de dominio](https://elblogdepicodev.blogspot.com.es/2013/08/busquedas-de-texto-completo-en-objetos-de-dominio.html) ES nos puede servir para hacer búsquedas a texto completo pero también podemos hacer otra serie de cosas adicionales que no podemos con una base de datos relacional aunque soporte en su lenguaje SQL búsqueda a texto completo, por ejemplo, resaltado (highlight) y facetas (facets), también permite hacer búsquedas vagas (fuzzy) y soporta diferentes analizadores según el idioma de la propiedad en que se busque. El indexar y desindexar los datos en elasticsearch para que luego puedan ser buscados es responsabilidad nuestra y además de insertarlos o eliminarlos en la base de datos debemos hacer lo mismo en ES ya sea haciéndolo en ambos sitios a la vez o mediante un proceso de fondo que se encargue de ello.
 
-La instalación de ES es muy sencilla, basta con [descargar el zip de su distribución](http://www.elasticsearch.org/overview/elkdownloads/), descomprimirlo e iniciarlo con el siguiente comando:
+La instalación de ES es muy sencilla, basta con [descargar el zip de su distribución](https://www.elastic.co/es/downloads/), descomprimirlo e iniciarlo con el siguiente comando:
 
 {{< code file="script-1.sh" language="bash" options="" >}}
 
@@ -33,7 +33,7 @@ Después de unos segundos deberemos ver algo como lo siguiente.
 
 Elasticsearch usa sus propios conceptos y aunque no es una base de datos relacional algunos pueden ser similares. Lo que en en una base de datos relacional es un esquema en ES es un índice, lo que en la primera es una tabla en ES es un tipo, continuando una fila en ES es un documento y finalmente una columna es una propiedad en ES.
 
-La documentación de Elasticsearch es un documentación de referencia probablemente pero para aprender a sacarle el máximo provecho probablemente debamos buscar algún manual o libro que nos lo explique de una forma más didáctica. Algunas opciones son el libro [Exploring Elasticsearch](http://exploringelasticsearch.com/) y el [tutorial Elasticsearch](http://www.elasticsearchtutorial.com/).
+La documentación de Elasticsearch es un documentación de referencia probablemente pero para aprender a sacarle el máximo provecho probablemente debamos buscar algún manual o libro que nos lo explique de una forma más didáctica. Algunas opciones son el libro [Exploring Elasticsearch](https://exploringelasticsearch.com/) y el [tutorial Elasticsearch](https://www.elasticsearchtutorial.com/).
 
 Veamos como crear y borrar un índice, para ello utilizaremos la herramienta curl:
 

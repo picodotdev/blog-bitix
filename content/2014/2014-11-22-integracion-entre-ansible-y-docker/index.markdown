@@ -21,11 +21,11 @@ En la [introducción de Docker][blogbitix-49] y [inicio básico de docker][blogb
 
 Usando tareas de ansible podemos automatizar el arranque del servicio de docker, la construcción de las imágenes con los Dokerfile y el inicio o parada de los contenedores de docker. En el ejemplo se construye una imagen base en la que se basarán el resto de imágenes, se crea una imagen con mysql, otra de redis y finalmente la imagen apps donde se ejecutarán las aplicaciones que usarán los servicios de mysql y redis.
 
-{{< code file="install.yml" language="YAML" options="" >}}
+{{< code file="install.yml" language="yaml" options="" >}}
 
 Una vez que disponemos de las imágenes de docker podemos arrancar contenedores con ellas automatizándolo con ansible. En este caso se inicia el servicio de docker, se inicializan los contenedores con los volúmenes donde se guardan los datos de forma persistente de mysql y redis, se inician los contenedores de mysql y redis usando los volúmenes anteriores y finalmente el contenedor de las aplicaciones. Al final, se muestra cierta información de las imágenes como sus direcciones IP.
 
-{{< code file="start.yml" language="YAML" options="" >}}
+{{< code file="start.yml" language="yaml" options="" >}}
 
 Ansible [dispone muchos módulos](http://docs.ansible.com/list_of_all_modules.html) que nos permiten automatizar las tareas:
 

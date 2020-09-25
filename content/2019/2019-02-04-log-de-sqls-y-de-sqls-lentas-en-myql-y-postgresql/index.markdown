@@ -27,7 +27,7 @@ Que una SQL tarde mucho en ejecutarse y consuma muchos recursos del sistema en C
 
 Para activar la generación de logs y de SQLs lentas en MySQL hay que añadir la siguiente configuración a MySQL. Las sentencias lentas que superan cierto tiempo de ejecución son emitidas al archivo _mysql-slow.log_, según la configuración indicada aquellas que superen 10 segundos. Dado que el ejemplo de consulta es sencilla y la base de datos no es grande la sentencia no aparece en el log de SQLs lentas.
 
-{{< code file="mysql/docker-compose.yml" language="Yaml" options="" >}}
+{{< code file="mysql/docker-compose.yml" language="yaml" options="" >}}
 {{< code file="mysql/configuration/mysql.cnf" language="Ini" options="" >}}
 {{< code file="mysql/scripts/database.sql" language="Sql" options="" >}}
 {{< code file="mysql/bash.sh" language="bash" options="" >}}
@@ -36,7 +36,7 @@ Para activar la generación de logs y de SQLs lentas en MySQL hay que añadir la
 
 En el caso de PostgeSQL el archivo de log se ubica según el valor de la propiedad _log\_directory_ y _log\_filename_. Se activa el log con la propiedad _logging\_collector_. Las sentencias con errores también se incluyen en el mismo archivo. Para obtener los tiempos que tardan las sentencias en ejecutarse hay que establecer un umbral en milisegundos para que la sentencia sea incluida en el log, con el valor 0 se incluyen todas las sentencias en el log en la propiedad _log\_min\_duration\_statement_.
 
-{{< code file="postgresql/docker-compose.yml" language="Yaml" options="" >}}
+{{< code file="postgresql/docker-compose.yml" language="yaml" options="" >}}
 {{< code file="postgresql/configuration/postgresql.conf" language="plaintext" options="" >}}
 {{< code file="postgresql/scripts/database.sql" language="Sql" options="" >}}
 {{< code file="postgresql/bash.sh" language="bash" options="" >}}

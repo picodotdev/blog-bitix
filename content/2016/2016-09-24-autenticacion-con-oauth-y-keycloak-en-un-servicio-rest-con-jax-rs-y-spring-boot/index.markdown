@@ -26,7 +26,7 @@ Teniendo un [servicio web REST implementado con JAX-RS y Spring Boot][blogbitix-
 
 Iniciado Keycloak con [Docker][docker] y [Docker Compose][docker-compose] accedemos al panel de administración con el navegador, en mi caso en _http\://localhost:9080_ con el usuario _admin_ y contraseña _admin_ según lo indicado en el archivo _docker-compose.yml_.
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
 {{< image
@@ -47,7 +47,7 @@ Una vez realizada la configuración en el servidor de OAuth/Keycloak obtendremos
 
 Indicaremos también el rol que deberá poseer el cliente para acceder al servicio REST junto que URLs del servicio estarán autenticadas por OAuth. Añadida la configuración al archivo _application.yml_ el servicio REST es totalmente inconsciente de la autenticación que se realizará con OAuth y Keycloak.
 
-{{< code file="application.yml" language="YAML" options="" >}}
+{{< code file="application.yml" language="yaml" options="" >}}
 {{< code file="MessageResource.java" language="java" options="" >}}
 
 Iniciado Keycloak y el servicio REST con el comando `gradlew run` podemos iniciar el proceso de obtención de un _access token_ y llamar al servicio proporcionando el _access token_ obtenido y ver que pasa si no proporcionamos _token_ o uno modificado o inválido. Para obtener el _access token_ podemos emplear _curl_ accediendo al _endpoint_ de Keycloak para obtenerlos.

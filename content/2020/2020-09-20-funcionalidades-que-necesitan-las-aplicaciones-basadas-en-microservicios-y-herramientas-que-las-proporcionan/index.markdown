@@ -122,6 +122,8 @@ Un sistema complejo como son los microservicios es indispensable que esté monit
 
 [Fluentd][fluentd] y [Logstash][logstash] permiten recopilar los registro de trazas que emiten las aplicaciones y enviarlos a un consumidor para que sean agregados e indexados en [Elasticsearch][elasticsearch], [Kibana][kibana] es una servicio que permite buscar y obtener los mensajes de trazas deseados.
 
+* [Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana][blogbitix-517]
+
 Una solicitud genera varias llamadas entre servicios en cadena, para tener una visión global de cada petición y cuales son las llamadas que ha desencadenado entre los diferentes servicios que se usan como dependencias están [Sleuth][spring-cloud-sleuth] y [Zipkin][zipkin]. Un identificador único global permite obtener toda la cadena de llamadas realizada con los tiempos empleados en cada microservicio para atender la petición lo que permite identificar problemas de rendimiento.
 
 * [Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana][blogbitix-366]

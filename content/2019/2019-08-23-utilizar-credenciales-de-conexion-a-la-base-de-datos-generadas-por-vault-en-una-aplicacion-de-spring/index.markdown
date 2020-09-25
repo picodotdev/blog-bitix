@@ -36,7 +36,7 @@ Obtener la credenciales de conexión a la base de datos es transparente para el 
 
 La parte más relevante está en la configuración necesaria de la aplicación. Hay que añadir como configuración la ubicación del servidor Vault, es necesario configurar un método de autenticación para Vault, para el caso de aplicaciones el recomendado es _AppRole_. Con _AppRole_ cada aplicación necesita de un _role-id_ y un _secret-id_ que hay que generar previamente. Y el rol del que obtener las credenciales, _app_.
 
-{{< code file="bootstrap.yml" language="YAML" options="" >}}
+{{< code file="bootstrap.yml" language="yaml" options="" >}}
 
 Para probarlo hay que iniciar en este caso el servidor [Consul][consul] ya que en el ejemplo se utiliza como el lugar donde se guardan los secretos. También hay que iniciar Vault.
 

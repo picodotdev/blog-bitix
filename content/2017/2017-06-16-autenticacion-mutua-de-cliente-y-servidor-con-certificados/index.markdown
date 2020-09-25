@@ -49,7 +49,7 @@ Para hacer que el servidor nginx requiera autenticación mediante certificados p
 Con el siguiente archivo descriptor de [Docker Compose][docker-compose] y comando se inicia el servidor web nginx.
 
 {{< code file="docker-compose.sh" language="bash" options="" >}}
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 Iniciado el servidor web ya se pueden realizar peticiones y el servidor y el cliente se autenticarán mutuamente. El servidor devolverá el código HTML de la página de bienvenida por defecto con las cabeceras del protocolo HTTP después de realizar el _handsake_ donde se valida el certificado del servidor.
 

@@ -34,7 +34,7 @@ Redis es un sistema de datos clave-valor en el que cada clave tiene asociado un 
 Usando [Docker][docker] se puede iniciar una instancia de Redis con un archivo descriptor del contenedor en formato _yml_ y el comando `docker-compose up`. Redis al igual que otras bases de datos posee un _shell_ de linea de comandos, _redis-cli_. Iniciada la instancia del contenedor y el servicio de Redis se puede iniciar una sesión de _sh_ y con ella el _shell_.
 
 {{< code file="docker-compose.sh" language="bash" options="" >}}
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 Hay multitud de [clientes para los lenguajes de programación](https://redis.io/clients) más populares y otros menos usados, en Java uno de los clientes más conocidos es [Jedis](https://github.com/xetorthio/jedis). En el siguiente ejemplo un cliente Java se conecta a la instancia de Redis y lanza los varios comandos para almacenar cadenas, un _set_, _set_ ordenados, lista, _hash_ y algunas operaciones sobre claves. Este ejemplo desde Java realiza las mismas operaciones que las realizadas en el _shell_ de Redis anterior.
 

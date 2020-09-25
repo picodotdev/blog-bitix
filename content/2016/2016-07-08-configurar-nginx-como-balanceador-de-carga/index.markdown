@@ -63,7 +63,7 @@ Si queremos que el cliente conozca que servidor atendió la petición podemos a�
 
 En el ejemplo de configuración usaré [Docker][docker] para crear un servidor web Nginx que haga de balanceador de carga entre tres servidores de aplicaciones Tomcat. Con Docker hacer esta prueba es mucho más sencilla que instalar tres Tomcats y un servidor Nginx a travbés de los paquetes del sistema o descargando binarios, puedes leer los [artículos de la serie Docker][blogbitix-serie-docker] que he escrito para conocer como usarlo y que ofrece esta útil herramienta. El archivo de _docker-compose.yml_ completo es el siguiente:
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/NginxLoadBalancer" command="docker-compose up" >}}
 

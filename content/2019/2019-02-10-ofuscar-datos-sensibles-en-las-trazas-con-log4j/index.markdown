@@ -31,7 +31,7 @@ Utilizar una clase que implemente la interfaz [Message](https://logging.apache.o
 
 Con los parámetros de configuración _replace_, _regex_ y _replacement_ el reemplazo los hace la clase _PatterLayout_ utilizando una expresión similar regular que en el caso de _SecuredMessage_.
 
-{{< code file="log4j2.yaml" language="Yaml" options="" >}}
+{{< code file="log4j2.yaml" language="yaml" options="" >}}
 
 En la salida del ejemplo la primera traza corresponde al uso de la clase _SecurdMessage_ y la segunda al _PatternLayout_.
 

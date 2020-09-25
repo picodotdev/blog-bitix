@@ -29,7 +29,7 @@ En el siguiente ejemplo de microservicio que posee una clase de configuración c
 
 {{< code file="DefaultConfiguration.java" language="java" options="" >}}
 {{< code file="DefaultController.java" language="java" options="" >}}
-{{< code file="service.yml" language="YAML" options="" >}}
+{{< code file="service.yml" language="yaml" options="" >}}
 
 Iniciada la aplicación que requiere iniciar previamente el servicio de registro y descubrimiento y el servidor de configuración, la aplicación al iniciarse obtiene su configuración del servidor de configuración. Si se cambia la configuración de la variable _config.key_ la aplicación no obtendrá el valor actualizado hasta que se invoque el _endpoint_ _http\://localhost:8080/actuator/refresh_. Para que Spring Boot recargue la configuración es necesario anotar con _@RefreshScope_ la clase de configuración. Invocado el _endpoint_ de recarga de configuración la aplicación toma de nuevo los nuevos valores del servicio de configuración.
 

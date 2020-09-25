@@ -45,7 +45,7 @@ Con el _cluster_ creado debemos instalar y configurar REX-Ray en cada uno de los
 
 Para probar la persistencia de datos usaré un _stack_ iniciado de la misma forma que en artículo [Iniciar un stack de servicios en un cluster de Docker Swarm][blogbitix-220] pero con un contenedor de postgres que guarda los datos en un volumen de REX-Ray en _/var/lib/postgresql/data_. Para iniciar el _stack_ el _custer_ de Docker Swarm uso un archivo de [Docker Compose][docker-compose] con la definición del _stack_ en formato YAML.
 
-{{< code file="docker-compose-stack-postgres.yml" language="YAML" options="" >}}
+{{< code file="docker-compose-stack-postgres.yml" language="yaml" options="" >}}
 {{< code file="06-docker-compose-stack-deploy-postgres.sh" language="bash" options="" >}}
 
 En la siguiente captura de pantalla se observa en que nodo ha sido iniciado el contenedor de postgres y que identificativo se le ha asignado.

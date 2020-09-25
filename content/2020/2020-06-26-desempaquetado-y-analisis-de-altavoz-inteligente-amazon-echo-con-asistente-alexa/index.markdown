@@ -55,11 +55,11 @@ Los similares a los que tenía.
     linkids="f29c42af9d24204f63204729c16e36e6,ebdd422effdacdd847cd5bf7111ce06f,6a1d0c9f5e5c02821cf8a6b227632d0f"
     asins="B00PA99NSG,B00YR92T90,B00S9P0II2" >}}
 
-En el momento de buscar estas opciones y un poco lo que me ha decidido a comprarlos es que los altavoces inteligentes de Amazon estaban de oferta, entre los varios que tiene está [los altavoces inteligentes Echo con asistente Alexa](https://amzn.to/3eww7lY), bastante pequeño y compacto, con pocos cables y con buena calidad de sonido al tener altavoz de graves, mucho mejor que la de los propios altavoces del monitor o de un portátil, al menos la suficiente para mi.
+En el momento de buscar estas opciones y un poco lo que me ha decidido a comprarlos es que los altavoces inteligentes de Amazon estaban de oferta, entre los varios que tiene está [los altavoces inteligentes Echo con asistente Alexa](https://amzn.to/2G75Qyj), bastante pequeño y compacto, con pocos cables y con buena calidad de sonido al tener altavoz de graves, mucho mejor que la de los propios altavoces del monitor o de un portátil, al menos la suficiente para mi.
 
 {{< amazon
-    linkids="8e6dfed393a5ffcc819d9854504503f8,92cdf45c940adb1dcd628e1516b0330e"
-    asins="B07P64LFFH,B00NO73MUQ" >}}
+    linkids="c2bd7a440ea0eb59a3484f2340171d9c,8e6dfed393a5ffcc819d9854504503f8,92cdf45c940adb1dcd628e1516b0330e"
+    asins="B085FXHR38,B07P64LFFH,B00NO73MUQ" >}}
 
 Finalmente, me he decidido por el Amazon Echo de tercera generación, por precio está en la categoría de altavoces de gama media-alta de las que he encontrado pero para lo que lo quería y este tiene es la que elegido. Mi uso será principalmente como altavoz para el ordenador y la PlayStation, posiblemente no use muchas de sus opciones como altavoz inteligente pero otras es posible que sí como la posibilidad de escuchar música de Amazon Music o la radio sin necesidad de tener el ordenador encendido o como hilo musical al dormir. Lo que pierdo es el sonido estéreo pero recupero una buena cantidad de espacio en la mesa y quito un par de cables.
 
@@ -309,14 +309,15 @@ Por otro lado, si los altavoces inteligentes tienen éxito como producto con el 
 La familia de altavoces Echo con el asistente Alexa tiene varios miembros.
 
 * Echo Flex: de conexión directa al enchufe para ser colocado en cualquier estancia como baño o cocina.
-* Echo Dot: pequeño, con _display_ formado varios 7 segmentos que permite mostrar la hora adecuado como reloj de mesilla.
+* Echo Dot: el más pequeño y básico de los echo.
+* Echo Dot con reloj: igual que el Echo Dot pero que incorpora un _display_ formado varios 7 segmentos que permite mostrar la hora adecuado como reloj de mesilla.
 * Echo: ofrece mejor sonido que el Dot, incluye un _subwofer_ para sonidos graves.
 * Echo Plus: como el Echo pero incorpora el controlador de dispositivos Zigbee que necesitan algunos dispositivos del hogar digital como las bombillas Philips.
 * Echo Studio: el dispositivo con el mejor sonido que ofrecen los Echo pero también ocupa más y es más caro, puede sustituir a las barras de sonido para una televisión.
 
 {{< amazon
-    linkids="d2101f4102817b0d397aacf1bc3c7de7,b574b3ab9fce06fdd616740bdad2400c,44deefd19c4e1d3f9e016f11f172bb58,f294066eae852f2158dffe596e2e9308,a84245cd09eca34bc1ecb8e6b3f6cc86"
-    asins="B07PHPXHQS,B07PFG54H7,B07P64LFFH,B0794XQK5S,B07NQDHC7S" >}}
+    linkids="2e34330d54557497f7719413fa93cbf6,f0af1545b79856b50e9323460666b75f,496c57a568de805e3887b7e5bbda0dc5,b223da848a7966b52f16be6baf77f696,a84245cd09eca34bc1ecb8e6b3f6cc86"
+    asins="B07PFG54H7,B084DWG2VQ,B085M6N2XM,B085FXHR38,B07NQDHC7S" >}}
 
 Los Echo Show incluyen una pantalla con la posibilidad de realizar videoconferencias.
 

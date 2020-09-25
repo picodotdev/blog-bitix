@@ -31,14 +31,14 @@ Para la parte servidor deberemos incluir como dependencia en el archivo _build.g
 
 {{< code file="Main-server.java" language="java" options="" >}}
 {{< code file="build-server.gradle" language="groovy" options="" >}}
-{{< code file="application.yml" language="YAML" options="" >}}
-{{< code file="bootstrap-server.yml" language="YAML" options="" >}}
+{{< code file="application.yml" language="yaml" options="" >}}
+{{< code file="bootstrap-server.yml" language="yaml" options="" >}}
 
 En el repositorio de configuraciones cada combinación de aplicación y entorno de ejecución tendrá su propio archivo de configuración. En el caso de una aplicación de nombre _springcloudclient_ que se ejecuta en los entornos _dev_, _test_ y _prod_ los archivos serían los siguientes. Cada archivo tiene similares propiedades de configuración pero posiblemente variando los valores de cada una de ellas. Los archivos pueden definirse en varios formatos, en este caso usando <abbr title="YAML Ain't Another Markup Language">YAML</abbr>.
 
-{{< code file="springcloudclient-dev.yml" language="YAML" options="" >}}
-{{< code file="springcloudclient-test.yml" language="YAML" options="" >}}
-{{< code file="springcloudclient-prod.yml" language="YAML" options="" >}}
+{{< code file="springcloudclient-dev.yml" language="yaml" options="" >}}
+{{< code file="springcloudclient-test.yml" language="yaml" options="" >}}
+{{< code file="springcloudclient-prod.yml" language="yaml" options="" >}}
 
 En la búsqueda de las ubicaciones de los archivos de configuración se siguen los siguientes patrones, en el caso del ejemplo he usado la segunda opción, el primero que se encuentre es el que se usa:
 
@@ -60,7 +60,7 @@ La aplicación cliente cuando se inicie solicitará su configuración al servido
 
 {{< code file="Main-client.java" language="java" options="" >}}
 {{< code file="build-client.gradle" language="groovy" options="" >}}
-{{< code file="bootstrap-client.yml" language="YAML" options="" >}}
+{{< code file="bootstrap-client.yml" language="yaml" options="" >}}
 
 Si no queremos obtener las propiedades con la anotación `@Value` podemos usar el _bean_ [Environment](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/Environment.html) que define Spring y sus métodos _getProperty_ con el que además podremos averiguar los perfiles activos de la aplicación. Por otra parte las mismas propiedades de configuración del cliente podemos especificarlos mediante parámetros, propiedades de sistema, propiedades de entorno y algunas formas más como se explica en como [externalizar la configuración en las aplicaciones Spring](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html). De cualquiera de estas formas podemos indicar o sobreescribir los valores como puede ser el perfil activo de la aplicación.
 

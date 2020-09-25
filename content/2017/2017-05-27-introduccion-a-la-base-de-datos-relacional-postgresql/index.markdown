@@ -35,7 +35,7 @@ Para una fácil instalación de una instancia de la base de datos PostgreSQL usa
 
 Una vez instalado Docker e iniciado su servicio y con el comando `docker-compose` y el archivo _docker-compose.yml_ que contiene la definición del contenedor lo iniciamos con el comando `docker-compose up`. El comando `docker ps` lista los contenedores en ejecución y con el comando `docker exec` iniciamos un proceso bash en el contenedor indicado con su identificativo.
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose.sh" language="bash" options="" >}}
 
 ### Comandos básicos del _shell_ psql

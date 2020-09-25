@@ -42,7 +42,7 @@ El parámetro -m indica el módulo de Ansible que usamos y a continuación indic
 
 Pero en vez de usar Ansible mediante comandos podemos emplear recetas contenidas en [playbooks](http://docs.ansible.com/playbooks.html) descritos en formato YAML en las que definimos varias tareas y podemos usar las variables del inventario. Con el siguiente playbook instalamos varios paquetes en una máquina Arch Linux y hacemos un checkout de dos proyectos de subversion, para ello usamos en la primera tarea el módulo para gestionar paquetes con pacman, hay módulos para los gestores de paquetes de otras distribuciones (apt, yum, ...) y en la segunda tarea hacemos un checkout de dos proyectos usando el módulo del sistema de control de versiones subversion. Los módulos son idempotentes de forma que una vez que el sistema está en el estado deseado no se realiza la operación, esto hace que el mismo playbook pueda ser ejecutado tantas veces como se desee evitando efectos colaterales por reejecuciones, lo importante es el estado que se quiere conseguir, Ansible se encarga de realizar las acciones necesarias para llegar a él desde el estado actual del sistema.
 
-{{< code file="install.yml" language="YAML" options="" >}}
+{{< code file="install.yml" language="yaml" options="" >}}
 
 Para ejecutar un playbook usamos el comando ansible-playbook en vez de simplemente el comando ansible.
 

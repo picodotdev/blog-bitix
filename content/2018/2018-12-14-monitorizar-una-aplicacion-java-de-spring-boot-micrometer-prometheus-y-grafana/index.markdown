@@ -64,9 +64,9 @@ Una vez expuestas las métricas en el formato que espera Prometheus este ya pued
 El archivo de Docker Compose contiene dos contenedores uno para Prometheus y otro para Grafana, con sus archivos de configuración. En la configuración de Prometheus se crean un _job_ que recolecta las métricas cada pocos segundos del servicio a través del _endpoint_ de métricas. En la configuración de Grafana se añade como una fuente de datos Prometheus, se puede añadir otras varias.
 
 {{< code file="docker-compose.sh" language="bash" options="" >}}
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
-{{< code file="prometheus.yml" language="YAML" options="" >}}
-{{< code file="grafana-datasources.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
+{{< code file="prometheus.yml" language="yaml" options="" >}}
+{{< code file="grafana-datasources.yml" language="yaml" options="" >}}
 
 Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas recogidas pero no tiene la habilidad de crear paneles que recogen una colección de gráficas relacionadas o un editor de consultas más avanzado como tiene Grafana.
 

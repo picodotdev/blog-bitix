@@ -28,7 +28,7 @@ En la configuración de _RollingFileAppender_ los parámetros de configuración 
 
 En el siguiente ejemplo se muestra el archivo de configuración de log4j que emite las trazas a la consola y a un archivo en los que cada día o cuando lleguen a 500 MB son rotados. Al especificar en el parámetro _filePattern_ la extensión _gz_ los archivos rotados se comprimen para que ocupen menos espacio. Como se define en _DefaultRolloverStrategy_ se conservan como máximo 10 archivos rotados, por tanto ocupando un máximo de 5 GiB.
 
-{{< code file="log4j2.yaml" language="YAML" options="" >}}
+{{< code file="log4j2.yaml" language="yaml" options="" >}}
 
 Rotar los _logs_ es una buena idea ya que en algunas aplicaciones Java si la aplicación por alguna circunstancia emite a los archivos de _log_ un _stacktrace_ de forma continuada generando una considerable cantidad de información en poco tiempo, si se guarda en el almacenamiento acaba por consumir todo el espacio disponible por muy previsor que se haya sido al aprovisionar el tamaño del espacio de almacenamiento, la aplicación terminará por dejar de prestar su servicio y alguien un sábado a las 3:00 de la noche es posible que deba levantarse de la cama porque ha llegado alguna alerta de monitorización si se es afortunado de disponer de uno para reaccionar cuanto antes y antes de que la aplicación deje de funcionar o peor recibe una llamada de teléfono cuando la aplicación ya se ha dejado de funcionar.
 

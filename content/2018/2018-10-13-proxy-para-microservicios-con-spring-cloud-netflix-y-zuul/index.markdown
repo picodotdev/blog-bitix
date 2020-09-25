@@ -29,7 +29,7 @@ En el ejemplo que he utilizado para esta [serie de artículos sobre Spring Cloud
 
 Se puede establecer un tiempo máximo para establecer la conexión, de tiempo de petición, el número de reintentos en la misma instancia si falla o en otro número de instancias, el número máximo de conexiones y el número máximo de conexiones al mismo _host_. Todas ellas definibles en cada servicio de forma individual bajo las propiedades _hystrix.command.service_ y _service.ribbon_ donde _service_ es el identificativo del servicio. Las rutas se indican bajo la propiedad _zuul.routes_ con la relación identificativo del servicio y _path_.
 
-{{< code file="proxy.yml" language="YAML" options="" >}}
+{{< code file="proxy.yml" language="yaml" options="" >}}
 
 Dado que Zuul es un _proxy_ para múltiples instancias de microservicios a cada microservicio hay que darle una ruta, cuando Zuul realiza la llamada a una instancia del microservicio se encarga de omitirla. En el ejemplo, la ruta en Zuul _/service/**_ está asociada al microservicio _service_ pero el servicio _service_ ofrece su _endpoint_ en _/_, Zuul se encarga de omitir la parte de la ruta para el _proxy_ y hace la llamada a la ruta _/_ como espera el microservicio.
 

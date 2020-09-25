@@ -61,7 +61,7 @@ Por defecto, el planificador actualiza las tareas o contenedores del servicio de
 
 En los [archivos en formato YAML de los _stacks_ de Docker Compose](https://docs.docker.com/compose/compose-file/) hay una sección en cada servicio en el que se indica el número de contenedores que se desea que esté formado el servicio así como las opciones de paralelismo y tiempo de espera entre actualización. Para actualizar el _stack_ basta con hacer de nuevo el _deploy_, ya sea la imagen usada, el número de réplicas u otros parámetros.
 
-{{< code file="docker-compose-stack-app.yml" language="YAML" options="" >}}
+{{< code file="docker-compose-stack-app.yml" language="yaml" options="" >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/DockerSwarm" >}}
 

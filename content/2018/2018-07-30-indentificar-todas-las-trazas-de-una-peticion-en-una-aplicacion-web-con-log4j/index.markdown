@@ -36,7 +36,7 @@ En el formato usado para determinar el contenido de la trazas se pueden referenc
 * _%X_ muestra el contenido completo del _Map_.
 * _%X{key}_ muestra el valor de una clave especifica del _Map_.
 
-{{< code file="log4j2.yaml" language="YAML" options="" >}}
+{{< code file="log4j2.yaml" language="yaml" options="" >}}
 
 Y este es el resultado de emitir varias trazas habiendo establecido un identificativo en el _ThreadContext_, todas las trazas emitidas por ese _Thread_ incluirán el mismo identificativo.
 

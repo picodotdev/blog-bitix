@@ -65,7 +65,7 @@ Una vez iniciado el servicio de postgres en la consola de Consul se muestra con 
 En vez de iniciar los servicios individualmente con comandos de Docker creando un archivo de [Docker Compose][docker-compose] con la definición de todos los contenedores se facilita iniciar todos los contenedores con un comando.
 
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 El proyecto de [Spring Cloud][spring-cloud] ofrece soporte para ambas tareas de registrar y descubrir servicios, aunque perfectamente la tarea de registro se puede delegar como en este caso a Registrator y utilizar en los servicios de Spring Boot únicamente la parte de descubrimiento.
 

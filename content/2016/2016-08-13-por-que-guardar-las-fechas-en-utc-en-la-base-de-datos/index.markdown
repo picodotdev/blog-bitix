@@ -44,7 +44,7 @@ Esto puede probarse con el siguiente ejemplo de código de un programa Java que 
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 Tabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones sobre las fechas que son incorrectas](http://infiniteundo.com/post/25509354022/more-falsehoods-programmers-believe-about-time) en las aplicaciones.
 

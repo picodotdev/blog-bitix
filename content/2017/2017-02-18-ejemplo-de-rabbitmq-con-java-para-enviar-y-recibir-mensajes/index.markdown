@@ -44,7 +44,7 @@ Tanto en el emisor como en el receptor deberemos declarar las colas que van a us
 
 Para ejecutar el ejemplo usaré el [contenedor de Docker para RabbitMQ](https://hub.docker.com/_/rabbitmq/) iniciándolo con [Docker Compose][docker-compose] y el siguiente archivo descriptor. Puedes consultar la [serie de artículos sobre Docker][blogbitix-serie-docker] que escribí para conocer cómo usarlo.
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-run.sh" language="bash" options="" >}}
 
 Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en cualquier orden la parte receptora de los mensajes y la parte emisora de mensajes con los comandos `./gradlew receive` y `./gradlew send` respectivamente, momento en el cual veremos que en la consola salen las notificaciones de recepción y envío.

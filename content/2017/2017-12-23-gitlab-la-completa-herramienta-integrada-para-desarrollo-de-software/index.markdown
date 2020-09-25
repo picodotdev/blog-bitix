@@ -30,7 +30,7 @@ Hay varias formas de instalar GitLab, una de ellas es [instalandolo como un paqu
 
 Usando [Docker][docker] y el siguiente archivo de [Docker Compose][docker-compose] basta el comando `docker-compose up` para iniciar GitLab. Instalado GitLab de alguna de las formas anteriores usando un navegador web y con la dirección _https\://gitlab_ (configurados los certificados SSL y la ubicación de los volúmenes) se accede a la aplicación de GitLab, donde inicialmente se pide la contraseña del usuario administrador _root_ con la que iniciar sesión y realizar las tareas administrativas como crear otros usuarios y proyectos.
 
-{{< code file="docker-compose.yml" language="YAML" options="" >}}
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 {{< image
     gallery="true"
