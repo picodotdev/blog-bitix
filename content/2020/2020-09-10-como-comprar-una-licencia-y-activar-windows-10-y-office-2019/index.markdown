@@ -49,6 +49,13 @@ Office también tiene diferentes versiones de los programa del paquete ofimátic
 * [Office 365][microsoft-office-365]: es un servicio bajo suscripción de pago mensual que da acceso los programas del paquete ofimático y la versión web de los mismos. Cuando en el futuro se publique la siguiente versión no hace falta realizar de nuevo un pago para tener acceso a la nueva versión. Inluye algunos servicios adicionales como Skype para comunicaciones por videoconferencia y OneDrive para almacenamiento en la nube.
 * [Office 2019][microsoft-office]: es la modalidad de siempre de pago único para tener acceso a los programas del paquete ofimático. Los programas se instalan como aplicaciones de escritorio en el ordenador. Cuando en el futuro se publique una nueva versión hay que pagar de nuevo por la licencia para usar la nueva versión.
 
+De las aplicaciones de escritorio de Microsoft Office 2019 hay varias versiones que se diferencian en las aplicaciones que incluyen, para la mayoría de usuarios la versión _Hogar y Estudiantes_ que incluye las aplicaciones básicas de un paquete ofimático es suficiente.
+
+* _Hogar y Estudiantes_: incluye las tres aplicaciones básicas del paquete ofimático. Word como procesador de texto para escribir documentos, Excel como hoja de cálculo que permite realizar operaciones y obtener resultados calculados aplicando fórmulas y PowerPoint para crear presentaciones.
+* _Hogar y Empresas_: además de las aplicaciones del paquete ofimático básicas incluye la aplicación de escritorio de correo electrónico Outlook.
+* _Professional_: además de Word, Excel, PowerPoint y Outlook incluye la aplicación Publisher para crear documentos impresos como folletos, catálogos, trípticos o sobres entre otros. También incluye la aplicación Access para crear bases de datos.
+* _Professional Plus_: incluye todas las aplicaciones de la versión _Professional_ e incluye la aplicación de comunicación por videoconferencia Skype.
+
 ### Cuanto cuestan las licencias de Windows 10 y Microsoft Office 2019
 
 En algunos casos el precio de la licencia de Windows 10 ha de adquirirse a parte del ordenador aunque se ofrezca de hacerlo al mismo tiempo, en la factura el coste del ordenador y la licencia de Windows 10 estará desglosada. El coste de la licencia de Windows 10 vendida por Microsoft cuesta entre 145 € para la versión _Home_, 259 € para la _Pro_ y 439 € para la _Pro for Workstations_, no es nada barata. La licencia de Microsoft Office 2019 vendida por Microsoft cuesta 149 €, también tiene modalidades de pago bajo suscripción con un coste mensual.
@@ -57,7 +64,7 @@ Un coste adicional en licencias de uso que encarecen de forma muy significativa 
 
 Hay varios vendedores distintos a Microsoft que permiten obtener una licencia de Windows 10 y Microsoft Office de forma completamente legal, válida y para siempre con unos precios muy baratos que permiten activar estos productos. [En el año 2012 el tribunal de la Unión Europea dictó una sentencia](https://curia.europa.eu/jcms/upload/docs/application/pdf/2012-07/cp120094en.pdf) por la que las licencias de software vendido a través de internet que dejan de usarse por sus compradores originales pueden ser compradas y vendidas de forma legal, esto es lo que hacer algunos vendedores compren esas licencias que dejan de usarse y las revenden a otros usuarios a unos precios bajos.
 
-Si el precio de Windows 10 vendido por Microsoft en su versión _Retail_ es de 145 € para la versión _Home_ o 259 € para la _Pro_ estos otros vendedores ofrecen licencias válidas a precios mucho más baratos, de entre unos 10 € y 15 €, lo que supone un ahorro importante en este software. Si la versión de _Office Hogar y Estudiantes 2019_ cuesta 149 € comprado a Microsoft, otros vendedores ofrecen licencias con códigos de activación también por entre 10 € y 15 €.
+Si el precio de Windows 10 vendido por Microsoft en su versión _Retail_ es de 145 € para la versión _Home_ o 259 € para la _Pro_ estos otros vendedores ofrecen licencias válidas a precios mucho más baratos, de entre unos 10 € y 15 €, lo que supone un ahorro importante en este software. Si la versión de _Office Hogar y Estudiantes 2019_ cuesta 149 € compradola a Microsoft, otros vendedores ofrecen licencias con códigos de activación también por entre 10 € y 15 €.
 
 ### Descargar Windows 10 y Microsoft Office 2019
 
@@ -66,6 +73,8 @@ Tanto Windows 10 como el paquete ofimático Microsoft Office 2019 se pueden desc
 * [Descargar Windows 10](https://www.microsoft.com/es-es/software-download/windows10)
 * [Descargar Microsoft Office 2019, Hogar y Estudiantes](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img)
 * [Descargar Microsoft Office 2019, Hogar y Empresas](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeBusiness2019Retail.img)
+* [Descargar Microsoft Office 2019, Professional](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/Professional2019Retail.img)
+* [Descargar Microsoft Office 2019, Professional Plus](https://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/ProPlus2019Retail.img)
 
 ### Qué ocurre si no tengo licencia de Windows 10 u Microsoft Office 2019
 
@@ -79,18 +88,20 @@ Microsoft Office también puede instalarse pero al cabo de un mes impide la edic
 
 Dado el económico precio de los vendedores distintos a Microsoft que ofrecen de las licencias de Windows 10 y Microsoft Office es recomendable adquirir una licencia que permite activar estos productos. Sin necesidad de piratear o recurrir a activadores que muchos de ellos son una fuente de virus y son ilegales, solo ya buscarlos es un riesgo para la seguridad del ordenador y una de las mayores fuentes de entrada de virus en sistemas Windows ya que las búsquedas pueden llevar a páginas maliciosas. Hoy en día hacemos tareas importantes en el ordenador desde almacenar numerosa información personal al pago por internet o acceso a la cuenta del banco o recibos con lo que conviene evitar el riesgo de los virus informáticos.
 
-Algunos de los vendedores lo hacen a través de [Amazon][amazon] o [eBay][ebay] como vendedores externos, dada la popularidad de estos gigantes del comercio electrónico es posiblemente una de las opciones más cómodas si ya se tiene una cuenta. Otra alternativa es [Goodoffer24](https://www.goodoffer24.com) que ofrece el pago con [PayPal][paypal], otras son [Digital License](https://www.digitallicense.nl), [G2Play](https://www.g2play.net), [GVGmall](https://www.gvgmall.com/), [Gamefun365](https://www.gamefun365.com/). En cualquiera de estas páginas y enlaces es recomendable leer la descripción del producto y los comentarios.
+Algunos de los vendedores venden licencias a través de [Amazon][amazon] o [eBay][ebay] como vendedores externos, dada la popularidad de estos gigantes del comercio electrónico es posiblemente una de las opciones más cómodas si ya se tiene una cuenta. Otra alternativa es [Goodoffer24](https://www.goodoffer24.com) que ofrece el pago con [PayPal][paypal], otras son [Digital License](https://www.digitallicense.nl), [G2Play](https://www.g2play.net), [GVGmall](https://www.gvgmall.com/), [Gamefun365](https://www.gamefun365.com/).
+
+Yo no uso ni el sistema operativo Windows ni el paquete ofimático Microsoft Office con lo que no tengo la experiencia de como es el resultado de comprar en una de estas páginas. Sin embargo, cualquiera de estas páginas y enlaces ofrecen comentarios y valoraciones tanto del producto como del vendedor, en el caso de Amazon suelen ser vendedores externos lo que ofrece menos garantías, por ello recomiendo leer tanto la descripción del producto como los comentarios de otras personas y valoraciones que tiene el vendedor. Si compras una licencia tras leer este artículo puedes dejar un comentario.
 
 Una vez realizada la compra el código de activación del producto se envía en unas horas por correo electrónico o a la cuenta de la página. El código de activación de la licencia es una cadena de caracteres formada por varios números y letras separados por guiones con el siguiente aspecto, _XXXXX-XXXXX-XXXXX-XXXXX-XXXXX_ que hay que introducir en las secciones de configuración de Windows 10 y Microsoft Office 2019.
 
 * [Licencia de Windows 10](https://www.microsoft.com/es-es/store/b/windows) en Microsoft.
 * [Licencia de Microsoft Office 2019](https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products) en Microsoft.
-* [Licencia de Windows 10 Home](https://amzn.to/2FjvnDS) en Amazon.
-* [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
-* [Licencia de Microsoft Office 2019](https://amzn.to/2ZhuhzU) en Amazon.
-* [Licencia de Windows 10 Home](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) en eBay.
-* [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) en eBay.
-* [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) en eBay.
+* [Licencia de Windows 10 Home](https://amzn.to/333Df5X) en Amazon.
+* [Licencia de Windows 10 Pro](https://amzn.to/3iZ4dBk) en Amazon.
+* [Licencia de Microsoft Office 2019](https://amzn.to/369oJfc) en Amazon.
+* [Licencia de Windows 10 Home](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_osacat=0&_odkw=windows+10+home+64+bits+key+espa%C3%B1ol) en eBay.
+* [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+professional+64+bits+key+espa%C3%B1ol) en eBay.
+* [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019+key+espa%C3%B1ol&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+licencia+espa%C3%B1ol) en eBay.
 
 ### Cómo activar Windows 10 y Microsoft Office 2019
 
