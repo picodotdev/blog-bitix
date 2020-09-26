@@ -56,9 +56,9 @@ Los monitores 2K y 4K tiene mayor definición mostrando el texto con más clarid
 
 Son utilizables tanto para el ordenador como para una consola y con un adaptador de múltiples entradas y una salida usar ambos al mismo tiempo sin necesidad de conectar y desconectar cables.
 
-* [Benq PD2700Q](https://amzn.to/2OFdFi9) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2700q.html))
-* [Benq PD2500Q](https://amzn.to/2D0VQEf) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2500q.html))
-* [Benq GW2765HT](https://amzn.to/2NXG9hR) ([página fabricante](https://www.benq.eu/es-es/monitor/home-office/gw2765ht.html))
+* [BenQ PD2700Q](https://amzn.to/2OFdFi9) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2700q.html))
+* [BenQ PD2500Q](https://amzn.to/2D0VQEf) ([página fabricante](https://www.benq.eu/es-es/monitor/designer/pd2500q.html))
+* [BenQ GW2765HT](https://amzn.to/2NXG9hR) ([página fabricante](https://www.benq.eu/es-es/monitor/home-office/gw2765ht.html))
 * [Viewsonic VG2719-2K](https://amzn.to/2OIyidi) ([página fabricante](https://www.viewsonic.com/es/products/lcd/VG2719-2K.php))
 * [V7 L27HAS2K-2E](https://amzn.to/2CZj8dx) ([página fabricante](http://www.v7world.com/es/productos/monitores/27-qhd-widescreen-led-monitor.html))
 

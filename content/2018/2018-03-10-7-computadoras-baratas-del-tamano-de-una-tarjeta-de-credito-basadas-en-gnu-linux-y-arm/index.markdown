@@ -60,11 +60,11 @@ Cuando apareció en el 2012 ya había placas similares pero su bajo precio y _ma
 * 5V/2.5A DC power input
 * Power-over-Ethernet (PoE) support (requires separate PoE HAT)
 
-La [Raspberry Pi 4](https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-benchmarks/) ha sido anunciada y comercializada por sorpresa el 2019 cuando pocos se esperaban este nuevo modelo. Mejora sensiblemente varios aspectos y limitaciones de las versiones anteriores y sigue manteniendo un precio reducido. La CPU pasa a estar formada por 4 núcleos ARM Cotex-A72 a 1.5 GHz lo que es alrededor de 3 veces más potente que la CPU de la Raspberry Pi 3. La memoria pasa a tener varias configuraciones de 1, 2 y 4 GiB además de ser más veloz al ser LPDDR4. Se ha eliminado la limitación del puerto Gigabit ethernet y dos puertos USB pasan a ser USB 3.0 con notables aumentos de capacidad de transferencia. La salida de vídeo ahora está compuesta por dos mini HDMI para soportar configuraciones multimonitor en resolución 4K. La GPU es una Video Core VI con soporte de OpenGL ES 3.0.
+La [Raspberry Pi 4](https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-benchmarks/) ha sido anunciada y comercializada por sorpresa el 2019 cuando pocos se esperaban este nuevo modelo. Mejora sensiblemente varios aspectos y limitaciones de las versiones anteriores y sigue manteniendo un precio reducido. La CPU pasa a estar formada por 4 núcleos ARM Cotex-A72 a 1.5 GHz lo que es alrededor de 3 veces más potente que la CPU de la Raspberry Pi 3. La memoria pasa a tener varias configuraciones de 1, 2, 4 y 8 GiB además de ser más veloz al ser LPDDR4. Se ha eliminado la limitación del puerto Gigabit ethernet y dos puertos USB pasan a ser USB 3.0 con notables aumentos de capacidad de transferencia. La salida de vídeo ahora está compuesta por dos mini HDMI para soportar configuraciones multimonitor en resolución 4K. La GPU es una Video Core VI con soporte de OpenGL ES 3.0.
 
 * SoC: CPU Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz
 * GPU: Broadcom VideoCore VI
-* RAM: 1GB, 2GB, or 4GB LPDDR4 SDRAM
+* RAM: 1GB, 2GB, 4GB, 8GB LPDDR4 SDRAM
 * Red: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN
 * Bluetooth: Bluetooth 5.0, Bluetooth Low Energy (BLE)
 * GPIO: 40-pin GPIO header, populated
@@ -121,12 +121,12 @@ En el momento de escribir el artículo están preparando el lanzamiento de la pl
 
 Estas placas de PINE64 son de lo mejor en la relación características hardware y precio, donde adolecen es en el software y es que aún con un tiempo relativamente corto de un año de vida es en el software donde pueden presentar algún problema. Conforme pase el tiempo mejorarán pero quizá no sea el modelo más adecuado para aquellos usuarios que no deseen encontrase problemas en su uso y no estén dispuestos buscar información o a resolver los que se presenten.
 
-Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM a un precio de $90. Pantalla de 11" o 14" con una resolución de 1366x768, 2 GiB de memoria, WiFi, microSD, mini HDMI, 16GB eMMC, dos puertos USB 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y _touchpad_.
+Aunque no es como los modelos anteriores de placas base este es destacable por ser un portátil basado en un procesador ARM RK3399 a un precio de $200. Pantalla de 14" con una resolución de 1920x1080, 4 GiB de memoria, WiFi, microSD, mini HDMI, 64GB eMMC, dos puertos USB uno 3.0 y otro 2.0, salida de audio, cámara web y batería de 10000mAH, teclado y _touchpad_.
 
 {{< image
     gallery="true"
-    image1="image:pinebook-11-inch.jpg" optionsthumb1="300x200" title1="PineBook (11 pulgadas)"
-    caption="PineBook (11 pulgadas)" >}}
+    image1="image:pinebook-pro.jpg" optionsthumb1="300x200" title1="PineBook Pro"
+    caption="PineBook Pro" source="arstechnica.com" >}}
 
 ### Rock Pi 4B
 
@@ -210,11 +210,9 @@ Parece que con la costumbre de denominar a estas placas bases el nombre de fruto
 
 ### Conclusión
 
-Estos no son los únicos modelos que existen pero son algunos de los más destacables. Si queremos 4 GiB de memoria la opción preferente es la Rock64 con la posibilidad de añadirle en un puerto USB la conectividad WiFi o la Rock Pi que ya incorpora WiFi. Si con 2 GiB es suficiente está la la ODROID C2, si se desea que tenga WiFI sin adaptadores adicionales la opción preferente es la NanoPi K2 o la ASUS Tinker Board.
+Estos no son los únicos modelos que existen pero son algunos de los más destacables. La Raspberry Pi 4 destaca por tener un modelo con 8 GiB de memoria y conectividad con WiFi sin necesidad de adaptadores. A pesar de que las alternativas de placas bases sean tan capaces como la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.
 
-A pesar de que las alternativas de placas bases sean más capaces que la Raspberry Pi esta les gana en mejor soporte del software como distribuciones GNU/Linux y programas como Kodi que también es algo a tener muy en cuenta y este posiblemente es el motivo de que aún siendo menos capaz tiene más éxito e igualmente una muy buena opción. Quizá con algunas de estas placas alternativas hay que leer la documentación que tengan, algún foro y probar más cosas de las que requeriría una Raspberry Pi.
-
-Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 4 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para [trastear con la electrónica como LEDs, _displays_ y otros actuadores][blogbitix-serie-electronica]. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.
+Estas placas son un logro del avance de la tecnología pero ciertamente no hay ningún modelo que soporte la memoria que un Intel NUC, todas estas placas no incluyen más de 8 GiB de memoria ni es ampliable, los NUC pueden llegar hasta los 32 GiB siendo más capaces. En cuanto al precio quizá los NUC son algo más caros pero la plataforma x86 tiene un gran soporte de software y no está tan fragmentado como la plataforma ARM, por otro lado al precio de las placas hay que añadirles los accesorios como la fuente de alimentación, caja, disipador, microSD o eMMC. A los NUC lo que les falta es el puerto GPIO para [trastear con la electrónica como LEDs, _displays_ y otros actuadores][blogbitix-serie-electronica]. Si el propósito es de software preferiría un NUC, si el propósito es la electrónica o un precio muy ajustado una de estas placas.
 
 {{< reference >}}
 * [Procesadores ARM Cortex-A](https://www.arm.com/products/processors/cortex-a)

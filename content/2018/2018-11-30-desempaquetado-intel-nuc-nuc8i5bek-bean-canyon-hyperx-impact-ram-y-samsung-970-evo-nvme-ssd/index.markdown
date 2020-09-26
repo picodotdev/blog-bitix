@@ -38,7 +38,7 @@ Siempre que puedo cuando algún familiar necesita un ordenador lo que hago es da
 
 ### La búsqueda
 
-Empezaba por decidirme que formato de ordenador quería con [Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo][blogbitix-309] y pasado un tiempo ya casi optado por la opción que quería, [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329] pasando por un [análisis del Slimbook Curve][blogbitix-311] que hice. Para el nuevo ordenador personal en cualquier opción que eligiese quería monitor externo, al final elegí un [Benq PD2700Q con resolución QHD (2560x1440) e IPS](https://amzn.to/2OFdFi9). Descarté un ATX por tamaño e igualmente un ITX que aún siendo un formato más pequeño seguía siendo grande para mi, a pesar de que con esta opción podría elegir un [AMD Ryzen][amd-ryzen] con mayor cantidad de núcleos. Un portátil seguía siendo una opción válida para poder donarlo en un futuro pero ocupa cierto espacio en la mesa y no tengo intención de moverlo por lo que la función que le da nombre no me es necesaria, si eligiese uno sería un [Slimbook Pro2](https://slimbook.es/en/pro-ultrabook-13-aluminium) seguramente. Como opción me quede con algún ordenador en formato Intel NUC, en un futuro cuando ya se me quede no válido para mis usos principales lo utilizaré como ordenador servidor de archivos, de descargas u otros usos personales que pueda darle como [OwnCloud][owncloud] o [GitLab][gitlab], como ocupa poco el espacio no será un problema.
+Empezaba por decidirme que formato de ordenador quería con [Intentando elegir portátil, NUC o mini ITX para comprar nuevo equipo][blogbitix-309] y pasado un tiempo ya casi optado por la opción que quería, [Decidido a comprar un Intel NUC entre las opciones que he evaluado][blogbitix-329] pasando por un [análisis del Slimbook Curve][blogbitix-311] que hice. Para el nuevo ordenador personal en cualquier opción que eligiese quería monitor externo, al final elegí un [BenQ PD2700Q con resolución QHD (2560x1440) e IPS](https://amzn.to/2OFdFi9). Descarté un ATX por tamaño e igualmente un ITX que aún siendo un formato más pequeño seguía siendo grande para mi, a pesar de que con esta opción podría elegir un [AMD Ryzen][amd-ryzen] con mayor cantidad de núcleos. Un portátil seguía siendo una opción válida para poder donarlo en un futuro pero ocupa cierto espacio en la mesa y no tengo intención de moverlo por lo que la función que le da nombre no me es necesaria, si eligiese uno sería un [Slimbook Pro2](https://slimbook.es/en/pro-ultrabook-13-aluminium) seguramente. Como opción me quede con algún ordenador en formato Intel NUC, en un futuro cuando ya se me quede no válido para mis usos principales lo utilizaré como ordenador servidor de archivos, de descargas u otros usos personales que pueda darle como [OwnCloud][owncloud] o [GitLab][gitlab], como ocupa poco el espacio no será un problema.
 
 ### Intel NUC8i5BEK (Bean Canyon)
 
@@ -94,7 +94,7 @@ Opté por el modelo NUC8i5BEK sobre el NUC8i3BEK, por sus cuatro núcleos y sobr
 
 El precio del NUC en el momento de salida es de unos 400 € no es muy superior respecto a los que costaría un equipo ITX teniendo en cuenta que en estos hay que comprar procesador, placa base, fuente de alimentación y caja, con la diferencia de que ocupa sensiblemente más. Un [AMD Ryzen 2400G](https://www.pccomponentes.com/amd-ryzen-r5-2400g-36ghz), [placa base MSI B450I](https://www.pccomponentes.com/msi-b450i-gaming-plus-ac), [fuente de 450W](https://www.pccomponentes.com/corsair-cx450-450w-80-plus-bronze) y caja ITX el conjunto se va a aproximadamente a los mismos 400 €, el Ryzen tiene mejor gráfica integrada que la Intel pero el conjunto ocupa sensiblemente mucho más espacio.
 
-He esperado todos estos meses hasta ahora que han aparecido a la venta en [Amazon][amazon] y también en [Pc Componentes][pccomponentes]. Varios meses antes se han publicado varios artículos analizando en buen detalle estos modelos de NUC asi como antes la [nota de prensa con la presentación oficial de Intel](https://newsroom.intel.com/news/intel-introduces-new-nuc-kits-nuc-mini-pcs-intel-nuc-family/) en el momento de su inicio de comercialización. En mi experiencia con este caso desde que aparecen las primeras noticias en los medios hasta que se empieza a comercializar y más tarde hasta que aparece en las tiendas y llega a tiendas como Amazon y Pc Componentes, puede pasar perfectamente más de medio año o un año.
+He esperado todos estos meses hasta ahora que han aparecido a la venta en [Amazon][amazon] y también en [PC Componentes][pccomponentes]. Varios meses antes se han publicado varios artículos analizando en buen detalle estos modelos de NUC asi como antes la [nota de prensa con la presentación oficial de Intel](https://newsroom.intel.com/news/intel-introduces-new-nuc-kits-nuc-mini-pcs-intel-nuc-family/) en el momento de su inicio de comercialización. En mi experiencia con este caso desde que aparecen las primeras noticias en los medios hasta que se empieza a comercializar y más tarde hasta que aparece en las tiendas y llega a tiendas como Amazon y Pc Componentes, puede pasar perfectamente más de medio año o un año.
 
 * [Coffee Lake i3 NUC Review (NUC8i3BEH)](https://nucblog.net/2018/10/coffee-lake-nuc8i3beh-review/)
 * [Coffee Lake i5 NUC Review (NUC8i5BEK / NUC8i5BEH)](https://nucblog.net/2018/11/coffee-lake-i5-nuc-review-nuc8i5bek-nuc8i5beh/)
@@ -124,7 +124,7 @@ Probablemente 16 GiB me sería suficientes pero no me importa ir a por los 32 Gi
 * [Difference between memory kits and single memory modules](http://www.tomshardware.co.uk/forum/270105-30-difference-memory-kits-single-memory-modules)
 * [HyperX Impact Memory Module Specifications](https://www.kingston.com/datasheets/HX424S14IBK2_32.pdf)
 
-Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320 €. Al final opté por la memoria HyperX Impact.
+Dos modelos validados por Intel compatibles con esto NUC son [HyperX Impact](https://amzn.to/2K7lnfs) de Kingston y los [G.Skill Ripjaws](https://amzn.to/2PuxIjO) más o menos en el mismo precio, los HyperX tienen algo mejor latencia aunque será poco apreciable en el uso del ordenador. Los 32 GiB en el momento en que los he comprado están entre 280 y 320 €, ciertamente cara. Al final opté por la memoria HyperX Impact.
 
 {{< amazon
     linkids="ef22daf2b91899709c8686b7db8a49c7,06d1aea567128e234b58d2e800ef099c"
@@ -286,7 +286,7 @@ El NUC es realmente pequeño con sus 11x11cm ocupa muy poco espacio, además la 
     image3="image:nucblog-nuc8i5_bios9.png" optionsthumb3="200x150" title3="BIOS"
     caption="BIOS" source="nucblog.net" >}}
 
-Usando el [_script_ para instalar Arch Linux de forma automatizada, desatendida y personalizable][blogbitix-204] conseguí instalarlo a la primera sin nada grave que no halla podido resolver. En GNU/Linux todo el hardware ha sido reconocido correctamente sin necesidad de instalar controladores adicionales. Desde la WIFI, Bluetooth, Thunderbolt, el SSD NVMe, puertos USB, tarjeta gráfica, salida HDMI y por supuesto los 32GiB de memoria. El monitor Benq con su resolución QHD también ha sido reconocido correctamente también en la instalación. Aún tengo que probarlo más pero tengo la sensación de que el texto está mejor definido en GNOME que en macOS. Lo anterior puede ser una percepción pero por otro lado me he dado cuenta es que en macOS sacando el audio por el cable HDMI no se puede controlar el volumen ni silenciarlo, en Arch Linux con GNOME si se puede controlar el volumen del sonido cuando se emite por el cable HDMI también usar las teclas para silenciarlo.
+Usando el [_script_ para instalar Arch Linux de forma automatizada, desatendida y personalizable][blogbitix-204] conseguí instalarlo a la primera sin nada grave que no halla podido resolver. En GNU/Linux todo el hardware ha sido reconocido correctamente sin necesidad de instalar controladores adicionales. Desde la WIFI, Bluetooth, Thunderbolt, el SSD NVMe, puertos USB, tarjeta gráfica, salida HDMI y por supuesto los 32GiB de memoria. El monitor BenQ con su resolución QHD también ha sido reconocido correctamente también en la instalación. Aún tengo que probarlo más pero tengo la sensación de que el texto está mejor definido en GNOME que en macOS. Lo anterior puede ser una percepción pero por otro lado me he dado cuenta es que en macOS sacando el audio por el cable HDMI no se puede controlar el volumen ni silenciarlo, en Arch Linux con GNOME si se puede controlar el volumen del sonido cuando se emite por el cable HDMI también usar las teclas para silenciarlo.
 
 Comparado con el anterior portátil Sony que tenía el rendimiento se nota algo mejor por el SSD NVMe con el que las aplicaciones se inician más rápido, la memoria DDR4 más veloz y mejor CPU además de ser con 4 núcleos. Aunque el disco es NVMe y ofrece más ancho de banda que SATA y es más rápido se nota algo pero la diferencia no es tan apreciable como pasar de disco mecánico a SSD. En tareas ofimáticas y de navegación el ventilador se enciende a ratos y estando en silencio se oye ligeramente pero no es molesto, la temperatura de la CPU se mantiene entre 30º y 40º encendiéndose el ventilador de forma ligera. En un juego como Diablo 3 la temperatura de la CPU sube y se mantienen en 75º pero al tacto no parece que coja mucho calor, con el ventilador funcionando para mantener la temperatura tampoco hace mucho ruido.
 
@@ -294,11 +294,13 @@ Me están entrando dudas de si mejor hubiese optado por la versión BEH (_tall_)
 
 Aún tengo que probarlo más pero estos NUCs se ajustan perfectamente a lo que finalmente estaba buscando en un futuro espero que AMD desarrolle un producto similar. Para tareas ofimáticas y de navegación por internet es más que suficiente, los ordenadores ATX e ITX quedan para los que quieren un rendmiento máximo o quieren jugar a las últimas novedades en juegos con grandes detalles y a altas resoluciones.
 
-### Apple Mac mini
+### Alternativas a los Intel NUC
+
+#### Apple Mac mini
 
 Un equipo equivalente a los NUC son los [Apple Mac mini](https://www.apple.com/es/mac-mini/). Después de unos años Apple los ha renovado como unos procesadores más recientes, más cantidad de memoria y SSD instalable. Pero a unos precios muy exagerados, tanto que el Mac mini con una configuración similar a la de este artículo del NUC saldría por 2100 €, bastante más del doble. Salvo que uno quiera macOS sí o sí y uno esté muy obcecado en querer Apple no es una opción en mi opinión acertada. Paro bueno esto pasa con cualquier producto de Apple no solo es específico de Mac mini aunque como se aprecia es un ejemplo claro y sangrante al compararlo. Por si fuera poco el procesador no soporta HyperThreading o SMT con lo que son 4 núcleos y 4 hilos y la gráfica es una UHD 630 la mitad de potente que la Iris Graphics 655.
 
-Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el NUC me he dado cuenta de dos cosas. Una que al usar el monitor externo Benq PD2700Q con resolución QHD me da la sensación de que el texto se ve mejor al usarlo con el NUC que con el Mac, esto puede ser una sensación pero la segunda cosa de la que me he dado cuenta que no admite interpretación es que cuando se saca el audio junto con el vídeo por el cable HDMI al monitor y de este el audio se conecta a unos altavoces por el jack 3.5mm en macOS el contol de volumen de audio queda desactivado de modo que si no tienes unos altavoces con control de volumen propio es muy incómodo usar los botones del monitor para regularlo, en GNOME se puede controlar el volumen desde el entorno de escritorio que en una configuración ordenador conectado a un monitor externo es lo que un usuario espera y lo más cómodo.
+Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el NUC me he dado cuenta de dos cosas. Una que al usar el monitor externo BenQ PD2700Q con resolución QHD me da la sensación de que el texto se ve mejor al usarlo con el NUC que con el Mac, esto puede ser una sensación pero la segunda cosa de la que me he dado cuenta que no admite interpretación es que cuando se saca el audio junto con el vídeo por el cable HDMI al monitor y de este el audio se conecta a unos altavoces por el jack 3.5mm en macOS el contol de volumen de audio queda desactivado de modo que si no tienes unos altavoces con control de volumen propio es muy incómodo usar los botones del monitor para regularlo, en GNOME se puede controlar el volumen desde el entorno de escritorio que en una configuración ordenador conectado a un monitor externo es lo que un usuario espera y lo más cómodo.
 
 {{< image
     gallery="true"
@@ -341,7 +343,7 @@ En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese 
     </tbody>
 </table>
 
-### Slimbook One
+#### Slimbook One
 
 También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per no me convenció porque solo tienen un _slot_ de memoria, admite hasta 32GB pero aún no hay módulos de esa cantidad si no es en _kit_, lo que en la práctica limita su memoria a 16GB. La tarjeta gráfica que tienen es una UHD 630 como comentaba la mitad de potente en teoría que la Iris Graphics 655. El diseño que tiene no es muy atractivo y no tiene tarjeta microSD como una forma de ampliarle el almacenamiento. El ONE sin descuento parte de 480 € más caro que los 400 € del Intel NUC.
 
@@ -351,6 +353,14 @@ También hubiese podido optar por un [Slimbook One](https://slimbook.es/one) per
     image2="image:slimbook-one-2.jpg" optionsthumb2="200x150" title2="Slimbook ONE (v2)"
     image3="image:slimbook-one-3.jpg" optionsthumb3="200x150" title3="Slimbook ONE (v2)"
     caption="Slimbook ONE (v2)" >}}
+
+#### Minis Forum
+
+Después de un tiempo y a medida que AMD lanzando modelos de procesadores con bajo consumo y el buen rendimiento basados en la arquitectura Ryzen han aparecido algunos modelos similares en formato a los Intel NUC pero basados en los procesadores de AMD. Uno de ellos es el [Minis Forum UM300](https://amzn.to/3kQkg4Z) que ya equipado con memoria y almacenamiento SSD tiene un precio muy competitivo.
+
+{{< amazon
+    linkids="fa3878e3b2d15f2dac493bba12b8aac9"
+    asins="B08FC8FL1Z" >}}
 
 ### Switch HDMI y cables, monitor con el ordenador y consola
 
@@ -368,7 +378,7 @@ Otro accesorio de utilidad es un [teclado pequeño con soporte dual para bluetoo
 
 ### Nuevo escritorio
 
-Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [Benq PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratín [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
+Este es la dispoción que tenía antes con el Sony VAIO y la que tengo ahora con el NUC, la pantalla externa una [BenQ PD2700Q](https://amzn.to/2Qjs7MT) de 27" y resolución QHD (2560x1440), teclado y ratón inalámbrico [V7 CKW200](https://amzn.to/2TKzmMT) a los que añadí un ratín [Logitech M90](https://amzn.to/2S9Bex2) con cable básico de tres botones ya que el ratón inalámbrico en algunos momentos funciona con problemas, el teclado sin embargo funciona perfectamente, y [alfombrilla](https://amzn.to/2P5jocE) para ellos junto con un [concentrador USB 2.0 de Amazon Basics](https://amzn.to/2BwubZJ). He ganado mucho espacio en la mesa si en algún momento quiero trabajar en ella para otras cosas, la pantalla la tengo ahora al final de la mesa y el NUC me ocupa menos espacio que el portátil además de que puedo colocarlo en cualquier sitio.
 
 {{< amazon
     linkids="757f02716b01871e45865d4a9f1b75c6,49e0edf2268751aed306f89bf5a657f6,fbe6dbb7cf4d1a724de6c75d49946d10"
