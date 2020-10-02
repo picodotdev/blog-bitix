@@ -17,7 +17,7 @@ summary: "En un sistema complejo como una arquitectura de microservicios medir l
 
 {{% post %}}
 
-{{< logotype image1="java.svg" image2="zipkin.svg" >}}
+{{< logotype image1="spring.svg" image2="zipkin.svg" >}}
 
 El un sistema basado en microservicios unos servicios depende de otros y se comunican haciendo llamadas entre ellos. Las llamadas entre los servicios son un punto de fallo y problemas que conviene monitorizar para que el conjunto de la aplicación funcione correctamente. Con un número importante de servicios la monitorización y la trazabilidad es una de las [funcionalidades de las aplicaciones basadas en microservicios][blogbitix-516], muchas de estas funcionalidades son proporcionadas de forma específica por una herramienta.
 
