@@ -128,5 +128,6 @@ Una solicitud genera varias llamadas entre servicios en cadena, para tener una v
 
 * [Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana][blogbitix-366]
 * [Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot][blogbitix-368]
+* [Trazabilidad en servicios distribuidos con Sleuth y Zipkin][blogbitix-518]
 
 {{% /post %}}
