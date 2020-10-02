@@ -101,7 +101,7 @@ Para hacer manejable la infraestructura y configuración de la misma es necesari
 
 ### Registro de contenedores y artefactos
 
-A partir del código fuente se construyen los artefactos que posteriormente se incluyen en contenedores que son desplegados. Un repositorio de artefactos permite almacenar los binarios y paquetes de cada versión a partir del código fuente, esto permite volver a una versión anterior y guardar un historial de los mismos para el futuro. [Docker Registry][docker-registry] es un registro para imágenes Docker, [Artifactory][artifactory] o [Nexus][sonatype-nexus] son registros más generalista que permite guardar artefactos de JavaScript, Python o Java entre otros, [Archiva][apache-archiva] es específico de artefactos para Java.
+A partir del código fuente se construyen los artefactos que posteriormente se incluyen en contenedores que son desplegados. Un repositorio de artefactos permite almacenar los binarios y paquetes de cada versión a partir del código fuente, esto permite volver a una versión anterior y guardar un historial de los mismos para el futuro. [Docker Registry][docker-registry] es un registro para imágenes Docker, [Artifactory][artifactory] o [Nexus][sonatype-nexus] son registros más generalistas que permite guardar artefactos de JavaScript, Python o Java entre otros, [Archiva][apache-archiva] es específico de artefactos para Java.
 
 ### Autenticación, claves y secretos
 
