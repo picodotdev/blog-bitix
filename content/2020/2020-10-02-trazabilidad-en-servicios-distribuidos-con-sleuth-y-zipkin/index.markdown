@@ -11,6 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:zipkin.svg"
 tags: ["java", "planeta-codigo"]
+series: ["spring-cloud"]
 summary: "En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta."
 ---
 
@@ -74,6 +75,7 @@ Este es el código del cliente que hace la petición al servidor y el código de
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloudConsulNomadTraefik" command="./run.sh" %}}
 
 {{% reference %}}
+* [Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin](https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/)
 * [Zipkin Dependencies](https://github.com/openzipkin/zipkin-dependencies)
 * [Zipkin Examples](https://github.com/openzipkin?utf8=%E2%9C%93&q=example)
 * [Sleuth Common application properties](https://docs.spring.io/spring-cloud-sleuth/docs/2.2.5.RELEASE/reference/html/appendix.html)

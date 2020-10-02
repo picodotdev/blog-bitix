@@ -22,21 +22,23 @@ summary: "Los microservicios son independientes pero se llaman unos a otros, sue
 
 En una aplicación distribuida con varios microservicios es imprescindible tener la configuración de forma centralizada que cada microservicio obtiene al iniciarse y disponer de registro y descubrimiento para que los servicios al iniciarse, terminarse, actualizarse o por un fallo se registren o desregistren y obtengan la ubicación de las dependencias que necesitan.
 
-Otra de las funcionalidades esenciales en una aplicación distribuida es la trazabilidad de una petición, desde que entra por el _API gateway_ pasando por las diferentes peticiones que hacen los microservicios por la red o envío de mensajes. Es necesaria la funcionalidad que relacione las trazas de todos los servicios para depuración o consulta en un futuro para dar visibilidad a las acciones que se realizan en el sistema.
+Otra de [las funcionalidades esenciales en una aplicación distribuida][blogbitix-516] es la trazabilidad de una petición, desde que entra por el _API gateway_ pasando por las diferentes peticiones que hacen los microservicios por la red o envío de mensajes. Es necesaria la funcionalidad que relacione las trazas de todos los servicios para depuración o consulta en un futuro para dar visibilidad a las acciones que se realizan en el sistema.
 
 ¿Como se consigue relacionar las trazas de los microservicios que son independientes? La técnica que se emplea es asignar a cada petición entrante un identificativo, más bien un identificativo para la transacción de forma global y un identificativo para la transacción en cada microservicio que varía en cada comunicación de red.
 
 Cuando un microservicio se comunica con otro envía en su petición el identificativo de la transacción global y el de su transacción. Si un microservicio no recibe estos identificativos los genera. En el protocolo HTTP estos identificativos se envían y reciben a través de las cabeceras. Los identificativos permiten correlacionar todas las trazas que emiten los diferentes procesos de los microservicios de una misma petición en la aplicación, haciendo una búsqueda global por el identificativo global se obtiene el conjunto de trazas que han emitido los microservicios por las que ha transitado una petición.
 
-Para obtener mejor visibilidad de los tiempos y latencias se puede utilizar [Zipkin][zipkin], [Prometheus][prometheus] junto con [Hystrix][netflix-hystrix] o [Resilience4j][resilience4j] también dan visibilidad de los tiempos entre otras cosas.
+Para obtener mejor visibilidad de los servicios invocados en una transacción y los tiempos y latencias se puede utilizar [Zipkin][zipkin] y [Prometheus][prometheus].
 
-En Java el proyecto [Spring Cloud Sleuth][spring-cloud-sleuth] proporciona la funcionalidad de trazabilidad. En el [esquema se observa como Sleuth envía las cabeceras](https://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/2.1.0.RELEASE/single/spring-cloud-sleuth.html#_propagation) de un servicio cliente a un servicio servidor.
+En Java el proyecto [Spring Cloud Sleuth][spring-cloud-sleuth] proporciona la funcionalidad de trazabilidad. En el [esquema se observa como Sleuth envía las cabeceras](https://docs.spring.io/spring-cloud-sleuth/docs/2.2.5.RELEASE/reference/html/#propagation) de un servicio cliente a un servicio servidor.
 
 {{< code file="sleuth-headers.txt" language="plaintext" options="" >}}
 
 Sleuth se encarga de propagar las cabeceras del servicio cliente al servicio servidor automáticamente instrumentando los clientes HTTP de _RestTemplate_, _AsyncRestTemplate_, _WebClient_, _Apache HttpClient_ y _Netty HttpClient_. Para enviar, recibir, obtener y establecer los identificativos de correlación con Sleuth junto con el cliente HTTP de Java hay que hacer la instrumentación manualmente con las clases _Tracing_ y _Tracer_ si no está entre los soportados como en el caso del [cliente HTTP que se añadió en Java 11 en el propio JDK][blogbitix-350] con el soporte para HTTP/2.
 
 En la parte servidora Sleuth proporciona un filtro que se encarga de obtener y crear el _span_ de la petición que contiene los identificativos de correlación que con [Spring][spring] y las dependencias adecuadas se configura automáticamente. Para inyectar y extraer las cabeceras de Sleuth con el cliente HTTP de Java o como en el ejemplo con el de [Jersey][jersey] basta con proporcionar una _lambda_ que realice el añadido o extracción de las cabeceras con la API del cliente.
+
+### Ejemplo de microservicio con Spring Boot y Sleuth
 
 Este es el código para instrumentalizar el cliente HTTP de _Jersey_ que utiliza el servicio cliente que invoca al _gateway_ y el código para crear el _span_ en el cliente con los identificativos de correlación y recogerlos en el servicio servidor.
 
@@ -60,7 +62,6 @@ En los proyectos hay que incluir la dependencia para Sleuth en la herramienta de
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloud" command="./gradle-run.sh" %}}
 
 {{< reference >}}
-* [Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin](https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/)
 * [Distributed Tracing : Latency Analysis for Your Microservices](https://content.pivotal.io/springone-platform-2017/distributed-tracing-latency-analysis-for-your-microservices-grzejszczak-krishna)
 {{< /reference >}}
 
