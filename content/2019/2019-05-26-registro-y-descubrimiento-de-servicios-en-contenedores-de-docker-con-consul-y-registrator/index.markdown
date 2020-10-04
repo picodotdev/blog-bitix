@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:consul.png"
+imagePost: "logotype:consul.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["docker", "hashicorp"]
 summary: "En los microservicios se hace necesario un servicio de registro y descubrimiento como Eureka o Consul que permita conocer la ubicación de las instancias en cada momento. Las instancias de los servicios se pueden registrar ellas mismas o esta tarea se puede delegar en una en otro servicio. Al usar contenedores de Docker una herramienta que permite delegar el registro y desregistro en Consul de los servicios es GliderLabs Registrator."
