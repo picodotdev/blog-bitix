@@ -23,7 +23,7 @@ En una aplicación web hay múltiples usuarios realizando peticiones al servidor
 
 En el contexto de una aplicación web para seguir la secuencia de trazas de una petición consiste en asignar variables con información al _thread_ que ejecuta la petición, el contenido de estas variables está disponible para emitirse en la traza. Asignando a cada petición un identificativo aleatorio único cuando se inicia la petición, en una aplicación web Java podría ser en un filtro, las trazas emitidas de cada petición quedarán relacionadas por compartir el mismo identificativo de contexto. Este identificativo significa que encontrada una relevante es posible obtener el resto de las peticiones muy fácilmente con un filtro usando ese identificativo.
 
-El filtro podría ser el siguiente, el identificativo se genera de forma aleatoria con la clase [UUID](https://docs.oracle.com/javase/10/docs/api/java/util/UUID.html) del JDK de Java, se asigna al [ThreadContext](https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html) y al finalizar se limpia de información la variable de contexto en la cláusula _finally_ de un _try-catch_.
+El filtro podría ser el siguiente, el identificativo se genera de forma aleatoria con la clase [UUID](javadoc10:java/util/UUID.html) del JDK de Java, se asigna al [ThreadContext](https://logging.apache.org/log4j/2.0/log4j-api/apidocs/org/apache/logging/log4j/ThreadContext.html) y al finalizar se limpia de información la variable de contexto en la cláusula _finally_ de un _try-catch_.
 
 {{< code file="AppFilter.java" language="java" options="" >}}
 

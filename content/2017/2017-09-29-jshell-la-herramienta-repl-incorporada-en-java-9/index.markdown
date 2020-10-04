@@ -29,7 +29,7 @@ El comando de la herramienta [JShell](https://docs.oracle.com/javase/9/jshell/in
 
 Se pueden crear variables, crear y modificar definiciones de métodos y clases. Cada una de estas expresiones crea un _snippet_ de código que pueden listarse con el comando `/list`. Al introducir las expresiones se soporta completado y asistencia de código con la tecla tabulador como ayuda para saber que métodos tiene un objeto.
 
-Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un [Stream](https://docs.oracle.com/javase/9/docs/api/java/util/stream/Stream.html) de la cual se muestran los elementos de la serie menores que el número 100.
+Se pueden crear clases y métodos como en el ejemplo de la serie de Fibonacci implementada con un [Stream](javadoc9:java/util/stream/Stream.html) de la cual se muestran los elementos de la serie menores que el número 100.
 
 {{< image
     gallery="true"

@@ -24,7 +24,7 @@ Un motivo es que los tipos al ser en tiempo de ejecución exactamente iguales qu
 
 La desventaja del _type erasure_ es que en tiempo de ejecución no se pueden hacer algunas optimizaciones, en computación y uso de memoria. Sin embargo, evaluando las ventajas y desventajas los desarrolladores de Java siempre han dado gran importancia en la compatibilidad hacia atrás y por ello prefirieron implementar los _generics_ usando _type erasure_.
 
-El proceso de eliminar los tipos de los genéricos se realiza eliminando todos los parámetros de los tipos parametrizados siendo reemplazados con su restricción (_bound_), con el tipo [Object](https://docs.oracle.com/javase/10/docs/api/java/lang/Object.html) o con con su restricción, si tiene múltiples restricciones se usa la primera.
+El proceso de eliminar los tipos de los genéricos se realiza eliminando todos los parámetros de los tipos parametrizados siendo reemplazados con su restricción (_bound_), con el tipo [Object](javadoc10:java/lang/Object.html) o con con su restricción, si tiene múltiples restricciones se usa la primera.
 
 En Java dos métodos distintos no pueden tener la misma firma, dado que los _generics_ han sido implementados con _type erasure_ también se ha de cumplir que dos métodos no pueden tener la misma firma una vez aplicado el _erasure_. Para no perder las validaciones de tipos el compilador inserta los _cast_ necesarios. El código fuente de una clase genérica sería el siguiente, que el compilador transformaría siguiendo las reglas del _type erasure_.
 

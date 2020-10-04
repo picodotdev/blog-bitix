@@ -23,7 +23,7 @@ series: ["graphql"]
 
 [GraphQL][graphql] por defecto soporta un conjunto de tipos escalares en los datos entre los que están varios numéricos, cadenas, booleanos, enumerados además de los tipos o estructuras de datos definidos en la interfaz del servicio. Sin embargo, si es necesario es posible definir nuevos tipos de datos escalares como podría ser el caso de un tipo de dato para representar una fecha y otro de importe monetario.
 
-El objeto en Java que representa una fecha con Java 8 sería [LocalDate](https://docs.oracle.com/javase/9/docs/api/java/time/LocalDate.html) y la clase para el importe monetario podría ser un [BigDecimal](https://docs.oracle.com/javase/9/docs/api/java/math/BigDecimal.html) o alguna de [la librería JavaMoney][blogbitix-90].
+El objeto en Java que representa una fecha con Java 8 sería [LocalDate](javadoc9:java/time/LocalDate.html) y la clase para el importe monetario podría ser un [BigDecimal](javadoc9:java/math/BigDecimal.html) o alguna de [la librería JavaMoney][blogbitix-90].
 
 Para que GraphQL soporte un nuevo tipo de dato escalar es necesario implementar una clase que realice la conversión. Esta clase se encarga de realizar la conversión entre el escalar añadido a una representación a devolver en las respuestas de las peticiones y la conversión entre la representación en consultas al tipo de dato hay que proporcionar al servicio. La clase debe implementar la interfaz [Coercing](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/schema/Coercing.java) y construyendo un objeto [GraphQLScalarType](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/schema/GraphQLScalarType.java) proporcionárselo a GraphQL en la definición del servicio.
 

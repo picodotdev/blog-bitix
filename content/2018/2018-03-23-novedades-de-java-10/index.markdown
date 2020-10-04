@@ -89,9 +89,9 @@ El tiempo para iniciar el interprete REPL de [JShell](https://docs.oracle.com/ja
 
 Se han añadido mejoras en la herramienta de documentación de las clases Javadoc como soporte para varias hojas de estilo, agrupar métodos redefinidos que no cambian la especificación o nueva etiqueta _summary_ como resumen de la API.
 
-Se han añadido varios métodos para crear copias no modificables con [List.copyOf()](https://docs.oracle.com/javase/10/docs/api/java/util/List.html#copyOf(java.util.Collection)), [Set.copyOf()](https://docs.oracle.com/javase/10/docs/api/java/util/Set.html#copyOf(java.util.Collection)), and [Map.copyOf()](https://docs.oracle.com/javase/10/docs/api/java/util/Map.html#copyOf(java.util.Map)). Se han añadido nuevos métodos a la clase [Collectors](https://docs.oracle.com/javase/10/docs/api/java/util/stream/Collectors.html) para devolver una lista no modificable con _toUnmodifiableList_, _toUnmodifiableSet_, and _toUnmodifiableMap_.
+Se han añadido varios métodos para crear copias no modificables con [List.copyOf()](javadoc10:java/util/List.html#copyOf(java.util.Collection)), [Set.copyOf()](javadoc10:java/util/Set.html#copyOf(java.util.Collection)), and [Map.copyOf()](javadoc10:java/util/Map.html#copyOf(java.util.Map)). Se han añadido nuevos métodos a la clase [Collectors](javadoc10:java/util/stream/Collectors.html) para devolver una lista no modificable con _toUnmodifiableList_, _toUnmodifiableSet_, and _toUnmodifiableMap_.
 
-Se añade el método [Optional.orElseThrow()](https://docs.oracle.com/javase/10/docs/api/java/util/Optional.html#orElseThrow()).
+Se añade el método [Optional.orElseThrow()](javadoc10:java/util/Optional.html#orElseThrow()).
 
 Algunas [otras características ya obsoletas se han eliminado](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Removed) y [otras se han marcado como _deprecated_](https://www.oracle.com/technetwork/java/javase/10-relnote-issues-4108729.html#Deprecated).
 
