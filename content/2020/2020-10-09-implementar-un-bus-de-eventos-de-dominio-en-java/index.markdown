@@ -49,7 +49,7 @@ Otro problema es que todos los cambios que origina una petición no se aplican a
 
 Un bus de eventos no es nada complicado, esta interfaz es lo que define un bus de eventos, básicamente consiste en un método para publicar un mensaje con un argumento que representa los datos del evento. Los otros dos métodos son de utilidad, en este caso se implementan en la interfaz como métodos _default_ permitido con [las novedades de Java 8][blogbitix-17].
 
-{{< code file="DomainEventBus.java" language="java" options="" >}}
+{{< code file="EventBus.java" language="java" options="" >}}
 
 En una arquitectura hexagonal que separa el dominio de los detalles de implementación externos el bus de eventos está en la capa de infraestructura. La implementación del bus de eventos es la que determina si el evento se publica utilizando [eventos con Spring](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#context-functionality-events-generics), [eventos con Guava][blogbitix-422], [utilizar RabbitMQ][blogbitix-210] o los guarda en base de datos para que sean emitidos por otro elemento sea el que los publique en [RabbitMQ][rabbitmq] con el _outbox pattern_, el proceso publicador en RabbitMQ puede ser [una tarea programada con Quartz][blogbitix-497] ejecutada de forma periódica que busca y publica los eventos pendientes de publicar. En este código la implementación simplemente los imprime en la terminal.
 

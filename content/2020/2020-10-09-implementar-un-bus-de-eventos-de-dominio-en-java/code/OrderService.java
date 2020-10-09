@@ -5,7 +5,7 @@ package io.github.picodotdev.blogbitix.eventbus.domain.purchase;
 public class OrderService {
 
     private OrderRepository orderRepository;
-    private DomainEventBus eventBus;
+    private EventBus eventBus;
 
     public OrderService(OrderRepository orderRepository, DomainEventBus eventBus) {
         this.orderRepository = orderRepository;
