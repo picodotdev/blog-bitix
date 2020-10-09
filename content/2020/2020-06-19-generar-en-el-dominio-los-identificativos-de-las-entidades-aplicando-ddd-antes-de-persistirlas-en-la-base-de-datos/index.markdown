@@ -31,7 +31,7 @@ También en DDD se suelen utilizar eventos como mecanismo de comunicar que en el
 
 ### Identificativos universales como identificadores
 
-Una posibilidad es generar identificativos universales para los identificativos de las entidades, sin embargo, la clase [UUID](java11:java.base/java/util/UUID.html) depende de elementos externos al dominio como el tiempo del sistema. Al mismo tiempo la entidad no es consciente de la existencia de otras entidades y no le es posible determinar la unicidad del identificativo.
+Una posibilidad es generar identificativos universales para los identificativos de las entidades, sin embargo, la clase [UUID](javadoc11:java.base/java/util/UUID.html) depende de elementos externos al dominio como el tiempo del sistema. Al mismo tiempo la entidad no es consciente de la existencia de otras entidades y no le es posible determinar la unicidad del identificativo.
 
 En DDD todo elemento que dependa de algo externo ha de se independizado del dominio. De modo que el UUID aplicando DDD no se genera en la entidad sino en la capa de servicio mediante un elemento externo que en la terminología de DDD es un adaptador, el identificativo se le proporciona a la entidad en el momento de creación en el constructor como parámetro.
 
@@ -65,6 +65,12 @@ En este caso de prueba se observa que la entidad _Product_ creada se crea en el 
 En las trazas se observa la SQL para obtener el valor de la secuencia y la SQL de _insert_ para guardar la entidad.
 
 {{< code file="System.out" language="plaintext" options="" >}}
+
+De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teoría de DDD son [Domain-Driven Design: Tackling Complexity in the Heart of Software](https://amzn.to/33JmDkv), [Domain-Driven Design Distilled](https://amzn.to/34HkDbA), otros más prácticos son [Implementing Domain-Driven Design](https://amzn.to/34yeDSk) y [Domain-Driven Design in PHP: A Highly Practical Guide](https://amzn.to/2SJe2HW).
+
+{{< amazon
+    linkids="5df04454342df14dfcc78687544c9d67,fc00596717d15f5b160a896fa5ce565a,00c494ddc45b9304145ac8e2733eb072,82d6a16b683b54c2ab34c1e51f63acfb"
+    asins="0321125215,0134434420,0321834577,1787284948" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/EntitiesId" command="./gradlew test" %}}
 

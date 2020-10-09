@@ -48,7 +48,7 @@ Al hacer cambios en el código de un servicio con nuevas características, corre
 
 {{< code file="service-2.nomad" language="bash" options="" >}}
 
-Como una nueva versión implica cambios en el código o la configuración del servicio es posible introducir nuevos errores que aún con todos los procesos de pruebas en diferentes entornos comentados sean descubiertos solo en el entorno de producción como es el típico [NullPointerException](java11:java.base/java/lang/NullPointerException.html) o en este caso un mensaje de traza erróneo.
+Como una nueva versión implica cambios en el código o la configuración del servicio es posible introducir nuevos errores que aún con todos los procesos de pruebas en diferentes entornos comentados sean descubiertos solo en el entorno de producción como es el típico [NullPointerException](javadoc11:java.base/java/lang/NullPointerException.html) o en este caso un mensaje de traza erróneo.
 
 {{< code file="service-2-logs.sh" language="bash" options="" >}}
 

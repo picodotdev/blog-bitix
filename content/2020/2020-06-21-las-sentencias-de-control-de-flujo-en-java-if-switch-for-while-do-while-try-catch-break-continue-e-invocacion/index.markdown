@@ -117,7 +117,7 @@ Las expresiones _try-catch_ son [el mecanismo de control de errores en Java][blo
 
 {{< code file="TryCatch.java" language="java" options="" >}}
 
-Las excepciones se lanzan con la palabra reservada _throw_, toda excepción ha de heredar de [Exception](java11:java.base/java/lang/Exception.html) y si no hereda de [RuntimeExecption](java11:java.base/java/lang/RuntimeException.html) ha de declararse en la firma del método para indicar que el método puede lanzar esa excepción en caso de no ser tratada dentro del mismo método con un _try-catch_.
+Las excepciones se lanzan con la palabra reservada _throw_, toda excepción ha de heredar de [Exception](javadoc11:java.base/java/lang/Exception.html) y si no hereda de [RuntimeExecption](javadoc11:java.base/java/lang/RuntimeException.html) ha de declararse en la firma del método para indicar que el método puede lanzar esa excepción en caso de no ser tratada dentro del mismo método con un _try-catch_.
 
 {{< code file="Throw.java" language="java" options="" >}}
 
