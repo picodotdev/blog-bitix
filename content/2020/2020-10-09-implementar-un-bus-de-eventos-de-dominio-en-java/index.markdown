@@ -63,7 +63,7 @@ El agregado al contener lógica de negocio puede generar eventos de dominio. Una
 
 Esta es la implementación de un agregado que representa una orden de compra con varias líneas de compra. Al crearse una orden se crea el agregado y emite un evento indicado el suceso, este evento es de interés para un _bounded context_ de inventario para mantener el _stock_ de productos actualizado.
 
-{{< code file="Order.java" language="java" options="" >}}
+{{< code file="Order.java" language="java" options="hl_lines=27" >}}
 {{< code file="OrderCreated.java" language="java" options="" >}}
 
 Las clases de evento de dominio heredan de uan clase que representa a todos los eventos de dominio.
