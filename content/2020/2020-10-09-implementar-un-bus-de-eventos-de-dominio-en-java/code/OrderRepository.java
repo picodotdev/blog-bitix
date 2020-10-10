@@ -1,4 +1,4 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.purchase;
+package io.github.picodotdev.blogbitix.eventbus.domain.order;
 
 ...
 
@@ -8,5 +8,6 @@ public interface OrderRepository {
 
     void save(Order order);
 
-    List<Order> findAll();
+    Order findById(OrderId id);
+    Collection<Order> findAll();
 }

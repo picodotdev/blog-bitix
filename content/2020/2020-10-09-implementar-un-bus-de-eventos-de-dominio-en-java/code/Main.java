@@ -2,15 +2,33 @@ package io.github.picodotdev.blogbitix.eventbus;
 
 ...
 
-public class Main {
+@SpringBootApplication
+public class Main implements CommandLineRunner {
+
+    @Autowired
+    private QueryBus queryBus;
+
+    @Autowired
+    private CommandBus commandBus;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
+
+    @Override
+    public void run(String... args) throws Exception {
+        Product product = productRepository.findAll().stream().findFirst().orElse(null);
+        System.out.println("Stock:" + product.getStock());
+
+        OrderId orderId = orderRepository.generateId();
+        commandBus.handle(new CreateOrderCommand(orderId, List.of(new Item(product.getId(), product.getPrice(), 12, new BigDecimal("0.21")))));
+
+        ...
+    }
 
     public static void main(String[] args) throws Exception {
-        ConsoleEventBus eventBus = new ConsoleEventBus();
-        MemoryOrderRepository orderRepository = new MemoryOrderRepository();
-        OrderService orderService = new OrderService(orderRepository, eventBus);
-
-        Product product = new Product(new BigDecimal("10.0"), 5);
-
-        orderService.create(orderService.generateId(), List.of(new Item(product, 2, new BigDecimal("0.21"))));
+        SpringApplication.run(Main.class, args);
     }
 }

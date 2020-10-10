@@ -1,36 +1,36 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.purchase;
+package io.github.picodotdev.blogbitix.eventbus.domain.order;
 
 ...
 
 public class Order implements AggregateRoot {
 
+    private static final BigDecimal MAX_AMOUNT = new BigDecimal("3000.00");
+
     private OrderId id;
     private LocalDateTime date;
     private List<Item> items;
 
-    private DomainEventCollection events;
+    private EventCollection events;
 
     protected Order(OrderId id) {
         this.id = id;
         this.items = new ArrayList<>();
         this.date = LocalDateTime.now();
-        this.events = new DomainEventCollection();
+        this.events = new EventCollection();
     }
 
-    public static Order create(OrderId id) {
+    public static Order create(OrderId id) throws Exception {
         return create(id, new ArrayList<>());
     }
 
-    public static Order create(OrderId id, List<Item> items) {
+    public static Order create(OrderId id, List<Item> items) throws Exception {
         Order order = new Order(id);
         order.getItems().addAll(items);
-        order.getEvents().add(new OrderCreated(order.getId(), order.hashStock()));
+        if (!order.isValidAmount()) {
+            throw new Exception("Invalid order amount");
+        }
+        order.getEvents().add(new OrderCreated(order.getId()));
         return order;
-    }
-
-    @Override
-    public DomainEventCollection getEvents() {
-        return events;
     }
 
     public OrderId getId() {
@@ -45,13 +45,31 @@ public class Order implements AggregateRoot {
         return items;
     }
 
-    public boolean hashStock() {
-        return items.stream().allMatch( it -> it.getQuantity() < it.getProduct().getStock());
-    }
-
     public BigDecimal getAmount() {
         return items.stream()
                 .map(Item::getAmount)
                 .reduce(new BigDecimal("0.00"), (a, b) -> new BigDecimal("0.00").add(a).add(b));
+    }
+
+    private boolean isValidAmount() {
+        return getAmount().compareTo(MAX_AMOUNT) == -1;
+    }
+
+    @Override
+    public EventCollection getEvents() {
+        return events;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return id.equals(order.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

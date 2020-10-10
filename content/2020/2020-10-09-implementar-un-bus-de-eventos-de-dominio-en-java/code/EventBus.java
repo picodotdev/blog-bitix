@@ -1,20 +1,20 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.kernel.domainevent;
+package io.github.picodotdev.blogbitix.eventbus.domain.shared.eventbus;
 
-import java.util.Collection;
+...
 
 public interface EventBus {
 
-    void publish(DomainEvent e);
+    void publish(Event e);
 
-    default void publish(Collection<DomainEvent> e) {
-        e.stream().forEach(this::publish);
+    default void publish(Collection<Event> events) {
+        events.stream().forEach(this::publish);
     }
 
-    default void publish(DomainEventCollection c) {
-        c.publish(this);
+    default void publish(EventCollection collection) {
+        collection.publish(this);
     }
 
-    default void publish(AggregateRoot a) {
-        publish(a.getEvents());
+    default void publish(AggregateRoot aggregate) {
+        publish(aggregate.getEvents());
     }
 }

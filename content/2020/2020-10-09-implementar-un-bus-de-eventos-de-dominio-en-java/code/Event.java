@@ -1,20 +1,24 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.kernel.domainevent;
+package io.github.picodotdev.blogbitix.eventbus.domain.shared.eventbus;
 
 ...
 
-public class DomainEvent {
+public class Event {
 
-    private DomainEventId id;
+    private EventId id;
     private LocalDateTime date;
     private Map<String, Object> data;
 
-    public DomainEvent(Map<String, Object> data) {
-        this.id = new DomainEventId(UUID.randomUUID());
+    public Event() {
+        this(Collections.emptyMap());
+    }
+
+    public Event(Map<String, Object> data) {
+        this.id = new EventId(UUID.randomUUID());
         this.date = LocalDateTime.now(ZoneId.of("UTC"));
         this.data = data;
     }
 
-    public DomainEventId getId() {
+    public EventId getId() {
         return id;
     }
 

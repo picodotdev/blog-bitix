@@ -1,8 +1,8 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.kernel.aggregate;
+package io.github.picodotdev.blogbitix.eventbus.domain.shared.aggregateroot;
 
-..
+...
 
 public interface AggregateRoot {
 
-    DomainEventCollection getEvents();
+    EventCollection getEvents();
 }

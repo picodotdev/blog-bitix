@@ -2,12 +2,13 @@ package io.github.picodotdev.blogbitix.eventbus.infrastructure;
 
 ...
 
+@Component
 public class MemoryOrderRepository implements OrderRepository {
 
-    private List<Order> orders;
+    private Map<OrderId, Order> orders;
 
     public MemoryOrderRepository() {
-        this.orders = new ArrayList<>();
+        this.orders = new HashMap<>();
     }
 
     @Override
@@ -17,11 +18,16 @@ public class MemoryOrderRepository implements OrderRepository {
 
     @Override
     public void save(Order order) {
-        orders.add(order);
+        orders.put(order.getId(), order);
     }
 
     @Override
-    public List<Order> findAll() {
-        return orders;
+    public Order findById(OrderId id) {
+        return orders.get(id);
+    }
+
+    @Override
+    public Collection<Order> findAll() {
+        return orders.values();
     }
 }

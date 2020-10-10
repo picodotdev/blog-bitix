@@ -1,13 +1,16 @@
-package io.github.picodotdev.blogbitix.eventbus.domain.purchase;
+package io.github.picodotdev.blogbitix.eventbus.domain.order;
 
 ...
 
-public class OrderCreated extends DomainEvent {
+public class OrderCreated extends Event {
 
     private OrderId orderId;
-    private boolean oversold;
 
-    public OrderCreated(OrderId orderId, boolean oversold) {
-        super(Map.of("orderId", orderId, "oversold", oversold));
+    public OrderCreated(OrderId orderId) {
+        this.orderId = orderId;
+    }
+
+    public OrderId getOrderId() {
+        return orderId;
     }
 }
