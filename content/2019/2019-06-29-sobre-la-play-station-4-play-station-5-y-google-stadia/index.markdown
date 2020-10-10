@@ -48,6 +48,8 @@ Entre las noticias que han aparecido sobre la PlayStation 5 es que usará nuevam
 
 Uno de los problemas de lanzar una nueva consola es que hasta pasado una buena cantidad de tiempo no posee un amplio catálogo de juegos y hay que tener en cuenta que los primeros modelos pueden presentar problemas como temperatura y ruido excesivo que hasta pasado un par de años no son en mayor medida resueltos con el modelo _slim_. En el caso de la PS5 al utilizar la misma arquitectura de procesador otra de las características destacadas es la retrocompatibilidad lo que la dotará del mismo catálogo de la PS4 desde mismo momento del lanzamiento, y todos los buenos juegos de la PS4 puedan ser jugados en la PS5.
 
+* [Sobre la generación de consolas PlayStation 5 y Xbox Series X/S antes de que se comercialice y la renovación del hardware de PC][blogbitix-521]
+
 ### Google Stadia, GeForce Now y Amazon Luna
 
 Desde hace bastante tiempo la PlayStation ha sido la consola dominante sobre la [Xbox][xbox] y las varias de [Nintendo][nintendo]. Google ha presentado ya su plataforma de juegos mediante _streaming_ estando disponible a finales del 2019. La ventaja de Stadia es que al estar completamente en la nube no hace falta adquirir hardware, únicamente comprar los juegos con lo que al igual que las consolas se eliminan completamente los problemas de controladores, rendimiento y compatibilidad, dado que se basa en la nube también elimina el tener que descargar pesadas actualizaciones y reducirá sensiblemente los tiempos de carga.

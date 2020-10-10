@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:world-of-warships-legends.jpg"
 imagePost: "image:world-of-warships-legends.jpg"
 tags: ["juegos"]
-series: ["analisis-juegos"]
+series: ["analisis-juegos", "juegos"]
 summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con direfentes estadísticas, capitanes e inspirciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
 ---
 

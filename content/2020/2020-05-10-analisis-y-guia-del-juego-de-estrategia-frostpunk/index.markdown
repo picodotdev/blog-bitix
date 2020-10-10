@@ -12,7 +12,7 @@ promoted: false
 imageHead: "image:Frostpunk.jpg"
 imagePost: "image:Frostpunk.jpg"
 tags: ["juegos"]
-series: ["analisis-juegos"]
+series: ["analisis-juegos", "juegos"]
 summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la Playstation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
 ---
 

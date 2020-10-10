@@ -56,6 +56,8 @@ En el caso de Stadia con mi conexión actual de ADSL no creo que me posibilite j
 
 Si hubiese sabido que los juegos con Wine en GNU/Linux funcionan en lo que probado tan bien quizá en vez de un NUC hubiese evaluado de forma más positiva un ordenador ITX, aún así por el tamaño posiblemente hubiese seguido eligiendo el NUC y la PlayStation. Quizá en un futuro si que opte por un ITX o un equipo del tamaño del NUC pero más destinado a _gaming_ como los de [Zotac][zotac].
 
+* [Sobre la generación de consolas PlayStation 5 y Xbox Series X/S antes de que se comercialice y la renovación del hardware de PC][blogbitix-521]
+
 ### Lista de juegos de PlayStation
 
 * [Juegos PlayStation 4](https://en.wikipedia.org/wiki/List_of_best-selling_PlayStation_4_video_games)
