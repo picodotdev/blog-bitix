@@ -114,7 +114,7 @@ De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teo
     linkids="5df04454342df14dfcc78687544c9d67,fc00596717d15f5b160a896fa5ce565a,00c494ddc45b9304145ac8e2733eb072,82d6a16b683b54c2ab34c1e51f63acfb"
     asins="0321125215,0134434420,0321834577,1787284948" >}}
 
-{{% sourcecode git="blog-ejemplos/tree/master/DomainEventBus" command="./gradlew run" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/EventBus" command="./gradlew run" %}}
 
 {{% reference %}}
 * [A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
