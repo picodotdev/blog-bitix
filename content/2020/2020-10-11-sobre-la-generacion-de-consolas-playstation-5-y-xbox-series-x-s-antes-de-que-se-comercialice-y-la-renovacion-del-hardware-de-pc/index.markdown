@@ -56,9 +56,9 @@ Se ha anunciado que los miembros de la suscripción Plus en el momento de lanzam
 
 {{< image
     gallery="true"
-    image1="image:playstation-5.png" optionsthumb1="200x150" title1="PlayStation 5"
-    image2="image:playstation-5-digital.png" optionsthumb2="200x150" title2="PlayStation 5 Digital"
-    image3="image:playstation-5-family.png" optionsthumb3="200x150" title3="PlayStation 5 Family"
+    image1="image:playstation-5.jpg" optionsthumb1="200x150" title1="PlayStation 5"
+    image2="image:playstation-5-digital.jpg" optionsthumb2="200x150" title2="PlayStation 5 Digital"
+    image3="image:playstation-5-family.jpg" optionsthumb3="200x150" title3="PlayStation 5 Family"
     caption="PlayStation 5" >}}
 
 {{< image
@@ -207,20 +207,20 @@ La estrategia de Microsoft con las Series X/S con dos modelos diferentes en pote
 
 {{< image
     gallery="true"
-    image1="image:xbox-series-x-1.png" optionsthumb1="200x150" title1="Xbox Series X"
-    image2="image:xbox-series-x-2.png" optionsthumb2="200x150" title2="Xbox Series X"
-    image3="image:xbox-series-x-3.png" optionsthumb3="200x150" title3="Xbox Series X"
+    image1="image:xbox-series-x-1.jpg" optionsthumb1="200x150" title1="Xbox Series X"
+    image2="image:xbox-series-x-2.jpg" optionsthumb2="200x150" title2="Xbox Series X"
+    image3="image:xbox-series-x-3.jpg" optionsthumb3="200x150" title3="Xbox Series X"
     caption="Xbox Series X" >}}
 {{< image
     gallery="true"
-    image1="image:xbox-series-s-1.png" optionsthumb1="200x150" title1="Xbox Series S"
-    image2="image:xbox-series-s-2.png" optionsthumb2="200x150" title2="Xbox Series S"
+    image1="image:xbox-series-s-1.jpg" optionsthumb1="200x150" title1="Xbox Series S"
+    image2="image:xbox-series-s-2.jpg" optionsthumb2="200x150" title2="Xbox Series S"
     caption="Xbox Series S" >}}
 {{< image
     gallery="true"
-    image1="image:xbox-series-x-controller-1.png" optionsthumb1="200x150" title1="Xbox Series X Controller"
-    image2="image:xbox-series-x-controller-2.png" optionsthumb2="200x150" title2="Xbox Series X Controller"
-    image2="image:xbox-series-s-controller-1.png" optionsthumb2="200x150" title2="Xbox Series S Controller"
+    image1="image:xbox-series-x-controller-1.jpg" optionsthumb1="200x150" title1="Xbox Series X Controller"
+    image2="image:xbox-series-x-controller-2.jpg" optionsthumb2="200x150" title2="Xbox Series X Controller"
+    image2="image:xbox-series-s-controller-1.jpg" optionsthumb2="200x150" title2="Xbox Series S Controller"
     caption="Mandos de las consolas Xbox Series X/S" >}}
 
 {{< image
