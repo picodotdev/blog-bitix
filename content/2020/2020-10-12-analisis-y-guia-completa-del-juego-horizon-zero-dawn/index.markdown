@@ -169,7 +169,7 @@ El juego en su estilo no tiene prácticamente defectos. Simplemente algunos pequ
 
 Encontrar todos los datos de texto requiere utilizar alguna guía para conocer su ubicación ya que durante las misiones es difícil encontrarlos aún explorando detalladamente, algunos están en cierta medida ocultos y solo se encuentra si se buscan activamente.
 
-El fallo más grave que me ha dado el juego es que en algunas pocas ocasiones al realizar un guardado manual se produce un error CVE fatal que llega producir un apagado completo de la consola de forma repentina, en el siguiente reinicio de la consola se inicia un proceso de recuperación.
+El fallo más grave que me ha dado el juego es que en algunas pocas ocasiones al realizar un guardado manual se produce un error CE fatal que llega producir un apagado completo de la consola de forma repentina, en el siguiente reinicio de la consola se inicia un proceso de recuperación.
 
 ### Tutoriales y guías
 
