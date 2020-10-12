@@ -168,7 +168,7 @@ El comando de las misiones estará compuesto de al menos un tipo de soldado dist
 
 En la descripción de la misión se indica el número de enemigos que la compone y especie de esos enemigos, información útil para elegir la clase de los soldados.
 
-### Soldados granadero
+#### Soldados granadero
 
 El granadero es uno de los soldados más importantes ya que con sus lanzagranadas eliminar las coberturas en las que se protegen los enemigos cuando no estamos en modo oculto y los avistamos, aunque las granadas no hagan el suficiente daño para matar a los enemigos una de sus principales misiones es eliminar las coberturas en las que refugian los enemigos lanzando gradas para que el resto de soldados puedan disparar con mayor probabilidad de éxito. Sus cañones también pueden hacer mucho daño a distancias media y corta así como triturar armaduras para que igualmente el resto de soldados de otras clases inflijan más daño. También tiene la habilidad de equipar armaduras, trajes EXO y WAR,  con puntos de armadura con las que el daño recibido es reducido.
 
@@ -195,7 +195,7 @@ El granadero es uno de los soldados más importantes ya que con sus lanzagranada
 {{< youtube
     video="rUl5N9WGTuk" >}}
 
-### Soldados francotirador
+#### Soldados francotirador
 
 Están equipados con un fusil que les permite disparar a largas distancias sin exponerse a disparos de los enemigos, puede hacer mucho daño y con su característica de puntería tener mayor porcentaje de éxito aún cuando los enemigos estén protegidos por coberturas medias o completas. Todas las mejoras de arma que les permitan tener mayor puntería o pequeño mejor porcentaje de crítico les será muy útiles. Las balas trazadoras les vendrá muy bien para aumentarles mucho más su puntería. Al igual que los comandos son empleados para terminar de eliminar a los enemigos una vez que el granadero les ha desprovisto de coberturas y reducido nos cuantos puntos de vida. Tiene habilidades que cada muerte les proporciona una acción adicional con la que eliminar enemigos a los que les quede pocos puntos de vida.
 
@@ -222,7 +222,7 @@ Están equipados con un fusil que les permite disparar a largas distancias sin e
 {{< youtube
     video="db2izydVkpY" >}}
 
-### Soldado especialista
+#### Soldado especialista
 
 Los especialistas aparte de poder disparar con su fusil tiene la misión de piratear enemigos robóticos y hacer de médicos, con los _gremblins_ con los que van acompañados puede hacerlo a distancia. Su mejor estadística en pirateo permite tener mayor éxito. Son muy útiles para desactivar o tomar el control de enemigos robóticos ya sean _mechs_ o torretas de forma temporal, en vez de tener que destruirlos en una primera instancia, el tomar el control de un enemigo robótico permite eliminar un enemigo y hace que este sea el que reciba el daño cuando actúen las unidades enemigas.
 
@@ -249,7 +249,7 @@ Los especialistas aparte de poder disparar con su fusil tiene la misión de pira
 {{< youtube
     video="2rc1JFZlVcY" >}}
 
-### Soldado comando
+#### Soldado comando
 
 Los comandos por defecto van equipados con una escopeta y una espada lo que les permite hacer mucho daño a corta distancia o cuerpo a cuerpo. Es unidad que junto con algunas de sus habilidades es empleada para terminar de matar a los enemigos heridos por los granaderos y especialistas a los que les queden o tengan pocos puntos de vida. También tienen habilidades para que dada muerte a un enemigo seguir actuando y eliminar a más de uno en el mismo turno
 
@@ -276,7 +276,7 @@ Los comandos por defecto van equipados con una escopeta y una espada lo que les 
 {{< youtube
     video="9XHqpjHwlSI" >}}
 
-### Soldado psi
+#### Soldado psi
 
 Son una unidad adicional que se desarrolla con el laboratorio psi, no es imprescindible para finalizar el juego.
 
@@ -309,7 +309,7 @@ Al iniciar un combate, al entrar en la batalla y en varios pasos de la misma con
 
 En el modo de juego difícil y hombre de hierro supone una dificultad adicional ya que el guardado y progreso se realiza automáticamente por lo que una mala decisión o estrategia quizá suponga un error fatal para el resto de la campaña que de termine su fracaso.
 
-### XCOM Wiki 
+### Enciclopedia de XCOM
 
 En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están recogidos con detalle las armas, armaduras, habilidades de de las clases de soldados así como armas, armaduras y elementos de utilidad. Esta información resulta muy útil para elegir la que consideremos la mejor estrategia o revisar si la que utilizamos no es del todo efectiva.
 
