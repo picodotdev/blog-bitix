@@ -12,7 +12,6 @@ promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
 summary: "Un bus de comandos y consultas permite separar en una aplicación las operaciones de modificación y operaciones de obtención de datos. Esto permite si es requerido dos bases de datos diferentes utilizando CQRS, una base de datos para operaciones de modificación y una base de datos para operaciones de consulta. Aún teniendo solo una base de datos para ambas operaciones un bus de comandos y eventos permite independizar a la aplicación de las interfaces con las que se use ya sea REST, GraphQL, línea de comandos o mensajería como RabbitQM y crear manejadores de operaciones siguiendo los principios SOLID de diseño."
-draft: true
 ---
 
 {{% post %}}
