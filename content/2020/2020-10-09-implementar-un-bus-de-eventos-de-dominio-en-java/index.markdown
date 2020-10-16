@@ -23,7 +23,7 @@ En la teoría de _Domain Driven Design_ o DDD se mencionan los eventos de domini
 
 En la teoría de _Domain Driven Design_ esta forma de comunicación es útil para comunicar diferentes _bounded context_. Un _bounded context_ se encarga de una área funcional de la aplicación con alta cohesión y su propio lenguaje de dominio. El lenguaje de dominio son los conceptos que aplican en un _bounded context_ y cuales son las propiedades relevantes dentro del mismo, el término usuario en un supuesto _bounded context_ de registro y adminisitración de la cuenta es probable no sea el mismo que en el _bounded context_ de órdenes de compra, en el primero el usuario puede tener varias direcciones y en el segundo solo interesa una, por otro lado en el _bounded context_ de inventario ni siquiera exista el término usuario o signifique otra cosa totalmente diferente.
 
-Los _bounded context_ y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios _bounded context_ con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos.
+Los _bounded context_ y eventos de dominio se adaptan especialmente bien a las aplicaciones con arquitectura basada en microservicios. Cada microservicio puede ser uno o varios _bounded context_ con un área funcional bien definida y estos comunicarse mediante eventos con eventos de dominio. La forma de emitir estos eventos de dominio es con un bus de eventos. La [implementación un bus de comandos y consultas][blogbitix-523] para [CQRS][wikipedia-cqrs] es muy similar a la implementación de un bus de eventos.
 
 {{< tableofcontents >}}
 
