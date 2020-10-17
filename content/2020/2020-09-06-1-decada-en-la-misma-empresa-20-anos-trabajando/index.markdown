@@ -4,6 +4,7 @@ type: "post"
 title: "1 década en la misma empresa, 20 años trabajando"
 url: "/2020/09/1-decada-en-la-misma-empresa-20-anos-trabajando/"
 date: 2020-09-06T09:00:00+02:00
+updated: 2020-10-17T23:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -80,6 +81,8 @@ Quizá no en las mismas condiciones pero en esta época oportunidades no faltan 
 El trabajo técnico en la informática puede parecer que sea tratar con ordenadores y sistemas informáticos, la realidad es que la mayor parte es tratar con personas. Durante estos 20 años he coincidido con muchas personas, aunque las ha habido por fortuna las malas experiencias han sido la excepción de todos modos al menos en estos casos por mi parte han sido lo suficientes para mantener una relación profesional, también ha habido algunas personas admirables.
 
 20 años laborales y 10 años en una misma empresa dan para mucho, cosas buenas, malas, algunas para olvidar, otras para esperar que no se repitan pero sobre todo para tener más claro lo que busco profesionalmente. No se que va a ser de los 30 restantes porque no se que va a ser ni del siguiente en el que además hay una pandemia mundial. Lo que sí sé es que si me voy de una empresa no voy a considerar los maravillosos compañeros que he tenido, el montón de cosas que he aprendido o lo a gusto que he estado entre las típicas cosas de tópicos que se comentan en los mensajes de despedida... si no porque lo que busco profesionalmente no lo tengo unido a que 10 años son muchos años, nada nuevo. Y ahora tengo más claro algunas cosas que me gustaría tener, lo difícil es encontrar al mismo tiempo juntas las más importantes.
+
+20 años laborales y 10 años en una misma empresa, pero en momentos me veo reflejado en algunos aspectos este artículo [How to waste your career, one comfortable year at a time](https://apoorvagovind.substack.com/p/how-to-waste-your-career-one-comfortable), si no he cambiado durante este tiempo de empresa es porque, aparte del salario y condiciones laborales, el proyecto tiene el potencial de ofrecer muchas oportunidades incluído el aspecto de las tecnologías. Como dice el artículo muchos años en una misma empresa puede ser indicativo de conformismo, lo contrario uno, dos o tres años como mucho en cada trabajo puede ser falta de resiliencia y constancia cuando las cosas no van bien.
 
 Si algo de lo que estoy contento de estos 10 años es a estar en lo bueno y en lo malo, no abandonar fácil aunque no se le dé valor en muchos casos. Algunos motivos encuentro para ello... por las condiciones económicas seguro que alguno de mis hermanos me dirían que sería estúpido si lo hiciese... Después del salario en mi caso de lo que más valoro es el aspecto técnico y lo que tengo la mayor parte del tiempo dista bastante de lo que deseo. Lo que no estoy contento es a no defender más mi opinión con argumentos por no confrontar o por no saber defendela, en algunos casos mi opinión o sesgos no será mejor pero en otros puede que sí y el tiempo también muestra de flaquezas de la opinión y sesgos de otros. También de no haber aportado todo lo que podría, aun así no he dejado de seguir aprendiendo cosas nuevas o profundizando según mis intereses, quizá algún día surja la oportunidad.
 
