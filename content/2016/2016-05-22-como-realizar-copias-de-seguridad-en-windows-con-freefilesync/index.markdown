@@ -19,13 +19,25 @@ summary: "Realizar copias de seguridad cada cierta frecuencia nos salvará de pe
 
 Realizar copias de seguridad es algo imprescindible si no queremos perder los datos el día que el sistema falle. No sabemos cuando alguna de las piezas de las que se compone un sistema fallará pero es seguro que un día fallará, puede que sean en meses, años, un lustro o una década. El fallo puede producirse por múltiples motivos relacionados con el hardware en el que algún componente físico se ha estropeado por desgaste, un pico de tensión, un golpe o caída como el disco duro, SSD, la placa base, la pantalla de un portátil, la fuente de alimentación, la memoria, el microprocesador o puede ser que el software como el sistema operativo que no se inicia por una actualización problemática, algún controlador de dispositivo produce algún error fatal en forma de <abbr title="Blue Screen of Dead, Patalla azúl de la muerte">BSOD</abbr>, algún virus que impide iniciar el sistema, ha cifrado los archivos o ha corrompido el sistema haciendo que no sea usable.
 
-Nuestros datos en forma de documentos, fotos, música o vídeos son más importantes que el equipo estropeado ya que este se se puede reemplazar pero recuperar los datos será mas complicado o imposible dependiendo del fallo si no hemos realizado copias de seguridad. En GNU/Linux hay múltiples programas y formas de hacer las copias de seguridad, incrementales, comprimidas, cifradas, ... pero para un uso personal [hacer una copia de los archivos y mantenerla sincronizada con rsync][elblogdepicodev-156] es más que suficiente. En Windows un programa es [FreeFileSync][freefilesync] equivalente a _rsync_ disponible en GNU/Linux.
+Nuestros datos en forma de documentos, fotos, música o vídeos son más importantes que el equipo estropeado ya que este se se puede reemplazar pero recuperar los datos será mas complicado o imposible dependiendo del fallo si no hemos realizado copias de seguridad. En GNU/Linux hay múltiples programas y formas de hacer las copias de seguridad, incrementales, comprimidas, cifradas, ... Un programa es [FreeFileSync][freefilesync] que está disponible para los sistemas operativos mayoritarios.
+
+Las copias de seguridad deben guardase en un dispositivo diferente al origen ya que en caso de fallo del hardware origen la copia de seguridad no se podría recuperar, la función de la copia de seguridad es tener un respaldo de los datos en caso de una pérdida de los datos en el dispositivo origen, ya sea por un fallo en el hardware o por la eliminación accidental de los datos por software. Para mayor seguridad dependiendo de la importancia de los datos incluso es recomendable hacer copias de seguridad por duplicado en varios discos. En los datos más críticos y para proteger de otras forma de pérdidas de datos como un incendio o robo incluso almacenar las copias de seguridad en diferentes ubicaciones. Las copias de seguridad deben realizarse de forma periódica ya sea manualmente o con herramientas que permiten realizar las copias de seguridad de forma automatizada.
+
+### Discos duros externos para hacer copia de seguridad de datos
+
+Una opción sencilla sin más complicaciones de opciones más avanzadas es un disco duro externo USB de 2.5 pulgadas, estos discos son pequeños además de portables, en diferentes capacidades según la necesidad llegando incluso a 4 TB y a unos precios muy asequibles. Una buena opción son estos discos duros externos de 2.5" con conexión 3.0 USB en capacidades de [1 TB](https://amzn.to/31h8F7y), [2 TB](https://amzn.to/3j7ZAUY), [3 TB](https://amzn.to/346DnSW) y [4 TB](https://amzn.to/358X8Zf). Hay que tener en cuenta que la copia de seguridad requiere al menos tanto espacio como los datos originales.
+
+{{< amazon
+    linkids="b3935c0c943be983bce3ceb803928e62,6abae8dc406222e745a56e1405eb282b,54661b04f99360148ebed3b5528fa2ed,3f06bc3776d19ba91f5ab5660781d247"
+    asins="B06VVS7S94,B06W55K9N6,B06XG892ZH,B0713WPGLL" >}}
+
+### Utilizar el programa FreeFileSync para hace copias de seguridad
+
+FreeFileSync tiene una licencia de software libre y está disponible tanto para [Windows][windows], [GNU][gnu]/[Linux][linux] y [macOS][macos]. Ofrece una interfaz gráfica y su uso no es complicado. Primero deberemos seleccionar los directorios de los que hacer copia de seguridad y para cada uno de ellos el directorio destino en el que se guardará la copia de seguridad, FreeFileSync llama al origen y destino izquierdo y derecho ya que los presenta así en la interfaz y con la característica que cualquiera de ellos puede actuar como origen y destino. Habitualmente el directorio origen será uno del disco duro del sistema y el directorio destino un directorio de un disco duro o memoria USB externa.
 
 {{< image
     gallery="true"
     image1="image:freefilesync.png" optionsthumb1="300x200" title1="FreeFileSync" >}}
-
-FreeFileSync tiene una licencia de software libre y está disponible tanto para [Windows][windows], [GNU][gnu]/[Linux][linux] y [Mac OS X][macos]. Ofrece una interfaz gráfica y su uso no es complicado. Primero deberemos seleccionar los directorios de los que hacer copia de seguridad y para cada uno de ellos el directorio destino en el que se guardará la copia de seguridad, FreeFileSync llama al origen y destino izquierdo y derecho ya que los presenta así en la interfaz y con la característica que cualquiera de ellos puede actuar como origen y destino. Habitualmente el directorio origen será uno del disco duro del sistema y el directorio destino un directorio de un disco duro o memoria USB externa. La copia de seguridad debería guardase en un dispositivo diferente al origen.
 
 Después de indicar orígenes y destinos debemos seleccionar el tipo sincronización entre ambos directorios. Las opciones que nos ofrece de sincronización son:
 
@@ -69,8 +81,8 @@ Las opciones que ofrece son bastantes y seguro que cubren la mayoría de casos d
 La ventaja realizar un copia de los archivos directamente sin comprimir o cifrar es que no necesitaremos ningún programa adicional para acceder a ellos en caso de necesidad. Otros programas de copias de seguridad son capaces de guardar los datos cifrados y comprimidos pero para recuperar los datos necesitaremos esos programas. Dependiendo de los requerimientos para la copia de seguridad podemos [cifrar la unidad USB externa con BitLocker en Windows](http://windows.microsoft.com/es-es/windows/protect-files-bitlocker-drive-encryption#1TC=windows-8) y [cifrar la unidad USB externa con dm-crypt y LUKS en GNU/Linux][blogbitix-128].
 
 {{< reference >}}
-* [Copia de seguridad con rsync][elblogdepicodev-156]
 * [Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux][blogbitix-128]
+* [Copia de seguridad con rsync][elblogdepicodev-156]
 * [Cifrar archivos con EncFS en GNU/Linux][blogbitix-126]
 {{< /reference >}}
 
