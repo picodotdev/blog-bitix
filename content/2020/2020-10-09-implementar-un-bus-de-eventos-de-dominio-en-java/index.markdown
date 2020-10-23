@@ -44,6 +44,8 @@ Una solución es utilizar únicamente la base de datos. Los eventos se guardan e
 
 Para resolver el problema de eventos duplicados se suele optar por hacer el tratamiento del evento idempotente o deduplicando de eventos. La deduplicación se suele hacer asignando a cada evento un identificador único y luego en la parte receptora comprobar si ese evento ya ha sido procesado.
 
+* [Cómo deduplicar eventos de dominio][blogbitix-524]
+
 ### Consistencia eventual
 
 Otro problema es que todos los cambios que origina una petición no se aplican al mismo tiempo, un _bounded context_ o microservicio hace los cambios de su ámbito y emite un evento que origina otros cambios en otras entidades, _bounded context_ o microservicios. Esto hace que el sistema por un tiempo más o menos largo está en un estado inconsistente. Pero en un sistema distribuido si es posible esto es más sencillo que utilizar un transacción en dos fases de dos sistemas diferentes.
