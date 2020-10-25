@@ -60,7 +60,7 @@ Las sentencias de control son los elementos básicos con los que se construyen l
 
 En Java la herramienta básica que se necesita para compilar programas y ejecutarlos es un JDK que incluye el compilador que transforma el código fuente en _bytecode_ independiente de la arquitectura del procesador de la máquina ya sea x86, Arm, PowerPC o RISC-V y sistema operativo [Windows][windows], [GNU][gnu]/[Linux][linux], [macOS][macos] o [FreeBSD][freebsd]. 
 
-El programa compilador de Java es _javac_ que informa de errores de compilación como referencias a variables, métodos o clases que no existen o de uso o asignación de tipos incorrectos entre otros y el intérprete del _bytecode_ Java que transforma en tiempo de ejecución el _bytecode_ en código máquina para su ejecución e incluye [el recolector de basura][blogbitix-463] que exime al programador de liberar explícitamente la memoria reservada.
+El programa compilador de Java es [javac][javac-command] que informa de errores de compilación como referencias a variables, métodos o clases que no existen o de uso o asignación de tipos incorrectos entre otros y el intérprete del _bytecode_ Java que transforma en tiempo de ejecución el _bytecode_ en código máquina para su ejecución e incluye [el recolector de basura][blogbitix-463] que exime al programador de liberar explícitamente la memoria reservada.
 
 El comando para compilar el programa _Hola Mundo_ es el siguiente. En sus parámetros se indica el directorio donde se encuentra el código fuente y el directorio de salida para los archivos compilados a _bytecode_.
 
@@ -125,7 +125,7 @@ Además, Gradle permite crear la estructura básica de directorios y archivos ne
 
 ### Ejecutar un programa Java desde el código fuente
 
-Para simplificar el primer acercamiento al lenguaje Java desde la versión 11 de Java se ofrece la posibilidad de ejecutar un archivo de código fuente Java sin necesidad de compilar el código previamente de forma explícita. El propio comando _java_ ofrece esta posibilidad. La limitación está en que el programa Java ha de estar contenido en un único archivo de código fuente aunque con la posiblidad de contener múltiples clases en el mismo archivo y no puede tener dependencias de librerías de terceros.
+Para simplificar el primer acercamiento al lenguaje Java desde la versión 11 de Java se ofrece la posibilidad de ejecutar un archivo de código fuente Java sin necesidad de compilar el código previamente de forma explícita. El propio comando [java][java-command] ofrece esta posibilidad. La limitación está en que el programa Java ha de estar contenido en un único archivo de código fuente aunque con la posiblidad de contener múltiples clases en el mismo archivo y no puede tener dependencias de librerías de terceros.
 
 {{< code file="java-run.sh" language="bash" options="" >}}
 

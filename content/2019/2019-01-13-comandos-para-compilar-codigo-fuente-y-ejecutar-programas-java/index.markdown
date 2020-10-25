@@ -19,7 +19,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" >}}
 
-Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos [javac](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html), [java](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html) y [jar](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jar.html) en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como [Maven][maven] y [Gradle][gradle], había que descargar manualmente las librerías de dependencias en forma de archivos _jar_ que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.
+Aún recuerdo cuando empecé a programar con el lenguaje Java sobre el año 1997 que la compilación y ejecución del código la hacía manualmente con los comandos [javac][javac-command] [java][java-command] y [jar][jar-command] en un máquina Intel Pentium a 120 Mhz con tan solo 8 MiB, más tarde 32 MiB, con Windows 95 y Java 1.2, momento en el que ni siquiera había un IDE ni las herramientas de construcción modernas como [Maven][maven] y [Gradle][gradle], había que descargar manualmente las librerías de dependencias en forma de archivos _jar_ que se requiriesen. Luego con JBuilder como IDE este se encargaba de realizar la compilación y ejecución y no hacía falta utilizar estos comandos directamente.
 
 Ahora con herramientas como Gradle además de compilar y ejecutar el programa incluso las dependencias son descargadas de forma automática de repositorios donde se ubican versionadas incluso de forma transitiva, descargando las dependencias de las dependencias.
 
@@ -27,13 +27,15 @@ Usar estos dos comandos directamente ya no es necesario pero como curiosidad com
 
 {{< tableofcontents >}}
 
-### Estructura de directorios de un proyecto y programa Hola Mundo
+### Estructura de directorios de un proyecto
 
 Las herramientas de construcción Maven y Gradle siguen una convención en la estructura de directorios y archivos para los proyectos Java. Esta convención proporciona que la estructuta de directorios sea la misma en todos los proyectos Java y hace innecesaria una configuración específica para cada proyecto lo que hace a los proyectos más sencillos y fáciles de empezar. El código fuente se ubica en el directorio _src/main/java_ y las clases compiladas se generan en el directorio _target_ o _build_.
 
 {{< code file="tree.sh" language="bash" options="" >}}
 
-El siguiente es el programa mínimo de Java similar al _Hola Mundo_ por el que se suele empezar a programar en cualquier lenguaje de programación, al ejecutarse simplemente emite un mensaje en la consola.
+### El programa Hola Mundo en Java
+
+El siguiente es el programa mínimo de Java similar al _Hola Mundo_ por el que se suele empezar a programar en cualquier lenguaje de programación, al ejecutarse simplemente emite un mensaje en la consola. El método _main_ es un método estático, con un ámbito de visibilidad público, está dentro de una clase, recibe un _array_ de _strings_ con los argumentos con los que ha invocado su ejecución y retorna _void_. El método _System.out.println()_ recibe un _string_ y lo emite en la salida estándar del programa.
 
 {{< code file="Main.java" language="java" options="" >}}
 
