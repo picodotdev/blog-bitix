@@ -37,7 +37,7 @@ La instalación de SDKMAN consiste en ejecutar los siguientes comandos, el prime
 
 SDKMAN solo está disponible de forma nativa para los sistemas UNIX entre ellos GNU/Linux pero no Windows dado que está basado en _scripts_ de bash. Para Windows es necesario utilizar _Windows Linux Subsystem_ o WLS, Cygwin o MSYS+MinGW.
 
-{{< code file="install.sh" language="bash" options="" >}}
+{{< code file="sdk-install.sh" language="bash" options="" >}}
 
 ### Uso
 
@@ -45,11 +45,11 @@ La utilidad de línea de comandos SDKMAN es _sdk_, una utilidad sencilla con var
 
 El término _candidate_ hace referencia al paquete de software, puede ser un JDK o un SDK. El término _versión_ indica la versión afectada por el comando del paquete de software _candidate_ previamente indicado. Si estas notas no son suficientes hay una [guía de uso](https://sdkman.io/usage).
 
-{{< code file="usage.sh" language="bash" options="" >}}
+{{< code file="sdk-usage.sh" language="bash" options="" >}}
 
 En la página de SDKMAM hay una [lista de JDK](https://sdkman.io/jdks) y [SDK](https://sdkman.io/sdks) disponibles en este gestor de software. Los comandos más habituales son _list_ para listar candidatos y versiones disponibles, _install_ para instalar software, _upgrade_ para actualizar a la última versión el candidato indicado o todos los instalados si no se indica ninguno, _use_ para usar una versión específica de un candidato durante la sesión de la terminal, _default_ para establecer la versión por defecto de un candidato y _uninstall_ para desinstalar un candidato y versión. En el siguiente ejemplo se muestra como instalar varias versiones del JDK, usarlas y cambiar entre versiones.
 
-{{< code file="commands.sh" language="bash" options="" >}}
+{{< code file="sdk-commands.sh" language="bash" options="" >}}
 
 En la [distribución inmutable Fedora Silverblue][blogbitix-483] esta herramienta es especialmente útil ya que todo el software que instala lo hace en la carpeta personal del usuario, ni pedir permisos de administrador del sistema para instalar o desinstalar candidatos.
 

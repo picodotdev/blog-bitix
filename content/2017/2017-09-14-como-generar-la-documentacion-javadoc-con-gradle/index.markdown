@@ -17,7 +17,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" >}}
 
-Habiendo explicado [que es la herramienta Javadoc][blogbitix-259], y en otros artículos [como crear taglets][blogbitix-261] para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado [como cambiar los estilos que se usan por defecto en el Javadoc][blogbitix-262] para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación _javadoc_ usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación _javadoc_ con [Gradle][gradle].
+Habiendo explicado [qué es la herramienta Javadoc][blogbitix-259], y en otros artículos [como crear taglets][blogbitix-261] para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado [como cambiar los estilos que se usan por defecto en el Javadoc][blogbitix-262] para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación _javadoc_ usando la herramienta de construcción que usemos. En este artículo muestro como generar la documentación _javadoc_ con [Gradle][gradle].
 
 Lo primero es incluir en el proyecto el _plugin_ de java. Con el _plugin_ incluido se añade una tarea con la que generar la documentación _javadoc_.
 
