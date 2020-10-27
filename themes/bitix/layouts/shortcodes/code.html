@@ -2,8 +2,11 @@
 {{ $resource := .Page.Resources.GetMatch $file }}
 {{- if eq $resource nil -}}{{- errorf "Resource not found '%s'" $file -}}{{- end -}}
 {{ $content := $resource.Content }}
-{{- if eq (len (findRE "\n" $content)) 0 -}}
+{{ $lines := len (findRE "\n" $content) }}
+{{- if eq $lines 0 -}}
     {{ $content = print $content "\n\n" }}
+{{- else if eq $lines 1 -}}
+    {{ $content = print $content "\n" }}
 {{- end -}}
 {{ $content := highlight $content .Params.language .Params.options | }}
 {{ $content := replaceRE "[ ]{4}" "&nbsp;&nbsp;&nbsp;&nbsp;" $content }}

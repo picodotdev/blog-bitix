@@ -1,0 +1,1 @@
+$ sudo pacman -U https://archive.archlinux.org/packages/n/networkmanager/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz
