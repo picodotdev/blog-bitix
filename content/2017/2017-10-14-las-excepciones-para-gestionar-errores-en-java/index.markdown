@@ -22,7 +22,7 @@ En la ejecución de los programas se pueden producir numerosas condiciones de er
 
 En la documentación Javadoc de cada clase y utilizando la asistencia de código de los entornos integrados de desarrollo al usar un método es posible conocer que excepciones _checked_ lanza, el saber que excepciones lanza un método permite añadir el código necesario para tratar cada una de ellas de forma adecuada o lanzarlas para que el método invocante las trate.
 
-### Qué son las excepciones en Java
+### Qué son las excepciones de Java
 
 Las excepciones son un mecanismo para capturar y generar errores en un programa en tiempo de ejecución. Son una de las [formas de gestionar errores][blogbitix-519] como alternativa al retorno de valores especiales, otra forma de gestionar errores alternativa a las excepciones son [gestionar errores con la clase Either][blogbitix-319] de [Vavr][vavr].
 
@@ -38,7 +38,7 @@ Las excepciones que heredan de _RuntimeExcepcion_ también se les conoce como _u
 
 Las excepciones que heredan de _Error_ son empleadas para casos en los que se han agotado recursos del sistema como la memoria o condiciones de error en el sistema que generalmente impiden el correcto funcionamiento del programa y de difícil tratamiento salvo terminar la ejecución.
 
-### Cuáles son las excepciones más comunes de Java
+### Excepciones comunes de Java
 
 En la colección de clases de la API de Java se incluyen muchas excepciones, en la documentación Javadoc como en el resto de clases incluyen una descripción con la condición de error que indican. Algunas de las excepciones más comunes de Java son:
 
