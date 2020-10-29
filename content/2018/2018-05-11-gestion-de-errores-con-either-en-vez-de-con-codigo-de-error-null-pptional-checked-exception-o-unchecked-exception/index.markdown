@@ -37,9 +37,9 @@ En vez de retornar un _Either_ en un método usando Vavr se puede utilizar la cl
 {{< sourcecode git="blog-ejemplos/tree/master/JavaException" command="./gradlew run" >}}
 
 {{< reference >}}
-* [Las excepciones del lenguaje Java][blogbitix-270]
+* [Las excepciones para gestionar errores en Java][blogbitix-270]
 * [Java Without If](http://ashtonkemerling.com/blog/2017/01/26/java-without-if/)
-* [Either Documentation](http://www.vavr.io/vavr-docs/#_either)
+* [Either Documentation](https://www.vavr.io/vavr-docs/#_either)
 {{< /reference >}}
 
 {{% /post %}}

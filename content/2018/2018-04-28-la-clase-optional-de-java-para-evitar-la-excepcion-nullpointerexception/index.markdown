@@ -29,7 +29,7 @@ Usar un objeto _Optional_ advierte al programador de que la referencia que conti
 Hay algunos métodos más en la clase _Optional_ con algunas funcionalidades adicionales que hace uso de las nuevas capacidades funcionales del lenguaje como convertir un _Optional_ a un [Stream](javadoc10:java/util/stream/Stream.html).
 
 {{< reference >}}
-* [Las excepciones del lenguaje Java][blogbitix-270]
+* [Las excepciones para gestionar errores en Java][blogbitix-270]
 * [The $1 Solution to Avoid the Null Pointer Exception](https://dzone.com/articles/one-dollar-solution-to-avoid-null-pointer-exceptio)
 {{< /reference >}}
 

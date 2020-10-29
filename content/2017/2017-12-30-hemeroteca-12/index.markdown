@@ -58,7 +58,7 @@ Este [año 2017 he escrito los artículos][blogbitix-section-2017] y este semest
 * [Evitar niveles de anidación de sentencias condicionales con guard clauses][blogbitix-267]
 * [Ejemplo con el cliente HTTP/2 de Java][blogbitix-268]
 * [Obtener el mínimo o máximo de dos, una lista o stream de valores en Java][blogbitix-269]
-* [Las excepciones del lenguaje Java][blogbitix-270]
+* [Las excepciones para gestionar errores en Java][blogbitix-270]
 * [Obtener información de la pila de las excepciones][blogbitix-271]
 * [Implementar funcionalidades comunes en Java con la librería Lombok][blogbitix-272]
 * [Visualizar datos y generar gráficas en Java con JFreeChart][blogbitix-273]
