@@ -4,6 +4,7 @@ type: "post"
 title: "Cómo encontrar las mejores ofertas de juegos para consola y PC"
 url: "/2020/11/como-encontrar-las-mejores-ofertas-de-juegos-para-consola-y-pc/"
 date: 2020-11-01T00:00:00+01:00
+updated: 2020-11-01T02:00:00+01:00
 language: "es"
 rss: true
 sharing: true
