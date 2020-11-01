@@ -4,7 +4,7 @@ type: "post"
 title: "Descargar e instalar Windows 10 paso a paso desde cero"
 url: "/2017/05/descargar-e-instalar-windows-10-paso-a-paso-desde-cero/"
 date: 2017-05-09T22:30:00+02:00
-updated: 2020-10-10T13:30:00+02:00
+updated: 2020-11-01T12:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:windows-10-wallpaper.jpg"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "planeta-codigo", "software", "windows"]
-summary: "Un virus, el _bloatware_ preinstalado en muchos portátiles o tras instalar y desinstalar programas en Windows puede ocasionar que el equipo sea lento, se muestren mensajes de error o un virus cifre los archivos personales. En estos casos una solución habitual sencilla, rápida y fiable de volver a usar con normalidad el equipo es reinstalar Windows 10 desde cero. No es complicado pero para un usuario con pocos conocimientos de informática no es una tarea sencilla. En este artículo explicaré como instalar paso a paso y desde cero el sistema operativo Windows 10."
+summary: "Un virus, el _bloatware_ preinstalado en muchos portátiles o tras instalar y desinstalar programas en Windows puede ocasionar que el equipo sea lento, se muestren mensajes de error o un virus cifre los archivos personales. En estos casos una solución habitual sencilla, rápida y fiable de volver a usar con normalidad el equipo es reinstalar Windows 10 desde cero. No es complicado pero para un usuario con pocos conocimientos de informática no es una tarea sencilla. En este artículo explico cómo descargar gratis e instalar paso a paso y desde cero el sistema operativo Windows 10."
 ---
 
 {{% post %}}
@@ -57,9 +57,9 @@ Una vez que sabes que el equipo cumple con los requisitos mínimos hay que hacer
     image1="image:freefilesync.png" optionsthumb1="200x150" title1="Realizar copia de seguridad con FreeFileSync"
     caption="Realizar copia de seguridad con FreeFileSync" >}}
 
-### Descargar Windows 10
+### Cómo descargar Windows 10 gratis
 
-En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Con Windows 10 la propia Microsoft ofrece mediante descarga directa la imagen ISO desde su propia página y una herramienta para la creación del medio USB o DVD. Basta con [descargar el medio de instalación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendoo a la página de descarga con un navegador web, el medio de instalación incluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_.
+En versiones anteriores de Windows este debía buscarse en las redes de compartición de archivos o P2P como torrent. Es la propia Microsoft la que ofrece mediante descarga directa la imagen ISO de Windows 10 gratis desde su propia página y una herramienta para la creación del medio USB o DVD desde el que iniciar la instalación. Basta con [descargar el medio de instalación de Windows 10](https://www.microsoft.com/es-es/software-download/windows10) al ordenador accediendo a la página de descarga con un navegador web, el medio de instalación incluye todas las versiones de Windows, la _Home_, _Pro_ y _Pro for Workstations_. Con una buena conexión a internet la descarga es rápida, no tarda más de unos pocos minutos.
 
 ### Creación del medio de instalación
 
@@ -177,11 +177,11 @@ Después de los pasos de configuración Windows 10 prepara el sistema para el pr
     image3="image:primer-inicio-sesion-windows-10-03.png" optionsthumb3="200x150" title3="Primer inicio de sesión en Windows 10"
     caption="Primer inicio de sesión en Windows 10" >}}
 
-### Usando Windows
+### Usando Windows y qué hacer después de la instalación
 
-Si el equipo ya tenía licencia de de Windows y estaba activado seguramente Windows 10 ya lo reconozca como activado. También es muy probable que Windows 10 sea capaz de reconocer automáticamente todo el hardware que posea en el equipo incluyendo la tarjeta gráfica pasa usar la máxima resolución que ofrezca la pantalla.
+Si el equipo ya tenía licencia de de Windows y estaba activado seguramente Windows 10 ya lo reconozca como activado. También es muy probable que Windows 10 sea capaz de reconocer automáticamente todo el hardware que posea en el equipo incluyendo la tarjeta gráfica pasa usar la máxima resolución que ofrezca la pantalla con lo que si es necesario hay que instalar algún controlador de dispositivo adicional descargándolo de la página oficial del fabricante del producto.
 
-Llegado a este punto Windows 10 ya se puede empezar a usar y quizá instalar el software básico que vayas a utilizar como un paquete ofimático ya sea [Microsoft Office][microsoft-office] o alguna de las mejores [4 alternativas a Microsoft Office][blogbitix-143], un navegador web como [Firefox][firefox] o [Chrome][google-chrome] con el complemento para bloquear publicidad [AdBlockPlus][adblockplus] en vez de usar [Microsoft Edge][microsoft-edge] que está incorporado por defecto.
+Llegado a este punto Windows 10 ya se puede empezar a usar y quizá instalar el software básico y programas que vayas a utilizar como un paquete ofimático ya sea [Microsoft Office][microsoft-office] o alguna de las mejores [4 alternativas a Microsoft Office][blogbitix-143], un navegador web como [Firefox][firefox] o [Chrome][google-chrome] con el complemento para bloquear publicidad [AdBlockPlus][adblockplus] en vez de usar [Microsoft Edge][microsoft-edge] que está incorporado por defecto. No es necesario instalar ningún antivurus ya que Windows 10 ya integra el suyo propio que además es uno de los mejores.
 
 Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al cabo de un tiempo no puedas cambiar algunas opciones de personalización como el fondo del escritorio o temas de las ventanas pero nada importante que impida usarlo. Y en cualquier caso [Windows 10 y Office 2016 siguen siendo tan fáciles de usar sin licencia como siempre][blogbitix-119].
 
@@ -196,9 +196,9 @@ Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al ca
     image2="image:windows-10-05.jpg" optionsthumb2="200x150" title2="Windows 10"
     caption="Windows 10" >}}
 
-#### Comprar licencia y activar Windows 10
+#### Comprar una licencia y activar Windows 10
 
-Pasados unos días después de la instalación ha de activarse con un código de licencia válido, si se deshabilitarán algunas opciones de personalización coo el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
+Instalar y usar Windows 10 es gratuito pero pasados unos días después de la instalación ha de activarse con un código de licencia válido, si no se activa se deshabilitan algunas opciones de personalización como el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
 
 ### Alternativa a Windows con distribuciones GNU/Linux
 
