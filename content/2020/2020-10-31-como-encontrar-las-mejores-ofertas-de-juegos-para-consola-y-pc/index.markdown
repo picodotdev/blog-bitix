@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:the-witcher-3.jpg"
 imagePost: "image:the-witcher-3.jpg"
 tags: ["juegos"]
-summary: "En las diferentes tiendas digitales de venta de juegos cada semana o quincena hay nuevos juegos con importantes descuentos y ofertas, momento ideal para comprarlos a precio reducido aquellos que están en la lista de deseados y bajo seguimiento. Algunas tiendas de juegos envían notificaciones con los juegos en oferta de la lista de favoritos, otras páginas especializadas permiten además hacer un seguimiento del histórico de los precios y también recibir alertas cuando alguno de los juegos bajo seguimiento varía su precio con un descuento durante un periodo de unos días."
+summary: "En las diferentes tiendas digitales de venta de juegos cada semana o quincena hay nuevos juegos con importantes descuentos y ofertas con los que ahorrar, momento ideal para comprarlos a precio reducido aquellos que están en la lista de deseados y bajo seguimiento. Algunas tiendas de juegos envían notificaciones con los juegos en oferta de la lista de favoritos, otras páginas especializadas permiten además hacer un seguimiento del histórico de los precios y también recibir alertas cuando alguno de los juegos bajo seguimiento varía su precio con un descuento durante un periodo de unos días."
 ---
 
 {{% post %}}
