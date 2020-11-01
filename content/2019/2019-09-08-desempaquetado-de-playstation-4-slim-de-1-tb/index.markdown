@@ -76,12 +76,12 @@ Los juegos que tengo apuntados como candidatos a jugar son los siguientes, tendr
 
 ### Mi lista de juegos
 
-La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que posee un buen catálogo de salida y que todos los juegos digitales de la PS4 en principio puedan ser aprovechados en la PS5, así que los juegos digitales no me parece mala idea.
+La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que posee un buen catálogo de salida y que todos los juegos digitales de la PS4 en principio puedan ser aprovechados en la PS5, así que los juegos digitales no me parece mala idea. Después de averiguar [cómo encontrar los juegos en oferta][blogbitix-527] iré comprando según reciba una notificación de los de esta lista.
 
 <ul class="list-columns">
     <li>Watch Dogs 1 y 2</li>
-    <li>Last of us 1 y 2 (*)</li>
-    <li>Grand Theft Auto 5</li>
+    <li>Last of Us 1 y 2 (*)</li>
+    <li>Grand Theft Auto V</li>
     <li>Red Dead Redemtion 2</li>
     <li>Tropico 6</li>
     <li>The Witcher 3</li>
@@ -90,7 +90,6 @@ La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que
     <li>Darkest Dungeon</li>
     <li>XCOM 2</li>
     <li>Divinity: Original Sin 2</li>
-    <li>Pillars Of Eternity</li>
     <li>Dirt Rally 2.0</li>
     <li>Dark Souls</li>
     <li>Hellblade</li>
@@ -99,17 +98,15 @@ La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que
     <li>World of Warships</li>
     <li>World of Tanks</li>
     <li>Fortnite</li>
-    <li>Mafia 3</li>
     <li>Assasins Creed</li>
     <li>FIFA</li>
-    <li>Horizon Zero Down (*)</li>
+    <li>Horizon Zero Dawn (*)</li>
     <li>God of War (*)</li>
     <li>Blodborne (*)</li>
     <li>Far Cry 5</li>
     <li>Fallout 4</li>
     <li>Days Gone (*)</li>
     <li>Uncharted (*)</li>
-    <li>Detroit Become Human</li>
     <li>Metro Exodus</li>
     <li>Lords Of The Fallen</li>
     <li>La Tierra Media: Sombras De Guerra</li>
@@ -120,7 +117,6 @@ La PS5 seguramente ofrezca compatibilidad con los juegos de PS4 lo que hará que
     <li>Until Down (*)</li>
     <li>Rime</li>
     <li>Journey</li>
-    <li>Ori</li>
     <li>Wasteland 3</li>
     <li>Rage 2</li>
     <li>Infamous Second Son</li>

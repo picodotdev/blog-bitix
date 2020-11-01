@@ -54,9 +54,9 @@ La generación de una consola está en torno a 7 años y un PC _gamer_ puede est
 
 ### Precio juegos
 
-Tanto en PC como en consola los se hacen muy frecuentemente ofertas con grandes descuentos que pueden partir del 25% hasta llegar al 90%, y un juego que cuesta 70 € quedarse en 10 € y otros quedarse en 4 €. A 4 € juegos que en su momento de lanzamiento eran de lo mejor que había y que siguen siendo juegazos como Watch Dogs y The Witcher 3.
+Tanto en PC como en consola los se hacen muy frecuentemente ofertas, prácticamente cada semana, con grandes descuentos que pueden partir del 25% hasta llegar al 90%, y un juego que cuesta 70 € quedarse en 10 € y otros quedarse en 4 €. A 4 € juegos que en su momento de lanzamiento eran de lo mejor que había y que siguen siendo juegazos como Watch Dogs y The Witcher 3. Es fácil [encontrar las ofertas de los juegos][blogbitix-527] ya que algunas de las propias tiendas ofrecen crear listas de favoritos y recibir notificaciones, otras páginas especializadas además incluso ofrecen un histórico de los precios.
 
-En el PC con plataformas como [Steam][steam] y [Epic Games][epicgames] quizá algunos juegos se encuentra algo más baratos que en las consolas puede estar en torno a 3-10 € a favor del PC.
+En el PC con plataformas como [Steam][steam] y [Epic Games][epicgames] quizá algunos juegos se encuentra algo más baratos que en las consolas puede estar en torno a 3 y 10 € a favor del PC.
 
 Aún con esto dependiendo del precio del PC puede seguir compensando una consola incluso si se es del tipo de jugador que juega muchos de juegos.
 
@@ -107,7 +107,9 @@ Dependiendo si un juego al que se quiere jugar es exclusivo de esa plataforma es
 
 ### Juegos en streaming
 
-En el futuro es posible que la decisión entre elegir PC y consola se termine y se sustituya por servicios de juegos mediante en _streaming_ que ya están disponibles com [Stadia][google-stadia], [GeForce Now][nvidia-geforce-now] o [PlayStation Now][playstation-now].
+En el futuro es posible que la decisión entre elegir PC y consola se termine y se sustituya por servicios de juegos mediante en _streaming_ que ya están disponibles como [Stadia][google-stadia], [Amazon Luna][amazon-luna], [GeForce Now][nvidia-geforce-now] o [PlayStation Now][playstation-now].
+
+* [Sobre la PlayStation 4, PlayStation 5 y Google Stadia][blogbitix-417]
 
 Junto con un PC muy modesto y barato e incluso portátil o NUC lo único que será necesario es una buena conexión a internet con un ancho de banda a partir de los 35 Mbits, muchos operadores de telecomunicaciones ya ofrecen ese ancho de banda y en muchos casos superado ampliamente de 100, 200 y 600 Mbps. 
 
