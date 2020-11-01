@@ -46,6 +46,15 @@ Para las que no lo permiten hay varias páginas que monitorizan los precios de l
 
 La página [PS Deals](https://psdeals.net/es-store) está especializada en la PlayStation, la página [PSprices](https://psprices.com/region-es/index) incluye más plataformas como Xbox y Nintendo, [GG.deals](https://gg.deals/) está especializada en juegos de PC e [Instant Gaming](https://www.instant-gaming.com/es/) ofrece búsquedas tanto para juegos de PC como de consolas.
 
+En este ejemplo a fecha de noviembre de 2020 el juego [Red Dead Redemption 2](https://en.wikipedia.org/wiki/Red_Dead_Redemption_2) está con una oferta del 58% que deja se precio de compra en 29 € de un precio original de 70 €. Otro ejemplo es el [Metal Gear Solid V: The Definitive Experience](https://es.wikipedia.org/wiki/Metal_Gear_Solid_V%3A_The_Phantom_Pain) que incluye MGSV: The Pahntom Pain y su prólogo MGSV: Ground Zeroes con un 80% de descuento para un precio de compra en 4 € de un precio original de 20€, con ese gran descuento algunos juegos como este están casi regalados.
+
+{{< image
+    gallery="true"
+    image1="image:red-dead-redemption-2.png" optionsthumb1="300x200" title1="Descuento del 58% en un juego"
+    image2="image:psdeals-price-history.png" optionsthumb2="300x200" title2="Historial de precios de un juego"
+    image3="image:metal-gear-solid-v.png" optionsthumb3="300x200" title3="Descuento del 80% en un juego"
+    caption="Descuento e historial de precios en un juego en la página PS Deals" >}}
+
 Estas páginas son es el equivalente de [monitorización de precios CamelCamelCamel para Amazon][blogbitix-414] e igual de útil.
 
 Las ofertas de estas páginas son interesantes para aquellos que prefieren o no les importa tener juegos en formato digital y no compran los juegos físicos como forma de coleccionismo. El gran peligro de estos precios reducidos y las ofertas es acabar comprando juegos para los que uno dispone poco tiempo para jugarlos o incluso comprarlos sin llegar a tener tiempo libre para jugarlos, casi como si por comprarlos es como si se desease comprar tiempo para jugarlos. E incluso comprar juegos en oferta y no jugarlos mucho tiempo después incluso después de publicarse otra oferta a un precio algo más bajo.
