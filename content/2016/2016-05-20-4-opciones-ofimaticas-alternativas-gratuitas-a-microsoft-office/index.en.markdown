@@ -2,7 +2,8 @@
 pid: 225
 type: "post"
 title: "3 office alternative options to Microsoft Office"
-url: "/2017/04/3-office-alternative-options-to-microsoft-office/"
+url: "/2016/05/3-office-alternative-options-to-microsoft-office/"
+aliases: ["/2017/04/3-office-alternative-options-to-microsoft-office/"]
 date: 2017-04-14T12:15:00+02:00
 language: "en"
 rss: true
@@ -38,11 +39,11 @@ Microsoft Office includes Word as word processor, Powerpoint for presentations, 
 
 {{< image
     gallery="true"
-    image1="image:microsoftoffice-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
-    image2="image:microsoftoffice-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
+    image1="image:microsoft-office-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
+    image2="image:microsoft-office-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
 {{< image
     gallery="true"
-    image1="image:microsoftoffice-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
+    image1="image:microsoft-office-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
 
 ### LibreOffice
 

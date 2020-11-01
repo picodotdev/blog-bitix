@@ -1,9 +1,5 @@
 {{ .Scratch.Set "outputFormat" "HTML" }}
 {{ partial "globals.html" . }}
-{{ $hreflang := .Site.Language.Lang }}
-{{ if isset .Page.Params "language" }}
-  {{ $hreflang = .Page.Params.language }}
-{{ end }}
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang }}">
 <head>
@@ -18,11 +14,14 @@
 
   <link rel="shortcut icon" href="{{ "assets/favicon.ico" | relURL }}">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "assets/apple-touch-icon-144-precomposed.png" | relURL }}">
-  <link rel="canonical" type="text/html" href="{{ with .OutputFormats.Get "HTML" }}{{ .Permalink }}{{ end }}" hreflang="{{ $hreflang }}">
-  <link rel="alternate" type="application/rss&#43;xml" href="{{ .Site.Params.links.feed.url | absURL }}" hreflang="{{ $hreflang }}" title="{{ .Site.Title }}">
-  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ $hreflang }}" title="{{ $.Page.Title }}">
+  <link rel="canonical" type="text/html" href="{{ with .OutputFormats.Get "HTML" }}{{ .Permalink }}{{ end }}" hreflang="{{ .Language.Lang }}">
+  <link rel="alternate" type="application/rss&#43;xml" href="{{ .Site.Params.links.feed.url | absURL }}" hreflang="{{ .Language.Lang }}" title="{{ .Site.Title }}">
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Language.Lang }}" title="{{ .Title }}">
+  {{ range .Translations }}
+  <link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}" title="{{ .Title }}">
+  {{ end }}
   {{ range .AlternativeOutputFormats -}}
-  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" hreflang="{{ $hreflang }}" title="{{ $.Page.Title }}">
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" hreflang="{{ $.Language.Lang }}" title="{{ $.Page.Title }}">
   {{ end }}
   <link rel="humans" type="text/plain" href="{{ "humans.txt" | relURL }}">
   <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 

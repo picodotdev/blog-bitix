@@ -5,10 +5,10 @@ title: "A Microsoft no le importa que uses Windows u Office sin licencia"
 url: "/2015/07/a-microsoft-no-le-importa-que-uses-windows-u-office-sin-licencia/"
 date: 2015-07-28T19:30:00+02:00
 updated: 2015-09-30T21:00:00+02:00
+language: "es"
 rss: true
 sharing: true
 comments: true
-language: "es"
 imagePost: "logotype:microsoft.svg"
 tags: ["microsoft", "opinion", "planeta-codigo", "software-libre"]
 summary: "Si Microsoft quisiera no habría usuarios de Windows sin la correspondiente licencia de uso. Pero lo consiente, tampoco le importa que para un uso personal se haga de forma «pirata». Pocos días después del señalado 29 de julio Windows 10 aparecerá en las redes de compartición de archivos y páginas de descarga, también pocos días después aparecerá un programa que evite el sistema de validación como ha ocurrido con anteriores versiones."
