@@ -1,4 +1,5 @@
-{{- $tags := .Page.Site.Data.theme.conf.tags.html -}}
+{{- $links := .Page.Site.Data.theme.conf.links.xml -}}
+{{- $tags := .Page.Site.Data.theme.conf.tags.xml -}}
 {{- $imgtagopen := $tags.imgtagopen -}}
 {{- $imgtagclose := $tags.imgtagclose -}}
 {{- $imgtagsrc := $tags.imgtagsrc -}}
@@ -106,7 +107,11 @@
   {{- $srcimg = $srcthumb -}}
   {{- $srca = $src -}}
 {{- end -}}
+{{- if eq $links.absolute "true" -}}
+  {{- $srcimg = absURL $srcimg -}}
+  {{- $srca = absURL $srca -}}
+{{- end -}}
 
 {{- if $gallery }}<a href="{{ $srca }}" data-gallery="data-gallery"{{ with $title }} title="{{ . }}"{{ end }}>{{ end -}}
-  {{- $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $srcimg }}"{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with $title }} alt="{{ . }}" title="{{ . }}"{{ end }}{{ with $layout }} layout="{{ . }}"{{ end }} class="{{ with $class }}{{ . }} {{ end }}{{ with $lazyclass }}{{ . }} {{ end }}">{{ $imgtagclose | safeHTML -}}
+  {{- $imgtagopen | safeHTML }} {{ $imgtagsrc }}="{{ $srcimg }}"{{ with $width }} width="{{ . }}"{{ end }}{{ with $height }} height="{{ . }}"{{ end }}{{ with $title }} alt="{{ . }}" title="{{ . }}"{{ end }}{{ with $layout }} layout="{{ . }}"{{ end }}  class="{{ with $class }}{{ . }} {{ end }}{{ with $lazyclass }}{{ . }} {{ end }}">{{ $imgtagclose | safeHTML -}}
 {{- if $gallery }}</a>{{ end -}}

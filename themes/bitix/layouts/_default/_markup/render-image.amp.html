@@ -1,3 +1,4 @@
+{{- $links := .Page.Site.Data.theme.conf.links.amp -}}
 {{- $tags := .Page.Site.Data.theme.conf.tags.amp -}}
 {{- $imgtagopen := $tags.imgtagopen -}}
 {{- $imgtagclose := $tags.imgtagclose -}}
@@ -105,6 +106,10 @@
 {{- if and $gallery (ne $src nil) (ne $srcthumb nil) -}}
   {{- $srcimg = $srcthumb -}}
   {{- $srca = $src -}}
+{{- end -}}
+{{- if eq $links.absolute "true" -}}
+  {{- $srcimg = absURL $srcimg -}}
+  {{- $srca = absURL $srca -}}
 {{- end -}}
 
 {{- if $gallery }}<a href="{{ $srca }}" data-gallery="data-gallery"{{ with $title }} title="{{ . }}"{{ end }}>{{ end -}}

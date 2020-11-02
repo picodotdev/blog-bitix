@@ -1,0 +1,48 @@
+{{- $links := .Page.Site.Data.theme.conf.links.xml -}}
+{{- $noLinks := .Page.Site.Data.theme.conf.links.amp -}}
+{{- $href := .Destination -}}
+{{- $title := .Title -}}
+{{- $text := .Text -}}
+
+{{- $nil := default nil nil -}}
+{{- $binding := $nil -}}
+{{- $attributes := dict -}}
+
+{{- if or (eq (len (findRE "javadoc\\d+:" $href)) 1) (hasPrefix $href "javaee8:") (hasPrefix $href "tapestry:") -}}
+  {{- $binding = index (split $href ":") 0 -}}
+  {{- $href = index (split $href ":") 1 -}}
+{{- end -}}
+
+{{- $strings := split $href "," -}}
+{{- range $i,$v := $strings -}}
+  {{- if eq $i 0 -}}
+    {{- $href = index (split $v ",") 0 -}}
+  {{- else -}}
+    {{- $key := index (split $v "=") 0 -}}
+    {{- $value := index (split $v "=") 1 -}}
+    {{- $attributes = merge $attributes (dict $key $value) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if in (slice "javadoc8" "javadoc9" "javadoc10") $binding -}}
+{{- $version := replace $binding "javadoc" "" -}}
+{{- $href = print "https://docs.oracle.com/javase/" $version "/docs/api/" $href -}}
+{{- else if (eq (len (findRE "javadoc\\d+" $binding)) 1) -}}
+{{- $version := replace $binding "javadoc" "" -}}
+{{- $href = print "https://docs.oracle.com/en/java/javase/" $version "/docs/api/" $href -}}
+{{- else if eq $binding "javaee8" -}}
+{{- $href = print "https://javaee.github.io/javaee-spec/javadocs/" $href -}}
+{{- else if eq $binding "tapestry" -}}
+{{- $href = print "https://tapestry.apache.org/current/apidocs/" $href -}}
+{{- end -}}
+
+{{- if and (findRE (print "^" .Page.Site.BaseURL) $href) (strings.HasSuffix $href $noLinks.suffix) -}}
+  {{- $href = replaceRE (print $noLinks.suffix "$") $links.suffix $href -}}
+{{- end -}}
+{{- if eq $links.absolute "true" -}}
+  {{- $href = absURL $href -}}
+{{- end -}}
+{{- $class := index $attributes "class" -}}
+{{- $rel := index $attributes "rel" -}}
+
+<a href="{{ $href | absURL }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>

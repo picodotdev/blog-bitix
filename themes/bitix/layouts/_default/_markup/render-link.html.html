@@ -1,3 +1,5 @@
+{{- $links := .Page.Site.Data.theme.conf.links.html -}}
+{{- $noLinks := .Page.Site.Data.theme.conf.links.amp -}}
 {{- $href := .Destination -}}
 {{- $title := .Title -}}
 {{- $text := .Text -}}
@@ -34,6 +36,12 @@
 {{- $href = print "https://tapestry.apache.org/current/apidocs/" $href -}}
 {{- end -}}
 
+{{- if and (findRE (print "^" .Page.Site.BaseURL) $href) (strings.HasSuffix $href $noLinks.suffix) -}}
+  {{- $href = replaceRE (print $noLinks.suffix "$") $links.suffix $href -}}
+{{- end -}}
+{{- if eq $links.absolute "true" -}}
+  {{- $href = absURL $href -}}
+{{- end -}}
 {{- $class := index $attributes "class" -}}
 {{- $rel := index $attributes "rel" -}}
 
