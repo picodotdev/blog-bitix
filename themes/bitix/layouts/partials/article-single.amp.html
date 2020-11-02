@@ -7,7 +7,7 @@
       {{ else }}
         {{ i18n "writed_by" }}
       {{ end }} 
-      <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span> el <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, {{ i18n "updated_on" }} <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
+      <span>{{ if isset .Params "author" }}{{ .Params.author }}{{ else }}{{ .Site.Author.name }}{{ end }}</span> {{ i18n "writed_on" }} <time>{{ .Date.Format "02/01/2006" }}</time>{{ if isset .Params "updated" }}, {{ i18n "updated_on" }} <time>{{ dateFormat "02/01/2006" .Params.updated }}</time>.{{ else }}.{{ end }}
       {{ if isset .Params "tags" }}
         <br>
         {{ range $tag := .Params.tags -}}
