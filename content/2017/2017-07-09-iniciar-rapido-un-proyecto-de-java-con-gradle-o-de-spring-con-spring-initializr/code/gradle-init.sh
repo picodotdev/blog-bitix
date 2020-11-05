@@ -1,7 +1,6 @@
 $ mkdir java-application && cd java-application
 $ gradle init --type java-application --test-framework spock
 $ tree java-application/
-$ tree java-application
 java-application
 ├── build.gradle
 ├── gradle
