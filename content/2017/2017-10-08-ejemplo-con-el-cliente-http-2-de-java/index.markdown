@@ -47,7 +47,7 @@ Se puede definir la política de cómo procesar las redirecciones para seguirlas
 
 Y añadir trazas de las peticiones que se realicen con el cliente.
 
-* [Emitir trazas de las peticiones y respuestas HTTP][blogbitix-529]
+* [Emitir trazas de las peticiones y respuestas HTTP con clientes Java][blogbitix-529]
 
 Con la clase [SSLContext](javadoc11:java.base/javax/net/ssl/SSLContext.html) es posible establecer autenticación para el cliente usando un certificado como muestro en el artículo [Autenticación mutua de cliente y servidor con certificados][blogbitix-241].
 

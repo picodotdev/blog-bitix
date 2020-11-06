@@ -1,8 +1,9 @@
 ---
 pid: 529
 type: "post"
-title: "Emitir trazas de las peticiones y respuestas HTTP"
-url: "/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http/"
+title: "Emitir trazas de las peticiones y respuestas HTTP con clientes Java"
+url: "/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/"
+aliases: ["/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http/"]
 date: 2020-11-06T17:00:00+01:00
 language: "es"
 rss: true
