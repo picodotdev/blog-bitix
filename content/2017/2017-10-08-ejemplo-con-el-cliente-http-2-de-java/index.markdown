@@ -45,6 +45,10 @@ Se puede definir la política de cómo procesar las redirecciones para seguirlas
 * [HttpClient.Redirect.NEVER](javadoc11:java.net.http/java/net/http/HttpClient.Redirect.html#NEVER)
 * [HttpClient.Redirect.NORMAL](javadoc11:java.net.http/java/net/http/HttpClient.Redirect.html#NORMAL)
 
+Y añadir trazas de las peticiones que se realicen con el cliente.
+
+* [Emitir trazas de las peticiones y respuestas HTTP][blogbitix-529]
+
 Con la clase [SSLContext](javadoc11:java.base/javax/net/ssl/SSLContext.html) es posible establecer autenticación para el cliente usando un certificado como muestro en el artículo [Autenticación mutua de cliente y servidor con certificados][blogbitix-241].
 
 Para ejecutar el ejemplo usando [Gradle][gradle] y Java 11 hay que añadir un poco de configuración al _script_ de construcción que posiblemente en un futuro no será necesaria cuando se mejore el soporte.
