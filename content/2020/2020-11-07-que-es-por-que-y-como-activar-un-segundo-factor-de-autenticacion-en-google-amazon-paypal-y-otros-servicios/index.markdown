@@ -1,8 +1,8 @@
 ---
 pid: 530
 type: "post"
-title: "Qué es un segundo factor de autenticación, por qué y cómo activarlo en Google, Amazon, PayPal y otros servicios"
-url: "/2020/11/que-es-un-segundo-factor-de-autenticacion-por-que-y-como-activarlo-en-google-amazon-paypal-y-otros-servicios/"
+title: "Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios"
+url: "/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/"
 date: 2020-11-07T23:30:00+01:00
 language: "es"
 rss: true
