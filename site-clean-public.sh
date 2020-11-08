@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -e
 
-rm -R public/*
+rm -r public/*
 ./build.sh

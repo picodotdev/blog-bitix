@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
-(cd deploy/ && git pull)
-./generate-styles.sh
+./blog-generate-styles.sh
+
 #https://github.com/gohugoio/hugo/issues/6699
 #hugo --minify
 hugo --destination="deploy"
+
 # Soporte para compatibilidad de feeds antiguos
 cp deploy/index.xml deploy/atom.xml
 mkdir -p deploy/categories/planeta-codigo/
