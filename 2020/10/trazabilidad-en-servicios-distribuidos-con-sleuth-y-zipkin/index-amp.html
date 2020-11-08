@@ -1,0 +1,634 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+  
+
+  <title>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html" hreflang="es" title="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Trazabilidad en servicios distribuidos con Sleuth y Zipkin">
+<meta name="twitter:description" content="En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html"
+    },
+    "headline": "Trazabilidad en servicios distribuidos con Sleuth y Zipkin",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/zipkin-750.png"
+        
+      },
+    "datePublished": "2020-10-02T17:30:00+02:00",
+    "dateModified": "2020-10-02T17:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1463",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.alert img{margin-bottom:10px}article div.tableofcontents{background-color:#fffae9}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/10/2020</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/java/index-amp.html">java</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html#comments">Comentarios</a>
+      
+      
+    </p>
+
+    
+      <p class="summary">En un sistema complejo como una arquitectura de microservicios medir los tiempos de respuesta de cada uno de ellos ayuda a identificar si alguno se está comportando de forma anómala. Sleuth permite asignar un identificador global que es compartido por todos los microservicios invocados en la misma transacción, permite exportar los tiempos de respuesta a Zipkin que ofrece un panel web en el que identificar que llamadas se han hecho entre microservicios y cuales han sido sus tiempos de respuesta.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes" style="min-width: 200px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/spring.svg" width="0.9996" height="1" alt="Spring" title="Spring" layout="responsive"  class=""></amp-img></p>
+</div>
+<div class="logotypes" style="min-width: 200px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/zipkin.svg" width="0.945701357" height="1" alt="Zipkin" title="Zipkin" layout="responsive"  class=""></amp-img></p>
+</div>
+<p>El un sistema basado en microservicios unos servicios depende de otros y se comunican haciendo llamadas entre ellos. Las llamadas entre los servicios son un punto de fallo y problemas que conviene monitorizar para que el conjunto de la aplicación funcione correctamente. Con un número importante de servicios la monitorización y la trazabilidad es una de las <a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/index-amp.html">funcionalidades de las aplicaciones basadas en microservicios</a>, muchas de estas funcionalidades son proporcionadas de forma específica por una herramienta.</p>
+<p>En el caso de <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/index-amp.html">trazabilidad en microservicios con Sleuth</a> proporciona un identificador global que permite correlacionar todas las trazas desencadenadas por una petición en los diferentes servicios, con el identificador global de una traza se puede obtener el resto de trazas del mismo servicio. Con el identificador global es posible acceder al registro de trazas y obtener todas las correlacionadas con el identificador global como sería el caso de <a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/index-amp.html">guardar las trazas en Elasticsearch, Logstash y Kibana</a>. Pero las trazas emitidas por los microservicios no ofrecen métricas de cuánto tiempo ha tardado cada uno de los microservicios en su ejecución en devolver la respuesta y sin nada adicional no permite correlacionar las trazas de un servicio con las trazas del servicio llamado.</p>
+<p>Otro aspecto de las llamadas entre los microservicios es medir los tiempos de respuesta y latencia entre los servicios, si un servicio tiene un bajo rendimiento y tarda en responder es posible que produzca errores en los servicios que lo usan, provocando otros errores en el sistema. Para que el mal funcionamiento de un servicio provoque errores en otros los servicios han de estar preparados y admitir <a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/index-amp.html">tolerancia a fallos con la librería Resilience4j</a>. <a href="https://micrometer.io/">Micrometer</a>, <a href="https://prometheus.io/">Prometheus</a> y <a href="https://grafana.com/">Grafana</a> son la forma de <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/index-amp.html">obtener métricas y monitorizar una aplicación Java con Spring Boot</a> que incluye los tiempos de respuesta de los microservicios.</p>
+<p><a href="https://zipkin.io/">Zipkin</a> es una herramienta que recolecta las transacciones creadas por Sleuth en la ejecución de los microservicios e información de los tiempos de respuesta de las invocaciones que han intervenido en una transación. Ofrece las dos funcionalidades la recolección de datos y la obtención de los mismos. Tanto la recolección como el almacenamiento ofrecen diferentes herramientas para implementarlo, la recolección puede ser mediante peticiones HTTP, <a href="https://www.rabbitmq.com/">RabbitMQ</a> o <a href="https://kafka.apache.org/">Kafka</a> y el almacenamiento en memoria, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://cassandra.apache.org/">Cassandra</a> o <a href="https://www.elastic.co/es/elasticsearch/">Elasticsearch</a>.</p>
+<p>En el ejemplo hay un microservicio que hace de servidor y otro de cliente que se comunican mediante peticiones HTTP con REST. Tanto el microservicio cliente como el microservicio servidor usan <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a> que genera identificativos globales que permiten correlacionar todas las peticiones entre los diferentes servicios.</p>
+<p>Sleuth proporcionar trazabilidad con identificativos globales que podrían ser recuperados a través del sistema de <em>logging</em> centralizado como Elasticsearch, <a href="https://www.elastic.co/es/logstash">Logstash</a> y <a href="https://www.elastic.co/es/kibana">Kibana</a>. Usando una librería de <em>logging</em> como <a href="https://logging.apache.org/log4j/2.x/">Log4j</a> se puede <a href="https://picodotdev.github.io/blog-bitix/2018/07/identificar-todas-las-trazas-de-una-peticion-en-una-aplicacion-web-java-con-log4j/index-amp.html">configurar Log4j para que emita en las trazas los identificadores globales</a>.</p>
+<h3 id="ejemplo-de-microservicio-con-spring-boot-sleuth-y-zipkin">Ejemplo de microservicio con Spring Boot, Sleuth y Zipkin</h3>
+<p>En el ejemplo de trazabilidad de microservicios con Sleuth consistía en un servicio implementado con Spring Boot, también tiene un cliente que realiza de forma periódica peticiones al servicio. Ambos tienen Sleuth integrado y en las trazas de la consola en ambos aparece el identificador global <em>traceId</em> de la traza. En este ejemplo se configura Sleuth para que envíe a Zipkin las transacciones de estos dos pequeños microservicios.</p>
+<p>Para que Sleuth envíe al servidor las métricas de las llamadas entre los microservicios basta con añadir al proyecto del cliente y microservicio la dependencia <em>spring-cloud-starter-zipkin</em> y configurar el medio de transporte que se utiliza para enviar las métricas al servidor, en este caso mediante peticiones HTTP y la dirección de Zipkin. Esto se configura con las propiedades de Spring Boot <em>spring.zipkin.enabled</em>, <em>spring.zipkin.baseUrl</em> y <em>spring.zipkin.sender.type</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="o">...</span>&#10;&#10;<span class="n">dependencies</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">implementation</span><span class="o">(</span><span class="s1">&#39;org.springframework.cloud:spring-cloud-starter-zipkin&#39;</span><span class="o">,</span> <span class="n">excludeSpringBootStarterLogging</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span>&#10;&#10;<span class="o">...</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>build.gradle</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">...</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nt">spring</span><span class="p">:</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">application</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">client</span><span class="w">&#10;</span><span class="w">  </span><span class="nt">zipkin</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">baseUrl</span><span class="p">:</span><span class="w"> </span><span class="l">http://zipkin:9411/</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">sender</span><span class="p">:</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="nn">...</span><span class="w">&#10;</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>client.yml</span>
+    </div>
+</div>
+<p>Los siguientes comandos inician el registro y descubrimiento de servicios, el orquestador de contenedores, el servidor de configuración, el servicio, un <em>proxy</em> del servicio que balancea la carga si hubiera diferentes instancias del servicio y admite tolerancia a fallos si alguna de las instancias falla y finalmente el cliente del servicio. En el ejemplo se utiliza <a href="https://www.nomadproject.io/">Nomad</a> y <a href="https://www.docker.com/">Docker</a> junto a <a href="https://www.consul.io/">Consul</a> y <a href="https://traefik.io/">Traefik</a>. El ejemplo requiere iniciar Consul y Nomad y tener instalado, configurado y en ejecución Docker.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/index-amp.html">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/index-amp.html">Registro y descubrimiento de servicios con Spring Cloud y Consul</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/series/docker/index-amp.html">Guía sobre Docker</a></li>
+</ul>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker network create --subnet 172.30.0.0/16 nomad&#10;&#10;consul agent -dev -ui -client<span class="o">=</span>0.0.0.0&#10;nomad agent -dev -config<span class="o">=</span>nomad/nomad.conf&#10;<span class="c1"># http://127.0.0.1:8500</span>&#10;<span class="c1"># http://127.0.0.1:4646</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-1.sh</span>
+    </div>
+</div>
+<p>Nomad se encarga de orquestar los contenedores de Docker para crear las instancias de los microservicios. Las definiciones de los microservicios se envian a Nomad para que inicie las instancias.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span>docker network create --subnet 172.30.0.0/16 nomad&#10;&#10;./gradlew assemble&#10;&#10;nomad job run nomad/traefik.nomad&#10;nomad job run nomad/zipkin.nomad&#10;<span class="c1"># http://127.0.0.1:8092</span>&#10;<span class="c1"># http://127.0.0.1:9411</span>&#10;&#10;nomad job run nomad/configserver.nomad&#10;nomad job run nomad/service.nomad&#10;nomad job run nomad/client.nomad</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>run-2.sh</span>
+    </div>
+</div>
+<p>Sleuth exporta los datos de las transacciones a Zipkin donde se observa los tiempos de respuesta de los microservicios para una petición determinada dado su identificador global. Pero también permite observar que microservicios han sido llamados lo que ayuda a conocer cual ha sido el comportamiento del sistema, dependiendo de la lógica de negocio que implementen no tienen por que ser siempre los mismos.</p>
+<p>Zipkin ofrece una aplicación web con la que consultar las llamadas desencadenadas por una petición y los tiempos de respuesta de los servicios involucrados, la aplicación web está en la dirección <em>http://localhost:9411/zipkin/</em> o a través de Traefik con <em>http://localhost:8093/zipkin/</em>. Utilizando uno de los identificadores globales de petición e introduciéndolo en el cuadro de búsqueda de Zipkin se observan los tiempos de respuesta de cada uno de los servicios.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">...&#10;Client Span (traceId: 4605e7da594f8a1c, spanId: 4605e7da594f8a1c)&#10;Service response: Hello world (url: http://172.30.0.3/, remoteAddress_172.30.0.3, localAddress: 172.30.0.7, traceId: 4605e7da594f8a1c, spanId: 8b42ba6118ff60e9, key: value)&#10;...</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>client.out</span>
+    </div>
+</div>
+<p>Tanto el microservicio cliente como el microservicio servidor tienen Sleuth integrado y envían de forma asíncrona cuando terminan las peticiones HTTP la información de trazabilidad a Zipkin. Con el <em>traceId</em> de una transacción se observa en Zipkin la cadena de llamadas entre los microservicios y sus tiempos de respuesta. En el ejemplo solo hay dos pero podrían en un caso real quizá sean tres, cuatro o más ya sea porque cada servicio utiliza otro o porque un mismo servicio utiliza varios, ver esta información de forma gráfica es mucho más fácil de analizar que solo con las trazas correlacionadas en ELK.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Interfaz web de Nomad"><amp-img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/nomad_huccbbb14cc8620b777ee48fc006d64432_66764_300x200_fit_box_2.png" width="300" height="180" alt="Interfaz web de Nomad" title="Interfaz web de Nomad"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Interfaz web de Zipkin"><amp-img src="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/images/zipkin_hu758dc0d7030bac025270f35638835026_53001_300x200_fit_box_2.png" width="300" height="180" alt="Interfaz web de Zipkin" title="Interfaz web de Zipkin"  class="lozad "></amp-img></a></p>
+<figcaption>Interfaz web de Nomad y Zipkin</figcaption>
+</figure>
+</div>
+<p>Este es el código del cliente que hace la petición al servidor y el código del servidor. Spring ya proporciona integración con Sleuth en sus utilidades como <em>RestTemplate</em>. Si se utiliza el cliente HTTP de Java añadido junto con otras <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/index-amp.html">novedades de Java 11</a> hay que añadir el soporte para que en la petición se añadan las cabeceras cuando se haga la petición. La forma que tiene Sleuth de compartir los identificativos de las transacciones entre el cliente y el servidor es a través de las cabeceras en las peticiones HTTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.client</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@SpringBootApplication</span>&#10;<span class="nd">@EnableDiscoveryClient</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="kd">implements</span> <span class="n">CommandLineRunner</span> <span class="o">{</span>&#10;&#10;	<span class="nd">@Autowired</span>&#10;	<span class="kd">private</span> <span class="n">DefaultConfiguration</span> <span class="n">configuration</span><span class="o">;</span>&#10;&#10;	<span class="nd">@Autowired</span>&#10;	<span class="kd">private</span> <span class="n">ProxyService</span> <span class="n">proxyService</span><span class="o">;</span>&#10;&#10;	<span class="nd">@Bean</span>&#10;	<span class="kd">public</span> <span class="n">RestTemplate</span> <span class="nf">restTemplate</span><span class="o">(</span><span class="n">RestTemplateBuilder</span> <span class="n">builder</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="k">return</span> <span class="n">builder</span><span class="o">.</span><span class="na">build</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="nd">@Override</span>&#10;	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">String</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Valor de propiedad de configuración (%s): %s%n&#34;</span><span class="o">,</span> <span class="s">&#34;config.key&#34;</span><span class="o">,</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>&#10;		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Valor de propiedad de configuración (%s): %s%n&#34;</span><span class="o">,</span> <span class="s">&#34;config.password&#34;</span><span class="o">,</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getPassword</span><span class="o">());</span>&#10;&#10;		<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">20000</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>&#10;			<span class="n">String</span> <span class="n">response</span> <span class="o">=</span> <span class="n">get</span><span class="o">();</span>&#10;			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Service response: %s%n&#34;</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>&#10;			<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>&#10;		<span class="o">}</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">private</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;		<span class="k">return</span> <span class="n">proxyService</span><span class="o">.</span><span class="na">get</span><span class="o">();</span>&#10;	<span class="o">}</span>&#10;&#10;	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;		<span class="n">SpringApplication</span> <span class="n">application</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SpringApplication</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;		<span class="n">application</span><span class="o">.</span><span class="na">setApplicationContextClass</span><span class="o">(</span><span class="n">AnnotationConfigApplicationContext</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;		<span class="n">SpringApplication</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="n">Main</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>&#10;	<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>Main.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span><span class="lnt">39&#10;</span><span class="lnt">40&#10;</span><span class="lnt">41&#10;</span><span class="lnt">42&#10;</span><span class="lnt">43&#10;</span><span class="lnt">44&#10;</span><span class="lnt">45&#10;</span><span class="lnt">46&#10;</span><span class="lnt">47&#10;</span><span class="lnt">48&#10;</span><span class="lnt">49&#10;</span><span class="lnt">50&#10;</span><span class="lnt">51&#10;</span><span class="lnt">52&#10;</span><span class="lnt">53&#10;</span><span class="lnt">54&#10;</span><span class="lnt">55&#10;</span><span class="lnt">56&#10;</span><span class="lnt">57&#10;</span><span class="lnt">58&#10;</span><span class="lnt">59&#10;</span><span class="lnt">60&#10;</span><span class="lnt">61&#10;</span><span class="lnt">62&#10;</span><span class="lnt">63&#10;</span><span class="lnt">64&#10;</span><span class="lnt">65&#10;</span><span class="lnt">66&#10;</span><span class="lnt">67&#10;</span><span class="lnt">68&#10;</span><span class="lnt">69&#10;</span><span class="lnt">70&#10;</span><span class="lnt">71&#10;</span><span class="lnt">72&#10;</span><span class="lnt">73&#10;</span><span class="lnt">74&#10;</span><span class="lnt">75&#10;</span><span class="lnt">76&#10;</span><span class="lnt">77&#10;</span><span class="lnt">78&#10;</span><span class="lnt">79&#10;</span><span class="lnt">80&#10;</span><span class="lnt">81&#10;</span><span class="lnt">82&#10;</span><span class="lnt">83&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.client</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@Component</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ProxyService</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracing</span> <span class="n">tracing</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracer</span> <span class="n">tracer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">HttpClient</span> <span class="n">client</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="nf">ProxyService</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">client</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">().</span><span class="na">version</span><span class="o">(</span><span class="n">HttpClient</span><span class="o">.</span><span class="na">Version</span><span class="o">.</span><span class="na">HTTP_2</span><span class="o">).</span><span class="na">build</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">get</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">ServiceInstance</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">loadBalancer</span><span class="o">.</span><span class="na">choose</span><span class="o">(</span><span class="s">&#34;traefik&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">URI</span> <span class="n">uri</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="na">getUri</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">resource</span> <span class="o">=</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;%s%s&#34;</span><span class="o">,</span> <span class="n">uri</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;127.0.0.1&#34;</span><span class="o">,</span> <span class="s">&#34;traefik&#34;</span><span class="o">),</span> <span class="s">&#34;/service&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">final</span> <span class="n">URI</span> <span class="n">resourceUri</span> <span class="o">=</span> <span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">resource</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Supplier</span><span class="o">&lt;</span><span class="n">CompletableFuture</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">get</span> <span class="o">=</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">CompletableFuture</span><span class="o">.</span><span class="na">supplyAsync</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">span</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">newTrace</span><span class="o">().</span><span class="na">kind</span><span class="o">(</span><span class="n">Span</span><span class="o">.</span><span class="na">Kind</span><span class="o">.</span><span class="na">CLIENT</span><span class="o">).</span><span class="na">name</span><span class="o">(</span><span class="s">&#34;CLIENT&#34;</span><span class="o">).</span><span class="na">start</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Client Span (traceId: %s, spanId: %s)%n&#34;</span><span class="o">,</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">());</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">getRequest</span><span class="o">(</span><span class="n">client</span><span class="o">,</span> <span class="n">span</span><span class="o">,</span> <span class="n">resourceUri</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//String result = getRequest(restTemplate, span, resouceUri);&#10;</span><span class="c1"></span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">span</span><span class="o">.</span><span class="na">finish</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">result</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">};</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">Try</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">getCircuitBreaker</span><span class="o">::</span><span class="n">call</span><span class="o">).</span><span class="na">recover</span><span class="o">((</span><span class="n">throwable</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">getFallback</span><span class="o">()).</span><span class="na">get</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getFallback</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="s">&#34;Fallback&#34;</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getRequest</span><span class="o">(</span><span class="n">HttpClient</span> <span class="n">client</span><span class="o">,</span> <span class="n">Span</span> <span class="n">span</span><span class="o">,</span> <span class="n">URI</span> <span class="n">resourceUri</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span><span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">resourceUri</span><span class="o">).</span><span class="na">GET</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">serviceSpan</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">newChild</span><span class="o">(</span><span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">());</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">Tracer</span><span class="o">.</span><span class="na">SpanInScope</span> <span class="n">ws</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">withSpanInScope</span><span class="o">(</span><span class="n">serviceSpan</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">TraceContext</span><span class="o">.</span><span class="na">Injector</span><span class="o">&lt;</span><span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span><span class="o">&gt;</span> <span class="n">injector</span> <span class="o">=</span> <span class="n">tracing</span><span class="o">.</span><span class="na">propagation</span><span class="o">().</span><span class="na">injector</span><span class="o">((</span><span class="n">HttpRequest</span><span class="o">.</span><span class="na">Builder</span> <span class="n">carrier</span><span class="o">,</span> <span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">carrier</span><span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">injector</span><span class="o">.</span><span class="na">inject</span><span class="o">(</span><span class="n">tracer</span><span class="o">.</span><span class="na">currentSpan</span><span class="o">().</span><span class="na">context</span><span class="o">(),</span> <span class="n">request</span><span class="o">);</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">build</span><span class="o">(),</span> <span class="n">HttpResponse</span><span class="o">.</span><span class="na">BodyHandlers</span><span class="o">.</span><span class="na">ofString</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="na">body</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getFallback</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">serviceSpan</span><span class="o">.</span><span class="na">finish</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="nf">getRequest</span><span class="o">(</span><span class="n">RestTemplate</span> <span class="n">restTemplate</span><span class="o">,</span> <span class="n">Span</span> <span class="n">span</span><span class="o">,</span> <span class="n">URI</span> <span class="n">resourceUri</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">try</span> <span class="o">(</span><span class="n">Tracer</span><span class="o">.</span><span class="na">SpanInScope</span> <span class="n">ws</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">withSpanInScope</span><span class="o">(</span><span class="n">span</span><span class="o">))</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="n">resourceUri</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RestClientException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">getFallback</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ProxyService.java</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.springcloud.service</span><span class="o">;</span>&#10;&#10;<span class="o">...</span>&#10;&#10;<span class="nd">@RestController</span>&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultController</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">DefaultConfiguration</span> <span class="n">configuration</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracing</span> <span class="n">tracing</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@Autowired</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Tracer</span> <span class="n">tracer</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Random</span> <span class="n">random</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">Counter</span> <span class="n">counter</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="n">String</span> <span class="nf">home</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Span</span> <span class="n">span</span> <span class="o">=</span> <span class="n">tracer</span><span class="o">.</span><span class="na">currentSpan</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Service Span (traceId: %s, spanId: %s)%n&#34;</span><span class="o">,</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">counter</span><span class="o">.</span><span class="na">increment</span><span class="o">();</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">// Timeout simulation&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">//Thread.sleep(random.nextInt(4000));&#10;</span><span class="c1"></span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&#34;Hello world (url: %s, remoteAddress_%s, localAddress: %s, traceId: %s, spanId: %s, key: %s)&#34;</span><span class="o">,</span> <span class="n">request</span><span class="o">.</span><span class="na">getRequestURL</span><span class="o">(),</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">request</span><span class="o">.</span><span class="na">getRemoteAddr</span><span class="o">(),</span> <span class="n">request</span><span class="o">.</span><span class="na">getLocalAddr</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">traceIdString</span><span class="o">(),</span> <span class="n">span</span><span class="o">.</span><span class="na">context</span><span class="o">().</span><span class="na">spanIdString</span><span class="o">(),</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getKey</span><span class="o">());</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>DefaultController.java</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
+    <p>
+        El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringCloudConsulNomadTraefik">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./run.sh</code></p>
+</div>
+<div class="reference">
+    Referencia:<br>
+    <ul>
+<li><a href="https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/">Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin</a></li>
+<li><a href="https://github.com/openzipkin/zipkin-dependencies">Zipkin Dependencies</a></li>
+<li><a href="https://github.com/openzipkin?utf8=%E2%9C%93&amp;q=example">Zipkin Examples</a></li>
+<li><a href="https://docs.spring.io/spring-cloud-sleuth/docs/2.2.5.RELEASE/reference/html/appendix.html">Sleuth Common application properties</a></li>
+</ul>
+</div>
+
+    </div>
+  </article>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>spring-cloud</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/index-amp.html">Datos de sesión externalizados con Spring Session</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/index-amp.html">Aplicación Java autocontenida con Spring Boot</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/11/configuracion-de-una-aplicacion-en-diferentes-entornos-con-spring-cloud-config/index-amp.html">Configuración de una aplicación en diferentes entornos con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/index-amp.html">Información y métricas de la aplicación con Spring Boot Actuator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2017/01/registro-y-descubrimiento-de-servicios-con-spring-cloud-y-consul/index-amp.html">Registro y descubrimiento de servicios con Spring Cloud y Consul</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/08/aplicaciones-basadas-en-microservicios/index-amp.html">Aplicaciones basadas en microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/registro-y-descubrimiento-de-servicios-con-spring-cloud-netflix/index-amp.html">Registro y descubrimiento de servicios con Spring Cloud Netflix</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/servicio-de-configuracion-para-microservicios-con-spring-cloud-config/index-amp.html">Servicio de configuración para microservicios con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/recargar-sin-reiniciar-la-configuracion-de-una-aplicacion-spring-boot-con-spring-cloud-config/index-amp.html">Recargar sin reiniciar la configuración de una aplicación Spring Boot con Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/09/almacenar-cifrados-los-valores-de-configuracion-sensibles-en-spring-cloud-config/index-amp.html">Almacenar cifrados los valores de configuración sensibles en Spring Cloud Config</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/index-amp.html">Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/balanceo-de-carga-y-resilencia-en-un-microservicio-con-spring-cloud-netflix-y-ribbon/index-amp.html">Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/index-amp.html">Proxy para microservicios con Spring Cloud Netflix y Zuul</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/index-amp.html">Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/index-amp.html">Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/index-amp.html">Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/trazabilidad-en-microservicios-con-spring-cloud-sleuth/index-amp.html">Trazabilidad en microservicios con Spring Cloud Sleuth</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/implementar-tolerancia-a-fallos-con-resilience4j/index-amp.html">Implementar tolerancia a fallos con Resilience4j</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/iniciar-una-aplicacion-de-spring-boot-en-un-puerto-aleatorio/index-amp.html">Iniciar una aplicación de Spring Boot en un puerto aleatorio</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/index-amp.html">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/index-amp.html">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/index-amp.html">Trazabilidad en servicios distribuidos con Sleuth y Zipkin</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <a id="pageBottom"></a>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2020 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>

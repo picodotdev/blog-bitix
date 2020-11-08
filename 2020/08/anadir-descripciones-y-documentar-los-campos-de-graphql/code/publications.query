@@ -1,0 +1,16 @@
+query Publications {
+  publications {    
+    ... on Book {
+      __typename
+      id      
+      title
+      date
+    }
+    ... on Magazine {
+      __typename
+      id
+      name
+      pages
+    }
+  }
+}

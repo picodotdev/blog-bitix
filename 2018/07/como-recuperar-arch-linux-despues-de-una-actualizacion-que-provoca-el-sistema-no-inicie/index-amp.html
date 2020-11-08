@@ -1,0 +1,579 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un kernel panic. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese. &hellip;">
+  
+
+  <title>Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/index-amp.html" hreflang="es" title="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un kernel panic. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie">
+<meta name="twitter:description" content="Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un kernel panic. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/index-amp.html"
+    },
+    "headline": "Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/archlinux-750.png"
+        
+      },
+    "datePublished": "2018-07-27T16:00:00+02:00",
+    "dateModified": "2018-07-27T16:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "1494",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un <em>kernel panic</em>. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.alert img{margin-bottom:10px}article div.tableofcontents{background-color:#fffae9}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Como recuperar Arch Linux después de una actualización que provoca el sistema no inicie</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>27/07/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/index-amp.html">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/index-amp.html">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/07/como-recuperar-arch-linux-despues-de-una-actualizacion-que-provoca-el-sistema-no-inicie/index-amp.html#comments">Comentarios</a>
+      
+      
+    </p>
+
+    
+      <p class="summary">Instalar un sistema GNU/Linux es sencillo y está muy bien, también es importante saber como intentar recuperarlo cuando una actualización de software provoca que el sistema no se inicie con normalidad hasta el entorno de escritorio gráfico, el motivo puede ser incluso un <em>kernel panic</em>. El objetivo de la recuperación es corregir el problema del inicio, si no es posible, recuperar los valiosos documentos, imágenes, vídeos u otros archivos antes de finalmente llegar al punto de reinstalar el sistema para devolverlo a un estado correcto aunque quizá perdiendo los datos que tuviese.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes" style="min-width: 250px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="1.3392156862745097" height="1" alt="Arch Linux" title="Arch Linux" layout="responsive"  class=""></amp-img></p>
+</div>
+<p>Estás contento con <a href="https://www.archlinux.org/">Arch Linux</a> y en gran medida despreocupado de las versiones de las aplicaciones ya que sabes que al ser una distribución <em>rolling release</em>, siempre tienes la última versión de todos los paquetes cada vez que haces una actualización completa del sistema. Un día realizas la periódica actualización o has visto una nueva versión de un paquete ya sea una nueva versión del <a href="https://www.archlinux.org/packages/core/x86_64/linux/">kernel</a> o <a href="https://www.archlinux.org/packages/extra/x86_64/mesa/">mesa</a> que pueden contener importante mejoras en el sistema gráfico que quieres aprovechar o una nueva versión de una aplicación con nuevas características relevantes como podría se <a href="https://www.archlinux.org/packages/extra/x86_64/libreoffice-fresh/">LibreOffice</a> o <a href="https://www.archlinux.org/packages/extra/x86_64/vlc/">VLC</a>. Inicias la actualización del sistema como tantas otras veces has hecho. Termina aparentemente bien con todos los paquetes actualizados y sin ningún mensaje de error. Reinicias el equipo para que la actualización de algunos paquetes tengan efecto como el caso del <em>kernel</em>. Sin embargo, ¡sorpresa! el sistema no inicia como normalmente, no llega al inicio de sesión del entorno de escritorio ni siquiera tienes acceso a una terminal basada en consola, el error parece un <a href="https://es.wikipedia.org/wiki/Kernel_panic"><em>kernel panic</em></a>. Reinicias una segunda vez, el mismo error. Parece que está todo perdido, piensas en los importantes archivos que tienes en el sistema de almacenamiento persistente, disco duro o SSD, ¡no tienes una copia completamente reciente!, el corazón te empieza a latir con fuerza.</p>
+<p>Por suerte, habiendo estado usando Arch Linux de forma ininterrumpida durante los 8 años esto solo me ha pasado una vez y por culpa mía después de actualizar <a href="https://www.archlinux.org/packages/core/x86_64/grub/">Grub</a> al ejecutar un comando erróneo, durante todos esos años he tenido importantes actualizaciones como varias versiones de <a href="https://www.archlinux.org/groups/x86_64/gnome/">GNOME</a>, <a href="https://www.archlinux.org/packages/core/x86_64/systemd/">systemd</a> y el <em>kernel</em>. El caso era el que he descrito anteriormente, el sistema no iniciaba dado que Grub es de las primeras cosas necesarias para iniciar el sistema cualquier problema en él origina esta situación. Otros paquetes de especial importancia son el <em>kernel</em>, los controladores gráficos, <em>mesa</em>, systemd, una nueva versión del entorno de escritorio, &hellip; Por una actualización a una nueva versión de VLC el sistema no va a dejar de iniciarse al lo sumo será VLC el que no inicie y es de más sencillo de solucionar volviendo a una versión anterior correcta con <a href="https://picodotdev.github.io/blog-bitix/2015/02/como-hacer-un-downgrade-de-un-paquete-en-arch-linux/index-amp.html">un simple <em>downgrade</em> de paquete</a>.</p>
+<p>Antes de una actualización conviene revisar los paquetes que se van a actualizar y fijarse en los especialmente sensibles como he comentado, también conviene estar suscrito al <a href="https://www.archlinux.org/feeds/news/"><em>feed</em> de noticias de Arch</a>, a veces la actualización del sistema requiere una intervención manual y en ese <em>feed</em> siempre comentan los detalles y en qué consiste la intervención manual incluso ponen los comandos necesarios a ejecutar. Para que el daño sea el menor posible en caso de completo desastre es imprescindible hacer copias de seguridad de forma regular, una cosa es un fallo de software otra es un fallo de hardware que si se produce en la unidad de almacenamiento los datos es muy posible que queden irrecuperables. Los fallos en el hardware no son tan extraños, el hardware es reemplazable por un módico precio pero los datos no, por todo ¡haz copias de seguridad regularmente! Avisado estás.</p>
+<p>De modo que saber cómo recuperar el sistema es algo necesario llegado el caso. En Arch Linux la forma que conozco es usando una imagen de instalación de Arch Linux y montar el sistema de archivos para hacer las modificaciones necesarias para recuperar el sistema que es probable que consistan en desactualizar paquetes por versiones anteriores. Dependiendo de los mensajes de error que proporcione el sistema en el inicio fallido las acciones a realizar para arreglarlo serán unas u otras, seguramente en los <a href="https://bbs.archlinux.org/">foros de Arch Linux</a> otros usuarios ya hayan pedido ayuda con el mismo o parecido error.</p>
+<p>Los comandos concretos para montar el sistema de archivos depende de la configuración propia: de las particiones creadas, de si se está utilizando LVM o de si se está usando cifrado. Cuando escribí el <a href="https://picodotdev.github.io/blog-bitix/2017/01/script-para-instalar-arch-linux-facil-rapido-desatendido-automatizado-y-personalizable/index-amp.html">Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable</a> pensé al mismo tiempo en el caso de uso de una hipotética recuperación, escribí un <a href="https://github.com/picodotdev/alis/blob/master/alis-recovery.sh"><em>script</em> para iniciar la recuperación</a>.</p>
+<p>Una vez iniciado el sistema con la imagen ISO de instalación de Arch Linux este <em>script</em> contiene los comandos para iniciar la recuperación, los pasos de su uso son los siguientes:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># loadkeys es</span>&#10;<span class="c1"># curl -sL https://bit.ly/2F3CATp</span>&#10;<span class="c1"># vim alis-recovery.conf</span>&#10;<span class="c1"># ./alis-recovery.sh</span>&#10;<span class="c1"># arch-chroot /mnt</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>alis-recovery-start.sh</span>
+    </div>
+</div>
+<p>En el paso <em>vim alis-recovery.conf</em> se modifica la configuración según el sistema a recuperar. Básicamente se dice en qué unidad está el sistema de archivos de Arch Linux, si utiliza LVM y está cifrado. El <em>script</em> de recuperación está adaptado al propio <em>script</em> de instalación, no cubre la infinidad de casos personalizados que cada usuario por su cuenta puede realizar o existir pero sirve en cualquier caso como guía de cómo iniciar la recuperación.</p>
+<p>El contenido completo del propio <em>script</em> de recuperación es el siguiente, no es más que un <em>script</em> de <a href="https://es.wikipedia.org/wiki/Bash">bash</a> con los mismos comandos que serían necesarios para realizar la recuperación manualmente de forma interactiva.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span><span class="lnt">124&#10;</span><span class="lnt">125&#10;</span><span class="lnt">126&#10;</span><span class="lnt">127&#10;</span><span class="lnt">128&#10;</span><span class="lnt">129&#10;</span><span class="lnt">130&#10;</span><span class="lnt">131&#10;</span><span class="lnt">132&#10;</span><span class="lnt">133&#10;</span><span class="lnt">134&#10;</span><span class="lnt">135&#10;</span><span class="lnt">136&#10;</span><span class="lnt">137&#10;</span><span class="lnt">138&#10;</span><span class="lnt">139&#10;</span><span class="lnt">140&#10;</span><span class="lnt">141&#10;</span><span class="lnt">142&#10;</span><span class="lnt">143&#10;</span><span class="lnt">144&#10;</span><span class="lnt">145&#10;</span><span class="lnt">146&#10;</span><span class="lnt">147&#10;</span><span class="lnt">148&#10;</span><span class="lnt">149&#10;</span><span class="lnt">150&#10;</span><span class="lnt">151&#10;</span><span class="lnt">152&#10;</span><span class="lnt">153&#10;</span><span class="lnt">154&#10;</span><span class="lnt">155&#10;</span><span class="lnt">156&#10;</span><span class="lnt">157&#10;</span><span class="lnt">158&#10;</span><span class="lnt">159&#10;</span><span class="lnt">160&#10;</span><span class="lnt">161&#10;</span><span class="lnt">162&#10;</span><span class="lnt">163&#10;</span><span class="lnt">164&#10;</span><span class="lnt">165&#10;</span><span class="lnt">166&#10;</span><span class="lnt">167&#10;</span><span class="lnt">168&#10;</span><span class="lnt">169&#10;</span><span class="lnt">170&#10;</span><span class="lnt">171&#10;</span><span class="lnt">172&#10;</span><span class="lnt">173&#10;</span><span class="lnt">174&#10;</span><span class="lnt">175&#10;</span><span class="lnt">176&#10;</span><span class="lnt">177&#10;</span><span class="lnt">178&#10;</span><span class="lnt">179&#10;</span><span class="lnt">180&#10;</span><span class="lnt">181&#10;</span><span class="lnt">182&#10;</span><span class="lnt">183&#10;</span><span class="lnt">184&#10;</span><span class="lnt">185&#10;</span><span class="lnt">186&#10;</span><span class="lnt">187&#10;</span><span class="lnt">188&#10;</span><span class="lnt">189&#10;</span><span class="lnt">190&#10;</span><span class="lnt">191&#10;</span><span class="lnt">192&#10;</span><span class="lnt">193&#10;</span><span class="lnt">194&#10;</span><span class="lnt">195&#10;</span><span class="lnt">196&#10;</span><span class="lnt">197&#10;</span><span class="lnt">198&#10;</span><span class="lnt">199&#10;</span><span class="lnt">200&#10;</span><span class="lnt">201&#10;</span><span class="lnt">202&#10;</span><span class="lnt">203&#10;</span><span class="lnt">204&#10;</span><span class="lnt">205&#10;</span><span class="lnt">206&#10;</span><span class="lnt">207&#10;</span><span class="lnt">208&#10;</span><span class="lnt">209&#10;</span><span class="lnt">210&#10;</span><span class="lnt">211&#10;</span><span class="lnt">212&#10;</span><span class="lnt">213&#10;</span><span class="lnt">214&#10;</span><span class="lnt">215&#10;</span><span class="lnt">216&#10;</span><span class="lnt">217&#10;</span><span class="lnt">218&#10;</span><span class="lnt">219&#10;</span><span class="lnt">220&#10;</span><span class="lnt">221&#10;</span><span class="lnt">222&#10;</span><span class="lnt">223&#10;</span><span class="lnt">224&#10;</span><span class="lnt">225&#10;</span><span class="lnt">226&#10;</span><span class="lnt">227&#10;</span><span class="lnt">228&#10;</span><span class="lnt">229&#10;</span><span class="lnt">230&#10;</span><span class="lnt">231&#10;</span><span class="lnt">232&#10;</span><span class="lnt">233&#10;</span><span class="lnt">234&#10;</span><span class="lnt">235&#10;</span><span class="lnt">236&#10;</span><span class="lnt">237&#10;</span><span class="lnt">238&#10;</span><span class="lnt">239&#10;</span><span class="lnt">240&#10;</span><span class="lnt">241&#10;</span><span class="lnt">242&#10;</span><span class="lnt">243&#10;</span><span class="lnt">244&#10;</span><span class="lnt">245&#10;</span><span class="lnt">246&#10;</span><span class="lnt">247&#10;</span><span class="lnt">248&#10;</span><span class="lnt">249&#10;</span><span class="lnt">250&#10;</span><span class="lnt">251&#10;</span><span class="lnt">252&#10;</span><span class="lnt">253&#10;</span><span class="lnt">254&#10;</span><span class="lnt">255&#10;</span><span class="lnt">256&#10;</span><span class="lnt">257&#10;</span><span class="lnt">258&#10;</span><span class="lnt">259&#10;</span><span class="lnt">260&#10;</span><span class="lnt">261&#10;</span><span class="lnt">262&#10;</span><span class="lnt">263&#10;</span><span class="lnt">264&#10;</span><span class="lnt">265&#10;</span><span class="lnt">266&#10;</span><span class="lnt">267&#10;</span><span class="lnt">268&#10;</span><span class="lnt">269&#10;</span><span class="lnt">270&#10;</span><span class="lnt">271&#10;</span><span class="lnt">272&#10;</span><span class="lnt">273&#10;</span><span class="lnt">274&#10;</span><span class="lnt">275&#10;</span><span class="lnt">276&#10;</span><span class="lnt">277&#10;</span><span class="lnt">278&#10;</span><span class="lnt">279&#10;</span><span class="lnt">280&#10;</span><span class="lnt">281&#10;</span><span class="lnt">282&#10;</span><span class="lnt">283&#10;</span><span class="lnt">284&#10;</span><span class="lnt">285&#10;</span><span class="lnt">286&#10;</span><span class="lnt">287&#10;</span><span class="lnt">288&#10;</span><span class="lnt">289&#10;</span><span class="lnt">290&#10;</span><span class="lnt">291&#10;</span><span class="lnt">292&#10;</span><span class="lnt">293&#10;</span><span class="lnt">294&#10;</span><span class="lnt">295&#10;</span><span class="lnt">296&#10;</span><span class="lnt">297&#10;</span><span class="lnt">298&#10;</span><span class="lnt">299&#10;</span><span class="lnt">300&#10;</span><span class="lnt">301&#10;</span><span class="lnt">302&#10;</span><span class="lnt">303&#10;</span><span class="lnt">304&#10;</span><span class="lnt">305&#10;</span><span class="lnt">306&#10;</span><span class="lnt">307&#10;</span><span class="lnt">308&#10;</span><span class="lnt">309&#10;</span><span class="lnt">310&#10;</span><span class="lnt">311&#10;</span><span class="lnt">312&#10;</span><span class="lnt">313&#10;</span><span class="lnt">314&#10;</span><span class="lnt">315&#10;</span><span class="lnt">316&#10;</span><span class="lnt">317&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/usr/bin/env bash&#10;</span><span class="cp"></span><span class="nb">set</span> -e&#10;&#10;<span class="c1"># Arch Linux Install Script Recovery (alis-recovery) start a recovery for an</span>&#10;<span class="c1"># failed installation or broken system.</span>&#10;<span class="c1"># Copyright (C) 2018 picodotdev</span>&#10;&#10;<span class="c1"># This program is free software: you can redistribute it and/or modify</span>&#10;<span class="c1"># it under the terms of the GNU General Public License as published by</span>&#10;<span class="c1"># the Free Software Foundation, either version 3 of the License, or</span>&#10;<span class="c1"># (at your option) any later version.</span>&#10;<span class="c1">#</span>&#10;<span class="c1"># This program is distributed in the hope that it will be useful,</span>&#10;<span class="c1"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span>&#10;<span class="c1"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>&#10;<span class="c1"># GNU General Public License for more details.</span>&#10;<span class="c1">#</span>&#10;<span class="c1"># You should have received a copy of the GNU General Public License</span>&#10;<span class="c1"># along with this program. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>&#10;&#10;<span class="c1"># This script is hosted at https://github.com/picodotdev/alis. For new features,</span>&#10;<span class="c1"># improvements and bugs fill an issue in GitHub or make a pull request.</span>&#10;<span class="c1"># Pull Request are welcome!</span>&#10;<span class="c1">#</span>&#10;<span class="c1"># If you test it in real hardware please send me an email to pico.dev@gmail.com with</span>&#10;<span class="c1"># the machine description and tell me if somethig goes wrong or all works fine.</span>&#10;<span class="c1">#</span>&#10;<span class="c1"># Please, don&#39;t ask for support for this script in Arch Linux forums, first read</span>&#10;<span class="c1"># the Arch Linux wiki [1], the Installation Guide [2] and the General</span>&#10;<span class="c1"># Recomendations [3], later compare the commands with those of this script.</span>&#10;<span class="c1">#</span>&#10;<span class="c1"># [1] https://wiki.archlinux.org</span>&#10;<span class="c1"># [2] https://wiki.archlinux.org/index.php/Installation_guide</span>&#10;<span class="c1"># [3] https://wiki.archlinux.org/index.php/General_recommendations</span>&#10;&#10;<span class="c1"># Reference:</span>&#10;<span class="c1"># * [Change root](https://wiki.archlinux.org/index.php/Change_root)</span>&#10;<span class="c1"># * [Deactivate volume group](https://wiki.archlinux.org/index.php/LVM#Deactivate_volume_group)</span>&#10;&#10;<span class="c1"># Usage:</span>&#10;<span class="c1"># # loadkeys es</span>&#10;<span class="c1"># # curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash, or with URL shortener curl -sL https://bit.ly/2F3CATp | bash</span>&#10;<span class="c1"># # vim alis-recovery.conf</span>&#10;<span class="c1"># # ./alis-recovery.sh</span>&#10;&#10;<span class="c1"># global variables (no configuration, don&#39;t edit)</span>&#10;<span class="nv">ASCIINEMA</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">BIOS_TYPE</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">PARTITION_BIOS</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">PARTITION_BOOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">PARTITION_ROOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">LVM_VOLUME_PHISICAL</span><span class="o">=</span><span class="s2">&#34;lvm&#34;</span>&#10;<span class="nv">LVM_VOLUME_GROUP</span><span class="o">=</span><span class="s2">&#34;vg&#34;</span>&#10;<span class="nv">LVM_VOLUME_LOGICAL</span><span class="o">=</span><span class="s2">&#34;root&#34;</span>&#10;<span class="nv">BOOT_DIRECTORY</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">ESP_DIRECTORY</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="c1">#PARTITION_BOOT_NUMBER=0</span>&#10;<span class="nv">UUID_BOOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">UUID_ROOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">PARTUUID_BOOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">PARTUUID_ROOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">DEVICE_SATA</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">DEVICE_NVME</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">CPU_INTEL</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">VIRTUALBOX</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">CMDLINE_LINUX_ROOT</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;<span class="nv">ADDITIONAL_USER_NAMES_ARRAY</span><span class="o">=()</span>&#10;<span class="nv">ADDITIONAL_USER_PASSWORDS_ARRAY</span><span class="o">=()</span>&#10;&#10;<span class="nv">RED</span><span class="o">=</span><span class="s1">&#39;\033[0;31m&#39;</span>&#10;<span class="nv">GREEN</span><span class="o">=</span><span class="s1">&#39;\033[0;32m&#39;</span>&#10;<span class="nv">LIGHT_BLUE</span><span class="o">=</span><span class="s1">&#39;\033[1;34m&#39;</span>&#10;<span class="nv">NC</span><span class="o">=</span><span class="s1">&#39;\033[0m&#39;</span>&#10;&#10;<span class="k">function</span> configuration_install<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">source</span> alis-recovery.conf&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> sanitize_variables<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE</span><span class="o">=</span><span class="k">$(</span>sanitize_variable <span class="s2">&#34;</span><span class="nv">$DEVICE</span><span class="s2">&#34;</span><span class="k">)</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> sanitize_variable<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VARIABLE</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VARIABLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VARIABLE</span> <span class="p">|</span> sed <span class="s2">&#34;s/![^ ]*//g&#34;</span><span class="k">)</span> <span class="c1"># remove disabled</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VARIABLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VARIABLE</span> <span class="p">|</span> sed <span class="s2">&#34;s/ {2,}/ /g&#34;</span><span class="k">)</span> <span class="c1"># remove unnecessary white spaces</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VARIABLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VARIABLE</span> <span class="p">|</span> sed <span class="s1">&#39;s/^[[:space:]]*//&#39;</span><span class="k">)</span> <span class="c1"># trim leading</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VARIABLE</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$VARIABLE</span> <span class="p">|</span> sed <span class="s1">&#39;s/[[:space:]]*$//&#39;</span><span class="k">)</span> <span class="c1"># trim trailing</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$VARIABLE</span><span class="s2">&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_value <span class="s2">&#34;KEYS&#34;</span> <span class="s2">&#34;</span><span class="nv">$KEYS</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_value <span class="s2">&#34;DEVICE&#34;</span> <span class="s2">&#34;</span><span class="nv">$DEVICE</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_boolean <span class="s2">&#34;LVM&#34;</span> <span class="s2">&#34;</span><span class="nv">$LVM</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_equals <span class="s2">&#34;PARTITION_ROOT_ENCRYPTION_PASSWORD&#34;</span> <span class="s2">&#34;PARTITION_ROOT_ENCRYPTION_PASSWORD_RETYPE&#34;</span> <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD_RETYPE</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_value <span class="s2">&#34;PING_HOSTNAME&#34;</span> <span class="s2">&#34;</span><span class="nv">$PING_HOSTNAME</span><span class="s2">&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables_value<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUE</span><span class="o">=</span><span class="nv">$2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$VALUE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> environment variable must have a value.&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables_boolean<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUE</span><span class="o">=</span><span class="nv">$2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_list <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$VALUE</span><span class="s2">&#34;</span> <span class="s2">&#34;true false&#34;</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables_list<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUE</span><span class="o">=</span><span class="nv">$2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUES</span><span class="o">=</span><span class="nv">$3</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">REQUIRED</span><span class="o">=</span><span class="nv">$4</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$REQUIRED</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span> -o <span class="s2">&#34;</span><span class="nv">$REQUIRED</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;check_variables_value <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$VALUE</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$VALUE</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;&#34;</span> -a -z <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$VALUES</span><span class="s2">&#34;</span> <span class="p">|</span> grep -F -w <span class="s2">&#34;</span><span class="nv">$VALUE</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> environment variable value [</span><span class="nv">$VALUE</span><span class="s2">] must be in [</span><span class="nv">$VALUES</span><span class="s2">].&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables_equals<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME1</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME2</span><span class="o">=</span><span class="nv">$2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUE1</span><span class="o">=</span><span class="nv">$3</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VALUE2</span><span class="o">=</span><span class="nv">$4</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$VALUE1</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$VALUE2</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME1</span><span class="s2"> and </span><span class="nv">$NAME2</span><span class="s2"> must be equal [</span><span class="nv">$VALUE1</span><span class="s2">, </span><span class="nv">$VALUE2</span><span class="s2">].&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> check_variables_size<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">NAME</span><span class="o">=</span><span class="nv">$1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">SIZE_EXPECT</span><span class="o">=</span><span class="nv">$2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">SIZE</span><span class="o">=</span><span class="nv">$3</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$SIZE_EXPECT</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;</span><span class="nv">$SIZE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$NAME</span><span class="s2"> array size [</span><span class="nv">$SIZE</span><span class="s2">] must be [</span><span class="nv">$SIZE_EXPECT</span><span class="s2">].&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> warning<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> -e <span class="s2">&#34;</span><span class="si">${</span><span class="nv">LIGHT_BLUE</span><span class="si">}</span><span class="s2">Welcome to Arch Linux Install Script Recovery</span><span class="si">${</span><span class="nv">NC</span><span class="si">}</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Once finalized recovery tasks execute following commands: exit, umount -R /mnt, reboot.&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span> -p <span class="s2">&#34;Do you want to continue? [y/N] &#34;</span> yn&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">case</span> <span class="nv">$yn</span> in&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>Yy<span class="o">]</span>* <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">;;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>Nn<span class="o">]</span>* <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">;;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* <span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">exit</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">;;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">esac</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> init<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;init_log&#10;&nbsp;&nbsp;&nbsp;&nbsp;loadkeys <span class="nv">$KEYS</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> init_log<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">set</span> -o xtrace&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> facts<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -d /sys/firmware/efi <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">BIOS_TYPE</span><span class="o">=</span><span class="s2">&#34;uefi&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">else</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">BIOS_TYPE</span><span class="o">=</span><span class="s2">&#34;bios&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_SATA</span><span class="o">=</span><span class="s2">&#34;false&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_NVME</span><span class="o">=</span><span class="s2">&#34;false&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$DEVICE</span> <span class="p">|</span> grep <span class="s2">&#34;^/dev/sda&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_SATA</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">elif</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$DEVICE</span> <span class="p">|</span> grep <span class="s2">&#34;^/dev/nvme&#34;</span><span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_NVME</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="k">$(</span>lscpu <span class="p">|</span> grep GenuineIntel<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">CPU_INTEL</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="k">$(</span>lspci <span class="p">|</span> grep -i virtualbox<span class="k">)</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">VIRTUALBOX</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> prepare<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;prepare_partition&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> prepare_partition<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -d /mnt/boot <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;umount /mnt/boot&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;umount /mnt&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -e <span class="s2">&#34;/dev/mapper/</span><span class="nv">$LVM_VOLUME_LOGICAL</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cryptsetup close <span class="nv">$LVM_VOLUME_LOGICAL</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -e <span class="s2">&#34;/dev/mapper/</span><span class="nv">$LVM_VOLUME_PHISICAL</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cryptsetup close <span class="nv">$LVM_VOLUME_PHISICAL</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> configure_network<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$WIFI_INTERFACE</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cp /etc/netctl/examples/wireless-wpa /etc/netctl&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	chmod <span class="m">600</span> /etc/netctl&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	sed -i <span class="s1">&#39;s/^Interface=.*/Interface=&#39;</span><span class="s2">&#34;</span><span class="nv">$WIFI_INTERFACE</span><span class="s2">&#34;</span><span class="s1">&#39;/&#39;</span> /etc/netctl&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	sed -i <span class="s1">&#39;s/^ESSID=.*/ESSID=&#39;</span><span class="s2">&#34;</span><span class="nv">$WIFI_ESSID</span><span class="s2">&#34;</span><span class="s1">&#39;/&#39;</span> /etc/netctl&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	sed -i <span class="s1">&#39;s/^Key=.*/Key=&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;$WIFI_KEY&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;/&#39;</span> /etc/netctl&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$WIFI_HIDDEN</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  		sed -i <span class="s1">&#39;s/^#Hidden=.*/Hidden=yes/&#39;</span> /etc/netctl&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;  	netctl start wireless-wpa&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;ping -c <span class="m">5</span> <span class="nv">$PING_HOSTNAME</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="nv">$?</span> -ne <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> <span class="s2">&#34;Network ping check failed.&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> partition<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$BIOS_TYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;uefi&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DEVICE_SATA</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BOOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">1&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#PARTITION_BOOT_NUMBER=1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DEVICE_NVME</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BOOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p1&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#PARTITION_BOOT_NUMBER=1</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$BIOS_TYPE</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;bios&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DEVICE_SATA</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BIOS</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">1&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BOOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">3&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#PARTITION_BOOT_NUMBER=2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">3&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DEVICE_NVME</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BIOS</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p1&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_BOOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p2&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p3&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#PARTITION_BOOT_NUMBER=2</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">DEVICE</span><span class="si">}</span><span class="s2">p3&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">echo</span> -n <span class="s2">&#34;</span><span class="nv">$PARTITION_ROOT_ENCRYPTION_PASSWORD</span><span class="s2">&#34;</span> <span class="p">|</span> cryptsetup --key-file<span class="o">=</span>- open <span class="nv">$PARTITION_ROOT</span> <span class="nv">$LVM_VOLUME_PHISICAL</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sleep <span class="m">5</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$LVM</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT_MAPPER</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$LVM_VOLUME_GROUP</span><span class="s2">-</span><span class="nv">$LVM_VOLUME_LOGICAL</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">DEVICE_ROOT</span><span class="o">=</span><span class="s2">&#34;/dev/mapper/</span><span class="nv">$DEVICE_ROOT_MAPPER</span><span class="s2">&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_OPTIONS</span><span class="o">=</span><span class="s2">&#34;&#34;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$DEVICE_TRIM</span><span class="s2">&#34;</span> <span class="o">==</span> <span class="s2">&#34;true&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">PARTITION_OPTIONS</span><span class="o">=</span><span class="s2">&#34;defaults,noatime&#34;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">fi</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;mount -o <span class="s2">&#34;</span><span class="nv">$PARTITION_OPTIONS</span><span class="s2">&#34;</span> <span class="nv">$DEVICE_ROOT</span> /mnt&#10;&nbsp;&nbsp;&nbsp;&nbsp;mount -o <span class="s2">&#34;</span><span class="nv">$PARTITION_OPTIONS</span><span class="s2">&#34;</span> <span class="nv">$PARTITION_BOOT</span> /mnt/boot&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> recovery<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;arch-chroot /mnt&#10;<span class="o">}</span>&#10;&#10;<span class="k">function</span> main<span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;configuration_install&#10;&nbsp;&nbsp;&nbsp;&nbsp;sanitize_variables&#10;&nbsp;&nbsp;&nbsp;&nbsp;check_variables&#10;&nbsp;&nbsp;&nbsp;&nbsp;warning&#10;&nbsp;&nbsp;&nbsp;&nbsp;init&#10;&nbsp;&nbsp;&nbsp;&nbsp;facts&#10;&nbsp;&nbsp;&nbsp;&nbsp;prepare&#10;&nbsp;&nbsp;&nbsp;&nbsp;partition&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">#recovery</span>&#10;<span class="o">}</span>&#10;&#10;main</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>alis-recovery.sh</span>
+    </div>
+</div>
+<div class="alert alert-secondary sourcecode">
+    <amp-img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon"></amp-img>
+    <p>
+        El <a href="https://github.com/picodotdev/alis/tree/master/">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub.</p>
+</div>
+
+    </div>
+  </article>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/06/hemeroteca-13/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Hemeroteca #13</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/lakka.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Consola de juegos retro con Lakka y una Raspberry Pi</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/hemeroteca-12/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Hemeroteca #12</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/12/como-eliminar-metainformacion-de-las-fotos-en-gnu-linux/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Como eliminar metainformación de las fotos en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/06/hemeroteca-11/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Hemeroteca #11</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/05/descargar-e-instalar-la-distribucion-ubuntu-de-gnu-linux-paso-a-paso-desde-cero/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/ubuntu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Descargar e instalar la distribución Ubuntu de GNU/Linux paso a paso desde cero</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <a id="pageBottom"></a>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2020 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>

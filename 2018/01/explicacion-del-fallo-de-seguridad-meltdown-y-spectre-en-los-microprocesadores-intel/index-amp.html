@@ -1,0 +1,665 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques side-channel con los que leer el contenido de la memoria del kernel, independientemente del sistema operativo utilizado. &hellip;">
+  
+
+  <title>Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html" hreflang="es" title="Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/intel-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques side-channel con los que leer el contenido de la memoria del kernel, independientemente del sistema operativo utilizado. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/intel-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel">
+<meta name="twitter:description" content="Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques side-channel con los que leer el contenido de la memoria del kernel, independientemente del sistema operativo utilizado. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html"
+    },
+    "headline": "Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/intel-750.png"
+        
+      },
+    "datePublished": "2018-01-06T10:30:00+01:00",
+    "dateModified": "2018-01-07T01:30:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2222",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques <em>side-channel</em> con los que leer el contenido de la memoria del <em>kernel</em>, independientemente del sistema operativo utilizado."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.alert img{margin-bottom:10px}article div.tableofcontents{background-color:#fffae9}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>06/01/2018</time>, actualizado el <time>07/01/2018</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/hardware/index-amp.html">hardware</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/seguridad/index-amp.html">seguridad</a>
+        
+          <a href="/blog-bitix/tags/software/index-amp.html">software</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html#comments">Comentarios</a>
+      
+      
+    </p>
+
+    
+      <p class="summary">Los procesadores Intel se han visto afectados por un grave error de seguridad debido a que fueron diseñados con ejecución especulativa sin tener algunas consideraciones de seguridad, técnica empleada para aumentar el rendimiento pero que tiene efectos colaterales en la cache que pueden se aprovechados para realizar ataques <em>side-channel</em> con los que leer el contenido de la memoria del <em>kernel</em>, independientemente del sistema operativo utilizado.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>El año 2018 ha empezando haciéndose público uno de los peores <em>bugs</em> de seguridad que afecta a absolutamente todos los procesadores <a href="https://www.intel.es">Intel</a> que esta compañía ha fabricado en la última década, denominado <a href="https://meltdownattack.com/"><em>Meltdown</em> y su variante <em>Spectre</em></a>, el error tiene su propio nombre, logotipo y página web. Un error de diseño en los procesadores que solo se puede corregir reemplazando el microprocesador o modificando los sistemas operativos aunque se especula con una pérdida de rendimiento en ciertas cargas de trabajo, entre un 5% y un 30%. El error es tan grave que permite leer a un programa la memoria del núcleo del sistema operativo que debería estar protegida. En la memoria del <em>kernel</em> residen las claves de acceso a sistemas o datos sensibles que obtenidos y utilizados pueden ocasionar graves problemas de seguridad con consecuencias económicas o de acceso no autorizado a información. Este error es tan grave que deja al viejo conocido <a href="https://en.wikipedia.org/wiki/Pentium_FDIV_bug">fallo de la división de los Pentium</a> a la altura de chiste. Hace unos meses por si fuera poco se conocía otro error de seguridad en el <a href="https://en.wikipedia.org/wiki/Intel_Management_Engine">Management Engine (ME)</a> de Intel.</p>
+<ul>
+<li><a href="https://security-center.intel.com/advisory.aspx?intelid=INTEL-SA-00088&amp;languageid=en-fr">Listado de procesadores Intel afectados por Meltdown y Spectre</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/meltdown.svg" width="200" height="200" alt="Meltdown" title="Meltdown"  class="lozad "></amp-img>
+<amp-img src="/blog-bitix/assets/images/logotypes/spectre.svg" width="200" height="200" alt="Spectre" title="Spectre"  class="lozad "></amp-img></p>
+<figcaption>Logotipos de Meltdown y Spectre</figcaption>
+</figure>
+</div>
+<p>Reemplazar todos los microprocesadores es tremendamente caro además de que primero hay que diseñar y fabricar unos que estén exentos del <em>bug</em> que lleva tiempo, meses o años hasta que estén preparados, por lo que la solución hasta el momento pasa por hacer modificaciones en el software y en los sistemas operativos, compiladores y programas para resolver o mitigar el problema. En el sistema operativo la solución consiste en separar el espacio de direcciones del <em>kernel</em> de la de los programas, sin embargo, cada vez que el microprocesador cambia entre un espacio de direcciones a otro hay una penalización en tiempo por lo que en ciertas cargas de trabajo muy intensivas en las que se cambia frecuentemente de contextos como operaciones de red, de almacenamiento rápido o E/S el rendimiento se ve afectado. Para un usuario doméstico, ofimático o juegos la perdida de rendimiento será insignificante y no será apreciable ya que en estos casos el microprocesador no trabaja a la máxima carga o no está cambiando frecuentemente del espacio de direcciones del <em>kernel</em> al de usuario. En grandes centros de datos como la computación en la nube de <a href="https://aws.amazon.com/es/">Amazon Web Services</a>, <a href="https://cloud.google.com/">Google Cloud Platform</a> o <a href="https://azure.microsoft.com/es-es/">Microsoft Azure</a> el rendimiento será más apreciable.</p>
+<p>Como usuarios domésticos para estar protegidos conviene descargar únicamente software de fuentes confiables pero para los usuarios empresariales con sus servicios en la nube en donde los sistemas están aislados pero usando infraestructura compartida y con el descubrimiento de este <em>bug</em> es más grave si no se parchea, los proveedores de infraestructura en la nube ya han planificando tareas de mantenimiento y reinicios obligatorios.</p>
+<div class="media">
+<figure>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/intel.svg" width="200" height="200" alt="Intel" title="Intel"  class="lozad "></amp-img>
+<amp-img src="/blog-bitix/assets/images/logotypes/amd.svg" width="200" height="200" alt="AMD" title="AMD"  class="lozad "></amp-img>
+<amp-img src="/blog-bitix/assets/images/logotypes/arm.svg" width="200" height="200" alt="ARM" title="ARM"  class="lozad "></amp-img></p>
+</figure>
+</div>
+<h3 id="técnicas-para-aumentar-el-rendimiento">Técnicas para aumentar el rendimiento</h3>
+<p>Los microprocesadores modernos implementan varias técnicas para aumentar el rendimiento. Una de las mas simples es aumentar la frecuencia de trabajo del microprocesador, uno de los primeros Pentium trabajaba únicamente a 100 Mhz y los actuales llegan hasta los 3 Ghz, casi 30 veces más. Pero aumentar la frecuencia solo es posible hasta cierto límite a partir del cual el microprocesador se calienta mucho y consume mucha energía. Por lo que hay que emplear otras técnicas al mismo tiempo.</p>
+<p>Otra de las mas simples es reducir el tamaño de los transistores, unos transistores más pequeños hace que sea posible incluir más transistores en el mismo espacio físico para incluir caches de mayor tamaño o nuevas funcionalidades, con más velocidad y con menor consumo de energía. El tamaño de los transistores de los Pentium originales era de 800 nanómetros e incluía 3.1 millones, los Intel Core de octava generación se fabrican a 14 nanómetros incluyendo unos 5000 millones, unas 60 veces más pequeños. Aún así cada vez es más difícil cumplir con la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> ya que se está llegando a límite físico de los átomos de los materiales, consistía en que cada dos años se duplica el número de transistores de un microprocesador.</p>
+<p>Con la ayuda de unos transistores más pequeños y más espacio se aprovecha para aumentar el rendimiento incluyendo más núcleos de cómputo. Pero para aumentar el rendimiento de un núcleo de cómputo individual o el <abbr title="Instructions Per Cicle">IPC</abbr> se emplean otras técnicas como utilizar múltiples <em>pipelines</em> para ejecutar varias instrucciones simultáneamente, ejecución fuera de orden para reorganizar las instrucciones y la ejecución especulativa para mantener llenos esos <em>pipelines</em>.</p>
+<h3 id="escalar">Escalar</h3>
+<p>En un microprocesador escalar se ejecuta una instrucción por ciclo, por ejemplo, en esta secuencia de instrucciones que realizan unas sumas se tardarían 6 ciclos de reloj. A estos microprocesadores que ejecutan una instrucción por ciclo de reloj se les denomina escalares, siendo ejemplos el Intel 486 y el ARM1176 usado en la Raspberry Pi 1.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">n</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&#10;<span class="n">x</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>escalar.py</span>
+    </div>
+</div>
+<h3 id="superescalar">Superescalar</h3>
+<p>En un microprocesador con dos <em>pipelines</em> o <a href="https://en.wikipedia.org/wiki/Superscalar_processor">superescalar</a> se pueden realizar varias operaciones simultáneamente, es decir, mientras se realiza la primera operación en la variable <em>m</em> se realiza al mismo tiempo la segunda operación de <em>n</em>, con lo que estas operaciones podrían completarse en únicamente tres ciclos de reloj con la siguiente equivalencia de programa. Ejemplos de microprocesadores superescalares son el Intel Pentium y los <a href="https://www.arm.com/">ARM</a> Cortex-A7 y Cortex-A53 estos últimos usados en la Raspberry Pi 2 y 3 respectivamente.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span>&#10;<span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>superescalar-1.py</span>
+    </div>
+</div>
+<p>Sin embargo, hacer la suma de <em>o</em> y <em>x</em> al mismo tiempo no es posible ya que antes de calcular <em>x</em> hay que calcular <em>o</em> debido a que uno de los operandos en la suma de <em>x</em> es <em>o</em>, es decir, hay una dependencia en estas instrucciones y se han de ejecutar una después de otra. Con lo que en vez de tres ciclos habría que conformase en ejecutar estas instrucciones en cuatro ciclos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span> &#10;<span class="n">o</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span> &#10;<span class="n">z</span> <span class="o">=</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="c1"># el segundo pipeline está ocioso</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>suprescalar-2.py</span>
+    </div>
+</div>
+<h3 id="fuera-de-orden">Fuera de orden</h3>
+<p>Los microprocesadores <a href="https://en.wikipedia.org/wiki/Out-of-order_execution">fuera de orden</a> reordenan las instrucciones de la forma adecuada para que el programa sea equivalente pero manteniendo los <em>pipelines</em> llenos. Cambiando el orden entre las instrucciones <em>x</em> e <em>y</em> se consigue ejecutar las instrucciones en tres ciclos de reloj. Ejemplos de microprocesadores fuera de orden son el Pentium 2 y siguientes microprocesadores Intel y <a href="https://www.amd.com/es">AMD</a> incluyendo varios ARM Cortex-A9, A15, A17 y A57.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">o</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">,</span> <span class="n">h</span><span class="o">+</span><span class="n">i</span>&#10;<span class="n">x</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">f</span><span class="o">+</span><span class="n">o</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="n">k</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>fuera-de-orden.py</span>
+    </div>
+</div>
+<h3 id="predicción-de-salto-y-ejecución-especulativa">Predicción de salto y ejecución especulativa</h3>
+<p>Los programas incluyen saltos con sentencias condicionales <em>if</em> o de bucle. Los microprocesadores tratan de adivinar si una sentencia de salto se producirá o no (con heurísticas y son bastante buenos acertando) para recuperar y tener preparadas las siguientes instrucciones. Mantener los <em>pipelines</em> llenos es difícil al aumentar su número a tres o cuatro. Para tratar de mantenerlos llenos los microprocesadores usan la predicción de salto y van ejecutando las instrucciones desechando las operaciones si finalmente no se acierta en el salto pero habiendo aumentado el rendimiento si se ha acertado, realizan <a href="https://en.wikipedia.org/wiki/Speculative_execution">ejecución especulativa</a> de las instrucciones.</p>
+<p>En este otro caso, <em>v</em> depende de <em>u</em> y <em>u</em> depende de <em>t</em> de modo que un microprocesador superescalar sin ejecución especulativa tardará tres ciclos computando <em>t</em>, <em>u</em> y <em>v</em> para determinar el valor de <em>v</em> en la sentencia condicional <em>if</em> (en otro ciclo) momento en que pasa otros tres ciclos calculando <em>w</em>, <em>x</em> e <em>y</em>, en total 4 o 7 ciclos dependiendo de si hay salto en la sentencia condicional.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span><span class="o">+</span><span class="n">g</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">h</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-1.py</span>
+    </div>
+</div>
+<p>Si el predictor de salto determina que es probable que la condición sea cierta la ejecución especulativa reordena el programa de la siguiente manera:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="n">w_</span> <span class="o">=</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">x_</span> <span class="o">=</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">y_</span> <span class="o">=</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-2.py</span>
+    </div>
+</div>
+<p>Y con la ejecución superescalar se mantiene los <em>pipelines</em> ocupados de modo que el ejemplo tiene la siguiente equivalencia y tardando aproximadamente 3 ciclos cuando antes se necesitaban 7.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">e</span><span class="o">+</span><span class="n">f</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span><span class="o">+</span><span class="n">g</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x_</span><span class="o">+</span><span class="n">h</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ejecucion-especulativa-3.py</span>
+    </div>
+</div>
+<h3 id="cache">Cache</h3>
+<p>Los microprocesadores son muy rápidos comparados con la memoria o el acceso al almacenamiento secundario. Un Cortex-A53 de una Raspberry Pi puede ejecutar una instrucción en 0.5 nanosegundos pero el acceso a memoria costar 100 nanosegundos. Esto no es bueno pero por fortuna los accesos a memoria siguen patrones, accediendo repetidamente a variables recientemente accedidas y accediendo a variables en posiciones cercanas, de forma que colocando estas variables en una cache más rápida y cercana al procesador que la memoria principal se mitiga en gran medida el problema.</p>
+<h3 id="relación-entre-ejecución-especulativa-cache-y-_meltdown_-y-_spectre_">Relación entre ejecución especulativa, cache y <em>Meltdown</em> y <em>Spectre</em></h3>
+<p>La ejecución especulativa tiene el efecto colateral de colocar datos en la memoria cache del microprocesador y esto es utilizado para realizar una forma de <a href="https://en.wikipedia.org/wiki/Side-channel_attack">ataque side-channel</a>. Desde el punto de vista de <em>Meltdown</em> y <em>Spectre</em> y la ejecución especulativa lo importante es que midiendo el tiempo que tarda el acceso a memoria se puede conocer si el dato está en la cache (tarda poco) o no (tarda mucho).</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>&#10;<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span>&#10;<span class="n">v</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span> <span class="o">=</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>   <span class="c1"># si se llega aquí se produce un fallo</span>&#10;   <span class="n">x</span> <span class="o">=</span> <span class="n">w</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="c1"># operación de bit and</span>&#10;   <span class="n">y</span> <span class="o">=</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x</span><span class="p">]</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-1.py</span>
+    </div>
+</div>
+<p><em>u</em> tiene una dependencia sobre <em>t</em> y <em>v</em> sobre <em>u</em> con lo que el microprocesador usando la superescalabilidad, la ejecución fuera de orden y ejecución especulativa acabaría transformando el programa en la siguiente secuencia de operaciones:</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">t</span><span class="p">,</span> <span class="n">w_</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">kern_mem</span><span class="p">[</span><span class="n">address</span><span class="p">]</span>&#10;<span class="n">u</span><span class="p">,</span> <span class="n">x_</span> <span class="o">=</span> <span class="n">t</span><span class="o">+</span><span class="n">c</span><span class="p">,</span> <span class="n">w_</span> <span class="o">&amp;</span> <span class="mh">0x100</span>&#10;<span class="n">v</span><span class="p">,</span> <span class="n">y_</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">user_mem</span><span class="p">[</span><span class="n">x_</span><span class="p">]</span>&#10;<span class="k">if</span> <span class="n">v</span><span class="p">:</span>&#10;   <span class="n">w</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">w_</span><span class="p">,</span> <span class="n">x_</span><span class="p">,</span> <span class="n">y_</span>&nbsp;&nbsp;&nbsp;&nbsp;  <span class="c1"># nunca se llega aquí, si no fallo</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>meltdown-2.py</span>
+    </div>
+</div>
+<p>El microprocesador lee de el valor de una dirección del <em>kernel</em> de forma especulativa pero el fallo en la operación de acceso no se produce hasta se conoce el valor de <em>v</em> utilizando en la sentencia condicional no es cero. Limpiando la cache previamente y haciendo que <em>v</em> de cero para que no se produzca la excepción con los valores adecuados de las variables (<em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>) la ejecución especulativa de <code>v, y_ = u+d, user_mem[x_]</code> producirá un acceso a la dirección de memoria <em>0x000</em> o <em>0x100</em> dependiendo del valor del octavo bit recuperado en el acceso ilegal a la dirección de memoria <code>kern_mem[address]</code>. El ataque <em>side-channel</em> se produce midiendo el tiempo que tarda una instrucción posterior que utilice estas direcciones, si está o no está en la cache (por el tiempo que tarda) determina a que dirección de memoria se ha accedido y cual es el valor del octavo bit de una dirección del <em>kernel</em>. ¡Felicidades has leído un bit de la memoria del kernel!. Bit a bit y con tiempo se puede leer todo el contenido de la memoria del <em>kernel</em> aplicando esta operación millones de veces.</p>
+<h3 id="notas-finales">Notas finales</h3>
+<p>Los microprocesadores ARM1176, Cortex-A7, and Cortex-A53 usados en la Raspberry Pi no se ven afectados por el <em>Meltdown</em> ya que no poseen ejecución especulativa, los AMD Ryzen tampoco se ven afectados por el <em>Meltdown</em> ya que aunque si soportan ejecución especulativa al contrario de Intel la ejecución especulativa no se permite entre diferentes anillos de seguridad, el <em>kernel</em> se ejecuta en el anillo 0 y las aplicaciones en el anillo 3. Sin embargo, una variante de <em>Meltdown</em> es <em>Spectre</em> que es el mismo caso pero en vez de con la memoria del <em>kernel</em> con la memoria de otra aplicación. Como las aplicaciones se ejecutan en el mismo anillo en este caso los AMD Ryzen y algunos modelos de ARM si se ven afectados por <em>Spectre</em> al igual que también los Intel.</p>
+<p>La ejecución especulativa hace más rápidos los microprocesadores pero habiéndose descubierto este fallo muy inseguros en el caso de los Intel ya que se ve afectados por <em>Meltdown</em> y <em>Spectre</em> a menos que se implementen parches por software ya que por microcódigo no es posible darle solución. <em>Meltdown</em> es más grave pero se puede corregir modificando el <em>kernel</em> aún con una pérdida de rendimiento, <em>Spectre</em> es más difícil de explotar pero más difícil de corregir y lo que se hará en este último caso es mitigar el problema modificando el sistema operativo, compilador y aplicaciones.</p>
+<p>Intel tiene un problema importante, con AMD y sus Ryzen a buen precio, con buen rendimiento y&hellip; sin el problema del <em>Meltdown</em>. Para corregir el fallo en el diseño de la arquitectura del hardware Intel va a tener que rediseñar en parte su arquitectura y esto le va a llevar meses hasta tener preparados nuevos modelos de microprocesadores sin el error.</p>
+<p>En el <em>kernel</em> de Linux 4.14.11 ya se han aplicado varios parches al igual que posteriormente se implementarán en Windows y macOS. Yo como usuario de Linux con un Intel Core i5-3210M que posee la característica <em>pcid</em> y esa versión del <em>kernel</em> no he notado ninguna perdida de rendimiento apreciable.</p>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://www.raspberrypi.org/blog/why-raspberry-pi-isnt-vulnerable-to-spectre-or-meltdown/">Why Raspberry Pi isn’t vulnerable to Spectre or Meltdown</a></li>
+<li><a href="https://pdfs.semanticscholar.org/2209/42809262c17b6631c0f6536c91aaf7756857.pdf">The Intel 80x86 Processor Architecture: Pitfalls for Secure Systems</a></li>
+<li><a href="https://www.amd.com/en/corporate/speculative-execution">An Update on AMD Processor Security</a></li>
+<li><a href="https://lkml.org/lkml/2017/12/27/2">x86/cpu, x86/pti: Do not enable PTI on AMD processors</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures">List of ARM microarchitectures</a></li>
+<li><a href="https://geeks.ms/etomas/2018/01/05/meltdown-y-spectre-algunos-comentarios/">Meltdown y Spectre algunos comentarios</a></li>
+</ul>
+</div>
+
+    </div>
+  </article>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2017/08/instalar-y-renovar-un-certificado-de-lets-encrypt-en-nginx/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/lets-encrypt.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Instalar y renovar un certificado de Let&#39;s Encrypt en Nginx</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/nginx.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/11/introduccion-a-bitnami/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/bitnami.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Introducción a Bitnami</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/dnie.jpg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Firmar digitalmente documentos con el DNIe y Sinadura</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <h3>Enviar correos electrónicos firmados con el DNIe y Evolution</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <a id="pageBottom"></a>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2020 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>

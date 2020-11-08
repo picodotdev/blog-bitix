@@ -1,0 +1,25 @@
+...
+
+dependencies {
+    implementation "javax.json:javax.json-api:1.1"
+    implementation "javax.json.bind:javax.json.bind-api:1.0"
+    implementation "javax.json.bind:javax.json.bind-api:1.0"
+    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.9.8"
+
+    ...
+
+    runtimeOnly "org.eclipse:yasson:1.0"
+    runtimeOnly "org.glassfish:javax.json:1.1"
+}
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+mainClassName = 'io.github.picodotdev.blogbitix.javajson.Main'
+
+repositories {
+    jcenter()
+}

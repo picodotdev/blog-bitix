@@ -1,0 +1,1 @@
+$ sudo pacman -U /var/cache/pacman/pkg/networkmanager-0.9.10.0-4-x86_64.pkg.tar.xz

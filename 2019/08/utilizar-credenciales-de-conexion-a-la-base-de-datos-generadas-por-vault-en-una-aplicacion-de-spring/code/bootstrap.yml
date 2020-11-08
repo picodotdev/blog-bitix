@@ -1,0 +1,13 @@
+spring.application.name: app
+spring.cloud.vault:
+  uri: http://127.0.0.1:8200
+  authentication: APPROLE
+  app-role:
+    role-id: a248529d-882c-ef5f-f7e6-6a9d349afa57
+    secret-id: 13b6c224-dc18-0404-7bc1-7c258c4c5a48
+  database:
+    enabled: true
+    role: app
+    backend: database
+    username-property: spring.datasource.username
+    password-property: spring.datasource.password
