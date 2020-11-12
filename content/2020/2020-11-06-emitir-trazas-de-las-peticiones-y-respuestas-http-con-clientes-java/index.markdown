@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:java.svg"
-tags: ["java", "planeta-codigo", "progrmacion"]
+tags: ["java", "planeta-codigo", "programacion"]
 summary: "En las peticiones HTTP que se hacen unos microservicios a otros o a recursos externos son varias las cosas por las que una petición HTTP es capaz de fallar. El fallo es un código de estado distinto al correcto 200, ya sea petición invalida 400, un recurso no encontrado 404, credenciales requeridas 401, credenciales inválidas 403 o un error interno de servidor 500 entre otros códigos de estado, otras posibilidades son fallos de conexión de red. Añadir trazas de las peticiones que hacen los microservicios permite obtener información con la que averiguar cual es el motivo de fallo, si además emiten las trazas con las cabeceras y parámetros en formato de la herramienta _curl_ es fácil probar y reproducir el mismo error o la misma acción."
 ---
 
