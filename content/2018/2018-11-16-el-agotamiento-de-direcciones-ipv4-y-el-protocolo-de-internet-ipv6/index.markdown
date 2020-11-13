@@ -34,8 +34,10 @@ La solución a largo plazo para la escasez de direcciones IP del protocolo IPv4 
 * La tierra tiene 4500 millones de años, si se asignan direcciones IPv6 al ritmo de 1000 millones por segundo desde que se formó la tierra hast ahora se usado una trillonésima parte del espacio de direcciones.
 * Se puede asignar 4 trillones de direcciones por cada uno de los 510 billones de metros cuadrados de la tierra.
 
-> 11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111:11111111 (no es un error de maquetación, son los 128 bits de una dirección IPv6)<br>
-> FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF<br>
+> 11111111:11111111:11111111:11111111:11111111:<br>
+> 11111111:11111111:11111111:11111111:11111111:<br>
+> 11111111:11111111:11111111:11111111:11111111:11111111<br><br>
+> FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF:FFFF<br><br>
 > ::1 (dirección _loopback_)
 
 IPv6 ha sido desarrollado hace varios lustros sin embargo su adopción está siendo tan lenta ya que los proveedores de internet y servidores de internet necesitan soportar el nuevo protocolo, los sistemas operativos y equipos de red ya hace tiempo que fueron adaptados y cualquiera que se compre actualmente ya lo soportará. Usar IPv6 puede ocasionar que algunos servidores que no soporten este protocolo aún no puedan ser accedidos. El servicio de nombres de internet ya fue adaptado a IPv6 y seguramente los servidores de los servicios de empresas importantes como [Google][google], [Amazon][amazon], [Facebook][facebook], [Microsoft][microsoft] o [Apple][apple] también lo soportan.
