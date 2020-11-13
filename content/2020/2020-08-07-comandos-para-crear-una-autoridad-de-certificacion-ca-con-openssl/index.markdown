@@ -139,7 +139,7 @@ Los certificados se emiten con una de caducidad, llegado en el tiempo a la fecha
 
 {{% sourcecode git="blog-ejemplos/tree/master/CertificateAuthority" command="./ca.sh && ./server-certs.sh" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [OpenSSL Certificate Authority](https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html)
 * [How do you sign a Certificate Signing Request with your Certification Authority?](https://stackoverflow.com/questions/21297139/how-do-you-sign-a-certificate-signing-request-with-your-certification-authority)
 * [Know about SAN Certificate and How to Create With OpenSSL](https://geekflare.com/san-ssl-certificate/)
@@ -149,6 +149,6 @@ Los certificados se emiten con una de caducidad, llegado en el tiempo a la fecha
 * [Certificate management](https://tldp.org/HOWTO/SSL-Certificates-HOWTO/x195.html)
 * [Revoke Certificates](https://roll.urown.net/ca/ca_revoke.html)
 * [How do I issue multiple certificates for the same Common Name?](https://serverfault.com/questions/810557/how-do-i-issue-multiple-certificates-for-the-same-common-name/810608)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

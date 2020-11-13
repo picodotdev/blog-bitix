@@ -172,11 +172,11 @@ Algunos ejemplos de expresiones con su explicación son los siguientes.
    </tbody>
 </table>
 
-{{% reference %}}
+{{< reference >}}
 * [Cron Expressions](https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm)
 * [Cron expression](https://en.wikipedia.org/wiki/Cron#CRON_expression)
 * [Cron expression](https://riptutorial.com/spring/example/21209/cron-expression)
 * [Cron Trigger Tutorial](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

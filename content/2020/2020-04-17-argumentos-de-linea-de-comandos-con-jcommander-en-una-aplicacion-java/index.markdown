@@ -47,8 +47,8 @@ Como dependencia en el proyecto se ha de indicar la librería de JCommander.
 
 {{% sourcecode git="blog-ejemplos/tree/master/JCommander" command="./gradlew run --args='--required --values a1 b2 c3 d4 --help'" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Simplified parser for complex command lines. Nov/Dec 2015](http://www.javamagazine.mozaicreader.com/NovDec2015#&pageSet=13&page=0&contentItem=0)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

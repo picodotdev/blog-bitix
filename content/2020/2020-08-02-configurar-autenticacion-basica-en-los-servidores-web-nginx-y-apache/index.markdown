@@ -114,9 +114,9 @@ Estas desventajas hace de la autenticación básica no adecuada para algunos cas
 
 {{% sourcecode git="blog-ejemplos/tree/master/WebBasicAuth" command="./docker-nginx.sh o ./docker-apache.sh" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Autenticación HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
 * [Restricting Access with HTTP Basic Authentication (nginx)](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/)
 * [Autenticación y Autorización (apache)](https://httpd.apache.org/docs/2.4/howto/auth.html)
 * [htpasswd - Manage user files for basic authentication](https://httpd.apache.org/docs/2.4/en/programs/htpasswd.html)
-{{% /reference %}}
+{{< /reference >}}

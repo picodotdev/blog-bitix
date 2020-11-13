@@ -346,10 +346,10 @@ En la [Wiki de XCOM 2 de Fandom](https://xcom.fandom.com/wiki/XCOM_2) están rec
 {{< youtube
     video="hOcSyivJ7kI" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [Preguntas frecuentes de XCOM 2](https://support.2k.com/hc/es/articles/216650707-PREGUNTAS-FRECUENTES-DE-XCOM-2)
 * [XCOM 2: trucos y consejos para empezar a jugar](https://es.gizmodo.com/trucos-y-consejos-para-jugar-a-xcom-2-y-no-morir-en-el-1758013811)
 * [Trucos y consejos para jugar a XCOM 2 y no morir en el intento](https://www.hobbyconsolas.com/guias-trucos/xcom-2/xcom-2-trucos-consejos-empezar-jugar-260851)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

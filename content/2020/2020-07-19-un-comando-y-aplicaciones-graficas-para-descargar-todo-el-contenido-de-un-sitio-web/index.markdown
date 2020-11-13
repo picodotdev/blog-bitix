@@ -47,8 +47,8 @@ Hay algunas herramientas con interfaz gráfica como [HTTrack](https://www.httrac
 
 También hay algunas herramientas o páginas web _online_ que realizan la descarga de sitios web como [Website Downloader](https://websitedownloader.io) o [Archivarix](https://archivarix.com/en/website-downloader-cms-converter/) sin necesidad de instalar ningún programa en el ordenador aunque tienen unos límites muy reducidos que sobrepasados no son gratuitas y hay que pagar por utilizarlas.
 
-{{% reference %}}
+{{< reference >}}
 * [Downloading an Entire Web Site with wget](https://www.linuxjournal.com/content/downloading-entire-web-site-wget)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

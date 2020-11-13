@@ -59,13 +59,13 @@ De esa comparación destaco dos cosas de systemd:
 {{< youtube
     video="o_AIw9bGogo" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [About the systemd controversy...](https://blog.erratasec.com/2015/08/about-systemd-controversy.html)
 * [What is with all the controversy with systemd?](https://www.reddit.com/r/linuxmasterrace/comments/616wxo/what_is_with_all_the_controversy_with_systemd/)
 * [What's wrong with systemd?](https://www.reddit.com/r/linux/comments/3u2ahq/whats_wrong_with_systemd/)
 * [Why do people not like Systemd?](https://www.reddit.com/r/linux/comments/5n069y/why_do_people_not_like_systemd/)
 * [ELI5: systemd - Advantages and disadvantages](https://www.reddit.com/r/linux/comments/50mpzv/eli5_systemd_advantages_and_disadvantages/)
 * [ELI5: What's the big issue with Systemd?](https://www.reddit.com/r/linux/comments/4n3t6s/eli5_whats_the_big_issue_with_systemd/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -177,8 +177,8 @@ En la [Wiki de Frostpunk de Fandom](https://frostpunk.fandom.com/wiki/Frostpunk_
 {{< youtube
     video="uLF6VFME2jc" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [Frostpunk Review: Damned If You Do, Damned If You Don't](https://www.gamespot.com/reviews/frostpunk-review-damned-if-you-do-damned-if-you-do/1900-6416899/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

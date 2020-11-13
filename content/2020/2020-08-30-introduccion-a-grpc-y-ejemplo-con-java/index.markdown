@@ -109,12 +109,12 @@ Este es un ejemplo muy básico y no incluye varias necesidades habituales que se
 
 {{% sourcecode git="blog-ejemplos/tree/master/HolaMundoGRPC" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [gRPC: The state of winning API for Microservices](https://medium.com/@omoletoye/grpc-the-state-of-winning-api-for-microservices-18d9b6bd8196)
 * [Understanding gRPC](https://www.vineethweb.com/post/grpc/)
 * [API design: Understanding gRPC, OpenAPI and REST and when to use them](https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
 * [Cloud-native communication patterns, gRPC](https://docs.microsoft.com/en-us/dotnet/architecture/cloud-native/grpc)
 * [Evaluating Performance of REST vs. gRPC](https://medium.com/@EmperorRXF/evaluating-performance-of-rest-vs-grpc-1b8bdf0b22da)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

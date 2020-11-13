@@ -58,10 +58,10 @@ En Rust la gestión de errores se hace de la siguiente forma de forma similar a 
 
 Una forma similar de gestión de errores en Java es usando una clase como [Either](https://www.javadoc.io/doc/io.vavr/vavr/latest/io/vavr/control/Either.html) de Varv que permite a un método devolver múltiples valores de retorno, aunque en Java no creo que sea la recomendada teniendo excepciones.
 
-{{% reference %}}
+{{< reference >}}
 * [Error handling and Go](https://blog.golang.org/error-handling-and-go)
 * [Rust Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
 * [Why Go gets exceptions right](https://dave.cheney.net/2012/01/18/why-go-gets-exceptions-right)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

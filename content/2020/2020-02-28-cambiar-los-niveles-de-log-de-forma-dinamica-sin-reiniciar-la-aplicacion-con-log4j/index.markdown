@@ -46,10 +46,10 @@ Para cambiar el nivel de trazas de una aplicación de forma programática se pue
 
 La reconfiguración de los niveles de trazas deben ser temporales ya que la aplicación dependiendo de su carga emite más trazas que con los niveles _warn_ y _error_. Si las trazas se guardan en un archivo, guardar mayor cantidad de ellas hace que su tamaño pueda ser significativo e incluso llenar el almacenamiento provocando malfuncionamiento en la aplicación. Para evitar que el archivo de trazas llene el almacenamiento persistente es posible [limitar por tamaño, por fecha y rotar los archivos de trazas][blogbitix-442].
 
-{{% reference %}}
+{{< reference >}}
 * [Log4j Configuration](https://logging.apache.org/log4j/2.x/manual/configuration.html)
 * [How do I set a logger’s level programmatically?](https://logging.apache.org/log4j/2.x/faq.html#reconfig_level_from_code)
 * [Dynamically Changing log4j log level](https://stackoverflow.com/questions/4598702/dynamically-changing-log4j-log-level)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

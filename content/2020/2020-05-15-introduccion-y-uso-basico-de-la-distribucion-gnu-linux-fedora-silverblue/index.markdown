@@ -215,7 +215,7 @@ En estos vídeos se proporciona una introducción sobre esta distribución que q
 {{< youtube
     video="8b9sTXdQK5k" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [Fedora Silverblue 31 review (after 3 months)](https://xermansoto.wordpress.com/2020/04/10/fedora-silverblue-31-review-after-3-months/)
 * [A little collection of ‘How to do X with Toolbox on Fedora Silverblue’](http://harrymichal.undo.it/posts/2020/a-little-collection-of-how-to-do-x-with-toolbox-on-fedora-silverblue/)
-{{% /reference %}}
+{{< /reference >}}

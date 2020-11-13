@@ -74,11 +74,11 @@ Este es el código del cliente que hace la petición al servidor y el código de
 
 {{% sourcecode git="blog-ejemplos/tree/master/SpringCloudConsulNomadTraefik" command="./run.sh" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Trazabilidad Distribuida con Spring Cloud: Sleuth y Zipkin](https://www.paradigmadigital.com/dev/trazabilidad-distribuida-spring-cloud-sleuth-zipkin/)
 * [Zipkin Dependencies](https://github.com/openzipkin/zipkin-dependencies)
 * [Zipkin Examples](https://github.com/openzipkin?utf8=%E2%9C%93&q=example)
 * [Sleuth Common application properties](https://docs.spring.io/spring-cloud-sleuth/docs/2.2.5.RELEASE/reference/html/appendix.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

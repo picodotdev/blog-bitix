@@ -136,7 +136,7 @@ Las distribuciones GNU/Linux son más numerosas si bien es cierto que muchas de 
 
 He escrito algunos artículos para [elegir la mejor distribución GNU/Linux][blogbitix-190] según las necesidades del usuario o uso. [Cómo descargar e instalar Ubuntu paso paso desde cero][blogbitix-232], una de las distribuciones más populares y recomendadas para los usuarios recién llegados a GNU/Linux y que muchos usuarios con experiencia siguen usando. [Las aplicaciones del entorno de escritorio GNOME][blogbitix-464] con las que los usuarios interaccionan con la computadora o [la distribución Fedora Silverblue][blogbitix-483] con una aproximación diferente a la mayoría de las distribuciones con un sistema inmutable y basado en contenedores que le dota de mayor fiabilidad al realizar actualizaciones del sistema que en ciertos aspectos se parece a las distribuciones BSD al separar el sistema base de las aplicaciones.
 
-{{% reference %}}
+{{< reference >}}
 * [What’s the Difference Between Linux and BSD?](https://www.howtogeek.com/190773/htg-explains-whats-the-difference-between-linux-and-bsd/)
 * [Difference Between Linux And BSD | Open Source Operating Systems](https://fossbytes.com/difference-linux-bsd-open-source/)
 * [BSD licenses](https://en.wikipedia.org/wiki/BSD_licenses)
@@ -144,6 +144,6 @@ He escrito algunos artículos para [elegir la mejor distribución GNU/Linux][blo
 * [Why Should You Use FreeBSD? Here's Some Reasons](https://www.phoronix.com/scan.php?page=news_item&px=MTExMDg)
 * [Reasons Why You Should Not Use FreeBSD](https://www.phoronix.com/scan.php?page=news_item&px=MTExMjE)
 * [FreeBSD Ports](https://www.freebsd.org/ports/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

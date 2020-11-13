@@ -89,8 +89,8 @@ Existen herramientas que automatizan la comprobación de las normas elegidas en 
 
 * [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
 
-{{% reference %}}
+{{< reference >}}
 * [Coding conventions](https://en.wikipedia.org/wiki/Coding_conventions)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -396,11 +396,11 @@ Hay otras funcionalidades que un entorno real de producción requeriría, como t
 
 {{% sourcecode git="blog-ejemplos/tree/master/ConsulVaultNomadDatacenter" command="./vagrant-up.sh" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [How to make iptables rules persistent after reboot on Linux](https://linuxconfig.org/how-to-make-iptables-rules-persistent-after-reboot-on-linux)
 * [Securing Consul Web UI](https://github.com/hashicorp/consul/issues/7150)
 * [Consul Web UI: Need to make it password enabled](https://github.com/hashicorp/consul/issues/1720)
 * [Vagrant box startup timeout due to no serial port](https://bugs.launchpad.net/cloud-images/+bug/1829625)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

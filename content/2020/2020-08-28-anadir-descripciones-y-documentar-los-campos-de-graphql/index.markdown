@@ -45,8 +45,8 @@ Una vez añadidos los comentarios tanto en [el IDE de GraphiQL][blogbitix-340] c
 
 Poner nombres semánticos y significativos a los tipos y propiedades es una gran ayuda, para mayor detalle, aclaraciones y puntualizaciones están las descripciones que se pueden añadir en GraphQL.
 
-{{% reference %}}
+{{< reference >}}
 * [How do I add a description to a field in “GraphQL schema language”](https://stackoverflow.com/questions/39962867/how-do-i-add-a-description-to-a-field-in-graphql-schema-language)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

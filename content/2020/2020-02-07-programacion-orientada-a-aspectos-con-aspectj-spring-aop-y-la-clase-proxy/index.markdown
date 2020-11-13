@@ -117,11 +117,11 @@ En este caso se observa que se ha aplicado el aspecto de AspectJ y además los a
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaAOP" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Aspect Oriented Programming with Spring](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#aop)
 * [Spring AOP + AspectJ annotation example](https://mkyong.com/spring3/spring-aop-aspectj-annotation-example/)
 * [Implementing AOP with Spring Boot and AspectJ](https://www.springboottutorial.com/spring-boot-and-aop-with-spring-boot-starter-aop)
 * [Intro to AspectJ](https://www.baeldung.com/aspectj)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

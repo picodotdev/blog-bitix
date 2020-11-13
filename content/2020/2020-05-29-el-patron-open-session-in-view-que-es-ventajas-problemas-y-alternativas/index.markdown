@@ -72,11 +72,11 @@ En muchas aplicaciones usar el patrón _Open Session in View_ con Hibernate no s
 
 * [Copiar datos de un tipo de objeto a otro con ModdelMapper][blogbitix-488]
 
-{{% reference %}}
+{{< reference >}}
 * [Why is Hibernate Open Session in View considered a bad practice?](https://stackoverflow.com/questions/1103363/why-is-hibernate-open-session-in-view-considered-a-bad-practice)
 * [The OpenSessionInView antipattern](https://blog.frankel.ch/the-opensessioninview-antipattern/)
 * [The Open Session In View Anti-Pattern](https://vladmihalcea.com/the-open-session-in-view-anti-pattern/)
 * [A Guide to Spring’s Open Session In View](https://www.baeldung.com/spring-open-session-in-view)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

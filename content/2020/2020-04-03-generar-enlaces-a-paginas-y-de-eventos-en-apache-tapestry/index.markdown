@@ -43,8 +43,8 @@ Desde el lado del cliente en JavaScript también puede ser necesario lanzar even
 
 {{< code file="events.js" language="javascript" options="" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [Ajax and Zones](http://tapestry.apache.org/ajax-and-zones.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

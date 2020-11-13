@@ -112,8 +112,8 @@ Otro uso distinto para la carga vaga es lanzar eventos de Analytics, esto lo he 
 
 {{< code file="app.js" language="javascript" options="" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [\<img\>: The Image Embed element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

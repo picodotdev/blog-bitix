@@ -223,8 +223,8 @@ Por supuesto otros elementos indispensables son las típicas sartenes de diferen
 
 Por el momento creo que para las comidas que suelo hacer con la olla y las sartenes además de las típicas cacerolas bajas tengo más que suficiente.
 
-{{% reference %}}
+{{< reference >}}
 * [La olla express más pequeña de 2 litros a 3 litros. Cuál comprar](https://www.ollaexpress.net/pequena/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

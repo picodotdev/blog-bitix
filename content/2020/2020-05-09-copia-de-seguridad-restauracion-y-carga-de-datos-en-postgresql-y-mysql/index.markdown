@@ -67,8 +67,8 @@ En ambos casos las exportaciones e impotaciones soportan archivos en formato tex
 {{< code file="postgresql-copy.sh" language="bash" options="" >}}
 {{< code file="mysql-load.sh" language="bash" options="" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [Populating a Database, Performance Tips](https://www.postgresql.org/docs/current/populate.html)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

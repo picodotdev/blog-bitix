@@ -94,9 +94,9 @@ Los ámbitos de visbilidad es un mecanismo bastante limitado ni es suficiente pa
 
 [La modularidad añadida en Java 9][blogbitix-263] viene a complementar y dar una solución más completa a los ámbitos de visibilidad así como garantizar mejor la encapsulación tal y como el programador del paquete original ha diseñado.
 
-{{% reference %}}
+{{< reference >}}
 * [Java syntax](https://en.wikipedia.org/wiki/Java_syntax)
 * [Class invariant](https://en.wikipedia.org/wiki/Class_invariant)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

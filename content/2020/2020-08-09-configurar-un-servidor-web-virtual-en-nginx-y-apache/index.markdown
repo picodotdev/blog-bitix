@@ -68,8 +68,8 @@ Usando Apache también se accede al sitio web por su nombre de dominio _www.127.
 
 {{% sourcecode git="blog-ejemplos/tree/master/WebVirtualServer" command="./docker-nginx.sh, ./docker-apache.sh" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [How to Install Apache Server and Set Up Virtual Hosts on Ubuntu 20.04](https://linuxhint.com/install_apache_server_setup_virtual_hosts_ubuntu/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

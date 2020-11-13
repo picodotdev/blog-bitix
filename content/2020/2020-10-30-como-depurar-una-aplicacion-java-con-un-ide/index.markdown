@@ -121,14 +121,14 @@ Los puntos de ruptura se crean con la tecla Ctrl+Shift+B o con el botón derecho
     image1="image:eclipse-debug.png" optionsthumb1="300x200" title1="Depuración de un programa en eclipse"
     caption="Depuración de un programa en eclipse" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [The Application Plugin](https://docs.gradle.org/current/userguide/application_plugin.html)
 * [IntelliJ IDEA Debug code](https://www.jetbrains.com/help/idea/debugging-code.html)
 * [IntelliJ IDEA Attach to process](https://www.jetbrains.com/help/idea/attaching-to-local-process.html)
 * [IntelliJ IDEA Run/debug configurations](https://www.jetbrains.com/help/idea/run-debug-configuration.html)
 * [IntelliJ IDEA Step through the program](https://www.jetbrains.com/help/idea/stepping-through-the-program.html#smart-step-into)
 * [Debugging the Eclipse IDE for Java Developers](https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php)
-{{% /reference %}}
+{{< /reference >}}
 
 {{< sourcecode git="blog-ejemplos/tree/master/HolaMundoJava8" command="./gradlew run" >}}
 

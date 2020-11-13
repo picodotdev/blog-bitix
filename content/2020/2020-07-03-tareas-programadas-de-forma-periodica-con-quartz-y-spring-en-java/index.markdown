@@ -89,10 +89,10 @@ El ejemplo incluye varias tareas definidas con Quartz y con Spring. En las traza
 
 {{% sourcecode git="blog-ejemplos/tree/master/QuartzSpring" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Quartz Examples](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/examples/)
 * [Scheduling in Spring with Quartz](https://www.baeldung.com/spring-quartz-schedule)
 * [How to Schedule Tasks with Spring Boot](https://www.callicoder.com/spring-boot-task-scheduling-with-scheduled-annotation/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

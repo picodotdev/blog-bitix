@@ -569,10 +569,10 @@ Aspecto e interior de Series X/S.
 {{< youtube
     video="1LzCkI7imUs" >}}
 
-{{% reference %}}
+{{< reference >}}
 * [First PS5 hands-on videos show off hardware and games, but no UI](https://www.theverge.com/2020/10/4/21500809/sony-ps5-photos-hands-on-videos-hardware-games-preview)
 * [NBA 2K21 Next-Gen Trailer And Screens Show Off Balling On PS5 And Xbox Series X](https://www.gamespot.com/articles/nba-2k21-next-gen-trailer-and-screens-show-off-balling-on-ps5-and-xbox-series-x/1100-6482957/)
 * [PS5 specs and features, including SSD, ray tracing, GPU and CPU for the PlayStation 5 explained ](https://www.eurogamer.net/articles/ps5-specs-features-ssd-ray-tracing-cpu-gpu-6300)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

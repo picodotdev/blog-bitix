@@ -83,10 +83,10 @@ Otros esquemas más flexibles pero más complejos son las [listas de control de 
 
 En la [wiki de Arch Linux sobre permisos de archivo y atributos](https://wiki.archlinux.org/index.php/File_permissions_and_attributes) se explica detalladamente y con ejemplos el sistema de permisos en GNU/Linux.
 
-{{% reference %}}
+{{< reference >}}
 * [setuid](https://en.wikipedia.org/wiki/Setuid)
 * [Sticky bit](https://en.wikipedia.org/wiki/Sticky_bit)
 * [Access Control Lists](https://wiki.archlinux.org/index.php/Access_Control_Lists)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

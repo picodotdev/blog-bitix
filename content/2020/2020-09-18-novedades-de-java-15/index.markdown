@@ -116,11 +116,11 @@ Otras especificaciones que no tienen tanto impacto desde el punto de vista del p
 
 Entre las más destacables está _Foreign-Memory Access_ que permite a los programas Java acceder de forma segura y eficiente a memoria externa fuera de la memoria _heap_ de Java. También a destacar el soporte de Unicode 13.0 que añade unos 5K nuevos caracteres o el soporte para el algoritmo de _hash_ SHA-3 en el apartado de seguridad.
 
-{{% reference %}}
+{{< reference >}}
 * [JDK 15 Release Notes](https://jdk.java.net/15/release-notes)
 * [Inside Java 15: Fourteen JEPs in five buckets](https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets)
 * [The Arrival of Java 15](https://blogs.oracle.com/java-platform-group/the-arrival-of-java-15)
 * [Java 15 and IntelliJ IDEA ](https://blog.jetbrains.com/idea/2020/09/java-15-and-intellij-idea/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

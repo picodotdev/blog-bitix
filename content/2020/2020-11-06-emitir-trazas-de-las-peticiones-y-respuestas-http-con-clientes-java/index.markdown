@@ -85,11 +85,11 @@ OkHttp es otra de las librerías para realizar peticiones HTTP populares en Java
 
 {{% sourcecode git="blog-ejemplos/tree/master/HttpClientLog" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Log your RestTemplate Request and Response without destroying the body](https://objectpartners.com/2018/03/01/log-your-resttemplate-request-and-response-without-destroying-the-body/)
 * [Logging with Retrofit 2](https://stackoverflow.com/a/33256827)
 * [OkHttpClient Logging Configuration With Interceptors](https://dzone.com/articles/okhttpclient-logging-configuration-with-intercepto)
 * [Apache HttpClient Interceptor](https://www.concretepage.com/apache-api/apache-httpclient-interceptor)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

@@ -78,12 +78,12 @@ Firefox también permite tomar capturas de pantalla desde la interfaz gráfica, 
 
 La consola web de Firefox también permite tomar capturas de pantalla escribiendo el comando _:screenshot_.
 
-{{% reference %}}
+{{< reference >}}
 * [Firefox Headless mode Taking screenshots](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Headless_mode#Taking_screenshots)
 * [Firefox Taking screenshots](https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots)
 * [Firefox Taking screenshots with the web console](https://developer.mozilla.org/en-US/docs/Tools/Taking_screenshots#Taking_screenshots_with_the_web_console)
 * [Profile Manager - Create, remove, or switch Firefox profiles](https://support.mozilla.org/en-US/kb/profile-manager-create-remove-switch-firefox-profiles?redirectlocale=en-US&redirectslug=profile-manager-create-and-remove-firefox-profiles)
 * [Read file line by line and perform action for each in bash](https://stackoverflow.com/questions/15396190/read-file-line-by-line-and-perform-action-for-each-in-bash)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

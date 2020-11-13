@@ -118,7 +118,7 @@ De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teo
 
 {{% sourcecode git="blog-ejemplos/tree/master/EventBus" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [A better domain events pattern](https://lostechies.com/jimmybogard/2014/05/13/a-better-domain-events-pattern/)
 * [(Un) Reliability in messaging: idempotency and de-duplication](https://lostechies.com/jimmybogard/2013/06/03/un-reliability-in-messaging-idempotency-and-de-duplication/)
 * [Eventos de dominio: diseño e implementación](https://docs.microsoft.com/es-es/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/domain-events-design-implementation)
@@ -129,6 +129,6 @@ De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teo
 * [How to publish and handle Domain Events](http://www.kamilgrzybek.com/design/how-to-publish-and-handle-domain-events/)
 * [The Outbox Pattern](http://www.kamilgrzybek.com/design/the-outbox-pattern/)
 * [Domain Driven Design Crash Course](https://vaadin.com/learn/tutorials/ddd)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

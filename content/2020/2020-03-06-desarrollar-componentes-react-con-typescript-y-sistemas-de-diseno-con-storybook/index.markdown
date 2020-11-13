@@ -172,7 +172,7 @@ Storybook es una gran ayuda para desarrollar componentes de lado de cliente. Otr
 
 {{% sourcecode git="blog-ejemplos/tree/master/Storybook" command="npm install && npm run storybook" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Step by step: Building and publishing an NPM Typescript package](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c)
 * [Setting up a React + TypeScript + Storybook project](https://medium.com/@dandobusiness/setting-up-a-react-typescript-storybook-project-5e4e9f540568)
 * [How to use jQuery with TypeScript](https://stackoverflow.com/questions/32050645/how-to-use-jquery-with-typescript)

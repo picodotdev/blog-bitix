@@ -74,10 +74,10 @@ De _Domain Driven Design_ hay varios libros, el libro de referencia sobre la teo
 
 {{% sourcecode git="blog-ejemplos/tree/master/EntitiesId" command="./gradlew test" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [When and where to determine the ID of an entity](https://matthiasnoback.nl/2018/05/when-and-where-to-determine-the-id-of-an-entity/)
 * [Spring Data - Customizing Individual Repositories](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.single-repository-behavior)
 * [JPA Primary Key](https://www.objectdb.com/java/jpa/entity/id)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

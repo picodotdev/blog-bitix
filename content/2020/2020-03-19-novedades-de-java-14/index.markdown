@@ -123,12 +123,12 @@ La versión del recolector de basura ZGC que permite pausas muy reducidas en mem
 
 * [El recolector de basura de Java, que hace y como funciona en cada versión][blogbitix-463]
 
-{{% reference %}}
+{{< reference >}}
 * [Java 14: All the new features of JDK 14 as it hits GA](https://jaxenter.com/java-14-update-news-163585.html)
 * [Java 14 Feature Spotlight: Records](https://www.infoq.com/articles/java-14-feature-spotlight/)
 * [Records Come to Java](https://blogs.oracle.com/javamagazine/records-come-to-java)
 * [What’s New In JDK 14 Latest Release? 80 New Features & APIs](https://www.azul.com/whats-new-in-jdk14-latest-release/)
 * [JDK 14 Foreign-Memory Access API Overview](https://medium.com/@youngty1997/jdk-14-foreign-memory-access-api-overview-70951fe221c9)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

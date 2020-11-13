@@ -46,8 +46,8 @@ El archivo de contrucción [Gradle][gradle] contiene la dependencia de ModelMapp
 
 {{% sourcecode git="blog-ejemplos/tree/master/ModelMapper" command="./gradlew run" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [ModelMapper jOOQ Integration](http://modelmapper.org/user-manual/jooq-integration/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

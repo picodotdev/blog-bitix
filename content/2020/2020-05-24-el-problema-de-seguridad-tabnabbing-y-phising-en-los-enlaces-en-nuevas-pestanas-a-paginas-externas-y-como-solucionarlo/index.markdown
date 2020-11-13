@@ -56,8 +56,8 @@ La solución más sencilla es añadir el atributo _rel="noopener noreferrer"_ a 
 
 Otras medidas recomendables son [codificar los datos para evitar ataques XSS][blogbitix-392] y [filtrar el contenido enviado por los usuarios o devuelto por la página][blogbitix-48] sobre todo si proviene de fuentes externas a la aplicación ya sea de formularios introducidos por el usuario, parámetros, cabeceras u otras aplicaciones.
 
-{{% reference %}}
+{{< reference >}}
 * [window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window/opener)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

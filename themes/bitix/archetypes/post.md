@@ -61,9 +61,9 @@ draft: true
 
 {{% sourcecode git="blog-ejemplos/tree/master/" command="" %}}
 
-{{% reference %}}
+{{< reference >}}
 *
-{{% /reference %}}
+{{< /reference >}}
 
 {{< gist picodotdev id "file" >}}
 

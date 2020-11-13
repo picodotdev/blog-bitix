@@ -154,12 +154,12 @@ Estos son tres ejemplos de efectos aplicando transformaciones y animaciones, se 
     }
 </style>
 
-{{% reference %}}
+{{< reference >}}
 * [CSS Animations](https://www.w3schools.com/css/css3_animations.asp)
 * [CSS 2D Transforms](https://www.w3schools.com/css/css3_2dtransforms.asp)
 * [CSS 3D Transforms](https://www.w3schools.com/css/css3_3dtransforms.asp)
 * [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations)
 * [CSS Transforms](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Transforms)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

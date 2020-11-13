@@ -71,11 +71,11 @@ Si fuera necesario [Liquibase][liquibase] permite aplicar cambios en la base con
 
 {{% sourcecode git="blog-ejemplos/tree/master/Testcontainers" command="./gradlew test" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [Writing integration tests with Testcontainers](https://balarawool.me/writing-integration-tests-with-testcontainers/)
 * [DB Integration Tests with Spring Boot and Testcontainers](https://www.baeldung.com/spring-boot-testcontainers-integration-test)
 * [Use Liquibase to Safely Evolve Your Database Schema](https://www.baeldung.com/liquibase-refactor-schema-of-java-app)
 * [Populate a database with TestContainers in a SpringBoot integration test](https://stackoverflow.com/questions/53078306/populate-a-database-with-testcontainers-in-a-springboot-integration-test)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

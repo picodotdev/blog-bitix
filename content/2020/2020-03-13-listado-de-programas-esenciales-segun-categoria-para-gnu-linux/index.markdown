@@ -226,9 +226,9 @@ Las contraseñas deben ser únicas para cada sitio web, tener una longitud de en
 
 * [Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux][blogbitix-369]
 
-{{% reference %}}
+{{< reference >}}
 * [Must Have Essential Linux Applications](https://itsfoss.com/essential-linux-applications/)
 * [Best Free Software for Linux](https://www.techsupportalert.com/content/best-free-software-linux.htm)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

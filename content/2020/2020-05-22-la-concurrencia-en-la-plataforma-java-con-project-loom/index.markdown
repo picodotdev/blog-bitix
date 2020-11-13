@@ -94,8 +94,8 @@ Y otros artículos sobre Loom.
 * [Project Loom: Java With a Stronger Fiber](https://dzone.com/articles/a-new-java-with-a-stronger-fiber)
 * [On Project Loom, the Reactive model and coroutines](https://blog.frankel.ch/project-loom-reactive-coroutines/)
 
-{{% reference %}}
+{{< reference >}}
 * [The Linux Implementation of Threads](https://www.informit.com/articles/article.aspx?p=370047&seqNum=3)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}

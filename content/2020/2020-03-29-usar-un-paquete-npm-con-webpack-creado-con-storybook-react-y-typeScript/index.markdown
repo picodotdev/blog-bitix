@@ -59,10 +59,10 @@ En la página de prueba que hace uso del JavaScript producido por Webpack se car
 
 {{% sourcecode git="blog-ejemplos/tree/master/StorybookComponente" command="npm install && npm run start" %}}
 
-{{% reference %}}
+{{< reference >}}
 * [React Js Tutorial – Environment SetUp Using Webpack](https://watchdown.com/react-js-environment-setup-using-webpack/)
 * [Managing Dev and Production Builds with Webpack](https://atendesigngroup.com/blog/managing-dev-and-production-builds-webpack)
 * [Webpack DevServer](https://webpack.js.org/configuration/dev-server/)
-{{% /reference %}}
+{{< /reference >}}
 
 {{% /post %}}
