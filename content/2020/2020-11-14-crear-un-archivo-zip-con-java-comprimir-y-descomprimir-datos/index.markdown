@@ -35,7 +35,7 @@ Para la creación de archivos Zip las clases básicas son [ZipEntry](javadoc11:j
 
 El siguiente código permite comprime varios archivos en diferentes formatos en un único archivo Zip. Este caso es el de una aplicación Java de línea de comandos, el código para una aplicación web consistiría en crear el archivo Zip y devolver como resultado el _stream_ de _ZipOutputStream_ de datos en el [OutputStream](javadoc11:java.base/java/io/OutputStream.html) empleado por la aplicación web para devolver el resultado al cliente. 
 
-Los archivos de extensión _jar_ utilizados en Java para crear librerías no son más que archivos Zip con esta extensión.
+Los archivos de extensión _jar_ utilizados en Java para crear librerías y _war_ para empaquetar aplicaciones web no son más que archivos Zip con estas extensiones.
 
 {{< code file="Main-compress.java" language="java" options="" >}}
 {{< code file="System.out-compress" language="plaintext" options="" >}}
