@@ -41,7 +41,7 @@ Para las hojas de cálculo hay dos formas de autorización para una aplicación.
 
 {{< code file="Main-2.java" language="java" options="" >}}
 
-Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crer un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de ecritura.
+Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crear un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de ecritura.
 
 {{< image
     gallery="true"
