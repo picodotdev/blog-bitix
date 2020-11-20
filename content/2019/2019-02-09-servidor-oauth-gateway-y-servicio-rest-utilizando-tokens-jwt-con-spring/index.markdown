@@ -44,6 +44,13 @@ Los servicios los mantengo separados ya que al combinarlos pueden surgir problem
 
 ### Servidor OAuth
 
+{{< warning >}}
+Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomenda usar un proveedor alternativo de autenticación como [Keycloak][keycloak] o [Okta][okta] u otros servicios como [Google][google] o [Github][github].
+
+En el artículo [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180] muestro un ejemplo con Keycloak y en [Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot][blogbitix-533] como añadir autenticación OAuth a cualquier página web y de forma nativa en una aplicación de Spring Boot.
+
+{{< /warning >}}
+
 Empezando por el servidor OAuth y las dependencias que necesita, son _spring-security-oauth2_ y para generar _tokens_ JWT _spring-security-jwt_, el resto son dependencias necesarias de Spring Boot
 
 {{< code file="oauth/build.gradle" language="groovy" options="" >}}
