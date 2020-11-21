@@ -9,6 +9,7 @@
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>{{ .Title }}</title>
 
@@ -40,12 +41,12 @@
   </script>
 
   {{ "<!-- css -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" | relURL }}">
-  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" | relURL }}">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" | relURL }}" media="all">
   {{ "<!-- theme -->" | safeHTML }}
-  <link rel="stylesheet" type="text/css" href="{{ "assets/css/syntax.css" | relURL }}">
-  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}">
-  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main-cookieconsent.css" | relURL }}">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/syntax.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/main.css" | relURL }}" media="all">
+  <link rel="stylesheet" type="text/css" href="{{ "assets/css/cookieconsent.min.css" | relURL }}" media="all">
 
   {{ "<!-- javascript -->" | safeHTML }}
   <script type="text/javascript" src="{{ "assets/js/require-config.js" | relURL }}" defer></script>

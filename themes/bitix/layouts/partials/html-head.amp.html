@@ -9,6 +9,7 @@
   <meta name="author" content="{{ .Site.Author.name }}">
   <meta name="keywords" content="{{ .Site.Params.keywords }}">
   <meta name="description" content="{{ if .IsPage }}{{ .Summary }} &hellip;{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <meta name="theme-color" content="#FFFFFF"/>
   {{ if eq (in (split "home,page" ",") .Page.Kind) false }}<meta name="robots" content="noindex">{{ end }}
 
   <title>{{ .Title }}</title>

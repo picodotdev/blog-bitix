@@ -10,7 +10,8 @@ var require = {
         'blueimp-gallery-video': '../libs/Gallery-2.38.0/js/blueimp-gallery-video',
         'blueimp-gallery-vimeo': './libs/Gallery-2.38.0/js/blueimp-gallery-vimeo',
         'blueimp-gallery-youtube': '../libs/Gallery-2.38.0/js/blueimp-gallery-youtube',
-        'jquery-blueimp-gallery': '../libs/Gallery-2.38.0/js/jquery.blueimp-gallery'
+        'jquery-blueimp-gallery': '../libs/Gallery-2.38.0/js/jquery.blueimp-gallery',
+        'cookieconsent': 'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min'
     },
     shim: {
         'jquery': {
@@ -18,6 +19,9 @@ var require = {
         },
         'blueimp-gallery': {
             exports: 'blueimp'
-        }
+        },
+        'cookieconsent': {
+            exports: 'cookieconsent'
+        },
     }
 };

@@ -1,4 +1,4 @@
-require(['jquery', 'lozad'], function($, lozad) {
+require(['jquery', 'lozad', 'cookieconsent'], function($, lozad, cookieconsent) {
     function initAnalytics() {
         ga('send', 'event', 'client', 'protocol', window.location.protocol.replace(new RegExp(':|/', 'gi'), ''), {'nonInteraction': 1});
       
@@ -86,6 +86,29 @@ require(['jquery', 'lozad'], function($, lozad) {
         }, 3000);
     }
 
+    function initCookieConsent() {
+        cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#000000",
+                    "text": "#ffffff"
+                },
+                "button": {
+                    "background": "#61b135",
+                    "text": "#000000"
+                }
+            },
+            "theme": "classic",
+            "content": {
+                "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
+                "dismiss": "Aceptar",
+                "allow": "Aceptar",
+                "link": "Política de cookies"
+            }
+        });
+    }
+
     initAnalytics();
     initAdsense();
+    initCookieConsent();
 });
