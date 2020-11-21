@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="React y Polymer son dos librerías JavaScript para construir interfaces complejas en el lado cliente basadas en componentes. Los componentes son interesantes porque hace que el código sea reutilizable, fácil de entender y más fácil de modificar sin introducir errores entre otras cosas. Aunque en el desarrollo web en el lado del servidor la mayoría de los frameworks se basan en acciones también hay algunos que se basan en componentes, uno de ellos Apache Tapestry para la plataforma Java. Si de React y Polymer se está hablando bastante bien y forman parte del actual estado del arte JavaScript, si la gente conociese y usase Tapestry que tiene varias similitudes con ellos creo que también les facilitaría el desarrollo de aplicaciones web pequeñas o grandes, simples o complejas en la parte del servidor. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Similitudes entre React y Polymer con Apache Tapestry</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -340,7 +341,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de multiproyecto con Gradle" title="Ejemplo de multiproyecto con Gradle" class="lozad ">
                 <h3>Ejemplo de multiproyecto con Gradle</h3>
                 </a>
                 
@@ -354,7 +355,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/hemeroteca-7/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #7" title="Hemeroteca #7" class="lozad ">
                 <h3>Hemeroteca #7</h3>
                 </a>
                 
@@ -368,7 +369,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/06/nueva-visita-a-herramientas-para-un-proyecto-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Nueva visita a Herramientas para un proyecto Java" title="Nueva visita a Herramientas para un proyecto Java" class="lozad ">
                 <h3>Nueva visita a Herramientas para un proyecto Java</h3>
                 </a>
                 
@@ -382,7 +383,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Patrón múltiples vistas de un mismo dato en Tapestry" title="Patrón múltiples vistas de un mismo dato en Tapestry" class="lozad ">
                 <h3>Patrón múltiples vistas de un mismo dato en Tapestry</h3>
                 </a>
                 
@@ -396,7 +397,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/05/10-razones-para-seguir-usando-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="10 razones para seguir usando Java" title="10 razones para seguir usando Java" class="lozad ">
                 <h3>10 razones para seguir usando Java</h3>
                 </a>
                 
@@ -410,7 +411,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/04/guardar-contrasenas-usando-salted-password-hashing-y-otras-formas-correctas/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-shiro.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-shiro.png" width="326" height="125" alt="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" title="Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas" class="lozad ">
                 <h3>Guardar contraseñas usando «Salted Password Hashing» y otras formas correctas</h3>
                 </a>
                 
@@ -421,7 +422,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -433,7 +434,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -481,14 +482,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -515,10 +516,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -546,16 +547,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

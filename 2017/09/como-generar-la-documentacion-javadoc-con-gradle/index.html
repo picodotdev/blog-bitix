@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Habiendo explicado qué es la herramienta Javadoc, y en otros artículos como crear taglets para incluirlos en los comentarios y generar contenido con los mecanismos de extensión que ofrece y explicado como cambiar los estilos que se usan por defecto en el Javadoc para por ejemplo cambiar los colores según la organización o incluir un texto de derechos de autor en el pie de página, hay que generar la documentación javadoc usando la herramienta de construcción que usemos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Cómo generar la documentación Javadoc con Gradle</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -312,7 +313,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/09/la-herramienta-de-documentacion-javadoc-de-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La herramienta de documentación Javadoc de Java" title="La herramienta de documentación Javadoc de Java" class="lozad ">
                 <h3>La herramienta de documentación Javadoc de Java</h3>
                 </a>
                 
@@ -326,7 +327,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/09/los-tipos-de-referencias-debiles-soft-weak-y-phantom-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los tipos de referencias débiles soft, weak y phantom en Java" title="Los tipos de referencias débiles soft, weak y phantom en Java" class="lozad ">
                 <h3>Los tipos de referencias débiles soft, weak y phantom en Java</h3>
                 </a>
                 
@@ -340,7 +341,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/09/los-cuantificadores-greedy-reluctant-y-possessive-en-expresiones-regulares/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Los cuantificadores greedy, reluctant y possessive en expresiones regulares" title="Los cuantificadores greedy, reluctant y possessive en expresiones regulares" class="lozad ">
                 <h3>Los cuantificadores greedy, reluctant y possessive en expresiones regulares</h3>
                 </a>
                 
@@ -354,7 +355,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/08/cache-simple-de-datos-y-con-ehcache-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cache simple de datos y con Ehcache en Java" title="Cache simple de datos y con Ehcache en Java" class="lozad ">
                 <h3>Cache simple de datos y con Ehcache en Java</h3>
                 </a>
                 
@@ -368,7 +369,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/08/37-buenos-libros-sobre-sobre-java-linux-devops-y-desarrollo-que-he-leido/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" title="37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído" class="lozad ">
                 <h3>37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído</h3>
                 </a>
                 
@@ -382,7 +383,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/08/el-antipatron-de-inicializacion-de-variables-con-dobles-llaves-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El antipatrón de inicialización de variables con dobles llaves en Java" title="El antipatrón de inicialización de variables con dobles llaves en Java" class="lozad ">
                 <h3>El antipatrón de inicialización de variables con dobles llaves en Java</h3>
                 </a>
                 
@@ -393,7 +394,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -405,7 +406,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -453,14 +454,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -487,10 +488,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -518,16 +519,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

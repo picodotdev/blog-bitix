@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Hace ya unos años escribí un ejemplo y un artículo con una implementación propia de una máquina de estado en Java, para algún caso muy básico puede ser suficiente pero para algo serio no es la opción a elegir. Pasado un tiempo de ese ejemplo y artículo descubrí uno de los muchos proyectos de Spring útiles para una aplicación, para las necesidades más habítuales tiene un proyecto que lo proporciona y para las menos habituales es también posible que la proporcione como en el caso del proyecto Spring Statemachine que precisamente tiene el mismo objetivo de implementar una máquina de estados cubriendo muchos casos de uso. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Ejemplo de máquina de estados con Spring Statemachine</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -388,7 +389,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="lozad ">
                 <h3>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</h3>
                 </a>
                 
@@ -402,7 +403,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" title="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" class="lozad ">
                 <h3>Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</h3>
                 </a>
                 
@@ -416,7 +417,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" title="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" class="lozad ">
                 <h3>Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</h3>
                 </a>
                 
@@ -430,7 +431,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Proxy para microservicios con Spring Cloud Netflix y Zuul" title="Proxy para microservicios con Spring Cloud Netflix y Zuul" class="lozad ">
                 <h3>Proxy para microservicios con Spring Cloud Netflix y Zuul</h3>
                 </a>
                 
@@ -444,7 +445,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/10/balanceo-de-carga-y-resilencia-en-un-microservicio-con-spring-cloud-netflix-y-ribbon/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon" title="Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon" class="lozad ">
                 <h3>Balanceo de carga y resilencia en un microservicio con Spring Cloud Netflix y Ribbon</h3>
                 </a>
                 
@@ -458,7 +459,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/10/tolerancia-a-fallos-en-un-cliente-de-microservicio-con-spring-cloud-netflix-y-hystrix/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix" title="Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix" class="lozad ">
                 <h3>Tolerancia a fallos en un cliente de microservicio con Spring Cloud Netflix y Hystrix</h3>
                 </a>
                 
@@ -469,7 +470,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -481,7 +482,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -529,14 +530,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -563,10 +564,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -594,16 +595,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

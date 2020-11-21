@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Tanto en un servidor web como de aplicaciones podemos hacer que la comunicación entre el cliente y el servidor esté cifrada usando un protocolo seguro. La configuración para usar un protocolo seguro en cada servidor es diferente pero todos se basan en lo mismo, usar un certificado y un clave. En este artículo muestro la configuración necesaria en los servidores web y de aplicaciones más populares. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -319,7 +320,7 @@
 <p>Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.</p>
 <p>Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente <a href="https://picodotdev.github.io/blog-bitix/2016/02/introduccion-al-protocolo-http-2/index-amp.html">protocolo HTTP/2</a> que es más eficiente tanto para el cliente como para el servidor y con menores latencias. <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/index-amp.html">Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</a> es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protoclo seguro HTTPS es tambien una condición encesaria por seguridad al <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/index-amp.html">utilizar autenticación básica</a>.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#configurar-ssltls-en-tomcat">Configurar SSL/TLS en Tomcat</a></li>
@@ -428,7 +429,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Generar y convertir claves y certificados con OpenSSL" title="Generar y convertir claves y certificados con OpenSSL"  class="lozad "></amp-img>
                 <h3>Generar y convertir claves y certificados con OpenSSL</h3>
                 </a>
                 
@@ -442,7 +443,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/firmar-digitalmente-documentos-con-el-dnie-y-sinadura/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/dnie.jpg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/dnie.jpg" width="326" height="125" alt="Firmar digitalmente documentos con el DNIe y Sinadura" title="Firmar digitalmente documentos con el DNIe y Sinadura"  class="lozad "></amp-img>
                 <h3>Firmar digitalmente documentos con el DNIe y Sinadura</h3>
                 </a>
                 
@@ -456,7 +457,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/enviar-correos-electronicos-firmados-con-el-dnie-y-evolution/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Enviar correos electrónicos firmados con el DNIe y Evolution" title="Enviar correos electrónicos firmados con el DNIe y Evolution"  class="lozad "></amp-img>
                 <h3>Enviar correos electrónicos firmados con el DNIe y Evolution</h3>
                 </a>
                 
@@ -470,7 +471,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2013/12/usar-el-dni-electronico-con-firefox-en-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/archlinux.svg" width="326" height="125" alt="Usar el DNI electrónico con Firefox en Linux" title="Usar el DNI electrónico con Firefox en Linux"  class="lozad "></amp-img>
                 <h3>Usar el DNI electrónico con Firefox en Linux</h3>
                 </a>
                 
@@ -484,7 +485,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry"  class="lozad "></amp-img>
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -498,7 +499,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/el-servidor-de-aplicaciones-jboss-slash-wildfly/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/wildfly.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/wildfly.svg" width="326" height="125" alt="El servidor de aplicaciones JBoss/WildFly" title="El servidor de aplicaciones JBoss/WildFly"  class="lozad "></amp-img>
                 <h3>El servidor de aplicaciones JBoss/WildFly</h3>
                 </a>
                 
@@ -509,7 +510,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -598,14 +599,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

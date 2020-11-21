@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="La autenticación permite identificar a los usuarios en una aplicación, en muchas es una necesidad para no permitir accesos no autorizados a la información que proporcionan o realizar las acciones que ofrecen. Las aplicaciones heredadas o legacy en ocasiones no es posible modificarlas y cuando una organización tiene varias aplicaciones gestionar los usuarios en cada una de ellas de forma individual se convierte en un problema. OpenID Connect proporciona la autenticación en el protocolo OAuth 2, con este protocolo las aplicaciones pueden delegar la autenticación a un proveedor de autenticación y ser este la que identifique a los usuarios y los gestione de forma forma centralizada además de proporcionar un inicio de sesión único o single-sing-on a varias aplicaciones. El servidor web Nginx tiene proxys que permiten añadir autenticación OAuth 2 a cualquier servicio web y las aplicaciones de Spring Boot pueden implementarlo de forma nativa. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -269,7 +270,7 @@
 <p>Gestionar los usuarios de en cada una aplicación se convierte en un problema cuando el número de aplicaciones y servicios son varios, ya que a lo largo del tiempo hay que dar de alta a los usuarios nuevos y de baja a los usuarios que ya no deben acceder a la aplicación por ejemplo porque ya no forman parte de una organización. Por otro, lado hay aplicaciones heredadas o <em>legacy</em> que no se pueden modificar para añadirles la autenticación que necesitan.</p>
 <p>Para administrar de forma centralizada los usuarios o credenciales de las aplicaciones y que el sistema de autenticación y autorización sea uno compartido para cualesquiera usuarios y aplicaciones una forma de implementarlo es usando un proveedor que implemente el estándar <a href="https://openid.net/connect/">OpenID Connect</a>. Para las aplicaciones heredadas la opción es añadir un <em>proxy</em> que proteja la aplicación con autenticación y en el caso de una aplicación Java con <a href="https://projects.spring.io/spring-boot/">Spring Boot</a> el proyecto de <a href="https://spring.io/projects/spring-security">Spring Security</a> permite añadir autenticación fácilmente para cualquier proveedor de OpenID.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#qué-es-openid-connect">Qué es OpenID Connect</a></li>
@@ -461,7 +462,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/">
-                <img data-src="/blog-bitix/assets/images/logotypes/consul.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/consul.svg" width="326" height="125" alt="Microservicios con Spring Cloud, Consul, Nomad y Traefik" title="Microservicios con Spring Cloud, Consul, Nomad y Traefik" class="lozad ">
                 <h3>Microservicios con Spring Cloud, Consul, Nomad y Traefik</h3>
                 </a>
                 
@@ -475,7 +476,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/12/hemeroteca-14/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14" class="lozad ">
                 <h3>Hemeroteca #14</h3>
                 </a>
                 
@@ -489,7 +490,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/hemeroteca-13/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="lozad ">
                 <h3>Hemeroteca #13</h3>
                 </a>
                 
@@ -503,7 +504,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/hemeroteca-12/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="lozad ">
                 <h3>Hemeroteca #12</h3>
                 </a>
                 
@@ -517,7 +518,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/hemeroteca-11/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="lozad ">
                 <h3>Hemeroteca #11</h3>
                 </a>
                 
@@ -531,7 +532,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/12/hemeroteca-10/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="lozad ">
                 <h3>Hemeroteca #10</h3>
                 </a>
                 
@@ -542,7 +543,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -554,7 +555,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -602,14 +603,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -636,10 +637,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -667,16 +668,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Desde el año 2008 que llevo utilizando GNU/Linux como único sistema operativo en mi equipo para todas las tareas que realizo nunca me he planteado jugar a juegos de primera linea o triple A. No por que no se pudiese sino porque GNU/Linux nunca ha sido considerado una opción para estos juegos, hay juegos sí y algunos buenos pero la mayoría de los comerciales se desarrollan para ejecutarse en Windows o como mucho en macOS y yo ni siquiera me lo había planteado. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -270,7 +271,7 @@
 <p>Ahora que he cambiado de equipo a un <a href="https://www.intel.com/content/www/us/en/products/boards-kits/nuc/kits/nuc8i5bek.html">Intel NUC8i5BEK</a> con un procesador de 4 núcleos y 8 hilos <a href="https://ark.intel.com/products/135935/Intel-Core-i5-8259U-Processor-6M-Cache-up-to-3_80-GHz">i5-8259U</a> que aunque lleva una gráfica integrada <a href="https://en.wikipedia.org/wiki/Intel_Graphics_Technology#Kaby_Lake_Refresh_/_Coffee_Lake">Iris Graphics 655</a> ya es bastante más capaz y suficiente para jugar a Diablo 3 que es un juego del 2012. Me he planteado ahora más en serio comprobar si en GNU/Linux se puede jugar a juegos con la experiencia de que tal se puede jugar a Diablo 3.</p>
 <p>Como los juegos son desarrollados para Windows hay que utilizar una capa que implementa la API de Windows para hacer funcionar los juegos en GNU/Linux, pueden ser juegos pero también programas como <a href="https://products.office.com/es-es/">Microsoft Word</a>. La capa de implementación de la API de Windows utilizada en GNU/Linux es <a href="https://www.winehq.org/">Wine</a>.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#como-instalar-wine-en-la-distribución-gnulinux">Como instalar Wine en la distribución GNU/Linux</a></li>
@@ -511,7 +512,7 @@
         
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -523,7 +524,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -571,14 +572,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -605,10 +606,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -636,16 +637,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

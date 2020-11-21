@@ -14,6 +14,7 @@
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Dada una consulta con los datos a recuperar GraphQL hace una llamada al correspondiente resolver o data fecher para obtener el valor de cada propiedad. Cuando se tratan de propiedades en un java bean esto no supone ningún problema en cuanto a rendimiento pero cuando obtener el valor de una propiedad es costoso la consulta resulta ineficiente.
 Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobre GraphQL de una librería en la que hay un tipo para representar un libro con una propiedad con sus comentarios, con una consulta que permite recuperar los libros para cada uno de ellos se llama al resolver que recupera los comentarios. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Recuperar datos eficientemente en GraphQL usando batching</title>
@@ -145,13 +146,13 @@ Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobr
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -397,7 +398,7 @@ Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobr
         
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -486,14 +487,14 @@ Por ejemplo, siguiendo el ejemplo que he utilizado en anteriores artículos sobr
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

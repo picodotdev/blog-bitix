@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Con ECMAScript 6 se han incorporado al lenguaje varias novedades como nuevas palabras reservadas para definir variables y constantes, símbolos, interpolación de variables en cadenas, desestructuración, forma abreviada para declarar funciones, nueva sintaxis más sencilla para definir clases, objetos de tipo Map y Set, Promises como alternativa a callbacks, el protocolo Iterator y generadores, además de algunas otras cosas que si como yo no habías dedicado tiempo a aprender mejor JavaScript aún te resulten novedosas. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Introducción al JavaScript de ECMAScript 6</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -268,7 +269,7 @@
 <p>Las últimas versiones de los navegadores <a href="https://www.google.es/chrome/browser/desktop/">Chrome</a> y <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a> ya soportan todo lo que describo a continuación y que está más detalladamente explicado en el libro. Para los navegadores que aún no soportan todo como en los dispositivos móviles hay compiladores o <em>transpilers</em> para <a href="https://picodotdev.github.io/blog-bitix/2016/12/transpiling-de-ecmascript-6-a-5-uglify-y-eslint-con-gulp/">traducir de ECMAScript 6 a ECMAScript 5</a>. En un entorno en el que sepamos se usa solo Chrome o Firefox como en una intranet o una aplicación de uso interno en una organización podemos utilizar estas novedades y si es una aplicación accesible por cualquier usuario desde internet podemos hacer la conversión de ECMAScript 6 a ECMAScript 5 con <a href="https://gulpjs.com/">gulp</a> o <a href="https://gruntjs.com/">grunt</a>.</p>
 <p>Estas son gran parte de las novedades que he anotado al leer el libro Learning JavaScript. Para profundizar sobre JavaScript la documentación de <a href="https://developer.mozilla.org/es/">Mozilla Developer Network</a> está muy bien como manual de referencia donde hay más ejemplos y comentarios más extensos de los que hago en cada sección.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#definición-de-variables">Definición de variables</a></li>
@@ -429,7 +430,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/11/usar-una-imagen-de-fondo-aleatoria-al-cargar-una-pagina-web/">
-                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Usar una imagen de fondo aleatoria al cargar una página web" title="Usar una imagen de fondo aleatoria al cargar una página web" class="lozad ">
                 <h3>Usar una imagen de fondo aleatoria al cargar una página web</h3>
                 </a>
                 
@@ -443,7 +444,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootsrap-select/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootsrap-select" title="Añadir botones selectores de opciones a select múltiple de bootsrap-select" class="lozad ">
                 <h3>Añadir botones selectores de opciones a select múltiple de bootsrap-select</h3>
                 </a>
                 
@@ -457,7 +458,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="lozad ">
                 <h3>Componente select múltiple en Apache Tapestry</h3>
                 </a>
                 
@@ -471,7 +472,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="lozad ">
                 <h3>Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</h3>
                 </a>
                 
@@ -485,7 +486,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/06/moment-js-libreria-javascript-para-fechas/">
-                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Moment.js, librería JavaScript para fechas" title="Moment.js, librería JavaScript para fechas" class="lozad ">
                 <h3>Moment.js, librería JavaScript para fechas</h3>
                 </a>
                 
@@ -499,7 +500,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">
-                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Internacionalización (i18n) en JavaScript" title="Internacionalización (i18n) en JavaScript" class="lozad ">
                 <h3>Internacionalización (i18n) en JavaScript</h3>
                 </a>
                 
@@ -510,7 +511,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -522,7 +523,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -570,14 +571,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -604,10 +605,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -635,16 +636,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

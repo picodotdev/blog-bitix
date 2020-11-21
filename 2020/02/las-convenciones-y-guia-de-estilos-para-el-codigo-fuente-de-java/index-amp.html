@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Java desde su creación ha definido como parte del lenguaje unas convenciones y guías de estilos como recomendación para ser usadas en el código fuente por los programadores que proporcionan homogeneidad en el código fuente y que facilitan su lectura y mantenimiento. El documento no es muy extenso para leerlo y los entornos de desarrollo integrados como IntelliJ permiten formatear el código fuente siguiendo las reglas preestablecidas con una simple combinación de teclas y herramientas como PMD permiten validar de forma automatizada que el código cumple las reglas con la herramienta de construcción o integración continua. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Las convenciones y guía de estilos para el código fuente de Java</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -313,7 +314,7 @@
 <p>Es importante seguir en todo el código fuente las mismas convenciones ya que en proyectos de larga duración la parte más importante es la de mantenimiento. El lenguaje de programación Java define sus propias convenciones que generalmente son aceptadas por los programadores. <a href="https://www.oracle.com/technetwork/java/codeconventions-150003.pdf">Las convenciones y guías de estilos de Java</a> están recogidas en un documento de recomendable lectura y adhesión al programar. El documento ya tiene unos años pero las reglas existentes desde entonces no han cambiado aún cuando en el lenguaje se han añadido <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/index-amp.html">nuevos elementos como las <em>lamdas</em> en Java 8</a> o la posibilidad de <a href="https://picodotdev.github.io/blog-bitix/2018/09/novedades-y-nuevas-caracteristicas-de-java-11/index-amp.html">omitir el tipo para las variables locales de Java 11</a>.</p>
 <p>Otros lenguajes como <a href="https://www.python.org/">Python</a> y <a href="https://dotnet.microsoft.com/">C#</a> definen sus propias convenciones bastante diferentes de las de Java que cambia significativamente el aspecto del código.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#convenciones-de-código-en-java">Convenciones de código en Java</a></li>
@@ -424,7 +425,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/index-amp.html">
-                <amp-img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hud8657e5c40ac59b935a4c973e33e4cd5_41824_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hud8657e5c40ac59b935a4c973e33e4cd5_41824_875x0_resize_box_2.png" width="326" height="125" alt="El recolector de basura de Java, qué hace y cómo funciona en cada versión" title="El recolector de basura de Java, qué hace y cómo funciona en cada versión"  class="lozad "></amp-img>
                 <h3>El recolector de basura de Java, qué hace y cómo funciona en cada versión</h3>
                 </a>
                 
@@ -438,7 +439,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/index-amp.html">
-                <amp-img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy"  class="lozad "></amp-img>
                 <h3>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</h3>
                 </a>
                 
@@ -452,7 +453,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/index-amp.html">
-                <amp-img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java"  class="lozad "></amp-img>
                 <h3>Los modificadores de acceso de clases, propiedades y métodos en Java</h3>
                 </a>
                 
@@ -466,7 +467,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/hemeroteca-16/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #16" title="Hemeroteca #16"  class="lozad "></amp-img>
                 <h3>Hemeroteca #16</h3>
                 </a>
                 
@@ -480,7 +481,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/index-amp.html">
-                <amp-img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" width="326" height="125" alt="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" title="Generar documentos, informes y facturas en formato PDF con JasperReports y Java"  class="lozad "></amp-img>
                 <h3>Generar documentos, informes y facturas en formato PDF con JasperReports y Java</h3>
                 </a>
                 
@@ -494,7 +495,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/index-amp.html">
-                <amp-img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring"  class="lozad "></amp-img>
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 
@@ -505,7 +506,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -594,14 +595,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

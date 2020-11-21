@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Desde las primeras versiones de Java en el JDK se incluyen clases en el paquete java.util.zip que heredan de las del paquete java.io del sistema de entrada y salida con las que crear archivos comprimidos en formato Zip y comprimir datos en este formato. Comprimir los archivos que permite reducir sensiblemente el tamaño de algunos tipos de archivos como los basados en texto o cietos archivos que de por si no están comprimidos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Crear un archivo Zip con Java, comprimir y descomprimir datos</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -253,7 +254,7 @@
 <p>Los archivos de texto o binarios no comprimidos comprimirlos supone un considerable reducción respecto del tamaño del archivo original no comprimido, un archivo XML del 20 MiB se puede quedar en 1.5 MiB, es decir, una tasa de compresión de 13 o lo que es lo mismo el fichero comprimido ocupa 13 veces menos.</p>
 <p>Aparte del ahorro de espacio, crear un archivo Zip que agrupe varios es útil en ciertos casos. Las aplicaciones web como respuesta solo pueden devolver un archivo o documento por petición, un documento HTML, un recurso o un archivo. Para devolver varios archivos a la vez como una exportación de varios documentos dada la limitación del protocolo HTTP de petición y respuesta no es posible. Para dar solución a esta limitación normalmente se crea un archivo Zip que contenga los varios a devolver. <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">Configurar los servidores web Nginx y Apache para comprimir los recursos</a> minimiza los datos transferidos desde el servidor al cliente.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#clases-de-java-para-comprimir-y-descomprimir">Clases de Java para comprimir y descomprimir</a></li>
@@ -368,7 +369,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="lozad ">
                 <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
                 </a>
                 
@@ -382,7 +383,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="lozad ">
                 <h3>Cómo deduplicar eventos de dominio</h3>
                 </a>
                 
@@ -396,7 +397,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementar un bus de comandos y consultas en Java" title="Implementar un bus de comandos y consultas en Java" class="lozad ">
                 <h3>Implementar un bus de comandos y consultas en Java</h3>
                 </a>
                 
@@ -410,7 +411,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="lozad ">
                 <h3>Implementar un bus de eventos de dominio en Java</h3>
                 </a>
                 
@@ -424,7 +425,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="3 formas de gestionar errores en los lenguajes de programación" title="3 formas de gestionar errores en los lenguajes de programación" class="lozad ">
                 <h3>3 formas de gestionar errores en los lenguajes de programación</h3>
                 </a>
                 
@@ -438,7 +439,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
-                <img data-src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_2.png" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="lozad ">
                 <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
                 </a>
                 
@@ -449,7 +450,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -461,7 +462,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -509,14 +510,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -543,10 +544,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -574,16 +575,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

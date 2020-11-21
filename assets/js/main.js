@@ -111,7 +111,7 @@ require(['jquery', 'lozad', 'jquery-blueimp-gallery'], function ($, lozad, bluei
         shareThisObserver.observe();
         twitterObserver.observe();
     }
-    
+
     initBackground();
     initSearch();
     initLazyload();

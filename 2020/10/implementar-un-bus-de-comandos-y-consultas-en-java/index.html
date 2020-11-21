@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Un bus de comandos y consultas permite separar en una aplicación las operaciones de modificación y operaciones de obtención de datos. Esto permite si es requerido dos bases de datos diferentes utilizando CQRS, una base de datos para operaciones de modificación y una base de datos para operaciones de consulta. Aún teniendo solo una base de datos para ambas operaciones un bus de comandos y eventos permite independizar a la aplicación de las interfaces con las que se use ya sea REST, GraphQL, línea de comandos o mensajería como RabbitQM y crear manejadores de operaciones siguiendo los principios SOLID de diseño. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Implementar un bus de comandos y consultas en Java</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -265,7 +266,7 @@
 <p>Separar los comandos y consultas permite aplicar <a href="https://en.wikipedia.org/wiki/Command%e2%80%93query_separation">CQRS</a>, en el que las operaciones de consulta se lanzan contra una base de datos especializada en consultas y los comandos se lanzan contra otra base de datos. Tener dos base de datos permite escalar a cada base de datos de forma independiente según sus necesidades pero añade una gran complejidad al sistema ya que la base de datos que recibe los comandos ha de ser replicada en la base de datos de consultas. Una forma de replicar los datos en las bases de datos es mediante <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">eventos de dominio con un bus de eventos</a> y consistencia eventual e <a href="https://picodotdev.github.io/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">implementando deduplicación de eventos de dominio</a>.</p>
 <p>Un bus de comandos y consultas es una infraestructura que permite añadir nuevos comandos y consultas aplicando dos de los <a href="https://en.wikipedia.org/wiki/SOLID">principios SOLID</a>. La <em>S</em> de responsabilidad única haciendo que cada comando y consulta tenga una única responsabilidad y la <em>O</em> de abierto a extensión y cerrado a modificación.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#interfaces-del-bus-de-comandos-y-consultas">Interfaces del bus de comandos y consultas</a></li>
@@ -434,7 +435,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="lozad ">
                 <h3>Implementar un bus de eventos de dominio en Java</h3>
                 </a>
                 
@@ -448,7 +449,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="3 formas de gestionar errores en los lenguajes de programación" title="3 formas de gestionar errores en los lenguajes de programación" class="lozad ">
                 <h3>3 formas de gestionar errores en los lenguajes de programación</h3>
                 </a>
                 
@@ -462,7 +463,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">
-                <img data-src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/images/exrpresion-cron_hu0930190f3c65499ea0d10d00a00e2707_141470_875x0_resize_box_2.png" width="326" height="125" alt="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" title="Qué son, para qué sirven, formato y ejemplos de las expresiones cron" class="lozad ">
                 <h3>Qué son, para qué sirven, formato y ejemplos de las expresiones cron</h3>
                 </a>
                 
@@ -476,7 +477,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/">
-                <img data-src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/06/las-sentencias-de-control-de-flujo-en-java-if-switch-for-while-do-while-try-catch-break-continue-e-invocacion/images/sentencia-if-else_hu869d4585cc82fedd18187c9eb1e4060a_23522_875x0_resize_box_2.png" width="326" height="125" alt="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" title="Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)" class="lozad ">
                 <h3>Las sentencias de control de flujo en Java (if, switch, for, while, do-while, try-catch, break, continue e invocación)</h3>
                 </a>
                 
@@ -490,7 +491,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Copiar datos de un tipo de objeto a otro con ModelMapper" title="Copiar datos de un tipo de objeto a otro con ModelMapper" class="lozad ">
                 <h3>Copiar datos de un tipo de objeto a otro con ModelMapper</h3>
                 </a>
                 
@@ -504,7 +505,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
-                <img data-src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_875x0_resize_box_2.png" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="lozad ">
                 <h3>El patrón Open Session in View, qué es, ventajas, problemas y alternativas</h3>
                 </a>
                 
@@ -515,7 +516,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -527,7 +528,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -575,14 +576,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -609,10 +610,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -640,16 +641,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

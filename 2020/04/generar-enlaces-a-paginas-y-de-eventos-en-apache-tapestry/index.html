@@ -14,6 +14,7 @@
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.
 La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Generar enlaces a páginas y de eventos en Apache Tapestry</title>
 
@@ -104,12 +105,12 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -149,13 +150,13 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -164,7 +165,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -319,7 +320,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/hemeroteca-13/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="lozad ">
                 <h3>Hemeroteca #13</h3>
                 </a>
                 
@@ -333,7 +334,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" title="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" class="lozad ">
                 <h3>Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry</h3>
                 </a>
                 
@@ -347,7 +348,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" title="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" class="lozad ">
                 <h3>Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry</h3>
                 </a>
                 
@@ -361,7 +362,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" title="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" class="lozad ">
                 <h3>Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java</h3>
                 </a>
                 
@@ -375,7 +376,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="lozad ">
                 <h3>Plantillas con etiquetas no balanceadas en Apache Tapestry</h3>
                 </a>
                 
@@ -389,7 +390,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/hemeroteca-12/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="lozad ">
                 <h3>Hemeroteca #12</h3>
                 </a>
                 
@@ -400,7 +401,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -412,7 +413,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -460,14 +461,14 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -494,10 +495,10 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -525,16 +526,6 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

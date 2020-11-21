@@ -1,4 +1,4 @@
-require(['jquery', 'lozad'], function($, lozad) {
+require(['jquery', 'lozad', 'cookieconsent'], function($, lozad, cookieconsent) {
     function initAnalytics() {
         ga('send', 'event', 'client', 'protocol', window.location.protocol.replace(new RegExp(':|/', 'gi'), ''), {'nonInteraction': 1});
       
@@ -86,6 +86,34 @@ require(['jquery', 'lozad'], function($, lozad) {
         }, 3000);
     }
 
+    function initCookieConsent() {
+        cookieconsent.initialise({
+            container: document.getElementById("content"),
+            palette:{
+                popup: {background: "#000000"},
+                button: {background: "#61b135"},
+            },
+            revokable: true,
+            law: {
+                regionalLaw: false,
+            },
+            location: true,
+            content: {
+                header: 'Cookies usadas en este blog!',
+                message: 'Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.',
+                dismiss: 'Aceptar',
+                allow: 'Permitir cookies',
+                deny: 'Rechazar',
+                link: 'Saber más',
+                href: 'https://www.cookiesandyou.com',
+                close: '&#x274c;',
+                policy: 'Poítica de cookies',
+                target: '_blank',
+            }
+        });
+    }
+
     initAnalytics();
     initAdsense();
+    initCookieConsent();
 });

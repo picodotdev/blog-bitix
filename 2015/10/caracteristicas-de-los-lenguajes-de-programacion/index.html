@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Hay numerosos y diferentes lenguajes de programación pero solo una docena tienen una cuota de uso significativa. Muchos comparten características y algunos lenguajes las van incorporando a medida que se demuestra que sus beneficios son mayores que la complejidad que pueden añadir. Veamos algunas de sus propiedades. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Características de los lenguajes de programación</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -258,7 +259,7 @@
       <p>Hay cantidad de lenguajes de programación, algunas diferencias entre ellos se encuentran en su propósito (general o específico para cierto tipo de tareas), en la sintaxis, el sistema de tipos, por los paradigmas de programación que soporta (<abbr title="Programación orientada a objetos">POO</abbr>, imperativo, declarativo, orientado a objetos, funcional, &hellip;), otras diferencias están en la librerías disponibles, <em>frameworks</em> o comunidad, sin embargo, la mayoría comparten algunas características por las que se pueden catalogar los lenguajes. En este artículo comentaré algunas de estas características por las que podemos catalogar y agrupar los lenguajes de programación.</p>
 <p>Describiré brevemente cada una de las características ya que están muy bien explicadas en cada una de sus páginas de la wikipedia.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#principales-características-de-un-lenguaje-de-programación">Principales características de un lenguaje de programación</a>
@@ -372,7 +373,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/multiples-esquemas-o-bases-de-datos-con-jooq-y-spring-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Múltiples esquemas o bases de datos con jOOQ y Spring en Java" title="Múltiples esquemas o bases de datos con jOOQ y Spring en Java" class="lozad ">
                 <h3>Múltiples esquemas o bases de datos con jOOQ y Spring en Java</h3>
                 </a>
                 
@@ -386,7 +387,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="El patrón de diseño Observer y una forma de implementarlo en Java" title="El patrón de diseño Observer y una forma de implementarlo en Java" class="lozad ">
                 <h3>El patrón de diseño Observer y una forma de implementarlo en Java</h3>
                 </a>
                 
@@ -400,7 +401,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/como-crear-clases-factoria-sin-usar-if-else/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo crear clases factoría sin usar if-else" title="Cómo crear clases factoría sin usar if-else" class="lozad ">
                 <h3>Cómo crear clases factoría sin usar if-else</h3>
                 </a>
                 
@@ -414,7 +415,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/aplicacion-java-autocontenida-con-spring-boot/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Aplicación Java autocontenida con Spring Boot" title="Aplicación Java autocontenida con Spring Boot" class="lozad ">
                 <h3>Aplicación Java autocontenida con Spring Boot</h3>
                 </a>
                 
@@ -428,7 +429,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/javafx-scene-builder-editor-para-crear-archivos-fxml/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="JavaFX Scene Builder, editor para crear archivos FXML" title="JavaFX Scene Builder, editor para crear archivos FXML" class="lozad ">
                 <h3>JavaFX Scene Builder, editor para crear archivos FXML</h3>
                 </a>
                 
@@ -442,7 +443,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/">
-                <img data-src="/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/images/helloworld_hua6b47c01a596ff6f9de5cbc6e9effa76_5445_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2015/10/introduccion-a-javafx-aplicaciones-de-escritorio-en-java/images/helloworld_hua6b47c01a596ff6f9de5cbc6e9effa76_5445_875x0_resize_box_2.png" width="326" height="125" alt="Introducción a JavaFX, aplicaciones de escritorio en Java" title="Introducción a JavaFX, aplicaciones de escritorio en Java" class="lozad ">
                 <h3>Introducción a JavaFX, aplicaciones de escritorio en Java</h3>
                 </a>
                 
@@ -453,7 +454,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -465,7 +466,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -513,14 +514,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -547,10 +548,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -578,16 +579,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

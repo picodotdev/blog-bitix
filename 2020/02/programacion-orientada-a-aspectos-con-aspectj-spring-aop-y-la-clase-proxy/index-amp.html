@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Los aspectos permiten separar código con distintas funcionalidades y centralizar un código común que sin utilizarlos está repartido por toda la aplicación. Son un concepto potente y una vez entendidos sus conceptos ofrecen muchas posibilidades para simplificar el código y mejorar su mantenimiento. Hay varias posibilidades, dos de las más utilizadas son AspectJ y Spring AOP, en el caso de que estas no se puedan utilizar el JDK incluye la clase Proxy para usos básicos aunque más limitados. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -337,7 +338,7 @@
 <p>Se recomienda usra la forma más simple que sea suficiente para las necesidad de la aplicación. Spring AOP es más simple que usar AspectJ y no hay necesidad de aplicar el compilador de AspectJ en el proceso de compilación. Si solo se necesita aplicar <em>advices</em> en la ejecución de métodos de <em>beans</em> de Spring, Spring AOP es suficiente.</p>
 <p>Si no se usa spring o se necesitan aplicar aspectos en objetos no gestionados por el contenedor de Spring (como objetos de dominio) o aplicar <em>advices</em> en <em>joint points</em> distintos a las ejecuciones de métodos, por ejemplo para la obtención o asignación de una propiedad entonces la opción a usar es <a href="https://www.eclipse.org/aspectj/">AspectJ</a>.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#programación-orientada-a-aspectos-con-aspectj">Programación orientada a aspectos con AspectJ</a></li>
@@ -490,7 +491,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/index-amp.html">
-                <amp-img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java"  class="lozad "></amp-img>
                 <h3>Los modificadores de acceso de clases, propiedades y métodos en Java</h3>
                 </a>
                 
@@ -504,7 +505,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/hemeroteca-16/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #16" title="Hemeroteca #16"  class="lozad "></amp-img>
                 <h3>Hemeroteca #16</h3>
                 </a>
                 
@@ -518,7 +519,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/index-amp.html">
-                <amp-img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" width="326" height="125" alt="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" title="Generar documentos, informes y facturas en formato PDF con JasperReports y Java"  class="lozad "></amp-img>
                 <h3>Generar documentos, informes y facturas en formato PDF con JasperReports y Java</h3>
                 </a>
                 
@@ -532,7 +533,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/index-amp.html">
-                <amp-img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring"  class="lozad "></amp-img>
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 
@@ -546,7 +547,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Extraer información del navegador del usuario en el servidor de una aplicación web Java" title="Extraer información del navegador del usuario en el servidor de una aplicación web Java"  class="lozad "></amp-img>
                 <h3>Extraer información del navegador del usuario en el servidor de una aplicación web Java</h3>
                 </a>
                 
@@ -560,7 +561,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/rotar-los-archivos-de-trazas-con-log4j-por-fecha-o-tamano/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Rotar los archivos de trazas con log4j por fecha o tamaño" title="Rotar los archivos de trazas con log4j por fecha o tamaño"  class="lozad "></amp-img>
                 <h3>Rotar los archivos de trazas con log4j por fecha o tamaño</h3>
                 </a>
                 
@@ -571,7 +572,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -660,14 +661,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Usar el protocolo seguro HTTPS proporciona confidencialidad en la comunicación entre el navegador del usuario y el servidor, es una forma de mejorar la seguridad y privacidad. Por ello el buscador de Google lo tiene en cuenta como un parámetro que afecta al SEO siendo mejor usar el protocolo seguro. Sin embargo, el usuario puede estar accediendo por el protocolo no seguro a la página web al poner la dirección en la barra de direcciones o hay enlaces hacia nuestro sitio en otros que hacen uso del protocolo HTTP. Si queremos que nuestro sitio sea accedido únicamente usando el protocolo seguro deberemos hacer una redirección en el servidor. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -322,7 +323,7 @@
 <p>Para usar HTTPS deberemos primero <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">configurar el protocolo TLS/SSL en el servidor web o de aplicaciones</a> usando un certificado SSL que podemos obtener ahora con <a href="https://letsencrypt.org/">Let’s Encrypt</a> de forma gratuita  o <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/index-amp.html">generar un certificado</a> nosotros y que sea firmado por una autoridad de confianza. Una vez que el servidor es capaz de servir el tráfico por el protocolo HTTPS estamos en condiciones de realizar la redirección al protocolo cifrado HTTPS en el puerto 443 cuando sea accedido por el protocolo no cifrado HTTP en el puerto 80.</p>
 <p>Dependiendo del servidor web o de aplicaciones que usemos la configuración será distinta, incluso lo podemos hacer a nivel de aplicación con la ayuda del <em>framework</em> web si este ofrece algún soporte para ello. A continuación incluiré la configuración necesaria para los servidores web y de aplicaciones más populares como son <a href="https://nginx.org/">Nginx</a>, <a href="https://httpd.apache.org/">Apache HTTPD</a>, <a href="https://tomcat.apache.org/">Tomcat</a>, <a href="https://eclipse.org/jetty/">Jetty</a> y <a href="https://wildfly.org/">WildFly</a> y finalmente el caso haciendo la redirección a nivel de aplicación con el <em>framework</em> <a href="https://tapestry.apache.org/">Apache Tapestry</a> para desarrollar aplicaciones web con el lenguaje Java.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#redirigir-de-http-a-https-en-nginx">Redirigir de HTTP a HTTPS en Nginx</a></li>
@@ -432,7 +433,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache"  class="lozad "></amp-img>
                 <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
                 </a>
                 
@@ -446,7 +447,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Generar y convertir claves y certificados con OpenSSL" title="Generar y convertir claves y certificados con OpenSSL"  class="lozad "></amp-img>
                 <h3>Generar y convertir claves y certificados con OpenSSL</h3>
                 </a>
                 
@@ -460,7 +461,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/linux.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Ofrecer contenido personalizado al usuario basado en su ubicación" title="Ofrecer contenido personalizado al usuario basado en su ubicación"  class="lozad "></amp-img>
                 <h3>Ofrecer contenido personalizado al usuario basado en su ubicación</h3>
                 </a>
                 
@@ -474,7 +475,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/4-opciones-ofimaticas-alternativas-gratuitas-a-microsoft-office/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/microsoft.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/microsoft.svg" width="326" height="125" alt="4 opciones ofimáticas alternativas gratuitas a Microsoft Office" title="4 opciones ofimáticas alternativas gratuitas a Microsoft Office"  class="lozad "></amp-img>
                 <h3>4 opciones ofimáticas alternativas gratuitas a Microsoft Office</h3>
                 </a>
                 
@@ -488,7 +489,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/03/como-eliminar-de-forma-segura-archivos-con-wipe-y-dd-en-gnu-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux" title="Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux"  class="lozad "></amp-img>
                 <h3>Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux</h3>
                 </a>
                 
@@ -502,7 +503,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" title="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux"  class="lozad "></amp-img>
                 <h3>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</h3>
                 </a>
                 
@@ -513,7 +514,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -602,14 +603,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

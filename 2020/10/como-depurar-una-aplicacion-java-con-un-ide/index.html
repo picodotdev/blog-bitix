@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="La depuración de un programa o debug permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o debuggers son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Cómo depurar una aplicación Java con un IDE</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -265,7 +266,7 @@
 </ul>
 <p>La depuración se emplea en el momento de desarrollo o para reproducir y descubrir en el entorno de desarrollo local un error que se está produciendo en producción. Por la utilidad de la depuración todos los lenguajes ofrecen alguna posibilidad de hacer depuración. En Java la depuración se realiza configurando la máquina virtual con ciertos argumentos y el entorno integrado de desarrollo o IDE para conectarse a la máquina virtual.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</a></li>
@@ -430,7 +431,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Entorno de desarrollo Java para editar, compilar y ejecutar programas" title="Entorno de desarrollo Java para editar, compilar y ejecutar programas" class="lozad ">
                 <h3>Entorno de desarrollo Java para editar, compilar y ejecutar programas</h3>
                 </a>
                 
@@ -444,7 +445,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="lozad ">
                 <h3>Cómo deduplicar eventos de dominio</h3>
                 </a>
                 
@@ -458,7 +459,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementar un bus de comandos y consultas en Java" title="Implementar un bus de comandos y consultas en Java" class="lozad ">
                 <h3>Implementar un bus de comandos y consultas en Java</h3>
                 </a>
                 
@@ -472,7 +473,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">
-                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/images/outbox-pattern_hub5efde1544709cb936d97558094f8b21_74659_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un bus de eventos de dominio en Java" title="Implementar un bus de eventos de dominio en Java" class="lozad ">
                 <h3>Implementar un bus de eventos de dominio en Java</h3>
                 </a>
                 
@@ -486,7 +487,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="3 formas de gestionar errores en los lenguajes de programación" title="3 formas de gestionar errores en los lenguajes de programación" class="lozad ">
                 <h3>3 formas de gestionar errores en los lenguajes de programación</h3>
                 </a>
                 
@@ -500,7 +501,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">
-                <img data-src="/blog-bitix/assets/images/logotypes/zipkin.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/zipkin.svg" width="326" height="125" alt="Trazabilidad en servicios distribuidos con Sleuth y Zipkin" title="Trazabilidad en servicios distribuidos con Sleuth y Zipkin" class="lozad ">
                 <h3>Trazabilidad en servicios distribuidos con Sleuth y Zipkin</h3>
                 </a>
                 
@@ -511,7 +512,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -523,7 +524,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -571,14 +572,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -605,10 +606,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -636,16 +637,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

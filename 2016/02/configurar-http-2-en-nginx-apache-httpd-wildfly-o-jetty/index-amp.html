@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="HTTP/2 se puede usar ya, los principales navegadores web, servidores web y de aplicaciones ya han añadido el soporte necesario ofreciendo varias ventajas para los usuarios, desarrolladores, dispositivos cliente y los servidores. En varios de los servidores más ppulares la configuración necesaria no es complicada. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -310,7 +311,7 @@
 <p>En el lado del servidor varios servidores web también han incluido el soporte para HTTP/2, entre ellos <a href="https://nginx.org/">Nginx</a>, <a href="https://httpd.apache.org/">Apache HTTPD</a>, <a href="https://wildfly.org/">WildFly</a> y <a href="https://eclipse.org/jetty/">Jetty</a>. Tomcat añadirá el soporte en la versión 9 cuando se publique las especificación de Servlets 4.0 con el soporte de HTTP/2, este soporte necesitará de ALPN que se incluirá en la versión 9 del JDK con lo que en el momento de publicar este artículo todavía quedarán varios meses. Para usar HTTP/2 en Nginx, Apache HTTPD, WildFly y Jetty debemos hacer algunos cambios en sus configuraciones.</p>
 <p>Para usar HTTP/2 los navegadores Mozilla Firefox, Google Chrome y Microsoft Edge han anunciado que se necesitará cifrado, por lo tanto deberemos añadir el <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">soporte para TLS/SSL en el servidor</a> previamente.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#configurar-http2-en-nginx">Configurar HTTP/2 en Nginx</a></li>
@@ -425,7 +426,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/introduccion-al-protocolo-http-2/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/apache.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/apache.svg" width="326" height="125" alt="Introducción al protocolo HTTP/2" title="Introducción al protocolo HTTP/2"  class="lozad "></amp-img>
                 <h3>Introducción al protocolo HTTP/2</h3>
                 </a>
                 
@@ -439,7 +440,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Certificado SSL, de empresa, «wildcard» y de validación extendida" title="Certificado SSL, de empresa, «wildcard» y de validación extendida"  class="lozad "></amp-img>
                 <h3>Certificado SSL, de empresa, «wildcard» y de validación extendida</h3>
                 </a>
                 
@@ -453,7 +454,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache"  class="lozad "></amp-img>
                 <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
                 </a>
                 
@@ -467,7 +468,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/cifrar-unidad-usb-completamente-con-dm-crypt-y-luks-en-gnu-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux" title="Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux"  class="lozad "></amp-img>
                 <h3>Cifrar unidad USB completamente con dm-crypt y LUKS en GNU/Linux</h3>
                 </a>
                 
@@ -481,7 +482,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar archivos con EncFS en GNU/Linux" title="Cifrar archivos con EncFS en GNU/Linux"  class="lozad "></amp-img>
                 <h3>Cifrar archivos con EncFS en GNU/Linux</h3>
                 </a>
                 
@@ -495,7 +496,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux"  class="lozad "></amp-img>
                 <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
                 </a>
                 
@@ -506,7 +507,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -595,14 +596,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

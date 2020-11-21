@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Con la versión 5.4 de Tapestry las páginas PageCatalog, ServiceStatus e HibernateStaticstis han sido unificadas en la página T5Dashboard por lo que ahora en una sóla página tendremos toda la información. Una de las características más importantes de Tapestry es ser muy informativo proporcionando mucha y descriptiva información, esto se nota con la página de informe de error incluso para las peticiones ajax, los mensajes de logging y con estás páginas de información de estado. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Página Dashboard de Apache Tapestry</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -332,7 +333,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" title="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" class="lozad ">
                 <h3>Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly</h3>
                 </a>
                 
@@ -346,7 +347,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Libro sobre desarrollo de aplicaciones con Apache Tapestry" title="Libro sobre desarrollo de aplicaciones con Apache Tapestry" class="lozad ">
                 <h3>Libro sobre desarrollo de aplicaciones con Apache Tapestry</h3>
                 </a>
                 
@@ -360,7 +361,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="lozad ">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -374,7 +375,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/detectar-problema-n-plus-1-y-obtener-estadisticas-de-hibernate-con-grails/">
-                <img data-src="/blog-bitix/assets/images/logotypes/grails.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/grails.svg" width="326" height="125" alt="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" title="Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails" class="lozad ">
                 <h3>Detectar problema N&#43;1 y obtener estadísticas de Hibernate con Grails</h3>
                 </a>
                 
@@ -388,7 +389,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/pagina-de-excepcion-de-grails/">
-                <img data-src="/blog-bitix/assets/images/logotypes/grails.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/grails.svg" width="326" height="125" alt="Página de excepción de Grails" title="Página de excepción de Grails" class="lozad ">
                 <h3>Página de excepción de Grails</h3>
                 </a>
                 
@@ -402,7 +403,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/05/arquitectura-y-hospedaje-de-blog-stack/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogstack.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/blogstack.png" width="326" height="125" alt="Arquitectura y hospedaje de Blog Stack" title="Arquitectura y hospedaje de Blog Stack" class="lozad ">
                 <h3>Arquitectura y hospedaje de Blog Stack</h3>
                 </a>
                 
@@ -413,7 +414,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -425,7 +426,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -473,14 +474,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -507,10 +508,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -538,16 +539,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

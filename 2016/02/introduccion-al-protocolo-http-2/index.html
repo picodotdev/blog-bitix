@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="La tecnología avanza inexorablemente respondiendo a nuevas necesidades o mejor a las existentes. El protocolo HTTP se ha mantenido sin grandes cambios durante más de 15 años, sin embargo, para reducir las latencias en la carga de las páginas y ser más eficiente se ha desarrollado una nueva especificación que ya promete reducir estos problemas. HTTP/2 no es compatible hacia atrás pero se puede usar junto con HTTP 1.1 y los dispositivos que usen aprovecharse de sus ventajas. Los navegadores más populares ya lo han implementado y los servidores web o de aplicaciones ya ofrecen soporte para ser usado. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Introducción al protocolo HTTP/2</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -327,7 +328,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/04/certificado-ssl-de-empresa-wildcard-y-de-validacion-extendida/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Certificado SSL, de empresa, «wildcard» y de validación extendida" title="Certificado SSL, de empresa, «wildcard» y de validación extendida" class="lozad ">
                 <h3>Certificado SSL, de empresa, «wildcard» y de validación extendida</h3>
                 </a>
                 
@@ -341,7 +342,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">
-                <img data-src="/blog-bitix/assets/images/logotypes/openssl.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" class="lozad ">
                 <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
                 </a>
                 
@@ -355,7 +356,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/cifrar-archivos-con-encfs-en-gnu-linux/">
-                <img data-src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cifrar archivos con EncFS en GNU/Linux" title="Cifrar archivos con EncFS en GNU/Linux" class="lozad ">
                 <h3>Cifrar archivos con EncFS en GNU/Linux</h3>
                 </a>
                 
@@ -369,7 +370,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/como-recuperar-archivos-eliminados-o-de-una-unidad-corrupta-en-gnu-linux/">
-                <img data-src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" title="Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux" class="lozad ">
                 <h3>Cómo recuperar archivos eliminados o de una unidad corrupta en GNU/Linux</h3>
                 </a>
                 
@@ -383,7 +384,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/02/6-aniversario-del-blog/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="6º aniversario del blog" title="6º aniversario del blog" class="lozad ">
                 <h3>6º aniversario del blog</h3>
                 </a>
                 
@@ -397,7 +398,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/01/conferencia-bilbostack-2016/">
-                <img data-src="/blog-bitix/assets/images/logotypes/bilbostack.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/bilbostack.png" width="326" height="125" alt="Conferencia BilboStack 2016" title="Conferencia BilboStack 2016" class="lozad ">
                 <h3>Conferencia BilboStack 2016</h3>
                 </a>
                 
@@ -408,7 +409,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -420,7 +421,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -468,14 +469,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -502,10 +503,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -533,16 +534,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

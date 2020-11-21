@@ -14,6 +14,7 @@
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Hace un tiempo escribí una serie de artículos mostrando el uso de varias de la librerías de JavaScript, el primer artículo fue sobre una introducción sobre RequireJS hasta un Ejemplo lista de tareas con Backbone y React pasando por otra serie de herramientas útiles en una aplicación que tiene una parte importante en el navegador como:
  Plantillas con Mustache Logging log4javascript Capturar errores de JavaScript Modelos con Backbone Ejemplo de lista de tareas con Backbone, RESTEasy y Tapestry Pruebas unitarias con Jasmine y Sinon El mismo ejemplo de lista de tareas con Marionette Una vez más el mismo ejemplo de lista de tareas con Backbone y React opción que me gustó más que con Marionette Internacionalización (i18n) en JavaScript  En este artículo comentaré otra librería de JavaScript que nos será de utilidad para el trabajo con datos de tipo fecha en el navegador, la librería es Moment. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Moment.js, librería JavaScript para fechas</title>
 
@@ -104,12 +105,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -149,13 +150,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -164,7 +165,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -303,7 +304,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2015/01/internacionalizacion-i18n-en-javascript/">
-                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/javascript.svg" width="326" height="125" alt="Internacionalización (i18n) en JavaScript" title="Internacionalización (i18n) en JavaScript" class="lozad ">
                 <h3>Internacionalización (i18n) en JavaScript</h3>
                 </a>
                 
@@ -317,7 +318,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/04/ejemplo-lista-de-tareas-con-backbone-y-react/">
-                <img data-src="/blog-bitix/assets/images/logotypes/backbone.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/backbone.svg" width="326" height="125" alt="Ejemplo lista de tareas con Backbone y React" title="Ejemplo lista de tareas con Backbone y React" class="lozad ">
                 <h3>Ejemplo lista de tareas con Backbone y React</h3>
                 </a>
                 
@@ -331,7 +332,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/04/usar-grunt-para-ejecutar-teses-unitarios-de-codigo-javascript/">
-                <img data-src="/blog-bitix/assets/images/logotypes/grunt.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/grunt.png" width="326" height="125" alt="Usar Grunt para ejecutar teses unitarios de código JavaScript" title="Usar Grunt para ejecutar teses unitarios de código JavaScript" class="lozad ">
                 <h3>Usar Grunt para ejecutar teses unitarios de código JavaScript</h3>
                 </a>
                 
@@ -345,7 +346,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/06/ofrecer-contenido-personalizado-al-usuario-basado-en-su-ubicacion/">
-                <img data-src="/blog-bitix/assets/images/logotypes/linux.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Ofrecer contenido personalizado al usuario basado en su ubicación" title="Ofrecer contenido personalizado al usuario basado en su ubicación" class="lozad ">
                 <h3>Ofrecer contenido personalizado al usuario basado en su ubicación</h3>
                 </a>
                 
@@ -359,7 +360,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/ejemplo-sencillo-de-como-crear-un-excel-o-csv-en-java-con-apache-poi-y-opencsv/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" title="Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV" class="lozad ">
                 <h3>Ejemplo sencillo de como crear un Excel o CSV en Java con Apache POI y OpenCSV</h3>
                 </a>
                 
@@ -373,7 +374,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/05/incluir-informacion-de-la-version-en-el-artefacto-distribuible-con-gradle/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Incluir información de la versión en el artefacto distribuible con Gradle" title="Incluir información de la versión en el artefacto distribuible con Gradle" class="lozad ">
                 <h3>Incluir información de la versión en el artefacto distribuible con Gradle</h3>
                 </a>
                 
@@ -384,7 +385,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -396,7 +397,7 @@
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -444,14 +445,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -478,10 +479,10 @@
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -509,16 +510,6 @@
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

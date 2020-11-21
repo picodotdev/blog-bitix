@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Los certificados autofirmados no son suficientes para un entorno de producción. En producción hay que usar certificados firmados por una entidad de confianza. AWS Certificate Manager ofrece la suya pero tiene un coste elevado y los certificados de otras entidades tampoco son baratos. Para certificados de uso interno en una organización que proporcionan comunicaciones seguras OpenSSL permite con una serie de comandos crear una autoridad de certificación o CA en la que los servidores y clientes internos confíen. Las funciones de la CA incluyen crear certificados a partir de las solicitudes de los certificados para los servidores y también la revocación y renovación de certificados. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
   
 
   <title>Comandos para crear una autoridad de certificación (CA) con OpenSSL</title>
@@ -141,13 +142,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
         
         
         
@@ -312,7 +313,7 @@
 <p>Para <a href="https://picodotdev.github.io/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/index-amp.html">usar el protocolo seguro HTTPS en un servidor web</a> es necesario al menos <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/index-amp.html">generar un certificado autofirmado</a> que incluya el dominio del sitio web. El certificado autofirmado proporciona comunicaciones seguras entre el servidor y cliente pero los clientes no lo consideran de confianza de modo que han de omitir la validación del certificado, un entorno de desarrollo o pruebas es suficiente pero en un escenario de producción para añadir más seguridad donde hay varios servidores que además requieren y validan también el certificado del cliente es necesario utilizar certificados generados por una entidad en la que se confíe, esta es la autoridad de certificación. La autoridad de certificación o CA es una entidad en la que se confía, si una CA ha firmado digitalmente un certificado esta asegura que el certificado pertenece a quien dice pertenecer. Las funciones de una CA son firmar los certificados que se le envían, de revocar los certificados cuando han sido comprometidos o de renovarlos cuando su validez expira.</p>
 <p><a href="https://aws.amazon.com/es/">AWS</a> en su oferta de productos tiene <a href="https://aws.amazon.com/es/certificate-manager/">AWS Certificate Manager</a> que hace las funciones de autoridad de certificados, delega la complejidad de hacer las funciones de autoridad de certificados pero su inconveniente es que tiene el significativo precio de $400 mensuales más un pequeño coste por certificado emitido. La herramienta <a href="https://www.openssl.org/">OpenSSL</a> permite hacer las funciones de una autoridad de certificación con un conjunto de comandos.</p>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#crear-la-clave-y-certificado-de-la-autoridad-de-certificación-raíz">Crear la clave y certificado de la autoridad de certificación raíz</a></li>
@@ -522,7 +523,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/index-amp.html">
-                <amp-img src="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/images/dig_hu3a19147225d8f34127d275e0d47847be_56993_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/images/dig_hu3a19147225d8f34127d275e0d47847be_56993_875x0_resize_box_2.png" width="326" height="125" alt="Obtener un nombre de dominio para una dirección IP privada" title="Obtener un nombre de dominio para una dirección IP privada"  class="lozad "></amp-img>
                 <h3>Obtener un nombre de dominio para una dirección IP privada</h3>
                 </a>
                 
@@ -536,7 +537,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/index-amp.html">
-                <amp-img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/images/nomad-versions_hu940a3480bfb39e48a962826728734d4b_126962_875x0_resize_box_2.png" width="326" height="125" alt="Revertir un servicio a una versión anterior con Nomad" title="Revertir un servicio a una versión anterior con Nomad"  class="lozad "></amp-img>
                 <h3>Revertir un servicio a una versión anterior con Nomad</h3>
                 </a>
                 
@@ -550,7 +551,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/index-amp.html">
-                <amp-img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/images/consul-connect-communications_hu9b9392122792520048bdeecbe5e8f0fc_25368_875x0_resize_box_2.png" width="326" height="125" alt="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad" title="Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad"  class="lozad "></amp-img>
                 <h3>Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</h3>
                 </a>
                 
@@ -564,7 +565,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/index-amp.html">
-                <amp-img src="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_875x0_resize_box_2.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/images/archivos-sitio-web_hu5abb769a9287f1cc7ec0e2ab9530cb7d_43788_875x0_resize_box_2.png" width="326" height="125" alt="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web" title="Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web"  class="lozad "></amp-img>
                 <h3>Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web</h3>
                 </a>
                 
@@ -578,7 +579,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/beastie.png" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/beastie.png" width="326" height="125" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones"  class="lozad "></amp-img>
                 <h3>Las diferencias entre GNU/Linux, BSD y sus distribuciones</h3>
                 </a>
                 
@@ -592,7 +593,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" height="125" layout="fixed-height"  class="lozad "></amp-img>
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape"  class="lozad "></amp-img>
                 <h3>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</h3>
                 </a>
                 
@@ -603,7 +604,7 @@
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <amp-ad
         media="(max-width: 374px)"
@@ -692,14 +693,14 @@
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></amp-img></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
       
       
       

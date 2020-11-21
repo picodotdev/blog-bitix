@@ -13,6 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="El recolector de basura o garbage collector es una de las piezas fundamentales del lenguaje Java y su plataforma, es la funcionalidad que libera al programador de la solicitud y liberación de memoria de forma explícita lo que facilita a los programadores la creación de programas, una mayor productividad, evita errores y fallos de seguridad. Una ventaja sobre lenguajes que no poseen recolectores de basura y que se ha adoptado por los lenguajes desarrollados en la últimas décadas. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>El recolector de basura de Java, qué hace y cómo funciona en cada versión</title>
 
@@ -100,12 +101,12 @@
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -145,13 +146,13 @@
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -160,7 +161,7 @@
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -293,7 +294,7 @@
 <li><a href="https://docs.oracle.com/en/java/javase/11/gctuning/z-garbage-collector1.html#GUID-A5A42691-095E-47BA-B6DC-FB4E5FAA43D0">ZGC Collector</a></li>
 </ul>
 <div class="alert alert-warning tableofcontents">
-    <h5>Contenido del artículo</h5>
+    <h2>Contenido del artículo</h2>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#cómo-funciona-el-recolector-de-basura">Cómo funciona el recolector de basura</a></li>
@@ -434,7 +435,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/">
-                <img data-src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="lozad ">
                 <h3>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</h3>
                 </a>
                 
@@ -448,7 +449,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">
-                <img data-src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/images/java-access-specifier_hua4dc7e14397aa21078ef211e311b7b0c_57114_875x0_resize_q90_box.jpg" width="326" height="125" alt="Los modificadores de acceso de clases, propiedades y métodos en Java" title="Los modificadores de acceso de clases, propiedades y métodos en Java" class="lozad ">
                 <h3>Los modificadores de acceso de clases, propiedades y métodos en Java</h3>
                 </a>
                 
@@ -462,7 +463,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/hemeroteca-16/">
-                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/hugo.svg" width="326" height="125" alt="Hemeroteca #16" title="Hemeroteca #16" class="lozad ">
                 <h3>Hemeroteca #16</h3>
                 </a>
                 
@@ -476,7 +477,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/">
-                <img data-src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2019/12/generar-documentos-informes-y-facturas-en-formato-pdf-con-jasperreports-y-java/images/jaspersoft-studio_hubad11cc07d8ec91ef5d7f2e895a88282_221533_875x0_resize_box_2.png" width="326" height="125" alt="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" title="Generar documentos, informes y facturas en formato PDF con JasperReports y Java" class="lozad ">
                 <h3>Generar documentos, informes y facturas en formato PDF con JasperReports y Java</h3>
                 </a>
                 
@@ -490,7 +491,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/">
-                <img data-src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/2019/11/implementar-un-segundo-factor-de-autenticacion-en-una-aplicacion-web-java-con-spring/images/autenticacion-2fa-1_hu175ef601d8d42f30e72518b43891e47e_45868_875x0_resize_box_2.png" width="326" height="125" alt="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" title="Implementar un segundo factor de autenticación en una aplicación web Java con Spring" class="lozad ">
                 <h3>Implementar un segundo factor de autenticación en una aplicación web Java con Spring</h3>
                 </a>
                 
@@ -504,7 +505,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/11/extraer-informacion-del-navegador-del-usuario-en-el-servidor-de-una-aplicacion-web-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Extraer información del navegador del usuario en el servidor de una aplicación web Java" title="Extraer información del navegador del usuario en el servidor de una aplicación web Java" class="lozad ">
                 <h3>Extraer información del navegador del usuario en el servidor de una aplicación web Java</h3>
                 </a>
                 
@@ -515,7 +516,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -527,7 +528,7 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -575,14 +576,14 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -609,10 +610,10 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -640,16 +641,6 @@ El recolector de basura Shenandoah es un proyecto de OpenJDK que forma parte del
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>

@@ -14,6 +14,7 @@
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Desde la versión 1.6 del JDK disponemos de una API para acceder al compilador desde un programa Java. En el ejemplo de este artículo utilizaré varias clases de esa API para conseguir compilar un archivo con la definición de una clase Java y posteriormente instanciarla y usarla. En posteriores artículos comentaré un ejemplo práctico y muy útil con el que podemos sacar provecho de esta funcionalidad.
 Las clases que necesitaremos de esa API son: &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Compilar y cargar de forma dinámica una clase Java</title>
 
@@ -104,12 +105,12 @@ Las clases que necesitaremos de esa API son:"
   </script>
 
   <!-- css -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.4.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-2.38.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main-cookieconsent.css">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/syntax.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/css/cookieconsent.min.css" media="all">
 
   <!-- javascript -->
   <script type="text/javascript" src="/blog-bitix/assets/js/require-config.js" defer></script>
@@ -149,13 +150,13 @@ Las clases que necesitaremos de esa API son:"
       <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/">Blog Bitix</a></h2>
       <div class="links">
         
-          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
         
         
-          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
         
         
-          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
         
         
         
@@ -164,7 +165,7 @@ Las clases que necesitaremos de esa API son:"
     <div class="col-12 col-lg-4 text-center">
       <form name="query" class="form-inline search" onsubmit="return false;">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix">
+          <input type="text" name="q" class="form-control" placeholder="Buscar en Blog Bitix" aria-label="Buscar en Blog Bitix">
         </div>
       </form>
       <form name="search" action="https://duckduckgo.com/" method="get" class="hidden" data-site="https://picodotdev.github.io/blog-bitix/">
@@ -337,7 +338,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualización del libro PlugIn Tapestry" title="Actualización del libro PlugIn Tapestry" class="lozad ">
                 <h3>Actualización del libro PlugIn Tapestry</h3>
                 </a>
                 
@@ -351,7 +352,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Doble barra de botones con Apache Tapestry" title="Doble barra de botones con Apache Tapestry" class="lozad ">
                 <h3>Doble barra de botones con Apache Tapestry</h3>
                 </a>
                 
@@ -365,7 +366,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Forzar el uso del protocolo HTTPS en Apache Tapestry" title="Forzar el uso del protocolo HTTPS en Apache Tapestry" class="lozad ">
                 <h3>Forzar el uso del protocolo HTTPS en Apache Tapestry</h3>
                 </a>
                 
@@ -379,7 +380,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Usar Apache Tapestry en una aplicación «standalone»" title="Usar Apache Tapestry en una aplicación «standalone»" class="lozad ">
                 <h3>Usar Apache Tapestry en una aplicación «standalone»</h3>
                 </a>
                 
@@ -393,7 +394,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Servir recursos estáticos desde un CDN en Apache Tapestry" title="Servir recursos estáticos desde un CDN en Apache Tapestry" class="lozad ">
                 <h3>Servir recursos estáticos desde un CDN en Apache Tapestry</h3>
                 </a>
                 
@@ -407,7 +408,7 @@ Las clases que necesitaremos de esa API son:"
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/anotacion-cached-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" height="125" layout="fixed-height" class="lozad ">
+                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Anotación Cached de Apache Tapestry" title="Anotación Cached de Apache Tapestry" class="lozad ">
                 <h3>Anotación Cached de Apache Tapestry</h3>
                 </a>
                 
@@ -418,7 +419,7 @@ Las clases que necesitaremos de esa API son:"
 
         <div class="row">
           <div class="col-12 adblock-container-billboard">
-            <a id="pageBottom"></a>
+            <span id="pageBottom"></span>
             <div class="adsense adsense-billboard">
     <ins class="adsbygoogle"
         data-ad-client="ca-pub-3533636310991304"
@@ -430,7 +431,7 @@ Las clases que necesitaremos de esa API son:"
         
   <div class="row">
     <div class="col-md-12">
-      <a id="comments"></a>
+      <span id="comments"></span>
       <div id="disqus_thread"></div>
     </div>
   </div>
@@ -478,14 +479,14 @@ Las clases que necesitaremos de esa API son:"
     </div>
     <div class="col-12 col-sm-4 text-center links">
       
-        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.png" width="50" height="50" class="icon"></a>
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></a>
       
       
-        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon"></a>
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></a>
       
       
       
-        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon"></a>
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></a>
       
       
       
@@ -512,10 +513,10 @@ Las clases que necesitaremos de esa API son:"
     <div class="slides"></div>
     
     <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <span class="prev">‹</span>
+    <span class="next">›</span>
+    <span class="close">×</span>
+    <span class="play-pause"></span>
     <ol class="indicator"></ol>
     
     <div class="modal fade">
@@ -543,16 +544,6 @@ Las clases que necesitaremos de esa API son:"
 </div>
 
   
-  <!-- Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-<script type="text/javascript">
-    window.cookieconsent_options = {
-        "message": "Esta bitácora te informa de la obviedad de que utiliza «cookies», propias y de servicios como Google Analytics y Google AdSense entre otros.",
-        "dismiss": "Aceptar",
-        "learnMore": "Más información",
-        "link": null,
-        "theme": "dark-bottom"
-    };
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" async></script>
+  
 </body>
 </html>
