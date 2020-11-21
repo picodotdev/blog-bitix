@@ -1,36 +1,38 @@
-<!-- Bootstrap Image Gallery -->
-<div class="blueimp-gallery-container">
-  <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-use-bootstrap-modal="false">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <span class="prev">‹</span>
-    <span class="next">›</span>
-    <span class="close">×</span>
-    <span class="play-pause"></span>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" aria-hidden="true">&times;</button>
-            <h4 class="modal-title"></h4>
-          </div>
-          <div class="modal-body next"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default pull-left prev">
-              <i class="glyphicon glyphicon-chevron-left"></i>
-              {{ i18n "previous" }}
-            </button>
-            <button type="button" class="btn btn-primary next">
-              {{ i18n "next" }}
-              <i class="glyphicon glyphicon-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- The Gallery as lightbox dialog, should be a document body child element -->
+<div
+  id="blueimp-gallery"
+  class="blueimp-gallery blueimp-gallery-controls"
+  aria-label="image gallery"
+  aria-modal="true"
+  role="dialog"
+>
+  <div class="slides" aria-live="polite"></div>
+  <h3 class="title"></h3>
+  <span
+    class="prev"
+    aria-controls="blueimp-gallery"
+    aria-label="previous slide"
+    aria-keyshortcuts="ArrowLeft"
+  ></span>
+  <span
+    class="next"
+    aria-controls="blueimp-gallery"
+    aria-label="next slide"
+    aria-keyshortcuts="ArrowRight"
+  ></span>
+  <span
+    class="close"
+    aria-controls="blueimp-gallery"
+    aria-label="close"
+    aria-keyshortcuts="Escape"
+  ></span>
+  <span
+    class="play-pause"
+    aria-controls="blueimp-gallery"
+    aria-label="play slideshow"
+    aria-keyshortcuts="Space"
+    aria-pressed="false"
+    role="button"
+  ></span>
+  <ol class="indicator"></ol>
 </div>
