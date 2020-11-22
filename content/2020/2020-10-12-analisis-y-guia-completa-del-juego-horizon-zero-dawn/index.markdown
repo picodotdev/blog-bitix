@@ -99,7 +99,7 @@ Finalmente, hay unos coleccionables especiales que son unos grilletes, otro es u
 {{< image
     gallery="true"
     image1="image:coleccionables-observatorio.jpg" optionsthumb1="200x150" title1="Coleccionables observatorios"
-    image2="image:coleccionables-vasija.jpg" optionsthumb2="200x150" title2="Colecionables vasijas"
+    image2="image:coleccionables-vasija.jpg" optionsthumb2="200x150" title2="Coleccionables vasijas"
     image3="image:coleccionables-flor-de-metal.jpg" optionsthumb3="200x150" title3="Coleccionables flores de metal" >}}
 {{< image
     gallery="true"
