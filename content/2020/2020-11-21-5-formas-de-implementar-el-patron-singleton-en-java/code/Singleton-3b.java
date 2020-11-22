@@ -1,3 +1,5 @@
+...
+
 public class Singleton {
 
    private static final Singleton instance;
