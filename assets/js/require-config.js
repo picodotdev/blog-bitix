@@ -1,6 +1,6 @@
 var require = {
     paths: {
-        'jquery': '../libs/jquery-3.5.1.slim.min',
+        'jquery': '../libs/jquery-3.5.1.min',
         'bootstrap': '../libs/bootstrap-4.5.3-dist/js/bootstrap.min',
         'bowser': '../libs/bowser-2.8.1',
         'lozad': '../libs/lozad-1.16.0.min',
