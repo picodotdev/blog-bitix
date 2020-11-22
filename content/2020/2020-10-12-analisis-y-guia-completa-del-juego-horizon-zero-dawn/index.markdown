@@ -113,7 +113,7 @@ A lo largo del juego aparecen numerosos tipos de máquinas con diferentes compor
 
 Las más pequeñas se pueden matar con sigilo atrayéndolas con un silbido o una piedra y un golpe crítico con la lanza, las grandes requieren aprovechar sus debilidades para matarlas con mayor facilidad. Una cosa que me ha gustado es que a algunas máquinas no se pueden matar empleando la fuerza bruta lanzándose de frente a por ellas, requiere emplear la estrategia y el arma adecuada.
 
-Otra cosas buena es que no solo hay una táctica posible sino que está a disposición del jugador el crear una que la considere suficientemente efectiva, si a una máquina cuesta matarla mucho o nos hace gran cantidad de daño es que no estamos usando la estrategia adecuada. Empleando la estrategia y armas adecuadas todas las máquinas se pueden matar con facilidad, rapidez y gastando menos recursos. La táctica para la mayoría de ellas es apuntando a sus componentes y extrayéndolos con una flecha férrea con alto poder de extracción, quitar sus componentes les impide usar algunas de sus habilidades ya sea para descubrirnos aún ocultos en la hierba alta por los chatarreros, los acechadores que se camuflan con el terreno o usan armas de ataque a distancia como cañones que luego se pueen recoger como armas pesadas.
+Otra cosas buena es que no solo hay una táctica posible sino que está a disposición del jugador el crear una que la considere suficientemente efectiva, si a una máquina cuesta matarla mucho o nos hace gran cantidad de daño es que no estamos usando la estrategia adecuada. Empleando la estrategia y armas adecuadas todas las máquinas se pueden matar con facilidad, rapidez y gastando menos recursos. La táctica para la mayoría de ellas es apuntando a sus componentes y extrayéndolos con una flecha férrea con alto poder de extracción, quitar sus componentes les impide usar algunas de sus habilidades ya sea para descubrirnos aún ocultos en la hierba alta por los chatarreros, los acechadores que se camuflan con el terreno o usan armas de ataque a distancia como cañones que luego se pueden recoger como armas pesadas.
 
 Para las máquinas mas grandes una estrategia es atarlas con el lanzacuerdas que durante un tiempo permite evitar sus ataques mientras se aprovecha para hacerle daño apuntando a algún componente. Para grupos de máquinas en los que es difícil atacar a una máquina sin que otras nos ataquen una estrategia es corromper a alguna lo que hará que se ataquen entre ellas, una vez que solo quede una o estén debilitadas es fácil matarlas con el último disparo.
 
@@ -189,7 +189,7 @@ Los coleccionables de los que no aparece su ubicación en el mapa como los datos
 {{< youtube
     video="H-aLVADHajs" >}}
 
-Lo mismo si no hemos encontrado alguna célula de energía para conseguir el atuendo especial.
+Lo mismo si no hemos encontrado alguna célula de energía para conseguir el atuendo especial que en el modo difícil en la expansión The Forzen Wilds se hace casi imprescindible.
 
 {{< youtube
     video="53Qur5oEfy4" >}}
@@ -211,7 +211,7 @@ Si alguna prueba de habilidad de los terrenos de caza se nos resiste para conseg
 
 ### Gameplay
 
-Este _gameplay_ del inicio del juego muestra como es si jugabilidad y aspecto gŕafico.
+Este _gameplay_ del inicio del juego muestra como es si jugabilidad y aspecto gráfico.
 
 {{< youtube
     video="Q0UGCUT1qs4" >}}
