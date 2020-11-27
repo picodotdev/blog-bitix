@@ -387,7 +387,7 @@
 <li><em>feature togles</em>: la nueva funcionalidad se activa o desactiva mediante una condición.</li>
 <li>Es posible emplear varias de las anteriores a la vez ya que no son exclusivas.</li>
 </ul>
-<p>Estos despliegues progresivos son aplicables al código, requieren también despliegues progresivos en las base de datos empleando los pasos <em>Expand, Migrate, Contract</em>. Un caso es crear una nueva columna, copiar los datos a ella, mantener la versión antigua y nueva y finalmente completada la migración eliminar la columna antigua. Las migraciónes pogresivas también son aplicables a las APIs.</p>
+<p>Estos despliegues progresivos son aplicables al código, requieren también despliegues progresivos en las base de datos empleando los pasos <em>Expand, Migrate, Contract</em>. Un caso es crear una nueva columna, copiar los datos a ella, mantener la versión antigua y nueva y finalmente completada la migración eliminar la columna antigua. Las migraciónes progresivas también son aplicables a las APIs.</p>
 <p>La monitorización permite conocer si una funcionalidad se está utilizando y obtener información del funcionamiento interno de la aplicación. La infraestructura se puede convertir en inmutable con tecnologías como contenedores como <a href="https://www.docker.com/">Docker</a> y <a href="https://kubernetes.io/">Kubernetes</a> y tratar como código con tecnologías como <a href="https://www.terraform.io/">Terraform</a>. La gestión del código puede ser usando <em>git flow</em> o <em>trunk based</em> y con un único repositorio que incluya todo para tratarlo como el entregable.</p>
 <div class="reference">
     Referencia:<br>
@@ -469,7 +469,7 @@
 <h3 id="otra-charla-sobre-microservicios-_por-isabel-garrido-cardenas-y-sergi-gonzález_">Otra charla sobre microservicios <em>por Isabel Garrido Cardenas y Sergi González</em></h3>
 <p>Se empieza a desarrollar una aplicación en forma de monolito, a medida que es más grande la aplicación y la organización en número de personas se divide en áreas funcionales. El siguiente paso es crear crear APIs con contratos y microservicios que se comunican unos entre otros, quizá sigan compartiendo la base de datos y tienen dependencias. El resultado es un monolito distribuido que genera sus propios problemas de escalabilidad y pruebas.</p>
 <p>Para conseguir desacoplar los microservicios y si la consistencia eventual es posible en vez de utilizar una comunicación síncrona y acoplada por API REST o <a href="https://grpc.io/">gRPC</a> hay que utilizar la comunicación desacoplada mediante eventos e implementar código reactivo a esos eventos.</p>
-<p>El bus de eventos se convierte en un único punto de fallo con problemas que hay preveer:</p>
+<p>El bus de eventos se convierte en un único punto de fallo con problemas que hay prever:</p>
 <ul>
 <li>Eventos duplicados</li>
 <li>Eventos perdidos</li>
