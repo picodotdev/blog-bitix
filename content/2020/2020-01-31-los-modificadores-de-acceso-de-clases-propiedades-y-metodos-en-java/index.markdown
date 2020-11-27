@@ -90,7 +90,7 @@ No hay encapsulación entre las instancias de la misma clase, la encapsulación 
 
 ### La modularidad a partir Java 9
 
-Los ámbitos de visbilidad es un mecanismo bastante limitado ni es suficiente para proporcionar encapsulación. No hay ningún impedimento a que cualquiera pueda crear una clase en un paquete que contiene clases privadas de paquete o métodos _package private_ o heredar de esas clases y de esta menera tener acceso a clases, métodos y propiedades que el autor original no las diseñó para esos propósitos. Puede ser incluso un problema de seguridad.
+Los ámbitos de visibilidad es un mecanismo bastante limitado ni es suficiente para proporcionar encapsulación. No hay ningún impedimento a que cualquiera pueda crear una clase en un paquete que contiene clases privadas de paquete o métodos _package private_ o heredar de esas clases y de esta manera tener acceso a clases, métodos y propiedades que el autor original no las diseñó para esos propósitos. Puede ser incluso un problema de seguridad.
 
 [La modularidad añadida en Java 9][blogbitix-263] viene a complementar y dar una solución más completa a los ámbitos de visibilidad así como garantizar mejor la encapsulación tal y como el programador del paquete original ha diseñado.
 

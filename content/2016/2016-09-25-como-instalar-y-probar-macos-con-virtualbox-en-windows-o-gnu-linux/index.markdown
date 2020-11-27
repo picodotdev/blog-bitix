@@ -59,7 +59,7 @@ De macOS hay múltiples versiones que con el tiempo Apple ha publicado incorpora
 * 10.14, Mojave con la ultima versión menor de actualización publicada en mayo de 2019
 * 10.13, High Sierra con la ultima versión menor de actualización publicada en septiembre de 2017
 
-Los archivos _torrent_ permiten descargar las imágenes de instalación de macOS que ocupan entre 5 y 10 GiB mediante compartición de archivos entre usuarios _torrent_ con programas como [Transmission][transmissionbt] o [uTorrent][utorrent]. Depediendo de la velocidad de conexión a internet la descarga tarda más o menos.
+Los archivos _torrent_ permiten descargar las imágenes de instalación de macOS que ocupan entre 5 y 10 GiB mediante compartición de archivos entre usuarios _torrent_ con programas como [Transmission][transmissionbt] o [uTorrent][utorrent]. Dependiendo de la velocidad de conexión a internet la descarga tarda más o menos.
 
 * {{< resourcelink text="Archivo de descarga macOS-10.15-Catalina" name="macOS-10.15-Catalina.torrent" >}}
 * {{< resourcelink text="Archivo de descarga macOS-10.14-Mojave" name="macOS-10.14-Mojave.torrent" >}}

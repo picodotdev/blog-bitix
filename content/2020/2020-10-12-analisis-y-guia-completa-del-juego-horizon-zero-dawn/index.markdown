@@ -130,7 +130,7 @@ Algunas máquinas son vulnerables al fuego como los rapaces que incendiados caen
 
 A medida que se matan máquinas se consigue experiencia que permite subir de nivel, cada nivel otorga un punto de habilidad, completando algunas misiones también se consiguen puntos de habilidad que emplear para conseguir alguna nueva habilidad del árbol de habilidades. Completar las misiones principales, secundarias y con los enemigos abatidos permite conseguir los puntos de habilidad suficientes para adquirir la mayor parte del árbol de habilidades.
 
-Al principio las más útiles con las de recolección y viajera que permiten extraer más recursos de las máquinas con carroñera, más recursos naturales con cosechadora, duplicar la capcidad de la bolsa de medicinas con herborista, creadora de munición para crear más munición con los mismos recursos o quitar modificadores de armas y atuendos con manitas.
+Al principio las más útiles con las de recolección y viajera que permiten extraer más recursos de las máquinas con carroñera, más recursos naturales con cosechadora, duplicar la capacidad de la bolsa de medicinas con herborista, creadora de munición para crear más munición con los mismos recursos o quitar modificadores de armas y atuendos con manitas.
 
 Cuando empiezan los combates con máquinas más grandes las habilidades que mejoran el combate son más útiles como concentración para ralentizar el tiempo, disparo tripe para disparar tres flechas al mismo tiempo o ataque silencioso para hacer un ataque crítico que permite matar a máquinas pequeñas de un solo golpe.
 

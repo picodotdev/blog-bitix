@@ -107,7 +107,7 @@ Dependiendo de la autoridad de certificado el certificado puede estar en diferen
 
 ### Autoridad de certificación
 
-Los comandos anteriores permiten generar un certificado autofirmado válido para propocrionar una conexión cifrada entre un servidor y un cliente como es el caso de un servidor web y un navegador web. Pero los certificados autofirmados no permiten todas las validaciones de seguridad, el cliente no puede confiar en que realmente se está conectando al nombre del dominio del servidor que el certificado incluye y por ello en el cliente hay que eliminar la validación de comprobación del certificado. Para mayor seguridad y en un entorno de producción se ha de utilizar una autoridad de certificación, es posible [crear una autoridad de certificación propia con comandos de OpenSSL][blogbitix-506].
+Los comandos anteriores permiten generar un certificado autofirmado válido para proporcionar una conexión cifrada entre un servidor y un cliente como es el caso de un servidor web y un navegador web. Pero los certificados autofirmados no permiten todas las validaciones de seguridad, el cliente no puede confiar en que realmente se está conectando al nombre del dominio del servidor que el certificado incluye y por ello en el cliente hay que eliminar la validación de comprobación del certificado. Para mayor seguridad y en un entorno de producción se ha de utilizar una autoridad de certificación, es posible [crear una autoridad de certificación propia con comandos de OpenSSL][blogbitix-506].
 
 {{< reference >}}
 * [OpenSSL][openssl]

@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
-summary: "La forma habitual en Java de hacer un bucle es con una sentecia _for_ o _while_ pero con el añadido de los iteradores en Java 5 no hace falta tener una variable para conservar el índice del bucle. Ya en Java 8 se han añadido los _streams_ que ofrecen otras nuevas formas de iterar sobre los elementos de una colección en este último caso con técnicas propias de lenguajes funcionales."
+summary: "La forma habitual en Java de hacer un bucle es con una sentencia _for_ o _while_ pero con el añadido de los iteradores en Java 5 no hace falta tener una variable para conservar el índice del bucle. Ya en Java 8 se han añadido los _streams_ que ofrecen otras nuevas formas de iterar sobre los elementos de una colección en este último caso con técnicas propias de lenguajes funcionales."
 ---
 
 {{% post %}}
@@ -21,9 +21,9 @@ summary: "La forma habitual en Java de hacer un bucle es con una sentecia _for_ 
 
 Hasta Java 5 para hacer un bucle desde 0 a N elementos había que usar una variable para mantener un contador, hacer una comparación para comprobar si se había llegado al límite e incrementar la variable en la siguiente ejecución. El código era bastante verboso y dado que los bucles son una construcción básica de cualquier lenguaje de programación es empleada numerosas veces en cualquier algoritmo.
 
-Algunos de estos ejemplos de bucles son utilizables a partir de Java 5, en versiones más recientes se han añadido muchas otras novedades como [las _lambdas_, _streams_, metodos en interfaces y nueva API para fechas][blogbitix-17] en Java 8, [la modularidad, _try-with-resource_ mejorado, jlink o un nuevo modelo de publicación][blogbitix-263]  en Java 9, [inferencia de tipos para variables locales][blogbitix-306] en Java 10, [un cliente HTTP][blogbitix-350] en Java 11 y otras [novedades en el lenguaje y la plataforma Java][blogbitix-serie-java-platform].
+Algunos de estos ejemplos de bucles son utilizables a partir de Java 5, en versiones más recientes se han añadido muchas otras novedades como [las _lambdas_, _streams_, métodos en interfaces y nueva API para fechas][blogbitix-17] en Java 8, [la modularidad, _try-with-resource_ mejorado, jlink o un nuevo modelo de publicación][blogbitix-263]  en Java 9, [inferencia de tipos para variables locales][blogbitix-306] en Java 10, [un cliente HTTP][blogbitix-350] en Java 11 y otras [novedades en el lenguaje y la plataforma Java][blogbitix-serie-java-platform].
 
-Los bucles son uno de [los tipos de sentencias y estructuras de control de flujo básicas de Java][blogbitix-494] que permiten repetir la ejecución de un bloque de sentencias mientras se cumpla la expresión de condición de repetición, en cada iteración del bucle se evalua la expresión de condición y en el momento que no se cumple se continua con la siguiente sentencia del programa.
+Los bucles son uno de [los tipos de sentencias y estructuras de control de flujo básicas de Java][blogbitix-494] que permiten repetir la ejecución de un bloque de sentencias mientras se cumpla la expresión de condición de repetición, en cada iteración del bucle se evalúa la expresión de condición y en el momento que no se cumple se continua con la siguiente sentencia del programa.
 
 {{< tableofcontents >}}
 
@@ -42,7 +42,7 @@ En Java 5 el bucle _for_ se enriqueció notablemente, el bucle _foreach_ es un b
 
 ### Bucle con Iterable
 
-Pero el _forearch_ es para las colecciones si se quiere hacer un bucle de un número fijo de iteraciones como en el primer caso, de 0 a 5, conociendo que para usar el _foreach_ basta que le indiquemos un objeto que implemente la interfaz _Iterable_ podemos usar la siguiente expresión y su implementación que tiene la ventaja de no tener que incluir el valir inicial del contador, la expresión de condición y el incremento o decremento de la variable. La clase _Counter_ implementa la interfaz _Iterable_ y devuelve un _Iterator_ sobre los valores del rango indicado.
+Pero el _forearch_ es para las colecciones si se quiere hacer un bucle de un número fijo de iteraciones como en el primer caso, de 0 a 5, conociendo que para usar el _foreach_ basta que le indiquemos un objeto que implemente la interfaz _Iterable_ podemos usar la siguiente expresión y su implementación que tiene la ventaja de no tener que incluir el valor inicial del contador, la expresión de condición y el incremento o decremento de la variable. La clase _Counter_ implementa la interfaz _Iterable_ y devuelve un _Iterator_ sobre los valores del rango indicado.
 
 {{< code file="CounterIterable.java" language="java" options="" >}}
 {{< code file="Counter.java" language="java" options="" >}}

@@ -19,7 +19,9 @@ summary: "En la universidad se explican las formas normales, en mi caso que yo r
 
 Las bases de datos relacionales desarrolladas en los años 70 son la forma más utilizada aún en la actualidad para almacenar la información en la mayoría de las aplicaciones informáticas de cualquier ámbito. Los datos se guardan en tablas separadas en campos y con un tipo, los datos almacenados en cada tabla están relacionados entre sí, por ejemplo, podría ser la información de una persona, nombre, apellidos, fecha de nacimiento, ciudad de residencia, teléfono, ... Además las tablas pueden relacionarse con otras tablas. Siguiendo el ejemplo podríamos tener una tabla de películas o libros y relacionarlas con la tabla de personas de forma que conozcamos que películas ha visto o libros ha leído una persona, de cada película podemos guardar su director, de los libros el autor y de cada uno de ellos los actores o personajes.
 
-Al almacenar la información en la base de datos debemos evitar las redundancias e inconsistencias de forma que la información que obtengamos al consultarla esté libre de inconsistencias. Por ejemplo, guardando la ciudad de residencia en la tabla persona deberemos actualizar todos los registros de las personas que residan en ella al cambiar de nombre a una ciudad o acabaremos con que la misma ciudad está referida por varios términos. Para evitar inconsistencias en las bases de datos se definieron las formas normales, hay seis formas normales y dos adicionales aunque normalmente con aplicar hasta la tercera es suficiente ya que por las relaciones de los datos no es necesario aplicar formas normales superiores. Hasta la tercera forma normal se pueden aplicar independientemente del dominio tratado, a partir de la cuarta forma normal las relaciones las cumplen o no en función de las reglas y condiciones que se establezcan para el dominio. Cuanto mayor sea la forma normal de una tabla o una base de datos menos casos existirán de que contengan inconsistencias, una tabla que cumpla una forma normal cumple las formas normales de menor nivel. Las formas normales son las siguientes:
+Al almacenar la información en la base de datos debemos evitar las redundancias e inconsistencias de forma que la información que obtengamos al consultarla esté libre de inconsistencias. Por ejemplo, guardando la ciudad de residencia en la tabla persona deberemos actualizar todos los registros de las personas que residan en ella al cambiar de nombre a una ciudad o acabaremos con que la misma ciudad está referida por varios términos. Para evitar inconsistencias en las bases de datos se definieron las formas normales, hay seis formas normales y dos adicionales aunque normalmente con aplicar hasta la tercera es suficiente ya que por las relaciones de los datos no es necesario aplicar formas normales superiores.
+
+Las formas normales son las siguientes:
 
 * [Forma normal de base de datos](https://es.wikipedia.org/wiki/Forma_normal_(base_de_datos))
 * [Primera forma normal, 1FN](https://es.wikipedia.org/wiki/1NF)
@@ -32,11 +34,7 @@ Al almacenar la información en la base de datos debemos evitar las redundancias
 * [Forma normal de dominio/clave, DNFN](https://es.wikipedia.org/wiki/DKNF)
 * [Desnormalización](https://es.wikipedia.org/wiki/Denormalizaci%C3%B3n_(base_de_datos))
 
-En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro [SQL Antipattens](http://amzn.to/2G2oRN1) también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos.
-
-{{< amazon
-    linkids="5952266d59f312e39e2a850c1dc3a54a"
-    asins="1934356557" >}}
+En los enlaces de la wikipedia está incluida una explicación más detallada de cada forma normal, a continuación solo haré un breve resumen. En anexo final del libro [SQL Antipatterns](https://amzn.to/2G2oRN1) también hay una explicación muy detallada de las diferentes formas normales, que problemas pueden ocasionar y como corregirlos. En el libro se tratan varias recomendaciones al trabajar con bases de datos relacionales y evitar emplear prácticas consideradas como malas, un uno de sus capítulos se trata [como guardar relaciones jerárquicas en una base de datos relacional][blogbitix-535].
 
 {{< tableofcontents >}}
 
@@ -44,7 +42,7 @@ En los enlaces de la wikipedia está incluida una explicación más detallada de
 
 No hay grupos repetidos de columnas, ni una columna guarda múltiples valores. Por ejemplo, si de una persona queremos guardar varios teléfonos deberíamos crear una tabla de teléfonos y relacionarla con la tabla de usuarios.
 
-En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un telefono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.
+En el caso del ejemplo los grupos repetidos de columnas implica que de una persona solo se pueden guardar hasta tres teléfonos como máximo, han de crearse las columnas por adelantado aunque no se usen y si hay que actualizar un teléfono no sabríamos en que campo de la tabla está obligando a realizar una consulta de actualización en los tres campos.
 
 Las columnas con múltiples valores son difíciles de actualizar con sentencias SQL por el formato que emplea la columna para guardar el dato, en este caso utilizando una barra como separador.
 
@@ -62,35 +60,39 @@ En este caso el problema además de contener posibles inconsistencias en los val
 
 Cada columna de una tabla está relacionada directamente con las columnas de la clave primaria, no de forma transitiva a través de otro campo. En el mismo caso anterior que cumple la 2FN no cumple la tercera si el campo _horas semanales_ depende del puesto.
 
-Podría haber inconsistenias de datos si dos personas tuviesen diferentes horas semanales para el mismo puesto.
+Podría haber inconsistencias de datos si dos personas tuviesen diferentes horas semanales para el mismo puesto.
 
 {{< code file="3fn.txt" language="plaintext" options="" >}}
 
-### Forma normal de Boyce-Codd, BCNF
+### Formas normales adicionales
 
-Una tabla está en BCNF y está en 3FN y todos los campos tienen como deteminante (dependen) la clave primaria. En un caso en que un trabajador trabaja en varias empresas con un responsable asignado e introduciendo la restricción de que en una empresa solo hay un responsable para todos los trabajadores, el campo _id\_responsable_ tiene una dependencia sobre el campo _id\_empresa_ que no es clave primaria.
+Hasta la tercera forma normal se pueden aplicar independientemente del dominio tratado, a partir de la cuarta forma normal las relaciones las cumplen o no en función de las reglas y condiciones que se establezcan para el dominio. Cuanto mayor sea la forma normal de una tabla o una base de datos menos casos existirán de que contengan inconsistencias, una tabla que cumpla una forma normal cumple las formas normales de menor nivel.
+
+#### Forma normal de Boyce-Codd, BCNF
+
+Una tabla está en BCNF y está en 3FN y todos los campos tienen como determinante (dependen) la clave primaria. En un caso en que un trabajador trabaja en varias empresas con un responsable asignado e introduciendo la restricción de que en una empresa solo hay un responsable para todos los trabajadores, el campo _id\_responsable_ tiene una dependencia sobre el campo _id\_empresa_ que no es clave primaria.
 
 {{< code file="bcfn.txt" language="plaintext" options="" >}}
  
-### Cuarta forma normal, 4FN
+#### Cuarta forma normal, 4FN
 
 No existen dos o más relaciones independientes en una misma tabla. En una relación que guarde las empresas de un trabajador y las localidades en las que trabaja, si las empresas y las localidades son independientes hay redundancia de datos por guardar para cada empresa cada una de las localidades del trabajador. Aplicando la 4FN en vez de utilizar 6 filas se utilizan 2 y 3 filas en las tablas _Trabajador_ y _Localidad_.
 
 {{< code file="4fn.txt" language="plaintext" options="" >}}
 
-### Quinta forma normal, 5FN
+#### Quinta forma normal, 5FN
 
-En el mismo caso anterior si se intodujese una realación entre empresa y localidades en las que trabaja y la condición de que es cierto que las localidades de un trabajador están incluídas en el conjunto de las localidades de una empresa si no se aplicase la 5FN y un trabajador empezase a trabajar en una nueva empresa habría que insertar una fila nueva en la tabla _Zona_ por cada localidad del trabajador.
+En el mismo caso anterior si se introduce una relación entre empresa y localidades en las que trabaja y la condición de que es cierto que las localidades de un trabajador están incluídas en el conjunto de las localidades de una empresa si no se aplicase la 5FN y un trabajador empezase a trabajar en una nueva empresa habría que insertar una fila nueva en la tabla _Zona_ por cada localidad del trabajador.
 
-Si el trabajador 1 empezase a trabajar en la empresa 2 sin aplicar la 5FN habría que insertar dos nuevas filas en la trabla _Zona_. Aplicando la 5FN bastaría con insertar una en la tabla _TrabajadorEmpresa_ (id_persona: 1, id_empresa: 2).
+Si el trabajador 1 empezase a trabajar en la empresa 2 sin aplicar la 5FN habría que insertar dos nuevas filas en la tabla _Zona_. Aplicando la 5FN bastaría con insertar una en la tabla _TrabajadorEmpresa (id_persona: 1, id_empresa: 2)_.
 
 {{< code file="5fn.txt" language="plaintext" options="" >}}
 
-### Sexta forma normal, 6FN
+#### Sexta forma normal, 6FN
 
 * [Sixth normal form](https://en.wikipedia.org/wiki/Sixth_normal_form)
 
-### Forma normal de dominio/clave, DNFN
+#### Forma normal de dominio/clave, DNFN
 
 * [Forma normal de dominio/clave](https://es.wikipedia.org/wiki/Forma_normal_de_dominio/clave)
 
