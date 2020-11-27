@@ -51,7 +51,7 @@ Utilizando [Spring Data][spring-data] con JPA para añadir métodos personalizad
 {{< code file="CustomProductRepository.java" language="java" options="" >}}
 {{< code file="CustomProductRepositoryImpl.java" language="java" options="" >}}
 
-En la clase de la entidad no se usa la anotación [GeneratedValue](javaee8:javax/persistence/GeneratedValue.html). En vez de esa anotación en este ejemplo se utiliza la anotación [EmbeddedId](javaee8:javax/persistence/Embeddable.html) y la anotación [Embeddable](javaee8:javax/persistence/Embeddable.html), aplicando otro de los principios de DDD que es [utilizar un tipo especico que representa el identificativo de la entidad][blogbitix-437] en vez de un tipo proporcionado por el lenguaje como un _Long_ o _BigInteger_. Un tipo específico para la identidad tiene varias ventajas como aprovechar los beneficios del compilador para detectar errores y de los IDE con asistencia de código.
+En la clase de la entidad no se usa la anotación [GeneratedValue](javaee8:javax/persistence/GeneratedValue.html). En vez de esa anotación en este ejemplo se utiliza la anotación [EmbeddedId](javaee8:javax/persistence/Embeddable.html) y la anotación [Embeddable](javaee8:javax/persistence/Embeddable.html), aplicando otro de los principios de DDD que es [utilizar un tipo especifico que representa el identificativo de la entidad][blogbitix-437] en vez de un tipo proporcionado por el lenguaje como un _Long_ o _BigInteger_. Un tipo específico para la identidad tiene varias ventajas como aprovechar los beneficios del compilador para detectar errores y de los IDE con asistencia de código.
 
 {{< code file="Product.java" language="java" options="" >}}
 {{< code file="ProductId.java" language="java" options="" >}}

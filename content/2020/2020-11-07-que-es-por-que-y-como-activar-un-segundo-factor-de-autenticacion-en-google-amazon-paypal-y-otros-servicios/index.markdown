@@ -36,7 +36,7 @@ Con el segundo factor de autenticación activado aunque la contraseña de un ser
 
 El segundo factor de autenticación añade más seguridad ya que los delincuentes deben comprometer no solo el servicio sino adicionalmente el dispositivo generador de segundo factor de autenticación.
 
-Activar el segundo factor de autenticación es recomendable porque añade una seguridad adicional mucho mayor que utilizando únicamente una contraseña. Los servicios como el correo electrónico de [Google][google], la plataforma de comercio electrónico [Amazon][amazon], el sistema de pagos [PayPal][paypal] permite a usua usuarios activar el 2FA. Es recomendable hacerlo cuando sea posible ya que servicios como estos se utilizan para tareas importantes como toda la comunicación e información del usuario, compras por internet donde se guardan tarjetas de crédito y números de cuenta bancaria.
+Activar el segundo factor de autenticación es recomendable porque añade una seguridad adicional mucho mayor que utilizando únicamente una contraseña. Los servicios como el correo electrónico de [Google][google], la plataforma de comercio electrónico [Amazon][amazon], el sistema de pagos [PayPal][paypal] permite a los usuarios activar el 2FA. Es recomendable hacerlo cuando sea posible ya que servicios como estos se utilizan para tareas importantes como toda la comunicación e información del usuario, compras por internet donde se guardan tarjetas de crédito y números de cuenta bancaria.
 
 ### Cómo funciona un segundo factor de autenticación
 
@@ -135,7 +135,7 @@ Al iniciar sesión en la cuenta de PayPal se solicita también el correo electr�
 
 ### Aplicación para _smartphone_ generador de TOTP
 
-Dos aplicaciones gratuitas para teléfono inteligente o _smatphone_ son [Google Authenticator][google-authenticator] y [Microsoft Authenticator][microsoft-authenticator] disponibles tanto para los que utilizan [Android][android] como [iOS][apple-ios] como sistema operativo en sus respectivas tiendas de aplicaciones.
+Dos aplicaciones gratuitas para teléfono inteligente o _smartphone_ son [Google Authenticator][google-authenticator] y [Microsoft Authenticator][microsoft-authenticator] disponibles tanto para los que utilizan [Android][android] como [iOS][apple-ios] como sistema operativo en sus respectivas tiendas de aplicaciones.
 
 Instalada la aplicación en el _smartphone_ el primer paso es iniciar el proceso de activación de 2FA en un servicio, este servicio proporciona el código QR que escaneándolo con la aplicación permite generar generar los códigos temporales 2FA. Una vez escaneado el código QR se muestra como información el servicio y cuenta, el código temporal válido y un indicador de tiempo que una vez expirado se genera un nuevo código.
 
@@ -145,8 +145,8 @@ Las aplicaciones móviles ofrecen comodidad pero ¿qué ocurre si el móvil se p
     gallery="true"
     image1="image:google-authenticator-1.png" optionsthumb1="200x150" title1="Google Authenticator"
     image2="image:google-authenticator-2.png" optionsthumb2="200x150" title2="Google Authenticator"
-    image3="image:microsoft-authenticator-1.png" optionsthumb3="200x150" title3="Miccrosoft Authenticator"
-    caption="Aplicaciones Google Authenticator y Miccrosoft Authenticator" >}}
+    image3="image:microsoft-authenticator-1.png" optionsthumb3="200x150" title3="Microsoft Authenticator"
+    caption="Aplicaciones Google Authenticator y Microsoft Authenticator" >}}
 
 ### Aplicación de escritorio generador de TOTP
 
@@ -157,14 +157,14 @@ Las aplicaciones móviles ofrecen comodidad pero ¿qué ocurre si el móvil se p
     image1="image:keepass-1.png" optionsthumb1="300x200" title1="Aplicación gestor de contraseñas KeePassXC"
     caption="Aplicación gestor de contraseñas KeePassXC" >}}
 
-KeePassXC también sirve para guardar el 2FA siendo capaz de generar los mismo códigos TOTP de las aplicaciones de _smarphone_. Para guardar la semilla con la que se generan los TOTP hay que ir a la opción del menú _Apuntes > TOTP > Configurar TOTP_ o con el menú contextual del botón derecho sobre el apunte, esta opción muestra una ventana en la que introducir el código de letras alternativo al código QR al activar el 2FA del servicio. También es capaz de mostrar el código QR original, lo que permite migrar el 2FA a otro móvil.
+KeePassXC también sirve para guardar el 2FA siendo capaz de generar los mismo códigos TOTP de las aplicaciones de _smartphone_. Para guardar la semilla con la que se generan los TOTP hay que ir a la opción del menú _Apuntes > TOTP > Configurar TOTP_ o con el menú contextual del botón derecho sobre el apunte, esta opción muestra una ventana en la que introducir el código de letras alternativo al código QR al activar el 2FA del servicio. También es capaz de mostrar el código QR original, lo que permite migrar el 2FA a otro móvil.
 
 {{< image
     gallery="true"
     image1="image:keepass-2.png" optionsthumb1="300x200" title1="Código TOTP generador por KeePassXC"
     caption="Configuración TOTP en KeePassXC" >}}
 
-Si se configura como generador de códigos un _smarphone_ y KeePassXC es posible comprobar que generan los mismos TOTP y están bien configurados, con la opción _Apuntes > TOTP > Mostrar TOTP_ se muestra un diálogo con el código TOTP válido.
+Si se configura como generador de códigos un _smartphone_ y KeePassXC es posible comprobar que generan los mismos TOTP y están bien configurados, con la opción _Apuntes > TOTP > Mostrar TOTP_ se muestra un diálogo con el código TOTP válido.
 
 {{< image
     gallery="true"

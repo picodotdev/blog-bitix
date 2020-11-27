@@ -130,7 +130,7 @@ En la imagen a revisar se muestra a la izquierda la versión anterior válida, a
 
 {{< image
     gallery="true"
-    image1="image:hello-world-test-visual-snap.png" optionsthumb1="300x200" title1="Imagen válida capturda"
+    image1="image:hello-world-test-visual-snap.png" optionsthumb1="300x200" title1="Imagen válida capturada"
     image2="image:hello-world-test-visual-differences.png" optionsthumb2="300x200" title2="Diferencias visuales entre válida capturada anterior y nueva con cambios"
     caption="Imagen válida capturada y diferencias visuales por cambios" >}}
 

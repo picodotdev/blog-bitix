@@ -13,7 +13,7 @@ promoted: false
 imageHead: "image:fedora-silverblue-neofetch.png"
 imagePost: "image:fedora-silverblue-neofetch.png"
 tags: ["gnu-linux", "planeta-codigo"]
-summary: "Fedora Silbervlue es una distribución innovadora es su forma de sistema base usando OSTree e instalar aplicaciones gráficas con Flatpak y de paquetes de linea de comandos con Toolbox. Todas estas tecnologías le permiten considerarse una distribución _rolling-release_ tanto en el sistema como aplicaciones y paquetes. Estas tecnologias y forma de actualizar el sistema hace que sea mucho menos propenso a errores que los tradicionales en las distribuciones GNU/Linux de actualización de paquetes, ¿la siguiente generación de distribuciones serán como Fedora Silverblue?."
+summary: "Fedora Silbervlue es una distribución innovadora es su forma de sistema base usando OSTree e instalar aplicaciones gráficas con Flatpak y de paquetes de linea de comandos con Toolbox. Todas estas tecnologías le permiten considerarse una distribución _rolling-release_ tanto en el sistema como aplicaciones y paquetes. Estas tecnologías y forma de actualizar el sistema hace que sea mucho menos propenso a errores que los tradicionales en las distribuciones GNU/Linux de actualización de paquetes, ¿la siguiente generación de distribuciones serán como Fedora Silverblue?."
 ---
 
 {{% post %}}
@@ -82,7 +82,7 @@ OSTree es un proyecto que combina un modelo parecido a git para establecer y des
 
 #### Instalación
 
-La instalación se realiza con un asistente gráfico después de haber descargado el medio de instalación y haberlo grabado en una memoria USB para inciar el sistema con él. Es necesario poco más que seleccionar la distribución del teclado, el particionado y la clave del superusuario _root_ para realizar la instalación.
+La instalación se realiza con un asistente gráfico después de haber descargado el medio de instalación y haberlo grabado en una memoria USB para iniciar el sistema con él. Es necesario poco más que seleccionar la distribución del teclado, el particionado y la clave del superusuario _root_ para realizar la instalación.
 
 {{< image
     gallery="true"
@@ -134,7 +134,7 @@ Para simplemente comprobar que actualizaciones hay disponibles sin instalarlas.
 
 {{< code file="rpm-ostree-status.sh" language="bash" options="" >}}
 
-Para actualizar entre versiones mayores, de la 32 a posteriores, de Foedora Silverblue se utilizan los siguientes comandos en los que cambiará el número de la versión.
+Para actualizar entre versiones mayores, de la 32 a posteriores, de Fedora Silverblue se utilizan los siguientes comandos en los que cambiará el número de la versión.
 
 {{< code file="rpm-ostree-rebase.sh" language="bash" options="" >}}
 
@@ -200,7 +200,7 @@ Destro de estos componentes se instalan los paquetes con el gestor de paquetes _
     image3="image:toolbox-3.png" optionsthumb3="200x150" title3="Instalación de programas de línea de comandos"
     caption="Instalación de programas de línea de comandos" >}}
 
-Para no modificar el sistema base de Silverblue otra forma de instalar Java es con la utilidad [sdkman][sdkman] que además permite cambiar entre versiones fácilmente y tener acceso a diferentes implementaciones del JDK, entre otras utilidades instalables con esta herramienta.
+Para no modificar el sistema base de Silverblue otra forma de instalar Java es con la utilidad [SDKMAN][sdkman] que además permite cambiar entre versiones fácilmente y tener acceso a diferentes implementaciones del JDK, entre otras utilidades instalables con esta herramienta.
 
 {{< code file="sdk-usage.sh" language="bash" options="" >}}
 

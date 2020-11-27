@@ -40,7 +40,7 @@ En esta aplicación de [Spring Boot][spring-boot] se construye una instancia de 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
 
-El archivo de contrucción [Gradle][gradle] contiene la dependencia de ModelMapper.
+El archivo de construcción [Gradle][gradle] contiene la dependencia de ModelMapper.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 

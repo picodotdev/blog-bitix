@@ -41,7 +41,7 @@ Para añadir autenticación OpenId Connect en una aplicación web se suele confi
     image1="image:oauth2-proxy.png" optionsthumb1="300x200" title1="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)"
     caption="Modos de funcionamiento de oauth2-proxy (con y sin Nginx)" >}}
 
-Con el servidor web [Nginx][nginx] dos intermediarios o _proxys_ que proporcionan autenticación OpenID Connect son [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy]. Tanto [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy] son dos servicios que le indican a Nginx si el usuario está autenticado usando la directiva _auth_request_ de Nginx. Estos proxys simplemente devuelven como respuesta un código de estado _202 Accepted_ o _401 Unauthorized_ para indicarle a Nginx si hay que realizar la autenticación, las otras directivas de configuración son para establecer cabeceras con las que es posible entre otras cosas indicarle a la aplicación web final cual es el usuario autenticado. En caso de que haya que autenticar al usuario el _proxy_ de OAuth redirige al proveedor de autenticación.
+Con el servidor web [Nginx][nginx] dos intermediarios o _proxys_ que proporcionan autenticación OpenID Connect son [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy]. Tanto [oauth2-proxy][oauth2-proxy] y [vouch-proxy][vouch-proxy] son dos servicios que le indican a Nginx si el usuario está autenticado usando la directiva _auth_request_ de Nginx. Estos _proxys_ simplemente devuelven como respuesta un código de estado _202 Accepted_ o _401 Unauthorized_ para indicarle a Nginx si hay que realizar la autenticación, las otras directivas de configuración son para establecer cabeceras con las que es posible entre otras cosas indicarle a la aplicación web final cual es el usuario autenticado. En caso de que haya que autenticar al usuario el _proxy_ de OAuth redirige al proveedor de autenticación.
 
 En el caso de [oauth2-proxy][oauth2-proxy] la configuración consiste en hacer de _proxy_ para la aplicación web en la ubicación _/_ y requerir autenticación con el _endpoint_ _/oauth2/_ y _/oauth2/auth_ que hace de _proxy_ para oauth2-proxy. Buena parte de esa [configuración de _proxy_](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview#configuring-for-use-with-the-nginx-auth_request-directive) son el tratamiento de las cabeceras con las que se obtiene el nombre de usuario autenticado y correo electrónico.
 
@@ -80,7 +80,7 @@ Una vez autenticado el usuario se permite el acceso a la página web, en este ca
     image2="image:nginx-2.png" optionsthumb2="300x200" title2="Página web y cookie de sesión"
     caption="Página web y cookie de sesión" >}}
 
-Al implementar el ejemplo me he encontrado con dos mensajes de error, _OAuth2: unable to obtain CSRF cookie_ y _http: named cookie not present_. Para resolver el primero es necesario indicar el parámetro de configuración _cookie-domain_ que en el momento de realizar el ejemplo solo me ha sido posible indicádolo a través de la línea de comandos no en el archivo de configuración y para resovler el segundo es necesario que el _host_ del servicio _proxy_ OAuth esté en un subdominio del dominio de la página web.
+Al implementar el ejemplo me he encontrado con dos mensajes de error, _OAuth2: unable to obtain CSRF cookie_ y _http: named cookie not present_. Para resolver el primero es necesario indicar el parámetro de configuración _cookie-domain_ que en el momento de realizar el ejemplo solo me ha sido posible indicándolo a través de la línea de comandos no en el archivo de configuración y para resolver el segundo es necesario que el _host_ del servicio _proxy_ OAuth esté en un subdominio del dominio de la página web.
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
@@ -139,8 +139,8 @@ Al crear las credenciales para el cliente se indican las URL de retorno permitid
 
 {{< image
     gallery="true"
-    image1="image:google-client.png" optionsthumb1="300x200" title1="Pasos para la creación de credeciales en Google para la autenticación OAuth"
-    caption="Pasos para la creación de credeciales en Google para la autenticación OAuth" >}}
+    image1="image:google-client.png" optionsthumb1="300x200" title1="Pasos para la creación de credenciales en Google para la autenticación OAuth"
+    caption="Pasos para la creación de credenciales en Google para la autenticación OAuth" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/oauth2-proxy" command="docker-compose up" %}}
 {{% sourcecode git="blog-ejemplos/tree/master/SpringOAuthClient" command="./gradlew run" %}}

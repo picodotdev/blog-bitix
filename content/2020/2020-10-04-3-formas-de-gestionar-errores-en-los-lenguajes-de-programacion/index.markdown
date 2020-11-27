@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
-summary: "El lenguaje de programacion C utiliza códigos de retorno como forma de gestionar errores, Java con excepciones y Go y Rust de forma similar a C códigos de retorno pero con la posibilidad de devolver varios valores, uno para el valor en caso correcto y un valor en caso de error. La gestión de errores es parte esencial de los programas para que funcionen correctamente estando preparados en los casos error posibles."
+summary: "El lenguaje de programación C utiliza códigos de retorno como forma de gestionar errores, Java con excepciones y Go y Rust de forma similar a C códigos de retorno pero con la posibilidad de devolver varios valores, uno para el valor en caso correcto y un valor en caso de error. La gestión de errores es parte esencial de los programas para que funcionen correctamente estando preparados en los casos error posibles."
 ---
 
 {{% post %}}

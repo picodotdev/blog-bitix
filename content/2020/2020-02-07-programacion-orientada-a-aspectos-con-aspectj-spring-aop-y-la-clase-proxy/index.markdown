@@ -33,7 +33,7 @@ La programación define varios términos:
 * _Pointcut_: es una expresión que busca _joint points_, tiene un _advice_ asociado que se ejecuta en todos los _joint points_ que concuerdan con la expresión.
 * _weaving_: proceso que aplica los aspectos a las clases, puede ser en tiempo de compilación o en tiempo de ejecución.
 
-Esta es una clase normal con un método en la que a modo de ejemplo en la llamada al método se le apliquen dos aspectos, uno para añadir una traza cuando se llame al método y su valor de retorno y otro aspecto para medir cuando tiempo tarda en ejecutarse. La clase _Foo_ descnoce los aspectos que se van a aplicar, no hay que hacer ninguna modificación en ella ni para añadirle los aspectos ni para quitarselos.
+Esta es una clase normal con un método en la que a modo de ejemplo en la llamada al método se le apliquen dos aspectos, uno para añadir una traza cuando se llame al método y su valor de retorno y otro aspecto para medir cuando tiempo tarda en ejecutarse. La clase _Foo_ desconoce los aspectos que se van a aplicar, no hay que hacer ninguna modificación en ella ni para añadirle los aspectos ni para quitarselos.
 
 {{< code file="Foo.java" language="java" options="" >}}
 
@@ -78,9 +78,9 @@ En la salida del programa para el apartado de AspectJ se observa que el código 
 
 Spring incluye su solución para la programación orientada a aspectos, más limitada que AspectJ pero suficiente para la mayoría de los casos tampoco requiere aplicar el proceso _weaving_ de AspectJ en tiempo de compilación. La limitación de Spring AOP es que los _joint points_ solo pueden ser métodos. Utiliza las mismas anotaciones de AspectJ para aplicar los aspects en tiempo de ejecución.
 
-Otra diferenia con AspectJ es que los aspectos se aplican usando _proxys_ que son una clase que envuelve a la instancia a la que se le aplica el aspecto, una vez dentro de la clase objetivo si se llama a otro método de forma interna a ese otro método no se le aplica su aspecto.
+Otra diferencia con AspectJ es que los aspectos se aplican usando _proxys_ que son una clase que envuelve a la instancia a la que se le aplica el aspecto, una vez dentro de la clase objetivo si se llama a otro método de forma interna a ese otro método no se le aplica su aspecto.
 
-Suponiendo una clase que tiene un méodo _foo_ y _bar_ y desde fuera se llama a _foo_ y este llama a _bar_ para que en llamada desde _foo_ a _bar_ se apliquen los aspectos de _bar_ hay que usar este código. Usar este código implica poner en el código una dependencia a Spring, lo cual no es deseable para el código de dominio.
+Suponiendo una clase que tiene un método _foo_ y _bar_ y desde fuera se llama a _foo_ y este llama a _bar_ para que en llamada desde _foo_ a _bar_ se apliquen los aspectos de _bar_ hay que usar este código. Usar este código implica poner en el código una dependencia a Spring, lo cual no es deseable para el código de dominio.
 
 {{< code file="SpringProxy.java" language="java" options="" >}}
 

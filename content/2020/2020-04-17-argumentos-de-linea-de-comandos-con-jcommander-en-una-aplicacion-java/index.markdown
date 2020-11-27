@@ -27,7 +27,7 @@ JCommander necesita de una clase que contenga la definición de los argumentos, 
 
 {{< code file="Arguments.java" language="java" options="" >}}
 
-El siguiente programa utiliza los argumentos antreriores que recoge de la línea de comandos, al programa Java se le proporcionan en el parámetro _args_ del método _main_ que es el punto de entrada en la aplicación.
+El siguiente programa utiliza los argumentos anteriores que recoge de la línea de comandos, al programa Java se le proporcionan en el parámetro _args_ del método _main_ que es el punto de entrada en la aplicación.
 
 Si un argumento requerido no se indica se produce un error mostrando la ayuda de uso. El argumento _\-\-required_ es requerido, el argumento _\-\-optional_ es opcional y el argumento _\-\-values_ recibe varios valores. El programa simplemente emite un mensaje con los valores de los argumentos en la salida.
 

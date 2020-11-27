@@ -139,7 +139,7 @@ Reproducir vídeos, películas, archivos de audio y música son otra categoría 
 
 #### Reproductor de vídeo, audio, películas y música
 
-[VLC][vlc] es un programa que realiza multitud de funcionalidades, sus pricipales son reproducir archivos de vídeo y audio pero también permite realizar conversiones e incluso ser el programa que capture el vídeo de una capturadora hardware. Su interfaz no es la más estéticamente bonita pero funciona realmente bien y es capaz de reproducir cualquier formato de archivo multimedia.
+[VLC][vlc] es un programa que realiza multitud de funcionalidades, sus principales son reproducir archivos de vídeo y audio pero también permite realizar conversiones e incluso ser el programa que capture el vídeo de una capturadora hardware. Su interfaz no es la más estéticamente bonita pero funciona realmente bien y es capaz de reproducir cualquier formato de archivo multimedia.
 
 Para reproducir música los programas [Rhythmbox][rhythmbox] y [Banshee][banshee] permite organizar la librería digital de archivos de música.
 
@@ -153,13 +153,13 @@ Al igual que en otros formatos de archivos es posible necesitar realizar convers
 
 #### Otros programas específicos
 
-[Audacity][audacity] es un programa para la edición de audio y [Blender][blender] un programa de modelado 3D. [MusicBrainz Picard][picard] permite editar los metadatos de los archivos de música para que los reproductores muestren la información correta del título, álbum, grupo musical o género.
+[Audacity][audacity] es un programa para la edición de audio y [Blender][blender] un programa de modelado 3D. [MusicBrainz Picard][picard] permite editar los metadatos de los archivos de música para que los reproductores muestren la información correcta del título, álbum, grupo musical o género.
 
 ### Juegos
 
 GNU/Linux no es la opción más popular para los juegos que está dominado por Windows pero ya hay algunos programas que permiten descargar e instalar juegos de forma muy sencilla e incluso jugar a los juegos que han sido desarrollados para Windows. También hay algunos buenos juegos desarrollados para GNU/Linux.
 
-[Steam][steam] y [Wine][wine] permiten juga a juegos de Windows, en Steam hay juegos compatibles de forma nativa para GNU/Linux. [GOG][gog] permite jugar a juegos ya con unos años pero que fueron notables en su época. [Mame][mame], [Lakka][lakka] y [Retroarch][retroarch] permite jugar hoy en día a juegos de arcade aún más antiguos, de recreativas y de la generación de las primeras consolas.
+[Steam][steam] y [Wine][wine] permiten jugar a juegos de Windows, en Steam hay juegos compatibles de forma nativa para GNU/Linux. [GOG][gog] permite jugar a juegos ya con unos años pero que fueron notables en su época. [Mame][mame], [Lakka][lakka] y [Retroarch][retroarch] permite jugar hoy en día a juegos de arcade aún más antiguos, de recreativas y de la generación de las primeras consolas.
 
 
 * [Cómo usar Wine para jugar en GNU/Linux a Diablo 3 u otros juegos de Blizzard o Windows][blogbitix-364]
@@ -208,7 +208,7 @@ Tampoco suele ser necesario instalar un antivirus ya que los programas al ser gr
 
 #### Gestor de contraseñas
 
-Las contraseñas deben ser únicas para cada sitio web, tener una longitud de entre 8, 16 o más caracteres y combinar letras, números y símbolos. Estas restricciones hacen que las contraseñas sean difíciles de recordar. Precisamente por estos motivos hay programas que guardan cifradas bajo una contraseña maestra la colección de credenciales de cada sitio web. [KeepassXC][keepassxc] es una base de datos que guarda las credenciales e información adicional cifrada, también permite generar contraseñas únicas que complan los requisitos deseados de longitud y tipos de caracteres que deben incluir.
+Las contraseñas deben ser únicas para cada sitio web, tener una longitud de entre 8, 16 o más caracteres y combinar letras, números y símbolos. Estas restricciones hacen que las contraseñas sean difíciles de recordar. Precisamente por estos motivos hay programas que guardan cifradas bajo una contraseña maestra la colección de credenciales de cada sitio web. [KeepassXC][keepassxc] es una base de datos que guarda las credenciales e información adicional cifrada, también permite generar contraseñas únicas que cumplan los requisitos deseados de longitud y tipos de caracteres que deben incluir.
 
 * [Guardar contraseñas de forma segura con KeePassXC][blogbitix-196]
 
@@ -222,7 +222,7 @@ Las contraseñas deben ser únicas para cada sitio web, tener una longitud de en
 
 #### Cortafuegos
 
-[UFW][ufw] permite restringir el tráfico de red aceptado por la computadora tanto entrante como saliente, para exponer únicamente en interner los recusos imprescindibles de la computadora. Es fácil de utilizar e incluso tiene una [interfaz gráfica][gufw].
+[UFW][ufw] permite restringir el tráfico de red aceptado por la computadora tanto entrante como saliente, para exponer únicamente en internet los recursos imprescindibles de la computadora. Es fácil de utilizar e incluso tiene una [interfaz gráfica][gufw].
 
 * [Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux][blogbitix-369]
 

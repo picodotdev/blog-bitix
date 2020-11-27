@@ -13,7 +13,7 @@ imageHead: "image:Frostpunk.jpg"
 imagePost: "image:Frostpunk.jpg"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
-summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la Playstation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
+summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de los pocos que he jugado hasta el momento en la PlayStation 4. Su historia diferente y el tener que tener que tomar decisiones difíciles para conseguir la supervivencia de la colonia lo hacen distinto a los muchos otros juegos disponibles. No es muy largo pero acabado activa nuevos modos de juego para seguir jugándolo."
 ---
 
 {{% post %}}
@@ -137,8 +137,8 @@ Durante las exploraciones habrá que tomar la decisión de dejar abandonados a a
 
 {{< image
     gallery="true"
-    image1="image:frostpunk-end.jpg" optionsthumb1="300x250" title1="Superviviencia"
-    caption="Superviviencia" >}}
+    image1="image:frostpunk-end.jpg" optionsthumb1="300x250" title1="Supervivencia"
+    caption="Supervivencia" >}}
 
 ### Nuevos modos de juego
 

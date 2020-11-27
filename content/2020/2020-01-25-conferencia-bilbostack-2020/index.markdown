@@ -159,7 +159,7 @@ Hay varias estrategias de despliegue:
 * _feature togles_: la nueva funcionalidad se activa o desactiva mediante una condición.
 * Es posible emplear varias de las anteriores a la vez ya que no son exclusivas.
 
-Estos despliegues progresivos son aplicables al código, requieren también despliegues progresivos en las base de datos empleando los pasos _Expand, Migrate, Contract_. Un caso es crear una nueva columna, copiar los datos a ella, mantener la versión antigua y nueva y finalmente completada la migración eliminar la columna antigua. Las migraciónes pogresivas también son aplicables a las APIs.
+Estos despliegues progresivos son aplicables al código, requieren también despliegues progresivos en las base de datos empleando los pasos _Expand, Migrate, Contract_. Un caso es crear una nueva columna, copiar los datos a ella, mantener la versión antigua y nueva y finalmente completada la migración eliminar la columna antigua. Las migraciónes progresivas también son aplicables a las APIs.
 
 La monitorización permite conocer si una funcionalidad se está utilizando y obtener información del funcionamiento interno de la aplicación. La infraestructura se puede convertir en inmutable con tecnologías como contenedores como [Docker][docker] y [Kubernetes][kubernetes] y tratar como código con tecnologías como [Terraform][terraform]. La gestión del código puede ser usando _git flow_ o _trunk based_ y con un único repositorio que incluya todo para tratarlo como el entregable.
 
@@ -244,7 +244,7 @@ Se empieza a desarrollar una aplicación en forma de monolito, a medida que es m
 
 Para conseguir desacoplar los microservicios y si la consistencia eventual es posible en vez de utilizar una comunicación síncrona y acoplada por API REST o [gRPC][grpc] hay que utilizar la comunicación desacoplada mediante eventos e implementar código reactivo a esos eventos.
 
-El bus de eventos se convierte en un único punto de fallo con problemas que hay preveer:
+El bus de eventos se convierte en un único punto de fallo con problemas que hay prever:
 
 * Eventos duplicados
 * Eventos perdidos

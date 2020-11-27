@@ -23,7 +23,7 @@ En las aplicaciones web basadas en el protocolo HTTP la petición al servidor es
 
 [Spring] también integra una solución sencilla para ejecutar tareas de forma programada disponible para las aplicaciones que usen [Spring Boot][spring-boot] sin necesidad de dependencias adicionales.
 
-El propio JDK desde la versión 5 incorpora varias clases para ejecutar tareas programadas sin ninguna dependencia en elproyecto ni siquera de Spring.
+El propio JDK desde la versión 5 incorpora varias clases para ejecutar tareas programadas sin ninguna dependencia en el proyecto ni siquiera de Spring.
 
 La programación de las tareas también se puede realizar a nivel de sistema operativo. En [GNU][gnu]/[Linux][linux] con la utilidad [cron](https://wiki.archlinux.org/index.php/Cron) y con [systemd][systemd] se puede programar tareas. Sin embargo, realizar la programación a nivel de sistema operativo se crean nuevos procesos y la configuración está externalizada de la aplicación. Utilizar Quartz, Spring o las clases del JDK tiene la ventaja de que la configuración de la programación de las tareas está más en el ámbito de la programación que en la de configuración de sistemas, el primer caso los cambios los hace el programador, en el segundo los hace la persona a cargo de los sistemas.
 

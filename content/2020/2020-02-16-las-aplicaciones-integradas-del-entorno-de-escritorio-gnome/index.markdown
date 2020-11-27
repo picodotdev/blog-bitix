@@ -234,8 +234,8 @@ El conjunto de aplicaciones del núcleo o esenciales de GNOME está formado por 
     image2="image:calculadora-2.png" optionsthumb2="200x150" title2="Calculadora" >}}
 {{< image
     gallery="true"
-    image1="image:tipografias-1.png" optionsthumb1="200x150" title1="Tipografias"
-    image2="image:tipografias-2.png" optionsthumb2="200x150" title2="Tipografias" >}}
+    image1="image:tipografias-1.png" optionsthumb1="200x150" title1="Tipografías"
+    image2="image:tipografias-2.png" optionsthumb2="200x150" title2="Tipografías" >}}
 {{< image
     gallery="true"
     image1="image:notas.png" optionsthumb1="200x150" title1="Notas"

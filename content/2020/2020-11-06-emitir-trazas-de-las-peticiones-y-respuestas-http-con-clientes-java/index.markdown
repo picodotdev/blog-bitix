@@ -53,9 +53,9 @@ Estas son las dependencias de librerías para los cliente.
 
 #### Trazas con el cliente Java
 
-El cliente de Java en la versión de Java 9 no incluye en su API un soporte sencillo para añadir trazas al contrario de las otras librerías, sin embargo, aún no ofrececiento este soporte como el cliente está incluido en el JDK sigue siendo una buena opción para reducir el número de dependencias.
+El cliente de Java en la versión de Java 9 no incluye en su API un soporte sencillo para añadir trazas al contrario de las otras librerías, sin embargo, aún no ofrececiendo este soporte como el cliente está incluido en el JDK sigue siendo una buena opción para reducir el número de dependencias.
 
-Una posibilidad para no tener que crear una implementación propia para añadirle trazabilidad al cliente HTTP de Java es utilizar la librería [interceptable-http-client](https://github.com/raphw/interceptable-http-client) que precisamente prporciona la implementación, esta librería es del mismo autor que otras conocidas como [Byte Buddy][bytebuddy].
+Una posibilidad para no tener que crear una implementación propia para añadirle trazabilidad al cliente HTTP de Java es utilizar la librería [interceptable-http-client](https://github.com/raphw/interceptable-http-client) que precisamente proporciona la implementación, esta librería es del mismo autor que otras conocidas como [Byte Buddy][bytebuddy].
 
 {{< code file="Main-HttpClient.java" language="java" options="" >}}
 {{< code file="System.out-HttpClient" language="plaintext" options="" >}}

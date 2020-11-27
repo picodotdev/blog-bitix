@@ -14,7 +14,7 @@ imageHead: "image:world-of-warships-legends.jpg"
 imagePost: "image:world-of-warships-legends.jpg"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
-summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con direfentes estadísticas, capitanes e inspirciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
+summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con diferentes estadísticas, capitanes e inspiraciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
 ---
 
 {{% post %}}
@@ -98,9 +98,9 @@ Estos barcos pueden comprarse con una gran cantidad de experiencia global o comp
 
 Cada navío tiene unas estadísticas diferentes agrupadas en 4 apartados supervivencia, artillería, maniobrabilidad, ocultamiento y torpedos si los dispone.
 
-Unos tienen unas estadśiticas más adecuados para el combate a corta y media distancia y otros con mayor precisión  a mayor distancia, mayor alcance de disparo, maniobrabilidad en tiempo de giro y velocidad máxima, tiempo de recarga, ocultación, daño máximo por impacto, probabilidad de causar incendios.
+Unos tienen unas estadísticas más adecuados para el combate a corta y media distancia y otros con mayor precisión  a mayor distancia, mayor alcance de disparo, maniobrabilidad en tiempo de giro y velocidad máxima, tiempo de recarga, ocultación, daño máximo por impacto, probabilidad de causar incendios.
 
-Dependiendo del tipo de juego que uno prefiera elige la nación por la que tienen predirección. Por ejemplo el crucero Baltimoreno tiene torpedos como el Hipper pero tiene mejor ocultación, es probable que sea mejor a larga distancia y el Hipper a media y corta.
+Dependiendo del tipo de juego que uno prefiera elige la nación por la que tienen predilección. Por ejemplo el crucero Baltimore no tiene torpedos como el Hipper pero tiene mejor ocultación, es probable que sea mejor a larga distancia y el Hipper a media y corta.
 
 {{< image
     gallery="true"
@@ -109,7 +109,7 @@ Dependiendo del tipo de juego que uno prefiera elige la nación por la que tiene
     image3="image:estadisticas-alemania-hipper-3.jpg" optionsthumb3="200x150" title3="Estadísticas crucero alemán Hipper torpedos" >}}
 {{< image
     gallery="true"
-    image1="image:estadisticas-alemania-hipper-4.jpg" optionsthumb1="200x150" title1="Estadśiticas crucero alemán Hipper manibrabilidad"
+    image1="image:estadisticas-alemania-hipper-4.jpg" optionsthumb1="200x150" title1="Estadísticas crucero alemán Hipper maniobrabilidad"
     image2="image:estadisticas-alemania-hipper-5.jpg" optionsthumb2="200x150" title2="Estadísticas crucero alemán Hipper ocultamiento"
     caption="Estadísticas crucero alemán Hipper" >}}
 
@@ -120,7 +120,7 @@ Dependiendo del tipo de juego que uno prefiera elige la nación por la que tiene
     image3="image:estadisticas-estados-unidos-baltimore-3.jpg" optionsthumb3="200x150" title3="Estadísticas crucero estadounidense Baltimore artilleria" >}}
 {{< image
     gallery="true"
-    image1="image:estadisticas-estados-unidos-baltimore-4.jpg" optionsthumb1="200x150" title1="Estadísticas crucero estadounidense Baltimore manibrabilidad"
+    image1="image:estadisticas-estados-unidos-baltimore-4.jpg" optionsthumb1="200x150" title1="Estadísticas crucero estadounidense Baltimore maniobrabilidad"
     image2="image:estadisticas-estados-unidos-baltimore-5.jpg" optionsthumb2="200x150" title2="Estadísticas crucero estadounidense Baltimore ocultamiento"
     caption="Estadísticas crucero estadounidense Baltimore" >}}
 
@@ -213,8 +213,8 @@ Los acorazados también tienen consumibles, uno muy útil es el de reparación q
 
 {{< image
     gallery="true"
-    image1="image:consumibles-potenciadores-camuflaje.jpg" optionsthumb1="600x450" title1="Consmibles, potenciadores y camuflaje"
-    caption="Consmibles, potenciadores y camuflaje" >}}
+    image1="image:consumibles-potenciadores-camuflaje.jpg" optionsthumb1="600x450" title1="Consumibles, potenciadores y camuflaje"
+    caption="Consumibles, potenciadores y camuflaje" >}}
 
 ### Recursos
 

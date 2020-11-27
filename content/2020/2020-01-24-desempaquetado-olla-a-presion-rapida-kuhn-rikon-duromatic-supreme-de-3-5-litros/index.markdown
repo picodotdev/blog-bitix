@@ -30,7 +30,7 @@ Lo primero que hay que decidir al comprar una olla es la capacidad más adecuada
 
 Una olla pequeña permite alcanzar presión más rápidamente y cocinar gastando menos energía lo que también ahorra a lo largo del tiempo algo de dinero en la factura de luz o gas. Hay que tener en cuenta que las ollas por seguridad solo permite cocinar hasta su límite máximo, que normalmente es 2/3 de la capacidad indicada. Por lo que si de forma ocasional se necesita es mejor adquirir una olla un poco más grande con una capacidad suficiente para ese límite de uso. Una olla de mayor capacidad permite cocinar para menos personas de su capacidad máxima pero una olla pequeña no permite cocinar para más personas de su límite indicado, aún así tampoco tiene sentido utilizar una olla de 6 litros para una persona.
 
-Mi forma de calcular la capacidad ha sido tener en cuenta el número de platos que normalmente voy a cocinar, la capacidad de un plato hondo tiene una capacidad que es de entre 650 ml y 800 ml y que una olla solo se debe llenar hasta 2/3 de su capacidad total. Según lo anterior he intentado estimar los platos que puedo hacer según la capacidad de la olla, es probalbe que no sea muy exacto ya que la medida de los platos que he tomado no es muy exacta. Si he medido que cuatro platos ondos llenados casi hasta el borde exterior al máximo de agua y vertida en la olla llegan al límite de 2/3 así que el límite máximo pueden ser 4 platos.
+Mi forma de calcular la capacidad ha sido tener en cuenta el número de platos que normalmente voy a cocinar, la capacidad de un plato hondo tiene una capacidad que es de entre 650 ml y 800 ml y que una olla solo se debe llenar hasta 2/3 de su capacidad total. Según lo anterior he intentado estimar los platos que puedo hacer según la capacidad de la olla, es probable que no sea muy exacto ya que la medida de los platos que he tomado no es muy exacta. Si he medido que cuatro platos ondos llenados casi hasta el borde exterior al máximo de agua y vertida en la olla llegan al límite de 2/3 así que el límite máximo pueden ser 4 platos.
 
 * Capacidad 2,5 litros: 2500 ml / 3 * 2 / 650 ml/plato = 2,5 platos máximo
 * Capacidad 2,5 litros: 2500 ml / 3 * 2 / 800 ml/plato = 2 platos máximo
@@ -115,34 +115,34 @@ Algunas cosas a tener en cuenta es que la goma esté bien ajustada a la tapa ant
 
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-3.jpg" optionsthumb3="200x150" title3="Cuperpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-3.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-4.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-5.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-6.jpg" optionsthumb3="200x150" title3="Cuperpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-4.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-5.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-6.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-7.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-8.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-9.jpg" optionsthumb3="200x150" title3="Cuperpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-7.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-8.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-9.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-10.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-11.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-12.jpg" optionsthumb3="200x150" title3="Cuperpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-10.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-11.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-12.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:olla-kuhn-rikon-13.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:olla-kuhn-rikon-14.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    image3="image:olla-kuhn-rikon-15.jpg" optionsthumb3="200x150" title3="Cuperpo olla, tapa y elementos" >}}
+    image1="image:olla-kuhn-rikon-13.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:olla-kuhn-rikon-14.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    image3="image:olla-kuhn-rikon-15.jpg" optionsthumb3="200x150" title3="Cuerpo olla, tapa y elementos" >}}
 {{< image
     gallery="true"
-    image1="image:detalles-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuperpo olla, tapa y elementos"
-    image2="image:detalles-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuperpo olla, tapa y elementos"
-    caption="Cuperpo olla, tapa y elementos" >}}
+    image1="image:detalles-kuhn-rikon-1.jpg" optionsthumb1="200x150" title1="Cuerpo olla, tapa y elementos"
+    image2="image:detalles-kuhn-rikon-2.jpg" optionsthumb2="200x150" title2="Cuerpo olla, tapa y elementos"
+    caption="Cuerpo olla, tapa y elementos" >}}
 
 {{< image
     gallery="true"
@@ -173,9 +173,9 @@ Encontrar repuestos hace que no sea necesario comprar una nueva olla que salvo l
 
 En el primer uso he comprobado que su funcionamiento es muy sencillo, no emite apenas ruido y salvo algo muy puntual no emite nada de agua ni vapor. En 9 minutos coge presión y una vez la primera anilla roja o la segunda según la comida aparece basta con dejarla el tiempo indicado en el manual para que el alimento quede cocinado. Una vez pasado el tiempo hay que apagar el fuego y apartarla, para que baje la presión se puede dejar a que de forma natural o presionando el émbolo indicador de presión para hacer una despresurización rápida.
 
-La mayor duda que tenía era sobre la capcidad de la olla, si los 3,5 litros se me quedarían grandes o pequeños. Para mi caso creo que he acertado con el tamaño, posiblemente la de 2,5 litros me hubiese quedado pequeña, la de 3,5 me permitirá hacer comida para desde 2 platos hasta 4 sin problemas que era lo que quería.
+La mayor duda que tenía era sobre la capacidad de la olla, si los 3,5 litros se me quedarían grandes o pequeños. Para mi caso creo que he acertado con el tamaño, posiblemente la de 2,5 litros me hubiese quedado pequeña, la de 3,5 me permitirá hacer comida para desde 2 platos hasta 4 sin problemas que era lo que quería.
 
-La limpieza de la olla también es muy sencilla a mano, no tiene ningua parte donde especialmente puedan quedarse restos de suciedad. Lo único que hay que tener en cuenta es que no es apta para el lavavajillas.
+La limpieza de la olla también es muy sencilla a mano, no tiene ninguna parte donde especialmente puedan quedarse restos de suciedad. Lo único que hay que tener en cuenta es que no es apta para el lavavajillas.
 
 {{< image
     gallery="true"

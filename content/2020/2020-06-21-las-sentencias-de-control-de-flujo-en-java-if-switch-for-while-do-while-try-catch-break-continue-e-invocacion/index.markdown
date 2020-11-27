@@ -44,7 +44,7 @@ El operador ternario _?:_ es una expresión condicional que devuelve el valor de
 
 ### Setencias condicionales (if, switch)
 
-Las sentencias condicionales son un tipo de sentencia que evalua una expresión booleana y dependiendo de su valor verdadero o falso ejecuta o no su su bloque de sentencias asociado para cada caso. Las sentencias a continuación de la condición se ejecutan si la sentencia _if_ se evalúa como verdadero. La sentencia _if_ además puede tener otro bloque de sentencias a ejecutar si la expresión booleana se evalúa como falso, el bloque de sentencias _else_. Las sentencias _if_ y _else_ se pueden encadenar.
+Las sentencias condicionales son un tipo de sentencia que evalúa una expresión booleana y dependiendo de su valor verdadero o falso ejecuta o no su su bloque de sentencias asociado para cada caso. Las sentencias a continuación de la condición se ejecutan si la sentencia _if_ se evalúa como verdadero. La sentencia _if_ además puede tener otro bloque de sentencias a ejecutar si la expresión booleana se evalúa como falso, el bloque de sentencias _else_. Las sentencias _if_ y _else_ se pueden encadenar.
 
 {{< image
     gallery="true"
@@ -71,7 +71,7 @@ Las sentencias _if_ se pueden anidar unas dentro de otras esto dificulta la legi
 
 ### Sentencias de repetición (for, foreach, while, do-while, break, continue)
 
-Las sentencias de repetición permiten ejecutar un bloque de sentencias durante un número determinado de veces o mientras se cumpla una condición. En cada iteración después de ejecutar el bloque de sentencias la condición se vuelve a evaluar si se sigue cumpliendo, si se cumple se realiza una nueva iteración si no se cumple se sale del bucle y se continua con la siguiente sentencia del programa. Esta evaluación de la condición y ejecución del bloque de sentencias se realiza hasta que la condición del blucle _while_ no se cumpla. Hay varios tipos de bucles.
+Las sentencias de repetición permiten ejecutar un bloque de sentencias durante un número determinado de veces o mientras se cumpla una condición. En cada iteración después de ejecutar el bloque de sentencias la condición se vuelve a evaluar si se sigue cumpliendo, si se cumple se realiza una nueva iteración si no se cumple se sale del bucle y se continua con la siguiente sentencia del programa. Esta evaluación de la condición y ejecución del bloque de sentencias se realiza hasta que la condición del bucle _while_ no se cumpla. Hay varios tipos de bucles.
 
 La sentencia _while_ ejecuta un bloque de sentencias mientras se cumpla una condición, puede ocurrir el caso de que la condición de la sentencia _while_ no se cumpla y por tanto el bloque de sentencias de repetición no se ejecute ninguna vez. La comprobación de la condición se realiza antes de entrar al bucle.
 

@@ -21,7 +21,7 @@ summary: "Las distribuciones BSD tienen aún menor cuota de uso que las distribu
 
 De los sistemas operativos [Windows][windows] de [Microsoft][microsoft] es el más popular en el uso en empresas y en los ordenadores personales con una cuota de uso del 90% prácticamente de monopolio. La siguiente opción más popular a nivel de usuario es [macOS][macos] de [Apple][apple] como única opción de sus equipos portátiles y de escritorio, macOS tiene una cuota de uso de un 7%. Con una cota de uso en el escritorio de apenas el el 3% la siguiente opción es alguna de las distribuciones [GNU][gnu]/[Linux][linux], tiene una cuota de uso tan pequeña porque prácticamente todos los equipos vendidos en grandes superficies incorporan Windows preinstalado, para usar GNU/Linux son los usuarios los que de forma expresa han de instalar GNU/Linux reemplazando a Windows aunque en los últimos años hay varias marcas que ofrecen GNU/Linux como opción entre ellas [Slimbook][slimbook] y [Vant][vant]. En el lado del servidor GNU/Linux si tiene una mucha mayor cuota de uso por encima incluso de Windows, muchos de los servicios ofrecidos por las compañías más importantes usan alguna distribución de GNU/Linux como sistema operativo. Las distribuciones empresariales GNU/Linux más populares son [RHEL][rhel] de [RedHat][redhat], [Ubuntu][ubuntu] de [Canonical][canonical] o [SLES][suse-sles] de [SUSE][suse].
 
-Otra familia de sistemas operativos basados en UNIX al igual que GNU/Linux son las distribuciones BSD. Si la cuota de uso a nivel personal de GNU/Linux es muy reducida la de los sistemas operativos BSD es aún mucho más reducida, no llega al 0,5%, teniendo algo de mayor presencia como sistema de servidores con una comunuidad de usuarios pequeña pero al igual que la de GNU/Linux activa que comparte y colabora en el desarrollo.
+Otra familia de sistemas operativos basados en UNIX al igual que GNU/Linux son las distribuciones BSD. Si la cuota de uso a nivel personal de GNU/Linux es muy reducida la de los sistemas operativos BSD es aún mucho más reducida, no llega al 0,5%, teniendo algo de mayor presencia como sistema de servidores con una comunidad de usuarios pequeña pero al igual que la de GNU/Linux activa que comparte y colabora en el desarrollo.
 
 Los parecidos en las distribuciones GNU/Linux y BSD es que ambos proyectos están basados en UNIX, implementan el estándar [POSIX][posix] que define una interfaz con el sistema operativo para permitir que las aplicaciones sean portables entre sistemas y están desarrollados como proyectos de código abierto en los que participan organizaciones, personas como contribuidores apoyados por el interés de algunas organizaciones y personas individuales sin intereses comerciales, aún así tienen notables diferencias en varios apartados importantes. Las diferencias entre las distribuciones GNU/Linux y BSD están en la licencia que usan, en su modelo de desarrollo, en la ya comentada cuota de uso o en aspectos importantes para los usuarios como el soporte del hardware.
 
@@ -46,7 +46,7 @@ Por otro lado, la arquitectura del sistema base y las aplicaciones de usuario ti
 
 Las distribuciones BSD siguen un enfoque en el que el sistema base es fijo pero las aplicaciones de usuario se actualizan con nuevas versiones. El sistema base es pequeño, estable y solo incorpora cambios siguiendo un calendario de publicaciones. Los programas de usuario como [Firefox][Firefox], [LibreOffice][libreoffice] o el entorno de escritorio utilizan la última versión disponible de cada proyecto. Esto permite a las distribuciones BSD usar las últimas versiones sin comprometer la estabilidad del sistema al haber errores en el núcleo del sistema. Algunas distribuciones GNU/Linux proporcionan un modelo similar a las BSD como [Fedora Silverblue][fedora-silverblue] con una base estable y aplicaciones de usuario actualizadas.
 
-Esta diferencia en el modelo de desarrollo del sistema base e independiente de las aplicaciones haace que en BSD las aplicaciones se instalen de forma independiente a los paquetes del sistema. Los _ports_ son la colección de paquetes con las aplicaciones instalables en los sistemas BSD.
+Esta diferencia en el modelo de desarrollo del sistema base e independiente de las aplicaciones hace que en BSD las aplicaciones se instalen de forma independiente a los paquetes del sistema. Los _ports_ son la colección de paquetes con las aplicaciones instalables en los sistemas BSD.
 
 ### Diferencias en la licencia
 
@@ -66,7 +66,7 @@ Al igual que en GNU/Linux ha varias distribuciones BSD con algunos propósitos m
 * [OpenBSD][openbsd]: esta distribución está diseñada para la máxima seguridad realizando modificaciones de forma proactiva que otros vendedores no son capaces de hacer e integrando  criptografía.
 * [NetBSD][netbsd]: uno de sus principios es hacer el sistema operativo altamente portable, valores por defecto seguros, calidad de código, corrección y adhesión a estándares.
 * [MidnightBSD][midnightbsd]: es una distribución BSD orientada al escritorio que incluye las aplicaciones de usuario básicas como navegador, correo electrónico, procesador de textos, juegos y muchos más.
-* [NomadBSD][nomadbsd]: es una distribución que funciona desde un medio vivo orietada a uso con entorno de escritorio.
+* [NomadBSD][nomadbsd]: es una distribución que funciona desde un medio vivo orientada a uso con entorno de escritorio.
 
 Hay otros sistemas BSD notables:
 
@@ -85,7 +85,7 @@ Hay otros sistemas BSD notables:
     image2="logotype:dragonflybsd.svg" optionsthumb2="150x150" title2="DragonFly"
     caption="Varias de las distribuciones más importantes de BSD" >}}
 
-La publicación digital [BSD Magazine][bsdmag] gratuita bajo suscripción se publica de forma mensual con varios artículos técnicos dedicados a las diferentes distribuciones BSD. Permite adentrarse en el mundo de la distribuciones BSD. Más información sobre las distibuciones en la Wikipedia.
+La publicación digital [BSD Magazine][bsdmag] gratuita bajo suscripción se publica de forma mensual con varios artículos técnicos dedicados a las diferentes distribuciones BSD. Permite adentrarse en el mundo de la distribuciones BSD. Más información sobre las distribuciones en la Wikipedia.
 
 * [Wikipedia FreeBSD](https://en.wikipedia.org/wiki/FreeBSD)
 * [Wikipedia OpenBSD](https://en.wikipedia.org/wiki/OpenBSD)

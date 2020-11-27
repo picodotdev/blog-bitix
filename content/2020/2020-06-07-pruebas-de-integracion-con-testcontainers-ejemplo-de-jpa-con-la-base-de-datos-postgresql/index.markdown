@@ -24,7 +24,7 @@ Las pruebas más numerosas son las unitarias que prueban un componente del softw
 
 El objetivo de sustituir una dependencia real por un doble es programar el comportamiento del doble, ejecutar la prueba de forma aislada y de forma rápida. Una dependencia real es una base de datos como [PostgreSQL][postgresql], NoSQL como [MongoDB][mongodb] o un servicio que requiere comunicación por red como [GraphQL][graphql], al sustituir las dependencias no son necesarias en el entorno de la prueba lo que lo hace más sencillo.
 
-Sin embargo, el código a ejecutar en la aplicación finalmente hace uso de las dependencias reales, y estas no se prueban en las pruebas unitarias, lo que significa los mismos problemas de errores y pruebas manuales de un código que no tiene pruebas automatizadas o pruebas que se basan en dobles que sustituyen a los reales y en algunos casos quiza se comporten de forma diferente. Las pruebas de integración permiten probar el funcionamiento de dos componentes relacionados.
+Sin embargo, el código a ejecutar en la aplicación finalmente hace uso de las dependencias reales, y estas no se prueban en las pruebas unitarias, lo que significa los mismos problemas de errores y pruebas manuales de un código que no tiene pruebas automatizadas o pruebas que se basan en dobles que sustituyen a los reales y en algunos casos quizá se comporten de forma diferente. Las pruebas de integración permiten probar el funcionamiento de dos componentes relacionados.
 
 [Testcontainers][testcontainers] es una herramienta que permite realizar pruebas de integración utilizando las mismas dependencias que usa la aplicación en su funcionamiento normal y disponer de estas dependencias en el entorno de prueba. Si usa una base de datos PostgreSQL las pruebas usan esta base de datos, lo mismo si las pruebas necesitan, MongoDB, [RabbitMQ][rabbitmq] o [Redis][redis]. Testcontainers es una tecnología Java que se basa en el uso de contenedores [Docker][docker] para las pruebas. Al iniciar las pruebas de integración Testcontainers se encarga de iniciar un contenedor efímero por cada una de las dependencias que se necesite, al finalizar las pruebas el contenedor es destruido.
 
@@ -38,7 +38,7 @@ Esta es la entidad de Hibernate que la clase repositorio persiste en la base de 
 
 {{< code file="Person.java" language="java" options="" >}}
 
-La clase repositorio es una implementación para el acceso a la base de datos haciendo uso de las facilidades que proporciona Spring Data. La interfaz [CrudRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html) ofrece métodos con las oepraciones de lectura, guardado, actualización y eliminación básicas que en su invocación generan las consultas SQL _select_, _insert_, _update_ y _delete_ correspondientes.
+La clase repositorio es una implementación para el acceso a la base de datos haciendo uso de las facilidades que proporciona Spring Data. La interfaz [CrudRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html) ofrece métodos con las operaciones de lectura, guardado, actualización y eliminación básicas que en su invocación generan las consultas SQL _select_, _insert_, _update_ y _delete_ correspondientes.
 
 {{< code file="PersonRepository.java" language="java" options="" >}}
 

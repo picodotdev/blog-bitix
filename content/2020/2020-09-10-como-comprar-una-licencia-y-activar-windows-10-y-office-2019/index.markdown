@@ -46,7 +46,7 @@ Microsoft comercializa las licencias y distribuye su software de diferentes form
 Office también tiene diferentes versiones de los programa del paquete ofimático que comprende principalmente el editor de documentos Word, la hoja de cálculo Excel y PowerPoint para crear presentaciones junto algunos otros programas como Outlook como aplicación de correo electrónico o Access para crear bases de datos sencillas.
 
 * [Office Online][microsoft-office-online]: es la versión que compite con [Google Docs][google-docs], es una versión implementada como una aplicación web. Se accede con un navegador web, no requiere instalar programas en el ordenador, es gratuita y permite colaborar a varias personas en el mismo documento.
-* [Office 365][microsoft-office-365]: es un servicio bajo suscripción de pago mensual que da acceso los programas del paquete ofimático y la versión web de los mismos. Cuando en el futuro se publique la siguiente versión no hace falta realizar de nuevo un pago para tener acceso a la nueva versión. Inluye algunos servicios adicionales como Skype para comunicaciones por videoconferencia y OneDrive para almacenamiento en la nube.
+* [Office 365][microsoft-office-365]: es un servicio bajo suscripción de pago mensual que da acceso los programas del paquete ofimático y la versión web de los mismos. Cuando en el futuro se publique la siguiente versión no hace falta realizar de nuevo un pago para tener acceso a la nueva versión. Incluye algunos servicios adicionales como Skype para comunicaciones por videoconferencia y OneDrive para almacenamiento en la nube.
 * [Office 2019][microsoft-office]: es la modalidad de siempre de pago único para tener acceso a los programas del paquete ofimático. Los programas se instalan como aplicaciones de escritorio en el ordenador. Cuando en el futuro se publique una nueva versión hay que pagar de nuevo por la licencia para usar la nueva versión.
 
 De las aplicaciones de escritorio de Microsoft Office 2019 hay varias versiones que se diferencian en las aplicaciones que incluyen, para la mayoría de usuarios la versión _Hogar y Estudiantes_ que incluye las aplicaciones básicas de un paquete ofimático es suficiente.
@@ -64,7 +64,7 @@ Un coste adicional en licencias de uso que encarecen de forma muy significativa 
 
 Hay varios vendedores distintos a Microsoft que permiten obtener una licencia de Windows 10 y Microsoft Office de forma completamente legal, válida y para siempre con unos precios muy baratos que permiten activar estos productos. [En el año 2012 el tribunal de la Unión Europea dictó una sentencia](https://curia.europa.eu/jcms/upload/docs/application/pdf/2012-07/cp120094en.pdf) por la que las licencias de software vendido a través de internet que dejan de usarse por sus compradores originales pueden ser compradas y vendidas de forma legal, esto es lo que hacer algunos vendedores compren esas licencias que dejan de usarse y las revenden a otros usuarios a unos precios bajos.
 
-Si el precio de Windows 10 vendido por Microsoft en su versión _Retail_ es de 145 € para la versión _Home_ o 259 € para la _Pro_ estos otros vendedores ofrecen licencias válidas a precios mucho más baratos, de entre unos 10 € y 15 €, lo que supone un ahorro importante en este software. Si la versión de _Office Hogar y Estudiantes 2019_ cuesta 149 € compradola a Microsoft, otros vendedores ofrecen licencias con códigos de activación también por entre 10 € y 15 €.
+Si el precio de Windows 10 vendido por Microsoft en su versión _Retail_ es de 145 € para la versión _Home_ o 259 € para la _Pro_ estos otros vendedores ofrecen licencias válidas a precios mucho más baratos, de entre unos 10 € y 15 €, lo que supone un ahorro importante en este software. Si la versión de _Office Hogar y Estudiantes 2019_ cuesta 149 € comprándola a Microsoft, otros vendedores ofrecen licencias con códigos de activación también por entre 10 € y 15 €.
 
 ### Descargar Windows 10 y Microsoft Office 2019
 
@@ -118,7 +118,7 @@ El siguiente comando ejecutado desde utilidad _Símbolo del sistema_ permite obt
 
 {{< code file="wmic.cmd" language="cmd" options="" >}}
 
-Una vez instaldo Microsoft Office al abrir una las aplicaciones de la _suite_ ofimática se solicita la activación del producto. Para activar Microsoft Office con el código de licencia comprado se realiza desde el menú _Archivo > Cuenta > Información del producto > Activar producto_.
+Una vez instalado Microsoft Office al abrir una las aplicaciones de la _suite_ ofimática se solicita la activación del producto. Para activar Microsoft Office con el código de licencia comprado se realiza desde el menú _Archivo > Cuenta > Información del producto > Activar producto_.
 
 {{< image
     gallery="true"

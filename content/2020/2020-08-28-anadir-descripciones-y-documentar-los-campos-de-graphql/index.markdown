@@ -12,7 +12,7 @@ promoted: false
 imagePost: "image:graphiql-documentation.png"
 tags: ["java", "planeta-codigo"]
 series: ["graphql"]
-summary: "A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fiente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle."
+summary: "A diferencia de una API basada REST una API basada GraphQL posee un esquema en el que quedan definidos los tipos, propiedades y tipos de esas propiedades. Para suplir las carencias de una API basada en REST se suele utilizar #Swagger como documentación y entorno de pruebas. GraphQL incluye la documentación en el propio código fuente y ofrece un IDE sin necesidad de herramientas adicionales. En el propio esquema de la API basada en GraphQL se pueden añadir descripciones a los tipos y propiedades para mayor detalle."
 ---
 
 {{% post %}}

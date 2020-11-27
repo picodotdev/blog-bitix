@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imagePost: "logotype:linux.svg"
 tags: ["gnu-linux", "planeta-codigo"]
-summary: "Linux es uno de los mejores sistemas operativos actuales y sobre todo usable y completo. Eso no quiere decir que en el futuro no tan lejano haya cambios importantes en como hemos conocido las distribuciones de GNU/Linux hasta hoy. Ya se están produciendo cambios y surgiendo nuevas basadas en tecnologías y pricipios significativamente diferentes que mejoran algunas deficiencias de la actual generación en la que están basadas la mayoría de las distribuciones más populares actuales."
+summary: "Linux es uno de los mejores sistemas operativos actuales y sobre todo usable y completo. Eso no quiere decir que en el futuro no tan lejano haya cambios importantes en como hemos conocido las distribuciones de GNU/Linux hasta hoy. Ya se están produciendo cambios y surgiendo nuevas basadas en tecnologías y principios significativamente diferentes que mejoran algunas deficiencias de la actual generación en la que están basadas la mayoría de las distribuciones más populares actuales."
 ---
 
 {{% post %}}
@@ -33,7 +33,7 @@ Hay cuatro puntos en los que es muy posible que los sistemas operativos cambien 
 
 Dada la fragilidad de las actualizaciones es deseable que en caso de que una produzca algún error sea posible volver a un estado anterior bueno conocido.
 
-Ya se están produciendo cambios y surgiendo nuevas distribuciones. [Fedora Silverblue][fedora-silverblue] es un sistema inmutable que utiliza [OSTree][ostree] como sistema para versionar las actualizaciones en los sistemas Linux, [Toolbox][toolbox] basado en contenedores donde instalar las herramientas de desarrollo sin afectar al sistema operativo inmutable y Flatpak para instalar aplicaciones de usuario. [endless OS][endlessos] también utiliza OSTree y Flatpak, cada instalación es exactamente igual que en cualquier otro equipo de modo que no hay nignuna diferencia lo que proporciona mayor estabilidad y menos errores. Por otro lado las actualizaciones son muy rápidas y el sistema está preparado para volver a una versión anterior si algo no funciona.
+Ya se están produciendo cambios y surgiendo nuevas distribuciones. [Fedora Silverblue][fedora-silverblue] es un sistema inmutable que utiliza [OSTree][ostree] como sistema para versionar las actualizaciones en los sistemas Linux, [Toolbox][toolbox] basado en contenedores donde instalar las herramientas de desarrollo sin afectar al sistema operativo inmutable y Flatpak para instalar aplicaciones de usuario. [endless OS][endlessos] también utiliza OSTree y Flatpak, cada instalación es exactamente igual que en cualquier otro equipo de modo que no hay ninguna diferencia lo que proporciona mayor estabilidad y menos errores. Por otro lado las actualizaciones son muy rápidas y el sistema está preparado para volver a una versión anterior si algo no funciona.
 
 [GNU Guix][gnu-guix] es una distribución que usa un gestor de paquetes transaccional de modo que en una actualización se actualizan todos los paquetes correctamente o no se actualiza ninguno evitando dejar un sistema inconsistente por algún error que se produzcan en el proceso de la actualización.
 
@@ -85,7 +85,7 @@ El kernel de Linux es monolítico no porque sea lo mejor sino porque como [Linus
 
 Los kernels basados en microkernels son más seguros al ser su núcleo mucho más pequeños, de unos pocos miles de líneas de código contra los millones de Linux, el resto de funcionalidades se implementan en modo de usuario. También son más seguros y fiables. Una parte del sistema no tiene por que hacer que el sistema completo colapse, el kernel puede reiniciar esa parte sin ni siquiera el usuario ser consciente de que ha habido un error, Minix tiene un servicio de reencarnación que reinicia otros servicios en caso de fallo. Dado que la mayor parte del sistema se ejecuta en modo usuario son más seguros ya que los procesos no tienen permisos para hacer cualquier cosa.
 
-Ejemplos de kernels basados en microkernel son [Minix][minix], [GNU/Hurd][gnu-hurd], el propio Redox o [Genode][genode]. A pesar de todo ninguno de ellos ha tomado suficiente relevancia para hacer no ya sombra a Linux sino tampoco a los BSD. Sus desventajas es que hasta ahora no han demostrado alcanzar el mismo rendmiento que los kernels monolíticos y como en el caso de GNU/Hurd su desarrollo esté muy lejos de completarse por su mayor dificultad de desarrollo.
+Ejemplos de kernels basados en microkernel son [Minix][minix], [GNU/Hurd][gnu-hurd], el propio Redox o [Genode][genode]. A pesar de todo ninguno de ellos ha tomado suficiente relevancia para hacer no ya sombra a Linux sino tampoco a los BSD. Sus desventajas es que hasta ahora no han demostrado alcanzar el mismo rendimiento que los kernels monolíticos y como en el caso de GNU/Hurd su desarrollo esté muy lejos de completarse por su mayor dificultad de desarrollo.
 
 Si a Linux le surge una alternativa no será porque es malo sino porque no tiene algunas características. Un ámbito puede ser el de coches autónomos en los que un fallo puede suponer un accidente con víctimas mortales o algún sistema que necesite gran fiabilidad como operaciones bursátiles.
 

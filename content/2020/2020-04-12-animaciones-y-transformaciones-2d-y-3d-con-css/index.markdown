@@ -78,7 +78,7 @@ Las funciones de transformación 3D aplican efectos 3D a los elementos.
 * rotateZ(angle)
 * perspective(n)
 
-Estos son tres ejemplos de efectos aplicando transformaciones y animaciones, se pueden combinar ambos a la vez. Un ejemplo aplica una operación de transofrmación a una imagen, otro al ubicar el ratón encima empieza a rotar y otro que repite una transición de color y translación de forma infinita.
+Estos son tres ejemplos de efectos aplicando transformaciones y animaciones, se pueden combinar ambos a la vez. Un ejemplo aplica una operación de transformación a una imagen, otro al ubicar el ratón encima empieza a rotar y otro que repite una transición de color y translación de forma infinita.
 
 {{< code file="example.css" language="css" options="" >}}
 {{< code file="example.xhtml" language="html" options="" >}}

@@ -13,7 +13,7 @@ imageHead: "logotype:hashicorp-text.svg"
 imagePost: "image:consul-reference-architecture.png"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["hashicorp"]
-summary: "HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecucuón para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox."
+summary: "HashiCorp proporciona una buena documentación de sus productos con tutoriales, documentación de las herramientas y vídeos de formación en su canal de Youtube. Aunque en la documentación está todo explicado para poner en práctica una arquitectura para un caso más real y con cierto grado de producción requiere leer múltiples artículos para aplicar y aglutinar todo lo descrito. En este artículo muestro una arquitectura de referencia de varios productos de HashiCorp como Consul, Vault y Nomad que forman un centro de datos o entorno de ejecución para servicios en un ejemplo aprovisionado con Vagrant en máquinas virtuales de VirtualBox."
 ---
 
 {{% post %}}
@@ -31,7 +31,7 @@ En muchas organizaciones los desarrolladores solo se encargan del desarrollo de 
 
 En este artículo muestro un ejemplo usando tres de estos mismos productos que se usarían en un entorno de producción [Consul][consul] para el registro de servicios y conexión de forma segura, [Vault][vault] para seguridad y servicios de cifrado y [Nomad][nomad] para la ejecución de servicios con contenedores [Docker][docker]. Para el aprovisionamiento y ejecutar el ejemplo en la propia máquina el ejemplo usa [Vagrant][vagrant] que permite crear y aprovisionar máquinas virtuales sobre [VirtualBox][virtualbox], en un entorno basado en la nube se usaría [Terraform][terraform]. Consul, Vault y Nomad forman lo que sería un centro de datos de un entorno de ejecución para aplicaciones y servicios.
 
-[HashiQube](https://github.com/servian/hashiqube/) proporciona un entorno para hacer pruebas de desarrollo con todas las herramientas de HashiCorp, pero no es utilizable en un entorno de producción. Para construir un entorno con grado de producción hay que leer mucha de la buena ducmentación que ofrece HashiCorp de sus productos. Los productos de HashiCorp tienen una buena documentación en formato guía y tutoriales divididos en secciones individuales sobre un tema en concreto.
+[HashiQube](https://github.com/servian/hashiqube/) proporciona un entorno para hacer pruebas de desarrollo con todas las herramientas de HashiCorp, pero no es utilizable en un entorno de producción. Para construir un entorno con grado de producción hay que leer mucha de la buena documentación que ofrece HashiCorp de sus productos. Los productos de HashiCorp tienen una buena documentación en formato guía y tutoriales divididos en secciones individuales sobre un tema en concreto.
 
 * [Tutorial](https://learn.hashicorp.com/consul) y [documentación](https://www.consul.io/docs/index.html) de Consul
 * [Tutorial](https://learn.hashicorp.com/vault) y [documentación](https://www.vaultproject.io/docs)  de Vault
@@ -70,12 +70,12 @@ Este artículo hace uso, está relacionado y se complementa con otros artículos
 
 {{< image
     gallery="true"
-    image1="image:hashicorp-consul-before-after.png" optionsthumb1="200x150" title1="Antes y despues con Consul"
-    image2="image:hashicorp-vault-before-after.png" optionsthumb2="200x150" title2="Antes y despues con Vault"
-    image3="image:hashicorp-nomad-before-after.png" optionsthumb3="200x150" title3="Antes y despues con Nomad" >}}
+    image1="image:hashicorp-consul-before-after.png" optionsthumb1="200x150" title1="Antes y después con Consul"
+    image2="image:hashicorp-vault-before-after.png" optionsthumb2="200x150" title2="Antes y después con Vault"
+    image3="image:hashicorp-nomad-before-after.png" optionsthumb3="200x150" title3="Antes y después con Nomad" >}}
 {{< image
     gallery="true"
-    image1="image:hashicorp-terraform-before-after.png" optionsthumb1="200x150" title1="Antes y despues con Terraform"
+    image1="image:hashicorp-terraform-before-after.png" optionsthumb1="200x150" title1="Antes y después con Terraform"
     image2="image:hashicorp-terraform-before-after.png" optionsthumb2="200x150" title2="Ecosistema con Nomad"
     caption="Ecosistema con Nomad" >}}
 

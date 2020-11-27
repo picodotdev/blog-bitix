@@ -43,7 +43,7 @@ Descargar un sitio web no es la única funcionalidad que ofrece wget, otra neces
 
 ### Cómo descargar un sitio web con programas de interfaz gráfica o páginas web
 
-Hay algunas herramientas con interfaz gráfica como [HTTrack](https://www.httrack.com/) o [Cyotek WebCopy](https://www.cyotek.com/cyotek-webcopy) que realizan la misma tarea que wget de forma más intutiva. Aún así el comando de wget es una forma sencilla y rápida de realizar la descarga de un sitio web completo.
+Hay algunas herramientas con interfaz gráfica como [HTTrack](https://www.httrack.com/) o [Cyotek WebCopy](https://www.cyotek.com/cyotek-webcopy) que realizan la misma tarea que wget de forma más intuitiva. Aún así el comando de wget es una forma sencilla y rápida de realizar la descarga de un sitio web completo.
 
 También hay algunas herramientas o páginas web _online_ que realizan la descarga de sitios web como [Website Downloader](https://websitedownloader.io) o [Archivarix](https://archivarix.com/en/website-downloader-cms-converter/) sin necesidad de instalar ningún programa en el ordenador aunque tienen unos límites muy reducidos que sobrepasados no son gratuitas y hay que pagar por utilizarlas.
 

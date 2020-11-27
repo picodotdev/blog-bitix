@@ -23,7 +23,7 @@ El tiempo de carga de una página web es una métrica importante para una buena 
 
 Una de las variables que influyen en el tiempo de carga es el número de peticiones y el tamaño de los recursos de esas peticiones que se hacen al servidor para descargar los elementos de la página completa, estos son imágenes, hojas de estilo, archivos de JavaScript, _iframes_, ... Sin embargo, los navegadores cargan todos los elementos de una página incluso aquellos que están en la parte baja e inicialmente no se ven hasta que el usuario se desplaza hasta visualizarlos. Cargar elementos que no se visualizan es innecesario e ineficiente en el navegador pero también para el servidor que ha de atender a más peticiones.
 
-Los artículos de mi blog como [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432] o [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363], incluyen numerosas imágenes e _iframes_ de vídeos de [Youtube][youtube] y publicidad de [Amazon][amazon], en todas se carga los comentarios de [Disqus][disqus] y para compartir los artículos con [ShareThis][sharethis] que están al final de la página y hasta que el usuario no ha leido el artículo son innecesarios. Disqus además en concreto para cargarse realiza numerosas peticiones adicionales. Estás páginas son de las más complejas por número de recursos y extensión del artículo que tengo en el blog por lo que he analizado una de ellas antes y después aplicando _lazy loading_ para cargar inicialmente solo los elementos que se visualizan que son aquellos que están en la parte superior de la página.
+Los artículos de mi blog como [Desempaquetado de PlayStation 4 Slim de 1 TB][blogbitix-432] o [Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)][blogbitix-363], incluyen numerosas imágenes e _iframes_ de vídeos de [Youtube][youtube] y publicidad de [Amazon][amazon], en todas se carga los comentarios de [Disqus][disqus] y para compartir los artículos con [ShareThis][sharethis] que están al final de la página y hasta que el usuario no ha leído el artículo son innecesarios. Disqus además en concreto para cargarse realiza numerosas peticiones adicionales. Estás páginas son de las más complejas por número de recursos y extensión del artículo que tengo en el blog por lo que he analizado una de ellas antes y después aplicando _lazy loading_ para cargar inicialmente solo los elementos que se visualizan que son aquellos que están en la parte superior de la página.
 
 {{< image
     gallery="true"
@@ -58,7 +58,7 @@ Este es una plantilla que utilizo para generar de forma estática el contenido d
 {{< code file="figureproc.xhtml" language="html" options="" >}}
 {{< code file="main.js" language="javascript" options="" >}}
 
-Con simplemente esta mejora, que no es complicada de realizar, añadiendo el código anterior y realizando los sencillos cambios en los atributos de imágenes e _iframes_ las métricas en la comparación con página anterior mejoran notablemente pasando apróximadamente de 15 segungos a menos de 4 en un tiempo de carga hasta que el navegador dejan de hacer peticiones.
+Con simplemente esta mejora, que no es complicada de realizar, añadiendo el código anterior y realizando los sencillos cambios en los atributos de imágenes e _iframes_ las métricas en la comparación con página anterior mejoran notablemente pasando apróximadamente de 15 segundos a menos de 4 en un tiempo de carga hasta que el navegador dejan de hacer peticiones.
 
 <table class="table">
     <thead class="thead-light">
@@ -108,7 +108,7 @@ Los navegadores van a añadir el soporte de carga vaga directamente en las imág
 
 En definitiva es un pequeño cambio sencillo de realizar y que mejora notablemente la experiencia de usuario, la carga del servidor, es recomendable para el SEO incluso desde el punto de vista de la privacidad de los usuarios.
 
-Otro uso distinto para la carga vaga es lanzar eventos de Analytics, esto lo he empleado para saber si los usuarios llegan al final de los artículos. Con esto es posible obtener datos interesantes sobre cuales son las mejoras páginas o artículos, por ejemplo, para diferencia entre página muy visitada por que esté bien posicionada pero ni interesante para los uauarios porque no llegan al final del artículo o por el contrario páginas con pocas visitas pero que los usuarios las leen hasta el final.
+Otro uso distinto para la carga vaga es lanzar eventos de Analytics, esto lo he empleado para saber si los usuarios llegan al final de los artículos. Con esto es posible obtener datos interesantes sobre cuales son las mejoras páginas o artículos, por ejemplo, para diferencia entre página muy visitada por que esté bien posicionada pero ni interesante para los usuarios porque no llegan al final del artículo o por el contrario páginas con pocas visitas pero que los usuarios las leen hasta el final.
 
 {{< code file="app.js" language="javascript" options="" >}}
 

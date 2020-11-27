@@ -56,7 +56,7 @@ Un bus de eventos no es nada complicado, esta interfaz es lo que define un bus d
 
 {{< code file="EventBus.java" language="java" options="" >}}
 
-En una arquitectura hexagonal que separa el dominio de los detalles de implementación externos la interfaz del bus de eventos junto con las clases de los evenos están en la capa de dominio y la implementación del bus de eventos está en la capa de infraestructura. La implementación del bus de eventos es la que determina si el evento se publica utilizando [eventos con Spring](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#context-functionality-events-generics), [eventos con Guava][blogbitix-422], [utilizar RabbitMQ][blogbitix-210] o los guarda en base de datos para que sean emitidos por otro elemento sea el que los publique en [RabbitMQ][rabbitmq] con el _outbox pattern_, el proceso publicador en RabbitMQ puede ser [una tarea programada con Quartz][blogbitix-497] ejecutada de forma periódica que busca y publica los eventos pendientes de publicar. En este código la implementación simplemente los imprime en la terminal y en otra implementación se utiliza el mecanismo de envío de eventos en la misma aplicación de Spring.
+En una arquitectura hexagonal que separa el dominio de los detalles de implementación externos la interfaz del bus de eventos junto con las clases de los eventos están en la capa de dominio y la implementación del bus de eventos está en la capa de infraestructura. La implementación del bus de eventos es la que determina si el evento se publica utilizando [eventos con Spring](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#context-functionality-events-generics), [eventos con Guava][blogbitix-422], [utilizar RabbitMQ][blogbitix-210] o los guarda en base de datos para que sean emitidos por otro elemento sea el que los publique en [RabbitMQ][rabbitmq] con el _outbox pattern_, el proceso publicador en RabbitMQ puede ser [una tarea programada con Quartz][blogbitix-497] ejecutada de forma periódica que busca y publica los eventos pendientes de publicar. En este código la implementación simplemente los imprime en la terminal y en otra implementación se utiliza el mecanismo de envío de eventos en la misma aplicación de Spring.
 
 {{< code file="ConsoleEventBus.java" language="java" options="" >}}
 {{< code file="SpringEventBus.java" language="java" options="" >}}
@@ -65,7 +65,7 @@ En una arquitectura hexagonal que separa el dominio de los detalles de implement
 
 En _Domain Driven Design_ un agregado es una entidad que se encarga de mantener la consistencia e invariantes de negocio con las otras entidades con las que está relacionada y que mantiene. Por ejemplo, en una orden de compra compuesta de varios productos las líneas de compra están gestionadas por el agregado de la orden de compra, las lineas de compra no tienen sentido por si mismas fuera de una orden de compra. Si existe una regla de negocio que no permita más de tres lineas de compra o con un importe mayor de 3000€, el agregado de orden de compra o un servicio de dominio se encargaría de que su estado cumpla las reglas de negocio.
 
-El agregado al contener lógica de negocio puede generar eventos de dominio. Una de las soluciones que se suele optar es que el agregado almacene los eventos de dominio que ha generado y posteriormente sean recolectados para ser emitidos en el bus de eventos. Esto facilita las pruebas unitarias y los eventos no se emiten inmediatamente lo que permite emplementar el patrón _outbox pattern_.
+El agregado al contener lógica de negocio puede generar eventos de dominio. Una de las soluciones que se suele optar es que el agregado almacene los eventos de dominio que ha generado y posteriormente sean recolectados para ser emitidos en el bus de eventos. Esto facilita las pruebas unitarias y los eventos no se emiten inmediatamente lo que permite implementar el patrón _outbox pattern_.
 
 Esta es la implementación de un agregado que representa una orden de compra con varias líneas de compra. Al crearse una orden se crea el agregado y emite un evento indicado el suceso, este evento es de interés para un _bounded context_ de inventario para mantener el _stock_ de productos actualizado.
 
@@ -96,7 +96,7 @@ Con la implementación del bus de eventos que imprime en la consola se muestra u
 
 ### Otras preguntas
 
-Si un evento incluye el identificativo de la entidad este ha de ser generado con anterioridad. Habitualmente se delega en la base de datos el generar el identificativo con un autonumérico en el momento de inserción, hacerlo en el momento de la persistencia impide conocer su identificativo con antelación. La solución es [generar su identificavo antes de crear la entidad][blogbitix-493].
+Si un evento incluye el identificativo de la entidad este ha de ser generado con anterioridad. Habitualmente se delega en la base de datos el generar el identificativo con un autonumérico en el momento de inserción, hacerlo en el momento de la persistencia impide conocer su identificativo con antelación. La solución es [generar su identificativo antes de crear la entidad][blogbitix-493].
 
 En este punto se llegan a otras preguntas:
 

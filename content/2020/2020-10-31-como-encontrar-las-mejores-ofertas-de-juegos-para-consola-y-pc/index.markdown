@@ -36,7 +36,7 @@ En mi pequeño catálogo de juegos ya tengo más de 10 juegos y por ninguno de e
 
 ### Ofertas en tiendas de juegos
 
-En el PC y otras tiendas como [Steam][steam], [Epic Games][epicgames], [GOG][gog] y la [Microsoft Store para Windows][microsoft-store-windows] o [para Xbox][microsoft-store-xbox] y la [tienda de Nintendo][nintendo-store] entre otras también se publican ofertas muy a menudo e igualmente se pueden adquirir juegos a unos precios prácticamente irrechazables en cualquier platadorma.
+En el PC y otras tiendas como [Steam][steam], [Epic Games][epicgames], [GOG][gog] y la [Microsoft Store para Windows][microsoft-store-windows] o [para Xbox][microsoft-store-xbox] y la [tienda de Nintendo][nintendo-store] entre otras también se publican ofertas muy a menudo e igualmente se pueden adquirir juegos a unos precios prácticamente irrechazables en cualquier plataforma.
 
 Algunas de las tiendas anteriores permiten crear listas de favoritos y recibir alertas cuando cambian de precio aunque no todas.
 

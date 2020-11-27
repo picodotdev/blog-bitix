@@ -46,7 +46,7 @@ En MySQL los comandos de copia de seguridad y restauración son similares.
 
 {{< code file="mysql-backup.sh" language="bash" options="" >}}
 
-Con la opción _--extended-insert_ la importación posterior del volcado será algo más rápida al incluir setencias _insert_ con múltiples datos de vez de un _insert_ por cada fila.
+Con la opción _--extended-insert_ la importación posterior del volcado será algo más rápida al incluir sentencias _insert_ con múltiples datos de vez de un _insert_ por cada fila.
 
 {{< code file="mysql-backup-extended-insert.sh" language="bash" options="" >}}
 
@@ -62,7 +62,7 @@ Para generar y restaurar copias de seguridad comprimidas se debe usar el comando
 
 Si se desean cargar datos de una fuente externa de forma masiva a una base de datos PostgreSQL o MySQL en vez de generar un archivo con varios cientos de miles las sentencias _insert_ es mejor generar un archivo en formato _csv_ o _txt_ con algunos delimitadores y usar el comando [_COPY_](https://www.postgresql.org/docs/current/sql-copy.html) en PostgreSQL o el comando [_LOAD DATA_](https://dev.mysql.com/doc/refman/8.0/en/load-data.html) en MySQL complemento de [SELECT ... INTO](https://dev.mysql.com/doc/refman/8.0/en/select-into.html). Estos comandos están diseñados para cargar datos de forma masiva en la base de datos con lo que la importación será mucho más rápida.
 
-En ambos casos las exportaciones e impotaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres seperadores de las columnas y las columnas en las que importar los datos.
+En ambos casos las exportaciones e importaciones soportan archivos en formato texto y csv con la posibilidad de personalizar los caracteres separadores de las columnas y las columnas en las que importar los datos.
 
 {{< code file="postgresql-copy.sh" language="bash" options="" >}}
 {{< code file="mysql-load.sh" language="bash" options="" >}}

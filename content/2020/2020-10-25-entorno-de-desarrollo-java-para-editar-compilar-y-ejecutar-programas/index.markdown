@@ -104,7 +104,7 @@ En programas y proyectos grandes con muchas clases no se usa el compilador del J
     gallery="false"
     image1="logotype:gradle.svg" optionsthumb1="100x100" title1="Gradle" >}}
 
-Además de para compilar un proyecto, una herramienta de construcción proporciona otras funcionalidades como ejecutar las pruebas unitarias o de integración, [generar la documentación de las clases][blogbitix-260] de la documentción incluida en el código fuente con [la herramienta Javadoc][blogbitix-259], descargar las dependencias de librerías definidas por el proyecto, empaquetar las clases del proyecto en una librería _jar_ y distribuir ese artefacto en los repositorios de librerías para otros proyectos.
+Además de para compilar un proyecto, una herramienta de construcción proporciona otras funcionalidades como ejecutar las pruebas unitarias o de integración, [generar la documentación de las clases][blogbitix-260] de la documentación incluida en el código fuente con [la herramienta Javadoc][blogbitix-259], descargar las dependencias de librerías definidas por el proyecto, empaquetar las clases del proyecto en una librería _jar_ y distribuir ese artefacto en los repositorios de librerías para otros proyectos.
 
 SDKMAN también sirve para instalar una herramienta de construcción, Gradle se instala con el siguiente comando.
 
@@ -152,7 +152,7 @@ Son muchos los beneficios de usar un IDE con un lenguaje compilado y fuertemente
 
 Uno de los beneficios del software libre y del código abierto es que normalmente es gratuito, no tienen costosas licencias comerciales para usar el software lo que permite usarlo sin grandes barreras ya sea con fines educativos o comerciales.
 
-GNU/Linux siempre ha sido un sistema operativo con un excelente soporte y herramientas destinadas a los desarrolladores con cantidad de lenguajes de programación disponibles, compiladores, editores y una excelente línea de comandos con multitud de utilidades para automatizar tareas repetitivas. A día de hoy hay muchas distribuciones de GNU/Linux que son tan fáciles de instalar y usar como Windows o macOS ni tienen nada que envidiar a estos sitemas operativos comerciales con licencias privativas. En los últimos años cualquier hardware conocido funciona bien sin necesidad de instalar controladores adicionales y el soporte para juegos y controladores gráficos poseen un rendimiento similar a Windows.
+GNU/Linux siempre ha sido un sistema operativo con un excelente soporte y herramientas destinadas a los desarrolladores con cantidad de lenguajes de programación disponibles, compiladores, editores y una excelente línea de comandos con multitud de utilidades para automatizar tareas repetitivas. A día de hoy hay muchas distribuciones de GNU/Linux que son tan fáciles de instalar y usar como Windows o macOS ni tienen nada que envidiar a estos sistemas operativos comerciales con licencias privativas. En los últimos años cualquier hardware conocido funciona bien sin necesidad de instalar controladores adicionales y el soporte para juegos y controladores gráficos poseen un rendimiento similar a Windows.
 
 Dado que muchos de los servidores funcionan con GNU/Linux su conocimiento es muy útil en la vida laboral y demandado por las empresas. Usarlo es la mejor forma de aprender y adquirir conocimientos.
 

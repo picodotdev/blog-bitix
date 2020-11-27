@@ -88,7 +88,7 @@ La siguiente clase _record_ es equivalente al POJO tradicional de muchas más l�
 
 En Java embeber en el código un trozo de código HTML, XML, SQL o JSON en un literal como un String requiere editarlo de forma significativa con caracteres de escape y concatenación para que el código compile. La cadena transformada resultante es poco legible y difícil de mantener.
 
-Un bloque de texto HTML en código Java requeire de mútiples caracteres de escape y concatenaciones de cadenas.
+Un bloque de texto HTML en código Java requiere de múltiples caracteres de escape y concatenaciones de cadenas.
 
 {{< code file="TextBlocks-1.java" language="java" options="" >}}
 
@@ -98,7 +98,7 @@ Usando bloques de texto se eliminan los caracteres de escape y las concatenacion
 
 ### Clases ocultas
 
-Se añaden clases oultas o _hidden classes_ que son clases que no pueden usarse directamente por otras clases. Su intención es que sean usadas por _frameworks_ que generan clases en tiempo de ejecución y las usan de forma indirecta con _reflection_.
+Se añaden clases ocultas o _hidden classes_ que son clases que no pueden usarse directamente por otras clases. Su intención es que sean usadas por _frameworks_ que generan clases en tiempo de ejecución y las usan de forma indirecta con _reflection_.
 
 ### Reimplementación de la antigua API DatagramSocket
 

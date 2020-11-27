@@ -57,7 +57,7 @@ En el objeto _Product_ se implementa el patrón _Visitor_ con la interfaz _Speci
 {{< code file="Specificable.java" language="java" options="" >}}
 {{< code file="Product.java" language="java" options="" >}}
 
-Para realizar combinaciones con operaciones lógicas _and_, _or_ o _not_ se utiliza el patrón _Composite_. De entre las operaciones básicas solo se muestra la operación _equals_, sería neesario implementar otro tipo de operaciones como _lessThan_, _greaterThan_, _contains_ u otras si es necesario.
+Para realizar combinaciones con operaciones lógicas _and_, _or_ o _not_ se utiliza el patrón _Composite_. De entre las operaciones básicas solo se muestra la operación _equals_, sería necesario implementar otro tipo de operaciones como _lessThan_, _greaterThan_, _contains_ u otras si es necesario.
 
 {{< code file="EqualsSpecification.java" language="java" options="" >}}
 {{< code file="AndSpecification.java" language="java" options="" >}}
@@ -83,7 +83,7 @@ Esta clase _Specification_ transforma las condiciones en un objeto [Predicate](j
 
 Si en el proyecto se utiliza Spring y JPA esta es la opción recomendada, si no se utiliza Spring o se utiliza otra librería de persistencia distinta a JPA se puede realizar una implementación siguiendo los principios del patrón _Specification_.
 
-Las clases _EqualsSpecification_, _IsCheapSpecification_, _IsLongTermSpecification_, y _IsOverstockSpecification_ anteriores también implementan la interfaz _Specification_ de Spring Data. Estas clases implmentan dos interfaces distintas para diferentes cosas, para hacer comprobaciones sobre un objeto en memoria y para generar clases _Predicate_ con las condiciones equivalentes de JPA, son símplemente ejemplos y para separar conceptos no estaría mal dividir cada clase en dos para que implementen las interfaces de forma individual.
+Las clases _EqualsSpecification_, _IsCheapSpecification_, _IsLongTermSpecification_, y _IsOverstockSpecification_ anteriores también implementan la interfaz _Specification_ de Spring Data. Estas clases implementan dos interfaces distintas para diferentes cosas, para hacer comprobaciones sobre un objeto en memoria y para generar clases _Predicate_ con las condiciones equivalentes de JPA, son símplemente ejemplos y para separar conceptos no estaría mal dividir cada clase en dos para que implementen las interfaces de forma individual.
 
 {{< code file="ProductRepository.java" language="java" options="" >}}
 

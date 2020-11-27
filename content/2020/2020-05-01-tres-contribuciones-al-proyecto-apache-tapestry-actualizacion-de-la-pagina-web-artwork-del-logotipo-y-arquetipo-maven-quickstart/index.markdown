@@ -51,7 +51,7 @@ El resultado ha sido este, antes y después. El actual lo puedes ver en la [pág
 
 ### Artwork del logotipo
 
-Al mismo tiempo que la mejora de la página web he mejorado el logotipo y generado un nuevo _artwork_. Después de recopilar las diferentes versiones logotipos y viendo las diferencias de cada una de ellas en tipo de fuente, formas del icono, colores, etc he creado uno nuevo seleccionado lo que he considerado lo mejor de cada uno de ellos. La forma del unicornio de uno, los elementos de fondo del icono de otro, el ojo del unicorno, la fuente del texto, cambiado el color de la palabra _apache_ en vez de gris a negro de modo que en resoluciones bajas y fondo claro a resoluciones bajas se sigua leyendo correctamente, añadido la mosca del _trademark, ™_ para cumplir con algunos requierimientos de la fundación Apache para proteger sus marcas. En las versiones originales unicamente ofrecen un fondo claro en las nuevas también una versión para fondos oscuros.
+Al mismo tiempo que la mejora de la página web he mejorado el logotipo y generado un nuevo _artwork_. Después de recopilar las diferentes versiones logotipos y viendo las diferencias de cada una de ellas en tipo de fuente, formas del icono, colores, etc he creado uno nuevo seleccionado lo que he considerado lo mejor de cada uno de ellos. La forma del unicornio de uno, los elementos de fondo del icono de otro, el ojo del unicornio, la fuente del texto, cambiado el color de la palabra _apache_ en vez de gris a negro de modo que en resoluciones bajas y fondo claro a resoluciones bajas se siga leyendo correctamente, añadido la mosca del _trademark, ™_ para cumplir con algunos requerimientos de la fundación Apache para proteger sus marcas. En las versiones originales unicamente ofrecen un fondo claro en las nuevas también una versión para fondos oscuros.
 
 {{< image
     gallery="true"
@@ -60,7 +60,7 @@ Al mismo tiempo que la mejora de la página web he mejorado el logotipo y genera
     image3="image:apache-tapestry-index-original.png" optionsthumb3="200x150" title3="Una versión antigua del logotipo"
     caption="Diferentes versiones antiguas del logotipo" >}}
 
-La edición la he realizado con editor de imágenes veectorial [Inkscape][inkscape] y mi intención ha sido generar no solo un logotipo sino varias versiones. Viendo los archivos SVG originales en alguno había un intento de logotipo para fondo oscuro aunque nunca he visto un logotipo de Tapestry generado para este caso así es posible que ni siquiera las personas del proyecto supiesen que existía.
+La edición la he realizado con editor de imágenes vectorial [Inkscape][inkscape] y mi intención ha sido generar no solo un logotipo sino varias versiones. Viendo los archivos SVG originales en alguno había un intento de logotipo para fondo oscuro aunque nunca he visto un logotipo de Tapestry generado para este caso así es posible que ni siquiera las personas del proyecto supiesen que existía.
 
 {{< image
     gallery="true"
@@ -102,7 +102,7 @@ Las mejoras que he realizado ha sido refactorizar el artefacto de Maven, usar [S
 
 ### Conclusión
 
-Los que trabajan en proyecto _open source_ tienen mucho conocimiento deben tenerlo si son capaces de construir un proyecto que en algunos casos utilizan miles de desarrolladores y empresas pero su tiempo es limitado, ni en muchos casos es su trabajo principal y en algunos aspectos no tienen por qué saber más que tú en todo. Contribuir a un proyecto es sencillo solo requiere tiempo y algo de conocimiento para conocer que cambios hay que realizar, con interés y tiempo poco a poco uno va conocienco más detalles del proyecto que permiten realizar contribuciones como estas.
+Los que trabajan en proyecto _open source_ tienen mucho conocimiento deben tenerlo si son capaces de construir un proyecto que en algunos casos utilizan miles de desarrolladores y empresas pero su tiempo es limitado, ni en muchos casos es su trabajo principal y en algunos aspectos no tienen por qué saber más que tú en todo. Contribuir a un proyecto es sencillo solo requiere tiempo y algo de conocimiento para conocer que cambios hay que realizar, con interés y tiempo poco a poco uno va conociendo más detalles del proyecto que permiten realizar contribuciones como estas.
 
 Estas contribuciones no aportan código al proyecto pero la documentación y página web es también importante como muestra del estado del proyecto. Si usase a diario una aplicación con Apache Tapestry en el trabajo es posible que pudiese realizar algunas contribuciones al código fuente del framework pero sin tener esa posibilidad mi motivación para realizarlas no es tan alta.
 
