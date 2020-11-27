@@ -22,7 +22,7 @@ En esta entrada explicaré como usar el DNI electrónico para firmar digitalment
 
 {{< code file="comando-opensc-dnie.sh" language="bash" options="" >}}
 
-A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando modutil cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.
+A continuación, el proceso es similar a como se configura la firma con claves GPG, con el lector de tarjetas inteligentes conectado al equipo y el DNI electrónico introducido accedemos a las propiedades de la cuenta, a la sección seguridad y en el apartado MIME seguro (S/MIME) seleccionamos nuestro certificado. Si queremos que nuestros mensajes se firmen automaticamente debemos marcar la opción «Firmar siempre los mensajes salientes cuando se use esta cuenta». Habiendo ejecutado el comando _modutil_ cuando pulsemos el botón seleccionar en el apartado S/MIME se nos solicitará el PIN secreto de nuestro DNIe.
 
 {{< image
     gallery="true"

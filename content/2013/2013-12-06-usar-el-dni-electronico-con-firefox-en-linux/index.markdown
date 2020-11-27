@@ -33,7 +33,7 @@ En esta pantalla pulsamos el botón «Cargar» e introducimos los siguientes dat
 * Nombre del módulo: podemos poner cualquier cosa que nos sirva para identificar el lector de tarjetas inteligentes como «Smart Card», «Lector de tarjetas inteligentes» o «PKCS#11» como le he puesto y se ve en la imagen.
 * Archivo del módulo: en el caso de Arch Linux debemos poner «/usr/lib/opensc-pkcs11.so», en otras distribuciones será algo similar si no es lo mismo.
 
-Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconoza el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.
+Pulsamos «Aceptar», salimos del diálogo «Dispositivos de seguridad» y reiniciamos Firefox. Para que Firefox reconozca el lector junto con el DNIe este debe estar introducido al iniciarlo sino no se nos aparecerá el diálogo solicitando el PIN del DNIe en el momento de la autenticación y no podremos usarlo, esto es así posiblemente por algún tipo de circunstancia que impide detectar el DNIe en el momento de introducirlo en Firefox, sabiéndolo no supone mayor problema. Por lo demás, esa es toda la configuración adicional necesaria para usar el DNIe con Firefox.
 
 {{< image
     gallery="true"
@@ -49,7 +49,7 @@ Con el DNI electrónico preparado podemos hacer distintos tipos de trámites o c
     image1="image:bbk-dnie.png" optionsthumb1="300x200" title1="Autenticación BBK con DNIe"
     image2="image:dgt-puntos-carnet.jpg" optionsthumb2="300x200" title2="Consultar puntos cárnet DGT" >}}
 
-Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio pcscd, manualmente o con el inicio del sistema ([consultar la guía de instalación del DNIe en Linux][elblogdepicodev-183]).
+Independientemente del trámite que hagamos el proceso es el mismo si se permite la autenticación mediante DNIe, conectamos el lector de tarjetas inteligentes por USB a nuestro ordenador, introducimos el DNIe, iniciamos Firefox y accedemos con él a la página donde se ofrece hacer la consulta o trámite. Hay que tener en cuenta que deberemos tener iniciado el servicio o demonio _pcscd_, manualmente o con el inicio del sistema ([consultar la guía de instalación del DNIe en Linux][elblogdepicodev-183]).
 
 En algún momento en el proceso de autenticación se nos pedirá el PIN secreto que posibilita usar el DNIe, apareciéndonos una ventana similar a la siguiente para introducirlo.
 
