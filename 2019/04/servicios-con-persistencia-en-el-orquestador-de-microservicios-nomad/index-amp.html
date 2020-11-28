@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
+  <meta name="description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
   
 
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/nomad-750.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
+<meta property="og:description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -41,7 +41,7 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Servicios con persistencia en el orquestador de microservicios Nomad">
-<meta name="twitter:description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
+<meta name="twitter:description" content="Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -79,7 +79,7 @@
         "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
         }
     },
-    "description": "Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados."
+    "description": "Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados."
 }
   </script>
   
@@ -258,7 +258,7 @@
     </p>
 
     
-      <p class="summary">Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados.</p>
+      <p class="summary">Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados.</p>
     
     
 
@@ -316,7 +316,7 @@
 <p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="1" height="1" alt="HashiCorp" title="HashiCorp" layout="responsive"  class=""></amp-img></p>
 </div>
 <p>Algunos servicios no necesitan almacenar ningún estado porque no lo necesitan o porque el estado se mantiene en otro servicio. Que un servicio no necesite mantener estado es bueno porque de esta manera el servicio se puede escalar al número de instancias adecuadas para prestar el servicio, también porque si falla una instancia la petición puede ser reenviada a otra instancia, una instancia que falla puede ser reemplazada sin problema en otro <em>host</em>. Sin embargo, hay otro tipo de instancias que si almacenan estado como las bases de datos ya sea <a href="https://www.postgresql.org/">PostgreSQL</a>, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://redis.io/">Redis</a>, <a href="https://www.mongodb.com/">MongoDB</a>, otra o simplemente archivos en el sistema de archivos.</p>
-<p>Las instancias que tienen estado no son tan fáciles de reemplazar dado que los datos son necesarios para su funcionamiento, una instancia de un servicio con estado como no puede iniciarse en otro nodo libremente solo se puede iniciar en el nodo que contenga los datos. Eso o cuando el servicio se inicia en otro nodo los datos son trasladados o por algún mechanismo transparente a los servicios están disponibles en el nuevo nodo.</p>
+<p>Las instancias que tienen estado no son tan fáciles de reemplazar dado que los datos son necesarios para su funcionamiento, una instancia de un servicio con estado como no puede iniciarse en otro nodo libremente solo se puede iniciar en el nodo que contenga los datos. Eso o cuando el servicio se inicia en otro nodo los datos son trasladados o por algún mecanismo transparente a los servicios están disponibles en el nuevo nodo.</p>
 <p>En <a href="https://docs.docker.com/swarm/">Docker Swarm</a> ciertos <em>drivers</em> de volúmenes pueden proporcionar volúmenes accesibles desde cualquier <em>host</em> del <em>cluster</em> pero por defecto <em>Swarm</em> no lo ofrece. En <a href="https://kubernetes.io/">Kubernetes</a> los volúmenes pueden ser dispositivos de almacenamiento provenientes de <a href="https://aws.amazon.com/es/ebs/">EBS</a> de modo que si un <em>pod</em> es movido a otro <em>host</em> basta con que el <em>pod</em> sea conectado de nuevo al EBS anterior y los datos están accesibles en el nuevo nodo.</p>
 <p><a href="https://www.nomadproject.io/">Nomad</a> no proporciona soporte para que el almacenamiento persistente sea migrado a un nuevo nodo de Nomad si el servicio cambiado de ubicación. Para solventar esta limitación en el caso de los servicios con estado estos pueden ser tratados en cierta forma como animales de compañía o <em>pets</em> haciendo que siempre se ubiquen en el mismo nodo, una vez tiene siempre la misma ubicación basta con proporcionar el almacenamiento en el <em>host</em> ya sea en su sistema de archivos o para externalizarlo montando un almacenamiento <em>EBS</em>.</p>
 <p>Para conseguir que un <em>job</em> de Nomad se ubique siempre en un mismo nodo hay que usar <a href="https://www.nomadproject.io/docs/job-specification/constraint.html">restricciones o <em>costraints</em> en la especificación del <em>job</em></a>. Las restricciones son las reglas que utiliza Nomad para elegir como candidatos los posibles nodos en los que ubicar el <em>job</em>, <em>task group</em> o <em>task</em>. Se pueden utilizar varios operadores entre los que está el de igualdad utilizado en el ejemplo. Una de las variables utilizables es el identificativo del nodo de Nomad, con él es posible conseguir que el <em>job</em> se ubique siempre en el mismo nodo. Los identificativos de los nodos son asignados por Nomad cuando se unen al <em>cluster</em>.</p>

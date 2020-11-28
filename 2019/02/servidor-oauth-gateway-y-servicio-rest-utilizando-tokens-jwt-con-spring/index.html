@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
-  <meta name="description" content="Hace unos días encontré un articulo del blog técnido de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
+  <meta name="description" content="Hace unos días encontré un articulo del blog técnico de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</title>
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/spring-750.png">
 
 <meta property="og:site_name" content="Blog Bitix">
-<meta property="og:description" content="Hace unos días encontré un articulo del blog técnido de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
+<meta property="og:description" content="Hace unos días encontré un articulo del blog técnico de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -44,7 +44,7 @@
 
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring">
-<meta name="twitter:description" content="Hace unos días encontré un articulo del blog técnido de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
+<meta name="twitter:description" content="Hace unos días encontré un articulo del blog técnico de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -82,7 +82,7 @@
         "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
         }
     },
-    "description": "Hace unos días encontré un articulo del blog técnido de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja."
+    "description": "Hace unos días encontré un articulo del blog técnico de los desarrolladores de Idealista. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando Spring como framework, Spring Security OAuth como forma de autenticación y autorización y JWT como forma de codificar el token que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja."
 }
   </script>
   
@@ -257,7 +257,7 @@
 <div class="logotypes">
 <p><img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
 </div>
-<p>Hace unos días encontré un <a href="https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/">articulo del blog técnido de los desarrolladores de Idealista</a>. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando <a href="https://spring.io/">Spring</a> como <em>framework</em>, <a href="https://spring.io/projects/spring-security-oauth">Spring Security OAuth</a> como forma de autenticación y autorización y JWT como forma de codificar el <em>token</em> que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.</p>
+<p>Hace unos días encontré un <a href="https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/">articulo del blog técnico de los desarrolladores de Idealista</a>. En él comentaban que tenían una API para realizar simulaciones hipotecarias usando <a href="https://spring.io/">Spring</a> como <em>framework</em>, <a href="https://spring.io/projects/spring-security-oauth">Spring Security OAuth</a> como forma de autenticación y autorización y JWT como forma de codificar el <em>token</em> que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.</p>
 <p>Ya había oído mencionar JWT pero este artículo me ha permitido conocer su utilidad, y no es poca. Como se menciona en el artículo JWT tiene la ventaja de que que no es necesario persistirlo en una base de datos y contiene toda la información que el servidor de recursos necesita para realizar la autorización ya que es capaz de cargar con información arbitraria que el servicio desee en el momento de la emisión, la autenticación y comprobación de que ha sido emitido por el servidor OAuth la realiza sabiendo que el <em>token</em> está firmado.</p>
 <p>Los <em>tokens</em> son una serie de caracteres aparentemente sin sentido al estar <em>hasheados</em> y firmados con una clave compartida entre servidor OAuth y el servidor de recurso o para mayor seguridad mediante clave privada en el servidor OAuth y su clave pública asociada en el servidor de recursos, con la firma el servidor de recursos el capaz de comprobar la autenticidad del <em>token</em> sin necesidad de comunicarse con él. Los <em>tokens</em> de OAuth son más cortos, los <em>tokens</em> JWT con más largos ya que contienen información adicional. Se componen de tres partes separadas por un punto, una cabecera con el algoritmo <em>hash</em> utilizado y tipo de <em>token</em>, un documento JSON con datos y una firma de verificación.</p>
 <p>El hecho de que los <em>tokens</em> JWT no sea necesario persistirlos en base de datos elimina la necesidad de tener su infraestructura, como desventaja es que no es tan fácil de revocar el acceso a un <em>token</em> JWT y por ello se les concede un tiempo de expiración corto. En el articulo se analizaba su infraestructura y hay varios elementos configurables de diferentes formas, son:</p>
@@ -277,7 +277,7 @@
 </div>
 <h3 id="servidor-oauth">Servidor OAuth</h3>
 <div class="alert alert-warning">
-<p>Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomenda usar un proveedor alternativo de autenticación como <a href="https://www.keycloak.org/">Keycloak</a> o <a href="https://www.okta.com/">Okta</a> u otros servicios como <a href="https://www.google.es/">Google</a> o <a href="https://github.com/">Github</a>.</p>
+<p>Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomienda usar un proveedor alternativo de autenticación como <a href="https://www.keycloak.org/">Keycloak</a> o <a href="https://www.okta.com/">Okta</a> u otros servicios como <a href="https://www.google.es/">Google</a> o <a href="https://github.com/">Github</a>.</p>
 <p>En el artículo <a href="https://picodotdev.github.io/blog-bitix/2016/09/autenticacion-con-oauth-y-keycloak-en-un-servicio-rest-con-jax-rs-y-spring-boot/">Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot</a> muestro un ejemplo con Keycloak y en <a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</a> como añadir autenticación OAuth a cualquier página web y de forma nativa en una aplicación de Spring Boot.</p>
 </div>
 <p>Empezando por el servidor OAuth y las dependencias que necesita, son <em>spring-security-oauth2</em> y para generar <em>tokens</em> JWT <em>spring-security-jwt</em>, el resto son dependencias necesarias de Spring Boot</p>
