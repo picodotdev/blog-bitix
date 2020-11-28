@@ -26,7 +26,7 @@ Hace unos meses se publicó la versión 4.0 del programa y cada semana o dos sem
 
 {{< image
     gallery="true"
-    image1="image:calibre.png" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
+    image1="image:calibre.png" optionsthumb1="300x200" title1="Biblioteca y conversor de libros electrónicos Calibre"
     caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 
 La cantidad que he donado no es mucho pero si un porcentaje de los usuarios que lo utilizan realizarán una pequeña donación el proyecto continuará desarrollándose. Muchos programas de software libre utilizados por usuarios e incluso empresas que ganan millones de dólares confían en proyectos que en algunos casos solo están mantenidos por una persona y de forma voluntaria en su tiempo libre sin recibir un sueldo a cambio.

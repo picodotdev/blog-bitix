@@ -25,7 +25,7 @@ Los servicios en la nube permiten guardar los documentos e información fuera de
 
 [Nextcloud][nextcloud] es un software que permite alojar en nuestro propio servidor nuestros documentos sustituyendo a varios de los servicios de Google. Nextcloud permite almacenar archivos y documentos ofimáticos, fotos, música, calendarios, un visor de PDF, editor de _markdown_, gestor de tareas o nuestros contactos. Permite complementos con los que añadir las funcionalidad que necesitemos como un reproductor de música o un paquete ofimático con [OnlyOffice][onlyoffice] que sustituya a Google Docs.
 
-Una [Raspberry Pi 4][raspberrypi] o una de sus [7 computadoras alternativas][blogbitix-304] similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nexcloud con los 4 GiB de memoria del modelo con más capacidad. Hay [otras placas similares][blogbitix-304] o incluso se puede utilizar un [Intel NUC][blogbitix-363] que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.
+Una [Raspberry Pi 4][raspberrypi] o una de sus [7 computadoras alternativas][blogbitix-304] similares es una buena opción como servidor por su pequeño tamaño, bajo consumo, totalmente silencioso con un recomendable disipador pasivo y suficiente para ejecutar con normalidad Nextcloud con los 4 GiB de memoria del modelo con más capacidad. Hay [otras placas similares][blogbitix-304] o incluso se puede utilizar un [Intel NUC][blogbitix-363] que permiten más cantidad de memoria y sus procesadores son más capaces. Para una nube privada una Raspberry Pi es interesante por su pequeño tamaño y bajo consumo eléctrico dado que su funcionamiento sería constante.
 
 {{< amazon
     linkids="6e87726b77e92056e7ac168add1bc747,bef0fad42b2cc046799c66f7fa220c0f,d64d66fda7d25defd2018c4119aa7e46,df5c52be4ca21b9991d26145edb0b642,39ee0802cdc202ce8259d463b59224ed"
@@ -36,7 +36,7 @@ Usando [Docker][docker] y el [repositorio de GitHub](https://github.com/ONLYOFFI
 * Instalar Docker.
 * Descargar o clonar el repositorio de GitHub.
 * Iniciar con Docker Compose los contenedores de Nextcloud y OnlyOffice.
-* Acceder _http\://localhost_ y realizar la configuración incial, introducir el usuario y contraseña de administrador.
+* Acceder _http\://localhost_ y realizar la configuración inicial, introducir el usuario y contraseña de administrador.
 * Ejecutar _bash set_configuration.sh_.
 * Añadir el complemento de OnlyOffice.
 * Acceder a _http\://localhost_.
@@ -68,7 +68,7 @@ Otras utilidades es un reproductor de música, calendario o galería de fotos, h
     gallery="true"
     image1="image:nextcloud-visor-pdf.png" optionsthumb1="300x200" title1="Visor de documento PDF"
     image2="image:nextcloud-calendario.png" optionsthumb2="300x200" title2="Calendario"
-    image3="image:nextcloud-visor-fotos.png" optionsthumb3="300x200" title3="Vidor de fotos"
+    image3="image:nextcloud-visor-fotos.png" optionsthumb3="300x200" title3="Visor de fotos"
     caption="Aplicaciones y complementos" >}}
 
 Con [WebDAV](https://en.wikipedia.org/wiki/WebDAV) los documentos son accesibles como si fuese una unidad local proporcionando la misma funcionalidad de Google Drive. En GNOME con el explorador de archivos Nautilus es posible conectarse a dispositivo WebDAV, en el caso de Nextcloud la dirección es _dav\://localhost/remote.php/dav/files/admin_.
@@ -79,9 +79,9 @@ Con [WebDAV](https://en.wikipedia.org/wiki/WebDAV) los documentos son accesibles
     image2="image:nextcloud-administracion.png" optionsthumb2="300x200" title2="Opciones de administración"
     caption="Archivos en el explorador de archivos Nautilus con WebDAV y opciones de administración" >}}
 
-Con las [aplicaciones para _smatphone_](https://nextcloud.com/install/#) los documentos quedan accesibles en cualquier lugar teniendo un dispositivo móvil, _smartphone_ o tableta. Tener una nube propia que esté accesible en internet hace necesario tener un dominio propio, añadir seguridad para lo que es necesario configurar Nextcloud de modo que utilice el protocolo seguro que cifre las comunicaciones con TLS, esto requiere obtener [un certificado autofirmado][blogbitix-13] al menos o mejor obteniendolo de [Let's Encrypt][letsencrypt], que proporciona certificados de forma automatizada y gratuita. Otra medida para aumentar la seguridad es utilizar un segundo factor de autenticación o _2FA_.
+Con las [aplicaciones para _smatphone_](https://nextcloud.com/install/#) los documentos quedan accesibles en cualquier lugar teniendo un dispositivo móvil, _smartphone_ o tableta. Tener una nube propia que esté accesible en internet hace necesario tener un dominio propio, añadir seguridad para lo que es necesario configurar Nextcloud de modo que utilice el protocolo seguro que cifre las comunicaciones con TLS, esto requiere obtener [un certificado autofirmado][blogbitix-13] al menos o mejor obteniéndolo de [Let's Encrypt][letsencrypt], que proporciona certificados de forma automatizada y gratuita. Otra medida para aumentar la seguridad es utilizar un segundo factor de autenticación o _2FA_.
 
-Hay [ejemplo de archivo de Docker Compose para tener Nexcloud con un certificado](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/with-nginx-proxy/postgres/fpm/docker-compose.yml) creado y renovado de forma automática con Let's Encrypt a través del contenedor [jrcs/letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) y configurando las variables de entorno _LETSENCRYPT\_HOST_, _LETSENCRYPT\_EMAIL_ con el dominio propio para Nexcloud y un correo electrónico.
+Hay [ejemplo de archivo de Docker Compose para tener Nextcloud con un certificado](https://github.com/nextcloud/docker/blob/master/.examples/docker-compose/with-nginx-proxy/postgres/fpm/docker-compose.yml) creado y renovado de forma automática con Let's Encrypt a través del contenedor [jrcs/letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) y configurando las variables de entorno _LETSENCRYPT\_HOST_, _LETSENCRYPT\_EMAIL_ con el dominio propio para Nextcloud y un correo electrónico.
 
 {{< reference >}}
 * [Serie de artículos sobre Docker][blogbitix-serie-docker]

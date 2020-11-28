@@ -25,7 +25,7 @@ Vault permite centralizar la seguridad, otorgar a cada aplicación los permisos 
 
 [Spring Cloud Vault][spring-cloud-vault] permite a una aplicación [Spring][spring] simplificar la integración con Vault para obtener unas credenciales generadas dinámicamente.
 
-En el archivo de contrucción de la aplicación hay que incluir las dependencias de Spring para la integración con Vault.
+En el archivo de construcción de la aplicación hay que incluir las dependencias de Spring para la integración con Vault.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
@@ -44,15 +44,15 @@ Para probarlo hay que iniciar en este caso el servidor [Consul][consul] ya que e
 {{< code file="vault.sh" language="bash" options="" >}}
 {{< code file="vault.hcl" language="plaintext" options="" >}}
 
-La base de datos postgres se inicia como un contenedor de [Docker][docker].
+La base de datos PostgreSQL se inicia como un contenedor de [Docker][docker].
 
-{{< code file="postgres.sh" language="bash" options="" >}}
+{{< code file="postgresql.sh" language="bash" options="" >}}
 
 Para realizar la configuración de Vault primero hay que iniciar sesión, en el modo desarrollo del ejemplo utilizando el _token root_ que es generado y emitido en la salida al iniciarlo.
 
 {{< code file="vault-login.sh" language="bash" options="" >}}
 
-Como en el artículo [Generar credenciales de conexión a base de datos bajo demanda con Vault][blogbitix-428] hay que activar el _backend_ de _database_ para generar credenciales de bases de datos, en las que básicamente se especifica la cadena de conexión a la base de datos de postgres con un usuario y contraseña con permisos suficientes para crear usuarios y la sentencia SQL que los crea. Se habilita y configura el _backend database_ del que obtener las credenciales.
+Como en el artículo [Generar credenciales de conexión a base de datos bajo demanda con Vault][blogbitix-428] hay que activar el _backend_ de _database_ para generar credenciales de bases de datos, en las que básicamente se especifica la cadena de conexión a la base de datos de PostgreSQL con un usuario y contraseña con permisos suficientes para crear usuarios y la sentencia SQL que los crea. Se habilita y configura el _backend database_ del que obtener las credenciales.
 
 {{< code file="vault-database.sh" language="bash" options="" >}}
 
@@ -60,7 +60,7 @@ Para que la aplicación de Spring Boot obtenga las credenciales ha de autenticar
 
 {{< code file="vault-approle.sh" language="bash" options="" >}}
 
-En Vault los permisos se otorgan con las _policy_, los secretos se organiza en una estructura jerárquica de directorios y a cada una de los contextos se le otorga los permisos deseados. Spring obtiene las credenciales para la base de datos del contexto _database/creds/app_ por lo que al rol utilizando para obtener las credenciales hay que asocialer un _policy_ con permisos de lectura para este contexto. 
+En Vault los permisos se otorgan con las _policy_, los secretos se organiza en una estructura jerárquica de directorios y a cada una de los contextos se le otorga los permisos deseados. Spring obtiene las credenciales para la base de datos del contexto _database/creds/app_ por lo que al rol utilizando para obtener las credenciales hay que asociarle un _policy_ con permisos de lectura para este contexto. 
 
 {{< code file="vault-policy.sh" language="bash" options="" >}}
 {{< code file="database-app.hcl" language="plaintext" options="" >}}

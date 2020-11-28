@@ -10,7 +10,7 @@ comments: true
 language: "es"
 imagePost: "logotype:gnu.svg"
 tags: ["gnu-linux", "planeta-codigo", "seguridad", "software-libre"]
-summary: "Muchos archivos y su contenido son recuperables aún después de eliminados y liberado su espacio ocupado del sistema de archivos. Herramientas como Foremost son capaces de recuperar el contenido de un archivo si no ha sido sobreescrito accediendo a bajo nivel a los datos de la unidad, ya esté corrupta y de algún error al montarla o funcione perfectamente. Pudiendo extraer una imagen de la unidad seremos capaces de recuperar gran cantidad de archivos motivo por el cual al deshacernos de una unidad de almacenamiento es recomendable hacer un borrado seguro para evitar que información personal o confidencial sea obtenida con cualquier propósito."
+summary: "Muchos archivos y su contenido son recuperables aún después de eliminados y liberado su espacio ocupado del sistema de archivos. Herramientas como Foremost son capaces de recuperar el contenido de un archivo si no ha sido sobrescrito accediendo a bajo nivel a los datos de la unidad, ya esté corrupta y de algún error al montarla o funcione perfectamente. Pudiendo extraer una imagen de la unidad seremos capaces de recuperar gran cantidad de archivos motivo por el cual al deshacernos de una unidad de almacenamiento es recomendable hacer un borrado seguro para evitar que información personal o confidencial sea obtenida con cualquier propósito."
 ---
 
 {{% post %}}
@@ -39,7 +39,7 @@ Una vez que recuperé los archivos y viendo que pude extraer una imagen de la un
 
 Esto mismo es aplicable a una unidad que funcione correctamente, un archivo y su contenido es recuperable aún después de ser eliminado incluido de la papelera, con más probabilidad si la unidad no tiene muchas escrituras o una buena cantidad de espacio libre ya que por defecto únicamente se elimina de las estructuras del sistema de archivos y el contenido sigue estando presente simplemente no referenciado.
 
-Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado seguro de un archivo con el comando `wipe` o de una unidad con `dd`][blogbitix-130] que consiste en sobreescribir el contenido del archivo con datos aleatorios, otra alternativa es [cifrar el sistema de archivos][blogbitix-128]. Es recomendable hacerlo cuando sustituyamos y nos deshagamos un disco duro o unidad de almacenamiento porque muchos de los archivos son recuperables incluido después de un formateo rápido de la unidad.
+Para hacer irrecuperable el contenido de un archivo hay que hacer un [borrado seguro de un archivo con el comando `wipe` o de una unidad con `dd`][blogbitix-130] que consiste en sobrescribir el contenido del archivo con datos aleatorios, otra alternativa es [cifrar el sistema de archivos][blogbitix-128]. Es recomendable hacerlo cuando sustituyamos y nos deshagamos un disco duro o unidad de almacenamiento porque muchos de los archivos son recuperables incluido después de un formateo rápido de la unidad.
 
 Te sorprenderá la cantidad de archivos que son recuperados por Foremost: documentos, imágenes, archivos de texto, ...
 

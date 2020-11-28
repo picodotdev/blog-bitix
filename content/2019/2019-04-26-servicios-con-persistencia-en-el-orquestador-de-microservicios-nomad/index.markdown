@@ -14,7 +14,7 @@ promoted: false
 imagePost: "logotype:nomad.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
-summary: "Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tantan libertad para iniciarse en cualquier nodo. En Nomad una estategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados."
+summary: "Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados."
 ---
 
 {{% post %}}
@@ -23,7 +23,7 @@ summary: "Los servicios que necesitan almacenar datos como las bases de datos o 
 
 Algunos servicios no necesitan almacenar ningún estado porque no lo necesitan o porque el estado se mantiene en otro servicio. Que un servicio no necesite mantener estado es bueno porque de esta manera el servicio se puede escalar al número de instancias adecuadas para prestar el servicio, también porque si falla una instancia la petición puede ser reenviada a otra instancia, una instancia que falla puede ser reemplazada sin problema en otro _host_. Sin embargo, hay otro tipo de instancias que si almacenan estado como las bases de datos ya sea [PostgreSQL][postgresql], [MySQL][mysql], [Redis][redis], [MongoDB][mongodb], otra o simplemente archivos en el sistema de archivos.
 
-Las instancias que tienen estado no son tan fáciles de reemplazar dado que los datos son necesarios para su funcionamiento, una instancia de un servicio con estado como no puede iniciarse en otro nodo libremente solo se puede iniciar en el nodo que contenga los datos. Eso o cuando el servicio se inicia en otro nodo los datos son trasladados o por algún mechanismo transparente a los servicios están disponibles en el nuevo nodo.
+Las instancias que tienen estado no son tan fáciles de reemplazar dado que los datos son necesarios para su funcionamiento, una instancia de un servicio con estado como no puede iniciarse en otro nodo libremente solo se puede iniciar en el nodo que contenga los datos. Eso o cuando el servicio se inicia en otro nodo los datos son trasladados o por algún mecanismo transparente a los servicios están disponibles en el nuevo nodo.
 
 En [Docker Swarm][docker-swarm] ciertos _drivers_ de volúmenes pueden proporcionar volúmenes accesibles desde cualquier _host_ del _cluster_ pero por defecto _Swarm_ no lo ofrece. En [Kubernetes][kubernetes] los volúmenes pueden ser dispositivos de almacenamiento provenientes de [EBS][amazon-ebs] de modo que si un _pod_ es movido a otro _host_ basta con que el _pod_ sea conectado de nuevo al EBS anterior y los datos están accesibles en el nuevo nodo.
 

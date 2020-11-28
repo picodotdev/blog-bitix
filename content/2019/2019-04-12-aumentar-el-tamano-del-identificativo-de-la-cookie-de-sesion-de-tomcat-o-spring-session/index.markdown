@@ -26,7 +26,7 @@ Según [Insufficient Session-ID Length](https://www.owasp.org/index.php/Insuffic
 
 Los datos se guardan en el servidor y la _cookie_ con el identicativo de sesión no ocupa mucho aún pasando de 32 caracteres hexadecimales a una cifra mayor como 128, el número de caracteres no es significativo para el rendimiento pero se dificulta en varios órdenes de magnitud la dificultad de adivinar una _cookie_. 
 
-Unsando [Spring Boot][spring-boot] y _Tomcat_ basta con usar la clase _Manager_ para cambiar el valor por defecto de longitud de la sesión.
+Usando [Spring Boot][spring-boot] y _Tomcat_ basta con usar la clase _Manager_ para cambiar el valor por defecto de longitud de la sesión.
 
 {{< code file="Main-1.java" language="java" options="" >}}
 

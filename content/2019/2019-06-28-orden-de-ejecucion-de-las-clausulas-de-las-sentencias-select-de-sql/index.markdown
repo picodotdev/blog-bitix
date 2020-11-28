@@ -23,7 +23,7 @@ El lenguaje SQL se compone de diferentes tipos de sentencias según el tipo de o
 
 Las sentencias _SELECT_ tienen la siguiente [sintaxis en PostgreSQL](https://www.postgresql.org/docs/11/sql-select.html).
 
-{{< code file="postgres-sql-syntax.sql" language="SQL" options="" >}}
+{{< code file="postgresql-sql-syntax.sql" language="SQL" options="" >}}
 
 La sentencia _SELECT_ se compone de varias cláusulas que se interpretan siguiendo una secuencia de operaciones tal que:
 

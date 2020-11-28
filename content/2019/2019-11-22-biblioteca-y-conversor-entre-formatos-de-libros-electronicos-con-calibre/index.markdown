@@ -25,7 +25,7 @@ Calibre permite organizar los libros por autor y muestra las portadas de los mis
 
 {{< image
     gallery="true"
-    image1="image:calibre.png" optionsthumb1="300x200" title1="Bibliteca y conversor de libros electrónicos Calibre"
+    image1="image:calibre.png" optionsthumb1="300x200" title1="Biblioteca y conversor de libros electrónicos Calibre"
     caption="Biblioteca y conversor de libros electrónicos Calibre" >}}
 
 La conversión entre formatos no tarda muchos y en ningún momento me he encontrado que el resultado sea malo si el original está correctamente formateado. Como los libros electrónicos son archivos pequeños la conversión se realiza en unos pocos decenas de segundos. Además, Calibre permite realizar la conversión de forma masiva sobre varios libros guardando los libros en diferentes formatos en la biblioteca.

@@ -29,7 +29,7 @@ Usar estos dos comandos directamente ya no es necesario pero como curiosidad com
 
 ### Estructura de directorios de un proyecto
 
-Las herramientas de construcción Maven y Gradle siguen una convención en la estructura de directorios y archivos para los proyectos Java. Esta convención proporciona que la estructuta de directorios sea la misma en todos los proyectos Java y hace innecesaria una configuración específica para cada proyecto lo que hace a los proyectos más sencillos y fáciles de empezar. El código fuente se ubica en el directorio _src/main/java_ y las clases compiladas se generan en el directorio _target_ o _build_.
+Las herramientas de construcción Maven y Gradle siguen una convención en la estructura de directorios y archivos para los proyectos Java. Esta convención proporciona que la estructura de directorios sea la misma en todos los proyectos Java y hace innecesaria una configuración específica para cada proyecto lo que hace a los proyectos más sencillos y fáciles de empezar. El código fuente se ubica en el directorio _src/main/java_ y las clases compiladas se generan en el directorio _target_ o _build_.
 
 {{< code file="tree.sh" language="bash" options="" >}}
 

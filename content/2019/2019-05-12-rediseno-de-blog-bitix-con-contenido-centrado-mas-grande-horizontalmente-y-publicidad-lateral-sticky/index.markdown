@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imagePost: "logotype:hugo.svg"
 tags: ["blog", "planeta-codigo"]
-summary: "He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendmiento de los _banners_ de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un _billboard_ y publicidad lateral _sticky_ para que permanezca más tiempo visible y quizá mejorar su rendmiento."
+summary: "He cambiado ligeramente el diseño del blog con la intención de mejorar la experiencia de usuario haciendo que el contenido quede centrado en la pantalla en vez de estar desplazado un poco a la izquierda por un panel lateral. Pero más espacio horizontal para el contenido podría afectar negativamente al rendimiento de los _banners_ de publicidad laterales si tenía que quitarlos con lo que he tenido que buscar una solución para ambos requerimientos. También he experimentado con la disposición de la publicidad, incluido un _billboard_ y publicidad lateral _sticky_ para que permanezca más tiempo visible y quizá mejorar su rendimiento."
 ---
 
 {{% post %}}
@@ -41,7 +41,7 @@ Hacer que el contenido estuviese centrado y ocupase más espacio horizontal obli
 
 Sin embargo, hacer que el contenido ocupe todo el espacio horizontal de lo que tenía anteriormente y poner la publicidad más a la derecha requiere que los usuarios tengan una pantalla con suficientemente resolución para que quepa todo. Yo [tengo una pantalla de resolución 2560x1440][blogbitix-356] y lo veía todo bien pero [Google Analytics][google-analytics] me indicaba que un porcentaje importante del los usuarios, un 32%, tienen una resolución habitual en los portátiles de 1366x768 píxeles. Con esa resolución los 1140 píxeles requeridos para el contenido más los 300 del _banner_ horizontal en la parte derecha no entraba. También agravado si para algunas páginas deseaba en la parte lateral izquierda otro panel _sticky_ de publicidad.
 
-Mantener la publicidad lateral _sticky_ hace que no entre un _skycraper_ y un _large-rectangle_ verticalmente en una resolución de 768px de alto de modo que he dejado solo un espacio para publicidad. Como idea para el futuro quizá haga que al llegar a cierto desplazamiento vertical se cambier el espacio de publicidad por otro.
+Mantener la publicidad lateral _sticky_ hace que no entre un _skycraper_ y un _large-rectangle_ verticalmente en una resolución de 768px de alto de modo que he dejado solo un espacio para publicidad. Como idea para el futuro quizá haga que al llegar a cierto desplazamiento vertical se cambiar el espacio de publicidad por otro.
 
 {{< image
     gallery="true"
@@ -68,9 +68,9 @@ Así queda en las resoluciones habituales de 2560 píxeles, 1920, 1600, 1440, 13
     image3="image:diseno-blogbitix-despues-1200.png" optionsthumb3="300x200" title3="Diseño después con resolución 1200"
     caption="Diseño después de los cambios a diferentes resoluciones (2560, 1920, 1600, 1440, 1366 y 1200)" >}}
 
-Padría hacer algún experimento o test _a/b_ de que diseño resulta mejor si el anterior o el contenido más ancho y medirlo por el porcentaje de rebote, tiempo medio de permanencia en la página o retorno de usuarios pero dudo que esas métricas fuesen suficientemente buenas como para determinar que un diseño sea mejor que otro, es dedicar un tiempo y esfuerzo a medir algo que considero claramente es mejor. En lo que si podría hacer algún experimento es medir que disposición de anuncios, en ubicación y tamaño da mejor resultado pero prefiero dedicar el tiempo a escribir artículos, no creo que los cambios que he hecho en los anuncios impacten muy negativamente o quiza se compense con la posición _sticky_ de los _banners_ laterales.
+Podría hacer algún experimento o test _a/b_ de que diseño resulta mejor si el anterior o el contenido más ancho y medirlo por el porcentaje de rebote, tiempo medio de permanencia en la página o retorno de usuarios pero dudo que esas métricas fuesen suficientemente buenas como para determinar que un diseño sea mejor que otro, es dedicar un tiempo y esfuerzo a medir algo que considero claramente es mejor. En lo que si podría hacer algún experimento es medir que disposición de anuncios, en ubicación y tamaño da mejor resultado pero prefiero dedicar el tiempo a escribir artículos, no creo que los cambios que he hecho en los anuncios impacten muy negativamente o quizá se compense con la posición _sticky_ de los _banners_ laterales.
 
-También he introducirdo un _banner_ _billboard_ en la cabecera de la página a ver que tal resultado da, el _leaderboard_ del inicio de los artículos tenía buen rendimiento aún siendo bastante pequeño, lo he mantenido en los artículos que incluyo un resumen. En los que no tienen un resumen lo he sustituido por el _billboard_ ya que mantener ambos me resutlaba un exceso de publicidad. Dentro de unos meses compararé con los anteriores o del año pasado si los cambios que he hecho dan buen resultado.
+También he introducirlo un _banner_ _billboard_ en la cabecera de la página a ver que tal resultado da, el _leaderboard_ del inicio de los artículos tenía buen rendimiento aún siendo bastante pequeño, lo he mantenido en los artículos que incluyo un resumen. En los que no tienen un resumen lo he sustituido por el _billboard_ ya que mantener ambos me resutlaba un exceso de publicidad. Dentro de unos meses compararé con los anteriores o del año pasado si los cambios que he hecho dan buen resultado.
 
 {{< reference >}}
 * [Hola nuevo mundo][blogbitix-0]

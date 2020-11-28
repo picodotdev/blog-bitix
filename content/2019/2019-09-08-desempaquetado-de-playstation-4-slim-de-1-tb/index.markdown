@@ -50,7 +50,7 @@ Entre la Xbox y la PlayStation he preferido la última aún siendo más cara por
     image2="image:xbox-one-s.jpg" optionsthumb2="200x150" title2="Juegos incluidos en el pack"
     caption="PlayStation 4 Slim y Xbox One S" >}}
 
-La mayoría de juegos están en ambas consolas, salvo unos cuantos exclusivos que tiene cada una (hay más exclusicos en la PS). Revisando la lista que hecho de los juegos que me han llamado la atención de la PlayStation  solo tenía tres o cuatro exclusivos apuntados, así que esto para mi no ha sido determinante. Las dos consolas ofrecen diría que la misma calidad al utilizar ambas un procesador SOC similar producido por [AMD][amd], asi que esto tampoco es determinante para elegir una u otra plataforma.
+La mayoría de juegos están en ambas consolas, salvo unos cuantos exclusivos que tiene cada una (hay más exclusivos en la PS). Revisando la lista que hecho de los juegos que me han llamado la atención de la PlayStation  solo tenía tres o cuatro exclusivos apuntados, así que esto para mi no ha sido determinante. Las dos consolas ofrecen diría que la misma calidad al utilizar ambas un procesador SOC similar producido por [AMD][amd], asi que esto tampoco es determinante para elegir una u otra plataforma.
 
 En el caso de Stadia con mi conexión actual de ADSL no creo que me posibilite jugar con una calidad de al menos 1080p y está por ver que tal resulta la jugabilidad con las latencias. También está por ver a que precio salen los juegos en Stadia ya que en la opción sin suscripción de comprar únicamente los juegos y poder jugarlos cuanto se quiera me extraña que sean al mismo precio que en la PS, quizá me equivoque pero creo que los juegos de Stadia serán más caros o será un punto a su favor por no tener que hacer un desembolso inicial en hardware.
 
@@ -67,7 +67,7 @@ Si hubiese sabido que los juegos con Wine en GNU/Linux funcionan en lo que proba
 
 ### Lista de juegos de XBOX
 
-* [Juegox Xbox One](https://es.wikipedia.org/wiki/Anexo:Videojuegos_para_Xbox_One)
+* [Juegos Xbox One](https://es.wikipedia.org/wiki/Anexo:Videojuegos_para_Xbox_One)
 * [Video juegos más vendidos de Xbox One](https://es.wikipedia.org/wiki/Anexo:Videojuegos_m%C3%A1s_vendidos_de_la_Xbox_One)
 
 ### Juegos digitales o físicos
@@ -207,7 +207,7 @@ La consola.
     image3="image:playstation-4-slim-6.jpg" optionsthumb3="200x150" title3="PlayStation 4 Slim"
     caption="PlayStation 4 Slim" >}}
 
-Y los cables y manuales incluidos. En la foto se ven el mando, el calbe HDMI, el cable USB cargador del mando, el cable de energía y los auriculares con micrófono.
+Y los cables y manuales incluidos. En la foto se ven el mando, el cable HDMI, el cable USB cargador del mando, el cable de energía y los auriculares con micrófono.
 
 {{< image
     gallery="true"
@@ -227,7 +227,7 @@ Y los cables y manuales incluidos. En la foto se ven el mando, el calbe HDMI, el
     image3="image:mando-dualshock-4-3.jpg" optionsthumb3="200x150" title3="Mando DualShock 4 V2"
     caption="Mando DualShock" >}}
 
-La verdad es que el precio no la he comprado en el mejor momento como se puede comprobar usando el [seguidor de precios CamelCamelCamel][blogbitix-414], para estar el producto en el final de su vida el precio no es que sea mucho menor que desde su comercialización ni comparándolo con sus competidores. Para adquirirla a mejor precio hubiera sido mejor que esperase un par e meses al _black friday_ o época navideña o un día sin IVA de algún centro comercial o ya casi hasta que salga la PS5 momento en el que bajara algo de precio por empezar a agotar existencias y quedar descatalogada. Pero es durante unas semanas de vacaciones en las que iba a poder jugar de forma más intensiva, los ingresos de Adsense del blog los empleo en esto, de esta menera me compensa la dedicación que me requiere, otra gente tendrá otros vicios y gastos que yo no tengo. Otra posibilidad era haber cogido la versión de 500 GB que salía algo más económica y un disco de 1 o 2 TB aparte pero entre portátiles que voy desechando quedándome con los discos duros no quería tener otro más de 500 GB junto con tener que adquirirle una caja USB de disco duro externa.
+La verdad es que el precio no la he comprado en el mejor momento como se puede comprobar usando el [seguidor de precios CamelCamelCamel][blogbitix-414], para estar el producto en el final de su vida el precio no es que sea mucho menor que desde su comercialización ni comparándolo con sus competidores. Para adquirirla a mejor precio hubiera sido mejor que esperase un par e meses al _black friday_ o época navideña o un día sin IVA de algún centro comercial o ya casi hasta que salga la PS5 momento en el que bajara algo de precio por empezar a agotar existencias y quedar descatalogada. Pero es durante unas semanas de vacaciones en las que iba a poder jugar de forma más intensiva, los ingresos de Adsense del blog los empleo en esto, de esta manera me compensa la dedicación que me requiere, otra gente tendrá otros vicios y gastos que yo no tengo. Otra posibilidad era haber cogido la versión de 500 GB que salía algo más económica y un disco de 1 o 2 TB aparte pero entre portátiles que voy desechando quedándome con los discos duros no quería tener otro más de 500 GB junto con tener que adquirirle una caja USB de disco duro externa.
 
 ### Primera toma de contacto
 

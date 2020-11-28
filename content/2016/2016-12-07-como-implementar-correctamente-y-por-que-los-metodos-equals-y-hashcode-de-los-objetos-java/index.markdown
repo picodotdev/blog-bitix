@@ -22,7 +22,7 @@ En Java los métodos [equals](javadoc8:java/lang/Object.html#equals-java.lang.Ob
 
 El método _equals_ es usado en las colecciones de tipo _List_, _Set_, y también _Map_ para determinar si un objeto ya está incluida en la colección, el método _hashCode_ es usado en los _Map_ para encontrar el objeto asociado a la clave. Dado que las colecciones son ampliamente usadas en cualquier programa la correcta implementación implementación de los métodos _equals_ y _hashCode_ es fundamental ya que de lo contrario descubriremos errores poco agradables.
 
-Una de las cosas que tenemos que tener cuenta es que siempre que sobreescribamos el método _equals_ también debemos sobreescribir el método _hashCode_. Según el [contrato definido en la clase Object](javadoc8:java/lang/Object.html) deberemos saber que:
+Una de las cosas que tenemos que tener cuenta es que siempre que sobrescribamos el método _equals_ también debemos sobrescribir el método _hashCode_. Según el [contrato definido en la clase Object](javadoc8:java/lang/Object.html) deberemos saber que:
 
 * Durante la ejecución del programa el método _hashCode_ debe retornar el mismo valor siempre que no se modifique la información usada en el método _equals_.
 * Si dos objetos son iguales según sus métodos _equals_ entonces el valor devuelto por _hashCode_ en cada uno de los dos objetos debe devolver el mismo valor.

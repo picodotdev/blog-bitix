@@ -55,7 +55,7 @@ Una vez iniciada la máquina virtual Vagrant configura SSH para tener acceso a s
     image1="image:vagrant-ssh.png" optionsthumb1="300x200" title1="Vagrant SSH"
     caption="Vagrant SSH" >}}
 
-La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ con los comandos para instalarlo y un archivo de [Docker Compose][docker-compose] con un servicio del servidor web [nginx][nginx]. Desde la terminal de la máquina virtual se inicia el servicio con Docker que queda accesible tanto desde la pripia máquina virtual como desde el _host_ indicando la dirección IP que se le ha asignado.
+La máquina en el ejemplo ha sido aprovisionada con Docker mediante un _script_ con los comandos para instalarlo y un archivo de [Docker Compose][docker-compose] con un servicio del servidor web [nginx][nginx]. Desde la terminal de la máquina virtual se inicia el servicio con Docker que queda accesible tanto desde la propia máquina virtual como desde el _host_ indicando la dirección IP que se le ha asignado.
 
 {{< image
     gallery="true"

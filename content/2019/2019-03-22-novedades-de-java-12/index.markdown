@@ -40,7 +40,7 @@ Las mejoras incluídas en esta versión son:
 {{< tableofcontents >}}
 
 ### Expresiones switch
-Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas. Cada rama de la sentencia _siwtch_ devuelve un valor y no hace falta usar la sentencia _break_, se pueden utilizar varios casos para cada rama.
+Las expresiones _switch_ permiten quitar varias sentencias _if else_ encadenadas. Cada rama de la sentencia _switch_ devuelve un valor y no hace falta usar la sentencia _break_, se pueden utilizar varios casos para cada rama.
 
 * [JDK 12: Switch Statements/Expressions in Action](https://dzone.com/articles/jdk-12-switch-statementsexpressions-in-action)
 * [Informe de JEP 325 Switch Expressions (Preview)](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8192963)

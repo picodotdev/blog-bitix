@@ -27,7 +27,7 @@ La paginación con _limit_ y _offset_ permite ir a una página directamente en u
 
 [jOOQ][jooq] con la cláusula [seek](https://www.jooq.org/javadoc/latest/org/jooq/SelectSeekStep1.html) permite hacer la paginación eficiente de una forma cómoda. La técnica se basa en ordenar los resultados por unas determinadas columnas y filtrar por condición _where_ sobre las mismas columnas los resultados anteriores, los valores por los que se filtra en la condición son los obtenidos de la última página.
 
-Haciendo _seek_ la paginación es más eficiente ya que la base de datos no necesita recuperar los datos de las páginas anteriores ya que los descarta utilizando la cláusula _where_ que al final es en lo que se traduce la clausula _seek_. Y se elimina el problema de que se inserten datos en páginas anteriores y alguno se pudiese aparecer dos veces en los resultados ya que manteniendo la ordenación de la conlsulta si se insertan filas en páginas anteriores no afectarán a las páginas siguientes.
+Haciendo _seek_ la paginación es más eficiente ya que la base de datos no necesita recuperar los datos de las páginas anteriores ya que los descarta utilizando la cláusula _where_ que al final es en lo que se traduce la clausula _seek_. Y se elimina el problema de que se inserten datos en páginas anteriores y alguno se pudiese aparecer dos veces en los resultados ya que manteniendo la ordenación de la consulta si se insertan filas en páginas anteriores no afectarán a las páginas siguientes.
 
 {{< code file="Seek.java" language="java" options="" >}}
 

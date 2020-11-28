@@ -23,7 +23,7 @@ El registro y descubrimiento de servicios permite a los servicios registrase y a
 
 La funcionalidad de registro y descubrimiento consiste en dos partes, por un lado cuando se inicia una instancia de un servicio se registra su ubicación en el servicio de registro y descubrimiento y por otro lado los clientes cuando requieren una instancia de un servicio la buscan en el servicio de descubrimiento.
 
-El registro en el servicio de descubrimiento puede hacerse de dos formas, que sea el propio servicio el que se registra en el servicio de descubrimiento o que se sea otro servicio el que lo registra. Para el primer caso escribí un artículo con [Consul][consul] como servicio de descubrimiento en una aplicación de [Spring Boot][spring-boot] que se registra al iniciarse. La ventaja es que es autosuficiente pero adquiere la tarea de autoregistrarse. Por el contrario delegar la trea de registro permite extraerla de los servicios y ofrecer esa funcionalidad por un servicio con esa misión específicamente.
+El registro en el servicio de descubrimiento puede hacerse de dos formas, que sea el propio servicio el que se registra en el servicio de descubrimiento o que se sea otro servicio el que lo registra. Para el primer caso escribí un artículo con [Consul][consul] como servicio de descubrimiento en una aplicación de [Spring Boot][spring-boot] que se registra al iniciarse. La ventaja es que es autosuficiente pero adquiere la tarea de autoregistrarse. Por el contrario delegar la tarea de registro permite extraerla de los servicios y ofrecer esa funcionalidad por un servicio con esa misión específicamente.
 
 * [Registro y descubrimiento de servicios con Spring Cloud y Consul][blogbitix-206]
 
@@ -50,7 +50,7 @@ En este caso se utiliza como servicio una base de datos [PostgreSQL][postgresql]
 {{< code file="docker-postgres.sh" language="bash" options="" >}}
 {{< code file="docker-ps.sh" language="bash" options="" >}}
 
-En la salida del contenedor de Registrator se emite una traza indicando que el servicio de postgres ha sido registrado en Consul.
+En la salida del contenedor de Registrator se emite una traza indicando que el servicio de PostgreSQL ha sido registrado en Consul.
 
 {{< code file="docker-registrator.out" language="plaintext" options="" >}}
 
@@ -58,8 +58,8 @@ Una vez iniciado el servicio de postgres en la consola de Consul se muestra con 
 
 {{< image
     gallery="true"
-    image1="image:consul-postgres-1.png" optionsthumb1="300x200" title1="Servicio de postgres registrado en Consul"
-    image2="image:consul-postgres-2.png" optionsthumb2="300x200" title2="Servicio de postgres registrado en Consul"
+    image1="image:consul-postgres-1.png" optionsthumb1="300x200" title1="Servicio de PostgreSQL registrado en Consul"
+    image2="image:consul-postgres-2.png" optionsthumb2="300x200" title2="Servicio de PostgreSQL registrado en Consul"
     caption="Servicio de postgres registrado en Consul por Registrator" >}}
 
 En vez de iniciar los servicios individualmente con comandos de Docker creando un archivo de [Docker Compose][docker-compose] con la definición de todos los contenedores se facilita iniciar todos los contenedores con un comando.

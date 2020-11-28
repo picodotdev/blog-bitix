@@ -17,7 +17,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" image2="google.svg" title2="Google" width2="350" >}}
 
-[Google ofrece numerosos productos de desarrollo](https://developers.google.com/products/develop/) que permiten automatizar tareas e realizar integración con servicios, aplicaciones y documentos de Google creando un programa con un lenguaje de programacion. [Las API que ofrece Google](https://developers.google.com/api-client-library/java/apis/) desde [Drive][google-drive], [Sheets][google-sheets], [Sides][google-slides], [GMail][google-gmail], [Calendar][google-calendar], [Contacts][google-contacts], [Street View][google-streetview], [AdSense][google-adsense], [Analytics][google-analytics], [Youtube][youtube],  [Speech][google-speech] y muchos más.
+[Google ofrece numerosos productos de desarrollo](https://developers.google.com/products/develop/) que permiten automatizar tareas e realizar integración con servicios, aplicaciones y documentos de Google creando un programa con un lenguaje de programación. [Las API que ofrece Google](https://developers.google.com/api-client-library/java/apis/) desde [Drive][google-drive], [Sheets][google-sheets], [Sides][google-slides], [GMail][google-gmail], [Calendar][google-calendar], [Contacts][google-contacts], [Street View][google-streetview], [AdSense][google-adsense], [Analytics][google-analytics], [Youtube][youtube],  [Speech][google-speech] y muchos más.
 
 * [Google API Client Libraries](https://developers.google.com/api-client-library/)
 * [Google API Client Libraries, Java](https://developers.google.com/api-client-library/java/)
@@ -32,7 +32,7 @@ Como contrapartida de estas integraciones hay que tener en cuenta que una aplica
 
 {{< youtube video="0rpgVE_nrIk" >}}
 
-Otro posible aplicación es utilizar documentos de texto en Google Drive como plantillas de correos electrónicos, se permite una edición sencilla y posteriormente se importan en la aplicación para que los utilice. A un documento de Google Drive se accede mediante esta petición HTTP GET. Las hojas de cálculo tamibén están disponibles mediante una interfaz REST sin embargo usando las APIs que ofrece Google para cada lenguaje es más cómodo que tratar con los datos en crudo en formato JSON.
+Otro posible aplicación es utilizar documentos de texto en Google Drive como plantillas de correos electrónicos, se permite una edición sencilla y posteriormente se importan en la aplicación para que los utilice. A un documento de Google Drive se accede mediante esta petición HTTP GET. Las hojas de cálculo también están disponibles mediante una interfaz REST sin embargo usando las APIs que ofrece Google para cada lenguaje es más cómodo que tratar con los datos en crudo en formato JSON.
 
 {{< code file="curl-1.sh" language="bash" options="" >}}
 {{< code file="curl-2.sh" language="bash" options="" >}}
@@ -41,7 +41,7 @@ Para las hojas de cálculo hay dos formas de autorización para una aplicación.
 
 {{< code file="Main-2.java" language="java" options="" >}}
 
-Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crear un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de ecritura.
+Laa API _key_ se crean en la página de [Credenciales](https://console.developers.google.com/apis/credentials) para lo que previamente hay que crear un proyecto. Para leer el documento hay que compartirlo al menos para cualquiera que tenga acceso al enlace, al compartirlo se especifica si se hace en modo solo lectura o con permisos de escritura.
 
 {{< image
     gallery="true"

@@ -19,7 +19,7 @@ summary: "Cambiando la ruta raíz del entorno de ejecución de docker, dónde gu
 
 {{< logotype image1="docker.svg" >}}
 
-Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de [Docker][docker] es _/var/lib/docker_. En mi caso hace un tiempo me compre un [disco de estado sólido Samsung 840 EVO de 250 GiB][blogbitix-18] y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, [construyendo imágenes propias con archivos Dockerfile][blogbitix-51] y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un pendrive o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.
+Por defecto el directorio donde se guardan las imágenes y los contenedores junto con otros metadatos de [Docker][docker] es _/var/lib/docker_. En mi caso hace un tiempo me compre un [disco de estado sólido Samsung 840 EVO de 250 GiB][blogbitix-18] y comenté en el artículo del anterior enlace. Aunque probablemente un disco SSD sea suficientemente fiable como para que antes de que falle cambiémos de ordenador porque ya es antiguo, yo trato de evitar hacer muchas escrituras al disco. Al trabajar con Docker ya sea descargando imágenes, [construyendo imágenes propias con archivos Dockerfile][blogbitix-51] y al arrancar contenedores cuyos procesos escriben en disco prefiero externalizar esas escrituras en una unidad USB ya sea un _pendrive_ o un disco duro. En este artículo comentaré como modificar Docker para que las imágenes y los contenedores estén almacenados en una memoria USB o en otra localización de la por defecto.
 
 En Arch Linux el proceso de docker se arranca con un servicio de systemd:
 
@@ -42,7 +42,7 @@ Iniciando ahora el servicio de Docker veremos que en el directorio que hayamos e
 
 {{% warning %}}
 
-Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobreescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.
+Cada vez que se actualice el paquete de docker el archivo del servicio de systemd se sobrescribirá y perderemos la configuración, de modo que en cada actualización de docker deberemos realizar de nuevo la modificación.
 {{% /warning %}}
 
 Este artículo es uno de otros que he publicado, en otros artículos he escrito sobre otras cosas relacionadas con docker.

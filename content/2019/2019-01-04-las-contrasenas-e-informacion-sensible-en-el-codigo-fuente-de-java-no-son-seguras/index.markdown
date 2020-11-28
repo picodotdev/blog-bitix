@@ -18,7 +18,7 @@ tags: ["java", "planeta-codigo", "programacion", "seguridad"]
 
 {{< logotype image1="java.svg" >}}
 
-En Java el código fuente se compila a una representación en _bytecode_ independiente de la arquitectura del procesador y sistema operativo donde posteriormente se ejecuta. Este _bytecode_ es un formato binario pero que puede ser decompilado fácilmente con la herramienta _javap_ incluida en el propio JDK o examinado su contenido simplemente con un editor de texto hexadecimal. Con estas herramientas es fácil ver las instrucciones del programa para la máquina virtual y los caracteres de las cadenas que fueron incluidas en el código fuente.
+En Java el código fuente se compila a una representación en _bytecode_ independiente de la arquitectura del procesador y sistema operativo donde posteriormente se ejecuta. Este _bytecode_ es un formato binario pero que puede ser descompilado fácilmente con la herramienta _javap_ incluida en el propio JDK o examinado su contenido simplemente con un editor de texto hexadecimal. Con estas herramientas es fácil ver las instrucciones del programa para la máquina virtual y los caracteres de las cadenas que fueron incluidas en el código fuente.
 
 Lógicamente, de este modo _hardcodear_ una contraseña en el código fuente hace que el código fuente sea inseguro pero es que incluso distribuir el binario compilado no es seguro ya que cualquier usuario que tenga acceso al binario de la aplicación es potencialmente capaz de recuperar la contraseña, tener acceso al binario quizá no sea sencillo pero aparte de eso no hay ninguna medida de seguridad adicional que añada más dificultad. Quien dice contraseña dice igualmente una clave privada de cifrado simétrico usada para cifrar o descifrar datos o un _bearer token_ de OAuth. En definitiva es un problema de seguridad.
 
@@ -30,7 +30,7 @@ Compilado el programa y utilizando la herramienta _javap_ se puede obtener el va
     image2="image:c-bin-hex.png" optionsthumb2="300x200" title2="Contenido hexadecimal de un archivo binario de C"
     caption="Contenido hexadecimal de un archivo binario de bytecode Java y C" >}}
 
-El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o decompilado los caracteres de la cadena son fácilmente reconocibles.
+El siguiente ejemplo sencillo de un programa Java incluye una cadena con una supuesta contraseña. Se observa que en el archivo visualizado en formato hexadecimal o descompilado los caracteres de la cadena son fácilmente reconocibles.
 
 {{< code file="Main.java" language="java" options="" >}}
 

@@ -13,7 +13,7 @@ promoted: false
 imagePost: "logotype:consul.svg"
 tags: ["java", "planeta-codigo", "programacion", "software", "software-libre"]
 series: ["hashicorp", "spring-cloud"]
-summary: "Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, _gateway/load balancer/reverse proxy_, trazabilidad y métricas, autenticación, orquestación, ... Los microservicios quiza no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como _gateway_."
+summary: "Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, _gateway/load balancer/reverse proxy_, trazabilidad y métricas, autenticación, orquestación, ... Los microservicios quizá no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como _gateway_."
 ---
 
 {{% post %}}
@@ -64,7 +64,7 @@ Los contenedores de Docker se añade a una misma red para que puedan comunicarse
 
 {{< code file="docker-network-create.sh" language="bash" options="" >}}
 
-Poteriormente hay que ejecutar Consul y Nomad tras lo cual se puede acceder a sus consolas de estado.
+Posteriormente hay que ejecutar Consul y Nomad tras lo cual se puede acceder a sus consolas de estado.
 
 {{< code file="nomad-consul-run.sh" language="bash" options="" >}}
 

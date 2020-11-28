@@ -19,7 +19,7 @@ series: ["spring-cloud"]
 
 {{< logotype image1="spring.svg"  image2="java.svg" >}}
 
-Hace unos días encontré un [articulo del blog técnido de los desarrolladores de Idealista](https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/). En él comentaban que tenían una API para realizar simulaciones hipotecarias usando [Spring][spring] como _framework_, [Spring Security OAuth][spring-security-oauth] como forma de autenticación y autorización y JWT como forma de codificar el _token_ que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.
+Hace unos días encontré un [articulo del blog técnico de los desarrolladores de Idealista](https://www.idealista.com/labs/blog/spring-framework/autenticando-el-api-de-idealista-hipotecas-con-spring-oauth2-y-zuul/). En él comentaban que tenían una API para realizar simulaciones hipotecarias usando [Spring][spring] como _framework_, [Spring Security OAuth][spring-security-oauth] como forma de autenticación y autorización y JWT como forma de codificar el _token_ que otorga el servidor OAuth y contiene la información necesaria para que el servidor de recursos permita o no el acceso al recurso que aloja.
 
 Ya había oído mencionar JWT pero este artículo me ha permitido conocer su utilidad, y no es poca. Como se menciona en el artículo JWT tiene la ventaja de que que no es necesario persistirlo en una base de datos y contiene toda la información que el servidor de recursos necesita para realizar la autorización ya que es capaz de cargar con información arbitraria que el servicio desee en el momento de la emisión, la autenticación y comprobación de que ha sido emitido por el servidor OAuth la realiza sabiendo que el _token_ está firmado.
 
@@ -45,7 +45,7 @@ Los servicios los mantengo separados ya que al combinarlos pueden surgir problem
 ### Servidor OAuth
 
 {{< warning >}}
-Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomenda usar un proveedor alternativo de autenticación como [Keycloak][keycloak] o [Okta][okta] u otros servicios como [Google][google] o [Github][github].
+Spring ha marcado como obsoleta su implementación de servidor OAuth mostrada a continuación y recomienda usar un proveedor alternativo de autenticación como [Keycloak][keycloak] o [Okta][okta] u otros servicios como [Google][google] o [Github][github].
 
 En el artículo [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180] muestro un ejemplo con Keycloak y en [Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot][blogbitix-533] como añadir autenticación OAuth a cualquier página web y de forma nativa en una aplicación de Spring Boot.
 

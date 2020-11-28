@@ -43,7 +43,7 @@ Por defecto la salida estándar de un comando es la terminal pero podemos rediri
 
 {{< code file="sorteo-2.sh" language="bash" options="" >}}
 
-Además de la salida estándar los programas tienen la salida de errores que podemos redirigir con `2>`, si queremos redirigir la salida estándar y la de error podemos usar la redirección `&>`. Tanto la opción `>` y `2>` crean un fichero con la salida redirigida, si en vez de sobreescribir el contenido del archivo queremos añadirlo al final podemos hacer la redirección con `>>`.
+Además de la salida estándar los programas tienen la salida de errores que podemos redirigir con `2>`, si queremos redirigir la salida estándar y la de error podemos usar la redirección `&>`. Tanto la opción `>` y `2>` crean un fichero con la salida redirigida, si en vez de sobrescribir el contenido del archivo queremos añadirlo al final podemos hacer la redirección con `>>`.
 
 {{< code file="sorteo-3.sh" language="bash" options="" >}}
 

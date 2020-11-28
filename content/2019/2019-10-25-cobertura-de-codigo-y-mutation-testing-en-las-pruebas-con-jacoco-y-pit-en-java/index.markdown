@@ -62,7 +62,7 @@ La siguiente batería de teses proporciona una cobertura de teses del cien por c
 
 {{< code file="TicketPriceCalculatorTest.java" language="java" options="" >}}
 
-Sin los casos de prueba _calculatePriceForChildNarrowCase_ y _calculatePriceForFreeTicketNarrowCase_ los teses son correctos, pero si PIT con una edad de 16 realiza una operación de mutación cambiando los límites de la condición de _passenger.getAge() > FREE_TICKET_AGE_BELOW && passenger.getAge() <= ADULT_AGE_, la mutación de _<=_ a <_ sobrevive, esto inidica que los teses y casos de prueba no son totalmente precisos. Para que esta mutación no sobreviva hay que añadir estos dos teses que se encargan de comprobar los límites de las condiciones. El valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, es un niño si su edad está comprendida a partir de _3_ y menor e igual que 18.
+Sin los casos de prueba _calculatePriceForChildNarrowCase_ y _calculatePriceForFreeTicketNarrowCase_ los teses son correctos, pero si PIT con una edad de 16 realiza una operación de mutación cambiando los límites de la condición de _passenger.getAge() > FREE_TICKET_AGE_BELOW && passenger.getAge() <= ADULT_AGE_, la mutación de _<=_ a <_ sobrevive, esto indica que los teses y casos de prueba no son totalmente precisos. Para que esta mutación no sobreviva hay que añadir estos dos teses que se encargan de comprobar los límites de las condiciones. El valor del caso de prueba que se debe utilizar es el valor del límite a partir del cual una persona se considera adulta, es un niño si su edad está comprendida a partir de _3_ y menor e igual que 18.
 
 {{< image
     gallery="true"
@@ -71,7 +71,7 @@ Sin los casos de prueba _calculatePriceForChildNarrowCase_ y _calculatePriceForF
     image3="image:pit-report-fail-2.png" optionsthumb3="200x150" title3="Informe de PIT incorrecto"
     caption="Informe de teses correcto y de PIT incorrecto" >}}
 
-El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una familia en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado entre ellas divisiones en vez de multiplicaciones, substracciones en vez de sumas, reemplazo de valores de retorno o cambios y negaciones en condicionales. Los teses _calculatePriceForNoFamilyByNoAdults_ y _calculatePriceForNoFamilyByNoChildren_ completan la cobertura de todas las ramas del método _isFamily_.
+El caso de prueba _calculatePriceForFamily_ prueba que una familia esté formada por 2 adultos y 2 menores, PIT realiza las mutaciones para considerar una familia en el caso de ser de 3 adultos o 3 menores, la prueba de _calculatePriceForFamily_ mata estas mutaciones haciendo que los teses sean precisos y completos. La cobertura de teses de mutación llega al cien por cien. En el informe de PIT se observa una descripción y número de mutaciones que ha realizado entre ellas divisiones en vez de multiplicaciones, sustracciones en vez de sumas, reemplazo de valores de retorno o cambios y negaciones en condicionales. Los teses _calculatePriceForNoFamilyByNoAdults_ y _calculatePriceForNoFamilyByNoChildren_ completan la cobertura de todas las ramas del método _isFamily_.
 
 {{< image
     gallery="true"
