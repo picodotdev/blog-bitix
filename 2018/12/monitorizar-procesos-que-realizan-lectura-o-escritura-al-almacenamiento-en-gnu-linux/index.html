@@ -284,7 +284,7 @@
 <figcaption>Datos escritos a una partición</figcaption>
 </figure>
 </div>
-<p>Después de <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">comprar un Intel NUC junto con SSD</a> e instalarle <a href="https://www.archlinux.org/">Arch Linux</a> me he dado cuenta que de forma periódica, cada 5 o 10 segundos, parpadea la luz de actividad del disco duro (o simplemente almacenamiento al tener un SSD) sin hacer ninguna actividad salvo tener algunas aplicaciones abietas. He instalado <em>iotop</em> para descubrir el origen de esta actividad y he encontrado dos. Por un lado <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, varios procesos de él, y otro proceso del sistema <em>jdb2-dm-1-8</em> que corresponde al <em>journaling</em> del sistema de archivos. La opción <em>-a</em> de iotop muestra la cantidad de E/S en la sesión por proceso y la opción <em>--only</em> solo aquellos que han realizado E/S.</p>
+<p>Después de <a href="https://picodotdev.github.io/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/">comprar un Intel NUC junto con SSD</a> e instalarle <a href="https://www.archlinux.org/">Arch Linux</a> me he dado cuenta que de forma periódica, cada 5 o 10 segundos, parpadea la luz de actividad del disco duro (o simplemente almacenamiento al tener un SSD) sin hacer ninguna actividad salvo tener algunas aplicaciones abiertas. He instalado <em>iotop</em> para descubrir el origen de esta actividad y he encontrado dos. Por un lado <a href="https://www.mozilla.org/es-ES/firefox/new/">Firefox</a>, varios procesos de él, y otro proceso del sistema <em>jdb2-dm-1-8</em> que corresponde al <em>journaling</em> del sistema de archivos. La opción <em>-a</em> de <em>iotop</em> muestra la cantidad de E/S en la sesión por proceso y la opción <em>--only</em> solo aquellos que han realizado E/S.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ iotop -a --only&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -297,7 +297,7 @@
 <figcaption>Datos escritos por procesos del sistema</figcaption>
 </figure>
 </div>
-<p>Investigando sobre los motivos de escritura de Firefox he encotrado algunos artículos y tres recomendaciones a cambiar en la configuración de Firefox para optimizar su uso en unidades SSD.</p>
+<p>Investigando sobre los motivos de escritura de Firefox he encontrado algunos artículos y tres recomendaciones a cambiar en la configuración de Firefox para optimizar su uso en unidades SSD.</p>
 <ul>
 <li><a href="https://superuser.com/questions/399473/firefox-writes-megabytes-of-data-per-minute-to-disk-why">Firefox writes megabytes of data per minute to disk, why?</a></li>
 <li><a href="https://pringao.com/optimizar-firefox-para-ssd/">Optimizar Firefox para SSD</a></li>

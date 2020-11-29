@@ -1,1 +1,1 @@
-select * from products_categories_hierachy;
+select * from products_categories_hierarchy;
