@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "image:hierachy-comparation.png"
+imagePost: "image:hierarchy-comparation.png"
 tags: ["planeta-codigo", "programacion"]
 summary: "Para implementar relaciones jerárquicas en base de datos relacionales hay varias soluciones conocidas. En este artículo comento las más conocidas con sus desventajas y cual elegir en función de si la base de datos soporta consultas recursivas o en caso de que no las soporte."
 ---
