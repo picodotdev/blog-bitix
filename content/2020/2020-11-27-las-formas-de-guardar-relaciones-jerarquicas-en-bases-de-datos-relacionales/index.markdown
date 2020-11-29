@@ -47,7 +47,7 @@ Esta solución utiliza un modelo de datos sencillo, es fácil de añadir nuevos 
 
 Sus desventajas son que las consultas para obtener los ascendientes o descendientes de un elemento son complicadas e ineficientes además de no soportar cualesquiera niveles de profundidad.
 
-Las consultas para obtener los ascendientes, los descendientes y de inserción de un nodo son las siguientes.
+Las consultas para obtener los ascendientes y los descendientes son las siguientes.
 
 {{< code file="adjacency-list-ancestors.sql" language="sql" options="" >}}
 {{< code file="adjacency-list-ancestors.out" language="plaintext" options="" >}}
@@ -63,7 +63,7 @@ Para este caso y con consultas recursivas el ejemplo se puede probar con [Docker
 
 Las otras implementaciones están originadas a la limitación del modelo relacional y del lenguaje SQL. En las últimas versiones de las bases de datos el lenguaje SQL soporta consultas recursivas o _recursive queries_ con las que implementar la sencilla solución de _adjacency list_ sin sus desventajas. [MySQL][mysql] soporta consultas recursivas desde la versión 8 y [PostgreSQL][postgresql] ya era posible en la versión 9.
 
-Las consultas para obtener los ascendientes, los descendientes y de inserción de un nodo son las siguientes.
+Las consultas para obtener los ascendientes y los descendientes son las siguientes.
 
 {{< code file="recursive-queries-ancestors.sql" language="sql" options="" >}}
 {{< code file="recursive-queries-ancestors.out" language="plaintext" options="" >}}
@@ -81,7 +81,7 @@ Cuando la base de datos no soporta consultas recursivas una solución alternativ
 
 {{< image
     gallery="true"
-    image1="image:closure-table-hierachy.png" optionsthumb1="300x200" title1="Esquema de las relaciones entre los nodos"
+    image1="image:closure-table-hierarchy.png" optionsthumb1="300x200" title1="Esquema de las relaciones entre los nodos"
     caption="Esquema de las relaciones entre los nodos" >}}
 
 En este caso las consultas de búsqueda son eficientes, las de inserción son sencillas y hay integridad referencial. Esta solución permite a la misma fila formar parte de varias estructuras jerárquicas al mismo tiempo. Su desventaja es que requiere una tabla adicional.
@@ -145,7 +145,7 @@ Esta es una pequeña comparación entre cada una de las soluciones en su dificul
 
 {{< image
     gallery="true"
-    image1="image:hierachy-comparation.png" optionsthumb1="600x450" title1="Comparación entre las diferentes soluciones"
+    image1="image:hierarchy-comparation.png" optionsthumb1="600x450" title1="Comparación entre las diferentes soluciones"
     caption="Comparación entre las diferentes soluciones" >}}
 
 {{< reference >}}
