@@ -66,7 +66,7 @@ Hay un [_plugin_ de Gradle para generar _uberjars_](https://imperceptiblethought
 
 Que la aplicación sea un único _jar_ tiene la ventaja que el distribuible es más sencillo y facilita desplegarlo en un entorno de producción, en el caso de usar [Docker][docker] también es más adecuado un único archivo.
 
-Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de apliaciones en archivos _jar_](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
+Entre la documentación hay unas muy buenas [guías prácticas sobre Java](https://docs.oracle.com/javase/tutorial/index.html), una de ellas sobre el [empaqueado de aplicaciones en archivos _jar_](https://docs.oracle.com/javase/tutorial/deployment/jar/index.html). La información que se encuentra en estas guías y tutoriales es muy valiosa para cualquier programador que use el lenguaje Java.
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaUberjar" command="./gradlew assemble && java -jar build/libs/JavaUberjar-uberjar.jar" >}}
 

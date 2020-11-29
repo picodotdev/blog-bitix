@@ -44,7 +44,7 @@ En este conjunto las tres primeras corresponden a la petición de una página en
 
 {{< code file="System.out" language="plaintext" options="" >}}
 
-Para emitir trazas de forma relacionada esta no es la única posibilidad, también puede interesar [identificar con marcadores las trazas realacionadas emitidas en diferentes clases de una aplicación][blogbitix-9] en diferentes clases pero pertenecientes a la misma funcionalidad, contexto delimitado o _bounded context_.
+Para emitir trazas de forma relacionada esta no es la única posibilidad, también puede interesar [identificar con marcadores las trazas relacionadas emitidas en diferentes clases de una aplicación][blogbitix-9] en diferentes clases pero pertenecientes a la misma funcionalidad, contexto delimitado o _bounded context_.
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 

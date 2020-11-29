@@ -25,7 +25,7 @@ Uno de esas posibilidades de GraphQL es la herramienta [GraphiQL][graphiql] que 
 
 GraphiQL en casi un IDE para crear consultas de GraphQL, está basado en JavaScript, se ejecutan en el navegador y para su funcionamiento solo hay que proporcionarle el _endpoint_ de la API a probar.
 
-En la página de este tutorial se explica cual es el [código HTML necesario para el editor GraphiQL](https://www.howtographql.com/graphql-java/2-queries/). Básicamente es un HTML que hay colocar en el caso de una aplicación Java en el directorio web de la aplicación, utilizando la página por defecto _index.html_ se carga al acceder a la dirección _http\://localhost:8080/graphiql_. Basta con cinluir la dependnecia de _graphiql-spring-boot-starter_ en el archivo de construcción del proyecto para que el _endpoint_ quede accesible.
+En la página de este tutorial se explica cual es el [código HTML necesario para el editor GraphiQL](https://www.howtographql.com/graphql-java/2-queries/). Básicamente es un HTML que hay colocar en el caso de una aplicación Java en el directorio web de la aplicación, utilizando la página por defecto _index.html_ se carga al acceder a la dirección _http\://localhost:8080/graphiql_. Basta con incluir la dependencia de _graphiql-spring-boot-starter_ en el archivo de construcción del proyecto para que el _endpoint_ quede accesible.
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 

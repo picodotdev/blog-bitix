@@ -31,7 +31,7 @@ Utilizando [Gradle][gradle] las dependencias y la anotación _@EnableEurekaServe
 {{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="Main.java" language="java" options="" >}}
 
-La propiedad de configuración principal para formar el cluster es _eureka.client.serviceURL.defaultZone_ donde se especifica una lista _hostnames_ donde están los servidores de registro y descubrimiento. Para dar a cada servidor en local un nombre de dominio distinto he usado el servicio de DNS [xip.io][xipio] que resuleve el nombre de dominio a la dirección IP indicada en el propio nombre de dominio, así _ds1.127.0.0.1.xip.io_ se resuelve a _127.0.0.1_ que es la dirección para la propia máquina local al igual que _ds2.127.0.0.1.xip.io_ y _ds3.127.0.0.1.xip.io_. El servicio de xip.io evita tener que crear en el archivo de _hosts_ local una correspondencia entre nombre de _hostname_ y la dirección IP de _loopback_ de la propia máquina local.
+La propiedad de configuración principal para formar el cluster es _eureka.client.serviceURL.defaultZone_ donde se especifica una lista _hostnames_ donde están los servidores de registro y descubrimiento. Para dar a cada servidor en local un nombre de dominio distinto he usado el servicio de DNS [xip.io][xipio] que resuelve el nombre de dominio a la dirección IP indicada en el propio nombre de dominio, así _ds1.127.0.0.1.xip.io_ se resuelve a _127.0.0.1_ que es la dirección para la propia máquina local al igual que _ds2.127.0.0.1.xip.io_ y _ds3.127.0.0.1.xip.io_. El servicio de xip.io evita tener que crear en el archivo de _hosts_ local una correspondencia entre nombre de _hostname_ y la dirección IP de _loopback_ de la propia máquina local.
 
 En el archivo de configuración hay tres perfiles distintos que varían algunas propiedades según sea el perfil que se active al iniciar la instancia del servicio. En el perfil _ds1_ el puerto donde se inicia el servicio es _8761_, con el perfil _ds2_ el servicio se inicia en el puerto _8762_ y con _ds3_ en el _8763_, además se cambia el _hostname_ para que la instancia sepa cual es.
 
@@ -41,7 +41,7 @@ Los comandos para arrancar tres instancias de servidor de registro y descubrimie
 
 {{< code file="run-discoveryserver.sh" language="bash" options="" >}}
 
-Estando disponible el servicio de registro y descubrimiento ya se puede iniciar el servicio de configuración. Con estos dos servicios de infraestructura iniciados los que sería un servicio de la aplicación ya puede iniciarse que consiste en este caso en obtener una referencia de una instancia del servicio de configuración registada en el servicio de registro y descubrimiento, con esta referencia obtiene su configuración y se inicia.
+Estando disponible el servicio de registro y descubrimiento ya se puede iniciar el servicio de configuración. Con estos dos servicios de infraestructura iniciados los que sería un servicio de la aplicación ya puede iniciarse que consiste en este caso en obtener una referencia de una instancia del servicio de configuración registrada en el servicio de registro y descubrimiento, con esta referencia obtiene su configuración y se inicia.
 
 {{< code file="run-configserver.sh" language="bash" options="" >}}
 {{< code file="run-service.sh" language="bash" options="" >}}

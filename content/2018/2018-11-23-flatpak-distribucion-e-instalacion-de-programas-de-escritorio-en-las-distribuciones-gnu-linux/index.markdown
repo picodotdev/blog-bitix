@@ -19,7 +19,7 @@ tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
 
 Las distribuciones GNU/Linux son la recolección de cantidad de programas de software libre, cientos o miles, con una garantía de que funcionan correctamente en esa distribución y que facilita a los usuarios una fácil utilización. Hay múltiples distribuciones GNU/Linux con diferentes intereses ya sean generalistas como [Ubuntu][ubuntu], [Fedora][fedora], [Debian][debian], [Arch Linux][archlinux], [elementary][elementary], [openSUSE][opensuse] entre las más populares y otras especializadas en propósitos más específicos para servidor con [RHEL][rhel], [CentOS][centos], [Zentyal] o [Alpine][alpine-linux], para equipos con pocos recursos como [Puppy][puppylinux] o [Tiny Core][tinycorelinux], seguridad y privacidad como [Tails][tails] o sin componentes privativos como [Trisquel][trisquel].
 
-Cada una de estas distribuciones es creada por personas que se encargan de mantener la distribución cogiendo el código fuente que los programadores del software crean y publican, compilandolo para crear un binario o paquete utilizable e instalable en esa distribución y comprobar que funciona correctamente sin conflictos con otros paquetes. Los mantenedores se encargan de publicar nuevas versiones de paquetes con cada nueva versión de cada programas, de reportar errores y de incluso aplicar parches de seguridad cuando se descubren.
+Cada una de estas distribuciones es creada por personas que se encargan de mantener la distribución cogiendo el código fuente que los programadores del software crean y publican, compilándolo para crear un binario o paquete utilizable e instalable en esa distribución y comprobar que funciona correctamente sin conflictos con otros paquetes. Los mantenedores se encargan de publicar nuevas versiones de paquetes con cada nueva versión de cada programas, de reportar errores y de incluso aplicar parches de seguridad cuando se descubren.
 
 Esta tarea que hacen los mantenedores se hace por cada paquete, son miles los que contiene una distribución, Debian tiene más de 51000, y por cada distribución aunque algunas se basan en otras como Ubuntu se basa en Debian y otras se basan a su vez en Ubuntu. Esto es una ingente cantidad de tiempo de dedicación de muchas personas y replicado en gran parte en cada distribución que podrían ser empleado en otras tareas.
 
@@ -33,7 +33,7 @@ La tarea que hacen los mantenedores es útil para comprobar que los paquetes de 
 * Proporciona entornos consistentes.
 * Las aplicaciones son utilizables incluso en nuevas versiones de una distribución.
 * Se pueden instalar múltiples versiones de una misma aplicación.
-* Hay menos riesgo de que una actualización de un programa provque que el sistema quede inconsistente pudiendo incluso a no llegar a iniciarse correctamente.
+* Hay menos riesgo de que una actualización de un programa provoque que el sistema quede inconsistente pudiendo incluso a no llegar a iniciarse correctamente.
 * Se mejora la seguridad el ejecutarse las aplicaciones de forma aislada en una caja de arena que limita las acciones que puede realizar. Los permisos como almacenamiento, red y dispositivos se han de conceder de forma explícita.
 * Cualquiera puede publicar su aplicación y ser utilizable por los usuarios sin que necesite ganar popularidad para que los mantenedores la incluyan en la distribución.
 * Las aplicaciones Flatpak se puede instalar a nivel de sistema (por defecto) y a nivel de usuario.

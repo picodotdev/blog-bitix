@@ -170,7 +170,7 @@ Su precio es algo más elevado que la Rock64 y tiene menos memoria pero más que
 
 ### Cubox
 
-Aunque los modelos de [SolidRun][solid-run] son significativamente más caros poseen buenas especificaciones como el modelo [CuBox i4x4](https://www.solid-run.com/product/cubox-i4x4/) con un procesador _quad core_ aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y blutooth incluido en un formato de cubo de 2 pugadas. Como decía a un precio mas elevado, $170.
+Aunque los modelos de [SolidRun][solid-run] son significativamente más caros poseen buenas especificaciones como el modelo [CuBox i4x4](https://www.solid-run.com/product/cubox-i4x4/) con un procesador _quad core_ aunque en si versión ARMv7 de 32 bits pero con 4 GiB de memoria, gigabit ethernet, WiFi y bluetooth incluido en un formato de cubo de 2 pulgadas. Como decía a un precio mas elevado, $170.
 
 El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-pulse/) incorpora un procesador [NXP i.MX8M](https://www.nxp.com/products/processors-and-microcontrollers/applications-processors/i.mx-applications-processors/i.mx-8-processors:IMX8-SERIES) ya a 64 bits pero con el precio igualmente abultado respecto a otras opciones de 170 €.
 
@@ -195,7 +195,7 @@ El modelo mas reciente [Cubox Pulse](https://www.solid-run.com/nxp-family/cubox-
 
 Otro distribuidor importante es [Hardkernel][hardkernel] con sus modelos ODROID de pequeñas computadoras basadas en ARM con varios modelos entre ellos el [ODROID C2](http://www.hardkernel.com/main/products/prdt_info.php?g_code=G145457216438) que posee un procesador ARM Cortex-A53 _quad-core_, 2 GiB de memoria, gigabit ethernet, soporta HDMI 2.0 4K@60fps, eMMC, 4 puertos USB 2.0 pero sin WiFi ni bluetooth. A un precio de $46.
 
-Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) tambien basada en el _SoC_ Rockchip RK3399.
+Están preparando el modelo [ODROID N1](https://forum.armbian.com/topic/6496-odroid-n1-not-a-review-yet/) también basada en el _SoC_ Rockchip RK3399.
 
 {{< image
     gallery="true"

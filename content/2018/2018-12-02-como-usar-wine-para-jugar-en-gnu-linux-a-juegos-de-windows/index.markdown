@@ -86,7 +86,7 @@ Instalado el juego se inicia con un comando de Wine o con el acceso directo del 
     image1="image:menu-aplicaciones.jpg" optionsthumb1="200x150" title1="Menú de aplicaciones con accesos directos de Battle.net y Diablo 3"
     caption="Menú de aplicaciones" >}}
 
-Leyendo la [página de información de Diablo 3](https://appdb.winehq.org/objectManager.php?sClass=version&iId=29952) indica que hay que utilizar el cliente de 32 bits sino se utiliza la API de gráficos DirectX 11 que no ofrece buen rendimiento como he comprobado, no ofrece más de 10 fps. Con el cliente de 32 bits el rendiminto ya es el normal. El cliente de 32 bits se activa en _Battle.net App -> Settings -> Game Settings -> Diablo 3 -> Launch 32-bit client (instead of 64-bit)_.
+Leyendo la [página de información de Diablo 3](https://appdb.winehq.org/objectManager.php?sClass=version&iId=29952) indica que hay que utilizar el cliente de 32 bits sino se utiliza la API de gráficos DirectX 11 que no ofrece buen rendimiento como he comprobado, no ofrece más de 10 fps. Con el cliente de 32 bits el rendimiento ya es el normal. El cliente de 32 bits se activa en _Battle.net App -> Settings -> Game Settings -> Diablo 3 -> Launch 32-bit client (instead of 64-bit)_.
 
 Diablo 3 comienza con una cinemática introductoria que en mi caso no iba bien y tampoco las siguientes cinemáticas que se reproducen en ciertos hitos del juego. Para verlas se puede ir a Youtube, cada clase tiene una inicial distinta. Como he elegido como clase la del monje para mi primer personaje pongo la de este.
 

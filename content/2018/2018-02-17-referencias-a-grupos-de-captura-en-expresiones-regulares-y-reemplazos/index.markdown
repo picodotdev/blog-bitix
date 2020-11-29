@@ -28,7 +28,7 @@ Supongamos que queremos corregir un texto en el que por error hay palabras repet
 
 La expresión regular para encontrar las coincidencias deberá para cada palabra comprobar si la siguiente es la misma. Cada palabra la incluimos en un grupo y posteriormente hacemos referencia a ese grupo con _\\1_ para ver si la siguiente palabra es la misma. Con la siguiente expresión regular y código encontraremos las palabras repetidas una a continuación de la otra.
 
-Para hacer referencia en los grupos de coindiciendia en la cadena de reemplazo hay que usar un caracter _$_ y un número con la posición del grupo de reemplazo.
+Para hacer referencia en los grupos de coincidencia en la cadena de reemplazo hay que usar un caracter _$_ y un número con la posición del grupo de reemplazo.
 
 Un ejemplo más útil de los grupos de referencia en la cadena de reemplazo sería reemplazar en un texto plano las direcciones de correo electrónico por sus enlaces en HTML. Usando una expresión regular para encontrar las direcciones de correo electrónico y sustituirlas por los enlaces HTML haciendo uso de los grupos de captura y referencias a ellos.
 

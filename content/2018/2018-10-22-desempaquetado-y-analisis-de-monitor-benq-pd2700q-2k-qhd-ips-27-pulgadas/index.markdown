@@ -271,7 +271,7 @@ En un futuro probablemente aparezcan nuevos monitores que soporten HDR y con res
 
 ### Detección de píxeles muertos o vagos
 
-Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla. También conviene informarse antes de comprar acerca de la garantía que ofrece cada fabricante respecto a los píxeles muertos, algunos toleran y no aceptan la devolución con cierto número de píxles que permanecen encendidos, apagados o algún subpixel estropeado.
+Es recomendable realizar una primera prueba al monitor para buscar píxeles muertos, que no se encienden, o vagos, que permanecen encendidos todo el tiempo con el color de un componente. El siguiente test se compone de varias imágenes en los colores básicos (negro, blanco, azul, rojo y verde) que visualizadas individualmente a pantalla completa muestran si algún pixel es defectuoso. Que haya un pixel defectuoso es molesto ya que basta para que haya solo uno y sepas donde está entre los casi 3 millones que tiene el monitor para que estés fijándote constantemente en él, más si se encuentra en el área central de la pantalla. También conviene informarse antes de comprar acerca de la garantía que ofrece cada fabricante respecto a los píxeles muertos, algunos toleran y no aceptan la devolución con cierto número de píxeles que permanecen encendidos, apagados o algún subpixel estropeado.
 
 * [BenQ LCD Monitor Pixel Policy](https://www.benq.com/en-us/support/downloads-faq/faq/product/application/dead-pixel-policy.html)
 
@@ -303,7 +303,7 @@ Algunos soportes compatibles con VESA que he mirado son los siguientes.
 
 ### _Hub_ de puertos USB
 
-Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay hubs de 4, 7 y 10 puertos pero con esta candidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
+Teniendo el monitor un _hub_ USB 2.0 no merece la pena un _hub_ externo USB 3.0 o 3.1, sin embargo, con otros monitores puede ser una opción como con el PD2500Q o el PD2700U. Los discos duros externos que tengo son USB 2.0 y por limitaciones del disco duro si fuesen 3.0 el rendimiento adicional no se si sería mucho mayor. Hay hubs de 4, 7 y 10 puertos pero con esta cantidad de puertos es recomendable que sea alimentado sobre todo si se conectan discos duros externos sin alimentación propia, también hay algunos con interruptor individual de encendido por puerto.
 
 {{< amazon
     linkids="c0347223e569327beb79d01b30cd549e,32d93c1c8151c7d869e32b061d0d08b4"

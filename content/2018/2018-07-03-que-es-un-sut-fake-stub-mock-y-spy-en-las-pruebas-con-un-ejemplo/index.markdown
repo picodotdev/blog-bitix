@@ -12,7 +12,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
-summary: "Las pruebas unitarias y de integración tratan de probar que el comportamiento del sujeto bajo prueba es el esperado. Este sujeto bajo prueba usará colaboradores que en las pruebas deben ser reemplazados por _fakes_ para probar las condiciones deseadas del de sujeto bajo prueba. Depdendiendo del comportamiento asignado al colaborador tenemos varios tipos: _stub_, _mock_ o _spy_."
+summary: "Las pruebas unitarias y de integración tratan de probar que el comportamiento del sujeto bajo prueba es el esperado. Este sujeto bajo prueba usará colaboradores que en las pruebas deben ser reemplazados por _fakes_ para probar las condiciones deseadas del de sujeto bajo prueba. Dependiendo del comportamiento asignado al colaborador tenemos varios tipos: _stub_, _mock_ o _spy_."
 ---
 
 {{% post %}}
@@ -45,7 +45,7 @@ Se pueden hacer más casos de prueba como por ejemplo probar que tras dos temper
 
 En el libro [Java Testing with Spock](https://amzn.to/2MMSV2J) explican toda esta teoría básica de pruebas además de explicar bastante detalladamente todas las posibilidades de la herramienta de _testing_ [Spock][spock].
 
-Los dobles permiten susituir dependencias y programar su comportamiento, en algunos casos no es posibler o no es deseable. Si se quiere probar un componente que accede a una base de datos el doble puede tener diferencias con la base de datos real. Para estos casos se usan pruebas de integración, la dificultad está disponer de estas dependencias en el entorno de prueba. La herramienta [Testcontainers sirve para realizar pruebas de intergración en Java usando contendores Docker][blogbitix-490].
+Los dobles permiten susituir dependencias y programar su comportamiento, en algunos casos no es posible o no es deseable. Si se quiere probar un componente que accede a una base de datos el doble puede tener diferencias con la base de datos real. Para estos casos se usan pruebas de integración, la dificultad está disponer de estas dependencias en el entorno de prueba. La herramienta [Testcontainers sirve para realizar pruebas de integración en Java usando contenedores Docker][blogbitix-490].
 
 {{< amazon
     linkids="b57d8e90599c681fc8e794027e17bea3"

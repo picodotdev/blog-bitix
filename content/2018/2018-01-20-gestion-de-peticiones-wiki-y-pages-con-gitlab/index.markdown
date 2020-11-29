@@ -49,7 +49,7 @@ Para crear una nueva petición hay que acceder en el proyecto a _Issues_ y pulsa
 
 ### Wiki
 
-Una wiki ayuda a recoger información útil en el mismo proyecto pero no en el repositorio de código fuente, por ejemplo, cómo iniciar la aplicación de un proyecto a partir del repositorio de código fuente, qué dependencias tiene como el JDK o una base de datos. También puede recoger información general de lógica de negocio que no cambien tan a menudo como el código como pudiera ser un esquema de alto nivel de arquitectura o por que se han tomado algunas descisiones en la arquitectura y los requerimientos.
+Una wiki ayuda a recoger información útil en el mismo proyecto pero no en el repositorio de código fuente, por ejemplo, cómo iniciar la aplicación de un proyecto a partir del repositorio de código fuente, qué dependencias tiene como el JDK o una base de datos. También puede recoger información general de lógica de negocio que no cambien tan a menudo como el código como pudiera ser un esquema de alto nivel de arquitectura o por que se han tomado algunas decisiones en la arquitectura y los requerimientos.
 
 Cuando se accede por primera vez a la wiki se crea la página de inicio que se puede editar o crear nuevas páginas. Las páginas de la wiki se escriben en formato [Markdown][markdown] y se guarda un historial de las ediciones que se han realizado a cada página.
 

@@ -20,7 +20,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 La revista [Java Magazine][java-magazine] es una publicación bimensual gratuita que contiene artículos técnicos sobre temas muy variados relacionados con Java. Las revistas pueden consultarse directamente en la web o de forma más cómoda descargándola a nuestro ordenador en formato de archivo PDF. También es posible suscribirse a una lista de distribución para recibir mediante un correo electrónico una notificación cuando se publique un nuevo número de la revista o estar atento y seguir al twitter de la revista [@Oraclejavamag](https://twitter.com/Oraclejavamag). Su longitud ronda algo menos de 100 páginas por número.
 
-Estas son las portadas de la revista de los tres últimos años y medio, desde el 2015 hasta junio del 2018, en las que se incluye los principales temas tratados en cada revista. Durante este tiempo publicando por supuesto algún número dedicado a Java 9 y Java 10, Java EE 8, JSF, JavaMail, JAX-RS, Spring Boot, JVM, JUnit, IoT, HTTP/2, JavaFX, Gradle, Lombok, JCommander, Byte Buddy, Jsoup, WebSockets, JPA, CDI, Servlet 4.0, _testing_, miroservicios y contenedores y muchos más temas.
+Estas son las portadas de la revista de los tres últimos años y medio, desde el 2015 hasta junio del 2018, en las que se incluye los principales temas tratados en cada revista. Durante este tiempo publicando por supuesto algún número dedicado a Java 9 y Java 10, Java EE 8, JSF, JavaMail, JAX-RS, Spring Boot, JVM, JUnit, IoT, HTTP/2, JavaFX, Gradle, Lombok, JCommander, Byte Buddy, Jsoup, WebSockets, JPA, CDI, Servlet 4.0, _testing_, microservicios y contenedores y muchos más temas.
 
 {{< image
     gallery="true"

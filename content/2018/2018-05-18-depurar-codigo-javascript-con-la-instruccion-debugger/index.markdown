@@ -19,7 +19,7 @@ tags: ["javascript", "planeta-codigo", "programacion"]
 
 {{< logotype image1="javascript.svg" >}}
 
-Los navegadores web utilizan la palabra clave sentencia _debugger;_ como punto de ruptura para iniciar el depurado de un código JavaScript. En vez de poner el punto de ruptura desde el navegador utilizando la herrmienta de depuración para desarrolladores con esta instrucción se puede poner en el código fuente donde se desee, de esta forma se evita buscar entre los múltiples recursos que haya cargados en la página e ir a la línea en la que se desea iniciar la depuración poniendo un punto de ruptura.
+Los navegadores web utilizan la palabra clave sentencia _debugger;_ como punto de ruptura para iniciar el depurado de un código JavaScript. En vez de poner el punto de ruptura desde el navegador utilizando la herramienta de depuración para desarrolladores con esta instrucción se puede poner en el código fuente donde se desee, de esta forma se evita buscar entre los múltiples recursos que haya cargados en la página e ir a la línea en la que se desea iniciar la depuración poniendo un punto de ruptura.
 
 Suponiendo que se desea poner un punto de ruptura en un código JavaScript hay que editar el archivo JavaScript de código fuente e incluir la sentencia _debugger;_ como en el siguiente caso. Cuando el navegador ejecute esa sentencia iniciará, tiendo las herramientas de depuración abiertas, el depurador.
 

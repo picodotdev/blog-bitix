@@ -49,7 +49,7 @@ Las claves de las métricas por defecto exportadas por Spring Boot Actuator.
 
 {{< code file="actuator-metrics.json" language="json" options="" >}}
 
-Los datos de una métrica en el _enpoint_ _/actuator/metrics/service.invocations_.
+Los datos de una métrica en el _endpoint_ _/actuator/metrics/service.invocations_.
 
 {{< code file="actuator-metrics-service-invocations.json" language="json" options="" >}}
 
@@ -70,7 +70,7 @@ El archivo de Docker Compose contiene dos contenedores uno para Prometheus y otr
 {{< code file="prometheus.yml" language="yaml" options="" >}}
 {{< code file="grafana-datasources.yml" language="yaml" options="" >}}
 
-Prometheus posee la funcionalidad básica de crear gŕaficas con las métricas recogidas pero no tiene la habilidad de crear paneles que recogen una colección de gráficas relacionadas o un editor de consultas más avanzado como tiene Grafana.
+Prometheus posee la funcionalidad básica de crear gráficas con las métricas recogidas pero no tiene la habilidad de crear paneles que recogen una colección de gráficas relacionadas o un editor de consultas más avanzado como tiene Grafana.
 
 {{< image
     gallery="true"

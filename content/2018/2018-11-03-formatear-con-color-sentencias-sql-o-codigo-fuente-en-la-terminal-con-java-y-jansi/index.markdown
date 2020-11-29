@@ -21,7 +21,7 @@ Usando la librería [Jansi][Jansi] es posible [hacer que un programa Java emita 
 
 Una forma sencilla para formatear con colores un archivo de código fuente Java o una sentencia SQL sin llegar a hacer un procesador de sintaxis de ese lenguaje o formato es [utilizar expresiones regulares y grupos de captura][blogbitix-300]. En ambos casos hay partes que son palabras claves, números o cadenas en definitiva elementos que se deseen destacar. Con las clases [Pattern](javadoc11:java.base/java/util/regex/Pattern.html) y [Matcher](javadoc11:java.base/java/util/regex/Matcher.html) de Java se van obteniendo los diferentes grupos de captura de forma secuencial. Según sea el grupo capturado del elemento actual se utiliza Jansi para formatearlo con el color que le corresponde.
 
-Una formateador simple para cada uno de estos casos serían los siguientes donde se utiliza una expresión regular con diferentes grupos de captura con nombre. El primer caso es para formatear con color una sentencia SQL sencilla en el método _printSql()_ y el segundo el programa _Hola mundo_ de Java en el metodo _printJava()_.
+Una formateador simple para cada uno de estos casos serían los siguientes donde se utiliza una expresión regular con diferentes grupos de captura con nombre. El primer caso es para formatear con color una sentencia SQL sencilla en el método _printSql()_ y el segundo el programa _Hola mundo_ de Java en el método _printJava()_.
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="build.gradle" language="groovy" options="" >}}

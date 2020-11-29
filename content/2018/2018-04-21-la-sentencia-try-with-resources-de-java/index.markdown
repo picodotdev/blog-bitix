@@ -17,7 +17,7 @@ tags: ["java", "planeta-codigo", "programacion"]
 
 {{< logotype image1="java.svg" >}}
 
-Una de las novedades que incorporó Java 7 es la sentencia _try-with-resources_ con el objetivo de cerrar los recursos de forma automática en la sentencia _try-catch-finally_ y hacer más simple el código. Aquellas varaibles cuyas clases implementan la interfaz [AutoCloseable](javadoc10:java/lang/AutoCloseable.html) pueden declararse en el bloque de inicialización de la sentencia _try-with-resources_ y sus métodos [close()](javadoc10:java/lang/AutoCloseable.html#close()) serán llamados después del bloque _finally_ como si su código estuviese de forma explícita.
+Una de las novedades que incorporó Java 7 es la sentencia _try-with-resources_ con el objetivo de cerrar los recursos de forma automática en la sentencia _try-catch-finally_ y hacer más simple el código. Aquellas variables cuyas clases implementan la interfaz [AutoCloseable](javadoc10:java/lang/AutoCloseable.html) pueden declararse en el bloque de inicialización de la sentencia _try-with-resources_ y sus métodos [close()](javadoc10:java/lang/AutoCloseable.html#close()) serán llamados después del bloque _finally_ como si su código estuviese de forma explícita.
 
 Un ejemplo de código que lee una línea de un fichero usando la sentencia _try-with-resources_ es la siguiente de Java 7. Como se observa no es necesario llamar de forma explícita al método _close_ para liberar los recursos de la instancia de la clase [BufferedReader](javadoc10:java/io/BufferedReader.html).
 

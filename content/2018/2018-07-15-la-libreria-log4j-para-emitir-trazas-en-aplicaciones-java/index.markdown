@@ -23,7 +23,7 @@ La librería [Log4j][log4j] es una librería para emitir las trazas de depuraci�
 Algunas de las nuevas características de log4j son:
 
 * Rendimiento mejorado usando funcionalidades asíncronas en los _loggers_.
-* Soporte para múltiples APIs como SL4J, Commongs Logging y _java.util.logging_ (JUL).
+* Soporte para múltiples APIs como SL4J, Commons Logging y _java.util.logging_ (JUL).
 * Sin encadenamientos a la librería al poder en cualquier momento usar cualquier librería compatible con SLF4J.
 * Recarga automática de la configuración sin perder ninguna traza.
 * Filtrado avanzado basado en datos de contexto, marcadores, expresiones regulares y otros componentes.
@@ -49,7 +49,7 @@ En el archivo de construcción de la aplicación usando [Gradle][gradle] hay que
 
 Las trazas son muy importantes por la valiosa información que proporcionan de lo que está sucediendo en una aplicación a los que recurriendo es posible obtener la valiosa información que permite saber que ha sucedido en una determinada acción o que permite descubrir mucho más rápidamente la causa de un error.
 
-En otro artículo ya he comentado [como usar marcadores con sl4j y logback][blogbitix-9] para relacionar trazas que son emitidas en diferentes clases o módulos de la aplicación, también se puede hacer con Log4j. En siguientes artículos comentaré [como transformar un objeto a un mensaje][blogbitix-338] sin necesidad de convertir ese objeto a un String en cada traza de la aplicación donde se use su información y otra forma de relacionar trazas muy útil en aplicaciones web [asignando un indenticador única en cada petición y emitiendolo en todas sus trazas][blogbitix-336], esto permite saber todo lo que ha ocurrido en una petición entre las muchas que se ejecutan concurrentemente por todos los usuarios de la aplicación.
+En otro artículo ya he comentado [como usar marcadores con sl4j y logback][blogbitix-9] para relacionar trazas que son emitidas en diferentes clases o módulos de la aplicación, también se puede hacer con Log4j. En siguientes artículos comentaré [como transformar un objeto a un mensaje][blogbitix-338] sin necesidad de convertir ese objeto a un String en cada traza de la aplicación donde se use su información y otra forma de relacionar trazas muy útil en aplicaciones web [asignando un identificador única en cada petición y emitiéndolo en todas sus trazas][blogbitix-336], esto permite saber todo lo que ha ocurrido en una petición entre las muchas que se ejecutan concurrentemente por todos los usuarios de la aplicación.
 
 Si las trazas no son suficientes para descubrir la causa de un error otra forma de conseguirla es [depurar la aplicación con un IDE][blogbitix-526], ver paso a paso su ejecución y con la posibilidad de inspeccionar los valores de las variables. Una vez descubierta la causa del error de cualquiera de las maneras se pueden hacer los cambios necesarios en el programa para corregirlos.
 

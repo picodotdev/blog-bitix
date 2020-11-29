@@ -25,7 +25,7 @@ El mantenimiento de un programa es la parte que más tiempo consume en su desarr
 * Perfeccionamiento: corrección de errores o adición de nuevas funcionalidades.
 * Preventivo: para mejorar la calidad o prevenir futuros errores.
 
-En el libro [Building Maintable Software (Java Edidtion)](http://amzn.to/2BSalVR) en varios capítulos repasan varios aspectos y proporciona consejos sobre cómo desarrollar software más fácilmente mantenible. Algunos son tan sencillos como evitar métodos con muchas líneas de código, con muchos parámetros, con muchas bifurcaciones por sentencias condicionales o de retorno. Estos aspectos influyen en la facilidad de realizar teses, la facilidad de reutilizar el código siendo más fácil probar y reutilizar métodos que hacen pocas cosas que otros que hacen muchas o son complejos. Estos aspectos del código requiere analizar el código.
+En el libro [Building Maintable Software (Java Edition)](http://amzn.to/2BSalVR) en varios capítulos repasan varios aspectos y proporciona consejos sobre cómo desarrollar software más fácilmente mantenible. Algunos son tan sencillos como evitar métodos con muchas líneas de código, con muchos parámetros, con muchas bifurcaciones por sentencias condicionales o de retorno. Estos aspectos influyen en la facilidad de realizar teses, la facilidad de reutilizar el código siendo más fácil probar y reutilizar métodos que hacen pocas cosas que otros que hacen muchas o son complejos. Estos aspectos del código requiere analizar el código.
 
 ### Qué es PMD y para qué sirve
 
@@ -46,7 +46,7 @@ Suponiendo que con la intención de hacer el software más mantenible se define 
 {{< code file="build.gradle" language="groovy" options="" >}}
 {{< code file="ruleset.xml" language="XML" options="" >}}
 
-Aplicado el _plugin_ y definidas las reglas en las construcción del proyecto se revisarán y generará un informe con el comando `./gradlew check`. En el directorio _build/reports/pmd/_ relativo a la raíz del proyecto se genera un conjunto de archivos HTML y XML con los informes del análisis del código. En el informe se indica la clase, la linea y el error que se ha encontrado, con esta información es sencillo modificar el código para que en la siguiente ejecución de la validación el error desaparezca del informe, la myoría de reglas son fáciles de corregir.
+Aplicado el _plugin_ y definidas las reglas en las construcción del proyecto se revisarán y generará un informe con el comando `./gradlew check`. En el directorio _build/reports/pmd/_ relativo a la raíz del proyecto se genera un conjunto de archivos HTML y XML con los informes del análisis del código. En el informe se indica la clase, la linea y el error que se ha encontrado, con esta información es sencillo modificar el código para que en la siguiente ejecución de la validación el error desaparezca del informe, la mayoría de reglas son fáciles de corregir.
 
 Para que en el informe aparezcan datos he cambiado la configuración de longitud a 10 líneas por método como máximo.
 

@@ -66,7 +66,7 @@ Algunos nuevos retos de los microservicios son:
 * Como hacer que los microservicios se descubran entre ellos.
 * Si un microservicios falla los que dependan de él fallarán, al comunicarse por un medio no totalmente fiable como la red se pueden producir errores. El sistema se ha de hacer tolerante a fallos.
 
-Para modelar los microservicios y definir que funcionalidad contiene cada uno de los que forman el sistema se opta por utilizar _bounded contex_ y _domain driven design_. Cada microservicio debe ser altamente cohesivo donde toda su funcionalidad esté relacionada y realizar una o muy pocas tareas siendo propietario de los datos de su contexto delimitado.
+Para modelar los microservicios y definir que funcionalidad contiene cada uno de los que forman el sistema se opta por utilizar _bounded context_ y _domain driven design_. Cada microservicio debe ser altamente cohesivo donde toda su funcionalidad esté relacionada y realizar una o muy pocas tareas siendo propietario de los datos de su contexto delimitado.
 
 En el ámbito Java el proyecto [Spring][spring] se compone de varios adaptados a la nueva realidad de los microservicios y [Java EE][java-ee] a partir de la versión 8 ahora denominada [Jakarta EE][jakartaee] y [Microprofile][microprofile] proporcionan funcionalidades más adaptadas a las necesidades de las arquitecturas basadas en microservicios.
 
