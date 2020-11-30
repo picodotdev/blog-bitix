@@ -34,7 +34,7 @@ La instancia del servidor de MongDB la inicio usando Docker con un archivo de [D
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
-El resultado en la terimnal de ejecutar el ejemplo con el comando `gradlew run` es el siguiente donde se muestran las bases de datos, la colección _users_ creada en el ejemplo, los usuarios de la colección y una búsqueda de un usuario, el resultado de actualizar la propiedad de un documento y finalmente el número de documentos en la colección.
+El resultado en la terminal de ejecutar el ejemplo con el comando `gradlew run` es el siguiente donde se muestran las bases de datos, la colección _users_ creada en el ejemplo, los usuarios de la colección y una búsqueda de un usuario, el resultado de actualizar la propiedad de un documento y finalmente el número de documentos en la colección.
 
 {{< code file="System.out" language="plaintext" options="" >}}
 

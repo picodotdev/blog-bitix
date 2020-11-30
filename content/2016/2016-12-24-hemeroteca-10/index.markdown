@@ -73,7 +73,7 @@ He escrito otros cuantos artículos de programación en algunos casos relacionad
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185]
 * [Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select][blogbitix-187]
 * [Componente select múltiple en Apache Tapestry][blogbitix-188]
-* [Añadir botones selectores de opciones a select múltiple de bootsrap-select][blogbitix-189]
+* [Añadir botones selectores de opciones a select múltiple de bootstrap-select][blogbitix-189]
 * [Histórico de datos, auditoría y diferencias entre objetos con Javers en Java][blogbitix-191]
 * [Usar una imagen de fondo aleatoria al cargar una página web][blogbitix-194]
 * [Introducción al JavaScript de ECMAScript 6][blogbitix-198]

@@ -60,7 +60,7 @@ Los beneficios son:
 * Optimización: dado que el sistema de módulos sabe que módulos necesita cada uno solo se consideran los necesarios mejorándose tiempos de inicio y memoria consumida.
 * Seguridad: la encapsulación y optimización limita la superficie de ataque.
 
-La modularización afecta al diseño, compilación, empaquetado y despliegue es mucho más que una nueva característica del lenguaje. Los módulos son artefactos con su propia entidad que contienen código y metadados para describir el módulo y como se relaciona con otros módulos.
+La modularización afecta al diseño, compilación, empaquetado y despliegue es mucho más que una nueva característica del lenguaje. Los módulos son artefactos con su propia entidad que contienen código y metadatos para describir el módulo y como se relaciona con otros módulos.
 
 Hasta ahora se seguía una convención de poner clases en paquetes de nombre _.impl_ o _.internal_ pero realmente la gente seguía usando esas clases porque simplemente se podía. No había ninguna forma de ocultar las implementaciones de esos paquetes más allá del los modificadores de accesibilidad _protected_ y _private_ que no son satisfactorios para ocultar las implementaciones.
 
@@ -110,9 +110,9 @@ El comando _jdeps_ muestra las dependencias de los módulos muy útil para tarea
     gallery="true"
     image1="image:jdeps.png" optionsthumb1="300x200" title1="Dependencias del ejemplo Hola Mundo con Java 9"
     image2="image:jdeps-java-sql.png" optionsthumb2="300x200" title2="Dependencias del módulo java.sql"
-    caption="Análisis de dependencais con jdeps" >}}
+    caption="Análisis de dependencias con jdeps" >}}
 
-Con el objetivo de mantener la compatibilidad en la mayor medida posible con las librerías existentes y una transición progresiva de un sistema sin módulos a uno con módulos [la platforma de módulos de Java define varios tipos de módulos][blogbitix-420], los módulos con nombre, los automáticos y el módulo anónimo. Para profundizar más en los detalles de la modularidad y el resto de novedades de Java 9 están los libros [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT).
+Con el objetivo de mantener la compatibilidad en la mayor medida posible con las librerías existentes y una transición progresiva de un sistema sin módulos a uno con módulos [la plataforma de módulos de Java define varios tipos de módulos][blogbitix-420], los módulos con nombre, los automáticos y el módulo anónimo. Para profundizar más en los detalles de la modularidad y el resto de novedades de Java 9 están los libros [Java 9 Revealed](http://amzn.to/2g0qu6t) y [Java 9 Modularity Revealed](http://amzn.to/2fY3wwT).
 
 {{< amazon
     linkids="9c7874501bb32fa3318e285022e0207a,59d96101c25f9c16c4427b8ee9daef1a"

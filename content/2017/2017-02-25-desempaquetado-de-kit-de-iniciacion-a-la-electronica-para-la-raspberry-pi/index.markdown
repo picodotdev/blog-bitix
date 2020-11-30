@@ -86,8 +86,8 @@ El contenido del _kit_ es el siguiente que viene en una estupenda caja de plást
 {{< image
     gallery="true"
     image1="image:adaptador-breadboard.jpg" optionsthumb1="300x200" title1="Breadboard"
-    image2="image:diodos-resistencias.jpg" optionsthumb2="300x200" title2="Diodos, botones, resistencias y fotoresistores"
-    caption="Adaptador breadboard, diodos, botones, resistencias y fotoresistores" >}}
+    image2="image:diodos-resistencias.jpg" optionsthumb2="300x200" title2="Diodos, botones, resistencias y fotorresistores"
+    caption="Adaptador breadboard, diodos, botones, resistencias y fotorresistores" >}}
 
 {{< amazon
     linkids="415695f2e7f3ef590a8f4c93b8bda126,e45d6edd69dac157bd5ddf58be2cb301"

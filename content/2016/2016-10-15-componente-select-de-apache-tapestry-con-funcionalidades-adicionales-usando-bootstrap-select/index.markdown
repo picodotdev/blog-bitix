@@ -61,12 +61,12 @@ Este sería el código para crear una instancia de _SelectModel_ para un compone
 
 Al ser enviado el formulario que contiene el _select_ el valor seleccionado los tendremos en la propiedad que hayamos indicado en el parámetro _value_ del componente _Select_, este caso en la propiedad _pais_ de la clase _Index_ que representa la página.
 
-En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript necesarios para usar _bootstrap-select_, además de iniciarlizar los selectores con JavaScript.
+En la clase _PlugInStack_ hay que especificar los recursos CSS y de JavaScript necesarios para usar _bootstrap-select_, además de inicializar los selectores con JavaScript.
 
 {{< code file="PlugInStack.java" language="java" options="" >}}
 {{< code file="index.js" language="JavaScript" options="" >}}
 
-En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estandar HTML soporta y en algún caso nos será necesario y en [añadir botones selectores de opciones][blogbitix-189] como incluir selectores adicionales además de Todos y Ninguno.
+En el artículo [Componente select múltiple en Apache Tapestry][blogbitix-188] explico como crear un _select_ múltiple que por defecto no incluye Tapestry pero el estándar HTML soporta y en algún caso nos será necesario y en [añadir botones selectores de opciones][blogbitix-189] como incluir selectores adicionales además de Todos y Ninguno.
 
 {{< sourcecode git="blog-ejemplos/tree/master/PlugInTapestry" command="./gradlew run" >}}
 

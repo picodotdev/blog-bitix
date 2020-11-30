@@ -29,7 +29,7 @@ Dependiendo del servidor web o de aplicaciones que usemos la configuración ser�
 
 Usando [Docker][docker] nos resultará más sencillo hacer la prueba que teniendo que instalar el paquete de Nginx en nuestra distribución. Puedes consultar [varios artículos sobre Docker][blogbitix-serie-docker] que he escrito a modo introducción y para empezar a usarlo.
 
-En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el pueto HTTPS (443) accitva el uso de TLS/SSL usando varias directivas y sirve los documentos de _/usr/share/nginx/html_ en la ruta _/_.
+En la sección del servidor que escucha en el puerto HTTP (80) realizamos la redirección permanente con el código de estado 301 hacia el protocolo HTTPS. En la sección del servidor que escucha en el puerto HTTPS (443) activa el uso de TLS/SSL usando varias directivas y sirve los documentos de _/usr/share/nginx/html_ en la ruta _/_.
 
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 {{< code file="docker-nginx.sh" language="bash" options="" >}}

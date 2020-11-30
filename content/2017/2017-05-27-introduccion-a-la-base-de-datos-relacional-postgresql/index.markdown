@@ -56,7 +56,7 @@ Antes de lanzar sentencias SQL hay que crear una base de datos con varias tablas
 
 {{< code file="database-world.sh" language="bash" options="" >}}
 
-Para probar que la base de datos se ha importado correctamente la siguiente sentencia SQL lista el número de ciudades por país ordenados alfabéticamente o por número de ciudades descendentemente.
+Para probar que la base de datos se ha importado correctamente la siguiente sentencia SQL lista el número de ciudades por país ordenados alfabéticamente o por número de ciudades descendientemente.
 
 {{< code file="sample-world.sql" language="SQL" options="" >}}
 
@@ -66,7 +66,7 @@ Para algunas sentencias usaré una base de datos un poco más sencilla que con u
 
 ### Inserción múltiple
 
-Si insertamos muchos datos en una misma tabla podemos insertarlos en una única sentencia en vez de múltiples para un mejor rendimiento, evitando enviar al servidor mútiples sentencias individuales.
+Si insertamos muchos datos en una misma tabla podemos insertarlos en una única sentencia en vez de múltiples para un mejor rendimiento, evitando enviar al servidor múltiples sentencias individuales.
 
 {{< code file="insert-multiple.sql" language="SQL" options="" >}}
 
@@ -183,9 +183,9 @@ Con PL/pgSQL se puede crear un bloque de computación y una serie de sentencias 
 
 ### Otras
 
-Otros elementos que soporta la base de datos PostgreSQL en el lenguaje SQL son _Grouping Sets_, _ROLLUP_, _CUBE_, [Set Returning Functions](https://www.postgresql.org/docs/current/static/functions-srf.html), [tablefunc](https://www.postgresql.org/docs/current/static/tablefunc.html), [búsquedas a texto completo](https://www.postgresql.org/docs/current/static/textsearch.html) que para casos sencillos no hace falta recurrir a soluciones más especializadas como [Elasticsearch][elasticsearch], selección y bloqueo de filas con la [clásula _FOR UPDATE_](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-FOR-UPDATE-SHARE), [vistas](https://www.postgresql.org/docs/current/static/sql-createview.html) y [vistas materializadas](https://www.postgresql.org/docs/current/static/sql-creatematerializedview.html) entre seguro otras muchas cosas de las que me olvido o desconozco.
+Otros elementos que soporta la base de datos PostgreSQL en el lenguaje SQL son _Grouping Sets_, _ROLLUP_, _CUBE_, [Set Returning Functions](https://www.postgresql.org/docs/current/static/functions-srf.html), [tablefunc](https://www.postgresql.org/docs/current/static/tablefunc.html), [búsquedas a texto completo](https://www.postgresql.org/docs/current/static/textsearch.html) que para casos sencillos no hace falta recurrir a soluciones más especializadas como [Elasticsearch][elasticsearch], selección y bloqueo de filas con la [cláusula _FOR UPDATE_](https://www.postgresql.org/docs/current/static/sql-select.html#SQL-FOR-UPDATE-SHARE), [vistas](https://www.postgresql.org/docs/current/static/sql-createview.html) y [vistas materializadas](https://www.postgresql.org/docs/current/static/sql-creatematerializedview.html) entre seguro otras muchas cosas de las que me olvido o desconozco.
 
-Por todas estas características se considera a PostgreSQL una de las bases de datos relacionales más avanzadas existentes. Hay mucha literatura sobre las bases de datos relacionales desde el lenguage SQL en general, libros específicos sobre PostgreSQL o como evitar errores diseño al estructurar la información en tablas y columnas.
+Por todas estas características se considera a PostgreSQL una de las bases de datos relacionales más avanzadas existentes. Hay mucha literatura sobre las bases de datos relacionales desde el lenguaje SQL en general, libros específicos sobre PostgreSQL o como evitar errores diseño al estructurar la información en tablas y columnas.
 
 {{< amazon
     linkids="9ba19b63e64c7454bc8051f394643d06,debb8456d091330663a1c10f654fd5b8,2f3d39f7290758074e90a66beda9e253"

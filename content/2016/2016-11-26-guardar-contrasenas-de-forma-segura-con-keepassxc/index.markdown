@@ -24,7 +24,7 @@ Además, es muy recomendable utilizar una contraseña distinta en cada servicio 
 
 Uno de estos programas es [KeePass][keepass], básicamente es una base de datos de contraseñas que se almacenan de forma segura y cifrada y protegidas por una contraseña maestra o para mayor seguridad con un archivo a modo de contraseña maestra. La información básica que se puede guardar es el nombre del servicio y su URL, el usuario en ese servicio y la contraseña. Se pueden agrupar y buscarlas con un campo que va encontrando las coincidencias a medida que se escribe.
 
-En realidad de KeePass hay varias implementaciones, la original es KeePass implementada en C# y el _framework_ .NET. Para evitar el framework .NET y hacarla multiplataforma se reimplementó con C++ y las librerías Qt, la nueva versión se denominó [KeePassX][keepassx]. Sin embargo, el desarrollo de KeePassX es lento y no incorpora las mejoras que algunos usuarios proponían de modo que decidieron hacer un nuevo _fork_ dando lugar [KeePassXC][keepassxc]. 
+En realidad de KeePass hay varias implementaciones, la original es KeePass implementada en C# y el _framework_ .NET. Para evitar el framework .NET y hacerla multiplataforma se reimplementó con C++ y las librerías Qt, la nueva versión se denominó [KeePassX][keepassx]. Sin embargo, el desarrollo de KeePassX es lento y no incorpora las mejoras que algunos usuarios proponían de modo que decidieron hacer un nuevo _fork_ dando lugar [KeePassXC][keepassxc]. 
 
 KeePassXC es una aplicación de escritorio gestor de contraseñas que tiene las funcionalidades adicionales de un generador de contraseñas seguras, la posibilidad de realizar la funcionalidad de _authenticator_ para [activar la verificación en dos pasos en servicios][blogbitix-530] que lo ofrecen como [Google][google], [Amazon][amazon] o [PayPal][paypal]. También guarda un historial de las contraseñas antiguas usadas para cada servicio que permite recuperar una contraseñas antigua en caso de ser necesario o por algún error al hacer el cambio de contraseña.
 
@@ -56,7 +56,7 @@ KeePassXC es una herramienta que no tiene más complejidad, podemos asociar algu
     gallery="true"
     image1="image:keepassxc-5.png" optionsthumb1="300x200" title1="Nueva contraseña" >}}
 
-Si somos nosotros los que implementamos un servicio con el método de autenticación de usuario y contraseña deberíamos [almacenar las contraseñas de forma segura usando «password salted hasing»][blogbitix-75] e [implementar un segundo factor de autenticación en una aplicación web Java con Spring][blogbitix-445].
+Si somos nosotros los que implementamos un servicio con el método de autenticación de usuario y contraseña deberíamos [almacenar las contraseñas de forma segura usando «Salted Password Hashing»][blogbitix-75] e [implementar un segundo factor de autenticación en una aplicación web Java con Spring][blogbitix-445].
 
 Otras formas de guardar las contraseñas es en un [archivo cifrado con GPG][elblogdepicodev-181] que desciframos cuando queramos usar alguna contraseña o en un [sistema de archivos cifrado como con EncFS][blogbitix-126] que lo montamos para acceder a archivo de texto con las contraseñas. [Strong Password Generator][strongpasswordgenerator] en una página web con la que podemos generar contraseñas usando estas mismas preferencias desde el navegador.
 

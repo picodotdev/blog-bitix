@@ -28,7 +28,7 @@ Con esto nos es posible hacer cualquier cosa que el sistema pueda hacer según l
 
 {{< code file="uptime.sh" language="bash" options="" >}}
 
-Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lleva arrancado. Primero se crea el proceso, se espera a que termine y se obtiene su código de salida, se obtiene la salida del proceso (entrada para el programa), se procesa el resultado y se imprimen los segudos que lleva el sistema iniciado.
+Este sería el programa Java para conocer el tiempo que un sistema GNU/Linux lleva arrancado. Primero se crea el proceso, se espera a que termine y se obtiene su código de salida, se obtiene la salida del proceso (entrada para el programa), se procesa el resultado y se imprimen los segundos que lleva el sistema iniciado.
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="Main.out" language="plaintext" options="" >}}

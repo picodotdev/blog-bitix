@@ -18,7 +18,7 @@ tags: ["java", "planeta-codigo", "programacion", "seguridad", "web"]
 
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
-Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación _BASIC_ o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el _handsake_ del [protocolo TLS][tls].
+Los certificados no solo sirven para autenticar a un servidor o acceder solo a aquellos en los que confiamos. El servidor también puede autenticar a los clientes mediante un certificado como alternativa a usar un usuario y contraseña ya sea una autenticación _BASIC_ o un formulario personalizado. Al igual que en el cliente usa el certificado de la autoridad de certificación en la que confía para validar el que presenta el servidor, el servidor puede requerir que el cliente también proporcione un certificado que el servidor valida según las autoridades de certificación en las que confía, en ambos casos el servidor o cliente usan su clave privada para iniciar la conexión segura con el _handshake_ del [protocolo TLS][tls].
 
 Para el ejemplo usaré un servidor web [nginx][nginx] ejecutado como un contenedor de [Docker][docker] configurado de tal manera que requiere autenticación para el cliente con certificados.
 
@@ -37,7 +37,7 @@ El siguiente paso es generar los certificados y firmar con la clave y certificad
 {{< code file="openssl-req.sh" language="bash" options="" >}}
 {{< code file="openssl-req-unknown.sh" language="bash" options="" >}}
 
-Con la misma herramienta de [OpenSSL][openssl] es posible comprobar si un certificado es válido para una autoridad de certificación en la que se confía, para ello se usa el certificado raiz de la autoridad.
+Con la misma herramienta de [OpenSSL][openssl] es posible comprobar si un certificado es válido para una autoridad de certificación en la que se confía, para ello se usa el certificado raíz de la autoridad.
 
 {{< code file="openssl-verify.sh" language="bash" options="" >}}
 {{< code file="openssl-verify-unknown.sh" language="bash" options="" >}}
@@ -51,7 +51,7 @@ Con el siguiente archivo descriptor de [Docker Compose][docker-compose] y comand
 {{< code file="docker-compose.sh" language="bash" options="" >}}
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
-Iniciado el servidor web ya se pueden realizar peticiones y el servidor y el cliente se autenticarán mutuamente. El servidor devolverá el código HTML de la página de bienvenida por defecto con las cabeceras del protocolo HTTP después de realizar el _handsake_ donde se valida el certificado del servidor.
+Iniciado el servidor web ya se pueden realizar peticiones y el servidor y el cliente se autenticarán mutuamente. El servidor devolverá el código HTML de la página de bienvenida por defecto con las cabeceras del protocolo HTTP después de realizar el _handshake_ donde se valida el certificado del servidor.
 
 {{< code file="curl.sh" language="bash" options="" >}}
 
@@ -69,7 +69,7 @@ En caso de que al usar un _keystore_ con un certificado de una autoridad que no 
 
 {{< code file="groovy-unknown.sh" language="bash" options="" >}}
 
-Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Java, en el caso de querer realizar autenticación mutua con un navegador web como [Firefox][firefox] hay que instalar el certificado del cliente y si es necesario el certificado de la autoridad de certificación para que el candado indicativo de la seguridad del protocolo HTTPS se muestre en verde y no indique ningún problema de seguridad en la autenticación del servidor. En Firefox los certificados se añaden en el menú _Preferencias > Avanzado > Ver certficados_. En la pestaña _Sus certificados_ hay que importar el certificado del cliente en formato _PKCS12_ y en la pestaña _Autoridades_ el certificado de la autoridad que haya firmado el certificado del servidor, con el botón _Importar_ se selecciona el archivo _crt_ de la autoridad. Al introducir la URL y realizar la petición Firefox solicita mediante un diálogo seleccionar el certificado a usar para realizar la autenticación en el servidor.
+Lo anterior es usando la herramienta _curl_ o un un programa en la plataforma Java, en el caso de querer realizar autenticación mutua con un navegador web como [Firefox][firefox] hay que instalar el certificado del cliente y si es necesario el certificado de la autoridad de certificación para que el candado indicativo de la seguridad del protocolo HTTPS se muestre en verde y no indique ningún problema de seguridad en la autenticación del servidor. En Firefox los certificados se añaden en el menú _Preferencias > Avanzado > Ver certificados_. En la pestaña _Sus certificados_ hay que importar el certificado del cliente en formato _PKCS12_ y en la pestaña _Autoridades_ el certificado de la autoridad que haya firmado el certificado del servidor, con el botón _Importar_ se selecciona el archivo _crt_ de la autoridad. Al introducir la URL y realizar la petición Firefox solicita mediante un diálogo seleccionar el certificado a usar para realizar la autenticación en el servidor.
 
 {{< image
     gallery="true"

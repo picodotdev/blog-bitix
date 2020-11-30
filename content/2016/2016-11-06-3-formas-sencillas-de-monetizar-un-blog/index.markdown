@@ -25,7 +25,7 @@ En mi caso actualmente con unas 25K páginas vistas al mes tengo uno ingresos de
 
 AdSense y los enlaces de afiliado de Amazon son dos formas sencillas y pasivas de monetizar un blog que dependen del número de páginas vistas, a mayor número de páginas vistas los ingresos serán mayores en proporción similar. Para aumentar las vistas en un blog no hay secretos y son escribir cuanto más contenido mejor y contenido de calidad que les interese a los lectores para atraer visitas de los buscadores, suscriptores de las herramientas de sindicación y de las redes sociales en las que se compartan los artículos.
 
-Llegar a tener una cifra respetable de visitas no es fácil, cuesta mucho tiempo de dedicación al blog y constancia para escribir artículos al ritmo de al menos uno a la semana durante meses e incluso algún año. Este blog tiene ya tres años, 200 artículos escritos (multiplícalo por las horas de dedicación por artículo) y aún solo tengo esas 25K páginas vistas.
+Llegar a tener una cifra respetable de visitas no es fácil, cuesta mucho tiempo de dedicación al blog y constancia para escribir artículos al ritmo de al menos uno a la semana durante meses e incluso algún año. Este blog tiene ya tres años, 200 artículos escritos (multiplícarlo por las horas de dedicación por artículo) y aún solo tengo esas 25K páginas vistas.
 
 ### Artículos patrocinados
 

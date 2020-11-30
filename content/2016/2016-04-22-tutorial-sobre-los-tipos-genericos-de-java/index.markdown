@@ -102,7 +102,7 @@ Se puede definir una lista de un tipo desconocido, _List\<?\>_, en casos en los 
 
 Digamos que queremos definir un método que inserte objetos _Integer_ en un _List_. Para mayor flexibilidad queremos que ese método pueda trabajar con cualquier tipo de lista que permita contener _Integer_, ya sea _List\<Integer\>_, _List\<Number\>_ y _List\<Object\>._ Lo podemos conseguir definiendo _List\<? super Integer\>_ que se conoce como _Lower Bounded Wildcard_.
 
-Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pero usando _wildcads_ podemos crearlas.
+Las clases genéricas no tienen relación alguna aunque sus tipos los tengan, pero usando _wildcards_ podemos crearlas.
 
 {{< code file="WildcardList.java" language="java" options="" >}}
 
@@ -149,7 +149,7 @@ Para profundizar más en este importante tema de genéricos de Java tenemos a nu
     linkids="77088bd1b29706cdb837eebce10d8b88,cf908dff78cd2b9cd608d868b4de0fa3"
     asins="0596527756,0321356683" >}}
 
-A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca exepciones [ClassCastException](javadoc8:java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](javadoc8:java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](javadoc8:java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](javadoc8:java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
+A pesar de los _generics_ y el compilador es posible poner en un _String_ en un _HashSet\<Integer\>_ usando el tipo _raw_ de _HashSet_, cosa que se denomina [Heap Pollution][blogbitix-141] y que provoca excepciones [ClassCastException](javadoc8:java/lang/ClassCastException.html) en tiempo de ejecución. Usando colecciones envueltas por los métodos [Collections.checkedSet](javadoc8:java/util/Collections.html#checkedSet-java.util.Set-java.lang.Class-), [checkedList](javadoc8:java/util/Collections.html#checkedList-java.util.List-java.lang.Class-) y [checkedMap](javadoc8:java/util/Collections.html#checkedMap-java.util.Map-java.lang.Class-java.lang.Class-) evitaremos el _Heap Pollution_ produciendo una excepción no en el momento de extraer el objeto de la colección sino en el momento de insertarlo.
 
 {{< code file="HeapPollution.java" language="java" options="" >}}
 

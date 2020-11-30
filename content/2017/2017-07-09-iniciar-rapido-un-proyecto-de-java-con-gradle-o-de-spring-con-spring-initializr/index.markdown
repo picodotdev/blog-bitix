@@ -41,7 +41,7 @@ Una vez seleccionadas las opciones se genera el proyecto y descarga un archivo c
 
 Como con todos los generadores de código es recomendable saber suficientemente que es código que generan para en caso de modificaciones posteriores saber como aplicarlas. También es posible que no se adapte exactamente a lo que necesitamos, por ejemplo, si queremos hacer un [multiproyecto con Gradle][blogbitix-96] o si una dependencia necesaria no está incluida en la lista de categorías hay añadirla después. A partir de aquí se empieza a programar el proyecto.
 
-En el libro [Spring Boot in Action](https://amzn.to/2tvCJMs) se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro [Mastering Spring 5.0](https://amzn.to/2tZInqM) que también inlcuye secciones sobre Spring Boot.
+En el libro [Spring Boot in Action](https://amzn.to/2tvCJMs) se comenta detalladamente Spring Boot que ofrece múltiples nuevas posibilidades que hace más fácil el desarrollo de un proyecto con Spring. Por otro lado para conocer más detalladamente y ampliamente el ecosistema de Spring está el libro [Mastering Spring 5.0](https://amzn.to/2tZInqM) que también incluye secciones sobre Spring Boot.
 
 {{< amazon
     linkids="86ce91eca968f6de1d0a777f48ca3069,e4f7f44a8b854b00a547d526b83f6469"

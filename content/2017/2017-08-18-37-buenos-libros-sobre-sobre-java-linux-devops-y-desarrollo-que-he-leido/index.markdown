@@ -38,7 +38,7 @@ En la biblioteca digital [OpenLibra][openlibra] encontramos una gran cantidad de
 
 Podemos leer libros cuya información no está relacionada con un determinado herramienta técnica sino que su conocimiento es más generalista e independiente de la tecnología, en el artículo [8+ libros para mejorar como programadores][blogbitix-55] recogía varios de los más mencionados y recomendados por mucha gente todavía válidos a pesar del tiempo transcurrido desde que fueron escritos, son atemporales. En la época que estaba en la universidad hace unos 15-20 años para mi internet aún estaba llegando, lo más parecido que tenía era la biblioteca en la que pedía prestados libros pero lógicamente con mayor limitación de material disponible. Hoy en día los alumnos, de universidad o bachillerato y gente con interés que quiera formarse mediante internet tiene acceso a material del que aprender mucho mejor en cantidad, facilidad y seguramente en calidad. A la gente que ahora está en la universidad le recomendaría que no se limiten a aprender lo que les enseñan en clases magistrales sus profesores sino que tomen parte activa en su formación aprovechándose de los recursos que pueden encontrar en internet.
 
-Estos son los que me ha parecido que están bastante bien, algunos he leído de forma completa otros solo ciertos capítulos, algunos después de leídos olvidados en parte por falta de uso y porque mi inglés no es muy bueno. Son libros relacionados con la programación, la web o el lenguaje Java en su mayoría. Hay algún libro más que he leído pero estos son los que quería destacar. Además de aprender leer esta buena cantidad de libros me da ideas para escribir algunos artículos, algunos de los cuanles he incluído en este artículo como relacionados.
+Estos son los que me ha parecido que están bastante bien, algunos he leído de forma completa otros solo ciertos capítulos, algunos después de leídos olvidados en parte por falta de uso y porque mi inglés no es muy bueno. Son libros relacionados con la programación, la web o el lenguaje Java en su mayoría. Hay algún libro más que he leído pero estos son los que quería destacar. Además de aprender leer esta buena cantidad de libros me da ideas para escribir algunos artículos, algunos de los cuales he incluído en este artículo como relacionados.
 
 {{< tableofcontents >}}
 
@@ -200,7 +200,7 @@ La misión de las bases de datos es almacenar información para una posterior co
     linkids="74be128029bfbd8f789af03a1b673aba"
     asins="1593275803" >}}
 
-Al igual que JavaScript el denostado CSS también a veces lo es por el mismo motivo. [The Book of CSS3](https://amzn.to/2wgURft) explica las nuevas posibilidades para aplicar estilos a documentos HTML en los navegadores. _Media queries_, selectores, psedo-clases y pseudo-elementos, _web fonts_, efectos y estilos de tipografías, disposiciones en múltiples columnas, imágenes de fondo, bordes y efectos de caja, color y opacidad, gradientes transoformaciones 3D, animaciones y transiciones, _layouts_, modos _blend_, filtros y máscaras es el contenido del libro.
+Al igual que JavaScript el denostado CSS también a veces lo es por el mismo motivo. [The Book of CSS3](https://amzn.to/2wgURft) explica las nuevas posibilidades para aplicar estilos a documentos HTML en los navegadores. _Media queries_, selectores, pseudo-clases y pseudo-elementos, _web fonts_, efectos y estilos de tipografías, disposiciones en múltiples columnas, imágenes de fondo, bordes y efectos de caja, color y opacidad, gradientes transformaciones 3D, animaciones y transiciones, _layouts_, modos _blend_, filtros y máscaras es el contenido del libro.
 
 #### CORS in Action
 
@@ -226,7 +226,7 @@ La siguiente versión del protocolo HTTP mejora varios aspectos del anterior. Es
     linkids="c62cfbc31fdea33038fa6650c9bf9686"
     asins="1784395404" >}}
 
-[OAuth][oauth] es un protocolo para proporcionar autenticación y autorización a un sitio o aplicación sin que el usuario le proporcione las credenciales. Una aplicación que requiera acceso aun tercero necesita obtener un _bearer token_ que mediante un proceso de autorización se puede obtener de cuatro formas diferentes dependiendo de la aplicación y de si el dispositivo autorizado es de confianza o no. [Matering OAuth 2.0](https://amzn.to/2wXTEH6) es una buena introducción.
+[OAuth][oauth] es un protocolo para proporcionar autenticación y autorización a un sitio o aplicación sin que el usuario le proporcione las credenciales. Una aplicación que requiera acceso aun tercero necesita obtener un _bearer token_ que mediante un proceso de autorización se puede obtener de cuatro formas diferentes dependiendo de la aplicación y de si el dispositivo autorizado es de confianza o no. [Mastering OAuth 2.0](https://amzn.to/2wXTEH6) es una buena introducción.
 
 * [Autenticación con OAuth y Keycloak en un servicio REST con JAX-RS y Spring Boot][blogbitix-180]
 * [Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot][blogbitix-185]

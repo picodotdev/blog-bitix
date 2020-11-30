@@ -21,7 +21,7 @@ summary: "En unos pocos años las bases de datos NoSQL se han dado a conocer amp
 
 Los sistemas de información empleados tradicionalmente en las aplicaciones son las bases de datos relacionales como [MySQL][mysql], [PostgreSQL][postgresql] u otras comerciales. Las bases de datos relacionales con sus propiedades <abbr title="Atomicity, Consistency, Isolation, Durability">[ACID][acid]</abbr> seguirán usándose pero desde hace unos años están surgiendo y empleándose para algunos casos otro tipo de [bases de datos conocidas como NoSQL][nosql]. Dentro de las bases de datos NoSQL hay varios tipos: clave-valor, de documentos, grafos, ... Dentro de la categoría de bases de datos NoSQL orientadas a almacenar documentos una de las más destacadas es [MongoDB][mongodb].
 
-Al igual que las bases de datos relacionales MongoDB posee un _shell_ JavaScript con el que lanzar todas las operaciones anteriores que junto con [Docker][docker] la experimentación de todo lo anterior será una tarea no demasiado complicada. Bastará descargar la [imagen de MongoDB para Docker](https://hub.docker.com/_/mongo/), iniciar un contenedor, iniciar una _shell bash_ en el contenedor y la _shell_ de MongoDB desde la que lanzar las consultas. Siguendo la [seríe de artículos sobre Docker][blogbitix-serie-docker] en unas pocas horas puedes usarlo.
+Al igual que las bases de datos relacionales MongoDB posee un _shell_ JavaScript con el que lanzar todas las operaciones anteriores que junto con [Docker][docker] la experimentación de todo lo anterior será una tarea no demasiado complicada. Bastará descargar la [imagen de MongoDB para Docker](https://hub.docker.com/_/mongo/), iniciar un contenedor, iniciar una _shell bash_ en el contenedor y la _shell_ de MongoDB desde la que lanzar las consultas. Siguiendo la [seríe de artículos sobre Docker][blogbitix-serie-docker] en unas pocas horas puedes usarlo.
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose.sh" language="bash" options="" >}}
@@ -45,7 +45,7 @@ Estas son las [operaciones CRUD][crud] ejecutadas desde la _shell_ de MongoDB en
 {{< code file="update.json" language="json" options="" >}}
 {{< code file="delete.json" language="json" options="" >}}
 
-MongoDB proporciona controladores para acceder a la base de datos desde los lenguejes de programación más populares como muestro en el artículo [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239].
+MongoDB proporciona controladores para acceder a la base de datos desde los lenguajes de programación más populares como muestro en el artículo [Usar la base de datos NoSQL MongoDB con Java][blogbitix-239].
 
 El libro [MongoDB in Action](https://amzn.to/2qvYqqU) es un buen material de referencia para dominar esta base de datos NoSQL con consejos prácticos de como guardar la información y como administrar la base de datos para replicar los datos en un _cluster_, escalar y otros temas administrativos como crear copias de seguridad, rendimiento, seguridad o monitorización.
 

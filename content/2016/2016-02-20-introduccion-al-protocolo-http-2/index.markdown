@@ -27,7 +27,7 @@ HTTP/2 no mofidifica la semántica de protocolo HTTP con lo que los conceptos de
 * Compresión de cabeceras: para reducir la sobrecarga de las cabeceras en cada petición se consigue de dos formas, usando un algoritmo de compresión y evitando enviarlas según los valores anteriores transmitidos.
 * Envío desde el servidor: el servidor proactivamente puede enviar recursos al cliente para que sean cacheados.
 
-Una diferencia que lo hace incompatible hacia atras es que es binario pero se puede usar junto con la versión anterior y cuando se establezca la conexión negociando el protocolo elegir el mejor según las características de ambas partes, los protocolos binarios son más eficientes de procesar, más compactos e igual de importante menos propensos a errores comparados los los basados en texto.
+Una diferencia que lo hace incompatible hacia atrás es que es binario pero se puede usar junto con la versión anterior y cuando se establezca la conexión negociando el protocolo elegir el mejor según las características de ambas partes, los protocolos binarios son más eficientes de procesar, más compactos e igual de importante menos propensos a errores comparados los los basados en texto.
 
 Establecer una conexión TCP requiere 3 paquetes entre el cliente y servidor reduciendo el número de ellas la latencia baja. Si la distancia entre el cliente y el servidor es lejana simplemente por cuestiones físicas de la velocidad a la que viaja la luz o los impulsos eléctricos, la latencia entre ellos estando situados en las antípodas es de unos 300-400ms (por paquete). Simplemente con la multiplexación y la concurrencia se reduce considerablemente esta sobrecarga en la transmisión al evitar tener que establecer varias conexiones. Además, tiene otras mejoras para los desarrolladores y hace innecesarias algunas de las optimizaciones que se realizaban con HTTP 1.1, como:
 
@@ -43,7 +43,7 @@ Algunas prácticas de optimización siguen siendo utilizables:
 * Minimizar el contenido de los recursos, menor será las cantidad de datos a transmitir y procesar.
 * Eliminar redirecciones innecesarias.
 
-Aunque para usar HTTP/2 no es necesario usar cifrado <abbr title="Transport Layer Security ">TLS</abbr> los navegadores [Firefox][firefox], [Micrsoft Edge][microsoft-edge] y [Google Chrome][google-chrome] han anunciado que en sus implementaciones solo lo soportarán si se usa con cifrado TLS.
+Aunque para usar HTTP/2 no es necesario usar cifrado <abbr title="Transport Layer Security ">TLS</abbr> los navegadores [Firefox][firefox], [Microsoft Edge][microsoft-edge] y [Google Chrome][google-chrome] han anunciado que en sus implementaciones solo lo soportarán si se usa con cifrado TLS.
 
 En un capítulo del libro  [High Performance Browser Networking](http://chimera.labs.oreilly.com/books/1230000000545/ch12.html), en [HTTP/2 explicado](https://bagder.gitbooks.io/http2-explained/content/es/index.html) y en la sección de referencia del final del artículo se detallan más los conceptos del protocolo HTTP/2.
 

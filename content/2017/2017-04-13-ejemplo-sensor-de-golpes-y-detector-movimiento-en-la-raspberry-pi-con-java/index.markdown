@@ -43,7 +43,7 @@ En el siguiente vídeo se aprecia como cuando al cambiar de posición del sensor
 
 {{< youtube video="7Rkou-pJWFY" >}}
 
-El detector de movimiento en teoría es similar en funcionamiento al _tilt_ y la librería diozero proporciona la clase [MotionSensor](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html) para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el [ejemplo de osoyoo](http://osoyoo.com/2016/07/14/motionsensor-pi/), no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniendome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su _pin_ GPIO de datos. Los otros dos _pines_ que utiliza son uno para el voltaje de 5V y el de tierra.
+El detector de movimiento en teoría es similar en funcionamiento al _tilt_ y la librería diozero proporciona la clase [MotionSensor](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/sandpit/MotionSensor.html) para hacer más sencillo su uso. Digo en teoría porque no he conseguido hacerlo funcionar y he revisado varias veces las conexiones mostradas en otros ejemplos incluido el [ejemplo de osoyoo](http://osoyoo.com/2016/07/14/motionsensor-pi/), no se si es porque me falta algo más que debo tener en cuenta y que no conozco o el sensor no funciona viniéndome estropeado. Cuando el sensor detecta movimiento cambia el voltaje de su _pin_ GPIO de datos. Los otros dos _pines_ que utiliza son uno para el voltaje de 5V y el de tierra.
 
 El programa Java para el sensor de movimiento es similar al sensor _tilt_ e igualmente encendería o apagaría un diodo LED cuando detecta movimiento.
 

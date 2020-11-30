@@ -51,8 +51,8 @@ El siguiente paso será activar el bus I2C en la Raspberry Pi que por defecto es
 
 {{< image
     gallery="true"
-    image1="image:i2cdetect.png" optionsthumb1="300x200" title1="Detectción del display 1602 en el bus I2C"
-    caption="Detectción del display 1602 en el bus I2C" >}}
+    image1="image:i2cdetect.png" optionsthumb1="300x200" title1="Detección del display 1602 en el bus I2C"
+    caption="Detección del display 1602 en el bus I2C" >}}
 
 Según la [especificación del _display_ 1602](https://www.sparkfun.com/datasheets/LCD/HD44780.pdf) este componente soporta varios comandos para controlarlo, algunos son para limpiar el texto, cambiar la dirección de escritura, añadir caracteres personalizados y emitir texto en la línea o posición del _display_ que queramos. No es simple el controlar el _display_ a bajo nivel ya que hay que trabajar en momentos con binario y usar bytes, por ello para el ejemplo usaré la librería [diozero][diozero] que ya trae una implementación de controlador con funciones de alto nivel _I2CLcd_ que en versiones más recientes de la librería ha sido renombrada a [HD44780Lcd](http://static.javadoc.io/com.diozero/diozero-core/0.9/com/diozero/HD44780Lcd.html) mucho más cómoda que enviar _bytes_ a bajo nivel al bus I2C, el [código fuente de la clase HD44780Lcd](https://github.com/mattjlewis/diozero/blob/master/diozero-core/src/main/java/com/diozero/HD44780Lcd.java) está disponible y podemos verlo si hay curiosidad.
 

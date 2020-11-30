@@ -102,7 +102,7 @@ Una buena colección de libros técnicos que he leído durante el último trío 
 * [37 buenos libros sobre sobre Java, Linux, DevOps y desarrollo que he leído][blogbitix-254]
 * [8+ ideas de productos tecnológicos para comprar o regalar][blogbitix-281]
 
-Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al [_feed_ a Blog Bitix][blogbitix-feed]. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de [Klouner][klowner]... ¡Buen <strike>2016</strike> 2018!
+Espero seguir escribiendo como hasta ahora en el 2018 si el tiempo del que dispongo me lo permite y continuo con motivación. Por lo pronto son unos cuantos artículos que ya tengo escritos a falta de retocar en el momento que los publique. Puedes aprovechar para repasar esta lista y leer alguno si te lo perdiste, por supuesto si aún no lo has hecho, suscríbete con tu lector preferido al [_feed_ a Blog Bitix][blogbitix-feed]. Finalmente, ya solo me queda desearos con la siguiente imagen linuxera de [Klowner][klowner]... ¡Buen <strike>2016</strike> 2018!
 
 {{< image
     gallery="true"

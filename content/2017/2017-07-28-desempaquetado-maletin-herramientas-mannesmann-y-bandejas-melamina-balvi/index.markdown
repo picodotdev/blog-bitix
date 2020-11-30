@@ -49,9 +49,9 @@ Las puntas para atornillar se usan con un adaptador y las llaves de vaso se pued
 
 {{< image
     gallery="true"
-    image1="image:maletin-herramientas-mannesmann-09.jpg" optionsthumb1="300x200" title1="Aclopador y puntas para el acoplador"
-    image2="image:maletin-herramientas-mannesmann-10.jpg" optionsthumb2="300x200" title2="Aclopador y puntas para el acoplador"
-    image3="image:maletin-herramientas-mannesmann-11.jpg" optionsthumb3="300x200" title3="Aclopador y puntas para el acoplador" >}}
+    image1="image:maletin-herramientas-mannesmann-09.jpg" optionsthumb1="300x200" title1="Acoplador y puntas para el acoplador"
+    image2="image:maletin-herramientas-mannesmann-10.jpg" optionsthumb2="300x200" title2="Acoplador y puntas para el acoplador"
+    image3="image:maletin-herramientas-mannesmann-11.jpg" optionsthumb3="300x200" title3="Acoplador y puntas para el acoplador" >}}
 {{< image
     gallery="true"
     image1="image:maletin-herramientas-mannesmann-12.jpg" optionsthumb1="300x200" title1="Nivel y metro"

@@ -20,7 +20,7 @@ El _framework_ basado en componentes Apache Tapestry incorpora una amplia [colec
 
 En Tapestry hay múltiples componentes con los que construir formularios para que el usuario pueda introducir datos, ser enviados por el navegador y procesados en el servidor. Hay componentes de formulario desde _checkboxes_, _radios_, _select_, _inputs_, ... con soporte para <abbr title="HyperText Markup Language">HTML</abbr> 5.
 
-Observando en detalle la lista de componentes ofrecidos nos daremos cuenta de que está un componente [Select](tapestry:org/apache/tapestry5/corelib/components/Select.html) pero que solo se puede utilizar para que el usuario seleccione una única opción, sin embargo, en el estándar de HTML los campos de selección pueden utilizarse para seleccionar múltiples opciones. Como se no ofrece un componente _select_ para seleccionar múltiples opciones a la vez si lo necesitamos deberemos implementar uno que nos ofrezca esta funcionalidad. Con el codigo fuente de Tapestry la tarea es mucho más sencilla y prácticamente es copiar y pegar, el código completo del componente _MultiSelect_ será lo que muestre a continuación.
+Observando en detalle la lista de componentes ofrecidos nos daremos cuenta de que está un componente [Select](tapestry:org/apache/tapestry5/corelib/components/Select.html) pero que solo se puede utilizar para que el usuario seleccione una única opción, sin embargo, en el estándar de HTML los campos de selección pueden utilizarse para seleccionar múltiples opciones. Como se no ofrece un componente _select_ para seleccionar múltiples opciones a la vez si lo necesitamos deberemos implementar uno que nos ofrezca esta funcionalidad. Con el código fuente de Tapestry la tarea es mucho más sencilla y prácticamente es copiar y pegar, el código completo del componente _MultiSelect_ será lo que muestre a continuación.
 
 Todo componente de formulario en este _framework_ hereda de [AbstracField](tapestry:org/apache/tapestry5/corelib/base/AbstractField.html) en el que básicamente deberemos proporcionar una implementación del método [processSubmission()](tapestry:org/apache/tapestry5/corelib/base/AbstractField.html#processSubmission(java.lang.String)) donde procesaremos los datos recibidos en este caso con un método equivalente al tradicional en Java EE [ServletRequest.getParameterValues] (https://docs.oracle.com/javaee/7/api/javax/servlet/ServletRequest.html#getParameterValues-java.lang.String-). La otra parte que deberemos implementar es la generación de etiquetas HTML del componente en el método de ciclo de vida _beginRender()_ que en gran parte nos servirá lo implementado en el código fuente del componente _Select_ de Tapestry pero incluyendo el atributo _multiple_ que requiere HTML para los _selects_ de múltiples opciones.
 
@@ -41,7 +41,7 @@ Este sería el aspecto del _select_ múltiple con sus botones para seleccionar t
 
 {{< image
     gallery="true"
-    image1="image:multiselect.png" optionsthumb1="300x200" title1="Aspecto del componente select mútiple"
+    image1="image:multiselect.png" optionsthumb1="300x200" title1="Aspecto del componente select múltiple"
     image2="image:multiselect-2.png" optionsthumb2="300x200" title2="Vista con opciones seleccionadas enviadas al servidor"
     caption="Componente MultiSelect con bootstrap-select" >}}
 

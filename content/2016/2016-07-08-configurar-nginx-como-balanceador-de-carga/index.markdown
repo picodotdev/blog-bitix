@@ -34,11 +34,11 @@ Esta es la configuración básica con la estrategia _round-robin_. Los servidore
 
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 
-Para usar la estrategia _least-coneccted_ hay que indicar la directiva _least\_conn_ en la directiva _upstream_.
+Para usar la estrategia _least-connected_ hay que indicar la directiva _least\_conn_ en la directiva _upstream_.
 
 {{< code file="nginx-least_conn.conf" language="plaintext" options="" >}}
 
-Hay que tener en cuenta que en las estrategias _round-robin_ y _least-conected_ cada petición probablemente sea atendida por un servidor diferente de modo que si los servidores no comparten las sesiones se producirán comportamientos erráticos. Usando la estrategia _ip\_hash_ se usará la dirección IP para redirigir todas las peticiones al mismo servidor que se conoce como _sticky session_.
+Hay que tener en cuenta que en las estrategias _round-robin_ y _least-connected_ cada petición probablemente sea atendida por un servidor diferente de modo que si los servidores no comparten las sesiones se producirán comportamientos erráticos. Usando la estrategia _ip\_hash_ se usará la dirección IP para redirigir todas las peticiones al mismo servidor que se conoce como _sticky session_.
 
 {{< code file="nginx-ip_hash.conf" language="plaintext" options="" >}}
 
@@ -46,7 +46,7 @@ Para que los servidores compartan la sesión y evitar usar _sticky session_ pode
 
 {{< code file="nginx-weight.conf" language="plaintext" options="" >}}
 
-Cuando un servidor falla al servir una petición Nginx lo marca como en estado erróneo y deja de enviarle peticiones, los chequeos de salud se hacen de forma pasiva según el resultado de las peticiones que se envían. Con _max\_fails_ se establece el máximo número de fallos antes de considerar un servidor con estado erróneo, tiene un valor por defecto de 1. Con _fail\_timeout_ se establece el tiempo que un servidor se considera que está en estado erróneo antes de enviar una nueva petición, si enviada una nueva petición responde correctamente se vuelve a considerar en estado correcto. Con la directiva _health\_check_ se puede configurar las comprobaciones de estado que hace Nginx para determinar si el servidor de aplicaciones está funcionando correctamente.
+Cuando un servidor falla al servir una petición Nginx lo marca como en estado erróneo y deja de enviarle peticiones, las comprobaciones de salud se hacen de forma pasiva según el resultado de las peticiones que se envían. Con _max\_fails_ se establece el máximo número de fallos antes de considerar un servidor con estado erróneo, tiene un valor por defecto de 1. Con _fail\_timeout_ se establece el tiempo que un servidor se considera que está en estado erróneo antes de enviar una nueva petición, si enviada una nueva petición responde correctamente se vuelve a considerar en estado correcto. Con la directiva _health\_check_ se puede configurar las comprobaciones de estado que hace Nginx para determinar si el servidor de aplicaciones está funcionando correctamente.
 
 {{< code file="nginx-misc.conf" language="plaintext" options="" >}}
 
@@ -61,7 +61,7 @@ Si queremos que el cliente conozca que servidor atendió la petición podemos a�
     image1="image:nginx-load-balancer-3.png" optionsthumb1="300x200" title1="Servidor balanceado 172.17.0.4:8080"
     caption="Nginx balanceando la carga entre 3 servidores de aplicaciones Tomcat" >}}
 
-En el ejemplo de configuración usaré [Docker][docker] para crear un servidor web Nginx que haga de balanceador de carga entre tres servidores de aplicaciones Tomcat. Con Docker hacer esta prueba es mucho más sencilla que instalar tres Tomcats y un servidor Nginx a travbés de los paquetes del sistema o descargando binarios, puedes leer los [artículos de la serie Docker][blogbitix-serie-docker] que he escrito para conocer como usarlo y que ofrece esta útil herramienta. El archivo de _docker-compose.yml_ completo es el siguiente:
+En el ejemplo de configuración usaré [Docker][docker] para crear un servidor web Nginx que haga de balanceador de carga entre tres servidores de aplicaciones Tomcat. Con Docker hacer esta prueba es mucho más sencilla que instalar tres Tomcats y un servidor Nginx a través de los paquetes del sistema o descargando binarios, puedes leer los [artículos de la serie Docker][blogbitix-serie-docker] que he escrito para conocer como usarlo y que ofrece esta útil herramienta. El archivo de _docker-compose.yml_ completo es el siguiente:
 
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 

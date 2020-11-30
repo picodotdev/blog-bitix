@@ -35,7 +35,7 @@ En Java con la clase [Pattern](javadoc8:java/util/regex/Pattern.html) y [Matcher
 
 Esto simplifica el extraer los valores de un cadena, de una manera menos frágil y más fácil de leer posteriormente el código fuente que usar la función _split_ por uno o varios determinados caracteres, esta es una cadena bastante sencilla si el patrón es más complejo el código usando _split_ puede complicarse notablemente.
 
-La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos [start](javadoc8:java/util/regex/Matcher.html#start-int-) y [end](javadoc8:java/util/regex/Matcher.html#end-int-) nos es posible conocer la posición inicial y final de cada grupo de captura. En el caso del código de este ejemplo ya los conocemos de antemano pero usando alguna expresión que capture un número varible de caracteres como «X+», «X*», «X{n,}» o «{X{n,m}}» nos permitirá conocer las posiciones inicial y final.
+La clase Matcher contiene más métodos útiles, por ejemplo, con los métodos [start](javadoc8:java/util/regex/Matcher.html#start-int-) y [end](javadoc8:java/util/regex/Matcher.html#end-int-) nos es posible conocer la posición inicial y final de cada grupo de captura. En el caso del código de este ejemplo ya los conocemos de antemano pero usando alguna expresión que capture un número variable de caracteres como «X+», «X*», «X{n,}» o «{X{n,m}}» nos permitirá conocer las posiciones inicial y final.
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaRegex" command="./gradlew run" >}}
 

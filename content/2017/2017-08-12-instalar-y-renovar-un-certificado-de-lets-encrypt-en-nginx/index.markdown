@@ -54,7 +54,7 @@ Una vez que se ha renovado el certificado hay que reiniciar el servidor web para
 
 Let's Encrypt con _certbot_ comprueba si somos el propietario de un sitio web instalando en el servidor web un archivo que posteriormente antes de generar el certificado lo valida. Este archivo para nginx se ubica en el directorio _/usr/share/nginx/html/.well-known/acme-challenge/_ y ha de estar accesible desde internet con el protocolo HTTP en la dirección _/.well-known/acme-challenge/_ del servidor web.
 
-La siguiente configuración del servidor web nginx redirige todo el tráfico usando el procotolo HTTPS excepto el contenido del directorio _/.well-known/acme-challenge/_ que queda accesible por HTTP.
+La siguiente configuración del servidor web nginx redirige todo el tráfico usando el protocolo HTTPS excepto el contenido del directorio _/.well-known/acme-challenge/_ que queda accesible por HTTP.
 
 {{< code file="nginx.conf" language="plaintext" options="" >}}
 

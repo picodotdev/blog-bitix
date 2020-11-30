@@ -32,9 +32,9 @@ En Java las excepciones son objetos que extienden la clase [Throwable](javadoc11
 
 ### Tipos de excepciones, _checked_ y _unchecked_
 
-Las excepciones que heredan de _Exception_ se denominan _cheked exceptions_, han declararse en los métodos siendo de obligada captura o relanzado para su tratamiento en el método que invoca al que lanza la excepción. Estas son los tipos de excepciones que normalmente crea un programa para gestionar sus propias excepciones. Para crear una nueva excepción basta con crear una nueva clase que extienda de _Exception_, para lanzar una excepción hay que crear una instancia de la clase y lanzarla con la palabra reservada _throws_, en la firma del método ha de declararse que puede lanzar una excepción con la palabra reservada _throws_.
+Las excepciones que heredan de _Exception_ se denominan _checked exceptions_, han declararse en los métodos siendo de obligada captura o relanzado para su tratamiento en el método que invoca al que lanza la excepción. Estas son los tipos de excepciones que normalmente crea un programa para gestionar sus propias excepciones. Para crear una nueva excepción basta con crear una nueva clase que extienda de _Exception_, para lanzar una excepción hay que crear una instancia de la clase y lanzarla con la palabra reservada _throws_, en la firma del método ha de declararse que puede lanzar una excepción con la palabra reservada _throws_.
 
-Las excepciones que heredan de _RuntimeExcepcion_ también se les conoce como _uncheked exception_, no necesitan declararse en los métodos para ser lanzadas, son empleadas para advertir de errores de programación como dividir por cero produciendo [ArithmeticException](javadoc11:java.base/java/lang/ArithmeticException.html), desreferenciar un puntero nulo produciendo [NullPointerException](javadoc11:java.base/java/lang/NullPointerException.html) o acceder a una posición inválida de un _array_ produciendo [ArrayIndexOutOfBoundsException](javadoc11:java.base/lang/ArrayIndexOutOfBoundsException.html).
+Las excepciones que heredan de _RuntimeException_ también se les conoce como _unchecked exception_, no necesitan declararse en los métodos para ser lanzadas, son empleadas para advertir de errores de programación como dividir por cero produciendo [ArithmeticException](javadoc11:java.base/java/lang/ArithmeticException.html), desreferenciar un puntero nulo produciendo [NullPointerException](javadoc11:java.base/java/lang/NullPointerException.html) o acceder a una posición inválida de un _array_ produciendo [ArrayIndexOutOfBoundsException](javadoc11:java.base/lang/ArrayIndexOutOfBoundsException.html).
 
 Las excepciones que heredan de _Error_ son empleadas para casos en los que se han agotado recursos del sistema como la memoria o condiciones de error en el sistema que generalmente impiden el correcto funcionamiento del programa y de difícil tratamiento salvo terminar la ejecución.
 
@@ -57,7 +57,7 @@ En la colección de clases de la API de Java se incluyen muchas excepciones, en 
 
 ### Ejemplo de código usando excepciones
 
-Este sería un ejemplo de código que hace uso de una excepción propia para detectar una condición de error, una execpción es _checked_ y otra _unchecked_.
+Este sería un ejemplo de código que hace uso de una excepción propia para detectar una condición de error, una excepción es _checked_ y otra _unchecked_.
 
 {{< code file="Account.java" language="java" options="" >}}
 {{< code file="InvalidAmountException.java" language="java" options="" >}}

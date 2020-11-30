@@ -46,7 +46,7 @@ Esto puede probarse con el siguiente ejemplo de código de un programa Java que 
 {{< code file="System.out" language="plaintext" options="" >}}
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
-Tabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones sobre las fechas que son incorrectas](http://infiniteundo.com/post/25509354022/more-falsehoods-programmers-believe-about-time) en las aplicaciones.
+Trabajar con fechas no es simple, es muy curioso y no debemos hacer [suposiciones sobre las fechas que son incorrectas](http://infiniteundo.com/post/25509354022/more-falsehoods-programmers-believe-about-time) en las aplicaciones.
 
 {{< sourcecode git="blog-ejemplos/tree/master/DateTimeDatabase" command="cd misc/docker/postgresql/, docker-compose up, ./gradlew run" >}}
 

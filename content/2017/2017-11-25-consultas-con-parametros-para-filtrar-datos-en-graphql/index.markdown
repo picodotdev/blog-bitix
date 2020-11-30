@@ -21,7 +21,7 @@ series: ["graphql"]
 
 No será extraño que en una API para obtener datos esté la necesidad de realizar algún tipo de filtrado para recuperar únicamente la colección de datos deseados de todos los existentes en un repositorio. A las consultas de [GraphQL][graphql] se les pueden pasar argumentos que son recibidos por los métodos que actúan como punto de entrada de las consultas. Con los argumentos es posible implementar cualquier funcionalidad que se necesite, entre ellas el filtrado. Los argumentos pueden ser datos escalares o más complejos que se definen con la palabra reservada _input_ en el esquema.
 
-Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del _enpoint_ de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con _input_ es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.
+Usando el mismo ejemplo que he utilizado en artículos anteriores ahora en este caso implemento la funcionalidad de poder filtrar los libros de una biblioteca utilizando una expresión regular que el título del libro debe cumplir para obtenerse como resultado. El esquema del _endpoint_ de GraphQL queda de la siguiente forma para implementar el filtrado, usando el tipo definido con _input_ es posible pasar como argumentos datos complejos o agrupaciones de datos escalares.
 
 {{< code file="library.graphqls" language="graphqls" options="" >}}
 

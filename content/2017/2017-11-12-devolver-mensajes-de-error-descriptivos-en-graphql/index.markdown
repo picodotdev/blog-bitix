@@ -30,13 +30,13 @@ En el caso de no personalizar los mensajes de error se devuelve un error genéri
 
 {{< code file="curl-generic-errors.sh" language="bash" options="" >}}
 
-Para alguos tipos de error como una consulta cuya sintaxis no es correcta o se hace referencia a campos que no existen se devuelven errores más descriptivos.
+Para algunos tipos de error como una consulta cuya sintaxis no es correcta o se hace referencia a campos que no existen se devuelven errores más descriptivos.
 
 {{< code file="curl-default-errors.sh" language="bash" options="" >}}
 
-Los errores en GraphQL usando el lenguaje Java se gestionan haciendo uso de la clase la interfaz [GrapQLError](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java), que contiene los datos que se devuelven como respuesta como el mensaje de error, el tipo de error, la ubicación en el ćodigo fuente donde se ha producido además de otros datos personalizados adicionales que se quieran incluir.
+Los errores en GraphQL usando el lenguaje Java se gestionan haciendo uso de la clase la interfaz [GraphQLError](https://github.com/graphql-java/graphql-java/blob/master/src/main/java/graphql/GraphQLError.java), que contiene los datos que se devuelven como respuesta como el mensaje de error, el tipo de error, la ubicación en el código fuente donde se ha producido además de otros datos personalizados adicionales que se quieran incluir.
 
-Para adaptar las clases excepción que se lanzan desde el servicio de persistencia a las clases GrapQLError que utiliza GraphQL hay que utilizar métodos con la anotación @ExceptionHandler que básicamente transofrman una [RuntimeException](javadoc11:java.base/java/lang/RuntimeException.html) a un [GraphQLError](https://javadoc.io/doc/com.graphql-java/graphql-java/latest/graphql/GraphQLError.html).
+Para adaptar las clases excepción que se lanzan desde el servicio de persistencia a las clases GraphQLError que utiliza GraphQL hay que utilizar métodos con la anotación @ExceptionHandler que básicamente transforman una [RuntimeException](javadoc11:java.base/java/lang/RuntimeException.html) a un [GraphQLError](https://javadoc.io/doc/com.graphql-java/graphql-java/latest/graphql/GraphQLError.html).
 
 {{< code file="ExceptionHandlers.java" language="java" options="" >}}
 

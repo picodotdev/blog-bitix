@@ -181,7 +181,7 @@ Después de los pasos de configuración Windows 10 prepara el sistema para el pr
 
 Si el equipo ya tenía licencia de de Windows y estaba activado seguramente Windows 10 ya lo reconozca como activado. También es muy probable que Windows 10 sea capaz de reconocer automáticamente todo el hardware que posea en el equipo incluyendo la tarjeta gráfica pasa usar la máxima resolución que ofrezca la pantalla con lo que si es necesario hay que instalar algún controlador de dispositivo adicional descargándolo de la página oficial del fabricante del producto.
 
-Llegado a este punto Windows 10 ya se puede empezar a usar y quizá instalar el software básico y programas que vayas a utilizar como un paquete ofimático ya sea [Microsoft Office][microsoft-office] o alguna de las mejores [4 alternativas a Microsoft Office][blogbitix-143], un navegador web como [Firefox][firefox] o [Chrome][google-chrome] con el complemento para bloquear publicidad [AdBlockPlus][adblockplus] en vez de usar [Microsoft Edge][microsoft-edge] que está incorporado por defecto. No es necesario instalar ningún antivurus ya que Windows 10 ya integra el suyo propio que además es uno de los mejores.
+Llegado a este punto Windows 10 ya se puede empezar a usar y quizá instalar el software básico y programas que vayas a utilizar como un paquete ofimático ya sea [Microsoft Office][microsoft-office] o alguna de las mejores [4 alternativas a Microsoft Office][blogbitix-143], un navegador web como [Firefox][firefox] o [Chrome][google-chrome] con el complemento para bloquear publicidad [AdBlockPlus][adblockplus] en vez de usar [Microsoft Edge][microsoft-edge] que está incorporado por defecto. No es necesario instalar ningún antivirus ya que Windows 10 ya integra el suyo propio que además es uno de los mejores.
 
 Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al cabo de un tiempo no puedas cambiar algunas opciones de personalización como el fondo del escritorio o temas de las ventanas pero nada importante que impida usarlo. Y en cualquier caso [Windows 10 y Office 2016 siguen siendo tan fáciles de usar sin licencia como siempre][blogbitix-119].
 
@@ -198,7 +198,7 @@ Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al ca
 
 #### Comprar una licencia y activar Windows 10
 
-Instalar y usar Windows 10 es gratuito pero pasados unos días después de la instalación ha de activarse con un código de licencia válido, si no se activa se deshabilitan algunas opciones de personalización como el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
+Instalar y usar Windows 10 es gratuito pero pasados unos días después de la instalación ha de activarse con un código de licencia válido, si no se activa se deshabilitan algunas opciones de personalización como el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendedores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
 
 ### Alternativa a Windows con distribuciones GNU/Linux
 

@@ -30,7 +30,7 @@ Al igual que podemos [convertir imágenes entre diferentes formatos][elblogdepic
 
 {{< code file="convert.sh" language="bash" options="" >}}
 
-El primero de los comandos sirve para haceer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las miniaturas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
+El primero de los comandos sirve para hacer cambios de tamaño de forma individual a cada foto y el segundo de forma masiva usando [Bash][bash]. Crean nuevos archivos con las miniaturas añadiendo al nombre de cada vista previa la terminación _\_thumb_, además con la opción _-strip_ elimina la metainformación de la foto o imagen que se hubiera almacenado junto con ella como hacen los teléfonos móviles y cámaras.
 
 {{< image
     gallery="true"

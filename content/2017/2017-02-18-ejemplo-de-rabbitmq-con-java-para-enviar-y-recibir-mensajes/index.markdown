@@ -52,7 +52,7 @@ Una vez iniciado el contenedor y con el código fuente del ejemplo, iniciamos en
 {{< image
     gallery="true"
     image1="image:send.png" optionsthumb1="300x200" title1="Aplicación de ejemplo enviando mensajes"
-    image2="image:receive.png" optionsthumb2="300x200" title2="Aplicación de ejemplo reciviendo mensajes" >}}
+    image2="image:receive.png" optionsthumb2="300x200" title2="Aplicación de ejemplo recibiendo mensajes" >}}
 
 En la comunicación con RabbitMQ se puede usar [TLS/SSL](http://www.rabbitmq.com/ssl.html) así como mecanismos de [autenticación](http://www.rabbitmq.com/authentication.html) y [autorización](http://www.rabbitmq.com/access-control.html) para mayor seguridad. Usando confirmaciones si el receptor falla en el procesado el mensaje no se pierde ya que no se habrá declarado como _acknowledge_ aún así si RabbitMQ falla los mensajes se perderán a menos que las colas se declaren como persistentes las cuales se guardarán en disco perdurando a una catástrofe.
 

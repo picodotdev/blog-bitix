@@ -43,9 +43,9 @@ Otra ventaja de Holaluz es que factura mensualmente y no bimensualmente o factur
 * [Tarifas luz un precio](https://www.holaluz.com/tarifas-luz-un-precio-20/), independiente de la hora de consumo.
 * [Tarifas luz dos precios](https://www.holaluz.com/tarifas-luz-dos-precios-20/), según hora de consumo.
 
-Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo real que he realizado actualizaré este artículo para comparar. Aunque con el modo de pago que he elegido, sin sorpresas, tendré todos los meses el mismo importe en la factura veré al menos el importe de precio del kWh que debería ser de 0,123000, comparando mi factura con mi anterior compañia hay diferencia si tengo en cuenta que ahora uso la ducha y nates no y que ahora no tengo que pagar el servicio de gas con sus costes de revisiones y mantenimiento.
+Una vez reciba la primera factura de un mes completo de Holaluz y vea el consumo real que he realizado actualizaré este artículo para comparar. Aunque con el modo de pago que he elegido, sin sorpresas, tendré todos los meses el mismo importe en la factura veré al menos el importe de precio del kWh que debería ser de 0,123000, comparando mi factura con mi anterior compañía hay diferencia si tengo en cuenta que ahora uso la ducha y nates no y que ahora no tengo que pagar el servicio de gas con sus costes de revisiones y mantenimiento.
 
-Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que estoy seguro que con las subidas de precio en la electridad en este mismo periodo de tiempo sigue siendo un precio menor que otras compañías eléctricas. 
+Transcurrido un año y unos meses me han actualizado el precio a 0,133000 que estoy seguro que con las subidas de precio en la electricidad en este mismo periodo de tiempo sigue siendo un precio menor que otras compañías eléctricas. 
 
 {{< image
     gallery="true"

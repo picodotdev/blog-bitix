@@ -12,7 +12,7 @@ language: "es"
 imageHead: "image:macos-catalina-wallpaper.jpg"
 imagePost: "logotype:apple.svg"
 tags: ["apple", "gnu-linux", "planeta-codigo"]
-summary: "¿Queres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un _hackintosh_ mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual."
+summary: "¿Quieres comprar un Mac, tienes dudas o deseas probar su sistema operativo antes? Aunque el rendimiento será menor que una máquina real y la experiencia de usuario será peor, usando un _hackintosh_ mediante VirtuaBox ya sea con Windows o GNU/Linux podremos probarlo en detalle y hacernos una idea de su funcionamiento y aspecto visual."
 ---
 
 {{% post %}}
@@ -151,7 +151,7 @@ Después de completar la instalación inicial, un reinicio y otros minutos de es
 
 Completados los pasos del asistente se entra en el escritorio con el fondo de pantalla característico según la versión de macOS y algunas de las aplicaciones incorporadas en el propio sistema por defecto en la barra de tareas inferior.
 
-También se puede probar a [instalar otros programas con Hombrew][blogbitix-195], para instalar programas de la [Apple Store][apple-store] es necesario tener una cuenta.
+También se puede probar a [instalar otros programas con Homebrew][blogbitix-195], para instalar programas de la [Apple Store][apple-store] es necesario tener una cuenta.
 
 {{< image
     gallery="true"

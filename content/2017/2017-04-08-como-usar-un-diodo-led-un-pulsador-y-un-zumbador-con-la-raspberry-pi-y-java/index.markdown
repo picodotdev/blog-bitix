@@ -33,7 +33,7 @@ Para el pulsador usaré el método _PULL UP_ (el otro es _PULL DOWN_) donde cone
     image2="image:esquema-cableado.png" optionsthumb2="300x200" title2="Esquema del cableado"
     caption="Esquema del cableado" >}}
 
-La librería diozeo para identificar los _pines_ usa la nomenclatura de Broadcom, otras son las nomenclaturas del _header_ o de wiringPi. Hay que tener en cuenta la nomenclatura que se use ya que el número del _pin_ variará en cada una de ellas, también hay que tener en cuenta la versión de la Raspberry Pi ya que hay pequeñas variaciones según la versión. Por ejemplo, según la tabla de referencia siguiente, para la Raspberry Pi 1 y según la nomenclatura de Brodacom el _pin_ GPIO 18 corresponde al número 12 de _header_, el GPIO 21 al número 13 y el GPIO 22 al número 15. Según la nomenclatura de wiringPi el GPIO 1 corresponde al número 1, el GPIO 2 al número 2 y el GPIO 3 al número 3.
+La librería diozeo para identificar los _pines_ usa la nomenclatura de Broadcom, otras son las nomenclaturas del _header_ o de wiringPi. Hay que tener en cuenta la nomenclatura que se use ya que el número del _pin_ variará en cada una de ellas, también hay que tener en cuenta la versión de la Raspberry Pi ya que hay pequeñas variaciones según la versión. Por ejemplo, según la tabla de referencia siguiente, para la Raspberry Pi 1 y según la nomenclatura de Broadcom el _pin_ GPIO 18 corresponde al número 12 de _header_, el GPIO 21 al número 13 y el GPIO 22 al número 15. Según la nomenclatura de wiringPi el GPIO 1 corresponde al número 1, el GPIO 2 al número 2 y el GPIO 3 al número 3.
 
 {{< image
     gallery="true"

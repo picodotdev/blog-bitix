@@ -35,7 +35,7 @@ Los [componentes usables](http://tapestry.apache.org/component-reference.html) e
 
 Al igual que en el _framework_ están incluidos múltiples componentes el contenedor de dependencias que tiene integrado Tapestry ofrece muchos servicios que es posible inyectar en las páginas y en componentes nuevos y propios, también desarrollar nuevos servicios que necesiten los _portlets_.
 
-Para hacer el ejemplo _Hola Mundo_ hay que definir dos páginas, una para mostrar el mensaje y otra para obtener un nombre, cada página se compone de una clase Java y una plantilla asociada que genera el HTML, ambos elementos son muy simples. El _portlet_ hará uso del mecanismo de preferencias proporcionado por el portal con la clase [PorletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) y que se encarga de persistir en su propia base de datos para obtener y guardar valores en este caso el nombre usado en el mensaje. El _portlet_ usa un formulario que envía el nombre donde se utilizan los componentes [Form](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Form.html), [Label](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html) y [TextField](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextField.html).
+Para hacer el ejemplo _Hola Mundo_ hay que definir dos páginas, una para mostrar el mensaje y otra para obtener un nombre, cada página se compone de una clase Java y una plantilla asociada que genera el HTML, ambos elementos son muy simples. El _portlet_ hará uso del mecanismo de preferencias proporcionado por el portal con la clase [PortletPreferences](https://portals.apache.org/pluto/portlet-3.0-apidocs/javax/portlet/PortletPreferences.html) y que se encarga de persistir en su propia base de datos para obtener y guardar valores en este caso el nombre usado en el mensaje. El _portlet_ usa un formulario que envía el nombre donde se utilizan los componentes [Form](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Form.html), [Label](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/Label.html) y [TextField](http://tapestry.apache.org/current/apidocs/org/apache/tapestry5/corelib/components/TextField.html).
 
 {{< code file="Index.java" language="java" options="" >}}
 {{< code file="Index.tml" language="html" options="" >}}
@@ -64,12 +64,12 @@ Insertado el _portlet_ en una página y accediendo a ella el _portlet_ muestra e
 
 {{< image
     gallery="true"
-    image1="image:tapestry-portlet.png" optionsthumb1="300x250" title1="Porlet con Apache Tapestry en Apache Pluto"
+    image1="image:tapestry-portlet.png" optionsthumb1="300x250" title1="Portlet con Apache Tapestry en Apache Pluto"
     image2="image:tapestry-portlet-preferences.png" optionsthumb2="300x250" title2="Página de preferencias del portlet" >}}
 {{< image
     gallery="true"
     image3="image:tapestry-portlet-name.png" optionsthumb3="300x250" title3="Portlet usando un dato almacenado en las preferencias"
-    caption="Porlet con Apache Tapestry en Apache Pluto" >}}
+    caption="Portlet con Apache Tapestry en Apache Pluto" >}}
 
 Para conocer más sobre los _portlets_ el libro [Portlets in Action](https://amzn.to/2tzpbjL) es una buena fuente de documentación.
 

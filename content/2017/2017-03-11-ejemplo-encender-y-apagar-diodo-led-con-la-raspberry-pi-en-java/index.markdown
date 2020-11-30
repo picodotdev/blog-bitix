@@ -30,7 +30,7 @@ Algunas de las características que ofrece la librería Diozero son:
 * [Lista de deipositivos](http://rtd.diozero.com/en/latest/#devices).
 * Soporta varios proveedores para el acceso al los dispositivos con [diferentes grados de rendimiento](http://rtd.diozero.com/en/latest/#performance).
 
-Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspberry Pi ya que hay varias nomenclaturas (_header_, wiringPi y Broadcom) y que nomenclatura utiliza la librería Diozero. También deberemos tener en cuenta el modelo de la Raspberry Pi que poseamos ya que según el modelo hay pequeñas diferencias en algunos _pines_. Además si usamos una placa de extensión para pruebas sin sodadura como la [wiringPi][wiringpi] deberemos identificarlos por su nombre. Yo que poseo una de las primeras Raspberry Pi (la 1, rev1) el correspondiente su [esquema de _pines_ Raspberry Pi 1 (rev. 1)](https://www.raspberrypi.org/documentation/usage/gpio/) es el del enlace. En ese esquema se define que el _pin_ número 12 según el conteo del _header_ corresponde a GPIO 18 según la nomenclatura Broadcom y la librería Diozero y al GPIO 1 en la librería Pi4J y en la placa de extensión wiringPi.
+Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspberry Pi ya que hay varias nomenclaturas (_header_, wiringPi y Broadcom) y que nomenclatura utiliza la librería Diozero. También deberemos tener en cuenta el modelo de la Raspberry Pi que poseamos ya que según el modelo hay pequeñas diferencias en algunos _pines_. Además si usamos una placa de extensión para pruebas sin soldadura como la [wiringPi][wiringpi] deberemos identificarlos por su nombre. Yo que poseo una de las primeras Raspberry Pi (la 1, rev1) el correspondiente su [esquema de _pines_ Raspberry Pi 1 (rev. 1)](https://www.raspberrypi.org/documentation/usage/gpio/) es el del enlace. En ese esquema se define que el _pin_ número 12 según el conteo del _header_ corresponde a GPIO 18 según la nomenclatura Broadcom y la librería Diozero y al GPIO 1 en la librería Pi4J y en la placa de extensión wiringPi.
 
 {{< image
     gallery="true"
@@ -39,8 +39,8 @@ Una de las primeras cosas a conocer es como se numeran los _pines_ en la Raspber
     caption="Placas modelos Raspberry Pi 1 B y 3 B" >}}
 {{< image
     gallery="true"
-    image1="image:breadboard-cableado.jpg" optionsthumb1="300x200" title1="Breadboard y placa extesión GPIO wiringPi de 26 pines"
-    image2="image:gpio-extension-40-pines-board.jpg" optionsthumb2="300x200" title2="Placa extesión GPIO de 40 pines"
+    image1="image:breadboard-cableado.jpg" optionsthumb1="300x200" title1="Breadboard y placa extensión GPIO wiringPi de 26 pines"
+    image2="image:gpio-extension-40-pines-board.jpg" optionsthumb2="300x200" title2="Placa extensión GPIO de 40 pines"
     caption="Breadboard y placa extesión GPIO wiringPi de 26 _pines_ y 40 pines" >}}
 {{< image
     gallery="true"
