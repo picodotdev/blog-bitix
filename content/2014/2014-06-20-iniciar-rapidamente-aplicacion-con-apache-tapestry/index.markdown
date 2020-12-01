@@ -22,7 +22,7 @@ Para crear el esqueleto de una aplicación rápidamente en [Apache Tapestry](htt
 
 {{< code file="mvn.sh" language="bash" options="" >}}
 
-El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, org.apache.tapestry:quickstart. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo io.github.picodotdev.bitix y como nombre de artefacto iniciorapido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.
+El comando nos presentará un montón de arquetipos, el propio de Tapestry se corresponde con una opción que deberemos buscar, _org.apache.tapestry:quickstart_. Además, del arquetipo a usar se nos pedirá el grupo de la aplicación y nombre de artefacto, para el ejemplo usaré como grupo _io.github.picodotdev.bitix_ y como nombre de artefacto inicio rápido. También nos pedirá la versión y finalmente el paquete de las clases, podemos dejar las opciones por defecto.
 
 {{< image
     gallery="true"

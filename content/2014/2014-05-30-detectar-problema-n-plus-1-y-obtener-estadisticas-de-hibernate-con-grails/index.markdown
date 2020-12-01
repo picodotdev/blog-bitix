@@ -39,11 +39,11 @@ En Grails podemos hacer un controlador y gsp que nos muestre esa información qu
 {{< code file="HibernateController.groovy" language="groovy" options="" >}}
 {{< code file="index.gsp" language="plaintext" options="" >}}
 
-Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo Config.goovy y añadir la siguiente configuración en el apartado Log4j:
+Si además queremos ver las consultas HQL de Hibernate y parámetros que se están lanzando en cada acceso a una página podemos modificar el archivo _Config.goovy_ y añadir la siguiente configuración en el apartado Log4j:
 
 {{< code file="Config.groovy" language="groovy" options="" >}}
 
-La implementación de appender para capturar las HQL que lanza grails es la siguiente:
+La implementación de _appender_ para capturar las HQL que lanza grails es la siguiente:
 
 {{< code file="HibernateAppender.java" language="java" options="" >}}
 {{< code file="HibernateLogger.java" language="java" options="" >}}

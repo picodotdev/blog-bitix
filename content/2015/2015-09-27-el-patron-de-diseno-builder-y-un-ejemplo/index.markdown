@@ -24,7 +24,7 @@ Por ejemplo, supongamos que tenemos una entidad de dominio _Usuario_ en la que e
 
 {{< code file="Usuario-1.java" language="java" options="" >}}
 
-Como vemos no son pocos constructores debido a las combinaciones de los parámetros opcionales, esta forma requiere una buena cantidad de líneas de código y si decidiesemos escribir solo el constructor con todos los parámetros al usarlo tendremos dificultades para saber a que argumento responde cada variable y probablemente deberemos consultar la firma del constructor para saber que lugar ocupa cada argumento, esto dificulta la legibilidad.
+Como vemos no son pocos constructores debido a las combinaciones de los parámetros opcionales, esta forma requiere una buena cantidad de líneas de código y si decidiésemos escribir solo el constructor con todos los parámetros al usarlo tendremos dificultades para saber a que argumento responde cada variable y probablemente deberemos consultar la firma del constructor para saber que lugar ocupa cada argumento, esto dificulta la legibilidad.
 
 {{< code file="Usuario-2.java" language="java" options="" >}}
 
@@ -32,7 +32,7 @@ En este caso solo hay tres argumentos opcionales si hubiera más el número de c
 
 {{< code file="Usuario-3.java" language="java" options="" >}}
 
-Sin embargo, esta solución aunque permite reducir el número de constructores también tiene problemas, uno de ellos es que el constructor y los _set_ no obligan a crear un objeto con estado consistente o válido, otro es que usando los _set_ de los JavaBean nos impide hacer el objeto inmutable, si no es devolviendo una nueva instancia, que con las [nuevas características funcionales añadidas en Java 8][blogbitix-17] y en la programación cocurrente es deseable.
+Sin embargo, esta solución aunque permite reducir el número de constructores también tiene problemas, uno de ellos es que el constructor y los _set_ no obligan a crear un objeto con estado consistente o válido, otro es que usando los _set_ de los JavaBean nos impide hacer el objeto inmutable, si no es devolviendo una nueva instancia, que con las [nuevas características funcionales añadidas en Java 8][blogbitix-17] y en la programación concurrente es deseable.
 
 La solución a los constructores telescópicos y combinación de argumentos es usar el patrón de diseño _Builder_. Por ejemplo, empleando el mismo caso que los anteriores de la siguiente forma.
 
@@ -62,7 +62,7 @@ En el apartado de referencia puedes encontrar más artículos que he escrito sob
 * [Ejemplo del patrón de diseño _State_][elblogdepicodev-170]
 * [Implementación de máquina de estados finita (FSM) con Java 8][blogbitix-93]
 * [Patrón múltiples vistas de un mismo dato en Tapestry][blogbitix-83]
-* [Novedades y nuevas caracteristicas de Java 8][blogbitix-17]
+* [Novedades y nuevas características de Java 8][blogbitix-17]
 {{< /reference >}}
 
 {{% /post %}}

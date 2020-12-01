@@ -51,7 +51,7 @@ También podremos hacer comparaciones:
 
 {{< code file="Main-9.java" language="java" options="" >}}
 
-E incluso implementar operaciones más complejas y habituales personalizadas con la clase [MonetaryOperator](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryOperator.java) que se puede aplicar usando el método _with_ de MonerayAmount.
+E incluso implementar operaciones más complejas y habituales personalizadas con la clase [MonetaryOperator](https://github.com/JavaMoney/jsr354-api/blob/master/src/main/java/javax/money/MonetaryOperator.java) que se puede aplicar usando el método _with_ de _MonetaryAmount_.
 
 ### Formateado y analizado
 

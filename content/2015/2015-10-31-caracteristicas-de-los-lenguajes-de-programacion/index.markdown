@@ -36,8 +36,8 @@ En un lenguaje interpretado el código fuente es compilado a código máquina en
 
 El paradigma de programación es como se estructuran los programas para realizar las tareas de computación. Los principales paragidmas de programación son:
 
-* Imperativos: los programas se codifican como una secuencia de operaciones que definen explícitamente las oepraciones que se realizan. Un ejemplo de lenguaje imeprativo es C.
-* Declarativos: estos lenguejes simplemente definen el resultado desdeado y es el intéprete de ese lenguaje que que calcúla las operaciones necesarias para obtenerlo. Ejemplos de lenguajes declarativos son SQL o HTML.
+* Imperativos: los programas se codifican como una secuencia de operaciones que definen explícitamente las operaciones que se realizan. Un ejemplo de lenguaje imperativo es C.
+* Declarativos: estos lenguajes simplemente definen el resultado deseado y es el intérprete de ese lenguaje que que calcúla las operaciones necesarias para obtenerlo. Ejemplos de lenguajes declarativos son SQL o HTML.
 * Orientación a objetos: en estos lenguajes los datos y operaciones sobre esos datos se encapsulan en objetos. Ejemplos de lenguajes orientados a objetos son Java y C#.
 * Funcionales: son una forma de lenguaje declarativo que se basa en el uso en el uso de funciones que reciben datos, realizan cálculos sobre estos datos y devuelven resultados sin modificar los datos originales.
 
@@ -65,7 +65,7 @@ Otras características que se suelen mencionar al hablar de lenguajes de program
 
 #### Inferencia de tipos
 
-En base al análisis del código fuente se puede inferir el tipo de las variables evitando que el programador los declare explícitamente continuamente. [Wkipedia](https://es.wikipedia.org/wiki/Inferencia_de_tipos).
+En base al análisis del código fuente se puede inferir el tipo de las variables evitando que el programador los declare explícitamente continuamente. [Wikipedia](https://es.wikipedia.org/wiki/Inferencia_de_tipos).
 
 #### Closures y lambdas
 
@@ -81,7 +81,7 @@ Las funciones de orden superior son funciones que toman como argumentos una o m�
 
 #### Currying
 
-La currificación consiste en transformar una función con al menos dos argumentos en una función con al menos un argumento menos. [Wikpedia](https://en.wikipedia.org/wiki/Currying).
+La currificación consiste en transformar una función con al menos dos argumentos en una función con al menos un argumento menos. [Wikipedia](https://en.wikipedia.org/wiki/Currying).
 
 #### Duck typing
 

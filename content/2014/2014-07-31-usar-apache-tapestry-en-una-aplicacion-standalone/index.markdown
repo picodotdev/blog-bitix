@@ -26,7 +26,7 @@ Una vez que tenemos la dependencia en el programa deberemos iniciar el contenedo
 
 {{< code file="Main-1.java" language="java" options="" >}}
 
-En este caso he usado [Spring para la transacionalidad](https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html) e Hibernate para la persistencia. Después de esto tenemos la referencia al registro de servicios, podemos obtener cualquiera en base a la interfaz que implementa, en este caso el servicio que implementa la interfaz [MainService](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/MainService.java).
+En este caso he usado [Spring para la transaccionalidad](https://elblogdepicodev.blogspot.com.es/2013/11/integracion-y-transacciones-con-spring.html) e Hibernate para la persistencia. Después de esto tenemos la referencia al registro de servicios, podemos obtener cualquiera en base a la interfaz que implementa, en este caso el servicio que implementa la interfaz [MainService](https://github.com/picodotdev/blog-stack/blob/master/src/main/java/info/blogstack/services/MainService.java).
 
 {{< code file="Main-2.java" language="java" options="" >}}
 

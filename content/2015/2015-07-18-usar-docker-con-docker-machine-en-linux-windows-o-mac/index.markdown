@@ -29,7 +29,7 @@ Para usar Docker Machine debemos [descargar el binario](https://github.com/docke
 
 {{< code file="docker-machine-version.sh" language="bash" options="" >}}
 
-Con los siguientes comandos podemos crear una máquina virtual para los contenedores docker, listar las máquinas virtuales creadas, hacer SSH a ella, ejecutar un contenedor en ella, parala y eliminar una máquina virtual además de obtener la _IP_ asignada.
+Con los siguientes comandos podemos crear una máquina virtual para los contenedores docker, listar las máquinas virtuales creadas, hacer SSH a ella, ejecutar un contenedor en ella, pararla y eliminar una máquina virtual además de obtener la _IP_ asignada.
 
 {{< code file="docker-machine-create.sh" language="bash" options="" >}}
 

@@ -152,7 +152,7 @@ Más en [Java 7 New Features and Enhancements](https://www.oracle.com/technetwor
 * Nuevas anotaciones
 * Nueva API para XML (StaX)
 
-Más en [Java 6 New Features and Enhancements](https://www.oracle.com/technetwork/java/javase/features-141434.html) y [Introduction to java 6 newfeatures](https://www.javabeat.net/introduction-to-java-6-0-new-features-part-i/)
+Más en [Java 6 New Features and Enhancements](https://www.oracle.com/technetwork/java/javase/features-141434.html) y [Introduction to java 6 new features](https://www.javabeat.net/introduction-to-java-6-0-new-features-part-i/)
 
 #### Java 5
 

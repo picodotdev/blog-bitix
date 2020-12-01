@@ -16,7 +16,7 @@ tags: ["software", "software-libre", "planeta-codigo"]
 
 {{< logotype image="lyx.svg" title="LyX" width="200" >}}
 
-Hace unos días publiqué una [nueva edición del libro PlugIn Tapestry][blogbitix-40], sobre el _framework_ [Apache Tapestry][tapestry] para el desarrollo de páginas y aplicaciones web con Java. En este artículo quiero recoger las herramientas que utilicé para escribirlo y algunas cosas básicas a conocer para tener un libro con un aspecto decente y más prefesional. Son cosas muy básicas pero que a mi me costo un poco poco encontrarlas para conseguir lo que quería, quizá a alguien le sirvan.
+Hace unos días publiqué una [nueva edición del libro PlugIn Tapestry][blogbitix-40], sobre el _framework_ [Apache Tapestry][tapestry] para el desarrollo de páginas y aplicaciones web con Java. En este artículo quiero recoger las herramientas que utilicé para escribirlo y algunas cosas básicas a conocer para tener un libro con un aspecto decente y más profesional. Son cosas muy básicas pero que a mi me costo un poco poco encontrarlas para conseguir lo que quería, quizá a alguien le sirvan.
 
 ### Herramientas
 
@@ -28,7 +28,7 @@ Empecé evaluando la herramienta más adecuada para escribir el libro, en un pri
 
 ### LyX
 
-LyX es una herramienta que funciona excelentemente, mucho mejor que LibreOffice según mi experiencia y tiene más posibilidades que Google Docs. LyX tiene varias funcionalidades que nos serán muy útiles como la creación de índices (también para figuras, cuadros, ...), inclusión de figuras y referencias que permiten a un término hacer referencia a otra parte del libro, inlcuir los listados de código en archivos externos, ...
+LyX es una herramienta que funciona excelentemente, mucho mejor que LibreOffice según mi experiencia y tiene más posibilidades que Google Docs. LyX tiene varias funcionalidades que nos serán muy útiles como la creación de índices (también para figuras, cuadros, ...), inclusión de figuras y referencias que permiten a un término hacer referencia a otra parte del libro, incluir los listados de código en archivos externos, ...
 
 Una de las primeras cosas que deberemos hacer es indicarle a LyX la clase de documento que pretendemos escribir a partir del cual se establecerán los estilos y opciones que LyX nos ofrecerá, también las secciones que dispondremos. Con la clase de documento book tendremos secciones numeradas y no numeradas, la diferencia es que además de unas tener numeración y otras no es que las numeradas aparecerán en el índice y las no numeradas no. Para ello seleccionamos Documento> Configuración.
 
@@ -82,7 +82,7 @@ Para insertar un listado de código como documento externo debemos usar la opci�
 
 ### Portada
 
-Con LyX no podremos crear una portada atractiva dado lo limitado que estamos para modificar los estilos. Sin embargo, podemos incluir las páginas de un pdf externo a nuestro ducmento LyX. Este pdf externo lo podemos crear con la herramienta que queramos LibreOffice o Inskape. Con la opción Insertar> Archivo> Material externo podemos insertar todas las páginas del documento o solo las que queramos.
+Con LyX no podremos crear una portada atractiva dado lo limitado que estamos para modificar los estilos. Sin embargo, podemos incluir las páginas de un pdf externo a nuestro documento LyX. Este pdf externo lo podemos crear con la herramienta que queramos LibreOffice o Inkscape. Con la opción Insertar> Archivo> Material externo podemos insertar todas las páginas del documento o solo las que queramos.
 
 {{< image
     gallery="true"

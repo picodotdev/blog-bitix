@@ -30,7 +30,7 @@ También deberemos sobrescribir la propiedad _conversion.default-chain_ en el ar
 
 {{< code file="javamoney.properties" language="plaintext" options="" >}}
 
-Implementado el servicio de ratios personalizado de Open Exhcnage Rates y configurado podemos usarlo con las siguientes líneas de código tal y como hacíamos con el servicio del Banco Central Europeo (ECB) proporcionado en la implementación de referencia de la librería de Java Money.
+Implementado el servicio de ratios personalizado de Open Exchange Rates y configurado podemos usarlo con las siguientes líneas de código tal y como hacíamos con el servicio del Banco Central Europeo (ECB) proporcionado en la implementación de referencia de la librería de Java Money.
 
 {{< code file="Main.java" language="java" options="" >}}
 

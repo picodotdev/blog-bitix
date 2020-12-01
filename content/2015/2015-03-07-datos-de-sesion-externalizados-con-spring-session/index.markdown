@@ -38,7 +38,7 @@ Descargado el [código fuente de la aplicación de ejemplo](https://github.com/p
 {{< code file="docker-compose.sh" language="bash" options="" >}}
 {{< code file="gradlew.sh" language="bash" options="" >}}
 
-Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Derteniendo la aplicación e iniciándolo de nuevo los datos de la sesión no se pierden al estar persistidos en Redis, el navegador envía la _cookie_ de sesión que contiene únicamente su identificativo y la aplicación recupera los datos de Redis.
+Lanzando una petición se puede ver como el Redis se guardan los datos de la sesión. Deteniendo la aplicación e iniciándolo de nuevo los datos de la sesión no se pierden al estar persistidos en Redis, el navegador envía la _cookie_ de sesión que contiene únicamente su identificativo y la aplicación recupera los datos de Redis.
 
 {{< image
     gallery="true"

@@ -31,7 +31,7 @@ Por enlaces o referencias consideramos tanto a páginas como a recursos de imág
 
 Después de introducir la dirección del sitio web, que con estas herramientas ha de estar accesible en internet, cada una de ellas nos informará de los enlaces rotos que encuentre indicándonos el enlace roto, el texto del enlace y en qué página está. Con esta información podemos corregir esos enlaces del sitio web, bitácora o aplicación. Después de usarlas hubiera dicho que no tenía tantos en está bitácora, me sirvieron para corregirlos.
 
-Las ventajas de estas herramientas web sobre las siguientes con wget y LinkChecker es que no requieren instalar ningún software, las desventajas son que suelen tener una limitación en el número de páginas máximo que rastean y número errores de los que informam, sin embargo, no son excluyentes y utilizando varias da oportunidad de descubrir más enlaces rotos y errores.
+Las ventajas de estas herramientas web sobre las siguientes con wget y LinkChecker es que no requieren instalar ningún software, las desventajas son que suelen tener una limitación en el número de páginas máximo que rastrean y número errores de los que informan, sin embargo, no son excluyentes y utilizando varias da oportunidad de descubrir más enlaces rotos y errores.
 
 {{< image
     gallery="true"
@@ -45,13 +45,13 @@ Si el sitio web no está accesible en internet o queremos encontrar enlaces roto
 {{< code file="wget.sh" language="bash" options="" >}}
 {{< code file="wget.log" language="plaintext" options="" >}}
 
-`wget` es una herramienta con mútiples usos, otro uso que tiene es la de [descargar el contenido de un sitio web completo]
+`wget` es una herramienta con múltiples usos, otro uso que tiene es la de [descargar el contenido de un sitio web completo]
 
 ### Comprobar enlaces rotos con LinkChecker
 
 Otra opción es [LinkChecker](https://github.com/linkchecker/linkchecker) que además de comprobar los enlaces internos de un sitio web también tiene la opción de comprobar los enlaces del sitio web hacia a los externos. Un modo de ejecución es utilizando [Docker][docker] con lo que no hace falta instalar nada localmente salvo Docker.
 
-El siguiente comando comprueba los enlaces internos de un sitio web y los externos que contenga generando un archivo de trazas, _linkchecker.log_, con las comprobaciones de resultado correcto y erroneas. Con el registro de las erróneas es fácil corregirlas.
+El siguiente comando comprueba los enlaces internos de un sitio web y los externos que contenga generando un archivo de trazas, _linkchecker.log_, con las comprobaciones de resultado correcto y erróneas. Con el registro de las erróneas es fácil corregirlas.
 
 {{< code file="linkchecker.sh" language="bash" options="" >}}
 {{< code file="linkchecker.log" language="plaintext" options="" >}}

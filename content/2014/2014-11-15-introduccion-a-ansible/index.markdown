@@ -56,7 +56,7 @@ El libro [Ansible Up & Running](https://www.ansible.com/ansible-book) es un buen
 
 También, en el siguiente [repositorio de GitHub hay varios ejemplos](https://github.com/ansible/ansible-examples) que podemos revisar para ver como se organizan los archivos y carpetas y las convenciones en su estructura que se usan implícitamente.
 
-Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la documentación de Ansible no me ha resultado que esté escrita de forma didáctica para dominarla empezando desde ningún conocimiento, por ello un libro como [Ansible: Up and Running](https://amzn.to/37D5mIC) es una opción interesate para aprender.
+Como me ha ocurrido con la [herramienta Elasticsearch][blogbitix-21] la documentación de Ansible no me ha resultado que esté escrita de forma didáctica para dominarla empezando desde ningún conocimiento, por ello un libro como [Ansible: Up and Running](https://amzn.to/37D5mIC) es una opción interesante para aprender.
 
 {{< amazon
     linkids="4d1cc610f8b4b9439ae029cb32f80c76"

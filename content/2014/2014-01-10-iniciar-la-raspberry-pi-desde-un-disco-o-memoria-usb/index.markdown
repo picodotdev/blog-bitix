@@ -21,7 +21,7 @@ Por defecto la Raspberry Pi se instala en una tarjeta SD y se inicia desde ella,
 
 En la guía de [Instalación de la Raspberry Pi](https://elblogdepicodev.blogspot.com.es/2012/06/guia-instalacion-raspberry-pi-con-arch.html) expliqué como instalar la distribución [Arch Linux ARM][archlinuxarm] en una tarjeta SD, esa guía será el punto de partida para esta entrada. La Raspberry Pi inicia el sistema desde la tarjeta SD por lo que aunque instalemos el sistema en un dispositivo USB seguiremos necesitando la tarjeta SD para que contenga al menos la partición de arranque (boot).
 
-Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando lsblk:
+Teniendo instalado en la tarjeta SD tanto la partición de arranque como la partición del sistema donde está realmente la distribución que hayamos instalado necesitaremos mover la partición del sistema a una dispositivo USB. Para ello podemos utilizar el comando dd, deberemos conocer el dispositivo asignado a la tarjeta SD cuando la introduzcamos en el ordenador, para ello podemos usar el comando _lsblk_:
 
 {{< image
     gallery="true"
@@ -29,17 +29,17 @@ Teniendo instalado en la tarjeta SD tanto la partición de arranque como la part
 
 {{< code file="leer-particion.sh" language="bash" options="" >}}
 
-El comando dd creará un archivo en nuestro ordenador con la imagen de la partición del sistema de la Raspberry Pi. A continuación deberemos escribir esa imagen de la partición en el dispositivo USB también usando el comando dd. Hay que tener en cuenta que al escribir la imagen perderemos todos los datos que tengamos en el dispositivo destino. En el ejemplo, el dispositivo /dev/sdb1 se corresponde con la partición del dispositivo USB en el que copiaremos la partición del sistema de la Raspberry Pi.
+El comando dd creará un archivo en nuestro ordenador con la imagen de la partición del sistema de la Raspberry Pi. A continuación deberemos escribir esa imagen de la partición en el dispositivo USB también usando el comando dd. Hay que tener en cuenta que al escribir la imagen perderemos todos los datos que tengamos en el dispositivo destino. En el ejemplo, el dispositivo _/dev/sdb1_ se corresponde con la partición del dispositivo USB en el que copiaremos la partición del sistema de la Raspberry Pi.
 
 {{< code file="escribir-particion.sh" language="bash" options="" >}}
 
-Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos /dev/sdb1, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
+Una vez escrita la imagen muy probablemente deberemos redimensionar la partición para aprovechar todo el espacio de almacenamiento del dispositivo. Con [GParted](http://gparted.org/) podemos hacerlo de forma muy sencilla. Seleccionamos _/dev/sdb1_, desmontamos la partición y redimensionamos el espacio para la partición, finalmente pulsamos en la opción «Editar> Aplicar operaciones».
 
 {{< image
     gallery="true"
     image1="image:gparted.png" optionsthumb1="300x200" title1="Redimiensionado de patición con GParted" >}}
 
-El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea /dev/sda1, con este valor modificamos el archivo cmdline.txt y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:
+El paso final que deberemos hacer es cambiar en la partición de arranque que sigue estando en la tarjeta SD un archivo para indicar que la partición del sistema ahora está en un dispositivo USB. Probablemente la partición del sistema que deberemos indicar sea _/dev/sda1_, con este valor modificamos el archivo _cmdline.txt_ y lo asignamos al parámetro root, deberemos tener algo como como lo siguiente:
 
 {{< code file="cmdline.txt" language="plaintext" options="" >}}
 

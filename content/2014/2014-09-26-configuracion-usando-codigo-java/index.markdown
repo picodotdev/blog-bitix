@@ -36,7 +36,7 @@ Todo esto es algo que se comenta en el [libro The Pragmatic Programmer](https://
 > is more complex to implement. If it is a long-running server process, you will want to provide some way to reread and apply
 > metadata while the program is running.
 
-Esta es la teoría, veamos el código del ejemplo de configuración en Java con recarga dinámica. La mayor parte del código está en la clase ConfiguracionManager. Esta tiene dos métodos que son usados en la clase Main de la aplicación, el método load carga la clase y la compila, y el método monitor que monitoriza el archivo en busca de cambios y llama al método load cuando los detecte.
+Esta es la teoría, veamos el código del ejemplo de configuración en Java con recarga dinámica. La mayor parte del código está en la clase _ConfiguracionManager_. Esta tiene dos métodos que son usados en la clase Main de la aplicación, el método load carga la clase y la compila, y el método monitor que monitoriza el archivo en busca de cambios y llama al método load cuando los detecte.
 
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="ConfiguracionManager.java" language="java" options="" >}}
@@ -45,7 +45,7 @@ Esta es la teoría, veamos el código del ejemplo de configuración en Java con 
     gallery="true"
     image1="image:main.png" optionsthumb1="300x200" title1="Salida programa Main.java" >}}
 
-Esta idea de no utilizar archivos de configuración sino emplear código como la mejor forma y más breve de definirla es algo que hace [gradle][gradle] con los archivos de configuración del proyecto y [apache tapestry][tapestry] para definir los módulos y la configuración del contenedor de inversión de control, parece una tendencia por el hecho de tener las propiedades y ventajas comentadas sobre otro tipo de archivos ya sean xml o sus sustitutos más recientes como yaml, json, ... que son más compactos y legibles que xml pero que siguen adoleciendo de algunos de los mismos defectos.
+Esta idea de no utilizar archivos de configuración sino emplear código como la mejor forma y más breve de definirla es algo que hace [Gradle][gradle] con los archivos de configuración del proyecto y [apache tapestry][tapestry] para definir los módulos y la configuración del contenedor de inversión de control, parece una tendencia por el hecho de tener las propiedades y ventajas comentadas sobre otro tipo de archivos ya sean xml o sus sustitutos más recientes como yaml, json, ... que son más compactos y legibles que xml pero que siguen adoleciendo de algunos de los mismos defectos.
 
 El código fuente completo puede encontrarse en el [siguiente repositorio de GitHub](https://github.com/picodotdev/blog-ejemplos/tree/master/ConfiguracionJava).
 

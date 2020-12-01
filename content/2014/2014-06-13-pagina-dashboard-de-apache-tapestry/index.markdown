@@ -30,7 +30,7 @@ En otra sección también podemos ver el estado de los servicios que puede ser:
 
 * Builtin: A servicio fundamentar que existe incluso antes de la creación del registro.
 * Defined: El servicio está definido pero aún no ha sido referenciado.
-* Virtual: El servicio ha sido referenciado (normalmente como injección de otro servicio) pero aún no ha sido hecho efectivo con una instancia del servicio. El hacerse efectivo ocurre con la primera invocación en el proxy del servicio.
+* Virtual: El servicio ha sido referenciado (normalmente como ejecución de otro servicio) pero aún no ha sido hecho efectivo con una instancia del servicio. El hacerse efectivo ocurre con la primera invocación en el proxy del servicio.
 * Real: El servicio se ha hecho efectivo: se ha instanciado, las dependencias han sido inyectadas, se ha decorado con interceptores y el totalmente operacional.
 
 {{< image

@@ -29,7 +29,7 @@ Continuando la serie de artículos sobre [Spring Boot][spring-boot] y [Spring Cl
 * _configprops_: muestra las propiedades de configuración.
 * _env_: muestra información de la clase [ConfigurableEnvironment](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/core/env/ConfigurableEnvironment.html) que incluye propiedades del sistema.
 * _health_: permite conocer si la aplicación está en funcionamiento.
-* _info_: muestra información arbitraria sobre la aplicacion.
+* _info_: muestra información arbitraria sobre la aplicación.
 * _metrics_: permite obtener los valores de las métricas.
 * _trace_: información de las últimas peticiones a la aplicación.
 

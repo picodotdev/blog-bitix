@@ -77,7 +77,7 @@ Una vez que tenemos la clase que va a recibir los eventos para que Hibernate la 
 {{< code file="HibernateIntegrator.java" language="java" options="" >}}
 {{< code file="DummyService.java" language="java" options="" >}}
 
-Finalmente, para que Hibernate conozca la existencia de este Integrator debemos crear un archivo que contenga el nombre completo de la clase _Integrator_. El archivo ha de estar en de un librería .jar en la ubicación _/META-INF/services/org.hibernate.integrator.spi.Integrator_ y disponible en el classpath. El contenido de este archivo para el ejemplo es:
+Finalmente, para que Hibernate conozca la existencia de este Integrator debemos crear un archivo que contenga el nombre completo de la clase _Integrator_. El archivo ha de estar en de un librería .jar en la ubicación _/META-INF/services/org.hibernate.integrator.spi.Integrator_ y disponible en el _classpath_. El contenido de este archivo para el ejemplo es:
 
 {{< code file="Integrator" language="plaintext" options="" >}}
 

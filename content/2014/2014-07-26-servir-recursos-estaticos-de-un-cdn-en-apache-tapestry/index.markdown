@@ -47,7 +47,7 @@ Y estas las nuevas nuevas URL haciendo uso de la implementación del _AssetPathC
 
 {{< code file="urls-con-cdn.txt" language="plaintext" options="" >}}
 
-Así de simple podemos cambiar el comportamiento de Tapestry y en este caso emplear un CDN, esta implementación es sencilla y suficiente pero perfectamente pordríamos implementarla con cualquier otra necesidad que tuviesemos. El cambio está localizado en una clase, son poco más que 46 líneas de código pero lo mejor es que es transparente para el código del resto de la aplicación, ¿que más se puede pedir?
+Así de simple podemos cambiar el comportamiento de Tapestry y en este caso emplear un CDN, esta implementación es sencilla y suficiente pero perfectamente podríamos implementarla con cualquier otra necesidad que tuviésemos. El cambio está localizado en una clase, son poco más que 46 líneas de código pero lo mejor es que es transparente para el código del resto de la aplicación, ¿que más se puede pedir?
 
 {{< plugintapestry >}}
 

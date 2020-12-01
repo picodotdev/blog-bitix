@@ -58,7 +58,7 @@ Desde hace un tiempo estoy escribiendo más sobre temas de programación que sob
 
 Si no quieres perderte ninguno de los nuevos artículos que escriba puede suscribirte al [canal RSS de Blog Bitix][blogbitix-feed], [seguirme en twiter][twitter-picodotdev] o desde hace un poco de tiempo seguir la [página de Google+ de Blog Bitix][blogbitix-googleplus]. Por supuesto, en anteriores entregas de hemerotecas dispones de más artículos si algunos de estos te han parecido interesantes.
 
-Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mosteiro), [Jose Luís Sáchez](https://twitter.com/josetesan), [Joaquín Bravo](https://twitter.com/jbravo), [Marcos Bello](https://twitter.com/mbmerayo) y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)
+Y para finalizar quiero agradecer a [Fran Mosteiro](https://twitter.com/fran_mosteiro), [Jose Luís Sánchez](https://twitter.com/josetesan), [Joaquín Bravo](https://twitter.com/jbravo), [Marcos Bello](https://twitter.com/mbmerayo) y algunos otros que esporádicamente también suelen hacer RT o marcar como favoritos los tweets de esta bitácora y que me ayudan un poquito o mucho a difundir lo que escribo ¡muchas gracias!, un saludo y ¡que comencéis bien el nuevo año 2015! :)
 
 {{< image
     gallery="true"

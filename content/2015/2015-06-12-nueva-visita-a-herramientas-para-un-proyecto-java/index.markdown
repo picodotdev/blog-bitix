@@ -18,7 +18,7 @@ summary: "Las tecnologías para desarrollar una aplicación son un medio para re
 
 {{< logotype image="java.svg" >}}
 
-Hace 5 años escribí un [artículo comentando que tecnologías eligiría][elblogdepicodev-62] para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.
+Hace 5 años escribí un [artículo comentando que tecnologías elegiría][elblogdepicodev-62] para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.
 
 ### Lenguaje de programación
 
@@ -32,13 +32,13 @@ Como lenguaje de programación seguiría usando Java, en mi caso es el lenguaje 
 
 ### Persistencia en base de datos
 
-Las librerías más populares de persistencia en Java son [Hibernate][hibernate] aunque para algunos casos usaría o como complemento [jOOQ][jooq], [Spring Data][spring-data] ofrece varias utilidzades para facilitar crear las clases repositorio usando Hibernate.
+Las librerías más populares de persistencia en Java son [Hibernate][hibernate] aunque para algunos casos usaría o como complemento [jOOQ][jooq], [Spring Data][spring-data] ofrece varias utilidades para facilitar crear las clases repositorio usando Hibernate.
 
 jOOQ es una librería que no tienen tanta magia como Hibernate que en muchas ocasiones produce errores complicados de resolver y no tenemos tanto control de lo que hace, por otro lado jOOQ devuelve a la base de datos y al lenguaje SQL la relevancia que con Hibernate queda abstraída con el mapeado del modelo de datos a objetos y el lenguaje HQL. jOOQ permite construir las sentencias SQL de forma programática con lo que el compilador nos indicará errores de compilación y nos validará los tipos que usemos, ambas cosas son importantes cuando hacemos un _refactor_ en alguna parte de la aplicación. En el artículo [alternativa a Hibernate y ejemplo jOOQ][blogbitix-82] entro en más detalles.
 
 * [Alternativa a Hibernate y ejemplo jOOQ][blogbitix-82]
 
-Al persistir datos si es necesario realizar auditoría de datos dos posibilidades son [Envers][hibernate-envers] específica para Hibernate y [Javers][javers] usable con cualquier librería de persistencia. Permiten guarda los típicos campos fecha creación, usuario creación, fecha modificación y última modificación asi como mantener un histrórico completo de todos los cambios realizados a una entidad.
+Al persistir datos si es necesario realizar auditoría de datos dos posibilidades son [Envers][hibernate-envers] específica para Hibernate y [Javers][javers] usable con cualquier librería de persistencia. Permiten guarda los típicos campos fecha creación, usuario creación, fecha modificación y última modificación asi como mantener un histórico completo de todos los cambios realizados a una entidad.
 
 * [Histórico de datos, auditoría y diferencias entre objetos con Javers en Java][blogbitix-191]
 
@@ -114,7 +114,7 @@ En cuanto al alojamiento para la aplicación la nube es otra tendencia por su fl
 
 * [Nueva visita a 5+ opciones de «hosting» para aplicaciones][blogbitix-76]
 
-Aún usando un servicio en la nube para no encadenarse a uno determinado y disponer un centro de datos están [Consul] como sistema de registro, descubrimiento, gestión de configuración y conexión entre servicios, [Vault][vault] para usar seguridad como servicio, [Nomad][nomad] como orquestador de las aplicaciones con posibilidad de hacer despliegues _blue/greeen_ o _canary_ asi com volver auna versión anterior fácilmente y [Terraform][terraform] para aprovisionar el entorno en la nube independiente del proveedor y haciendo que la infraestructura este bajo el control de versiones al usar infraestructura como código.
+Aún usando un servicio en la nube para no encadenarse a uno determinado y disponer un centro de datos están [Consul] como sistema de registro, descubrimiento, gestión de configuración y conexión entre servicios, [Vault][vault] para usar seguridad como servicio, [Nomad][nomad] como orquestador de las aplicaciones con posibilidad de hacer despliegues _blue/greeen_ o _canary_ asi com volver a una versión anterior fácilmente y [Terraform][terraform] para aprovisionar el entorno en la nube independiente del proveedor y haciendo que la infraestructura este bajo el control de versiones al usar infraestructura como código.
 
 * [Microservicios con Spring Cloud, Consul, Nomad y Traefik][blogbitix-436]
 * [Administrar secretos y proteger datos sensibles con Vault][blogbitix-424]

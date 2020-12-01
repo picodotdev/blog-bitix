@@ -17,21 +17,21 @@ summary: "Tanto en un servidor web como de aplicaciones podemos hacer que la com
 
 {{< logotype image1="openssl.svg" title1="OpenSSL" width1="400" >}}
 
-En entradas anteriores he explicado [en que consiste la criptografía y GPG][elblogdepicodev-181] y como podemos usarlo a nivel personal para firmar y cifrar archivos y [firmar correos electrónicos con el cliente de correo Evolution][elblogdepicodev-182]. También he comentado [cómo crer un certificado con OpenSSL y como convertirlo a diferentes formatos][blogbitix-13]. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los [Certificados SSL, de empresa, «wildcard» y de validación extendida][blogbitix-77] para proporcionar acceso cifrado al sevidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores [Tomcat](http://tomcat.apache.org/), [Lighttpd](http://www.lighttpd.net/), [JBoss](http://jbossas.jboss.org/)/[WildFly](http://wildfly.org/), [Nginx](http://nginx.org/) y [Apache](http://www.apache.org/).
+En entradas anteriores he explicado [en que consiste la criptografía y GPG][elblogdepicodev-181] y como podemos usarlo a nivel personal para firmar y cifrar archivos y [firmar correos electrónicos con el cliente de correo Evolution][elblogdepicodev-182]. También he comentado [cómo crear un certificado con OpenSSL y como convertirlo a diferentes formatos][blogbitix-13]. En esta entrada explicaré como usar un certificado SSL creado con OpenSSL después de conocer los [Certificados SSL, de empresa, «wildcard» y de validación extendida][blogbitix-77] para proporcionar acceso cifrado al servidor web o servidor de aplicaciones, explicaré cual es la configuración necesaria para los servidores [Tomcat](http://tomcat.apache.org/), [Lighttpd](http://www.lighttpd.net/), [JBoss](http://jbossas.jboss.org/)/[WildFly](http://wildfly.org/), [Nginx](http://nginx.org/) y [Apache](http://www.apache.org/).
 
 Usar una conexión <abbr title="Secure Sockets Layer">SSL</abbr> o <abbr title="Transport Layer Security">TLS</abbr> y un certificado de servidor evita que los datos entre el navegador del usuario y el servidor sean legibles para una tercera parte siendo mayor la seguridad en nuestras aplicaciones o dando mayor confianza al usuario y usando algunos certificados al aparecer en la barra de navegación del navegador en verde el nombre de la entidad detrás de la página evitando problemas de suplantación de identidad.
 
-Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente [protocolo HTTP/2][blogbitix-127] que es más eficiente tanto para el cliente como para el servidor y con menores latencias. [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129] es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protoclo seguro HTTPS es tambien una condición encesaria por seguridad al [utilizar autenticación básica][blogbitix-505].
+Los principales navegadores han anunciado que una conexión cifrada SSL/TLS es condición necesaria para usar el ya presente [protocolo HTTP/2][blogbitix-127] que es más eficiente tanto para el cliente como para el servidor y con menores latencias. [Configurar HTTP/2 en Nginx, Apache HTTPD, WildFly o Jetty][blogbitix-129] es sencillo y mejorará el rendimiento de nuestros sitios web o aplicaciones. Utilizar el protocolo seguro HTTPS es también una condición necesaria por seguridad al [utilizar autenticación básica][blogbitix-505].
 
 {{< tableofcontents >}}
 
 ### Configurar SSL/TLS en Tomcat
 
-Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplicaciones web desarrolladas con el lenguaje Java. La forma que explicaré a continuación sobre como obtener cifrado SSL con este servidor será usando APR (_Apache Portable Runtime_). Previamente deberemos haber generado un certificado SSL con OpenSSL, una vez dispogamos del nuestro aunque sea autofirmado debemos añadir la siguiente configuración al archivo server.xml:
+Tomcat es uno de los servidores de aplicaciones más usado para desplegar aplicaciones web desarrolladas con el lenguaje Java. La forma que explicaré a continuación sobre como obtener cifrado SSL con este servidor será usando APR (_Apache Portable Runtime_). Previamente deberemos haber generado un certificado SSL con OpenSSL, una vez dispongamos del nuestro aunque sea autofirmado debemos añadir la siguiente configuración al archivo server.xml:
 
 {{< code file="server.xml" language="XML" options="" >}}
 
-Hay que activar el conector SSL (el anterior xml) y disponer del certificado y su clave privada, ambos archivos se indican en los atributos SSLCertificateFile y SSLCertificateKeyFile. Si queremos usar el puerto estandar del protocolo HTTPS cambiaremos el valor del puerto de 8443 a 443 en el atributo port. La configuración es la misma tanto para Tomcat 7 como para Tomcat 8.
+Hay que activar el conector SSL (el anterior xml) y disponer del certificado y su clave privada, ambos archivos se indican en los atributos SSLCertificateFile y SSLCertificateKeyFile. Si queremos usar el puerto estándar del protocolo HTTPS cambiaremos el valor del puerto de 8443 a 443 en el atributo port. La configuración es la misma tanto para Tomcat 7 como para Tomcat 8.
 
 ### Configurar SSL/TLS en JBoss
 
@@ -41,7 +41,7 @@ JBoss es otro de los servidores que es ampliamente usado para desplegar aplicaci
 
 ### Configurar SSL/TLS en WildFly
 
-JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha pasado a llamarse WildFly y la comercial con soporte sigue llamandose JBoss. WildFly soporta las especificaciones de Java EE 7. En WildFly el contenedor web es [undertow](http://undertow.io/) en vez de Tomcat y cambia la configuración de SSL. Senecesita crear un keystore JKS que contenga tanto la clave como el certificado.
+JBoss cambió recientemente el nombre de la versión community de JBoss, esta ha pasado a llamarse WildFly y la comercial con soporte sigue llamándose JBoss. WildFly soporta las especificaciones de Java EE 7. En WildFly el contenedor web es [undertow](http://undertow.io/) en vez de Tomcat y cambia la configuración de SSL. Se necesita crear un keystore JKS que contenga tanto la clave como el certificado.
 
 {{< code file="standalone-wildfly.xml" language="XML" options="" >}}
 

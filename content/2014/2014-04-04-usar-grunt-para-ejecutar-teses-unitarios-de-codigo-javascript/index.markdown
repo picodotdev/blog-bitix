@@ -52,7 +52,7 @@ Veremos como salida el siguiente resultado en la terminal.
 
 Al hacer esta entrada de forma que las pruebas se ejecuten con Grunt he movido las plantillas de Mustache de lugar, antes estaban embebidas en el html en el ejemplo [Backbone](https://elblogdepicodev.blogspot.com.es/2013/04/ejemplo-lista-de-tareas-con-backbone.html) y las he movido a dentro del javascript de la aplicación de la lista de tareas. Esto hace que para pasar las pruebas no tengamos una dependencia sobre un archivo html externo en el que buscar las plantillas, también así el javascript es más autónomo y está incluido en él todo lo que necesita.
 
-Aún tengo otra entrada preparada sobre javascript que es el mismo ejemplo de la lista de tareas pero en vez de usando las vistas de Backbone o Marionette usando [React](https://reactjs.org/). El [código fuente completo de este ejemplo sobre pruebas unitarias y Marionette](https://github.com/picodotdev/elblogdepicodev/tree/master/MarionetteREST) está en [mi regpostorio de GitHub](https://github.com/picodotdev).
+Aún tengo otra entrada preparada sobre javascript que es el mismo ejemplo de la lista de tareas pero en vez de usando las vistas de Backbone o Marionette usando [React](https://reactjs.org/). El [código fuente completo de este ejemplo sobre pruebas unitarias y Marionette](https://github.com/picodotdev/elblogdepicodev/tree/master/MarionetteREST) está en [mi repositorio de GitHub](https://github.com/picodotdev).
 
 {{< reference >}}
 * [Introducción y ejemplo de RequireJS](https://elblogdepicodev.blogspot.com.es/2013/03/introduccion-y-ejemplo-de-requirejs.html)

@@ -36,7 +36,7 @@ A continuación la [presentación completa de la charla](https://speakerdeck.com
 
 {{< speakerdeck id=94de4cc06da70131c6665e5071095c76" >}}
 
-Un par de gracias, la sensación de haber aportado algo (o al menos haberlo intentado), el ruido que hicimos en twitter con el hastag [#tapestry5](https://twitter.com/search?q=tapestry5), unos pocos seguidores adicionales y algunos retweets incluido el del principal hacedor de Tapestry fue suficiente recompensa.
+Un par de gracias, la sensación de haber aportado algo (o al menos haberlo intentado), el ruido que hicimos en twitter con el _hastag_ [#tapestry5](https://twitter.com/search?q=tapestry5), unos pocos seguidores adicionales y algunos retweets incluido el del principal hacedor de Tapestry fue suficiente recompensa.
 
 Un blog desde hace ya 4 años, un libro el año pasado, una charla este ¿que será lo siguiente? «Non gogoa, han zangoa».
 

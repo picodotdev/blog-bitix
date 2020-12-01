@@ -10,7 +10,7 @@ sharing: true
 comments: true
 imagePost: "logotype:archlinux.svg"
 tags: ["gnu-linux", "planeta-codigo", "software", "software-libre"]
-summary: "Arch Linux es una distribución que deja al usuario decidir en gran medida los componentes que quiere usar. Desde el sistema de arranque, el entorno de escritorio hasta los programas. Para ello no proporciona un instalador ni en modo texto ni con interfaz gráfica que guíe al usuario en diferentes pasos en la instalación de la distribución, en vez de eso proporciona una guía con la información relevante que el usuario necesita conocer para el mismo mediante comandos instale y configure el sistema con los componentes que desee. Este anexo complementa y reune los comandos que sigo para instalar Arch Linux desde la imagen de instalación hasta el entorno de escritorio GNOME."
+summary: "Arch Linux es una distribución que deja al usuario decidir en gran medida los componentes que quiere usar. Desde el sistema de arranque, el entorno de escritorio hasta los programas. Para ello no proporciona un instalador ni en modo texto ni con interfaz gráfica que guíe al usuario en diferentes pasos en la instalación de la distribución, en vez de eso proporciona una guía con la información relevante que el usuario necesita conocer para el mismo mediante comandos instale y configure el sistema con los componentes que desee. Este anexo complementa y reúne los comandos que sigo para instalar Arch Linux desde la imagen de instalación hasta el entorno de escritorio GNOME."
 note: "<strong>Nota</strong>: Si quieres [instalar Arch Linux de forma desatendida, automatizada y personalizable](https://picodotdev.github.io/blog-bitix/2017/01/script-de-instalacion-de-arch-linux-desatendido-automatizado-y-personalizable/) te recomiendo usar un _script_ en bash que he desarrollado. La instalación que realiza el _script_ no es distinta de la que harías tu introduciendo los comandos uno detrás de otro pero si mucho más fácil, rápida y probada."
 ---
 
@@ -167,7 +167,7 @@ Para un sistema con BIOS:
 
 Para un sistema con EFI:
 
-En mi equipo que es un Sony Vaio SVE con EFI aún no he conseguido que GRUB me arranque correctamente (al inicial parece que se queda con la pantalla en negro y aparentemente bloqueado aunque puedo reiniciarlo con ctrl-alt-supr) y he tenido que usar [rEFInd](https://wiki.archlinux.org/index.php/REFInd). Aún así también tengo instalado Grub que iniciandolo a través de rEFInd si funciona bien.
+En mi equipo que es un Sony Vaio SVE con EFI aún no he conseguido que GRUB me arranque correctamente (al inicial parece que se queda con la pantalla en negro y aparentemente bloqueado aunque puedo reiniciarlo con ctrl-alt-supr) y he tenido que usar [rEFInd](https://wiki.archlinux.org/index.php/REFInd). Aún así también tengo instalado Grub que iniciándolo a través de rEFInd si funciona bien.
 
 {{< code file="script-21.sh" language="bash" options="" >}}
 
@@ -223,7 +223,7 @@ Descomentamos la siguiente linea:
 
 {{< code file="script-32.txt" language="plaintext" options="" >}}
 
-Editamos el archivo pacman.conf según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.
+Editamos el archivo _pacman.conf_ según nuestras preferencias, por ejemplo, para permitir el color en la terminal y para mostrar el progreso global.
 
 {{< code file="script-33.sh" language="bash" options="" >}}
 
@@ -245,7 +245,7 @@ Habilitamos el servicio del gestor de escritorio GDM:
 
 #### 2.4 Instalación de yaourt
 
-Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) deberemos instalar la herramienta yaourt:
+Si pretendemos usar algún paquete de [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) deberemos instalar la herramienta _yaourt_:
 
 {{< code file="script-37.sh" language="bash" options="" >}}
 
@@ -257,7 +257,7 @@ Lo instalamos con:
 
 {{< code file="script-39.sh" language="bash" options="" >}}
 
-A partir de este momento podemos usar el comando yaourt en vez de pacman.
+A partir de este momento podemos usar el comando _yaourt_ en vez de pacman.
 
 #### 2.5 Instalar de programas
 

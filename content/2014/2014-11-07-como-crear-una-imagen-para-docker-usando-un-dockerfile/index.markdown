@@ -11,14 +11,14 @@ comments: true
 imagePost: "logotype:docker.svg"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["docker"]
-summary: "Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de mútiples lenguages, servidores web más populares y entre otras muchas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile."
+summary: "Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile."
 ---
 
 {{% post %}}
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
-Las imágenes de [docker] son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las [características de docker][blogbitix-49] y estamos decididos a usarlo y ya sabemos [como administrar de forma básica los contendores][blogbitix-50] si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.
+Las imágenes de [docker] son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las [características de docker][blogbitix-49] y estamos decididos a usarlo y ya sabemos [como administrar de forma básica los contenedores][blogbitix-50] si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.
 
 Antes de crear una imagen para docker podemos buscar en el [registro de imágenes de docker](https://registry.hub.docker.com/) que han creado otros usuarios y los han compartido por si hay alguna que ya se adapte a nuestras necesidades, si nos sirve alguna y es algo popular nos evitaremos tener que modificarla nosotros mismos según salgan nuevas versiones de los servicios que use. El registro de imágenes de docker es un servicio en el que los usuarios comparten y colaboran en la creación de las imágenes. Para los servicios más conocidos dispondremos ya de las imágenes como podrían ser: [mysql](https://registry.hub.docker.com/_/mysql/), [redis](https://registry.hub.docker.com/_/redis/), [postgresql](https://registry.hub.docker.com/_/postgres/), [ubuntu](https://registry.hub.docker.com/_/ubuntu/), [wordpress](https://registry.hub.docker.com/_/wordpress/), [nginx](https://registry.hub.docker.com/_/nginx/), [mongodb](https://registry.hub.docker.com/_/mongo/), ...
 
@@ -42,11 +42,11 @@ Los Dockerfile tienen algunas instrucciones:
 
 El Dockerfile-base crea una imagen base que usaremos posteriormente en la imagen de mysql, configura el color del prompt, la contraseña de root y expone el puerto 22 para poder hacer ssh.
 
-En este ejemplo en vez de usar una imagen propia de Ubuntu en la directiva FROM he usado una imagen especial, [phusion/baseimage](https://registry.hub.docker.com/u/phusion/baseimage/):0.9.15. La imagen phusion/baseimage proporciona un sistema init adaptado al funcionamiento de los contenedores de docker al contrario de las imágenes de ubuntu que emplean upstart. Si usásemos alguna imagen de ubuntu y quisiésemos iniciar varios procesos en el contenedor deberíamos usar un servicio como punto de entrada como [supervisord](http://supervisord.org/), con la imagen phusion/baseimage no sería necesario ya que ya ofrece esta funcionalidad de forma más sencilla.
+En este ejemplo en vez de usar una imagen propia de Ubuntu en la directiva FROM he usado una imagen especial, [phusion/baseimage](https://registry.hub.docker.com/u/phusion/baseimage/):0.9.15. La imagen phusion/baseimage proporciona un sistema init adaptado al funcionamiento de los contenedores de docker al contrario de las imágenes de ubuntu que emplean upstart. Si usásemos alguna imagen de ubuntu y quisiésemos iniciar varios procesos en el contenedor deberíamos usar un servicio como punto de entrada como [supervisord](http://supervisord.org/), con la imagen _phusion/baseimage_ no sería necesario ya que ya ofrece esta funcionalidad de forma más sencilla.
 
-Con las instrucciones RUN y ADD instalamos el paquete de mysql y el cliente de mysql y añadimos la configuración de mysql en el archivo my.cnf. En /etc/service/mysql/run dejamos el comando del servicio que iniciará el proceso de mysql como espera el sistema init de la imagen phusion. Con VOLUME ["/var/lib/mysql"] establecemos un punto de montaje para poder externalizar y persistir los datos de las bases de datos de mysql.
+Con las instrucciones RUN y ADD instalamos el paquete de mysql y el cliente de mysql y añadimos la configuración de mysql en el archivo my.cnf. En /etc/service/mysql/run dejamos el comando del servicio que iniciará el proceso de mysql como espera el sistema init de la imagen _phusion_. Con VOLUME ["/var/lib/mysql"] establecemos un punto de montaje para poder externalizar y persistir los datos de las bases de datos de mysql.
 
-Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los comandos ADD contruimos la imagen con:
+Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los comandos ADD construimos la imagen con:
 
 {{< code file="docker-build.sh" language="bash" options="" >}}
 

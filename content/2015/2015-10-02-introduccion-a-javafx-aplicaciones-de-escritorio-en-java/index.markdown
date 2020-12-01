@@ -22,7 +22,7 @@ El lenguaje de programación Java es ampliamente usado en el ámbito empresarial
 
 ### Qué es JavaFX y para qué sirve
 
-JavaFX es una tecnología Java para el desarrollo de aplicaciones con intefaz gráfica interactivas multiplataforma para el escritorio y aplicaciones móviles. Está formada por un conjunto de clases y API junto con un editor gráfico _Scene Builder_ para crear las interfaces visualmente.
+JavaFX es una tecnología Java para el desarrollo de aplicaciones con interfaz gráfica interactivas multiplataforma para el escritorio y aplicaciones móviles. Está formada por un conjunto de clases y API junto con un editor gráfico _Scene Builder_ para crear las interfaces visualmente.
 
 Algunas de las características notables de JavaFX son:
 
@@ -38,7 +38,7 @@ Algunas de las características notables de JavaFX son:
 
 # Ejemplo Hola Mundo con JavaFX
 
-A continuación mostraré los requerimientos y entorno que deberemos tener para realizar el ejemplo _Hola Mundo_ que consistirá en una aplicación con una ventana que mostrará un botón. Si usamos el JDK 8 de Oracle, JavaFX ya está incorporporado y podremos usarlo sin más requerimientos además de las [otras muchas novedades incorporadas en Java 8][blogbitix-17]. En el caso de [Linux][linux] y más concretamente en [Arch Linux][archlinux], aunque será similar otros sistemas operativos, usando el paquete _openjdk_ deberemos instalar además el paquete _java-openjfx_. En Arch Linux si no tenemos instalado el paquete _java-openjfx_ obtendremos en la terminal un mensaje no muy descriptivo similar a:
+A continuación mostraré los requerimientos y entorno que deberemos tener para realizar el ejemplo _Hola Mundo_ que consistirá en una aplicación con una ventana que mostrará un botón. Si usamos el JDK 8 de Oracle, JavaFX ya está incorporado y podremos usarlo sin más requerimientos además de las [otras muchas novedades incorporadas en Java 8][blogbitix-17]. En el caso de [Linux][linux] y más concretamente en [Arch Linux][archlinux], aunque será similar otros sistemas operativos, usando el paquete _openjdk_ deberemos instalar además el paquete _java-openjfx_. En Arch Linux si no tenemos instalado el paquete _java-openjfx_ obtendremos en la terminal un mensaje no muy descriptivo similar a:
 
 {{< code file="no-java-openjfx.txt" language="plaintext" options="" >}}
 
