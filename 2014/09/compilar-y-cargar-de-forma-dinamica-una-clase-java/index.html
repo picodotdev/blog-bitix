@@ -264,7 +264,7 @@ Las clases que necesitaremos de esa API son:"
 <p>Y también necesitaremos redefinir algunas:</p>
 <ul>
 <li>La clase ClassFileManager que extiende <a href="https://docs.oracle.com/javase/7/docs/api/javax/tools/ForwardingJavaFileManager.html">ForwardingJavaFileManager</a> y se encargará de cargar los objetos JavaClassObject con un ClassLoader.</li>
-<li>La clase JavaClassObject que extiende <a href="https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html">SimpleJavaFileObject</a> y contendrá el código bytecode generado en memoria por el compilador.</li>
+<li>La clase JavaClassObject que extiende <a href="https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html">SimpleJavaFileObject</a> y contendrá el código <em>bytecode</em> generado en memoria por el compilador.</li>
 <li>CharSequenceJavaFileObject clase que extiende <a href="https://docs.oracle.com/javase/7/docs/api/javax/tools/SimpleJavaFileObject.html">SimpleJavaFileObject</a> y que contiene el código fuente en un objeto de tipo CharSequence.</li>
 <li>La interfaz Configuracion es la interfaz que debe cumplir la clase Java que compilaremos, cargaremos de forma dinámica en la aplicación y posteriormente invocaremos sus métodos.</li>
 </ul>

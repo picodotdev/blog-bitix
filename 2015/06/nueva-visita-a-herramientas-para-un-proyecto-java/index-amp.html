@@ -63,7 +63,7 @@
     "dateModified": "2020-08-24T19:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2186",
+    "wordCount": "2187",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -314,7 +314,7 @@
       <div class="logotypes" style="min-width: 200px;"> 
 <p><amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="0.5454545454545454" height="1" alt="Java" title="Java" layout="responsive"  class=""></amp-img></p>
 </div>
-<p>Hace 5 años escribí un <a href="https://elblogdepicodev.blogspot.com.es/2011/06/elegir-herramientas-para-un-proyecto.htmlindex-amp.html">artículo comentando que tecnologías eligiría</a> para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.</p>
+<p>Hace 5 años escribí un <a href="https://elblogdepicodev.blogspot.com.es/2011/06/elegir-herramientas-para-un-proyecto.htmlindex-amp.html">artículo comentando que tecnologías elegiría</a> para un proyecto Java si tuviese posibilidad. Al ritmo que avanza la tecnología cuatro años es un tiempo bastante largo, también es un tiempo en el que he podido aprender y añadir a mi «caja de herramientas» nuevas opciones que después de evaluarlas me han gustado. En este artículo haré una nueva visita al artículo anterior y comentaré algunas nuevas herramientas.</p>
 <h3 id="lenguaje-de-programación">Lenguaje de programación</h3>
 <p>Como lenguaje de programación seguiría usando Java, en mi caso es el lenguaje que más conozco y sigue siendo una de las opciones más válidas. Pero con la salida de una nueva versión usaría Java 8. La <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/index-amp.html">publicación de Java 8 incorporando varias novedades importantes</a> han mejorado varios aspectos de este lenguaje, por mencionar los más relevantes están la incorporación de <em>lambdas</em> que proporciona una cierta forma de programación funcional, también destaca los <em>streams</em> que permite describir los algoritmos que procesan datos de una forma más expresiva y legible además de aprovechar mejor los procesadores multinúcleo, métodos por defecto en interfaces que permite mantener compatibilidad hacia atrás (aunque esto interesa más a los desarrolladores que hacen APIs para que sean usadas por terceras partes), una nueva API para el manejo de fechas eliminando una de las críticas de versiones anteriores y algunas cosas más. El futuro con Java 9 es prometedor si presenta la interesante modularidad.</p>
 <ul>
@@ -325,12 +325,12 @@
 <li><a href="https://picodotdev.github.io/blog-bitix/series/java-platform/index-amp.html">Novedades de la plataforma Java</a></li>
 </ul>
 <h3 id="persistencia-en-base-de-datos">Persistencia en base de datos</h3>
-<p>Las librerías más populares de persistencia en Java son <a href="https://hibernate.org/">Hibernate</a> aunque para algunos casos usaría o como complemento <a href="https://www.jooq.org/">jOOQ</a>, <a href="https://spring.io/projects/spring-data">Spring Data</a> ofrece varias utilidzades para facilitar crear las clases repositorio usando Hibernate.</p>
+<p>Las librerías más populares de persistencia en Java son <a href="https://hibernate.org/">Hibernate</a> aunque para algunos casos usaría o como complemento <a href="https://www.jooq.org/">jOOQ</a>, <a href="https://spring.io/projects/spring-data">Spring Data</a> ofrece varias utilidades para facilitar crear las clases repositorio usando Hibernate.</p>
 <p>jOOQ es una librería que no tienen tanta magia como Hibernate que en muchas ocasiones produce errores complicados de resolver y no tenemos tanto control de lo que hace, por otro lado jOOQ devuelve a la base de datos y al lenguaje SQL la relevancia que con Hibernate queda abstraída con el mapeado del modelo de datos a objetos y el lenguaje HQL. jOOQ permite construir las sentencias SQL de forma programática con lo que el compilador nos indicará errores de compilación y nos validará los tipos que usemos, ambas cosas son importantes cuando hacemos un <em>refactor</em> en alguna parte de la aplicación. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/index-amp.html">alternativa a Hibernate y ejemplo jOOQ</a> entro en más detalles.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/index-amp.html">Alternativa a Hibernate y ejemplo jOOQ</a></li>
 </ul>
-<p>Al persistir datos si es necesario realizar auditoría de datos dos posibilidades son <a href="https://hibernate.org/orm/envers/">Envers</a> específica para Hibernate y <a href="https://javers.org/">Javers</a> usable con cualquier librería de persistencia. Permiten guarda los típicos campos fecha creación, usuario creación, fecha modificación y última modificación asi como mantener un histrórico completo de todos los cambios realizados a una entidad.</p>
+<p>Al persistir datos si es necesario realizar auditoría de datos dos posibilidades son <a href="https://hibernate.org/orm/envers/">Envers</a> específica para Hibernate y <a href="https://javers.org/">Javers</a> usable con cualquier librería de persistencia. Permiten guarda los típicos campos fecha creación, usuario creación, fecha modificación y última modificación asi como mantener un histórico completo de todos los cambios realizados a una entidad.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2016/11/historico-de-datos-auditoria-y-diferencias-entre-objetos-con-javers-en-java/index-amp.html">Histórico de datos, auditoría y diferencias entre objetos con Javers en Java</a></li>
 </ul>
@@ -394,7 +394,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/04/nueva-visita-a-5-plus-opciones-de-hosting-para-aplicaciones/index-amp.html">Nueva visita a 5+ opciones de «hosting» para aplicaciones</a></li>
 </ul>
-<p>Aún usando un servicio en la nube para no encadenarse a uno determinado y disponer un centro de datos están <a href="https://www.consul.io/">Consul</a> como sistema de registro, descubrimiento, gestión de configuración y conexión entre servicios, <a href="https://www.vaultproject.io/">Vault</a> para usar seguridad como servicio, <a href="https://www.nomadproject.io/">Nomad</a> como orquestador de las aplicaciones con posibilidad de hacer despliegues <em>blue/greeen</em> o <em>canary</em> asi com volver auna versión anterior fácilmente y <a href="https://www.terraform.io/">Terraform</a> para aprovisionar el entorno en la nube independiente del proveedor y haciendo que la infraestructura este bajo el control de versiones al usar infraestructura como código.</p>
+<p>Aún usando un servicio en la nube para no encadenarse a uno determinado y disponer un centro de datos están <a href="https://www.consul.io/">Consul</a> como sistema de registro, descubrimiento, gestión de configuración y conexión entre servicios, <a href="https://www.vaultproject.io/">Vault</a> para usar seguridad como servicio, <a href="https://www.nomadproject.io/">Nomad</a> como orquestador de las aplicaciones con posibilidad de hacer despliegues <em>blue/greeen</em> o <em>canary</em> asi com volver a una versión anterior fácilmente y <a href="https://www.terraform.io/">Terraform</a> para aprovisionar el entorno en la nube independiente del proveedor y haciendo que la infraestructura este bajo el control de versiones al usar infraestructura como código.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/index-amp.html">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/index-amp.html">Administrar secretos y proteger datos sensibles con Vault</a></li>
