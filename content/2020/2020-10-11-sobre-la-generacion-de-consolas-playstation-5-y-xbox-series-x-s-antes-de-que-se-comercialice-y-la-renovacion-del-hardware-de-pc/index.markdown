@@ -44,7 +44,7 @@ El SoC tanto de la Xbox como de la PlayStation están basados igualmente en una 
 
 ### PlayStation 5
 
-La PS5 esta generación ofrece dos modelos, uno solo digital sin disco y otra con disco pero que salvo por esto en el resto de características son iguales. El modelo solo digital con un precio de lanzamiento de 400 € y la que tiene disco con un precio de 500 €. La PS5 compite con la Series X.
+La PS5 esta generación ofrece dos modelos, uno solo digital sin disco y otra con disco pero que salvo por esto en el resto de características son iguales. El modelo [PlayStation 5 digital](https://amzn.to/3lzY7rD) con un precio de lanzamiento de 400 € y la [PlaysStation 5 con disco](https://amzn.to/3qnTmF1) con un precio de 500 €. La PS5 compite con la Series X.
 
 El almacenamiento SSD soldado en la placa base parece que ofrecerá un mayor ancho de banda que en la Xbox con una capacidad de almacenamiento de 825 GB que disponibles para el usuario se quedará en unos 650 GB para el usuario, dispone de una ranura interna con la que ampliar el almacenamiento utilizando un SSD compatible en un formato similar a los disponibles a los de PC, para ampliar el almacenamiento es necesario desmontar la tapa de la consola pero se puede hacer sin perder la garantía. Un mando háptico que promete una nueva forma de interacción con el mando con los gatillos al ofrecer una resistencia variable según las circunstancias del juego, una diferencia respecto al mando de la Xbox. Está por ver si los desarrolladores de los juegos lo aprovechan igual que el panel táctil que se sigue manteniendo pero por ver su para algo más que como un botón más. El mando se actualiza con conectividad USB-C y sigue siendo con batería recargable de mayor duración.
 
@@ -53,6 +53,10 @@ La consola físicamente tiene un diseño bastante artístico que parece se sobre
 La PS5 con dos modelos en diferentes precios permite que el modelo digital salvo por el lector de discos sea más barata, compite en igualdad de características con la Series X de los dos modelos de Xbox aún así tiene un precio mayor justificado por ser más capaz que la Series S.
 
 Se ha anunciado que los miembros de la suscripción Plus en el momento de lanzamiento tendrán acceso a Plus Collection formado por varios de los mejores juegos de la anterior generación, mostrando la retrocompatibilidad de la consola. También, [Sony ha confirmado que todo el catálogo de la PS4 será compatible con la PS5](https://blog.playstation.com/2020/10/09/ps4-games-on-ps5-your-top-questions-answered/) salvo unos 10 juegos entre los que no hay ninguno de los más conocidos, tanto para el formato físico de los juegos como digitales así como las partidas guardadas que se pueden trasferir a la nueva consola.
+
+{{< amazon
+    linkids="25e9abfe5ed88b98b9d15bd0c0c43455,617850e00511a810b16dd2342a83217c,e98b40ae43ea944046a09652d72c4d4b,f5f9e03cc0e549dba09905a2a8fc0b66,9de8d6693c56e067add3ba5c63920294"
+    asins="B08KKJ37F7,B08KJF2D25,B08KJPLGLF,B08H97WTBL,B08H99878P" >}}
 
 {{< image
     gallery="true"
@@ -197,13 +201,17 @@ Las características del hardware son las siguientes:
 
 ### Xbox Series X/S
 
-La Series X/S son dos modelos de nueva generación con diferentes características en cuanto almacenamiento, solo digital o con disco, diseño y potencia gráfica. También en precio son diferentes, la Series S se sitúa en el precio de los 300 € en el momento de lanzamiento y la Series X en los 500 €.
+La Xbox Series X/S son dos modelos de nueva generación con diferentes características en cuanto almacenamiento, solo digital o con disco, diseño y potencia gráfica. También en precio son diferentes, la [Xbox Series S](https://amzn.to/33ETjLr) se sitúa en el precio de los 300 € en el momento de lanzamiento y la [Xbox Series X](https://amzn.to/36xjIfZ) en los 500 €.
 
 Las Series S ofrece un almacenamiento de 512 GB de los cuales parte quedan reservados para el sistema, la Series X por el contrario tiene un almacenamiento de 1 TB de los cuales también queda una parte reservados para el sistema, en ambos casos el almacenamiento también está soldado en la placa base la capacidad de almacenamiento puede se ampliada mediante unas tarjetas externas con un formato propietario con una ranura externa de fácil acceso. El mando salvo algún cambio estético no incorpora ninguna mejora y sigue siendo con pilas AA no con batería recargable. La Series S tiene un diseño más pequeño en blanco con la rejilla de ventilación en negro, no ofrece lector de discos siendo solo digital, una menor potencia estando destinada a jugar en resoluciones de 1080 o 1440 y un tamaño pequeño en formato rectangular algo aplanado.
 
 La Series X ofrece más potencia gráfica, más almacenamiento, ofrece lector de discos y tiene un mayar tamaño en formato rectangular en negro. En ambas consolas prima la funcionalidad sobre el diseño aún siendo un diseño atractivo, por el diseño interno publicado con ventiladores y rejillas de ventilación grandes que garanticen una buena refrigeración con temperaturas contenidas y bajo nivel sonoro.
 
 La estrategia de Microsoft con las Series X/S con dos modelos diferentes en potencia gráfica es precio es interesante por su diferencia de precio. La Series S ofrece una consola de nueva generación a un precio sensiblemente más económico.
+
+{{< amazon
+    linkids="3279bf68c4f6647fc51849ce5cc1290c,608090c668f2d3d616f26e0787fa6c0c,9af902ac772d3ea3ecf44d492b15c9d6"
+    asins="B08H93ZRLL,B087VM5XC6,B08JW624NN" >}}
 
 {{< image
     gallery="true"
