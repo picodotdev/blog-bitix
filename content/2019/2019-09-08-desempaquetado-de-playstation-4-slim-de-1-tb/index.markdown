@@ -86,7 +86,9 @@ Dado que ambas consolas ofrecen compatibilidad con los juegos de la anterior gen
 
 ### Juegos digitales o físicos
 
-Los juegos que tengo apuntados como candidatos a jugar son los siguientes, tendría entretenimiento para varios años. Muchos usuarios de consolas prefieren los juegos físicos, el motivo puede ser por coleccionarlos, ponerlos en una balda y verlos, palparlos y recordar algún buen momento, por poder venderlos una vez completados o por poderlos jugar siempre que deseen sin necesidad de internet o ante un hipotético caso de que Sony ya no preste el servicio. En mi caso seguramente adquiera la mayoría en formato digital por la comodidad de no tener que estar introduciendo el disco en una unidad lectora que con el uso intensivo es probable que empiece a fallar, en mi caso no soy coleccionista y prefiero ahorrar espacio por no tener objetos en casa que no uso de forma cotidiana. La Xbox por ejemplo ofrece una edición completamente digital a un más atractivo precio que su edición equivalente con unidad lectora.
+Los juegos que tengo apuntados como candidatos a jugar son los siguientes, tendría entretenimiento para varios años. Muchos usuarios de consolas prefieren los juegos físicos, el motivo puede ser por coleccionarlos, ponerlos en una balda y verlos, palparlos y recordar algún buen momento, por poder venderlos una vez completados o por poderlos jugar siempre que deseen sin necesidad de internet o ante un hipotético caso de que Sony ya no preste el servicio.
+
+En mi caso seguramente adquiera la mayoría en formato digital por la comodidad de no tener que estar introduciendo el disco en una unidad lectora que con el uso intensivo es probable que empiece a fallar, en mi caso no soy coleccionista y prefiero ahorrar espacio por no tener objetos en casa que no uso de forma cotidiana. La Xbox por ejemplo ofrece una edición completamente digital a un más atractivo precio que su edición equivalente con unidad lectora.
 
 ### Mi lista de juegos
 
