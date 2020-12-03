@@ -33,6 +33,8 @@ Pasados unos meses de uso veré si ha sido buena decisión por su fiabilidad y e
     linkids="22f1206a79c0eb63d39b94ca6b26ee80,32d37ac4289e4cc6001d3442d8a448e1,930604874c5c52f2c31549109cfd682b,6e19b96606f3c2b4a50d462873467b99"
     asins="B0758DMHZG,B00564GWEI,B01K2210GS,B01N4AIIIV" >}}
 
+{{< tableofcontents >}}
+
 ### Con cable o inalámbrico
 
 Salvo por la diferencia de cable e inalámbrico tanto el de Logitech como de [Videoseven][videoseven] son muy similares y el precio del V7 solo es unos pocos euros superior y ambos muy económicos. Las razones por la que finalmente he optado por un inalámbrico han sido tres: no tener cables que molesten en la mesa por comodidad y al mismo tiempo para facilitar la limpieza de la mesa, dado que el NUC solo tiene 4 puertos USB ocupar solo uno con el receptor de radio frecuencia de teclado y ratón en vez de dos si fuesen con cable y tener algo de movilidad o mayor libertad de movimiento ya que quizá vea alguna película desde la cama en vez desde la mesa de escritorio y así pueda manejar el ordenador desde algo más de distancia. La marca Videoseven no la conocía hasta hace poco que me he encontrado con algunos de sus productos, en Amazon todavía para el teclado y ratón no tiene comentarios ni he encontrado un desempaquetado ni _unboxing_ en [YouTube][youtube] para conocer más detalles, creo que seré el primero en evaluar el producto.
@@ -142,6 +144,15 @@ Estos son algunos modelos que tiene un buen aspecto, la dificultad es encontrar 
 {{< amazon
     linkids="c83ac1ce0d130d286f123d8c61be16c6,d022cc6910af12be8e89cad501542d56,658ec6ee4014466a1d077b38e7aff3ad,7f3f0e73e699311aa9a9aa62e2d6a957"
     asins="B01NAM76QW,B07Z4TCJZM,B07PJKHC5K,B07W5PD6VS" >}}
+
+#### Teclados mecánicos
+
+Cualquiera de estos teclados cumple su función a un precio muy económico pero no se pueden comparar con [los teclados mecánicos][blogbitix-536] destinados a los usuarios que usan el teclado de forma intensiva, son más caros pero algunos de sus usuarios consideran que los valen.
+
+{{< image
+    gallery="true"
+    image1="image:ducky-one-2-tkl.png" optionsthumb1="300x200" title1="Teclado Ducky One 2 TKL"
+    caption="Teclado mecánico Ducky One 2 TKL" >}}
 
 ### Conclusión
 
