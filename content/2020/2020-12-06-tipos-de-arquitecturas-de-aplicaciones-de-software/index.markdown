@@ -3,7 +3,7 @@ pid: 537
 type: "post"
 title: "Tipos de arquitecturas de aplicaciones de software"
 url: "/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/"
-date: 2020-12-06T00:00:00+01:00
+date: 2020-12-06T13:00:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -53,9 +53,9 @@ Esta no arquitectura de las aplicaciones _spaghetti_ se denomina así porque  me
 
 #### Arquitectura por capas
 
-Para suplir las carencias de la arquitectura _spaghetti_ surge la arquitectura por capas. En la arquitectura por capas cada capa tiene una responsabilidad definida, una capa se encarga de la visualización de los datos y la interacción con el usuario, otra capa se encarga de la lógica de negocio y otra capa del acceso a la base de datos. Esta distribución de responsabilidades pone cierto orden a la organización del código y estructura de las aplicaciones. En esta arquitectura las capas superiores dependen de las capas inferiores, ya sea en un modelo estricto donde la superior depende únicamente de la inferior o en un modelo más permisivo donde una capa superior puede depender de cualquiera de las inferiores.
+Para suplir las carencias de la arquitectura _spaghetti_ surge la arquitectura por capas. En la arquitectura por capas cada capa tiene una responsabilidad definida, una capa se encarga de la visualización de los datos y la interacción con el usuario, otra capa se encarga de la lógica de negocio y otra capa del acceso a la base de datos. Esta distribución de responsabilidades pone cierto orden a la organización del código y estructura de las aplicaciones. Las capas superiores dependen de las capas inferiores, ya sea en un modelo estricto donde la superior depende únicamente de la inmediatamente inferior o en un modelo más permisivo donde una capa superior puede depender de cualquiera de las inferiores.
 
-La aparición de los _frameworks_ de desarrollo facilitan la creación de los componentes que constituyen la aplicación basados en el modelo-vista-controlador o MVC basados en acciones como [Struts][struts], de componentes como JSF y [Apache Tapestry][tapestry] u otros similares.
+La aparición de los _frameworks_ de desarrollo facilitan la creación de los componentes que constituyen la aplicación utilizando el patrón modelo-vista-controlador o MVC basados en acciones como [Struts][struts], de componentes como JSF y [Apache Tapestry][tapestry] u otros similares en otros lenguajes.
 
 {{< image
     gallery="true"
@@ -66,13 +66,13 @@ La aparición de los _frameworks_ de desarrollo facilitan la creación de los co
 
 En la arquitectura hexagonal o también conocida como puertos-adaptadores aísla las entradas y salidas de la aplicación de la lógica interna de la aplicación. Este aislamiento de las partes exteriores hace que la aplicación no requiera prácticamente ningún cambio que esté influenciado por cambios externos ya sea una nueva base de datos para persistir los datos o un nuevo tipo de cliente como un dispositivo móvil.
 
-Cada entrada ya sea desde una petición REST o desde la linea de comandos o salida ya sea a una base de datos o un sistema de mensajería es un tipo diferente de puerto para su interacción. Una gran ventaja de la arquitectura hexagonal es que los puertos y adaptadores son fácilmente desarrolladores para un entorno de pruebas hasta tener los definitivos, la aplicación se puede desarrollar y probar antes de que los clientes y los sistemas de persistencia existan.
+Cada entrada ya sea desde una petición REST o desde la linea de comandos o salida ya sea a una base de datos o un sistema de mensajería es un tipo diferente de puerto para su interacción. Una gran ventaja de la arquitectura hexagonal es que los puertos y adaptadores son fácilmente desarrollables para un entorno de pruebas hasta tener los definitivos, la aplicación se puede desarrollar y probar antes de que los clientes y los sistemas de persistencia existan.
 
-Una de las tecnologías que habilitan la arquitectura hexagonal es la inversión de dependencias o IoC mediante la cual se consigue que al contrario que en la arquitectura por capas donde una capa superior depende de la interior la capa inferior dependa de la superior. Si en una aplicación se está utilizando inversión de dependencias es probable que se estén utilizando una arquitectura hexagonal más que una por capas.
+Una de las tecnologías que habilitan la arquitectura hexagonal es la inversión de dependencias o IoC mediante la cual se consigue que al contrario que en la arquitectura por capas donde una capa superior depende de la interior la capa inferior dependa de la superior. Si en una aplicación se está utilizando inversión de dependencias es probable que se esté utilizando una arquitectura hexagonal más que una por capas.
 
-Si en la arquitectura por capas la capa de lógica de negocio depende de la capa de acceso a base de datos, en la arquitectura hexagonal es la capa de acceso a base de datos la que depende de la capa de lógica de negocio. Este cambio de dependencias es lo que le da nombre a la inversión de dependencias. La inversión de dependencias se consigue creando en la capa de lógica de negocio una interfaz que la que implementa la capa de acceso a datos.
+Si en la arquitectura por capas la capa de lógica de negocio depende de la capa de acceso a base de datos, en la arquitectura hexagonal es la capa de acceso a base de datos la que depende de la capa de lógica de negocio. Este cambio de dependencias es lo que le da nombre a la inversión de dependencias. La inversión de dependencias se consigue creando en la capa de lógica de negocio una interfaz que es la que implementa la capa de acceso a datos.
 
-En la _Figura 1_ el paquete A depende del paquete B para invertir la dependencia se crea una interfaz de la que depende el paquete A unícamente dependen y es el paquete B el que depende de esa interfaz al implementarla.
+En la _Figura 1_ el paquete A depende del paquete B para invertir la dependencia se crea una interfaz de la que depende el paquete A unícamente depende, en la _Figura 2_ es el paquete B el que depende de esa interfaz al implementarla.
 
 {{< image
     gallery="true"
@@ -84,15 +84,15 @@ En la _Figura 1_ el paquete A depende del paquete B para invertir la dependencia
 
 #### _Domain Driven Design_
 
-La metodología _domain-driven-design_ o DDD promueve que la aplicación ha de estar desarrollada basándose en los aspectos del negocio y del dominio de la aplicación, esto afecta tanto al lenguaje compartido denominado lenguaje ubicuo tanto en la aplicación como por todos _stakeholders_ de cada contexto de la aplicación, también afecta a como se modulariza en subdominios la aplicación con las diferentes funcionalidades.
+La metodología _domain-driven-design_ o DDD promueve que la aplicación ha de estar desarrollada basándose en los aspectos del negocio y del dominio de la aplicación, esto afecta tanto al lenguaje compartido denominado lenguaje ubicuo tanto en la aplicación como por todos _stakeholders_ de cada contexto de la aplicación, también afecta a como se modulariza en subdominios la aplicación con las diferentes funcionalidades. El diseño estratégico define los aspectos de análisis de la aplicación el diseño estratégico los de implementación con los agregados, entidades, _value objects_, repositorios o eventos de dominio.
 
-La arquitectura hexagonal se complementa perfectamente con la metodología y principios de DDD ya que en ambos casos tiene interés en aislar la lógica de negocio de las partes exteriores de la aplicación de modo que un cambio en el exterior no suponga cambios importantes en la lógica de negocio.
+La arquitectura hexagonal se complementa perfectamente con la metodología y principios de DDD ya que ambos casos tienen interés en aislar la lógica de negocio de las partes exteriores de la aplicación de modo que un cambio en el exterior no suponga cambios importantes en la lógica de negocio.
 
 #### APIs, REST o GraphQL
 
-Con la aparición de múltiples dispositivos ya sean navegadores, teléfonos inteligentes, aplicaciones nativas de teléfonos inteligentes, tabletas o incluso otras aplicaciones, para dar soporte a todos estos clientes las aplicaciones se desarrollan con el objetivo de ofrecer una API que todos los dispositivos comparten y posteriormente cada uno adapta su interfaz a sus necesidades.
+Con la aparición de múltiples dispositivos ya sean navegadores, teléfonos inteligentes, aplicaciones nativas de teléfonos inteligentes, tabletas o incluso otras aplicaciones, para dar soporte a todos estos clientes las aplicaciones se desarrollan desde el primer momento con el objetivo de ofrecer una API que todos los dispositivos comparten y posteriormente cada dispositivo adapta su interfaz gráfica a sus necesidades.
 
-Muchas aplicaciones utilizan una API denominada REST basada en los principios de la web y la semántica del protocolo HTTP y como formato de intercambio de datos se suele utilizar JSON. Las aplicaciones basadas en REST permiten a los clientes descubrir en los los datos devueltos las ubicaciones de los recursos relacionados, las aplicaciones que lo hacen siguen los principios de HATEOAS.
+Muchas aplicaciones utilizan una API denominada REST basada en los principios de la web y la semántica del protocolo HTTP y como formato de intercambio de datos se suele utilizar JSON. Las aplicaciones basadas en REST que siguen los principios de HATEOAS permiten a los clientes obtener en los los datos devueltos las ubicaciones de los recursos relacionados.
 
 Otra forma de implementación de un API es mediante [GraphQL][graphql] que a diferencia de REST no se basa en los principios del protocolo HTTP y la semántica de la web aunque lo utiliza. A diferencia de REST que siempre se devuelven los mismos datos GrapqhQL permite realizar consultas indicando únicamente los datos deseados como respuesta.
 
@@ -100,7 +100,7 @@ Otra forma de implementación de un API es mediante [GraphQL][graphql] que a dif
 
 La metodología CQRS separa las operaciones de consulta que solicitan datos de las operaciones que modifican datos o comandos incluso utilizando diferentes bases de datos. El modelo necesario para la consulta puede ser distinto del necesario para la modificación y variar en diferentes casos de uso, por eso la necesidad o ventaja de separar el modelo de consulta del modelo de modificación. El modelo de consulta puede estar desnormalizado para ser más sencillo o eficiente a las necesidades de consulta que utilizando un único modelo para ambas operaciones.
 
-El modelo de consulta se actualiza de forma asíncrona con el modelo de modificación utilizando consistencia eventual. Para manejar esta consistencia eventual en la interfaz del usuario con varias opciones, una de ellas mostrar los datos en la interfaz como si se hubieran modificado ya aún estándo pendientes de modificarse. Otra posibilidad es mostrar la fecha y hora de la última actualización de los datos o simplemente indicar al usuario que su petición ha sido aceptada y su procesamiento requiere algo de tiempo en procesarse.
+El modelo de consulta se actualiza de forma asíncrona con el modelo de modificación utilizando consistencia eventual. Para manejar esta consistencia eventual en la interfaz del usuario hay varias opciones, una de ellas mostrar los datos en la interfaz como si se hubieran modificado inmediatamente aún estándo pendientes de modificarse. Otra posibilidad es mostrar la fecha y hora de la última actualización de los datos o simplemente indicar al usuario que su petición ha sido aceptada y su procesamiento requiere algo de tiempo en procesarse.
 
 #### _Event-Driven_
 
