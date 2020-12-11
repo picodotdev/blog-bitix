@@ -24,7 +24,7 @@ Quizá algunos digan que la aparentemente sencilla tarea de ordenar una lista de
 
 {{< code file="Sort.java" language="java" options="" >}}
 
-Primeramente nos daremos cuenta de que la siguiente lista de nombres de provincias las ordena de una forma que quizá no es la que esperamos. En algunas páginas web se puede observar este error en algunos elementos de selección de opciones de nombres de paises, ciudades, provincias u otro conjunto de elementos que suelen estar ordenados de forma alfabética para facilitar el encontrar el elemento a seleccionar pero que si se da el caso de que hay variación de palabras con tildes y sin ellas y minúsculas y mayúsculas se presenta la ordenación incorrecta.
+Primeramente nos daremos cuenta de que la siguiente lista de nombres de provincias las ordena de una forma que quizá no es la que esperamos. En algunas páginas web se puede observar este error en algunos elementos de selección de opciones de nombres de países, ciudades, provincias u otro conjunto de elementos que suelen estar ordenados de forma alfabética para facilitar el encontrar el elemento a seleccionar pero que si se da el caso de que hay variación de palabras con tildes y sin ellas y minúsculas y mayúsculas se presenta la ordenación incorrecta.
 
 {{< code file="Sort.out" language="plaintext" options="" >}}
 
