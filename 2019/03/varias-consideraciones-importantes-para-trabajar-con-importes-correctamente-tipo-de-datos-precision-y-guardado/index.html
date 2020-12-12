@@ -13,7 +13,7 @@
   <meta name="author" content="picodotdev">
   <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
   <meta name="description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
- Porque guardar fechas con UTC  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
   <meta name="theme-color" content="#FFFFFF"/>
 
   <title>Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)</title>
@@ -38,7 +38,7 @@
 
 <meta property="og:site_name" content="Blog Bitix">
 <meta property="og:description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
- Porque guardar fechas con UTC  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
 <meta property="og:type" content="article">
 
 <meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@
 <meta name="twitter:site" content="@picodotdev">
 <meta name="twitter:title" content="Varias consideraciones importantes para trabajar con importes correctamente (tipo de datos, precisión y guardado)">
 <meta name="twitter:description" content="Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
- Porque guardar fechas con UTC  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. &hellip;">
 <meta name="twitter:creator" content="@picodotdev">
 
   
@@ -69,7 +69,7 @@
     "dateModified": "2019-03-16T11:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "395",
+    "wordCount": "411",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -86,7 +86,7 @@
         }
     },
     "description": "Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
- Porque guardar fechas con UTC  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10."
+ Por qué guardar fechas con UTC en la base de datos  Otra consideración distinta en aplicaciones que manejan importes es usar la clase BigDecimal en vez de los tipos de datos de coma flotante float o double ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10."
 }
   </script>
   
@@ -254,7 +254,7 @@
 </div>
 <p>Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.</p>
 <ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Porque guardar fechas con UTC</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2016/08/por-que-guardar-las-fechas-en-utc-en-la-base-de-datos/">Por qué guardar fechas con UTC en la base de datos</a></li>
 </ul>
 <p>Otra consideración distinta en aplicaciones que manejan importes es usar la clase <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigDecimal.html">BigDecimal</a> en vez de los tipos de datos de coma flotante <em>float</em> o <em>double</em> ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar <em>BigDecimal</em> es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.</p>
 <p>Sin utilizar una mayor precisión de 2 decimales puede ocurrir que algunos importes tengan una diferencia de céntimos. Por ejemplo, los precios se pueden introducir o bien el precio del producto antes de aplicar el IVA, comisiones o descuentos o puede introducirse en el precio que paga el usuario después de aplicar el IVA y en ambos casos al realizar el cálculo del precio con IVA y el cálculo del precio base ha de coincidir. Por ello la recomendación es utilizar al menos un decimal más de la precisión necesaria.</p>
@@ -264,6 +264,7 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/">Cómo trabajar con importes, ratios y divisas en Java</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/06/servicio-para-obtener-ratios-de-conversion-entre-divisas/">Servicio para obtener ratios de conversión entre divisas</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-y-localizar-cadenas-numeros-importes-y-fechas-en-java/">Internacionalizar y localizar cadenas, números, importes y fechas en Java</a></li>
 </ul>
 
     </div>
