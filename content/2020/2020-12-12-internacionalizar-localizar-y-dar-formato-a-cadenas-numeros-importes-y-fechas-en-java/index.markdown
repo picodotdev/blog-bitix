@@ -116,6 +116,6 @@ Incluso ordenar cadenas alfabéticamente correctamente no es una tarea tan simpl
 
 Al ordenar cadenas también es posible diferenciar las letras en mayúsculas o considerarlas como iguales al ordenarlas. En el artículo [la forma correcta de ordenar alfabéticamente cadenas en Java][blogbitix-276] explico esta funcionalidad y que soporte ofrece Java.
 
-{{% sourcecode git="blog-ejemplos/tree/master/JavaInternacionalizationLocalizaction" command="./gradlew run" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/JavaInternacionalizationLocalization" command="./gradlew run" %}}
 
 {{% /post %}}
