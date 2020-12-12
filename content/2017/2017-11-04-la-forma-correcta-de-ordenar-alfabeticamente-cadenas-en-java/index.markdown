@@ -37,7 +37,9 @@ Usando la clase _Collator_ y realizando la ordenación de la misma lista anterio
 {{< code file="Main.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
 
-Utilizando el _Collator_ con solo diferencias primarias _Cantabria_ se ordena al final de la lista por tener las letras _a_, _A_ y _Á_ una diferencia primaria con _C_. Con diferencias secundarias las letras _A_ y _a_ se ordenan antes que _Á_ por tener diferencias secundarias. Finalmente, con diferencias terciarias _a_ se ordena antes que _A_. 
+Utilizando el _Collator_ con solo diferencias primarias _Cantabria_ se ordena al final de la lista por tener las letras _a_, _A_ y _Á_ una diferencia primaria con _C_. Con diferencias secundarias las letras _A_ y _a_ se ordenan antes que _Á_ por tener diferencias secundarias. Finalmente, con diferencias terciarias _a_ se ordena antes que _A_.
+
+Otras funcionalidades que dependen del _locale_ utilizadas en la mayoría de los programas son [Internacionalizar y localizar cadenas, números, importes y fechas en Java][blogbitix-359].
 
 {{< sourcecode git="blog-ejemplos/tree/master/JavaCollator" command="./gradlew run" >}}
 

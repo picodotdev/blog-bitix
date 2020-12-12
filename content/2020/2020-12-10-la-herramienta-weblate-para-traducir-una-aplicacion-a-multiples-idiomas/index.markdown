@@ -37,7 +37,7 @@ La internacionalización y localización no es simplemente traducir una cadena a
 
 En los puntos anteriores también hay que tener en cuenta que las traducciones y localización han de realizarlas múltiples personas o traductores, quizá tantos traductores como idiomas haya de soportar la aplicación que entiendan tanto el idioma original en el que se entregan las cadenas para traducir como el idioma, región y cultura a la que hay que localizar.
 
-Para coordinar y facilitar el proceso de localización de una aplicación a los múltiples idiomas se suele utilizar una herramienta específica para esta tarea de traducción y localización.
+Para coordinar y facilitar el proceso de localización de una aplicación a los múltiples idiomas se suele utilizar una herramienta específica para esta tarea de traducción y localización. Los recursos localizados son utilizados en la aplicación para [localizar y formatear cadenas, cadenas con múltiples formas plurales, fechas, números e importes en un idioma][blogbitix-539].
 
 {{< tableofcontents >}}
 

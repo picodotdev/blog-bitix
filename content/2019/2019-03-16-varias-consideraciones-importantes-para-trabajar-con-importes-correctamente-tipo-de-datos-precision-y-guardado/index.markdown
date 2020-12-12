@@ -19,7 +19,7 @@ tags: ["java", "planeta-codigo"]
 
 Entre las cosas básicas a tener en cuenta en una aplicación que maneja fechas está en guardarlas en la zona horaria UTC que no sufre de cambios por zona horaria de verano o invierno, cambian más habitualmente de lo que parece e incluso por temas políticos.
 
-* [Porque guardar fechas con UTC][blogbitix-168]
+* [Por qué guardar fechas con UTC en la base de datos][blogbitix-168]
 
 Otra consideración distinta en aplicaciones que manejan importes es usar la clase [BigDecimal](javadoc11:java.base/java/math/BigDecimal.html) en vez de los tipos de datos de coma flotante _float_ o _double_ ya que los datos de coma flotante no son capaces de representar adecuadamente algunos valores numéricos en base 10. El asunto de este artículo es por que además de usar _BigDecimal_ es aconsejable guardar los importes con al menos un dígito decimal más de la precisión necesaria para evitar problemas en los redondeos al aplicar operaciones matemáticas como multiplicación, división o porcentajes para algunos impuestos como el IVA, comisiones, descuentos o cambios de divisa.
 
@@ -33,5 +33,6 @@ Pero el tipo de datos _BigDecimal_ tampoco es el mas apropiado con el que trabaj
 
 * [Cómo trabajar con importes, ratios y divisas en Java][blogbitix-90]
 * [Servicio para obtener ratios de conversión entre divisas][blogbitix-85]
+* [Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java][blogbitix-539]
 
 {{% /post %}}
