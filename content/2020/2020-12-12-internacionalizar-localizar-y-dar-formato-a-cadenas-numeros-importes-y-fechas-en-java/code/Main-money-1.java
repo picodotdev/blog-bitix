@@ -1,3 +1,9 @@
+import org.javamoney.moneta.Money;
+import org.javamoney.moneta.format.CurrencyStyle;
+
+import javax.money.format.AmountFormatQueryBuilder;
+import javax.money.format.MonetaryAmountFormat;
+...
 System.out.println();
 System.out.println("# Money");
 
