@@ -38,7 +38,7 @@ En el ejemplo se usa un contenedor de [Docker][docker] de modo que para probar l
 
 En el servidor web [Nginx][nginx] añadir un servidor web virtual consiste en añadir la configuración del sitio web en el directorio _/etc/nginx/conf.d_. La directiva relevante es _server\_name_ que asocia el servidor web virtual con el nombre del dominio. En base al nombre del dominio por el que se accede al servidor web se utiliza su configuración.
 
-{{< code file="nginx-www.127.0.0.1.xip.io.conf" language="plaintext" options="" >}}
+{{< code file="nginx-www.127.0.0.1.xip.io.conf" language="nginx" options="" >}}
 {{< code file="docker-nginx.sh" language="bash" options="" >}}
 
 En el ejemplo se accede al sitio web por su nombre de dominio _www.127.0.0.1.xip.io_, usando [el servidor de nombres xip.io][blogbitix-504] que permite asociar un nombre de dominio a una dirección IP privada en este caso la dirección _127.0.0.1_ que identifica a la propia máquina anfitrión.

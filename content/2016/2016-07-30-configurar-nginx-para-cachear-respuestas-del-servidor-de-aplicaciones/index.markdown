@@ -24,7 +24,7 @@ Para que el servidor web realice el cacheo de los recursos en la aplicación est
 
 Hay que modificar el archivo de configuración de Nginx para que cachee el contenido. La directiva _proxy\_cache\_path_ indica donde se guardarán el contenido cacheado, cual es el tamaño de los metadatos de la caché y el tiempo de inactividad para cachear pasado el cual los recursos serán descartables. La directiva _proxy\_cache\_key_ permite diferenciar los recursos en la cache, _add\_header X-Proxy-Cache_ añade una cabecera para la respuesta de Nginx con el resultado de cache que nos permite conocer si se produjo un acierto en la caché, un fallo o se ignoró la cache. Lo que es útil para depurar la aplicación u obtener información. Con _proxy\_pass_ hacemos que Nginx haga de _proxy_ para el servidor de aplicaciones o la aplicación.
 
-{{< code file="nginx.conf" language="plaintext" options="" >}}
+{{< code file="nginx.conf" language="nginx" options="" >}}
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 
 La siguiente pequeña aplicación Java que usa el [framework Spark][spark] expone dos recursos para probar el funcionamiento de cache de Nginx, un recurso añade cabeceras de cacheo para la respuesta y otro no añade las cabeceras de respuesta. Atendiendo a las cabeceras establecidas por la aplicación y Nginx configurado para hacer de _proxy_ y cache devolverá el contenido deseado de su cache o solicitándolo a la aplicación y cacheándolo si así se indica en las cabeceras de respuesta.

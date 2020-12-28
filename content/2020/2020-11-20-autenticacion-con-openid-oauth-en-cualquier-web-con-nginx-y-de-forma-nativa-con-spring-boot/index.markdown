@@ -47,12 +47,12 @@ En el caso de [oauth2-proxy][oauth2-proxy] la configuración consiste en hacer d
 
 Este es la configuración para Nginx.
 
-{{< code file="nginx.conf" language="plaintext" options="" >}}
-{{< code file="nginx.127.0.0.1.xip.io.conf" language="plaintext" options="" >}}
+{{< code file="nginx.conf" language="nginx" options="" >}}
+{{< code file="nginx.127.0.0.1.xip.io.conf" language="nginx" options="" >}}
 
 El servicio de _proxy_ OAuth debe ubicarse en un subdominio de la página a autenticar ya que para esto se utilizan _cookies_.
 
-{{< code file="oauth2.nginx.127.0.0.1.xip.io.conf" language="plaintext" options="" >}}
+{{< code file="oauth2.nginx.127.0.0.1.xip.io.conf" language="nginx" options="" >}}
 
 Tanto _oauth2-proxy_ como _vouch-proxy_ tienen imágenes de [Docker][docker] para su fácil uso sin necesidad de instalar nada en la máquina local salvo el propio Docker ([imagen docker oauth2-proxy](https://hub.docker.com/r/bitnami/oauth2-proxy), [imagen docker vouch-proxy](https://hub.docker.com/r/voucher/vouch-proxy)). Ambos _proxys_ requieren cierta configuración indicada en la [documentación del archivo de configuración](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview), las propiedades son desde el puerto en el que escucha el servicio del _proxy_ las peticiones desde Nginx, configuración de TLS, proveedor de autenticación, dirección de redirección después de la autenticación, configuración de _logging_, por supuesto el _client-id_ y el _client-secret_ obtenidos del proveedor de autenticación, los correos electrónicos considerados como válidos y configuración de la _cookie_ que mantiene la autenticación. También permite guardar la información de la sesión en [Redis][redis] en vez de en una _cookie_.
 

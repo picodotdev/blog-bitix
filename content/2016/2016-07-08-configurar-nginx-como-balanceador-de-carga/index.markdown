@@ -32,7 +32,7 @@ Hay tres estrategias para balancear o distribuir la carga:
 
 Esta es la configuración básica con la estrategia _round-robin_. Los servidores balanceados se definen con la directiva _upstream_ a los que se hace de _proxy_ inverso con la directiva _proxy\_pass_.
 
-{{< code file="nginx.conf" language="plaintext" options="" >}}
+{{< code file="nginx.conf" language="nginx" options="" >}}
 
 Para usar la estrategia _least-connected_ hay que indicar la directiva _least\_conn_ en la directiva _upstream_.
 

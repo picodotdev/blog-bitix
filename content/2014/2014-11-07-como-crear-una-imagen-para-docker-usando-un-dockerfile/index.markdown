@@ -4,65 +4,71 @@ type: "post"
 title: "Cómo crear una imagen para Docker usando un Dockerfile"
 url: "/2014/11/como-crear-una-imagen-para-docker-usando-un-dockerfile/"
 date: 2014-11-07T19:50:17+01:00
-updated: 2015-05-26T20:00:00+01:00
+updated: 2020-12-28T17:30:00+01:00
 rss: true
 sharing: true
 comments: true
 imagePost: "logotype:docker.svg"
 tags: ["gnu-linux", "planeta-codigo"]
 series: ["docker"]
-summary: "Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile."
+summary: "Podemos usar los contenedores disponibles en Docker Hub, donde están disponibles las aplicaciones de bases de datos, servidores de aplicaciones de múltiples lenguajes, servidores web más populares y entre otras muchas herramientas. Pero también podemos definir nuestras propias imágenes personalizadas con las necesidades que tengamos. Lo que necesitamos es escribir un archivo que contenga la receta para construir la imagen del contenedor, este archivo es el Dockerfile."
 ---
 
 {{% post %}}
 
 {{< logotype image="docker.svg" title="Docker" width="200" >}}
 
-Las imágenes de [docker] son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las [características de docker][blogbitix-49] y estamos decididos a usarlo y ya sabemos [como administrar de forma básica los contenedores][blogbitix-50] si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.
+Las imágenes de [Docker][docker] son el sistema de archivos que usa el proceso o procesos que se arrancan en los contenedores. Si nos convencen las [características de Docker][blogbitix-49] y estamos decididos a usarlo y ya sabemos [como administrar de forma básica los contenedores][blogbitix-50] si queremos disponer de una imagen adaptada a los servicios que necesitamos para iniciar contenedores tendremos que crearla, en este artículo explicaré cómo crear una imagen para docker personalizada.
 
-Antes de crear una imagen para docker podemos buscar en el [registro de imágenes de docker](https://registry.hub.docker.com/) que han creado otros usuarios y los han compartido por si hay alguna que ya se adapte a nuestras necesidades, si nos sirve alguna y es algo popular nos evitaremos tener que modificarla nosotros mismos según salgan nuevas versiones de los servicios que use. El registro de imágenes de docker es un servicio en el que los usuarios comparten y colaboran en la creación de las imágenes. Para los servicios más conocidos dispondremos ya de las imágenes como podrían ser: [mysql](https://registry.hub.docker.com/_/mysql/), [redis](https://registry.hub.docker.com/_/redis/), [postgresql](https://registry.hub.docker.com/_/postgres/), [ubuntu](https://registry.hub.docker.com/_/ubuntu/), [wordpress](https://registry.hub.docker.com/_/wordpress/), [nginx](https://registry.hub.docker.com/_/nginx/), [mongodb](https://registry.hub.docker.com/_/mongo/), ...
+Antes de crear una imagen para docker podemos buscar en el [registro de imágenes de Docker](https://registry.hub.docker.com/) que han creado otros usuarios y los han compartido por si hay alguna que ya se adapte a nuestras necesidades, si nos sirve alguna y es algo popular nos evitaremos tener que modificarla nosotros mismos según salgan nuevas versiones de los servicios que use. El registro de imágenes de docker es un servicio en el que las organizaciones publican versiones oficiales junto a otros usuarios que comparten y colaboran en la creación de las imágenes. Para los servicios más conocidos dispondremos ya de las imágenes como podrían ser: [mysql](https://registry.hub.docker.com/_/mysql/), [redis](https://registry.hub.docker.com/_/redis/), [postgresql](https://registry.hub.docker.com/_/postgres/), [ubuntu](https://registry.hub.docker.com/_/ubuntu/), [wordpress](https://registry.hub.docker.com/_/wordpress/), [nginx](https://registry.hub.docker.com/_/nginx/), [mongodb](https://registry.hub.docker.com/_/mongo/), ...
 
 Si no hay ninguna que se adapte totalmente a nuestras necesidades, no nos gusta como están construidas las existes o no confiamos en el mantenimiento que puedan tener esas imágenes podemos crear las nuestras propias. Para crear una imagen de docker se necesita una receta en forma de [archivo Dockerfile](http://docs.docker.com/reference/builder/) que contiene la descripción e instrucciones para construir la imagen. Para crear un dockerfile podemos basarnos en los de las imágenes del registro de docker.
 
-Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker para mysql, lo paso a explicar después.
+{{< tableofcontents >}}
 
-{{< code file="Dockerfile-base" language="plaintext" options="" >}}
-{{< code file="Dockerfile-mysql" language="plaintext" options="" >}}
+### Archivo Dockerfile
 
-Los Dockerfile tienen algunas instrucciones:
+Este podría ser el contenido y la receta de un dockerfile si quisiésemos crear una imagen de docker con el servidor web nginx como servicio basada en la distribución [Ubuntu][ubuntu].
 
-* FROM: indica la imagen base a partir de la cual crearemos la imagen que construirá el Dockerfile.
-* MAINTAINER: documenta el creador de la imagen.
-* ENV HOME: establece el directorio HOME que usarán los comandos RUN.
-* RUN: permite ejecutar una instrucción en el contenedor, por ejemplo, para instalar algún paquete mediante el gestor de paquetes (apt-get, yum, rpm, ...).
-* ADD: permite añadir un archivo al contenedor, en muchas ocasiones se utiliza para proporcionar la configuración de los servicios (ssh, mysql, ...).
-* VOLUME: establece puntos de montaje que al usar el contenedor se pueden proporcionar, los volúmenes son al forma de externalizar un determinado directorio y proporcionar persistencia (las imágenes de docker son de solo lectura y no almacenan datos entre diferentes ejecuciones).
-* EXPOSE: indica los puertos TCP/IP por los que se pueden acceder a los servicios del contenedor, los típicos son 22 (SSH), 80 (HTTP) y en este caso el puerto por defecto de mysql 3306.
-* CDM: establece el comando del proceso de inicio que se usará si no se indica uno al iniciar un contenedor con la imagen.
+{{< code file="Dockerfile" language="dockerfile" options="" >}}
 
-El Dockerfile-base crea una imagen base que usaremos posteriormente en la imagen de mysql, configura el color del prompt, la contraseña de root y expone el puerto 22 para poder hacer ssh.
+Los archivos Dockerfile son archivos de texto con una secuencia de directivas:
 
-En este ejemplo en vez de usar una imagen propia de Ubuntu en la directiva FROM he usado una imagen especial, [phusion/baseimage](https://registry.hub.docker.com/u/phusion/baseimage/):0.9.15. La imagen phusion/baseimage proporciona un sistema init adaptado al funcionamiento de los contenedores de docker al contrario de las imágenes de ubuntu que emplean upstart. Si usásemos alguna imagen de ubuntu y quisiésemos iniciar varios procesos en el contenedor deberíamos usar un servicio como punto de entrada como [supervisord](http://supervisord.org/), con la imagen _phusion/baseimage_ no sería necesario ya que ya ofrece esta funcionalidad de forma más sencilla.
+* _FROM_: indica la imagen base a partir de la cual crearemos la imagen que construirá el Dockerfile.
+* _MAINTAINER_: documenta el creador de la imagen.
+* _ENV_: establece el valor de una variable de entorno para los siguientes comandos _RUN_.
+* _RUN_: permite ejecutar una instrucción en el contenedor, por ejemplo, para instalar algún paquete mediante el gestor de paquetes (apt-get, yum, rpm, ...).
+* _ADD_: permite añadir un archivo al contenedor, en muchas ocasiones se utiliza para proporcionar la configuración de los servicios (ssh, mysql, ...).
+* _VOLUME_: establece puntos de montaje que al usar el contenedor se pueden proporcionar, los volúmenes son al forma de externalizar un determinado directorio y proporcionar persistencia (las imágenes de docker son de solo lectura y no almacenan datos entre diferentes ejecuciones).
+* _EXPOSE_: indica los puertos TCP/IP por los que se pueden acceder a los servicios del contenedor, los típicos son 22 (SSH), 80 (HTTP) u 443 (HTTP).
+* _CMD_: establece el comando del proceso de inicio que se usará si no se indica uno al iniciar un contenedor con la imagen.
 
-Con las instrucciones RUN y ADD instalamos el paquete de mysql y el cliente de mysql y añadimos la configuración de mysql en el archivo my.cnf. En /etc/service/mysql/run dejamos el comando del servicio que iniciará el proceso de mysql como espera el sistema init de la imagen _phusion_. Con VOLUME ["/var/lib/mysql"] establecemos un punto de montaje para poder externalizar y persistir los datos de las bases de datos de mysql.
+### Construir una imagen de Docker
 
-Una vez tenemos el Dockerfile y los archivos de configuración a incluir con los comandos ADD construimos la imagen con:
+Con las instrucciones RUN y ADD se instala paquete de nginx. Con el Dockerfile y los archivos de configuración a incluir si los hubiera con los comandos ADD se construye la imagen.
 
 {{< code file="docker-build.sh" language="bash" options="" >}}
+{{< code file="docker-build.out" language="plaintext" options="" >}}
+
+### Iniciar un contenedor con la imagen
+
+El siguiente comando inicia una instancia del contenedor con un servidor web virtual para el dominio _www.127.0.0.1.xip.io_.
+
+{{< code file="docker-run.sh" language="bash" options="" >}}
+{{< code file="www.127.0.0.1.xip.io.conf" language="nginx" options="" >}}
+
+Otra forma de iniciar el contenedor es con un archivo de [Docker Compose][docker-compose] que básicamente contiene los mismos parámetros del comando _docker run_.
+
+{{< code file="docker-compose.yml" language="yaml" options="" >}}
+{{< code file="docker-compose-up.sh" language="bash" options="" >}}
+
+Accediendo con el navegador al servidor nginx del contenedor se devuelve la página por defecto.
 
 {{< image
     gallery="true"
-    image1="image:docker-mysql.png" optionsthumb1="300x200" title1="docker-mysql" >}}
+    image1="image:nginx.png" optionsthumb1="300x200" title1="Nginx" >}}
 
-Para proporcionar la persistencia a la imagen de mysql podemos crear un contenedor específico que contenga los datos. Con el siguiente comando creamos un contenedor de datos, uso la imagen busybox ya que es una de las más pequeñas:
-
-{{< code file="docker-run-1.sh" language="bash" options="" >}}
-
-Posteriormente podemos iniciar y parar el contenedor de msql con:
-
-{{< code file="docker-run-2.sh" language="bash" options="" >}}
-
-En los siguientes artículos comentaré la herramienta de automatización [ansible][ansible] y como sacarle provecho para iniciar los contenedores en una máquina de desarrollo (devbox). También en algún otro artículo comentaré la opción de [bitnami][bitnami] que dentro de poco ofrecerá soporte para docker y como con esta opción podemos usar un servicio «out-of-the-box» si tener que crear ni siquiera un Dockerfile o tener que documentarnos para instalar un servicio (que en algunos casos pueden tener cierta complejidad) aunque sea usando virtualización con [virtualbox][virtualbox] o computación en la nube.
+Para aprender más sobre Docker es buena idea seguir un manual de referencia como el libro [Docker in Action](https://amzn.to/3pH6uEr).
 
 {{< amazon
     linkids="9d344246cd59cd65a952305379c2556a"

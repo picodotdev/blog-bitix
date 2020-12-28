@@ -13,6 +13,7 @@ imagePost: "logotype:blogbitix.svg"
 tags: ["blog", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
+draft: "true"
 ---
 
 {{% post %}}

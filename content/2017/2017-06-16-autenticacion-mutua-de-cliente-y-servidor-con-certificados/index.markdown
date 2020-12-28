@@ -44,7 +44,7 @@ Con la misma herramienta de [OpenSSL][openssl] es posible comprobar si un certif
 
 Para hacer que el servidor nginx requiera autenticación mediante certificados para el cliente hay que añadir un poco de configuración mediante las directivas _ssl_ donde se indica el certificado del servidor, la clave privada del servidor, el certificado de la autoridad de certificación contra la que se validarán los certificados de los clientes y finalmente la directiva que establece que se ha de verificar a los clientes mediante certificados.
 
-{{< code file="nginx.conf" language="plaintext" options="" >}}
+{{< code file="nginx.conf" language="nginx" options="" >}}
 
 Con el siguiente archivo descriptor de [Docker Compose][docker-compose] y comando se inicia el servidor web nginx.
 
