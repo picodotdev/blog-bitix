@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:hugo.svg"
+imagePost: "logotype:blogbitix.svg"
 tags: ["blog", "gnu-linux", "java", "planeta-codigo"]
 series: ["hemeroteca"]
 library: "true"
@@ -18,7 +18,7 @@ library: "true"
 
 {{% post %}}
 
-{{< logotype image1="hugo.svg" >}}
+{{< logotype image1="blogbitix.svg" >}}
 
 Se acaba otro año y en este caso además la década, en el siguiente 2020 harán 10 años ya desde que empecé a escribir artículos técnicos principalmente sobre [GNU][gnu]/[Linux][linux] y Java, algunos artículos de opinión y desempaquetados los productos que compro relacionados con la tecnología. Una década escribiendo uno o dos artículos semanales, no es fácil aguantar durante todo este tiempo y conservar la motivación y tener el tiempo que requieren cada uno de los artículos. Muchos surgen de ideas del trabajo que en muchos casos no puedo aplicar laboralmente, salvo alguna pequeña excepción, por implementarlos en Java por mi preferencia en el caso de los de programación y usar otras tecnologías laboralmente. 
 
@@ -80,7 +80,7 @@ He escrito lo que en cada momento lo que me ha apetecido, lógicamente no desde�
     image2="image:gadsense-2019.png" optionsthumb2="600x450" title2="AdSense 2019 de Blog Bitix"
     caption="Evolución visitas e ingresos en 2019" >}}
 
-En cuanto a ingresos algunos menos 410 € frente a 480 € del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 euros que no está mal.
+En cuanto a ingresos algunos menos 410 € frente a 480 € del año anterior, aún así todos los meses de forma consistente los ingresos están alrededor de entre 20 y 30 € que no está mal.
 
 {{< image
     gallery="true"

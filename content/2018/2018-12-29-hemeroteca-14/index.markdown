@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:hugo.svg"
+imagePost: "logotype:blogbitix.svg"
 tags: ["gnu-linux", "java", "opinion", "planeta-codigo", "programacion", "software", "software-libre"]
 series: ["hemeroteca"]
 library: "true"

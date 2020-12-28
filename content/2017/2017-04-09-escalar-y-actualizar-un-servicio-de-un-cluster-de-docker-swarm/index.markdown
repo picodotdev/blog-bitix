@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:docker.svg"
-tags: ["blog", "planeta-codigo"]
+tags: ["planeta-codigo", "software-libre"]
 series: ["docker"]
 summary: "Ya tenemos un _cluster_ formado por varios nodos con algún servicio ejecutándose en el _cluster_ de Docker Swarm. Si surge la necesidad los servicios del _cluster_ se pueden escalar cambiando el número de instancias de contenedores que forma el servicio para atender las necesidades computacionales o para ofrecer el servicio a más usuarios. Por otro lado, pasado un tiempo muy posiblemente se publicará una nueva imagen de los contenedores, el servicio se puede actualizar para que los contenedores utilicen esa nueva imagen."
 ---

@@ -8,13 +8,13 @@ updated: 2015-05-17T13:00:00+02:00
 rss: true
 sharing: true
 comments: true
-imagePost: "logotype:hugo.svg"
+imagePost: "logotype:blogbitix.svg"
 tags: ["blog", "planeta-codigo"]
 ---
 
 {{% post %}}
 
-{{< logotype image1="hugo.svg" >}}
+{{< logotype image1="blogbitix.svg" >}}
 
 En diciembre de 2013 pasé de utilizar [Blogger][blogger] a usar [Octopress][octopress] creando la bitácora Blog Bitix. Octopress fue una gran mejora a la hora de editar el contenido y gestionar las imágenes o trozos de código con _gist_. Hace relativamente poco que he pasado a utilizar Octopress pero desde hace un tiempo quería personalizar mucho más el diseño de la bitácora. Estaba esperando a ver como avanzaba el desarrollo de la siguiente versión sin embargo va lentamente por mucho que hayan dicho ya en el 15 de enero que [Octopress 3 de está en camino](http://octopress.org/2015/01/15/octopress-3.0-is-coming/), aún en mayo no hay ninguna nueva noticia desde entonces.
 

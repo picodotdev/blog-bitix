@@ -11,7 +11,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:docker.svg"
-tags: ["blog", "planeta-codigo"]
+tags: ["planeta-codigo", "software-libre"]
 series: ["docker"]
 summary: "Salvo que un servicio sea sin estado o _stateless_ los contenedores de Docker necesitan persistir datos y que estos sobrevivan a su terminación, como es el caso de un contenedor de una base de datos. Además en un _cluster_ de nodos Docker hay que tener en cuenta que los datos deben estar accesibles para todos los nodos ya que un contenedor que usase los datos podría ser lanzado en cualquiera de ellos. REX-Ray es un sistema de almacenamiento en red que cubre estas necesidades, es simple de instalar, configurar y de iniciar. En el artículo muestro un ejemplo usando REX-Ray junto con Docker Swarm y VirtualBox."
 ---

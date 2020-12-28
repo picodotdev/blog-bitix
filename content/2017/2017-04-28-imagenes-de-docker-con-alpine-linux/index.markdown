@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "logotype:docker.svg"
-tags: ["blog", "planeta-codigo"]
+tags: ["planeta-codigo", "software-libre"]
 series: ["docker"]
 ---
 

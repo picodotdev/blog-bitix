@@ -22,5 +22,11 @@
   {{ .RenderString "![](url=logotype:windows.svg,size=32x32,gallery=false,layout=,lazy=false 'Windows')" }}
 {{ else if (in .Params.tags "apple") }}
   {{ .RenderString "![](url=logotype:apple.svg,size=32x32,gallery=false,layout=,lazy=false 'Apple')" }}
+{{ else if (in .Params.tags "programacion") }}
+  <i class="bi bi-code-square archive-icon" title="Programación"></i>
+{{ else if (in .Params.tags "hardware") }}
+  <i class="bi bi-cpu archive-icon" title="Hardware"></i>
+{{ else if (in .Params.tags "opinion") }}
+  <i class="bi bi-chat archive-icon" title="Opinión"></i>
 {{ else }}
 {{ end }}

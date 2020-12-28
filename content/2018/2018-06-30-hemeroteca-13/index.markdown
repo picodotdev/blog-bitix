@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:hugo.svg"
+imagePost: "logotype:blogbitix.svg"
 tags: ["blog", "java", "planeta-codigo", "programacion", "software", "software-libre", "tapestry", "gnu-linux"]
 series: ["hemeroteca"]
 library: "true"
