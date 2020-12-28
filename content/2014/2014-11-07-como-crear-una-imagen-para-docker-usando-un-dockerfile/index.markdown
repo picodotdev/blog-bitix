@@ -50,6 +50,11 @@ Con las instrucciones RUN y ADD se instala paquete de nginx. Con el Dockerfile y
 {{< code file="docker-build.sh" language="bash" options="" >}}
 {{< code file="docker-build.out" language="plaintext" options="" >}}
 
+La imagen construida queda almacenada en el registro local de imágenes.
+
+{{< code file="docker-images.sh" language="bash" options="" >}}
+{{< code file="docker-images.out" language="plaintext" options="" >}}
+
 ### Iniciar un contenedor con la imagen
 
 El siguiente comando inicia una instancia del contenedor con un servidor web virtual para el dominio _www.127.0.0.1.xip.io_.
