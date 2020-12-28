@@ -1,2 +1,2 @@
-$ docker build -t "picodotdev/base:1.0" docker/base
-$ docker build -t "picodotdev/mysql:1.0" docker/mysql
+#!/usr/bin/env bash
+docker build -t "picodotdev/nginx:1.0" .
