@@ -45,7 +45,7 @@ Los archivos Dockerfile son archivos de texto con una secuencia de directivas:
 
 ### Construir una imagen de Docker
 
-Con las instrucciones RUN y ADD se instala paquete de nginx. Con el Dockerfile y los archivos de configuración a incluir si los hubiera con los comandos ADD se construye la imagen.
+Las instrucciones RUN y ADD permiten aprovisionar la imagen a partir de la imagen base, ejecutando comandos para instalar paquetes como Nginx y añadir archivos de configuración si los hubiera copiados de la máquina anfitrión. El archivo _Dockerfile_ es la receta con la que se construye una imagen de Docker.
 
 {{< code file="docker-build.sh" language="bash" options="" >}}
 {{< code file="docker-build.out" language="plaintext" options="" >}}
@@ -78,6 +78,8 @@ Para aprender más sobre Docker es buena idea seguir un manual de referencia com
 {{< amazon
     linkids="9d344246cd59cd65a952305379c2556a"
     asins="1633430235" >}}
+
+{{% sourcecode git="blog-ejemplos/tree/master/DockerNginx" command="./docker-build.sh" %}}
 
 {{< reference >}}
 * [Lista de enlaces sobre Docker](http://www.nkode.io/2014/08/24/valuable-docker-links.html)
