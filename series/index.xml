@@ -5,12 +5,156 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/series/</id>
-    <updated>2020-12-24T09:00:00+01:00</updated>
+    <updated>2020-12-30T12:00:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/</id>
+        <title>Hemeroteca #18</title>
+        <updated>2020-12-30T12:00:00+01:00</updated>
+        <published>2020-12-30T12:00:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/blogbitix.svg" width="200" height="200" alt="Blog Bitix" title="Blog Bitix"  class=""></p>
+</div>
+<p>Una cosa es escribir artículos de ejemplo y otra usarlos en una empresa que factura unos cuantos cientos de millones de euros cuyo servicio es considerado crítico en producción. Por ejemplo por citar algunos artículos de este año, algo como la autenticación de los usuarios con <a href="https://www.keycloak.org/">Keycloak</a> no es sencillo implementarlo e integrarlo en una organización con numerosos sistemas ya funcionando, o implementar un segundo factor de autenticación, o un sistema para realizar las traducciones, o trazabilidad con <a href="https://spring.io/projects/spring-cloud-sleuth">Sleuth</a> y <a href="https://zipkin.io/">Zipkin</a>, o tener una herramienta para consultas SQL en producción con <a href="https://sqlpad.github.io/sqlpad/#/">SQLPad</a>, o definir una autoridad de certificación, o disponer de una arquitectura de referencia en grado de producción de las aplicaciones <a href="https://www.consul.io/">Consul</a>, <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a> de <a href="https://www.hashicorp.com/">HashiCorp</a>. No solo es usarlo hay que mantenerlo, definir un plan para intervenciones comunes como realizar copias de seguridad de las bases de datos o actualizaciones a nuevas versiones sin que afecte al servicio. Así que los artículos quizá estén muy bien pero hay algunas cosas más a tener en cuenta para aplicarlos en un caso de producción en un organización.</p>
+<p>Quizá alguien piense que escribo únicamente sobre herramientas y las herramientas no son de interés. Pero realmente más que escribir sobre herramientas escribo sobre problemas, una herramienta concreta la veo como el medio para resolver un problema técnico o de negocio, el medio no es el fin pero no es irrelevante para conseguir el fin, tener y usar el medio adecuado influye en el éxito, fracaso u ocasionar otros problemas. Con lo que en algunos artículos escribo sobre una herramienta pero con la intención de dar solución a un problema.</p>
+<p>Aunque se comenta en la frase corta lapidaria «con esfuerzo todo se consigue», el libro completo es que el esfuerzo y trabajo no siempre te permite conseguir lo que propongas, el fracaso o un éxito pobre es lo normal. El esfuerzo, trabajo, dedicación, constancia, perseverancia y cosas parecidas ayudan pero también está el factor suerte o simplemente tener el amigo, conocido, contacto, enchufe adecuado o simplemente caerle bien a la persona correcta. Algunas oportunidades no dependen de uno mismo ni del esfuerzo sino también de las oportunidades en una organización, del coraje en una organización para implementarlas o de encontrar una que sí las tenga.</p>
+<p>Tendré varios defectos, pero también otras virtudes y tengo que valorar más de lo que soy capaz si tengo oportunidad. En lo que depende de mí dos ejemplos de eso que soy capaz es el propio blog que al menos lo considero cuanto menos uno bueno en habla hispana sobre Java, software libre y programación de lo que recibido algún comentario, otro ejemplo es el <a href="https://github.com/picodotdev/alis/"><em>script</em> alis</a> para instalar <a href="https://www.archlinux.org/">Arch Linux</a> que es posiblemente (sino convenceme de lo contrario) el mejor <em>script</em> en el mundo para instalar Arch Linux de forma sencilla y rápida.</p>
+<p>En vez de compartir conocimiento podría estar leyendo libros y formándome más, cada artículo supone gran parte de mi tiempo libre fuera del horario de trabajo. En algún momento estar de vacaciones tener la <a href="https://www.playstation.com/es-es/">PlayStation</a> con algunos juegazos comprados y por jugar como <em>The Last of Us</em>, <em>God of War</em>, la serie <em>Uncharted</em>, los varios <em>Trine</em>, <em>The Witcher 3</em>, un gran libro por leer como <em>The Unicorn Project</em>, alguna película por ver del estudio Ghibli o dar un paseo durante algunas horas pero en algunos momentos casi me apetece más escribir algún artículo para el blog.</p>
+<p>No recibo muchos, aunque algunos que recibo son <a href="https://picodotdev.github.io/blog-bitix/2015/12/informacion-y-metricas-de-la-aplicacion-con-spring-boot-actuator/">como en este artículo con un comentario de agradecimiento</a> que me alegra y me anima a seguir escribiendo. Algunos blogueros y más <em>youtubers</em> comentan que en sus comentarios tiene algún <em>troll</em> que comenta para criticar, que recuerde solo una persona me criticó algo por twitter con cierta parte de razón pero por otra no sobre algo del pirateo de Windows que comenté. Todavía no tengo un <em>troll</em> ni lo deseo, será que mi blog no es de política ni hablo de los fascistas dirigentes de V🤮X o los corruptos dirigentes del PP los de ambos miserables, hipócritas y mentirosos igual que sus lacayos mercenarios en las redes sociales u otros que se hacen llamar periodistas.</p>
+<p>Como cada año hago un repaso del <em>blog</em> con los artículos que he publicado, cifras de visitas, ingresos de AdSense y algunos otros asuntos.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="retrospectiva-2020">Retrospectiva 2020</h3>
+<h4 id="evolución-visitas">Evolución visitas</h4>
+<p>Durante este año atípico de confinamiento y en muchos casos trabajo desde casa las visitas se han mantenido constantes, alrededor de unas 50K visitas mensuales. A pesar de escribir nuevo contenido que debería añadir aún más tráfico el caso es que algunos artículos antiguos también lo pierden con lo que el tráfico de los nuevos artículos solo compensan la pérdida del tráfico de los antiguos. Algunos artículos van perdiendo visitas, porque hay otros <em>blogs</em> que también crean contenido y los artículos van perdiendo posiciones en la clasificación de los buscadores.</p>
+<p>Para este 2020 uno de mis objetivos para el blog era seguir aumentando el número de visitas, no se si lo que conseguido porque el tráfico de los artículos nuevos solo se empieza apreciar pasados unos meses e incluso el primer año, este año 2020 he intentando planificar y seleccionar mejor sobre lo que he ido escribiendo, intentando que fuesen artículos interesantes pero que pudieran atraer más visitas. El artículo arquitectura de referencia en grado de producción de las aplicaciones Consul, Vault y Nomad de HashiCorp puede estar muy bien y ser muy avanzado pero su cuota de búsqueda es muy pequeña, por lo que he escrito algunos artículos básicos que la gente busca más.</p>
+<p>Tengo muy poco tráfico de referencia, la mayor parte viene del buscador Google con lo que también he seguido intentando mejorar el SEO, analizar mejor el contenido, incluir palabras clave, poner mejores títulos a los artículos y añadir títulos de sección a los artículos.</p>
+<p>El tráfico de visitas durante este 2020 ha sido el siguiente.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/google-analytics_hu3e46d7828eab3b3f25c0c507479bd2f7_41393_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Evolución visitas 2020"><img src="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/google-analytics_hu3e46d7828eab3b3f25c0c507479bd2f7_41393_650x450_fit_box_2.png" width="650" height="244" alt="Evolución visitas 2020" title="Evolución visitas 2020"  class="lozad "></a></p>
+<figcaption>Evolución visitas 2020</figcaption>
+</figure>
+</div>
+<h4 id="evolución-ingresos">Evolución ingresos</h4>
+<p>Aunque los ingresos por publicidad AdSense, afiliados de Amazon y algunos enlaces patrocinados no compensa el tiempo que hay que invertir en el blog por cada artículo eso no quiere decir que sean despreciables. Mi blog no creo que sea muy grande, algunas páginas especializadas en noticias y tecnología con algún millón de visitas semanales o mensuales si creo que pueden generar unos ingresos respetables de las diferentes fuentes de ingresos que utilizan, como de esos artículos que dedican en exclusiva una selección de productos de Amazon y sus respectivos enlaces de afiliación. Noto en mi pequeño blog el <em>Black Friday</em> y la época navideña esos medios lo deben notar aún más.</p>
+<p>Por insertar un enlace contextual relevante para el contenido he recibido el pago de 20 €, de otros dos enlaces en otros dos artículos a razón de otros 20 € por enlace con un total de 40 € que inserté hace un par de años y que con cierto esfuerzo e insistencia por mi parte he conseguido finalmente cobrar con satisfacción. Por AdSense este 2020 he recibido 250 € y por Amazon con una facturación de 3160 € que les he generado a través de los enlaces que incluyo he recibido 110 €. En total unos 410 € de este 2020, cuando en el 2019 solo por AdSense fueron de 415 €, que me dará para comprar algún juego de la PlayStation y para hacer una donación a varios proyectos de software libre que uso o me parecen importantes. Me gustaría saber para comparar cuántos ingresos generan por publicidad algunos <em>youtubers</em> con un canal medio o pequeño con unos 10K, 5K y 1K suscriptores.</p>
+<p>Hay quien cree que añadir un enlace a un artículo me lleva 20 minutos y que 20 € por ese tiempo equivalente a 60 € la hora es un buen precio. Pues no, no es un buen precio, cada artículo son entre 4 y 8+ horas de tiempo, multiplica esto por 550 artículos y 7 años de constancia escribiendo todas las semanas un artículo y muchas dos. Realmente el precio no es por el tiempo de insertar el enlace sino por conseguir en base a esfuerzo y trabajo que sea interesante insertarlo.</p>
+<p>Recibir esos ingresos durante el 2020 es la parte buena, en este año especial han sido significativamente menores a los de años anteriores al menos por AdSense, la otra parte como digo es que para eso ha hecho falta una constancia de 7 años en los que he escrito casi 550 artículos a razón de entre 4 y 8+ horas por artículo, algunas semanas escribiendo dos artículos y otras cuantas horas más para pensar y organizar ideas de nuevos artículos.</p>
+<p>A esa cantidad hay que sumarle la donación de una persona de 100 € 😱😱😱😱😱 por lo útil le ha resultado el mencionado <em>script</em> alis que hice para instalar Arch Linux. No creo que las donaciones por este <em>script</em> sea habitual, ni mucho menos en esas cifras pero muy esporádicamente también puedo recibir algún ingreso con el enlace de donación que añadí a través de <a href="https://www.paypal.com/">PayPal</a>.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/google-adsense_hu3d04e2daaa820400e7a4e72e3fc44500_37161_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Evolución ingresos AdSense 2020"><img src="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/google-adsense_hu3d04e2daaa820400e7a4e72e3fc44500_37161_650x450_fit_box_2.png" width="650" height="248" alt="Evolución ingresos AdSense 2020" title="Evolución ingresos AdSense 2020"  class="lozad "></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/amazon-afiliados_huc1523108c944cd818d1bc86065d61ac1_64454_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Evolución ingresos Amazon Afiliados 2020"><img src="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/amazon-afiliados_huc1523108c944cd818d1bc86065d61ac1_64454_650x450_fit_box_2.png" width="650" height="314" alt="Evolución ingresos Amazon Afiliados 2020" title="Evolución ingresos Amazon Afiliados 2020"  class="lozad "></a></p>
+<figcaption>Evolución ingresos AdSense y Amazon Afiliados 2020</figcaption>
+</figure>
+</div>
+<p>Entre una cosa y otra el saldo de mi cuenta de PayPal ha llegado a 164 €.</p>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/paypal-saldo_hubd4d22fb4fc105809710c2de47fb00c8_11901_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Saldo cuenta PayPal"><img src="https://picodotdev.github.io/blog-bitix/2020/12/hemeroteca-18/images/paypal-saldo_hubd4d22fb4fc105809710c2de47fb00c8_11901_650x450_fit_box_2.png" width="242" height="247" alt="Saldo cuenta PayPal" title="Saldo cuenta PayPal"  class="lozad "></a></p>
+<figcaption>Saldo cuenta PayPal</figcaption>
+</figure>
+</div>
+<h4 id="mejoras-realizadas">Mejoras realizadas</h4>
+<p>He seguido aplicando algunas mejoras al <em>blog</em> como dividir y poner títulos a las secciones del contenido en el artículo. A mi me ayuda para estructurar el contenido del que voy a escribir, es mejor para el lector que puede ir directamente a la sección que más le interese, e incluso quizá también mejor en cuanto a SEO para los buscadores.</p>
+<p>En muchos artículos he añadido un índice del contenido que quizá a algunos usuarios les sea de utilidad, el índice del artículo está basado en los títulos de las secciones. Los títulos de las secciones e índice del artículo creo que mejora los artículos que en vez de ser un bloque grande de texto sin forma está dividido en varias secciones con títulos destacados que resumen sus pocos párrafos.</p>
+<p>Un objetivo que me he planteado para este año es hacer tareas de SEO y escribir algunos artículos con los que atraer más visitas, esto no quiere decir que no sean artículos interesantes pero sí algunos artículos básicos sobre programación o muy buscados. Principalmente programación sobre Java, un poco de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> y algunos relacionados con <a href="https://www.microsoft.com/es-es/windows/">Windows</a>. El 2021 es mi intención escribir artículos que aumenten las visitas y si es posible también los ingresos por publicidad y afiliación, ver que estas métricas aumentan me anima y motiva para seguir escribiendo.</p>
+<p>Otro objetivo ha sido reescribir y mejorar algunos artículos antiguos ya publicados empezando por los que reciben la mayor parte de visitas aunque también cualquier otro al que añadirle alguna información adicional que lo complete. Esto también en línea con tareas de hacer SEO, no solo en el contenido sino en el título de los artículos. Este es un objetivo para el 2021 ya que algunos se van quedando antiguos o simplemente cuando los escribí me faltaba algo de conocimiento.</p>
+<p>Los artículos los escribo en primera instancia como un borrador que guardo en <a href="https://www.google.es/intl/es/docs/about/">Google Docs</a> dónde esté ya marca varias correcciones en palabras mal escritas y con errores, al editar los artículos que hago en formato <em>markdown</em> con el editor <a href="https://code.visualstudio.com/">Code</a> reviso algunas partes e en muchas ocasiones introducir nuevos errores gramaticales para mejorar la calidad del artículo quitando estos errores un paso que realizo siempre antes de publicarlos es una corrección gramatical, la hacía con el editor de texto <a href="https://www.vim.org/">Vim</a> basado en consola porque no conocía otra forma mejor. Utilizar Vim para la corrección gramatical me suponía salir de Code entrar en Vim realizar la edición cuya navegación por el documento no es lo más rápido y volver al editor Code, esto en ocasiones lo tenía que hacer un par de veces.</p>
+<p>Para la funcionalidad de corrección gramatical he instalado en Code una extensión con el diccionario de palabras en español que me permite corregir a medida que escribo, esto es más sencillo, me ahorra algo de tiempo y encuentro más errores que con Vim alguno se me escapaba. He revisado todos los artículos que ya tenía publicados, los 500, con esta extensión y la verdad es que en la mayoría tenía mínimo dos o tres gazapos que he corregido.</p>
+<h4 id="otras-contribuciones">Otras contribuciones</h4>
+<p>También he seguido mejorando el <em>script</em> alis de instalación automatizado, desatendido, y personalizable de Arch Linux. He añadido la posibilidad de instalar paquetes de <a href="https://flatpak.org/">Flatpak</a> y de <a href="https://sdkman.io/">SDKMAN</a>, he añadido soporte para los sistemas de archivos F2FS, ReiserFS y btrfs con <em>subvols</em> la posibilidad de configurar un intérprete de comandos alternativo a <a href="https://es.wikipedia.org/wiki/Bash">bash</a> como <a href="http://zsh.sourceforge.net/">zsh</a>, <a href="https://fishshell.com/">fish</a> o <a href="https://wiki.archlinux.org/index.php/Dash">dash</a>, poder hacer que alis solicite las contraseñas durante la instalación en vez de <em>hardcodearlas</em> en el archivo de configuración para evitar que alguien las ponga y suba a GitHub si hace un <em>fork</em>, añadido el soporte para los entornos de escritorios alternativos <a href="https://i3wm.org/">i3-wm</a> e i3m-gaps, soporte para <em>reflector</em>, posibilidad de habilitar o deshabilitar <em>units</em> de <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>, soporte para probar con <a href="https://www.packer.io/">Packer</a> que me permite automatizar las pruebas en <a href="https://www.virtualbox.org/">VirtualBox</a>, además he añadido la posibilidad de hacer una pequeña donación a través de PayPal si alguien considera que el <em>script</em> le es de utilidad.</p>
+<p>También he seguido mejorando las traducciones al español de la aplicación gestor de contraseñas <a href="https://keepassxc.org/">KeePassXC</a>, del cliente <em>torrent</em> <a href="https://transmissionbt.com/">Transmission</a> y el reproductor multimedia <a href="https://www.videolan.org/vlc/">VLC</a>.</p>
+<h3 id="propósitos-para-el-2021">Propósitos para el 2021</h3>
+<p>Los últimos meses he estado publicando los artículos que he ido escribiendo esa misma semana casi con ideas sobre la marcha. En otros momentos entre que apuntaba la idea, escribía el borrador y lo publicaba pasaba incluso varios meses o algún año entre cada uno de esos pasos. Y aún tengo muchos artículos escritos como borrador hace algunos años pendientes de publicar.</p>
+<p>En el 2021 no creo que cambie mucho, espero seguir publicando al menos un artículo por semana, continuar con la intención de este 2020 de publicar artículos que aumenten las visitas al mismo tiempo de que sean interesantes y cambiar, reescribir o actualizar algunos artículos antiguos. Aumentar las visitas es algo que no he conseguido durante este atípico 2020.</p>
+<p>Alguna vez me he planteado migrar el blog a <a href="https://aws.amazon.com/es/">AWS</a>, <a href="https://www.digitalocean.com/">Digital Ocean</a> o <a href="https://www.linode.com/">Linode</a>. El blog me genera ingresos de sobra para cubrir el coste con cualquiera de esa infraestructura. Si lo hago será más que por necesidad por aprender y tener un dominio propio. No lo he hecho hasta el momento por la comodidad de <a href="https://pages.github.com/">GitHub Pages</a> ni tener que dedicar tiempo al mantenimiento de esa infraestructura. También requiere un plan de migración para que tenga el menor impacto posible en cuanto a tráfico o SEO, ya buscaría la mejor solución.</p>
+<p>Es posible que este 2021 me lo plantee en serio, administrar mi propio servidor en la nube, usar Nginx, <a href="https://aws.amazon.com/es/cloudfront/">CloudFront</a> o un CDN, <a href="https://letsencrypt.org/">Let’s Encrypt</a>, <a href="https://www.terraform.io/">Terraform</a>, copias de seguridad, <em>deployments</em> y actualizaciones de seguridad todos esos temas interesantes de DevOps en los que no tengo tanto conocimiento al menos en la práctica. ¿Un blog estático necesita todo esto? la respuesta es no, pero como digo el objetivo no es la solución mínima más sencilla para el problema sino aprender en la práctica de lo que me interesa de DevOps con este problema.</p>
+<h3 id="artículos-publicados">Artículos publicados</h3>
+<p>Estos son los 45 artículos que he escrito durante el segundo semestre de 2020, de las temáticas habituales Java, GNU/Linux o software libre.</p>
+<p>¡Qué el 2021 sea mejor!</p>
+<h4 id="artículos-sobre-java">Artículos sobre Java</h4>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/tareas-programadas-de-forma-periodica-con-quartz-y-spring-en-java/">Tareas programadas de forma periódica con Quartz y Spring en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/renombrar-campos-del-esquema-en-las-consultas-graphql/">Renombrar campos del esquema en las consultas GraphQL</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/anadir-descripciones-y-documentar-los-campos-de-graphql/">Añadir descripciones y documentar los campos de GraphQL</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/introduccion-a-grpc-y-ejemplo-con-java/">Introducción a gRPC y ejemplo con Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/novedades-de-java-15/">Novedades de Java 15</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/3-formas-de-gestionar-errores-en-los-lenguajes-de-programacion/">3 formas de gestionar errores en los lenguajes de programación</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-eventos-de-dominio-en-java/">Implementar un bus de eventos de dominio en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/implementar-un-bus-de-comandos-y-consultas-en-java/">Implementar un bus de comandos y consultas en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">Cómo deduplicar eventos de dominio</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">Entorno de desarrollo Java para editar, compilar y ejecutar programas</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">Cómo depurar una aplicación Java con un IDE</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">Emitir trazas de las peticiones y respuestas HTTP con clientes Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">Crear un archivo Zip con Java, comprimir y descomprimir datos</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">5 formas de implementar el patrón Singleton en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/las-formas-de-guardar-relaciones-jerarquicas-en-bases-de-datos-relacionales/">Las formas de guardar relaciones jerárquicas en bases de datos relacionales</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/tipos-de-arquitecturas-de-aplicaciones-de-software/">Tipos de arquitecturas de aplicaciones de software</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/internacionalizar-localizar-y-dar-formato-a-cadenas-numeros-importes-y-fechas-en-java/">Internacionalizar, localizar y dar formato a cadenas, números, importes y fechas en Java</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">Para qué sirve la palabra clave final en el código fuente Java</a></li>
+</ul>
+<h4 id="artículos-sobre-gnulinux-o-software-libre">Artículos sobre GNU/Linux o software libre</h4>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/">Las diferencias entre GNU/Linux, BSD y sus distribuciones</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/que-son-para-que-sirven-formato-y-ejemplos-de-las-expresiones-cron/">Qué son, para qué sirven, formato y ejemplos de las expresiones cron</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-a-una-version-anterior-de-un-servicio-con-nomad/">Revertir un servicio a una versión anterior con Nomad</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/obtener-un-nombre-de-dominio-para-una-direccion-ip-privada/">Obtener un nombre de dominio para una dirección IP privada</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/">Configurar autenticación básica en los servidores web Nginx y Apache</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/comandos-para-crear-una-autoridad-de-certificacion-ca-con-openssl/">Comandos para crear una autoridad de certificación (CA) con OpenSSL</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/">Configurar un servidor web virtual en Nginx y Apache</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/funcionalidades-que-necesitan-las-aplicaciones-basadas-en-microservicios-y-herramientas-que-las-proporcionan/">Funcionalidades que necesitan las aplicaciones basadas en microservicios y herramientas que las proporcionan</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/trazabilidad-en-servicios-distribuidos-con-sleuth-y-zipkin/">Trazabilidad en servicios distribuidos con Sleuth y Zipkin</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/herramienta-para-ejecutar-consultas-sql-en-la-base-de-datos-de-produccion/">Herramienta para ejecutar consultas SQL en la base de datos de producción</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/la-herramienta-weblate-para-traducir-una-aplicacion-a-multiples-idiomas/">La herramienta Weblate para traducir una aplicación a múltiples idiomas</a></li>
+</ul>
+<h4 id="artículos-sobre-javascript-y-web">Artículos sobre JavaScript y web</h4>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-3-formas-de-guardar-datos-en-el-navegador-con-javascript/">Las 3 formas de guardar datos en el navegador con JavaScript</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/un-comando-y-aplicaciones-graficas-para-descargar-todo-el-contenido-de-un-sitio-web/">Un comando y aplicaciones gráficas para descargar todo el contenido de un sitio web</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/08/que-hace-y-ventajas-de-un-preprocesador-de-estilos-css/">Qué hace y ventajas de un preprocesador de estilos CSS</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/que-es-por-que-y-como-activar-un-segundo-factor-de-autenticacion-en-google-amazon-paypal-y-otros-servicios/">Qué es, por qué y cómo activar un segundo factor de autenticación en Google, Amazon, PayPal y otros servicios</a></li>
+</ul>
+<h4 id="otros-temas">Otros temas</h4>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/1-decada-en-la-misma-empresa-20-anos-trabajando/">1 década en la misma empresa, 20 años trabajando</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/">Cómo comprar una licencia y activar Windows 10 y Office 2019</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/sobre-la-generacion-de-consolas-playstation-5-y-xbox-series-x-s-antes-de-que-se-comercialice-y-la-renovacion-del-hardware-de-pc/">Sobre la generación de consolas PlayStation 5 y Xbox Series X/S antes de que se comercialice y la renovación del hardware de PC</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/">Análisis y guía completa del juego Horizon Zero Dawn</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/11/como-encontrar-las-mejores-ofertas-de-juegos-para-consola-y-pc/">Cómo encontrar las mejores ofertas de juegos para consola y PC</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/guia-basica-sobre-teclados-mecanicos-para-ordenador/">Guía básica sobre teclados mecánicos para ordenador</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/">Artículo #8 de Yo apoyo al software libre</a></li>
+</ul>
+]]>
+        </content>
+        
+            
+                <category term="blog"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2020/12/articulo-8-de-yo-apoyo-al-software-libre/</id>
@@ -2016,156 +2160,6 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
         
             
                 <category term="juegos"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/</id>
-        <title>Cómo depurar una aplicación Java con un IDE</title>
-        <updated>2020-10-30T14:30:00+01:00</updated>
-        <published>2020-10-30T14:30:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>La depuración de un programa o <em>debug</em> permite ejecutar un programa de forma interactiva, paso a paso y examinar los valores de las variables. Esto proporciona valiosa información que permite comprobar el correcto funcionamiento de un programa o descubrir la causa de un error del que las trazas no proporcionan información suficiente. Los depuradores o <em>debuggers</em> son las aplicaciones que ejecutan el programa en modo depuración, permiten establecer puntos de ruptura, continuar la ejecución paso a paso o hasta el siguiente punto de ruptura e inspeccionar los valores de las variables. Los entornos integrados de desarrollo o IDE de Java como IntelliJ IDEA y eclipse ofrecen soporte para hacer depuración.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Pocos programas están libres de errores, algunos errores se producen cuando se cumplen ciertas condiciones en los datos que maneja una aplicación. En ocasiones descubrir la causa de un error es suficiente si la aplicación emite trazas pero en los errores más complicados o con poca información se requiere depurar el programa.</p>
-<ul>
-<li><a href="https://picodotdev.github.io/blog-bitix/2018/07/la-libreria-log4j-para-emitir-trazas-en-aplicaciones-java/">La librería Log4j para emitir trazas en aplicaciones Java</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2020/09/centralizar-y-consultar-las-trazas-de-las-aplicaciones-con-elasticsearch-logstash-y-kibana/">Centralizar y consultar las trazas de las aplicaciones con Elasticsearch, Logstash y Kibana</a></li>
-</ul>
-<p>La depuración se emplea en el momento de desarrollo o para reproducir y descubrir en el entorno de desarrollo local un error que se está produciendo en producción. Por la utilidad de la depuración todos los lenguajes ofrecen alguna posibilidad de hacer depuración. En Java la depuración se realiza configurando la máquina virtual con ciertos argumentos y el entorno integrado de desarrollo o IDE para conectarse a la máquina virtual.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="qué-es-la-depuración-de-un-programa">Qué es la depuración de un programa</h3>
-<p>La depuración o <em>debug</em> es una forma de ejecución de un programa con la que el programador puede observar de forma interactiva la ejecución línea a línea del código fuente con el objetivo de eliminar algún error. El depurador o <em>debugger</em> es una aplicación que permite añadir puntos de ruptura o <em>breakpoints</em> donde el depurador para la ejecución, inspeccionar los valores de las variables, continuar la ejecución hasta la siguiente línea o hasta el siguiente punto de ruptura, continuar la ejecución entrando en una función o sin entrar en la función.</p>
-<h3 id="configurar-la-máquina-virtual-java-para-hacer-_debug_">Configurar la máquina virtual Java para hacer <em>debug</em></h3>
-<p>Para depurar un programa Java es necesario configurar la máquina virtual Java o JVM en modo <em>debug</em>. Esta configuración de la JVM se realiza añadiendo ciertos argumentos al comando que inicia la aplicación.</p>
-<p>Un ejemplo de programa para practicar cómo depurar es el siguiente.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.blogbitix.java.helloworld</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Hola mundo!&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Main.java</span>
-    </div>
-</div>
-<h4 id="debug-con-el-comando-java">Debug con el comando java</h4>
-<p>Si la aplicación se inicia con el comando <a href="https://docs.oracle.com/en/java/javase/11/tools/java.html">java</a> hay que añadir los siguientes argumentos para la máquina virtual. Estos argumentos indican a la máquina virtual que acepte conexiones de red para realizar depuración desde un depurador como un IDE de forma remota o desde la máquina local.</p>
-<ul>
-<li><em>-agentlib:jdwp</em>: habilita el protocolo de depuración (JDWP) en la máquina virtual. Este es el argumento principal que habilita la depuración.</li>
-<li><em>transport=dt_socket</em>: se usa una conexión de red para las conexiones de depuración.</li>
-<li><em>server=y</em>: escucha conexiones de los depuradores. con valor <em>n</em>, el proceso intenta conectarse a un depurador en vez de esperar conexiones. El valor <em>n</em> requiere argumentos adicionales.</li>
-<li><em>suspend=n</em>: con el valor <em>n</em> no se espera a una conexión del depurador en el inicio. La aplicación se inicia y ejecuta con normalidad hasta que un depurador se conecta. Con el valor <em>y</em>, la aplicación no empieza hasta que un depurador se conecta.</li>
-<li><em>address=5005</em>: indica el puerto en el que la máquina virtual acepta conexiones.</li>
-</ul>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"> $ java -agentlib:jdwp<span class="o">=</span><span class="nv">transport</span><span class="o">=</span>dt_socket,server<span class="o">=</span>y,suspend<span class="o">=</span>n,address<span class="o">=</span><span class="m">5005</span> -classpath <span class="s2">&#34;target/classes:libraries/*&#34;</span> io.github.picodotdev.blogbitix.java8.helloworld.Main &#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>java-debug.sh</span>
-    </div>
-</div>
-<h4 id="debug-con-gradle">Debug con Gradle</h4>
-<p>En el momento de desarrollo si se emplea la herramienta de construcción <a href="https://gradle.org/">Gradle</a> también es posible arrancar la máquina virtual de la aplicación en modo depuración a la espera de la conexión del depurador. En el primer comando se inicia la depuración en el puerto <em>5005</em> y con el segundo comando utilizando la variable de entorno <em>GRADLE_OPTS</em> es posible especificar los mismos parámetros de la máquina virtual que al ejecutar la aplicación Java directamente.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run --debug-jvm&#10;...&#10;Listening <span class="k">for</span> transport dt_socket at address: <span class="m">5005</span>&#10;&#10;$ <span class="nv">GRADLE_OPTS</span><span class="o">=</span><span class="s2">&#34;-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005&#34;</span> ./gradlew run&#10;Listening <span class="k">for</span> transport dt_socket at address: <span class="m">5005</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-run-1.sh</span>
-    </div>
-</div>
-<p>La configuración del <em>debug</em> también es posible especificarla en el archivo de construcción del proyecto.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="o">...</span>&#10;&#10;<span class="n">run</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">debugOptions</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">enabled</span> <span class="o">=</span> <span class="kc">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">server</span> <span class="o">=</span> <span class="kc">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">suspend</span> <span class="o">=</span> <span class="kc">true</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">port</span> <span class="o">=</span> <span class="mi">5005</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>build.gradle</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ ./gradlew run&#10;Listening <span class="k">for</span> transport dt_socket at address: <span class="m">5005</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>gradle-run-2.sh</span>
-    </div>
-</div>
-<h3 id="depurar-una-aplicación-java-con-un-ide">Depurar una aplicación Java con un IDE</h3>
-<p>El depurador permite añadir puntos de ruptura en cualquiera de las líneas del código fuente del programa para que la ejecución se detenga cuando se llegue a ese punto. Una vez detenida la ejecución el depurador permite examinar los valores de las variables disponibles en el ámbito de detención de la ejecución.</p>
-<p>Para continuar la ejecución si se ha detenido en una línea de código con una llamada a una función el depurador ofrece la posibilidad de continuar entrando al código de esa función o saltar a la siguiente línea de código, también se ofrece la posibilidad de continuar la ejecución hasta la siguiente punto de ruptura. Los puntos de ruptura se pueden habilitar o deshabilitar, no siendo necesario eliminarlos para que no tengan efecto.</p>
-<h4 id="cómo-depurar-código-java-con-intellij-idea">Cómo depurar código Java con IntelliJ IDEA</h4>
-<p>Arrancada la máquina virtual en modo depuración hay que configurar <a href="https://www.jetbrains.com/idea/">IntelliJ</a> para que se conecte a la máquina virtual ya sea con una configuración de inicio de la aplicación o uniendo el IDE a un proceso local de la máquina virtual en modo depuración desde el menú <em>Run &gt; Attach to Process</em>.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug-configurations_hu6974b8f2106ab7f5552794ced458dd93_67824_300x200_fit_box_2.png" width="300" height="190" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
-<figcaption>Configuración de depuración remota</figcaption>
-</figure>
-</div>
-<p>Añadir un punto de ruptura se hace desde el espacio vertical del editor del código fuente al inicio de cada línea, de forma alternativa utilizando la combinación de teclas <kbd>Ctrl+F8</kbd> añade un punto de ruptura en la línea de edición actual. Los puntos de ruptura pueden ser:</p>
-<ul>
-<li>De línea: suspende la ejecución al llegar a esa línea de código.</li>
-<li>De método: suspende la ejecución al entrar o salir del método.</li>
-<li>De variable: suspende la ejecución al leer o escribir en la variable.</li>
-<li>De excepción: suspende la ejecución cuando una excepción es lanzada en este caso no depende de una referencia de código concreta.</li>
-</ul>
-<p>La combinación de teclas para continuar la ejecución cuando se ha suspendido por llegar a un punto de ruptura son:</p>
-<ul>
-<li>Sin entrar en la función o <em>step over</em>: <kbd>F8</kbd>.</li>
-<li>Entrar a la función o <em>step into</em>: <kbd>F7</kbd>.</li>
-<li>Salir de la función o <em>step out</em>: <kbd>Shift+F8</kbd>.</li>
-<li>Hasta llegar a la posición del cursor: <kbd>Alt+F9</kbd>.</li>
-</ul>
-<p>El programa se detiene en el punto de ruptura, los valores de las variables en el contexto donde se ha detenido la ejecución se pueden inspeccionar, en este caso el valor del <em>array</em> con los argumentos del programa.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Depuración de un programa en IntelliJ IDEA"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_300x200_fit_box_2.png" width="246" height="200" alt="Depuración de un programa en IntelliJ IDEA" title="Depuración de un programa en IntelliJ IDEA"  class="lozad "></a></p>
-<figcaption>Depuración de un programa en IntelliJ IDEA</figcaption>
-</figure>
-</div>
-<h4 id="cómo-depurar-código-java-con-eclipse">Cómo depurar código Java con eclipse</h4>
-<p>El entorno de desarrollo integrado <a href="https://eclipse.org">eclipse</a> también ofrece un depurador para aplicaciones Java. Permite iniciar una aplicación en modo depuración, conectarse a una máquina virtual externa configurada con soporte para depuración, establecer puntos de ruptura con la combinación de teclas <kbd>Ctrl+Shift+B</kbd>, continuar la ejecución cuando se ha suspendido e inspeccionar los valores de las variables.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de depuración remota"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug-configurations_hu1c0f6e385374dcdc1d23d76092d13eed_77566_300x200_fit_box_2.png" width="273" height="200" alt="Configuración de depuración remota" title="Configuración de depuración remota"  class="lozad "></a></p>
-<figcaption>Configuración de depuración remota</figcaption>
-</figure>
-</div>
-<p>La combinación de teclas para continuar la ejecución cuando se ha suspendido por llegar a un punto de ruptura son:</p>
-<ul>
-<li>Sin entrar en la función o <em>step over</em>: <kbd>F6</kbd>.</li>
-<li>Entrar a la función o <em>step into</em>: <kbd>F5</kbd>.</li>
-<li>Salir de la función o <em>step out</em>: <kbd>F7</kbd>.</li>
-<li>Hasta llegar a la posición del cursor: <kbd>Ctrl+R</kbd>.</li>
-</ul>
-<p>Los puntos de ruptura se crean con la tecla Ctrl+Shift+B o con el botón derecho desde el espacio vertical del editor del código fuente al inicio de cada línea.</p>
-<div class="media">
-<figure>
-<p><a href="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Depuración de un programa en eclipse"><img src="https://picodotdev.github.io/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/eclipse-debug_hu5e4bda6d1fd04f69eaf9a20d507bc70a_93363_300x200_fit_box_2.png" width="300" height="187" alt="Depuración de un programa en eclipse" title="Depuración de un programa en eclipse"  class="lozad "></a></p>
-<figcaption>Depuración de un programa en eclipse</figcaption>
-</figure>
-</div>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://docs.gradle.org/current/userguide/application_plugin.html">The Application Plugin</a></li>
-<li><a href="https://www.jetbrains.com/help/idea/debugging-code.html">IntelliJ IDEA Debug code</a></li>
-<li><a href="https://www.jetbrains.com/help/idea/attaching-to-local-process.html">IntelliJ IDEA Attach to process</a></li>
-<li><a href="https://www.jetbrains.com/help/idea/run-debug-configuration.html">IntelliJ IDEA Run/debug configurations</a></li>
-<li><a href="https://www.jetbrains.com/help/idea/stepping-through-the-program.html#smart-step-into">IntelliJ IDEA Step through the program</a></li>
-<li><a href="https://www.eclipse.org/community/eclipse_newsletter/2017/june/article1.php">Debugging the Eclipse IDE for Java Developers</a></li>
-</ul>
-</div>
-<div class="alert alert-secondary sourcecode">
-    <img data-src="https://picodotdev.github.io/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
-    <p>
-        El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJava8">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
