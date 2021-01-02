@@ -1,0 +1,765 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+  
+
+  <title>Análisis y guía del juego de rol For the King</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html" hreflang="es" title="Análisis y guía del juego de rol For the King">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Análisis y guía del juego de rol For the King">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Análisis y guía del juego de rol For the King">
+<meta name="twitter:description" content="El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html"
+    },
+    "headline": "Análisis y guía del juego de rol For the King",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-01-02T11:00:00+01:00",
+    "dateModified": "2021-01-02T11:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "4305",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}article h2{font-size:1.75rem}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.tableofcontents{background-color:#fffae9}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}i.archive-icon{display:inline-block;font-size:32px;line-height:32px}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_1040x0_resize_q90_box.jpg" height="300" layout="fixed-height"  class="lozad "></amp-img>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Análisis y guía del juego de rol For the King</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>02/01/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/juegos/index-amp.html">juegos</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html#comments">Comentarios</a>
+      
+      
+    </p>
+
+    
+      <p class="summary">El juego de rol For the King no destaca por tener los gráficos más avanzados o una historia muy elaborada. Lo compensa con una muy buena implementación de lo esencial en un juego de rol con múltiples clases de personajes, estadísticas en cada atributo, equipo y objetos, un sistema de combate sencillo, rápido y bien implementado basado en estadística que requiere pensar en la acción a realizar durante el turno de combate. Un juego sencillo a la vez que bastante entretenido en la categoría de juego de rol, estrategia, exploración de mazmorras y combate por turnos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <p>For the King es un juego de rol con un sistema de combate por turnos que está disponible para PC y consolas, desarrollado por <a href="https://ironoakgames.com/">IronOak Games</a>. Como juego de rol tiene los típicos componentes de los mismos: varios personajes entre los que elegir, una ficha de personaje con atributos y estadísticas, un equipo que incluye armas, armaduras y objetos cada uno que otorgan habilidades especiales o mejoran la armadura o estadísticas, pergaminos, hierbas y objetos especiales. Los personajes van ganando experiencia y subiendo de nivel, en las partidas se pueden comprar o encontrar nuevas armas y equipo para mejorar a los personajes. El grupo de aventureros está formado por tres personajes que deben resolver el misterio y acabar con el mal.</p>
+<p>Los gráficos destacan por tener un bajo número de polígonos pero al mismo tiempo atractivos con los que es suficiente con un ordenador modesto,no pretende ser realista y la paleta de colores que utiliza son característicos. El juego está diseñado para hacer extremadamente difícil completarlo en los primeros intentos, a medida que se avanza en el juego y se completan algunas misiones se obtiene saber que se puede intercambiar en la biblioteca del saber para que en siguientes intentos aparezcan algunas ventajas como encuentros, armas y tener acceso a nuevos personajes.</p>
+<p>Con las ventajas el juego se va haciendo más fácil a medida que se reintenta, cada partida es única y aunque la trama principal y encuentros importantes siguen siendo los mismos el mapa es distinto en cada partida, los encuentros inesperados y el equipo encontrado varía con lo que no se hace extremadamente repetitivo.</p>
+<p>El juego se guarda después de cada turno, no permite guardar y cargar, si te equivocas de decisión puede suponer la muerte de todos los personajes y el fin de la partida, teniendo que empezar otra con la ventaja de gastar el saber conseguido en el siguiente intento que lo harán más fácil.</p>
+<p>Aunque el juego es aparentemente sencillo está repleto de información que hacen del juego bastante completo. Hay que conocer varios de los iconos en la interfaz gráfica para tener éxito en las aventuras, desde las habilidades del personaje, armas, aflicciones y maldiciones, objetos y hierbas. Aunque el juego tiene una pequeña guía básica para empezar a jugar hay una buena cantidad de información que no se detalla al completo, según se va jugando uno va adquiriendo poco a poco parte de la información.</p>
+<p>For the King me ha parecido un juego muy entretenido, sencillo pero con todos los elementos que requiere un juego de rol, su historia no es muy profunda pero es suficiente para poner el contexto de la aventura y dar sentido a los objetivos. Para completar el juego solo le faltaría interacción y conversaciones con otros personajes en las que elegir varias opciones de diálogo que cambien los efectos según la opción escogida. El sistema de combate y cálculo de porcentajes funciona bien, no como <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/index-amp.html">el juego XCOM 2</a> que cuando lo jugué me dió la sensación que los porcentajes eran muy poco exactos, aunque estos dos son juegos bastante diferentes tienen algunos aspectos similares en el combate y estadísticas.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king_hu05ee018c0e95cc2dd16e8052e48b35cd_403463_300x250_fit_q90_box.jpg" width="300" height="169" alt="Pantalla inicial" title="Pantalla inicial"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king-menu_hu51435b57b4095f406b7c32254a342b4c_363986_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Menú"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/for-the-king-menu_hu51435b57b4095f406b7c32254a342b4c_363986_300x250_fit_q90_box.jpg" width="300" height="169" alt="Menú" title="Menú"  class="lozad "></amp-img></a></p>
+<figcaption>Pantalla inicial y menú del juego For de King</figcaption>
+</figure>
+</div>
+<div class="alert alert-warning">
+    <h2>Anticipación del juego</h2>
+    <p>Este artículo contiene información de estrategias para completar más fácilmente el juego, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
+    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
+</div>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#modos-de-juego">Modos de juego</a></li>
+    <li><a href="#el-tablero-y-mundo">El tablero y mundo</a>
+      <ul>
+        <li><a href="#plagas-y-caos">Plagas y caos</a></li>
+      </ul>
+    </li>
+    <li><a href="#personajes">Personajes</a></li>
+    <li><a href="#equipo-armas-armadura-y-complementos">Equipo, armas, armadura y complementos</a>
+      <ul>
+        <li><a href="#consumibles-hierbas-pergaminos-objetos-y-oro">Consumibles, hierbas, pergaminos, objetos y oro</a></li>
+      </ul>
+    </li>
+    <li><a href="#combates">Combates</a>
+      <ul>
+        <li><a href="#información-de-aventureros-y-enemigos">Información de aventureros y enemigos</a></li>
+        <li><a href="#encuentros-y-mazmorras">Encuentros y mazmorras</a></li>
+        <li><a href="#aflicciones-físicas-maldiciones-e-inmunidades">Aflicciones físicas, maldiciones e inmunidades</a></li>
+      </ul>
+    </li>
+    <li><a href="#estrategia-y-consejos-para-tener-éxito-en-las-campañas">Estrategia y consejos para tener éxito en las campañas</a></li>
+    <li><a href="#tienda-del-saber-guía-del-juego-y-enciclopedia">Tienda del saber, guía del juego y enciclopedia</a></li>
+    <li><a href="#banda-sonora-original">Banda sonora original</a></li>
+    <li><a href="#vídeos-de-youtube">Vídeos de YouTube</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="modos-de-juego">Modos de juego</h3>
+<p>El juego tiene varias campañas, aventuras distintas, varios niveles de dificultad y un modo de juego cooperativo. Las campaña principal de <em>Por el Rey</em> no es muy larga en unos pocos días se completa pero requiere obtener varias ventajas en la biblioteca del saber y reiniciarlo varias veces lo que hace que lleve algo más de tiempo.</p>
+<p>La trama de la campaña <em>Por el Rey</em> comienza con un acontecimiento dramático que un grupo de aventureros han de resolver. Se comienza eligiendo a los tres aventureros que forman el grupo entre los disponibles. Cada personaje tiene unas estadísticas y habilidades diferentes que les ayudará a su éxito, algunos personajes están más orientados a hacer daño físico, otros daño mágico y algunos otros con ciertas habilidades diferentes en el combate.</p>
+<p>Según la dificultad varía el nivel de vida de los enemigos, la inflación que se aplica en el precio de los servicios y mercancías en los mercados o el número de vidas iniciales para resucitar a los personajes en caso de su muerte.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-1_hu8f59a1f7a991c45ba80d274be814fa24_356941_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Personalización de personajes"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-1_hu8f59a1f7a991c45ba80d274be814fa24_356941_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personalización de personajes" title="Personalización de personajes"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-2_hu7632842ceeef4087dc52395f85e13607_375027_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Personalización de personajes"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-2_hu7632842ceeef4087dc52395f85e13607_375027_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personalización de personajes" title="Personalización de personajes"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-3_hu0555415ee1932e5ba6900de03450a0d1_386310_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Personalización de personajes"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-3_hu0555415ee1932e5ba6900de03450a0d1_386310_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personalización de personajes" title="Personalización de personajes"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-4_hub2fcbcc609b05b82bcd504b7bd7ddc3a_361647_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Personalización de personajes"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-4_hub2fcbcc609b05b82bcd504b7bd7ddc3a_361647_200x150_fit_q90_box.jpg" width="200" height="113" alt="Personalización de personajes" title="Personalización de personajes"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-5_hucd91f4bba1bd38e6cfc80352952a802a_406612_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/modo-de-juego-5_hucd91f4bba1bd38e6cfc80352952a802a_406612_200x150_fit_q90_box.jpg" width="200" height="113"  class="lozad "></amp-img></a></p>
+<figcaption>Modos de juego</figcaption>
+</figure>
+</div>
+<p>Al principio hay que crear el grupo de aventureros, hay que darles un nombre, seleccionar la clase que determina sus estadísticas iniciales y personalizar su apariencia e indumentaria. Algunas clases de personajes están desbloqueadas desde el principio, otras hay que desbloquearlas en la biblioteca del saber con el saber conseguido en las aventuras.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/personajes_hu3c9228d869ca8277a8016bef18fc9f70_392868_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Personalización de personajes"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/personajes_hu3c9228d869ca8277a8016bef18fc9f70_392868_650x450_fit_q90_box.jpg" width="650" height="366" alt="Personalización de personajes" title="Personalización de personajes"  class="lozad "></amp-img></a></p>
+<figcaption>Personalización de personajes</figcaption>
+</figure>
+</div>
+<h3 id="el-tablero-y-mundo">El tablero y mundo</h3>
+<p>El juego transcurre entre dos elementos, el viajar por el mundo y los combates. El viaje por el mundo está formado por un mapa en tres dimensiones de ubicaciones en diferentes hexágonos. En cada turno los personajes tienen varios puntos de movimiento para desplazarse por el mapa e ir de una ubicación a otra, tener encuentros, cumplir misiones e ir a ciertas ubicaciones especiales como mazmorras y encuentros especiales aleatorios en los que conseguir objetos.</p>
+<p>El terreno hay que ir explorándolo ya que está oculto con niebla que a medida se va viajando se va mostrando el mapa. En cada casilla del mapa aún visible hay que acercarse para ver si en esa casilla hay algún encuentro especial como un artefacto. Algunas casillas están malditas de modo que al pasar por ellas los personajes se arriesgan a contraer alguna maldición.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/mundo_huc595bca9f69352973206fdeb7647556c_468472_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio de la aventura For the King y mapa del mundo"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/mundo_huc595bca9f69352973206fdeb7647556c_468472_650x450_fit_q90_box.jpg" width="650" height="366" alt="Inicio de la aventura For the King y mapa del mundo" title="Inicio de la aventura For the King y mapa del mundo"  class="lozad "></amp-img></a></p>
+<figcaption>Inicio de la aventura For the King y mapa del mundo</figcaption>
+</figure>
+</div>
+<p>Hay un ciclo de día y de noche diferenciados en varios turnos, hay que planificar los viajes para hacer los combates durante el día ya que durante la noche los enemigos son algo más fuertes. En la barra de tiempo también se muestra si se acerca alguna plaga que si no se contrarresta desencadena algunos eventos que aumentan la dificultad, también está el nivel de caos que si no se reduce hace que el número de encuentros de enemigos por el mapa sea mayor.</p>
+<p>En el mapa hay varias regiones diferenciadas con una capital y una  ciudad en la que comerciar con servicios para curar a los personajes, eliminar maldiciones y aflicciones físicas y equipo, pergaminos, hierbas o mejorar las pipas para fumar las hierbas.</p>
+<h4 id="plagas-y-caos">Plagas y caos</h4>
+<p>A la medida que pasan los turnos en la linea de tiempo aparecerán unos marcadores de plaga y casos que si no son contrarrestados provocarán desastres en el el mundo y dificultará la partida a los aventureros. En algunas misiones a los aventureros se les ofrece completarlas y como recompensa oro, un objeto especia y si se elige reducir el caos.</p>
+<p>Para evitar las plagas es necesario descubrir la casilla donde está el personaje que la provoca, una vez encontrada evitar que ocurra si aún no ha llegado al inicio de la linea de tiempo o eliminarla si ya está desencadena consiste en combatir en un encuentro con el malvado personaje que la provoca.</p>
+<p>Tanto las plagas como el caso es recomendable evitar que ocurran para que evitar dificultades añadidas a la partida.</p>
+<h3 id="personajes">Personajes</h3>
+<p>La clase del personaje determina las estadísticas de los atributos principales. Los atributos son:</p>
+<ul>
+<li>Fuerza: estadística que se utiliza para superar las tiradas que requieren fuerza.</li>
+<li>Vitalidad: determina los puntos de vida del personaje y se utiliza para superar las tiradas que requieren vitalidad.</li>
+<li>Inteligencia: estadística que se utiliza para superar las tiradas que requieren inteligencia. También sirve al utilizar algunos pergaminos.</li>
+<li>Percepción: estadística que se utiliza para superar las tiradas que requieren percepción, así como hacer emboscadas al iniciar un encuentro.</li>
+<li>Talento: estadística que se utiliza para superar las tiradas que requieren talento. También sirve para desactivar trampas y navegar por el mar.</li>
+<li>Velocidad: afecta a los puntos de movimiento del personaje por el tablero asi como la iniciativa en los encuentros que determina el orden de ataque de los personajes y de los enemigos.</li>
+<li>Suerte: es una habilidad que afecta a los encuentros y a algunas tiradas.</li>
+<li>Armadura: determina los puntos de daño absorbidos en un ataque físico antes de reducir los puntos de vida.</li>
+<li>Resistencia: determina los puntos de daño absorbidos en un ataque mágico antes de reducir los puntos de vida.</li>
+<li>Evasión: afecta a la capacidad de esquivar ataques físicos o mágicos, esquivar un ataque evita sufrir daño o ser afectado por alguna maldición.</li>
+</ul>
+<p>A medida que los personajes van derrotando a enemigos gana puntos de experiencia, acumulados cierto número de puntos de experiencia se sube de nivel lo que mejora las estadísticas del personaje en el daño que hace, puntos de vida que tiene.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/estadisticas-atributos_huc595bca9f69352973206fdeb7647556c_468472_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Estadísticas de los atributos"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/estadisticas-atributos_huc595bca9f69352973206fdeb7647556c_468472_300x250_fit_q90_box.jpg" width="300" height="169" alt="Estadísticas de los atributos" title="Estadísticas de los atributos"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/estadisticas-detalladas_hu8950d0cd4a08b222b4e7972d3ab9de6b_420031_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Estadísticas detalladas"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/estadisticas-detalladas_hu8950d0cd4a08b222b4e7972d3ab9de6b_420031_300x250_fit_q90_box.jpg" width="300" height="169" alt="Estadísticas detalladas" title="Estadísticas detalladas"  class="lozad "></amp-img></a></p>
+<figcaption>Estadísticas de los atributos y detalladas</figcaption>
+</figure>
+</div>
+<p>Los personajes también tienen ciertos puntos de foco que les permiten asegurar superar una tirada en cualquier estadística. Se van gastando, se recuperan fumando una hierba en los servicios de una ciudad, meditando con el morral al acampar o ocasionalmente con algunas habilidades recuperar puntos de vida, foco o encontrar hierbas al finalizar el turno.</p>
+<h3 id="equipo-armas-armadura-y-complementos">Equipo, armas, armadura y complementos</h3>
+<p>Los personajes se pueden equipar con objetos para mejorar el daño que hacen por ataque o el nivel de armadura y resistencia que tienen contra los ataques de los enemigos. Los personajes tienen varias ubicaciones de equipo: arma, escudo, casco, armadura, botas, anillo y collar. El arma determina el daño físico o mágico, la habilidad que se utiliza para superar la tirada y el número de tiradas a superar.</p>
+<p>Algunas armas son a dos manos de modo que no se puede emplear arma y escudo a la vez, otras armas son frágiles y se fallan todas las tiradas el arma se rompe teniendo en cuenta que algunas armas solo tiene una casilla en la tirada y algunas maldiciones y aflicciones provocan que siempre se falle una casilla en la tirada provoca que arma se rompa o tenga más posibilidades de romperse.</p>
+<p>A lo largo de la aventura hay que equipar a los personajes con los mejores objetos que se encuentran, los personajes se pueden intercambiar objetos entre sí siempre que no estén en combate o a alcance en la misma casilla o en la adyacente. En el caso de llevar un arma frágil es conveniente conservar en el inventario un arma como sustituta en caso de necesidad. Los objetos muy poco útiles pueden venderse en el mercado a cambio de unas pocas monedas para liberar inventario.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-1_hu4c6831436c3ed1112f812540027f6db2_429815_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inventario inicial herrera"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-1_hu4c6831436c3ed1112f812540027f6db2_429815_300x250_fit_q90_box.jpg" width="300" height="169" alt="Inventario inicial herrera" title="Inventario inicial herrera"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-2_hud787f33e319ccfb4d8892def789db687_428293_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inventario inicial cazadora"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-2_hud787f33e319ccfb4d8892def789db687_428293_300x250_fit_q90_box.jpg" width="300" height="169" alt="Inventario inicial cazadora" title="Inventario inicial cazadora"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-3_hu4abe56ff53fc43ea513594fb80443f1e_430132_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inventario inicial erudita"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/inventario-3_hu4abe56ff53fc43ea513594fb80443f1e_430132_300x250_fit_q90_box.jpg" width="300" height="169" alt="Inventario inicial erudita" title="Inventario inicial erudita"  class="lozad "></amp-img></a></p>
+<figcaption>Inventarios iniciales según clase</figcaption>
+</figure>
+</div>
+<h4 id="consumibles-hierbas-pergaminos-objetos-y-oro">Consumibles, hierbas, pergaminos, objetos y oro</h4>
+<p>Una parte importante del equipo con las diferentes hierbas y las pipas que permiten fumarlas y potenciar su efecto. Una de las hierbas más importantes es la <em>barba de dios</em> que permite recuperar cierta cantidad de puntos de vida según la pipa que posee el aventurero. Otra importante es el <em>panax</em> que permite eliminar ciertas aflicciones físicas como el sangrado, el envenenamiento o el prendido. Otras hierbas permiten quitar las maldiciones, en los pueblos el sanador y la bendición quitan las aflicciones y maldiciones a cambio de oro.</p>
+<p>Otros consumibles permiten subir de forma permanente en un punto un atributo o aumentar en un punto el daño causado físico o mágico según el caramelo, aumentar en un punto la armadura o la evasión. El pergamino de visión permite despejar la niebla e identificar los encuentros ocultos de las casillas sin tener que desplazarse cerca de ellas con un personaje, el pergamino de teletransportación permite desplazarse de forma rápida sin tener que transitar entre todas las casillas y el pergamino de portal permite crear un portal por el que puedan viajar todos los personajes mientras permanezca abierto.</p>
+<p>Algunos de los consumibles no se pueden comprar en los mercados de las ciudades sino con ciertos encuentros que hay que desbloquear en la tienda para saber para lo que hay que hacer algunos intentos previamente.</p>
+<h3 id="combates">Combates</h3>
+<p>Los combates es el modo alternativo a viajar por el mundo donde los personajes empiezan una lucha por turnos hasta que todos los enemigos mueren o todos los aventureros mueren momento en el que se acaba la partida. Los combates son como máximo entre los tres aventureros y tres enemigos, emboscando a los enemigos los combates pueden ser de los tres o dos aventureros contra un único enemigo, ocasionalmente algún combate es uno contra uno.</p>
+<p>Cada personaje tiene una acción de combate a realizar, la acción requiere superar una tirada según el arma equipada, cuantos más éxitos tenga la tirada mayor daño será el causado. Algunas habilidades especiales para tener efecto requieren realizar una tirada perfecta en la que se han de tener éxito en todas las tiradas, si la acción requiere tres comprobaciones de inteligencia se han de superar las tres. Además, de la acción de combate una vez por turno se tiene la posibilidad de usar una hierba para curarse, eliminar maldiciones o aflicciones físicas o usar un objeto del inventario, pero no se permite intercambiar objetos entre personajes. También es posible equiparse otras armas u objetos del inventario.</p>
+<p>El orden en el combate se determina según la estadística de velocidad del personaje y del enemigo, en cada turno se puede elegir a cual de los enemigos atacar. En caso de que un personaje muera en un combate durante la partida se tiene ciertos puntos para revivir el personaje, el adquirir una devoción en un santuario otorga una resurrección pero al utilizarla se pierde la devoción.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/combate_hu66b0ce40972c12e25f97e30bef6a0acc_436729_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Combate"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/combate_hu66b0ce40972c12e25f97e30bef6a0acc_436729_650x450_fit_q90_box.jpg" width="650" height="366" alt="Combate" title="Combate"  class="lozad "></amp-img></a></p>
+<figcaption>Combate</figcaption>
+</figure>
+</div>
+<h4 id="información-de-aventureros-y-enemigos">Información de aventureros y enemigos</h4>
+<p>Tanto en el combate como en el viaje por el mundo cada icono ofrece información, el juego no explica que significa cada uno y en mi caso los he ido aprendiendo después de un par de partidas. En la pantalla del combate cada icono y número significa una cosa que es importante conocer, no saberlo significa malgastar turnos, no hacer daño a los enemigos, tener que consumir hierbas porque ellos nos hace mucho y si la cosas va muy mal un personaje quizá muera y haya que gastar una vida en resucitarlo.</p>
+<p>En los aventureros cada uno tiene un panel de información, Alane tiene 6 puntos de foco y no tiene ninguno consumido, Ebrion tiene 5 pero solo 3 más por gastar. Alane tiene 16 puntos de armadura que protegen de 16 puntos de daño físico al recibir un ataque del enemigo, 11 puntos de resistencia que protegen de 11 puntos de daño mágico y un nivel de evasión de solo 10 cuando Ebrion tiene 26 en función de estos puntos a cada personaje le es posible esquivar los ataques con más facilidad. Alane tiene 75 puntos de vida restantes de un máximo de 154 que si llegan a 0 muere, también tiene 2549 puntos de experiencia y ha de llegar a 3200 para el siguiente nivel, el nivel que tiene ahora es el nivel 10. También se muestra los objetos y que número de ellos se tiene en el inventario. A la izquierda Alane y Ebrión tiene un icono morado que significa que tiene esa maldición que afecta negativamente a los personajes de diferente forma, son más lentos, hacen menos daño o baja la estadística de un atributo entre otras.</p>
+<p>En la parte superior está la linea de tiempo de turno de combate, ahora es el turno de Ebrión, el siguiente turno es el de una Sombra y al siguiente el de la otra Sombra, después le tocará a Fiode y luego a Alane y así continuando en la linea de tiempo. Cuando un enemigo muere desaparece de la línea de tiempo.</p>
+<p>Cada enemigo también tiene su propio panel de información que hay que analizar para encontrar cual es la mejor estrategia para acabar con ellos de la forma más efectiva para que los aventureros sufran el menor daño posible. La sombras tiene 86 puntos de vida cada una y El señor de las momias 180. Las sombras tiene una resistencia de 16 puntos mágicos y El señor de las mómias de 12 puntos de dao físico y de 16 puntos de daño mágico. Para que el ataque de un aventurero haga daño ha de superar la armadura del enemigo si hace daño físico y ha de superar la resistencia si hace daño mágico. el daño del ataque es restando de la armadura o resistencia. Las sombras son vulnerables al daño físico porque no tienen armadura, El señor de las momias tiene armadura pero es más vulnerable al daño físico ya que tiene mayor resistencia.</p>
+<p>Los iconos tachados encima del panel de los aventureros y debajo de los enemigos son as inmunidades a aflicciones físicas o maldiciones que tiene los personajes. Las sombras son inmunes a la congelación, representado por tener el tercer icono tachado de sus inmunidades, pero El seño de las momias es vulnerable a la congelación.</p>
+<p>En la parte central esta el panel de acciones, es el turno de Ebrión que tiene seleccionada la acción de ataque <em>Disparo de escarcha</em>, este ataque hace 48 de daño físico si se superan las 4 tiradas de habilidad de percepción al enemigo seleccionado que en ese momento es El señor de las momias, en el ataque Ebrión ha de hacer 4 tiradas con un porcentaje de precisión o probabilidad del 55% por ranura o tirada, el 55% es una baja con lo que es probable que Ebrión supere dos tiradas pero falle otras dos. La probabilidad de Ebrión de acierto es solo del 55% porque tiene una maldición que le está afectando al atributo de percepción que es precisamente el que usa para las tiradas de ataque con el arma que tiene equipada. Alane usa el atributo de fuerza y Fiode el de inteligencia. El arma de Ebrión tiene el efecto especial de congelación si al hacer las tiradas todas tienen éxito, pero dada la maldición que tiene solo superar todas las tiradas tiene una probabilidad solo del 9%. Si Ebrión hace las tiradas es probable que tenga un éxito parcial, acertando dos y fallando otras dos, por cada fallo obtenido el daño realizado será menor de 48 puntos de daño con una tirada sin fallos. El arma de Ebrión también ofrece otros dos tipos de ataque con otros efectos, daño, probabilidad y número de tiradas o ranuras a superar.</p>
+<p>Para garantizar el éxito de una tirada o ranura se puede gastar uno o más puntos de los limitados puntos de foco. Una vez por turno el personaje también puede usar un objeto de su cinturón, en el caso de la consola PS4 con el botón triángulo.</p>
+<p>Con toda esta información el jugador debe decidir como afrontar los ataques, a que enemigo atacar en función de la efectividad del arma, armadura, resistencia e inmunidades del enemigo, sus puntos de vida, con que ataque, si gastar puntos de foco para garantizar el éxito, si gastar objetos del cinturón.</p>
+<h4 id="encuentros-y-mazmorras">Encuentros y mazmorras</h4>
+<p>En el tablero aparecen encuentros de combate individuales en los que una vez matados a los enemigos y terminado el combate se vuelve al tablero. Algunas ubicaciones con mazmorras en los que se han de superar varios combates seguidos para salir con vida, antes de afrontar estos conviene que los personajes estén debidamente equipados con armas y hierbas, tener el nivel de personajes igual o superior al nivel de la mazmorra. Los encuentros se inician a iniciativa de los personajes pero algunos ocasionalmente son inesperados.</p>
+<p>Después de cada combate en la mazmorra se permite intercambiar objetos entre personajes para hacer frente al siguiente combate.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-1_hu08a4b41ac38e6b22b36c1ffd78ab2b55_276118_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Encuentro con Demonio de ascuas"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-1_hu08a4b41ac38e6b22b36c1ffd78ab2b55_276118_300x250_fit_q90_box.jpg" width="300" height="169" alt="Encuentro con Demonio de ascuas" title="Encuentro con Demonio de ascuas"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-2_hu3920e9fe67341e2a71ee7b1bd0565b31_236789_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Encuentro con Fergus el Loco"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-2_hu3920e9fe67341e2a71ee7b1bd0565b31_236789_300x250_fit_q90_box.jpg" width="300" height="169" alt="Encuentro con Fergus el Loco" title="Encuentro con Fergus el Loco"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-3_hu887db38b13e77fc0fa6eb721cded8b30_267164_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Encuentro con Seño de las momias"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/encuentro-3_hu887db38b13e77fc0fa6eb721cded8b30_267164_300x250_fit_q90_box.jpg" width="300" height="169" alt="Encuentro con Seño de las momias" title="Encuentro con Seño de las momias"  class="lozad "></amp-img></a></p>
+<figcaption>Encuentro con diferentes personajes malvados con sus frases de amenaza</figcaption>
+</figure>
+</div>
+<h4 id="aflicciones-físicas-maldiciones-e-inmunidades">Aflicciones físicas, maldiciones e inmunidades</h4>
+<p>En los combates algunos enemigos tienen habilidades para causar aflicciones físicas y maldiciones a los personajes. Algunas aflicciones físicas son prendido que quitar unos pocos puntos de vida al finalizar el turno del personaje, sangrado que quita puntos más ocasionalmente pero de mayor cantidad, mojado que quita las inmunidades a maldiciones y aflicciones físicas u otras como envenenado, confundido, congelado, conmocionado entre otras más.</p>
+<p>Los aventureros y armas también otorgan la habilidad de provocar maldiciones y aflicciones físicas a los enemigos pero estos también pueden tener inmunidades a algunas de ellas.</p>
+<h3 id="estrategia-y-consejos-para-tener-éxito-en-las-campañas">Estrategia y consejos para tener éxito en las campañas</h3>
+<p>Como se informa al inicio del juego es muy difícil terminar la campaña de <em>For the King</em> en el primer intento e incluso en el tercero. Para terminar la campaña es necesario haber obtenido saber en partidas anteriores y adquirir ventajas que aparezcan aleatoriamente en la partida en la tienda del saber.</p>
+<p>Hay algunas cosas que he ido aprendiendo para llegar más lejos en la campaña en cada nuevo intento.</p>
+<ul>
+<li>Hay que subir de nivel a los personajes, un mayor nivel de personaje significa más puntos de vida y, más daño realizado por ataque. Para ganar experiencia hay que  entrar en los combates que queden de camino a las ubicaciones de las misiones principales y secundarias de cada ciudades. En los encuentros se indica el nivel de los enemigos, al menos se ha de tener el mismo nivel e incluso mejor estar un nivel por encima. Teniendo menos nivel es posible completar el encuentro pero es muy posible que gastando muchas hibernas o con la necesidad de curarse al terminar.</li>
+<li>Conserva en el inventario todos los objetos que sean de utilidad aunque no estén equipados. Por ejemplo un objeto que permite hacer más daño a los espíritus, bestias de agua o voladores para equiparlo cuando aparezcan estos.</li>
+<li>Se puede tener un doble inventario para los momentos de viaje por el mundo y de los combates. Por ejemplo hay objetos que recuperan vida o encuentran hierbas al terminar el turno muy útiles cuando se está viajando pero que no son útiles en combate. En cada ocasión se puede equipar uno u otro según necesidad.</li>
+<li>Acumula todas las hierbas para recuperar vida, concentración y quitarse maldiciones y aflicciones y objetos especiales para los duros combates del final de la campaña. Si se llega muy justo al final de la campaña es muy posible que llegue un punto en que los personajes mueran en cada ataque del enemigo e implique gastar vidas para resucitar el personaje, una vez las vidas se agoten la partida terminará.</li>
+<li>Usa el morral antes de entrar en una mazmorra si hay varios personajes que necesitan curación o recuperar puntos de concentración. Al entrar en la mazmorra los personajes se recuperan y al salir se pueden volver a curar.</li>
+<li>Mejora las pipas a medida que los personajes tengan más puntos de vida para subir de nivel. Con una mejor pipa las hierbas tiene mejores efectos recuperar +15, +30, +45 o +60 puntos de vida.</li>
+<li>Además de para subir de nivel haz los encuentros que aparezcan cerca permiten obtener objetos que no se encuentran en los mercados.</li>
+<li>Compra objetos especiales en los mercados nocturnos. Estos son objetos más poderosos que en los mercados de los poblados. Algunos de estos objetos que solo se encuentran en los mercados nocturnos son los caramelos que suben un punto de forma permanente al ataque, armadura o resistencia.</li>
+<li>Rinde homenaje a los héroes y consagra tributo a un altar. Da una ventaja especial a ese personaje además de una vida adicional.</li>
+<li>Asegurate de saber con que personaje estas, a quien vas a atacar o la acción que vas a realizar ya que las acciones no se pueden deshacer.</li>
+<li>Usa los pergaminos de teletransportación, visión y portal cuando sea útiles. Los de visión por ejemplo permite descubrir localizaciones ocultas sin tener que explorarlas acercando un personaje a esa casilla.</li>
+</ul>
+<p>Si en la campaña no se tiene éxito no hay que desesperar, el juego está diseñado para tener que reintentar varias veces. Gasta el saber en la tienda del saber para tener ventajas adicionales en la siguiente partida.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/aviso-reintento_hu7716eab37ac09571b6b5c63ee6fd231e_125522_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Aviso de reintento"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/aviso-reintento_hu7716eab37ac09571b6b5c63ee6fd231e_125522_300x250_fit_q90_box.jpg" width="300" height="169" alt="Aviso de reintento" title="Aviso de reintento"  class="lozad "></amp-img></a></p>
+<figcaption>Aviso de reintento</figcaption>
+</figure>
+</div>
+<h3 id="tienda-del-saber-guía-del-juego-y-enciclopedia">Tienda del saber, guía del juego y enciclopedia</h3>
+<p>Una parte importante del juego es la tienda del saber que permite canjear el saber adquirido en partidas anteriores por ventajas que hagan más fácil las aventuras. Canjear el saber permite la posibilidad de que se activen ciertos encuentros y localizaciones, haya la posibilidad de obtener ciertos objetos poderosos, habilitar las clases de personaje y ciertas personalizaciones de los personajes.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-1_huaa2d803e557fe255895e5dd65e1e5bf9_344309_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Tienda del saber"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-1_huaa2d803e557fe255895e5dd65e1e5bf9_344309_200x150_fit_q90_box.jpg" width="200" height="113" alt="Tienda del saber" title="Tienda del saber"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-2_hu84802e4bd99acd56863b52b3766b9e79_322994_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Tienda del saber"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-2_hu84802e4bd99acd56863b52b3766b9e79_322994_200x150_fit_q90_box.jpg" width="200" height="113" alt="Tienda del saber" title="Tienda del saber"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-3_hu7e86e3de6ca690f053743e9184406a9a_352398_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Tienda del saber"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-3_hu7e86e3de6ca690f053743e9184406a9a_352398_200x150_fit_q90_box.jpg" width="200" height="113" alt="Tienda del saber" title="Tienda del saber"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-4_huebef3c608a99e9a686178053fc86bb08_338091_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Tienda del saber"><amp-img src="/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/images/tienda-del-saber-4_huebef3c608a99e9a686178053fc86bb08_338091_200x150_fit_q90_box.jpg" width="200" height="113" alt="Tienda del saber" title="Tienda del saber"  class="lozad "></amp-img></a></p>
+<figcaption>Tienda del saber</figcaption>
+</figure>
+</div>
+<p>En el juego se ofrece una guía básica del modo del funcionamiento del juego, pero gran parte del saber no está detallado. Que hace cada habilidad, maldición y aflicción física y otros consumibles se aprende por deducción en base a verla durante el juego y después de alguna partida. En la versión de PC se proporcionan algunos mensajes al posicionar el ratón por encima del icono pero en la versión de consola como no se usa ratón no se ofrece esa información.</p>
+<p>El la <a href="https://fortheking.gamepedia.com/For_The_King_Wiki">enciclopedia del juego For the King</a> aunque no está completa hay mucha información en la que conocer qué hace cada cosa en el juego, personajes, enemigos, habilidades, aflicciones, hechizos, consumibles, hierbas, pergaminos, objetos, tienda del saber, campañas, etc..</p>
+<h3 id="banda-sonora-original">Banda sonora original</h3>
+<p>La música es al igual que los gráficos una pieza artística con una calidad tan buena o más que otras composiciones o bandas sonoras, simplemente escuchándola nos trae recuerdos del juego.</p>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="GlpzC2PWOwQ"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
+<h3 id="vídeos-de-youtube">Vídeos de YouTube</h3>
+<p>Eso son unos vídeos de introducción, mecánica y funcionamiento básico del juego.</p>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="VJy9e3OAKf4"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="B2qF39qKrXo"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
+
+    </div>
+  </article>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>analisis-juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/index-amp.html">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/index-amp.html">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/index-amp.html">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/10/analisis-y-guia-completa-del-juego-horizon-zero-dawn/index-amp.html">Análisis y guía completa del juego Horizon Zero Dawn</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html">Análisis y guía del juego de rol For the King</a>
+            </li>
+          
+        </ol>
+      <h3>Este artículo forma parte de la serie <strong>juegos</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-ajedrez-en-gnu-linux-con-gnome/index-amp.html">Jugar al ajedrez en GNU/Linux con GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/07/jugar-al-clasico-de-estrategia-de-tablero-go-en-gnu-linux/index-amp.html">Jugar al clásico de estrategia de tablero Go en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/juegos-incluidos-en-el-entorno-de-escritorio-gnome/index-amp.html">Juegos incluidos en el entorno de escritorio GNOME</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/jugar-a-videojuegos-clasicos-y-miticos-de-arcade-con-mame-en-gnu-linux/index-amp.html">Jugar a videojuegos clásicos y míticos de arcade con Mame en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/22-plus-buenos-juegos-en-gnu-linux/index-amp.html">22&#43; buenos juegos en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2016/08/varios-juegos-de-culto-con-scummvm-en-gnu-linux/index-amp.html">Varios juegos de culto con ScummVM en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/02/consola-de-juegos-retro-con-lakka-y-una-raspberry-pi/index-amp.html">Consola de juegos retro con Lakka y una Raspberry Pi</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2018/12/como-usar-wine-para-jugar-en-gnu-linux-a-juegos-de-windows/index-amp.html">Cómo usar Wine para jugar en GNU/Linux a juegos de Windows</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/la-aplicacion-cliente-de-steam-en-gnu-linux/index-amp.html">La aplicación cliente de Steam en GNU/Linux</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/09/desempaquetado-de-playstation-4-slim-de-1-tb/index-amp.html">Desempaquetado de PlayStation 4 Slim de 1 TB</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/02/el-juego-xcom-2-y-guia-de-estrategia/index-amp.html">El juego XCOM 2 y guía de estrategia</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/03/que-es-mejor-para-jugar-y-10-variables-para-elegir-entre-pc-o-consola/index-amp.html">Qué es mejor para jugar y 10&#43; variables para elegir entre PC o consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/04/introduccion-al-juego-de-batallas-navales-world-of-warships-legends-para-consola/index-amp.html">Introducción al juego de batallas navales World of Warships Legends para consola</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/05/analisis-y-guia-del-juego-de-estrategia-frostpunk/index-amp.html">Análisis y guía del juego de estrategia Frostpunk</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/01/analisis-y-guia-del-juego-de-rol-for-the-king/index-amp.html">Análisis y guía del juego de rol For the King</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y a otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>
