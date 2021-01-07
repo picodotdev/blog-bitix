@@ -113,7 +113,7 @@ Es posible que este 2021 me lo plantee en serio, administrar mi propio servidor 
 
 ### Artículos publicados
 
-Estos son los 45 artículos que he escrito durante el segundo semestre de 2020, de las temáticas habituales Java, GNU/Linux o software libre.
+Estos son los 45 artículos que he escrito durante el segundo semestre con un total de 90 artículos publicados durante el 2020, de las temáticas habituales Java, GNU/Linux o software libre.
 
 ¡Qué el 2021 sea mejor!
 
