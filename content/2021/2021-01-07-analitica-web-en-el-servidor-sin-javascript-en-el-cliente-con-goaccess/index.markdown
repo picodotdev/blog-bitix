@@ -3,7 +3,7 @@ pid: 544
 type: "post"
 title: "Analítica web en el servidor sin JavaScript en el cliente con GoAccess"
 url: "/2021/01/analitica-web-en-el-servidor-sin-javascript-en-el-cliente-con-goaccess/"
-date: 2021-01-08T10:30:00+01:00
+date: 2021-01-07T10:30:00+01:00
 language: "es"
 rss: true
 sharing: true
