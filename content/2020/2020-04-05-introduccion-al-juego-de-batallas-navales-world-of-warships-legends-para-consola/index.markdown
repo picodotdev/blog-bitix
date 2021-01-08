@@ -14,14 +14,14 @@ imageHead: "image:world-of-warships-legends.jpg"
 imagePost: "image:world-of-warships-legends.jpg"
 tags: ["juegos"]
 series: ["analisis-juegos", "juegos"]
-summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con diferentes estadísticas, capitanes e inspiraciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
+summary: "World of Warships es un juego de competición entre jugadores ambientado en batallas navales. Tienen un componente de rol a poder elegir barcos cada uno con diferentes estadísticas, capitanes e inspiraciones o módulos pero en lo que creo que destaca sobre otros juegos por internet con otros jugadores es que este tienen un alto componente de estrategia y de juego en equipo que es decisivo para conseguir la victoria, no dependiendo tanto de la habilidad con el apuntado o habilidad en el manejo del mando aunque también es importante lo es en menor medida. Es gratuito y está disponible para PlayStation 4 y Xbox, su versión para PC es un poco distinta estando disponible a través Steam."
 ---
 
 {{% post %}}
 
-Desde que [compre una PlayStation 4][blogbitix-432] uno de los juegos que más entretenido me tiene es [World of Warships Legends](https://wowslegends.com/) en su versión para consola de la existente de [World of Warships](https://worldofwarships.com/) para PC. La versión para consola es una versión un poco más simplificada de la de PC pero unas cuantas mecánicas de juego que son similares lo hace igualmente interesante y divertido para algunas partidas con un tiempo corto e independientes ni tener un modo historia. World of Warships para PC también se puede [jugar en GNU/Linux a través de Steam][blogbitix-431].
+Desde que [compre una PlayStation 4][blogbitix-432] uno de los juegos que más entretenido me tiene es [World of Warships Legends](https://wowslegends.com/) en su versión para consola, existiendo una para PC [World of Warships](https://worldofwarships.com/). La versión para consola es una versión un poco más simplificada de la de PC pero unas cuantas mecánicas de juego que son similares lo hace igualmente interesante y divertido para algunas partidas con un tiempo corto e independientes ni tener un modo historia. World of Warships para PC también se puede [jugar en GNU/Linux a través de Steam][blogbitix-431].
 
-Es un juego gratuito o _free-to-play_ ni requiere pagar la suscripción de PlayStation Network o PSN para jugar por internet que al igual que juegos en esta categoría ofrece compras opcionales integradas que permiten avanzar en el juego más rápido o algunos añadidos que aú así no hacen del juego pagar para ganar o _pay-to-win_. También como es habitual en estos juegos tiene un componente de experiencia con el que hay que emplear gran cantidad de tiempo para alcanzar los niveles más altos, aún así planificando gran parte puede ser obviado y centrase en el área de interés.
+Es un juego gratuito o _free-to-play_ ni requiere pagar la suscripción de PlayStation Network o PSN para jugar por internet que al igual que juegos en esta categoría ofrece compras opcionales integradas que permiten avanzar en el juego más rápido o algunos añadidos que aún así no hacen del juego pagar para ganar o _pay-to-win_. También como es habitual en estos juegos tiene un componente de experiencia con el que hay que emplear gran cantidad de tiempo para alcanzar los niveles más altos, aún así planificando gran parte puede ser obviado y centrase en el área de interés.
 
 Posee un componente de habilidad pero una mayor parte viene de tener buenas nociones de estrategia en la batalla. También tiene un componente de recursos de consumibles, diferentes tipos de navíos, diferentes naciones con pequeñas variaciones en las características de los barcos y un componente de mejoras para los barcos y personalización de los navíos con capitanes e inspiraciones de capitanes que mejoran algunas características de los barcos según el estilo de juego preferido que dotan al juego de muchas combinaciones posibles, con en cierta similitud de un componente de rol y construcción de fichas que gusta a muchos jugadores en otros juegos.
 
@@ -34,13 +34,13 @@ El juego posee una notable calidad gráfica, cada navío es un modelo distinto m
 
 ### Objetivo
 
-En juego consite en batallas navales formadas por dos equipos de jugadores de nueve miembros en diferentes mapas seleccionados por el juego de forma aleatoria con una duración máxima de 15 minutos por batalla. En las batallas participan cada vez un diferente combinación de los tres tipos de navíos, destructores, cruceros y acorazados.
+En juego consite en batallas navales formadas por dos equipos de jugadores de nueve miembros en diferentes mapas seleccionados por el juego de forma aleatoria con una duración máxima de 15 minutos por batalla. En las batallas participan cada vez una combinación diferente de los tres tipos de navíos, destructores, cruceros y acorazados.
 
-Cada partida tiene un objetivo pudiendo ser entre dominación o capturar la base enemiga. Una de las formas de victoria en ambos casos  se produce al tener más puntos tiene al final de los 15 minutos, el primero que llega a 1000 puntos o reducir los del rival a 0. Los puntos se obtienen destruyendo barcos enemigos, se reducen si un barco aliado es destruido, capturando las diferentes bases ubicadas en el mapa que progresivamente otorgan puntos mientras permanezcan capturada sin estar disputada.
+Cada partida tiene un objetivo pudiendo ser entre dominación o capturar la base enemiga. Una victoria en ambos casos se produce al tener más puntos al final de los 15 minutos, llegar primero a 1000 puntos o al reducir los del rival a 0. Los puntos se obtienen destruyendo barcos enemigos, se reducen si un barco aliado es destruido, capturando las diferentes bases ubicadas en el mapa que progresivamente otorgan puntos mientras permanezcan capturada sin estar disputada.
 
 En el caso de dominación hay varias bases en diferentes zonas de mapa, dependiendo del mapa entre 3 y 4 pudiendo empezar cada equipo con una capturada y otras dos por capturar. En el caso de capturar la base cada equipo tiene una base capturada.
 
-La captura de las bases se realiza permaneciendo un determinado tiempo en la base, en el modo dominación las bases se capturan en menos tiempo del que se tarda en el modo captura de base enemiga. La captura de una base se interrumpe o permanece en disputa si un barco enemigo permanece al mismo tiempo en la base o el progreso de la base se reduce si el barco o barcos que la están capturando reciben impactos, a mayor daño recibido más progreso es restado.
+La captura de las bases se realiza permaneciendo un determinado tiempo en la base, en el modo dominación las bases se capturan en menos tiempo del que se tarda en el modo captura de base enemiga. La captura de una base se interrumpe o permanece en disputa si un barco enemigo permanece al mismo tiempo en la base o el progreso de la base se reduce si el barco o barcos que la están capturando reciben impactos, a mayor daño recibido más progreso de captura es restado.
 
 En ambos casos hay un marcador de puntos que va subiendo según las bases capturadas y los barcos enemigos o aliados destruidos. Una tercera forma de victoria en ambos casos es eliminar completamente el equipo de navíos rivales que es independiente del marcador de puntos.
 
@@ -65,7 +65,7 @@ En la versión de consola hay tres tipos de navíos, cada uno por sus caracterí
 
 #### Cruceros
 
-Son la unidad media de las tres, versátil, ágil y con una relativa potencia de fuego. Puede actuar contra destructores por su rápida cadencia de fuego y consumibles adecuados para defenderse de los torpedos de los destructores como el sonar y los aviones. A otros cruceros pueden hacerles gran cantidad de daño con la munición perforante si se encuentran mostrando el lateral completo e impactándoles en la ciudadela También sirven para hostigar a acorazados causándoles incendios con la munición altamente explosiva o con torpedos si están a corta distancia. Si están al alcance de un acorazado son un blanco fácil o para otros cruceros si exponen el lateral del barco por el riesgo de recibir impactos en la ciudadela.
+Son la unidad media de las tres, versátil, ágil y con una relativa potencia de fuego. Puede actuar contra destructores por su rápida cadencia de fuego y consumibles adecuados para defenderse de los torpedos de los destructores como el sonar y los aviones. A otros cruceros pueden hacerles gran cantidad de daño con la munición perforante si se encuentran mostrando el lateral completo e impactándoles en la ciudadela. También sirven para hostigar a acorazados causándoles incendios con la munición altamente explosiva o con torpedos si están a corta distancia. Si están al alcance de un acorazado son un blanco fácil o para otros cruceros si exponen el lateral del barco por el riesgo de recibir impactos en la ciudadela.
 
 {{< image
     gallery="true"
@@ -74,7 +74,7 @@ Son la unidad media de las tres, versátil, ágil y con una relativa potencia de
 
 #### Destructores
 
-Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de detectar y sus torpedos de larga distancia causan gran cantidad de daño por impacto. Son adecuados para encontrar otros destructores y con el apoyo el resto del equipo destruirlos, aún con su debilidad con los torpedos son capaces de destruir la unidad más fuerte de las tres si está desprevenida, los acorazados. Su debilidad son los cruceros que los pueden detectar y destruir con más facilidad, u otros destructores con apoyo de cruceros, un torpedo si no lo destruye lo deja a falta de pocos puntos de vida.
+Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de detectar y sus torpedos de larga distancia causan gran cantidad de daño por impacto. Son adecuados para encontrar otros destructores y con el apoyo el resto del equipo destruirlos, aúnque es la unidad más débil en puntos de vida con los torpedos son capaces de destruir la unidad más fuerte de las tres si está desprevenida, los acorazados. Su debilidad son los cruceros que los pueden detectar y destruir con más facilidad, u otros destructores con apoyo de cruceros, si recibe el impacto de un torpedo si no lo destruye lo deja a falta de pocos puntos de vida.
 
 {{< image
     gallery="true"
@@ -83,7 +83,7 @@ Son la unidad con menos puntos de vida de los tres pero es ágil, difícil de de
 
 #### Acorazados
 
-Son la unidad con mayor potencia de fuego, más puntos de vida y pueden hacer gran cantidad de daño por salva a cualquiera de los tipos de los barcos aún siendo más adecuados para cruceros y otros acorazados. Sus puntos débiles es que son poco maniobrables, alcanzan menos velocidad y por su tamaño son detectables a largas distancias.
+Son la unidad con mayor potencia de fuego, disparan a largas distancias, tienen más puntos de vida, mayor blindaje y pueden hacer gran cantidad de daño por salva a cualquiera de los tipos de los barcos, aúnque sus objetivos principales son los cruceros y otros acorazados. Sus puntos débiles son que son poco maniobrables lo que los hace más vulnerables a los torpedos de los destructores, alcanzan menos velocidad y por su tamaño son detectables a largas distancias.
 
 {{< image
     gallery="true"
@@ -98,9 +98,9 @@ Estos barcos pueden comprarse con una gran cantidad de experiencia global o comp
 
 Cada navío tiene unas estadísticas diferentes agrupadas en 4 apartados supervivencia, artillería, maniobrabilidad, ocultamiento y torpedos si los dispone.
 
-Unos tienen unas estadísticas más adecuados para el combate a corta y media distancia y otros con mayor precisión  a mayor distancia, mayor alcance de disparo, maniobrabilidad en tiempo de giro y velocidad máxima, tiempo de recarga, ocultación, daño máximo por impacto, probabilidad de causar incendios.
+Unos tienen unas estadísticas más adecuados para el combate a corta y media distancia y otros con mayor precisión  a mayor distancia, mayor alcance de disparo, maniobrabilidad en tiempo de giro y velocidad máxima, tiempo de recarga, ocultación, daño máximo por impacto o probabilidad de causar incendios con la munición altamente explosiva.
 
-Dependiendo del tipo de juego que uno prefiera elige la nación por la que tienen predilección. Por ejemplo el crucero Baltimore no tiene torpedos como el Hipper pero tiene mejor ocultación, es probable que sea mejor a larga distancia y el Hipper a media y corta.
+Dependiendo del modo de juego que uno prefiera elige la nación por la que tienen predilección. Por ejemplo, el crucero Baltimore no tiene torpedos como el Hipper pero tiene mejor ocultación, es probable que sea mejor a larga distancia y el Hipper a media y corta.
 
 {{< image
     gallery="true"
@@ -162,7 +162,7 @@ Otra forma de personalización de los barcos son los comandantes que otorgan una
     image1="image:comandantes.jpg" optionsthumb1="600x450" title1="Comandantes"
     caption="Comandantes" >}}
 
-Según el tipo de navío unos capitanes son más adecuados que otros, por ejemplo, algunos otorgan un bonificador al ocultamiento que los hace interesantes para los destructores. Otros más precisión para los cruceros o algunos barcos que tienen poca precisión. Más penetración para la munición AP o más puntos recuperados por consumible de reparación útil para los acorazados. Subir a los niveles más altos requiere insignias y recomendaciones que son difíciles de conseguir requiriendo mucho tiempo.
+Según el tipo de navío unos capitanes son más adecuados que otros, por ejemplo, algunos otorgan un bonificador al ocultamiento que los hace interesantes para los destructores. Otros más precisión para los cruceros o algunos barcos que tienen poca precisión. Más penetración para la munición AP o más puntos recuperados por consumible de reparación útil para los acorazados. Subir a los niveles más altos requiere insignias y recomendaciones que son difíciles de conseguir requiriendo mucho tiempo de juego.
 
 {{< image
     gallery="true"
@@ -189,21 +189,21 @@ Según el tipo de navío unos capitanes son más adecuados que otros, por ejempl
     image1="image:comandante-estados-unidos-andrew-cunningham-13.jpg" optionsthumb1="200x150" title1="Comandante Estados Unidos Andrew Cunningham"
     image2="image:comandante-estados-unidos-andrew-cunningham-14.jpg" optionsthumb2="200x150" title2="Comandante Estados Unidos Andrew Cunningham"
     image3="image:comandante-estados-unidos-andrew-cunningham-15.jpg" optionsthumb3="200x150" title3="Comandante Estados Unidos Andrew Cunningham"
-    caption="Comandante Estados Unidos Andrew Cunningham y experiencia neesaria para subir de nivel" >}}
+    caption="Comandante Estados Unidos Andrew Cunningham y experiencia necesaria para subir de nivel" >}}
 
 ### Tipos de munición y consumibles en batalla
 
-Hay dos tipos de munición, la altamente explosiva o HP (_high-explosive_) que explota en la superficie según impacta y tiene una probabilidad de dañar armamento, motor o tiempo y causar incendios. No llega a hacer tanto daño como la perforante pero garantiza con mayor regularidad el daño que hace por impacto. Los destructores tienen mayor probabilidad de quedar inutilizados por timón o motor si son impactados por munición HE en la proa, en esta situación son un blanco fácil y para sobrevivir han de utilizar el consumible de reparación u ocultarse con el de humo.
+Hay dos tipos de munición, la altamente explosiva o HP (_high-explosive_) que explota en la superficie según impacta y tiene una probabilidad de dañar armamento, motor o timón y causar incendios. No llega a hacer tanto daño como la perforante pero garantiza con mayor regularidad el daño que hace por impacto. Los destructores tienen mayor probabilidad de quedar inutilizados por timón o motor si son impactados por munición HE en la proa, en esta situación son un blanco fácil y para sobrevivir han de utilizar el consumible de reparación u ocultarse con el de humo.
 
-La munición altamente perforante  o AP (_armor-piercing_) tiene la capacidad de traspasar el casco de los barcos y explotar en su interior causando mayor de daño. Además si impacta en la ciudadela causar un importante nivel de daños por impacto en ella, la ciudadela es el lugar de los barcos especialmente protegida por armadura donde se aloja la munición y maquinaria del barco. Cuando un barco expone su lateral tiene mucha mayor probabilidad de recibir impactos en la ciudadela.
+La munición altamente perforante  o AP (_armor-piercing_) tiene la capacidad de traspasar el casco de los barcos y explotar en su interior causando mayor cantidad de daño. Además, si impacta en la ciudadela causa un importante nivel de daños, la ciudadela es el lugar de los barcos especialmente protegida por el blindaje donde se aloja la munición y maquinaria del barco. Cuando un barco expone su lateral tiene mucha mayor probabilidad de recibir impactos en la ciudadela.
 
-El daño producido por cada impacto y para causar ciudadelas se sigue una fórmula como grosor de la armadura del barco impactado, calibre de la munición, ángulo de impacto, no es el mismo disparado a largas distancias que a cortas ni la velocidad de la munición es la misma en todos los navíos o lugar de impacto en el barco.
+El daño producido por cada impacto y para causar ciudadelas se sigue una fórmula como grosor de la armadura del barco impactado, calibre de la munición o ángulo de impacto. Mo es el mismo disparar a largas distancias que a cortas ni la velocidad de la munición es la misma en todos los navíos o lugar de impacto en el barco.
 
-La forma principal de los destructores de causar daño es mediante los torpedos. Cada navío varía ligeramente según sus estadísticas el daño máximo, tiempo de recarga, número de torpedos lanzados, alcance y  velocidad de los torpedos. También según la zona en que impacte el torpedo varía el daño causado.
+La forma principal de los destructores de causar daño es mediante los torpedos, aunque algunos son más cañoreros orientados a contrarestar a otros destructores que torpederos para contrarrestar a acorazados. Cada navío varía ligeramente según sus estadísticas el daño máximo, tiempo de recarga, número de torpedos lanzados, alcance y  velocidad de los torpedos. También según la zona en que impacte el torpedo varía el daño causado.
 
-Además, cada navío tiene a su disposición varios consumibles algunos limitados a un número de usos, con un tiempo de duración y un tiempo de recarga. Estos tiempos también varían según cada navío.
+Además, cada navío tiene a su disposición varios consumibles algunos limitados a un número de usos, con un tiempo de duración y un tiempo de recarga para el siguiente uso. Estos tiempos también varían según cada navío.
 
-El consumible disponible en todos los navíos es el de reparación que permite apagar incendios e inundaciones causadas por torpedos, reparar torretas, timón o motor. Otros varían según cada navío, los destructores suelen tener el de humo que crea una barrera de humo que impide la visión en la que es posible ocultarse, pero seguir viendo a navíos enemigos si están en la línea de visión de algún otro aliado. Tiene un tiempo de duración y dispersión.
+El consumible disponible en todos los navíos es el de reparación que permite apagar incendios de la munición HP e inundaciones causadas por torpedos, reparar torretas, timón o motor. Otros varían según cada navío, los destructores suelen tener el de humo que crea una barrera de humo que impide la visión en la que es posible ocultarse, pero seguir viendo a navíos enemigos si están en la línea de visión de algún otro aliado. Tiene un tiempo de duración y dispersión.
 
 Otro consumible disponible en los destructores y en los cruceros es el de sonar que aumenta el alcance de visión de los torpedos y aumentar el alcance garantizado de adquisición, muy útil para detectar barcos tras islas u ocultos en nubes de humo.
 
@@ -218,7 +218,7 @@ Los acorazados también tienen consumibles, uno muy útil es el de reparación q
 
 ### Recursos
 
-Al finalizar la batalla, según el resultado de la misma de victoria o derrota y según el desempeño individual de cada miembro por daño causado, medallas conseguidas, o capturas realizadas se otorgan una serie de créditos con los que comprar otros barcos y instalarles módulos.
+Al finalizar la batalla, según el resultado de la misma de victoria o derrota y según el desempeño individual de cada miembro por daño causado, medallas conseguidas o capturas realizadas se otorgan una serie de créditos con los que comprar otros barcos e instalarles módulos.
 
 También se otorgan puntos de experiencia para subir de nivel a los capitanes y experiencia global tanto para subir de nivel capitanes o complementar el nivel de experiencia faltante para poder instalar módulos.
 
@@ -233,11 +233,11 @@ Cada semana y de forma diaria se dispone de una serie de misiones que completada
 
 ### Estrategia básica y guía de aprendizaje
 
-En juego con sus diferentes mecánicas tiene un componente de estrategia no solo individual y de habilidad en el apuntado sino que es casi tan importante o más el juego equipo, jugar en formaciones y apoyar a los compañeros, esto es decisivo para el resultado de la batalla. Otros juegos dependen mucho más de la habilidad individual.
+El juego con sus diferentes mecánicas tiene un componente de estrategia no solo individual y de habilidad en el apuntado sino que es casi tan importante o más el juego en equipo, jugar en formaciones y apoyar a los compañeros, esto es decisivo para el resultado de la batalla. Otros juegos dependen mucho más de la habilidad individual.
 
 Es importante conocer la situación de los barcos en la batalla, la nuestra, la de los aliados, la de los enemigos, las islas y sus formas y en qué propiedades destaca en navío en el que ejercemos de capitán y las características del barco con el que nos estamos enfrentando. También es muy importante el papel a desarrollar en la batalla según sea el tipo de navío controlado ya sea destructor, crucero o acorazado.
 
-Los cruceros por su cadencia de fuego, versatilidad, relativo poco nivel de vida y fragilidad son uno de los primeros objetivos a eliminar, también los destructores si son detectados y están al alcance de disparo que en una mala situación es destruido rápidamente y esto puede marcar el desenlace de la batalla.
+Los cruceros por su cadencia de fuego, versatilidad, relativo poco nivel de vida y fragilidad son uno de los primeros objetivos a eliminar. Los destructores son difíciles de detectar, tienen más facilidad de capturar bases, contrarestar los destructores enemigos, por su importancia al ser detectados han de ser el objetivo prioritario si están al alcance de disparo, en una mala situación un destructor es destruido rápidamente y esto puede marcar el desenlace de la batalla.
 
 Aparte de la habilidad de apuntado para calcular el disparo hay que saber como empleador de forma efectiva las nubes de humo, aviones, cubrirse tras las islas y lanzar torpedos sin ser descubiertos para evitar que un objetivo varíe el rumbo por estar alertado del potencial peligro.
 
@@ -245,7 +245,9 @@ En YouTube hay multitud de vídeos de personas sobre este juego que permiten apr
 
 * [Canal oficial de World of Warships](https://www.youtube.com/user/worldofwarshipsCOM/videos). Son las [guías oficiales del juego básicas](https://www.youtube.com/watch?v=xaZeeKB4RAs&list=PLfYIjPpQ2erHkCjSdnydRvIivjPw-c82q) y de [como funciona](https://www.youtube.com/watch?v=OgRUSmzcw2s&list=PLVmXzlhZvJVSo3LA0O0ccjHRxxv-Qzchb).
 * [Canal de CUBTC](https://www.youtube.com/user/Daibakufu/videos), un jugador experimentado con consejos muy útiles sobre el juego de PC pero que en gran media son aplicables a WoW Legends. Además está en español.
-* [Canal del Tbull](https://www.youtube.com/channel/UC_U5rsqGwuwPOqev6FMclDQ), un jugador también experimentado con algunas [guías específicas de WoW Legends](https://www.youtube.com/watch?v=3Mo_dLIpUU8) y consejos según su experiencia de mucho valor.
+* [Canal de Sergui Ahumada](https://www.youtube.com/c/Daibakufu/videos), otro canal sobre el juego en español con consejos muy útiles sobre estrategia y revisiones de barcos.
+* [Canal del Tbull](https://www.youtube.com/channel/UC_U5rsqGwuwPOqev6FMclDQ), un jugador también experimentado con algunas [guías específicas de WoW Legends](https://www.youtube.com/watch?v=3Mo_dLIpUU8) y consejos sobre estrategia de batalla según su experiencia de mucho valor. El canal es en inglés.
+* [Canal de Xarkun _](https://www.youtube.com/c/Xarkun/videos), otro jugador que ofrece consejos y revisiones de partidas comentando estrategias de batalla al mismo tiempo que análisis de barcos. El canal es específico de WoW Legends de habla inglesa.
 
 {{< youtube
     video="xaZeeKB4RAs" >}}
