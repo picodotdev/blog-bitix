@@ -235,6 +235,8 @@ Cada semana y de forma diaria se dispone de una serie de misiones que completada
 
 El juego con sus diferentes mecánicas tiene un componente de estrategia no solo individual y de habilidad en el apuntado sino que es casi tan importante o más el juego en equipo, jugar en formaciones y apoyar a los compañeros, esto es decisivo para el resultado de la batalla. Otros juegos dependen mucho más de la habilidad individual.
 
+* [Estrategia de batalla básica en el juego World of Warships Legends][blogbitix-545]
+
 Es importante conocer la situación de los barcos en la batalla, la nuestra, la de los aliados, la de los enemigos, las islas y sus formas y en qué propiedades destaca en navío en el que ejercemos de capitán y las características del barco con el que nos estamos enfrentando. También es muy importante el papel a desarrollar en la batalla según sea el tipo de navío controlado ya sea destructor, crucero o acorazado.
 
 Los cruceros por su cadencia de fuego, versatilidad, relativo poco nivel de vida y fragilidad son uno de los primeros objetivos a eliminar. Los destructores son difíciles de detectar, tienen más facilidad de capturar bases, contrarestar los destructores enemigos, por su importancia al ser detectados han de ser el objetivo prioritario si están al alcance de disparo, en una mala situación un destructor es destruido rápidamente y esto puede marcar el desenlace de la batalla.
@@ -244,10 +246,10 @@ Aparte de la habilidad de apuntado para calcular el disparo hay que saber como e
 En YouTube hay multitud de vídeos de personas sobre este juego que permiten aprender las mecánicas básicas de juego y guías y consejos para ser un jugador por encima de la media.
 
 * [Canal oficial de World of Warships](https://www.youtube.com/user/worldofwarshipsCOM/videos). Son las [guías oficiales del juego básicas](https://www.youtube.com/watch?v=xaZeeKB4RAs&list=PLfYIjPpQ2erHkCjSdnydRvIivjPw-c82q) y de [como funciona](https://www.youtube.com/watch?v=OgRUSmzcw2s&list=PLVmXzlhZvJVSo3LA0O0ccjHRxxv-Qzchb).
-* [Canal de CUBTC](https://www.youtube.com/user/Daibakufu/videos), un jugador experimentado con consejos muy útiles sobre el juego de PC pero que en gran media son aplicables a WoW Legends. Además está en español.
+* [Canal de CUBTC](https://www.youtube.com/user/Daibakufu/videos), un jugador experimentado con consejos muy útiles sobre el juego de PC pero que en gran media son aplicables a WoW Legends. Además en español.
 * [Canal de Sergui Ahumada](https://www.youtube.com/c/Daibakufu/videos), otro canal sobre el juego en español con consejos muy útiles sobre estrategia y revisiones de barcos.
 * [Canal del Tbull](https://www.youtube.com/channel/UC_U5rsqGwuwPOqev6FMclDQ), un jugador también experimentado con algunas [guías específicas de WoW Legends](https://www.youtube.com/watch?v=3Mo_dLIpUU8) y consejos sobre estrategia de batalla según su experiencia de mucho valor. El canal es en inglés.
-* [Canal de Xarkun _](https://www.youtube.com/c/Xarkun/videos), otro jugador que ofrece consejos y revisiones de partidas comentando estrategias de batalla al mismo tiempo que análisis de barcos. El canal es específico de WoW Legends de habla inglesa.
+* [Canal de Xarkun](https://www.youtube.com/c/Xarkun/videos), otro jugador que ofrece consejos y revisiones de partidas comentando estrategias de batalla al mismo tiempo que análisis de barcos. El canal es específico de WoW Legends de habla inglesa.
 
 {{< youtube
     video="xaZeeKB4RAs" >}}
