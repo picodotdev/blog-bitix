@@ -169,7 +169,7 @@ La estrategia de los cruceros para sobrevivir las partidas o durante más tiempo
 
 Los acorazados han de ser conscientes de la ubicación de los destructores para no ser sorprendido para una salva de torpedos que le resulte imposible de esquivar y volver a puerto. En caso de enfrentarse a un destructor utilizar las tácticas para defenderse de los torpedos.
 
-#### Características rival
+#### Características del rival
 
 Los mejores jugadores, con mayor conocimiento y mayor experiencia además de las reglas básicas tácticas teóricas anteriores, además tienen en cuenta que barco tienen y los aliados, por que barcos está formado en equipo rival o contra qué barco se están enfrentando en un combate uno a uno.
 
@@ -217,7 +217,7 @@ Algunos de estos canales son del juego en PC pero dado que en gran parte las mec
 
 ### Toxicidad
 
-En la versión de consola dado la limitada forma de comunicación la toxicidad no es elevada, salvo por el _chat_ de voz que algún iluminado que no tiene nada mejor que hacer que culpar con tono de enfadado y reproche a otro de la derrota o de que ha muerto por no darle ayuda, en la versión para PC además dado que tiene un _chat_ de texto puede darse en alguna ocasión alguna situación desagradable. Siguiendo estas reglas tácticas de juego que hacen del juego lo entretenido que es, y coordinandose con el resto de aliados no debería ser uno el que reciba estos mensajes tóxicos.
+En la versión de consola dado la limitada forma de comunicación la toxicidad no es elevada, salvo por el _chat_ de voz que algún iluminado que no tiene nada mejor que hacer que culpar con tono de enfadado y reproche a otro de la derrota o de que ha resultado hundido por no darle ayuda, en la versión para PC además dado que tiene un _chat_ de texto puede darse en alguna ocasión alguna situación desagradable. Siguiendo estas reglas tácticas de juego que hacen del juego lo entretenido que es, y coordinandose con el resto de aliados no debería ser uno el que reciba estos mensajes tóxicos.
 
 Es un juego competitivo, hay jugadores muy buenos, quizá con mayores niveles de comandantes o que tienen mejores elecciones de comandantes, aunque es complicado no hay que frustrarse, analizar si en la partida hemos cometido un error e intentar mejorar para las siguientes. Incluso los mejores jugadores y _youtubers_ pierden y su ratio de victorias aunque quizá algo superior a la media también sufren derrotas habitualmente, ya que por muy bueno que sea uno como este juego es un juego de equipo si el equipo no sigue las reglas tácticas básicas es muy difícil que individualmente uno consiga la victoria. Y supongo que en los emparejamientos el juego implementa algún algoritmo para balancear las partidas.
 
