@@ -98,6 +98,8 @@ Por lo general son efectivos contra los cruceros por sus ciudadelas vulnerables,
 
 Junto con exponerse de forma completamente lateral a otros acorazados, los incendios de algunos cruceros que están especializados en provocar son un riesgo. Un incendio no es peligroso estando con prácticamente la totalidad de los puntos de vida e incluso dos durante un poco de tiempo ya que tiene la habilidad de reparación que les permite recuperar gran parte de los puntos de vida perdidos por incendio. Una amenaza más grave es una inundación causada por el impacto de un torpedo, una inundación al igual que los incendios causan la pérdida constante de puntos de vida pero en algo mayor número por segundo y durante algo más de tiempo, por ello una inundación obliga casi siempre a utilizar un consumible de reparación, si el consumible de reparación no está disponible por haber sido utilizado con anterioridad y está en periodo de recarga la pérdida de puntos de la inundación al cabo de unas cuanta decenas de segundos puede causar el hundimiento del acorazado.
 
+### Otras nociones comunes básicas de estrategia
+
 #### Defensa contra torpedos
 
 Los acorazados en solitario son un objetivo sencillo para el destructor, un acorazado no tiene forma de detectar un destructor si el capitán del destructor no quiere. Son lentos y poco maniobrables que los hace más vulnerables a los torpedos.
@@ -113,7 +115,7 @@ Hay algunas formas de defenderse de los destructores y de los torpedos. Una es p
 
 Otra forma de defensa contra los torpedos es conociendo cuando el destructor los está lanzando. Los torpedos se lanzan por los laterales de modo que si un destructor gira para ponerse de forma lateral puede ser indicativo de que los está lanzando o si está girando para alejarse de que ya los ha lanzado y ahora intenta ocultarse. Al mismo tiempo lanzar los torpedos en los destructores requiere cambiar entre los cañones y la lanzadera de torpedos de modo que si un destructor está disparando con los cañones y deja de disparar con cadencia de recargar es indicativo de que el enemigo ha lanzado o está lanzando los torpedos.
 
-Tener el conocimiento de cuando un destructor es probable que haya lanzado torpedos permite maniobrar cambiando de dirección o velocidad para cambiar la ubicación prevista de impacto que ha tenido el destructor, la maniobra permite esquivarlos.
+Tener el conocimiento de cuando un destructor es probable que haya lanzado torpedos permite maniobrar cambiando de dirección o velocidad para cambiar la ubicación prevista de impacto que ha tenido el destructor, la maniobra permite esquivarlos. Si un destructor al que se dispara no dispara es que está tramando algo malo, que es que está lanzando torpedos, el momento para conocer que los ha lanzado es cuando empieza a girar momento en el que hay que cambiar de rumbo y cambiar de velocidad.
 
 {{< youtube
     video="QFqRwedbsPY" >}}
@@ -130,8 +132,6 @@ Las excepciones a la regla general de selección de objetivos son las oportunida
     gallery="true"
     image1="image:seleccion-objetivo.jpg" optionsthumb1="300x200" title1="Selección de objetivo"
     caption="Selección de objetivo" >}}
-
-### Otras nociones comunes básicas de estrategia
 
 #### Posicionamiento y fuego cruzado
 
@@ -151,9 +151,13 @@ El juego en las batallas normales suele desplegar a los aliados y a los enemigos
 
 #### Errores comunes
 
-Hay varios errores comunes que no pocos jugadores suelen cometer y que hay que conocerlos para no cometerlos uno mismo. Cometer estos errores significa en ocasiones la diferencia entre la victoria o la derrota, y ver que un jugador los está cometiendo no sienta bien a uno mismo y supongo al resto de compañeros del equipo, más en las batallas clasificatorias o _ranked_. En arenas bajas quizá está justificado ya que algunos serán jugadores inexpertos que aún no conocen todas las estrategias básicas, no está justificado en una arena más alta del juego en la que a hay que haber jugado bastante para llegar a ella.
+Hay varios errores comunes que no pocos jugadores suelen cometer y que hay que conocerlos para no cometerlos uno mismo. Cometer estos errores significa en ocasiones la diferencia entre la victoria o la derrota, y ver que un jugador los está cometiendo no sienta bien a uno mismo y supongo al resto de compañeros del equipo, más en las batallas clasificatorias o _ranked_. En arenas bajas quizá está justificado ya que algunos serán jugadores inexpertos que aún no conocen todas las estrategias básicas, no está justificado en una arena alta del juego en la que ya hay que haber jugado bastante para llegar a ella.
 
 Un error básico es iniciar una batalla y luego no jugar o tardar mucho en empezar a moverse. En WoW Legends las batallas son de 9 jugadores por equipo, con un jugador menos se nota la diferencia, más si el jugador ausente es un destructor y es el único destructor aliado. El juego no lo penaliza y las batallas requieren un tiempo de preparación pero para la buena salud del juego es conveniente entrar en una batalla solo cuando se esté preparado.
+
+Por repetirlo este es un juego de equipo, un jugador por muy bueno que sea en ningún caso puede enfrentarse solo a varios rivales. Entrar en combate contra varios rivales sin apoyo o en inferioridad, en una situación de inferioridad lo habitual es perder el enfrentamiento.
+
+Pensar que cualquier destructor, crucero o acorazado se enfrenta en igualdad de condiciones a cualquier otro destructor, crucero o acorazado. Cada barco tiene sus propias características en múltiples variables como calibre y tiempos de recarga de cañones, puntos de vida, blindaje, torpedos, distancia de combate óptima u ocultamiento por mencionar nas pocas. Un destructor cañonero es capaz de destruir a un destructor torpedero en un enfrentamiento directo, con lo que la estrategia del destructor torpedero es evitar los enfrentamientos directos sin apoyo. La misma situación ocurre en los cruceros y acorazados.
 
 En los destructores un error muy habitual es ver uno que se pasa toda la partida intentando torpedear un acorazado en vez de realizar los objetivos más importantes del juego para los destructores, capturar bases, detectar y destruir otros destructores. Quizá ese destructor tenga una la batalla un rendimiento demás de 100K de daño causado y sin embargo resultar que la batalla se pierde. Una acorazado consciente de que un destructor le está intentando torpedear también tiene estrategias para defenderse. El daño de los destructores una vez cumplidos sus objetivos de capturar bases y la batalla balanceada a favor empiezan a hacer daño hacia la mitad y final de la partida.
 
