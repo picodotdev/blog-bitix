@@ -181,6 +181,11 @@ Saber si un acorazado tiene unos cañones de un calibre suficiente como para hac
 
 También, conocer la distribución de los puntos de blindaje y posición de las ciudadelas, o saber si el barco está especializado en causar incendios con facilidad, también denominados como _HE spammers_, a barcos vulnerables a ellos.
 
+{{< image
+    gallery="true"
+    image1="image:blindaje.jpg" optionsthumb1="300x250" title1="Blindaje de un acorazado"
+    caption="Blindaje de un acorazado" >}}
+
 #### Barcos de las diferentes naciones
 
 Los niveles de las arenas de los barcos con los que se juega normalmente son los de la 5, 6 y 7. Son los de la 5 son los más rentables en cuanto a recompensa de moneda para comprar más barcos y los de la 7 son los de la arena más alta.
