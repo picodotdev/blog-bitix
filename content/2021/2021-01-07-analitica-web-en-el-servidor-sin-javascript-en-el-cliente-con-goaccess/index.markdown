@@ -45,7 +45,7 @@ Otros sitios web privados de una intranet u aquellos que tienen interés en prot
 
 ### GoAccess, una alternativa de analítica
 
-[GoAccess][goaccess] es una pequeña utilidad que cubre una pequeña parte de la funcionalidad de analítica de un sitio web, en concreto ofrece la analítica en tiempo real de uno o múltiples sitios web. Sus características principales son que es una herramienta sencilla y pequeña, no requiere insertar ningún _script_ en las páginas del sitio web, no involucra terceras partes y es software libre.
+[GoAccess][goaccess] es una pequeña utilidad que cubre una pequeña parte de la funcionalidad de analítica de un sitio web, en concreto ofrece la analítica en tiempo real de uno o múltiples sitios web, [Matomo][matomo] es una [alternativa equivalente a Google Analytics][blogbitix-546] que ofrece las funcionalidades de _tracking_ de eventos y _tag manager_. Sus características principales son que es una herramienta sencilla y pequeña, no requiere insertar ningún _script_ en las páginas del sitio web, no involucra terceras partes y es software libre.
 
 Para realizar la analítica web no requiere insertar ningún _script_ de JavaScript en el cliente lo que mejora el tiempo de carga de las páginas. La analítica la hace completamente en el lado del servidor analizando los archivos de _log_ de acceso y errores del servidor web. Soporta los servidores web más utilizados como [Nginx][nginx] y [Apache HTTPD][apache-httpd].
 
