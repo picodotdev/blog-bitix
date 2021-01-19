@@ -56,6 +56,8 @@ Estos son algunos apartados de un ADR:
 * Restricciones
 * Argumentos
 
+Un buen ejemplo de _Architecture Decision Records_ son los documentos de [especificaciones JEP](https://openjdk.java.net/jeps/0) de Java que incluyen un resumen, objetivos, motivaciones y una descripción detallada de la proposición.
+
 ### Decisiones de arquitectura tomadas en mi blog
 
 Utilizando como ejemplo mi blog a lo largo de los años he tenido que tomar varias decisiones que podrían ser de arquitectura. Entre Blogger, el generador estático de sitios web con Hugo y quizá en un futuro con AWS las cosas han cambiado mucho en mi blog, sin embargo, no he recogido en ningún documento específico cuáles son las decisiones en cada uno de esos cambios y los motivos.
