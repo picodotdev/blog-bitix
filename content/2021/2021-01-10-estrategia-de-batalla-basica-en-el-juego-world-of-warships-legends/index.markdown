@@ -249,6 +249,9 @@ Otra pieza de las batallas navales son los submarinos. En la versión de PC se e
 {{< youtube
     video="pnmXf-GOw8o" >}}
 
+{{< youtube
+    video="1__yzi6NM1w" >}}
+
 {{< reference >}}
 * [Blog World of Warships Legends](https://wowslegends.com/blogs/)
 * [Discord World of Warships Legends](https://discord.gg/wowslegends)
