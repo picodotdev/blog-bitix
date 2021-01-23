@@ -13,6 +13,48 @@
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
     
     <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/</id>
+        <title>Qué es la variable PATH del sistema y cómo cambiarla en GNU/Linux</title>
+        <updated>2021-01-24T00:30:00+01:00</updated>
+        <published>2021-01-24T00:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        
+        <![CDATA[<div class="logotypes">
+<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/linux.svg" width="200" height="232" alt="Linux" title="Linux"  class=""></p>
+</div>
+<p>Al ejecutar un comando en la terminal el intérprete de comandos de <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a> lo busca en los directorios especificados en la variable de entorno del sistema <em>PATH</em>, esta variable de entorno contiene una lista de directorios separados por el caracter <em>:</em> en la que se busca por orden. Al instalar un paquete seguramente el programa ejecutable se instale en <em>/usr/bin</em>, directorio que por defecto está incluido en la variable <em>PATH</em>.</p>
+<p>En algún caso quizá nos interese instalar un programa ejecutable propio, un caso puede ser que la distribución usada no disponga del paquete del programa o esté en una versión antigua y se desee una más nueva. Como ejemplo usando <a href="https://www.archlinux.org/">Arch Linux</a> mi caso ha sido con las herramientas de <a href="https://www.hashicorp.com/">HashiCorp</a> como <a href="https://www.consul.io/">Consul</a>, <a href="https://www.vaultproject.io/">Vault</a> y <a href="https://www.nomadproject.io/">Nomad</a> para las que de algunas no está en los repositorios oficiales sino que está en los repositorios de los usuarios AUR.</p>
+<p>Las herramientas que está desarrolladas con el lenguaje <a href="https://golang.org/">Go</a> suelen un único binario que no tienen más dependencias. Basta con copiar ese binario al directorio <em>/usr/local/bin/</em> que está destinado a que los usuarios instalen sus propios binarios sin entrar en conflicto con los que los paquetes instalan. El directorio <em>/usr/local/bin/</em> es otro de los directorios incluídos en los directorios de búsqueda de la variable <em>PATH</em>.</p>
+<p>Otra posibilidad es modificar la variable PATH del sistema y añadir el directorio que deseemos, por ejemplo, se puede crear el directorio <em>~/Software/bin</em>. El intérprete de comandos cuando el usuario introduce un comando lo busca en orden en los directorios especificados por la variable <em>PATH</em>, ya sea un binario o un <em>script</em> ejecutable de un intérprete de comandos como <a href="https://es.wikipedia.org/wiki/Bash">Bash</a>.</p>
+<p>Este es parte del contenido de la variable <em>PATH</em> del sistema en Arch Linux (los tres puntos es contenido que he omitido). Las distribuciones GNU/Linux suelen instalar los binarios de los programa ejecutables en los directorios <em>/usr/local/sbin</em> con los binarios para el usuario <em>root</em> y <em>/usr/bin</em> es donde los paquetes ubican sus binarios y programas ejecutables. En el directorio <em>/usr/local/bin</em> el usuario puede ubicar sus propios binarios sin que entren en conflicto con los instalados por los paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">echo</span> <span class="nv">$PATH</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-path.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">...:/usr/local/bin:/usr/local/sbin:/usr/bin:...&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>echo-path.out</span>
+    </div>
+</div>
+<p>Dado que el programa que manualmente se ubica en el directorio para binarios de los usuarios <em>/usr/local/bin</em> o en un directorio propio no proviene de un paquete cuando se publique una nueva versión es el usuario el que ha de actualizar a la nueva versión descargando de nuevo el binario y copiarlo de nuevo al directorio.</p>
+<p>La variable <em>PATH</em> se configura en el <em>script</em> de inicialización del intérprete de comandos, el de Bash es el archivo oculto <em>.bashrc</em> ubicado en el directorio de inicio del usuario, en mi caso en <em>/home/picodotdev/.bashrc</em>. El archivo <em>.bashrc</em> sirve también para <a href="https://picodotdev.github.io/blog-bitix/2018/04/personalizar-el-prompt-del-sistema-del-interprete-de-comandos-bash/">Personalizar el prompt del sistema del intérprete de comandos Bash</a> y el caso de utilizar el sistema de control de versiones <a href="https://git-scm.com/">Git</a> para <a href="https://picodotdev.github.io/blog-bitix/2018/04/prompt-de-la-terminal-personalizado-en-carpetas-de-git-con-el-interprete-bash/">Personalizar el prompt del intérprete Bash con información de estado del repositorio git</a>.</p>
+]]>
+        </content>
+        
+            
+                <category term="planeta-codigo"/>
+            
+                <category term="gnu-linux"/>
+            
+        
+    </entry>
+    
+    <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/</id>
         <title>En Java, ¿los argumentos se pasan por valor o por referencia?</title>
         <updated>2021-01-22T16:30:00+01:00</updated>
@@ -2133,101 +2175,6 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
                 <category term="planeta-codigo"/>
             
                 <category term="programacion"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/</id>
-        <title>5 formas de implementar el patrón Singleton en Java</title>
-        <updated>2020-11-21T23:00:00+01:00</updated>
-        <published>2020-11-21T23:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>El patrón <em>Singleton</em> es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son <em>thread-safe</em> o con evaluación <em>lazy</em>.</strong></p>]]>
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Los lenguajes orientados a objetos modelan los programas utilizando clases, estas clases contienen tanto los datos como las operaciones que tratan esos datos que solo pueden ser modificados a través de esas operaciones. Este principio de encapsulación tiene como beneficio garantizar que los datos no sean modificados por cualquier otro código distinto a las operaciones y que los datos no queden en un estado inconsistente.</p>
-<p>En un lenguaje orientado a objetos de cada clase se crean tantas instancias u objetos como se necesiten en el programa. En algunos casos de una clase en concreto sólo se desea que haya una única instancia, normalmente hacer que de una clase en concreto haya una única instancia se implementa con el patrón <em>Singleton</em>.</p>
-<p>En Java hay varias formas de implementar el patrón <em>Singleton</em>, aunque todas son posibles cada una tiene diferentes propiedades, algunas tiene más beneficios sin las debilidades de otras. En este artículo incluyo 5 formas de cómo implementar el patrón <em>Singleton</em> con un ejemplo de código de cada una de ellas e indico cuales de ellas son las mejores opciones de entre estas.</p>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="qué-es-el-patrón-singleton">Qué es el patrón Singleton</h3>
-<p>El <a href="https://en.wikipedia.org/wiki/Singleton_pattern">patrón Singleton</a> es un patrón de diseño que restringe a una única instancia de objeto el número instancias de una clase que se pueden crear durante la ejecución del programa. Es útil en ciertas clases donde su única instancia es compartida en todo el código como si de una variable global se tratase. Si el método que permite obtener la referencia a la instancia es un método estático la instancia es como si fuese una variable global dado que es posible acceder a ella desde cualquier parte del programa siempre que lo permitan <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">los modificadores de acceso</a>.</p>
-<p>Los casos de uso de las clases <em>singleton</em> son mantener un estado compartido, permitir inicialización bajo demanda o <em>lazy</em>, también es usado en otros patrones como el patrón <em>abstract factory</em>, <em>factory method</em>, <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">el patrón <em>builder</em></a> o <em>facade</em>.</p>
-<h3 id="formas-de-implementar-el-patrón-singleton-en-java">Formas de implementar el patrón Singleton en Java</h3>
-<p>En Java hay varias formas de implementar el patrón <em>Singleton</em> en una clase, el objetivo y resultado es el mismo pero la implementación hace que tengan algunas diferencias como que no sea <em>thread-safe</em>, no sea <em>lazy</em>, otras implementaciones igualmente sencillas son <em>thread-safe</em> y <em>lazy</em> al mismo tiempo.</p>
-<p>Esta son las implementaciones más comunes, dependiendo de las necesidades de la aplicación todas son válidas simplemente la implementación con la clase <em>inner</em> y <em>enum</em> son las que proporcionan <em>thread-safe</em> y evaluación <em>lazy</em> que algunas de las otras no tienen.</p>
-<h4 id="forma-tradicional">Forma tradicional</h4>
-<p>La forma tradicional de implementar el patrón <em>Singleton</em> es utilizando una variable estática privada para guardar la referencia de la única instancia, hacer el constructor privado de modo que el resto de clases no tengan la posibilidad de crear más instancias y un método que crea la instancia si no ha sido creada con anterioridad con una sentencia condicional y devuelve la referencia si ya existe la instancia.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-1.java</span>
-    </div>
-</div>
-<p>Esta implementación es muy utilizada, aunque es <em>lazy</em> ya que la instancia no se crea hasta que se realiza la primera solicitud su inconveniente es que no es <em>thread-safe</em> si varios hilos intentan obtener una instancia cuando aún no hay ninguna creada.</p>
-<h4 id="método-sincronizado">Método sincronizado</h4>
-<p>Para implementar el patrón <em>Singleton</em> con la propiedad de que sea <em>thread-safe</em> en el caso anterior la forma más sencilla es hacer el método <em>synchronized</em> de modo que Java garantiza que si varios hilos intentan obtener la referencia de la instancia cuando aún no está creada sólo uno de ellos la cree.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-2.java</span>
-    </div>
-</div>
-<p>El inconveniente de esta implementación con <em>synchronized</em> hace que el método para obtener la instancia sea más lento debido a la propia sincronización y a la contención que se produce si hay múltiples hilos en ejecución que hacen uso del método, si el rendimiento es una consideración importante hay otras formas de implementar el patrón <em>Singleton</em> no mucho más difíciles que tienen mejor rendimiento.</p>
-<h4 id="variable-estática-final">Variable estática final</h4>
-<p>La siguiente forma de implementar el patrón <em>Singleton</em> es crear la instancia en la inicialización de la clase ya sea como una asignación en la variable o con el constructor estático.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-3a.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Singleton</span> <span class="n">instance</span><span class="o">;</span>&#10;&#10;   <span class="kd">static</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-3b.java</span>
-    </div>
-</div>
-<p>Esta implementación no requiere utilizar una sentencia condicional <em>if</em> para comprobar si la instancia ya ha sido creada y es <em>thread-safe</em>, sin embargo, no es <em>lazy</em> ya que la instancia se crea cuando se inicializa la clase antes de que se haga el primer uso.</p>
-<h4 id="clase-_inner_">Clase <em>inner</em></h4>
-<p>Esta implementación es <em>thread-safe</em> y tiene evaluación <em>lazy</em> que algunas de las anteriores no tienen. Lo que hace es utilizar una clase anidada o <em>inner</em> para mantener la referencia a la instancia de la clase que la contiene.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>&#10;&#10;   <span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">SingletonHolder</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">();</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">()</span> <span class="o">{}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">return</span> <span class="n">SingletonHolder</span><span class="o">.</span><span class="na">instance</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-4.java</span>
-    </div>
-</div>
-<p>Este caso tampoco hace uso de la sentencia condicional <em>if</em> y el propio lenguaje Java por la inicialización de las clases y propiedades <em>static</em> garantiza que es <em>thread-safe</em>.</p>
-<h4 id="clases-_enum_">Clases <em>enum</em></h4>
-<p>Las clases <em>enum</em> son por definición clases cuyos enumerados son <em>singleton</em> y <em>thread-safe</em>. La particularidad de los <em>enum</em> es que no se pueden crear nuevas instancias adicionales a las que se definan en el código en tiempo de compilación, el número de instancias es constante, por lo demás los <em>enum</em> al igual que las clases pueden implementar interfaces, declarar métodos y constructores de uso en el propio <em>enum</em>.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">enum</span> <span class="n">Singleton</span> <span class="o">{</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">INSTANCE</span><span class="o">;</span>&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">...</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Singleton-5.java</span>
-    </div>
-</div>
-<h3 id="conclusión">Conclusión</h3>
-<p>Si el Singleton debe extender una clase la mejor opción de crearlo es con la clase <em>inner</em>, la implementación con una clase <em>enum</em> también es válida. Estas son las dos implementaciones aconsejadas para implementar el patrón <em>Singleton</em>. La forma tradicional sigue siendo muy utilizada con números ejemplos de código en artículos y es posible utilizarla, sin embargo, dadas sus desventajas es preferible utilizar alguna de las dos aconsejadas que son igual de sencillas de implementar.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="http://www.learn4master.com/algorithms/java-singleton-pattern">Five ways to implement Singleton pattern in Java</a></li>
-<li><a href="https://dzone.com/articles/java-singletons-using-enum">Java Singletons Using Enum</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>
