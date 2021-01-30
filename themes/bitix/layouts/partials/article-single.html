@@ -48,4 +48,10 @@
       {{ partial "share-this-begin.html" . }}
       {{ replace .Content "<toc></toc>" .TableOfContents | safeHTML }}
     </div>
+
+    {{ if findRE "https\\://amzn\\.to" .Content }}
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{ i18n "affiliates_info" | markdownify | htmlUnescape | safeHTML }}</small>
+      </div>
+    {{ end }}
   </article>
