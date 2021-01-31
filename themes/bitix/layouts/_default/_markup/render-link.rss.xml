@@ -45,4 +45,8 @@
 {{- $class := index $attributes "class" -}}
 {{- $rel := index $attributes "rel" -}}
 
+{{- if findRE (print "^" .Page.Site.Params.misc.sponsoredlink) $href -}}
+  {{- $rel = strings.TrimLeft " " (print (default "" $rel) " " "sponsored") -}}
+{{- end -}}
+
 <a href="{{ $href | absURL }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ $text | markdownify }}</a>
