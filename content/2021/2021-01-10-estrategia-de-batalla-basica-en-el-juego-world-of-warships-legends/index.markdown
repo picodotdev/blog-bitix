@@ -199,6 +199,19 @@ Algunas naciones tienen ciertas características comunes a su rama de barcos:
 * Japonesa: los destructores tiene dos ramas una más torpederos y otra más cañoneros, sus torpedos destacan por hacer mayor número puntos de daño, más lanzaderas, menor tiempo de recarga de torpedos y tener mejor ocultamiento que otras naciones. En sus acorazados destaca el Yamato que tiene los cañones de mayor calibre del juego capaz de hacer _overmatch_  y ciudadelas a otros acorazados aún no teniendo el lateral expuesto.
 * Británica: los destructores británicos son más cañoneros siendo capaces de disparar los torpedos en salvas o de uno en uno en vez de solo en salvas como otros destructores. Sus cruceros solo tienen munición AP pero aún así es efectiva contra los destructores. Sus acorazados son lentos y poco maniobrables, su munición HE tiene una probabilidad muy alta de causar incendios e incluso de hacer ciudadelas, son capaces de hundir destructores de una sola salva a distancias cortas y una alta capacidad de reparación del daño causado por los incendios.
 
+#### Mejores barcos según arena
+
+Algunos barcos tienen diferencias en sus estadísticas que combinado con las habilidades de los capitanes, habilidades seleccionadas e inspiraciones hace que dada barco sea más efectivo jugado de cierta forma. En términos absolutos no hay un barco mejor que otro ya que también depende de la situación de combate. sin embargo, algunos barcos destacan un poco más que los demás según su arena. Estos son una selección de barcos considerados que en una clasificación estarían en las primeras posiciones.
+
+{{< youtube
+    video="992PhVPnXAI" >}}
+
+{{< youtube
+    video="_dXHQGTuxoA" >}}
+
+{{< youtube
+    video="T0XtUNHTQWQ" >}}
+
 ### Uso de recursos
 
 Al final de cada batalla, con las misiones semanales o de varias semanas se obtienen diversos recursos con los que comprar nuevos barcos y subir el nivel de los capitanes. Los recursos más valiosos por ser más difíciles de conseguir o requieren más tiempo para conseguirlos son las insignias y las recomendaciones.
