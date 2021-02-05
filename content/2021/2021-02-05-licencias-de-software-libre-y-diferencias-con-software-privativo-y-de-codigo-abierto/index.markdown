@@ -155,7 +155,9 @@ En caso de distribuir el software de forma compiladas o en forma de objeto binar
 El tipo de licencia no determina qué software es mejor o peor, si el privativo o de software libre, la diferencia entre las licencias está en sus características éticas y legales. Aunque el modelo de desarrollo con una licencia de código abierto a la larga suele tener un mejor desarrollo y éxito que el software privativo, más aún con un medio como internet que permite colaborar a cualesquiera personas en el mundo independiente donde estén ubicadas en el mundo.
 
 * [La catedral y el bazar](https://es.wikipedia.org/wiki/La_catedral_y_el_bazar)
-* [La catedral y el bazar. Modelos de desarrollo de softare](https://softlibre.unizar.es/manuales/softwarelibre/catedralbazar.pdf)
+* [La catedral y el bazar. Modelos de desarrollo de softare](https://openlibra.com/es/book/download/la-catedral-y-el-bazar-version-espanola)
+* [El caldero mágico](https://web.archive.org/web/20130122100227/http://gnuwin.epfl.ch/articles/es/magiccauldron/es-magic-cauldron/node1.html)
+* [Colonizando la noosfera](https://biblioweb.sindominio.net/telematica/noosfera.html)
 
 {{< reference >}}
 * [Choose an open source license](https://choosealicense.com/)
