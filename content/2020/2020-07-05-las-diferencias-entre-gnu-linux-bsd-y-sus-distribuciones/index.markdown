@@ -50,13 +50,15 @@ Esta diferencia en el modelo de desarrollo del sistema base e independiente de l
 
 ### Diferencias en la licencia
 
-Otro aspecto importante con diferencias está en la licencia del código fuente. Mientras que Linux usa una [licencia _GNU General Public License_ o GPL][gnu-gpl] los sistemas BSD usan una de las diferentes [licencias BSD][bsd-licenses] que tiene diferentes versiones según su número de clausulas de cuatro a cero en cuyo caso es considerado software de dominio público.Ambas son licencias consideradas como software libre.
+Otro aspecto importante con diferencias está en la licencia del código fuente. Mientras que Linux usa una [licencia _GNU General Public License_ o GPL][gnu-gpl] los sistemas BSD usan una de las diferentes [licencias BSD][bsd-licenses] que tiene diferentes versiones según su número de clausulas de cuatro a cero en cuyo caso es considerado software de dominio público. Ambas son licencias consideradas como software libre.
 
 La diferencia entre la licencia GPL y BSD está en que la BSD es más permisiva, la licencia GPL impone restricciones a los programas distribuidos requiriendo que el código fuente del software también sea entregado y obliga a que el código sea compartido. Por el contrario, la licencia BSD no impone el requerimiento a los programas de que el código fuente sea entregado en su forma original del programa compilado en formato binario. En algunos casos la licencia BSD es más atractiva para algunas empresas que pueden usar su software sin necesidad de tener que distribuir el código fuente del software en el que se basan ni sus modificaciones si han hecho alguna lo que les permite mantener su propiedad intelectual oculta a sus competidores.
 
 Las licencias BSD no imponen unos requerimientos éticos y morales, la licencia GPL usada por Linux tiene un mayor activismo para promover y proteger el software libre. En BSD se centran más en el desarrollo que en el activismo del software libre y de código abierto.
 
 En los últimos años el soporte de hardware en Linux ha mejorado notablemente y salvo hardware muy específico o raro lo normal es que todo funcione sin  problemas importantes. El soporte de los fabricantes se centra más hacer compatible su hardware con Windows o macOS que en Linux y es mas raro aún que ofrezcan soporte para algún BSD. De modo que el soporte de hardware en los BSD es más limitado.
+
+* [Licencias de software libre y diferencias con software privativo y de código abierto][blogbitix-552]
 
 ### Distribuciones más importantes BSD
 
