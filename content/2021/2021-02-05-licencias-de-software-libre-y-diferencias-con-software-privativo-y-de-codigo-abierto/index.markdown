@@ -51,7 +51,7 @@ Las licencias de software libre se caracterizan por otorgar ciertos derechos a l
 Los programas de software libre también pueden requerir un pago a su distribuidor por su servicio. Pero dado que cualquier usuario al recibir el software recibe los derechos de acceso a código fuente, modificación y distribución esto permite distribuir el software de forma gratuita, por eso mucho del software libre es gratuito. Aunque el software libre normalmente es gratuito, el software libre no es sinónimo de gratuito y se permite el uso comercial.
 
 * [¿Qué es el software libre?](https://www.gnu.org/philosophy/free-sw.es.html)
-* [Por qué el «código abierto» pierde de vista lo esencial del software libre](https://www.gnu.org/philosophy/open-source-misses-the-point.html)
+* [Por qué el «código abierto» pierde de vista lo esencial del software libre](https://www.gnu.org/philosophy/open-source-misses-the-point.es.html)
 
 Nunca esta demás de ver al menos una vez en la vida o cada ciertos años una conferencia de [Richard Stallman][wikipedia-richard-stallman] hablando de la filosofía del software libre y leer el documento [Software libre para una sociedad libre](https://www.gnu.org/philosophy/fsfs/free_software.es.pdf).
 
@@ -72,11 +72,15 @@ Las licencias de software libre de la fundación de software libre o FSF son las
 * La libertad de redistribuir copias para ayudar a otros (libertad 2).
 * La libertad de distribuir copias de sus versiones modificadas a terceros (libertad 3). Esto le permite ofrecer a toda la comunidad la oportunidad de beneficiarse de las modificaciones. El acceso al código fuente es una condición necesaria para ello.
 
-Las licencias GPL es una de las licencias más representativas de software libre. La licencia GPL requiere que al usar código GPL junto con otro código todo el software haya de tener licencia GPL. La licencia LGPL es una variante de la GPL que elimina la restricción de que un software combinado con un software GPL haya de tener licencia GPL, esto es, permite combinar un software GPL con software no GPL en el caso de usar un software como una librería. La tercera licencia de la FSF es la AGPL para que el software usado en lado de servidor sea accesible considerando el uso en el lado del servidor como una forma de distribución del software. Requieren que al distribuir software modificado incluya una lista de cambios realizados.
+Las licencias GPL es una de las licencias más representativas de software libre. La licencia GPL en una licencia _copyleft_ que indica que si se incluye código bajo esta licencia en un programa más grande, el programa más que grande también debe estar bajo esta misma licencia. La licencia LGPL es una variante de la GPL que elimina la restricción de que un software combinado con un software GPL haya de tener licencia GPL, esto es, permite combinar un software GPL con software no GPL en el caso de usar un software como una librería. La tercera licencia de la FSF es la AGPL para que el software usado en lado de servidor sea accesible considerando el uso en el lado del servidor como una forma de distribución del software. Requieren que al distribuir software modificado incluya una lista de cambios realizados.
+
+Un peligro importante que la versión 3 de la GPL impide es la _tivoización_. La _tivoización_ significa que ciertos aparatos que contienen software cubierto por la GPL que en la práctica no se puede cambiar, porque el aparato se apaga si detecta software modificado. Los fabricantes de estos ordenadores sacan partido de la libertad que proporciona el software libre pero no permiten que el usuario haga lo mismo.
 
 * [Licencia GPL](https://choosealicense.com/licenses/gpl-3.0/)
 * [Licencia LGPG](https://choosealicense.com/licenses/lgpl-3.0/)
 * [Liciencia AGPL](https://choosealicense.com/licenses/agpl-3.0/)
+* [¿Por qué actualizar a la versión 3 de la GPL?](https://www.gnu.org/licenses/rms-why-gplv3.es.html)
+* [Por qué en su próxima biblioteca no debería utilizar la Licencia Pública General Reducida de LGPL](https://www.gnu.org/licenses/why-not-lgpl.es.html)
 
 El software más representativo con licencia de software libre es el núcleo Linux y muchos de los programas GNU de la fundación FSF que junto con Linux forman el sistema operativo [GNU][gnu]/[Linux][linux].
 
@@ -135,6 +139,8 @@ Hay varios tipos de licencias de Creative Commons diferenciando entre permitir m
 Las licencias de código abierto son un intermedio entre las licencias privativas y las licencias de software libre. Las licencias de código abierto permiten el acceso al código fuente pero no todas se consideran licencias de software libre al no otorgar otros derechos que se requieren para considerar un software como software libre como el derecho a la uso o con cualquier propósito, modificación y distribución.
 
 Dado el éxito del software libre como modelo de desarrollo de software algunas empresas cuyo software era privativo pueden decidir hacerlo de código abierto con la intención de suplir algunas carencias de software privativo pero sin perder ciertos derechos que son la fuente de sus ingresos como la venta de licencias.
+
+> Las expresiones «software libre» y «código abierto» se refieren casi al mismo conjunto de programas. No obstante, dicen cosas muy diferentes acerca de dichos programas, basándose en valores diferentes. El movimiento del software libre defiende la libertad de los usuarios de ordenadores, en un movimiento en pro de la libertad y la justicia. Por contra, la idea del código abierto valora principalmente las ventajas prácticas y no defiende principios. Esta es la razón por la que estamos en desacuerdo con el movimiento del código abierto y no empleamos esa expresión. 
 
 #### Microsoft Public License
 
