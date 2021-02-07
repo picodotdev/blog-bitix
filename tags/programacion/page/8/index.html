@@ -184,6 +184,31 @@
 <ul class="list-unstyled">
     <li>
       <article>
+        <h1><a href="/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/">La herramienta jlink para generar runtimes de Java incluyendo exclusivamente los módulos que usa una aplicación</a></h1>
+        <span class="information">
+          <time>24/03/2018</time>
+          
+            
+              <a href="/blog-bitix/tags/java/">java</a>
+            
+              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
+            
+              <a href="/blog-bitix/tags/programacion/">programacion</a>
+            
+          
+        </span>
+        <p>
+          
+            En versiones anteriores de Java 9 había un único runtime para ejecutar cualquier aplicación que debía ser instalado previamente para la ejecución de la aplicación. Aunque la aplicación no usase Swing por ser una aplicación web o cosas como CORBA ya en desuso aún estaban disponibles en el runtime por motivos de no romper la compatibilidad con versiones anteriores.
+Esto hacía que las aplicaciones no fuesen lo más eficiente posible y aumenta el tamaño necesario ahora de las imágenes de contenedores como Docker estas tuviesen un tamaño mayor del imprescindible, además de hacer que el tiempo de arranque sea algo mayor e incluir clases que aumentan la superficie de ataque ante un fallo de seguridad.
+          
+          <br>
+          <a href="/blog-bitix/2018/03/la-herramienta-jlink-para-generar-runtimes-de-java-incluyendo-exclusivamente-los-modulos-que-usa-una-aplicacion/">Continuar leyendo...</a>
+        </p>
+      </article>
+    </li>
+    <li>
+      <article>
         <h1><a href="/blog-bitix/2018/03/novedades-de-java-10/">Novedades de Java 10</a></h1>
         <span class="information">
           <time>23/03/2018</time>
@@ -523,30 +548,6 @@ GraphQL por defecto soporta un conjunto de tipos escalares en los datos entre lo
           
           <br>
           <a href="/blog-bitix/2017/11/devolver-mensajes-de-error-descriptivos-en-graphql/">Continuar leyendo...</a>
-        </p>
-      </article>
-    </li>
-    <li>
-      <article>
-        <h1><a href="/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">La forma correcta de ordenar alfabéticamente cadenas en Java</a></h1>
-        <span class="information">
-          <time>04/11/2017</time>
-          
-            
-              <a href="/blog-bitix/tags/java/">java</a>
-            
-              <a href="/blog-bitix/tags/planeta-codigo/">planeta-codigo</a>
-            
-              <a href="/blog-bitix/tags/programacion/">programacion</a>
-            
-          
-        </span>
-        <p>
-          
-            Sin usar la clase <em>Collator</em> incluida en el JDK al ordenar alfabéticamente una lista de cadenas obtendremos en algún caso un resultado que nos extrañará y seguramente no sea lo esperado. La clase <em>String</em> implementa la interfaz <em>Comprable</em> pero esta ordenación es en base al valor del código <em>unicode</em> sin tener en cuenta los diferentes niveles de diferencias propios del idioma para algunos caracteres de la cadena como tildes o caracteres únicos como la <em>ñ</em>. La forma correcta de ordenar cadenas en Java es utilizando la clase <em>Collator</em>.
-          
-          <br>
-          <a href="/blog-bitix/2017/11/la-forma-correcta-de-ordenar-alfabeticamente-cadenas-en-java/">Continuar leyendo...</a>
         </p>
       </article>
     </li>
