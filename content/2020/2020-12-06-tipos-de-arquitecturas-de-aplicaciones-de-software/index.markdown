@@ -89,6 +89,8 @@ La metodología _domain-driven-design_ o DDD promueve que la aplicación ha de e
 
 La arquitectura hexagonal se complementa perfectamente con la metodología y principios de DDD ya que ambos casos tienen interés en aislar la lógica de negocio de las partes exteriores de la aplicación de modo que un cambio en el exterior no suponga cambios importantes en la lógica de negocio.
 
+* [Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java][blogbitix-553]
+
 #### APIs, REST o GraphQL
 
 Con la aparición de múltiples dispositivos ya sean navegadores, teléfonos inteligentes, aplicaciones nativas de teléfonos inteligentes, tabletas o incluso otras aplicaciones, para dar soporte a todos estos clientes las aplicaciones se desarrollan desde el primer momento con el objetivo de ofrecer una API que todos los dispositivos comparten y posteriormente cada dispositivo adapta su interfaz gráfica a sus necesidades.
