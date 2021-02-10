@@ -6,11 +6,13 @@ package io.github.picodotdev.blogbitix.dddhexagonal.catalog.infrastructure.rest.
 @RequestMapping("/event")
 public class EventController {
 
-    @Autowired
     private CommandBus commandBus;
-
-    @Autowired
     private QueryBus queryBus;
+
+    public EventController(QueryBus queryBus, CommandBus commandBus) {
+        this.queryBus = queryBus;
+        this.commandBus = commandBus;
+    }
 
     @PostMapping
     public ResponseEntity<String> createEvent(@RequestParam("startDate") EventDate startDate, @RequestParam("endDate") EventDate endDate) throws Exception {
