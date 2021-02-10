@@ -4,6 +4,7 @@ type: "post"
 title: "Introducción a DDD y arquitectura hexagonal con un ejemplo de aplicación en Java"
 url: "/2021/02/introduccion-a-ddd-y-arquitectura-hexagonal-con-un-ejemplo-de-aplicacion-en-java/"
 date: 2021-02-07T01:00:00+01:00
+updated: 2021-02-07T14:30:00+01:00
 language: "es"
 rss: true
 sharing: true
@@ -11,7 +12,7 @@ comments: true
 promoted: false
 imagePost: "image:hexagonal-architecture.png"
 tags: ["planeta-codigo", "programacion"]
-summary: "La arquitectura de una aplicación define la estructura, organización y relación entre de los componentes de la misma. En aplicaciones complejas utilizando DDD y arquitectura hexagonal son una opción recomendada. Hay varios libros técnicos dedicados a cada uno de ellos. En este artículo hago una introducción a DDD y arquitectura hexagonal y proporciono un ejemplo con el código fuente con el que implementar, analizar y ejecutar los conceptos teóricos en los que se basan."
+summary: "La arquitectura de una aplicación define la estructura, organización y relación entre los componentes de la misma. En aplicaciones complejas utilizar DDD y arquitectura hexagonal son una opción recomendada. Hay varios libros técnicos dedicados a cada uno de ellos. En este artículo hago una introducción a DDD y arquitectura hexagonal y proporciono un ejemplo con el código fuente con el que implementar, analizar y ejecutar los conceptos teóricos en los que se basan."
 ---
 
 {{% post %}}

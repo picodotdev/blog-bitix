@@ -198,14 +198,15 @@ Teclados de membrana con cable e inalámbrico.
     linkids="92beec3c8e4c12addd6aad92e670067a,d45488e9f6f3e0fae914e06262b99644"
     asins="B00564GWEI,B00CHHDY66" >}}
 
+Tecládos mecánicos en Amazon.
+
+{{< amazon
+    linkids="d11108efcded314503c0f15af8dbb0c8,65e7c010cf229673b816aff098c5c7a7,4f4adaab7c1631e19b9d7bd7dacb9937,7f92ace17103998b9483f7d68641b0bc"
+    asins="B083NRGB42,B08P7LVHDV,B081QHBMLJ,B077J2HFD2" >}}
+
 Teclados mecánicos económicos. En [PcComponentes][pccomponentes] también hay algunos modelos de teclado mecánico económicos de las marcas Newskill y Krom entre otras.
 
 * [Teclados mecánicos en PcComponentes](https://www.pccomponentes.com/teclado-mecanico)
-
-{{< amazon
-    linkids="9440675c8e62f7748649d49f6483ae21,1ea9c8eed1fa4d837f65b2dfda2f247f,aec09e209d58416b232938ced4331435,f7013b45afbd3b5ec8d4bfd2eeef54ab,c76da0a067b7aa635b78220483136c4b,b21ed9ee7b00cf3b5940de5ef56c7960"
-    asins="B077J2HFD2,B077J1RQTN,B07Z4TCJZM,B07W66C19H,B083SZPLR7,B083SZRRHZ" >}}
-
 
 De los teclados mecánicos una marca reconocida es [Ducky][duckychannel] que ofrece modelos completos, TKL y compactos en diferente tamaño, número de teclas, tipos de _switches_ y retroiluminados. Su precio suele estar a partir de 100 € y se pueden encontrar en la tienda [Versus Gamers][vsgamers] con el formato ISO con la disposición en español y diferentes tipos de _switches_ _blue_, _brown_ y _red_.
 
