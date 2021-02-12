@@ -19,7 +19,7 @@ summary: "El _kit_ de iniciación a la electrónica para la Raspberry Pi tiene u
 
 {{% post %}}
 
-{{< logotype image1="raspberrypi.svg" title1="Raspberry Pi" width1="200" image2="java.svg" >}}
+{{< logotype image1="raspberrypi.svg" image2="java.svg" >}}
 
 Entre los varios sensores incluídos en el [kit de iniciación para la Raspberry Pi][blogbitix-212] está el sensor de temperatura y humedad con el modelo DHT11. El DHT11 es un sensor muy básico pero suficiente y válido si el objetivo es trastear un poco con hardware.
 
