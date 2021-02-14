@@ -44,7 +44,7 @@ La instalación se hace en una tarjeta de memoria microSD o una memoria USB, par
 
 El grabar la imagen en la tarjeta de almacenamiento conlleva la pérdida de los datos que tuviese con lo es necesario previamente haber hecho una copia de seguridad de los datos que contenga.
 
-#### Instalar Raspberry Pi OS
+#### Raspberry Pi OS
 
 El sistema operativo Raspberry Pi OS está basado en la distribución [Debian][debian], dispone de varias versiones una con entorno gráfico de escritorio y la versión _Lite_ sin entorno de escritorio.
 
@@ -79,7 +79,7 @@ Una vez con acceso a la Raspberry Pi se pueden instalar los paquetes y programas
 {{< code file="apt-update-upgrade.sh" language="bash" options="" >}}
 {{< code file="apt-install-nginx.sh" language="bash" options="" >}}
 
-#### Instalar Ubuntu Server
+#### Ubuntu Server
 
 [Ubuntu][ubuntu] también ofrece una versión de su distribución GNU/Linux para la Raspberry Pi para las versiones 2+, no soportando los primeros modelos originales de la Raspberry Pi. La versión de escritorio de Ubuntu para la Raspberry Pi requiere al menos 4 GiB y la versión RPi 4, Ubuntu Server y Ubuntu Core no incluye interfaz gráfica.
 
