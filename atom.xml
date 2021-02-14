@@ -5,12 +5,161 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/</id>
-    <updated>2021-02-12T16:00:00+01:00</updated>
+    <updated>2021-02-14T00:30:00+01:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/</id>
+        <title>Herramientas para convertir texto a audio de voz natural</title>
+        <updated>2021-02-14T00:30:00+01:00</updated>
+        <published>2021-02-14T00:30:00+01:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los archivos de audio son difíciles de editar, un cambio requiere volverlos a grabar de forma parcial o de forma completa lo que requiere mucho tiempo. Hay herramientas que permiten convertir texto a audio de voz sintetizada, el resultado de algunas herramientas es suficientemente bueno como para no distinguirse de una voz humana natural.</strong></p>]]>
+        <![CDATA[<p>Al grabar un audio de voz se crea un archivo binario con la grabación en formato <em>wav</em> o comprimido con <em>mp3</em>. Estos formatos de audio son archivos poco editables, no se puede sustituir una palabra, frase o realizar una corrección. La única edición que permite un audio de voz es cortar un trozo o añadir un trozo de audio nuevo. Sin embargo, la edición no es perfecta y el tono de la voz de la parte editada puede variar con la parte anterior y posterior. Además, grabar un audio de voz requiere el tiempo para realizar la grabación.</p>
+<p>Hay herramientas que usando un sintetizador de voz permiten transformar un texto en un audio, dando solución a dos de los problemas de la grabación de voz a partir de texto. Al convertir un texto a voz es más fácil la edición ya que basta simplemente cambiar el texto y generar de nuevo el audio y es más rápido ya que la generación del audio es más rápido que grabarlo en tiempo real. Algunos sintetizadores y herramientas además permiten seleccionar el idioma de la voz o ser una voz masculina o femenina.</p>
+<p>Una de estas herramientas es <a href="https://github.com/mozilla/TTS">TTS: Text-to-Speech</a>, un proyecto de <a href="https://www.mozilla.org/">Mozilla</a> y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#convertir-texto-a-voz-natural">Convertir texto a voz natural</a>
+      <ul>
+        <li><a href="#herramientas-web">Herramientas web</a></li>
+        <li><a href="#servicios-de-conversión">Servicios de conversión</a></li>
+        <li><a href="#mozilla-tts">Mozilla TTS</a></li>
+        <li><a href="#espeak">espeak</a></li>
+      </ul>
+    </li>
+    <li><a href="#lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</a></li>
+    <li><a href="#resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</a></li>
+    <li><a href="#convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="convertir-texto-a-voz-natural">Convertir texto a voz natural</h3>
+<h4 id="herramientas-web">Herramientas web</h4>
+<p>Hay algunas páginas web que ofrecen el servicio de conversión de texto a audio sin necesidad de software adicional a un navegador web. Algunas con limitaciones de número de caracteres pero suficiente para un uso básico. También algunas permiten descargar el archivo de audio, en caso de que no ofrezcan la descargar se puede reproducir y capturar con el <a href="https://www.videolan.org/vlc/">reproductor multimedia VLC</a> en la opción <em>Captura de audio &gt; Monitor de audio interno (HDMI) &gt; Guardar</em>.</p>
+<ul>
+<li><a href="https://www.texttospeechfree.com/">TextToSpeechFree</a></li>
+<li><a href="https://freetts.com/">Free TTS</a></li>
+<li><a href="http://fromtexttospeech.com/">Free online Text To Speech</a></li>
+</ul>
+<h4 id="servicios-de-conversión">Servicios de conversión</h4>
+<p>Para un uso más profesional y avanzado hay algunas aplicaciones para <a href="https://www.microsoft.com/es-es/windows/">Windows</a> y entre los muchos servicios que ofrecen <a href="https://aws.amazon.com/es/ec2/">Amazon AWS</a>, <a href="https://www.google.es/">Google</a> y <a href="https://www.microsoft.com/">Microsoft</a> para hacer la operación de convertir audio a texto que realmente producen unos resultados muy buenos con una voz natural difícil de distinguir de una real.</p>
+<p>Aplicaciones.</p>
+<ul>
+<li><a href="https://www.microsoft.com/en-us/p/any-text-to-voice-convert-text-to-speech-text-to-audio-mp3-for-free/9n92n3shd1mv?activetab=pivot:overviewtab#">Any Text to Voice</a></li>
+<li><a href="https://www.microsoft.com/en-us/p/convert-text-to-speech/9wzdncrddlsc?activetab=pivot:overviewtab#">Convert Text to Speech</a></li>
+</ul>
+<p>Servicios.</p>
+<ul>
+<li><a href="https://aws.amazon.com/es/polly/">Amazon Polly</a></li>
+<li><a href="https://aws.amazon.com/es/transcribe/">Amazon Transcribe</a></li>
+<li><a href="https://cloud.google.com/text-to-speech/">Google Text‑to‑Speech</a></li>
+<li><a href="https://azure.microsoft.com/es-es/services/cognitive-services/text-to-speech/">Microsoft Text to Speech</a></li>
+</ul>
+<h4 id="mozilla-tts">Mozilla TTS</h4>
+<p>La herramienta TTS es capaz de generar un audio de voz sintética a partir de un texto de bastante buena calidad. El audio de voz sintética no es perfecta ni tiene todos los matices en tono, velocidad de habla, contiene algunos defectos y otros matices de las voces humanas pero es aceptablemente bueno.</p>
+<p>TTS se ofrece como una imagen de <a href="https://www.docker.com/">Docker</a> que permite una instalación y uso sencillo de la herramienta. Previamente hay que <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/">instalar Docker</a>, una vez instalado descargar la <a href="https://github.com/synesthesiam/docker-mozillatts">imagen del contenedor TTS</a> e iniciar un contenedor de la herramienta TTS.</p>
+<p>Hay varias voces disponibles específicas para cada idioma, la del español se indica con <em>es</em>, la de inglés con <em>en</em></p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker run --rm -it -p 5002:5002 synesthesiam/mozillatts:es&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker.sh</span>
+    </div>
+</div>
+<p>Iniciado el servidor de TTS este ofrece dos interfaces una interfaz web en la dirección <em>http://localhost:5002/</em> y una interfaz de linea de comandos con una API REST. Tanto en la interfaz web como en la interfaz de linea de comandos se ha de indicar el texto que convertir a audio. Esto genera como resultado un archivo de audio en formato <em>wav</em>. Para que ocupe menos es posible convertirlo a <em>mp3</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ curl -o voice.wav -X POST -H <span class="s1">&#39;Content-Type: text/plain&#39;</span> --data <span class="s1">&#39;@text.txt&#39;</span> http://localhost:5002/api/tts&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>curl.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Interfaz web de Mozilla TTS"><img src="https://picodotdev.github.io/blog-bitix/2021/02/herramientas-para-convertir-texto-a-audio-de-voz-natural/images/mozilla-tts_hu79366de10d1d5b6673f1a83d83ff31aa_92030_300x200_fit_box_2.png" width="250" height="200" alt="Interfaz web de Mozilla TTS" title="Interfaz web de Mozilla TTS"  class="lozad "></a></p>
+<figcaption>Interfaz web de Mozilla TTS</figcaption>
+</figure>
+</div>
+<h4 id="espeak">espeak</h4>
+<p><em>espeak</em> y <em>espeak-ng</em> son dos herramientas de linea de comandos que aunque producen una voz sintetizada con un tono fácilmente reconocible como generado por computadora, robótico y metálico, son otras opciones conocidas.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ espeak -f text.txt -v europe/es -w voice.wav&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>espeak.sh</span>
+    </div>
+</div>
+<h3 id="lenguaje-de-marcado-de-síntesis-de-voz-ssml">Lenguaje de marcado de síntesis de voz (SSML)</h3>
+<p>Dependiendo de la herramienta de conversión de texto a voz la calidad de las voces de resultado son más fieles a la voz humana o son fácilmente reconocibles como haber sido generadas por una computadora. Algunas de estas herramientas ya producen conversiones de texto a voz que imitan con fidelidad las voces humanas haciendo uso de redes neuronales entrenadas. Un aspecto por el que son todavía fácilmente identificables es por la entonación y personalidad que los humanos imprimimos en el habla, sin ayuda las conversiones sintéticas de texto a voz son monótonas.</p>
+<p>El <a href="https://cloud.google.com/text-to-speech/docs/ssml">lenguaje de marcado de síntesis de voz</a> o SSML es un lenguaje que sirve de ayuda a la computadora para interpretar y dar entonación al texto a convertir a voz. Es un lenguaje similar al HTML, con etiquetas atributos y valores, utilizado en las páginas web pero con el propósito de la conversión a voz.</p>
+<p>Hay aplicaciones que permite la edición del texto para añadirle el lenguaje de marcado SSML.</p>
+<ul>
+<li><a href="https://www.getwoord.com/ssml-editor">getwoord ssml-editor</a></li>
+<li><a href="https://www.ssml-editor.com/">SSML Editor</a></li>
+<li><a href="https://www.amazon.com/-/es/dp/B07L64KVNR">SSML Editor</a> para Alexa, <a href="https://topvoiceapps.com/ssml">SSML WYSIWYG editor y probador</a></li>
+</ul>
+<h3 id="resultado-y-ejemplo-de-conversión-de-texto-a-voz">Resultado y ejemplo de conversión de texto a voz</h3>
+<p>El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi blog. Con los siguientes resultados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux,&#10;lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática.&#10;El contenido puede contener trazas de asuntos fuera de tema.&#10;&#10;Publicando de uno a tres artículos únicos a la semana desde el año 2010.</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>text.txt</span>
+    </div>
+</div>
+<p>Utilizando el servicio Microsoft Text to Speech.</p>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/microsoft-alvaro.mp3" type="audio/mpeg">
+</audio>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/microsoft-elvira.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando el servicio Free TTS.</p>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/freetts-enrique.mp3" type="audio/mpeg">
+</audio>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/freetts-lucia.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando Mozilla TTS.</p>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/mozilla-tts.mp3" type="audio/mpeg">
+</audio>
+<p>Utilizando espeak.</p>
+<audio style="width: 450px" controlslist="nodownload" controls="">
+    <source src="files/espeak.mp3" type="audio/mpeg">
+</audio>
+<h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
+<p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
+<p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ ffmpeg -i voice.wav -codec:a libmp3lame voice.mp3&#10;$ ffmpeg -i voice.wav -codec:a libvorbis voice.ogg&#10;$ ffmpeg -i voice.mp3 -codec:a libvorbis voice.ogg&#10;$ ffmpeg -i voice.mp3 -codec:a libmp3lame -b:a 128k voice.mp3</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>convert.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://alternativeto.net/software/from-text-to-speech/">From Text to Speech Alternatives</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_speech_synthesizers">Comparison of speech synthesizers</a></li>
+</ul>
+</div>
+]]>
+        </content>
+        
+            
+                <category term="gnu-linux"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/</id>
@@ -41,8 +190,8 @@
   <ul>
     <li><a href="#cómo-instalar-gnulinux-en-la-raspberry-pi">Cómo instalar GNU/Linux en la Raspberry Pi</a>
       <ul>
-        <li><a href="#instalar-raspberry-pi-os">Instalar Raspberry Pi OS</a></li>
-        <li><a href="#instalar-ubuntu-server">Instalar Ubuntu Server</a></li>
+        <li><a href="#raspberry-pi-os">Raspberry Pi OS</a></li>
+        <li><a href="#ubuntu-server">Ubuntu Server</a></li>
         <li><a href="#otras-distribuciones-y-documentación">Otras distribuciones y documentación</a></li>
       </ul>
     </li>
@@ -53,7 +202,7 @@
 <p>Una vez en posesión de una Raspberry Pi y elementos imprescindibles, cargador de alimentación y tarjeta SD o microSD y opcionalmente teclado y monitor, el primer paso es realizar la instalación del sistema operativo. El sistema operativo oficial es <a href="https://www.raspberrypi.org/software/">Raspberry Pi OS</a>.</p>
 <p>La instalación se hace en una tarjeta de memoria microSD o una memoria USB, para la instalación se requiere de otra computadora en la que utilizar la aplicación <em>Raspberry Pi Image</em> que descarga la imagen del sistema operativo y formatea la unidad de almacenamiento. Dispone de una versión para los sistemas operativos <a href="https://www.microsoft.com/es-es/windows/">Windows</a>, <a href="https://www.apple.com/macos/">macOS</a> y como aplicación <a href="https://flatpak.org/">Flatpak</a> para cualquier distribución <a href="https://www.gnu.org/">GNU</a>/<a href="https://www.linux.com/">Linux</a>.</p>
 <p>El grabar la imagen en la tarjeta de almacenamiento conlleva la pérdida de los datos que tuviese con lo es necesario previamente haber hecho una copia de seguridad de los datos que contenga.</p>
-<h4 id="instalar-raspberry-pi-os">Instalar Raspberry Pi OS</h4>
+<h4 id="raspberry-pi-os">Raspberry Pi OS</h4>
 <p>El sistema operativo Raspberry Pi OS está basado en la distribución <a href="https://www.debian.org/">Debian</a>, dispone de varias versiones una con entorno gráfico de escritorio y la versión <em>Lite</em> sin entorno de escritorio.</p>
 <p>Una de las ventajas de Raspberry Pi OS es que la misma imagen de la distribución sirve par cualesquiera versiones de la Raspberry Pi independientemente de las diferentes versiones que se han lanzado, incluyendo las primeras 1, 2, 3 y 4.</p>
 <p>La aplicación Raspberry Pi Image es muy sencilla, basta seleccionar la versión de la Raspberry Pi OS, insertar la tarjeta SD, seleccionar la unidad de la tarjeta SD y proceder a la instalación que se completa en unos pocos minutos. En la tarjeta SD se crean dos particiones, la de arranque o <em>boot</em> y la raíz o <em>root</em>.</p>
@@ -105,7 +254,7 @@
         <span>apt-install-nginx.sh</span>
     </div>
 </div>
-<h4 id="instalar-ubuntu-server">Instalar Ubuntu Server</h4>
+<h4 id="ubuntu-server">Ubuntu Server</h4>
 <p><a href="https://www.ubuntu.com/">Ubuntu</a> también ofrece una versión de su distribución GNU/Linux para la Raspberry Pi para las versiones 2+, no soportando los primeros modelos originales de la Raspberry Pi. La versión de escritorio de Ubuntu para la Raspberry Pi requiere al menos 4 GiB y la versión RPi 4, Ubuntu Server y Ubuntu Core no incluye interfaz gráfica.</p>
 <p>El proceso de instalación de Ubuntu tanto para la versión de escritorio como la para las versiones <em>Server</em> y <em>Core</em>, es posible realizarlas mediante Raspberry Pi Image. Raspberry Pi Image permite seleccionar la versión de Ubuntu y esta se encarga de descargarla e instalarla en la tarjeta microSD seleccionada.</p>
 <div class="media">
@@ -2095,93 +2244,6 @@ como estos además ser una forma de motivarme para continuar escribiendo en el b
                 <category term="planeta-codigo"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/</id>
-        <title>Para qué sirve la palabra clave final en el código fuente Java</title>
-        <updated>2020-12-18T18:00:00+01:00</updated>
-        <published>2020-12-18T18:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        
-        <![CDATA[<div class="logotypes">
-<p><img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java"  class=""></p>
-</div>
-<p>Algunas personas y en algunos proyectos Java añaden en la declaración de cada parámetro de un método o variable local la palabra reservada <em>final</em>.</p>
-<p>La palabra <em>final</em> tiene su utilidad pero hacerlo de forma indiscriminada y en la totalidad de cada parámetro y variable local de cada método hace más verboso el código sin proporcionar una utilidad significativa porque Java ya en ciertas circunstancias considera a muchas variables efectivamente como <em>final</em>, si al escribir el código se sigue la recomendación de no hacer nunca asignaciones sobre variables que son parámetros y se prefiere crear una nueva variable local en vez de modificar el valor de una existente.</p>
-<h3 id="qué-hace-la-palabra-clave-_final_">¿Qué hace la palabra clave <em>final</em>?</h3>
-<p>La palabra clave reservada <em>final</em> hace que el compilador genere un error de compilación cuando a una variable <em>final</em> se le intenta asignar un nuevo valor. El error de compilación quizá en algún caso evita un <em>bug</em> ya que no debería haber intención de asignar un nuevo valor a una variable <em>final</em>.</p>
-<p>La palabra clave reservada <em>final</em> se usa en diferentes contextos:</p>
-<ul>
-<li>En la declaración de variables: permite declarar constantes, no se puede asignar un nuevo valor a la variable una vez inicializada.</li>
-<li>En la declaración de un método: en este contexto una clase que herede un método <em>final</em> no puede redefinirlo en la clase hija, no se puede hacer un <em>override</em>.</li>
-<li>En la declaración de una clase: impide extender de la clase.</li>
-</ul>
-<p>Las tres formas de inicializar una variable declarada como <em>final</em> son:</p>
-<ul>
-<li>En su declaración.</li>
-<li>En el constructor.</li>
-<li>En el contexto estático si la variable es estática.</li>
-</ul>
-<p>Los constructores no pueden declararse como <em>final</em> ya que no se heredan.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bike</span> <span class="o">{</span>&#10;&#10;   <span class="kd">protected</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_SPEED</span> <span class="o">=</span> <span class="n">50</span><span class="o">;</span>&#10;&#10;   <span class="kd">protected</span> <span class="kt">int</span> <span class="n">speed</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="k">this</span><span class="o">.</span><span class="na">speed</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span>&#10;   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kd">final</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;running&#34;</span><span class="o">);</span>&#10;   <span class="o">}</span>&#10;<span class="o">}</span> </code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Bike.java</span>
-    </div>
-</div>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span><span class="lnt">9&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="nc">Honda</span> <span class="kd">extends</span> <span class="n">Bike</span> <span class="o">{</span>&#10; &#10;  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[])</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">Honda</span> <span class="n">honda</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Honda</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">honda</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>&#10;  <span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Honda.java</span>
-    </div>
-</div>
-<h3 id="debería-añadirse-la-palabra-clave-_final_-a-cada-uno-de-los-argumentos-de-un-método-y-variables-locales">¿Debería añadirse la palabra clave <em>final</em> a cada uno de los argumentos de un método y variables locales?</h3>
-<p>En teoría, sí. En la práctica, no. Sólo es útil en métodos cuyo código es largo y complicado, y en ese caso el método debería simplificarse, o cuando el argumento tiene la posibilidad de confundirse con una variable local o miembro de la clase con la posibilidad de reasignación.</p>
-<p>Aunque un argumento de un método se declare como <em>final</em> e impide asignarle un valor no se impide modificar su estado si esa variable es una referencia a un objeto como es modificar los elementos de una colección. Para evitar modificaciones en colecciones hay que hacerlas inmutables.</p>
-<p>La palabra <em>final</em> en un argumento sirve para capturar un error en el que el nombre de la variable del argumento se llama igual que una propiedad de la clase en un constructor o un <em>setter</em>, pero usarlo de forma indiscriminada para todos los argumentos puede hacer el código aún más verboso sin proporcionar nada significativo, en los constructores y métodos <em>setter</em>  puede ser útil como en el siguiente caso pero en el resto de métodos no es significativamente útil con el coste de legibilidad del código que genera.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="o">...</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bike</span> <span class="o">{</span> &#10;&#10;   <span class="o">...</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span> <span class="c1">// Compiler error: Cannot assign a value to final variable &#39;speed&#39;&#10;</span><span class="c1"></span>   <span class="o">}</span>&#10;&#10;   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMaxSpeed</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">speed</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">MAX_SPEED</span> <span class="o">=</span> <span class="n">speed</span><span class="o">;</span> <span class="c1">// Compiler error: Cannot assign a value to final variable &#39;MAX_SPEED&#39;&#10;</span><span class="c1"></span>   <span class="o">}</span>&#10;&#10;   <span class="o">...</span>&#10;<span class="o">}</span> </code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>Bike-setter.java</span>
-    </div>
-</div>
-<p>Aunque una variable no se indique como <em>final</em> Java la considera efectivamente como <em>final</em> si se dan las siguientes circunstancias en el caso de que tenga inicializador:</p>
-<ul>
-<li>No está declarada como <em>final</em>.</li>
-<li>No aparece en la parte izquierda de una expresión de asignación (la asignación en la declaración no se considera una expresión de asignación).</li>
-<li>No aparece nunca como un operando de un operador <em>pre</em> o <em>post</em> incremento o decremento.</li>
-</ul>
-<p>Una variable que no tenga inicializador se considera efectivamente como <em>final</em> si:</p>
-<ul>
-<li>No está declarada como <em>final</em>.</li>
-<li>Cuando aparece como una expresión de asignación, está sin asignar.</li>
-<li>No aparece nunca como un operando de un operador <em>pre</em> o <em>post</em> incremento o decremento.</li>
-</ul>
-<p>Si una variable es efectivamente <em>final</em> añadir el modificador <em>final</em> no genera ningún error en tiempo de compilación. Una variable o parámetro que es declarado como <em>final</em> en un programa válido se convierte en efectivamente <em>final</em> si se elimina el modificador <em>final</em>.</p>
-<p>También suele comentarse que una variable <em>final</em> ofrece mejor rendimiento, la diferencia de rendimiento no es significativa y si el rendimiento del programa depende de optimizarlo con palabras clave <em>final</em> seguramente haya muchas otras cosas a mejorar primero que el uso de palabras reservadas <em>final</em>. Otra justificación para el uso indiscriminado de la palabra <em>final</em> es en programas concurrentes con varios hilos con la intención de que los hilos no vean objetos parcialmente construidos, casos avanzados en los que quizá las primitivas de sincronización sea más adecuado.</p>
-<div class="reference">
-    Referencia:<br>
-<ul>
-<li><a href="https://www.javatpoint.com/final-keyword">Final Keyword In Java</a></li>
-<li><a href="https://www.geeksforgeeks.org/final-keyword-java/">final keyword in java</a></li>
-<li><a href="https://stackoverflow.com/questions/4279420/does-use-of-final-keyword-in-java-improve-the-performance">Does use of final keyword in Java improve the performance?</a></li>
-<li><a href="https://softwareengineering.stackexchange.com/questions/98691/excessive-use-final-keyword-in-java">Excessive use “final” keyword in Java</a></li>
-<li><a href="https://dzone.com/articles/final-keyword-and-jvm-memory-impact">Final Keyword and JVM Memory Impact</a></li>
-<li><a href="https://www.javamex.com/tutorials/synchronization_final.shtml">Thread-safety with the Java final keyword</a></li>
-</ul>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="java"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

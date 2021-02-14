@@ -1,0 +1,1 @@
+$ curl -o voice.wav -X POST -H 'Content-Type: text/plain' --data '@text.txt' http://localhost:5002/api/tts
