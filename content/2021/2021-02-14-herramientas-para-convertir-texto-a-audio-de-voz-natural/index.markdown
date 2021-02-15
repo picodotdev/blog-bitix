@@ -95,33 +95,21 @@ El texto que he utilizado para hacer pruebas ha sido el de la descripción de mi
 
 Utilizando el servicio Microsoft Text to Speech.
 
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/microsoft-alvaro.mp3" type="audio/mpeg">
-</audio>
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/microsoft-elvira.mp3" type="audio/mpeg">
-</audio>
+{{< audio src="files/microsoft-alvaro.mp3" type="audio/mpeg" >}}
+{{< audio src="files/microsoft-elvira.mp3" type="audio/mpeg" >}}
 
 Utilizando el servicio Free TTS.
 
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/freetts-enrique.mp3" type="audio/mpeg">
-</audio>
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/freetts-lucia.mp3" type="audio/mpeg">
-</audio>
+{{< audio src="files/freetts-enrique.mp3" type="audio/mpeg" >}}
+{{< audio src="files/freetts-lucia.mp3" type="audio/mpeg" >}}
 
 Utilizando Mozilla TTS.
 
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/mozilla-tts.mp3" type="audio/mpeg">
-</audio>
+{{< audio src="files/mozilla-tts.mp3" type="audio/mpeg" >}}
 
 Utilizando espeak.
 
-<audio style="width: 450px" controlslist="nodownload" controls="">
-    <source src="files/espeak.mp3" type="audio/mpeg">
-</audio>
+{{< audio src="files/espeak.mp3" type="audio/mpeg" >}}
 
 ### Convertir el audio en formato _wav_ a _mp3_
 

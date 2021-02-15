@@ -60,7 +60,7 @@ Este [año 2017 he escrito los artículos][blogbitix-section-2017] y este semest
 * [Obtener el mínimo o máximo de dos, una lista o stream de valores en Java][blogbitix-269]
 * [Las excepciones para gestionar errores en Java][blogbitix-270]
 * [Obtener información de la pila de las excepciones][blogbitix-271]
-* [Implementar funcionalidades comunes en Java con la librería Lombok][blogbitix-272]
+* [Formas de reducir el código de las clases POJO de Java][blogbitix-272]
 * [Visualizar datos y generar gráficas en Java con JFreeChart][blogbitix-273]
 * [La forma correcta de ordenar alfabéticamente cadenas en Java][blogbitix-276]
 * [Introducción a la programación funcional con Java y la librería Vavr][blogbitix-288]
