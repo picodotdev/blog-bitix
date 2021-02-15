@@ -24,15 +24,15 @@ Java es un lenguaje verboso además requerir realizar las definiciones de forma 
 
 Un ejemplo claro está en las clases POJO que sieguen las convenciones de los _beans_ con múltiples propiedades donde por cada propiedad es necesario definir un método _get_ y un método _set_ además [implementar de forma correcta los métodos _equals_ y _hashCode_][blogbitix-199], el método _toString_, utilizar el [patrón builder][blogbitix-99], múltiples constructores con combinaciones de propiedades o comprobaciones para valores no nulos en parámetros.
 
-Aunque los entornos integrados de desarrollo como [IntelliJ][intellij] o [eclipse][eclipse] permiten generar de forma rápida los métodos _getter_, _setter_, _equals_ y _hashCode_ cuando son numerosas las clases a generar de esta forma el tiempo necesario para crearlas y mantenerlo es elevado. Todos estos métodos no son complicados pero dado su número también se convierte en un problema de mantenimiento y legibilidad, además de que mayor dificultad para mantener la consistecia en todas las clases.
+Aunque los entornos integrados de desarrollo como [IntelliJ][intellij] o [eclipse][eclipse] permiten generar de forma rápida los métodos _getter_, _setter_, _equals_ y _hashCode_ cuando son numerosas las clases a generar de esta forma el tiempo necesario para crearlas y mantenerlo es elevado. Todos estos métodos no son complicados pero dado su número también se convierte en un problema de mantenimiento y legibilidad, además de que mayor dificultad para mantener la consistencia en todas las clases.
 
 Y aunque los IDE tiene la capacidad e generar algunos métodos no tienen la funcionalidad de generar las clases del patrón _Builder_. Implementar un patrón _Builder_ puede complicarse con el número de funcionalidades que se le incorporen.
 
-Para facilitar el mantenimiento y reducir el número de líneas de código que requiere Java para estas clases, que aún simples sean numerosas y no tengan muchos métodos propios, hay dos librerías utilizables que se encargan mediante anotaciones de generarlas y construir las clases _Builder_ asociadas.
+Para facilitar el mantenimiento y reducir numerosas líneas de código de _boilerplate_ que requiere Java para estas clases, que aún simples sean numerosas y no tengan muchos métodos propios, hay dos librerías utilizables que se encargan mediante anotaciones de generarlas y construir las clases _Builder_ asociadas.
 
 ### Librerías para reducir el código de las clase POJO de Java
 
-Es habitual que en una aplicación se necesiten clases como simplemente estrucutras de datos y objetos para transferir datos o en el caso de [implementar DDD y algunos patrones tácticos][blogbitix-553] como los _value objects_. Clases que que tienen unas pocas propiedades y son inmutables.
+Es habitual que en una aplicación se necesiten clases como simplemente estructuras de datos y objetos para transferir datos o en el caso de [implementar DDD y algunos patrones tácticos][blogbitix-553] como los _value objects_. Clases que que tienen unas pocas propiedades y son inmutables.
 
 Dos librerías que permiten simplificar estas clases son [Immutables][immutables] y [Lombok][lombok]. Ambas se basan en el uso de anotaciones, aunque la implementación en cada una de ellas es diferente, la implementación de Immutables tiene algunas ventajas.
 
@@ -64,11 +64,9 @@ Además de por modificar el archivo _class_ generado por el compilador y necesit
 
 Los _records_ de Java incorporados desde la versión 14 de Java permiten definir clases inmutables y con un código mínimo para estas clases que básicamente se componen de un conjunto de propiedades. Los _recrods_ son la implementación nativa proporcionada por Java para estas clases, sin embargo, no se proporcionan las clases _Builder_ y estos hay que seguir implementándolos.
 
-### Ejemplo de código
-
-Definir una clase con estas anotaciones es de la siguiente forma con las librerías Immutales y Lombok.
-
 {{< code file="Car-record.java" language="java" options="" >}}
+
+### Ejemplo de código
 
 Un programa de ejemplo que hace uso de estas clases es el siguiente.
 
