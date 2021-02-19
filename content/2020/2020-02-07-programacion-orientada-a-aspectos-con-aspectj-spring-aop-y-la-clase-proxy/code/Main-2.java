@@ -6,7 +6,8 @@ package io.github.picodotdev.blogbitix.aspects;
 @EnableAspectJAutoProxy
 public class Main implements CommandLineRunner {
 
-    ...
+    @Autowired
+    private Foo fooBean;
 
     @Bean
     public Foo foo() {

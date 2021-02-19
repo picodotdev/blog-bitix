@@ -96,7 +96,7 @@ Para que Spring procese las anotaciones require usar la anotación [@EnableAspec
 
 {{< code file="Main-2.java" language="java" options="" >}}
 
-El _plugin_ para realizar el proceso de _weaving_ con AspectJ no es necesario. Spring realiza e proceso de _weaving_ en tiempo de ejecución.
+El _plugin_ para realizar el proceso de _weaving_ con AspectJ no es necesario. Spring realiza el proceso de _weaving_ en tiempo de ejecución.
 
 {{< code file="build-2.gradle" language="groovy" options="" >}}
 
