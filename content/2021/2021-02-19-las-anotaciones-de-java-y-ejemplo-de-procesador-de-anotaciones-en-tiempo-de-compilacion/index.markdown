@@ -38,7 +38,7 @@ Este es el código básico de una anotación y su uso en una clase, su definici�
 
 Las anotaciones tienen una sintaxis especial y definen atributos para en el momento de utilización proporcionar valores. Además poseen un [nivel de retención](javadoc11:java.base/java/lang/annotation/RetentionPolicy.html) según el cual la anotación está disponible:
 
-* _Runtime_: la información de las anotaciones quedan disponibles hasta en tiempo de ejecución y accesible mediante reflectividad con los métodos de la clase [Class](javadoc11:java.base/java/lang/Class.html).
+* _Runtime_: la información de las anotaciones quedan disponibles hasta en tiempo de ejecución y accesible mediante reflexión con los métodos de la clase [Class](javadoc11:java.base/java/lang/Class.html).
 * _Class_: el compilador emite las anotaciones en tiempo de compilación en los archivos _class_ de _bytecode_ pero no están disponibles en tiempo de ejecución. Puede ser útil para herramientas que procesa los archivos de _bytecode_.
 * _Source_: las anotaciones son procesadas y descartadas en tiempo de compilación.
 
@@ -65,7 +65,7 @@ El JDK ofrece una API para el desarrollo de procesadores de anotaciones. Un proc
 
 Al definir el procesador de anotaciones se indica que anotaciones soporta el procesador y que nivel de código fuente soporta. El compilador de Java al realizar el proceso de compilación invoca a los procesadores de anotaciones proporcionando los elementos de código fuente que los contienen.
 
-El método principal a implementar es el método [process](javadoc11:java.compiler/javax/annotation/processing/Processor.html#process(java.util.Set,javax.annotation.processing.RoundEnvironment)), el procesador ha de recopilar la información que necesite a través de los objetos proporcionados en el método y hacer uso de los servicios proporcionados en la clase [ProcessingEnvironment](javadoc11:java.compiler/javax/annotation/processing/ProcessingEnvironment.html). Para generar archivos de código fuente se utiliza el servicio [Filer](javadoc11:java.compiler/javax/annotation/processing/Filer.html) y para emitir mensjaes de error el servicio [Messager](javadoc11:java.compiler/javax/annotation/processing/Messager.html).
+El método principal a implementar es el método [process](javadoc11:java.compiler/javax/annotation/processing/Processor.html#process(java.util.Set,javax.annotation.processing.RoundEnvironment)), el procesador ha de recopilar la información que necesite a través de los objetos proporcionados en el método y hacer uso de los servicios proporcionados en la clase [ProcessingEnvironment](javadoc11:java.compiler/javax/annotation/processing/ProcessingEnvironment.html). Para generar archivos de código fuente se utiliza el servicio [Filer](javadoc11:java.compiler/javax/annotation/processing/Filer.html) y para emitir mensajes de error el servicio [Messager](javadoc11:java.compiler/javax/annotation/processing/Messager.html).
 
 Con la infraestructura de servicios de Java se define el procesador de anotaciones creando un archivo de texto en la ubicación _META-INF.services/javax.annotation.processing.Processor_. El archivo contiene una línea por cada procesador de anotaciones de la librería. Los procesadores de anotaciones también se puede especificar de forma explícita con la opción _-processor_ de _javac_.
 
@@ -101,11 +101,11 @@ La clase _Foo_ al estar anotada con la anotación _Foo_ pero no redefinir los m�
 
 Para que Gradle utilice los procesadores de anotaciones definidos en una librería hay que declararlo en la sección de dependencias mediante _annotationProcessor_.
 
-{{< code file="build-2.gradle" language="groovy" options="" >}}
+{{< code file="build-annotationprocessor.gradle" language="groovy" options="" >}}
 
 Esta dependencia se instala en el repositorio de [Maven][maven] local haciendo uso del _plugin_ _maven-publish_.
 
-{{< code file="build-1.gradle" language="groovy" options="" >}}
+{{< code file="build-javaannotations.gradle" language="groovy" options="" >}}
 
 {{% sourcecode git="blog-ejemplos/tree/master/JavaAnnotationProcessor" command="./gradlew annotationprocessor:publishToMavenLocal && ./gradlew main:run" %}}
 
