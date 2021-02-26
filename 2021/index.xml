@@ -40,6 +40,12 @@
 <p>Vault es una herramienta dedicada a la seguridad de la empresa HashiCorp. Tiene diferentes funcionalidades como servir de almacenamiento de secretos en su base de datos de claves y valores, <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/">generar credenciales de acceso bajo demanda a recursos como bases de datos</a> entre otras como cifrado y descifrado como servicio. En todas estás funcionalidades diversos aspectos de la seguridad se centralizan en un único componente del sistema.</p>
 <p>Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplicaciones no han de mantener credenciales para el acceso a una base de datos sino que es Vault el que crea las credenciales válidas únicamente por un periodo de tiempo corto con posibilidad de renovación. Esto aumenta la seguridad ya que una aplicación no ha de mantener unas credenciales para la base de datos válidas por un tiempo indefinido, al mismo tiempo las claves de cifrado están centralizadas en vez estar incluidas en cada aplicación. En caso necesario Vault es capaz de revocar las credenciales de cualquier aplicación.</p>
 <p>Vault ofrece dos servicios para proteger los datos, el servicio de cifrado y descifrado está disponible en Vault y el de transformación requiere la versión <em>Enterprise</em>.</p>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/HVK-a8SKqvc" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
+<div class="media media-video">
+  <iframe width="640" height="360" src="https://www.youtube.com/embed/DOw0Y6ig1i4" frameborder="0" class="lozad" allowfullscreen></iframe>
+</div>
 <h4 id="servicio-de-cifrado-y-descifrado">Servicio de cifrado y descifrado</h4>
 <p>El servicio de cifrado y descifrado de Vault consisten simplemente en aplicar un algoritmo de cifrado a un dato en texto plano y devolverlo cifrado y realizar la operación contraria aplicar el algoritmo de descifrado a un dato cifrado y devolverlo en texto plano. Además de mantener las claves de cifrado con la posibilidad rotarlas, es decir, crear nuevas claves.</p>
 <p>El proceso de cifrado de Vault transforma el dato original en un valor que no tiene ningún sentido sin aplicar el proceso de descifrado. El formato del dato original se pierde, esto es, si el dato original es un número de teléfono con el formato <em>(+34) 666554433</em> el dato cifrado es una secuencia de caracteres de cierta longitud con otro formato. Esta pérdida de formato es un inconveniente al guardar el dato en la base de datos para solventarlo Vault ofrece el servicio de transformación.</p>
@@ -420,27 +426,27 @@
     </div>
 </div>
 <p>Utilizando el servicio Microsoft Text to Speech.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/microsoft-alvaro.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/microsoft-elvira.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando el servicio Free TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/freetts-enrique.mp3" type="audio/mpeg">
-</amp-audio>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+</audio>
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/freetts-lucia.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando Mozilla TTS.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/mozilla-tts.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <p>Utilizando espeak.</p>
-<amp-audio width="300" style="width: 300px" controlslist="nodownload" controls="">
+<audio width="300" style="width: 300px" controlslist="nodownload" controls="">
   <source src="files/espeak.mp3" type="audio/mpeg">
-</amp-audio>
+</audio>
 <h3 id="convertir-el-audio-en-formato-_wav_-a-_mp3_">Convertir el audio en formato <em>wav</em> a <em>mp3</em></h3>
 <p>En el artículo cómo <a href="https://picodotdev.github.io/blog-bitix/2016/03/cambiar-el-formato-de-archivos-de-musica-o-audio-en-gnu-linux/">Cambiar el formato de archivos de música o audio en GNU/Linux</a> comentaba cómo convertir diferentes tipos de audio entre formatos con la herramienta <a href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 <p>El comando para convertir un <em>wav</em> a los formatos <em>mp3</em> y <em>ogg</em> comprimidos que ocupan significativamente menos sin pérdida de calidad perceptible son los siguientes. En función del formato</p>

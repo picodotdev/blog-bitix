@@ -63,7 +63,7 @@
     "dateModified": "2019-07-27T23:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1193",
+    "wordCount": "1192",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -341,6 +341,18 @@
 <li>Concesión y renovación: todos los secretos en Vault tienen un tiempo de concesión asociado. Al finalizar la concesión Vault los revoca automáticamente, los clientes pueden solicitar renovar las concesiones mediante las API disponibles de Vault.</li>
 <li>Revocación: integra la funcionalidad de revocación, no solo secretos individuales sino jerarquías de secretos. La revocación asiste en la rotación de las claves así como cerrar el sistema en caso de intrusión.</li>
 </ul>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="VYfl-DpZ5wM"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="NxL2-XuZ3kc"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
 <h3 id="conceptos">Conceptos</h3>
 <p>Los motores de secretos son uno de los conceptos en el ámbito de Vault. Son componentes que permite almacenar, generar o cifrar datos. Algunos motores de secretos simplemente almacenan y leen datos, otros se conectan a otros servicios y generan credenciales dinámicamente bajo demanda. Otros motores de secretos proporcionan el cifrado como servicio, <em>tokens</em> de un solo uso, certificados y mucho más.</p>
 <ul>
@@ -356,7 +368,7 @@
 <p>La <a href="https://www.vaultproject.io/docs/audit/index.html">auditoria</a> permite obtener una trazabilidad de las operaciones que se han realizado, dado que todas las operaciones se realizan mediante una API el <em>log</em> de auditoría es simplemente cada interacción autenticada con Vault, incluidas los errores. Puede ser un archivo o un <em>socket</em>.</p>
 <p>Todo en Vault está basado en <em>paths</em>. Las <a href="https://www.vaultproject.io/docs/concepts/policies.html"><em>policies</em></a> permiten o deniegan el acceso a ciertos <em>paths</em>.  Poseen la siguiente sintaxis, donde las <em>capabilities</em> son las operaciones CRUD permitidas.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">path &#34;secret/*&#34; {&#10;  capabilities = [&#34;create&#34;, &#34;read&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;list&#34;]&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">path</span> <span class="s2">&#34;secret/*&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;create&#34;, &#34;read&#34;, &#34;update&#34;, &#34;delete&#34;, &#34;list&#34;</span><span class="p">]</span>&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>policy.hcl</span>
     </div>

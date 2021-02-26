@@ -63,7 +63,7 @@
     "dateModified": "2019-08-23T09:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1017",
+    "wordCount": "1014",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -360,7 +360,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">ui = true&#10;&#10;storage &#34;consul&#34; {&#10; address = &#34;127.0.0.1:8500&#34;&#10; path  = &#34;vault&#34;&#10;}</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <pre><code class="language-hcp" data-lang="hcp">ui = true&#10;&#10;storage &#34;consul&#34; {&#10; address = &#34;127.0.0.1:8500&#34;&#10; path  = &#34;vault&#34;&#10;}</code></pre>
     <div class="highlight-meta">
         <span>vault.hcl</span>
     </div>
@@ -401,7 +401,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">path &#34;secret/application&#34; {&#10;  capabilities = [&#34;read&#34;]&#10;}&#10;&#10;path &#34;secret/app&#34; {&#10;  capabilities = [&#34;read&#34;]&#10;}&#10;&#10;path &#34;database/creds/app&#34; {&#10;  capabilities = [&#34;read&#34;]&#10;}&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-hcl" data-lang="hcl"><span class="k">path</span> <span class="s2">&#34;secret/application&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;read&#34;</span><span class="p">]</span>&#10;}&#10;&#10;<span class="k">path</span> <span class="s2">&#34;secret/app&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;read&#34;</span><span class="p">]</span>&#10;}&#10;&#10;<span class="k">path</span> <span class="s2">&#34;database/creds/app&#34;</span> {&#10;<span class="n">  capabilities</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;read&#34;</span><span class="p">]</span>&#10;}&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>database-app.hcl</span>
     </div>
