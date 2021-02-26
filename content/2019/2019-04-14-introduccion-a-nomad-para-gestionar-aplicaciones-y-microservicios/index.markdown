@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:nomad.svg"
+imagePost: "logotype:hashicorp-nomad.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
 summary: "En las aplicaciones basadas en microservicios dado el número de ellos y de instancias tienen han de gestionarse como si fuesen ganado en vez como si fuesen animales de compañía. Nomad es un orquestador de servicios que a diferencia de Docker Swarm permite gestionar servicios con otros sistemas de ejecución además de contenedores docker y a diferencia de Kubernetes es más sencillo."
@@ -18,7 +18,7 @@ summary: "En las aplicaciones basadas en microservicios dado el número de ellos
 
 {{% post %}}
 
-{{< logotype image1="nomad.svg" image2="consul.svg" image3="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-nomad.svg" image2="hashicorp-consul.svg" image3="hashicorp.svg" >}}
 
 En las arquitecturas de aplicaciones basadas en microservicios cada microservicio o simplemente servicio es una aplicación distinta e independiente, son varias aplicaciones que hay que gestionar y desplegar de forma individual o de forma coordinada.
 

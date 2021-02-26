@@ -18,7 +18,7 @@ summary: "Los errores no se planifican, se producen de forma inesperada. Además
 
 {{% post %}}
 
-{{< logotype image1="nomad.svg" image2="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-nomad.svg" image2="hashicorp.svg" >}}
 
 En el desarrollo de una aplicación se dedica un considerable esfuerzo a tener la mayor seguridad que los cambios no introducen errores, se realizan numerosas pruebas unitarias, pruebas de integración, si es una aplicación web pruebas funcionales simulando la interacción de un usuario. Todas estas pruebas se ejecutan además del equipo de cada desarrollador en un entorno de integración continua o CI en cada _commit_ al repositorio de control de versiones del código fuente, el equipo de desarrollo recibe una notificación con inmediatez en caso de fallar alguna prueba. Aún se hacen mas pruebas algunas manuales en un entorno de _staging_ que tiene una configuración similar al de producción. Finalmente, se despliega la versión validada en producción todavía haciendo más comprobaciones con estrategias de despliegue _blue/green_ y _canary_, si no se ha descubierto ningún error se promociona la versión en todas las instancias.
 

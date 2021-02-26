@@ -9,7 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:vault.svg"
+imagePost: "logotype:hashicorp-vault.svg"
 tags: ["programacion", "planeta-codigo", "software"]
 series: ["hashicorp"]
 summary: "Una de las funcionalidades proporcionada por Vault es generar credenciales dinámicas para la conexión a bases de datos. Generar las credenciales de forma dinámica proporciona varios beneficios: no hay unas credenciales que usen las aplicaciones que tengan un tiempo de vida indefinido, las aplicaciones no necesitan guardar en su configuración las credenciales, las credenciales se rotan de forma automática y los permisos para obtenerlas se pueden revocar de forma centralizada con Vault para cuales quiera bases de datos que se utilicen. Soporta las bases de datos más populares entre ellas PostgreSQL."
@@ -17,7 +17,7 @@ summary: "Una de las funcionalidades proporcionada por Vault es generar credenci
 
 {{% post %}}
 
-{{< logotype image1="vault.svg" image2="postgresql.svg" >}}
+{{< logotype image1="hashicorp-vault.svg" image2="postgresql.svg" >}}
 
 Las base de datos para proteger los datos realizan autenticación del usuario que se conecta. Normalmente utilizando un usuario y contraseña, una vez autenticado el usuario mediante permisos se realiza la autorización de las operaciones que puede realizar, a que bases de datos se puede conectar, que tablas puede acceder y que operaciones puede realizar.
 

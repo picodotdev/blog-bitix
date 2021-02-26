@@ -18,16 +18,11 @@ summary: "HashiCorp proporciona una buena documentación de sus productos con tu
 
 {{% post %}}
 
-{{< logotype image1="consul.svg" image2="vault.svg" image3="nomad.svg" >}}
+{{< logotype image1="hashicorp-consul.svg" image2="hashicorp-vault.svg" image3="hashicorp-nomad.svg" >}}
 
 La empresa [HashiCorp][hashicorp] cataloga las necesidades de las aplicaciones basadas en la computación en la nube u orientadas a microservicios en cuatro aspectos que necesitan: aprovisionamiento, registro y conexión, seguridad y ejecución. HashiCorp en base a estos cuatro aspectos de las aplicaciones ha desarrollado para cada una de ellas una aplicación específica integrable con las otras pero también con la posibilidad de usar cada una de forma individual e independiente que permiten disponer de un centro de datos y cubre varias de las necesidades computacionales de una empresa en entornos modernos basados en nube que son dinámicos y requieren elasticidad.
 
 En muchas organizaciones los desarrolladores solo se encargan del desarrollo de la aplicación o servicio, del despliegue y administración se encargan los administradores de sistemas. Los centros de datos se operan en base a peticiones entre los desarrolladores y los administradores de sistemas, este modelo organización es lento y propenso a ineficiencias, para evitarlo hay que tratar que los desarrolladores sean lo más autosuficientes posible para operar el entorno de ejecución de sus servicios haciendo que estos no solo desarrollen sus aplicaciones sino que también tengan capacidad de desplegarlas y monitorizarlas.
-
-{{< image
-    gallery="true"
-    image1="image:hashicorp-static-dynamic.png" optionsthumb1="650x450" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
-    caption="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" >}}
 
 En este artículo muestro un ejemplo usando tres de estos mismos productos que se usarían en un entorno de producción [Consul][consul] para el registro de servicios y conexión de forma segura, [Vault][vault] para seguridad y servicios de cifrado y [Nomad][nomad] para la ejecución de servicios con contenedores [Docker][docker]. Para el aprovisionamiento y ejecutar el ejemplo en la propia máquina el ejemplo usa [Vagrant][vagrant] que permite crear y aprovisionar máquinas virtuales sobre [VirtualBox][virtualbox], en un entorno basado en la nube se usaría [Terraform][terraform]. Consul, Vault y Nomad forman lo que sería un centro de datos de un entorno de ejecución para aplicaciones y servicios.
 
@@ -39,6 +34,11 @@ En este artículo muestro un ejemplo usando tres de estos mismos productos que s
 * [Totorial](https://learn.hashicorp.com/terraform) y [documentación](https://www.terraform.io/docs/index.html) de Terraform
 * [Documentación de Vagrant](https://www.vagrantup.com/docs) y [documentación de Packer](https://www.packer.io/docs)
 * [Canal de YouTube de HashiCorp](https://www.youtube.com/c/HashiCorp/)
+
+{{< image
+    gallery="true"
+    image1="image:hashicorp-static-dynamic.png" optionsthumb1="650x450" title1="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"
+    caption="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" >}}
 
 Este artículo hace uso, está relacionado y se complementa con otros artículos que muestran varias de las funcionalidades individuales utilizadas en el ejemplo.
 

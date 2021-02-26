@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:vault.svg"
+imagePost: "logotype:hashicorp-vault.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
 summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucionan el problema de la seguridad de los secretos de forma similar, utilizando una única clave de cifrado. Los datos cifrados están siempre a un secreto (contraseña, clave, ...) de ser descifrados y generalmente no está bien protegidos dado que en un entorno elástico cada servidor necesita disponer de este secreto para descifrar los datos. Adicionalmente el acceso a los datos cifrados no está registrado de modo que si hay una intrusión no está claro que dato ha sido accedido y por quien. Utilizar variables de entorno para proporcionar secretos tampoco es seguro, y en entornos Docker suele usarse."
@@ -18,7 +18,7 @@ summary: "Herramientas de aprovisionamiento como Chef, Puppet y Ansible solucion
 
 {{% post %}}
 
-{{< logotype image1="vault.svg" image2="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-vault.svg" image2="hashicorp.svg" >}}
 
 La seguridad es un aspecto muy importante de los sistemas informáticos, no darle la consideración necesaria puede dar lugar a caídas de servicio y robo de datos potencialmente ocasionando importantes pérdidas de dinero, sanciones y pérdida de confianza de los clientes y proveedores de una organización.
 
@@ -43,7 +43,7 @@ Las características principales de Vault se engloban en tres aspectos de la seg
 
 * Almacenamiento seguro de secretos: se pueden almacenar secretos arbitrarios clave/valor. Los secretos son cifrados previamente a ser almacenados en el almacenamiento persistente de modo que obtener acceso al almacenamiento persistente no es suficiente para acceder a los secretos. Vault puede almacenar los secretos en disco, [Consul][consul] y más.
 * Secretos dinámicos: puede [generar secretos bajo demanda para bases de datos][blogbitix-428] o algunos sistemas como AWS. Por ejemplo, cuando una aplicación necesita acceso a una base de datos SQL solicita a Vault unas credenciales, Vault genera unas credenciales con los permisos adecuados. Después de crear estos secretos dinámicos también los revoca automáticamente una vez pasado su tiempo de concesión.
-* Cifrado de datos: puede cifrar y descifrar datos sin almacenarlos. Esto permite definir parámetros de seguridad y los desarrolladores almacenar los datos cifrados en localizaciones como bases de datos sin tener que diseñar sus propios métodos de cifrado.
+* Cifrado de datos: puede [cifrar y descifrar datos sin almacenarlos][blogbitix-557]. Esto permite definir parámetros de seguridad y los desarrolladores almacenar los datos cifrados en localizaciones como bases de datos sin tener que diseñar sus propios métodos de cifrado.
 * Concesión y renovación: todos los secretos en Vault tienen un tiempo de concesión asociado. Al finalizar la concesión Vault los revoca automáticamente, los clientes pueden solicitar renovar las concesiones mediante las API disponibles de Vault.
 * Revocación: integra la funcionalidad de revocación, no solo secretos individuales sino jerarquías de secretos. La revocación asiste en la rotación de las claves así como cerrar el sistema en caso de intrusión.
 

@@ -10,7 +10,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:consul.svg"
+imagePost: "logotype:hashicorp-consul.svg"
 tags: ["java", "planeta-codigo", "programacion", "software", "software-libre"]
 series: ["hashicorp", "spring-cloud"]
 summary: "Sin entrar a si los microservicios son adecuados o no son adecuados en una aplicación, está claro que si se utilizan estos tienen varias necesidades. Un servicio de registro y descubrimiento, configuración centralizada, tolerancia a fallos, _gateway/load balancer/reverse proxy_, trazabilidad y métricas, autenticación, orquestación, ... Los microservicios quizá no sean un gran monolito, quizá mas pequeños y con funcinalidad más acotada, pero el hecho de que se comuniquen a través de un medio más complejo y menos fiable como la red en vez de una llamada a un método y sean más numerosos hacen que la complejidad sea incluso mayor. Este artículo propone un ejemplo con Spring Cloud para los servicios, Consul para el registro y descubrimiento, Nomad para la orquestación y Traefik como _gateway_."
@@ -45,8 +45,8 @@ Además, en este ejemplo reemplazo varias de estas herramientas de Spring. Susti
 
 {{< image
     gallery="false"
-    image1="logotype:consul.svg" optionsthumb1="200x200" title1="Consul"
-    image2="logotype:nomad.svg" optionsthumb2="200x200" title1="Nomad"
+    image1="logotype:hashicorp-consul.svg" optionsthumb1="200x200" title1="Consul"
+    image2="logotype:hashicorp-nomad.svg" optionsthumb2="200x200" title1="Nomad"
     image3="logotype:traefik.svg" optionsthumb3="200x200" title1="Traefik" >}}
 
 Traefik se configura con los servicios iniciados en los contenedores de Docker utilizando junto con los bloques o _stanzas_ de _config_ y _tags_ en la definición de los servicios de Nomad. Según el criterio definido por el servicio Traefik es capaz de redirigir el tráfico que le llegue al servicio apropiado, entre las posibilidades que puede realizar Traefik es balanceo de carga entre las múltiples instancias que se hayan definido pero también implementa patrones de tolerancia a fallos con reintentos, el patrón _circuit breaker_ o limitar el tráfico para evitar saturar a un servicio con demasiadas peticiones.

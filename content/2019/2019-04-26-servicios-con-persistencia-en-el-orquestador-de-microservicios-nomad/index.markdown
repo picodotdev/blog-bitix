@@ -11,7 +11,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:nomad.svg"
+imagePost: "logotype:hashicorp-nomad.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
 summary: "Los servicios que necesitan almacenar datos como las bases de datos o un sistema de archivos tienen más restricciones que los servicios sin estado por la necesidad de tener acceso a esos datos. Esto hace que los contenedores puedan no tener tanta libertad para iniciarse en cualquier nodo. En Nomad una estrategia es imponer ciertas restricciones a los servicios que almacenen estado para que solo se puedan iniciar en el nodo que donde estén almacenados."
@@ -19,7 +19,7 @@ summary: "Los servicios que necesitan almacenar datos como las bases de datos o 
 
 {{% post %}}
 
-{{< logotype image1="nomad.svg" image2="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-nomad.svg" image2="hashicorp.svg" >}}
 
 Algunos servicios no necesitan almacenar ningún estado porque no lo necesitan o porque el estado se mantiene en otro servicio. Que un servicio no necesite mantener estado es bueno porque de esta manera el servicio se puede escalar al número de instancias adecuadas para prestar el servicio, también porque si falla una instancia la petición puede ser reenviada a otra instancia, una instancia que falla puede ser reemplazada sin problema en otro _host_. Sin embargo, hay otro tipo de instancias que si almacenan estado como las bases de datos ya sea [PostgreSQL][postgresql], [MySQL][mysql], [Redis][redis], [MongoDB][mongodb], otra o simplemente archivos en el sistema de archivos.
 

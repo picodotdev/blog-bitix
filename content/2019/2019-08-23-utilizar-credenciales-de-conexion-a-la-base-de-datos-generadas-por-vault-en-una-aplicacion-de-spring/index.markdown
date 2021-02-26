@@ -17,7 +17,7 @@ summary: "Spring Cloud Vault facilita la integración con Vault, una de sus usos
 
 {{% post %}}
 
-{{< logotype image1="spring.svg" image2="vault.svg" >}}
+{{< logotype image1="spring.svg" image2="hashicorp-vault.svg" >}}
 
 La herramienta [Vault][vault] de [HashiCorp][hashicorp] permite almacenar secretos, otra de sus funcionalidad es ser capaz de generar credenciales de forma dinámica. Habitualmente una aplicación para conectarse a una base de datos incluye en su configuración las credenciales, usuario y contraseña, para autenticarse y crear las conexiones, estas credenciales tiene un tiempo de vida indefinido y comprometidas proporcionan acceso a la base de datos.
 
@@ -71,7 +71,7 @@ Obtenido un _role-id_ y un _secret-id_ so observa los _policies_ asociados adem�
 
 En este caso la aplicación de Spring incluye en su configuración las credenciales del _AppRole_, también se puede proporcionar como variables de entorno y propiedades del sistema.
 
-{{% sourcecode git="blog-ejemplos/tree/master/SpringCloudVault" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/SpringCloudVaultDynamicCredentials" %}}
 
 {{< reference >}}
 * [An Intro to Spring Cloud Vault](https://www.baeldung.com/spring-cloud-vault)

@@ -17,13 +17,15 @@ summary: "La configuración de seguridad estática y basada en direcciones IP no
 
 {{% post %}}
 
-{{< logotype image1="consul.svg" image2="nomad.svg" image3="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-consul.svg" image2="hashicorp-nomad.svg" image3="hashicorp.svg" >}}
 
 El método habitual para proporcionar seguridad a varios sistemas que se comunican por red ha sido utilizar protocolos de comunicaciones cifrados, poner cortafuegos e impedir una comunicación directa con algunos sistemas como las base de datos en ocasiones en base a direcciones IP. La configuración estática cuando hay que adaptarla por añadir nuevos sistemas es difícil de cambiarla.
 
 En un entorno en la nube, aún con sus propias medidas de seguridad y aislamiento que implementan, la infraestructura no es confiable por ser compartida con otras organizaciones como demuestran los [fallos de seguridad de meltdown y spectre de los procesadores][blogbitix-293] por su ejecución especulativa. En una arquitectura dinámica de múltiples microservicios e instancias una configuración estática no es práctica para un sistema que por naturaleza es altamente dinámico y en un medio de computación compartido no confiable hay que adoptar medidas adicionales.
 
 La propuesta que ofrecen algunas herramientas nativas para la computación en la nube es proporcionar seguridad realizando cada comunicación servicio a servicio de forma cifrada y transparente para las aplicaciones incluso si estas no implementan comunicación cifrada de forma nativa, con autenticación mutua entre los dos servicios utilizando su identidad en vez de direcciones IP y con autorizaciones basadas en intenciones fáciles de administrar y cambiar.
+
+Una de estas herramientas es [Consul][Consul] que proporciona la funcionalidad de registro y descubrimiento de servicios y conectividad entre esos servicios. Consul Connect proporciona comunicaciones seguras de forma transparente para las aplicaciones.
 
 {{< image
     gallery="true"
@@ -35,8 +37,6 @@ La propuesta que ofrecen algunas herramientas nativas para la computación en la
     image1="image:infrastructure-dynamic.png" optionsthumb1="300x200" title1="Infraestructura dinámica"
     image2="image:infrastructure-dynamic-approach.png" optionsthumb2="300x200" title2="Infraestructura dinámica"
     caption="Infraestructura dinámica" >}}
-
-Una de estas herramientas es [Consul][Consul] que proporciona la funcionalidad de registro y descubrimiento de servicios y conectividad entre esos servicios. Consul Connect proporciona comunicaciones seguras de forma transparente para las aplicaciones.
 
 El esquema de funcionamiento de [Consul Connect][consul-connect] es hacer que los servicios no se comuniquen directamente entre ellos sino que utilizan _proxys_, la creación del enlace de comunicación se delega en Consul que crea los _proxys_ y con ellos le es posible proporcionar comunicaciones seguras, con autenticación mutua y posibilitando autorización con intenciones. Las intenciones son los permisos que establece el operador de Consul para establecer que dos servicios tiene permitido la comunicación entre ellos, cualquier intento de comunicación si no está aprobado de forma explícita por su intención no se permite.
 

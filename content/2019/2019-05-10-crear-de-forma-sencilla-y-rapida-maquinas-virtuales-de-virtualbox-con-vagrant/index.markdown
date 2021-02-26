@@ -9,14 +9,14 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:vagrant.svg"
+imagePost: "logotype:hashicorp-vagrant.svg"
 tags: ["planeta-codigo", "programacion", "software"]
 series: ["hashicorp"]
 ---
 
 {{% post %}}
 
-{{< logotype image1="vagrant.svg" image2="hashicorp.svg" >}}
+{{< logotype image1="hashicorp-vagrant.svg" image2="hashicorp.svg" >}}
 
 [VirtualBox][virtualbox] es una de las herramientas que permiten virtualizar un sistema operativo completo y sus aplicaciones dentro de otra máquina. Como es un sistema operativo completo requiere que el sistema que la alberga tenga RAM suficiente para sí mismo y RAM suficiente para el sistema virtualizado, se puede configurar la cantidad de RAM y almacenamiento persistente de la máquina virtual. En el proceso de virtualización se pierde algo de rendimiento por la sobrecarga que añade virtualizar un sistema operativo completo, los procesadores modernos ofrecen soporte para que el rendimiento sea lo mayor posible pero no es igual a ejecutar el sistema de forma nativa en el sistema, sobre todo en el aspecto de interfaces gráficas y aceleración 2D y 3D.
 
