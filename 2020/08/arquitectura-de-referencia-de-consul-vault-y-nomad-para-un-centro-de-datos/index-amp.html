@@ -315,22 +315,16 @@
 
 
       <div class="logotypes" style="min-width: 200px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/consul.svg" width="1.0040160642570282" height="1" alt="Consul" title="Consul" layout="responsive"  class=""></amp-img></p>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp-consul.svg" width="0.717054264" height="1" alt="HashiCorp Consul" title="HashiCorp Consul" layout="responsive"  class=""></amp-img></p>
 </div>
 <div class="logotypes" style="min-width: 200px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/vault.svg" width="1.0579771476936097" height="1" alt="Vault" title="Vault" layout="responsive"  class=""></amp-img></p>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp-vault.svg" width="0.697674419" height="1" alt="HashiCorp Vault" title="HashiCorp Vault" layout="responsive"  class=""></amp-img></p>
 </div>
 <div class="logotypes" style="min-width: 200px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/nomad.svg" width="0.8532" height="1" alt="Nomad" title="Nomad" layout="responsive"  class=""></amp-img></p>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp-nomad.svg" width="0.76744186" height="1" alt="HashiCorp Nomad" title="HashiCorp Nomad" layout="responsive"  class=""></amp-img></p>
 </div>
 <p>La empresa <a href="https://www.hashicorp.com/">HashiCorp</a> cataloga las necesidades de las aplicaciones basadas en la computación en la nube u orientadas a microservicios en cuatro aspectos que necesitan: aprovisionamiento, registro y conexión, seguridad y ejecución. HashiCorp en base a estos cuatro aspectos de las aplicaciones ha desarrollado para cada una de ellas una aplicación específica integrable con las otras pero también con la posibilidad de usar cada una de forma individual e independiente que permiten disponer de un centro de datos y cubre varias de las necesidades computacionales de una empresa en entornos modernos basados en nube que son dinámicos y requieren elasticidad.</p>
 <p>En muchas organizaciones los desarrolladores solo se encargan del desarrollo de la aplicación o servicio, del despliegue y administración se encargan los administradores de sistemas. Los centros de datos se operan en base a peticiones entre los desarrolladores y los administradores de sistemas, este modelo organización es lento y propenso a ineficiencias, para evitarlo hay que tratar que los desarrolladores sean lo más autosuficientes posible para operar el entorno de ejecución de sus servicios haciendo que estos no solo desarrollen sus aplicaciones sino que también tengan capacidad de desplegarlas y monitorizarlas.</p>
-<div class="media">
-<figure>
-<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><amp-img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_650x450_fit_box_2.png" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"  class="lozad "></amp-img></a></p>
-<figcaption>Diferencias entre entornos estáticos anteriores y dinámicos nuevos</figcaption>
-</figure>
-</div>
 <p>En este artículo muestro un ejemplo usando tres de estos mismos productos que se usarían en un entorno de producción <a href="https://www.consul.io/">Consul</a> para el registro de servicios y conexión de forma segura, <a href="https://www.vaultproject.io/">Vault</a> para seguridad y servicios de cifrado y <a href="https://www.nomadproject.io/">Nomad</a> para la ejecución de servicios con contenedores <a href="https://www.docker.com/">Docker</a>. Para el aprovisionamiento y ejecutar el ejemplo en la propia máquina el ejemplo usa <a href="https://www.vagrantup.com/">Vagrant</a> que permite crear y aprovisionar máquinas virtuales sobre <a href="https://www.virtualbox.org/">VirtualBox</a>, en un entorno basado en la nube se usaría <a href="https://www.terraform.io/">Terraform</a>. Consul, Vault y Nomad forman lo que sería un centro de datos de un entorno de ejecución para aplicaciones y servicios.</p>
 <p><a href="https://github.com/servian/hashiqube/">HashiQube</a> proporciona un entorno para hacer pruebas de desarrollo con todas las herramientas de HashiCorp, pero no es utilizable en un entorno de producción. Para construir un entorno con grado de producción hay que leer mucha de la buena documentación que ofrece HashiCorp de sus productos. Los productos de HashiCorp tienen una buena documentación en formato guía y tutoriales divididos en secciones individuales sobre un tema en concreto.</p>
 <ul>
@@ -341,6 +335,12 @@
 <li><a href="https://www.vagrantup.com/docs">Documentación de Vagrant</a> y <a href="https://www.packer.io/docs">documentación de Packer</a></li>
 <li><a href="https://www.youtube.com/c/HashiCorp/">Canal de YouTube de HashiCorp</a></li>
 </ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"><amp-img src="/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/images/hashicorp-static-dynamic_hu67ee66e9105feacc23ca157c69e694b7_274544_650x450_fit_box_2.png" width="650" height="285" alt="Diferencias entre entornos estáticos anteriores y dinámicos nuevos" title="Diferencias entre entornos estáticos anteriores y dinámicos nuevos"  class="lozad "></amp-img></a></p>
+<figcaption>Diferencias entre entornos estáticos anteriores y dinámicos nuevos</figcaption>
+</figure>
+</div>
 <p>Este artículo hace uso, está relacionado y se complementa con otros artículos que muestran varias de las funcionalidades individuales utilizadas en el ejemplo.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/index-amp.html">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a></li>
@@ -805,6 +805,9 @@
             </li>
           <li>
               <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/index-amp.html">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/index-amp.html">Cifrado y descifrado como servicio con Vault</a>
             </li>
           
         </ol>
