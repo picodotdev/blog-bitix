@@ -47,6 +47,11 @@ Las características principales de Vault se engloban en tres aspectos de la seg
 * Concesión y renovación: todos los secretos en Vault tienen un tiempo de concesión asociado. Al finalizar la concesión Vault los revoca automáticamente, los clientes pueden solicitar renovar las concesiones mediante las API disponibles de Vault.
 * Revocación: integra la funcionalidad de revocación, no solo secretos individuales sino jerarquías de secretos. La revocación asiste en la rotación de las claves así como cerrar el sistema en caso de intrusión.
 
+{{< youtube
+    video="VYfl-DpZ5wM" >}}
+{{< youtube
+    video="NxL2-XuZ3kc" >}}
+
 ### Conceptos
 
 Los motores de secretos son uno de los conceptos en el ámbito de Vault. Son componentes que permite almacenar, generar o cifrar datos. Algunos motores de secretos simplemente almacenan y leen datos, otros se conectan a otros servicios y generan credenciales dinámicamente bajo demanda. Otros motores de secretos proporcionan el cifrado como servicio, _tokens_ de un solo uso, certificados y mucho más.
@@ -66,7 +71,7 @@ La [auditoria](https://www.vaultproject.io/docs/audit/index.html) permite obtene
 
 Todo en Vault está basado en _paths_. Las [_policies_](https://www.vaultproject.io/docs/concepts/policies.html) permiten o deniegan el acceso a ciertos _paths_.  Poseen la siguiente sintaxis, donde las _capabilities_ son las operaciones CRUD permitidas.
 
-{{< code file="policy.hcl" language="plaintext" options="" >}}
+{{< code file="policy.hcl" language="hcl" options="" >}}
 
 ### Instalación y un caso de uso
 

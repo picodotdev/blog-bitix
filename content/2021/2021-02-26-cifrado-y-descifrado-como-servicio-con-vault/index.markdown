@@ -39,6 +39,11 @@ Las claves de cifrado únicamente se almacenan en Vault, por otro lado las aplic
 
 Vault ofrece dos servicios para proteger los datos, el servicio de cifrado y descifrado está disponible en Vault y el de transformación requiere la versión _Enterprise_.
 
+{{< youtube
+    video="HVK-a8SKqvc" >}}
+{{< youtube
+    video="DOw0Y6ig1i4" >}}
+
 #### Servicio de cifrado y descifrado
 
 El servicio de cifrado y descifrado de Vault consisten simplemente en aplicar un algoritmo de cifrado a un dato en texto plano y devolverlo cifrado y realizar la operación contraria aplicar el algoritmo de descifrado a un dato cifrado y devolverlo en texto plano. Además de mantener las claves de cifrado con la posibilidad rotarlas, es decir, crear nuevas claves.
