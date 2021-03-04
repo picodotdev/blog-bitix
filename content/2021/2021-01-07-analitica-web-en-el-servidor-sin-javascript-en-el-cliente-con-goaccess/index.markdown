@@ -90,17 +90,13 @@ Ambos contenedores están definidos en un archivo de [Docker Compose][docker-com
 {{< code file="docker-compose.yml" language="yaml" options="" >}}
 {{< code file="docker-compose-up.sh" language="bash" options="" >}}
 
-GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.
-
-{{< code file="goaccess-run.sh" language="bash" options="" >}}
-
 Una vez los contenedores están en ejecución es posible acceder a las interfaces que ofrece GoAccess y observar las métricas que ofrece del acceso a los sitios web.
 
 {{< code file="docker-ps.sh" language="bash" options="" >}}
 
 #### Interfaz de terminal
 
-La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor.
+La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor. GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.
 
 {{< code file="goaccess-run.sh" language="bash" options="" >}}
 
