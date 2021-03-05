@@ -63,7 +63,7 @@
     "dateModified": "2021-01-07T10:30:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1651",
+    "wordCount": "1637",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -421,13 +421,6 @@
         <span>docker-compose-up.sh</span>
     </div>
 </div>
-<p>GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.</p>
-<div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker run -it --rm <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/goaccess:1.0 goaccess --no-global-config --log-format<span class="o">=</span>VCOMBINED /var/log/nginx/nginx-access.log /var/log/nginx/goaccess-access.log&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
-    <div class="highlight-meta">
-        <span>goaccess-run.sh</span>
-    </div>
-</div>
 <p>Una vez los contenedores están en ejecución es posible acceder a las interfaces que ofrece GoAccess y observar las métricas que ofrece del acceso a los sitios web.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker ps&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
@@ -436,7 +429,7 @@
     </div>
 </div>
 <h4 id="interfaz-de-terminal">Interfaz de terminal</h4>
-<p>La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor.</p>
+<p>La interfaz de terminal o consola no requiere herramientas adicionales, desde la propia terminal es posible acceder a la información de analítica. Hay que ejecutar el comando de GoAccess, al usar Docker desde dentro de su contenedor. GoAccess se puede iniciar individualmente para acceder a su interfaz basada en la terminal.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker run -it --rm <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;-v <span class="s2">&#34;</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="s2">/nginx/log:/var/log/nginx&#34;</span> <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;picodotdev/goaccess:1.0 goaccess --no-global-config --log-format<span class="o">=</span>VCOMBINED /var/log/nginx/nginx-access.log /var/log/nginx/goaccess-access.log&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
