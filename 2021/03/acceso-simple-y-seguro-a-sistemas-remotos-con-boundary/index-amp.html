@@ -1,0 +1,757 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y firewall que se utilizan para permitir estos accesos remotos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+  
+
+  <title>Acceso simple y seguro a sistemas remotos con Boundary</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html" hreflang="es" title="Acceso simple y seguro a sistemas remotos con Boundary">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Acceso simple y seguro a sistemas remotos con Boundary">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-boundary-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y firewall que se utilizan para permitir estos accesos remotos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-boundary-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Acceso simple y seguro a sistemas remotos con Boundary">
+<meta name="twitter:description" content="Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y firewall que se utilizan para permitir estos accesos remotos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html"
+    },
+    "headline": "Acceso simple y seguro a sistemas remotos con Boundary",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/hashicorp-boundary-750.png"
+        
+      },
+    "datePublished": "2021-03-05T15:00:00+01:00",
+    "dateModified": "2021-03-05T15:00:00+01:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2865",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y <em>firewall</em> que se utilizan para permitir estos accesos remotos."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}article h2{font-size:1.75rem}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.tableofcontents{background-color:#fffae9;display:inline-block}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}i.archive-icon{display:inline-block;font-size:32px;line-height:32px}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Acceso simple y seguro a sistemas remotos con Boundary</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>05/03/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/index-amp.html">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html#comments">Comentarios</a>
+      
+      
+    </p>
+
+    
+      <p class="summary">Boundary es otra herramienta de HashiCorp dedicada a la seguridad. Vault está centrada en el almacenamiento de secretos, Boundary está centrada en otro aspecto de la seguridad que es el acceso a sistemas remotos. Una herramienta mejor adaptada y teniendo en cuenta las propiedades dinámicas de los sistemas actuales. Es una alternativa a los métodos de VPN, bastión y <em>firewall</em> que se utilizan para permitir estos accesos remotos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes" style="min-width: 200px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp-boundary.svg" width="0.949612403" height="1" alt="HashiCorp Boundary" title="HashiCorp Boundary" layout="responsive"  class=""></amp-img></p>
+</div>
+<div class="logotypes" style="min-width: 200px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/hashicorp.svg" width="1" height="1" alt="HashiCorp" title="HashiCorp" layout="responsive"  class=""></amp-img></p>
+</div>
+<p>El acceso de forma remota a sistemas es necesario y útil más cuando las máquinas ya no son máquinas físicas sino que están en centros de datos en diferentes ubicaciones en el mundo e incluso son máquinas lógicas como las máquinas virtuales ejecutadas en la computación de la nube.</p>
+<p>El acceso a las máquinas no solo se requiere para las aplicaciones de forma automatizada sino que en algunas situaciones se requiere acceso manual para realizar tareas administrativas o conexión con clientes específicos como escritorio remoto o clientes de bases de datos.</p>
+<p>Permitir el acceso remoto es necesario, sin embargo, requiere seguridad de forma que únicamente los usuarios autorizados accedan únicamente a los sistemas autorizados.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</a></li>
+    <li><a href="#acceso-remoto-con-boundary">Acceso remoto con Boundary</a>
+      <ul>
+        <li><a href="#conceptos">Conceptos</a></li>
+      </ul>
+    </li>
+    <li><a href="#clientes-soportados">Clientes soportados</a></li>
+    <li><a href="#ejemplo-de-conexión-ssh-con-boundary">Ejemplo de conexión SSH con Boundary</a>
+      <ul>
+        <li><a href="#conexión-ssh-a-sistema-remoto">Conexión SSH a sistema remoto</a></li>
+        <li><a href="#autenticación-con-ssh-usando-otp">Autenticación con SSH usando OTP</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="funcionamiento-acceso-remoto-tradicional">Funcionamiento acceso remoto tradicional</h3>
+<p>La forma habitual de proporcionar acceso remoto a sistemas de una red privada es mediante una VPN o a través de un sistema intermediario denominado bastión. Estos conceptos proporcionan acceso remoto en ciertos aspectos de forma segura pero no están exentas de problemas e inconvenientes.</p>
+<p>El primer problema es que una vez conectado a una VPN o un bastión se tiene acceso a cualquier ordenador de la red privada a la que uno se ha conectado. Un usuario que necesite acceso a una máquina potencialmente tiene conectividad con otros sistemas en esa red, lo que es riesgo de seguridad por permitir la posibilidad de accesos a sistemas no autorizados.</p>
+<p>El segundo problema es que las infraestructuras actuales de computación en la nube no son estáticas sino que son dinámicas en las que los sistemas cambian de dirección IP o se crean y destruyen instancias.</p>
+<p>Mediante un <em>firewall</em> ubicado entre el bastión y el sistema de acceso remoto es posible limitar a que sistemas de la red es posible conectarse. Sin embargo, un <em>firewall</em> constituye un elemento más a administrar que añade más complejidad en la infraestructura.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-workflow_hu2f4d93802e25afa09320a79a8acbf31f_141260_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-workflow_hu2f4d93802e25afa09320a79a8acbf31f_141260_650x450_fit_box_2.png" width="650" height="229" alt="Boundary" title="Boundary"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-use-cases_hu45b28899952f60fced4840107d75c409_88910_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Casos de uso de Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-use-cases_hu45b28899952f60fced4840107d75c409_88910_605x450_fit_box_2.png" width="605" height="286" alt="Casos de uso de Boundary" title="Casos de uso de Boundary"  class="lozad "></amp-img></a></p>
+<figcaption>Boundary</figcaption>
+</figure>
+</div>
+<h3 id="acceso-remoto-con-boundary">Acceso remoto con Boundary</h3>
+<p>Para tratar de solventar los problemas de acceso remoto con VPN, bastión y <em>firewall</em>, simplificar la infraestructura y una administración de más alto nivel lógico de usuarios, permisos y sistemas HashiCorp ha publicado otra herramienta dedicada a la seguridad específica para el acceso remoto.</p>
+<p><a href="https://www.boundaryproject.io/">Boundary</a> es una herramienta adaptada a los entornos modernos de computación en la nube y dinámicos agnóstica de la infraestructura y de las aplicaciones utilizadas por los clientes remotos. Su funcionamiento es similar al de un bastión con una diferencia importante de que Boundary es el que realiza la conexión a los equipos remotos y no la aplicación cliente.</p>
+<p>Boundary gestiona el inventario de <em>hosts</em>, usuarios, grupos y roles y permisos con los que es capaz de permitir o denegar el acceso únicamente a los <em>hosts</em> permitidos y denegar el acceso a los hosts para los que no se dispone acceso. Funciona en modo cliente y servidor, el servidor hace de bastión y es el que realmente se conecta al sistema remoto, en el modo cliente proporciona a la aplicación cliente conexión con el servidor, a diferencia de un sistema con un bastión o VPC la aplicación cliente no se conecta con el sistema remoto sino que únicamente se conecta al servidor de Boundary.</p>
+<p>Boundary es un único binario tanto cuando actúa en modo servidor como en modo cliente, dispone una interfaz de línea de comandos y una interfaz web. En las primeras versiones no están todas la <a href="https://www.boundaryproject.io/docs/roadmap">funcionalidades planificadas en el <em>roadmap</em></a>, a medida que madure el servicio ganará en funcionalidades y utilidad. Integrando Boundary con <a href="https://www.consul.io/">Consul</a> tendrá acceso al inventario de servicios y <em>hosts</em>. Integrando Boundary con <a href="https://www.vaultproject.io/">Vault</a> en el momento de acceso al sistema remoto Vault será capaz de crear credenciales de forma dinámica y efímeras.</p>
+<p>En su modo servidor requiere de una base de datos <a href="https://www.postgresql.org/">PostgreSQL</a> que inicia como un contenedor de <a href="https://www.docker.com/">Docker</a>. La consola de administración se inicia en el puerto <em>9200</em> y el usuario y contraseña se emite en la salida de la terminal al iniciar la herramienta.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-console-1_hu439945904a4816b0a917f80cda7b1ddf_55235_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Consola de administración de Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-console-1_hu439945904a4816b0a917f80cda7b1ddf_55235_300x200_fit_box_2.png" width="300" height="199" alt="Consola de administración de Boundary" title="Consola de administración de Boundary"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-console-2_hu90c9765d4f1a8c1f38c528ef0fa6de88_69361_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Consola de administración de Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-console-2_hu90c9765d4f1a8c1f38c528ef0fa6de88_69361_300x200_fit_box_2.png" width="300" height="199" alt="Consola de administración de Boundary" title="Consola de administración de Boundary"  class="lozad "></amp-img></a></p>
+<figcaption>Consola de administración de Boundary</figcaption>
+</figure>
+</div>
+<div class="media media-video">
+  <amp-youtube
+    data-videoid="tUMe7EsXYBQ"
+    layout="fixed"
+    width="640" height="360"></amp-youtube>
+</div>
+<h4 id="conceptos">Conceptos</h4>
+<p>Boundary tiene varios conceptos de dominio, por un lado está el catálogo o inventario de <em>hosts</em>, un conjunto de <em>hosts</em> agrupados en un <em>host set</em> y estos a su vez en un <em>host catalog</em>. Por otro lado, están los usuarios, grupo y roles. Finalmente los <em>targets</em> son la abstracción del elemento al que se quiere realizar una conexión, el <em>target</em> se traduce en un <em>host</em>. Finalmente, todos estos elementos se agrupan en ámbitos o <em>scopes</em> y proyectos o <em>projects</em>.</p>
+<p>En una organización con unas cuantas decenas de sistemas y usuarios, la gestión de este inventario se vuelve ciertamente complicado.</p>
+<h3 id="clientes-soportados">Clientes soportados</h3>
+<p>Boundary incorpora varios clientes en su modo de funcionamiento como cliente. Estos son:</p>
+<ul>
+<li><em>ssh</em>: por defecto es el cliente SSH local (<em>ssh</em>)</li>
+<li><em>postgres</em>: por defecto el del cliente oficial de línea de comandos de Postgres (<em>psql</em>)</li>
+<li><em>rdp</em>: por defecto es el cliente de Windows RDP (<em>mstsc</em>)</li>
+<li><em>http</em>: por defecto es <em>curl</em></li>
+<li><em>kube</em>: por defecto es <em>kubectl</em></li>
+</ul>
+<p>Boundary soportar estos clientes de forma nativa sin embargo es agnóstico de la herramienta cliente, con la opción <em>exec</em> es posible utilizar cualquier herramienta que se conecte con un sistema remoto.</p>
+<ul>
+<li><a href="https://www.boundaryproject.io/docs/getting-started/connect-to-target">Connect to Your First Target</a></li>
+</ul>
+<h3 id="ejemplo-de-conexión-ssh-con-boundary">Ejemplo de conexión SSH con Boundary</h3>
+<p>En el siguiente ejemplo muestro como conectarse a un <em>host</em> a través de Boundary con SSH. En el mismo ejemplo muestro como usar Boundary con autenticación con claves SSH y como usar Boundary con Vault que generar un OTP para realizar la misma conexión sin usar claves SSH y únicamente con credenciales temporales. En este ejemplo el <em>host</em> remoto es una <a href="https://picodotdev.github.io/blog-bitix/2021/02/guia-de-instalacion-de-gnu-linux-para-la-raspberry-pi/index-amp.html">Raspberry Pi con sistema operativo Raspberry Pi OS instalado</a> y con el servicio de SSH iniciado.</p>
+<p>En este ejemplo el servidor de Boundary y Vault están en la misma máquina. Los pasos del ejemplo para usar Boundary y SSH, los pasos que involucran ORP son opcionales si se usan claves SSH:</p>
+<ul>
+<li>Iniciar el servidor de Boundary.</li>
+<li>Configurar el servidor SSH para que valide los OTP conectándose a Vault.</li>
+<li>Iniciar Vault y permitir su acceso al <em>host</em> remoto para validar los OTP.</li>
+<li>Realizar la conexión SSH con Boundary desde la máquina local a la máquina remota.</li>
+</ul>
+<p>Iniciar el servidor Boundary es sencillo, basta <a href="https://picodotdev.github.io/blog-bitix/2021/01/que-es-la-variable-path-del-sistema-y-como-cambiarla-en-gnu-linux/index-amp.html">instalar el binario de Boundary en el PATH del sistema</a> e <a href="https://picodotdev.github.io/blog-bitix/2014/11/como-instalar-y-guia-de-inicio-basica-de-docker/index-amp.html">instalar el gestor de contenedores Docker</a> previamente. Al iniciar el servidor de Boundary este descarga la imagen de Postgres e inicia su contenedor.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo systemctl start docker.service&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>start-docker.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ vault server -dev -dev-listen-address <span class="s2">&#34;0.0.0.0:8200&#34;</span>&#10;<span class="o">==</span>&gt; Vault server configuration:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Api Address: http://0.0.0.0:8200&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cgo: disabled&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cluster Address: https://0.0.0.0:8201&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Go Version: go1.15.8&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Listener 1: tcp <span class="o">(</span>addr: <span class="s2">&#34;0.0.0.0:8200&#34;</span>, cluster address: <span class="s2">&#34;0.0.0.0:8201&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, max_request_size: <span class="s2">&#34;33554432&#34;</span>, tls: <span class="s2">&#34;disabled&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Log Level: info&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Mlock: supported: true, enabled: <span class="nb">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Recovery Mode: <span class="nb">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Storage: inmem&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version: Vault v1.5.7&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Version Sha: 81d55e35dbbe844a6feb4f52a9a3d072c052d228+CHANGES&#10;&#10;WARNING! dev mode is enabled! In this mode, Vault runs entirely in-memory&#10;and starts unsealed with a single unseal key. The root token is already&#10;authenticated to the CLI, so you can immediately begin using Vault.&#10;&#10;You may need to <span class="nb">set</span> the following environment variable:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://0.0.0.0:8200&#39;</span>&#10;&#10;The unseal key and root token are displayed below in <span class="k">case</span> you want to&#10;seal/unseal the Vault or re-authenticate.&#10;&#10;Unseal Key: oqt+hwz0gOD9nxz8gc9C79B0M6mDx7rsbJelYZDsg5I<span class="o">=</span>&#10;Root Token: s.PAPTxv16g0o9amLr82NYcxBT&#10;&#10;Development mode should NOT be used in production installations!&#10;&#10;<span class="o">==</span>&gt; Vault server started! Log data will stream in below:&#10;&#10;2021-03-05T15:07:47.964+0100 <span class="o">[</span>INFO<span class="o">]</span>  proxy environment: <span class="nv">http_proxy</span><span class="o">=</span> <span class="nv">https_proxy</span><span class="o">=</span> <span class="nv">no_proxy</span><span class="o">=</span>&#10;2021-03-05T15:07:47.964+0100 <span class="o">[</span>WARN<span class="o">]</span>  no <span class="sb">`</span>api_addr<span class="sb">`</span> value specified in config or in VAULT_API_ADDR<span class="p">;</span> falling back to detection <span class="k">if</span> possible, but this value should be manually <span class="nb">set</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>start-vault.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span><span class="lnt">25&#10;</span><span class="lnt">26&#10;</span><span class="lnt">27&#10;</span><span class="lnt">28&#10;</span><span class="lnt">29&#10;</span><span class="lnt">30&#10;</span><span class="lnt">31&#10;</span><span class="lnt">32&#10;</span><span class="lnt">33&#10;</span><span class="lnt">34&#10;</span><span class="lnt">35&#10;</span><span class="lnt">36&#10;</span><span class="lnt">37&#10;</span><span class="lnt">38&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ boundary <span class="nv">dev</span>&#10;<span class="o">==</span>&gt; Boundary server configuration:&#10;&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>Controller<span class="o">]</span> AEAD Key Bytes: A7NiMQ0fNlBiCpFxMxg21k8TAdSNcui/okJGxBg6eZs<span class="o">=</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">[</span>Recovery<span class="o">]</span> AEAD Key Bytes: H4U5vaCh1ZmgrRJXhlljvOqkLDzU9ZNy4Cn9Z4+a7Bo<span class="o">=</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">[</span>Worker-Auth<span class="o">]</span> AEAD Key Bytes: rWZi4UxADHAlsqbhemdM6YIIyFG9+AuqIcCbAOZILtQ<span class="o">=</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">[</span>Recovery<span class="o">]</span> AEAD Type: aes-gcm&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">[</span>Root<span class="o">]</span> AEAD Type: aes-gcm&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">[</span>Worker-Auth<span class="o">]</span> AEAD Type: aes-gcm&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cgo: disabled&#10;&nbsp;&nbsp;&nbsp;&nbsp; Controller Public Cluster Addr: 127.0.0.1:9201&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dev Database Container: confident_mcnulty&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Dev Database Url: postgres://postgres:password@localhost:49153/boundary?sslmode<span class="o">=</span>disable&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Generated Admin Login Name: admin&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Generated Admin Password: password&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Generated Auth Method Id: ampw_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Generated Host Catalog Id: hcst_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Generated Host Id: hst_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Generated Host Set Id: hsst_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Generated Org Scope Id: o_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Generated Project Scope Id: p_1234567890&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Generated Target Id: ttcp_1234567890&#10;  Generated Unprivileged Login Name: user&#10;&nbsp;&nbsp;&nbsp;&nbsp;Generated Unprivileged Password: password&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listener 1: tcp <span class="o">(</span>addr: <span class="s2">&#34;127.0.0.1:9200&#34;</span>, cors_allowed_headers: <span class="s2">&#34;[]&#34;</span>, cors_allowed_origins: <span class="s2">&#34;[*]&#34;</span>, cors_enabled: <span class="s2">&#34;true&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, purpose: <span class="s2">&#34;api&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listener 2: tcp <span class="o">(</span>addr: <span class="s2">&#34;127.0.0.1:9201&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, purpose: <span class="s2">&#34;cluster&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listener 3: tcp <span class="o">(</span>addr: <span class="s2">&#34;127.0.0.1:9202&#34;</span>, max_request_duration: <span class="s2">&#34;1m30s&#34;</span>, purpose: <span class="s2">&#34;proxy&#34;</span><span class="o">)</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Log Level: info&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Mlock: supported: true, enabled: <span class="nb">false</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version: Boundary v0.1.7&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Version Sha: bc565922fbd3a18c9f6a22cd2e80a93df0d7cd45&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Worker Public Proxy Addr: 127.0.0.1:9202&#10;&#10;<span class="o">==</span>&gt; Boundary server started! Log data will stream in below:&#10;&#10;2021-03-05T15:08:05.051+0100 <span class="o">[</span>INFO<span class="o">]</span>  worker: connected to controller: <span class="nv">address</span><span class="o">=</span>127.0.0.1:9201&#10;2021-03-05T15:08:05.054+0100 <span class="o">[</span>INFO<span class="o">]</span>  controller: worker successfully authed: <span class="nv">name</span><span class="o">=</span>dev-worker&#10;2021-03-05T15:08:05.059+0100 <span class="o">[</span>WARN<span class="o">]</span>  worker: got no controller addresses from controller<span class="p">;</span> possibly prior to first status save, not persisting</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>start-boudary.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ docker ps -a&#10;CONTAINER ID   IMAGE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; COMMAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CREATED&nbsp;&nbsp;&nbsp;&nbsp;   STATUS&nbsp;&nbsp;&nbsp;&nbsp;   PORTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NAMES&#10;e48475a774bb   postgres:11   <span class="s2">&#34;docker-entrypoint.s…&#34;</span>   <span class="m">2</span> hours ago   Up <span class="m">2</span> hours   0.0.0.0:49153-&gt;5432/tcp   confident_mcnulty</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>docker-ps.sh</span>
+    </div>
+</div>
+<h4 id="conexión-ssh-a-sistema-remoto">Conexión SSH a sistema remoto</h4>
+<p>Realizando la conexión directamente al <em>host</em> remoto con SSH se realiza con el siguiente comando, esta es la forma tradicional de hacerlo usando claves SSH.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ ssh pi@192.168.1.101&#10;Linux raspberrypi 5.10.11+ <span class="c1">#1399 Thu Jan 28 12:02:28 GMT 2021 armv6l</span>&#10;&#10;The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>&#10;the exact distribution terms <span class="k">for</span> each program are described in the&#10;individual files in /usr/share/doc/*/copyright.&#10;&#10;Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#10;permitted by applicable law.&#10;Last login: Thu Feb <span class="m">25</span> 21:21:31 <span class="m">2021</span> from 192.168.1.7&#10;<span class="o">[</span>pi@raspberrypi ~<span class="o">]</span>$</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh.sh</span>
+    </div>
+</div>
+<p>Utilizando Boundary como intermediario estos son los comandos. Primero hay que realizar la autenticación en Boundary y luego usar Boundary para que establezca la conexión SSH con el <em>host</em> destino, previamente hay es necesario haber configurado los recursos en Boundary.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span><span class="lnt">7&#10;</span><span class="lnt">8&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ boundary authenticate password -auth-method-id<span class="o">=</span>ampw_1234567890 -login-name<span class="o">=</span>admin -password<span class="o">=</span>password&#10;Authentication information:&#10;  Account ID:&nbsp;&nbsp;&nbsp;&nbsp;  apw_cxGWZ0KOIc&#10;  Auth Method ID:  ampw_1234567890&#10;  Expiration Time: Fri, <span class="m">12</span> Mar <span class="m">2021</span> 15:21:11 CET&#10;  Token:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   at_1PE5BRB96M_s18pNSYQHzzoZmPD8eyuUyEpqiZw5VFBvAPN7bs2MUamBpdY316whSfZthEVw3KED7khERfPxRTKAm8TH14vNAWW7UrCamxSgYToYBQ3x7kxJHPfeZdtEwhfwx7NZ8TWaXVL2gdppJ4sZ&#10;  User ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; u_1234567890&#10;$ <span class="nb">export</span> <span class="nv">BOUNDARY_TOKEN</span><span class="o">=</span><span class="s2">&#34;at_1PE5BRB96M_s18pNSYQHzzoZmPD8eyuUyEpqiZw5VFBvAPN7bs2MUamBpdY316whSfZthEVw3KED7khERfPxRTKAm8TH14vNAWW7UrCamxSgYToYBQ3x7kxJHPfeZdtEwhfwx7NZ8TWaXVL2gdppJ4sZ&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>boundary-authentication.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ boundary connect ssh -target-id ttcp_23T9SbQ7ce -username pi -- -i <span class="s2">&#34;~/.ssh/pico.dev@gmail.com&#34;</span>&#10;Linux raspberrypi 5.10.11+ <span class="c1">#1399 Thu Jan 28 12:02:28 GMT 2021 armv6l</span>&#10;&#10;The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>&#10;the exact distribution terms <span class="k">for</span> each program are described in the&#10;individual files in /usr/share/doc/*/copyright.&#10;&#10;Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#10;permitted by applicable law.&#10;Last login: Fri Mar  <span class="m">5</span> 15:12:56 <span class="m">2021</span> from 192.168.1.4&#10;<span class="o">[</span>pi@raspberrypi ~<span class="o">]</span>$ </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-boundary-1.sh</span>
+    </div>
+</div>
+<p>Utilizar Boundary como intermediario requiere configurar la herramienta para que tenga un inventario de <em>host</em> a los cuales es posible conectarse y usuarios con sus permisos. En el ejemplo utilizo una Raspberry Pi como <em>host</em> al que realizar la conexión en la dirección IP <em>192.168.1.101</em>. Para utilizar la linea de comandos de Boundary hay que autenticarse y establecer la variable de entorno <em>BOUNDARY_TOKEN</em>.</p>
+<p>Las operaciones de estos comandos para crear los recursos están disponibles también para realizarlas desde su consola web de administración.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-host-catalog_hu3235fc6497f0f2f8d98a146c111fece0_87274_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Crear recursos de Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-host-catalog_hu3235fc6497f0f2f8d98a146c111fece0_87274_300x200_fit_box_2.png" width="300" height="199" alt="Crear recursos de Boundary" title="Crear recursos de Boundary"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-targets_hu69bed4a0b9e08a5db2c473e5d06f4cef_75202_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Crear recursos de Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-targets_hu69bed4a0b9e08a5db2c473e5d06f4cef_75202_300x200_fit_box_2.png" width="300" height="199" alt="Crear recursos de Boundary" title="Crear recursos de Boundary"  class="lozad "></amp-img></a></p>
+<figcaption>Crear recursos de Boundary</figcaption>
+</figure>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">  1&#10;</span><span class="lnt">  2&#10;</span><span class="lnt">  3&#10;</span><span class="lnt">  4&#10;</span><span class="lnt">  5&#10;</span><span class="lnt">  6&#10;</span><span class="lnt">  7&#10;</span><span class="lnt">  8&#10;</span><span class="lnt">  9&#10;</span><span class="lnt"> 10&#10;</span><span class="lnt"> 11&#10;</span><span class="lnt"> 12&#10;</span><span class="lnt"> 13&#10;</span><span class="lnt"> 14&#10;</span><span class="lnt"> 15&#10;</span><span class="lnt"> 16&#10;</span><span class="lnt"> 17&#10;</span><span class="lnt"> 18&#10;</span><span class="lnt"> 19&#10;</span><span class="lnt"> 20&#10;</span><span class="lnt"> 21&#10;</span><span class="lnt"> 22&#10;</span><span class="lnt"> 23&#10;</span><span class="lnt"> 24&#10;</span><span class="lnt"> 25&#10;</span><span class="lnt"> 26&#10;</span><span class="lnt"> 27&#10;</span><span class="lnt"> 28&#10;</span><span class="lnt"> 29&#10;</span><span class="lnt"> 30&#10;</span><span class="lnt"> 31&#10;</span><span class="lnt"> 32&#10;</span><span class="lnt"> 33&#10;</span><span class="lnt"> 34&#10;</span><span class="lnt"> 35&#10;</span><span class="lnt"> 36&#10;</span><span class="lnt"> 37&#10;</span><span class="lnt"> 38&#10;</span><span class="lnt"> 39&#10;</span><span class="lnt"> 40&#10;</span><span class="lnt"> 41&#10;</span><span class="lnt"> 42&#10;</span><span class="lnt"> 43&#10;</span><span class="lnt"> 44&#10;</span><span class="lnt"> 45&#10;</span><span class="lnt"> 46&#10;</span><span class="lnt"> 47&#10;</span><span class="lnt"> 48&#10;</span><span class="lnt"> 49&#10;</span><span class="lnt"> 50&#10;</span><span class="lnt"> 51&#10;</span><span class="lnt"> 52&#10;</span><span class="lnt"> 53&#10;</span><span class="lnt"> 54&#10;</span><span class="lnt"> 55&#10;</span><span class="lnt"> 56&#10;</span><span class="lnt"> 57&#10;</span><span class="lnt"> 58&#10;</span><span class="lnt"> 59&#10;</span><span class="lnt"> 60&#10;</span><span class="lnt"> 61&#10;</span><span class="lnt"> 62&#10;</span><span class="lnt"> 63&#10;</span><span class="lnt"> 64&#10;</span><span class="lnt"> 65&#10;</span><span class="lnt"> 66&#10;</span><span class="lnt"> 67&#10;</span><span class="lnt"> 68&#10;</span><span class="lnt"> 69&#10;</span><span class="lnt"> 70&#10;</span><span class="lnt"> 71&#10;</span><span class="lnt"> 72&#10;</span><span class="lnt"> 73&#10;</span><span class="lnt"> 74&#10;</span><span class="lnt"> 75&#10;</span><span class="lnt"> 76&#10;</span><span class="lnt"> 77&#10;</span><span class="lnt"> 78&#10;</span><span class="lnt"> 79&#10;</span><span class="lnt"> 80&#10;</span><span class="lnt"> 81&#10;</span><span class="lnt"> 82&#10;</span><span class="lnt"> 83&#10;</span><span class="lnt"> 84&#10;</span><span class="lnt"> 85&#10;</span><span class="lnt"> 86&#10;</span><span class="lnt"> 87&#10;</span><span class="lnt"> 88&#10;</span><span class="lnt"> 89&#10;</span><span class="lnt"> 90&#10;</span><span class="lnt"> 91&#10;</span><span class="lnt"> 92&#10;</span><span class="lnt"> 93&#10;</span><span class="lnt"> 94&#10;</span><span class="lnt"> 95&#10;</span><span class="lnt"> 96&#10;</span><span class="lnt"> 97&#10;</span><span class="lnt"> 98&#10;</span><span class="lnt"> 99&#10;</span><span class="lnt">100&#10;</span><span class="lnt">101&#10;</span><span class="lnt">102&#10;</span><span class="lnt">103&#10;</span><span class="lnt">104&#10;</span><span class="lnt">105&#10;</span><span class="lnt">106&#10;</span><span class="lnt">107&#10;</span><span class="lnt">108&#10;</span><span class="lnt">109&#10;</span><span class="lnt">110&#10;</span><span class="lnt">111&#10;</span><span class="lnt">112&#10;</span><span class="lnt">113&#10;</span><span class="lnt">114&#10;</span><span class="lnt">115&#10;</span><span class="lnt">116&#10;</span><span class="lnt">117&#10;</span><span class="lnt">118&#10;</span><span class="lnt">119&#10;</span><span class="lnt">120&#10;</span><span class="lnt">121&#10;</span><span class="lnt">122&#10;</span><span class="lnt">123&#10;</span><span class="lnt">124&#10;</span><span class="lnt">125&#10;</span><span class="lnt">126&#10;</span><span class="lnt">127&#10;</span><span class="lnt">128&#10;</span><span class="lnt">129&#10;</span><span class="lnt">130&#10;</span><span class="lnt">131&#10;</span><span class="lnt">132&#10;</span><span class="lnt">133&#10;</span><span class="lnt">134&#10;</span><span class="lnt">135&#10;</span><span class="lnt">136&#10;</span><span class="lnt">137&#10;</span><span class="lnt">138&#10;</span><span class="lnt">139&#10;</span><span class="lnt">140&#10;</span><span class="lnt">141&#10;</span><span class="lnt">142&#10;</span><span class="lnt">143&#10;</span><span class="lnt">144&#10;</span><span class="lnt">145&#10;</span><span class="lnt">146&#10;</span><span class="lnt">147&#10;</span><span class="lnt">148&#10;</span><span class="lnt">149&#10;</span><span class="lnt">150&#10;</span><span class="lnt">151&#10;</span><span class="lnt">152&#10;</span><span class="lnt">153&#10;</span><span class="lnt">154&#10;</span><span class="lnt">155&#10;</span><span class="lnt">156&#10;</span><span class="lnt">157&#10;</span><span class="lnt">158&#10;</span><span class="lnt">159&#10;</span><span class="lnt">160&#10;</span><span class="lnt">161&#10;</span><span class="lnt">162&#10;</span><span class="lnt">163&#10;</span><span class="lnt">164&#10;</span><span class="lnt">165&#10;</span><span class="lnt">166&#10;</span><span class="lnt">167&#10;</span><span class="lnt">168&#10;</span><span class="lnt">169&#10;</span><span class="lnt">170&#10;</span><span class="lnt">171&#10;</span><span class="lnt">172&#10;</span><span class="lnt">173&#10;</span><span class="lnt">174&#10;</span><span class="lnt">175&#10;</span><span class="lnt">176&#10;</span><span class="lnt">177&#10;</span><span class="lnt">178&#10;</span><span class="lnt">179&#10;</span><span class="lnt">180&#10;</span><span class="lnt">181&#10;</span><span class="lnt">182&#10;</span><span class="lnt">183&#10;</span><span class="lnt">184&#10;</span><span class="lnt">185&#10;</span><span class="lnt">186&#10;</span><span class="lnt">187&#10;</span><span class="lnt">188&#10;</span><span class="lnt">189&#10;</span><span class="lnt">190&#10;</span><span class="lnt">191&#10;</span><span class="lnt">192&#10;</span><span class="lnt">193&#10;</span><span class="lnt">194&#10;</span><span class="lnt">195&#10;</span><span class="lnt">196&#10;</span><span class="lnt">197&#10;</span><span class="lnt">198&#10;</span><span class="lnt">199&#10;</span><span class="lnt">200&#10;</span><span class="lnt">201&#10;</span><span class="lnt">202&#10;</span><span class="lnt">203&#10;</span><span class="lnt">204&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ boundary scopes create -name bitix-scope -description <span class="s2">&#34;Example Bitix scope&#34;</span>&#10;&#10;Scope information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:24:33 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Example Bitix scope&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  o_PuL7bdpoKw&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitix-scope&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:24:33 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&#10;&#10;  Scope <span class="o">(</span>parent<span class="o">)</span>:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;global&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  global&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  global&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;$ boundary scopes create -name bitix-project -description <span class="s2">&#34;Example Bitix project&#34;</span> -scope-id<span class="o">=</span>o_PuL7bdpoKw&#10;&#10;Scope information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:26:54 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Example Bitix project&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  p_MPpTkaalUm&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitix-project&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:26:54 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&#10;&#10;  Scope <span class="o">(</span>parent<span class="o">)</span>:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bitix-scope&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:   global&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  org&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;$ boundary host-catalogs create static -name bitix-host-catalog -description <span class="s2">&#34;Bitix host-catalog&#34;</span> -scope-id<span class="o">=</span>p_MPpTkaalUm&#10;&#10;Host Catalog information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:30:22 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bitix host-catalog&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hcst_8t06PaPJHK&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bitix-host-catalog&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:30:22 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:   o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&#10;  Authorized Actions on Host Catalog<span class="se">\&#39;</span>s Collections:&#10;&nbsp;&nbsp;&nbsp;&nbsp;host-setss:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  create&#10;&nbsp;&nbsp;&nbsp;&nbsp;  list&#10;&nbsp;&nbsp;&nbsp;&nbsp;hostss:&#10;&nbsp;&nbsp;&nbsp;&nbsp;  create&#10;&nbsp;&nbsp;&nbsp;&nbsp;  list&#10;$ boundary host-sets create static -name<span class="o">=</span>raspberrypi -description<span class="o">=</span><span class="s2">&#34;Raspbrry Pi host set&#34;</span> -host-catalog-id<span class="o">=</span>hcst_8t06PaPJHK &#10;&#10;Host Set information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:58:01 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Raspbrry Pi host <span class="nb">set</span>&#10;  Host Catalog ID:&nbsp;&nbsp;&nbsp;&nbsp; hcst_8t06PaPJHK&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hsst_e6BJkM7PqR&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspberrypi&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:58:01 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:   o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&nbsp;&nbsp;&nbsp;&nbsp;add-hosts&#10;&nbsp;&nbsp;&nbsp;&nbsp;set-hosts&#10;&nbsp;&nbsp;&nbsp;&nbsp;remove-hosts&#10;$ boundary hosts create static -name raspberrypi -description <span class="s2">&#34;Static host for Raspberry Pi&#34;</span> -address <span class="s2">&#34;192.168.1.101&#34;</span> -host-catalog-id<span class="o">=</span>hcst_8t06PaPJHK&#10;&#10;Host information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:38:18 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Static host <span class="k">for</span> Raspberry Pi&#10;  Host Catalog ID:&nbsp;&nbsp;&nbsp;&nbsp; hcst_8t06PaPJHK&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hst_2eN5yaTE41&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspberrypi&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:38:18 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">1</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:   o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&#10;  Attributes:&#10;&nbsp;&nbsp;&nbsp;&nbsp;address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   192.168.1.101&#10;$ boundary host-sets add-hosts --host<span class="o">=</span>hst_2eN5yaTE41 -id<span class="o">=</span>hsst_e6BJkM7PqR&#10;&#10;Host Set information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:58:01 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Raspbrry Pi host <span class="nb">set</span>&#10;  Host Catalog ID:&nbsp;&nbsp;&nbsp;&nbsp; hcst_8t06PaPJHK&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hsst_e6BJkM7PqR&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raspberrypi&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;static&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fri, <span class="m">05</span> Mar <span class="m">2021</span> 16:01:36 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="m">2</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:   o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&nbsp;&nbsp;&nbsp;&nbsp;add-hosts&#10;&nbsp;&nbsp;&nbsp;&nbsp;set-hosts&#10;&nbsp;&nbsp;&nbsp;&nbsp;remove-hosts&#10;&#10;  Host IDs:&#10;&nbsp;&nbsp;&nbsp;&nbsp;hst_2eN5yaTE41&#10;$ boundary targets create tcp -name raspberrypi -description <span class="s2">&#34;Raspberry Pi target&#34;</span> -default-port<span class="o">=</span><span class="m">22</span> -scope-id<span class="o">=</span>p_MPpTkaalUm&#10;&#10;Target information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:42:04 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspberry Pi target&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ttcp_23T9SbQ7ce&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   raspberrypi&#10;  Session Connection Limit:   <span class="m">1</span>&#10;  Session Max Seconds:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">28800</span>&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   tcp&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:42:04 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">1</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&nbsp;&nbsp;&nbsp;&nbsp;add-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;set-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;remove-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;authorize-session&#10;$ boundary targets add-host-sets -host-set<span class="o">=</span>hsst_e6BJkM7PqR -id<span class="o">=</span>ttcp_23T9SbQ7ce&#10;&#10;Target information:&#10;  Created Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:42:04 CET&#10;  Description:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raspberry Pi target&#10;  ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ttcp_23T9SbQ7ce&#10;  Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   raspberrypi&#10;  Session Connection Limit:   <span class="m">1</span>&#10;  Session Max Seconds:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">28800</span>&#10;  Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   tcp&#10;  Updated Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Fri, <span class="m">05</span> Mar <span class="m">2021</span> 15:59:03 CET&#10;  Version:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m">2</span>&#10;&#10;  Scope:&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   p_MPpTkaalUm&#10;&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bitix-project&#10;&nbsp;&nbsp;&nbsp;&nbsp;Parent Scope ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  o_PuL7bdpoKw&#10;&nbsp;&nbsp;&nbsp;&nbsp;Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; project&#10;&#10;  Authorized Actions:&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">read</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;update&#10;&nbsp;&nbsp;&nbsp;&nbsp;delete&#10;&nbsp;&nbsp;&nbsp;&nbsp;add-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;set-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;remove-host-sets&#10;&nbsp;&nbsp;&nbsp;&nbsp;authorize-session&#10;&#10;  Host Sets:&#10;&nbsp;&nbsp;&nbsp;&nbsp;Host Catalog ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hcst_8t06PaPJHK&#10;&nbsp;&nbsp;&nbsp;&nbsp;ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   hsst_e6BJkM7PqR</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>boundary-configuration.sh</span>
+    </div>
+</div>
+<p>Una de las funcionalidades que proporciona Boundary es trazabilidad en el <em>log</em> se muestran los inicio de las conexiones y su finalización, permite ver las conexiones abiertas y forzar el cierre de una conexión.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">2021-03-05T16:31:06.880+0100 [INFO]  controller.worker-handler: authorized connection: session_id=s_S91yFIr4qi connection_id=sc_tg5qgexhhe connections_left=0&#10;2021-03-05T16:31:06.888+0100 [INFO]  controller.worker-handler: connection established: session_id=s_S91yFIr4qi connection_id=sc_tg5qgexhhe client_tcp_address=127.0.0.1 client_tcp_port=40058 endpoint_tcp_address=192.168.1.101 endpoint_tcp_port=22&#10;2021-03-05T16:31:09.001+0100 [INFO]  controller.worker-handler: connection closed: connection_id=sc_tg5qgexhhe&#10;2021-03-05T16:33:29.299+0100 [INFO]  controller.worker-handler: session activated: session_id=s_7yPhGF7hHz target_id=ttcp_23T9SbQ7ce user_id=u_1234567890 host_set_id=hsst_e6BJkM7PqR host_id=hst_2eN5yaTE41&#10;2021-03-05T16:33:29.305+0100 [INFO]  controller.worker-handler: authorized connection: session_id=s_7yPhGF7hHz connection_id=sc_u5dxQjveKv connections_left=0&#10;2021-03-05T16:33:29.314+0100 [INFO]  controller.worker-handler: connection established: session_id=s_7yPhGF7hHz connection_id=sc_u5dxQjveKv client_tcp_address=127.0.0.1 client_tcp_port=40078 endpoint_tcp_address=192.168.1.101 endpoint_tcp_port=22&#10;2021-03-05T16:33:32.302+0100 [INFO]  controller.worker-handler: connection closed: connection_id=sc_u5dxQjveKv&#10;2021-03-05T16:33:34.745+0100 [INFO]  controller.worker-handler: session activated: session_id=s_xmwSyOuFgW target_id=ttcp_23T9SbQ7ce user_id=u_1234567890 host_set_id=hsst_e6BJkM7PqR host_id=hst_2eN5yaTE41&#10;2021-03-05T16:33:34.757+0100 [INFO]  controller.worker-handler: authorized connection: session_id=s_xmwSyOuFgW connection_id=sc_XkYBKBV1J0 connections_left=0&#10;2021-03-05T16:33:34.772+0100 [INFO]  controller.worker-handler: connection established: session_id=s_xmwSyOuFgW connection_id=sc_XkYBKBV1J0 client_tcp_address=127.0.0.1 client_tcp_port=40088 endpoint_tcp_address=192.168.1.101 endpoint_tcp_port=22</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>boundary.log</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-sessions_hu47a87baa44953f42b9aa3bbaa41c3074_139386_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Conexiones realizadas con Boundary"><amp-img src="/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/images/boundary-sessions_hu47a87baa44953f42b9aa3bbaa41c3074_139386_300x200_fit_box_2.png" width="300" height="199" alt="Conexiones realizadas con Boundary" title="Conexiones realizadas con Boundary"  class="lozad "></amp-img></a></p>
+<figcaption>Conexiones realizadas con Boundary</figcaption>
+</figure>
+</div>
+<h4 id="autenticación-con-ssh-usando-otp">Autenticación con SSH usando OTP</h4>
+<p>Si no se proporciona la clave privada el servidor de SSH y se ha configurado como modo de autenticación alternativo OTP al realizar la conexión se solicita una contraseña temporal de un solo uso u OTP, una vez usado el OTP si se intenta utilizar el mismo código en una autenticación posterior esta falla.</p>
+<p>Vault permite generar contraseñas de un solo uso y configurando SSH validar los OTP proporcionados en la conexión. La ventaja de usar OTP es que no es necesario distribuir las claves públicas en cada una de las máquinas en las que se quiera realizar la conexión SSH. Hay que cambiar los archivos de configuración <em>/etc/pam.d/sshd</em>, <em>/etc/ssh/sshd_config</em>, <em>/etc/vault-ssh-helper.d/config.hcl</em> y reiniciar el servicio de SSH, estos cambios permiten al servidor SSH validar los <em>tokens</em> proporcionados conectándose con Vault.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ ssh pi@192.168.1.101&#10;$ wget https://releases.hashicorp.com/vault-ssh-helper/0.2.1/vault-ssh-helper_0.2.1_linux_amd64.zip&#10;$ wget https://releases.hashicorp.com/vault-ssh-helper/0.2.1/vault-ssh-helper_0.2.1_linux_arm.zip&#10;$ sudo unzip -q vault-ssh-helper_0.2.1_linux_arm.zip -d /usr/local/bin&#10;$ sudo chmod <span class="m">0755</span> /usr/local/bin/vault-ssh-helper&#10;$ sudo chown root:root /usr/local/bin/vault-ssh-helper&#10;$ sudo mkdir /etc/vault-ssh-helper.d/&#10;&#10;$ sudo tee /etc/vault-ssh-helper.d/config.hcl <span class="s">&lt;&lt;EOF&#10;</span><span class="s">vault_addr = &#34;http://192.168.1.4:8200&#34;&#10;</span><span class="s">tls_skip_verify = false&#10;</span><span class="s">ssh_mount_point = &#34;ssh&#34;&#10;</span><span class="s">allowed_roles = &#34;*&#34;&#10;</span><span class="s">EOF</span>&#10;&#10;$ vault-ssh-helper -verify-only -dev -config /etc/vault-ssh-helper.d/config.hcl&#10;<span class="o">==</span>&gt; WARNING: Dev mode is enabled!&#10;<span class="o">[</span>INFO<span class="o">]</span> using SSH mount point: ssh&#10;<span class="o">[</span>INFO<span class="o">]</span> using namespace: us&#10;<span class="o">[</span>INFO<span class="o">]</span> vault-ssh-helper verification successful!</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>install-ssh-helper.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo vim /etc/pam.d/sshd&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">#@include common-auth&#10;auth requisite pam_exec.so quiet expose_authtok log=/var/log/vault-ssh.log /usr/local/bin/vault-ssh-helper -dev -config=/etc/vault-ssh-helper.d/config.hcl&#10;auth optional pam_unix.so not_set_pass use_first_pass nodelay</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo vim /etc/ssh/sshd_config&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd_config.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">ChallengeResponseAuthentication yes&#10;UsePAM yes&#10;PasswordAuthentication no</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>sshd_config</span>
+    </div>
+</div>
+<p>Para validar el OTP el servidor SSH a través del módulo de autenticación PAM le pide a Vault que lo valide, para ello necesita conectividad de red, si es necesario activando la regla del <em>firewall</em> para permitir el tráfico de red para el puerto <em>8200</em> que utiliza Vault.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ sudo ufw allow 8200/tcp&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-configuration-firewall.sh</span>
+    </div>
+</div>
+<p>También hay que configurar Vault con las políticas y permisos para permitir a un usuario autenticado generar los OTP de autenticación.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">export</span> <span class="nv">VAULT_ADDR</span><span class="o">=</span><span class="s1">&#39;http://127.0.0.1:8200&#39;</span>&#10;$ vault secrets <span class="nb">enable</span> ssh&#10;$ vault write ssh/roles/otp_ssh <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">key_type</span><span class="o">=</span>otp <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">default_user</span><span class="o">=</span>pi <span class="se">\&#10;</span><span class="se"></span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="nv">cidr_list</span><span class="o">=</span>192.168.1.0/24</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>vault-configuration.sh</span>
+    </div>
+</div>
+<p>El comando para generar el OTP e iniciar la conexión es el siguiente. Este comando realiza dos acciones, generar el OTP e iniciar la conexión SSH, el OTP hay que copiarlo y pegarlo de forma manual en la solicitud de contraseña que corresponde con el OTP generado.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ vault ssh -role otp_ssh -mode otp -strict-host-key-checking<span class="o">=</span>no pi@192.168.1.101&#10;Vault could not locate <span class="s2">&#34;sshpass&#34;</span>. The OTP code <span class="k">for</span> the session is displayed&#10;below. Enter this code in the SSH password prompt. If you install sshpass,&#10;Vault can automatically perform this step <span class="k">for</span> you.&#10;OTP <span class="k">for</span> the session is: 31233d29-e822-6891-6a34-9a101fb2e344&#10;Password:&#10;Linux raspberrypi 5.10.11+ <span class="c1">#1399 Thu Jan 28 12:02:28 GMT 2021 armv6l</span>&#10;&#10;The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>&#10;the exact distribution terms <span class="k">for</span> each program are described in the&#10;individual files in /usr/share/doc/*/copyright.&#10;&#10;Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#10;permitted by applicable law.&#10;Last login: Fri Mar  <span class="m">5</span> 15:12:56 <span class="m">2021</span> from 192.168.1.4&#10;<span class="o">[</span>pi@raspberrypi ~<span class="o">]</span>$ </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-vault-otp-1.sh</span>
+    </div>
+</div>
+<p>Generar el OTP y realizar la conexión se puede realizar en dos pasos separados.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ vault write ssh/creds/otp_ssh <span class="nv">username</span><span class="o">=</span>pi <span class="nv">ip</span><span class="o">=</span>192.168.1.101&#10;Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&#10;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-----&#10;lease_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ssh/creds/otp_ssh/7vB38cBFRWl883ePHusCBAMI&#10;lease_duration&nbsp;&nbsp;&nbsp;&nbsp; 768h&#10;lease_renewable&nbsp;&nbsp;&nbsp;&nbsp;<span class="nb">false</span>&#10;ip&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 192.168.1.101&#10;key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;93e489c2-c30c-6e4e-f22c-96e719d41fd3&#10;key_type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   otp&#10;port&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <span class="m">22</span>&#10;username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   pi&#10;<span class="o">[</span>picodotdev@archlinux ~<span class="o">]</span>$ ssh pi@192.168.1.101&#10;Password:&#10;Linux raspberrypi 5.10.11+ <span class="c1">#1399 Thu Jan 28 12:02:28 GMT 2021 armv6l</span>&#10;&#10;The programs included with the Debian GNU/Linux system are free software<span class="p">;</span>&#10;the exact distribution terms <span class="k">for</span> each program are described in the&#10;individual files in /usr/share/doc/*/copyright.&#10;&#10;Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#10;permitted by applicable law.&#10;Last login: Fri Mar  <span class="m">5</span> 15:12:56 <span class="m">2021</span> from 192.168.1.4&#10;<span class="o">[</span>pi@raspberrypi ~<span class="o">]</span>$ </code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-vault-otp-2.sh</span>
+    </div>
+</div>
+<p>Usando Vault la conexión se realiza entre la máquina local y la máquina destino, usando Boundary como intermediario el comando es el mismo que al usar una clave SSH pero al iniciar la conexión se solicita la contraseña OTP.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ boundary connect ssh -target-id ttcp_23T9SbQ7ce -username pi&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>ssh-boundary-2.sh</span>
+    </div>
+</div>
+<div class="reference">
+    Referencia:<br>
+<ul>
+<li><a href="https://learn.hashicorp.com/tutorials/boundary/getting-started-install?in=boundary/getting-started">Boundary Quick Start Guide</a></li>
+<li><a href="https://learn.hashicorp.com/tutorials/vault/ssh-otp">SSH Secrets Engine: One-Time SSH Password</a></li>
+</ul>
+</div>
+
+    </div>
+
+    
+  </article>
+        
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>hashicorp</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/introduccion-a-nomad-para-gestionar-aplicaciones-y-microservicios/index-amp.html">Introducción a Nomad para gestionar aplicaciones y microservicios</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/estrategias-de-despliegue-para-microservicios-con-nomad/index-amp.html">Estrategias de despliegue para microservicios con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/04/servicios-con-persistencia-en-el-orquestador-de-microservicios-nomad/index-amp.html">Servicios con persistencia en el orquestador de microservicios Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/crear-de-forma-sencilla-y-rapida-maquinas-virtuales-de-virtualbox-con-vagrant/index-amp.html">Crear de forma sencilla y rápida máquinas virtuales de VirtualBox con Vagrant</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/05/registro-y-descubrimiento-de-servicios-en-contenedores-de-docker-con-consul-y-registrator/index-amp.html">Registro y descubrimiento de servicios en contenedores de Docker con Consul y Registrator</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/07/administrar-secretos-y-proteger-datos-sensibles-con-vault/index-amp.html">Administrar secretos y proteger datos sensibles con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/generar-credenciales-de-conexion-a-base-de-datos-bajo-demanda-con-vault/index-amp.html">Generar credenciales de conexión a base de datos bajo demanda con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/08/utilizar-credenciales-de-conexion-a-la-base-de-datos-generadas-por-vault-en-una-aplicacion-de-spring/index-amp.html">Utilizar credenciales de conexión a la base de datos generadas por Vault en una aplicación de Spring</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/10/microservicios-con-spring-cloud-consul-nomad-y-traefik/index-amp.html">Microservicios con Spring Cloud, Consul, Nomad y Traefik</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/comunicaciones-seguras-autenticacion-mutua-y-autorizaciones-con-intenciones-entre-servicios-usando-consul-connect-y-nomad/index-amp.html">Comunicaciones seguras, autenticación mutua y autorizaciones con intenciones entre servicios usando Consul Connect y Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/07/revertir-un-servicio-a-una-version-anterior-con-nomad/index-amp.html">Revertir un servicio a una versión anterior con Nomad</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/08/arquitectura-de-referencia-de-consul-vault-y-nomad-para-un-centro-de-datos/index-amp.html">Arquitectura de referencia de Consul, Vault y Nomad para un centro de datos</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/02/cifrado-y-descifrado-como-servicio-con-vault/index-amp.html">Cifrado y descifrado como servicio con Vault</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/03/acceso-simple-y-seguro-a-sistemas-remotos-con-boundary/index-amp.html">Acceso simple y seguro a sistemas remotos con Boundary</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>
