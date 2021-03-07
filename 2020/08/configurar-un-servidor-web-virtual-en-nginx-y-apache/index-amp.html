@@ -266,10 +266,12 @@
 
 
       <div class="logotypes" style="min-width: 300px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="4.625" height="1" alt="Nginx" title="Nginx" layout="responsive"  class=""></amp-img></p>
+<p>
+<amp-img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="4.625" height="1" alt="Nginx" title="Nginx" layout="responsive"  class=""></amp-img></p>
 </div>
 <div class="logotypes" style="min-width: 150px;">
-<p><amp-img src="/blog-bitix/assets/images/logotypes/apache.svg" width="0.5661225455405725" height="1" alt="Apache HTTPD" title="Apache HTTPD" layout="responsive"  class=""></amp-img></p>
+<p>
+<amp-img src="/blog-bitix/assets/images/logotypes/apache.svg" width="0.5661225455405725" height="1" alt="Apache HTTPD" title="Apache HTTPD" layout="responsive"  class=""></amp-img></p>
 </div>
 <p>La función básica de un servidor web es devolver al navegador los recursos estáticos de un sitio web como son las páginas HTML, hojas de estilo CSS, imágenes o archivos de JavaScript. Pero también pueden hacer otras funciones muy útiles como son la de <a href="https://picodotdev.github.io/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/index-amp.html"><em>proxy</em> entre en navegador y la aplicación de <em>backend</em></a> que genera el contenido dinámico, terminación de protocolo de seguridad con la que el navegador se comunica con el servidor web usando el protocolo seguro HTTPS pero el servidor web se comunica con la aplicación <em>backend</em> usando el protocolo HTTP, <a href="https://picodotdev.github.io/blog-bitix/2020/08/configurar-autenticacion-basica-en-los-servidores-web-nginx-y-apache/index-amp.html">añadir autenticación básica a ciertas rutas</a> o utilizar <a href="https://picodotdev.github.io/blog-bitix/2016/02/configurar-http-2-en-nginx-apache-httpd-wildfly-o-jetty/index-amp.html">el protocolo HTTP/2</a>.</p>
 <p>Los servidores web no requieren una capacidad de cómputo elevada, para aprovechar al máximo la capacidad e una máquina y para no requerir un servidor web por cada sitio web se utilizan los servidores web virtuales. Un servidor web virtual es un servidor web que sirve el contenido de un sitio web normalmente asociado a un nombre de dominio aunque también es posible estar asociado a una dirección IP. Por ejemplo, empleando servidores web virtuales la misma instancia de servidor web puede servir el contenido de varios sitios web diferentes como <em>site1.127.0.0.1.xip.io</em>, <em>site2.127.0.0.1.xip.io</em> y  <em>site3.127.0.0.1.xip.io</em>. El servidor web obtiene el nombre del dominio por el que es accedido y determina el servidor web al que redirigir la solicitud.</p>
@@ -312,7 +314,8 @@
 <p>En el ejemplo se usa la misma raíz de documentos que el sitio web para <em>localhost</em>, si se añaden archivos de contenido en una raíz de documentos propia para el servidor web virtual el contenido devuelto cambia o si cambia la raíz de documentos al directorio <em>/usr/share/nginx</em> que Nginx no tiene permitido el acceso se observa que cuando se accede al servidor por el nombre del dominio <em>localhost</em> se muestra la página de inicio y cuando se accede por el nombre del dominio <em>www.127.0.0.1.xip.io</em> se devuelve un error <em>HTTP 403 Forbidden</em> por falta de permisos.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Servidor web virtual en Nginx"><amp-img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_300x200_fit_box_2.png" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx"  class="lozad "></amp-img></a></p>
+<p>
+<a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Servidor web virtual en Nginx"><amp-img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/nginx-virtual-server_hu0364ea06f0280093e9c41969eb778805_50605_300x200_fit_box_2.png" width="300" height="196" alt="Servidor web virtual en Nginx" title="Servidor web virtual en Nginx"  class="lozad "></amp-img></a></p>
 <figcaption>Servidor web virtual en Nginx</figcaption>
 </figure>
 </div>
@@ -333,7 +336,8 @@
 <p>Usando Apache también se accede al sitio web por su nombre de dominio <em>www.127.0.0.1.xip.io</em>.</p>
 <div class="media">
 <figure>
-<p><a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Servidor web virtual en Apache"><amp-img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_300x200_fit_box_2.png" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache"  class="lozad "></amp-img></a></p>
+<p>
+<a href="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Servidor web virtual en Apache"><amp-img src="/blog-bitix/2020/08/configurar-un-servidor-web-virtual-en-nginx-y-apache/images/apache-virtual-server_hud11733390e1725250ed08da8fac9b3b6_19237_300x200_fit_box_2.png" width="300" height="196" alt="Servidor web virtual en Apache" title="Servidor web virtual en Apache"  class="lozad "></amp-img></a></p>
 <figcaption>Servidor web virtual en Apache</figcaption>
 </figure>
 </div>
