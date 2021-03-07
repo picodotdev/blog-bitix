@@ -66,11 +66,11 @@ Host Catalog information:
     hostss:
       create
       list
-$ boundary host-sets create static -name=raspberrypi -description="Raspbrry Pi host set" -host-catalog-id=hcst_8t06PaPJHK 
+$ boundary host-sets create static -name=raspberrypi -description="Raspberry Pi host set" -host-catalog-id=hcst_8t06PaPJHK 
 
 Host Set information:
   Created Time:        Fri, 05 Mar 2021 15:58:01 CET
-  Description:         Raspbrry Pi host set
+  Description:         Raspberry Pi host set
   Host Catalog ID:     hcst_8t06PaPJHK
   ID:                  hsst_e6BJkM7PqR
   Name:                raspberrypi
@@ -120,7 +120,7 @@ $ boundary host-sets add-hosts --host=hst_2eN5yaTE41 -id=hsst_e6BJkM7PqR
 
 Host Set information:
   Created Time:        Fri, 05 Mar 2021 15:58:01 CET
-  Description:         Raspbrry Pi host set
+  Description:         Raspberry Pi host set
   Host Catalog ID:     hcst_8t06PaPJHK
   ID:                  hsst_e6BJkM7PqR
   Name:                raspberrypi
