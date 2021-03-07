@@ -52,8 +52,9 @@
     {{- $path := cond (eq $binding "image") "images/" "" -}}
 
     {{- if (findRE "\\.svg$|\\.webp$|\\.gif" $image) -}}
-      {{- $src = print .Page.Permalink $path $image | relURL -}}
-      {{- $srcthumb = cond (eq $imagethumb nil) $src (print .Page.Permalink $path $imagethumb | relURL) -}}
+      {{- $base := replace .Page.Permalink "/index-amp.html" "/" -}}
+      {{- $src = print $base $path $image | relURL -}}
+      {{- $srcthumb = cond (eq $imagethumb nil) $src (print $base $path $imagethumb | relURL) -}}
     {{- else -}}
       {{- $resource := $p.Resources.GetMatch (print $path $image) -}}
       {{- $resourcethumb := $p.Resources.GetMatch (print $path $image) -}}
