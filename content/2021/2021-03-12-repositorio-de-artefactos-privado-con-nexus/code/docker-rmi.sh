@@ -1,0 +1,1 @@
+$ docker rmi localhost:8082/repository/docker/busybox:latest

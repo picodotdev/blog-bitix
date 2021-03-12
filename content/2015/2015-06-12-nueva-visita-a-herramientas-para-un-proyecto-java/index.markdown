@@ -138,6 +138,7 @@ Otras funcionalidades que necesita algunas aplicaciones son:
 * [Log4j 2][log4j] para emitir trazas.
 * Preprocesador CSS con [Less][less] para facilitar la escritura de hojas de estilo CSS y [Bootstrap][bootstrap] como estilos por defecto para una aplicación.
 * [PMD][pmd] y [Checkstyle][checkstyle] para analizar el código fuente.
+* Repositorio de artefactos privado con [Nexus][nexus].
 
 De algunas de estas herramientas he escrito de forma individualizada.
 
@@ -156,6 +157,7 @@ De algunas de estas herramientas he escrito de forma individualizada.
 * [La librería Log4j para emitir trazas en aplicaciones Java][blogbitix-334]
 * [Qué hace y ventajas de un preprocesador de estilos CSS][blogbitix-509]
 * [Análisis estático de código con PMD y un ejemplo][blogbitix-297]
+* [Repositorio de artefactos privado con Nexus][blogbitix-559]
 
 Hay otras herramientas aún pasado este tiempo seguiría usando como [Git][git] para el control de versiones, [GitLab][gitlab] como plataforma para desarrollo que incluye repositorio de git, gestión de peticiones e integración continua además de otras funcionalidades en una única herramienta. [SDKMAN][sdkman] para gestionar las versiones de librerías Java en el entorno de desarrollo, [Gradle][gradle] como herramienta de construcción, [GNU/Linux][linux] tanto para desarrollar como para el servidor en el que desplegar la aplicación, [IntelliJ][intellij] como IDE para editar código Java o [Visual Studio Code][microsoft-visual-studio-code] para editar archivos no Java.
 

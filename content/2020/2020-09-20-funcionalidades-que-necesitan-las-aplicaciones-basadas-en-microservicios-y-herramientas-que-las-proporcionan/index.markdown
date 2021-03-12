@@ -130,4 +130,10 @@ Una solicitud genera varias llamadas entre servicios en cadena, para tener una v
 * [Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot][blogbitix-368]
 * [Trazabilidad en servicios distribuidos con Sleuth y Zipkin][blogbitix-518]
 
+### Repositorio de artefactos
+
+Los repositorio sde artefactos permiten compartir artefactos generados en la compilación de los proyectos. Los artefactos en Java son librerías que otros proyectos utilizan como dependencias, en Docker son las imágenes que utilizan los contenedores generados con un archivo Dockerfile en Java Script paquetes npm y otros lenguajes como Python, Go o C# los suyos. [Nexus][nexus] permite crear un repositorio de artefactos privado.
+
+* [Repositorio de artefactos privado con Nexus][blogbitix-559]
+
 {{% /post %}}
