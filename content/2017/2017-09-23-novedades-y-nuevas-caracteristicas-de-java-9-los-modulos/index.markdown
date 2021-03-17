@@ -82,7 +82,6 @@ Con el tiempo las dependencias entre los propios paquetes y clases de la API de 
     image2="image:java-9-modules.jpg" optionsthumb2="300x200" title2="Módulos de Java 9"
     caption="Módulos de Java 8 y Java 9" >}}
 
-
 El entorno de ejecución de Java y el compilador conocen exactamente ahora que módulo resolver al buscar los tipos para un paquete dado. Previamente la única forma de obtener un tipo arbitrario era hacer una búsqueda en todo el _classpath_. Por ejemplo, dos módulos con el mismo nombre producen un error en inicio de la aplicación, en vez de en tiempo de ejecución.
 
 Los módulos permiten definir a cada librería los paquetes de clases que exporta como su API accesible por otra librería o programa que la requiera. Además, cada librería debe al mismo tiempo definir qué paquetes requiere. Las exportaciones y requerimientos permiten ahora detectar al iniciar la máquina virtual si el grafo de dependencias está completo cosa que antes se producía en un mayor número de casos en tiempo de ejecución posiblemente con la excepción [NoClassDefFound](javadoc9:java/lang/NoClassDefFoundError.html). Una de los efectos que se mejoran en Java y que ya es una característica a la que se le da mucha importancia es la compatibilidad hacia atrás y también la encapsulación ya que los desarrolladores de las librerías tienen mayor control de que paquetes se permite su uso evitando dependencias no deseadas que impidan en un futuro que aplicaciones que hipotéticamente las usasen dejasen de ser compatibles con nuevas versiones.

@@ -24,9 +24,17 @@ El 20 de marzo de 2018 se publicó la que es la versión 10 de Java siguiendo el
 
 Lo mejor de este nuevo calendario de publicaciones cada seis meses es que las empresas y programadores tienen predictibilidad de cuándo se lanzará la siguiente versión aunque las nuevas características que tenga no está predeterminado ya no pasarán varios años entre versiones visibilizando que la plataforma evoluciona continuamente en pequeños saltos cada poco tiempo en vez de saltos grandes cada mucho tiempo que son más disruptivos y hace más difícil la adopción.
 
-Es un principio no añadir características según lo que está de moda sino pensando en décadas futuras. Java 10 tiene una lista más reducida de cambios que Java 9 pero importantes y significativos. Java es el último en unirse a la fiesta de la inferencia de tipos pero ha sido de forma intencionada ya que el coste de implementarla de forma incorrecta supone un alto coste que hay que mantener en adelante. Otras ideas que ha sido implementadas el lenguajes de programación funcional y están listas para su uso masivo tomarán su propio camino en futuras versiones de Java por ejemplo _pattern matching_ y _value types_.
+{{< tableofcontents >}}
 
-La lista más relevante de [novedades de Java 10](http://openjdk.java.net/projects/jdk/10/) es la siguiente:
+### Introducción
+
+En Java es un principio no añadir características según lo que está de moda sino pensando en décadas futuras. Java 10 tiene una lista más reducida de cambios que Java 9 pero importantes y significativos. Java es el último en unirse a la fiesta de la inferencia de tipos pero ha sido de forma intencionada ya que el coste de implementarla de forma incorrecta supone un alto coste que hay que mantener en adelante. Otras ideas que ha sido implementadas el lenguajes de programación funcional y están listas para su uso masivo tomarán su propio camino en futuras versiones de Java por ejemplo _pattern matching_ y _value types_.
+
+* [Características de Java 10](http://openjdk.java.net/projects/jdk/10/)
+* [Notas de publicación de Java 10](https://www.oracle.com/java/technologies/javase/10-relnote-issues.html)
+* [Documentación Javadoc de Java 10](https://docs.oracle.com/javase/10/docs/api/)
+
+La lista más relevante de es la siguiente:
 
 * 286: [Local-Variable Type Inference](http://openjdk.java.net/jeps/286)
 * 296: [Consolidate the JDK Forest into a Single Repository](http://openjdk.java.net/jeps/296)
@@ -41,7 +49,9 @@ La lista más relevante de [novedades de Java 10](http://openjdk.java.net/projec
 * 319: [Root Certificates](http://openjdk.java.net/jeps/319), se han añadido varios certificados raíz al _keystore_ incluído para permitir que las conexiones TLS funcionen por defecto.
 * 322: [Time-Based Release Versioning](http://openjdk.java.net/jeps/322)
 
-### Inferencia de tipos para variables locales
+### Nuevas características
+
+#### Inferencia de tipos para variables locales
 
 De las novedades la inferencia de tipos para variables locales es la más destacada en cuanto a cambios en el lenguaje con la adición de la nueva palabra reservada _var_, esto ayuda a no tener que repetir varias veces los tipos en la construcción de un objeto. En las _lambdas_ los parámetros no es necesario declararlos infiriéndose de la interfaz que implementan. La inferencia de tipos es la idea que permite al compilador obtener el tipo estático sin que sea necesario escribirlo de forma explícita.
 

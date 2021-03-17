@@ -19,6 +19,10 @@ series: ["java-platform"]
 
 Entre las novedades más destacadas que incorpora Java 14 están los _records_, la incorporación definitiva de las expresiones _switch_ o el _pattern matching_ para el operador _instanceof_. Otra de las novedades más destacadas es una traza de _NullPointerException_ más útil, también destaca la posibilidad de utilizar el recolector de basura ZGC en Windows y macOS. El resto de novedades son la eliminación de algunas funcionalidades con poco uso y la preparación marcando como desaconsejado su uso con _deprecated_.
 
+{{< tableofcontents >}}
+
+### Introducción
+
 * [Características de Java 14](https://openjdk.java.net/projects/jdk/14/)
 * [Notas de publicación de Java 14](https://www.oracle.com/java/technologies/javase/14-relnote-issues.html)
 * [Documentación Javadoc de Java 14](https://docs.oracle.com/en/java/javase/14/docs/api/)
@@ -42,9 +46,9 @@ Las mejoras incluídas en esta versión son:
 * 368: [Text Blocks (Second Preview)](https://openjdk.java.net/jeps/368)
 * 370: [Foreign-Memory Access API (Incubator)](https://openjdk.java.net/jeps/370)
 
-{{< tableofcontents >}}
+### Nuevas características
 
-### Excepciones NullPointerException más útiles
+#### Excepciones NullPointerException más útiles
 
 Cuando se produce una excepción _NullPointerException_ por usar una referencia de objeto cuyo valor es _null_ Java emite una traza indicando la línea de código donde se ha producido, la clase y método donde se ha intentado referenciar pero no se ha podido.
 
@@ -58,7 +62,28 @@ A partir de Java 14 las excepciones NullPointerException son más útiles e indi
 
 {{< code file="NullPointerException-3.out" language="plaintext" options="" >}}
 
-### Records
+#### Expresiones switch
+
+La características de expresiones _switch_ introducida en modo vista previa en las versiones de Java 12 y 13 se califica como estándar.
+
+{{< code file="Switch-1.java" language="java" options="" >}}
+{{< code file="Switch-2.java" language="java" options="" >}}
+
+#### ZGC para Windows y macOS
+
+La versión del recolector de basura ZGC que permite pausas muy reducidas en memorias de unos pocos MB hasta varios TB ahora es posible utilizarla en los sistemas operativos macOS y Windows.
+
+* [El recolector de basura de Java, que hace y como funciona en cada versión][blogbitix-463]
+
+### Nuevas características en vista previa
+
+#### Bloques de texto
+
+En esta nueva revisión de los bloques de texto se definen dos nuevos caracteres de escape. El _terminador de línea_ para poder definir bloques de texto en varias líneas pero sin insertar saltos de línea en el bloque de texto y _\s_ para evitar que los espacios en blanco sean eliminados por la operación _trim_.
+
+{{< code file="TextBlocks.java" language="java" options="" >}}
+
+#### Records
 
 Esta es la característica más destacada añadida al lenguaje que permite reducir significativamente el código necesario para algunas clases.
 
@@ -90,7 +115,7 @@ Con los registros se define de la siguiente forma.
 
 {{< code file="Records-2.java" language="java" options="" >}}
 
-### Pattern Matching para el operador instanceof
+#### Pattern Matching para el operador instanceof
 
 Al usar el operador _instanceOf_ para comprobar si un objeto es una instancia de una clase si se realiza en un _if_ posteriormente es necesario hacer un _cast_ del objeto a la clase.
 
@@ -103,25 +128,6 @@ Ahora el operador _instanceof_ permite renombrar la variable y dentro de la rama
 En futuras proposiciones de mejoras para el lenguaje de programación Java está planificado soportar _pattern matching_ para otras construcciones del lenguaje como expresiones _switch_ y sentencias. La incorporación de _pattern matching_ permitirá reducir la _verbosidad_ del código haciéndolo más fácil de leer y modificar.
 
 La posible implementación en Java quizá sea similar a la [implementación de C# para pattern matching](https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching).
-
-### Bloques de texto
-
-En esta nueva revisión de los bloques de texto se definen dos nuevos caracteres de escape. El _terminador de línea_ para poder definir bloques de texto en varias líneas pero sin insertar saltos de línea en el bloque de texto y _\s_ para evitar que los espacios en blanco sean eliminados por la operación _trim_.
-
-{{< code file="TextBlocks.java" language="java" options="" >}}
-
-### Expresiones switch
-
-La características de expresiones _switch_ introducida en modo vista previa en las versiones de Java 12 y 13 se califica como estándar.
-
-{{< code file="Switch-1.java" language="java" options="" >}}
-{{< code file="Switch-2.java" language="java" options="" >}}
-
-### ZGC para Windows y macOS
-
-La versión del recolector de basura ZGC que permite pausas muy reducidas en memorias de unos pocos MB hasta varios TB ahora es posible utilizarla en los sistemas operativos macOS y Windows.
-
-* [El recolector de basura de Java, que hace y como funciona en cada versión][blogbitix-463]
 
 {{< reference >}}
 * [Java 14: All the new features of JDK 14 as it hits GA](https://jaxenter.com/java-14-update-news-163585.html)

@@ -1,4 +1,4 @@
-#!java --source 11
+#!.sdkman/candidates/java/current/bin/java --source 11
 
 public class HelloWorld {
     public static void main(String[] args) {

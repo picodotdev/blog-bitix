@@ -25,6 +25,10 @@ Con este calendario de publicaciones tan frecuente las novedades son varias en c
 
 Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se hace más necesario utilizar [la herramienta SDKMAN][blogbitix-489] para instalar al mismo tiempo varias versiones del JDK de Java y poder cambiar de una a otra con facilidad.
 
+{{< tableofcontents >}}
+
+### Introducción
+
 * [Características de Java 15](https://openjdk.java.net/projects/jdk/15/)
 * [Notas de publicación de Java 15](https://www.oracle.com/java/technologies/javase/15-relnote-issues.html)
 * [Documentación Javadoc de Java 15](https://docs.oracle.com/en/java/javase/15/docs/api/)
@@ -46,45 +50,13 @@ Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran 
 * 384: [Records (Second Preview)](https://openjdk.java.net/jeps/384)
 * 385: [Deprecate RMI Activation for Removal](https://openjdk.java.net/jeps/385)
 
-{{< tableofcontents >}}
+### Nuevas características
 
-### Algoritmo de firma digital Edwards-Curve (EdDSA)
+#### Algoritmo de firma digital Edwards-Curve (EdDSA)
 
 El algoritmo de firma digital EdDSA o _Edwards-Curve Digital Signature Algorithm_ (EdDSA) es demandado por mejorar la seguridad y el rendimiento comparado con otros algoritmos de firma, ya está implementado en otras librerías de criptografía como [OpenSSL][openssl]. Este esquema de firma es opcional en TLS 1.3 pero es uno de los tres permitidos. Añadir este algoritmo permite usar EdDSA en Java sin recurrir a librerías de terceras partes.
 
-### _Sealed Classes_ (vista previa)
-
-En Java las clases permiten la reutilización de código mediante la herencia, los métodos de una clase son heredados por las subclases que la extiendan. Sin embargo, en ocasiones la jerarquía de clases sirve para modelar el dominio sin querer permitir que sea extendido por cuales quiera otras clases.
-
-En Java toda clase puede ser extendida por defecto la única forma de no permitir extender una clase es utilizando la palabra reservada _final_. Sin embargo, esto impide la extensión de la clase completamente.
-
-Las clases _sealed_ especifican de forma explícita que clases tiene permitido la extensión y herencia. Las clases _sealed_ son más restrictivas que el comportamiento por defecto de permitir a cualquier clase la extensión pero más permisivo que si se utiliza la palabra clave _final_ que impide a cualquier clase la extensión.
-
-Se introduce una nueva palabra reservada _sealed_. La declaración de la clase _sealed_ se realiza con el siguiente sintaxis, en este ejemplo la clase _Shape_ solo puede ser extendida por las clases _Circle_, _Rectangle_ y _Square_.
-
-{{< code file="SealedClasses.java" language="java" options="" >}}
-
-### _Pattern Matching_ para _instanceof_ (segunda vista previa)
-
-Se mantiene en la categoría de funcionalidad preliminar esta funcionalidad ya publicada en Java 14 que permite eliminar algunos _cast_ de tipos explícitos.
-
-{{< code file="IfPatternMatching-1.java" language="java" options="" >}}
-
-El operador _instanceof_ permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el _cast_, esto simplifica el código y evita posibles errores.
-
-{{< code file="IfPatternMatching-2.java" language="java" options="" >}}
-
-### _Records_ (segunda vista previa)
-
-Los _records_ son clases inmutables con unas convenciones implícitas que no requieren escribir mucho del código considerado ceremonial en las clases de datos Java que hacen al lenguaje _verboso_ para estas clases simples.
-
-Escribir clases portadoras de datos en Java requieren una buena cantidad de código de bajo valor, repetitivo, propenso a errores para especificar constructores, métodos de acceso a propiedades e [implementar correctamente los métodos _equals_, _hashCode_ y _toString_][blogbitix-199].
-
-La siguiente clase _record_ es equivalente al POJO tradicional de muchas más líneas de código.
-
-{{< code file="Records.java" language="java" options="" >}}
-
-### Bloques de texto
+#### Bloques de texto
 
 En Java embeber en el código un trozo de código HTML, XML, SQL o JSON en un literal como un String requiere editarlo de forma significativa con caracteres de escape y concatenación para que el código compile. La cadena transformada resultante es poco legible y difícil de mantener.
 
@@ -96,19 +68,53 @@ Usando bloques de texto se eliminan los caracteres de escape y las concatenacion
 
 {{< code file="TextBlocks-2.java" language="java" options="" >}}
 
-### Clases ocultas
+#### Clases ocultas
 
 Se añaden clases ocultas o _hidden classes_ que son clases que no pueden usarse directamente por otras clases. Su intención es que sean usadas por _frameworks_ que generan clases en tiempo de ejecución y las usan de forma indirecta con _reflection_.
 
-### Reimplementación de la antigua API DatagramSocket
+#### Reimplementación de la antigua API DatagramSocket
 
 Se reemplazan las implementaciones de bajo nivel para la comunicación por red [java.net.DatagramSocket](javadoc15:java.base/java/net/DatagramSocket.html) y [java.net.MulticastSocket](javadoc15:java.base/java/net/MulticastSocket.html) con una implementación mas simple y moderna que es más fácil de mantener, depurar y fácil de adaptar a [los _threads_ virtuales del proyecto Loom][blogbitix-485].
 
-### Recolectores de basura ZGC y Shenandoah
+#### Recolectores de basura ZGC y Shenandoah
 
 Se califican como versión de producción los recolectores de basura _ZGC_ y _Shenandoah_ que ofrecen tiempos de pausa bajos aunque se mantiene como recolector de basura por defecto _G1_. Se soportan todas las plataformas comunes, Linux/x86_64, Linux/aarch64, Windows y macOS. El recolector de basura _ZGC_ se activa con la opción de la máquina virtual _-XX:+UseZGC_ y _Shenandoah_ con _-XX:+UseShenandoahGC_.
 
 * [El recolector de basura de Java, qué hace y cómo funciona en cada versión][blogbitix-463]
+
+### Nuevas características en vista previa
+
+#### _Sealed Classes_
+
+En Java las clases permiten la reutilización de código mediante la herencia, los métodos de una clase son heredados por las subclases que la extiendan. Sin embargo, en ocasiones la jerarquía de clases sirve para modelar el dominio sin querer permitir que sea extendido por cuales quiera otras clases.
+
+En Java toda clase puede ser extendida por defecto la única forma de no permitir extender una clase es utilizando la palabra reservada _final_. Sin embargo, esto impide la extensión de la clase completamente.
+
+Las clases _sealed_ especifican de forma explícita que clases tiene permitido la extensión y herencia. Las clases _sealed_ son más restrictivas que el comportamiento por defecto de permitir a cualquier clase la extensión pero más permisivo que si se utiliza la palabra clave _final_ que impide a cualquier clase la extensión.
+
+Se introduce una nueva palabra reservada _sealed_. La declaración de la clase _sealed_ se realiza con el siguiente sintaxis, en este ejemplo la clase _Shape_ solo puede ser extendida por las clases _Circle_, _Rectangle_ y _Square_.
+
+{{< code file="SealedClasses.java" language="java" options="" >}}
+
+#### _Pattern Matching_ para _instanceof_
+
+Se mantiene en la categoría de funcionalidad preliminar esta funcionalidad ya publicada en Java 14 que permite eliminar algunos _cast_ de tipos explícitos.
+
+{{< code file="IfPatternMatching-1.java" language="java" options="" >}}
+
+El operador _instanceof_ permite renombrar la variable y dentro de la rama usarla sin necesidad de realizar el _cast_, esto simplifica el código y evita posibles errores.
+
+{{< code file="IfPatternMatching-2.java" language="java" options="" >}}
+
+#### _Records_
+
+Los _records_ son clases inmutables con unas convenciones implícitas que no requieren escribir mucho del código considerado ceremonial en las clases de datos Java que hacen al lenguaje _verboso_ para estas clases simples.
+
+Escribir clases portadoras de datos en Java requieren una buena cantidad de código de bajo valor, repetitivo, propenso a errores para especificar constructores, métodos de acceso a propiedades e [implementar correctamente los métodos _equals_, _hashCode_ y _toString_][blogbitix-199].
+
+La siguiente clase _record_ es equivalente al POJO tradicional de muchas más líneas de código.
+
+{{< code file="Records.java" language="java" options="" >}}
 
 ### Otras características incorporadas y cambios
 
