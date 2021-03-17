@@ -18,7 +18,7 @@ summary: "Frostpunk ha sido uno de los juegos con los que he disfrutado mucho de
 
 {{% post %}}
 
-Los juegos de estrategia no suelen abundar mucho en las consolas, el uso del mando no es lo ideal para este tipo de juegos al igual que ocurre en otros que son mejores con teclado y ratón. Pero hay algunos buenos juegos de estrategia, uno de ellos es [Frostpunk](https://en.wikipedia.org/wiki/Frostpunk) de [11 Bit Studios](https://en.wikipedia.org/wiki/11_bit_studios).
+Los juegos de estrategia no suelen abundar mucho en las consolas, el uso del mando no es lo ideal para este tipo de juegos al igual que ocurre en otros que son mejores con teclado y ratón. Pero hay algunos buenos juegos de estrategia, uno de ellos es [Frostpunk](https://www.igdb.com/games/frostpunk) de [11 Bit Studios](https://www.igdb.com/companies/11-bit-studios).
 
 La historia de Frostpunk es diferente a lo habitual, está basado en el acontecimiento de un cataclismo apocalíptico en una época alternativa pasada que ha hecho que las temperaturas hayan descendido significativamente hasta llegar al punto de congelación para el desarrollo de la vida tal y como la ha conocido la humanidad hasta ese momento. La humanidad se ha reducido a un grupo de humanos que ha de sobrevivir construyendo una nueva colonia alrededor de un generador alimentado con carbón que proporciona el calor para no perecer congelados. Se trata de un juego de construcción de ciudades, gestión de recursos y supervivencia con un árbol de investigaciones tecnológicas y leyes que proporcionan mejoras.
 
