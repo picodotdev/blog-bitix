@@ -9,6 +9,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
+imageHead: "image:java-14.jpg"
+imagePost: "image:java-14.jpg"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 ---
@@ -26,6 +28,7 @@ Entre las novedades más destacadas que incorpora Java 14 están los _records_, 
 * [Características de Java 14](https://openjdk.java.net/projects/jdk/14/)
 * [Notas de publicación de Java 14](https://www.oracle.com/java/technologies/javase/14-relnote-issues.html)
 * [Documentación Javadoc de Java 14](https://docs.oracle.com/en/java/javase/14/docs/api/)
+* [JavaMagazine: Java 14 Arrives with a Host of New Features](https://blogs.oracle.com/javamagazine/java-14-arrives-with-a-host-of-new-features)
 
 Las mejoras incluídas en esta versión son:
 

@@ -10,7 +10,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:java.svg"
+imageHead: "image:java-13.jpg"
+imagePost: "image:java-13.jpg"
 tags: ["java", "planeta-codigo", "programacion"]
 series: ["java-platform"]
 ---
@@ -30,6 +31,7 @@ Casi coincidiendo con la publicación de Java 13 se publicado [Jakarta EE][jakar
 * [Características de Java 13](https://openjdk.java.net/projects/jdk/13/)
 * [Notas de publicación de Java 13](https://www.oracle.com/java/technologies/javase/13-relnote-issues.html)
 * [Documentación Javadoc de Java 13](https://docs.oracle.com/en/java/javase/13/docs/api/)
+* [JavaMagazine: Inside Java 13](https://blogs.oracle.com/javamagazine/october-2019-v2)
 
 Las mejoras incluídas en esta versión son:
 

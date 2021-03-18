@@ -9,7 +9,8 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imagePost: "logotype:java.svg"
+imageHead: "image:java-15.jpg"
+imagePost: "image:java-15.jpg"
 tags: ["java", "planeta-codigo"]
 series: ["java-platform"]
 summary: "Algunas novedades de anteriores versiones que en la versión de Java 15 pasan a calificarse con el grado de producción y otras características como una segunda versión preliminar. Sin grandes cambios en el lenguaje tan destacables de versiones anteriores como las _lambdas_ de Java 8 o los módulos de Java 9, en Java 15 se añaden las _sealed classes_."
@@ -32,6 +33,7 @@ Dado que ahora las versiones de Java son mucho más numerosas y frecuentes se ha
 * [Características de Java 15](https://openjdk.java.net/projects/jdk/15/)
 * [Notas de publicación de Java 15](https://www.oracle.com/java/technologies/javase/15-relnote-issues.html)
 * [Documentación Javadoc de Java 15](https://docs.oracle.com/en/java/javase/15/docs/api/)
+* [JavaMagazine: Inside Java 15: Fourteen JEPs in five buckets](https://blogs.oracle.com/javamagazine/inside-java-15-fourteen-jeps-in-five-buckets)
 
 Esta es la lista de novedades de Java 15, algunas son cambios que no tiene gran impacto en el lenguaje ni la plataforma al ser más cambios internos que reimplementan y modernizan código existente, otras son versiones preliminares y segundas versiones preliminares no definitivas, algunas características en versiones anteriores se marcan como públicas dejando de ser preliminares, otras que se marcan como obsoletas desaconsejándose su uso y otras ya marcadas como obsoletas anteriormente son eliminadas.
 
