@@ -61,8 +61,9 @@ Recoger los orbes de experiencia otorgan puntos de habilidad para emplearlos en 
 
 {{< image
     gallery="true"
-    image1="image:trine-1-habilidades.jpg" optionsthumb1="300x200" title1="Habilidades de personajes en Trine 1"
-    image2="image:trine-2-habilidades.jpg" optionsthumb2="300x200" title2="Habilidades de personajes en Trine 2"
+    image1="image:trine-1-habilidades-1.jpg" optionsthumb1="200x150" title1="Habilidades de personajes en Trine 1"
+    image2="image:trine-1-habilidades-2.jpg" optionsthumb2="200x150" title2="Habilidades de personajes en Trine 1"
+    image3="image:trine-2-habilidades.jpg" optionsthumb3="200x150" title3="Habilidades de personajes en Trine 2"
     caption="Habilidades de personajes en Trine 1 y 2" >}}
 
 En algunos niveles se encuentran varios enemigos, en Trine son esqueletos y en Trine 2 son duendes. En algunos niveles hay jefes enemigos que para eliminarlos hay que emplear una táctica según su comportamiento, variedad de ataques o descubrir sus puntos vulnerables para hacerles daño.
