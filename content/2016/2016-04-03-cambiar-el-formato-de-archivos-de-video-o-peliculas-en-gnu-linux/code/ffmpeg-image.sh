@@ -1,0 +1,1 @@
+$ ffmpeg -ss 15 -i video.mp4 -qscale:v 4 -frames:v 1 image.jpg

@@ -1,1 +1,1 @@
-$ ffmpeg -i video.avi
+$ ffmpeg -i video.mkv
