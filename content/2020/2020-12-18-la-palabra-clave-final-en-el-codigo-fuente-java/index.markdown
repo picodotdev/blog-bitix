@@ -68,6 +68,8 @@ Si una variable es efectivamente _final_ añadir el modificador _final_ no gener
 
 También suele comentarse que una variable _final_ ofrece mejor rendimiento, la diferencia de rendimiento no es significativa y si el rendimiento del programa depende de optimizarlo con palabras clave _final_ seguramente haya muchas otras cosas a mejorar primero que el uso de palabras reservadas _final_. Otra justificación para el uso indiscriminado de la palabra _final_ es en programas concurrentes con varios hilos con la intención de que los hilos no vean objetos parcialmente construidos, casos avanzados en los que quizá las primitivas de sincronización sea más adecuado.
 
+* [The Java final Keyword – Impact on Performance](https://www.baeldung.com/java-final-performance)
+
 {{< reference >}}
 * [Final Keyword In Java](https://www.javatpoint.com/final-keyword)
 * [final keyword in java](https://www.geeksforgeeks.org/final-keyword-java/)
