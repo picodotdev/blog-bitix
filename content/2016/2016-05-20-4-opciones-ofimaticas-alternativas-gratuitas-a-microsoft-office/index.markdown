@@ -19,13 +19,13 @@ summary: "Office es la suite ofimática de Microsoft con un margen de diferencia
 
 {{< logotype image1="microsoft.svg" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
-En el primer artículo de este 2016 comentaba que [Windows y Office aún siguen siendo fáciles de usar sin licencia][blogbitix-119]. Licencia que cuesta nada más ni nada menos que unos 125 € para el [hogar y estudiantes](https://amzn.to/2bg4CR2) y unos 250 € para [hogar y negocios](https://amzn.to/2bNf5Bx), por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.
+En el primer artículo de este 2016 comentaba que [Windows y Office aún siguen siendo fáciles de usar sin licencia][blogbitix-119]. Licencia que cuesta nada más ni nada menos que unos 125 € para el [hogar y estudiantes](https://amzn.to/3cb4v74) y unos 250 € para [hogar y empresas](https://amzn.to/3sc4aqv), por equipo. Y si el equipo se renueva o estropea requiriendo cambiar algunos componentes debe adquirirse una nueva licencia. Dado el coste nada despreciable de la licencia no es de extrañar que tanto Windows como Office sean unos de los productos más usados sin licencia o pirateados.
 
 Dada lo fácil que es usar Windows y Office sin licencia junto con el [impuesto Windows][elblogdepicodev-57] hacen que tengan una cuota de mercado en números prácticamente de monopolio ni hay muestras de que vaya a cambiar a corto plazo. A veces pienso que [a Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92] para uso personal. Sin embargo, hay alternativas tanto para Windows como para Office que tienen poco que envidiarle, mucho más baratas o incluso gratuitas y de software libre incluso con un soporte mejor que el que ofrece [Microsoft][microsoft] para su propio software. Lo que no es recomendables usar activadores por ser una fuente de virús informáticos o de troyanos es mejor [comprar una licencia barata de Windows 10 y Microsoft Office][blogbitix-514].
 
-* [Licencia de Windows 10 Home](https://amzn.to/2FjvnDS) en Amazon.
-* [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
-* [Licencia de Microsoft Office 2019](https://amzn.to/2ZhuhzU) en Amazon.
+* [Licencia de Windows 10 Home](https://amzn.to/333Df5X) en Amazon.
+* [Licencia de Windows 10 Pro](https://amzn.to/3iZ4dBk) en Amazon.
+* [Licencia de Microsoft Office 2019](https://amzn.to/369oJfc) en Amazon.
 * [Licencia de Windows 10 Home](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) en eBay.
 * [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) en eBay.
 * [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) en eBay.

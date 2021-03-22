@@ -26,9 +26,9 @@ Hay pocas pero algunas opciones para adquirir un portátil sin Windows o con alg
     gallery="true"
     image1="image:windows-10.png" optionsthumb1="300x200" title1="Windows 10" >}}
 
-* [Licencia de Windows 10 Home](https://amzn.to/2FjvnDS) en Amazon.
+* [Licencia de Windows 10 Home](https://amzn.to/333Df5X) en Amazon.
 * [Licencia de Windows 10 Pro](https://amzn.to/3icedXI) en Amazon.
-* [Licencia de Microsoft Office 2019](https://amzn.to/2ZhuhzU) en Amazon.
+* [Licencia de Microsoft Office 2019](https://amzn.to/369oJfc) en Amazon.
 * [Licencia de Windows 10 Home](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) en eBay.
 * [Licencia de Windows 10 Pro](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) en ebay.
 * [Licencia de Microsoft Office 2019](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) en eBay.

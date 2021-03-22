@@ -62,9 +62,9 @@ Finally I used an activator but they are insecure, is better to purchase a licen
 
 * [Windows 10 license](https://www.microsoft.com/es-es/store/b/windows) in Microsoft.
 * [Microsoft Office 2019 license](https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products) in Microsoft.
-* [Windows 10 Home license](https://amzn.to/2FjvnDS) in Amazon.
-* [Windows 10 Pro license](https://amzn.to/3icedXI) in Amazon.
-* [Microsoft Office 2019 license](https://amzn.to/2ZhuhzU) in Amazon.
+* [Windows 10 Home license](https://amzn.to/333Df5X) in Amazon.
+* [Windows 10 Pro license](https://amzn.to/3iZ4dBk) in Amazon.
+* [Microsoft Office 2019 license](https://amzn.to/369oJfc) in Amazon.
 * [Windows 10 Home license](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) in eBay.
 * [Windows 10 Pro license](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) in eBay.
 * [Microsoft Office 2019 license](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) in eBay.
