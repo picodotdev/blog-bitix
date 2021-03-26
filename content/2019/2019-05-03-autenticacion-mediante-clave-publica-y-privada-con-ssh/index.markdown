@@ -55,6 +55,8 @@ Para probar la autenticación con SSH se puede utilizar una máquina virtual de 
 {{< code file="Vagrantfile" language="plaintext" options="" >}}
 {{< code file="vagrant.sh" language="bash" options="" >}}
 
+Para mayor seguridad en caso de que la clave publica y privada sean comprometidas es posible [configurar un segundo factor de autenticación con SSH][blogbitix-562] que adicionalmente a la clave privada pide un [segundo factor de autenticación generado con la aplicación Google Authenticator o con KeePassXC][blogbitix-530].
+
 {{< reference >}}
 * [Does ssh key need to be named id_rsa?](http://askubuntu.com/questions/30788/does-ssh-key-need-to-be-named-id-rsa#30792)
 * [How to permanently add a private key with ssh-add on Ubuntu?](http://stackoverflow.com/questions/3466626/add-private-key-permanently-with-ssh-add-on-ubuntu)

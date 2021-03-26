@@ -136,9 +136,14 @@ Una de las funcionalidades que proporciona Boundary es trazabilidad en el _log_ 
     image1="image:boundary-sessions.png" optionsthumb1="300x200" title1="Conexiones realizadas con Boundary"
     caption="Conexiones realizadas con Boundary" >}}
 
-#### Autenticación con SSH usando OTP
+### Autenticación con SSH
 
-Si no se proporciona la clave privada el servidor de SSH y se ha configurado como modo de autenticación alternativo OTP al realizar la conexión se solicita una contraseña temporal de un solo uso u OTP, una vez usado el OTP si se intenta utilizar el mismo código en una autenticación posterior esta falla.
+La autenticaión de SSH usando Boudary no cambia, se solicita la contraseña del usuario con el que se realiza la conexión, la clave pública en caso de que el servidor se haya configurado con clave pública y privada o incluso un segundo factor de autenticación.
+
+* [Autenticación mediante clave pública y privada con SSH][blogbitix-401]
+* [Autenticación con segundo factor de autenticación en SSH][blogbitix-562]
+
+#### Segundo factor de autenticación con Vault
 
 Vault permite generar contraseñas de un solo uso y configurando SSH validar los OTP proporcionados en la conexión. La ventaja de usar OTP es que no es necesario distribuir las claves públicas en cada una de las máquinas en las que se quiera realizar la conexión SSH. Hay que cambiar los archivos de configuración _/etc/pam.d/sshd_, _/etc/ssh/sshd_config_, _/etc/vault-ssh-helper.d/config.hcl_ y reiniciar el servicio de SSH, estos cambios permiten al servidor SSH validar los _tokens_ proporcionados conectándose con Vault.
 
