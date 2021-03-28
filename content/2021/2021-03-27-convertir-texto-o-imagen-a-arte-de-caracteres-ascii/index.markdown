@@ -1,7 +1,7 @@
 ---
 pid: 563
 type: "post"
-title: "Convertir texto o imágen a arte de caracteres ASCII"
+title: "Convertir texto o imagen a arte de caracteres ASCII"
 url: "/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/"
 date: 2021-03-27T00:00:00+01:00
 language: "es"
