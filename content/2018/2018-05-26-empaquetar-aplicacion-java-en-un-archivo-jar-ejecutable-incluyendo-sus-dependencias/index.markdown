@@ -25,7 +25,7 @@ Una aplicación distribuida en forma de múltiples archivos archivos _jar_ se ej
 
 {{< code file="gradlew-assemble.sh" language="bash" options="" >}}
 
-En este caso se trata de una aplicación que emite un arte en formato _ascii_ en la terminal donde para cada linea se usa un color diferente mediante la librería [Jansi][jansi] que la aplicación tiene como dependencia.
+En este caso se trata de una aplicación que emite un [arte en formato de caracteres ASCII][blogbitix-563] en la terminal donde cada linea [aplica un color diferente mediante la librería Jansi en la terminal][blogbitix-359] que la aplicación tiene como dependencia.
 
 {{< code file="java-cp.sh" language="bash" options="" >}}
 

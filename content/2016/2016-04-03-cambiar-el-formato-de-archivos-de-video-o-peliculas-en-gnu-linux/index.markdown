@@ -100,6 +100,8 @@ Otra operación es extraer una imagen o fotograma de un archivo de vídeo indica
 
 {{< code file="ffmpeg-image.sh" language="bash" options="" >}}
 
+Esta operación de obtener un fotograma de una película o vídeo se puede combinar con [la herramienta j2pa para convertir una imagen a arte de caracteres ASCII][blogbitix-563].
+
 ### Realizar conversiones de forma masiva
 
 Al igual que comentaba en el artículo de convertir archivos de audio todas estas operaciones son realizables de forma masiva en un directorio o recursiva en múltiples directorios con los siguientes comandos.

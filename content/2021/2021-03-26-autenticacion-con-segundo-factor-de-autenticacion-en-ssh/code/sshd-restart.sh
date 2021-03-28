@@ -1,1 +1,1 @@
-$ sudo systemctl restart sshd
+$ sudo systemctl restart sshd.service
