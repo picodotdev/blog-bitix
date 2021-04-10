@@ -66,7 +66,7 @@
     "dateModified": "2021-04-09T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2050",
+    "wordCount": "2065",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -356,14 +356,14 @@
 <p>Las siguientes sentencias SQL sufren del problema de <em>SQL injection</em>, en la primera un atacante puede obtener un dato de cualquier columna de la tabla y con la segunda ejecutar una sentencia en este caso para eliminar todas las filas de cualquier tabla.</p>
 <p>En la primera cambiando el valor de <em>column</em> se obtiene el dato de cualquier columna de la tabla, por ejemplo el campo <em>password</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT id, &#34;</span> <span class="o">+</span> <span class="k">column</span> <span class="o">+</span> <span class="s2">&#34; FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span><span class="p">;</span>&#10;&#10;<span class="s2">&#34;SELECT id, password FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span><span class="p">;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT id, &#34;</span> <span class="o">+</span> <span class="k">column</span> <span class="o">+</span> <span class="s2">&#34; FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span>&#10;&#10;<span class="s2">&#34;SELECT id, password FROM users WHERE user_id = 1</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>sql-injection-1.sql</span>
     </div>
 </div>
 <p>En esta sentencia se finaliza la sentencia original con <em>;</em> y se inicia otra lo que provoca la eliminación de una tabla, con un valor para <em>user_id</em> especialmente construido para ejecutar la sentencia maliciosa de eliminación de la tabla.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT * FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span><span class="p">;</span>&#10;&#10;<span class="s2">&#34;SELECT * FROM users WHERE user_id = 105; DROP TABLE users;&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT * FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span>&#10;&#10;<span class="s2">&#34;SELECT * FROM users WHERE user_id = 105; DROP TABLE users;&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>sql-injection-2.sql</span>
     </div>
@@ -377,8 +377,14 @@
 </div>
 <h3 id="librerías-de-persistencia-en-java">Librerías de persistencia en Java</h3>
 <p>Habitualmente no se utilizan directamente las clases de la API de Java sino que se utilizan otras librerías de más alto nivel. Una de las más conocidas es <a href="https://hibernate.org/">Hibernate</a>, es un ORM que proporciona acceso a los datos con una correspondencia entre el modelo relacional de las bases de datos y el modelo de objetos de Java. La aplicación trabaja con objetos y relaciones entre los objetos e Hibernate se encarga de transformar esos objetos en el modelo relacional de la base de datos, la aplicación no ejecuta sentencias SQL de forma directa sino que es Hibernate el encargado de emitir las sentencias adecuadas según los cambios realizados en los datos. Es la implementación más utilizada de ORM en Java para la especificación JPA.</p>
+<ul>
+<li><a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">Aplicación de ejemplo con Hibernate, jOOQ y Liquibase</a></li>
+</ul>
 <p><a href="https://spring.io/projects/spring-data">Spring Data</a> es una capa de abstracción para el acceso a datos ya sean de un modelo relacional, de bases de datos NoSQL o algunos otros sistemas de datos. Spring Data hace más sencillo el acceso a los datos utilizando de forma subyacente JDBC o JPA. Spring Data proporciona algunas clases e interfaces que la aplicación implementa.</p>
 <p><a href="https://www.jooq.org/">jOOQ</a> también es otra librería de acceso a bases de datos relacionales, proporciona DSL para la construcción de sentencias SQL mediante un API Java. A diferencia de JPA con su lenguaje JPQL, jOOQ soporta características avanzadas del lenguaje SQL como <a href="https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/window-functions/"><em>windows functions</em></a>. Otra ventaja de jOOQ es que al utilizar su DSL el compilador de Java realiza validación de tipos y comprobaciones en la sintaxis de la construcción de la SQL.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2015/05/alternativa-a-hibernate-u-orm-y-ejemplo-de-jooq/">Alternativa a Hibernate u ORM y ejemplo de jOOQ</a></li>
+</ul>
 <p>Algunas aplicaciones combinan el uso de varias de estas librerías en la misma aplicación según el caso, por ejemplo utilizando Hibernate para el modelo de escritura y jOOQ o Spring Data para el modelo de lectura. También es posible utilizar jOOQ para generar las sentencias SQL y posteriormente ejecutarlas con Hibernate o Spring Data.</p>
 <p><a href="https://www.liquibase.org/">Liquibase</a> es otra librería de utilidad que permite lanzar <em>scripts</em> de migración con sentencias SQL para realizar cambios en la base de datos como modificar el esquema de tablas, insertar, actualizar o eliminar datos. Es necesario si los cambios en el código en una nueva versión de la aplicación requiere cambios en el esquema de la base de datos.</p>
 <p>Estas no son las únicas librerías existentes pero sí son de las más conocidas y utilizadas.</p>
