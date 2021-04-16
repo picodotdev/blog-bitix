@@ -1,0 +1,1 @@
+$ tesseract image.jpg output -l spa
