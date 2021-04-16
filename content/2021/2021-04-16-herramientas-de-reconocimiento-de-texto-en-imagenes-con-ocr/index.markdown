@@ -87,7 +87,7 @@ Dos herramientas en línea de OCR que aceptan diferentes formatos de imagen son:
 * [Free Online OCR ](https://www.newocr.com/)
 * [Online OCR](https://onlineocr.org/).
 
-### Reconocimiento de caracteres con Java
+### OCR con Java
 
 Para automatizar el reconocimiento de caracteres en un programa propio hay una librería que permite invocar la funcionalidad de _tesseract_ desde un programa implementado con el lenguaje de programación Java.
 
