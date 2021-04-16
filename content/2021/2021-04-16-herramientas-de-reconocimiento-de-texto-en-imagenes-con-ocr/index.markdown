@@ -42,7 +42,7 @@ En el sistema operativo [GNU][gnu]/[Linux][linux] una herramienta de OCR es [tes
 
 {{< code file="pacman-install.sh" language="bash" options="" >}}
 
-Su uso desde la línea de comandos es el siguiente, se ha de proporcionar la imagen origen y el identificador del idioma en su código de tres letras. El comando no perite especificar un rectángulo de la imagen donde se desea reconocer el texto con lo que es necesario recorgar la imagen al área deseada con una herramienta de manipulación de imágenes como [GIMP][gimp].
+Su uso desde la línea de comandos es el siguiente, se ha de proporcionar la imagen origen y el identificador del idioma en su código de tres letras. El comando no perite especificar un rectángulo de la imagen donde se desea reconocer el texto con lo que es necesario recorgar la imagen al área deseada con una herramienta de manipulación de imágenes como [GIMP][gimp]. El resultado se genera en un archivo de nombre _output.txt_.
 
 {{< code file="tesseract.sh" language="bash" options="" >}}
 
