@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imagePost: "image:image-2.jpg"
 tags: ["java", "gnu-linux", "planeta-codigo"]
-summary: "Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, _scnaner_ u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java."
+summary: "Un programa de reconocimiento de caracteres o OCR permite obtener el texto de una imagen o fotografía tomada con la cámara de un teléfono inteligente, captura de pantalla, _scanner_ u otro medio. Al programa OCR se le proporciona la imagen y este genera como resultado el texto reconocido, si la imagen es de buena calidad el reconocimiento de caracteres es bastante preciso. Hay programas OCR de línea de comandos, con interfaz gráfica, en línea sin necesidad de instalar software y también es posible realizar OCR desde en un programa con un lenguaje de programación como Java."
 ---
 
 {{% post %}}
