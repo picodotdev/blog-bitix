@@ -18,7 +18,7 @@ summary: "Un programa de reconocimiento de caracteres o OCR permite obtener el t
 
 {{< logotype image1="linux.svg" image2="java.svg" >}}
 
-El problema de reconocimiento de texto es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de texto de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La [conversión de texto a voz natural][blogbitix-555] es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.
+El problema de reconocimiento de caracteres es una tarea simple para un humano pero no es una tarea sencilla para una computadora que no posee la inteligencia y experiencia de un humano sino simplemente la que los programadores le han dotado dentro de sus posibilidades. La ventaja de usar una computadora, al igual que en muchas otras tareas posibles con una computadora, es que con el software adecuado es capaz de hacer el reconocimiento de caracteres de manera mucho más rápida y bastante efectiva aunque requiera cierto trabajo de revisión y edición posterior del texto obtenido. La [conversión de texto a voz natural][blogbitix-555] es otra tarea simple para un humano pero difícil para una computadora si el resultado deseado ha de ser natural o difícilmente indistinguible de la entonación de un humana.
 
 El texto de una imagen no es extraíble de forma directa ya que por el formato de las imágenes el texto es visiblemente únicamente por la disposición de los pixeles. Para extraer el texto es necesario aplicar un algoritmo que utilizando varias heurísticas es capaz de reconocer el texto de la imagen, el software de reconocimiento de caracteres se le denomina _Optical Character Recognition_ o OCR.
 
@@ -26,7 +26,7 @@ El reconocimiento de caracteres en una imagen es útil y necesario cuando el tex
 
 {{< tableofcontents >}}
 
-### Programas de reconocimiento de texto con OCR
+### Programas de reconocimiento de caracteres con OCR
 
 Para extraer el texto de una imagen es necesario un programa OCR, un programa OCR es un software especializado en reconocer patrones de caracteres en una imagen aún cuando los caracteres y texto de la imagen tiene cierta distorsión, baja calidad o defectos. Por supuesto, a mejor calidad de la imagen origen el programa OCR es capaz de ser más preciso en el reconocimiento del texto. Aunque los programas OCR no son siempre perfectos son bastante fiables con una imagen de buena calidad y son capaces de extraer el texto con un éxito cercano al cien por cien.
 
@@ -34,7 +34,7 @@ Los usos de OCR son múltiples, como digitalización de libros, páginas de un l
 
 Hay programas OCR que se invocan desde la línea de comandos, programas con interfaz gráfica y herramientas en línea sin necesidad de programas adicionales.
 
-#### Reconocimiento de texto desde línea de comandos
+#### Reconocimiento de caracteres desde línea de comandos
 
 La ventaja de una herramienta de línea de comandos es que permite automatizar la tarea de extracción de texto de un conjunto de imágenes, o también permite hacer la tarea más rápido sin necesidad de usar de forma interactiva con una aplicación de interfaz gráfica.
 
