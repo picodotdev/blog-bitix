@@ -22,6 +22,8 @@ Hay herramientas que usando un sintetizador de voz permiten transformar un texto
 
 Una de estas herramientas es [TTS: Text-to-Speech](https://github.com/mozilla/TTS), un proyecto de [Mozilla][mozilla] y las ofrecidas por Amazon, Google y Microsoft. Esta y otras herramientas alternativas de conversión de texto a voz producen audios de voz bastante fieles a la voz humana natural. Para ayudar en la interpretación del texto se enriquece con un lenguaje de marcado que indica a la computadora como entonar e interpretar el texto.
 
+En la actualidad hay herramientas de conversión de texto a voz natural que producen resultados difícilmente indisinguibles de si la voz ha sido producida por un humano por una computadora. Otra tarea para la que hay herramientas que producen buenos resultados es [reconocimiento de texto en imágenes con OCR][blogbitix-567]. Estas son tareas aparentemente simples pero significativamente complejas para una computadora que a pesar de su rapidez y capacidad enorme de cálculo no posee la inteligencia humana.
+
 {{< tableofcontents >}}
 
 ### Convertir texto a voz natural
