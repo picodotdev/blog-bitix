@@ -55,6 +55,18 @@ En Java 8 con la introducción de los [Stream](javadoc8:java/util/stream/Stream.
 
 Los _Stream_ de Java 8 están muy bien para simplificar algunas operaciones complejas pero para un bucle _for_ sencillo tiene sus inconvenientes como ofuscar significativamente el _stacktrace_ en caso de producirse alguna excepción. Se puede usar cualquier opción pero la primera con el tradicional bucle _for_ sea la menos recomendable teniendo a nuestra disposición la clase _Counter_ con Java 5 o los _Stream_ y _lambdas_ con Java 8.
 
+### Cómo salir de un bucle inmediatamente o continuar con la siguiente iteración
+
+Cuando se hace un bucle hay que definir una condición que es evaluada en cada iteración del bucle, una vez se cumple la condición el bucle termina y se continua con la siguiente sentencia del programa.
+
+En ocasiones sin embargo se desea terminar un bucle inmediatamente sin evaluar la condición de fin de bucle. Java posee la palabra reservada _break_ que dentro de un bucle permite finalizarlo inmediatamente. El siguiente bucle imprime los números 0, 1 y 2, al evaluar la condición _if_ como cierta para el valor 3 de la variable contador _i_ se ejecuta la sentencia _break_ y se termina el bucle.
+
+{{< code file="For-break.java" language="java" options="" >}}
+
+Al mimo tiempo en otras ocasiones se desea no terminar con el bucle sino continuar con la siguiente iteración del mismo, para ello se utiliza la palabra reservada _continue_. En este caso el bucle imprime los números 0, 1, 2 y 4, al evaluar la condición _if_ como cierta para el valor 3 de la variable contador _i_ se ejecuta la sentencia _continue_ y se continua el bucle en la siguiente iteración.
+
+{{< code file="For-continue.java" language="java" options="" >}}
+
 ### Ejemplo con los distintos tipos de bucle
 
 El siguiente programa muestra las cuatro opciones, su salida en la consola sería el siguiente:

@@ -1,3 +1,3 @@
 for (int i : Arrays.asList(0, 1, 2, 3, 4)) {
-    logger.info("{}", i);
+    System.out.println(i);
 }
