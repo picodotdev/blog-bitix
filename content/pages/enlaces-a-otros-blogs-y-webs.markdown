@@ -4,7 +4,7 @@ title: "Enlaces a otros blogs y webs"
 url: "/pages/links/"
 aliases: ["/pages/enlaces-a-otros-blogs-y-webs/"]
 date: 2013-12-02T13:00:00+01:00
-updated: 2018-01-13T11:00:00+01:00
+updated: 2021-04-20T18:00:00+01:00
 comments: true
 rss: true
 sharing: true
@@ -108,6 +108,30 @@ A modo de entretenimiento los juegos son una buena opción. Hay múltiples pági
 * [CUBTC](https://www.youtube.com/channel/UC3-yxBBaDoMl-VhLjef_Vbw/videos): la mayoría de vídeos son sobre los juegos _free to play_ de [Wargaming][wargaming] como [World of Tanks][wargaming-worldoftanks] y [World of Warships][wargaming-worldofwarships] con una muy buena cantidad de guías de como jugar y guías con consejos sobre estrategia explicados muy detalladamente.
 * [Choche](https://www.youtube.com/channel/UCi6h7SZl37d7toCGHFvLUtQ/videos): el canal de YouTube de otro jugador dedicado al juego World of Warships, explicando tácticas, consejos y como mejorar como jugador.
 
+### Ciencia, matemáticas y conocimiento
+
+Quizá en la educación básica, en el instituto o la universidad las asignaturas de ciencia o matemáticas no eran todo lo divertidas que podrían ser. Sin embargo, la ciencia y adquirir nuevo conocimiento es apasionante. Aunque la humanidad ha adquirido un gran conocimiento sobre ciencia aún siguen habiendo preguntas para las que aún no se han encontrado respuesta. Los siguientes canales de YouTube hacen divulgación científica de una manera amena y sencilla sobre problemas complejos, invertir en ciencia y las personas dedicadas a la investigación hacen una gran labor, los divulgadores científicos hacen otra gran labor de gran importancia para algunas personas de entretenimiento pero para otras para dar visibilidad a es trabajo de los científicos y contribuyendo a despertar vocaciones. Además, varios de estos canales lo hacen en el español lo que facilita la compresión.
+
+Sobre ciencia.
+
+* [Ciencia de sofá](https://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
+* [El robot de platón](https://www.youtube.com/channel/UCaVPhFg-Ax873wvhbNitsrQ)
+* [QuantumFracture](https://www.youtube.com/channel/UCbdSYaPD-lr1kW27UJuk8Pw)
+* [Date un Vlog](https://www.youtube.com/channel/UCQX_MZRCaluNKxkywkLEgfA)
+* [La Hiperactina](https://www.youtube.com/channel/UCV5G678sZwW5IcF3pCfRbHQ)
+* [Antroporama](https://www.youtube.com/channel/UCGKzjVZGdJ0YmUqg42xfO5w)
+* [Instituto de Física Teórica IFT](https://www.youtube.com/channel/UCk195x4zYdMx4LhqEwhcPng)
+* [C de ciencia](https://www.youtube.com/channel/UC52hytXteCKmuOzMViTK8_w) (aunque ya cerrado por desgracia)
+
+Sobre matemáticas.
+
+* [Derivando](https://www.youtube.com/channel/UCH-Z8ya93m7_RD02WsCSZYA)
+* [Mates Mike](https://www.youtube.com/channel/UC-_kZ3UZBsnCWJEVr8ysMww)
+
+Sobre informática.
+
+* [Dot CSV](https://www.youtube.com/channel/UCy5znSnfMsDwaLlROnZ7Qbg)
+
 ### Otros
 
 Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
@@ -117,7 +141,6 @@ Otros blog aunque un fuera de tema de los anteriores también muy interesantes.
 * [Blog Talento IT](http://blog.talentoit.org/): un blog desde el punto de vista del _recruiter_, con información relacionada con la retención de talento y consejos para los profesionales de la tecnología.
 * [Bonilista](https://bonillaware.us2.list-manage.com/subscribe?u=374c664073e1a1fa3deca53b4&id=e67967d43f): la lista de distribución de [David Bonilla](https://twitter.com/david_bonilla) en la que cada semana escribe un artículo de opinión casi siempre relacionado de alguna forma con el mundo de la tecnología, informática o la empresa. Aunque es para suscriptores puedes [consultar sus últimos artículos](http://us2.campaign-archive2.com/home/?u=374c664073e1a1fa3deca53b4&id=e67967d43f).
 * [Justifica tu respuesta](https://justificaturespuesta.com/): es la bitácora de un docente en parte destinado a otros docentes pero que contiene artículos muy interesantes para cualquiera sobre el aprendizaje aplicables en areas distintas a la docencia.
-* [Ciencia de sofá](https://cienciadesofa.com/): un blog de divulgación científica con artículos sobre astronomía, biología, física, geología, matemáticas y química.
 * [Betabeers](https://betabeers.com/): un gran comunidad de desarrolladores en la que podrás encontrar charlas a las que asistir para aprender temas técnicos sobre programación, desarrollo o tecnología. Consulta su [agenda](https://betabeers.com/event/) y no te pierdas ningún evento cercano a tí, también inspecciona su [sección de empleo](https://betabeers.com/post/) con ofertas de trabajo de empresas muy interesantes, un gran porcentaje son en las grandes ciudades pero también hay varias en otras ciudades importantes.
 * [El Blog Salmón](https://www.elblogsalmon.com/): en blog sobre asuntos de la economía con algunos artículos interesantes de leer.
 
