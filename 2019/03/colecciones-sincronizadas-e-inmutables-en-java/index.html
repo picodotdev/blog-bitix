@@ -236,7 +236,6 @@
       
         <a href="/blog-bitix/2019/03/colecciones-sincronizadas-e-inmutables-en-java/#comments">Comentarios</a>
       
-      
     </p>
 
     
@@ -259,6 +258,10 @@
 <p>Las colecciones específicas para la concurrencia son más eficientes que convertir una colección no sincronizada en sincronizada con los métodos de <em>Collections</em>. Las colecciones que se convierten en sincronizadas tienen una contención en toda la colección cuando no es necesario para las operaciones de lectura. Si las operaciones de lectura son mayoría las colecciones específicas para la concurrencia son más eficientes, no tienen tanta contención, por ejemplo, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html">ConcurrentHashMap</a> divide el mapa en varios segmentos y solo bloquea los segmentos relevantes lo que permite a múltiples <em>threads</em> acceder a otros segmentos del mismo mapa sin contención. <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html">CopyOnWriteArrayList</a> permite varios lectores sin necesidad de sincronización y cuando ocurre una escritura copia el <em>ArrayList</em> a uno nuevo.</p>
 
     </div>
+
+    <p class="information">
+      
+    </p>
 
     
   </article>
