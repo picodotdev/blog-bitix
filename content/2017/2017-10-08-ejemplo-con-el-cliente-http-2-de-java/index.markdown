@@ -32,7 +32,7 @@ El siguiente ejemplo realiza una petición a la página del buscador Google con 
     image1="image:java-http2.png" optionsthumb1="300x200" title1="Petición con el cliente de Java para HTTP/2"
     caption="Petición con el cliente de Java para HTTP/2" >}}
 
-Otras fomas de manejadores del resultado de la petición son los siguientes:
+Otras formas de manejadores del resultado de la petición son los siguientes:
 
 * [BodyHandlers.ofString()](javadoc11:java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofString()): almacena el resultado de la petición en un String
 * [BodyHandlers.ofByteArray](javadoc11:java.net.http/java/net/http/HttpResponse.BodyHandlers.html#ofByteArray()): almacena el resultado de la petición en un array de bytes como sería el caso de obtener una imagen o un archivo PDF
@@ -50,6 +50,8 @@ Y añadir trazas de las peticiones que se realicen con el cliente.
 * [Emitir trazas de las peticiones y respuestas HTTP con clientes Java][blogbitix-529]
 
 Con la clase [SSLContext](javadoc11:java.base/javax/net/ssl/SSLContext.html) es posible establecer autenticación para el cliente usando un certificado como muestro en el artículo [Autenticación mutua de cliente y servidor con certificados][blogbitix-241].
+
+La ventaja del cliente HTTP incluido en el JDK es que no es necesario ninguna dependencia adicional en la aplicación, sin embargo es un cliente que require crear código de infraestructura para realizar las peticiones, recibir las respuestas y realizar las transformaciones de datos desde y a JSON. Otras alternativas permiten [Crear de forma sencilla un cliente de un servicio REST o HTTP con Retrofit][blogbitix-569].
 
 Para ejecutar el ejemplo usando [Gradle][gradle] y Java 11 hay que añadir un poco de configuración al _script_ de construcción que posiblemente en un futuro no será necesaria cuando se mejore el soporte.
 

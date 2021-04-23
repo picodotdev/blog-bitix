@@ -69,7 +69,7 @@ El cliente WebClient de Spring posee una API que permite realizar peticiones HTT
 
 #### Trazas con Retrofit
 
-Lo interesante del cliente Retrofit es que convierte una interfaz REST de un servicio en una interfaz de Java, lo interesante de esto es que aparentemente se está usando un objeto pero que de forma subyacente se hacen peticiones HTTP. La librería cliente de HTTP que utiliza es OkHttp.
+Lo interesante del [cliente Retrofit es que convierte una interfaz REST de un servicio en una interfaz de Java][blogbitix-569], se está usando un objeto que implementa una interfaz pero que de forma subyacente se hacen peticiones HTTP. La librería cliente de HTTP que utiliza Retrofit es [OkHttp][okhttp].
 
 El _interceptor_ se añade sobre el cliente OkHttp que luego es utilizado para construir el cliente del servicio con Retrofit.
 
