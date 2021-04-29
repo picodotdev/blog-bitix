@@ -78,7 +78,7 @@ Hay otros sistemas BSD notables:
 
 {{< image
     gallery="false"
-    image1="logotype:freebsd.jpg" optionsthumb1="150x150" title1="FreeBSD"
+    image1="logotype:freebsd.svg" optionsthumb1="150x150" title1="FreeBSD"
     image2="logotype:openbsd.svg" optionsthumb2="150x150" title2="OpenBSD"
     image3="logotype:netbsd.svg" optionsthumb3="150x150" title3="NetBSD" >}}
 {{< image
