@@ -3,7 +3,7 @@ pid: 570
 type: "post"
 title: "Guía de instalación y uso básico de FreeBSD"
 url: "/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/"
-date: 2021-04-30T18:00:00+02:00
+date: 2021-04-30T16:30:00+02:00
 language: "es"
 rss: true
 sharing: true
