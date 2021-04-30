@@ -1,0 +1,972 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+  
+
+  <title>Guía de instalación y uso básico de FreeBSD</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/index-amp.html" hreflang="es" title="Guía de instalación y uso básico de FreeBSD">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Guía de instalación y uso básico de FreeBSD">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/freebsd-750.png">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/assets/images/structured-data/freebsd-750.png">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Guía de instalación y uso básico de FreeBSD">
+<meta name="twitter:description" content="Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/index-amp.html"
+    },
+    "headline": "Guía de instalación y uso básico de FreeBSD",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/freebsd-750.png"
+        
+      },
+    "datePublished": "2021-04-30T16:30:00+02:00",
+    "dateModified": "2021-04-30T16:30:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "2447",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}header{text-align:center;margin-bottom:10px}header h2{font-size:2.6em;font-weight:700}header h2 a,header h2 a:active,header h2 a:hover,header h2 a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}article h2{font-size:1.75rem}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.tableofcontents{background-color:#fffae9;display:inline-block}article div.reference{font-size:.9em}article div.blueimp-gallery-container{position:absolute}article div.blueimp-gallery div.modal{overflow:hidden}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}i.archive-icon{display:inline-block;font-size:32px;line-height:32px}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <h2 class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></h2>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row page-header">
+      <div class="col-12">
+        <amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/freebsd-text_huf82f0246e133ce863974673065e1654f_128991_1040x0_resize_box_2.png" height="300" layout="fixed-height"  class="lozad "></amp-img>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Guía de instalación y uso básico de FreeBSD</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>30/04/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/gnu-linux/index-amp.html">gnu-linux</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+          <a href="/blog-bitix/tags/software-libre/index-amp.html">software-libre</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/index-amp.html#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Aún con su reducida cuota de uso las distribuciones GNU/Linux son conocidas por muchas personas como alternativa a los sistemas operativos comerciales Windows de Microsoft y macOS de Apple para propósitos de entorno de escritorio. Las distribuciones BSD también son conocidas, cualquier usuario de GNU/Linux con seguridad las conoce. FreeBSD es una abanderada de las BSD, aún así no son tantos los usuarios que deciden instalarla como su sistema operativo de uso cotidiano. Es fácil y rápido de instalar y a un usuario de GNU/Linux e incluso macOS el cambio al nuevo sistema resulta conocido ya que el entorno de escritorio y muchos comandos son exactamente los mismos.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes" style="min-width: 200px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/freebsd.svg" width="1.015873016" height="1" alt="FreeBSD" title="FreeBSD" layout="responsive"  class=""></amp-img></p>
+</div>
+<p>La cuota de uso entre los diferentes sistemas operativos para computadoras de escritorio está dominada con más de un 80% por el sistema operativo <a href="https://www.microsoft.com/es-es/windows/">Windows</a> de <a href="https://www.microsoft.com/">Microsoft</a>, un sistema operativo comercial con una licencia de uso privativo dirigido a ser fácil de usar incluso para usuarios sin ser expertos en informática. El éxito de Windows se debe a que es la opción preinstalada por la mayoría de ordenadores y portátiles a la venta, posee el paquete ofimático <a href="https://products.office.com/es-es/">Office</a> también de Microsoft imprescindible en muchos puestos de trabajo, se puede usar sin licencia con algunas limitaciones o se puede <a href="https://picodotdev.github.io/blog-bitix/2020/09/como-comprar-una-licencia-y-activar-windows-10-y-office-2019/index-amp.html">comprar una licencia de Windows 10 completamente válida</a> a un precio significativamente más reducido que el oficial.</p>
+<p>El siguiente sistema operativo de escritorio más usado es <a href="https://www.apple.com/macos/">macOS</a> de <a href="https://www.apple.com/">Apple</a>, un sistema operativo comercial con licencia privativa exclusivo de las computadoras <em>Mac</em>. Los <em>Mac</em> se consideran ordenadores que suelen incorporar las últimas tecnologías y cuidando más diseño que las que se encuentran en ordenadores con Windows, sin embargo, la exclusividad se ve reflejada en un significativo precio comparado con PC de características equivalentes. A pesar del precio son computadoras con cierta popularidad, deseadas y vendidas.</p>
+<p>La tercera opción son alguna de <a href="https://picodotdev.github.io/blog-bitix/2016/10/elegir-una-distribucion-gnu-linux-segun-el-usuario-uso-o-equipo/index-amp.html">las distribuciones de GNU/Linux</a> siendo una de las más populares <a href="https://www.ubuntu.com/">Ubuntu</a>. Las distribuciones y sistema operativo GNU/Linux se caracterizan por tener una licencia de software libre basada en <a href="https://www.gnu.org/licenses/gpl-3.0.html">la GPL</a> y ser generalmente gratuitas incluyendo la práctica totalidad de los programas. Las distribuciones GNU/Linux actualmente son tan fáciles de instalar y usar que los sistemas operativos Windows o <em>macOS</em>, incluyendo ser compatible con la mayoría del hardware. Sin embargo, dado que no hay tantas empresas que vendan y distribuyan equipos con algún GNU/Linux preinstalado no tiene en el escritorio una cuota tan alta como las anteriores, dos empresas que distribuyen GNU/Linux en sus equipos son <a href="https://slimbook.es/">Slimbook</a> y <a href="https://www.vantpc.es/">Vant</a>. En el área de los servidores y computación en la nube, por el contrario, GNU/Linux sí es la opción que domina el mercado, por su licencia, flexibilidad, fiabilidad y potencia.</p>
+<p>La cuarta opción mucho menos conocida y usada son alguna de las distribuciones BSD. Las distribuciones BSD también tienen una licencia de software libre incluso más permisiva que la licencia GPL. La mayor permisividad de las licencias BSD la hace atractiva para algunas empresas, que al contrario de la licencia GPL con la licencia BSD no están obligadas a distribuir el código fuente de los programas lo que les permite proteger sus desarrollos de competidores. Es utilizada por empresas como <a href="https://www.netflix.com/es/">Netflix</a>, <a href="https://www.sony.es/">Sony</a> en las consolas <a href="https://www.playstation.com/es-es/">PlayStation</a> e incluso macOS está basado en partes de BSD. Aunque las licencias BSD permiten usar el software sin obligar a colaborar en el desarrollo de su software se ven beneficiadas por colaboraciones puntuales dado que las empresas están interesadas en mejorar el software en el basan su negocio.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#la-distribución-freebsd">La distribución FreeBSD</a>
+      <ul>
+        <li><a href="#el-sistema-de-archivos-zfs-qué-lo-hace-diferente">El sistema de archivos ZFS, ¿qué lo hace diferente?</a></li>
+      </ul>
+    </li>
+    <li><a href="#guía-de-instalación">Guía de instalación</a>
+      <ul>
+        <li><a href="#primer-inicio-en-freebsd">Primer inicio en FreeBSD</a></li>
+        <li><a href="#instalación-de-entorno-de-escritorio">Instalación de entorno de escritorio</a></li>
+      </ul>
+    </li>
+    <li><a href="#uso-básico">Uso básico</a>
+      <ul>
+        <li><a href="#obtener-permisos-de-superusuario-_root_">Obtener permisos de superusuario <em>root</em></a></li>
+        <li><a href="#instalación-de-paquetes">Instalación de paquetes</a></li>
+        <li><a href="#actualización-del-sistema">Actualización del sistema</a></li>
+      </ul>
+    </li>
+    <li><a href="#obtener-más-ayuda">Obtener más ayuda</a>
+      <ul>
+        <li><a href="#libros">Libros</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h3 id="la-distribución-freebsd">La distribución FreeBSD</h3>
+<p>Entre las distribuciones BSD una popular es <a href="https://www.freebsd.org/es/">FreeBSD</a>, que es posible utilizar con propósitos de computadora de escritorio, su uso también está destinado a software de servidor que es conocida por su pila TCP/IP de gran rendimiento para comunicación por red.</p>
+<p>El mérito de las distribuciones BSD como FreeBSD es ciertamente notable, aunque no tienen la popularidad ni el apoyo por parte de las empresas ni disponer del mismo número de desarrolladores dedicado a su mejora de las distribuciones GNU/Linux consigue proporcionar un sistema operativo de gran calidad con funcionalidades equivalentes a las existentes GNU/Linux o incluso más innovadoras con un modelo de desarrollo diferente de GNU/Linux.</p>
+<ul>
+<li><a href="https://picodotdev.github.io/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/index-amp.html">Las diferencias entre GNU/Linux, BSD y sus distribuciones</a></li>
+</ul>
+<p>Es perfectamente capaz de realizar las tareas comunes con el propósito de ordenador de escritorio. Posee programas de navegadores web, multimedia como vídeo y audio, ofimática, visor de documentos e imágenes y una colección formada por más de 36000 paquetes de software compatibles. Otras funciones de software que posee son <a href="https://docs.freebsd.org/en/books/handbook/virtualization">virtualización</a>, <a href="https://docs.freebsd.org/en/books/handbook/jails">Jails</a> para crear procesos separados del resto del sistema que es la base de <a href="https://picodotdev.github.io/blog-bitix/2014/10/introduccion-y-caracteristicas-de-docker/index-amp.html">los contenedores de Docker</a>, <a href="https://en.wikipedia.org/wiki/DTrace">DTrace</a> también desarrollada originalmente por <a href="https://es.wikipedia.org/wiki/Sun_Microsystems">Sun Microsystems</a>, <a href="https://www.winehq.org/">WINE</a> para ejecutar programas de Windows y la posibilidad de agregar <a href="https://docs.freebsd.org/en/books/handbook/linuxemu">compatibilidad binaria con Linux</a> lo que hace posible utilizar programas cuando no están disponibles de forma nativa.</p>
+<p>La mayor dificultad de usar FreeBSD es en que sea compatible con todo el hardware de la computadora, si bien la compatibilidad con el hardware en GNU/Linux actualmente no es un problema en FreeBSD dado el mayor limitado de desarrolladores que tiene el interés de las compañía en ofrecer soporte para su hardware puede presentar algún problema de compatibilidad.</p>
+<p>Las novedades de destacadas de FreeBSD 13 publicada en abril de 2021 es el soporte de la arquitectura de procesadores <em>arm64</em> al mismo nivel que la arquitectura de procesadores <em>amd64</em>, actualización de paquetes de compiladores, eliminación de algunos programas obsoletos de GNU, soporte en el <em>kernel</em> de TLS y otras mejoras de menor relevancia.</p>
+<div class="media">
+<figure>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/freebsd.svg" width="200" height="150" alt="FreeBSD" title="FreeBSD"  class="lozad "></amp-img>
+<amp-img src="/blog-bitix/assets/images/logotypes/beastie.svg" width="200" height="150" alt="Beastie" title="Beastie"  class="lozad "></amp-img></p>
+<figcaption>Logotipo y mascota de FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="el-sistema-de-archivos-zfs-qué-lo-hace-diferente">El sistema de archivos ZFS, ¿qué lo hace diferente?</h4>
+<p>Una de las opciones como sistema de archivos es la posibilidad de utilizar ZFS. La licencia BSD permite utilizar más fácilmente el avanzado sistema de archivos ZFS desarrollado originalmente por <a href="https://picodotdev.github.io/blog-bitix/2018/10/sun-microsystems-cae-la-adquiere-oracle/index-amp.html">la difunta Sun Microsystems</a>.</p>
+<p>Lo que hace diferente a ZFS es que combina el rol de gestor de volúmenes con el rol de sistema de archivos. El sistema de archivos ZFS es consciente de la estructura subyacente de discos. Al contrario que los sistemas de archivos tradicionales que solo pueden crearse en un único disco de almacenamiento, esto obliga a que si hay dos discos sea necesario crear dos sistemas de archivos diferentes.</p>
+<p>La combinación de ZFS como gestor de volúmenes y sistema de archivos permite la creación de varios sistemas de archivos todos compartiendo un conjunto de almacenamiento disponible. Una de las mayores ventajas de ZFS de la disposición física de los discos es que los sistemas de archivos existentes pueden ser agrandados automáticamente al añadir discos adicionales al conjunto. Este nuevo espacio queda disponible para todos los sistemas de archivos. También tiene propiedades que pueden ser aplicadas a cada sistema de archivos en vez de crear un único sistema de archivos monolítico.</p>
+<div class="media">
+<figure>
+<p><amp-img src="/blog-bitix/assets/images/logotypes/openzfs.svg" width="200" height="150" alt="OpenZFS" title="OpenZFS"  class="lozad "></amp-img></p>
+<figcaption>OpenZFS</figcaption>
+</figure>
+</div>
+<h3 id="guía-de-instalación">Guía de instalación</h3>
+<p>El primer paso de la instalación es descargar la última de las imágenes de medio de instalación disponibles, ya sea la versión de menor tamaño para realizar la instalación por red o la más completa sin necesidad de descargar nada adicionalmente desde la <a href="https://www.freebsd.org/where/">página de descargas de FreeBSD</a>. En caso de duda en la instalación tiene disponible un <a href="https://docs.freebsd.org/en/books/handbook/">manual completo de la instalación y uso</a> o como documentación de referencia.</p>
+<p>En este caso como primera toma de contacto con FreeBSD realizo la instalación en una máquina virtual con <a href="https://www.virtualbox.org/">VirtualBox</a> que está disponible también para Windows como macOS que permite probarla sin necesidad de eliminar el sistema existente en la computadora. En la definición de la máquina virtual se especifican las características de la máquina virtualizada desde el tamaño de memoria, almacenamiento de disco o tipo de BIOS, adicionalmente se proporciona la imagen del medio de instalación y se inserta en la unidad DVD virtual de la máquina.</p>
+<p>El siguiente <a href="https://www.virtualbox.org/ticket/19910">error de VirtualBox impide iniciar FreeBSD en modo UEFI</a>, hasta que no sea resuelto requiere iniciar el sistema como BIOS, para la prueba el tipo de sistema BIOS o UEFI no tiene relevancia.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/virtualbox-freebsd_hu32b1bbdb557266d42cb574a4337dc8b4_133679_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de máquina virtual con VirtualBox"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/virtualbox-freebsd_hu32b1bbdb557266d42cb574a4337dc8b4_133679_300x200_fit_box_2.png" width="259" height="200" alt="Configuración de máquina virtual con VirtualBox" title="Configuración de máquina virtual con VirtualBox"  class="lozad "></amp-img></a></p>
+<figcaption>Configuración de máquina virtual con VirtualBox</figcaption>
+</figure>
+</div>
+<p>La instalación de FreeBSD utiliza un asistente que guía y hace la instalación sencilla, rápida y fiable. Descargado el medio de instalación e iniciado el sistema desde él se presenta un menú de opciones que permiten iniciar la instalación. En los diferentes pasos del asistente se van introduciendo las preferencias de configuración desde la disposición del teclado, particionado del sistema de almacenamiento, copiado de archivos del sistema base, establecimiento de contraseña del usuario <em>root</em>, configuración de red, zona horaria y usuarios adicionales.</p>
+<p>Inicio de la instalación.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-1_hu7212a89f790981ae87f2fe0753343803_6265_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-1_hu7212a89f790981ae87f2fe0753343803_6265_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-2_hu906318909643a300a5779a0bf877962a_4028_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-2_hu906318909643a300a5779a0bf877962a_4028_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-3_hu554ab2f7ce3c7381878ae69956f2dcfb_8603_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-3_hu554ab2f7ce3c7381878ae69956f2dcfb_8603_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-4_hu34e1fdf110472532390713092768e5ce_8771_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-4_hu34e1fdf110472532390713092768e5ce_8771_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-5_hu66e401d2aa6084fad1638162df023955_8568_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-5_hu66e401d2aa6084fad1638162df023955_8568_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-6_hu09df91305c856ad0993ef44378aef1d4_4229_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-6_hu09df91305c856ad0993ef44378aef1d4_4229_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-7_hu6af7cb70c9bc59e8698d32af3b938b8f_6484_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-7_hu6af7cb70c9bc59e8698d32af3b938b8f_6484_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-8_hu6ef65e0211dc7edc452e52f103c4bba4_6215_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-8_hu6ef65e0211dc7edc452e52f103c4bba4_6215_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-9_hu87884b55ad29dcefdf14d2574fa057af_8063_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-9_hu87884b55ad29dcefdf14d2574fa057af_8063_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-10_huf1f21f5d40e16b556451bd79e2d169ac_7326_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-10_huf1f21f5d40e16b556451bd79e2d169ac_7326_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-11_hu374be8d6642d27ead820ef52e931d59e_3533_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-11_hu374be8d6642d27ead820ef52e931d59e_3533_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-12_hub76528d1fb52dc47910a470cb6357524_8041_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-12_hub76528d1fb52dc47910a470cb6357524_8041_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-13_hub5f920251f60dd5b75a07b4370161dcd_4401_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/instalacion-freebsd-13_hub5f920251f60dd5b75a07b4370161dcd_4401_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de la instalación de FreeBSD" title="Inicio de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Inicio de la instalación de FreeBSD</figcaption>
+</figure>
+</div>
+<p>El siguiente paso es automático, consiste en la copia de los archivos base del sistema.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-1_hu7c9c5212a146fcd4da1874b8afe773f6_4970_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-1_hu7c9c5212a146fcd4da1874b8afe773f6_4970_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-2_hu85249a26869fcd519a3393054ba4422f_4915_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-2_hu85249a26869fcd519a3393054ba4422f_4915_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-3_hu2a8e7bff5327af24c1d796fd1515a89b_4839_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-3_hu2a8e7bff5327af24c1d796fd1515a89b_4839_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-4_hu01c7fc69c25b52089d79343322ed4b3d_5397_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-4_hu01c7fc69c25b52089d79343322ed4b3d_5397_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-5_hue0c4cb636d29cae02072a83eb8675fcd_5389_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-5_hue0c4cb636d29cae02072a83eb8675fcd_5389_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-6_hufc9811253542095e6b9321ec5fc5f418_5414_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-6_hufc9811253542095e6b9321ec5fc5f418_5414_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-7_hud92aff9626f60a3d586c3bd42fb8d10d_5330_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-7_hud92aff9626f60a3d586c3bd42fb8d10d_5330_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-8_hua12d6696355d295139774a890b9a4fff_5378_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Copia de archivos base de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/progreso-instalacion-freebsd-8_hua12d6696355d295139774a890b9a4fff_5378_200x150_fit_box_2.png" width="200" height="111" alt="Copia de archivos base de FreeBSD" title="Copia de archivos base de FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Copia de archivos base de FreeBSD</figcaption>
+</figure>
+</div>
+<p>A continuación se sigue con la configuración básica del sistema para la conectividad de red, usuarios, fecha y servicios demonio.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-1_hu865c01dcbc5ae2c9714bac9c0a2eccf8_4235_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-1_hu865c01dcbc5ae2c9714bac9c0a2eccf8_4235_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-2_huf53fecf1377a1f09be5aaac94a646a67_3666_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-2_huf53fecf1377a1f09be5aaac94a646a67_3666_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-3_hueb639bb4871204c9dab99acad0845a0f_3680_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-3_hueb639bb4871204c9dab99acad0845a0f_3680_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-4_hue8bfd8c3eecc611ad997e7cb69fc56ee_3661_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-4_hue8bfd8c3eecc611ad997e7cb69fc56ee_3661_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-5_hu88c67c073e1480223ad4bd3b06243bf4_4148_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-5_hu88c67c073e1480223ad4bd3b06243bf4_4148_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-6_huc2f95f8c6e69f7a19f7d3d7275ccc3c0_5090_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-6_huc2f95f8c6e69f7a19f7d3d7275ccc3c0_5090_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-7_hu593080d19c3f10fc571ce8b43ddf0f2d_7442_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-7_hu593080d19c3f10fc571ce8b43ddf0f2d_7442_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-8_hu599d1a9416b78d389a5d4b8e93c4f553_6770_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-8_hu599d1a9416b78d389a5d4b8e93c4f553_6770_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-9_hu6299e7d8892219a488c6bc8e28776605_6984_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-9_hu6299e7d8892219a488c6bc8e28776605_6984_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-10_hu10172274c45fe6491f0ccfbdc2460ed8_5442_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-10_hu10172274c45fe6491f0ccfbdc2460ed8_5442_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-11_hu5098b5b05600ad22a73d52d60d36970f_3333_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-11_hu5098b5b05600ad22a73d52d60d36970f_3333_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-12_hue621a0b9e3f9e71b62983600aa3249e6_7307_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-12_hue621a0b9e3f9e71b62983600aa3249e6_7307_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-13_hu67f7065452d3a9ffd81faf605a521e70_10225_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Configuración de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/configuracion-freebsd-13_hu67f7065452d3a9ffd81faf605a521e70_10225_200x150_fit_box_2.png" width="200" height="111" alt="Configuración de FreeBSD" title="Configuración de FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Configuración de FreeBSD</figcaption>
+</figure>
+</div>
+<p>Se ha de establecer la contraseña del usuario <em>root</em> que otorga permisos de superusuario. También se da la oportunidad de crear los usuarios en el sistema.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/root-password-freebsd_hu93e4cfb29f98e409061bebf208829aff_3040_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Contraseña de superusuario en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/root-password-freebsd_hu93e4cfb29f98e409061bebf208829aff_3040_200x150_fit_box_2.png" width="200" height="111" alt="Contraseña de superusuario en FreeBSD" title="Contraseña de superusuario en FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-1_hufade51a88785e5942863e1c1e5bf190f_3601_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Creación de usuarios en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-1_hufade51a88785e5942863e1c1e5bf190f_3601_200x150_fit_box_2.png" width="200" height="111" alt="Creación de usuarios en FreeBSD" title="Creación de usuarios en FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-2_hu7edac7d8cf7fe1bee82291761b29bc33_7859_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Creación de usuarios en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/usuarios-freebsd-2_hu7edac7d8cf7fe1bee82291761b29bc33_7859_200x150_fit_box_2.png" width="200" height="111" alt="Creación de usuarios en FreeBSD" title="Creación de usuarios en FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Contraseña de superusuario y creación de usuarios en FreeBSD</figcaption>
+</figure>
+</div>
+<p>Las últimas pantalla indican la finalización de la instalación.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-1_hua8f120f8dec2374b3a1950d4f439e385_8918_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Finalización de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-1_hua8f120f8dec2374b3a1950d4f439e385_8918_200x150_fit_box_2.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-2_hu6a4b2d6550f802a83e19fe12928c6910_4623_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Finalización de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-2_hu6a4b2d6550f802a83e19fe12928c6910_4623_200x150_fit_box_2.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-3_hu17f9f822a4c99352e2c17acb8331a625_4010_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Finalización de la instalación de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/finalizacion-instalacion-3_hu17f9f822a4c99352e2c17acb8331a625_4010_200x150_fit_box_2.png" width="200" height="111" alt="Finalización de la instalación de FreeBSD" title="Finalización de la instalación de FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Finalización de la instalación de FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="primer-inicio-en-freebsd">Primer inicio en FreeBSD</h4>
+<p>Completada la instalación al reiniciar el sistema se presenta la pantalla del cargador de arranque y posteriormente la de inicio de sesión en modo texto a partir de la cual es posible instalar programas adicionales y un entorno de escritorio con interfaz gráfica.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/cargador-arranque-freebsd_hu2e4546020df6c6ae4fd4c9efab81aa48_6267_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de sesión en modo texto de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/cargador-arranque-freebsd_hu2e4546020df6c6ae4fd4c9efab81aa48_6267_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-1_hu758734cbcd91618808d7d98d2ca3a457_10136_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de sesión en modo texto de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-1_hu758734cbcd91618808d7d98d2ca3a457_10136_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-2_hub71f66c09b9e21ccf21474f0658e66f3_9350_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Inicio de sesión en modo texto de FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/inicio-sesion-texto-freebsd-2_hub71f66c09b9e21ccf21474f0658e66f3_9350_200x150_fit_box_2.png" width="200" height="111" alt="Inicio de sesión en modo texto de FreeBSD" title="Inicio de sesión en modo texto de FreeBSD"  class="lozad "></amp-img></a></p>
+</figure>
+</div>
+<h4 id="instalación-de-entorno-de-escritorio">Instalación de entorno de escritorio</h4>
+<p>La instalación del entorno de escritorio requiere instalar el servidor gráfico y el entorno de escritorio deseado. Los entornos de escritorio disponibles son los mismos que están disponibles en GNU/Linux entre ellos <a href="https://www.gnome.org/">GNOME</a>, <a href="https://www.kde.org/">KDE</a> y <a href="https://xfce.org/">XFCE</a> con lo que la experiencia de usuario es en gran medida la misma que en una distribución GNU/Linux, la mayor diferencia es que las versión del entorno de escritorio de FreeBSD disponible sea la versión anterior o tarde más tiempo en estar disponible desde su publicación.</p>
+<p>A partir de la consola de inicio de sesión en modo texto hay que instalar los paquete del servidor gráfico <a href="https://www.x.org/wiki/">Xorg</a>, el paquete del entorno de escritorio deseado y cambiar un archivo de configuración si se desea iniciar el entorno de escritorio al inicio del sistema.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg install xorg</span>&#10;<span class="c1"># pw groupmod video -m freebsd || pw groupmod wheel -m freebsd</span>&#10;<span class="c1"># pkg install gnome3</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-gnome.sh</span>
+    </div>
+</div>
+<p>Para iniciar el gestor de sesión GNOME en el inicio del sistema hay que cambiar la configuración en los archivos <em>/etc/rc.conf</em> y <em>~/.xinitrc</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">dbus_enable=&#34;YES&#34;&#10;gdm_enable=&#34;YES&#34;&#10;gdm_lang=&#34;es_ES.UTF-8&#34;&#10;gnome_enable=&#34;YES&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>rc-gnome.conf</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">exec /usr/local/bin/gnome-session&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>xinitrc.conf</span>
+    </div>
+</div>
+<p>Para establecer como idioma el español se requiere añadir la siguiente configuración en el archivo <em>/usr/local/etc/gdm/locale.conf</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-plaintext" data-lang="plaintext">LANG=&#34;es_ES.UTF-8&#34;&#10;LC_CTYPE=&#34;es_ES.UTF-8&#34;&#10;LC_MESSAGES=&#34;es_ES.UTF-8&#34;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>locale.conf</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-1_hu199b3fb920010271f55514cba9e8ee93_13452_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="GNOME en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-1_hu199b3fb920010271f55514cba9e8ee93_13452_200x150_fit_box_2.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-2_hu3fb0d08f1678df887aa433b87f3258dd_584247_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="GNOME en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-2_hu3fb0d08f1678df887aa433b87f3258dd_584247_200x150_fit_box_2.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-3_huc7bc7fe3f990d0a956a802d8870c9d5f_67920_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="GNOME en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/gnome-freebsd-3_huc7bc7fe3f990d0a956a802d8870c9d5f_67920_200x150_fit_box_2.png" width="200" height="150" alt="GNOME en FreeBSD" title="GNOME en FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>GNOME en FreeBSD</figcaption>
+</figure>
+</div>
+<h3 id="uso-básico">Uso básico</h3>
+<p>FreeBSD proporciona una colección de programas básicos de línea de comandos incorporados en el sistema, al contrario que en GNU/Linux estos programas están desarrollados por los mismos desarrolladores del núcleo del sistema operativo y se actualizan como una unidad en cada versión en vez de individualmente.</p>
+<p>Instalado el sistema dos tareas básicas son la instalación de programas adicionales y la actualización del sistema para obtener nuevas versiones de los programas, correcciones de errores y actualizaciones de seguridad.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/uname-freebsd_hu422ea38d79f1619ea04a68239cf2210c_312778_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Comando uname en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/uname-freebsd_hu422ea38d79f1619ea04a68239cf2210c_312778_300x200_fit_box_2.png" width="267" height="200" alt="Comando uname en FreeBSD" title="Comando uname en FreeBSD"  class="lozad "></amp-img></a>
+<a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/df-freebsd_hu40fb3d33aaf41cb4833baee97a9765af_347157_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Comando df en FreeBSD"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/df-freebsd_hu40fb3d33aaf41cb4833baee97a9765af_347157_300x200_fit_box_2.png" width="267" height="200" alt="Comando df en FreeBSD" title="Comando df en FreeBSD"  class="lozad "></amp-img></a></p>
+<figcaption>Comandos uname y df en FreeBSD</figcaption>
+</figure>
+</div>
+<h4 id="obtener-permisos-de-superusuario-_root_">Obtener permisos de superusuario <em>root</em></h4>
+<p>Por seguridad algunas tareas administrativas y de edición de archivos de configuración requieren permisos de superusuario <em>root</em>. Esto es posible iniciando sesión en el sistema como el usuario <em>root</em> o obteniendo los privilegios de superusuario con el programa <em>su</em> o <em>sudo</em>.</p>
+<p>Hay un único superusuario en el sistema cuyo nombre de usuario es <em>root</em>, este usuario tiene permisos para realizar cualquier acción en el sistema. La contraseña es necesaria para iniciar sesión, es la proporcionada en la instalación del sistema, y se solicita al obtener privilegios de superusuario en la línea de comandos con el comando <em>su</em>. El resto de usuarios distintos a <em>root</em> son usuarios regulares, para que un usuario regular obtenga privilegios de supersusaurio se ha de utilizar el comando <em>su</em> pertenecer al grupo <em>wheel</em>.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pw groupmod whell -M freebsd</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pw-add-user-to-wheel.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash">$ su -&#10;<span class="c1">#</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>su.sh</span>
+    </div>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/su_hu4b8d9e5441972a95b55ffa0dabb5edba_299404_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Obtener privilegios de superusuario"><amp-img src="/blog-bitix/2021/04/guia-de-instalacion-y-uso-basico-de-freebsd/images/su_hu4b8d9e5441972a95b55ffa0dabb5edba_299404_300x200_fit_box_2.png" width="267" height="200" alt="Obtener privilegios de superusuario" title="Obtener privilegios de superusuario"  class="lozad "></amp-img></a></p>
+<figcaption>Obtener privilegios de superusuario</figcaption>
+</figure>
+</div>
+<h4 id="instalación-de-paquetes">Instalación de paquetes</h4>
+<p>La finalidad de cualquier sistema operativo es permitir realizar tareas productivas en él a través de los programas. Para usar un programa es necesario instalarlo previamente en el sistema.</p>
+<p>FreeBSD diferencia los programas de dos formas en como están distribuidos, los paquetes con binarios precompilados para su fácil y rápida instalación y los <em>ports</em> que requieren la compilación a partir del código fuente. En este sentido los paquetes de de FreeBSD son similares a los de los repositorios oficiales <a href="https://www.archlinux.org/">Arch Linux</a> y los <em>ports</em> al <a href="https://aur.archlinux.org/">repositorio AUR</a> que requieren igualmente ser compilados a partir del código fuente.</p>
+<p>La instalación de un paquete se realiza con el comando <em>pkg</em> para buscar su nombre e instalarlo.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg search gnome</span>&#10;<span class="c1"># pkg search firefox</span>&#10;<span class="c1"># pkg search libreoffice</span>&#10;<span class="c1"># pkg search gimp</span>&#10;<span class="c1"># pkg search vlc</span>&#10;<span class="c1"># pkg search vim</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-search.sh</span>
+    </div>
+</div>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg install libreoffice</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-install.sh</span>
+    </div>
+</div>
+<h4 id="actualización-del-sistema">Actualización del sistema</h4>
+<p>Una vez realizada la instalación en el futuro se publicarán nuevas versiones de los programas. Para mantener el sistema actualizado hay que ejecutar de forma periódica un comando de actualización.</p>
+<ul>
+<li><a href="https://docs.freebsd.org/en/books/handbook/cutting-edge/">Updating and Upgrading FreeBSD</a></li>
+</ul>
+<p>La actualización de parches de seguridad de FreeBSD se realiza con los siguientes dos comandos. El sistema base del sistema operativo de FreeBSD se actualiza independientemente de los programas instalados como paquetes.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update fetch</span>&#10;<span class="c1"># freebsd-update install</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update.sh</span>
+    </div>
+</div>
+<p>El siguiente comando permite revertir la actualización en caso de algún error.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update rollback</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update-rollback.sh</span>
+    </div>
+</div>
+<p>Para actualizar a versiones mayores se realiza con el siguiente comando en el que se indica la versión a la que actualizar.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># freebsd-update -r 13.0-RELEASE upgrade</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-update-upgrade.sh</span>
+    </div>
+</div>
+<p>Los paquetes se actualizan independientemente del sistema base de FreeBSD con el siguiente comando.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg upgrade</span>&#10;&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>pkg-upgrade.sh</span>
+    </div>
+</div>
+<p>En caso de una actualización a una versión mayor de FreeBSD se requiere una reinstalación de todos los paquetes y <em>ports</em> con los siguientes comandos.</p>
+<div class="code">
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># pkg-static upgrade -f</span>&#10;<span class="c1"># portmaster -af</span>&#10;<span class="c1"># freebsd-update install</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight-meta">
+        <span>freebsd-pkg-upgrade.sh</span>
+    </div>
+</div>
+<h3 id="obtener-más-ayuda">Obtener más ayuda</h3>
+<p>La cuota de uso de GNU/Linux no es muy grande en el escritorio pero tiene un grupo de usuarios muy activo que comparte gran cantidad de información, es difícil no encontrar una respuesta a una duda o problema y es fácil obtener respuesta a una pregunta.</p>
+<p>El grupo de usuario de FreeBSD es más reducido y por tanto encontrar respuestas a algo concreto no muy común es más difícil, aún siendo un grupo de usuarios más reducido se caracteriza por recibir calurosamente a los nuevos usuarios de FreeBSD. Una buena forma de obtener respuestas y soporte son los foros de usuario y las listas de distribución. Aunque no hay tantos canales de YouTube y artículos en <em>blogs</em> es posible encontrar información sobre FreeBSD a través de los buscadores.</p>
+<ul>
+<li><a href="https://forums.freebsd.org/">Foros de FreeBSD</a></li>
+<li><a href="https://www.freebsd.org/community/mailinglists/">Listas de distribución</a></li>
+</ul>
+<h4 id="libros">Libros</h4>
+<p>También hay algunos libros dedicados en exclusiva a FreeBSD como <a href="https://amzn.to/3nLLi0h" rel="sponsored">Absolute Freebsd: The Complete Guide To FreeBSD</a>, <a href="https://amzn.to/3nCspgc" rel="sponsored">Design and Implementation of the FreeBSD Operating System</a>, <a href="https://amzn.to/3e3an3p" rel="sponsored">FreeBSD Device Drivers: A Guide for the Intrepid</a>, <a href="https://amzn.to/3e4mU6t" rel="sponsored">FreeBSD Mastery: ZFS</a> y <a href="https://amzn.to/2RaJ26j" rel="sponsored">FreeBSD Mastery: Advanced ZFS</a></p>
+<div class="media media-amazon">
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="blobit-21"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="Productos recomendados"
+    data-amzn_assoc_linkid="216b756ebdf87a0f408fad2b0afff135"
+    data-amzn_assoc_asins="1593278926">
+  </amp-ad>
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="blobit-21"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="Productos recomendados"
+    data-amzn_assoc_linkid="50dcb39bc5e8af2cab746da01ed6e334"
+    data-amzn_assoc_asins="0321968972">
+  </amp-ad>
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="blobit-21"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="Productos recomendados"
+    data-amzn_assoc_linkid="aaf4e00ebd5d4bc04741808aa8ce37e3"
+    data-amzn_assoc_asins="1593272049">
+  </amp-ad>
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="blobit-21"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="Productos recomendados"
+    data-amzn_assoc_linkid="0b5660627ebcf9e436d57e63a3329bcf"
+    data-amzn_assoc_asins="1642350001">
+  </amp-ad>
+  <amp-ad
+    width="120"
+    height="240"
+    type="a9"
+    data-amzn_assoc_placement="adunit0"
+    data-amzn_assoc_search_bar="true"
+    data-amzn_assoc_tracking_id="blobit-21"
+    data-amzn_assoc_ad_mode="manual"
+    data-amzn_assoc_ad_type="smart"
+    data-amzn_assoc_marketplace="amazon"
+    data-amzn_assoc_region="ES"
+    data-amzn_assoc_title="Productos recomendados"
+    data-amzn_assoc_linkid="c56abbe62b62e123f679e7cb762e6f34"
+    data-amzn_assoc_asins="164235001X">
+  </amp-ad>
+</div>
+<p>Eso es todo lo básico para empezar a usar FreeBSD, si alguién lee este artículo y usa FreeBSD u otra distribución BSD como sistema principal o en el trabajo me encantaría conocer más detalles así que si quieres puedes dejar un comentario, también si a alguien que acceda al artículo y lo lea seguro que le resulta interesante como forma de animarse a probar este sistemas operativo de la familia UNIX.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+      <div class="alert alert-info" role="alert">
+        <small><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Este artículo incluye algunos enlaces de afiliado como Amazon que considero relevante en el contenido del artículo y para el lector. En caso de hacer una comprar a través de estos enlaces recibo una pequeña comisión, sin que afecte al precio del producto, que me ayuda a seguir publicando nuevos artículos y realizar <a href="https://picodotdev.github.io/blog-bitix/series/donacion/">pequeñas donaciones a proyectos de software libre</a>. En caso de que el artículo te haya resultado de interés y útil considera realiza la compra a través de alguno de los enlaces de afiliado del artículo.</small>
+      </div>
+    
+  </article>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/03/convertir-texto-o-imagen-a-arte-de-caracteres-ascii/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="Convertir texto o imagen a arte de caracteres ASCII" title="Convertir texto o imagen a arte de caracteres ASCII"  class="lozad "></amp-img>
+                <h3>Convertir texto o imagen a arte de caracteres ASCII</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/07/las-diferencias-entre-gnu-linux-bsd-y-sus-distribuciones/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/beastie.png" width="326" height="125" alt="Las diferencias entre GNU/Linux, BSD y sus distribuciones" title="Las diferencias entre GNU/Linux, BSD y sus distribuciones"  class="lozad "></amp-img>
+                <h3>Las diferencias entre GNU/Linux, BSD y sus distribuciones</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/06/comando-para-convertir-una-imagen-svg-a-png-y-jpg-con-diferentes-tamanos-y-color-de-fondo-con-inkskape/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape" title="Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape"  class="lozad "></amp-img>
+                <h3>Comando para convertir una imagen SVG a PNG y JPG con diferentes tamaños y color de fondo con Inkskape</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/index-amp.html">
+                <amp-img src="/blog-bitix/2020/03/listado-de-programas-esenciales-segun-categoria-para-gnu-linux/images/onlyoffice-documentos_hu1ebe2640438e7df051bb0bb0b3997d62_53212_875x0_resize_box_2.png" width="326" height="125" alt="Listado de programas esenciales según categoría para GNU/Linux" title="Listado de programas esenciales según categoría para GNU/Linux"  class="lozad "></amp-img>
+                <h3>Listado de programas esenciales según categoría para GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/hemeroteca-14/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #14" title="Hemeroteca #14"  class="lozad "></amp-img>
+                <h3>Hemeroteca #14</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/12/permitir-o-denegar-trafico-de-red-con-el-firewall-ufw-en-gnu-linux/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/gnu.svg" width="326" height="125" alt="Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux" title="Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux"  class="lozad "></amp-img>
+                <h3>Permitir o denegar tráfico de red con el firewall UFW en GNU/Linux</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>
