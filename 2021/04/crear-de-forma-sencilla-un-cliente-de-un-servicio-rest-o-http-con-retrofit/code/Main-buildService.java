@@ -6,17 +6,17 @@ public class Main implements CommandLineRunner {
     ...
 
     private Service buildService() {
-    OkHttpClient client = new OkHttpClient.Builder()
-            .addNetworkInterceptor(buildLoggingInterceptor())
-            .eventListener(OkHttpMetricsEventListener.builder(registry, "okhttp.requests").build())
-            .build();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addNetworkInterceptor(buildLoggingInterceptor())
+                .eventListener(OkHttpMetricsEventListener.builder(registry, "okhttp.requests").build())
+                .build();
 
-    Retrofit retrofit = new Retrofit.Builder()
-            .client(client)
-            .addConverterFactory(ScalarsConverterFactory.create())
-            .baseUrl("http://localhost:8080/").build();
+        Retrofit retrofit = new Retrofit.Builder()
+                .client(client)
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .baseUrl("http://localhost:8080/").build();
 
-    return retrofit.create(Service.class);
+        return retrofit.create(Service.class);
     }
 
     ...
