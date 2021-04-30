@@ -272,6 +272,7 @@ El grupo de usuario de FreeBSD es más reducido y por tanto encontrar respuestas
 
 * [Foros de FreeBSD](https://forums.freebsd.org/)
 * [Listas de distribución](https://www.freebsd.org/community/mailinglists/)
+* [BSD Now](https://www.bsdnow.tv/) un _podcast_ semanal sobre las distribuciones BSD
 
 #### Libros
 
