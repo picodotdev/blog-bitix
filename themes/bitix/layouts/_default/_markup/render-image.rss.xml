@@ -20,7 +20,7 @@
 {{- end -}}
 {{- $page := default "" (index $attributes "page") -}}
 {{- $url := index $attributes "url" -}}
-{{- $size := index $attributes "size" -}}  
+{{- $size := index $attributes "size" -}}
 {{- $width := index (split $size "x") 0 -}}
 {{- $height := index (split $size "x") 1 -}}
 {{- $command := default "Fit" (index $attributes "command") -}}
