@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:html.svg"
 tags: ["web", "planeta-codigo", "programacion"]
-summary: "Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con unn formato enriquecido que destaca sobre el resto de resultados."
+summary: "Los datos estructurados son datos que describen los elementos relevantes que contiene la página, facilitan la tarea a los buscadores de analizar el contenido y extraer la información para su indexación y la aparición en las páginas de resultados. Incluir datos estructurados en cada página mejora el SEO y permite que en las páginas de resultados de los buscadores se muestre con un formato enriquecido que destaca sobre el resto de resultados."
 ---
 
 {{% post %}}
@@ -28,19 +28,19 @@ Mostrar los enlaces más relevantes de una búsqueda no es una tarea sencilla, e
 
 ### Qué son los datos estructurados en una página web
 
-Los buscadores hacen el mejor esfuerzo por entender el contenido de las páginas, los datos estructurados facilitan en gran medida el análisis del contenido. Los datos estructurados son un formato estandarizado que permite proporcionar de forma más precisa cuál es el contenido e información de una página. Para los buscadores obtener la información de la página es más sencillo y preciso obtener la información de los datos estructurados que analizando el texto del contenido HTML sin ninguna estructura.
+Los buscadores hacen el mejor esfuerzo por entender el contenido de las páginas, los datos estructurados facilitan en gran medida el análisis del contenido. Los datos estructurados son un formato estandarizado que permite proporcionar de forma más precisa cuál es el contenido e información de una página. Para los buscadores obtener la información de la página es más sencillo y preciso obtener de los datos estructurados que analizando el texto del contenido HTML sin ninguna estructura.
 
 Además, en las páginas de resultados los buscadores para las páginas que proporcionan datos estructurados son capaces de mostrar los resultados enriquecidos, por ejemplo, incluyendo una imagen, una descripción, una imagen o ciertos datos específicos del dato estructurado como ubicación o fecha.
 
 Los datos estructurados son buenos para el SEO ya que los buscadores conocen mejor el contenido de la página. Por otro lado, los resultados enriquecidos destacan más sobre los que no son consiguiendo que los usuarios hagan más _clics_ en la página de resultados y atrayendo más visitantes a un sitio web.
 
-El siguiente es un ejemplo de contenido que contiene datos pero que no utiliza ningún formato de datos estructurados.
+El siguiente es un ejemplo de contenido que contiene datos como un título o fecha pero que no utiliza ningún formato de datos estructurados.
 
 {{< code file="no-structured-data.html" language="html" options="" >}}
 
 ### Formatos de datos estructurados
 
-Hay varios formatos de datos estructurados, la recomendada por google es utilizar JSON-LD.
+Hay varios formatos de datos estructurados, el formato recomendado por Google es utilizar JSON-LD.
 
 #### JSON-LD
 
