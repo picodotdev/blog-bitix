@@ -56,7 +56,7 @@ El formato [HTML Microdata](https://www.w3.org/TR/microdata/) define nuevos atri
 
 #### RDFa
 
-[RDFa](https://rdfa.info/) Es una extensión de HTML que ayuda a marcar los datos de la página, embebiendo ciertos atributos en las etiquetas HTML.
+[RDFa](https://rdfa.info/) es una extensión de HTML que ayuda a marcar los datos de la página, embebiendo ciertos atributos en las etiquetas HTML.
 
 {{< code file="rdfa.html" language="html" options="" >}}
 
