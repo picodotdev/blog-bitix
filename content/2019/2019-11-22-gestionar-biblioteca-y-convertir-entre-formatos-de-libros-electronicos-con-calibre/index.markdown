@@ -2,8 +2,8 @@
 pid: 443
 type: "post"
 title: "Gestionar biblioteca y convertir entre formatos de libros electrónicos con Calibre"
-aliases: ["/2019/11/biblioteca-y-conversor-entre-formatos-de-libros-electronicos-con-calibre/"]
 url: "/2019/11/gestionar-biblioteca-y-convertir-entre-formatos-de-libros-electronicos-con-calibre/"
+aliases: ["/2019/11/biblioteca-y-conversor-entre-formatos-de-libros-electronicos-con-calibre/"]
 date: 2019-11-22T16:00:00+01:00
 language: "es"
 rss: true

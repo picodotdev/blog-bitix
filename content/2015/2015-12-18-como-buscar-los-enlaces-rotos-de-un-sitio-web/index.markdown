@@ -11,7 +11,7 @@ sharing: true
 comments: true
 language: "es"
 imagePost: "logotype:html.svg"
-tags: ["planeta-codigo"]
+tags: ["planeta-codigo", "web"]
 summary: "Ya tengamos un sitio web, una bitácora, o una aplicación web es recomendable comprobar cada cierto tiempo los enlaces rotos. Las páginas pueden desaparecer o cambiar de dirección y esto provocará páginas no encontradas en los enlaces que las referenciasen. Usando herramientas que automaticen la tarea podemos encontrar enlaces rotos de forma efectiva y rápida."
 ---
 
