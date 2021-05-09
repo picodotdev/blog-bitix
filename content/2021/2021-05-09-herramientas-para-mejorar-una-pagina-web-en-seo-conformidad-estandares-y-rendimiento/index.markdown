@@ -2,7 +2,7 @@
 pid: 573
 type: "post"
 title: "Herramientas para mejorar una página web en SEO, conformidad estándares y rendimiento"
-url: "/2021/05/herramientas-para-mejorar-una-página-web-en-seo-conformidad-estandares-y-rendimiento/"
+url: "/2021/05/herramientas-para-mejorar-una-pagina-web-en-seo-conformidad-estandares-y-rendimiento/"
 date: 2021-05-09T01:00:00+02:00
 language: "es"
 rss: true
