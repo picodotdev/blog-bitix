@@ -66,7 +66,7 @@
     "dateModified": "2021-04-09T19:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "2065",
+    "wordCount": "2057",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -258,7 +258,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>La mayoría de las aplicaciones usan una base de datos para guardar persistir, consultar datos o guardar el estado de la aplicación. Las bases de datos son los sistemas especializados en guardar la información de las aplicaciones.</p>
 <p>Dentro de la categoría de bases de datos las relacionales son unas de las más utilizadas por sus propiedades <a href="https://es.wikipedia.org/wiki/ACID">ACID</a> y el potente lenguaje de consultas SQL. Las bases de datos relacionales siguen siendo adecuadas para muchos usos y propósitos aún con la aparición de las bases de datos NoSQL también útiles cuando existe ciertos requerimientos.</p>
@@ -355,14 +355,14 @@
 <p>Las siguientes sentencias SQL sufren del problema de <em>SQL injection</em>, en la primera un atacante puede obtener un dato de cualquier columna de la tabla y con la segunda ejecutar una sentencia en este caso para eliminar todas las filas de cualquier tabla.</p>
 <p>En la primera cambiando el valor de <em>column</em> se obtiene el dato de cualquier columna de la tabla, por ejemplo el campo <em>password</em>.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT id, &#34;</span> <span class="o">+</span> <span class="k">column</span> <span class="o">+</span> <span class="s2">&#34; FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span>&#10;&#10;<span class="s2">&#34;SELECT id, password FROM users WHERE user_id = 1</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT id, &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&#34; FROM users WHERE user_id = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userId</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="s2">&#34;SELECT id, password FROM users WHERE user_id = 1</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>sql-injection-1.sql</span>
     </div>
 </div>
 <p>En esta sentencia se finaliza la sentencia original con <em>;</em> y se inicia otra lo que provoca la eliminación de una tabla, con un valor para <em>user_id</em> especialmente construido para ejecutar la sentencia maliciosa de eliminación de la tabla.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT * FROM users WHERE user_id = &#34;</span> <span class="o">+</span> <span class="n">userId</span>&#10;&#10;<span class="s2">&#34;SELECT * FROM users WHERE user_id = 105; DROP TABLE users;&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="s2">&#34;SELECT * FROM users WHERE user_id = &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">userId</span><span class="w">&#10;</span><span class="w">&#10;</span><span class="w"></span><span class="s2">&#34;SELECT * FROM users WHERE user_id = 105; DROP TABLE users;&#34;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>sql-injection-2.sql</span>
     </div>
@@ -390,11 +390,11 @@
 <div class="media">
 <figure>
 <p>
-<img data-src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="150" alt="Hibernate" title="Hibernate" class="lozad ">
+<img src="/blog-bitix/assets/images/logotypes/hibernate.svg" width="200" height="150" alt="Hibernate" title="Hibernate" class="" loading="lazy">
 
-<img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="150" alt="Spring" title="Spring" class="lozad ">
+<img src="/blog-bitix/assets/images/logotypes/spring.svg" width="200" height="150" alt="Spring" title="Spring" class="" loading="lazy">
 
-<img data-src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="150" alt="jOOQ" title="jOOQ" class="lozad "></p>
+<img src="/blog-bitix/assets/images/logotypes/jooq.png" width="200" height="150" alt="jOOQ" title="jOOQ" class="" loading="lazy"></p>
 </figure>
 </div>
 <h3 id="bases-de-datos-relacionales">Bases de datos relacionales</h3>
@@ -404,15 +404,15 @@
 <div class="media">
 <figure>
 <p>
-<img data-src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="150" alt="PostgreSQL" title="PostgreSQL" class="lozad ">
+<img src="/blog-bitix/assets/images/logotypes/postgresql.svg" width="200" height="150" alt="PostgreSQL" title="PostgreSQL" class="" loading="lazy">
 
-<img data-src="/blog-bitix/assets/images/logotypes/mariadb.svg" width="200" height="150" alt="MariaDB" title="MariaDB" class="lozad ">
+<img src="/blog-bitix/assets/images/logotypes/mariadb.svg" width="200" height="150" alt="MariaDB" title="MariaDB" class="" loading="lazy">
 
-<img data-src="/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="150" alt="MySQL" title="MySQL" class="lozad "></p>
+<img src="/blog-bitix/assets/images/logotypes/mysql.svg" width="200" height="150" alt="MySQL" title="MySQL" class="" loading="lazy"></p>
 </figure>
 </div>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaSql">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
@@ -457,7 +457,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/">
-                <img data-src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_box_2.png" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="lozad ">
+                <img src="/blog-bitix/2021/04/programas-basados-en-consola-con-java-usando-lanterna/images/lanterna_hu24edf9756fc7ba259961f103685e76b6_38126_875x0_resize_box_2.png" width="326" height="125" alt="Programas basados en consola con Java usando Lanterna" title="Programas basados en consola con Java usando Lanterna" class="" loading="lazy">
                 <h3>Programas basados en consola con Java usando Lanterna</h3>
                 </a>
                 
@@ -471,7 +471,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/03/novedades-de-java-16/">
-                <img data-src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 16" title="Novedades de Java 16" class="lozad ">
+                <img src="/blog-bitix/2021/03/novedades-de-java-16/images/java-16_hued80e256cc9250e83d3c3f558925622f_679086_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 16" title="Novedades de Java 16" class="" loading="lazy">
                 <h3>Novedades de Java 16</h3>
                 </a>
                 
@@ -485,7 +485,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/03/repositorio-de-artefactos-privado-con-nexus/">
-                <img data-src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/nexus.svg" width="326" height="125" alt="Repositorio de artefactos privado con Nexus" title="Repositorio de artefactos privado con Nexus" class="" loading="lazy">
                 <h3>Repositorio de artefactos privado con Nexus</h3>
                 </a>
                 
@@ -499,7 +499,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/02/las-anotaciones-de-java-y-ejemplo-de-procesador-de-anotaciones-en-tiempo-de-compilacion/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" title="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" title="Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación" class="" loading="lazy">
                 <h3>Las anotaciones de Java y ejemplo de procesador de anotaciones en tiempo de compilación</h3>
                 </a>
                 
@@ -513,7 +513,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2021/01/en-java-los-argumentos-se-pasan-por-valor-o-por-referencia/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="En Java, ¿los argumentos se pasan por valor o por referencia?" title="En Java, ¿los argumentos se pasan por valor o por referencia?" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="En Java, ¿los argumentos se pasan por valor o por referencia?" title="En Java, ¿los argumentos se pasan por valor o por referencia?" class="" loading="lazy">
                 <h3>En Java, ¿los argumentos se pasan por valor o por referencia?</h3>
                 </a>
                 
@@ -527,7 +527,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/12/para-que-sirve-la-palabra-clave-final-en-el-codigo-fuente-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Para qué sirve la palabra clave final en el código fuente Java" title="Para qué sirve la palabra clave final en el código fuente Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Para qué sirve la palabra clave final en el código fuente Java" title="Para qué sirve la palabra clave final en el código fuente Java" class="" loading="lazy">
                 <h3>Para qué sirve la palabra clave final en el código fuente Java</h3>
                 </a>
                 

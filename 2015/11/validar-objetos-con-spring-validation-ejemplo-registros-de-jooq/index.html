@@ -260,7 +260,7 @@
 
       <div class="logotypes"> 
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En la documentación de <a href="https://www.jooq.org/">jOOQ</a> no he encontrado nada referente a cómo realizar validaciones antes de guardar los datos en la base de datos. Pero con la herramienta de generación se puede indicar que las clases Java generadas se anoten con las anotaciones de validación de la especificación JSR-303 según las restricciones encontradas en la base de datos. Las clases contendrán validaciones básicas como <a href="https://docs.oracle.com/javaee/7/api/javax/validation/constraints/NotNull.html">@NotNull</a> o <a href="https://docs.oracle.com/javaee/7/api/javax/validation/constraints/Size.html">@Size</a> pero no he visto nada más allá de estas simples validaciones. Si tenemos validaciones dependientes entre campos o más complejas como una expresión regular necesitaremos algo más.</p>
 <p>Si queremos ser puristas las validaciones deberíamos hacerlas en la base de datos usando <em>constraints</em> impidiendo de esta manera que se guarden datos inválidos independientemente de la aplicación o microservicio que intente guardar algo en la base de datos. Sin embargo, realizando solo las validaciones en la base de datos puede que perdamos qué campo o campos son erróneos y los motivos por los que son erróneos, información que seguramente nos interese para indicar detalladamente los datos no válidos al usuario permitiéndole corregirlos.</p>
@@ -300,7 +300,7 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringBoot">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew updateDatabase, ./gradlew generateModels, ./gradlew run</code></p>
 </div>

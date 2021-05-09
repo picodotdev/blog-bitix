@@ -251,15 +251,15 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/tomcat.svg" width="200" height="133" alt="Tomcat" title="Tomcat" class="" loading="false"></p>
 </div>
 <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/spring-boot.svg" width="200" height="166" alt="Spring Boot" title="Spring Boot" class="" loading="false"></p>
 </div>
 <p>El protocolo HTTP es un protocolo sin estado que quiere decir que entre las peticiones no se comparte estado ni se recuerda ningún dato. Por otro lado las <em>cookies</em> es pequeño conjunto de datos que son almacenados en el cliente y son enviados en cada petición que se hace a un sitio web, cada sitio web mantiene su propia colección de <em>cookies</em>, dos sitios distintos no comparten sus <em>cookies</em>. Para mantener estado entre dos peticiones se hace uso de las <em>cookies</em>.</p>
 <p>En Java los servidores web envían al cliente una <em>cookie</em> con simplemente un identificativo de la sesión, el estado se suele mantener en el servidor en memoria, en almacenamiento de disco o <a href="https://picodotdev.github.io/blog-bitix/2015/03/datos-de-sesion-externalizados-con-spring-session/">persistido en una base de datos como Redis</a>. El identificativo de la sesión por defecto usando un contenedor de <em>servlets</em> como <a href="https://tomcat.apache.org/">Tomcat</a> tiene una longitud de 16 bytes que codificados en hexadecimal da lugar a 32 caracteres o 128 bits. Para aumentar la seguridad por si alguien intenta adivinar el identificativo de cualquier usuario que tenga sesión iniciada por fuerza bruta de casualidad es posible aumentar el número de caracteres para identificar la <em>cookie</em> de sesión. La clase de la API que lo permite en Tomcat es <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/manager.html">Manager</a>.</p>
@@ -288,7 +288,7 @@
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img data-src="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_2.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" class="lozad "></a></p>
+<a href="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales"><img src="/blog-bitix/2019/04/aumentar-el-tamano-del-identificativo-de-la-cookie-de-sesion-de-tomcat-o-spring-session/images/spring-session_hu753693623e6b310d1a7f380031e464c8_72218_600x450_fit_box_2.png" width="600" height="229" alt="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" title="Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales" class="" loading="lazy"></a></p>
 <figcaption>Longitud del identificativo de sesión de 64 bytes o 128 caracteres hexadecimales</figcaption>
 </figure>
 </div>
@@ -301,7 +301,7 @@
 <p>Un libro dedicado a la seguridad muy bueno que he leído es <a href="https://amzn.to/2DeAdi1" rel="sponsored">Iron-Clad Java Applications</a>, tiene montón de detalles dedicados a la seguridad de las aplicaciones web sean seguras, incluido como este dedicado a la longitud de los identificativos de la sesión.</p>
 <p>Una clave asimétrica considerada segura puedes ser de 2048 bits pero se puede <a href="https://picodotdev.github.io/blog-bitix/2014/02/generar-y-convertir-claves-y-certificados-con-openssl/">generar una de hasta 8192 bits</a> con el mismo esfuerzo lo que aumenta la seguridad de forma exponencial ante un ataque de fuerza bruta que con el aumento de la capacidad de cómputo y en el futuro puede ser viable. El tiempo de cómputo requerido por usar una clave de mayor tamaño no creo que sea significativo para la mayoría de los casos pero igualmente la seguridad aumenta.</p>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/SpringSession">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
@@ -351,7 +351,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Ejemplo de máquina de estados con Spring Statemachine" title="Ejemplo de máquina de estados con Spring Statemachine" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Ejemplo de máquina de estados con Spring Statemachine" title="Ejemplo de máquina de estados con Spring Statemachine" class="" loading="lazy">
                 <h3>Ejemplo de máquina de estados con Spring Statemachine</h3>
                 </a>
                 
@@ -365,7 +365,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/02/servidor-oauth-gateway-y-servicio-rest-utilizando-tokens-jwt-con-spring/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" title="Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring" class="" loading="lazy">
                 <h3>Servidor OAuth, gateway y servicio REST utilizando tokens JWT con Spring</h3>
                 </a>
                 
@@ -379,7 +379,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2019/01/las-contrasenas-e-informacion-sensible-en-el-codigo-fuente-o-bytecode-de-java-no-son-seguras/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" title="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" title="Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras" class="" loading="lazy">
                 <h3>Las contraseñas e información sensible en el código fuente o bytecode de Java no son seguras</h3>
                 </a>
                 
@@ -393,7 +393,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/12/exponer-las-metricas-de-hystrix-en-grafana-con-prometheus-de-una-aplicacion-spring-boot/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" title="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" title="Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot" class="" loading="lazy">
                 <h3>Exponer las métricas de Hystrix en Grafana con Prometheus de una aplicación Spring Boot</h3>
                 </a>
                 
@@ -407,7 +407,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/12/monitorizar-una-aplicacion-java-de-spring-boot-con-micrometer-prometheus-y-grafana/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" title="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" title="Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana" class="" loading="lazy">
                 <h3>Monitorizar una aplicación Java de Spring Boot con Micrometer, Prometheus y Grafana</h3>
                 </a>
                 
@@ -421,7 +421,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/10/proxy-para-microservicios-con-spring-cloud-netflix-y-zuul/">
-                <img data-src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Proxy para microservicios con Spring Cloud Netflix y Zuul" title="Proxy para microservicios con Spring Cloud Netflix y Zuul" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/spring.svg" width="326" height="125" alt="Proxy para microservicios con Spring Cloud Netflix y Zuul" title="Proxy para microservicios con Spring Cloud Netflix y Zuul" class="" loading="lazy">
                 <h3>Proxy para microservicios con Spring Cloud Netflix y Zuul</h3>
                 </a>
                 

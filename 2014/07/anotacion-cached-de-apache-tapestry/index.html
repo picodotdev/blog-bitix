@@ -253,7 +253,7 @@
 
       <div class="logotypes"> 
 <p>
-<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <p>Como he comentado en un artículo anterior sobre los <a href="https://picodotdev.github.io/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">modelos push y pull empleados en los motores de plantillas</a> donde comentaba algunas diferencias entre ellos, en el modelo pull es la vista la que pide los datos al controlador y no el controlador el que proporciona los datos a la vista como se hace en el modelo push. Un problema que puede plantear el que la vista pida los datos al controlador es que si la devolución de los datos solicitados son costosos en tiempo del cálculo, carga para el sistema en CPU o memoria, o intensivos en entrada/salida de disco o red y se piden varias veces puede suponer como resultado que el tiempo empleado para generar la página sea elevado o la aplicación consuma recursos innecesarios.</p>
 <p><a href="http://tapestry.apache.org/">Apache Tapestry</a> que emplea el modelo pull dispone de la <a href="http://tapestry.apache.org/5.3/apidocs/org/apache/tapestry5/annotations/Cached.html">anotación Cached</a> que permite cachear el resultado de un método a nivel de componente y página durante la generación de la misma. Su uso sería el siguiente:</p>
@@ -273,7 +273,7 @@
 </div>
 <p>Aún así, la anotación Cached funciona a nivel de petición, cada vez que que se haga una petición a la aplicación y se llame al método anotado por primera vez y por cada valor de la expresión watch se ejecutará el método. Si tenemos muchas peticiones o un determinado componente tarda mucho en generar su contenido, por ejemplo, porque depende de un sistema externo lento (base de datos, http, &hellip;) quizá lo que debamos hacer es un componente que almacene durante un tiempo el contenido que genera y sea devuelto en múltiples peticiones, de modo que evitemos emplear un tiempo costoso en cada petición. Para ello, podríamos desarrollar un <a href="https://elblogdepicodev.blogspot.com.es/2011/01/componente-cache-para-tapestry-5.html">componente que usase una librería de cache</a> como por ejemplo <a href="http://ehcache.org/">EHCache</a>.</p>
 <div class="alert alert-warning">
-    <img data-src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <img src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
     <h3>Libro PlugIn Tapestry</h3>
     <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
     <br style="clear: both;">
@@ -324,7 +324,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/hemeroteca-5/">
-                <img data-src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #5" title="Hemeroteca #5" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/octopress.png" width="326" height="125" alt="Hemeroteca #5" title="Hemeroteca #5" class="" loading="lazy">
                 <h3>Hemeroteca #5</h3>
                 </a>
                 
@@ -338,7 +338,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/ejecutar-apache-tapestry-en-el-servidor-de-aplicaciones-wildfly/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" title="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" title="Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly" class="" loading="lazy">
                 <h3>Ejecutar Apache Tapestry en el servidor de aplicaciones WildFly</h3>
                 </a>
                 
@@ -352,7 +352,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/presentacion-sobre-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Presentación sobre Apache Tapestry" title="Presentación sobre Apache Tapestry" class="" loading="lazy">
                 <h3>Presentación sobre Apache Tapestry</h3>
                 </a>
                 
@@ -366,7 +366,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/plantillas-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas en Apache Tapestry" title="Plantillas en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas en Apache Tapestry" title="Plantillas en Apache Tapestry" class="" loading="lazy">
                 <h3>Plantillas en Apache Tapestry</h3>
                 </a>
                 
@@ -380,7 +380,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/modelo-push-contra-modelo-pull-en-frameworks-web/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Modelo «push» contra modelo «pull» en frameworks web" title="Modelo «push» contra modelo «pull» en frameworks web" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Modelo «push» contra modelo «pull» en frameworks web" title="Modelo «push» contra modelo «pull» en frameworks web" class="" loading="lazy">
                 <h3>Modelo «push» contra modelo «pull» en frameworks web</h3>
                 </a>
                 
@@ -394,7 +394,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/06/iniciar-rapidamente-aplicacion-con-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Iniciar rápidamente aplicación con Apache Tapestry" title="Iniciar rápidamente aplicación con Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Iniciar rápidamente aplicación con Apache Tapestry" title="Iniciar rápidamente aplicación con Apache Tapestry" class="" loading="lazy">
                 <h3>Iniciar rápidamente aplicación con Apache Tapestry</h3>
                 </a>
                 

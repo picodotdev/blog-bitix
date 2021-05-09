@@ -251,11 +251,11 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/webjars.png" width="250" height="250" alt="Webjars" title="Webjars" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/webjars.png" width="250" height="250" alt="Webjars" title="Webjars" class="" loading="false"></p>
 </div>
 <p>Una aplicación web se compone de código de lado de servidor, en el caso de utilizar el lenguaje de programación Java de código Java normalmente utilizando algún de los muchos <em>framework</em> web, por otra parte se compone de código de lado de cliente con una gran variedad de librerías de JavaScript como <a href="https://jquery.com/">jQuery</a>, <a href="https://reactjs.org/">React</a>, <a href="https://underscorejs.org/">Underscore</a> o <a href="https://getbootstrap.com/">Bootstrap</a> para los estilos. En las aplicaciones Java las librerías de lado de servidor se gestionan como dependencias del proyecto y con herramientas como <a href="https://gradle.org/">Gradle</a> se puede automatizar el descargar la librería de repositorios como <a href="https://search.maven.org/">Maven Central</a> y la versión que se necesite así como hacer sencillo actualizar a una nueva. En el caso de las librerías de lado del cliente con <a href="https://www.webjars.org/">Webjars</a> se consiguen los mismos beneficios.</p>
 <p>Los <em>webjars</em> son librerías de extensión <em>jar</em> con los recursos de lado del cliente empaquetados en ellos que en el momento de ser requeridos pueden ser devueltos como un recurso estático por la aplicación, incluyen los archivos JavaScript sin minimizar y minimizados, los archivos <em>map</em> para depuración si minimizados están ofuscados, recursos de estilos CSS o imágenes. Se gestionan como cualquier otra dependencia del proyecto Java lo que proporciona las mismas ventajas de obtener las dependencias de forma automática y hace fácil actualizar a una nueva versión. Por si fuera poco es muy sencillo utilizar <em>webjars</em>, para los <em>frameworks</em> más populares se ofrece una pequeña guía de uso en la <a href="https://www.webjars.org/documentation">documentación</a>.</p>
@@ -283,18 +283,18 @@
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Apache Tapestry con Webjars"><img data-src="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_650x450_fit_box_2.png" width="650" height="392" alt="Apache Tapestry con Webjars" title="Apache Tapestry con Webjars" class="lozad "></a></p>
+<a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Apache Tapestry con Webjars"><img src="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/images/tapestry-webjars_hu48db32848ea69c233c28d50d292a5a09_470668_650x450_fit_box_2.png" width="650" height="392" alt="Apache Tapestry con Webjars" title="Apache Tapestry con Webjars" class="" loading="lazy"></a></p>
 <figcaption>Apache Tapestry con Webjars</figcaption>
 </figure>
 </div>
 <p>Los <em>webjars</em> muy útiles para gestionar las librerías de lado cliente que hacen innecesario descargar manualmente las dependencias, automatizan la descarga, hacen muy sencillo actualizar a nuevas versiones y es muy fácil de usar al no requerir mucha configuración ni ser invasiva. Además, al estar como una dependencia en el archivo de construcción del proyecto queda indicado de forma explícita que el proyecto utiliza y necesita esa librería. Para mi son una herramienta imprescindible.</p>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/PlugInTapestry">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
 <div class="alert alert-warning">
-    <img data-src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <img src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
     <h3>Libro PlugIn Tapestry</h3>
     <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
     <br style="clear: both;">
@@ -344,7 +344,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="" loading="lazy">
                 <h3>Plantillas con etiquetas no balanceadas en Apache Tapestry</h3>
                 </a>
                 
@@ -358,7 +358,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/hemeroteca-12/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
                 <h3>Hemeroteca #12</h3>
                 </a>
                 
@@ -372,7 +372,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Portlets con el framework Apache Tapestry y Apache Pluto" title="Portlets con el framework Apache Tapestry y Apache Pluto" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Portlets con el framework Apache Tapestry y Apache Pluto" title="Portlets con el framework Apache Tapestry y Apache Pluto" class="" loading="lazy">
                 <h3>Portlets con el framework Apache Tapestry y Apache Pluto</h3>
                 </a>
                 
@@ -386,7 +386,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/hemeroteca-11/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
                 <h3>Hemeroteca #11</h3>
                 </a>
                 
@@ -400,7 +400,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/12/hemeroteca-10/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #10" title="Hemeroteca #10" class="" loading="lazy">
                 <h3>Hemeroteca #10</h3>
                 </a>
                 
@@ -414,7 +414,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="" loading="lazy">
                 <h3>Añadir botones selectores de opciones a select múltiple de bootstrap-select</h3>
                 </a>
                 

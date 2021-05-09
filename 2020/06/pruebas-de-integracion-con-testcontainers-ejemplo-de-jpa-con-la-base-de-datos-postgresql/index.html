@@ -66,7 +66,7 @@
     "dateModified": "2020-06-07T10:00:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "3172",
+    "wordCount": "3130",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -258,7 +258,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/testcontainers.svg" width="200" height="200" alt="Testcontainers" title="Testcontainers" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/testcontainers.svg" width="200" height="200" alt="Testcontainers" title="Testcontainers" class="" loading="false"></p>
 </div>
 <p>Las pruebas automatizadas permiten validar que el comportamiento del software es el esperado. Permiten verificar que ante cambios no se introducen errores, generan mayor confianza en que el software funciona como se espera y evitan la necesidad de realizar pruebas manuales lentas y repetitivas.</p>
 <p>Las pruebas más numerosas son las unitarias que prueban un componente del software de forma aislada de sus dependencias sin invocar operaciones de red. Las dependencias del componente bajo la prueba no son las reales, las dependencias simulan el comportamiento de los componentes a los que sustituyen por <em>stubs</em> o <em>mocks</em> para analizar cómo se comporta el sujeto bajo la prueba o SUT. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2018/07/que-es-un-sut-fake-stub-mock-y-spy-en-las-pruebas-con-un-ejemplo/">qué es un SUT, fake, stub, mock y spy</a> describo este tipo de objetos que sustituyen a las dependencias reales.</p>
@@ -312,7 +312,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;James Gosling&#39;</span><span class="p">);</span>&#10;<span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Linus Torvalds&#39;</span><span class="p">);</span>&#10;<span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Richard Stallman&#39;</span><span class="p">);</span>&#10;<span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Bill Gates&#39;</span><span class="p">);</span>&#10;<span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Steve Jobs&#39;</span><span class="p">);</span>&#10;<span class="k">insert</span> <span class="k">into</span> <span class="n">Person</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="k">values</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Dennis Ritchie&#39;</span><span class="p">);</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span><span class="lnt">6&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;James Gosling&#39;</span><span class="p">);</span><span class="w">&#10;</span><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Linus Torvalds&#39;</span><span class="p">);</span><span class="w">&#10;</span><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Richard Stallman&#39;</span><span class="p">);</span><span class="w">&#10;</span><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Bill Gates&#39;</span><span class="p">);</span><span class="w">&#10;</span><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Steve Jobs&#39;</span><span class="p">);</span><span class="w">&#10;</span><span class="w"></span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">Person</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Dennis Ritchie&#39;</span><span class="p">);</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>persons.sql</span>
     </div>
@@ -332,7 +332,7 @@
     </div>
 </div>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/Testcontainers">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew test</code></p>
 </div>
@@ -380,7 +380,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/06/la-herramienta-sdkman-para-instalar-varias-versiones-del-jdk-y-software-de-la-plataforma-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/sdkman.svg" width="326" height="125" alt="La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java" title="La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/sdkman.svg" width="326" height="125" alt="La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java" title="La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java" class="" loading="lazy">
                 <h3>La herramienta SDKMAN para instalar varias versiones del JDK y software de la plataforma Java</h3>
                 </a>
                 
@@ -394,7 +394,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/copiar-datos-de-un-tipo-de-objeto-a-otro-con-modelmapper/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Copiar datos de un tipo de objeto a otro con ModelMapper" title="Copiar datos de un tipo de objeto a otro con ModelMapper" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Copiar datos de un tipo de objeto a otro con ModelMapper" title="Copiar datos de un tipo de objeto a otro con ModelMapper" class="" loading="lazy">
                 <h3>Copiar datos de un tipo de objeto a otro con ModelMapper</h3>
                 </a>
                 
@@ -408,7 +408,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/">
-                <img data-src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_875x0_resize_box_2.png" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="lozad ">
+                <img src="/blog-bitix/2020/05/el-patron-open-session-in-view-que-es-ventajas-problemas-y-alternativas/images/opensessioninview_hu8070966044dcdbac5e387caf6b7057f5_108570_875x0_resize_box_2.png" width="326" height="125" alt="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" title="El patrón Open Session in View, qué es, ventajas, problemas y alternativas" class="" loading="lazy">
                 <h3>El patrón Open Session in View, qué es, ventajas, problemas y alternativas</h3>
                 </a>
                 
@@ -422,7 +422,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/05/la-concurrencia-en-la-plataforma-java-con-project-loom/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La concurrencia en la plataforma Java con Project Loom" title="La concurrencia en la plataforma Java con Project Loom" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="La concurrencia en la plataforma Java con Project Loom" title="La concurrencia en la plataforma Java con Project Loom" class="" loading="lazy">
                 <h3>La concurrencia en la plataforma Java con Project Loom</h3>
                 </a>
                 
@@ -436,7 +436,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/">
-                <img data-src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu94faf96db0cdfcf701034a6e4074ee5e_52948_875x0_resize_box_2.png" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="lozad ">
+                <img src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu94faf96db0cdfcf701034a6e4074ee5e_52948_875x0_resize_box_2.png" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="" loading="lazy">
                 <h3>Argumentos de línea de comandos con JCommander en una aplicación Java</h3>
                 </a>
                 
@@ -450,7 +450,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/novedades-de-java-14/">
-                <img data-src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_huccb0ef40d398578ef9c72a14e73cf197_1132241_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="lozad ">
+                <img src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_huccb0ef40d398578ef9c72a14e73cf197_1132241_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="" loading="lazy">
                 <h3>Novedades de Java 14</h3>
                 </a>
                 

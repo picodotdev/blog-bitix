@@ -251,7 +251,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <p>Una de las partes esenciales de una aplicación web es generar enlaces a otras páginas, enlaces a los manejadores de los formularios que procesan los datos enviados, enlaces a manejadores de solicitudes AJAX. Generar enlaces no solo es necesario para ser usados dentro de la misma aplicación web sino también para ser usados en el código JavaScript, en correos electrónicos u informes.</p>
 <p>La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el caso de generar enlaces suelen incluir soporte. Pero también es importante que la facilidad que proporcionan los frameworks para generarlos no sea concatenando y hardcodeado cadenas. Si es así en el momento de querer renombrar una página o manejador de evento se convierte en un problema por la inseguridad que plantea para realizar el <em>refactor</em>, más en una aplicación grande. Y esto puede dar el caso de que algunos <em>refactors</em> no se aborden por miedo a romper cosas, a la larga es un problema para el desarrollo futuro y el mantenimiento de la aplicación.</p>
@@ -281,7 +281,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
 <p>Todos estos métodos devuelven una clase del tipo <a href="https://tapestry.apache.org/current/apidocs/org/apache/tapestry5/Link.html">Link</a> que con los métodos <em>toAbsoluteURI()</em>, <em>toRedirectURI()</em>, <em>toRedirectURI(bool)</em> y <em>toURI()</em> permiten obtener la cadena que representa el enlace. Esta clase tiene otros métodos para en caso de necesidad acceder a los diferentes elementos del enlace evitando tener que interpretarlo para acceder a ellos. Estos cadenas son las que se incluirían en los correos electrónicos, informes y otras aplicaciones puede que también otras páginas y JavaScript.</p>
 <p>Desde el lado del cliente en JavaScript también puede ser necesario lanzar eventos, pare evitar generar algunos de los enlaces en lado de servidor y enviarlos al lado del cliente para que estos los usen. En el lado del cliente también se ofrece soporte para lanzar eventos lo que simplifica algunos casos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">([</span><span class="s2">&#34;t5/core/ajax&#34;</span><span class="p">,</span> <span class="s2">&#34;jquery&#34;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">,</span> <span class="nx">$</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#result&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">ajax</span><span class="p">(</span><span class="s1">&#39;answer&#39;</span><span class="p">,</span> <span class="p">{</span> &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">element</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// $(&#39;#result&#39;)&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#result&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">origin</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">});</span>&#10;<span class="p">});</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">require</span><span class="p">([</span><span class="s2">&#34;t5/core/ajax&#34;</span><span class="p">,</span> <span class="s2">&#34;jquery&#34;</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ajax</span><span class="p">,</span> <span class="nx">$</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#result&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">ajax</span><span class="p">(</span><span class="s1">&#39;answer&#39;</span><span class="p">,</span> <span class="p">{</span> &#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">element</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// $(&#39;#result&#39;)&#10;</span><span class="c1"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#result&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">origin</span><span class="p">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">});</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">});</span>&#10;<span class="p">});</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>events.js</span>
     </div>
@@ -327,7 +327,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/hemeroteca-13/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #13" title="Hemeroteca #13" class="" loading="lazy">
                 <h3>Hemeroteca #13</h3>
                 </a>
                 
@@ -341,7 +341,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/soporte-para-lanzar-eventos-desde-javascript-con-ajax-en-un-componente-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" title="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" title="Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry" class="" loading="lazy">
                 <h3>Soporte para lanzar eventos desde JavaScript con Ajax en un componente de Apache Tapestry</h3>
                 </a>
                 
@@ -355,7 +355,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/actualizar-las-versiones-de-las-librerias-javascript-built-in-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" title="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" title="Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry" class="" loading="lazy">
                 <h3>Actualizar las versiones de las librerías JavaScript built-in de Apache Tapestry</h3>
                 </a>
                 
@@ -369,7 +369,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/06/dependencias-sobre-librerias-de-lado-de-cliente-con-webjars-en-una-aplicacion-web-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" title="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" title="Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java" class="" loading="lazy">
                 <h3>Dependencias sobre librerías de lado de cliente con Webjars en una aplicación web Java</h3>
                 </a>
                 
@@ -383,7 +383,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2018/05/plantillas-con-etiquetas-no-balanceadas-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Plantillas con etiquetas no balanceadas en Apache Tapestry" title="Plantillas con etiquetas no balanceadas en Apache Tapestry" class="" loading="lazy">
                 <h3>Plantillas con etiquetas no balanceadas en Apache Tapestry</h3>
                 </a>
                 
@@ -397,7 +397,7 @@ La ventaja de utilizar un framework es que estos facilitan el desarrollo y en el
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/12/hemeroteca-12/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #12" title="Hemeroteca #12" class="" loading="lazy">
                 <h3>Hemeroteca #12</h3>
                 </a>
                 

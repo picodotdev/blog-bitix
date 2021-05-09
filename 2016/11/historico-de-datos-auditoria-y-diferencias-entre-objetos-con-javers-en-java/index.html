@@ -66,7 +66,7 @@
     "dateModified": "2016-11-05T11:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "740",
+    "wordCount": "698",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -260,7 +260,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Por necesidades de negocio y requerimientos funcionales puede ser necesario guardar un histórico de ciertos datos de una aplicación en vez de solo la última versión de los datos. Tener solo la última versión de algunos datos puede no ser lo que se necesita. Por ejemplo, supongamos que una aplicación maneja una entidad de dominio producto y esta tiene un campo que es el precio y queremos guardar los cambios que se hacen a esta entidad para conocer el cambio de precio que han sufrido los productos. Otras necesidades pueden ser por auditoría o seguridad para saber que usuario ha hecho que cambios en los datos, para disponer de versiones anteriores de una entidad, comparar dos versiones de la misma entidad o lanzar consultas para obtener información de los cambios que se han producido.</p>
 <p>Una librería que en Java nos ofrece toda esta información de auditoría es <a href="https://javers.org/">Javers</a> con la posibilidad de persistirla en diferentes sistemas, en las tradicionales base de datos relacionales o en una base de datos no SQL como <a href="https://www.mongodb.com/">MongoDB</a>. En la documentación encontramos como podemos <a href="http://javers.org/documentation/diff-examples/">comparar dos objetos</a>, <a href="http://javers.org/documentation/repository-examples/">persistir cambios</a> o <a href="http://javers.org/documentation/jql-examples/">lanzar consultas</a>.</p>
@@ -298,13 +298,13 @@
 </div>
 <p>La información se persistirán en varias tablas en este caso en un base de datos relacional PostgreSQL que Javers creará al iniciarse la aplicación, ejecutada la aplicación encontraremos datos.</p>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="err">$</span> <span class="n">docker</span> <span class="k">exec</span> <span class="o">-</span><span class="n">it</span> <span class="mi">25135430</span><span class="n">da0d</span> <span class="n">bash</span>&#10;<span class="n">root</span><span class="o">@</span><span class="mi">25135430</span><span class="n">da0d</span><span class="p">:</span><span class="o">/#</span> <span class="n">psql</span> <span class="n">javers</span> <span class="k">admin</span>&#10;<span class="n">javers</span><span class="o">=#</span> <span class="err">\</span><span class="n">dt</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="n">List</span> <span class="k">of</span> <span class="n">relations</span>&#10; <span class="k">Schema</span> <span class="o">|</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">|</span> <span class="k">Type</span>  <span class="o">|</span> <span class="k">Owner</span>&#10;<span class="c1">--------+--------------------+-------+------&#10;</span><span class="c1"></span> <span class="k">public</span> <span class="o">|</span> <span class="n">jv_commit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">admin</span>&#10; <span class="k">public</span> <span class="o">|</span> <span class="n">jv_commit_property</span> <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">admin</span>&#10; <span class="k">public</span> <span class="o">|</span> <span class="n">jv_global_id</span>&nbsp;&nbsp;&nbsp;&nbsp;   <span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">admin</span>&#10; <span class="k">public</span> <span class="o">|</span> <span class="n">jv_snapshot</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">|</span> <span class="k">table</span> <span class="o">|</span> <span class="k">admin</span>&#10;<span class="p">(</span><span class="mi">4</span> <span class="k">rows</span><span class="p">)</span>&#10;</code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="err">$</span><span class="w"> </span><span class="n">docker</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="o">-</span><span class="n">it</span><span class="w"> </span><span class="mi">25135430</span><span class="n">da0d</span><span class="w"> </span><span class="n">bash</span><span class="w">&#10;</span><span class="w"></span><span class="n">root</span><span class="o">@</span><span class="mi">25135430</span><span class="n">da0d</span><span class="p">:</span><span class="o">/#</span><span class="w"> </span><span class="n">psql</span><span class="w"> </span><span class="n">javers</span><span class="w"> </span><span class="k">admin</span><span class="w">&#10;</span><span class="w"></span><span class="n">javers</span><span class="o">=#</span><span class="w"> </span><span class="err">\</span><span class="n">dt</span><span class="w">&#10;</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="n">List</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">relations</span><span class="w">&#10;</span><span class="w"> </span><span class="k">Schema</span><span class="w"> </span><span class="o">|</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Name</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">|</span><span class="w"> </span><span class="k">Type</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="k">Owner</span><span class="w">&#10;</span><span class="w"></span><span class="c1">--------+--------------------+-------+------&#10;</span><span class="c1"></span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">jv_commit</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </span><span class="o">|</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w">&#10;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">jv_commit_property</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w">&#10;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">jv_global_id</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;   </span><span class="o">|</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w">&#10;</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">jv_snapshot</span><span class="w">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">|</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w">&#10;</span><span class="w"></span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span><span class="w">&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>tables.sql</span>
     </div>
 </div>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/HolaMundoJavers">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
@@ -343,7 +343,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/anadir-botones-selectores-de-opciones-a-select-multiple-de-bootstrap-select/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Añadir botones selectores de opciones a select múltiple de bootstrap-select" title="Añadir botones selectores de opciones a select múltiple de bootstrap-select" class="" loading="lazy">
                 <h3>Añadir botones selectores de opciones a select múltiple de bootstrap-select</h3>
                 </a>
                 
@@ -357,7 +357,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-multiple-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select múltiple en Apache Tapestry" title="Componente select múltiple en Apache Tapestry" class="" loading="lazy">
                 <h3>Componente select múltiple en Apache Tapestry</h3>
                 </a>
                 
@@ -371,7 +371,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/componente-select-de-apache-tapestry-con-funcionalidades-adicionales-usando-bootstrap-select/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" title="Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select" class="" loading="lazy">
                 <h3>Componente select de Apache Tapestry con funcionalidades adicionales usando bootstrap-select</h3>
                 </a>
                 
@@ -385,7 +385,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/integrar-autenticacion-oauth-con-keycloak-shiro-apache-tapestry-y-spring-boot/">
-                <img data-src="/blog-bitix/assets/images/logotypes/keycloak.png" width="326" height="125" alt="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" title="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/keycloak.png" width="326" height="125" alt="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" title="Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot" class="" loading="lazy">
                 <h3>Integrar autenticación OAuth con Keycloak, Shiro, Apache Tapestry y Spring Boot</h3>
                 </a>
                 
@@ -399,7 +399,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/generacion-de-codigo-en-tiempo-de-ejecucion-con-byte-buddy/">
-                <img data-src="/blog-bitix/assets/images/logotypes/bytebuddy.png" width="326" height="125" alt="Generación de código en tiempo de ejecución con Byte Buddy" title="Generación de código en tiempo de ejecución con Byte Buddy" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/bytebuddy.png" width="326" height="125" alt="Generación de código en tiempo de ejecución con Byte Buddy" title="Generación de código en tiempo de ejecución con Byte Buddy" class="" loading="lazy">
                 <h3>Generación de código en tiempo de ejecución con Byte Buddy</h3>
                 </a>
                 
@@ -413,7 +413,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/10/cliente-de-un-servicio-rest-autenticado-con-oauth-en-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cliente de un servicio REST autenticado con OAuth en Java" title="Cliente de un servicio REST autenticado con OAuth en Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cliente de un servicio REST autenticado con OAuth en Java" title="Cliente de un servicio REST autenticado con OAuth en Java" class="" loading="lazy">
                 <h3>Cliente de un servicio REST autenticado con OAuth en Java</h3>
                 </a>
                 

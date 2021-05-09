@@ -262,7 +262,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="300" height="64" alt="Nginx" title="Nginx" class="" loading="false"></p>
 </div>
 <p>Los servidores web son muy eficientes devolviendo al cliente archivos estáticos. Tradicionalmente el contenido estático formado por hojas de estilo, archivos JavaScript, imágenes o vídeos de una página o aplicación web han sido devueltos por un servidor web evitando que el servidor de aplicaciones tenga que procesar una gran cantidad de peticiones, aún hoy se sigue haciendo. En caso de que los recursos estáticos estén alojados en el servidor de aplicaciones en vez de en el servidor web, porque los recursos estáticos se empaquetan con la aplicación, el servidor web puede cachearlos evitando que peticiones lleguen al servidor de aplicaciones. En este artículo comentaré cual es la configuración necesaria a añadir en el servidor web <a href="https://nginx.org/">Nginx</a> que hace de <em>proxy</em> para que cachee el resultado de las peticiones así indicadas del servidor de aplicaciones, la aplicación genera el contenido y establece las cabeceras de cache indicando como quiere que se cachee el contenido devuelto.</p>
 <p>Para que el servidor web realice el cacheo de los recursos en la aplicación esta ha de devolver en las cabeceras de respuesta como quiere que los recursos sean cacheados usando las cabeceras <em>Last-Modified</em>, <em>Expires</em>, <em>Cache-Control</em> quizá <em>Etag</em>. <a href="https://picodotdev.github.io/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/">Las cabeceras de cache del protocolo HTTP</a> establecen el comportamiento deseado para la cache.</p>
@@ -290,17 +290,17 @@
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-miss_hu304565c1a9343c13e420aa3d3414b984_122903_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Fallo en la cache de Nginx"><img data-src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-miss_hu304565c1a9343c13e420aa3d3414b984_122903_300x200_fit_box_2.png" width="207" height="200" alt="Fallo en la cache de Nginx" title="Fallo en la cache de Nginx" class="lozad "></a>
+<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-miss_hu304565c1a9343c13e420aa3d3414b984_122903_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Fallo en la cache de Nginx"><img src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-miss_hu304565c1a9343c13e420aa3d3414b984_122903_300x200_fit_box_2.png" width="207" height="200" alt="Fallo en la cache de Nginx" title="Fallo en la cache de Nginx" class="" loading="lazy"></a>
 
-<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-hit_hu304565c1a9343c13e420aa3d3414b984_119894_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Acierto en la cache de Nginx"><img data-src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-hit_hu304565c1a9343c13e420aa3d3414b984_119894_300x200_fit_box_2.png" width="207" height="200" alt="Acierto en la cache de Nginx" title="Acierto en la cache de Nginx" class="lozad "></a></p>
+<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-hit_hu304565c1a9343c13e420aa3d3414b984_119894_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Acierto en la cache de Nginx"><img src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-hit_hu304565c1a9343c13e420aa3d3414b984_119894_300x200_fit_box_2.png" width="207" height="200" alt="Acierto en la cache de Nginx" title="Acierto en la cache de Nginx" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-expired_hu304565c1a9343c13e420aa3d3414b984_124798_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Expiración en la cache de Nginx"><img data-src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-expired_hu304565c1a9343c13e420aa3d3414b984_124798_300x200_fit_box_2.png" width="207" height="200" alt="Expiración en la cache de Nginx" title="Expiración en la cache de Nginx" class="lozad "></a>
+<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-expired_hu304565c1a9343c13e420aa3d3414b984_124798_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Expiración en la cache de Nginx"><img src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/nginx-cache-peticion-expired_hu304565c1a9343c13e420aa3d3414b984_124798_300x200_fit_box_2.png" width="207" height="200" alt="Expiración en la cache de Nginx" title="Expiración en la cache de Nginx" class="" loading="lazy"></a>
 
-<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/curl-cache-miss-hit-expired_hu4df79497678506697c712136abe7a6ae_80932_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Fallo, acierto y expiración en la cache de Nginx con curl"><img data-src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/curl-cache-miss-hit-expired_hu4df79497678506697c712136abe7a6ae_80932_300x200_fit_box_2.png" width="252" height="200" alt="Fallo, acierto y expiración en la cache de Nginx con curl" title="Fallo, acierto y expiración en la cache de Nginx con curl" class="lozad "></a></p>
+<a href="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/curl-cache-miss-hit-expired_hu4df79497678506697c712136abe7a6ae_80932_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Fallo, acierto y expiración en la cache de Nginx con curl"><img src="/blog-bitix/2016/07/configurar-nginx-para-cachear-respuestas-del-servidor-de-aplicaciones/images/curl-cache-miss-hit-expired_hu4df79497678506697c712136abe7a6ae_80932_300x200_fit_box_2.png" width="252" height="200" alt="Fallo, acierto y expiración en la cache de Nginx con curl" title="Fallo, acierto y expiración en la cache de Nginx con curl" class="" loading="lazy"></a></p>
 <figcaption>Fallo, acierto y expiración que produce en la cache de Nginx al realizar peticiones</figcaption>
 </figure>
 </div>
@@ -318,7 +318,7 @@
 </div>
 <p>Hay servidores específicos para realizar tareas de cache como <a href="https://varnish-cache.org/">Varnish</a> con más opciones de las que ofrece Nginx. Para los casos no complicados usando Nginx evitamos añadir una nueva pieza a la arquitectura de la aplicación. Entre los productos que ofrece Amazon está <a href="https://aws.amazon.com/es/cloudfront/">Cloudfront</a> que es una cache para recursos estáticos con el añadido de que de forma automática está distribuida geográficamente de forma que los recursos se sirven por un servidor más cercano al cliente evitando un mal rendimiento por la latencia. En el artículo <a href="https://picodotdev.github.io/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">servir recursos estáticos de un CDN en Apache Tapestry</a> comento como usar esta red de distribución de contenido ofrecida por Amazon.</p>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/NginxCache">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew build, cd docker, docker-compose up</code></p>
 </div>
@@ -364,7 +364,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/las-cabeceras-de-cache-del-protocolo-http/">
-                <img data-src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Las cabeceras de cache del protocolo HTTP" title="Las cabeceras de cache del protocolo HTTP" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/html.svg" width="326" height="125" alt="Las cabeceras de cache del protocolo HTTP" title="Las cabeceras de cache del protocolo HTTP" class="" loading="lazy">
                 <h3>Las cabeceras de cache del protocolo HTTP</h3>
                 </a>
                 
@@ -378,7 +378,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/como-crear-un-proxy-inverso-entre-el-servidor-web-nginx-y-un-servidor-de-aplicaciones-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" title="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" title="Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java" class="" loading="lazy">
                 <h3>Cómo crear un proxy inverso entre el servidor web Nginx y un servidor de aplicaciones Java</h3>
                 </a>
                 
@@ -392,7 +392,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/">
-                <img data-src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Configurar Nginx como balanceador de carga" title="Configurar Nginx como balanceador de carga" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Configurar Nginx como balanceador de carga" title="Configurar Nginx como balanceador de carga" class="" loading="lazy">
                 <h3>Configurar Nginx como balanceador de carga</h3>
                 </a>
                 
@@ -406,7 +406,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/07/como-optimizar-un-sitio-web-con-compresion-gzip-en-nginx-y-apache-httpd/">
-                <img data-src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD" title="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD" title="Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD" class="" loading="lazy">
                 <h3>Cómo optimizar un sitio web con compresión GZIP en Nginx y Apache HTTPD</h3>
                 </a>
                 
@@ -420,7 +420,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2016/06/como-redirigir-peticiones-de-http-a-https-en-nginx-apache-tomcat-jetty-y-wildfly/">
-                <img data-src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" title="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/nginx.svg" width="326" height="125" alt="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" title="Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly" class="" loading="lazy">
                 <h3>Cómo redirigir peticiones de HTTP a HTTPS en Nginx, Apache, Tomcat, Jetty y WildFly</h3>
                 </a>
                 
@@ -434,7 +434,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/02/configurar-ssl-en-un-servidor-tomcat-jboss-wildfly-lighttpd-nginx-apache/">
-                <img data-src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" title="Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache" class="" loading="lazy">
                 <h3>Configurar SSL/TLS en un servidor Tomcat, JBoss, WildFly, Lighttpd, Nginx o Apache</h3>
                 </a>
                 

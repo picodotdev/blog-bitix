@@ -258,7 +258,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Los <em>threads</em> han existido en Java desde la primera versión siendo uno de sus componentes esenciales. Los <em>threads</em> representan una unidad de trabajo concurrente como una abstracción de los recursos computacionales disponibles y que ocultan la complejidad de gestionar esos recursos.</p>
 <p>Ya se usen de forma directa o dentro de un framework como JAX-RS la concurrencia en Java significan <em>threads</em>. En realidad, la plataforma Java entera, desde la máquina virtual al lenguaje y librerías incluidos depuradores y <em>profilers</em> está construida alrededor de los <em>threads</em> como componente esencial de ejecutar un programa.</p>
@@ -315,7 +315,7 @@
     </div>
 </div>
 <div class="code">
-    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ThreadFactory</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">virtual</span><span class="o">().</span><span class="na">factory</span><span class="o">();</span>&#10;<span class="n">ExecutorService</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newUnboundedExecutor</span><span class="o">(</span><span class="n">tf</span><span class="o">);</span>&#10;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">submit</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="k">return</span> <span class="n">result</span><span class="o">;</span> <span class="o">});</span> <span class="c1">// spawns a new virtual thread&#10;</span><span class="c1"></span><span class="o">...</span>&#10;<span class="n">Result</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="o">//</span> <span class="n">joins</span> <span class="n">the</span> <span class="n">virtual</span> <span class="n">thread</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
+    <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt">1&#10;</span><span class="lnt">2&#10;</span><span class="lnt">3&#10;</span><span class="lnt">4&#10;</span><span class="lnt">5&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ThreadFactory</span> <span class="n">tf</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">builder</span><span class="o">().</span><span class="na">virtual</span><span class="o">().</span><span class="na">factory</span><span class="o">();</span>&#10;<span class="n">ExecutorService</span> <span class="n">e</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newUnboundedExecutor</span><span class="o">(</span><span class="n">tf</span><span class="o">);</span>&#10;<span class="n">Future</span><span class="o">&lt;</span><span class="n">Result</span><span class="o">&gt;</span> <span class="n">f</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="na">submit</span><span class="o">(()</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="o">...</span> <span class="k">return</span> <span class="n">result</span><span class="o">;</span> <span class="o">});</span> <span class="c1">// spawns a new virtual thread&#10;</span><span class="c1"></span><span class="o">...</span>&#10;<span class="n">Result</span> <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="na">get</span><span class="o">();</span> <span class="c1">// joins the virtual thread&#10;</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
         <span>threads-api-3.java</span>
     </div>
@@ -378,7 +378,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/">
-                <img data-src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu94faf96db0cdfcf701034a6e4074ee5e_52948_875x0_resize_box_2.png" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="lozad ">
+                <img src="/blog-bitix/2020/04/argumentos-de-linea-de-comandos-con-jcommander-en-una-aplicacion-java/images/jcommander_hu94faf96db0cdfcf701034a6e4074ee5e_52948_875x0_resize_box_2.png" width="326" height="125" alt="Argumentos de línea de comandos con JCommander en una aplicación Java" title="Argumentos de línea de comandos con JCommander en una aplicación Java" class="" loading="lazy">
                 <h3>Argumentos de línea de comandos con JCommander en una aplicación Java</h3>
                 </a>
                 
@@ -392,7 +392,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/03/novedades-de-java-14/">
-                <img data-src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_huccb0ef40d398578ef9c72a14e73cf197_1132241_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="lozad ">
+                <img src="/blog-bitix/2020/03/novedades-de-java-14/images/java-14_huccb0ef40d398578ef9c72a14e73cf197_1132241_875x0_resize_q90_box.jpg" width="326" height="125" alt="Novedades de Java 14" title="Novedades de Java 14" class="" loading="lazy">
                 <h3>Novedades de Java 14</h3>
                 </a>
                 
@@ -406,7 +406,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/cambiar-los-niveles-de-log-de-forma-dinamica-sin-reiniciar-la-aplicacion-con-log4j/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j" title="Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j" title="Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j" class="" loading="lazy">
                 <h3>Cambiar los niveles de log de forma dinámica sin reiniciar la aplicación con Log4j</h3>
                 </a>
                 
@@ -420,7 +420,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/">
-                <img data-src="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/images/intellij-code-style-1_hub3c93504c54463ee69418644e411e985_160721_875x0_resize_box_2.png" width="326" height="125" alt="Las convenciones y guía de estilos para el código fuente de Java" title="Las convenciones y guía de estilos para el código fuente de Java" class="lozad ">
+                <img src="/blog-bitix/2020/02/las-convenciones-y-guia-de-estilos-para-el-codigo-fuente-de-java/images/intellij-code-style-1_hub3c93504c54463ee69418644e411e985_160721_875x0_resize_box_2.png" width="326" height="125" alt="Las convenciones y guía de estilos para el código fuente de Java" title="Las convenciones y guía de estilos para el código fuente de Java" class="" loading="lazy">
                 <h3>Las convenciones y guía de estilos para el código fuente de Java</h3>
                 </a>
                 
@@ -434,7 +434,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/">
-                <img data-src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hud8657e5c40ac59b935a4c973e33e4cd5_41824_875x0_resize_box_2.png" width="326" height="125" alt="El recolector de basura de Java, qué hace y cómo funciona en cada versión" title="El recolector de basura de Java, qué hace y cómo funciona en cada versión" class="lozad ">
+                <img src="/blog-bitix/2020/02/el-recolector-de-basura-de-java-que-hace-y-como-funciona-en-cada-version/images/treenode-3_hud8657e5c40ac59b935a4c973e33e4cd5_41824_875x0_resize_box_2.png" width="326" height="125" alt="El recolector de basura de Java, qué hace y cómo funciona en cada versión" title="El recolector de basura de Java, qué hace y cómo funciona en cada versión" class="" loading="lazy">
                 <h3>El recolector de basura de Java, qué hace y cómo funciona en cada versión</h3>
                 </a>
                 
@@ -448,7 +448,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/">
-                <img data-src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="lozad ">
+                <img src="/blog-bitix/2020/02/programacion-orientada-a-aspectos-con-aspectj-spring-aop-y-la-clase-proxy/images/aop-proxy-call_hu9c337a518ccda55733c57e94ef41c3af_3052_875x0_resize_box_2.png" width="326" height="125" alt="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" title="Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy" class="" loading="lazy">
                 <h3>Programación orientada a aspectos con AspectJ, Spring AOP y la clase Proxy</h3>
                 </a>
                 

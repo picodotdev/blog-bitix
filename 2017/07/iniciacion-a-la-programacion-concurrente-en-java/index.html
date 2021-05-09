@@ -260,7 +260,7 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>En todo el tiempo que llevo programando en Java no he tenido necesidad de conocer en detalle las primitivas de concurrencia que ofrece el lenguaje y la API. Java desde sus primeras versiones ya ofrecía el soporte básico para la programación concurrente con las clases <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html">Thread</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html">Runnable</a> y algunas primitivas de sincronización como la palabra clave reservada <em>syncrhonized</em>, los <em>locks</em> intrínsecos de los objetos y algunos métodos de la clase <em>Thread</em> como <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#sleep-long-">sleep</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#wait--">wait</a> y <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Thread.html#join--">join</a>. Entre la documentación de Java está el siguiente <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/">tutorial sobre la concurrencia en Java</a> que es muy recomendable leer.</p>
 <p>Las computadoras realizan varias tareas de forma concurrente con la ayuda del sistema operativo que permite compartir el procesador para realizar diferentes tareas (navegar por internet, editar un documento, escuchar música, &hellip;) cambiando cada muy poco tiempo (medido en ms) entre procesos, con los procesadores de varios núcleos las tareas se ejecutan silmultáneamente en diferentes núcleos. Los <em>threads</em> en Java se comunican principalmente compartiendo referencias a objetos, este tipo de comunicación es eficiente pero posibilita dos tipos de errores, interferencias entre <em>threads</em> y errores de consistencia, la herramienta para evitarlos es la sincronización. Sin embargo, la sincronización introduce contención cuando dos o más hilos intentan acceder al mismo recurso simultáneamente y provocan una pérdida de rendimiento. El bloqueo mutuo o <em>deadlock</em>, la inanición o <em>starvation</em> y un bloqueo vivo o <em>livelock</em> son problemas de la sincronización. Seguramente te suenen los objetos inmutables, en la programación concurrente son especialmente útiles dado que su estado no cambia y no pueden corromperse ni quedar en un estado inconsistente por la interferencia entre <em>threads</em> evitando de esta manera errores que suelen ser difíciles de depurar por ofrecer un comportamiento errático.</p>
@@ -352,7 +352,7 @@
 </div>
 <p>Estos no son los únicos ejemplos clásicos otro es el del <a href="https://picodotdev.github.io/blog-bitix/2018/03/el-problema-de-concurrencia-del-agente-y-los-fumadores-resuelto-en-java/">agente y los fumadores</a>.</p>
 <div class="alert alert-secondary sourcecode">
-    <img data-src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
+    <img src="/blog-bitix/assets/images/icons/terminal.svg" width="64" height="64" alt="Terminal" title="Terminal" class="lozad sourcecode-icon">
     <p>
             El <a href="https://github.com/picodotdev/blog-ejemplos/tree/master/JavaconCurrency">código fuente completo del ejemplo</a> puedes descargarlo del repositorio de ejemplos de Blog Bitix alojado en GitHub y probarlo en tu equipo ejecutando siguiente comando:<br><code>./gradlew run</code></p>
 </div>
@@ -397,7 +397,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/07/iniciar-rapido-un-proyecto-de-java-con-gradle-o-de-spring-con-spring-initializr/">
-                <img data-src="/blog-bitix/assets/images/logotypes/gradle.svg" width="326" height="125" alt="Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr" title="Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/gradle.svg" width="326" height="125" alt="Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr" title="Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr" class="" loading="lazy">
                 <h3>Iniciar rápido un proyecto de Java con Gradle o de Spring con Spring Initializr</h3>
                 </a>
                 
@@ -411,7 +411,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/07/portlets-con-el-framework-apache-tapestry-y-apache-pluto/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Portlets con el framework Apache Tapestry y Apache Pluto" title="Portlets con el framework Apache Tapestry y Apache Pluto" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Portlets con el framework Apache Tapestry y Apache Pluto" title="Portlets con el framework Apache Tapestry y Apache Pluto" class="" loading="lazy">
                 <h3>Portlets con el framework Apache Tapestry y Apache Pluto</h3>
                 </a>
                 
@@ -425,7 +425,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/07/introduccion-a-los-portales-y-ejemplo-de-portlet-con-liferay/">
-                <img data-src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Introducción a los portales y ejemplo de portlet con Liferay" title="Introducción a los portales y ejemplo de portlet con Liferay" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Introducción a los portales y ejemplo de portlet con Liferay" title="Introducción a los portales y ejemplo de portlet con Liferay" class="" loading="lazy">
                 <h3>Introducción a los portales y ejemplo de portlet con Liferay</h3>
                 </a>
                 
@@ -439,7 +439,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/hemeroteca-11/">
-                <img data-src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/blogbitix.svg" width="326" height="125" alt="Hemeroteca #11" title="Hemeroteca #11" class="" loading="lazy">
                 <h3>Hemeroteca #11</h3>
                 </a>
                 
@@ -453,7 +453,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/autenticacion-mutua-de-cliente-y-servidor-con-certificados/">
-                <img data-src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Autenticación mutua de cliente y servidor con certificados" title="Autenticación mutua de cliente y servidor con certificados" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/openssl.svg" width="326" height="125" alt="Autenticación mutua de cliente y servidor con certificados" title="Autenticación mutua de cliente y servidor con certificados" class="" loading="lazy">
                 <h3>Autenticación mutua de cliente y servidor con certificados</h3>
                 </a>
                 
@@ -467,7 +467,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2017/06/usar-la-base-de-datos-nosql-mongodb-con-java/">
-                <img data-src="/blog-bitix/assets/images/logotypes/mongodb.svg" width="326" height="125" alt="Usar la base de datos NoSQL MongoDB con Java" title="Usar la base de datos NoSQL MongoDB con Java" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/mongodb.svg" width="326" height="125" alt="Usar la base de datos NoSQL MongoDB con Java" title="Usar la base de datos NoSQL MongoDB con Java" class="" loading="lazy">
                 <h3>Usar la base de datos NoSQL MongoDB con Java</h3>
                 </a>
                 

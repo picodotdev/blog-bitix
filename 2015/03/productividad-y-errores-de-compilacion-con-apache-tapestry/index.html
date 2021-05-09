@@ -251,11 +251,11 @@
 
       <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="250" height="250" alt="Apache Tapestry" title="Apache Tapestry" class="" loading="false"></p>
 </div>
 <div class="logotypes">
 <p>
-<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class=""></p>
+<img src="/blog-bitix/assets/images/logotypes/java.svg" width="200" height="366" alt="Java" title="Java" class="" loading="false"></p>
 </div>
 <p>Hace ya unos años comentaba <a href="https://elblogdepicodev.blogspot.com.es/2011/08/motivos-para-elegir-apache-tapestry.html">varios motivos para elegir Apache Tapestry</a> como <em>framework</em> para desarrollar una aplicación o página web. Entre las varias razones comentaba la productividad como característica destacada. Uno de los motivos de esta productividad era por la alta reutilización de código que se puede conseguir al usar los componentes múltiples veces en un mismo proyecto o en diferentes proyectos creando una librería de componentes como comento más detalladamente en el <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">libro PugIn Tapestry</a>. Otra parte de la productividad que comentaba más ligeramente era poder detectar de forma rápida errores de compilación no solo en el código Java a través del IDE sino porque con <a href="https://tapestry.apache.org/">Tapestry</a> es posible detectar errores de compilación en todas las plantillas tml que generan el html fácil y rápidamente con un botón sin tener que probar manualmente toda la funcionalidad. El tema de este artículo es mostrar más en detalle como detectar los errores de compilación en las vistas con este <em>framework</em>.</p>
 <p>Por «errores de compilación» me refiero a ese tipo de errores que hace el código ni siquiera pueda ser interpretado correctamente por el computador, puede ser porque falta un <em>import</em>, un nombre de variable, propiedad o método mal puesto y que no existe&hellip; Poder detectar errores de compilación fácilmente en toda la aplicación es tremendamente útil y evitará que lleguen a producción con las consiguientes molestias para los usuarios y que posteriormente tengamos que dedicar tiempo a corregirlos cuando hemos perdido el contexto de las modificaciones hechas. También tendremos más seguridad de que no introducimos errores al hacer <em>refactorizaciones</em> importantes en el código. Los errores de compilación suelen ser fáciles y rápidos de corregir pero igualmente pueden impedir totalmente el uso de la aplicación. Cuando antes detectemos los errores más fácilmente los corregiremos y más productivos seremos ya que evitaremos corregirlos en un momento posterior en que costará más tiempo y esfuerzo, además de tener que realizar un nuevo despliegue con los cambios corregidos que dependiendo del tiempo que nos lleve puede suponer otro problema.</p>
@@ -264,7 +264,7 @@
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Edición de un producto"><img data-src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_300x200_fit_box_2.png" width="248" height="200" alt="Edición de un producto" title="Edición de un producto" class="lozad "></a></p>
+<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Edición de un producto"><img src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/producto_hu3a8ae85dbc88bee21e3ebedb7efe3c44_24896_300x200_fit_box_2.png" width="248" height="200" alt="Edición de un producto" title="Edición de un producto" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <div class="code">
@@ -276,23 +276,23 @@
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Error de compilación al acceder a la página"><img data-src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_300x200_fit_box_2.png" width="300" height="186" alt="Error de compilación al acceder a la página" title="Error de compilación al acceder a la página" class="lozad "></a></p>
+<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Error de compilación al acceder a la página"><img src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error_hu478ad772e941c6035d5313d0f9e83830_51520_300x200_fit_box_2.png" width="300" height="186" alt="Error de compilación al acceder a la página" title="Error de compilación al acceder a la página" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>Entrando a la <a href="https://picodotdev.github.io/blog-bitix/2014/06/pagina-dashboard-de-apache-tapestry/">página Dashboard</a> y pulsando el botón <em>Load all pages</em> detectaremos el error sin necesidad de crear un producto. El error es el siguiente que nos indicará claramente en que página o componente se ha producido el error y una descripción bastante clara de la causa del problema.</p>
 <div class="media">
 <figure>
 <p>
-<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Página dashboard"><img data-src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_300x200_fit_box_2.png" width="248" height="200" alt="Página dashboard" title="Página dashboard" class="lozad "></a>
+<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Página dashboard"><img src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/dashboard_hu7a4427f88e5298cd4e10bad032714427_36714_300x200_fit_box_2.png" width="248" height="200" alt="Página dashboard" title="Página dashboard" class="" loading="lazy"></a>
 
-<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Página dashboard"><img data-src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_300x200_fit_box_2.png" width="262" height="200" alt="Página dashboard" title="Página dashboard" class="lozad "></a></p>
+<a href="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Página dashboard"><img src="/blog-bitix/2015/03/productividad-y-errores-de-compilacion-con-apache-tapestry/images/error-dashboard_hu40f3082a8609f6e84cb6a7f770f8b464_43382_300x200_fit_box_2.png" width="262" height="200" alt="Página dashboard" title="Página dashboard" class="" loading="lazy"></a></p>
 </figure>
 </div>
 <p>En la imagen con el mensaje del error se puede ver de forma muy detallada cual es la causa, nos indica que el error está en la página <em>admin/Producto</em> y que la clase <em>es.com.blogspot.elblogdepicodev.plugintapestry.Producto</em> no tiene una propiedad llamada <em>nombra</em>, con este mensaje rápidamente nos damos cuenta del error de escritura que hemos cometido, corregirlo basta con sustituir <em>nombra</em> por <em>nombre</em> y pulsando de nuevo el botón <em>Load all pages</em> comprobamos que no hay más errores en esa misma página o ninguna otra de la aplicación.</p>
 <p>Los errores en producción son un problema para los usuarios de la aplicación que no podrán trabajar normalmente y para la productividad de los desarrolladores ya que habremos perdido el contexto de los cambios causantes del fallo y nos costará más corregirlos. En caso de que se nos escape algún error la <a href="https://elblogdepicodev.blogspot.com.es/2013/07/personalizar-la-pagina-de-informe-de-error.html">página de excepción</a> nos dará información detallada y un mensaje que suele ser bastante descriptivo por si solo para descubrir donde está el <em>bug</em>. Otro aspecto que ayuda a la productividad y que ya incorporan varios <em>frameworks</em> es la recarga de clases, en Tapestry es posible para los artefactos del <em>framework</em> (páginas, componentes y servicios, recursos i18n, imágenes, estilos css), sí, incluido código Java, con lo que tenemos las ventajas de los lenguajes de <em>scripting</em> y la ayuda del compilador para detectar errores inmediatamente, lo mejor de ambas opciones sin sus debilidades.</p>
 <p>Por supuesto, no evitaremos tener otro tipo de errores en la aplicación pero al menos los de compilación si podremos detectarlos, un error habitual que se puede seguir produciendo son los <em>NullPointerException (NPE)</em> pero que con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/">novedades introducidas en Java 8</a> y usando la <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html">clase Optional</a> también deberíamos poder evitarlos. Para mi esto es una gran ayuda tanto para la productividad como para aún mejor evitar que lleguen errores a producción.</p>
 <div class="alert alert-warning">
-    <img data-src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
+    <img src="/blog-bitix/assets/images/misc/PugInTapestry.png" alt="Portada libro: PlugIn Tapestry" title="Portada libro: PlugIn Tapestry" style="float: left; margin-right: 1.5em;" class="lozad">
     <h3>Libro PlugIn Tapestry</h3>
     <p>Si te interesa Apache Tapestry descarga gratis el libro de más de 300 páginas que he escrito sobre este <i>framework</i> en el formato que prefieras, <a href="https://picodotdev.github.io/blog-bitix/2014/02/libro-sobre-desarrollo-de-aplicaciones-con-apache-tapestry/">PlugIn Tapestry: Desarrollo de aplicaciones y páginas web con Apache Tapestry</a>, y el código de ejemplo asociado. En el libro comento detalladamente muchos aspectos que son necesarios en una aplicación web como persistencia, pruebas unitarias y de integración, inicio rápido, seguridad, formularios, internacionalización (i18n) y localización (l10n), AJAX, ... y como abordarlos usando Apache Tapestry.</p>
     <br style="clear: both;">
@@ -344,7 +344,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/actualizacion-del-libro-plugin-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualización del libro PlugIn Tapestry" title="Actualización del libro PlugIn Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Actualización del libro PlugIn Tapestry" title="Actualización del libro PlugIn Tapestry" class="" loading="lazy">
                 <h3>Actualización del libro PlugIn Tapestry</h3>
                 </a>
                 
@@ -358,7 +358,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/doble-barra-de-botones-con-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Doble barra de botones con Apache Tapestry" title="Doble barra de botones con Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Doble barra de botones con Apache Tapestry" title="Doble barra de botones con Apache Tapestry" class="" loading="lazy">
                 <h3>Doble barra de botones con Apache Tapestry</h3>
                 </a>
                 
@@ -372,7 +372,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/08/forzar-el-uso-del-protocolo-https-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Forzar el uso del protocolo HTTPS en Apache Tapestry" title="Forzar el uso del protocolo HTTPS en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Forzar el uso del protocolo HTTPS en Apache Tapestry" title="Forzar el uso del protocolo HTTPS en Apache Tapestry" class="" loading="lazy">
                 <h3>Forzar el uso del protocolo HTTPS en Apache Tapestry</h3>
                 </a>
                 
@@ -386,7 +386,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/usar-apache-tapestry-en-una-aplicacion-standalone/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Usar Apache Tapestry en una aplicación «standalone»" title="Usar Apache Tapestry en una aplicación «standalone»" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Usar Apache Tapestry en una aplicación «standalone»" title="Usar Apache Tapestry en una aplicación «standalone»" class="" loading="lazy">
                 <h3>Usar Apache Tapestry en una aplicación «standalone»</h3>
                 </a>
                 
@@ -400,7 +400,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/servir-recursos-estaticos-desde-un-cdn-en-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Servir recursos estáticos desde un CDN en Apache Tapestry" title="Servir recursos estáticos desde un CDN en Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Servir recursos estáticos desde un CDN en Apache Tapestry" title="Servir recursos estáticos desde un CDN en Apache Tapestry" class="" loading="lazy">
                 <h3>Servir recursos estáticos desde un CDN en Apache Tapestry</h3>
                 </a>
                 
@@ -414,7 +414,7 @@
             <div class="related-article">
                 
                 <a href="/blog-bitix/2014/07/anotacion-cached-de-apache-tapestry/">
-                <img data-src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Anotación Cached de Apache Tapestry" title="Anotación Cached de Apache Tapestry" class="lozad ">
+                <img src="/blog-bitix/assets/images/logotypes/apache-tapestry-icon-light.svg" width="326" height="125" alt="Anotación Cached de Apache Tapestry" title="Anotación Cached de Apache Tapestry" class="" loading="lazy">
                 <h3>Anotación Cached de Apache Tapestry</h3>
                 </a>
                 
