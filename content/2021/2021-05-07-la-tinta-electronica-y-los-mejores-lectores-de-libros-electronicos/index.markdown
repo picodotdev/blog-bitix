@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imageHead: "image:image-1.jpg"
 imagePost: "image:calibre.png"
-tags: ["hardware", "planeta-codigo"]
+tags: ["hardware"]
 summary: "Un lector de libros electrónico ofrece mayor comodidad frente a los libros en formato físico, en cuanto a peso y volumen de libros ni los libros ocupan espacio una vez leídos. Son ligeros, de tamaño reducido, ofrecen una lectura bajo el sol equivalente al formato impreso y añaden algunas funciones adicionales como luz integrada y un diccionario de palabras. Tienen un precio asequible y muchos libros electrónicos un precio inferior a la versión en formato físico en papel."
 ---
 
@@ -98,7 +98,7 @@ Otras tiendas como [El Corte Ingles][elcorteingles] o [PcComponentes][pccomponen
 * [Lectores de libros electrónicos en El Corte Inglés](https://www.elcorteingles.es/electronica/ereaders/libros-electronicos/)
 * [Lectores de libros electrónicos en PcComponentes](https://www.pccomponentes.com/buscar/?query=libro%20electr%C3%B3nico&page=1&or-relevance)
 
-El modelo [PocketBook InkPad Color](https://amzn.to/2PXyLu4) destaca por ser de los pocos que utilizan tinta electrónica a color, para la lectura de novelas el color es prescindible pero es muy interesante para la lectura de _comics_ o libros con ilustraciones.
+El modelo [PocketBook InkPad Color](https://amzn.to/2PXyLu4) destaca por ser de los pocos que utilizan tinta electrónica a color, para la lectura de novelas el color es prescindible pero es muy interesante para la lectura de _comics_, manga o libros con ilustraciones.
 
 {{< amazon
     linkids="8081b2d87cde8ad66ace87d164bb385f,7e02ac2d9f0966700fbcde00f3a72342"
@@ -116,8 +116,11 @@ Estos son algunos ejemplos de libros electrónicos que Amazon vende en su tienda
 Si el libro deseado a leer no se encuentra en una de estas tiendas porque ya tiene varios años de publicación ni son las últimas novedades o está descatalogado hay algunas páginas de descargas de libros electrónicos al igual que hay páginas de descargas de películas y series que permiten obtener los libros en formato digital.
 
 {{< amazon
-    linkids="277e13215c4352621f714f9b08746d20,0ee872ef22c2a8231ad75e96331521d7,3fa41e17f1872f7d3086b07fe547bbdf,92c01a5529b4fb275b3bb76acd654e59,65a421247eab757b7829411228c38740,9942f4afa59d1a6ece826d31a7ff417a"
-    asins="B07J1GFTBJ,B07X6JD96W,B08C35GM6B,B0062XCJ4O,B006BD4C2W,B006BD49ZC" >}}
+    linkids="277e13215c4352621f714f9b08746d20,0ee872ef22c2a8231ad75e96331521d7,3fa41e17f1872f7d3086b07fe547bbdf"
+    asins="B07J1GFTBJ,B07X6JD96W,B08C35GM6B" >}}
+{{< amazon
+    linkids="92c01a5529b4fb275b3bb76acd654e59,65a421247eab757b7829411228c38740,9942f4afa59d1a6ece826d31a7ff417a"
+    asins="B0062XCJ4O,B006BD4C2W,B006BD49ZC" >}}
 {{< amazon
     linkids="9cb921cc59e0bcba29beccbd0496bed3,c352602ae4971e34279221e21dd001eb,076059e35e486ef95640d590bf054f6e,67f13fead95935374d21ee9e01b26cac"
     asins="B00MBFNOF0,B00MBFNOEG,B00PJ3MPVA,B00UNZPP84" >}}
