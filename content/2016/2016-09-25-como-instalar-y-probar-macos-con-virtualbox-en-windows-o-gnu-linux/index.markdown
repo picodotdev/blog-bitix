@@ -45,6 +45,8 @@ Los requerimientos mínimos de macOS en la versión Catalina son los siguientes:
 * iMac Pro (2017)
 * Mac Pro (final de 2013 o más nuevo)
 
+{{< comment >}}Sponsored link: speedcheck{{< /comment >}}
+
 Algunas características requieren una conexión a internet estable con una velocidad de descarga mínima de 5 Mbps para una buena experiencia de usuario. Para comprobar tu conexión haz una prueba de velocidad y estabilidad en [www.speedcheck.org](https://www.speedcheck.org/es).
 
 Dado que al virtualizar se están ejecutando dos sistemas operativos a la vez los requerimientos de la computadora anfitrión donde se ejecutan ambos son más elevados en cuando a memoria y almacenamiento siendo recomendable tener al menos 8 GiB de memoria, asignando 4 GiB a la máquina virtual y 25 GiB de almacenamiento. Para probar macOS Catalina en VirtualBox es necesario asignar a la máquina virtual 8 GiB de modo que es necesario tener en el sistema al menos 16 GiB.

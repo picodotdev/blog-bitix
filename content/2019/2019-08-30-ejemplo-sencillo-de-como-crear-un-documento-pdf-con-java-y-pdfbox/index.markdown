@@ -5,7 +5,7 @@ title: "Ejemplo sencillo de como crear un documento PDF con Java y PDFBox"
 url: "/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-java-y-pdfbox/"
 aliases: ["/2019/08/ejemplo-sencillo-de-como-crear-un-documento-pdf-con-pdfbox/"] 
 date: 2019-08-30T18:00:00+02:00
-updated: 2019-08-31T00:15:00+02:00
+updated: 2021-05-11T00:19:30+02:00
 language: "es"
 rss: true
 sharing: true
@@ -24,17 +24,34 @@ Generar documentos e informes de salida en una una tarea básica de cualquier ap
 
 Uno de estos casos podría ser la generación de una factura en base a una plantilla e incluir el el importe y consumo realizado por un cliente y que este pueda obtenerla en formato electrónico o le sea enviada por correo electrónico como un documento adjunto o [enviar un correo electrónico][elblogdepicodev-50] para indicar que tiene la factura disponible en su área de cliente lista para su descarga. Este es el caso de muchas empresas que ofrecen servicios como compañías eléctricas, de telecomunicaciones, servicios municipales de agua y basura, bancos para su justificantes y comprobantes, comercios, etc...
 
+{{< tableofcontents >}}
+
+### Generar un documento PDF con Java y PDFBox
+
 Para generar documentos en PDF en Java está disponible la librería [Apache PDFBox][apache-pdfbox]. Un ejemplo sencillo de como generar un archivo PDF con algunos estilos de texto, fuentes, un tamaño específico de página y una imagen es el siguiente.
 
 {{< code file="Main.java" language="java" options="" >}}
+
+Hay que añadir la dependencia de la librería en el archivo de construcción del proyecto.
+
 {{< code file="build.gradle" language="groovy" options="" >}}
 
- El resultado es el siguiente {{< resourcelink text="Documento PDF" name="document.pdf" >}}.
+#### Documento PDF generado
+
+{{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
+
+El resultado es el siguiente {{< resourcelink text="documento PDF" name="document.pdf" >}} que puedes visualizar sin necesidad de instalar programas adicionales en tu ordenador usando el visor en línea de [Smallpdf](https://smallpdf.com/) que permite la [incrustación de documentos PDF en varios tipos de páginas web](https://smallpdf.com/es/blog?type=tutoriales&tool=insertar-pdf).
+
+<a href="https://smallpdf.com/es/editar-pdf#open={{< resourceurl name="document.pdf" >}}" target="_blank">
+    <img src="{{< asseturl asset="/assets/images/misc/open-with-smallpdf-es.svg" >}}" width="200" height="40" alt="Abrir con Smallpdf"/>
+</a>
 
 {{< image
     gallery="true"
     image1="image:document.png" optionsthumb1="600x450" title1="Documento generado con PDFBox"
     caption="Documento generado con PDFBox" >}}
+
+### Alternativas a PDFBox
 
 Una alternativa a PDFBox es [iText][itext], la primera tiene una [licencia Apache][apache-license] e iText una [licencia AGPL][gnu-agpl] o comercial lo que puede ser determinante para un proyecto. La licencia AGPL obliga a que una aplicación web haga público su código fuente lo que probablemente en usos comerciales no sea lo deseado y usar la versión de la licencia comercial obliga a adquirir el derecho de uso al que obliga la licencia que posee un coste tal vez indeseado o que directamente hace que quede descartada.
 

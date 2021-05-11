@@ -1,0 +1,2 @@
+{{- $resource := .Page.Resources.GetMatch (print "resources/" .Params.name) -}}
+{{ $resource.Permalink }}
