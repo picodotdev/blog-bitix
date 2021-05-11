@@ -54,6 +54,8 @@ draft: true
 ![](url=logotype:java.svg:java.svg,size=200x200,gallery=true "Java")
 ![](url=resource:playstation-1.png,size=200x200,gallery=true "Página PlayStation")
 
+{{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
+
 ---
 
 {{< amazon
