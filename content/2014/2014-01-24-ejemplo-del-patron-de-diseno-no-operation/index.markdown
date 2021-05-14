@@ -9,7 +9,8 @@ rss: true
 sharing: true
 comments: true
 imagePost: "logotype:java.svg"
-tags: ["java", "programacion", "planeta-codigo"]
+tags: ["java", "planeta-codigo", "programacion"]
+series: ["java-patron-diseno"]
 ---
 
 {{% post %}}

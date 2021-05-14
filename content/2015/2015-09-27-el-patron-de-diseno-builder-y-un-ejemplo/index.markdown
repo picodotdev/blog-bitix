@@ -11,6 +11,7 @@ comments: true
 language: "es"
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo", "programacion"]
+series: ["java-patron-diseno"]
 summary: "Construir objetos es una tarea básica en los lenguajes orientados a objetos. En Java, las instancias de una clase se crean con la palabra clave reservada _new_ y un método especial llamado constructor. Al diseñar una clase debemos tener algunas cuestiones para evitar varios constructores _telescópicos_, evitar constructores que son combinación de varios argumentos opcionales y permitir obtener instancias de objetos con estado válido. Si se nos presentan estas situaciones podemos usar el patrón de diseño _Builder_ que consiste en básicamente en una clase especializada en construir instancias de otra clase que podemos hacer usable con una API fluida y alguna cosa más deseable que explico en el artículo."
 ---
 
@@ -34,7 +35,20 @@ En este caso solo hay tres argumentos opcionales si hubiera más el número de c
 
 Sin embargo, esta solución aunque permite reducir el número de constructores también tiene problemas, uno de ellos es que el constructor y los _set_ no obligan a crear un objeto con estado consistente o válido, otro es que usando los _set_ de los JavaBean nos impide hacer el objeto inmutable, si no es devolviendo una nueva instancia, que con las [nuevas características funcionales añadidas en Java 8][blogbitix-17] y en la programación concurrente es deseable.
 
-La solución a los constructores telescópicos y combinación de argumentos es usar el patrón de diseño _Builder_. Por ejemplo, empleando el mismo caso que los anteriores de la siguiente forma.
+### El patrón de diseño _Builder_
+
+El patrón de diseño _Builder_ es un patrón de diseño clasificado en los creacionales que se encarga de la creación de instancias de clases. Sus ventajas son que solucionan el problema de los  constructores telescópicos y combinación de argumentos es usar el patrón de diseño _Builder_, además permite crear objetos complejos de forma flexible en varios pasos con propiedades opcionales.
+
+Al igual que [el patrón de diseño Factory][blogbitix-574] se encarga de crear instancias de una clase, sin embargo, tiene algunas diferencias como que el patrón _Factory_ crea las instancias en un único paso cuando el _Builder_ puede crear las instancias en varios pasos, el patrón _Builder_ es más complejo pero más flexible. Otra diferencia es que el patrón de diseño _Builder_ tiene estado y en el _Factory_ no siempre es necesario, esto hace que la instancia de clase _Builder_ no se pueda compartir ni utilizar para crear otras instancias.
+
+{{< image
+    gallery="true"
+    image1="image:builder-pattern.png" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Builder"
+    caption="Diagrama de clases del patrón de diseño Builder" >}}
+
+### Ejemplo del patrón de diseño _Builder_
+
+Empleando el mismo caso que los anteriores de la siguiente forma.
 
 {{< code file="Usuario.java" language="java" options="" >}}
 
@@ -57,10 +71,8 @@ En el apartado de referencia puedes encontrar más artículos que he escrito sob
 {{< reference >}}
 * [8+ libros para mejorar como programadores][blogbitix-55]
 * [Patrones de diseño en la programación orientada a objetos][elblogdepicodev-97]
-* [Ejemplo del patrón de diseño _No Operation_][blogbitix-8]
 * [Ejemplo del patrón de diseño _Command_][elblogdepicodev-101]
 * [Ejemplo del patrón de diseño _State_][elblogdepicodev-170]
-* [Implementación de máquina de estados finita (FSM) con Java 8][blogbitix-93]
 * [Patrón múltiples vistas de un mismo dato en Tapestry][blogbitix-83]
 * [Novedades y nuevas características de Java 8][blogbitix-17]
 {{< /reference >}}

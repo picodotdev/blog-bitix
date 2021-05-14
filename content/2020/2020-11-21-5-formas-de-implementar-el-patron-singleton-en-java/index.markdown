@@ -11,6 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
+series: ["java-patron-diseno"]
 summary: "El patrón _Singleton_ es un patrón de diseño muy utilizado, este patrón garantiza que de una clase solo haya una única instancia. En Java hay varias formas de implementar el patrón, algunas son más sencillas otras no son _thread-safe_ o con evaluación _lazy_."
 ---
 
@@ -31,6 +32,11 @@ En Java hay varias formas de implementar el patrón _Singleton_, aunque todas so
 El [patrón Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) es un patrón de diseño que restringe a una única instancia de objeto el número instancias de una clase que se pueden crear durante la ejecución del programa. Es útil en ciertas clases donde su única instancia es compartida en todo el código como si de una variable global se tratase. Si el método que permite obtener la referencia a la instancia es un método estático la instancia es como si fuese una variable global dado que es posible acceder a ella desde cualquier parte del programa siempre que lo permitan [los modificadores de acceso][blogbitix-458].
 
 Los casos de uso de las clases _singleton_ son mantener un estado compartido, permitir inicialización bajo demanda o _lazy_, también es usado en otros patrones como el patrón _abstract factory_, _factory method_, [el patrón _builder_][blogbitix-99] o _facade_.
+
+{{< image
+    gallery="true"
+    image1="image:singleton-pattern.png" optionsthumb1="650x450" title1="Diagrama de clases del patrón de diseño Singleton"
+    caption="Diagrama de clases del patrón de diseño Singleton" >}}
 
 ### Formas de implementar el patrón Singleton en Java
 

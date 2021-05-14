@@ -12,6 +12,7 @@ comments: true
 promoted: false
 imagePost: "logotype:spring.svg"
 tags: ["java", "planeta-codigo", "spring"]
+series: ["java-patron-diseno"]
 ---
 
 {{% post %}}
