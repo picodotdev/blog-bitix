@@ -63,7 +63,7 @@
     "dateModified": "2015-11-10T19:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "834",
+    "wordCount": "966",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -335,7 +335,17 @@
     </div>
 </div>
 <p>Sin embargo, esta solución aunque permite reducir el número de constructores también tiene problemas, uno de ellos es que el constructor y los <em>set</em> no obligan a crear un objeto con estado consistente o válido, otro es que usando los <em>set</em> de los JavaBean nos impide hacer el objeto inmutable, si no es devolviendo una nueva instancia, que con las <a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/index-amp.html">nuevas características funcionales añadidas en Java 8</a> y en la programación concurrente es deseable.</p>
-<p>La solución a los constructores telescópicos y combinación de argumentos es usar el patrón de diseño <em>Builder</em>. Por ejemplo, empleando el mismo caso que los anteriores de la siguiente forma.</p>
+<h3 id="el-patrón-de-diseño-_builder_">El patrón de diseño <em>Builder</em></h3>
+<p>El patrón de diseño <em>Builder</em> es un patrón de diseño clasificado en los creacionales que se encarga de la creación de instancias de clases. Sus ventajas son que solucionan el problema de los  constructores telescópicos y combinación de argumentos es usar el patrón de diseño <em>Builder</em>, además permite crear objetos complejos de forma flexible en varios pasos con propiedades opcionales.</p>
+<p>Al igual que <a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/index-amp.html">el patrón de diseño Factory</a> se encarga de crear instancias de una clase, sin embargo, tiene algunas diferencias como que el patrón <em>Factory</em> crea las instancias en un único paso cuando el <em>Builder</em> puede crear las instancias en varios pasos, el patrón <em>Builder</em> es más complejo pero más flexible. Otra diferencia es que el patrón de diseño <em>Builder</em> tiene estado y en el <em>Factory</em> no siempre es necesario, esto hace que la instancia de clase <em>Builder</em> no se pueda compartir ni utilizar para crear otras instancias.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Diagrama de clases del patrón de diseño Builder"><amp-img src="/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/images/builder-pattern_hu02179daacd7b0e854d69456a34c6fd6c_49036_650x450_fit_box_2.png" width="650" height="223" alt="Diagrama de clases del patrón de diseño Builder" title="Diagrama de clases del patrón de diseño Builder"  class=""></amp-img></a></p>
+<figcaption>Diagrama de clases del patrón de diseño Builder</figcaption>
+</figure>
+</div>
+<h3 id="ejemplo-del-patrón-de-diseño-_builder_">Ejemplo del patrón de diseño <em>Builder</em></h3>
+<p>Empleando el mismo caso que los anteriores de la siguiente forma.</p>
 <div class="code">
     <div class="highlight"><div class="chroma">&#10;<table class="lntable"><tr><td class="lntd">&#10;<pre class="chroma"><code><span class="lnt"> 1&#10;</span><span class="lnt"> 2&#10;</span><span class="lnt"> 3&#10;</span><span class="lnt"> 4&#10;</span><span class="lnt"> 5&#10;</span><span class="lnt"> 6&#10;</span><span class="lnt"> 7&#10;</span><span class="lnt"> 8&#10;</span><span class="lnt"> 9&#10;</span><span class="lnt">10&#10;</span><span class="lnt">11&#10;</span><span class="lnt">12&#10;</span><span class="lnt">13&#10;</span><span class="lnt">14&#10;</span><span class="lnt">15&#10;</span><span class="lnt">16&#10;</span><span class="lnt">17&#10;</span><span class="lnt">18&#10;</span><span class="lnt">19&#10;</span><span class="lnt">20&#10;</span><span class="lnt">21&#10;</span><span class="lnt">22&#10;</span><span class="lnt">23&#10;</span><span class="lnt">24&#10;</span></code></pre></td>&#10;<td class="lntd">&#10;<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">io.github.picodotdev.pattern.builder</span><span class="o">;</span>&#10;&#10;<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Usuario</span> <span class="o">{</span>&#10;  &#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">email</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">nombre</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">apellidos</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">telefono</span><span class="o">;</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="n">String</span> <span class="n">direccion</span><span class="o">;</span>&#10;  &#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">private</span> <span class="nf">Usuario</span><span class="o">()</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;  &#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="n">Usuario</span><span class="o">(</span><span class="n">UsuarioBuilder</span> <span class="n">builder</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">if</span> <span class="o">(</span><span class="n">builder</span><span class="o">.</span><span class="na">getEmail</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">throw</span> <span class="k">new</span> <span class="n">IllegalArgumentException</span><span class="o">(</span><span class="s">&#34;email es requerido&#34;</span><span class="o">);</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">getEmail</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">nombre</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">getNombre</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">apellidos</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">getApellidos</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">telefono</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">getTelefono</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">this</span><span class="o">.</span><span class="na">direccion</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">getDireccion</span><span class="o">();</span>&#10;&nbsp;&nbsp;&nbsp;&nbsp;<span class="o">}</span>&#10;<span class="o">}</span></code></pre></td></tr></table>&#10;</div>&#10;</div>
     <div class="highlight-meta">
@@ -380,10 +390,8 @@
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/12/8-plus-libros-para-mejorar-como-programadores/index-amp.html">8+ libros para mejorar como programadores</a></li>
 <li><a href="https://elblogdepicodev.blogspot.com.es/2012/03/patrones-de-diseno-en-la-programacion.htmlindex-amp.html">Patrones de diseño en la programación orientada a objetos</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/index-amp.html">Ejemplo del patrón de diseño <em>No Operation</em></a></li>
 <li><a href="https://elblogdepicodev.blogspot.com.es/2012/04/ejemplo-del-patron-de-diseno-command-y.htmlindex-amp.html">Ejemplo del patrón de diseño <em>Command</em></a></li>
 <li><a href="https://elblogdepicodev.blogspot.com.es/2013/08/ejemplo-del-patron-de-diseno-state.htmlindex-amp.html">Ejemplo del patrón de diseño <em>State</em></a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/index-amp.html">Implementación de máquina de estados finita (FSM) con Java 8</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2015/05/patron-multiples-vistas-de-un-mismo-dato-en-tapestry/index-amp.html">Patrón múltiples vistas de un mismo dato en Tapestry</a></li>
 <li><a href="https://picodotdev.github.io/blog-bitix/2014/03/novedades-y-nuevas-caracteristicas-de-java-8/index-amp.html">Novedades y nuevas características de Java 8</a></li>
 </ul>
@@ -402,6 +410,38 @@
     
   </article>
         
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>java-patron-diseno</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/index-amp.html">Ejemplo del patrón de diseño No Operation</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/index-amp.html">Ejemplo del patrón de diseño Builder</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/index-amp.html">El patrón de diseño Observer y una forma de implementarlo en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/index-amp.html">Ejemplo de máquina de estados con Spring Statemachine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/index-amp.html">El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/index-amp.html">5 formas de implementar el patrón Singleton en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/index-amp.html">El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
 
         
 <div class="row">
@@ -419,93 +459,6 @@
 
 
         
-    
-    
-    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/09/generar-recursos-estaticos-con-wro4j/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Generar recursos estáticos con wro4j" title="Generar recursos estáticos con wro4j"  class=""></amp-img>
-                <h3>Generar recursos estáticos con wro4j</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/09/ejemplo-de-multiproyecto-con-gradle/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo de multiproyecto con Gradle" title="Ejemplo de multiproyecto con Gradle"  class=""></amp-img>
-                <h3>Ejemplo de multiproyecto con Gradle</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/09/ejemplo-practico-de-serviceloader-con-serviceprovider-de-java-money/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money" title="Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money"  class=""></amp-img>
-                <h3>Ejemplo práctico de ServiceLoader con ServiceProvider de Java Money</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/09/aplicacion-java-extensible-con-la-clase-serviceloader/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Aplicación Java extensible con la clase ServiceLoader" title="Aplicación Java extensible con la clase ServiceLoader"  class=""></amp-img>
-                <h3>Aplicación Java extensible con la clase ServiceLoader</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/08/implementacion-de-maquina-de-estados-finita-fsm-con-java-8/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Implementación de máquina de estados finita (FSM) con Java 8" title="Implementación de máquina de estados finita (FSM) con Java 8"  class=""></amp-img>
-                <h3>Implementación de máquina de estados finita (FSM) con Java 8</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2015/07/como-trabajar-con-importes-ratios-y-divisas-en-java/index-amp.html">
-                <amp-img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo trabajar con importes, ratios y divisas en Java" title="Cómo trabajar con importes, ratios y divisas en Java"  class=""></amp-img>
-                <h3>Cómo trabajar con importes, ratios y divisas en Java</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-
         <div class="row">
           <div class="col-12 adblock-container-billboard">
             <span id="pageBottom"></span>

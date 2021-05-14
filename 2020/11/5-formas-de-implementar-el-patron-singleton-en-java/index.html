@@ -66,7 +66,7 @@
     "dateModified": "2020-11-21T23:00:00+01:00",
     "inLanguage": "es",
     
-    "wordCount": "1104",
+    "wordCount": "1112",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -284,6 +284,13 @@
 <h3 id="qué-es-el-patrón-singleton">Qué es el patrón Singleton</h3>
 <p>El <a href="https://en.wikipedia.org/wiki/Singleton_pattern">patrón Singleton</a> es un patrón de diseño que restringe a una única instancia de objeto el número instancias de una clase que se pueden crear durante la ejecución del programa. Es útil en ciertas clases donde su única instancia es compartida en todo el código como si de una variable global se tratase. Si el método que permite obtener la referencia a la instancia es un método estático la instancia es como si fuese una variable global dado que es posible acceder a ella desde cualquier parte del programa siempre que lo permitan <a href="https://picodotdev.github.io/blog-bitix/2020/01/los-modificadores-de-acceso-de-clases-propiedades-y-metodos-en-java/">los modificadores de acceso</a>.</p>
 <p>Los casos de uso de las clases <em>singleton</em> son mantener un estado compartido, permitir inicialización bajo demanda o <em>lazy</em>, también es usado en otros patrones como el patrón <em>abstract factory</em>, <em>factory method</em>, <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">el patrón <em>builder</em></a> o <em>facade</em>.</p>
+<div class="media">
+<figure>
+<p>
+<a href="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Diagrama de clases del patrón de diseño Singleton"><img src="/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/images/singleton-pattern_hub16f4295a5a92f817e50c27d51e7a139_58421_650x450_fit_box_2.png" width="650" height="390" alt="Diagrama de clases del patrón de diseño Singleton" title="Diagrama de clases del patrón de diseño Singleton" class="" loading="lazy"></a></p>
+<figcaption>Diagrama de clases del patrón de diseño Singleton</figcaption>
+</figure>
+</div>
 <h3 id="formas-de-implementar-el-patrón-singleton-en-java">Formas de implementar el patrón Singleton en Java</h3>
 <p>En Java hay varias formas de implementar el patrón <em>Singleton</em> en una clase, el objetivo y resultado es el mismo pero la implementación hace que tengan algunas diferencias como que no sea <em>thread-safe</em>, no sea <em>lazy</em>, otras implementaciones igualmente sencillas son <em>thread-safe</em> y <em>lazy</em> al mismo tiempo.</p>
 <p>Esta son las implementaciones más comunes, dependiendo de las necesidades de la aplicación todas son válidas simplemente la implementación con la clase <em>inner</em> y <em>enum</em> son las que proporcionan <em>thread-safe</em> y evaluación <em>lazy</em> que algunas de las otras no tienen.</p>
@@ -356,6 +363,38 @@
     
   </article>
         
+  <div class="row serie">
+    <div class="col-md-12">
+      <h3>Este artículo forma parte de la serie <strong>java-patron-diseno</strong>:</h3>
+        
+        <ol class="serie-articles">
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2014/01/ejemplo-del-patron-de-diseno-no-operation/">Ejemplo del patrón de diseño No Operation</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/09/ejemplo-del-patron-de-diseno-builder/">Ejemplo del patrón de diseño Builder</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2015/10/el-patron-de-diseno-observer-y-una-forma-de-implementarlo-en-java/">El patrón de diseño Observer y una forma de implementarlo en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2019/03/ejemplo-de-maquina-de-estados-con-spring-statemachine/">Ejemplo de máquina de estados con Spring Statemachine</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/06/el-patron-de-diseno-specification-ejemplo-de-implementacion-y-uso-en-jpa-con-spring-data/">El patrón de diseño Specification, ejemplo de implementación y uso en JPA con Spring Data</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2020/11/5-formas-de-implementar-el-patron-singleton-en-java/">5 formas de implementar el patrón Singleton en Java</a>
+            </li>
+          <li>
+              <a href="https://picodotdev.github.io/blog-bitix/2021/05/el-patron-de-diseno-factory-ventajas-sobre-new-y-diferencias-con-builder/">El patrón de diseño Factory, ventajas sobre new y diferencias con Builder</a>
+            </li>
+          
+        </ol>
+      
+    </div>
+  </div>
+
 
         
 <div class="row">
@@ -373,93 +412,6 @@
 
 
         
-    
-    
-    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/">
-                <img src="/blog-bitix/2020/11/autenticacion-con-openid-oauth-en-cualquier-web-con-nginx-y-de-forma-nativa-con-spring-boot/images/autenticacion-google-1_hu502e47781c1c58bf931e8b4daf614b22_62390_875x0_resize_box_2.png" width="326" height="125" alt="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" title="Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot" class="" loading="lazy">
-                <h3>Autenticación con OpenID/OAuth en cualquier web con Nginx y de forma nativa con Spring Boot</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/11/crear-un-archivo-zip-con-java-comprimir-y-descomprimir-datos/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Crear un archivo Zip con Java, comprimir y descomprimir datos" title="Crear un archivo Zip con Java, comprimir y descomprimir datos" class="" loading="lazy">
-                <h3>Crear un archivo Zip con Java, comprimir y descomprimir datos</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/11/emitir-trazas-de-las-peticiones-y-respuestas-http-con-clientes-java/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" title="Emitir trazas de las peticiones y respuestas HTTP con clientes Java" class="" loading="lazy">
-                <h3>Emitir trazas de las peticiones y respuestas HTTP con clientes Java</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="row related">
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/">
-                <img src="/blog-bitix/2020/10/como-depurar-una-aplicacion-java-con-un-ide/images/intellij-debug_hu2993faa4a5b1cfb3aee1e8a8248bf397_125069_875x0_resize_box_2.png" width="326" height="125" alt="Cómo depurar una aplicación Java con un IDE" title="Cómo depurar una aplicación Java con un IDE" class="" loading="lazy">
-                <h3>Cómo depurar una aplicación Java con un IDE</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/10/entorno-de-desarrollo-java-para-editar-compilar-y-ejecutar-programas/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Entorno de desarrollo Java para editar, compilar y ejecutar programas" title="Entorno de desarrollo Java para editar, compilar y ejecutar programas" class="" loading="lazy">
-                <h3>Entorno de desarrollo Java para editar, compilar y ejecutar programas</h3>
-                </a>
-                
-            </div>
-        </div>
-    
-    
-    
-    
-        <div class="col-12 col-sm-4">
-            <div class="related-article">
-                
-                <a href="/blog-bitix/2020/10/como-deduplicar-eventos-de-dominio/">
-                <img src="/blog-bitix/assets/images/logotypes/java.svg" width="326" height="125" alt="Cómo deduplicar eventos de dominio" title="Cómo deduplicar eventos de dominio" class="" loading="lazy">
-                <h3>Cómo deduplicar eventos de dominio</h3>
-                </a>
-                
-            </div>
-        </div>
-    </div>
-    
-
         <div class="row">
           <div class="col-12 adblock-container-billboard">
             <span id="pageBottom"></span>
