@@ -5,7 +5,7 @@ public class Main {
         System.out.printf("Shape perimeter: %s%n", shape1.getPerimeter());
         System.out.printf("Shape area: %s%n", shape1.getArea());
 
-        Shape shape1 = new Circle(2d);
+        Shape shape2 = new Circle(2d);
         System.out.printf("Shape perimeter: %s%n", shape2.getPerimeter());
         System.out.printf("Shape area: %s%n", shape2.getArea());
     }
