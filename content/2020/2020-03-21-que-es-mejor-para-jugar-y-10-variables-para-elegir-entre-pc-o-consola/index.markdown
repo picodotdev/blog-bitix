@@ -28,7 +28,7 @@ La siguiente evolución de las tarjetas gráficas es la adopción de la tecnolog
 
 A la hora de elegir la mejor mejor opción para cada persona según sus necesidades, presupuesto, características o preferencias, ¿qué es mejor para jugar, PC o consola?. Para tomar esa decisión hay que evaluar un conjunto de puntos que en cada persona puede variar su importancia. La decisión final dependerá del conjunto, algunos valorarán más  el precio, disponibilidad de juegos, versatilidad de PC, precio de los juegos, juego en línea, …
 
-En mi opinión no me parece que haya una opción clara ganadora para todas las personas, la decisión depende de varios de estos factores. Para algunas personas el PC es la opción preferida pero para otras es la consola.
+En mi opinión no me parece que haya una opción clara ganadora para todas las personas, la decisión depende de varios de estos factores. Para algunas personas el PC es la opción preferida pero para otras es la consola. En cualquier plataforma es posible [comprar juegos baratos o en oferta][blogbitix-527] e incluso [jugar a los mejores gratuitos][blogbitix-575].
 
 {{< tableofcontents >}}
 

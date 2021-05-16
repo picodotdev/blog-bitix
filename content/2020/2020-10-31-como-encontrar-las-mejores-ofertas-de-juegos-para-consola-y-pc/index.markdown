@@ -34,6 +34,8 @@ En mi pequeño catálogo de juegos ya tengo más de 10 juegos y por ninguno de e
     image2="image:watch-dogs.jpg" optionsthumb2="300x200" title2="Watch Dogs"
     image3="image:frostpunk.jpg" optionsthumb3="300x200" title3="Frostpunk" >}}
 
+{{< tableofcontents >}}
+
 ### Ofertas en tiendas de juegos
 
 En el PC y otras tiendas como [Steam][steam], [Epic Games][epicgames], [GOG][gog] y la [Microsoft Store para Windows][microsoft-store-windows] o [para Xbox][microsoft-store-xbox] y la [tienda de Nintendo][nintendo-store] entre otras también se publican ofertas muy a menudo e igualmente se pueden adquirir juegos a unos precios prácticamente irrechazables en cualquier plataforma.
@@ -58,5 +60,9 @@ En este ejemplo a fecha de noviembre de 2020 el juego [Red Dead Redemption 2](ht
 Estas páginas son es el equivalente de [monitorización de precios CamelCamelCamel para Amazon][blogbitix-414] e igual de útil.
 
 Las ofertas de estas páginas son interesantes para aquellos que prefieren o no les importa tener juegos en formato digital y no compran los juegos físicos como forma de coleccionismo. El gran peligro de estos precios reducidos y las ofertas es acabar comprando juegos para los que uno dispone poco tiempo para jugarlos o incluso comprarlos sin llegar a tener tiempo libre para jugarlos, casi como si por comprarlos es como si se desease comprar tiempo para jugarlos. E incluso comprar juegos en oferta y no jugarlos mucho tiempo después incluso después de publicarse otra oferta a un precio algo más bajo.
+
+### Juegos gratuitos
+
+Hay juegos muy buenos a precios muy bajos de unos pocos euros, pero es que también hay juegos que proporcionan mucho entretenimiento incluso gratuitos, en esta [lista de los mejores juegos gratuitos o _free to play_ de PC, consolas y móvil][blogbitix-575] hay una colección de juegos en varias categorías y para varias de las plataformas más populares tanto de PC, consola y móvil.
 
 {{% /post %}}
