@@ -4,6 +4,7 @@ type: "post"
 title: "Los mejores juegos gratuitos o free to play de PC, consolas y móvil"
 url: "/2021/05/los-mejores-juegos-gratuitos-o-free-to-play-de-pc-consolas-y-movil/"
 date: 2021-05-16T17:30:00+02:00
+updated: 2021-05-16T19:00:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -66,6 +67,11 @@ Estos juegos requieren jugar en equipo contra otro equipo en una batalla con un 
 * [World of Warships](https://worldofwarships.com/)
 * [World of Tanks](https://worldoftanks.eu/es/)
 * [War Thunder](https://warthunder.com/es/)
+
+Del juego World of Warhips he escrito un par de artículos describiendo en que consiste el juego y una pequeña guía con la estrategia básica para las batallas. Aunque los artículos tratan sobre la versión para consola que tiene varias diferencias de la versión del juego para PC, las mecánicas y estrategía es en gran medida similar.
+
+* [Introducción al juego de batallas navales World of Warships Legends para consola][blogbitix-474]
+* [Estrategia de batalla básica en el juego World of Warships Legends][blogbitix-545]
 
 {{< image
     gallery="true"
@@ -142,6 +148,7 @@ Los dispositivos móviles también son una plataforma utilizable para jugar y va
 * [Among Us](https://www.innersloth.com/gameAmongUs.php)
 * [Genshin Impact](https://genshin.mihoyo.com/es)
 * [Plants vs. Zombies](https://www.ea.com/es-es/games/plants-vs-zombies)
+* [Angry Birds](https://www.angrybirds.com/games/)
 * [TFT - Teamfight Tactics](https://teamfighttactics.leagueoflegends.com/es-es/)
 
 {{< image

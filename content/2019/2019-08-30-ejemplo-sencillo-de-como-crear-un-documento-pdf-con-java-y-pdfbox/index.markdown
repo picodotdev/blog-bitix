@@ -42,9 +42,7 @@ Hay que añadir la dependencia de la librería en el archivo de construcción de
 
 El resultado es el siguiente {{< resourcelink text="documento PDF" name="document.pdf" >}} que puedes visualizar sin necesidad de instalar programas adicionales en tu ordenador usando el visor en línea de [Smallpdf](https://smallpdf.com/) que permite la [incrustación de documentos PDF en varios tipos de páginas web](https://smallpdf.com/es/blog?type=tutoriales&tool=insertar-pdf).
 
-<a href="https://smallpdf.com/es/editar-pdf#open={{< resourceurl name="document.pdf" >}}" target="_blank">
-    <img src="{{< asseturl asset="/assets/images/misc/open-with-smallpdf-es.svg" >}}" width="200" height="40" alt="Abrir con Smallpdf"/>
-</a>
+[![](url=asset:/assets/images/misc/open-with-smallpdf-es.svg,size=200x40 "Abrir con Smallpdf")](https://smallpdf.com/es/editar-pdf#open={{< resourceurl name="document.pdf" >}},target=_blank)
 
 {{< image
     gallery="true"

@@ -53,6 +53,7 @@ draft: true
 
 ![](url=logotype:java.svg:java.svg,size=200x200,gallery=true "Java")
 ![](url=resource:playstation-1.png,size=200x200,gallery=true "Página PlayStation")
+[![](url=asset:/assets/images/misc/open-with-smallpdf-es.svg,size=200x40 "Abrir con Smallpdf")](https://smallpdf.com/es/editar-pdf#open={{< resourceurl name="document.pdf" >}},target=_blank)
 
 {{< comment >}}Sponsored link: Smallpdf{{< /comment >}}
 

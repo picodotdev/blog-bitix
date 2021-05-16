@@ -46,8 +46,9 @@
 {{- if eq $links.absolute "true" -}}
   {{- $href = absURL $href -}}
 {{- end -}}
-{{- $class := index $attributes "class" -}}
 {{- $rel := index $attributes "rel" -}}
+{{- $target := index $attributes "target" -}}
+{{- $class := index $attributes "class" -}}
 
 {{- if findRE (print "^" .Page.Site.Params.misc.sponsoredlink) $href -}}
   {{- $rel = strings.TrimLeft " " (print (default "" $rel) " " "sponsored") -}}
