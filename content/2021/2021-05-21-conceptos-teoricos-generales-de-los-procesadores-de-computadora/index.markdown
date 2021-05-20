@@ -3,7 +3,7 @@ pid: 576
 type: "post"
 title: "Conceptos teóricos generales de los procesadores de computadora"
 url: "/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/"
-date: 2021-05-21T07:00:00+02:00
+date: 2021-05-20T22:00:00+02:00
 language: "es"
 rss: true
 sharing: true
