@@ -5,12 +5,305 @@
     <link rel="self" href="https://picodotdev.github.io/blog-bitix/index.xml"/>
     <link href="https://picodotdev.github.io/blog-bitix/" />
     <id>https://picodotdev.github.io/blog-bitix/tags/hardware/</id>
-    <updated>2021-05-06T19:30:00+02:00</updated>
+    <updated>2021-05-20T22:00:00+02:00</updated>
     <author><name>picodotdev</name></author>
     <generator>Hugo</generator>
     <icon>https://picodotdev.github.io/blog-bitix/assets/favicon.ico</icon>
     <logo>https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png</logo>
     <rights>https://creativecommons.org/licenses/by-sa/4.0/</rights>
+    
+    <entry>
+        <id>https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/</id>
+        <title>Conceptos teóricos generales de los procesadores de computadora</title>
+        <updated>2021-05-20T22:00:00+02:00</updated>
+        <published>2021-05-20T22:00:00+02:00</published>
+        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/"/>
+        <author><name>picodotdev</name></author>
+        <content type="html">
+        <![CDATA[<p><strong>Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender.</strong></p>]]>
+        <![CDATA[<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/intel.svg" width="300" height="199" alt="Intel" title="Intel"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/amd.svg" width="300" height="71" alt="AMD" title="AMD"  class=""></p>
+</div>
+<div class="logotypes">
+<p>
+<img src="https://picodotdev.github.io/blog-bitix/assets/images/logotypes/arm.svg" width="300" height="93" alt="ARM" title="ARM"  class=""></p>
+</div>
+<p>Los procesadores actuales tienen una capacidad de cómputo en varios órdenes de magnitud a la de tan toso unas décadas antes. Buena parte de ese rendimiento es conseguido a través de la mejora de los procesos litográficos que permiten fabricar transistores cada vez más pequeños. Con transistores más pequeños se mejoran varios aspectos vitales de los procesadores entre ellos se reduce su consumo de energía, permiten añadir más transistores en el mismo espacio físico para implementar cachés más grandes o implementar conceptos que mejoren el rendimiento y finalmente son más baratos de fabricar.</p>
+<p>Desde la aparición de los circuitos integrados que sustituyeron a las válvulas de vacío, según la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> cada dos año en número de transistores que incluye un procesador se duplica, esta ley se ha estado cumpliendo hasta ahora y por consiguiente la potencia de los procesadores. Uno de los primeros microprocesadores de Intel como el 4004 tenía únicamente 2300 transistores a 10 micrómetros, un Intel Core o un Ryzen llegan superan los 2 mil millones de transistores a 7 nanómetros.</p>
+<p>Varios de los conceptos teóricos aplicados en los procesadores está destinado a aumentar el rendimiento en monohilo, así ha sido hasta el desarrollo de los procesadores con múltiples núcleos tanto de Intel como de AMD y también de ARM. Desde el año 2010 el aumento de rendimiento de los procesadores también se consigue mediante la inclusión de mayor número de núcleos, para tareas paralelizables. Un amyor número de núcleos consigue un aumento de rendimiento en una proporcion similar a la proporción de aumento de núcleos. Crear procesadores multinúcleo es otra forma de seguir aumentando el rendimiento de forma más sencilla que mejorando aún más el rendimiento en monohilo. Los procesadores actuales van desde los 4 núcleos hasta cantidades como 16 para ordenadores de escritorio y hasta 64 o más para computadoras destinadas a hacer funciones de servidor.</p>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 4004"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 4004" title="Procesador Intel 4004"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 8086"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 8086" title="Procesador Intel 8086"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Pentium"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_200x150_fit_q90_box.jpg" width="147" height="150" alt="Procesador Pentium" title="Procesador Pentium"  class="lozad "></a></p>
+<figcaption>Procesadores Intel 4004, 8086 y Pentium</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador AMD Athlon XP"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador AMD Athlon XP" title="Procesador AMD Athlon XP"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Sun UltraSparc II"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador Sun UltraSparc II" title="Procesador Sun UltraSparc II"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador RISC-V"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_200x150_fit_q90_box.jpg" width="200" height="143" alt="Procesador RISC-V" title="Procesador RISC-V"  class="lozad "></a></p>
+<figcaption>Procesadores de AMD, Sun Ultra Sparc y SiFive RISC-V</figcaption>
+</figure>
+</div>
+<p>Los siguientes apartados son una explicación sencilla, básica y resumida de los conceptos que se utilizan en los procesadores de los que se puede. Esta información está ampliada en la wikipedia.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <toc></toc>
+</div>
+<h3 id="arquitectura">Arquitectura</h3>
+<p>Los computadores siguen una organización definida en el <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">modelo de von Neumann</a> en el que una computadora consta de:</p>
+<ul>
+<li>Una unidad de procesamiento que contiene lógica de aritmética y los registros del procesador.</li>
+<li>Una unidad de control que contiene un registro de instrucción y un contador de programa.</li>
+<li>Memoria que almacena los datos y las instrucciones del programa.</li>
+<li>Almacenamiento externo.</li>
+<li>Mecanismos de entrada y salida.</li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer_hu75cd8774cd27f766d21d6d55373d0054_18807_2560x1440_fit_box.gif" data-gallery="data-gallery" title="Esquema de computadora"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer_hu75cd8774cd27f766d21d6d55373d0054_18807_300x200_fit_box.gif" width="259" height="200" alt="Esquema de computadora" title="Esquema de computadora"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" data-gallery="data-gallery" title="Arquitectura de Von Neumann"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" width="300" height="200" alt="Arquitectura de Von Neumann" title="Arquitectura de Von Neumann"  class="lozad "></a></p>
+<figcaption>Esquema de computadora y arquitectura de Von Neumann</figcaption>
+</figure>
+</div>
+<h4 id="componentes-de-un-procesador">Componentes de un procesador</h4>
+<p>Los componentes son los siguientes:</p>
+<ul>
+<li>Caché: es una memoria pequeña comparada con la memoria principal o el almacenamiento secundario pero mucho más rápida que estas.</li>
+<li>Unidades funcionales: la unidad de lógica aritmética o ALU permite realizar operaciones del cálculo matemático y binarias, la unidad de coma flotante o FPU permite realizar operaciones en coma flotante. La unidad de predicción de de saltos permite predecir cuál será el resultado de una condición, otras unidades son la unidad de generación de direcciones o AGU, la <em>load–store unit translation lookaside buffer</em> o TLB permite traducir direcciones virtuales a direcciones físicas y es parte de la unidad de gestión de memoria o MMU. El controlador integrado de memoria o IMC gestiona las transferencias entre la memoria principal y el procesador.</li>
+<li>Registros: son unas pequeñas zonas de memoria en las que operan las instrucciones del procesador.</li>
+<li>Unidad de control: es la encargada de enviar las señales a las otras unidades del procesador.</li>
+</ul>
+<h4 id="tamaño-de-palabra">Tamaño de palabra</h4>
+<p>El tamaño de palabra es la unidad de datos nativa del procesador media en número bits. Los registros del procesador suelen tener tener el mismo tamaño de palabra que el procesador y la máxima cantidad de información que se suele poder transferir desde y a la memoria en una única operación coincide con el tamaño de palabra. Los procesadores x86-64 tiene un tamaño de palabra de 64 bits.</p>
+<h4 id="_endianness_"><em>Endianness</em></h4>
+<p>La arquitectura de un procesador define cómo se almacenan los datos en memoria, puede ser de dos formas <em>litte-endian</em> o <em>big-endian</em>. En la primera el byte de datos menos significativo se almacena en la dirección de memoria más baja, por el contrario en <em>big-endian</em> el byte más significativo se almacena en la dirección más baja.</p>
+<p>Que una arquitectura de procesador elija entre estos dos tipos de <em>endianness</em> no es significativo, simplemente se ha de mantener de forma consistente al almacenar, cargar los datos y transmitirlos a otras computadoras.</p>
+<p>En el protocolo IP se utiliza <em>big-endian</em>, por el contrario el la mayoría de procesadores de arquitectura de procesadores como x86, ARM y RISC-V utilizan <em>litte-endian</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Endianness">Endianness</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" data-gallery="data-gallery" title="Big endian"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" width="300" height="200" alt="Big endian" title="Big endian"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" data-gallery="data-gallery" title="Little endian"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" width="300" height="200" alt="Little endian" title="Little endian"  class="lozad "></a></p>
+<figcaption>Big y little endian</figcaption>
+</figure>
+</div>
+<h4 id="almacenamiento-de-computadora-numa-y-uma">Almacenamiento de computadora, NUMA y UMA</h4>
+<p>El significado de las siglas de NUMA son <em>Non-uniform memory access</em> y de UMA son <em>Uniform memory access</em>, en el primer caso el tiempo de acceso  a memoria no es uniforme y depende de la ubicación del la memoria relativa al procesador, en este caso para un procesador es más rápido acceder a su memoria local que a la memoria de otro procesador.</p>
+<p>Los procesadores actuales son significativamente más rápidos que la memoria principal por ello suelen tener pequeñas cachés de memoria más rápidas, al mismo tiempo se evita que varios procesadores compitan por el acceso a la memoria principal. Este modelo NUMA mejora el rendimiento pero ocasiona el problema que cuando un procesador requiere los datos de otro ocasiona que los datos han de ser movidos con una penalización en la latencia.</p>
+<p>AMD lo implementó el almacenamiento NUMA en los procesadores Opteron con <a href="https://en.wikipedia.org/wiki/HyperTransport">HyperTransport</a> e Intel con <a href="https://en.wikipedia.org/wiki/Intel_QuickPath_Interconnect">QPI</a>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access">Non-uniform memory access</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_memory_access">Uniform memory access</a></li>
+</ul>
+<h4 id="memoria-y-jerarquía-de-memoria">Memoria y jerarquía de memoria</h4>
+<p>La memoria contiene los datos y las instrucciones de los programas, el procesador lee los datos de la memoria los carga en las cachés y los registros del procesador, realiza el cálculo deseado y los resultados son almacenados de nuevo en la memoria principal.</p>
+<p>Hay cuatro niveles de almacenamiento.</p>
+<ul>
+<li>Interno: formado por los registros del procesador y sus cachés internas.</li>
+<li>Memoria principal: formada por la memoria RAM volátil cuyo contenido se pierde si se apaga la computadora.</li>
+<li>Secundaria: es una memoria persistente conectada a la computadora y que conserva los datos aún después de apagar la computadora.</li>
+<li>Terciaria:  es una memoria que se puede extraer y conectar del equipo bajo demanda.</li>
+</ul>
+<p>La memoria se puede diferenciar en las siguientes propiedades:</p>
+<ul>
+<li>Volatilidad: si persiste al apagado de la computadora.</li>
+<li>Mutabilidad: si es posible cambiar su contenido.</li>
+<li>Accesibilidad: el modo de lectura permitido si es aleatorio o ha de ser secuencial.</li>
+<li>Direccionamiento.</li>
+<li>Capacidad: el tamaño de la memoria.</li>
+<li>Rendimiento: el tiempo de acceso necesario.</li>
+<li>Uso de energía.</li>
+<li>Seguridad.</li>
+<li>Vulnerabilidad y confiabilidad.</li>
+</ul>
+<p>La diferencia de velocidad de procesamiento de la CPU y la velocidad de acceso a la memoria principal y secundaria hace que para aumentar el rendimiento de la CPU sea necesario una memoria pequeña pero más rápida que la memoria principal en el procesador. En la jerarquía de memoria en el nivel superior su latencia es inferior, su velocidad de transferencia es mayor pero su tamaño es menor. Si la tasa de aciertos en la caché es alta el procesador aumenta significativamente al no ser penalizado por la latencia de acceso a la memoria principal.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Computer_data_storage">Computer data storage</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_hierarchy">Memory hierarchy</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Jerarquía de caché"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_300x200_fit_box_2.png" width="206" height="200" alt="Jerarquía de caché" title="Jerarquía de caché"  class="lozad "></a>
+
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" data-gallery="data-gallery" title="Jerarquía de caché"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" width="300" height="200" alt="Jerarquía de caché" title="Jerarquía de caché"  class="lozad "></a></p>
+<figcaption>Jerarquía de caché</figcaption>
+</figure>
+</div>
+<h4 id="memoria-virtual">Memoria virtual</h4>
+<p>La memoria principal del sistema es limitada aun siendo de varias decenas de GB. La memoria virtual es una técnica que permite ampliar la memoria del sistema utilizando el siguiente nivel de la jerarquía de memoria , normalmente el almacenamiento persistente de mayor capacidad.</p>
+<p>El sistema operativo con ayuda de funciones de gestión de memoria implementadas en el procesador se encarga de mover fuera de la memoria principal la que no se está utilizando y de cargar en la memoria principal la que se necesite.</p>
+<h4 id="microcódigo">Microcódigo</h4>
+<p>El microcódigo es un software que traduce las instrucciones en operaciones a ejecutar en el <em>chip</em>. Esta traducción de instrucciones permite los desarrolladores de <em>chips</em> flexibilidad en la implementación. Por ejemplo, en una versión mejorada del <em>chip</em> se puede soportar el mismo conjunto de instrucciones que versiones anteriores o soportar diferentes conjuntos de instrucciones en el mismo <em>chip</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Microcode">Microcode</a></li>
+</ul>
+<h3 id="arquitecturas-de-conjunto-de-instrucciones">Arquitecturas de conjunto de instrucciones</h3>
+<p>La arquitectura del conjunto de instrucciones o ISA es el modelo abstracto de una computadora, define los tipos de datos soportados, los registros, el hardware de soporte para la memoria principal y el modelo de entrada y salida. También forma parte el conjunto de instrucciones soportadas y su codificación binaria.</p>
+<p>El conjunto de instrucciones es una de las características mas relevantes de un procesador, los programas compilados a código máquina están codificados en forma binarias según las instrucciones de una ISA.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">Instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Microarchitecture">Microarchitecture</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" data-gallery="data-gallery" title="Instrucción addi de un procesador MIPS"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" width="300" height="200" alt="Instrucción addi de un procesador MIPS" title="Instrucción addi de un procesador MIPS"  class="lozad "></a></p>
+<figcaption>Instrucción addi de un procesador MIPS</figcaption>
+</figure>
+</div>
+<h4 id="conjuntos-de-instrucciones">Conjuntos de instrucciones</h4>
+<p>El conjunto de instrucciones soportados por un procesador depende de su arquitectura. La arquitectura más popular en ordenadores de escritorio es la x86, en los dispositivos móviles como teléfonos inteligentes es ARM, otras arquitecturas alternativas son RISC-V que es una arquitectura abierta sin costes de licencia, otras son MIPS, POWER y Sparc.</p>
+<p>Los lenguajes de programación de alto nivel como C traducen los programas a un binario ejecutable por la computadora, Java traduce los programas en la compilación a un <em>bytecode</em> independendiente de la arquitectura del procesador y es en tiempo de ejecución cuando se realiza la traducción del <em>bytecode</em> a las instrucciones que entiende el procesador.</p>
+<p>Dos aproximaciones al conjunto de instrucciones son CISC que proporciona un conjunto amplio de instrucciones complejas y RISC que proporciona un conjunto reducido de instrucciones más simples. El equivalente de una instrucción CISC pueden ser varias RISC. Los procesadores CISC tienen la ventaja de hacer que los programas tengan menor tamaño pero hace que los procesadores sean más complejos, por el contrario en los procesadores RISC los programas son más grandes al necesitar más instrucciones pero los procesadores son más sencillos. La diferencia entre un procesador CISC y RISC no es muy significativa con la utilización de microcódigo.</p>
+<p>Las instrucciones se agrupan en las siguientes categorías:</p>
+<ul>
+<li>Establecimiento de datos y operaciones con memoria cómo establecer un registro con un valor y mover datos de un registro a otro.</li>
+<li>Operaciones aritméticas y lógicas como sumar, restar, multiplicar o dividir entre los valores de dos registros, realizar operaciones binarias o comprar dos valores.</li>
+<li>Control de flujo como saltar a otro punto del programa, salto condicional o llamada a una función.</li>
+<li>Instrucciones de coprocesador como cargar o almacenar datos en los registros del procesador.</li>
+</ul>
+<p>Las instrucciones <em>single instruction multiple data</em> o SIMD operan múltiples datos de forma paralela con una única instrucciones, esto mejora significativamente el rendimiento respecto si hubiera que ejecutar una instrucción por cada dato. Es una forma diferente de conseguir paralelismo.</p>
+<p>En la arquitectura x86 las instrucciones MMX, SSE y AVX son variantes de instrucciones SIMD. El primer procesador con instrucciones MMX fabricado por Intel fue el Pentium MMX. El primer procesador de Intel con instrucciones SSE fue el Pentium 3 y el primero con AVX fue a partir de la familia Sandy Bridge.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">Complex instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">Reduced instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Advanced Vector Extensions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X86">x86 architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/IBM_POWER_instruction_set_architecture">IBM POWER instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a></li>
+<li><a href="https://en.wikipedia.org/wiki/RISC-V">RISC-V</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPARC">SPARC</a></li>
+</ul>
+<h3 id="ciclo-de-ejecución-del-procesador">Ciclo de ejecución del procesador</h3>
+<p>La principal tarea de un procesador es ejecutar instrucciones, para ello el procesador sigue un ciclo de obtener la siguiente instrucción de la memoria principal según el contador del programa, decodificación en la que se determina que instrucción se ejecuta y ejecución en la que se utilizan los diferentes componentes del procesador como la unidad de lógica aritmética.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_cycle">Instruction cycle</a></li>
+</ul>
+<h4 id="_pipelining_-de-instrucciones"><em>Pipelining</em> de instrucciones</h4>
+<p>Los procesadores tiene varios componentes, para mantenerlos todos en funcionamiento con el objetivo de maximizar el rendimiento las instrucciones se ejecutan en varias etapas. En un momento determinado el procesador posee varias instrucciones en diferentes etapas de ejecución. Cada uno de estos pasos de ejecución es un segmento de ejecución, denominando a estos procesadores como segmentados.</p>
+<p>El primer procesador segmentado fabricado por Intel fue el Intel 386 con un <em>pipeline</em> de tres etapas.</p>
+<p>Un procesador como los Intel Pentium 4 llegaba a tener un <em>pipeline</em> de ejecución de hasta 31 etapas. El problema es que un <em>pipeline</em> tan largo no mejora el rendimiento cuando se producen saltos al ejecutar instrucciones condicionales y el predictor de bifurcaciones falla en el predicción, en un salto el <em>pipeline</em> se vacía y comienza en la primera etapa con la primera instrucción a la que se ha saltado.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining">Instruction pipelining</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" data-gallery="data-gallery" title="Pipeline de 4 segmentos"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" width="300" height="200" alt="Pipeline de 4 segmentos" title="Pipeline de 4 segmentos"  class="lozad "></a></p>
+<figcaption>Pipeline de 4 segmentos</figcaption>
+</figure>
+</div>
+<h4 id="_hazards_"><em>Hazards</em></h4>
+<p>Hay varios peligros en la ejecución paralela que ha de tenerse en cuenta para un buen funcionamiento de los procesadores segmentados. Los riesgos son de tres tipos, de datos, estructurales y de control.</p>
+<p>En los riegos de datos una instrucción de lectura posterior a una instrucción de escritura para un dato ha de producirse después, una instrucción de lectura posterior a una de escritura para un dato ha de producirse después y dos instrucciones de escritura sobre el mismo dato ha de producirse en el mismo orden del programa.</p>
+<p>Los riesgos estructurales consisten en que dos instrucciones en el <em>pipeline</em> necesiten el mismo recurso como la ALU, en este caso las instrucciones han de esperar.</p>
+<p>Los riesgos de control consisten en que se hayan insertado en el <em>pipeline</em> instrucciones que finalmente han de descartarse por una mala predicción en un salto en el programa.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hazard_%28computer_architecture%29">Hazard (computer architecture)</a></li>
+</ul>
+<h4 id="ejecución-fuera-de-orden">Ejecución fuera de orden</h4>
+<p>La ejecución fuera de orden permite aprovechar los ciclos de CPU que de otra manera no se utilizarían. Con este paradigma, el procesador ejecuta las instrucciones según la disponibilidad de los datos de entrada y las unidades de ejecución, en vez de en el orden original del programa. Esto permite evitar tiempos inactivos esperando a que la instrucción precedente se complete en el caso de que sean independientes.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Out-of-order_execution">Out-of-order execution</a></li>
+</ul>
+<h4 id="ejecución-especulativa">Ejecución especulativa</h4>
+<p>La ejecución especulativa es otra optimización que permite aumentar el rendimiento que consiste en ejecutar instrucciones aún antes de saber si son necesarias.</p>
+<p>Los programas incluyen sentencias condicionales, en función de su evaluación el flujo del programa continúa por una rama de la condición u otra, hasta no evaluarse la condición no se sabe porque rama se continúa. La ejecución especulativa ejecuta las instrucciones de ambas ramas descartando los resultados de una cuando se conoce que rama finalmente se ha seguido.</p>
+<p>Esta técnica aumenta el rendimiento pero con la cual se han descubierto varios problemas relativos a la seguridad con su <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/">Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</a> que han afectado a los procesadores que la implementaron tanto de Intel, de AMD como de ARM.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Speculative_execution">Speculative execution</a></li>
+</ul>
+<h3 id="paralelismo">Paralelismo</h3>
+<p>Para aumentar el rendimiento los procesadores intentan ejecutar las operaciones de forma paralela.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_computing">Parallel computing</a></li>
+</ul>
+<h4 id="_bit_"><em>Bit</em></h4>
+<p>Una forma de aumentar el paralelismo es aumentar el tamaño de palabra del procesador. Un procesador con una palabra de 8 bits necesita dos ciclos para realizar la suma de dos números de 16 bits, un procesador de 16 bits solo necesita un ciclo con lo que en la práctica es duplicar el rendimiento del procesador en este tipos de operaciones.</p>
+<h4 id="escalar-y-superescalar">Escalar y superescalar</h4>
+<p>Un procesador escalar en todo momento solo ejecuta una instrucción, en cambio un procesador superescalar ejecutar múltiples instrucciones usando varias unidades de ejecución. Los procesadores superescalares tienen varias unidades de ejecución del mismo tipo, por ejemplo un procesador superescalar tiene varias unidades ALU o de FPU. El procesador trata de mantener cada una de estas diferentes unidades con instrucciones a ejecutar. Un procesador superescalar con dos ALU es capaz de realizar el doble de operaciones por ciclo de reloj y por tanto supone duplicar el rendimiento en este tipos de operaciones.</p>
+<p>El primer procesador superescalar fabricado por Intel fue el Pentium.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Scalar_processor">Scalar processor</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Superscalar_processor">Superscalar processor</a></li>
+</ul>
+<h4 id="multihilo">Multihilo</h4>
+<p>Un procesador con procesamiento multihilo o SMT trata de mejorar el rendimiento del procesador superescalar. Cada núcleo físico es visto por el sistema operativo como dos o más núcleos lógicos, cada procesador lógico tiene sus propios registros de control sin embargo las unidades de ejecución son compartidas por los hilos. Cada hilo puede ser detenido o interrumpido de forma independiente al resto de hilos.</p>
+<p>El número de hilos que permite un procesador por cada cada núcleo puede ser tan simple como dos, dependiendo de la microarquitectura del procesador pueden ser un número más grande como cuatro u ocho.</p>
+<p>El primer procesador con hyper-threading fabricado por fue el Intel Pentium 4.</p>
+<p>Los procesadores y sistemas operativos conceden a los programas un tiempo de ejecución en el procesador, transcurrido el tiempo sin interrumpidos y se continua con otro proceso, el proceso no tiene el control de cuando se interrumpe su ejecución, a este estilo de compartir el recurso del procesador se le denomina <a href="https://en.wikipedia.org/wiki/Preemption_%28computing%29">multitarea preemtiva</a>. Incluso con la velocidad de los procesadores de mononucleo en los que solo se ejecutan un solo programa la sensación es que los programas se están ejecutando de forma paralela.</p>
+<h4 id="multinúcleo">Multinúcleo</h4>
+<p>Un procesador con procesamiento paralelo o SMP incorpora varios núcleos físicos en el mismo procesador. Cada núcleo es independiente y ejecuta un proceso en cada núcleo de forma simultánea. En un procesador mononúcleo la programación simultánea era simulada mediante la apropiación preemptiva junto con la rapidez del procesador para en la ejecución de instrucciones y cambios de contexto de un procesador a otro.</p>
+<p>El primer procesador multinúcleo fabricado por Intel fue el Pentium D.</p>
+<h4 id="número-de-núcleos">Número de núcleos</h4>
+<p>Los primeros procesadores tenían un único núcleo o unidad de cómputo denominados <em>single-core</em>, posteriormente se ha implementado en un mismo procesador varios núcleos denominados <em>multi-core</em>.</p>
+<p>Los procesadores <em>multi-core</em> de escritorio consumno están diseñados para ejecutar eficientemente tanto código en serie como en paralelo poniendo gran énfasis en la ejecución de un único hilo, para ello dedican espacio en el procesador para implementar ejecución fuera de orden, pipelines profundos, son superescalares y tienen cachés grandes.</p>
+<p>Los procesadores <em>many-core</em> están especializados en ejecutar gran cantidad de operaciones en paralelo, para ello tienen una gran cantidad de núcleos de computación. Si un procesador <em>muti-core</em> tiene unos pocos núcleos al estar limitados el número de ellos por la coherencia de la caché los procesadores <em>many-core</em> se cuentan por miles. Las GPU son un ejemplo del procesador <em>many-core</em>.</p>
+<h3 id="seguridad">Seguridad</h3>
+<p>Los procesadores incluyen funcionalidades con la colaboración del sistema operativo para que la computación de los programas sea segura, con el objetivo de que un programa no se apropie de toda la capacidad de computación o que la memoria de un programa esté aislada de otros programas.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Trusted_Execution_Technology">Trusted Execution Technology</a></li>
+</ul>
+<div class="media">
+<figure>
+<p>
+<a href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" data-gallery="data-gallery" title="Anillos de seguridad de un procesador"><img src="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" width="300" height="200" alt="Anillos de seguridad de un procesador" title="Anillos de seguridad de un procesador"  class="lozad "></a></p>
+<figcaption>Anillos de seguridad de un procesador</figcaption>
+</figure>
+</div>
+<h4 id="modo-protegido">Modo protegido</h4>
+<p>Los procesadores incluyen un modo de ejecución con privilegios especiales que son exclusiva del sistema operativo. Algunas instrucciones solo pueden ser ejecutadas en el modo protegido por seguridad.</p>
+<p>El primer procesador con un modo protegido fabricado por Intel fue el 386.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Protected_mode">Protected mode</a></li>
+</ul>
+<h4 id="cifrado-de-memoria">Cifrado de memoria</h4>
+<p>Para minimizar las consecuencias de una fallo de seguridad los procesadores más recientes destinados a la computación en la nube, donde el entorno de computación es compatido aún estando en ciertamedia aislado lógicamente, también incluyen funcionalidades para cifrar completamente la memoria de los datos y programas, de modo que aunque un programa tenga acceso a la memoria de otro la información al estar cifrada no sea legible.</p>
+<h3 id="rendimiento-de-procesador">Rendimiento de procesador</h3>
+<p>El rendimiento de un procesador se mide en instrucciones por ciclo o IPC, instrucciones por segundo o IPS, operaciones de coma flotante por segundo FLOPS, rendimiento por vatio o PPW.</p>
+<p>Una variable que impacta en el rendimiento es el número de transistores con el que está construido el procesador, a mayor número de transistores es posible incluir cachés más grandes, mayor número de núcleos y mayor número de componentes. Sin embargo, un mayor número de transistores implica una mayor cantidad de energía consumida.</p>
+<p>Los diseñadores de procesadores han de encontrar un equilibrio óptimo entre número de transistores, tamaño del <em>chip</em>, coste de fabricación, energía consumida y disipada en forma de calor y precio del procesador.</p>
+<p>Una mejora de los procesos litográficos que permiten crear transistores de menor tamaño es beneficioso para los procesadores ya que mejoran el número de transistores que se pueden incluir en el procesador en el mismo espacio, hacen los procesadores más pequeños, la energía consumida y el calor disipado es menor y el precio de fabricación del procesador se abarata.</p>
+<h3 id="tipos-de-procesadores">Tipos de procesadores</h3>
+<p>La CPU es el principal componente de una computadora que se encarga de ejecutar las instrucciones del programa, otro tipo de procesador especializado son las GPU dedicadas al procesamiento de gráficos o en tareas de inteligencia artificial. Las GPU están especializadas en ejecutar gran cantidad de operaciones de forma paralela.</p>
+<p>Un <em>system on chip</em> o SoC incluye la mayoría de componentes de un sistema es un único <em>chip</em> en vez de estar separados. Un SoC puede incluir tanto la CPU, la memoria, los puertos de entrada/salida y otros elementos como almacenamiento secundario, la GPU y otros elementos especializados en comunicaciones y procesamiento de datos. Esto les hace más baratos que un sistema en el que los componentes están formados por <em>chips</em> individuales.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Processor_%28computing%29">Processor</a></li>
+</ul>
+<h3 id="gestión-de-energía">Gestión de energía</h3>
+<p>Los procesadores para reducir su consumo de energía y el calor que dispan emplean diferetnes técnicas como variar el voltaje de funcionamiento o la frecuencia de funcionamiento.</p>
+]]>
+        </content>
+        
+            
+                <category term="hardware"/>
+            
+                <category term="planeta-codigo"/>
+            
+        
+    </entry>
     
     <entry>
         <id>https://picodotdev.github.io/blog-bitix/2021/05/los-mejores-juegos-gratuitos-o-free-to-play-de-pc-consolas-y-movil/</id>
@@ -1977,202 +2270,6 @@
                 <category term="seguridad"/>
             
                 <category term="software-libre"/>
-            
-        
-    </entry>
-    
-    <entry>
-        <id>https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/</id>
-        <title>Análisis de la serie de juegos de plataformas Trine</title>
-        <updated>2021-03-20T09:00:00+01:00</updated>
-        <published>2021-03-20T09:00:00+01:00</published>
-        <link rel="alternate" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/"/>
-        <author><name>picodotdev</name></author>
-        <content type="html">
-        <![CDATA[<p><strong>La serie de juegos Trine destacan por su nivel artístico gráfico y como juego de plataformas con puzles, incluso el primer Trine destaca en esto. Los juegos están basados en las aventuras de tres personajes un caballero, un mago y una ladrona cuya historia es narrada antes de cada nivel y está completamente doblada al español. El objetivo es llegar al final de cada nivel empleando una combinación de habilidades de cada personaje pero para darle más diversión al juego es posible completarlo con varios niveles de dificultad o como objetivos adicionales encontrar todo los orbes de experiencia, algunos de los cuales están un poco escondidos.</strong></p>]]>
-        <![CDATA[<p><a href="https://www.igdb.com/games/trine-enchanted-edition">Trine: Enchanted Edition</a> es un juego de plataformas desarrollado por <a href="https://www.igdb.com/companies/frozenbyte">Frozenbyte</a> en el año 2009 y remasterizado en el 2014, con posterioridad se ha publicado varios más que continúan la historia del primero, <a href="https://www.igdb.com/games/trine-2-complete-story">Trine 2: Complete Story</a> (2013), <a href="https://www.igdb.com/games/trine-3-the-artifacts-of-power">Trine 3: The Artifacts of Power</a> (2015) y <a href="https://www.igdb.com/games/trine-4-the-nightmare-prince">Trine 4: The Nightmare Prince</a> (2019). Estos juegos están disponibles tanto para consola como para PC.</p>
-<p>Cada juego de la colección de Trine tiene algunas pequeñas diferencias aún siendo los conceptos básicos del original los mismos en todos, el más diferente es Trine 3 que adopta un modo de juego más en tres dimensiones y con más libertad de movimientos. Son juegos principalmente de plataformas, de aventuras, resolver puzles y con un pequeño componente de rol de elegir habilidades en cada personaje u objetos. Los juegos de Trine destacan por su apartado gráfico y banda sonora que incluso el primero de la colección tiene un nivel de detalles gráficos notable.</p>
-<p>Debido a que son juegos ya con varios años en las diferentes tiendas digitales en cada plataforma se encuentra a un precio de unos pocos euros, los tres primeros se distribuyen como una colección siendo aún así bastante baratos.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1_hu3ee9a6248cecf9e8058b007c52dde693_337463_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2_hu2f2e17f458d52571f8d5b574dfdfaa13_571898_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2_hu2f2e17f458d52571f8d5b574dfdfaa13_571898_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3_hu4113b09df7e4619cc99e1ff8fc5d6623_560681_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3_hu4113b09df7e4619cc99e1ff8fc5d6623_560681_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-1_hu8d0406f1e740d02695f22b3c8d8e2c20_401147_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-1_hu8d0406f1e740d02695f22b3c8d8e2c20_401147_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-1_hu99ec00029889e899a61de3665e0b168d_406219_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-1_hu99ec00029889e899a61de3665e0b168d_406219_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-1_hua27ce57a929f6e6111133d895073116e_363685_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-1_hua27ce57a929f6e6111133d895073116e_363685_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-2_hu8561abf5595b4d1b5050d8d7f7882465_365124_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-menu-2_hu8561abf5595b4d1b5050d8d7f7882465_365124_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-2_hud64e39fcf7d195da183126495a09aae5_407183_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-menu-2_hud64e39fcf7d195da183126495a09aae5_407183_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-2_hu6c38cc5cdaa7b2cf51e6de0523c51df3_404072_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Pantalla inicial y menú"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-menu-2_hu6c38cc5cdaa7b2cf51e6de0523c51df3_404072_200x150_fit_q90_box.jpg" width="200" height="113" alt="Pantalla inicial y menú" title="Pantalla inicial y menú"  class="lozad "></a></p>
-<figcaption>Pantalla inicial y menú</figcaption>
-</figure>
-</div>
-<div class="alert alert-warning">
-    <h2>Anticipación del juego</h2>
-    <p>Este artículo contiene información de estrategias para completar más fácilmente el juego, parte de la diversión de un juego es descubrir y superar los retos que se plantean por uno mismo. Sin embargo, algunos juegos son difíciles sin una pequeña ayuda que obliga a tener que dedicarles mucho más tiempo o a recomenzarlos.</p>
-    <p>En algunos juegos el argumento es una de las partes más importantes. El texto del artículo no contiene información acerca del argumento del juego, de la mitad o del final, ni hace ningún <i>spoiler</i> por lo que lo puedes leer sin riesgo de conocer alguna parte del argumento de forma anticipada. Sin embargo, algunos enlaces del artículo a otras páginas y vídeos sí pueden contener información del argumento de modo que recomiendo consultar solo las partes del juego una vez superadas.</p>
-</div>
-<div class="alert alert-warning tableofcontents">
-    <h2>Contenido del artículo</h2>
-    <toc></toc>
-</div>
-<h3 id="el-juego">El juego</h3>
-<p>Los juegos en toda la saga narran la historia de tres personajes Pontius un caballero, Amadeus un mago y Zoya una ladrona. Al inicio de cada nivel hay una narración que sirve como hilo conductor del juego e incluso dentro de los niveles los personajes conversan haciendo algún comentario con un toque de humor, los juegos Trine poseen un buen doblaje al español.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-inicio_hu2bed8fdef08d0da75f51f28eac97ebd7_321521_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio de nivel en Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-inicio_hu2bed8fdef08d0da75f51f28eac97ebd7_321521_300x200_fit_q90_box.jpg" width="300" height="169" alt="Inicio de nivel en Trine 1" title="Inicio de nivel en Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-inicio_hu453e694bda57e695b9189f89984604ad_365732_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Inicio de nivel en Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-inicio_hu453e694bda57e695b9189f89984604ad_365732_300x200_fit_q90_box.jpg" width="300" height="169" alt="Inicio de nivel en Trine 2" title="Inicio de nivel en Trine 2"  class="lozad "></a></p>
-<figcaption>Inicios de nivel en Trine 1 y 2</figcaption>
-</figure>
-</div>
-<p>El juego consiste en llegar al final de cada uno de los niveles, recoger los orbes de experiencia y abrir los cofres del tesoro. La dificultad radica en que algunos orbes y cofres están un poco escondidos con lo que es necesario fijarse bien en cada sección del nivel para descubrirlos, también en que algunas secciones requieren de la combinación de los personajes y emplear sus habilidades para continuar a la siguiente sección.</p>
-<p>Recoger los orbes de experiencia otorgan puntos de habilidad para emplearlos en ganar habilidades en los personajes. En cada uno de los juegos las habilidades varían, por ejemplo, en Trine los personajes tienen tres habilidades cada uno con varios niveles y un inventario de objetos. En Trine 2 los personajes no tienen inventario y las habilidades están organizadas en un árbol.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-1_hu9967e592d26640171b30b7eab7be922c_529361_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-1_hu9967e592d26640171b30b7eab7be922c_529361_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 1" title="Habilidades de personajes en Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-2_hu93cb1593a4ffa15a257f671e8c364da0_521159_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-habilidades-2_hu93cb1593a4ffa15a257f671e8c364da0_521159_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 1" title="Habilidades de personajes en Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-habilidades_hube89d6eaa5d0b9562be16714758a3fd5_520599_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Habilidades de personajes en Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-habilidades_hube89d6eaa5d0b9562be16714758a3fd5_520599_200x150_fit_q90_box.jpg" width="200" height="113" alt="Habilidades de personajes en Trine 2" title="Habilidades de personajes en Trine 2"  class="lozad "></a></p>
-<figcaption>Habilidades de personajes en Trine 1 y 2</figcaption>
-</figure>
-</div>
-<p>En algunos niveles se encuentran varios enemigos, en Trine son esqueletos y en Trine 2 son duendes. En algunos niveles hay jefes enemigos que para eliminarlos hay que emplear una táctica según su comportamiento, variedad de ataques o descubrir sus puntos vulnerables para hacerles daño.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-jefe_hucc8b07dbfb738154250d5d04b7fa9979_373008_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Jefe enemigo de Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-jefe_hucc8b07dbfb738154250d5d04b7fa9979_373008_300x200_fit_q90_box.jpg" width="300" height="169" alt="Jefe enemigo de Trine 1" title="Jefe enemigo de Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-jefe_huc27cd954fb8e13cdc5f4ce8e61e91a91_429949_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Jefe enemigo de Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-jefe_huc27cd954fb8e13cdc5f4ce8e61e91a91_429949_300x200_fit_q90_box.jpg" width="300" height="169" alt="Jefe enemigo de Trine 2" title="Jefe enemigo de Trine 2"  class="lozad "></a></p>
-<figcaption>Jefes enemigos de Trine 1 y 2</figcaption>
-</figure>
-</div>
-<p>Posee varios niveles de dificultad que hacen que los enemigos tengan más vida, los personajes reciban más daño al sufrir heridas o al llegar a ciertos puntos de control los personajes no se curen completamente y sus resurrecciones estén limitadas. En caso de que los tres personajes mueran se ha de reiniciar el nivel desde el principio en el modo <em>hardcore</em>, si un personaje muere al llegar a ciertos puntos de control los personajes muertos reviven y se puede continuar. Aunque los personajes puedan resucitar obliga a llegar hasta el siguiente punto de control sin los personajes restantes lo que dificulta continuar avanzando al no poder emplear las habilidades de los personajes muertos.</p>
-<p>El juego soporta un modo cooperativo entre varios jugadores que pueden jugar simultáneamente en la misma partida con varios mandos. Se hace uso de físicas para interactuar con los objetos objetos, utiliza la tecnología <a href="https://en.wikipedia.org/wiki/PhysX">Nvidia PhysX</a> que da más realismo en el comportamiento físico de los objetos. Los tiempos de carga son más bajos que en otros juegos debido a que el juego no requiere grandes recursos.</p>
-<h4 id="diferencias-entre-los-juegos-de-la-serie-trine">Diferencias entre los juegos de la serie Trine</h4>
-<p>Los juegos de Trine en realidad no son juegos completamente distintos sino que más bien cada uno de ellos es una nueva colección de niveles con algunos aspectos cambiados de los personajes.</p>
-<p>Mientras que en Trine 1 y Trine 2 el aspecto del juegos es más bien en dos dimensiones o 2D o 2.5D en Trine 3 es el primer juego de la serie con una jugabilidad en 3D. Trine 4 recupera el estilo de juego de los dos primeros 2D.</p>
-<p>En Trine hay 16 niveles con unos 25 orbes de experiencia por nivel, en Trine 2 hay 20 niveles y un número mayor de orbes de experiencia que puede llegar a los 75. En Trine hay una barra de magia que desaparece en Trine 2.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-niveles_hu284e793ec5903ac14b67ab9c8e249ba3_348670_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-niveles_hu284e793ec5903ac14b67ab9c8e249ba3_348670_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 1" title="Niveles de Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-niveles_hufb27b8b0ee7bdab8a34bfe351516a96d_339103_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-niveles_hufb27b8b0ee7bdab8a34bfe351516a96d_339103_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 2" title="Niveles de Trine 2"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-niveles_huec13dbfef08d38904729406c615b888e_375759_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Niveles de Trine 3"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-niveles_huec13dbfef08d38904729406c615b888e_375759_200x150_fit_q90_box.jpg" width="200" height="113" alt="Niveles de Trine 3" title="Niveles de Trine 3"  class="lozad "></a></p>
-<figcaption>Niveles de Trine 1, 2 y 3</figcaption>
-</figure>
-</div>
-<h3 id="objetivos-del-juego">Objetivos del juego</h3>
-<p>El juego básicamente es un juego de plataformas en el que en alguno puntos hay que resolver sencillos puzles con las habilidades combinadas de los personajes. Si la solución para resolver un puzle es demasiado complicada es que esa forma de resolverlo no es la que pensaron los desarrolladores, dados los diferentes personajes y sus habilidades hay múltiples formas válidas de resolver cada puzle. Otro objetivo del juego es recoger todos los orbes de experiencia y encontrar los cofres de tesoro, algunos están un poco escondidos con lo que es necesario fijarse bien en cada una de las secciones de los niveles, después de los primeros niveles se va conociendo que sitios son susceptibles de tener alguna zona oculta a explorar.</p>
-<p>El juego posee varios niveles de dificultad y un modo <em>hardcore</em>, para conseguir todos los objetivos del juego hay que completar cada nivel en el mayor nivel de dificultad y en el modo <em>hardcore</em>.</p>
-<h3 id="arte-gráfico-y-banda-sonora">Arte gráfico y banda sonora</h3>
-<p>Los juegos de Trine destacan por su nivel artístico lleno de detalles, colores vivos, brumas y efectos de luz que los hacen interesantes para disfrutar de su aspecto gráfico. El hecho de que para encontrar los orbes y tesoros haya que fijarse en cada una de las secciones refuerzan el disfrutar del aspecto artístico y ser consciente del mismo.</p>
-<p>Incluso el primer Trine tiene unos detalles gráficos muy notables, mejorados en Trine 2 y que en la versión de Trine 4 alcanzan su mayor esplendor. Además del aspecto gráfico el juego se complementa con una banda sonora destacable y variada, combinado con su jugabilidad hacen del juego una muy buena experiencia.</p>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-1_hu8533d67bad540a4b7709182caceae666_382006_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-1_hu8533d67bad540a4b7709182caceae666_382006_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 1" title="Arte gráfico de Trine 1"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-2_hu660e8ac5b6d17d2d6fd6bc39ec97045d_345834_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 1"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-1-arte-grafico-2_hu660e8ac5b6d17d2d6fd6bc39ec97045d_345834_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 1" title="Arte gráfico de Trine 1"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-1_hu9bbc5d815aa1a06b06877b2b96b605bc_450623_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-1_hu9bbc5d815aa1a06b06877b2b96b605bc_450623_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 2" title="Arte gráfico de Trine 2"  class="lozad "></a>
-
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-2_huf6840cc35f06cf729430e7765e471ae8_420149_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 2"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-2-arte-grafico-2_huf6840cc35f06cf729430e7765e471ae8_420149_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 2" title="Arte gráfico de Trine 2"  class="lozad "></a></p>
-</figure>
-</div>
-<div class="media">
-<figure>
-<p>
-<a href="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-arte-grafico-1_hu5cd54655ebb6f4890c4ee32751df0e5a_91732_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Arte gráfico de Trine 3"><img src="https://picodotdev.github.io/blog-bitix/2021/03/analisis-de-la-serie-de-juegos-de-plataformas-trine/images/trine-3-arte-grafico-1_hu5cd54655ebb6f4890c4ee32751df0e5a_91732_300x200_fit_q90_box.jpg" width="300" height="169" alt="Arte gráfico de Trine 3" title="Arte gráfico de Trine 3"  class="lozad "></a></p>
-<figcaption>Arte gráfico de Trine 1, 2 y 3</figcaption>
-</figure>
-</div>
-<p>A lo largo de las diferentes versiones y con el paso de los años el arte gráfico ha mejorado en algunos aspectos pero incluso en la versión de <em>Trine 1: Enchanted Edition</em> el aspecto gráfico en la <a href="https://www.playstation.com/es-es/ps4/">PlayStation 4</a> es admirable.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/mMXGE9bgfpg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="historia">Historia</h3>
-<p>El juego se desarrolla con una pequeña historia lineal como hilo conductor al inicio de cada nivel que dan sentida a las aventuras de los personajes y niveles. No es una historia muy elaborada ni diferentes lineas argumentales pero completa con su papel en el juego con suficiencia. En estos vídeos están los inicios de las historias.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/ax3xJ961Ll8" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/DF4GvTz-mlM" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/H1mUQehIXcY" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/2ukNLC2DPBI" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="banda-sonora-original">Banda sonora original</h3>
-<p>La banda sonora enriquece el juego estando a la altura del arte gráfico, completa el juego en el aspecto del audio.</p>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/RkyhqPjVE0w" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/8fkSw8Auv3I" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/L5MUYw5G99g" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/kfo1G8EjqB8" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<h3 id="ubicación-de-los-orbes-de-experiencia-y-cofres">Ubicación de los orbes de experiencia y cofres</h3>
-<p>Algunos de los orbes de experiencia y los cofres del tesoro están escondidos, con la experiencia de juego uno se fija donde pueden estar y encontrarlos requiere explorar de forma completa los rincones escondidos de cada sección. Aún así quizá alguno se resista el encontrarlo, algunos niveles son un poco largos con lo que intentar encontrarlos requiere tiempo y aún así cuesta recogerlos todos, en caso de querer obtenerlos todos en YouTube hay vídeos donde se muestra la ubicación de cada uno de ellos.</p>
-<p>En los siguientes enlaces se pueden ver todos los orbes, objetos coleccionables y cofres en los diferentes niveles.</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=EoyWNs8CNi8&amp;list=PLZo48CcL6RpS5JrGhzLzuIQMctrRUgtdY&amp;index=16">Localización de los objetos en Trine 1</a></li>
-<li><a href="https://www.youtube.com/watch?v=7gQQwqPVpLo&amp;list=PL37676FCB9427A9BB">Localización de los objetos en Trine 2</a></li>
-<li><a href="https://www.youtube.com/watch?v=txPiKO7XFxE&amp;list=PLRdic7wFhHbX6nt2X-VIAAF43Fr_zuC5w">Localización de los objetos en Trine 3</a></li>
-<li><a href="https://www.youtube.com/watch?v=3-HBLUKONqg&amp;list=PLRYiNkjGrK9PdE3R0Te7p-GcHKCa-h4vd">Localización de los objetos en Trine 4</a></li>
-</ul>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/EoyWNs8CNi8" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/7gQQwqPVpLo" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/txPiKO7XFxE" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-<div class="media media-video">
-  <iframe width="640" height="360" src="https://www.youtube.com/embed/3-HBLUKONqg" frameborder="0" class="lozad" allowfullscreen></iframe>
-</div>
-]]>
-        </content>
-        
-            
-                <category term="juegos"/>
-            
-                <category term="planeta-codigo"/>
             
         
     </entry>

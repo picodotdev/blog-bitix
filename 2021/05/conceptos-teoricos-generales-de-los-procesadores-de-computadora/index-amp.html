@@ -1,0 +1,856 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html amp lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="base" content="/blog-bitix/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="picodotdev">
+  <meta name="keywords" content="java, programacion, software, hardware, tapestry, software libre, gnu, linux, gnu/linux, unix, arch, arch linux, web, html, css, javascript, tutorial, guía, básico, avanzado, análisis, tecnología, juegos, productos">
+  <meta name="description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+  <meta name="theme-color" content="#FFFFFF"/>
+  
+
+  <title>Conceptos teóricos generales de los procesadores de computadora</title>
+
+  <link rel="shortcut icon" href="/blog-bitix/assets/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/blog-bitix/assets/apple-touch-icon-144-precomposed.png">
+  <link rel="alternate" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html" hreflang="es" title="Conceptos teóricos generales de los procesadores de computadora">
+  
+  <link rel="canonical" type="text/html" href="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/" hreflang="es">
+  
+  <link rel="humans" type="text/plain" href="/blog-bitix/humans.txt">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i&display=swap" rel="stylesheet"> 
+
+  <!-- Social -->
+<meta property="og:title" content="Conceptos teóricos generales de los procesadores de computadora">
+<meta property="og:url" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html">
+<meta property="og:image" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg">
+
+<meta property="og:site_name" content="Blog Bitix">
+<meta property="og:description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg">
+
+<meta name="twitter:site" content="@picodotdev">
+<meta name="twitter:title" content="Conceptos teóricos generales de los procesadores de computadora">
+<meta name="twitter:description" content="Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender. &hellip;">
+<meta name="twitter:creator" content="@picodotdev">
+
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html"
+    },
+    "headline": "Conceptos teóricos generales de los procesadores de computadora",
+    "image": {
+        "@type": "ImageObject",
+          "url": "https://picodotdev.github.io/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_750x750_fit_q90_box.jpg"
+        
+      },
+    "datePublished": "2021-05-20T22:00:00+02:00",
+    "dateModified": "2021-05-20T22:00:00+02:00",
+    "inLanguage": "es",
+    
+    "wordCount": "3544",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "author": {
+        "@type": "Person",
+        "name": "picodotdev",
+        "description": "Ingeniero de software. I ♥ Java, GNU/Linux and libre software.",
+        "url": "https://twitter.com/picodotdev/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog Bitix",
+        "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+        }
+    },
+    "description": "Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender."
+}
+  </script>
+  
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Blog Bitix",
+    "description": "Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.",
+    "url": "https://picodotdev.github.io/blog-bitix/",
+    "logo": {
+        "@type": "ImageObject",
+        "url": "https://picodotdev.github.io/blog-bitix/assets/images/structured-data/blogbitix-750.png"
+    }
+}
+  </script>
+
+  <!-- boilerplate -->
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <!-- css -->
+  <!-- theme -->
+  <style amp-custom> 
+  *,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus:not(:focus-visible){outline:0}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0;-webkit-text-decoration-skip-ink:none;text-decoration-skip-ink:none}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent}a:hover{color:#0056b3;text-decoration:underline}a:not([href]){color:inherit;text-decoration:none}a:not([href]):hover{color:inherit;text-decoration:none}code,kbd,pre,samp{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg{overflow:hidden;vertical-align:middle}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#6c757d;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}select{word-wrap:normal}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]:not(:disabled),[type=reset]:not(:disabled),[type=submit]:not(:disabled),button:not(:disabled){cursor:pointer}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item;cursor:pointer}template{display:none}[hidden]{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{margin-bottom:.5rem;font-weight:500;line-height:1.2}.h1,h1{font-size:2.5rem}.h2,h2{font-size:2rem}.h3,h3{font-size:1.75rem}.h4,h4{font-size:1.5rem}.h5,h5{font-size:1.25rem}.h6,h6{font-size:1rem}.lead{font-size:1.25rem;font-weight:300}.display-1{font-size:6rem;font-weight:300;line-height:1.2}.display-2{font-size:5.5rem;font-weight:300;line-height:1.2}.display-3{font-size:4.5rem;font-weight:300;line-height:1.2}.display-4{font-size:3.5rem;font-weight:300;line-height:1.2}hr{margin-top:1rem;margin-bottom:1rem;border:0;border-top:1px solid rgba(0,0,0,.1)}.small,small{font-size:80%;font-weight:400}.mark,mark{padding:.2em;background-color:#fcf8e3}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;list-style:none}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.initialism{font-size:90%;text-transform:uppercase}.blockquote{margin-bottom:1rem;font-size:1.25rem}.blockquote-footer{display:block;font-size:80%;color:#6c757d}.blockquote-footer::before{content:"\2014\00A0"}.img-fluid{max-width:100%;height:auto}.img-thumbnail{padding:.25rem;background-color:#fff;border:1px solid #dee2e6;border-radius:.25rem;max-width:100%;height:auto}.figure{display:inline-block}.figure-img{margin-bottom:.5rem;line-height:1}.figure-caption{font-size:90%;color:#6c757d}code{font-size:87.5%;color:#e83e8c;word-wrap:break-word}a>code{color:inherit}kbd{padding:.2rem .4rem;font-size:87.5%;color:#fff;background-color:#212529;border-radius:.2rem}kbd kbd{padding:0;font-size:100%;font-weight:700}pre{display:block;font-size:87.5%;color:#212529}pre code{font-size:inherit;color:inherit;word-break:normal}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid,.container-lg,.container-md,.container-sm,.container-xl{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container,.container-sm{max-width:540px}}@media (min-width:768px){.container,.container-md,.container-sm{max-width:720px}}@media (min-width:992px){.container,.container-lg,.container-md,.container-sm{max-width:960px}}@media (min-width:1200px){.container,.container-lg,.container-md,.container-sm,.container-xl{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.no-gutters{margin-right:0;margin-left:0}.no-gutters>.col,.no-gutters>[class*=col-]{padding-right:0;padding-left:0}.col,.col-1,.col-10,.col-11,.col-12,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-auto,.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-auto,.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-auto,.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-auto,.col-xl,.col-xl-1,.col-xl-10,.col-xl-11,.col-xl-12,.col-xl-2,.col-xl-3,.col-xl-4,.col-xl-5,.col-xl-6,.col-xl-7,.col-xl-8,.col-xl-9,.col-xl-auto{position:relative;width:100%;padding-right:15px;padding-left:15px}.col{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}@media (min-width:576px){.col-sm{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-sm-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-sm-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-sm-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-sm-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-sm-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-sm-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-sm-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-sm-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-sm-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-sm-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-sm-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-sm-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-sm-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}@media (min-width:768px){.col-md{-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-positive:1;flex-grow:1;max-width:100%}.row-cols-md-1>*{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.row-cols-md-2>*{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.row-cols-md-3>*{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.row-cols-md-4>*{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.row-cols-md-5>*{-ms-flex:0 0 20%;flex:0 0 20%;max-width:20%}.row-cols-md-6>*{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-auto{-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}.col-md-1{-ms-flex:0 0 8.333333%;flex:0 0 8.333333%;max-width:8.333333%}.col-md-2{-ms-flex:0 0 16.666667%;flex:0 0 16.666667%;max-width:16.666667%}.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.col-md-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}.col-md-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.col-md-10{-ms-flex:0 0 83.333333%;flex:0 0 83.333333%;max-width:83.333333%}.col-md-11{-ms-flex:0 0 91.666667%;flex:0 0 91.666667%;max-width:91.666667%}.col-md-12{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}}.table{width:100%;margin-bottom:1rem;color:#212529}.table td,.table th{padding:.75rem;vertical-align:top;border-top:1px solid #dee2e6}.table thead th{vertical-align:bottom;border-bottom:2px solid #dee2e6}.table tbody+tbody{border-top:2px solid #dee2e6}.table-light,.table-light>td,.table-light>th{background-color:#fdfdfe}.table-light tbody+tbody,.table-light td,.table-light th,.table-light thead th{border-color:#fbfcfc}.table-dark,.table-dark>td,.table-dark>th{background-color:#c6c8ca}.table-dark tbody+tbody,.table-dark td,.table-dark th,.table-dark thead th{border-color:#95999c}.table .thead-dark th{color:#fff;background-color:#343a40;border-color:#454d55}.table .thead-light th{color:#495057;background-color:#e9ecef;border-color:#dee2e6}.table-dark{color:#fff;background-color:#343a40}.table-dark td,.table-dark th,.table-dark thead th{border-color:#454d55}.btn{display:inline-block;font-weight:400;color:#212529;text-align:center;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.btn:hover{color:#212529;text-decoration:none}.btn-success{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:hover{color:#fff;background-color:#218838;border-color:#1e7e34}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#218838;border-color:#1e7e34;box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.btn-success.disabled,.btn-success:disabled{color:#fff;background-color:#28a745;border-color:#28a745}.btn-success:not(:disabled):not(.disabled).active,.btn-success:not(:disabled):not(.disabled):active,.show>.btn-success.dropdown-toggle{color:#fff;background-color:#1e7e34;border-color:#1c7430}.btn-success:not(:disabled):not(.disabled).active:focus,.btn-success:not(:disabled):not(.disabled):active:focus,.show>.btn-success.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(72,180,97,.5)}.nav{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none}.nav-link{display:block;padding:.5rem 1rem}.nav-link:focus,.nav-link:hover{text-decoration:none}.nav-link.disabled{color:#6c757d;pointer-events:none;cursor:default}.navbar{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar .container,.navbar .container-fluid,.navbar .container-lg,.navbar .container-md,.navbar .container-sm,.navbar .container-xl{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:center;align-items:center;-ms-flex-pack:justify;justify-content:space-between}.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,.nav-pills .show>.nav-link{color:#fff;background-color:#007bff}.nav-fill .nav-item{-ms-flex:1 1 auto;flex:1 1 auto;text-align:center}.text-monospace{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}.text-justify{text-align:justify}.text-wrap{white-space:normal}.text-nowrap{white-space:nowrap}.text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.alert{position:relative;padding:.75rem 1.25rem;margin-bottom:1rem;border:1px solid transparent;border-radius:.25rem}.alert-heading{color:inherit}.alert-link{font-weight:700}.alert-dismissible{padding-right:4rem}.alert-dismissible .close{position:absolute;top:0;right:0;padding:.75rem 1.25rem;color:inherit}.alert-primary{color:#004085;background-color:#cce5ff;border-color:#b8daff}.alert-primary hr{border-top-color:#9fcdff}.alert-primary .alert-link{color:#002752}.alert-secondary{color:#383d41;background-color:#e2e3e5;border-color:#d6d8db}.alert-secondary hr{border-top-color:#c8cbcf}.alert-secondary .alert-link{color:#202326}.alert-success{color:#155724;background-color:#d4edda;border-color:#c3e6cb}.alert-success hr{border-top-color:#b1dfbb}.alert-success .alert-link{color:#0b2e13}.alert-info{color:#0c5460;background-color:#d1ecf1;border-color:#bee5eb}.alert-info hr{border-top-color:#abdde5}.alert-info .alert-link{color:#062c33}.alert-warning{color:#856404;background-color:#fff3cd;border-color:#ffeeba}.alert-warning hr{border-top-color:#ffe8a1}.alert-warning .alert-link{color:#533f03}.alert-danger{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}.alert-danger hr{border-top-color:#f1b0b7}.alert-danger .alert-link{color:#491217}.alert-light{color:#818182;background-color:#fefefe;border-color:#fdfdfe}.alert-light hr{border-top-color:#ececf6}.alert-light .alert-link{color:#686868}.alert-dark{color:#1b1e21;background-color:#d6d8d9;border-color:#c6c8ca}.alert-dark hr{border-top-color:#b9bbbe}.alert-dark .alert-link{color:#040505}
+
+  .chroma{background-color:#fff}.chroma .err{color:#a61717;background-color:#e3d2d2}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{display:block;width:100%;background-color:#ffc}.chroma .lnt{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .ln{margin-right:.4em;padding:0 .4em 0 .4em;color:#7f7f7f}.chroma .k{color:#000;font-weight:700}.chroma .kc{color:#000;font-weight:700}.chroma .kd{color:#000;font-weight:700}.chroma .kn{color:#000;font-weight:700}.chroma .kp{color:#000;font-weight:700}.chroma .kr{color:#000;font-weight:700}.chroma .kt{color:#458;font-weight:700}.chroma .na{color:teal}.chroma .nb{color:#0086b3}.chroma .bp{color:#999}.chroma .nc{color:#458;font-weight:700}.chroma .no{color:teal}.chroma .nd{color:#3c5d5d;font-weight:700}.chroma .ni{color:purple}.chroma .ne{color:#900;font-weight:700}.chroma .nf{color:#900;font-weight:700}.chroma .nl{color:#900;font-weight:700}.chroma .nn{color:#555}.chroma .nt{color:navy}.chroma .nv{color:teal}.chroma .vc{color:teal}.chroma .vg{color:teal}.chroma .vi{color:teal}.chroma .s{color:#d14}.chroma .sa{color:#d14}.chroma .sb{color:#d14}.chroma .sc{color:#d14}.chroma .dl{color:#d14}.chroma .sd{color:#d14}.chroma .s2{color:#d14}.chroma .se{color:#d14}.chroma .sh{color:#d14}.chroma .si{color:#d14}.chroma .sx{color:#d14}.chroma .sr{color:#009926}.chroma .s1{color:#d14}.chroma .ss{color:#990073}.chroma .m{color:#099}.chroma .mb{color:#099}.chroma .mf{color:#099}.chroma .mh{color:#099}.chroma .mi{color:#099}.chroma .il{color:#099}.chroma .mo{color:#099}.chroma .o{color:#000;font-weight:700}.chroma .ow{color:#000;font-weight:700}.chroma .c{color:#998;font-style:italic}.chroma .ch{color:#998;font-style:italic}.chroma .cm{color:#998;font-style:italic}.chroma .c1{color:#998;font-style:italic}.chroma .cs{color:#999;font-weight:700;font-style:italic}.chroma .cp{color:#999;font-weight:700;font-style:italic}.chroma .cpf{color:#999;font-weight:700;font-style:italic}.chroma .gd{color:#000;background-color:#fdd}.chroma .ge{color:#000;font-style:italic}.chroma .gr{color:#a00}.chroma .gh{color:#999}.chroma .gi{color:#000;background-color:#dfd}.chroma .go{color:#888}.chroma .gp{color:#555}.chroma .gs{font-weight:700}.chroma .gu{color:#aaa}.chroma .gt{color:#a00}.chroma .gl{text-decoration:underline}.chroma .w{color:#bbb}
+
+  html{font-size:16px}body{color:#222;font-family:'PT Serif','Times New Roman',Times,serif;font-size:1.2em;font-weight:400;margin-bottom:50px;background-color:#f8f8f8;background-image:url(/blog-bitix/assets/images/backgrounds/grey.png)}::-moz-selection{background-color:#61b135;color:#fff}::selection{background-color:#61b135;color:#fff}a{color:#569d2f}a:visited{color:#7aca4e}a:hover{color:#4b8929}a:active{color:#569d2f}h1,h2,h3,h4,h5,h6{margin-top:20px;margin-bottom:10px;font-weight:700;clear:both}hr{border-top:3px dotted #ccc;width:60%}hr.separator{border-top:0 dotted #ccc}abbr[title]{border-bottom:1px dotted}pre{margin-bottom:0}ul.recents{font-size:.9em}ul.recents hr{margin-top:10px;margin-bottom:10px;border-top:1px dotted #ccc}ul.series,ul.tags{columns:5 8em;column-gap:1em}ul.library{columns:4 12em;column-gap:1em}ul.list-columns{columns:4 12em;column-gap:1em}div.container{background-color:#fff;border-left:1px solid #f8f8f8;border-right:1px solid #f8f8f8;padding:0 1em;max-width:1080px}div.blueimp-gallery-container{position:absolute}div.blueimp-gallery div.modal{overflow:hidden}div.blueimp-gallery img.slide-content{background-color:#fff}header{text-align:center;margin-bottom:10px}header span.title{font-size:2.6em;font-weight:700}header span.title a,header span.title a:active,header span.title a:hover,header span.title a:visited{color:#222}header nav{font-weight:700;margin-top:10px}header nav.nav-pills a:hover{background-color:#e2f3d8}header nav.nav-pills a.active,header nav.nav-pills a.active:hover{background-color:#569d2f;color:#fff}header form.search{margin-top:20px;display:inline-block}article h1{font-size:2.6em}article h2{font-size:1.75rem}@media (max-width:576px){article h1{font-size:1.8em}}article p.information,article span.information{font-size:.9em}article p.summary{font-weight:700}article ul.columns{columns:4 12em;column-gap:1em}article table{margin-bottom:20px}article blockquote{padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5}article div.logotypes{margin-left:1.5em;text-align:right;float:right;clear:right;max-width:400px;min-width:150px}@media (max-width:576px){article div.logotypes{width:125px}}article div.logotypes amp-img,article div.logotypes img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:border-box}@media (max-width:576px){article div.logotypes amp-img,article div.logotypes img{width:125px}}article div.code{border:1px solid #ddd;border-radius:3px;margin-bottom:1em}article div.code div.highlight{font-size:.8em;border-bottom:1px solid #ddd}article div.code div.highlight table{overflow:auto}article div.code div.highlight table td:nth-child(2){width:100%}article div.code div.highlight-meta{font-size:.8em;background-color:#f7f7f7;padding:6px}article div.code div.highlight-meta span.raw{float:right}article div.code div.highlight-meta a,article div.code div.highlight-meta span{color:#666;font-weight:600;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:.8em}article div.media{display:block;text-align:center;margin-bottom:1em}article div.media amp-iframe[id^=asciicast-iframe],article div.media iframe[id^=asciicast-iframe]{border:0 solid #fff;box-shadow:0 0 0 rgba(0,0,0,.15)}article div.media amp-ad,article div.media amp-iframe,article div.media amp-img,article div.media iframe,article div.media img{background-color:#fff;border:.5em solid #fff;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);box-sizing:content-box;max-width:100%;max-height:100%;object-fit:contain;vertical-align:middle}article div.media amp-ad.white-background,article div.media amp-iframe.white-background,article div.media amp-img.white-background,article div.media iframe.white-background,article div.media img.white-background{background-color:#fff}article div.media amp-ad.black-background,article div.media amp-iframe.black-background,article div.media amp-img.black-background,article div.media iframe.black-background,article div.media img.black-background{background-color:#000}article div.media figure{clear:both}article div.media figure p a{display:inline-block}article div.media figure figcaption{font-size:.8em}article div.media-amazon.float-right{margin-left:20px}article div.media-twitter{text-align:left}article div.buttons{text-align:center;margin-bottom:20px}article div.buttons a.btn{color:#fff}article div.alert h1,article div.alert h2,article div.alert h3,article div.alert h4,article div.alert h5,article div.alert h6{clear:none}article div.tableofcontents{background-color:#fffae9;display:inline-block}article div.reference{font-size:.9em}div.page-header{min-height:300px;max-height:300px;margin-bottom:20px;overflow:hidden;display:flex;justify-content:center;align-items:center}div.page-header img{min-width:100%;max-width:100%;object-fit:cover}div.sharethis-inline-share-buttons{margin-top:1em;margin-bottom:1em}div.related,div.serie,div.sharethis-text{font-size:.9em}div.related h3,div.serie h3,div.sharethis-text h3{font-size:1em;font-weight:400;margin-top:10px}div.related img,div.serie img,div.sharethis-text img{height:125px;margin-top:10px;max-width:100%;object-fit:cover;width:100%;padding:0 0;margin:0 0}div.related div.col-sm-4,div.serie div.col-sm-4,div.sharethis-text div.col-sm-4{margin-bottom:15px}footer{font-size:.8em;padding-top:10px;padding-bottom:30px}footer span.copyleft{transform:rotate(180deg);display:inline-block}div.banner{margin-bottom:10px}div.featured{background-color:#fff;text-align:center;font-size:.9em;font-weight:700;margin-bottom:10px;width:150px;border-radius:.3em;box-shadow:0 1px 4px rgba(0,0,0,.15);border:.3em solid #fff}div.featured img{width:100%}div.featured a{color:#222}div.sourcecode amp-img.sourcecode-icon,div.sourcecode img.sourcecode-icon{float:left;width:64px}div.sourcecode>div,div.sourcecode>p{margin-left:84px}div.adblock-container{left:0;right:0;margin-left:auto;margin-right:auto}div.adblock{background-color:#eee;border:1px solid gray;font-size:.9em;padding:15px}div.adblock-sidebar-container{position:sticky;position:-webkit-sticky;top:15px;height:0;display:none;overflow:visible}div.adblock-sidebar-container-left{height:600px;text-align:right;overflow:hidden}div.adblock-sidebar-container-left div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adblock-sidebar-container-right{height:600px;text-align:left;overflow:hidden}div.adblock-sidebar-container-right div.adsense-vertical{display:inline-block}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{display:block;height:600px;width:300px}div.adsense{line-height:0}div.adsense amp-ad,div.adsense ins.adsbygoogle{line-height:0}div.adblock-container-billboard{text-align:center}div.adblock-container-billboard div.adsense-billboard{display:inline-block;height:280px;width:100%}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{display:block;height:280px;width:100%}div.adblock-container-leaderboard{text-align:left}div.adblock-container-leaderboard div.adsense-leaderboard{display:inline-block;height:280px;width:100%}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{display:block;height:280px;width:100%}i.archive-icon{display:inline-block;font-size:32px;line-height:32px}@media (min-width:375px){div.adblock-container-billboard div.adsense-billboard{height:280px;width:336px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard{height:280px;width:336px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:280px;width:336px}}@media (min-width:770px){div.adblock-container-billboard div.adsense-billboard{height:90px;width:728px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard{height:90px;width:728px}div.adblock-container-leaderboard div.adsense-leaderboard ins.adsbygoogle{height:90px;width:728px}}@media (min-width:1025px){div.adblock-container-billboard div.adsense-billboard{height:250px;width:970px}div.adblock-container-billboard div.adsense-billboard ins.adsbygoogle{height:250px;width:970px}}@media (min-width:1366px){div.adblock-sidebar-container{display:flex;justify-content:space-between}div.adblock-sidebar-container-left{transform:translateX(-155px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:120px}div.adblock-sidebar-container-right{transform:translateX(155px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:120px}}@media (min-width:1440px){div.adblock-sidebar-container-left{transform:translateX(-195px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:160px}div.adblock-sidebar-container-right{transform:translateX(195px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:160px}}@media (min-width:1750px){div.adblock-sidebar-container-left{transform:translateX(-335px)}div.adblock-sidebar-container-left div.adsense-vertical ins.adsbygoogle{width:300px}div.adblock-sidebar-container-right{transform:translateX(335px)}div.adblock-sidebar-container-right div.adsense-vertical ins.adsbygoogle{width:300px}}
+
+  </style>
+
+  <!-- scripts -->
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+  <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+  
+  
+
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        
+
+
+
+
+
+<header>
+  <div class="row">
+    <div class="col-12 col-lg-4"></div>
+    <div class="col-12 col-lg-4">
+      <span class="title"><a href="https://picodotdev.github.io/blog-bitix/index-amp.html">Blog Bitix</a></span>
+      <div class="links">
+        
+          <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+        
+        
+          <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+        
+        
+          <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      
+<nav class="nav nav-pills nav-fill">
+  <a href="/blog-bitix/tags/java/index-amp.html" class="nav-item nav-link">Java</a>
+  <a href="/blog-bitix/tags/gnu-linux/index-amp.html" class="nav-item nav-link">GNU/Linux</a>
+  <a href="/blog-bitix/tags/javascript/index-amp.html" class="nav-item nav-link">JavaScript</a>
+  <a href="/blog-bitix/tags/tapestry/index-amp.html" class="nav-item nav-link">Tapestry</a>
+  <a href="/blog-bitix/archive/index-amp.html" class="nav-item nav-link">Archivo y hemeroteca</a>
+  <a href="/blog-bitix/pages/links/index-amp.html" class="nav-item nav-link">Enlaces</a>
+  <a href="/blog-bitix/pages/about/index-amp.html" class="nav-item nav-link">Acerca de...</a>
+  
+</nav>
+
+    </div>
+  </div>
+</header>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 adblock-container-billboard">
+        <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        
+<article>
+    <h1>Conceptos teóricos generales de los procesadores de computadora</h1>
+    <p class="information">
+      
+        Escrito por
+       
+      <span>picodotdev</span> el <time>20/05/2021</time>.
+      
+        <br>
+        
+          <a href="/blog-bitix/tags/hardware/index-amp.html">hardware</a>
+        
+          <a href="/blog-bitix/tags/planeta-codigo/index-amp.html">planeta-codigo</a>
+        
+      
+      <br>
+      <a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html">Enlace permanente</a>
+      
+        <a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/index-amp.html#comments">Comentarios</a>
+      
+    </p>
+
+    
+      <p class="summary">Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender.</p>
+    
+    
+
+    
+      <div class="adblock-container-leaderboard">
+        <div class="adsense adsense-leaderboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="8238629013"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+      </div>
+    
+
+    <div class="content">
+      
+
+
+      <div class="logotypes" style="min-width: 300px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/intel.svg" width="1.5075376884422111" height="1" alt="Intel" title="Intel" layout="responsive"  class=""></amp-img></p>
+</div>
+<div class="logotypes" style="min-width: 300px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/amd.svg" width="4.189453125" height="1" alt="AMD" title="AMD" layout="responsive"  class=""></amp-img></p>
+</div>
+<div class="logotypes" style="min-width: 300px;">
+<p><amp-img src="/blog-bitix/assets/images/logotypes/arm.svg" width="3.2094240837696337" height="1" alt="ARM" title="ARM" layout="responsive"  class=""></amp-img></p>
+</div>
+<p>Los procesadores actuales tienen una capacidad de cómputo en varios órdenes de magnitud a la de tan toso unas décadas antes. Buena parte de ese rendimiento es conseguido a través de la mejora de los procesos litográficos que permiten fabricar transistores cada vez más pequeños. Con transistores más pequeños se mejoran varios aspectos vitales de los procesadores entre ellos se reduce su consumo de energía, permiten añadir más transistores en el mismo espacio físico para implementar cachés más grandes o implementar conceptos que mejoren el rendimiento y finalmente son más baratos de fabricar.</p>
+<p>Desde la aparición de los circuitos integrados que sustituyeron a las válvulas de vacío, según la <a href="https://es.wikipedia.org/wiki/Ley_de_Moore">ley de Moore</a> cada dos año en número de transistores que incluye un procesador se duplica, esta ley se ha estado cumpliendo hasta ahora y por consiguiente la potencia de los procesadores. Uno de los primeros microprocesadores de Intel como el 4004 tenía únicamente 2300 transistores a 10 micrómetros, un Intel Core o un Ryzen llegan superan los 2 mil millones de transistores a 7 nanómetros.</p>
+<p>Varios de los conceptos teóricos aplicados en los procesadores está destinado a aumentar el rendimiento en monohilo, así ha sido hasta el desarrollo de los procesadores con múltiples núcleos tanto de Intel como de AMD y también de ARM. Desde el año 2010 el aumento de rendimiento de los procesadores también se consigue mediante la inclusión de mayor número de núcleos, para tareas paralelizables. Un amyor número de núcleos consigue un aumento de rendimiento en una proporcion similar a la proporción de aumento de núcleos. Crear procesadores multinúcleo es otra forma de seguir aumentando el rendimiento de forma más sencilla que mejorando aún más el rendimiento en monohilo. Los procesadores actuales van desde los 4 núcleos hasta cantidades como 16 para ordenadores de escritorio y hasta 64 o más para computadoras destinadas a hacer funciones de servidor.</p>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 4004"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-P4004_hu1fb723fba9f61c17f3c53cbccccca215_25344_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 4004" title="Procesador Intel 4004"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Intel 8086"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-D8086_hu4a9b2a61e98b62517be5b67531c8a389_24893_200x150_fit_q90_box.jpg" width="200" height="133" alt="Procesador Intel 8086" title="Procesador Intel 8086"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Pentium"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/intel-pentium_hu803c000e0467e06370991e1649bd527c_20884_200x150_fit_q90_box.jpg" width="147" height="150" alt="Procesador Pentium" title="Procesador Pentium"  class=""></amp-img></a></p>
+<figcaption>Procesadores Intel 4004, 8086 y Pentium</figcaption>
+</figure>
+</div>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador AMD Athlon XP"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/amd-athlon-xp_hu42da18795932957ce0f9752e49bc4958_40154_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador AMD Athlon XP" title="Procesador AMD Athlon XP"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador Sun UltraSparc II"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/sun-ultra-sparc-II_hube962f03be0a6bacb52a23d45f2294ed_45508_200x150_fit_q90_box.jpg" width="150" height="150" alt="Procesador Sun UltraSparc II" title="Procesador Sun UltraSparc II"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_2560x1440_fit_q90_box.jpg" data-gallery="data-gallery" title="Procesador RISC-V"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/risc-v_hub61dde6c275c794a4f05549a96497f1b_38766_200x150_fit_q90_box.jpg" width="200" height="143" alt="Procesador RISC-V" title="Procesador RISC-V"  class=""></amp-img></a></p>
+<figcaption>Procesadores de AMD, Sun Ultra Sparc y SiFive RISC-V</figcaption>
+</figure>
+</div>
+<p>Los siguientes apartados son una explicación sencilla, básica y resumida de los conceptos que se utilizan en los procesadores de los que se puede. Esta información está ampliada en la wikipedia.</p>
+<div class="alert alert-warning tableofcontents">
+    <h2>Contenido del artículo</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#arquitectura">Arquitectura</a>
+      <ul>
+        <li><a href="#componentes-de-un-procesador">Componentes de un procesador</a></li>
+        <li><a href="#tamaño-de-palabra">Tamaño de palabra</a></li>
+        <li><a href="#_endianness_"><em>Endianness</em></a></li>
+        <li><a href="#almacenamiento-de-computadora-numa-y-uma">Almacenamiento de computadora, NUMA y UMA</a></li>
+        <li><a href="#memoria-y-jerarquía-de-memoria">Memoria y jerarquía de memoria</a></li>
+        <li><a href="#memoria-virtual">Memoria virtual</a></li>
+        <li><a href="#microcódigo">Microcódigo</a></li>
+      </ul>
+    </li>
+    <li><a href="#arquitecturas-de-conjunto-de-instrucciones">Arquitecturas de conjunto de instrucciones</a>
+      <ul>
+        <li><a href="#conjuntos-de-instrucciones">Conjuntos de instrucciones</a></li>
+      </ul>
+    </li>
+    <li><a href="#ciclo-de-ejecución-del-procesador">Ciclo de ejecución del procesador</a>
+      <ul>
+        <li><a href="#_pipelining_-de-instrucciones"><em>Pipelining</em> de instrucciones</a></li>
+        <li><a href="#_hazards_"><em>Hazards</em></a></li>
+        <li><a href="#ejecución-fuera-de-orden">Ejecución fuera de orden</a></li>
+        <li><a href="#ejecución-especulativa">Ejecución especulativa</a></li>
+      </ul>
+    </li>
+    <li><a href="#paralelismo">Paralelismo</a>
+      <ul>
+        <li><a href="#_bit_"><em>Bit</em></a></li>
+        <li><a href="#escalar-y-superescalar">Escalar y superescalar</a></li>
+        <li><a href="#multihilo">Multihilo</a></li>
+        <li><a href="#multinúcleo">Multinúcleo</a></li>
+        <li><a href="#número-de-núcleos">Número de núcleos</a></li>
+      </ul>
+    </li>
+    <li><a href="#seguridad">Seguridad</a>
+      <ul>
+        <li><a href="#modo-protegido">Modo protegido</a></li>
+        <li><a href="#cifrado-de-memoria">Cifrado de memoria</a></li>
+      </ul>
+    </li>
+    <li><a href="#rendimiento-de-procesador">Rendimiento de procesador</a></li>
+    <li><a href="#tipos-de-procesadores">Tipos de procesadores</a></li>
+    <li><a href="#gestión-de-energía">Gestión de energía</a></li>
+  </ul>
+</nav>
+</div>
+<h3 id="arquitectura">Arquitectura</h3>
+<p>Los computadores siguen una organización definida en el <a href="https://en.wikipedia.org/wiki/Von_Neumann_architecture">modelo de von Neumann</a> en el que una computadora consta de:</p>
+<ul>
+<li>Una unidad de procesamiento que contiene lógica de aritmética y los registros del procesador.</li>
+<li>Una unidad de control que contiene un registro de instrucción y un contador de programa.</li>
+<li>Memoria que almacena los datos y las instrucciones del programa.</li>
+<li>Almacenamiento externo.</li>
+<li>Mecanismos de entrada y salida.</li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer.gif" data-gallery="data-gallery" title="Esquema de computadora"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/a-basic-computer.gif" width="300" height="200" alt="Esquema de computadora" title="Esquema de computadora"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" data-gallery="data-gallery" title="Arquitectura de Von Neumann"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/von-neumann-architecture.svg" width="300" height="200" alt="Arquitectura de Von Neumann" title="Arquitectura de Von Neumann"  class=""></amp-img></a></p>
+<figcaption>Esquema de computadora y arquitectura de Von Neumann</figcaption>
+</figure>
+</div>
+<h4 id="componentes-de-un-procesador">Componentes de un procesador</h4>
+<p>Los componentes son los siguientes:</p>
+<ul>
+<li>Caché: es una memoria pequeña comparada con la memoria principal o el almacenamiento secundario pero mucho más rápida que estas.</li>
+<li>Unidades funcionales: la unidad de lógica aritmética o ALU permite realizar operaciones del cálculo matemático y binarias, la unidad de coma flotante o FPU permite realizar operaciones en coma flotante. La unidad de predicción de de saltos permite predecir cuál será el resultado de una condición, otras unidades son la unidad de generación de direcciones o AGU, la <em>load–store unit translation lookaside buffer</em> o TLB permite traducir direcciones virtuales a direcciones físicas y es parte de la unidad de gestión de memoria o MMU. El controlador integrado de memoria o IMC gestiona las transferencias entre la memoria principal y el procesador.</li>
+<li>Registros: son unas pequeñas zonas de memoria en las que operan las instrucciones del procesador.</li>
+<li>Unidad de control: es la encargada de enviar las señales a las otras unidades del procesador.</li>
+</ul>
+<h4 id="tamaño-de-palabra">Tamaño de palabra</h4>
+<p>El tamaño de palabra es la unidad de datos nativa del procesador media en número bits. Los registros del procesador suelen tener tener el mismo tamaño de palabra que el procesador y la máxima cantidad de información que se suele poder transferir desde y a la memoria en una única operación coincide con el tamaño de palabra. Los procesadores x86-64 tiene un tamaño de palabra de 64 bits.</p>
+<h4 id="_endianness_"><em>Endianness</em></h4>
+<p>La arquitectura de un procesador define cómo se almacenan los datos en memoria, puede ser de dos formas <em>litte-endian</em> o <em>big-endian</em>. En la primera el byte de datos menos significativo se almacena en la dirección de memoria más baja, por el contrario en <em>big-endian</em> el byte más significativo se almacena en la dirección más baja.</p>
+<p>Que una arquitectura de procesador elija entre estos dos tipos de <em>endianness</em> no es significativo, simplemente se ha de mantener de forma consistente al almacenar, cargar los datos y transmitirlos a otras computadoras.</p>
+<p>En el protocolo IP se utiliza <em>big-endian</em>, por el contrario el la mayoría de procesadores de arquitectura de procesadores como x86, ARM y RISC-V utilizan <em>litte-endian</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Endianness">Endianness</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" data-gallery="data-gallery" title="Big endian"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/big-endian.svg" width="300" height="200" alt="Big endian" title="Big endian"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" data-gallery="data-gallery" title="Little endian"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/little-endian.svg" width="300" height="200" alt="Little endian" title="Little endian"  class=""></amp-img></a></p>
+<figcaption>Big y little endian</figcaption>
+</figure>
+</div>
+<h4 id="almacenamiento-de-computadora-numa-y-uma">Almacenamiento de computadora, NUMA y UMA</h4>
+<p>El significado de las siglas de NUMA son <em>Non-uniform memory access</em> y de UMA son <em>Uniform memory access</em>, en el primer caso el tiempo de acceso  a memoria no es uniforme y depende de la ubicación del la memoria relativa al procesador, en este caso para un procesador es más rápido acceder a su memoria local que a la memoria de otro procesador.</p>
+<p>Los procesadores actuales son significativamente más rápidos que la memoria principal por ello suelen tener pequeñas cachés de memoria más rápidas, al mismo tiempo se evita que varios procesadores compitan por el acceso a la memoria principal. Este modelo NUMA mejora el rendimiento pero ocasiona el problema que cuando un procesador requiere los datos de otro ocasiona que los datos han de ser movidos con una penalización en la latencia.</p>
+<p>AMD lo implementó el almacenamiento NUMA en los procesadores Opteron con <a href="https://en.wikipedia.org/wiki/HyperTransport">HyperTransport</a> e Intel con <a href="https://en.wikipedia.org/wiki/Intel_QuickPath_Interconnect">QPI</a>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Non-uniform_memory_access">Non-uniform memory access</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Uniform_memory_access">Uniform memory access</a></li>
+</ul>
+<h4 id="memoria-y-jerarquía-de-memoria">Memoria y jerarquía de memoria</h4>
+<p>La memoria contiene los datos y las instrucciones de los programas, el procesador lee los datos de la memoria los carga en las cachés y los registros del procesador, realiza el cálculo deseado y los resultados son almacenados de nuevo en la memoria principal.</p>
+<p>Hay cuatro niveles de almacenamiento.</p>
+<ul>
+<li>Interno: formado por los registros del procesador y sus cachés internas.</li>
+<li>Memoria principal: formada por la memoria RAM volátil cuyo contenido se pierde si se apaga la computadora.</li>
+<li>Secundaria: es una memoria persistente conectada a la computadora y que conserva los datos aún después de apagar la computadora.</li>
+<li>Terciaria:  es una memoria que se puede extraer y conectar del equipo bajo demanda.</li>
+</ul>
+<p>La memoria se puede diferenciar en las siguientes propiedades:</p>
+<ul>
+<li>Volatilidad: si persiste al apagado de la computadora.</li>
+<li>Mutabilidad: si es posible cambiar su contenido.</li>
+<li>Accesibilidad: el modo de lectura permitido si es aleatorio o ha de ser secuencial.</li>
+<li>Direccionamiento.</li>
+<li>Capacidad: el tamaño de la memoria.</li>
+<li>Rendimiento: el tiempo de acceso necesario.</li>
+<li>Uso de energía.</li>
+<li>Seguridad.</li>
+<li>Vulnerabilidad y confiabilidad.</li>
+</ul>
+<p>La diferencia de velocidad de procesamiento de la CPU y la velocidad de acceso a la memoria principal y secundaria hace que para aumentar el rendimiento de la CPU sea necesario una memoria pequeña pero más rápida que la memoria principal en el procesador. En la jerarquía de memoria en el nivel superior su latencia es inferior, su velocidad de transferencia es mayor pero su tamaño es menor. Si la tasa de aciertos en la caché es alta el procesador aumenta significativamente al no ser penalizado por la latencia de acceso a la memoria principal.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Computer_data_storage">Computer data storage</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Memory_hierarchy">Memory hierarchy</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_2560x1440_fit_box_2.png" data-gallery="data-gallery" title="Jerarquía de caché"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/cache-hierarchy_hu67a35246351b6441699470bb96f7cdc8_11569_300x200_fit_box_2.png" width="206" height="200" alt="Jerarquía de caché" title="Jerarquía de caché"  class=""></amp-img></a>
+<a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" data-gallery="data-gallery" title="Jerarquía de caché"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/computer-memory-hierarchy.svg" width="300" height="200" alt="Jerarquía de caché" title="Jerarquía de caché"  class=""></amp-img></a></p>
+<figcaption>Jerarquía de caché</figcaption>
+</figure>
+</div>
+<h4 id="memoria-virtual">Memoria virtual</h4>
+<p>La memoria principal del sistema es limitada aun siendo de varias decenas de GB. La memoria virtual es una técnica que permite ampliar la memoria del sistema utilizando el siguiente nivel de la jerarquía de memoria , normalmente el almacenamiento persistente de mayor capacidad.</p>
+<p>El sistema operativo con ayuda de funciones de gestión de memoria implementadas en el procesador se encarga de mover fuera de la memoria principal la que no se está utilizando y de cargar en la memoria principal la que se necesite.</p>
+<h4 id="microcódigo">Microcódigo</h4>
+<p>El microcódigo es un software que traduce las instrucciones en operaciones a ejecutar en el <em>chip</em>. Esta traducción de instrucciones permite los desarrolladores de <em>chips</em> flexibilidad en la implementación. Por ejemplo, en una versión mejorada del <em>chip</em> se puede soportar el mismo conjunto de instrucciones que versiones anteriores o soportar diferentes conjuntos de instrucciones en el mismo <em>chip</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Microcode">Microcode</a></li>
+</ul>
+<h3 id="arquitecturas-de-conjunto-de-instrucciones">Arquitecturas de conjunto de instrucciones</h3>
+<p>La arquitectura del conjunto de instrucciones o ISA es el modelo abstracto de una computadora, define los tipos de datos soportados, los registros, el hardware de soporte para la memoria principal y el modelo de entrada y salida. También forma parte el conjunto de instrucciones soportadas y su codificación binaria.</p>
+<p>El conjunto de instrucciones es una de las características mas relevantes de un procesador, los programas compilados a código máquina están codificados en forma binarias según las instrucciones de una ISA.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_set_architecture">Instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Microarchitecture">Microarchitecture</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" data-gallery="data-gallery" title="Instrucción addi de un procesador MIPS"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/mips32-addi.svg" width="300" height="200" alt="Instrucción addi de un procesador MIPS" title="Instrucción addi de un procesador MIPS"  class=""></amp-img></a></p>
+<figcaption>Instrucción addi de un procesador MIPS</figcaption>
+</figure>
+</div>
+<h4 id="conjuntos-de-instrucciones">Conjuntos de instrucciones</h4>
+<p>El conjunto de instrucciones soportados por un procesador depende de su arquitectura. La arquitectura más popular en ordenadores de escritorio es la x86, en los dispositivos móviles como teléfonos inteligentes es ARM, otras arquitecturas alternativas son RISC-V que es una arquitectura abierta sin costes de licencia, otras son MIPS, POWER y Sparc.</p>
+<p>Los lenguajes de programación de alto nivel como C traducen los programas a un binario ejecutable por la computadora, Java traduce los programas en la compilación a un <em>bytecode</em> independendiente de la arquitectura del procesador y es en tiempo de ejecución cuando se realiza la traducción del <em>bytecode</em> a las instrucciones que entiende el procesador.</p>
+<p>Dos aproximaciones al conjunto de instrucciones son CISC que proporciona un conjunto amplio de instrucciones complejas y RISC que proporciona un conjunto reducido de instrucciones más simples. El equivalente de una instrucción CISC pueden ser varias RISC. Los procesadores CISC tienen la ventaja de hacer que los programas tengan menor tamaño pero hace que los procesadores sean más complejos, por el contrario en los procesadores RISC los programas son más grandes al necesitar más instrucciones pero los procesadores son más sencillos. La diferencia entre un procesador CISC y RISC no es muy significativa con la utilización de microcódigo.</p>
+<p>Las instrucciones se agrupan en las siguientes categorías:</p>
+<ul>
+<li>Establecimiento de datos y operaciones con memoria cómo establecer un registro con un valor y mover datos de un registro a otro.</li>
+<li>Operaciones aritméticas y lógicas como sumar, restar, multiplicar o dividir entre los valores de dos registros, realizar operaciones binarias o comprar dos valores.</li>
+<li>Control de flujo como saltar a otro punto del programa, salto condicional o llamada a una función.</li>
+<li>Instrucciones de coprocesador como cargar o almacenar datos en los registros del procesador.</li>
+</ul>
+<p>Las instrucciones <em>single instruction multiple data</em> o SIMD operan múltiples datos de forma paralela con una única instrucciones, esto mejora significativamente el rendimiento respecto si hubiera que ejecutar una instrucción por cada dato. Es una forma diferente de conseguir paralelismo.</p>
+<p>En la arquitectura x86 las instrucciones MMX, SSE y AVX son variantes de instrucciones SIMD. El primer procesador con instrucciones MMX fabricado por Intel fue el Pentium MMX. El primer procesador de Intel con instrucciones SSE fue el Pentium 3 y el primero con AVX fue a partir de la familia Sandy Bridge.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">Complex instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">Reduced instruction set computer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Advanced_Vector_Extensions">Advanced Vector Extensions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X86">x86 architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/IBM_POWER_instruction_set_architecture">IBM POWER instruction set architecture</a></li>
+<li><a href="https://en.wikipedia.org/wiki/PowerPC">PowerPC</a></li>
+<li><a href="https://en.wikipedia.org/wiki/RISC-V">RISC-V</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SPARC">SPARC</a></li>
+</ul>
+<h3 id="ciclo-de-ejecución-del-procesador">Ciclo de ejecución del procesador</h3>
+<p>La principal tarea de un procesador es ejecutar instrucciones, para ello el procesador sigue un ciclo de obtener la siguiente instrucción de la memoria principal según el contador del programa, decodificación en la que se determina que instrucción se ejecuta y ejecución en la que se utilizan los diferentes componentes del procesador como la unidad de lógica aritmética.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_cycle">Instruction cycle</a></li>
+</ul>
+<h4 id="_pipelining_-de-instrucciones"><em>Pipelining</em> de instrucciones</h4>
+<p>Los procesadores tiene varios componentes, para mantenerlos todos en funcionamiento con el objetivo de maximizar el rendimiento las instrucciones se ejecutan en varias etapas. En un momento determinado el procesador posee varias instrucciones en diferentes etapas de ejecución. Cada uno de estos pasos de ejecución es un segmento de ejecución, denominando a estos procesadores como segmentados.</p>
+<p>El primer procesador segmentado fabricado por Intel fue el Intel 386 con un <em>pipeline</em> de tres etapas.</p>
+<p>Un procesador como los Intel Pentium 4 llegaba a tener un <em>pipeline</em> de ejecución de hasta 31 etapas. El problema es que un <em>pipeline</em> tan largo no mejora el rendimiento cuando se producen saltos al ejecutar instrucciones condicionales y el predictor de bifurcaciones falla en el predicción, en un salto el <em>pipeline</em> se vacía y comienza en la primera etapa con la primera instrucción a la que se ha saltado.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Instruction_pipelining">Instruction pipelining</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" data-gallery="data-gallery" title="Pipeline de 4 segmentos"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/pipeline-4-stage-with-bubble.svg" width="300" height="200" alt="Pipeline de 4 segmentos" title="Pipeline de 4 segmentos"  class=""></amp-img></a></p>
+<figcaption>Pipeline de 4 segmentos</figcaption>
+</figure>
+</div>
+<h4 id="_hazards_"><em>Hazards</em></h4>
+<p>Hay varios peligros en la ejecución paralela que ha de tenerse en cuenta para un buen funcionamiento de los procesadores segmentados. Los riesgos son de tres tipos, de datos, estructurales y de control.</p>
+<p>En los riegos de datos una instrucción de lectura posterior a una instrucción de escritura para un dato ha de producirse después, una instrucción de lectura posterior a una de escritura para un dato ha de producirse después y dos instrucciones de escritura sobre el mismo dato ha de producirse en el mismo orden del programa.</p>
+<p>Los riesgos estructurales consisten en que dos instrucciones en el <em>pipeline</em> necesiten el mismo recurso como la ALU, en este caso las instrucciones han de esperar.</p>
+<p>Los riesgos de control consisten en que se hayan insertado en el <em>pipeline</em> instrucciones que finalmente han de descartarse por una mala predicción en un salto en el programa.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hazard_%28computer_architecture%29">Hazard (computer architecture)</a></li>
+</ul>
+<h4 id="ejecución-fuera-de-orden">Ejecución fuera de orden</h4>
+<p>La ejecución fuera de orden permite aprovechar los ciclos de CPU que de otra manera no se utilizarían. Con este paradigma, el procesador ejecuta las instrucciones según la disponibilidad de los datos de entrada y las unidades de ejecución, en vez de en el orden original del programa. Esto permite evitar tiempos inactivos esperando a que la instrucción precedente se complete en el caso de que sean independientes.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Out-of-order_execution">Out-of-order execution</a></li>
+</ul>
+<h4 id="ejecución-especulativa">Ejecución especulativa</h4>
+<p>La ejecución especulativa es otra optimización que permite aumentar el rendimiento que consiste en ejecutar instrucciones aún antes de saber si son necesarias.</p>
+<p>Los programas incluyen sentencias condicionales, en función de su evaluación el flujo del programa continúa por una rama de la condición u otra, hasta no evaluarse la condición no se sabe porque rama se continúa. La ejecución especulativa ejecuta las instrucciones de ambas ramas descartando los resultados de una cuando se conoce que rama finalmente se ha seguido.</p>
+<p>Esta técnica aumenta el rendimiento pero con la cual se han descubierto varios problemas relativos a la seguridad con su <a href="https://picodotdev.github.io/blog-bitix/2018/01/explicacion-del-fallo-de-seguridad-meltdown-y-spectre-en-los-microprocesadores-intel/index-amp.html">Explicación del fallo de seguridad Meltdown y Spectre en los microprocesadores Intel</a> que han afectado a los procesadores que la implementaron tanto de Intel, de AMD como de ARM.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Speculative_execution">Speculative execution</a></li>
+</ul>
+<h3 id="paralelismo">Paralelismo</h3>
+<p>Para aumentar el rendimiento los procesadores intentan ejecutar las operaciones de forma paralela.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Parallel_computing">Parallel computing</a></li>
+</ul>
+<h4 id="_bit_"><em>Bit</em></h4>
+<p>Una forma de aumentar el paralelismo es aumentar el tamaño de palabra del procesador. Un procesador con una palabra de 8 bits necesita dos ciclos para realizar la suma de dos números de 16 bits, un procesador de 16 bits solo necesita un ciclo con lo que en la práctica es duplicar el rendimiento del procesador en este tipos de operaciones.</p>
+<h4 id="escalar-y-superescalar">Escalar y superescalar</h4>
+<p>Un procesador escalar en todo momento solo ejecuta una instrucción, en cambio un procesador superescalar ejecutar múltiples instrucciones usando varias unidades de ejecución. Los procesadores superescalares tienen varias unidades de ejecución del mismo tipo, por ejemplo un procesador superescalar tiene varias unidades ALU o de FPU. El procesador trata de mantener cada una de estas diferentes unidades con instrucciones a ejecutar. Un procesador superescalar con dos ALU es capaz de realizar el doble de operaciones por ciclo de reloj y por tanto supone duplicar el rendimiento en este tipos de operaciones.</p>
+<p>El primer procesador superescalar fabricado por Intel fue el Pentium.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Scalar_processor">Scalar processor</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Superscalar_processor">Superscalar processor</a></li>
+</ul>
+<h4 id="multihilo">Multihilo</h4>
+<p>Un procesador con procesamiento multihilo o SMT trata de mejorar el rendimiento del procesador superescalar. Cada núcleo físico es visto por el sistema operativo como dos o más núcleos lógicos, cada procesador lógico tiene sus propios registros de control sin embargo las unidades de ejecución son compartidas por los hilos. Cada hilo puede ser detenido o interrumpido de forma independiente al resto de hilos.</p>
+<p>El número de hilos que permite un procesador por cada cada núcleo puede ser tan simple como dos, dependiendo de la microarquitectura del procesador pueden ser un número más grande como cuatro u ocho.</p>
+<p>El primer procesador con hyper-threading fabricado por fue el Intel Pentium 4.</p>
+<p>Los procesadores y sistemas operativos conceden a los programas un tiempo de ejecución en el procesador, transcurrido el tiempo sin interrumpidos y se continua con otro proceso, el proceso no tiene el control de cuando se interrumpe su ejecución, a este estilo de compartir el recurso del procesador se le denomina <a href="https://en.wikipedia.org/wiki/Preemption_%28computing%29">multitarea preemtiva</a>. Incluso con la velocidad de los procesadores de mononucleo en los que solo se ejecutan un solo programa la sensación es que los programas se están ejecutando de forma paralela.</p>
+<h4 id="multinúcleo">Multinúcleo</h4>
+<p>Un procesador con procesamiento paralelo o SMP incorpora varios núcleos físicos en el mismo procesador. Cada núcleo es independiente y ejecuta un proceso en cada núcleo de forma simultánea. En un procesador mononúcleo la programación simultánea era simulada mediante la apropiación preemptiva junto con la rapidez del procesador para en la ejecución de instrucciones y cambios de contexto de un procesador a otro.</p>
+<p>El primer procesador multinúcleo fabricado por Intel fue el Pentium D.</p>
+<h4 id="número-de-núcleos">Número de núcleos</h4>
+<p>Los primeros procesadores tenían un único núcleo o unidad de cómputo denominados <em>single-core</em>, posteriormente se ha implementado en un mismo procesador varios núcleos denominados <em>multi-core</em>.</p>
+<p>Los procesadores <em>multi-core</em> de escritorio consumno están diseñados para ejecutar eficientemente tanto código en serie como en paralelo poniendo gran énfasis en la ejecución de un único hilo, para ello dedican espacio en el procesador para implementar ejecución fuera de orden, pipelines profundos, son superescalares y tienen cachés grandes.</p>
+<p>Los procesadores <em>many-core</em> están especializados en ejecutar gran cantidad de operaciones en paralelo, para ello tienen una gran cantidad de núcleos de computación. Si un procesador <em>muti-core</em> tiene unos pocos núcleos al estar limitados el número de ellos por la coherencia de la caché los procesadores <em>many-core</em> se cuentan por miles. Las GPU son un ejemplo del procesador <em>many-core</em>.</p>
+<h3 id="seguridad">Seguridad</h3>
+<p>Los procesadores incluyen funcionalidades con la colaboración del sistema operativo para que la computación de los programas sea segura, con el objetivo de que un programa no se apropie de toda la capacidad de computación o que la memoria de un programa esté aislada de otros programas.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Trusted_Execution_Technology">Trusted Execution Technology</a></li>
+</ul>
+<div class="media">
+<figure>
+<p><a href="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" data-gallery="data-gallery" title="Anillos de seguridad de un procesador"><amp-img src="/blog-bitix/2021/05/conceptos-teoricos-generales-de-los-procesadores-de-computadora/images/processor-security-rings.svg" width="300" height="200" alt="Anillos de seguridad de un procesador" title="Anillos de seguridad de un procesador"  class=""></amp-img></a></p>
+<figcaption>Anillos de seguridad de un procesador</figcaption>
+</figure>
+</div>
+<h4 id="modo-protegido">Modo protegido</h4>
+<p>Los procesadores incluyen un modo de ejecución con privilegios especiales que son exclusiva del sistema operativo. Algunas instrucciones solo pueden ser ejecutadas en el modo protegido por seguridad.</p>
+<p>El primer procesador con un modo protegido fabricado por Intel fue el 386.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Protected_mode">Protected mode</a></li>
+</ul>
+<h4 id="cifrado-de-memoria">Cifrado de memoria</h4>
+<p>Para minimizar las consecuencias de una fallo de seguridad los procesadores más recientes destinados a la computación en la nube, donde el entorno de computación es compatido aún estando en ciertamedia aislado lógicamente, también incluyen funcionalidades para cifrar completamente la memoria de los datos y programas, de modo que aunque un programa tenga acceso a la memoria de otro la información al estar cifrada no sea legible.</p>
+<h3 id="rendimiento-de-procesador">Rendimiento de procesador</h3>
+<p>El rendimiento de un procesador se mide en instrucciones por ciclo o IPC, instrucciones por segundo o IPS, operaciones de coma flotante por segundo FLOPS, rendimiento por vatio o PPW.</p>
+<p>Una variable que impacta en el rendimiento es el número de transistores con el que está construido el procesador, a mayor número de transistores es posible incluir cachés más grandes, mayor número de núcleos y mayor número de componentes. Sin embargo, un mayor número de transistores implica una mayor cantidad de energía consumida.</p>
+<p>Los diseñadores de procesadores han de encontrar un equilibrio óptimo entre número de transistores, tamaño del <em>chip</em>, coste de fabricación, energía consumida y disipada en forma de calor y precio del procesador.</p>
+<p>Una mejora de los procesos litográficos que permiten crear transistores de menor tamaño es beneficioso para los procesadores ya que mejoran el número de transistores que se pueden incluir en el procesador en el mismo espacio, hacen los procesadores más pequeños, la energía consumida y el calor disipado es menor y el precio de fabricación del procesador se abarata.</p>
+<h3 id="tipos-de-procesadores">Tipos de procesadores</h3>
+<p>La CPU es el principal componente de una computadora que se encarga de ejecutar las instrucciones del programa, otro tipo de procesador especializado son las GPU dedicadas al procesamiento de gráficos o en tareas de inteligencia artificial. Las GPU están especializadas en ejecutar gran cantidad de operaciones de forma paralela.</p>
+<p>Un <em>system on chip</em> o SoC incluye la mayoría de componentes de un sistema es un único <em>chip</em> en vez de estar separados. Un SoC puede incluir tanto la CPU, la memoria, los puertos de entrada/salida y otros elementos como almacenamiento secundario, la GPU y otros elementos especializados en comunicaciones y procesamiento de datos. Esto les hace más baratos que un sistema en el que los componentes están formados por <em>chips</em> individuales.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Processor_%28computing%29">Processor</a></li>
+</ul>
+<h3 id="gestión-de-energía">Gestión de energía</h3>
+<p>Los procesadores para reducir su consumo de energía y el calor que dispan emplean diferetnes técnicas como variar el voltaje de funcionamiento o la frecuencia de funcionamiento.</p>
+
+    </div>
+
+    <p class="information">
+      
+    </p>
+
+    
+  </article>
+        
+
+        
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-text">
+      Comparte el artículo:
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="sharethis sharethis-inline-share-buttons"></div>
+  </div>
+</div>
+
+
+        
+    
+    
+    <div class="row related"><div class="col-12"><p>Artículos relacionados:</p></div></div>
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2021/01/despues-de-dos-anos-de-comprar-un-intel-nuc-cambiaria-algo-en-el-futuro/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?" title="Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?"  class=""></amp-img>
+                <h3>Después de dos años de comprar un Intel NUC, ¿cambiaría algo en el futuro?</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2020/12/guia-basica-sobre-teclados-mecanicos-para-ordenador/index-amp.html">
+                <amp-img src="/blog-bitix/2020/12/guia-basica-sobre-teclados-mecanicos-para-ordenador/images/ducky-one-2-tkl_hu354ab0c3d09f385c997f31ff19e237d6_461539_875x0_resize_box_2.png" width="326" height="125" alt="Guía básica sobre teclados mecánicos para ordenador" title="Guía básica sobre teclados mecánicos para ordenador"  class=""></amp-img>
+                <h3>Guía básica sobre teclados mecánicos para ordenador</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/07/donde-comprar-un-ordenador-sin-windows-o-con-gnu-linux/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/linux.svg" width="326" height="125" alt="¿Donde comprar un ordenador sin Windows o con GNU/Linux?" title="¿Donde comprar un ordenador sin Windows o con GNU/Linux?"  class=""></amp-img>
+                <h3>¿Donde comprar un ordenador sin Windows o con GNU/Linux?</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row related">
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2019/05/de-un-movil-samsung-galaxy-s3-a-un-samsung-galaxy-s6/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/samsung.svg" width="326" height="125" alt="De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6" title="De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6"  class=""></amp-img>
+                <h3>De un móvil Samsung Galaxy S3 a un Samsung Galaxy S6</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/11/desempaquetado-intel-nuc-nuc8i5bek-bean-canyon-hyperx-impact-ram-y-samsung-970-evo-nvme-ssd/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/intel.svg" width="326" height="125" alt="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)" title="Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)"  class=""></amp-img>
+                <h3>Desempaquetado Intel NUC8i5BEK (Bean Canyon), HyperX Impact (RAM) y Samsung 970 EVO NVMe (SSD)</h3>
+                </a>
+                
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-12 col-sm-4">
+            <div class="related-article">
+                
+                <a href="/blog-bitix/2018/10/desempaquetado-y-analisis-de-monitor-benq-pd2700q-2k-qhd-ips-27-pulgadas/index-amp.html">
+                <amp-img src="/blog-bitix/assets/images/logotypes/benq.svg" width="326" height="125" alt="Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas" title="Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas"  class=""></amp-img>
+                <h3>Desempaquetado y análisis de monitor BenQ PD2700Q, 2K/QHD, IPS, 27 pulgadas</h3>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+    
+
+        <div class="row">
+          <div class="col-12 adblock-container-billboard">
+            <span id="pageBottom"></span>
+            <div class="adsense adsense-billboard">
+    <amp-ad
+        media="(max-width: 374px)"
+        width="375"
+        height="280"
+        layout="responsive"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 375px) and (max-width: 769px)"
+        width="336"
+        height="280"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 770px) and (max-width: 1024px)"
+        width="728"
+        height="90"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+    <amp-ad
+        media="(min-width: 1025px)"
+        width="970"
+        height="250"
+        layout="fixed"
+        type="adsense"
+        data-ad-client="ca-pub-3533636310991304"
+        data-ad-slot="4052324337"
+        data-auto-format="auto"
+        data-full-width="">
+        <div overflow=""></div>
+    </amp-ad>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <p><strong>Blog Bitix</strong></p>
+      <p>Blog sobre al lenguaje de programación Java y la distribución GNU/Linux que uso habitualmente, Arch Linux, lo que aprendo sobre el software libre, la programación web y otros temas relacionados con la tecnología y la informática. El contenido puede contener trazas de asuntos fuera de tema.</p>
+      <p>Publicando de uno a tres artículos únicos a la semana desde el año 2010.</p>
+    </div>
+    <div class="col-12 col-sm-4 text-center menu">
+      <ul class="list-unstyled">
+        <li><a href="/blog-bitix/tags/java/index-amp.html">Java</a></li>
+        <li><a href="/blog-bitix/tags/gnu-linux/index-amp.html">GNU/Linux</a></li>
+        <li><a href="/blog-bitix/tags/javascript/index-amp.html">JavaScript</a></li>
+        <li><a href="/blog-bitix/tags/tapestry/index-amp.html">Tapestry</a></li>
+        <li><a href="/blog-bitix/archive/index-amp.html">Archivo y hemeroteca</a></li>
+        <li><a href="/blog-bitix/pages/links/index-amp.html">Enlaces</a></li>
+        <li><a href="/blog-bitix/pages/advertising/index-amp.html">Publicidad</a></li>
+        <li><a href="/blog-bitix/pages/donate/index-amp.html">Donaciones</a></li>
+        <li><a href="/blog-bitix/pages/about/index-amp.html">Acerca de...</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-12 col-sm-4 text-center links">
+      
+        <a href="https://picodotdev.github.io/blog-bitix/index.xml" title="¡Suscríbete a Blog Bitix!"><amp-img src="/blog-bitix/assets/images/rss.svg" width="50" height="50" class="icon" alt="rss"></amp-img></a>
+      
+      
+        <a href="https://twitter.com/picodotdev/" title="¡Sígueme en twitter!"><amp-img src="/blog-bitix/assets/images/twitter.svg" width="50" height="50" class="icon" alt="twitter"></amp-img></a>
+      
+      
+      
+        <a href="https://github.com/picodotdev/blog-ejemplos/" title="¡Obtén el código fuente de los ejemplos!"><amp-img src="/blog-bitix/assets/images/github.svg" width="50" height="50" class="icon" alt="github"></amp-img></a>
+      
+      
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Copyleft <span class="copyleft">&copy;</span> 2021 - <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="nofollow"><amp-img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png" width="80" height="15" alt="Creative Commons License" title="Creative Commons License"></amp-img></a><br />
+      <a href="https://www.planetacodigo.com/" rel="nofollow"><amp-img src="/blog-bitix/assets/images/planeta-codigo.png" width="80" height="15" alt="Planeta código" title="Planeta código"></amp-img></a>
+      <br/>
+      <a href="https://picodotdev.github.io/blog-bitix/" rel="nofollow">Blog Bitix</a> by <a href="https://picodotdev.github.io/blog-bitix/">pico.dev</a> is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Reconocimiento-CompartirIgual 4.0 Internacional License</a>.
+      <br/>
+      <span class="credit">Powered by <a href="https://gohugo.io/" rel="nofollow" title="A fast and modern static website engine">Hugo</a> and <a href="https://pages.github.com/" title="Websites for you and your projects">GitHub Pages</a>.</span>
+      <span class="credit">Background patterns from <a href="https://www.toptal.com/designers/subtlepatterns/" rel="nofollow">Subtle Patterns</a>.</span>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <amp-analytics type="gtag" data-credentials="include">
+<script type="application/json">
+{
+    "vars" : {
+        "gtag_id": "UA-12874075-4",
+        "config" : {
+            "UA-12874075-4": { "groups": "default" }
+        }
+    }
+}
+</script>
+</amp-analytics>  
+  
+</body>
+</html>
