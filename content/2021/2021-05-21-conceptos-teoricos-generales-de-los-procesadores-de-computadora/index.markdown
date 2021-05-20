@@ -9,6 +9,7 @@ rss: true
 sharing: true
 comments: true
 promoted: false
+imageHead: "image:processors-cpugalaxy.jpg"
 imagePost: "image:intel-pentium.jpg"
 tags: ["hardware", "planeta-codigo"]
 summary: "Los procesadores es uno de los principales circuitos integrados que posee toda computadora. Es el encargado de ejecutar el código de los programas y gobierna el resto de componentes. A pesar de su pequeño tamaño son elementos con gran complejidad, para aumentar su rendimiento se aplican diferentes técnicas que los procesadores han incorporando de forma paulatina. Al hablar de procesadores hay varios conceptos que es necesario comprender."
