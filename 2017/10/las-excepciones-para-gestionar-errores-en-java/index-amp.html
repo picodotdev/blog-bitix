@@ -65,7 +65,7 @@
     "dateModified": "2017-10-15T11:30:00+02:00",
     "inLanguage": "es",
     
-    "wordCount": "1478",
+    "wordCount": "1480",
     "license": "https://creativecommons.org/licenses/by-sa/4.0/",
     "author": {
         "@type": "Person",
@@ -281,11 +281,11 @@
 <p>Las excepciones que heredan de <em>Exception</em> se denominan <em>checked exceptions</em>, han declararse en los métodos siendo de obligada captura o relanzado para su tratamiento en el método que invoca al que lanza la excepción. Estas son los tipos de excepciones que normalmente crea un programa para gestionar sus propias excepciones. Para crear una nueva excepción basta con crear una nueva clase que extienda de <em>Exception</em>, para lanzar una excepción hay que crear una instancia de la clase y lanzarla con la palabra reservada <em>throws</em>, en la firma del método ha de declararse que puede lanzar una excepción con la palabra reservada <em>throws</em>.</p>
 <p>Las excepciones que heredan de <em>RuntimeException</em> también se les conoce como <em>unchecked exception</em>, no necesitan declararse en los métodos para ser lanzadas, son empleadas para advertir de errores de programación como dividir por cero produciendo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ArithmeticException.html">ArithmeticException</a>, desreferenciar un puntero nulo produciendo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a> o acceder a una posición inválida de un <em>array</em> produciendo <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBoundsException</a>.</p>
 <p>Las excepciones que heredan de <em>Error</em> son empleadas para casos en los que se han agotado recursos del sistema como la memoria o condiciones de error en el sistema que generalmente impiden el correcto funcionamiento del programa y de difícil tratamiento salvo terminar la ejecución.</p>
-<h3 id="excepciones-comunes-de-java">Excepciones comunes de Java</h3>
+<h3 id="las-excepciones-más-comunes-de-java">Las excepciones más comunes de Java</h3>
 <p>En la colección de clases de la API de Java se incluyen muchas excepciones, en la documentación Javadoc como en el resto de clases incluyen una descripción con la condición de error que indican. Algunas de las excepciones más comunes de Java son:</p>
 <ul>
-<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>: se lanza al acceder a una posición ilegal de un <em>array</em> al ser el índice negativo, mayor o igual que el tamaño del <em>array</em>.</li>
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/NullPointerException.html">NullPointerException</a>: se lanza cuando se intenta usar una referencia nula en el uso de un objeto. Es una de las excepciones más comunes y es debido a un error en la programación del programa.</li>
+<li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ArrayIndexOutOfBoundsException.html">ArrayIndexOutOfBounds</a>: se lanza al acceder a una posición ilegal de un <em>array</em> al ser el índice negativo, mayor o igual que el tamaño del <em>array</em>.</li>
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/ClassCastException.html">ClassCastException</a>: se lanza cuando se hace una operación de <em>cast</em> a un tipo de objeto de la que no es una instancia.</li>
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/IllegalArgumentException.html">IllegalArgumentException</a>: se lanza para indicar que el valor de un argumento es inválido, se suele utilizar para comprobar una precondición al inicio del método.</li>
 <li><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html">IOException</a>: indica algún tipo de error en una operación de entrada/salida. El error de entrada/salida es posible al trabajar con archivos o con operaciones de red.</li>
