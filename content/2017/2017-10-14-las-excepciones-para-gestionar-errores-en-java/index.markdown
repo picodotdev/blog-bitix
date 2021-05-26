@@ -38,12 +38,12 @@ Las excepciones que heredan de _RuntimeException_ también se les conoce como _u
 
 Las excepciones que heredan de _Error_ son empleadas para casos en los que se han agotado recursos del sistema como la memoria o condiciones de error en el sistema que generalmente impiden el correcto funcionamiento del programa y de difícil tratamiento salvo terminar la ejecución.
 
-### Excepciones comunes de Java
+### Las excepciones más comunes de Java
 
 En la colección de clases de la API de Java se incluyen muchas excepciones, en la documentación Javadoc como en el resto de clases incluyen una descripción con la condición de error que indican. Algunas de las excepciones más comunes de Java son:
 
-* [ArrayIndexOutOfBounds](javadoc11:java.base/java/lang/ArrayIndexOutOfBoundsException.html): se lanza al acceder a una posición ilegal de un _array_ al ser el índice negativo, mayor o igual que el tamaño del _array_.
 * [NullPointerException](javadoc11:java.base/java/lang/NullPointerException.html): se lanza cuando se intenta usar una referencia nula en el uso de un objeto. Es una de las excepciones más comunes y es debido a un error en la programación del programa.
+* [ArrayIndexOutOfBounds](javadoc11:java.base/java/lang/ArrayIndexOutOfBoundsException.html): se lanza al acceder a una posición ilegal de un _array_ al ser el índice negativo, mayor o igual que el tamaño del _array_.
 * [ClassCastException](javadoc11:java.base/java/lang/ClassCastException.html): se lanza cuando se hace una operación de _cast_ a un tipo de objeto de la que no es una instancia.
 * [IllegalArgumentException](javadoc11:java.base/java/lang/IllegalArgumentException.html): se lanza para indicar que el valor de un argumento es inválido, se suele utilizar para comprobar una precondición al inicio del método.
 * [IOException](javadoc11:java.base/java/io/IOException.html): indica algún tipo de error en una operación de entrada/salida. El error de entrada/salida es posible al trabajar con archivos o con operaciones de red.
