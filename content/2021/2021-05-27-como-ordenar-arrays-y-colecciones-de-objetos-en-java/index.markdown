@@ -25,7 +25,7 @@ Hay varios [algoritmos de ordenación](https://es.wikipedia.org/wiki/Algoritmo_d
 El usar colecciones ordenadas por un orden es una funcionalidad común al implementar programas lo único que es necesario es utilizar la colección adecuada y únicamente crear una clase que implemente la interfaz [Comparator](javadoc11:java.base/java/util/Comparator.html) que determina el orden entre dos elementos, aplicando la comparación a los elementos de la colección con el algoritmo de ordenación ser ordena la colección.
 
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:bubble-sort.gif" optionsthumb1="300x200" title1="Algoritmo de ordenación bubble-sort"
     image2="image:merge-sort.gif" optionsthumb2="300x200" title2="Algoritmo de ordenación merge-sort"
     caption="Algoritmo de ordenación bubble-sort y merge-sort" >}}
