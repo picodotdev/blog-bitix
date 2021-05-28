@@ -30,6 +30,7 @@ body {
 
 a {
   color: @link;
+  text-decoration: none;
 }
 
 a:visited {
@@ -38,6 +39,7 @@ a:visited {
 
 a:hover {
   color: darken(@link, 5);
+  text-decoration: underline;
 }
 
 a:active {
@@ -52,12 +54,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-  border-top: 3px dotted #ccc;
+  background-color: white;
+  border-top: 3px dotted #000;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 60%;
-
-  &.separator {
-    border-top: 0px dotted #ccc;
-  }
 }
 
 abbr[title] {
@@ -113,6 +115,12 @@ div.blueimp-gallery img.slide-content {
   background-color: white;
 }
 
+div.menu {
+  ul li {
+    margin-bottom: 3px;
+  }
+}
+
 header {
   text-align: center;
   margin-bottom: 10px;
@@ -131,13 +139,18 @@ header {
     margin-top: 10px;
   }
 
+  nav.nav-pills a {
+    color: @link;
+  }
+
   nav.nav-pills a:hover {
+    color: @link;
     background-color: lighten(@link, 50);
   }
 
   nav.nav-pills a.active, nav.nav-pills a.active:hover {
-    background-color: @link;
     color: @background;
+    background-color: @link;
   }
 
   form.search {

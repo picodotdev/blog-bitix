@@ -61,10 +61,10 @@ Este es una plantilla que utilizo para generar de forma estática el contenido d
 Con simplemente esta mejora, que no es complicada de realizar, añadiendo el código anterior y realizando los sencillos cambios en los atributos de imágenes e _iframes_ las métricas en la comparación con página anterior mejoran notablemente pasando apróximadamente de 15 segundos a menos de 4 en un tiempo de carga hasta que el navegador dejan de hacer peticiones.
 
 <table class="table">
-    <thead class="thead-light">
+    <thead class="table-light">
         <tr>
-            <th class="thead-light" width="140px">Página</th>
-            <th class="thead-light" width="140px">Prueba</th>
+            <th width="140px">Página</th>
+            <th width="140px">Prueba</th>
             <th>Antes</th>
             <th>Después</th>
         </tr>

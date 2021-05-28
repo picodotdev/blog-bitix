@@ -27,7 +27,7 @@ Para complementar la cobertura de código y obtener una medida de la precisión 
 [PIT][pit] es una librería que permite realizar _mutation testing_ en Java. Las [operaciones de mutación](https://pitest.org/quickstart/mutators/) que realiza en el código pueden ser en los condicionales, incrementos, invertir negativos, matemáticas, negar condicionales, cambiar los valores de retorno o eliminar llamadas a métodos sin retorno. Un ejemplo de mutaciones son realizar mutaciones en los límites de comparaciones, cambiando un _<_ por un _<=_ y comprobar si con operador mutado la mutación sobrevive pasando todos los teses.
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
        <tr class="thead-light">
            <th>Original</th>
            <th>Mutación</th>

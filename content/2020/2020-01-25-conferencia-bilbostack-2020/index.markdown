@@ -58,8 +58,8 @@ Dado que los _tracks_ son simultáneos y las charlas no se graban hay que elegir
     caption="BilboStack hashtag" >}}
 
 <table class="table">
-   <thead class="thead-light">
-       <th class="thead-light" width="140px">Hora</th>
+   <thead class="table-light">
+       <th width="140px">Hora</th>
        <th>Sala OE</th>
    </thead>
    <tbody>
@@ -95,8 +95,8 @@ Dado que los _tracks_ son simultáneos y las charlas no se graban hay que elegir
 </table>
 
 <table class="table">
-   <thead class="thead-light">
-       <th class="thead-light" width="140px">Hora</th>
+   <thead class="table-light">
+       <th width="140px">Hora</th>
        <th>Sala OD</th>
    </thead>
    <tbody>

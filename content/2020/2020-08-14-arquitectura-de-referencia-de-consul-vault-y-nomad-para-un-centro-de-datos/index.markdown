@@ -148,15 +148,15 @@ Dependiendo del tamaño de las máquinas de cómputo elegidas para cada instanci
 Es difícil calcular el coste exacto de un centro de datos ya que tendrá una mezcla de diferentes tipos de instancias, instancias reservadas y bajo demanda aprovechando la elasticidad de la computación en la nube, también hay que tener en cuanta que una organización necesitará entornos de pruebas aún siendo de menor tamaño y número que el de producción. El mayor coste lo determina el número de nodos de Nomad, para 50 nodos estarán sobre los $20K y para 1000 los $400K anuales teniendo en cuenta que una empresa que necesita esas cantidades de nodos ya son muy grandes seguramente sean del tamaño multinacionales con facturaciones de varios cientos o miles de millones.
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="4">Coste anual por instancia reservada durante 3 años (aproximado)</th>
+       <th colspan="4">Coste anual por instancia reservada durante 3 años (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo instancia</th>
-       <th class="thead-light" width="100px">Cores</th>
-       <th class="thead-light" width="100px">Memoria (GiB)</th>
-       <th class="thead-light" width="200px">Precio/año (reserva 3 años)</th>
+       <th width="100px">Tipo instancia</th>
+       <th width="100px">Cores</th>
+       <th width="100px">Memoria (GiB)</th>
+       <th width="200px">Precio/año (reserva 3 años)</th>
      </tr>
    </thead>
    <tbody>
@@ -182,14 +182,14 @@ Es difícil calcular el coste exacto de un centro de datos ya que tendrá una me
 </table>
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="4">Coste anual del clúster de servidores Consul, Nomad y Vault con diferente número de instancias (aproximado)</th>
+       <th colspan="4">Coste anual del clúster de servidores Consul, Nomad y Vault con diferente número de instancias (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo</th>
-       <th class="thead-light" width="100px">Número de instancias</th>
-       <th class="thead-light" width="200px">Precio/año (reserva 3 años)</th>
+       <th width="100px">Tipo</th>
+       <th width="100px">Número de instancias</th>
+       <th width="200px">Precio/año (reserva 3 años)</th>
      </tr>
    </thead>
    <tbody>
@@ -212,17 +212,17 @@ Es difícil calcular el coste exacto de un centro de datos ya que tendrá una me
 </table>
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="7">Coste anual nodos Nomad con diferente número de instancias (aproximado)</th>
+       <th colspan="7">Coste anual nodos Nomad con diferente número de instancias (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo</th>
-       <th class="thead-light" width="100px">10</th>
-       <th class="thead-light" width="100px">50</th>
-       <th class="thead-light" width="100px">100</th>
-       <th class="thead-light" width="100px">300</th>
-       <th class="thead-light" width="100px">1000</th>
+       <th width="100px">Tipo</th>
+       <th width="100px">10</th>
+       <th width="100px">50</th>
+       <th width="100px">100</th>
+       <th width="100px">300</th>
+       <th width="100px">1000</th>
      </tr>
    </thead>
        <tr>

@@ -20,12 +20,14 @@ body {
 }
 a {
   color: #569d2f;
+  text-decoration: none;
 }
 a:visited {
   color: #7aca4e;
 }
 a:hover {
   color: #4b8929;
+  text-decoration: underline;
 }
 a:active {
   color: #569d2f;
@@ -42,11 +44,12 @@ h6 {
   clear: both;
 }
 hr {
-  border-top: 3px dotted #ccc;
+  background-color: white;
+  border-top: 3px dotted #000;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 60%;
-}
-hr.separator {
-  border-top: 0px dotted #ccc;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -91,6 +94,9 @@ div.blueimp-gallery div.modal {
 div.blueimp-gallery img.slide-content {
   background-color: white;
 }
+div.menu ul li {
+  margin-bottom: 3px;
+}
 header {
   text-align: center;
   margin-bottom: 10px;
@@ -109,13 +115,17 @@ header nav {
   font-weight: 700;
   margin-top: 10px;
 }
+header nav.nav-pills a {
+  color: #569d2f;
+}
 header nav.nav-pills a:hover {
+  color: #569d2f;
   background-color: #e2f3d8;
 }
 header nav.nav-pills a.active,
 header nav.nav-pills a.active:hover {
-  background-color: #569d2f;
   color: white;
+  background-color: #569d2f;
 }
 header form.search {
   margin-top: 20px;

@@ -312,7 +312,7 @@ Por otra parte al comparar el monitor entre usar una Mac Book Retina de 13" y el
 En cualquier caso no entraba dentro de mis planes un Mac mini ni aunque tuviese el mismo precio del NUC ya que prefiero GNU/Linux como detallo en [Tú con tu Mac, yo con mi GNU/Linux][blogbitix-305].
 
 <table class="table">
-    <thead class="thead-light">
+    <thead class="table-light">
         <tr class="thead-light">
             <th>Componente</th>
             <th>Apple Mac mini</th>

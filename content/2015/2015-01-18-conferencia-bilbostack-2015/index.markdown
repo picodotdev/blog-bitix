@@ -26,8 +26,8 @@ Un año más una de las primeras conferencias del año se ha celebrado en Bilbao
 Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minutos en dos tracks simultáneos en horario únicamente de mañana y durante un día, siendo la agenda de este 2015 la siguiente:
 
 <table class="table">
-    <thead class="thead-light">
-        <th class="thead-light" width="140px">Hora</th>
+    <thead class="table-light">
+        <th width="140px">Hora</th>
 		<th>Track 1</th>
 	</thead>
 	<tbody>
@@ -55,8 +55,8 @@ Hasta el momento el formato de la conferencia ha sido presentaciones de 45 minut
 </table>
 
 <table class="table">
-    <thead class="thead-light">
-        <th class="thead-light" width="140px">Hora</th>
+    <thead class="table-light">
+        <th width="140px">Hora</th>
 		<th>Track 2</th>
 	</thead>
 	<tbody>

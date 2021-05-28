@@ -58,8 +58,8 @@ En [Bizkaia en el 2019 estos son los tramos y tipos por los que se tributa por I
 Nótese que una persona que ingresa 16K tributa al 23% en ese primer tramo exactamente igual que alguien que ingresa 200K. Solo los que alcanzan los tramos superiores tiene un tipo impositivo mayor para esos tramos, en esto se basa la progresividad de los impuestos en que paguen más los que tienen la suerte de tener mayores ingresos.
 
 <table class="table">
-    <thead class="thead-light">
-        <th class="thead-light">Renta (€)</th>
+    <thead class="table-light">
+        <th >Renta (€)</th>
         <th>Tipo impositivo (%)</th>
     </thead>
     <tbody>

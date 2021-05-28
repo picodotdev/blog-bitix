@@ -28,7 +28,7 @@ El formato de las expresiones _cron_ se compone de varios campos separados por u
 Según el campo hay varios valores posibles. En los valores numéricos de _day-of-week_ los días empiezan por domingo, el valor 1 es domingo, el lunes es 2 y el 7 es el sábado.
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
        <th>Campo</th>
        <th>Requerido</th>
        <th>Valores permitidos</th>
@@ -100,7 +100,7 @@ Las expresiones _cron_ complejas son dífíciles de crear, para asegurar que la 
 Algunos ejemplos de expresiones con su explicación son los siguientes.
 
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
        <th width="300px">Expresión cron</th>
        <th>Explicación</th>
    </thead>

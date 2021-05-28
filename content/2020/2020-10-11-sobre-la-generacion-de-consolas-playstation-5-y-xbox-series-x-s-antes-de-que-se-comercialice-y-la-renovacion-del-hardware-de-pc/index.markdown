@@ -75,8 +75,8 @@ Las características del hardware son las siguientes:
 
 <table class="table">
     <caption>Especificaciones técnicas del hardware de PlayStation 5</caption>
-    <thead class="thead-light">
-        <th class="thead-light" colspan="2">PlayStation 5</th>
+    <thead class="table-light">
+        <th colspan="2">PlayStation 5</th>
 	</thead>
     <tbody>
         <tr>
@@ -241,8 +241,8 @@ Las características del hardware son las siguientes:
 
 <table class="table">
     <caption>Especificaciones técnicas del hardware de Xbox Series X</caption>
-    <thead class="thead-light">
-        <th class="thead-light" colspan="2">Xbox Series X</th>
+    <thead class="table-light">
+        <th colspan="2">Xbox Series X</th>
 	</thead>
     <tbody>
         <tr>
@@ -360,8 +360,8 @@ Las características del hardware son las siguientes:
 
 <table class="table">
     <caption>Especificaciones técnicas del hardware de Xbox Series S</caption>
-    <thead class="thead-light">
-        <th class="thead-light" colspan="2">Xbox Series S</th>
+    <thead class="table-light">
+        <th colspan="2">Xbox Series S</th>
 	</thead>
     <tbody>
         <tr>

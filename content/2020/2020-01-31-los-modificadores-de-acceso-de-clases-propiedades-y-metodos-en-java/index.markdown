@@ -36,8 +36,8 @@ Los modificadores de acceso son una palabra reservada del lenguaje y se colocan 
 Los ámbitos de visibilidad según el modificador de acceso y el origen de acceso a la propiedad o método son los siguientes.
 
 <table class="table">
-   <thead class="thead-light">
-       <th class="thead-light" width="250px">Modificador de acceso</th>
+   <thead class="table-light">
+       <th width="250px">Modificador de acceso</th>
        <th>Misma clase o anidada</th>
        <th>Clase en el mismo paquete</th>
        <th>Clase que hereda en otro paquete</th>

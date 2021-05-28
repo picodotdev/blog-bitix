@@ -47,8 +47,8 @@ La agenda comienza a las 9:00 de la mañana del sábado con una presentación y 
 {{< youtube video="6qQIs8q2Q9s" >}}
 
 <table class="table">
-    <thead class="thead-light">
-        <th class="thead-light" width="140px">Hora</th>
+    <thead class="table-light">
+        <th width="140px">Hora</th>
         <th>Sala Barria</th>
     </thead>
     <tbody>
@@ -84,8 +84,8 @@ La agenda comienza a las 9:00 de la mañana del sábado con una presentación y 
 </table>
 
 <table class="table">
-    <thead class="thead-light">
-        <th class="thead-light" width="140px">Hora</th>
+    <thead class="table-light">
+        <th width="140px">Hora</th>
         <th>Sala A3</th>
     </thead>
     <tbody>
