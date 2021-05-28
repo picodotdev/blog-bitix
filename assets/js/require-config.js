@@ -1,8 +1,8 @@
 var require = {
     paths: {
-        'jquery': '../libs/jquery-3.5.1.min',
-        'bootstrap': '../libs/bootstrap-4.5.3-dist/js/bootstrap.min',
-        'bowser': '../libs/bowser-2.8.1',
+        'jquery': '../libs/jquery-3.6.0.min',
+        'bootstrap': '../libs/bootstrap-5.0.1-dist/js/bootstrap.min',
+        'bowser': '../libs/bowser-2.10.0-es5',
         'lozad': '../libs/lozad-1.16.0.min',
         'blueimp-helper': '../libs/Gallery-3.3.0/js/blueimp-helper',
         'blueimp-gallery': '../libs/Gallery-3.3.0/js/blueimp-gallery',

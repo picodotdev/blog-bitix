@@ -103,11 +103,11 @@
   </script>
 
   <!-- css -->
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-4.5.3-dist/css/bootstrap.min.css" as="style">
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.2.2/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
   <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.5.3-dist/css/bootstrap.min.css" media="all">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.2.2/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
   <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
   <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
@@ -277,7 +277,7 @@
 <p>Para complementar la cobertura de código y obtener una medida de la precisión y completitud de los teses se emplea <em>mutation testing</em>. Esta forma de pruebas analiza el código, realiza operaciones de mutación en el código y posteriormente ejecuta las pruebas contra el código mutado y genera un resultado en el que indica cuáles de las mutaciones realizadas ha sobrevivido pasando todos los teses o cuantas mutaciones han muerto porque los teses han fallado, si alguna mutación sobrevive los teses no son precisos y completos al cien por cien.</p>
 <p><a href="https://pitest.org/">PIT</a> es una librería que permite realizar <em>mutation testing</em> en Java. Las <a href="https://pitest.org/quickstart/mutators/">operaciones de mutación</a> que realiza en el código pueden ser en los condicionales, incrementos, invertir negativos, matemáticas, negar condicionales, cambiar los valores de retorno o eliminar llamadas a métodos sin retorno. Un ejemplo de mutaciones son realizar mutaciones en los límites de comparaciones, cambiando un <em>&lt;</em> por un <em>&lt;=</em> y comprobar si con operador mutado la mutación sobrevive pasando todos los teses.</p>
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
        <tr class="thead-light">
            <th>Original</th>
            <th>Mutación</th>
@@ -388,6 +388,9 @@
 
     
   </article>
+        <div>
+          <hr>
+        </div>
         
 
         

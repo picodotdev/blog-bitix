@@ -103,11 +103,11 @@
   </script>
 
   <!-- css -->
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-4.5.3-dist/css/bootstrap.min.css" as="style">
-  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.2.2/font/bootstrap-icons.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" as="style">
   <link rel="preload" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" as="style">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-4.5.3-dist/css/bootstrap.min.css" media="all">
-  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.2.2/font/bootstrap-icons.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-5.0.1-dist/css/bootstrap.min.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/bootstrap-icons-1.5.0/bootstrap-icons.css" media="all">
   <link rel="stylesheet" type="text/css" href="/blog-bitix/assets/libs/Gallery-3.3.0/css/blueimp-gallery.min.css" media="all">
   <!-- theme -->
   <link rel="preload" href="/blog-bitix/assets/css/syntax.css" as="style">
@@ -430,15 +430,15 @@
 <p>Dependiendo del tamaño de las máquinas de cómputo elegidas para cada instancia el coste de la infraestructura varia. En AWS una instancia <em>t3a.medium</em>, <em>t3a.large</em> y <em>t3a.xlarge</em> con 4, 8 y 16 GiB tienen un coste aproximado de $125, $250 y $400 al año si se paga por adelantado una reserva de 3 años. Multiplicado esto por el número de instancias el coste no es despreciable pero asequible para una empresa que llega a necesitar 100 instancias para sus servicios. La ventaja de la computación en la nube y estas herramientas de HashiCorp es que permiten adaptar el entorno del centro de datos a las necesidades suficientes para cada momento, si se necesitan más máquinas e instancias se añaden si dejan de necesitar se eliminan, esta la elasticidad ofrecida por la computación en la nube que los costes sean únicamente los necesarios.</p>
 <p>Es difícil calcular el coste exacto de un centro de datos ya que tendrá una mezcla de diferentes tipos de instancias, instancias reservadas y bajo demanda aprovechando la elasticidad de la computación en la nube, también hay que tener en cuanta que una organización necesitará entornos de pruebas aún siendo de menor tamaño y número que el de producción. El mayor coste lo determina el número de nodos de Nomad, para 50 nodos estarán sobre los $20K y para 1000 los $400K anuales teniendo en cuenta que una empresa que necesita esas cantidades de nodos ya son muy grandes seguramente sean del tamaño multinacionales con facturaciones de varios cientos o miles de millones.</p>
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="4">Coste anual por instancia reservada durante 3 años (aproximado)</th>
+       <th colspan="4">Coste anual por instancia reservada durante 3 años (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo instancia</th>
-       <th class="thead-light" width="100px">Cores</th>
-       <th class="thead-light" width="100px">Memoria (GiB)</th>
-       <th class="thead-light" width="200px">Precio/año (reserva 3 años)</th>
+       <th width="100px">Tipo instancia</th>
+       <th width="100px">Cores</th>
+       <th width="100px">Memoria (GiB)</th>
+       <th width="200px">Precio/año (reserva 3 años)</th>
      </tr>
    </thead>
    <tbody>
@@ -463,14 +463,14 @@
    </tbody>
 </table>
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="4">Coste anual del clúster de servidores Consul, Nomad y Vault con diferente número de instancias (aproximado)</th>
+       <th colspan="4">Coste anual del clúster de servidores Consul, Nomad y Vault con diferente número de instancias (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo</th>
-       <th class="thead-light" width="100px">Número de instancias</th>
-       <th class="thead-light" width="200px">Precio/año (reserva 3 años)</th>
+       <th width="100px">Tipo</th>
+       <th width="100px">Número de instancias</th>
+       <th width="200px">Precio/año (reserva 3 años)</th>
      </tr>
    </thead>
    <tbody>
@@ -492,17 +492,17 @@
    </tbody>
 </table>
 <table class="table">
-   <thead class="thead-light">
+   <thead class="table-light">
      <tr>
-       <th class="thead-light" colspan="7">Coste anual nodos Nomad con diferente número de instancias (aproximado)</th>
+       <th colspan="7">Coste anual nodos Nomad con diferente número de instancias (aproximado)</th>
      </tr>
      <tr>
-       <th class="thead-light" width="100px">Tipo</th>
-       <th class="thead-light" width="100px">10</th>
-       <th class="thead-light" width="100px">50</th>
-       <th class="thead-light" width="100px">100</th>
-       <th class="thead-light" width="100px">300</th>
-       <th class="thead-light" width="100px">1000</th>
+       <th width="100px">Tipo</th>
+       <th width="100px">10</th>
+       <th width="100px">50</th>
+       <th width="100px">100</th>
+       <th width="100px">300</th>
+       <th width="100px">1000</th>
      </tr>
    </thead>
        <tr>
@@ -752,6 +752,9 @@
 
     
   </article>
+        <div>
+          <hr>
+        </div>
         
   <div class="row serie">
     <div class="col-md-12">
