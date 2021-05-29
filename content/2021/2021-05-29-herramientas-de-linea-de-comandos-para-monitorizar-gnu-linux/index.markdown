@@ -79,7 +79,7 @@ El comando _ps_ permite obtener información del estado de los procesos del sist
 
 #### bpytop
 
-_bpytop_ es una herramienta similar a _top_ y _htop_ que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.
+[bpytop][bpytop] es una herramienta similar a _top_ y _htop_ que muestra información del sistema en tiempo real pero incluyendo también tráfico de red y almacenamiento además del procesador, memoria, procesos. Algunas estadísticas las muestra en formato gráfica utilizando texto para ver más rápidamente el porcentaje de utilización del recurso.
 
 Con la tecla _M_ se accede al menu del programa donde configurar los diferentes paneles de información que muestra el programa.
 
