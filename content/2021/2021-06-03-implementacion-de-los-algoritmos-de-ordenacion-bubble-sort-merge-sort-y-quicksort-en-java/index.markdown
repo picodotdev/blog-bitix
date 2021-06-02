@@ -18,7 +18,6 @@ summary: "Hay una buena cantidad de algoritmos de ordenación conocidos, entre l
 
 {{< logotype image1="java.svg" >}}
 
-> Ver ejemplo a.groovy
 > Relacionar con artículo ordenar arrays y colecciones en Java
 
 Por norma general no es necesario implementar ningún algoritmo de ordenación, estos ya están implementados en las bibliotecas y en el caso de Java en las clases de su JDK. Lo único que es necesario implementar es una clase que implemente la interfaz [Comparable](javadoc11:java.base/java/lang/Comparable.html) o [Comparator](javadoc11:java.base/java/util/Comparator.html), esto es suficiente para [ordenar arrays y colecciones de objetos en Java].
