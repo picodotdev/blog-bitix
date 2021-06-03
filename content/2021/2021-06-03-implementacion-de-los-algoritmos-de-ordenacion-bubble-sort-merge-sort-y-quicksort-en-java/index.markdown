@@ -1,7 +1,7 @@
 ---
 pid: 579
 type: "post"
-title: "Implementación de los algoritmos de ordenación bubble-sort, merge-sort y quicksort en Java"
+title: "Implementación de los algoritmos de ordenación bubble sort, merge sort y quicksort en Java"
 url: "/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/"
 date: 2021-06-03T19:30:00+02:00
 language: "es"
@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
-summary: "Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el _buble sort_, el _merge sort_ y el _quicksort_. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases del JDK ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación."
+summary: "Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el _bubble sort_, el _merge sort_ y el _quicksort_. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases del JDK ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación."
 ---
 
 {{% post %}}
