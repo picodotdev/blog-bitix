@@ -20,4 +20,8 @@ public class Main {
     }
 
     ...
+
+    public static List<Integer> randomList(int elements) {
+        return new Random().ints(elements, 0, 100).boxed().collect(Collectors.toList());
+    }
 }

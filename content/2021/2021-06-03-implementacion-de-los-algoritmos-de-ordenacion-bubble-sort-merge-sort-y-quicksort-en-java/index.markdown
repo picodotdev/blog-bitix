@@ -3,7 +3,7 @@ pid: 579
 type: "post"
 title: "Implementación de los algoritmos de ordenación bubble-sort, merge-sort y quicksort en Java"
 url: "/2021/06/implementacion-de-los-algoritmos-de-ordenacion-bubble-sort-merge-sort-y-quicksort-en-java/"
-date: 2021-06-03T19:00:00+02:00
+date: 2021-06-03T19:30:00+02:00
 language: "es"
 rss: true
 sharing: true
@@ -11,7 +11,7 @@ comments: true
 promoted: false
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
-summary: "Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el _buble sort_, el _merge sort_ y el _quicksort_. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación."
+summary: "Hay una buena cantidad de algoritmos de ordenación conocidos, entre los más conocidos está el _buble sort_, el _merge sort_ y el _quicksort_. No es imprescindible conocerlos todos ni implementarlos ya que las librerías y clases del JDK ya los implementan. Sin embargo, son utilizados como ejemplo para implementar un algoritmo al empezar a programar en un lenguaje de programación."
 ---
 
 {{% post %}}
@@ -34,6 +34,8 @@ Teniendo en cuenta las propiedades de los algoritmos para colecciones pequeñas 
 
 Dado que el algoritmo de ordenación más adecuado puede depender de variables como el número de datos a ordenar o el número de procesadores del sistema muy posiblemente la implementación de una función de utilidad de ordenación las tenga en cuenta para emplear un algoritmo u otro en vez de siempre el mismo.
 
+Un algoritmo de ordenación se clasifica según las siguientes propiedades:
+
 * Complejidad computacional: es la complejidad del algoritmo medida según el número de operaciones que necesita realizar, se utiliza la [notación Big O][wikipedia-big-o].
 * Uso de memoria: es la cantidad de memoria que necesita el algoritmo para realizar la ordenación. Los algoritmos _in-place_ que realizan la ordenación en la misma colección solo necesitan una posición de memoria para realizar el intercambio.
 * Recursividad: algunos algoritmos son recursivos o no recursivos, mientras otros una parte es recursiva y otra no.  Este último caso es el de _merge sort_ que es una parte recursiva y otra no.
@@ -53,8 +55,21 @@ Este proceso se repite hasta llegar al último elemento de la colección, como r
 
 El proceso se repite de nuevo comenzando desde la primera posición  de la colección sin incluir la posición del elemento ya ordenado anteriormente, como resultado dará al siguiente elemento de mayor orden. Se repite esta ordenación tantas veces como elementos tenga la colección menos uno.
 
+Esta es una interfaz que define un método para ordenar una colección, se proporciona la colección y una clase _Comparator_.
+
 {{< code file="SortAlgorithm.java" language="java" options="" >}}
-{{< code file="Main.java" language="plaintext" options="" >}}
+
+El programa Java crea una colección de 25 elementos con un valor aleatorio entre 0 y 100, y los ordena con cada uno de los algoritmos.
+
+{{< code file="Main.java" language="java" options="" >}}
+
+Esta es la implementación del algoritmos de burbuja.
+
+{{< image
+    gallery="false"
+    image1="image:bubble-sort.gif" optionsthumb1="300x250" title1="Algoritmo bubble-sort"
+    caption="Algoritmo bubble-sort" >}}
+
 {{< code file="BubbleSort.java" language="java" options="" >}}
 
 ### Algoritmo de ordenación _merge sort_
@@ -65,6 +80,11 @@ Una vez divididas las listas en elementos individuales comienza la fase de _merg
 
 La fase de _merge_ termina cuando se tenga una única lista con los elementos ordenados.
 
+{{< image
+    gallery="false"
+    image1="image:merge-sort.gif" optionsthumb1="300x250" title1="Algoritmo merge-sort"
+    caption="Algoritmo merge-sort" >}}
+
 {{< code file="MergeSort.java" language="java" options="" >}}
 
 ### Algoritmo de ordenación _quicksort_
@@ -72,6 +92,11 @@ La fase de _merge_ termina cuando se tenga una única lista con los elementos or
 El [algoritmo _quicskort_](https://en.wikipedia.org/wiki/Quicksort)  selecciona un elemento como pivote de la colección. A continuación divide la colección en dos listas de elementos, los que tienen un valor inferior al valor de pivote y los que tiene un valor superior al valor de pivote.
 
 A continuación se aplica la ordenación a cada una de las listas de forma recursiva, hasta que las listas no ordenadas tengan menos de dos elementos.
+
+{{< image
+    gallery="false"
+    image1="image:quicksort.gif" optionsthumb1="300x250" title1="Algoritmo quicksort"
+    caption="Algoritmo quicksort" >}}
 
 {{< code file="QuickSort.java" language="java" options="" >}}
 {{< code file="System.out" language="plaintext" options="" >}}
