@@ -93,7 +93,7 @@ Estas son algunas capturas de pantalla con diferentes entornos de escritorio que
     image1="image:archlinux-root-password.png" optionsthumb1="300x200" title1="Solicitud de contraseña para descifrar partición root"
     caption="Solicitud de contraseña para descifrar partición root" >}}
 
-{{< asciinema id="192880" caption="Instalación de sistema base de Arch Linux con alis" >}}
+{{< asciinema id="418524" caption="Instalación de sistema base de Arch Linux con alis" >}}
 
 El código del instalador no es muy complicado y mucho más sencillo que el [código de AnarchyLinux](https://github.com/AnarchyLinux/installer) al no estar mezclado con los mensajes interactivos que hacen preguntas y esperan respuestas, además después de configurar las variables e iniciado el proceso de instalación la misma se realiza de forma desatendida hasta completarse sin requerir que el usuario introduzca más datos de forma interactiva. Los comandos que he recopilado de la receta son los que ejecutaríamos uno detrás de otro con únicamente el medio de instalación de Arch Linux. La función _main_ contiene los pasos en los que consiste la instalación, desde el particionado y cifrado del disco hasta el reinicio una vez completada la instalación, el resto de las funciones los comandos de ese paso de la instalación.
 

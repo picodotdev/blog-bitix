@@ -10,14 +10,14 @@ rss: true
 sharing: true
 comments: true
 promoted: true
-imagePost: "logotype:cloudingio.png"
+imagePost: "logotype:clouding.svg"
 tags: ["planeta-codigo", "patrocinado"]
 summary: "Al escribir este artículo patrocinado sobre Clouding.io he podido probar de primera mano el crear un servidor virtual basado en la computación en la nube. Después de probarlo me parece una opción sencilla y sin complicaciones, adecuada y más que suficiente para proyectos de presencia en internet, blogs, pequeños y medianos proyectos de páginas web. Además, con soporte en español en caso de necesitar algún tipo de asistencia o ayuda."
 ---
 
 {{% post %}}
 
-{{< logotype image1="cloudingio.png" title1="Clouding.io" width1="300" >}}
+{{< logotype image1="clouding.svg" >}}
 
 Toda página web, blog y servicio que está accesible en internet ha de ser hospedado en algún servidor. Por motivos de fiabilidad, también coste y flexibilidad se suele contratar un servicio de hospedaje de los muchos que hay en internet. Desde no hace tanto tiempo ha surgido una modalidad de hospedaje que permite mayor flexibilidad, la llamada [cloud computing][cloud-computing] o computación en la nube, cuya características diferenciadoras son permitir variar de forma elástica, aumentando o reduciendo, los recursos de computación utilizados ya sea de procesador, memoria, almacenamiento o transferencia de datos. Otra característica de la computación en la nube es que es inmediata (en cuestión de minutos) sin necesidad de trámites administrativos o tiempos de espera, los servicios de computación en la nube incluyen paneles de administración para los servidores accesibles a través de un navegador con aplicaciones sencillas o incluso interfaces basadas en linea de comandos de modo que es posible automatizar las tareas de sistemas con [DevOps][devops].
 

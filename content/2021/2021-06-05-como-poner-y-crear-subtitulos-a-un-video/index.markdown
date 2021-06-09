@@ -28,7 +28,7 @@ Para mostrar subtítulos en un vídeo o película es necesario el archivo de sub
 
 Los archivos de subtítulos se crean con aplicaciones editores de subtítulos con una interfaz gráfica adaptada para facilitar la creación de subtítulos, además de soportar múltiples formatos de archivos de subtítulos. Estas aplicaciones muestran el vídeo con la capacidad de reproducirlo a diferentes velocidades, cada uno de los subtítulos y permiten especificar en que tiempo exacto se muestran y se ocultan.
 
-Una aplicación editor de subtítulos en [GNU][gnu]/[Linux][linux] es [GNOME Subtitles][gnome-subtitles], en [Windows][windows] dos de las aplicaciones de software libre disponibles son [Subtitle Edit][subtitle-edit] y [Subtitle Workshop][subtitle-workshop].
+Una aplicación editor de subtítulos en [GNU][gnu]/[Linux][linux] es [GNOME Subtitles][gnome-subtitles] otra es [Gaupol][gaupol], en [Windows][windows] dos de las aplicaciones de software libre disponibles son [Subtitle Edit][subtitle-edit] y [Subtitle Workshop][subtitle-workshop].
 
 Estos editores muestran una previsualización del vídeo, un área para introducir el texto de los subtítulos y los tiempos en los que se muestran y ocultan. Además, tiene modos de traducción para crear subtítulos a partir de los archivos de subtítulos existentes de otros idiomas.
 

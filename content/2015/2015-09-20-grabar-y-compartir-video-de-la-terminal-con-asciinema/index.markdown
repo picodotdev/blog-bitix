@@ -44,7 +44,7 @@ En la [documentación de Asciinema](https://asciinema.org/docs) están las opcio
 
 Y este es el resultado de un vídeo en el que muestro un [Script para instalar Arch Linux fácil, rápido, desatendido, automatizado y personalizable][blogbitix-204].
 
-{{< asciinema id="192880" caption="Vídeo de ejemplo de Asciinema, Instalación de sistema base de Arch Linux con alis" >}}
+{{< asciinema id="418524" caption="Vídeo de ejemplo de Asciinema, Instalación de sistema base de Arch Linux con alis" >}}
 
 {{< reference >}}
 * [Asciinema][asciinema]
