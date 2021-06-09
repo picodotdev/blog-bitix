@@ -91,7 +91,7 @@ These are the commands to use alis and its configuration file with which to cust
 {{< code file="alis-install.sh" language="bash" options="" >}}
 {{< code file="alis.conf" language="bash" options="" >}}
 
-### Screenshots of different supported desktop environments
+### Screenshots of different supported desktop environments
 
 These are some screenshots with different desktop environments that I have tested with VirtualBox.
 
