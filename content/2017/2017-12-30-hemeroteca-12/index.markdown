@@ -86,7 +86,7 @@ O de opinión.
 
 * [La triste realidad de Java, versiones antiguas][blogbitix-266]
 * [Consejos para empresas y gente de recursos humanos que busquen talento][blogbitix-274]
-* [Microsoft does not care if you use Windows or Office without a license][blogbitix-285]
+* [Microsoft does not care if you use Windows or Office without a license][blogbitix-92-en]
 
 Algunos artículos de tema alternativos en la temática principal de este blog pero que también me gusta compartir, comentando el cambio que hice de compañía eléctrica a [Holaluz][holaluz], de caldera a termo eléctrico y la diferencia en la factura entre tener caldera y tener termo eléctrico. Un par de artículos de los robles que he plantado que espero prosperen, publicaré alguno más. También algún artículo de desempaquetado.
 

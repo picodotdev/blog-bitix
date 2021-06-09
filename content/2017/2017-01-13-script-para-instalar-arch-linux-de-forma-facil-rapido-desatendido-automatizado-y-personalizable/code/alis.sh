@@ -3,7 +3,7 @@ set -e
 
 # Arch Linux Install Script (alis) installs unattended, automated
 # and customized Arch Linux system.
-# Copyright (C) 2018 picodotdev
+# Copyright (C) 2021 picodotdev
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,7 +35,8 @@ set -e
 
 # Usage:
 # # loadkeys es
-# # curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash, or with URL shortener curl -sL https://bit.ly/2F3CATp | bash
+# # iwctl --passphrase "[WIFI_KEY]" station [WIFI_INTERFACE] connect "[WIFI_ESSID]"          # (Optional) Connect to WIFI network. _ip link show_ to know WIFI_INTERFACE.
+# # curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash, curl https://raw.githubusercontent.com/picodotdev/alis/master/download.sh | bash -s -- -u [github user], or with URL shortener curl -sL https://bit.ly/2F3CATp | bash
 # # vim alis.conf
 # # ./alis.sh
 
@@ -51,7 +52,7 @@ DEVICE_LVM=""
 LUKS_DEVICE_NAME="cryptroot"
 LVM_VOLUME_GROUP="vg"
 LVM_VOLUME_LOGICAL="root"
-SWAPFILE=""
+SWAPFILE="/swapfile"
 BOOT_DIRECTORY=""
 ESP_DIRECTORY=""
 #PARTITION_BOOT_NUMBER=0
@@ -78,12 +79,14 @@ LIGHT_BLUE='\033[1;34m'
 NC='\033[0m'
 
 function configuration_install() {
-    source alis.conf
+    source "$CONF_FILE"
 }
 
 function sanitize_variables() {
     DEVICE=$(sanitize_variable "$DEVICE")
     PARTITION_MODE=$(sanitize_variable "$PARTITION_MODE")
+    PARTITION_CUSTOM_PARTED_UEFI=$(sanitize_variable "$PARTITION_CUSTOM_PARTED_UEFI")
+    PARTITION_CUSTOM_PARTED_BIOS=$(sanitize_variable "$PARTITION_CUSTOM_PARTED_BIOS")
     PARTITION_CUSTOMMANUAL_BOOT=$(sanitize_variable "$PARTITION_CUSTOMMANUAL_BOOT")
     PARTITION_CUSTOMMANUAL_ROOT=$(sanitize_variable "$PARTITION_CUSTOMMANUAL_ROOT")
     FILE_SYSTEM_TYPE=$(sanitize_variable "$FILE_SYSTEM_TYPE")
@@ -92,12 +95,11 @@ function sanitize_variables() {
     KERNELS_COMPRESSION=$(sanitize_variable "$KERNELS_COMPRESSION")
     SYSTEMD_HOMED_STORAGE=$(sanitize_variable "$SYSTEMD_HOMED_STORAGE")
     BOOTLOADER=$(sanitize_variable "$BOOTLOADER")
+    CUSTOM_SHELL=$(sanitize_variable "$CUSTOM_SHELL")
     DESKTOP_ENVIRONMENT=$(sanitize_variable "$DESKTOP_ENVIRONMENT")
     DISPLAY_DRIVER=$(sanitize_variable "$DISPLAY_DRIVER")
     DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL=$(sanitize_variable "$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL")
-    PACKAGES_PACMAN=$(sanitize_variable "$PACKAGES_PACMAN")
-    AUR=$(sanitize_variable "$AUR")
-    PACKAGES_AUR=$(sanitize_variable "$PACKAGES_AUR")
+    SYSTEMD_UNITS=$(sanitize_variable "$SYSTEMD_UNITS")
 }
 
 function sanitize_variable() {
@@ -115,8 +117,8 @@ function check_variables() {
     check_variables_value "DEVICE" "$DEVICE"
     check_variables_boolean "DEVICE_TRIM" "$DEVICE_TRIM"
     check_variables_boolean "LVM" "$LVM"
-    check_variables_list "FILE_SYSTEM_TYPE" "$FILE_SYSTEM_TYPE" "ext4 btrfs xfs"
     check_variables_equals "LUKS_PASSWORD" "LUKS_PASSWORD_RETYPE" "$LUKS_PASSWORD" "$LUKS_PASSWORD_RETYPE"
+    check_variables_list "FILE_SYSTEM_TYPE" "$FILE_SYSTEM_TYPE" "ext4 btrfs xfs f2fs reiserfs"
     check_variables_list "PARTITION_MODE" "$PARTITION_MODE" "auto custom manual" "true"
     if [ "$PARTITION_MODE" == "custom" ]; then
         check_variables_value "PARTITION_CUSTOM_PARTED_UEFI" "$PARTITION_CUSTOM_PARTED_UEFI"
@@ -129,10 +131,18 @@ function check_variables() {
     if [ "$LVM" == "true" ]; then
         check_variables_list "PARTITION_MODE" "$PARTITION_MODE" "auto" "true"
     fi
+    check_variables_equals "WIFI_KEY" "WIFI_KEY_RETYPE" "$WIFI_KEY" "$WIFI_KEY_RETYPE"
     check_variables_value "PING_HOSTNAME" "$PING_HOSTNAME"
     check_variables_value "PACMAN_MIRROR" "$PACMAN_MIRROR"
     check_variables_list "KERNELS" "$KERNELS" "linux-lts linux-lts-headers linux-hardened linux-hardened-headers linux-zen linux-zen-headers" "false"
-    check_variables_list "KERNELS_COMPRESSION" "$KERNELS_COMPRESSION" "gzip bzip2 lzma xz lzop lz4" "false"
+    check_variables_list "KERNELS_COMPRESSION" "$KERNELS_COMPRESSION" "gzip bzip2 lzma xz lzop lz4 zstd" "false"
+    check_variables_list "DISPLAY_DRIVER" "$DISPLAY_DRIVER" "intel amdgpu ati nvidia nvidia-lts nvidia-dkms nvidia-390xx nvidia-390xx-lts nvidia-390xx-dkms nouveau" "false"
+    check_variables_boolean "KMS" "$KMS"
+    check_variables_boolean "FASTBOOT" "$FASTBOOT"
+    check_variables_boolean "FRAMEBUFFER_COMPRESSION" "$FRAMEBUFFER_COMPRESSION"
+    check_variables_boolean "DISPLAY_DRIVER_DDX" "$DISPLAY_DRIVER_DDX"
+    check_variables_boolean "DISPLAY_DRIVER_HARDWARE_ACCELERATION" "$DISPLAY_DRIVER_HARDWARE_ACCELERATION"
+    check_variables_list "DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" "$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" "intel-media-driver libva-intel-driver" "false"
     check_variables_value "TIMEZONE" "$TIMEZONE"
     check_variables_boolean "REFLECTOR" "$REFLECTOR"
     check_variables_value "PACMAN_MIRROR" "$PACMAN_MIRROR"
@@ -159,13 +169,11 @@ function check_variables() {
     fi
     check_variables_value "HOOKS" "$HOOKS"
     check_variables_list "BOOTLOADER" "$BOOTLOADER" "grub refind systemd"
-    check_variables_list "AUR" "$AUR" "aurman yay" "false"
-    check_variables_list "DESKTOP_ENVIRONMENT" "$DESKTOP_ENVIRONMENT" "gnome kde xfce mate cinnamon lxde" "false"
-    check_variables_list "DISPLAY_DRIVER" "$DISPLAY_DRIVER" "intel amdgpu ati nvidia nvidia-lts nvidia-dkms nvidia-390xx nvidia-390xx-lts nvidia-390xx-dkms nouveau" "false"
-    check_variables_boolean "KMS" "$KMS"
-    check_variables_boolean "DISPLAY_DRIVER_DDX" "$DISPLAY_DRIVER_DDX"
-    check_variables_boolean "DISPLAY_DRIVER_HARDWARE_ACCELERATION" "$DISPLAY_DRIVER_HARDWARE_ACCELERATION"
-    check_variables_list "DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" "$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" "intel-media-driver libva-intel-driver" "false"
+    check_variables_list "CUSTOM_SHELL" "$CUSTOM_SHELL" "bash zsh dash fish"
+    check_variables_list "DESKTOP_ENVIRONMENT" "$DESKTOP_ENVIRONMENT" "gnome kde xfce mate cinnamon lxde i3-wm i3-gaps" "false"
+    check_variables_boolean "PACKAGES_MULTILIB" "$PACKAGES_MULTILIB"
+    check_variables_boolean "PACKAGES_INSTALL" "$PACKAGES_INSTALL"
+    check_variables_boolean "VAGRANT" "$VAGRANT"
     check_variables_boolean "REBOOT" "$REBOOT"
 }
 
@@ -292,6 +300,12 @@ function facts() {
     fi
 }
 
+function checks() {
+    print_step "checks()"
+
+    check_facts
+}
+
 function check_facts() {
     if [ "$BIOS_TYPE" == "bios" ]; then
         check_variables_list "BOOTLOADER" "$BOOTLOADER" "grub"
@@ -301,11 +315,17 @@ function check_facts() {
 function prepare() {
     print_step "prepare()"
 
+    configure_reflector
     configure_time
     prepare_partition
+    ask_passwords
     configure_network
+}
 
-    pacman -Sy
+function configure_reflector() {
+    if [ "$REFLECTOR" == "false" ]; then
+        systemctl stop reflector.service
+    fi
 }
 
 function configure_time() {
@@ -323,27 +343,101 @@ function prepare_partition() {
     if [ -e "/dev/mapper/$LUKS_DEVICE_NAME" ]; then
         cryptsetup close $LUKS_DEVICE_NAME
     fi
-    partprobe $DEVICE
+}
+
+function ask_passwords() {
+    if [ "$LUKS_PASSWORD" == "ask" ]; then
+        PASSWORD_TYPED="false"
+        while [ "$PASSWORD_TYPED" != "true" ]; do
+            read -sp 'Type LUKS password: ' LUKS_PASSWORD
+            echo ""
+            read -sp 'Retype LUKS password: ' LUKS_PASSWORD_RETYPE
+            echo ""
+            if [ "$LUKS_PASSWORD" == "$LUKS_PASSWORD_RETYPE" ]; then
+                PASSWORD_TYPED="true"
+            else
+                echo "LUKS password don't match. Please, type again."
+            fi
+        done
+    fi
+
+    if [ -n "$WIFI_INTERFACE" -a "$WIFI_KEY" == "ask" ]; then
+        PASSWORD_TYPED="false"
+        while [ "$PASSWORD_TYPED" != "true" ]; do
+            read -sp 'Type WIFI key: ' WIFI_KEY
+            echo ""
+            read -sp 'Retype WIFI key: ' WIFI_KEY_RETYPE
+            echo ""
+            if [ "$WIFI_KEY" == "$WIFI_KEY_RETYPE" ]; then
+                PASSWORD_TYPED="true"
+            else
+                echo "WIFI key don't match. Please, type again."
+            fi
+        done
+    fi
+
+    if [ "$ROOT_PASSWORD" == "ask" ]; then
+        PASSWORD_TYPED="false"
+        while [ "$PASSWORD_TYPED" != "true" ]; do
+            read -sp 'Type root password: ' ROOT_PASSWORD
+            echo ""
+            read -sp 'Retype root password: ' ROOT_PASSWORD_RETYPE
+            echo ""
+            if [ "$ROOT_PASSWORD" == "$ROOT_PASSWORD_RETYPE" ]; then
+                PASSWORD_TYPED="true"
+            else
+                echo "Root password don't match. Please, type again."
+            fi
+        done
+    fi
+
+    if [ "$USER_PASSWORD" == "ask" ]; then
+        PASSWORD_TYPED="false"
+        while [ "$PASSWORD_TYPED" != "true" ]; do
+            read -sp 'Type user password: ' USER_PASSWORD
+            echo ""
+            read -sp 'Retype user password: ' USER_PASSWORD_RETYPE
+            echo ""
+            if [ "$USER_PASSWORD" == "$USER_PASSWORD_RETYPE" ]; then
+                PASSWORD_TYPED="true"
+            else
+                echo "User password don't match. Please, type again."
+            fi
+        done
+    fi
+
+    for I in ${!ADDITIONAL_USERS[@]}; do
+        VALUE=${ADDITIONAL_USERS[${I}]}
+        IFS='=' S=($VALUE)
+        USER=${S[0]}
+        PASSWORD=${S[1]}
+        PASSWORD_RETYPE=""
+
+        if [ "$PASSWORD" == "ask" ]; then
+            PASSWORD_TYPED="false"
+            while [ "$PASSWORD_TYPED" != "true" ]; do
+                read -sp "Type user ($USER) password: " PASSWORD
+                echo ""
+                read -sp "Retype user ($USER) password: " PASSWORD_RETYPE
+                echo ""
+                if [ "$PASSWORD" == "$PASSWORD_RETYPE" ]; then
+                    PASSWORD_TYPED="true"
+                    ADDITIONAL_USERS[${I}]="${USER}=${PASSWORD}"
+                else
+                    echo "User ($USER) password don't match. Please, type again."
+                fi
+            done
+        fi
+    done
 }
 
 function configure_network() {
     if [ -n "$WIFI_INTERFACE" ]; then
-        cp /etc/netctl/examples/wireless-wpa /etc/netctl
-        chmod 600 /etc/netctl/wireless-wpa
-
-        sed -i 's/^Interface=.*/Interface='"$WIFI_INTERFACE"'/' /etc/netctl/wireless-wpa
-        sed -i 's/^ESSID=.*/ESSID='"$WIFI_ESSID"'/' /etc/netctl/wireless-wpa
-        sed -i 's/^Key=.*/Key='"$WIFI_KEY"'/' /etc/netctl/wireless-wpa
-        if [ "$WIFI_HIDDEN" == "true" ]; then
-            sed -i 's/^#Hidden=.*/Hidden=yes/' /etc/netctl/wireless-wpa
-        fi
-
-        netctl stop-all
-        netctl start wireless-wpa
+        iwctl --passphrase "$WIFI_KEY" station $WIFI_INTERFACE connect "$WIFI_ESSID"
         sleep 10
     fi
 
-    # only on ping -c 1, packer gets stuck if -c 5
+    # only one ping -c 1, ping gets stuck if -c 5
     ping -c 1 -i 2 -W 5 -w 30 $PING_HOSTNAME
     if [ $? -ne 0 ]; then
         echo "Network ping check failed. Cannot continue."
@@ -354,10 +448,16 @@ function configure_network() {
 function partition() {
     print_step "partition()"
 
+    partprobe $DEVICE
+
     # setup
     if [ "$PARTITION_MODE" == "auto" ]; then
-        PARTITION_PARTED_UEFI="mklabel gpt mkpart primary fat32 1MiB 512MiB mkpart primary $FILE_SYSTEM_TYPE 512MiB 100% set 1 boot on"
-        PARTITION_PARTED_BIOS="mklabel msdos mkpart primary ext4 4MiB 512MiB mkpart primary $FILE_SYSTEM_TYPE 512MiB 100% set 1 boot on"
+        PARTITION_PARTED_FILE_SYSTEM_TYPE="$FILE_SYSTEM_TYPE"
+        if [ "$PARTITION_PARTED_FILE_SYSTEM_TYPE" == "f2fs" ]; then
+            PARTITION_PARTED_FILE_SYSTEM_TYPE=""
+        fi
+        PARTITION_PARTED_UEFI="mklabel gpt mkpart ESP fat32 1MiB 512MiB mkpart root $PARTITION_PARTED_FILE_SYSTEM_TYPE 512MiB 100% set 1 esp on"
+        PARTITION_PARTED_BIOS="mklabel msdos mkpart primary ext4 4MiB 512MiB mkpart primary $PARTITION_PARTED_FILE_SYSTEM_TYPE 512MiB 100% set 1 boot on"
 
         if [ "$BIOS_TYPE" == "uefi" ]; then
             if [ "$DEVICE_SATA" == "true" ]; then
@@ -419,20 +519,15 @@ function partition() {
     PARTITION_ROOT_NUMBER="${PARTITION_ROOT_NUMBER//\/dev\/mmcblk0p/}"
 
     # partition
-    if [ "$FILE_SYSTEM_TYPE" == "f2fs" ]; then
-        pacman -Sy --noconfirm f2fs-tools
-    fi
-
     if [ "$PARTITION_MODE" == "auto" ]; then
         sgdisk --zap-all $DEVICE
-        wipefs -a $DEVICE
+        wipefs -a -f $DEVICE
+        partprobe $DEVICE
     fi
 
     if [ "$PARTITION_MODE" == "auto" -o "$PARTITION_MODE" == "custom" ]; then
         if [ "$BIOS_TYPE" == "uefi" ]; then
             parted -s $DEVICE $PARTITION_PARTED_UEFI
-
-            sgdisk -t=$PARTITION_BOOT_NUMBER:ef00 $DEVICE
             if [ -n "$LUKS_PASSWORD" ]; then
                 sgdisk -t=$PARTITION_ROOT_NUMBER:8309 $DEVICE
             elif [ "$LVM" == "true" ]; then
@@ -443,6 +538,8 @@ function partition() {
         if [ "$BIOS_TYPE" == "bios" ]; then
             parted -s $DEVICE $PARTITION_PARTED_BIOS
         fi
+
+        partprobe $DEVICE
     fi
 
     # luks and lvm
@@ -472,27 +569,30 @@ function partition() {
     fi
 
     # format
+    wipefs -a -f $PARTITION_BOOT || true
+    wipefs -a -f $DEVICE_ROOT || true
+
     if [ "$BIOS_TYPE" == "uefi" ]; then
-        wipefs -a $PARTITION_BOOT
-        wipefs -a $DEVICE_ROOT
         mkfs.fat -n ESP -F32 $PARTITION_BOOT
-        mkfs."$FILE_SYSTEM_TYPE" -L root $DEVICE_ROOT
     fi
-
     if [ "$BIOS_TYPE" == "bios" ]; then
-        wipefs -a $PARTITION_BOOT
-        wipefs -a $DEVICE_ROOT
-        mkfs."$FILE_SYSTEM_TYPE" -L boot $PARTITION_BOOT
+        mkfs.ext4 -L boot $PARTITION_BOOT
+    fi
+    if [ "$FILE_SYSTEM_TYPE" == "f2fs" -o "$FILE_SYSTEM_TYPE" == "reiserfs" ]; then
+        mkfs."$FILE_SYSTEM_TYPE" -l root $DEVICE_ROOT
+    else
         mkfs."$FILE_SYSTEM_TYPE" -L root $DEVICE_ROOT
     fi
 
-    PARTITION_OPTIONS="defaults"
+    # options
+    PARTITION_OPTIONS_BOOT="defaults"
+    PARTITION_OPTIONS_ROOT="defaults"
 
     if [ "$DEVICE_TRIM" == "true" ]; then
+        PARTITION_OPTIONS_BOOT="$PARTITION_OPTIONS_BOOT,noatime"
+        PARTITION_OPTIONS_ROOT="$PARTITION_OPTIONS_ROOT,noatime"
         if [ "$FILE_SYSTEM_TYPE" == "f2fs" ]; then
-            PARTITION_OPTIONS="$PARTITION_OPTIONS,noatime,nodiscard"
-        else
-            PARTITION_OPTIONS="$PARTITION_OPTIONS,noatime"
+            PARTITION_OPTIONS_ROOT="$PARTITION_OPTIONS_ROOT,nodiscard"
         fi
     fi
 
@@ -505,28 +605,31 @@ function partition() {
         btrfs subvolume create /mnt/snapshots
         umount /mnt
 
-        mount -o "subvol=root,$PARTITION_OPTIONS,compress=lzo" "$DEVICE_ROOT" /mnt
+        mount -o "subvol=root,$PARTITION_OPTIONS,compress=zstd" "$DEVICE_ROOT" /mnt
 
         mkdir /mnt/{boot,home,var,snapshots}
-        mount -o "$PARTITION_OPTIONS" "$PARTITION_BOOT" /mnt/boot
-        mount -o "subvol=home,$PARTITION_OPTIONS,compress=lzo" "$DEVICE_ROOT" /mnt/home
-        mount -o "subvol=var,$PARTITION_OPTIONS,compress=lzo" "$DEVICE_ROOT" /mnt/var
-        mount -o "subvol=snapshots,$PARTITION_OPTIONS,compress=lzo" "$DEVICE_ROOT" /mnt/snapshots
+        mount -o "$PARTITION_OPTIONS_BOOT" "$PARTITION_BOOT" /mnt/boot
+        mount -o "subvol=home,$PARTITION_OPTIONS_ROOT,compress=zstd" "$DEVICE_ROOT" /mnt/home
+        mount -o "subvol=var,$PARTITION_OPTIONS_ROOT,compress=zstd" "$DEVICE_ROOT" /mnt/var
+        mount -o "subvol=snapshots,$PARTITION_OPTIONS_ROOT,compress=zstd" "$DEVICE_ROOT" /mnt/snapshots
     else
-        mount -o "$PARTITION_OPTIONS" "$DEVICE_ROOT" /mnt
+        mount -o "$PARTITION_OPTIONS_ROOT" "$DEVICE_ROOT" /mnt
 
         mkdir /mnt/boot
-        mount -o "$PARTITION_OPTIONS" "$PARTITION_BOOT" /mnt/boot
+        mount -o "$PARTITION_OPTIONS_BOOT" "$PARTITION_BOOT" /mnt/boot
     fi
 
     # swap
-    # btrfs: https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F
-    # btrfs: https://wiki.archlinux.org/index.php/Btrfs#Disabling_CoW
-    # btrfs: https://jlk.fjfi.cvut.cz/arch/manpages/man/btrfs.5#MOUNT_OPTIONS
-    if [ -n "$SWAP_SIZE" -a "$FILE_SYSTEM_TYPE" != "btrfs" ]; then
-        fallocate -l $SWAP_SIZE "/mnt/swapfile"
-        chmod 600 "/mnt/swapfile"
-        mkswap "/mnt/swapfile"
+    if [ -n "$SWAP_SIZE" ]; then
+        if [ "$FILE_SYSTEM_TYPE" == "btrfs" ]; then
+            truncate -s 0 /mnt$SWAPFILE
+            chattr +C /mnt$SWAPFILE
+            btrfs property set /mnt$SWAPFILE compression none
+        fi
+
+        dd if=/dev/zero of=/mnt$SWAPFILE bs=1M count=$SWAP_SIZE status=progress
+        chmod 600 /mnt$SWAPFILE
+        mkswap /mnt$SWAPFILE
     fi
 
     # set variables
@@ -542,7 +645,7 @@ function install() {
     print_step "install()"
 
     if [ -n "$PACMAN_MIRROR" ]; then
-        echo "Server=$PACMAN_MIRROR" > /etc/pacman.d/mirrorlist
+        echo "Server = $PACMAN_MIRROR" > /etc/pacman.d/mirrorlist
     fi
     if [ "$REFLECTOR" == "true" ]; then
         COUNTRIES=()
@@ -554,12 +657,19 @@ function install() {
     fi
 
     sed -i 's/#Color/Color/' /etc/pacman.conf
-    sed -i 's/#TotalDownload/TotalDownload/' /etc/pacman.conf
+    sed -i 's/#ParallelDownloads/ParallelDownloads/' /etc/pacman.conf
 
-    pacstrap /mnt base base-devel linux
+    pacstrap /mnt base base-devel linux linux-firmware
 
     sed -i 's/#Color/Color/' /mnt/etc/pacman.conf
-    sed -i 's/#TotalDownload/TotalDownload/' /mnt/etc/pacman.conf
+    sed -i 's/#ParallelDownloads/ParallelDownloads/' /mnt/etc/pacman.conf
+
+    if [ "$PACKAGES_MULTILIB" == "true" ]; then
+        echo "" >> /mnt/etc/pacman.conf
+        echo "[multilib]" >> /mnt/etc/pacman.conf
+        echo "Include = /etc/pacman.d/mirrorlist" >> /mnt/etc/pacman.conf
+        echo "" >> /mnt/etc/pacman.conf
+    fi
 }
 
 function configuration() {
@@ -567,9 +677,9 @@ function configuration() {
 
     genfstab -U /mnt >> /mnt/etc/fstab
 
-    if [ -n "$SWAP_SIZE" -a "$FILE_SYSTEM_TYPE" != "btrfs" ]; then
+    if [ -n "$SWAP_SIZE" ]; then
         echo "# swap" >> /mnt/etc/fstab
-        echo "/swapfile none swap defaults 0 0" >> /mnt/etc/fstab
+        echo "$SWAPFILE none swap defaults 0 0" >> /mnt/etc/fstab
         echo "" >> /mnt/etc/fstab
     fi
 
@@ -588,14 +698,28 @@ function configuration() {
         sed -i "s/#$LOCALE/$LOCALE/" /etc/locale.gen
         sed -i "s/#$LOCALE/$LOCALE/" /mnt/etc/locale.gen
     done
-    locale-gen
-    arch-chroot /mnt locale-gen
     for VARIABLE in "${LOCALE_CONF[@]}"; do
-        localectl set-locale "$VARIABLE"
+        #localectl set-locale "$VARIABLE"
         echo -e "$VARIABLE" >> /mnt/etc/locale.conf
     done
+    locale-gen
+    arch-chroot /mnt locale-gen
     echo -e "$KEYMAP\n$FONT\n$FONT_MAP" > /mnt/etc/vconsole.conf
     echo $HOSTNAME > /mnt/etc/hostname
+
+    OPTIONS=""
+    if [ -n "$KEYLAYOUT" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbLayout\" \"$KEYLAYOUT\""
+    fi
+    if [ -n "$KEYMODEL" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbModel\" \"$KEYMODEL\""
+    fi
+    if [ -n "$KEYVARIANT" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbVariant\" \"$KEYVARIANT\""
+    fi
+    if [ -n "$KEYOPTIONS" ]; then
+        OPTIONS="$OPTIONS"$'\n'"    Option \"XkbOptions\" \"$KEYOPTIONS\""
+    fi
 
     arch-chroot /mnt mkdir -p "/etc/X11/xorg.conf.d/"
     cat <<EOT > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
@@ -605,7 +729,7 @@ function configuration() {
 Section "InputClass"
     Identifier "system-keyboard"
     MatchIsKeyboard "on"
-    Option "XkbLayout" "$KEYLAYOUT"
+    $OPTIONS
 EndSection
 EOT
 
@@ -640,6 +764,18 @@ function mkinitcpio_configuration() {
         esac
         arch-chroot /mnt sed -i "s/^MODULES=()/MODULES=($MODULES)/" /etc/mkinitcpio.conf
     fi
+    if [ "$DISPLAY_DRIVER" == "intel" ]; then
+        OPTIONS=""
+        if [ "$FASTBOOT" == "true" ]; then
+            OPTIONS="$OPTIONS fastboot=1"
+        fi
+        if [ "$FRAMEBUFFER_COMPRESSION" == "true" ]; then
+            OPTIONS="$OPTIONS enable_fbc=1"
+        fi
+        if [ -n "$OPTIONS"]; then
+            echo "options i915 $OPTIONS" > /mnt/etc/modprobe.d/i915.conf
+        fi
+    fi
 
     if [ "$LVM" == "true" ]; then
         pacman_install "lvm2"
@@ -649,6 +785,9 @@ function mkinitcpio_configuration() {
     fi
     if [ "$FILE_SYSTEM_TYPE" == "f2fs" ]; then
         pacman_install "f2fs-tools"
+    fi
+    if [ "$FILE_SYSTEM_TYPE" == "reiserfs" ]; then
+        pacman_install "reiserfsprogs"
     fi
 
     if [ "$BOOTLOADER" == "systemd" ]; then
@@ -677,6 +816,184 @@ function mkinitcpio_configuration() {
 
     if [ "$KERNELS_COMPRESSION" != "" ]; then
         arch-chroot /mnt sed -i 's/^#COMPRESSION="'"$KERNELS_COMPRESSION"'"/COMPRESSION="'"$KERNELS_COMPRESSION"'"/' /etc/mkinitcpio.conf
+    fi
+
+    if [ "$KERNELS_COMPRESSION" == "bzip2" ]; then
+        pacman_install "bzip2"
+    fi
+    if [ "$KERNELS_COMPRESSION" == "lzma" -o "$KERNELS_COMPRESSION" == "xz" ]; then
+        pacman_install "xz"
+    fi
+    if [ "$KERNELS_COMPRESSION" == "lzop" ]; then
+        pacman_install "lzop"
+    fi
+    if [ "$KERNELS_COMPRESSION" == "lz4" ]; then
+        pacman_install "lz4"
+    fi
+    if [ "$KERNELS_COMPRESSION" == "zstd" ]; then
+        pacman_install "zstd"
+    fi
+}
+
+function display_driver() {
+    print_step "display_driver()"
+
+    PACKAGES_DRIVER=""
+    PACKAGES_DRIVER_MULTILIB=""
+    PACKAGES_DDX=""
+    PACKAGES_VULKAN=""
+    PACKAGES_VULKAN_MULTILIB=""
+    PACKAGES_HARDWARE_ACCELERATION=""
+    PACKAGES_HARDWARE_ACCELERATION_MULTILIB=""
+    case "$DISPLAY_DRIVER" in
+        "intel" )
+            PACKAGES_DRIVER_MULTILIB="lib32-mesa"
+            ;;
+        "amdgpu" )
+            PACKAGES_DRIVER_MULTILIB="lib32-mesa"
+            ;;
+        "ati" )
+            PACKAGES_DRIVER_MULTILIB="lib32-mesa"
+            ;;
+        "nvidia" )
+            PACKAGES_DRIVER="nvidia"
+            PACKAGES_DRIVER_MULTILIB="lib32-nvidia-utils"
+            ;;
+        "nvidia-lts" )
+            PACKAGES_DRIVER="nvidia-lts"
+            PACKAGES_DRIVER_MULTILIB="lib32-nvidia-utils"
+            ;;
+        "nvidia-dkms" )
+            PACKAGES_DRIVER="nvidia-dkms"
+            PACKAGES_DRIVER_MULTILIB="lib32-nvidia-utils"
+            ;;
+        "nvidia-390xx" )
+            PACKAGES_DRIVER="nvidia-390xx"
+            PACKAGES_DRIVER_MULTILIB=""
+            ;;
+        "nvidia-390xx-lts" )
+            PACKAGES_DRIVER="nvidia-390xx-lts"
+            PACKAGES_DRIVER_MULTILIB=""
+            ;;
+        "nvidia-390xx-dkms" )
+            PACKAGES_DRIVER="nvidia-390xx-dkms"
+            PACKAGES_DRIVER_MULTILIB=""
+            ;;
+        "nouveau" )
+            PACKAGES_DRIVER_MULTILIB="lib32-mesa"
+            ;;
+    esac
+    if [ "$DISPLAY_DRIVER_DDX" == "true" ]; then
+        case "$DISPLAY_DRIVER" in
+            "intel" )
+                PACKAGES_DDX="xf86-video-intel"
+                ;;
+            "amdgpu" )
+                PACKAGES_DDX="xf86-video-amdgpu"
+                ;;
+            "ati" )
+                PACKAGES_DDX="xf86-video-ati"
+                ;;
+            "nouveau" )
+                PACKAGES_DDX="xf86-video-nouveau"
+                ;;
+        esac
+    fi
+    if [ "$VULKAN" == "true" ]; then
+        case "$DISPLAY_DRIVER" in
+            "intel" )
+                PACKAGES_VULKAN="vulkan-icd-loader vulkan-intel"
+                PACKAGES_VULKAN_MULTILIB="lib32-vulkan-icd-loader lib32-vulkan-intel"
+                ;;
+            "amdgpu" )
+                PACKAGES_VULKAN="vulkan-radeon"
+                PACKAGES_VULKAN_MULTILIB="lib32-vulkan-radeon"
+                ;;
+            "ati" )
+                PACKAGES_VULKAN="vulkan-radeon"
+                PACKAGES_VULKAN_MULTILIB="lib32-vulkan-radeon"
+                ;;
+            "nvidia" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB="lib32-nvidia-utils"
+                ;;
+            "nvidia-lts" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB="lib32-nvidia-utils"
+                ;;
+            "nvidia-dkms" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB="lib32-nvidia-utils"
+                ;;
+            "nvidia-390xx" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB=""
+                ;;
+            "nvidia-390xx-lts" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB=""
+                ;;
+            "nvidia-390xx-dkms" )
+                PACKAGES_VULKAN="nvidia-utils"
+                PACKAGES_VULKAN_MULTILIB=""
+                ;;
+            "nouveau" )
+                PACKAGES_VULKAN=""
+                PACKAGES_VULKAN_MULTILIB=""
+                ;;
+        esac
+    fi
+    if [ "$DISPLAY_DRIVER_HARDWARE_ACCELERATION" == "true" ]; then
+        case "$DISPLAY_DRIVER" in
+            "intel" )
+                if [ -n "$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" ]; then
+                    PACKAGES_HARDWARE_ACCELERATION=$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL
+                    PACKAGES_HARDWARE_ACCELERATION_MULTILIB=""
+                fi
+                ;;
+            "amdgpu" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "ati" )
+                PACKAGES_HARDWARE_ACCELERATION="mesa-vdpau"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-mesa-vdpau"
+                ;;
+            "nvidia" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nvidia-lts" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nvidia-dkms" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nvidia-390xx" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nvidia-390xx-lts" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nvidia-390xx-dkms" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+            "nouveau" )
+                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
+                PACKAGES_HARDWARE_ACCELERATION_MULTILIB="lib32-libva-mesa-driver"
+                ;;
+        esac
+    fi
+
+    pacman_install "mesa $PACKAGES_DRIVER $PACKAGES_DDX $PACKAGES_VULKAN $PACKAGES_HARDWARE_ACCELERATION"
+
+    if [ "$PACKAGES_MULTILIB" == "true" ]; then
+        pacman_install "$PACKAGES_DRIVER_MULTILIB $PACKAGES_VULKAN_MULTILIB $PACKAGES_HARDWARE_ACCELERATION_MULTILIB"
     fi
 }
 
@@ -768,47 +1085,47 @@ EOT
 }
 
 function create_user() {
-    USER_NAME=$1
-    USER_PASSWORD=$2
+    USER=$1
+    PASSWORD=$2
     if [ "$SYSTEMD_HOMED" == "true" ]; then
         arch-chroot /mnt systemctl enable systemd-homed.service
-        create_user_homectl $USER_NAME $USER_PASSWORD
-#       create_user_useradd $USER_NAME $USER_PASSWORD
+        create_user_homectl $USER $PASSWORD
+#       create_user_useradd $USER $PASSWORD
     else
-        create_user_useradd $USER_NAME $USER_PASSWORD
+        create_user_useradd $USER $PASSWORD
     fi
 }
 
 function create_user_homectl() {
-    USER_NAME=$1
-    USER_PASSWORD=$2
+    USER=$1
+    PASSWORD=$2
     STORAGE=""
     CIFS_DOMAIN=""
     CIFS_USERNAME=""
     CIFS_SERVICE=""
     TZ=$(echo ${TIMEZONE} | sed "s/\/usr\/share\/zoneinfo\///g")
     L=$(echo ${LOCALE_CONF[0]} | sed "s/LANG=//g")
-    IMAGE_PATH="/home/$USER_NAME.homedir"
-    HOME_PATH="/home/$USER_NAME"
+    IMAGE_PATH="/home/$USER.homedir"
+    HOME_PATH="/home/$USER"
 
     if [ -n "$SYSTEMD_HOMED_STORAGE" ]; then
         STORAGE="--storage=$SYSTEMD_HOMED_STORAGE"
     fi
     if [ "$SYSTEMD_HOMED_STORAGE" == "cifs" ]; then
         CIFS_DOMAIN="--cifs-domain=$SYSTEMD_HOMED_CIFS_DOMAIN"
-        CIFS_USERNAME="--cifs-user-name=$USER_NAME"
+        CIFS_USERNAME="--cifs-user-name=$USER"
         CIFS_SERVICE="--cifs-service=$SYSTEMD_HOMED_CIFS_SERVICE"
     fi
     if [ "$SYSTEMD_HOMED_STORAGE" == "luks" ]; then
-        IMAGE_PATH="/home/$USER_NAME.home"
+        IMAGE_PATH="/home/$USER.home"
     fi
 
     ### something missing, inside alis this not works, after install the user is in state infixated
     ### after install and reboot this commands work
     systemctl start systemd-homed.service
     set +e
-    homectl create "$USER_NAME" --enforce-password-policy=no --timezone=$TZ --language=$L $STORAGE $CIFS_DOMAIN $CIFS_USERNAME $CIFS_SERVICE -G wheel,storage,optical
-    homectl activate "$USER_NAME"
+    homectl create "$USER" --enforce-password-policy=no --timezone=$TZ --language=$L $STORAGE $CIFS_DOMAIN $CIFS_USERNAME $CIFS_SERVICE -G wheel,storage,optical
+    homectl activate "$USER"
     set -e
     cp -a "$IMAGE_PATH/." "/mnt$IMAGE_PATH"
     cp -a "$HOME_PATH/." "/mnt$HOME_PATH"
@@ -816,10 +1133,10 @@ function create_user_homectl() {
 }
 
 function create_user_useradd() {
-    USER_NAME=$1
-    USER_PASSWORD=$2
-    arch-chroot /mnt useradd -m -G wheel,storage,optical -s /bin/bash $USER_NAME
-    printf "$USER_PASSWORD\n$USER_PASSWORD" | arch-chroot /mnt passwd $USER_NAME
+    USER=$1
+    PASSWORD=$2
+    arch-chroot /mnt useradd -m -G wheel,storage,optical -s /bin/bash $USER
+    printf "$PASSWORD\n$PASSWORD" | arch-chroot /mnt passwd $USER
 }
 
 function bootloader() {
@@ -903,7 +1220,7 @@ function bootloader_grub() {
 }
 
 function bootloader_refind() {
-    pacman_install "refind-efi"
+    pacman_install "refind"
     arch-chroot /mnt refind-install
 
     arch-chroot /mnt rm /boot/refind_linux.conf
@@ -936,7 +1253,7 @@ menuentry "Arch Linux" {
     submenuentry "Boot to terminal"
 	      add_options "systemd.unit=multi-user.target"
     }
-}"
+}
 
 EOT
     if [[ $KERNELS =~ .*linux-lts.* ]]; then
@@ -1150,85 +1467,50 @@ EOT
     fi
 }
 
-function desktop_environment() {
-    print_step "desktop_environment()"
+function custom_shell() {
+    print_step "custom_shell()"
 
-    PACKAGES_DRIVER=""
-    PACKAGES_DDX=""
-    PACKAGES_VULKAN=""
-    PACKAGES_HARDWARE_ACCELERATION=""
-    case "$DISPLAY_DRIVER" in
-        "nvidia" )
-            PACKAGES_DRIVER="nvidia"
+    CUSTOM_SHELL_PATH=""
+    case "$CUSTOM_SHELL" in
+        "zsh" )
+            pacman_install "zsh"
+            CUSTOM_SHELL_PATH="/usr/bin/zsh"
             ;;
-        "nvidia-lts" )
-            PACKAGES_DRIVER="nvidia-lts"
+        "dash" )
+            pacman_install "dash"
+            CUSTOM_SHELL_PATH="/usr/bin/dash"
             ;;
-        "nvidia-dkms" )
-            PACKAGES_DRIVER="nvidia-dkms"
-            ;;
-        "nvidia-390xx" )
-            PACKAGES_DRIVER="nvidia-390xx"
-            ;;
-        "nvidia-390xx-lts" )
-            PACKAGES_DRIVER="nvidia-390xx-lts"
-            ;;
-        "nvidia-390xx-dkms" )
-            PACKAGES_DRIVER="nvidia-390xx-dkms"
+        "fish" )
+            pacman_install "fish"
+            CUSTOM_SHELL_PATH="/usr/bin/fish"
             ;;
     esac
-    if [ "$DISPLAY_DRIVER_DDX" == "true" ]; then
-        case "$DISPLAY_DRIVER" in
-            "intel" )
-                PACKAGES_DDX="xf86-video-intel"
-                ;;
-            "amdgpu" )
-                PACKAGES_DDX="xf86-video-amdgpu"
-                ;;
-            "ati" )
-                PACKAGES_DDX="xf86-video-ati"
-                ;;
-            "nouveau" )
-                PACKAGES_DDX="xf86-video-nouveau"
-                ;;
-        esac
+
+    if [ -n "$CUSTOM_SHELL_PATH" ]; then
+        custom_shell_user "root" $CUSTOM_SHELL_PATH
+        custom_shell_user "$USER_NAME" $CUSTOM_SHELL_PATH
+        for U in ${ADDITIONAL_USERS[@]}; do
+            IFS='=' S=(${U})
+            USER=${S[0]}
+            custom_shell_user "$USER" $CUSTOM_SHELL_PATH
+        done
     fi
-    if [ "$VULKAN" == "true" ]; then
-        case "$DISPLAY_DRIVER" in
-            "intel" )
-                PACKAGES_VULKAN="vulkan-icd-loader vulkan-intel"
-                ;;
-            "amdgpu" )
-                PACKAGES_VULKAN="vulkan-icd-loader vulkan-radeon"
-                ;;
-            "ati" )
-                PACKAGES_VULKAN=""
-                ;;
-            "nouveau" )
-                PACKAGES_VULKAN=""
-                ;;
-        esac
+}
+
+
+function custom_shell_user() {
+    USER=$1
+    CUSTOM_SHELL_PATH=$2
+
+    if [ "$SYSTEMD_HOMED" == "true" ]; then
+        homectl update --shell=$CUSTOM_SHELL_PATH $USER
+    else
+        arch-chroot /mnt chsh -s $CUSTOM_SHELL_PATH $USER
     fi
-    if [ "$DISPLAY_DRIVER_HARDWARE_ACCELERATION" == "true" ]; then
-        case "$DISPLAY_DRIVER" in
-            "intel" )
-                PACKAGES_HARDWARE_ACCELERATION="intel-media-driver"
-                if [ -n "$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL" ]; then
-                    PACKAGES_HARDWARE_ACCELERATION=$DISPLAY_DRIVER_HARDWARE_ACCELERATION_INTEL
-                fi
-                ;;
-            "amdgpu" )
-                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
-                ;;
-            "ati" )
-                PACKAGES_HARDWARE_ACCELERATION="mesa-vdpau"
-                ;;
-            "nouveau" )
-                PACKAGES_HARDWARE_ACCELERATION="libva-mesa-driver"
-                ;;
-        esac
-    fi
-    pacman_install "mesa $PACKAGES_DRIVER $PACKAGES_DDX $PACKAGES_VULKAN $PACKAGES_HARDWARE_ACCELERATION"
+}
+
+function desktop_environment() {
+    print_step "desktop_environment()"
 
     case "$DESKTOP_ENVIRONMENT" in
         "gnome" )
@@ -1249,13 +1531,19 @@ function desktop_environment() {
         "lxde" )
             desktop_environment_lxde
             ;;
+        "i3-wm" )
+            desktop_environment_i3_wm
+            ;;
+        "i3-gaps" )
+            desktop_environment_i3_gaps
+            ;;
     esac
 
     arch-chroot /mnt systemctl set-default graphical.target
 }
 
 function desktop_environment_gnome() {
-    pacman_install "gnome gnome-extra"
+    pacman_install "gnome"
     arch-chroot /mnt systemctl enable gdm.service
 }
 
@@ -1284,143 +1572,183 @@ function desktop_environment_lxde() {
     arch-chroot /mnt systemctl enable lxdm.service
 }
 
+function desktop_environment_i3_wm() {
+    pacman_install "i3-wm i3blocks i3lock i3status dmenu rxvt-unicode lightdm lightdm-gtk-greeter xorg-server"
+    arch-chroot /mnt systemctl enable lightdm.service
+}
+
+function desktop_environment_i3_gaps() {
+    pacman_install "i3-gaps i3blocks i3lock i3status dmenu rxvt-unicode lightdm lightdm-gtk-greeter xorg-server"
+    arch-chroot /mnt systemctl enable lightdm.service
+}
+
 function packages() {
-    print_step "packages()"
-
-    if [ -n "$PACKAGES_PACMAN" ]; then
-        pacman_install "$PACKAGES_PACMAN"
-    fi
-
-    if [ -n "$AUR" -o -n "$PACKAGES_AUR" ]; then
-        packages_aur
+    if [ "$PACKAGES_INSTALL" == "true" ]; then
+        (USER_NAME=$USER_NAME \
+         USER_PASSWORD=$USER_PASSWORD \
+            ./alis-packages.sh)
     fi
 }
 
-function packages_aur() {
-    arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-
-    if [ -n "$AUR" -o -n "$PACKAGES_AUR" ]; then
-        pacman_install "git"
-
-        case "$AUR" in
-            "aurman" )
-                arch-chroot /mnt bash -c "echo -e \"$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n\" | su $USER_NAME -c \"cd /home/$USER_NAME && git clone https://aur.archlinux.org/$AUR.git && gpg --recv-key 465022E743D71E39 && (cd $AUR && makepkg -si --noconfirm) && rm -rf $AUR\""
-                ;;
-            "yay" | *)
-                arch-chroot /mnt bash -c "echo -e \"$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n\" | su $USER_NAME -c \"cd /home/$USER_NAME && git clone https://aur.archlinux.org/$AUR.git && (cd $AUR && makepkg -si --noconfirm) && rm -rf $AUR\""
-                ;;
-        esac
-    fi
-
-    if [ -n "$PACKAGES_AUR" ]; then
-        aur_install "$PACKAGES_AUR"
-    fi
-
-    arch-chroot /mnt sed -i 's/%wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+function vagrant() {
+    pacman_install "openssh"
+    create_user "vagrant" "vagrant"
+    arch-chroot /mnt systemctl enable sshd.service
+    arch-chroot /mnt ssh-keygen -A
+    arch-chroot /mnt sshd -t
 }
 
 function systemd_units() {
     IFS=' ' UNITS=($SYSTEMD_UNITS)
     for U in ${UNITS[@]}; do
+        ACTION=""
         UNIT=${U}
-        if [[ $UNIT == !* ]]; then
+        if [[ $UNIT == -* ]]; then
             ACTION="disable"
-        else
+            UNIT=$(echo $UNIT | sed "s/^-//g")
+        elif [[ $UNIT == +* ]]; then
             ACTION="enable"
+            UNIT=$(echo $UNIT | sed "s/^+//g")
+        elif [[ $UNIT =~ ^[a-zA-Z0-9]+ ]]; then
+            ACTION="enable"
+            UNIT=$UNIT
         fi
-        UNIT=$(echo $UNIT | sed "s/!//g")
-        arch-chroot /mnt systemctl $ACTION $UNIT
+
+        if [ -n "$ACTION" ]; then
+            arch-chroot /mnt systemctl $ACTION $UNIT
+        fi
     done
 }
 
-function terminate() {
-    cp "$CONF_FILE" "/mnt/etc/$CONF_FILE"
-
-    if [ "$LOG" == "true" ]; then
-        mkdir -p /mnt/var/log
-        cp "$LOG_FILE" "/mnt/var/log/$LOG_FILE"
-    fi
-    if [ "$ASCIINEMA" == "true" ]; then
-        mkdir -p /mnt/var/log
-        cp "$ASCIINEMA_FILE" "/mnt/var/log/$ASCIINEMA_FILE"
-    fi
-}
-
 function end() {
-    if [ "$REBOOT" == "true" ]; then
-        echo ""
-        echo -e "${GREEN}Arch Linux installed successfully"'!'"${NC}"
-        echo ""
+    echo ""
+    echo -e "${GREEN}Arch Linux installed successfully"'!'"${NC}"
+    echo ""
 
+    if [ "$REBOOT" == "true" ]; then
         REBOOT="true"
-        if [ "$ASCIINEMA" == "false" ]; then
-            set +e
-            for (( i = 15; i >= 1; i-- )); do
-                read -r -s -n 1 -t 1 -p "Rebooting in $i seconds... Press any key to abort."$'\n' KEY
-                if [ $? -eq 0 ]; then
-                    echo ""
-                    echo "Restart aborted. You will must do a explicit reboot (./alis-reboot.sh)."
-                    echo ""
-                    REBOOT="false"
-                    break
-                fi
-            done
-            set -e
-        else
-            echo ""
-            echo "Restart aborted. You will must terminate asciinema recording and do a explicit reboot (exit, ./alis-reboot.sh)."
-            echo ""
-            REBOOT="false"
-        fi
+
+        set +e
+        for (( i = 15; i >= 1; i-- )); do
+            read -r -s -n 1 -t 1 -p "Rebooting in $i seconds... Press any key to abort."$'\n' KEY
+            if [ $? -eq 0 ]; then
+                REBOOT="false"
+                break
+            fi
+        done
+        set -e
 
         if [ "$REBOOT" == 'true' ]; then
-            umount -R /mnt/boot
-            umount -R /mnt
-            reboot
+            echo "Rebooting..."
+            echo ""
+
+            copy_logs
+            do_reboot
+        else
+            if [ "$ASCIINEMA" == "true" ]; then
+                echo "Reboot aborted. You will must terminate asciinema recording and do a explicit reboot (exit, ./alis-reboot.sh)."
+                echo ""
+            else
+                echo "Reboot aborted. You will must do a explicit reboot (./alis-reboot.sh)."
+                echo ""
+            fi
         fi
     else
-        echo ""
-        echo -e "${GREEN}Arch Linux installed successfully"'!'"${NC}"
-        if [ "$ASCIINEMA" == "false" ]; then
-            echo ""
-            echo "You will must do a explicit reboot (./alis-reboot.sh)."
+        if [ "$ASCIINEMA" == "true" ]; then
+            echo "No reboot. You will must terminate asciinema recording and do a explicit reboot (exit, ./alis-reboot.sh)."
             echo ""
         else
-            echo ""
-            echo "You will must terminate asciinema recording and do a explicit reboot (exit, ./alis-reboot.sh)."
+            echo "No reboot. You will must do a explicit reboot (./alis-reboot.sh)."
             echo ""
         fi
     fi
 }
 
 function pacman_install() {
+    ERROR="true"
     set +e
     IFS=' ' PACKAGES=($1)
     for VARIABLE in {1..5}
     do
         arch-chroot /mnt pacman -Syu --noconfirm --needed ${PACKAGES[@]}
         if [ $? == 0 ]; then
+            ERROR="false"
             break
         else
             sleep 10
         fi
     done
     set -e
+    if [ "$ERROR" == "true" ]; then
+        exit
+    fi
 }
 
-function aur_install() {
-    set +e
-    IFS=' ' PACKAGES=($1)
-    for VARIABLE in {1..5}
-    do
-        arch-chroot /mnt bash -c "echo -e \"$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n$USER_PASSWORD\n\" | su $USER_NAME -c \"$AUR -Syu --noconfirm --needed ${PACKAGES[@]}\""
-        if [ $? == 0 ]; then
-            break
-        else
-            sleep 10
+function copy_logs() {
+    ESCAPED_LUKS_PASSWORD=$(echo "${LUKS_PASSWORD}" | sed 's/[.[\*^$()+?{|]/[\\&]/g')
+    ESCAPED_ROOT_PASSWORD=$(echo "${ROOT_PASSWORD}" | sed 's/[.[\*^$()+?{|]/[\\&]/g')
+    ESCAPED_USER_PASSWORD=$(echo "${USER_PASSWORD}" | sed 's/[.[\*^$()+?{|]/[\\&]/g')
+
+    if [ -f "$CONF_FILE" ]; then
+        SOURCE_FILE="$CONF_FILE"
+        FILE="/mnt/var/log/alis/$CONF_FILE"
+
+        mkdir -p /mnt/var/log/alis
+        cp "$SOURCE_FILE" "$FILE"
+        chown root:root "$FILE"
+        chmod 600 "$FILE"
+        if [ -n "$ESCAPED_LUKS_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_LUKS_PASSWORD}/******/g" "$FILE"
         fi
-    done
-    set -e
+        if [ -n "$ESCAPED_ROOT_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_ROOT_PASSWORD}/******/g" "$FILE"
+        fi
+        if [ -n "$ESCAPED_USER_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_USER_PASSWORD}/******/g" "$FILE"
+        fi
+    fi
+    if [ -f "$LOG_FILE" ]; then
+        SOURCE_FILE="$LOG_FILE"
+        FILE="/mnt/var/log/alis/$LOG_FILE"
+
+        mkdir -p /mnt/var/log/alis
+        cp "$SOURCE_FILE" "$FILE"
+        chown root:root "$FILE"
+        chmod 600 "$FILE"
+        if [ -n "$ESCAPED_LUKS_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_LUKS_PASSWORD}/******/g" "$FILE"
+        fi
+        if [ -n "$ESCAPED_ROOT_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_ROOT_PASSWORD}/******/g" "$FILE"
+        fi
+        if [ -n "$ESCAPED_USER_PASWORD" ]; then
+            sed -i "s/${ESCAPED_USER_PASSWORD}/******/g" "$FILE"
+        fi
+    fi
+    if [ -f "$ASCIINEMA_FILE" ]; then
+        SOURCE_FILE="$ASCIINEMA_FILE"
+        FILE="/mnt/var/log/alis/$ASCIINEMA_FILE"
+
+        mkdir -p /mnt/var/log/alis
+        cp "$SOURCE_FILE" "$FILE"
+        chown root:root "$FILE"
+        chmod 600 "$FILE"
+        if [ -n "$ESCAPED_LUKS_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_LUKS_PASSWORD}/******/g" "$FILE"
+        fi
+        if [ -n "$ESCAPED_ROOT_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_ROOT_PASSWORD}/******/g" "$FILE"
+        fi
+        if [ -n "$ESCAPED_USER_PASSWORD" ]; then
+            sed -i "s/${ESCAPED_USER_PASSWORD}/******/g" "$FILE"
+        fi
+    fi
+}
+
+function do_reboot() {
+    umount -R /mnt/boot
+    umount -R /mnt
+    reboot
 }
 
 function print_step() {
@@ -1478,13 +1806,13 @@ EOT
 }
 
 function main() {
-    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "check_facts" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "desktop_environment" "packages" "systemd_units" "terminate" "end")
+    ALL_STEPS=("configuration_install" "sanitize_variables" "check_variables" "warning" "init" "facts" "checks" "prepare" "partition" "install" "configuration" "mkinitcpio_configuration" "display_driver" "kernels" "mkinitcpio" "network" "virtualbox" "users" "bootloader" "custom_shell" "desktop_environment" "packages" "vagrant" "systemd_units" "end")
     STEP="configuration_install"
 
     if [ -n "$1" ]; then
         STEP="$1"
     fi
-    if [ $STEP = "steps" ]; then
+    if [ "$STEP" == "steps" ]; then
         echo "Steps: $ALL_STEPS"
         return 0
     fi
@@ -1508,12 +1836,15 @@ function main() {
     execute_step "warning" "${STEPS}"
     execute_step "init" "${STEPS}"
     execute_step "facts" "${STEPS}"
-    execute_step "check_facts" "${STEPS}"
+    execute_step "checks" "${STEPS}"
     execute_step "prepare" "${STEPS}"
     execute_step "partition" "${STEPS}"
     execute_step "install" "${STEPS}"
     execute_step "configuration" "${STEPS}"
     execute_step "mkinitcpio_configuration" "${STEPS}"
+    if [ -n "$DISPLAY_DRIVER" ]; then
+        execute_step "display_driver" "${STEPS}"
+    fi
     execute_step "kernels" "${STEPS}"
     execute_step "mkinitcpio" "${STEPS}"
     execute_step "network" "${STEPS}"
@@ -1522,12 +1853,17 @@ function main() {
     fi
     execute_step "users" "${STEPS}"
     execute_step "bootloader" "${STEPS}"
+    if [ -n "$CUSTOM_SHELL" ]; then
+        execute_step "custom_shell" "${STEPS}"
+    fi
     if [ -n "$DESKTOP_ENVIRONMENT" ]; then
         execute_step "desktop_environment" "${STEPS}"
     fi
     execute_step "packages" "${STEPS}"
+    if [ "$VAGRANT" == "true" ]; then
+        execute_step "vagrant" "${STEPS}"
+    fi
     execute_step "systemd_units" "${STEPS}"
-    execute_step "terminate" "${STEPS}"
     execute_step "end" "${STEPS}"
 }
 

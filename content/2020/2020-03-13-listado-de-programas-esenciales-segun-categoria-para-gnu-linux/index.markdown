@@ -115,7 +115,9 @@ Para el trabajo en grupo [Slack][slack] es una evolución de los programas como 
 
 #### Videoconferencia
 
-[Skype][skype] permite hacer video llamadas por internet.
+[Jitsi][jitsi] es una aplicación de código abierto que permite realizar videoconferencias en tiempo real con múltiples participantes, dispone de aplicaciones para móviles [Android][android] e [iOS][apple-ios]. Se puede usar de forma gratuita y también ofrecen el servicio de forma hospedada con un coste según el número de usuarios.
+
+Otra opción es [Skype][skype].
 
 #### Nube privada
 
@@ -147,6 +149,8 @@ Para reproducir música los programas [Rhythmbox][rhythmbox] y [Banshee][banshee
 
 Con una colección de archivos de vídeo, imágenes y archivos de audio y un programa como [OpenShot][openshot] permite crear un vídeo aplicando varios efectos y transiciones, el resultado es un nuevo vídeo que incluye parte o todo el contenido individual original.
 
+Otra opción sencilla es [Pitivi][pitivi] pero suficiente con las opciones comunes de un editor de vídeo.
+
 #### Conversor de vídeo y audio
 
 Al igual que en otros formatos de archivos es posible necesitar realizar conversiones entre formatos. Tanto de vídeo con [Handbrake][handbrake] y audio con [Soundconverter][soundconverter]. Además de hacer conversiones es posible ajustar la calidad del nuevo vídeo para hacer que tenga menos calidad y ocupe menos.
@@ -155,12 +159,15 @@ Al igual que en otros formatos de archivos es posible necesitar realizar convers
 
 [Audacity][audacity] es un programa para la edición de audio y [Blender][blender] un programa de modelado 3D. [MusicBrainz Picard][picard] permite editar los metadatos de los archivos de música para que los reproductores muestren la información correcta del título, álbum, grupo musical o género.
 
+Para capturar vídeo y audio del escritorio o para hacer una transmisión en directo o _streaming_ el programa [OBS][obs] permite realizar la captura de vídeo y audio de múltiples fuentes incluida una captura desde una cámara web con la posibilidad de hacer un _croma_ y realizar una composicón con todas las fuentes para producir la salida en la calidad deseada.
+
+Los juagadores para realizar comunicación con los amigos o compañeros de partida necesitan una aplicación para hablar entre ellos en tiempo real, [Discord][discord] es una aplicación para el propósito de comunicación por voz en tiempo real.
+
 ### Juegos
 
 GNU/Linux no es la opción más popular para los juegos que está dominado por Windows pero ya hay algunos programas que permiten descargar e instalar juegos de forma muy sencilla e incluso jugar a los juegos que han sido desarrollados para Windows. También hay algunos buenos juegos desarrollados para GNU/Linux.
 
 [Steam][steam] y [Wine][wine] permiten jugar a juegos de Windows, en Steam hay juegos compatibles de forma nativa para GNU/Linux. [GOG][gog] permite jugar a juegos ya con unos años pero que fueron notables en su época. [Mame][mame], [Lakka][lakka] y [Retroarch][retroarch] permite jugar hoy en día a juegos de arcade aún más antiguos, de recreativas y de la generación de las primeras consolas.
-
 
 * [Cómo usar Wine para jugar en GNU/Linux a Diablo 3 u otros juegos de Blizzard o Windows][blogbitix-364]
 * [La aplicación cliente de Steam en GNU/Linux][blogbitix-431]

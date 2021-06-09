@@ -1,5 +1,5 @@
 ---
-pid: 528
+pid: "247-en"
 type: "post"
 title: "4 ways to make a for loop in Java"
 url: "/2017/07/4-ways-to-make-a-for-loop-in-java/"
@@ -24,7 +24,7 @@ Some of these examples of loops are usable from Java 5, in more recent versions 
 
 Loops are one of [Java's basic flow control structures and statement types][blogbitix-494] that allow repeating the execution of a block of statements as long as the repetition condition expression is met, in each iteration of the loop the condition expression is evaluated and when it is not fulfilled, it continues with the next sentence of the program.
 
-{{<tableofcontents>}}
+{{< tableofcontents >}}
 
 ### for loop
 

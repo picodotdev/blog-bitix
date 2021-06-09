@@ -36,7 +36,7 @@ En este artículo me centraré más en las alternativas a Office que también so
 
 ### Microsoft Office
 
-Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio, y las versiones web para estos y otros sistemas. [Office 365](https://products.office.com/es-es/) tiene un coste alrededor de 8,80 € por usuario y mes según el plan que incluye más o menos aplicaciones.
+Microsoft Office incluye Word como procesador de textos, Powerpoint para presentaciones, Excel para hojas de cálculo, Access para bases de datos, Outlook como cliente de correo electrónico, OneNote para tomar notas o Publisher para publicaciones. Solo está disponible para Windows y Mac para el escritorio, y las versiones web para estos y otros sistemas. [Office 365][microsoft-office-365] tiene un coste alrededor de 8,80 € por usuario y mes según el plan que incluye más o menos aplicaciones.
 
 {{< image
     gallery="true"
@@ -47,7 +47,7 @@ Microsoft Office incluye Word como procesador de textos, Powerpoint para present
 
 ### LibreOffice
 
-La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://es.libreoffice.org/). Incluye un editor de textos con Writer, hojas de cálculo con Calc, presentaciones con Impress, Draw para crear gráficos y Base para bases de datos sencillas. Sin embargo, la interfaz es el similar al de Office en las ediciones anteriores a la incorporación de _ribbon_ con una estética sin la sensación de estar cuidada. Los menús son largos y encontrar un opción entre las muchas disponibles no es sencillo, al abrir una opción de menú uno se puede sentir intimidado por la longitud del mismo y es algo más difícil encontrar rápidamente la opción buscada entre todas las mostradas. Habrá usuarios que prefieran la interfaz de menús y barras de herramientas, yo soy de los que les gusta más _ribbon_. Está disponible para Windows, Linux y Mac.
+La alternativa libre y gratuita equivalente de Office es [LibreOffice][libreoffice]. Incluye un editor de textos con Writer, hojas de cálculo con Calc, presentaciones con Impress, Draw para crear gráficos y Base para bases de datos sencillas. Sin embargo, la interfaz es el similar al de Office en las ediciones anteriores a la incorporación de _ribbon_ con una estética sin la sensación de estar cuidada. Los menús son largos y encontrar un opción entre las muchas disponibles no es sencillo, al abrir una opción de menú uno se puede sentir intimidado por la longitud del mismo y es algo más difícil encontrar rápidamente la opción buscada entre todas las mostradas. Habrá usuarios que prefieran la interfaz de menús y barras de herramientas, yo soy de los que les gusta más _ribbon_. Está disponible para Windows, Linux y Mac.
 
 {{< image
     gallery="true"
@@ -58,7 +58,7 @@ La alternativa libre y gratuita equivalente de Office es [LibreOffice](https://e
 
 ### WPS Office
 
-Si nos gusta más la interfaz _ribbon_ sin menús con multitud de opciones y que esté más cuidada en cuanto a diseño que LibreOffice similar a la usada en Microsoft Office, [WPS Office](https://www.wps.com/?lang=es) es una opción muy a tener en cuenta, también puede activarse en modo clásico con menús y barras de herramientas soportando editar varios documentos en tabuladores. Ofrece únicamente los programas básicos de una suite ofimática: editor de textos, hojas de cálculo y presentaciones. Para un uso personal es gratuita con algunas limitaciones al imprimir y exportar documentos a formato PDF pero más que suficiente aún sin todas las opciones solo disponibles en la opción de pago.
+Si nos gusta más la interfaz _ribbon_ sin menús con multitud de opciones y que esté más cuidada en cuanto a diseño que LibreOffice similar a la usada en Microsoft Office, [WPS Office][wps-office] es una opción muy a tener en cuenta, también puede activarse en modo clásico con menús y barras de herramientas soportando editar varios documentos en tabuladores. Ofrece únicamente los programas básicos de una suite ofimática: editor de textos, hojas de cálculo y presentaciones. Para un uso personal es gratuita con algunas limitaciones al imprimir y exportar documentos a formato PDF pero más que suficiente aún sin todas las opciones solo disponibles en la opción de pago.
 
 Para el ámbito empresarial o con todas sus opciones su licencia tiene un coste mucho más razonable que el de Microsoft Office, 45 € para una licencia de un año y 80 € para la licencia de por vida por usuario.
 
@@ -73,9 +73,9 @@ Está disponible para Windows (XP, Vista, 7, 8, 10) incluso en versiones para lo
 
 ### Google Docs
 
-Otra alternativa a Office es [Google Docs](https://www.google.es/intl/es/docs/about/), no tiene todas las opciones que tiene Office pero para la mayoría de usuarios es suficiente. Basta con tener una cuenta de Google para usarla que incluye un editor de textos, de hojas de cálculo, de presentaciones y la posibilidad de realizar formularios. Se ejecuta en el navegador, los documentos se guardan en la nube de Google en el espacio asociado a la cuenta con la que se accede y aunque es posible en trabajo sin conexión a internet en momentos puntuales es requerido. Al almacenarse los documentos en la nube no los perderemos en caso de estropearse nuestro equipo, podremos acceder a los documentos desde cualquiera de nuestros dispositivos como un teléfono inteligente, editar el mismo documento dos o más personas de forma simultanea o compartir los documentos con otras personas. Otra ventaja por el hecho de estar basado en la nube no son necesarias actualizaciones de software salvo el navegador. La contrapartida de las ventajas de almacenar los documentos en la nube es la perdida de privacidad, Google tiene los documentos y puede acceder a ellos.
+Another alternative to Office is [Google Docs][google-docs], it does not have all the options that Office has, but for most users it is enough. It is enough to have a Google account to use it, which includes a text editor, spreadsheet, presentation editor and the possibility of creating forms. It runs in the browser, the documents are saved in the Google cloud in the space associated with the account with which it is accessed and although it is possible to work without an internet connection at specific times it is required. By storing the documents in the cloud, we will not lose them if our equipment breaks down, we will be able to access the documents from any of our devices such as a smartphone, edit the same document with two or more people simultaneously or share the documents with other people. . Another advantage due to the fact that it is cloud-based, no software updates are necessary except for the browser. The counterpart of the advantages of storing documents in the cloud is the loss of privacy, Google has the documents and can access them.
 
-Para las empresas se ofrece al precio de 4 € por usuario al mes que incluye el cliente de correo Gmail, calendarios, videollamadas y 30 GB de almacenamiento. Serán 8 € con más opciones de almacenamiento y retención de mensajes.
+For companies, it is offered at a price of € 4 per user per month that includes the Gmail email client, calendars, video calls and 30 GB of storage. It will be € 8 with more storage and retention options for messages.
 
 {{< image
     gallery="true"
@@ -94,6 +94,8 @@ Para las empresas se ofrece al precio de 4 € por usuario al mes que incluye el
     image2="image:onlyoffice-hojas-de-calculo.png" optionsthumb2="200x150" title2="OnlyOffice Hojas de cálculo"
     image3="image:onlyoffice-presentaciones.png" optionsthumb3="200x150" title3="OnlyOffice Presentaciones"
     caption="OnlyOffice" >}}
+
+### Otras alternativas
 
 Alguna otra opción que merece ser comentada es [Calligra][calligra] la _suite_ del [entorno de escritorio KDE][kde], [Abiword][abiword], [Lyx][lyx] o [Gnumeric][gnumeric].
 

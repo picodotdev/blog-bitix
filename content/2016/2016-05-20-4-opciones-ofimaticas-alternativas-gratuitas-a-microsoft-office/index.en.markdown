@@ -1,9 +1,9 @@
 ---
-pid: 225
+pid: "143-en"
 type: "post"
-title: "3 office alternative options to Microsoft Office"
-url: "/2016/05/3-office-alternative-options-to-microsoft-office/"
-aliases: ["/2017/04/3-office-alternative-options-to-microsoft-office/"]
+title: "4 free office suites alternatives to Microsoft Office"
+url: "/2016/05/4-free-office-suites-alternatives-to-microsoft-office/"
+aliases: ["/2016/05/3-office-alternative-options-to-microsoft-office/", "/2017/04/3-office-alternative-options-to-microsoft-office/"]
 date: 2017-04-14T12:15:00+02:00
 language: "en"
 rss: true
@@ -19,85 +19,94 @@ summary: "Microsoft Office is the office suite with a great margin of difference
 
 {{< logotype image1="microsoft.svg" image2="libreoffice.svg" title2="LibreOffice" width2="300" >}}
 
-In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-222]. License that costs nothing more than 125 € for [home and students](https://amzn.to/2bg4CR2) and about 250 € for [home and business](https://amzn.to/2bNf5Bx), by computer. If the computer is renewed or damaged requiring a change of components, a new license must be purchased. Given the negligible cost of the license it is not surprising that both Windows and Office are among the most used unlicensed or pirated products.
+In the first article of this 2016 I commented that [Windows and Office are still easy to use without a license][blogbitix-119-en]. License that costs nothing more and nothing less than about 125 € for [home and students](https://amzn.to/3cb4v74) and about 250 € for [home and companies](https://amzn.to/3sc4aqv), by team. And if the equipment is renewed or damaged requiring the change of some components, a new license must be acquired. Given the not inconsiderable cost of the license, it is not surprising that both Windows and Office are one of the most used products without a license or pirated.
 
-{{< amazon
-    linkids="762b16ff0b7f340317343dc4a24097ab&internal=1,1f45d19184a5ea936b680670062a7fad&internal=1"
-    asins="B00HC6QQQM,B01FNRXAZG" >}}
+Given how easy it is to use Windows and Office without a license together with the [Windows tax][elblogdepicodev-57] they have a market share in practically monopoly numbers and there are no signs that it will change in the short term. Sometimes I think that [Microsoft doesn't care if you use unlicensed Windows or Office][blogbitix-92-en] for personal use. However, there are alternatives for both Windows and Office that have little to envy, much cheaper or even free and free software even with better support than [Microsoft][microsoft] offers for their own software. What is not recommended to use activators because it is a source of computer viruses or trojans is better [buy a cheap license for Windows 10 and Microsoft Office][blogbitix-514-en].
 
-Given how easy it is to use Windows and Office without license along with the [Windows tax][elblogdepicodev-57] they have a market share in virtually monopoly numbers, that will not change in the short term. Sometimes I think that [Microsoft does not care if Windows or Office users uses them without a license][blogbitix-285] for personal use. However, there are alternatives for both Windows and Office that have little to envy, much cheaper or even free and libre software even with better support than [Microsoft][microsoft] offers for its own software.
+* [Windows 10 Home License](https://amzn.to/333Df5X) on Amazon.
+* [Windows 10 Pro License](https://amzn.to/3iZ4dBk) on Amazon.
+* [Microsoft Office 2019 License](https://amzn.to/369oJfc) on Amazon.
+* [Windows 10 Home License](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+home+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+home+key+64) on eBay.
+* [Windows 10 Pro License](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) on eBay.
+* [Microsoft Office 2019 License](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) on eBay.
 
-The alternatives to Windows are the expensive [Apple][apple] products very oriented to the high ranges especially for the price or some of the many distributions GNU/Linux that are almost totally free and libre software, although the libre software does not have to be free in most cases.
+The alternatives to Windows are the expensive products of [Apple][apple] very oriented to high ranges especially for the price or one of the many distributions [GNU][gnu]/[Linux][linux] that are practically in their entirety free and free software, although free software does not have to be without cost in most cases it is.
 
-In this article I will focus on alternatives to Office that are also several. Bypassing the issue of libre software, Office is a good and complete office suite with more options than many users will need.
+In this article I will focus more on the alternatives to Office which are also several. Leaving aside the issue of free software, Office is a good and complete office suite with more options than many users will need.
 
 {{< tableofcontents >}}
 
 ### Microsoft Office
 
-Microsoft Office includes Word as word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an e-mail client, OneNote for taking notes or Publisher for publications. It is only available for Windows and Mac for desktop and web versions for these and other systems. [Office 365](https://products.office.com/es-es/) has a cost of 8.80 € per user and according to the plan that includes more or fewer applications.
+Microsoft Office includes Word as a word processor, Powerpoint for presentations, Excel for spreadsheets, Access for databases, Outlook as an email client, OneNote for taking notes, or Publisher for publications. It is only available for Windows and Mac for the desktop, and the web versions for these and other systems. [Office 365][microsoft-office-365] has a cost of around 8.80 € per user and month depending on the plan that includes more or fewer applications.
 
 {{< image
     gallery="true"
-    image1="image:microsoft-office-word.png" optionsthumb1="300x200" title1="Microsoft Office Word"
-    image2="image:microsoft-office-excel.png" optionsthumb2="300x200" title2="Microsoft Office Excel" >}}
-{{< image
-    gallery="true"
-    image1="image:microsoft-office-powerpoint.png" optionsthumb1="300x200" title1="Microsoft Office Powerpoint" >}}
+    image1="image:microsoft-office-word.png" optionsthumb1="200x150" title1="Microsoft Office Word"
+    image2="image:microsoft-office-excel.png" optionsthumb2="200x150" title2="Microsoft Office Excel"
+    image3="image:microsoft-office-powerpoint.png" optionsthumb3="200x150" title3="Microsoft Office Powerpoint"
+    caption="Microsoft Office" >}}
 
 ### LibreOffice
 
-The free and libre alternative of Office is [LibreOffice](https://es.libreoffice.org/). It includes a text editor with Writing, spreadsheets with Calc, presentations with Impress, Drawing to create graphs and Base for simple databases. However, the interface is similar to the Office in the previous editions incorporated with an aesthetic and without the feeling of being taken care of. The menus are long and find a choice among the many is not easy, opening a menu option can be feel intimidated by the length of it and somewhat more difficult to quickly find the desired option among all shown. There will be users who prefer the menu interface and toolbars, I am the ones who like ribbon. It is available for Windows, Linux and Mac.
+The equivalent free and free alternative to Office is [LibreOffice][libreoffice]. It includes a text editor with Writer, spreadsheets with Calc, presentations with Impress, Draw to create graphics and Base for simple databases. However, the interface is similar to that of Office in previous editions to the incorporation of _ribbon_ with an aesthetic without the feeling of being cared for. The menus are long and finding an option among the many available is not easy, when opening a menu option one can feel intimidated by its length and it is somewhat more difficult to quickly find the option you are looking for among all those displayed. There will be users who prefer the interface of menus and toolbars, I am one of those who like _ribbon_ the most. It is available for Windows, Linux, and Mac.
 
 {{< image
     gallery="true"
-    image1="image:libreoffice-writer.png" optionsthumb1="300x200" title1="LibreOffice Writer"
-    image2="image:libreoffice-calc.png" optionsthumb2="300x200" title2="LibreOffice Calc" >}}
-{{< image
-    gallery="true"
-    image1="image:libreoffice-impress.png" optionsthumb1="300x200" title1="LibreOffice Impress" >}}
+    image1="image:libreoffice-writer.png" optionsthumb1="200x150" title1="LibreOffice Writer"
+    image2="image:libreoffice-calc.png" optionsthumb2="200x150" title2="LibreOffice Calc"
+    image3="image:libreoffice-impress.png" optionsthumb3="200x150" title3="LibreOffice Impress"
+    caption="LibreOffice" >}}
 
 ### WPS Office
 
-If you like the ribbon interface without menus with a multitude of options and that is more careful in a design than LibreOffice similar to the one used in Microsoft Office, [WPS Office](https://www.wps.com/) is a great option to take into account, it can also be activated in classic mode menus and toolbars, it can edit multiple documents in tabs. It offers the basic programs of an office suite: text editor, spreadsheets and presentations. For personal use it is available with some limitations when printing and exporting documents to PDF format.
+If we like the _ribbon_ interface more without menus with a multitude of options and that it is more careful in terms of design than LibreOffice, similar to the one used in Microsoft Office, [WPS Office][wps-office] is an option to take into account, it can also be activated in classic mode with menus and toolbars supporting the editing of several documents in tabs. It only offers the basic programs of an office suite: text editor, spreadsheets and presentations. For personal use it is free with some limitations when printing and exporting documents to PDF format but more than enough even without all the options only available in the payment option.
 
-For the business environments with all its options its license has a much more reasonable cost than Microsoft Office, 30 € for a one year subscription license and 80 € for the perpetual license.
+For the business environment or with all its options, its license has a much more reasonable cost than Microsoft Office, 45 € for a one-year license and 80 € for a lifetime license per user.
 
-It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which Microsoft Office does not already offer support, Linux, Android and iOS. Its installer occupies only 80 MB against more than 3 gigas of Office.
+It is available for Windows (XP, Vista, 7, 8, 10) even in versions for which not even Microsoft Office already offers support, Linux, Android and iOS. Its installer occupies only about 80 MiB against the more than 3 GiB of Office.
 
 {{< image
     gallery="true"
-    image1="image:wpsoffice-writer.png" optionsthumb1="300x200" title1="WPS Writer"
-    image2="image:wpsoffice-spreadsheets.png" optionsthumb2="300x200" title2="WPS Spreadsheets" >}}
-{{< image
-    gallery="true"
-    image1="image:wpsoffice-presentation.png" optionsthumb1="300x200" title1="WPS Office Presentation" >}}
+    image1="image:wpsoffice-writer.png" optionsthumb1="200x150" title1="WPS Office Writer"
+    image2="image:wpsoffice-spreadsheets.png" optionsthumb2="200x150" title2="WPS Office Spreadsheets"
+    image3="image:wpsoffice-presentation.png" optionsthumb3="200x150" title3="WPS Office Presentation"
+    caption="WPS Office" >}}
 
 ### Google Docs
 
-Another alternative to Office is [Google Docs](https://www.google.es/intl/es/docs/about/), it does not have all the options that Office has but for most users it is enough. Simply have a Google account to use that includes a text editor, spreadsheets, presentations and the ability to make forms. It runs in the browser and although it is possible to work without internet connection at specific times is required. The documents are stored in the cloud so we will not lose them in case of spoiling our computer, we can access the documents from any of our devices as a smartphone o tablet, edit the same document by two or more persons simultaneously or share the documents with other people. Being based on the cloud we do not need to perform software updates except the browser.
+Another alternative to Office is [Google Docs][google-docs], it does not have all the options that Office has but for most users it is enough. Simply have a Google account to use that includes a text editor, spreadsheets, presentations and the ability to make forms. It runs in the browser and although it is possible to work without internet connection at specific times is required. The documents are stored in the cloud so we will not lose them in case of spoiling our computer, we can access the documents from any of our devices as a smartphone o tablet, edit the same document by two or more persons simultaneously or share the documents with other people. Being based on the cloud we do not need to perform software updates except the browser.
 
-For companies it is offered at the price of 4 € per user per month which includes the Gmail email client, calendars, video calls and 30GB of storage. There will be 8 € with more storage options and message retention.
+For companies, it is offered at a price of 4 € per user per month that includes the Gmail email client, calendars, video calls and 30 GB of storage. It will be 8 € with more storage and retention options for messages.
 
 {{< image
     gallery="true"
-    image1="image:googledocs-documento.png" optionsthumb1="300x200" title1="Documento Google Docs"
-    image2="image:googledocs-hoja-de-calculo.png" optionsthumb2="300x200" title2="Hoja de cálculo Google Docs" >}}
+    image1="image:googledocs-documento.png" optionsthumb1="200x150" title1="Google Docs"
+    image2="image:googledocs-hoja-de-calculo.png" optionsthumb2="200x150" title2="Google Docs"
+    image3="image:googledocs-presentacion.png" optionsthumb3="200x150" title3="Google Docs"
+    caption="Google Docs" >}}
+
+### OnlyOffice
+
+[OnlyOffice][onlyoffice] also offers a basic office suite consisting of documents, spreadsheets and presentations. It has a desktop application for the main operating systems and it can also be run in its own cloud hosted with [Nextcloud][nextcloud] preserving document ownership and without the inconvenience of Google Docs loss of privacy. They are applications without all the options offered by Microsoft Office or LibreOffice but for sufficient basic use.
+
 {{< image
     gallery="true"
-    image1="image:googledocs-presentacion.png" optionsthumb1="300x200" title1="Presentación Google Docs" >}}
+    image1="image:onlyoffice-documentos.png" optionsthumb1="200x150" title1="OnlyOffice Documents"
+    image2="image:onlyoffice-hojas-de-calculo.png" optionsthumb2="200x150" title2="OnlyOffice Spreadsheets"
+    image3="image:onlyoffice-presentaciones.png" optionsthumb3="200x150" title3="OnlyOffice PresentPresentationaciones"
+    caption="OnlyOffice" >}}
 
-Some other options that deserves to be commented is [Calligra][calligra] the [KDE desktop environment][kde] suite, [Abiword][abiword], [Lyx][lyx] or [Gnumeric][gnumeric].
+### Other alternatives
 
-The next time I'm asked to reinstall Windows or Office instead of installing the Microsoft Office suite without a license I think I will install the WPS Office personal use option, I will recommend using Google Docs or LibreOffice, I hope them improve and update to modern times its interface when I have to install it again.
+Some other option that deserves to be discussed is [Calligra][calligra] the _suite_ of the [KDE desktop environment][kde], [Abiword][abiword], [Lyx][lyx] or [Gnumeric][gnumeric].
+
+The next time they ask me to reinstall Windows or Office instead of installing Microsoft's office suite without a license, I think I will install the option for personal use of WPS Office, I will recommend using Google Docs, OnlyOffice or LibreOffice, which I hope will improve and update to modern times your interface when you need to install it.
 
 {{< reference >}}
 * [A Microsoft no le importa que uses Windows u Office sin licencia][blogbitix-92]
-* [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-222]
-* [Windows tax][elblogdepicodev-57]
-* [LibreOffice][libreoffice]
-* [WPS Office][wps-office]
-* [Google Docs][google-docs]
+* [Windows 10 y Office 2016 tan fáciles de usar sin licencia como siempre][blogbitix-119]
+* [El impuesto Windows][elblogdepicodev-57]
 {{< /reference >}}
 
 {{% /post %}}

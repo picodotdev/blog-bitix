@@ -84,8 +84,8 @@ Un par de artículos patrocinados de los cuales uno ha sido otra forma de ingres
 
 También he publicado un par de artículos en inglés traducción de otros que publique en español como experimento para comprobar que tal se indexan en Google y si alguno de ellos atrae visitas a mi blog.
 
-* [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-222]
-* [3 office alternative options to Microsoft Office][blogbitix-225]
+* [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-119-en]
+* [3 office alternative options to Microsoft Office][blogbitix-143-en]
 
 Habiendo publicado dos series con una buena cantidad de artículos este semestre he publicado pocos artículos de programación. A destacar de estos últimos ha sido el resumen como en años anteriores de la conferencia [BilboStack][bilbostack] celebrada en febrero de las presentaciones a las que asistí. Varios artículos sobre diferentes tipos de bases de datos relacionales, de documentos y de clave valor representadas por [PostgreSQL][postgresql], [MongoDB][mongodb] y [Redis][redis]. También como realizar autenticación mutua entre cliente y servidor con certificados ya sea con el programa _curl_, una aplicación en la plataforma Java o con un navegador web.
 

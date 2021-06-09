@@ -1,5 +1,5 @@
 ---
-pid: 222
+pid: "119-en"
 type: "post"
 title: "Windows 10 and Office 2016 as easy to use without license as always"
 url: "/2016/01/windows-10-and-office-2016-as-easy-to-use-without-license-as-always/"
@@ -24,13 +24,13 @@ This 2016 I have started nothing more and nothing less than installing the opera
 
 The computer had several bloatware programs typical of [Windows][windows] laptops provided by manufacturers, an antivirus that could fit the definition of what it tries to protect that expires after a while and leaves it unprotected, a music player that starts with the desktop and hides at the top of the screen in case you atypically need it. The manufacturers are the ones who pre-install these undesirable programs and will be the main culprits but if [Microsoft][microsoft] knows the bad name they give their systems, and so far has not prevented it, some guilt will have, if its operating system is an imposition in practically the whole laptops that are sold in stores, Do you know the [Windows tax][elblogdepicodev-57]?, they could impose some condition to allow Windows pre-install and make their users happier.
 
-On the other hand since Windows Vista era the computer can be reinstalled and leave as factory included all the bloatware previously quoted but for this they reserve about 10 GiB of the hard disk space that is not usable by the user. With hard drives with capacities of 320 / 500 GB that are reserved 10 GiB is no bigger problem but more than one has asked because its available space does not correspond with the specifications of the equipment that bought.
+On the other hand since Windows Vista era the computer can be reinstalled and leave as factory included all the bloatware previously quoted but for this they reserve about 10 GiB of the hard disk space that is not usable by the user. With hard drives with capacities of 320/500 GB that are reserved 10 GiB is no bigger problem but more than one has asked because its available space does not correspond with the specifications of the equipment that bought.
 
 So to fix the problems I did a clean reinstallation.
 
 ### Starting the installation
 
-At the point of doing the reinstallation I had no problem, the computer had Windows 7 originally, had been upgraded to Windows 10 and activated correctly in the period of free upgrade offered by Microsoft. As I have done many times in years and with previous versions I start by [downloading the Windows 10 installation image media](https://www.microsoft.com/es-es/software-download/windows10ISO) and [the installation media for Microsoft Office, Home and Students](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img). I continue [starting the Windows 10 installation step by step from scratch][blogbitix-231]. The installation media images are offered kindly by Microsoft so I had not to search them in the file sharing networks like in the older times.
+At the point of doing the reinstallation I had no problem, the computer had Windows 7 originally, had been upgraded to Windows 10 and activated correctly in the period of free upgrade offered by Microsoft. As I have done many times in years and with previous versions I start by [downloading the Windows 10 installation image media](https://www.microsoft.com/es-es/software-download/windows10ISO) and [the installation media for Microsoft Office, Home and Students](http://officecdn.microsoft.com/pr/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/es-es/HomeStudent2019Retail.img). I continue [starting the Windows 10 installation step by step from scratch][blogbitix-231-en]. The installation media images are offered kindly by Microsoft so I had not to search them in the file sharing networks like in the older times.
 
 In one of the installation steps I deleted all the partitions recovering the space reserved for the recovery partition. A few minutes of waiting, a couple of reboots and several privacy options deactivated that could give Windows 10 the name of spyware, supposedly for the sake of user, and after creating the user account the system starts with all the devices working properly including graphics card, network and WiFi. Windows is displayed as enabled.
 
@@ -38,7 +38,7 @@ I have to install the basic additional programs with the intention of being free
 
 ### I try to activate Windows and Office
 
-I start Word and it shows me a message that after about 30 days many of its functions will be disabled. The time comes to prove empirically once again what I said in [Microsoft does not care that you use Windows or Office without a license][blogbitix-285], I look for some activator in Google, there are hundreds of results, I download one from one of links that gives me some hope of not have a virus, immediately after download the executable file and Windows Defender warns that it have a virus, I run it anyway and click on the button to activate the Office, a message indicating that the activation has failed, I try several options without apparent effect to see if I am not right and Microsoft has done its job to avoid piracy. I search the links and I download another, virus warning, everything normal, I run it, icons begin to appear on the desktop of rare programs that are being installed and Firefox has been changed its home page, wow! this supposed activator was a virus, Defender was right, I will have to reinstall everything again.
+I start Word and it shows me a message that after about 30 days many of its functions will be disabled. The time comes to prove empirically once again what I said in [Microsoft does not care that you use Windows or Office without a license][blogbitix-285-en], I look for some activator in Google, there are hundreds of results, I download one from one of links that gives me some hope of not have a virus, immediately after download the executable file and Windows Defender warns that it have a virus, I run it anyway and click on the button to activate the Office, a message indicating that the activation has failed, I try several options without apparent effect to see if I am not right and Microsoft has done its job to avoid piracy. I search the links and I download another, virus warning, everything normal, I run it, icons begin to appear on the desktop of rare programs that are being installed and Firefox has been changed its home page, wow! this supposed activator was a virus, Defender was right, I will have to reinstall everything again.
 
 ### Searching an activator without virus
 
@@ -58,7 +58,7 @@ It is the beginning of 2016 and I have not made one but three installations of W
 
 ### What are the alternatives to use an activator
 
-Finally I used an activator but they are insecure, is better to purchase a license to one the alternative sellers to Microsoft that offer valid and legal license keys with prices much more cheaper than Microsoft. Microsoft sells the licenses of Windows starting at 145 € for Windows 10 and for Microsoft Office starting from 149 €, other sellers that can be found in [Amazon][Amazon] and [eBay][eBay] offer legal licenses much more cheaper, between 10 € and 15 €. So that some personalization options does not get disabled in Windows, does not get disabled the Microsoft Office documents edition and does not appears popup messages requesting the activation is necessary to [buy a license and activate Windows 10 and Office 2019][blogbitix-514].
+Finally I used an activator but they are insecure, is better to purchase a license to one the alternative sellers to Microsoft that offer valid and legal license keys with prices much more cheaper than Microsoft. Microsoft sells the licenses of Windows starting at 145 € for Windows 10 and for Microsoft Office starting from 149 €, other sellers that can be found in [Amazon][Amazon] and [eBay][eBay] offer legal licenses much more cheaper, between 10 € and 15 €. So that some personalization options does not get disabled in Windows, does not get disabled the Microsoft Office documents edition and does not appears popup messages requesting the activation is necessary to [buy a license and activate Windows 10 and Office 2019][blogbitix-514-en].
 
 * [Windows 10 license](https://www.microsoft.com/es-es/store/b/windows) in Microsoft.
 * [Microsoft Office 2019 license](https://www.microsoft.com/es-es/microsoft-365/buy/compare-all-microsoft-365-products) in Microsoft.
@@ -69,6 +69,6 @@ Finally I used an activator but they are insecure, is better to purchase a licen
 * [Windows 10 Pro license](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=windows+10+professional+digital+key+64+bits&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=windows+10+pro+digital+key+64+bits) in eBay.
 * [Microsoft Office 2019 license](https://www.ebay.es/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=microsoft+office+2019++key&_sacat=0&LH_TitleDesc=0&_sop=2&_osacat=0&_odkw=microsoft+office+2019+pro+key) in eBay.
 
-If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-225] that suits your needs.
+If you can use software with a legal license but if not use some of the alternative options available for both Windows [choosing a GNU/Linux distribution][blogbitix-180] and [Office and any of its alternatives][blogbitix-143-en] that suits your needs.
 
 {{% /post %}}

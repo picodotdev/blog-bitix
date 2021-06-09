@@ -1,5 +1,5 @@
 ---
-pid: 285
+pid: "92-en"
 type: "post"
 title: "Microsoft does not care if you use Windows or Office without a license"
 url: "/2015/07/microsoft-does-not-care-if-you-use-windows-or-office-without-a-license/"
@@ -46,8 +46,8 @@ Microsoft knows that you are using your software without the corresponding licen
 A new version of Windows or a new computer is an ideal occasion for instead of migrating to the new version of Windows make the jump to GNU/Linux and stop worrying about being raped by slavering licenses or accepting clauses that most people would read and understood they would not accept it so cheerfully. I did it a few years ago going through various distributions, [from Windows to Arch Linux][elblogdepicodev-15], and after almost six years I still follow Arch, [from Arch Linux to Arch Linux][blogbitix-36].
 
 {{< reference >}}
-* [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-222]
-* [3 office alternative options to Microsoft Office][blogbitix-225]
+* [Windows 10 and Office 2016 as easy to use without license as always][blogbitix-119-en]
+* [3 office alternative options to Microsoft Office][blogbitix-143-en]
 {{< /reference >}}
 
 {{% /post %}}

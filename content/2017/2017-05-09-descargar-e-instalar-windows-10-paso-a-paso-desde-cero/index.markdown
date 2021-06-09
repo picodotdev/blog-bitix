@@ -45,7 +45,7 @@ Cualquier equipo nuevo cumple con estos requisitos pero quizá algunos no posean
 Windows 10 tiene diferentes versiones, las diferencias entre ellas está en las características que soportan.
 
 * _Home_: es la versión usada mayoritariamente y suficiente para la mayoría de usuarios que se instala en los equipos domésticos.
-* _Pro_: esta versión incluye todas las funcionalidades de la edición _Home_ con algunas adicionales normalmente necesarias en entornos empresariales. Algunas de sus funcionalidades adicionales son [Directorio Activo], Escritorio remoto, BitLocker, virtualización con Hyper-V y _Windows Defender Device Guard_.
+* _Pro_: esta versión incluye todas las funcionalidades de la edición _Home_ con algunas adicionales normalmente necesarias en entornos empresariales. Algunas de sus funcionalidades adicionales son Directorio activo, Escritorio remoto, BitLocker, virtualización con Hyper-V y _Windows Defender Device Guard_.
 * _Pro for Workstations_: es la versión que permite usar Windows en equipos de altas prestaciones con procesadores Intel Xeon o AMD Epyc, grandes cantidades de memoria y algunas opciones avanzadas más.
 
 ### Copia de seguridad
@@ -198,7 +198,9 @@ Aún sin licencia y sin activar Windows 10 es perfectamente usable, quizá al ca
 
 #### Comprar una licencia y activar Windows 10
 
-Instalar y usar Windows 10 es gratuito pero pasados unos días después de la instalación ha de activarse con un código de licencia válido, si no se activa se deshabilitan algunas opciones de personalización como el cambio del fondo de escritorio aunque no impiden su uso. Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendedores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
+Instalar y usar Windows 10 es gratuito pero pasados unos días después de la instalación ha de activarse con un código de licencia válido, si no se activa se deshabilitan algunas opciones de personalización como el cambio del fondo de escritorio aunque no impiden su uso.
+
+Las licencias de Windows 10 vendidas por Microsoft no son baratas, entre 145 € y 439 € según la versión. Algunos vendedores ofrecen licencias baratas y legales a unos precios muy reducidos de entre 10 € y 15 € como explico en el artículo [Cómo comprar una licencia y activar Windows 10 y Microsoft Office 2019][blogbitix-514].
 
 ### Alternativa a Windows con distribuciones GNU/Linux
 

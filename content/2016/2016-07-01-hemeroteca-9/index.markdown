@@ -52,7 +52,7 @@ En la categoría de GNU/Linux y software libre están los siguientes artículos:
 * [Cómo eliminar de forma segura archivos con wipe y dd en GNU/Linux][blogbitix-130]
 * [Cambiar el formato de archivos de música o audio en GNU/Linux][blogbitix-134]
 * [Cambiar el formato de archivos de vídeo o películas en GNU/Linux][blogbitix-135]
-* [3 opciones ofimáticas alternativas a Microsoft Office][blogbitix-143]
+* [4 opciones ofimáticas alternativas gratuitas a Microsoft Office][blogbitix-143]
 * [Cómo realizar copias de seguridad en Windows con FreeFileSync][blogbitix-144]
 * [Atajos de teclado básicos de la terminal en GNU/Linux][blogbitix-150]
 * [Combinación de teclas para copiar y pegar en la terminal][blogbitix-152]
