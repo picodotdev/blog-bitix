@@ -4,7 +4,7 @@ type: "post"
 title: "Eligiendo proveedor de internet, finalmente Pepephone"
 url: "/2016/08/eligiendo-proveedor-de-internet-finalmente-pepephone/"
 date: 2016-08-14T12:00:00+02:00
-updated: 2017-03-14T22:30:00+02:00
+updated: 2021-06-10T21:30:00+02:00
 rss: true
 sharing: true
 comments: true
@@ -18,7 +18,7 @@ note: "<strong>Nota</strong>: Este no es ni mucho menos un artículo patrocinado
 
 {{% post %}}
 
-{{< logotype image1="pepephone.svg" title1="Pepephone" width1="400">}}
+{{< logotype image1="pepephone.svg" >}}
 
 Después de hacer unos cuantos temas ha llegado el turno de elegir un proveedor de internet. Como en todos los casos en los que hay que tomar alguna decisión he empezado por recopilar que opciones ofrece cada compañía, con que características y precios. Hay diferencias importantes entre algunas de las ofertas de los operadores que dependiendo de nuestras necesidades alguna se adaptará mejor, no hay una oferta que de forma absoluta sea la mejor aunque puede que si para una mayoría.
 
@@ -64,6 +64,8 @@ Solicitada la instalación en unos días un técnico de Movistar me instaló la 
     caption="Test de velocidad de ADSL Pepephone" >}}
 
 Estos 9 MiB de bajada y 400 KiB de subida son algo menos de la mitad teórica del ADSL y en algunas [pruebas de velocidad](https://www.testdevelocidad.es/) que he hecho me ha dado resultados de 4 MiB / 200 KiB pero aún en el peor de los casos en la navegación no es perceptible. Respecto a la estabilidad de la linea sin ningún problema, en las pruebas de _ping_ que he hecho no se pierden paquetes. Esta menor velocidad que la teórica es algo que no era una sorpresa para mí que ya me lo esperaba aunque pensaba que sería algo mejor y como he comentado la velocidad no es a lo que más importancia le he dado, si al precio.
+
+Pasados casi cinco años finalmente he pasado [del ADSL a la fibra de Pepephone][blogbitix-581].
 
 {{< image
     gallery="true"
