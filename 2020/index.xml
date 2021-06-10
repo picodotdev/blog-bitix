@@ -55,9 +55,10 @@
 <p>En este vídeo se pueden activar los subtítulos con la transcripción del audio, aunque en este caso el vídeo original ya incluye los subtítulos.</p>
 <div class="media">
 <figure>
-<video src="videos/darkest-dungeon.mp4" controls width="640" height="360" autoplay="false" poster="images/darkest-dungeon.jpg">
-    <track label="Español" kind="subtitles" srclang="es" src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/videos/darkest-dungeon-intro-es.vtt">
-</video>
+<amp-video controls width="640" height="360" layout="fixed" poster="images/darkest-dungeon.jpg">
+  <source src="videos/darkest-dungeon.mp4" type="video/mp4" />
+  <track label="Español" kind="subtitles" srclang="es" src="https://picodotdev.github.io/blog-bitix/2021/06/como-crear-y-poner-subtitulos-a-un-video/videos/darkest-dungeon-intro-es.vtt">
+</amp-video>
 <figcaption>Vídeo subtitulado</figcaption>
 </figure>
 </div>
