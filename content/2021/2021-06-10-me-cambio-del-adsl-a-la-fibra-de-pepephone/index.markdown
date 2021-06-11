@@ -96,7 +96,7 @@ Pasar de ADSL a fibra es un cambio muy significativo, no tanto en la navegación
 
 La fibra permite servicios de suscripción como televisión de pago, servicios de películas como [Netflix][netflix], [HBO][hbo], [Disney+][disneyplus] entre otros servicios de vídeo. También permite acceder a servicios de juegos en la nube como [Stadia][google-stadia] que quizá sustituya como plataforma de juegos a la siguiente generación de consolas de la PS5 y la Xbox X/S.
 
-El ancho de banda de bajada y subida es posible comprobarlo en la siguiente página web de [prueba de velocidad][testdevelocidad] o ancho de banda y latencia.
+El ancho de banda de bajada y subida es posible comprobarlo en la siguiente página web de [prueba de velocidad][testdevelocidad] o ancho de banda y latencia. Aunque la fibra contratada es de 300 Mb en la práctica es una de 600 Mb.
 
 {{< image
     gallery="true"
