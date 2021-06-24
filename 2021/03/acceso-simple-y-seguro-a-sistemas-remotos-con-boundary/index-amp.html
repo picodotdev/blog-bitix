@@ -481,7 +481,7 @@
 <p>La autenticaión de SSH usando Boudary no cambia, se solicita la contraseña del usuario con el que se realiza la conexión, la clave pública en caso de que el servidor se haya configurado con clave pública y privada o incluso un segundo factor de autenticación.</p>
 <ul>
 <li><a href="https://picodotdev.github.io/blog-bitix/2019/05/autenticacion-mediante-clave-publica-y-privada-con-ssh/index-amp.html">Autenticación mediante clave pública y privada con SSH</a></li>
-<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-2fa-en-ssh/index-amp.html">Autenticación con segundo factor de autenticación en SSH</a></li>
+<li><a href="https://picodotdev.github.io/blog-bitix/2021/03/autenticacion-con-segundo-factor-de-autenticacion-en-ssh/index-amp.html">Autenticación con segundo factor de autenticación en SSH</a></li>
 </ul>
 <h4 id="segundo-factor-de-autenticación-con-vault">Segundo factor de autenticación con Vault</h4>
 <p>Vault permite generar contraseñas de un solo uso y configurando SSH validar los OTP proporcionados en la conexión. La ventaja de usar OTP es que no es necesario distribuir las claves públicas en cada una de las máquinas en las que se quiera realizar la conexión SSH. Hay que cambiar los archivos de configuración <em>/etc/pam.d/sshd</em>, <em>/etc/ssh/sshd_config</em>, <em>/etc/vault-ssh-helper.d/config.hcl</em> y reiniciar el servicio de SSH, estos cambios permiten al servidor SSH validar los <em>tokens</em> proporcionados conectándose con Vault.</p>
