@@ -57,7 +57,7 @@ A medida que los héroes realizan misiones ganan experiencia y suben de nivel, l
 Cada héroe puede tener hasta 5 rasgos positivos que se ganan al subir de nivel  y 5 negativos que se adquieren también al subir de nivel o en algunos _curio_. Si un héroe ya tiene 5 rasgos y adquiere otro uno anterior es reemplazado, para no perder uno especialmente bueno es posible fijarlos en el sanatorio. Aunque los héroes tienen hasta 7 habilidades entre las que elegir en un mismo momento solo pueden estar activas 4 igual que las de acampada, estas hay que elegirlas por ser las mejores del héroe o por ser las más adecuadas según el grupo de héroes en una misión. Se pueden cambiar en el poblado y también entre los combates pero no en medio de un combate. Los héroes de la diligencia que se incorporan a los barracones con un nivel mayor que 0 las poseen todas a su mayor nivel a diferencia de los héroes que se incorporan de nivel 0 que no poseen todas.
 
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:hero-abomination.jpg" optionsthumb1="200x150" title1="Abominación"
     image2="image:hero-antiquarian.jpg" optionsthumb2="200x150" title2="Anticuaria"
     image3="image:hero-arbalest.jpg" optionsthumb3="200x150" title3="Arbalestera" >}}
