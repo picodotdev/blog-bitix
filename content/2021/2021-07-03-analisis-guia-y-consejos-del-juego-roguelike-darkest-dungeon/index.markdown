@@ -62,22 +62,22 @@ Cada héroe puede tener hasta 5 rasgos positivos que se ganan al subir de nivel�
     image2="image:hero-antiquarian.jpg" optionsthumb2="200x150" title2="Anticuaria"
     image3="image:hero-arbalest.jpg" optionsthumb3="200x150" title3="Arbalestera" >}}
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:hero-bounty-hunter.jpg" optionsthumb1="200x150" title1="Caza recompensas"
     image2="image:hero-crusader.jpg" optionsthumb2="200x150" title2="Cruzado"
     image3="image:hero-grave-robber.jpg" optionsthumb3="200x150" title3="Asaltatumbas" >}}
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:hero-hellion.jpg" optionsthumb1="200x150" title1="Diabla"
     image2="image:hero-highwayman.jpg" optionsthumb2="200x150" title2="Bandolero"
     image3="image:hero-hound-master.jpg" optionsthumb3="200x150" title3="Maestro canino" >}}
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:hero-jester.jpg" optionsthumb1="200x150" title1="Bufón"
     image2="image:hero-leper.jpg" optionsthumb2="200x150" title2="Leproso"
     image3="image:hero-man-at-arms.jpg" optionsthumb3="200x150" title3="Hombre de armas" >}}
 {{< image
-    gallery="true"
+    gallery="false"
     image1="image:hero-occultist.jpg" optionsthumb1="200x150" title1="Ocultista"
     image2="image:hero-plague-doctor.jpg" optionsthumb2="200x150" title2="Doctor de plaga"
     image3="image:hero-vestal.jpg" optionsthumb3="200x150" title3="Vestal"
