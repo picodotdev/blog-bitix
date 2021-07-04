@@ -30,6 +30,8 @@ Aunque el juego es aparentemente sencillo está repleto de información que hace
 
 For the King me ha parecido un juego muy entretenido, sencillo pero con todos los elementos que requiere un juego de rol, su historia no es muy profunda pero es suficiente para poner el contexto de la aventura y dar sentido a los objetivos. Para completar el juego solo le faltaría interacción y conversaciones con otros personajes en las que elegir varias opciones de diálogo que cambien los efectos según la opción escogida. El sistema de combate y cálculo de porcentajes funciona bien, no como [el juego XCOM 2][blogbitix-459] que cuando lo jugué me dió la sensación que los porcentajes eran muy poco exactos, aunque estos dos son juegos bastante diferentes tienen algunos aspectos similares en el combate y estadísticas.
 
+Si For the King es sencillo y no muy difícil [el juego Darkest Dungeon][blogbitix-585] es otro tema diferente, es más complejo y difícil. Darkest Dungeon tiene aspectos similares de exploración de mazmorras, combates por turnos, equipamiento y habilidades, rasgos, enfermedades, muchas clases del héroe, diferentes enemigos y jefes. Si a uno le gusta un juego de los dos seguramente le guste el otro.
+
 {{< image
     gallery="true"
     image1="image:for-the-king.jpg" optionsthumb1="300x250" title1="Pantalla inicial"
@@ -37,7 +39,6 @@ For the King me ha parecido un juego muy entretenido, sencillo pero con todos lo
     caption="Pantalla inicial y menú del juego For de King" >}}
 
 {{< game-spoiler >}}
-
 {{< tableofcontents >}}
 
 ### Modos de juego
