@@ -58,6 +58,8 @@ Ofrecerá una modalidad de suscripción para tener acceso a 4K, 60 FPS, HDR y so
 
 Por lo demás el precio de suscripción de 10 €/mes es recurrente pero teniendo en cuenta que una PS5 costará entre 400 € y 500 € en el momento de lanzamiento el precio de suscripción dan para varios años en lo que costaría comprar una PS5. Esta también por ver el precio de los juegos en Stadia si serán similares a los de las consolas tradicionales o algo superiores y el catálogo de juegos que ofrece en el momento de lanzamiento y pasados unos meses o algún año. Sin embargo, la tendencia a futuro parece indicar que el modelo de Stadia sea el que sigan las consolas o plataformas de juego más tarde o temprano. [Nvidia][nvidia] con su servicio [GeForce Now][nvidia-geforce-now], [Amazon][amazon] está por entrar en el sector del entretenimiento de los juegos con [Amazon Luna][amazon-luna] muy similar Stadia, Microsoft tiene xCloud y Sony tiene PlayStation Now. Microsoft y Sony en la siguiente generación de Xbox Series S/X y PS5 seguirán con el modelo tradicional de consolas pero quizá esta sea la última generación antes de que todo esté basado en la nube, lo único que necesitan los servicios en la nube para tener éxito es tener un catálogo amplio de juegos de calidad similar a las consolas.
 
+* [Prueba y opinión sobre jugar mediante streaming][blogbitix-417]
+
 {{< youtube
     video="9uwunZ2a4gc" >}}
 
