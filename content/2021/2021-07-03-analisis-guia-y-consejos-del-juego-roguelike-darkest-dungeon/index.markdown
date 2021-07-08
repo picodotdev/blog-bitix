@@ -90,7 +90,7 @@ Entre todos las diferentes clases de héroes en un grupo hay que elegir una comb
 * Tanque: esta función de héroe es desempeñada por uno con una gran cantidad de puntos de vida y protección capaz de absorber mucho daño sin correr excesivo peligro. Aparte de absorber daño también puede tener la función de hacer daño y otras funciones de apoyo con algunas de sus habilidades como curar o proporcionar potenciadores. Las estadísticas principales de este héroes serán los puntos de vida y protección y en menor medida daño y evasión. Aunque un tanque también podría serlo por tener un alto valor de evasión.
 * Provocador de daño: esta función es la de causar gran cantidad de daño a los enemigos para eliminarlos de un solo golpe o quitar gran cantidades de vida a enemigos con gran cantidad de vida. Las estadísticas principales de los héroes para esta función son la de daño y probabilidad de crítico.
 * Curador: los enemigos también van a tener muchas oportunidades de realizar ataques y causar daño  los héroes, es imprescindible que haya un héroe que cuando sea necesario cure al resto para mantener los puntos de vida del resto en unos niveles que no les haga correr el riesgo de entrar a las puertas de la muerte en el que puedan morir. En el grupo de héroes es aconsejable que haya uno que cure puntos de vida y algún otro con la habilidad de bajar los puntos de estrés.
-* Potenciadores y reductores: otra función que puede desarrollar un héroe es la de soporte para proporcionar potenciadores al resto de héroes del grupo como un aumento de daño, esquiva o velocidad.
+* Potenciadores y mermas: otra función que puede desarrollar un héroe es la de soporte para proporcionar potenciadores al resto de héroes del grupo como un aumento de daño, esquiva o velocidad.
 
 Todos las clases de héroe tienen tres habilidades de acampada comunes y cuatro únicas, que proporcionan potenciadores durante los cuatro siguientes combates o que curan esfuerzo, algunas habilidades tienen efectos negativos. Al realizar una acción con resultado de crítico los héroes obtienen un potenciador.
 
@@ -119,7 +119,7 @@ Las clases de los héroes que tienen como función principal en el grupo son:
 * Tanque: Cruzado, Leproso, Hombre de armas, Asaltatumbas (por evasión).
 * Provocador de daño: Caza recompensas, Asaltatumbas, Diabla, Bandolero, Abominación, Hombre de armas, Maestro canino, Arbalestera.
 * Curador (Puntos de vida, Esfuerzo): Ocultista (PV), Vestal (PV), Cruzado (PV, E), Bufón (E), Arbalestera (PV), Doctor de plaga (PV), Maestro canino(E).
-* Soporte, potenciadores y reductores: Bufón, Oultista, Doctor de plaga, Vestal, Hombre de armas, Maestro canino.
+* Soporte, potenciadores y mermas: Bufón, Oultista, Doctor de plaga, Vestal, Hombre de armas, Maestro canino.
 
 Otro aspecto en el que se pueden clasificar los héroes son por aquellos que tienen la capacidad de hacer daño a medida que pasa el tiempo ya sea por hemorragia o infección. O que tiene la capacidad de mover a enemigos de su posición a otra en la que no puedan utilizar su habilidad más poderosa o de moverse en caso de que los cambien de posición, también si pueden aturdir. La capacidad de hacer daño a enemigos en posiciones 3 y 4, también es importante pues en estas se suelen ubicar los enemigos más peligrosos.
 
@@ -130,6 +130,7 @@ Otro aspecto en el que se pueden clasificar los héroes son por aquellos que tie
 * Capacidad de mover: Caza recompensas, Ocultista, Doctor de plaga, Abominación, Hombre de armas, Bandolero.
 * Capacidad de hacer daño a enemigos en posiciones 3 y 4: Caza recompensas, Asaltatumbas, Diabla, Bufón, Ocultista, Vestal, Abominación, Hombre de armas, Maestro canino, Arbalestera.
 * Capacidad de curarse: Leproso, Abominación, Maestro canino.
+* Capacidad de mermar (Evasión, Daño, Protección, Crítico, Precisión, Velocidad): Ocultista (E, D, Pro), Arbalestera (Pre, C, E), Caza recompensas (Pro, D, V), Hombre de armas (E, V)
 * Héroes religiosos: Leproso, Cruzado, Vestal.
 
 La posición de los héroes también es importante, las habilidades y ataques tienen restricciones de posición.
@@ -162,7 +163,7 @@ Durante una misión hay un nivel de luz que se va reduciendo a medida se recorre
 
 Las hemorragias e infecciones que causan daño al inicio de cada turno del héroe o enemigo se pueden acumular en caso de sufrir varias, el daño que causan que aparentemente no parece peligros con varias de estas acumuladas causan un daño significativo. También hay otros efectos de estado que son temporales y que afectan las estadísticas.
 
-Los potenciadores y reductores tanto para héroes como enemigos también se acumulan e igual que las hemorragias e infecciones duran las rondas que indiquen.
+Los potenciadores y mermas tanto para héroes como enemigos también se acumulan e igual que las hemorragias e infecciones duran las rondas que indiquen.
 
 En misiones medianas y largas existe la posibilidad de acampar después de la cual los héroes pueden ser sorprendidos por un grupo de enemigos.
 
@@ -184,7 +185,7 @@ El porcentaje de patrulla es de utilidad para evitar peligros al explorar mazmor
 
 En el juego sin expansiones hay 4 localizaciones, 5 contando la mazmorra oscura, en las expansiones se añaden una más. A medida que se completan misiones en las localizaciones estas suben de nivel  lo que causa que puedan aparecer enemigos más peligrosos y da acceso a que aparezca la misión de acabar con los jefes. El nivel de las localizaciones llega hasta al 7.
 
-Cada localización tiene diferentes tipos enemigos. En las ruinas serán principalmente no muertos, nigromantes y cultistas de tipo impío con resistencia al sangrado pero con pocos puntos de vida pero vulnerables a la infección y menos peligrosos que los de otras localizaciones, en esta localización es posible encontrar gran cantidad de tesoros. En la foresta abundan los bandidos de tipo humano y otros seres que causan infecciones. En el laberinto es el lugar de las bestias y hombres cerdo vulnerables a la hemorragia. La cala es habitada por criaturas del mar y no muertos, abundan los enemigos con gran protección que causan infecciones y enfermedades y muchos _curio_ proporcionan potenciadores o reductores o manipulan los rasgos.
+Cada localización tiene diferentes tipos enemigos. En las ruinas serán principalmente no muertos, nigromantes y cultistas de tipo impío con resistencia al sangrado pero con pocos puntos de vida pero vulnerables a la infección y menos peligrosos que los de otras localizaciones, en esta localización es posible encontrar gran cantidad de tesoros. En la foresta abundan los bandidos de tipo humano y otros seres que causan infecciones. En el laberinto es el lugar de las bestias y hombres cerdo vulnerables a la hemorragia. La cala es habitada por criaturas del mar y no muertos, abundan los enemigos con gran protección que causan infecciones y enfermedades y muchos _curio_ proporcionan potenciadores o mermas o manipulan los rasgos.
 
 La localización del Darkest Dungeon es el objetivo del juego, tiene algunos aspectos diferentes en el que no se genera de forma aleatoria ni se encuentra botín .
 
@@ -214,7 +215,7 @@ Las estadísticas de resistencias y sus efectos son las siguientes:
 * Golpe mortal: es la resistencia a acabar muerto del héroe al sufrir un nuevo daño cuando está en las puertas de la muerte con cero puntos de vida. La estadística base es de un 67% de resistencia.
 * Movimiento: es la resistencia a ser cambiado de posición cuando sufre un ataque de movimiento.
 * Hemorragia: la hemorragia es otro ataque que causa daño por tiempo. La resistencia es el porcentaje para resistirse a sufrir hemorragia en un ataque que lo provoque.
-* Merma: la resistencia a evitar ataques que causen efectos reductores.
+* Merma: la resistencia a evitar ataques que causen efectos de merma.
 * Desarmado de trampas: es el porcentaje de éxito al intentar desarmar una trampa.
 
 El nivel de arma afecta al daño base, porcentaje de crítico base y velocidad base. El nivel de armadura afecta a los puntos de esquiva y puntos de vida. El nivel de habilidad afecta con porcentaje modificador al daño base, la precisión base y porcentaje de crítico base. Algunos abalorios modifican estas estadísticas, algunos aumentan unas estadísticas de forma positiva pero también pueden tener efectos negativos al mismo tiempo.
@@ -509,7 +510,7 @@ Las provisiones recomendadas en función de la duración de la misión y la loca
 * Palas: permite quitar obstáculos en los pasillos, si no se dispone de una pala para quitar un obstáculo los héroes sufren grandes cantidades de daño.
 * Vendas: cura las hemorragias.
 * Antiveneno: cura las infecciones.
-* Hierbas medicinales: quitas los reductores que posea un héroe.
+* Hierbas medicinales: quitas las mermas que posea un héroe.
 * Llaves esqueleto: para activar _curio_ y recoger botín sin riesgo.
 * Agua sagrada: aumenta las resistencias.
 * Láudano: quita el efecto de horror.
@@ -589,7 +590,7 @@ La foresta es el área más compleja. Algunos enemigos son rápidos, otros fuert
 
 * Héroes recomendados para la foresta: Ocultista, Bufón, Abominación, Hombre de armas, Bandolero, Leproso, Maestro canino, Caza recompensas, Diabla, Arbalestera.
 
-Los enemigos del laberinto son humanos y bestias, rápidos con buena evasión, con una combinación de los tres tipos de daño, físico, por hemorragia e infección y resistencias a infecciones. A diferencia de otras áreas el esfuerzo es más manejable. El aturdimiento para las posiciones traseras y las hemorragias funcionan muy bien. Las hierbas medicinales sirven para eliminar los reductores que infligen y activar _curio_.
+Los enemigos del laberinto son humanos y bestias, rápidos con buena evasión, con una combinación de los tres tipos de daño, físico, por hemorragia e infección y resistencias a infecciones. A diferencia de otras áreas el esfuerzo es más manejable. El aturdimiento para las posiciones traseras y las hemorragias funcionan muy bien. Las hierbas medicinales sirven para eliminar las mermas que infligen y activar _curio_.
 
 * Héroes recomendados para el laberinto: Hombre de armas, Diabla, Caza recompensas, Maestro canino, Bandolero, Asaltatumbas, Ocultista, Doctor de plaga.
 
