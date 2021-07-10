@@ -10,7 +10,7 @@ sharing: true
 comments: true
 promoted: false
 imagePost: "image:cloud-gaming-services.png"
-tags: ["juegos"]
+tags: ["juegos", "opinion"]
 summary: "Cada una de las empresas más importantes en el sector de los juegos ya tienen sus servicios de juego en la nube o mediante _streaming_, en unos años puede ser la opción preferente de muchos jugadores dejando a las consolas como hardware dedicado a comprar obsoletas. El principal requerimiento del juego mediante _streaming_ es tener una buena conexión a internet que sea estable y con un ancho de banda superior de al menos 35 Mbps para la máxima calidad. Ahora que tengo una conexión con fibra óptica he probado uno de estos servicios, GeForce NOW, por la buena experiencia que he tenido me replanteo las opciones a futuro para un nueva computadora, no teniendo que ser un equipo de más de 700 € ni requerir una tarjeta gráfica dedicada, puede ser de nuevo un pequeño y compacto Intel NUC."
 ---
 

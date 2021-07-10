@@ -126,11 +126,12 @@ Otro aspecto en el que se pueden clasificar los héroes son por aquellos que tie
 * Daño por tiempo (Infección, Hemorragia): Asaltatumbas (I), Diabla (H), Bufón (H), Doctor de plaga (H, I), Maestro canino (H), Anticuaria (I).
 * Capacidad de marcar: Caza recompensas, Ocultista, Maestro canino, Arbalestera.
 * Capacidad de aturdir: Doctor de plaga, Vestal, Abominación, Hombre de armas, Diabla.
-* Capacidad de moverse con ataque: Asaltatumbas, Cruzado, Diabla, Bufón, Abominación.
-* Capacidad de mover: Caza recompensas, Ocultista, Doctor de plaga, Abominación, Hombre de armas, Bandolero.
+* Capacidad de moverse con ataque: Asaltatumbas, Cruzado, Diabla, Bandolero, Bufón, Abominación.
+* Capacidad de mover: Caza recompensas, Ocultista, Doctor de plaga, Abominación, Hombre de armas, Bandolero, Leproso.
 * Capacidad de hacer daño a enemigos en posiciones 3 y 4: Caza recompensas, Asaltatumbas, Diabla, Bufón, Ocultista, Vestal, Abominación, Hombre de armas, Maestro canino, Arbalestera.
 * Capacidad de curarse: Leproso, Abominación, Maestro canino.
-* Capacidad de mermar (Evasión, Daño, Protección, Crítico, Precisión, Velocidad): Ocultista (E, D, Pro), Arbalestera (Pre, C, E), Caza recompensas (Pro, D, V), Hombre de armas (E, V)
+* Capacidad de mermar (Evasión, Daño, Protección, Crítico, Precisión, Velocidad): Ocultista (E, D, Pro), Arbalestera (Pre, C, E), Caza recompensas (Pro, D, V), Hombre de armas (E, V), Maestro canino (Pro), Leproso (D, V, _Stealth_).
+* Daño adicional (Marcado, Hemorragia, Infección, Aturdido): Arbalestera (M), Caza recompensas (M, Humano), Cruzado (Impío), Asaltatumbas (M, H, I), Bandolero (M), Maestro canino (M, Bestia), Ocultistas (Eldrich), Vestal (Impío).
 * Héroes religiosos: Leproso, Cruzado, Vestal.
 
 La posición de los héroes también es importante, las habilidades y ataques tienen restricciones de posición.
@@ -267,7 +268,7 @@ Los rasgos a evitar son los siguientes:
 
 * Los que reducen la velocidad: _Nocturnal_, _Off Guard_, _Slowdraw_, _Slow Reflexes_.
 * Los que reducen el daño: _Light Sensitive_, _Scattering_, _Calm_, _Tuckered Out_.
-* Los que fuerzan a los héroes a realizar acciones de activar _curio_: _Ablutomania_, _Bloodthirsty_, _Compulsive_, _Curious_, _Dacnomania_, _Dark Temptation_, _Demonomania_, _Dipsomania_, _Egomania_, _Guilty Conscience_, _Hagiomania_, _Hylomania_, _Kleptomaniac_, _Necromania_, _Paranormania_, _Plutomania_, _Sitiomania_.
+* Los que fuerzan a los héroes a realizar acciones: _Ablutomania_, _Bloodthirsty_, _Compulsive_, _Curious_, _Dacnomania_, _Dark Temptation_, _Demonomania_, _Dipsomania_, _Egomania_, _Guilty Conscience_, _Hagiomania_, _Hylomania_, _Kleptomaniac_, _Necromania_, _Paranormania_, _Plutomania_, _Sitiomania_.
 * Los que causan robo de botín: _Kleptomania_.
 
 Guía de rasgos.
@@ -296,158 +297,158 @@ Estos son abalorios destacados para las funciones de algunos héroes, la mayorí
 	</thead>
 	<tbody>
 		<tr>
-            <td rowspan="2">Abominación</td>
-            <td>Ancestor's Pen</th>
-            <td>Feather Crystal</th>
-            <td>más velocidad, evasión, crítico y daño</th>
+                  <td rowspan="2">Abominación</td>
+                  <td>Ancestor's Pen</th>
+                  <td>Feather Crystal</th>
+                  <td>más velocidad, evasión, crítico y daño</th>
 		</tr>
 		<tr>
-            <td>Berserk Charm</th>
-            <td>Restraining Padlock</th>
-            <td>más velocidad, daño, menos estrés causado en la transición a bestia</th>
+                  <td>Berserk Charm</th>
+                  <td>Restraining Padlock</th>
+                  <td>más velocidad, daño, menos estrés causado en la transición a bestia</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Arbalestera</td>
-            <td>Ancestor's Musket Ball</th>
-            <td>Wrathful Bandana</th>
-            <td>más daño y crítico en ataques a distanicia</th>
+                  <td rowspan="2">Arbalestera</td>
+                  <td>Ancestor's Musket Ball</th>
+                  <td>Wrathful Bandana</th>
+                  <td>más daño y crítico en ataques a distanicia</th>
 		</tr>
 		<tr>
-            <td>Bull's Eye Bandana</th>
-            <td>Wrathful Bandana</th>
-            <td>más precisión, critico y daño</th>
+                  <td>Bull's Eye Bandana</th>
+                  <td>Wrathful Bandana</th>
+                  <td>más precisión, critico y daño</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Caza recompensas</td>
-            <td>Ancestor's Pen</th>
-            <td>Hunter's Talon</th>
-            <td>más crítico, precisión y daño en ataques de cuerpo a cuerpo</th>
+                  <td rowspan="2">Caza recompensas</td>
+                  <td>Ancestor's Pen</th>
+                  <td>Hunter's Talon</th>
+                  <td>más crítico, precisión y daño en ataques de cuerpo a cuerpo</th>
 		</tr>
 		<tr>
-            <td>Hunter's Talon</th>
-            <td>Wounding Helmet</th>
-            <td>más crítico, precisión y daño cuerpo a cuerpo</th>
+                  <td>Hunter's Talon</th>
+                  <td>Wounding Helmet</th>
+                  <td>más crítico, precisión y daño cuerpo a cuerpo</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Cruzado</td>
-            <td>Berserk Charm</th>
-            <td>Legendary Bracer</th>
-            <td>más velocidad y daño</th>
+                  <td rowspan="2">Cruzado</td>
+                  <td>Berserk Charm</th>
+                  <td>Legendary Bracer</th>
+                  <td>más velocidad y daño</th>
 		</tr>
 		<tr>
-            <td>Tough Ring</th>
-            <td>Berserk Charm</th>
-            <td>más protección, vida y daño</th>
+                  <td>Tough Ring</th>
+                  <td>Berserk Charm</th>
+                  <td>más protección, vida y daño</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Asalta tumbas</td>
-            <td>Raider's Talisman</th>
-            <td>Lucky Talisman</th>
-            <td>más crítico, desarmado de trampas, patrulla, evasión y precisión</th>
+                  <td rowspan="2">Asalta tumbas</td>
+                  <td>Raider's Talisman</th>
+                  <td>Lucky Talisman</th>
+                  <td>más crítico, desarmado de trampas, patrulla, evasión y precisión</th>
 		</tr>
 		<tr>
-            <td>Feather Crystal</th>
-            <td>Raider's Talisman</th>
-            <td>más crítico, desarmado de trampas, patrulla, evasión y velocidad</th>
+                  <td>Feather Crystal</th>
+                  <td>Raider's Talisman</th>
+                  <td>más crítico, desarmado de trampas, patrulla, evasión y velocidad</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Diabla</td>
-            <td>Ancestor's Pen</th>
-            <td>Berserk Charm</th>
-            <td>más daño, critico y velocidad</th>
+                  <td rowspan="2">Diabla</td>
+                  <td>Ancestor's Pen</th>
+                  <td>Berserk Charm</th>
+                  <td>más daño, critico y velocidad</th>
 		</tr>
 		<tr>
-            <td>Ancestor's Pen</th>
-            <td>Legendary Bracer</th>
-            <td>más daño y crítico</th>
+                  <td>Ancestor's Pen</th>
+                  <td>Legendary Bracer</th>
+                  <td>más daño y crítico</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Bandolero</td>
-            <td>Gunslinger's Buckle</th>
-            <td>Berserk Charm Charm</th>
-            <td>más daño, precisión en ataques a distancia y daño</th>
+                  <td rowspan="2">Bandolero</td>
+                  <td>Gunslinger's Buckle</th>
+                  <td>Berserk Charm Charm</th>
+                  <td>más daño, precisión en ataques a distancia y daño</th>
 		</tr>
 		<tr>
-            <td>Gunslinger's Buckle</th>
-            <td>Ancestor's Musket Ball</th>
-            <td>más daño y precisión en ataques a distancia</th>
+                  <td>Gunslinger's Buckle</th>
+                  <td>Ancestor's Musket Ball</th>
+                  <td>más daño y precisión en ataques a distancia</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Maestro canino</td>
-            <td>Feather Crystal</th>
-            <td>Camouflage Cloak</th>
-            <td>más velocidad y evasión</th>
+                  <td rowspan="2">Maestro canino</td>
+                  <td>Feather Crystal</th>
+                  <td>Camouflage Cloak</th>
+                  <td>más velocidad y evasión</th>
 		</tr>
 		<tr>
-            <td>Spiked Colar</th>
-            <td>Feather Crystal</th>
-            <td>más velocidad, evasión, daño y probabilidad de causar hemorragia</th>
+                  <td>Spiked Colar</th>
+                  <td>Feather Crystal</th>
+                  <td>más velocidad, evasión, daño y probabilidad de causar hemorragia</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Bufon</td>
-            <td>Feather Crystal</th>
-            <td>Camouflage Cloak</th>
-            <td>más velocidad y evasión</th>
+                  <td rowspan="2">Bufon</td>
+                  <td>Feather Crystal</th>
+                  <td>Camouflage Cloak</th>
+                  <td>más velocidad y evasión</th>
 		</tr>
 		<tr>
-            <td>Feather Crystal</th>
-            <td>Ancestor's Coat</th>
-            <td>más velocidad y evasión</th>
+                  <td>Feather Crystal</th>
+                  <td>Ancestor's Coat</th>
+                  <td>más velocidad y evasión</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Leproso</td>
-            <td>Focus Ring / Fortunate Armlet</th>
-            <td>Tough Ring</th>
-            <td>más precisión y crítico</th>
+                  <td rowspan="2">Leproso</td>
+                  <td>Focus Ring / Fortunate Armlet</th>
+                  <td>Tough Ring</th>
+                  <td>más precisión y crítico</th>
 		</tr>
 		<tr>
-            <td>Focus Ring</th>
-            <td>Legendary Bracer</th>
-            <td>más precisión, crítico y daño</th>
+                  <td>Focus Ring</th>
+                  <td>Legendary Bracer</th>
+                  <td>más precisión, crítico y daño</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Hombre de armas</td>
-            <td>Camouflage Cloak</th>
-            <td>Feather Crystal</th>
-            <td>más velocidad y evasión</th>
+                  <td rowspan="2">Hombre de armas</td>
+                  <td>Camouflage Cloak</th>
+                  <td>Feather Crystal</th>
+                  <td>más velocidad y evasión</th>
 		</tr>
 		<tr>
-            <td>Guardian's Shield</th>
-            <td>Feather Crystal</th>
-            <td>más velocidad y evasión, en la posición 4 más protección, evasión y curaciones recibidas</th>
+                  <td>Guardian's Shield</th>
+                  <td>Feather Crystal</th>
+                  <td>más velocidad y evasión, en la posición 4 más protección, evasión y curaciones recibidas</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Ocultista</td>
-            <td>Feater Crystal</th>
-            <td>Cleansing Crystal</th>
-            <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
+                  <td rowspan="2">Ocultista</td>
+                  <td>Feater Crystal</th>
+                  <td>Cleansing Crystal</th>
+                  <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
 		</tr>
 		<tr>
-            <td>Camouflage Cloak</th>
-            <td>Cleansing Crystal</th>
-            <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
+                  <td>Camouflage Cloak</th>
+                  <td>Cleansing Crystal</th>
+                  <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Doctor de plaga</td>
-            <td>Blasphemous Vial</th>
-            <td>Poisoned Herb</th>
-            <td>más precisión y aturdir e infectar al enemigo</th>
+                  <td rowspan="2">Doctor de plaga</td>
+                  <td>Blasphemous Vial</th>
+                  <td>Poisoned Herb</th>
+                  <td>más precisión y aturdir e infectar al enemigo</th>
 		</tr>
 		<tr>
-            <td>Blasphemous Vial</th>
-            <td>Feater Crystal</th>
-            <td>más precisión y probabilidad de aturdir e infectar al enemigo, evasión y velocidad</th>
+                  <td>Blasphemous Vial</th>
+                  <td>Feater Crystal</th>
+                  <td>más precisión y probabilidad de aturdir e infectar al enemigo, evasión y velocidad</th>
 		</tr>
 		<tr>
-            <td rowspan="2">Vestal</td>
-            <td>Sacred Scroll</th>
-            <td>Tome of Holy Healing</th>
-            <td>más precisión y aturdir e infectar al enemigo</th>
+                  <td rowspan="2">Vestal</td>
+                  <td>Sacred Scroll</th>
+                  <td>Tome of Holy Healing</th>
+                  <td>más precisión y aturdir e infectar al enemigo</th>
 		</tr>
 		<tr>
-            <td>Tough Ring</th>
-            <td>Haste Chalice</th>
-            <td>más vida máxima, protección y velocidad</th>
+                  <td>Tough Ring</th>
+                  <td>Haste Chalice</th>
+                  <td>más vida máxima, protección y velocidad</th>
 		</tr>
     </tbody>
 </table>
@@ -512,7 +513,7 @@ Las provisiones recomendadas en función de la duración de la misión y la loca
 * Antiveneno: cura las infecciones.
 * Hierbas medicinales: quitas las mermas que posea un héroe.
 * Llaves esqueleto: para activar _curio_ y recoger botín sin riesgo.
-* Agua sagrada: aumenta las resistencias.
+* Agua bendita: aumenta las resistencias.
 * Láudano: quita el efecto de horror.
 
 {{< image
@@ -539,13 +540,13 @@ Los jefes aparecen varias veces a medida que se progresa en el nivel de las loca
 Los jefes y sus estrategias de batallas son las siguientes:
 
 * [Nigromante](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30126)
-* [Rey porcino](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30127)
+* [Porcino](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30127)
 * [Bruja](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30128)
 * [Cañon](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33800)
 * [Profeta](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33801)
-* [Cuerpo inestable](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33802)
+* [Cuerpo](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33802)
 * [Sirena](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33803)
-* [Tripulación ahogada](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33804)
+* [Tripulación](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33804)
 * [Shambler](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33805)
 * [Recolector](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33806)
 
@@ -586,7 +587,7 @@ En las ruinas hay abundancia de enemigos impíos inmunes a la hemorragia, una bu
 
 * Héroes recomendados para las ruinas: Cruzado, Hombre de armas, Leproso, Doctor de plaga, Vestal, Abominación, Asaltatumbas, Bufón, Anticuaria, Caza recompensas.
 
-La foresta es el área más compleja. Algunos enemigos son rápidos, otros fuertes, a veces se prioriza la línea delantera y a veces la línea trasera, la mayoría humanos y bestias. El daño proviene de infecciones, hemorragia o críticos de esfuerzo, también de movimiento. Los enemigos no son particularmente resistentes a nada, tiene la habilidad de marcar que hace la habilidad de proteger o quitar la marca útil.
+La foresta es el área más compleja. Algunos enemigos son rápidos, otros fuertes, a veces se prioriza la línea delantera y a veces la línea trasera, no hay un solo tipo de enemigos como impíos en las ruinas y eldrich en la cueva. El daño recibido proviene de infecciones, hemorragia o críticos de esfuerzo, también de movimiento. Los enemigos son vulnerables a la hemorragia y la infeción mientras que la infección es inefectiva, tiene la habilidad de marcar que hace la habilidad de proteger o quitar la marca útil.
 
 * Héroes recomendados para la foresta: Ocultista, Bufón, Abominación, Hombre de armas, Bandolero, Leproso, Maestro canino, Caza recompensas, Diabla, Arbalestera.
 
@@ -597,13 +598,6 @@ Los enemigos del laberinto son humanos y bestias, rápidos con buena evasión, c
 Algunos enemigos de la cala causan daño, otros esfuerzo, otros apilan daño de hemorragia rápidamente y en grandes cantidades, también tiene protección con habilidades de proteger. Los enemigos son vulnerables al aturdimiento e infecciones. Se necesita velocidad, aturdimiento, daño y cura, si se añade daño contra eldritch e impíos las misiones se pueden completar sin recivir grandes cantidades de daño.
 
 * Héroes recomendados para la cala: Cruzado, Hombre de armas, Doctor de plaga, Vestal, Ocultista, Abominación, Diabla, Asaltatumbas.
-
-Algunas otras opciones son:
-
-* Marcado: Maestro canino/Arbalestera, Ocultista, Caza recomepensas, Cruzado
-* DoT, I, Cala: Doctor de plaga, Vestal/Ocultista, Abominación, Diabla/Hombre de armas
-* DoT, H: Maestro canino, Vestal/Bufón, Diabla/Bufón, Cruzado/Hombre de armas
-* Impío, Religious, Ruinas: Vestal, Leper/Hellion, Crusader
 
 Más análisis y consejos de grupos:
 
@@ -654,109 +648,109 @@ El tercer paso es organizar el aprovisionamiento en función de la localización
         </tr>
 	</thead>
 	<tbody>
-		<tr class="text-center">
-            <td>Comida</td>
-            <td>12</th>
-            <td>16-18</th>
-            <td>18-24</th>
-            <td colspan="8"></th>
+      	<tr class="text-center">
+                  <td>Comida</td>
+                  <td>12</th>
+                  <td>16-18</th>
+                  <td>18-24</th>
+                  <td colspan="8"></th>
+                  </tr>
+                  <tr class="text-center">
+                  <td>Antorchas</td>
+                  <td>8-9</th>
+                  <td>14-16</th>
+                  <td>16-18</th>
+                  <td colspan="8"></th>
 		</tr>
 		<tr class="text-center">
-            <td>Antorchas</td>
-            <td>8-9</th>
-            <td>14-16</th>
-            <td>16-18</th>
-            <td colspan="8"></th>
-		</tr>
-		<tr class="text-center">
-            <td>Palas</td>
-            <td>1-2</th>
-            <td>2</th>
-            <td>2-3</th>
-            <td>3</td>
-            <td>4-5</td>
-            <td>5-7</td>
-            <td>2</td>
-            <td>2-3</td>
-            <td>4</td>
-            <td>1</td>
-            <td>1-2</td>
-            <td>2</td>
+                  <td>Palas</td>
+                  <td>1-2</th>
+                  <td>2</th>
+                  <td>2-3</th>
+                  <td>3</td>
+                  <td>4-5</td>
+                  <td>5-7</td>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>4</td>
+                  <td>1</td>
+                  <td>1-2</td>
+                  <td>2</td>
 		</tr>
 		<tr class="text-center">
             <td>Vendas</td>
-            <td>1</th>
-            <td>2</th>
-            <td>2-3</th>
-            <td>2</td>
-            <td>2-3</td>
-            <td>4</td>
-            <td>1-2</td>
-            <td>2</td>
-            <td>2-3</td>
-            <td>2-3</td>
-            <td>3-4</td>
-            <td>5-6</td>
+                  <td>1</th>
+                  <td>2</th>
+                  <td>2-3</th>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>4</td>
+                  <td>1-2</td>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>2-3</td>
+                  <td>3-4</td>
+                  <td>5-6</td>
 		</tr>
 		<tr class="text-center">
-            <td>Antiveneno</td>
-            <td>0</th>
-            <td>0</th>
-            <td>0</th>
-            <td>2</td>
-            <td>2-3</td>
-            <td>4-5</td>
-            <td>0</td>
-            <td>0-1</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+                  <td>Antiveneno</td>
+                  <td>0</th>
+                  <td>0</th>
+                  <td>0</th>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>4-5</td>
+                  <td>0</td>
+                  <td>0-1</td>
+                  <td>1</td>
+                  <td>0</td>
+                  <td>0</td>
+                  <td>0</td>
 		</tr>
 		<tr class="text-center">
-            <td>Hierbas medicinales</td>
-            <td>1</th>
-            <td>2</th>
-            <td>2</th>
-            <td>1</td>
-            <td>1-2</td>
-            <td>2-3</td>
-            <td>2-3</td>
-            <td>4</td>
-            <td>5-6</td>
-            <td>1</td>
-            <td>1-2</td>
-            <td>2-3</td>
+                  <td>Hierbas medicinales</td>
+                  <td>1</th>
+                  <td>2</th>
+                  <td>2</th>
+                  <td>1</td>
+                  <td>1-2</td>
+                  <td>2-3</td>
+                  <td>2-3</td>
+                  <td>4</td>
+                  <td>5-6</td>
+                  <td>1</td>
+                  <td>1-2</td>
+                  <td>2-3</td>
 		</tr>
 		<tr class="text-center">
-            <td>Llaves esqueleto</td>
-            <td>1</th>
-            <td>2</th>
-            <td>3-4</th>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2-3</td>
-            <td>3-4</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3-4</td>
+                  <td>Llaves esqueleto</td>
+                  <td>1</th>
+                  <td>2</th>
+                  <td>3-4</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>3-4</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3-4</td>
 		</tr>
 		<tr class="text-center">
-            <td>Agua sagrada</td>
-            <td>2</th>
-            <td>3</th>
-            <td>4</th>
-            <td>1</td>
-            <td>2</td>
-            <td>2-3</td>
-            <td>2</td>
-            <td>3</td>
-            <td>3-4</td>
-            <td>0</td>
-            <td>0-1</td>
-            <td>1-2</td>
+                  <td>Agua bendita</td>
+                  <td>2</th>
+                  <td>3</th>
+                  <td>4</th>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>2-3</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>3-4</td>
+                  <td>0</td>
+                  <td>0-1</td>
+                  <td>1-2</td>
 		</tr>
 	</tbody>
 </table>
