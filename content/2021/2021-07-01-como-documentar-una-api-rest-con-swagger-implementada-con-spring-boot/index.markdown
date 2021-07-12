@@ -37,7 +37,7 @@ Hay iniciativas y herramientas para suplir la carencia de las API REST de no obl
 
 Por otro lado las herramientas de [Swagger][swagger] permiten generar la documentación a partir de la especificación de la API y si se desea generar una implementación básica inicial de cliente y servidor para diferentes lenguajes de programación. La documentación de Swagger no solo incluye información sino que permite probar la API directamente desde la documentación u obtener el comando _curl_ a ejecutar desde la línea de comandos.
 
-En una aplicación que implementa una API REST con [Spring Boot][spring-boot] la librería [Springpoc][springdoc] permite generar de forma automática la especificación de la API que implementa el código publicándose en un _endpoint_, esta librería también genera la documentación de Swagger de la API en otro _endpoint_.
+En una aplicación que implementa una API REST con [Spring Boot][spring-boot] la librería [Springdoc][springdoc] permite generar de forma automática la especificación de la API que implementa el código publicándose en un _endpoint_, esta librería también genera la documentación de Swagger de la API en otro _endpoint_.
 
 Otra forma de obtener la especificación de la API es mediante el [_plugin_ para Gradle de springdoc](https://github.com/springdoc/springdoc-openapi-gradle-plugin) o utilizar [imagen de Docker de Swagger UI](https://hub.docker.com/r/swaggerapi/swagger-ui) para crear un servidor que aloje la documentación. También es posible [descargar la última versión de Swagger UI](https://github.com/swagger-api/swagger-ui/releases/latest) en el [directorio dist](https://github.com/swagger-api/swagger-ui/tree/master/dist), cambiar el archivo _index.html_ y reemplazar la URL _https:\/\/petstore.swagger.io/v2/swagger.json_ por la especificación de OpenAPI deseada.
 
@@ -62,11 +62,11 @@ La documentación en formato HTML de Swagger tiene el siguiente aspecto con la q
 
 El siguiente ejemplo de Spring Boot implementa una pequeña API REST con un _endpoint_ y varios métodos HTTP, uno para obtener un mensaje, otro para añadir un mensaje y otro para eliminar un mensaje. La API se define en un interfaz con las anotaciones tanto de Spring para REST como las anotaciones de Swagger para la definición de la API y documentación que al iniciar la aplicación permite generar la definición en formato OpenAPI.
 
-{{< code file="RestApi.java" language="java" options="" >}}
+{{< code file="MessageApi.java" language="java" options="" >}}
 
 La implementación de la API simplemente guarda en un mapa los mensajes, en caso de que detecte una condición de error lanza una excepción con el código de estado definido en la API para la condición, en caso de que la operación sea correcta se ejecuta su funcionalidad y se devuelve el código de estado 200 y los datos solicitados en su caso.
 
-{{< code file="RestApiController.java" language="java" options="" >}}
+{{< code file="MessageController.java" language="java" options="" >}}
 
 Con los siguientes comandos de _curl_ es posible probar los diferentes métodos de la API.
 
@@ -80,6 +80,6 @@ Con la aplicación iniciada en en la URL _http:\/\/localhost:8080/v3/api-docs_ p
 
 {{< code file="build.gradle" language="groovy" options="" >}}
 
-{{% sourcecode git="blog-ejemplos/tree/master/JavaSwagger" command="./gradlew run" %}}
+{{% sourcecode git="blog-ejemplos/tree/master/SpringRestSwagger" command="./gradlew run" %}}
 
 {{% /post %}}

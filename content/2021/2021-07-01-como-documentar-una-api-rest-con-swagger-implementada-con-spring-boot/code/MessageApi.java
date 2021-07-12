@@ -1,10 +1,10 @@
-package io.github.picodotdev.blogbitix.javaswagger;
+package io.github.picodotdev.blogbitix.springrestswagger;
 
 ...
 
 @Tag(name = "message", description = "the message API")
 @RequestMapping("/message")
-public interface RestApi {
+public interface MessageApi {
 
 	@Operation(summary = "Get all messages", description = "Returns all messages")
 	@ApiResponses(value = {

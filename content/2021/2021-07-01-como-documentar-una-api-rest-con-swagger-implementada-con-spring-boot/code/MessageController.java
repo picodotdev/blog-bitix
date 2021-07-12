@@ -1,9 +1,9 @@
-package io.github.picodotdev.blogbitix.javaswagger;
+package io.github.picodotdev.blogbitix.springrestswagger;
 
 ...
 
 @RestController
-public class RestApiController implements RestApi {
+public class MessageController implements RestApi {
 
     private Map<Long, Message> messages;
 
