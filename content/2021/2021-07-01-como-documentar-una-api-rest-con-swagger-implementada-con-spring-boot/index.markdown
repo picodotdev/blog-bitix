@@ -4,6 +4,7 @@ type: "post"
 title: "Cómo documentar una API REST con Swagger implementada con Spring Boot"
 url: "/2021/07/como-documentar-una-api-rest-con-swagger-implementada-con-spring-boot/"
 date: 2021-07-01T20:00:00+02:00
+updated: 2021-07-12T22:00:00+02:00
 language: "es"
 rss: true
 sharing: true
