@@ -10,7 +10,6 @@ rss: true
 sharing: true
 comments: true
 promoted: false
-imageHead: ""
 imagePost: "logotype:java.svg"
 tags: ["java", "planeta-codigo"]
 summary: "Una API REST no está obligada a publicar una definición de su API, sin embargo, para quien deba usar API es muy útil disponer de su documentación para usarla correctamente y descubrir de qué _endpoints_ se compone, métodos HTTP, cuales son sus parámetros, el esquema de los cuerpos de la petición y de los resultados, los tipos de los datos y sus formatos, los códigos de retorno devueltos, las cabeceras y su autenticación. OpenAPI permite definir la interfaz de una aplicación de forma agnóstica de la tecnología y lenguaje en el que se implementa, por otro lado Swagger a partir de esa definición permite generar una interfaz HTML con su documentación. La librería Springdoc junto con Spring Boot permite generar tanto la especificación de la API como la documentación simplemente añadiendo una dependencia y varias anotaciones en la implementación de la API."
@@ -76,6 +75,8 @@ Con los siguientes comandos de _curl_ es posible probar los diferentes métodos 
 {{< code file="curl-put.sh" language="bash" options="" >}}
 {{< code file="curl-put-conflict.sh" language="bash" options="" >}}
 {{< code file="curl-delete.sh" language="bash" options="" >}}
+
+Este ejemplo es suficiente, pero no cumple con todos [los niveles de madurez de REST][blogbitix-587], el ejemplo de este otro artículo se puede comparar con el de este para ver las diferencias y conocer las ventajas e inconvenientes de implementar HATEOAS y HAL en una API REST.
 
 Con la aplicación iniciada en en la URL _http:\/\/localhost:8080/v3/api-docs_ por defecto se exporta especificación de la API en formato OpenAPI, en la URL _http:\/\/localhost:8080/swagger-ui.html_ por defecto está la documentación de la API de Swagger generada por Springdoc. Con solo añadir las dependencias de Springdoc a la herramienta de construcción, en este caso [Gradle][gradle], Spring Boot hace disponibles ambos _endpoints_.
 
