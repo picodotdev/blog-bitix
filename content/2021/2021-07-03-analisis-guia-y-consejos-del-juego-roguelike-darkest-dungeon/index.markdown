@@ -297,158 +297,158 @@ Estos son abalorios destacados para las funciones de algunos héroes, la mayorí
 	</thead>
 	<tbody>
 		<tr>
-                  <td rowspan="2">Abominación</td>
-                  <td>Ancestor's Pen</th>
-                  <td>Feather Crystal</th>
-                  <td>más velocidad, evasión, crítico y daño</th>
+            <td rowspan="2">Abominación</td>
+            <td>Ancestor's Pen</td>
+            <td>Feather Crystal</td>
+            <td>más velocidad, evasión, crítico y daño</td>
 		</tr>
 		<tr>
-                  <td>Berserk Charm</th>
-                  <td>Restraining Padlock</th>
-                  <td>más velocidad, daño, menos estrés causado en la transición a bestia</th>
+            <td>Berserk Charm</td>
+            <td>Restraining Padlock</td>
+            <td>más velocidad, daño, menos estrés causado en la transición a bestia</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Arbalestera</td>
-                  <td>Ancestor's Musket Ball</th>
-                  <td>Wrathful Bandana</th>
-                  <td>más daño y crítico en ataques a distanicia</th>
+            <td rowspan="2">Arbalestera</td>
+            <td>Ancestor's Musket Ball</td>
+            <td>Wrathful Bandana</td>
+            <td>más daño y crítico en ataques a distanicia</td>
 		</tr>
 		<tr>
-                  <td>Bull's Eye Bandana</th>
-                  <td>Wrathful Bandana</th>
-                  <td>más precisión, critico y daño</th>
+            <td>Bull's Eye Bandana</td>
+            <td>Wrathful Bandana</td>
+            <td>más precisión, critico y daño</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Caza recompensas</td>
-                  <td>Ancestor's Pen</th>
-                  <td>Hunter's Talon</th>
-                  <td>más crítico, precisión y daño en ataques de cuerpo a cuerpo</th>
+            <td rowspan="2">Caza recompensas</td>
+            <td>Ancestor's Pen</td>
+            <td>Hunter's Talon</td>
+            <td>más crítico, precisión y daño en ataques de cuerpo a cuerpo</td>
 		</tr>
 		<tr>
-                  <td>Hunter's Talon</th>
-                  <td>Wounding Helmet</th>
-                  <td>más crítico, precisión y daño cuerpo a cuerpo</th>
+            <td>Hunter's Talon</td>
+            <td>Wounding Helmet</td>
+            <td>más crítico, precisión y daño cuerpo a cuerpo</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Cruzado</td>
-                  <td>Berserk Charm</th>
-                  <td>Legendary Bracer</th>
-                  <td>más velocidad y daño</th>
+            <td rowspan="2">Cruzado</td>
+            <td>Berserk Charm</td>
+            <td>Legendary Bracer</td>
+            <td>más velocidad y daño</td>
 		</tr>
 		<tr>
-                  <td>Tough Ring</th>
-                  <td>Berserk Charm</th>
-                  <td>más protección, vida y daño</th>
+            <td>Tough Ring</td>
+            <td>Berserk Charm</td>
+            <td>más protección, vida y daño</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Asalta tumbas</td>
-                  <td>Raider's Talisman</th>
-                  <td>Lucky Talisman</th>
-                  <td>más crítico, desarmado de trampas, patrulla, evasión y precisión</th>
+            <td rowspan="2">Asalta tumbas</td>
+            <td>Raider's Talisman</td>
+            <td>Lucky Talisman</td>
+            <td>más crítico, desarmado de trampas, patrulla, evasión y precisión</td>
 		</tr>
 		<tr>
-                  <td>Feather Crystal</th>
-                  <td>Raider's Talisman</th>
-                  <td>más crítico, desarmado de trampas, patrulla, evasión y velocidad</th>
+            <td>Feather Crystal</td>
+            <td>Raider's Talisman</td>
+            <td>más crítico, desarmado de trampas, patrulla, evasión y velocidad</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Diabla</td>
-                  <td>Ancestor's Pen</th>
-                  <td>Berserk Charm</th>
-                  <td>más daño, critico y velocidad</th>
+            <td rowspan="2">Diabla</td>
+            <td>Ancestor's Pen</td>
+            <td>Berserk Charm</td>
+            <td>más daño, critico y velocidad</td>
 		</tr>
 		<tr>
-                  <td>Ancestor's Pen</th>
-                  <td>Legendary Bracer</th>
-                  <td>más daño y crítico</th>
+            <td>Ancestor's Pen</td>
+            <td>Legendary Bracer</td>
+            <td>más daño y crítico</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Bandolero</td>
-                  <td>Gunslinger's Buckle</th>
-                  <td>Berserk Charm Charm</th>
-                  <td>más daño, precisión en ataques a distancia y daño</th>
+            <td rowspan="2">Bandolero</td>
+            <td>Gunslinger's Buckle</td>
+            <td>Berserk Charm Charm</td>
+            <td>más daño, precisión en ataques a distancia y daño</td>
 		</tr>
 		<tr>
-                  <td>Gunslinger's Buckle</th>
-                  <td>Ancestor's Musket Ball</th>
-                  <td>más daño y precisión en ataques a distancia</th>
+            <td>Gunslinger's Buckle</td>
+            <td>Ancestor's Musket Ball</td>
+            <td>más daño y precisión en ataques a distancia</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Maestro canino</td>
-                  <td>Feather Crystal</th>
-                  <td>Camouflage Cloak</th>
-                  <td>más velocidad y evasión</th>
+            <td rowspan="2">Maestro canino</td>
+            <td>Feather Crystal</td>
+            <td>Camouflage Cloak</td>
+            <td>más velocidad y evasión</td>
 		</tr>
 		<tr>
-                  <td>Spiked Colar</th>
-                  <td>Feather Crystal</th>
-                  <td>más velocidad, evasión, daño y probabilidad de causar hemorragia</th>
+            <td>Spiked Colar</td>
+            <td>Feather Crystal</td>
+            <td>más velocidad, evasión, daño y probabilidad de causar hemorragia</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Bufon</td>
-                  <td>Feather Crystal</th>
-                  <td>Camouflage Cloak</th>
-                  <td>más velocidad y evasión</th>
+            <td rowspan="2">Bufon</td>
+            <td>Feather Crystal</td>
+            <td>Camouflage Cloak</td>
+            <td>más velocidad y evasión</td>
 		</tr>
 		<tr>
-                  <td>Feather Crystal</th>
-                  <td>Ancestor's Coat</th>
-                  <td>más velocidad y evasión</th>
+            <td>Feather Crystal</td>
+            <td>Ancestor's Coat</td>
+            <td>más velocidad y evasión</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Leproso</td>
-                  <td>Focus Ring / Fortunate Armlet</th>
-                  <td>Tough Ring</th>
-                  <td>más precisión y crítico</th>
+            <td rowspan="2">Leproso</td>
+            <td>Focus Ring / Fortunate Armlet</td>
+            <td>Tough Ring</td>
+            <td>más precisión y crítico</td>
 		</tr>
 		<tr>
-                  <td>Focus Ring</th>
-                  <td>Legendary Bracer</th>
-                  <td>más precisión, crítico y daño</th>
+            <td>Focus Ring</td>
+            <td>Legendary Bracer</td>
+            <td>más precisión, crítico y daño</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Hombre de armas</td>
-                  <td>Camouflage Cloak</th>
-                  <td>Feather Crystal</th>
-                  <td>más velocidad y evasión</th>
+            <td rowspan="2">Hombre de armas</td>
+            <td>Camouflage Cloak</td>
+            <td>Feather Crystal</td>
+            <td>más velocidad y evasión</td>
 		</tr>
 		<tr>
-                  <td>Guardian's Shield</th>
-                  <td>Feather Crystal</th>
-                  <td>más velocidad y evasión, en la posición 4 más protección, evasión y curaciones recibidas</th>
+            <td>Guardian's Shield</td>
+            <td>Feather Crystal</td>
+            <td>más velocidad y evasión, en la posición 4 más protección, evasión y curaciones recibidas</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Ocultista</td>
-                  <td>Feater Crystal</th>
-                  <td>Cleansing Crystal</th>
-                  <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
+            <td rowspan="2">Ocultista</td>
+            <td>Feater Crystal</td>
+            <td>Cleansing Crystal</td>
+            <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</td>
 		</tr>
 		<tr>
-                  <td>Camouflage Cloak</th>
-                  <td>Cleansing Crystal</th>
-                  <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</th>
+            <td>Camouflage Cloak</td>
+            <td>Cleansing Crystal</td>
+            <td>más velocidad, evasión y resistencias, menos probabilidad de causar hemorragia al curar</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Doctor de plaga</td>
-                  <td>Blasphemous Vial</th>
-                  <td>Poisoned Herb</th>
-                  <td>más precisión y aturdir e infectar al enemigo</th>
+            <td rowspan="2">Doctor de plaga</td>
+            <td>Blasphemous Vial</td>
+            <td>Poisoned Herb</td>
+            <td>más precisión y aturdir e infectar al enemigo</td>
 		</tr>
 		<tr>
-                  <td>Blasphemous Vial</th>
-                  <td>Feater Crystal</th>
-                  <td>más precisión y probabilidad de aturdir e infectar al enemigo, evasión y velocidad</th>
+            <td>Blasphemous Vial</td>
+            <td>Feater Crystal</td>
+            <td>más precisión y probabilidad de aturdir e infectar al enemigo, evasión y velocidad</td>
 		</tr>
 		<tr>
-                  <td rowspan="2">Vestal</td>
-                  <td>Sacred Scroll</th>
-                  <td>Tome of Holy Healing</th>
-                  <td>más precisión y aturdir e infectar al enemigo</th>
+            <td rowspan="2">Vestal</td>
+            <td>Sacred Scroll</td>
+            <td>Tome of Holy Healing</td>
+            <td>más precisión y aturdir e infectar al enemigo</td>
 		</tr>
 		<tr>
-                  <td>Tough Ring</th>
-                  <td>Haste Chalice</th>
-                  <td>más vida máxima, protección y velocidad</th>
+            <td>Tough Ring</td>
+            <td>Haste Chalice</td>
+            <td>más vida máxima, protección y velocidad</td>
 		</tr>
     </tbody>
 </table>
@@ -566,7 +566,7 @@ Estos son algunos jefes que hay que aniquiar para completar el juego.
 
 ### Estrategia para completar el juego
 
-Este juego para completarlo requiere conocer en profundidad muchos de sus aspectos. Es difícil y a poco error que se cometa o mala suerte que se tenga un héroe puede morir. Para completarlo más fácilmente los siguiente consejos de estrategia son de mucha ayuda, que héroes son los más adecuados para cada localización, qué edificios mejorar primero, que cantidades de provisiones llevar para cada misión y localización, estrategias para enfrentarse a los jefes y a la mazmorra oscura.
+Este juego para completarlo requiere conocer en profundidad muchos de sus aspectos. Es difícil y a poco error que se cometa o mala suerte que se tenga un héroe puede morir incluso haciendo todo adecuadamente. Para completarlo más fácilmente los siguiente consejos de estrategia son de mucha ayuda, que héroes son los más adecuados para cada localización, qué edificios mejorar primero, que cantidades de provisiones llevar para cada misión y localización, estrategias para enfrentarse a los jefes y a la mazmorra oscura.
 
 Auqí solo doy unos pocos consejos generales, en intenet hay guías mucho más completas y detalladas.
 
@@ -620,7 +620,7 @@ El primer paso de una misión es construir el grupo de héroes tratando de que h
 
 El segundo paso es hacer que el resto de héroes que no participan en la misión aprovechen para que recuperen esfuerzo en la taberna o abadía, o curarles rasgos negativos y enfermedades en caso de que tengan. Los héroes de nivel bajo que tengan muchas taras no merece la pena invertir monedas en ellos, es mejor contratar un nuevo héroe que esté menos mermado.
 
-El tercer paso es organizar el aprovisionamiento en función de la localización, nivel y duración de la misión. Con estas recomendaciones generales en función de la duración.
+El tercer paso es organizar el aprovisionamiento en función de la localización, nivel y duración de la misión. Con estas recomendaciones generales en función de la duración. La comida, antorchas y palas son los objetos básicos imprescindibles comunes a todas las misioens que conviente que no falten en ningún caso, no tenerlos cuando se necesitan ocasiona en los héroes pérdida de puntos de vida y aumento en el nivel de estrés.
 
 <table class="table align-middle">
     <thead class="table-light">
@@ -649,108 +649,108 @@ El tercer paso es organizar el aprovisionamiento en función de la localización
 	</thead>
 	<tbody>
       	<tr class="text-center">
-                  <td>Comida</td>
-                  <td>12</th>
-                  <td>16-18</th>
-                  <td>18-24</th>
-                  <td colspan="8"></th>
-                  </tr>
-                  <tr class="text-center">
-                  <td>Antorchas</td>
-                  <td>8-9</th>
-                  <td>14-16</th>
-                  <td>16-18</th>
-                  <td colspan="8"></th>
+            <td>Comida</td>
+            <td>12</td>
+            <td>16-18</td>
+            <td>18-24</td>
+            <td colspan="8"></td>
+            </tr>
+            <tr class="text-center">
+            <td>Antorchas</td>
+            <td>8-9</td>
+            <td>14-16</td>
+            <td>16-18</td>
+            <td colspan="8"></td>
 		</tr>
 		<tr class="text-center">
-                  <td>Palas</td>
-                  <td>1-2</th>
-                  <td>2</th>
-                  <td>2-3</th>
-                  <td>3</td>
-                  <td>4-5</td>
-                  <td>5-7</td>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>4</td>
-                  <td>1</td>
-                  <td>1-2</td>
-                  <td>2</td>
+            <td>Palas</td>
+            <td>1-2</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>3</td>
+            <td>4-5</td>
+            <td>5-7</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>4</td>
+            <td>1</td>
+            <td>2-3</td>
+            <td>3</td>
 		</tr>
 		<tr class="text-center">
             <td>Vendas</td>
-                  <td>1</th>
-                  <td>2</th>
-                  <td>2-3</th>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>4</td>
-                  <td>1-2</td>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>2-3</td>
-                  <td>3-4</td>
-                  <td>5-6</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>4</td>
+            <td>1-2</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>5-6</td>
 		</tr>
 		<tr class="text-center">
-                  <td>Antiveneno</td>
-                  <td>0</th>
-                  <td>0</th>
-                  <td>0</th>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>4-5</td>
-                  <td>0</td>
-                  <td>0-1</td>
-                  <td>1</td>
-                  <td>0</td>
-                  <td>0</td>
-                  <td>0</td>
+            <td>Antiveneno</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>4-5</td>
+            <td>0</td>
+            <td>0-1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
 		</tr>
 		<tr class="text-center">
-                  <td>Hierbas medicinales</td>
-                  <td>1</th>
-                  <td>2</th>
-                  <td>2</th>
-                  <td>1</td>
-                  <td>1-2</td>
-                  <td>2-3</td>
-                  <td>2-3</td>
-                  <td>4</td>
-                  <td>5-6</td>
-                  <td>1</td>
-                  <td>1-2</td>
-                  <td>2-3</td>
+            <td>Hierbas medicinales</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1-2</td>
+            <td>2-3</td>
+            <td>2-3</td>
+            <td>4</td>
+            <td>5-6</td>
+            <td>1</td>
+            <td>1-2</td>
+            <td>2-3</td>
 		</tr>
 		<tr class="text-center">
-                  <td>Llaves esqueleto</td>
-                  <td>1</th>
-                  <td>2</th>
-                  <td>3-4</th>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>3-4</td>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>3-4</td>
+            <td>Llaves esqueleto</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3-4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3-4</td>
 		</tr>
 		<tr class="text-center">
-                  <td>Agua bendita</td>
-                  <td>2</th>
-                  <td>3</th>
-                  <td>4</th>
-                  <td>1</td>
-                  <td>2</td>
-                  <td>2-3</td>
-                  <td>2</td>
-                  <td>3</td>
-                  <td>3-4</td>
-                  <td>0</td>
-                  <td>0-1</td>
-                  <td>1-2</td>
+            <td>Agua bendita</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2-3</td>
+            <td>2</td>
+            <td>3</td>
+            <td>3-4</td>
+            <td>0</td>
+            <td>0-1</td>
+            <td>1-2</td>
 		</tr>
 	</tbody>
 </table>
