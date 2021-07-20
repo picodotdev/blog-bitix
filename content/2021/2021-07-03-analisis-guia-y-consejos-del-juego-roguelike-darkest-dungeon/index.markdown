@@ -100,7 +100,7 @@ Cada tipo de héroe destaca y se diferencia en algunos aspectos del resto:
 * [Anticuaria](https://darkestdungeon.fandom.com/wiki/Antiquarian): es el héroe con habilidades de ataque más débiles, su mayor utilidad es en su capacidad de aumentar el botín y monedas recuperados. En un combate su función es la de soporte.
 * [Arbalestera](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=33810), [ficha](https://darkestdungeon.fandom.com/wiki/Arbalest): su posición es la 3 o 4, puede hacer grandes cantidades de daño a las últimas posiciones potenciado con los enemigos marcados y hacer las funciones de curación de soporte cuando no hay más enemigos a los que pueda atacar, su curación de batalla no cura mucho pero hace más efectivas las siguientes curaciones.
 * [Caza recompensas](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30115), [ficha](https://darkestdungeon.fandom.com/wiki/Bounty_Hunter): su posición es la 2 pero también puede estar en la 3, tiene la capacidad de mover y causa daño adicional a héroes marcados o aturdidos. No hace la función de tanque ya que no se potencia con protección.
-* [Cruzado](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30116), [ficha](https://darkestdungeon.fandom.com/wiki/Crusader): su posición es la 1 o 2, hace la función de tanque potenciado su protección significativamente que dura durante toda la batalla. A los enemigos impíos les hace daño adicional. Tiene la capacidad de curar puntos de vida y esfuerzo dando soporte al curador principal.
+* [Cruzado](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30116), [ficha](https://darkestdungeon.fandom.com/wiki/Crusader): su posición es la 1 o 2, hace la función de tanque potenciado su protección significativamente que dura toda la batalla. A los enemigos impíos les hace daño adicional. Tiene la capacidad de curar puntos de vida y esfuerzo dando soporte al curador principal.
 * [Asaltatumbas](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30117), [ficha](https://darkestdungeon.fandom.com/wiki/Grave_Robber): tiene habilidades que le dan movilidad pero no es adecuado junto a héroes que no la tengan, su evasión le permite usarse como tanque a base de evasión.
 * [Diabla](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30118), [ficha](https://darkestdungeon.fandom.com/wiki/Hellion): su posición es la 1 o 2. Su habilidad _Hachazo perverso_ le permite atacar a las dos primeras posiciones y con _Cisne de hierro_ puede atacar a enemigos en la posición 4 lo que le permite atacar casi a cualquier posición del enemigo.
 * [Bandolero](https://guides.gamepressure.com/darkestdungeon/guide.asp?ID=30119), [ficha](https://darkestdungeon.fandom.com/wiki/Highwayman): puede estar en cualquier posición causando grandes cantidades de daño con su notable probabilidad de crítico y aumento de daño, precisión y crítico con _Disparo de seguimiento_ que dura durante todo el combate útil en los combates largos como los jefes.
@@ -311,7 +311,7 @@ Estos son abalorios destacados para las funciones de algunos héroes, la mayorí
             <td rowspan="2">Arbalestera</td>
             <td>Ancestor's Musket Ball</td>
             <td>Wrathful Bandana</td>
-            <td>más daño y crítico en ataques a distanicia</td>
+            <td>más daño y crítico en ataques a distancia</td>
 		</tr>
 		<tr>
             <td>Bull's Eye Bandana</td>
@@ -587,7 +587,7 @@ En las ruinas hay abundancia de enemigos impíos inmunes a la hemorragia, una bu
 
 * Héroes recomendados para las ruinas: Cruzado, Hombre de armas, Leproso, Doctor de plaga, Vestal, Abominación, Asaltatumbas, Bufón, Anticuaria, Caza recompensas.
 
-La foresta es el área más compleja. Algunos enemigos son rápidos, otros fuertes, a veces se prioriza la línea delantera y a veces la línea trasera, no hay un solo tipo de enemigos como impíos en las ruinas y eldrich en la cueva. El daño recibido proviene de infecciones, hemorragia o críticos de esfuerzo, también de movimiento. Los enemigos son vulnerables a la hemorragia y la infeción mientras que la infección es inefectiva, tiene la habilidad de marcar que hace la habilidad de proteger o quitar la marca útil.
+La foresta es el área más compleja. Algunos enemigos son rápidos, otros fuertes, a veces se prioriza la línea delantera y a veces la línea trasera, no hay un solo tipo de enemigos como impíos en las ruinas y eldrich en la cueva. El daño recibido proviene de infecciones, hemorragia o críticos de esfuerzo, también de movimiento. Los enemigos son vulnerables a la hemorragia mientras que la infección es inefectiva, tiene la habilidad de marcar que hace la habilidad de proteger o quitar la marca útil.
 
 * Héroes recomendados para la foresta: Ocultista, Bufón, Abominación, Hombre de armas, Bandolero, Leproso, Maestro canino, Caza recompensas, Diabla, Arbalestera.
 
